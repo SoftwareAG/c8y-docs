@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Device SDK for C&#43;&#43; - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Device SDK guide</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/introduction/">Overview</a>
+     
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/mqtt/">Device integration using MQTT</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt">Hello MQTT</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt-c">Hello MQTT C</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt-java">Hello MQTT Java</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt-javascript">Hello MQTT Web-based</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt-python">Hello MQTT Python</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt-nodejs">Hello MQTT Node.js</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#implementation">MQTT implementation</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#device-integration">Device integration</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#smartrest-1">SmartREST 1.0</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#smartrest-2">SmartREST 2.0</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#mqtt-static-templates">MQTT Static templates</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#handling-ids">Handling IDs</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#json">JSON via MQTT</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/rest/">Device integration using REST</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/rest/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/rest/#device-integration">Device integration</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/rest/#hello-rest">Hello REST!</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/device-sdk/cpp/">Device SDK for C&#43;&#43;</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#introduction">Overview</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#build">Building the C&#43;&#43; library</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#use">C&#43;&#43; Device integration</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#custom">Customizing the build</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#reference">Agent software reference</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/hello-mqtt-cs-0/">Device SDK for C#</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/hello-mqtt-cs-0/#prerequisites">Prerequisites</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/hello-mqtt-cs-0/#developing-the-client">Developing the &#34;Hello, MQTT world!&#34; client</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/hello-mqtt-cs-0/#cs-static-templates">Static templates</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav5"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/java/">Device SDK for Java</a>
+     
+      
+      
+      <div id="page-nav5"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/java/#introduction">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/java/#hello-world-basic">Hello, world!</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/java/#hello-world-me">Hello, ME!</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/java/#agents">Java reference agent</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/java/#developing-java-clients">Developing Java clients</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Device SDK for C&#43;&#43;</h1>
+    </header>
+    
+      <div class="lead">
+        <p class="lead">The SmartREST `C++` library is a `C++` Software Developer Kit (SDK) for facilitating device integration to *Cumulocity*'s Internet of Things (IoT) platform.</p>
+
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="introduction" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#introduction">
+        <span class="fa fa-link"></span>
+      </button>
+      Overview</h2>
+    <p>SmartREST is <em>Cumulocity</em>&rsquo;s innovative communication protocol specifically designed for the IoT world. It incorporates the highly expressive strength of the REST API, whereas at the same time replace JSON with Comma Separated Values (CSV) to avoid the complexity of JSON parsing for embedded devices. Additionally, the terseness of CSV renders it highly efficient for IoT communication via mobile networks. It can save up to 80% mobile traffic compared to other HTTP APIs.</p>
+
+<p>The SmartREST <code>C++</code> library is designed for a wide range of devices which are powered by embedded Linux. It implements iterator-style lazy CSV lexer and parser, sophisticated request aggregation and robust request sending, and functionality for <em>Cumulocity</em>&rsquo;s IoT integration, e.g., device registration, real-time device control, SmartREST template registration. The library employs a event-driven design which supports periodical timer callbacks and message based callbacks, which will greatly reduce the development process of integrating your IoT devices to <em>Cumulocity</em>&rsquo;s IoT platform.</p>
+
+<p>The <code>C++</code> library supports both HTTP and MQTT as the underlying communication protocol. HTTP is a well-established, widely-adopted application protocol. For IoT world, HTTP is considerably bloated and traffic heavy. Oppositely, MQTT is a emerging lightweight messaging protocol based on publish and subscribe mechanism, this renders it very suited for IoT use cases. The library is designed in a way such that any agent software based on the library can transit from HTTP to MQTT with very little effort.</p>
+
+<p>In the following chapters, we will first provide guidelines about how to successfully build the library for your target environment. Then we demonstrate how to use the library by walk through a series of example agent ranging from simple &ldquo;hello world&rdquo; agent to complex agent which uses <code>Lua</code> plugins for sending measurements and handle operations. Subsequently, we will also demonstrate how to transit one complete example from using HTTP to use MQTT as underlying communication layer.</p>
+
+<p>In the end, we provide a reference of all build macros for further tailor and tune the build to suit your needs in case you have special target devices.</p>
+
+  </article>
+  
+  <article id="build" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#build">
+        <span class="fa fa-link"></span>
+      </button>
+      Building the C&#43;&#43; library</h2>
+    
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<table id="tab:prereq" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 1:</span> Prerequisites for building the library.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Software</th>
+<th scope="col" class="left">Minimal Version</th>
+<th scope="col" class="left">Comment</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td class="left">Linux</td>
+<td class="left">2.6.32</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+
+<tr>
+<td class="left">gcc (clang)</td>
+<td class="left">4.7 (3.3)</td>
+<td class="left">both gcc and clang are supported</td>
+</tr>
+
+
+<tr>
+<td class="left">libcurl</td>
+<td class="left">7.26.0</td>
+<td class="left">older versions might work, but not tested</td>
+</tr>
+
+
+<tr>
+<td class="left">Lua</td>
+<td class="left">5.0</td>
+<td class="left">optional, for Lua plugin support only</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="compiling-the-library">Compiling the library</h3>
+
+<p>First, download a copy of the library from the git repository and change to the directory.</p>
+
+<pre><code>$ git clone git@bitbucket.org:m2m/cumulocity-sdk-c.git
+$ cd cumulocity-sdk-c
+</code></pre>
+
+<p>Second, initialize and update your submodule dependencies, since the library depends on the <a href="https://github.com/eclipse/paho.mqtt.embedded-c">paho.mqtt.embedded-c</a> library for MQTT support.</p>
+
+<pre><code>$ git submodule init
+$ git submodule update
+</code></pre>
+
+<p>Then, create a <em>init.mk</em> file, and define specific macros <em>CPPFLAGS</em>, <em>CXXFLAGS</em> and <em>LDFLAGS</em>, <em>LDLIBS</em> and <em>CXX</em> if cross-compiling.</p>
+
+<pre><code>CXX:=/usr/bin/g++
+CPPFLAGS:=-I/usr/include
+CXXFLAGS:=-Wall -pedantic -Wextra
+LDFLAGS:=-L/usr/lib
+LDLIBS:=-lcurl
+</code></pre>
+
+<p>Listing 3 shows a typical <em>init.mk</em> file example. In essence, <em>init.mk</em> defines search path for required <code>c++</code> header files, preferred warning levels, search path for required <code>c++</code> library files, and necessary linking flags.</p>
+
+<p>When you do host compiling, many of these settings can obviously be omitted, these are more relevant for cross-compiling, which shall be the prevalent use case for the library. Later we will explain the <em>init.mk</em> file is also very important for another purpse, i.e., build customization to tailor the library to your needs.</p>
+
+<p>With the <em>init.mk</em> being defined, it&rsquo;s time to define your <em>makefile</em>.</p>
+
+<pre><code>$ cp Makefile.template Makefile
+</code></pre>
+
+<p>The default <em>Makefile.template</em> can be used unchanged in most cases. In case some settings are not suitable for your use case, e.g., you may want <code>-Os</code> optimization level instead of the default <code>-O2</code>, simply edit the copied <em>Makefile</em>.</p>
+
+<p>Now we have done all preparation work, it&rsquo;s time to build the library for your target device.</p>
+
+<pre><code>$ make
+</code></pre>
+
+<p>If everything is configured correctly, this should compile the library and output the final binary into the <em>lib/</em> directory, and a watchdog daemon <em>srwatchdogd</em> into the <em>bin/</em> directory in the root directory.</p>
+
+<p>The build system supports both <em>debug</em> and <em>release</em> modes. The above command calling make without any target defaults to <em>debug</em> build. <em>debug</em> build produces much larger binary, more verbose output, etc, which is suitable for development phase. When releasing your software, you will likely want a <em>release</em> build, you can clear all intermediate build files and re-build the library in <em>release</em> mode when you want to release your software.</p>
+
+<pre><code>$ make clean
+$ make release
+</code></pre>
+
+  </article>
+  
+  <article id="use" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#use">
+        <span class="fa fa-link"></span>
+      </button>
+      C&#43;&#43; Device integration</h2>
+    
+
+<h3 id="getting-started">Getting started</h3>
+
+<p>Before we really get started, we will need a <em>Cumulocity</em> account. Go to <a href="https://cumulocity.com/">https://cumulocity.com/</a>, you can apply for a free trial account by click the &ldquo;TRY CUMULOCITY FREE&rdquo; button on the top-right corner. After signing-up and login to your tenant, you would find the device registration page in <em>Device Management</em>. Next, we will demonstrate how to register a device to <em>Cumulocity</em> using the library.</p>
+
+<p><img src="/guides/images/cpp/img/register.png" alt="img" title="Cumulocity Registration Page." /></p>
+
+<p>Without any further ado, let&rsquo;s write our first program, the customary <em>hello world</em> example shown in Listing 1.</p>
+
+<pre><code>// ex-01-hello: src/main.cc
+#include &lt;iostream&gt;
+#include &lt;sragent.h&gt;
+#include &lt;srlogger.h&gt;
+using namespace std;
+
+int main()
+{
+        const char *server = &quot;http://developer.cumulocity.com&quot;;
+        const char *credentialPath = &quot;/tmp/helloc8y&quot;;
+        const char *deviceID = &quot;13344568&quot;;   // unique device identifier
+        srLogSetLevel(SRLOG_DEBUG);          // set log level to debug
+        SrAgent agent(server, deviceID);     // instantiate SrAgent
+        if (agent.bootstrap(credentialPath)) // bootstrap to Cumulocity
+                return 0;
+        cerr &lt;&lt; &quot;Hello, Cumulocity!&quot; &lt;&lt; endl;
+        return 0;
+}
+</code></pre>
+
+<div class="note">
+It's strongly encouraged that you pick a different random value for `deviceID`, as it's the unique identifier of your device.
+
+</div>
+
+<p>For convenience, let&rsquo;s define a shell variable <code>C8Y_LIB_PATH</code> to hold the library root path and use it to feed the compiler so it can find all necessary <code>C++</code> header files and shared library <code>.so</code> file.</p>
+
+<pre><code>$ export C8Y_LIB_PATH=/library/root/path
+$ g++ -std=c++11 -I$C8Y_LIB_PATH/include -L$C8Y_LIB_PATH/lib -lsera main.cc
+</code></pre>
+
+<div class="note">
+You can define the variable `C8Y_LIB_PATH` in your `.bashrc` file so you don't need to define it every time when launching a new terminal. From now on, I'd assume you have done so and will mention no more about `C8Y_LIB_PATH` in later examples.
+
+</div>
+
+<pre><code>$ LD_LIBRARY_PATH=$C8Y_LIB_PATH/lib ./a.out
+...
+Hello, Cumulocity!
+</code></pre>
+
+<p>Finally, it&rsquo;s time to run our first program. Type the <code>deviceID</code> into the text field in your registration page (Fig 2) and click <em>Register device</em>. After the program is running, a green <em>Accept</em> button shall show up, click it to accept your device into your tenant.</p>
+
+<p>As illustrated, the program will print <em>Hello, Cumulocity!</em> then exit. Voila, that&rsquo;s all we need to register a device to <em>Cumulocity</em>.</p>
+
+<p>The obtained device credential is stored in <code>/tmp/helloc8y</code> as defined in variable <code>credentialPath</code>. You can also find the credential in the <em>Device credential</em> page in your <em>Cumulocity</em> portal.</p>
+
+<div class="note">
+If you re-run the program the second time, the program will print *Hello, Cumulocity!* and exit immediately. This is because the program has loaded available credential from the given credential file. You can manually delete the credential file if you want the program to request a new credential.
+
+</div>
+
+<h3 id="integrating-to-cumulocity">Integrating to Cumulocity</h3>
+
+<p>Device integration is a little more complex. The whole process is depicted in Fig 12. Refer to <a href="/guides/device-sdk/rest#device-integration">Device SDK for REST &gt; Device integration</a> for detailed explanation. Steps <em>1</em>, <em>2</em> and <em>3</em> are specific to the SmartREST protocol as SmartREST requires predefined templates, see <a href="/guides/microservice-sdk/rest#smartrest">Using the REST interface &gt; Using SmartREST</a> in the Microservice SDK guide and the <a href="http://cumulocity.com/guides/reference/smartrest/">SmartREST reference</a> in the Reference guide for more information. Step <em>4</em> checks if the device is already stored in <em>Cumulocity</em>&rsquo;s database and only create it when it&rsquo;s not found. Steps <em>6</em> and <em>7</em> get the <em>Cumulocity</em> ID of the device from <em>Cumulocity</em>&rsquo;s database. Step <em>8</em> sets the <em>Cumulocity</em> ID as an alias for the device ID so that the device can find its <em>Cumulocity</em> ID next time by querying with its device ID.</p>
+
+<p><img src="/guides/images/cpp/img/integrate.png" alt="img" title="Device integration flowchart." /></p>
+
+<pre><code>// ex-02-integrate: src/integrate.h
+#ifndef INTEGRATE_H
+#define INTEGRATE_H
+#include &lt;sragent.h&gt;
+
+class Integrate: public SrIntegrate
+{
+public:
+        Integrate(): SrIntegrate() {}
+        virtual ~Integrate() {}
+        virtual int integrate(const SrAgent &amp;agent, const string &amp;srv,
+                              const string &amp;srt);
+};
+
+#endif /* INTEGRATE_H */
+</code></pre>
+
+<p>Listing 4 shows the required API interfaceby <code>SrAgent</code> when implementing your own integrate process. Basically, you need to subclass the pure virtual class <code>SrIntegrate</code> and realize its virtual function <code>integrate</code> with your particular integrate process. This is a callback function, which will be called by <code>SrAgent</code> when you call the <code>integrate</code> method of the <code>SrAgent</code>. By convention, the function shall returned 0 for success, and a non-0 value for failure.</p>
+
+<pre><code>// ex-02-integrate: src/integrate.cc
+#include &lt;srnethttp.h&gt;
+#include &lt;srutils.h&gt;
+#include &quot;integrate.h&quot;
+using namespace std;
+
+
+int Integrate::integrate(const SrAgent &amp;agent, const string &amp;srv,
+                         const string &amp;srt)
+{
+        SrNetHttp http(agent.server()+&quot;/s&quot;, srv, agent.auth());
+        if (registerSrTemplate(http, xid, srt) != 0) // Step 1,2,3
+                return -1;
+
+        http.clear();
+        if (http.post(&quot;100,&quot; + agent.deviceID()) &lt;= 0) // Step 4
+                return -1;
+        SmartRest sr(http.response());
+        SrRecord r = sr.next();
+        if (r.size() &amp;&amp; r[0].second == &quot;50&quot;) { // Step 4: NO
+                http.clear();
+                if (http.post(&quot;101&quot;) &lt;= 0) // Step 5
+                        return -1;
+                sr.reset(http.response());
+                r = sr.next();
+                if (r.size() == 3 &amp;&amp; r[0].second == &quot;501&quot;) {
+                        id = r[2].second; // Step 7
+                        string s = &quot;102,&quot; + id + &quot;,&quot; + agent.deviceID();
+                        if (http.post(s) &lt;= 0) // Step 8
+                                return -1;
+                        return 0;
+                }
+        } else if (r.size() == 3 &amp;&amp; r[0].second == &quot;500&quot;) { // Step 4: YES
+                id = r[2].second;                           // Step 6
+                return 0;
+        }
+        return -1;
+}
+</code></pre>
+
+<p>Listing 5 realizes the flow chart depicted in Fig 12. You may have noticed all requests are Comma Separated Values (CSV) since we are using SmartREST instead of REST APIs directly. The corresponding SmartREST templates can be found in Listing 6. Important thing to note is that, you must store the correct SmartREST <em>X-ID</em> and device&rsquo;s <em>Cumulocity ID</em> in the inherited member variables <code>xid</code> and <code>id</code>, respectively. They will be used by <code>SrAgent</code> after the integrate process for initializing corresponding internal variables.</p>
+
+<p><img src="/guides/images/cpp/img/mo.png" alt="img" title="Created device in *Cumulocity* after integrate process." /></p>
+
+<p>Listing 6 extends the code in Listing 1. The only addition inside the <code>main</code> function is the call to <code>SrAgent</code>&rsquo;s member function <code>integrate</code> for integrating to <em>Cumulocity</em> and <code>loop</code> for executing the agent loop. Above the <code>main</code> function is the definition of the SmartREST template version number and actual template content.</p>
+
+<p>Please refer to Section (See section 1.1) about how to compile and run the code. After running this example code, you should see a device named <code>HelloC8Y-Agent</code> in <em>All devices</em> page in your <em>Cumulocity</em> tenant, as shown in Fig 15.</p>
+
+<pre><code>// ex-02-integrate: src/main.cc
+#include &lt;sragent.h&gt;
+#include &lt;srlogger.h&gt;
+#include &quot;integrate.h&quot;
+using namespace std;
+
+static const char *srversion = &quot;helloc8y_1&quot;; // SmartREST template version
+static const char *srtemplate =              // SmartREST template collection
+        &quot;10,100,GET,/identity/externalIds/c8y_Serial/%%,,&quot;
+        &quot;application/json,%%,STRING,\n&quot;
+
+        &quot;10,101,POST,/inventory/managedObjects,application/json,&quot;
+        &quot;application/json,%%,,\&quot;{\&quot;\&quot;name\&quot;\&quot;:\&quot;\&quot;HelloC8Y-Agent\&quot;\&quot;,&quot;
+        &quot;\&quot;\&quot;type\&quot;\&quot;:\&quot;\&quot;c8y_hello\&quot;\&quot;,\&quot;\&quot;c8y_IsDevice\&quot;\&quot;:{},&quot;
+        &quot;\&quot;\&quot;com_cumulocity_model_Agent\&quot;\&quot;:{}}\&quot;\n&quot;
+
+        &quot;10,102,POST,/identity/globalIds/%%/externalIds,application/json,,%%,&quot;
+        &quot;STRING STRING,\&quot;{\&quot;\&quot;externalId\&quot;\&quot;:\&quot;\&quot;%%\&quot;\&quot;,&quot;
+        &quot;\&quot;\&quot;type\&quot;\&quot;:\&quot;\&quot;c8y_Serial\&quot;\&quot;}\&quot;\n&quot;
+
+        &quot;11,500,$.managedObject,,$.id\n&quot;
+        &quot;11,501,,$.c8y_IsDevice,$.id\n&quot;;
+
+int main()
+{
+        const char *server = &quot;http://developer.cumulocity.com&quot;;
+        const char *credentialPath = &quot;/tmp/helloc8y&quot;;
+        const char *deviceID = &quot;13344568&quot;; // unique device identifier
+        srLogSetLevel(SRLOG_DEBUG);        // set log level to debug
+        Integrate igt;
+        SrAgent agent(server, deviceID, &amp;igt); // instantiate SrAgent
+        if (agent.bootstrap(credentialPath))   // bootstrap to Cumulocity
+                return 0;
+        if (agent.integrate(srversion, srtemplate)) // integrate to Cumulocity
+                return 0;
+        agent.loop();
+        return 0;
+}
+</code></pre>
+
+<h3 id="sending-measurements">Sending measurements</h3>
+
+<p>Now we have successfully integrated a demo device to <em>Cumulocity</em>, we can finally do something more interesting. Let&rsquo;s try sending CPU measurement every 10 seconds.</p>
+
+<p>As shown in Listing 7, we need to first add a new SmartREST template for CPU measurement, and also increase the SmartREST template version number. Then we subclass the pure virtual class <code>SrTimerHandler</code> and implement the <code>()</code> operator. <code>CPUMEasurement</code> is a functor callback, which generates bogus CPU measurements using the <code>rand</code> function from the standard library. It will be called by the <code>SrAgent</code> at defined interval of the registered <code>SrTimer</code> .</p>
+
+<p>In the <code>main</code> function, we instantiate a <code>CPUMEasurement</code> and register it to an <code>SrTimer</code> in the <em>constructor</em>. <code>SrTimer</code> supports millisecond resolution, so 10 seconds is 10 * 1000 milliseconds.</p>
+
+<p>The library is built upon an asynchronous model. Hence, the <code>SrAgent</code> class is not responsible for any networking duty, it is essentially a scheduler for all timer and message handlers. <code>SrAgent.send</code> merely places a message into the <code>SrAgent.egress</code> queue, and returns immediately after. For actually sending SmartREST requests to <em>Cumulocity</em>, we need to instantiate a <code>SrReporter</code> object and execute it in a separate thread.</p>
+
+<pre><code>// ex-03-measurement: src/main.cc
+#include &lt;cstdlib&gt;
+
+static const char *srversion = &quot;helloc8y_2&quot;;
+static const char *srtemplate =
+// ...
+        &quot;10,103,POST,/measurement/measurements,application/json,,%%,&quot;
+        &quot;NOW UNSIGNED NUMBER,\&quot;{\&quot;\&quot;time\&quot;\&quot;:\&quot;\&quot;%%\&quot;\&quot;,&quot;
+        &quot;\&quot;\&quot;source\&quot;\&quot;:{\&quot;\&quot;id\&quot;\&quot;:\&quot;\&quot;%%\&quot;\&quot;},&quot;
+        &quot;\&quot;\&quot;type\&quot;\&quot;:\&quot;\&quot;c8y_CPUMeasurement\&quot;\&quot;,&quot;
+        &quot;\&quot;\&quot;c8y_CPUMeasurement\&quot;\&quot;:{\&quot;\&quot;Workload\&quot;\&quot;:&quot;
+        &quot;{\&quot;\&quot;value\&quot;\&quot;:%%,\&quot;\&quot;unit\&quot;\&quot;:\&quot;\&quot;%\&quot;\&quot;}}}\&quot;\n&quot;
+// ...
+
+class CPUMeasurement: public SrTimerHandler {
+public:
+        CPUMeasurement() {}
+        virtual ~CPUMeasurement() {}
+        virtual void operator()(SrTimer &amp;timer, SrAgent &amp;agent) {
+                const int cpu = rand() % 100;
+                agent.send(&quot;103,&quot; + agent.ID() + &quot;,&quot; + to_string(cpu));
+        }
+};
+
+int main()
+{
+        // ...
+        CPUMeasurement cpu;
+        SrTimer timer(10 * 1000, &amp;cpu); // Instantiate a SrTimer
+        agent.addTimer(timer);          // Add the timer to agent scheduler
+        timer.start();                  // Activate the timer
+        SrReporter reporter(server, agent.XID(), agent.auth(),
+                            agent.egress, agent.ingress);
+        if (reporter.start() != 0)      // Start the reporter thread
+                return 0;
+        agent.loop();
+        return 0;
+}
+</code></pre>
+
+<div class="note">
+If you add a `SrTimer` to the `SrAgent`, you must ensure its existence throughout the program lifetime, since there is no way to remove a `SrTimer` from the `SrAgent`. Instead, you can use `SrTimer.connect` to register a different callback or deactivate it by `SrTimer.stop`. This is a design choice for encouraging timer reuse, instead of dynamically creating and destroying timers.
+
+</div>
+
+<h3 id="handling-operations">Handling operations</h3>
+
+<p>Besides sending requests, e.g., measurements to <em>Cumulocity</em>, the other important functionality is handle messages, either responses from <em>GET</em> queries or real-time operations from <em>Cumulocity</em>. Listing 8 demonstrates how to handle the <em>c8y<sub>Restart</sub></em> operation. Again, first we will need to register necessary SmartREST templates. Then we define a message handler for handling restart operation.</p>
+
+<p>In the <code>main</code> function, we register the <code>RestartHandler</code> for SmartREST template (502), which is the template for the restart operation. We also need to instantiate a <code>SrDevicePush</code> object and starting execute device push in another thread. From now on, as soon as you execute an operation from your <em>Cumulocity</em> portal, device push will receive the operation immediately and your message handler will be invoked by the <code>SrAgent</code>.</p>
+
+<pre><code>// ex-04-operation: src/main.cc
+static const char *srversion = &quot;helloc8y_3&quot;;
+static const char *srtemplate =
+// ...
+        &quot;10,104,PUT,/inventory/managedObjects/%%,application/json,,%%,&quot;
+        &quot;UNSIGNED STRING,\&quot;{\&quot;\&quot;c8y_SupportedOperations\&quot;\&quot;:[%%]}\&quot;\n&quot;
+
+        &quot;10,105,PUT,/devicecontrol/operations/%%,application/json,,%%,&quot;
+        &quot;UNSIGNED STRING,\&quot;{\&quot;\&quot;status\&quot;\&quot;:\&quot;\&quot;%%\&quot;\&quot;}\&quot;\n&quot;
+// ...
+        &quot;11,502,,$.c8y_Restart,$.id,$.deviceId\n&quot;;
+// ...
+
+class RestartHandler: public SrMsgHandler {
+public:
+        RestartHandler() {}
+        virtual ~RestartHandler() {}
+        virtual void operator()(SrRecord &amp;r, SrAgent &amp;agent) {
+                agent.send(&quot;105,&quot; + r.value(2) + &quot;,EXECUTING&quot;);
+                for (int i = 0; i &lt; r.size(); ++i)
+                        cerr &lt;&lt; r.value(i) &lt;&lt; &quot; &quot;;
+                cerr &lt;&lt; endl;
+                agent.send(&quot;105,&quot; + r.value(2) + &quot;,SUCCESSFUL&quot;);
+        }
+};
+
+int main()
+{
+        // ...
+        // Inform Cumulocity about supported operations
+        agent.send(&quot;104,&quot; + agent.ID() + &quot;,\&quot;\&quot;\&quot;c8y_Restart\&quot;\&quot;\&quot;&quot;);
+        RestartHandler restartHandler;
+        agent.addMsgHandler(502, &amp;restartHandler);
+        SrDevicePush push(server, agent.XID(), agent.auth(),
+                          agent.ID(), agent.ingress);
+        if (push.start() != 0)      // Start the device push thread
+                return 0;
+        agent.loop();
+        return 0;
+}
+</code></pre>
+
+<p>Now run the program, then go to your <em>Cumulocity</em> tenant, execute an restart operation as shown in Fig 26. You should see the message printed in <code>cerr</code> and the operation is set to <em>SUCCESSFUL</em> in your control tab in <em>Cumulocity</em>.</p>
+
+<p><img src="/guides/images/cpp/img/restart.png" alt="img" title="Execute a restart operation in *Cumulocity*." /></p>
+
+<h3 id="storing-smartrest-templates-in-a-file">Storing SmartREST templates in a file</h3>
+
+<p>Over time, your template collection would grow large, and you would like to store them in a text file instead of hard coding them in your source code. The benefits are tow-fold: you don&rsquo;t need to recompile the code every time only because the templates change, and there is no need to escape special characters which is error-prone.</p>
+
+<p>A utility function <code>readSrTemplate</code> is provided for reading template collection from a text file. Listing 9 shows the usage of this function. It reads file <em>srtemplate.txt</em> from the current directory and stores the version number and template content into arguments <code>srversion</code> and <code>srtemplate</code>, respectively.</p>
+
+<pre><code>// ex-05-template: src/main.cc
+#include &lt;srutils.h&gt;
+// ...
+
+int main()
+{
+        // ...
+        string srversion, srtemplate;
+        if (readSrTemplate(&quot;srtemplate.txt&quot;, srverision, srtemplate) != 0)
+                return 0;
+        // ...
+}
+</code></pre>
+
+<p>The file format required by <code>readSrTemplate</code> is as simple as following:</p>
+
+<ul>
+<li>First line contains only the template version number.</li>
+<li>Every template must be on one line of its own.</li>
+<li>A line starts with <code>#</code> as first character (with no leading spaces or tabs) is considered a comment line and will be ignored.</li>
+<li>A complete empty line (with no spaces and tabs) will be ignored.</li>
+<li>No trailing spaces or tabs are allowed for any line except comment lines.</li>
+</ul>
+
+<p>See listing 10 for an example of template file.</p>
+
+<pre><code>helloc8y_3
+
+10,100,GET,/identity/externalIds/c8y_Serial/%%,,application/json,%%,STRING,
+
+10,101,POST,/inventory/managedObjects,application/json,application/json,%%,, &quot;{&quot;&quot;name&quot;&quot;:&quot;&quot;HelloC8Y-Agent&quot;&quot;,&quot;&quot;type&quot;&quot;:&quot;&quot;c8y_hello&quot;&quot;, &quot;&quot;c8y_IsDevice&quot;&quot;:{},&quot;&quot;com_cumulocity_model_Agent&quot;&quot;:{}}&quot;
+
+10,102,POST,/identity/globalIds/%%/externalIds,application/json,,%%,STRING STRING,&quot;{&quot;&quot;externalId&quot;&quot;:&quot;&quot;%%&quot;&quot;,&quot;&quot;type&quot;&quot;:&quot;&quot;c8y_Serial&quot;&quot;}&quot;
+
+10,103,POST,/measurement/measurements,application/json,,%%,NOW UNSIGNED NUMBER,&quot;{&quot;&quot;time&quot;&quot;:&quot;&quot;%%&quot;&quot;,&quot;&quot;source&quot;&quot;:{&quot;&quot;id&quot;&quot;:&quot;&quot;%%&quot;&quot;}, &quot;&quot;type&quot;&quot;:&quot;&quot;c8y_CPUMeasurement&quot;&quot;, &quot;&quot;c8y_CPUMeasurement&quot;&quot;:{&quot;&quot;Workload&quot;&quot;:{&quot;&quot;value&quot;&quot;:%%,&quot;&quot;unit&quot;&quot;:&quot;&quot;%&quot;&quot;}}}&quot;
+
+10,104,PUT,/inventory/managedObjects/%%,application/json,,%%,UNSIGNED STRING, &quot;{&quot;&quot;c8y_SupportedOperations&quot;&quot;:[%%]}&quot;
+
+10,105,PUT,/devicecontrol/operations/%%,application/json,,%%,UNSIGNED STRING, &quot;{&quot;&quot;status&quot;&quot;:&quot;&quot;%%&quot;&quot;}&quot;
+
+11,500,$.managedObject,,$.id
+
+11,501,,$.c8y_IsDevice,$.id
+
+11,502,,$.c8y_Restart,$.id,$.deviceId
+</code></pre>
+
+<h3 id="lua-plugin">Lua plugin</h3>
+
+<p>Instead of using <code>c++</code> for your development, the library also supports rapid development in <code>Lua</code>. For <code>Lua</code> plugin support, you must build the library with explicitly enabling <code>Lua</code> support, as it&rsquo;s disabled by default, see Chapter (See section ) about how to enable <code>Lua</code> plugin support.</p>
+
+<p>Listing 11 demonstrates how to load a <code>Lua</code> plugin and add path <code>lua/</code> into <code>Lua</code>&rsquo;s <code>package.path</code> for library search path.</p>
+
+<pre><code>// ex-06-lua: src/main.cc
+#include &lt;srluapluginmanager.h&gt;
+// ...
+
+int main()
+{
+        // ...
+        SrLuaPluginManager lua(agent);
+        lua.addLibPath(&quot;lua/?.lua&quot;);  // add given path to Lua package.path
+        lua.load(&quot;lua/myplugin.lua&quot;); // load Lua plugin
+        // ...
+        return 0;
+}
+</code></pre>
+
+<p>Listing 12 shows how to send CPU measurements and handle operation in <code>Lua</code> instead of <code>c++</code>. All <code>Lua</code> plugins are managed by <code>SrLuaPluginManager</code>, it is exposed to all <code>Lua</code> plugins as an opaque object named <em>c8y</em>. The only requirement for a <code>Lua</code> plugin is having a <code>init</code> function, which will be called by <code>SrLuaPluginManager</code> at load time to initialize the <code>Lua</code> plugin.</p>
+
+<p>The example also shows how to define your own <code>Lua</code> library and share its variable <code>myString</code> in your <code>Lua</code> plugins.</p>
+
+<pre><code>-- ex-06-lua: lua/mylib.lua
+myString = &quot;Hello, Cumulocity!&quot;
+
+----------------------------------------
+
+-- ex-06-lua: lua/myplugin.lua
+require('mylib')
+local timer
+
+function restart(r)
+   c8y:send('105,' .. r:value(2) .. ',EXECUTING')
+   for i = 0, r.size - 1 do     -- index in C++ starts from 0.
+      srDebug(r:value(i))
+   end
+   c8y:send('105,' .. r:value(2) .. ',SUCCESSFUL')
+end
+
+function cpuMeasurement()
+   local cpu = math.random(100)
+   c8y:send('103,' .. c8y.ID .. ',' .. cpu)
+end
+
+function init()
+   srDebug(myString)            -- myString from mylib
+   timer = c8y:addTimer(10 * 1000, 'cpuMeasurement')
+   c8y:addMsgHandler(502, 'restart')
+   return 0                     -- signify successful initialization
+end
+</code></pre>
+
+<div class="note">
+You may encounter an error saying "Package lua was not found in the pkg-config search path." when building this example, then you would need to modify the expression `$(shell pkg-config --cflags lua)` to add a proper version number to `lua`. The proper version number depends on your installed Lua version and your Linux distribution.
+
+</div>
+
+<h3 id="using-mqtt-instead-of-http">Using MQTT instead of HTTP</h3>
+
+<p>MQTT is a publish and subscribe based light-weight messaging protocol, renders it very suitable for IoT communication. It solves two major issues inherit to HTTP: 1) HTTP header predominantly overweights SmartREST payload since SmartREST messages are generally very short. 2) MQTT has built-in support for real-time notification via subscribe and publish mechanism, hence, there is no need for a separate connection for device push.</p>
+
+<p>Above examples are all using HTTP as the transportation layer. Besides HTTP, <code>SrReporter</code> also supports MQTT as the transportation layer. Listing 13 shows the modification needed for transforming the example in Section (See section 1.4) from using HTTP into using MQTT.</p>
+
+<pre><code>// ex-07-mqtt-legacy: src/main.cc
+
+int main()
+{
+        // ...
+        SrReporter reporter(string(server) + &quot;:1883&quot;, deviceID, agent.XID(),
+                            agent.tenant() + '/' + agent.username(),
+                            agent.password(), agent.egress, agent.ingress);
+        // set MQTT keep-alive interval to 180 seconds.
+        reporter.mqttSetOpt(SR_MQTTOPT_KEEPALIVE, 180);
+        if (reporter.start() != 0)      // Start the reporter thread
+                return 0;
+        agent.loop();
+        return 0;
+}
+</code></pre>
+
+<p>As you can see, all modification needed is to construct <code>SrReporter</code> with a different constructor so <code>SrReporter</code> knows to use MQTT as underlying communication protocol, and remove <code>SrDevicePush</code> in the code since MQTT has built-in support for real-time notification. Optionally, you can set the keep-alive interval for MQTT to prevent the underlying TCP connection from being interrupted.</p>
+
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> All examples can be found in the `examples` folder in the repository.</div>
+
+<div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup> The API reference is located in relative path `doc/html/index.html` in the library repository.</div>
+
+<div class="footdef"><sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup> The agent loop is an infinite loop, so it will never really returns. We will get back to this function later.</div>
+
+<div class="footdef"><sup><a id="fn.4" name="fn.4" class="footnum" href="#fnr.4">4</a></sup> Consult the [SmartREST reference](http://cumulocity.com/guides/reference/smartrest/) about how to define SmartREST templates.</div>
+
+<div class="footdef"><sup><a id="fn.5" name="fn.5" class="footnum" href="#fnr.5">5</a></sup> The code excerpt only includes the added part, check the *examples* folder for the complete example code.</div>
+
+<div class="footdef"><sup><a id="fn.6" name="fn.6" class="footnum" href="#fnr.6">6</a></sup> This is especially important when you dynamically allocate a timer on the heap, you must not destroy it during the program is running.</div>
+
+<div class="footdef"><sup><a id="fn.7" name="fn.7" class="footnum" href="#fnr.7">7</a></sup> Check `Lua` API reference in `doc/lua.html` for a complete list of all available APIs.</div>
+
+<p></div>
+</div></p>
+
+  </article>
+  
+  <article id="custom" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#custom">
+        <span class="fa fa-link"></span>
+      </button>
+      Customizing the build</h2>
+    <p>In Chapter (See section ) we briefly explained how to build the library, in this chapter we will go into depth about how to customize the build options to tailor a optimal build for your particular use case.</p>
+
+<p>All customization options listed in the following shall be added in your <em>init.mk</em> file.</p>
+
+<ol>
+<li><p><code>SR_PLUGIN_LUA=0</code></p>
+
+<p>Switch for <code>Lua</code> plugin support, defaults to 0, which disables <code>Lua</code> support. Set it to 1 will enable <code>Lua</code> plugin support. Also remember to provide necessary <code>Lua</code>&rsquo;s <code>C</code> library and add to your <code>CPPFLAGS</code>, <code>CXXFLAGS</code>, <code>LDFLAGS</code> and <code>LDLIBS</code> the required compile and link flags, etc.</p></li>
+
+<li><p><code>SR_PROTO_HTTP_VERSION=1.1</code></p>
+
+<p>HTTP version, defaults to 1.1. Set it to 1.0 for environments when <code>HTTP/1.1</code> is not supported.</p></li>
+
+<li><p><code>SR_SOCK_RXBUF_SIZE=1024</code></p>
+
+<p>Maximum receive buffer size for <code>SrNetSocket</code>, defaults to 1024 bytes. This number dictates the maximum number of bytes the <code>recv</code> method of <code>SrNetSocket</code> can block waiting for response. This parameter only affects the receive buffer of <code>SrNetSocket</code>.</p></li>
+
+<li><p><code>SR_AGENT_VAL=5</code></p>
+
+<p>Polling interval for <code>SrAgent</code>, defaults to 5 milliseconds. Internally <code>SrAgent</code> schedules all <code>SrTimerHandler</code> and <code>SrMsgHandler</code> by constantly polling for expired <code>SrTimer</code> and arrived messages from ingress <code>SrQueue</code>, this parameter dictates the interval between two consecutive polling. When is parameter is set too high, the agent may appear to be sluggish, whereas when set too low, many CPU cycles are wasted. This is a trade-off parameter that needs to be fine-tuned for any particular device.</p></li>
+
+<li><p><code>SR_REPORTER_NUM=512</code></p>
+
+<p>Maximum number of aggregated requests, defaults to 512. For saving traffic use, <code>SrReporter</code> has a mechanism to aggregate many messages into one request and send them all in once. This number dictates the maximum number of messages that can be aggregated.</p></li>
+
+<li><p><code>SR_REPORTER_VAL=400</code></p>
+
+<p>Maximum waiting time between two consecutive requests for aggregation, defaults to 400 milliseconds. When aggregating requests, <code>SrReporter</code> will wait for consecutive messages with a defined timeout. If the next messages comes after the timeout, <code>SrReporter</code> will stop the waiting loop and starts sending the already aggregated messages. When set to a higher number, higher aggregation can be expected, therefore, results in lower traffic use, whereas when set to a lower number, agent will be more responsive since it will not wait for aggregating next message. This is a trade-off parameter that needs to be fine-tuned for any particular use case.</p></li>
+
+<li><p><code>SR_REPORTER_RETRIES=9</code></p>
+
+<p>Maximum number of retries when sending fails, defaults to 9 times. For counteracting temporary network failures, <code>SrReporter</code> implemented an exponential wait and multi-trials measure. When the first trial fails, it waits 1 second and retries again, when the second trial fails, it waits 2 seconds, when the third trial fails, it waits 4 seconds, and so on, until the defined number of retries exhausted. Note when <code>SrReporter</code> enters the retry loop, messages sent via <code>SrAgent</code> will be queued up in the egress <code>SrQueue</code>, until the <code>SrReporter</code> successfully sends the aggregated requests so far or exhausts all retries.</p></li>
+
+<li><p><code>SR_CURL_SIGNAL=1</code></p>
+
+<p>Whether allow <em>libcurl</em> from installing any signal handlers, defaults to 1, which allows <em>libcurl</em> to install signal handlers. Certain versions of <em>libcurl</em> contains a bug that when built with a synchronous DNS resolver, randomly crashes when the DNS lookup timed out. When you experience this issue, you can workaround this bug by disabling <em>libcurl</em> from installing signal handlers. As a side effect, <em>libcurl</em> will not be able to terminate DNS lookup, recommended approach is to re-built <em>libcurl</em> with an asynchronous DNS resolver.</p></li>
+
+<li><p><code>SR_SSL_VERIFYCERT=1</code></p>
+
+<p>Whether to verify server&rsquo;s certificate when using HTTPS, defaults to 1. Many embedded devices have no CA certificates installed and thus not be able to verify server&rsquo;s certificate when communicating via HTTPS. As a workaround, you can disable certificate verification by setting this macro to 0.</p></li>
+
+<li><p><code>SR_FILEBUF_PAGE_SCALE=3</code></p>
+
+<p>Set scale of page size for file backed buffering, default is 3. When <code>filebuf</code> feature is enabled for <code>SrReporter</code>, messages are managed at a minimum unit of one page, instead of single message, for easy and efficient buffer managing. Therefore, larger page size will buffer more messages, but messages are also discarded in bigger chunks. In contrary, smaller page size buffers less messages, but messages are also discarded in smaller chunks. Possible page scale values and corresponding page size can be found in Table 1.</p></li>
+</ol>
+
+<table id="tab:pagescale" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 1:</span> List of page scale and corresponding page size for filebuf.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Page Scale</th>
+<th scope="col" class="left">Page Size</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td class="left">0</td>
+<td class="left">512 B</td>
+</tr>
+
+
+<tr>
+<td class="left">1</td>
+<td class="left">1 KB</td>
+</tr>
+
+
+<tr>
+<td class="left">2</td>
+<td class="left">2 KB</td>
+</tr>
+
+
+<tr>
+<td class="left">3</td>
+<td class="left">4 KB</td>
+</tr>
+
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+
+<tr>
+<td class="left">4</td>
+<td class="left">8 KB</td>
+</tr>
+
+
+<tr>
+<td class="left">5</td>
+<td class="left">16 KB</td>
+</tr>
+
+
+<tr>
+<td class="left">6</td>
+<td class="left">32 KB</td>
+</tr>
+
+
+<tr>
+<td class="left">7</td>
+<td class="left">64 KB</td>
+</tr>
+</tbody>
+</table>
+
+  </article>
+  
+  <article id="reference" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#reference">
+        <span class="fa fa-link"></span>
+      </button>
+      Agent software reference</h2>
+    <p>Following is a listing of existing agent software implemented based on the <code>C++</code> SDK.
+-   NetComm Agent
+    Smartrest agent is an agent software implemented for NetComm NTC-6200 and NTC-140w routers, which is used in many production projects.</p>
+
+<pre><code>&lt;https://bitbucket.org/m2m/cumulocity-agents-netcomm&gt;
+</code></pre>
+
+<ul>
+<li><p>Linux Agent
+Linux agent is a reference agent implementation, which can be used on any devices that are powered by a generic Linux distribution, e.g., Ubuntu, Fedora, etc.</p>
+
+<p><a href="https://bitbucket.org/m2m/cumulocity-agents-linux">https://bitbucket.org/m2m/cumulocity-agents-linux</a></p></li>
+</ul>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

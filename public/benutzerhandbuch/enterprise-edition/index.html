@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Enterprise Edition - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Handbuch</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav0"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/benutzerhandbuch/overview/">Erste Schritte</a>
+     
+      
+      
+      <div id="page-nav0"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/overview/#accessing-cumulocity-platform">Aufrufen und Anmelden an der Cumulocity-Plattform</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/overview/#cumulocity-applications">Cumulocity-Anwendungen</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/overview/#gui-features">Eigenschaften und Funktionen der Benutzeroberfläche</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/overview/#user-settings">Ändern von Benutzereinstellungen</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/benutzerhandbuch/device-management/">Device Management</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#overview">Übersicht</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#connecting-devices">Verbinden von Geräten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#viewing-devices">Anzeigen von Geräten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#grouping-devices">Gruppieren von Geräten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#device-details">Gerätedetails</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#monitoring-and-controlling-devices">Überwachen und Steuern von Geräten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#managing-device-types">Verwalten von Gerätetypen</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#managing-device-data">Verwalten von Gerätedaten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#configuration-repository">Konfigurations-Repository</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#simulator">Simulatoren</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#smartrest-templates">Verwenden von SmartREST-Templates</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/benutzerhandbuch/administration/">Administration</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#overview">Übersicht</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#home-screen">Startseite</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#managing-users">Verwalten von Benutzern</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#managing-permissions">Verwalten von Berechtigungen</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#audit-logs">Anzeigen von Audit-Logs</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#managing-applications">Verwalten von Anwendungen</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#business-rules">Anwenden von Geschäftsregeln</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#data-retention">Verwalten der Datenhaltung</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#tfa">Zwei-Faktor-Authentifizierung</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#changing-settings">Ändern von Einstellungen</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/">Cockpit</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#overview">Übersicht</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#managing-assets">Verwalten von Assets</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#data-explorer">Visualisieren von Daten mit dem Daten-Explorer</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#dashboards">Verwenden von Dashboards</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#widgets">Widgets-Sammlung</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#reports">Verwalten von Berichten und Exportdaten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#data-point-library">Datenpunktbibliothek</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#smart-rules">Smart Rules</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#smart-rules-collection">Smart Rules-Sammlung</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/">Enterprise Edition</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#managing-tenants">Verwalten von Mandanten</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#user-hierarchies">Verwalten von Benutzerhierarchien</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#users-in-other-tenants">Support für Benutzer in anderen Mandanten</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#data-broker">Data Broker</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#customization">Anpassen der Plattform</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#storage-quota">Speicherbegrenzung</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/benutzerhandbuch/optional-services/">Optionale Services</a>
+     
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Enterprise Edition</h1>
+    </header>
+    
+      <div class="lead">
+        <p>Die Enterprise Edition von Cumulocity bietet verschiedene Erweiterungen zu den Funktionalitäten der Standard Edition. Im Folgenden sind zusätzliche Funktionalitäten beschrieben, die nur in der Enterprise Edition verfügbar sind.</p>
+
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="managing-tenants" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#managing-tenants">
+        <span class="fa fa-link"></span>
+      </button>
+      Verwalten von Mandanten</h2>
+    
+
+<p>Wenn Sie Service Provider sind oder die Enterprise Edition von Cumulocity nutzen, möchten Sie eventuell eigene Mandanten verwalten.</p>
+
+<p>Die Mandantenverwaltung ermöglicht es Ihnen, eigene Untermandanten zu erstellen und zu verwalten, und ihnen Zugriff auf Ihre Anwendungen zu gewähren.</p>
+
+<blockquote>
+<p>Wichtig: Es besteht ein entscheidender Unterschied zwischen mehreren Mandanten einerseits und mehreren Benutzern mit verschiedenen Berechtigungen innerhalb eines Mandanten andererseits. Mandanten sind physikalisch getrennte Datenbereiche mit einer eigenen URL, eigenen Benutzern einer eigenen Anwendungsverwaltung und ohne Datenteilung. Benutzer eines Mandanten teilen sich standardmäßig dieselbe URL und denselben Datenbereich. Sollte es sich bei Ihren Benutzern also etwa um verschiedene Kunden handeln, die streng getrennt gehalten werden müssen, da es sich eventuell sogar um Mitbewerber handelt, empfehlen wir dringend, mit verschiedenen Mandanten zu arbeiten.</p>
+
+<p><strong>Info</strong>: Wenn Sie diese Funktion verwenden möchten, wenden Sie sich bitte an sales@cumulocity.com.</p>
+</blockquote>
+
+<p>Um die Mandantenfunktionalität nutzen zu können, muss Ihr Benutzer über die entsprechenden Berechtigungen verfügen. Informationen zum Bearbeiten von Berechtigungen finden sie unter <a href="/guides/benutzerhandbuch/administration#managing-permissions">Erstellen und Bearbeiten von Rollen</a> im Abschnitt Verwalten von Berechtigungen. Da es sich bei der Bearbeitung von Mandanten um ein sensibles Verfahren handelt, sind die entsprechenden Berechtigungen granularer:</p>
+
+<ul>
+<li>Read: Durchsuchen und Ansehen von Mandanten.</li>
+<li>Create: Erstellen neuer Mandanten.</li>
+<li>Update: Bearbeiten von Mandanten (einschließlich Abonnements) und Sperren oder Aktivieren von Mandanten.</li>
+<li>Change: Erstellen, Bearbeiten und Löschen von Mandanten</li>
+</ul>
+
+<h3 id="anzeigen-von-untermandanten">Anzeigen von Untermandanten</h3>
+
+<p>Klicken Sie <strong>Untermandanten</strong> im Menü <strong>Mandanten</strong>, um eine Liste aller Untermandanten in Ihrem Konto anzuzeigen.</p>
+
+<p>Die Seite <strong>Mandanten</strong> zeigt die folgenden Informationen für jeden Untermandanten an:</p>
+
+<ul>
+<li>Name des Untermandanten, z.B. Name des Unternehmens Ihres Kunden.</li>
+<li>ID und Domain. Beim Erstellen des Mandanten wird die ID zum ersten Teil der URL. Wenn Sie beispielsweise einen Mandanten mit der ID &ldquo;acme&rdquo; auf cumulocity.com erstellen, lautet die URL des Mandanten &ldquo;acme.cumulocity.com&rdquo;. Beachten Sie, dass Sie, nachdem der Mandant einmal erstellt wurde, zwar die URL später ändern können, nicht aber die ID.</li>
+<li>Optionaler Kontaktname und Telefonnummer.</li>
+<li>Das Erstellungsdatum für den Mandanten.</li>
+<li>Status des Mandanten, entweder aktiv (angezeigt durch ein grünes Häkchen) oder gesperrt (angezeigt durch ein rotes Kreuz).</li>
+</ul>
+
+<p>Wenn Sie den Management-Mandanten verwenden, sehen Sie eine weitere Spalte <strong>Übergeordneter Mandant</strong>. Die Spalte zeigt den Mandanten an, der den aktuellen Mandanten erstellt hat.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/ee-subtenants.png" alt="Untermandanten" /></p>
+
+<h3 id="a-name-creating-tenants-a-anlegen-von-untermandanten"><a name="creating-tenants"></a>Anlegen von Untermandanten</h3>
+
+<p>Um einen neuen Mandanten zu erstellen, klicken Sie <strong>Mandanten anlegen</strong> rechts oben in der Menüleiste.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/ee-subtenant-create.png" alt="Mandanten anlegen" /></p>
+
+<p>Geben Sie für den neuen Mandanten folgende Attribute an:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Domain/ URL</td>
+<td align="left">Geben Sie eine eindeutige ID als ersten Teil der URL ein. Wenn Sie beispielsweise &ldquo;acme&rdquo; als ID auf cumulocity.com eingeben, lautet die URL des Mandanten &ldquo;acme.cumulocity.com&rdquo;. Sie können nur eine Subdomain-Ebene verwenden. Sie können zum Beispiel nur &ldquo;acme.cumulocity.com&rdquo;auf cumulocity.com verwenden. Sie können aber nicht &ldquo;mycustomer.acme.cumulocity.com&rdquo; wählen. Dies wird vom TLS-Standard nicht unterstützt.</td>
+</tr>
+
+<tr>
+<td align="left">Name</td>
+<td align="left">Name des Mandanten, z. B. Name des Unternehmens.</td>
+</tr>
+
+<tr>
+<td align="left">E-Mail des Administrators</td>
+<td align="left">Sie müssen eine gültige E-Mail-Adresse angeben, damit Benutzer ihr Passwort ändern können.</td>
+</tr>
+
+<tr>
+<td align="left">Benutzername des Administrators</td>
+<td align="left">Benutzername des Administrators dieses Mandanten.</td>
+</tr>
+
+<tr>
+<td align="left">Kontaktname</td>
+<td align="left">Optionaler Name des Ansprechpartners.</td>
+</tr>
+
+<tr>
+<td align="left">Telefonnummer</td>
+<td align="left">Optionale Telefonnummer des Ansprechpartner.</td>
+</tr>
+
+<tr>
+<td align="left">Link zum Zurücksetzen des Passworts als E-Mail senden</td>
+<td align="left">Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie eine Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter <a href="/guides/benutzerhandbuch/overview#login">Anmelden</a> im Abschnitt Erste Schritte).</td>
+</tr>
+
+<tr>
+<td align="left">Mandantenregel</td>
+<td align="left">Sie können eine Mandantenregel aus der Dropdown-Liste auswählen, die auf den Mandanten angewendet werden soll.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Felder, die mit einem Sternsymbol * gekennzeichnet sind, sind Pflichtfelder.</p>
+
+<p>Klicken Sie <strong>Speichern</strong>, um Ihre Eingaben zu speichern.</p>
+
+<p>Nachdem der Mandant erstellt wurde, wird er automatisch mit einem ersten Administrator-Benutzer (&ldquo;Benutzername des Administrators&rdquo;) eingerichtet. Dieser Administrator kann andere Benutzer erstellen und Berechtigungen vergeben. Der erste Benutzer kann nicht gelöscht werden, um ein Aussperren zu verhindern.</p>
+
+<p>Vom Management-Mandanten aus können Sie anderen Mandanten erlauben, Untermandanten zu erstellen. Selektieren Sie dazu &ldquo;Erstellen von Untermandanten zulassen&rdquo;.</p>
+
+<h3 id="bearbeitung-von-untermandanten-attributen">Bearbeitung von Untermandanten-Attributen</h3>
+
+<p>Klicken Sie auf einen Untermandanten, um diesen zu bearbeiten oder klicken Sie <strong>Bearbeiten</strong> im Kontextmenü, auf das Sie über das Menüsymbol zugreifen können.</p>
+
+<p>In der Registerkarte <strong>Attribute</strong> können alle Felder außer der ID und des Benutzernamens des Administrators bearbeitet werden. Details zu den einzelnen Feldern finden Sie unter <a href="#creating-tenants">Erstellen von Untermandanten</a>.</p>
+
+<h3 id="sperren-von-untermandanten">Sperren von Untermandanten</h3>
+
+<p>Sie können Mandanten zeitweilig sperren. Das Sperren eines Mandanten verhindert jeglichen Zugriff auf diesen Mandanten, unabhängig davon, ob der Zugriff über eine Gerät, einen Benutzer oder eine andere Anwendung erfolgt.</p>
+
+<p>Um einen Mandanten zu sperren, klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü <strong>Entfernen</strong>.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/ee-subtenant-suspend.png" alt="Sperren eines Mandanten" /></p>
+
+<p>Bestätigen Sie im folgenden Dialogfenster das Sperren, indem Sie <strong>OK</strong> klicken und Ihr Passwort eingeben Der Mandant wird durch ein rotes Kreuzsymbol als gesperrt gekennzeichnet. Außerdem wird eine E-Mail an den Administrator des Mandanten gesendet, wenn eine entsprechende E-Mail-Adresse konfiguriert ist.</p>
+
+<blockquote>
+<p><strong>Info</strong>: Als Service Provider können Sie diese E-Mail unterdrücken.</p>
+</blockquote>
+
+<p>Ist ein Mandant gesperrt, bleiben die Daten des Mandanten in der Datenbank und stehen jederzeit wieder zur Verfügung. Klicken Sie <strong>Aktivieren</strong>, um die Daten wiederherzustellen.</p>
+
+<h3 id="löschen-von-untermandanten">Löschen von Untermandanten</h3>
+
+<p>Um einen Untermandanten und alle seine Daten endgültig zu löschen, klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü <strong>Löschen</strong>.</p>
+
+<blockquote>
+<p><strong>Info</strong>: Dieser Vorgang kann nicht rückgängig gemacht werden. Aus Sicherheitsgründen ist er daher nur im Management-Mandanten möglich.</p>
+</blockquote>
+
+<h3 id="a-name-subscribe-a-abonnieren-und-überwachen-von-anwendungen"><a name="subscribe"></a>Abonnieren und Überwachen von Anwendungen</h3>
+
+<p>In der Registerkarte <strong>Anwendungen</strong> können Sie alle für einen Mandanten abonnierten Anwendungen ansehen sowie Anwendungen für einen Mandanten abonnieren oder entfernen. Standardmäßig werden für einen Mandanten die Standardanwendungen von Cumulocity abonniert.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/ee-subtenants-applications.png" alt="Anwendung abonnieren" /></p>
+
+<p>Um eine Anwendung für einen Mandanten zu abonnieren, bewegen Sie den Mauszeiger über die Anwendungen unter <strong>Verfügbare Anwendungen</strong> auf der rechten Seite und klicken Sie bei der gewünschten Anwendung <strong>Abonnieren</strong>.</p>
+
+<p>Um eine Anwendung zu löschen, bewegen Sie den Mauszeiger über die Anwendungen unter <strong>Abonnierte Anwendungen</strong> auf der linken Seite und klicken Sie bei der gewünschten Anwendung <strong>Abbestellen</strong>.</p>
+
+<h4 id="überwachen-von-microservices">Überwachen von Microservices</h4>
+
+<p>Für alle Anwendungen, die als Microservices von Cumulocity gehostet werden, wird neben dem Namen der Microservice-Status als Symbol angezeigt:</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-applications-status.png" alt="Anwendungsstatus" style="max-width: 75%"></p>
+
+<p>Der Microservice kann sich in einem der folgenden Status befinden:</p>
+
+<ul>
+<li><img src="/guides/images/icons/ok.png" alt="Up" style="max-width: 100%"> Microservice ist in Betrieb</li>
+<li><img src="/guides/images/icons/warning.png" alt="Up" style="max-width: 100%"> Microservice ist gestört</li>
+<li><img src="/guides/images/icons/danger.png" alt="Up" style="max-width: 100%"> Microservice ist außer Betrieb</li>
+</ul>
+
+<p>Details zum Status können durch Ausklappen des jeweiligen Eintrags angezeigt werden.</p>
+
+<p><img src="/guides/images/users-guide/Administration/admin-application-details.png" alt="Anwendungsdetails" style="max-width: 75%"></p>
+
+<p>Folgende Informationen werden angezeigt:</p>
+
+<ul>
+<li>Aktiv: Anzahl der aktiven Microservice-Instanzen</li>
+<li>Gestört: Anzahl der inaktiven Microservice-Instanzen</li>
+<li>Erwartet: Anzahl der erwarteten Microservice-Instanzen</li>
+<li>Name: Name der Microservice-Instanz</li>
+<li>Neustarts: Anzahl der Neustarts von Microservice-Instanzen</li>
+</ul>
+
+<p>Weitere Details finden Sie in der Registerkarte <strong>Status</strong> der entsprechenden Anwendung, siehe <a href="/guides/users-guide/administration#managing-applications">Administration &gt; Verwalten von Anwendungen</a>.</p>
+
+<h3 id="a-name-tenants-custom-properties-a-bearbeitung-von-benutzerdefinierten-attributen"><a name="tenants-custom-properties"></a>Bearbeitung von benutzerdefinierten Attributen</h3>
+
+<p>Die Registerkarte <strong>Benutzerdefinierte Attribute</strong> ermöglicht Ihnen das Anzeigen und Ändern von Werten von benutzerdefinierten Attributen, sowohl vordefinierten (wie &ldquo;Externe Referenz&rdquo;) als auch denen, die in der <a href="/guides/benutzerhandbuch/administration#properties">Attributsbibliothek</a> definiert sind. Solche Attribute werden auch als Spalten in der <a href="#usage-stats">Benutzungsstatistiktabelle</a> angezeigt.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/Admin_SubtenantCustomProperties.png" alt="Benutzerdefinierte Attribute" /></p>
+
+<p><strong>Begrenzen der Geräteanzahl für Untermandanten</strong></p>
+
+<p>Der Plattformadministrator kann die Anzahl der gleichzeitig registrierten Hauptgeräte oder der registrierten Geräte insgesamt (einschließlich Kindgeräte) begrenzen. Der Plattformadministrator kann außerdem auf der Seite <strong>Nutzungsstatistiken</strong> die Höchstanzahl registrierter Hauptgeräte und Geräte insgesamt sowie den Höchstwert des genutzten Datenspeichers einsehen.</p>
+
+<h3 id="a-name-usage-stats-a-anzeigen-von-nutzungsstatistiken"><a name="usage-stats"></a>Anzeigen von Nutzungsstatistiken</h3>
+
+<p>Die Seite <strong>Nutzungsstatistiken</strong> zeigt statistische Informationen für jeden Untermandanten an.</p>
+
+<p>Die folgenden Informationen werden für jeden Untermandanten angezeigt:</p>
+
+<ul>
+<li>ID: ID des Untermandanten</li>
+<li>API-Anfragen: Gesamtanzahl der API-Anfragen, einschließlich Anfragen von Geräten und Anwendungen</li>
+<li>Geräte-API-Anfragen: Anzahl der API-Anfragen von Geräten</li>
+<li>Speicher (MB): Gespeicherte Daten in Ihrem Konto</li>
+<li>Hauptgeräte: Anzahl der Geräte ohne Kindgeräte</li>
+<li>Höchstwert Hauptgeräte: Höchstanzahl Hauptgeräte, ohne Kindgeräte</li>
+<li>Geräte: Die Gesamtanzahl der mit dem Untermandanten verbundenen Geräte</li>
+<li>Höchstwert Geräte: Höchstanzahl Geräte, einschließlich Kindgeräte</li>
+<li>Endpunktgeräte: Blattgeräte (ohne Gateways und Kinder)</li>
+<li>Abonnierte Anwendungen: Anzahl der vom Untermandanten abonnierten Anwendungen</li>
+<li>Erstellungszeitpunkt: Datum und Zeit der Erstellung des Untermandanten</li>
+<li>Erzeugte Alarme: Anzahl der erzeugten Alarme</li>
+<li>Aktualisierte Alarme: Anzahl der aktualisierten Alarme</li>
+<li>Erstellte Stammdaten: Anzahl der erstellten Managed Objects</li>
+<li>Aktualisierte Stammdaten: Anzahl der aktualisierten Managed Objects</li>
+<li>Erstellte Ereignisse: Anzahl der erstellten Ereignisse</li>
+<li>Aktualisierte Ereignisse: Anzahl der aktualisierten Ereignisse</li>
+<li>Erstellte Messwerte: Anzahl der erstellten Messwerte</li>
+<li>Gesamt Inbound-Transfer: Summe aller Inbound-Transfers (erzeugte Alarme, aktualisierte Alarme, erstellte Ereignisse, aktualisierte Ereignisse, erstellte Stammdaten, aktualisierte Stammdaten, erstellte Messwerte). Inbound-Transfer bezeichnet alle Inbound-Anfragen, die ausgeführt werden, um Daten zur Cumulocity IoT-Plattform zu übertragen. Dazu zählen unter anderem Sensormesswerte, Alarme, Ereignisse und Kommandos, die zwischen Geräten und der Cumulocity IoT-Plattform mittels REST- und/oder MQTT-Schnittstellen übertragen werden. Solche Inbound-Anfragen können auch von eigenen Microservices, Webseiten oder anderen Clients stammen.<br /></li>
+<li>Übergeordneter Mandant: Name des übergeordneten Mandanten (nur verfügbar für den Management-Mandanten)</li>
+<li>Externe Referenz: Dieses Feld ist für den individuellen Gebrauch. Sie können hier beispielsweise einen Link zum CRM-System oder eine interne Kundennummer einfügen.</li>
+</ul>
+
+<p>Außerdem werden benutzerdefinierte Attribute angezeigt, falls vorhanden.</p>
+
+<p>Benutzerdefinierte Attribute können in der <a href="/guides/benutzerhandbuch/administration#properties">Attributsbibliothek</a> definiert werden. Anschließend können entsprechende Werte in der Registerkarte <a href="#tenants-custom-properties">Benutzerdefinierte Attribute</a> des Mandanten eingestellt werden.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/Admin_TenantUsageStatistics.png" alt="Nutzungsstatistiken" /></p>
+
+<p>Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum filtern, indem Sie einen Start- und einen Endzeitpunkt in der oberen Menüleiste eingeben und <strong>Filter</strong> klicken. Sie können außerdem die Liste nach jeder Spalte filtern und und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Weitere Informationen zur Filterfunktionalität finden Sie unter <a href="/guides/benutzerhandbuch/overview#filtering">Filtern</a> im Abschnitt Erste Schritte.</p>
+
+<p>Klicken Sie <strong>Export CSV</strong> rechts oben in der Menüleiste, um die aktuelle Ansicht der Statistikentabelle als CSV-Datei zu exportieren. Im folgenden Fenster können Sie die CSV-Ausgabe anpassen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/Admin_UsageStatisticsExport.png" alt="Export statistics" style="max-width: 50%"></p>
+
+<h3 id="a-name-tenant-policies-a-mandantenregeln"><a name="tenant-policies"></a>Mandantenregeln</h3>
+
+<p>Eine Mandantenregel ist eine Menge von Mandantenoptionen und Datenhaltungsregeln. Mandantenoptionen und Datenhaltungsregeln können während der Erstellung eines Mandanten konfiguriert werden.</p>
+
+<p>Das Erstellen einer Mandantenregel mit bestimmten Optionen und Regeln spart Zeit bei der Erstellung verschiedener Mandanten mit den gleichen Einstellungen.</p>
+
+<blockquote>
+<p><strong>Info</strong>: Die Optionen und Regeln werden in den Mandanten kopiert. Änderungen an der Regel haben keine Auswirkungen auf bereits erstellte Mandanten.</p>
+</blockquote>
+
+<p>Klicken Sie <strong>Mandantenregeln</strong> im Menü <strong>Mandanten</strong>, um alle verfügbaren Regeln anzuzeigen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/ee-tenant-policies.png" alt="Mandantenregeln" /></p>
+
+<p>Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anzahl der Optionen und Datenerhaltungsregeln angezeigt, wahlweise in Listen- oder Gitteransicht.</p>
+
+<h4 id="hinzufügen-einer-mandantenregel">Hinzufügen einer Mandantenregel</h4>
+
+<p>Klicken Sie <strong>Mandantenregel hinzufügen</strong> in der oberen Menüleiste, um eine neue Mandantenregel zu erstellen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/Admin_TenantsAddPolicy.png" alt="Neue Regel hinzufügen" /></p>
+
+<ol>
+<li>Geben Sie einen Namen und optional eine Beschreibung ein.</li>
+<li>Geben Sie mindestens eine Datenerhaltungsregel ein. Weitere Informationen zur Erstellung von Datenerhaltungsregeln finden Sie unter <a href="/guides/benutzerhandbuch/administration#retention-rules">Datenerhaltungsregeln</a>.</li>
+<li>Geben Sie optional eine Mandantenoption ein.</li>
+<li>Klicken Sie <strong>Speichern</strong>, um Ihre Eingaben zu speichern.</li>
+</ol>
+
+<h4 id="bearbeiten-duplizieren-und-löschen-von-regeln">Bearbeiten, Duplizieren und Löschen von Regeln</h4>
+
+<p>Klicken Sie auf eine Regel, um diese zu bearbeiten oder öffnen Sie das Kontextmenü über das Menüsymbol und klicken Sie <strong>Bearbeiten</strong>.</p>
+
+<p>Um den Namen einer Regel zu ändern, klicken Sie auf den Namen in der oberen Leiste, ändern Sie den Namen und klicken Sie das grüne Häckchen-Symbol, um Ihre Änderungen zu speichern.</p>
+
+<p>Um eine Datenhaltungsregel oder eine Mandantenoption aus einer Regel zu entfernen, bewegen Sie den Mauszeiger darüber und klicken Sie das Löschen-Symbol.</p>
+
+<p>Um eine Regel zu duplizieren, klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü <strong>Duplizieren</strong>.</p>
+
+<p>Um eine Regel zu löschen, klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü <strong>Löschen</strong>.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/ee-tenant-policy-contextmenu.png" alt="Manantenregeln Kontextmenü" /></p>
+
+  </article>
+  
+  <article id="user-hierarchies" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#user-hierarchies">
+        <span class="fa fa-link"></span>
+      </button>
+      Verwalten von Benutzerhierarchien</h2>
+    
+
+<p>Mit Benutzerhierarchien können Sie verschiedene Organisationen in Cumulocity getrennt verwalten, die dennoch dieselbe Datenbank teilen. Diese Organisationen können eingeschränkten Zugriff auf eine Untermenge der geteilten Daten haben und ihre eigenen untergeordneten Benutzer verwalten.</p>
+
+<blockquote>
+<p>Info: Um diese Funktion verwenden zu können, muss Ihr Mandant die folgende Anwendung abonniert haben: &ldquo;feature-user-hierarchies&rdquo;.</p>
+</blockquote>
+
+<h3 id="anzeigen-von-benutzerhierarchien">Anzeigen von Benutzerhierarchien</h3>
+
+<p>In der Seite <strong>Benutzer</strong> werden Benutzerhierarchien durch einen Pfeil links vom Benutzer-Symbol angezeigt. Klicken Sie auf diesen Pfeil, um die Benutzerhierarchie auszuklappen. Sie können auch alle Benutzerhierarchien gleichzeitig anzeigen oder verbergen, indem Sie <strong>Alle ausklappen</strong> bzw. <strong>Alle einklappen</strong> oben rechts klicken.</p>
+
+<p>Eine kleine Zahl neben dem Benutzernamen zeigt an, wieviele direkte untergeordnete Benutzer ein Benutzer hat. Untergeordnete Benutzer sind Benutzer, die von ihrem übergeordneten Benutzer verwaltet werden können und die maximal die Berechtigungen des übergeordneten Benutzers haben können. Im Beispiel unten hat der Benutzer &ldquo;TestUser&rdquo; zwei direkte untergeordnete Benutzer.</p>
+
+<p><img src="/guides/images/users-guide/userhierarchies.png" alt="Benutzerhierarchien" /></p>
+
+<h3 id="a-name-sub-users-a-erstellen-von-untergeordneten-benutzern"><a name="sub-users"></a>Erstellen von untergeordneten Benutzern</h3>
+
+<p>Benutzerhierarchien werden erstellt, indem einem Benutzer ein &ldquo;Besitzer&rdquo; zugewiesen wird. Dieser &ldquo;Besitzer&rdquo; kann den Benutzer verwalten. Der Benutzer kann maximal die Berechtigungen des Besitzers haben.</p>
+
+<p>Wählen Sie in der Seite <strong>Benutzer</strong> einen Benutzer aus, dem Sie einen Besitzer zuweisen möchten. Wählen Sie im Feld <strong>Besitzer</strong> einen Benutzer aus der Auswahlliste und klicken Sie <strong>Fertig</strong> zum Bestätigen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/ee-user-hierarchies-owner.png" alt="Besitzer auswählen" /></p>
+
+<blockquote>
+<p><strong>Info:</strong> Wenn Sie einen neuen Benutzer erstellen, wird der Besitzer automatisch auf den Benutzer gesetzt, der angemeldet ist. Der Besitzer kann später geändert werden. Nur Benutzer mit der Berechtigung &ldquo;USER ADMIN&rdquo; können Besitzer zuweisen.</p>
+
+<p>Wenn Sie möchten, dass ein Besitzer nur seine untergeordneten Benutzer verwalten kann, stellen Sie sicher, dass der Besitzer keine globale Rolle mit Administrationsrechten für alle Benutzer hat.</p>
+</blockquote>
+
+<p>Nehmen wir an, ein Benutzer mit der &ldquo;business&rdquo;-Rolle wird der Besitzer eines neuen Benutzers. Dann kann der neue Benutzer nur die Rolle &ldquo;business&rdquo; erhalten, da er keine höhere Berechtigung haben kann als sein Besitzer.</p>
+
+<h3 id="a-name-delegate-a-delegieren-von-benutzerhierarchien"><a name="delegate"></a>Delegieren von Benutzerhierarchien</h3>
+
+<p>In Cumulocity können Sie Benutzerhierarchien und Berechtigungen auf andere Benutzer übertragen. Der Benutzer, dem die Berechtigungen übertragen werden, hat die gleichen Benutzerverwaltungsrechte wie der Benutzer, der die Übertragung aktiviert hat.</p>
+
+<p>Sie können Berechtigungen auch temporär übertragen, wenn Sie etwa zeitweilig nicht verfügbar sind.</p>
+
+<p>Um einem Benutzer Ihre Berechtigungen zu übertragen, öffnen Sie entweder den Benutzer und klicken Sie das Delegieren-Symbol im Feld <strong>Delegiert von</strong>, oder öffnen Sie das Kontextmenü über das Menüsymbol rechts vom Benutzer und wählen Sie <strong>Delegieren</strong>.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/ee-user-hierarchies-delegate.png" alt="Benutzerdelegierung" /></p>
+
+<p>Entfernen Sie die Delegierung im Feld <strong>Delegiert von</strong> oder klicken Sie im Kontextmenü <strong>Delegierung aufheben</strong>, um eine Übertragung von Berechtigungen wieder aufzuheben.</p>
+
+<p>Wenn der Benutzer, dem Sie die Berechtigungen übertragen haben, auch bestimmte Geräte verwalten können soll, muss der Admin-Benutzer diesem Benutzer die Berechtigung für die entsprechenden Geräte (Stammdatenrollen) direkt zuweisen. Dies kann über den Befehl <strong>Stammdatenrollen eines anderen Benutzers kopieren</strong> erfolgen. Weitere Informationen finden Sie unter <a href="/guides/benutzerhandbuch/administration#attach-inventory">Zuweisen von Stammdatenrollen</a>.</p>
+
+<blockquote>
+<p><strong>Info:</strong> Die Delegierung funktioniert nur im Bereich Benutzerverwaltung und hat keine Auswirkungen auf andere Bereiche.</p>
+</blockquote>
+
+<h3 id="fehlerbehebung-für-untergeordnete-benutzer">Fehlerbehebung für untergeordnete Benutzer</h3>
+
+<p>Im folgenden Beispiel kann der Benutzer nicht den Zugriff auf die Anwendung &ldquo;Administration&rdquo; ändern, da der Besitzer des Benutzers keine Berechtigung USER MANAGEMENT hat. Daher kann der Besitzer keinen Zugriff auf integrierte Anwendungen erteilen.</p>
+
+<p><img src="/guides/images/users-guide/warning1.png" alt="Warnmeldung" /></p>
+
+  </article>
+  
+  <article id="users-in-other-tenants" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#users-in-other-tenants">
+        <span class="fa fa-link"></span>
+      </button>
+      Support für Benutzer in anderen Mandanten</h2>
+    
+
+<p>Supportbenutzer sind Benutzer im Management-Mandanten, die über die spezielle Berechtigung verfügen, sich als andere Benutzer des Mandanten anmelden zu können. Nehmen wir an, Sie erhalten eine Support-Anfrage von einem Benutzer &ldquo;john&rdquo; im Mandanten &ldquo;acme.cumulocity.com&rdquo;. Der Benutzer kann eine bestimmte Funktion nicht verwenden und Sie vermuten, dass es sich um ein Berechtigungsproblem handelt. Ihr Benutzername im Management-Mandanten ist &ldquo;jill&rdquo; und Sie haben die Berechtigung, Support für &ldquo;acme.cumulocity.com&rdquo; zu leisten. In diesem Fall melden Sie sich auf &ldquo;acme.cumulocity.com&rdquo; mit dem Benutzernamen &ldquo;jill&#36;john&rdquo; und Ihrem Passwort für &ldquo;jill&rdquo; an. Nun können Sie reproduzieren, was &ldquo;john&rdquo; sieht.</p>
+
+<h3 id="konfigurieren-von-supportbenutzern">Konfigurieren von Supportbenutzern</h3>
+
+<p>Es gibt zwei verschiedene Einstellungen für Supportbenutzer in Cumulocity:</p>
+
+<ul>
+<li>Ein Service Provider konfiguriert bestimmte Berechtigungen für Benutzer des Management-Mandanten, die Ihnen ermöglichen, Support zu leisten.</li>
+<li>Benutzer eines Mandanten fragen Support an und erteilen so Benutzern des Management-Mandanten Zugriff.</li>
+</ul>
+
+<blockquote>
+<p><strong>Info:</strong> Die Supportbenutzer-Funktion funktioniert nicht, wenn der Supportbenutzer Zwei-Faktor-Authentifizierung aktiviert, aber keine Telefonnummer hinterlegt hat. Die Telefonnummer muss zunächst hinterlegt werden, um sich als Supportbenutzer einloggen zu können.</p>
+</blockquote>
+
+<p><strong>Berechtigung über den Management-Mandanten</strong></p>
+
+<p>Damit ein Benutzer des Management-Mandanten für Benutzer in anderen Mandanten Support leisten kann, müssen Sie dem Benutzer entweder die globale Berechtigung &ldquo;Support&rdquo; oder die Stammdatenrolle &ldquo;Support&rdquo; (jeweils &ldquo;Lesen&rdquo; und &ldquo;Ändern&rdquo;) zuweisen.</p>
+
+<p>Über die Stammdatenrolle &ldquo;Support&rdquo; können Sie dediziert die Supportberechtigung für einzelne Benutzer zuweisen. Erstellen Sie eine Gruppen der Mandanten, denen der Benutzer Support geben soll und weisen Sie dem Benutzer und der Gruppe die Stammdatenrolle zu wie unter <a href="/guides/benutzerhandbuch/administration#attach-inventory">Zuweisen von Stammdatenrollen</a> beschrieben.</p>
+
+<p><strong>Vom Benutzer erteilte Berechtigung</strong></p>
+
+<p>Benutzer können Support anfragen und einem Benutzer des Management-Mandanten erlauben, sich an ihrem Konto anzumelden. Klicken Sie auf die <strong>Benutzer</strong>-Schaltfläche rechts in der oberen Leiste und wählen Sie im Kontextmenü <strong>Supportanfrage stellen</strong>. Füllen Sie im folgenden Fenster das Formular aus.</p>
+
+<p><img src="/guides/images/users-guide/ee-support-request.png" alt="Support ermöglichen" style="max-width: 50%"></p>
+
+<h3 id="melden-sie-sich-als-supportbenutzer-an">Melden Sie sich als Supportbenutzer an.</h3>
+
+<p>Verwenden Sie den folgenden Benutzernamen, um sich als Supportbenutzer anzumelden:</p>
+
+<pre><code>&lt;Supportbenutzer&gt;$&lt;Benutzer&gt;
+</code></pre>
+
+<p>&ldquo;Supportbenutzer&rdquo; ist der Supportbenutzer im Management-Mandanten, der den Support ausführt. &ldquo;user&rdquo; ist der unterstützte Benutzer.</p>
+
+<p>Alternativ können Sie</p>
+
+<pre><code>&lt;Supportbenutzer&gt;$
+</code></pre>
+
+<p>verwenden.</p>
+
+<p>In diesem Fall greift der Supportbenutzer über einen der Administrationsbenutzer auf den Mandanten zu.</p>
+
+<blockquote>
+<p><strong>Wichtig:</strong> In vielen Umgebungen ist der Zugriff auf den Management-Mandanten eingeschränkt auf bestimmte Netzwerke oder Hosts oder kann nur über einen Tunnel ausgeführt werden. Wenn Sie sich mit der Supportbenutzer-Funktion anmelden, müssen Sie sicherstellen, dass Sie Zugriff auf den Management-Mandanten haben. Wenn Sie einen Tunnel verwenden, um auf den Management-Mandanten zuzugreifen, müssen Sie möglicherweise ein Login der Form <code>&lt;Mandant&gt;&lt;Supportbenutzer&gt;$&lt;Benutzer&gt;</code> verwenden.</p>
+</blockquote>
+
+<p>Audit-Logs werden für jeden Zugriff eines Supportbenutzers erstellt sowie für jede ausgeführte Aktion. In der Spalte &ldquo;Wer?&rdquo; wird der Name des Autors folgendermaßen angezeigt:</p>
+
+<pre><code>&quot;Supportbenutzer$Benutzer&quot;
+</code></pre>
+
+  </article>
+  
+  <article id="data-broker" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#data-broker">
+        <span class="fa fa-link"></span>
+      </button>
+      Data Broker</h2>
+    
+
+<p>Mit Data Broker können Daten gezielt mit anderen Mandanten geteilt werden. Sie können folgenden Daten teilen:</p>
+
+<ul>
+<li>Geräte (und ganz allgemein Objekte),</li>
+<li>Ereignisse,</li>
+<li>Alarme,</li>
+<li>Messwerte,</li>
+<li>Kommandos.</li>
+</ul>
+
+<p>Navigieren Sie zur Seite <strong>Datenkonnektor</strong> im Menü <strong>Data Broker</strong>, wenn Sie anderen Mandanten Daten senden möchten. Navigieren Sie zur Seite <strong>Datenabonnements</strong>, wenn Sie von anderen Mandanten Daten erhalten möchten.</p>
+
+<blockquote>
+<p><strong>Info</strong>: Geräte, die über Data Broker weitergeleitet werden, werden wie normale Geräte im Zielmandanten abgerechnet.</p>
+
+<p>Beachten Sie folgende Einschränkungen im Zusammenhang mit Data Broker:<br></p>
+
+<ul>
+<li>Cloud Remote Access kann im Ursprungsmandanten nicht verwendet werden.<br /></li>
+<li>Derzeit funktioniert das Fieldbus-Widget nicht in Mandanten, die Fieldbus-Geräte durch Data Broker erhalten, da die entsprechenden Datenmodelle nicht synchronisiert werden.</li>
+<li>Während wir Rückwärtskompatibilität gewährleisten, können wir nicht garantieren, dass Data Broker Daten an Cumulocity-Mandanten senden kann, die auf späteren Cumulocity-Versionen laufen als der Ursprungsmandant.</li>
+</ul>
+</blockquote>
+
+<h3 id="a-name-data-broker-connectors-a-datenkonnektoren"><a name="data-broker-connectors"></a>Datenkonnektoren</h3>
+
+<p>Ein Datenkonnektor beschreibt die Daten, die Sie zu einem Zielmandanten senden möchten sowie die URL dieses Mandanten.</p>
+
+<p><a name="data-broker-connectors-list"></a><strong>Anzeigen von Datenkonnektoren</strong></p>
+
+<p>Auf der Seite <strong>Datenkonnektor</strong> können Sie bestehende Datenkonnektoren verwalten und neue anlegen. Klicken Sie <strong>Datenkonnektor</strong>, um eine Liste mit allen aktuell definierten Datenkonnektoren mit ihrem jeweiligen Status anzuzeigen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/ee-data-connector.png" alt="Datenkonnektor" /></p>
+
+<p>Für jeden Datenkonnektor wird die folgenden Information bereitgestellt:</p>
+
+<ul>
+<li>der Name des Datenkonnektors</li>
+<li>der Zielmandant</li>
+<li>eine Beschreibung</li>
+<li>der Status</li>
+<li>die Anzahl der Filter, die für den Datenkonnektor gesetzt sind</li>
+</ul>
+
+<p>Verwenden Sie den Regler, um das Weiterleiten von Daten an den Zielmandanten zu aktivieren bzw. deaktivieren. Werden Daten weitergeleitet, steht der Regler auf &ldquo;aktiv&rdquo;. Werden keine Daten weitergeleitet, steht der Regler auf &ldquo;gesperrt&rdquo; oder &ldquo;ausstehend&rdquo;. &ldquo;Gesperrt&rdquo; bedeutet, dass Sie das Weiterleiten deaktiviert haben. &ldquo;Ausstehend&rdquo; bedeutet, dass der Zielmandant das Weiterleiten deaktiviert hat.</p>
+
+<ul>
+<li>Um die Konfiguration für einen Datenkonnektor zu bearbeiten, öffnen Sie das Kontextmenü über das Menüsymbol und wählen Sie <strong>Bearbeiten</strong>. Die Konfiguration wird weiter unten detailliert beschrieben.</li>
+<li>Klicken Sie <strong>Duplizieren</strong> im Kontextmenü um einen weiteren Datenkonnektor mit der gleichen Konfiguration zu erstellen.</li>
+<li>Klicken Sie <strong>Löschen</strong> im Kontextmenü, um die Datenweiterleitung zu beenden und den Datenkonnektor zu löschen.</li>
+</ul>
+
+<p><a name="data-broker-connector-edit"></a><strong>Erstellen und Bearbeiten von Datenkonnektoren</strong></p>
+
+<p>Klicken Sie <strong>Datenkonnektor hinzufügen</strong> in der oberen Menüleiste, um einen neuen Datenkonnektor zu erstellen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/ee-data-connector-add.png" alt="Konnektor bearbeiten" /></p>
+
+<p>Stellen Sie folgende Informationen bereit, um einen Datenkonnektor zu bearbeiten:</p>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align: left">Feld</th>
+
+<th style="text-align: left">Beschreibung</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align: left">Titel</td>
+
+<td style="text-align: left">Name des Datenkonnektors</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Ziel-URL für den Datenkonnektor</td>
+
+<td style="text-align: left">URL des Mandanten, zu dem Daten weitergeleitet werden. Dieser Wert kann nach dem Speichern nicht mehr geändert werden.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Beschreibung</td>
+
+<td style="text-align: left">Beschreibung der Konfiguration. Sowohl der Name als auch die Beschreibung sind auf der Zielseite sichtbar, nachdem das Abonnement angenommen wurde.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Datenfilter</td>
+
+<td style="text-align: left">Ein oder mehrere Filter, die definieren, was zum Ziel kopiert wird. Sie müssen mindestens einen Filter konfigurieren.</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<p>Jeder Datenfilter enthält die folgenden Informationen:</p>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align: left">Feld</th>
+
+<th style="text-align: left">Beschreibung</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align: left">Gruppe oder Gerät</td>
+
+<td style="text-align: left">Die Gruppe oder das Gerät, die/das weitergeleitet wird. Wird hier eine Gruppe ausgewählt, werden alle Untergruppen und Untergeräte ebenfalls weitergeleitet. Standardmäßig werden alle Daten weitergeleitet.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">API</td>
+
+<td style="text-align: left">Der Datentyp, der weitergeleitet wird (Alarme, Ereignisse, Messwerte, Objekte) oder empfangen wird (Kommandos).</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Zu filternde Fragmente</td>
+
+<td style="text-align: left">Fragmente, die in einem Gerät vorhanden sein müssen, damit dieses weitergeleitet wird.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Zu kopierende Fragmente</td>
+
+<td style="text-align: left">Fragmente, die zum Ziel kopiert werden. Wenn hier nichts angegeben wird, werden nur die Standardattribute wie Objekte, Alarme, Ereignisse und Messwerte weitergeleitet (siehe unten). Wählen Sie **Alle Fragmente kopieren**, um das gesamte Objekt weiterzuleiten.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Type-Filter</td>
+
+<td style="text-align: left">Weitergeleitete Daten müssen diesen Wert in ihrem "Type"-Attribut haben.</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<blockquote>
+<p><strong>Info:</strong> Wenn das Feld  <strong>Gruppe oder Gerät</strong> ausgefüllt ist, wird die gesamte nachfolgende Struktur der Stammdaten an den Zielmandanten weitergeleitet, sobald der Konnektor aktiv ist. Wenn das Feld  <strong>Gruppe oder Gerät</strong> leer ist oder &ldquo;Alle&rdquo; enthält, wird die nachfolgende Struktur nicht weitergeleitet. in diesem Fall arbeitet der Filter im &ldquo;Lazy Mode&rdquo;, dass heißt, das Gerät oder Asset wird erst mit dem ersten Ereignis/Messwert/Alarm weitergeleitet.</p>
+</blockquote>
+
+<p>Wenn der Datentyp Kommando in Filtern ausgewählt ist, werden die Kommandos, die im Zielmandanten erstellt wurden, an den Ursprungsmandanten weitergeleitet. Dies trifft jedoch nur auf Kommandos zu, die die folgenden Bedingungen erfüllen:</p>
+
+<ul>
+<li>das Gerät des Kommandos selbst stammt aus weitergeleiteten Daten,</li>
+<li>das Kommando entspricht anderen Filterkriterien.</li>
+</ul>
+
+<p>Aktualisierungen des Kommandostatus vom Ursprungsmandanten werden an den Zielmandanten weitergeleitet.</p>
+
+<p>Die Kopfzeile eines Datenfilters fasst die Konfiguration in einer Zeile zusammen. Die Attribute, die standardmäßig kopiert werden, sind:</p>
+
+<ul>
+<li><strong>Für erzeugte Alarme</strong>: type, text, time, severity, status.</li>
+<li><strong>Für aktualisierte Alarme</strong>: status, text, severity.</li>
+<li><strong>Für erzeugte Ereignisse</strong>: type, text, time.</li>
+<li><strong>Für erzeugte Messwerte</strong>: type, text, time.</li>
+<li><strong>Für erstellte und aktualisierte Geräte</strong>: type, name, c8y&#95;IsBinary, c8y&#95;IsDeviceGroup, c8y&#95;IsDevice, c8y&#95;DeviceGroup, c8y&#95;DeviceSubgroup, c8y&#95;SmartRule, c8y&#95;DynamicGroup, c8y&#95;DeviceQueryString.</li>
+<li><strong>Für aktualisierte Kommandos</strong>: status</li>
+</ul>
+
+<p>Wenn Sie den Datenkonnektor konfiguriert haben, klicken Sie <strong>Speichern</strong>, um die Konfiguration zu speichern.</p>
+
+<p>Nach dem Speichern wird ein Sicherheitscode unter der Konfiguration angezeigt. Dieser Sicherheitscode verhindert unbeabsichtigtes Weiterleiten von Daten. Sie müssen diesen Sicherheitscode getrennt einem Benutzer mit Administrationsrechten für den Zielmandanten mitteilen. Über das Symbol neben dem Sicherheitscode können Sie diesen in Ihr Clipboard kopieren.</p>
+
+<p><img src="/guides/images/users-guide/securitycode.png" alt="Sicherheitscode" /></p>
+
+<h3 id="a-name-data-broker-subscriptions-a-datenabonnements"><a name="data-broker-subscriptions"></a>Datenabonnements</h3>
+
+<p>Auf der Seite <strong>Datenabonnements</strong> können Sie bestehende Datenabonnements verwalten und neue anlegen.</p>
+
+<p>Klicken Sie <strong>Datenabonnements</strong>, um eine Liste mit allen aktuell zu Ihrem Mandanten weitergeleiteten Daten anzuzeigen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/ee-data-subscription.png" alt="Datenabonnements" /></p>
+
+<p>Für jedes Abonnement wird der Name, der Zielmandant und der Status (aktiviert oder deaktiviert) auf einer Karte bereitgestellt.</p>
+
+<p>Verwenden Sie den Regler, um zeitweilig das Weiterleiten von Daten in Ihren Mandanten zu beenden.</p>
+
+<p>Um das Weiterleiten von Daten ganz zu beenden und den Datenkonnektor zu entfernen, klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü <strong>Löschen</strong>.</p>
+
+<p><strong>Wie Sie die Datenweiterleitung auf der Empfängerseite einrichten können</strong></p>
+
+<ol>
+<li>Klicken Sie <strong>Datenabonnement hinzufügen</strong> in der oberen Menüleiste, um Daten zu empfangen.</li>
+<li>Geben Sie in der neuen Karte den Sicherheitscode ein, den Sie vom Sender der Daten erhalten haben.</li>
+<li>Wenn die Verbindung hergestellt ist, klicken Sie <strong>Annehmen</strong>, um das Weiterleiten in Ihren Mandanten zu starten. Das Abonnement ist nun aktiv.</li>
+<li>Verwenden Sie den Regler in der Karte, um zeitweilig das Weiterleiten von Daten in Ihren Mandanten zu beenden.</li>
+</ol>
+
+<p>Navigieren Sie nun zur Device Management- oder Cockpit-Anwendung. Dort gibt es eine neue &ldquo;virtuelle Gruppe&rdquo; mit einem speziellen Symbol (siehe Abbildung unten), die die weitergeleiteten Geräte anzeigt. Diese Gruppe hat denselben Namen wie das Abonnement. Geräte werden auf der Empfängerseite verzögert erstellt, sobald sie, nach Einrichten eines aktiven Abonnements, das erste mal Daten senden.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/ee-data-broker-group.png" alt="Data Broker-Gruppe in Cockpit-Anwendung" /></p>
+
+<h3 id="a-name-data-broker-troubleshooting-a-fehlerbehebung"><a name="data-broker-troubleshooting"></a> Fehlerbehebung</h3>
+
+<p><strong>Fehlermeldung</strong></p>
+
+<pre><code>Data broker processing is currently overloaded and may stop processing your events. Please contact support.
+</code></pre>
+
+<p><strong>Beschreibung</strong></p>
+
+<p>Die Data Broker-Queue für den entsprechenden Mandanten ist voll. Dies kann beispielsweise geschehen, wenn mehr Ereignisse erstellt werden als aktuell bearbeitet werden können.</p>
+
+<p>In diesem Fall wird ein Alarm erzeugt. Um keine neu eingehenden Ereignisse zu verlieren, werden die ältesten Ereignisse gelöscht. Um Spam zu vermeiden, werden Alarme und Logs nur einmal pro Minute ausgelöst.</p>
+
+  </article>
+  
+  <article id="customization" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#customization">
+        <span class="fa fa-link"></span>
+      </button>
+      Anpassen der Plattform</h2>
+    
+
+<p>Unter <strong>Enterprise Edition</strong> in der Anwendung &ldquo;Administration&rdquo; können Einstellungen vorgenommen werden, die Benutzern der Enterprise Edition von Cumulocity über den Umfang der Standardedition hinaus zu Verfügung stehen.</p>
+
+<p><strong>Info</strong>: Informationen zu den Einstellungen in der Registerkarte  <strong>Konfiguration</strong> finden Sie in <a href="/guides/benutzerhandbuch/administration/#config-platform">Ändern von Einstellungen &gt; Konfigurationseinstellungen</a> unter Administration.</p>
+
+<h3 id="branding">Branding</h3>
+
+<p>In der Registerkarte <strong>Branding</strong>, können Sie das Erscheinungsbild der Benutzeroberfläche für Ihre Mandanten nach Ihren Vorlieben gestalten.</p>
+
+<p>Die Branding-Funktion ermöglicht es, die Logos und Farben in den Anwendungen zu bearbeiten. Nach dem Speichern der Einstellungen werden alle Untermandanten automatisch aktualisiert.</p>
+
+<p><img src="/guides/images/users-guide/Administration/admin-branding.png" alt="Registerkarte Branding" /></p>
+
+<p><strong>Allgemein</strong></p>
+
+<p>Unter <strong>Allgemein</strong> können Sie den Titel bearbeiten, der im Browser-Tab verwendet wird.</p>
+
+<p><strong>Hauptlogo</strong></p>
+
+<p>Unter <strong>Hauptlogo</strong> können Sie die folgenden Elemente definieren:</p>
+
+<ul>
+<li>Das “Favicon”, das in der Adressleiste des Browsers angezeigt wird. Klicken Sie <strong>Datei wählen</strong>, um eine Datei auf Ihrem Computer auszuwählen. Das unterstütze Format für das Favicon ist “ico”.</li>
+<li>Ihr Markenlogo, dass während des Ladens der Anwendung angezeigt wird. Klicken Sie <strong>Datei wählen</strong>, um eine Datei auf Ihrem Computer auszuwählen. Die unterstützen Formate sind “png” und “svg”.</li>
+<li>Die Höhe des Markenlogos.</li>
+</ul>
+
+<p><strong>Navigatorlogo</strong></p>
+
+<p>Unter <strong>Navigatorlogo</strong> können Sie das Logo, das oben im Navigator angezeigt wird, bereitstellen und die Höhe für das Navigatorlogo einstellen.</p>
+
+<p><strong>Typ</strong></p>
+
+<p>Im Bereich <strong>Typ</strong> definieren Sie die Schriftarten für Ihre Branding-Version.</p>
+
+<p><img src="/guides/images/users-guide/Administration/admin-branding-type.png" alt="Branding-Typ" /></p>
+
+<p>Sie können die Basisschriftart und die Schriftart für Überschriften wählen sowie eine Option für die im Navigator verwendete Schriftart (entweder identisch mit Basis- oder Überschriftenschriftart). Sie können außerdem einen Link auf externe Schriftarten setzen, die Sie verwenden möchten.</p>
+
+<p><strong>Farben</strong></p>
+
+<p>Im Bereich <strong>Farben</strong> definieren Sie die Farben für Ihre Branding-Version.</p>
+
+<p><img src="/guides/images/users-guide/Administration/admin-branding-color.png" alt="Branding-Farbe" /></p>
+
+<p>Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):</p>
+
+<ul>
+<li>Haupt-Markenfarbe.</li>
+<li>Neben-Markenfarbe. Der Standardwert ist “#07b91A”.</li>
+<li>Textfarbe. Der Standardwert ist “#444”.</li>
+<li>Link-Farbe. Der Standardwert ist die Haupt-Markenfarbe.</li>
+<li>Haupt-Hintergrundfarbe. Der Standardwert für diese Element ist “#FAFAFA”.</li>
+</ul>
+
+<p><strong>Obere Leiste</strong></p>
+
+<p>Unter <strong>Obere Leiste</strong> definieren Sie die Parameter für die obere Leiste.</p>
+
+<p><img src="/guides/images/users-guide/Administration/admin-branding-topbar.png" alt="Branding Ober Leiste" /></p>
+
+<p>Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):</p>
+
+<ul>
+<li>Hintergrundfarbe. Der Standardwert ist “#FFFFF”.</li>
+<li>Textfarbe. Der Standardwert ist “49595B”.</li>
+<li>Hover-Textfarbe für Schaltflächen. Der Standardwert ist die Haupt-Markenfarbe.</li>
+</ul>
+
+<p><strong>Navigator</strong></p>
+
+<p>Unter <strong>Navigator</strong> definieren Sie die Parameter für die obere Leiste.</p>
+
+<p><img src="/guides/images/users-guide/Administration/admin_BrandingTopbar.png" alt="Branding - obere Leiste" /></p>
+
+<p>Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):</p>
+
+<ul>
+<li>Hintergrundfarbe. Der Standardwert ist “#2c3637”.</li>
+<li>Hintergrundfarbe der Logoumrandung. Der Standardwert ist “Transparent”.</li>
+<li>Titelfarbe. Der Standardwert ist “#FFFFF”.</li>
+<li>Farbe für Texte und Schaltflächen. Der Standardwert ist “#FAFAFA”.</li>
+<li>Farbe für Trennlinien. Der Standardwert ist “#FAFAFA”.</li>
+<li>Textfarbe des aktuellen Elements im Navigator. Der Standardwert ist “#FAFAFA”.</li>
+<li>Hintergrundfarbe des aktuellen Elements im Navigator mit der Haupt-Markenfarbe als Standard.</li>
+</ul>
+
+<p><strong>Sonstiges</strong></p>
+
+<p>Im Bereich S<strong>onstiges</strong> können Sie den Rand-Radius für Schaltflächen durch Angabe eines Werts in Pixel (px) festlegen.</p>
+
+<p>Klicken Sie <strong>Speichern</strong>, um Ihre Eingaben zu speichern.</p>
+
+<p>Klicken Sie <strong>Vorschau</strong> in der oberen Menüleiste, um eine Vorschau des neuen Brandings anzuzeigen.</p>
+
+<p>Klicken Sie <strong>Erstellen</strong> in der oberen Menüleiste, um die neuen Einstellungen anzuwenden.</p>
+
+<p>Die folgende Abbildung zeigt ein Beispiel mit</p>
+
+<ul>
+<li>der Hauptmarkenfarbe in lila,</li>
+<li>der sekundären Markenfarbe in weiß,</li>
+<li>der Haupthintergrundfarbe in blau,</li>
+<li>der Hintergrundfarbe der oberen Leiste in grün,</li>
+<li>der Hintergrundfarbe des Navigators in pink.</li>
+</ul>
+
+<p><img src="/guides/images/users-guide/Administration/admin_BrandingColored.png" alt="Branding-Beispiel" /></p>
+
+<h3 id="domain-name">Domain-Name</h3>
+
+<p>In der Registerkarte <strong>Domain-Name</strong> können Sie Ihren eigenen Domain-Namen festlegen.</p>
+
+<blockquote>
+<p><strong>Info</strong>: Sie benötigen eine gültige Lizenz, um Ihre Domain zu aktivieren. Bitte kontaktieren Sie unser Sales-Team unter sales@cumulocity.com, um eine Lizenz für Ihre Domain zu installieren.</p>
+</blockquote>
+
+<p><img src="/guides/images/users-guide/Administration/admin_DomainName.png" alt="Domain-Name" /></p>
+
+<p>Zunächst müssen Sie eine entsprechendes Zertifikat hochladen, in dem Sie <strong>Zertifikat hochladen</strong> klicken. Stellen Sie sicher, dass</p>
+
+<ul>
+<li>das Zertifikat ein gültiges PKCS#12-Format hat,</li>
+<li>das Zertifikat nicht passwortgeschützt ist,</li>
+<li>Sie ein Wildcard-Zertifikat verwenden, um die Erstellung von Untermandanten zu ermöglichen.</li>
+</ul>
+
+<p>Bevor Sie den eigenen Domain-Namen aktivieren, stellen Sie sicher, dass</p>
+
+<ul>
+<li>Sie ein gültiges SSL-Zertifikat für die eigene Domain hochgeladen haben,</li>
+<li>der Domain-Name nicht von einem anderen Mandanten verwendet wird,</li>
+<li>das Zertifikat aktuell gültig ist (validFrom in der Vergangenheit und validTo in der Zukunft),</li>
+<li>Sie einen Wildcard-CNAME-Eintrag (beginnend mit <code>&quot;*.&quot;</code>) in folgendem Format zu Ihrem DNS-Server hinzugefügt haben:<br>
+Host-Name = <code>*.&lt;ihr domain name&gt;</code>, z. B. <code>*.iot.mycompany.com</code> <br>
+Typ = CNAME <br>
+Ziel = Die Ziel-URL der Plattform, auf die Sie zeigen möchten, z. B. <code>manage.cumulocity.com</code><br>
+Vergewissern Sie sich, dass Sie alle A-Einträge für die Wildcard-Domain entfernt haben. Falls Ihr DNS-Service keine CNAME-Einträge für Wildcard-Zertifikate bereitstellt, kontaktieren Sie bitte unser Support-Team.</li>
+</ul>
+
+<p>Nach erfolgreicher Aktivierung werden Sie zu Ihrem Enterprise-Mandanten unter der neuen Domain umgeleitet. Sie erhalten eine Email mit Informationen über die Aktivierung.</p>
+
+<blockquote>
+<p><strong>Info</strong>: Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht mehr mit der Cumulocity-Domain zugreifen. Verwenden Sie anstatt dessen Ihren eigenen Domain-Namen.</p>
+</blockquote>
+
+<p><strong>Aktualisieren des Zertifikats</strong></p>
+
+<p>Wenn Ihr Zertifikat abläuft, müssen Sie es durch ein neues Zertifikat mit einer längeren Gültigkeitsdauer aktualisieren. Wenn Sie das Zertifikat aktualisieren, stellen Sie sicher, dass</p>
+
+<ul>
+<li>das Zertifikat ein gültiges PKCS#12-Format hat,</li>
+<li>das Zertifikat nicht passwortgeschützt ist,</li>
+<li>das Zertifikat aktuell gültig ist (validFrom in der Vergangenheit und validTo in der Zukunft),</li>
+<li>das Zertifikat exakt denselben Domain-Namen wie das aktuell aktive Zertifikat hat.</li>
+<li>Sie einen CNAME-Eintrag zu Ihrem DNS-Server hinzugefügt haben. Details zum CNAME-Eintrag finden Sie weiter oben.</li>
+</ul>
+
+<p><strong>Deaktivieren eines Zertifikats</strong></p>
+
+<p>Wenn Sie zu Ihrer alten Domain auf Cumulocity zurückkehren möchten, können Sie Ihr Zertifikat ganz einfach wieder deaktivieren.</p>
+
+<blockquote>
+<p><strong>Wichtig</strong>: Verwenden Sie dies Funktion mit Vorsicht. Ihre Kunden werden nicht mehr in der Lage sein, auf Ihre Untermandanten zuzugreifen.</p>
+</blockquote>
+
+<h4 id="troubleshooting">Troubleshooting</h4>
+
+<p>Für den Fall, dass Sie Cumulocity mit Ihrer eigenen Domain nicht erreichen können, empfehlen wir, zunächst die folgenden Überprüfungen durchzuführen, um Ihre DNS-Einstellungen zu verifizieren.</p>
+
+<p><strong>Prüfen, ob der DNS-Entrag korrekt ist</strong></p>
+
+<p>Führen Sie folgendes Kommando aus:</p>
+
+<pre><code>host management.&lt;ihr domain name&gt;
+</code></pre>
+
+<p>Es sollte das folgende Ergebnis angezeigt werden:</p>
+
+<pre><code>management.&lt;ihr domain name&gt; ist ein Alias für &lt;instanz domain name&gt;
+&lt;instanz domain name&gt; hat die Adresse &lt;IP-Adresse&gt;
+</code></pre>
+
+<p><strong>Prüfen, ob die API antwortet</strong></p>
+
+<p>Führen Sie folgendes Kommando aus:</p>
+
+<pre><code>curl -v -u '&lt;Mandanten-ID&gt;/&lt;ihr benutzer&gt;:&lt;ihr password&gt;' --head http://management.&lt;ihr domain name&gt;/inventory/managedObjects
+</code></pre>
+
+<p>Es sollte das folgende Ergebnis angezeigt werden:</p>
+
+<pre><code>...
+HTTP/1.1 200 OK
+... 
+</code></pre>
+
+<blockquote>
+<p><strong>Info</strong>: Berücksichtigen Sie, dass es nach dem Ändern des DNS-Eintrags bis zu 24 Stunden dauern kann, bis der neue Eintrag propagiert wurde.</p>
+</blockquote>
+
+  </article>
+  
+  <article id="storage-quota" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#storage-quota">
+        <span class="fa fa-link"></span>
+      </button>
+      Speicherbegrenzung</h2>
+    
+
+<p><a name="storageQuota"></a></p>
+
+<p>Die Speicherbegrenzung gilt für einen Mandanten, wenn der Plattformadministrator ein Speicherkontingent pro Gerät eingerichtet hat. Der insgesamt verfügbare Speicher für einen Benutzer wird mittels der Formel <code>Speicherkontingent pro Gerät x Anzahl der Geräte</code> berechnet. Jede Nacht wird überprüft, ob das Kontingent überschritten wurde.</p>
+
+<p>Ist das Kontingent überschritten, wird eine E-Mail an alle Mandantenadministratoren gesendet mit der Information, dass in der folgenden Nacht Daten gelöscht werden. Ist das Kontingent nach 24 Stunden weiterhin überschritten, werden alle Datenhaltungsbegrenzungen um einen festen Prozentwert herabgesetzt. Daraus resultiert, dass das Kontingent pro Gerät entsprechend verringert wird.</p>
+
+<p><strong>Beispiel:</strong></p>
+
+<p>Nehmen wir an, ein Mandant hat ein Speicherkontingent von 10GB. Datenhaltungsregeln gelten 80 Tage für Messwerte und 90 Tage für alle anderen Daten.</p>
+
+<ul>
+<li><p>Tag 1: Die nächtliche Überprüfung ergibt eine Gesamtspeichernutzung von 13MB. Eine E-Mail wird an alle Mandantenadminstratoren gesendet.</p></li>
+
+<li><p>Tag 2: Die Gesamtspeichernutzung beträgt weiterhin 13 MB. Das System ermittelt, das eine Reduzierung der Datenhaltung um 15% ausreichend ist, um unterhalb des Speicherkontingents zu bleiben. Daher werden alle Messwerte, die älter sind als 68 Tage (80 Tage - 15%) sowie alle anderen Daten, die älter sind als 77 Tage (90 Tage - 15%) gelöscht.</p></li>
+</ul>
+
+<p>Die Gesamtspeichernutzung beträgt nun 9,8GB.</p>
+
+<h3 id="a-name-warningemail-a-verwalten-der-warn-e-mail-bei-überschreiten-des-speicherkontingents"><a name="warningEmail"></a>Verwalten der Warn-E-Mail bei Überschreiten des Speicherkontingents</h3>
+
+<p>Die Funktion ist nur sichtbar, wenn ein Speicherkontingent für den Mandanten gesetzt wurde.</p>
+
+<p>Mandantenadministratoren können eine Benutzergruppe festlegen, an die täglich eine E-Mail versendet wird, wenn der genutzte Speicher einen ebenfalls zu konfigurierenden Prozentsatz des Speicherkontingents überschreitet. Standardmäßig wird eine E-Mail an die Gruppe &ldquo;Admin&rdquo; versendet, wenn die Speichernutzung 80% des Gesamtkontingents erreicht.</p>
+
+<p>Die Warn-E-Mail kann auch deaktiviert werden.</p>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

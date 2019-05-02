@@ -17,7 +17,7 @@ For details on permissions, see [Managing permissions](/guides/users-guide/admin
 
 Cumulocity creates a new realm for each tenant to store the users of that tenant. Realms provide an own namespace for usernames, allowing users to keep the names that they are familiar with from their own enterprise IT or other IT systems. There is no conflict between user names: A user "smith" of one particular tenant is different from a user "smith" of another tenant. This username is valid for all Cumulocity applications that a tenant subscribes to.
 
-Each new realm is automatically populated with an initial administrator user who can create further users and user groups, and who can assign permissions to these users and user groups. This enables an enterprise to manage users and their permissions on their own using the Administration application.
+Each new realm is automatically populated with an initial administrator user who can create further users and user groups (i.e. global roles), and who can assign permissions to these users and global roles. This enables an enterprise to manage users and their permissions on their own using the Administration application.
 
 ![User management](/guides/images/concepts-guide/user-management.png)
 

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reference Guide on Cumulocity IoT Guides</title>
+    <link>https://cumulocity.com/guides/reference/</link>
+    <description>Recent content in Reference Guide on Cumulocity IoT Guides</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://cumulocity.com/guides/reference/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>REST implementation</title>
+      <link>https://cumulocity.com/guides/reference/rest-implementation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/rest-implementation/</guid>
+      <description>This section describes the aspects common to all REST-based interfaces of Cumulocity. The interfaces are based on the Hypertext Transfer Protocol 1.1 using HTTPS.</description>
+    </item>
+    
+    <item>
+      <title>SmartREST</title>
+      <link>https://cumulocity.com/guides/reference/smartrest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/smartrest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Login with OAuth2</title>
+      <link>https://cumulocity.com/guides/reference/login/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/login/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Inventory</title>
+      <link>https://cumulocity.com/guides/reference/inventory/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/inventory/</guid>
+      <description>The inventory has the possibility to store binaries also the API below is not published in &amp;ldquo;/inventory&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Events</title>
+      <link>https://cumulocity.com/guides/reference/events/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/events/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements</title>
+      <link>https://cumulocity.com/guides/reference/measurements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/measurements/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Device control</title>
+      <link>https://cumulocity.com/guides/reference/device-control/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/device-control/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Alarms</title>
+      <link>https://cumulocity.com/guides/reference/alarms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/alarms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Device credentials</title>
+      <link>https://cumulocity.com/guides/reference/device-credentials/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/device-credentials/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Identity</title>
+      <link>https://cumulocity.com/guides/reference/identity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/identity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Users</title>
+      <link>https://cumulocity.com/guides/reference/users/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/users/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Auditing</title>
+      <link>https://cumulocity.com/guides/reference/auditing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/auditing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Device management library</title>
+      <link>https://cumulocity.com/guides/reference/device-management/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/device-management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sensor library</title>
+      <link>https://cumulocity.com/guides/reference/sensor-library/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/sensor-library/</guid>
+      <description>The sensor library defines a canonical set of predefined sensor and control capabilities. A sensor capability describes that part of a device that can measure some quantity, and a control capability describes that part of a device that can be modified, changed or in some way remotely controlled.</description>
+    </item>
+    
+    <item>
+      <title>Real-time statements</title>
+      <link>https://cumulocity.com/guides/reference/real-time-statements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/real-time-statements/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Real-time notifications</title>
+      <link>https://cumulocity.com/guides/reference/real-time-notifications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/real-time-notifications/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tenants</title>
+      <link>https://cumulocity.com/guides/reference/tenants/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/tenants/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Applications</title>
+      <link>https://cumulocity.com/guides/reference/applications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/applications/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Binaries</title>
+      <link>https://cumulocity.com/guides/reference/binaries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/binaries/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Retention rules</title>
+      <link>https://cumulocity.com/guides/reference/retention-rules/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/retention-rules/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microservice manifest</title>
+      <link>https://cumulocity.com/guides/reference/microservice-manifest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/microservice-manifest/</guid>
+      <description>The manifest provides information about a microservice deployment. The definition is typically provided as cumulocity.json file in the binary uploaded to the Cumulocity platform.
+Manifest    Name Type Description Required     apiVersion String Document type format discriminator, for future changes in format Yes   name String Application name Yes   contextPath String Default:</description>
+    </item>
+    
+    <item>
+      <title>Microservice package and deploy</title>
+      <link>https://cumulocity.com/guides/reference/microservice-package/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/microservice-package/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microservice runtime</title>
+      <link>https://cumulocity.com/guides/reference/microservice-runtime/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/reference/microservice-runtime/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

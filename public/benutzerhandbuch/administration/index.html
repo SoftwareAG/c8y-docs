@@ -1,0 +1,2744 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Administration - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Handbuch</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav0"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/benutzerhandbuch/overview/">Erste Schritte</a>
+     
+      
+      
+      <div id="page-nav0"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/overview/#accessing-cumulocity-platform">Aufrufen und Anmelden an der Cumulocity-Plattform</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/overview/#cumulocity-applications">Cumulocity-Anwendungen</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/overview/#gui-features">Eigenschaften und Funktionen der Benutzeroberfläche</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/overview/#user-settings">Ändern von Benutzereinstellungen</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/benutzerhandbuch/device-management/">Device Management</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#overview">Übersicht</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#connecting-devices">Verbinden von Geräten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#viewing-devices">Anzeigen von Geräten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#grouping-devices">Gruppieren von Geräten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#device-details">Gerätedetails</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#monitoring-and-controlling-devices">Überwachen und Steuern von Geräten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#managing-device-types">Verwalten von Gerätetypen</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#managing-device-data">Verwalten von Gerätedaten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#configuration-repository">Konfigurations-Repository</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#simulator">Simulatoren</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#smartrest-templates">Verwenden von SmartREST-Templates</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/benutzerhandbuch/administration/">Administration</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#overview">Übersicht</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#home-screen">Startseite</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#managing-users">Verwalten von Benutzern</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#managing-permissions">Verwalten von Berechtigungen</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#audit-logs">Anzeigen von Audit-Logs</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#managing-applications">Verwalten von Anwendungen</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#business-rules">Anwenden von Geschäftsregeln</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#data-retention">Verwalten der Datenhaltung</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#tfa">Zwei-Faktor-Authentifizierung</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#changing-settings">Ändern von Einstellungen</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/">Cockpit</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#overview">Übersicht</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#managing-assets">Verwalten von Assets</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#data-explorer">Visualisieren von Daten mit dem Daten-Explorer</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#dashboards">Verwenden von Dashboards</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#widgets">Widgets-Sammlung</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#reports">Verwalten von Berichten und Exportdaten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#data-point-library">Datenpunktbibliothek</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#smart-rules">Smart Rules</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#smart-rules-collection">Smart Rules-Sammlung</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/">Enterprise Edition</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/#managing-tenants">Verwalten von Mandanten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/#user-hierarchies">Verwalten von Benutzerhierarchien</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/#users-in-other-tenants">Support für Benutzer in anderen Mandanten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/#data-broker">Data Broker</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/#customization">Anpassen der Plattform</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/#storage-quota">Speicherbegrenzung</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/benutzerhandbuch/optional-services/">Optionale Services</a>
+     
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Administration</h1>
+    </header>
+    
+      <div class="lead">
+        <p>Die &ldquo;Administration&rdquo;-Anwendung ermöglicht es Administratoren, ihre Benutzer, Rollen, Mandanten, Anwendungen und Regeln zu verwalten sowie eine Reihe von Einstellungen für ihr Konto zu konfigurieren.</p>
+
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="overview" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#overview">
+        <span class="fa fa-link"></span>
+      </button>
+      Übersicht</h2>
+    <p><a name="overview"></a></p>
+
+<p>Die folgenden Abschnitte beschreiben detailliert alle Funktionalitäten der Anwendung &ldquo;Administration&rdquo;. Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokuments.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Abschnitt</th>
+<th align="left">Inhalt</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><a href="#home-screen">Startseite</a></td>
+<td align="left">Enthält Informationen über <a href="#home-screen">Kapazitätsnutzung und abonnierte Anwendungen</a>.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#managing-users">Verwalten von Benutzern</a></td>
+<td align="left">Wie <a href="#creating-users">Benutzer</a> erstellt, bearbeitet, deaktiviert und gelöscht werden.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#managing-permissions">Verwalten von Berechtigungen</a></td>
+<td align="left">Wie <a href="#global">globale Rollen</a> und <a href="#inventory">Stammdatenrollen</a> erstellt und bearbeitet werden, wie diese Benutzern zugewiesen werden und wie man <a href="#app-access">Zugriff auf Anwendungen</a> erteilt.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#audit-logs">Anzeigen von Audit-Logs</a></td>
+<td align="left">Enthält Informationen zu <a href="#audit-logs">von den Benutzern ausgeführten Kommandos</a>.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#managing-applications">Verwalten eigener Anwendungen</a></td>
+<td align="left">Wie <a href="#managing-applications">eigene Anwendungen</a> in Ihrem Cumulocity-Konto verwaltet und konfiguriert werden.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#business-rules">Anwenden von Geschäftsregeln</a></td>
+<td align="left">Wie <a href="#event-processing">Echtzeitregeln</a> aufgesetzt und Alarme durch <a href="#reprio-alarms">Alarmregeln</a> repriorisiert werden.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#changing-settings">Änderung von Einstellungen</a></td>
+<td align="left">Wie Einstellungen, wie etwa <a href="#default-app">Anwendungseinstellungen</a> oder <a href="#changing-password-settings">Passwort- und TFA-Einstellungen</a>, geändert werden und wie die <a href="#properties">Attributsbibliothek</a> verwaltet wird.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#data-retention">Verwalten der Datenhaltung</a></td>
+<td align="left">Wie <a href="#retention-rules">Datenhaltungsregeln</a> für Ihre Daten konfiguriert und wie Ihre <a href="#files">gespeicherten Daten</a> in der Dateiablage verwaltet werden.</td>
+</tr>
+</tbody>
+</table>
+
+  </article>
+  
+  <article id="home-screen" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#home-screen">
+        <span class="fa fa-link"></span>
+      </button>
+      Startseite</h2>
+    <p><a name="home"></a></p>
+
+<p>Die Startseite der Anwendung &ldquo;Administration&rdquo; enthält</p>
+
+<ul>
+<li>eine Begrüßung,</li>
+<li>Quick Links zu wesentlichen Funktionen der Anwendung,</li>
+<li>Ihre Kapazitätsnutzung im aktuellen und vergangenen Monat,</li>
+<li>die von Ihnen abonnierten optionalen Anwendungen.</li>
+</ul>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-home-screen.png" alt="Startseite" style="max-width: 100%"></p>
+
+<p>Die Kapazitätsbereiche zeigen:</p>
+
+<ul>
+<li>API-Anfragen: Die Gesamtanzahl der API-Anfragen. Umfasst alle aufgerufenen Funktionen, unabhängig davon, ob die Funktion von einem Gerät (z. B. Senden von Messdaten) oder von einer Anwendung (z.B. Abrufen der Geräteliste) aufgerufen wurde.</li>
+<li>API-Anfragen: Umfasst nur die Aufrufe von Geräten, wie etwa das Senden von Messdaten.</li>
+<li>Speicher: Insgesamt gespeicherte Daten in Ihrem Konto. Die Datenmenge kann durch <a href="#retention">Datenhaltungsregeln</a> und durch die Menge und Größe <a href="#files">gespeicherter Daten</a> verändert werden.</li>
+<li>Speicherbegrenzung: Wenn eine Speicherbegrenzung pro Gerät definiert wurde, ist der Benutzer auf eine <a href="/guides#benutzerhandbuch/enterprise-edition#storage-quota">maximale Datennutzung</a> beschränkt.</li>
+<li>Hauptgeräte: Die Anzahl der Hauptgeräte, die mit Ihrem Konto verbunden sind, ohne Kindgeräte.</li>
+<li>Geräte: Die Gesamtanzahl der mit Ihrem Konto verbundenen Geräte einschließlich Kindgeräte. Dies ist die Summe der Geräte, die unter <a href="/guides/users-guide/device-management#viewing-devices">Alle Geräte</a> in der Device Management-Anwendung aufgelistet sind, sowie deren direkte und indirekte Kindgeräte.</li>
+<li>Benutzer: Die Anzahl aller Geräte in diesem Konto, aktiv sowie inaktiv.</li>
+</ul>
+
+  </article>
+  
+  <article id="managing-users" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#managing-users">
+        <span class="fa fa-link"></span>
+      </button>
+      Verwalten von Benutzern</h2>
+    
+
+<p>Die Funktion der Benutzerverwaltung ermöglicht es Ihnen, innerhalb Ihres Mandanten Benutzer zu verwalten. Sie bietet folgende Möglichkeiten:</p>
+
+<ul>
+<li>Erstellen von Benutzern</li>
+<li>Vergeben von Benutzernamen und Passwörtern</li>
+<li>Speichern von Benutzerdetails</li>
+<li>Auswählen von Anmeldeoptionen</li>
+<li>Aktivieren einer zusätzlicher Login-Sicherheitsebene durch Zwei-Faktor-Authentifizierung (TFA)</li>
+</ul>
+
+<blockquote>
+<p><strong>Info:</strong> Für diese Funktionen muss der Benutzer eine Rolle mit den Benutzerverwaltungsrechten &ldquo;ADMIN&rdquo; oder &ldquo;CREATE&rdquo; haben.</p>
+</blockquote>
+
+<h3 id="anzeigen-von-benutzern">Anzeigen von Benutzern</h3>
+
+<p>Klicken Sie <strong>Benutzer</strong> im Menü <strong>Konto</strong>, um eine Liste aller Benutzer in Ihrem Mandanten anzuzeigen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-user-list.png" alt="Benutzerliste" style="max-width: 100%"></p>
+
+<p>Es wird eine Benutzerliste angezeigt, die für jeden Benutzer die folgenden Informationen bereitstellt:</p>
+
+<ul>
+<li>Den Benutzernamen, der für den Zugang zum Mandanten verwendet wird</li>
+<li>Name und E-Mail-Adresse des Benutzers, falls angegeben</li>
+<li>Die globalen Rollen, die für den Benutzer vergeben wurden</li>
+<li>Die <a href="/guides/benutzerhandbuch/overview#login">Stärke</a> des Passworts, das für den Benutzer gesetzt ist</li>
+</ul>
+
+<p>Zum Filtern der Liste können Sie das Suchfeld links in der oberen Menüleiste verwenden. Weitere Informationen zur Suchfunktionalität finden Sie unter <a href="/guides/benutzerhandbuch/overview#searching">Suchen</a> im Abschnitt <em>Erste Schritte</em>.</p>
+
+<p>Darüber hinaus können Sie nach globalen Rollen filtern. Wählen Sie die gewünschten Rollen aus der Auswahlliste, und klicken Sie <strong>Anwenden</strong>, um die angezeigten Benutzer auf solche mit den ausgewählten Rollen zu beschränken.</p>
+
+<p>Standardmäßig zeigt die Seite <strong>Benutzer</strong> nur die Hauptbenutzer. Klicken Sie <strong>Alle ausklappen</strong> rechts in der oberen Leiste, um alle Benutzer in Ihrem Konto auf einmal anzuzeigen. Dadurch werden alle Hauptbenutzereinträge ausgeklappt, so dass auch die Unterbenutzer angezeigt werden. Klicken Sie <strong>Alle einklappen</strong>, um wieder nur die Hauptbenutzer anzuzeigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter <a href="/guides/benutzerhandbuch/enterprise-edition#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</p>
+
+<h3 id="a-name-creating-users-a-hinzufügen-von-benutzern"><a name="creating-users"></a>Hinzufügen von Benutzern</h3>
+
+<p>Um einen neuen Benutzer zu Ihrem Mandanten hinzuzufügen, klicken Sie <strong>Benutzer hinzufügen</strong> rechts oben in der Menüleiste.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-add-user.png" alt="Benutzer hinzufügen" style="max-width: 100%"></p>
+
+<p>Geben Sie links im Fenster <strong>Neuer Benutzer</strong> folgende Informationen ein, um den Benutzer zu identifizieren:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Benutzername</td>
+<td align="left">Benutzername, um den Benutzer am System zu identifizieren. Beachten Sie, dass dieser Name nicht mehr geändert werden kann, wenn er einmal gespeichert wurde. Diese Eingabe ist obligatorisch.</td>
+</tr>
+
+<tr>
+<td align="left">Login alias</td>
+<td align="left">Zusätzlich zum Benutzernamen kann optional ein Login-Alias vergeben werden, der für die Anmeldung verwendet werden kann. Anders als der Benutzername kann der Alias bei Bedarf geändert werden.</td>
+</tr>
+
+<tr>
+<td align="left">Aktiv</td>
+<td align="left">Hier können Sie das Benutzerkonto aktivieren/ deaktivieren. Wenn das Benutzerkonto deaktiviert ist, kann der Benutzer sich nicht anmelden.</td>
+</tr>
+
+<tr>
+<td align="left">E-Mail</td>
+<td align="left">Eine gültige E-Mail-Adresse. Diese ist erforderlich, um dem Benutzer zu ermöglichen, sein Passwort zurückzusetzen. Diese Eingabe ist obligatorisch.</td>
+</tr>
+
+<tr>
+<td align="left">Vorname</td>
+<td align="left">Vorname des Benutzers. Wenn der Benutzer angemeldet ist, erscheint dieser Name rechts in der oberen Leiste auf der Schaltfläche <strong>Benutzer</strong>.</td>
+</tr>
+
+<tr>
+<td align="left">Nachname</td>
+<td align="left">Nachname des Benutzers</td>
+</tr>
+
+<tr>
+<td align="left">Telefon</td>
+<td align="left">Eine gültige Telefonnummer. Die Telefonnummer ist erforderlich, wenn für den Benutzer die Verwendung von Zwei-Faktor-Authentifizierung konfiguriert ist.</td>
+</tr>
+
+<tr>
+<td align="left">Eigentümer</td>
+<td align="left">Ein anderer Benutzer, der diesen Benutzer &ldquo;besitzt&rdquo; (verwaltet). Wählen Sie einen Benutzer aus der Auswahlliste und klicken Sie <strong>Fertig</strong> zum Bestätigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter <a href="/guides/benutzerhandbuch/enterprise-edition#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Wählen Sie die Anmeldeoptionen für den Benutzer aus.</p>
+
+<ul>
+<li><p>Wenn Sie <strong>Benutzer muss sein Passwort beim nächsten Anmelden zurücksetzen</strong> auswählen, müssen Sie ein Passwort angeben, dass der Benutzer beim nächsten Anmelden zurücksetzen muss.<br />
+Geben Sie ein Passwort ein und bestätigen Sie es. Während der Passworteingabe wird die Stärke des Passworts angezeigt. Weitere Informationen zur Passwortstärke finden Sie unter <a href="/guides/benutzerhandbuch/overview/#login">Anmelden an der Cumulocity-Plattform</a>.</p></li>
+
+<li><p>Wenn Sie <strong>Link für das Zurücksetzen des Passworts per E-Mail senden</strong> auswählen, erhält der Benutzer eine E-Mail mit dem Link zum Setzen des Passworts. Die E-Mail wird zu der oben konfigurierten Adresse gesendet.</p></li>
+</ul>
+
+<p>Wählen Sie auf der rechten Seite die globalen Rollen für den Benutzer. Informationen zu den globalen Rollen finden Sie unter <a href="#managing-permissions">Verwalten von Berechtigungen</a>.</p>
+
+<p>Klicken Sie <strong>Speichern</strong>, um den Benutzer anzulegen.</p>
+
+<blockquote>
+<p><strong>Info:</strong> Standardmäßig ist bei Benutzern, die manuell angelegt wurden, die Berechtigung &ldquo;Eigene Benutzerverwaltung&rdquo; aktiviert.</p>
+</blockquote>
+
+<h3 id="bearbeiten-von-benutzern">Bearbeiten von Benutzern</h3>
+
+<p>Klicken Sie auf das Menüsymbol rechts in einem Benutzereintrag, um ein Kontextmenü mit weiteren Funktionen zu öffnen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-user-contextmenu.png" alt="Benutzer Kontextmenü" style="max-width: 50%"></p>
+
+<blockquote>
+<p><strong>Info:</strong> Für diese Funktionen müssen Sie eine Rolle mit Benutzerverwaltungsberechtigung haben.</p>
+</blockquote>
+
+<p>Klicken Sie <strong>Bearbeiten</strong>, um einen bestehenden Benutzer zu bearbeiten. Alle Felder mit Ausnahme von <strong>Benutzername</strong> und <strong>Link zum Zurücksetzen des Passworts per E-Mail senden</strong> können bearbeitet werden. Details zu den einzelnen Feldern finden Sie unter <a href="#creating-users">Anlegen von Benutzern</a>. Klicken Sie <strong>Passwort ändern</strong>, um das Passwort zu ändern. Klicken Sie nach der Bearbeitung <strong>Speichern</strong>, um Ihre Einstellungen zu speichern.</p>
+
+<p>Klicken Sie <strong>Stammdatenrollen eines anderen Benutzer kopieren</strong>, um Rollen zu kopieren. Wählen Sie im folgenden Fenster einen Benutzer aus und klicken Sie <strong>Kopieren</strong>. Oben können Sie auswählen, ob Sie die Rollen mit den vorhandenen Rollen zusammenführen möchten (Standardeinstellung), oder ob Sie die vorhandenen Rollen ersetzen möchten.</p>
+
+<p>Klicken Sie <strong>Delegieren</strong>, um Ihre Benutzerhierarchien und Berechtigungen an einen Benutzer zu delegieren, bzw. klicken Sie <strong>Delegierung aufheben</strong>, um eine Delegierung aufzuheben. Detaillierte Informationen zum Delegieren finden Sie unter <a href="/guides/benutzerhandbuch/enterprise-edition#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</p>
+
+<p>Klicken Sie <strong>Deaktivieren</strong>, um einen aktiven Benutzer zu deaktivieren, bzw. klicken Sie <strong>Aktivieren</strong>, um einen zuvor deaktivierten Benutzer wieder zu aktivieren.</p>
+
+<p>Klicken Sie <strong>Löschen</strong>, um einen Benutzer zu löschen.</p>
+
+  </article>
+  
+  <article id="managing-permissions" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#managing-permissions">
+        <span class="fa fa-link"></span>
+      </button>
+      Verwalten von Berechtigungen</h2>
+    
+
+<p>Berechtigungen legen fest, welche Funktionen ein Benutzer in Cumulocity-Anwendungen ausführen darf. Um das Verwalten von Berechtigungen zu vereinfachen, sind sie in sogenannte Rollen eingeteilt. Jedem Benutzer kann eine Reihe von Rollen zugewiesen werden, deren Berechtigungen addiert werden.</p>
+
+<p>Die folgenden Rollen können zugewiesen werden:</p>
+
+<ul>
+<li>Globale Rollen: Enthalten Berechtigungen, die auf alle Daten innerhalb eines Mandanten zutreffen.</li>
+<li>Stammdatenrollen: Enthalten Berechtigungen, die auf Gerätegruppen zutreffen.</li>
+<li>Anwendungszugriff: Berechtigt den Benutzer, eine Anwendung zu benutzen.</li>
+</ul>
+
+<h3 id="a-name-global-a-anzeigen-von-globalen-rollen"><a name="global"></a>Anzeigen von globalen Rollen</h3>
+
+<p>Klicken Sie <strong>Rollen</strong> im Menü <strong>Konto</strong>, um die Liste der konfigurierten Rollen anzuzeigen.</p>
+
+<p>In der Registerkarte <strong>Globale Rollen</strong> finden Sie die Rollen, die allgemeine Berechtigungen erteilen. Es gibt verschiedene globale Standardrollen, aber Sie können auch eigene nach Ihren Bedürfnissen erstellen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-global-roles.png" alt="Globale Rollen" style="max-width: 100%"></p>
+
+<p>Die Rollen &ldquo;admins&rdquo; und &ldquo;devices&rdquo; haben einen Sonderstatus:</p>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align: left">Rolle</th>
+
+<th style="text-align: left">Beschreibung</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align: left">admin</td>
+
+<td style="text-align: left">Alle Berechtigungen sind aktiviert. Der ursprüngliche Administrator, also der erste Benutzer, der in einem Mandanten angelegt wurde, erhält diese Rolle.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">devices</td>
+
+<td style="text-align: left">Typische Berechtigungseinstellung für Geräte. Nach der Registrierung bekommt ein Gerät automatisch diese Rolle. Bearbeiten Sie diese Rolle, wenn Ihre Geräte mehr oder weniger Berechtigungen benötigen, oder weisen Sie Ihren Geräten andere Rollen zu.</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<p>Darüber hinaus sind anfänglich die folgenden Rollen konfiguriert:</p>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align: left">Rolle</th>
+
+<th style="text-align: left">Beschreibung</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align: left">CEP Manager</td>
+
+<td style="text-align: left">Kann auf alle Smart Rules und Echtzeitverarbeitungsregeln zugreifen.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Cockpit-Benutzer</td>
+
+<td style="text-align: left">Kann auf die Cockpit-Anwendung zugreifen. Zusätzlich sollten Sie eine Rolle mit Zugriff auf die Geräte hinzufügen.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Device Management-Benutzer</td>
+
+<td style="text-align: left">Kann auf die Device Management-Anwendung zugreifen. Der Benutzer kann den Simulator verwenden und Stapelkommandos ausführen. Zusätzlich sollten Sie eine Rolle mit Zugriff auf die Geräte hinzufügen.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Globaler Manager</td>
+
+<td style="text-align: left">Hat Lese- und Schreibberechtigung für alle Geräte.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Globaler Leser</td>
+
+<td style="text-align: left">Hat Leseberechtigung für alle Geräte.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Globaler Benutzermanager</td>
+
+<td style="text-align: left">Kann alle Benutzer verwalten.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Geteilter Benutzermanager</td>
+
+<td style="text-align: left">Kann untergeordnete Benutzer verwalten. Der Abonnementplan muss Benutzerhierarchien umfassen, um untergeordnete Benutzer verwalten zu können.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Mandantenmanager</td>
+
+<td style="text-align: left">Kann mandantenweite Einstellungen verwalten, wie etwa eigene Anwendungen, Datenübertragung, Datenhaltung und Mandantenstatistiken.</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<p>Möglicherweise sehen Sie die folgenden alten Rollen:</p>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align: left">Rolle</th>
+
+<th style="text-align: left">Beschreibung</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align: left">business</td>
+
+<td style="text-align: left">Kann auf alle Geräte und deren Daten zugreifen, aber hat keine Administrationsrechte im Mandanten.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">readers</td>
+
+<td style="text-align: left">Kann alle Daten lesen (einschließlich Benutzerdaten, im Gegensatz zur Rolle "Globaler Leser").</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<h3 id="a-name-create-edit-roles-a-erstellen-und-bearbeiten-von-globalen-rollen"><a name="create-edit-roles"></a>Erstellen und Bearbeiten von globalen Rollen</h3>
+
+<p>Sie können bestehende globale Rollen bearbeiten oder neue globale Rollen erstellen.</p>
+
+<p>Klicken Sie einfach auf die entsprechende Karte, um eine globale Berechtigung zu bearbeiten. Um eine neue globale Rolle zu erstellen, klicken Sie <strong>Rolle hinzufügen</strong> in der Registerkarte <strong>Globale Rollen</strong>.</p>
+
+<p>In der Rollenseite sehen Sie auf der linken Seite eine Liste mit vordefinierten Anwendungen und auf der rechten Seite eine Liste mit Berechtigungstypen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-global-role-add.png" alt="Globale Rolle hinzufügen" style="max-width: 100%"></p>
+
+<p><strong>Berechtigungsebenen</strong></p>
+
+<p>Für jeden Typen können Sie die folgenden Berechtigungsebenen wählen:</p>
+
+<ul>
+<li><strong>Lesen</strong>: Einsehen der jeweiligen Daten.</li>
+<li><strong>Erstellen</strong>: Erstellen neuer Daten wie Benutzer und Stammdaten sowie Bearbeiten von Benutzern innerhalb Ihrer Hierarchie.</li>
+<li><strong>Aktualisieren</strong>: Aktualisieren und Löschen der jeweiligen Daten (beinhaltet nicht &ldquo;Lesen&rdquo;).</li>
+<li><strong>Admin</strong>: Erstellen, Aktualisieren und Löschen der jeweiligen Daten.</li>
+</ul>
+
+<blockquote>
+<p><strong>Info:</strong> Berechtigungen zum Erstellen sind mit dem Eigentumskonzept in Cumulocity verbunden. Wenn Sie ein Objekt erstellt haben, sind Sie der Eigentümer und können das Objekt ohne weitere Berechtigungen verwalten. Wenn Sie beispielsweise die &ldquo;Erstellen&rdquo;-Berechtigung für Stammdaten haben, können Sie Geräte und Gruppen erstellen und diese vollständig verwalten. Sie können jedoch keine Geräte und Gruppen, die Sie nicht selbst erstellt haben, verwalten, ohne dafür eine entsprechende Berechtigung oder eine zusätzliche Stammdatenrolle zu haben (siehe unten). Diese Konzept unterstützt es, Geräte minimale Berechtigungen zuzuweisen. Es ermöglicht Ihnen auch, Benutzerverwaltungsrechte auf untergeordnete Benutzer zu beschränken, wenn Sie Benutzerhierarchien abonniert haben.</p>
+</blockquote>
+
+<p>Aktivieren Sie die Checkbox oben in einer Spalte, wenn Sie die entsprechende Berechtigungsebene auf alle Berechtigungstypen anwenden möchten.</p>
+
+<p><strong>Berechtigungskategorien</strong></p>
+
+<p>Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:</p>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align: left">Kategorie</th>
+
+<th style="text-align: left">Beschreibung</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align: left">Alarme</td>
+
+<td style="text-align: left">Alarme für Geräte einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Anwendungsverwaltung</td>
+
+<td style="text-align: left">In diesem Konto verfügbare Anwendungen einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Audits</td>
+
+<td style="text-align: left">Audit-Logs für Geräte einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Stapelkommandos</td>
+
+<td style="text-align: left">Stapelkommandos einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">CEP-Verwaltung</td>
+
+<td style="text-align: left">CEP-Regeln einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Data Broker</td>
+
+<td style="text-align: left">Daten an andere Mandanten weiterleiten oder Daten von anderen Mandanten empfangen</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Gerätesteuerung</td>
+
+<td style="text-align: left">Kommandos von Geräten einsehen oder bearbeiten bzw. Kommandos an Geräte senden. Wird auch für die Geräteregistrierung verwendet.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Ereignisse</td>
+
+<td style="text-align: left">Audit-Logs für Geräte einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Identifikatoren</td>
+
+<td style="text-align: left">Alarme für Geräte einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Stammdaten</td>
+
+<td style="text-align: left">Stammdaten einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Messwerte</td>
+
+<td style="text-align: left">Audit-Logs für Geräte einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Optionen</td>
+
+<td style="text-align: left">Kontooptionen wie Passwortregeln einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Datenhaltungsregeln</td>
+
+<td style="text-align: left">Datenhaltungsregeln einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Simulator</td>
+
+<td style="text-align: left">Simulierte Geräte konfigurieren</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Mandantenverwaltung</td>
+
+<td style="text-align: left">Untermandanten einsehen, erstellen, bearbeiten oder löschen</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Mandantenstatistiken</td>
+
+<td style="text-align: left">Nutzungsstatistiken für dieses Konto auf der Startseite der Anwendung "Administration" einsehen</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Benutzerverwaltung</td>
+
+<td style="text-align: left">Benutzer, Benutzergruppen oder Berechtigungen einsehen oder bearbeiten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Eigener Benutzer</td>
+
+<td style="text-align: left">Eigenen Benutzer einsehen oder bearbeiten</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<p>Möglicherweise werden weitere Berechtigungen angezeigt, abhängig von den Funktionen in Ihrem Abonnementplan. Diese werden in Verbindung mit den jeweiligen Funktionen beschrieben.</p>
+
+<blockquote>
+<p><strong>Info:</strong> Wenn die Cumulocity-Plattform um neue Funktionen mit neuen Berechtigungen erweitert wird, werden diese nicht automatisch zu bereits bestehenden Rollen hinzugefügt. Sollten Sie feststellen, dass Sie eine kürzlich angekündigte Funktion nicht verwenden können, überprüfen Sie zunächst Ihre Berechtigungen.</p>
+</blockquote>
+
+<h3 id="a-name-attach-global-a-zuweisen-von-globalen-rollen"><a name="attach-global"></a>Zuweisen von globalen Rollen</h3>
+
+<p>Sie können Benutzern globale Rollen entweder direkt in der Benutzerliste oder auf der entsprechenden Benutzerseite zuweisen.</p>
+
+<p>Klicken Sie in der Benutzerliste auf die Spalte <strong>Globale Rollen</strong> eines bestimmten Benutzers, um eine Liste mit globalen Rollen anzuzeigen. Aktivieren oder Deaktivieren Sie die entsprechenden Checkboxen und klicken Sie <strong>Anwenden</strong>, um Ihre Einstellungen zu speichern.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-user-global-roles-list.png" alt="Globale Rollen zuweisen" style="max-width: 100%"></p>
+
+<p>Alternativ können Sie auf einen Benutzer klicken, um die entsprechende Benutzerseite zu öffnen. Aktivieren oder Deaktivieren Sie auf der rechten Seite die Checkbox für die relevanten Rollen und klicken Sie <strong>Speichern</strong> unten auf der Seite, um Ihre Einstellungen zu speichern.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-user-global-role-assign.png" alt="Globale Rollen zuweisen" style="max-width: 100%"></p>
+
+<h3 id="a-name-inventory-a-anzeigen-von-stammdatenrollen"><a name="inventory"></a>Anzeigen von Stammdatenrollen</h3>
+
+<p>Stammdatenrollen enthalten Berechtigungen, die Sie Gerätegruppen zuweisen können. Eine Stammdatenrolle kann beispielsweise die Berechtigung enthalten, ein Gerät neu zu starten. Sie können diese Stammdatenrolle einer Gruppe von Geräten, z. B. &ldquo;Region Nord&rdquo;, und einem Benutzer, z. B. &ldquo;Schmidt&rdquo; zuweisen. Daraus resultiert, dass der Benutzer &ldquo;Schmidt&rdquo; alle Geräte, die in der Gruppe &ldquo;Region Nord&rdquo; oder einer Untergruppe enthalten sind, neu starten kann.</p>
+
+<p>Um die konfigurierten Stammdatenrollen anzuzeigen, wählen Sie <strong>Rollen</strong> im Menu <strong>Konto</strong> und wechseln Sie zur Registerkarte <strong>Stammdatenrollen</strong>.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-inventory-roles.png" alt="Stammdatenrollen" style="max-width: 100%"></p>
+
+<p>In der Registerkarte <strong>Stammdatenrollen</strong> können Sie Berechtigungen für bestimmte Gruppen und/oder deren Kinder verwalten. Es gibt verschiedene voreingestellte Stammdatenrollen, aber Sie können auch eigene Rollen nach Ihren Bedürfnissen erstellen.</p>
+
+<p>Die folgenden Stammdatenrollen sind in neuen Mandanten voreingestellt:</p>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align: left">Rolle</th>
+
+<th style="text-align: left">Beschreibung</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align: left">Manager</td>
+
+<td style="text-align: left">Kann alle Daten einer Gruppe einsehen, aber keine Kommandos ausführen. Kann außerdem Stammdaten einschließlich Dashboards und Alarme verwalten.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Kommandos: Alle</td>
+
+<td style="text-align: left">Kann Kommandos an Geräte in einer Gruppe senden (z. B. Software-Updates).</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Kommandos: Gerät neustarten</td>
+
+<td style="text-align: left">Kann Geräte in einer Gruppe neustarten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Leser</td>
+
+<td style="text-align: left">Kann alle Daten in einer Gruppe einsehen</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<h3 id="erstellen-und-bearbeiten-von-stammdatenrollen">Erstellen und Bearbeiten von Stammdatenrollen</h3>
+
+<p>Sie können bestehende Stammdatenrollen entsprechend Ihrer eigenen Bedürfnisse bearbeiten oder neue Stammdatenrollen erstellen.</p>
+
+<p>Klicken Sie einfach auf die entsprechende Karte, um eine Stammdatenrolle zu bearbeiten. Um eine neue Stammdatenrolle zu erstellen, klicken Sie <strong>Rolle hinzufügen</strong> in der Registerkarte <strong>Stammdatenrollen</strong>.</p>
+
+<p>Oben auf der Seite können Sie einen Namen für die Stammdatenrolle vergeben. Klicken Sie in das Feld, geben Sie einen Namen ein und klicken Sie auf das grüne Häkchen zum Speichern Ihrer Eingabe.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-inventory-role-add.png" alt="Stammdatenrolle hinzufügen" style="max-width: 100%"></p>
+
+<p>Die Berechtigungen sind in die folgenden Kategorien eingeteilt:</p>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align: left">Kategorie</th>
+
+<th style="text-align: left">Beschreibung</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align: left">Alarme</td>
+
+<td style="text-align: left">Berechtigungen, die Alarme von Geräten betreffen</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Audits</td>
+
+<td style="text-align: left">Berechtigungen, die Audits betreffen</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Ereignisse</td>
+
+<td style="text-align: left">Berechtigungen zum Bearbeiten von Ereignissen von Geräten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Stammdaten</td>
+
+<td style="text-align: left">Berechtigungen zum Einsehen und Bearbeiten von Geräten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Messwerte</td>
+
+<td style="text-align: left">Berechtigungen, die Messwerte betreffen</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Gerätesteuerung</td>
+
+<td style="text-align: left">Berechtigungen zur entfernten Steuerung von Geräten</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Voller Zugriff</td>
+
+<td style="text-align: left">Vollständiger Zugriff auf die zugehörigen Geräte, in erster Linie zur Vereinfachung der Konfiguration.</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<blockquote>
+<p><strong>Info:</strong> Service Provider sehen eine weitere Berechtigung &ldquo;Support&rdquo; in Ihrem Management-Mandanten. Diese Berechtigung ermöglicht Benutzern des Service Providers den Benutzern ihrer Kunden Support zu geben. Siehe <a href="/guides/benutzerhandbuch/enterprise-edition#users-in-other-tenants">Support für Benutzer anderer Mandanten</a>.</p>
+</blockquote>
+
+<p>Fügen Sie einer Rolle eine Berechtigung hinzu, indem Sie das Plus-Symbol neben der gewünschten Kategorie klicken.</p>
+
+<p>Geben Sie im Feld <strong>Typ</strong> einen Typen ein, um den Datentypen weiter einzuschränken, für den diese Berechtigung gelten soll.</p>
+
+<p>Nehmen wir etwa an, ihr Gerät sendet Messwerte zum Device Management, wie &ldquo;c8y&#95;SignalStrength&rdquo;, sowie aktuelle Produktionsmesswerte. Sie möchten aber, dass der Benutzer nur die Device Management-Messwerte sieht. In diesem Fall geben Sie &ldquo;c8y_SignalStrength&rdquo; als Typ ein.</p>
+
+<p>Standardmäßig enthält das Feld <strong>Typ</strong> ein Sternsymbol *, so dass alle Typen eingeschlossen sind.</p>
+
+<blockquote>
+<p><strong>Info:</strong> Weitere Informationen zu möglichen Typen finden Sie in Ihrer Gerätedokumentation, der <a href="/guides/reference/sensor-library">Sensor Library</a> von Cumulocity oder der <a href="/guides/reference/device-management">Device Management Library</a>. Der Typ, der hier verwendet wird, ist der sogenannte &ldquo;Fragmenttyp&rdquo;, nicht das &ldquo;Type&rdquo;-Attribut. Sie müssen alle Fragmenttypen, die in einem Messwert gesendet werden, eingeben, damit der Messwert sichtbar wird; ähnliches gilt für andere Datentypen.</p>
+</blockquote>
+
+<p>Wählen Sie im Feld <strong>Berechtigung</strong> eine Berechtigungsebene aus der Auswahlliste:</p>
+
+<ul>
+<li>Lesen - Objekte einzusehen</li>
+<li>Ändern - Objekte ändern (schließt nicht die Leseberechtigung ein)</li>
+<li>Alle - Objekte lesen und ändern</li>
+</ul>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-inventory-role-permissions.png" alt="Rollenberechtigungen" style="max-width: 100%"></p>
+
+<blockquote>
+<p><strong>Wichtig:</strong> Wenn Sie eine Berechtigung hinzufügen, erscheint möglicherweise ein kleines Ausrufungszeichen. Das Ausrufungszeichen weist darauf hin, dass die soeben hinzugefügte Rollen keine Auswirkung hat, da eine andere, &ldquo;höhere&rdquo; Berechtigung, die für den Benutzer gesetzt wurde, diese Berechtigung bereits umfasst. Überprüfen Sie in diesem Fall, ob Sie vollständigen Zugriff gewährt haben oder ob es im gleichen Abschnitt eine andere Berechtigung mit &ldquo;*&rdquo; als Typen und &ldquo;Alle&rdquo; als Berechtigung gibt.</p>
+</blockquote>
+
+<p><img src="/guides/images/users-guide/overriddenperm.png" alt="Warnmeldung" /></p>
+
+<p>Nehmen wir als weiteres Beispiel an, dass sie Tracking-Geräte verwenden. Sie möchten, dass Ihr Benutzer alle Geräte sehen, aber nichts ändern kann. Außerdem soll der Benutzer in der Lage sein, die Wege von Geräten auf einer Karte zu verfolgen. Wege werden über ein Ereignis mit dem Fragmenttypen &ldquo;c8y&#95;Position&rdquo; aufgezeichnet (siehe <a href="/guides/reference/sensor-library">Sensor Library</a>). Erteilen Sie dem Benutzer Leseberechtigung auf Stammdaten und auf Ereignisse mit dem Typen &ldquo;c8y_Position&rdquo;, wie in der Abbildung unten dargestellt.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-role-permission-example.png" alt="Beispielberechtigung" style="max-width: 100%"></p>
+
+<h3 id="a-name-attach-inventory-a-zuweisen-von-stammdatenrollen"><a name="attach-inventory"></a>Zuweisen von Stammdatenrollen</h3>
+
+<p>Stammdatenrollen werden einem Benutzer und einer Gerätegruppe zugewiesen.</p>
+
+<p>Klicken Sie <strong>Benutzer</strong> im Menü <strong>Konto</strong>, wählen Sie einen Benutzer aus der Benutzerliste und wechseln Sie zur Registerkarte <strong>Stammdatenrollen</strong>.</p>
+
+<p>In der Registerkarte <strong>Stammdatenrollen</strong> sehen Sie einen Baum mit Gerätegruppen. Klicken Sie auf den Pfeil rechts von einer Gerätegruppe, um eine Stammdatenrollen zuzuweisen. Wählen Sie die gewünschten Rollen und klicken Sie <strong>Anwenden</strong>. Weitere Informationen zu den Rollen erhalten Sie, wenn Sie den Mauszeiger über das Info-Symbol bewegen, oder unter <a href="#inventory">Anzeigen von Stammdatenrollen</a>.</p>
+
+<blockquote>
+<p><strong>Wichtig</strong>: Wenn ein Benutzer bereits eine globale Rolle hat, die Stammdatenberechtigungen umfasst, kann der Benutzer alle Geräte sehen oder ändern, unabhängig von den hier zugewiesenen Stammdatenrollen.</p>
+</blockquote>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-inventory-role-assign.png" alt="Stammdatenrollen zuweisen" style="max-width: 100%"></p>
+
+<p>Stammdatenrollen werden von Gruppen an alle ihre direkten und indirekten Untergruppen sowie die Geräte in der Gruppe vererbt. Wenn Sie etwa eine Rolle mit Leseberechtigung für Alarme für eine Gerätegruppe wählen, kann der Benutzer alle Alarme für alle Geräte in dieser Gruppe sowie in ihren Untergruppen sehen.</p>
+
+<p>Wenn ein Benutzer Stammdatenzugriff für eine Gerätegruppe hat, hat er auch Zugriff auf alle Dashboards für diese Gruppe in der Cockpit-Anwendung.</p>
+
+<p>Sie können auch Stammdatenrollen eines anderen Benutzers kopieren. Klicken Sie <strong>Stammdatenrollen eines anderen Benutzers kopieren</strong>, um Rollen zu kopieren. Wählen Sie im folgenden Fenster einen Benutzer aus und klicken Sie <strong>Kopieren</strong>. Oben können Sie auswählen, ob Sie die Rollen mit den vorhandenen Rollen zusammenführen möchten (Standardeinstellung), oder ob Sie die vorhandenen Rollen ersetzen möchten. Das Kopieren von Rollen erleichtert das Verwalten von Berechtigungen für viele Benutzer, da Sie einen Referenzbenutzer erstellen können, um von dort die Rollen zu kopieren.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-inventory-roles-copy.png" alt="Stammdatenrollen kopieren" style="max-width: 50%"></p>
+
+<h3 id="a-name-app-access-a-zugriff-auf-anwendungen"><a name="app-access"></a>Zugriff auf Anwendungen</h3>
+
+<p>In der Registerkarte <strong>Anwendungen</strong> können Sie Benutzern Zugriff auf Anwendungen erteilen.</p>
+
+<p>Die Registerkarte <strong>Anwendungen</strong> zeigt eine Liste aller verfügbaren Anwendungen in Ihrem Mandanten in alphabetischer Reihenfolge. Wählen Sie die Anwendungen für den Benutzer und klicken Sie <strong>Speichern</strong>. Weitere Informationen zur Anwendungsverwaltung finden Sie unter <a href="/guides/benutzerhandbuch/administration#managing-applications">Verwalten von Anwendungen</a>.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-user-application-access.png" alt="Anwendungszugriff" style="max-width: 100%"></p>
+
+<blockquote>
+<p><strong>Info:</strong> Wenn ein Benutzer die globale Berechtigung hat, alle Anwendungen einzusehen, wird eine entsprechende Information angezeigt.</p>
+</blockquote>
+
+<h3 id="fehlerbehebung-bei-berechtigungen">Fehlerbehebung bei Berechtigungen</h3>
+
+<p>Wenn Sie Aktionen durchführen möchten für die Sie keine ausreichende Berechtigung haben, erhalten Sie eine Fehlermeldung.</p>
+
+<p>Klicken Sie für Hilfe bei der Fehlersuche auf die Schaltfläche <strong>Benutzer</strong> in der rechten oberen Leiste. Wählen Sie aus dem Kontextmenü <strong>Verweigerte Anfragen</strong>. Im folgenden Fenster finden Sie Details zu den verweigerten Anfragen. Ein Administrator oder der Support kann Ihnen helfen, die Berechtigungsprobleme zu beheben.</p>
+
+<p>Das Beispiel zeigt eine Fehlermeldung, die erscheint, nachdem ein Benutzer versucht hat, einen Simulator zu erstellen, jedoch nicht die erforderlichen Berechtigungen hat.</p>
+
+<p><img src="/guides/images/users-guide/noaccess.png" alt="Fehlermeldung" /></p>
+
+  </article>
+  
+  <article id="audit-logs" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#audit-logs">
+        <span class="fa fa-link"></span>
+      </button>
+      Anzeigen von Audit-Logs</h2>
+    
+
+<p>Audit-Logs zeigen die von Benutzern ausgeführten Kommandos.</p>
+
+<p>Um die Audit-Logs-Liste anzuzeigen, klicken Sie <strong>Audit Logs</strong> im Menü <strong>Konto</strong>. Für jeden Logeintrag werden die folgenden Informationen bereitgestellt:</p>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align: left">Spalte</th>
+
+<th style="text-align: left">Beschreibung</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align: left">Serverzeit</td>
+
+<td style="text-align: left">Serverzeit zu der das Kommando durchgeführt wurde.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Änderung</td>
+
+<td style="text-align: left">Art des Kommandos, z. B. "Alarm erzeugt", "Smart Rule gelöscht". Darunter wird der Benutzer angezeigt, der das Kommando durchgeführt hat.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Beschreibung</td>
+
+<td style="text-align: left">Enthält weitere Informationen abhängig vom jeweiligen Kommando, wie etwa den Gerätenamen, Alarmtext oder Kommandostatus.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Gerätezeit</td>
+
+<td style="text-align: left">Gerätezeit, zu der das Kommando durchgeführt wurde. Diese kann sich von der Serverzeit unterscheiden.</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<p>Es werden nur die letzten 100 Logeinträge angezeigt. Klicken Sie <strong>Mehr laden</strong> am Listenende, um weitere Logeinträge anzuzeigen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/Admin_Auditlogs.png" alt="Audit-Logs" /></p>
+
+<blockquote>
+<p><strong>Info</strong>: Die Audit-Logs-Liste wird nicht automatisch aktualisiert, wenn eine Echtzeitaktualisierung von Kommandos erfolgt ist. Klicken Sie <strong>Neu laden</strong> rechts oben in der Menüleiste, um die Liste der Kommandos zu aktualisieren.</p>
+</blockquote>
+
+<h3 id="filtern-von-logeinträgen">Filtern von Logeinträgen</h3>
+
+<p>Um Logeinträge leichter durchsuchen zu können, können diese gefiltert werden nach</p>
+
+<ul>
+<li>Typ , z. B. Alarm, Kommando, Smart Rule,</li>
+<li>einem Datumsbereich mit einem &ldquo;Von&rdquo;- und/oder einem &ldquo;Bis&rdquo;-Datum,</li>
+<li>dem Benutzer.</li>
+</ul>
+
+<p>Klicken Sie das Filter-Symbol neben den Filter-Eingabefeldern, um den Filter anzuwenden. Zum Aufheben von Filtern klicken Sie das Löschen-Symbol (wird nur angezeigt, wenn Filter gesetzt sind).</p>
+
+  </article>
+  
+  <article id="managing-applications" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#managing-applications">
+        <span class="fa fa-link"></span>
+      </button>
+      Verwalten von Anwendungen</h2>
+    
+
+<p>In der Cumulocity-Plattform gibt es zwei Arten von Anwendungen:</p>
+
+<ul>
+<li>Abonnierte Anwendungen -  alle Anwendungen, die für den Mandanten abonniert sind (entweder durch die Plattform oder einen Service Provider), aber die er nicht besitzt<br /></li>
+<li><a href="#own-applications">Eigene Anwendungen</a> - alle Anwendungen, die der Mandant besitzt</li>
+</ul>
+
+<p>Beide Anwendungsarten finden sich im Menü <strong>Anwendungen</strong> im Navigator:</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-menu.png" alt="Anwendungen" style="max-width: 25%"></p>
+
+<p>Abonnierte Anwendungen können vom Benutzer nicht hinzugefügt, geändert oder entfernt werden, wohingegen benutzerdefinierte Anwendungen auf verschiedene Weise <a href="#add-applications">als eigene Anwendungen hinzugefügt</a> werden können.</p>
+
+<h3 id="a-name-application-properties-a-anwendungsattribute"><a name="application-properties"></a>Anwendungsattribute</h3>
+
+<p>Klicken Sie auf eine Anwendungskarte, um die Attribute der Anwendung anzuzeigen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-own-application-attributes.png" alt="Anwendungsattribute" style="max-width: 100%"></p>
+
+<p>Für jede Anwendung werden die folgenden Attribute angezeigt:</p>
+
+<table>
+<col width= 100>
+<col width= 250>
+<col width= 150>
+<thead>
+<tr>
+<th style="text-align:left">Feld</th>
+<th style="text-align:left">Beschreibung</th>
+<th style="text-align:left">Web-Anwendung</th>
+<th style="text-align:left">Microservice</th>
+<th style="text-align:left">Externe Anwendung</th>
+<th style="text-align:left">CEP-Regel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ID</td>
+<td style="text-align:left">Eindeutige ID zur Identifikation der Anwendung</td>
+<td style="text-align:left">Automatisch generiert</td>
+<td style="text-align:left">Automatisch generiert</td>
+<td style="text-align:left">Automatisch generiert</td>
+<td style="text-align:left">Automatisch generiert</td>
+</tr>
+<tr>
+<td style="text-align:left">Name</td>
+<td style="text-align:left">Anwendungsname. Wird als Titel oben links auf der Anwendungsseite angezeigt und im Application Switcher verwendet.</td>
+<td style="text-align:left">Automatisch generiert, basierend auf dem Namen der ZIP-Datei</td>
+<td style="text-align:left">Automatisch generiert, basierend auf dem Namen der ZIP-Datei</td>
+<td style="text-align:left">Vom Benutzer vergeben</td>
+<td style="text-align:left">Automatisch generiert, basierend auf dem Namen der mon-Datei </td>
+</tr>
+<tr>
+<td style="text-align:left">Anwendungsschlüssel</td>
+<td style="text-align:left">Wird zur Identifikation der Anwendung verwendet. Wird außerdem verwendet, um die Anwendung als Abonnement zur Verfügung zu stellen, siehe auch <a href="/guides/concepts/applications" class="no-ajaxy">Concepts Guide</a>.</td>
+<td style="text-align:left">Automatisch generiert, basierend auf dem Namen der ZIP-Datei</td>
+<td style="text-align:left">Automatisch generiert, basierend auf dem Namen der ZIP-Datei</td>
+<td style="text-align:left">Vom Benutzer vergeben</td>
+<td style="text-align:left">Automatisch generiert, basierend auf dem Namen der mon-Datei</td>
+</tr>
+<tr>
+<td style="text-align:left">Typ</td>
+<td style="text-align:left">Anwendungstyp</td>
+<td style="text-align:left">Gehostete Anwendung</td>
+<td style="text-align:left">Microservice</td>
+<td style="text-align:left">Externe Anwendung</td>
+<td style="text-align:left">Apama CEP-Regel</td>
+</tr>
+<tr>
+<td style="text-align:left">Pfad</td>
+<td style="text-align:left">Teil der URL, die die Anwendung aufruft</td>
+<td style="text-align:left">Automatisch generiert</td>
+<td style="text-align:left">Automatisch generiert als .../service/&lt;microservice name&gt;</td>
+<td style="text-align:left">Vom Benutzer bereitgestellt. Wenn Sie beispielsweise "hallo" als Anwendungspfad verwenden, lautet die URL der Anwendung "/apps/hallo".</td>
+<td style="text-align:left">Nicht verfügbar</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p><strong>Info</strong>: ID, Anwendungsschlüssel, Typ und Pfad können nicht geändert werden.</p>
+</blockquote>
+
+<h3 id="überwachen-von-microservices">Überwachen von Microservices</h3>
+
+<p>Es gibt zwei Möglichkeiten, Microservices in der Cumulocity-Plattform zu überwachen.</p>
+
+<h4 id="statusinformation">Statusinformation</h4>
+
+<p>Der Status eines Microservices kann in der Registerkarte <strong>Status</strong> der entsprechenden Anwendung überprüft werden.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-microservice-status.png" alt="Microservice-Status" style="max-width: 100%"></p>
+
+<p>Folgende Information werden in der Registerkarte <strong>Status</strong> angezeigt:</p>
+
+<ul>
+<li>Instanzen: Anzahl der aktiven, gestörten und erwarteten Microservice-Instanzen für den aktuellen Mandanten</li>
+<li>Abonnierte Mandanten: Anzahl der aktiven, gestörten und erwarteten Microservice-Instanzen für alle Untermandanten, für die der Microservice abonniert ist</li>
+<li>Alarme: Alarme für die aktuelle Anwendung, angezeigt in Echtzeit</li>
+<li>Ereignisse: Ereignisse für die aktuelle Anwendung, angezeigt in Echtzeit</li>
+</ul>
+
+<p>Die Statusinformation ist sowohl für abonnierte als auch für eigene Anwendungen verfügbar. Die Informationen zu den abonnierten Mandanten sind jedoch nur für den Besitzer der Anwendung sichtbar.</p>
+
+<p>Um den Status sehen zu können, benötigen Sie folgende Berechtigungen:  ROLE_APPLICATION_MANAGEMENT_READ und ROLE_INVENTORY_READ</p>
+
+<h4 id="logdateien">Logdateien</h4>
+
+<p>Für detaillierte Informationen über den Status von Microservices stehen außerdem Logdaten zur Verfügung.</p>
+
+<p>Öffnen Sie die Registerkarte <strong>Logdaten</strong> des jeweiligen Microservice, um Logdaten anzuzeigen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-microservice-log.png" alt="Microservice-Logdaten" style="max-width: 100%"></p>
+
+<p>Links oben auf der Seite können Sie die Microservice-Instanz auswählen, für die Sie  Logdaten anzeigen möchten. Darüberhinaus können Sie rechts Ihre bevorzugte Schriftgröße und das Themendesign wählen.</p>
+
+<p>Initial werden die Logdaten der ausgewählten Microservice-Instanz für die letzten 10 Minuten angezeigt. Das abgebildete Zeitintervall wird unter den Daten angezeigt.</p>
+
+<p>Klicken Sie die Pfeiltasten &ldquo;Vor&rdquo; oder &ldquo;Zurück&rdquo;, um das Zeitintervall um jeweils 10 Minuten zu verlängern bzw. zu verkürzen.</p>
+
+<p>Wenn es im ausgewählten Zeitintervall keine Logdaten gibt, wird eine entsprechende Meldung angezeigt.</p>
+
+<p>Um Logdaten lesen zu können, benötigen Sie die Berechtigung EVENT_READ.</p>
+
+<h3 id="a-name-own-applications-a-eigene-anwendungen"><a name="own-applications"></a>Eigene Anwendungen</h3>
+
+<p>Eigene Anwendungen können sein:</p>
+
+<ul>
+<li>Duplikate von abonnierten Anwendungen (um diese den eigenen Bedürfnissen anzupassen)</li>
+<li>webbasierte UI-Anwendungen, die entweder als eigenständige Anwendungen oder als Plugins innerhalb einer Anwendung (z. B. als Widget in der Cockpit-Anwendung) implementiert sind</li>
+<li>serverseitige Geschäftslogik, die als Microservice implementiert ist</li>
+</ul>
+
+<p>Wenn Sie die entsprechende Anwendung abonniert haben (&ldquo;apama-small&rdquo;), können Sie außerdem <a href="#uploading-cep-rules">eigene Apama CEP-Regeln als Anwendung hochladen</a>.</p>
+
+<p>Über den Application Switcher rechts in der oberen Leiste können Sie auf die Anwendungen in Ihrem Konto zugreifen und bequem zwischen Anwendungen wechseln.</p>
+
+<p>Eigene Anwendungen werden unter <strong>Eigene Anwendungen</strong> im Menü <strong>Anwendungen</strong> verwaltet.</p>
+
+<p>Auf der Seite <strong>Eigene Anwendungen</strong> wird eine Liste aller eigenen Anwendungen in Ihrem Konto angezeigt. Weitere Informationen zu den Feldern finden Sie unter <a href="#application-properties">Anwendungsattribute</a>.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-own-applications.png" alt="Eigene Anwendungen" /></p>
+
+<p>Klicken Sie <strong>Öffnen</strong> auf der Karte einer Anwendung, um die Anwendung direkt von hier zu starten.</p>
+
+<p>Klicken Sie <strong>Anwendung hinzufügen</strong> auf der Seite <strong>Eigene Anwendungen</strong>, um eine Anwendung zu Ihrem Konto hinzuzufügen, siehe <a href="#adding-applications">Anwendungen hinzufügen</a>.</p>
+
+<p>Klicken Sie auf das Menüsymbol rechts oben in einer Anwendung, um über das Kontextmenü eine Anwendung zu <a href="#editing-and-removing"><strong>Bearbeiten</strong> oder zu <strong>Löschen</strong></a>.</p>
+
+<h4 id="hinzufügen-einer-eigenen-anwendung">Hinzufügen einer eigenen Anwendung</h4>
+
+<p>Klicken Sie <strong>Anwendung hinzufügen</strong> auf der Seite <strong>Eigene Anwendungen</strong>, um eine Anwendung hinzuzufügen. Wählen Sie im angezeigten Dialogfenster eine der folgenden Methoden:</p>
+
+<ul>
+<li><a href="#uploading-zip-files">Web-Anwendung hochladen</a>, um eine Web-Anwendung mittels einer ZIP-Datei bereitzustellen</li>
+<li><a href="#uploading-microservices">Microservice hochladen</a>, um einen Microservice mittels einer ZIP-Datei bereitzustellen</li>
+<li><a href="#external-application">Externe Anwendung</a>, um auf eine Anwendung zu verweisen, die woanders betrieben wird</li>
+<li><a href="#clone-application">Existierende Anwendung duplizieren</a>, um eine bestehende Anwendung zu duplizieren</li>
+</ul>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-application-add.png" alt="Hinzufügen von Anwendungen" style="max-width: 50%"></p>
+
+<p>Wenn Sie die entsprechende Anwendung abonniert haben (&ldquo;apama-small&rdquo;), sehen Sie außerdem die Option <strong>Eigene Apama-Regel hochladen</strong>, um <a href="#uploading-cep-rules">eigene Apama CEP-Regeln</a> als Anwendung hochzuladen.</p>
+
+<h5 id="a-name-uploading-zip-files-a-hochladen-von-web-anwendungen"><a name="uploading-zip-files"></a>Hochladen von Web-Anwendungen</h5>
+
+<p>Um eine Web-Anwendung hochzuladen, führen Sie folgende Schritte aus:</p>
+
+<ol>
+<li>Klicken Sie <strong>Anwendung hinzufügen</strong> auf der Seite <strong>Eigene Anwendungen</strong>.</li>
+<li>Wählen Sie im folgenden Dialog <strong>Web-Anwendung hochladen</strong>.</li>
+
+<li><p>Ziehen Sie eine entsprechende ZIP-Datei in das dafür vorgesehene Feld oder navigieren Sie auf Ihrem Computer zu der Datei.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-upload-zip-file.png" alt="Web-Anwendung hochladen" style="max-width: 50%"></p></li>
+</ol>
+
+<p>Nachdem die Datei auf die Plattform hochgeladen wurde, wird die Anwendung erstellt.</p>
+
+<h5 id="a-name-uploading-microservices-a-hochladen-von-microservices"><a name="uploading-microservices"></a>Hochladen von Microservices</h5>
+
+<p>Um einen Microservice hochzuladen, führen Sie folgende Schritte aus:</p>
+
+<ol>
+<li>Klicken Sie <strong>Anwendung hinzufügen</strong> auf der Seite <strong>Eigene Anwendungen</strong>.</li>
+<li>Wählen Sie im folgenden Dialog <strong>Microservice hochladen</strong>.</li>
+
+<li><p>Ziehen Sie eine entsprechende ZIP-Datei in das dafür vorgesehene Feld oder navigieren Sie auf Ihrem Computer zu der Datei.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-upload-zip-file.png" alt="Web-Anwendung hochladen" style="max-width: 50%"></p></li>
+</ol>
+
+<p>Nachdem die Datei auf die Plattform hochgeladen wurde, wird die Anwendung erstellt.</p>
+
+<blockquote>
+<p><strong>Info</strong>: Um Microservices zur Plattform hinzuzufügen, muss die gepackte Datei die Manifest-Datei und das Docker Image für den Microservice enthalten. Nähere Informationen zum Vorbereiten und Deployen des Microservice-Pakets finden Sie unter <a href="/guides/reference/microservice-package">Microservice package reference</a> im Reference guide.</p>
+</blockquote>
+
+<h5 id="a-name-external-application-a-verweisen-auf-eine-externe-anwendung"><a name="external-application"></a>Verweisen auf eine externe Anwendung</h5>
+
+<p>Um eine Anwendung hinzuzufügen, die auf eine externe Anwendung verweist, führen Sie folgende Schritte aus:</p>
+
+<ol>
+<li>Klicken Sie <strong>Anwendung hinzufügen</strong> auf der Seite <strong>Eigene Anwendungen</strong>.</li>
+<li>Wählen Sie im folgenden Dialog <strong>Externe Anwendung</strong>.
+<br><br>
+<img src="/guides/images/benutzerhandbuch/admin-own-applications-external.png" alt="Externe Anwendung" style="max-width: 50%">
+<br><br></li>
+<li>Geben Sie im nächsten Fenster einen Namen für die Anwendung ein. Der Name wird als Titel oben links auf der Anwendungsseite angezeigt. Er wird außerdem im Application Switcher verwendet.<br /></li>
+<li>Geben Sie einen Anwendungsschlüssel ein, um diese Anwendung zu identifizieren.</li>
+<li>Geben Sie die externe URL ein, unter welcher auf die Anwendung zugegriffen werden kann.</li>
+<li>Klicken Sie <strong>Speichern</strong>, um die Anwendung zu erstellen.</li>
+</ol>
+
+<p>Weitere Informationen zu den Feldern finden Sie auch unter <a href="#application-properties">Anwendungsattribute</a>.</p>
+
+<h5 id="a-name-clone-application-a-duplizieren-einer-existierenden-anwendung"><a name="clone-application"></a>Duplizieren einer existierenden Anwendung</h5>
+
+<p>Das Duplizieren einer Anwendung ist erforderlich, wenn Sie eine abonnierte Anwendung nach Ihren eigenen Bedürfnissen anpassen möchten.</p>
+
+<p>Das Duplizieren einer abonnierten Anwendung erzeugt ein entsprechendes Duplikat als eigene Anwendung mit einem Link auf die Originalanwendung.</p>
+
+<blockquote>
+<p><strong>Info</strong>: Wenn Sie möchten, dass Ihre &ldquo;eigene Anwendung&rdquo; eine abonnierte Standardanwendung überschreibt, setzen Sie den Pfad der &ldquo;eigenen Anwendung&rdquo; auf den Pfad der ursprünglich abonnierten Anwendung.</p>
+</blockquote>
+
+<p>Führen Sie die folgende Schritte aus, um eine Anwendung zu duplizieren:</p>
+
+<ol>
+<li>Klicken Sie <strong>Anwendung hinzufügen</strong> auf der Seite <strong>Eigene Anwendungen</strong>.</li>
+<li>Wählen Sie im folgenden Dialog <strong>Existierende Anwendung duplizieren</strong>.</li>
+<li>Wählen Sie die gewünschte Anwendung aus der Auswahlliste.
+<br><br>
+<img src="/guides/images/benutzerhandbuch/admin-own-applications-duplicate.png" alt="Anwendung duplizieren" style="max-width: 50%">
+<br><br></li>
+<li>Geben Sie im nächsten Fenster den Namen der Anwendung ein. Standardmäßig wird der Name der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen. Der Name wird als Titel oben links auf der Anwendungsseite angezeigt. Er wird außerdem im Application Switcher verwendet.</li>
+<li>Geben Sie einen Anwendungsschlüssel ein, um die Anwendung zu identifizieren. Standardmäßig wird der Anwendungsschlüssel der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen.</li>
+<li>Geben Sie einen Pfad für die Anwendung ein, Dieser Pfad ist Teil der URL, um die Anwendung aufzurufen. Standardmäßig wird der Pfad der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen. Wenn Sie hier den Pfad der Originalanwendung verwenden, wird Ihre eigene Anwendung die Originalanwendung überschreiben.</li>
+<li>Klicken Sie abschließend <strong>Duplizieren</strong>, um die Anwendung zu erstellen.</li>
+</ol>
+
+<p>Weitere Informationen zu den Feldern finden Sie auch unter <a href="#application-properties">Anwendungsattribute</a>.</p>
+
+<h5 id="a-name-uploading-cep-rules-a-hochladen-eigener-apama-regeln"><a name="uploading-cep-rules"></a>Hochladen eigener Apama-Regeln</h5>
+
+<blockquote>
+<p><strong>Info:</strong> Um eigene Apama CEP-Regeln als Anwendung hochladen zu können, müssen Sie die Anwendung &ldquo;apama-small&rdquo; abonniert haben.</p>
+</blockquote>
+
+<p>Um eine eigene Apama CEP-Regel hochzuladen, führen Sie folgende Schritte aus:</p>
+
+<ol>
+<li>Klicken Sie <strong>Anwendung hinzufügen</strong> auf der Seite <strong>Eigene Anwendungen</strong>.</li>
+<li>Wählen Sie im folgenden Dialog <strong>Eigene Apama-Regel hochladen</strong>.</li>
+<li>Ziehen Sie eine entsprechende Datei in das dafür vorgesehene Feld oder navigieren Sie auf Ihrem Computer zu der Datei. Dabei muss es sich um eine einzelne mon-Datei mit einer Reihe von Ereignisdefinitionen und Monitoren handeln.</li>
+</ol>
+
+<p>Nachdem die Datei auf die Plattform hochgeladen wurde, wird eine Anwendung des Typs &ldquo;Apama CEP-Regel&rdquo; erstellt.</p>
+
+<p><img src="/guides/images/users-guide/Administration/Admin_ApplicationCEPRule.png" alt="Uploading zip file" style="max-width: 100%"></p>
+
+<blockquote>
+<p><strong>Info:</strong> Sie können zu einer Anwendung des Typs &ldquo;Apama CEP-Regel&rdquo; keine Plugins hinzufügen.</p>
+</blockquote>
+
+<h4 id="a-name-editing-and-removing-a-bearbeiten-und-löschen-eigener-anwendungen"><a name="editing-and-removing"></a>Bearbeiten und Löschen eigener Anwendungen</h4>
+
+<p><strong>Bearbeiten</strong></p>
+
+<p>Klicken Sie auf eine Anwendung, um diese zu bearbeiten oder klicken Sie auf das Menüsymbol und wählen Sie <strong>Bearbeiten</strong> im Kontextmenü.</p>
+
+<p>In der Registerkarte <strong>Attribute</strong> können einige Felder bearbeitet werden, abhängig vom Typ der Anwendung.</p>
+
+<blockquote>
+<p><strong>Wichtig:</strong> Ändern Sie niemals die Namen der Standardanwendungen (z. B. Device Management, Cockpit), sonst schlägt die Initialisierung des Mandanten fehl.</p>
+</blockquote>
+
+<p><strong>Entfernen</strong></p>
+
+<p>Um eine Anwendung zu löschen, klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü <strong>Entfernen</strong>.</p>
+
+<p>Wenn Sie eine Anwendung löschen, die eine abonnierte Anwendung überschreibt, wird die derzeit abonnierte Anwendung für alle Benutzer verfügbar. Die Benutzer profitieren so außerdem von zukünftigen Upgrades der abonnierten Anwendung.</p>
+
+<p>Abonnierte Anwendungen können nicht gelöscht werden. Dies kann nur durch den Eigentümer der Anwendung erfolgen.</p>
+
+<h4 id="a-name-add-remove-plugin-a-hinzufügen-und-entfernen-von-plugins"><a name="add-remove-plugin"></a>Hinzufügen und Entfernen von Plugins</h4>
+
+<blockquote>
+<p><strong>Wichtig</strong>: Diese Plugin-Funktionalität ist veraltet und nur in Versionen vor 9.16 verfügbar.</p>
+</blockquote>
+
+<p>Um die Funktionen einer Anwendung zu konfigurieren oder zu erweitern, können Plugins hinzugefügt werden.</p>
+
+<blockquote>
+<p><strong>Info</strong>: Plugins können nur zu eigenen Anwendungen hinzugefügt werden, da die Anwendung selbst beim Hinzufügen eines Plugins modifiziert wird. Wenn Sie ein Plugin zu einer abonnierten Anwendung hinzufügen möchten, muss die Anwendung zunächst in eine eigene Anwendung dupliziert werden. Dieser Vorgang wird durch den Administrationsassistenten unterstützt.</p>
+</blockquote>
+
+<p>Klicken Sie <strong>Plugin hinzufügen</strong> auf der Karte der gewünschten Anwendung, um ein Plugin hinzuzufügen.</p>
+
+<p>Die Registerkarte <strong>Plugin</strong> für die Anwendung wird geöffnet und zeigt alle vorhandenen Plugins an. Außerdem können weitere Plugins durch Ablegen einer ZIP-Datei oder Durchsuchen Ihres Computers hinzugefügt werden.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-plugins.png" alt="Plugins" /></p>
+
+<p>Um eine Regel zu entfernen, bewegen Sie den Mauszeiger darüber und klicken Sie <strong>Entfernen</strong>.</p>
+
+<p>Die folgenden beiden Tabellen zeigen die Navigator- und Menüelemente mit ihren jeweiligen Plugins.</p>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align: left">Navigatorelement</th>
+
+<th style="text-align: left">Plugins</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align: left">Willkommen</td>
+
+<td style="text-align: left">Welcome screen</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Startseite</td>
+
+<td style="text-align: left">Cockpit Home</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Smart Rules</td>
+
+<td style="text-align: left">Smart Rules UI</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Gruppen</td>
+
+<td style="text-align: left">Groups Hierarchy</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Daten-Explorer</td>
+
+<td style="text-align: left">Data Point Explorer UI</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Datenpunktbibliothek</td>
+
+<td style="text-align: left">Data Point Explorer UI</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Berichte</td>
+
+<td style="text-align: left">Reporting</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Berichte</td>
+
+<td style="text-align: left">Dashboard (Beachten Sie, dass es zwei Plugins mit diesem Namen gibt. Wählen Sie das mit der Beschreibung "Berichte sind eigenständige Dashboards ohne Kontext".)</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Alarme</td>
+
+<td style="text-align: left">Alarm Management</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align: left">Menüelement</th>
+
+<th style="text-align: left">Plugins</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align: left">Info:</td>
+
+<td style="text-align: left">Deaktivieren nicht möglich</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Kind-Assets</td>
+
+<td style="text-align: left">Deaktivieren nicht möglich</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Berechtigungen</td>
+
+<td style="text-align: left">Device Permission Management Plugin</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Daten-Explorer</td>
+
+<td style="text-align: left">Data Point Explorer UI</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<p>Beachten Sie das &ldquo;UI&rdquo; am Ende des Plugin-Namens.</p>
+
+<h4 id="wiederherstellen-einer-älterer-anwendungsversion">Wiederherstellen einer älterer Anwendungsversion</h4>
+
+<p>Benutzer können ältere Versionen einer Anwendung aus einem Archiv wiederherstellen:</p>
+
+<ol>
+<li>Klicken Sie zum Öffnen auf die gewünschte Anwendung.</li>
+<li>Wechseln Sie zur Registerkarte <strong>Archiv</strong>.</li>
+<li>Öffnen Sie das Kontextmenü der gewünschten Version über das Menüsymbol und klicken Sie <strong>Aktivieren</strong>, um diese Version zur aktiven Version zu machen.</li>
+<li>Klicken Sie <strong>Entfernen</strong> um eine Version aus dem Archiv zu löschen.</li>
+</ol>
+
+<blockquote>
+<p><strong>Info</strong>: Die Registerkarte <strong>Archiv</strong> steht für abonnierte Anwendungen nicht zur Verfügung, da nur der Eigentümer der Anwendung ältere Versionen wiederherstellen kann.</p>
+</blockquote>
+
+<h4 id="hochladen-von-archiven">Hochladen von Archiven</h4>
+
+<p>Mehrere Archivdateiversionen können in Cumulocity gespeichert werden, wenn Sie durch das Hochladen von ZIP- oder mon-Dateien erstellt wurden. Jede Version wird als Archiv bezeichnet. Es können verschiedene Versionen gleichzeitig hochgeladen werden und Sie können zwischen den Versionen wechseln.</p>
+
+<p>Zum Hochladen eines Archiv führen Sie die folgenden Schritte aus:</p>
+
+<ol>
+<li>Klicken Sie zum Öffnen auf die gewünschte Anwendung.</li>
+<li>Wechseln Sie zur Registerkarte <strong>Archivdateien</strong>.</li>
+<li>Klicken Sie <strong>Archiv hochladen</strong> und navigieren Sie zu der Datei auf Ihrem Computer oder ziehen Sie die Datei auf das entsprechende Feld.</li>
+<li>Klicken Sie <strong>Hochladen</strong>, um das Archiv auf Ihr Cumulocity-Konto hochzuladen.</li>
+</ol>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-upload-archive.png" alt="Archiv hochladen" style="max-width: 100%"></p>
+
+<p>Hochgeladene Archive können aktiviert, heruntergeladen oder gelöscht werden. Das aktive Archiv (durch ein Cloud-Symbol gekennzeichnet) ist die Version der Anwendung, die aktuell den Benutzern Ihres Kontos zur Verfügung steht. Diese Version kann nicht gelöscht werden.</p>
+
+<p>Um die aktive Version zu wechseln, öffnen Sie das Kontextmenü der Version, die Sie aktivieren möchten, und klicken Sie <strong>Aktivieren</strong>.</p>
+
+  </article>
+  
+  <article id="business-rules" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#business-rules">
+        <span class="fa fa-link"></span>
+      </button>
+      Anwenden von Geschäftsregeln</h2>
+    
+
+<p><a name="event-processing"></a></p>
+
+<h3 id="echtzeitverarbeitung">Echtzeitverarbeitung</h3>
+
+<p>Mittels Echtzeitverarbeitung können Geschäftsregeln definiert werden, die automatisch in Echtzeit ausgeführt werden, sobald neue Daten eingehen oder bestehende Daten geändert werden. Die Logik wird in sogenannten Modulen implementiert, die aus einer Menge von CEP-Anweisungen bestehen.</p>
+
+<blockquote>
+<p><strong>Info:</strong> Eine benutzerfreundliche Methode, Echtzeitregeln zu definieren, wird in der Cockpit-Anwendung mit den sogenannten <a href="/guides/benutzerhandbuch/cockpit#rules">Smart Rules</a> bereitgestellt. Smart Rules sind ebenfalls CEP-Anweisungen, die in der Liste der Echtzeitregeln angezeigt werden, hier jedoch nicht bearbeitet werden können.</p>
+</blockquote>
+
+<p>Klicken Sie <strong>Echtzeitverarbeitung</strong> im Menü <strong>Geschäftsregeln</strong>, um die vorhandenen Module anzuzeigen oder neue Module zu erstellen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin_event-processing.png" alt="Echtzeitverarbeitung" /></p>
+
+<p>Für jedes Modul wird in der Liste der Status (bereitgestellt = grünes Häkchen / nicht bereitgestellt = Ausrufungszeichen), der Name und das Datum der letzten Aktualisierung angezeigt.</p>
+
+<p>Klicken Sie auf eine Anwendung, um diese zu bearbeiten oder klicken Sie auf das Menüsymbol und wählen Sie <strong>Bearbeiten</strong> im Kontextmenü.</p>
+
+<p>Um ein Modul zu löschen, klicken Sie <strong>Löschen</strong> im Kontextmenü.</p>
+
+<p>Anstatt ein Modul zu löschen, können Sie es auch zeitweise deaktivieren, indem Sie den Status auf &ldquo;Nicht bereitgestellt&rdquo; setzen.</p>
+
+<p><strong>Erstellen neuer Module</strong></p>
+
+<p>Um ein neues Modul zu erstellen, klicken Sie <strong>Neues Modul</strong> in der oberen Menüleiste.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-event-processing-new-module.png" alt="Neues Modul" style="max-width: 50%"></p>
+
+<ol>
+<li>Geben Sie oben einen Namen für das neue Modul ein. Es sind nur alphanumerische Zeichen ohne Leerzeichen zulässig.</li>
+<li>Standardmäßig ist der Status &ldquo;Bereitgestellt&rdquo; voreingestellt, so dass die Anweisungen, die Sie erstellen, unmittelbar ausgeführt werden. Um dies zu verhindern, schieben Sie den Regler auf &ldquo;Nicht bereitgestellt&rdquo;.</li>
+<li>Geben Sie Ihre CEP-Anweisungen in das Textfeld <strong>Quellcode</strong> ein. Als Hilfe finden Sie einige Beispiele. Klicken Sie <strong>Beispiele</strong> und wählen Sie ein passendes Beispiel aus der Auswahlliste. Klicken Sie <strong>Übernehmen</strong>, um das Beispiel an der Position des Mauszeigers in das Textfeld zu kopieren.</li>
+<li>Klicken Sie <strong>Speichern</strong>, um Ihre Einstellungen zu speichern.</li>
+</ol>
+
+<p>Das Beispielmodul erzeugt einen Alarm, wenn die Temperatur unter 0 Grad sinkt.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-event-processing-module-example.png" alt="Beispielmodul" style="max-width: 50%"></p>
+
+<p>Wenn der Status eines Moduls auf &ldquo;Bereitgestellt&rdquo; steht, wird dies durch eine grünes Häkchen in der Modulliste angezeigt. Immer wenn eine Anweisung eine Ausgabe generiert, wird diese unter dem Häkchen angezeigt. Klicken Sie auf eine Ausgabezeile, um die detaillierte Ausgabe der Anweisung anzuzeigen. Klicken Sie <strong>Alles löschen</strong>, um die Ausgabe zu entfernen.</p>
+
+<h3 id="a-name-reprio-alarms-a-alarmregeln"><a name="reprio-alarms"></a>Alarmregeln</h3>
+
+<p>Alarmregeln ermöglichen es, den Schweregrad und Text von Alarmen zu ändern, um diese den Prioritäten Ihres Unternehmens anzupassen. Der Abbruch einer Verbindung wird beispielsweise standardmäßig als WICHTIG eingestuft, kann aber in Ihrem Fall KRITISCH sein. Daher können Sie eine Alarmregel definieren, die Alarme im Zusammenhang mit Verbindungsabbrüchen als KRITISCH einstuft.</p>
+
+<p>Klicken Sie <strong>Alarmregeln</strong> im Menü <strong>Geschäftsregeln</strong>, um eine Liste aller Alarmregeln anzuzeigen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-alarm-mapping.png" alt="Alarmregeln" style="max-width: 100%"></p>
+
+<p>Für jede Alarmregel wird der Schweregrad und der Name der Regel angezeigt.</p>
+
+<p>Klicken Sie auf einen Eintrag, um diesen zu bearbeiten.</p>
+
+<p>Zum Löschen einer Alarmregel bewegen Sie den Mauszeiger darüber und klicken Sie auf die Schaltfläche <strong>Löschen</strong>.</p>
+
+<p><strong>Hinzufügen einer Alarmregel</strong></p>
+
+<p>Um eine Alarmregel hinzuzufügen, klicken Sie <strong>Alarmregel hinzufügen</strong> in der oberen Menüleiste.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/Admin_AlarmMappingAdd.png" alt="Alarmregel hinzufügen" style="max-width: 50%"></p>
+
+<ol>
+<li>Geben Sie den Alarmtypen ein, den Sie ändern möchten.</li>
+<li>Geben Sie optional einen neuen Text für den Alarm ein. Wenn Sie keinen Text eingeben, wird der Ursprungstext beibehalten.</li>
+<li>Wählen Sie den gewünschten neuen Schweregrad aus, oder wählen Sie &ldquo;Ignorieren&rdquo;, um den Alarm ganz zu unterdrücken.</li>
+<li>Klicken Sie <strong>Speichern</strong>, um Ihre Einstellungen zu speichern.</li>
+</ol>
+
+  </article>
+  
+  <article id="data-retention" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#data-retention">
+        <span class="fa fa-link"></span>
+      </button>
+      Verwalten der Datenhaltung</h2>
+    
+
+<h3 id="a-name-retention-rules-a-datenhaltungsregeln"><a name="retention-rules"></a>Datenhaltungsregeln</h3>
+
+<p>Mit Datenhaltungsregeln können Sie steuern, wie lange Daten in Ihrem Konto gespeichert bleiben. Vielleicht möchten Sie Messwerte 90 Tage speichern, Alarme aber bereits nach 10 Tagen löschen. Standardmäßig werden alle historischen Daten nach 60 Tage gelöscht (konfigurierbar in den Systemeinstellungen).</p>
+
+<p>Datenhaltungsregeln werden üblicherweise während der Nacht ausgeführt. Wenn Sie eine Datenhaltungsregel bearbeiten, sehen Sie daher keine unmittelbare Auswirkung in der Kapazitätsnutzung, die auf der Startseite der Anwendung angezeigt wird.</p>
+
+<p>Klicken Sie <strong>Datenhaltungsregeln</strong> im Menü <strong>Verwaltung</strong>, um eine Liste aller Datenhaltungsregeln in Ihrem Konto anzuzeigen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-retention-rules.png" alt="Datenhaltungsregeln" style="max-width: 100%"></p>
+
+<p>Für jede Regel wird der Name, Details zu den Daten, die gelöscht werden sollen (Fragmenttyp, Typ und Quelle, siehe unten) und die maximale Anzahl an Tagen angezeigt.</p>
+
+<p>Das Sternsymbol (&rdquo;*&ldquo;) zeigt an, dass alle Daten, unabhängig vom jeweiligen Wert, entfernt werden.</p>
+
+<p><strong>Hinzufügen von Datenhaltungsregeln</strong></p>
+
+<p>Um eine Datenhaltungsregel hinzuzufügen, klicken Sie <strong>Regel hinzufügen</strong> in der oberen Menüleiste.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-retention-rule-add.png" alt="Datenhaltungsregel hinzufügen" style="max-width: 50%"></p>
+
+<blockquote>
+<p><strong>Info:</strong> Standardmäßig ist in allen Feldern außer im Feld <strong>Maximales Alter</strong> ein Sternsymbol (&rdquo;*&ldquo;) gesetzt, um alle Werte einzuschließen.</p>
+</blockquote>
+
+<ol>
+<li>Wählen Sie den Datentypen aus, den Sie löschen möchten (Alarm, Messung, Ereignis, Kommando, Audit oder Alle).</li>
+<li>Geben Sie einen Fragmenttypen ein, wenn Sie die zu löschenden Daten genauer spezifizieren möchten. Geben Sie im Feld <strong>Typ</strong> ein &ldquo;type&rdquo;-Attribut als Filter ein. Um beispielsweise alle Alarme im Zusammenhang mit Verbindungsabbrüchen zu löschen, wählen Sie als Datentyp &ldquo;Alarm&rdquo; und geben Sie &ldquo;c8y_UnavailabilityAlarm&rdquo; als Attribut ein.</li>
+<li>Wenn Sie nur die Daten für ein bestimmtes Gerät löschen möchten, geben Sie die entsprechende Geräte-ID in das Feld <strong>Quelle</strong> ein.</li>
+<li>Geben Sie das maximale Alter in Tagen an (maximal zulässiger Wert ist 10 Jahre in Tagen).</li>
+<li>Klicken Sie <strong>Speichern</strong>, um die Regel zu erstellen.</li>
+</ol>
+
+<blockquote>
+<p><strong>Info</strong>: Beachten Sie, dass Alarme nur entfernt werden, wenn Sie den Status &ldquo;GELÖSCHT&rdquo; haben.</p>
+</blockquote>
+
+<p>Um eine Regel zu entfernen, bewegen Sie den Mauszeiger darüber und klicken Sie <strong>Entfernen</strong>.</p>
+
+<h3 id="a-name-files-a-verwalten-von-daten-in-der-dateiablage"><a name="files"></a>Verwalten von Daten in der Dateiablage</h3>
+
+<p>Die Dateiablage bietet einen Überblick über die Dateien, die in Ihrem Konto gespeichert sind.</p>
+
+<p>Klicken Sie <strong>Dateiablage</strong> im Menü <strong>Verwaltung</strong>, um eine Liste aller Dateien anzuzeigen.</p>
+
+<p>Die angezeigten Dateien können aus verschiedenen Quellen stammen. Es kann sich um Software Images, Konfigurationssnapshots von Geräten, Logdateien von Geräten oder um Webanwendungen, die auf der Seite <strong>Eigene Anwendungen</strong> hochgeladen wurden, handeln.</p>
+
+<p>Für jede Datei wird der Name, sein Eigentümer, der Dateityp (z. B. image/bmp, text/csv), die Dateigröße und das Datum der letzten Aktualisierung angezeigt.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-file-repository.png" alt="Dateiablage" /></p>
+
+<p>Um eine Datei von Ihrem Computer hochzuladen, klicken Sie in der oberen Menüleiste auf <strong>Datei hochladen</strong>.</p>
+
+<p>Um eine Datei von Ihrem Konto herunterzuladen, öffnen Sie das Kontextmenü über das Menüsymbol und wählen Sie <strong>Herunterladen</strong>.</p>
+
+<p>Um eine Datei von Ihrem Konto zu löschen, klicken Sie <strong>Löschen</strong> im Kontextmenü.</p>
+
+<blockquote>
+<p><strong>Info</strong>: Wenn die Datei einer aktiven Anwendung entspricht, kann sie nicht gelöscht werden. Sie müssen die Anwendung erst entfernen oder aktualisieren, um sie löschen zu können.</p>
+</blockquote>
+
+  </article>
+  
+  <article id="tfa" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#tfa">
+        <span class="fa fa-link"></span>
+      </button>
+      Zwei-Faktor-Authentifizierung</h2>
+    <p>Die Zwei-Faktor-Authentifizierung (TFA, two-factor authentication) ist eine weitere Sicherheitsebene, die neben einem Benutzernamen und einem Passwort auch eine SMS-Bestätigung erfordert. TFA kann nur von Administratoren eingerichtet werden. Wenn TFA aktiviert ist, kann es nicht in den &ldquo;Benutzereinstellungen&rdquo; konfiguriert werden, sondern nur über die Administrationsoberfläche.</p>
+
+<blockquote>
+<p><strong>Info:</strong> Beachten Sie, dass eine Telefonnummer bereitgestellt werden muss, wenn ein Benutzer hinzugefügt wird und TFA aktiviert ist. Wenn Benutzer ohne Telefonnummer versuchen, sich über TFA anzumelden, werden sie in einem separaten Fenster aufgefordert, eine Telefonnummer einzugeben. Ohne Telefonnummer ist eine Anmeldung nicht möglich.</p>
+</blockquote>
+
+<p>Auf der Seite <strong>Benutzer</strong> zeigt ein Schlüsselsymbol rechts neben der Passwortstärke im Benutzereintrag an, wenn für einen Benutzer TFA aktiviert ist.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-tfa-status.png" alt="TFA-Status" style="max-width: 100%"></p>
+
+<p>Um für einen Benutzer Zwei-Faktor-Authentifizierung zu aktivieren, führen Sie folgende Schritte aus:</p>
+
+<ul>
+<li>Klicken Sie auf den gewünschten Benutzer in der Seite <strong>Benutzer</strong>.</li>
+<li>Aktivieren Sie die Checkbox <strong>Zwei-Faktor-Authentifizierung aktivieren</strong>.</li>
+<li>Klicken Sie <strong>Speichern</strong>.</li>
+</ul>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-tfa-enabled.png" alt="TFA aktivieren" style="max-width: 100%"></p>
+
+  </article>
+  
+  <article id="changing-settings" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#changing-settings">
+        <span class="fa fa-link"></span>
+      </button>
+      Ändern von Einstellungen</h2>
+    
+
+<p>Im Menü <strong>Einstellungen</strong> können Administratoren verschiedene Einstellungen des Kontos ändern oder verwalten, wie</p>
+
+<ul>
+<li><a href="#single-sign-on">Single Sign-On</a> konfigurieren,</li>
+<li><a href="#default-app">Anwendungseinstellungen</a> ändern,</li>
+<li><a href="#changing-password-settings">Passwortrichtlinien und TFA-Einstellungen</a> ändern,</li>
+<li>die <a href="#properties">Attributsbibliothek</a> verwalten,</li>
+<li>Einstellungen für die Enterprise Edition konfigurieren, siehe <a href="/guides/users-guide/enterprise-edition#customization">Enterprise Edition</a>.</li>
+</ul>
+
+<h3 id="a-name-single-sign-on-a-konfigurieren-von-single-sign-on"><a name="single-sign-on"></a>Konfigurieren von Single-Sign-On</h3>
+
+<p>Cumulocity bietet Single-Sign-On-Funktionalität, die es dem Anwender ermöglicht, sich mit einem einzigen 3rd-Party-Autorisierungsserver über ein OAuth2-Protokoll, beispielsweise Azure Active Directory, anzumelden. Aktuell wird die Vergabe von Autorisierungscodes nur mit Access Tokens im JWT-Format unterstützt.</p>
+
+<p><strong>Info</strong>: Die Single-Sign-On-Funktionalität verwendet Cookies-Technologien und kann nur genutzt werden, wenn Cookies in den Einstellungen Ihres Browsers zugelassen sind.</p>
+
+<p>Die Single-Sign-On-Funktionalität wurde mit der Cumulocity-Version 9.12 aktiviert. Microservices müssen mit dem Microservice SDK der Version 9.12 oder höher erstellt sein, um korrektes Funktionieren zu gewährleisten.</p>
+
+<p>Bevor Sie zur Single-Sign-On-Option wechseln, stellen Sie sicher, dass:</p>
+
+<ul>
+<li>der Autorisierungsserver, den Sie verwenden, die Vergabe von OAuth2-Autorisierungscodes unterstützt,</li>
+<li>das Access Token als JWT ausgegeben wird und Sie wissen, was der Token Content enthalten muss,</li>
+<li>das JWT aus einer einzigartigen Benutzeridentifikation (Unique User Identifier) besteht,</li>
+<li>Cumulocity-Plattform Version 9.12 oder vorzugsweise höher verwendet wird,</li>
+<li>alle Microservices mit dem Microservice Java SDK 9.12.6, oder vorzugsweise höher, erstellt wurden.</li>
+</ul>
+
+<p>Informationen zu benutzerspezifischen Microservices finden Sie unter <a href="guides/microservice-sdk/concept/#security">General aspects &gt; Security</a> im Microservice SDK Guide.</p>
+
+<p>Bei lokalen Installationen ist die Domain-basierte Mandantenabbildung bereits korrekt konfiguriert.</p>
+
+<h4 id="konfigurationseinstellungen">Konfigurationseinstellungen</h4>
+
+<p>Um die Single-Sign-On-Funktionalität zu aktivieren, muss der Administrator eine Verbindung zum Autorisierungsserver konfigurieren. Die erfolgt in der &ldquo;Administration&rdquo;-Anwendung.</p>
+
+<p>Klicken Sie <strong>Single-Sign-On</strong> im Menü <strong>Einstellungen</strong> im Navigator.</p>
+
+<p>Links oben können Sie eine Vorlage für das Layout der Seite auswählen. Die Standardvorlage &ldquo;Benutzerdefiniert&rdquo; ermöglicht eine sehr detaillierte Konfiguration mit nahezu jedem Autorisierungsserver, der die Vergabe von OAuth2-Autorisierungscodes unterstützt. Andere Vorlagen bieten vereinfachte Ansichten bekannter und unterstützter Autorisierungsserver. Im Folgenden wird erklärt, wie Sie die benutzerdefinierte Vorlage verwenden, sowie eine Vorlage für das Azure Active Directory vorgestellt.</p>
+
+<h5 id="benutzerdefinierte-vorlage">Benutzerdefinierte Vorlage</h5>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-sso-1.png" alt="Request configuration" /></p>
+
+<p>Da das OAuth-Protokoll auf der Ausführung von HTTP-Anfragen und -Redirects basiert, wird eine generische Anfragekonfiguration bereitgestellt.</p>
+
+<p>Der erste Teil der <strong>Single-Sign-On</strong>-Seite besteht aus der Anfragekonfiguration. Hier werden die Anfrage-Adresse, Anfrageparameter, Kopfzeile sowie Body von Token- und Refresh-Anfragen konfiguriert. Die Autorisierungsmethode wird als GET-Anfrage, alle anderen als POST-Anfrage ausgeführt.</p>
+
+<p>Der Bereich <strong>Grundeinstellungen</strong> der <strong>Single-Sign-On</strong>-Seite besteht aus den folgenden Konfigurationseinstellungen:</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-sso-2.png" alt="OAuth configuration" /></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Redirect-URI</td>
+<td align="left">Redirect-Parameter. Kann in Anfragedefinitionen als ${clientId}-Platzhalter verwendet werden.</td>
+</tr>
+
+<tr>
+<td align="left">Client-ID</td>
+<td align="left">Client-ID der OAuth-Verbindung. Kann in Anfragedefinitionen als ${clientId}-Platzhalter verwendet werden.</td>
+</tr>
+
+<tr>
+<td align="left">Schaltflächenname</td>
+<td align="left">Name auf der Schaltfläche auf der Anmeldeseite</td>
+</tr>
+
+<tr>
+<td align="left">Issuer</td>
+<td align="left">OAuth-Token-Issuer</td>
+</tr>
+
+<tr>
+<td align="left">Anbietername</td>
+<td align="left">Name des Anbieters</td>
+</tr>
+
+<tr>
+<td align="left">Sichtbar auf der Anmeldeseite</td>
+<td align="left">Legt fest, ob die Anmeldeoption sichtbar sein soll</td>
+</tr>
+
+<tr>
+<td align="left">Audience</td>
+<td align="left">Erwarteter &ldquo;aud&rdquo;-Parameter des JWT</td>
+</tr>
+
+<tr>
+<td align="left">Gruppe</td>
+<td align="left">Gruppe, der der Benutzer beim ersten Anmelden zugeordnet wird (ab Version 9.20 ersetzt durch dynamische Rechtezuordnung, siehe unten)</td>
+</tr>
+
+<tr>
+<td align="left">Anwendungen</td>
+<td align="left">Anwendungen, die dem Benutzer beim ersten Anmelden zugewiesen werden (ab Version 9.20 ersetzt durch dynamische Rechtezuordnung, siehe unten)</td>
+</tr>
+</tbody>
+</table>
+
+<p>Jedesmal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens verifiziert und dient als Basis für den Benutzerzugang zur Cumulocity-Plattform. Der folgende Abschnitt beschreibt die Zuordnung zwischen JWT-Claims und dem Zugang zur Plattform.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-sso-7.png" alt="OAuth configuration" /></p>
+
+<p>Wenn ein Benutzer versucht sich anzumelden, sieht der dekodierte JWT-Claim für das oben abgebildete Beispiel folgendermaßen aus:</p>
+
+<pre><code>json
+{
+...
+&quot;user&quot;: &quot;john.wick&quot;,
+...
+}
+</code></pre>
+
+<p>Dem Benutzer werden die globalen Rollen BUSINESS und APPLICATION COCKPIT zugewiesen. Klicken Sie <strong>Rechtezuordnung hinzufügen</strong>, um weitere Berechtigungen zu vergeben. Klicken Sie das Minus-Symbol, um eine Regel zu entfernen. Eine Anweisung kann mehrere Überprüfungen enthalten, wie im Beispiel unten. Klicken Sie <strong>und</strong>, um eine Überprüfung zu einer vorhandenen Anweisung hinzuzufügen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-sso-8.png" alt="OAuth configuration" /></p>
+
+<p>In diesem Fall sieht der JWT-Claim folgendermaßen aus:</p>
+
+<pre><code class="language-json"> {
+ ...
+ &quot;user&quot;: {
+    &quot;type&quot;: &quot;human&quot;
+ },
+ &quot;role&quot;: [
+    &quot;ADMIN&quot;
+ ],
+ ...
+ }
+</code></pre>
+
+<p>Wie Sie sehen, besteht durch den &ldquo;in&rdquo;-Operator die Möglichkeit, zu verifizieren, ob ein Wert in einer Liste vorhanden ist. Werte können außerdem in andere Objekte eingebettet sein. Ein Punkt (&ldquo;.&rdquo;) im Schlüssel indiziert, dass es sich um ein eingebettetes Objekt handelt.</p>
+
+<p>Wenn der Benutzer sich mit einem Access Token anmeldet, kann der Benutzername aus einem JWT-Claim abgeleitet werden. Der Name des Claims kann unter <strong>Benutzer-ID</strong> konfiguriert werden.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-sso-3.png" alt="OAuth configuration" /></p>
+
+<p>Jedes Access Token wird durch ein Signing-Zertifikat signiert. Aktuell gibt es drei Möglichkeiten, die Signing-Zertifikate zu konfigurieren.</p>
+
+<ol>
+<li><p>Durch Spezifizieren der URL für den öffentlichen Schlüssel des Azure AD-Zertifikats. <br><img src="/guides/images/benutzerhandbuch/admin-sso-4.png" alt="OAuth configuration" /></p></li>
+
+<li><p>Durch Spezifizieren der ADFS-Manifest-Adresse (für ADFS 3.0). <br><img src="/guides/images/benutzerhandbuch/admin-sso-9.png" alt="OAuth configuration" /></p></li>
+
+<li><p>Durch manuelles Bereitstellen des öffentlichen Schlüssels eines Zertifikats. Eine Zertifikatsdefinition benötigt eine Algorithmus-Information, einen Wert für den öffentlichen Schlüssel und ein Gültigkeitsintervall. <br><img src="/guides/images/benutzerhandbuch/admin-sso-5.png" alt="OAuth configuration" /></p></li>
+</ol>
+
+<h4 id="integration-mit-azure-ad">Integration mit Azure AD</h4>
+
+<h5 id="azure-ad-konfiguration">Azure AD-Konfiguration</h5>
+
+<p>Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code">https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code</a>.</p>
+
+<p>Während der Konfiguration der Azure AD entspricht die Redirect-URI Ihrer vollständigen Domain-Adresse. In diesem Dokument verwenden wir beispielhaft <code>http://aad.cumulocity.com</code>. In Azure AD sind keine weitere Schritte erforderlich.</p>
+
+<h5 id="cumulocity-konfiguration">Cumulocity-Konfiguration</h5>
+
+<p>Wenn die Vorlage &ldquo;Azure AD&rdquo; ausgewählt ist, sehen die Grundeinstellungen in etwa folgendermaßen aus:</p>
+
+<p><img src="/guides/images/benutzerhandbuch/admin-sso-aad-basic.png" alt="OAuth configuration" /></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Azure AD-Adresse</td>
+<td align="left">Adresse Ihres Azure AD-Mandanten</td>
+</tr>
+
+<tr>
+<td align="left">Mandant</td>
+<td align="left">Name des Azure AD-Mandanten</td>
+</tr>
+
+<tr>
+<td align="left">Anwendungs-ID</td>
+<td align="left">Anwendungs-ID</td>
+</tr>
+
+<tr>
+<td align="left">Redirect-URI</td>
+<td align="left">Adresse Ihres Cumulocity-Mandanten, gefolgt von /tenant/oauth</td>
+</tr>
+
+<tr>
+<td align="left">Client-Secret</td>
+<td align="left">Azure AD-Client-Secret, falls vorhanden</td>
+</tr>
+
+<tr>
+<td align="left">Schaltflächenname</td>
+<td align="left">Name der Schaltfläche</td>
+</tr>
+
+<tr>
+<td align="left">Token-Issuer</td>
+<td align="left">Token-Issuer-Wert im Format einer HTTP-Adresse</td>
+</tr>
+</tbody>
+</table>
+
+<p>Der zweite Teil der Seite sieht genauso aus wie im Fall der benutzerdefinierten Vorlage und ermöglicht die Konfiguration der Rechtezuordnung, Benutzer-ID und Signaturverifizierung.</p>
+
+<h3 id="a-name-default-app-a-ändern-von-anwendungseinstellungen"><a name="default-app"></a>Ändern von Anwendungseinstellungen</h3>
+
+<p>Klicken Sie <strong>Anwendung</strong>, um Anwendungseinstellungen zu bearbeiten.</p>
+
+<p>Unter <strong>Standardanwendung</strong> können Sie eine Standardanwendung für alle Benutzer Ihres Mandanten festlegen.</p>
+
+<blockquote>
+<p><strong>Info:</strong> Alle Benutzer müssen Zugriff auf diese Anwendung haben.</p>
+</blockquote>
+
+<p>Unter <strong>Zugriffskontrolle</strong> können Administratoren CORS (Cross-Origin Resource Sharing) über die Cumulocity API aktivieren.</p>
+
+<p>Die Einstellung <strong>Zulässige Domain</strong> ermöglicht es Ihren JavaScript-Webanwendungen, direkt mit REST APIs zu kommunizieren. Geben Sie ein Sternsymbol &ldquo;*&rdquo; ein, um die Kommunikation mit allen Hosts zu erlauben. Geben Sie &ldquo;<a href="http://my.host.com">http://my.host.com</a>, <a href="http://myother.host.com&quot;">http://myother.host.com&quot;</a> ein, um Anwendungen aus <a href="http://my.host.com">http://my.host.com</a> und <a href="http://myother.host.com">http://myother.host.com</a> die Kommunikation mit der Plattform zu erlauben.</p>
+
+<p>Weitere Information erhalten Sie unter <a href="http://enable-cors.org">http://enable-cors.org</a>.</p>
+
+<h3 id="a-name-changing-password-settings-a-ändern-der-passwortrichtlinien-und-tfa-einstellungen"><a name="changing-password-settings"></a>Ändern der Passwortrichtlinien und TFA-Einstellungen</h3>
+
+<p>Um die Passwortrichtlinien zu ändern, klicken Sie <strong>Passwort</strong> im Menü <strong>Einstellungen</strong>.</p>
+
+<p>Unter <strong>Passwortbeschränkung</strong> können Sie die Gültigkeit von Benutzerpasswörtern beschränken, in dem Sie die Anzahl der Tage eingeben, nach der Benutzer ihre Passwörter ändern müssen. Wenn Sie keine Passwortänderung erzwingen möchten, verwenden Sie &ldquo;0&rdquo; für die uneingeschränkte Gültigkeit von Passwörtern (Standardwert).</p>
+
+<p>Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie <strong>Nur starke (grüne) Passwörter zulassen</strong> auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter <a href="/guides/benutzerhandbuch/overview#login">Anmelden</a> beschrieben.</p>
+
+<blockquote>
+<p><strong>Info:</strong> Passwortbeschränkung und das Erzwingen starker Passörter sind möglicherweise nicht editierbar, falls vom Plattformadministrator so konfiguriert.</p>
+</blockquote>
+
+<p>Starke (grüne) Passwörter müssen &ldquo;M&rdquo; Zeichen haben. Standardmäßig sind Passwörter, die in der Vergangenheit verwendet wurden, nicht zulässig. Das System merkt sich die letzten &ldquo;N&rdquo; von einem Benutzer bereitgestellten Passwörter und erlaubt nicht, diese zu verwenden. Der Standardwert für &ldquo;N&rdquo; ist 10.</p>
+
+<blockquote>
+<p><strong>Info:</strong> &ldquo;M&rdquo; und &ldquo;N&rdquo; können vom Plattformadministrator konfiguriert werden.</p>
+</blockquote>
+
+<p>Klicken Sie <strong>Speichern</strong>, um die Passwortrichtlinien zu speichern.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/Admin_Password.png" alt="Passwortrichtlinien" /></p>
+
+<p>Unter <strong>TFA-Einstellungen</strong> können Sie die folgenden TFA-Einstellungen bearbeiten:</p>
+
+<ul>
+<li><strong>Token-Gültigkeit begrenzen für</strong> - hier können Sie die Dauer jeder Sitzung in Minuten festlegen. Wenn die Sitzung abgelaufen ist, muss der Benutzer einen neuen Verifizierungscode eingeben.</li>
+<li>&ldquo;Token-Gültigkeit begrenzen für&rdquo; - hier können Sie die Dauer jeder Sitzung in Minuten festlegen. Wenn die Sitzung abgelaufen ist, muss der Benutzer einen neuen Verifizierungscode eingeben.</li>
+</ul>
+
+<p>Aktivieren Sie <strong>Zwei-Faktor-Authentifizierung zulassen</strong>, um Zwei-Faktor-Authentifizierung einzustellen.</p>
+
+<p>Klicken Sie <strong>TFA-Einstellungen speichern</strong>, um Ihre Einstellungen zu speichern.</p>
+
+<h3 id="a-name-properties-a-verwalten-der-attributsbibliothek"><a name="properties"></a>Verwalten der Attributsbibliothek</h3>
+
+<p>In der &ldquo;Attributsbibiothek&rdquo; im Menü &ldquo;Einstellungen&rdquo; können benutzerdefinierte Attribute zu den Stammdaten, Alarmen, Ereignissen und Mandanten hinzugefügt werden.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/Admin_PropertiesLibrary.png" alt="Attributsbibiothek" /></p>
+
+<p>Mit benutzerdefinierten Attributen können Sie das Datenmodell der in Cumulocity integrierten Objekte erweitern. Sie können die folgenden eigenen Attribute erstellen:</p>
+
+<ul>
+<li>Eigenen Stammdatenattribute werden verwendet, um das Stammdatenmodell zu erweitern. Sie können in den Widgets “Asset-Tabelle” und “Asset-Attribute” genutzt werden.</li>
+<li>Eigene Mandantenattribute sind bei der Erstellung von Mandanten verfügbar. Die eigenen Attribute können unter &ldquo;Untermandanten&rdquo; in der Registerkarte &ldquo;Benutzerdefinierte Attribute&rdquo; bearbeitet werden. Außerdem können diese Attribute in den Nutzungsstatistiken eingesehen und exportiert werden.</li>
+<li>Benutzerdefinierte Alarm- und Ereignisattribute können Ihren Berichten als eigene Felder hinzugefügt werden und sind in der Seite &ldquo;Berichtkonfigurationen&rdquo; in der Cockpit-Anwendung verfügbar.</li>
+</ul>
+
+<p><strong>Hinzufügen von Attributen zur Attributsbibiothek</strong></p>
+
+<p>Um ein benutzerdefiniertes Attribut hinzuzufügen, wählen Sie die Registerkarte für das gewünschte Attribut und klicken Sie <strong>Attribut hinzufügen</strong>.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/Admin_AddProperty.png" alt="Neues Attribut hinzufügen" /></p>
+
+<p>Geben Sie im folgenden Editor einen eindeutigen Namen als Identifikator und eine Beschriftung für das Attribut ein, und wählen Sie einen Datentypen aus der Dropdown-Liste. Wählen Sie außerdem Validierungsregeln für das neue Attribut aus:</p>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align: left">Checkbox</th>
+
+<th style="text-align: left">Beschreibung</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align: left">Erforderlich</td>
+
+<td style="text-align: left">Wenn ausgewählt, muss das Attribut z. B. während der Alarmerstellung bereitgestellt werden. Nicht verfügbar, wenn der Attributstyp "Boolean" ist.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Standardwert</td>
+
+<td style="text-align: left">Geben Sie einen Standardwert ein, der automatisch im benutzerdefinierten Attributsfeld gesetzt wird. Nur verfügbar für Attribute mit dem Wert "String".</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Minimum</td>
+
+<td style="text-align: left">Geben Sie einen Integerwert als Minimum ein.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Maximum</td>
+
+<td style="text-align: left">Geben Sie einen Integerwert als Maximum ein.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Minimale Länge</td>
+
+<td style="text-align: left">Geben Sie die minimal erforderliche Länge für die Zeichenkette ein.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Maximale Länge</td>
+
+<td style="text-align: left">Geben Sie die maximal mögliche Länge für die Zeichenkette ein.</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left">Regulärer Ausdruck</td>
+
+<td style="text-align: left">Geben Sie einen regulären Ausdruck ein, der erforderlich ist, um das benutzerdefinierte Attributfeld auszufüllen.</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<p>Klicken Sie <strong>Speichern</strong>, um das neue Attribut zu erstellen.</p>
+
+<p>Klicken Sie auf den Namen eines Attributs in der Liste, um dieses zu öffnen. Um das Attribut zu bearbeiten, geben Sie die gewünschten Änderungen ein, und klicken Sie <strong>Speichern</strong>, um die neuen Einstellungen zu speichern. Klicken Sie <strong>Entfernen</strong>, um das Attribut zu löschen.</p>
+
+<h3 id="a-name-openit-credentials-a-eingeben-von-openit-zugangsdaten"><a name="openIT-credentials"></a>Eingeben von OpenIT-Zugangsdaten</h3>
+
+<p>Durch die Eingabe von OPenIT- Zugangsdaten erlauben Sie der Plattform, SMS-Dienste zu verwenden, die von <a href="https://sms.openit.de/main.php">Openit</a> bereitgestellt werden.</p>
+
+<p>SMS werden für verschiedene Funktionen in den Anwendungen verwendet wie <a href="/guides/benutzerhandbuch/administration#tfa">Zwei-Faktor-Authentifizierung</a> und Benachrichtigungen etwa bei Alarmen.</p>
+
+<h3 id="konfiguration">Konfiguration</h3>
+
+<p>Unter &ldquo;Konfiguration&rdquo; im Menü &ldquo;Einstellungen&rdquo; können Sie systemweite Attribute konfigurieren. Die folgenden Optionen können in den Konfigurationseinstellungen bearbeitet werden.</p>
+
+<p>Im Feld &ldquo;Zwei-Faktor-Authentifizierung&rdquo; können Sie die SMS-Vorlage, die an die Benutzer geschickt wird, ändern.</p>
+
+<p>Im Feld &ldquo;Support-Link&rdquo; können Sie eine URL eingeben, die als Support-Link verwendet wird. Wenn Sie hier keinen Link bereitstellen, wird der Standardlink zur Cumulocity-Support-Seite verwendet.</p>
+
+<p>Geben Sie &ldquo;false&rdquo; ein, um den Link zu verbergen.</p>
+
+<p>Im Bereich &ldquo;Passwort zurücksetzen&rdquo; können Sie alle Einstellungen im Zusammenhang mit E-Mail-Vorlagen zum Zurücksetzen des Passworts ändern.</p>
+
+<p><img src="/guides/images/users-guide/configuration_tab2.png" alt="Konfiguration" /></p>
+
+<p>Ganz oben können Sie festlegen, ob Sie zulassen möchten, E-Mails an unbekannte E-Mail-Adressen zu senden.</p>
+
+<p>Stellen Sie im Feld &ldquo;E-Mail-Vorlage für das Zurücksetzen von Passwörtern&rdquo; eine Vorlage bereit, die verwendet werden soll, wenn die Adresse bekannt ist, und eine für unbekannte Adressen. Der Link zum Zurücksetzen des Passworts kann beispielsweise lauten: {host}/apps/devicemanagement/index.html?token={token}.</p>
+
+<p>Geben Sie im Feld &ldquo;E-Mail-Betreff&rdquo; ein Betreff für alle E-Mails im Zusammenhang mit dem Zurücksetzen des Passworts ein.</p>
+
+<p>Geben Sie in den folgenden beiden Feldern jeweils eine Vorlage für die E-Mails zur Bestätigung der Passwortänderung und für die Einladung zur Aktivierung ein.</p>
+
+<blockquote>
+<p><strong>Info</strong>: Zu verwendende Platzhalter sind: {host}, {tenant-domain}, {token}.</p>
+</blockquote>
+
+<p>Im Bereich &ldquo;E-Mail-Server&rdquo; können Sie &ldquo;Protokoll&rdquo;, &ldquo;Host&rdquo;, &ldquo;Port&rdquo;, &ldquo;Benutzername&rdquo;, &ldquo;Passwort&rdquo; und &ldquo;Senderadresse&rdquo; für den E-Mail-Server angeben.</p>
+
+<p><img src="/guides/images/users-guide/Administration/Admin_ConfigurationServer.png" alt="E-Mail-Server konfigurieren" /></p>
+
+<p>Im Bereich &ldquo;Datenexport&rdquo; können Sie den E-Mail-Betreff und die E-Mail-Vorlage für den Datenexport angeben sowie die “Fehlermeldung bei unauthorisierten Benutzern” definieren.</p>
+
+<p><img src="/guides/images/users-guide/configuration_tab4.png" alt="Konfiguration" /></p>
+
+<p>Im Bereich &ldquo;Speicherbegrenzung&rdquo; können Sie den E-Mail-Betreff und die E-Mail-Vorlage für E-Mails festlegen, die gesendet werden, <em>bevor</em> Daten bei Überschreitung der Speicherbegrenzung gelöscht werden und _nachdem_Daten gelöscht wurden.</p>
+
+<p>Im Bereich &ldquo;Sperren von Mandanten&rdquo; können Sie Einstellungen für E-Mails vornehmen, die gesendet werden, wenn ein Mandant gesperrt wurde.</p>
+
+<p><img src="/guides/images/users-guide/Administration/Admin_ConfigurationSuspended.png" alt="Sperren von Mandanten" /></p>
+
+<p>Oben können Sie auswählen, ob Sie die E-Mail zum Administrator des gesperrten Mandanten senden möchten und einen weiteren E-Mail-Empfänger angeben. Unten definieren Sie den Betreff und die Vorlage für die E-Mail &ldquo;Gesperrter Benutzer&rdquo;.</p>
+
+<p>Klicken Sie <strong>Konfiguration speichern</strong>, um Ihre Eingaben zu speichern.</p>
+
+<blockquote>
+<p><strong>Info</strong>: Für &ldquo;Management-Mandanten&rdquo; sind weitere Funktionalitäten verfügbar.</p>
+</blockquote>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

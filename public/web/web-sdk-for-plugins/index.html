@@ -1,0 +1,2163 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Web SDK for plugins - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Web SDK guide</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/web/introduction/">Overview</a>
+     
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/web/background/">Brief background</a>
+     
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/web/angular/">Web SDK for Angular</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/angular/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/angular/#cli">Developer command line tool</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/angular/#branding">Branding</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/angular/#ngx-components">ngx-components</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/angular/#client">Client library</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/angular/#apps">Applications</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/web/web-sdk-for-plugins/">Web SDK for plugins</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#overview">Overview</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#concepts">Concepts</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#setup">Setup</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#sample-plugins">Sample plugins</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#hello-world">Hello world</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#branding-plugin">Branding plugin</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#widget-plugin">Widget plugin</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#tab-plugin">Tab plugin</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#jsdoc">JSDoc</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/web/troubleshooting/">Troubleshooting</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/troubleshooting/#dont-run">My code is not run or error messages are printed on the console</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/troubleshooting/#error-in-tenant">My code runs locally but not when I run it through my tenant</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/troubleshooting/#3rdparty-library">I cannot get a 3rd party library to run in my plugin</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Web SDK for plugins</h1>
+    </header>
+    
+      <div class="lead">
+        <p><a href="/guides/web/web-sdk-for-plugins">Web SDK for plugins</a> is still based on Angular JS. We are currently working on an Angular-based solution which will replace the existing Web SDK for plugins in the future.</p>
+
+<p>To develop new web applications we recommend using <a href="/guides/web/angular">Web SDK for Angular</a>.</p>
+
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="overview" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#overview">
+        <span class="fa fa-link"></span>
+      </button>
+      Overview</h2>
+    <hr />
+
+<p>In the following document you will get an overview on the Web SDK for Plugins which allows you to
+* extend applications with your own plugins.
+* add your own applications to Cumulocity’s web application.
+* enhance the visualization of data with custom widgets.
+* implement functionalities tailored to your use case.</p>
+
+<p><img src="/guides/images/plugins/overview.png" alt="Architecture" /></p>
+
+<p>The illustration above shows the structure behind the application and plugin development. The same as the core applications, your applications will be built on AngularJS and the &ldquo;c8y.core&rdquo; and &ldquo;c8y.ui&rdquo; <a href="http://resources.cumulocity.com/documentation/websdk/ng1-modules">JavaScript API</a>. Both modules offer you services to interact with the Cumulocity web application. While the module &ldquo;c8y.core&rdquo; provides services to access different kinds of data, such as users and managed objects, as well as basic functionalities, the module &ldquo;c8y.ui&rdquo; provides services to modify the user interface of your application or plugin, such as adding menu items or widgets. The modules in turn use the <a href="/guides/rest/introduction">REST API</a> provided by Cumulocity. You can find examples on how to use the services in the plugin examples.</p>
+
+<p>First, this document describes the concept behind applications and plugins. Then it specifies the required folder structure and different configuration options for applications and plugins. Subsequently, the setup necessary for developing applications and plugins is described. The Web SDK for Plugins section is structured as follows:</p>
+
+<ul>
+<li><a href="#concepts">Concepts</a>
+
+<ul>
+<li><a href="#project-structure">Project structure</a></li>
+<li><a href="#manifests">Manifests</a></li>
+</ul></li>
+<li><a href="#setup">Setup</a>
+
+<ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#cli-tool">Cumulocity CLI tool</a></li>
+<li><a href="#ui-package">Cumulocity UI package</a></li>
+</ul></li>
+<li><a href="#sample-plugins">Sample plugins</a></li>
+</ul>
+
+<p>Afterwards, we describe how to create a sample plugin step-by-step:
+* <a href="#hello-world">&ldquo;Hello World!&rdquo;</a></p>
+
+<p>You can also find other, more complex examples in the following documents:</p>
+
+<ul>
+<li><a href="/guides/web/web-sdk-for-plugins#branding-plugin">Branding plugin</a></li>
+<li><a href="/guides/web/web-sdk-for-plugins#tab-plugin">Tab plugins</a></li>
+<li><a href="/guides/web/web-sdk-for-plugins#widget-plugin">Widget plugins</a></li>
+</ul>
+
+<p>Although an overview of the concepts of applications and plugins will be provided in this chapter, we recommend to take a look at the basic concept of Cumulocity applications described in <a href="/guides/concepts/applications">Developing applications</a>.</p>
+
+  </article>
+  
+  <article id="concepts" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#concepts">
+        <span class="fa fa-link"></span>
+      </button>
+      Concepts</h2>
+    
+
+<hr />
+
+<p>Before building an application or plugin, it is important to understand what exactly applications and plugins are. In this context, applications are based on the Cumulocity UI framework and make up the Cumulocity UI. By default, the Cumulocity UI consists of three core applications, namely &ldquo;Device Management&rdquo;, &ldquo;Administration&rdquo; and &ldquo;Cockpit&rdquo;. In turn, applications consist of plugins. A plugin represents any functionality you would like to add to an application. With a plugin, you can:
+* Modify the branding,
+* Add new navigation items to the menu,
+* Add new widgets to dashboards,
+* Add new menu items to the drop-down menus,
+* Add new views or tabs to groups and devices
+* Or any other kind of functionality (f.e. for the search) you would like to integrate.</p>
+
+<p>This is illustrated below:</p>
+
+<p><img src="/guides/images/concepts-guide/extensionpoints.png" alt="Extension points for plugins" /></p>
+
+<p>Or, as an example, let us take a look at an extract of the list of plugins the “Cockpit” application uses. It consists of, i.a.
+* Cockpit Home: a plugin, which adds the &ldquo;Home&rdquo; menu to the navigator.
+* Dashboard: a plugin, which adds a new view/tab to groups and devices, functioning as a container for widgets.
+* Data point table: a plugin, which adds a widget to dashboards providing a visualization of measurements in tabular form.
+* etc.</p>
+
+<blockquote>
+<p>Note that you can <a href="#target">extend</a> the core applications of Cumulocity (Administration, Cockpit, Device Management) with new functionality. For normal tenants, you must create a duplicate of the core application before you can extend it. To create a duplicate of an application, you can either <a href="/guides/users-guide/administration#clone-application">copy it via the UI in &ldquo;Administration&rdquo;</a> or <a href="/guides/web/tab-plugin#dependencies">create a new application which uses the exact same plugins as the desired application</a>.</p>
+</blockquote>
+
+<h3 id="project-structure">Project structure</h3>
+
+<p>Whenever you create a new application or plugin, you have to comply with the following folder structure. Otherwise the application or plugin will not work. The default folder structure of an application is as follows:</p>
+
+<pre><code class="language-console">&lt;&lt;root folder&gt;&gt;
+├── cumulocity.json
+|	...
+└── plugins
+		└── &lt;&lt;plugin name&gt;&gt;
+				├── cumulocity.json
+				└── index.js
+			...
+</code></pre>
+
+<p>Inside the root folder of your application, the so-called &ldquo;<a href="#application-manifest">application manifest</a>&rdquo; is stored in the &ldquo;cumulocity.json&rdquo; file. The folder &ldquo;plugins&rdquo; contains one folder per plugin contributed by the application. The plugin folder name together with the application name uniquely identifies the plugin. Inside each plugin folder, the so-called &ldquo;<a href="#plugin-manifest">plugin manifest</a>&rdquo; is stored in another &ldquo;cumulocity.json&rdquo; file. The format of the application manifest and the plugin manifest is described <a href="#manifests">below</a>.
+In case that you only want to create a plugin and <a href="/guides/users-guide/administration#add-remove-plugin">add it to an already existing application</a>, use the exact folder structure described above:</p>
+
+<pre><code class="language-console">&lt;&lt;root folder&gt;&gt;
+└── &lt;&lt;plugin name&gt;&gt;
+		├── cumulocity.json
+		└── index.js
+		...
+</code></pre>
+
+<blockquote>
+<p>Please create an explicit root folder for your project. The Web SDK assumes that the parent folder of the root folder is readable by your operating system user.</p>
+</blockquote>
+
+<h3 id="a-name-manifests-a-manifests"><a name="manifests"></a>Manifests</h3>
+
+<h4 id="a-name-application-manifest-a-application-manifest"><a name="application-manifest"></a>Application manifest</h4>
+
+<p>The application manifest describes where your application is stored and how it is exposed to Cumulocity. The following properties are available:</p>
+
+<ul>
+<li><strong>name</strong>: A descriptive name for the application. It will appear in the app switcher menu.</li>
+<li><strong>availability</strong>: &ldquo;PRIVATE&rdquo;, if the application is only available in your tenant, &ldquo;MARKET&rdquo;, if it is a public application.</li>
+<li><strong>contextPath</strong>: The path to be used for hosted applications. The URL of the application will be &ldquo;&lt;&lt;yourURL&gt;&gt;/apps/&lt;&lt;contextPath&gt;&gt;&rdquo;.</li>
+<li><strong>key</strong>: The application key that is used for associating requests of an application with the application and for subscribing to applications.</li>
+<li><strong>resourcesUrl</strong>: If the app is serving an upload zip file (which is the case for Smartapps) this value will be &lsquo;/&rsquo;. If it&rsquo;s a full url all the request will proxied to that address.</li>
+<li><strong>type</strong>: <em>HOSTED</em>, if the application is hosted through Cumulocity, <em>EXTERNAL</em>, if the application is hosted elsewhere.</li>
+<li><strong>imports</strong>: A list of plugins used by the application. List of <em>&lt;&lt;applicationName&gt;&gt;/&lt;&lt;pluginName&gt;&gt;</em>.</li>
+<li><strong>noAppSwitcher</strong>: [OPTIONAL] If set to true, the application will not appear in the App Switcher menu. A possible use case is, for example, if the application only exposes plugins.</li>
+<li><strong>options</strong>:
+
+<ul>
+<li><strong>hide_navigator</strong>: [OPTIONAL] A boolean, which if set true collapses the navigator menu on the left by default.</li>
+<li><strong>globalTitle</strong>: [OPTIONAL] A title that will be used as the global title of the web application.</li>
+</ul></li>
+</ul>
+
+<blockquote>
+<p>Note that &ldquo;contextPath&rdquo; and &ldquo;key&rdquo; need to be unique. For &ldquo;PRIVATE&rdquo; applications, the properties &ldquo;name&rdquo; and &ldquo;contextPath&rdquo; need to be unique within your tenant only.</p>
+</blockquote>
+
+<h4 id="a-name-plugin-manifest-a-plugin-manifest"><a name="plugin-manifest"></a>Plugin manifest</h4>
+
+<p>The plugin manifest describes how your plugin is shown in the Cumulocity administration application (name, description, category, gallery, list) and what files need to be built and loaded in order to run the plugin (ngModules, js, imports, css, less, copy).</p>
+
+<ul>
+<li><strong>name</strong>: A descriptive name for the plugin, required.</li>
+<li><strong>description</strong>: [OPTIONAL] A longer description of the plugin.</li>
+<li><strong>category</strong>: [OPTIONAL] A category for the plugin to be used in the filtering in user interface.</li>
+<li><strong>ngModules</strong>: A list of AngularJS modules that are provided by plugin, at least one is required.</li>
+<li><strong>js</strong>: [OPTIONAL] A list of JavaScript files to be loaded, such as &ldquo;index.js&rdquo;, controllers, services, asf. The path is relative to the plugin&rsquo;s root folder.</li>
+<li><strong>css</strong>: [OPTIONAL] A list of CSS files to be loaded, paths relative to plugin’s root folder.</li>
+<li><strong>less</strong>: [OPTIONAL] A list of LESS files to be loaded, paths relative to plugin’s root folder.</li>
+<li><strong>copy</strong>: [OPTIONAL] A list of files that should be copied into the built.</li>
+</ul>
+
+<p>Most of the content of the manifest file corresponds to the application API properties, described in the <a href="/guides/reference/applications">REST reference</a>. Examples of manifest files can be found in the <a href="http://bitbucket.org/m2m/cumulocity-ui-plugin-examples">examples</a>.</p>
+
+  </article>
+  
+  <article id="setup" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#setup">
+        <span class="fa fa-link"></span>
+      </button>
+      Setup</h2>
+    
+
+<hr />
+
+<h3 id="a-name-prerequisites-a-prerequisites"><a name="prerequisites"></a>Prerequisites</h3>
+
+<p>Plugins are based on HTML5. You should be familiar with the following technologies:</p>
+
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5">HTML5</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
+<li><a href="https://angularjs.org/">AngularJS 1.x</a>.</li>
+</ul>
+
+<p>You will need the following prerequisites for being able to develop plugins and to execute the examples:</p>
+
+<ul>
+<li>You will need <a href="http://nodejs.org/">Node.js</a> <em>(6.7 or newer)</em></li>
+<li>You will need <a href="https://www.npmjs.com/">npm</a> <em>(installed with Node.js)</em></li>
+<li>You will need access to your Cumulocity account, i.e. you need your tenant name, username and password.</li>
+</ul>
+
+<h3 id="a-name-cli-tool-a-cumulocity-cli-tool"><a name="cli-tool"></a>Cumulocity CLI tool</h3>
+
+<p>Once all prerequisites are fulfilled, you are almost ready to go to build your own application and plugin. For the process of developing a plugin (building, theming, translating and deploying your apps and plugins), you will need the npm package &ldquo;cumulocity-tools&rdquo; installed globally on your machine. To install the npm package, execute the following command on your terminal.</p>
+
+<pre><code class="language-bash">$ npm i cumulocity-tools -g
+</code></pre>
+
+<p>Now you are ready to use the command line interface (CLI) tool. Try it out by executing the following command:</p>
+
+<pre><code class="language-bash">$ c8y --help
+</code></pre>
+
+<p>The &ldquo;&ndash;help&rdquo; option displays all available commands for the CLI tool.</p>
+
+<h3 id="a-name-ui-package-a-cumulocity-ui-package"><a name="ui-package"></a>Cumulocity UI package</h3>
+
+<p>As already described above, applications are always a collection of plugins. We provide a set of plugins you can build on in addition to your own. But before that, you must add a &ldquo;package.json&rdquo; file to the folder you will use for your application. To generate the &ldquo;package.json&rdquo; file automatically, simply run:</p>
+
+<pre><code class="language-bash">$ npm init
+</code></pre>
+
+<blockquote>
+<p>Note that this command prompts you to enter values for several properties which will be included in the &ldquo;package.json&rdquo; file. The &ldquo;package.json&rdquo; file should include at least a name and version. To skip a property, press enter.</p>
+</blockquote>
+
+<p>Then proceed to install the Cumulocity UI package containing the set of plugins by typing in the following command:</p>
+
+<pre><code class="language-bash">$ c8y install latest
+</code></pre>
+
+<p>This command will:
+- Check for the latest version of the Cumulocity UI package.
+- Download the package.
+- Add it as a dependency inside the &ldquo;package.json&rdquo; file.</p>
+
+<p>Instead of &ldquo;latest&rdquo;, you can also specify a certain version number, but this version has to be the same or less than the backend version number.</p>
+
+<blockquote>
+<p>Note that when sharing your project, other developers only need to run  <code>npm install</code> inside the root folder of the application project, as the version of the Cumulocity UI package is already defined as a dependency in the &ldquo;package.json&rdquo; file. You can always install other versions by running the <code>c8y install</code> command again.</p>
+
+<p>You can see the list of plugins an application uses by utilizing the command &ldquo;c8y util:showimports [appContextPath]&rdquo;.</p>
+</blockquote>
+
+  </article>
+  
+  <article id="sample-plugins" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#sample-plugins">
+        <span class="fa fa-link"></span>
+      </button>
+      Sample plugins</h2>
+    <hr />
+
+<p>After setting up everything and getting an insight into the folder structure and manifests, you can finally start running your first &ldquo;Hello world!&rdquo; application and plugin.</p>
+
+<ul>
+<li>Clone or download and unpack the &ldquo;Hello World!&rdquo; plugin from <a href="https://bitbucket.org/m2m/cumulocity-ui-plugin-examples">https://bitbucket.org/m2m/cumulocity-ui-plugin-examples</a>.</li>
+<li>Change into the directory that you just created.</li>
+<li>Run &ldquo;c8y install latest&rdquo; to install the Cumulocity UI package.</li>
+<li>Run &ldquo;c8y deploy:app myapplication&rdquo;. &ldquo;myapplication&rdquo; is the name of the &ldquo;Hello World!&rdquo; application specified in the &ldquo;cumulocity.json&rdquo; file.</li>
+</ul>
+
+<p>You will be asked for the name and base url of your tenant, as well as your username and password. To prevent filling out these prompts over and over again, you can define the following environment variables on your computer: <code>C8Y_TENANT</code>, <code>C8Y_USER</code>, <code>C8Y_PASS</code> and <code>C8Y_BASE_URL</code>. For example, type &ldquo;export C8Y_TENANT=demos&rdquo; on a Unix system to by default create your application in the tenant &ldquo;demos&rdquo;.</p>
+
+<p>After deploying the application, it appears in the <em>&ldquo;Own applications&rdquo;</em> menu of the &ldquo;Administration&rdquo; application.</p>
+
+<p><img src="/guides/images/plugins/applicationeditor.png" alt="My Application" /></p>
+
+<p>To see the &ldquo;Hello world!&rdquo; plugin, navigate to the example you just created an select the menu &ldquo;New plugin&rdquo;. You should be able to see the text &ldquo;Hello world!&rdquo;. You can also try out the other example plugins. For further information on the example plugins, visit the respective documents in the documentation.</p>
+
+  </article>
+  
+  <article id="hello-world" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#hello-world">
+        <span class="fa fa-link"></span>
+      </button>
+      Hello world</h2>
+    
+
+<hr />
+
+<p>The purpose of this plugin is to add a new application to the app switcher menu. This application will consist of a single menu item which will display a simple &ldquo;Hello world!&rdquo; page when selected by the user. At the end, the application should look as follows:</p>
+
+<p><img src="/guides/images/plugins/hello.png" alt="Hello world plugin" /></p>
+
+<p>In order to achieve this goal we need to do the following steps:</p>
+
+<ul>
+<li>Set up an application project.</li>
+<li>Configure the application manifest.</li>
+<li>Create the application in your tenant.</li>
+<li>Configure the plugin manifest.</li>
+<li>Implement the plugin&rsquo;s initialization function to add a menu item and associate it with a view template.</li>
+<li>Implement the controller to provide data for the view template (a simple text in this case).</li>
+<li>Add the view template to display the data.</li>
+<li>Test the application.</li>
+<li>Finally, build and publish the application and the plugin.</li>
+</ul>
+
+<h3 id="set-up-an-application-project">Set up an application project</h3>
+
+<p>First, we need to create the application project by
+* Creating a new folder with an arbitrary name.
+* Creating a &ldquo;cumulocity.json&rdquo; file inside this folder, representing our application manifest.
+* Running the command &ldquo;npm init&rdquo; to create a new &ldquo;package.json&rdquo; file.
+* Running the command &ldquo;c8y install latest&rdquo; to get the latest core plugins.</p>
+
+<p>After these steps you should have the following folder structure:</p>
+
+<pre><code class="language-console">&lt;&lt;root folder&gt;&gt;
+├── node_modules
+|		└── ...
+├── cumulocity.json
+└── package.json
+</code></pre>
+
+<h3 id="configure-the-application-manifest">Configure the application manifest</h3>
+
+<p>Second, we have to fill out the application manifest (the &ldquo;cumulocity.json&rdquo; file inside our root folder) with information about our Cumulocity application, such as its name, key, URL and dependencies. For this example, we have to specify the following properties:</p>
+
+<pre><code class="language-json">	{
+		&quot;availability&quot;: &quot;PRIVATE&quot;,
+	  &quot;contextPath&quot;: &quot;myapplication&quot;,
+	  &quot;key&quot;: &quot;myapplication-appkey&quot;,
+	  &quot;name&quot;: &quot;myapplication&quot;,
+	  &quot;resourcesUrl&quot;: &quot;/&quot;,
+	  &quot;type&quot;: &quot;HOSTED&quot;,
+		&quot;imports&quot;: [
+			&quot;core/c8yBranding&quot;
+		]
+	}
+</code></pre>
+
+<p>With the project structure so far, we can already test our application. By adding the &ldquo;c8yBranding&rdquo; plugin from the Cumulocity UI package to our imports, our application will not be completely empty when we try to access it. As the name already indicates, the plugin adds the Cumulocity&rsquo;s branding to our application. Before we can test an application locally, we have to create it on our tenant first.</p>
+
+<p>For more details on other properties of the manifest, see &ldquo;<a href="#manifests">Manifests</a>&rdquo;.</p>
+
+<h3 id="a-name-create-application-a-create-the-application-in-your-tenant"><a name="create-application"></a>Create the application in your tenant</h3>
+
+<p>After successfully logging in into a Cumulocity UI application, the application key is fetched automatically. Thus, to develop an application we need to make sure that the application is created in our tenant. To create the application in our tenant we simply deploy it using <code>c8y deploy:app &lt;appContextPath&gt;</code>.</p>
+
+<pre><code class="language-bash">$ c8y deploy:app myapplication
+? Tenant piedpiper
+? User admin
+? Password ***********
+? Base url https://piedpier.cumulocity.com
+GET application/applicationsByOwner/piedpier?pageSize=10000 200
+POST application/applications/31337/binaries/ 201
+PUT /application/applications/31337 200
+</code></pre>
+
+<p>You will be asked for the name and base url of your tenant, as well as your username and password. To prevent filling out these prompts over and over again, you can define the following environment variables on your computer: <code>C8Y_TENANT</code>, <code>C8Y_USER</code>, <code>C8Y_PASS</code> and <code>C8Y_BASE_URL</code>.</p>
+
+<p>After deploying your application, it appears in the <em>&ldquo;Own applications&rdquo;</em> menu of the &ldquo;Administration&rdquo; application.</p>
+
+<p><img src="/guides/images/plugins/applicationeditor.png" alt="My Application" /></p>
+
+<h3 id="test-your-application">Test your application</h3>
+
+<p>To run your application locally, just run <code>c8y server</code>.
+Additionally, you can pass options:</p>
+
+<ul>
+<li><code>-u https://tenant.cumulocity.com</code> with the instance as parameter where you want your api calls to be proxied to,</li>
+<li><code>-t examples</code> or <code>-t targets/examples/json</code> to use specific target file, e.g. if you want to test your plugins inside one of the standard applications and you have defined your target file as in the example:</li>
+</ul>
+
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;Examples&quot;,
+  &quot;comment&quot;: &quot;Release with additional example plugins&quot;,
+  &quot;replaceImports&quot;: {
+    &quot;core/c8yBranding&quot;: &quot;myapplication/myBranding&quot;
+  },
+  &quot;applications&quot;: [
+    {
+      &quot;contextPath&quot;: &quot;administration&quot;,
+      &quot;addImports&quot;: [
+        &quot;myapplication/weatherAdmin&quot;
+      ]
+    },
+    {
+      &quot;contextPath&quot;: &quot;devicemanagement&quot;,
+      &quot;addImports&quot;: [
+        &quot;myapplication/deviceEventsRealTime&quot;,
+        &quot;myapplication/deviceContact&quot;
+      ]
+    },
+    {
+      &quot;contextPath&quot;: &quot;cockpit&quot;,
+      &quot;addImports&quot;: [
+        &quot;myapplication/weather&quot;,
+        &quot;myapplication/iconmap&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<p>Example console output:</p>
+
+<pre><code class="language-console">$ c8y server -u https://tenant.cumulocity.com -t targets/examples.json
+Cumulocity UI development server running in port 9000.
+Proxying api requests to https://tenant.cumulocity.com
+140 modules loaded.
+5 application manifest loaded.
+http://localhost:9000/apps/myapplication/ cumulocity.json
+http://localhost:9000/apps/fieldbus4/  Packaged App
+http://localhost:9000/apps/administration/  Packaged App
+http://localhost:9000/apps/cockpit/  Packaged App
+http://localhost:9000/apps/devicemanagement/  Packaged App
+</code></pre>
+
+<p>Now, you can test your application by opening your browser at the URL &ldquo;<a href="http://localhost:9000/apps/myapplication/&quot;">http://localhost:9000/apps/myapplication/&quot;</a>. If you access your application now, you should be able to see the following:</p>
+
+<p><img src="/guides/images/plugins/emptyapplication.png" alt="My Application" /></p>
+
+<p>What is missing now is a plugin which adds a menu item to the navigator.</p>
+
+<h3 id="configure-the-plugin-manifest">Configure the plugin manifest</h3>
+
+<p>Each plugin comes in a separate subfolder inside the plugins folder of your application. So to add a plugin to our application, we have to
+* Create a &ldquo;plugins&rdquo; folder in our project
+* Create a folder named &ldquo;myplugin&rdquo; inside the &ldquo;plugins&rdquo; folder.
+* Create a &ldquo;cumulocity.json&rdquo; file inside the &ldquo;myplugin&rdquo; folder, representing our application manifest.
+* Create a &ldquo;views&rdquo; folder inside the &ldquo;myplugin&rdquo; folder.
+* Create a &ldquo;hello.html&rdquo; file inside the &ldquo;views&rdquo; folder, representing the view of our plugin.</p>
+
+<p>After these steps you should have the following folder structure:</p>
+
+<pre><code class="language-console">&lt;&lt;root folder&gt;&gt;
+├── node_modules
+├── plugins
+|		└── myplugin
+|				├──views
+|				|	 └── hello.html
+|				└── cumulocity.json
+├── cumulocity.js
+└── package.json
+</code></pre>
+
+<p>The plugin manifest provides information about our plugin, such as the name, a short description, files to be loaded, and angular modules to be added to the main app. For our example, add the following lines to the &ldquo;cumulocity.json&rdquo; file:</p>
+
+<pre><code class="language-json">{
+	&quot;name&quot;: &quot;Hello world plugin testing&quot;,
+	&quot;description&quot;: &quot;Simple hello world plugin.&quot;
+}
+</code></pre>
+
+<p>For more details on other properties of the manifest, see &ldquo;<a href="#manifests">Manifests</a>&rdquo;.</p>
+
+<p>Now that we have added a plugin to our application, we also have to add it to the imports of our application manifest. The name of the import consists of two parts separated by a slash. The first part has to be the context path of the application the plugin is located in and the second part has to be the name of the plugin folder. In our case, our plugin is located in our application with the context path &ldquo;myapplication&rdquo; as specified in the application manifest and our plugin folder is named &ldquo;myplugin&rdquo; which results in:</p>
+
+<pre><code class="language-json">	{
+		&quot;availability&quot;: &quot;PRIVATE&quot;,
+		&quot;contextPath&quot;: &quot;myapplication&quot;,
+		&quot;key&quot;: &quot;myapplication-appkey&quot;,
+		&quot;name&quot;: &quot;myapplication&quot;,
+		&quot;resourcesUrl&quot;: &quot;/&quot;,
+		&quot;type&quot;: &quot;HOSTED&quot;,
+		&quot;imports&quot;: [
+			&quot;core/c8yBranding&quot;,
+			&quot;myapplication/myplugin&quot;
+		]
+	}
+</code></pre>
+
+<p>After we added the plugin folder to our application, we can start implementing the functionality.</p>
+
+<h3 id="implement-the-plugin-s-initialization-function">Implement the plugin&rsquo;s initialization function</h3>
+
+<p>Even though the scope of this example is very small, we recommend to use a modular approach. For this reason, create a file &ldquo;hello.module.js&rdquo; for the module, a file &ldquo;hello.config.js&rdquo; for the config and a file &ldquo;hello.controller.js&rdquo; for the controller inside the &ldquo;myplugin&rdquo; folder.</p>
+
+<p>Inside the &ldquo;hello.module.js&rdquo; file, we initialize the module for our plugin:</p>
+
+<pre><code class="language-js">(function () {
+  'use strict';
+
+  angular.module('myapp.hello', []);
+}());
+</code></pre>
+
+<p>In our &ldquo;hello.config.js&rdquo; file, we have to configure our plugin so that it adds a menu item to the navigator and redirects to our view when clicking on this menu item. For that purpose, we can use the services &ldquo;c8yNavigatorProvider&rdquo; and &ldquo;c8yViewsProvider&rdquo; provided by the <a href="http://resources.cumulocity.com/documentation/websdk/ng1-modules/">Cumulocity JavaScript API</a>. Simply inject the services into your config and call the following functions:</p>
+
+<pre><code class="language-js">(function () {
+  'use strict';
+
+  angular
+    .module('myapp.hello')
+    .config(configure);
+
+  configure.$inject = [
+    'c8yNavigatorProvider',
+    'c8yViewsProvider'
+  ];
+
+  function configure(
+    c8yNavigatorProvider,
+    c8yViewsProvider
+  ) {
+    c8yNavigatorProvider.addNavigation({ // adds a menu item to the navigator with ...
+      name: 'hello', // ... the name *&quot;hello&quot;*
+      icon: 'cube', // ... the cube icon (icons are provided by the great Font Awesome library and you can use any of their [icon names](http://fontawesome.io/icons/) without the *fa-* prefix here
+      priority: 100000, // ... a priority of 100000, which means that all menu items with a priority lower than 100000 appear before this menu item and all with a priority higher than 100000 appear after this menu item
+      path: 'hello' // ... */hello* as path
+    });
+
+    c8yViewsProvider.when('/hello', { // when the path &quot;/hello&quot; is accessed ...
+      templateUrl: ':::PLUGIN_PATH:::/views/hello.html', //  ... display our html file &quot;hello.html&quot; inside the &quot;views&quot; folder of our plugin (the plugin's folder is represented using the magic string ```:::PLUGIN_PATH:::```, which is replaced by the actual path during the build process)
+      controller: 'HelloController', // ... use &quot;HelloController&quot; as controller
+      controllerAs: 'vm'
+    });
+  }
+}());
+</code></pre>
+
+<h3 id="implement-the-controller">Implement the controller</h3>
+
+<p>Second, we have to implement the controller for our view. For this example, the controller just defines a variable &ldquo;text&rdquo; which contains the simple static text &ldquo;hello, world&rdquo;:</p>
+
+<pre><code class="language-js">(function () {
+  'use strict';
+
+  angular
+    .module('myapp.hello')
+    .controller('HelloController', HelloController);
+
+  function HelloController() {
+    var vm = this;
+
+    vm.text = 'hello, world';
+  }
+}());
+</code></pre>
+
+<p>Now that we have added the module, config and controller to our plugin, we have to specify &ldquo;myapp.hello&rdquo; as our module and add each javascript file to our plugin manifest:</p>
+
+<pre><code class="language-json">{
+	&quot;name&quot;: &quot;Hello world plugin testing&quot;,
+	&quot;description&quot;: &quot;Simple hello world plugin.&quot;,
+	&quot;ngModules&quot;: [
+    &quot;myapp.hello&quot;
+	],
+	&quot;js&quot;: [
+    &quot;hello.module.js&quot;,
+    &quot;hello.config.js&quot;,
+    &quot;hello.controller.js&quot;
+	]
+}
+</code></pre>
+
+<h3 id="view-template">View template</h3>
+
+<p>After we defined the variable &ldquo;text&rdquo;, we can access it in our view template. To render the text, add the following to your hello.html file:</p>
+
+<pre><code class="language-html">&lt;div&gt;{{vm.text}}&lt;/div&gt;
+</code></pre>
+
+<h3 id="test-your-application-1">Test your application</h3>
+
+<p>To test your application, use the command <code>c8y server</code> with the complete url of your tenant as parameter.</p>
+
+<h3 id="build-and-deploy-your-application-and-plugins">Build and deploy your application and plugins</h3>
+
+<p>If you run <code>c8y --help</code> you will list all available commands.
+You can choose to build applications or plugins which results in a zip file that you can add by hand in any Cumulocity &ldquo;Administration&rdquo; application or you can deploy the app directly to your tenant.</p>
+
+<h4 id="build-app">build:app</h4>
+
+<p>Builds the application to the specified folder (./build by default).
+Inside the outputFolder you will find a directory named [appContextPath] and a zip file [appContextPath].zip. This zip file can then be uploaded in the &ldquo;Administration&rdquo; application.
+If you omit appContextPath the contextPath will be read from the &ldquo;cumulocity.json&rdquo; file at the path where the command was executed.</p>
+
+<pre><code class="language-bash">$ c8y build:app [appContextPath] [outputFolder]
+</code></pre>
+
+<h4 id="build-plugin">build:plugin</h4>
+
+<p>Builds the plugin to the specified folder (./build by default).
+Inside the outputFolder you will find a directory named [pluginName] and a zip file [pluginName].zip. This zip file can be uploaded in the &ldquo;Administration&rdquo; interface and added to any application.</p>
+
+<pre><code class="language-bash">$ c8y build:plugin &lt;pluginName&gt; [outputFolder]
+</code></pre>
+
+<h4 id="deploy-app">deploy:app</h4>
+
+<p>Builds all the plugins, assembles the application and uploads it to the defined tenant. If the app doesn&rsquo;t yet exist on the remote instance it will be automatically created.</p>
+
+<pre><code class="language-bash">$ c8y deploy:app &lt;appContextPath&gt;
+</code></pre>
+
+<p>The build process for plugins includes the following steps:
+1. Annotate angular functions with <em>$inject</em>. (Using <a href="https://github.com/olov/ng-annotate">ng-annotate</a>).
+2. Replace the <code>:::PLUGIN_PATH:::</code> by the proper strings.
+3. Transform every html file to be included via <em>$templateCache</em>.
+4. Concatenate and minify all the defined js files in the manifest (using <a href="https://github.com/mishoo/UglifyJS2">UglifyJS 2</a>).
+5. Compile all the less files.
+6. Concatenate and minify all the css and result of the less files.
+7. Copy all the files defined in &lsquo;copy&rsquo; in the manifest.
+8. Copy all the localization files that may be available inside locales folder inside the plugin.
+9. Copy the plugin manifest.
+10. Create a zip file with the above contents.</p>
+
+<p>The build process for an app includes the following steps:
+1. Copy a built version of each plugin defined in the imports list.
+2. Assemble all the localization files available in each plugin and assemble them in a single .json and .po file for each available language.
+3. Generate an index.html.
+5. Copy the application manifest.
+6. Create a zip file with the above contents.</p>
+
+<h3 id="a-name-target-a-deploy-your-plugin-to-the-core-applications"><a name="target"></a>Deploy your plugin to the core applications</h3>
+
+<p>You can also add or <a href="/guides/web/branding-plugin#branding">replace</a> plugins in the core applications by specifying a target .json file. This file is not restricted in its name or path.</p>
+
+<pre><code class="language-json">{
+	&quot;name&quot;: &quot;Examples&quot;,
+	&quot;comment&quot;: &quot;Release with additional example plugins&quot;,
+	&quot;applications&quot;: [
+		{
+			&quot;contextPath&quot;: &quot;administration&quot;,
+            &quot;addImports&quot;: [ &quot;myapplication/myplugin&quot; ]
+		}
+	]
+}
+</code></pre>
+
+<p>The example above shows how to add your self-developed plugin to one of the core applications, in this case the &ldquo;Administration&rdquo; application. When specifying a plugin, ensure to include the contextPath of the application the plugin is in. In this case, the plugin &ldquo;myplugin&rdquo; is located in the plugins folder of the application with the contextPath &ldquo;myapplication&rdquo;.</p>
+
+<p>If you are not deploying to a management tenant, you need to include the following fragment to your target .json file:</p>
+
+<pre><code class="language-json">	&quot;allApplications&quot;: {
+		&quot;availability&quot;: &quot;PRIVATE&quot;
+	}
+</code></pre>
+
+<p>To deploy a target file, you have to execute <code>c8y deploy:target [targetFile]</code>. Assuming that we have the following folder structure:</p>
+
+<pre><code class="language-console">&lt;&lt;root folder&gt;&gt;
+├── targets
+|		└── target.json
+├── plugins
+|		└── ...
+├── cumulocity.js
+└── package.json
+</code></pre>
+
+<p>We would have to execute the following command:</p>
+
+<pre><code class="language-bash">c8y deploy:target targets/target.json
+</code></pre>
+
+  </article>
+  
+  <article id="branding-plugin" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#branding-plugin">
+        <span class="fa fa-link"></span>
+      </button>
+      Branding plugin</h2>
+    
+
+<p class="lead">In this document you will get an overview on how to develop a plugin that changes the branding of an application.</p>
+
+<p>Before you start working on the branding plugin, we recommend you to take a look at the <a href="/guides/web/web-sdk-for-plugins#overview">introduction</a> which deals with the basic concepts of applications and plugins as well as an &ldquo;Hello world!&rdquo; style demo plugin.</p>
+
+<p>You can find this and all the other plugins described in the documentation inside the repository <a href="https://bitbucket.org/m2m/cumulocity-ui-plugin-examples">cumulocity-ui-plugin-examples</a>.</p>
+
+<h2 id="a-name-branding-a-branding-plugin"><a name="branding"></a>Branding plugin</h2>
+
+<p><img src="/guides/images/plugins/branding.png" alt="Branding example" /></p>
+
+<p>Our main css is based on the popular css framework <a href="http://getbootstrap.com/">Bootstrap 3</a>. It is possible to build a branding plugin based on Cumulocity&rsquo;s own base branding simply by overriding less variables.</p>
+
+<p>As the myBranding example is much more extensive than the other plugins, copy over the myBranding folder into your plugins folder.
+Although there a few files there, the strategy is straight forward: defining less variables that are overriding the setting on the base theme c8yBranding.</p>
+
+<p>You can inspect the less files to see what variables are available for configuration.</p>
+
+<p>Because branding plugins are simply distinguished by their name, the name has to be unique. Besides that, it has to end in <em>Branding</em> (e.g. <em>piedpiperBranding</em> ). To use it in an application, add it to the imports statement of the <a href="/guides/web/web-sdk-for-plugins#manifests">application manifest</a>, as it is in the <a href="https://bitbucket.org/m2m/cumulocity-ui-plugin-examples">cumulocity-ui-plugin-examples</a> repository.</p>
+
+<p>Make sure there is only a single branding plugin declared, otherwise both of them will be loaded. To replace the c8yBranding plugin in the core applications, you have to create a target .json file with at least the following content:</p>
+
+<pre><code class="language-json">{
+	&quot;name&quot;: &quot;Examples&quot;,
+	&quot;comment&quot;: &quot;Release with new branding plugin&quot;,
+  &quot;replaceImports&quot;: {
+    &quot;core/c8yBranding&quot;: &quot;myapplication/myBranding&quot;
+  }
+}
+</code></pre>
+
+  </article>
+  
+  <article id="widget-plugin" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#widget-plugin">
+        <span class="fa fa-link"></span>
+      </button>
+      Widget plugin</h2>
+    
+
+<p class="lead">In this document you will get an overview on how to develop a plugin that adds a new widget to dashboards.</p>
+
+<p>Before you start working on the widget plugins, we recommend you to take a look at the <a href="/guides/web/web-sdk-for-plugins#overview">introduction</a> which deals with the basic concepts of applications and plugins as well as an &ldquo;Hello world!&rdquo; style demo plugin.</p>
+
+<p>You can find this and all the other plugins described in the documentation inside the repository <a href="https://bitbucket.org/m2m/cumulocity-ui-plugin-examples">cumulocity-ui-plugin-examples</a>.</p>
+
+<h3 id="iconmap-plugin">Iconmap plugin</h3>
+
+<p>With the following plugin a new widget will be available for dashboards which displays devices as icons on a map. The new widget looks like this:</p>
+
+<p><img src="/guides/images/plugins/iconmapwidget.png" alt="Iconmap Widget" /></p>
+
+<p>In order to achieve this goal you need to do the following steps:</p>
+
+<ul>
+<li>Create a plugin.</li>
+<li>Declare the plugin on the imports list of the <a href="/guides/web/web-sdk-for-plugins#application-manifest">application manifest</a>.</li>
+<li>Add an item to the widget menu list.</li>
+<li>Get the images for the devices.</li>
+<li>Create a view for the widget.</li>
+</ul>
+
+<p>We assume that you have already created an application that you can add the new plugin to. If not, you can use the application provided in the <a href="https://bitbucket.org/m2m/cumulocity-ui-plugin-examples">repository</a> mentioned above. You can also find the example described here in the folder &ldquo;plugins/iconmap&rdquo;.</p>
+
+<h4 id="create-a-plugin">Create a plugin</h4>
+
+<p>Inside your application folder, run the command:</p>
+
+<pre><code class="language-console">$ c8y create:plugin iconmap
+</code></pre>
+
+<p>Then edit the <a href="/guides/web/web-sdk-for-plugins#plugin-manifest">plugin manifest</a> in /plugins/iconmap to add the following information:</p>
+
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;Icon Map&quot;,
+  &quot;description&quot;: &quot;Shows devices on a map using an icon for the device type.&quot;,
+}
+</code></pre>
+
+<p>Then create a file &ldquo;iconmap.module.js&rdquo; at the plugin&rsquo;s root folder to have the following content:</p>
+
+<pre><code class="language-js">(function () {
+  'use strict';
+
+  angular.module('myapp.iconmap', []);
+}());
+</code></pre>
+
+<p>Update the application manifest to add this new plugin to the import list.</p>
+
+<pre><code class="language-json">{
+  (...)
+  &quot;imports&quot;: [
+    (...)
+    &quot;myapplication/iconmap&quot;
+  ]
+}
+</code></pre>
+
+<h4 id="add-an-item-to-the-widget-menu-list">Add an item to the widget menu list</h4>
+
+<p>Next, we have to create a config file which adds a menu item to the widget menu list. For that purpose, we can use the service &ldquo;c8yComponentsProvider&rdquo; provided by the <a href="http://resources.cumulocity.com/documentation/websdk/ng1-modules">Cumulocity JavaScript API</a>. Inject the service into your config and call the following function:</p>
+
+<pre><code class="language-js">(function () {
+  'use strict';
+
+  angular
+    .module('myapp.iconmap')
+    .config(configure);
+
+  configure.$inject = [
+    'c8yComponentsProvider',
+    'gettext'
+  ];
+
+  function configure(
+    c8yComponentsProvider,
+    gettext
+  ) {
+    c8yComponentsProvider.add({ // adds a menu item to the widget menu list with ...
+      name: 'iconmap', // ... the identifier *&quot;iconmap&quot;* which has to be unique among the widgets in the application
+      nameDisplay: gettext('Icon Map'), // ... the displayed name *&quot;Icon Map&quot;*
+      description: gettext('Displays a map with icons for devices instead of markers'), // ... a description
+      templateUrl: ':::PLUGIN_PATH:::/views/iconmap.main.html', // ... displaying *&quot;iconmap.main.html&quot;* when added to the dashboard
+      options: { noDeviceTarget: true }
+    });
+  }
+}());
+</code></pre>
+
+<h4 id="get-the-images-for-the-devices">Get the images for the devices</h4>
+
+<p>To start with, we need to define an array &ldquo;markers&rdquo; which contains markers for every device to be displayed on the map. In this example, we will assign an image to a device based on its hardware model. To get the images, we need to get all binary objects in the inventory with the help of the &ldquo;c8yBinary&rdquo; service. Then we have to filter the binary objects for images which represent a certain hardware model. Afterwards, the devices will be placed on the map according to their &ldquo;c8y_Position&rdquo; fragment either with an image, if there is an image for the hardware model, or with the usual marker, if there is none.</p>
+
+<pre><code class="language-js">(function () {
+  'use strict';
+
+  angular
+    .module('myapp.iconmap')
+    .controller('iconmapController', iconmapController);
+
+  iconmapController.$inject = [
+    '$scope',
+    '$q',
+    'c8yInventory',
+    'c8yBinary'
+  ];
+
+  function iconmapController(
+    $scope,
+    $q,
+    c8yInventory,
+    c8yBinary
+  ) {
+    $scope.markers = [];
+
+    var getDevicesAndBinaries = {
+      devices: getDevicesWithLocation(),
+      binaries: c8yBinary.list({})
+    };
+    $q.all(getDevicesAndBinaries).then(placeTypes);
+
+    function getDevicesWithLocation() {
+      var filters = {fragmentType: 'c8y_Position' };
+      return c8yInventory.list(filters);
+    }
+
+    function placeTypes(devicesAndBinaries) {
+      var devicesOfType = createTypeMap(devicesAndBinaries.devices);
+      var iconOfType = createIconMap(devicesAndBinaries.binaries);
+      angular.forEach(devicesOfType, _.curry(placeType)(iconOfType));
+    }
+
+    function placeType(iconOfType, devices, type) {
+      var icon = iconOfType[type];
+      if (icon) {
+        var placeDevices = _.curry(place)(devices);
+        c8yBinary.downloadAsDataUri(icon).then(placeDevices);
+      } else {
+        place(devices);
+      }
+    }
+
+    function createTypeMap(devices) {
+      var typeMap = {};
+      angular.forEach(devices, _.curry(addDeviceToTypeMap)(typeMap));
+      return typeMap;
+    }
+
+    function addDeviceToTypeMap(typeMap, device) {
+      var hw = 'default';
+      if (device.c8y_Hardware &amp;&amp; device.c8y_Hardware.model) {
+        hw = device.c8y_Hardware.model;
+      }
+
+      if (!typeMap[hw]) {
+        typeMap[hw] = [];
+      }
+
+      typeMap[hw].push(device);
+    }
+
+    function createIconMap(binaries) {
+      var iconMap = {};
+      angular.forEach(binaries, _.curry(addIconToIconMap)(iconMap));
+      return iconMap;
+    }
+
+    function addIconToIconMap(iconMap, icon) {
+      if (c8yBinary.isImage(icon)) {
+        var name = icon.name;
+        name = name.substring(0, name.lastIndexOf('.'));
+        iconMap[name] = icon;
+      }
+    }
+
+    function place(devices, uri) {
+      angular.forEach(devices, _.curry(placeDevice)(_, uri));
+    }
+
+    function placeDevice(device, uri) {
+      var pos = device.c8y_Position;
+      var marker = {
+        lat: pos.lat,
+        lng: pos.lng,
+        message: '&lt;a href=&quot;#/device/' + device.id + '&quot;&gt;' + device.name + '&lt;/a&gt;'
+      };
+
+      if (uri) {
+        marker.icon = { iconUrl: uri };
+      }
+
+      $scope.markers.push(marker);
+    }
+  }
+}());
+</code></pre>
+
+<p>Now that we have added the module, config and controller to our plugin, we have to specify &ldquo;myapp.iconmap&rdquo; as our module and add each javascript file to our plugin manifest:</p>
+
+<pre><code class="language-json">{
+	&quot;name&quot;: &quot;Icon Map&quot;,
+	&quot;description&quot;: &quot;Shows devices on a map using an icon for the device type.&quot;,
+  &quot;ngModules&quot;: [
+    &quot;myapp.iconmap&quot;
+  ],
+  &quot;js&quot;: [
+    &quot;iconmap.module.js&quot;,
+    &quot;iconmap.config.js&quot;,
+    &quot;iconmap.controller.js&quot;
+  ]
+}
+</code></pre>
+
+<h4 id="create-a-view-for-the-widget">Create a view for the widget</h4>
+
+<p>In our config, we already specified the .html file which contains our view for the widget. In this example, our widget should show a simple map. To add a map to the view, create a folder &ldquo;views&rdquo; inside your plugin folder, create a file &ldquo;iconmap.main.html&rdquo; and add the following content:</p>
+
+<pre><code class="language-html">&lt;div ng-controller=&quot;iconmapController&quot;&gt;
+    &lt;leaflet markers=&quot;markers&quot; &gt;&lt;/leaflet&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>The &ldquo;leaflet&rdquo; tag adds an <a href="http://leafletjs.com/">interactive map</a> to our widget. To display the devices on the map, we just need to assign the array we defined in the controller to the &ldquo;markers&rdquo; attribute of the &ldquo;leaflet&rdquo; tag.</p>
+
+<h4 id="test-your-plugin">Test your plugin</h4>
+
+<p>After <a href="/guides/web/web-sdk-for-plugins#create-application">deploying</a> the plugin to your tenant, you should be able to create a widget &ldquo;Icon Map&rdquo;. Note that in order to see an image for your device, you have to upload an image with the device type as file name to the <a href="/guides/users-guide/administration#files">file repository</a> of your tenant.</p>
+
+<h3 id="weather-plugin">Weather Plugin</h3>
+
+<p>With the following plugin a new widget will be available for dashboards which shows the current weather at the location of a device. The new widget looks like this:</p>
+
+<p><img src="/guides/images/plugins/weatherwidget.png" alt="Weather Widget" /></p>
+
+<p>In order to achieve this goal you need to do the following steps:</p>
+
+<ul>
+<li>Create a plugin for using the <a href="https://darksky.net/dev/">Dark Sky API</a>.</li>
+<li>Create a plugin for entering the API key.</li>
+<li>Add an item to the navigator menu.</li>
+<li>Create a view where the user can save the API key.</li>
+<li>Create a plugin for the widget.</li>
+<li>Declare the plugins on the imports list of the <a href="/guides/web/web-sdk-for-plugins#application-manifest">application manifest</a>.</li>
+<li>Add an item to the widget menu list.</li>
+<li>Get the weather for the device.</li>
+<li>Create a view for the widget.</li>
+</ul>
+
+<p>We assume that you already have created an application that you can add the new plugin to. If not, you can use the application provided in the <a href="https://bitbucket.org/m2m/cumulocity-ui-plugin-examples">repository</a> mentioned above. You can also find the example described here in the folders &ldquo;plugins/weather&rdquo;, &ldquo;plugins/weatherAdmin&rdquo; and &ldquo;plugins/weatherService&rdquo;.</p>
+
+<h4 id="create-a-plugin-for-using-the-dark-sky-api">Create a plugin for using the Dark Sky API</h4>
+
+<p>In this case, we recommend you to download the &ldquo;weatherService&rdquo; plugin from the <a href="https://bitbucket.org/m2m/cumulocity-ui-plugin-examples">repository</a> and to save it in your application. This plugin provides the possibility to save and load the API key as well as retrieving weather information.</p>
+
+<p>Do not forget to include the plugin in your application manifest:</p>
+
+<pre><code class="language-json">{
+  (...)
+  &quot;imports&quot;: [
+    (...)
+    &quot;myapplication/weatherService&quot;
+  ]
+}
+</code></pre>
+
+<h4 id="create-a-plugin-for-entering-the-api-key">Create a plugin for entering the API key</h4>
+
+<p>Inside your application folder, run the command:</p>
+
+<pre><code class="language-console">$ c8y create:plugin weatherAdmin
+</code></pre>
+
+<p>Then edit the <a href="/guides/web/web-sdk-for-plugins#plugin-manifest">plugin manifest</a> in /plugins/weatherAdmin to add the following information:</p>
+
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;Weather settings&quot;,
+  &quot;description&quot;: &quot;Configure the API key for weather forecasts&quot;,
+  &quot;icon&quot;: &quot;cloud&quot;,
+  &quot;category&quot;: &quot;Administrator&quot;,
+  &quot;imports&quot;: [
+    &quot;myapplication/weatherService&quot;
+  ]
+}
+</code></pre>
+
+<p>We will import the &ldquo;weatherService&rdquo; plugin, since it provides us the possibility to load the API key or save the API key the user enters.</p>
+
+<p>Update the application manifest to add this new plugin to the import list.</p>
+
+<pre><code class="language-json">{
+  (...)
+	&quot;imports&quot;: [
+    (...)
+    &quot;myapplication/weatherAdmin&quot;
+  ]
+}
+</code></pre>
+
+<h4 id="add-an-item-to-the-navigator-menu">Add an item to the navigator menu</h4>
+
+<p>Next, we have to create a config file, which adds an item to the navigator menu. For that purpose, we can use the service &ldquo;c8yNavigatorProvider&rdquo; and &ldquo;c8yViewsProvider&rdquo; provided by the <a href="http://resources.cumulocity.com/documentation/websdk/ng1-modules">Cumulocity JavaScript API</a>. Inject the service into your config and call the following function:</p>
+
+<pre><code class="language-js">(function () {
+  'use strict';
+
+  angular
+  .module('myapp.weatherAdmin', [ 'myapp.weatherService' ])
+  .config(configure);
+
+  configure.$inject = [
+    'c8yNavigatorProvider',
+    'c8yViewsProvider',
+    'gettext'
+  ];
+
+  function configure(c8yNavigatorProvider, c8yViewsProvider, gettext) {
+    c8yNavigatorProvider.addNavigation({ // adds a menu item to the navigator with ...
+      parent: gettext('Settings'), // ... the category *&quot;Settings&quot;*
+      name: gettext('Weather'), // ... the name *&quot;Weather&quot;*
+      path: 'weather', // ... */weather* as path
+      icon: 'cloud' // ... the cloud icon (icons are provided by the great Font Awesome library and you can use any of their [icon names](http://fontawesome.io/icons/) without the *fa-* prefix here
+    });
+
+    c8yViewsProvider.when('/weather', { // when the path &quot;/weather&quot; is accessed ...
+      templateUrl: ':::PLUGIN_PATH:::/views/weatherAdmin.html' //  ... display our html file &quot;weatherAdmin.html&quot; inside the &quot;views&quot; folder of our plugin (the plugin's folder is represented using the magic string ```:::PLUGIN_PATH:::```, which is replaced by the actual path during the build process)
+    });
+  }
+}());
+</code></pre>
+
+<p>In our controller, we just need to implement a function for loading the API key and for saving the API key the user entered. For loading the API key, we use the &ldquo;load&rdquo; method provided by the &ldquo;weatherService&rdquo; plugin.</p>
+
+<pre><code class="language-js">(function () {
+  'use strict';
+
+  angular
+    .module('myapp.weatherAdmin')
+    .controller('weatherAdminController', weatherAdminController);
+
+  weatherAdminController.$inject = [
+    '$scope',
+    'c8yTitle',
+    'weatherService',
+    'gettext'
+  ];
+
+  function weatherAdminController($scope, c8yTitle, weatherService, gettext) {
+    $scope.updateKey = updateKey;
+    weatherService.load().then(function setOpt(key) {
+      $scope.key = key;
+    });
+
+    c8yTitle.changeTitle({
+      title: gettext('Weather provider settings')
+    });
+
+    function updateKey() {
+      weatherService.save($scope.key);
+    }
+  }
+}());
+</code></pre>
+
+<p>Now that we have added the config and controller to our plugin, we have to specify &ldquo;myapp.weatherAdmin&rdquo; as our module and add each javascript file to our plugin manifest:</p>
+
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;Weather settings&quot;,
+  &quot;description&quot;: &quot;Configure the API key for weather forecasts&quot;,
+  &quot;icon&quot;: &quot;cloud&quot;,
+  &quot;category&quot;: &quot;Administrator&quot;,
+  &quot;imports&quot;: [
+    &quot;myapplication/weatherService&quot;
+  ],
+  &quot;ngModules&quot;: [
+    &quot;myapp.weatherAdmin&quot;
+  ],
+  &quot;js&quot;: [
+    &quot;weatheradmin.config.js&quot;,
+    &quot;weatheradmin.controller.js&quot;
+  ]
+}
+</code></pre>
+
+<h4 id="create-a-view-where-the-user-can-save-the-api-key">Create a view where the user can save the API key</h4>
+
+<p>In our config, we already specified the .html file which contains our view for the navigation item. In this example, our view should show a simple text and input field as well as a button for saving. To add this view to the plugin, create a folder &ldquo;views&rdquo; inside your plugin folder, create a file &ldquo;weatherAdmin.main.html&rdquo; and add the following content:</p>
+
+<pre><code class="language-html">&lt;div ng-controller=&quot;weatherAdminController&quot;&gt;
+  &lt;div class=&quot;col-lg-6 panel panel-clean&quot;&gt;
+    &lt;p translate&gt;Weather functionality is based on the &lt;a href=&quot;https://darksky.net&quot; target=&quot;_blank&quot;&gt;Dark Sky&lt;/a&gt; service. Usage of Dark Sky requires an API key that can be obtained by registering at &lt;a href=&quot;https://darksky.net/dev/&quot; target=&quot;_blank&quot;&gt;https://darksky.net/dev/&lt;/a&gt;. Paste the API key below.&lt;/p&gt;
+    &lt;form class=&quot;form-horizontal&quot; name=&quot;weatherAdminForm&quot; novalidate&gt;
+      &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;key&quot; class=&quot;control-label&quot; translate&gt;API Key&lt;/label&gt;
+        &lt;div ng-class=&quot;{'has-error': invalid('license')}&quot;&gt;
+          &lt;input type=&quot;text&quot; class=&quot;form-control&quot; required name=&quot;key&quot; id=&quot;key&quot; ng-model=&quot;key&quot; c8y-autocomplete=&quot;off&quot;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;form-group &quot;&gt;
+        &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot; ng-click=&quot;updateKey()&quot;
+                ng-disabled=&quot;weatherAdminForm.$invalid||weatherAdminForm.$pristine&quot; translate&gt;
+          Save
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h4 id="create-a-plugin-for-the-widget">Create a plugin for the widget</h4>
+
+<p>Inside your application folder, run the command:</p>
+
+<pre><code class="language-console">$ c8y create:plugin weather
+</code></pre>
+
+<p>Then edit the <a href="/guides/web/web-sdk-for-plugins#plugin-manifest">plugin manifest</a> in /plugins/weather to add the following information:</p>
+
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;Weather&quot;,
+  &quot;description&quot;: &quot;Shows the current weather at the location of a device.&quot;,
+  &quot;category&quot;: &quot;Widgets&quot;,
+  &quot;icon&quot;: &quot;cloud&quot;,
+  &quot;imports&quot;: [
+    &quot;myapplication/weatherService&quot;
+  ]
+}
+</code></pre>
+
+<p>We will import the &ldquo;weatherService&rdquo; plugin, since it provides us the possibility to get weather information for a certain location.</p>
+
+<p>Update the application manifest to add this new plugin to the import list.</p>
+
+<pre><code class="language-json">{
+  &quot;imports&quot;: [
+    (...)
+    &quot;myapplication/weather&quot;
+  ]
+}
+</code></pre>
+
+<p>To be able to use the Weather plugin two things need to be added to the application manifest.</p>
+
+<p>Firstly, we need to enable users to use dashboards in our application so that they can create the Weather widget instances. This is possible by importing two core plugins:</p>
+
+<pre><code class="language-json">{
+  &quot;imports&quot;: [
+    (...)
+    &quot;core/dashboard2&quot;,
+    &quot;core/dashboardUI&quot;
+  ]
+}
+</code></pre>
+
+<p>Secondly, we need to allow our application to send requests to Dark Sky API. In order to achieve that, let&rsquo;s add a new property to the application manifest called <code>contentSecurityPolicy</code> with the following value:</p>
+
+<pre><code class="language-json">{
+  (...)
+  &quot;contentSecurityPolicy&quot;: &quot;connect-src 'self' *.darksky.net&quot;
+  (...)
+}
+</code></pre>
+
+<h4 id="add-an-item-to-the-widget-menu-list-1">Add an item to the widget menu list</h4>
+
+<p>Next, we have to create a config file, which adds a menu item to the widget menu list. For that purpose, we can use the service &ldquo;c8yComponentsProvider&rdquo; provided by the <a href="http://resources.cumulocity.com/documentation/websdk/ng1-modules">Cumulocity JavaScript API</a>. Inject the service into your config and call the following function:</p>
+
+<pre><code class="language-js">(function () {
+  'use strict';
+
+  angular
+    .module('myapp.weather', [ 'myapp.weatherService' ])
+    .config(configure);
+
+  configure.$inject = [
+    'c8yComponentsProvider',
+    'gettext'
+  ];
+
+  function configure(c8yComponentsProvider, gettext) {
+    c8yComponentsProvider.add({ // adds a menu item to the widget menu list with ...
+      name: 'weather', // ... the identifier *&quot;weather&quot;* which has to be unique among the widgets in the application
+      nameDisplay: gettext('Weather'), // ... the displayed name *&quot;weather&quot;*
+      description: gettext('Shows the current weather at the location of a device'), // ... a description
+      templateUrl: ':::PLUGIN_PATH:::/views/weather.main.html' // ... displaying *&quot;weather.main.html&quot;* when added to the dashboard
+    });
+  }
+}());
+</code></pre>
+
+<h4 id="get-the-weather-for-the-device">Get the weather for the device</h4>
+
+<p>In our controller, we get the weather information based on the position of the device which is selected in the widget dialog. If the device changes, the widget will be updated as well.</p>
+
+<pre><code class="language-js">(function () {
+  'use strict';
+
+  angular
+  .module('myapp.weather')
+  .controller('weatherController', weatherController);
+
+  weatherController.$inject = [
+    '$scope',
+    '$q',
+    'weatherService',
+    'gettext',
+    'c8yInventory'
+  ];
+
+  function weatherController($scope, $q, weatherService, gettext, c8yInventory) {
+    $scope.$watch('child.config.device', function reInit(newVal, oldVal) {
+      if (newVal &amp;&amp; !angular.equals(newVal, oldVal)) {
+        init();
+      }
+    }, true);
+    init();
+
+    function init() {
+      getDevice().then(tryGetWeather).then(showWeather, printError);
+    }
+
+    function getDevice() {
+      var deviceId = $scope.child.config.device.id;
+      $scope.status = gettext('Retrieving device ...');
+      return c8yInventory.detail(deviceId);
+    }
+
+    function tryGetWeather(res) {
+      $scope.device = res.data;
+
+      if (locationAvailable($scope.device)) {
+        $scope.status = gettext('Retrieving weather ...');
+        return getWeather($scope.device.c8y_Position);
+      }
+
+      $scope.status = gettext('Device has not reported a location, cannot retrieve weather.');
+      return $q.reject();
+    }
+
+    function locationAvailable(device) {
+      return device &amp;&amp; device.c8y_Position &amp;&amp; device.c8y_Position.lat &amp;&amp; device.c8y_Position.lng;
+    }
+
+    function getWeather(coordinate) {
+      return weatherService.weather.getCurrent(coordinate.lat, coordinate.lng);
+    }
+
+    function showWeather(weather) {
+      $scope.weather = weather;
+      $scope.windDirection = {
+        'display': 'inline-block',
+        '-ms-transform': rotate(weather),
+        '-webkit-transform': rotate(weather),
+        'transform': rotate(weather)
+      };
+      $scope.status = 'ready';
+    }
+
+    function printError() {
+      $scope.status = gettext('Error retrieving weather information.');
+    }
+
+    function rotate(weather) {
+      var direction = (weather.currently.windBearing + 180) % 360;
+      return 'rotate(' + direction + 'deg)';
+    }
+  }
+}());
+</code></pre>
+
+<p>Now that we have added the config and controller to our plugin, we have to specify &ldquo;myapp.weather&rdquo; as our module and add each javascript file to our plugin manifest:</p>
+
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;Weather&quot;,
+  &quot;description&quot;: &quot;Shows the current weather at the location of a device.&quot;,
+  &quot;category&quot;: &quot;Widgets&quot;,
+  &quot;icon&quot;: &quot;cloud&quot;,
+  &quot;imports&quot;: [
+    &quot;myapplication/weatherService&quot;
+  ],
+  &quot;ngModules&quot;: [
+    &quot;myapplication.weather&quot;
+  ],
+  &quot;js&quot;: [
+    &quot;weather.config.js&quot;,
+    &quot;weather.controller.js&quot;
+  ]
+}
+</code></pre>
+
+<h4 id="create-a-view-for-the-widget-1">Create a view for the widget</h4>
+
+<p>In our config, we already specified the .html file which contains our view for the widget. In this example, our widget should show a simple table with information about the temperature, pressure, humidity and wind at the position of the device. To add the table to the view, create a folder &ldquo;views&rdquo; inside your plugin folder, create a file &ldquo;weather.main.html&rdquo; and add the following content:</p>
+
+<pre><code class="language-html">&lt;div ng-controller=&quot;weatherController&quot; style=&quot;padding: 10px&quot;&gt;
+  &lt;div ng-show=&quot;status != 'ready'&quot; class=&quot;alert alert-info&quot;&gt;{{ status }}&lt;/div&gt;
+  &lt;div ng-show=&quot;status == 'ready'&quot;&gt;
+    &lt;table class=&quot;table&quot;&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;{{ 'Weather' | translate }}&lt;/td&gt;
+          &lt;td&gt;
+            &lt;dark-sky-icon icon=&quot;{{ weather.currently.icon }}&quot; uib-tooltip=&quot;{{weather.currently.summary | translate }}&quot; tooltip-append-to-body=&quot;true&quot;&gt;&lt;/dark-sky-icon&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;{{ 'Temperature' | translate }}&lt;/td&gt;
+          &lt;td&gt;{{weather.currently.temperature}} C&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;{{ 'Pressure' | translate }}&lt;/td&gt;
+          &lt;td&gt;{{weather.currently.pressure}} hPa&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;{{ 'Humidity' | translate }}&lt;/td&gt;
+          &lt;td&gt;{{weather.currently.humidity * 100}} %&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;{{ 'Wind' | translate }}&lt;/td&gt;
+          &lt;td&gt;{{weather.currently.windSpeed}} {{ 'm/s' | translate }}
+            &lt;span class=&quot;direction&quot; ng-style=&quot;windDirection&quot; uib-tooltip=&quot;{{weather.currently.windBearing}} {{ 'deg' | translate }}&quot;&gt;↑&lt;/span&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+    &lt;a href=&quot;https://darksky.net/poweredby/&quot; target=&quot;_blank&quot;&gt;Powered by Dark Sky&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h4 id="test-your-plugin-1">Test your plugin</h4>
+
+<p>After <a href="/guides/web/web-sdk-for-plugins#create-application">deploying</a> the plugin to your tenant, you should be able to create a widget &ldquo;Weather&rdquo;. Note that you have to enter the API key first to see the weather information.</p>
+
+  </article>
+  
+  <article id="tab-plugin" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#tab-plugin">
+        <span class="fa fa-link"></span>
+      </button>
+      Tab plugin</h2>
+    
+
+<p>In this document you will get an overview on how to develop a plugin that adds a new tab to devices.</p>
+
+<h3 id="overview">Overview</h3>
+
+<p>Before you start working on the tab plugins, we recommend you to take a look at the <a href="/guides/web/web-sdk-for-plugins#overview">introduction</a> which deals with the basic concepts of applications and plugins as well as an &ldquo;Hello world!&rdquo; style demo plugin.</p>
+
+<p>You can find this and all the other plugins described in the documentation inside the repository <a href="https://bitbucket.org/m2m/cumulocity-ui-plugin-examples">cumulocity-ui-plugin-examples</a>.</p>
+
+<h4 id="device-contact-plugin">Device Contact plugin</h4>
+
+<p>This section shows how to create a plugin that adds a new tab &ldquo;Contact&rdquo; to devices in your application. Clicking on &ldquo;Contact&rdquo; presents the user with a simple form for entering contact details. When the user saves the form, the contact details are stored as part of the device object in the inventory. The new tab looks like this:</p>
+
+<p><img src="/guides/images/plugins/contact.png" alt="Contact tab" /></p>
+
+<p>In order to achieve this goal you need to do the following steps:</p>
+
+<ul>
+<li>Create a plugin.</li>
+<li>Declare the plugin on the imports list of the <a href="/guides/web/web-sdk-for-plugins#application-manifest">application manifest</a>.</li>
+<li>Add a tab to devices.</li>
+<li>Display data in the tab.</li>
+<li>Persist the data to Cumulocity backend.</li>
+</ul>
+
+<p>We assume that you already have created an application that you can add the new plugin to. If not, you can use the application provided in the <a href="https://bitbucket.org/m2m/cumulocity-ui-plugin-examples">repository</a> mentioned above. You can also find the example described here in the folder &ldquo;plugins/deviceContact&rdquo;.</p>
+
+<h4 id="a-name-dependencies-a-adding-dependencies"><a name="dependencies"></a>Adding dependencies</h4>
+
+<p>For this exercise, let us consider you want to extend the application &ldquo;Device Management&rdquo;. In practice, this means adding the set of plugins used in Device Management and adding your own to the list of imports in your application manifest. You can print the list of used plugins by any available application in your development environment by executing the command <code>c8y util:showimports &lt;appContextPath&gt;</code>.</p>
+
+<p>In this case:</p>
+
+<pre><code class="language-console">$ c8y util:showimports devicemanagement
+</code></pre>
+
+<p>Add the printed list of plugins to the imports definition of your application manifest.</p>
+
+<blockquote>
+<p>Note that you have to exclude the c8yBranding plugin if you have already defined your own branding plugin.</p>
+</blockquote>
+
+<p>However, if you prefer a more minimalistic approach you can also read the &ldquo;cumulocity.json&rdquo; file in <a href="https://bitbucket.org/m2m/cumulocity-ui-plugin-examples">cumulocity-ui-plugin-examples</a> and only import the essential plugins for the Device Contact plugin to work.</p>
+
+<blockquote>
+<p><strong>TIP</strong>
+Run <code>c8y util:showimports cockpit</code> or <code>c8y util:showimports administration</code> to see other plugins available to you. The manifests for the built-in applications are stored in <em>_apps.json</em> inside &ldquo;node_modules/cumulocity-ui-build&rdquo;.</p>
+</blockquote>
+
+<h3 id="create-a-plugin">Create a plugin</h3>
+
+<p>Inside your application folder, run the command:</p>
+
+<pre><code class="language-console">$ c8y create:plugin deviceContact
+</code></pre>
+
+<p>Then edit the <a href="/guides/web/web-sdk-for-plugins#plugin-manifest">plugin manifest</a> in &ldquo;plugins/deviceControl&rdquo; to add the following information:</p>
+
+<pre><code class="language-json">{
+	&quot;name&quot;: &quot;Device Details - Contact&quot;,
+	&quot;description&quot;: &quot;Plugin adds a Contact tab to Device Details view&quot;
+}
+</code></pre>
+
+<p>Then create a file &ldquo;deviceContact.module.js&rdquo; at the plugin&rsquo;s root folder to have the following content:</p>
+
+<pre><code class="language-js">(function () {
+	'use strict';
+
+	angular.module('myapp.deviceContact', []);
+}());
+</code></pre>
+
+<p>Update the application manifest to add this new plugin to the import list.</p>
+
+<pre><code class="language-console">{
+	...
+	&quot;imports&quot;: [
+		...
+		&quot;myapplication/deviceContact&quot;
+	]
+}
+</code></pre>
+
+<h3 id="add-a-tab-to-devices">Add a tab to devices</h3>
+
+<p>Now, we create an empty &ldquo;Contact&rdquo; tab in the device details view, which we will fill with contents in the following step.
+Inside the plugin folder, create a file &ldquo;deviceContact.config.js&rdquo; with the content below. Just like in the <a href="/guides/web/web-sdk-for-plugins#hello-world">&ldquo;Hello world!&rdquo; example</a>, we will use the &ldquo;c8yViewsProvider&rdquo; service provided by the <a href="http://resources.cumulocity.com/documentation/websdk/ng1-modules">Cumulocity JavaScript API</a> to add a new view to our application.</p>
+
+<pre><code class="language-js">(function() {
+  'use strict';
+
+  angular
+    .module('myapp.deviceContact')
+    .config(configure);
+
+  configure.$inject = [
+    'c8yViewsProvider'
+  ];
+
+  function configure(
+		c8yViewsProvider
+	) {
+    c8yViewsProvider.when('/device/:deviceId', { // when the path &quot;/device/:deviceId&quot; is accessed ...
+      name: 'Contact', // ... show a tab with the name *&quot;Contact&quot;*
+      icon: 'envelope-o', // ... use the envelope-o icon (icons are provided by the great Font Awesome library and you can use any of their [icon names](http://fontawesome.io/icons/) without the *fa-* prefix here
+      priority: 1000, // ... set the priority to 1000, which means that all tabs with a priority lower than 1000 appear before this tab and all with a priority higher than 1000 appear after this tab
+      templateUrl: ':::PLUGIN_PATH:::/views/deviceContact.html', //  ... display our html file &quot;deviceContact.html&quot; inside the &quot;views&quot; folder of our plugin (the plugin's folder is represented using the magic string ```:::PLUGIN_PATH:::```, which is replaced by the actual path during the build process)
+      controller: 'deviceContactCtrl' // ... use &quot;deviceContactCtrl&quot; as controller
+    });
+  }
+
+}());
+</code></pre>
+
+<blockquote>
+<p>Note that when multiple views are attached to the route (&ldquo;/device/:deviceId&rdquo; in this case), tabs are created automatically for each of them. Since the device details view uses /device/:deviceId for device details already, &ldquo;Contact&rdquo; is rendered as a tab.</p>
+</blockquote>
+
+<p>Next, we have to define our view and controller. For the controller, create a new file &ldquo;deviceContact.controller.js&rdquo; inside the plugin folder and add the following content:</p>
+
+<pre><code class="language-js">(function () {
+	'use strict';
+
+	angular
+    .module('myapp.deviceContact')
+    .controller('deviceContactCtrl', DeviceContactController);
+
+	function DeviceContactController() {
+
+	}
+}());
+</code></pre>
+
+<p>Inside the plugin folder, create a new folder &ldquo;views&rdquo; and add the file &ldquo;deviceContact.html&rdquo; with the following content:</p>
+
+<pre><code class="language-html">	&lt;div class=&quot;panel panel-clean&quot;&gt;
+		&lt;div class=&quot;panel-body&quot;&gt;
+			Contact
+		&lt;/div&gt;
+	&lt;/div&gt;
+</code></pre>
+
+<p>Now that we have added the module, config and controller to our plugin, we have to specify &ldquo;myapp.deviceContact&rdquo; as our module and add each javascript file to our plugin manifest:</p>
+
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;Device Details - Contact&quot;,
+  &quot;description&quot;: &quot;Plugin adds a Contact tab to Device Details view&quot;,
+  &quot;category&quot;: &quot;Examples&quot;,
+  &quot;ngModules&quot;: [
+    &quot;myapp.deviceContact&quot;
+  ],
+  &quot;js&quot;: [
+    &quot;deviceContact.module.js&quot;,
+    &quot;deviceContact.config.js&quot;,
+    &quot;deviceContact.controller.js&quot;
+  ]
+}
+</code></pre>
+
+<p>At this point, you can <a href="/guides/web/web-sdk-for-plugins#create-application">test your application</a> by deploying it. When selecting a device, a new tab &ldquo;Contact&rdquo; should be displayed.</p>
+
+<h3 id="display-data-in-the-contact-tab">Display data in the &ldquo;Contact&rdquo; tab</h3>
+
+<p>Previously, we only set up a dummy view for the &ldquo;Contact&rdquo; tab. In this step, we will display the actual contact information stored with a device in the view. We will define that the contact data is stored in a fragment &ldquo;c8y_Contact&rdquo; of a device in the inventory like this:</p>
+
+<pre><code class="language-json">	{
+		&quot;c8y_Contact&quot;: {
+			&quot;name&quot;: &quot;John Smith&quot;,
+			&quot;email&quot;: &quot;john.smith@example.com&quot;,
+			&quot;phone&quot;: &quot;123-456-789&quot;,
+			&quot;address&quot;: &quot;Sample Street 11 A&quot;
+		}
+	}
+</code></pre>
+
+<p>Add a load function to &ldquo;deviceContact.controller.js&rdquo; and the necessary injection dependencies as shown below. The function gets the details of the currently displayed device ($routeParams.deviceId) and adds the device&rsquo;s id and &ldquo;c8y_Contact&rdquo; fragment to the local scope.</p>
+
+<pre><code class="language-js">(function() {
+  'use strict';
+
+  angular
+    .module('myapp.deviceContact')
+    .controller('deviceContactCtrl', DeviceContactController);
+
+  DeviceContactController.$inject = [
+    '$scope',
+    '$routeParams',
+    'c8yDevices'
+  ];
+
+  function DeviceContactController($scope, $routeParams, c8yDevices) {
+
+    function load() {
+      c8yDevices.detail($routeParams.deviceId).then(function (res) {
+        var device = res.data;
+        $scope.device.id = device.id;
+        $scope.device.c8y_Contact = device.c8y_Contact;
+      });
+    }
+
+    $scope.device = {};
+
+    load();
+  }
+
+}());
+</code></pre>
+
+<p>Edit the device contact view in deviceContact.html with the content below.</p>
+
+<pre><code class="language-html">	&lt;div class=&quot;panel panel-clean&quot;&gt;
+		&lt;div class=&quot;panel-body&quot;&gt;
+			&lt;form name=&quot;contactForm&quot;&gt;
+				&lt;div class=&quot;form-group&quot;&gt;
+					&lt;label for=&quot;contact_name&quot;&gt;Name&lt;/label&gt;
+					&lt;input id=&quot;contact_name&quot; type=&quot;text&quot; class=&quot;form-control&quot; ng-model=&quot;device.c8y_Contact.name&quot;&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;form-group&quot;&gt;
+					&lt;label for=&quot;contact_email&quot;&gt;E-mail address&lt;/label&gt;
+					&lt;input id=&quot;contact_email&quot; type=&quot;text&quot; class=&quot;form-control&quot; ng-model=&quot;device.c8y_Contact.email&quot;&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;form-group&quot;&gt;
+					&lt;label for=&quot;contact_phone&quot;&gt;Phone&lt;/label&gt;
+					&lt;input id=&quot;contact_phone&quot; type=&quot;text&quot; class=&quot;form-control&quot; ng-model=&quot;device.c8y_Contact.phone&quot;&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;form-group&quot;&gt;
+					&lt;label for=&quot;contact_address&quot;&gt;Address&lt;/label&gt;
+					&lt;input id=&quot;contact_address&quot; type=&quot;text&quot; class=&quot;form-control&quot; ng-model=&quot;device.c8y_Contact.address&quot;&gt;
+				&lt;/div&gt;
+			&lt;/form&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+</code></pre>
+
+<h3 id="allow-the-user-to-save-the-data">Allow the user to save the data</h3>
+
+<p>After completing the following steps, you will be able to save the data entered in the new contact form.</p>
+
+<p>Update the controller in &ldquo;deviceContact.controller.js&rdquo; to also save data by adding another injection dependency and the content below just after the closing brace of the load function. &ldquo;c8yDevices.save&rdquo; is a <a href="http://resources.cumulocity.com/documentation/websdk/ng1-modules">library function</a> that stores a device using the Cumulocity REST API. &ldquo;c8yAlert.success&rdquo; is a library function that displays a green confirmation box at the top of the user interface.</p>
+
+<pre><code class="language-js">(function() {
+  'use strict';
+
+  angular
+    .module('myapp.deviceContact')
+    .controller('deviceContactCtrl', DeviceContactController);
+
+  DeviceContactController.$inject = [
+    '$scope',
+    '$routeParams',
+    'c8yDevices',
+    'c8yAlert'
+  ];
+
+  function DeviceContactController($scope, $routeParams, c8yDevices, c8yAlert) {
+
+    function load() {
+      c8yDevices.detail($routeParams.deviceId).then(function (res) {
+        var device = res.data;
+        $scope.device.id = device.id;
+        $scope.device.c8y_Contact = device.c8y_Contact;
+      });
+    }
+
+    function save(device) {
+      c8yDevices.save(device).then(onSave);
+    }
+
+    function onSave() {
+      c8yAlert.success('Contact information successfully saved!');
+    }
+
+    $scope.save = save;
+    $scope.device = {};
+
+    load();
+  }
+
+}());
+</code></pre>
+
+<p>Add a <em>&ldquo;Save changes&rdquo;</em> button to the device contact view. Paste the div below just before the closing form tag in deviceContact.html. The button will trigger the <code>save</code> function that we just defined.</p>
+
+<pre><code class="language-html">	&lt;div&gt;
+		&lt;a href=&quot;&quot; class=&quot;btn btn-primary&quot; ng-click=&quot;save(device)&quot; ng-disabled=&quot;contactForm.$invalid&quot;&gt;Save changes&lt;/a&gt;
+	&lt;/div&gt;
+</code></pre>
+
+<p>Now your plugin is done! Deploy your plugin, open your application in the web browser and click on a device to see the new &ldquo;Contact&rdquo; tab.</p>
+
+  </article>
+  
+  <article id="jsdoc" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#jsdoc">
+        <span class="fa fa-link"></span>
+      </button>
+      JSDoc</h2>
+    <hr />
+
+<p>JSDoc for the JavaScript library can be found on our <a href="http://resources.cumulocity.com/documentation/websdk/ng1-modules" target="_blank">resources site</a>.</p>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Brief background - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Web SDK guide</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/web/introduction/">Overview</a>
+     
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a class=" active "
+        href="https://cumulocity.com/guides/web/background/">Brief background</a>
+     
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/web/angular/">Web SDK for Angular</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/angular/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/angular/#cli">Developer command line tool</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/angular/#branding">Branding</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/angular/#ngx-components">ngx-components</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/angular/#client">Client library</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/angular/#apps">Applications</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/web/web-sdk-for-plugins/">Web SDK for plugins</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/web-sdk-for-plugins/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/web-sdk-for-plugins/#concepts">Concepts</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/web-sdk-for-plugins/#setup">Setup</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/web-sdk-for-plugins/#sample-plugins">Sample plugins</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/web-sdk-for-plugins/#hello-world">Hello world</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/web-sdk-for-plugins/#branding-plugin">Branding plugin</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/web-sdk-for-plugins/#widget-plugin">Widget plugin</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/web-sdk-for-plugins/#tab-plugin">Tab plugin</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/web-sdk-for-plugins/#jsdoc">JSDoc</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/web/troubleshooting/">Troubleshooting</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/troubleshooting/#dont-run">My code is not run or error messages are printed on the console</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/troubleshooting/#error-in-tenant">My code runs locally but not when I run it through my tenant</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/web/troubleshooting/#3rdparty-library">I cannot get a 3rd party library to run in my plugin</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Brief background</h1>
+    </header>
+    
+      
+
+<p>As the web ecosystem evolves, as a platform we evolve with it - while assuring to keep upgrade paths as smooth as possible and keep extensions working properly with very little changes.</p>
+
+<p>This process involves migration effort, so we believe that providing some background information on how the stack and the build process has evolved over time will help developers to better understand why some parts work the way you see today and why migration effort is needed.</p>
+
+<h3 id="terminology-plugins-vs-modules">Terminology: Plugins vs. modules</h3>
+
+<p>From day one the UI has always had a modular architecture. The units of functionality are grouped in “plugins” that can be composed to build applications. In practice plugins are simply modules.</p>
+
+<p>Modules are a very important key feature in the latest generation of the Web SDK. It allows to import any file or library with native JavaScript <code>import</code> statements and be bundled to one file at build time. To better understand this concept and the enhancements it provides to the developers, it is important to understand how the module architecture worked in the previous generations of the Cumulocity Web SDK.</p>
+
+<h3 id="1st-generation-runtime-loading-of-plugins">1st Generation: Runtime loading of plugins</h3>
+
+<p>In the first generation, each application had exported plugins and imported plugins. The exported plugins were the ones available for being used throughout the platform and the imported plugins were the functionality visible in the application. This way each application had two functions:</p>
+
+<ul>
+<li>the UI interface that you usually expect</li>
+<li>a package that exposed functionality</li>
+</ul>
+
+<p>The information on applications and plugins was stored in the database through an API. Each plugin had to be created in the context of each application. Although we already had the manifest files we used that information and called the APIs storing the data.</p>
+
+<p>The REST API could be reached at <code>applications/&lt;id&gt;/plugins</code> but it has now been deprecated.</p>
+
+<p>At this time we had:</p>
+
+<table>
+<thead>
+<tr>
+<th>Application context</th>
+<th>Repository</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>core</td>
+<td>m2m/cumulocity-ui</td>
+</tr>
+
+<tr>
+<td>administration</td>
+<td>m2m/cumulocity-ui-administration</td>
+</tr>
+
+<tr>
+<td>devicemanagement</td>
+<td>m2m/cumulocity-ui-devicemananagement</td>
+</tr>
+
+<tr>
+<td>cockpit</td>
+<td>m2m/cumulocity-ui-cockpit</td>
+</tr>
+</tbody>
+</table>
+
+<p>Core was an application that did not import any plugin, it just exported plugins.</p>
+
+<p>The loading of the modules was entirely dynamic. We served a very basic index.html that was the same for all applications, logged in the user with just a small javascript layer and only after authentication we fetched the application information and loaded the appropriate plugins from the respective applications and finally bootstrapped the angular.js app. So after login we had something like this:</p>
+
+<pre><code class="language-html">  &lt;!-- Added with js --&gt;
+  &lt;script src=&quot;/apps/core/main.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;/apps/core/plugin1/main.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;/apps/administration/pluginA/main.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;/apps/devicemanagement/pluginZ/main.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>As the information about which plugins where imported in each application was completely controlled by a REST API, every application could be easily edited from the UI: it was possible to move functionality around, adding or removing plugins from each application. This just meant updating the list of imports of each application.</p>
+
+<p>With this structure we could easily find the URL from the definitions <code>&lt;app&gt;/&lt;plugin&gt;</code>. This influence is still visible today in many of the plugin names.</p>
+
+<p>With a 3rd party client application we might have ended up with something similar to this:</p>
+
+<pre><code class="language-html">  &lt;script src=&quot;/apps/core/main.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;/apps/cockpit/dashboards/main.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;/apps/myapplication/pluginA/main.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>With this approach, each time the platform was updated the 3rd party applications would get the latest version of all plugins and sometimes it was difficult to update 3rd parties due to breaking changes.</p>
+
+<h3 id="2nd-generation-changing-to-build-time-bundling">2nd Generation: Changing to build time bundling</h3>
+
+<p>The main conceptual change of the second generation was that applications were self-contained. By this, we no longer used plugins as data that was loaded at runtime, and the list of script tags was rendered into the index.html during build time.</p>
+
+<p>This way, each time the platform was updated, 3rd party applications were only affected when they were explicitly upgraded.</p>
+
+<p>We became aware that plugins are just modules, and their names need to be unique. The pattern <code>&lt;app&gt;/&lt;plugin&gt;</code> which was intentional earlier, became irrelevant with module names being unique, but we maintained compatibility with this naming as we do until today.</p>
+
+<p>Although the strategy changed drastically, the manifest files stayed fully compatible.</p>
+
+<p>We ended up with an index.html, generated when the application was assembled, looking like this:</p>
+
+<pre><code class="language-html">  &lt;script src=&quot;./core/main.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;./cockpit_dashboards/main.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;./myapplication/main.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>Although plugins are not just data any longer, we still allow to change the applications with the UI, but it&rsquo;s actually an API that changes the file system. We delete directories and upload zips to create new directories, and mutate the index.html.</p>
+
+<h3 id="today-s-generation-native-modules">Today&rsquo;s Generation: Native modules</h3>
+
+<p>The new approach focuses on enabling the complete stack of modern web development and removing as much specificity from the process as possible. To allow that, we decided to update the existing angular.js framework to the next generation simply called Angular. To still enable the use of legacy browsers and allow the import from third party library&rsquo;s via npm we need to bundle the modules. As bundler we choose to use webpack, as it play&rsquo;s nicely with Angular.</p>
+
+<p>One major change is that so far modules (or plugins) where always represented during development and after build, so they could easily be composed by adding or removing a script. As we are now bundling everything, the modules can only be put together during development so applications can no longer be edited from the UI for now, but at the same time developers win the possibility to use the standardized ES2016 module architecture. That simplifies the development process because it follows standard approaches and doesn&rsquo;t need any kind of complex module architecture. At this point, plugins are truely just modules. We will keep the name around to refer to sub-packages that contain some kind of isolated functionality.</p>
+
+<p>This was the clear opportunity to modularize the stack. While the focus is still on Angular we provide tools to avoid framework lock-in. This results in multiple packages published to npm which can be used standalone. For example, a developer could use the API abstraction layer implemented in the @c8y/client to develop a React application. The stack is no longer exclusively bound to Angular.</p>
+
+<h4 id="publishing-to-npm">Publishing to npm</h4>
+
+<p>While previously publishing a tgz to our server, we will now deploy to npm:</p>
+
+<ul>
+<li>@c8y/cli</li>
+<li>@c8y/client</li>
+<li>@c8y/style</li>
+<li>@c8y/ng1-modules</li>
+<li>@c8y/ngx-components</li>
+</ul>
+
+<h4 id="branding-no-longer-part-of-the-application">Branding no longer part of the application</h4>
+
+<p>So far, branding was always considered part of the application, as a module like any other. When there was the need to change it we had to change the application definition. For this we used the targets definitions. Now it is a build time option that reflects into its own entry point in the application. When building an application you will have one entry point for the application and another for the branding. That allows to update the application without redeploying the branding.</p>
+
+<h4 id="migrating">Migrating</h4>
+
+<p>We still support manifest files as entry points, so it is possible to use these as well as normal package.json files.</p>
+
+<p>As mentioned above we aimed at making the transition as smooth as possible.</p>
+
+<p>Looking into the repository <a href="https://bitbucket.org/m2m/cumulocity-ui-plugin-examples/branch/next?dest=develop#diff">cumulocity-ui-plugin-examples</a> the diff with the changes is quite concise:</p>
+
+<ul>
+<li>Add dependencies</li>
+<li>Add (css) to every http @import declaration inside a less file.</li>
+</ul>
+
+<h4 id="deprecating-custom-manifests">Deprecating custom manifests</h4>
+
+<p>Now developers have at their disposal all modern js, so they just need to use normal ESM to import and export dependencies. Although the manifest files will still work they are no longer required.</p>
+
+    
+  </article>
+
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

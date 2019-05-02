@@ -1,0 +1,4532 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Device integration using MQTT - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Device SDK guide</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/introduction/">Overview</a>
+     
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/device-sdk/mqtt/">Device integration using MQTT</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#overview">Overview</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#hello-mqtt">Hello MQTT</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#hello-mqtt-c">Hello MQTT C</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#hello-mqtt-java">Hello MQTT Java</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#hello-mqtt-javascript">Hello MQTT Web-based</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#hello-mqtt-python">Hello MQTT Python</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#hello-mqtt-nodejs">Hello MQTT Node.js</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#implementation">MQTT implementation</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#device-integration">Device integration</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#smartrest-1">SmartREST 1.0</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#smartrest-2">SmartREST 2.0</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#mqtt-static-templates">MQTT Static templates</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#handling-ids">Handling IDs</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#json">JSON via MQTT</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/rest/">Device integration using REST</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/rest/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/rest/#device-integration">Device integration</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/rest/#hello-rest">Hello REST!</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/cpp/">Device SDK for C&#43;&#43;</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/cpp/#introduction">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/cpp/#build">Building the C&#43;&#43; library</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/cpp/#use">C&#43;&#43; Device integration</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/cpp/#custom">Customizing the build</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/cpp/#reference">Agent software reference</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/hello-mqtt-cs-0/">Device SDK for C#</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/hello-mqtt-cs-0/#prerequisites">Prerequisites</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/hello-mqtt-cs-0/#developing-the-client">Developing the &#34;Hello, MQTT world!&#34; client</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/hello-mqtt-cs-0/#cs-static-templates">Static templates</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav5"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/java/">Device SDK for Java</a>
+     
+      
+      
+      <div id="page-nav5"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/java/#introduction">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/java/#hello-world-basic">Hello, world!</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/java/#hello-world-me">Hello, ME!</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/java/#agents">Java reference agent</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/java/#developing-java-clients">Developing Java clients</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Device integration using MQTT</h1>
+    </header>
+    
+      <div class="lead">
+        
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="overview" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#overview">
+        <span class="fa fa-link"></span>
+      </button>
+      Overview</h2>
+    <blockquote>
+<p><strong>Info</strong>: MQTT support is currently in beta. We encourage device integrators to provide feedback through <a href="http://stackoverflow.com/questions/tagged/cumulocity">Stackoverflow</a> or the <a href="https://support.cumulocity.com">support web site</a>.</p>
+</blockquote>
+
+<p>The MQTT implementation of Cumulocity provides the following benefits:</p>
+
+<ul>
+<li>Multi-tenancy support: A single endpoint serves multiple tenants.</li>
+<li>Device identity management: Devices authenticate using device-specific credentials.</li>
+<li>Device registration: Non-personalized devices can be deployed by pairing them with Cumulocity tenants.</li>
+<li>Device management: Rich, pre-defined device management payload formats to enable out-of-the-box management of millions of devices.</li>
+<li>Standard IoT payload formats: Pre-defined payload formats to support IoT sensor readings, alarm management, remote control and device hierarchies.</li>
+<li>Custom payload formats: Additional payload formats can be added.</li>
+<li>Minimum traffic overhead.</li>
+<li>Processing modes: Control whether data is persisted in Cumulocity database, transiently passed to real-time processing, processed using quiescent mode which ensures that real-time notifications are disabled or is processed using CEP mode that ensures data is transiently sent to real-time processing engine only with real-time notifications disabled.</li>
+<li>Full bi-directional communication.</li>
+<li>MQTT over WebSockets support.</li>
+<li>TLS support.</li>
+<li>Full horizontal scalability.</li>
+</ul>
+
+<p>The MQTT section is structured as follows:</p>
+
+<ul>
+<li><a href="/guides/device-sdk/mqtt#implementation">MQTT implementation</a> gives a detailed reference of protocol-level aspects in the Cumulocity implementation of MQTT.</li>
+<li><a href="/guides/device-sdk/mqtt#device-integration">Device integration</a> walks you through the process of interfacing devices with Cumulocity through MQTT.</li>
+<li><a href="/guides/device-sdk/mqtt#smartrest-1">SmartREST 1.0</a> defines the SmartREST 1.0 payload format for MQTT for easy portability of existing SmartREST devices.</li>
+<li><a href="/guides/device-sdk/mqtt#smartrest-2">SmartREST 2.0</a> defines the SmartREST 2.0 payload format for MQTT with improvements in usability and traffic usage.</li>
+<li><a href="/guides/device-sdk/mqtt#static-templates">MQTT static templates</a> provides a reference of pre-defined payload formats that you can use straight away.</li>
+<li><a href="/guides/device-sdk/mqtt#handling-ids">Handling IDs</a> describes how IDs are handled in the Cumulocity MQTT protocol.</li>
+<li><a href="/guides/device-sdk/mqtt/#json">JSON via MQTT</a> describes the payload format that can be used with the Cumulocity MQTT implementation.</li>
+</ul>
+
+<p>This section does not describe the basics of MQTT communication. If you are unfamiliar with MQTT, we recommend consulting one of the numerous introductions in the Internet. Some references can be found on the <a href="http://mqtt.org/documentation">MQTT web site</a>.</p>
+
+<blockquote>
+<p><strong>Info</strong>: For all MQTT connections to our platform, the maximum accepted payload size is 8092 bytes(8KB).</p>
+</blockquote>
+
+  </article>
+  
+  <article id="hello-mqtt" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#hello-mqtt">
+        <span class="fa fa-link"></span>
+      </button>
+      Hello MQTT</h2>
+    
+
+<p>In this tutorial, you will learn how to use MQTT with Cumulocity using pre-defined messages (called &ldquo;static templates&rdquo;).</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>In order to follow this tutorial, check the following prerequisites:</p>
+
+<ul>
+<li>You have a valid tenant, a user and a password in order to access Cumulocity.</li>
+<li>You have installed <a href="https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbkaf">MQTTBox</a> or a similar MQTT tool.</li>
+</ul>
+
+<blockquote>
+<p><strong>Info</strong>: The screenshots in the tutorial use MQTTBox. Other tools may look slightly different.</p>
+</blockquote>
+
+<h3 id="talking-mqtt">Talking MQTT</h3>
+
+<h4 id="configuring-the-mqtt-connection">Configuring the MQTT connection</h4>
+
+<p>To configure the MQTT connection, you need to pass the following connection parameters (see the screenshot below).</p>
+
+<ul>
+<li>Hostname: For this example, use TCP and Port 1883. You also need to pass the URL to your tenant (e.g. <em>mqtt.cumulocity.com</em>).</li>
+<li>Client ID: You can use the &ldquo;Generate a random ID&rdquo; button (most tools will offer such a button) or provide one yourself. This ID will be linked to your device. To reconnect to the same device, use the same ID.</li>
+<li>Username: You need to enter your tenant and username separated by a slash (tenant/username). For this example, you can use the same username you use for login to Cumulocity.</li>
+<li>Password: The password of the user.</li>
+</ul>
+
+<p><img src="/guides/images/mqtt/mqttBoxConfig.png" alt="Example MQTTBox Configuration" /></p>
+
+<p>The other configurations like &ldquo;clean session&rdquo; are not important for this example. You can change them to your needs. After clicking <strong>Save</strong>, you will see a screen similar to the following screenshot.</p>
+
+<p><img src="/guides/images/mqtt/mqttBoxSuccess.png" alt="MQTTBox Established Connection" /></p>
+
+<p>If there is a blue button on the top bar with a label <strong>Not Connected</strong>, verify your configuration (especially username and password). If the button is green, you successfully established an MQTT connection to Cumulocity.</p>
+
+<h4 id="sending-data">Sending data</h4>
+
+<p>All MQTT publish messages in this tutorial will be sent to the topic <kbd>s/us</kbd>. This is the topic used for Cumulocity&rsquo;s pre-provided static templates.</p>
+
+<p><img src="/guides/images/mqtt/mqttBoxPublish.png" alt="MQTTBox Publish Message" /></p>
+
+<h5 id="creating-the-device">Creating the device</h5>
+
+<p>The first message sent will create our device. Although the static templates support automatic device creation, in this example we will create the device manually. The template <code>100</code> will create a new device. It can be used with two optional parameters (deviceName, deviceType).</p>
+
+<pre><code class="language-plaintext">100,My first MQTT device,c8y_MQTTdevice
+</code></pre>
+
+<p>Afterwards, you will find this device in the Device Management application as a new device. If you switch to the <strong>Identity</strong> tab of the device you will notice that there was an identity created automatically to link the device to the MQTT ClientId.</p>
+
+<p>Besides the name and the type, the device does not have more information, so master data needs to be added.</p>
+
+<p>You can use multiple static templates per publishing separated by a line break (one template per row). This feature is used to set the hardware and the required interval for the device in a single published message.</p>
+
+<p>The hardware can be set with the template <code>110</code>. It can take 3 parameters (serialNumber, model, revision). Optional parameters in static templates can be left empty if you don&rsquo;t want to set them. For the hardware all parameters are optional.</p>
+
+<p>The required interval can be set with the template <code>117</code> and just takes a single parameter (the interval in minutes).</p>
+
+<pre><code class="language-plaintext">110,,MQTT test model,1.2.3
+117,10
+</code></pre>
+
+<p>After a reload of the <strong>Info</strong> page of your device in the Device Management application, you should see the information we just added.</p>
+
+<h5 id="creating-measurements">Creating measurements</h5>
+
+<p>Now the device has some master data and we can start sending some measurements.
+There are a couple of measurements that can be created directly by using a static template:</p>
+
+<ul>
+<li>210: Signal strength measurement</li>
+<li>211: Temperature measurement</li>
+<li>212: Battery measurement</li>
+</ul>
+
+<p>The temperature and battery measurement just take the value and time as parameters. For the signal strength, you can pass two values (RSSI and BER).</p>
+
+<p>Passing timestamps in the Cumulocity MQTT implementation is always optional. If you don&rsquo;t pass them along, the server will automatically create a timestamp with the current server time.</p>
+
+<p>We will make use of this feature in this example. Also, if you don&rsquo;t set the last parameters, you do not need to enter the remaining commas.</p>
+
+<pre><code class="language-plaintext">210,-87
+211,24
+212,95
+</code></pre>
+
+<p>Besides the measurements above, we can also use the template <code>200</code> to create a more custom measurement. It will take the measurement fragment, series, value, unit and time as its parameters.</p>
+
+<pre><code class="language-plaintext">200,myCustomTemperatureMeasurement,fahrenheit,75.2,F
+</code></pre>
+
+<p>After a reload in the Device Management application, you should see 4 graphs with the newly added measurements in the <strong>Measurements</strong> tab of your device.</p>
+
+<h5 id="creating-alarms">Creating alarms</h5>
+
+<p>Now we will create some alarms for this device. There are templates to create alarms for the 4 alarm severities:</p>
+
+<ul>
+<li>301: CRITICAL</li>
+<li>302: MAJOR</li>
+<li>303: MINOR</li>
+<li>304: WARNING</li>
+</ul>
+
+<p>Each of them note a type (which is mandatory), a text and a time (both optional).</p>
+
+<pre><code class="language-plaintext">301,gpio_critical,There is a GPIO alarm
+304,simple_warning
+</code></pre>
+
+<p>The alarm list of your device should now contain one critical alarm and one warning.</p>
+
+<p>Note that we did not set any text for the warning, so it was created with a default alarm text.</p>
+
+<p>Now we will clear the critical alarm again. To achieve this, we use the template <code>306</code> which refers to the type of the alarm that should be cleared.</p>
+
+<pre><code class="language-plaintext">306,gpio_critical
+</code></pre>
+
+<p>The critical alarm should be cleared afterwards.</p>
+
+<p>Note that you did not have to handle any alarm IDs with the MQTT implementation. Cumulocity will take over this part so that the device communication can be as easy as possible.</p>
+
+<h5 id="creating-events">Creating events</h5>
+
+<p>Next, we will create some location events for the device. If you wish, you may use the <a href="http://www.latlong.net/">LatLong website</a> to get the latitude and longitude of your city.</p>
+
+<p>The template <code>401</code> lets you create location events and takes latitude, longitude, altitude, accuracy and the time as parameters, but for now we will just use the first two.</p>
+
+<pre><code class="language-plaintext">401,51.227741,6.773456
+</code></pre>
+
+<p>In the Device Management application, you can see one event in the event list but the location has not been updated. This is because on REST these are different requests. Instead of the template <code>401</code>, you can use the template <code>402</code> in MQTT. It works exactly the same as <code>401</code> but additionally it also updates the position of the device itself.</p>
+
+<pre><code class="language-plaintext">402,51.227741,6.773456
+</code></pre>
+
+<p>Now you should see both the <strong>Location</strong> and the <strong>Tracking</strong> tab in the device with the <strong>Location</strong> tab having the same latitude and longitude as the last location event.</p>
+
+<h4 id="receiving-data">Receiving data</h4>
+
+<p>So far we have only used MQTT to send data from the client to the server. Now we will send data from the server to the client.</p>
+
+<p>To achieve this, we first need to subscribe to the responsible topic. We will do two subscriptions:</p>
+
+<ul>
+<li>s/ds : This will subscribe to the static operation templates for the device</li>
+<li>s/e :  This will subscribe to an error topic that can be used for debugging</li>
+</ul>
+
+<p>You can enter both topics after another in the <strong>Subscribe</strong> field and click <strong>Subscribe</strong>. The QoS selection does not matter for this example.</p>
+
+<p>Afterwards, your MQTTBox should look like this:</p>
+
+<p><img src="/guides/images/mqtt/mqttBoxAfterSubscribe.png" alt="MQTTBox Subscribed Topics" /></p>
+
+<h5 id="receiving-operations">Receiving operations</h5>
+
+<p>At the current state, the UI does not show any tabs for operations. Up to this point, it was unknown what exactly the device supports, but the list of supported operations can be modified with the template <code>114</code>. A list of supported operations can be added here.</p>
+
+<p>We will add support for the configuration and shell.</p>
+
+<pre><code class="language-plaintext">114,c8y_Command,c8y_Configuration
+</code></pre>
+
+<p>After reloading the UI, the two new tabs will appear (<strong>Configuration</strong> and <strong>Shell</strong>).</p>
+
+<p>We can now create a shell command from the UI and click <strong>Execute</strong>.</p>
+
+<p>In the MQTTBox, you should now have received a new message for the <kbd>s/ds</kbd> subscription.</p>
+
+<p><img src="/guides/images/mqtt/mqttBoxReceivedOperation.png" alt="MQTTBox Received Operation" /></p>
+
+<p>The <code>511</code> is indicating what kind of operation we received (in this case <code>c8y_Command</code>). This will be followed by the <strong>deviceIdentifier</strong> to locate the device with the dedicated operation. This is required if you have a hierarchy with multiple children. In such case, you need to know for which of the children the operation was dedicated. Finally, you have the operation specific parameters, which in the case of <code>c8y_Command</code> is only the command text.</p>
+
+<p>After receiving the operation, we can start executing it to initiate the client&rsquo;s handling the operation. Similar to changing the status of an alarm, you can add the type of operation to the template.</p>
+
+<pre><code class="language-plaintext">501,c8y_Command
+</code></pre>
+
+<p>After finishing the handling, the operation can be set to successful with the template <code>503</code>.</p>
+
+<p>Besides the operation type, this operation can also take additional parameters based on what kind of operation it was. We can return a result for the <code>c8y_Command</code>.</p>
+
+<pre><code class="language-plaintext">503,c8y_Command,Everything went fine
+</code></pre>
+
+<h5 id="learning-from-errors">Learning from errors</h5>
+
+<p>The topic <kbd>s/e</kbd> can help you debugging in case something went wrong.
+For instance, if we try to send</p>
+
+<pre><code class="language-plaintext">999,I made this up
+</code></pre>
+
+<p>we can see a message on the topic because the template <code>999</code> is unknown.</p>
+
+<pre><code class="language-plaintext">40,999,No static template for this message id
+</code></pre>
+
+  </article>
+  
+  <article id="hello-mqtt-c" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#hello-mqtt-c">
+        <span class="fa fa-link"></span>
+      </button>
+      Hello MQTT C</h2>
+    
+
+<p>In this tutorial, you will learn how to use MQTT client in C with Cumulocity using pre-defined messages (called &ldquo;static templates&rdquo;).</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>In order to follow this tutorial, check the following prerequisites:</p>
+
+<ul>
+<li>You have a valid tenant, a user, and a password in order to access Cumulocity.</li>
+<li>Verify that you have a gcc compiler installed:</li>
+</ul>
+
+<pre><code class="language-shell">$ gcc --version
+gcc (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
+Copyright (C) 2015 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</code></pre>
+
+<ul>
+<li>Download, compile and install the MQTT C Paho Client. You will find more details about Paho on the <a href="http://www.eclipse.org/paho/clients/c/">Paho website</a>.</li>
+</ul>
+
+<h3 id="developing-the-hello-mqtt-world-client">Developing the &ldquo;Hello, MQTT world!&rdquo; client</h3>
+
+<p>To develop a very simple &ldquo;Hello, world!&rdquo; MQTT client for Cumulocity, you need to</p>
+
+<ul>
+<li>create the application,</li>
+<li>build and run the application.</li>
+</ul>
+
+<h4 id="creating-the-application">Creating the application</h4>
+
+<p>Create a source file, for example <em>hello_mqtt.c</em> with the following content:</p>
+
+<pre><code class="language-cpp">#include &quot;stdlib.h&quot;
+#include &quot;string.h&quot;
+#include &quot;unistd.h&quot;
+#include &quot;MQTTClient.h&quot;
+
+#define ADDRESS     &quot;&lt;&lt;serverUrl&gt;&gt;&quot;
+#define CLIENTID    &quot;&lt;&lt;clientId&gt;&gt;&quot;
+
+void publish(MQTTClient client, char* topic, char* payload) {
+    MQTTClient_message pubmsg = MQTTClient_message_initializer;
+    pubmsg.payload = payload;
+    pubmsg.payloadlen = strlen(pubmsg.payload);
+    pubmsg.qos = 2;
+    pubmsg.retained = 0;
+    MQTTClient_deliveryToken token;
+    MQTTClient_publishMessage(client, topic, &amp;pubmsg, &amp;token);
+    MQTTClient_waitForCompletion(client, token, 1000L);
+    printf(&quot;Message '%s' with delivery token %d delivered\n&quot;, payload, token);
+}
+
+int on_message(void *context, char *topicName, int topicLen, MQTTClient_message *message) {
+    char* payload = message-&gt;payload;
+    printf(&quot;Received operation %s\n&quot;, payload);
+    MQTTClient_freeMessage(&amp;message);
+    MQTTClient_free(topicName);
+    return 1;
+}
+
+int main(int argc, char* argv[]) {
+    MQTTClient client;
+    MQTTClient_create(&amp;client, ADDRESS, CLIENTID, MQTTCLIENT_PERSISTENCE_NONE, NULL);
+    MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
+    conn_opts.username = &quot;&lt;&lt;tenant&gt;&gt;/&lt;&lt;username&gt;&gt;&quot;;
+    conn_opts.password = &quot;&lt;&lt;password&gt;&gt;&quot;;
+
+    MQTTClient_setCallbacks(client, NULL, NULL, on_message, NULL);
+
+    int rc;
+    if ((rc = MQTTClient_connect(client, &amp;conn_opts)) != MQTTCLIENT_SUCCESS) {
+        printf(&quot;Failed to connect, return code %d\n&quot;, rc);
+        exit(-1);
+    }
+    //create device
+    publish(client, &quot;s/us&quot;, &quot;100,C MQTT,c8y_MQTTDevice&quot;);
+    //set hardware information
+    publish(client, &quot;s/us&quot;, &quot;110,S123456789,MQTT test model,Rev0.1&quot;);
+    //listen for operation
+    MQTTClient_subscribe(client, &quot;s/ds&quot;, 0);
+
+    for (;;) {
+        //send temperature measurement
+        publish(client, &quot;s/us&quot;, &quot;211,25&quot;);
+        sleep(3);
+    }
+    MQTTClient_disconnect(client, 1000);
+    MQTTClient_destroy(&amp;client);
+    return rc;
+}
+</code></pre>
+
+<p>Replace <code>&lt;&lt;clientId&gt;&gt;</code>, <code>&lt;&lt;serverUrl&gt;&gt;</code>, <code>&lt;&lt;tenant&gt;&gt;</code>, <code>&lt;&lt;username&gt;&gt;</code> and <code>&lt;&lt;password&gt;&gt;</code> with your data.</p>
+
+<p>The Cumulocity MQTT protocol supports both unsecured TCP and secured SSL connections (e.g. <code>tcp://mqtt.cumulocity.com:1883</code> or <code>ssl://mqtt.cumulocity.com:8883</code>), so as the <code>&lt;&lt;serverUrl&gt;&gt;</code> you can pick the one which fits for you.
+When using SSL remember to configure <code>MQTTClient_SSLOptions</code> and set it in the <code>MQTTClient_connectOptions</code>.</p>
+
+<p>What does the code in <code>main</code> do?</p>
+
+<ul>
+<li>Configure an MQTT connection.</li>
+<li>Register a <code>on_message</code> callback function which will print incoming messages.</li>
+<li>Connect with Cumulocity via an MQTT protocol.</li>
+<li>Create a new device with <code>C MQTT</code> name and <code>c8y_MQTTDevice</code> type.</li>
+<li>Update the device hardware information by putting a <code>&quot;S123456789&quot;</code> serial, a <code>&quot;MQTT test model&quot;</code> model and a <code>&quot;Rev0.1&quot;</code> revision.</li>
+<li>Subscribe to the static operation templates for the device - this will result in an <code>on_message</code> method call every time a new operation is created.</li>
+<li>Send temperature measurement every 3 seconds.</li>
+</ul>
+
+<p>What does the code in <code>publish</code> do?</p>
+
+<ul>
+<li>Create a new MQTT message and set a payload.</li>
+<li>Publish message via MQTT protocol.</li>
+<li>Wait maximum 1 second for a message delivered ACK from the server.</li>
+</ul>
+
+<p>Note that the subscription is established after the device creation, otherwise if there is no device for a given <code>clientId</code> the server will not accept it.</p>
+
+<h4 id="building-and-running-the-application">Building and running the application</h4>
+
+<p>To build the application, enter</p>
+
+<pre><code class="language-shell">$ gcc hello_mqtt.c -o hello_mqtt -lpaho-mqtt3c
+</code></pre>
+
+<p>To run the application, enter</p>
+
+<pre><code class="language-shell">$ ./hello_mqtt
+Message '100,C MQTT,c8y_MQTTDevice' with delivery token 1 delivered
+...
+</code></pre>
+
+<p>After starting the application, you should see a new device in the Device Management application, listed in <strong>All devices</strong>.</p>
+
+<p>Additionally, if there will be a new operation created for this device (for example <code>c8y_Restart</code>), information about it will be printed to the console.</p>
+
+<h3 id="improving-the-agent">Improving the agent</h3>
+
+<p>Now that you have done your first step, check out the section <a href="/guides/device-sdk/mqtt#hello-mqtt">Hello MQTT</a> to learn more about Cumulocity MQTT and improve your application.</p>
+
+  </article>
+  
+  <article id="hello-mqtt-java" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#hello-mqtt-java">
+        <span class="fa fa-link"></span>
+      </button>
+      Hello MQTT Java</h2>
+    
+
+<p>In this tutorial, you will learn how to use the Java MQTT client with Cumulocity using pre-defined messages (called &ldquo;static templates&rdquo;).</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>In order to follow this tutorial, check the following prerequisites:</p>
+
+<ul>
+<li>You have a valid tenant, a user and a password in order to access Cumulocity.</li>
+<li>Verify that you have Maven 3 and Java 7 installed. This example is also compatible with Java 8.</li>
+</ul>
+
+<pre><code class="language-shell">$ mvn -v
+Maven home: /Library/Maven/apache-maven-3.6.0
+Java version: 1.8.0_201, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre
+Default locale: en_GB, platform encoding: UTF-8
+OS name: &quot;mac os x&quot;, version: &quot;10.14.2&quot;, arch: &quot;x86_64&quot;, family: &quot;mac&quot;
+</code></pre>
+
+<p>Maven can be downloaded from the <a href="http://maven.apache.org">Maven website</a>.</p>
+
+<h3 id="developing-the-hello-mqtt-world-client">Developing the &ldquo;Hello, MQTT world!&rdquo; client</h3>
+
+<p>To develop a very simple &ldquo;Hello, world!&rdquo; MQTT client for Cumulocity, you need to</p>
+
+<ul>
+<li>create a Maven project,</li>
+<li>add a dependency to the MQTT Java client library to the <em>pom.xml</em> (in this example we will use <a href="https://eclipse.org/paho/clients/java/">Paho Java Client</a>),</li>
+<li>create a Java application,</li>
+<li>build and run the Java application.</li>
+</ul>
+
+<h4 id="creating-a-maven-project">Creating a Maven project</h4>
+
+<p>To create a plain Java project with Maven, execute the following command:</p>
+
+<pre><code class="language-shell">$ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-mqtt-java -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+</code></pre>
+
+<p>This will create a folder <em>hello-mqtt-java</em> in the current directory with a skeleton structure for your project.</p>
+
+<h4 id="adding-the-mqtt-java-client-library">Adding the MQTT Java client library</h4>
+
+<p>Edit the <em>pom.xml</em> in the <em>hello-mqtt-java</em> folder. Add a dependency to the MQTT Paho Java Client.</p>
+
+<pre><code class="language-xml">&lt;dependency&gt;
+    &lt;groupId&gt;org.eclipse.paho&lt;/groupId&gt;
+    &lt;artifactId&gt;org.eclipse.paho.client.mqttv3&lt;/artifactId&gt;
+    &lt;version&gt;1.2.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<h4 id="creating-a-java-application">Creating a Java application</h4>
+
+<p>Edit the <em>App.java</em> file in the folder <em>hello-mqtt-java/src/main/java/c8y/example</em> with the following content:</p>
+
+<pre><code class="language-java">package c8y.example;
+
+import org.eclipse.paho.client.mqttv3.*;
+import java.util.concurrent.*;
+
+public class App {
+
+    public static void main(String[] args) throws Exception {
+
+        // client, user and device details
+        final String serverUrl   = &quot;tcp://mqtt.cumulocity.com&quot;;
+        final String clientId    = &quot;my_mqtt_java_client&quot;;
+        final String device_name = &quot;My new MQTT device&quot;;
+        final String tenant      = &quot;&lt;&lt;tenant&gt;&gt;&quot;;
+        final String username    = &quot;&lt;&lt;username&gt;&gt;&quot;;
+        final String password    = &quot;&lt;&lt;password&gt;&gt;&quot;;
+
+        // MQTT connection options
+        final MqttConnectOptions options = new MqttConnectOptions();
+        options.setUserName(tenant + &quot;/&quot; + username);
+        options.setPassword(password.toCharArray());
+
+        // connect the client to Cumulocity
+        final MqttClient client = new MqttClient(serverUrl, clientId, null);
+        client.connect(options);
+
+        // register a new device
+        client.publish(&quot;s/us&quot;, (&quot;100,&quot; + device_name + &quot;,c8y_MQTTDevice&quot;).getBytes(), 2, false);
+
+        // set device's hardware information
+        client.publish(&quot;s/us&quot;, &quot;110,S123456789,MQTT test model,Rev0.1&quot;.getBytes(), 2, false);
+
+        // add restart operation
+        client.publish(&quot;s/us&quot;, &quot;114,c8y_Restart&quot;.getBytes(), 2, false);
+
+        System.out.println(&quot;The device \&quot;&quot; + device_name + &quot;\&quot; has been registered successfully!&quot;);
+
+        // listen for operations
+        client.subscribe(&quot;s/ds&quot;, new IMqttMessageListener() {
+            public void messageArrived (final String topic, final MqttMessage message) throws Exception {
+                final String payload = new String(message.getPayload());
+
+                System.out.println(&quot;Received operation &quot; + payload);
+                if (payload.startsWith(&quot;510&quot;)) {
+                    System.out.println(&quot;Simulating device restart...&quot;);
+                    client.publish(&quot;s/us&quot;, &quot;501,c8y_Restart&quot;.getBytes(), 2, false);
+                    System.out.println(&quot;...restarting...&quot;);
+                    Thread.sleep(TimeUnit.SECONDS.toMillis(1));
+                    client.publish(&quot;s/us&quot;, &quot;503,c8y_Restart&quot;.getBytes(), 2, false);
+                    System.out.println(&quot;...done...&quot;);
+                }
+            }
+        });
+
+        // generate a random temperature (10º-20º) measurement and send it every 7 seconds
+        Executors.newSingleThreadScheduledExecutor().scheduleWithFixedDelay(new Runnable() {
+            public void run () {
+                try {
+                    int temp = (int) (Math.random() * 10 + 10);
+
+                    System.out.println(&quot;Sending temperature measurement (&quot; + temp + &quot;º) ...&quot;);
+                    client.publish(&quot;s/us&quot;, new MqttMessage((&quot;211,&quot; + temp).getBytes()));
+                } catch (MqttException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, 1, 7, TimeUnit.SECONDS);
+    }
+}
+</code></pre>
+
+<p>Replace <code>serverUrl</code>, <code>clientId</code> and <code>device_name</code> as needed. Do not forget to specify the user credentials setting values for <code>tenant</code>, <code>username</code> and <code>password</code>.</p>
+
+<p>Cumulocity MQTT protocol supports both unsecured TCP and secured SSL connections (i.e. <code>tcp://mqtt.cumulocity.com:1883</code> or <code>ssl://mqtt.cumulocity.com:8883</code>), so you can pick the one which fits for you and use it in <code>serverUrl</code>.</p>
+
+<p>What does the code in <code>main</code> do?</p>
+
+<ul>
+<li>Configure the MQTT connection.</li>
+<li>Connect with Cumulocity via a MQTT protocol.</li>
+<li>Create a new device with a name (<code>device_name</code>) and a type (<code>c8y_MQTTDevice</code>).</li>
+<li>Update the device hardware information by putting a <code>&quot;S123456789&quot;</code> serial, a <code>&quot;MQTT test model&quot;</code> model and a <code>&quot;Rev0.1&quot;</code> revision.</li>
+<li>Subscribe to the static operation templates for the device and print all received operations to the console. In case of a c8y_Restart operation, simulate a device restart.</li>
+<li>Create a new thread which sends temperature measurement every 7 seconds.</li>
+</ul>
+
+<p>Note that the subscription is established after the device creation, otherwise if there is no device for a given <code>clientId</code>, the server will not accept it.</p>
+
+<h4 id="building-and-running-the-application">Building and running the application</h4>
+
+<p>Use the following commands to build the application:</p>
+
+<pre><code class="language-shell">$ cd hello-mqtt-java
+$ mvn clean install
+...
+[INFO]
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ hello-mqtt-java ---
+[INFO] Building jar: /home/schm/Pulpit/hello-mqtt-java/target/hello-mqtt-java-1.0-SNAPSHOT.jar
+[INFO]
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ hello-mqtt-java ---
+[INFO] Installing /home/schm/Pulpit/hello-mqtt-java/target/hello-mqtt-java-1.0-SNAPSHOT.jar to /home/schm/.m2/repository/c8y/example/hello-mqtt-java/1.0-SNAPSHOT/hello-mqtt-java-1.0-SNAPSHOT.jar
+[INFO] Installing /home/schm/Pulpit/hello-mqtt-java/pom.xml to /home/schm/.m2/repository/c8y/example/hello-mqtt-java/1.0-SNAPSHOT/hello-mqtt-java-1.0-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.642 s
+[INFO] Finished at: 2017-03-14T09:16:25+01:00
+[INFO] Final Memory: 14M/301M
+[INFO] ------------------------------------------------------------------------
+</code></pre>
+
+<p>and this command to run it:</p>
+
+<pre><code class="language-shell">$ mvn exec:java -Dexec.mainClass=&quot;c8y.example.App&quot;
+...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building hello-mqtt-java 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- exec-maven-plugin:1.6.0:java (default-cli) @ hello-mqtt-java ---
+Received operation 510,123456789
+</code></pre>
+
+<p>After starting the application, you should see a new registered device in the Device Management application, listed in <strong>All devices</strong>. In the <strong>Measurements</strong> tab, you will see the temperature measurements being sent by your client.</p>
+
+<p>Additionally, if there will be a new operation created for this device (e.g. c8y_Restart), information about it will be printed to the console.</p>
+
+<h3 id="improving-the-agent">Improving the agent</h3>
+
+<p>Now that you have done your first step, check out the Section <a href="/guides/device-sdk/mqtt#hello-mqtt">Hello MQTT</a> to learn more about Cumulocity MQTT and improve your application.</p>
+
+  </article>
+  
+  <article id="hello-mqtt-javascript" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#hello-mqtt-javascript">
+        <span class="fa fa-link"></span>
+      </button>
+      Hello MQTT Web-based</h2>
+    
+
+<p>In this tutorial, you will learn how to use the Web-based MQTT client with Cumulocity using pre-defined messages (called &ldquo;static templates&rdquo;).</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>In order to follow this tutorial, check the following prerequisites:</p>
+
+<ul>
+<li>You have a valid tenant, a user, and a password in order to access Cumulocity.</li>
+</ul>
+
+<h3 id="developing-the-hello-mqtt-world-client">Developing the &ldquo;Hello, MQTT world!&rdquo; client</h3>
+
+<p>To develop a very simple &ldquo;Hello, world!&rdquo; MQTT client for Cumulocity, you need to</p>
+
+<ul>
+<li>create an HTML file and include the MQTT JavaScript client (in this example we will use <a href="https://www.eclipse.org/paho/clients/js/">Paho JavaScript Client</a>),</li>
+<li>create a JavaScript application,</li>
+<li>run the application.</li>
+</ul>
+
+<h4 id="creating-a-javascript-application">Creating a JavaScript application</h4>
+
+<p>Create an HTML file, for example <em>hello_mqtt_js.html</em> with the following content:</p>
+
+<pre><code class="language-xml">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;title&gt;Hello MQTT World&lt;/title&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;main.js&quot; defer&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;logger&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Create a JavaScript file <em>main.js</em> with the following content:</p>
+
+<pre><code class="language-javascript">// client, user and device details
+var serverUrl   = &quot;ws://mqtt.cumulocity.com/mqtt&quot;;     /* wss://mqtt.cumulocity.com/mqtt for a secure connection */
+var clientId    = &quot;my_mqtt_js_client&quot;;
+var device_name = &quot;My JS MQTT device&quot;;
+var tenant      = &quot;&lt;&lt;tenant&gt;&gt;&quot;;
+var username    = &quot;&lt;&lt;username&gt;&gt;&quot;;
+var password    = &quot;&lt;&lt;password&gt;&gt;&quot;;
+
+var undeliveredMessages = [];
+var temperature = 25;
+
+// configure the client to Cumulocity
+var client = new Paho.MQTT.Client(serverUrl, clientId);
+
+// display all incoming messages
+client.onMessageArrived = function (message) {
+    log('Received operation &quot;' + message.payloadString + '&quot;');
+    if (message.payloadString.indexOf(&quot;510&quot;) == 0) {
+        log(&quot;Simulating device restart...&quot;);
+        publish(&quot;s/us&quot;, &quot;501,c8y_Restart&quot;);
+        log(&quot;...restarting...&quot;);
+        setTimeout(function() {
+            publish(&quot;s/us&quot;, &quot;503,c8y_Restart&quot;);
+        }, 1000);
+        log(&quot;...done...&quot;);
+    }
+};
+
+// display all delivered messages
+client.onMessageDelivered = function onMessageDelivered (message) {
+    log('Message &quot;' + message.payloadString + '&quot; delivered');
+    var undeliveredMessage = undeliveredMessages.pop();
+    if (undeliveredMessage.onMessageDeliveredCallback) {
+        undeliveredMessage.onMessageDeliveredCallback();
+    }
+};
+
+function createDevice () {
+    // register a new device
+    publish(&quot;s/us&quot;, &quot;100,&quot; + device_name + &quot;,c8y_MQTTDevice&quot;, function() {
+        // set hardware information
+        publish(&quot;s/us&quot;, &quot;110,S123456789,MQTT test model,Rev0.1&quot;, function() {
+            publish('s/us', '114,c8y_Restart', function() {
+                log('Enable restart operation support');
+                //listen for operation
+                client.subscribe(&quot;s/ds&quot;);
+            })
+
+            // send temperature measurement
+            setInterval(function() {
+                publish(&quot;s/us&quot;, '211,'+temperature);
+                temperature += 0.5 - Math.random();
+            }, 3000);
+        });
+    });
+}
+
+// send a message
+function publish (topic, message, onMessageDeliveredCallback) {
+    message = new Paho.MQTT.Message(message);
+    message.destinationName = topic;
+    message.qos = 2;
+    undeliveredMessages.push({
+        message: message,
+        onMessageDeliveredCallback: onMessageDeliveredCallback
+    });
+    client.send(message);
+}
+
+// connect the client to Cumulocity
+function init () {
+    client.connect({
+        userName: tenant + &quot;/&quot; + username,
+        password: password,
+        onSuccess: createDevice
+    });
+}
+
+// display all messages on the page
+function log (message) {
+    document.getElementById('logger').insertAdjacentHTML('beforeend', '&lt;div&gt;' + message + '&lt;/div&gt;');
+}
+
+init();
+</code></pre>
+
+<p>Replace <code>serverUrl</code>, <code>clientId</code> and <code>device_name</code> as needed. Do not forget to specify the user credentials setting values for <code>tenant</code>, <code>username</code> and <code>password</code>.</p>
+
+<p>The Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connections (i.e. <code>ws://mqtt.cumulocity.com/mqtt</code> or <code>wss://mqtt.cumulocity.com/mqtt</code>), so you can pick the one which fits for you and use it in <code>serverUrl</code>.</p>
+
+<p>What does the code do?</p>
+
+<ul>
+<li>Configure the MQTT connection.</li>
+<li>Register <code>onMessageArrived</code> callback function which will display all incoming messages. In case of a c8y_Restart operation, simulate a device restart.</li>
+<li>Register <code>onMessageDelivered</code> callback function which will be called after a publish message has been delivered.</li>
+<li>After the page is fully loaded, the function <code>init</code> is called and it connects with Cumulocity via a MQTT protocol.</li>
+<li>When the connection is established, call a <code>createDevice</code> function.</li>
+<li>Create a new device with a name (<code>device_name</code>) and a type (<code>c8y_MQTTDevice</code>).</li>
+<li>Update the device hardware information by putting a <code>&quot;S123456789&quot;</code> serial, a <code>&quot;MQTT test model&quot;</code> model and a <code>&quot;Rev0.1&quot;</code> revision.</li>
+<li>Subscribe to the static operation templates for the device – this will result in <code>onMessageArrived</code> method call every time a new operation is created.</li>
+<li>Send a temperature measurement every 3 seconds.</li>
+</ul>
+
+<p>Note that the subscription is established after the device creation, otherwise if there is no device for a given <code>clientId</code>, the server will not accept it.</p>
+
+<h4 id="running-the-application">Running the application</h4>
+
+<p>Open the <em>hello_mqtt_js.html</em> file in a browser. You should see a new registered device in the Device Management application, listed in <strong>All devices</strong>. In the <strong>Measurements</strong> tab, you will see the temperature measurements being sent by your client.</p>
+
+<p>Additionally, if there will be a new operation created for this device (e.g. c8y_Restart), related information will be displayed in the browser page.</p>
+
+<h3 id="improving-the-agent">Improving the agent</h3>
+
+<p>Now that you have done your first step, check out the section <a href="/guides/device-sdk/mqtt#hello-mqtt">Hello MQTT</a> to learn more about Cumulocity MQTT and improve your application.</p>
+
+  </article>
+  
+  <article id="hello-mqtt-python" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#hello-mqtt-python">
+        <span class="fa fa-link"></span>
+      </button>
+      Hello MQTT Python</h2>
+    
+
+<p>In this tutorial, you will learn how to use the Python MQTT client with Cumulocity using pre-defined messages (called &ldquo;static templates&rdquo;).</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>In order to follow this tutorial, check the following prerequisites:</p>
+
+<ul>
+<li>You have a valid tenant, a user, and a password in order to access Cumulocity.</li>
+<li>Verify that you have Python installed:</li>
+</ul>
+
+<pre><code class="language-shell">$ python --version
+Python 2.7.12
+</code></pre>
+
+<p>Python can be downloaded from <a href="https://www.python.org/">www.python.org</a>.</p>
+
+<ul>
+<li>Install the Paho client:</li>
+</ul>
+
+<pre><code class="language-shell">$ pip install paho-mqtt
+</code></pre>
+
+<blockquote>
+<p>Info: On macOS you may need to execute <code>sudo easy_install pip</code> in case the <code>pip</code> command is not found.</p>
+</blockquote>
+
+<h3 id="developing-the-hello-mqtt-world-client">Developing the &ldquo;Hello, MQTT world!&rdquo; client</h3>
+
+<p>To develop a very simple &ldquo;Hello, world!&rdquo; MQTT client for Cumulocity, you need to</p>
+
+<ul>
+<li>create a python script,</li>
+<li>run the script.</li>
+</ul>
+
+<h4 id="creating-a-python-script">Creating a python script</h4>
+
+<p>Create a script file, for example <em>hello_mqtt.py</em> with the following content:</p>
+
+<pre><code class="language-python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import paho.mqtt.client as mqtt
+import time, threading, ssl, random
+
+# client, user and device details
+serverUrl   = &quot;tcp://mqtt.cumulocity.com&quot;
+port        = 1883
+clientId    = &quot;my_mqtt_python_client&quot;
+device_name = &quot;My Python MQTT device&quot;
+tenant      = &quot;&lt;&lt;tenant&gt;&gt;&quot;
+username    = &quot;&lt;&lt;username&gt;&gt;&quot;
+password    = &quot;&lt;&lt;password&gt;&gt;&quot;
+
+receivedMessages = []
+
+# display all incoming messages
+def on_message(client, userdata, message):
+    print(&quot;Received operation &quot; + str(message.payload))
+    if (message.payload.startswith(&quot;510&quot;)):
+        print(&quot;Simulating device restart...&quot;)
+        publish(&quot;s/us&quot;, &quot;501,c8y_Restart&quot;);
+        print(&quot;...restarting...&quot;)
+        time.sleep(1)
+        publish(&quot;s/us&quot;, &quot;503,c8y_Restart&quot;);
+        print(&quot;...done...&quot;)
+
+# send temperature measurement
+def sendMeasurements():
+    try:
+        print(&quot;Sending temperature measurement...&quot;)
+        publish(&quot;s/us&quot;, &quot;211,&quot; + str(random.randint(10, 20)))
+        thread = threading.Timer(7, sendMeasurements)
+        thread.daemon=True
+        thread.start()
+        while True: time.sleep(100)
+    except (KeyboardInterrupt, SystemExit):
+        print 'Received keyboard interrupt, quitting ...'
+
+# publish a message
+def publish(topic, message, waitForAck = False):
+    mid = client.publish(topic, message, 2)[1]
+    if (waitForAck):
+        while mid not in receivedMessages:
+            time.sleep(0.25)
+
+def on_publish(client, userdata, mid):
+    receivedMessages.append(mid)
+
+# connect the client to Cumulocity and register a device
+client = mqtt.Client(clientId)
+client.username_pw_set(tenant + &quot;/&quot; + username, password)
+client.on_message = on_message
+client.on_publish = on_publish
+
+client.connect(serverUrl, port)
+client.loop_start()
+publish(&quot;s/us&quot;, &quot;100,&quot; + device_name + &quot;,c8y_MQTTDevice&quot;, True)
+publish(&quot;s/us&quot;, &quot;110,S123456789,MQTT test model,Rev0.1&quot;)
+publish(&quot;s/us&quot;, &quot;114,c8y_Restart&quot;)
+print &quot;Device registered successfully!&quot;
+
+client.subscribe(&quot;s/ds&quot;)
+sendMeasurements()
+</code></pre>
+
+<p>Replace <code>serverUrl</code>, <code>clientId</code> and <code>device_name</code> as needed. Do not forget to specify the user credentials setting values for <code>tenant</code>, <code>username</code> and <code>password</code>.</p>
+
+<p>Cumulocity MQTT protocol supports both unsecured TCP and secured SSL connections, so when configuring  a port remember to use the correct one. No matter which connection type you choose, your <code>serverUrl</code> should stay the same (like <code>mqtt.cumulocity.com</code>).</p>
+
+<p>The above example uses a TCP connection. If you would like to use an SSL connection, remember to use the proper configuration from the Paho MQTT client. Further information can be found at <a href="http://www.eclipse.org/paho/clients/python/docs/#option-functions">www.eclipse.org</a>.</p>
+
+<p>What does the script do?</p>
+
+<ul>
+<li>Configure a MQTT connection.</li>
+<li>Register an <code>on_message</code> callback function which will print incoming messages. In case of a c8y_Restart operation, it will simulate a device restart.</li>
+<li>Register an <code>on_publish</code> callback function which will be called after a publish message has been delivered.</li>
+<li>Connect with Cumulocity via the MQTT protocol.</li>
+<li>Create a new device with a name (<code>device_name</code>) and a type (<code>c8y_MQTTDevice</code>).</li>
+<li>Update the device hardware information by putting a <code>&quot;S123456789&quot;</code> serial, a <code>&quot;MQTT test model&quot;</code> model and a <code>&quot;Rev0.1&quot;</code> revision.</li>
+<li>Subscribe to the static operation templates for the device –this will result in an <code>on_message</code> method call every time a new operation is created.</li>
+<li>Call the <code>sendMeasurements</code> method which sends a temperature measurement every 7 seconds.</li>
+</ul>
+
+<p>What does the <code>publish</code> message do?</p>
+
+<ul>
+<li>Publish a given message about the given topic via MQTT.</li>
+<li>When publishing the message it uses QoS 2. So to be sure that the message was delivered, it will wait for server ACK (until the <code>on_publish</code> method is called with the matching message ID).</li>
+</ul>
+
+<p>Note that the subscription is established after the device creation, otherwise if there is no device for a given <code>clientId</code>, the server will not accept it.</p>
+
+<h4 id="running-the-script">Running the script</h4>
+
+<p>To run the script just use the command:</p>
+
+<pre><code class="language-shell">$ python hello_mqtt.py
+</code></pre>
+
+<p>After starting the application you should see a new registered device in the Device Management application, listed in <strong>All devices</strong>. In the <strong>Measurements</strong> tab, you will see the temperature measurements being sent by your client.</p>
+
+<p>Additionally, if there will be a new operation created for this device (e.g. c8y_Restart), information about it will be printed to the console.</p>
+
+<h3 id="improving-the-agent">Improving the agent</h3>
+
+<p>Now that you have done your first step, check out the section <a href="/guides/device-sdk/mqtt#hello-mqtt">Hello MQTT</a> to learn more about Cumulocity MQTT and improve your application.</p>
+
+  </article>
+  
+  <article id="hello-mqtt-nodejs" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#hello-mqtt-nodejs">
+        <span class="fa fa-link"></span>
+      </button>
+      Hello MQTT Node.js</h2>
+    
+
+<p>In this tutorial, you will learn how to use the Node.js MQTT client with Cumulocity using pre-defined messages (called &ldquo;static templates&rdquo;).</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>In order to follow this tutorial, check the following prerequisites:</p>
+
+<ul>
+<li>You have Node.js and the package manager (npm) installed.</li>
+<li>You have a valid tenant, a user, and a password in order to access Cumulocity.</li>
+</ul>
+
+<h3 id="developing-the-hello-mqtt-world-client">Developing the &ldquo;Hello, MQTT world!&rdquo; client</h3>
+
+<p>To develop a very simple &ldquo;Hello, world!&rdquo; MQTT client for Cumulocity, you need to</p>
+
+<ul>
+<li>create a Node.js application,</li>
+<li>install the MQTT middleware (in this example we will use the library <a href="https://github.com/mqttjs/MQTT.js">MQTT.js</a>),</li>
+<li>run the application.</li>
+</ul>
+
+<h4 id="creating-a-node-js-application">Creating a Node.js application</h4>
+
+<p>Create the <em>package.json</em> file to list down the dependencies and other basic information about your application.</p>
+
+<pre><code class="language-json">{
+  &quot;dependencies&quot;: {
+    &quot;mqtt&quot;: &quot;*&quot;
+  },
+  &quot;scripts&quot;: {
+    &quot;start&quot;: &quot;node app.js&quot;
+  }
+}
+</code></pre>
+
+<p>Create the start script (<em>app.js</em>) specified in the <em>package.json</em> file with the following content:</p>
+
+<pre><code class="language-javascript">// MQTT dependency https://github.com/mqttjs/MQTT.js
+const mqtt = require(&quot;mqtt&quot;);
+
+// client, user and device details
+const serverUrl   = &quot;tcp://mqtt.cumulocity.com&quot;;
+const clientId    = &quot;my_mqtt_nodejs_client&quot;;
+const device_name = &quot;My Node.js MQTT device&quot;;
+const tenant      = &quot;&lt;&lt;tenant&gt;&gt;&quot;;
+const username    = &quot;&lt;&lt;username&gt;&gt;&quot;;
+const password    = &quot;&lt;&lt;password&gt;&gt;&quot;;
+
+var temperature   = 25;
+
+// connect the client to Cumulocity
+const client = mqtt.connect(serverUrl, {
+    username: tenant + &quot;/&quot; + username,
+    password: password,
+    clientId: clientId
+});
+
+// once connected...
+client.on(&quot;connect&quot;, function () {
+    // ...register a new device with restart operation
+    client.publish(&quot;s/us&quot;, &quot;100,&quot; + device_name + &quot;,c8y_MQTTDevice&quot;, function() {
+        client.publish(&quot;s/us&quot;, &quot;114,c8y_Restart&quot;, function() {
+            console.log(&quot;Device registered with restart operation support&quot;);
+        });
+
+        // listen for operations
+        client.subscribe(&quot;s/ds&quot;);
+
+        // send a temperature measurement every 3 seconds
+        setInterval(function() {
+            console.log(&quot;Sending temperature measurement: &quot; + temperature + &quot;º&quot;);
+            client.publish(&quot;s/us&quot;, &quot;211,&quot; + temperature);
+            temperature += 0.5 - Math.random();
+        }, 3000);
+    });
+
+    console.log(&quot;\nUpdating hardware information...&quot;);
+    client.publish(&quot;s/us&quot;, &quot;110,S123456789,MQTT test model,Rev0.1&quot;);
+});
+
+// display all incoming messages
+client.on(&quot;message&quot;, function (topic, message) {
+    console.log('Received operation &quot;' + message + '&quot;');
+    if (message.toString().indexOf(&quot;510&quot;) == 0) {
+        console.log(&quot;Simulating device restart...&quot;);
+        client.publish(&quot;s/us&quot;, &quot;501,c8y_Restart&quot;);
+        console.log(&quot;...restarting...&quot;);
+        setTimeout(function() {
+            client.publish(&quot;s/us&quot;, &quot;503,c8y_Restart&quot;);
+        }, 1000);
+        console.log(&quot;...done...&quot;);
+    }
+});
+</code></pre>
+
+<p>Replace <code>serverUrl</code>, <code>clientId</code> and <code>device_name</code> as needed. Do not forget to specify the user credentials setting values for <code>tenant</code>, <code>username</code> and <code>password</code>.</p>
+
+<p>The Cumulocity MQTT protocol supports both unsecured TCP and secured SSL connections. No matter which connection type you choose, your <code>serverUrl</code> should stay the same (like <code>mqtt.cumulocity.com</code>).</p>
+
+<p>What does the code do?</p>
+
+<ul>
+<li>Configure the MQTT connection.</li>
+<li>When the connection is established, register a new device with a name (<code>device_name</code>) and a type (<code>c8y_MQTTDevice</code>).</li>
+<li>Add restart capabilities to the device.</li>
+<li>Subscribe to listen for operations.</li>
+<li>Send a random temperature measurement every 3 seconds.</li>
+<li>Update the device hardware information by putting a <code>&quot;S123456789&quot;</code> serial, a <code>&quot;MQTT test model&quot;</code> model and a <code>&quot;Rev0.1&quot;</code> revision.</li>
+<li>Listen to all incoming messages. In case of a c8y_Restart operation, simulate a device restart.</li>
+</ul>
+
+<p>Note that the subscription is established after the device creation, otherwise if there is no device for a given <code>clientId</code>, the server will not accept it.</p>
+
+<h4 id="running-the-application">Running the application</h4>
+
+<p>Before running the application, the MQTT middleware must be installed. To achieve this, execute the following command:</p>
+
+<pre><code class="language-shell">$ npm install
+</code></pre>
+
+<p>Installation has to be done only once. Afterwards, you only need to execute the following command:</p>
+
+<pre><code class="language-shell">$ npm start
+</code></pre>
+
+<p>You should see a new registered device in the Device Management application, listed in <strong>All devices</strong>. In the <strong>Measurements</strong> tab, you will see the temperature measurements being sent by your client.</p>
+
+<p>Additionally, if there will be a new operation created for this device (e.g. c8y_Restart), related information about it will be printed to the console.</p>
+
+<h3 id="improving-the-agent">Improving the agent</h3>
+
+<p>Now that you have done your first step, check out the section <a href="/guides/device-sdk/mqtt#hello-mqtt">Hello MQTT</a> to learn more about Cumulocity MQTT and improve your application.</p>
+
+  </article>
+  
+  <article id="implementation" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#implementation">
+        <span class="fa fa-link"></span>
+      </button>
+      MQTT implementation</h2>
+    
+
+<p>This section will list the implementation details for the MQTT protocol. The Cumulocity implementation supports MQTT Version 3.1.1.</p>
+
+<h3 id="connecting-via-mqtt">Connecting via MQTT</h3>
+
+<p>Cumulocity supports MQTT both via TCP and WebSockets. As URL you use <em>mqtt.cumulocity.com</em>.</p>
+
+<p>Available ports:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">&nbsp;</th>
+<th align="left">TCP</th>
+<th align="left">WebSockets</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">SSL</td>
+<td align="left">8883</td>
+<td align="left">443</td>
+</tr>
+
+<tr>
+<td align="left">no SSL</td>
+<td align="left">1883</td>
+<td align="left">80</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p><strong>Info</strong>: To use WebSockets you need to connect to the path <kbd>/mqtt</kbd> and follow the <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718127">MQTT standard</a> for WebSocket communication.</p>
+</blockquote>
+
+<h3 id="smartrest-payload">SmartREST payload</h3>
+
+<p>The Cumulocity MQTT implementation uses SmartREST as a payload. SmartREST is a CSV-like message protocol that uses templates on the server side to create data in Cumulocity.</p>
+
+<blockquote>
+<p><strong>Info:</strong> For all MQTT connections to the platform, the maximum accepted payload size is 8092 bytes.</p>
+</blockquote>
+
+<h4 id="smartrest-basics">SmartREST basics</h4>
+
+<p>A SmartREST message is a single row in which each parameter is separated by comma. The first parameter is an ID that defines the message. You can send multiple messages in a single publish by using a line break between messages.</p>
+
+<h4 id="smartrest-escaping">SmartREST escaping</h4>
+
+<p>The following characters within a parameter need to be enclosed in double quotes:</p>
+
+<ul>
+<li>Comma (,)</li>
+<li>Line break (\n)</li>
+<li>Carriage return (\r)</li>
+<li>Double quotes (&ldquo;)</li>
+</ul>
+
+<p>Additionally, each double quote within the parameter needs to be escaped with a backslash <code>\</code>. The same escaping rules apply to messages that will be sent from the server to the client.</p>
+
+<p>Publish example:</p>
+
+<pre><code class="language-plaintext">100,&quot;This value, needs escaping&quot;,This value does not need escaping
+</code></pre>
+
+<p>Subscribe example:</p>
+
+<pre><code class="language-plaintext">511,myDeviceSerial,&quot;execute this\nand this\nand \&quot;this\&quot;&quot;
+</code></pre>
+
+<h3 id="device-hierarchies">Device hierarchies</h3>
+
+<p>MQTT sessions are linked to a single device, but this device can have a freely configurable device hierarchy below it.</p>
+
+<p>All children require a unique ID defined when creating the device. We recommend using a combination of the unique ID of the root device and a unique ID within the hierarchy.</p>
+
+<p>To create data for a child instead of the root device, the unique ID of the child is added as another section in the topic (e.g. <kbd>s/us/myChildDeviceIdentifier</kbd>).</p>
+
+<p>The client will automatically receive operations for every child in the hierarchy by subscribing to the respective topic. It is not required to subscribe for each child.</p>
+
+<p>Every operation received will contain the template ID followed by the ID of the device/child for which the operation was created (followed by other operation parameters).</p>
+
+<h3 id="mqtt-features">MQTT features</h3>
+
+<h4 id="mqtt-authentication">MQTT authentication</h4>
+
+<p>MQTT supports setting a username and a password. To connect to Cumulocity, the MQTT username needs to include both tenant and username in the format &ldquo;tenant/username&rdquo;.</p>
+
+<h4 id="mqtt-clientid">MQTT ClientId</h4>
+
+<p>The MQTT ClientId is a field to uniquely identify each connected client. The Cumulocity implementation also uses the ClientId to link the client directly to a device. Therefore the following format should be used for the ClientId:</p>
+
+<p>&ldquo;connectionType:deviceIdentifier:defaultTemplateIdentifier&rdquo;</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Mandatory</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">connectionType</td>
+<td align="left">NO</td>
+<td align="left">Indication of connection type default: d (device)</td>
+</tr>
+
+<tr>
+<td align="left">deviceIdentifier</td>
+<td align="left">YES</td>
+<td align="left">A unique identifier for your device, e.g. IMEI, Serial number</td>
+</tr>
+
+<tr>
+<td align="left">defaultTemplateIdentifier</td>
+<td align="left">NO</td>
+<td align="left">Check the SmartREST section for more information about template identifiers</td>
+</tr>
+</tbody>
+</table>
+
+<p>For the simplest version of a client, the MQTT clientId can just be the deviceIdentfier. It will automatically be interpreted as device connection.</p>
+
+<p>Example ClientIds:</p>
+
+<pre><code class="language-plaintext">mySerialNumber
+d:mySerialNumber
+d:mySerialNumber:myDefaultTemplate
+</code></pre>
+
+<p>The uniqueness of the MQTT ClientId is determined only by the deviceIdentifier. Therefore from the above examples only one client can be connected at the same time.</p>
+
+<h4 id="mqtt-quality-of-service">MQTT Quality of Service</h4>
+
+<p>The Cumulocity implementation supports all 3 levels of MQTT QoS</p>
+
+<ul>
+<li>QoS 0: At most once</li>
+<li>QoS 1: At least once</li>
+<li>QoS 2: Exactly once</li>
+</ul>
+
+<p>For subscriptions to the operation or error topics, we will deliver all messages in the QoS which the client defined when subscribing to the topic.</p>
+
+<h4 id="mqtt-clean-session">MQTT clean session</h4>
+
+<p>MQTT clients can set the clean session flag to &ldquo;0&rdquo; (false). This will ensure that in case the client disconnects, your subscription will still work and when you reconnect the client will receive the missed messages.</p>
+
+<blockquote>
+<p><strong>Info:</strong> Cumulocity requires clean session to be set to &ldquo;1&rdquo; (true). Currently we cannot guarantee that disabling clean session will work reliably, hence we recommend to always enable clean session.</p>
+</blockquote>
+
+<h4 id="mqtt-retained-flag">MQTT retained flag</h4>
+
+<p>In the current Cumulocity implementation, subscriptions to topics where devices publish data are not allowed. Publishing data with the retained flag on this topic is allowed but has no practical difference to sending it without the flag.
+Messages published by Cumulocity like operations and errors do not contain the retained flag.</p>
+
+<h4 id="mqtt-last-will">MQTT last will</h4>
+
+<p>In MQTT, the &ldquo;last will&rdquo; is a message that is specified at connection time and that is executed when the client loses the connection. For example, using <code>400,c8y_ConnectionEvent,&quot;Device connection was lost.&quot;</code> as last will message and <kbd>s/us</kbd> as last will topic, raises an event whenever the device loses the connection.</p>
+
+<blockquote>
+<p><strong>Info:</strong> The execution of the &ldquo;last will&rdquo; updates the device availability.</p>
+</blockquote>
+
+<h3 id="debugging">Debugging</h3>
+
+<p>To support developers during development, it is possible to subscribe to the topic <kbd>s/e</kbd>. On this topic the device can retrieve debug and error messages that occur during a publish from the device.</p>
+
+<blockquote>
+<p><strong>Info</strong>: This topic is purely designed to support the development of clients. It is not recommended to always subscribe to this channel as the messages are verbose and can significantly increase the data usage. Also, you should not use this topic to trigger actions of the device based on what you receive on the topic. It is not a response channel.</p>
+</blockquote>
+
+  </article>
+  
+  <article id="device-integration" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#device-integration">
+        <span class="fa fa-link"></span>
+      </button>
+      Device integration</h2>
+    
+
+<h3 id="overview">Overview</h3>
+
+<p>The basic life cycle for integrating devices into Cumulocity is discussed in <a href="/guides/concepts/interfacing-devices">Interfacing devices</a>.</p>
+
+<p>In this section, we will show how this life cycle can be managed using the MQTT implementation.</p>
+
+<p>The life cycle consists of two phases, a startup phase and a cycle phase.</p>
+
+<p>The startup phase can be as short as just checking the credentials:</p>
+
+<ul>
+<li><a href="#step-0-request-device-credentials">Step 0</a>: Request device credentials, if they have not been requested yet.</li>
+<li><a href="#step-1-verify-device">Step 1</a>: Ensure that the device exists.</li>
+<li><a href="#step-2-verify-children">Step 2</a>: Ensure that the device children exist.</li>
+<li><a href="#step-3-subscribe-topics">Step 3</a>: Subscribe to the topics.</li>
+</ul>
+
+<p>The cycle phase consists of two kinds of actions:</p>
+
+<ul>
+<li><a href="#step-a-send-csv-data">Step A</a>: Send CSV data</li>
+<li><a href="#step-b-receive-csv-operations">Step B</a>: Receive CSV operations</li>
+</ul>
+
+<p><img src="/guides/images/mqtt/mqttDeviceIntegration.png" alt="MQTT phases" /></p>
+
+<h3 id="startup-phase">Startup phase</h3>
+
+<h4 id="step-0-request-device-credentials">Step 0: Request device credentials</h4>
+
+<p>In Cumulocity, every MQTT connection needs to be authenticated. You can use the device credentials topics in the MQTT implementation to generate new credentials for a device.</p>
+
+<p>Once the device retrieved the credentials, it needs to store them locally for further connections.</p>
+
+<p>To establish a connection you need to configure the following parameters:</p>
+
+<ul>
+<li>Host: &lt;your&#95;cumulocity_url&gt;</li>
+<li>User: &lt;tenant&gt;/&lt;username&gt;</li>
+<li>Password: &lt;your&#95;cumulocity_password&gt;</li>
+</ul>
+
+<p>For more information, refer to the <a href="https://www.cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt">Hello MQTT</a> section.</p>
+
+<p>The process works as follows:</p>
+
+<ul>
+<li>Cumulocity assumes that each device has some form of unique ID. For instance, a good device identifier can be the MAC address of the network adapter, the IMEI of a mobile device or a hardware serial number.</li>
+<li>When you take a new device into use, you enter this unique ID into <strong>Device registration</strong> in the <strong>Device Management</strong> application in Cumulocity, and start the device.</li>
+<li>The device will use this ID as part of the <a href="/guides/device-sdk/mqtt#mqtt-clientid">MQTT ClientId</a> and static user credentials that can be enquired from support@cumulocity.com.</li>
+<li>The device subscribes to the topic <kbd>s/dcr</kbd>.</li>
+<li>The device starts publishing continuous empty messages on the topic <kbd>s/ucr</kbd> to notify the server that it is ready to retrieve credentials.</li>
+<li>Next, you must accept the connection from the device in the <strong>Device Registration</strong> page.</li>
+<li>When the device sends the next empty message it should receive credentials in the following format:</li>
+</ul>
+
+<pre><code class="language-plaintext">70,&lt;tenant&gt;,&lt;username&gt;,&lt;password&gt;
+</code></pre>
+
+<p>After receiving the credentials, the device can close the MQTT connection and create a new one with the received credentials.</p>
+
+<h4 id="step-1-verify-device">Step 1: Verify device</h4>
+
+<p>As MQTT supports an automatic device creation if the client sends data and there is no device present, this step is only required if you want to create the device manually.</p>
+
+<p>The device creation can be achieved by employing the <a href="/guides/device-sdk/mqtt#static-templates">static template 100</a>. This template can be blindly used on every boot of the device as it will only create the device if it is not already present.</p>
+
+<p>The device will be linked automatically to the ID the client uses with its MQTT ClientId.</p>
+
+<pre><code class="language-plaintext">100,Device Name,Device Type
+</code></pre>
+
+<blockquote>
+<p><strong>Info:</strong> The topic used for Cumulocity&rsquo;s pre-provided static templates is <kbd>s/us</kbd>.</p>
+</blockquote>
+
+<h4 id="step-2-verify-children">Step 2: Verify children</h4>
+
+<p>Like the root device, also children of it are covered by the automatic device creation.</p>
+
+<p>To handle this step manually you can send the <a href="/guides/device-sdk/mqtt#static-templates">static template 101</a> for creating a child device. The template will only create the child if it does not already exist.</p>
+
+<pre><code class="language-plaintext">101,Unique Child ID,Child Name,Child Type
+</code></pre>
+
+<h4 id="step-3-subscribe-topics">Step 3: Subscribe topics</h4>
+
+<p>If the device supports operations, it should subscribe to all required topics (static templates and SmartREST 2.0).</p>
+
+<h3 id="cycle-phase">Cycle phase</h3>
+
+<h4 id="step-a-send-csv-data">Step A: Send CSV data</h4>
+
+<p>While the device holds an active MQTT connection, it can publish either on the topics for static templates or on the topics for a SmartREST template to send data to the server.</p>
+
+<p>Based on the MQTT ClientId, the physical device is directly connected to the device object in Cumulocity. Therefore, the data you send is automatically connected to the device.</p>
+
+<p>To send data to a child device, publish the data to the topics described in <a href="/guides/device-sdk/mqtt#device-hierarchies">Device hierarchies</a>.</p>
+
+<h4 id="step-b-receive-csv-operations">Step B: Receive CSV operations</h4>
+
+<p>By subscribing to a topic the device automatically tells Cumulocity that it wants to receive operations. Any operation created will be automatically parsed using either the static templates or the templates the device defines.</p>
+
+  </article>
+  
+  <article id="smartrest-1" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#smartrest-1">
+        <span class="fa fa-link"></span>
+      </button>
+      SmartREST 1.0</h2>
+    
+
+<p>This section describes how you can use your existing SmartREST 1.0 templates with MQTT.</p>
+
+<p>Note that SmartREST 1.0 was designed for HTTP request/response and does not support the ID-less communication with MQTT. It only uses the MQTT connection to send exactly the same request as you would send using HTTP. Therefore, it comes with some limitations as MQTT is not request/response.</p>
+
+<p>The support for SmartREST 1.0 was added to ease transition if you have an existing implementation using it.</p>
+
+<blockquote>
+<p><strong>Info</strong>: If you start a new device integration, we highly recommend to use SmartREST 2.0.</p>
+</blockquote>
+
+<p>For general information on SmartREST 1.0, refer to Using the REST interface &gt; <a href="/guides/microservice-sdk/rest#smartrest">Using SmartREST</a> in the Microservice SDK guide.</p>
+
+<h3 id="mqtt-clientid">MQTT ClientId</h3>
+
+<p>Although you need to send the IDs in the body of each message with SmartREST 1.0, it is still important to connect with the correct MQTT ClientId.</p>
+
+<p>The MQTT ClientId needs to match the externalId with type <strong>c8y_Serial</strong> of your device. It is used to assign the correct operations and responses.</p>
+
+<h3 id="sending-smartrest-1-0">Sending SmartREST 1.0</h3>
+
+<p>To send data to the server you can publish the same content as you would POST to the SmartREST endpoint <kbd>/s</kbd>.</p>
+
+<p>The X-ID header is part of the topic the client needs to publish on.</p>
+
+<pre><code class="language-http">s/ul/&lt;X-ID&gt;
+</code></pre>
+
+<h4 id="processing-mode">Processing mode</h4>
+
+<p>Since the <a href="/guides/reference/smartrest">Cumulocity SmartREST protocol</a> supports TRANSIENT processing mode for avoiding storage of sent data in the database, publishing on MQTT <kbd>t/</kbd> topic instead of <kbd>s/</kbd> topic will only pass the data to real-time processing.</p>
+
+<pre><code class="language-http">t/ul/&lt;X-ID&gt;
+</code></pre>
+
+<p>The <a href="/guides/reference/smartrest">Cumulocity SmartREST protocol</a> also supports QUIESCENT processing mode for avoiding real-time notifications by publishing on MQTT <kbd>q/</kbd> topic instead of <kbd>s/</kbd> topic. Currently, the QUIESCENT processing mode is applicable for measurements and events only.</p>
+
+<pre><code class="language-http">q/ul/&lt;X-ID&gt;
+</code></pre>
+
+<p>The <a href="/guides/reference/smartrest">Cumulocity SmartREST protocol</a> also supports CEP processing mode to ensure that data is only sent to the real-time event processing engine with real-time notifications, disabled by publishing on MQTT <kbd>c/</kbd> topic instead of <kbd>s/</kbd> topic. Currently, the CEP processing mode is applicable for measurements and events only.</p>
+
+<pre><code class="language-http">c/ul/&lt;X-ID&gt;
+</code></pre>
+
+<h3 id="receiving-smartrest-1-0">Receiving SmartREST 1.0</h3>
+
+<p>If a template triggers a response template, the returning message will be published by the server on the following topic.</p>
+
+<pre><code class="language-http">s/dl/&lt;X-ID&gt;
+</code></pre>
+
+<p>This topic can be subscribed by the client.</p>
+
+<h3 id="receiving-operations">Receiving operations</h3>
+
+<p>SmartREST 1.0 via HTTP offers the <kbd>/devicecontrol/notifications</kbd> endpoint to listen to realtime operations. You can receive the same content on the following MQTT topic.</p>
+
+<pre><code class="language-http">s/ol/&lt;X-ID&gt;
+</code></pre>
+
+<h3 id="limitations">Limitations</h3>
+
+<p>MQTT currently does not support request/response. Therefore, if you send a request on the publish topic and receive a response on the subscribe topic, the client cannot securely match that they belong together.</p>
+
+<p>You can counter this limitation by designing the templates in a way that you never need to know what request triggered the response, and the client automatically knows it by the <strong>messageId</strong>.</p>
+
+  </article>
+  
+  <article id="smartrest-2" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#smartrest-2">
+        <span class="fa fa-link"></span>
+      </button>
+      SmartREST 2.0</h2>
+    
+
+<h3 id="overview">Overview</h3>
+
+<p>This section describes the SmartREST 2.0 payload format that can be used with the Cumulocity MQTT implementation.</p>
+
+<p>SmartREST 2.0 was designed to make use of the MQTT protocol, so it may reduce the payload even more than the SmartREST 1.0 via HTTP.</p>
+
+<p>SmartREST 2.0 is only available via MQTT and it offers the following MQTT topics for the main communication:</p>
+
+<p>To publish messages:</p>
+
+<pre><code class="language-http">s/uc/&lt;X-ID&gt;
+</code></pre>
+
+<p>To publish messages in transient mode:</p>
+
+<pre><code class="language-http">t/uc/&lt;X-ID&gt;
+</code></pre>
+
+<p>To publish messages in quiescent mode:</p>
+
+<pre><code class="language-http">q/uc/&lt;X-ID&gt;
+</code></pre>
+
+<p>To publish messages in CEP mode:</p>
+
+<pre><code class="language-http">c/uc/&lt;X-ID&gt;
+</code></pre>
+
+<p>Refer to SmartREST &gt; <a href="/guides/reference/smartrest#processing-mode">Processing mode</a> in the Reference guide for more information about transient, quiescent &amp; CEP data processing.</p>
+
+<p>To subscribe for responses:</p>
+
+<pre><code class="language-http">s/dc/&lt;X-ID&gt;
+</code></pre>
+
+<p>The topics for creating templates are described in <a href="#creating-templates-via-mqtt">Creating templates via MQTT</a>.</p>
+
+<h3 id="changes-from-smartrest-1-0">Changes from SmartREST 1.0</h3>
+
+<p>In its base, SmartREST 2.0 is like the previous version: a CSV-like payload format that is backed by previously created templates to finally create the targeted JSON structure.</p>
+
+<p>Several changes in the functionality have been made:</p>
+
+<ul>
+<li>Templates no longer contain IDs of objects (instead, IDs will be resolved by e.g. MQTT ClientId)</li>
+<li>Managed objects can be created and retrieved directly with external IDs</li>
+<li>Creating request templates now uses JSON path (like response templates)</li>
+<li>Support for lists in responses</li>
+<li>Responses also return if only part of the patterns were found</li>
+<li>Declaring a default X-ID for the connection</li>
+</ul>
+
+<h3 id="supported-templates">Supported templates</h3>
+
+<p>SmartREST 2.0 lets you create templates for the following matching HTTP methods:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">API</th>
+<th align="center">GET</th>
+<th align="center">POST</th>
+<th align="center">PUT</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Inventory</td>
+<td align="center">x</td>
+<td align="center">x</td>
+<td align="center">x</td>
+</tr>
+
+<tr>
+<td align="left">Alarm</td>
+<td align="center">&nbsp;</td>
+<td align="center">x</td>
+<td align="center">x</td>
+</tr>
+
+<tr>
+<td align="left">Event</td>
+<td align="center">&nbsp;</td>
+<td align="center">x</td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">Measurement</td>
+<td align="center">&nbsp;</td>
+<td align="center">x</td>
+<td align="center">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">Operation</td>
+<td align="center">&nbsp;</td>
+<td align="center">&nbsp;</td>
+<td align="center">x</td>
+</tr>
+</tbody>
+</table>
+
+<p>Additionally, you can create templates to return certain values from responses and operations.</p>
+
+<h3 id="template-collections">Template collections</h3>
+
+<p>A template collection is a set of request and response templates that specifies a device communication protocol. Each collection is referenced by a unique ID (called X-ID).</p>
+
+<h4 id="a-name-creating-templates-via-mqtt-a-creating-templates-via-mqtt"><a name="creating-templates-via-mqtt"></a>Creating templates via MQTT</h4>
+
+<p>Like in SmartREST 1.0, you need to pass all templates in a collection in one message. After the creation of a template collection, it can no longer be modified through MQTT.</p>
+
+<p>When creating templates, the client needs to publish to the following topic:</p>
+
+<pre><code class="language-http">s/ut/&lt;X-ID&gt;
+</code></pre>
+
+<p>To verify if a template collection exists, the client can subscribe to the topic:</p>
+
+<pre><code class="language-http">s/dt
+</code></pre>
+
+<p>When subscribed, the client can send an empty message to the creation topic which will trigger a new message about the creation status of this X-ID.</p>
+
+<p><strong>Examples</strong></p>
+
+<p>Empty publish to <kbd>s/ut/myExistingTemplateCollection</kbd></p>
+
+<pre><code class="language-plaintext">20,myExistingTemplateCollection,&lt;ID of collection&gt;
+</code></pre>
+
+<p>Empty publish to <kbd>s/ut/myNotExistingTemplateCollection</kbd></p>
+
+<pre><code class="language-plaintext">41,myNotExistingTemplateCollection
+</code></pre>
+
+<h4 id="request-templates">Request templates</h4>
+
+<p>A request template contains the following basic fields:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field &nbsp; &nbsp;</th>
+<th align="left">Data type &nbsp; &nbsp;</th>
+<th align="left">Possible values &nbsp; &nbsp;</th>
+<th align="left">Mandatory</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">messageId</td>
+<td align="left">String</td>
+<td align="left">&nbsp;</td>
+<td align="left">Y</td>
+<td align="left">Unique ID to reference the template within the collection</td>
+</tr>
+
+<tr>
+<td align="left">method</td>
+<td align="left">String</td>
+<td align="left">GET<br>PUT<br>POST</td>
+<td align="left">Y</td>
+<td align="left">Whether to get, update or create data</td>
+</tr>
+
+<tr>
+<td align="left">api</td>
+<td align="left">String</td>
+<td align="left">INVENTORY<br>MEASUREMENT<br>ALARM<br>EVENT<br>OPERATION</td>
+<td align="left">Y</td>
+<td align="left">Cumulocity API to be used</td>
+</tr>
+
+<tr>
+<td align="left">response</td>
+<td align="left">Boolean</td>
+<td align="left">true<br>false</td>
+<td align="left">N</td>
+<td align="left">Whether the request should trigger response templates. For GET templates by default true otherwise by default false</td>
+</tr>
+
+<tr>
+<td align="left">mandatoryValues</td>
+<td align="left">List&lt;String&gt;</td>
+<td align="left">&nbsp;</td>
+<td align="left">Y</td>
+<td align="left">Values for the mandatory fields on the API. The values depend on the API and method the template uses</td>
+</tr>
+
+<tr>
+<td align="left">customValues</td>
+<td align="left">List&lt;CustomValue&gt;</td>
+<td align="left">&nbsp;</td>
+<td align="left">N</td>
+<td align="left">Custom values that should be added to the object</td>
+</tr>
+</tbody>
+</table>
+
+<p>A request template lists all the fragments in the object structure (mandatory and custom) that should be added when creating or updating the data.
+It can set fixed values in the template that will then be replaced by the server. If it does not set the value in the template, the value needs to be included in the publish message (this includes mandatoryValues).</p>
+
+<p><strong>Example</strong></p>
+
+<p>We create a template to create a measurement like this (measurements have two mandatory values: type and time)</p>
+
+<pre><code class="language-bash"># 10,msgId,api,method,response,type,time,custom1.path,custom1.type,custom1.value
+10,999,POST,MEASUREMENT,,c8y_MyMeasurment,,c8y_MyMeasurement.M.value,NUMBER,
+</code></pre>
+
+<p>This template defines one additional custom property for the measurement. It leaves two fields empty in the template declaration (time and the custom property), so to use the template the client needs to send these two values:</p>
+
+<pre><code class="language-bash">999,2016-06-22T17:03:14.000+02:00,25
+# We can also use server time by leaving the time empty
+999,,25
+</code></pre>
+
+<p>The following sections will get into more detail of how to create and use different templates.</p>
+
+<h5 id="get-templates">GET templates</h5>
+
+<p>GET templates for the inventory do not need any mandatory or custom values. Instead, they use two different fields.</p>
+
+<p>With SmartREST 2.0 you have the option to either get an object from inventory by its ID or by an external ID directly. Therefore, instead of the fields <strong>mandatoryValues</strong> and <strong>customValues</strong>, the following two fields are used:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Data type</th>
+<th align="left">Possible values</th>
+<th align="left">Mandatory</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">byId</td>
+<td align="left">Boolean</td>
+<td align="left">true<br>false</td>
+<td align="left">Y</td>
+<td align="left">Whether the GET should be executed by Cumulocity ID (=true) or externalId (=false)</td>
+</tr>
+
+<tr>
+<td align="left">externalIdType</td>
+<td align="left">String</td>
+<td align="left">&nbsp;</td>
+<td align="left">N</td>
+<td align="left">Sets a fixed externalIdType if the template calls by externalId</td>
+</tr>
+</tbody>
+</table>
+
+<p>This enables you to query inventory in three different ways:</p>
+
+<p><strong>By Cumulocity ID</strong></p>
+
+<pre><code class="language-bash"># Creation:
+10,999,GET,INVENTORY,,true
+# Usage:
+999,123456
+</code></pre>
+
+<p><strong>By external ID with a fixed type in the template</strong></p>
+
+<pre><code class="language-bash"># Creation:
+10,999,GET,INVENTORY,,false,c8y_Serial
+# Usage:
+999,myDeviceImei
+</code></pre>
+
+<p><strong>By external ID without fixed type in the template</strong></p>
+
+<pre><code class="language-bash"># Creation:
+10,999,GET,INVENTORY,,false
+# Usage:
+999,c8y_Serial,myDeviceImei
+</code></pre>
+
+<h5 id="post-templates">POST templates</h5>
+
+<p>POST templates require a different set of mandatory values based on the API:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">API</th>
+<th align="left">mandatory values</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">MEASUREMENT</td>
+<td align="left">type, time</td>
+</tr>
+
+<tr>
+<td align="left">EVENT</td>
+<td align="left">type, text, time</td>
+</tr>
+
+<tr>
+<td align="left">ALARM</td>
+<td align="left">type, text, status, severity, time</td>
+</tr>
+
+<tr>
+<td align="left">INVENTORY</td>
+<td align="left">externalIdType</td>
+</tr>
+</tbody>
+</table>
+
+<p>This results in the following minimal template creations:</p>
+
+<pre><code class="language-bash"># Creation:
+10,100,POST,MEASUREMENT,false,c8y_CustomMeasurement,,
+10,101,POST,EVENT,,c8y_CustomEvent,mytext,,
+10,102,POST,ALARM,,c8y_CustomAlarm,mytext,ACTIVE,MAJOR,
+
+# Usage:
+100
+101
+102
+</code></pre>
+
+<p>Creating data on the inventory optionally includes the creation of an externalId for that object.
+This is controlled by the mandatory value externalIdType.</p>
+
+<blockquote>
+<p><strong>Important</strong>: POST Inventory templates start with the value of the externalId after the msgId. Leaving this column empty will result in not creating an external ID.</p>
+</blockquote>
+
+<pre><code class="language-bash"># Creation:
+10,100,POST,INVENTORY,,c8y_MySerial
+10,101,POST,INVENTORY,,
+# Usage:
+# Create object with externalId c8y_MySerial/myImei
+100,myImei
+# Create object with externalId c8y_MySerial/myImei
+101,myImei,c8y_MySerial
+# This message will result in not creating an external ID
+101,,c8y_MySerial
+</code></pre>
+
+<h5 id="put-templates">PUT templates</h5>
+
+<p>PUT templates for inventory follow the same logic as the GET templates, and with the addition that you can also use custom values for PUT.</p>
+
+<pre><code class="language-bash"># Creation:
+# 10,msgId,method,api,response,byId,externalIdTyoe,custom1.path,custom1.type,custom1.value
+10,999,PUT,INVENTORY,,false,c8y_Serial,c8y_MyCustomValue,STRING,
+# Usage:
+999,myDeviceImei,myValue
+</code></pre>
+
+<p>The PUT template for alarms uses the type of the alarm to find the alarm to update. It will first check the ACTIVE alarms and, if there is no ACTIVE alarm, it will check the ACKNOWLEDGED alarms.</p>
+
+<pre><code class="language-bash"># Creation:
+# 10,msgId,method,api,response,type,custom1.path,custom1.type,custom1.value
+10,999,PUT,ALARM,,c8y_MyCustomAlarm,status,ALARMSTATUS
+# Usage:
+999,FAILED
+</code></pre>
+
+<p>PUT templates for operations use the fragment of the operation to find the operation. It will first check the EXECUTING operations and, if there is no EXECUTING operation, it will check the PENDING operations.</p>
+
+<pre><code class="language-bash"># Creation:
+# 10,msgId,method,api,response,fragment,custom1.path,custom1.type,custom1.value
+10,999,PUT,OPERATION,,c8y_MyOperation,status,OPERATIONSTATUS,SUCCESSFUL,c8y_Fragment.val,NUMBER,
+# Usage:
+999,24
+</code></pre>
+
+<h5 id="adding-custom-properties">Adding custom properties</h5>
+
+<p>All POST and PUT values enable you to add custom properties to the results of the templates.</p>
+
+<p>A single custom property requires you to add the following three values to your template creation:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">path</td>
+<td align="left">A JsonPath for the value that should be set</td>
+</tr>
+
+<tr>
+<td align="left">type</td>
+<td align="left">An optional data type of the value. Default: STRING</td>
+</tr>
+
+<tr>
+<td align="left">value</td>
+<td align="left">The value to be set. Leaving this field empty requires the client to send the value when using the template</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">STRING</td>
+<td align="left">The default type. No additional verification of the value</td>
+</tr>
+
+<tr>
+<td align="left">DATE</td>
+<td align="left">A time stamp in the ISO 8601 format. Using date and not sending a time stamp results in the use of server time</td>
+</tr>
+
+<tr>
+<td align="left">NUMBER</td>
+<td align="left">An integer or number with decimal places</td>
+</tr>
+
+<tr>
+<td align="left">INTEGER</td>
+<td align="left">An integer</td>
+</tr>
+
+<tr>
+<td align="left">UNSIGNED</td>
+<td align="left">An integer (only positive)</td>
+</tr>
+
+<tr>
+<td align="left">FLAG</td>
+<td align="left">An empty map (e.g. c8y_IsDevice: {}). The client does not need to send anything for this value</td>
+</tr>
+
+<tr>
+<td align="left">SEVERITY</td>
+<td align="left">A severity of an alarm. Used to update the severity field of alarms</td>
+</tr>
+
+<tr>
+<td align="left">ALARMSTATUS</td>
+<td align="left">A status of an alarm. Used to update the status field of alarms</td>
+</tr>
+
+<tr>
+<td align="left">OPERATIONSTATUS</td>
+<td align="left">A status of an operation. Used to update the status field of operations</td>
+</tr>
+</tbody>
+</table>
+
+<h5 id="examples">Examples</h5>
+
+<p>Template for clearing an alarm with an additional custom property</p>
+
+<pre><code class="language-bash"># Creation:
+10,999,PUT,ALARM,,c8y_MyCustomALarm,status,ALARMSTATUS,CLEARED,c8y_CustomFragment.reason,STRING,
+# Usage:
+999,Device resolved alarm on its own
+</code></pre>
+
+<p>Template for creating a custom measurement</p>
+
+<pre><code class="language-bash"># Creation:
+10,999,POST,MEASUREMENT,,c8y_CustomMeasurement,,c8y_CustomMeasurement.custom.value,NUMBER,,c8y_CustomMeasurement.custom.unit,STRING,X
+# Usage:
+999,30.6
+</code></pre>
+
+<p>Template for updating a property in the device</p>
+
+<pre><code class="language-bash"># Creation:
+10,999,PUT,INVENTORY,,false,c8y_Serial,c8y_MyCustomValue,STRING,
+# Usage:
+999,myDeviceImei,updatedValue
+</code></pre>
+
+<h4 id="response-templates">Response templates</h4>
+
+<p>The SmartREST 2.0 response templates use the same structure as in SmartREST 1.0.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Data type</th>
+<th align="left">Mandatory</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">messageId</td>
+<td align="left">String</td>
+<td align="left">Y</td>
+<td align="left">Unique ID to reference the template within the collection</td>
+</tr>
+
+<tr>
+<td align="left">base</td>
+<td align="left">String</td>
+<td align="left">N</td>
+<td align="left">A JsonPath prefix that all patterns will use</td>
+</tr>
+
+<tr>
+<td align="left">condition</td>
+<td align="left">String</td>
+<td align="left">N</td>
+<td align="left">A JsonPath that needs to exist in the object to use the  pattern</td>
+</tr>
+
+<tr>
+<td align="left">pattern</td>
+<td align="left">List&lt;String&gt;</td>
+<td align="left">Y</td>
+<td align="left">A list of JsonPath that will be extracted from the object and returned to the device</td>
+</tr>
+</tbody>
+</table>
+
+<p>Response will be used for every operation and for any request template that defines the response field with true. In each case, the server will try every registered response template, so there might be multiple response lines for a single operation or request.</p>
+
+<p>SmartREST 2.0 will always return a response template if the condition is true (or no condition was defined). Patterns that did not resolve will be returned as empty string.</p>
+
+<p>You should make use of the condition field to control when response templates should be returned.</p>
+
+<p>In the examples below, you can see how to query data and parse custom operations.</p>
+
+<h5 id="querying-data-from-the-device-object">Querying data from the device object</h5>
+
+<p>Device object:</p>
+
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;12345&quot;,
+  &quot;type&quot;: &quot;myMqttDevice&quot;,
+  &quot;c8y_IsDevice&quot;: {},
+  &quot;c8y_Configuration&quot;: &quot;val1=1\nval2=2&quot;
+}
+</code></pre>
+
+<p>Template creation:</p>
+
+<pre><code class="language-plaintext">10,999,GET,INVENTORY,,true
+11,888,,c8y_IsDevice,type,c8y_Test,c8y_Configuration
+</code></pre>
+
+<p>Client publishes:</p>
+
+<pre><code class="language-plaintext">999,12345
+</code></pre>
+
+<p>Client receives:</p>
+
+<pre><code class="language-plaintext">888,myMqttDevice,,&quot;val1=1\nval2=2&quot;
+</code></pre>
+
+<h5 id="parsing-custom-operations">Parsing custom operations</h5>
+
+<p>Operation object:</p>
+
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;12345&quot;,
+  &quot;deviceId&quot;: &quot;67890&quot;,
+  &quot;agentId&quot;: &quot;67890&quot;,
+  &quot;status&quot;: &quot;PENDING&quot;,
+  &quot;c8y_CustomConfiguration&quot;: {
+    &quot;val1&quot;: &quot;1&quot;,
+    &quot;val2&quot;: &quot;2&quot;,
+    &quot;customValues&quot;: [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]
+  },
+  &quot;description&quot;: &quot;Send custom configuration&quot;
+}
+</code></pre>
+
+<p>Template creation:</p>
+
+<pre><code class="language-plaintext">11,111,c8y_CustomConfiguration,deviceId,val1,val2,customValues[*]
+11,222,,deviceId,c8y_CustomConfiguration.val1,c8y_CustomConfiguration.val2
+11,333,,deviceId,val1,val2,customValues[*]
+11,444,c8y_CustomConfiguration,c8y_CustomConfiguration.val3,val1,val2,customValues[*]
+</code></pre>
+
+<p>Client receives (assuming the ClientId is &ldquo;myMqttTestDevice&rdquo;):</p>
+
+<pre><code class="language-plaintext">111,myMqttTestDevice,1,2,a,b,c
+222,myMqttTestDevice,1,2
+333,myMqttTestDevice,,,
+</code></pre>
+
+<p>The template 444 is not returned as the condition does not match the operation.</p>
+
+<h5 id="querying-data-from-the-device-object-containing-key-with-multiple-objects">Querying data from the device object containing key with multiple objects</h5>
+
+<p>Device object:</p>
+
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;12345&quot;,
+  &quot;name&quot;: &quot;test&quot;,
+  &quot;type&quot;: &quot;c8y_MQTTdevice&quot;,
+  &quot;c8y_IsDevice&quot;: {},
+  &quot;myList&quot;: [
+      {
+          &quot;pid&quot;: 12345,
+          &quot;type&quot;: &quot;test&quot;
+      },
+      {
+          &quot;pid&quot;: 123456,
+          &quot;type&quot;: &quot;test2&quot;
+      }
+  ]
+}
+</code></pre>
+
+<p>Template creation:</p>
+
+<pre><code class="language-plaintext">10,999,GET,INVENTORY,,true
+11,888,,,&quot;$.myList[*].type&quot;
+</code></pre>
+
+<p>Client publishes:</p>
+
+<pre><code class="language-plaintext">999,12345
+</code></pre>
+
+<p>Client receives:</p>
+
+<pre><code class="language-plaintext">888,test,test2
+</code></pre>
+
+<h3 id="using-a-default-collection">Using a default collection</h3>
+
+<p>Having the X-ID as part of the topic gives you the freedom to easily use multiple template collections, but adds additional bytes for every message.
+If anyway the device uses mostly (or completely) a single collection, it makes sense to specify this collection as your default collection.</p>
+
+<p>With a default collection specified, the client can use special topics which do not require the X-ID, and instead the server will use the X-ID previously specified. The topics are <kbd>s/ud</kbd> for publishing and <kbd>s/dd</kbd> for subscribing.</p>
+
+<p>You can specify one X-ID within your MQTT ClientId (see <a href="/guides/device-sdk/mqtt#mqtt-clientid">MQTT implementation</a>).</p>
+
+<p>Your MQTT ClientId could look like this:</p>
+
+<pre><code class="language-plaintext">d:myDeviceSerial:myDefaultTemplateXID
+</code></pre>
+
+<blockquote>
+<p><strong>Info</strong>: If you use a default X-ID, you need to include in the <strong>ClientId</strong> the <code>d:</code> at the beginning to specify that the client is a device.</p>
+</blockquote>
+
+<p>It is not required that the default template exists at the time of establishing the MQTT connection (it will be verified once the client uses it).</p>
+
+  </article>
+  
+  <article id="mqtt-static-templates" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#mqtt-static-templates">
+        <span class="fa fa-link"></span>
+      </button>
+      MQTT Static templates</h2>
+    
+
+<h3 id="overview">Overview</h3>
+
+<p>To ease device integration Cumulocity already supports a number of static templates that can be used by any client without the need to create your own templates. These templates focus on the most commonly used messages for device management purposes.</p>
+
+<p>To use the templates listed below, you need to publish the messages to the topic <kbd>s/us</kbd> (<kbd>t/us</kbd> for transient processing of published content, <kbd>q/us</kbd> for quiescent processing of published content or <kbd>c/us</kbd> for CEP processing of published content. Refer to <a href="/guides/reference/smartrest#processing-mode">SmartREST &gt; Processing mode</a> in the Reference guide for further information.</p>
+
+<p>You need to subscribe to the topic <kbd>s/ds</kbd> to receive operations with the static templates.</p>
+
+<h3 id="automatic-device-creation">Automatic device creation</h3>
+
+<p>The topic for static templates supports an automatic creation of devices. Whenever there is no child associated with your MQTT ClientID and you send data, Cumulocity will automatically create a device for the MQTT ClientID. If you want to create the device on your own, your first message must be the device creation. In this case Cumulocity will create the device from the template.</p>
+
+<p>The automatic creation of devices is also supported for 1st level child devices. For child devices on a deeper level, you must use the template for creating a child device by sending it to the topic of the child device under the one you want to place the new child.</p>
+
+<h3 id="handling-none-mandatory-parameters">Handling none mandatory parameters</h3>
+
+<p>If a parameter is not declared as mandatory, the client can send an empty string in that place.</p>
+
+<pre><code class="language-plaintext">100,,myType
+</code></pre>
+
+<p>Tailing commas is not required. The two lines below result in the same message.</p>
+
+<pre><code class="language-plaintext">100,,
+100
+</code></pre>
+
+<h3 id="publish-templates">Publish templates</h3>
+
+<p>The following templates can be used to publish data on the topics <kbd>s/us</kbd> as well as <kbd>t/us</kbd>. Refer to <a href="/guides/reference/smartrest#processing-mode">SmartRest &gt; Processing mode</a> in the Reference guide for more information about the <kbd>t/</kbd> topic for transient data processing.</p>
+
+<h4 id="inventory-templates-1xx">Inventory templates (1xx)</h4>
+
+<h5 id="device-creation-100">Device creation (100)</h5>
+
+<p>Create a new device for the serial number in the inventory if not yet existing. An externalId for the device with type <strong>c8y_Serial</strong> and the device identifier of the MQTT clientId as value will be created.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+<th align="left">Default</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">device name</td>
+<td align="left">NO</td>
+<td align="left">MQTT Device &lt;serialNumber&gt;</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">device type</td>
+<td align="left">NO</td>
+<td align="left">c8y_MQTTDevice</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">100,myDevice,myType
+</code></pre>
+
+<h5 id="child-device-creation-101">Child device creation (101)</h5>
+
+<p>Create a new child device for the current device. The newly created object will be added as child device. Additionally, an externaId for the child will be created with type <strong>c8y_Serial</strong> and the value a combination of the serial of the root device and the unique child ID.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+<th align="left">Default</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">unique child ID</td>
+<td align="left">YES</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">device name</td>
+<td align="left">NO</td>
+<td align="left">MQTT Device &lt;serialNumber&gt;</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">device type</td>
+<td align="left">NO</td>
+<td align="left">c8y_MQTTChildDevice</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">101,uniqueChildId,myChildDevice,myChildType
+</code></pre>
+
+<h5 id="get-child-devices-105">Get child devices (105)</h5>
+
+<p>Trigger the sending of child devices of the device.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">105
+</code></pre>
+
+<h5 id="configure-hardware-110">Configure Hardware (110)</h5>
+
+<p>Update the hardware properties of the device.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">serialNumber</td>
+<td align="left">NO</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">model</td>
+<td align="left">NO</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">revision</td>
+<td align="left">NO</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">110,1234567890,myModel,1.2.3
+</code></pre>
+
+<h5 id="configure-mobile-111">Configure Mobile (111)</h5>
+
+<p>Update the mobile properties of the device.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1imei</td>
+<td align="left">NO</td>
+<td align="left"></td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">iccid</td>
+<td align="left">NO</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">imsi</td>
+<td align="left">NO</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">mcc</td>
+<td align="left">NO</td>
+</tr>
+
+<tr>
+<td align="left">5</td>
+<td align="left">mnc</td>
+<td align="left">NO</td>
+</tr>
+
+<tr>
+<td align="left">6</td>
+<td align="left">lac</td>
+<td align="left">NO</td>
+</tr>
+
+<tr>
+<td align="left">7</td>
+<td align="left">cellId</td>
+<td align="left">NO</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">111,1234567890,,54353
+</code></pre>
+
+<h5 id="configure-position-112">Configure Position (112)</h5>
+
+<p>Update the position properties of the device.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">latitude</td>
+<td align="left">NO</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">longitude</td>
+<td align="left">NO</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">altitude</td>
+<td align="left">NO</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">accuracy</td>
+<td align="left">NO</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">112,50.323423,6.423423
+</code></pre>
+
+<h5 id="set-configuration-113">Set Configuration (113)</h5>
+
+<p>Update the configuration properties of the device.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">configuration</td>
+<td align="left">NO</td>
+</tr>
+</tbody>
+</table>
+
+<p>Example</p>
+
+<pre><code class="language-plaintext">113,&quot;val1=1\nval2=2&quot;
+</code></pre>
+
+<h5 id="set-supported-operations-114">Set supported operations (114)</h5>
+
+<p>Set the supported operations of the device.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1&hellip;</td>
+<td align="left">List of supported operations</td>
+<td align="left">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">114,c8y_Restart,c8y_Configuration,c8y_SoftwareList
+</code></pre>
+
+<h5 id="set-firmware-115">Set firmware (115)</h5>
+
+<p>Set the firmware installed on the device.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">name</td>
+<td align="left">NO</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">version</td>
+<td align="left">NO</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">url</td>
+<td align="left">NO</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">115,firmwareName,firmwareVersion,firmwareUrl
+</code></pre>
+
+<h5 id="set-software-list-116">Set software list (116)</h5>
+
+<p>Set the list of software installed on the device.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1&hellip;</td>
+<td align="left">List of 3 values per software</td>
+<td align="left">NO</td>
+</tr>
+
+<tr>
+<td align="left">1.1</td>
+<td align="left">name</td>
+<td align="left">NO</td>
+</tr>
+
+<tr>
+<td align="left">1.2</td>
+<td align="left">version</td>
+<td align="left">NO</td>
+</tr>
+
+<tr>
+<td align="left">1.3</td>
+<td align="left">url</td>
+<td align="left">NO</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">116,software1,version1,url1,software2,,url2,software3,version3
+</code></pre>
+
+<h5 id="set-required-availability-117">Set required availability (117)</h5>
+
+<p>Set the required interval for availability monitoring. It will only set the value if it does not exist. Values entered, e.g. through UI, are not overwritten.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Required interval</td>
+<td align="left">NO</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">117,60
+</code></pre>
+
+<h4 id="measurement-templates-2xx">Measurement templates (2xx)</h4>
+
+<h5 id="create-custom-measurement-200">Create custom measurement (200)</h5>
+
+<p>Create a measurement with a given fragment and series.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+<th align="left">Default</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">fragment</td>
+<td align="left">YES</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">series</td>
+<td align="left">YES</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">value</td>
+<td align="left">YES</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">unit</td>
+<td align="left">NO</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">5</td>
+<td align="left">time</td>
+<td align="left">NO</td>
+<td align="left">Current server time</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">200,c8y_Temperature,T,25
+</code></pre>
+
+<h5 id="create-signal-strength-measurement-210">Create signal strength measurement (210)</h5>
+
+<p>Create a measurement of type <strong>c8y_SignalStrength</strong>.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+<th align="left">Default</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">rssi value</td>
+<td align="left">YES, if 2 not set</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">ber value</td>
+<td align="left">YES, if 1 not set</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">time</td>
+<td align="left">NO</td>
+<td align="left">Current server time</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">210,-90,23,2016-06-22T17:03:14.000+02:00
+</code></pre>
+
+<h5 id="create-temperature-measurement-211">Create temperature measurement (211)</h5>
+
+<p>Create a measurement of type <strong>c8y_TemperatureMeasurement</strong>.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+<th align="left">Default</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">temperature value</td>
+<td align="left">YES</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">time</td>
+<td align="left">NO</td>
+<td align="left">Current server time</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">211,25,2016-06-22T17:03:14.000+02:00
+</code></pre>
+
+<h5 id="create-battery-measurement-212">Create battery measurement (212)</h5>
+
+<p>Create a measurement of type <strong>c8y_Battery</strong>.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+<th align="left">Default</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">battery value</td>
+<td align="left">YES</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">time</td>
+<td align="left">NO</td>
+<td align="left">Current server time</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">212,95,2016-06-22T17:03:14.000+02:00
+</code></pre>
+
+<h4 id="alarm-templates-3xx">Alarm templates (3xx)</h4>
+
+<h5 id="create-critical-alarm-301">Create CRITICAL alarm (301)</h5>
+
+<p>Create a CRITICAL alarm.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+<th align="left">Default</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">type</td>
+<td align="left">YES</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">text</td>
+<td align="left">NO</td>
+<td align="left">Alarm of type <strong>alarmType</strong> raised</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">time</td>
+<td align="left">NO</td>
+<td align="left">Current server time</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">301,c8y_TemperatureAlarm
+</code></pre>
+
+<h5 id="create-major-alarm-302">Create MAJOR alarm (302)</h5>
+
+<p>Create a MAJOR alarm.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+<th align="left">Default</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">type</td>
+<td align="left">YES</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">text</td>
+<td align="left">NO</td>
+<td align="left">Alarm of type <strong>alarmType</strong> raised</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">time</td>
+<td align="left">NO</td>
+<td align="left">Current server time</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">302,c8y_TemperatureAlarm,&quot;This is an alarm&quot;
+</code></pre>
+
+<h5 id="create-minor-alarm-303">Create MINOR alarm (303)</h5>
+
+<p>Create a MINOR alarm.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+<th align="left">Default</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">type</td>
+<td align="left">YES</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">text</td>
+<td align="left">NO</td>
+<td align="left">Alarm of type <strong>alarmType</strong> raised</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">time</td>
+<td align="left">NO</td>
+<td align="left">Current server time</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">303,c8y_TemperatureAlarm
+</code></pre>
+
+<h5 id="create-warning-alarm-304">Create WARNING alarm (304)</h5>
+
+<p>Create a WARNING alarm.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+<th align="left">Default</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">type</td>
+<td align="left">YES</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">text</td>
+<td align="left">NO</td>
+<td align="left">Alarm of type <strong>alarmType</strong> raised</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">time</td>
+<td align="left">NO</td>
+<td align="left">Current server time</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">304,c8y_TemperatureAlarm,,2013-06-22T17:03:14.000+02:00
+</code></pre>
+
+<h5 id="update-severity-of-existing-alarm-305">Update severity of existing alarm (305)</h5>
+
+<p>Change the severity of an existing alarm.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">type</td>
+<td align="left">YES</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">severity</td>
+<td align="left">YES</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">305,c8y_TemperatureAlarm,CRITICAL
+</code></pre>
+
+<h5 id="clear-existing-alarm-306">Clear existing alarm (306)</h5>
+
+<p>Clear an existing alarm.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">type</td>
+<td align="left">YES</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">306,c8y_TemperatureAlarm
+</code></pre>
+
+<h4 id="event-templates-4xx">Event templates (4xx)</h4>
+
+<h5 id="create-basic-event-400">Create basic event (400)</h5>
+
+<p>Create an event of given type and text.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+<th align="left">Default</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">type</td>
+<td align="left">YES</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">text</td>
+<td align="left">YES</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">time</td>
+<td align="left">NO</td>
+<td align="left">Current server time</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">400,c8y_MyEvent,&quot;Something was triggered&quot;
+</code></pre>
+
+<h5 id="create-location-update-event-401">Create location update event (401)</h5>
+
+<p>Create typical location update event containing <strong>c8y_Position</strong>.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+<th align="left">Default</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">latitude</td>
+<td align="left">NO</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">longitude</td>
+<td align="left">NO</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">altitude</td>
+<td align="left">NO</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">accuracy</td>
+<td align="left">NO</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">5</td>
+<td align="left">time</td>
+<td align="left">NO</td>
+<td align="left">Current server time</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">401,51.151977,6.95173,67
+</code></pre>
+
+<h5 id="create-location-update-event-with-device-update-402">Create location update event with device update (402)</h5>
+
+<p>Create typical location update event containing <strong>c8y_Position</strong>. Additionally the device will be updated with the same <strong>c8y_Position</strong> fragment.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+<th align="left">Default</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">latitude</td>
+<td align="left">NO</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">longitude</td>
+<td align="left">NO</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">altitude</td>
+<td align="left">NO</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">accuracy</td>
+<td align="left">NO</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left">5</td>
+<td align="left">time</td>
+<td align="left">NO</td>
+<td align="left">Current server time</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">402,51.151977,6.95173,67
+</code></pre>
+
+<h4 id="operation-templates-5xx">Operation templates (5xx)</h4>
+
+<h5 id="get-pending-operations-500">Get PENDING operations (500)</h5>
+
+<p>Trigger the sending of all PENDING operations for the agent.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">500
+</code></pre>
+
+<h5 id="set-operation-to-executing-501">Set operation to EXECUTING (501)</h5>
+
+<p>Set the oldest PENDING operation with given fragment to EXECUTING.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">fragment</td>
+<td align="left">YES</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">501,c8y_Restart
+</code></pre>
+
+<h5 id="set-operation-to-failed-502">Set operation to FAILED (502)</h5>
+
+<p>Set the oldest EXECUTING operation with given fragment to FAILED.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">fragment</td>
+<td align="left">YES</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">failureReason</td>
+<td align="left">NO</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">502,c8y_Restart,&quot;Could not restart&quot;
+</code></pre>
+
+<h5 id="set-operation-to-successful-503">Set operation to SUCCESSFUL (503)</h5>
+
+<p>Set the oldest EXECUTING operation with given fragment to SUCCESSFUL.</p>
+
+<p>It enables the device to send additional parameters that trigger additional steps based on the type of operation sent as fragment (see Section <a href="#updating-operations">Updating operations</a>).</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+<th align="left">Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">fragment</td>
+<td align="left">YES</td>
+</tr>
+
+<tr>
+<td align="left">2&hellip;</td>
+<td align="left">parameters</td>
+<td align="left">NO</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">503,c8y_Restart
+</code></pre>
+
+<h3 id="subscribe-templates">Subscribe templates</h3>
+
+<p>The client can receive the following templates when subscribing to <kbd>s/ds</kbd>.</p>
+
+<h4 id="inventory-templates-1xx-1">Inventory templates (1xx)</h4>
+
+<h5 id="get-children-of-device-106">Get children of device (106)</h5>
+
+<p>List all children of the device.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1&hellip;</td>
+<td align="left">child</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">106,child1,child2,child3
+</code></pre>
+
+<h4 id="operation-templates-5xx-1">Operation templates (5xx)</h4>
+
+<p>All operation responses have the same base structure, leading with the message ID and followed by the ID of either the root device or a child which should handle the operation.</p>
+
+<h5 id="restart-510">Restart (510)</h5>
+
+<p>Restart a device.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">510,DeviceSerial
+</code></pre>
+
+<h5 id="command-511">Command (511)</h5>
+
+<p>Run the command being sent in the operation.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Command text</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">511,DeviceSerial,execute this
+</code></pre>
+
+<h5 id="configuration-513">Configuration (513)</h5>
+
+<p>Set the configuration being sent in the operation.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">configuration</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">513,DeviceSerial,&quot;val1=1\nval2=2&quot;
+</code></pre>
+
+<h5 id="firmware-515">Firmware (515)</h5>
+
+<p>Install the firmware from the url.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">firmware name</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">firmware version</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">url</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">515,DeviceSerial,myFimrware,1.0,http://www.my.url
+</code></pre>
+
+<h5 id="software-list-516">Software list (516)</h5>
+
+<p>Install the software sent in the operation.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1&hellip;</td>
+<td align="left">List of 3 values per software</td>
+</tr>
+
+<tr>
+<td align="left">1.1</td>
+<td align="left">name</td>
+</tr>
+
+<tr>
+<td align="left">1.2</td>
+<td align="left">version</td>
+</tr>
+
+<tr>
+<td align="left">1.3</td>
+<td align="left">url</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">516,DeviceSerial,softwareA,1.0,url1,softwareB,2.0,url2
+</code></pre>
+
+<h5 id="measurement-request-operation-517">Measurement request operation (517)</h5>
+
+<p>Send the measurements specified by the request name.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">request name</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">517,DeviceSerial,LOGA
+</code></pre>
+
+<h5 id="relay-518">Relay (518)</h5>
+
+<p>Open or close the relay.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Relay state</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">518,DeviceSerial,OPEN
+</code></pre>
+
+<h5 id="relayarray-519">RelayArray (519)</h5>
+
+<p>Open or close the relays in the array.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1&hellip;</td>
+<td align="left">List of relay state</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">519,DeviceSerial,OPEN,CLOSE,CLOSE,OPEN
+</code></pre>
+
+<h5 id="upload-configuration-file-520">Upload configuration file (520)</h5>
+
+<p>The current configuration is uploaded from Cumulocity to the device.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">520,DeviceSerial
+</code></pre>
+
+<h5 id="download-configuration-file-521">Download configuration file (521)</h5>
+
+<p>Download a configuration file from the url.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">url</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">521,DeviceSerial,http://www.my.url
+</code></pre>
+
+<h5 id="logfile-request-522">Logfile request (522)</h5>
+
+<p>Upload a log file for the given parameters.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Log file name</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">Start date</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">End date</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">Search text</td>
+</tr>
+
+<tr>
+<td align="left">5</td>
+<td align="left">Maximum lines</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">522,DeviceSerial,logfileA,2013-06-22T17:03:14.000+02:00,2013-06-22T18:03:14.000+02:00,ERROR,1000
+</code></pre>
+
+<h5 id="communication-mode-523">Communication mode (523)</h5>
+
+<p>Change the communication mode.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Position</th>
+<th align="left">Parameter</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-plaintext">523,DeviceSerial,SMS
+</code></pre>
+
+<h3 id="updating-operations">Updating operations</h3>
+
+<p>When using the template to set an operation to state SUCCESSFUL, it supports sending additional parameters to trigger additional calls on the server.
+The table below shows the operations supporting this feature and what will be done with the parameters.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Fragment</th>
+<th align="left">Parameters</th>
+<th align="left">Action triggered</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">c8y_Command</td>
+<td align="left">result</td>
+<td align="left">Result will be added to operation</td>
+</tr>
+
+<tr>
+<td align="left">c8y_RelayArray</td>
+<td align="left">relay states</td>
+<td align="left">Device object will be updated with the states</td>
+</tr>
+
+<tr>
+<td align="left">c8y_CommunicationMode</td>
+<td align="left">no parameter needed</td>
+<td align="left">Device object will be updated with the mode</td>
+</tr>
+
+<tr>
+<td align="left">c8y_LogfileRequest</td>
+<td align="left">file url</td>
+<td align="left">File url will be added to operation</td>
+</tr>
+
+<tr>
+<td align="left">c8y_DownloadConfigFile</td>
+<td align="left">(optional) timestamp</td>
+<td align="left">Device object will be updated with the ID of the configuration dump and the timestamp (or server time)</td>
+</tr>
+</tbody>
+</table>
+
+  </article>
+  
+  <article id="handling-ids" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#handling-ids">
+        <span class="fa fa-link"></span>
+      </button>
+      Handling IDs</h2>
+    
+
+<h3 id="concept-of-id-less-communication">Concept of ID-less communication</h3>
+
+<p>The MQTT implementation of Cumulocity is specifically designed for device communication. Therefore, it tries to remove as much unnecessary logic from the client side as possible.</p>
+
+<p>Using the REST (or SmartREST) protocol requires to know the ID of every object, alarm and operation you want to update. Hence, a client needs to keep a state of these IDs. For example, if it creates an alarm, it needs to know the ID of the alarm so it can clear it afterwards.</p>
+
+<p>With the MQTT implementation we want to reduce the logic required on the device to do such actions and move the logic to the server.</p>
+
+<h4 id="example-1-id-of-the-device">Example 1: ID of the device</h4>
+
+<p>You need to know the ID of the device object to update data in it via REST. Also, this ID is required for every other data that needs to be associated with the device, e.g. the source in a measurement, alarm or event.</p>
+
+<p>To remove the necessity of persisting the ID on the device, Cumulocity offers the identity API where you can link external IDs (e.g. a serial number) to the object, so you can query the ID any time.</p>
+
+<p>A typical device start looks like this:</p>
+
+<p><img src="/guides/images/mqtt/exampleRestDeviceId.png" alt="REST Receiving Device ID" /></p>
+
+<p>With MQTT, we automatically use the identity API with the MQTT clientId.
+This removes the necessity to tell the ID to the device, and because the client sends also the other data on this connection, we can associate every measurement, alarm, event, etc. with the correct device.</p>
+
+<p><img src="/guides/images/mqtt/exampleMqttDeviceId.png" alt="MQTT Automatically Resolve ID" /></p>
+
+<h4 id="example-2-id-of-alarms">Example 2: ID of alarms</h4>
+
+<p>When a client creates an alarm using the REST API, it needs to ensure that it gets the ID of the alarm that was generated by Cumulocity in return.</p>
+
+<p>The client will need this ID to later update the alarm, e.g. to status CLEARED, if the alarm is not active anymore.</p>
+
+<p><img src="/guides/images/mqtt/exampleRestAlarmId.png" alt="REST Handling Alarms" /></p>
+
+<p>In Cumulocity, a device can only have a single alarm per type in status ACTIVE. If it creates another alarm with the same type, it will get de-duplicated.
+Therefore, the MQTT implementation uses the type of an alarm as identifier. The client only needs to send which type of alarm has been resolved, and the server will find the correct alarm object.</p>
+
+<p><img src="/guides/images/mqtt/exampleMqttAlarmId.png" alt="MQTT Handling Alarms" /></p>
+
+  </article>
+  
+  <article id="json" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#json">
+        <span class="fa fa-link"></span>
+      </button>
+      JSON via MQTT</h2>
+    
+
+<p>This section describes the JSON payload format that can be used with the Cumulocity MQTT implementation.</p>
+
+<p>Compared to SmartREST 2.0 – which only works with fixed templates – JSON&rsquo;s support for MQTT was designed to combine the payload flexibility of our REST API with the low protocol overhead of MQTT.</p>
+
+<p>The SmartREST way should still be the preferred way if it is important to reduce your payload to the minimum (mobile traffic, low capability device).</p>
+
+<h3 id="topic-structure">Topic structure</h3>
+
+<p>The topic structure in JSON MQTT is quite similar to the REST endpoints. The main difference is in the additional action part which is included in the topic.</p>
+
+<p>To publish messages:</p>
+
+<pre><code class="language-http"> &lt;api&gt;/&lt;resource&gt;/&lt;action&gt;/&lt;id&gt;
+</code></pre>
+
+<p>To publish messages in transient mode:</p>
+
+<pre><code class="language-http">t/&lt;api&gt;/&lt;resource&gt;/&lt;action&gt;/&lt;id&gt;
+</code></pre>
+
+<p>To publish messages in quiescent mode:</p>
+
+<pre><code class="language-http">q/&lt;api&gt;/&lt;resource&gt;/&lt;action&gt;/&lt;id&gt;
+</code></pre>
+
+<p>To publish messages in CEP mode:</p>
+
+<pre><code class="language-http">c/&lt;api&gt;/&lt;resource&gt;/&lt;action&gt;/&lt;id&gt;
+</code></pre>
+
+<p>Refer to <a href="/guides/reference/rest-implementation#processingmode">Processing mode</a> for more information about transient, quiescent and CEP data processing.</p>
+
+<h4 id="topic-actions">Topic actions</h4>
+
+<p>The action in the topic corresponds to the HTTP methods combined with the content-type header.</p>
+
+<p>The following actions are available:</p>
+
+<ul>
+<li>create - corresponds to HTTP POST</li>
+<li>createBulk - corresponds to HTTP POST with the content-type header value set to collection media type, for example <code>application/vnd.com.nsn.cumulocity.measurementCollection+json;charset=UTF-8;ver=0.9</code></li>
+<li>update - corresponds to HTTP PUT</li>
+<li>delete - corresponds to HTTP DELETE</li>
+</ul>
+
+<h3 id="supported-endpoint">Supported endpoint</h3>
+
+<p>The current JSON MQTT implementation does not cover all SmartREST 2.0 operations, so for example the whole <a href="/guides/device-sdk/mqtt#device-integration">device bootstrap process</a> has to be done using SmartREST 2.0.</p>
+
+<p>The following endpoints and actions are supported:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Endpoint</th>
+<th align="left">create</th>
+<th align="left">createBulk</th>
+<th align="left">update</th>
+<th align="left">delete</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><a href="/guides/reference/events">event/events</a></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+</tr>
+
+<tr>
+<td align="left"><a href="/guides/reference/alarms">alarm/alarms</a></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left"><a href="/guides/reference/measurements">measurement/measurements</a></td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">&nbsp;</td>
+<td align="left">x</td>
+</tr>
+
+<tr>
+<td align="left"><a href="/guides/reference/inventory">inventory/managedObjects</a></td>
+<td align="left">x</td>
+<td align="left">&nbsp;</td>
+<td align="left">x</td>
+<td align="left">&nbsp;</td>
+</tr>
+
+<tr>
+<td align="left"><a href="/guides/reference/inventory">inventory/managedObjects/&lt;DeviceID&gt;/childDevices</a></td>
+<td align="left">x</td>
+<td align="left">&nbsp;</td>
+<td align="left">&nbsp;</td>
+<td align="left">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+<p>If the operation is not supported, a proper error message will be sent to the <kbd>error</kbd> topic.</p>
+
+<p>For all of the above endpoints, you can use the same payload like in the REST API. The only difference is in the &ldquo;source&rdquo; field - in REST this field is mandatory while for JSON MQTT there is no need to set the device ID here.
+The source device ID will automatically be resolved based on the MQTT client ID. This value will always be used no matter if something is already defined there.</p>
+
+<h3 id="examples">Examples</h3>
+
+<h4 id="create-new-event">Create new event</h4>
+
+<p>Publish a message on topic <kbd>/event/events/create</kbd> with payload:</p>
+
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;TestEvent&quot;,
+  &quot;text&quot;: &quot;sensor was triggered&quot;,
+  &quot;time&quot;: &quot;2014-03-03T12:03:27.845Z&quot;
+}
+</code></pre>
+
+<h4 id="create-many-events">Create many events</h4>
+
+<p>Publish a message on topic <kbd>/event/events/createBulk</kbd> with payload:</p>
+
+<pre><code class="language-json">{
+  &quot;events&quot;: [
+    {
+      &quot;type&quot;: &quot;TestEvent1&quot;,
+      &quot;text&quot;: &quot;sensor was triggered&quot;,
+      &quot;time&quot;: &quot;2014-03-03T12:03:27.845Z&quot;
+    },
+    {
+      &quot;type&quot;: &quot;TestEvent2&quot;,
+      &quot;text&quot;: &quot;sensor was triggered&quot;,
+      &quot;time&quot;: &quot;2014-03-04T12:03:27.845Z&quot;
+    }
+  ]
+}
+</code></pre>
+
+<h4 id="update-event">Update event</h4>
+
+<p>Publish a message on topic <kbd>/event/events/update/<event_id></kbd> with payload:</p>
+
+<pre><code class="language-json">{
+  &quot;text&quot;: &quot;new text&quot;
+}
+</code></pre>
+
+<h4 id="delete-event">Delete event</h4>
+
+<p>Publish a message on topic <kbd>/event/events/delete/<event_id></kbd> with empty payload.</p>
+
+<h3 id="error-handling">Error handling</h3>
+
+<p>Use the <kbd>error</kbd> topic to subscribe for errors related to the JSON MQTT implementation. In case of invalid payload, wrong topic or any other exception, a notification will be published on this topic. The payload is in JSON format. Besides a standard error message, it also contains a message ID which helps the client in finding out which exact message was failing.</p>
+
+<p>Example payload:</p>
+
+<pre><code class="language-json">{
+  &quot;error&quot;: &quot;undefined/validationError&quot;,
+  &quot;message&quot;: &quot;Following mandatory fields should be included: severity,text,time&quot;,
+  &quot;messageId&quot;: 3
+}
+</code></pre>
+
+<h3 id="receiving-operations">Receiving operations</h3>
+
+<p>A notification client can subscribe to the <kbd>devicecontrol/notifications</kbd> topic to receive notifications of newly created operations. Initially upon subscription, all operations which are not yet forwarded will be published.</p>
+
+<p>Additionally, it contains an <a href="/guides/reference/identity#external-id">External ID</a>, so the client can identify for which child the operation is executed.</p>
+
+<p>Example notification:</p>
+
+<pre><code class="language-json">{
+  &quot;agentId&quot;: &quot;1&quot;,
+  &quot;creationTime&quot;: &quot;2018-05-17T07:33:15.555Z&quot;,
+  &quot;delivery&quot;: {
+    &quot;log&quot;: [
+
+    ],
+    &quot;status&quot;: &quot;PENDING&quot;,
+    &quot;time&quot;: &quot;2018-05-17T07:33:15.575Z&quot;
+  },
+  &quot;deviceId&quot;: &quot;2&quot;,
+  &quot;id&quot;: &quot;123&quot;,
+  &quot;status&quot;: &quot;PENDING&quot;,
+  &quot;c8y_Command&quot;: {
+    &quot;text&quot;: &quot;Do something&quot;
+  },
+  &quot;description&quot;: &quot;Execute shell command&quot;,
+  &quot;externalSource&quot;: {
+    &quot;externalId&quot;: &quot;3&quot;,
+    &quot;type&quot;: &quot;c8y_Serial&quot;
+  }
+}
+</code></pre>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

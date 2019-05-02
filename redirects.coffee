@@ -174,6 +174,7 @@ redirects =
 	'/guides/device-sdk': '/guides/device-sdk/introduction'
 	'/guides': '/dev-center'
 	'/guides/release-notes': '/guides/release-notes/overview'
+	'/guides/predictive-analytics': '/guides/predictive-analytics/introduction'
 
 # Test jenkins line
 

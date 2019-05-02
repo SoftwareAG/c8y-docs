@@ -1,0 +1,3591 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Optional services - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">User guide</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav0"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/users-guide/getting-started/">Getting Started</a>
+     
+      
+      
+      <div id="page-nav0"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/getting-started/#accessing-cumulocity-platform">Accessing and logging into the Cumulocity platform</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/getting-started/#cumulocity-applications">Cumulocity applications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/getting-started/#gui-features">GUI functionalities and features</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/getting-started/#user-settings">User options and settings</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/users-guide/device-management/">Device Management</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/device-management/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/device-management/#connecting-devices">Connecting Devices</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/device-management/#viewing-devices">Viewing devices</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/device-management/#grouping-devices">Grouping devices</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/device-management/#device-details">Device details</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/device-management/#monitoring-and-controlling-devices">Monitoring and controlling devices</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/device-management/#managing-device-types">Managing device types</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/device-management/#managing-device-data">Managing device data</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/device-management/#configuration-repository">Configuration repository</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/device-management/#smartrest-templates">SmartREST templates</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/device-management/#simulator">Working with simulators</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/users-guide/cockpit/">Cockpit</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#managing-assets">Managing assets</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#data-explorer">Data explorer</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#dashboards">Dashboards</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#widgets">Widgets collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#reports">Managing reports and exports</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#data-point-library">Data Point Library</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#smart-rules">Smart Rules</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#smart-rules-collection">Smart rules collection</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/users-guide/administration/">Administration</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#home-screen">Home screen</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#managing-users">Managing users</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#managing-permissions">Managing permissions</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#audit-logs">Viewing audit logs</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#managing-applications">Managing applications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#business-rules">Managing business rules</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#data-retention">Managing data retention</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#tfa">Using two-factor authentication</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#changing-settings">Changing settings</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/users-guide/enterprise-edition/">Enterprise Edition</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/enterprise-edition/#managing-tenants">Managing tenants</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/enterprise-edition/#user-hierarchies">Managing user hierarchies</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/enterprise-edition/#users-in-other-tenants">Support user access</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/enterprise-edition/#using-sso">Using single sign-on (SSO)</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/enterprise-edition/#data-broker">Using the data broker</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/enterprise-edition/#customization">Customizing your platform</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/enterprise-edition/#storage-quota">Storage quota</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav5"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/users-guide/optional-services/">Optional services</a>
+     
+      
+      
+      <div id="page-nav5"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#cloud-fieldbus">Cloud Fieldbus</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#cloud-remote-access">Cloud Remote Access</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#android-cloud-sensor-app">Cloud Sensor App</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#connectivity">Connectivity</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#nokia-impact">IMPACT</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#lora">LoRa Actility</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#lwm2m">LightweightM2M</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#sigfox">Sigfox</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#tenant-sla-monitoring">Tenant SLA Monitoring</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#webMethods">webMethods Integration Cloud</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Optional services</h1>
+    </header>
+    
+      <div class="lead">
+        <p>In addition to the standard and built-in applications that come with Cumulocity, various additional applications are provided which you may subscribe to, i.e. integrated agents for several device types.</p>
+
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="cloud-fieldbus" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#cloud-fieldbus">
+        <span class="fa fa-link"></span>
+      </button>
+      Cloud Fieldbus</h2>
+    
+
+<p>Cloud Fieldbus is a Cumulocity application with the ability to collect data from fieldbus devices and remotely manage them. This section describes how to</p>
+
+<ul>
+<li><a href="#connect">Connect</a> fieldbus devices.</li>
+<li><a href="#manage">Manage</a> the connected fieldbus devices.</li>
+<li><a href="#configure">Configure</a> the remote management capabilities of particular types of devices and <a href="#import">import and export</a> them.</li>
+</ul>
+
+<p>It is supported out of the box by the following terminals:</p>
+
+<ul>
+<li><a href="/guides/devices/smartbox-mini">Pssystec Smartbox-Modbus</a> for Modbus/RTU</li>
+<li><a href="/guides/devices/netcommwireless">Netcomm Wireless NTC-6200</a> for Modbus/TCP and Modbus/RTU</li>
+<li><a href="/guides/devices/cinterion">Cinterion Java modules</a> for Modbus/RTU and CAN bus</li>
+<li><a href="/guides/devices/opcua">OPC-UA</a> for OPC-UA Servers</li>
+<li><a href="/guides/devices/smartbox-dp">Pssystec SmartBox DP</a> for Profibus</li>
+</ul>
+
+<p>OPC UA support is implemented in Java and runs on any system running JRE7 (Java Runtime Environment 7) or newer.</p>
+
+<blockquote>
+<p>If you want to support Cloud Fieldbus with your terminal, please contact info@cumulocity.com for more information.</p>
+</blockquote>
+
+<h3 id="a-name-connect-a-connecting-fieldbus-devices"><a name="connect"></a>Connecting Fieldbus devices</h3>
+
+<p>For the following instructions, we assume you have a Cloud Fieldbus terminal available and it is registered as a device in your Cumulocity tenant. To register a terminal with Cumulocity, follow the instructions provided with the terminal.</p>
+
+<h4 id="connecting-modbus-rtu-devices">Connecting Modbus/RTU devices</h4>
+
+<p>To connect a Modbus/RTU device:</p>
+
+<ol>
+<li>Physically wire the Modbus/RTU device through RS/485 or RS/232 to the terminal.</li>
+<li>Give the device a unique Modbus address according to the instructions provided with the Modbus device (e.g. by setting a jumper on the device).</li>
+<li>Check the serial communication settings of the device according to the instructions provided with the device (i.e. baud rates and communication protocol). These have to match with all devices on the bus.</li>
+<li>In the Device Management application, click <strong>All devices</strong> in the <strong>Devices</strong> menu in the navigator. In the device list, select the terminal and switch to the <strong>Modbus</strong> tab.</li>
+<li>Change the communication settings shown in the section <strong>Serial communication</strong> to match the settings on the bus, if needed.</li>
+<li>Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency where measurements are sent to Cumulocity.</li>
+<li>Click <strong>Save changes</strong> if you made changes. <br> <img src="/guides/images/users-guide/newmodbusrtudevice.png" alt="Add Modbus device" /><br></li>
+<li>To start communication between the terminal and the Modbus device, click <strong>Add new device</strong>.</li>
+<li>Enter a name for the device and select the type of the device from the drop-down field. To add new device types, see <a href="#configure">Configuring Fieldbus device types</a> below. Set the Modbus address of the connected device.</li>
+<li>Click <strong>Add</strong>. Cumulocity will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.</li>
+</ol>
+
+<p>After completion, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the table to navigate to the device. If you have not yet added Modbus devices to the terminal, you may have to reload your browser window to make the <strong>Child Devices</strong> tab visible.</p>
+
+<h4 id="connecting-modbus-tcp-devices">Connecting Modbus/TCP devices</h4>
+
+<p>To connect a Modbus/TCP device:</p>
+
+<ol>
+<li>Make sure that the Modbus/TCP device is connected to the terminal, i.e. directly through an Ethernet cable or through a switch. If you are using a Modbus gateway, configure the gateway in a way it can communicate with the Modbus devices behind the gateway.</li>
+<li>Check the network settings of the device using the instructions provided with the device.</li>
+<li>In the Device Management application, click <strong>All devices</strong> in the <strong>Devices</strong> menu in the navigator. In the device list, select the terminal and switch to the <strong>Network</strong> tab. Verify that the LAN settings of the terminal match the settings of the device so that TCP communication can be established.</li>
+<li>Switch to the <strong>Modbus</strong> tab.</li>
+<li>Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency at which measurements are sent to Cumulocity.</li>
+<li>Click <strong>Save changes</strong> if you made changes.</li>
+</ol>
+
+<p><strong>Adding child devices</strong></p>
+
+<ol>
+<li>To start communication between the terminal and the Modbus device, click <strong>Add new device</strong>.</li>
+<li>Enter a name for the device and select the type of the device from the dropdown field. To add new device types, see <a href="#configure">Configuring Fieldbus device types</a> below. Set the Modbus address and the IP address of the connected device.</li>
+<li>Click <strong>Add</strong>.</li>
+</ol>
+
+<p>Cumulocity will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.</p>
+
+<p><img src="/guides/images/users-guide/newmodbustcpdevice.png" alt="Add Modbus device" /></p>
+
+<blockquote>
+<p>We assume that all Modbus/TCP communication uses the standard Modbus/TCP port 502. On the NTC-6200, the port to be used can be configured through the variable &ldquo;service.cumulocity.plugin.lua__modbus.port&rdquo; using, for example, Device Shell or the local web user interface of the device.</p>
+</blockquote>
+
+<h4 id="connecting-can-devices">Connecting CAN devices</h4>
+
+<p>To connect a CAN device:</p>
+
+<ol>
+<li>Physically wire the CAN device through to the terminal.</li>
+<li>Check the serial communication baud rate of the device according to the instructions provided with the device. These have to match all devices on the bus.</li>
+<li>In the Device Management application, click <strong>All devices</strong> in the <strong>Devices</strong> menu in the navigator. In the device list, select the terminal and switch to the <strong>CAN bus</strong> tab.</li>
+<li>Change the baud rate setting shown in the section <strong>CAN bus communication</strong> to match the settings on the bus, if needed.</li>
+<li>Change the transmit rate according to your requirements. The transmit rate is the frequency where measurements are sent to Cumulocity.</li>
+<li>Click <strong>Save changes</strong> if you made changes.</li>
+</ol>
+
+<p><strong>Adding child devices</strong></p>
+
+<ol>
+<li>To start communication between the terminal and the CAN device, click <strong>Add CAN device</strong>.</li>
+<li>Enter a name for the device and select the type of the device from the dropdown field. To add new device types, see <a href="#configure">Configuring Fieldbus device types</a> below.</li>
+<li>Click <strong>Add</strong>.</li>
+</ol>
+
+<p>Cumulocity will now send a notification to the Fieldbus terminal that a new device is ready to be managed. This may take a few seconds.</p>
+
+<p>After completion, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the table to navigate to the device. If you have not yet added Fieldbus devices to the terminal, you may have to reload your browser window to make the &ldquo;Child Devices&rdquo; tab visible.</p>
+
+<p><img src="/guides/images/users-guide/newcandevice.png" alt="Add CAN device" /></p>
+
+<h4 id="a-name-connect-opcua-a-connecting-opc-ua-servers"><a name="connect-opcua"></a>Connecting OPC UA servers</h4>
+
+<p>To connect an OPC UA server to Cumulocity, you need a gateway or industrial PC running the Cumulocity OPC UA agent.</p>
+
+<ol>
+<li>Make sure that the OPC UA server is connected to the gateway or PC, i.e. directly through an Ethernet cable or through a switch.</li>
+<li>Check the network settings of the gateway and make sure that the OPC UA server is reachable from the gateway.</li>
+<li>In the Device Management application, click <strong>All devices</strong> in the <strong>Devices</strong> menu in the navigator. In the device list, select the gateway and switch to the  <strong>OPCUA</strong> tab.</li>
+<li>In the <strong>URL</strong> field, enter the URL of the OPC UA server as seen from the gateway.</li>
+<li>Set the username and password to access the OPC UA server.</li>
+<li>Change the transmit rate and the polling rate according to your requirements. The transmit rate is the frequency at which measurements are sent to Cumulocity. The polling rate is the frequency at which the OPC UA server polls for changes. Note that not all OPC UA servers support setting a polling rate. In such cases, the OPC UA server sends data usually whenever it changes.</li>
+<li>Click <strong>Save changes</strong> if you made changes.</li>
+</ol>
+
+<p><strong>Adding child devices</strong></p>
+
+<ol>
+<li>To start communication between the gateway and the OPC UA server, click <strong>Add OPCUA device</strong>. An OPC UA server may host many devices as part of its object model.</li>
+<li>Enter a name for the OPC UA device.</li>
+<li>Enter the absolute <strong>Browse path</strong> of the OPC UA device. The browse path of the device is configured on the OPC UA server and represents the &ldquo;root&rdquo; of the OPC UA device in the OPC UA server object model.</li>
+<li>Select the type of the child device from the drop-down box. To add new device types, see <a href="#configure">Configuring Fieldbus device types</a> below.</li>
+<li>Click <strong>Add</strong>.</li>
+</ol>
+
+<p>Cumulocity will now send a notification to the OPC UA agent that a new device is ready to be managed. This may take a few seconds.</p>
+
+<p>After completion, a new child device has been added to the gateway and can now be managed. You can click on the name of the device in the table to navigate to the device.</p>
+
+<p><img src="/guides/images/users-guide/newopcuadevice.png" alt="Add OPCUA device" /></p>
+
+<h4 id="a-name-connect-profibus-a-connecting-profibus-devices"><a name="connect-profibus"></a>Connecting Profibus devices</h4>
+
+<p>Connecting Profibus differs slightly from the regular Plug &amp; Play approach of Cloud Fieldbus. The gateway device acts as slave on the Profibus so it can easily be integrated into existing infrastructure. This means that Profibus data must be actively sent to the gateway though. Typically this is done by programming a PLC to actively send information to the gateway via it’s configured Profibus slave address.</p>
+
+<ol>
+<li>Physically wire the Profibus device to the terminal.</li>
+<li>In the Device Management application, click <strong>All devices</strong> in the <strong>Devices</strong> menu in the navigator. In the device list, select the terminal and switch to the &ldquo;Profibus&rdquo; tab. <br><br>
+<img src="/guides/images/users-guide/profibus-settings.png" alt="Profibus settings" style="max-width: 100%"><br><br></li>
+<li>The baud rate is automatically detected by the gateway and is just being displayed here.</li>
+<li>Change the transmit rate according to your requirements. The transmit rate is the interval at which measurements are sent to Cumulocity.</li>
+<li>Set the slave address of the terminal.</li>
+<li>Configure your Profibus Master device to communicate to that slave address. To do so, refer to the gateway manual (e.g. <a href="/guides/devices/smartbox-db">SmartBox DP</a>).</li>
+<li>Click <strong>Save</strong> to update the gateway with the new settings.</li>
+</ol>
+
+<p><strong>Adding child devices</strong></p>
+
+<ol>
+<li>To start communication between the gateway and the Profibus device, click <strong>Add Profibus device</strong>.</li>
+<li>Enter a name for the new device.</li>
+<li>Select the type of the child device from the drop-down box. To add new device types, see <a href="#configure">Configuring Fieldbus device types</a> below.</li>
+<li>Click <strong>Add</strong> to confirm and notify the gateway.</li>
+</ol>
+
+<p><img src="/guides/images/users-guide/profibus-device-add.png" alt="Add device" style="max-width: 100%"></p>
+
+<p>Now A child device will be created containing the data configured in the selected device type.</p>
+
+<p>Cumulocity will notify the gateway to send data for the newly created child device.</p>
+
+<h3 id="a-name-manage-a-managing-fieldbus-devices"><a name="manage"></a>Managing Fieldbus devices</h3>
+
+<p>Once connected, you can now manage your device. Switch to the <strong>Child devices</strong> tab of a device to list the connected Fieldbus devices and navigate to a Fieldbus device. Depending on the capabilities of the device and its configuration in Cumulocity, you can:</p>
+
+<ul>
+<li><a href="#collect">Collect measurements</a></li>
+<li><a href="#alarms">Send alarms on coil or register changes</a></li>
+<li><a href="#logging">Log coil and register changes as events</a></li>
+<li><a href="#status">Monitor the status of coils and registers</a></li>
+</ul>
+
+<h4 id="a-name-collect-a-collecting-measurements"><a name="collect"></a>Collecting measurements</h4>
+
+<p>If the device type of the Fieldbus device is configured to collect measurements, these will be visible in the <strong>Measurements</strong> tab. They will also be available for usage in the <a href="/guides/users-guide/cockpit#visualize">Data Explorer</a> and in <a href="/guides/users-guide/cockpit#dashboards">Dashboard widgets</a>.</p>
+
+<p>Data is collected according to the interval specified in the &ldquo;transmit rate&rdquo; property of the terminal as described above. To optimize the data traffic, data that is exactly the same as collected previously may not be sent again.</p>
+
+<p><img src="/guides/images/users-guide/modbusmeasurements.png" alt="Fieldbus measurements" /></p>
+
+<h4 id="a-name-alarms-a-monitoring-alarms"><a name="alarms"></a>Monitoring alarms</h4>
+
+<p>If the device type of the Fieldbus device is configured to send alarms, these will be visible in the <strong>Alarms</strong> tab and usable in widgets. To determine the alarm status, the Fieldbus devices are monitored for changes according to the &ldquo;polling rate&rdquo; setting of the terminal. If a particular coil or register is non-zero, an alarm will be raised. If the value goes back to zero, the alarm will be cleared.</p>
+
+<p><img src="/guides/images/users-guide/modbusalarms.png" alt="Fieldbus alarms" /></p>
+
+<h4 id="a-name-logging-a-logging-events"><a name="logging"></a>Logging events</h4>
+
+<p>Similar to alarms, changes in Fieldbus devices can be monitored and logged as events. Each time, the value of the monitored coil or register changes, an event is created. You can see the events in the &ldquo;Events&rdquo; tab of the device or use them in widgets. You can inspect the new value of the monitored coil or register by clicking on the event and unfolding the event details.</p>
+
+<p><img src="/guides/images/users-guide/modbusevents.png" alt="Fieldbus events" /></p>
+
+<h4 id="a-name-status-a-monitor-a-device-status"><a name="status"></a>Monitor a device status</h4>
+
+<p>The status of devices can be monitored in real time using dashboard widgets in the Cockpit application. Navigate to the Cockpit application, create a dashboard or report, and add widgets as described in the <a href="/guides/users-guide/cockpit">Cockpit section</a> in the User guide. The Cloud Fieldbus has two new widgets: The &ldquo;Fieldbus Device&rdquo; widget and the &ldquo;SCADA&rdquo; widget.</p>
+
+<h4 id="a-name-fieldbus-device-widget-a-monitoring-device-status-using-the-fieldbus-device-widget"><a name="fieldbus-device-widget"></a>Monitoring device status using the Fieldbus Device widget</h4>
+
+<p>The Fieldbus Device widget provides you with a tabular display of the status of a device. The status of the device can also be modified through the widget.</p>
+
+<p>To use the Fieldbus Device widget, follow these steps:</p>
+
+<ol>
+<li>Select a dashboard and click <strong>Add widget</strong> in the top menu bar.</li>
+<li>Select the Fieldbus Device Widget and edit the title of the widget.</li>
+<li>Choose the device that should be shown in the widget in the <strong>Target assets or devices</strong> section.</li>
+<li>Select the coils and registers that should be shown on the widget.</li>
+</ol>
+
+<p><img src="/guides/images/users-guide/modbusedit.png" alt="Adding the Fieldbus Device Widget" /></p>
+
+<p>In the widget, the selected coils and registers are grouped into display categories as configured in the device type. The Fieldbus Device Widget updates automatically as soon as there is new data available. You do not need to click on reload.</p>
+
+<p><img src="/guides/images/users-guide/modbusstatus.png" alt="Use the Fieldbus Device Widget" /></p>
+
+<p>Registers and coils that can be changed are represented by active widgets. For example, in the screenshot above, the &ldquo;Master switch&rdquo; coil and the &ldquo;Mode&rdquo; register are editable. If you click a switch, an operation to change the corresponding coil or register is sent to the terminal. Similar, if you change a value and click <strong>Set</strong>, an operation is created. The terminal will then carry out the configuration change on the device, as requested through the operation. While the operation is being processed, a progress indicator is shown.</p>
+
+<h4 id="a-name-scada-a-monitoring-status-using-the-scada-widget"><a name="scada"></a>Monitoring status using the SCADA widget</h4>
+
+<p>The SCADA widget provides you with a graphic representation of the status of a device.</p>
+
+<p>To use the SCADA widget, follow these steps:</p>
+
+<ol>
+<li>Select a dashboard and click <strong>Add widget</strong> in the top menu bar.</li>
+<li>Select the SCADA widget and edit the title of the widget.</li>
+<li>Choose the device that should be shown in the widget in the <strong>Target assets or devices</strong> section.</li>
+<li>Upload an SVG file with the graphic representation of the device. SVG files are vector graphics that have to be specifically prepared with placeholders for the status information. See <a href="#scadasvg">Preparing SVG files for the SCADA widget</a> below.</li>
+<li>Assign placeholders to devices. Note that multiple devices can be taken as source.</li>
+<li>You now need to assign each placeholder to a property of the device. Hover over each placeholder and select <strong>Assign device property</strong> or <strong>Assign fieldbus property</strong>. A dialog box comes up, in which you can choose basic device properties or fieldbus properties (i.e. status coils and registers). Select the desired property and click <strong>Select</strong>.</li>
+<li>After assigning all placeholders, a preview of the widget with the current values of the properties is shown. Click <strong>Save</strong> to place the widget on the dashboard.</li>
+</ol>
+
+<p><img src="/guides/images/users-guide/scadaedit.png" alt="Adding the SCADA Widget" /></p>
+
+<h4 id="a-name-scadasvg-a-preparing-svg-files-for-the-scada-widget"><a name="scadasvg"></a>Preparing SVG files for the SCADA widget</h4>
+
+<p>The SCADA widgets inspect uploaded SVG files for placeholders. These placeholders are replaced by actual values from devices. Placeholders have a specific syntax and can be used anywhere in the SVG file. To add a placeholder, enter the name of the placeholder in double curly braces using your design application or a text editor.</p>
+
+<p>When creating svg files, we recommend you to use &ldquo;<a href="https://boxy-svg.com/&quot;">https://boxy-svg.com/&quot;</a>. It is easy to use, quality chrome extension.</p>
+
+<pre><code>&lt;text class=&quot;text&quot; xt-anchor=&quot;middle&quot; x=&quot;100&quot; y=&quot;236.982125&quot; width=&quot;200&quot; ...&gt;
+    {{batteryValue}}
+&lt;/text&gt;
+</code></pre>
+
+<h3 id="a-name-configure-a-configuring-fieldbus-device-types"><a name="configure"></a>Configuring Fieldbus device types</h3>
+
+<p>New Fieldbus device types can be set up in the <strong>Device database</strong> page which you open from the <strong>Device Types</strong> menu in the navigator.</p>
+
+<p>Click <strong>New</strong> in the top menu bar. In the <strong>Device type</strong> field, select the protocol of your device and enter a name for it.</p>
+
+<p>Now you can start adding coils and register definitions to the device type, depending on the selected protocol (see the descriptions below).</p>
+
+<p><img src="/guides/images/users-guide/devicedatabase.png" alt="Device Database" /></p>
+
+<h4 id="a-name-configuremodbus-a-configuring-modbus-data"><a name="configureModbus"></a>Configuring Modbus data</h4>
+
+<h5 id="a-name-addcoil-a-adding-a-coil-definition"><a name="addCoil"></a>Adding a coil definition</h5>
+
+<p>Click <strong>Add</strong> at the top right of the <strong>Coils (discrete inputs)</strong> section, to add a coil definition. This will open a dialog to specify the coil. Enter the following information:</p>
+
+<ol>
+<li>Enter the name of the coil as being displayed in the user interface.</li>
+<li>Optionally, enter the display category to structure your data in widgets.</li>
+<li>Enter the number of the coil in the Modbus device.</li>
+<li>Select the <strong>Show status</strong> checkbox if you want to show the coil&rsquo;s current value in the Fieldbus Device Widget. In this case, you can enter the text that the Fieldbus Device Widget should show for unset and set coils.</li>
+<li>Select the <strong>Update status</strong> checkbox if you want to be able to edit the coil from the Fieldbus Device Widget.</li>
+<li>Select the <strong>Raise alarm</strong> checkbox if an alarm should be raised when the coil is set in the device. In this case, you can specify the type of the alarm that is raised, its text and its severity. Note that there can only be one alarm active of a particular type for a particular device.</li>
+<li>Select the <strong>Send event</strong> checkbox if an event should be generated each time the value of the coil changes. If <strong>Send event</strong> is selected, you can specify the type of event and the text in the event.</li>
+<li>Click <strong>OK</strong> to finish editing the coil.</li>
+</ol>
+
+<p><img src="/guides/images/users-guide/addcoil.png" alt="Add coil" /></p>
+
+<p>The same functions are available for discrete inputs. However, it is not possible to update the status of a discrete input.</p>
+
+<h5 id="a-name-addregister-a-adding-a-register-definition"><a name="addRegister"></a>Adding a register definition</h5>
+
+<p>Click <strong>Add</strong> at the top right of the <strong>Holding registers</strong> section, to add a register definition. This opens a dialog to enter the details of the register definition:</p>
+
+<ol>
+<li>Enter the name of the register being displayed in the user interface.</li>
+<li>Optionally, enter the display category to structure your data in widgets.</li>
+<li>Enter the number of the register in the Modbus device. You can indicate a subset of bits to be used from a register by providing a start bit and a number of bits. This allows you to split a physical Modbus register into a set of &ldquo;logical registers&rdquo;.</li>
+<li>To scale the integer value read from the Modbus device, you can enter a multiplier, a divisor and a number of decimal places. The register value is first multiplied by the &ldquo;multiplier&rdquo;, then divided by the &ldquo;divisor&rdquo; and then shifted by the number of decimal places. Note, that the terminal may use integer arithmetic to calculate values sent to Cumulocity. For example, if you use a divisor of one and one decimal place, a value of 231 read from the terminal will be sent as 23.1 to Cumulocity. If you use a divisor of ten and no decimal places, the terminal may send 23 to Cumulocity (depending on its implementation).</li>
+<li>Indicate the unit of the data, for example, &ldquo;C&rdquo; for temperature values.</li>
+<li>Select the <strong>Signed</strong> checkbox if the register value should be interpreted as signed number.</li>
+<li>Select the <strong>Enumeration type</strong> checkbox if the register value should be interpreted as enumeration of discrete values. If <strong>Enumeration type</strong> is selected, you can click <strong>Add value</strong> to add mappings from a discrete value to a text to be shown for this value in the widget. Click <strong>Remove value</strong> to remove the mapping.</li>
+<li>Select the <strong>Show status</strong> checkbox if you want to show the current value of the register in the Fieldbus Device Widget.</li>
+<li>Select the <strong>Update status</strong> checkbox if you want to be able to edit the register from the Fieldbus Device Widget. If <strong>Update status</strong> is selected, two additional fields <strong>Minimum</strong> and <strong>Maximum</strong> appear. Using these fields, you can constrain numerical values entered in the widget.</li>
+<li>Select the <strong>Send measurement</strong> checkbox if you want the values of the register to be regularly collected according to the transmit interval (see <a href="#connect">above</a>). In this case, add a measurement type and a series to be used. For each measurement type, a chart is created in the <strong>Measurements</strong> tab. For each series, a graph is created in the chart. The unit is used for labelling the measurement in the chart and in the Fieldbus Device Widget.</li>
+<li>Select the <strong>Raise alarm</strong> checkbox if an alarm should be raised when the register is not zero in the device measurement. In this case, you can specify the type of the alarm raised, its text and its severity. Note, that there can only be one alarm active of a particular type for a particular device.</li>
+<li>Select the <strong>Send event</strong> checkbox if an event should be generated each time the value of the register changes. If <strong>Send event</strong> is selected, you can specify the type of event and the text in the event.</li>
+<li>Click <strong>OK</strong> to save your settings.</li>
+</ol>
+
+<p><img src="/guides/images/users-guide/addregister.png" alt="Add register" /></p>
+
+<p>In the <strong>Options</strong> section, select the checkbox <strong>Use server time</strong> to create the time stamps for data on the server instead of on the terminal. If you need to support buffering of data on the terminal, leave this checkbox clear.</p>
+
+<p>Finally, click <strong>Save</strong> to save your settings.</p>
+
+<p>If you edit a device type that is currently in use, you may need to</p>
+
+<ul>
+<li>restart the terminals that use the device type,</li>
+<li>reconfigure dashboards and widgets that use the device type.</li>
+</ul>
+
+<h4 id="a-name-configurecan-a-configuring-can-bus-data"><a name="configureCAN"></a>Configuring CAN bus data</h4>
+
+<p>CAN device types can be configured in a very similar way as Modbus device types. For more information, see <a href="#configureModbus">Configuring Modbus data</a> above. The differences are:</p>
+
+<ul>
+<li>Holding registers are used to describe the different pieces of data inside CAN messages.</li>
+<li>Enter the CAN message ID of the specific message the data should be extracted from. Use a hexadecimal number for the message ID.</li>
+<li>Conversion of values is extended by an offset parameter. This will be added or substracted from the register value, depending on its sign. The offset calculation is done after applying multiplier and divisor, and before performing decimal shifting.</li>
+</ul>
+
+<p><img src="/guides/images/users-guide/addregisterCAN.png" alt="Add CAN register" /></p>
+
+<h4 id="a-name-configureopcua-a-configuring-opc-ua-data"><a name="configureOPCUA"></a>Configuring OPC UA data</h4>
+
+<p>OPC UA device types can be configured in a very similar way as Modbus device types. For more information, see <a href="#configureModbus">Configuring Modbus data</a> above.</p>
+
+<p>The main difference is how data is addressed. OPC UA servers provide a hierarchical object model of connected nodes. The nodes are addressed by the browse path from the root of the object model to the respective node.</p>
+
+<p>To simplify configuration, the browse path is split into two parts in Cloud Fieldbus:</p>
+
+<ul>
+<li>From the root to the OPC UA device (configured <a href="#connect-opcua">above</a>).</li>
+<li>From the OPC UA device to a node with data of that device.</li>
+</ul>
+
+<p>When you click <strong>Add</strong>, enter the second part of the path into the **** field as shown in the image below. Note that the OPC UA agent currently only supports nodes of type &ldquo;Variable&rdquo;. The description of the paths should be either provided with your OPC UA server or with your devices.</p>
+
+<p><img src="/guides/images/users-guide/addregisterOPCUA.png" alt="Add OPCUA register" /></p>
+
+<h4 id="a-name-configureprofibus-a-configuring-profibus-data"><a name="configureProfibus"></a>Configuring Profibus data</h4>
+
+<p>To configure a Profibus device type, select &ldquo;Profibus&rdquo; as device type from the dropdown list and enter a name for it.</p>
+
+<p>In the Register section, click <strong>Add</strong> at the right to add one or more register definitions as described exemplarily for Modbus devices in <a href="#addRegister">Adding a register definition</a> above.</p>
+
+<p>In the <strong>Options</strong> section, select the checkbox <strong>Use server time</strong> to create the time stamps for data on the server instead of on the terminal. If you need to support buffering of data on the terminal, leave this checkbox clear.</p>
+
+<p>Finally, click <strong>Save</strong> to save your settings.</p>
+
+<p>If you edit a device type that is currently in use, you may need to</p>
+
+<ul>
+<li>restart the terminals that use the device type,</li>
+<li>reconfigure dashboards and widgets that use the device type.</li>
+</ul>
+
+<h4 id="a-name-configure-canopen-a-configuring-canopen-data"><a name="configure-canopen"></a>Configuring CANopen data</h4>
+
+<p>There are two ways to create a new device type. Either manually from scratch via the “New” operation or via import of an EDS file for the corresponding device.</p>
+
+<p><strong>Manually creating a new device type from scratch</strong></p>
+
+<p>Navigate to the <strong>Device database</strong> page and click <strong>New</strong>. The following window will open:</p>
+
+<p><img src="/guides/images/users-guide/newtype.png" alt="New device type" /></p>
+
+<p>Select “CANopen” as fieldbus type and enter a name for your device type. Specific to CANopen is the <strong>CANopen device type</strong> field which accepts a hex number.</p>
+
+<p>In the <strong>Variables</strong> section, you determine the CANopen variables. Variables inside the “Object Dictionary”(OD) of the CANopen device can be accessed later by adding the variables to the device type definition. Via the <strong>Add</strong> button at the right of the <strong>Variables</strong> section, new variables can be configured.</p>
+
+<p><img src="/guides/images/users-guide/newvariable.png" alt="New variable" /></p>
+
+<p>The following fields can be observed:</p>
+
+<ul>
+<li><strong>Name:</strong> The name of the variable.</li>
+<li><strong>Display category:</strong> This field is used to group variables into sections in the visualization.</li>
+<li><strong>Index:</strong> Index of the variable in the OD of the device.</li>
+<li><strong>Sub-index:</strong> Sub-Index of the variable in the OD of the device.</li>
+<li><strong>Data type:</strong> The type of the variable (e.g. boolean, unsigned).</li>
+<li><strong>Access type:</strong> E.g. read only, write only, etc.</li>
+<li><strong>Unit:</strong> Logical unit of the variable.</li>
+<li><strong>Show status:</strong> Defines how the variable is shown in the inventory.</li>
+<li><strong>Update status:</strong> Defines how the variable is updated in Cumulocity.</li>
+<li><strong>Send measurement:</strong> Create a measurement when the value of the variable is changed.</li>
+<li><strong>Raise alarm:</strong> Create an alarm if a given mask matches with the value of the variable ((value &amp; mask) == mask). Therefore, it is possible to raise alarms on single bits of e.g. an Unsigned8 variable, like the Error-Register.</li>
+<li><strong>Raise event:</strong> Create an event, whenever the value of the variable is changed.</li>
+</ul>
+
+<p>After adding variables to the new device type, they are listed in the <strong>Variables</strong> section of the device type. All variables are grouped by the given display category, i.e. variables with same category are grouped together.</p>
+
+<p><img src="/guides/images/users-guide/category.png" alt="category view" /></p>
+
+<p>After completing your configuration, click <strong>Save</strong> to save your settings. The device type can be used now to add CANopen devices to the platform. The device type can be updated after creation.</p>
+
+<p><strong>Importing a device type</strong></p>
+
+<p>To import a new device type, see the <a href="#import">Exporting and importing device types</a> section.</p>
+
+<blockquote>
+<p>After importing the EDS file, all variables defined in the file are listed in the <strong>Variables</strong> section of the device type. The user can then enrich the imported variable configurations by opening the configuration dialog for each variable (e.g. the missing display category can be set or mappings can be defined).</p>
+</blockquote>
+
+<p><strong>Configuring CANopen device data</strong></p>
+
+<p>To configure CANopen device data navigate to the desired device and switch to the <strong>CANopen</strong> tab.</p>
+
+<p>In the <strong>CANopen communication</strong> section, the following parameters can be configured:</p>
+
+<ul>
+<li><strong>Baud rate:</strong> This field must match with the used baud rate in the CANopen network.</li>
+<li><strong>Polling rate:</strong> The rate at which the agent sends requests to the CANopen devices.
+to determine changes in variables.</li>
+<li><strong>Transmit rate:</strong> The transfer rate, i.e. the rate at which the terminal sends regular
+measurements to Cumulocity.</li>
+</ul>
+
+<p>In the <strong>CANopen</strong> section, up to 127 CANopen devices can be added to the gateway as child devices by giving the following parameters:</p>
+
+<ul>
+<li><strong>Name:</strong> The name of the device used for visualization.</li>
+<li><strong>Device type:</strong> The device type of the CANopen device. The user can select from a list of all CANopen device types which are stored in the device database.</li>
+<li><strong>Node ID:</strong> The CANopen node ID of the device. It is used for addressing the device inside the CANopen network.</li>
+</ul>
+
+<blockquote>
+<p>The device type and node ID need to match with the real CANopen device, otherwise setting up the communication is not possible or wrong values will be transmitted.</p>
+</blockquote>
+
+<h3 id="a-name-import-a-exporting-and-importing-device-types"><a name="import"></a>Exporting and importing device types</h3>
+
+<p>To manage device types more conveniently, you can export device types to a file once they are edited in the user interface. The file can be re-imported to  set up other Cumulocity accounts easily or to restore the types from a backup. The import functionality also supports importing ready-made device types provided by device manufacturers.</p>
+
+<p>To export a device type, hover over the device type that you would like to export and click <strong>Export</strong>. Your browser will download a file named &ldquo;&lt;device type&gt;.json&rdquo; with the device type definition.</p>
+
+<p><img src="/guides/images/users-guide/fieldbusexport.png" alt="Export device type" /></p>
+
+<p>To import a device type, click <strong>Import</strong> in the top menu bar. This will open a dialog that lets you choose between importing a ready-made device type and uploading a previously exported device type. You can change the name of the device type during import using the <strong>New device type name</strong> field.</p>
+
+<p><img src="/guides/images/users-guide/fieldbusimport.png" alt="Import device type" /></p>
+
+  </article>
+  
+  <article id="cloud-remote-access" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#cloud-remote-access">
+        <span class="fa fa-link"></span>
+      </button>
+      Cloud Remote Access</h2>
+    
+
+<p>The Cumulocity Cloud Remote Access microservice allows you to remotely access operating panels and other devices via a web browser.</p>
+
+<h3 id="when-to-use-cloud-remote-access">When to use Cloud Remote Access</h3>
+
+<p>To provide the best level of control, remote devices should be represented as devices in the Device Management of Cumulocity, with the corresponding reporting, remote control and real-time functionality.</p>
+
+<p>In some cases however, it is not possible or not economic to implement every aspect of a machine or remote device in a Cumulocity agent. For example, it might be a legacy device that does not have APIs for accessing certain parts of the functionality, or it may have many very low-level configuration parameters that would be very involved to map to Cumulocity.</p>
+
+<p>In this case, you can use Cloud Remote Access to securely manage remote devices. The benefit is that you manage the device in the same way as if you had it physically close to you.</p>
+
+<blockquote>
+<p><strong>Important</strong>: Be aware that using Cloud Remote Access includes administrative intervention:</p>
+
+<ul>
+<li>Often, devices have no detailed permission management, so you give a user very fundamental access to the device.</li>
+<li>When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards.</li>
+</ul>
+</blockquote>
+
+<h3 id="supported-protocols-and-gateways">Supported protocols and gateways</h3>
+
+<p>The following protocols are supported:</p>
+
+<ul>
+<li>Remote Desktop (VNC)
+
+<ul>
+<li>Shares the desktop of the remote device</li>
+<li>Mouse and keyboard for interaction</li>
+</ul></li>
+<li>Secure Shell (SSH)
+
+<ul>
+<li>Console for command line access</li>
+<li>Keyboard for interaction</li>
+</ul></li>
+<li>Terminal (Telnet)
+
+<ul>
+<li>Protocol used for old device types</li>
+<li>Console for command line access</li>
+<li>Keyboard for interaction</li>
+</ul></li>
+</ul>
+
+<p>The following gateways are supported:</p>
+
+<ul>
+<li>Netcomm NTC 6200
+
+<ul>
+<li>Gateway router device</li>
+<li>Latest Firmware (4.2.1)</li>
+<li>VNCProxy plugin</li>
+</ul></li>
+<li>Linux agent
+
+<ul>
+<li>Can be used on any linux-based gateway device</li>
+<li>Latest version required</li>
+</ul></li>
+<li>Third-party devices
+
+<ul>
+<li>Many third-party devices are supported, for details see <a href="/guides/devices">Devices guide</a></li>
+</ul></li>
+</ul>
+
+<h3 id="how-cloud-remote-access-works">How Cloud Remote Access works</h3>
+
+<p>Cloud Remote Access is a secure way to directly access remote devices through a web browser.</p>
+
+<p><img src="/guides/images/users-guide/cra-VNC1a.png" alt="VNC" /></p>
+
+<p>The following protocols are supported:</p>
+
+<ul>
+<li>Remote Desktop (VNC)</li>
+<li>Secure Shell (SSH)</li>
+<li>Terminal (Telnet)</li>
+</ul>
+
+<p>Cloud Remote Access works as in the illustration below. The remotely controlled device runs a VNC, SSH or Telnet server and is connected to a gateway compatible with Cloud Remote Access. This gateway must be registered as a device within the Device Management application in Cumulocity. More information about registering devices and instructions can be found in <a href="/guides/users-guide/device-management/#device-registration">Device Management &gt; Device Registration</a> in the User guide.</p>
+
+<p><img src="/guides/images/users-guide/cra-VNC2.png" alt="VNC2" /></p>
+
+<p>With Cloud Remote Access users can</p>
+
+<ul>
+<li>view status visualizations and track updates of remote devices directly in the same way as if you were at the device location,</li>
+<li>connect to remote devices easily as complex VPN setups are not required,</li>
+<li>establish connection via Telnet or SSH to the gateway itself or to any device in the local area network.</li>
+</ul>
+
+<p><img src="/guides/images/users-guide/cra-VNC1b.png" alt="VNC1b" /></p>
+
+<p>The connection to remote devices is securely encrypted through TLS technology. Additionally, passwords are encrypted in your Cumulocity account, so that you do not need to manage them elsewhere.</p>
+
+<h3 id="using-cloud-remote-access">Using Cloud Remote Access</h3>
+
+<p>Cloud Remote Access is available in the Device Management application.</p>
+
+<p>To use Cloud Remote Access, the following prerequisites have to be met:</p>
+
+<ul>
+<li>a Cloud Remote Access compatible gateway connected to your Cumulocity account;</li>
+<li>a remote device with a VNC, SSH or Telnet server that is connected to the gateway and reachable from the gateway;</li>
+<li>Cloud Remote Access microservice included into your subscription plan.</li>
+</ul>
+
+<p>Click <strong>All devices</strong> and select the desired gateway from the device list.</p>
+
+<p><img src="/guides/images/users-guide/cra-device-list.png" alt="Device list" /></p>
+
+<p>When you open the gateway you will find the <strong>Remote access</strong> tab in its tab list.</p>
+
+<p><img src="/guides/images/users-guide/cra-remote-access-tab.png" alt="Remote access tab" /></p>
+
+<p>In the <strong>Remote Access</strong> tab, you can configure devices for remote control, so-called &ldquo;endpoints&rdquo;, and connect to remote devices.</p>
+
+<p>Connections can be established to the gateway itself (localhost) or to any device in the local area network reachable by the device.</p>
+
+<blockquote>
+<p><strong>Info</strong>: If the prerequisites are met and you do not see the <strong>Remote access</strong> tab in the tab list of your gateway, please contact sales@cumulocity.com.<br>
+<strong>Info</strong>: If you are a gateway manufacturer and would like to support Cloud Remote Access on your gateway, please contact support@cumulocity.com.</p>
+</blockquote>
+
+<h3 id="configuring-endpoints">Configuring endpoints</h3>
+
+<p>The &ldquo;endpoint&rdquo; is the IP address and port of the VNC, SSH or Telnet server running on the remote device. The IP address and port need to be reachable from the gateway.</p>
+
+<p><img src="/guides/images/users-guide/cra-endpoint-add.png" alt="Endpoints" /></p>
+
+<p>To configure new remote devices, click <strong>Add endpoint</strong>. Follow the descriptions below for configuring the various types of endpoints.</p>
+
+<blockquote>
+<p><strong>Info</strong>: To be able to configure an endpoint, you need ADMIN permission for &ldquo;Remote access&rdquo; and &ldquo;Device control&rdquo;. To read data, a READ permission is sufficient. For more information on permissions, refer to <a href="/guides/users-guide/administration/#managing-permissions">Administration &gt; Managing permissions</a> in the User guide.</p>
+</blockquote>
+
+<h4 id="adding-remote-access-endpoints-via-vnc">Adding remote access endpoints via VNC</h4>
+
+<p>To configure a remote access endpoint via VNC, enter a description for the remote access endpoint, the IP address and port, and the password of the VNC server. Click <strong>Save</strong> to add the endpoint to the list.</p>
+
+<p><img src="/guides/images/users-guide/cra-endpoint-vnc.png" alt="Remote access endpoint" /></p>
+
+<p>Once the connection is established, a new browser tab will open displaying the front screen or operating panel of the remote device you are connected to. The top bar of the screen will show “starting VNC handshake” when the process is starting.</p>
+
+<h4 id="adding-remote-access-endpoints-via-telnet">Adding remote access endpoints via Telnet</h4>
+
+<p>Enter the name of the endpoint. Select the Telnet protocol from the dropdown menu. Enter the IP address and the port. When ready, click <strong>Save</strong>.</p>
+
+<p><img src="/guides/images/users-guide/cra-endpoint-telnet.png" alt="Remote access Telnet endpoint" /></p>
+
+<blockquote>
+<p><strong>Important</strong>: Be aware, that Telnet is considered to be an insecure protocol lacking built-in security measures. For network communication in a production environment we highly recommend to use the SSH protocol instead.</p>
+</blockquote>
+
+<h4 id="adding-remote-access-endpoints-via-ssh">Adding remote access endpoints via SSH</h4>
+
+<p>To configure a remote access endpoint via SSH, enter the name of the endpoint, select the &ldquo;SSH&rdquo; protocol from the dropdown list, and enter the IP address and the port. There are two Sign-in methods to be selected:</p>
+
+<ul>
+<li><p>Username and password: If this method is selected, it is mandatory to enter username and password.</p>
+
+<p><img src="/guides/images/users-guide/cra-endpoint-ssh-username.png" alt="SSH username and password sign in" /></p></li>
+
+<li><p>Public/private keys: Automatically generate public and private keys or simply paste pre-generated keys. The keys can also be uploaded from a file.</p>
+
+<p><img src="/guides/images/users-guide/cra-endpoint-ssh-publicprivatekeys.png" alt="SSH public/private keys sign in" /></p></li>
+</ul>
+
+<p><strong>Info</strong>: The public key needs to be installed on the remote device as authorized_key.</p>
+
+<p>Optionally, you can also add a host key to ensure connection to the correct device. This key can also be uploaded from a file.</p>
+
+<p>Click <strong>Save</strong> to save your settings.</p>
+
+<p>The following formats are supported when adding new keys:</p>
+
+<ul>
+<li>OpenSSHv1</li>
+<li>OpenSSHv2</li>
+<li>PEM</li>
+<li>SSH2</li>
+</ul>
+
+<p>The following algorithms are supported when adding new keys:</p>
+
+<ul>
+<li>RSA</li>
+<li>DSA</li>
+<li>ECDSA</li>
+<li>ED25519</li>
+</ul>
+
+<h4 id="editing-or-removing-endpoints">Editing or removing endpoints</h4>
+
+<p>To edit or remove an endpoint, click the menu icon at the right of a row and select <strong>Edit</strong> or <strong>Remove</strong> from the context menu.</p>
+
+<p><img src="/guides/images/users-guide/cra-endpoint-menu.png" alt="Edit endpoints" /></p>
+
+<h3 id="connecting-to-endpoints">Connecting to endpoints</h3>
+
+<p>To connect to configured endpoints, choose an endpoint in the <strong>Remote access</strong> tab and click <strong>Connect</strong>.</p>
+
+<p><img src="/guides/images/users-guide/cra-endpoint-connect.png" alt="Connect Endpoint" /></p>
+
+<p>The connection to the configured remote device is established and the VNC, SSH or Telnet screen is shared in the client area.</p>
+
+<p><img src="/guides/images/users-guide/cra-connect-telnet.png" alt="Telnet connection" /></p>
+
+<p>To terminate the connection, click <strong>Disconnect</strong>.</p>
+
+<h3 id="audit-logs">Audit logs</h3>
+
+<p>Audit logs are available for each gateway device.</p>
+
+<p>For each connection the Cloud Remote Access microservice creates an operation in scope of the current user. The operation then will be updated by the device to reflect the current status. Finally the operation will be in state SUCCESSFUL or FAILED.</p>
+
+<p>The audit logs can be found in the <strong>Control</strong> tab of the gateway device.</p>
+
+<p><img src="/guides/images/users-guide/cra-control-tab.png" alt="Display Audit logs" /></p>
+
+<h3 id="compatibility-and-limitations">Compatibility and limitations</h3>
+
+<h4 id="vnc-protocol">VNC protocol</h4>
+
+<p>The following versions of the VNC protocol are currently supported:</p>
+
+<ul>
+<li>RFB 003.003</li>
+<li>RFB 003.007</li>
+<li>RFB 003.008</li>
+</ul>
+
+<p>The functionality has been tested on the following VNC servers:</p>
+
+<ul>
+<li>Real VNC 5.3.2</li>
+<li>Tiger VNC 1.6.0/1.7.0</li>
+<li>TightVNC 1.3.9</li>
+<li>EfonVNC 4.2</li>
+<li>Vino</li>
+</ul>
+
+<p>The following operating systems/browsers are currently supported:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Operating system</th>
+<th align="left">Browser</th>
+<th align="left">Touch</th>
+<th align="left">Swipe</th>
+<th align="left">Keyboard</th>
+<th align="left">Pointer</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Windows 10</td>
+<td align="left">Edge 38</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+<td align="left">Minor</td>
+</tr>
+
+<tr>
+<td align="left">Windows 10</td>
+<td align="left">Internet Explorer 11.5.6.7</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+<td align="left">Minor</td>
+</tr>
+
+<tr>
+<td align="left">Windows 10</td>
+<td align="left">Firefox 51</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+</tr>
+
+<tr>
+<td align="left">Ubuntu 16.04</td>
+<td align="left">Chrome 56</td>
+<td align="left">Minor</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+</tr>
+
+<tr>
+<td align="left">Ubuntu 16.04</td>
+<td align="left">Firefox 51</td>
+<td align="left">Minor</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+</tr>
+
+<tr>
+<td align="left">MacOS</td>
+<td align="left">Safari</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+</tr>
+
+<tr>
+<td align="left">iOS 10.2.1</td>
+<td align="left">Safari</td>
+<td align="left">Yes</td>
+<td align="left">Minor</td>
+<td align="left">No</td>
+<td align="left">n/a</td>
+</tr>
+
+<tr>
+<td align="left">Android 6.0.1</td>
+<td align="left">Chrome</td>
+<td align="left">Yes</td>
+<td align="left">Minor</td>
+<td align="left">No</td>
+<td align="left">n/a</td>
+</tr>
+
+<tr>
+<td align="left">Android 6.0.1</td>
+<td align="left">Stock browser 5.0</td>
+<td align="left">Yes</td>
+<td align="left">Minor</td>
+<td align="left">No</td>
+<td align="left">n/a</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="telnet-protocol">Telnet protocol</h4>
+
+<p>The following limitations apply to Cloud Remote Access for Telnet:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Area</th>
+<th align="left">Scrolling</th>
+<th align="left">Reflow on width change</th>
+<th align="left">Bitmap fonts</th>
+<th align="left">Vector fonts</th>
+<th align="left">Mouse tracking</th>
+<th align="left">Application keypad</th>
+<th align="left">Tabs</th>
+<th align="left">Split screen</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Console</td>
+<td align="left">Yes</td>
+<td align="left">No</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+<td align="left">?</td>
+<td align="left">Yes</td>
+</tr>
+
+<tr>
+<td align="left">xterm</td>
+<td align="left">Yes</td>
+<td align="left">No</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+<td align="left">No</td>
+<td align="left">No</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="ssh-protocol">SSH protocol</h4>
+
+<p>For Cloud Remote Access for SSH the same limitations as mentioned for Telnet apply (see above). Also the following additional limitations are known:</p>
+
+<ul>
+<li>International characters are not to be supported yet.</li>
+<li>Only limited number of control characters are working. For example interrupt (CTRL+c) is not working yet.</li>
+<li>Mouse movements are not supported.</li>
+<li>Only SSHv2 protocol is supported.</li>
+</ul>
+
+<h3 id="troubleshooting">Troubleshooting</h3>
+
+<p><strong>Endpoints cannot be set up</strong></p>
+
+<p>If you cannot set up new endpoints, check if you have sufficient permissions.</p>
+
+<p>To set up new endpoints, you need ADMIN permission for &ldquo;Device control&rdquo; to be able to register a device and ADMIN permission for &ldquo;Remote access&rdquo; to be able to add an endpoint.</p>
+
+<p>To establish a connection to a remote operating panel, a READ permission for &ldquo;Remote access&rdquo; is sufficient.</p>
+
+<p>For more information on permissions, refer to <a href="/guides/users-guide/administration/#managing-permissions">Administration &gt; Managing permissions</a> in the User guide.</p>
+
+<p><strong>Connection fails</strong></p>
+
+<p>The connection via a gateway to a remote VNC, SSH or Telnet server can fail because of network problems. In this case you need to contact your network administrator.</p>
+
+<p><strong>Unsupported protocol version</strong></p>
+
+<p>In case of Real VNC, if you get an error message stating that you are using an unsupported protocol version (e.g. 005.00x), try the following workaround:</p>
+
+<ol>
+<li>Open VNC.</li>
+<li>Navigate to <strong>Options</strong>.</li>
+<li>Select the <strong>Export</strong> tab.</li>
+<li>Search for &ldquo;ProtocolVersion&rdquo;.</li>
+<li>Enter &ldquo;3.8&rdquo; as protocol version.</li>
+</ol>
+
+  </article>
+  
+  <article id="android-cloud-sensor-app" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#android-cloud-sensor-app">
+        <span class="fa fa-link"></span>
+      </button>
+      Cloud Sensor App</h2>
+    
+
+<h3 id="overview">Overview</h3>
+
+<p>This document describes the Cumulocity Cloud Sensor App. This App sends the sensor measurements from a Texas Instruments (TI) Sensor Tag and an Android smartphone to Cumulocity to be securely processed and managed. Additionally, both devices can be remote-controlled by Cumulocity. The TI Sensor Tag is a low energy wireless device manufactured by Texas Instruments © <a href="http://www.ti.com/">http://www.ti.com/</a>.</p>
+
+<h3 id="installing-the-cloud-sensor-app">Installing the Cloud Sensor App</h3>
+
+<p>To use the Cloud Sensor App for Android you need a smartphone with Android version 5.0 (Lollipop) or higher. To determine the Android version installed on your smartphone, refer to <a href="http://www.wikihow.com/Check-What-Android-Version-You-Have">http://www.wikihow.com/Check-What-Android-Version-You-Have</a>.</p>
+
+<p>To install the Cloud Sensor App from Google Play, open the Cockpit application in your Cumulocity IoT Sensor tenant and click <strong>Add smartphone</strong> from the quick links on the Welcome screen.</p>
+
+<p><img src="/guides/images/users-guide/quicklinks.png" alt="Quick Links" /></p>
+
+<p>This will start a wizard showing the QR code for downloading the Cloud Sensor App.</p>
+
+<p><img src="/guides/images/users-guide/installapp.png" alt="Install App" /></p>
+
+<p>Scan this QR code with any scanning application on your smartphone. You will be navigated to Google Play for the installation of the Cloud Sensor App.</p>
+
+<h3 id="registering-the-cloud-sensor-app-to-your-iot-sensor-tenant">Registering the Cloud Sensor App to your IoT Sensor tenant</h3>
+
+<p>To register your smartphone as a new device in your tenant you have two options:</p>
+
+<ul>
+<li>Option 1: Scan a QR code with encrypted registration credentials (fastest way)</li>
+<li>Option 2: Use Web-based registration</li>
+</ul>
+
+<blockquote>
+<p><strong>Info:</strong> Just in case you need to re-register your smartphone, and you change from option 1 to option 2 (or vice versa), you must delete the smartphone object in Device Management.</p>
+</blockquote>
+
+<p>The QR code registration process (option 1) uses credentials derived from the username and password of the user who is currently logged into the IoT Sensor tenant. Unique device credentials are used in the web-based registration process (option 2).</p>
+
+<h4 id="registering-using-a-qr-code-with-credentials">Registering using a QR code with credentials</h4>
+
+<p>Click <strong>Next</strong> in the Cockpit wizard to see the QR code with credentials to register the Cloud Sensor App to your Cumulocity IoT Sensor tenant.</p>
+
+<p><img src="/guides/images/users-guide/registerphonenew.png" alt="Register phone QR" /></p>
+
+<p>Your smartphone will be added to the devices list in the Device Management application, available from <strong>All devices</strong> in the <strong>Devices</strong> menu in the navigator.</p>
+
+<p><img src="/guides/images/users-guide/alldevices.png" alt="All devices" /></p>
+
+<p>Moreover it will be added to the group “Smartphones” (which will be created if not available yet). You can easily navigate to the group in the Cockpit application by clicking <strong>Go to phones</strong>.</p>
+
+<blockquote>
+<p><strong>Info:</strong> Until you scan the registration credentials QR code, the button will remain in the pending state showing the message “Waiting&hellip;”. Scanning the QR code will complete the registration process.</p>
+</blockquote>
+
+<p><img src="/guides/images/users-guide/registerphonenew.png" alt="Waiting text" /></p>
+
+<blockquote>
+<p><strong>Important:</strong> The registration credentials are encrypted. However, we highly recommend to use specific demo user accounts on your tenant for large public presentations. Do not use this method for production tenants or for tenants containing sensitive data.</p>
+</blockquote>
+
+<h4 id="registering-using-web-based-registration">Registering using web-based registration</h4>
+
+<p>To register your smartphone manually, follow these steps:</p>
+
+<ol>
+<li>Press the <strong>Web-based Registration</strong> button on the Cloud Sensor App Welcome screen. <br><img src="/guides/images/users-guide/webbased.png" alt="Action bar" /></li>
+<li>Select the instance on which your IoT Sensor Demo tenant is hosted, e.g. cumulocity.com. <br><img src="/guides/images/users-guide/selectinstancenew.png" alt="Select Instance" /></li>
+<li>Press the <strong>Register device</strong> button to start registration. A device ID will be displayed which needs to be entered during device registration on the Cumulocity IoT Sensor tenant. <br><img src="/guides/images/users-guide/getdeviceidnew.png" alt="Get device Id" /></li>
+<li>In your Cumulocity tenant in the Device Management application, click <strong>Registration</strong> in the <strong>Devices</strong> menu and enter the device ID. <br><img src="/guides/images/users-guide/registerdeviceid.png" alt="Register device" /></li>
+<li>Click <strong>Accept</strong>.<br><img src="/guides/images/users-guide/acceptdevice.png" alt="Accept device" /></li>
+</ol>
+
+<p>Your smartphone will be added to the devices list in the Device Management application, available from <strong>All devices</strong> in the <strong>Devices</strong> menu in the navigator.</p>
+
+<p><img src="/guides/images/users-guide/alldevices.png" alt="All devices" /></p>
+
+<p>Moreover it will be added to the group “Smartphones” (which will be created if not available yet). You can easily navigate to the group in the Cockpit application by clicking <strong>Go to phones</strong>.</p>
+
+<p>For further information about registering a device at the platform manually, refer to <a href="/guides/users-guide/device-management#device-registration">Device Management &gt; Connecting devices</a>.</p>
+
+<h3 id="sending-sensor-data-to-cumulocity">Sending sensor data to Cumulocity</h3>
+
+<p>Once your Cloud Sensor App is registered either by a QR code or manually, the device name will be provided which identifies your smartphone in the platform.</p>
+
+<p>You need to accept several permission requests allowing for accessing data on your device (e.g. network information and GPS data) to let the smartphone transfer network and GPS data to the cloud. This requests only show up once.</p>
+
+<p><img src="/guides/images/users-guide/accessmedia.png" alt="access media" />
+<img src="/guides/images/users-guide/managecalls.png" alt="manage calls media" />
+<img src="/guides/images/users-guide/readlocation.png" alt="read location" /></p>
+
+<p>You may edit the device name or leave it at the default value for your smartphone model.</p>
+
+<p><img src="/guides/images/users-guide/editname.png" alt="edit name" /></p>
+
+<p>A new device record with the model name and the device name used in the platform will appear on the screen of the Cloud Sensor App.</p>
+
+<p>The measurements from the sensors of your smartphone will automatically start being sent to your Cumulocity tenant. You can view the data from sensors by pressing the <strong>View sensors</strong> button.</p>
+
+<p><img src="/guides/images/users-guide/phonesensors.png" alt="phone sensors" />
+<img src="/guides/images/users-guide/gpssensor.png" alt="gps sensor" />
+<img src="/guides/images/users-guide/accelerationsensor.png" alt="acceleration sensor" /></p>
+
+<p>The data points will also be displayed on the graphs in the dashboard of your smartphone in the Cockpit application.</p>
+
+<p><img src="/guides/images/users-guide/mapincockpit.png" alt="map in cockpit" /></p>
+
+<p>A 3D rotation widget on this dashboard will depict the data from a gyroscope sensor on your smartphone if present.</p>
+
+<p><img src="/guides/images/users-guide/rotationwidget.png" alt="rotation widget" /></p>
+
+<p>To save battery power, the Cloud Sensor App sends measurements to Cumulocity only when the data change is significant, or every 20 minutes by default. This interval can be changed in the Device Management application.</p>
+
+<p>Switch to the Device Management application and select your smartphone from the device list, available through <strong>All devices</strong> in the <strong>Devices</strong> menu in the navigator.</p>
+
+<p><img src="/guides/images/users-guide/selectfromlist.png" alt="select from list" /></p>
+
+<p>Switch to the <strong>Configuration</strong> tab and specify the interval in milliseconds.</p>
+
+<p><img src="/guides/images/users-guide/configurationinterval.png" alt="configuration interval" /></p>
+
+<h3 id="connecting-ti-sensor-tag-to-the-cloud-sensor-app">Connecting TI Sensor Tag to the Cloud Sensor App</h3>
+
+<p>The Cloud Sensor App connects to both TI Sensor Tag version 1.20 and 1.30 via Bluetooth. Use the “Scan devices” button in the Cloud Sensor App to connect a Sensor Tag.</p>
+
+<p><img src="/guides/images/users-guide/scandevicesbutton.png" alt="Scan devices button" /></p>
+
+<p>All Sensor Tags which are discoverable are displayed. To make a Sensor Tag discoverable, press the red button next to it. The Sensor Tag will start blinking to show that it is ready to connect. It should immediately appear in the list of visible Bluetooth devices in the Cloud Sensor App.</p>
+
+<p><img src="/guides/images/users-guide/bluetoothscreen.png" alt="Connect Sensor Tag" /></p>
+
+<p>Press <strong>Connect</strong> next to the Sensor Tag of your choice. The Bluetooth connection between the Sensor Tag and your smartphone will be established. Once the Sensor Tag is paired with your smartphone, you will see it as a record on the Cloud Sensor App’s screen:</p>
+
+<p><img src="/guides/images/users-guide/ticard.png" alt="Sensor Tag Card" /></p>
+
+<p>Observing information and sensor data from the TI Sensor Tag is possible by pressing the <strong>View sensors</strong> button on its card.</p>
+
+<p><img src="/guides/images/users-guide/sensortaginfo.png" alt="Sensor Tag Info" />
+<img src="/guides/images/users-guide/tikeynopressed.png" alt="Sensor Tag Key Not Pressed" />
+<img src="/guides/images/users-guide/tikeypressed.png" alt="Sensor Tag Key Pressed" /></p>
+
+<p>In your Cumulocity tenant, the data points for the Sensor Tag will be displayed on the graphs in the dashboard of your smartphone and as measurements in the Device Management application.</p>
+
+<p><img src="/guides/images/users-guide/sensortagdatapoints.png" alt="Sensor tag data points" /></p>
+
+<p>To detach the Sensor Tag from your smartphone, press the <strong>Remove</strong> button on its card.</p>
+
+<h3 id="device-control">Device control</h3>
+
+<p>The Cloud Sensor App can receive real-time control commands from Cumulocity.</p>
+
+<p>The Messaging widget can be used to send text notifications to the smartphone. The vibration relay control can be used to turn on/off the vibration motor.</p>
+
+<p>For example, to send a message from Cumulocity, enter a text into the Messaging widget and click <strong>Send</strong>.</p>
+
+<p><img src="/guides/images/users-guide/messagewidget.png" alt="message widget" /></p>
+
+<p>The message will appear as a pop-up on the screen of your smartphone.</p>
+
+<p><img src="/guides/images/users-guide/helloworldnew.png" alt="Hello World Messsage" /></p>
+
+<p>If the vibration switch is turned on, the smartphone will start vibrating until the switch is turned off again.</p>
+
+<blockquote>
+<p><strong>Info:</strong> The smartphone must remain connected to the platform to receive these commands.</p>
+</blockquote>
+
+<p>To learn more about dashboard widgets, refer to
+<a href="/guides/users-guide/cockpit/#dashboards">Cockpit &gt; Working with dashboards</a>.</p>
+
+  </article>
+  
+  <article id="connectivity" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#connectivity">
+        <span class="fa fa-link"></span>
+      </button>
+      Connectivity</h2>
+    
+
+<p>The Connectivity agent, which works from within the Cumulocity Device Management application, provides basic information on mobile devices and additional connectivity details.</p>
+
+<p>Cumulocity integrates with the SIM connectivity management platform Jasper. For the SIM connectivity management platforms Comarch and Ericsson, Cumulocity provides an experimental implementation. For more details, please contact our support team.</p>
+
+<p>The following features are supported by these providers:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Feature</th>
+<th align="left">Jasper</th>
+<th align="left">Ericsson</th>
+<th align="left">Comarch</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Check the status of the SIM card in the device</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+</tr>
+
+<tr>
+<td align="left">Check the online status of the device as reported by the network</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+</tr>
+
+<tr>
+<td align="left">Change SIM card status, for example activate or deactivate it</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+</tr>
+
+<tr>
+<td align="left">Disconnect SIM card from current session</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+
+<tr>
+<td align="left">Communicate with the device through text messages, for example, to set APN parameters</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left">x</td>
+</tr>
+
+<tr>
+<td align="left">View summary usage of data traffic, text messages and voice calls</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left">x</td>
+</tr>
+
+<tr>
+<td align="left">View usage details of data traffic, text messages and voice calls</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+</tr>
+
+<tr>
+<td align="left">View the history of data sessions and any changes to the SIM card or traffic</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+<p>As you can see, Jasper currently is the most feature-rich provider.</p>
+
+<p>The following description is primarily based on Jasper, but the same configuration and usage also applies to the other providers. If there are any differences, they will be stated explicitly.</p>
+
+<p><img src="/guides/images/users-guide/jasperarchitecture.png" alt="Jasper architecture"></p>
+
+<p>The following sections describe:</p>
+
+<ul>
+<li>How to <a href="#link-account">set up your Jasper Control Center account</a> (examplarily)</li>
+<li>How to configure the <a href="#connectivity">connectivity</a> to the SIM provider in your Cumulocity tenant</li>
+<li>How to <a href="#link-sims">link SIMs</a> and mobile devices</li>
+<li>Which information is shown in the <a href="#jasperinfo">Connectivity tab</a></li>
+<li>How to <a href="#managing">manage connectivity</a> from Device Management</li>
+</ul>
+
+<h3 id="a-name-link-account-a-setting-up-your-jasper-control-center-account"><a name="link-account"></a>Setting up your Jasper Control Center account</h3>
+
+<p>The following steps describe how to create a dedicated user in the Jasper Control Center. This user is used for all access from Cumulocity to Jasper Control Center, so the permissions of the user have influence on functionalities available in Cumulocity.</p>
+
+<blockquote>
+<p><strong>Info</strong>: In a similar way, we recommend to set up a dedicated user for Ericsson or Comarch to get the credentials required to connect to Cumulocity. Ask your administrator or our support team for further information.</p>
+</blockquote>
+
+<p>Besides the user, you also need a so-called API license key (only required for Jasper) and API server URL. To determine your API license key and API server URL, use a Control Center administrator user to log in to your Control Center account and click <strong>API integration</strong> on the Control Center home page.
+Your API license key and the API server URL are displayed on the top left.</p>
+
+<p>To create a user in Jasper Control Center perform the following steps:</p>
+
+<ol>
+<li>As an admin user, navigate to <strong>Admin</strong> and <strong>Users</strong>.</li>
+<li>Click <strong>Create New</strong>.</li>
+<li>Enter the user name and further details of the user.</li>
+<li>If you want to be able to activate and deactivate SIM cards from Cumulocity, or to send SMS from Cumulocity, use the role ACCOUNTUSER. Otherwise, use the role ACCOUNTREADONLY.</li>
+<li>Click <strong>OK</strong> to create the user, then enter your admin password and click <strong>OK</strong> again.</li>
+</ol>
+
+<p><img src="/guides/images/users-guide/jasperadmin.png" alt="Jasper user management" /></p>
+
+<p>The user is now created but does not have a password yet. Follow the instructions emailed to you by Control Center to set a password.</p>
+
+<h3 id="a-name-connectivity-a-configuring-the-connectivity-for-the-sim-provider-in-cumulocity"><a name="connectivity"></a>Configuring the connectivity for the SIM provider in Cumulocity</h3>
+
+<p>Process the following step to configure the connectivity in Cumulocity:</p>
+
+<ol>
+<li>Use a Cumulocity administrator user to log into the Cumulocity platform.</li>
+<li>Switch to the Administration application.</li>
+<li>Click <strong>Connectivity</strong> in the <strong>Settings</strong> menu of the navigator. If the menu item is not displayed, make sure that your user has <a href="/guides/users-guide/administration#managing-permissions">ADMIN permission for Connectivity</a>. If the menu item is still not available, contact <a href="https://support.cumulocity.com">support</a> to make the Connectivity agent available in your tenant.</li>
+<li>Switch to the <strong>SIM provider settings</strong> tab.</li>
+<li>Select a provider from the drop-down list.</li>
+<li>Enter the credentials (URL, key (in case of Jasper), username and password) for the respective SIM provider account. If you do not have any credentials, ask your administrator.</li>
+<li>Click <strong>Save</strong> to save your settings.</li>
+</ol>
+
+<p><img src="/guides/images/users-guide/SIM-connectivity-item.png" alt="Jasper settings" /></p>
+
+<p>The Connectivity agent is now set up.</p>
+
+<h3 id="a-name-link-sims-a-linking-sims-and-mobile-devices"><a name="link-sims"></a>Linking SIMs and mobile devices</h3>
+
+<p>Switch to the Device Management application and navigate to a device that is connected through a SIM card managed by the SIM provider of your choice. The device should have a <strong>Connectivity</strong> tab. If this tab is not shown,</p>
+
+<ul>
+<li>your user does not have permissions for Connectivity,</li>
+<li>the device is not linked to a SIM card,</li>
+<li>the device is linked to a SIM card, but the card is not managed by the respective SIM provider account.</li>
+</ul>
+
+<p>To assign permissions, navigate to the Administration application and make sure that your user has a role assigned with READ or ADMIN permission for Connectivity.</p>
+
+<p><img src="/guides/images/users-guide/SIM-connectivity-permissions.png" alt="Connectivity permission settings"  style="max-width: 80%"></p>
+
+<p>Jasper and Comarch identify SIM cards through their ICCID (Integrated Circuit Card Identifier). Ericsson is using MSISDN (Mobile Station International Subscriber Directory Number) instead. In most cases, devices will report the ICCID and MSISDN of their SIM card automatically to Cumulocity.</p>
+
+<p>If the ICCID is not shown automatically check the following:</p>
+
+<ul>
+<li>Determine the ICCID of the SIM card. It is printed on the SIM card and is visible in Control Center.</li>
+<li>Enter the ICCID in the <strong>Info</strong> tab, then click <strong>Save</strong>.</li>
+<li>Click <strong>Reload</strong> in the tab menu bar to make the <strong>Connectivity</strong> tab appear.</li>
+</ul>
+
+<blockquote>
+<p>Note that it may take a few seconds until the tab appears for the first time on a device, as Cumulocity checks if the particular SIM card is managed by the SIM provider.</p>
+</blockquote>
+
+<h3 id="a-name-jasperinfo-a-connectivity-tab"><a name="jasperinfo"></a>Connectivity tab</h3>
+
+<p>In the <strong>Connectivity</strong> tab you will find the following sections:</p>
+
+<ul>
+<li>Status</li>
+<li>SMS</li>
+<li>Sessions</li>
+<li>Audit logs</li>
+</ul>
+
+<p><img src="/guides/images/users-guide/SIM-connectivity-tab.png" alt="Connectivity tab" /></p>
+
+<blockquote>
+<p><strong>Info</strong>: Some sections may not appear or may be empty. For example, if there have been no SMS sent and you do not have permission to send SMS, you will not see the SMS section.</p>
+</blockquote>
+
+<p>The <strong>Status</strong> section lists summary information for the SIM card.</p>
+
+<p><img src="/guides/images/users-guide/SIM-connectivity-status.png" alt="Status section" /></p>
+
+<p>The first row shows if the device is currently running a data session. If it is, the start of the session and the current WAN IP address of the device is displayed.</p>
+
+<p>The second row shows further status information: The ICCID of the SIM card, the activation state of the SIM card and, if set, the fixed IP address assigned to the SIM card. Provided you have ADMIN permission for Connectivity, you can change the activation state by using the drop-down menu.</p>
+
+<p>At the bottom you will find usage information for the current month, i.e. from the first of the month till today. Hovering over the tooltip shows the covered time period, including the usage during the past month.</p>
+
+<p>The <strong>SMS</strong> section shows the text messages sent to the device and received from the device, including information on</p>
+
+<ul>
+<li>when the message was sent or received</li>
+<li>where it was sent from and where it was sent to</li>
+<li>the delivery status of the message:
+
+<ul>
+<li>For messages to the device: &ldquo;Pending&rdquo;, if it was not yet received by the device, or &ldquo;Delivered&rdquo;, if it was received by the device.</li>
+<li>For messages from the device: &ldquo;Received&rdquo;, if it was received by the SIM provider, or &ldquo;Cancelled&rdquo;, if it was not yet received by the SIM provider.</li>
+</ul></li>
+<li>What the direction of the message is: MT (&ldquo;Mobile terminated&rdquo;), if it went to the device, or MO (&ldquo;Mobile originated&rdquo;) if it came from the device.</li>
+</ul>
+
+<p>Provided you have ADMIN permission for Connectivity, you can also send text messages to the device by entering the text and clicking <strong>Send SMS</strong>.</p>
+
+<p><img src="/guides/images/users-guide/jaspersms.png" alt="SMS section" /></p>
+
+<p>The <strong>Sessions</strong> section shows the log of data sessions carried out by the device. It lists when the session started, how long it took and how much data traffic was consumed.</p>
+
+<p><img src="/guides/images/users-guide/SIM-connectivity-sessions.png" alt="Sessions section" /></p>
+
+<p>The <strong>Audit logs</strong> section lists all changes to the SIM card and its tariff. It shows the type of change, old and new values when the change was carried out by whom, and if it was successful.</p>
+
+<p><img src="/guides/images/users-guide/jasperaudits.png" alt="Audit logs section" /></p>
+
+<p>The <strong>Connectivity</strong> tab does not update in real-time. To show current data, click the <strong>Reload</strong> in the top menu bar.</p>
+
+<h3 id="a-name-managing-a-checking-connectivity"><a name="managing"></a>Checking connectivity</h3>
+
+<p>If you suspect that a device is not correctly reporting to Cumulocity, or it is not receiving commands, you can verify the connectivity status of the device.</p>
+
+<p>In the <strong>Connectivity</strong> tab, check if</p>
+
+<ul>
+<li>the SIM is activated. If the SIM card is not activated, you can activate it selecting &ldquo;Activated&rdquo; from the status drop-down menu. <br> <img src="/guides/images/users-guide/SIM-connectivity-status-activate.png" alt="Activate SIM card" /> <br> It may take a while until the SIM card is activated in the network. There may be a reset of the device needed to make it dial up to the network again.</li>
+<li>The device is connected to the network. If the device is not connected to the network, this may have several reasons:
+
+<ul>
+<li>The device is in a location without mobile network coverage. If the device reports network quality parameters, you can navigate to the <a href="/guides/users-guide/device-management#measurements"><strong>Measurements</strong> tab</a> of the device and verify the last reported signal strength and error rate parameters.</li>
+<li>There is a network or hardware problem (antenna, modem). For the Jasper Control Center, for example, click the cogwheel icon on the top right and select <strong>SIM details</strong>, then open the Jasper Control Center diagnostics tool. If the device is not attempting to connect to the network, it may be broken.</li>
+</ul></li>
+<li>The device is in a data session. If the device is not in a data session, this may, again, have several reasons:
+
+<ul>
+<li>The APN settings are incorrectly configured in the device.</li>
+<li>The SIM card is over traffic limit.</li>
+<li>Data roaming is disabled on the device and the device is not in the SIM card&rsquo;s home network.</li>
+<li>Data roaming for the particular network is not included in the SIM card&rsquo;s plan.</li>
+<li>The SIM configuration was changed.</li>
+</ul></li>
+</ul>
+
+<p>Data connectivity can be analyzed in various places:</p>
+
+<ul>
+<li>If the device reports its network configuration, navigate to the <strong>Network</strong> tab and verify, potentially edit, APN settings.</li>
+<li>If the device supports shell, navigate to the <a href="/guides/users-guide/device-management/#shell"><strong>Shell</strong> tab</a> and verify, potentially edit, APN settings and roaming configuration.</li>
+<li>Check the <strong>Sessions</strong> section on the <strong>Connectivity</strong> tab to see if the device has been communicating earlier and how much traffic it used.</li>
+<li>Check the <strong>Audit logs</strong> section on the <strong>Connectivity</strong> tab to see if there were any recent changes to the SIM card.</li>
+<li>Finally, click the cogwheel on the top right and select <strong>SIM details</strong> to navigate to the SIM configuration in Jasper Control Center.</li>
+</ul>
+
+<blockquote>
+<p>The <strong>SIM details</strong> menu item requires you to have a login for Jasper Control Center. This login is independently provided by your administrator.</p>
+</blockquote>
+
+<p>If the device is still not reporting to Cumulocity, there may be a configuration or software problem on the device.</p>
+
+<ul>
+<li>The device may have lost its credentials, for example, due to a factory reset or full loss of power. In this case, you can <a href="/guides/users-guide/device-management#device-registration">re-register the device</a>.</li>
+<li>There may be a configuration or software problem with the device, which has to be analyzed in a device-specific way.</li>
+</ul>
+
+  </article>
+  
+  <article id="nokia-impact" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#nokia-impact">
+        <span class="fa fa-link"></span>
+      </button>
+      IMPACT</h2>
+    
+
+<p>This document describes</p>
+
+<ul>
+<li>in which way Nokia <a href="#integration">IMPACT integrates with the Cumulocity platform</a>,</li>
+<li>how <a href="#device-lifecycle">IMPACT devices are registered</a> at Cumulocity through the IMPACT agent,</li>
+<li>how to work with <a href="#device-protocol">IMPACT device protocols</a>.</li>
+</ul>
+
+<h3 id="a-name-integration-a-impact-integration"><a name="integration"></a>IMPACT Integration</h3>
+
+<p>Cumulocity offers an integration with the Nokia IMPACT Data Collector which is designed to collect data from heterogeneous devices. Integrating Cumulocity with IMPACT, enables you to make use of existing Cumulocity features like connectivity monitoring, data visualization or real-time analytics with IMPACT devices.</p>
+
+<blockquote>
+<p><strong>Info</strong>: Currently only the integration of LWM2M devices has been tested.</p>
+</blockquote>
+
+<p>The IMPACT agent in Cumulocity registers itself at the Nokia IMPACT platform. Similarly, it subscribes to events such as devices coming online or reporting data at IMPACT.</p>
+
+<p>The following illustration provides an overview on the Cumulocity IMPACT integration.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/ImpactIntegration.png" alt="IMPACT integration" style="max-width: 100%"></p>
+
+<blockquote>
+<p><strong>Info</strong>: Your subscription needs to include the IMPACT feature. If you do not see the functionality described in this document, please contact the Cumulocity support.</p>
+
+<p>To be able to communicate with a device through IMPACT the device must be registered in IMPACT. How to register a device in IMPACT is not in the scope of this document.</p>
+</blockquote>
+
+<h3 id="a-name-device-lifecycle-a-device-lifecycle-integration"><a name="device-lifecycle"></a>Device lifecycle integration</h3>
+
+<p>IMPACT devices do not need to be registered again in Cumulocity. Cumulocity’s device lifecycle integration automatically handles the following events:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Event type</th>
+<th align="left">Description</th>
+<th align="left">Actions triggered in IMPACT agent</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Registration</td>
+<td align="left">A new device has been registered at IMPACT.</td>
+<td align="left">Create device in Cumulocity.<br>Obtain list of resources provided by device (either from request or by querying device).<br>Subscribe to all resources that are mapped as “Auto-Observe” in the corresponding object mapping.</td>
+</tr>
+
+<tr>
+<td align="left">Deregistration</td>
+<td align="left">A device has been deleted in IMPACT.</td>
+<td align="left">At IMPACT, unsubscribe from all resources for this device.</td>
+</tr>
+
+<tr>
+<td align="left">Expiration</td>
+<td align="left">A device registration in IMPACT has expired.</td>
+<td align="left">Mark device in Cumulocity as disabled.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="a-name-device-protocol-a-impact-device-protocols"><a name="device-protocol"></a>IMPACT device protocols</h3>
+
+<p>To process data from IMPACT devices, Cumulocity uses device protocols. Through device protocols you can observe your resources and perform other actions like creating alarms.</p>
+
+<p>Device protocols are accessible through the <strong>Devices types</strong> menu in the Device Management application. For details on the general usage see <a href="/guides/users-guide/device-management#managing-device-types">Device protocols</a>.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceProtocols.png" alt="Device protocols" style="max-width: 100%"></p>
+
+<h4 id="how-to-add-an-impact-device-protocol">How to add an IMPACT device protocol</h4>
+
+<p>To add a new IMPACT device protocol follow these steps:</p>
+
+<ol>
+<li>In the Device Management application, navigate to the <strong>Device protocol</strong> page, accessible from the <strong>Device types</strong> menu in the navigator.</li>
+<li>Click <strong>Add device protocol</strong> in the top menu bar.</li>
+<li>In the upcoming window select <strong>IMPACT</strong> as device protocol type.<br><br>
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceProtocolAdd.png" alt="Add protocol" style="max-width: 50%"><br></li>
+<li>In the next dialog, enter a unique ID, a name and an optional description for the device protocol.<br><br>
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceProtocolAdd2.png" alt="Add protocol" style="max-width: 50%"><br></li>
+<li>Click <strong>Create</strong> to create the new device protocol.</li>
+</ol>
+
+<p>The device protocol will open in a new page.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceProtocolPage.png" alt="Protocol page" style="max-width: 100%"></p>
+
+<p>In the <strong>Device protocol</strong> page you will see the description at the top left and the ID, the creation date and date of the last update at the top right.</p>
+
+<p>Below a list of resources configured for the device will be listed (which is empty when creating a new protocol), showing the ID, name and potentially configured functionalities for each resource.</p>
+
+<p>Example: Resource list for the device protocol &ldquo;Temperature Measurement&rdquo;:</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceProtocolResources.png" alt="Protocol page" style="max-width: 100%"></p>
+
+<h4 id="how-to-add-a-resource-to-a-device">How to add a resource to a device</h4>
+
+<p>Click <strong>Add resource</strong> at the bottom of the resource list to add a new resource to your device.</p>
+
+<p>For each resource you may specify the following parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Description</th>
+<th align="left">Required</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">ID</td>
+<td align="left">The ID of the resource. Must be unique within one protocol object.</td>
+<td align="left">Mandatory</td>
+</tr>
+
+<tr>
+<td align="left">Name</td>
+<td align="left">Name for the resource.</td>
+<td align="left">Mandatory</td>
+</tr>
+
+<tr>
+<td align="left">Type</td>
+<td align="left">The parameter type. May be one of BOOLEAN, STRING, INTEGER or FLOAT.</td>
+<td align="left">Mandatory</td>
+</tr>
+
+<tr>
+<td align="left">Unit</td>
+<td align="left">The parameter unit, e.g. Celsius, meter.</td>
+<td align="left">Optional</td>
+</tr>
+
+<tr>
+<td align="left">Instance Type</td>
+<td align="left">The instance type for the parameter. May be one of &ldquo;Single&rdquo; or &ldquo;Multiple&rdquo;. The default value is &ldquo;Single&rdquo;.</td>
+<td align="left">Optional</td>
+</tr>
+
+<tr>
+<td align="left">Description</td>
+<td align="left">A more detailed description of the resource.</td>
+<td align="left">Optional</td>
+</tr>
+</tbody>
+</table>
+
+<p>Optionally, you may turn on several functionalities for the resource:</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceProtocolResourceFunctionalities.png" alt="Functionalities" style="max-width: 100%"></p>
+
+<p><strong>Send measurements</strong></p>
+
+<p>Turn on <strong>Send measurements</strong> to specify a measurement.</p>
+
+<ul>
+<li>In the <strong>Type</strong> field, enter the type of the measurement, for example “c8y_AccelerationMeasurement”.</li>
+<li>Series are any fragments in measurements that contain a “value” property. In the <strong>Series</strong> field you can enter for example “c8y_AccelerationMeasurement.acceleration”.</li>
+<li>The <strong>Unit</strong> field specifies the unit of the given measurement, for example “m/s” for velocity.</li>
+</ul>
+
+<p><strong>Create alarm</strong></p>
+
+<p>Turn on <strong>Create alarm</strong> if you want to create an alarm out of the resource. Specify the following parameters (all mandatory):</p>
+
+<ul>
+<li>In the <strong>Severity</strong> field, select a severity for the alarm. May be one of CRITICAL, MAJOR, MINOR, WARNING.</li>
+<li>The <strong>Type</strong> field is a text field which is used for duplicating alarms and for configuring the priority of alarms in the Administration application.</li>
+<li>In the <strong>Status</strong> field, select an alarm status. may be one of ACTIVE, ACKNOWLEDGED, CLEARED.</li>
+<li>In the <strong>Text</strong> field, provide a textual description for the alarm.</li>
+</ul>
+
+<p><strong>Send event</strong></p>
+
+<p>Turn on <strong>Send event</strong> to send an event each time a certain condition has been triggered. Specify the following parameters:</p>
+
+<ul>
+<li>In the <strong>Type</strong> field, enter the type of the event, for example &ldquo;com&#95;cumulocity&#95;model_DoorSensorEvent&rdquo;.</li>
+<li>In the <strong>Text</strong> field, enter the text which will be sent, for example &ldquo;Door sensor was triggered&rdquo;.</li>
+</ul>
+
+<p><strong>Auto observe</strong></p>
+
+<p>Enabling <strong>Auto observe</strong> for a resource means, that each time the device with this particular resource appears, Cumulocity will automatically receive all values. It is not necessary, to subscribe to it manually.</p>
+
+<blockquote>
+<p><strong>Info</strong>: At least one functionality must be set to enable <strong>Auto observe</strong>.</p>
+</blockquote>
+
+<p>Finally, click <strong>Save</strong> to create the resource. The resource will be added to the resource list.</p>
+
+<p>In the resources list you can see if functionalities have been turned on for a resource. Active functionalities are indicated by the related icons. In the example below, <strong>Send measurements</strong> and <strong>Auto observe</strong> are turned on.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_DeviceProtocolFunctionalitiesOn.png" alt="Functionalities" style="max-width: 100%"></p>
+
+  </article>
+  
+  <article id="lora" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#lora">
+        <span class="fa fa-link"></span>
+      </button>
+      LoRa Actility</h2>
+    
+
+<p>Cumulocity can interface with LoRa devices through Actility&rsquo;s ThingPark Wireless. You can:</p>
+
+<ul>
+<li>Provision and deprovision LoRa devices easily using the Cumulocity Device Management. No interaction in the ThingPark user interface is required.</li>
+<li>Decode upstream payload packets using a web-based user interface.</li>
+<li>Debug and postprocess raw device data through Cumulocity events.</li>
+<li>Send downstream data to the device using Cumulocity operations.</li>
+<li>Make use of existing Cumulocity features with LoRa devices, for example: connectivity monitoring, device management, data visualization with dashboards, real-time analytics and more.</li>
+</ul>
+
+<p>The following illustration gives an overview of the Cumulocity LoRa Actility integration.</p>
+
+<p><img src="/guides/images/users-guide/actility/Cumulocity-LoRa-Actility-integration.png" alt="Cumulocity LoRa Actility integration" /></p>
+
+<p>The following sections describe how to:</p>
+
+<ul>
+<li><a href="#configure-credentials">Configure your ThingPark account credentials</a> in Cumulocity</li>
+<li><a href="#create-device-types">Create device types</a> with Cumulocity&rsquo;s device database</li>
+<li><a href="#register-device">Register devices</a> and visualize Actility payload using Cumulocity</li>
+<li><a href="#deprovision-device">Deprovision a device</a> in ThingPark</li>
+<li><a href="#configurable-port">Send operations</a> to a device</li>
+<li><a href="#thingpark-monitoring">ThingPark Api availability monitoring</a> in Cumulocity</li>
+<li><a href="#lora-troubleshooting">Troubleshooting</a> for warning messages</li>
+</ul>
+
+<blockquote>
+<p>Note that your subscription needs to include this feature. If you do not see the functionality described in this document, please contact support.</p>
+</blockquote>
+
+<h3 id="a-name-configure-credentials-a-configuring-thingpark-account-credentials-and-application-eui"><a name="configure-credentials"></a>Configuring ThingPark account credentials and application EUI</h3>
+
+<p>Before using LoRa devices with Cumulocity, you need to configure your ThingPark account details in the Administration application. In order to create new credentials or replace existing ones, go to the Administration application and select <strong>Connectivity</strong> in the <strong>Settings</strong> menu in the navigator.</p>
+
+<h4 id="a-name-create-new-credentials-a-creating-new-account-credentials"><a name="create-new-credentials"></a>Creating new account credentials</h4>
+
+<p>If you go to <strong>Connectivity</strong> for the first time, you will be asked to provide credentials and application EUI which is used for LoRa device provisioning.</p>
+
+<p>Enter the following information:</p>
+
+<ul>
+<li><strong>profile ID</strong>: This depends on your ThingPark account and environment. If you are using, for example, the Dev1 ThingPark environment your profile ID will be &ldquo;dev1-api&rdquo;. Multiple tenants can have the same profile ID.</li>
+<li><strong>username</strong>: your ThingPark user name</li>
+<li><strong>password</strong>: your ThingPark password</li>
+<li><strong>application EUI</strong>: This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device. It is a 16 character (8 byte) long hexadecimal number. There can be only one application EUI for a tenant but multiple tenants can have the same application EUI.</li>
+</ul>
+
+<p>Do not use the same ThingPark login (username and password) for other tenants.
+The profile ID, username and password are used to retrieve an access token to send further requests to the ThingPark platform. It is possible to renew the access token by replacing the account credentials.</p>
+
+<p><img src="/guides/images/users-guide/actility/credentials-new-2.png" alt="Setting provider credentials" /></p>
+
+<p>Click <strong>Save</strong>. If everything is okay, there will be a message &ldquo;Credentials successfully saved&rdquo;.</p>
+
+<h4 id="a-name-replace-credentials-a-replacing-account-credentials"><a name="replace-credentials"></a>Replacing account credentials</h4>
+
+<p>In order to replace your credentials, click <strong>Replace credentials</strong>.</p>
+
+<p>Enter your profile ID, username, password and application EUI (for details on profile ID and application EUI see <a href="#create-new-credentials">Creating new account credentials</a>.</p>
+
+<p><img src="/guides/images/users-guide/actility/providerCredentials2.png" alt="Account credentials" style="max-width: 100%"></p>
+
+<p>Click <strong>Save</strong>. Your old credentials will now be replaced with the new ones.</p>
+
+<h3 id="a-name-create-device-types-a-creating-device-types"><a name="create-device-types"></a>Creating device types</h3>
+
+<p>To process data from LoRa devices, Cumulocity needs to understand the payload format of the devices. Mapping a payload data to Cumulocity data can be done by creating a LoRa device type.</p>
+
+<p>During the <a href="#register-device">device registration</a>, you can associate this device type. The received uplink callbacks for this device with a hexadecimal payload will then be mapped to the ones you have configured in your device type.
+If a device type has been changed after being associated to a device, the reflection of the change can take up to 10 minutes because of the refresh mechanism of the Actility Server Side Agent.</p>
+
+<blockquote>
+<p><strong>Info</strong>: Device protocol mapping only supports decoding for fixed byte positions based on the message type.</p>
+</blockquote>
+
+<p>In order to create device types, navigate to the Device Management application and select <strong>Device database</strong> in the <strong>Device types</strong> menu in the navigator. You can either import an existing device type or create a new one.</p>
+
+<h4 id="a-name-import-device-type-a-importing-a-predefined-device-type"><a name="import-device-type"></a>Importing a predefined device type</h4>
+
+<p>In the <strong>Device database</strong> window, click <strong>Import</strong>.</p>
+
+<p>Select the predefined device type, for example &ldquo;LoRaWAN Demonstrator&rdquo;. Click <strong>Import</strong>.</p>
+
+<p><img src="/guides/images/users-guide/actility/deviceDatabaseImport.png" alt="Import a predefined device type" style="max-width: 60%"></p>
+
+<p>Alternatively, you may also load the device type from a file and import it.</p>
+
+<h4 id="a-name-create-new-device-type-a-creating-a-new-device-type"><a name="create-new-device-type"></a>Creating a new device type</h4>
+
+<p>In the <strong>Device database</strong> window, click the <strong>New</strong>. The following window will open:</p>
+
+<p><img src="/guides/images/users-guide/actility/deviceDatabase-createNew.png" alt="Create new device type" style="max-width: 100%"></p>
+
+<p>Select &ldquo;LoRa&rdquo; as the device type and provide a name for it.</p>
+
+<p>In the upcoming window, you determine the message type. LoRa devices can send messages of different types with different encodings per type.</p>
+
+<p>Select the way the message type is encoded in the <strong>Source</strong> dropdown box:</p>
+
+<ul>
+<li><strong>FPort</strong>: if the message type can be determined by looking at the FPort parameter of a message<br /></li>
+<li><strong>Payload</strong>: if the message type can be determined by looking at the subset of the message payload itself<br /></li>
+</ul>
+
+<p>In the following example payload structure, the first byte indicates the message type source (as highlighted).</p>
+
+<p><img src="/guides/images/users-guide/actility/payload-example1.png" alt="Example payload: message type source" style="max-width: 100%"></p>
+
+<p>In the user interface you can enter this type of message type source information as follows: In the <strong>Start bit</strong> field, indicate where the message type information starts in the payload and in the <strong>Number of bits</strong> field, indicate how long this information is, for example start bit = &ldquo;0&rdquo; and number of bits = &ldquo;8&rdquo;.</p>
+
+<p><img src="/guides/images/users-guide/actility/messagetype-payload.png" alt="Message type payload" style="max-width: 100%"></p>
+
+<p>Click <strong>Add</strong> to create the value configuration.</p>
+
+<p><img src="/guides/images/users-guide/actility/deviceDatabase1a.png" alt="Device type: new" style="max-width: 100%"></p>
+
+<p>In the upcoming window, configure the relevant values as shown in this example.</p>
+
+<p><img src="/guides/images/users-guide/actility/deviceDatabase4.png" alt="Value configuration: new" style="max-width: 60%"></p>
+
+<p>The value configuration maps the value in the payload of a message type to the Cumulocity data.</p>
+
+<p>Configure the <strong>Message ID</strong> according to your device message specification and map it to the Cumulocity data. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device type main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).</p>
+
+<p>In this example payload structure the message ID is &ldquo;1&rdquo;.</p>
+
+<p><img src="/guides/images/users-guide/actility/payload-example2.png" alt="Example payload: message type source" style="max-width: 100%"></p>
+
+<p><img src="/guides/images/users-guide/actility/deviceDatabase4a.png" alt="Value configuration: message type" style="max-width: 60%"></p>
+
+<p>Fill in the general fields for your new value in order to categorize it in the <strong>Values</strong> list. The associated name for this value will be displayed under the <strong>Display category</strong> given.</p>
+
+<p>Under <strong>Value selection</strong>, define from where the value should be extracted. In order to do so, indicate where the value information starts in the <strong>Start bit</strong> field and how long this information is in the <strong>Number of bits</strong> field.</p>
+
+<p>In this example the &ldquo;Channel 1 Type&rdquo; information starts in byte 2 (i.e. start bit = &ldquo;16&rdquo;) and is 1 byte long (i.e. number of bits = &ldquo;8&rdquo;).</p>
+
+<p><img src="/guides/images/users-guide/actility/payload-example3.png" alt="Example payload: value selection" style="max-width: 100%"></p>
+
+<p><img src="/guides/images/users-guide/actility/deviceDatabase4b.png" alt="Value selection" style="max-width: 60%"></p>
+
+<p>The hexadecimal value is converted to a decimal number and afterwards a &ldquo;value normalisation&rdquo; is applied.</p>
+
+<p>Under <strong>Value normalisation</strong> define how the raw value should be transformed before being stored in the platform and enter the appropriate values for:</p>
+
+<ul>
+<li><strong>Multiplier</strong>: This value is multiplied with the value extracted from the <strong>Value selection</strong>. It can be decimal, negative and positive. By default it is set to 1.</li>
+<li><strong>Offset</strong>: This value defines the offset that is added or subtracted. It can be decimal, negative and positive. By default it is set to 0.</li>
+<li><strong>Unit</strong> (optional): A unit can be defined which is saved together with the value (e.g. temperature unit &ldquo;C&rdquo; for degree Celsius).</li>
+</ul>
+
+<p>For detailed information on how to decode the payload, refer to the documentation of the device.</p>
+
+<blockquote>
+<p><strong>Info</strong>: &ldquo;Little endian&rdquo; support to decode the payload has been added.</p>
+</blockquote>
+
+<p>Select the options, if required: <strong>Signed</strong> if the value is a signed number, or <strong>Packed decimal</strong> if the value is BCD encoded.</p>
+
+<p>In the functionalities, define how this device type should behave:</p>
+
+<ul>
+<li><strong>Send measurement</strong>: Creates a measurement with the decoded value</li>
+<li><strong>Raise alarm</strong>: Creates an alarm if the value is not equal to zero</li>
+<li><strong>Send event</strong>: Creates an event with the decoded value</li>
+<li><strong>Update managed object</strong>: Updates a fragment in a managed object with the decoded value</li>
+</ul>
+
+<p>You can also have a nested structure with several values within a measurement, event or managed object fragment. In case of a measurement all the properties of the same type will be merged to create a nested structure. In case of an event or a managed object all the properties with the same fragment are merged to create a nested structure. Also refer to the <a href="#nested-structure-example">example</a> of a nested structure for a &ldquo;Position&rdquo; device type below.</p>
+
+<p>Click <strong>OK</strong> to add the values to your device type.</p>
+
+<p><img src="/guides/images/users-guide/actility/deviceDatabase1.png" alt="Value configurations of created device type" /></p>
+
+<p>After clicking <strong>Save</strong>, your device type is created with the values you defined.</p>
+
+<p><strong>Example with single property</strong></p>
+
+<p>The following image shows an example for a message which sends a measurement when the battery level changes.</p>
+
+<p><img src="/guides/images/users-guide/actility/deviceDatabase2.png" alt="Value configuration in detail: measurement" style="max-width: 50%"></p>
+
+<p><strong><a name="nested-structure-example"></a>Example with nested structure</strong></p>
+
+<p>The following image shows an example of a nested structure for a device type reporting the current position of a GPS device. The device type is named &ldquo;Position&rdquo; and contains values for longitude and latitude.</p>
+
+<p>The message ID should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter &ldquo;c8y_Position&rdquo; in the <strong>Managed object fragment</strong> field and create a new value for each: longitude and latitude.</p>
+
+<p><img src="/guides/images/users-guide/actility/deviceDatabase5-lon.png" alt="Value creation: Longitude-nested" style="max-width: 60%"></p>
+
+<p><img src="/guides/images/users-guide/actility/deviceDatabase5-lat.png" alt="Value creation: Latitude-nested" style="max-width: 60%"></p>
+
+<p>This will be the result:</p>
+
+<p><img src="/guides/images/users-guide/actility/deviceDatabase5.png" alt="Value configuration in detail: nested structure" /></p>
+
+<h3 id="a-name-register-device-a-registering-lora-devices"><a name="register-device"></a>Registering LoRa devices</h3>
+
+<p>To register a LoRa device, navigate to the Device Management application and click <strong>Registration</strong> in the <strong>Devices</strong> menu in the navigator. Click <strong>Register device</strong>.</p>
+
+<p>In the upcoming window, click <strong>Custom device registration</strong> and select <strong>LoRa</strong>:</p>
+
+<p><img src="/guides/images/users-guide/actility/deviceRegistration1.png" alt="Register devices" /></p>
+
+<p>Cumulocity fully supports the LoRa device provisioning with Over-the-Air Activation (OTAA) which is the preferred and most secure way to connect with the LoRa network.
+If Activation by Personalization (ABP) is required to be used, refer to the <a href="#device-registration-with-abp-activation">LoRa device registration with ABP</a> section.</p>
+
+<p>In the next window fill in the required information:</p>
+
+<ul>
+<li><strong>Device profile</strong>: Select the appropriate device profile from the dropdown list.</li>
+<li><strong>Device type</strong>: Select the appropriate device type from the dropdown list.</li>
+<li><strong>Device EUI</strong>: This is the unique identifier for the device. It is a 16 character (8 byte) long hexadecimal number. You can find it on the device itself.</li>
+<li><strong>Application key</strong>: This is an AES-128 application key specific for the device that is assigned to the device by the application owner and is responsible to encrypt. The application key is a 32 character (16 byte) long hexadecimal number.
+JOIN communication. You can find this key on the device itself.</li>
+<li><strong>Connectivity plan</strong>: Select the appropriate connectivity plan from the dropdown list.</li>
+</ul>
+
+<p><img src="/guides/images/users-guide/actility/deviceRegistration3.png" alt="Register devices" /></p>
+
+<p>Click <strong>Next</strong> to submit the device registration request and create the device.</p>
+
+<p>You can verify that the device is really connected by checking that events are actually coming in. You can do so by clicking on a device and opening the <strong>Events</strong> tab. All events related to this device are listed here.</p>
+
+<p>The provision status is shown under <strong>Device data</strong> in the <strong>Info</strong> tab of the device.</p>
+
+<p><img src="/guides/images/users-guide/actility/lora-device-data.png" alt="Device data" style="max-width: 100%"></p>
+
+<p>For more information on viewing and managing your connected devices, also refer to <a href="/guides/users-guide/device-management">Device Management</a>.</p>
+
+<h4 id="a-name-device-registration-process-a-lora-device-registration-process"><a name="device-registration-process"></a>LoRa device registration process</h4>
+
+<p><img src="/guides/images/users-guide/actility/lora_device_registration_process.png" style="max-width: 60%"></p>
+
+<p>A device is created based on the above workflow.</p>
+
+<p>First it is checked, if the device already exists. If no device exists with the same device EUI in the ThingPark account, the device is first provisioned on the ThingPark platform and then created on the Cumulocity platform with a link to the device in the ThingPark platform. If the device exists in the ThingPark account, a validation will be applied to compare these devices based on application EUI (for OTAA activation) and device profile. If the validation is successful, the device is created only in Cumulocity with a link to the device in the ThingPark platform. If the validation fails, a failure message will be shown (see <a href="#lora-device-registration-troubleshooting">troubleshooting section for device registration</a>) and the device is not created in Cumulocity.</p>
+
+<h4 id="a-name-device-registration-with-abp-activation-a-lora-device-registration-with-activation-by-personalization-abp"><a name="device-registration-with-abp-activation"></a>LoRa device registration with Activation by Personalization (ABP)</h4>
+
+<p>Activating the device by personalization is not recommended and not fully supported in Cumulocity LoRa device registration.</p>
+
+<p>However, if you would like to create a device with this activation type in Cumulocity and use the LoRa features - such as sending operations to a device, deprovisioning a device and setting LoRa device type with custom device protocol configuration - you must first provision the device in the ThingPark platform. Moreover you have to create &ldquo;AS Routing Profile&rdquo; for Cumulocity using destination &ldquo;<a href="http://actility-server.cumulocity.com&quot;">http://actility-server.cumulocity.com&quot;</a> as a &ldquo;Third Party AS (HTTP)&rdquo; and assign it to your devices manually. Afterwards, you can register this device using LoRa device registration. In this case, the <strong>Application key</strong> field in the LoRa device registration is invalid.</p>
+
+<h4 id="a-name-legacy-lora-devices-a-limitations-for-lora-devices-created-with-general-device-registration"><a name="legacy-LoRa-devices"></a>Limitations for LoRa devices created with general device registration</h4>
+
+<p>The general device registration for LoRa devices is no longer supported.</p>
+
+<p>Existing LoRa devices that have been created in Cumulocity with the general device registration process have limitations. For those devices, it is not possible to send operations to the device, deprovision the device and set the LoRa device type with custom device protocol configuration.</p>
+
+<p>It is recommended to delete and re-register these devices using LoRa device registration to fully use the LoRa feature.</p>
+
+<h3 id="a-name-deprovision-device-a-deprovisioning-lora-devices"><a name="deprovision-device"></a>Deprovisioning LoRa devices</h3>
+
+<p>You can deprovision a LoRa device in the ThingPark platform. This means that the device will no longer be connected to the network. Its history data will still be available in Cumulocity, but the device will be deleted in ThingPark.</p>
+
+<p>To deprovision a device, navigate to the respective device in the Device Management application under <strong>All devices</strong>. Click <strong>More</strong> in the top right and select <strong>Deprovision device</strong>.</p>
+
+<p><img src="/guides/images/users-guide/actility/deprovisionDevice.png" alt="Device deprovisioning" style="max-width: 100%"></p>
+
+<p>After confirming the deprovisioning, the device will be deprovisioned in ThingPark.</p>
+
+<p>To provision the device again, the device should be deleted and re-registered using LoRa device registration.</p>
+
+<h3 id="a-name-configurable-port-a-sending-operations"><a name="configurable-port"></a>Sending operations</h3>
+
+<p>If a LoRa device supports receiving hexadecimal commands, you can send them using shell operations. Notice that these commands are not serial monitor commands.
+In order to send an operation, navigate to the device you want to send an operation to in the Device Management application under <strong>All devices</strong>. Switch to the <strong>Shell</strong> tab.</p>
+
+<p>In the following screenshot you can find some examples of a device type&rsquo;s predefined commands and their format.</p>
+
+<p><img src="/guides/images/users-guide/actility/predefinedcommands.png" alt="Predefined commands" style="max-width: 100%"></p>
+
+<p>Enter the shell command or view/edit the predefined command in the <strong>&gt;_Command</strong> field.</p>
+
+<p>If you enter the command without defining a port, it will be sent to the default target port (i.e. 1) of the device. If you enter the command and define a port (format &ldquo;command:port&rdquo;), it will be sent to the specified target port instead of the default port.</p>
+
+<p><img src="/guides/images/users-guide/actility/portConfiguration.png" alt="Port configuration" style="max-width: 100%"></p>
+
+<p>Click <strong>Execute</strong>. The operation will be sent to the device. The timing depends on Actility ThingPark.</p>
+
+<p>The status of the operation is set to SUCCESSFUL when the operation has successfully been sent to the ThingPark platform. The status of the operation is set to FAILED when a problem occurred with the validation of the command or after the operation has been sent to the Thingpark platform.</p>
+
+<h3 id="a-name-thingpark-monitoring-a-thingpark-api-availability-monitoring"><a name="thingpark-monitoring"></a>ThingPark API availability monitoring</h3>
+
+<p>The ThingPark API is monitored and if it is not reachable, an alarm is created to notify all subscribed tenants using this feature. The alarm is cleared right after the ThingPark API is reachable again.</p>
+
+<p><img src="/guides/images/users-guide/actility/thingpark-api-monitor-alarm.png" alt="ThingPark API monitoring alarm" style="max-width: 100%"></p>
+
+<h3 id="a-name-lora-troubleshooting-a-troubleshooting"><a name="lora-troubleshooting"></a> Troubleshooting</h3>
+
+<h4 id="a-name-lora-connectivity-troubleshooting-a-connectivity"><a name="lora-connectivity-troubleshooting"></a> Connectivity</h4>
+
+<h5 id="authorization-to-the-provider-s-platform-failed">Authorization to the provider´s platform failed</h5>
+
+<p>This warning message shows up if a provided profile ID, username or password is invalid.</p>
+
+<p><img src="/guides/images/users-guide/actility/lora-connectivity-invalid-credentials.png" alt="Account credentials" style="max-width: 100%"></p>
+
+<p>To resolve this, provide correct credentials and try again.</p>
+
+<h4 id="a-name-lora-device-registration-troubleshooting-a-device-registration"><a name="lora-device-registration-troubleshooting"></a> Device registration</h4>
+
+<h5 id="access-to-device-denied">Access to device denied</h5>
+
+<p>This warning message shows up when there already exists a provisioned device in ThingPark with the same device EUI used for device registration and the validation comparing those devices based on application EUI (for OTAA activation) and device profile has failed.</p>
+
+<p><img src="/guides/images/users-guide/actility/lora-device-registration-forbidden-device.png" alt="Device registration failure for comparison validation" style="max-width: 100%"></p>
+
+<p>To resolve this, provide the correct application EUI from <a href="#configure-credentials">Connectivity</a> application and device profile and try again.</p>
+
+<h5 id="no-lora-provider-settings-found">No LoRa provider settings found</h5>
+
+<p>This warning message shows up when there are no credentials set up for the ThingPark account.</p>
+
+<p><img src="/guides/images/users-guide/actility/lora-device-registration-no-credentials.png" alt="Device registration failure without credentials" style="max-width: 100%"></p>
+
+<p>To resolve this, refer to <a href="#configure-credentials">Configure ThingPark credentials</a>.</p>
+
+<h5 id="getting-device-profiles-from-provider-failed">Getting device profiles from provider failed</h5>
+
+<p>This warning message shows up when the tenant&rsquo;s access token to Thingpark becomes invalid.
+Invalidation of the token might happen when the same ThingPark credentials are used for another tenant.</p>
+
+<p><img src="/guides/images/users-guide/actility/lora-device-registration-invalidated-token.png" alt="Device registration failure with invalidated token" style="max-width: 100%"></p>
+
+<p>This issue can be solved by reconfiguring the ThingPark credentials to renew the access token. Refer to <a href="#configure-credentials">configure ThingPark credentials</a> for reconfiguration of the credentials.</p>
+
+<h5 id="no-device-types-configured">No device types configured</h5>
+
+<p>This warning message shows up when no LoRa device type exists to be used for device registration.</p>
+
+<p><img src="/guides/images/users-guide/actility/lora-device-registration-no-device-type.png" alt="No device type given for LoRa" style="max-width: 100%"></p>
+
+<p>To resolve this, configure at least one device type using <a href="#create-device-types">Device database</a>.</p>
+
+<h5 id="no-connectivity-plans-with-free-slots-available">No connectivity plans with free slots available</h5>
+
+<p>This warning message shows up when the connectivity plan in ThingPark has reached the limit for the device count.</p>
+
+<p><img src="/guides/images/users-guide/actility/lora-device-registration-no-free-slots.png" alt="No free slots by device registration" style="max-width: 100%"></p>
+
+<p>To resolve this, either contact ThingPark on the device quota limits for your connectivity plans or remove unused devices from ThingPark and retry registering the device in Cumulocity.</p>
+
+  </article>
+  
+  <article id="lwm2m" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#lwm2m">
+        <span class="fa fa-link"></span>
+      </button>
+      LightweightM2M</h2>
+    
+
+<p>Lightweight M2M (LWM2M) is a traffic and resource-optimized protocol to remotely manage IoT devices. The protocol is standardized by the Open Mobile Alliance. For more information, see <a href="http://openmobilealliance.org/iot/lightweight-m2m-lwm2m">http://openmobilealliance.org/iot/lightweight-m2m-lwm2m</a>.</p>
+
+<p>You can connect any device supporting LWM2M to Cumulocity without programming. Instead, you configure how LWM2M devices are mapped to Cumulocity using device protocols.</p>
+
+<p><img src="/guides/images/users-guide/LWM2M/deviceprotocols.png" alt="Device protocols" /></p>
+
+<h3 id="a-name-register-a-registering-lwm2m-devices"><a name="register"></a>Registering LWM2M devices</h3>
+
+<p>To connect LWM2M devices, you need to upload a CSV file with registration data. This data is required to enable LWM2M communication. The CSV holds all information for factory bootstrap and client-initiated bootstrap. In the factory bootstrap mode, the LWM2M client has been configured with the necessary bootstrap information prior to the deployment of the device. The client initiated bootstrap mode requires a LWM2M bootstrap-server account pre-loaded in the LWM2M client. Below, you can see two CSV examples:</p>
+
+<p><img src="/guides/images/users-guide/LWM2M/csv1.png" alt="CSV example 1" /></p>
+
+<p>In the first CSV example you can see the following fields:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">ID</td>
+<td align="left">Unique ID of the device. For example, the ID could be an IMEI, serial number, etc.</td>
+</tr>
+
+<tr>
+<td align="left">IDTYPE</td>
+<td align="left">The type of the device.</td>
+</tr>
+
+<tr>
+<td align="left">CREDENTIALS</td>
+<td align="left">The content of this field is not used by LWM2M.</td>
+</tr>
+
+<tr>
+<td align="left">NAME</td>
+<td align="left">The name of the device. In this case the name of the device is the same as the device ID.</td>
+</tr>
+
+<tr>
+<td align="left">TYPE</td>
+<td align="left">This field needs to have the value &ldquo;c8y_lwm2m”.</td>
+</tr>
+
+<tr>
+<td align="left">SHELL</td>
+<td align="left">To enable “Shell”, the value of this field must be “1”. If you want to disable “Shell” the value must be “0”. For more info about the shell commands, see <a href="#shell_commands">Shell commands</a>.</td>
+</tr>
+
+<tr>
+<td align="left">com_cumulocity&#95;model&#95;Agent</td>
+<td align="left">This field needs to have the value &ldquo;1&rdquo;.</td>
+</tr>
+
+<tr>
+<td align="left">endpoint id</td>
+<td align="left">Indicates the LWM2M client’s “Endpoint ID” in order to allow the LwM2M bootstrap to provision the bootstrap information for the LWM2M client.</td>
+</tr>
+
+<tr>
+<td align="left">lwm2m server url</td>
+<td align="left">The URL the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the Cumulocity service the hostname of the LWM2M server is &ldquo;lwm2m.cumulocity.com&rdquo;. The bootstrap server port is &ldquo;5683&rdquo; and the LWM2M port is &ldquo;5783&rdquo;. Note, that these values can be different for other services.</td>
+</tr>
+
+<tr>
+<td align="left">securityMode</td>
+<td align="left">In this example the value of the security mode is “NO&#95;SEC” which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. Currently Cumulocity supports only “NO_SEC” and “PSK”. With “PSK”, the client and server have a common secret symmetric cryptography. In the next example you will see how the CSV file should look when the security mode value is “PSK”.</td>
+</tr>
+</tbody>
+</table>
+
+<p><img src="/guides/images/users-guide/LWM2M/example_2_1.png" alt="CSV example 2.1" />
+<img src="/guides/images/users-guide/LWM2M/example_2_2.png" alt="CSV example 2.2" /></p>
+
+<p>In this CSV example, the security mode value is “PSK”, hence additional fields are required. The table below reflects the full set of possible fields.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Mandatory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">lwm2m psk_key</td>
+<td align="left">String</td>
+<td align="left">For security mode PSK: The key used by the device for LWM2M in PSK mode. Will be delivered to the device during bootstrap.</td>
+<td align="left">Mandatory for PSK. Should not be set for NO_SEC</td>
+</tr>
+
+<tr>
+<td align="left">lwm2m psk_id</td>
+<td align="left">String</td>
+<td align="left">For security mode PSK: The ID used by the device for LWM2M in PSK mode. Will be delivered to the device during bootstrap. Mostly the same as the endpoint name.</td>
+<td align="left">Mandatory for PSK. Should not be set for NO_SEC</td>
+</tr>
+
+<tr>
+<td align="left">endpoint id</td>
+<td align="left">String</td>
+<td align="left">The name of the LWM2M endpoint.</td>
+<td align="left">Yes</td>
+</tr>
+
+<tr>
+<td align="left">bootstrap psk_id</td>
+<td align="left">String</td>
+<td align="left">For security mode PSK: The ID used by the device for bootstrapping in PSK mode.</td>
+<td align="left">Yes for PSK</td>
+</tr>
+
+<tr>
+<td align="left">bootstrap psk_key</td>
+<td align="left">String</td>
+<td align="left">For security mode PSK: The key used by the device for bootstrapping in PSK mode.</td>
+<td align="left">Yes for PSK</td>
+</tr>
+
+<tr>
+<td align="left">lwm2m server url</td>
+<td align="left">String</td>
+<td align="left">The URL of the LWM2M server to be sent to the devices during bootstrap. If you are using the Cumulocity service the hostname of the LWM2M server is &ldquo;lwm2m.cumulocity.com&rdquo;. The bootstrap server port is &ldquo;5683&rdquo; and the LWM2M port is &ldquo;5783&rdquo;. Note, that these values can be different for other services.</td>
+<td align="left">Yes, for LWM2M bootstrap</td>
+</tr>
+
+<tr>
+<td align="left">securityMode</td>
+<td align="left">String, “NO_SEC” or “PSK</td>
+<td align="left">The LWM2M security mode to be used. Possible values are PSK and NO_SEC.</td>
+<td align="left">Yes</td>
+</tr>
+
+<tr>
+<td align="left">serverPublicKey</td>
+<td align="left">String</td>
+<td align="left">The public key of the server.</td>
+<td align="left">Optional</td>
+</tr>
+
+<tr>
+<td align="left">generateBootstrapServerConfig</td>
+<td align="left">Boolean</td>
+<td align="left">Toggles if Cumulocity generates a server config for the LWM2M bootstrap server and writes that back during bootstrap. Default is false.</td>
+<td align="left">Optional</td>
+</tr>
+
+<tr>
+<td align="left">securityInstanceOffset</td>
+<td align="left">Integer</td>
+<td align="left">The first instance to be used during bootstrap to which entries are written. &ldquo;0&rdquo; is default. If set e.g. to &ldquo;3&rdquo;, the first instance will be three.</td>
+<td align="left">Optional</td>
+</tr>
+
+<tr>
+<td align="left">bootstrapShortServerId</td>
+<td align="left">Integer</td>
+<td align="left">The short server ID to be used for the bootstrap server. Default is &ldquo;0&rdquo;.</td>
+<td align="left">Optional</td>
+</tr>
+
+<tr>
+<td align="left">lwm2mShortServerId</td>
+<td align="left">Integer</td>
+<td align="left">The short server ID to be used for LWM2M server. Default is &ldquo;1&rdquo;.</td>
+<td align="left">Optional</td>
+</tr>
+
+<tr>
+<td align="left">registrationLifetime</td>
+<td align="left">Integer</td>
+<td align="left">The registration lifetime that is sent to the device during bootstrap. Overrides global agent configuration.</td>
+<td align="left">Optional</td>
+</tr>
+
+<tr>
+<td align="left">defaultMinimumPeriod</td>
+<td align="left">Integer</td>
+<td align="left">The default minimum period to configure during bootstrap. See LWM2M Spec for explanation.</td>
+<td align="left">Optional</td>
+</tr>
+
+<tr>
+<td align="left">defaultMaximumPeriod</td>
+<td align="left">Integer</td>
+<td align="left">The default max period  to configure during bootstrap. See LWM2M Spec for explanation.</td>
+<td align="left">Optional</td>
+</tr>
+
+<tr>
+<td align="left">bindingMode</td>
+<td align="left">String</td>
+<td align="left">The LWM2M binding mode to be reported to the device. Supported are “UQ” (default, queuing) and “U” (unqueued). Note, that Cumulocity will always queue operations.</td>
+<td align="left">Optional</td>
+</tr>
+
+<tr>
+<td align="left">notificationIfDisabled (true/false)</td>
+<td align="left">Boolean</td>
+<td align="left">See LWM2M spec. Default: Not configured.</td>
+<td align="left">Optional, defaults to Leshan default behavior</td>
+</tr>
+
+<tr>
+<td align="left">disableTimeout (true/false)</td>
+<td align="left">Boolean</td>
+<td align="left">See LWM2M spec. Default: Not configured.</td>
+<td align="left">Optional, defaults to Leshan default behavior</td>
+</tr>
+
+<tr>
+<td align="left">external-c8y_BootstrapPskId</td>
+<td align="left">String</td>
+<td align="left">The ID being used to find a device during bootstrap.</td>
+<td align="left">Optional</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p><strong>Info</strong>: Firmware updates are also supported. For more information, see <a href="/guides/users-guide/device-management/#software-repo">Device Management &gt; Managing device data</a> in the User guide.</p>
+</blockquote>
+
+<p>After creation, the bootstrap parameters can be viewed and changed in the <strong>LWM2M bootstrap parameters</strong> tab in the <strong>Device details</strong> page, see <a href="#lwm2m-bootstrap">LWM2M bootstrap parameters</a>.</p>
+
+<h3 id="a-name-device-protocols-a-lwm2m-device-protocols"><a name="device_protocols"></a>LWM2M device protocols</h3>
+
+<p>To process data from LWM2M devices, Cumulocity uses device protocols.
+Device protocols are accessible through the <strong>Devices Types</strong> menu in the Device Management application. For details on the general usage, see <a href="/guides/users-guide/device-management/#managing-device-types">Device Management &gt; Managing device types</a>.</p>
+
+<h4 id="a-name-creating-device-protocols-a-creating-lwm2m-device-protocols"><a name="creating_device_protocols"></a>Creating LWM2M device protocols</h4>
+
+<p>Once you have registered a device with the proper CSV file, you can manage LWM2M device protocols. Each piece of information available by the LWM2M client is a resource. The resources are further logically organized into objects. The LWM2M client can have any number of resources, each of which belongs to an object. In the device protocols you can observe your resources. Furthermore, you can choose whether to create measurements, events or alarms out of those resources.</p>
+
+<p>To add a new LWM2M device protocol follow these steps:</p>
+
+<ol>
+<li>In the Device Management application, move to the <strong>Device protocol</strong> page.</li>
+<li>Click <strong>Add device protocol</strong> in the top menu bar.</li>
+
+<li><p>In the upcoming dialog select <strong>LWM2M</strong> as device protocol type. <br><br>
+<img src="/guides/images/users-guide/LWM2M/protocol_type.png" alt="Protocol type" style="max-width: 50%"></p></li>
+
+<li><p>Next, upload an appropriate DDF or XML file. DDF or XML files describe the data provided by your device. They are typically provided by the manufacturer or by standards bodies such as IPSO. There are also 3 &ldquo;special&rdquo; device protocols (DDF files) for standard OMA objects: 6 (location tracking), 5 (firmware update) and 3 (device information). If these files are not uploaded, then neither location tracking nor firmware updates will work. By default, the LWM2M agent adds mappings to these objects and knows how to &ldquo;handle&rdquo; their information without any additional configuration. The XML schema used by LWM2M can be found here. <br>
+If the DDF files for the default mappings are uploaded in the management tenant, all subscribed user tenants will inherit this behavior. <br><br>
+<img src="/guides/images/users-guide/LWM2M/uploadDDF.png" alt="Upload DDF" style="max-width: 75%"></p></li>
+
+<li><p>In the next dialog, you can see the name and description of the protocol. Click <strong>Continue</strong> to create the new device protocol. <br><br>
+<img src="/guides/images/users-guide/LWM2M/name_descr_protocol.png" alt="Protocol name" style="max-width: 75%"></p></li>
+</ol>
+
+<p>The device protocol will open in a new page.</p>
+
+<p><img src="/guides/images/users-guide/LWM2M/example_protocol1.png" alt="Example protocol" /></p>
+
+<p>In the device protocol page, you will see the description at the top left and the ID, the creation date and date of the last update at the top right.</p>
+
+<p>Below, a list of resources configured for the device will be listed (which is empty when creating a new protocol), showing the ID, name and potentially configured functionalities for each resource.</p>
+
+<blockquote>
+<p><strong>Info</strong>: LWM2M protocol resources cannot be edited.</p>
+</blockquote>
+
+<p>Example: In the following screenshot you can see an example device protocol. This object should be used with a temperature sensor to report a temperature measurement. It also provides resources for minimum/maximum measured values and the minimum/maximum range that can be measured by the temperature sensor. An example measurement unit is “degrees Celsius”.</p>
+
+<p><img src="/guides/images/users-guide/LWM2M/example_protocol2.png" alt="Example protocol2" /></p>
+
+<h4 id="a-name-resources-a-adding-additional-functionalities-to-a-resource"><a name="resources"></a>Adding additional functionalities to a resource</h4>
+
+<p>The functionalities that you may enable are the following:</p>
+
+<p><img src="/guides/images/users-guide/LWM2M/functionalities.png" alt="Resource functionalities" /></p>
+
+<p><strong>Send measurement</strong></p>
+
+<p>Turn on <strong>Send measurement</strong> to specify a measurement.</p>
+
+<ul>
+<li>Enter the type of the measurement. For example, “c8y_AccelerationMeasurement”.</li>
+<li>Series are any fragments in measurements that contain a “value” property. For example, in the series field you can enter: “c8y_AccelerationMeasurement.acceleration”</li>
+<li>The “Unit” field specifies the unit of the given measurement. For example, “m/s” for velocity.</li>
+</ul>
+
+<p><strong>Create alarm</strong></p>
+
+<p>Turn on <strong>Create alarm</strong> if you want to create an alarm out of the resource. Specify the following parameters (all mandatory):</p>
+
+<ul>
+<li>Severity - one of CRITICAL, MAJOR, MINOR, WARNING</li>
+<li>Type</li>
+<li>Status - one of ACTIVE, ACKNOWLEDGED, CLEARED</li>
+<li>Text</li>
+</ul>
+
+<p><strong>Send Event</strong></p>
+
+<p>Turn on <strong>Send event</strong> to send an event each time you receive a resource value. Specify the following parameters:</p>
+
+<ul>
+<li>Enter the type of the event. For example, &ldquo;com_cumulocity_model_DoorSensorEvent&rdquo;.</li>
+<li>Enter the text which will be sent. For example, &ldquo;Door sensor was triggered&rdquo;.</li>
+</ul>
+
+<p><strong>Custom Actions</strong></p>
+
+<p>Turn on <strong>Custom Actions</strong> to map LWM2M data into Cumulocity using custom data processing actions. For specialized integration use cases, it is required to perform customized data processing on LWM2M data. One example are LWM2M resources of the OPAQUE data type that contain proprietary, binary data, CBOR, XML or alike.</p>
+
+<p><img src="/guides/images/users-guide/LWM2M/customactions.png" alt="Custom actions" /></p>
+
+<p>Cumulocity LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary Cumulocity microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We are providing an according example how to write such a decoder microservice in our public <a href="https://bitbucket.org/m2m/cumulocity-examples">Bitbucket repository</a>.</p>
+
+<p><strong>Auto observe</strong></p>
+
+<p>If <strong>Auto-Observe</strong> is turned on for a resource, the LWM2M server observes a specific resource for changes.</p>
+
+<blockquote>
+<p><strong>Info</strong>: At least one functionality must be set to enable &ldquo;Auto observe&rdquo;.</p>
+</blockquote>
+
+<p><img src="/guides/images/users-guide/LWM2M/resources.png" alt="Resource" /></p>
+
+<h3 id="lwm2m-device-details">LWM2M device details</h3>
+
+<blockquote>
+<p><strong>Info</strong>: In the Device management application, you can view all details of a device. The following details are specific to LWM2M devices. For information on general details refer to <a href="/guides/users-guide/device-management#device-details">Device details</a> in the Device management section.</p>
+</blockquote>
+
+<h4 id="a-name-objects-a-objects"><a name="objects"></a> Objects</h4>
+
+<p>In the <strong>Objects</strong> tab of a LWM2M device, you can view all objects, resources and instances of the device. Additionally, you can create new operations, see all currently pending operations and view the history of all previous operations.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_objects-view.png" alt="Objects view" /></p>
+
+<p><strong>Info</strong>: In order to see resources in the <strong>Objects</strong> tab, the resources first have to be added in the <strong>Device Protocols</strong> page.</p>
+
+<p>The following operations may be available in each instance:</p>
+
+<ul>
+<li>Read Object: Reads all instances for the selected object and lists all available resources for each instance.
+<br><br>
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_read-object.png" alt="Read Objects" />
+<br><br></li>
+<li>Read Instance: Reads the current instance of the given object and lists all available resources.
+<br><br>
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_read-instance.png" alt="Read Instance" />
+<br><br></li>
+<li>Create Instance: Creates a new instance for the selected object.</li>
+<li>Delete Instance: Deletes the selected instance.</li>
+</ul>
+
+<p><strong>Info:</strong>  Some instances do not have all of the listed operations.</p>
+
+<p>Some object cards show additional operations which can be performed. These operations become available after reading the object/instance, for example, device <strong>Reboot</strong> or <strong>Reset error code</strong>. In order to perform these operations, click <strong>Execute</strong>.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_execute-operation.png" alt="Execute operation" /></p>
+
+<p>More information can be acquired for each resource by hovering over the tooltip icon.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_tooltip-hover.png" alt="Tooltip" /></p>
+
+<p>Additional information on recent operations can be viewed by clicking the operations button located on the right side of an instance card. The button is only visible if any operation has been performed. The number of unread operations can be seen on the top right of the button. In the example below there is only one.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_recent-operations.png" alt="Recent operations" />
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_recent-operations2.png" alt="Recent operations 2" /></p>
+
+<p>To view the history of all operations, simply click <strong>View history</strong>. Note, that you will be redirected to the <strong>Control</strong> tab.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_operations.png" alt="Control tab" /></p>
+
+<p><strong>Audit Configuration</strong></p>
+
+<p>In the <strong>Audit configuration</strong> page you can audit the current device by comparing it to a selected reference device. It is also possible to sync properties to the values of the referenced device.</p>
+
+<p>Click <strong>Audit configuration</strong> in the right of the top menu bar to navigate to the <strong>Audit configuration</strong> page.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_audit_config.png" alt="Audit configuration" /></p>
+
+<p>To sync properties, select the desired reference device from the dropdown list. Check the properties that you wish to sync and click <strong>Sync selected properties</strong>.</p>
+
+<blockquote>
+<p><strong>Info</strong>: The numbers in the green circles represent the number of properties in the instance which have the same value in both devices. Respectively, the numbers in the red circles represent the number of properties which have different values compared to the values of the referenced device. If an instance is expanded, you can select only specific properties which can be synced.</p>
+</blockquote>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_sync_properties.png" alt="Sync properties" /></p>
+
+<h4 id="a-name-lwm2m-bootstrap-a-lwm2m-bootstrap-parameters"><a name="lwm2m-bootstrap"></a> LWM2M bootstrap parameters</h4>
+
+<p>In the <strong>LWM2M bootstrap parameters</strong> tab, bootstrap parameters of the current device can be viewed and changed. To modify a parameter, enter the desired value in a field of your choice and click <strong>Save.</strong></p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_bootstrap_customization.png" alt="Bootstrap customization" /></p>
+
+<blockquote>
+<p><strong>Important:</strong> Currently only the &ldquo;NO_SEC&rdquo; and &ldquo;PSK&rdquo; security modes are supported.</p>
+</blockquote>
+
+<p>For further information on the fields in the <strong>LWM2M bootstrap parameters</strong> tab, see <a href="#register">Registering LWM2M devices</a>.</p>
+
+<h3 id="a-name-shell-commands-a-handling-lwm2m-shell-commands"><a name="shell_commands"></a> Handling LWM2M shell commands</h3>
+
+<p>In the <strong>Shell</strong> tab of a device, LWM2M shell commands can be performed. Each command has a different functionality. Find all available placeholders (e.g. “objectID”, “instanceID”) and commands with their respective descriptions below:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Placeholder</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">objectID</td>
+<td align="left">The ID of the object.</td>
+</tr>
+
+<tr>
+<td align="left">instanceID</td>
+<td align="left">The ID of the instance. Some objects can have multiple instances. For example, “3300” is a temperature sensor object. Each device can have up to 10 sensors. In this case the instance ID would be <sup>3300</sup>&frasl;<sub>1</sub>&hellip;10 depending on the sensor that you would like to focus.</td>
+</tr>
+
+<tr>
+<td align="left">resourceID</td>
+<td align="left">The ID of the desired resource. The resources describe the characteristics of each object. All instances of a given object have the same resources, but the value of the resources may be different.</td>
+</tr>
+
+<tr>
+<td align="left">Firmware version</td>
+<td align="left">The current version of the firmware.</td>
+</tr>
+
+<tr>
+<td align="left">Firmware url</td>
+<td align="left">The URL from which the new version of the firmware will be downloaded.</td>
+</tr>
+</tbody>
+</table>
+
+<p>In the next table you will see all available commands and a brief description of their functionality.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">read /<objectID>/<instanceID>/<resourceID></td>
+<td align="left">Reads a resource path</td>
+</tr>
+
+<tr>
+<td align="left">observe /<objectID>/<instanceID>/<resourceID></td>
+<td align="left">Enables the observe functionality</td>
+</tr>
+
+<tr>
+<td align="left">execute /<objectID>/<instanceID>/<resourceID></td>
+<td align="left">Executes a resource on the device</td>
+</tr>
+
+<tr>
+<td align="left">cancelobservation /<objectID>/<instanceID>/<resourceID></td>
+<td align="left">Cancels the observation functionality from the desired resource</td>
+</tr>
+
+<tr>
+<td align="left">delete /<objectID>/<instanceID>[/<resourceID>]</td>
+<td align="left">Deletes a given object/instance/resource</td>
+</tr>
+
+<tr>
+<td align="left">discover /<objectID>/<instanceID>/<resourceID></td>
+<td align="left">Shows all resources of the given object</td>
+</tr>
+
+<tr>
+<td align="left">create /<objectID> [JSON]</td>
+<td align="left">Creates a new object. The JSON argument is optional</td>
+</tr>
+
+<tr>
+<td align="left">writeattr /<objectID>/<instanceID>/<resourceID> {pmin=<sec>}{&amp;pmax=<sec>}{&amp;greater=<num>}{&amp;less=<num>}{&amp;step=<num>}{&amp;cancel}</td>
+<td align="left">Writes additional attributes to the object. Typically used for conditional observes</td>
+</tr>
+
+<tr>
+<td align="left">fwupdate /<Firmware name>/<firmware version>/<firmware_ur>/l</td>
+<td align="left">Updates the firmware of the agent</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="a-name-validation-rules-a-adding-validation-rules-to-resources"><a name="validation_rules"></a> Adding validation rules to resources</h3>
+
+<p>Validation rules are used to verify that the data a user enters in a resource meets the constraints you specify before the user can save the resource.</p>
+
+<p>Validation rules can only be added to resources which have “write” permissions. Resources which can have validation rules are marked by the following icon:</p>
+
+<p><img src="/guides/images/users-guide/LWM2M/validation_rule_icon.png" alt="Validation rule icon" /></p>
+
+<p>When hovering over the icon, you can see whether there are defined validation rules.</p>
+
+<p>Add a new validation rule by clicking on the desired resource and then click <strong>Add validation rule</strong>.</p>
+
+<p><img src="/guides/images/users-guide/LWM2M/add_validation_rule.png" alt="Add validation rule" /></p>
+
+<p>Validation rules can have the following types:</p>
+
+<ul>
+<li><strong>Date:</strong> Simply enter a date and choose your desired rule.</li>
+<li><strong>Number:</strong> Only values of “Integer” or “Float” type are allowed depending on the resource.</li>
+<li><strong>ObjectLink:</strong> Reference to another object using the format “/Object/Instance/Resource”.</li>
+<li><strong>Regex:</strong> Add a string which describes the validation pattern. For example, “.*dd” means that the string must end with “dd”.</li>
+<li><strong>String:</strong> Enter a string value which can be either “True” or “False&rdquo;.</li>
+</ul>
+
+<p>After selecting a type, the following rules can be chosen:</p>
+
+<ul>
+<li>Greater than</li>
+<li>Lower than</li>
+<li>Equals</li>
+<li>Equals not</li>
+<li>Greater or equals than</li>
+<li>Lower or equals than</li>
+</ul>
+
+<p><strong>Info:</strong> Not all rules are available to each type.</p>
+
+<p>To delete a rule, simply click on the delete icon:</p>
+
+<p><img src="/guides/images/users-guide/LWM2M/lwm2m-rule-remove.png" alt="Remove lwm2m rule" /></p>
+
+<p>Click <strong>Save</strong> to save your settings.</p>
+
+<h4 id="complex-rulesets">Complex rulesets</h4>
+
+<p>In order to enable more complex conditions,  multiple validation rules can be defined for a resource:</p>
+
+<ul>
+<li>Multiple rules can be defined in a validation rule group. A user input is only valid if each of the rules in the validation rule group is satisfied (logical AND).</li>
+<li>It is possible to declare multiple validation rule groups. If multiple validation rule groups are declared, user input is valid if any of the validation rule groups is satisfied (logical OR).</li>
+</ul>
+
+<p>The screenshot above provides an example for the use of validation rule groups: User input is valid if the given string does not match “test” (equals not). It is also valid if it ends with “asd” and it matches the contents of the LWM2M resource /3/0/15.</p>
+
+<p>Complex rulesets are based on Boolean Disjunctive Normal Form, which allows arbitrary complex rules to be defined.</p>
+
+  </article>
+  
+  <article id="sigfox" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#sigfox">
+        <span class="fa fa-link"></span>
+      </button>
+      Sigfox</h2>
+    
+
+<p>Cumulocity can interface with Sigfox devices through the Sigfox Cloud. You can:</p>
+
+<ul>
+<li>Provision Sigfox devices easily using the Cumulocity Device Management.</li>
+<li>Decode upstream payload packets using a web-based user interface.</li>
+<li>Debug and postprocess raw device data through Cumulocity events.</li>
+<li>Send downstream data to the device using Cumulocity operations.</li>
+<li>Make use of existing Cumulocity features with Sigfox devices, for example: connectivity monitoring, device management, data visualization with dashboards, real-time analytics and more.</li>
+</ul>
+
+<p>The following illustration grants you a quick overview of the Cumulocity Sigfox integration:</p>
+
+<p><img src="/guides/images/users-guide/sigfox/cumulocity-sigfox-integration.png" alt="Cumulocity Sigfox integration" /></p>
+
+<p>The following sections describe how to:</p>
+
+<ul>
+<li><a href="#connectivity">Manage the connectivity settings</a> in Cumulocity.</li>
+<li><a href="#create-device-types-sigfox">Create device types</a> with Cumulocity&rsquo;s device database.</li>
+<li><a href="#register-device-sigfox">Register devices</a> and visualize the Sigfox payload using Cumulocity.</li>
+<li><a href="#old-registration">Update devices</a> registered with the general device registration.</li>
+<li><a href="#operations">Send operations</a> to devices.</li>
+</ul>
+
+<p><strong>Info:</strong> To be able to use the Sigfox agent, your tenant needs to be subscribed to the following applications: sigfox-agent, feature-fieldbus4. In case of any issues, please contact support.</p>
+
+<h3 id="a-name-connectivity-a-managing-the-connectivity-settings"><a name="connectivity"></a>Managing the connectivity settings</h3>
+
+<p>Before you register a device, you need to configure Sigfox Cloud credentials in the “Connectivity” page in the Administration application. You have to set up these Sigfox Cloud credentials in Sigfox.</p>
+
+<p>Before you create API access to Cumulocity, you need to have an “Associated user” which is added to the Cumulocity group in Sigfox Cloud and has the following profiles:</p>
+
+<ul>
+<li>Customer [R]</li>
+<li>Device Manager [W]</li>
+</ul>
+
+<p><strong>Info:</strong> Without the following profiles, the required Sigfox API access can not be set up.</p>
+
+<p>Step 1 is only relevant, if you do not have an associated user yet. If you do, skip to Step 2.</p>
+
+<h4 id="step-1">Step 1</h4>
+
+<p>First enter into your Sigfox Cloud account and create a new user. Add the user to the “Cumulocity” group and select the “Customer [R]” and “Device Manager [W]” profiles.</p>
+
+<p><img src="/guides/images/users-guide/sigfox/newuser.png" alt="New user" /></p>
+
+<h4 id="step-2">Step 2</h4>
+
+<p>After creating an “Associated User” with the proper group and profiles navigate to the “Groups” page. In the “API Access” tab create a new entry and add the following profiles:</p>
+
+<ul>
+<li>Customer [R]</li>
+<li>Device Manager [R]</li>
+<li>Device Manager [W]</li>
+</ul>
+
+<p><img src="/guides/images/users-guide/sigfox/api-access.png" alt="API access page" /></p>
+
+<h4 id="step-3">Step 3</h4>
+
+<p>After the API access entry has been created, you can connect your Sigfox Cloud account to Cumulocity via the “Connectivity” page in the Administration application. Navigate to the “Connectivity” page and then go to the “Sigfox provider settings” tab.</p>
+
+<p>The following information has to be provided:</p>
+
+<ul>
+<li><strong>Login:</strong> The login token is located in the API access entry in the Sigfox Cloud.</li>
+<li><strong>Password:</strong> The password token is located in the API access entry in the Sigfox Cloud next to “Password”.</li>
+<li><strong>Parent Group ID:</strong> This ID is written in your URL when you are logged into your Sigfox account and you have selected the “Cumulocity” group. For example, “<a href="https://backend.sigfox.com/group/**9823ruj29j9d2j9828hd8**/info”">https://backend.sigfox.com/group/**9823ruj29j9d2j9828hd8**/info”</a>.</li>
+</ul>
+
+<blockquote>
+<p><strong>Info:</strong>The group name in the screenshot below is only an example. It is not necessary to be Cumulocity.</p>
+</blockquote>
+
+<p><img src="/guides/images/users-guide/sigfox/parentgroupid.png" alt="API access page" /></p>
+
+<p><img src="/guides/images/users-guide/sigfox/connectivity.png" alt="API access page" /></p>
+
+<p>Click <strong>Save credentials</strong> to save your settings. If everything is correct, a message &ldquo;Credentials successfully saved&rdquo; will be displayed.</p>
+
+<p>If you wish to overwrite your previous credentials, simply click <strong>Replace credentials</strong> and add your new credentials.</p>
+
+<h3 id="a-name-create-device-types-sigfox-a-creating-device-types"><a name="create-device-types-sigfox"></a>Creating device types</h3>
+
+<p>To process data from Sigfox devices, Cumulocity needs to understand the payload format of the devices.
+Mapping payload data to Cumulocity data can be done by creating a Sigfox device type.</p>
+
+<p>During the <a href="#register-device">device registration</a>, you can associate this device type and afterwards the received uplink callbacks for this device with a hexadecimal payload will be mapped to the ones you have configured in your device type.
+If a device type has been changed after being associated to a device, the reflection of the change can take up to 10 minutes because of the refresh mechanism of the Sigfox microservice.</p>
+
+<p><strong>Info:</strong> Device protocol mapping only supports decoding for fixed byte positions based on the message type.</p>
+
+<p>In order to create device types, go to the Device Management application and select &ldquo;Device database&rdquo; in the &ldquo;Device types&rdquo; menu in the navigator. You can either import an existing device type or create a new one.</p>
+
+<h4 id="a-name-import-device-type-a-importing-a-device-type"><a name="import-device-type"></a>Importing a device type</h4>
+
+<p>In the Device database window, click <strong>Import</strong>.</p>
+
+<p>Upload the device type from a file and click <strong>Import</strong> again.</p>
+
+<h4 id="a-name-create-new-device-type-a-creating-a-new-device-type"><a name="create-new-device-type"></a>Creating a new device type</h4>
+
+<p>In the device database window, click <strong>New</strong>. The following window will open:</p>
+
+<p><img src="/guides/images/users-guide/sigfox/sigfox-new-type.png" alt="Create new device type" style="max-width: 100%"></p>
+
+<p>Select &ldquo;Sigfox&rdquo; as the device type and provide a name for your device type.</p>
+
+<p>In the following window you determine the message type. Sigfox devices can send messages of different types with different encodings per type. Depending on the device, the type can be determined by looking either at the FPort parameter of a message (Source: FPort) or at the subset of the message payload itself (Source: Payload).</p>
+
+<p>Select the way the message type is encoded in the &ldquo;Source&rdquo; list:</p>
+
+<ul>
+<li><strong>Payload</strong>: if the message type can be determined by looking at the subset of the message payload itself<br /></li>
+</ul>
+
+<p>In the following sample payload structure, the first byte indicates the message type source (as highlighted).</p>
+
+<p><img src="/guides/images/users-guide/actility/payload-example1.png" alt="Example payload: message type source" style="max-width: 100%"></p>
+
+<p>In the user interface you can enter this type of message type source information as follows: In the &ldquo;Start bit&rdquo; field, indicate where the message type information starts in the payload and in the&rdquo;Number of bits&rdquo; field indicate how long this information is, for example start bit = &ldquo;0&rdquo; and number of bits = &ldquo;8&rdquo;.</p>
+
+<p><img src="/guides/images/users-guide/sigfox/payload.png" alt="Message type payload" style="max-width: 100%"></p>
+
+<p>Click <strong>Add</strong> to create the value configuration.</p>
+
+<p><img src="/guides/images/users-guide/sigfox/add-button.png" alt="Device type: new" style="max-width: 100%"></p>
+
+<p>A window similar to the following one will open. Configure the relevant values as shown in this example.</p>
+
+<p><img src="/guides/images/users-guide/actility/deviceDatabase4.png" alt="Value configuration: new" style="max-width: 60%"></p>
+
+<p>The value configuration maps the value in the payload of a message type to the Cumulocity data.</p>
+
+<p>Configure the &ldquo;Message ID&rdquo; according to your device message specification and map it to the Cumulocity data. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device type main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).</p>
+
+<p>In this sample payload structure the message ID is &ldquo;1&rdquo;.</p>
+
+<p><img src="/guides/images/users-guide/actility/payload-example2.png" alt="Example payload: message type source" style="max-width: 100%"></p>
+
+<p><img src="/guides/images/users-guide/actility/deviceDatabase4a.png" alt="Value configuration: message type" style="max-width: 60%"></p>
+
+<p>Fill in the general fields for your new value in order to categorize it in the &ldquo;Values&rdquo; list. The associated &ldquo;Name&rdquo; for this value will be displayed under the &ldquo;Display category&rdquo; given.</p>
+
+<p>Under &ldquo;Value selection&rdquo; define from where the value should be extracted. In the “&rdquo;Start bit&rdquo; field, indicate where the value information starts and in the &ldquo;Number of bits&rdquo; field, indicate the length of the information.</p>
+
+<p>In this example the &ldquo;Channel 1 Type&rdquo; information starts in byte 2 (i.e. start bit = &ldquo;16&rdquo;) and is 1 byte long (i.e. number of bits = &ldquo;8&rdquo;).</p>
+
+<p><img src="/guides/images/users-guide/actility/payload-example3.png" alt="Example payload: value selection" style="max-width: 100%"></p>
+
+<p><img src="/guides/images/users-guide/actility/deviceDatabase4b.png" alt="Value selection" style="max-width: 60%"></p>
+
+<p>The hexadecimal value is converted to a decimal number and afterwards a &ldquo;value normalization&rdquo; is applied.</p>
+
+<p>Under &ldquo;Value normalization&rdquo; define how the raw value should be transformed before being stored in the platform and enter the appropriate values for:</p>
+
+<ul>
+<li><strong>Multiplier</strong>: This value is multiplied with the value extracted from the &ldquo;Value selection&rdquo;. It can be decimal, negative or positive. By default it is set to 1.</li>
+<li><strong>Offset</strong>: This value defines the offset that is added or subtracted. It can be decimal, negative or positive. By default it is set to 0.</li>
+<li><strong>Unit</strong> (optional): A unit can be defined which is saved together with the value (e.g. temperature unit &ldquo;C&rdquo; for degree Celsius).</li>
+</ul>
+
+<p>For detailed information on how to decode the payload, refer to the documentation of the device.</p>
+
+<p>Select the options, if required: &ldquo;Signed&rdquo; (if the value is a signed number) or &ldquo;Packed decimal&rdquo; (if the value is BCD encoded).</p>
+
+<p>In the functionalities, define how this device type should behave:</p>
+
+<ul>
+<li><strong>Send measurement</strong>: creates a measurement with the decoded value</li>
+<li><strong>Raise alarm</strong>: creates an alarm if the value is not equal to zero</li>
+<li><strong>Send event</strong>: creates an event with the decoded value</li>
+<li><strong>Update managed object</strong>: updates a fragment in a managed object with the decoded value</li>
+</ul>
+
+<p>You can also have a nested structure with several values within a measurement, event or managed object fragment. In case of a measurement all the properties of the same type will be merged to create a nested structure. In case of an event or a managed object all the properties with the same fragment are merged to create a nested structure. (Also refer to the <a href="#nested-structure-example">example</a> of a nested structure for a &ldquo;Position&rdquo; device type below.)</p>
+
+<p>After clicking &ldquo;OK&rdquo;, the values are added to your device type.</p>
+
+<p><img src="/guides/images/users-guide/sigfox/measure-data.png" alt="Value configurations of created device type" /></p>
+
+<p>After clicking &ldquo;Save&rdquo;, your device type is created with the values you defined.</p>
+
+<p><strong>Example with single property</strong></p>
+
+<p>The following image shows an example for a message which sends a measurement when this value (the battery level) changes.</p>
+
+<p><img src="/guides/images/users-guide/actility/deviceDatabase2.png" alt="Value configuration in detail: measurement" style="max-width: 50%"></p>
+
+<p><strong><a name="nested-structure-example"></a>Example with nested structure</strong></p>
+
+<p>The following image shows an example of a nested structure for a device type, reporting the current position of a GPS device. The device type is named &ldquo;Position&rdquo; and contains values for longitude and latitude.</p>
+
+<p>The &ldquo;Message ID&rdquo; should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter &ldquo;c8y_Position&rdquo; in the &ldquo;Managed object fragment&rdquo; field and create a new value for each: longitude and latitude.</p>
+
+<p><img src="/guides/images/users-guide/actility/deviceDatabase5-lon.png" alt="Value creation: Longitude-nested" style="max-width: 60%"></p>
+
+<p><img src="/guides/images/users-guide/actility/deviceDatabase5-lat.png" alt="Value creation: Latitude-nested" style="max-width: 60%"></p>
+
+<p>This will be the result:</p>
+
+<p><img src="/guides/images/users-guide/sigfox/gpsdevice.png" alt="Value configuration in detail: nested structure" /></p>
+
+<h3 id="a-name-register-device-sigfox-a-registering-sigfox-devices"><a name="register-device-sigfox"></a>Registering Sigfox devices</h3>
+
+<p>In order to register a Sigfox device, go to the “Registration” page in the “Device Management” application and click “Register Devices”.</p>
+
+<p><img src="/guides/images/users-guide/sigfox/device-registration.png" alt="Register devices" /></p>
+
+<p>In the upcoming window, click <strong>Sigfox</strong>.</p>
+
+<p><strong>Info:</strong> If Sigfox is not one of the available options, your tenant is not subscribed to the relevant applications, see info at the top.</p>
+
+<p>In the next window, fill in the required information:</p>
+
+<p><strong>ID:</strong> Unique device ID. The value must be a hexadecimal number.
+<strong>PAC:</strong> Porting authorization code for your device. The value must be a hexadecimal number.
+<strong>Contract:</strong> Choose your desired contract.
+<strong>Device Type:</strong> Select your desired device type from the drop-down list.
+<strong>Product Certificate Key:</strong> This key can be located in “<a href="https://partners.sigfox.com/”">https://partners.sigfox.com/”</a>. Navigate to your device and copy the certificate key.</p>
+
+<p><strong>Info:</strong> The term &ldquo;Device type&rdquo; is used both by Sigfox and Cumulocity, but with different meaning. In Sigfox, a device type specifies how to route data from devices. In Cumulocity, a device type describes the data that is sent by devices of a particular type.</p>
+
+<p><img src="/guides/images/users-guide/sigfox/device-registration1.png" alt="Register devices1" /></p>
+
+<p>After clicking <strong>Next</strong> the device registration request will be submitted and the device will be created.</p>
+
+<p>You can verify that the device is really connected by checking that events are actually coming in. You can do so by clicking on a device and opening its &ldquo;Events&rdquo; tab. All events related to this device are listed here.</p>
+
+<p>For more information on viewing and managing your connected devices, also refer to <a href="http://cumulocity.com/guides/users-guide/device-management">Device Management</a>.</p>
+
+<h3 id="a-name-old-registration-a-updating-devices-registered-with-the-general-device-registration"><a name="old-registration"></a>Updating devices registered with the general device registration</h3>
+
+<p>If devices have been registered via the general device registration the following URLs have to be manually changed in the Sigfox cloud:</p>
+
+<ul>
+<li>&ldquo;<a href="https://sigfox-agent.cumulocity.com/sigfoxDataCallback&quot;">https://sigfox-agent.cumulocity.com/sigfoxDataCallback&quot;</a> to &ldquo; https://<tenantId>.cumulocity.com/service/sigfox-agent/sigfoxDataCallback&rdquo;</li>
+<li>&ldquo;<a href="https://sigfox-agent.cumulocity.com/sigfoxServiceAcknowledgeCallback&quot;">https://sigfox-agent.cumulocity.com/sigfoxServiceAcknowledgeCallback&quot;</a> to &ldquo;https://<tenantId>.cumulocity.com/service/sigfox-agent/sigfoxServiceAcknowledgeCallback&rdquo;</li>
+<li>&ldquo;<a href="https://sigfox-agent.cumulocity.com/sigfoxServiceStatusCallback&quot;">https://sigfox-agent.cumulocity.com/sigfoxServiceStatusCallback&quot;</a> to &ldquo;https://<tenantId>.cumulocity.com/service/sigfox-agent/sigfoxServiceStatusCallback</li>
+<li>&ldquo;<a href="https://sigfox-agent.cumulocity.com/sigfoxErrorCallback&quot;">https://sigfox-agent.cumulocity.com/sigfoxErrorCallback&quot;</a> to &ldquo;https://<tenantId>.cumulocity.com/service/sigfox-agent/sigfoxErrorCallback&rdquo;</li>
+</ul>
+
+<p><strong>Info</strong>: General device registration for Sigfox devices is no longer supported.</p>
+
+<h3 id="a-name-operations-a-sending-operations"><a name="operations"></a>Sending operations</h3>
+
+<p>If the device supports sending hexadecimal commands, you can send commands from “Shell”. Go to the Device Management application and navigate to the device you want to send an operation to. Switch to the &ldquo;Shell&rdquo; tab.</p>
+
+<p><strong>Info:</strong> Operations do not go to “Executing” state immediately. They go to “Executing” state when the device is expecting the downlink message. Afterwards, the pending operation which is created first goes to executing state.</p>
+
+  </article>
+  
+  <article id="tenant-sla-monitoring" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#tenant-sla-monitoring">
+        <span class="fa fa-link"></span>
+      </button>
+      Tenant SLA Monitoring</h2>
+    
+
+<h2 id="overview">Overview</h2>
+
+<p>The Tenant SLA Monitoring service lets service providers monitor the availability and response time of tenants and sub-tenants.</p>
+
+<p>In detail, it offers the following features:</p>
+
+<ul>
+<li>monitoring of the availability for each tenant</li>
+<li>information on the current availability status of tenants (yes/no)</li>
+<li>information on the tenants availability in percentage
+
+<ul>
+<li>during the last day</li>
+<li>during the last week</li>
+<li>during the last month</li>
+</ul></li>
+</ul>
+
+<p>By using Tenant SLA Monitoring, service providers can instantly check</p>
+
+<ul>
+<li>if any tenant is currently down,</li>
+<li>if all tenants are fully functional,</li>
+<li>the current response time for each tenant,</li>
+<li>the current status of a specific tenant,</li>
+<li>the availability KPIs (key performance indicators) of all tenants in the last day/week/month.</li>
+</ul>
+
+<blockquote>
+<p><strong>Info:</strong> The tenant SLA monitoring service is only available to the management tenant.</p>
+</blockquote>
+
+<p>Use the the Device Management application to visualize Tenant SLA Monitoring data.</p>
+
+<h2 id="using-tenant-sla-monitoring">Using Tenant SLA Monitoring</h2>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>The management tenant needs to be subscribed to the application “Tenant-sla-monitoring” to see any monitoring results.</p>
+
+<p><img src="/guides/images/users-guide/TenantMonitoringApplication.png" alt="Tenant Monitoring application" style="max-width: 100%"></p>
+
+<p>For details on application subscription, refer to <a href="/guides/users-guide/enterprise-edition#subscribe">Administration &gt; Managing Tenants &gt; Subscribing to applications</a> in the User guide.</p>
+
+<h3 id="how-the-service-works">How the service works</h3>
+
+<p>Every 5 minutes, the Tenant SLA Monitoring service probes for the response time of each tenant, and all its sub-tenants (if not disabled), and stores the results.</p>
+
+<p>To be able to do so, the service automatically subscribes to all sub-tenants of a subscribed tenant, to get its credentials and gain access to its API.</p>
+
+<p>Moreover, for each subscribed tenant (i.e. management tenant), a source in the Device Management application is created in which the monitoring results, including those of the sub-tenants, are stored as measurements.</p>
+
+<h3 id="viewing-measurements">Viewing measurements</h3>
+
+<p>To view the measurements showing the monitoring results, open the management tenant´s source (device) in <strong>All devices</strong> in the Device Management application and switch to the <strong>Measurements</strong> tab.</p>
+
+<p><img src="/guides/images/users-guide/TenantMonitoringMeasurements.png" alt="Tenant Monitoring measurements" style="max-width: 100%"></p>
+
+<p>In the API Response Time diagram, you see the response time of the tenants in milliseconds.</p>
+
+<p>Additionally, you will find diagrams showing the average availability values for the tenants for the following periods:</p>
+
+<ul>
+<li>Api Availability Day Average - 24 hours</li>
+<li>Api Availability Week Average - 7 days</li>
+<li>Api Availability Month Average - 30 days</li>
+</ul>
+
+<p>These average values are calculated by summing up the timespan of all timeout and response time alarms (e.g. created if data is missing, see below) for the specific time period and divide it by the total timespan.</p>
+
+<p><img src="/guides/images/users-guide/TenantMonitoringDayAverage.png" alt="Tenant Monitoring Day Average" style="max-width: 100%"></p>
+
+<p>For further details on measurements refer to <a href="/guides/users-guide/device-management#measurements">Device Management &gt; Device details &gt; Measurements</a> in the User guide.</p>
+
+<h3 id="creating-alarms">Creating alarms</h3>
+
+<p>The Tenant SLA Monitoring service will create alarms in case of the following scenarios:</p>
+
+<ul>
+<li>Unavailability of a tenant - Whenever a tenant is not reachable, the service will not store any measurement but will leave gaps in the measurement series. When the tenant becomes available again, the service will search for the last measurement stored for the tenant and create an alarm for the calculated time of unavailability.</li>
+<li>High response times - If the required response time is not met (defaults to 300ms). This alarm will be active until the response time drops below the defined limit again.</li>
+<li>Time spans which have not been monitored</li>
+</ul>
+
+<p>These alarms are used to calculate the availability of the system in percentage, shown as measurements (see above).</p>
+
+<p>To view recent alarms, switch to the “Alarms” tabs of the management tenant´s source.</p>
+
+  </article>
+  
+  <article id="webMethods" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#webMethods">
+        <span class="fa fa-link"></span>
+      </button>
+      webMethods Integration Cloud</h2>
+    <p>Since 2018, webMethods Integration Cloud can be used to integrate with Cumulocity IoT. With the launch of a common Software AG Cloud platform, the integration has been further enhanced by providing single sign-on access between webMethods Integration Cloud and Cumulocity IoT for a seamless experience.</p>
+
+<p>More information on the webMethods Integration Cloud is available at <a href="https://www.softwareag.cloud/site/product/webmethods-integration.html#/">https://www.softwareag.cloud/site/product/webmethods-integration.html</a>.</p>
+
+<blockquote>
+<p><strong>Info</strong>: Related to this, support for the Cumulocity <a href="/guides/saas-integration">Zapier integration</a> will be discontinued. No new subscriptions are possible with immediate effect. Functionality for existing customers is not affected.</p>
+</blockquote>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

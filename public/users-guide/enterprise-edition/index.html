@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Enterprise Edition - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">User guide</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav0"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/users-guide/getting-started/">Getting Started</a>
+     
+      
+      
+      <div id="page-nav0"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/getting-started/#accessing-cumulocity-platform">Accessing and logging into the Cumulocity platform</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/getting-started/#cumulocity-applications">Cumulocity applications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/getting-started/#gui-features">GUI functionalities and features</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/getting-started/#user-settings">User options and settings</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/users-guide/device-management/">Device Management</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/device-management/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/device-management/#connecting-devices">Connecting Devices</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/device-management/#viewing-devices">Viewing devices</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/device-management/#grouping-devices">Grouping devices</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/device-management/#device-details">Device details</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/device-management/#monitoring-and-controlling-devices">Monitoring and controlling devices</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/device-management/#managing-device-types">Managing device types</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/device-management/#managing-device-data">Managing device data</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/device-management/#configuration-repository">Configuration repository</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/device-management/#smartrest-templates">SmartREST templates</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/device-management/#simulator">Working with simulators</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/users-guide/cockpit/">Cockpit</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#managing-assets">Managing assets</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#data-explorer">Data explorer</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#dashboards">Dashboards</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#widgets">Widgets collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#reports">Managing reports and exports</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#data-point-library">Data Point Library</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#smart-rules">Smart Rules</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/cockpit/#smart-rules-collection">Smart rules collection</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/users-guide/administration/">Administration</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#home-screen">Home screen</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#managing-users">Managing users</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#managing-permissions">Managing permissions</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#audit-logs">Viewing audit logs</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#managing-applications">Managing applications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#business-rules">Managing business rules</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#data-retention">Managing data retention</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#tfa">Using two-factor authentication</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/administration/#changing-settings">Changing settings</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/users-guide/enterprise-edition/">Enterprise Edition</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#managing-tenants">Managing tenants</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#user-hierarchies">Managing user hierarchies</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#users-in-other-tenants">Support user access</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#using-sso">Using single sign-on (SSO)</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#data-broker">Using the data broker</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#customization">Customizing your platform</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#storage-quota">Storage quota</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav5"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/users-guide/optional-services/">Optional services</a>
+     
+      
+      
+      <div id="page-nav5"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/optional-services/#cloud-fieldbus">Cloud Fieldbus</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/optional-services/#cloud-remote-access">Cloud Remote Access</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/optional-services/#android-cloud-sensor-app">Cloud Sensor App</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/optional-services/#connectivity">Connectivity</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/optional-services/#nokia-impact">IMPACT</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/optional-services/#lora">LoRa Actility</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/optional-services/#lwm2m">LightweightM2M</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/optional-services/#sigfox">Sigfox</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/optional-services/#tenant-sla-monitoring">Tenant SLA Monitoring</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/users-guide/optional-services/#webMethods">webMethods Integration Cloud</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Enterprise Edition</h1>
+    </header>
+    
+      <div class="lead">
+        <p>The Enterprise Edition of Cumulocity provides several enhancements to the features provided by the Standard Edition. The following sections describe additional functionalities available in the Enterprise Edition.</p>
+
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="managing-tenants" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#managing-tenants">
+        <span class="fa fa-link"></span>
+      </button>
+      Managing tenants</h2>
+    
+
+<p><a name="tenants"></a>
+If you are a service provider or subscribed to the Enterprise Edition of Cumulocity, you may want to manage your own subtenants.</p>
+
+<p>The tenants functionality allows you to create subtenants, subscribe them to the applications that you have available and potentially deactivate tenants if they are not in use anymore.</p>
+
+<blockquote>
+<p><strong>Important</strong>: There is an major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants.</p>
+
+<p><strong>Info</strong>: If you would like to use this feature, please contact sales@cumulocity.com.</p>
+</blockquote>
+
+<p>To be able to use the tenant functionality, your user needs to have the appropriate permissions. See <a href="/guides/users-guide/administration#create-edit-roles">Creating and editing global roles</a> for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:</p>
+
+<ul>
+<li>Read: Browse and view tenants.</li>
+<li>Create: Create new tenants.</li>
+<li>Update: Edit tenants (incl. subscriptions) and suspend or activate them.</li>
+<li>Change: Create, edit and delete tenants.</li>
+</ul>
+
+<h3 id="viewing-subtenants">Viewing subtenants</h3>
+
+<p>Click <strong>Subtenants</strong> in the <strong>Tenants</strong> menu to view a list of all subtenants available in your account.</p>
+
+<p>The <strong>Tenants</strong> page provides the following information on each subtenant:</p>
+
+<ul>
+<li>The name of the subtenant, e.g. company name of your customer.</li>
+<li>The ID and domain. Note: The domain can be changed later on. The ID cannot be changed anymore once the tenant was created.</li>
+<li>Optionally, a contact name and phone number.</li>
+<li>The date when the tenant was created.</li>
+<li>The status of the tenant, either active (indicated by a green checkmark icon) or suspended (indicated by a red cross icon).</li>
+</ul>
+
+<p>In the management tenant, you will see an additional column &ldquo;Parent tenant&rdquo;. This column shows the tenant that created the listed tenant.</p>
+
+<h3 id="a-name-creating-tenants-a-creating-sub-tenants"><a name="creating-tenants"></a>Creating sub-tenants</h3>
+
+<p>To add a new tenant, click <strong>Create tenant</strong> at the right of the top menu bar. To create a tenant, provide the following properties:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Domain/ URL</td>
+<td align="left">Enter a unique ID as the first part of the URL. For example, if you enter &ldquo;acme&rdquo; as ID on cumulocity.com, the tenant&rsquo;s URL will be &ldquo;acme.cumulocity.com&rdquo;. You can only use one subdomain level. For example, you can only use &ldquo;acme.cumulocity.com&rdquo; on cumulocity.com. You cannot use &ldquo;mycustomer.acme.cumulocity.com&rdquo;. This is not permitted by the TLS standard.</td>
+</tr>
+
+<tr>
+<td align="left">Name</td>
+<td align="left">The name of the tenant, e.g. the company&rsquo;s name.</td>
+</tr>
+
+<tr>
+<td align="left">Administrator&rsquo;s email</td>
+<td align="left">You must provide a valid email address to enable users to reset their password.</td>
+</tr>
+
+<tr>
+<td align="left">Administrator&rsquo;s username</td>
+<td align="left">Username for the administrator of this tenant.</td>
+</tr>
+
+<tr>
+<td align="left">Contact name</td>
+<td align="left">Optional name of the contact.</td>
+</tr>
+
+<tr>
+<td align="left">Contact phone</td>
+<td align="left">Optional phone number of the contact.</td>
+</tr>
+
+<tr>
+<td align="left">Send password reset link as email</td>
+<td align="left">Selected by default. If you deselect this option, you need to provide a password and confirm the password (see <a href="/guides/users-guide/overview#login">Getting Started &gt; Logging in</a> for more information on password strength).</td>
+</tr>
+
+<tr>
+<td align="left">Tenant policy</td>
+<td align="left">You may select a tenant policy to be applied to the tenant from the dropdown list.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Note, that fields with an asterisk * are mandatory.</p>
+
+<p>Click <strong>Save</strong> to apply your settings.</p>
+
+<p>When the tenant is created, it is automatically provisioned with a first, administrative user (&ldquo;Administrator&rsquo;s username&rdquo;). This administrator can create other users and set their permissions. The first user cannot be deleted to prevent you from locking yourself out.</p>
+
+<p>From the management tenant, you can enable other tenants to create subtenants. To do so, check <strong>Allow creation of subtenants</strong>.</p>
+
+<p><img src="/guides/images/users-guide/createtenant.png" alt="Tenant-creation" /></p>
+
+<h3 id="viewing-or-editing-subtenant-properties">Viewing or editing subtenant properties</h3>
+
+<p>To edit subtenants properties, click on the desired subtenant or click <strong>Edit</strong> in the context menu, accessible through the menu icon.</p>
+
+<p>In the <strong>Properties</strong> tab, all fields are editable except of the ID and the administrator&rsquo;s username. For details on the fields, refer to <a href="#creating-tenants">Creating sub-tenants</a>.</p>
+
+<p><img src="/guides/images/users-guide/Administration/admin-subtenant-properties.png" alt="Sub-tenants" /></p>
+
+<h4 id="support-user-access">Support user access</h4>
+
+<p>In the management tenant, you will moreover find information here on the support user requests/access for the subtenants.</p>
+
+<p><img src="/guides/images/users-guide/Administration/admin-support-user-properties.png" alt="Support user access information" style="max-width: 100%"></p>
+
+<p>The following information is displayed here:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Status</td>
+<td align="left">May be either <em>Enabled</em> or <em>Disabled</em>. <br><em>Enabled</em> indicates that: <br> - support user access has ben activated on platform level (see <a href="/guides/users-guide/enterprise-edition#configuration">Customizing your platform</a>), <br> - one or more subtenant users have activated support user access. <br><em>Disabled</em> indicates that: <br> - support user access has been deactivated on platform level, <br> - support user access has been activated on platform level but deactivated for the subtenant, <br> - no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).</td>
+</tr>
+
+<tr>
+<td align="left">Active requests count</td>
+<td align="left">The number of requests currently active in the subtenant. Only displayed if support user access is not enabled globally on platform level. Shown as a number in a small red dot.</td>
+</tr>
+
+<tr>
+<td align="left">Expiry date</td>
+<td align="left">Specifies the date on which support user access for the tenant will expire. If no date has been specified, the expiry date is set to &ldquo;No limit&rdquo;.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="suspending-subtenants">Suspending subtenants</h3>
+
+<p>You can temporarily suspend tenants. Suspending tenants blocks any access to this tenant, regardless whether the access is from devices, users or other applications.</p>
+
+<p>To suspend a tenant, click the menu icon and from the context menu select <strong>Suspend</strong>.</p>
+
+<p>In the upcoming dialog confirm the suspension by clicking <strong>OK</strong> and entering your password. The tenant will be shown with a red cross icon. As part of suspending the tenant, an email is sent to the tenant administrator if an email address is configured for that administrator.</p>
+
+<blockquote>
+<p><strong>Info</strong>: If you are a service provider, you can suppress this email.</p>
+</blockquote>
+
+<p><img src="/guides/images/users-guide/suspendtenant.png" alt="Suspend tenant" /></p>
+
+<p>If a tenant is suspended, the tenant&rsquo;s data remains in the database and can be made available any time later. To do so, click <strong>Activate</strong>.</p>
+
+<h3 id="deleting-subtenants">Deleting subtenants</h3>
+
+<p>To finally delete a tenant and remove all the data of the tenant, click the menu icon and from the context menu select <strong>Remove</strong>.</p>
+
+<blockquote>
+<p><strong>Info</strong>: This action cannot be reverted. For security reasons, it is only available in the management tenant.</p>
+</blockquote>
+
+<h3 id="a-name-subscribe-a-subscribing-and-monitoring-applications"><a name="subscribe"></a>Subscribing and monitoring applications</h3>
+
+<p>In the <strong>Applications</strong> tab you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications.</p>
+
+<p><img src="/guides/images/users-guide/Administration/admin-subtenant-applications.png" alt="Subscribe tenant" style="max-width: 100%"></p>
+
+<p>To subscribe an application to a tenant, hover over the applications under <strong>Available applications</strong> on the right and click <strong>Subscribe</strong> on the desired application.</p>
+
+<p>To remove an application, hover over the applications under <strong>Subscribed applications</strong> on the left and click <strong>Unsubscribe</strong>.</p>
+
+<h4 id="monitoring-microservices">Monitoring microservices</h4>
+
+<p>For all applications hosted as microservices by Cumulocity the status of the microservice is indicated next to its name by symbols:</p>
+
+<p><img src="/guides/images/users-guide/Administration/admin-applications-status.png" alt="Application details" style="max-width: 75%"></p>
+
+<p>The microservice may be in one of the following states:</p>
+
+<ul>
+<li><img src="/guides/images/icons/ok.png" alt="Up" style="max-width: 100%"> Microservice is up and running</li>
+<li><img src="/guides/images/icons/warning.png" alt="Up" style="max-width: 100%"> Microservice is unhealthy</li>
+<li><img src="/guides/images/icons/danger.png" alt="Up" style="max-width: 100%"> Microservice is down</li>
+</ul>
+
+<p>You may view details on their status by expanding the respective entry.</p>
+
+<p><img src="/guides/images/users-guide/Administration/admin-application-details.png" alt="Application details" style="max-width: 75%"></p>
+
+<p>The following information is provided:</p>
+
+<ul>
+<li>Active: The number of active microservice instances</li>
+<li>Unhealthy: The number of inactive microservice instances</li>
+<li>Desired: The number of desired microservice instances</li>
+<li>Name: Microservice instance name</li>
+<li>Restarts: The number of microservice instance restarts</li>
+</ul>
+
+<p>Further details are provided on the <strong>Status</strong> tab of the respective application, see <a href="/guides/users-guide/administration#managing-applications">Administration &gt; Managing applications</a>.</p>
+
+<h3 id="a-name-microservice-billing-a-microservice-billing"><a name="microservice-billing"></a>Microservice billing</h3>
+
+<p>The microservice billing feature gathers information on microservice usage per subtenant for each microservice. This enables enterprise tenants and service providers to charge tenant not only based on subscriptions but also based on resources usage.</p>
+
+<h4 id="billing-modes">Billing modes</h4>
+
+<p>Cumulocity offers two billing modes:</p>
+
+<ul>
+<li><p><strong>Subscription-based billing</strong>: Charges a constant price when a tenant is subscribed to a microservice while resource usage is assigned to the owner</p></li>
+
+<li><p><strong>Resource-based billing</strong>: Exposes the number of resources used by a microservice to calculate billing</p></li>
+</ul>
+
+<p>The billing modes are specified per microservice in the <a href="/guides/reference/microservice-manifest">microservice manifest</a> and are set in the field &ldquo;billingMode&rdquo;.</p>
+
+<p>RESOURCES: Sets the billing mode to resources-based. This is the default mode and will be applied to all microservices that are not explicitly switched to subscription-based billing mode.</p>
+
+<p>SUBSCRIPTION: Sets the billing mode to subscription-based.</p>
+
+<h4 id="isolation-level">Isolation level</h4>
+
+<p>Two isolation levels are distinguished for microservices: per-tenant isolation and multi-tenant isolation.</p>
+
+<p>In case of subscription-based billing, the entire resources usage is always assigned to the microservice owner, independent of the isolation level,  while the subscribed tenant will be billed for the subscription.</p>
+
+<p>In case of resources-based billing, charging depends on the isolation level:</p>
+
+<ul>
+<li>Per-tenant - the subscriber tenant is charged for used resources</li>
+<li>Multi-tenant - the owner of the microservice is charged for used resources</li>
+</ul>
+
+<p>In case of multi-tenant isolation level, the parent tenant as the owner of a microservice (e.g. the management tenant of an enterprise tenant or service provider) is charged for both subscribed applications (subscription-based billing) and used resources (resource-based billing) of the subtenants.</p>
+
+<h4 id="resources-usage-assignment-for-billing-mode-and-isolation-level">Resources usage assignment for billing mode and isolation level</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">Billing mode</th>
+<th align="left">Microservice Isolation</th>
+<th align="left">Resources usage assigned to</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Subscription-based</td>
+<td align="left">Per-tenant</td>
+<td align="left">Owner</td>
+</tr>
+
+<tr>
+<td align="left">Subsrciption-based</td>
+<td align="left">Multi-tenant</td>
+<td align="left">Owner</td>
+</tr>
+
+<tr>
+<td align="left">Resources-based</td>
+<td align="left">Per-tenant</td>
+<td align="left">Subscriber</td>
+</tr>
+
+<tr>
+<td align="left">Resources-based</td>
+<td align="left">Multi-tenant</td>
+<td align="left">Owner</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="collected-values">Collected values</h4>
+
+<p>The following values are collected on a daily base for each tenant:</p>
+
+<ul>
+<li>CPU usage, specified in CPU milliseconds (1000m = 1 CPU)</li>
+<li>Memory usage, specified in MB</li>
+</ul>
+
+<p>Microservice resources are counted based at limits defined in the microservice manifest per day. At the end of each day, the information about resource usage is collected into the tenant statistics. It is also considered that a microservice might not be subscribed for a whole day.</p>
+
+<p><strong>Example</strong>: If a tenant was subscribed to a microservice for 12h and the microservice has 2 CPU and 2 GB of memory it should be counted as 1000 CPU milliseconds and 1024 MB of memory.</p>
+
+<p>For billing purposes, in addition to CPU usage and memory usage the cause for the billing is collected (e.g. owner, subscription for tenant):</p>
+
+<pre><code>          {
+        &quot;name&quot;:&quot;cep&quot;,
+        &quot;cpu&quot;:6000,
+        &quot;memory&quot;:&quot;20000&quot;,
+        &quot;cause&quot;:&quot;Owner&quot;
+      },
+      {
+        &quot;name&quot;:&quot;cep-small&quot;,
+        &quot;cpu&quot;:1000,
+        &quot;memory&quot;:&quot;2000&quot;,
+        &quot;cause&quot;:&quot;Subscription for tenant&quot;
+      }
+</code></pre>
+
+<h4 id="usage-statistics">Usage statistics</h4>
+
+<p>The information on the microservice usage is presented in the <strong>Tenant Statistics</strong> page in the Administration application.</p>
+
+<p><img src="/guides/images/users-guide/ee-tenants-usage-statistics.png" alt="Tenant statistics" /></p>
+
+<h3 id="a-name-tenants-custom-properties-a-editing-custom-properties"><a name="tenants-custom-properties"></a>Editing custom properties</h3>
+
+<p>The <strong>Custom properties</strong> tab allows you to view and modify values of custom properties, either predefined ones (like &ldquo;External reference&rdquo;) or those defined in the <a href="/guides/users-guide/administration#properties">Properties library</a>. Such properties are also displayed as columns in the <a href="#usage-stats">usage statistics table</a>.</p>
+
+<p><img src="/guides/images/users-guide/subtenant-custom-properties.PNG" alt="Custom Properties" /></p>
+
+<p><strong>Limiting subtenant device number</strong></p>
+
+<p>The platform administrator can limit the count of concurrently registered root devices or simply all devices (including children devices). The platform administrator can also see the peak number of concurrently registered devices, root devices and the peak value of used storage in the <strong>Usage statistics</strong> page.</p>
+
+<h3 id="a-name-usage-stats-a-retrieving-usage-statistics"><a name="usage-stats"></a> Retrieving usage statistics</h3>
+
+<p>The <strong>Usage statistics</strong> page provides statistical information on each subtenant.</p>
+
+<p>The following information is provided for each tenant:</p>
+
+<ul>
+<li>ID: ID of the subtenant</li>
+<li>API requests: Total number of API requests, including requests from  devices and applications</li>
+<li>Device API requests: Number of API requests from devices</li>
+<li>Storage (MB): Amount of data stored in your account</li>
+<li>Peak storage (MB): Peak value of storage</li>
+<li>Root Devices: Number of root devices, excluding child devices</li>
+<li>Peak root devices: Peak number of root devices, excluding child devices</li>
+<li>Devices: Total number of devices connected to the subtenant, including child devices</li>
+<li>Peak devices: Peak number of devices, including child devices</li>
+<li>Endpoint devices: Leaf machines, without gateways and edges</li>
+<li>Subscribed applications: Number of applications that the subtenant is subscribed to</li>
+<li>Creation time: Date and time of the creation of the subtenant</li>
+<li>Alarms created: Number of alarms created</li>
+<li>Alarms updated: Number of updates on alarms</li>
+<li>Inventories created: Number of managed objects created</li>
+<li>Inventories updated: Number of updates on managed objects</li>
+<li>Events created: Number of events created</li>
+<li>Events updated: Number of updates on events</li>
+<li>Measurements created: Number of measurements created</li>
+<li>Total inbound transfer: Sum of all inbound transfers (alarms created, alarms updated, events created, events updated, inventories created, inventories updated, measurements created)</li>
+<li>Parent tenant: Name of the parent tenant (available only for management tenant)</li>
+<li>External reference: This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number.</li>
+</ul>
+
+<p>Moreover custom properties are displayed, if configured.</p>
+
+<p>Custom properties may be defined in the <a href="/guides/users-guide/administration#properties">Properties Library</a> and then set their values in the <a href="#tenants-custom-properties">Custom properties</a> tab of the tenant.</p>
+
+<p><img src="/guides/images/users-guide/usage-statistics-list.PNG" alt="Usage statistics" /></p>
+
+<p>You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click <strong>Filter</strong>. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. For details on filtering, refer to <a href="/guides/users-guide/overview#filtering">Getting Started &gt; Features and Functionalities &gt; Filtering</a>.</p>
+
+<p>Click Export CSV at the right of the top menu bar to export the current view of the statistics table to a CSV file. A dialog will come up in which you can customize the CSV output.</p>
+
+<p><img src="/guides/images/users-guide/usage-statistics-export.PNG" style="width:400px;"></img></p>
+
+<h3 id="a-name-tenant-policies-a-tenant-policies"><a name="tenant-policies"></a> Tenant policies</h3>
+
+<p>A tenant policy is a set of tenant options and retention rules. Tenant options and retention rules may be specified during tenant creation.</p>
+
+<p>Creating a tenant policy with a specific set of options and rules saves time when creating multiple tenants with the same settings.</p>
+
+<p><img src="/guides/images/users-guide/tenantpolicy.png" alt="Tenant policy" /></p>
+
+<blockquote>
+<p><strong>Info</strong>: The options and rules are copied into the tenant. Editing the policy has no effect on tenants that have already been created.</p>
+</blockquote>
+
+<p>Click <strong>Tenant policies</strong> in the <strong>Tenants</strong> menu to view all tenant policies available.</p>
+
+<p><img src="/guides/images/users-guide/Administration/Admin_TenantPolicies.png" alt="Tenant policies" style="max-width: 100%"></p>
+
+<p>For each tenant policy, the name, an optional description and the number of options and retention rules is provided, either in a list or a grid.</p>
+
+<h4 id="adding-a-tenant-policy">Adding a tenant policy</h4>
+
+<p>Click <strong>Add tenant policy</strong> in the top menu bar to create a new tenant policy.</p>
+
+<p><img src="/guides/images/users-guide/addpolicy.png" alt="Add new policy" /></p>
+
+<ol>
+<li>Enter a name and an optional description.</li>
+<li>Add at least one retention rule. For details on creating retention rules, refer to <a href="/guides/users-guide/administration#retention-rules">Administration &gt; Retention rules</a>.</li>
+<li>Optionally, add a tenant option.</li>
+<li>Click <strong>Save</strong> to save your settings.</li>
+</ol>
+
+<h4 id="editing-duplicating-and-deleting-policies">Editing, duplicating and deleting policies</h4>
+
+<p>To edit a policy, click on the desired policy or click <strong>Edit</strong> in the context menu, accessible through the menu icon.</p>
+
+<p>To change the name of a policy, click the name in the top bar, modify it and click the green checkmark icon to save your changes.</p>
+
+<p>To delete a retention rule or a tenant option from a policy, hover over it and click the delete icon.</p>
+
+<p>To duplicate a policy, click the menu icon and from the context menu select <strong>Duplicate</strong>.</p>
+
+<p>To delete a policy, click the menu icon and from the context menu select  <strong>Delete</strong>.</p>
+
+<p><img src="/guides/images/users-guide/editpolicy.png" alt="Edit policy menu" /></p>
+
+  </article>
+  
+  <article id="user-hierarchies" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#user-hierarchies">
+        <span class="fa fa-link"></span>
+      </button>
+      Managing user hierarchies</h2>
+    
+
+<p><a name="hierarchy"></a>
+With user hierarchies you can reflect independent organizational entities in Cumulocity that still share the same database. These entities can have limited permissions to subsets of the shared data and can manage their own sub-users.</p>
+
+<blockquote>
+<p><strong>Info</strong>: To be able to use this feature, your tenant must be subscribed to the application &ldquo;FEATURE.USER.HIERARCHY&rdquo;.</p>
+</blockquote>
+
+<h3 id="viewing-user-hierarchies">Viewing user hierarchies</h3>
+
+<p>In the <strong>User</strong> page, user hierarchies are indicated by an arrow left from the user icon. Clicking on the arrow unfolds the user hierarchy. You can also fold and unfold the entire user hierarchy using the <strong>Expand all</strong> and <strong>Collapse all</strong> links on the top right.</p>
+
+<p>A small number next to the user name shows how many direct sub-users a user has. Sub-users are users that can be managed by their respective parent user and that have at most the permissions of that parent user. In the example below, the user &ldquo;TestUser&rdquo; has two direct sub-users.</p>
+
+<p><img src="/guides/images/users-guide/userhierarchies.png" alt="User hierarchies" /></p>
+
+<h3 id="a-name-sub-users-a-creating-sub-users"><a name="sub-users"></a> Creating sub-users</h3>
+
+<p>User hierarchies are created by assigning an &ldquo;owner&rdquo; to a user. The &ldquo;owner&rdquo; can manage the user. The user can have at most the same permissions as the owner.</p>
+
+<p>To assign an owner to a user, select the user in the <strong>Users</strong> page. In the <strong>Owner</strong> field, select a user from the dropdown list and click <strong>Done</strong> to confirm.</p>
+
+<p><img src="/guides/images/users-guide/chooseowner.png" alt="Select owner" /></p>
+
+<blockquote>
+<p><strong>Info:</strong> When creating a new user, the owner is automatically set to the user who is logged in. The owner can be changed later. Only users with USER ADMIN permission can assign an owner to a user.</p>
+
+<p>If you want an owner to manage only their sub-users, make sure that the owner does not have a global role with user management permissions for all users.</p>
+</blockquote>
+
+<p>As an example, the sample below shows a user with a business role. The user becomes the owner of a new user. Therefore the new user can only get a business role assigned as the user cannot have higher permissions than the owner.</p>
+
+<p><img src="/guides/images/users-guide/ownersample.png" alt="Owner Sample" /></p>
+
+<h3 id="a-name-delegate-a-delegating-user-hierarchies-to-other-users"><a name="delegate"></a>Delegating user hierarchies to other users</h3>
+
+<p>In Cumulocity, users can delegate their user hierarchies and permissions to another user. The delegated user then has the same user management permissions as the user who activated the delegation.</p>
+
+<p>You may of course also delegate on a temporary basis, for example if you are temporarily unavailable.</p>
+
+<p>To delegate your permissions to a user, either open the user and click the delegate icon in the <strong>Delegated by</strong> field, or click the menu icon at the right of the user entry in the user list and from the context menu, select <strong>Delegate</strong>.</p>
+
+<p><img src="/guides/images/users-guide/delegation.png" alt="User delegation" /></p>
+
+<p>To undelegate, remove the delegation in the <strong>Delegate by</strong> field, or click <strong>Undelegate</strong> in the context menu.</p>
+
+<p>If the delegated user also needs to manage specific devices, the admin user must assign this device permissions (inventory roles) directly to the intended user. This can be done by using <strong>Copy inventory roles from another user</strong>. For details refer to <a href="/guides/users-guide/administration#attach-inventory">Administration &gt; Managing permissions &gt; Assigning inventory roles to users</a>.</p>
+
+<blockquote>
+<p><strong>Info:</strong> Delegation works only inside user management and does not have any implication to other places.</p>
+</blockquote>
+
+<h3 id="troubleshooting-sub-users">Troubleshooting sub-users</h3>
+
+<p>In the example below the user cannot change the access to the Administration application, because the owner of the user has no USER MANAGEMENT permissions. As a result, the owner user can not assign built-in applications (and the owned user cannot use them).</p>
+
+<p><img src="/guides/images/users-guide/warning1.png" alt="Warning message" /></p>
+
+  </article>
+  
+  <article id="users-in-other-tenants" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#users-in-other-tenants">
+        <span class="fa fa-link"></span>
+      </button>
+      Support user access</h2>
+    
+
+<p>With the support user access feature, support users, i.e. users of the management tenant with specific permissions, can log into accounts of other subtenant&rsquo;s users to provide help in case of any issues.</p>
+
+<p>To so so, support user access must be enabled. This can globally be done on platform level or on user level as described below.</p>
+
+<h3 id="a-name-configuring-support-access-a-configuring-support-user-access"><a name="configuring-support-access"></a>Configuring support user access</h3>
+
+<p>Support user access may be enabled on different levels.</p>
+
+<p><strong>Platform level</strong></p>
+
+<p>The management tenant can enable support user access for all subtenants on platform level. This is done in the <strong>Configuration</strong> page, see <a href="/guides/users-guide/enterprise-edition#configuration">Customizing the platform</a>.</p>
+
+<p>If support user access is enabled, support users can log into any subtenant as any user, unless overridden on subtenant level. Subtenant users cannot enable/disable access themselves. If support user access is disabled support users can log in only to subtenants for which at least one user has explicitly enabled such access, as described next.</p>
+
+<p><strong>Subtenant/user level</strong></p>
+
+<p>If support user access is disabled on platform level, it may still be enabled by a subtenant user. This is done by clicking <strong>Enable support</strong> in the <strong>User</strong> menu, see <a href="/guides/users-guide/overview#user-settings">User options and settings</a>.</p>
+
+<p>The support access is then not restricted to the user who activated it but applies to all users of the subtenant. This is necessary for retracing of role/right issues.</p>
+
+<p>After a user has activated support access, the menu item changes to <strong>Disable support</strong>, so that the user can disable a pending support request which has been resolved actively before it expires.</p>
+
+<p>The duration of the active support request is configurable on platform level (default is 24 hours), see <a href="/guides/users-guide/enterprise-edition#configuration">Customizing the platform</a>.</p>
+
+<p>Each new support request will prolong the support duration for the specified number of hours. After the last support request in a subtenant has expired or has been actively disabled by the user, the support user access for the subtenant will immediately be disabled (if not enabled globally).</p>
+
+<p>Details on the status of support user requests and support user access for a tenant can be found in the <strong>Properties</strong> tab of the tenant, see <a href="/guides/users-guide/enterprise-edition#managing-tenants">Managing tenants</a>.</p>
+
+<h3 id="configuring-support-users">Configuring support users</h3>
+
+<p>There are two alternative setups for support users in Cumulocity:</p>
+
+<ul>
+<li>A service provider configures specific permissions for management tenant users which enable them to provide support.</li>
+<li>Tenant users request support and by this provide the permission to management tenant users to login.</li>
+</ul>
+
+<blockquote>
+<p><strong>Info:</strong> The support user feature does not work when the support user has two-factor authentication enabled, but no phone number is provided. The phone number has to be provided first, in order to login as a support user.</p>
+</blockquote>
+
+<p><strong>Management tenant permission</strong></p>
+
+<p>To enable a management tenant user to support users in other tenants, you need to provide the user with either the &ldquo;Support&rdquo; global permission or the &ldquo;Support&rdquo; inventory role (both &ldquo;Read&rdquo; and &ldquo;Change&rdquo;).</p>
+
+<p>Using the &ldquo;Support&rdquo; inventory role, you can selectively assign support to particular users. Create a group of the tenants that you want the user to support, then assign the inventory role to the user and the group as described in <a href="/guides/users-guide/administration#attach-inventory">Assigning inventory roles to users</a>.</p>
+
+<p><strong>User-provided permission</strong></p>
+
+<p>Users can allow support, i.e. a management tenant user logging in as them. To do so, click the <strong>User</strong> button at the right of the top bar and from the context menu select <strong>Enable support access</strong>. For details, refer to <a href="/guides/users-guide/overview#user-settings">User menu</a>.</p>
+
+<h3 id="logging-in-as-support-user">Logging in as support user</h3>
+
+<p>To log in as support user, use the following username:</p>
+
+<pre><code>&lt;support user&gt;$&lt;user&gt;
+</code></pre>
+
+<p>&ldquo;support user&rdquo; is the user in the management tenant that executes the support. &ldquo;user&rdquo; is the supported user.</p>
+
+<p>Alternatively, use</p>
+
+<pre><code>&lt;support user&gt;$
+</code></pre>
+
+<p>In this case, the support user will access the tenant with one of the administrative users.</p>
+
+<blockquote>
+<p><strong>Important:</strong> In many environments, access to the management tenant is specifically restricted to certain networks or hosts, or can only be used through a tunnel. When logging in using the support user functionality, you need to make sure to have access to the management tenant. If you use a tunnel to access the management tenant, you may need to use a login of the form <code>&lt;tenant&gt;/&lt;support user&gt;$&lt;user&gt;</code>.</p>
+</blockquote>
+
+<p>Audit logs are created for each support user access and for the actions that support users perform. In the column &ldquo;Who?&rdquo; the author&rsquo;s name will be shown in form of:</p>
+
+<pre><code>&quot;support_user$user&quot;
+</code></pre>
+
+<h3 id="example">Example</h3>
+
+<p>As an example, suppose you get a support call from a user &ldquo;john&rdquo; in the tenant <code>acme.cumulocity.com</code>. The user cannot run certain functionality, and you suspect that it is a permission issue. Your username in the management tenant is &ldquo;jill&rdquo; and you are permitted to carry out support for <code>acme.cumulocity.com</code>. In this case, you can log in to <code>acme.cumulocity.com</code> using the username &ldquo;jill&#36;john&rdquo; and your password for &ldquo;jill&rdquo;. Now you can reproduce what &ldquo;john&rdquo; is seeing.</p>
+
+  </article>
+  
+  <article id="using-sso" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#using-sso">
+        <span class="fa fa-link"></span>
+      </button>
+      Using single sign-on (SSO)</h2>
+    <p>In order to use the single sign-on feature for enterprise tenants, the enterprise domain must be set up as redirect URI in the basic configurations.
+For more details see <a href="/guides/users-guide/administration#single-sign-on">Changing settings &gt; Configuring single sign-on</a> under Administration.</p>
+
+<p>If single sign-on providers have whitelists, the enterprise domain should be whitelisted.</p>
+
+  </article>
+  
+  <article id="data-broker" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#data-broker">
+        <span class="fa fa-link"></span>
+      </button>
+      Using the data broker</h2>
+    
+
+<p>Data broker lets you share data selectively with other tenants. You can share:</p>
+
+<ul>
+<li>devices (and more generically, managed objects),</li>
+<li>events,</li>
+<li>alarms,</li>
+<li>measurements,</li>
+<li>operations.</li>
+</ul>
+
+<p>Navigate to <strong>Data connectors</strong> if you would like to send data to another tenant. Navigate to <strong>Data subscriptions</strong>, if you would like to receive data from another tenant.</p>
+
+<p><img src="/guides/images/users-guide/data-broker-navigator.png" alt="Data broker menus" ></p>
+
+<blockquote>
+<p><strong>Info</strong>: Devices that are forwarded using the data broker are charged like normal devices in the destination tenant.</p>
+
+<p>Be aware of the following limitations of the data broker:</p>
+
+<ul>
+<li>Cloud Remote Access cannot be used on the destination tenant.</li>
+<li>The management tenant cannot be used as data broker source tenant.</li>
+<li>Currently, the Fieldbus widget does not work on tenants that receive the fieldbus devices through data broker, as the corresponding data models are not synchronized.</li>
+<li>Data broker does not guarantee the same order of messages on destination tenants as it was on the source tenant.</li>
+<li>While we provide backwards compatibility, we cannot ensure that data broker can send data to Cumulocity tenants which run on earlier Cumulocity versions than the source.</li>
+</ul>
+</blockquote>
+
+<h3 id="a-name-data-broker-connectors-a-data-connectors"><a name="data-broker-connectors"></a> Data connectors</h3>
+
+<p>A data connector describes the subset of the data that you would like to send to a destination tenant as well as the URL of that destination tenant.</p>
+
+<p><a name="data-broker-connectors-list"></a> <strong>Viewing data connectors</strong></p>
+
+<p>In the <strong>Data connectors</strong> page, you can manage existing data connectors or create new ones. Click <strong>Data connectors</strong> to see a list of all currently defined data connectors with their status.</p>
+
+<p><img src="/guides/images/users-guide/data-broker-connector-list.png" alt="Data broker connectors list" /></p>
+
+<p>For each data connector, the following information is provided:</p>
+
+<ul>
+<li>the data connector&rsquo;s name</li>
+<li>its destination tenant</li>
+<li>the status of the connector</li>
+<li>the number of filters set for the data connector</li>
+</ul>
+
+<p>Use the slider to enable and disable data forwarding to the destination tenant. If data is being forwarded, the slider reads &ldquo;active&rdquo;. If data is not being forwarded, the slider reads &ldquo;suspended&rdquo; or &ldquo;pending&rdquo;. &ldquo;Suspended&rdquo; means that you have disabled forwarding. &ldquo;Pending&rdquo; means that the destination tenant has disabled forwarding.</p>
+
+<ul>
+<li>To modify the data connector&rsquo;s configuration, click the menu icon and from the context menu select <strong>Edit</strong>. The configuration is described in more detail below.</li>
+<li>Click &ldquo;<strong>Duplicate</strong> in the context menu to create another data connector with the same configuration.</li>
+<li>Click <strong>Delete</strong> in the context menu to stop data forwarding and remove the data connector.</li>
+</ul>
+
+<p><a name="data-broker-connector-edit"></a> <strong>Creating or editing data connectors</strong></p>
+
+<p>Click <strong>Add data connector</strong> in the top menu bar to create a new data connector.</p>
+
+<p><img src="/guides/images/users-guide/data-broker-edit-connector.png" alt="Data broker edit connector" /></p>
+
+<p>In the <strong>Settings</strong> tab, provide the following information to create a new data connector:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Title</td>
+<td align="left">The name of the data connector.</td>
+</tr>
+
+<tr>
+<td align="left">Target URL for data connector</td>
+<td align="left">The URL of the tenant to which data will be forwarded. Once saved, you cannot edit this value anymore.</td>
+</tr>
+
+<tr>
+<td align="left">Description</td>
+<td align="left">A textual description of the configuration. Both the name and the description will be visible on the destination side after accepting the subscription.</td>
+</tr>
+
+<tr>
+<td align="left">Data filters</td>
+<td align="left">A set of filters that define what is copied to the destination. You need to configure at least one filter.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Click <strong>Add filter</strong> to configure a new filter.</p>
+
+<p><img src="/guides/images/users-guide/data-broker-connector-filter.png" alt="Data broker configure filter" /></p>
+
+<p>Each data filter contains the following information:</p>
+
+<table>
+<col width = 150>
+<thead>
+<tr>
+<th style="text-align:left">Field</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Group or device</td>
+<td style="text-align:left">The group or device that is forwarded. Selecting a group here results in all sub-groups and sub-devices being forwarded. Leaving the default option "All objects" selected will synchronize all types of objects, including internal and technical ones (not exclusively groups and devices), which may cause issues on the target tenant.</td>
+</tr>
+<tr>
+<td style="text-align:left">API</td>
+<td style="text-align:left">The type of data being forwarded (alarms, events, measurements, manages objects) or being received (operations).</td>
+</tr>
+<tr>
+<td style="text-align:left">Fragments to filter</td>
+<td style="text-align:left">The fragments that need to be present in a device to be forwarded.</td>
+</tr>
+<tr>
+<td style="text-align:left">Fragments to copy</td>
+<td style="text-align:left">The fragments that are copied to the destination. If nothing is specified here, only standard properties of managed objects, alarms, events and measurements are forwarded (see below). Select <strong>Copy all fragments</strong> to forward the entire object.</td>
+</tr>
+<tr>
+<td style="text-align:left">Type filter</td>
+<td style="text-align:left">Forwarded data needs to have this value in its "type" property.</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p><strong>Info:</strong> If the <strong>Group or device</strong> field is filled in, the entire descendant structure of the inventory is forwarded to the destination as soon as the connector stays active. if the <strong>Group or device</strong> field is empty or set to  &ldquo;all&rdquo; the descendant structure of the inventory is not forwarded; in this case the filter works in &ldquo;lazy&rdquo; mode, i.e. forwards the device or asset along with its first event/measurement/alarm.</p>
+</blockquote>
+
+<p>If operation API is checked in filters, operations created in the target tenant will be forwarded to the source tenant. This applies only to operations that meet the following conditions:</p>
+
+<ul>
+<li>operation&rsquo;s device itself is a result of forwarding data;</li>
+<li>operation matches other filter criteria.</li>
+</ul>
+
+<p>Updates of operation status coming from the source tenant will be forwarded to the destination tenant.</p>
+
+<p>The heading of a data filter summarizes the configuration in one line. The standard properties that are copied by default are:</p>
+
+<ul>
+<li><strong>For created alarms</strong>: type, text, time, severity, status</li>
+<li><strong>For updated alarms</strong>: status, text, severity</li>
+<li><strong>For created events</strong>: type, text, time</li>
+<li><strong>For created measurements</strong>: type, text, time</li>
+<li><strong>For created and updated devices</strong>: type, name, c8y&#95;IsBinary, c8y&#95;IsDeviceGroup, c8y&#95;IsDevice, c8y&#95;DeviceGroup, c8y&#95;DeviceSubgroup, c8y&#95;SmartRule, c8y&#95;DynamicGroup, c8y&#95;DeviceQueryString</li>
+<li><strong>For updated operations</strong>: status</li>
+</ul>
+
+<p>Once you have configured your data connector, click <strong>Save</strong> to save the configuration.</p>
+
+<p>After saving, you will see a security code displayed below your configuration. The security code prevents unintended forwarding of data. You need to communicate this security key separately to an administrative user of the destination tenant. You can click the copy icon next to the security code to copy the code to your clipboard.</p>
+
+<p><img src="/guides/images/users-guide/data-broker-connector-security-code.png" alt="Security code" /></p>
+
+<p>Switch to the <strong>Alarms</strong> tab to display current alarms for the data connector.</p>
+
+<p><img src="/guides/images/users-guide/data-broker-connector-warnings.png" alt="Warnings tab" /></p>
+
+<p>For details on alarms, see <a href="alarm-monitoring">Monitoring and controlling devices &gt; Working with alarms</a> in the Device Management section.</p>
+
+<h3 id="a-name-data-broker-subscriptions-a-data-subscriptions"><a name="data-broker-subscriptions"></a> Data subscriptions</h3>
+
+<p>In the <strong>Data subscriptions</strong> page, you can manage existing data subscriptions or create new ones.</p>
+
+<p>Click <strong>Data subscriptions</strong> to see a list of all currently defined data forwarded to your tenant.</p>
+
+<p><img src="/guides/images/users-guide/Administration/Admin_Subscriptions.png" alt="Data subscriptions"></p>
+
+<p>For each subscription, the name, the target tenant and the status (enabled or disabled) is provided on a card.</p>
+
+<p>Use the slider to temporarily stop forwarding data into your tenant.</p>
+
+<p>To stop data forwarding and remove the data connector, click the menu icon and from the context menu select <strong>Delete</strong>.</p>
+
+<p><strong>How to set up data forwarding on the receiving end</strong></p>
+
+<ol>
+<li>Click <strong>Add data subscription</strong> in the top menu bar to receive data.</li>
+<li>In the new card, enter the security code that you received from the sending end of the data.</li>
+<li>When the connection is established, click <strong>Accept</strong> to start forwarding data into your tenant. The subscription is active now.</li>
+<li>You can move the slider in the card to temporarily stop forwarding data into your tenant.</li>
+</ol>
+
+<p>You can now navigate to the Device Management application or the Cockpit application. There will be a new &ldquo;virtual group&rdquo; with a specific icon (see the screenshot below) showing the forwarded devices. The group will have the same name as your subscription. Devices are &ldquo;lazily&rdquo; created on the destination side whenever they send data for the first time after setting up an active subscription.</p>
+
+<p><img src="/guides/images/users-guide/data-broker-group-created.PNG" alt="Data broker group in cockpit app" /></p>
+
+<h3 id="a-name-data-broker-troubleshooting-a-troubleshooting"><a name="data-broker-troubleshooting"></a> Troubleshooting</h3>
+
+<p>On the source tenant, data broker queues data that cannot be forwarded immediately to the destination tenant. The amount of data that can be queued is limited. If Cumulocity cannot queue any further data, the oldest queued data is dropped. In this case, an alarm is raised in the tenant.</p>
+
+<p><strong>&ldquo;Data broker processing is currently overloaded and may stop processing your events. Please contact support.&rdquo;</strong></p>
+
+<p>To reduce the number of alarms, alarms are not triggered more often than once per minute.</p>
+
+  </article>
+  
+  <article id="customization" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#customization">
+        <span class="fa fa-link"></span>
+      </button>
+      Customizing your platform</h2>
+    
+
+<p>In an Enterprise Edition installation under the <strong>Settings</strong> menu you can specify settings for the customization of your platform.</p>
+
+<h3 id="a-name-configuration-a-configuration"><a name="configuration"></a>Configuration</h3>
+
+<p><strong>Info</strong>: For information on the general settings in the <strong>Customization</strong> tab refer to <a href="/guides/users-guide/administration/#config-platform">Changing Settings &gt; Configuration settings</a> in the Administration section. Here, only the features will be explained which are exclusively available for the management tenant.</p>
+
+<h4 id="support-user">Support user</h4>
+
+<p>In the <strong>Support user</strong> section, you configure the parameters for the support user activation for subtenant users.</p>
+
+<p>With the support user feature, support users (i.e. users with specific permissions in the management tenant) can access subtenant users in case of any issues. Refer to <a href="/guides/users-guide/enterprise-edition#users-in-other-tenants">Supporting user access</a> for further information.</p>
+
+<p><img src="/guides/images/users-guide/Administration/admin-support-user-config.png" alt="Configuration" style="max-width: 100%"></p>
+
+<p>In the field <strong>Enable support user</strong>, specify if support user access is enabled for subtenant users. Possible values you can enter here are:</p>
+
+<ul>
+<li><em>true</em>: Support user access is enabled. If support user access is enabled, support users can log into any subtenant as any user, unless overridden on subtenant level. Subtenant users cannot enable/disable access themselves.</li>
+<li><em>false</em>: Support user access is disabled.If support user access is disabled, support users can log in only to subtenants for which at least one user has explicitly enabled such access.</li>
+<li>An explicit date in date-time format, until when support user activation should remain enabled. If no date is specified the value is set to &ldquo;No Limit&rdquo;.</li>
+</ul>
+
+<p>In the <strong>Validity limit</strong> field, you can optionally specify the support duration, i.e. for how many hours support user access will be prolonged after each support user request from a subtenant user. Enter a number specifying the number of hours. The default value is 24 hours.</p>
+
+<p>The expiry date-time will be updated based on the duration specified in the <strong>Validity limit</strong> field, e.g. if the current expiry date-time is 01/09/2018 15:00 and duration has been kept at 24 hours, the enabling support user will update the expiry date to 01/10/2018 15:00.</p>
+
+<p>Details on the status of support user requests and support user access for a tenant can be found in the <strong>Properties</strong> tab of the tenant, see <a href="/guides/users-guide/enterprise-edition#managing-tenants">Managing tenants</a>.</p>
+
+<h3 id="a-name-branding-a-branding"><a name="branding"></a>Branding</h3>
+
+<p>With the Branding feature, you can fully customize the look of your tenant to your own preferences.</p>
+
+<p>In the <strong>Branding</strong> tab, you can configure various parameters like logos, colors  and font types used throughout the platform.</p>
+
+<p>The <a href="#configuration-parameters">parameters</a> are configured on the left side of the tab while on the right you can immediately see your selections applied to a preview extract.</p>
+
+<p><img src="/guides/images/users-guide/Administration/admin-branding.png" alt="Branding tab" style="max-width: 100%"></p>
+
+<p>For a more detailed preview of your settings, click <strong>Open preview</strong> in the top menu bar to check the look and feel of your branding settings in the overall platform. You may interact and even switch applications in the preview. Every change that you make in the <strong>Branding</strong> tab will immediately be applied to the <strong>Preview</strong> page.</p>
+
+<p><img src="/guides/images/users-guide/Administration/admin-branding-preview.png" alt="Branding tab" style="max-width: 100%"></p>
+
+<p>When you are done or want to store your settings, click <strong>Save</strong> at the bottom of the <strong>Configuration</strong> section to save your branding settings to your tenant.</p>
+
+<p>Saving the settings will not yet apply them to the current tenant and respective subtenants. To do so, click <strong>Apply</strong> in the top menu bar.</p>
+
+<p>Click <strong>Reset</strong> in the top menu bar to reset the branding of the current tenant and its subtenants to the default settings. The custom settings will still be saved but are no longer applied.</p>
+
+<h4 id="a-name-configuration-parameters-a-configuration-parameters"><a name="configuration-parameters"></a>Configuration parameters</h4>
+
+<p>In the Configuration section, the following branding parameters can be configured.</p>
+
+<p><strong>General</strong></p>
+
+<p>Under <strong>General</strong>, you can edit the title which will be used in the browser tab.</p>
+
+<p><img src="/guides/images/users-guide/Administration/admin-branding-general.png" alt="Branding general" style="max-width: 50%"></p>
+
+<p><strong>Main logo</strong></p>
+
+<p>Under <strong>Main logo</strong>, specify the following items:</p>
+
+<ul>
+<li>The favicon, which will be displayed in the browser’s address bar. Click <strong>Choose file</strong> to select a file from your computer. The supported favicon format is “ico”.</li>
+<li>Your branding logo, which will be shown during application loading. Click <strong>Choose file</strong> to select a file from your computer. The supported formats are “png” and “svg”.</li>
+<li>The brand logo height.</li>
+</ul>
+
+<p><strong>Navigator logo</strong></p>
+
+<p>Under <strong>Navigator logo</strong> you can provide the navigator logo and set the navigator logo height located on top of the navigator panel.</p>
+
+<p><img src="/guides/images/users-guide/Administration/admin-branding-general.png" alt="Branding general" style="max-width: 50%"></p>
+
+<p><strong>Type</strong></p>
+
+<p>In the <strong>Type</strong> section you specify the font settings for your branded version.</p>
+
+<p><img src="/guides/images/users-guide/Administration/admin-branding-type.png" alt="Branding type" style="max-width: 50%"></p>
+
+<p>You can choose your base and headings font, and select an option for the navigator font (either same as base or same as headings font). You may also add a link to existing remote fonts to be used.</p>
+
+<p><strong>Colors</strong></p>
+
+<p>In the <strong>Colors</strong> section you specify the colors to be used in your branding version.</p>
+
+<p><img src="/guides/images/users-guide/Administration/admin-branding-color.png" alt="Branding color" style="max-width: 50%"></p>
+
+<p>The following parameters can be specified by providing a hex, rgb or rgba value:</p>
+
+<ul>
+<li>Main brand color.</li>
+<li>Secondary brand color. The default value is “#07b91A”.</li>
+<li>Dark brand color.</li>
+<li>Light brand color.</li>
+<li>Text color. The default value is “#444”.</li>
+<li>Link color. The default value is the same as the main brand color.</li>
+<li>Main background color. The default value for this item is “#FAFAFA”.</li>
+</ul>
+
+<p><strong>Top bar</strong></p>
+
+<p>In the <strong>Top bar</strong> section you specify the parameters for the top bar.</p>
+
+<p><img src="/guides/images/users-guide/Administration/admin-branding-topbar.png" alt="Branding topbar" style="max-width: 50%"></p>
+
+<p>The following parameters can be specified by providing a hex, rgb or rgba value:</p>
+
+<ul>
+<li>Background color. The default value is “#FFFFF”.</li>
+<li>Text color. The default value is “49595B”.</li>
+<li>Button hover text color. The default value is the main brand color.</li>
+</ul>
+
+<p><strong>Navigator</strong></p>
+
+<p>In the <strong>Navigator</strong> section you specify the parameters for the navigator.</p>
+
+<p><img src="/guides/images/users-guide/Administration/admin-branding-navigator.png" alt="Branding top bar" style="max-width: 50%"></p>
+
+<p>The following parameters can be specified by providing a hex, rgb or rgba value:</p>
+
+<ul>
+<li>Background color. The default value is “2c3637”.</li>
+<li>Logo wrapper background color. The default value is “Transparent”.</li>
+<li>Title color. The default value is “FFFFF”.</li>
+<li>Text and buttons color. The default value is “#FAFAFA”.</li>
+<li>Separator line color. The default value is “#FAFAFA”.</li>
+<li>Text color of the current item in the navigator. The default value is “#FAFAFA”.</li>
+<li>Background color of the current item in the navigator with the main brand color as default.</li>
+</ul>
+
+<p><strong>Misc</strong></p>
+
+<p>In the <strong>Misc</strong> section you may specify the “Button Border-Radius” by providing a value in pixel (px).</p>
+
+<h3 id="a-name-domain-name-a-domain-name"><a name="domain-name"></a>Domain name</h3>
+
+<p>In the <strong>Domain name</strong> tab you can activate your own custom domain name.</p>
+
+<blockquote>
+<p><strong>Info</strong>: To activate you domain, you need a valid license. Please contact our Sales team at sales@cumulocity.com to install a license for your domain.</p>
+</blockquote>
+
+<p><img src="/guides/images/users-guide/Administration/Admin_DomainName.png" alt="Domain name" style="max-width: 100%"></p>
+
+<p>First you have to upload the appropriate certificate by clicking <strong>Upload Certificate</strong>. Make sure that</p>
+
+<ul>
+<li>the certificate is in a valid PKCS#12 format, containing a full authorization chain</li>
+<li>the certificate is not password protected,</li>
+<li>you are using a wildcard certificate to enable creation of subtenants.</li>
+</ul>
+
+<p><strong>Info</strong>: If your certificate is not in a valid PKCS#12 format but you have PEM files for certificate, private key and authorization chain then you can generate a valid PKCS#12 file using the following command:</p>
+
+<pre><code>openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -certfile chain.pem
+</code></pre>
+
+<p>Before activating the custom domain name, make sure that</p>
+
+<ul>
+<li>you have uploaded a valid SSL certificate for your custom domain,</li>
+<li>the common name (domain name) is not used by any other tenant,</li>
+<li>the certificate is currently valid (validFrom in the past and validTo in the future),</li>
+<li>you have added a wildcard CNAME record (starting with <code>&quot;*.&quot;</code>) to your DNS server of the following format:<br>
+Hostname = <code>*.&lt;your domain name&gt;</code>, e.g. <code>*.iot.mycompany.com</code> <br>
+Type = CNAME <br>
+Target = the target URL of the platform you want to point to, e.g. <code>manage.cumulocity.com</code><br>
+Make sure to remove all A entries for the wildcard domain. If your DNS service does not provide CNAME entries for wildcard certificates, please contact our support.</li>
+</ul>
+
+<p>After successful activation you will be redirected to your enterprise tenant at the new domain. You will also receive an email with information about the activation.</p>
+
+<blockquote>
+<p><strong>Info</strong>: After the activation is completed you will no longer be able to access your tenant with the cumulocity domain name. Instead, use your custom domain name.</p>
+</blockquote>
+
+<h4 id="updating-your-certificate">Updating your certificate</h4>
+
+<p>When your certificate expires, you must update your certificate with a new one with an extended validation period. When updating a certificate, you need to make sure that</p>
+
+<ul>
+<li>the certificate is in a valid PKCS#12 format,</li>
+<li>the certificate is not password protected,</li>
+<li>the certificate is currently valid (validFrom in the past and validTo in the future),</li>
+<li>the certificate has exactly the same common name (domain name) as the currently active certificate,</li>
+<li>you have added a CNAME record to your DNS server. For details on the CNAME record see above.</li>
+</ul>
+
+<h4 id="deactivating-your-certificate">Deactivating your certificate</h4>
+
+<p>If you wish to return to your old domain at Cumulocity, you can simply deactivate you certificate.</p>
+
+<blockquote>
+<p><strong>Important</strong>: Use with care. Your customers will not be able to access their subtenants anymore.</p>
+</blockquote>
+
+<h4 id="troubleshooting">Troubleshooting</h4>
+
+<p>In case you cannot reach Cumulocity using your custom domain, we recommend to perform the following checks to verify your DNS setup.</p>
+
+<p><strong>Check if the DNS entry is correct</strong></p>
+
+<p>Execute the following command:</p>
+
+<pre><code>host management.&lt;your domain name&gt;
+</code></pre>
+
+<p>The following result should be returned:</p>
+
+<pre><code>management.&lt;your domain name&gt; is an alias for &lt;instance domain name&gt;
+&lt;instance domain name&gt; has address &lt;ip address&gt;
+</code></pre>
+
+<p><strong>Check if the API is responding</strong></p>
+
+<p>Execute the following command:</p>
+
+<pre><code>curl -v -u '&lt;tenant ID&gt;/&lt;your user&gt;:&lt;your password&gt;' --head http://management.&lt;your domain name&gt;/inventory/managedObjects
+</code></pre>
+
+<p>The following result should be returned:</p>
+
+<pre><code>...
+HTTP/1.1 200 OK
+... 
+</code></pre>
+
+<blockquote>
+<p><strong>Info</strong>: Take into consideration that after changing the DNS entry it might take up to 24 hours until the new entry has been propagated.</p>
+</blockquote>
+
+  </article>
+  
+  <article id="storage-quota" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#storage-quota">
+        <span class="fa fa-link"></span>
+      </button>
+      Storage quota</h2>
+    
+
+<p><a name="storageQuota"></a></p>
+
+<p>The storage quota is in place for a tenant when a storage quota per device is set by the platform administrator. The total storage available to the user is calculated using the formula <code>storage quota per device x number of devices</code>. A check is performed every night to ensure the quota is not exceeded.</p>
+
+<p>In case the quota is exceeded, an e-mail is sent to all tenant administrators to warn them that data will be deleted the following night. After 24h, if the quota is still exceeded, all data retention limits are reduced by a fixed percentage. The storage quota per device will be reduced as a result of this rule.</p>
+
+<p><strong>Example:</strong></p>
+
+<p>Let us assume that a tenant has a storage quota of 10GB. Retention rules are 80 days for measurements, 90 days for all other data.</p>
+
+<ul>
+<li><p>Day 1: In the nightly check, the total storage is calculated at 13GB. An e-mail is sent to all tenant administrators.</p></li>
+
+<li><p>Day 2: the total storage is still at 13GB. The system determines that a 15% reduction of the retention rules is sufficient to be under the storage quota. So any measurement older than 68 days (80 days - 15%) and any other data older that 77 days (90 days - 15% results in 76.5 days, rounded to 77 days) is deleted.</p></li>
+</ul>
+
+<p>The total storage is now at 9.8GB.</p>
+
+<blockquote>
+<p><strong>Info</strong>: The storage quota feature needs to be defined on the tenant and cannot be enabled/disabled by configuration.</p>
+</blockquote>
+
+<h3 id="a-name-warningemail-a-managing-storage-quota-warning-e-mail"><a name="warningEmail"></a>Managing storage quota warning e-mail</h3>
+
+<p>This feature is only visible if a storage quota was set for the tenant.</p>
+
+<p>The tenant administrators can set a user group and threshold for an e-mail to be sent once a day if the storage used is higher than a particular percentage of the storage quota. The default setup is sending an e-mail to the &ldquo;admin&rdquo; group when the storage reaches 80% of maximum storage.</p>
+
+<p>The e-mail warning can also be disabled.</p>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

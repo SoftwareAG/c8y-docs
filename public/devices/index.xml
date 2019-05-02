@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Devices on Cumulocity IoT Guides</title>
+    <link>https://cumulocity.com/guides/devices/</link>
+    <description>Recent content in Devices on Cumulocity IoT Guides</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://cumulocity.com/guides/devices/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>All devices</title>
+      <link>https://cumulocity.com/guides/devices/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/overview/</guid>
+      <description>There is an incredible amount of different hardware types, revisions, firmware versions and other variations of devices on the IoT market.
+We cannot guarantee plug-and-play compatibility and full functional support for all such variations.</description>
+    </item>
+    
+    <item>
+      <title>Adeunis LoRaWAN Demonstrator</title>
+      <link>https://cumulocity.com/guides/devices/adeunis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/adeunis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>BeagleBone Black</title>
+      <link>https://cumulocity.com/guides/devices/beaglebone-black/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/beaglebone-black/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cinterion Java modules</title>
+      <link>https://cumulocity.com/guides/devices/cinterion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/cinterion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CloudGate</title>
+      <link>https://cumulocity.com/guides/devices/cloudgate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/cloudgate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dell Edge Gateway</title>
+      <link>https://cumulocity.com/guides/devices/dell-edge-gateway/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/dell-edge-gateway/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>INSYS Smart Devices – INSYS OS</title>
+      <link>https://cumulocity.com/guides/devices/insys-insys-os/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/insys-insys-os/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>INSYS Smart Devices – icom OS</title>
+      <link>https://cumulocity.com/guides/devices/insys-icom-os/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/insys-icom-os/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Janz Tec emPC-A/RPI</title>
+      <link>https://cumulocity.com/guides/devices/janztec/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/janztec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Libelium-Meshlium</title>
+      <link>https://cumulocity.com/guides/devices/libelium-meshlium/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/libelium-meshlium/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mbed u-blox C027</title>
+      <link>https://cumulocity.com/guides/devices/mbed-u-blox/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/mbed-u-blox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Meitrack</title>
+      <link>https://cumulocity.com/guides/devices/meitrack/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/meitrack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Netcomm</title>
+      <link>https://cumulocity.com/guides/devices/netcommwireless/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/netcommwireless/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nethix - WE500</title>
+      <link>https://cumulocity.com/guides/devices/nethix-we500/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/nethix-we500/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OPCUA Java gateway</title>
+      <link>https://cumulocity.com/guides/devices/opcua/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/opcua/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Owasys</title>
+      <link>https://cumulocity.com/guides/devices/owasys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/owasys/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Queclink</title>
+      <link>https://cumulocity.com/guides/devices/queclink/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/queclink/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi</title>
+      <link>https://cumulocity.com/guides/devices/raspberry-pi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/raspberry-pi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Red Lion RAM series</title>
+      <link>https://cumulocity.com/guides/devices/red-lion-ram/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/red-lion-ram/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Robustel</title>
+      <link>https://cumulocity.com/guides/devices/robustel-r3000/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/robustel-r3000/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SMARTBox BLE</title>
+      <link>https://cumulocity.com/guides/devices/smartbox-ble/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/smartbox-ble/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SMARTBox CAN</title>
+      <link>https://cumulocity.com/guides/devices/smartbox-can/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/smartbox-can/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SMARTBox CubeIO</title>
+      <link>https://cumulocity.com/guides/devices/smartbox-cube-io/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/smartbox-cube-io/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SMARTBox DP</title>
+      <link>https://cumulocity.com/guides/devices/smartbox-dp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/smartbox-dp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SMARTBox IO</title>
+      <link>https://cumulocity.com/guides/devices/smartbox-io/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/smartbox-io/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SMARTBox Mini</title>
+      <link>https://cumulocity.com/guides/devices/smartbox-mini/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/smartbox-mini/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TC3G</title>
+      <link>https://cumulocity.com/guides/devices/stw/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/stw/</guid>
+      <description>Sensor-Technik Wiedemann (STW) offers rugged solutions for mobile working machines and industrial machines. The data management, computing, telematics and gateway platform TC3G connects your mobile machine or industrial vehicle to Cumulocity’s cloud based M2M application platform.</description>
+    </item>
+    
+    <item>
+      <title>Telic</title>
+      <link>https://cumulocity.com/guides/devices/telic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/telic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TinkerForge</title>
+      <link>https://cumulocity.com/guides/devices/tinkerforge/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/tinkerforge/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tixi</title>
+      <link>https://cumulocity.com/guides/devices/tixi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/devices/tixi/</guid>
+      <description>The Tixi GmbH provides various gateways for energy management, smart metering, data logging and alarming. Specifically, the following device are offered: * Tixi Wand.Box W600 * Tixi Gate H600
+Tixi devices can be integrated out-of-the-box to Cumulocity.</description>
+    </item>
+    
+  </channel>
+</rss>

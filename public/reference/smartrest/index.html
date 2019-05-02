@@ -1,0 +1,2300 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>SmartREST - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Reference guide</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav0"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/rest-implementation/">REST implementation</a>
+     
+      
+      
+      <div id="page-nav0"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/rest-implementation/#http-usage">HTTP usage</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/rest-implementation/#rest-usage">REST usage</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/rest-implementation/#root-interface">Root interface</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/rest-implementation/#generic-media-types">Generic media types</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/reference/smartrest/">SmartREST</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#overview">Overview</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#the-protocol">The protocol</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#templates">Templates</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#registration-process">Registration process</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#using-smartrest-with-multiple-x-ids">Using SmartREST with multiple X-Ids</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#smartrest-real-time-notifications">SmartREST Real-time Notificationss</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#built-in-messages">Built-in messages</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/login/">Login with OAuth2</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/login/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/login/#login-options">Login options</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/login/#login-flow">Login flow</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/inventory/">Inventory</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#inventory-api">Inventory API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#managed-object-collection">Managed object collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#managed-object">Managed object</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#managed-object-reference-collection">Managed object reference collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#managed-object-reference">Managed object reference</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#notifications">Notifications</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/events/">Events</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#events-api">Events API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#event-collection">Event collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#event">Event</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#notifications">Notifications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#binaries">Binaries</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav5"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/measurements/">Measurements</a>
+     
+      
+      
+      <div id="page-nav5"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#system-of-units">System of units</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#measurement-api">Measurement API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#measurement-collection">Measurement collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#measurement">Measurement</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#data-streaming">Data streaming</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#other-response-formats">Other response formats</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#notifications">Notifications</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav6"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/device-control/">Device control</a>
+     
+      
+      
+      <div id="page-nav6"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#device-control-api">Device control API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#operation-collection">Operation collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#operation">Operation</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#device-control-via-sms">Device control via SMS</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#notifications">Notifications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#bulk-operation-collection">Bulk operation collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#bulk-operation">Bulk operation</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav7"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/alarms/">Alarms</a>
+     
+      
+      
+      <div id="page-nav7"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/alarms/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/alarms/#alarm-api">Alarm API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/alarms/#notifications">Notifications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/alarms/#alarm-collection">Alarm collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/alarms/#alarm">Alarm</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav8"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/device-credentials/">Device credentials</a>
+     
+      
+      
+      <div id="page-nav8"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-credentials/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-credentials/#new-device-request-collection">New device request collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-credentials/#new-device-request">New device request</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-credentials/#device-credentials">Device credentials</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-credentials/#bulk-device-credentials">Bulk device credentials</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav9"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/identity/">Identity</a>
+     
+      
+      
+      <div id="page-nav9"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/identity/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/identity/#identity-api">Identity API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/identity/#external-id-collection">External ID collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/identity/#external-id">External ID</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav10"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/users/">Users</a>
+     
+      
+      
+      <div id="page-nav10"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#user-api">User API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#user-collection">User collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#user">User</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#user-reference-collection">User reference collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#user-reference">User reference</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#group-collection">Group collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#group">Group</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#group-reference-collection">Group reference collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#group-reference">Group reference</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#role-collection">Role collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#role">Role</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#role-reference-collection">Role reference collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/users/#role-reference">Role reference</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav11"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/auditing/">Auditing</a>
+     
+      
+      
+      <div id="page-nav11"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/auditing/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/auditing/#audited-informations">Audited informations</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/auditing/#audit-api">Audit API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/auditing/#audit-record-collection">Audit record collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/auditing/#audit-record">Audit record</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav12"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/device-management/">Device management library</a>
+     
+      
+      
+      <div id="page-nav12"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-management/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-management/#metadata">Metadata</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-management/#device-information">Device information</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-management/#configuration-management">Configuration management</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-management/#device-reports">Device reports</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-management/#device-availability">Device availability</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-management/#miscellaneous">Miscellaneous</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav13"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/sensor-library/">Sensor library</a>
+     
+      
+      
+      <div id="page-nav13"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/sensor-library/#environmental-capabilities">Environmental Capabilities</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/sensor-library/#energy">Energy</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/sensor-library/#location-capabilities">Location Capabilities</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/sensor-library/#common-capabilities">Common Capabilities</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav14"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/real-time-statements/">Real-time statements</a>
+     
+      
+      
+      <div id="page-nav14"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-statements/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-statements/#module-api">Module API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-statements/#module-collection">Module collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-statements/#module">Module</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-statements/#notifications">Notifications</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav15"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/real-time-notifications/">Real-time notifications</a>
+     
+      
+      
+      <div id="page-nav15"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#handshake">Handshake</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#subscribe">Subscribe</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#unsubscribe">Unsubscribe</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#connect">Connect</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#disconnect">Disconnect</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav16"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/tenants/">Tenants</a>
+     
+      
+      
+      <div id="page-nav16"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#tenants">Tenants</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#tenant-collection">Tenant collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#tenant">Tenant</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#application-reference-collection">Application reference collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#application-reference">Application reference</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#option-collection">Option collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#option">Option</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#system-options">System Options</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#tenant-usage-statistics">Tenant usage statistics</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav17"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/applications/">Applications</a>
+     
+      
+      
+      <div id="page-nav17"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#application-names">Application names</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#application-api">Application API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#application-collection">Application collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#application">Application</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#bootstrap-user">Bootstrap user</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#current-application">Current application</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#application-binaries">Application binaries</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav18"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/binaries/">Binaries</a>
+     
+      
+      
+      <div id="page-nav18"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/binaries/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/binaries/#binaries-collection">Binaries collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/binaries/#binaries">Binaries</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav19"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/retention-rules/">Retention rules</a>
+     
+      
+      
+      <div id="page-nav19"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/retention-rules/#retention-rules">Retention rules</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/retention-rules/#retention-rule-collection">Retention rule collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/retention-rules/#retentionrule">RetentionRule</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/reference/microservice-manifest/">Microservice manifest</a>
+     
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav21"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/microservice-package/">Microservice package and deploy</a>
+     
+      
+      
+      <div id="page-nav21"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-package/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-package/#packing">Packing</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-package/#deploying">Deploying</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-package/#multiple-goals">Multiple goals</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-package/#subscribing">Subscribing</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav22"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/microservice-runtime/">Microservice runtime</a>
+     
+      
+      
+      <div id="page-nav22"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-runtime/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-runtime/#environment-variables">Environment variables</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-runtime/#Access-to-the-platform-and-other-microservices">Access to the platform and other microservices</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">SmartREST</h1>
+    </header>
+    
+      <div class="lead">
+        
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="overview" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#overview">
+        <span class="fa fa-link"></span>
+      </button>
+      Overview</h2>
+    <p>This reference guide walks through the <em>SmartREST</em> protocol, the data format used, as well as the anatomy and registration of <em>SmartREST</em> templates. Built-in messages as well as errors are also discussed. For a step-by-step description, see <a href="/guides/microservice-sdk/rest#smartrest">SmartREST</a> in the Microservice SDK guide.</p>
+
+  </article>
+  
+  <article id="the-protocol" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#the-protocol">
+        <span class="fa fa-link"></span>
+      </button>
+      The protocol</h2>
+    
+
+<p><em>SmartREST</em> is built upon the well-established <em>HTTP</em> protocol making it work everywhere since most popular platforms provide an <em>HTTP</em> client through which <em>SmartREST</em> can be accessed. <em>SmartREST</em> communicates exclusively through the <code>/s</code> resource using the <em>HTTP</em> <code>POST</code> method for bidirectional communication. The payload data format in <em>CSV (comma-separated values)</em>.</p>
+
+<p>The following example shows the communication between a client and the  <em>SmartREST</em> endpoint. Note the <code>Authorization</code> header and the custom <code>X-Id</code> header in the request which specifies the <em>SmartREST</em> template to use for this request.</p>
+
+<pre><code>POST /s HTTP/1.0
+Authorization: Basic ...
+X-Id: ...
+Transfer-Encoding: chunked
+
+100,1234456
+</code></pre>
+
+<p>Each <em>SmartREST</em> request is represented by one row having a unique unsigned integer as its first value determining the action and subsequent values for parameters.</p>
+
+<p>The <em>SmartREST</em> endpoint yields the following response. Note that the <em>HTTP</em> response code is always <code>200</code> unless the <em>SmartREST</em> endpoint is not available.</p>
+
+<pre><code>HTTP/1.1 200 OK
+Transfer-Encoding: chunked
+
+200,1,123456,Request result
+</code></pre>
+
+<p>Each row yielded by the <em>SmartREST</em> endpoint represents a set of extracted values from the result of a <em>SmartREST</em> request containing a unique unsigned integer, the <em>SmartREST</em> request line number and the extracted data values, respectively.</p>
+
+<p>Note: If response from Cumulocity REST API would be empty (e.g. like after deleting a Managed Object) then response from <em>SmartREST</em> would be empty as well. Regardless of registered response templates.</p>
+
+<h3 id="data-format">Data format</h3>
+
+<p>The <em>CSV (comma-separated values)</em> format is used for communication with the <em>SmartREST</em> endpoint. The following rules must be followed to ensure a frictionless communication.</p>
+
+<ul>
+<li>Every row must be terminated by the <code>\n</code> character sequence.</li>
+<li>Values are always separated by a comma (<code>,</code>).</li>
+<li>If a value contains double-quotes (<code>&quot;</code>), commas (<code>,</code>), leading or trailing whitespace, line-breaks or tab stops, it must be surrounded by quotes (<code>&quot;</code>). Contained double-quotes (<code>&quot;</code>) must be escaped by prepending another double-quote (<code>&quot;&quot;</code>).</li>
+</ul>
+
+<h4 id="examples">Examples</h4>
+
+<p>The following examples illustrate the rules stated above:</p>
+
+<pre><code>100,Hello world!
+101,&quot; I have leading whitespace!&quot;
+102,&quot;I have trailing whitespace!&quot;
+103,&quot;I contain a line
+break!&quot;
+104,&quot;I have &quot;&quot;quotes&quot;&quot;!&quot;
+105,I also have 'quotes'!
+</code></pre>
+
+<h3 id="processing-mode">Processing mode</h3>
+
+<p>Similar to <a href="/guides/reference/rest-implementation">Cumulocity REST implementation</a> every communication in <em>SmartREST</em> which can lead to data update (i. e., POST, PUT, DELETE) supports four processing modes, <em>PERSISTENT</em>, <em>TRANSIENT</em>, <em>QUIESCENT</em> or <em>CEP</em>. If the data sent to the <em>SmartREST</em> endpoint must be both stored in Cumulocity database and be transferred to real-time processing, then <em>PERSISTENT</em> mode should be set. It is also enabled by default and does not require additional configuration.</p>
+
+<p>In case when it is only needed to communicate data to real-time processing, the <em>TRANSIENT</em> processing mode should be specified by adding it to the header of <em>HTTP</em> request:</p>
+
+<pre><code>POST /s HTTP/1.0
+Authorization: Basic ...
+X-Id: ...
+X-Cumulocity-Processing-Mode: TRANSIENT
+Transfer-Encoding: chunked
+
+100,1234456
+</code></pre>
+
+<p>Please, note that with <em>TRANSIENT</em> mode in the header the body data is not persisted in Cumulocity database.</p>
+
+<p>During real-time processing, CEP scripts can be used to define if updates should be stored in the database or not.</p>
+
+<p>The <em>QUIESCENT</em> processing mode should be specified if data sent to the <em>SmartREST</em> endpoint must be both stored in the Cumulocity database and be transferred to real-time processing but real-time notifications must be disabled. Currently, the QUIESCENT processing mode is applicable for measurements and events only.</p>
+
+<p>The <em>CEP</em> processing mode should be specified if data sent to the <em>SmartREST</em> endpoint must only be transiently sent to real-time processing engine with real-time notifications disabled. Currently, the CEP processing mode is applicable for measurements and events only.</p>
+
+  </article>
+  
+  <article id="templates" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#templates">
+        <span class="fa fa-link"></span>
+      </button>
+      Templates</h2>
+    
+
+<p><em>SmartREST</em> templates are a collection of request and response templates used for the conversion of <em>CSV</em> data and Cumulocity REST API calls. Additionally, <em>SmartREST</em> templates contain a template identifier which is compared to the custom <code>X-Id</code> header field to identify the <em>SmartREST</em> template used for processing.</p>
+
+<p>Each request and response template has a unique numeric identifier called the message identifier which is referenced by the first value of each <em>SmartREST</em> request or response row. To avoid collision with one of the default message identifiers, developers are advised to choose message identifiers starting at <code>100</code>.</p>
+
+<h3 id="request-templates">Request templates</h3>
+
+<p>A request template contains all necessary information to convert a <em>SmartREST</em> request into a corresponding REST API call which is then sent to the platform.</p>
+
+<p>A request template contains the following information:</p>
+
+<ul>
+<li>A unique unsigned integer as a message identifier</li>
+<li>The request method, e.g. <code>GET</code> or <code>POST</code>.</li>
+<li>The resource URI, for instance <code>/inventory/managedObjects</code></li>
+<li>The <code>Content-TYpe</code> and <code>Accept</code> header values of the sent and received data</li>
+<li>A placeholder such as <code>%%</code></li>
+<li>The expected request parameters such as <code>STRING</code>s, <code>NUMBER</code>s, <code>UNSIGNED</code> integers and <code>DATE</code>s</li>
+<li>The template string with placeholders for each parameter</li>
+</ul>
+
+<h3 id="response-templates">Response templates</h3>
+
+<p>A response template contains the necessary information to extract data values from a platform REST API call response which are then sent back to the client in the <em>CSV</em> data format.</p>
+
+<p>The following information is contained within a response template:</p>
+
+<ul>
+<li>A unique unsigned integer as a message identifier</li>
+<li>A JSON path referencing a base object or object list to extract data from, e.g. <code>$</code> or <code>$.managedObjects</code>. If the JSON path points to a list of objects, one row of extracted data for each object in the list is yielded.</li>
+<li>A JSON path which must exist within the base object or base object list in order to extract values, e.g. <code>$.id</code>. The value is not added to the response.</li>
+<li>A variable number of JSON paths for each value to extract, e.g. <code>$.id</code>, <code>$.name</code> or <code>$.type</code>. Values are added to the response in the order they were defined in the template.</li>
+</ul>
+
+  </article>
+  
+  <article id="registration-process" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#registration-process">
+        <span class="fa fa-link"></span>
+      </button>
+      Registration process</h2>
+    
+
+<p>This reference guide solely focusses on the registration of <em>SmartREST</em> templates using the <em>SmartREST</em> <code>/s</code> endpoint. Alternatively, templates can also be registered using the platform inventory API.</p>
+
+<p>Before a <em>SmartREST</em> template can be registered, its existence must be checked. If the template already exists, a registration is not necessary and yields an error message.</p>
+
+<p>The existence of a <em>SmartREST</em> template can be checked by making an empty request:</p>
+
+<pre><code>POST /s HTTP/1.0
+Authorization: Basic ...
+X-Id: ...
+Transfer-Encoding: chunked
+</code></pre>
+
+<p>If the template exists, the following response is yielded where the message identifier <code>20</code> indicates that the template exists in the inventory and the parameter <code>123456</code> indicates the managed object GId of the template:</p>
+
+<pre><code>HTTP/1.1 200 OK
+Transfer-Encoding: chunked
+
+20,12345
+</code></pre>
+
+<p>If the template does not exist, a response containing an error message is yielded:</p>
+
+<pre><code>HTTP/1.1 200 OK
+Transfer-Encoding: chunked
+
+40,&quot;No template for this X-ID.&quot;
+</code></pre>
+
+<p>If the template does not exist, a template registration request can be issued using the previously checked <code>X-Id</code>.</p>
+
+<p>Templates can be registered with one single request containing <em>SmartREST</em> template in the form of <em>CSV</em> data. The difference between a template registration request and a normal <em>SmartREST</em> request is that rows are not processed individually during template registration.</p>
+
+<pre><code>POST /s HTTP/1.0
+Authorization: Basic ...
+X-Id: ...
+Transfer-Encoding: chunked
+
+10,100,POST,/inventory/managedObjects,application/vnd.com.nsn.cumulocity.managedObject+json,application/vnd.com.nsn.cumulocity.managedObject+json,,,&quot;{&quot;&quot;name&quot;&quot;:&quot;&quot;Test Device&quot;&quot;,&quot;&quot;type&quot;&quot;:&quot;&quot;com_example_TestDevice&quot;&quot;,&quot;&quot;c8y_IsDevice&quot;&quot;:{}}&quot;
+11,201,,&quot;$.c8y_IsDevice&quot;,&quot;$.id&quot;
+</code></pre>
+
+<p>Should the template registration be successful, a similar response like above will be returned.</p>
+
+<pre><code>HTTP/1.1 200 OK
+Transfer-Encoding: chunked
+
+20,12345
+</code></pre>
+
+<h3 id="syntax">Syntax</h3>
+
+<p>Each request and response template is contained within one row of the template data. Request templates are indicated by the message identifier <code>10</code> and response templates by the identifier <code>11</code>. Should one of those message identifiers occour in a <em>SmartREST</em> request, the entire request is treated as a template. Thus any other message identifier besides <code>10</code> and <code>11</code> will yield an error.</p>
+
+<h4 id="request-templates">Request templates</h4>
+
+<p>Request templates have the following syntax:</p>
+
+<pre><code>10,&lt;ID&gt;,&lt;METHOD&gt;,&lt;URI&gt;,&lt;CONTENT&gt;,&lt;ACCEPT&gt;,&lt;PLACEHOLDER&gt;,&lt;PARAMS&gt;,&lt;TEMPLATE&gt;
+</code></pre>
+
+<p>Where:</p>
+
+<ul>
+<li><code>&lt;ID&gt;</code> is the message identifier of the request template.</li>
+<li><code>&lt;METHOD&gt;</code> is the <em>HTTP</em> method used for the request. <code>GET</code>, <code>POST</code>, <code>PUT</code> and <code>DELETE</code> are supported.</li>
+<li><code>&lt;URI&gt;</code> is the resource identifier.</li>
+<li><code>&lt;CONTENT&gt;</code> is the <code>Content-Type</code> header field value.</li>
+<li><code>&lt;ACCEPT&gt;</code> is the <code>Accept</code> header field value. This is mostly equal to <code>&lt;CONTENT&gt;</code>.</li>
+<li><code>&lt;PLACEHOLDER&gt;</code> is the placeholder string which is replaced by parameters in the request URI and template string.</li>
+<li><code>&lt;PARAMS&gt;</code> is a space-separated list of parameter types which are required for the template. The number of occourances of the placeholder string in the request URI and template string must be equal to the number of parameters specified.
+
+<ul>
+<li><code>STRING</code> parameters will only yield an error if no value is specified.</li>
+<li><code>UNSIGNED</code> parameters will yield an error if the supplied parameter is not an unsigned integer.</li>
+<li><code>INTEGER</code> parameters will yield an error if the supplied parameter is not a signed integer.</li>
+<li><code>NUMBER</code> parameters will yield an error if the supplied parameter is not a floating-point number.</li>
+<li><code>DATE</code> parameters will yield an error if the parameter cannot be parsed as a date.</li>
+<li><code>NOW</code> parameters will never yield an error. No request parameter is required.</li>
+</ul></li>
+<li><code>&lt;TEMPLATE&gt;</code> is the actual template string which gets sent as payload to the platform after the placeholders have been replaced with the parameter values.</li>
+</ul>
+
+<h5 id="example">Example</h5>
+
+<p>Create a device:</p>
+
+<pre><code>10,100,POST,/inventory/managedObjects,application/vnd.com.nsn.cumulocity.managedObject+json,application/vnd.com.nsn.cumulocity.managedObject+json,,,&quot;{&quot;&quot;name&quot;&quot;:&quot;&quot;Test Device&quot;&quot;,&quot;&quot;type&quot;&quot;:&quot;&quot;com_example_TestDevice&quot;&quot;,&quot;&quot;c8y_IsDevice&quot;&quot;:{}}&quot;
+</code></pre>
+
+<p>Explanation:</p>
+
+<ul>
+<li><code>10</code> describes a request template.</li>
+<li><code>100</code> is the message identifier of the request template.</li>
+<li><code>POST</code> is the <em>HTTP</em> method used.</li>
+<li><code>/inventory/managedObjects</code> is the resource identifier.</li>
+<li><code>application/vnd.com.nsn.cumulocity.managedObject+json</code> is the content type.</li>
+<li><code>application/vnd.com.nsn.cumulocity.managedObject+json</code> is the accept content type.</li>
+<li><code>%%</code> is the placeholder string.</li>
+<li><code>STRING</code> specifies that the request accepts one parameter which must be a string.</li>
+</ul>
+
+<p>Update operation to EXECUTING:</p>
+
+<pre><code>10,101,PUT,/devicecontrol/operations/%%, application/vnd.com.nsn.cumulocity.operation+json, application/vnd.com.nsn.cumulocity.operation+json,%%,INTEGER,&quot;{&quot;&quot;status&quot;&quot;:&quot;&quot;EXECUTING&quot;&quot;}&quot;
+</code></pre>
+
+<h4 id="response-templates">Response templates</h4>
+
+<p>Response templates have the following syntax:</p>
+
+<pre><code>11,&lt;ID&gt;,&lt;BASE&gt;,&lt;COND&gt;,&lt;VALUE&gt;[,&lt;VALUE&gt;]
+</code></pre>
+
+<p>Where:</p>
+
+<ul>
+<li><code>&lt;ID&gt;</code> is the message identifier of the response template.</li>
+<li><code>&lt;BASE&gt;</code> is the base JSON path pointing to an object or object list from which the values are extracted.</li>
+<li><code>&lt;COND&gt;</code> is a conditional JSON path which gets checked for existance. Only if the path exists, values are extracted.</li>
+<li><code>&lt;VALUE&gt;</code> is a JSON path pointing to a value to extract within the base object or object in the base object list. An unlimited number of <code>&lt;VALUE&gt;</code>s can be specified.</li>
+</ul>
+
+<h5 id="example-1">Example</h5>
+
+<pre><code>11,201,,&quot;$.c8y_IsDevice&quot;,&quot;$.id&quot;
+</code></pre>
+
+<p>Explanation:</p>
+
+<ul>
+<li><code>11</code> describes a response template.</li>
+<li><code>201</code> is the message identifier of the response template.</li>
+<li>The base object JSON path is empty, thus <code>$</code> is assumed.</li>
+<li><code>$.c8y_IsDevice</code> specifies that values are only extracted if the object has a fragment called <code>c8y_IsDevice</code>.</li>
+<li><code>$.id</code> is the value extracted, namely the device ID.</li>
+</ul>
+
+  </article>
+  
+  <article id="using-smartrest-with-multiple-x-ids" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#using-smartrest-with-multiple-x-ids">
+        <span class="fa fa-link"></span>
+      </button>
+      Using SmartREST with multiple X-Ids</h2>
+    
+
+<p>SmartREST supports sending of messages for different X-Ids within the same request. In this case the X-Id header mustn&rsquo;t be used but instead the body will contain additional information about which lines belong to which X-Id.</p>
+
+<h3 id="sending-messages">Sending messages</h3>
+
+<p>To indicate the X-Id in the body it is possible to include the following line</p>
+
+<pre><code>15,myxid
+</code></pre>
+
+<p>All following lines will be handled with the given X-Id until you enter the next X-Id line.</p>
+
+<pre><code>15,myxid1
+...
+...
+15,myxid2
+...
+</code></pre>
+
+<h3 id="receiving-messages">Receiving messages</h3>
+
+<p>When sending with multiple X-Ids the response also can contain responses from multiple X-Ids. The response will contain an additional line that will indicate which X-Id the following lines are from.
+The second value in this line indicates how many lines are following from this X-Id.</p>
+
+<pre><code>87,2,myxid1
+...
+...
+87,1,myxid2
+...
+</code></pre>
+
+<h3 id="checking-if-templates-are-registered">Checking if templates are registered</h3>
+
+<p>You can check if templates are already existing by just include X-Id lines in the body.</p>
+
+<pre><code>15,myxid1
+15,myxid2
+15,myxid3
+15,myxid4
+</code></pre>
+
+<p>You will get the same response like described in the registration process but for every line.</p>
+
+<pre><code>20,12345
+20,12346
+40,&quot;No template for this X-ID.&quot;
+20,12347
+</code></pre>
+
+<h3 id="registering-templates">Registering templates</h3>
+
+<p>Template registration also supports the use of the X-Id in the body. Therefore you can create multiple in a single request.</p>
+
+<pre><code>15,myxid1
+10,100,POST,/inventory/managedObjects,application/vnd.com.nsn.cumulocity.managedObject+json,application/vnd.com.nsn.cumulocity.managedObject+json,,,&quot;{&quot;&quot;name&quot;&quot;:&quot;&quot;Test Device&quot;&quot;,&quot;&quot;type&quot;&quot;:&quot;&quot;com_example_TestDevice&quot;&quot;,&quot;&quot;c8y_IsDevice&quot;&quot;:{}}&quot;
+11,201,,&quot;$.c8y_IsDevice&quot;,&quot;$.id&quot;
+15,myxid2
+10,100,POST,/inventory/managedObjects,application/vnd.com.nsn.cumulocity.managedObject+json,application/vnd.com.nsn.cumulocity.managedObject+json,,,&quot;{&quot;&quot;name&quot;&quot;:&quot;&quot;Test Device&quot;&quot;,&quot;&quot;type&quot;&quot;:&quot;&quot;com_example_TestDevice&quot;&quot;,&quot;&quot;c8y_IsDevice&quot;&quot;:{}}&quot;
+11,201,,&quot;$.c8y_IsDevice&quot;,&quot;$.id&quot;
+</code></pre>
+
+  </article>
+  
+  <article id="smartrest-real-time-notifications" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#smartrest-real-time-notifications">
+        <span class="fa fa-link"></span>
+      </button>
+      SmartREST Real-time Notificationss</h2>
+    
+
+<p>All available real-time notification endpoints and channels of the Cumulocity platform are also available in a SmartREST syntax. Please have a look at the <a href="/guides/reference/real-time-notifications">Real-time notifications</a> reference guide to understand the general functionality of the <a href="https://docs.cometd.org/current/reference/#_concepts_bayeux_protocol">Bayeux protocol</a> and get an overview of our available endpoints and channels fo  real-time notifications.</p>
+
+<h3 id="using-real-time-notifications-with-smartrest">Using Real-time Notifications with SmartREST</h3>
+
+<p>To tell the Cumulocity platform that the real-time notifications should use SmartREST all requests send to the URL must contain the <code>X-Id</code> header.</p>
+
+<h4 id="message-identifiers">Message identifiers</h4>
+
+<table>
+<thead>
+<tr>
+<th>Message identifier</th>
+<th>Message parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>80</td>
+<td><em>None</em></td>
+<td>Initial handshake that will return a unique bayeux clientId.</td>
+</tr>
+
+<tr>
+<td>81</td>
+<td>clientId,channel</td>
+<td>Subscribe for the given channel.</td>
+</tr>
+
+<tr>
+<td>82</td>
+<td>clientId,channel</td>
+<td>Unsubscribe for the given channel.</td>
+</tr>
+
+<tr>
+<td>83</td>
+<td>clientId</td>
+<td>Establish conntection for receiving the notifications (long-polling).</td>
+</tr>
+
+<tr>
+<td>84</td>
+<td>clientId</td>
+<td>Disconnect the client from the server.</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="handshake">Handshake</h4>
+
+<p>Example request:</p>
+
+<pre><code>80
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>Un1q31d3nt1f13r
+</code></pre>
+
+<h4 id="subscribe">Subscribe</h4>
+
+<p>Example request:</p>
+
+<pre><code>81,Un1q31d3nt1f13r,/mychannel
+</code></pre>
+
+<p>Example response:</p>
+
+<p>Unless there is an error there is no specific response for the subscribe</p>
+
+<h4 id="unsubscribe">Unsubscribe</h4>
+
+<p>Example request:</p>
+
+<pre><code>82,Un1q31d3nt1f13r,/mychannel
+</code></pre>
+
+<p>Example response:</p>
+
+<p>Unless there is an error there is no specific response for the unsubscribe</p>
+
+<h4 id="connect">Connect</h4>
+
+<p>Example request:</p>
+
+<pre><code>83,Un1q31d3nt1f13r
+</code></pre>
+
+<p>Example response:</p>
+
+<p>The response is formed by the response templates registered via SmartREST for the <code>X-Id</code>. Every received notification via real-time will be parsed  with the available templates and every matching template will be returned as response for the connect request.</p>
+
+<p>Keep-Alive:</p>
+
+<p>The Cumulocity platform will send every 10 minutes a space character through an open long-polling connection to detect connection loss. A response for a connect that has been open for a longer time could contain leading space characters in the first line of the response.</p>
+
+<h4 id="disconnect">Disconnect</h4>
+
+<p>Example request:</p>
+
+<pre><code>84,Un1q31d3nt1f13r
+</code></pre>
+
+<p>Example response:</p>
+
+<p>Unless there is an error there is no specific response for the disconnect</p>
+
+<h4 id="the-advice-response">The advice response</h4>
+
+<p>The bayeux protocol has a special fragment to tell the client about the recommended settings for timeout of a connection, interval between connect requests and the policy for the follow up after a response for a connect. The advice will be communicated via SmartREST also as a seperate line in the response and can be contained in any response of the above requests.</p>
+
+<p>Response Structure:</p>
+
+<pre><code>86,&lt;timeout&gt;,&lt;interval&gt;,&lt;reconnect policy&gt;
+</code></pre>
+
+<p>Timeout and interval will be numbers defining the time in millisecons. The reconnect policy can be one of three values:
+- none: do not reconnect after the response from a connect.
+- retry: do reconnect after the response from a connect.
+- handshake: start with a new handshake (e.g. because the clientId is invalid / server has closed session).</p>
+
+<p>An advice response line does not need to have every value filled</p>
+
+<p>Example:</p>
+
+<pre><code>86,,10000,retry
+</code></pre>
+
+<h3 id="subscribing-with-multiple-templates">Subscribing with multiple templates</h3>
+
+<p>If your device uses multiple templates (e.g. child devices have a different templates than the parent) it is possible to add these templates to your subscribe request. The server will than use all templates (from header and subscribe statement) to parse the responses.</p>
+
+<p>Example request:</p>
+
+<pre><code>POST /devicecontrol/notifications HTTP/1.0
+Authorization: Basic ...
+X-Id: mytemplate1
+
+81,Un1q31d3nt1f13r,/mychannel,mytemplate2,mytemplate3
+</code></pre>
+
+<p>In the case multiple templates are used the response will contain an additional line that indicates which lines are parsed with which templates:</p>
+
+<p>87,{number of  parsed rows},{X-Id used to parse the following rows}</p>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.0 200 OK
+
+87,2,mytemplate1
+100,myvalue
+101,myvalue2
+87,1,mytemplate3
+100,myvalue3
+</code></pre>
+
+  </article>
+  
+  <article id="built-in-messages" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#built-in-messages">
+        <span class="fa fa-link"></span>
+      </button>
+      Built-in messages</h2>
+    
+
+<p><em>SmartREST</em> has a variety of built-in messages.</p>
+
+<h3 id="request-messages">Request messages</h3>
+
+<table>
+<thead>
+<tr>
+<th>Message identifier</th>
+<th>Message parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>10</td>
+<td>Template message identifier<br>Method<br>Resource identifier<br>Content MIME type<br>Accept MIME type<br>Placeholder<br>Request parameters<br>Template string</td>
+<td>Represents a request template. If this message occours in the body, the whole body is treated as a <em>SmartREST</em> template and thus, all messages besides <code>10</code> and <code>11</code> will yield an error.</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>Template message identifier<br>Base JSON path<br>Conditional JSON ath<br>Value JSON paths</td>
+<td>Represents a response template. If this message occours in the body, the whole body is treated as a <em>SmartREST</em> template and thus, all messages besides <code>10</code> and <code>11</code> will yield an error.</td>
+</tr>
+
+<tr>
+<td>15</td>
+<td>X-Id</td>
+<td>Defines which X-Id to use for the following lines. You must not use the X-Id header when using this line.</td>
+</tr>
+
+<tr>
+<td>61</td>
+<td>Device MO GId</td>
+<td>Poll device credentials during device bootstrapping process. No <code>X-Id</code> header must be present and the device bootstrap authorization must be used.</td>
+</tr>
+
+<tr>
+<td>80</td>
+<td><em>None</em></td>
+<td>Initial handshake that will return a unique bayeux clientId. SmartREST real-time notifications.</td>
+</tr>
+
+<tr>
+<td>81</td>
+<td>clientId,channel</td>
+<td>Subscribe for the given channel. SmartREST real-time notifications.</td>
+</tr>
+
+<tr>
+<td>82</td>
+<td>clientId,channel</td>
+<td>Unsubscribe for the given channel. SmartREST real-time notifications.</td>
+</tr>
+
+<tr>
+<td>83</td>
+<td>clientId</td>
+<td>Establish conntection for receiving the notifications (long-polling). SmartREST real-time notifications.</td>
+</tr>
+
+<tr>
+<td>84</td>
+<td>clientId</td>
+<td>Disconnect the client from the server. SmartREST real-time notifications.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="response-messages">Response messages</h3>
+
+<table>
+<thead>
+<tr>
+<th>Message identifier</th>
+<th>Message parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>20</td>
+<td>*SmartREST* Template MO GId</td>
+<td>Echo response message. Template was found or has been created and everything is OK.</td>
+</tr>
+
+<tr>
+<td>40</td>
+<td><em>None</em></td>
+<td>Template not found.</td>
+</tr>
+
+<tr>
+<td>41</td>
+<td>Line number (optional)</td>
+<td>Template creation error.</td>
+</tr>
+
+<tr>
+<td>42</td>
+<td>Line number</td>
+<td>Malformed request line</td>
+</tr>
+
+<tr>
+<td>43</td>
+<td>Line number</td>
+<td>Invalid message identifier.</td>
+</tr>
+
+<tr>
+<td>45</td>
+<td>Line number</td>
+<td>Invalid message arguments.</td>
+</tr>
+
+<tr>
+<td>50</td>
+<td>Line number<br>*HTTP* response code</td>
+<td>Server error. This message occurs when an error happened between the <em>SmartREST</em> proxy and the platform.</td>
+</tr>
+
+<tr>
+<td>70</td>
+<td>Line number<br>Unique device identifier<br>Tenant ID<br>Username<br>Password</td>
+<td>Device bootstrap polling response with credentials.</td>
+</tr>
+
+<tr>
+<td>86</td>
+<td>timeout,interval,reconnect policy</td>
+<td>Settings advice for the client using SmartREST real-time notifications.</td>
+</tr>
+
+<tr>
+<td>87</td>
+<td>amount of lines, X-Id</td>
+<td>Indicates which X-Id was used to create the amount of following response lines.</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="error-messages">Error messages</h4>
+
+<p>Message identifier | Error message
+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;
+41 | Cannot create templates for already existing template object
+41 | Duplicate message identifiers are not allowed
+41 | Bad request template definition
+41 | Bad response template definition
+41 | Bad value type: &hellip;
+41 | Bad pattern
+41 | Not a valid message identifier for template creation
+41 | Invalid JsonPath
+41 | Using JsonPath to refer to a list of objects is not allowed for SmartRest
+41 | Using Filters (?) in JsonPath is not allowed for SmartRest
+41 | No content type supported for {GET or DELETE} templates.
+41 | No template string supported for {GET or DELETE} templates.
+41 | No content type found for {POST or PUT} templates.
+41 | No template string found for {POST or PUT} templates.
+41 | Values are only supported for templates with placeholder.
+42 | Malformed Request
+43 | Invalid message identifier
+45 | No arguments supported
+45 | Wrong number of arguments
+45 | Value is not a {value type}: {value}</p>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

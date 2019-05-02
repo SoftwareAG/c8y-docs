@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Built-in actions - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Analytics guide</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/apama/overview-analytics/">Overview</a>
+     
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/apama/analytics-introduction/">Basic functionality</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/analytics-introduction/#developing-apps">Developing applications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/analytics-introduction/#deploying-apps">Deploying applications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/analytics-introduction/#events-and-channels">Events and channels</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/analytics-introduction/#filters">Filters</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/analytics-introduction/#example">Example</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/apama/actions/">Built-in actions</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#overview">Overview</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#querying">Querying Cumulocity data</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#invoking-http">Invoking HTTP services</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#utility-functions">Utility functions</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/apama/advanced/">Advanced features</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/advanced/#custom-fragments">Custom fragments</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/advanced/#Listeners">Listeners</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/advanced/#own-event-types">Creating own event types</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/advanced/#own-actions">Creating own actions</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/advanced/#variables">Variables</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/advanced/#spawning">Spawning monitor instances and contexts</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/apama/best-practices/">Best practices and guidelines</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/best-practices/#epl-monitors">EPL monitors</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/best-practices/#number-format">Number formats</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/best-practices/#limitations">Apama limitations in Cumulocity IoT</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav5"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/apama/examples/">Examples</a>
+     
+      
+      
+      <div id="page-nav5"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/examples/#hourly-mean">Calculating an hourly average of measurements</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/examples/#create-alarm-2">Creating alarms from bit measurements</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav6"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/apama/study/">Study: Circular geofence alarms</a>
+     
+      
+      
+      <div id="page-nav6"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/study/#prerequisites">Prerequisites</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/study/#step-1-html">Step 1: Filtering the input</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/study/#step-2">Step 2: Collecting necessary data</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/study/#step-3">Step 3: Checking if the device supports c8y_Geofence</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/study/#step-4">Step 4: Creating the trigger</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/study/#step-5">Step 5: Creating the alarm</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/study/#step-6">Step 6: Clearing the alarm</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/apama/study/#putting-together">Putting everything together</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Built-in actions</h1>
+    </header>
+    
+      <div class="lead">
+        
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="overview" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#overview">
+        <span class="fa fa-link"></span>
+      </button>
+      Overview</h2>
+    <p>With the Apama Event Processing Language, it is possible to utilize functions, called &ldquo;actions&rdquo;. Every monitor will have at least one action - the <code>onload</code> action. This section covers the already built-in actions ready to use. <span class="inline-comment-marker" data-ref="67613062-9ea1-4d95-86f8-845b74940386"></p>
+
+<p>See also the Apama <a href="http://www.apamacommunity.com/documents/10.1.0.3/apama_10.1.0.3_webhelp/apama-webhelp/#page/apama-webhelp%252Fco-ApaEplRef_types.html%2523">EPL reference</a> for actions on built-in types.</p>
+
+  </article>
+  
+  <article id="querying" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#querying">
+        <span class="fa fa-link"></span>
+      </button>
+      Querying Cumulocity data</h2>
+    <p>To interact with your historical data, you can use one of the following request-response event pairs to look up alarms.</p>
+
+<table class="confluenceTable"><colgroup><col width="16"><col width="16" ><col width="16"><col width="26"><col width="26"></colgroup>
+
+<thead>
+
+<tr>
+
+<th style="text-align: left;" class="confluenceTh">To look up...</th>
+
+<th style="text-align: left;" class="confluenceTh">Send event of type</th>
+
+<th style="text-align: left;" class="confluenceTh">To channel</th>
+
+<th colspan="1" class="confluenceTh">With parameters</th>
+
+<th colspan="1" class="confluenceTh">Listen for events</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td class="confluenceTd"><span class="inline-comment-marker" data-ref="ec78c032-c1b9-4fc5-b9bf-443fb0780597">Alarm</span></td>
+
+<td class="confluenceTd">FindAlarm</td>
+
+<td class="confluenceTd">FindAlarm.CHANNEL</td>
+
+<td colspan="1" class="confluenceTd">params dictionary can contain "source", "status" and "type" filters</td>
+
+<td colspan="1" class="confluenceTd"><span style="color: rgb(0,0,0);">FindAlarmResponse and then <span style="color: rgb(0,0,0);">FindAlarmResponseAck</span></span></td>
+
+</tr>
+
+<tr>
+
+<td class="confluenceTd">ManagedObject</td>
+
+<td class="confluenceTd">FindManagedObject</td>
+
+<td class="confluenceTd"><span>FindManagedObject.CHANNEL</span></td>
+
+<td colspan="1" class="confluenceTd">
+
+<span class="inline-comment-marker" data-ref="7aa4ba24-a2a4-4e8f-8c52-6ab6dae4c693">Either set the deviceId set to the identifier of the source, or the params dictionary can contain one or more of the following:</span>
+
+*   fragmentType
+*   type
+*   owner
+*   text
+*   childAssetId
+*   childDeviceId
+*   childAdditionId
+
+</td>
+
+<td colspan="1" class="confluenceTd">FindManagedObjectResponse and then FindManagedObjectResponseAck</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+  </article>
+  
+  <article id="invoking-http" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#invoking-http">
+        <span class="fa fa-link"></span>
+      </button>
+      Invoking HTTP services</h2>
+    <p>To interact with HTTP services using REST and JSON, create an HttpTransport instance using one of the factory methods:</p>
+
+<ul>
+<li>HttpTransport.getOrCreate(string host, integer port) returns HttpTransport</li>
+<li>HttpTransport.getOrCreateWithConfiguration(string host, integer port, dictionary&#60;string,string&gt; configurations) returns HttpTransport (the keys in the configurations dictionary are the constants on HttpTransport with CONFIG_ prefix)</li>
+</ul>
+
+<p>On the HttpTransport object, call one of the create methods, passing a path and payload as needed, to produce a Request object.</p>
+
+<p>On the Request object, you may set cookies, headers or query parameters as needed, and can then invoke the request with the execute(action&#60;Response&gt; callback) . Supply the name of an action in your monitor for the callback, and it will be invoked with the Response when the request has completed (or timed out).</p>
+
+<p>In the callback, the Response object is supplied with statusCode and payload. Fields on the payload are accessible via the AnyExtractor object it is supplied in - see access fragments below.</p>
+
+<p>Refer to the ApamaDoc for further details.</p>
+
+  </article>
+  
+  <article id="utility-functions" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#utility-functions">
+        <span class="fa fa-link"></span>
+      </button>
+      Utility functions</h2>
+    
+
+<h3 id="access-fragments">Access fragments</h3>
+
+<p>You can access fragments via the params dictionary of most events. AnyExtractor object can be constructed to help you extract data from any objects containing multiple sub-fragments and access:</p>
+
+<ul>
+<li><p><span style="color: rgb(0,0,0);">action getInteger(string path) returns integer</span></p></li>
+
+<li><p><span>action getFloat(string path) returns float</span></p></li>
+
+<li><p><span style="color: rgb(0,0,0);">action getString(string path) returns string</span></p></li>
+
+<li><p><span style="color: rgb(0,0,0);">action getBoolean(string path) returns boolean</span></p></li>
+
+<li><p><span style="color: rgb(0,0,0);">action getSequence(string path) returns sequence<any></span></p></li>
+
+<li><p><span style="color: rgb(0,0,0);">action getDictionary(string path) returns dictionary<any,any></span></p></li>
+</ul>
+
+<p>You can use a JSON path to navigate in the object structure. Example:</p>
+
+<pre><code>string s:= AnyExtractor(measurement.params[&quot;fragment&quot;]).getString(&quot;sub.fragment.object&quot;);
+</code></pre>
+
+<blockquote>
+<p>Example &ldquo;fragment&rdquo; : &ldquo;c8y_TemperatureMeasurement&rdquo;.</p>
+
+<p>Example &ldquo;sub.fragment.object&rdquo; : &ldquo;c8y_TemperatureMeasurement.T.Unit&rdquo;.</p>
+</blockquote>
+
+<h3 id="casting-any-values">Casting &ldquo;any&rdquo; values</h3>
+
+<p>Alternatively, use a cast to convert an <code>any</code> to a particular type:</p>
+
+<pre><code>string s:= &lt;string&gt; measurement.params[&quot;strfragment&quot;];
+</code></pre>
+
+<p>Note that a cast operation will throw if the object is of a different type.</p>
+
+<h3 id="currenttime-and-the-timeformatter">currentTime and the TimeFormatter</h3>
+
+<p>The read-only variable currentTime can be used to obtain the current server time. Apama deals with time using seconds since the Unix Epoc (1 Jan 1970 UTC). You can easily transform it to a human-readable form using the TimeFormat object.</p>
+
+<p>Example:</p>
+
+<pre><code>send Event(&quot;&quot;, &quot;c8y_HighTemperatureAlarm&quot;, evt.source, currentTime, &quot;Alarm started at &quot;+TimeFormat.format(currentTime, &quot;yyyy.MM.dd G 'at' HH:mm:ss&quot;), new dictionary&lt;string,any&gt;) to Event.CHANNEL;
+</code></pre>
+
+<h3 id="inmaintenancemode">inMaintenanceMode</h3>
+
+<p>the <span style="color: rgb(0,0,0);">Util.</span>inMaintenaceMode() function is a fast way to check if the device is currently in maintenance mode. It takes a ManagedObject object as a parameter and returns a boolean which is true if the device is in a maintenance mode.</p>
+
+<p>Example:</p>
+
+<pre><code>    monitor ExampleMonitor{
+    action onload() {
+        monitor.subscribe(FindManagedObjectResponse.CHANNEL);
+        on all Measurement() as m {
+            integer reqId := integer.getUnique();
+            send FindManagedObject(reqId, m.source, new dictionary&lt;string,string&gt;) to FindManagedObject.CHANNEL;
+            on FindManagedObjectResponse(reqId = reqId, id = m.source) as d and not FindManagedObjectResponseAck(reqId = reqId) {
+                if not Util.inMaintenanceMode(d.managedObject) {
+                    send Event(&quot;&quot;, &quot;c8y_Alarm&quot;, m.source, currentTime, &quot;Received measurement from active device&quot;, new dictionary&lt;string,any&gt;) to Event.CHANNEL;
+                }
+            }
+        }
+
+
+    }
+
+
+}
+</code></pre>
+
+<h3 id="replaceplaceholders">replacePlaceholders</h3>
+
+<p>To build strings, you can use concatenation as follows:</p>
+
+<pre><code>string s:= &quot;An event with the text &quot; + evt.text + &quot; has been created.&quot;;
+</code></pre>
+
+<p>If the texts get longer and have more values that are dynamically set from the data, you can use the Util.replacePlaceholders() function. In your text string, you mark the placeholders with the field name from the event and surround it by #{}. The second parameter to replacePlaceholders can be any event type.</p>
+
+<pre><code>myMailText := Util.replacePlaceholders(&quot;The device #{source} with the serial number #{c8y_Hardware.serialNumber} created an event with the text #{text} at #{time}. The device is located at #{c8y_Address.street} in #{c8y_Address.city}.&quot;, evt);
+</code></pre>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

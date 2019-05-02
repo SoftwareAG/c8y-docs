@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Setting up Cumulocity IoT Edge - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Cumulocity IoT Edge</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/edge/overview/">About this guide</a>
+     
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/edge/introduction/">Introduction</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/introduction/#versions">Versions</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/introduction/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/introduction/#edge-vs-core">Cumulocity IoT Edge versus other Cumulocity deployments</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/edge/installation/">Setting up Cumulocity IoT Edge</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#prerequisites">Requirements</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#setting-up-the-environment">Setting up the environment</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#configuration">Configuration</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#accessing-cumulocity">Accessing the Cumulocity platform</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#setting-up-esxi">Example setup for ESXi VMWare</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#setting-up-virtual-box">Example setup for VirtualBox</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/edge/usage/">Working with Cumulocity IoT Edge</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/usage/#iot-platform">IoT platform</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/usage/#connecting-devices">Connecting devices</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/usage/#connecting-cloud">Connecting to the Cloud</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/usage/#apama">Realtime analytics using Apama</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/edge/operation/">Operating Cumulocity IoT Edge</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/operation/#overall-concepts">Architecture</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/operation/#troubleshooting">Troubleshooting the system</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/operation/#update">Upgrading the system</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/operation/#backup-restore">Backup and restore</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/operation/#administration-configuration">Administration and configuration</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/edge/operation/#operational-procedures">Restarting services</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Setting up Cumulocity IoT Edge</h1>
+    </header>
+    
+      <div class="lead">
+        <p>This document describes how to set up Cumulocity IoT Edge, the local version of Cumulocity IoT Core, in a Virtual Machine (VM).</p>
+
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="prerequisites" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#prerequisites">
+        <span class="fa fa-link"></span>
+      </button>
+      Requirements</h2>
+    
+
+<h3 id="installation-requirements">Installation requirements</h3>
+
+<p>To install Cumulocity IoT Edge, the following is required:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Item</th>
+<th align="left">Details</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><strong>Hypervisor</strong></td>
+<td align="left">- Virtualbox version 5.2.8, to be downloaded from <a href="https://www.virtualbox.org/wiki/Download_Old_Builds_5_2">https://www.virtualbox.org</a><br> - VMWare ESXi 6.5 or later</td>
+</tr>
+
+<tr>
+<td align="left"><strong>Edge VM image</strong></td>
+<td align="left">To be downloaded from the <a href="https://empower.softwareag.com">SAG Empower portal</a>, based on the target hypervisor, i.e. ova for VirtualBox / ovf for ESXi</td>
+</tr>
+
+<tr>
+<td align="left"><strong>Cumulocity license file</strong></td>
+<td align="left">To request the license file for Cumulocity, please contact the logistics team for your region:<br> - North and South America: LogisSrvus@softwareagusa.com <br>- All Other Regions: LogisticsServiceCenterGER@softwareag.com <br>In the email, you must include <br> - your company name, under which the license has been bought <br> - the domain name (DNS), under which Cumulocity IoT Edge will be reachable</td>
+</tr>
+
+<tr>
+<td align="left"><strong>SSL key and SSL certificate</strong></td>
+<td align="left">Use your internal or an external CA (Certification Authority) to create these.</td>
+</tr>
+
+<tr>
+<td align="left"><strong>Apama license</strong></td>
+<td align="left">The Apama license key is provided as part of your purchase. To request the license keys for your Apama purchase, please contact the logistics team for your region:<br> - North and South America: LogisSrvus@softwareagusa.com <br> - All Other Regions: LogisticsServiceCenterGER@softwareag.com</td>
+</tr>
+
+<tr>
+<td align="left"><strong>DNS entry</strong></td>
+<td align="left">The DNS (Domain Name System) is used to resolve human readable host names like www.cumulocity.com to machine readable IP addresses like 192.198.1.10. <br> If you want to connect to Edge VM within your LAN, the DNS entry has to be added for the domain_url (URL under which Edge can be reached) with the IP address of the host.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="network-connectivity">Network connectivity</h3>
+
+<p>The following network ports must be reachable from the local network:</p>
+
+<ul>
+<li>HTTPS</li>
+<li>MQTT over TLS</li>
+<li>SSH, only for configuring the appliance</li>
+</ul>
+
+<p>If Edge should communicate with the cloud, the following ports of www.cumulocity.com (or another instance) need to be available:</p>
+
+<ul>
+<li>HTTPS</li>
+<li>MQTT over TLS</li>
+</ul>
+
+<p>There is no internet connection required during installation. Internet connection during runtime is optional, and only used if this is configured in the Data Broker.</p>
+
+<h4 id="incoming-traffic">Incoming traffic</h4>
+
+<p>The following ports need to be enabled by default in order to accept traffic from users and devices on the internet (also refer to &ldquo;Setting up port forwarding&rdquo; in <a href="/guides/edge/installation#setting-up-the-environment">Setting up the environment</a>):</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Source IP</th>
+<th align="left">Source Port</th>
+<th align="left">Destination IP</th>
+<th align="left">Destination Port</th>
+<th align="left">Service</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">any</td>
+<td align="left">any</td>
+<td align="left">Edge VM IP</td>
+<td align="left">TCP/80</td>
+<td align="left">HTTP</td>
+</tr>
+
+<tr>
+<td align="left">any</td>
+<td align="left">any</td>
+<td align="left">Edge VM IP</td>
+<td align="left">TTCP/443</td>
+<td align="left">HTTPS</td>
+</tr>
+
+<tr>
+<td align="left">any</td>
+<td align="left">any</td>
+<td align="left">Edge VM IP</td>
+<td align="left">TCP/1883</td>
+<td align="left">MQTT</td>
+</tr>
+
+<tr>
+<td align="left">any</td>
+<td align="left">any</td>
+<td align="left">Edge VM IP</td>
+<td align="left">TCP/8883</td>
+<td align="left">MQTT/TLS</td>
+</tr>
+</tbody>
+</table>
+
+<p>Depending on additional integrations more ports must be opened.</p>
+
+<p>Moreover, there is the management port 8111. It is strongly recommended to hide this port behind the firewall and allow the traffic only from selected IPs or/and via VPN.</p>
+
+<p>In addition, the firewall must support long lasting sessions. The TCP session timeout should be set to 14.400 seconds.</p>
+
+<h4 id="outgoing-traffic">Outgoing Traffic</h4>
+
+<p>The core nodes and the CEP node must be able to connect to the internet. Ports required to outside are:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Service</th>
+<th align="left">Port</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">HTTP</td>
+<td align="left">80</td>
+</tr>
+
+<tr>
+<td align="left">HTTPS</td>
+<td align="left">443</td>
+</tr>
+</tbody>
+</table>
+
+<p>Depending on the installed integrations (email, SMS, etc.) different ports might have to be opened in order to make these services available to the Cumulocity platform. The descriptions of these ports are delivered with the corresponding integrations.</p>
+
+<p>Depending on the DNS and NTP setup it might be the case that DNS (UDP/53) and NTP (UDP/123) connections to the internet must be possible from all hosts.</p>
+
+<h3 id="hardware-requirements">Hardware requirements</h3>
+
+<p>The virtual machine has the following hardware requirements:</p>
+
+<ul>
+<li>100 GB of free disk space</li>
+<li>Intel x86 CPU</li>
+<li>Recommended: 8 GB RAM, minimum: 4 GB RAM</li>
+<li>Recommended: 4 logical CPU cores, minimum: 2 logical CPU cores</li>
+<li>One NIC</li>
+</ul>
+
+<blockquote>
+<p><strong>Info</strong>: This does not cover host OS hardware requirements.</p>
+</blockquote>
+
+  </article>
+  
+  <article id="setting-up-the-environment" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#setting-up-the-environment">
+        <span class="fa fa-link"></span>
+      </button>
+      Setting up the environment</h2>
+    
+
+<p>For your convenience, we provide two hypervisor examples for setting up Cumulocity IoT Edge:</p>
+
+<ul>
+<li><a href="/guides/edge/installation#setting-up-virtual-box">Example setup for VirtualBox</a></li>
+<li><a href="/guides/edge/installation#setting-up-esxi">Example setup for ESXi VMWare</a></li>
+</ul>
+
+<h3 id="vm-login-details">VM login details</h3>
+
+<p>SSH login into Edge is allowed through the “admin” user. All operational activities described in this guide need to be carried out through the admin user.</p>
+
+<p>Use the following login credentials for SSH login into the Edge instance:</p>
+
+<ul>
+<li>Username: admin</li>
+<li>Password: manage</li>
+</ul>
+
+<p>Use the following command to log into Edge server via SSH:</p>
+
+<pre><code>ssh admin@192.168.56.120
+
+$ Password: manage
+</code></pre>
+
+<blockquote>
+<p><strong>Info</strong>:
+Root access is not supported in the Edge VM instance. Changes made as root user might cause failure of the described operational procedures.
+Moreover, the Edge VM is tested and validated with the configuration shipped (i.e. OS version/patch level, other components compatibility etc). Root access would alter Cumulocity IoT Edge to an unknown and not tested configuration and handling support tickets would no longer work.</p>
+</blockquote>
+
+  </article>
+  
+  <article id="configuration" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#configuration">
+        <span class="fa fa-link"></span>
+      </button>
+      Configuration</h2>
+    
+
+<h3 id="preparation">Preparation</h3>
+
+<p>Copy the Edge license, SSL key, SSL certificate and Apama license (if obtained) into the Edge VM. Use WINSCP, SCP, FTP or any other file transfer tool to transfer the files from your windows host to Edge VM (Linux OS).</p>
+
+<p>You can copy the files to the Edge VM folder &ldquo;/home/admin&rdquo;.</p>
+
+<p>The files have the following extensions:</p>
+
+<ul>
+<li>Cumulocity license file: &ldquo;.licence&rdquo;</li>
+<li>SSL Key file: &ldquo;.key&rdquo;</li>
+<li>SSL Certificate: &ldquo;.crt&rdquo; or &ldquo;.cert&rdquo;</li>
+<li>Apama license file: “.xml”</li>
+</ul>
+
+<blockquote>
+<p><strong>Important</strong>: Do not rename the license file received from Cumulocity support. Renaming the license file causes failure of post installation.</p>
+</blockquote>
+
+<h3 id="configuring-the-edge-server">Configuring the Edge server</h3>
+
+<p>Once Edge VM is started, you need to run the script “post_installation.sh” to configure the Edge server. The post-installation script is available in the folder “/opt/c8y/utilities”.</p>
+
+<p>Post installation should only be run after the platform initialization is successful which can be checked by running below REST API:</p>
+
+<p><img src="/guides/images/edge/edge-check-platform.png" name="Check platform initialization" style="width:75%;"/></p>
+
+<p>Usually the platform comes up within 2 minutes.</p>
+
+<p><br>
+1. Browse to the folder &ldquo;/opt/c8y/utilities&rdquo;.</p>
+
+<pre><code>    $ cd /opt/c8y/utilities
+</code></pre>
+
+<ol>
+<li><p>Run the following command and provide the password when prompted.</p>
+
+<pre><code>$ su admin 
+$ Password: &lt;Enter password for admin user&gt;
+</code></pre></li>
+
+<li><p>Run the script &ldquo;post_installation.sh&rdquo;.</p>
+
+<pre><code>$ sudo ./post_installation.sh 
+</code></pre></li>
+</ol>
+
+<p>You will be prompted to select one of the following options:</p>
+
+<ul>
+<li>Enter 1 to start post installation execution. This is the default selection.</li>
+<li>Enter 2 to update SSL certificates or Cumulocity license. This option will just be selected in case you only want to update certificate and/or the Cumulocity license.</li>
+</ul>
+
+<p><strong>Info</strong>: Option 2 will only work if the installation has been setup using option 1 previously. Option 2 should not be used for fresh setup.</p>
+
+<h4 id="post-installation-execution-option-1">Post installation execution (option 1)</h4>
+
+<ol>
+<li><p>Provide a new username for the tenant admin. This username is later used to login to the system using the web browser.</p>
+
+<pre><code>$ Enter Tenant Admin Username
+</code></pre></li>
+
+<li><p>Provide a new password for the “tenant admin username”. This password is later used to login to the system using the web browser.</p>
+
+<pre><code>$ Enter Tenant Admin Password 
+</code></pre></li>
+
+<li><p>Provide a domain name, e.g. &ldquo;myown.iot.com&rdquo;. The domain name must match the domain name of the SSL certificate.</p>
+
+<pre><code>$ Enter Domain name 
+</code></pre>
+
+<blockquote>
+<p><strong>Important</strong>: The Domain URL cannot be changed once being configured. Make sure to use the name finally desired.</p>
+</blockquote></li>
+
+<li><p>Provide the absolute path for the SSL certificate file, e.g. &ldquo;/home/admin/myown-selfsigned.crt&rdquo;.</p>
+
+<pre><code>$ Enter Domain SSL Certificate file path
+</code></pre></li>
+
+<li><p>Provide the absolute path for the “.key” file, e.g. e.g. &ldquo;/home/admin/myown-selfsigned.key&rdquo;.</p>
+
+<pre><code>$ Enter Domain SSL Certificate Private Key file path 
+</code></pre></li>
+
+<li><p>Provide the absolute path for the “.licence” file e.g. e.g. &ldquo;/home/admin/myown.iot.com.licence&rdquo;.</p>
+
+<pre><code>$ Enter Cumulocity License file path 
+</code></pre></li>
+
+<li><p>Provide the absolute path for the “.xml” file, e.g. &ldquo;/home/admin/<filename>.xml&rdquo;.</p>
+
+<pre><code>$ Enter Apama License file path (Optional. Press Enter to continue)
+</code></pre></li>
+</ol>
+
+<h4 id="updating-ssl-certificates-or-cumulocity-license-option-2">Updating SSL certificates or Cumulocity license (Option 2)</h4>
+
+<ol>
+<li><p>Provide the absolute path for the SSL certificate file, e.g. &ldquo;/home/admin/<filename>.cert&rdquo; or &ldquo;/home/admin/<filename>.crt&rdquo;.</p>
+
+<pre><code>$ Enter Domain SSL Certificate file path
+</code></pre></li>
+
+<li><p>Provide the absolute path for the “.key” file, e.g. &ldquo;/home/admin/<filename>.key&rdquo;.</p>
+
+<pre><code>$ Enter Domain SSL Certificate Private Key file path 
+</code></pre></li>
+
+<li><p>Provide the absolute path for the “.licence” file e.g. &ldquo;/home/admin/<filename>.licence&rdquo;.</p>
+
+<pre><code>$ Enter Cumulocity License file path
+</code></pre></li>
+
+<li><p>Provide the absolute path for the “.xml” file, e.g. &ldquo;/home/admin/<filename>.xml&rdquo;.</p>
+
+<pre><code>$ Enter Apama License file path (Optional. Press Enter to continue)
+</code></pre></li>
+</ol>
+
+<p>Once the execution has been completed successfully, a respective message will be displayed. In case of any failure messages, refer to <a href="/guides/edge/operation">Operating Cumulocity IoT Edge</a>.</p>
+
+  </article>
+  
+  <article id="accessing-cumulocity" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#accessing-cumulocity">
+        <span class="fa fa-link"></span>
+      </button>
+      Accessing the Cumulocity platform</h2>
+    
+
+<h3 id="configuring-the-access-via-domain-url">Configuring the access via domain URL</h3>
+
+<p>The Cumulocity platform is accessible with the domain URL provided as part of the post installation script.</p>
+
+<p>There are two ways to configure the accessibility with domain URLs:</p>
+
+<ul>
+<li>Add an entry of domain URL and IP mapping in DNS servers. <br>
+OR</li>
+<li><a href="#add-alias">Add the alias</a> in order to reach the virtual machine via the domain URL provided during configuration. This needs to done on each client host on which Edge is accessed.</li>
+</ul>
+
+<blockquote>
+<p><strong>Info</strong>: The first option is always preferable so that Edge is reachable in LAN.</p>
+</blockquote>
+
+<h4 id="a-name-add-alias-a-adding-the-alias"><a name="add-alias"></a>Adding the alias</h4>
+
+<p>On Linux machines, add the following entry to <code>/etc/hosts</code>:</p>
+
+<pre><code>192.168.56.120 &lt;domain_url&gt; 
+</code></pre>
+
+<p>On Windows machines,  add the same entry to <code>C:\Windows\System32\Drivers\etc\hosts</code>.</p>
+
+<p>Ping the <code>&lt;domain_url&gt;</code> to verify it.</p>
+
+<pre><code>$ ping &lt;domain_url&gt;
+</code></pre>
+
+<p>If the ping is successful the DNS resolution is working properly.</p>
+
+<p>Using <code>&lt;domain_url&gt;</code>, Edge can be connected from the host operating system (operating system which is hosting Edge VM instance). If you want to connect Edge VM within your LAN, which is outside of the host operating system, you need to do following:</p>
+
+<ul>
+<li>Port forwarding must be enabled as mentioned in <a href="/guides/edge/installation#setting-up-the-environment">Setting up the environment</a>.</li>
+<li>The DNS entry needs to be added in your LAN’s DNS server/Name server. The DNS entry must have the domain&#95;url (provided in post_installation step) and the IP address of the host operating system. Note that this is not the Edge VM IP.</li>
+</ul>
+
+<h3 id="entering-cumulocity">Entering Cumulocity</h3>
+
+<p>Once the machine is in running state, open a web browser and enter the address:</p>
+
+<pre><code>https://&lt;domain url&gt;
+</code></pre>
+
+<p><img src="/guides/images/users-guide/overview-login.png" name="Login screen" /></p>
+
+<p>In the Login screen, log in with the following credentials:</p>
+
+<p>Username: <tenant admin username> (as provided during post-installation)
+Password: <tenant admin password> (as provided during post-installation)</p>
+
+<blockquote>
+<p><strong>Info</strong>: Cumulocity IoT Edge needs several minutes to start. Then all services should be up and running and you can login to the application.</p>
+</blockquote>
+
+<p>After successfully logging in, the Cumulocity platform will open:</p>
+
+<p><img src="/guides/images/users-guide/overview-welcome-screen.png" name="Welcome screen" /></p>
+
+<p>When you log into Cumulocity for the first time, you will be taken to the Cockpit application where the <strong>Welcome</strong> page initially opens up.</p>
+
+<p>For details on the Welcome page, refer to Getting Started &gt; <a href="/guides/users-guide/getting-started#accessing-cumulocity-platform">Accessing and login into the Cumulocity platform</a> in the User guide.</p>
+
+  </article>
+  
+  <article id="setting-up-esxi" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#setting-up-esxi">
+        <span class="fa fa-link"></span>
+      </button>
+      Example setup for ESXi VMWare</h2>
+    
+
+<h3 id="setting-up-esxi">Setting up ESXi</h3>
+
+<p>To set up an EXSi virtual machine, follow these steps:</p>
+
+<ol>
+<li><p>Click <strong>Create/Register VM</strong> to open a window to select the creation type.<br>
+<img src="/guides/images/edge/edge-esxi-00.png" name="Setting up ESXi" style="width:75%;"/></p></li>
+
+<li><p>Under <strong>Select creation type</strong>, select <strong>Deploy a virtual machine from OVA or OVF template</strong> and click <strong>Next</strong>. <br>
+<img src="/guides/images/edge/edge-esxi-01.png" name="Setting up ESXi" style="width:75%;"/></p></li>
+
+<li><p>In the next window, provide a name for the VM, e.g. EDGE-server, and drag and drop the required files (ovf, vmdk1, vmdk2) and click <strong>Next</strong>. <br>
+<img src="/guides/images/edge/edge-esxi-02.png" name="Setting up ESXi" style="width:75%;"/></p></li>
+
+<li><p>Under <strong>Select storage</strong>, select the datastore where the VM will reside and click <strong>Next</strong>.
+<img src="/guides/images/edge/edge-esxi-03.png" name="Setting up ESXi" style="width:75%;"/></p></li>
+
+<li><p>Under <strong>Deployment options</strong>, select options like thin/thick provisioning and click <strong>Next</strong>.
+<img src="/guides/images/edge/edge-esxi-04.png" name="Setting up ESXi" style="width:75%;"/></p></li>
+
+<li><p>Review the machine settings and click <strong>Finish</strong> to complete the setup.
+<img src="/guides/images/edge/edge-esxi-05.png" name="Setting up ESXi" style="width:75%;"/></p></li>
+</ol>
+
+<p>A VM with the provided name, e.g. &ldquo;EDGE-server&rdquo;, should now show up in the <strong>Virtual Machines</strong> section. Notifications will appear accordingly in the <strong>Recent tasks</strong> pane.</p>
+
+<p><img src="/guides/images/edge/edge-esxi-06.png" name="Setting up ESXi" style="width:75%;"/></p>
+
+<h3 id="vm-hardware-configuration">VM hardware configuration</h3>
+
+<ul>
+<li>Change VM compatibility to the latest ESXi version.</li>
+<li>Make sure that only one network interface is configured. Use VMXNET3 as type.</li>
+<li>Edit VM Settings -&gt; VMware Tools: Check time synchronization</li>
+<li>Edit VM Settings -&gt; General Options: Set guest OS to CentOs 7 (64bit)</li>
+</ul>
+
+<h3 id="network-configuration">Network configuration</h3>
+
+<p>Perform the following steps to configure the network once the image is imported into ESXi.</p>
+
+<ol>
+<li><p>Log in as root to the image via the ESXi console and check how the ethernet interface was named. <br></p>
+
+<pre><code>[root@server ~]# ip link 1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000 link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00 2: ens160: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000 link/ether 00:0c:29:fd:35:9e brd ff:ff:ff:ff:ff:ff
+</code></pre></li>
+
+<li><p>Edit the content that the DEVICE directive matches your interface name and enter your desired network parameters.</p>
+
+<pre><code>[root@server ~]# vi /etc/sysconfig/network-scripts/ifcfg-ens160
+DEVICE=ens160
+BOOTPROTO=none
+ONBOOT=yes
+NETMASK=255.255.255.0
+IPADDR=192.168.207.64
+USERCTL=no
+GATEWAY=192.168.207.1
+DNS1=8.8.8.8
+</code></pre></li>
+
+<li><p>Rename the network script /etc/sysconfig/network-scripts/ens160 to match the name of your interface.</p></li>
+
+<li><p>Edit /etc/hosts to match the IP and host name.</p>
+
+<pre><code>192.168.207.64 management.cumulocity.com &lt;domain name entered during post-installation&gt;
+</code></pre></li>
+
+<li><p>Restart the network config. <strong>service network restart</strong> (which might fail but that is not an issue).</p></li>
+
+<li><p>Run <code>ifconfig</code>. The IP entered should be shown in the interface.</p></li>
+</ol>
+
+  </article>
+  
+  <article id="setting-up-virtual-box" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#setting-up-virtual-box">
+        <span class="fa fa-link"></span>
+      </button>
+      Example setup for VirtualBox</h2>
+    
+
+<h3 id="setting-up-virtualbox">Setting up VirtualBox</h3>
+
+<p>Download the VirtualBox package for your operating system from <a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a> and install it.</p>
+
+<blockquote>
+<p><strong>Info</strong>: Depending on the operating system and VirtualBox version you are using, the following steps and especially the screenshots might slightly differ.</p>
+</blockquote>
+
+<ol>
+<li><p>In the VirtualBox, click <strong>Global Tools</strong> in the top right.
+<img src="/guides/images/edge/edge-vm-01.png" name="Configure network" style="width:75%;"/></p></li>
+
+<li><p>Click <strong>Create</strong> to set a host only network interface for VM.
+<img src="/guides/images/edge/edge-vm-02.png" name="Configure network" style="width:75%;"/></p></li>
+
+<li><p>Navigate to <strong>File</strong> &gt; <strong>Preferences</strong> &gt; <strong>Network</strong> to check the network settings. <br>
+<img src="/guides/images/edge/edge-vm-03.png" name="Configure network" style="width:75%;"/></p></li>
+
+<li><p>In the &ldquo;NAT Networks&rdquo; tab, click the plus icon to add a new network.</p></li>
+
+<li><p>Click the settings icon on the right and make sure that “Enable network” is activated, which is the default. This network interface is used for outbound Internet/Intranet access. <br>
+<img src="/guides/images/edge/edge-vm-04.png" name="NAT network details" style="width:75%;"/></p></li>
+
+<li><p>Click <strong>OK</strong> to save your settings.</p></li>
+
+<li><p>Click <strong>Global Tools</strong> in the top right. Select “VirtualBox Host-Only Ethernet Adapter”.<br>
+<img src="/guides/images/edge/edge-vm-05.png" name="NAT network details" style="width:75%;"/></p></li>
+
+<li><p>Click the properties icon on the right and make sure that &ldquo;IPv4 Address&rdquo; and &ldquo;IPv4 Mask&rdquo; are set to the following values: IPv4 Adress = 192.168.56.1, IPv4 Mask = 255.255.255.0 <br>
+<img src="/guides/images/edge/edge-vm-06.png" name="NAT network details" style="width:75%;"/><br>
+If, in your virtual box, there already is a Host-Only Ethernet Adapter configured with the same IPv4 address, then update its properties as described in the next steps.</p></li>
+
+<li><p>Click the &ldquo;DHCP Server&rdquo; tab and make sure that the DHCP server is not enabled.
+<img src="/guides/images/edge/edge-vm-07.png" name="NAT network details" style="width:75%;"/></p></li>
+</ol>
+
+<p>The VirtualBox now is installed and the network is set.</p>
+
+<h3 id="starting-the-virtual-machine">Starting the virtual machine</h3>
+
+<p>In the VirtualBox, the virtual machine is imported via File &gt; Import Appliance &gt; Select .ova file.</p>
+
+<p>Alternatively, you can double-click on the provided .OVA file. The machine will automatically be added to the VirtualBox VM Manager.</p>
+
+<p>The machine has predefined settings for disk, CPU and memory.</p>
+
+<p>Once the machine has been imported it will show up in the Manager application.</p>
+
+<p><img src="/guides/images/edge/edge-vm-import.PNG" name="Import VM" style="width:75%;"/></p>
+
+<p>Start the virtual machine by clicking the <strong>Start</strong> button on the top left.</p>
+
+<blockquote>
+<p><strong>Info</strong>: The machine description can be found in the &ldquo;Description&rdquo; tab (right-click on machine &gt; Settings &gt; General &gt; Description).</p>
+</blockquote>
+
+<h3 id="a-name-port-forwarding-a-setting-up-port-forwarding"><a name="port-forwarding"></a>Setting up port forwarding</h3>
+
+<p>Follow the steps below, to setup port forwarding.</p>
+
+<ol>
+<li><p>In the Virtual Box, click <strong>Machine Tools</strong> in the top right.
+<img src="/guides/images/edge/edge-port-forwarding1.png" name="Port forwarding Step 1" style="width:75%;"/></p></li>
+
+<li><p>Click <strong>Settings</strong> in the top left. Under settings, click <strong>Network</strong>, open the network you previously created and then click <strong>Port forwarding</strong>.
+<img src="/guides/images/edge/edge-port-forwarding2.png" name="Port forwarding Step 2" style="width:75%;"/></p></li>
+
+<li><p>In the “Port Forwarding Rules” window, click the plus (+) icon. Add the following details for HTTP:<br>
+<strong>Name</strong>: HTTP <br>
+<strong>Protocol</strong>: TCP<br>
+<strong>Host IP</strong>: The Operating System IP address on which Edge VM is running. <br>
+<strong>Host port</strong>: 80 <br>
+<strong>Guest IP</strong>: The Edge VM IP address which is always 192.168.56.120.<br>
+<strong>Guest port</strong>: 80<br>
+<img src="/guides/images/edge/edge-port-forwarding3.png" name="Port forwarding Step 3" style="width:75%;"/></p></li>
+
+<li><p>Follow the same steps and add details for other incoming and outgoing traffic, see <a href="#prerequisites">Prerequisites -&gt; Network connectivity</a>.
+Once all port details have been added, it should look similar to the following screenshot:<br>
+<img src="/guides/images/edge/edge-port-forwarding4.png" name="Port forwarding result" style="width:75%;"/></p></li>
+
+<li><p>Click <strong>OK</strong> in the &ldquo;Port Forwarding Rules&rdquo; window and then in the &ldquo;Settings&rdquo; window to complete port forwarding on Edge VM.</p></li>
+</ol>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

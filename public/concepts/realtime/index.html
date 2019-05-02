@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Real-time processing - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Concepts guide</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav0"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/concepts/introduction/">Introduction to Cumulocity</a>
+     
+      
+      
+      <div id="page-nav0"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/introduction/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/introduction/#hardware-kits-and-software-libraries">Hardware kits and software libraries</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/introduction/#mobile-networking-support">Mobile networking support</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/introduction/#device-management">Device management</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/introduction/#visualization-and-remote-control">Visualization and remote control</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/introduction/#customization">Customization</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/introduction/#api">APIs</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/introduction/#where-to-learn-more">Where to learn more</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/introduction/#summary">Summary</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/concepts/domain-model/">Cumulocity&#39;s domain model</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/domain-model/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/domain-model/#inventory">Inventory</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/domain-model/#events">Events</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/domain-model/#measurements">Measurements</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/domain-model/#operations">Remote control of devices</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/domain-model/#sensor-library">The sensor library</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/domain-model/#Summary">Summary</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/concepts/interfacing-devices/">Interfacing devices</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/interfacing-devices/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/interfacing-devices/#agents">What is an agent?</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/interfacing-devices/#agent-lifecycle">The agent life cycle</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/interfacing-devices/#integration">Integrating of other data sources</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/interfacing-devices/#developing-agents">How does Cumulocity support developing agents?</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/concepts/realtime/">Real-time processing</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#realtime-processing-in-cumulocity">What is real-time processing in Cumulocity IoT?</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#using-epl">Using Apama Event Processing Language (EPL)</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#implementation">How is real-time processing implemented in Cumulocity?</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/concepts/applications/">Developing applications</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/applications/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/applications/#web-applications">Cumulocity web applications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/applications/#microservices">Cumulocity microservices</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/applications/#subscription">Subscribing applications</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav5"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/concepts/security/">Security aspects</a>
+     
+      
+      
+      <div id="page-nav5"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/security/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/security/#physical-security">Physical security aspects</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/security/#network-security">Network security aspects</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/security/#application-security">Application security aspects</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/security/#access-control">Access control</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/security/#management">Security management aspects</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/concepts/security/#summary">Summary</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Real-time processing</h1>
+    </header>
+    
+      <div class="lead">
+        <p>Cumulocity allows developers and power users to run real-time IoT business logic inside Cumulocity based on a high-level real-time processing language.</p>
+
+<p>This section introduces the basic concepts of real-time processing and shows how you can develop your own functional business logic at Cumulocity.</p>
+
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="realtime-processing-in-cumulocity" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#realtime-processing-in-cumulocity">
+        <span class="fa fa-link"></span>
+      </button>
+      What is real-time processing in Cumulocity IoT?</h2>
+    
+
+<p>On top of Cumulocity IoT you can use the Apama streaming analytics engine to define business operations for immediate processing of incoming data from devices or other data sources. These user-defined operations can for example alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices. The operation logic is implemented in Apama&rsquo;s Event Processing Language (EPL).</p>
+
+<p>Apama&rsquo;s Event Processing Language covers <em>statements</em>, which are organized into actions and monitors. These can be deployed one file at a time, where a file may contain multiple monitors and event definitions. Monitor files can be edited with Software AG Designer - an Eclipse-based development environment, and can be deployed as Cumulocity applications, see <a href="/guides/users-guide/administration/#managing-applications">Administration &gt; Own applications</a> in the User guide.</p>
+
+<p>For further information on using Apama&rsquo;s Event Processing Language in Cumulocity IoT refer to <a href="/guides/concepts/realtime#using-epl">Using Apama Event Processing Language</a> below and to the <a href="/guides/apama/introduction">Analytics guide</a>.</p>
+
+<p>For more information about the interfaces for real-time processing also see <a href="/guides/reference/real-time-statements">Real-time Statements</a> in the Reference guide.</p>
+
+<blockquote>
+<p><strong>Important</strong>: All new Cumulocity subscriptions will use the Apama CEP engine. Using the Esper CEP engine is still supported for older installations but will no longer be provided for new subscriptions and not be invested into in the future. For information on using the discontinued CEL functionality based on Esper refer to the <a href="/guides/event-language/introduction">CEL analytics guide</a>.</p>
+</blockquote>
+
+<h3 id="what-are-the-benefits-of-using-real-time-processing">What are the benefits of using real-time processing?</h3>
+
+<p>Cumulocity&rsquo;s real-time processing feature has the following benefits:</p>
+
+<ul>
+<li>React instantly to events from remote sensors.</li>
+<li>Develop highly interactive IoT applications.</li>
+<li>Run IoT use cases directly inside Cumulocity without software development and leave the hosting and management to Cumulocity.</li>
+<li>Validate, normalize and derive data according to your own business rules across different device makes.</li>
+<li>Trigger automated remote control actions based on events.</li>
+<li>Use powerful, stream-oriented business logic, like time windows and joins.</li>
+<li>Reduce the cost of online tracking devices by preselecting data necessary for long-term storage.</li>
+</ul>
+
+  </article>
+  
+  <article id="using-epl" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#using-epl">
+        <span class="fa fa-link"></span>
+      </button>
+      Using Apama Event Processing Language (EPL)</h2>
+    
+
+<p><a name="using-epl"></a></p>
+
+<h3 id="overview">Overview</h3>
+
+<p>Apama Event Processing Language has a syntax similar to Java. In addition to simple flow control statements such as <code>if</code>, <code>while</code>, <code>for</code>, users can write listeners with the <code>on</code> keyword to react to events.</p>
+
+<p>Apama EPL is documented in the <a href="https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3/apama10-3/apama-webhelp/#page/apama-webhelp%2Fto-help_index.html%23">Apama documentation</a>.</p>
+
+<p>As an example, the following statement listens for new temperature sensor readings ranging above a particular temperature:</p>
+
+<pre><code> on all Measurement(type = &quot;c8y_TemperatureMeasurement&quot;) as e {
+          if e.measurements.getOrDefault(&quot;c8y_TemperatureMeasurement&quot;).getOrDefault(&quot;T&quot;).value &gt; 100.0 {
+              send Alarm(&quot;&quot;, &quot;c8y_TemperatureAlert&quot;, e.source, e.time, &quot;Temperature too high&quot;,
+                  &quot;CRITICAL&quot;, &quot;&quot;, 1, new dictionary&lt;string,any&gt;) to Alarm.CHANNEL;
+          }
+}
+</code></pre>
+
+<p>Here, <em>Measurement</em> is a pre-defined event containing the measurements. In this example, &ldquo;e&rdquo; is the &ldquo;Measurement&rdquo; event, the listener is filtering for measurements which are &ldquo;c8y&#95;TemperatureMeasurement&rdquo; and the property is &ldquo;c8y_TemperatureMeasurement.T&rdquo;. &ldquo;value&rdquo; is in degrees Celsius of a temperature sensor (see the <a href="https://www.cumulocity.com/guides/reference/sensor-library">sensor library</a>).</p>
+
+<p>Listeners such as the above should be placed in a monitor in the <code>onload</code> statement, and the file will need to contain <code>using</code> statements for the types used by the listener - for most of the Cumulocity events, these are in the package <em>com.apama.cumulocity</em>. The full list is provided below - for the sake of brevity, we will omit these from further examples:</p>
+
+<pre><code>using com.apama.cumulocity.ManagedObject;
+using com.apama.cumulocity.Operation;
+using com.apama.cumulocity.Event;
+using com.apama.cumulocity.Alarm;
+using com.apama.cumulocity.Error;
+using com.apama.cumulocity.FindAlarm;
+using com.apama.cumulocity.FindAlarmResponse;
+using com.apama.cumulocity.FindAlarmResponseAck;
+using com.apama.cumulocity.FindManagedObject;
+using com.apama.cumulocity.FindManagedObjectResponse;
+using com.apama.cumulocity.FindManagedObjectResponseAck;
+using com.apama.cumulocity.Measurement;
+using com.apama.cumulocity.MeasurementValue;
+using com.apama.cumulocity.RequestAllDevices;
+using com.apama.cumulocity.RequestAllDevicesComplete;
+using com.apama.cumulocity.SendEmail;
+using com.apama.cumulocity.SendSMS;
+using com.apama.cumulocity.SendSpeech;
+using com.apama.cumulocity.SMSResourceReference;
+using com.apama.cumulocity.SMSResponse;
+using com.apama.util.AnyExtractor;
+using com.apama.correlator.timeformat.TimeFormat;
+using com.softwareag.connectivity.httpclient.HttpOptions;
+using com.softwareag.connectivity.httpclient.Request;
+using com.softwareag.connectivity.httpclient.RequestType;
+using com.softwareag.connectivity.httpclient.Response;
+using com.apama.cumulocity.Util;
+
+monitor ListenForHighTemperatures {
+    action onload() {
+        on all Measurement(type = &quot;c8y_TemperatureMeasurement&quot;) as e {
+            if e.measurements.getOrDefault(&quot;c8y_TemperatureMeasurement&quot;).getOrDefault(&quot;T&quot;).value &gt; 100.0 {
+                // handle the measurement
+        }
+    }
+}
+}
+</code></pre>
+
+<h3 id="how-can-i-create-derived-data-from-epl">How can I create derived data from EPL?</h3>
+
+<p><span class="inline-comment-marker" data-ref="271e4969-4bf7-4f28-8ef9-b17696ff4b65">To create new <em>Alarm</em> or <em>Operation</em> objects</span>, create an instance of the relevant event type and use the <code>send</code> statement to send it to the relevant channel (defined with a constant on the event type). Assume that an alarm should be generated immediately if the temperature of a sensor exceeds a defined value. This is done with the following statement:</p>
+
+<pre><code>on all Measurement(type = &quot;c8y_TemperatureMeasurement&quot;) as e {
+
+if e.measurements.getOrDefault(&quot;c8y_TemperatureMeasurement&quot;).getOrDefault(&quot;T&quot;).value &gt; 100.0 {
+
+send Event(&quot;&quot;, &quot;c8y_TemperatureAlert&quot;, e.source, e.time, &quot;Temperature too high&quot;, {&quot;severity&quot;:&lt;any&gt; &quot;CRITICAL&quot;} ) to Event.CHANNEL;
+
+}
+
+}
+</code></pre>
+
+<p>Technically, this statement produces a new &ldquo;Event&rdquo; event each time a temperature sensor reads more than 100 degrees Celsius and sends it to Cumulocity.</p>
+
+<h3 id="how-can-i-control-devices-from-epl">How can I control devices from EPL?</h3>
+
+<p>Remote control with EPL is done by sending DeviceOperation events. Remote operations are targeted to a specific device. The following example illustrates switching a relay based on temperature readings:</p>
+
+<pre><code>on all Measurement(type = &quot;c8y_TemperatureMeasurement&quot;) as e {
+    if
+e.measurements.getOrDefault(&quot;c8y_TemperatureMeasurement&quot;).getOrDefault(&quot;T&quot;).value &gt;
+100.0 {
+    send Operation(&quot;&quot;, e.source, &quot;PENDING&quot;, {&quot;c8y_Relay&quot;:&lt;any&gt;
+{&quot;relayState&quot;:&quot;CLOSED&quot;} }) to Operation.CHANNEL;
+    }   
+} 
+</code></pre>
+
+<ul>
+<li><p><em>e.source</em> is a placeholder for the ID of the heating that should be triggered.</p></li>
+
+<li><p>The params field (the last field) defines the nested content of the operation a &ldquo;c8y_Relay&rdquo; that has relayState set to &ldquo;CLOSED&rdquo;; note the top-level fields must be dictionary<string, any>, thus the use of the <any> cast operations.</p></li>
+</ul>
+
+<h3 id="how-can-i-query-data-from-epl">How can I query data from EPL?</h3>
+
+<p>It may be required to query information from the Cumulocity database as part of the ongoing event processing. This is supported by sending events and using listeners to wait for responses. Here is an example that shows how to summarize total sales for vending machines every hour. The sales report data created after a purchase is retrieved from the Cumulocity database.</p>
+
+<pre><code>using com.apama.aggregates.count; 
+
+monitor SalesReport {
+    event SalesReport {
+        Event e;
+        ManagedObject customer;
+    }
+    event SalesOutput {
+        integer count;
+        string customerId;
+    }
+
+action onload() {
+    monitor.subscribe(Measurement.CHANNEL);
+    on all Event() as e {
+        integer reqId := integer.getUnique();
+        monitor.subscribe(FindManagedObjectResponse.CHANNEL);
+        send FindManagedObject(reqId, &quot;&quot;, {&quot;childAssetId&quot;:e.source}) to FindManagedObject.CHANNEL;
+
+        on FindManagedObjectResponseAck(reqId = reqId) {
+            monitor.unsubscribe(FindManagedObjectResponse.CHANNEL);
+        }
+        on all FindManagedObjectResponse(reqId = reqId) as d and not FindManagedObjectResponseAck(reqId = reqId) {
+            route SalesReport(e, d.managedObject);
+        }
+    }
+
+    from sr in all SalesReport() within 3600.0  every 3600.0
+        group by sr.customer.id
+        select SalesOutput(count(), sr.customer.id) as sales {
+        send Measurement(&quot;&quot;, &quot;total_cust_trx&quot;, &quot;customer_trx_counterId&quot;,
+            currentTime, {&quot;total_cust_trx&quot;:{
+                &quot;total&quot;:MeasurementValue(sales.count.toFloat(), &quot;COUNT&quot;, new dictionary&lt;string,any&gt;)}
+            }, {&quot;customer_id&quot;:&lt;any&gt; sales.customerId}) to Measurement.CREATE_CHANNEL;
+    }
+}   
+}
+</code></pre>
+
+<p>Above we create event definitions. These hold the SalesReport (the <em>Event</em> and <em>ManagedObject</em> that identifies a sale) and the information we want to derive from a set of sales: the count and customerId. We listen for <em>Event objects</em>, and send a <em>FindManagedObject</em> request to look up the <em>ManagedObject</em> that the event came from. These SalesReport objects are sent, via the route statement, into a stream query. The stream query fires every hour (3,600 seconds) and selects an aggregate of the sales data per customer, and sends a new Measurement representing the sales for that vending machine.</p>
+
+  </article>
+  
+  <article id="implementation" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#implementation">
+        <span class="fa fa-link"></span>
+      </button>
+      How is real-time processing implemented in Cumulocity?</h2>
+    
+
+<p>There are two processing modes for API requests in Cumulocity: <em>persistent</em> and <em>temporary</em>. The &ldquo;persistent&rdquo; mode is the default: It will store data in the Cumulocity database as well as send the data to the real-time engine. After both is done, Cumulocity returns the result of the request.</p>
+
+<p>Data marked as &ldquo;temporary&rdquo; is not stored into Cumulocity&rsquo;s database but just handled by the real-time engine. This saves on storage and processing cost for example when tracking devices in real-time without requiring data to be stored.</p>
+
+<p>The &ldquo;temporary&rdquo; mode will only send the data to the real-time engine and immediately return asynchronously and not store it in Cumulocity&rsquo;s database. This mode saves storage and processing costs and is useful for example when tracking devices in real-time without requiring data to be stored.</p>
+
+<p><img src="/guides/images/concepts-guide/realtime.png" alt="CEP architecture" /></p>
+
+<h3 id="examples">Examples</h3>
+
+<p>Assume that location updates from cars should be monitored every second while the car is driving, but only be stored once in a minute into the database for reporting purposes. This is done using the following Apama statement:</p>
+
+<pre><code>monitor SendEveryMinute {
+    dictionary&lt;string, Event&gt; latestUpdates;
+    action onload() {
+    monitor.subscribe(Measurement.CHANNEL);
+        on all Event() as e {
+            if e.params.hasKey(&quot;c8y_LocationUpdate&quot;) {
+                latestUpdates[e.source] := e;
+            }
+        }
+        on all wait(60.0) {
+            Event e;
+            for e in latestUpdates.values() {
+                send e to Event.CHANNEL;
+            }
+            latestUpdates.clear();
+        }
+    }
+}
+</code></pre>
+
+<p>Another option is to output only every 60th update.</p>
+
+<pre><code>monitor SendEverySixtyEvents {
+    event UpdateAndCount {
+        Event latest;
+        integer count;
+    }
+    dictionary&lt;string, UpdateAndCount &gt; latestUpdates;
+    action onload() {
+    monitor.subscribe(Measurement.CHANNEL);
+        on all Event() as e {
+            if e.params.hasKey(&quot;c8y_LocationUpdate&quot;) {
+                UpdateAndCount updateCount := latestUpdates.getOrAddDefault(e.source);
+                updateCount.latest := e;
+                integer count := updateCount.count + 1;
+                if count = 60 {
+                    send e to Event.CHANNEL;
+                    latestUpdates.remove(e.source);
+                } else {
+                    updateCount.count := count;
+                }
+            }
+        }
+    }
+}
+</code></pre>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

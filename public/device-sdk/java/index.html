@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Device SDK for Java - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Device SDK guide</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/introduction/">Overview</a>
+     
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/mqtt/">Device integration using MQTT</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt">Hello MQTT</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt-c">Hello MQTT C</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt-java">Hello MQTT Java</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt-javascript">Hello MQTT Web-based</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt-python">Hello MQTT Python</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt-nodejs">Hello MQTT Node.js</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#implementation">MQTT implementation</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#device-integration">Device integration</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#smartrest-1">SmartREST 1.0</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#smartrest-2">SmartREST 2.0</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#mqtt-static-templates">MQTT Static templates</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#handling-ids">Handling IDs</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#json">JSON via MQTT</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/rest/">Device integration using REST</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/rest/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/rest/#device-integration">Device integration</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/rest/#hello-rest">Hello REST!</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/cpp/">Device SDK for C&#43;&#43;</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/cpp/#introduction">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/cpp/#build">Building the C&#43;&#43; library</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/cpp/#use">C&#43;&#43; Device integration</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/cpp/#custom">Customizing the build</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/cpp/#reference">Agent software reference</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/hello-mqtt-cs-0/">Device SDK for C#</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/hello-mqtt-cs-0/#prerequisites">Prerequisites</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/hello-mqtt-cs-0/#developing-the-client">Developing the &#34;Hello, MQTT world!&#34; client</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/hello-mqtt-cs-0/#cs-static-templates">Static templates</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav5"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/device-sdk/java/">Device SDK for Java</a>
+     
+      
+      
+      <div id="page-nav5"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#introduction">Overview</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#hello-world-basic">Hello, world!</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#hello-world-me">Hello, ME!</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#agents">Java reference agent</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#developing-java-clients">Developing Java clients</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Device SDK for Java</h1>
+    </header>
+    
+      <div class="lead">
+        
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="introduction" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#introduction">
+        <span class="fa fa-link"></span>
+      </button>
+      Overview</h2>
+    
+
+<p>Cumulocity comes with elaborate support for developing clients in Java. You can use Java, for example, to</p>
+
+<ul>
+<li>Interface Cumulocity with open, Java-enabled devices through a device-side agent. Today, many Embedded Linux devices such as the Raspberry Pi support Java out of the box.</li>
+<li>Interface Cumulocity with closed devices speaking an existing, Internet-enabled protocol through a server-side agent.</li>
+</ul>
+
+<p>To get started, check the &ldquo;Hello World&rdquo; examples for the various Java variants.</p>
+
+<ul>
+<li>The most simple starting point is the <a href="/guides/device-sdk/java#hello-world-basic">Java SE example</a>.</li>
+<li>For Java ME devices, see the <a href="/guides/device-sdk/java#hello-world-me">Java ME example</a>. Java ME provides a particularly lightweight environment for embedded devices.</li>
+</ul>
+
+<p>Note that you can develop Cumulocity with any IDE and any build tool that you prefer, but the examples focus on Maven and Eclipse.</p>
+
+<p>After reviewing the &ldquo;Hello world&rdquo; examples, continue with the section <a href="/guides/device-sdk/java#developing-java-clients">Developing Java clients</a> or download the complete examples described in the section <a href="/guides/device-sdk/java#agents">Java reference agents</a>. There&rsquo;s one full example of a device-side agent demonstrating nearly all Cumulocity features, and one full example of a server-side agent.</p>
+
+<p>Finally, here are some references for getting started with the basic technologies underlying the SDK:</p>
+
+<ul>
+<li>The client libraries use the Cumulocity REST interfaces as underlying communication protocol as described in the section on <a href="/guides/device-sdk/rest">REST</a>.</li>
+<li>All examples and libraries are open source &ndash; check <a href="https://bitbucket.org/m2m">https://bitbucket.org/m2m</a>.</li>
+</ul>
+
+<p>JavaDoc for the <a href="http://resources.cumulocity.com/documentation/javasdk/current/" target="_blank">Java client API</a> can be found on our resources site.</p>
+
+<h3 id="general-prerequisites">General prerequisites</h3>
+
+<p>To use the Java SE client libraries, you need to have at least Version 6 of the <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java Development Kit</a> for your operating system. Some of the examples require Java 7. Java 8 is not supported and some features may not work correctly with Java 8.
+To verify the version of your Java Development Kit, type</p>
+
+<pre><code>$ javac -version
+</code></pre>
+
+<p>The output needs to show a version number later than &ldquo;1.6.0_24&rdquo; for the basic examples.</p>
+
+  </article>
+  
+  <article id="hello-world-basic" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#hello-world-basic">
+        <span class="fa fa-link"></span>
+      </button>
+      Hello, world!</h2>
+    
+
+<p>This section gives a very basic example of using Java SE with Cumulocity through the Maven build tool. It can also be run straight from Eclipse, provided you have an Eclipse version with Maven support. Maven supported is by default included in recent versions of the <a href="http://eclipse.org/downloads/">Eclipse IDE for EE Developers</a>.</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>Verify that you have Maven 3 installed with Java (6 or 7):</p>
+
+<pre><code>$ mvn -v
+Apache Maven 3.1.1 (0728685237757ffbf44136acec0402957f723d9a; 2013-09-17 17:22:22+0200)
+Maven home: /usr/local/Cellar/maven/3.1.1/libexec
+Java version: 1.7.0_45, vendor: Oracle Corporation
+Java home: /Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: &quot;mac os x&quot;, version: &quot;10.9.4&quot;, arch: &quot;x86_64&quot;, family: &quot;mac&quot;
+</code></pre>
+
+<p>Maven can be downloaded from <a href="http://maven.apache.org">http://maven.apache.org</a>.</p>
+
+<h3 id="developing-the-hello-world-agent">Developing the &ldquo;Hello, World!&rdquo; agent</h3>
+
+<p>To develop a very simple &ldquo;Hello, world!&rdquo; agent for Cumulocity, you need to do the following:</p>
+
+<ul>
+<li>Create a Maven project.</li>
+<li>Add a dependency to the Cumulocity Java client library to the Maven pom.xml.</li>
+<li>Create a Java application.</li>
+<li>Build and run the Java application.</li>
+</ul>
+
+<h4 id="creating-a-maven-project">Creating a Maven project</h4>
+
+<p>To create a plain Java project with Maven, run</p>
+
+<pre><code>$ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-agent -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+</code></pre>
+
+<p>This will create a folder &ldquo;hello-agent&rdquo; in the current directory with a skeleton structure for your project.</p>
+
+<h4 id="adding-the-java-client-library">Adding the Java client library</h4>
+
+<p>Edit the &ldquo;pom.xml&rdquo; in the &ldquo;hello-agent&rdquo; folder. Add a <code>repositories</code> and a <code>pluginRepositories</code> element to point to the Cumulocity Maven repository, which stores the client libraries.</p>
+
+<pre><code>&lt;repositories&gt;
+    &lt;repository&gt;
+        &lt;id&gt;cumulocity&lt;/id&gt;
+        &lt;layout&gt;default&lt;/layout&gt;
+        &lt;url&gt;http://download.cumulocity.com/maven/repository&lt;/url&gt;
+    &lt;/repository&gt;
+&lt;/repositories&gt;
+&lt;pluginRepositories&gt;
+    &lt;pluginRepository&gt;
+        &lt;id&gt;public&lt;/id&gt;
+        &lt;url&gt;http://download.cumulocity.com/maven/repository&lt;/url&gt;
+    &lt;/pluginRepository&gt;
+    &lt;/pluginRepositories&gt;
+</code></pre>
+
+<p>Add <code>dependency</code> elements for the Java client library (&ldquo;java-client&rdquo;) and for the Cumulocity domain model (&ldquo;device-capability-model&rdquo;) to the &ldquo;dependencies&rdquo; section.</p>
+
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;com.nsn.cumulocity.clients-java&lt;/groupId&gt; 
+    &lt;artifactId&gt;java-client&lt;/artifactId&gt;
+    &lt;version&gt;8.13.0&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.nsn.cumulocity.model&lt;/groupId&gt;
+    &lt;artifactId&gt;device-capability-model&lt;/artifactId&gt;
+    &lt;version&gt;8.13.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<p>Edit the <code>version</code> elements to use the latest version of the client library. The version can be determined by checking the <a href="https://cumulocity.zendesk.com/hc/en-us/sections/200381323-Announcements">&ldquo;Announcements&rdquo; section</a> of the Cumulocity Help Center. The full file after editing can be found <a href="/guides/device-sdk/java#agents">here</a>.</p>
+
+<h4 id="creating-a-java-application">Creating a Java application</h4>
+
+<p>Edit the &ldquo;App.java&rdquo; file in the folder &ldquo;hello-agent/src/main/java/c8y/example&rdquo; with the following content:</p>
+
+<pre><code>package c8y.example;
+
+import c8y.IsDevice;
+import com.cumulocity.model.authentication.CumulocityCredentials;
+import com.cumulocity.rest.representation.inventory.ManagedObjectRepresentation;
+import com.cumulocity.sdk.client.Platform;
+import com.cumulocity.sdk.client.PlatformImpl;
+import com.cumulocity.sdk.client.inventory.InventoryApi;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+        Platform platform = new PlatformImpl(&quot;&lt;&lt;yourURL&gt;&gt;&quot;, new CumulocityCredentials(&quot;&lt;&lt;yourUser&gt;&gt;&quot;, &quot;&lt;&lt;yourPassword&gt;&gt;&quot;));
+        InventoryApi inventory = platform.getInventoryApi();
+        ManagedObjectRepresentation mo = new ManagedObjectRepresentation();
+        mo.setName(&quot;Hello, world!&quot;);
+        mo.set(new IsDevice());
+        mo = inventory.create(mo);
+        System.out.println(&quot;URL: &quot; + mo.getSelf());
+    }
+}
+</code></pre>
+
+<p>Replace &lt;&lt;yourUrl&gt;&gt;, &lt;&lt;yourUser&gt;&gt; and &lt;&lt;yourPassword&gt;&gt; with your URL (e.g. &ldquo;<a href="https://myurl.cumulocity.com&quot;">https://myurl.cumulocity.com&quot;</a>), username and password.</p>
+
+<p>What does the code in &ldquo;main&rdquo; do?</p>
+
+<ul>
+<li>Line 1 connects the agent to the platform.</li>
+<li>Line 2 retrieves a handle to the Cumulocity inventory.</li>
+<li>Line 3 creates a new managed object.</li>
+<li>Line 4 sets the display name of the new managed object.</li>
+<li>Line 5 says that this managed object should be a device (should show up in device management).</li>
+<li>Line 6 creates the managed object in the inventory. This will return the managed object back with a fresh, generated ID. (See &ldquo;Object identity&rdquo; section in <a href="/guides/concepts/domain-model">&ldquo;Cumulocity&rsquo;s domain model&rdquo;</a>).</li>
+<li>Line 7 prints the URL to the new managed object that has just been stored in the inventory.</li>
+</ul>
+
+<h4 id="building-and-running-the-agent">Building and running the agent</h4>
+
+<p>To build and run your agent, process the following commands:</p>
+
+<pre><code>$ cd hello-agent
+$ mvn clean install
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building hello-agent 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+...
+$ mvn exec:java -Dexec.mainClass=&quot;c8y.example.App&quot;
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building hello-agent 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- exec-maven-plugin:1.3.2:java (default-cli) @ hello-agent ---
+[WARNING] Warning: killAfter is now deprecated. Do you need it ? Please comment on MEXEC-6.
+SLF4J: Failed to load class &quot;org.slf4j.impl.StaticLoggerBinder&quot;.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+URL: http://demos.cumulocity.com/inventory/managedObjects/110160902
+</code></pre>
+
+<p>The last line shows that a new device has been successfully created with a particular URL. Open the Cumulocity application and go to the device list. You should see a new &ldquo;Hello, world!&rdquo; device.</p>
+
+<p><img src="/guides/images/java/hello.png" alt="Hello world device" /></p>
+
+<p><strong>Got an error message?</strong> Check the <a href="/guides/microservice-sdk/java#troubleshooting">troubleshooting section</a> in the Microservice SDK guide.</p>
+
+<h3 id="improving-the-agent">Improving the agent</h3>
+
+<p>Now that you have done your first step, check out the section <a href="/guides/device-sdk/java#developing-java-clients">Developing Java clients</a> or examine the <a href="/guides/device-sdk/java#agents">full examples</a>.</p>
+
+  </article>
+  
+  <article id="hello-world-me" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#hello-world-me">
+        <span class="fa fa-link"></span>
+      </button>
+      Hello, ME!</h2>
+    
+
+<h3 id="overview">Overview</h3>
+
+<p>The Cumulocity client library for JavaME is very lightweight and has no dependencies on other software. Its interface is very close to that of the JavaSE client library with the exception of serialization of requests and deserialization of responses into Java objects. Most of the descriptions in the JavaSE section apply to the JavaME client library as well.</p>
+
+<p>The example in this section is run on the emulator contained in the Oracle JavaME SDK. For running the code on a real device, see the section on <a href="/guides/devices/cinterion">Cinterion Java modules</a>. JavaME is also supported on the Raspberry Pi. We use Eclipse for the example, but a similar approach should also work in other development environments.</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>To run the example, you need to</p>
+
+<ul>
+<li><a href="http://www.oracle.com/technetwork/java/embedded/javame/javame-sdk/downloads/index.html">Download</a> the Oracle JavaME SDK. We tested the example with Version 3.4 of the SDK.</li>
+<li>Install the SDK along with the associated Eclipse plugins according to Oracle&rsquo;s <a href="http://docs.oracle.com/javame/dev-tools/jme-sdk-3.4/ecl/html/toc.htm">Developer&rsquo;s Guide</a>.</li>
+</ul>
+
+<h3 id="developing-the-hello-world-agent">Developing the &ldquo;Hello, world!&rdquo; agent</h3>
+
+<p>To develop the &ldquo;Hello, world!&rdquo; agent with the Oracle JavaME SDK and Eclipse, you need to</p>
+
+<ul>
+<li>Create an IMP-NG MIDlet project in Eclipse. IMP-NG is the JavaME profile used on embedded devices.</li>
+<li>Include the Cumulocity JavaME SmartREST client libraries into your project.</li>
+<li>Write the agent code.</li>
+<li>Run the agent.</li>
+</ul>
+
+<h4 id="creating-a-midlet-project">Creating a MIDlet project</h4>
+
+<p>As first step, you need to create and configure a project that can run on a JavaME device or emulator. Such a project is called &ldquo;MIDlet project&rdquo; in Eclipse.</p>
+
+<ol>
+<li>Click <strong>New</strong> &gt; <strong>Project</strong> and select a &ldquo;MIDlet Project&rdquo; to be created.</li>
+<li>Give it a name, for example, &ldquo;hello&rdquo;.</li>
+<li>Click <strong>Add</strong> next to the &ldquo;Configurations&rdquo; list.</li>
+<li>Select &ldquo;Oracle Java Platform Micro Edition SDK 3.4&rdquo; (or similar) as SDK and &ldquo;IMPNGDevice1&rdquo; as device. Click <strong>OK</strong>.</li>
+<li>Make sure that &ldquo;IMPNGDevice1&rdquo; is marked as &ldquo;active&rdquo;.</li>
+<li>Click <strong>Next</strong>.</li>
+<li>Select &ldquo;Connected Limited Device Configuration (1.1)&rdquo; as &ldquo;Microedition Configuration&rdquo; and &ldquo;Information Module Profile (NG)&rdquo; as &ldquo;Microedition Profile&rdquo;.</li>
+<li>Click <strong>Finish</strong>.</li>
+
+<li><p>The application descriptor opens in the &ldquo;Overview&rdquo; tab. Switch to the &ldquo;Application Descriptor&rdquo; tab. Replace &ldquo;IMP-NG-2.0&rdquo; with &ldquo;IMP-NG&rdquo; as shown below. Click <strong>Save</strong>. You might get some error displays that you can ignore &ndash; these are known issues with the Eclipse plugin implementation.</p>
+
+<p>MicroEdition-Profile: IMP-NG</p></li>
+</ol>
+
+<p>To start developing your agent, you need to:</p>
+
+<ul>
+<li><a href="https://bitbucket.org/m2m/cumulocity-clients-java/get/tip.zip">Download</a> our client libraries.</li>
+<li>Copy the folder &ldquo;java-me-smartrest-client/src/main/java/com&rdquo; into the &ldquo;src&rdquo; folder of your project.</li>
+<li>Right-click your project and select &ldquo;Refresh&rdquo;.</li>
+</ul>
+
+<p>Beside this technical requirements you should check our <a href="/guides/microservice-sdk/rest#smartrest">SmartREST documentation</a> and the <a href="/guides/reference/smartrest">SmartREST reference</a> to understand the protocol.</p>
+
+<h4 id="writing-the-agent-code">Writing the agent code</h4>
+
+<p>Finally, you need to create a MIDlet to contain your agent code. A MIDlet is roughly the JavaME equivalent of a &ldquo;main&rdquo; class in JavaSE.</p>
+
+<ol>
+<li>Right-click your project and select <strong>New</strong> &gt; <strong>Java ME MIDlet</strong>.</li>
+<li>Specify a package name and a class name for your MIDlet and click <strong>Finish</strong>.</li>
+
+<li><p>Paste the code below into the generated &ldquo;startApp&rdquo; method. Replace &lt;&lt;yourUrl&gt;&gt;, &lt;&lt;yourUser&gt;&gt; and &lt;&lt;yourPassword&gt;&gt; with your URL (e.g. &ldquo;<a href="https://myurl.cumulocity.com&quot;">https://myurl.cumulocity.com&quot;</a>), username and password. &lt;&lt;tenantId&gt;&gt; is the first part of your URL (e.g. &ldquo;myurl&rdquo; in this case). &lt;&lt;yourXId&gt;&gt; is the XId used in the SmartREST protocol. The code below creates a connection, registeres your template and finally creates a device by using the template.</p>
+
+<pre><code>String mySmartRestTemplate = &quot;10,100,POST,/inventory/managedObjects/,application/vnd.com.nsn.cumulocity.managedObject+json,application/vnd.com.nsn.cumulocity.managedObject+json,&amp;&amp;,,\&quot;{\&quot;\&quot;name\&quot;\&quot;:\&quot;\&quot;&amp;&amp;\&quot;\&quot;,\&quot;\&quot;c8y_IsDevice\&quot;\&quot;:{}}\&quot;&quot;;
+SmartConnection connection = new SmartHttpConnection(&quot;&lt;&lt;yourUrl&gt;&gt;&quot;,&quot;&lt;&lt;tenantId&gt;&gt;&quot;,&quot;&lt;&lt;yourUser&gt;&gt;&quot;,&quot;&lt;&lt;yourPassword&gt;&gt;&quot;,&quot;&lt;&lt;yourXId&gt;&gt;&quot;);
+connection.templateRegistration(templateString);
+
+connection.executeRequest(new SmartRequestImpl(&quot;100,myDeviceName&quot;));
+</code></pre></li>
+</ol>
+
+<h4 id="running-the-agent">Running the agent</h4>
+
+<p>Now you can run your agent by right-clicking the project and selecting <strong>Run as</strong> &gt; <strong>Emulated Java ME MIDlet</strong>. This will launch the emulator, deploy your code to the emulator and run it.</p>
+
+<h3 id="connecting-to-cumulocity">Connecting to Cumulocity</h3>
+
+<p>Connections to Cumulocity can be created through implementations of the SmartConnection interface. Our library will already come with the SmartHttpConnection that you can use for sending requests.</p>
+
+<pre><code>SmartConnection connection = new SmartHttpConnection(&quot;http://mypartof.cumulocity.com&quot;,&quot;myTenant&quot;,&quot;myUser&quot;,&quot;myPassword&quot;,&quot;myXid&quot;);
+</code></pre>
+
+<h4 id="device-bootstrap">Device bootstrap</h4>
+
+<p>If you don&rsquo;t have credentials for your device you can generate new device credentials. Refer to <a href="/guides/device-sdk/rest#step-0-request-device-credentials">Device integration</a> on how to acquire the necessary credentials for this process and any further information.</p>
+
+<pre><code>SmartConnection connection = new SmartHttpConnection(&quot;http://mypartof.cumulocity.com&quot;,&quot;deviceBootstrapTenant&quot;,&quot;deviceBootstrapUser&quot;,&quot;deviceBootstrapPassword&quot;,&quot;myXid&quot;);
+String authenticationHeader = connection.bootstrap(&quot;myUniqueDeviceId&quot;);
+</code></pre>
+
+<p>Note that you can use this method to get the credentials only once for the device. The current connection will automatically use the new credentials but you have to store them for using them after a reboot of the device. You can create the connection also with the authentication header.</p>
+
+<pre><code>SmartConnection connection = new SmartHttpConnection(&quot;http://mypartof.cumulocity.com&quot;,&quot;myXid&quot;,&quot;myAuthenticationHeader&quot;);
+</code></pre>
+
+<h4 id="template-registration">Template registration</h4>
+
+<p>After creating a connection with valid credentials you should first register the SmartREST templates to Cumulocity. The library will automatically check within the following function if the templates are already registered and only if they are not send them to the platform.</p>
+
+<pre><code>String myTemplateString = &quot;...&quot;;
+connection.templateRegistration(myTemplateString);
+</code></pre>
+
+<p>Once the templates are registered your connection is ready to be used to send requests.</p>
+
+<h3 id="sending-requests-and-resolving-responses">Sending requests and resolving responses</h3>
+
+<p>In the following section you can see how to create and send requests.</p>
+
+<h4 id="creating-a-request">Creating a request</h4>
+
+<p>In SmartREST every request is a single comma-separated line that always starts with the message identifier that relates to the template. Both examples will create the same request.</p>
+
+<pre><code>SmartRequest request1 = new SmartRequestImpl(&quot;100,myValue1,myValue2&quot;);
+SmartRequest request2 = new SmartRequestImpl(100,&quot;myValue1,myValue2&quot;);
+</code></pre>
+
+<h4 id="sending-a-request">Sending a request</h4>
+
+<p>You can use your connection to send the request to Cumulocity.</p>
+
+<pre><code>SmartResponse response1 = connection.executeRequest(request1);
+</code></pre>
+
+<p>Every line in the response is put in a SmartRow that is held inside an array of the SmartResponse. Be aware that even if you only send one request, SmartREST can return multiple rows inside the response.</p>
+
+<h4 id="sending-a-request-asynchronously">Sending a request asynchronously</h4>
+
+<p>If you don&rsquo;t want to wait for the response you can also send the request asynchronously and resolve the response with the SmartResponseEvaluator interface once it is received.</p>
+
+<pre><code>SmartResponseEvaluator myEvaluator = new MySmartResponseEvaluatorImpl();
+connection.executeRequestAsync(request2,myEvaluator);
+</code></pre>
+
+<h3 id="smartrest-real-time-notifications">SmartREST real-time notifications</h3>
+
+<p>The library also has a built-in client to make use of the SmartREST real-time notifications.</p>
+
+<p>The concept of this functionality is explained in the <a href="/guides/reference/smartrest#smartrest-real-time-notifications">SmartREST reference</a>. To get an overview of the available endpoints and channels offering real-time notifications refer to <a href="/guides/reference/real-time-notifications">Real-time notifications</a>.</p>
+
+<h4 id="example-listen-to-operations">Example: Listen to operations</h4>
+
+<p>Using library to listen to SmartREST real-time notifications will always be done in a separate thread. Therefor the responses have to be evaluated by a SmartResponseEvaluator. The URL for receiving device operations is &ldquo;/devicecontrol/notifications&rdquo; and the channel contains the id of the agent that wants to receive its operations.</p>
+
+<pre><code>SmartCometClient client = new SmartCometClient(connection, myEvaluator);
+client.startListenTo(&quot;/devicecontrol/notifications&quot;, new String[]{&quot;/12345&quot;});
+</code></pre>
+
+<p>You can listen to multiple channels of an endpoint using the same long-polling connection. The &ldquo;startListenTo&rdquo; function will execute all steps explained in the <a href="/guides/reference/smartrest#smartrest-real-time-notifications">SmartREST reference</a> with the long-polling as its last step. To stop the long-polling you can call:</p>
+
+<pre><code>client.stopListenTo();
+</code></pre>
+
+  </article>
+  
+  <article id="agents" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#agents">
+        <span class="fa fa-link"></span>
+      </button>
+      Java reference agent</h2>
+    
+
+<h3 id="overview">Overview</h3>
+
+<p>The Java agent provides an example implementation for many device management features of Cumulocity plus drivers for various device kits. The Java agent supports Windows and Unix-based systems and contains the following functionality:</p>
+
+<ul>
+<li>Discovery and hardware identification: Automatically registers a device, its supported functionality and its connected sensors and controls.</li>
+<li>Availability management: Determine if a device connects as expected and notify the user if not.</li>
+<li>Software management: Upgrade the software on the device and restart with the new software.</li>
+<li>Modem support: Provides basic modem information and signal statistics  (IMEI, ICCID, cell ID, signal strength, BER; depending on modem type).</li>
+<li>Extensibility through driver concept.</li>
+<li>Ready-made drivers for <a href="/guides/devices/raspberry-pi">Raspberry Pi</a>, <a href="/guides/devices/raspberry-pi">PiFace Digital</a> and <a href="/guides/devices/tinkerforge">Tinkerforge</a>.</li>
+</ul>
+
+<blockquote>
+<p>The agent is provided in open source form as-is without support or warranty. For commercial use, we recommend to use industrial hardware and/or the Cumulocity C++ SDK.</p>
+</blockquote>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>An installation of Java SE 7 is required. To verify the availability of Java on your system, type</p>
+
+<pre><code>$ java -version
+java version &quot;1.7.0_45&quot;
+</code></pre>
+
+<p>To install Java, please visit <a href="http://java.com">http://java.com</a>.</p>
+
+<h3 id="installing-the-agent">Installing the agent</h3>
+
+<p>Binary packages are available for the Raspberry Pi, the Kontron M2MSSDK, Mac OS X, Linux and Windows.</p>
+
+<ul>
+<li>On a Linux OS (including Embedded Linux distributions such as Kontron Linux), download the <a href="http://resources.cumulocity.com/examples/cumulocity-linux-agent-latest.tar.gz">latest Linux Agent Archive</a>.</li>
+<li>For the Raspberry Pi and similar Embedded Linux devices, check the <a href="/guides/devices/raspberry-pi">Raspberry Pi documentation</a> in the Devices guide.</li>
+<li>On a Mac OS X, download the <a href="http://resources.cumulocity.com/examples/cumulocity-mac-agent-latest.tar.gz">latest Mac Agent Archive</a>.</li>
+<li>On a Windows OS, please the <a href="http://resources.cumulocity.com/examples/cumulocity-win-agent-latest.zip">latest Windows Agent Archive</a>.</li>
+</ul>
+
+<p>Unpack your respective package in a new folder. After unpacking, use the script &ldquo;c8y-agent&rdquo; to run the agent. If you need more debug information, run the script &ldquo;c8y-agent-debug&rdquo; or change the file cfg/logback.xml to use a more fine granular logging.</p>
+
+<h4 id="configuration">Configuration</h4>
+
+<p>All the configuration files are located in the <em>cfg/</em> folder.</p>
+
+<ol>
+<li><p>The cumulocity.properties file has the following example structure:</p>
+
+<pre><code>host=&lt;host&gt;
+bootstrap.tenant = &lt;bootstrap tenant&gt;
+bootstrap.user = &lt;bootstrap  username&gt;
+bootstrap.password = &lt;bootstrap password&gt;
+</code></pre>
+
+<ul>
+<li>The host is the http/https address of your Cumulocity instance. By default it points to <a href="http://developer.cumulocity.com/">http://developer.cumulocity.com/</a>, which is the Cumulocity production environment.</li>
+<li>The bootstrap.* properties define the bootstrap user for your instance. Their default value is the default Cumulocity bootstrap user.</li>
+</ul>
+
+<p>If your tenant is &ldquo;&lt;tenant&gt;.cumulocity.com&rdquo; you don&rsquo;t need to change anything here.</p>
+
+<p>On the Raspberry Pi this file is a symbolic link pointing to /etc/cumulocity-agent.properties.</p></li>
+
+<li><p>The device.properties file contains the credentials the device uses to connect to your tenant. They are automatically filled in, once you register the device in Cumulocity. If you would like to move your device to a different tenant you have to delete the content of this file.</p></li>
+
+<li><p>The cumulocity-config.properties persists the device specific configuration that can be set in the Cumulocity UI. Here is an example configuration of a device that has one ThinkerForge temperature sensor connected to it:</p>
+
+<pre><code>#Tue Apr 28 16:03:53 UTC 2015
+c8y_temperature.interval=5000
+c8y.log.eventLevel=INFO
+c8y.log.alarmLevel=ERROR
+</code></pre>
+
+<ul>
+<li>The c8y_temperature.interval property defines the reporting rate of the TinkerForge temperature sensor. It is measured in milliseconds.</li>
+<li>The c8y.log.* properties defines the severity of log entries to be reported by the device as events and alarms respectively. The possible values are TRACE, DEBUG, INFO, WARN and ERROR.</li>
+</ul>
+
+<p>This file is automatically created by the device.</p></li>
+
+<li><p>The logback.xml and logback-debug.xml files define the logging for running the agent normally and in debug mode respectively.</p></li>
+</ol>
+
+<p>On the Raspberry Pi the agent is implemented as a service. The configuration files are located in <code>/usr/share/cumulocity-rpi-agent/cfg/*</code>.</p>
+
+<h3 id="running-the-agent">Running the agent</h3>
+
+<h4 id="registering-the-device">Registering the device</h4>
+
+<p>When the agent is successfully started, open Cumulocity in a web browser and navigate to the &ldquo;Registration&rdquo; page. Enter the device ID of the device on which the agent is running. The device ID depends on the type of device.</p>
+
+<ul>
+<li>On a Raspberry Pi, it&rsquo;s the serial number of the Raspberry Pi (see the <a href="/guides/devices/raspberry-pi">Raspberry Pi documentation</a>) in the Devices guide.</li>
+<li>On a Mac, it&rsquo;s the serial number of the Mac. Click on the Apple logo in the menu, &ldquo;About This Mac&rdquo;, &ldquo;More Info&rdquo; to display the serial number.</li>
+<li>On Windows, it&rsquo;s the serial number of your PC. To get it, run &ldquo;wmic csproduct get identifyingnumber&rdquo; from a command prompt.</li>
+<li>On other Linux devices or as a fallback, the MAC address of the first network interface is used. Use &ldquo;ifconfig&rdquo; to print the network interfaces and check for the &ldquo;HWaddr&rdquo; entry. Keep in mind only the numbers are used, without any colons! Often, the MAC address is also printed on the board.</li>
+</ul>
+
+<h4 id="monitoring-the-connection">Monitoring the connection</h4>
+
+<p>By default, the agent is &ldquo;always on&rdquo;, i.e. it maintains a connection to Cumulocity to receive operations in real time. Hence, the agent is shown as &ldquo;Connected&rdquo; in the user interface. If the connection breaks down, the agent will be shown as &ldquo;Offline&rdquo; and an alarm will be sent.</p>
+
+<p><img src="/guides/images/devices/javaavailability.png" alt="Availability" /></p>
+
+<h4 id="restarting-the-device">Restarting the device</h4>
+
+<p>To restart the device on which the agent is running, switch to the &ldquo;Control&rdquo; tab and click &ldquo;Restart&rdquo;.</p>
+
+<p><img src="/guides/images/devices/javarestartconfig.png" alt="Restart and configure" /></p>
+
+<h3 id="tracing">Tracing</h3>
+
+<p>The agent writes a log to Cumulocity. Low-severity log levels are sent to Cumulocity as events and are visible in the &ldquo;Events&rdquo; tab of the device. Higher-severity log levels are recorded as alarms and are visible in the &ldquo;Alarms&rdquo; tab of the device. To configure the verbosity of logging, go to the &ldquo;Control&rdquo; tab and edit the configuration.</p>
+
+<ul>
+<li>&ldquo;c8y.log.eventLevel&rdquo; is the minimum level of log entries that are sent as events. Default is INFO.</li>
+<li>&ldquo;c8y.log.alarmLevel&rdquo; is the minimum level of log entries that are sent as alarms. Default is ERROR.</li>
+</ul>
+
+<p>Valid levels are TRACE, DEBUG, INFO, WARN and ERROR. Use DEBUG or TRACE only for troubleshooting purposes.</p>
+
+<p><img src="/guides/images/devices/javatracing.png" alt="Tracing" />.</p>
+
+<h3 id="building-the-agent">Building the agent</h3>
+
+<p>Before building the agent ensure you have at least <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK 1.7</a> and <a href="http://maven.apache.org/download.cgi">Maven 3</a>. You can check this by running:</p>
+
+<pre><code>mvn -version
+javac -version
+</code></pre>
+
+<p>Your Maven &ldquo;settings.xml&rdquo; file needs to point to the Cumulocity repository as described in <a href="https://bitbucket.org/m2m/cumulocity-clients-java">https://bitbucket.org/m2m/cumulocity-clients-java</a>. Source code is available at <a href="https://bitbucket.org/m2m/cumulocity-examples">https://bitbucket.org/m2m/cumulocity-examples</a> in the folder java-agent.</p>
+
+<p>To build the agent simply run:</p>
+
+<pre><code>mvn clean install
+</code></pre>
+
+<h3 id="extending-the-agent">Extending the agent</h3>
+
+<p>Extending the agent with drivers for new hardware and new devices requires the following steps:</p>
+
+<ul>
+<li>Create a Java class that implements the interface <a href="https://bitbucket.org/m2m/cumulocity-examples/src/c1ab2abac58e683697061d2f8740c54da055061b/linux-agent/lx-driver/src/main/java/c8y/lx/driver/Driver.java?at=default">Driver</a>.</li>
+<li>Create a jar file with the class and an additional text file &ldquo;META-INF/services/c8y.lx.driver.Driver&rdquo;. The text file needs to contain the fully-qualified class name of the Java class.</li>
+<li>Deploy the jar file either by copying it to the &ldquo;lib&rdquo; folder of the agent or by deploying it through Cumulocity&rsquo;s software management.</li>
+</ul>
+
+<p>The <a href="https://bitbucket.org/m2m/cumulocity-examples">BitBucket repository</a> contains numerous examples of drivers. Usage of the Java client library is described in <a href="/guides/device-sdk/java#developing-java-clients">Developing Java clients</a>.</p>
+
+<h3 id="server-side-agents">Server-side agents</h3>
+
+<p>The <a href="https://bitbucket.org/m2m/cumulocity-examples">BitBucket repository</a> also contains a complete example of a server-side agent for closed devices in the folder &ldquo;tracker-agent&rdquo;. This example works with tracking devices from Telic and Queclink, see Devices guide. It demonstrates solutions to various challenges when developing server-side functionality for mobile devices.</p>
+
+  </article>
+  
+  <article id="developing-java-clients" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#developing-java-clients">
+        <span class="fa fa-link"></span>
+      </button>
+      Developing Java clients</h2>
+    
+
+<h3 id="overview">Overview</h3>
+
+<p>This section gives an overview on how to access Cumulocity from Java clients, starting from connecting to Cumulocity over accessing data to remote control of devices. It also discusses how to extend the Cumulocity domain model from Java for new devices and other business objects. Finally, this section describes how to configure the logging service in order to control the level of diagnostic messages generated by the client.</p>
+
+<p>The section is tightly linked to the design of the REST interfaces, which are described in <a href="/guides/reference/rest-implementation">REST implementation</a> in the Reference guide.</p>
+
+<p>JavaDoc is available on the <a href="http://resources.cumulocity.com/documentation/javasdk/current/">resources site</a>.</p>
+
+<h3 id="connecting-to-cumulocity">Connecting to Cumulocity</h3>
+
+<p>The root interface for connecting to Cumulocity from Java is called &ldquo;Platform&rdquo; (see &ldquo;Root interface&rdquo; in <a href="/guides/reference/rest-implementation">REST implementation</a> in the Reference guide). It provides access to all other interfaces of the platform, such as the inventory. In its simplest form, it is instantiated as follows:</p>
+
+<pre><code>Platform platform = new PlatformImpl(&quot;&lt;&lt;URL&gt;&gt;&quot;, new CumulocityCredentials(&quot;&lt;&lt;user&gt;&gt;&quot;, &quot;&lt;&lt;password&gt;&gt;&quot;));
+</code></pre>
+
+<p>As an example:</p>
+
+<pre><code>Platform platform = new PlatformImpl(&quot;https://demos.cumulocity.com&quot;, new CumulocityCredentials(&quot;myuser&quot;, &quot;mypassword&quot;));
+</code></pre>
+
+<p>If you use the Java client for developing an application, you need to register an application key (through <a href="/guides/users-guide/administration#managing-applications">Own applications</a> in the Cumulocity Administration application, or through the <a href="/guides/reference/applications">Application API</a>).</p>
+
+<pre><code>new CumulocityCredentials(&quot;&lt;&lt;tenant&gt;&gt;&quot;, &quot;&lt;&lt;user&gt;&gt;&quot;, &quot;&lt;&lt;password&gt;&gt;&quot;, &quot;&lt;&lt;application key&gt;&gt;&quot;)
+</code></pre>
+
+<p>For testing purposes, every tenant is subscribed to the demo application key &ldquo;uL27no8nhvLlYmW1JIK1CA==&rdquo;. The constructor for PlatformImpl also allows you to specify the default number of objects returned from the server in one reply with the parameter &ldquo;pageSize&rdquo;.</p>
+
+<h3 id="accessing-the-inventory">Accessing the inventory</h3>
+
+<p>The following code snippet shows how to obtain a handle to the inventory from Java:</p>
+
+<pre><code>InventoryApi inventory = platform.getInventoryApi();
+</code></pre>
+
+<p>Using this handle, you can create, retrieve and update managed objects. For example, if you would like to retrieve all objects that have a geographical position, use</p>
+
+<pre><code>InventoryFilter inventoryFilter = new InventoryFilter();
+inventoryFilter.byFragmentType(Position.class);
+ManagedObjectCollection moc = inventory.getManagedObjectsByFilter(inventoryFilter);
+</code></pre>
+
+<p>This returns a query to get the objects &ndash; it does not actually get them. In practice, such a list of objects could be very large. Hence, it is returned in &ldquo;pages&rdquo; from the server. To get all pages and iterate over them, use:</p>
+
+<pre><code>for (ManagedObjectRepresentation mo : moc.get().allPages()) {
+        System.out.println(mo.getName());
+}
+</code></pre>
+
+<p>To create a new managed object, simply construct a local representation of the object and send it to the platform. The following code snippet shows how to create a new electricity meter with a relay in it:</p>
+
+<pre><code>ManagedObjectRepresentation mo = new ManagedObjectRepresentation();
+mo.setName(&quot;MyMeter-1&quot;);
+Relay relay = new Relay();
+mo.set(relay);
+SinglePhaseElectricitySensor meter = new SinglePhaseElectricitySensor();
+mo.set(meter);
+// Set additional properties, e.g., tariff tables, ...
+mo = inventory.create(mo);
+System.out.println(mo.getId());
+</code></pre>
+
+<p>The result of invoking &ldquo;create&rdquo; is a version of the new managed object with a populated unique identifier.</p>
+
+<p>Now assume that you would like to store additional, own properties along with the device. This can simply be done by creating a new &ldquo;fragment&rdquo; in the form of a Java bean. For example, assume that you would like to store tariff information along with your meter. There is a day and a night time tariff, and we need to store the hours during which the night time tariff is active:</p>
+
+<pre><code>public class Tariff {
+  public int getNightTariffStart() {
+    return nightTariffStart;
+  }
+  public void setNightTariffStart(int nightTariffStart) {
+    this.nightTariffStart = nightTariffStart;
+  }
+  public int getNightTariffEnd() {
+    return nightTariffEnd;
+  }
+  public void setNightTariffEnd(int nightTariffEnd) {
+    this.nightTariffEnd = nightTariffEnd;
+  }
+  private int nightTariffStart = 22;
+  private int nightTariffEnd = 6;
+}
+</code></pre>
+
+<p>Now, you can simply add tariff information to your meter:</p>
+
+<pre><code>Tariff tariff = new Tariff();
+mo.set(tariff);
+</code></pre>
+
+<p>This will store the tariff information along with the meter. For converting Java objects from and towards JSON/REST, Cumulocity uses Svenson. The <a href="https:/fforw.github.io/svenson/">Svenson documentation</a> provides more information on how to influence the JSON format that is produced respectively accepted.</p>
+
+<p>When creating own fragments in OSGi, you need to make the fragments visible to the Cumulocity client libraries. To do this, add the following line to the manifest file of the bundle containing the fragments:</p>
+
+<pre><code>Eclipse-RegisterBuddy: com.nsn.cumulocity.model.core-model
+</code></pre>
+
+<p>It is a good practice to maintain your domain model in a separate project in the SDK. That way, you can share the domain model between your agent and your application.</p>
+
+<h3 id="accessing-the-identity-service">Accessing the identity service</h3>
+
+<p>A device typically has a technical identifier that an agent needs to know to be able to contact the device. Examples are meter numbers, IP addresses and REST URLs. To associate such identifiers with the unique identifier of Cumulocity, agents can use the identity service. Again, to create the association, create an object of type &ldquo;ExternalIDRepresentation&rdquo; and send it to the platform.</p>
+
+<p>The code snippet below shows how to register a REST URL for a device. It assumes that &ldquo;mo&rdquo; is the managed object from the above example and &ldquo;deviceUrl&rdquo; is a string with the REST URL of the device.</p>
+
+<pre><code>final String ASSET_TYPE = &quot;com_cumulocity_idtype_AssetTag&quot;;
+final String deviceUrl = &quot;SAMPLE-A-239239232&quot;;
+
+ExternalIDRepresentation externalIDGid = new ExternalIDRepresentation();
+externalIDGid.setType(ASSET_TYPE);
+externalIDGid.setExternalId(deviceUrl);
+externalIDGid.setManagedObject(mo);
+IdentityApi identityApi= platform.getIdentityApi();
+identityApi.create(externalIDGid);
+</code></pre>
+
+<p>Now, if you need the association back, you can just query the identity service as follows:</p>
+
+<pre><code>ID id = new ID();
+id.setType(ASSET_TYPE);
+id.setValue(deviceUrl);
+externalIDGid = identityApi.getExternalId(id);
+</code></pre>
+
+<p>The returned object will contain the unique identifier and a link to the managed object.</p>
+
+<h3 id="accessing-events-and-measurements">Accessing events and measurements</h3>
+
+<p>Events and measurements can be accessed in a very similar manner as described above for the inventory. The following examples queries the signal strength of the mobile connection of devices in the past two weeks and prints the device ID, the time of the measurement, the received signal strength and the bit error rate.</p>
+
+<pre><code>MeasurementApi measurementApi = platform.getMeasurementApi();
+MeasurementFilter measurementFilter = new MeasurementFilter();
+
+Calendar cal = Calendar.getInstance();
+Date toDate = cal.getTime();
+cal.add(Calendar.DATE, -14);
+Date fromDate = cal.getTime();
+measurementFilter.byDate(fromDate, toDate);
+measurementFilter.byFragmentType(SignalStrength.class);
+MeasurementCollection mc = measurementApi.getMeasurementsByFilter(measurementFilter);
+
+MeasurementCollectionRepresentation measurements = mc.get();
+for (; measurements != null; measurements = mc.getNextPage(measurements)) {
+    for (MeasurementRepresentation measurement : measurements.getMeasurements()) {
+        SignalStrength signal = measurement.get(SignalStrength.class);
+        System.out.println(measurement.getSource().getId() + &quot; &quot; + measurement.getTime() + &quot; &quot; + signal.getRssiValue() + &quot; &quot; + signal.getBerValue());
+    }
+}
+</code></pre>
+
+<h3 id="controlling-devices">Controlling devices</h3>
+
+<p>Finally, the &ldquo;DeviceControlResource&rdquo; enables you to manipulate devices remotely. It has two sides: You can create operations in applications to be sent to devices, and you can query operations from agents.</p>
+
+<p>In order to control a device it must be in the &ldquo;childDevices&rdquo; hierarchy of an agent managed object. The agent managed object represents your agent in the inventory. It is identified by a fragment com_cumulocity_model_Agent. This is how Cumulocity identifies where to send operations to control a particular device.</p>
+
+<p>This code demonstrates the setup:</p>
+
+<pre><code>ManagedObjectRepresentation agent = new ManagedObjectRepresentation();
+agent.set(new com.cumulocity.model.Agent()); // agents must include this fragment
+// ... create agent in inventory
+ManagedObjectRepresentation device = ...;
+// ... create device in inventory
+
+ManagedObjectReferenceRepresentation child2Ref = new ManagedObjectReferenceRepresentation();
+child2Ref.setManagedObject(device);
+inventory.getManagedObject(agent.getId()). addChildDevice(child2Ref);
+</code></pre>
+
+<p>For example, assume that you would like to switch off a relay in a meter from an application. Similar to the previous examples, you create the operation to be executed locally, and then send it to the platform:</p>
+
+<pre><code>DeviceControlApi control = platform.getDeviceControlApi();
+OperationRepresentation operation = new OperationRepresentation();
+operation.setDeviceId(mo.getId());
+relay.setRelayState(RelayState.OPEN);
+operation.set(relay);
+control.create(operation);
+</code></pre>
+
+<p>Now, if you would like to query the pending operations from an agent, the following code would need to be executed:</p>
+
+<pre><code>OperationFilter operationFilter = new OperationFilter();
+operationFilter.byAgent(mo.getId().getValue());
+operationFilter.byStatus(OperationStatus.PENDING);
+OperationCollection oc = control.getOperationsByFilter(operationFilter);
+</code></pre>
+
+<p>Again, the returned result may come in several pages due to its potential size.</p>
+
+<pre><code>OperationCollectionRepresentation opCollectionRepresentation;
+for (opCollectionRepresentation = oc.get(); opCollectionRepresentation != null; opCollectionRepresentation = oc.getNextPage(opCollectionRepresentation)) {
+    for (OperationRepresentation op : opCollectionRepresentation.getOperations()) {
+        System.out.println(op.getStatus());
+    }
+}
+</code></pre>
+
+<h3 id="realtime-features">Realtime features</h3>
+
+<p>The Java client libraries fully support the real-time APIs of Cumulocity. For example, to get immediately notified when someone sends an operation to your agent, use the following code:</p>
+
+<pre><code>Subscriber&lt;GId, OperationRepresentation&gt; subscriber = deviceControl.getNotificationsSubscriber();
+Subscription&lt;&gt; subscription = subscriber.subscribe(agentId, new SubscriptionListener&lt;GId, OperationRepresentation&gt; {
+    public void onError(Subscription&lt;GId&gt; sub, Throwable e) {
+        logger.error(&quot;OperationDispatcher error!&quot;, e);
+    }
+
+    public void onNotification(Subscription&lt;GId&gt; sub, OperationRepresentation operation) {
+        // Execute the operation
+    }
+});
+</code></pre>
+
+<blockquote>
+<p><strong>Info:</strong> &ldquo;agentId&rdquo; is the ID of your agent in the inventory.</p>
+</blockquote>
+
+<p>To unsubscribe from a subscription, use the following code:</p>
+
+<pre><code>subscription.unsubscribe()
+</code></pre>
+
+<p>If you wish to disconnect, the following code must be used:</p>
+
+<pre><code>subscriber.disconnect()
+</code></pre>
+
+<h3 id="reliability-features">Reliability features</h3>
+
+<p>In particular on mobile devices, Internet connectivity might be unreliable. To support such environments, the Java client libraries support local buffering. This means that you can pass data to the client libraries regardless of an Internet connection being available or not. If a connection is available, the data will be send immediately. If not, the data will be buffered until the connection is back again. For this, &ldquo;async&rdquo; variants of the API calls are offered. For example, to send an alarm, use</p>
+
+<pre><code>AlarmApi alarmApi = platform.getAlarmApi();
+Future future = alarmApi.createAsync(anAlarm);
+</code></pre>
+
+<p>The &ldquo;createAsync&rdquo; method returns immediately. The &ldquo;Future&rdquo; object can be used to determine the result of the request whenever it was actually carried out.</p>
+
+<h3 id="logging-configuration">Logging Configuration</h3>
+
+<p>Logging in the Java client SDK is handled through <a href="http://www.slf4j.org/">slf4j</a> with a <a href="http://logback.qos.ch">logback</a> backend. For a detailed description on how to use and configure logging, see the <a href="http://logback.qos.ch/documentation.html">logback documentation</a>.</p>
+
+<p>Since version 0.11, the default logging level of the SDK is set to &ldquo;Error&rdquo; for all components, which means that logging messages are suppressed unless their level is &ldquo;Error&rdquo;. If everything runs smoothly, there should be no log messages generated by the SDK. By default, log messages are sent to the console only.</p>
+
+<p>The default logging configuration can be changed by providing a new configuration file. Two methods for providing the configuration file are discussed here: via an absolute filename passed using a system property; and via an OSGi fragment. Note that both of these methods <strong>override</strong> the default behaviour, rather than extending it.</p>
+
+<h4 id="configuration-via-system-property">Configuration via System Property</h4>
+
+<p>The absolute path to a logging configuration file can be passed using the following system property:</p>
+
+<pre><code>-Dlogback.configurationFile=/path/to/config.xml
+</code></pre>
+
+<p>In Eclipse, this property should be added to the &rdquo;Arguments-&gt;VM Arguments&rdquo; of the &rdquo;Run Configuration&rdquo; window.</p>
+
+<h4 id="configuration-via-osgi-fragment-bundle">Configuration via OSGi Fragment Bundle</h4>
+
+<p>A more flexible approach is to provide the logger configuration via an OSGi bundle that can be deployed along with the client. From within Eclipse, the fragment can be generated as follows:</p>
+
+<ol>
+<li><p>Create a new project of type &ldquo;Fragment Project&rdquo; called &ldquo;LogConfig&rdquo;</p>
+
+<ul>
+<li>Target to run with: an OSGi framework</li>
+<li>Host plugin ID: <strong>ch.qos.logback.classic</strong></li>
+</ul></li>
+
+<li><p>Add a file called &rdquo;logback.xml&rdquo; to the root of the new project. This file will contain the logging configuration.</p></li>
+
+<li><p>Edit the MANIFEST.MF file and add the following:</p>
+
+<ul>
+<li>On the &rdquo;Build&rdquo; page add the &rdquo;logback.xml&rdquo; file to the &ldquo;Binary Build&rdquo;</li>
+</ul></li>
+
+<li><p>On the &rdquo;Bundles&rdquo; page of the &rdquo;Run Configuration&rdquo; dialog of the Java client project:</p>
+
+<ul>
+<li>Select the &rdquo;LogConfig&rdquo; bundle</li>
+<li>Deselect the &rdquo;com.nsn.cumulocity.platform-services.sdk.logging-config&rdquo; bundle</li>
+</ul></li>
+</ol>
+
+<h4 id="simple-logging-configuration">Simple Logging Configuration</h4>
+
+<p>The following example shows how to enable debug-level logging for a single component, called &ldquo;com.cumulocity.javaclient&rdquo;, whilst keeping error-level logging for all other components. The following code snippet shows how to create the logger, and to log a message:</p>
+
+<pre><code>Logger logger = LoggerFactory.getLogger(&quot;com.cumulocity.javaclient&quot;);logger.debug(&quot;A debug message&quot;);
+</code></pre>
+
+<p>The configuration file looks like this:</p>
+
+<pre><code>&lt;configuration&gt;
+    &lt;appender name=&quot;STDOUT&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;
+        &lt;encoder&gt;&lt;pattern&gt;%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n&lt;/pattern&gt;&lt;/encoder&gt;
+    &lt;/appender&gt;
+    &lt;logger name=&quot;com.cumulocity.javaclient&quot; level=&quot;debug&quot;/&gt;
+    &lt;root level=&quot;error&quot;&gt;&lt;appender-ref ref=&quot;STDOUT&quot; /&gt;&lt;/root&gt;
+&lt;/configuration&gt;
+</code></pre>
+
+<p>When the code is run, the console should contain a message similar to the following:</p>
+
+<pre><code>21:52:02.790 [Start Level Event Dispatcher] DEBUG com.cumulocity.javaclient - A debug message
+</code></pre>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

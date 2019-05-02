@@ -169,8 +169,6 @@ The rule uses the following parameters:
 
 If a geofence border is crossed, an email is sent. 
 
-The rule can be configured for entering or leaving the geofence, or both.
-
 **Parameters**
 
 The rule uses the following parameters:
@@ -184,7 +182,7 @@ The rule uses the following parameters:
 |3|Send e-mail:|**Send to:/Send CC to:/Send BCC to**: Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (",", do not use a space!).<br>**Reply to**: Address to be used to reply to the message.<br> **Subject**: Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.<br> **Message**: Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
 |4|Target asset or devices|Groups or devices the rule shall be applied to.
 
-**Info**: In order to raise an alarm the device had to be inside the geofence at least once after creating the rule.
+**Info**: In order to perform the rule the device had to be inside the geofence at least once after creating the rule.
 
 **Troubleshooting**
 

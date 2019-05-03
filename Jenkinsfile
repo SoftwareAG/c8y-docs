@@ -5,7 +5,7 @@ pipeline {
   }
   agent {
     docker {
-      image 'jojomi/hugo'
+      image 'confraria/node-chrome:node11-chrome73-gettext-mercurial'
     }
   }
 

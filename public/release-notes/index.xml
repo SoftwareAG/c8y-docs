@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Release Notes on Cumulocity IoT Guides</title>
+    <link>https://cumulocity.com/guides/release-notes/</link>
+    <description>Recent content in Release Notes on Cumulocity IoT Guides</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://cumulocity.com/guides/release-notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Overview</title>
+      <link>https://cumulocity.com/guides/release-notes/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/release-notes/overview/</guid>
+      <description>These release notes document all relevant changes that have been implemented in a Cumulocity release since the previous release.
+We distinguish between standard releases and maintenance releases. 
+Standard release A standard release provides new features and functionality as well as improvements and fixes to a previous release.</description>
+    </item>
+    
+    <item>
+      <title>Releases 9.25</title>
+      <link>https://cumulocity.com/guides/release-notes/9-25/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/release-notes/9-25/</guid>
+      <description>Improvements    Area Description Zendesk ticket     MQTT MQTT-SN gateway which maps MQTT-SN traffic to Cumulocity MQTT SmartRest 2.0 has been added. &amp;nbsp;   CanOpen The CanOpen agent now supports SmartREST 1.</description>
+    </item>
+    
+    <item>
+      <title>Releases 9.24</title>
+      <link>https://cumulocity.com/guides/release-notes/9-24/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/release-notes/9-24/</guid>
+      <description>Improvements    Area Description Zendesk ticket     UI Global data point explorer performance has been improved. #37347    Fixes    Area Description Zendesk ticket     UI Text-to-speech functionality is no longer shown in Smart Rules as it is deprecated.</description>
+    </item>
+    
+    <item>
+      <title>Releases 9.21 - 9.23</title>
+      <link>https://cumulocity.com/guides/release-notes/9-21-23/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/release-notes/9-21-23/</guid>
+      <description>Improvements    Area Description     Enterprise Edition SSL management error text improvements.   Enterprise Edition The Tenant Statistics page now presents information on microservice usage per tenant.</description>
+    </item>
+    
+    <item>
+      <title>Releases 9.20 (Private Edition)</title>
+      <link>https://cumulocity.com/guides/release-notes/9-20/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/release-notes/9-20/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Releases 9.17 - 9.19</title>
+      <link>https://cumulocity.com/guides/release-notes/9-17-19/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/release-notes/9-17-19/</guid>
+      <description>Improvements    Area Description     UI Error message improvements when the password token is expired.   Administration An alarm is now raised if data broker cannot connect to the destination tenant.</description>
+    </item>
+    
+    <item>
+      <title>Release 9.16 (Private Edition)</title>
+      <link>https://cumulocity.com/guides/release-notes/9-16/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/release-notes/9-16/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Releases 9.13 - 9.15</title>
+      <link>https://cumulocity.com/guides/release-notes/9-13-15/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/release-notes/9-13-15/</guid>
+      <description>Improvements     Area
+  Description
+    UI
+  The layout of the Load more button has been improved.
+    Administration</description>
+    </item>
+    
+    <item>
+      <title>Release 9.12 (Private Edition)</title>
+      <link>https://cumulocity.com/guides/release-notes/9-12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/release-notes/9-12/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Release 9.11</title>
+      <link>https://cumulocity.com/guides/release-notes/9-11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/release-notes/9-11/</guid>
+      <description>Improvements     Area
+  Description
+    Administration
+  It is now possible to limit device count of tenants. The platform administrator can see the peak count of both concurrently registered devices and root devices in the tenant list view and in the CSV export.</description>
+    </item>
+    
+    <item>
+      <title>Release 9.10</title>
+      <link>https://cumulocity.com/guides/release-notes/9-10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/release-notes/9-10/</guid>
+      <description>Improvements     Area
+  Description
+    Administration
+  Email fields are now case insensitive.
+    Enterprise Edition
+  Tenant statistics endpoint has been extended to include tenant URL.</description>
+    </item>
+    
+    <item>
+      <title>Release 9.9</title>
+      <link>https://cumulocity.com/guides/release-notes/9-9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/release-notes/9-9/</guid>
+      <description>Improvements    Area Description     UI In addition to the “user name” used to authenticate a user, an administrator can now also specify a “login alias” for a user.</description>
+    </item>
+    
+    <item>
+      <title>Release 9.8 (Private Edition)</title>
+      <link>https://cumulocity.com/guides/release-notes/9-8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cumulocity.com/guides/release-notes/9-8/</guid>
+      <description>What´s new Sigfox agent Cumulocity can now interface with Sigfox devices through the Sigfox Cloud.
+You can:
+ Provision Sigfox devices easily using the Cumulocity Device Management. Decode upstream payload packets using a web-based user interface.</description>
+    </item>
+    
+  </channel>
+</rss>

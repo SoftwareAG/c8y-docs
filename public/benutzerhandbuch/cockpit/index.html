@@ -1,0 +1,3096 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Cockpit - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Handbuch</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav0"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/benutzerhandbuch/overview/">Erste Schritte</a>
+     
+      
+      
+      <div id="page-nav0"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/overview/#accessing-cumulocity-platform">Aufrufen und Anmelden an der Cumulocity-Plattform</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/overview/#cumulocity-applications">Cumulocity-Anwendungen</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/overview/#gui-features">Eigenschaften und Funktionen der Benutzeroberfläche</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/overview/#user-settings">Ändern von Benutzereinstellungen</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/benutzerhandbuch/device-management/">Device Management</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#overview">Übersicht</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#connecting-devices">Verbinden von Geräten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#viewing-devices">Anzeigen von Geräten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#grouping-devices">Gruppieren von Geräten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#device-details">Gerätedetails</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#monitoring-and-controlling-devices">Überwachen und Steuern von Geräten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#managing-device-types">Verwalten von Gerätetypen</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#managing-device-data">Verwalten von Gerätedaten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#configuration-repository">Konfigurations-Repository</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#simulator">Simulatoren</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/device-management/#smartrest-templates">Verwenden von SmartREST-Templates</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/benutzerhandbuch/administration/">Administration</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#overview">Übersicht</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#home-screen">Startseite</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#managing-users">Verwalten von Benutzern</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#managing-permissions">Verwalten von Berechtigungen</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#audit-logs">Anzeigen von Audit-Logs</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#managing-applications">Verwalten von Anwendungen</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#business-rules">Anwenden von Geschäftsregeln</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#data-retention">Verwalten der Datenhaltung</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#tfa">Zwei-Faktor-Authentifizierung</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#changing-settings">Ändern von Einstellungen</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/">Cockpit</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#overview">Übersicht</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#managing-assets">Verwalten von Assets</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#data-explorer">Visualisieren von Daten mit dem Daten-Explorer</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#dashboards">Verwenden von Dashboards</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#widgets">Widgets-Sammlung</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#reports">Verwalten von Berichten und Exportdaten</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#data-point-library">Datenpunktbibliothek</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#smart-rules">Smart Rules</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#smart-rules-collection">Smart Rules-Sammlung</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/">Enterprise Edition</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/#managing-tenants">Verwalten von Mandanten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/#user-hierarchies">Verwalten von Benutzerhierarchien</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/#users-in-other-tenants">Support für Benutzer in anderen Mandanten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/#data-broker">Data Broker</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/#customization">Anpassen der Plattform</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/#storage-quota">Speicherbegrenzung</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/benutzerhandbuch/optional-services/">Optionale Services</a>
+     
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Cockpit</h1>
+    </header>
+    
+      <div class="lead">
+        
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="overview" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#overview">
+        <span class="fa fa-link"></span>
+      </button>
+      Übersicht</h2>
+    
+
+<p>Die folgenden Abschnitte beschreiben detailliert alle Funktionalitäten der Cockpit-Anwendung. Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokuments.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Abschnitt</th>
+<th align="left">Inhalt</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><a href="#managing-assets">Verwalten von Assets</a></td>
+<td align="left">Organisieren Sie Assets in <a href="#hierarchies">Hierarchien</a> durch <a href="#creating-groups">Erstellen von Gruppen</a> und <a href="#assigning-devices">Zuweisen von Geräten</a>.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#data-explorer">Visualisieren von Daten mit dem Daten-Explorer</a></td>
+<td align="left">Untersuchen, vergleichen und visualisieren Sie interaktiv IoT-Daten. <br> Beschreibt, wie Sie auf den <a href="#data-explorer">Daten-Explorer</a> zugreifen, <a href="#add-data-points">Datenpunkte</a> hinzufügen, <a href="#customize-data-points">Datenpunktattribute</a> anpassen, den <a href="#create-widget">Daten-Explorer als Widget speichern</a> und Daten <a href="#export-data">exportieren</a>.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#dashboards">Verwenden von Dashboards</a></td>
+<td align="left"><a href="#creating-dashboards">Erstellen Sie Ihre eigenen Dashboards</a> durch Hinzufügen und Arrangieren von <a href="#adding-widgets">Widgets</a>. <a href="#sharing-dashboards">Teilen Sie Dashboards</a> unter allen Geräten des gleichen Typs.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#widgets">Widgets-Sammlung</a></td>
+<td align="left">Verwenden Sie verschiedene <a href="#widgets">Widget-Typen</a> aus der in Cumulocity enthaltenen Widgets-Sammlung und konfigurieren Sie diese nach Ihren individuellen Bedürfnissen.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="/guides/benutzerhandbuch/device-management/#alarm-monitoring">Verwenden von Alarmen</a></td>
+<td align="left">Überwachen Sie Probleme Ihrer Geräte mit Hilfe von Schweregraden und Prozessen. Da die Verwendung von Alarmen in der Cockpit-Anwendung exakt so funktioniert wie in der Device Management-Anwendung finden Sie weitere Informationen in <a href="/guides/benutzerhandbuch/device-management/#alarm-monitoring">Verwenden von Alarmen</a> unter Device Management.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#reports">Verwalten von Berichten</a></td>
+<td align="left">Bearbeiten Sie <a href="#reports">Berichte</a> auf Basis von Dashboard-Layouts, erstellen Sie <a href="#reporting">Berichte zum Exportieren von Daten</a> in das CSV- oder Excel-Format und <a href="#schedule-export">terminieren Sie den Export</a>.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#data-point-library">Datenpunktbibliothek</a></td>
+<td align="left">Verwalten Sie Standardeinstellungen (&ldquo;Profile&rdquo;) Ihrer Geräte und wenden Sie diese mit Hilfe der <a href="#data-point-library">Datenpunktbibliothek</a> automatisch an.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#smart-rules">Verwenden von Smart Rules</a></td>
+<td align="left"><a href="#create-rules">Erstellen und verwalten Sie Geschäftsregeln</a>, um eingehende Daten in Echtzeit zu verarbeiten und entsprechende Aktionen auszuführen.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#smart-rules-collection">Smart Rules-Sammlung</a></td>
+<td align="left">Verwenden Sie <a href="#smart-rules-collection">globale Smart Rules</a>, um Regeln zu konfigurieren, etwa für Geofencing, Alarmeskalation oder Benachrichtigungen (SMS/E-Mail/Sprache). Beschreibt detailliert jede Smart Rule und ihre konfigurierbaren Parameter.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Mehr über allgemeine Aspekte der Cumulocity-Plattform und ihrer Anwendungen erfahren Sie unter <a href="/guides/benutzerhandbuch/overview">Erste Schritte</a>.</p>
+
+<h3 id="a-name-home-a-startseite"><a name="home"></a>Startseite</h3>
+
+<p>Bei der Startseite der Cockpit-Anwendung handelt es sich um ein Dashboard, das Daten für den Mandanten anzeigt.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-home-dashboard.png" alt="image alt text" /></p>
+
+<p>Die Daten, die auf der Startseite angezeigt werden, werden von allen Benutzern des Mandanten gemeinsam genutzt. Standardmäßig zeigt die Startseite eine Begrüßung, die aktiven kritischen Alarme, neueste Alarme und eine Karte mit allen Geräten.</p>
+
+<p>Die Startseite kann nach Ihren eigenen Bedürfnissen bearbeitet und gestaltet werden. Sie können die angezeigten Widgets ändern oder entfernen oder neue Widgets hinzufügen.</p>
+
+<p>Details zum Bearbeiten von Dashboards finden Sie unter <a href="#dashboards">Arbeiten mit Dashboards</a>.</p>
+
+<p>Um die Startseite wieder auf die ursprünglichen Inhalte zurückzusetzen, klicken Sie <strong>Mehr&hellip;</strong> rechts oben in der Menüleiste und wählen Sie im Kontextmenü <strong>Dashboard wiederherstellen</strong>.</p>
+
+  </article>
+  
+  <article id="managing-assets" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#managing-assets">
+        <span class="fa fa-link"></span>
+      </button>
+      Verwalten von Assets</h2>
+    
+
+<h3 id="einleitung">Einleitung</h3>
+
+<p>Assets repräsentieren ganz allgemein Geschäftsobjekte wie Gebäude, Maschinen, Produktionseinheiten oder Autos.</p>
+
+<p>Assets sind in Hierarchien organisiert. Eine Anwendung zur Energieüberwachung kann beispielsweise die folgende Hierarchie aufweisen:</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-hierarchy.png" alt="image alt text" /></p>
+
+<p>Die Asset-Hierarchie besteht aus zwei Objekttypen:</p>
+
+<ul>
+<li><p><strong>Gruppen</strong>: Objekte, die einzelne Geräte oder andere Gruppen gruppieren. Gruppen können sowohl in der Cockpit-Anwendung als auch in der Device-Management-Anwendung erstellt werden.</p></li>
+
+<li><p><strong>Geräte</strong>: Geräte, die mit der Asset-Hierarchie verknüpft werden. Bevor Sie Geräte in der Cockpit-Anwendung verwenden können, müssen diese mit Cumulocity verbunden werden. Dies erfolgt in der Device Management-Anwendung. Nähere Informationen zum Verbinden von Geräten finde Sie im Abschnitt <a href="/guides/benutzerhandbuch/device-management">Device Management</a>.</p></li>
+</ul>
+
+<p>In Beispiel oben repräsentieren die Gruppenobjekte einen Gebäudebestand und die Geräteobjekte die Räume. Die Namen und Hierarchien können individuell vom Benutzer festgelegt werden. Hierarchien können mehrere Ebenen haben wie etwa Ebenen für Region, Stadt, Straße, Gebäude, Etage oder Raum. Jedes Gerät kann mit mehreren und verschiedenen Hierarchien verknüpft sein, und etwa Teil einer regionalen Hierarchie sowie einer Kundenhierarchie sein.</p>
+
+<p>Um ein Gerät mit der Asset-Hierarchie zu verknüpfen, muss das Gerät einer Gruppe zugewiesen werden (siehe <a href="#assigning-devices">Zuweisen von Geräten zu Gruppen</a>.</p>
+
+<blockquote>
+<p><strong>Info:</strong> Einzelne Geräte werden nicht in der Cockpit-Anwendung, sondern in der Device Management-Anwendung verwaltet.</p>
+</blockquote>
+
+<h3 id="a-name-hierarchies-a-asset-hierarchie-versus-gerätehierarchie"><a name="hierarchies"></a>Asset-Hierarchie versus Gerätehierarchie</h3>
+
+<p>Cumulocity unterstützt zwei Hierarchietypen: die Gerätehierarchie und die
+Asset-Hierarchie.</p>
+
+<p>Die Gerätehierarchie bildet die Verknüpfung von Geräten mit Cumulocity aus Kommunikationssicht ab. Die Asset-Hierarchie strukturiert die Assets, die über die M2M-Geräte fernüberwacht und gesteuert werden. Nähere Informationen finden Sie unter <a href="/guides/concepts/domain-model">Cumulocity&rsquo;s Domain Model</a> im Concepts guide.</p>
+
+<p>In der Cockpit-Anwendung konstruieren Sie Ihre Asset-Hierarchie, indem Sie Gruppenobjekte erstellen und Geräte mit den Gruppen verknüpfen.
+Die Asset-Hierarchie hängt von den verwendeten IoT-Geräten ab.</p>
+
+<p>Es gibt viele verschiedene Typen von IoT-Geräten, wobei diese zwei Typen besonders häufig sind:</p>
+
+<ul>
+<li><p><strong>Smart-Geräte</strong> sind eigenständige Geräte, die Sensoren, Aktoren und ein Kommunikationsmodul enthalten. Diese sind typischerweise mit einem einzelnen Asset verbunden. Smart-Geräte sind etwa Tracker, Wetterstationen oder ganz allgemein &ldquo;intelligente&rdquo; Sensoren mit eingebautem Kommunikationsmodul.</p></li>
+
+<li><p><strong>Gateway-Geräte</strong> errichten die Kommunikation von anderen Geräten zu Cumulocity, enthalten jedoch keine  Sensoren oder Aktoren. Typische Gateways sind etwa Zigbee, Modbus, M-Bus oder KNX-Gateways.</p></li>
+</ul>
+
+<p>Der folgende Abschnitt beschreibt, wie Sie in der Cockpit-Anwendung mit Smart-Geräten und Gateway-Geräten arbeiten.</p>
+
+<p>Das erste Beispiel zeigt, wie Smart-Geräte mit der Asset-Hierarchie verknüpft werden:</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-asset-hierarchy.png" alt="image alt text" /></p>
+
+<p>Smart-Geräte werden in der Device Management-Anwendung als Top-Level-Geräte dargestellt. In der Cockpit-Anwendung können Sie Smart-Geräte in Gruppen organisieren, wie die Pfeile in der Abbildung oben zeigen.</p>
+
+<p>Das zweite Beispiel zeigt, wie Gateway-Geräte in der Cockpit-Anwendung verwendet werden:</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-gateway-devices.png" alt="image alt text" /></p>
+
+<p>In der Device Management-Anwendung werden Gateway-Geräte als Top-Level-Geräte dargestellt. Die angeschlossenen Geräte (wie Zigbee-, Modbus- oder KNX-Geräte) werden als untergeordneten Geräte angezeigt. In der Cockpit-Anwendung können diese &ldquo;Kindgeräte&rdquo; wie in der Abbildung oben dargestellt in einer Asset-Hierarchie organisiert werden.</p>
+
+<p>Wie die Beispiele zeigen, sind die Asset-Hierarchie und die Gerätehierarchie autark: Während sich innerhalb der Device Management-Anwendung alle Kindgeräte unterhalb des Gateway-Geräts befinden, sind dieselben Kindgeräte in zwei verschiedenen Gebäuden in der Cockpit-Anwendung organisiert.</p>
+
+<h3 id="cockpit-assets-versus-business-assets">Cockpit-Assets versus Business-Assets</h3>
+
+<p>Die Abbildung von Objekten in der Cockpit-Asset-Hierarchie ist eine virtuelle Hierarchie.</p>
+
+<p>Wenn Sie LKWs innerhalb der Cumulocity-Plattform verwalten, wird jeder LKW durch sein individuelles Tracking-Gerät, das mit Cumulocity kommuniziert, dargestellt.</p>
+
+<p>Beim Gebäudemanagement ist es häufig so, dass eine Gruppe von Sensoren in einem Gebäude als eine Gruppe darstellt wird, die mit der Cumulocity-Plattform kommuniziert.</p>
+
+<h3 id="navigieren-durch-die-assets">Navigieren durch die Assets</h3>
+
+<p>In der Asset-Hierarchie unterscheidet Cumulocity zwischen Top-Level-Gruppen und untergeordneten Assets (Kind-Assets).</p>
+
+<p>Im Navigator werden Top-Level-Gruppen im Menü <strong>Gruppen</strong> auf oberster Ebene angezeigt. Untergeordnete Assets werden darunter angezeigt oder in der Registerkarte <strong>Kind-Assets</strong> einer bestimmten Gruppe.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-sub-assets.png" name="Kind-Assets" style="width:100%;"/></p>
+
+<p>Wenn Sie ein Objekt im Navigator auswählen, werden auf der rechten Seite entsprechende Informationen zum ausgewählten Objekt angezeigt.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-info-tab.png" name="Info tab" style="width:100%;"/></p>
+
+<p>Wenn Sie ein Gateway-Gerät hinzufügen, werden die Kindgeräte nicht angezeigt. Um Kindgeräte anzuzeigen, müssen diese zum jeweiligen Asset hinzugefügt werden. Details zur untergeordneten Hierarchie können in der Device Management-Anwendung eingesehen und editiert werden.</p>
+
+<p>Um in der Asset-Hierarchie weiter zu navigieren, verwenden Sie den Navigator oder wählen Sie ein Objekt in der Registerkarte <strong>Kind-Assets</strong> aus. Um in der Asset-Hierarchie nach oben zu navigieren, verwenden Sie den Eintrag in der Pfadnavigation unter dem Namen des Assets.</p>
+
+<h3 id="asset-details">Asset-Details</h3>
+
+<p>Für jedes Objekt gibt es verschiedene Registerkarten, abhängig vom Objekttypen:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Registerkarte</th>
+<th align="left">Beschreibung</th>
+<th align="left">Verfügbarkeit</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Info</td>
+<td align="left">Zeigt eine Liste von <a href="#smart-rules">Smart Rules</a>, die für dieses Objekt erstellt wurden.</td>
+<td align="left">Gruppe, Gerät</td>
+</tr>
+
+<tr>
+<td align="left">Alarme</td>
+<td align="left">Zeigt Alarme für das Gerät. Nähere Informationen zu Alarmen finden Sie unter <a href="/guides/benutzerhandbuch/device-management/#alarm-monitoring">Verwenden von Alarmen</a> im Abschnitt Device Management.</td>
+<td align="left">Gerät</td>
+</tr>
+
+<tr>
+<td align="left">Kind-Assets</td>
+<td align="left">Zeigt die Kind-Assets einer Gruppe.</td>
+<td align="left">Gruppe</td>
+</tr>
+
+<tr>
+<td align="left">Daten-Explorer</td>
+<td align="left">Zeigt alle Datenpunkte der Kinder, siehe auch <a href="#data-explorer">Visualisieren von Daten mit dem Daten-Explorer</a>.</td>
+<td align="left">Gruppe, Gerät</td>
+</tr>
+
+<tr>
+<td align="left">Standort</td>
+<td align="left">Zeigt den aktuellen Standort des Geräts.</td>
+<td align="left">Gerät</td>
+</tr>
+</tbody>
+</table>
+
+<p>Wenn für ein Gerät Dashboards erstellt wurden, werden diese ebenfalls als Registerkarten angezeigt. Weitere Informationen finden Sie unter <a href="#dashboards">Verwenden von Dashboards</a>.</p>
+
+<p>Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit Plugins erweitert wurde. Siehe auch <a href="/guides/web/introduction">Web SDK for plugins</a>.</p>
+
+<h3 id="a-name-creating-groups-a-erstellen-von-gruppen"><a name="creating-groups"></a>Erstellen von Gruppen</h3>
+
+<p>Führen Sie folgende Schritte aus, um eine neue Gruppe zu erstellen:</p>
+
+<ol>
+<li>Klicken Sie die <strong>Plus</strong>-Schaltfläche rechts in der oberen Leiste und wählen Sie die Menüoption <strong>Neue Gruppe</strong>. <br><br>
+<img src="/guides/images/benutzerhandbuch/cockpit-create-group.png" name="Gruppe erstellen" style="width:50%;"/><br></li>
+<li>Geben Sie im folgenden Fenster einen eindeutigen Namen für die Gruppe ein.</li>
+<li>Geben Sie im Feld <strong>Gerätesuche</strong> Suchkriterien für die Geräte ein, die Sie zur Gruppe hinzufügen möchten (z. B. &ldquo;ublox&rdquo;). Eine Liste mit passenden Geräten wird angezeigt.<br /></li>
+<li>Wählen Sie die Geräte aus, die Sie hinzufügen möchten.</li>
+<li>Klicken Sie <strong>Gruppe mit [x] Gerät(en) erstellen</strong>, um die Gruppe zu erstellen.</li>
+</ol>
+
+<blockquote>
+<p><strong>Info:</strong> Eine Gruppe kann auch mit &ldquo;0&rdquo; Geräten erstellt werden.</p>
+</blockquote>
+
+<p>Um eine neue Gruppe als Kind zu einer existierenden Gruppe hinzuzufügen, navigieren Sie zur entsprechenden Registerkarte <strong>Kind-Assets</strong> und klicken Sie  <strong>Gruppe hinzufügen</strong> in der oberen Menüleiste.</p>
+
+<h3 id="a-name-assigning-devices-a-zuweisen-von-geräten-zu-gruppen"><a name="assigning-devices"></a>Zuweisen von Geräten zu Gruppen</h3>
+
+<p>Bevor Sie ein Gerät zu einer Asset-Hierarchie hinzufügen können, muss das Gerät mit Cumulocity verbunden werden. Das Verbinden von Geräten mit der Plattform erfolgt in der Device Management-Anwendung. Weitere Informationen zum Verbinden von Geräten finden Sie unter <a href="/guides/users-guide/device-management">Device Management</a>.</p>
+
+<p>Führen Sie die folgenden Schritte aus, um ein Gerät einer Gruppe zuzuweisen:</p>
+
+<ol>
+<li>Wählen Sie die gewünschte Gruppe im Navigator und öffnen Sie die Registerkarte <strong>Kind-Assets</strong>. In der Registerkarte <strong>Kind-Assets</strong> werden alle Geräte, die der entsprechenden Gruppe zugewiesen sind, angezeigt.<br /></li>
+<li>Klicken Sie <strong>Gerät zuweisen</strong> rechts in der oberen Menüleiste. Geben Sie im folgenden Fenster Suchkriterien für die Geräte ein, die Sie zur Gruppe hinzufügen möchten (z. B. &ldquo;ublox&rdquo;). Eine Liste mit passenden Geräten wird angezeigt.<br /></li>
+<li>Wählen Sie die Geräte aus, die Sie hinzufügen möchten.</li>
+<li>Klicken Sie <strong>[x] Gerät(e) zuweisen</strong>, um die ausgewählten Geräte zuzuweisen.</li>
+</ol>
+
+<p>Die Geräte werden als Kind-Assets in der Registerkarte <strong>Kind-Assets</strong> angezeigt.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-assign-devices.png" name="Gerät zuweisen" style="width:50%;"/></p>
+
+<h3 id="bearbeiten-von-gruppen">Bearbeiten von Gruppen</h3>
+
+<p>Um den Namen einer Gruppe zu bearbeiten, navigieren Sie zur Registerkarte <strong>Info</strong> der entsprechenden Gruppe und klicken Sie &ldquo;<strong>Bearbeiten</strong>&rdquo; neben dem Namen. Geben Sie den gewünschten Namen ein sowie optional eine Anmerkung, die in der Registerkarte <strong>Info</strong> angezeigt wird. Klicken Sie <strong>Änderungen speichern</strong>, um Ihre Einstellungen zu speichern.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-edit-groups.png" name="Gruppe bearbeiten" style="width:50%;"/></p>
+
+<h3 id="löschen-von-gruppen">Löschen von Gruppen</h3>
+
+<p>Führen Sie folgende Schritte aus, um eine Top-Level-Gruppe aus dem Navigator zu löschen:</p>
+
+<ol>
+<li>Klicken Sie <strong>Gruppen</strong> im Navigator.</li>
+<li>Klicken Sie auf das Menüsymbol der Gruppe, die Sie löschen möchten.</li>
+<li>Klicken Sie im Kontextmenü <strong>Löschen</strong>.</li>
+</ol>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-sub-asset-contextmenu.png" name="Gruppe bearbeiten" style="width:50%;"/></p>
+
+<p>Führen Sie folgende Schritte aus, um eine Gruppe aus der Registerkarte <strong>Kind-Assets</strong> einer anderen Gruppe zu löschen:</p>
+
+<ol>
+<li>Navigieren Sie zur Registerkarte <strong>Kind-Assets</strong> der entsprechenden Gruppe.</li>
+<li>Klicken Sie auf das Menüsymbol der Gruppe, die Sie löschen möchten.</li>
+<li>Klicken Sie im Kontextmenü <strong>Löschen</strong>.</li>
+</ol>
+
+<h3 id="aufheben-der-zuordnung-von-geräten">Aufheben der Zuordnung von Geräten</h3>
+
+<p>Führen Sie die folgenden Schritte aus, um die Zuordnung eines Geräts zu einer Gruppe aufzuheben:</p>
+
+<ol>
+<li>Navigieren Sie zur Registerkarte <strong>Kind-Assets</strong> der entsprechenden Gruppe.</li>
+<li>Klicken Sie auf das Menüsymbol des Geräts, für das Sie die Zuordnung aufheben möchten.</li>
+<li>Klicken Sie im Kontextmenü <strong>Zuordnung aufheben</strong>.</li>
+</ol>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-sub-asset-contextmenu.png" name="Gruppe bearbeiten" style="width:50%;"/></p>
+
+<p>Wenn Sie die Zuordnung eines Geräts aufheben, wird das Gerät, seine Kindgeräte sowie zugehörige Daten nicht gelöscht. Das Gerät wird lediglich aus der Gruppe entfernt. Es kann jederzeit wieder zu dieser oder einer anderen Gruppe hinzugefügt werden.</p>
+
+  </article>
+  
+  <article id="data-explorer" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#data-explorer">
+        <span class="fa fa-link"></span>
+      </button>
+      Visualisieren von Daten mit dem Daten-Explorer</h2>
+    
+
+<p>Im Daten-Explorer können Datenpunkte (Messwerte oder Sensordaten) visualisiert werden.</p>
+
+<p>Der Daten-Explorer ist sowohl für alle Assets als auch für einzelne Assets verfügbar.</p>
+
+<ul>
+<li><p>Klicken Sie <strong>Daten-Explorer</strong> im Navigator, um auf alle Datenpunkte von allen Assets zuzugreifen.</p></li>
+
+<li><p>Navigieren Sie zu einem bestimmten Asset und wechseln Sie zur Registerkarte <strong>Daten-Explorer</strong>, um auf alle Datenpunkte dieses Assets und seiner Kind-Assets zuzugreifen.</p></li>
+</ul>
+
+<p>Im Daten-Explorer finden Sie auf der rechten Seite eine Liste aller verfügbaren Datenpunkte. Standardmäßig werden die ersten fünf Datenpunkte des ausgewählten Geräts oder der ausgewählten Gruppe angezeigt. Weitere Informationen zum Hinzufügen von Datenpunkten finden Sie unter <a href="#add-data-points">Hinzufügen von Datenpunkten</a>.</p>
+
+<p>Auf der linken Seite, in der Hauptkarte, sehen Sie die entsprechende Visualisierung.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-data-explorer.png" name="Daten-Explorer" style="width:100%;"/><br></p>
+
+<p>Die Visualisierung wird auf Basis von Datenpunktattributen erstellt.</p>
+
+<p>Die Datenpunktattribute werden folgendermaßen vorausgefüllt:</p>
+
+<ul>
+<li><p>Wenn diese Attribute bereits zuvor angepasst wurden, werden die entsprechenden Werte verwendet, siehe <a href="#customize-data-points">Anpassen von Datenpunktattributen</a>.</p></li>
+
+<li><p>Wenn die Datenpunkte eine Übereinstimmung in der Datenpunktbibliothek haben, werden die Werte von der Datenpunktbibliothek verwendet.</p></li>
+</ul>
+
+<p>In der Datenpunktbibliothek kann es mehr als einen übereinstimmenden Datenpunkteintrag geben. In diesem Fall wird automatisch der erste übereinstimmende Datenpunkt ausgewählt. Sie können diese Auswahl überschreiben, indem Sie im entsprechenden Datenpunkteintrag über das Menüsymbol das Kontextmenü öffnen und <strong>[NAME] aus Bibliothek laden</strong> wählen.</p>
+
+<p>Allgemeine Informationen zum Ändern der Visualisierung finden Sie unter <a href="#change-visualization">Ändern der Daten-Explorer-Visualisierung</a>. Informationen zum Anpassen der Attribute eines bestimmten Datenpunkts finden Sie unter<a href="#customize-data-points">Anpassen von Datenpunktattributen</a>.</p>
+
+<h3 id="a-name-change-visualization-a-ändern-der-daten-explorer-visualisierung"><a name="change-visualization"></a>Ändern der Daten-Explorer-Visualisierung</h3>
+
+<p>Zum Ändern der Visualisierung im Daten-Explorer können Sie verschiedene Parameter bearbeiten:</p>
+
+<p><strong>Zeitintervall</strong></p>
+
+<p>Sie können das angezeigte Zeitintervall ändern. Standardmäßig sehen Sie die Werte für die letzte Stunde.</p>
+
+<p>Um das Zeitintervall auf der X-Achse zu ändern,</p>
+
+<ul>
+<li>wählen Sie ein anderes Zeitintervall aus der Auswahlliste in der oberen Menüleiste,</li>
+<li>geben Sie ein eigenes Zeitintervall in die Felder &ldquo;Von&rdquo; und &ldquo;Bis&rdquo; im Daten-Explorer ein,</li>
+<li>bewegen Sie die X-Achse mit dem Mauszeiger nach links oder rechts um das Zeitintervall zu verschieben,</li>
+<li>Zoomen Sie durch Doppelklicken in den Daten-Explorer.</li>
+</ul>
+
+<blockquote>
+<p><strong>Info</strong>: Echtzeitaktualisierungen werden abgeschaltet, wenn Sie ein Zeitintervall wählen, dass in der Vergangenheit liegt.</p>
+</blockquote>
+
+<p><strong>Aggregation</strong></p>
+
+<p>Um einen effizienten Überblick über größere Zeitspannen zu erhalten, können Sie die angezeigten Daten aggregieren.</p>
+
+<p>Standardmäßig ist die Aggregation auf den Wert &ldquo;Keine&rdquo; eingestellt. Dieser Wert kann im Feld <strong>Aggregation</strong> in der oberen Menüleiste geändert werden. Verfügbare Werte sind &ldquo;Minütlich&rdquo;, &ldquo;Stündlich&rdquo; or &ldquo;Täglich&rdquo;, abhängig vom ausgewählten Zeitintervall.</p>
+
+<p><strong>Echtzeitaktualisierung</strong></p>
+
+<p>Standardmäßig ist die Aktualisierung in Echtzeit aktiviert, dass heißt, die angezeigten Daten werden aktualisiert, sobald neue Daten von den verbundenen Geräten empfangen werden.</p>
+
+<p>Klicken Sie &ldquo;<strong>Echtzeit</strong>&rdquo; in der oberen Menüleiste, um die Aktualisierung in Echtzeit ein- oder abzuschalten. Ein grünes Licht zeigt an, dass Echtzeitaktualisierung aktiviert ist.</p>
+
+<p><strong>Datenpunktsichtbarkeit</strong></p>
+
+<p>Die Sichtbarkeit eines Datenpunkts kann mit dem Regler links neben dem Datenpunktnamen aktiviert bzw. deaktiviert werden.</p>
+
+<h3 id="a-name-add-data-points-a-hinzufügen-von-datenpunkten"><a name="add-data-points"></a>Hinzufügen von Datenpunkten</h3>
+
+<p>Klicken Sie <strong>Datenpunkt hinzufügen</strong> am Ende der Datenpunktliste, um einen Datenpunkt zum Daten-Explorer hinzuzufügen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-data-explorer-add-datapoint.png" name="Datenpunkt hinzufügen" style="width:50%;"/><br></p>
+
+<p>Wählen Sie im folgenden Fenster oben ein Gerät aus der Asset-Hierarchie. Es wird nur die Asset-Hierarchie unterhalb des im Navigator ausgewählten Objekts angezeigt. Wenn im Navigator &ldquo;Daten-Explorer&rdquo; ausgewählt wurde, wird die gesamte Asset-Hierarchie angezeigt.</p>
+
+<p>Unten im Fenster werden alle Datenpunkte des ausgewählten Objekts angezeigt. Wählen Sie die Datenpunkte aus, die Sie im Daten-Explorer anzeigen möchten. Klicken Sie <strong>Hinzufügen</strong>, um alle ausgewählten Datenpunkte zur Datenpunktliste hinzuzufügen.</p>
+
+<p>Um einen Datenpunkt in die Datenpunktbibliothek zu speichern, öffnen Sie das Kontextmenü des Datenpunkts über das Menüsymbol und wählen Sie <strong>In Bibliothek speichern</strong>.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-data-explorer-contextmenu.png" name="Datenpunkt-Kontextmenü" style="width:75%;"/></p>
+
+<p>Weitere Informationen zur Datenpunktbibliothek finden Sie unter <a href="#data-point-library">Datenpunktbibliothek</a>.</p>
+
+<p>Klicken Sie im Kontextmenü <strong>Von der Liste löschen</strong>, um einen Datenpunkt aus der Datenpunktliste zu löschen.</p>
+
+<h3 id="a-name-customize-data-points-a-anpassen-von-datenpunktattributen"><a name="customize-data-points"></a>Anpassen von Datenpunktattributen</h3>
+
+<p>Sie können die Visualisierung eines einzelnen Datenpunkts nach Ihren Wünschen anpassen. Erweitern Sie dazu den Datenpunkteintrag in der Datenpunktliste durch Klicken auf das Pfeilsymbol.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-data-explorer-datapoint-edit.png" name="Datenpunkt-Kontextmenü" style="width:75%;"/></p>
+
+<p>Die folgenden Felder können bearbeitet werden:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Beschriftung</td>
+<td align="left">Name des Datenpunkts. Wird in der Y-Achse zur Identifizierung des Datenpunkts angezeigt. Unter der Beschriftung wird das Ziel angezeigt, mit dem Namen des Assets und dem internen Namen des Datenpunkts (Messwertfragment und -typ). Diese Information kann nicht editiert werden.</td>
+</tr>
+
+<tr>
+<td align="left">Standardeinheit</td>
+<td align="left">Einheit, die auf der Y-Achse verwendet wird.</td>
+</tr>
+
+<tr>
+<td align="left">Min/Max</td>
+<td align="left">Bereich, der auf der Y-Achse angezeigt wird.</td>
+</tr>
+
+<tr>
+<td align="left">Ziel</td>
+<td align="left">Der Zielwert wird aktuell nicht im Diagramm angezeigt. Dieser Wert wird im Widget &ldquo;Datenpunktliste&rdquo; verwendet.</td>
+</tr>
+
+<tr>
+<td align="left">Gelber Bereich min/max</td>
+<td align="left">Legt den Bereich fest, in welchem WENIGER WICHTIGE Alarme über eine Schwellwertregel ausgelöst werden.</td>
+</tr>
+
+<tr>
+<td align="left">Roter Bereich min/max</td>
+<td align="left">Legt den Bereich fest, in welchem KRITISCHE Alarme über eine Schwellwertregel ausgelöst werden.</td>
+</tr>
+
+<tr>
+<td align="left">Anzeige</td>
+<td align="left">Wert, der angezeigt wird, wenn Daten aggregiert werden (&ldquo;Minimum&rdquo;, Maximum&rdquo;, Minimum und maximum&rdquo;).</td>
+</tr>
+
+<tr>
+<td align="left">Diagrammtyp</td>
+<td align="left">Diagrammtyp, der für die Visualisierung verwendet wird: &ldquo;Linien&rdquo;, &ldquo;Punkte&rdquo;, &ldquo;Linien und Punkte&rdquo;, &ldquo;Balken&rdquo;. Der Standardwert ist &ldquo;Linie&rdquo;.</td>
+</tr>
+
+<tr>
+<td align="left">Y-Achse</td>
+<td align="left">Legt fest, wo die Y-Achse angezeigt wird: &ldquo;Auto&rdquo;, &ldquo;Links&rdquo;, &ldquo;Rechts&rdquo;. Der Standardwert ist &ldquo;Auto&rdquo;.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Nachdem Sie die Attribute eines Datenpunkts angepasst haben, können Sie die geänderten Einstellungen in der Datenpunktbibliothek speichern. Öffnen Sie das Kontextmenü über das Menüsymbol und wählen Sie <strong>[NAME] in Bibliothek aktualisieren</strong>.</p>
+
+<p>Um zu den Attributen, die in der Datenpunktbibliothek gespeichert sind, zurückzukehren, wählen Sie <strong>[NAME] aus Bibliothek laden</strong>.</p>
+
+<h3 id="verhalten-der-y-achse">Verhalten der Y-Achse</h3>
+
+<p>Standardmäßig wird der erste Datenpunkt auf der linken Y-Achse positioniert und die verbleibenden Datenpunkte rechts davon. Dieses Verhalten kann für einen bestimmten Datenpunkt durch Anpassen des entsprechenden Werts <strong>Y-Achse</strong> (auf &ldquo;Links&rdquo; oder &ldquo;Rechts&rdquo;, siehe oben) geändert werden.</p>
+
+<p>Jeder Datenpunkt wird auf einer eigenen Y-Achse angezeigt, wenn nicht Folgendes zutrifft:</p>
+
+<ul>
+<li>Zwei Datenpunkte haben identische Minimal- und Maximalwerte.</li>
+</ul>
+
+<p>In diesem Fall teilen sich die Datenpunkte eine Y-Achse. Diese Y-Achse zeigt nur die Einheit (oder mehrere Einheiten, falls diese sich unterscheiden) an. Die Beschriftung wird nicht angezeigt.</p>
+
+<h3 id="hinzufügen-von-alarmen-oder-ereignissen">Hinzufügen von Alarmen oder Ereignissen</h3>
+
+<p>Neben Datenpunkten können Sie auch Alarme oder Ereignisse zum Daten-Explorer hinzufügen.</p>
+
+<p>Klicken Sie <strong>Alarm/Ereignis hinzufügen</strong> in der Karte <strong>Alarme/ Ereignisse</strong>, um einen Alarm oder ein Ereignis hinzuzufügen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-data-explorer-add-alarm.png" name="Add widget" style="width:75%;"/></p>
+
+<p>Im folgenden Fenster können Sie einen Alarm oder ein Ereignis aus der Auswahlliste auswählen. Klicken Sie <strong>Hinzufügen</strong>, um Ihre Auswahl hinzuzufügen.</p>
+
+<p>Klicken Sie auf das Pfeilsymbol, um ein Ereignis zu erweitern.</p>
+
+<p>Öffnen Sie das Kontextmenü über das Menüsymbol und wählen Sie <strong>Löschen</strong>, um einen Eintrag aus der Liste zu löschen.</p>
+
+<p>Wie bei den Datenpunkten kann auch die Sichtbarkeit von Alarmen und Ereignissen im Daten-Exlorer durch einen Regler ein- oder abgeschaltet werden.</p>
+
+<h3 id="a-name-create-widget-a-erstellen-von-widgets-aus-dem-daten-explorer"><a name="create-widget"></a>Erstellen von Widgets aus dem Daten-Explorer</h3>
+
+<p>Wenn Sie die aktuelle Konfiguration des Daten-Explorers aufbewahren möchten, können Sie diese als Widget speichern.</p>
+
+<h4 id="als-widget-einem-dashboard-hinzufügen">Als Widget einem Dashboard hinzufügen</h4>
+
+<p>Klicken Sie <strong>Mehr&hellip;</strong> in der oberen Menüleiste und wählen Sie <strong>Als Widget einem Dashboard hinzufügen</strong>, um ein Widget aus dem Daten-Explorer eines bestimmten Assets zu erstellen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-data-explorer-add-widget.png" name="Als Widget einem Dashboard hinzufügen" style="width:50%;"/></p>
+
+<p>Wählen Sie im folgenden Fenster eines der für das aktuelle Objekt verfügbaren Dashboards und klicken Sie <strong>Auswählen</strong>, um den Daten-Explorer als Widget zum ausgewählten Dashboard hinzuzufügen.</p>
+
+<p><strong>Info</strong>: Um diese Funktion nutzen zu können, muss ein Dashboard vorhanden sein. Weitere Informationen zu Dashboards finden Sie unter <a href="#dashboards">Verwenden von Dashboards</a>.</p>
+
+<h4 id="als-widget-einem-bericht-hinzufügen">Als Widget einem Bericht hinzufügen</h4>
+
+<p>Klicken Sie <strong>Mehr&hellip;</strong> in der oberen Menüleiste und wählen Sie <strong>Als Widget einem Bericht hinzufügen</strong>, um ein Widget aus dem Daten-Explorer des Navigators zu erstellen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-data-explorer-add-to-report.png" name="Send as widget to report" style="width:50%;"/></p>
+
+<p>Wählen Sie im folgenden Fenster einen der angezeigten Berichte und klicken Sie <strong>Auswählen</strong>, um den Daten-Explorer als Widget zum ausgewählten Bericht hinzuzufügen.</p>
+
+<p><strong>Info</strong>: Um diese Funktion nutzen zu können, muss ein Bericht vorhanden sein. Weitere Informationen zu Dashboard-Berichten finden Sie unter <a href="#dashboards">Verwenden von Dashboard-Berichten</a>.</p>
+
+<h3 id="a-name-export-data-a-exportieren-von-messwerten"><a name="export-data"></a>Exportieren von Messwerten</h3>
+
+<p>Messwerte können als CSV- oder Excel-Datei exportiert werden. Die exportierten Daten enthalten die folgenden Informationen, repräsentiert in Spalten:</p>
+
+<ul>
+<li>Zeitpunkt, an welchem der Wert gemessen wurde</li>
+<li>Quelle des Messwerts</li>
+<li>Name des verwendeten Geräts</li>
+<li>Fragmenttyp (z. B. c8y_SpeedMeasurement)</li>
+<li>Messwert</li>
+<li>Einheit, die für einen Messwert verwendet wird (z.B. &ldquo;C&rdquo;, &ldquo;km/h&rdquo;, &ldquo;sec&rdquo;)</li>
+</ul>
+
+<p>Klicken Sie <strong>Mehr&hellip;</strong> in der oberen Menüleiste und wählen Sie je nach Bedarf entweder <strong>Als CSV herunterladen</strong> oder <strong>Als Excel herunterladen</strong>.</p>
+
+<p>Die Download-Datei wird erstellt, wir im folgenden Fenster angezeigt. Dies kann eine Weile dauern, abhängig von der Anzahl der Datenpunkte im Daten-Explorer. Wenn die Download-Datei fertiggestellt ist, klicken Sie <strong>Herunterladen</strong>.</p>
+
+  </article>
+  
+  <article id="dashboards" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#dashboards">
+        <span class="fa fa-link"></span>
+      </button>
+      Verwenden von Dashboards</h2>
+    
+
+<p>Dashboards ermöglichen eine individuelle Visualisierung Ihrer Daten anhand verschiedener Widgets. Widgets können Karten, Bilder, Graphen, Tabellen und andere grafische Darstellungen von Daten anzeigen.</p>
+
+<p>Cumulocity bietet eine Reihe voreingestellter Widgets (Details finden Sie im Abschnitt <a href="#widgets">Widgets-Sammlung</a>). Sie können auch eigene Widgets entwickeln und diese zu Ihrem Cumulocity-Konto hinzufügen, siehe <a href="/guides/web/">Web developer&rsquo;s guide</a>.</p>
+
+<h3 id="a-name-creating-dashboards-a-erstellen-von-dashboards"><a name="creating-dashboards"></a>Erstellen von Dashboards</h3>
+
+<p>Wählen Sie im Navigator das Objekt (Gruppe oder Gerät) aus, für welches Sie ein Dashboard erstellen möchten.</p>
+
+<p>Klicken Sie auf die <strong>Plus</strong>-Schaltfläche in der oberen Leiste und wählen Sie im Menü <strong>Neues Dashboard</strong>.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-dashboard-create.png" name="Create dashboard" style="width:75%;"/></p>
+
+<p>Gaben Sie im Abschnitt <strong>Dashboard-Info</strong> des Dashboard-Editors folgende Informationen ein:</p>
+
+<ul>
+<li>Einen Namen für das Dashboard, der auch im Navigator angezeigt wird.</li>
+<li>Die Position des Dashboards im Navigator. &ldquo;10000&rdquo; erscheint an oberster und &ldquo;-10000&rdquo; an unterster Position.</li>
+<li>Ein Symbol, das neben dem Dashboard im Navigator erscheint.</li>
+</ul>
+
+<p>Im Abschnitt <strong>Dashboard-Layout</strong> können Sie ein Design für das Dashboard wählen (&ldquo;Hell&rdquo;, &ldquo;Dunkel&rdquo;, &ldquo;Transparent&rdquo; oder &ldquo;Branding&rdquo;) und einen Standardstil für die Kopfzeile der Widgets (&ldquo;Standard&rdquo;, &ldquo;Rand&rdquo;, &ldquo;Overlay&rdquo;, oder &ldquo;Verborgen&rdquo;). Außerdem können Sie die Einstellung für den Rand der Widgets festlegen (Standwert ist 15 px).</p>
+
+<p>Eine Vorschau der ausgewählten Layout-Einstellungen wird unmittelbar auf der rechten Seite angezeigt, um Ihre Einstellungen zu visualisieren.</p>
+
+<p>Klicken Sie <strong>Speichern</strong> um das Dashboard zu erstellen und zu öffnen.</p>
+
+<p>Da noch keine Widgets im Dashboard vorhanden sind, wird nur die Schaltfläche <strong>Widget hinzufügen</strong> angezeigt.</p>
+
+<h3 id="a-name-adding-widgets-a-hinzufügen-eines-widgets-zu-einem-dashboard"><a name="adding-widgets"></a>Hinzufügen eines Widgets zu einem Dashboard</h3>
+
+<p>Klicken Sie <strong>Widget hinzufügen</strong> in der oberen Menüleiste (oder in einem leeren Dashboard) Um ein Widget zu einem Dashboard hinzuzufügen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-dashboard-add-widget.png" name="Add widget" style="width:75%;"/></p>
+
+<p>Wählen Sie im folgenden Fenster einen Widget-Typen aus der Auswahlliste. Abhängig vom ausgewählten Typen werden weitere Felder zur Bearbeitung eingeblendet. Details zu allen Widget-Typen finden Sie unter <a href="#widgets">Widgets-Sammlung</a>.</p>
+
+<p>Klicken Sie <strong>Benutzerdefinierter Widget-Stil</strong>, um den Stil für den Inhalt und die Kopfzeile des Widgets individuell anzupassen, in ähnlicher Weise wie das Festlegen des generellen Layouts im <a href="#creating-dashboards">Dashboard-Editor</a>.</p>
+
+<p>Klicken Sie <strong>Speichern</strong>, um das Widget zum Dashboard hinzuzufügen.</p>
+
+<h3 id="ändern-von-widgets-in-einem-dashboard">Ändern von Widgets in einem Dashboard</h3>
+
+<p>Sie können die Anordnung von Widgets in einem Dashboard ändern. Durch Ziehen mit dem Mauszeiger können Sie ein Widget im Dashboard bewegen und an einer anderen Position ablegen.</p>
+
+<p>Durch Ziehen der Pfeile in der unteren rechten Ecke des Widgets können Sie seine Größe verändern.</p>
+
+<p>Klicken Sie auf das Zahnrad-Symbol in der oberen rechten Ecke eines Widgets und wählen Sie im Kontextmenü <strong>Bearbeiten</strong>, um die Eigenschaften eines Widgets zu bearbeiten.</p>
+
+<p>Klicken Sie auf das Zahnrad-Symbol in der oberen rechten Ecke eines Widgets und wählen Sie im Kontextmenü <strong>Löschen</strong>, um ein Widget aus einem Dashboard zu entfernen.</p>
+
+<p>Sie können Dashboards nur bearbeiten, wenn diese entsperrt sind. Verwenden Sie den Regler mit dem Schloss-Symbol in der oberen Menüleiste, um ein Widget zu sperren bzw. entsperren.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-dashboard-lock.png" name="Dashboard sperren" style="width:50%;"/></p>
+
+<blockquote>
+<p><strong>Info:</strong> Auf Touch-Geräten wie Smartphones oder Tablets werden einige Funktionen nicht unterstützt.</p>
+</blockquote>
+
+<h3 id="a-name-sharing-dashboards-a-teilen-von-dashboards"><a name="sharing-dashboards"></a>Teilen von Dashboards</h3>
+
+<p>Sie können ein Dashboard für ein Gerät erstellen und auf alle Geräte des gleichen Typs anwenden.</p>
+
+<p>Wählen Sie dazu die Option <strong>Dashboard auf alle Geräte des Typs [TYP] anwenden</strong> im Dashboard-Editor. [TYP] zeigt den Typ des Geräts an, das gerade ausgewählt ist.</p>
+
+<p>In Dashboard-Editor wird die folgende Nachricht angezeigt:</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-dashboard-share.png" name="Geteiltes Dashboard" style="width:75%;"/></p>
+
+<p>Änderungen an diesem Dashboard werden automatisch auf alle Dashboard-Instanzen angewendet.</p>
+
+<blockquote>
+<p><strong>Info:</strong> Sie können nur für das Gerät selbst Widgets und Daten zum Dashboard hinzufügen. Es ist nicht möglich, Daten von Kindgeräten hinzuzufügen, da die Struktur dieser Geräte von Gerät zu Gerät unterschiedlich sein kann.</p>
+</blockquote>
+
+<h3 id="bearbeiten-von-dashboard-attributen">Bearbeiten von Dashboard-Attributen</h3>
+
+<p>Klicken Sie <strong>Bearbeiten</strong> in der oberen Menüleiste, um ein Dashboard zu bearbeiten. Der Dashboard-Editor wird angezeigt. Detaillierte Informationen zu den einzelnen Feldern finden Sie unter <a href="#creating-dashboards">Erstellen von Dashboards</a>.</p>
+
+<h3 id="kopieren-von-dashboards">Kopieren von Dashboards</h3>
+
+<p>Klicken Sie <strong>Mehr&hellip;</strong> in der oberen Menüleiste und wählen Sie im Kontextmenü <strong>Dashboard kopieren</strong>, um ein Dashboard aus einem Objekt in ein anderes zu kopieren.</p>
+
+<p>Navigieren Sie zu dem Objekt, in welches Sie das Dashboard kopieren möchten und wählen Sie im Kontextmenü <strong>Dashboard [NAME] einfügen</strong>, um das Dashboard einzufügen.</p>
+
+<p>Alternativ können Sie zum Kopieren von Dashboards auch die Methode <strong>Dashboard pro Typ</strong> verwenden. Mit dieser Methode wenden Sie ein Dashboard eines Objekts auf <strong>alle</strong> Objekte des gleichen Typs an.</p>
+
+<h3 id="löschen-von-dashboards">Löschen von Dashboards</h3>
+
+<p>Klicken Sie <strong>Mehr&hellip;</strong> in der oberen Menüleiste und wählen Sie im Kontextmenü <strong>Dashboard löschen</strong>, um ein Dashboard aus einem Objekt zu löschen.</p>
+
+  </article>
+  
+  <article id="widgets" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#widgets">
+        <span class="fa fa-link"></span>
+      </button>
+      Widgets-Sammlung</h2>
+    
+
+<p>Das Cockpit enthält voreingestellte Widget-Typen. Jeder Widget-Typ ermöglicht es, verschiedene Parameter zu konfigurieren und verschiedene Daten anzuzeigen. Im folgenden Abschnitt werden, in alphabetischer Reihenfolge, alle verfügbaren Widget-Typen und ihre Konfigurationsparameter beschrieben.</p>
+
+<h3 id="widget-aktuelle-alarme">Widget &ldquo;Aktuelle Alarme&rdquo;</h3>
+
+<p>Das Widget &ldquo;Aktuelle Alarme&rdquo; zeigt alle Alarme aller Schweregrade, sortiert nach Zeit. Es können keinen zusätzlichen Parameter konfiguriert werden.</p>
+
+<p><img src="/guides/images/users-guide/cockpit/Cockpit_CreateAlarmList.png" name="Alarm list widget" style="width:75%;"/></p>
+
+<p>Nähere Informationen zu Alarmen finden Sie unter <a href="/guides/benutzerhandbuch/device-management/#alarm-monitoring">Verwenden von Alarmen</a> im Abschnitt Device Management.</p>
+
+<h3 id="widget-alarmliste">Widget &ldquo;Alarmliste&rdquo;</h3>
+
+<p>Das Widget &ldquo;Alarmliste&rdquo; zeigt eine Liste von Alarmen, gefiltert nach Objekten, Alarmschweregrad und Alarmstatus.</p>
+
+<p>Nähere Informationen zu Alarmen finden Sie unter <a href="/guides/benutzerhandbuch/device-management/#alarm-monitoring">Verwenden von Alarmen</a> im Abschnitt Device Management.</p>
+
+<p><strong>Konfigurierbare Parameter</strong></p>
+
+<p><img src="/guides/images/users-guide/cockpit/Cockpit_CreateAlarmList.png" name="Create Alarm list widget" style="width:75%;"/></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Titel</td>
+<td align="left">Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.</td>
+</tr>
+
+<tr>
+<td align="left">Ziel-Assets oder -geräte</td>
+<td align="left">Gruppen oder Geräte, optional HTML-Ausdrücke, die ausgewertet werden.</td>
+</tr>
+
+<tr>
+<td align="left">Status</td>
+<td align="left">Alarmstatus, der angezeigt wird.</td>
+</tr>
+
+<tr>
+<td align="left">Typ</td>
+<td align="left">Alarmtyp, der angezeigt wird. Klicken Sie auf einen Alarm, um Details anzuzeigen.</td>
+</tr>
+
+<tr>
+<td align="left">Schweregrad</td>
+<td align="left">Alarmschweregrad, die angezeigt werden.</td>
+</tr>
+
+<tr>
+<td align="left">Reihenfolge</td>
+<td align="left">Alarme können nach dem aktiven Status (gefolgt von Schweregrad und Zeit, Standardeinstellung) oder dem Schweregrad (gefolgt von der Zeit) sortiert werden.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="widget-alle-kritischen-alarme">Widget &ldquo;Alle kritischen Alarme&rdquo;</h3>
+
+<p>Das Widget &ldquo;Alle kritischen Alarme&rdquo; zeigt alle Objekte mit einem kritischen Alarm. Es können keinen zusätzlichen Parameter konfiguriert werden.</p>
+
+<p>Nähere Informationen zu Alarmen finden Sie unter <a href="/guides/benutzerhandbuch/device-management/#alarm-monitoring">Verwenden von Alarmen</a> im Abschnitt Device Management.</p>
+
+<h3 id="widget-ampel">Widget &ldquo;Ampel&rdquo;</h3>
+
+<p>Das &ldquo;Ampel&rdquo;-Widget visualisiert den Status eines Geräts im Form einer Ampel.</p>
+
+<p><strong>Konfigurierbare Parameter</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Titel</td>
+<td align="left">Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.</td>
+</tr>
+
+<tr>
+<td align="left">Zeil-Asset oder -gerät</td>
+<td align="left">Objekt (Gruppe oder Gerät), das dargestellt wird.</td>
+</tr>
+
+<tr>
+<td align="left">Statusregeln</td>
+<td align="left">Wählen Sie ein Attribut für jede Lampe. Wenn das Attribut einen der folgenden Werte hat, geht die entsprechende Lampe an: wahr, 1, jede nicht-leere  Zeichenkette, jede Zahl außer 0.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="widget-anwendungen">Widget &ldquo;Anwendungen&rdquo;</h3>
+
+<p>Das Widget &ldquo;Anwendungen&rdquo; zeigt alle Liste mit Links zu allen verfügbaren Anwendungen. Es können keinen zusätzlichen Parameter konfiguriert werden.</p>
+
+<p>Nähere Informationen zu Anwendungen finden Sie unter <a href="/guides/benutzerhandbuch/administration#managing-applications">Administration &gt; Verwalten von Anwendungen</a>.</p>
+
+<h3 id="widget-asset-attribute">Widget &ldquo;Asset-Attribute&rdquo;</h3>
+
+<p>Das Widget &ldquo;Asset-Attribute&rdquo; zeigt eine benutzerdefinierte Liste von Attributen des aktuellen Objekts. Das aktuelle Objekt kann ein Gerät oder eine Gruppe sein.</p>
+
+<p><strong>Konfigurierbare Parameter</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Titel</td>
+<td align="left">Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.</td>
+</tr>
+
+<tr>
+<td align="left">Ziel-Assets oder -geräte</td>
+<td align="left">Gruppen oder Geräte, die ausgewertet werden.</td>
+</tr>
+
+<tr>
+<td align="left">Attribute</td>
+<td align="left">Liste von Attributen, siehe <a href="#widget-asset-table">Widget &ldquo;Asset-Tabelle&rdquo;</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p><strong>Info:</strong> Im Ansichtsmodus zeigt diese Widget nur Attribute an, die nicht leer sind.</p>
+</blockquote>
+
+<h3 id="widget-asset-nachrichten">Widget &ldquo;Asset-Nachrichten&rdquo;</h3>
+
+<p>Das Widget &ldquo;Asset-Nachrichten&rdquo; zeigt Benachrichtigungen, die allen Besitzern des aktuellen Objekts vom Administrator bereitgestellt werden.</p>
+
+<p><img src="/guides/images/users-guide/cockpit/Cockpit_AssetNotes.png" name="Asset notes widget" style="width:75%;"/></p>
+
+<p>Nur Benutzer, die die Berechtigung haben, das Start-Dashboard zu bearbeiten, können solche Benachrichtigungen bereitstellen.</p>
+
+<h3 id="a-name-widget-asset-table-a-widget-asset-tabelle"><a name="widget-asset-table"></a> Widget &ldquo;Asset-Tabelle&rdquo;</h3>
+
+<p>Das Widget &ldquo;Asset-Tabelle&rdquo; zeigt eine Tabelle mit Details zu den Kindgeräten an. Dies ist ein sehr mächtiges Widget, dass es ermöglicht, ausgewählte Attribute von Objekten in einer Tabelle zu arrangieren.</p>
+
+<p><strong>Konfigurierbare Parameter</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Titel</td>
+<td align="left">Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.</td>
+</tr>
+
+<tr>
+<td align="left">Ziel-Assets und -geräte</td>
+<td align="left">Objekte, für die die Kindgeräte angezeigt werden. Dies ist üblicherweise ein Gruppenobjekt.</td>
+</tr>
+
+<tr>
+<td align="left">Attribute</td>
+<td align="left">Attribute oder Aktionen eines Objekts, die als Spalten in der Tabelle visualisiert werden.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Beispiel</strong></p>
+
+<p>Im folgenden Screenshot sind 5 Spalten konfiguriert. Die Spalten &ldquo;Meter&rdquo;, “Vendor”, und “Owner” beziehen sich auf die Attribute “name”, type” und “owner”. Außerdem gibt es zwei Aktionen, eine für das Umschalten des Wartungsmodus und eine für das Neustarten des Systems.</p>
+
+<p><img src="/guides/images/users-guide/image_17.png" alt="image alt text" /></p>
+
+<p>Die daraus resultierende Tabelle wird folgendermaßen visualisiert:
+<img src="/guides/images/users-guide/image_18.png" alt="image alt text" /></p>
+
+<p><strong>Hinzufügen von Attributen</strong></p>
+
+<p>Um ein Attribut hinzuzufügen, klicken Sie <strong>+Attribut hinzufügen</strong> und wählen Sie ein oder mehrere Attribute aus.</p>
+
+<p><strong>Info</strong>: Das Attribut &ldquo;Anzahl aktiver Alarme&rdquo; zeigt aktive Alarme als Symbole in der Tabelle. Wenn Sie dieses Attribut auswählen, müssen Sie den Renderer &ldquo;Anzahl aktiver Alarme&rdquo; in der Spaltenliste konfigurieren.</p>
+
+<p><strong>Hinzufügen von Aktionen</strong></p>
+
+<p>Um eine Aktion hinzuzufügen, klicken Sie <strong>+Aktion hinzufügen</strong>. Wählen Sie <strong>Wartungsmodus umschalten</strong> um die entsprechende vordefinierte Aktion hinzuzufügen. Oder wählen Sie <strong>Kommando erstellen</strong>, um eine Schaltfläche zu erstellen, die ein Shell-Kommando ausführt. Im folgenden Dialog können Sie eine Beschriftung für die Schaltfläche und das auszuführende Shell-Kommando eingeben.</p>
+
+<p><img src="/guides/images/users-guide/image_19.png" alt="image alt text" /></p>
+
+<blockquote>
+<p><strong>Info:</strong> Der Dialog zeigt die vordefinierten Shell-Kommandos des ersten Geräts, das Shell-Kommandos unterstützt. Gibt es kein solches Gerät, ist die Liste leer. Weitere Informationen finden Sie unter <a href="/guides/benutzerhandbuch/device-management/#shell">Shell-Kommandos</a> im Abschnitt Device Management.<br>
+Sie können auch das JSON-Format für das Kommando eingeben, das zum Gerät gesendet wird. Fragen Sie den Gerätehersteller nach unterstützten Kommandos, um weitere Details zu erfahren.</p>
+</blockquote>
+
+<p><strong>Ändern der Tabelle</strong></p>
+
+<p>Um die Kopfzeile einer Spalte zu bearbeiten, klicken Sie auf den Wert in der Spalte <strong>Beschriftung</strong> und bearbeiten Sie die Beschriftung.</p>
+
+<p>Sie können die Spalten umsortieren, indem Sie auf das Symbol ganz links in einer Zeile klicken und den Eintrag durch Ziehen und Ablegen verschieben.</p>
+
+<p>Um ein Attribut oder eine Aktion zu löschen, bewegen Sie den Mauszeiger über die entsprechende Zeile und klicken Sie <strong>Löschen</strong> auf der rechten Seite.</p>
+
+<h3 id="widget-bild">Widget &ldquo;Bild&rdquo;</h3>
+
+<p>Das &ldquo;Bild&rdquo;-Widget ermöglicht es, ein einzelnes Bild anzuzeigen, das Sie von Ihrem Computer hochladen können. Es können keinen zusätzlichen Parameter konfiguriert werden.</p>
+
+<h3 id="widget-datenpunktgraph">Widget &ldquo;Datenpunktgraph&rdquo;</h3>
+
+<p>Das Widget &ldquo;Datenpunktgraph&rdquo; zeigt einen Datenpunkt (Messwert) in einem Graphen. Die Visualisierung ist identisch mit der im <a href="#data-explorer">Daten-Explorer</a>.</p>
+
+<p><img src="/guides/images/users-guide/cockpit/Cockpit_DataPointsGraphWidget.png" name="Data Point Graph widget" style="width:75%;"/></p>
+
+<p>Am einfachsten erstellen Sie ein &ldquo;Datenpunktgraph&rdquo;-Widget, indem Sie zum Daten-Explorer navigieren, <strong>Mehr&hellip;</strong> in der oberen Menüleiste klicken und <strong>Als Widget zum Dashboard senden</strong> wählen.</p>
+
+<p>Weitere Informationen zu den konfigurierbaren Parametern finden Sie unter <a href="#data-explorer">Visualisieren von Daten mit dem Daten-Explorer</a>.</p>
+
+<h3 id="widget-datenpunktliste">Widget &ldquo;Datenpunktliste&rdquo;</h3>
+
+<p>Das Widget &ldquo;Datenpunktliste&rdquo; zeigt Datenpunkte (Messwerte) in einer Liste, einen pro Zeile, mit aktuellen Werten und Datenpunktattributen.</p>
+
+<p><strong>Konfigurierbare Parameter</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Titel</td>
+<td align="left">Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.</td>
+</tr>
+
+<tr>
+<td align="left">Datenpunkte</td>
+<td align="left">Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie <strong>Datenpunkt hinzufügen</strong>, um einen Datenpunkt zur Liste hinzuzufügen. Weitere Informationen finden Sie unter <a href="#add-data-points">Hinzufügen von Datenpunkten</a>.</td>
+</tr>
+
+<tr>
+<td align="left">Sichtbare Tabellenspalten</td>
+<td align="left">Spalten, die angezeigt werden: <br><strong>Beschriftung</strong>: Beschriftung des Datenpunkts. Details finden Sie unter <a href="#data-explorer">Visualisieren von Daten im Daten-Explorer</a>. <br><strong>Ziel</strong>: Zielwert. Kann im <a href="##data-explorer">Daten-Explorer</a> oder in der <a href="#data-point-library">Datenpunktbibliothek</a> konfiguriert werden.<br><strong>Aktuell</strong>: Aktueller Wert. <br><strong>Differenz</strong>: Absolute Differenz zwischen aktuellem Wert und Zielwert. <br><strong>Differenz %</strong>: Prozentwert der Differenz zwischen aktuellem Wert und Zielwert. <br><strong>Asset</strong>: Name des Geräts oder der Gruppe des Datenpunkts.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="widget-datenpunkttabelle">Widget &ldquo;Datenpunkttabelle&rdquo;</h3>
+
+<p>Die Konfiguration des Widgets &ldquo;Datenpunkttabelle&rdquo; ist ähnlich wie die des Widgets &ldquo;Datenpunktgraph&rdquo;. Die Daten werden jedoch nicht als Linien, sondern als Tabelle dargestellt.</p>
+
+<p>Das Widget &ldquo;Datenpunkttabelle&rdquo; zeigt Daten basierend auf ausgewählten Datenpunkten, einem Zeitintervall und Aggregation.</p>
+
+<p>Werte außerhalb eines bestimmten Bereichs, basierend auf konfigurierten gelben und roten Bereichen, werden in der Tabelle hervorgehoben.</p>
+
+<p><img src="/guides/images/users-guide/datapointtable.png" alt="Data point table" /></p>
+
+<h3 id="widget-ereignisliste">Widget &ldquo;Ereignisliste&rdquo;</h3>
+
+<p>Das Widget &ldquo;Ereignisliste&rdquo; ermöglicht es, Ereignisse für ein ausgewähltes Gerät zu überwachen.</p>
+
+<p><img src="/guides/images/users-guide/cockpit/Cockpit_EventList.png" name="Event list widget" style="width:75%;"/></p>
+
+<p>Außerdem kann ein Zeitintervall festgelegt und Ereignisse können in Echtzeit überwacht werden.</p>
+
+<h3 id="widget-fieldbus-gerät">Widget &ldquo;Fieldbus-Gerät&rdquo;</h3>
+
+<p>Das Widget &ldquo;Fieldbus-Gerät&rdquo; ermöglicht es, den Status eines Modbus-Geräts anzuzeigen und dieses zu betreiben.</p>
+
+<p>Weitere Informationen zum Widget &ldquo;Fieldbus-Gerät&rdquo; finden Sie unter <a href="/guides/users-guide/optional-services/#fieldbus-device-widget">Optionale Services &gt; Cloud Fieldbus &gt; Monitoring device status using the Fieldbus device widget</a>.</p>
+
+<h3 id="widget-gerätenachricht">Widget &ldquo;Gerätenachricht&rdquo;</h3>
+
+<p>Das Widget &ldquo;Gerätenachricht&rdquo; sendet eine Nachricht an das Gerät. Das Verhalten des Geräts ist dabei geräteabhängig. Nur verfügbar für Geräte, die diese Art von Kommando unterstützen.</p>
+
+<h3 id="widget-hilfe-und-service">Widget &ldquo;Hilfe und Service&rdquo;</h3>
+
+<p>Das Widget &ldquo;Hilfe und Service&rdquo; zeigt Links zu Hilfe- und Serviceangeboten. Es können keinen zusätzlichen Parameter konfiguriert werden.</p>
+
+<p><img src="/guides/images/users-guide/cockpit/Cockpit_HelpAndServiceWidget.png" name="Help and service widget" style="width:75%;"/></p>
+
+<h3 id="widget-html">Widget &ldquo;HTML&rdquo;</h3>
+
+<p>Das &ldquo;HTML&rdquo;-Widget zeigt benutzerdefinierten Inhalt. Die Inhalt kann mit HTML formatiert werden.</p>
+
+<p><strong>Konfigurierbare Parameter</strong></p>
+
+<ul>
+<li><p>Ziel-Assets und -geräte: Wählen Sie die Objekte aus, für die optionale HTML-Ausdrücke ausgewertet werden sollen.</p></li>
+
+<li><p>HTML-Code</p></li>
+</ul>
+
+<p>Die folgenden Variablen können im HTML-Code verwendet werden:</p>
+
+<ul>
+<li><p>{{devicesCount}}: Gesamtanzahl der Geräte.</p></li>
+
+<li><p>{{usersCount}}: Gesamtanzahl der Benutzer.</p></li>
+
+<li><p>{{deviceGroupsCount}}: Gesamtanzahl der Gruppen.</p></li>
+
+<li><p>{{device.name}}: Name des Geräts.</p></li>
+
+<li><p>{{device.<em>property</em>}}: Allgemeinere Form des oben genannten. Sie können jedes Attribut des Geräts ansprechen.</p></li>
+
+<li><p>{{device.c8y_Hardware.model}}: Modell des Geräts.</p></li>
+
+<li><p>{{device.<em>fragment</em>.<em>property</em>}}: Allgemeinere Form des oben genannten. Sie können jedes Attribut oder Fragment des Geräts ansprechen.</p></li>
+</ul>
+
+<blockquote>
+<p><strong>Info:</strong> &ldquo;Gerät&rdquo; bezieht sich auf das Zielgerät, das in der Widget-Konfiguration ausgewählt wurde. <br>
+<em>fragment.property</em> bezieht sich auf die Attribute des entsprechenden Geräts. Um die verfügbaren Attributnamen anzuzeigen, können Sie die Widgets &ldquo;Asset-Attribute&rdquo; or “Asset-Tabelle” verwenden. Klicken Sie <strong>+Attribut hinzufügen</strong> in der Widget-Konfiguration, um eine Tabelle der unterstützten Attribute anzuzeigen. Sie können die Werte aus der Spalte <strong>Attribute</strong> kopieren und einfügen. Attribute, die von diesen Widgets erstellt wurden, stehen in den HTML-Widgets nicht zur Verfügung.</p>
+</blockquote>
+
+<h3 id="widget-infoanzeige">Widget &ldquo;Infoanzeige&rdquo;</h3>
+
+<p>Das Widget &ldquo;Infoanzeige&rdquo; visualisiert einen Datenpunkt in Form eines Tachos und mehrere Datenpunkte als Beschriftung.</p>
+
+<p><img src="/guides/images/users-guide/cockpit/Cockpit_InfoGauge.png" name="Info gauge widget" style="width:75%;"/></p>
+
+<p>Sie können einen Datenpunkt für das Tacho auswählen sowie mehrere Datenpunkte, die als Beschriftung auf der linken Seite angezeigt werden.</p>
+
+<p><img src="/guides/images/users-guide/cockpit/Cockpit_InfoGaugeDataPoints.png" name="Info gauge data points" style="width:75%;"/></p>
+
+<p>Sie müssen mindestens einen Datenpunkt in jedem Bereich aktivieren, um das Widget &ldquo;Infoanzeige&rdquo; zu erstellen.</p>
+
+<h3 id="widget-karte">Widget &ldquo;Karte&rdquo;</h3>
+
+<p>Das Widget &ldquo;Karte&rdquo; zeigt den Standort eines Geräts oder aller Geräte einer Gruppe an.</p>
+
+<p><img src="/guides/images/users-guide/cockpit/Cockpit_MapWidget.png" name="Map widget" style="width:75%;"/></p>
+
+<p>Sie können den Inhalt der Karte mit dem Mauszeiger verschieben sowie mit den Schaltflächen <strong>Plus</strong> und <strong>Minus</strong> rein- bzw. rauszoomen.</p>
+
+<p>Die Symbole, die die Geräte repräsentieren, sind farbkodiert. Die Farben werden nach folgenden Regeln verwendet:</p>
+
+<pre><code>* Rot = Mindestens ein &quot;kritischer&quot; Alarm
+* Orange = Mindestens ein &quot;wichtiger&quot; Alarm
+* Gelb = Mindestens ein &quot;weniger wichtiger&quot; Alarm
+* Blau = Mindestens eine &quot;Warnung&quot;
+* Grün = Keine Alarme
+</code></pre>
+
+<p>Klicken Sie auf ein Gerätesymbol, um folgende Details in einem Fenster anzuzeigen:</p>
+
+<ul>
+<li>Name des Geräts. Klicken Sie darauf, um zu diesem Gerät zu navigieren.</li>
+<li>Datum, an welchem das Gerät zuletzt seinen Standort gesendet hat, wenn verfügbar.</li>
+<li>Regler, um die Geräte-Tracks für die vergangenen und zukünftigen Tage anzuzeigen bzw. zu verbergen.</li>
+</ul>
+
+<p><strong>Konfigurierbare Parameter</strong></p>
+
+<p>Ziel-Assets oder -geräte: Geräte, die auf der Karte angezeigt werden. Im Falle einer Gruppe werden alle Geräte in diese Gruppe (aber nicht in Untergruppen) angezeigt.</p>
+
+<blockquote>
+<p><strong>Info</strong>: Wenn keines der Zielgeräte einen bekannten Standort hat, zeigt das Widget eine Weltkarte ohne Symbole.</p>
+</blockquote>
+
+<h3 id="widget-kuchendiagramm">Widget &ldquo;Kuchendiagramm&rdquo;</h3>
+
+<p>Das Widget &ldquo;Kuchendiagramm&rdquo; zeigt Datenpunkte (Messwerte) mit aktuellen Werten in einem Kuchendiagramm.</p>
+
+<p><strong>Konfigurierbare Parameter</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Titel</td>
+<td align="left">Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.</td>
+</tr>
+
+<tr>
+<td align="left">Kuchendiagramm-Optionen</td>
+<td align="left">Auswahloptionen zum Anzeigen von Tooltips, Prozentwerten und Legenden im Kuchendiagramm.</td>
+</tr>
+
+<tr>
+<td align="left">Datenpunkte</td>
+<td align="left">Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie <strong>Datenpunkt hinzufügen</strong>, um einen Datenpunkt zur Liste hinzuzufügen. Weitere Informationen finden Sie unter <a href="#add-data-points">Hinzufügen von Datenpunkten</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="widget-linearer-zeiger">Widget &ldquo;Linearer Zeiger&rdquo;</h3>
+
+<p>Das Widget &ldquo;Linearer Zeiger&rdquo; visualisiert Datenpunkte in Form eines linearen Messgeräts. Minimale und and maximale Zielwerte werden ebenfalls angezeigt.</p>
+
+<p><img src="/guides/images/users-guide/cockpit/Cockpit_LinearGauge.png" name="Linear gauge widget" style="width:75%;"/></p>
+
+<blockquote>
+<p><strong>Info:</strong> Wenn eine Beschriftung nicht vollständig angezeigt werden kann, können Sie sich damit behelfen, den minimalen und maximalen Wert zu erhöhen und so die Beschriftung in den lesbaren Bereich zu verschieben.</p>
+</blockquote>
+
+<p>Sie müssen mindestens einen Datenpunkt aktivieren, um das Widget &ldquo;Linearer Zeiger&rdquo; zu erstellen.</p>
+
+<h3 id="widget-quick-links">Widget &ldquo;Quick-Links&rdquo;</h3>
+
+<p>Das Widget &ldquo;Quick links&rdquo; zeigt verschiedene Links für den schnellen Zugriff auf relevante Kommandos an. Es können keinen zusätzlichen Parameter konfiguriert werden.</p>
+
+<p><img src="/guides/images/users-guide/cockpit/Cockpit_QuickLinksWidget.png" name="Quick links widget" style="width:75%;"/></p>
+
+<h3 id="widget-relaisfeldsteuerung">Widget &ldquo;Relaisfeldsteuerung&rdquo;</h3>
+
+<p>Das Widget &ldquo;Relaisfeldsteuerung&rdquo; ermöglicht es, Relais in einem Relaisfeld unabhängig voneinander an- oder auszuschalten. Nur verfügbar für Geräte, die diese Art von Kommando unterstützen.</p>
+
+<h3 id="widget-relaissteuerung">Widget &ldquo;Relaissteuerung&rdquo;</h3>
+
+<p>Das Widget &ldquo;Relaissteuerung&rdquo; ermöglicht es, ein Geräterelais an- oder auszuschalten. Nur verfügbar für Geräte, die diese Art von Kommando unterstützen.</p>
+
+<h3 id="widget-rotationsmodell">Widget &ldquo;Rotationsmodell&rdquo;</h3>
+
+<p>Das Widget &ldquo;Rotationsmodell&rdquo; ermöglicht es, ein Objektmodell eines Geräts zu rendern.</p>
+
+<p><strong>Konfigurierbare Parameter</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Titel</td>
+<td align="left">Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.</td>
+</tr>
+
+<tr>
+<td align="left">Ziel-Asset oder -geräte</td>
+<td align="left">Objekt (Gruppe oder Gerät), das dargestellt wird.</td>
+</tr>
+
+<tr>
+<td align="left">Modelltyp</td>
+<td align="left">Modelltyp für das Rendering, entweder &ldquo;Box&rdquo; oder &ldquo;Telefon&rdquo;.</td>
+</tr>
+
+<tr>
+<td align="left">Gitternetz</td>
+<td align="left">Der &ldquo;Gitternetz&rdquo;-Modus stellt das Objekt in einer netzartigen Representation dar. Die Option <strong>Gitternetz</strong> kann an- oder abgeschaltet werden (Standardeinstellung = an).</td>
+</tr>
+
+<tr>
+<td align="left">Kameratyp</td>
+<td align="left">Kameratyp, der verwendet wird, entweder &ldquo;Orthographische Kamera&rdquo; oder &ldquo;Perspektivische Kamera&rdquo;.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Im Widget &ldquo;Rotationsmodell&rdquo; kann das Objekt durch Ziehen und Bewegen gedreht werden. Außerdem kann mit der Maus rein- und rausgezoomt werden.</p>
+
+<h3 id="widget-scada">Widget &ldquo;SCADA&rdquo;</h3>
+
+<p>Das &ldquo;SCADA&rdquo;-Widget bietet eine graphische Darstellung eines Gerätestatus.</p>
+
+<p>Nähere Informationen zum &ldquo;SCADA&rdquo;-Widget finden Sie unter <a href="/guides/users-guide/optional-services#scada">Optionale Services &gt; Cloud Fieldbus &gt; Monitoring status using the SCADA widget</a>.</p>
+
+<h3 id="widget-silo">Widget &ldquo;Silo&rdquo;</h3>
+
+<p>Das &ldquo;Silo&rdquo;-Widget zeigt Datenpunkte (Messwerte) mit aktuellen Werten in einer Silo-Darstellung an.</p>
+
+<p><strong>Konfigurierbare Parameter</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Titel</td>
+<td align="left">Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.</td>
+</tr>
+
+<tr>
+<td align="left">Datenpunkte</td>
+<td align="left">Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie <strong>Datenpunkt hinzufügen</strong>, um einen Datenpunkt zur Liste hinzuzufügen. Weitere Informationen finden Sie unter <a href="#add-data-points">Hinzufügen von Datenpunkten</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="widget-tacho">Widget &ldquo;Tacho&rdquo;</h3>
+
+<p>Das &ldquo;Tacho&rdquo;-Widget visualisiert Datenpunkte in Form eines Tachos.</p>
+
+<p><img src="/guides/images/users-guide/cockpit/Cockpit_RadialGauge.png" name="Radial gauge widget" style="width:75%;"/></p>
+
+<p>Sie müssen mindestens einen Datenpunkt aktivieren, um das &ldquo;Tacho&rdquo;-Widget zu erstellen.</p>
+
+<h3 id="widget-twitter-nachrichten">Widget &ldquo;Twitter-Nachrichten&rdquo;</h3>
+
+<p>Das Widget &ldquo;Twitter-Nachrichten&rdquo; zeigt Tweets von dem in Twitter integrierten Timeline-Widget an.</p>
+
+<p><img src="/guides/images/users-guide/cockpit/Cockpit_TwitterNewsWidget.png" name="Twitter news widget" style="width:50%;"/></p>
+
+<p><strong>Konfigurierbare Parameter</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Titel</td>
+<td align="left">Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.</td>
+</tr>
+
+<tr>
+<td align="left">Twitter-Benutzername</td>
+<td align="left">Benutzername für das darzustellende Twitter-Konto.</td>
+</tr>
+
+<tr>
+<td align="left">Twitter-Widget-ID</td>
+<td align="left">ID für das Twitter-Widget. Die ID kann in den Widget-Einstellungen nachgesehen werden.</td>
+</tr>
+
+<tr>
+<td align="left">Optionen</td>
+<td align="left">Wahlweise kann die Darstellung einer Kopfzeile, Fußzeile, eines Rahmens oder eine transparente Darstellung aktiviert bzw. deaktiviert werden.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="widget-willkommen-zum-cockpit">Widget &ldquo;Willkommen zum Cockpit&rdquo;</h3>
+
+<p>Das Widget &ldquo;Willkommen zum Cockpit&rdquo; ermöglicht es, eine Begrüßungsnachricht auf dem Willkommensbildschirm anzuzeigen. Es können keinen zusätzlichen Parameter konfiguriert werden.</p>
+
+  </article>
+  
+  <article id="reports" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#reports">
+        <span class="fa fa-link"></span>
+      </button>
+      Verwalten von Berichten und Exportdaten</h2>
+    
+
+<p>In der Cockpit-Anwendung gibt es zwei Arten von Berichten.</p>
+
+<ul>
+<li><a href="#reports">Dashboard-Berichte</a> ermöglichen das Nachverfolgen von Anwendungen, Alarmen, Assets, Ereignissen und anderen Widgets.</li>
+<li>Exporte ermöglicht es, bestimmte Daten in eine Datei zu exportieren, siehe <a href="#reporting">Exportieren von Daten</a>.</li>
+</ul>
+
+<h3 id="a-name-reports-a-arbeiten-mit-dashboard-berichten"><a name="reports"></a>Arbeiten mit Dashboard-Berichten</h3>
+
+<p>Bei Dashboard-Berichten handelt es sich um globale Dashboard-Seiten, unabhängig von der Asset-Hierarchie.</p>
+
+<p>Erweitern Sie das Menü <strong>Berichte</strong> im Navigator, um alle verfügbaren Berichte anzuzeigen.</p>
+
+<p>Wählen Sie einen Bericht im Navigator aus, um diesen Bericht anzuzeigen.</p>
+
+<h4 id="erstellen-von-berichten">Erstellen von Berichten</h4>
+
+<p>Klicken Sie die <strong>Plus</strong>-Schaltfläche in der oberen Leiste und wählen Sie  <strong>Neuer Bericht</strong> im Menü.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-report-create.png" alt="Neuer Bericht" /></p>
+
+<p>Geben Sie einen Namen für den Bericht ein und wählen Sie optional ein Symbol aus der Auswahlliste. Klicken Sie <strong>Speichern</strong>, um Ihre Einstellungen zu speichern.</p>
+
+<p>Als nächstes können Sie Widgets zu Ihrem Bericht hinzufügen.</p>
+
+<h4 id="hinzufügen-von-widgets">Hinzufügen von Widgets</h4>
+
+<p>Sie können Widgets auf die gleiche Weise zu einem Bericht hinzufügen wie zu einem Dashboard.</p>
+
+<p>Klicken Sie <strong>Widget hinzufügen</strong> in der oberen Menüleiste und wählen Sie einen Widget-Typen aus der Liste. Nähere Informationen über alle verfügbaren Typen finden Sie unter <a href="#widgets">Widgets-Sammlung</a>.</p>
+
+<h4 id="löschen-von-berichten">Löschen von Berichten</h4>
+
+<p>Um einen Bericht zu löschen, öffnen Sie den entsprechenden Bericht, klicken Sie <strong>Mehr&hellip;</strong> rechts oben in der Menüleiste und klicken Sie <strong>Bericht löschen</strong> im Kontextmenü.</p>
+
+<h3 id="a-name-reporting-a-exportieren-von-daten"><a name="reporting"></a>Exportieren von Daten</h3>
+
+<p>Mit dieser Funktion können Sie Berichte für den gesamten Mandanten im CSV- oder Excel-Format anfragen. Außerdem können Sie Filter für bestimmte Geräte, Zeiträume oder Felder setzen. Die Berichte enthalten so lediglich Informationen über die gefilterten Daten und aktivierten Felder.</p>
+
+<blockquote>
+<p><strong>Info:</strong> Es können maximal 1 Millionen Dokumente in eine einzelne Datei exportiert werden. Wenn die Anzahl der Dokumente für die gesetzten Filter diesen Wert überschreitet, werden nur die ersten 1 Millionen Dokumente verwendet.</p>
+</blockquote>
+
+<p>Klicken Sie <strong>Exporte</strong> im Menü <strong>Berichte</strong>, um alle Exporte anzuzeigen.</p>
+
+<p>Die Seite <strong>Exporte</strong> listet alle Exporte mit Namen und Zeitintervall auf.</p>
+
+<h4 id="hinzufügen-von-exporten">Hinzufügen von Exporten</h4>
+
+<p>Klicken Sie <strong>Export hinzufügen</strong> in der oberen Menüleiste, um einen neuen Datenexport hinzuzufügen.</p>
+
+<p>Geben Sie einen Namen für den Export an und wählen Sie das Dateiformat (CSV oder xlsx).</p>
+
+<p><strong>Filter</strong></p>
+
+<p>Im Bereich <strong>Filter</strong> können Sie Filter setzen, um Daten für bestimmte Objekte oder Zeiträume anzufragen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-reporting-create.png" name="Filter für Berichte" style="width:100%;"/></p>
+
+<p>Um nach bestimmten Objekten zu filtern, geben Sie einen Objektnamen oder einen Attributwert in das Suchfeld ein und klicken Sie auf das Lupensymbol. Es werden alle passenden Geräte oder Gruppen unter dem Feld <strong>Wert</strong> angezeigt. Wählen Sie ein Gerät durch Klicken aus (grün hervorgehoben).</p>
+
+<p>Der Filter <strong>Zeitintervall</strong> filtert Objekte nach einem bestimmten Zeitintervall.  Wählen Sie ein Zeitintervall aus der Auswahlliste. Mögliche Intervalle sind &ldquo;Letztes Jahr&rdquo;, &ldquo;Letzter Monat&rdquo;, &ldquo;Letzte Woche&rdquo; oder wählen Sie &ldquo;Benutzerdefiniert&rdquo; und geben Sie Von/Bis-Werte in die entsprechenden Felder ein, um ein individuelles Intervall zu definieren.</p>
+
+<p>Aktivieren Sie die Checkbox vor dem Filter, um diesen zu aktivieren.</p>
+
+<p><strong>Felder</strong></p>
+
+<p>Neben dem Filtern nach bestimmten Objekten oder Zeiträumen können Berichte nach bestimmten Feldern gefiltert werden:</p>
+
+<ul>
+<li>Alarme</li>
+<li>Ereignisse</li>
+<li>Objekte</li>
+<li>Messwerte</li>
+</ul>
+
+<p>Aktivieren bzw. deaktivieren Sie diese Felder mit dem Regler.</p>
+
+<p>Wenn ein Feld aktiviert ist, können vordefinierte oder leere Attribute hinzugefügt werden.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-reports-fields.png" name="Report fields" style="width:100%;"/></p>
+
+<p>Klicken Sie <strong>Hinzufügen</strong>, um ein leeres Feld hinzuzufügen. Klicken Sie <strong>Spalte</strong> oder <strong>Pfad</strong>, um eine Spalte und einen Pfad einzugeben. Wenn Sie beispielsweise das Feld <strong>Alarm</strong> aktivieren, können Sie etwa &ldquo;Schweregrad&rdquo; als Spalte und &ldquo;severity&rdquo; als Pfad eingeben, um nur Berichte zu Alarm-Schweregraden zu erhalten.</p>
+
+<p>Klicken Sie <strong>Vordefiniertes Attribut hinzufügen</strong>, um ein vordefiniertes Attribut hinzuzufügen. Markieren Sie die gewünschten Attribute in der angezeigten Liste und klicken Sie <strong>Auswählen</strong>. Verwenden Sie das Suchfeld, um die Liste nach bestimmten Eigenschaften zu filtern.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-reports-properties.png" name="Select properties" style="width:75%;"/></p>
+
+<p>Wenn Sie mindestens ein Feld haben, dass als eigenes Attribut definiert wurde und nicht aus der Liste der vordefinierten Attribute stammt, dann muss für ein Objekt mindestens dieses Attribut gesetzt sein, damit die entsprechenden Werte im Export erscheinen.</p>
+
+<p>Beispiel:
+Ein Bericht hat 4 definierte Felder: Zeitintervall, Gerätename, Typ und &ldquo;c8y_SpeedMeasurement.speed.value&rdquo;. Die ersten 3 sind vordefinierte Attribute, während es sich bei dem letzten um ein benutzerdefiniertes Attribut handelt. Wenn ein zu exportierender Messwert kein Attribut &ldquo;c8y_SpeedMeasurement.speed.value&rdquo; hat, wird er nicht im Export erscheinen.</p>
+
+<p>Wenn Ihr Attribut ein &ldquo;valid.key.with.dot&rdquo; ist, dann verweisen Sie im Pfad darauf als [&lsquo;fragment.key.with.dot&rsquo;], z. B.: [&lsquo;fragment.key.with.dot&rsquo;].series.value</p>
+
+<p>Wenn Sie <strong>Messwerte</strong> aktiviert haben, sehen Sie die zusätzliche Option <strong>Datenpunkt auswählen</strong>. Nähere Informationen zum Hinzufügen von Datenpunkten finden Sie in <a href="#add-data-points">Hinzufügen von Datenpunkten</a>.</p>
+
+<h4 id="a-name-schedule-export-a-terminieren-von-exporten"><a name="schedule-export"></a>Terminieren von Exporten</h4>
+
+<p>Um einen Export in eine Datei für einen bestimmten Zeitpunkt zu planen, öffnen Sie das Kontextmenü für den entsprechenden Export und klicken Sie <strong>Export planen</strong>. Im folgenden Fenster können Sie die Smart Rule &ldquo;Bei Timer-Ablauf Export per E-Mail senden&rdquo; entsprechend einrichten.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-report-schedule-export.png" name="Exporting" style="width:50%;"/></p>
+
+<p><strong>1 - Name der Regel</strong></p>
+
+<p>Der Name der Regel ist mit dem Namen des Exports vorausgefüllt, kann aber geändert werden.</p>
+
+<p><strong>2 - Bericht &amp; Häufigkeit</strong></p>
+
+<p>Bestimmen Sie die Frequenz für das Senden des Exports, z. B. stündlich, täglich, wöchentlich der monatlich. Je nach ausgewählter Frequenz können Sie weitere Optionen für den Zeitpunkt angeben. Haben Sie etwa &ldquo;Monat&rdquo; gewählt, können Sie den Tag des Monats und die Uhrzeit festlegen.</p>
+
+<p><strong>3 - E-Mail senden:</strong></p>
+
+<p>Vervollständigen Sie die E-Mail-Informationen.</p>
+
+<p>Geben Sie im Feld <strong>Senden an</strong> die E-Mail-Adresse des Empfängers ein. Diese Angabe ist obligatorisch. Optional können Sie unter <strong>CC</strong> und <strong>BCC</strong> weitere E-Mail-Adressen eingeben oder die E-Mail-Adresse des Senders für eine mögliche Antwort eingeben.</p>
+
+<p>Geben Sie den Betreff der E-Mail ein. Diese Feld ist vorausgefüllt, kann aber bearbeitet werden.</p>
+
+<p>Geben Sie die eigentliche E-Mail-Nachricht ein. Verfügbare Platzhalter sind {host}, {binaryId}. Der Standardeintrag lautet &ldquo;Die exportierte Datei kann unter {host}/inventory/binaries/{binaryId} heruntergeladen werden&rdquo;.</p>
+
+<p>Klicken Sie <strong>Erstellen</strong>, um die benutzerdefinierte Smart Rule &ldquo;Bei Timer-Ablauf Export per E-Mail senden&rdquo; zu erstellen.</p>
+
+<p>Die Smart Rule wird zu den Exportdetails hinzugefügt.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-report-smartrule.png" name="Smart rule" style="width:75;"/></p>
+
+<h4 id="exportieren-von-daten">Exportieren von Daten</h4>
+
+<p>Um Daten in eine CSV-oder Excel-Datei zu exportieren, aktivieren Sie die Checkbox vor dem Export in der Liste und klicken Sie links in der oberen Menüleiste <strong>Exportieren</strong>.</p>
+
+<p>Sie erhalten eine E-Mail mit einem Link zu jeder Export-Datei.</p>
+
+<p>Standard-Zeitattribute von Dokumenten (wie &ldquo;time&rdquo; oder &ldquo;creationTime&rdquo; in Alarmen) werden in folgende Formate exportiert:</p>
+
+<ul>
+<li>Excel-Datei: 03/13/2016 00:00:24</li>
+<li>CSV-Datei: 2016-03-13T00:01:24.000Z</li>
+</ul>
+
+<p>Nur im CSV-Format sind Millisekunden und Zeitzonen enthalten.</p>
+
+<h4 id="bearbeiten-von-exporten">Bearbeiten von Exporten</h4>
+
+<p>Um einen Export zu bearbeiten, klicken Sie auf die entsprechende Zeile in der Liste oder öffnen Sie das Kontextmenü für den Export über das Menüsymbol und klicken Sie <strong>Bearbeiten</strong>.</p>
+
+<h4 id="duplizieren-von-exporten">Duplizieren von Exporten</h4>
+
+<p>Um einen Export zu duplizieren, öffnen Sie das Kontextmenü für den Export über das Menüsymbol und klicken Sie <strong>Duplizieren</strong>. Ändern Sie zumindest den Namen und klicken Sie <strong>Speichern &amp; schließen</strong>, um den neuen Bericht zu speichern und zur Exportliste zurückzukehren.</p>
+
+<h4 id="löschen-von-exporten">Löschen von Exporten</h4>
+
+<p>Um einen Export zu löschen, öffnen Sie das Kontextmenü für den Export über das Menüsymbol und klicken Sie <strong>Löschen</strong>.</p>
+
+  </article>
+  
+  <article id="data-point-library" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#data-point-library">
+        <span class="fa fa-link"></span>
+      </button>
+      Datenpunktbibliothek</h2>
+    
+
+<p>Die Datenpunktbibliothek enthält eine Sammlung von Datenpunkten mit Standardwerten für Datenpunktattribute. Datenpunktattribute ähneln den &ldquo;Absatzformaten&rdquo; in Textverarbeitungsanwendungen: Sie möchten nicht jeden Absatz einzeln formatieren. Stattdessen möchten Sie einen Satz von Standardformaten definieren und diese auf Ihre Absätze in Ihrem Dokument anwenden.</p>
+
+<p>Die Datenpunktbibliothek bietet die gleiche Funktionalität für Datenpunkte: Sie bietet eine Reihe von standardisierten Datenpunkt-&ldquo;Vorlagen&rdquo;, die problemlos auf Ihre Datenpunkte von verschiedenen Geräten angewendet werden können.</p>
+
+<p>Wie verwendet die Cockpit-Anwendung die Datenpunktbibliothek? Um die Standard-Visualisierung für einen Datenpunkt wie Farbe oder Beschriftung zu finden, durchsucht die Cockpit-Anwendung die Datenpunktbibliothek und versucht, einen passenden Eintrag zu finden. Ein Eintrag gilt als &ldquo;passend&rdquo;, wenn die Werte für Fragment und Serie in der Datenpunktbibliothek mit denen der Messung übereinstimmen. Wenn ein passender Eintrag gefunden wird, werden die entsprechenden Datenpunktattribute für eine Standardvisualisierung verwendet.</p>
+
+<p>Darüber hinaus werden die Attribute der Datenpunktbibliothek von Geschäftsregeln verwendet: Die in der Datenpunktbibliothek konfigurierten roten und gelben Werte werden von Schwellwertregeln verwendet, um Alarme auszulösen.</p>
+
+<p>Klicken Sie <strong>Datenpunktbibliothek</strong> im Menü <strong>Konfiguration</strong> im Navigator, um die Datenpunktbibliothek zu öffnen.</p>
+
+<p>Es wird eine Liste der verfügbaren Datenpunkte angezeigt. Jeder Datenpunkt enthält die folgenden Informationen:</p>
+
+<ul>
+<li>Farbe und Beschriftung des Datenpunkts</li>
+<li>Name und Serie des Fragments</li>
+<li>Einheit des Messwerts</li>
+</ul>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-datapointlibrary.png" alt="image alt text" /></p>
+
+<h3 id="hinzufügen-eines-datenpunkts">Hinzufügen eines Datenpunkts</h3>
+
+<p>Klicken Sie &ldquo;<strong>Datenpunkt hinzufügen</strong>&rdquo; in der oberen Menüleiste, um einen Datenpunkt zur Bibliothek hinzuzufügen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-add-datapoint.png" name="Datenpunkt hinzufügen" style="width:50%;"/></p>
+
+<p>Geben Sie die folgenden Informationen ein:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Farbe</td>
+<td align="left">Farbe für die Datenpunktvisualisierung</td>
+</tr>
+
+<tr>
+<td align="left">Beschriftung</td>
+<td align="left">Beschriftung für die Datenpunktvisualisierung</td>
+</tr>
+
+<tr>
+<td align="left">Fragment</td>
+<td align="left">Name des Fragments</td>
+</tr>
+
+<tr>
+<td align="left">Series</td>
+<td align="left">Name der Series</td>
+</tr>
+
+<tr>
+<td align="left">Einheit</td>
+<td align="left">Einheit des Messwerts</td>
+</tr>
+
+<tr>
+<td align="left">Ziel</td>
+<td align="left">Zielwert</td>
+</tr>
+
+<tr>
+<td align="left">Minimum</td>
+<td align="left">Minimaler Wert, der auf der Y-Achse angezeigt wird</td>
+</tr>
+
+<tr>
+<td align="left">Maximum</td>
+<td align="left">Maximaler Wert, der auf der Y-Achse angezeigt wird</td>
+</tr>
+
+<tr>
+<td align="left">Gelber Bereich</td>
+<td align="left">Min/max-Werte für den gelben Bereich (WENIGER WICHTIGE Alarme)</td>
+</tr>
+
+<tr>
+<td align="left">Roter Bereich</td>
+<td align="left">Min/max-Werte für den roten Bereich (KRITISCHE Alarme)</td>
+</tr>
+</tbody>
+</table>
+
+<p>Beispiel:</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-datapoint-example.png" name="Datenpunkt Beispiel" style="width:50%;"/></p>
+
+<p>Klicken Sie <strong>Speichern</strong>, um den Datenpunkt zur Bibliothek hinzuzufügen.</p>
+
+<h3 id="bearbeiten-oder-löschen-von-datenpunkten">Bearbeiten oder Löschen von Datenpunkten</h3>
+
+<p>Klicken Sie auf den entsprechenden Datenpunkteintrag in der Liste oder öffnen Sie das Kontextmenü über das Menüsymbol und klicken Sie &ldquo;<strong>Bearbeiten</strong>&rdquo;.</p>
+
+<p>Klicken Sie <strong>Entfernen</strong> im Kontextmenü, um einen Datenpunkt zu löschen.</p>
+
+  </article>
+  
+  <article id="smart-rules" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#smart-rules">
+        <span class="fa fa-link"></span>
+      </button>
+      Smart Rules</h2>
+    
+
+<p>Cumulocity enthält eine Regel-Engine, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Diese Regeln werden in einer Skriptsprache erstellt und in der Anwendung <a href="/guides/benutzerhandbuch/administration">&ldquo;Administration&rdquo;</a> verwaltet.</p>
+
+<p>Zum einfachen Erstellen von Regeln enthält die Cockpit-Anwendung einen &ldquo;Smart Rule Builder&rdquo;. Mit dem Smart Rule Builder können Regeln aus Vorlagen erstellt werden.</p>
+
+<blockquote>
+<p><strong>Info:</strong> Smart Rules sind nur sichtbar, wenn der Mandant die Smart Rule-Anwendung abonniert hat. Um Smart Rules verwalten zu können, benötigt der Benutzer die Berechtigung zum Erstellen von Stammdaten sowie entweder die Berechtigung &ldquo;Smartrule&rdquo; oder &ldquo;cep&rdquo;.</p>
+</blockquote>
+
+<p>Smart Rules werden parametrisiert. Es gibt zwei Quellen für Parameter:</p>
+
+<p><strong>Regelparameter</strong> werden vom Benutzer beim Erstellen einer Smart Rule aus einer Vorlage bereitgestellt. Beispiele sind E-Mail-Adressen und Alarmtexte.</p>
+
+<p><strong>Objektparameter</strong> werden in der Gruppe oder dem Gerät gespeichert. Diese Parameter können auch nach der Erstellung der Smart Rule bearbeitet werden. Ein Beispiel sind Min- und Max-Werte für Schwellwerte.</p>
+
+<p>Smart Rules werden angezeigt</p>
+
+<ul>
+<li>in der Registerkarte <strong>Info</strong> eines Geräts oder einer Gruppe,</li>
+<li>in der Seite <strong>Smart Rules</strong> im Menü <strong>Konfiguration</strong>.</li>
+</ul>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-smartrule-info-tab.png" alt="Smart Rules Registerkarte &quot;Info&quot;" /></p>
+
+<p>Es gibt zwei Arten von Smart Rules:</p>
+
+<ul>
+<li><strong>Lokal</strong>: Smart Rules, die für ein Gerät oder eine Gruppe erstellt wurden. Diese sind für alle Benutzer sichtbar, die Zugriff auf das Gerät bzw. die Gruppe haben.</li>
+<li><strong>Global</strong>: Diese Smart Rules wurden in einem globalen Kontext erstellt (&ldquo;Smart Rules&rdquo;-Seite, Alarme, Daten-Explorer, etc.).</li>
+</ul>
+
+<p>In der Seite <strong>Smart Rules</strong> werden nur die globalen Smart Rules angezeigt.</p>
+
+<p>In einem lokalen Kontext (Gerät oder Gruppe) und ohne die erforderlichen Berechtigungen werden nur die lokalen Smart Rules angezeigt. Hat ein Benutzer die entsprechenden Berechtigungen, werden lokale und globale Smart Rules angezeigt.</p>
+
+<p>Die folgenden Berechtigungen sind erforderlich, um globale Smart Rules zu sehen:</p>
+
+<ul>
+<li>Smartrule READ</li>
+<li>Smartrule ADMIN</li>
+<li>CEP management ADMIN</li>
+</ul>
+
+<h3 id="a-name-create-rules-a-erstellen-von-smart-rules"><a name="create-rules"></a>Erstellen von Smart Rules</h3>
+
+<p>Smart Rules können entweder auf der Seite <strong>Smart Rules</strong> im Menü <strong>Konfiguration</strong> oder in der Registerkarte <strong>Info</strong> eines Geräts oder einer Gruppe erstellt werden.</p>
+
+<p>Führen Sie folgende Schritte zum Erstellen einer Smart Rule aus:</p>
+
+<ol>
+<li>Klicken Sie <strong>Smart Rule hinzufügen</strong> in der oberen Menüleiste.</li>
+<li>Wählen Sie ein Smart Rule-Template aus.</li>
+<li>Verwenden Sie im folgenden Fenster den Regler, um einzustellen, ob die Regel aktiviert oder deaktiviert ist.</li>
+<li>Konfigurieren Sie die Regelparameter. Die Parameter variieren von Regel zu Regel. Details zu den jeweiligen Parametern finden Sie unter <a href="/guides/benutzerhandbuch/cockpit#smart-rules-collection">Smart Rule-Sammlung</a>.</li>
+<li>Im Feld <strong>Ziel-Assets oder Geräte</strong> können Sie Assets oder Geräte festlegen, für die die Regel gelten soll.<br /></li>
+<li>Klicken Sie <strong>Erstellen</strong> um die Smart Rule zu erstellen.</li>
+</ol>
+
+<p>Eine Liste von Smart Rules wird unten beispielhaft gezeigt. Die Liste der Smart Rules kann je nach Installation variieren.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-global-smart-rules.png" name="Globale Smart Rules" style="width:75%;"/></p>
+
+<p>Wenn die Regel aktiviert und nicht für bestimmte Geräte angelegt wurde, ist die Regel nun für alle Geräte und Gruppen aktiv.</p>
+
+<p>Im nächsten Abschnitt erfahren Sie, wie Sie eine Smart Rule für bestimmte Objekte deaktivieren.</p>
+
+<p>Um Irritationen vorzubeugen, werden deaktivierte Smart Rules nicht in Gruppenmenüs oder Gerätemenüs angezeigt.</p>
+
+<p>Smart Rules können mehrfach instanziiert werden.</p>
+
+<h3 id="aktivieren-und-deaktivieren-von-smart-rules">Aktivieren und Deaktivieren von Smart Rules</h3>
+
+<p>Smart Rules können für einzelne Objekte (Geräte oder Gruppen) eingeschaltet (aktiviert) oder abgeschaltet (deaktiviert) werden. Wenn beispielsweise ein Gerät zu viele Schwellwertalarme erzeugt, können Sie die Regel für dieses einzelne Objekt deaktivieren. Die Regel bleibt für alle anderen Objekte aktiv.</p>
+
+<p>Um eine Smart Rule für eine Gruppe oder ein Gerät ein- oder abzuschalten, navigieren Sie zur Registerkarte &ldquo;Info&rdquo; für das Objekt und aktivieren/deaktivieren Sie die Regel über den Regler.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-activate.png" name="Smart Rule aktivieren/deaktivieren" style="width:100%;"/></p>
+
+<h3 id="bearbeiten-von-smart-rules">Bearbeiten von Smart Rules</h3>
+
+<p>Um eine Smart Rule zu bearbeiten, öffnen Sie das Kontextmenü der Regel über das Menüsymbol und klicken Sie <strong>Bearbeiten</strong>.</p>
+
+<h3 id="duplizieren-von-smart-rules">Duplizieren von Smart Rules</h3>
+
+<p>Um eine Smart Rule zu duplizieren, öffnen Sie das Kontextmenü der Regel über das Menüsymbol und klicken Sie <strong>Duplizieren</strong>. Bearbeiten Sie zumindest den Namen und klicken Sie <strong>Änderungen speichern</strong> um Ihre Angaben zu speichern.</p>
+
+<h3 id="löschen-von-smart-rules">Löschen von Smart Rules</h3>
+
+<p>Um eine Smart Rule zu löschen, öffnen Sie das Kontextmenü der Regel über das Menüsymbol und klicken Sie <strong>Löschen</strong>.</p>
+
+<h3 id="fehlerbehebung-bei-smart-rules">Fehlerbehebung bei Smart Rules</h3>
+
+<p>Um die Fehlersuche zu vereinfachen gibt es einen direkten Link von einer Smart Rule zum entsprechenden Echtzeitverarbeitungsmodul. Öffnen Sie das Kontextmenü der Regel über das Menüsymbol und klicken Sie <strong>Quelltext ansehen</strong>, um diese Option zu nutzen.</p>
+
+<h3 id="beispiel-definieren-von-exakten-schwellwerten">Beispiel: Definieren von exakten Schwellwerten</h3>
+
+<p>Führen Sie folgende Schritte aus, um eine Schwellwertregel zu definieren:</p>
+
+<ol>
+<li>Navigieren Sie im Menü <strong>Gruppen</strong> zu dem Objekt (Gruppe oder Gerät), auf welches Sie den Schwellwert anwenden möchten.</li>
+<li>Wechseln Sie zur Registerkarte <strong>Daten-Explorer</strong>.</li>
+<li>Wenn der Datenpunkt, der den Schwellwert festlegen soll, standardmäßig nicht sichtbar ist, wählen Sie <strong>Datenpunkt hinzufügen</strong> und fügen Sie einen Datenpunkt hinzu. Informationen zum Hinzufügen von Datenpunkten finden Sie unter  Daten-Explorer &gt;<a href="#add-data-points">Hinzufügen von Datenpunkten</a>.</li>
+<li>Öffnen Sie über das Menüsymbol das Kontextmenü für den entsprechenden Datenpunkt und klicken Sie <strong>Smart Rule erstellen</strong>. <br><br> <img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-datapoint.png" name="Datenpunkt-Beispiel" style="width:75%;"/>
+<br></li>
+<li>Wählen Sie die Smart Rule &ldquo;Bei Schwellwertüberschreitung Alarm erzeugen&rdquo;. <br><br> <img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-example.png" name="Smart Rule-Beispiel" style="width:50%;"/><br></li>
+<li>Geben Sie den minimalen und den maximalen Wert für den roten Bereich ein. Wenn der Messwert den roten Bereich betritt oder verlässt, wird ein KRITISCHER Alarm erzeugt bzw. gelöscht. Weitere Informationen finden Sie in der Beschreibung der Regel &ldquo;Bei Messbereichsüberschreitung Alarm erzeugen&rdquo; in der <a href="/guides/benutzerhandbuch/cockpit#smart-rules-collection">Smart Rules-Sammlung</a>.</li>
+<li>Unter <strong>Alarm erzeugen</strong> können Sie optional den Alarmtyp und Alarmtext definieren.</li>
+<li>Unter <strong>Ziel-Assets oder Geräte</strong> können Sie die Objekte auswählen, auf die diese Regel angewendet werden soll.</li>
+<li>Klicken Sie <strong>Erstellen</strong> um die Smart Rule zu erstellen.</li>
+</ol>
+
+<p>Die Regel wird automatisch aktiviert und Alarme werden angezeigt, wenn diese ausgelöst werden.</p>
+
+<h3 id="ausführen-einer-regelkette">Ausführen einer Regelkette</h3>
+
+<p>Smart Rules können ein neues Datenelement auf der Plattform erstellen. Die Schwellenregel erzeugt beispielsweise neue Alarme. Diese neuen Daten können durch ausgewählte Smart Rules weiterverarbeitet werden, zum Beispiel durch eine Regel &ldquo;Bei Alarm  E-Mail senden&rdquo;.</p>
+
+<p>Mit diesem Mechanismus kann eine Kette von Smart Rules erstellt werden.</p>
+
+<blockquote>
+<p><strong>Info:</strong> Berücksichtigen Sie beim Erstellen einer Regelkette, wie viele Daten diese erzeugt, um Überlastungen oder übermäßige Datenmengen zu vermeiden.</p>
+</blockquote>
+
+  </article>
+  
+  <article id="smart-rules-collection" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#smart-rules-collection">
+        <span class="fa fa-link"></span>
+      </button>
+      Smart Rules-Sammlung</h2>
+    
+
+<p>Cumulocity enthält eine Reihe von vordefinierten Smart Rules.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-global-smart-rule-add.png" name="Global Smart Rules" style="width:75%;"/></p>
+
+<p>Für jeden globalen Smart Rules-Typen lassen sich verschiedene Parameter konfigurieren.</p>
+
+<p>Im folgenden Abschnitt werden alle verfügbaren Typen mit den jeweils konfigurierbaren Parametern beschrieben.</p>
+
+<h3 id="bei-alarm-sms-senden">Bei Alarm SMS senden</h3>
+
+<p><strong>Funktionalität</strong></p>
+
+<p>Wenn ein Alarm erzeugt wird, wird eine SMS gesendet.</p>
+
+<blockquote>
+<p><strong>Info:</strong> Diese Regel ist nur verfügbar, wenn Ihr Mandant über einen konfigurierten SMS-Anbieter verfügt.</p>
+</blockquote>
+
+<p><strong>Parameter</strong></p>
+
+<p>Die Regel verwendet die folgenden Parameter:</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-on-alarm-send-sms.png" name="Smart Rule SMS senden" style="width:50%;"/></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Schritt</th>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Name der Regel</td>
+<td align="left">Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">Bei Alarm vom Typ:</td>
+<td align="left">Die Alarmtypen, die die Regel auslösen. Für jeden neu erzeugten Alarm eines dieser Typen wird eine Regel ausgelöst.</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">SMS senden:</td>
+<td align="left">&ldquo;Telefonnummer&rdquo;: Telefonnummer des Empfängers. Es empfiehlt sich, die Ländervorwahl hinzuzufügen, z. B. &ldquo;+49&rdquo; or &ldquo;0049&rdquo; für Deutschland. Mehrere Telefonnummern können durch ein Komma getrennt werden (&ldquo;,&rdquo;, ohne Leerzeichen!).<br> &ldquo;Nachricht&rdquo;: SMS-Text mit max. 160 Zeichen. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter &ldquo;Smart Rules-Variablen&rdquo; aufgelistet.</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">Ziel-Assets oder -geräte</td>
+<td align="left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Fehlerbehebung</strong></p>
+
+<ul>
+<li><p>Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.</p></li>
+
+<li><p>Prüfen Sie, ob sich das Gerät im <a href="/guides/reference/device-management">Wartungsmodus</a> befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.</p></li>
+
+<li><p>Wenn Sie eine Alarmregel erstellt haben (siehe <a href="/guides/benutzerhandbuch/administration#reprio-alarms">Administration &gt; Priorisieren von Alarmen</a>), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.</p></li>
+</ul>
+
+<blockquote>
+<p><strong>Wichtig:</strong> Die Textgröße ist auf insgesamt 160 Zeichen beschränkt. Wenn Sie Variablen verwenden und der Text nach Anwenden der Variablen 160 Zeichen überschreitet, wird die SMS nicht gesendet.</p>
+</blockquote>
+
+<h3 id="bei-alarm-e-mail-senden">Bei Alarm E-Mail senden</h3>
+
+<p><strong>Funktionalität</strong></p>
+
+<p>Wenn ein Alarm erzeugt wird, wird eine E-Mail gesendet.</p>
+
+<p><strong>Parameter</strong></p>
+
+<p>Die Regel verwendet die folgenden Parameter:</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-on-alarm-send-sms.png" name="Smart Rule E-Mail senden" style="width:50%;"/></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Schritt</th>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Name der Regel</td>
+<td align="left">Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">Bei Alarm vom Typ:</td>
+<td align="left">Die Alarmtypen, die die Regel auslösen. Für jeden neu erzeugten Alarm eines dieser Typen wird eine Regel ausgelöst.</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">E-Mail senden:</td>
+<td align="left"><strong>Senden an / CC an / BCC an</strong>: E-Mail-Adressen der Empfänger. Mehrere Adressen können durch ein Komma getrennt werden (&ldquo;,&rdquo;, ohne Leerzeichen!).<br><strong>Antwort an</strong>: Adresse, die für eine Antwort verwendet werden kann.<br> <strong>Betreff</strong>: Betreff der E-Mail. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter <strong>Smart Rules-Variablen</strong> aufgelistet. <br> <strong>Nachricht</strong>: Text der E-Mail. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter <strong>Smart Rules-Variablen</strong> aufgelistet.</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">Ziel-Assets oder -geräte</td>
+<td align="left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Fehlerbehebung</strong></p>
+
+<ul>
+<li><p>Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.</p></li>
+
+<li><p>Prüfen Sie, ob sich das Gerät im <a href="/guides/reference/device-management">Wartungsmodus</a> befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.</p></li>
+
+<li><p>Wenn Sie eine Alarmregel erstellt haben (siehe <a href="/guides/benutzerhandbuch/administration#reprio-alarms">Administration &gt; Priorisieren von Alarmen</a>), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.</p></li>
+
+<li><p>Sehen Sie in Ihr Spam-Verzeichnis.</p></li>
+</ul>
+
+<h3 id="bei-alarm-eskalieren">Bei Alarm eskalieren</h3>
+
+<p><strong>Funktionalität</strong></p>
+
+<p>Wenn ein Alarm erzeugt wird, wird eine E-Mail oder SMS gesendet.</p>
+
+<p><strong>Parameter</strong></p>
+
+<p>Die Regel verwendet die folgenden Parameter:</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-on-alarm-escalate.png" name="Smart Rule Eskalieren" style="width:50%;"/></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Schritt</th>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Name der Regel</td>
+<td align="left">Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">Bei Alarm vom Typ:</td>
+<td align="left">Die Alarmtypen, die die Regel auslösen. Für jeden neu erzeugten Alarm eines dieser Typen wird eine Regel ausgelöst.</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">Wie folgt eskalieren:</td>
+<td align="left">Eskalationsschritte, die nacheinander ausgeführt werden. <br> Klicken Sie <strong>Schritt hinzufügen</strong> um mindestens einen Schritt zu definieren: <br> <strong>Typ</strong>: Typ des ausgeführten Schritts. Mögliche Werte sind: <br>  * E-Mail (siehe Regel &ldquo;Bei Alarm E-Mail senden&rdquo; für die Beschreibung der Parameter). <br> * SMS (siehe Regel &ldquo;Bei Alarm SMS senden&rdquo; für die Beschreibung der Parameter). <br> <strong>Bedingung</strong>: Die Bedingung, die angewendet wird, wenn die Regel ausgeführt wird. Mögliche Werte sind: <br> * Immer: Aktion wird immer ausgeführt. <br> * Immer, wenn Schritt N fehlgeschlagen ist: Nur Schritte des Typs Telefon können fehlschlagen. Der Schritt wird als fehlgeschlagen gekennzeichnet, wenn alle Wiederholungen erfolglos ausgeführt wurden. Diese Option ist nur verfügbar, wenn bereits ein Schritt des Typs Telefon konfiguriert wurde, auf den Bezug genommen werden kann.</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">Ziel-Assets oder -geräte</td>
+<td align="left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Fehlerbehebung</strong></p>
+
+<ul>
+<li><p>Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.</p></li>
+
+<li><p>Prüfen Sie, ob sich das Gerät im <a href="/guides/reference/device-management">Wartungsmodus</a> befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.</p></li>
+
+<li><p>Wenn Sie eine Alarmregel erstellt haben (siehe <a href="/guides/benutzerhandbuch/administration#reprio-alarms">Administration &gt; Priorisieren von Alarmen</a>), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.</p></li>
+</ul>
+
+<h3 id="bei-alarmdauer-schweregrad-erhöhen">Bei Alarmdauer Schweregrad erhöhen</h3>
+
+<p><strong>Funktionalität</strong></p>
+
+<p>Wenn ein Alarm für einen bestimmten Zeitraum aktiviert ist, wird er Schweregrad erhöht.</p>
+
+<p><strong>Parameter</strong></p>
+
+<p>Die Regel verwendet die folgenden Parameter:</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-on-alarm-increase.png" name="Smart Rule Schweregrad erhöhen" style="width:50%;"/></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Schritt</th>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Name der Regel</td>
+<td align="left">Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">Bei Alarm vom Typ:</td>
+<td align="left">Die Alarmtypen, die die Regel auslösen. Für jeden neu erzeugten Alarm eines dieser Typen wird eine Regel ausgelöst.</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">Alarmschweregrad erhöhen:</td>
+<td align="left">Dauer, die ein Alarm aktiv sein muss, bevor der Schweregrad erhöht wird.</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">Ziel-Assets oder -geräte</td>
+<td align="left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Beschreibung</strong></p>
+
+<p>Beim Auslösen eines konfigurierten Alarms wird erfasst, wie lange der Alarm aktiv bleibt.</p>
+
+<p>Ist der Alarm nach Ablauf der spezifizierten Dauer immer noch aktiv, wird der Schweregrad um ein Level erhöht, z. B. von WENIGER WICHTIG auf WICHTIG.</p>
+
+<p>Wenn der Alarm den Schweregrad KRITISCH erreicht hat, wird die Überwachung beendet, da keine weitere Aktion möglich ist.</p>
+
+<blockquote>
+<p><strong>Info:</strong> Die Regel prüft einmal pro Minute, ob die konfigurierte Dauer überschritten ist. Daher ist es möglich, dass der Schweregrad sich nicht exakt dann ändert, wenn die Dauer überschritten ist, sondern erst nach der nächsten Prüfung.</p>
+</blockquote>
+
+<h3 id="bei-geofence-alarm-erzeugen">Bei Geofence Alarm erzeugen</h3>
+
+<p><strong>Funktionalität</strong></p>
+
+<p>Wird ein Geofence-Bereich überschritten, wird ein Alarm erzeugt.</p>
+
+<p>Diese Regel kann für das Betreten oder Verlassen eines Geofence-Bereichs oder für beides konfiguriert werden. Bestehende Alarme werden gelöscht, wenn wieder die gegenteilige Bedingung zutrifft, z. B. wenn ein Auto, das den Geofence-Bereich verlassen hat, wieder in den Bereich eintritt.</p>
+
+<p><strong>Parameter</strong></p>
+
+<p>Die Regel verwendet die folgenden Parameter:</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-geofence-alarm.png" name="Smart Rule Geofence Alarm" style="width:50%;"/></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Schritt</th>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Name der Regel</td>
+<td align="left">Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">Bei Geofence-Übertretung:</td>
+<td align="left">Polygon, das die Grenzen des Bereich kennzeichnet. Klicken Sie <strong>Geofence bearbeiten</strong> und legen Sie den Bereich fest. Fügen Sie Punkte durch Doppelklicken hinzu und passen Sie diese durch Klicken und Ziehen an.</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">Alarm erzeugen:</td>
+<td align="left">Grund für das Auslösen eines Alarms: &ldquo;Bei Betreten&rdquo;, &ldquo;Bei Verlassen&rdquo; (der Standardwert), &ldquo;Bei Betreten und Verlassen&rdquo;.<br>Typ des auszulösenden Alarms.<br> Schweregrad des auszulösenden Alarms. <br>Alarm-Text.</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">Ziel-Assets oder -geräte</td>
+<td align="left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Info</strong>: Damit ein Alarm ausgelöst wird, muss das Gerät mindestens einmal nach Erstellen der Regel innerhalb des Geofence-Bereichs gewesen sein.</p>
+
+<p><strong>Fehlerbehebung</strong></p>
+
+<ul>
+<li><p>Stellen Sie sicher, dass das Gerät mindestens einmal im Geofence-Bereich war, nachdem die Regel erstellt/aktiviert wurde.</p></li>
+
+<li><p>Prüfen Sie, ob sich das Gerät im <a href="/guides/reference/device-management">Wartungsmodus</a> befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.</p></li>
+
+<li><p>Wenn Sie eine Alarmregel erstellt haben (siehe <a href="/guides/benutzerhandbuch/administration#reprio-alarms">Administration &gt; Priorisieren von Alarmen</a>), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.</p></li>
+</ul>
+
+<h3 id="bei-geofence-e-mail-senden">Bei Geofence E-Mail senden</h3>
+
+<p><strong>Funktionalität</strong></p>
+
+<p>Wenn ein Geofence-Bereich überschritten wird, wird eine E-Mail gesendet.</p>
+
+<p>Diese Regel kann für das Betreten oder Verlassen eines Geofence-Bereichs oder für beides konfiguriert werden.</p>
+
+<p><strong>Parameter</strong></p>
+
+<p>Die Regel verwendet die folgenden Parameter:</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-geofence-email.png" name="Smart Rule Geofence E-Mail" style="width:50%;"/></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Schritt</th>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Name der Regel</td>
+<td align="left">Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">Bei Geofence-Übertretung:</td>
+<td align="left">Polygon, das die Grenzen des Bereich kennzeichnet. Klicken Sie <strong>Geofence bearbeiten</strong> und legen Sie den Bereich fest. Fügen Sie Punkte durch Doppelklicken hinzu und passen Sie diese durch Klicken und Ziehen an.</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">E-Mail senden:</td>
+<td align="left"><strong>Senden an / CC an / BCC an</strong>: E-Mail-Adressen der Empfänger. Mehrere Adressen können durch ein Komma getrennt werden (&ldquo;,&rdquo;, ohne Leerzeichen!).<br><strong>Antwort an</strong>: Adresse, die für eine Antwort verwendet werden kann.<br> <strong>Betreff</strong>: Betreff der E-Mail. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter <strong>Smart Rules-Variablen</strong> aufgelistet. <br> <strong>Nachricht</strong>: Text der E-Mail. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter <strong>Smart Rules-Variablen</strong> aufgelistet.</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">Ziel-Assets oder -geräte</td>
+<td align="left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Info</strong>: Damit ein Alarm ausgelöst wird, muss das Gerät mindestens einmal nach Erstellen der Regel innerhalb des Geofence-Bereichs gewesen sein.</p>
+
+<p><strong>Fehlerbehebung</strong></p>
+
+<ul>
+<li><p>Stellen Sie sicher, dass das Gerät mindestens einmal im Geofence-Bereich war, nachdem die Regel erstellt/aktiviert wurde.</p></li>
+
+<li><p>Sehe Sie in Ihr Spam-Verzeichnis.</p></li>
+</ul>
+
+<h3 id="energieverbrauch-berechnen">Energieverbrauch berechnen</h3>
+
+<p><strong>Funktionalität</strong></p>
+
+<p>Erstellt einen Verbrauchs-Datenpunkt basierend auf Daten von einem Strom-, Gas oder Wasserzähler.</p>
+
+<p><strong>Parameter</strong></p>
+
+<p>Die Regel verwendet die folgenden Parameter:</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-consumption.png" name="Smart Rule Energieverbrauch" style="width:50%;"/></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Schritt</th>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Name der Regel</td>
+<td align="left">Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">Verwendeter Messwert:</td>
+<td align="left"><strong>Fragment/Series</strong>: Fragment/Series des Messwerts. Der eingehende Messwert muss exakt die gleichen Fragment/Series-Werte haben. Wenn eine Regel im Daten-Explorer erstellt wird, sind diese Felder bereits ausgefüllt.  <br> <strong>Zeitintervall</strong>: Intervall, in welchem Verbrauchswerte berechnet werden. Spezifiziert, wie oft der Verbrauch pro Stunde berechnet wird.</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">Energieverbrauch:</td>
+<td align="left">Fragment/Series des zu erstellenden Messwerts.</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">Ziel-Assets oder -geräte</td>
+<td align="left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p><strong>Info</strong>: Die Einheit des Verbrauchsmesswerts ist immer pro Stunde. Hat der Messwert die Einheit &ldquo;kg&rdquo; wird der Verbrauch in &ldquo;kg/h&rdquo; ausgegeben.</p>
+</blockquote>
+
+<p>Die Regel verwendet die letzten beiden Messungen in einem bestimmten Zeitraum, berechnet die Differenz von Wert und Zeit und berechnet dann den Verbrauch per Stunde.</p>
+
+<p><strong>Beispiel</strong>
+Die Regel wurde so konfiguriert, dass alle 20 Minuten eine Berechnung stattfindet. Die folgenden Messdaten gehen ein:
+100 kg um 11:59h und 200 kg um 12:14h.
+um 12:20h wird die Regel ausgelöst und es werden die letzten beiden Messungen zugrunde gelegt. Es wird die Wert- und Zeit-Differenz berechnet. Der Verbrauchsmesswert von 12:20h beträgt also 400 kg/h.
+Wenn keine weiteren Messdaten im letzten Intervall erzeugt wurden, wird ein Messwert mit dem Wert 0 erstellt.</p>
+
+<h3 id="bei-fehlenden-messdaten-alarm-erzeugen">Bei fehlenden Messdaten Alarm erzeugen</h3>
+
+<p><strong>Funktionalität</strong></p>
+
+<p>Gehen keine neuen Messdaten innerhalb eines bestimmten Zeitraums ein, wird ein Alarm erzeugt.</p>
+
+<p><strong>Parameter</strong></p>
+
+<p>Die Regel verwendet die folgenden Parameter:</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-missing-measurements.png" name="Smart Rule fehlende Messwerte" style="width:50%;"/></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Schritt</th>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Name der Regel</td>
+<td align="left">Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">Verwendeter Messwert:</td>
+<td align="left"><strong>Typ</strong>: Typ des Messwerts. Der eingehende Messwert muss den gleichen Typen haben. Wenn eine Regel im Daten-Explorer erstellt wird, sind diese Felder bereits ausgefüllt.  <br> <strong>Zeitintervall</strong>: Intervall, in welchem Verbrauchswerte berechnet werden.</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">Alarm erzeugen:</td>
+<td align="left">Typ des auszulösenden Alarms.<br> Schweregrad des auszulösenden Alarms. <br>Alarm-Text.</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">Ziel-Assets oder -geräte</td>
+<td align="left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p><strong>Info:</strong> Die Regel prüft einmal pro Minute, ob das konfigurierte Zeitintervall überschritten wurde. Daher kann es, nachdem das Zeitintervall überschritten wurde, bis zu einer Minute dauern, bis der Alarm erzeugt wird. Um das Überschreiten des Intervalls zu überprüfen, muss mindestens ein Messwert eingegangen sein, nachdem die Regel erstellt/aktiviert wurde.</p>
+</blockquote>
+
+<h3 id="bei-alarm-kommando-ausführen">Bei Alarm Kommando ausführen</h3>
+
+<p><strong>Funktionalität</strong></p>
+
+<p>Tritt ein bestimmter Alarm auf, wird das spezifizierte Kommando zum Gerät gesendet.</p>
+
+<p><strong>Parameter</strong></p>
+
+<p>Die Regel verwendet die folgenden Parameter:</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-execute-command.png" name="Smart Rule Kommando ausführen" style="width:50%;"/></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Schritt</th>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Name der Regel</td>
+<td align="left">Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">Bei Alarm vom Typ:</td>
+<td align="left">Die Alarmtypen, die die Regel auslösen. Für jeden neu erzeugten Alarm eines dieser Typen wird eine Regel ausgelöst.</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">Kommando ausführen:</td>
+<td align="left">Das Kommando, das gesendet wird. Das Kommando wird als JSON-Beschreibung bereitgestellt. Unter dem Feld <strong>Kommando</strong> können einige Standardkommandos ausgewählt werden. Um ein Standardkommando zu verwenden, wählen sie das entsprechende Kommando und klicken Sie die Pfeil-Schaltfläche auf der rechten Seite. Die JSON-Beschreibung des ausgewählten Kommandos wird eingefügt.</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">Ziel-Assets oder -geräte</td>
+<td align="left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="bei-schwellwert-alarm-erzeugen">Bei Schwellwert Alarm erzeugen</h3>
+
+<p><strong>Funktionalität</strong></p>
+
+<p>Wenn der Messwert einen definierten roten oder gelben Bereich betritt oder verlässt, wird ein Alarm erzeugt bzw. gelöscht.</p>
+
+<p>Der Schweregrad des Alarms wird folgendermaßen bestimmt:</p>
+
+<ul>
+<li><p>Wenn der Messwert sich in den roten Bereich bewegt, wird der Schweregrad auf KRITISCH gesetzt.</p></li>
+
+<li><p>Wenn der Messwert sich in den gelben Bereich bewegt, wird der Schweregrad auf WENIGER WICHTIG gesetzt.</p></li>
+
+<li><p>Wenn der Messwert sich in den grünen Bereich bewegt, wird der Alarm gelöscht.</p></li>
+</ul>
+
+<p>Diese Regel verwendet die folgenden Parameter vom Gerät oder aus der Datenpunktbibliothek:</p>
+
+<ul>
+<li>Objekt roter Bereich: Bereich, in welchem das System KRITISCHE Alarme erzeugen soll. Diese Werte können im Daten-Explorer für jeden Datenpunkt bearbeitet werden.</li>
+<li></li>
+
+<li><p>Objekt gelber Bereich: Bereich, in welchem das System WENIGER WICHTIGE Alarme erzeugen soll. Diese Werte können im Daten-Explorer für jeden Datenpunkt bearbeitet werden.</p></li>
+
+<li><p>Datenpunktbibliothek roter/gelber Bereich: Wenn in dem entsprechenden Objekt kein roter/gelber Bereich definiert ist, wird in der Datenpunktbibliothek nach dem konfigurierten Datenpunkteintrag gesucht und die jeweiligen Werte für den roten/gelben Bereich verwendet.</p></li>
+</ul>
+
+<p>Durch diesen Mechanismus können globale Schwellwertbereiche in der Datenpunktbibliothek definiert werden. Diese globalen Werte können dann von Fall zu Fall für bestimmte Objekte überschrieben werden.</p>
+
+<p><strong>Parameter</strong></p>
+
+<p>Die Regel verwendet die folgenden Parameter:</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-exceed-threshold.png" name="Smart Rule Schwellwertüberschreitung" style="width:50%;"/></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Schritt</th>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Name der Regel</td>
+<td align="left">Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">Bei Schwellwertbereich:</td>
+<td align="left"><strong>Fragment/Series</strong>: Fragment/Series des Messwerts. Der eingehende Messwert muss exakt die gleichen Fragment/Series-Werte haben. Wenn eine Regel im Daten-Explorer erstellt wird, sind diese Felder bereits ausgefüllt. <br> <strong>Eintrag in der Datenpunktbibliothek</strong>: Name des Eintrags in der Datenpunktbibliothek. Wird verwendet, um die Standardwerte für den roten und gelben Bereich zu ermitteln, wenn diese nicht individuell konfiguriert wurden.</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">Alarm erzeugen:</td>
+<td align="left">Typ des auszulösenden Alarms.<br> Schweregrad des auszulösenden Alarms. <br>Alarm-Text.</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">Ziel-Assets oder -geräte</td>
+<td align="left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Beschreibung</strong></p>
+
+<p>Die Regel führt für jeden eingehenden Messwert folgende Schritte aus:</p>
+
+<ul>
+<li><p>Prüfen, ob der Messwert Daten für das Fragment/Series enthält (Regelparameter).</p></li>
+
+<li><p>Prüfen, ob die Regel für das Quellobjekt aktiviert ist.</p></li>
+
+<li><p>Die Daten für den roten und gelben Bereich stammen aus:</p></li>
+
+<li><p>dem Quellobjekt (Messwert) oder</p></li>
+
+<li><p>der Datenpunktbibliothek (Kontrollparameter).</p></li>
+</ul>
+
+<p>Sind keine roten/gelben Bereiche definiert, werden keine Alarme ausgelöst.</p>
+
+<blockquote>
+<p><strong>Info:</strong> Bereichswerte, die im Quellobjekt definiert wurden, haben Priorität über Werte aus der Datenpunktbibliothek. Sie können auch lediglich einen einzelnen Wert überschreiben (z. B. gelber Bereich max), indem Sie diesen im Quellobjekt setzen. Die anderen Werte werden dann aus der Datenpunktbibliothek übernommen.</p>
+</blockquote>
+
+<ul>
+<li><p>Eingehende Werte innerhalb des gelben Bereichs: <br>Wenn es einen aktiven Alarm des entsprechenden Typs für das Objekt gibt, wird der Schweregrad auf WENIGER WICHTIG gesetzt. Ansonsten wird ein neuer Alarm mit dem Schweregrad WENIGER WICHTIG mit den vorgegebenen Parametern erstellt.</p></li>
+
+<li><p>Eingehende Werte innerhalb des roten Bereichs:  <br> Wenn es einen aktiven Alarm des entsprechenden Typs für das Objekt gibt, wird der Schweregrad auf KRITISCH gesetzt. Ansonsten wird ein neuer Alarm mit dem Schweregrad KRITISCH mit den vorgegebenen Parametern erstellt.</p></li>
+
+<li><p>Messwert außerhalb des gelben und roten Bereichs: <br>Wenn es einen aktiven Alarm des entsprechenden Typs für das Objekt gibt, wird der Alarm gelöscht.</p></li>
+</ul>
+
+<p><strong>Fehlerbehebung</strong></p>
+
+<ul>
+<li><p>Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.</p></li>
+
+<li><p>Prüfen Sie, ob sich das Gerät im <a href="/guides/reference/device-management">Wartungsmodus</a> befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.</p></li>
+
+<li><p>Wenn Sie eine Alarmregel erstellt haben (siehe <a href="/guides/benutzerhandbuch/administration#reprio-alarms">Administration &gt; Priorisieren von Alarmen</a>), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.</p></li>
+
+<li><p>Prüfen Sie, ob der Alarm bereits durch die nächste Messung mit Werten im grünen Bereich gelöscht wurde.</p></li>
+</ul>
+
+<blockquote>
+<p><strong>Info:</strong>  Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellwert wieder überschreitet.</p>
+</blockquote>
+
+<h3 id="bei-explizitem-schwellwert-alarm-erzeugen">Bei explizitem Schwellwert Alarm erzeugen</h3>
+
+<p><strong>Funktionalität</strong></p>
+
+<p>Wenn der Messwert den roten Bereich betritt oder verlässt, wird ein KRITISCHER Alarm erzeugt bzw. gelöscht.</p>
+
+<p>Der Schweregrad des Alarms wird folgendermaßen bestimmt:</p>
+
+<ul>
+<li><p>Wenn der Messwert sich in den roten Bereich bewegt, wird der Schweregrad auf KRITISCH gesetzt.</p></li>
+
+<li><p>Wenn der Messwert sich in den grünen Bereich bewegt, wird der Alarm gelöscht.</p></li>
+</ul>
+
+<blockquote>
+<p><strong>Info:</strong> Die Regel ist ähnlich wie die Regel &ldquo;Bei Schwellwertüberschreitung Alarm erzeugen&rdquo;. Allerdings wird in dieser Regel hier der rote Schwellwert explizit bereitgestellt, während in der Regel &ldquo;Bei Schwellwert Alarm erzeugen&rdquo; der Schwellwert vom Gerät oder aus der Datenpunktbibliothek  genommen wird.</p>
+</blockquote>
+
+<p><strong>Parameter</strong></p>
+
+<p>Die Regel verwendet die folgenden Parameter:</p>
+
+<p><img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-explicit-threshold.png" name="Smart Rule Messbereichsüberschreitung" style="width:50%;"/></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Schritt</th>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Name der Regel</td>
+<td align="left">Vorausgefüllt mit dem Namen der Regelvorlage. Kann individuell geändert werden.</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">Bei Schwellwertbereich:</td>
+<td align="left"><strong>Fragment/Series</strong>: Fragment/Series des Messwerts. Der eingehende Messwert muss exakt die gleichen Fragment/Series-Werte haben. Wenn eine Regel im Daten-Explorer erstellt wird, sind diese Felder bereits ausgefüllt. <br> Minimum, Maximum: Wenn sich ein Wert im angegebenen Bereich [minimum; maximum] befindet, wird der konfigurierte Alarm ausgelöst.</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">Alarm erzeugen:</td>
+<td align="left">Typ des auszulösenden Alarms.<br> Schweregrad des auszulösenden Alarms. <br>Alarm-Text.</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">Ziel-Assets oder -geräte</td>
+<td align="left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Fehlerbehebung</strong></p>
+
+<ul>
+<li><p>Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.</p></li>
+
+<li><p>Prüfen Sie, ob sich das Gerät im <a href="/guides/reference/device-management">Wartungsmodus</a> befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.</p></li>
+
+<li><p>Wenn Sie eine Alarmregel erstellt haben (siehe <a href="/guides/benutzerhandbuch/administration#reprio-alarms">Administration &gt; Priorisieren von Alarmen</a>), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.</p></li>
+
+<li><p>Prüfen Sie, ob der Alarm bereits durch die nächste Messung mit Werten im grünen Bereich gelöscht wurde.</p></li>
+</ul>
+
+<blockquote>
+<p><strong>Info:</strong>  Wenn Sie einen Alarm löschen, bestätigen Sie damit, dass der Alarm aufgehoben ist. Ein neuer Alarm wird nur erzeugt, wenn das Gerät den Zustand wechselt und den Schwellwert wieder überschreitet.</p>
+</blockquote>
+
+<h3 id="smart-rule-variablen">Smart Rule-Variablen</h3>
+
+<p>In einigen Regelparametern können Variablen verwendet werden. Wird eine Regel ausgelöst, werden die Variablen durch die entsprechenden Werte ersetzt. Sie können diesen Mechanismus verwenden, um etwa Gerätenamen oder Alarmtexte in mehreren Ausgaben einzufügen (E-Mail, SMS). Sie können jede Information des auslösenden Ereignisses (wie der Alarm) und des Quellgeräts einbinden.</p>
+
+<p>Die folgende Tabelle enthält eine Liste von Beispielvariablen:</p>
+
+<table>
+  <tr>
+    <td>Variable</td>
+    <td>Inhalt</td>
+  </tr>
+  <tr>
+    <td>#{creationTime}</td>
+    <td>Zeitpunkt, an dem der Alarm in der Datenbank erstellt wurde .</td>
+  </tr>
+  <tr>
+    <td>#{type}</td>
+    <td>Alarmtyp.</td>
+  </tr>
+  <tr>
+    <td>#{time}</td>
+    <td>Zeitpunkt des Alarms, der vom Gerät bereitgestellt wird. </td>
+  </tr>
+  <tr>
+    <td>#{text}</td>
+    <td>Beschreibung des Alarms.</td>
+  </tr>
+  <tr>
+    <td>#{source.name}</td>
+    <td>Gerätename.</td>
+  </tr>
+  <tr>
+    <td nowrap>#{source.c8y_Hardware.serialNumber}</td>
+    <td>Seriennummer des Geräts.</td>
+  </tr>
+  <tr>
+    <td>#{source.c8y_Notes}</td>
+    <td>Anmerkungsfeld des Geräts.</td>
+  </tr>
+  <tr>
+    <td>#{status}</td>
+    <td>Status des Alarms: AKTIV, BESTÄTIGT oder GELÖSCHT.</td>
+  </tr>
+  <tr>
+    <td>#{severity}</td>
+    <td>Schweregrad des Alarms: KRITISCH, WICHTIG, WENIGER WICHTIG oder WARNUNG. </td>
+  </tr>
+  <tr>
+    <td>#{count}</td>
+    <td>Anzahl der Alarmbenachrichtigungen für dieses Gerät: Wiederholte Benachrichtigungen für dasselbe Gerät und denselben Alarmtypen werden zu einem Alarm zusammengefasst. </td>
+  </tr>
+  <tr>
+    <td>#{source.c8y_Address.street}</td>
+    <td>Straße des Gerätestandorts.</td>
+  </tr>
+  <tr>
+    <td>#{source.c8y_Address.cityCode}</td>
+    <td>Postleitzahl des Gerätestandorts.</td>
+  </tr>
+  <tr>
+    <td>#{source.c8y_Address.city}</td>
+    <td>Stadt des Gerätestandorts.</td>
+  </tr>
+</table>
+
+<blockquote>
+<p><strong>Info:</strong> Wenn die Variable nicht existiert oder falsch geschrieben wurde, wird der erzeugte Inhalt angezeigt.</p>
+</blockquote>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

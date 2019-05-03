@@ -1,0 +1,2451 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Device Management - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Handbuch</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav0"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/benutzerhandbuch/overview/">Erste Schritte</a>
+     
+      
+      
+      <div id="page-nav0"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/overview/#accessing-cumulocity-platform">Aufrufen und Anmelden an der Cumulocity-Plattform</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/overview/#cumulocity-applications">Cumulocity-Anwendungen</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/overview/#gui-features">Eigenschaften und Funktionen der Benutzeroberfläche</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/overview/#user-settings">Ändern von Benutzereinstellungen</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/benutzerhandbuch/device-management/">Device Management</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#overview">Übersicht</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#connecting-devices">Verbinden von Geräten</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#viewing-devices">Anzeigen von Geräten</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#grouping-devices">Gruppieren von Geräten</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#device-details">Gerätedetails</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#monitoring-and-controlling-devices">Überwachen und Steuern von Geräten</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#managing-device-types">Verwalten von Gerätetypen</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#managing-device-data">Verwalten von Gerätedaten</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#configuration-repository">Konfigurations-Repository</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#simulator">Simulatoren</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#smartrest-templates">Verwenden von SmartREST-Templates</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/benutzerhandbuch/administration/">Administration</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#overview">Übersicht</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#home-screen">Startseite</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#managing-users">Verwalten von Benutzern</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#managing-permissions">Verwalten von Berechtigungen</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#audit-logs">Anzeigen von Audit-Logs</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#managing-applications">Verwalten von Anwendungen</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#business-rules">Anwenden von Geschäftsregeln</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#data-retention">Verwalten der Datenhaltung</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#tfa">Zwei-Faktor-Authentifizierung</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/administration/#changing-settings">Ändern von Einstellungen</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/">Cockpit</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#overview">Übersicht</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#managing-assets">Verwalten von Assets</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#data-explorer">Visualisieren von Daten mit dem Daten-Explorer</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#dashboards">Verwenden von Dashboards</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#widgets">Widgets-Sammlung</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#reports">Verwalten von Berichten und Exportdaten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#data-point-library">Datenpunktbibliothek</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#smart-rules">Smart Rules</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/cockpit/#smart-rules-collection">Smart Rules-Sammlung</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/">Enterprise Edition</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/#managing-tenants">Verwalten von Mandanten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/#user-hierarchies">Verwalten von Benutzerhierarchien</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/#users-in-other-tenants">Support für Benutzer in anderen Mandanten</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/#data-broker">Data Broker</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/#customization">Anpassen der Plattform</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/benutzerhandbuch/enterprise-edition/#storage-quota">Speicherbegrenzung</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/benutzerhandbuch/optional-services/">Optionale Services</a>
+     
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Device Management</h1>
+    </header>
+    
+      <div class="lead">
+        
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="overview" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#overview">
+        <span class="fa fa-link"></span>
+      </button>
+      Übersicht</h2>
+    <p>Die folgenden Abschnitte beschreiben detailliert alle Funktionalitäten der Device Management-Anwendung. Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokuments.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Abschnitt</th>
+<th align="left">Inhalt</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><a href="#device-registration">Verbinden von Geräten</a></td>
+<td align="left">Wie Sie <a href="#device-registration-manually">eines oder mehrere Geräte manuell registrieren</a> und wie Sie <a href="#creds-upload">viele Geräte gleichzeitig registrieren</a>, um diese mit Ihrem Konto zu verbinden.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#viewing-devices">Anzeigen von Geräten</a></td>
+<td align="left">Beschreibt, was in der <a href="#device-list">Geräteliste</a> angezeigt wird und wie Geräte durch <a href="#searching-devices">Suchen nach Geräten</a> oder <a href="#filtering-devices">Filtern von Geräten</a> sortiert werden können.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#grouping-devices">Gruppieren von Geräten</a></td>
+<td align="left">Wie und warum Geräte in Top-Level-Gruppen, untergeordneten Gruppen und <a href="#smart-groups">dynamischen Gruppe</a> angeordnet werden.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#device-details">Gerätedetails</a></td>
+<td align="left">Beschreibt detailliert die verschiedenen Informationen, die für verschiedene Gerätetypen bereitgestellt werden.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#monitoring-and-controlling-devices">Überwachen und Steuern von Geräten</a></td>
+<td align="left">Wie man die <a href="#connection-monitoring">Verbindungsqualität</a> und den <a href="#monitoring-services">Service-Status</a> von Geräten überwacht, wie man mit <a href="#alarm-monitoring">Alarmen</a> von Geräten arbeitet, wie man <a href="#operation-monitoring">Geräte fernsteuert</a> und <a href="#events-all">Fehler behebt</a>.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#managing-device-types">Verwalten von Gerätetypen</a></td>
+<td align="left">Wie man Daten von verschiedenen Gerätetypen mit Hilfe von <a href="#managing-device-types">Geräteprotokollen</a> verarbeitet.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#managing-device-data">Verwalten von Gerätedaten</a></td>
+<td align="left">Wie man <a href="#software-repo">Firmware and Software</a> für Geräte verwaltet sowie <a href="#configuration-repository">Konfigurationssnapshots</a>.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#simulator">Arbeiten mit Simulatoren</a></td>
+<td align="left">Wie man Geräte mit der <a href="#simulator">Simulatorfunktion</a> abbildet, um die Funktionalität von verbundenen Hardware-Geräten zu simulieren.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#smartrest-templates">Verwenden von SmartREST-Templates</a></td>
+<td align="left">Wie man <a href="#smartrest-templates">SmartREST-  Templates</a> verwendet, eine Sammlung von Anfrage- und Antwort-Templates, die zum Konvertieren von CSV-Daten und Cumulocity Rest API-Aufrufen verwendet werden.</td>
+</tr>
+</tbody>
+</table>
+
+  </article>
+  
+  <article id="connecting-devices" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#connecting-devices">
+        <span class="fa fa-link"></span>
+      </button>
+      Verbinden von Geräten</h2>
+    
+
+<p><a name="device-registration"></a></p>
+
+<p>Dieser Abschnitt beschreibt, wie Sie Geräte mit Ihrem Cumulocity-Konto verbinden können, sowohl manuell als auch durch Bulk-Registrierung.</p>
+
+<p>Um Geräte mit Ihrem Cumulocity-Konto zu verbinden, führen Sie folgenden Schritte aus:</p>
+
+<p>Öffnen Sie die Seite <strong>Geräteregistrierung</strong> im Menü <strong>Geräte</strong> im Navigator und klicken Sie <strong>Gerät registrieren</strong>.</p>
+
+<p>Im Dialog <strong>Geräte registrieren</strong> können Sie eine der folgenden Optionen wählen:</p>
+
+<ul>
+<li><strong><a href="#device-registration-manually">Manuelle Geräteregistrierung</a></strong> - um manuell ein Gerät oder mehrere Geräte zu verbinden</li>
+<li><strong><a href="#creds-upload">Bulk-Geräteregistrierung</a></strong> - um in einem Schritt eine große Anzahl von Geräten zu registrieren</li>
+</ul>
+
+<p>Wenn Sie eine entsprechende Anwendung abonniert haben, sehen Sie außerdem die Option <strong>Benutzerdefinierte Geräteregistrierung</strong> zum Registrieren von bestimmten Gerätetypen wie etwa LoRa oder Sigfox. Weitere Informationen finden Sie in der Dokumentation zu diesen optionalen Services.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-register-devices-custom.png" alt="Geräte registrieren" style="max-width: 50%"></p>
+
+<h3 id="a-name-device-registration-manually-a-manuelles-verbinden-eines-geräts"><a name="device-registration-manually"></a>Manuelles Verbinden eines Geräts</h3>
+
+<p>Der folgende Prozess beschreibt das manuelle Verbinden eines Geräts. Je nach Gerätetyp sind möglicherweise nicht alle beschriebenen Schritte relevant.</p>
+
+<p>Um Geräte mit Ihrem Cumulocity-Konto zu verbinden, führen Sie folgende Schritte aus:</p>
+
+<ol>
+<li>Öffnen Sie die Seite <strong>Geräteregistrierung</strong> im Menü <strong>Geräte</strong> und klicken Sie <strong>Gerät registrieren</strong>.</li>
+<li>Wählen Sie im im Dialog <strong>Geräte registrieren</strong> die Option <strong>Manuelle Geräteregistrierung</strong>.<br><br>
+<img src="/guides/images/benutzerhandbuch/devmgmt-device-registration-general.png" alt="Manuelle Geräteregistrierung" style="max-width: 50%"><br><br></li>
+<li>Geben Sie im Feld <strong>Geräte-ID</strong> die eindeutige Kennung des Geräts ein. Diese finden Sie in der Gerätedokumentation. Bei mobilen Geräten handelt es sich dabei meistens um die IMEI (International Mobile Equipment Identity), die häufig auf der Rückseite des Geräts zu finden ist.</li>
+<li>Wählen Sie optional eine Gruppe aus, der Sie das Gerät nach der Registrierung zuweisen möchten. Weiter Informationen zum Zuweisen zu Gruppen finden Sie unter <a href="#grouping-devices">Gruppieren von Geräten</a>.</li>
+<li>Klicken Sie <strong>Weiteres Gerät hinzufügen</strong>, um ein weiteres Gerät zu registrieren. Geben Sie auch hier die Geräte-ID ein und weisen Sie optional das Gerät einer Gruppe zu. Auf diese Weise können Sie mehrere Geräte in einem Schritt registrieren.</li>
+<li>Klicken Sie <strong>Weiter</strong>, um Ihr(e) Gerät(e) zu registrieren.</li>
+</ol>
+
+<p><strong>Info</strong>: In der Enterprise Edition kann der Management-Mandant hier auch einen Untermandanten auswählen, dem das Gerät zugewiesen wird. Beachten Sie jedoch, dass der Management-Mandant Geräte entweder einer Gruppe ODER einem Mandanten zuweisen kann, nicht beides, da der Management-Mandant keinen Zugriff auf die Stammdaten der Untermandanten hat.</p>
+
+<p>Nach erfolgreicher Registrierung werden Geräte mit dem Status <strong>Warten auf Verbindung</strong> auf der Seite <a href="#dev-registration"><strong>Geräteregistrierung</strong></a> angezeigt.</p>
+
+<p>Schalten Sie das Gerät bzw. die Geräte ein und warten Sie, bis die Verbindung hergestellt wird.</p>
+
+<p>Wenn ein Gerät verbunden ist, wechselt der Status auf <strong>Bitte akzeptieren</strong>. Klicken Sie <strong>Akzeptieren</strong>, um die Verbindung zu bestätigen. Der Status des Geräts wechselt auf <strong>Akzeptiert</strong>.</p>
+
+<blockquote>
+<p><strong>Info</strong>: Bei Problemen finden Sie möglicherweise weitere Information</p>
+
+<ul>
+<li>im jeweiligen <a href="/guides/devices">Device Guide</a> für Ihren Gerätetypen,</li>
+<li>im <a href="http://cumulocity.com/dev-center/">Developer Center</a> auf unserer Website</li>
+<li>oder im Handbuch Ihres Geräts.</li>
+</ul>
+</blockquote>
+
+<h3 id="a-name-dev-registration-a-seite-geräteregistrierung"><a name="dev-registration"></a> Seite Geräteregistrierung</h3>
+
+<p>Auf der Seite <strong>Geräteregistrierung</strong> werden alle Geräte angezeigt, die sich aktuell im Registrierungsprozess befinden.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/devmgmt-device-registration.png" alt="Seite Geräteregistrierung" style="max-width: 100%"></p>
+
+<p>Für jedes Gerät werden die folgenden Informationen angezeigt:</p>
+
+<ul>
+<li>Gerätename, der bei der Registrierung vergeben wurde</li>
+<li>Gerätestatus (siehe unten)</li>
+<li>Erstellungsdatum</li>
+<li>Mandant, mit dem das Gerät registriert wurde</li>
+</ul>
+
+<p>Geräte können einen der folgenden Status haben:</p>
+
+<ul>
+<li><strong>Warten auf Verbindung</strong> - Das Gerät ist registriert worden, aber es hat sich noch kein Gerät mit der spezifischen ID verbunden.</li>
+<li><strong>Bitte akzeptieren</strong> - Ein Gerät mit der spezifischen ID versucht zu kommunizieren, aber der Benutzer, der das Gerät registriert hat, muss die Verbindung noch explizit akzeptieren, damit Zugangsdaten zum Gerät gesendet werden.<br /></li>
+<li><strong>Akzeptiert</strong> - Der Benutzer hat bestätigt, dass Zugangsdaten an das Gerät gesendet werden dürfen.</li>
+</ul>
+
+<h3 id="a-name-creds-upload-a-bulk-registrierung-von-geräten"><a name="creds-upload"></a>Bulk-Registrierung von Geräten</h3>
+
+<p>Um eine größere Anzahl von Geräten zu registrieren, bietet Cumulocity die Möglichkeit der Bulk-Registrierung, mit der viele Geräte gleichzeitig in einem Schritt registriert werden können. Das geschieht über das Hochladen einer CSV-Datei.</p>
+
+<ol>
+<li>Öffnen Sie die Seite <strong>Geräteregistrierung</strong> im Menü <strong>Geräte</strong> und wählen Sie <strong>Gerät registrieren</strong>.</li>
+<li>Wählen Sie im Im Dialog <strong>Geräte registrieren</strong> die Option <strong>Bulk-Geräteregistrierung</strong>.<br><br>
+<img src="/guides/images/benutzerhandbuch/devmgmt-bulk-registration.png" alt="Bulk-Registrierung" style="max-width: 50%"><br><br></li>
+<li>Klicken Sie <strong>Datei zum Hochladen auswählen</strong> und wählen Sie die hochzuladende CSV-Datei auf Ihrem Computer aus.</li>
+</ol>
+
+<p>Abhängig vom Format der hochgeladenen CSV-Datei wird eine der beiden folgenden Registrierungsarten ausgeführt:</p>
+
+<p><strong>Einfache Registrierung</strong></p>
+
+<p>Die CSV-Datei enthält zwei Spalten: ID;PATH, wobei ID der Kennung des Geräts entspricht, z. B. der Seriennummer, und PATH eine durch Schrägstrich separierte Liste von Gruppennamen ist (Pfad zu den Gruppen, zu denen das Gerät nach der Registrierung hinzugefügt werden soll).</p>
+
+<pre><code>    ID;PATH
+    Device1;Group A
+    Device2;Group A/Group B
+</code></pre>
+
+<p>Nachdem die Datei hochgeladen wurde, werden alle erforderlichen neuen Gruppen sowie alle neuen Registrierungen mit dem Status <strong>Warten auf Verbindung</strong> erstellt . Anschließend muss der übliche Registrierungsprozess (AKZEPTIEREN) durchlaufen werden (siehe oben).</p>
+
+<p><strong>Vollständige Registrierung</strong></p>
+
+<p>Die CSV-Datei muss mindestens die IDs der Geräte als Kennung sowie die Zugangsdaten zu den Geräten enthalten.</p>
+
+<pre><code>    ID;Credentials;PATH;ICCID;NAME;TYPE
+    006064ce800a;LF2PWJoLG1Fz;Sample_Düsseldorf;+491555555;Sample_Device1;c8y_Device
+    006064ce8077;OowoGKAbiNJs;Sample_Düsseldorf;+491555555;Sample_Device2;c8y_Device
+</code></pre>
+
+<p>Darüberhinaus kann die Datei weitere Spalten, etwa ICCID, NAME, TYPE wie im Beispiel oben, enthalten.</p>
+
+<p>Um die Geräte zu verbinden, müssen diese mit den relevanten Informationen vorregistriert sein. Genauer gesagt muss jedes Gerät folgendermaßen konfiguriert sein:</p>
+
+<ul>
+<li>Benutzername - der Benutzername für das Cumulocity-Konto im Format &lt;tenant&gt;/device_&lt;id&gt;, wobei &lt;tenant&gt; sich auf den Mandanten bezieht, von welchem die CSV-Datei importiert wird und &lt;id&gt; sich auf den entsprechenden Wert in der CSV-Datei bezieht.</li>
+<li>Passwort - das Passwort für den Zugang zu Cumulocity, entspricht dem Wert &ldquo;Credentials&rdquo; in der CSV-Datei.</li>
+<li>Gerätedaten - Felder TYPE, NAME, ICCID, IDTYPE, PATH, SHELL in der CSV-Datei.
+<br /></li>
+</ul>
+
+<p>Nachdem die Daten importiert wurden, erhalten Sie Informationen zu der Anzahl der Geräte, die vorregistriert wurden, sowie zu möglichen aufgetretenen Fehlern.</p>
+
+<p>Für beide CSV-Dateiformate werden entsprechende Vorlagen zum Herunterladen bereitgestellt, aus denen Sie die Struktur ersehen oder kopieren können.</p>
+
+<p>Weitere Informationen zum Dateiformat und möglichen CSV-Varianten finden Sie unter <a href="/guides/reference/device-credentials/#creds-upload">Bulk device credentials</a> im Reference Guide.</p>
+
+<p><strong>Info</strong>: Wenn Sie mit der Enterprise Edition von Cumulocity arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte &ldquo;Mandant&rdquo; hinzufügen und die CSV-Datei vom Management-Mandanten aus importieren.</p>
+
+  </article>
+  
+  <article id="viewing-devices" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#viewing-devices">
+        <span class="fa fa-link"></span>
+      </button>
+      Anzeigen von Geräten</h2>
+    
+
+<p>Klicken Sie <strong>Alle Geräte</strong> im Menü <strong>Geräte</strong> im Navigator, um alle mit Ihrem Konto verbundenen Geräte anzuzeigen.</p>
+
+<p>Eine detaillierte Geräteliste wird angezeigt.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-devices-list.png" alt="Geräteliste" style="max-width: 100%"></p>
+
+<h3 id="a-name-device-list-a-geräteliste"><a name="device-list"></a>Geräteliste</h3>
+
+<p>Die Liste enthält eine Zeile für jedes Gerät mit den folgenden Informationen, dargestellt in Spalten:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Spalte</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Status</td>
+<td align="left">Symbol für den Verbindungsstatus. Weitere Informationen finden Sie unter <a href="#connection-monitoring">Überwachen von Verbindungen</a> in &ldquo;Überwachen und Steuern von Geräten&rdquo;.</td>
+</tr>
+
+<tr>
+<td align="left">Name</td>
+<td align="left">Eindeutiger Name für das Gerät.</td>
+</tr>
+
+<tr>
+<td align="left">Modell</td>
+<td align="left">Modelltyp des Geräts. Wird nicht immer angezeigt; abhängig von der Browser-Breite.</td>
+</tr>
+
+<tr>
+<td align="left">Seriennummer</td>
+<td align="left">Seriennummer des Geräts. Wird nicht immer angezeigt; abhängig von der Browser-Breite.</td>
+</tr>
+
+<tr>
+<td align="left">Gruppe</td>
+<td align="left">Gruppe, der das Gerät gegebenenfalls zugeordnet ist.</td>
+</tr>
+
+<tr>
+<td align="left">Registrierungsdatum</td>
+<td align="left">Datum, an dem das Gerät in Ihrem Konto registriert wurde.</td>
+</tr>
+
+<tr>
+<td align="left">System ID</td>
+<td align="left">System-ID des Geräts.</td>
+</tr>
+
+<tr>
+<td align="left">IMEI</td>
+<td align="left">IMEI des Geräts.</td>
+</tr>
+
+<tr>
+<td align="left">Alarme</td>
+<td align="left">Der Alarmstatus des Geräts. Zeigt Anzahl und Typ der zur Zeit für dieses Gerät aktiven Alarme an. Weitere Informationen zu Alarmen finden Sie unter <a href="#alarm-monitoring">Arbeiten mit Alarmen</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Die Geräteliste zeigt bis zu 100 Einträge an. Wenn die Geräteliste mehr als 100 Geräte enthält, klicken Sie <strong>Mehr laden</strong> am Ende der Liste, um weitere Einträge anzuzeigen.</p>
+
+<p>Wenn Sie den Mauszeiger über einen Eintrag in der Liste bewegen, erscheint auf der rechten Seite der Zeile die Schaltfläche <strong>Löschen</strong>. Klicken Sie diese, um ein Gerät endgültig zu löschen.</p>
+
+<p><strong>Wichtig:</strong> Wenn Sie ein Gerät löschen, wird dieses aus der Cumulocity-Datenbank gelöscht, einschließlich aller erzeugter Daten. Alternativ können Sie alle nicht mehr benötigten Geräte in einer Gruppe zusammenfassen (siehe <a href="#grouping-devices">Gruppieren von Geräten</a>). So stellen Sie sicher, dass alle Berichte korrekt erhalten bleiben. Damit für stillgelegten Geräte keine Alarme mehr ausgelöst werden, deaktivieren Sie die <a href="#connection-monitoring">Verbindungsüberwachung</a> für das entsprechende Gerät. Löschen Sie ein Gerät, werden dadurch nicht die Daten der Kindgeräte gelöscht.</p>
+
+<h3 id="a-name-searching-devices-a-suchen-nach-geräten"><a name="searching-devices"></a>Suchen nach Geräten</h3>
+
+<p>Cumulocity umfasst eine Volltextsuche nach Geräten.</p>
+
+<p>Klicken Sie auf das Lupensymbol rechts oben und geben Sie einen Suchbegriff in das Textfeld ein. Cumulocity gibt alle Geräte zurück, die diesen Begriff in einem Attribut enthalten (Name, Modell, Fragmente &hellip;).</p>
+
+<p>Unser Beispiel zeigt eine Suche nach &ldquo;Ublox C027&rdquo;.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-devices-search.png" alt="Gerätesuche" style="max-width: 100%"></p>
+
+<p><strong>Info</strong>: Im Gegensatz zur Filterfunktion, ist die Verwendung von Platzhaltern in einer Suche nicht möglich.</p>
+
+<p>Weitere Informationen zur Suchfunktionalität finden Sie unter <a href="/guides/users-guide/overview#gui-features">Erste Schritte &gt; Eigenschaften und Funktionen der Benutzeroberfläche</a>.</p>
+
+<h3 id="a-name-filtering-devices-a-filtern-von-geräten"><a name="filtering-devices"></a>Filtern von Geräten</h3>
+
+<p>Die Geräteliste bietet eine Filterfunktion, um Geräte in der Liste nach bestimmten Kriterien zu Filtern.</p>
+
+<p>Die Filterfunktion steht für jede Spalte zur Verfügung. Klicken Sie auf das Filtersymbol neben dem Namen der Spalte, nach der Sie filtern möchten.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_Filtering.png" alt="Filtering" style="max-width: 100%"></p>
+
+<p>Im folgenden Fenster können Sie entsprechende Filterkriterien setzen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-device-filter-options.png" alt="Filteroptionen" style="max-width: 50%"></p>
+
+<p>Die meisten Spalten enthalten Text. Hier können Sie filtern, indem Sie einen beliebigen Text in das Textfeld eingeben wie im Suchfeld. Klicken Sie <strong>+ Oder</strong> ,um ein weiteres Textfeld hinzuzufügen, falls Sie nach mehr als einem Begriff filtern möchten.</p>
+
+<p>Weitere Informationen finden Sie auch unter <a href="/guides/users-guide/overview#gui-features">Erste Schritte &gt; Eigenschaften und Funktionen der Benutzeroberfläche</a>.</p>
+
+<p>Abgesehen vom Filtern nach Text gibt es folgende weitere Optionen:</p>
+
+<ul>
+<li>Bei Datumsfeldern (z. B. <strong>Registrierungsdatum</strong>) geben Sie ein Zeitintervall als Filter ein.<br /></li>
+<li>In der Spalte <strong>Status</strong> können Sie nach verschiedenen Kriterien filtern, die jeweils den Sende-, Push- oder Wartungsstatus des Geräts repräsentieren.</li>
+<li>In der Spalte <strong>Alarm</strong> entsprechen die Filterkriterien den Alarmtypen  (kritisch, wichtig, weniger wichtig, Warnung, keine Alarme).</li>
+</ul>
+
+<p>Klicken Sie <strong>Aufsteigend</strong> oder <strong>Absteigend</strong> unten im Fenster <strong>Filteroptionen</strong>, wenn Sie die Geräte in einer bestimmten Reihenfolge sortieren möchten. Klicken Sie <strong>Anwenden</strong>, um die Filterbedingungen anzuwenden.</p>
+
+<p>Die Geräteliste zeigt nun nur noch die Geräte an, auf die die Filterbedingungen zutreffen.</p>
+
+<p>Klicken Sie <strong>Filter zurücksetzen</strong> in der oberen Menüleiste, wenn Sie alle Filter zurücksetzen und wieder alle Geräte anzeigen möchten.</p>
+
+<blockquote>
+<p><strong>Info</strong>: Wenn Sie die Liste anhand eines Textfelds, z.B. <strong>Gerätename</strong>, in aufsteigender oder absteigender Reihenfolge sortieren lassen, beachten Sie, dass die daraus resultierende alphabetische Sortierung auf ASCII/UTF basiert: A &lt; B &lt; &hellip; &lt; Z &lt; &hellip; &lt; a &lt; b &hellip; &lt; z. Namen, die mit Kleinbuchstaben beginnen, werden unter allen Namen mit Großbuchstaben aufgelistet bzw. umgekehrt.</p>
+</blockquote>
+
+  </article>
+  
+  <article id="grouping-devices" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#grouping-devices">
+        <span class="fa fa-link"></span>
+      </button>
+      Gruppieren von Geräten</h2>
+    
+
+<p>Sie können Geräte beliebig nach Ihren Bedürfnissen gruppieren. Ein Gerät kann sich in mehreren Gruppen befinden und Gruppen selbst können wiederum Teil von mehreren anderen Gruppen sein.</p>
+
+<p>Cumulocity unterscheidet zwischen Top-Level-Gruppen und untergeordneten Gruppen.</p>
+
+<h3 id="anzeigen-von-gruppen">Anzeigen von Gruppen</h3>
+
+<p>Um eine Liste aller Gruppe in Ihrem Konto anzuzeigen, klicken Sie <strong>Gruppen</strong> im Navigator.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-groups.png" alt="Gruppen" style="max-width: 100%"></p>
+
+<p>Für jede Gruppe wir der Name und die Anzahl der Kindern angezeigt.</p>
+
+<p>Klicken Sie auf eine Gruppe, um Details dieser Gruppe anzuzeigen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-group-details.png" alt="Gruppendetails" style="max-width: 100%"></p>
+
+<p><strong>Registerkarte Info</strong></p>
+
+<p>In der Registerkarte <strong>Info</strong> werden folgende Informationen angezeigt:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Karte</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Anmerkungen</td>
+<td align="left">Optionale Anmerkungen, die beispielsweise über aktuelle Aktivitäten informieren. Diese können üblicherweise nur von einem Administrator editiert werden. Um Anmerkungen hinzuzufügen oder zu editieren, klicken Sie <strong>Bearbeiten</strong>, geben Sie Ihre Änderungen im Textfeld ein und speichern Sie Ihre Eingaben, indem Sie auf das grüne Häkchen rechts vom Textfeld klicken.</td>
+</tr>
+
+<tr>
+<td align="left">Gruppendaten</td>
+<td align="left">Editierbare Informationen zur Gruppe (Name, Beschreibung).</td>
+</tr>
+
+<tr>
+<td align="left">Aktive kritische Alarme</td>
+<td align="left">Aktive kritische Alarme für die Geräte in der Gruppe.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Kind-Assets</strong></p>
+
+<p>In der Registerkarte <strong>Kind-Assets</strong> werden alle Geräte angezeigt, die der Gruppe zugewiesen wurden. Für jedes Kind-Asset wird der Name und im Fall einer Gruppe die Anzahl der Kinder angezeigt.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-child-assets.png" alt="Kind-Assets" style="max-width: 100%"></p>
+
+<p>Um eine Gerät einer Gruppe zuzuweisen, klicken Sie <strong>Geräte zuweisen</strong> rechts in der oberen Menüleiste (siehe <a href="#assigning-devices">Zuweisen eines Geräts zu einer bestehenden Gruppe</a>).</p>
+
+<p>Um eine Zuweisung aufzuheben, öffnen Sie in dem entsprechenden Eintrag das Kontextmenü über das Menüsymbol und wählen Sie <strong>Zuordnung aufheben</strong>.</p>
+
+<p><strong>Stapelkommandos</strong></p>
+
+<p>In der Registerkarte <strong>Stapelkommandos</strong> können Stapelkommandos, die für die Gruppe erstellt wurden, verwaltet werden. Mit Stapelkommandos können Sie in einem Schritt Kommandos für jedes Gerät in der Gruppe ausführen. Weitere Informationen finden Sie unter <a href="#bulk-operations">Stapelkommandos</a> in &ldquo;Überwachen und Steuern von Geräten&rdquo;.</p>
+
+<h3 id="erstellen-einer-neuen-gruppe">Erstellen einer neuen Gruppe</h3>
+
+<p>Um eine neue Gruppe zu erstellen, führen Sie folgende Schritte aus:</p>
+
+<ol>
+<li>Klicken Sie die <strong>Plus</strong>-Schaltfläche rechts in der oberen Leiste und wählen Sie im Kontextmenü <strong>Neue Gruppe</strong>.</li>
+<li>Geben Sie im folgenden Fenster einen eindeutigen Namen für die Gruppe an.<br /></li>
+<li>Im Suchfeld können Sie Suchkriterien für die Geräte eingeben, die Sie zu der Gruppe hinzufügen möchten (z.B. &ldquo;ublox&rdquo;). Es wird eine Liste der passenden Geräte angezeigt.</li>
+<li>Wählen Sie durch Aktivieren des jeweiligen Kontrollkästchens die Geräte aus, die Sie zur Gruppe hinzufügen möchten.</li>
+<li>Klicken Sie <strong>Gruppe mit X Gerät(en) erstellen</strong>, um die neue Gruppe zu erstellen.</li>
+</ol>
+
+<blockquote>
+<p><strong>Info:</strong> Eine Gruppe kann auch mit &ldquo;0&rdquo; Geräten erstellt werden.</p>
+</blockquote>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-new-group.png" alt="Gruppe erstellen" style="max-width: 50%"></p>
+
+<h3 id="a-name-assigning-devices-a-zuweisen-eines-geräts-zu-einer-bestehenden-gruppe"><a name="assigning-devices"></a>Zuweisen eines Geräts zu einer bestehenden Gruppe</h3>
+
+<p>Geräte können auf zwei Arten zu einer bestehenden Gruppe hinzugefügt werden.</p>
+
+<p>Aus der Geräteperspektive:</p>
+
+<ol>
+<li>Wählen Sie ein Gerät aus der Geräteliste und öffnen Sie es.</li>
+<li>Scrollen Sie in der Registerkarte <strong>Info</strong> zur Karte <strong>Gruppenzuordnung</strong>. Wählen Sie im Auswahlfeld die Gruppe aus, der Sie das Gerät zuweisen möchten.</li>
+<li>Klicken Sie <strong>Zuweisen</strong>.</li>
+</ol>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-assign-device.png" alt=" Gruppe zuweisen" style="max-width: 50%"></p>
+
+<p>Aus der Gruppenperspektive:</p>
+
+<ol>
+<li>Wählen Sie im Navigator eine Gruppe aus dem Menü <strong>Gruppe</strong> und wechseln Sie zur Registerkarte <strong>Kind-Assets</strong>. Alle Geräte, die dieser Gruppe zugeordnet sind, werden angezeigt.<br /></li>
+<li>Klicken Sie <strong>Geräte zuweisen</strong> rechts in der oberen Menüleiste. Im folgenden Fenster können Sie Suchkriterien für die Geräte eingeben, die Sie zu der Gruppe hinzufügen möchten (z.B. &ldquo;ublox&rdquo;). Es wird eine Liste der passenden Geräte angezeigt.</li>
+<li>Wählen Sie durch Aktivieren des jeweiligen Kontrollkästchens die Geräte aus, die Sie zur Gruppe hinzufügen möchten.</li>
+<li>Klicken Sie <strong>Gruppe mit X Gerät(en) erstellen</strong>, um die Geräte zur Gruppe hinzuzufügen.</li>
+</ol>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-assign-devices-from-group.png" alt=" Geräte zuweisen" style="max-width: 50%"></p>
+
+<h3 id="erstellen-einen-untergeordneten-gruppe">Erstellen einen untergeordneten Gruppe</h3>
+
+<ol>
+<li>Wählen Sie im Navigator eine Gruppe aus.</li>
+<li>Klicken Sie <strong>Gruppe hinzufügen</strong> rechts in der oberen Menüleiste.</li>
+<li>Geben Sie im folgenden Fenster einen Namen für die untergeordnete Gruppe an und klicken Sie <strong>Gruppe hinzufügen</strong>.</li>
+</ol>
+
+<h3 id="bearbeiten-einer-gruppe">Bearbeiten einer Gruppe</h3>
+
+<ol>
+<li>Klicken Sie im Menü <strong>Gruppe</strong> im Navigator auf eine Gruppe, um diese zu öffnen.</li>
+<li>Klicken Sie <strong>Bearbeiten</strong> in der Registerkarte <strong>Info</strong>. Sie können den Namen der Gruppe bearbeiten sowie Benutzerberechtigungen für die Gruppe zuweisen. Weitere Informationen zu den Berechtigungen finden Sie unter Administration &gt; <a href="/guides/benutzerhandbuch/administration#managing-permissions">Verwalten von Berechtigungen</a>.</li>
+</ol>
+
+<h3 id="a-name-smart-groups-a-verwenden-von-dynamischen-gruppen"><a name="smart-groups"></a>Verwenden von dynamischen Gruppen</h3>
+
+<p>Dynamische Gruppen werden basierend auf Filterkriterien erstellt. Sie sind insofern temporär, als die Gruppenelemente sich ständig ändern können. Dynamische Gruppen haben keine feststehenden Elemente, sondern feststehende Kriterien. Dieser Gruppentyp kann beispielsweise eingesetzt werden, um Bulk-Upgrades von Geräten eines bestimmten Typs auf eine neue Software- oder Firmware-Version durchzuführen.</p>
+
+<p>Dynamische Gruppen werden in der Geräteliste erstellt.</p>
+
+<ol>
+<li>Klicken Sie <strong>Alle Geräte</strong> im Navigator, um die Geräteliste anzuzeigen.</li>
+<li>Filtern Sie die Geräte in der Liste nach den gewünschten Kriterien. Nähere Information zum Filtern finden Sie unter <a href="#filtering-devices">Filtern von Geräten</a>.</li>
+<li>Klicken Sie <strong>Dynamische Gruppe erstellen</strong> rechts in der oberen Menüleiste.</li>
+<li>Geben Sie einen Namen für die Gruppe ein und klicken Sie <strong>Erstellen</strong>.</li>
+</ol>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-smartgroup-create.png" alt="Dynamische Gruppe erstellen" style="max-width: 50%"></p>
+
+<p>Die neue Gruppe erscheint als Top-Level-Gruppe im Menü <strong>Gruppe</strong> im Navigator. Dynamische Gruppen werden durch ein kleines Zahnrad im Ordnersymbol gekennzeichnet.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_SmartgroupIcon.png" alt="Smart groups" style="max-width: 100%"></p>
+
+<p>In der Registerkarte <strong>Kind-Assets</strong> können Sie Ihre Auswahl anpassen und die Filtereinstellungen ändern.</p>
+
+<p>Um eine dynamische Gruppe zu löschen, klicken Sie <strong>Gruppen</strong> im Navigator, klicken Sie in der Gruppenliste das Menüsymbol des entsprechenden Eintrags und klicken Sie <strong>Löschen</strong> im Kontextmenü.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-smartgroup-delete.png" alt="Dynamische Gruppe löschen" style="max-width: 100%"></p>
+
+<p><strong>Wichtig</strong>: Das Löschen einer dynamischen Gruppe ist irreversibel.</p>
+
+<blockquote>
+<p><strong>Info</strong>: In der Cockpit-Anwendung werden dynamische Gruppen nicht angezeigt.</p>
+</blockquote>
+
+  </article>
+  
+  <article id="device-details" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#device-details">
+        <span class="fa fa-link"></span>
+      </button>
+      Gerätedetails</h2>
+    
+
+<p><a name="device-details"></a></p>
+
+<p>Zu jedem Gerät werden im Device Management detaillierte Informationen angezeigt. Welche Informationen jeweils angezeigt werden, ist abhängig vom Gerätetypen, der Gerätenutzung und der Konfiguration der Plattform.</p>
+
+<p>Klicken Sie auf ein Gerät in der Geräteliste, um die Gerätedetails anzuzeigen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-device-details.png" alt="Device details" style="max-width: 100%"></p>
+
+<p>Die Gerätedetails sind in verschiedene Registerkarten aufgeteilt. Die Anzahl der Registerkarten ist dynamisch und abhängig von den jeweils verfügbaren Informationen, d.h. Registerkarten werden nur angezeigt, wenn entsprechende Informationen für das jeweilige Gerät vorhanden sind.</p>
+
+<p>Eingangs wird die Registerkarte <strong>Info</strong> angezeigt, die allgemeine Informationen zu einem Gerät enthält und bei allen Geräte vorhanden ist.</p>
+
+<p>Jedes Gerät enthält mindestens die folgenden Registerkarten: Info, Alarme, Steuerung, Ereignisse, Serviceüberwachung, Identifikator (siehe auch die folgende Liste der Registerkarten).</p>
+
+<p>Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in den folgenden Abschnitten detailliert beschrieben:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Registerkarte</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><a href="#info">Info</a></td>
+<td align="left">Enthält allgemeine Informationen zum Gerät. Für jedes Gerät vorhanden.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#child-devices">Kindgeräte</a></td>
+<td align="left">Listet die Geräte auf, die mit dem aktuellen Gerät verbunden sind.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#measurements">Messwerte</a></td>
+<td align="left">Zeigt eine Standardvisualisierung der vom Gerät bereitgestellten numerischen Daten in Form von Diagrammen.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#alarms">Alarme</a></td>
+<td align="left">Enthält Informationen zu den Alarmen des Geräts. Siehe auch <a href="#alarm-monitoring">Arbeiten mit Alarmen</a>. Für jedes Gerät vorhanden.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#config">Konfiguration</a></td>
+<td align="left">Ermöglicht die manuelle Konfiguration von Geräteparametern und Einstellungen als Eingaben in einem Textformat. Siehe auch <a href="#configuration-repository">Konfigurations-Repository</a> für Informationen zu binärer Konfiguration.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#control">Steuerung</a></td>
+<td align="left">Zeigt Kommandos an, die zum Gerät gesendet werden. Siehe auch <a href="#operation-monitoring">Verwenden von Kommandos</a>. Für jedes Gerät vorhanden.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#network">Netzwerk</a></td>
+<td align="left">Zeigt Netzwerkinformationen für das Gerät an.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#software">Software</a></td>
+<td align="left">Verwaltet die Firmware des Geräts und die Software, die auf dem Gerät installiert ist.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#events">Ereignisse</a></td>
+<td align="left">Zeigt die mit dem Gerät verbundenen Ereignisse, hilfreich für die Fehlersuche. Siehe auch <a href="#events-all">Fehlerbehebung von Geräten</a>. Für jedes Gerät vorhanden.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#location">Standort</a></td>
+<td align="left">Zeigt den Standort eines Geräts an, falls verfügbar.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#logs">Logdateien</a></td>
+<td align="left">Ermöglicht das Abfragen von Loginformationen für das Gerät.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#service-monitoring">Serviceüberwachung</a></td>
+<td align="left">Ermöglicht die Serviceüberwachung von Maschinen. Siehe auch <a href="#monitoring-services">Serviceüberwachung</a>. Für jedes Gerät vorhanden.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#shell">Shell</a></td>
+<td align="left">Ermöglicht es, über eine Kommandozeile mit entfernten Geräten zu interagieren.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#tracking">Tracking</a></td>
+<td align="left">Zeigt die Bewegungen des Geräts, falls verfügbar.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#identity">Identifikator</a></td>
+<td align="left">Zeigt die für das Gerät gespeicherten Identifikatoren. Für jedes Gerät vorhanden.</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p><strong>Info</strong>: Mögliche weitere spezielle Registerkarten, die nicht hier aufgeführt sind, werden in dem entsprechenden Kontext an anderer Stelle in der Cumulocity-Dokumentation beschrieben. Die Registerkarte <strong>Modbus</strong> beispielsweise ist in der Modbus-Beschreibung unter <a href="/guides/users-guide/optional-services/#cloud-fieldbus">Optionale Services &gt; Cloud Fieldbus</a> zu finden.</p>
+</blockquote>
+
+<p>Ist das Gerät Teil einer Asset-Hierarchie (wie einer Gruppe), wird unter dem Gerätenamen eine Liste von Breadcrumbs angezeigt, um einfach in der Hierarchie navigieren zu können. Da Geräte zu mehreren Hierarchien gehören können, werden möglicherweise mehrere Breadcrumb-Zeilen angezeigt.</p>
+
+<p>Abhängig vom Gerätetypen und seiner Nutzung sind weitere Aktionen möglich, die in einem Kontextmenü angezeigt werden, wenn Sie <strong>Mehr&hellip;</strong> rechts in der oberen Menüleiste klicken.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-devices-more-menu.png" alt="More menu" style="max-width: 50%"></p>
+
+<p>Details zu den einzelnen Menüpunkten sind dort beschrieben, wo diese relevant sind.</p>
+
+<h3 id="a-name-info-a-info"><a name="info"></a>Info</h3>
+
+<p>Die Registerkarte <strong>Info</strong> fasst die Geräteinformationen in einem Dashboard zusammen, die aus Managementsicht relevant sind.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-device-info.png" alt="Info dashboard" style="max-width: 100%"></p>
+
+<p>Die Information wird auf den folgenden Karten bereitgstellt:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Karte</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Anmerkungen</td>
+<td align="left">Enthält optionale Anmerkungen, die über aktuelle Aktivitäten informieren. Anmerkungen können normalerweise nur vom Administrator bearbeitet werden. Um eine Anmerkungen hinzuzufügen oder zu bearbeiten, klicken Sie <strong>Bearbeiten</strong>, geben Sie eine neue Anmerkung oder Änderungen im Textfeld ein und bestätigen Sie Ihre Eingaben, indem Sie das grüne Häkchen rechts vom Textfeld klicken.</td>
+</tr>
+
+<tr>
+<td align="left">Gerätestatus</td>
+<td align="left">Enthält verbindungsrelevante Informationen, die im Detail unter <a href="#connection-monitoring">Verbindungsüberwachung</a> beschrieben sind.</td>
+</tr>
+
+<tr>
+<td align="left">Gerät und Kommunikation</td>
+<td align="left">Enthält einen Datenpunktgraphen, der Echtzeitdaten von bestimmten Messwerten anzeigt. Detaillierte Informationen finden Sie unter <a href="/guides/benutzerhandbuch/cockpit#data-explorer">Verwenden des Datenexplorers</a> in der Cockpit-Dokumentation.</td>
+</tr>
+
+<tr>
+<td align="left">Gerätedaten</td>
+<td align="left">Enthält editierbare Informationen zum Gerät ( Name, Typ, ID, Besitzer, zuletzt aktualisiert). Die Felder <strong>ID</strong> und <strong>Zuletzt aktualisiert</strong> können nicht bearbeitet werden. Außerdem werden hier Informationen zur Hardware (editierbar) und Firmware (nicht editierbar) angezeigt, falls verfügbar.</td>
+</tr>
+
+<tr>
+<td align="left">Aktive kritische Alarme</td>
+<td align="left">Zeigt die aktiven kritischen Alarme für das Gerät an.</td>
+</tr>
+
+<tr>
+<td align="left">Gruppenzuordnung</td>
+<td align="left">Zeigt die Gruppen an, zu denen das Gerät gehört. Außerdem kann das Gerät hier weiteren Gruppen zugeordnet werden oder eine Zuordnung aufgehoben werden. Detaillierte Informationen zum Gruppieren von Geräten finden Sie unter <a href="#grouping-devices">Gruppieren von Geräten</a>.</td>
+</tr>
+
+<tr>
+<td align="left">Standort</td>
+<td align="left">Zeigt den Standort eines Geräts auf einer Karte an, wie vom Gerät gesendet oder manuell eingetragen. Sie auch <a href="#location">Standort</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="a-name-child-devices-a-kindgeräte"><a name="child-devices"></a>Kindgeräte</h3>
+
+<p>Die Registerkarte <strong>Kindgeräte</strong> zeigt eine Liste von Geräten, die mit dem aktuellen Gerät verbunden sind. Wenn es sich bei dem aktuellen Gerät beispielsweise um ein Gateway handelt, werden alle Maschinen, die mit dem Gateway verbunden sind, aufgelistet.</p>
+
+<p>Weitere Informationen zu den angezeigten Details finden Sie unter <a href="#viewing-devices">Anzeigen von Geräten</a>.</p>
+
+<h3 id="a-name-measurements-a-messwerte"><a name="measurements"></a>Messwerte</h3>
+
+<p>Die Registerkarte <strong>Messwerte</strong> zeigt eine Standardvisualisierung der vom Gerät bereitgestellten numerischen Daten in Form von Diagrammen.</p>
+
+<p>Die Diagramme sind in Messwert-Typen aufgeteilt, die jeweils mehrere Graphen und &ldquo;Series&rdquo; enthalten können. Die Abbildung unten zeigt beispielsweise ein Diagramm mit Bewegungsmesswerten, einschließlich Graphen für Beschleunigung in drei Dimensionen sowie ein Diagramm mit Modemstatistiken im Form von Signalstärken und Bit-Fehlerraten.</p>
+
+<p><img src="/guides/images/users-guide/measurements.png" alt="Measurements" /></p>
+
+<p>Wenn ein Diagramm Graphen mit verschiedenen Einheiten enthält, wir pro Einheit eine Y-Achse dargestellt. In der Beispielabbildung bestehen die Bewegungsmesswerte aus drei Parametern mit der Einheit &ldquo;Meter je Sekundequadrat&rdquo;, daher wird nur eine Achse dargestellt. Die Modemstatistiken bestehen aus einer Signalstärke in Dezibel Milliwatt und der Bit-Fehlerrate in Prozent, daher wird eine Achse pro Graph dargestellt.</p>
+
+<p>Bewegen Sie den Mauszeiger über den Graphen, um detaillierte Informationen zu den Messwerten anzuzeigen. Neben dem Mauszeiger wird ein Tooltip mit Details zum jeweiligen Messwert angezeigt (der Tooltip rastet bei dem am nächste liegenden Messwert ein).</p>
+
+<p><strong>Zeitintervall und Aggregation</strong></p>
+
+<p>Standardmäßig zeigen Diagramme die Ausgangsdaten der letzte Stunde. Um das Zeitintervall der X-Achse zu ändern, öffnen Sie das entsprechende Auswahlmenü rechts oben und wählen Sie ein anderes Zeitintervall.</p>
+
+<p>Wenn Sie das Zeitintervall vergrößern, wechselt der Wert im Feld <strong>Aggregation</strong> automatisch auf &ldquo;stündlich&rdquo; oder &ldquo;täglich&rdquo;. Das Diagramm zeigt nun Bereiche anstelle von einzelnen Datenpunkten. Für &ldquo;stündlich&rdquo; zeigt das Diagramm den Bereich des minimalen und maximalen Werts gemessen in der letzten Stunde. Für &ldquo;täglich&rdquo; zeigt das Diagramm den Bereich des minimalen und maximalen Werts gemessen über einen Tag. Entsprechend zeigen die Tooltips nun Wertebereiche anstelle von Einzelwerten.</p>
+
+<p>Dies ermöglicht einen effizienten Überblick über größere Zeitintervalle. Es werden maximal 5.000 Datenpunkte pro Graph angezeigt, um eine Überlastung Ihres Desktop-Browsers zu vermeiden. Wenn Sie einen genaueren Fokus wählen, der mehr als 5.000 Datenpunkte ergibt, wird eine entsprechende Warnung angezeigt: &ldquo;Abgeschnittene Daten. Ändern Sie die Aggregation oder wählen sie einen kürzeren Zeitraum.&rdquo;</p>
+
+<p>Klicken Sie <strong>Echtzeit</strong>, um Echtzeitaktualisierungen der Graphen zu erhalten, sobald neue Daten von den Geräten empfangen werden.</p>
+
+<p>Sie können die graphische Darstellung und Achsenbegrenzung durch sogenannte &ldquo;KPIs&rdquo; modifizieren, siehe <a href="/guides/benutzerhandbuch/administration">Administration</a>.</p>
+
+<p><strong>Messwerteformate</strong></p>
+
+<p>Um Messwertgraphen anzuzeigen, muss das Gerät Messwerte in einem bestimmten Fragmentformat senden.</p>
+
+<p>&ldquo;fragment<span>&#95;</span>name&rdquo; : {
+    &ldquo;serie<span>&#95;</span>name&rdquo; : {
+        &ldquo;value&rdquo; : &hellip;
+        &ldquo;unit&rdquo; : &hellip;
+    }
+}</p>
+
+<p>Beispiel:</p>
+
+<p>&ldquo;c8y_SpeedMeasurement&rdquo;: {
+      &ldquo;Speed&rdquo;: { &ldquo;value&rdquo;: 1234, &ldquo;unit&rdquo;: &ldquo;km/h&rdquo; }
+}</p>
+
+<p>&ldquo;fragment<span>&#95;</span>name&rdquo; and &ldquo;serie<span>&#95;</span>name&rdquo; können durch verschiedene gültige JSON-Property-Namen ersetzt werden, aber es sind keine Leerzeichen oder Sonderzeichen wie [ ],* zulässig. Die Struktur muss genau wie oben ein JSON-Objekt mit zwei Ebenen sein.</p>
+
+<h3 id="a-name-alarms-a-alarme"><a name="alarms"></a>Alarme</h3>
+
+<p>Die Registerkarte <strong>Alarme</strong> enthält Informationen zu den Alarmen für ein Gerät. Weitere Informationen finden Sie unter <a href="#alarm-monitoring">Arbeiten mit Alarmen</a>.</p>
+
+<h3 id="a-name-config-a-konfiguration"><a name="config"></a> Konfiguration</h3>
+
+<p>Die Registerkarte <strong>Konfiguratio</strong>n ermöglicht das manuelle Konfigurieren der Parameter und Grundeinstellungen Ihres Geräts in einem Textformat.</p>
+
+<p>im Textfeld können Sie die gewünschten Einstellungen im Textformat eingeben. Klicken Sie <strong>Speichern</strong>, um Ihre Einstellungen zu speichern.</p>
+
+<p><img src="/guides/images/users-guide/textconfig.png" alt="Device details" style="max-width: 100%"></p>
+
+<p>Alternativ können Sie sogenannte Konfigurationssnapshots verwenden, siehe <a href="#configuration-repository">Konfigurationssnapshots</a>.</p>
+
+<h3 id="a-name-control-a-steuerung"><a name="control"></a>Steuerung</h3>
+
+<p>Die Registerkarte <strong>Steuerung</strong> enthält eine Liste der and das Gerät gesendeten Kommandos. Weitere Informationen zu Kommandos finden Sie unter <a href="#operation-monitoring">Verwenden von Kommandos</a>.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-device-operations.png" alt="Kommandos" style="max-width: 100%"></p>
+
+<h3 id="a-name-network-a-netzwerk"><a name="network"></a>Netzwerk</h3>
+
+<p>In der Registerkarte <strong>Netzwerk</strong> können Netzwerkeinstellungen für das Gerät konfiguriert werden.</p>
+
+<!-- Needs to be documented-->
+
+<h3 id="a-name-software-a-software"><a name="software"></a>Software</h3>
+
+<p>Die Registerkarte <strong>Software</strong> ermöglicht es, die Firmware eines Geräts sowie die auf dem Gerät installierte Software zu verwalten und zu aktualisieren.</p>
+
+<p>Um eine neue Firmware zu installieren, klicken Sie <strong>Firmware installieren</strong>, wählen Sie ein Firmware-Image aus dem <a href="#software-repo">Firmware-Repository</a> und klicken Sie <strong>Installieren</strong>.</p>
+
+<p>Um eine Software auf einem Gerät zu installieren, klicken Sie entsprechend <strong>Software installieren</strong>, wählen Sie ein Software-Paket aus dem <a href="#software-repo">Software-Repository</a> und klicken Sie <strong>Installieren</strong>.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-device-software.png" alt="Software" style="max-width: 100%"></p>
+
+<p>Das Installieren von Software oder Firmware beinhaltet normalerweise einen Geräteneustart. Um den Fortschritt einer Installation zu überwachen, wechseln Sie zur Registerkarte <strong>Steuerung</strong>.</p>
+
+<p>Um eine Software von einem Gerät zu löschen, fahren Sie mit dem Mauszeiger über den entsprechenden Eintrag und klicken Sie <strong>Löschen</strong>.</p>
+
+<h3 id="a-name-events-a-ereignisse"><a name="events"></a>Ereignisse</h3>
+
+<p>Die Registerkarte <strong>Ereignisse</strong> zeigt die mit dem Gerät verbundenen Ereignisse an. Dies ermöglicht unter anderem eine Fehlersuche. Weitere Informationen finden Sie unter <a href="#events-all">Fehlerbehebung von Geräten</a>.</p>
+
+<h3 id="a-name-location-a-standort"><a name="location"></a>Standort</h3>
+
+<p>Die Registerkarte <strong>Standort</strong> zeigt standardmäßig den Standort eines Geräts auf einer Karte und als Koordinaten, wie vom Gerät gesendet, an. Für Geräte, die keinen Standort senden, können Sie manuell einen Standort eingeben. Platzieren Sie einfach den &ldquo;Pin&rdquo; an die entsprechende Stelle in der Karte.</p>
+
+<p>Die Registerkarte <strong>Standort</strong> zeigt außerdem, wenn eine Gerät das Attribut &ldquo;c8y_Position&rdquo; enthält. Wenn Sie ein neues c8y_Position-Ereignis senden, können Sie das gleiche c8y _Position-Fragment auf dem Gerät setzen, so dass das Gerät automatisch seine Position in der Karte markiert.</p>
+
+<h3 id="a-name-logs-a-logdateien"><a name="logs"></a>Logdateien</h3>
+
+<p>Die Registerkarte <strong>Logdateien</strong> ermöglicht es, Loginformationen von Geräten abzufragen. Loginformationen können nach Zeitintervallen, Logtypen, Schlüsselwörtern und der maximalen Anzahl zu transferierender Zeilen gefiltert werden.</p>
+
+<p>Klicken Sie <strong>Logdatei anfordern</strong> rechts in der oberen Menüleiste der Registerkarte <strong>Logdateien</strong>.</p>
+
+<p>Im folgenden Fenster können Sie die folgende Einstellungen für die Loginformationen spezifizieren:</p>
+
+<ul>
+<li>Ein Datums- und Zeitintervall.</li>
+<li>Den Logtypen. Die unterstützten Logs sind üblicherweise geräteabhängig.</li>
+<li>Einen optionalen Text als Filter. Wenn Sie etwa &ldquo;Users&rdquo; eingeben, werden nur Zeilen ausgegeben, die den Begriff  &ldquo;Users&rdquo; enthalten.</li>
+<li>Die maximale Anzahl der ausgegebenen Zeilen (von hinten gezählt). Der Standardwert ist 1000.</li>
+</ul>
+
+<p>Klicken Sie <strong>Logdatei anfordern</strong>, um die spezifizierten Daten für das Gerät zu anzufordern.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-request-logs.png" alt="Logdatei anfordern" style="max-width: 100%"></p>
+
+<p>Das Anfordern einer Logdatei kann je nach Datenvolumen einige Zeit dauern.</p>
+
+<p>Sobald die Loginformationen vom Gerät auf die Cumulocity-Plattform übertragen wurden, werden Sie auf dem Bildschirm gelistet. Der Eintrag in der Liste enthält das jeweils angeforderte Zeitintervall.</p>
+
+<p>Klicken Sie auf den Eintrag in der Liste, um die Loginformationen anzuzeigen.</p>
+
+<p>Wenn Sie mit dem Mauszeiger über einen Eintrag fahren, erscheinen die Schaltflächen <strong>Herunterladen</strong> and <strong>Löschen</strong> zum Herunterladen und Löschen der Logdatei.</p>
+
+<!--### <a name="objects"></a> Objects
+
+In the “Objects” tab of a LWM2M device, you can view all objects, resources and instances of the device. Additionally, you can create new operations, see all currently pending operations and view the history of all previous operations.
+
+![Objects view](/guides/images/users-guide/DeviceManagement/DevMgmt_objects-view.png)
+
+**Info**: In order to see resources in the “Objects” tab, the resources first have to be added in the “Device Protocols” page.
+
+The following operations can be observed in each instance:
+
+- Read Object: Reads all instances for the selected object and lists all available resources for each instance.
+![Read Objects](/guides/images/users-guide/DeviceManagement/DevMgmt_read-object.png)
+- Read Instance: Reads the current instance of the given object and lists all available resources.
+![Read Instance](/guides/images/users-guide/DeviceManagement/DevMgmt_read-instance.png)
+- Create Instance: Creates a new instance for the selected object.
+- Delete Instance: Deletes the selected instance.
+
+**Info:**  Some instances do not have all of the listed operations.
+
+Some object cards show additional operations which can be performed. These operations become available after reading the object/instance. For example, device “Reboot” or “Reset error code”. In order to perform these operations, click **Execute**.
+
+![Execute operation](/guides/images/users-guide/DeviceManagement/DevMgmt_execute-operation.png)
+
+More information can be acquired for each resource by hovering over the tooltip icon.
+
+![Tooltip](/guides/images/users-guide/DeviceManagement/DevMgmt_tooltip-hover.png)
+
+Additional information on recent operations can be viewed by clicking the operations button located on the right side of an instance card. The button is only visible if any operation has been performed. The number of unread operations can be seen on the top right of the button. In the example below there is only one.
+
+![Recent operations](/guides/images/users-guide/DeviceManagement/DevMgmt_recent-operations.png)
+![Recent operations 2](/guides/images/users-guide/DeviceManagement/DevMgmt_recent-operations2.png)
+
+To view the history of all operations, simply click **View history**. Note that, you will be redirected to the “Control” tab.
+
+![Control tab](/guides/images/users-guide/DeviceManagement/DevMgmt_operations.png)-->
+
+<h3 id="a-name-service-monitoring-a-serviceüberwachung"><a name="service-monitoring"></a>Serviceüberwachung</h3>
+
+<p>Zusätzlich zur Verbindungsüberwachung bietet Cumulocity eine Serviceüberwachung von Maschinen, siehe <a href="#monitoring-services">Serviceüberwachung</a>.</p>
+
+<h3 id="a-name-shell-a-shell"><a name="shell"></a>Shell</h3>
+
+<p>Die Registerkarte <strong>Shell</strong> ermöglicht es, interaktiv mit entfernten Geräten zu arbeiten. Viele industrielle Geräte unterstützen Kommandosprachen wie etwa AT-Kommandos für Modems, CSV-artige Kommandos für viele Tracking-Systeme oder aufwendigere Scripting-Mechanismen wie Tixi TiXML. In der Shell können Kommandos in der entsprechenden Sprache an das Gerät gesendet und die Ergebnisse angezeigt werden.</p>
+
+<p>Die Registerkarte <strong>Shell</strong> enthält eine Kommandozeile zur Eingabe der Kommandos.</p>
+
+<p>In der Kommandozeile kann beliebiger Kommandotext eingegeben werden. Klicken Sie <strong>Ausführen</strong>, um das Kommando an das Gerät zu senden. Diese Schaltfläche ist nur aktiviert, wenn das Gerät online ist.</p>
+
+<p>Klicken Sie <strong>Historie ansehen</strong> rechts in der oberen Menüleiste, um eine Liste der zuvor ausgeführten Kommandos anzuzeigen. Standardmäßig werden die letzten drei Kommandos angezeigt.</p>
+
+<p>Die Liste zeigt den Status, das Datum und den Text eines Kommandos an. Durch Klicken einer Zeile wird das Ergebnis angezeigt, vorausgesetzt, das Kommando wurde ausgeführt.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-device-shell.png" alt="Device shell" /></p>
+
+<p>Cumulocity stellt für manche Gerätetypen einige häufig verwendete Kommandos bereit. Klicken Sie <strong>&lt;_Beispielkommando auswählen</strong> rechts in der oberen Menüleiste, um eine Liste der verfügbaren vordefinierten Kommandos anzuzeigen. Wählen Sie das gewünschte Kommando aus und klicken Sie <strong>Verwenden</strong>, um das ausgewählte Kommando in der Kommandozeile einzufügen oder klicken Sie <strong>Ausführen</strong>, um das Kommando unmittelbar auszuführen. Sie können auch selbst neue Kommandos zur Wiederverwendung hinzufügen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-shell-sample-commands.png" alt="Shell-Kommandos" /></p>
+
+<h3 id="a-name-tracking-a-tracking"><a name="tracking"></a>Tracking</h3>
+
+<p>In Cumulocity können Geräte die Historie ihrer Bewegungen festhalten. Diese Bewegungen können in der Registerkarte <strong>Tracking</strong> angezeigt werden.</p>
+
+<p><strong>Info</strong>: Die Registerkarte <strong>Tracking</strong> wird nur angezeigt, wenn ein Gerät das Attribut &ldquo;c8y_Position&rdquo; enthält.</p>
+
+<p>In der Auswahlliste oben rechts können Sie ein Zeitintervall auswählen (oder eines eingeben, indem Sie &ldquo;Benutzerdefiniert&rdquo; auswählen). Die Bewegungen des Geräts während des ausgewählten Zeitintervalls werden als rote Linien in der Karte visualisiert.</p>
+
+<p><img src="/guides/images/users-guide/tracking.png" alt="Tracking" /></p>
+
+<p>Neben der Karte werden die einzelnen Einträge mit Zeitangabe aufgelistet (&ldquo;Standortaktualisierungsereignisse&rdquo;). Wenn Sie auf einen Eintrag klicken, zeigt ein &ldquo;Pin&rdquo; auf der Karte den Standort zu diesem Zeitpunkt an.</p>
+
+<p>Abhängig vom Gerätetypen und der Integration in Cumulocity, können Sie geräteseitiges Geofencing und Bewegungserfassung konfigurieren.</p>
+
+<blockquote>
+<p><strong>Info</strong>: Wenn diese Funktion aktiviert und das Gerät kompatibel ist, kann die Zellen-ID-Information genutzt werden, um die Position des Geräts zu bestimmen. Aktuell werden die Services von <a href="https://combain.com/">Combain</a> und <a href="https://developers.google.com/maps/documentation/geolocation/intro">Google</a> unterstützt. Der Benutzer kann die Ortungen basierend auf beiden Datentypen ansehen oder nach GPS-basierten Daten oder Zellen-ID-basierte Daten filtern.</p>
+</blockquote>
+
+<h3 id="a-name-identity-a-identifikator"><a name="identity"></a>Identifikator</h3>
+
+<p>Cumulocity kann Geräte und Assets mit mehreren externen Identifikatoren verknüpfen. Geräte werden beispielsweise oft durch die IMEI ihres Modems, eine Microcontroller-Seriennummer oder ein Asset-Tag identifiziert. Die Registerkarte <strong>Identifikator</strong> listet alle gespeicherten Identifikatoren für ein Gerät auf.</p>
+
+<p>Dies ist etwa hilfreich, wenn Hardware nicht mehr funktioniert und ausgetauscht werden muss, ohne bereits aufgezeichnete Daten zu verlieren. Verbinden Sie die neue Hardware mit Ihrem Konto und modifizieren Sie den Identifikatoren-Eintrag der alten Hardware, so dass er die Identität der neuen Hardware enthält.</p>
+
+  </article>
+  
+  <article id="monitoring-and-controlling-devices" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#monitoring-and-controlling-devices">
+        <span class="fa fa-link"></span>
+      </button>
+      Überwachen und Steuern von Geräten</h2>
+    
+
+<h3 id="a-name-map-a-lokalisieren-von-geräten"><a name="map"></a>Lokalisieren von Geräten</h3>
+
+<p>Cumulocity bietet die Möglichkeit, den Standort aller Geräte in Ihrem Konto auf eine Karte anzuzeigen.</p>
+
+<p>Klicken Sie <strong>Karte</strong> im Menü <strong>Geräte</strong> im Navigator, um eine Karte zu öffnen, die alle Geräte in Echtzeit anzeigt.</p>
+
+<p>Die Geräte sind als &ldquo;Pins&rdquo; dargestellt. Klicken Sie auf einen Pin, um den Namen des entsprechenden Geräts anzuzeigen. Klicken Sie auf den Gerätenamen, um zur Ansicht der Gerätedetails zu wechseln.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-map.png" alt="Gerätekarte" style="max-width: 100%"></p>
+
+<h3 id="a-name-connection-monitoring-a-verbindungsüberwachung"><a name="connection-monitoring"></a>Verbindungsüberwachung</h3>
+
+<p>Im Device Management können Sie die Verbindungen zu Ihren Geräten überwachen.</p>
+
+<p>Dies kann auf der Ebene einzelner Geräte erfolgen (siehe unten) oder für mehrere Geräte in einer Liste.</p>
+
+<p>Um Verbindungen für mehrere Geräte zu überwachen, öffnen Sie eine beliebige Geräteliste.</p>
+
+<p>Der Verbindungsstatus wird durch Pfeile in der Spalte <strong>Status</strong> in der Geräteliste angezeigt.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-connection-status.png" alt="Verbindungsstatus" style="max-width: 100%"></p>
+
+<h4 id="sendeverbindungen">Sendeverbindungen</h4>
+
+<p>Die oberen Pfeile symbolisieren die Sendeverbindungen (Verkehr vom Gerät zu Cumulocity). Der Status der Sendeverbindungen kann einer der folgenden sein:</p>
+
+<ul>
+<li>Grüner Pfeil - online (Daten wurden im erwarteten Intervall gesendet)</li>
+<li>Roter Pfeil - offline (Daten wurden nicht im erwarteten Intervall gesendet)</li>
+<li>Grauer Pfeil - unbekannt oder nicht überwacht (kein Intervall konfiguriert)</li>
+</ul>
+
+<p>Wenn Sie den Mauszeiger über einen Pfeil bewegen, wird der Zeitstempel der letzten Anfrage vom Gerät an den Server angezeigt.</p>
+
+<p>Wenn ein Gerät als offline erkannt wird, (sendet keine Daten im erwarteten Intervall und der obere Pfeil wechselt auf rot), wird ein  &ldquo;UnavailabilityAlarm&rdquo; für das Gerät erzeugt mit der Nachricht &ldquo;Im erwarteten Intervall wurden keine Daten vom Gerät empfangen.&rdquo;.</p>
+
+<h4 id="push-verbindungen">Push-Verbindungen</h4>
+
+<p>Der untere Pfeil symbolisiert die Push-Verbindungen (von Cumulocity zum Gerät). Der Status der Push-Verbindungen kann einer der folgenden sein:</p>
+
+<ul>
+<li>Grüner Pfeil - online (Verbindung hergestellt)</li>
+<li>Roter Pfeil - offline (Verbindung nicht hergestellt)</li>
+<li>Grauer Pfeil - nicht überwacht</li>
+</ul>
+
+<blockquote>
+<p><strong>Info</strong>: Bei den Push-Verbindungen handelt es sich um die Verbindungen von Cumulocity zur &ldquo;/devicecontrol/notifications&rdquo; API, <strong>nicht</strong> zur Echtzeit-API.</p>
+</blockquote>
+
+<h4 id="wartungsmodus">Wartungsmodus</h4>
+
+<p>Außerdem kann sich ein Gerät im Wartungsmodus befinden. Dies wird durch ein Werkzeug-Symbol in der Spalte <strong>Status</strong> gekennzeichnet. Dieser spezielle Verbindungsstatus zeigt an, dass das Gerät gerade gewartet wird und nicht überwacht werden kann. Während ein Gerät gewartet wird, werden keine Alarme für dieses Gerät ausgelöst.</p>
+
+<p>In der Karte <strong>Verbindungsüberwachung</strong> in der Registerkarte <strong>Info</strong> eines Geräts können Sie den Wartungsmodus für dieses Gerät durch einen Schieberegler ein- oder ausschalten.</p>
+
+<h4 id="verbindungsüberwachung-in-der-registerkarte-info">Verbindungsüberwachung in der Registerkarte Info</h4>
+
+<p>Navigieren Sie zur Registerkarte <strong>Info</strong>, um die Verbindungen eines bestimmten Geräts zu überwachen. Unter <strong>Gerätestatus</strong> wird der Verbindungsstatus für das Gerät angezeigt.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-connection-status-device.png" alt="Gerätestatus" style="max-width: 50%"></p>
+
+<p>Unter dem Status für die Sende- und Push-Verbindungen wird der Zeitpunkt der letzten Kommunikation angezeigt.</p>
+
+<blockquote>
+<p><strong>Info</strong>: &ldquo;Letzte Kommunikation&rdquo; und &ldquo;Letzte Aktualisierung&rdquo; sind zwei vollkommen verschiedene Zeitstempel. &ldquo;Letzte Kommunikation&rdquo; zeigt an, wann ein Gerät das letzte mal Daten gesendet hat. &ldquo;Letzte Aktualisierung&rdquo; zeigt an, wann der Stammdateneintrag des Geräts das letzte mal aktualisiert wurde. Diese Aktualisierung kann durch das Gerät selbst, über die Web-Benutzerschnittstelle oder durch eine andere Anwendung erfolgt sein.</p>
+
+<p>Im Feld <strong>Erwartetes Intervall</strong> können Sie ein Intervall angeben. Dieser Parameter legt fest, wie häufig Sie erwarten, von dem Gerät zu hören. Wenn Sie dieses Intervall etwa auf 60 setzen, erwarten Sie, dass das Gerät mindestens einmal pro Stunden mit Cumulocity kommuniziert. Das Intervall wird entweder vom Gerät selbst festgelegt, basierend auf den Kenntnissen des Geräts darüber, wie oft es versuchen wird, Daten zu senden, oder es wird manuell von Ihnen festgelegt.</p>
+</blockquote>
+
+<p>Wenn ein Intervall angegeben ist, befindet sich darunter der Schieberegler <strong>Wartung</strong>.</p>
+
+<p>Mit dem Schieberegler <strong>Wartung</strong> können Sie den Wartungsmodus für das Gerät ein- oder ausschalten. Dies wird unmittelbar im Verbindungsstatus angezeigt.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-maintenancemode.png" alt="Wartungsmodus" style="max-width: 50%"></p>
+
+<blockquote>
+<p><strong>Info</strong>: Die Verbindungsüberwachung findet nicht in Echtzeit statt. Dies führt dazu, dass der Verbindungsstatus sich nicht direkt ändert, sobald ein Gerät ausgeschaltet wird. Abhängig vom Netzwerk kann es bis zu 20 Minuten dauern, bis eine unterbrochene Verbindung erkannt wird, da das Netzwerk eine bestimmte Zeit lang versuchen wird, Daten zu senden.</p>
+</blockquote>
+
+<h3 id="a-name-monitoring-services-a-serviceüberwachung"><a name="monitoring-services"></a>Serviceüberwachung</h3>
+
+<p>Cumulocity unterscheidet zwischen Verbindungsüberwachung und Serviceüberwachung. Verbindungsüberwachung, wie im vergangenen Abschnitt beschrieben, zeigt nur an, ob ein Gerät mit Cumulocity kommuniziert, was nicht automatisch auch bedeutet, dass das Gerät betriebsbereit ist.</p>
+
+<p>Serviceüberwachung dagegen zeigt an, ob ein Gerät in Betrieb ist. Ein Verkaufsautomat ist beispielsweise in Betrieb, wenn er bereit ist, Waren zu verkaufen. Ein Verkaufsautomat kann ohne eine Verbindung zu Cumulocity gegen Bargeld Waren verkaufen. Aus kaufmännischer Sicht ist der Automat also betriebsbereit. Ähnlich können Geräte hinter einem Gateway weiterarbeiten, auch wenn das Gateway ausgeschaltet wurde.</p>
+
+<p>Cumulocity betrachtet ein Gerät als betriebsbereit, wenn es für das Gerät keine kritischen aktiven Alarme gibt. Dies wird entsprechend des Zeitanteils, den Alarme aktiv waren, dargestellt. Hat ein Gerät innerhalb eines bestimmten Zeitraums keinerlei kritische Alarme, war es 100% betriebsbereit. Gab es während der Hälfte der Zeit kritische aktive Alarme, war es 50% betriebsbereit.</p>
+
+<p>Ist ein Gerät offline, nimmt Cumulocity standardmäßig an,</p>
+
+<ul>
+<li>dass das Gerät während des Verbindungsabbruchs weiterhin in Betrieb bleibt, wenn dies zuvor der Fall war.</li>
+<li>dass das Gerät während des Verbindungsabbruchs weiterhin nicht in Betrieb ist, wenn dies zuvor der Fall war.</li>
+</ul>
+
+<p>Es gibt möglicherweise Ausnahmen zu dieser Regel. Wenn Ihr Verkaufsautomat beispielsweise nur mit bargeldloser Bezahlung funktioniert, bedeutet ein Verbindungsabbruch, dass der Automat nichts mehr verkaufen kann und damit nicht mehr betriebsbereit ist. In diesem Fall müssen Nichtverfügbarkeits-Alarme in der <a href="/guides/benutzerhandbuch/administration#reprio-alarms">&ldquo;Administration&rdquo;-Anwendung</a> eingestellt werden, die einen &ldquo;kritischen&rdquo; anstatt eines &ldquo;wichtigen&rdquo; Schweregrads haben.</p>
+
+<p>Cumulocity zeigt die Serviceverfügbarkeit für einzelne Geräte sowie für alle Geräte an.</p>
+
+<ul>
+<li>Um die Serviceüberwachung für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte <strong>Serviceüberwachung</strong> in den Gerätedetails dieses Geräts.</li>
+<li>Um den gesamten Service aller Geräte anzuzeigen, klicken Sie <strong>Serviceüberwachung</strong> im Navigator.</li>
+</ul>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-service-monitoring.png" alt="Wartungsmodus" style="max-width: 75%"></p>
+
+<p>Die Seite <strong>Serviceüberwachung</strong> zeigt die prozentuale Verfügbarkeit aller Geräte währende des letzten Tags, der letzten Woche und des letzten Monats an.</p>
+
+<h3 id="a-name-alarm-monitoring-a-arbeiten-mit-alarmen"><a name="alarm-monitoring"></a>Arbeiten mit Alarmen</h3>
+
+<p>Geräte können Alarme auslösen, um anzuzeigen, dass ein Problem besteht, das einer Handlung bedarf.</p>
+
+<p>Cumulocity zeigt Alarme für einzelne Geräte sowie für alle Geräte an.</p>
+
+<ul>
+<li>Um die Alarme für alle Geräte anzuzeigen, klicken Sie <strong>Alarme</strong> im Menü <strong>Übersichten</strong> im Navigator.<br /></li>
+<li>Um die Alarme für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte <strong>Alarme</strong> in den Gerätedetails dieses Geräts.</li>
+</ul>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-alarms-device.png" alt="Gerätealarme" style="max-width: 100%"></p>
+
+<p>Standardmäßig
+* werden nur ungelöste Alarme gezeigt. Wenn Sie rechts in der oberen Menüleiste  <strong>Aufgehobene Alarme anzeigen</strong> aktivieren, sehen Sie die gesamte Alarmhistorie.
+* werden Alarme in Echtzeit angezeigt, sobald sie vom Gerät gemeldet werden. Klicken Sie  <strong>Echtzeit</strong> in der oberen Menüleiste, um Echtzeitaktualisierungen zu deaktivieren.</p>
+
+<p>Alarme werden nach Schweregraden klassifiziert. Cumulocity enthält vier verschiedene Alarmtypen:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Schweregrad</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Kritisch</td>
+<td align="left">Das Gerät ist nicht betriebsbereit. Dieser Zustand sollte umgehend behoben werden.</td>
+</tr>
+
+<tr>
+<td align="left">Wichtig</td>
+<td align="left">Das Gerät hat ein Problem, das behoben werden sollte.</td>
+</tr>
+
+<tr>
+<td align="left">Weniger wichtig</td>
+<td align="left">Das Gerät hat ein Problem, das behoben werden könnte.</td>
+</tr>
+
+<tr>
+<td align="left">Warnung</td>
+<td align="left">Es gibt eine Warnung.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Die Registerkarte <strong>Alarme</strong> ist entsprechend dieser Alarmtypen in vier Bereiche unterteilt.</p>
+
+<p>Klicken Sie in der oberen Leiste auf eine der Schaltflächen für die Alarmtypen, um den entsprechenden Bereich auszublenden. Nochmaliges Klicken zeigt den Bereich wieder an.</p>
+
+<p>In jedem Bereich sind die Alarme nach ihrem Auftreten sortiert, wobei der aktuellste zuerst angezeigt wird.</p>
+
+<p>In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Info</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Schweregrad</td>
+<td align="left">Entweder kritisch, wichtig, weniger wichtig oder Warnung (siehe oben).</td>
+</tr>
+
+<tr>
+<td align="left">Anzahl</td>
+<td align="left">Wie oft der Alarm von dem Gerät gesendet wurde. Es kann jeweils nur ein Alarm pro Typ für ein Gerät aktiv sein. Wenn ein weiterer Alarm des gleichen Typs auftritt, wird die Zahl um 1 erhöht.</td>
+</tr>
+
+<tr>
+<td align="left">Beschreibung</td>
+<td align="left">Optionaler Text zur Beschreibung des Alarms.</td>
+</tr>
+
+<tr>
+<td align="left">Status</td>
+<td align="left">Status des Alarms: <br/> <strong>Aktiv</strong>: Wenn der Alarm ausgelöst wurde und keiner bisher den Alarm bearbeitet. <br/><strong>Bestätigt</strong>: Wenn jemand den Status auf &ldquo;Bestätigt&rdquo; gesetzt hat, um anzuzeigen, dass dieser Alarm bereits bearbeitet wird.<br/><strong>Aufgehoben</strong>: Wenn entweder jemand den Status manuell auf &ldquo;Aufgehoben&rdquo; gesetzt hat oder wenn das Gerät selbst festgestellt hat, dass das Problem behoben ist.</td>
+</tr>
+
+<tr>
+<td align="left">Letztes Auftreten</td>
+<td align="left">Zeitstempel für das letzte Auftreten des Alarms (Gerätezeit).</td>
+</tr>
+
+<tr>
+<td align="left">Gerät</td>
+<td align="left">Name des Geräts. Durch Klicken des Namen gelangen Sie zur Detailansicht des Geräts.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Klicken Sie auf den Pfeil rechts in einem Eintrag, um die Zeile auszuklappen und weitere Details zum Alarm anzuzeigen.</p>
+
+<ul>
+<li><strong>Status</strong>: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information wird verwendet, um die Priorität von Alarmen zu konfigurieren, siehe <a href="/guides/benutzerhandbuch/administration#reprio-alarms">Priorisieren von Alarmen</a> in der &ldquo;Administration&rdquo;-Anwendung.</li>
+<li><strong>Änderungsprotokoll</strong>: Gibt die Serverzeit an, zu der der Alarm erstellt wurde. Diese kann von der Gerätezeit abweichen.</li>
+</ul>
+
+<p>Um den Status eines Alarms zu ändern, bewegen Sie den Mauszeiger rechts über die Zeile und klicken Sie die entsprechende Schaltfläche oder öffnen Sie das Kontextmenü über das Menüsymbol und wählen Sie den gewünschten Status.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_AlarmDropdown.png" alt="Alarm dropdown" /></p>
+
+<p>Es besteht außerdem die Möglichkeit, den Status aller Alarme auf einmal auf &ldquo;Aufgehoben&rdquo; zu setzen. Klicken Sie <strong>Alle aufheben</strong> in der oberen Menüzeile, um alle Alarme des ausgewählten Schweregrads auf einmal aufzuheben.</p>
+
+<!-- Seems to be no longer relevant
+* **Additional information**: An alarm can contain arbitrary additional information provided by the device.
+* **Audit log**: Along with the alarm, a log of changes to the alarm is stored. This creates an alarm history with various data. -->
+
+<h3 id="a-name-operation-monitoring-a-verwenden-von-kommandos"><a name="operation-monitoring"></a>Verwenden von Kommandos</h3>
+
+<p>Kommandos werden verwendet, um Geräte aus der Ferne zu steuern.</p>
+
+<p>Cumulocity zeigt Kommandos für einzelne Geräte sowie für alle Geräte an:</p>
+
+<ul>
+<li>Um die Kommandos für alle Geräte anzuzeigen, klicken Sie <strong>Gerätesteuerung</strong> im Menü <strong>Übersichten</strong> im Navigator.<br /></li>
+<li>Um die Alarme für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte <strong>Steuerung</strong> in den Gerätedetails dieses Geräts.</li>
+</ul>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-operations.png" alt="Device Control" /></p>
+
+<p>Kommandos können sich in einem der folgenden Zustände befinden, angezeigt durch entsprechende Symbole:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Zustand</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Ausstehend</td>
+<td align="left">Das Kommando wurde gerade erstellt und wartet darauf, vom Gerät empfangen zu werden.</td>
+</tr>
+
+<tr>
+<td align="left">Wird ausgeführt</td>
+<td align="left">Das Kommando wurde vom Gerät empfangen und wird ausgeführt.</td>
+</tr>
+
+<tr>
+<td align="left">Erfolgreich</td>
+<td align="left">Das Kommando wurde erfolgreich vom Gerät ausgeführt.</td>
+</tr>
+
+<tr>
+<td align="left">Abgebrochen</td>
+<td align="left">Das Kommando konnte nicht vom Gerät ausgeführt werden.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Durch Klicken der Status-Schaltflächen oben auf der Seite werden die entsprechenden Kommandos ausgeblendet. Erneutes Klicken der entsprechenden Schaltfläche zeigt die Kommandos wieder an.</p>
+
+<p>Klicken Sie <strong>Echtzeit</strong> rechts in der oberen Menüleiste, um die vom Gerät empfangenen Kommandos in Echtzeit anzuzeigen.</p>
+
+<p>Kommandos werden in absteigender Zeitfolge aufgelistet und streng nach dieser Reihenfolge ausgeführt.</p>
+
+<p>Für jedes Kommando werden die folgenden Informationen bereitgestellt:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Info</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Status</td>
+<td align="left">Ausstehend, wird ausgeführt, erfolgreich, abgebrochen (siehe oben).</td>
+</tr>
+
+<tr>
+<td align="left">Name</td>
+<td align="left">Name des Kommandos.</td>
+</tr>
+
+<tr>
+<td align="left">Gerät</td>
+<td align="left">Name des Geräts. Klicken Sie auf den Namen, um zur Ansicht der Gerätedetails zu gelangen.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Durch Klicken einer Zeile wird diese aufgeklappt und weitere Details zum Kommando angezeigt.</p>
+
+<ul>
+<li><strong>Details</strong>: Nähere Beschreibung und Status des Kommandos. Lautet der Status = ABGEBROCHEN, wird die Ursache für das Fehlschlagen angegeben.<br /></li>
+<li><strong>Änderungshistorie</strong>: Informationen zu den letzten Änderungen des Kommandos.</li>
+</ul>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-Operation-details.png" alt="Kommandodetails" /></p>
+
+<p><a name="bulk-operations"></a><strong>Stapelkommandos</strong></p>
+
+<p>Für die leichtere Bearbeitung von Geräten bietet Cumulocity Stapelkommandos. Mit Stapelkommandos können Sie ein Kommando in einem Schritt für jedes Gerät in einer Gruppe ausführen.</p>
+
+<p>Um ein Stapelkommando für eine Gruppe auszuführen, führen Sie folgende Schritte aus:</p>
+
+<ol>
+<li>Wählen Sie ein Gerät und öffnen Sie die Registerkarte <strong>Steuerung</strong>.</li>
+<li>Wählen Sie ein Kommando aus der Liste und klicken Sie das Menüsymbol rechts in der Zeile.</li>
+<li>Klicken Sie im Kontextmenü <strong>Für gesamte Gruppe ausführen</strong>.</li>
+</ol>
+
+<p><img src="/guides/images/users-guide/executebulkoperations.png" alt="Execute bulk operations" /></p>
+
+<p>Um den Status und Fortschritt der Kommandos zu verfolgen, wählen Sie die entsprechende Gruppe im Navigator und wechseln Sie zur Registerkarte <strong>Stapelkommandos</strong>.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-group-bulk-operation.png" alt="Registerkarte Stapelkommandos" /></p>
+
+<p>Um ein Stapelkommando zu bearbeiten, führen Sie folgende Schritte aus:</p>
+
+<ol>
+<li>Wählen Sie ein Kommando aus der Liste und klicken Sie das Menüsymbol rechts in der Zeile.</li>
+<li>Klicken Sie im Kontextmenü <strong>Zeitplan bearbeiten</strong>.</li>
+<li>Im folgenden Fenster können Sie die Werte für <strong>Startzeit</strong> und <strong>Verzögerung</strong> ändern.</li>
+<li>Um Kommandodetails zu ändern, klicken Sie <strong>Anzeigen Kommandodetails</strong>.</li>
+<li>Klicken Sie <strong>Neu planen</strong>, um Ihre Einstellungen zu speichern.</li>
+</ol>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-bulk-operation-edit.png" alt="Stapelkommando bearbeiten" /></p>
+
+<p>Um ein Stapelkommando abzubrechen, klicken Sie das Menüsymbol rechts in der entsprechenden Zeile und klicken Sie <strong>Vorgang abbrechen</strong>.</p>
+
+<h3 id="a-name-events-all-a-fehlerbehebung-von-geräten"><a name="events-all"></a>Fehlerbehebung von Geräten</h3>
+
+<p>Eine Fehlerbehebung auf detaillierterer Ebene kann bei Geräten mit Hilfe von Ereignissen durchgeführt werden. Ereignisse sind von Geräten gesendete Low-Level-Nachrichten, die üblicherweise für die anwendungsspezifische Verarbeitung verwendet werden. So sendet zum Beispiel ein Verkaufsautomat seine Echtzeitverkäufe in Form von Ereignissen.</p>
+
+<p>Cumulocity zeigt Ereignisse für einzelne Geräte sowie für alle Geräte an:</p>
+
+<ul>
+<li>Um die Ereignisse für ein bestimmtes Gerät anzuzeigen, wechseln Sie zur Registerkarte <strong>Ereignisse</strong> in den Gerätedetails dieses Geräts.</li>
+<li>Um die Ereignisse für alle Geräte anzuzeigen, klicken Sie <strong>Ereignisse</strong> im Menü <strong>Übersichten</strong> im Navigator.</li>
+</ul>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-events.png" alt="Ereignisse" style="max-width: 100%"></p>
+
+<p>Standardmäßig werden die Ereignisse in Echtzeit angezeigt, sobald sie vom Gerät empfangen werden. Um die Echtzeitaktualisierung zu deaktivieren, klicken Sie <strong>Echtzeit</strong> rechts in der oberen Menüleiste.</p>
+
+<p>Für jedes Ereignis werden die folgenden Informationen bereitgestellt:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Info</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Zeitstempel</td>
+<td align="left">Zeitstempel, wann das Ereignis ausgeführt wurde.</td>
+</tr>
+
+<tr>
+<td align="left">Name</td>
+<td align="left">Name des Ereignisses.</td>
+</tr>
+
+<tr>
+<td align="left">Gerät</td>
+<td align="left">Name des Geräts, das das Ereignis sendet. Durch Klicken des Gerätenamens gelangen Sie zur Detailansicht des Geräts.</td>
+</tr>
+</tbody>
+</table>
+
+<p>In der Ereignisliste wird der letzte Eintrag ganz oben angezeigt.</p>
+
+<p>Durch Klicken einer Zeile wird diese aufgeklappt und weitere Details zum Ereignis angezeigt (wie der Typ und die Position des Geräts).</p>
+
+<p>Da Geräte möglicherweise große Datenmengen senden, können Sie die angezeigten Daten nach Datum filtern.</p>
+
+<p>Wählen Sie in den Feldern in der oberen Menüleiste ein Startdatum und ein Enddatum und klicken Sie <strong>Filtern</strong>, um den Filter anzuwenden. Klicken Sie <strong>Löschen</strong>, um den Filter wieder zurückzusetzen.</p>
+
+  </article>
+  
+  <article id="managing-device-types" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#managing-device-types">
+        <span class="fa fa-link"></span>
+      </button>
+      Verwalten von Gerätetypen</h2>
+    <p>Cumulocity verwendet Geräteprotokolle, um Daten von verschiedenen Gerätetypen zu verarbeiten.</p>
+
+<p>Klicken Sie <strong>Geräteprotokolle</strong> im Menü <strong>Gerätetypen</strong> im Navigator.</p>
+
+<p>Die Seite G<strong>eräteprotokolle</strong> zeigt eine Liste aller in Ihrem Konto verfügbaren Geräteprotokolle an.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-device-protocols.png" alt="Geräteprotokolle" style="max-width: 100%"></p>
+
+<p>Die Geräteprotokoll-Liste zeigt die folgenden Information zu jedem Eintrag an:</p>
+
+<ul>
+<li>den Geräteprotokolltypen (IMPACT, LWM2M)</li>
+<li>den Geräteprotokollnamen</li>
+<li>die Anzahl der Ressourcen für das Gerät (auf der rechten Seite)</li>
+</ul>
+
+<p>Um ein neues Geräteprotokoll hinzuzufügen, klicken Sie <strong>Geräteprotokoll hinzufügen</strong> in der oberen Leiste. Detaillierte Informationen zum Hinzufügen eines Protokolls finden Sie in der Beschreibung des jeweiligen Gerätetyps, den Sie hinzufügen möchten:</p>
+
+<ul>
+<li><a href="/guides/users-guide/optional-services#nokia-impact">IMPACT</a></li>
+<li><a href="/guides/users-guide/optional-services#lwm2m">LWM2M</a></li>
+</ul>
+
+<p>Klicken Sie auf einen Eintrag, um diesen zu bearbeiten, oder öffnen Sie das Kontextmenü über das Menüsymbol und klicken Sie <strong>Bearbeiten</strong>.</p>
+
+<p>Um ein Geräteprotokoll zu löschen, klicken Sie <strong>Löschen</strong> im Kontextmenü.</p>
+
+  </article>
+  
+  <article id="managing-device-data" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#managing-device-data">
+        <span class="fa fa-link"></span>
+      </button>
+      Verwalten von Gerätedaten</h2>
+    
+
+<h3 id="a-name-software-repo-a-verwalten-von-firmware-und-software"><a name="software-repo"></a> Verwalten von Firmware und Software</h3>
+
+<p>Mit dem Firmware-Repository und dem Software-Repository bietet Cumulocity die Möglichkeit, Referenz-Firmware bzw. -Software für Geräte zu verwalten.</p>
+
+<p>Die folgende Beschreibung bezieht sich exemplarisch auf Firmware, gilt aber analog auch für Geräte-Software.</p>
+
+<p>Öffnen Sie das <strong>Firmware-Repository</strong> im Menü <strong>Verwaltung</strong> im Navigator.</p>
+
+<p>Die verfügbaren Firmware-Objekte werden angezeigt, dargestellt als Karten in einem Raster.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-firmware.png" alt="Firmware-Repository" style="max-width: 100%"></p>
+
+<p>Klicken Sie <strong>Details</strong> auf einer Karte, um diese &ldquo;umzudrehen&rdquo; und Details zum Firmware-Objekt anzuzeigen.</p>
+
+<p>Zusätzlich zum Objektnamen und der Version finden Sie hier den Namen der Datei, die die Firmware enthält.</p>
+
+<p>Darüber hinaus gibt es verschiedene Schaltflächen, die das Aktualisieren der Informationen ermöglichen (siehe unten Hinzufügen eines Firmware-Objekts).</p>
+
+<p><strong>Hinzufügen eines Firmware-Objekts</strong></p>
+
+<p>Um ein Firmware-Objekt hinzuzufügen, führen Sie folgende Schritte aus:</p>
+
+<ol>
+<li>Laden Sie die Firmware-Datei in der <a href="/guides/benutzerhandbuch/administration#files">&ldquo;Administration&rdquo;-Anwendung</a> hoch. Dieser Schritt ist nicht immer erforderlich, da manche Hersteller die Firmware online anbieten.</li>
+<li>Klicken Sie in der Seite <strong>Firmware-Repository</strong> rechts in der oberen Menüleiste <strong>Firmware hinzufügen</strong>.</li>
+<li>Geben Sie im folgenden Fenster einen Namen und die Version der Firmware ein.</li>
+<li>Geben Sie die Datei an, die die Firmware enthält, indem Sie entweder zur Datei navigieren bzw.  diese hochladen oder die URL angeben, unter welcher das Gerät die Firmware herunterladen kann.</li>
+<li>Klicken Sie <strong>Speichern</strong>, um Ihre Einstellungen zu speichern.</li>
+</ol>
+
+<p>Analog können Sie eine neue Software zum Software-Repository hinzufügen.</p>
+
+<p><strong>Installieren von Firmware auf einem Gerät</strong></p>
+
+<p>Klicken Sie im Navigator auf <strong>Alle Geräte</strong>, um die Geräteliste anzuzeigen und wählen Sie ein Gerät aus.</p>
+
+<p>Wechseln Sie zur Registerkarte <strong>Software</strong> für das Gerät und klicken Sie <strong>Firmware installieren</strong>.</p>
+
+<p>Weitere Informationen finden Sie in der Beschreibung der Registerkarte <a href="#software"><strong>Software</strong></a>.</p>
+
+<blockquote>
+<p><strong>Info:</strong> Um andere Binärcode-Typen in Cumulocity zu speichern, wechseln Sie zur <a href="/guides/benutzerhandbuch/administration#files">&ldquo;Administration&rdquo;-Anwendung</a>.</p>
+</blockquote>
+
+<p><strong>Installieren von Firmware auf mehreren Geräten</strong></p>
+
+<p>Cumulocity bietet die Möglichkeit, Updates von Firmware oder Software für mehrere Geräte gleichzeitig durchzuführen. Führen Sie dazu die folgenden Schritte aus:</p>
+
+<ol>
+<li>Führen Sie das Update zunächst für ein Gerät aus, um sicherzustellen, dass das Update funktioniert.</li>
+<li>Navigieren Sie zu <strong>Kommandos</strong> und wählen Sie <strong>Für alle Gruppenelemente ausführen</strong>.</li>
+<li>Geben Sie einen Zeitpunkt an, an welchem das Sammelkommando ausgeführt werden soll und klicken Sie <strong>Erstellen</strong>.</li>
+</ol>
+
+<p>Der Kommandostatus wird in der Registerkarte <strong>Stapelkommandos</strong> der ausgewählten Gruppe angezeigt. Weitere Informationen finden Sie unter <a href="#bulk-operations">Stapelkommandos</a>.</p>
+
+<h3 id="a-name-credentials-a-verwalten-von-gerätezugangsdaten"><a name="credentials"></a>Verwalten von Gerätezugangsdaten</h3>
+
+<p>Die Seite <strong>Gerätezugangsdaten</strong> listet alle Zugangsdaten auf, die für Ihre verbundenen Geräte erstellt wurden. Jedes Gerät, das <a href="#device-registration">registriert</a> wurde, wird hier mit der Namenskonvention &ldquo;device_&lt;id&gt;&rdquo; angezeigt.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-device-credentials.png" alt="Gerätezugangsdaten" style="max-width: 100%"></p>
+
+<p>Klicken Sie auf den Pfeil in der Spalte <strong>Globale Rollen</strong>, um eine Liste mit globalen Rollen anzuzeigen. Weisen Sie Berechtigungen für ein Gerät zu oder entfernen Sie Berechtigungen, indem Sie die entsprechenden Kontrollkästchen aktivieren oder deaktivieren. Klicken Sie <strong>Anwenden</strong>, um Ihre Einstellungen zu speichern.</p>
+
+<p>Klicken Sie auf das Menüsymbol rechts von einem Gerät, um über ein Kontextmenü auf folgenden Funktionen zuzugreifen:</p>
+
+<ul>
+<li><p><strong>Bearbeiten</strong> - Um die Details der Gerätezugangsdaten anzuzeigen (siehe unten).</p></li>
+
+<li><p><strong>Abschalten</strong> - Um zeitweise die Verbindung zu einem Gerät zu unterbrechen.</p></li>
+
+<li><p><strong>Löschen</strong> - Um die Zugangsdaten für ein Gerät zu löschen. Dies kann erforderlich sein, wenn Sie ein Gerät auf die Werkseinstellungen zurückgesetzt haben. In diesem Fall verliert das Gerät häufig seine zugewiesenen Zugangsdaten. Löschen Sie diese und fahren Sie mit dem normalen <a href="#device-registration">Registrierungsprozess</a> fort, um das Gerät erneut zu registrieren.</p></li>
+</ul>
+
+<p>In der Detail-Seite der Gerätezugangsdaten, die angezeigt wird, wenn Sie im Kontextmenü eines Geräts <strong>Bearbeiten</strong> klicken, können Sie</p>
+
+<ul>
+<li>ein Gerät per Schieberegler ein-, bzw. abschalten,</li>
+<li>das Passwort für ein Gerät ändern,</li>
+<li>Berechtigungen zuweisen oder entfernen durch aktivieren bzw. deaktivieren der Kontrollkästchen in der Liste <strong>Globale Rollen</strong>.</li>
+</ul>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-device-credentials-details.png" alt="Details Gerätezugangsdaten" style="max-width: 100%"></p>
+
+<!--
+![Bulk provisioning](/guides/images/users-guide/autoregister.png)
+
+Device credentials can also be provided from a CSV file. Files can be uploaded using the button pointed with an arrow. More details on the file structure can be found in under [Bulk-registering devices](#creds-upload) above.-->
+
+  </article>
+  
+  <article id="configuration-repository" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#configuration-repository">
+        <span class="fa fa-link"></span>
+      </button>
+      Konfigurations-Repository</h2>
+    
+
+<p>In Cumulocity können Sie Konfigurationsdaten von einem Gerät abrufen oder aus einer Datei laden und diese in einem Konfigurations-Repository speichern und verwalten. Konfigurationsdaten enthalten die Grundeinstellungen und Parameter eines Geräts.</p>
+
+<p>Solche Konfigurationssnapshots sind beispielsweise nützlich, um die gleiche Konfiguration auf mehrere Geräte anzuwenden, wie im Folgenden beschrieben.</p>
+
+<p>Klicken Sie <strong>Konfigurations-Repository</strong> im Menü <strong>Management</strong> im Navigator, um alle verfügbaren Konfigurationen anzuzeigen. Jeder Eintrag enthält den Konfigurationsnamen, das Gerät, von welchem die Konfiguration stammt und den Zeitpunkt des Uploads.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-configuration-repository.png" alt="Konfigurations-Repository" /></p>
+
+<p>Um einen Konfigurationssnapshot zu öffnen, klicken Sie auf den entsprechenden Eintrag. Sie können die Angaben hier bearbeiten. Klicken Sie <strong>Speichern</strong>,um Ihre Änderungen zu speichern. Nähere Informationen zu den einzelnen Feldern finden Sie im nächsten Abschnitt.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-configuration-details.png" alt="Konfigurationssnapshot" /></p>
+
+<h3 id="hinzufügen-einer-snapshot-konfiguration-aus-einer-datei">Hinzufügen einer Snapshot-Konfiguration aus einer Datei</h3>
+
+<p>Um eine neue Konfiguration aus einer Datei hinzuzufügen, führen Sie folgende Schritte aus:</p>
+
+<ol>
+<li>Klicken Sie <strong>Konfigurationssnapshot hinzufügen</strong> rechts in der oberen Menüleiste.</li>
+<li>Geben Sie im folgenden Fenster einen eindeutigen Namen und eine optionale Beschreibung für die Konfiguration ein.</li>
+<li>Geben Sie im Feld <strong>Gerätetyp</strong> einen Gerätetypen ein. Den Gerätetypen finden Sie in der Registerkarte <strong>Info</strong> des Zielgeräts.</li>
+<li>Wählen Sie die Datei mit dem Konfigurationssnapshot, indem Sie eine Datei von Ihrem Computer hochladen, eine externe URL bereitstellen oder eine vorhandene Datei auswählen.</li>
+<li>Klicken Sie <strong>Konfigurationssnapshot hinzufügen</strong>, um Ihre Einstellungen zu speichern.</li>
+</ol>
+
+<p>Der Snapshot wird dem Konfigurations-Repository hinzugefügt.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-config-snapshot-new.png" alt="Konfigurationssnapshot hinzufügen" /></p>
+
+<h3 id="laden-eines-snapshots-von-einem-gerät">Laden eines Snapshots von einem Gerät</h3>
+
+<p>Neben dem Hinzufügen einer Konfiguration aus einer Datei können Sie auch eine Konfiguration hinzufügen, indem Sie diese von einem Gerät abrufen.</p>
+
+<p>Um eine Konfiguration von einem Gerät zu laden, führen Sie folgende Schritte aus:</p>
+
+<ol>
+<li>Navigieren Sie zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte  <strong>Konfiguration</strong>.</li>
+<li>Klicken Sie <strong>Neuen Snapshot vom Gerät laden</strong> rechts oben unter <strong>Konfigurationssnapshot</strong>.</li>
+</ol>
+
+<p>Der geladene Snapshot wird zum Konfigurations-Repository hinzugefügt.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-snapshot-retrieve.png" alt="Konfigurationssnapshot laden" style="max-width: 75%"></p>
+
+<h3 id="anwenden-eines-konfigurationssnapshots-auf-ein-gerät">Anwenden eines Konfigurationssnapshots auf ein Gerät</h3>
+
+<p>Um einen Konfigurationssnapshot auf ein Gerät anzuwenden, führen Sie folgende Schritte aus:</p>
+
+<ol>
+<li>Navigieren Sie zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte  <strong>Konfiguration</strong>.</li>
+<li>Wählen Sie unter <strong>Konfigurationssnapshot</strong> eine Konfiguration aus der Auswahlliste.</li>
+<li>Klicken Sie <strong>Snapshot an Gerät senden</strong>, um den ausgewählten Snapshot an das Gerät zu senden.</li>
+</ol>
+
+<p><img src="/guides/images/users-guide/addsnap.png" alt="Senden eines Snapshots" /></p>
+
+<h3 id="anwenden-des-konfigurationssnapshots-eines-geräts-auf-ein-anderes-gerät">Anwenden des Konfigurationssnapshots eines Geräts auf ein anderes Gerät</h3>
+
+<p>Um den Konfigurationssnapshot eines Geräts auf ein anderes Gerät anzuwenden, führen Sie folgende Schritte aus:</p>
+
+<ol>
+<li>Navigieren Sie zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte  <strong>Konfiguration</strong>.</li>
+<li>Klicken Sie <strong>Neuen Snapshot vom Gerät laden</strong> rechts oben unter <strong>Konfigurationssnapshot</strong>.</li>
+<li>Navigieren Sie zu dem anderen Gerät und wechseln Sie zur Registerkarte  <strong>Konfiguration</strong>.</li>
+<li>Wählen Sie unter <strong>Konfigurationssnapshot</strong> die neue Konfiguration aus der Auswahlliste und klicken Sie <strong>Snapshot an Gerät senden</strong>.</li>
+</ol>
+
+<blockquote>
+<p><strong>Info</strong>: Wenn Sie eine Konfiguration von einem Gerät auf ein anderes anwenden, enthält die Konfiguration möglicherweise gerätespezifische Daten.</p>
+</blockquote>
+
+  </article>
+  
+  <article id="simulator" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#simulator">
+        <span class="fa fa-link"></span>
+      </button>
+      Simulatoren</h2>
+    
+
+<p>Mit dem Simulator in Cumulocity können alle Aspekte von IoT-Geräten simuliert werden:</p>
+
+<ul>
+<li>Einrichten eines simulierten Geräts oder eines Netzwerks von simulierten Geräten</li>
+<li>Bestimmen der Kommandos, die das Gerät verarbeiten kann</li>
+<li>Erstellen von Anweisungen basierend auf voreingestellten oder benutzerdefinierten Templates und Planen von Schritten</li>
+<li>Erstellen von bis zu 10 Geräten eines bestimmten Typs</li>
+<li>Erstellen von Nachrichten für Messwerte, Alarme, Ereignisse und Stammdaten</li>
+<li>Anzeigen von Simulationsproblemen als Alarme</li>
+</ul>
+
+<h3 id="was-ist-ein-simulator">Was ist ein Simulator?</h3>
+
+<p>Mit dem Simulator können Sie &ldquo;künstliche&rdquo; Geräte erstellen, die den gleichen Grad an Funktionalität aufweisen, wie verbundene Hardwaregeräte.</p>
+
+<p>Ein Simulator verwendet eine Playliste, um Nachrichten zu simulieren, die das Gerät an die Cumulocity-Plattform sendet. Eine Playliste ist eine Reihe von Anweisungen, die der Simulator nacheinander ausführt. Wenn die letzte Anweisung erreicht ist, beginnt der Simulator wieder von vorne.</p>
+
+<p>Eine Anweisung kann entweder eine Nachricht senden (Messwerte, Alarme, Ereignisse und Stammdaten) oder eine bestimmte Zeit warten.</p>
+
+<p>Eine Nachricht wird durch Auswählen eines Nachricht-Templates (z. B. Senden einer Temperatur) und Bereitstellen des entsprechenden Werts (z. B. 23,0 Grad) definiert. Es gibt viele vordefinierte Nachricht-Templates, etwa für das Senden eines Messwerts oder das Erstellen oder Aufheben eines Alarms. Diese Templates basieren auf statischen MQTT-Templates. Darüber hinaus können mit dem <a href="#smartrest-templates">SmartREST-Template-Editor</a> eigene Nachricht-Templates erstellt werden.</p>
+
+<h3 id="die-registerkarte-simulator">Die Registerkarte Simulator</h3>
+
+<p>Klicken Sie <strong>Simulator</strong> im Menü <strong>Geräte</strong>, um die Seite <strong>Simulator</strong> zu öffnen.</p>
+
+<p>Allen Simulatoren, auf die Sie zugreifen können, werden hier angezeigt. Klicken Sie auf das Menüsymbol rechts oben in einer Simulatorkarte, um den Simulator zu bearbeiten, zu duplizieren oder zu löschen.</p>
+
+<p><img src="/guides/images/users-guide/DeviceManagement/DevMgmt_SimulatorCard.png" alt="Simulator card" style="max-width: 50%"></p>
+
+<h3 id="hinzufügen-eines-simulators">Hinzufügen eines Simulators</h3>
+
+<p>Um einen neuen Simulator zu erstellen, führen Sie folgende Schritte aus:</p>
+
+<ol>
+<li>Klicken Sie <strong>Neuer Simulator</strong> recht in der oberen Menüleiste.</li>
+<li>Wählen Sie im folgenden Fenster aus der Auswahlliste im Feld <strong>Voreinstellungen</strong> einen Simulatortyp. Wählen Sie &ldquo;Leerer Simulator&rdquo;, um einen eigenen Simulator zu erstellen.</li>
+<li>Geben Sie einen Namen für den Simulator ein.</li>
+<li>Wählen Sie die Anzahl der Instanzen für diesen Simulator (bis zu zehn).</li>
+<li>Klicken Sie <strong>Weiter</strong>, um zum nächsten Dialog zu wechseln.</li>
+</ol>
+
+<p><img src="/guides/images/benutzerhandbuch/addsimde.png" alt="Simulator hinzufügen" style="max-width: 60%"></p>
+
+<h3 id="anweisungen">Anweisungen</h3>
+
+<p>Nachdem Sie einen Simulator erstellt haben, können Sie Anweisungen hinzufügen, die festlegen, was Ihr Simulator tun soll. Anweisungen sind einzelne Aufgaben, die einer Playliste hinzugefügt werden, die der Simulator nacheinander ausführt.</p>
+
+<p>Anweisungen können auf der Registerkarte <strong>Anweisungen</strong> eines Simulators angezeigt und bearbeitet werden.</p>
+
+<p><strong>Beispiele</strong></p>
+
+<p>In den voreingestellten Simulatoren sind bereits Beispielanweisungen vorhanden. Der Simulator &ldquo;Temperaturmesswert&rdquo; beispielsweise enthält bereits die Schritte &ldquo;Messwert erstellen&rdquo; und &ldquo;Warten&rdquo;.</p>
+
+<p><img src="/guides/images/users-guide/addinstructions2.png" alt="Add Instructions Step 2" /></p>
+
+<p>Die Messwertanweisungen beziehen sich auf ein Fragment. Fragmente werden verwendet, um die Kapazitäten von Objekten zu bestimmen. Nähere Informationen zu Fragmenten finden Sie in der <a href="/guides/reference/sensor-library/">Sensor Library </a> im Reference Guide.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/addinstructions3de.png" alt="Add Instructions Step 3" /></p>
+
+<p>Die Anweisung &ldquo;Warten&rdquo; erfordert einen einzelnen Wert für die Dauer des Wartens in Sekunden.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/addinstructions4de.png" alt="Add Instructions Step 4" /></p>
+
+<p>Der Bereich auf der rechten Seite ändert sich entsprechend des ausgewählten Anweisungstyps.</p>
+
+<h3 id="unterstützte-kommandos">Unterstützte Kommandos</h3>
+
+<p>in der Registerkarte <strong>Unterstützte Kommandos</strong> eines Simulators können bestimmte Kommandos wie Konfigurationen oder Software-/Firmware-Updates ein- oder abgeschaltet werden.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/supop1de.png" alt="Operations Off" /></p>
+
+<p><img src="/guides/images/benutzerhandbuch/supop2de.png" alt="Operations On" /></p>
+
+<p>Klicken Sie <strong>Benutzerdefiniertes Kommando hinzufügen</strong>, um eigene Kommandos zur Liste hinzuzufügen.</p>
+
+<h3 id="alarme-für-den-simulator">Alarme für den Simulator</h3>
+
+<p>Die Registerkarte <strong>Alarme</strong> eines Simulators zeigt Alarme an, die den Simulator selbst betreffen (nicht das simulierte Gerät), d.h. Alarme für den Fall, dass der Simulator nicht korrekt arbeitet. Weitere Informationen zu Alarmen finden Sie unter <a href="#alarm-monitoring">Arbeiten mit Alarmen</a>.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/simalarmde.png" alt="Simulator Alarm" /></p>
+
+  </article>
+  
+  <article id="smartrest-templates" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#smartrest-templates">
+        <span class="fa fa-link"></span>
+      </button>
+      Verwenden von SmartREST-Templates</h2>
+    
+
+<h3 id="einführung">Einführung</h3>
+
+<p>Bei den SmartREST-Templates handelt es sich um eine Sammlung von Anfrage- und Antwort-Templates, die verwendet werden, um CSV-Daten und Cumulocity Rest API-Aufrufe zu konvertieren.  Sie können SmartREST-Templates etwa verwenden, um einfach Geräte zur Plattform hinzuzufügen anstatt jedesmal manuell eine Anfrage zu schreiben.</p>
+
+<p>Um die Geräteintegration zu vereinfachen, stellt Cumulocity auch statische Templates bereit, so dass Sie keine eigenen Templates erstellen müssen. Diese Templates konzentrieren sich jedoch nur auf häufig verwendete Nachrichten für die Geräteverwaltung. Weitere Informationen zu statischen Templates finden Sie im <a href="/guides/device-sdk/mqtt#static-templates">Device SDK guide</a>.</p>
+
+<p>Klicken Sie <strong>SmartREST-Template</strong> im Navigator, um die Liste der SmartREST-Templates zu öffnen.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-smartrest-templates.png" alt="SmartREST-Templates" /></p>
+
+<p>Für jedes Template werden folgende Informationen bereitgestellt:</p>
+
+<ul>
+<li>Template-Name, z. B. Camel</li>
+<li>Template-ID, z.B. 99</li>
+<li>Anzahl gesendeter Nachrichten</li>
+<li>Anzahl der Antworten</li>
+</ul>
+
+<p>SmartREST-Templates können auf zweierlei Weise hinzugefügt werden:</p>
+
+<ul>
+<li>Importieren eines bereits vorhandenen Templates</li>
+<li>Erstellen eines neues Templates</li>
+
+<li><h3 id="importieren-eines-vorhandenen-templates">Importieren eines vorhandenen Templates</h3></li>
+</ul>
+
+<ol>
+<li>Klicken Sie <strong>Import</strong> rechts in der oberen Menüleiste.</li>
+<li>Wählen Sie im folgenden Fenster eine Datei zum Hochladen von Ihrem Computer.</li>
+<li>Geben Sie einen Namen und eine eindeutige ID für das Template ein (beide Eingaben sind erforderlich).</li>
+<li>Klicken Sie <strong>Importieren</strong>, um das Template zu importieren.</li>
+</ol>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-template-import.png" alt="Template importieren" style="max-width: 50%"></p>
+
+<h3 id="erstellen-eines-neuen-smartrest-templates">Erstellen eines neuen SmartREST-Templates</h3>
+
+<ol>
+<li>Klicken Sie <strong>Neues Template</strong> rechts in der oberen Menüleiste.</li>
+<li>Geben Sie einen Namen und eine eindeutige ID für das Template ein (beide Eingaben sind erforderlich).</li>
+<li>Klicken Sie <strong>Weiter</strong>, um Nachrichten oder Antworten hinzuzufügen.</li>
+</ol>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-template-create.png" alt="Create template" style="max-width: 50%"></p>
+
+<h3 id="hinzufügen-einer-nachricht">Hinzufügen einer Nachricht</h3>
+
+<p>Das Nachrichten-Template enthält alle erforderlichen Informationen, um eine  SmartREST-Anfrage in einen entsprechendenRest API-Aufruf zu konvertieren, der dann zur Plattform gesendet wird.</p>
+
+<p>Um eine neue Nachricht zu einem Template hinzuzufügen, navigieren Sie zur Registerkarte <strong>Nachrichten</strong> im entsprechenden Template und klicken Sie <strong>Nachricht hinzufügen</strong>.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-template-message.png" alt="Nachricht" style="max-width: 75%"></p>
+
+<p>Füllen Sie die folgenden Felder aus:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Message-ID</td>
+<td align="left">Integer-Wert, der zur Identifizierung der Nachricht verwendet wird. Dieser Wert muss eindeutig für alle Nachricht- und Antwort-Templates sein. Erforderlich.</td>
+</tr>
+
+<tr>
+<td align="left">Ziel-REST API</td>
+<td align="left">REST API für das Ziel. Auswahlliste. Verfügbare Werte: ALARM, EREIGNIS, KOMMANDO, MESSWERT, STAMMDATEN.</td>
+</tr>
+
+<tr>
+<td align="left">Methode</td>
+<td align="left">Anfragemethode. Verfügbare Werte POST, PUT, GET, abhängig von der ausgewählten Ziel-REST API.</td>
+</tr>
+
+<tr>
+<td align="left">Erwartet Antwortnachricht</td>
+<td align="left">Aktivieren Sie dieses Kontrollkästchen, wenn Sie die Ergebnisse der Anfrage mit Antwort-Templates verarbeiten möchten.</td>
+</tr>
+
+<tr>
+<td align="left">Integrierte REST API-Felder</td>
+<td align="left">Diese Felder sind optional und variieren je nach ausgewählter Ziel-REST API. Wenn kein Wert bereitgestellt wird, kann das Gerät diesen setzen, sobald die eigentliche Nachricht gesendet wird.</td>
+</tr>
+
+<tr>
+<td align="left">Benutzerdefinierte REST API-Felder</td>
+<td align="left">Durch Klicken von <strong>Feld hinzufügen</strong>, können zusätzliche eigene Felder hinzugefügt werden. Geben Sie den API-Schlüssel ein und wählen Sie den gewünschten Datentypen.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Unter <strong>Vorschau</strong> können Sie eine Vorschau Ihrer Anfragenachricht sehen.</p>
+
+<p>Klicken Sie <strong>Speichern</strong>, um Ihre Einstellungen zu speichern.</p>
+
+<p>Um eine Nachricht zu löschen, öffnen Sie diese und klicken Sie <strong>Löschen</strong>.</p>
+
+<h3 id="hinzufügen-einer-antwort">Hinzufügen einer Antwort</h3>
+
+<p>Ein Antwort-Template enthält alle erforderlichen Informationen, um Datenwerte aus einer Antwort der Plattform auf eine REST API-Anfrage zu extrahieren, die dann an den Client im CSV-Datenformat gesendet werden.</p>
+
+<p>Um eine neue Antwort hinzuzufügen, navigieren Sie zur Registerkarte <strong>Antworten</strong> im entsprechenden Template und klicken Sie <strong>Antwort hinzufügen</strong>.</p>
+
+<p><img src="/guides/images/benutzerhandbuch/devmgmt-template-response.png" alt="Response" style="max-width: 75%"></p>
+
+<p>Füllen Sie die folgenden Felder aus:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Antwort-ID</td>
+<td align="left">Eindeutiger Integer-Wert zur Identifizierung der Antwort.</td>
+</tr>
+
+<tr>
+<td align="left">Name</td>
+<td align="left">Name für die Antwort. Erforderlich.</td>
+</tr>
+
+<tr>
+<td align="left">Basis-Pattern</td>
+<td align="left">Basis-Pattern für die Antwort.</td>
+</tr>
+
+<tr>
+<td align="left">Bedingung</td>
+<td align="left">Bedingungswert der Antwort.</td>
+</tr>
+
+<tr>
+<td align="left">Pattern</td>
+<td align="left">Mindestens ein Pattern ist erforderlich. Klicken Sie <strong>Pattern hinzufügen</strong> und geben Sie einen Pattern-Wert an.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Klicken Sie <strong>Speichern</strong>, um Ihre Einstellungen zu speichern.</p>
+
+<p>Um eine Antwort zu löschen, öffnen Sie diese und klicken Sie <strong>Löschen</strong>.</p>
+
+<h3 id="bearbeiten-oder-löschen-eines-smartrest-templates">Bearbeiten oder Löschen eines SmartREST-Templates</h3>
+
+<p>Um ein SmartREST-Template zu bearbeiten, klicken Sie auf die entsprechende Template-Karte oder klicken Sie das Menüsymbol und wählen Sie <strong>Bearbeiten</strong> im Kontextmenü.</p>
+
+<p>Um ein SmartREST-Template zu löschen, klicken Sie <strong>Löschen</strong> im Kontextmenü.</p>
+
+<h3 id="exportieren-eines-smartrest-templates">Exportieren eines SmartREST-Templates</h3>
+
+<p>Um ein SmartREST-Template zu exportieren, klicken Sie das Menüsymbol und wählen Sie <strong>Exportieren</strong> im Kontextmenü. Das Template wird automatisch heruntergeladen.</p>
+
+<p>Um ein SmartREST-Template als CSV-Datei herunterzuladen, führen Sie folgende Schritte aus:</p>
+
+<ol>
+<li>Öffnen Sie das gewünschte Template und wechseln Sie zur Registerkarte <strong>CSV-Vorschau</strong>.</li>
+<li>Klicken Sie in der Registerkarte <strong>CSV-Vorschau</strong>, die zusätzliche Informationen zu Nachrichten und Antworten enthält, <strong>In die Zwischenablage kopieren</strong>.</li>
+<li>Wählen Sie im folgenden Fenster die bevorzugten Optionen für Feldtrennzeichen, Dezimaltrennzeichen und Zeichensatz.</li>
+<li>Klicken Sie <strong>Herunterladen</strong>, um das Template als CSV-Datei herunterzuladen.</li>
+</ol>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

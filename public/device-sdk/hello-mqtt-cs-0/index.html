@@ -1,0 +1,3593 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Device SDK for C# - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Device SDK guide</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/introduction/">Overview</a>
+     
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/mqtt/">Device integration using MQTT</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt">Hello MQTT</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt-c">Hello MQTT C</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt-java">Hello MQTT Java</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt-javascript">Hello MQTT Web-based</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt-python">Hello MQTT Python</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt-nodejs">Hello MQTT Node.js</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#implementation">MQTT implementation</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#device-integration">Device integration</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#smartrest-1">SmartREST 1.0</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#smartrest-2">SmartREST 2.0</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#mqtt-static-templates">MQTT Static templates</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#handling-ids">Handling IDs</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/mqtt/#json">JSON via MQTT</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/rest/">Device integration using REST</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/rest/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/rest/#device-integration">Device integration</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/rest/#hello-rest">Hello REST!</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/cpp/">Device SDK for C&#43;&#43;</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/cpp/#introduction">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/cpp/#build">Building the C&#43;&#43; library</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/cpp/#use">C&#43;&#43; Device integration</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/cpp/#custom">Customizing the build</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/cpp/#reference">Agent software reference</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/device-sdk/hello-mqtt-cs-0/">Device SDK for C#</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#prerequisites">Prerequisites</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#developing-the-client">Developing the &#34;Hello, MQTT world!&#34; client</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#cs-static-templates">Static templates</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav5"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/device-sdk/java/">Device SDK for Java</a>
+     
+      
+      
+      <div id="page-nav5"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/java/#introduction">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/java/#hello-world-basic">Hello, world!</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/java/#hello-world-me">Hello, ME!</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/java/#agents">Java reference agent</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/device-sdk/java/#developing-java-clients">Developing Java clients</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Device SDK for C#</h1>
+    </header>
+    
+      <div class="lead">
+        <p>In this tutorial, you will learn how to use the C# MQTT client with Cumulocity using pre-defined messages (called &ldquo;static templates&rdquo;).</p>
+
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="prerequisites" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#prerequisites">
+        <span class="fa fa-link"></span>
+      </button>
+      Prerequisites</h2>
+    
+
+<p>In order to follow this tutorial, check the following prerequisites:</p>
+
+<ul>
+<li>You need to have a valid tenant, a user, and a password in order to access Cumulocity.</li>
+<li>Verify that you have <a href="https://www.microsoft.com/net/download/windows">.NET Core SDK 2.0</a>.</li>
+</ul>
+
+<h4 id="source-code">Source code</h4>
+
+<p>The source tree is located in a Git repository.</p>
+
+<p>The repository location link:</p>
+
+<pre><code>https://bitbucket.org/m2m/cumulocity-sdk-cs/src/master/
+</code></pre>
+
+  </article>
+  
+  <article id="developing-the-client" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#developing-the-client">
+        <span class="fa fa-link"></span>
+      </button>
+      Developing the &#34;Hello, MQTT world!&#34; client</h2>
+    
+
+<p>To develop a very simple &ldquo;Hello, world!&rdquo; MQTT client for Cumulocity, you need to follow these steps:</p>
+
+<ul>
+<li><p>Create a console project:</p>
+
+<pre><code>dotnet new console
+</code></pre></li>
+
+<li><p>Add a new entry <PropertyGroup> to a csproj file:</p>
+
+<pre><code>&lt;RestoreSources&gt;$(RestoreSources);../nugets;https://api.nuget.org/v3/index.json&lt;/RestoreSources&gt;
+</code></pre></li>
+
+<li><p>Add a package reference to a project file:</p>
+
+<pre><code>dotnet add package Cumulocity.MQTT -s &quot;../nugets&quot;
+</code></pre></li>
+</ul>
+
+<p><strong>Example</strong></p>
+
+<pre><code>    using Cumulocity.MQTT;
+    using Cumulocity.MQTT.Model;
+    using System;
+    using System.Threading.Tasks;
+
+    namespace MqttDemo
+    {
+        internal class Program
+        {
+             static Client cl;
+
+            private static void Main(string[] args)
+            {
+                Task.Run(() =&gt; RunClientAsync());
+                new System.Threading.AutoResetEvent(false).WaitOne();
+            }
+
+            private static async Task RunClientAsync()
+            {
+                var cnf = new Configuration()
+                {
+                    Server = &quot;ws://&lt;&lt;serverUrl&gt;&gt;/mqtt&quot;,
+                    UserName = @&quot;&lt;&lt;tenant&gt;&gt;/&lt;&lt;username&gt;&gt;&quot;,
+                    Password = @&quot;&lt;&lt;password&gt;&gt;&quot;,
+                    ClientId = &quot;&lt;&lt;clientId&gt;&gt;&quot;,
+                    Port = &quot;80&quot;,
+                    ConnectionType = &quot;WS&quot;
+                };
+
+                cl = new Client(cnf);
+                await cl.ConnectAsync();
+                cl.RestartEvt += Cl_RestartEvt;
+
+                await cl.StaticInventoryTemplates
+                        .DeviceCreation(&quot;TestDevice&quot;, &quot;c8y_MQTTDevice&quot;, (e) =&gt; { return    Task.FromResult(false); });
+
+                await cl.StaticInventoryTemplates
+                        .ConfigureHardware(&quot;S123456789&quot;, &quot;model&quot;, &quot;1.0&quot;, (e) =&gt; { return Task.FromResult(false); });
+
+                Console.WriteLine(String.Format(&quot;Connected {0}&quot;, cl.IsConnected));
+            }
+            private static void Cl_RestartEvt(object sender, RestartEventArgs e)
+            {
+        Console.WriteLine(&quot;Restart the device&quot;);
+
+        cl.StaticOperationTemplates
+            .SetExecutingOperationsAsync(&quot;c8y_Restart&quot;, (er) =&gt; { return Task.FromResult(false); });
+        Thread.Sleep(1000);
+        cl.StaticOperationTemplates
+            .SetOperationToSuccessfulAsync(&quot;c8y_Restart&quot;, string.Empty, (er) =&gt; { return Task.FromResult(false); });
+            }
+        }
+    }
+</code></pre>
+
+<p>Replace &lt;&lt;clientId&gt;&gt;, &lt;&lt;serverUrl&gt;&gt;, &lt;&lt;tenant&gt;&gt;, &lt;&lt;username&gt;&gt;, and &lt;&lt;password&gt;&gt; with your data.</p>
+
+<ul>
+<li><p>Build and run the application:</p>
+
+<pre><code>dotnet build
+dotnet run
+</code></pre></li>
+</ul>
+
+<p>Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connections (e.g. tcp://mqtt.cumulocity.com:1883 or ssl://mqtt.cumulocity.com:8883), so as the &lt;&lt;serverUrl&gt;&gt; select the one which fits for you.</p>
+
+<p>What does the code in &ldquo;main&rdquo; do?</p>
+
+<ul>
+<li>Configure the MQTT connection.</li>
+<li>Connect with Cumulocity via a MQTT protocol.</li>
+<li>Create a new device with a My MQTT device name and a c8y_MQTTDevice type.</li>
+<li>Update the device hardware information by putting a S123456789 serial, a MQTT test model and a Rev0.1revision.</li>
+<li>Subscribe to the static operation templates for the device, print all received operations to the console and in case of a c8y_Restart operation simulate device restart.</li>
+</ul>
+
+<h3 id="improving-the-agent">Improving the agent</h3>
+
+<p>Now that you have done your first step, check out the section <a href="/guides/device-sdk/mqtt#hello-mqtt">Hello MQTT</a> to learn more about Cumulocity MQTT and improve your application.</p>
+
+  </article>
+  
+  <article id="cs-static-templates" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#cs-static-templates">
+        <span class="fa fa-link"></span>
+      </button>
+      Static templates</h2>
+    
+
+<h4 id="static-inventory-templates">Static inventory templates</h4>
+
+<h5 id="device-creation-100">Device creation (100)</h5>
+
+<p>Will create a new device for the serial number in the inventory if not yet existing. An externalId for the device with type c8y_Serial and the device identifier of the MQTT clientId as value will be created.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>deviceName</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Name of the device. &lt;serialNumber&gt;</td>
+</tr>
+
+<tr>
+<td align="center"><code>deviceType</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Type of the device.</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await cl.StaticInventoryTemplates
+        .DeviceCreation(&quot;myDevice&quot;,
+                        &quot;myType&quot;,
+                        (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h5 id="child-device-creation-101">Child device creation (101)</h5>
+
+<p>Will create a new child device for the current device. The newly created object will be added as child device. Additionally, an externalId for the child will be created with type &ldquo;c8y_Serial&rdquo; and the value a combination of the serial of the root device and the unique child ID.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>uniqueChildID</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. The unique child identifier.</td>
+</tr>
+
+<tr>
+<td align="center"><code>deviceName</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Name of the device. &lt;serialNumber&gt;</td>
+</tr>
+
+<tr>
+<td align="center"><code>deviceType</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Type of the device.</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await cl.StaticInventoryTemplates
+        .ChildDeviceCreationAsync(&quot;D32Q&quot;, &quot;Device Name&quot;, &quot;c8y_MQTTDevice&quot;, (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h5 id="get-child-devices-105">Get child devices (105)</h5>
+
+<p>Will trigger the sending of child devices of the device.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>cl.ChildrenOfDeviceEvt += Cl_ChildrenOfDeviceEvt;
+
+await cl.StaticInventoryTemplates.GetChildDevices((e) =&gt; { return Task.FromResult(false); });
+...
+private static void Cl_ChildrenOfDeviceEvt(object sender, ChildrenOfDeviceEventArgs e)
+    {
+        foreach (var device in e.ChildrenOfDevice)
+        {
+            Console.WriteLine(device);
+        }
+    }
+</code></pre>
+
+<h5 id="configure-hardware-110">Configure hardware (110)</h5>
+
+<p>Will update the hardware properties of the device.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>serialNumber</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The serial number of the device.</td>
+</tr>
+
+<tr>
+<td align="center"><code>model</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The model.</td>
+</tr>
+
+<tr>
+<td align="center"><code>revision</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The revision.</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await cl.StaticInventoryTemplates
+        .ConfigureHardware(&quot;S123456789&quot;,
+                            &quot;model&quot;,
+                            &quot;1.0&quot;,
+                            (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h5 id="configure-mobile-111">Configure mobile (111)</h5>
+
+<p>Will update the mobile properties of the device.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>imei</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The IMEI.</td>
+</tr>
+
+<tr>
+<td align="center"><code>iccid</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The ICCID.</td>
+</tr>
+
+<tr>
+<td align="center"><code>imsi</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The IMSI.</td>
+</tr>
+
+<tr>
+<td align="center"><code>mcc</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The MCC.</td>
+</tr>
+
+<tr>
+<td align="center"><code>mnc</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The MNC.</td>
+</tr>
+
+<tr>
+<td align="center"><code>lac</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The LAC.</td>
+</tr>
+
+<tr>
+<td align="center"><code>cellId</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The Cell ID.</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await cl.StaticInventoryTemplates
+        .ConfigureMobile(
+                        &quot;356938035643809&quot;,
+                        &quot;8991101200003204510&quot;,
+                        &quot;410-07-4777770001&quot;,
+                        &quot;410&quot;,
+                        &quot;07&quot;,
+                        &quot;477&quot;,
+                        &quot;0001&quot;,
+                        (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h5 id="configure-position-112">Configure position (112)</h5>
+
+<p>Will update the position properties of the device.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>latitude</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The latitude.</td>
+</tr>
+
+<tr>
+<td align="center"><code>longitude</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The longitude.</td>
+</tr>
+
+<tr>
+<td align="center"><code>altitude</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The altitude.</td>
+</tr>
+
+<tr>
+<td align="center"><code>accuracy</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The accuracy.</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await cl.StaticInventoryTemplates
+        .ConfigurePosition(
+                            &quot;52.409538&quot;,
+                            &quot;16.931992&quot;,
+                            &quot;76&quot;,
+                            &quot;134&quot;,
+                            (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h5 id="set-configuration-113">Set configuration (113)</h5>
+
+<p>Will set the configuration of the device.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>configuration</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The IMEI.</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await cl.StaticInventoryTemplates
+        .SetConfiguration(
+                       &quot;val1 = 1\nval2 = 2&quot;,
+                       (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h5 id="set-supported-operations-114">Set supported operations (114)</h5>
+
+<p>Will set the supported operations of the device.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>supportedOperations</code></td>
+<td align="center">IList&lt;string&gt;</td>
+<td align="left"><strong>Required</strong>. List of supported operations.</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>IList&lt;string&gt; supportedOperations = new List&lt;string&gt;();
+supportedOperations.Add(&quot;c8y_Restart&quot;);
+supportedOperations.Add(&quot;c8y_Configuration&quot;);
+
+//Will set the supported operations of the device
+await cl.StaticInventoryTemplates
+        .SetSupportedOperations(
+                                supportedOperations,
+                                (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h5 id="set-firmware-115">Set firmware (115)</h5>
+
+<p>Will set the firmware installed on the device.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>name</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The name.</td>
+</tr>
+
+<tr>
+<td align="center"><code>version</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The version.</td>
+</tr>
+
+<tr>
+<td align="center"><code>url</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The URL.</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await cl.StaticInventoryTemplates.SetFirmware(
+                            &quot;Extreme&quot;,
+                            &quot;Ultra 1.0&quot;,
+                            @&quot;http://sth.url&quot;,
+                            (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h5 id="set-software-list-116">Set software list (116)</h5>
+
+<p>Will set the list of software installed on the device.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>installedSoftware</code></td>
+<td align="center">IList&lt;Software&gt;</td>
+<td align="left"><strong>Optional</strong>. List of supported operations.</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p>Software members:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>Name</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. The name.</td>
+</tr>
+
+<tr>
+<td align="center"><code>Url</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. The URL.</td>
+</tr>
+
+<tr>
+<td align="center"><code>Version</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. The version.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>List&lt;Software&gt; list = new List&lt;Software&gt;();
+list.Add(new Software() { Name = &quot;Software01&quot;, Url = &quot;url1&quot;, Version = &quot;1.0&quot; });
+list.Add(new Software() { Name = &quot;Software02&quot;, Url = &quot;url2&quot;, Version = &quot;2.1&quot; });
+
+await cl.StaticInventoryTemplates.SetSoftwareList(list,
+                                     (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h5 id="set-required-availability-117">Set required availability (117)</h5>
+
+<p>Will set the required interval for availability monitoring. It will only set the value if it does not exist. Values entered e.g. through UI are not overwritten.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>requiredInterval</code></td>
+<td align="center">int</td>
+<td align="left"><strong>Optional</strong>. Required interval.</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await cl.StaticInventoryTemplates.SetRequiredAvailability(60,
+                                    (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h4 id="static-measurement-templates">Static measurement templates</h4>
+
+<h5 id="create-custom-measurement-200">Create custom measurement (200)</h5>
+
+<p>Will create a measurement with given fragment and series.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>fragment</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. The fragment.</td>
+</tr>
+
+<tr>
+<td align="center"><code>series</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. The series.</td>
+</tr>
+
+<tr>
+<td align="center"><code>value</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. The value.</td>
+</tr>
+
+<tr>
+<td align="center"><code>unit</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The unit.</td>
+</tr>
+
+<tr>
+<td align="center"><code>time</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The time.</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await cl.StaticMeasurementTemplates
+        .CreateCustomMeasurementAsync(&quot;c8y_Temperature&quot;,
+                                      &quot;T&quot;,
+                                      &quot;25&quot;,
+                                      string.Empty,
+                                      string.Empty,
+                                      (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h5 id="create-signal-strength-measurement-210">Create signal strength measurement (210)</h5>
+
+<p>Will create a measurement of type c8y_SignalStrength.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>rssiValue</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required if 2 not set</strong>. The RSSI value.</td>
+</tr>
+
+<tr>
+<td align="center"><code>berValue</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required if 1 not set</strong>. The BER value.</td>
+</tr>
+
+<tr>
+<td align="center"><code>time</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The time. <strong>Default:</strong> Current server time</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await cl.StaticMeasurementTemplates
+        .CreateSignalStrengthMeasurementAsync(&quot;-90&quot;,
+                                              &quot;23&quot;,
+                                              &quot;2017-09-13T14:00:14.000+02:00&quot;,
+                                              (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h5 id="create-temperature-measurement-211">Create temperature measurement (211)</h5>
+
+<p>Will create a measurement of type c8y_TemperatureMeasurement.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>temperatureValue</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required.</strong> The temperature value.</td>
+</tr>
+
+<tr>
+<td align="center"><code>time</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The time. <strong>Default:</strong> Current server time</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await cl.StaticMeasurementTemplates
+        .CreateTemperatureMeasurementAsync(&quot;25&quot;,
+                                           &quot;2018-02-15T05:01:14.000+02:00&quot;,
+                                           (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h5 id="create-battery-measurement-212">Create battery measurement (212)</h5>
+
+<p>Will create a measurement of type c8y_Battery.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>temperatureValue</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required.</strong> The battery value.</td>
+</tr>
+
+<tr>
+<td align="center"><code>time</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The time. <strong>Default:</strong> Current server time</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing Mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await cl.StaticMeasurementTemplates
+        .CreateBatteryMeasurementAsync(&quot;95&quot;,
+                                       &quot;2017-09-13T15:01:14.000+02:00&quot;,
+                                       (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h4 id="static-alarm-templates">Static alarm templates</h4>
+
+<h5 id="create-critical-alarm-301">Create CRITICAL alarm (301)</h5>
+
+<p>Will create a CRITICAL alarm.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>type</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required.</strong> The type.</td>
+</tr>
+
+<tr>
+<td align="center"><code>text</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional.</strong> The text. Alarm of type &lt;alarmType&gt; raised.</td>
+</tr>
+
+<tr>
+<td align="center"><code>time</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The time. <strong>Default:</strong> Current server time</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await cl.staticAlarmTemplates
+        .CreateCriticalAlarmAsync(&quot;c8y_TemperatureAlarm&quot;,
+                                  &quot;Alarm of type c8y_TemperatureAlarm raised&quot;,
+                                  string.Empty,
+                                  (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h5 id="create-major-alarm-302">Create MAJOR alarm (302)</h5>
+
+<p>Will create a MAJOR alarm.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>type</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required.</strong> The type.</td>
+</tr>
+
+<tr>
+<td align="center"><code>text</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional.</strong> The text. Alarm of type &lt;alarmType&gt; raised.</td>
+</tr>
+
+<tr>
+<td align="center"><code>time</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The time. <strong>Default:</strong> Current server time</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await cl.StaticAlarmTemplates
+        .CreateMajorAlarmAsync(&quot;c8y_BatteryAlarm&quot;,
+                               &quot;Major Alarm of type c8y_BatteryAlarm raised&quot;,
+                               string.Empty,
+                               (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h5 id="create-minor-alarm-303">Create MINOR alarm (303)</h5>
+
+<p>Will create a MINOR alarm.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>type</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required.</strong> The type.</td>
+</tr>
+
+<tr>
+<td align="center"><code>text</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional.</strong> The text. Alarm of type &lt;alarmType&gt; raised.</td>
+</tr>
+
+<tr>
+<td align="center"><code>time</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The time. <strong>Default:</strong> Current server time</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await cl.StaticAlarmTemplates.CreateMinorAlarmAsync(&quot;c8y_WaterAlarm&quot;,
+                                                        &quot;Alarm of type c8y_WaterAlarm raised&quot;,
+                                                        string.Empty,
+                                                        (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h5 id="create-warning-alarm-304">Create WARNING alarm (304)</h5>
+
+<p>Will create a WARNING alarm.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>type</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required.</strong> The type.</td>
+</tr>
+
+<tr>
+<td align="center"><code>text</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional.</strong> The text. Alarm of type &lt;alarmType&gt; raised.</td>
+</tr>
+
+<tr>
+<td align="center"><code>time</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The time. <strong>Default:</strong> Current server time</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await cl.StaticAlarmTemplates.CreateWarningAlarmAsync(&quot;c8y_AirPressureAlarm&quot;,
+                                                          &quot;Warning of type c8y_AirPressureAlarm raised&quot;,
+                                                          string.Empty,
+                                                          (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h5 id="update-severity-of-existing-alarm-305">Update severity of existing alarm (305)</h5>
+
+<p>Will change the severity of an existing alarm.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>type</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required.</strong> The type.</td>
+</tr>
+
+<tr>
+<td align="center"><code>severity</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required.</strong> The severity.</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await cl.StaticAlarmTemplates.UpdateSeverityOfExistingAlarmAsync(&quot;c8y_AirPressureAlarm&quot;,
+                                                                     &quot;CRITICAL&quot;,
+                                                                     (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h5 id="clear-existing-alarm-306">Clear existing alarm (306)</h5>
+
+<p>Will clear an existing alarm.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>type</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required.</strong> The type.</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await cl.StaticAlarmTemplates
+        .ClearExistingAlarmAsync(&quot;c8y_TemperatureAlarm&quot;,
+        (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h4 id="static-event-templates">Static event templates</h4>
+
+<h5 id="create-basic-event-400">Create basic event (400)</h5>
+
+<p>Will create an event of given type and text.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>type</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required.</strong> The type.</td>
+</tr>
+
+<tr>
+<td align="center"><code>text</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required.</strong> The text.</td>
+</tr>
+
+<tr>
+<td align="center"><code>time</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The time. <strong>Default:</strong> Current server time</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await cl.StaticEventTemplates
+        .CreateBasicEventAsync(&quot;c8y_MyEvent&quot;,
+                               &quot;Something was triggered&quot;,
+                               string.Empty,
+                               (e) =&gt; { return Task.FromResult(false); })
+</code></pre>
+
+<h5 id="create-location-update-event-401">Create location update event (401)</h5>
+
+<p>Will create a typical location update event containing c8y_Position.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>latitude</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional.</strong> The latitude.</td>
+</tr>
+
+<tr>
+<td align="center"><code>longitude</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional.</strong> The longitude.</td>
+</tr>
+
+<tr>
+<td align="center"><code>altitude</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional.</strong> The altitude.</td>
+</tr>
+
+<tr>
+<td align="center"><code>accuracy</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional.</strong> The accuracy.</td>
+</tr>
+
+<tr>
+<td align="center"><code>time</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The time. <strong>Default:</strong> Current server time</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>        await cl.StaticEventTemplates
+                .CreateLocationUpdateEventAsync(
+                                             &quot;52.209538&quot;,
+                                             &quot;16.831992&quot;,
+                                             &quot;76&quot;,
+                                             &quot;134&quot;,
+                                             string.Empty,
+                                             (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h5 id="create-location-update-event-with-device-update-402">Create location update event with device update (402)</h5>
+
+<p>Will create a typical location update event containing c8y_Position. Additionally the device will be updated with the same c8y_Position fragment.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>latitude</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional.</strong> The latitude.</td>
+</tr>
+
+<tr>
+<td align="center"><code>longitude</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional.</strong> The longitude.</td>
+</tr>
+
+<tr>
+<td align="center"><code>altitude</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional.</strong> The altitude.</td>
+</tr>
+
+<tr>
+<td align="center"><code>accuracy</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional.</strong> The accuracy.</td>
+</tr>
+
+<tr>
+<td align="center"><code>time</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The time. <strong>Default:</strong> Current server time</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>        await cl.StaticEventTemplates
+                .CreateLocationUpdateEventWithDeviceUpdateAsync(
+                                                             &quot;52.209539&quot;,
+                                                             &quot;16.831993&quot;,
+                                                             &quot;76&quot;,
+                                                             &quot;134&quot;,
+                                                             string.Empty,
+                                                             (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h4 id="static-operation-templates">Static operation templates</h4>
+
+<h5 id="get-pending-operations-500">Get PENDING operations (500)</h5>
+
+<p>Will trigger the sending of all PENDING operations for the agent.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code> await cl.StaticOperationTemplates
+         .GetPendingOperationsAsync((e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h5 id="set-operation-to-executing-501">Set operation to EXECUTING (501)</h5>
+
+<p>Will set the oldest PENDING operation with given fragment to EXECUTING.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>fragment</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. The fragment.</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. Error handler</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await  cl.StaticOperationTemplates
+         .SetExecutingOperationsAsync(&quot;c8y_Restart&quot;,
+                                      (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h5 id="set-operation-to-failed-502">Set operation to FAILED (502)</h5>
+
+<p>Will set the oldest EXECUTING operation with given fragment to FAILED.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>fragment</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. The fragment.</td>
+</tr>
+
+<tr>
+<td align="center"><code>failureReason</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The failure reason.</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. The error handler asynchronous.</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await cl.StaticOperationTemplates
+        .SetOperationToFailedAsync(&quot;c8y_Restart&quot;,
+                                   &quot;Could not restart&quot;,
+                                   (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h5 id="set-operation-to-successful-503">Set operation to SUCCESSFUL (503)</h5>
+
+<p>Will set the oldest EXECUTING operation with given fragment to SUCCESSFUL. It enables the device to send additional parameters that trigger additional steps based on the type of operation send as fragment.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>fragment</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. The fragment.</td>
+</tr>
+
+<tr>
+<td align="center"><code>parameters</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. The parameters.</td>
+</tr>
+
+<tr>
+<td align="center"><code>errorHandlerAsync</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Required</strong>. The error handler asynchronous.</td>
+</tr>
+
+<tr>
+<td align="center"><code>processingMode</code></td>
+<td align="center">string</td>
+<td align="left"><strong>Optional</strong>. Processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await  cl.StaticOperationTemplates
+         .SetOperationToSuccessfulAsync(&quot;c8y_Restart&quot;,
+                                        string.Empty,
+                                        (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h4 id="inventory-templates">Inventory templates</h4>
+
+<h5 id="get-children-of-device-106">Get children of device (106)</h5>
+
+<p>Lists all children of the device</p>
+
+<p>ChildrenOfDeviceEventArgs is the class containing event data</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>ChildrenOfDevice</code></td>
+<td align="center">IList &lt;string&gt;</td>
+<td align="left">List all children of the device.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>cl.ChildrenOfDeviceEvt += Cl_ChildrenOfDeviceEvt;
+
+await cl.StaticInventoryTemplates.GetChildDevices((e) =&gt; { return Task.FromResult(false); });
+...
+private static void Cl_ChildrenOfDeviceEvt(object sender, ChildrenOfDeviceEventArgs e)
+    {
+        foreach (var device in e.ChildrenOfDevice)
+        {
+            Console.WriteLine(device);
+        }
+    }
+</code></pre>
+
+<h4 id="operation-templates">Operation templates</h4>
+
+<p>All operation responses have the same base structure, leading with the message ID followed by the ID of either the root device or a child which should handle the operation.</p>
+
+<h5 id="restart-510">Restart (510)</h5>
+
+<p>Tells the device to restart.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code>cl.RestartEvt += (s, e) =&gt; {
+                Console.WriteLine(s);
+            };
+</code></pre>
+
+<h5 id="command-511">Command (511)</h5>
+
+<p>Tells the device to run the command send in the operation.</p>
+
+<p>CommandEventArgs is the class containing event data.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>CommandText</code></td>
+<td align="center">string</td>
+<td align="left">The command name.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>cl.CommandEvt += (s, e) =&gt; {
+    Console.WriteLine(s);
+};
+</code></pre>
+
+<h5 id="configuration-513">Configuration (513)</h5>
+
+<p>Tells the device to set the configuration sent in the operation.</p>
+
+<p>ConfigurationEventArgs is the class containing event data.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>Configuration</code></td>
+<td align="center">string</td>
+<td align="left">the configuration sent in the operation.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>cl.ConfigurationEvt += (s, e) =&gt; {
+    Console.WriteLine(e.Configuration);
+};
+</code></pre>
+
+<h5 id="firmware-515">Firmware (515)</h5>
+
+<p>Tells the device to install the firmware from the url.</p>
+
+<p>FirmwareEventArgs is the containing event data.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>FirmwareName</code></td>
+<td align="center">string</td>
+<td align="left">The software name</td>
+</tr>
+
+<tr>
+<td align="center"><code>FirmwareVersion</code></td>
+<td align="center">string</td>
+<td align="left">The firmware version.</td>
+</tr>
+
+<tr>
+<td align="center"><code>Url</code></td>
+<td align="center">string</td>
+<td align="left">The url.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>cl.FirmwareEvt += (s, e) =&gt; {
+                   Console.WriteLine(&quot;DeviceSerial:&quot;+s);
+                   Console.WriteLine(e.FirmwareName);
+                   Console.WriteLine(e.FirmwareVersion);
+                   Console.WriteLine( e.Url);
+};
+</code></pre>
+
+<h5 id="software-list-516">Software list (516)</h5>
+
+<p>Tells the device to install the software send in the operation.</p>
+
+<p>SoftwareListEventArgs is the class containing event data.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>SoftwareList</code></td>
+<td align="center">IList&lt;Software&gt;</td>
+<td align="left">The list of software to install.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>cl.SoftwareListEvt += (s, e) =&gt; {
+    foreach (var soft in e.SoftwareList)
+    {
+        Console.WriteLine(soft.Name);
+        Console.WriteLine(soft.Version);
+        Console.WriteLine(soft.Url);
+    }
+};
+</code></pre>
+
+<h5 id="measurement-request-operation-517">Measurement request operation (517)</h5>
+
+<p>Tells the device to send the measurements specified by the request name.</p>
+
+<p>MeasurementRequestOperationEventArgs is the class containing event data.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>RequestName</code></td>
+<td align="center">string</td>
+<td align="left">The measurement to send.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>cl.MeasurementRequestOperationEvt += (s, e) =&gt; {
+    Console.WriteLine(e.RequestName);
+};
+</code></pre>
+
+<h5 id="relay-518">Relay (518)</h5>
+
+<p>Tells the device to either open or close the relay.</p>
+
+<p>RelayEventArgs is the class containing event data.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>RelayState</code></td>
+<td align="center">string</td>
+<td align="left">The relay state.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>        cl.RelayEvt += (s, e) =&gt; {
+
+            Console.WriteLine(e.RelayState);
+
+        };
+</code></pre>
+
+<h5 id="relayarray-519">RelayArray (519)</h5>
+
+<p>Tells the device to either open or close the relays in the array.</p>
+
+<p>RelayArrayEventArgs is the class containing event data.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>RelayState</code></td>
+<td align="center">IList&lt;string&gt;</td>
+<td align="left">The list of the relay state.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>cl.RelayArrayEvt += (s, e) =&gt; {
+    foreach (var rs in e.RelayStates)
+    {
+        Console.WriteLine(rs);
+    }
+};
+</code></pre>
+
+<h5 id="upload-configuration-file-520">Upload configuration file (520)</h5>
+
+<p>Tells the device to upload its current configuration.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code>cl.UploadConfigurationFileEvt += (s, e) =&gt; { };
+</code></pre>
+
+<h5 id="download-configuration-file-521">Download configuration file (521)</h5>
+
+<p>Tells the device to download a configuration file from the url.</p>
+
+<p>DownloadConfigurationFileEventArgs is the class containing event data.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>Url</code></td>
+<td align="center">string</td>
+<td align="left">The url to download a configuration file.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>cl.DownloadConfigurationFileEvt += (s, e) =&gt; {
+    Console.WriteLine(e.Url);
+};
+</code></pre>
+
+<h5 id="logfile-request-522">Logfile request (522)</h5>
+
+<p>Tells the device to upload a log file for the given parameters.</p>
+
+<p>LogfileRequestEventArgs is the class containing event data.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>LogFileName</code></td>
+<td align="center">string</td>
+<td align="left">The file name.</td>
+</tr>
+
+<tr>
+<td align="center"><code>StartDate</code></td>
+<td align="center">string</td>
+<td align="left">From date.</td>
+</tr>
+
+<tr>
+<td align="center"><code>EndDate</code></td>
+<td align="center">string</td>
+<td align="left">To date.</td>
+</tr>
+
+<tr>
+<td align="center"><code>SearchText</code></td>
+<td align="center">string</td>
+<td align="left">The search text.</td>
+</tr>
+
+<tr>
+<td align="center"><code>MaximumLines</code></td>
+<td align="center">string</td>
+<td align="left">The maximum lines.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>cl.LogfileRequestEvt += (s, e) =&gt; {
+    Console.WriteLine(e.LogFileName);
+    Console.WriteLine(e.SearchText);
+    Console.WriteLine(e.StartDate);
+    Console.WriteLine(e.EndDate);
+    Console.WriteLine(e.MaximumLines);
+};
+</code></pre>
+
+<h5 id="communication-mode-523">Communication mode (523)</h5>
+
+<p>Tells the device to change the communication mode.</p>
+
+<p>CommunicationModeEventArgs is the class containing event data.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Field</th>
+<th align="center">Data type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>Mode</code></td>
+<td align="center">string</td>
+<td align="left">The communication mode.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>cl.CommunicationModeEvt += (s, e) =&gt; {
+    Console.WriteLine(e.Mode);
+};
+</code></pre>
+
+<h3 id="smartrest">SmartRest</h3>
+
+<h4 id="check-template-collection-exists">Check Template Collection Exists</h4>
+
+<p>Will verify if a template collection exists.</p>
+
+<pre><code>cl.IsExistTemplateCollectionEvt += (s, e) =&gt;
+{
+    var item = e.IsExist;
+};
+
+ await cl.CustomSmartRest.CheckTemplateCollectionExists(&quot;test&quot;, (e) =&gt; { return Task.FromResult(false); });
+</code></pre>
+
+<h4 id="create-template-data">Create Template Data</h4>
+
+<p>Will create the template data asynchronous.</p>
+
+<p>Parameters:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Data type</th>
+<th align="left">Mandatory</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">collectionName</td>
+<td align="left">String</td>
+<td align="left">YES</td>
+<td align="left">Name of the collection</td>
+</tr>
+
+<tr>
+<td align="left">requests</td>
+<td align="left">List&lt;Request&gt;</td>
+<td align="left">YES</td>
+<td align="left">Depending on the type suitable Cumulocity API to be used<br>INVENTORY<br>MEASUREMENT<br>ALARM<br>EVENT<br>OPERATION</td>
+</tr>
+
+<tr>
+<td align="left">responses</td>
+<td align="left">List&lt;Response&gt;</td>
+<td align="left">NO</td>
+<td align="left">The responses. Whether the request should trigger response templates. For GET templates by default true otherwise by default false</td>
+</tr>
+
+<tr>
+<td align="left">processingMode</td>
+<td align="left">List&lt;String&gt;</td>
+<td align="left">NO</td>
+<td align="left">The processing mode</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="types-of-requests-templates">Types of requests templates</h4>
+
+<ul>
+<li>InventoryGetRequest</li>
+<li>InventoryRequest</li>
+<li>MeasurementRequest</li>
+<li>OperationRequest</li>
+<li>AlarmRequest</li>
+<li>AlarmUpdateRequest</li>
+<li>EventRequest</li>
+</ul>
+
+<h5 id="inventorygetrequest">InventoryGetRequest</h5>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Data type</th>
+<th align="left">Mandatory</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">messageId</td>
+<td align="left">String</td>
+<td align="left">YES</td>
+<td align="left">Unique ID</td>
+</tr>
+
+<tr>
+<td align="left">response</td>
+<td align="left">bool?</td>
+<td align="left">No</td>
+<td align="left">Whether the request should trigger response templates. For GET templates by default true otherwise by default false</td>
+</tr>
+
+<tr>
+<td align="left">externalIdType</td>
+<td align="left">String</td>
+<td align="left">YES</td>
+<td align="left">Sets a fixed externalIdType if the template calls by externalId</td>
+</tr>
+
+<tr>
+<td align="left">byId</td>
+<td align="left">String</td>
+<td align="left">YES</td>
+<td align="left">Whether the GET should be executed by Cumulocity ID (=true) or externalId (=false)</td>
+</tr>
+</tbody>
+</table>
+
+<h5 id="inventoryrequest">InventoryRequest</h5>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Data type</th>
+<th align="left">Mandatory</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">messageId</td>
+<td align="left">String</td>
+<td align="left">YES</td>
+<td align="left">Unique ID</td>
+</tr>
+
+<tr>
+<td align="left">response</td>
+<td align="left">bool?</td>
+<td align="left">No</td>
+<td align="left">Whether the request should trigger response templates. For GET templates by default true otherwise by default false</td>
+</tr>
+
+<tr>
+<td align="left">externalIdType</td>
+<td align="left">String</td>
+<td align="left">NO</td>
+<td align="left">Sets a fixed externalIdType if the template calls by externalId</td>
+</tr>
+
+<tr>
+<td align="left">customValues</td>
+<td align="left">IList&lt;CustomValue&gt;</td>
+<td align="left">No</td>
+<td align="left">Custom values that should be added to the object</td>
+</tr>
+
+<tr>
+<td align="left">Method</td>
+<td align="left">HttpMethods</td>
+<td align="left">YES</td>
+<td align="left"><br> GET<br> PUT<br> POST</td>
+</tr>
+</tbody>
+</table>
+
+<h5 id="measurementrequest">MeasurementRequest</h5>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Data type</th>
+<th align="left">Mandatory</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">messageId</td>
+<td align="left">String</td>
+<td align="left">YES</td>
+<td align="left">Unique ID</td>
+</tr>
+
+<tr>
+<td align="left">response</td>
+<td align="left">bool?</td>
+<td align="left">No</td>
+<td align="left">Whether the request should trigger response templates. For GET templates by default true otherwise by default false</td>
+</tr>
+
+<tr>
+<td align="left">type</td>
+<td align="left">String</td>
+<td align="left">YES</td>
+<td align="left">The type of the measurement to create</td>
+</tr>
+
+<tr>
+<td align="left">time</td>
+<td align="left">String</td>
+<td align="left">YES</td>
+<td align="left">A time stamp in the ISO 8601 format</td>
+</tr>
+
+<tr>
+<td align="left">customValues</td>
+<td align="left">IList&lt;CustomValue&gt;</td>
+<td align="left">No</td>
+<td align="left">Custom values that should be added to the object</td>
+</tr>
+
+<tr>
+<td align="left">method</td>
+<td align="left">HttpMethods</td>
+<td align="left">YES</td>
+<td align="left"><br> GET<br> PUT<br> POST</td>
+</tr>
+</tbody>
+</table>
+
+<h5 id="operationrequest">OperationRequest</h5>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Data type</th>
+<th align="left">Mandatory</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">messageId</td>
+<td align="left">String</td>
+<td align="left">YES</td>
+<td align="left">Unique ID</td>
+</tr>
+
+<tr>
+<td align="left">response</td>
+<td align="left">bool?</td>
+<td align="left">NO</td>
+<td align="left">Whether the request should trigger response templates. For GET templates by default true otherwise by default false</td>
+</tr>
+
+<tr>
+<td align="left">type</td>
+<td align="left">String</td>
+<td align="left">YES</td>
+<td align="left">The type of the operation to create</td>
+</tr>
+
+<tr>
+<td align="left">operationFragment</td>
+<td align="left">OperationFragment</td>
+<td align="left">YES</td>
+<td align="left">e.g c8y_MyOperation</td>
+</tr>
+
+<tr>
+<td align="left">customValues</td>
+<td align="left">IList&lt;CustomValue&gt;</td>
+<td align="left">No</td>
+<td align="left">Custom values that should be added to the object</td>
+</tr>
+</tbody>
+</table>
+
+<h5 id="alarmrequest">AlarmRequest</h5>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Data type</th>
+<th align="left">Mandatory</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">messageId</td>
+<td align="left">String</td>
+<td align="left">YES</td>
+<td align="left">Unique ID</td>
+</tr>
+
+<tr>
+<td align="left">response</td>
+<td align="left">bool?</td>
+<td align="left">No</td>
+<td align="left">Whether the request should trigger response templates. For GET templates by default true otherwise by default false</td>
+</tr>
+
+<tr>
+<td align="left">type</td>
+<td align="left">String</td>
+<td align="left">YES</td>
+<td align="left">The type of the alarm to create</td>
+</tr>
+
+<tr>
+<td align="left">text</td>
+<td align="left">String</td>
+<td align="left">YES</td>
+<td align="left"></td>
+</tr>
+
+<tr>
+<td align="left">status</td>
+<td align="left">String</td>
+<td align="left">YES</td>
+<td align="left">A status of an alarm. Used to update the status field of alarms</td>
+</tr>
+
+<tr>
+<td align="left">severity</td>
+<td align="left">String</td>
+<td align="left">YES</td>
+<td align="left">A severity of an alarm. Used to update the severity field of alarms e.g. Major</td>
+</tr>
+
+<tr>
+<td align="left">time</td>
+<td align="left">String</td>
+<td align="left">YES</td>
+<td align="left">A time stamp in the ISO 8601 format</td>
+</tr>
+
+<tr>
+<td align="left">customValues</td>
+<td align="left">IList&lt;CustomValue&gt;</td>
+<td align="left">No</td>
+<td align="left">Custom values that should be added to the object</td>
+</tr>
+
+<tr>
+<td align="left">Method</td>
+<td align="left">HttpMethods</td>
+<td align="left">YES</td>
+<td align="left"><br> GET<br> PUT<br> POST</td>
+</tr>
+</tbody>
+</table>
+
+<h5 id="alarmupdaterequest">AlarmUpdateRequest</h5>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Data type</th>
+<th align="left">Mandatory</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">messageId</td>
+<td align="left">String</td>
+<td align="left">YES</td>
+<td align="left">Unique ID</td>
+</tr>
+
+<tr>
+<td align="left">response</td>
+<td align="left">bool?</td>
+<td align="left">No</td>
+<td align="left">Whether the request should trigger response templates. For GET templates by default true otherwise by default false</td>
+</tr>
+
+<tr>
+<td align="left">type</td>
+<td align="left">String</td>
+<td align="left">YES</td>
+<td align="left">The type of the alarm to find the alarm to update</td>
+</tr>
+
+<tr>
+<td align="left">alarmFragment</td>
+<td align="left">AlarmFragment</td>
+<td align="left">YES</td>
+<td align="left">It contains key and status.</td>
+</tr>
+
+<tr>
+<td align="left">customValues</td>
+<td align="left">IList&lt;CustomValue&gt;</td>
+<td align="left">No</td>
+<td align="left">Custom values that should be added to the object</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="response-templates">Response templates</h4>
+
+<p>The SmartREST 2.0 response templates use the same structure as in SmartREST 1.0.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Data type</th>
+<th align="left">Mandatory</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">messageId</td>
+<td align="left">String</td>
+<td align="left">YES</td>
+<td align="left">Unique ID to reference the template within the collection</td>
+</tr>
+
+<tr>
+<td align="left">base</td>
+<td align="left">String</td>
+<td align="left">NO</td>
+<td align="left">A JsonPath prefix that all patterns will use</td>
+</tr>
+
+<tr>
+<td align="left">condition</td>
+<td align="left">String</td>
+<td align="left">NO</td>
+<td align="left">A JsonPath that needs to exist in the object to use the  pattern</td>
+</tr>
+
+<tr>
+<td align="left">pattern</td>
+<td align="left">List&lt;String&gt;</td>
+<td align="left">YES</td>
+<td align="left">A list of JsonPath that will be extracted from the object and returned to the device</td>
+</tr>
+</tbody>
+</table>
+
+<p>Response will be used for every operation and for any request template that defines the response field with true.</p>
+
+<p>In each case the server will try every registered response template so there might be multiple response lines for a single operation or request.</p>
+
+<p>SmartREST 2.0 will always return a response template if the condition is true (or no condition was defined). Patterns that did not resolve will be returned as empty string.
+You should make use of the condition field to control when response templates should be returned.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code>     new Response(&quot;8889&quot;,
+     String.Empty,
+     &quot;c8y_IsDevice&quot;,
+     new List&lt;string&gt; { &quot;type&quot;,
+                        &quot;c8y_MQTTDevice&quot;,
+                        &quot;c8y_Mobile.cellId&quot; });
+</code></pre>
+
+<h4 id="get-templates">GET templates</h4>
+
+<p>The GET templates for the inventory do not need any mandatory or custom values. Instead they use two different fields.</p>
+
+<p>With SmartREST 2.0 you have the option to either get an object from inventory by its ID or by an externalId directly. Therefore instead of the fields mandatoryValues and customValues the following two fields are used.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Data type</th>
+<th align="left">Possible values</th>
+<th align="left">Mandatory</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">byId</td>
+<td align="left">boolean</td>
+<td align="left">true<br>false</td>
+<td align="left">YES</td>
+<td align="left">Whether the GET should be executed by Cumulocity ID (=true) or externalId (=false)</td>
+</tr>
+
+<tr>
+<td align="left">externalIdType</td>
+<td align="left">String</td>
+<td align="left"></td>
+<td align="left">NO</td>
+<td align="left">Sets a fixed externalIdType if the template calls by externalId</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code>await cl.CustomSmartRest.CreateTemplateDataAsync(&quot;GetTemplate&quot;,
+            new List&lt;Request&gt; {
+                         new InventoryGetRequest(&quot;9999&quot;,null, String.Empty, true),
+                         new InventoryGetRequest(&quot;9998&quot;,null, &quot;c8y_Serial&quot;, false)
+                                                 },
+                                                 new List&lt;Response&gt; {
+                                                     new Response(&quot;8889&quot;,
+                                                     String.Empty,
+                                                     &quot;c8y_IsDevice&quot;,
+                                                     new List&lt;string&gt; { &quot;type&quot;,
+                                                                        &quot;c8y_MQTTDevice&quot;,                                                                                                       &quot;c8y_Mobile.cellId&quot; }),
+
+                                                     new Response(&quot;8888&quot;,
+                                                     String.Empty,
+                                                     &quot;c8y_IsDevice&quot;,
+                                                     new List&lt;string&gt; { &quot;type&quot;,
+                                                                        &quot;c8y_MQTTDevice&quot;,                                                                                                       &quot;c8y_Mobile.cellId&quot; })
+                                                 });
+</code></pre>
+
+<h4 id="post-templates">POST templates</h4>
+
+<p>The POST templates require a different set of mandatory values based on the API:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">API</th>
+<th align="left">mandatory values</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">MEASUREMENT</td>
+<td align="left">type, time</td>
+</tr>
+
+<tr>
+<td align="left">EVENT</td>
+<td align="left">type, text, time</td>
+</tr>
+
+<tr>
+<td align="left">ALARM</td>
+<td align="left">type, text, status, severity, time</td>
+</tr>
+
+<tr>
+<td align="left">INVENTORY</td>
+<td align="left">externalIdType</td>
+</tr>
+</tbody>
+</table>
+
+<h5 id="creating-a-measurement-template">Creating a measurement template</h5>
+
+<p>Will create a template to create a measurement.</p>
+
+<pre><code>        await cl.CustomSmartRest.CreateTemplateDataAsync(&quot;PostTemplateMeasurement&quot;,
+                                new List&lt;Request&gt; {
+                                new MeasurementRequest(&quot;7777&quot;,
+                                null,
+                                &quot;c8y_CustomMeasurement&quot;,
+                                String.Empty,
+                                new List&lt;CustomValue&gt;{
+                                    new CustomValue {Path = &quot;c8y_MyMeasurement.M.value&quot;,
+                                        Type = Enums.CustomValueType.NUMBER,
+                                        Value = String.Empty
+                                    }
+                                },HttpMethods.POST)
+                                },
+                                new List&lt;Response&gt; {
+                                    new Response(&quot;8889&quot;,
+                                    String.Empty,
+                                    &quot;c8y_IsDevice&quot;,
+                                    new List&lt;string&gt; { &quot;type&quot;,
+                                                       &quot;c8y_MQTTDevice&quot;,
+                                                       &quot;c8y_Mobile.cellId&quot; }),
+                                    new Response(&quot;8888&quot;,
+                                    String.Empty,
+                                    &quot;c8y_IsDevice&quot;,
+                                    new List&lt;string&gt; { &quot;type&quot;,
+                                                       &quot;c8y_MQTTDevice&quot;,
+                                                       &quot;c8y_Mobile.cellId&quot; })
+                                });
+</code></pre>
+
+<h5 id="creating-an-alarm-template">Creating an alarm template</h5>
+
+<p>Will create a template to create an alarm.</p>
+
+<pre><code>        await cl.CustomSmartRest.CreateTemplateDataAsync(&quot;PostTemplateAlarm&quot;,
+                                    new List&lt;Request&gt; {
+                                    new AlarmRequest(&quot;6666&quot;,
+                                    null,
+                                    &quot;c8y_CustomAlarm&quot;,
+                                    &quot;CustomAlarm&quot;,
+                                    &quot;ACTIVE&quot;,
+                                    &quot;MAJOR&quot;,
+                                    String.Empty,
+                                    new List&lt;CustomValue&gt;{
+                                        new CustomValue {
+                                            Path = &quot;c8y_CustomAlarm.M.value&quot;,
+                                            Type = CustomValueType.NUMBER,
+                                            Value = String.Empty
+                                        }
+                                    },HttpMethods.POST)
+                                    },
+                                    new List&lt;Response&gt; {
+                                        new Response(&quot;8889&quot;,
+                                        String.Empty,
+                                        &quot;c8y_IsDevice&quot;,
+                                        new List&lt;string&gt; {
+                                            &quot;type&quot;,
+                                            &quot;c8y_MQTTDevice&quot;,
+                                            &quot;c8y_Mobile.cellId&quot; }),
+                                        new Response(&quot;8888&quot;,
+                                        String.Empty,
+                                        &quot;c8y_IsDevice&quot;,
+                                        new List&lt;string&gt; {
+                                            &quot;type&quot;,
+                                            &quot;c8y_MQTTDevice&quot;,
+                                            &quot;c8y_Mobile.cellId&quot; })
+                                    });
+</code></pre>
+
+<h5 id="creating-an-event-template">Creating an event template</h5>
+
+<p>Will create a template to create an event.</p>
+
+<pre><code>   await cl.CustomSmartRest.CreateTemplateDataAsync(&quot;PostTemplateEvent&quot;,
+
+                        new List&lt;Request&gt; {
+                                    new EventRequest(&quot;5555&quot;,
+                                    null,
+                                    &quot;c8y_CustomEvent&quot;,
+                                    &quot;CustomEvent&quot;,
+                                    String.Empty,
+                                    new List&lt;CustomValue&gt;{
+                                        new CustomValue {Path = &quot;c8y_CustomEvent.M.value&quot;,
+                                            Type = CustomValueType.NUMBER,
+                                            Value = String.Empty
+                                        }
+                                    })
+
+                        },
+
+                        new List&lt;Response&gt; {
+                                        new Response(&quot;8889&quot;,
+                                        String.Empty,
+                                        &quot;c8y_IsDevice&quot;,
+                                        new List&lt;string&gt; {
+                                            &quot;type&quot;,
+                                            &quot;c8y_MQTTDevice&quot;,
+                                            &quot;c8y_Mobile.cellId&quot; })
+                        });
+</code></pre>
+
+<h5 id="creating-an-inventory-template">Creating an inventory template</h5>
+
+<p>Will create a template to create an inventory.</p>
+
+<pre><code>   await cl.CustomSmartRest.CreateTemplateDataAsync(&quot;PostTemplateInventory&quot;,
+                                        new List&lt;Request&gt; {
+                                        new InventoryRequest(&quot;4444&quot;,
+                                        null,
+                                        &quot;c8y_MySerial&quot;,
+                                        new List&lt;CustomValue&gt;{
+                                            new CustomValue {Path = &quot;c8y_CustomInventory.M.value&quot;,
+                                                Type = CustomValueType.NUMBER,
+                                                Value = String.Empty
+                                            }
+                                        },HttpMethods.POST)
+                                        },
+
+                                        new List&lt;Response&gt; {
+                                            new Response(&quot;8889&quot;,
+                                            String.Empty,
+                                            &quot;c8y_IsDevice&quot;,
+                                            new List&lt;string&gt; { &quot;type&quot;,
+                                                               &quot;c8y_MQTTDevice&quot;,
+                                                               &quot;c8y_Mobile.cellId&quot; })
+                                        });
+</code></pre>
+
+<h5 id="update-an-inventory-template">Update an inventory template</h5>
+
+<p>Will update an inventory template.</p>
+
+<pre><code>   await cl.CustomSmartRest.CreateTemplateDataAsync(&quot;UpdateTemplateInventory&quot;,
+
+                                        new List&lt;Request&gt; {
+                                        new InventoryRequest(&quot;3333&quot;,
+                                        null,
+                                        &quot;c8y_MySerial&quot;,
+                                        new List&lt;CustomValue&gt;{
+                                            new CustomValue {Path = &quot;c8y_CustomInventory.M.value&quot;,
+                                                Type = CustomValueType.NUMBER,
+                                                Value = String.Empty
+                                            }
+                                        },HttpMethods.PUT)
+                                        },
+                                        new List&lt;Response&gt; {
+                                            new Response(&quot;8889&quot;,
+                                            String.Empty,
+                                            &quot;c8y_IsDevice&quot;,
+                                            new List&lt;string&gt; { &quot;type&quot;,
+                                                               &quot;c8y_MQTTDevice&quot;,
+                                                               &quot;c8y_Mobile.cellId&quot;
+                                                              })
+                                        });
+</code></pre>
+
+<h5 id="update-an-alarm-template">Update an alarm template</h5>
+
+<p>Will update an alarm template.</p>
+
+<pre><code>await cl.CustomSmartRest.CreateTemplateDataAsync(&quot;UpdateTemplateAlarm&quot;,
+                                        new List&lt;Request&gt; {
+                                            new AlarmUpdateRequest(&quot;2222&quot;,
+                                            null,
+                                            &quot;c8y_CustomAlarm&quot;,
+                                            new AlarmFragment(&quot;status&quot;,null),
+                                            new List&lt;CustomValue&gt;{
+                                            })
+                                        },
+                                        new List&lt;Response&gt; {
+                                            new Response(&quot;8889&quot;,
+                                            String.Empty,
+                                            &quot;c8y_IsDevice&quot;,
+                                            new List&lt;string&gt; { &quot;type&quot;,
+                                                               &quot;c8y_MQTTDevice&quot;,
+                                                               &quot;c8y_Mobile.cellId&quot; })
+                                        });
+</code></pre>
+
+<h5 id="update-a-clearing-alarm-template">Update a clearing alarm template</h5>
+
+<p>Will update a clearing alarm template.</p>
+
+<pre><code>    await cl.CustomSmartRest.CreateTemplateDataAsync(&quot;UpdateTemplateClearingAlarm&quot;,
+                                        new List&lt;Request&gt; {
+                                        new AlarmUpdateRequest(&quot;0000&quot;,
+                                        null,
+                                        &quot;c8y_CustomAlarm&quot;,
+                                        new AlarmFragment(&quot;status&quot;,AlarmStatus.CLEARED),
+                                        new List&lt;CustomValue&gt;{
+                                            new CustomValue {
+                                                Path = &quot;c8y_CustomFragment&quot;,
+                                                Type = CustomValueType.STRING,
+                                                Value = String.Empty
+                                            },
+                                        })
+                                        },
+                                        new List&lt;Response&gt; {
+                                            new Response(&quot;8889&quot;,
+                                            String.Empty,
+                                            &quot;c8y_IsDevice&quot;,
+                                            new List&lt;string&gt; { &quot;type&quot;,
+                                                               &quot;c8y_MQTTDevice&quot;,
+                                                               &quot;c8y_Mobile.cellId&quot; })
+                                        });
+</code></pre>
+
+<h5 id="update-an-operation-template">Update an operation template</h5>
+
+<p>Will update an operation template.</p>
+
+<pre><code>   await cl.CustomSmartRest.CreateTemplateDataAsync(&quot;UpdateTemplateOperation&quot;,
+                                        new List&lt;Request&gt; {
+                                        new OperationRequest(&quot;1111&quot;,
+                                        null,
+                                        &quot;com_cumulocity_model_WebCamDevice&quot;,
+                                        new OperationFragment(
+                                            &quot;status&quot;,
+                                             OperationStatus.SUCCESSFUL),
+                                            new List&lt;CustomValue&gt;{
+                                            new CustomValue {
+                                                Path = &quot;c8y_Fragment.val&quot;,
+                                                Type = CustomValueType.NUMBER,
+                                                Value = String.Empty
+                                            } })
+
+                                        },
+                                        new List&lt;Response&gt; {
+                                            new Response(&quot;8889&quot;,
+                                            String.Empty,
+                                            &quot;c8y_IsDevice&quot;,
+                                            new List&lt;string&gt; { &quot;type&quot;,
+                                                               &quot;c8y_MQTTDevice&quot;,
+                                                               &quot;c8y_Mobile.cellId&quot; })
+                                        });
+</code></pre>
+
+<h5 id="alarm-template">Alarm template</h5>
+
+<p>Will create an alarm using the template.</p>
+
+<pre><code>await cl.CustomSmartRest
+        .SendRequestDataAsync(&quot;PostTemplateAlarm&quot;,
+                              &quot;6666&quot;,
+                              new List&lt;string&gt; { &quot;2018-02-15T16:03:14.000+02:00&quot;,
+                                                 &quot;100&quot;,
+                                                 &quot;ACTIVE&quot;,
+                                                 &quot;MAJOR&quot; });
+</code></pre>
+
+<h5 id="measurement-template">Measurement template</h5>
+
+<p>Will create a measurement using the template.</p>
+
+<pre><code>await cl.CustomSmartRest
+        .SendRequestDataAsync(&quot;PostTemplateMeasurement&quot;,
+                              &quot;7777&quot;,
+                              new List&lt;string&gt; { &quot;&quot;,
+                                                 &quot;25&quot; });
+</code></pre>
+
+<h5 id="event-template">Event template</h5>
+
+<p>Will create an event using the template.</p>
+
+<pre><code>await cl.CustomSmartRest
+        .SendRequestDataAsync(&quot;PostTemplateEvent&quot;,
+                              &quot;5555&quot;,
+                              new List&lt;string&gt; { &quot;&quot;,
+                                                 &quot;100&quot; });
+</code></pre>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

@@ -1,0 +1,3553 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="" />
+    <meta name="generator" content="Hugo 0.54.0 with theme C8yDocs">
+    <title>Users - Cumulocity IoT Guides</title>
+    <meta name="author" content="Carlos Ceia @ Cumulocity">
+    <meta name="keywords" content=", Software AG Cloud, Cumulocity IoT, Internet of things, analytics, devices, connect">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cumulocity.com/guides/style.css">
+    
+
+      
+      <script> window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","cumulocity.zendesk.com"); </script>
+        <script type="text/JavaScript">
+          window.zESettings = {
+            webWidget: {
+              color: {
+                theme: '#1776bf'    
+              },
+              position: {
+                horizontal: 'right',
+                vertical: 'top'     
+              }
+            }
+          };
+          </script>
+        
+        
+   
+  </head><body data-spy="scroll" data-target="#main-nav" ><button type="button" class="sidebar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span>MENU</span>
+</button>
+<nav class="main-top-bar" >
+  <div class="d-flex container">
+    <ul class="nav d-flex flex-start hidden-xs nav-left">
+      <li><a href="https://www.softwareag.cloud/site/product/cumulocity-iot.html">Cumulocity IoT</a></li>
+      <li><a href="http://resources.cumulocity.com/documentation/jssdk/latest/#/api">Cumulocity Angular API</a></li>
+    </ul>
+    <ul class="nav flex-end nav-right">
+      <li>   <script>
+              (function() {
+                var cx = '008969372384807682938:yeh7xt785g4';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+        <div id="___gcse_0" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><div class="table-responsive"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" placeholder="Custom Search" dir="ltr" spellcheck="false" x-webkit-grammar="builtin:search" lang="en" style="width: 100%; padding: 0px; border: none; margin: -0.0625em 0px 0px; height: 1.25em; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px; outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;" title="Clear search box" role="button"><span class="gscb_a" id="gs_cb50" aria-hidden="true">×</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table></div></form></div>
+      </li>
+    </ul>
+  </div>
+</nav><button type="button" class="to-the-top">
+  <span class="sr-only">Top</span>
+  <span class="fa fa-chevron-up"></span>
+</button><nav class="main-nav navbar">
+  <header class="nav-header">
+    <a href="https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html">
+      <img src="https://cumulocity.com/guides/images/cumulocity-iot.svg"
+        class="img-responsive no-zoom"
+        alt="Cumulocity IoT">
+    </a>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">
+        <span id="current-dropdown-toggle" class="text-truncate"></span> <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/release-notes/overview/'><i class="c8y-icon c8y-icon-notification"></i> Release notes</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/concepts/introduction/'><i class="c8y-icon c8y-icon-c8y-data"></i> Concepts guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/users-guide/getting-started/'><i class="c8y-icon c8y-icon-user"></i> User guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/benutzerhandbuch/overview/'><i class="c8y-icon c8y-icon-user"></i> Handbuch</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/devices/overview/'><i class="c8y-icon c8y-icon-device-management"></i> Device guides</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/edge/overview/'><i class="fa fa-book"></i> Cumulocity IoT Edge</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/microservice-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Microservice SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/device-sdk/introduction/'><i class="c8y-icon c8y-icon-tools"></i> Device SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/web/introduction/'><i class="c8y-icon c8y-icon-smart-rest"></i> Web SDK guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        <a class='dropdown-menu-item '
+          href='https://cumulocity.com/guides/apama/overview-analytics/'><i class="c8y-icon c8y-icon-data-explorer"></i> Analytics guide</a>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        <span class="current-app">Reference guide</span>
+        
+        
+
+        <a class='dropdown-menu-item active'
+          href='https://cumulocity.com/guides/reference/rest-implementation/'><i class="fa fa-book"></i> Reference guide</a>
+        
+      </div>
+    </div>
+  </header>
+
+  
+
+  <nav id="main-nav"
+    class="nav-sections">
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav0"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/rest-implementation/">REST implementation</a>
+     
+      
+      
+      <div id="page-nav0"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/rest-implementation/#http-usage">HTTP usage</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/rest-implementation/#rest-usage">REST usage</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/rest-implementation/#root-interface">Root interface</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/rest-implementation/#generic-media-types">Generic media types</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav1"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/smartrest/">SmartREST</a>
+     
+      
+      
+      <div id="page-nav1"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/smartrest/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/smartrest/#the-protocol">The protocol</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/smartrest/#templates">Templates</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/smartrest/#registration-process">Registration process</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/smartrest/#using-smartrest-with-multiple-x-ids">Using SmartREST with multiple X-Ids</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/smartrest/#smartrest-real-time-notifications">SmartREST Real-time Notificationss</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/smartrest/#built-in-messages">Built-in messages</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav2"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/login/">Login with OAuth2</a>
+     
+      
+      
+      <div id="page-nav2"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/login/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/login/#login-options">Login options</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/login/#login-flow">Login flow</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav3"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/inventory/">Inventory</a>
+     
+      
+      
+      <div id="page-nav3"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#inventory-api">Inventory API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#managed-object-collection">Managed object collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#managed-object">Managed object</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#managed-object-reference-collection">Managed object reference collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#managed-object-reference">Managed object reference</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/inventory/#notifications">Notifications</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav4"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/events/">Events</a>
+     
+      
+      
+      <div id="page-nav4"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#events-api">Events API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#event-collection">Event collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#event">Event</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#notifications">Notifications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/events/#binaries">Binaries</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav5"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/measurements/">Measurements</a>
+     
+      
+      
+      <div id="page-nav5"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#system-of-units">System of units</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#measurement-api">Measurement API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#measurement-collection">Measurement collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#measurement">Measurement</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#data-streaming">Data streaming</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#other-response-formats">Other response formats</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/measurements/#notifications">Notifications</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav6"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/device-control/">Device control</a>
+     
+      
+      
+      <div id="page-nav6"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#device-control-api">Device control API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#operation-collection">Operation collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#operation">Operation</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#device-control-via-sms">Device control via SMS</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#notifications">Notifications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#bulk-operation-collection">Bulk operation collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-control/#bulk-operation">Bulk operation</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav7"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/alarms/">Alarms</a>
+     
+      
+      
+      <div id="page-nav7"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/alarms/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/alarms/#alarm-api">Alarm API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/alarms/#notifications">Notifications</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/alarms/#alarm-collection">Alarm collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/alarms/#alarm">Alarm</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav8"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/device-credentials/">Device credentials</a>
+     
+      
+      
+      <div id="page-nav8"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-credentials/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-credentials/#new-device-request-collection">New device request collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-credentials/#new-device-request">New device request</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-credentials/#device-credentials">Device credentials</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-credentials/#bulk-device-credentials">Bulk device credentials</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav9"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/identity/">Identity</a>
+     
+      
+      
+      <div id="page-nav9"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/identity/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/identity/#identity-api">Identity API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/identity/#external-id-collection">External ID collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/identity/#external-id">External ID</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class=" slot-active ">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav10"
+        class="collapse-btn ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=" active "
+        href="https://cumulocity.com/guides/reference/users/">Users</a>
+     
+      
+      
+      <div id="page-nav10"
+        class="collapse   show  ">
+        <nav class="list-group nav">
+          
+          
+          <a class="list-group-item"
+            href="#overview">Overview</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#user-api">User API</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#user-collection">User collection</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#user">User</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#user-reference-collection">User reference collection</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#user-reference">User reference</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#group-collection">Group collection</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#group">Group</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#group-reference-collection">Group reference collection</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#group-reference">Group reference</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#role-collection">Role collection</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#role">Role</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#role-reference-collection">Role reference collection</a>
+          
+            
+          
+          <a class="list-group-item"
+            href="#role-reference">Role reference</a>
+          
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav11"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/auditing/">Auditing</a>
+     
+      
+      
+      <div id="page-nav11"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/auditing/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/auditing/#audited-informations">Audited informations</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/auditing/#audit-api">Audit API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/auditing/#audit-record-collection">Audit record collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/auditing/#audit-record">Audit record</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav12"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/device-management/">Device management library</a>
+     
+      
+      
+      <div id="page-nav12"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-management/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-management/#metadata">Metadata</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-management/#device-information">Device information</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-management/#configuration-management">Configuration management</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-management/#device-reports">Device reports</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-management/#device-availability">Device availability</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/device-management/#miscellaneous">Miscellaneous</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav13"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/sensor-library/">Sensor library</a>
+     
+      
+      
+      <div id="page-nav13"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/sensor-library/#environmental-capabilities">Environmental Capabilities</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/sensor-library/#energy">Energy</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/sensor-library/#location-capabilities">Location Capabilities</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/sensor-library/#common-capabilities">Common Capabilities</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav14"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/real-time-statements/">Real-time statements</a>
+     
+      
+      
+      <div id="page-nav14"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-statements/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-statements/#module-api">Module API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-statements/#module-collection">Module collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-statements/#module">Module</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-statements/#notifications">Notifications</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav15"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/real-time-notifications/">Real-time notifications</a>
+     
+      
+      
+      <div id="page-nav15"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#handshake">Handshake</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#subscribe">Subscribe</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#unsubscribe">Unsubscribe</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#connect">Connect</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/real-time-notifications/#disconnect">Disconnect</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav16"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/tenants/">Tenants</a>
+     
+      
+      
+      <div id="page-nav16"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#tenants">Tenants</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#tenant-collection">Tenant collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#tenant">Tenant</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#application-reference-collection">Application reference collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#application-reference">Application reference</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#option-collection">Option collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#option">Option</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#system-options">System Options</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/tenants/#tenant-usage-statistics">Tenant usage statistics</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav17"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/applications/">Applications</a>
+     
+      
+      
+      <div id="page-nav17"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#application-names">Application names</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#application-api">Application API</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#application-collection">Application collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#application">Application</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#bootstrap-user">Bootstrap user</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#current-application">Current application</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/applications/#application-binaries">Application binaries</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav18"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/binaries/">Binaries</a>
+     
+      
+      
+      <div id="page-nav18"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/binaries/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/binaries/#binaries-collection">Binaries collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/binaries/#binaries">Binaries</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav19"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/retention-rules/">Retention rules</a>
+     
+      
+      
+      <div id="page-nav19"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/retention-rules/#retention-rules">Retention rules</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/retention-rules/#retention-rule-collection">Retention rule collection</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/retention-rules/#retentionrule">RetentionRule</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a class=""
+        href="https://cumulocity.com/guides/reference/microservice-manifest/">Microservice manifest</a>
+     
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav21"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/microservice-package/">Microservice package and deploy</a>
+     
+      
+      
+      <div id="page-nav21"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-package/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-package/#packing">Packing</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-package/#deploying">Deploying</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-package/#multiple-goals">Multiple goals</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-package/#subscribing">Subscribing</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="">
+        
+        
+        
+        
+      <a href="javascript:void(0);"
+        data-toggle="collapse"
+        data-target="#page-nav22"
+        class="collapse-btn  collapsed ">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+      
+      <a class=""
+        href="https://cumulocity.com/guides/reference/microservice-runtime/">Microservice runtime</a>
+     
+      
+      
+      <div id="page-nav22"
+        class="collapse   ">
+        <nav class="list-group nav">
+          
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-runtime/#overview">Overview</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-runtime/#environment-variables">Environment variables</a>
+            
+            
+          
+            <a class="list-group-item"
+              href="https://cumulocity.com/guides/reference/microservice-runtime/#Access-to-the-platform-and-other-microservices">Access to the platform and other microservices</a>
+            
+            
+        </nav>
+      </div>
+      
+    </div>
+    
+    
+    
+    
+  </nav>
+</nav>
+<div class="cover"></div>
+
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">Users</h1>
+    </header>
+    
+      <div class="lead">
+        
+      </div>
+      
+  </article>
+
+  
+  
+  
+  <article id="overview" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#overview">
+        <span class="fa fa-link"></span>
+      </button>
+      Overview</h2>
+    <p>The user interface consists of the following parts:</p>
+
+<ul>
+<li><em>user API</em> resource - returns URIs and URI templates to collections of users, groups, and roles, so that all users, groups, roles and user or group with particular name can be queried.</li>
+<li><em>user collection</em> resource - retrieves sets of users and enables creating new users.</li>
+<li><em>user</em> resource - represents individual users that can be queried and deleted.</li>
+<li><em>user reference collection</em> resource - retrieves sets of references to users. These could be, for example, users of a particular user group. It also enables adding new users to a collection.</li>
+<li><em>user reference</em> resource - represents one individual reference to a user, which can be retrieved or deleted.</li>
+<li><em>current user</em> resource - represents the user that is logged in and can be queried and modified.</li>
+<li><em>group collection</em> resource -retrieves sets of groups and enables creating new groups.</li>
+<li><em>group</em> resource - represents individual groups that can be queried and deleted.</li>
+<li><em>group reference collection</em> resource - retrieves sets of references to groups. Could be, for example, groups of a particular user.</li>
+<li><em>group reference</em> resource - represents one individual reference to a group, which can be retrieved or deleted.</li>
+<li><em>role collection</em> resource - retrieves sets of roles.</li>
+<li><em>role</em> resource - represents individual roles that can be queried and assigned or unassigned to users or groups.</li>
+<li><em>role reference collection</em> resource - retrieves sets of references to roles. Could be, for example, roles of a particular user or group.</li>
+<li><em>role reference</em> resource - represents one individual reference to a role, which can be retrieved.</li>
+</ul>
+
+<blockquote>
+<p><strong>Info:</strong> &ldquo;Realm&rdquo; as used in this API usually corresponds to a tenant.</p>
+
+<p>For all PUT/POST requests an accept header should be provided, otherwise an empty response body will be returned.</p>
+</blockquote>
+
+  </article>
+  
+  <article id="user-api" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#user-api">
+        <span class="fa fa-link"></span>
+      </button>
+      User API</h2>
+    
+
+<h3 id="userapi-application-vnd-com-nsn-cumulocity-userapi-json">UserAPI [application/vnd.com.nsn.cumulocity.userApi+json]</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">self</td>
+<td align="left">URL</td>
+<td align="left">1</td>
+<td align="left">Link to this resource</td>
+</tr>
+
+<tr>
+<td align="left">userByName</td>
+<td align="left">URI Template/User</td>
+<td align="left">1</td>
+<td align="left">Reference to a resource of type User. The template contains placeholders {realm} and {userName}.</td>
+</tr>
+
+<tr>
+<td align="left">users</td>
+<td align="left">URI Template/UserCollection</td>
+<td align="left">1</td>
+<td align="left">Collection of all users belonging to a given realm. The template contains a placeholder {realm}.</td>
+</tr>
+
+<tr>
+<td align="left">currentUser</td>
+<td align="left">URI Template/User</td>
+<td align="left">1</td>
+<td align="left">Reference to the resource of the logged in user.</td>
+</tr>
+
+<tr>
+<td align="left">groupByName</td>
+<td align="left">URI Template/Group</td>
+<td align="left">1</td>
+<td align="left">Reference to a resource of type Group. The template contains placeholders {realm} and {groupName}.</td>
+</tr>
+
+<tr>
+<td align="left">groups</td>
+<td align="left">URI Template/GroupCollection</td>
+<td align="left">1</td>
+<td align="left">Collection of all users belonging to a given realm. The template contains a placeholder {realm}.</td>
+</tr>
+
+<tr>
+<td align="left">roles</td>
+<td align="left">URI Template/RoleCollection</td>
+<td align="left">1</td>
+<td align="left">Collection of all roles.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="get-the-user-api-resource">GET the user API resource</h3>
+
+<p>Response body: userApi</p>
+
+<p>Example request: Retrieve information about user API resource</p>
+
+<pre><code>GET /user
+Host: [hostname]
+Authorization: Basic xxxxxxxxxxxxxxxxxxx
+Accept: application/vnd.com.nsn.cumulocity.userApi+json;ver=0.9
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1 200 OK
+Content-Type: application/vnd.com.nsn.cumulocity.userApi+json;ver=0.9
+Content-Length: nnn
+{
+     &quot;self&quot; : &quot;&lt;&lt;UserAPI URL&gt;&gt;&quot;,
+     &quot;userByName&quot; : &quot;&lt;&lt;URL to the UserByName resource with realm and user name parameter&gt;&gt;&quot;,
+     &quot;users&quot; : &quot;&lt;&lt;URL to the UserCollection resource with realm parameter&gt;&gt;&quot;,
+     &quot;currentUser&quot; : &quot;&lt;&lt;URL to the CurrentUser resource&gt;&gt;&quot;,
+     &quot;groupByName&quot; : &quot;&lt;&lt;URL to the GroupByName resource with realm and group name parameter&gt;&gt;&quot;,
+     &quot;groups&quot; : &quot;&lt;&lt;URL to the GroupCollection resource with realm parameter&gt;&gt;&quot;,
+     &quot;roles&quot; : &quot;&lt;&lt;URL to the RoleCollection resource&gt;&gt;&quot;
+}
+</code></pre>
+
+  </article>
+  
+  <article id="user-collection" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#user-collection">
+        <span class="fa fa-link"></span>
+      </button>
+      User collection</h2>
+    
+
+<h3 id="usercollection-application-vnd-com-nsn-cumulocity-usercollection-json">UserCollection [application/vnd.com.nsn.cumulocity.userCollection+json]</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">self</td>
+<td align="left">URI</td>
+<td align="left">1</td>
+<td align="left">Link to this resource</td>
+</tr>
+
+<tr>
+<td align="left">users</td>
+<td align="left">User</td>
+<td align="left">0..n</td>
+<td align="left">List of users</td>
+</tr>
+
+<tr>
+<td align="left">statistics</td>
+<td align="left">PagingStatistics</td>
+<td align="left">1</td>
+<td align="left">Information about the paging statistics</td>
+</tr>
+
+<tr>
+<td align="left">prev</td>
+<td align="left">URI</td>
+<td align="left">0..1</td>
+<td align="left">Link to a possible previous page with additional users</td>
+</tr>
+
+<tr>
+<td align="left">next</td>
+<td align="left">URI</td>
+<td align="left">0..1</td>
+<td align="left">Link to a possible next page with additional users</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="get-a-representation-of-a-user-collection">GET a representation of a user collection</h3>
+
+<p>Response body: userCollection</p>
+
+<p>Example request: Retrieve information about a user collection</p>
+
+<pre><code>GET /user/&lt;&lt;tenant&gt;&gt;/users
+Host: [hostname]
+Authorization: Basic xxxxxxxxxxxxxxxxxxx
+Accept: application/vnd.com.nsn.cumulocity.userCollection+json;ver=0.9
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1 200 OK
+Content-Type: application/vnd.com.nsn.cumulocity.userCollection+json;ver=0.9
+Content-Length: nnn
+{
+   &quot;self&quot;:&quot;[URL to this resource]&quot;,
+   &quot;users&quot;:[
+        {
+          &quot;id&quot; : &quot;jsmith&quot;,
+          &quot;self&quot; : &quot;[URL to the resource]&quot;,
+          &quot;userName&quot; : &quot;jsmith&quot;,
+          &quot;firstName&quot; : &quot;John&quot;,
+          &quot;lastName&quot; : &quot;Smith&quot;,
+          &quot;phone&quot; : &quot;+1234567890&quot;,
+          &quot;email&quot; : &quot;jsmith@abc.com&quot;,
+          &quot;enabled&quot; : true,
+          &quot;groups&quot; : {[collection of groups the user belongs to]},
+          &quot;roles&quot; : {[collection of roles the user has]},
+          &quot;devicePermissions&quot;: {}
+        }, ... {
+          &quot;id&quot; : &quot;mblack&quot;,
+          &quot;self&quot; : &quot;[URL to the resource]&quot;,
+          &quot;userName&quot; : &quot;mblack&quot;,
+          &quot;firstName&quot; : &quot;Michael&quot;,
+          &quot;lastName&quot; : &quot;Black&quot;,
+          &quot;phone&quot; : &quot;+10988765432&quot;,
+          &quot;email&quot; : &quot;mblack@abc.com&quot;,
+          &quot;enabled&quot; : true,
+          &quot;groups&quot; : {[collection of groups the user belongs to]},
+          &quot;roles&quot; : {[collection of roles the user has]},
+          &quot;devicePermissions&quot;: {}
+        }
+   ],
+   &quot;statistics&quot; : {
+       &quot;totalPages&quot; : 22,
+       &quot;pageSize&quot; : 5,
+       &quot;currentPage : 1
+   },
+   &quot;prev&quot; : &quot;[URL to previous page]&quot;,
+   &quot;next&quot; : &quot;[URL to next page]&quot;
+}
+</code></pre>
+
+<p>Users in the response are sorted by username in ascending order.</p>
+
+<h4 id="search-parameters-for-user-collection">Search parameters for User Collection</h4>
+
+<p>Users can be filtered by following parameters:</p>
+
+<ul>
+<li>username - prefix or full username</li>
+<li>groups - numeric group identifiers separated by commas; result will contain only users which belong to at least one of specified groups</li>
+<li>owner - exact username</li>
+<li>onlyDevices - boolean flag. If set to &ldquo;true&rdquo;, result will contain only users created during bootstrap process (starting with &ldquo;device_&rdquo;).
+If flag is absent (or false) the result will not contain &ldquo;device_&rdquo; users.</li>
+</ul>
+
+<p>Additional flag &ldquo;withSubusersCount&rdquo; - if set to &ldquo;true&rdquo;, then each of returned users will contain additional field &ldquo;subusersCount&rdquo; -
+number of direct subusers (users with corresponding &ldquo;owner&rdquo;).</p>
+
+<p>Example request: retrieve users, where username starts with &ldquo;js&rdquo;, and every user belongs to one of the groups 2, 3 or 4, and the owner is &ldquo;admin&rdquo;, and is not a device user.</p>
+
+<pre><code>GET /user/&lt;&lt;tenant&gt;&gt;/users?username=js&amp;groups=2,3,4&amp;owner=admin&amp;withSubusersCount=true
+Host: [hostname]
+Authorization: Basic xxxxxxxxxxxxxxxxxxx
+Accept: application/vnd.com.nsn.cumulocity.userCollection+json;ver=0.9
+</code></pre>
+
+<h3 id="post-create-a-new-user-within-the-collection">POST - create a new user within the collection</h3>
+
+<p>Request body: User</p>
+
+<p>Response body: User </p>
+
+<p>Example request: Create a new user</p>
+
+<pre><code>POST /user/&lt;&lt;tenant&gt;&gt;/users
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+ Content-Length: nnn
+ Content-Type: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
+{
+  &quot;userName&quot; : &quot;jsmith&quot;,
+  &quot;password&quot; : &quot;password&quot;,
+  &quot;firstName&quot; : &quot;John&quot;,
+  &quot;lastName&quot; : &quot;Smith&quot;,
+  &quot;phone&quot; : &quot;+1234567890&quot;,
+  &quot;customProperties&quot; : {&quot;language&quot;:&quot;en&quot;},
+  &quot;email&quot; : &quot;jsmith@abc.com&quot;,
+  &quot;enabled&quot; : true,
+  &quot;sendPasswordResetEmail&quot;: true
+}
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1 201 Created
+ Content-Type: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
+ Content-Length: nnn
+ Location: [location]
+{
+  &quot;id&quot; : &quot;jsmith&quot;,
+  &quot;self&quot; : &quot;[URL to this resource]&quot;,
+  &quot;userName&quot; : &quot;jsmith&quot;,
+  &quot;firstName&quot; : &quot;John&quot;,
+  &quot;lastName&quot; : &quot;Smith&quot;,
+  &quot;phone&quot; : &quot;+1234567890&quot;,
+  &quot;email&quot; : &quot;jsmith@abc.com&quot;,
+  &quot;customProperties&quot; : {&quot;language&quot;:&quot;en&quot;},
+  &quot;enabled&quot; : true,
+  &quot;groups&quot; : {[collection of groups the user belongs to]},
+  &quot;roles&quot; : {[collection of roles the user has]},
+  &quot;devicePermissions&quot;: {}
+}
+</code></pre>
+
+  </article>
+  
+  <article id="user" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#user">
+        <span class="fa fa-link"></span>
+      </button>
+      User</h2>
+    
+
+<h3 id="user-application-vnd-com-nsn-cumulocity-user-json">User [application/vnd.com.nsn.cumulocity.user+json]</h3>
+
+<p>A &ldquo;User&rdquo; resource type contains the following fields:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+<th align="left">Allowed in PUT/POST request</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">id</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Uniquely identifies a user</td>
+<td align="left">not allowed</td>
+</tr>
+
+<tr>
+<td align="left">self</td>
+<td align="left">URI</td>
+<td align="left">1</td>
+<td align="left">Link to this resource</td>
+<td align="left">not allowed</td>
+</tr>
+
+<tr>
+<td align="left">userName</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">User name, unique for a given domain. Max: 1000 characters. Whitespaces, slashes, +$: characters not allowed</td>
+<td align="left">POST: mandatory PUT: not allowed</td>
+</tr>
+
+<tr>
+<td align="left">password</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">User password. Min: 6, max: 32 characters. Only Latin1 chars allowed</td>
+<td align="left">POST: mandatory PUT: optional</td>
+</tr>
+
+<tr>
+<td align="left">firstName</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">User first name</td>
+<td align="left">optional</td>
+</tr>
+
+<tr>
+<td align="left">lastName</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">User last name</td>
+<td align="left">optional</td>
+</tr>
+
+<tr>
+<td align="left">phone</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">User phone number. Format: &ldquo;+[country code][number]&ldquo;, has to be a valid MSISDN</td>
+<td align="left">optional</td>
+</tr>
+
+<tr>
+<td align="left">email</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">User email address</td>
+<td align="left">optional</td>
+</tr>
+
+<tr>
+<td align="left">enabled</td>
+<td align="left">boolean</td>
+<td align="left">1</td>
+<td align="left">User activation status (true/false)</td>
+<td align="left">optional</td>
+</tr>
+
+<tr>
+<td align="left">customProperties</td>
+<td align="left">Object</td>
+<td align="left">1</td>
+<td align="left">Keeps a list of custom properties</td>
+<td align="left">optional</td>
+</tr>
+
+<tr>
+<td align="left">groups</td>
+<td align="left">GroupReferenceCollection</td>
+<td align="left">1</td>
+<td align="left">List of group references</td>
+<td align="left">not allowed</td>
+</tr>
+
+<tr>
+<td align="left">roles</td>
+<td align="left">RoleReferenceCollection</td>
+<td align="left">1</td>
+<td align="left">List of role references</td>
+<td align="left">not allowed</td>
+</tr>
+
+<tr>
+<td align="left">devicePermissions</td>
+<td align="left">Object</td>
+<td align="left">1</td>
+<td align="left">List of device permissions</td>
+<td align="left">optional</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Embedded user</strong> contains all properties except password. Password property is never returned in GET user.</p>
+
+<h3 id="user-application-vnd-com-nsn-cumulocity-currentuser-json">User [application/vnd.com.nsn.cumulocity.currentUser+json]</h3>
+
+<p>A &ldquo;currentUser&rdquo; resource type contains the following fields:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+<th align="left">Allowed in PUT/POST request</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">id</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Uniquely identifies a user</td>
+<td align="left">not allowed</td>
+</tr>
+
+<tr>
+<td align="left">self</td>
+<td align="left">URI</td>
+<td align="left">1</td>
+<td align="left">Link to this resource</td>
+<td align="left">not allowed</td>
+</tr>
+
+<tr>
+<td align="left">userName</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">User name, unique for a given domain. Max: 1000 characters</td>
+<td align="left">POST: mandatory PUT: not allowed</td>
+</tr>
+
+<tr>
+<td align="left">password</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">User password. Min: 6, max: 32 characters. Only Latin1 chars allowed</td>
+<td align="left">POST: mandatory PUT: optional</td>
+</tr>
+
+<tr>
+<td align="left">firstName</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">User first name</td>
+<td align="left">optional</td>
+</tr>
+
+<tr>
+<td align="left">lastName</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">User last name</td>
+<td align="left">optional</td>
+</tr>
+
+<tr>
+<td align="left">phone</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">User phone number. Format: &ldquo;+[country code][number]&ldquo;, has to be a valid MSISDN</td>
+<td align="left">optional</td>
+</tr>
+
+<tr>
+<td align="left">email</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">User email address</td>
+<td align="left">optional</td>
+</tr>
+
+<tr>
+<td align="left">enabled</td>
+<td align="left">boolean</td>
+<td align="left">1</td>
+<td align="left">User activation status (true/false)</td>
+<td align="left">optional</td>
+</tr>
+
+<tr>
+<td align="left">devicePermissions</td>
+<td align="left">Object</td>
+<td align="left">1</td>
+<td align="left">List of device permissions</td>
+<td align="left">optional</td>
+</tr>
+
+<tr>
+<td align="left">effectiveRoles</td>
+<td align="left">Role</td>
+<td align="left">0..n</td>
+<td align="left">List of all roles assigned to a current user (explicitly or implicitly via associated groups)</td>
+<td align="left">not allowed</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>userName</strong> can have a maximum of 1000 characters.</p>
+
+<p><strong>Embedded user</strong> contains all properties except password. Password property is never returned in GET user.</p>
+
+<h3 id="device-permission-structure">Device permission structure</h3>
+
+<p>[API:fragment_name:permission] where:</p>
+
+<ul>
+<li>API is one of the following values: &ldquo;OPERATION&rdquo;, &ldquo;ALARM&rdquo;, &ldquo;AUDIT&rdquo;, &ldquo;EVENT&rdquo;, &ldquo;MANAGED_OBJECT&rdquo;, &ldquo;MEASUREMENT&rdquo; or &ldquo;*&rdquo;</li>
+<li>fragment name is any fragment name, e.g. &ldquo;c8y_Restart&rdquo; or &ldquo;*&rdquo;</li>
+<li>permission is &ldquo;ADMIN&rdquo;, &ldquo;READ&rdquo; or &ldquo;*&rdquo;</li>
+</ul>
+
+<h4 id="required-permission-per-http-method">Required permission per HTTP-method</h4>
+
+<ul>
+<li>POST - &ldquo;ADMIN&rdquo; or &ldquo;*&rdquo;</li>
+<li>PUT - &ldquo;ADMIN&rdquo; or &ldquo;*&rdquo;</li>
+<li>DELETE - &ldquo;ADMIN&rdquo; or &ldquo;*&rdquo;</li>
+<li>GET - &ldquo;READ&rdquo; or &ldquo;*&rdquo;</li>
+</ul>
+
+<p>&ldquo;*&rdquo; is a wildcard. It enables you to access every API and CRUD object regardless of fragments that are inside it.</p>
+
+<h4 id="querying-collections">Querying collections</h4>
+
+<p>Only objects which the user is allowed to see are returned to the user. It is possible to query next page using next link from page statistics. It is important to note that in this case the &ldquo;currentPage&rdquo; field represents the offset instead of the actual page number.</p>
+
+<blockquote>
+<p>**Important: ** If an object does not have any fragment in it, then to for example read that object, you have to put a wildcard to the fragment name part of device permission, i.e. &ldquo;10200&rdquo;:[&ldquo;MEASUREMENT:*:READ&rdquo;].</p>
+</blockquote>
+
+<h3 id="audit-log">Audit log</h3>
+
+<p>Any change in user&rsquo;s roles, device permissions and groups creates corresponding audit records with type &lsquo;User&rsquo; and activity &lsquo;User updated&rsquo; with information which properties have been changed.</p>
+
+<h3 id="get-a-representation-of-a-user">GET a representation of a user</h3>
+
+<p>Response body: User</p>
+
+<p>Example request: Retrieve information about a user</p>
+
+<pre><code>GET /user/&lt;&lt;tenant&gt;&gt;/users/&lt;&lt;userId&gt;&gt;
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+ Accept: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>Content-Type: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
+Content-Length: nnn
+{
+  &quot;id&quot; : &quot;jsmith&quot;,
+  &quot;self&quot; : &quot;[URL to this resource]&quot;,
+  &quot;userName&quot; : &quot;jsmith&quot;,
+  &quot;firstName&quot; : &quot;John&quot;,
+  &quot;lastName&quot; : &quot;Smith&quot;,
+  &quot;phone&quot; : &quot;+1234567890&quot;,
+  &quot;email&quot; : &quot;jsmith@abc.com&quot;,
+  &quot;enabled&quot; : true,
+  &quot;groups&quot; : {[collection of groups the user belongs to]},
+  &quot;roles&quot; : {[collection of roles the user has]},
+  &quot;devicePermissions&quot;: {}
+}
+</code></pre>
+
+<p>The user password is never returned in a GET response. Authentication mechanism is provided by another interface.</p>
+
+<h3 id="get-a-representation-of-a-user-by-his-her-name">GET a representation of a user by his/her name</h3>
+
+<p>Response body: User</p>
+
+<p>Example request: Retrieve information about a user</p>
+
+<pre><code>GET /user/&lt;&lt;tenant&gt;&gt;/userByName/&lt;&lt;userName&gt;&gt;
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+ Accept: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>Content-Type: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
+Content-Location: [location]
+Content-Length: nnn
+{
+  &quot;id&quot; : &quot;jsmith&quot;,
+  &quot;self&quot; : &quot;[URL to this resource]&quot;,
+  &quot;userName&quot; : &quot;jsmith&quot;,
+  &quot;firstName&quot; : &quot;John&quot;,
+  &quot;lastName&quot; : &quot;Smith&quot;,
+  &quot;phone&quot; : &quot;+1234567890&quot;,
+  &quot;email&quot; : &quot;jsmith@abc.com&quot;,
+  &quot;enabled&quot; : true,
+  &quot;groups&quot; : {[collection of groups the user belongs to]},
+  &quot;roles&quot; : {[collection of roles the user has]},
+  &quot;devicePermissions&quot;: {}
+}
+</code></pre>
+
+<h3 id="put-a-change-to-user-resource">PUT a change to user resource</h3>
+
+<p>Request body: User</p>
+
+<p>Response body: User </p>
+
+<p>Example request: Change the first name of a user</p>
+
+<pre><code>PUT /user/&lt;&lt;tenant&gt;&gt;/users/&lt;&lt;userId&gt;&gt;
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+ Accept: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
+ Content-Type: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
+ Content-Length: nnn
+{
+   &quot;firstName&quot; : &quot;Robert&quot;
+}
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>Content-Type: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
+Content-Length: nnn
+{
+  &quot;id&quot; : &quot;jsmith&quot;,
+  &quot;self&quot; : &quot;[URL to this resource]&quot;,
+  &quot;userName&quot; : &quot;jsmith&quot;,
+  &quot;firstName&quot; : &quot;Robert&quot;,
+  &quot;lastName&quot; : &quot;Smith&quot;,
+  &quot;phone&quot; : &quot;+1234567890&quot;,
+  {emailcloak=off}&quot;email&quot; : &quot;jsmith@abc.com&quot;,
+  &quot;enabled&quot; : true,
+  &quot;groups&quot; : {[collection of groups the user belongs to]},
+  &quot;roles&quot; : {[collection of roles the user has]},
+  &quot;devicePermissions&quot;: {}
+}
+</code></pre>
+
+<p>When the user is updated with changed permissions or groups, a corresponding audit record is created with type &lsquo;User&rsquo; and activity &lsquo;User updated&rsquo;.</p>
+
+<h3 id="delete-a-representation-of-a-user">DELETE a representation of a user</h3>
+
+<p>Request body: n/a</p>
+
+<p>Response body: n/a</p>
+
+<p>Example request: Delete a user</p>
+
+<pre><code>DELETE /user/&lt;&lt;tenant&gt;&gt;/users/&lt;&lt;userName&gt;&gt;
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1  204 NO CONTENT
+</code></pre>
+
+<h3 id="get-the-current-user-resource">GET the current user resource</h3>
+
+<p>Response body: user</p>
+
+<p>or</p>
+
+<p>Response body: currentUser</p>
+
+<p>Example request: Retrieve information about the logged-in user</p>
+
+<pre><code>GET /user/currentUser
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+ Accept: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1 200 OK
+ Content-Type: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
+ Content-Length: nnn
+
+{
+    &quot;email&quot;: &quot;jsmith@abc.com&quot;,
+    &quot;enabled&quot;: true,
+    &quot;firstName&quot;: &quot;John&quot;,
+    &quot;devicePermissions&quot;: {},
+    &quot;groups&quot;: {
+        &quot;references&quot;: [...],
+        &quot;self&quot;: &quot;[URL to User's Groups]&quot;
+    },
+    &quot;id&quot;: &quot;jsmith&quot;,
+    &quot;lastName&quot;: &quot;Smith&quot;,
+    &quot;phone&quot;: &quot;+1234567890&quot;,
+    &quot;roles&quot;: {
+        &quot;references&quot;: [...],
+        &quot;self&quot;: &quot;[URL to the User's Roles]&quot;
+    },
+    &quot;self&quot;: &quot;[URL to the User resource]&quot;,
+    &quot;userName&quot;: &quot;jsmith&quot;}
+</code></pre>
+
+<h3 id="put-a-change-to-the-current-user-resource">PUT a change to the current user resource</h3>
+
+<p>Request body: user</p>
+
+<p>Response body: user</p>
+
+<p>Example request: Change the first name of the logged-in user</p>
+
+<pre><code>PUT /user/currentUser
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+ Accept: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
+ Content-Type: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
+ Content-Length: nnn
+
+{
+   &quot;firstName&quot; : &quot;Robert&quot;
+}
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1 200 OK
+ Content-Type: application/vnd.com.nsn.cumulocity.user+json;ver=0.9
+ Content-Length: nnn
+
+ {
+    &quot;email&quot;: &quot;jsmith@abc.com&quot;,
+    &quot;enabled&quot;: true,
+    &quot;firstName&quot;: &quot;Robert&quot;,
+    &quot;groups&quot;: {
+        &quot;references&quot;: [...],
+        &quot;self&quot;: &quot;[URL to User's Groups]&quot;
+    },
+    &quot;id&quot;: &quot;jsmith&quot;,
+    &quot;lastName&quot;: &quot;Smith&quot;,
+    &quot;phone&quot;: &quot;+1234567890&quot;,
+    &quot;roles&quot;: {
+        &quot;references&quot;: [...],
+        &quot;self&quot;: &quot;[URL to the User's Roles]&quot;
+    },
+    &quot;self&quot;: &quot;[URL to the User resource]&quot;,
+    &quot;userName&quot;: &quot;jsmith&quot;,
+    &quot;devicePermissions&quot;: {}
+ }
+</code></pre>
+
+  </article>
+  
+  <article id="user-reference-collection" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#user-reference-collection">
+        <span class="fa fa-link"></span>
+      </button>
+      User reference collection</h2>
+    
+
+<h3 id="userreferencecollection-application-vnd-com-nsn-cumulocity-userreferencecollection-json">UserReferenceCollection [application/vnd.com.nsn.cumulocity.userReferenceCollection+json]</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">self</td>
+<td align="left">URI</td>
+<td align="left">1</td>
+<td align="left">Link to this resource</td>
+</tr>
+
+<tr>
+<td align="left">references</td>
+<td align="left">UserReference</td>
+<td align="left">0..n</td>
+<td align="left">List of user references</td>
+</tr>
+
+<tr>
+<td align="left">statistics</td>
+<td align="left">PagingStatistics</td>
+<td align="left">1</td>
+<td align="left">Information about the paging statistics</td>
+</tr>
+
+<tr>
+<td align="left">prev</td>
+<td align="left">URI</td>
+<td align="left">0..1</td>
+<td align="left">Link to a possible previous page with additional user references</td>
+</tr>
+
+<tr>
+<td align="left">next</td>
+<td align="left">URI</td>
+<td align="left">0..1</td>
+<td align="left">Link to a possible next page with additional user references</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="add-user-to-a-group">Add user to a group</h3>
+
+<p>Request body: UserReference</p>
+
+<p>Response body: UserReference</p>
+
+<p>Example request: Create a new UserReference</p>
+
+<pre><code>POST /user/&lt;&lt;tenant&gt;&gt;/groups/&lt;&lt;groupId&gt;&gt;/users
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+ Content-Length: nnn
+ Content-Type: application/vnd.com.nsn.cumulocity.userReference+json;ver=0.9
+
+{
+  &quot;user&quot; : {
+    &quot;self&quot; : &quot;[URL to the User resource]&quot;
+  }
+}
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1 201 Created
+ Content-Type: application/vnd.com.nsn.cumulocity.userReference+json;ver=0.9
+ Content-Length: nnn
+ Location: [location]
+
+{
+    &quot;self&quot;: &quot;[URL to this resource]&quot;,
+    &quot;user&quot;: {
+        &quot;email&quot;: &quot;jsmith@abc.com&quot;,
+        &quot;enabled&quot;: true,
+        &quot;firstName&quot;: &quot;John&quot;,
+        &quot;groups&quot;: {
+            &quot;references&quot;: [...],
+            &quot;self&quot;: &quot;[URL to the User's Groups]&quot;
+        },
+        &quot;id&quot;: &quot;jsmith&quot;,
+        &quot;lastName&quot;: &quot;Smith&quot;,
+        &quot;phone&quot;: &quot;+1234567890&quot;,
+        &quot;roles&quot;: {
+            &quot;references&quot;: [...],
+            &quot;self&quot;: &quot;[URL to the User's Roles]&quot;
+        },
+        &quot;self&quot;: &quot;[URL to the User resource]&quot;,
+        &quot;userName&quot;: &quot;jsmith&quot;
+    }}
+</code></pre>
+
+<p>When a user is added to a group, a corresponding audit record is created with type &lsquo;User&rsquo; and activity &lsquo;User updated&rsquo;.</p>
+
+<h3 id="remove-user-from-a-group">Remove user from a group</h3>
+
+<p>Request body: n/a</p>
+
+<p>Response body: n/a</p>
+
+<p>Example request: Delete a UserReference</p>
+
+<pre><code> DELETE /user/&lt;&lt;tenant&gt;&gt;/groups/&lt;&lt;groupId&gt;&gt;/users/&lt;&lt;yourUserName&gt;&gt;
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1  204 NO CONTENT
+</code></pre>
+
+<p>When a user is removed from a group, a corresponding audit record is created with type &lsquo;User&rsquo; and activity &lsquo;User updated&rsquo;.</p>
+
+<h3 id="get-all-users-of-a-group">Get all users of a group</h3>
+
+<p>Response body: UserReferenceCollection</p>
+
+<p>Example request: Retrieve information about all users of a group</p>
+
+<pre><code>GET /user/management/groups/&lt;&lt;groupId&gt;&gt;
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+ Accept: application/vnd.com.nsn.cumulocity.userReferenceCollection+json;ver=0.9
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>Content-Type: application/vnd.com.nsn.cumulocity.userReferenceCollection+json;ver=0.9
+Content-Length: nnn
+
+{
+  &quot;self&quot; : &quot;[URL to this resource]&quot;,
+  &quot;references&quot; : [
+    {
+      &quot;self&quot; : &quot;[URL to this UserReference resource]&quot;,
+      &quot;user&quot; : {
+        &quot;self&quot; : &quot;[URL to this User resource]&quot;,
+        &quot;id&quot; : &quot;1&quot;,
+        &quot;userName&quot; : &quot;jsmith&quot;,
+        ...
+      }
+    }
+  ],
+  &quot;statistics&quot; : {
+    &quot;totalPages&quot; : 3,
+    &quot;pageSize&quot; : 5,
+    &quot;currentPage : 1
+  },
+  &quot;prev&quot; : &quot;[URL to previous page]&quot;,
+  &quot;next&quot; : &quot;[URL to next page]&quot;
+}
+</code></pre>
+
+  </article>
+  
+  <article id="user-reference" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#user-reference">
+        <span class="fa fa-link"></span>
+      </button>
+      User reference</h2>
+    
+
+<h3 id="userreference-application-vnd-com-nsn-cumulocity-userreference-json">UserReference [application/vnd.com.nsn.cumulocity.userReference+json]</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">self</td>
+<td align="left">URI</td>
+<td align="left">1</td>
+<td align="left">Link to this resource</td>
+</tr>
+
+<tr>
+<td align="left">user</td>
+<td align="left">User</td>
+<td align="left">1</td>
+<td align="left">User resource being referenced</td>
+</tr>
+</tbody>
+</table>
+
+  </article>
+  
+  <article id="group-collection" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#group-collection">
+        <span class="fa fa-link"></span>
+      </button>
+      Group collection</h2>
+    
+
+<h3 id="groupcollection-application-vnd-com-nsn-cumulocity-groupcollection-json">GroupCollection [application/vnd.com.nsn.cumulocity.groupCollection+json]</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">self</td>
+<td align="left">URI</td>
+<td align="left">1</td>
+<td align="left">Link to this resource</td>
+</tr>
+
+<tr>
+<td align="left">groups</td>
+<td align="left">Group</td>
+<td align="left">0..n</td>
+<td align="left">List of groups</td>
+</tr>
+
+<tr>
+<td align="left">statistics</td>
+<td align="left">PagingStatistics</td>
+<td align="left">1</td>
+<td align="left">Information about the paging statistics</td>
+</tr>
+
+<tr>
+<td align="left">prev</td>
+<td align="left">URI</td>
+<td align="left">0..1</td>
+<td align="left">Link to a possible previous page with additional groups</td>
+</tr>
+
+<tr>
+<td align="left">next</td>
+<td align="left">URI</td>
+<td align="left">0..1</td>
+<td align="left">Link to a possible next page with additional groups</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="audit-log">Audit log</h3>
+
+<p>Any change in group&rsquo;s roles and device permissions creates corresponding audit records with type &lsquo;Group&rsquo; and activity &lsquo;Group updated&rsquo; with information which properties have been changed.</p>
+
+<h3 id="list-all-groups">List all groups</h3>
+
+<p>Response body: GroupCollection</p>
+
+<p>Example request: Retrieve information about a group collection</p>
+
+<pre><code>GET /user/management/groups/
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+ Accept: application/vnd.com.nsn.cumulocity.groupCollection+json;ver=0.9
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1 200 OK
+Content-Type: application/vnd.com.nsn.cumulocity.groupCollection+json;ver=0.9
+Content-Length: nnn
+
+{
+   &quot;self&quot;:&quot;[URL to this resource]&quot;,
+   &quot;groups&quot;: [
+        {
+          &quot;id&quot; : &quot;1&quot;,
+          &quot;self&quot; : &quot;[URL to this resource]&quot;,
+          &quot;name&quot; : &quot;administrators&quot;,
+          &quot;roles&quot; : [...],
+          &quot;users&quot; : [&quot;self&quot; : &quot;[URL to collection of Users in this Group]&quot;],
+          &quot;devicePermissions&quot;: {}
+        },
+        {
+          &quot;id&quot; : &quot;2&quot;,
+          &quot;self&quot; : &quot;[URL to this resource]&quot;,
+          &quot;name&quot; : &quot;readers&quot;,
+      &quot;roles&quot; : [...],
+          &quot;users&quot; : [&quot;self&quot; : &quot;[URL to collection of Users in this Group]&quot;],
+          &quot;devicePermissions&quot;: {}
+        }
+   ],
+   &quot;statistics&quot; : {
+       &quot;totalPages&quot; : 2,
+       &quot;pageSize&quot; : 5,
+       &quot;currentPage : 1
+   },
+  &quot;prev&quot; : &quot;[URL to previous page]&quot;,
+  &quot;next&quot; : &quot;[URL to next page]&quot;
+}
+</code></pre>
+
+<h3 id="create-a-group">Create a group</h3>
+
+<p>Request body: Group</p>
+
+<p>Response body: Group</p>
+
+<p>Example request: Create a new group</p>
+
+<pre><code>POST /user/management/groups
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+ Content-Length: nnn
+ Content-Type: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
+
+{
+  &quot;name&quot; : &quot;monitoring&quot;
+}
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1 201 Created
+ Content-Type: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
+ Content-Length: nnn
+ Location: [URL to the resource]
+
+{
+  &quot;id&quot; : &quot;3&quot;,
+  &quot;self&quot; : &quot;[URL to this resource]&quot;,
+  &quot;name&quot; : &quot;monitoring&quot;
+  &quot;users&quot; : {
+    &quot;self&quot; : &quot;[URL to the UserReferenceCollection resource]&quot;,
+    &quot;references&quot; : []
+  },
+  &quot;roles&quot; : {
+    &quot;self&quot; : &quot;[URL to the RoleReferenceCollection resource]&quot;,
+    &quot;references&quot; : []
+  },
+  &quot;devicePermissions&quot;: {}
+}
+</code></pre>
+
+  </article>
+  
+  <article id="group" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#group">
+        <span class="fa fa-link"></span>
+      </button>
+      Group</h2>
+    
+
+<h3 id="group-application-vnd-com-nsn-cumulocity-group-json">Group [application/vnd.com.nsn.cumulocity.group+json]</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+<th align="left">Allowed in PUT/POST request</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">id</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Uniquely identifies a group</td>
+<td align="left">not allowed</td>
+</tr>
+
+<tr>
+<td align="left">self</td>
+<td align="left">URI</td>
+<td align="left">1</td>
+<td align="left">Link to this resource</td>
+<td align="left">not allowed</td>
+</tr>
+
+<tr>
+<td align="left">name</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Descriptive name of the group</td>
+<td align="left">mandatory</td>
+</tr>
+
+<tr>
+<td align="left">roles</td>
+<td align="left">RoleReferenceCollection</td>
+<td align="left">1</td>
+<td align="left">List of role references</td>
+<td align="left">not allowed</td>
+</tr>
+
+<tr>
+<td align="left">devicePermissions</td>
+<td align="left">Object</td>
+<td align="left">1</td>
+<td align="left">List of device permissions</td>
+<td align="left">optional</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="show-group-details">Show group details</h3>
+
+<p>Response body: Group</p>
+
+<p>Example request: Retrieve information about a group</p>
+
+<pre><code>GET /user/management/groups/&lt;&lt;groupId&gt;&gt;
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+ Accept: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>Content-Type: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
+Content-Length: nnn
+
+{
+  &quot;id&quot; : &quot;1&quot;,
+  &quot;self&quot; : &quot;[URL to this resource]&quot;,
+  &quot;name&quot; : &quot;administrators&quot;,
+  &quot;devicePermissions&quot;: {},
+  &quot;roles&quot; : {
+    &quot;self&quot; : &quot;[URL to the RoleReferenceCollection resource]&quot;,
+    &quot;references&quot; : [
+    {
+      &quot;self&quot; :  &quot;[URL to the RoleReference resource]&quot;,
+      &quot;role&quot; : {
+          &quot;self&quot; :  &quot;[URL to the Role resource]&quot;,
+          &quot;id&quot; : &quot;1&quot;,
+          &quot;name&quot; : &quot;ROLE_USER_MANAGEMENT_ADMIN&quot;
+      }
+    },
+    {
+      &quot;self&quot; :  &quot;[URL to the RoleReference resource]&quot;,
+      &quot;role&quot; : {
+            &quot;self&quot; :  &quot;[URL to the Role resource]&quot;,
+            &quot;id&quot; : &quot;1&quot;,
+            &quot;name&quot; : &quot;ROLE_INVENTORY_MANAGEMENT_ADMIN&quot;
+          }
+        },
+    ...
+     ]
+}
+</code></pre>
+
+<h3 id="get-a-representation-of-a-group-by-its-name">GET a representation of a group by its name</h3>
+
+<p>Response body: Group</p>
+
+<p>Example request: Retrieve information about a group</p>
+
+<pre><code>GET /user/&lt;&lt;tenant&gt;&gt;/groupByName/&lt;&lt;groupName&gt;&gt;
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+ Accept: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>Content-Type: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
+Content-Location: [main URL of this resource]
+Content-Length: nnn
+
+{
+  &quot;id&quot; : &quot;1&quot;,
+  &quot;self&quot; : &quot;[URL to this resource]&quot;,
+  &quot;name&quot; : &quot;administrators&quot;,
+  ...
+}
+</code></pre>
+
+<h3 id="remove-a-group">Remove a group</h3>
+
+<p>Request body: n/a</p>
+
+<p>Response body: n/a</p>
+
+<p>Example request: Delete a group</p>
+
+<pre><code>DELETE /user/&lt;&lt;tenant&gt;&gt;/groups/&lt;&lt;groupId&gt;&gt;
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1  204 NO CONTENT
+</code></pre>
+
+<p>When a group is removed, a corresponding audit record is created with type &lsquo;User&rsquo; and activity &lsquo;User updated&rsquo; with the information that the user has been removed from the group.</p>
+
+<blockquote>
+<p><strong>Info:</strong> ADMINS and DEVICES groups can not be deleted.</p>
+</blockquote>
+
+<h3 id="update-a-group">Update a group</h3>
+
+<p>Request body: Group</p>
+
+<p>Response body: Group</p>
+
+<p>Example request: Change the group name</p>
+
+<pre><code>PUT /user/&lt;&lt;tenant&gt;&gt;/groups/&lt;&lt;groupId&gt;&gt;
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+ Accept: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
+ Content-Type: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
+ Content-Length: nnn
+
+{
+   &quot;name&quot; : &quot;PlatformAdministrators&quot;
+}
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>Content-Type: application/vnd.com.nsn.cumulocity.group+json;ver=0.9
+Content-Length: nnn
+
+{
+  &quot;id&quot; : &quot;1&quot;,
+  &quot;self&quot; : &quot;[URL to this resource]&quot;,
+  &quot;name&quot; : &quot;PlatformAdministrators&quot;,
+  ...
+}
+</code></pre>
+
+<p>When a group is updated with changed roles or permissions, a corresponding audit record is created with type &lsquo;Group&rsquo; and activity &lsquo;Group updated&rsquo;.</p>
+
+  </article>
+  
+  <article id="group-reference-collection" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#group-reference-collection">
+        <span class="fa fa-link"></span>
+      </button>
+      Group reference collection</h2>
+    
+
+<h3 id="groupreferencecollection-application-vnd-com-nsn-cumulocity-groupreferencecollection-json">GroupReferenceCollection [application/vnd.com.nsn.cumulocity.groupReferenceCollection+json]</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">self</td>
+<td align="left">URI</td>
+<td align="left">1</td>
+<td align="left">Link to this resource</td>
+</tr>
+
+<tr>
+<td align="left">groups</td>
+<td align="left">GroupReference</td>
+<td align="left">0..n</td>
+<td align="left">List of group references</td>
+</tr>
+
+<tr>
+<td align="left">statistics</td>
+<td align="left">PagingStatistics</td>
+<td align="left">1</td>
+<td align="left">Information about the paging statistics</td>
+</tr>
+
+<tr>
+<td align="left">prev</td>
+<td align="left">URI</td>
+<td align="left">0..1</td>
+<td align="left">Link to a possible previous page with additional group references</td>
+</tr>
+
+<tr>
+<td align="left">next</td>
+<td align="left">URI</td>
+<td align="left">0..1</td>
+<td align="left">Link to a possible next page with additional group references</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="get-all-groups-of-a-user">Get all groups of a user</h3>
+
+<p>Response body: GroupReferenceCollection</p>
+
+<p>Example request: Retrieve information about all groups of a user</p>
+
+<pre><code>GET /user/&lt;&lt;tenant&gt;&gt;/users/&lt;&lt;userName&gt;&gt;/groups
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+ Accept: application/vnd.com.nsn.cumulocity.groupReferenceCollection+json;ver=0.9
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>Content-Type: application/vnd.com.nsn.cumulocity.groupReferenceCollection+json;ver=0.9
+Content-Length: nnn
+
+{
+    &quot;self&quot; : &quot;[URL to this resource]&quot;,
+    &quot;references&quot;: [{        &quot;group&quot;: {            &quot;id&quot;: 21,            &quot;name&quot;: &quot;admins&quot;,            &quot;roles&quot;: {                &quot;references&quot;: [...],                &quot;self&quot;: &quot;[URL to this Group's Roles]&quot;            },            &quot;self&quot;: &quot;[URL to this Group]&quot;,            &quot;users&quot;: {                &quot;self&quot;: &quot;{URL to this Group's Users]&quot;            }        },        &quot;self&quot;: &quot;[URL to this User's Group]&quot;    },   ...   ],   &quot;statistics&quot; : {
+     &quot;totalPages&quot; : 1,
+     &quot;pageSize&quot; : 5,
+     &quot;currentPage : 1
+   },
+   &quot;prev&quot; : &quot;[URL to previous page]&quot;,
+   &quot;next&quot; : &quot;[URL to next page]&quot;
+}
+</code></pre>
+
+  </article>
+  
+  <article id="group-reference" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#group-reference">
+        <span class="fa fa-link"></span>
+      </button>
+      Group reference</h2>
+    
+
+<h3 id="groupreference-application-vnd-com-nsn-cumulocity-groupreference-json">GroupReference [application/vnd.com.nsn.cumulocity.groupReference+json]</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">self</td>
+<td align="left">URI</td>
+<td align="left">1</td>
+<td align="left">Link to this resource</td>
+</tr>
+
+<tr>
+<td align="left">group</td>
+<td align="left">Group</td>
+<td align="left">1</td>
+<td align="left">Group resource being referenced</td>
+</tr>
+</tbody>
+</table>
+
+  </article>
+  
+  <article id="role-collection" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#role-collection">
+        <span class="fa fa-link"></span>
+      </button>
+      Role collection</h2>
+    
+
+<h3 id="rolecollection-application-vnd-com-nsn-cumulocity-rolecollection-json">RoleCollection [application/vnd.com.nsn.cumulocity.roleCollection+json]</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Field Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">self</td>
+<td align="left">URI</td>
+<td align="left">1</td>
+<td align="left">Link to this resource</td>
+</tr>
+
+<tr>
+<td align="left">roles</td>
+<td align="left">Role</td>
+<td align="left">0..n</td>
+<td align="left">List of roles</td>
+</tr>
+
+<tr>
+<td align="left">statistics</td>
+<td align="left">PagingStatistics</td>
+<td align="left">1</td>
+<td align="left">Information about the paging statistics</td>
+</tr>
+
+<tr>
+<td align="left">prev</td>
+<td align="left">URI</td>
+<td align="left">0..1</td>
+<td align="left">Link to a possible previous page with additional roles</td>
+</tr>
+
+<tr>
+<td align="left">next</td>
+<td align="left">URI</td>
+<td align="left">0..1</td>
+<td align="left">Link to a possible next page with additional roles</td>
+</tr>
+</tbody>
+</table>
+
+  </article>
+  
+  <article id="role" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#role">
+        <span class="fa fa-link"></span>
+      </button>
+      Role</h2>
+    
+
+<h3 id="role-application-vnd-com-nsn-cumulocity-role-json">Role [application/vnd.com.nsn.cumulocity.role+json]</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">id</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Uniquely identifies a role</td>
+</tr>
+
+<tr>
+<td align="left">name</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Descriptive name of the role, following role naming pattern</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="get-all-available-roles">Get all available roles</h3>
+
+<p>Response body: RoleCollection</p>
+
+<p>Example request: Retrieve information about a role collection</p>
+
+<pre><code> GET /user/roles
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1 200 OK
+ Content-Type: application/vnd.com.nsn.cumulocity.roleCollection+json;ver=0.9
+ Content-Length: nnn
+
+{
+   &quot;self&quot;:&quot;[URL to this resource]&quot;,
+   &quot;roles&quot;: [
+     {
+       &quot;self&quot; :  &quot;[URL to the Role resource]&quot;,
+       &quot;id&quot; : &quot;ROLE_INVENTORY_ADMIN&quot;,
+       &quot;name&quot; : &quot;ROLE_INVENTORY_ADMIN&quot;
+     },
+     {
+       &quot;self&quot; :  &quot;[URL to the Role resource]&quot;,
+       &quot;id&quot; : &quot;ROLE_USER_MANAGEMENT_ADMIN&quot;,
+       &quot;name&quot; : &quot;ROLE_USER_MANAGEMENT_ADMIN&quot;
+     },    ...
+   ],
+   &quot;statistics&quot; : {
+       &quot;totalPages&quot; : 5,
+       &quot;pageSize&quot; : 5,
+       &quot;currentPage : 1
+   },
+  &quot;prev&quot; : &quot;[URL to previous page]&quot;,
+  &quot;next&quot; : &quot;[URL to next page]&quot;
+}
+</code></pre>
+
+<h3 id="assign-role-to-user">Assign Role to user</h3>
+
+<p>Request body: RoleReference</p>
+
+<p>Response body: RoleReference</p>
+
+<p>Example request: Create a new RoleReference</p>
+
+<pre><code>POST /user/&lt;&lt;tenant&gt;&gt;/users/&lt;&lt;userName&gt;&gt;/roles
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+ Content-Length: nnn
+ Content-Type: application/vnd.com.nsn.cumulocity.roleReference+json;ver=0.9
+
+{
+  &quot;role&quot; : {
+    &quot;self&quot; : &quot;[URL to the Role resource]&quot;
+  }
+}
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1 201 Created
+ Content-Type: application/vnd.com.nsn.cumulocity.roleReference+json;ver=0.9
+ Content-Length: nnn
+ Location: [URL to this resource]
+
+{
+  &quot;self&quot; : &quot;[URL to this resource]&quot;,
+  &quot;role&quot; : {
+    &quot;self&quot; :  &quot;[URL to the Role resource]&quot;,
+    &quot;id&quot; : &quot;ROLE_USER_MANAGEMENT_ADMIN&quot;,
+    &quot;name&quot; : &quot;ROLE_USER_MANAGEMENT_ADMIN&quot;
+  }
+}
+</code></pre>
+
+<p>When a role is assigned to a user, a corresponding audit record is created with type &lsquo;User&rsquo; and activity &lsquo;User updated&rsquo;.</p>
+
+<h3 id="assign-role-to-group">Assign role to group</h3>
+
+<p>Request body: RoleReference</p>
+
+<p>Response body: RoleReference</p>
+
+<p>Example request: Create a new RoleReference</p>
+
+<pre><code>POST /user/&lt;&lt;tenant&gt;&gt;/groups/&lt;&lt;groupId&gt;&gt;/roles
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+ Content-Length: nnn
+ Content-Type: application/vnd.com.nsn.cumulocity.roleReference+json;ver=0.9
+
+{
+  &quot;role&quot; : {
+    &quot;self&quot; : &quot;[URL to the Role resource]&quot;
+  }
+}
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1 201 Created
+ Content-Type: application/vnd.com.nsn.cumulocity.roleReference+json;ver=0.9
+ Content-Length: nnn
+ Location: [URL to this resource]
+
+{
+  &quot;self&quot; : &quot;[URL to this resource]&quot;,
+  &quot;role&quot; : {
+    &quot;self&quot; :  &quot;[URL to the Role resource]&quot;,
+    &quot;id&quot; : &quot;ROLE_USER_MANAGEMENT_ADMIN&quot;,
+    &quot;name&quot; : &quot;ROLE_USER_MANAGEMENT_ADMIN&quot;
+  }
+}
+</code></pre>
+
+<p>When a role is assigned to a group, a corresponding audit record is created with type &lsquo;Group&rsquo; and activity &lsquo;Group updated&rsquo;.</p>
+
+<h3 id="unassign-role-from-user">Unassign role from user</h3>
+
+<p>Request body: n/a</p>
+
+<p>Response body: n/a</p>
+
+<p>Example request: Delete a RoleReference</p>
+
+<pre><code>DELETE /user/&lt;&lt;tenant&gt;&gt;/users/&lt;&lt;userName&gt;&gt;/roles/&lt;&lt;roleName&gt;&gt; (Example:ROLE_TENANT_MANAGEMENT_ADMIN)}}
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1  204 NO CONTENT
+</code></pre>
+
+<h3 id="unassign-role-from-group">Unassign role from group</h3>
+
+<p>Request body: n/a</p>
+
+<p>Response body: n/a</p>
+
+<p>Example request: Delete a RoleReference</p>
+
+<pre><code>DELETE /user/&lt;&lt;tenant&gt;&gt;/groups/&lt;&lt;groupId&gt;&gt;/roles/&lt;&lt;roleName&gt;&gt; (Example:ROLE_TENANT_MANAGEMENT_ADMIN)}}
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1  204 NO CONTENT
+</code></pre>
+
+<p>When a role is unassigned from a group, a corresponding audit record is created with type &lsquo;Group&rsquo; and activity &lsquo;Group updated&rsquo;.</p>
+
+  </article>
+  
+  <article id="role-reference-collection" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#role-reference-collection">
+        <span class="fa fa-link"></span>
+      </button>
+      Role reference collection</h2>
+    
+
+<h3 id="rolereferencecollection-application-vnd-com-nsn-cumulocity-rolereferencecollection-json">RoleReferenceCollection [application/vnd.com.nsn.cumulocity.roleReferenceCollection+json]</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">self</td>
+<td align="left">URI</td>
+<td align="left">1</td>
+<td align="left">Link to this resource</td>
+</tr>
+
+<tr>
+<td align="left">references</td>
+<td align="left">RoleReference</td>
+<td align="left">0..n</td>
+<td align="left">List of role references</td>
+</tr>
+
+<tr>
+<td align="left">statistics</td>
+<td align="left">PagingStatistics</td>
+<td align="left">1</td>
+<td align="left">Information about the paging statistics</td>
+</tr>
+
+<tr>
+<td align="left">prev</td>
+<td align="left">URI</td>
+<td align="left">0..1</td>
+<td align="left">Link to a possible previous page with additional role references</td>
+</tr>
+
+<tr>
+<td align="left">next</td>
+<td align="left">URI</td>
+<td align="left">0..1</td>
+<td align="left">Link to a possible next page with additional role references</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="get-all-roles-of-a-user">Get all roles of a user</h3>
+
+<p>Response body: RoleReferenceCollection</p>
+
+<p>Example request: Retrieve information about a role reference collection</p>
+
+<pre><code>GET /user/&lt;&lt;tenant&gt;&gt;/users/&lt;&lt;userName&gt;&gt;/roles
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+ Accept: application/vnd.com.nsn.cumulocity.roleReferenceCollection+json;ver=0.9
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1 200 OK
+ Content-Type: application/vnd.com.nsn.cumulocity.roleReferenceCollection+json;ver=0.9
+ Content-Length: nnn
+{
+   &quot;self&quot;:&quot;[URL to this resource]&quot;,
+   &quot;references&quot;: [
+     {
+       &quot;self&quot; :  &quot;[URL to the Role Reference resource]&quot;,
+       &quot;role&quot; : {
+          &quot;self&quot; :  &quot;[URL to the Role resource]&quot;,
+          &quot;id&quot; : &quot;ROLE_INVENTORY_ADMIN&quot;,
+          &quot;name&quot; : &quot;ROLE_INVENTORY_ADMIN&quot;
+       }
+     },
+     {
+       &quot;self&quot; :  &quot;[URL to the Role Reference resource]&quot;,
+       &quot;role&quot; : {
+          &quot;self&quot; :  &quot;[URL to the Role resource]&quot;,
+          &quot;id&quot; : &quot;ROLE_USER_MANAGEMENT_ADMIN&quot;,
+          &quot;name&quot; : &quot;ROLE_USER_MANAGEMENT_ADMIN&quot;
+       }
+     }
+   ],
+   &quot;statistics&quot; : {
+       &quot;totalPages&quot; : 1,
+       &quot;pageSize&quot; : 5,
+       &quot;currentPage : 1
+   },
+  &quot;prev&quot; : &quot;[URL to previous page]&quot;,
+  &quot;next&quot; : &quot;[URL to next page]&quot;
+}
+</code></pre>
+
+<h3 id="get-all-roles-of-a-group">Get all roles of a group</h3>
+
+<p>Response body: RoleReferenceCollection</p>
+
+<p>Example request: Retrieve information about a role reference cCollection</p>
+
+<pre><code>GET /user/&lt;&lt;tenant&gt;&gt;/groups/&lt;&lt;groupId&gt;&gt;/roles
+ Host: [hostname]
+ Authorization: Basic xxxxxxxxxxxxxxxxxxx
+ Accept: application/vnd.com.nsn.cumulocity.roleReferenceCollection+json;ver=0.9
+</code></pre>
+
+<p>Example response:</p>
+
+<pre><code>HTTP/1.1 200 OK
+ Content-Type: application/vnd.com.nsn.cumulocity.roleReferenceCollection+json;ver=0.9
+ Content-Length: nnn
+
+{
+   &quot;self&quot;:&quot;[URL to this resource]&quot;,
+   &quot;references&quot;: [
+     {
+       &quot;self&quot; :  &quot;[URL to the Role Reference resource]&quot;,
+       &quot;role&quot; : {
+          &quot;self&quot; :  &quot;[URL to the Role resource]&quot;,
+          &quot;id&quot; : &quot;ROLE_INVENTORY_ADMIN&quot;,
+          &quot;name&quot; : &quot;ROLE_INVENTORY_ADMIN&quot;
+       }
+     },
+     {
+       &quot;self&quot; :  &quot;[URL to the Role Reference resource]&quot;,
+       &quot;role&quot; : {
+          &quot;self&quot; :  &quot;[URL to the Role resource]&quot;,
+          &quot;id&quot; : &quot;ROLE_USER_MANAGEMENT_ADMIN&quot;,
+          &quot;name&quot; : &quot;ROLE_USER_MANAGEMENT_ADMIN&quot;
+       }
+     }
+   ],
+   &quot;statistics&quot; : {
+       &quot;totalPages&quot; : 1,
+       &quot;pageSize&quot; : 5,
+       &quot;currentPage : 1
+   },
+  &quot;prev&quot; : &quot;[URL to previous page]&quot;,
+  &quot;next&quot; : &quot;[URL to next page]&quot;
+}
+</code></pre>
+
+  </article>
+  
+  <article id="role-reference" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#role-reference">
+        <span class="fa fa-link"></span>
+      </button>
+      Role reference</h2>
+    
+
+<h3 id="rolereference-application-vnd-com-nsn-cumulocity-rolereference-json">RoleReference [application/vnd.com.nsn.cumulocity.roleReference+json]</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">self</td>
+<td align="left">URI</td>
+<td align="left">1</td>
+<td align="left">Link to this resource</td>
+</tr>
+
+<tr>
+<td align="left">role</td>
+<td align="left">Role</td>
+<td align="left">1</td>
+<td align="left">A role resource being referenced</td>
+</tr>
+</tbody>
+</table>
+
+  </article>
+  
+  
+</div>
+<footer class="main-footer">
+  <div class="copyright">
+    <div class="container text-center">
+      <p class="small ">&copy; 2019 Cumulocity GmbH | All rights reserved.</p>
+    </div>
+  </div>  
+</footer>
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://cumulocity.com/guides/js/vendor/jquery.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/clipboard.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/zoom.js"></script>
+<script src="https://cumulocity.com/guides/js/vendor/highlight.min.js"></script>
+<script src="https://cumulocity.com/guides/js/main.js"></script>
+
+
+
+
+
+    
+   
+  </body>
+</html>

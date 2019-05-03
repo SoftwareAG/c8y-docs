@@ -1,5 +1,6 @@
 ---
 title: Processing data
+layout: redirect
 weight: 50
 ---
 

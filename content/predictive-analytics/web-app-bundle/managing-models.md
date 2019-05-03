@@ -1,5 +1,6 @@
 ---
 title: Managing models
+layout: redirect
 weight: 30
 ---
 

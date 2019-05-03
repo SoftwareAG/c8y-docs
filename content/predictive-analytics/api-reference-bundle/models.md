@@ -1,5 +1,6 @@
 ---
 title: Models
+layout: redirect
 weight: 10
 ---
 

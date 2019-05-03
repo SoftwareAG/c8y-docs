@@ -22,7 +22,7 @@ In the **Global roles** tab you can find the roles which grant permissions on a 
 
 The roles "admins" and "devices" have a special status:
 
-|Role|Description|
+|Role&nbsp;&nbsp;&nbsp;|Description|
 |:---|:---|
 |admin|All permissions are enabled. The initial administrator, the first user created in a tenant, has this role.
 |devices|Typical permission setup for devices. After registration, a device automatically has this role. Edit this role if your devices require less or more permissions, or assign other roles to your devices.
@@ -87,17 +87,17 @@ The following permission categories are available by default:
 |Data broker|Send data to other tenants or receive data from other tenants.
 |Device control|View or edit commands for devices resp. send commands to devices. Also used for device registration.
 |Events|View or create events for devices.
+|Global Smart Rules|Configure global Smart Rules.
 |Identity|View or edit identifiers for devices.
 |Inventory|View or edit inventory data.
 |Measurements|View or create measurements for devices.
 |Option management|View or edit account options such as password policies.
 |Retention rules|View or edit retention rules.
 |Simulator|Configure simulated devices.
-|Smart Rules|Configure Smart Rules.
 |Sms|Configure SMS.
 |Tenant management|View, create, edit or delete subtenants.
 |Tenant statistics|View the usage data for this account, as shown on the Home screen of the Administration application.
-|User management|View or edit users, user groups and permissions.
+|User management|View or edit users, global roles and permissions.
 |Own user management|View or edit your own user.
 
 There may be additional permissions visible depending on the features in your subscription plan. These are documented along with the respective feature.
@@ -192,7 +192,7 @@ Inventory roles are assigned to a user and a group of devices.
 
 To assign inventory roles, click **User** in the **Account** menu, select a user in the user list and switch to its **Inventory roles** tab. 
 
-In the **Inventory roles** tab you will see a tree of device groups. To assign an inventory role, click on the arrow right from a device group. Select the relevant roles and click **Apply**. For details on the roles hover over the info icon next to it or refer to [Viewing inventory roles](#inventory).
+In the **Inventory roles** tab you will see a tree of device groups. To assign an inventory role, click on the arrow right from a group. Select the relevant roles and click **Apply**. For details on the roles hover over the info icon next to it or refer to [Viewing inventory roles](#inventory).
 
 > **Important**: If a user already has a global role containing inventory permissions, the user will be able to see or change all devices regardless of what inventory roles you set here.
 

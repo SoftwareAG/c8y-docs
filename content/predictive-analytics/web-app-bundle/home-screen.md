@@ -1,5 +1,6 @@
 ---
 title: Home screen
+layout: redirect
 weight: 20
 ---
 

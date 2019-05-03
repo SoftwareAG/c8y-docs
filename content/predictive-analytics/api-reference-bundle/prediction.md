@@ -1,5 +1,6 @@
 ---
 title: Prediction
+layout: redirect
 weight: 20
 ---
 

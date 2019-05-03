@@ -8,7 +8,7 @@ The user interface consists of the following parts:
 -   *user API* resource - returns URIs and URI templates to collections of users, groups, and roles, so that all users, groups, roles and user or group with particular name can be queried.
 -   *user collection* resource - retrieves sets of users and enables creating new users.
 -   *user* resource - represents individual users that can be queried and deleted.
--   *user reference collection* resource - retrieves sets of references to users. These could be, for example, users of a particular user group. It also enables adding new users to a collection.
+-   *user reference collection* resource - retrieves sets of references to users. These could be, for example, users with a particular global role. It also enables adding new users to a collection.
 -   *user reference* resource - represents one individual reference to a user, which can be retrieved or deleted.
 -   *current user* resource - represents the user that is logged in and can be queried and modified.
 -   *group collection* resource -retrieves sets of groups and enables creating new groups.

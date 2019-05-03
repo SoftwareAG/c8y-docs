@@ -1,6 +1,6 @@
-
 ---
 title: Resources
+layout: redirect
 weight: 30
 ---
 

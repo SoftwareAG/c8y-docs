@@ -1,6 +1,6 @@
-
 ---
 title: Using Postman
+layout: redirect
 weight: 40
 ---
 

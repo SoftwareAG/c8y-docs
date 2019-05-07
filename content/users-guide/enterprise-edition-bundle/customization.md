@@ -4,11 +4,11 @@ title: Customizing your platform
 layout: redirect
 ---
 
-In an Enterprise Edition installation under the **Settings** menu you can specify settings for the customization of your platform.
+In an Enterprise tenant you can specify settings for the customization of your platform under the **Settings** menu.
 
 ### <a name="configuration"></a>Configuration
 
-**Info**: For information on the general settings in the **Customization** tab refer to [Changing Settings > Configuration settings](/guides/users-guide/administration/#config-platform) in the Administration section. Here, only the features will be explained which are exclusively available for management tenants.
+**Info**: For information on the general settings in the **Customization** tab see [Changing Settings > Configuration settings](/guides/users-guide/administration/#config-platform) in the Administration section. Here, only the features will be explained which are exclusively available for management tenants.
 
 #### Applications
 
@@ -169,10 +169,10 @@ Before activating the custom domain name, make sure that
 * the common name (domain name) is not used by any other tenant,
 * the certificate is currently valid (validFrom in the past and validTo in the future),
 * you have added a wildcard CNAME record (starting with `*.`) to your DNS server of the following format:<br>
- Hostname = `*.<your domain name>`, e.g. `*.iot.mycompany.com` <br>
+ Domain name = "&ast;.&lt;your domain name>", e.g. "*.iot.mycompany.com" <br>
  Type = CNAME <br>
- Target = the target URL of the platform you want to point to, e.g. `manage.cumulocity.com`<br>
-Make sure to remove all A entries for the wildcard domain. If your DNS service does not provide CNAME entries for wildcard certificates, please contact our support.
+ Target = the domain of the platform you want to point to, e.g. if you use "https://demos.cumulocity.com" to access your tenant, use "demos.cumulocity.com" as target.<br>
+Make sure to remove all A entries for the wildcard domain. For example, if you already have an A entry for "xxx.iot.mycompany.com", you cannot create tenants with the URL "xxx".
 
 After successful activation you will be redirected to your enterprise tenant at the new domain. You will also receive an email with information about the activation.
 

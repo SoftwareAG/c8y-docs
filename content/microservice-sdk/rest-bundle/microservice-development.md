@@ -248,3 +248,30 @@ Content-Type: application/vnd.com.nsn.cumulocity.applicationUserCollection+json
 ```
 
 The response consists of service user credentials dedicated for each tenant. A service user is a user account in the tenant that has the permissions ("roles") that the microservice requested on [registration](#creating-application) time.
+
+
+### Settings
+
+The microservice settings are available to microservice users through the authorized bootstrap or service user. 
+When using the bootstrap user, all settings are always loaded for microservice owner.
+The settings are stored in Cumulocity as tenant options, where category is by default `contextPath` or `applicationName` when context path is not defined.
+
+Request:
+
+```http
+    GET /application/currentApplication/settings
+    Host: ...
+    Authorization: Basic ...
+```
+
+Example response:
+
+```json
+HTTP/1.1 200 OK
+Content-Type: application/vnd.com.nsn.cumulocity.option+json;charset=UTF-8;ver=0.9
+{
+   "email.protocol":"smtps",
+   "password.enforce.strength":"true",
+   "another.key.1":"$value15"
+}
+```

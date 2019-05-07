@@ -1,7 +1,0 @@
----
-layout: "default"
----
-<div class="dot-info">
-  <button type="button" class="popover-dismiss" data-html="true" data-toggle="popover" data-content="<p>There is an incredible amount of different hardware types, revisions, firmware versions and other variations of devices on the IoT market. We cannot guarantee plug-and-play compatibility and full functional support for all such variations.</p><p>However, we are happy to help you to get your particular device and variant certified with Cumulocity &mdash; <a href='mailto:info@cumulocity.com'>just mail us</a>.</p><p>Also, many of our device integrations are open source to help you build variants.</p>">About Cumulocity's support for devices ...</button>
-</div>
-<%- @content %>

@@ -187,8 +187,8 @@ If a media type without "ver" parameter is given, the oldest available version w
 Data exchanged with Cumulocity in HTTP requests and responses is encoded in [JSON format](http://www.ietf.org/rfc/rfc4627.txt) and [UTF-8](http://en.wikipedia.org/wiki/UTF-8) character encoding. Timestamps and dates are accepted and emitted by Cumulocity in [ISO 8601](http://www.w3.org/TR/NOTE-datetime) format:
 
     Date: YYYY-MM-DD
-    Time: hh:mm:ss±hh:mm
-    Timestamp: YYYY-MM-DDThh:mm:ss±hh:mm
+    Time: hh:mm:ssÂ±hh:mm
+    Timestamp: YYYY-MM-DDThh:mm:ssÂ±hh:mm
 
 To avoid ambiguity, all times and timestamps must include timezone information. Please take into account that the plus character "+" must be encoded as "%2B".
 

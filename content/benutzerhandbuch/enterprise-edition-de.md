@@ -1,8 +1,8 @@
 ---
 weight: 50
-title: Enterprise Edition
+title: Enterprise Tenant
 layout: bundle
-slug: enterprise-edition
+slug: enterprise-tenant
 ---
 
-Die Enterprise Edition von Cumulocity bietet verschiedene Erweiterungen zu den Funktionalitäten der Standard Edition. Im Folgenden sind zusätzliche Funktionalitäten beschrieben, die nur in der Enterprise Edition verfügbar sind.
+Der Enterprise Tenant der Cumulocity IoT-Plattform bietet verschiedene Erweiterungen zu den Funktionalitäten des Standard Tenant. Im Folgenden sind zusätzliche Funktionalitäten beschrieben, die nur im Enterprise Tenant verfügbar sind.

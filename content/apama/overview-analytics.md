@@ -30,5 +30,5 @@ You can either use predefined rules or define your own custom rules which requir
 
 |CEP rules|required applications
 |:---|:---
-|Pre-defined rules| "smartrule" (included in Cumulocity Standard Edition) and "apama-small", "apama-medium" or "apama-large" (optional)
+|Pre-defined rules| "smartrule" (included in Cumulocity Standard Tenant) and "apama-small", "apama-medium" or "apama-large" (optional)
 |Custom rules|"apama-small", "apama-medium" or "apama-large"

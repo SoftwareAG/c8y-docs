@@ -35,7 +35,7 @@ Per default, Cumulocity comes with the following three standard applications:
 </tbody>
 </table>
 
-Apart from these standard applications that initially come with Cumulocity, various additional applications are provided, offering a wide variety of functionalities. The availability of this applications depends on the Edition you are using and the applications your organization is subscribed to.
+Apart from these standard applications that initially come with Cumulocity, various additional applications are provided, offering a wide variety of functionalities. The availability of this applications depends on the Tenant you are using and the applications your organization is subscribed to.
 
 Find a detailed list of all applications available with Cumulocity in  [Applications > Application names](/guides/reference/applications#application-names) in the Reference guide.
 

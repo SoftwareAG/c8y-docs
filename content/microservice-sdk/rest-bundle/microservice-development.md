@@ -253,7 +253,7 @@ The response consists of service user credentials dedicated for each tenant. A s
 ### Settings
 
 The microservice settings are available to microservice users through the authorized bootstrap or service user. 
-When using the bootstrap user, all settings are always loaded for microservice owner.
+When using the bootstrap user, all settings are always loaded for the microservice owner.
 The settings are stored in Cumulocity as tenant options, where category is by default `contextPath` or `applicationName` when context path is not defined.
 
 Request:

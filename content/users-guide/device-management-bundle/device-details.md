@@ -79,7 +79,7 @@ The information is provided on the following cards:
 </tr>
 <tr>
 <td style="text-align:left">Device data</td>
-<td style="text-align:left">Displays editable information on the device (name, type, ID, owner, last updated). The fields <strong>ID</strong> and <strong>Last updated</strong> cannot be edited. Moreover information on hardware (editable) and firmware (not editable) is displayed here if available.</td>
+<td style="text-align:left">Displays general information on the device (ID, name, type, owner, last update). The fields <strong>Name</strong> and <strong>Type</strong> can be edited. Below the general device information, the card shows status information for active alarms, availability and connection (not editable). Moreover, various device-specific information like hardware and firmware is displayed here (editable).</td>
 </tr>
 <tr>
 <td style="text-align:left">Active, critical alarms</td>

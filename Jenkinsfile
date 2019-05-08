@@ -5,7 +5,7 @@ pipeline {
   }
   agent {
     docker {
-      image 'confraria/node-chrome:node11-chrome73-gettext-mercurial'
+      image 'jguyomard/hugo-builder'
     }
   }
 

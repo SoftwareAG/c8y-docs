@@ -13,7 +13,7 @@ When you create a Bulk Operation, you can run it in two modes:
 
 Hints and tips:
 - it is forbidden to pass both: groupId and failedParentId,
-- bulk operation works with device group of types: static and 'dynamic'.
+- bulk operation works with groups of type: static and 'dynamic'.
 
 Bulk Operation API requires different roles that standard device control API. These new roles are: BULK_OPERATION_READ and BULK_OPERATION_ADMIN.
 

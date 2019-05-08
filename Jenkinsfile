@@ -21,12 +21,11 @@ pipeline {
     stage('Configure') {
       steps {
         script {
-          if (branch('default')) {
+          if (env.BRANCH_NAME == 'default') {
             YUM_DEST_DIR = '/var/www/staticpage-guides/'
           } else {
             HUGO_PARAMS = "--config develop.toml"
           }
-          sh "echo ${HUGO_PARAMS}"
         }
       }
     }

@@ -50,7 +50,7 @@ If you are subscribed to the required applications you will see a third option
 5. Click **Add another device** to register one more device. Again, enter the device ID and optionally select a group. This way, you can add multiple devices in one step.
 6. Click **Next** to register your device(s). 
 
-**Info**: In the Enterprise Tenant, the management tenant may also directly select a tenant to which the device will be added from here. Note that since the management tenant does not have access to the subtenant's inventory you can either register devices to a tenant OR to a group, not both. 
+**Info**: In an Enterprise Tenant, the management tenant may also directly select a tenant to which the device will be added from here. Note that since the management tenant does not have access to the subtenant's inventory you can either register devices to a tenant OR to a group, not both. 
 
 <img src="/guides/images/users-guide/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration"> 
 

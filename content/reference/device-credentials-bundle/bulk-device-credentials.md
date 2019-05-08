@@ -15,7 +15,7 @@ First section is the first line of csv file. This line contains column names (he
 |TENANT|0..1|The name of tenant for which registration is executed (allowed only by management tenant)|
 |TYPE|0..1|The type of device representation|
 |NAME|0..1|The name of device representation|
-|ICCID|0..1|The iccid of device (sim card number). If 'iccid' appers in file, import adds a fragment 'c8y_Mobile.iccid'. 'Iccid' value is not mandatory for each row, please see below example of http request|
+|ICCID|0..1|The iccid of device (sim card number). If 'iccid' appears in file, import adds a fragment 'c8y_Mobile.iccid'. 'Iccid' value is not mandatory for each row, please see below example of http request|
 |IDTYPE|0..1|The type of external Id. If 'idtype' doesn't appear in file, the default value is used. The default value is 'c8y_Serial'. 'Idtype' value is not mandatory for each row, please see below example of http request|
 |PATH|0..1|The path in the groups hierarchy where device is added. Path contains name of each group separated by '/', i.e: Main group/Subgroup/.../Last subgroup. If group doesn't exists, import creates the group|
 |SHELL|0..1|If this column contains value 1, import adds for device 'Shell' feature (specifically: c8y_SupportedOperations fragment). 'Shell' value is not mandatory for each row, please see below example of http request|

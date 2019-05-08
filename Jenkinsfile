@@ -1,3 +1,5 @@
+YUM_DEST_DIR = '/var/www/staticpage-new/guides'
+
 pipeline {
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
@@ -12,15 +14,34 @@ pipeline {
   environment {
     YUM_SRV = 'yum.cumulocity.com'
     YUM_USR = 'hudson'
-    YUM_DEST_DIR = '/var/www/staticpage-new/guides'
   }
 
   stages {
+    stage('Check default') {
+      when {
+        branch('default')
+      }
+      steps {
+        script {
+          YUM_DEST_DIR = '/var/www/staticpage-guides/'
+        }
+      }
+    }
     stage('Build') {
       steps {
         sh 'hugo'
-        sshagent(['hudson-ssh-resources']) {
-          sh "rsync -avh ./public/* ${env.YUM_USR}@${env.YUM_SRV}:${env.YUM_DEST_DIR}"
+      }
+    }
+    stage('Deploy') {
+      when {
+        oneOf {
+          branch 'develop'
+          branch 'default'
+        }
+        steps {
+          sshagent(['hudson-ssh-resources']) {
+            sh "rsync -avh ./public/* ${env.YUM_USR}@${env.YUM_SRV}:${YUM_DEST_DIR}"
+          }
         }
       }
     }

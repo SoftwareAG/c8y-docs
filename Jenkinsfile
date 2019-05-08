@@ -37,7 +37,7 @@ pipeline {
     stage('Deploy') {
       steps {
         sshagent(['hudson-ssh-resources']) {
-          sh "rsync -avh ./public/* ${env.YUM_USR}@${env.YUM_SRV}:${YUM_DEST_DIR}"
+          sh "rsync -avh ./public/* ${env.YUM_USR}@${env.YUM_SRV}:${YUM_DEST_DIR} --delete"
         }
       }
     }

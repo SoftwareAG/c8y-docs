@@ -192,6 +192,20 @@ Data exchanged with Cumulocity in HTTP requests and responses is encoded in [JSO
 
 To avoid ambiguity, all times and timestamps must include timezone information. Please take into account that the plus character "+" must be encoded as "%2B".
 
+### Cumulocity API data types
+
+Cumulocity APIs are restricted by following data types:
+
+|Type|Description|Size|Possible values|
+|:---|:----------|:---|:--------------|
+|boolean|true or false|1 bit|true, false|
+|int|two's complement integer|32 bit|from -2,147,483,648 to +2,147,483,647|
+|long|two's complement integer|64 bit|from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807|
+|float|IEEE 754 floating point|32 bit|from 1.40129846432481707e-45 to 3.40282346638528860e+38 (positive or negative)|
+|double|IEEE 754 floating point|64 bit|from 4.94065645841246544e-324d to 1.79769313486231570e+308d (positive or negative)|
+|string|represents character strings|-|maximum 2,147,483,647 characters|
+|datetime|date or time or timestamp|-|[ISO 8601](http://www.w3.org/TR/NOTE-datetime) datetime|
+
 ### <a name="error_reporting"></a>Error reporting
 
 In error cases, Cumulocity returns standard HTTP response codes as described in [RFC2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html). A Client should not only be able to handle individual codes but classes of codes as well (e.g., 4xx). The response body can contain more information about the error, see the error media type definition below. General error interpretations are:

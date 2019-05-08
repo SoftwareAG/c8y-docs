@@ -19,7 +19,7 @@ Each measurement fragment is an object containing the actual measurements as pro
 
 |Name|Type|Occurs|Description|PUT/POST|
 |:---|:---|:-----|:----------|:-------|
-|value|Number|1|The value of the individual measurement.|Mandatory|
+|value|Number|1|The value of the individual measurement. The maximum precision for floating point numbers is 64-bit IEEE 754. For integers it's a 64-bit two's complement integer.|Mandatory|
 |unit|String|1|The unit of the measurement, such as "Wh" or "C".|Optional|
 
 ### GET a representation of a Measurement

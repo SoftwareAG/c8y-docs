@@ -26,6 +26,7 @@ pipeline {
           } else {
             HUGO_PARAMS = "--config develop.toml"
           }
+          sh "echo ${HUGO_PARAMS}"
         }
       }
     }

@@ -9,7 +9,7 @@ This functionality is only available after 1004.2.0.
 
 ### Install Angular CLI
 
-Follow the [instructions](https://angular.io/cli) to install @c8y/cli globally
+Follow the [instructions](https://angular.io/cli) to install @c8y/cli globally.
 
 ```sh
 npm install -g @angular/cli
@@ -35,9 +35,9 @@ ng add @c8y/cli
 ng serve
 ```
 
-In your browser, open http://localhost:4200/ to see the new app run.
+In your browser, open http://localhost:4200/ to see the new application run.
 
-You can configure the [application options](#static-options) inside the package.json file and [customize branding](#branding) with less or css custom variables
+You can configure the [application options](#static-options) inside the package.json file and [customize branding](#branding) with LESS or CSS custom variables
 
 
 

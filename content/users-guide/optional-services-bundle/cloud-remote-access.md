@@ -272,4 +272,4 @@ In case of Real VNC, if you get an error message stating that you are using an u
 2. Navigate to **Options**.
 3. Select the **Export** tab.
 4. Search for "ProtocolVersion".
-5. Enter "3.8" as protocol version.
+5. Enter "3.8" as protocol version.x

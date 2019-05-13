@@ -19,25 +19,31 @@ layout: redirect
 ### GET the Application API resource
 
 Response body: ApplicationApi
-  
+
 Required role: ROLE\_Application\_READ
 
 Example request:
 
-	GET /application
-	Host: ...
-	Authorization: Basic ...
+```http
+GET /application
+Host: ...
+Authorization: Basic ...
+```
 
 Example response:
 
-    HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.ApplicationApi+json;ver=...
-    Content-Length: ...
-    {
-        "self" : "<<ApplicationAPI URL>>",
-        "applicationsByID" : "<<ApplicationCollection URL>>/{id}",
-        "applications" : "<<ApplicationCollection URL>>",
-        "applicationsByName" : "<<ApplicationAPI URL>>/applicationByName/{name}",
-        "applicationsByOwner" : "<<ApplicationAPI URL>>/applicationsByOwner/{tenantName}",
-        "applicationsByTenant" : "<<ApplicationAPI URL>>/applicationsByTenant/{tenantName}"
-    }
+```http
+HTTP/1.1 200 OK
+Content-Type: application/vnd.com.nsn.cumulocity.ApplicationApi+json;ver=...
+Content-Length: ...
+{
+    "self" : "<<ApplicationAPI URL>>",
+    "applicationsByID" : "<<ApplicationCollection URL>>/{id}",
+    "applications" : "<<ApplicationCollection URL>>",
+    "applicationsByName" : "<<ApplicationAPI URL>>/applicationByName/{name}",
+    "applicationsByOwner" : "<<ApplicationAPI URL>>/applicationsByOwner/{tenantID}",
+    "applicationsByTenant" : "<<ApplicationAPI URL>>/applicationsByTenant/{tenantID}"
+}
+```
+
+Refer to [Tenants > Current tenant](/guides/reference/tenants#current-tenant) in the Reference guide for details on how to get the tenant ID.

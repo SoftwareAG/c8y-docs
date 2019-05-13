@@ -276,31 +276,38 @@ Example Response :
 
 ## Current tenant
 
-### Current tenant [application/vnd.com.nsn.cumulocity.currentTenant+json]
+Content-Type: application/vnd.com.nsn.cumulocity.currentTenant+json
+
 |Field Name|Type|Occurs|Description|
 |:---------|:---|:-----|:----------|
-|name|String|1|Tenant
-|domainName|String|1|Domain name
-|allowCreateTenants|Boolean|1|Flag indicating if tenant can create subtenants
+|name|String|1|Tenant|
+|domainName|String|1|Domain name|
+|allowCreateTenants|Boolean|1|Flag indicating if a tenant can create subtenants|
 
-### GET current tenant
+### GET the current tenant details
 
-Request for currently logged service user's tenant.
+Request for the currently logged service user's tenant.
 
 Required role: ROLE&#95;USER&#95;MANAGEMENT&#95;OWN&#95;READ, or ROLE&#95;SYSTEM
 
 ResponseBody: CurrentTenant
 
-    GET /tenant/currentTenant
-     Host: [hostname]
-     Authorization: Basic xxxxxxxxxxxxxxxxxxx
-     ContentType: application/vnd.com.nsn.cumulocity.currentTenant+json;;ver=...
+```http
+GET /tenant/currentTenant
+Host: [hostname]
+Authorization: Basic xxxxxxxxxxxxxxxxxxx
+Content-Type: application/vnd.com.nsn.cumulocity.currentTenant+json;;ver=...
+```
 
-Example response
+Example response:
 
-    {
-        "allowCreateTenants": true,
-        "customProperties": {},
-        "domainName": "...",
-        "name": "..."
-    }
+```json
+{
+    "allowCreateTenants": true,
+    "customProperties": {},
+    "domainName": "...",
+    "name": "..."  
+}
+```
+
+Note that in this case the response property `"name"` is the actual tenant ID.

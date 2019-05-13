@@ -9,8 +9,8 @@ layout: redirect
 |Name|Type|Occurs|Description|Visibility|
 |:---|:---|:-----|:----------|:---------|
 |self|URI|0..1|Link to this resource.|Public|
-|id|String: max length="32"|1|Tenant id|Public|
-|status|String|1|Status of tenant, possible values [ACTIVE, SUSPENDED].|Private|
+|id|String: max length="32"|1|Unique identifier of the tenant |Public|
+|status|String|1|Status of the tenant, possible values [ACTIVE, SUSPENDED].|Private|
 |adminName|String: max length = "50"|1|Administrator user name. Whitespaces, slashes, +$: characters not allowed|Private|
 |adminEmail|String|1|Administrator Email|Private|
 |allowCreateTenants|boolean|1|Can this tenant create its own tenants.|Private|
@@ -29,12 +29,12 @@ layout: redirect
 ### GET a representation of a Tenant.
 
 Response body: Tenant
-  
+
 Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 
 Example Request: Get single tenant.
 
-     
+
     GET /tenant/tenants/<<tenantId>>
     Host: ...
     Authorization: Basic ...
@@ -83,28 +83,28 @@ Example Response :
 	"parent": "parentTenant",
         "status": "ACTIVE"
     }
-    
+
 ### PUT - Update an existing tenant.
 
 Request body: Tenant
 
 Response body: Tenant
-  
+
 Required role: ROLE\_TENANT\_MANAGEMENT\_ADMIN or ROLE\_TENANT\_MANAGEMENT\_UPDATE
 
 Example Request :
-     
+
     PUT /tenant/tenants/<<tenantId>>
     Host: ...
     Authorization: Basic ...
     Content-Length: ...
     Accept: application/vnd.com.nsn.cumulocity.tenant+json;ver=...
     Content-Type: application/vnd.com.nsn.cumulocity.tenant+json;ver=...
-    
+
     {
        "adminName" : "newAdmin"
     }
-    
+
 Example Response :
 
     HTTP/1.1 200 OK
@@ -146,8 +146,8 @@ Example Response :
     }
 
 Note that updating adminPass and adminEmail updates these settings in the admin user of the tenant. Updating adminName has no effect.
-    
-    
+
+
 ### DELETE  a representation of a Tenant.
 
 Response body: N/A
@@ -161,9 +161,7 @@ Example request:
 	DELETE /tenant/tenants/<<tenantId>>
 	Host: [hostname]
 	Authorization: Basic xxxxxxxxxxxxxxxxxxx
-    
+
 Example response:
 
 	HTTP/1.1  204 NO CONTENT
-
-

@@ -12,7 +12,7 @@ These are listed in the following table. The columns show the following informat
 * **Functionality**: Brief description.
 * **String**: Identification of the application in the API. In case you want to subscribe a tenant to the application using an API (as described on this page), use this string in the argument (as name)
 * **Application type**: Technical type of the application. "Feature" refers to built-in applications subscriptions, i.e. these applications are not represented by an explicit artefact (microservice, web application or custom Apama rule).
-* **Availablity**: Only applications indicated as "Standard Edition" are available in all installations. Applications of type "microservice", "web application" or "custom Apama rule" indicated as "Optional service" require that the related artefact is installed for the respective Cumulocity instance. The same applies to applications listed as "Enterprise Edition".
+* **Availablity**: Only applications indicated as "Standard Tenant" are available in all installations. Applications of type "microservice", "web application" or "custom Apama rule" indicated as "Optional service" require that the related artefact is installed for the respective Cumulocity instance. The same applies to applications listed as "Enterprise Tenant".
 
 <table>
 <col width="200">
@@ -33,7 +33,7 @@ These are listed in the following table. The columns show the following informat
 <td style="text-align:left">Lets account administrators manage users, roles, tenants and applications.</td>
 <td style="text-align:left">administration</td>
 <td style="text-align:left">Web application</td>
-<td style="text-align:left">Standard Edition</td>
+<td style="text-align:left">Standard Tenant</td>
 </tr>
 <tr>
 <td style="text-align:center"><a href="/guides/apama" class="no-ajaxy">Apama</a></td>
@@ -47,14 +47,14 @@ These are listed in the following table. The columns show the following informat
 <td style="text-align:left">Customize the look of your tenants to your own preferences.</td>
 <td style="text-align:left">branding</td>
 <td style="text-align:left">Microservice</td>
-<td style="text-align:left">Enterprise Edition</td>
+<td style="text-align:left">Enterprise Tenant</td>
 </tr>
 <tr>
 <td style="text-align:center"><a href="/guides/event-language" class="no-ajaxy">Cep</a></td>
 <td style="text-align:left">Define business operations based on realtime data by using the Esper CEP engine. This CEP variant uses a shared instance for multiple tenants. See "Cep-small" for a per-tenant approach.</td>
 <td style="text-align:left">cep</td>
 <td style="text-align:left">Microservice</td>
-<td style="text-align:left">Standard Edition</td>
+<td style="text-align:left">Standard Tenant</td>
 </tr>
 <tr>
 <td style="text-align:center"><a href="/guides/event-language" class="no-ajaxy">CEP custom rules</a></td>
@@ -75,7 +75,7 @@ These are listed in the following table. The columns show the following informat
 <td style="text-align:left">Manage and monitor IoT assets and data from a business perspective.</td>
 <td style="text-align:left">cockpit</td>
 <td style="text-align:left">Web application</td>
-<td style="text-align:left">Standard Edition</td>
+<td style="text-align:left">Standard Tenant</td>
 </tr>
 <tr>
 <td style="text-align:center"><a href="/guides/users-guide/optional-services/#cloud-fieldbus" class="no-ajaxy">Cloud Fieldbus</a></td>
@@ -103,21 +103,21 @@ These are listed in the following table. The columns show the following informat
 <td style="text-align:left">Lets you share data selectively with other tenants.</td>
 <td style="text-align:left">feature-broker</td>
 <td style="text-align:left">Feature</td>
-<td style="text-align:left">Enterprise Edition</td>
+<td style="text-align:left">Enterprise Tenant</td>
 </tr>
 <tr>
 <td style="text-align:center"><a href="/guides/users-guide/device-management" class="no-ajaxy">Device Management</a></td>
 <td style="text-align:left">Manage and monitor devices, and control and troubleshoot devices remotely.</td>
 <td style="text-align:left">devicemanagement</td>
 <td style="text-align:left">Web application</td>
-<td style="text-align:left">Standard Edition</td>
+<td style="text-align:left">Standard Tenant</td>
 </tr>
 <tr>
 <td style="text-align:center"><a href="/guides/users-guide/device-management#simulator" class="no-ajaxy">Device simulator</a></td>
 <td style="text-align:left">Simulate all aspects of IoT devices.</td>
 <td style="text-align:left">device-simulator</td>
 <td style="text-align:left">Microservice</td>
-<td style="text-align:left">Standard Edition</td>
+<td style="text-align:left">Standard Tenant</td>
 </tr>
 <tr>
 <td style="text-align:center"><a href="/guides/users-guide/optional-services#lora" class="no-ajaxy">LoRa Actility</a></td>
@@ -159,14 +159,14 @@ These are listed in the following table. The columns show the following informat
 <td style="text-align:left">Use the Smart Rule engine and create <a href="/guides/users-guide/cockpit#smart-rules" class="no-ajaxy">smart rules</a> to perform actions based on realtime data. Requires one of the following applications: "Cep", "Apama"</td>
 <td style="text-align:left">smartrule</td>
 <td style="text-align:left">Microservice</td>
-<td style="text-align:left">Standard Edition</td>
+<td style="text-align:left">Standard Tenant</td>
 </tr>
 <tr>
 <td style="text-align:center"><a href="/guides/users-guide/enterprise-edition#customization" class="no-ajaxy">SSL management</a></td>
 <td style="text-align:left">Activate your own custom domain name by using a SSL certificate.</td>
 <td style="text-align:left">sslmanagement</td>
 <td style="text-align:left">Microservice</td>
-<td style="text-align:left">Enterprise Edition</td>
+<td style="text-align:left">Enterprise Tenant</td>
 </tr>
 <tr>
 <td style="text-align:center"><a href="/guides/users-guide/optional-services/#tenant-sla-monitoring" class="no-ajaxy">Tenant SLA Monitoring</a></td>
@@ -180,7 +180,7 @@ These are listed in the following table. The columns show the following informat
 <td style="text-align:left">Reflect independent organizational entities in Cumulocity that share the same database.</td>
 <td style="text-align:left">feature-user-hierarchy</td>
 <td style="text-align:left">Feature</td>
-<td style="text-align:left">Enterprise Edition</td>
+<td style="text-align:left">Enterprise Tenant</td>
 </tr>
 </tbody>
 </table>

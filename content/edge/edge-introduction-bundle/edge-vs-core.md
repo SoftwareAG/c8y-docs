@@ -12,7 +12,7 @@ The following differences apply:
 
 |AREA|CUMULOCITY IOT EDGE|CUMULOCITY IOT CORE
 |:---|:---|:--
-|Multi-tenancy|No; single tenant, no access to management tenant|Yes
+|Multi-tenancy|No; single tenant|Yes
 |Cluster|No; single server|Yes
 |High availability|Traditional HA, server failure leads to temporary downtime|Full HA: No downtime on server failure, optionally even for data center failure
 |Vertical scalability|Yes, limited to appr. 100 tps per CPU core|Yes, but not used

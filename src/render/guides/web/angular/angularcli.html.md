@@ -1,7 +1,7 @@
 ---
 title: Angular CLI
 layout: redirect
-order: 25
+weight: 25
 ---
 
 When developing a pure Angular you can create an Angular CLI project and add Cumulocity CLI to it.

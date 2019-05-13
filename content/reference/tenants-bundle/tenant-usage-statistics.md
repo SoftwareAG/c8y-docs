@@ -122,10 +122,11 @@ See the table below for more information on how the counters above are increased
 
 ### GET a representation of a TenantUsageStatisticsCollection
 
-|      Query param      |   type   |
-|:----------------------|:---------|
-| dateFrom (inclusive)  | datetime |
-| dateTill (inclusive)  | datetime |
+|      Query param       |   type   |
+|:-----------------------|:---------|
+| dateFrom               | datetime |
+| dateTo                 | datetime |
+| dateTill (deprecated)  | datetime |
 
 Response body: TenantUsageStatisticsCollection
 
@@ -236,10 +237,11 @@ Example Response :
 
 ### GET a representation of a TenantUsageStatisticsSummary
 
-| Query param |    type  |
-|:------------|:---------|
-| dateFrom    | datetime |
-| dateTill    | datetime |
+| Query param            |    type  |
+|:-----------------------|:---------|
+| dateFrom               | datetime |
+| dateTo                 | datetime |
+| dateTill (deprecated)  | datetime |
 
 Response body: TenantUsageStatisticsSummary
 

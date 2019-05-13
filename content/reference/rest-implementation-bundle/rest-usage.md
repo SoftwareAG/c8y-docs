@@ -77,3 +77,17 @@ If a user does not have a global role for reading data from the API resource but
 -   The query parameter "withTotalPages=true" has no effect and value of "totalPages" property is always null.
 
 The above behavior results from the fact that the querying mechanism is iterating maximally over 10 * max(pageSize, 100) documents per request and stops though the full page of data accessible for the user could not be collected. When the next page is requested the querying mechanism starts the iteration where it finished the previous time. 
+
+### <a name="dates"></a>Query result by time interval
+
+Use the following parameters to obtain data for the specified time interval:
+
+- dateFrom - start date or date and time
+- dateTo - end date or date and time
+
+Example formats:
+
+    dateTo=2019-04-20
+    dateTo=2019-04-20T08:30:00.000Z
+
+Parameters are optional. Values provided with those parameters are inclusive.

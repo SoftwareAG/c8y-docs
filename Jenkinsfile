@@ -1,4 +1,4 @@
-YUM_DEST_DIR = '/var/www/staticpage-new/guides'
+YUM_DEST_DIR = '/var/www/staticpage-guides/'
 HUGO_PARAMS = ""
 
 pipeline {
@@ -18,17 +18,6 @@ pipeline {
   }
 
   stages {
-    stage('Configure') {
-      steps {
-        script {
-          if (env.BRANCH_NAME == 'default') {
-            YUM_DEST_DIR = '/var/www/staticpage-guides/'
-          } else {
-            HUGO_PARAMS = "--config develop.toml"
-          }
-        }
-      }
-    }
     stage('Build') {
       steps {
         sh "hugo ${HUGO_PARAMS}"

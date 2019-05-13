@@ -1,4 +1,4 @@
-YUM_DEST_DIR = '/var/www/staticpage-guides/'
+YUM_DEST_DIR = '/var/www/staticpage-guides/guides/'
 HUGO_PARAMS = ""
 
 pipeline {

@@ -1,9 +1,0 @@
----
-layout: default
----
-<header class="section-header">
-  <h1 class="text-light"><%= @document.title %></h1>
-</header>
-<section>
-<%- @content %>
-</section>

@@ -1,8 +1,0 @@
----
-order: 30
-title: Interfacing devices
-layout: subsections
-collection: 'guides/concepts/interfacing-devices'
----
-
-To interface IoT data sources such as devices and external IT systems, Cumulocity provides agents. Agents are software components that enable a centralized perspective on all aspects and central operation of the IoT network.

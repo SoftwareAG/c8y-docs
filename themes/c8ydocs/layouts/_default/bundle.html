@@ -1,0 +1,35 @@
+{{ define "main" }}
+{{- partial "root-nav.html" . -}}
+
+{{ $bundle := printf "/%s-%s" .File.BaseFileName "bundle"  }}
+{{ $headless := .Site.GetPage $bundle }}
+<div class="main-content">
+  <article class="page-section">
+    <header class="section-header">
+      <h1 class="text-light">{{.Title}}</h1>
+    </header>
+    {{if $headless }}
+      <div class="lead">
+        {{.Content}}
+      </div>
+      {{else}}
+      {{.Content}}
+    {{ end}}
+  </article>
+
+  {{ if $headless }}
+  {{ $reusablePages := sort ($headless.Resources.ByType "page") ".Params.weight" }}
+  {{ range $reusablePages}}
+  <article id="{{substr .Name 0 -3}}" class="page-section">
+    <h2>
+      <button class="btn-link bookmark" data-clipboard-text="#{{substr .Name 0 -3}}">
+        <span class="fa fa-link"></span>
+      </button>
+      {{.Title}}</h2>
+    {{.Content}}
+  </article>
+  {{ end }}
+  {{ end }}
+</div>
+{{- partial "footer.html" . -}}
+{{ end }}

@@ -309,7 +309,7 @@ At the top you can select if you want to send the email to the suspended tenant'
 
 Click **Save configuration** to save your settings.
 
-Additional features are available for Enterprise Tenants, see > [Enterprise Tenant > Customizing your platform](/guides/users-guide/enterprise-edition#customization).
+Additional features are available for Enterprise Tenants, see [Enterprise Tenant > Customizing your platform](/guides/users-guide/enterprise-edition#customization).
 
 ### <a name="connectivity"></a>Managing the connectivity settings
 

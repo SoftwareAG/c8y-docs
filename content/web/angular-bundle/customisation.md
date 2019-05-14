@@ -35,9 +35,11 @@ ui-assets
 Open the file `public-options/options.json` and change the sub properties of `brandingCssVars`.
 These properties will be converted into [CSS custom properties](#css-custom-properties) at runtime.
 
-Please note that the properties `brandLogoImg` and `navigatorPlatformLogo` are both urls so the corresponding files must be placed inside the folder `ui-assets`.
+Please note that the properties `brand-logo-img` and `navigator-platform-logo` are both urls so the corresponding files must be placed inside the folder `ui-assets`.
 
 To change the favicon edit the property `faviconUrl` and/or add the corresponding file inside the `ui-assets` folder.
+
+To change the browser window title change the property `globalTitle`.
 
 If these configurations are not enough you can still add a a list of urls to the property `extraCssUrls` and load extra css at runtime:
 
@@ -59,24 +61,36 @@ Each translated catalog is loaded at runtime in a json format. To convert .po (g
 To add your own translations:
 
 * Download the the string catalogue from https://unpkg.com/@c8y/ngx-components@1004.0.6/locales/de.po (changing the version to whatever version you desire)
-* Load the file in your prefered .po file editor and translate each string to the appropriate language and save that file
+* Load the file in your prefered .po file editor and translate each string to the appropriate language and save that file. Repeat the process to as many languages as you like.
 * Transform the newly created .po file into a .json file using the `c8ycli`
 
 ```
-c8ycli locale-compile path/to/lanuage.po
+c8ycli locale-compile path/to/language.po
 ```
 
 * Copy the generated .json file into `ui-assets` folder
 * Update the languages fragment in `public-options/options.json`
 
 ```
-  languages?: {
-    [langCode: string]: {
-      name: string;
-      nativeName: string;
-      url: string;
-    }
+languages?: {
+  [langCode: string]: {
+    name: string;
+    nativeName: string;
+    url: string;
   }
+}
+```
+
+In the example you downloaded above you can find an example of a russian translation, which look like this:
+
+```
+"languages": {
+  "ru": {
+    "name": "Russian",
+    "nativeName": "русский язык",
+    "url": "/apps/public/ui-assets/ru.json"
+  }
+}`
 ```
 
 ## Deploying
@@ -84,7 +98,7 @@ c8ycli locale-compile path/to/lanuage.po
 Inside the folder that contains both `public-options`and `ui-assets` run the command:
 
 ```
-c8ycli deploy ./*
+c8ycli deploy ui-options ui-assets
 ```
 
 Fill in your tenant / instance information and the applications will be deployed and made available to that specific tennat and it's subtenants.

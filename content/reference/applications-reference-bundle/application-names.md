@@ -11,8 +11,8 @@ These are listed in the following table. The columns show the following informat
 * **Application**: Application name as visible in the Administration application.
 * **Functionality**: Brief description.
 * **String**: Identification of the application in the API. In case you want to subscribe a tenant to the application using an API (as described on this page), use this string in the argument (as name)
-* **Application type**: Technical type of the application. "Feature" refers to built-in applications subscriptions, i.e. these applications are not represented by an explicit artefact (microservice, web application or custom Apama rule).
-* **Availablity**: Only applications indicated as "Standard Tenant" are available in all installations. Applications of type "microservice", "web application" or "custom Apama rule" indicated as "Optional service" require that the related artefact is installed for the respective Cumulocity instance. The same applies to applications listed as "Enterprise Tenant".
+* **Application type**: Technical type of the application. "Feature" refers to built-in applications subscriptions, i.e. these applications are not represented by an explicit artefact (microservice or web application).
+* **Availablity**: Only applications indicated as "Standard Tenant" are available in all installations. Applications of type "microservice" or "web application" indicated as "Optional service" require that the related artefact is installed for the respective Cumulocity instance. The same applies to applications listed as "Enterprise Tenant".
 
 <table>
 <col width="200">

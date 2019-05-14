@@ -16,4 +16,4 @@ Microservices are docker containers, hosted by Cumulocity and exposing a REST AP
 
 Applications regardless of form are identified by a so-called *application key*. The application key enables Cumulocity to associate a REST request from an application with the particular application, see the section on Application management in the [Reference guide](/guides/reference/applications).
 
-Super tenants (management tenants or enterprise edition tenants) can subscribe subtenants to Cumulocity applications deployed by them. This provides a basic application marketplace. 
+Super tenants (Management Tenants or Enterprise Tenants) can subscribe subtenants to Cumulocity applications deployed by them. This provides a basic application marketplace. 

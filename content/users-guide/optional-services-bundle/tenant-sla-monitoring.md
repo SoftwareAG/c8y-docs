@@ -8,6 +8,8 @@ layout: redirect
 
 The Tenant SLA Monitoring service lets service providers monitor the availability and response time of tenants and sub-tenants. 
 
+>**Info:** The Tenant SLA Monitoring service is only available to the main Management Tenant.
+
 In detail, it offers the following features:
 
 * monitoring of the availability for each tenant 
@@ -24,8 +26,6 @@ By using Tenant SLA Monitoring, service providers can instantly check
 * the current response time for each tenant,
 * the current status of a specific tenant,
 * the availability KPIs (key performance indicators) of all tenants in the last day/week/month.
-
->**Info:** The tenant SLA monitoring service is only available to the management tenant. 
 
 Use the the Device Management application to visualize Tenant SLA Monitoring data.
 

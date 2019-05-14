@@ -6,7 +6,7 @@ layout: redirect
 
 The application concept of Cumulocity includes a basic application marketplace. 
 
-Tenants can be subscribed to applications which have been deployed by their super tenant (management tenant or enterprise edition tenant). 
+Tenants can be subscribed to applications which have been deployed by their super tenant (Management Tenant or Enterprise Tenant). 
 
 Granting access to subtenants and subscribing to applications is done in the Administration application. 
 

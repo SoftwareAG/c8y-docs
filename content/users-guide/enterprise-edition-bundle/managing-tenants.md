@@ -4,8 +4,7 @@ title: Managing tenants
 layout: redirect
 ---
 
-<a name="tenants"></a>
-If you are a service provider or subscribed to the Enterprise Edition of Cumulocity, you may want to manage your own subtenants.
+If you are subscribed to the Enterprise Tenant of Cumulocity IoT, you can make use of the tenants functionality.
 
 The tenants functionality allows you to create subtenants, subscribe them to the applications that you have available and potentially deactivate tenants if they are not in use anymore.
 
@@ -22,7 +21,7 @@ To be able to use the tenant functionality, your user needs to have the appropri
 
 ### Viewing subtenants
 
-Click **Subtenants** in the **Tenants** menu to view a list of all subtenants available in your account.
+Click **Subtenants** in the **Tenants** menu to view all subtenants available in your account, either in a grid or a list.
 
 The **Tenants** page provides the following information on each subtenant:
 
@@ -32,17 +31,15 @@ The **Tenants** page provides the following information on each subtenant:
 * The date when the tenant was created.
 * The status of the tenant, either active (indicated by a green checkmark icon) or suspended (indicated by a red cross icon).
 
-In the management tenant, you will see an additional column "Parent tenant". This column shows the tenant that created the listed tenant.
+In the management tenant, you will also find information on the parent tenant, i.e. the tenant that created the listed tenant.
 
-### <a name="creating-tenants"></a>Creating subtenants
+### <a name="creating-tenants"></a>How to create a subtenant
 
-To add a new tenant, click **Create tenant** at the right of the top menu bar.
+1. Click **Create tenant** at the right of the top menu bar.
+<br>![Create subtenant](/guides/images/users-guide/Administration/admin-subtenant-create.png)<br>
+1. Provide the following properties:
 
-![Create subtenant](/guides/images/users-guide/Administration/admin-subtenant-create.png)
-
-The following properties may be provided:
-
-<table>
+	<table>
 <col width = 150>
 <thead>
 <tr>
@@ -86,9 +83,9 @@ The following properties may be provided:
 </tbody>
 </table>
 
-Note, that fields with an asterisk * are mandatory.
+	Note, that fields with an asterisk * are mandatory.
 
-Click **Save** to apply your settings.
+1. Click **Save** to apply your settings.
 
 When the tenant is created, it is automatically provisioned with a first, administrative user ("Administrator's username"). This administrator can create other users and set their permissions. The first user cannot be deleted to prevent you from locking yourself out.
 
@@ -96,9 +93,9 @@ From the management tenant, you can enable other tenants to create subtenants. T
 
 ![Create subtenant](/guides/images/users-guide/Administration/admin-subtenant-allow.png)
 
-### Viewing or editing subtenant properties
+### How to view/edit subtenant properties
 
-To edit subtenants properties, click on the desired subtenant or click **Edit** in the context menu, accessible through the menu icon.
+Click on the desired subtenant or click the menu icon and then click **Edit**.
 
 In the **Properties** tab, all fields are editable except of the ID and the administrator's username. For details on the fields, refer to [Creating sub-tenants](#creating-tenants).
 
@@ -119,28 +116,33 @@ The following information is displayed here:
 |Expiry date|Specifies the date on which support user access for the tenant will expire. If no date has been specified, the expiry date is set to "No limit".
 
 
-### Suspending subtenants
+### Suspending/deleting subtenants
 
-You can temporarily suspend tenants. Suspending tenants blocks any access to this tenant, regardless whether the access is from devices, users or other applications.
+You can temporarily suspend tenants or you can delete subtenants permanently. 
 
-To suspend a tenant, click the menu icon and from the context menu select **Suspend**.
+Suspending tenants blocks any access to this tenant, regardless whether the access is from devices, users or other applications.
 
-![Suspend tenant](/guides/images/users-guide/Administration/admin-subtenant-suspend.png)
+If a tenant is suspended, the tenant's data remains in the database and can be made available any time later. To do so, click **Activate**.
 
-In the upcoming dialog confirm the suspension by clicking **OK** and entering your password.
+#### How to suspend a subtenant
+
+1. To suspend a tenant, click the menu icon and then click **Suspend**.
+
+	![Suspend tenant](/guides/images/users-guide/Administration/admin-subtenant-suspend.png)
+
+2. In the resulting dialog box confirm the suspension by clicking **OK** and entering your password.
 
 As part of suspending the tenant, an email is sent to the tenant administrator if an email address is configured for that administrator.
 
 >**Info**: If you are a service provider, you can suppress this email.
 
-If a tenant is suspended, the tenant's data remains in the database and can be made available any time later. To do so, click **Activate**.
 
-### Deleting subtenants
+### How to delete a subtenant
 
-To finally delete a tenant and remove all the data of the tenant, click the menu icon and from the context menu select **Remove**.
+To finally delete a tenant and remove all the data of the tenant, click the menu icon and then click **Remove**.
 
 >**Info**: This action cannot be reverted. For security reasons, it is only available in the management tenant.
->
+
 
 ### <a name="subscribe"></a>Subscribing and monitoring applications
 
@@ -148,9 +150,13 @@ In the **Applications** tab you can view all subscribed applications, subscribe 
 
 <img src="/guides/images/users-guide/Administration/admin-subtenant-applications.png" alt="Subscribe tenant" style="max-width: 100%">
 
-To subscribe an application to a tenant, hover over the applications under **Available applications** on the right and click **Subscribe** on the desired application.
+#### How to subscribe an application
 
-To remove an application, hover over the applications under **Subscribed applications** on the left and click **Unsubscribe**.
+Hover over the applications under **Available applications** on the right and click **Subscribe** on the desired application.
+
+#### How to unsubscribe an application
+
+Hover over the applications under **Subscribed applications** on the left and click **Unsubscribe**.
 
 #### Monitoring microservices
 
@@ -180,7 +186,7 @@ Further details are provided on the **Status** tab of the respective application
 
 ### <a name="microservice-billing"></a>Microservice billing
 
-The microservice billing feature gathers information on microservice usage per subtenant for each microservice. This enables enterprise tenants and service providers to charge tenant not only based on subscriptions but also based on resources usage.
+The microservice billing feature gathers information on microservice usage per subtenant for each microservice. This enables Enterprise Tenants and service providers to charge tenant not only based on subscriptions but also based on resources usage.
 
 
 #### Billing modes
@@ -208,7 +214,7 @@ In case of resources-based billing, charging depends on the isolation level:
 * Per-tenant - the subscriber tenant is charged for used resources
 * Multi-tenant - the owner of the microservice is charged for used resources
 
-In case of multi-tenant isolation level, the parent tenant as the owner of a microservice (e.g. the management tenant of an enterprise tenant or service provider) is charged for both subscribed applications (subscription-based billing) and used resources (resource-based billing) of the subtenants.
+In case of multi-tenant isolation level, the parent tenant as the owner of a microservice (e.g. the management tenant of an Enterprise Tenant or service provider) is charged for both subscribed applications (subscription-based billing) and used resources (resource-based billing) of the subtenants.
 
 #### Resources usage assignment for billing mode and isolation level
 
@@ -271,24 +277,26 @@ Note that an audit record is created for every change of the number of instances
 
 For more information, refer to [Auditing](https://cumulocity.com/guides/reference/auditing) in the **Reference guide**.
 
-### <a name="tenants-custom-properties"></a>Editing custom properties
+#### <a name="tenants-custom-properties"></a>Custom properties
 
-The **Custom properties** tab allows you to view and modify values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/guides/users-guide/administration#properties). Such properties are also displayed as columns in the [usage statistics table](#usage-stats).
+The **Custom properties** tab allows you to view and edit values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/guides/users-guide/administration#properties). Such properties are also displayed as columns in the [usage statistics table](#usage-stats).
 
 ![Custom Properties](/guides/images/users-guide/Administration/admin-subtenant-custom-properties.png)
 
-**Limiting subtenant device number**
+##### Limiting subtenant device number
 
-The platform administrator can limit the count of concurrently registered root devices or simply all devices (including children devices). The platform administrator can also see the peak number of concurrently registered devices, root devices and the peak value of used storage in the **Usage statistics** page.
+Platform administrators can limit the count of concurrently registered root devices or simply all devices (including children devices) via the custom properties "Devices". 
 
-**Limiting subtenant request rate**
+Platform administrators can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the **[Usage statistics](<a name="usage-stats"></a>)** page.
+
+##### Limiting subtenant request rate
 
 Platform administrators can limit the request rate of each subtenant via the following custom properties:
 
-- Limit HTTP requests - Limit of HTTP requests for tenant per second
-- Limit HTTP queue - Limit of HTTP request queue for tenant
-- Limit stream requests - Limit of MQTT requests for tenant per second
-- Limit stream queue - Limit of MQTT request queue for tenant
+* Limit HTTP queue - Limit of HTTP request queue for tenant
+* Limit HTTP requests - Limit of HTTP requests for tenant per second
+* Limit stream queue - Limit of MQTT request queue for tenant
+* Limit stream requests - Limit of MQTT requests for tenant per second
 
 When there is no limit on tenant and system level, the limit feature is considered as disabled and the tenant gains unlimited access. To switch off request rate limiting after it was enabled, set the value to "-1".
 
@@ -301,38 +309,46 @@ The **Usage statistics** page provides statistical information on each subtenant
 
 The following information is provided for each subtenant:
 
-- ID: ID of the subtenant
-- API requests: Total number of API requests, including requests from  devices and applications
-- Device API requests: Number of API requests from devices
-- Storage (MB): Amount of data stored in your account
-- Peak storage (MB): Peak value of storage
-- Root Devices: Number of root devices, excluding child devices
-- Peak root devices: Peak number of root devices, excluding child devices
-- Devices: Total number of devices connected to the subtenant, including child devices
-- Peak devices: Peak number of devices, including child devices
-- Endpoint devices: Leaf machines, without gateways and edges
-- Subscribed applications: Number of applications that the subtenant is subscribed to
-- Creation time: Date and time of the creation of the subtenant
-- Alarms created: Number of alarms created
-- Alarms updated: Number of updates on alarms
-- Inventories created: Number of managed objects created
-- Inventories updated: Number of updates on managed objects
-- Events created: Number of events created
-- Events updated: Number of updates on events
-- Measurements created: Number of measurements created
-- Total inbound transfer: Sum of all inbound transfers (alarms created, alarms updated, events created, events updated, inventories created, inventories updated, measurements created)
-- Parent tenant: Name of the parent tenant (available only for management tenant)
-- External reference: This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number.
+|Field|Description|
+|:---|:---|
+|ID|ID of the subtenant
+|API requests|Total number of API requests, including requests from  devices and applications
+|Device API requests|ID of the subtenant
+|Storage (MB)|Amount of data stored in your account
+|Peak storage (MB)|Peak value of storage
+|Root Devices|Number of root devices, excluding child devices
+|Peak root devices|Peak number of root devices, excluding child devices
+|Devices|Total number of devices connected to the subtenant, including child devices
+|Peak devices|Peak number of devices, including child devices
+|Endpoint devices|ID of the subtenant
+|ID|Leaf machines, without gateways and edges
+|Subscribed applications|Number of applications that the subtenant is subscribed to
+|Creation time|Date and time of the creation of the subtenant
+|Alarms created|Number of alarms created
+|Alarms updated|Number of updates on alarms
+|Inventories created|Number of managed objects created
+|Inventories updated|Number of updates on managed objects
+|Events created|Number of events created
+|Events updated|Number of updates on events
+|Measurements created|Number of measurements created
+|Total inbound transfer|Sum of all inbound transfers (alarms created, alarms updated, events created, events updated, inventories created, inventories updated, measurements created)
+|Parent tenant|Name of the parent tenant (available only for management tenant)
+|External reference|This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number
 
 Moreover custom properties are displayed, if configured.
 
 Custom properties may be defined in the [Properties Library](/guides/users-guide/administration#properties) and then set their values in the [Custom properties](#tenants-custom-properties) tab of the tenant.
 
-You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. For details on filtering, refer to [Getting Started > Features and Functionalities > Filtering](/guides/users-guide/overview#filtering).
+You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Getting Started > Features and Functionalities > Filtering](/guides/users-guide/overview#filtering).
 
-Click Export CSV at the right of the top menu bar to export the current view of the statistics table to a CSV file. A dialog will come up in which you can customize the CSV output.
+#### How to export the usage statistics table
 
-<img src="/guides/images/users-guide/Administration/admin-subtenant-statistics-export.png"></img>
+1. Click Export CSV at the right of the top menu bar to export the current view of the statistics table to a CSV file. 
+2. In the resulting dialog box you can customize the CSV output by specifying a field separator, decimal separator and charset.
+<br> <img src="/guides/images/users-guide/Administration/admin-subtenant-statistics-export.png"></img> <br>
+3. Click **Download** to start the export.
+
+The CSV file will be downloaded to your file system.
 
 
 ### <a name="tenant-policies"></a> Tenant policies
@@ -344,35 +360,40 @@ A tenant policy is a set of tenant options and retention rules. Tenant options a
 Creating a tenant policy with a specific set of options and rules saves time when creating multiple tenants with the same settings.
 
 >**Info**: The options and rules are copied into the tenant. Editing the policy has no effect on tenants that have already been created.
+>
+>#### Viewing tenant policies
 
-Click **Tenant policies** in the **Tenants** menu to view all tenant policies available.
+Click **Tenant policies** in the **Tenants** menu to view all available tenant policies.
 
 <img src="/guides/images/users-guide/Administration/admin-tenant-policies.png" alt="Tenant policies">
 
 For each tenant policy, the name, an optional description and the number of options and retention rules is provided, either in a list or a grid.
 
-#### Adding a tenant policy
+#### How to create a tenant policy
 
-Click **Add tenant policy** in the top menu bar to create a new tenant policy.
+1. Click **Add tenant policy** in the top menu bar.
+<br>![Add new policy](/guides/images/users-guide/Administration/admin-tenant-policy-add.png)<br>
+2. In the resulting dialog box, enter a name and an optional description.
+3. Add at least one retention rule. For details on creating retention rules, see [Administration > Managing data retention > Retention rules](/guides/users-guide/administration#retention-rules).
+4. Optionally, add a tenant option.
+5. Click **Save**.
 
-![Add new policy](/guides/images/users-guide/Administration/admin-tenant-policy-add.png)
+The tenant policy will be added to the tenant policies list.
 
-1. Enter a name and an optional description.
+#### How to edit a tenant policy
 
-2. Add at least one retention rule. For details on creating retention rules, refer to [Administration > Managing data retention > Retention rules](/guides/users-guide/administration#retention-rules).
-
-3. Optionally, add a tenant option
-
-4. Click **Save** to save your settings.
-
-#### Editing, duplicating and deleting policies
-
-To edit a policy, click on the desired policy or click **Edit** in the context menu, accessible through the menu icon.
+To edit a tenant policy, click the desired policy or click the menu icon and then click **Edit**.
 
 ![Policy context menu](/guides/images/users-guide/Administration/admin-tenant-policy-contextmenu.png)
 
+In the resulting dialog box, make your edits and click **Save** to save your settings.
+
 To delete a retention rule or a tenant option from a policy, hover over it and click the delete icon.
 
-To duplicate a policy, click the menu icon and from the context menu select **Duplicate**.
+#### How to duplicate a tenant policy
 
-To delete a policy, click the menu icon and from the context menu select  **Delete**.
+In the tenant policy entry you want to duplicate, click the menu icon and then click **Duplicate**.
+
+#### How to delete a tenant policy
+
+In the tenant policy entry you want to delete, click the menu icon and then click **Delete**.

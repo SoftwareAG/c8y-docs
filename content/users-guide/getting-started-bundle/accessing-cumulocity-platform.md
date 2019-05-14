@@ -31,7 +31,7 @@ This will direct you to the login page of your default application.
 
 > **Important:** Make sure that the address bar of your browser shows a lock icon. The lock icon indicates that you are using a secure connection and that you are indeed connected to Cumulocity.
 
->**Info:** The above URL is only valid for Cumulocity Standard Edition subscribers. For Enterprise Edition deployments of Cumulocity, the URL is specific to your organization.
+>**Info:** The above URL is only valid for Cumulocity Standard Tenant subscribers. For Enterprise Tenant deployments of Cumulocity IoT, the URL is specific to your organization.
 
 ### <a name="login"></a>Hot to log into the Cumulocity platform
 

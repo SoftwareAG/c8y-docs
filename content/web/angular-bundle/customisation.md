@@ -7,7 +7,7 @@ weight: 70
 Using [application options](#application-options) each tenant can costumise the look and feel of the built-in applications as well as adding or replacing the languages available in the applications.
 As description in the [application options](#application-options) the underlying mechanism is static hosted web application.
 
-For this tutorial tutorial we are going to publishing 2 web applications `public-options` where the json file containing the configuration will be stored and `ui-assets` where any needed assets will be hosted: images, favicon, translation files.
+For this tutorial we are publishing 2 web applications `public-options`,where the json file containing the configuration will be stored, and `ui-assets`, where any needed assets will be hosted: images, favicon and translation files.
 
 For deploying we are going to use the nodejs `@c8y/cli` that can be installed with:
 
@@ -20,7 +20,7 @@ npm install -g @c8y/cli
 For your convenience you can download or clone the repository available at https://github.com/Cumulocity/ui-customisation where you can find an example for a branding and adding a new language.
 
 ```
-git clone https://github.com/Cumulocity/distribution
+git clone https://github.com/Cumulocity/ui-customisation
 ```
 
 Inside this folder you can find two other folders:
@@ -32,10 +32,10 @@ ui-assets
 
 ## Branding options
 
-Open the file `public-options/options.json` and change the sub properties of `brandingCssVars`.
+Edit the file `public-options/options.json` and change the sub properties of `brandingCssVars`.
 These properties will be converted into [CSS custom properties](#css-custom-properties) at runtime.
 
-Please note that the properties `brand-logo-img` and `navigator-platform-logo` are both urls so the corresponding files must be placed inside the folder `ui-assets`.
+Please note that the properties `brand-logo-img` and `navigator-platform-logo` are both urls. As so the corresponding files must be placed inside the folder `ui-assets`.
 
 To change the favicon edit the property `faviconUrl` and/or add the corresponding file inside the `ui-assets` folder.
 
@@ -60,7 +60,7 @@ Each translated catalog is loaded at runtime in a json format. To convert .po (g
 
 To add your own translations:
 
-* Download the the string catalogue from https://unpkg.com/@c8y/ngx-components@1004.0.6/locales/de.po (changing the version to whatever version you desire)
+* Download the the string catalogue from https://unpkg.com/@c8y/ngx-components@1004.0.6/locales/de.po (the version, 1004.0.6,  can be changed  to whatever version running on your instance)
 * Load the file in your prefered .po file editor and translate each string to the appropriate language and save that file. Repeat the process to as many languages as you like.
 * Transform the newly created .po file into a .json file using the `c8ycli`
 
@@ -101,9 +101,9 @@ Inside the folder that contains both `public-options`and `ui-assets` run the com
 c8ycli deploy ui-options ui-assets
 ```
 
-Fill in your tenant / instance information and the applications will be deployed and made available to that specific tennat and it's subtenants.
+Fill in your tenant / instance information and the applications will be deployed and will be visible to that specific tenant and its subtenants.
 
-Note that for performance reasons the options are cached, so you need to refresh the applications twice to actually experience the changes.
+Note that for performance reasons the options are cached. As so you the application must be refreshed twice for changes to be visible.
 
 
 

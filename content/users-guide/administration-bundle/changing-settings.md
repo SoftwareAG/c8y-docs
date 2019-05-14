@@ -247,11 +247,17 @@ Under **Configuration** in the **Settings** menu, you can configure system-wide 
 
 ![Configuration settings](/guides/images/users-guide/Administration/admin-settings-configuration.png)
 
+#### Two-factor authentication
+
 In the **Two-factor authentication** section, you can change the SMS template which is sent to the users.
+
+#### Support link
 
 In the **Support link** section, you can enter a URL to be used to link to a Support page. If you do not provide a link here, the default link to the Cumulocity Support will be used. 
 
 Enter "false" to hide the link.
+
+#### Password reset
 
 In the **Password reset** section you can change all settings related to password reset email templates.
 
@@ -267,17 +273,33 @@ In the following two fields provide an email template to be used on password cha
 
 >**Info**: Placeholders to be used are: {host}, {tenant-domain}, {token}. 
 
-In the **Email server** section, you can provide the protocol, host, port, username, password and sender address for the email server.
+#### Email server
+
+In the **Email server** section, you can configure custom email server settings. 
 
 <img src="/guides/images/users-guide/Administration/admin-settings-configuration-email-server.png" alt="Configure email server">
+
+In the **Protocol and encryption** field, select a protocol/encryption type from the dropdown list. May be one of: 
+
+* SMTP (no encryption): email.protocol=smtp and email.connection.encrypted=false
+* SMTP (STARTTLS): email.protocol=smtp and email.connection.encrypted=true
+* SMTPS (SSL/TLS): email.protocol=smtps and email.connection.encrypted=true
+
+Provide the host, port, username, password and sender address for the email server.
+
+#### Data export
 
 In the **Data export** section, you can set the email subject and email template for data export and specify the **User unauthorized error message**.
 
 ![Data export settings](/guides/images/users-guide/Administration/admin-settings-configuration-data-export.png)
 
+#### Storage limit
+
 In the **Storage limit** section, you can specify the email subject and email template for emails being send *before* data is removed on exceeding the storage limit and *after* data removal is performed.
 
 ![Storage limit settings](/guides/images/users-guide/Administration/admin-settings-configuration-storage-limit.png)
+
+#### Suspending tenants
 
 In the **Suspending tenants** section, you can provide settings for emails being send on tenant suspension. 
 
@@ -287,7 +309,7 @@ At the top you can select if you want to send the email to the suspended tenant'
 
 Click **Save configuration** to save your settings.
 
-Additional features are available for Enterprise Tenants, see [Enterprise Tenant > Customizing your platform](/guides/users-guide/enterprise-edition#customization).
+Additional features are available for Enterprise Tenants, see > [Enterprise Tenant > Customizing your platform](/guides/users-guide/enterprise-edition#customization).
 
 ### <a name="connectivity"></a>Managing the connectivity settings
 

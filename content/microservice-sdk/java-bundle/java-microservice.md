@@ -257,7 +257,7 @@ and your authorization header would look like `"Authorization": "Basic dGVzdHVzZ
 
 If the application does not exist, create a new application on the Cumulocity platform employing a POST request.
 
-```avrasm
+```http
 POST <URL>/application/applications
 
 HEADERS:
@@ -324,7 +324,7 @@ In the Administration application, navigate to **Applications** > **Own applicat
 
 You will need the bootstrap user credentials in order to run the microservice locally. Get the details of your bootstrap user with a GET request as follows:
 
-```avrasm
+```http
 GET <URL>/application/applications/<APPLICATION_ID>/bootstrapUser
 
 HEADERS:
@@ -381,7 +381,7 @@ Now you can test your microservice locally using the endpoint <kbd>/hello</kbd> 
 
 It is also possible to subscribe to the microservice with a POST request:
 
-```avrasm
+```http
 POST <URL>/tenant/tenants/<TENANT_ID>/applications
 
 HEADERS:
@@ -406,7 +406,7 @@ Once you have tested your microservice locally, you can deploy it on the Cumuloc
 
 You need to upload the ZIP file to the Cumulocity platform and this might require some seconds, depending on your internet connection. Make a POST request to upload your ZIP file as follows:
 
-```avrasm
+```http
 POST <URL>/application/applications/<APPLICATION_ID>/binaries
 
 HEADERS:

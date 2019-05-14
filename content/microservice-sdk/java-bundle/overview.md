@@ -16,17 +16,6 @@ These are some useful references to get started with the basic technologies unde
 - The JavaDoc for the
 <a href="http://resources.cumulocity.com/documentation/microservicesdk/current/" target="_blank">Java Microservice SDK</a> can be found on our resources website.
 
-### Prerequisite
+> **Important:** You need to have at least version 7 of the [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) installed in your development environment.
 
-You need to have at least version 7 of the [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) installed in your development environment.
-
-Verify your JDK installation with the following command:
-
-```shell
-$ java -version
-java version "12.0.1" 2019-04-16
-Java(TM) SE Runtime Environment (build 12.0.1+12)
-Java HotSpot(TM) 64-Bit Server VM (build 12.0.1+12, mixed mode, sharing)
-```
-
-> **Info:** If you face any issue or need technical support, please use the [Cumulocity community at Stack Overflow](http://stackoverflow.com/questions/tagged/cumulocity). You will find there many useful questions and answers.
+If you face any issue or need technical support, please use the [Cumulocity community at Stack Overflow](http://stackoverflow.com/questions/tagged/cumulocity). You will find there many useful questions and answers.

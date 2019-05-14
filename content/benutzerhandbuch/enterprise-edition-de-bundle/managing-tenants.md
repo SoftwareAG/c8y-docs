@@ -4,7 +4,7 @@ title: Verwalten von Mandanten
 layout: redirect
 ---
 
-Wenn Sie Service Provider sind oder die Enterprise Edition von Cumulocity nutzen, möchten Sie eventuell eigene Mandanten verwalten.
+Wenn Sie Service Provider sind oder den Enterprise Tenant von Cumulocity IoT nutzen, möchten Sie eventuell eigene Mandanten verwalten.
 
 Die Mandantenverwaltung ermöglicht es Ihnen, eigene Untermandanten zu erstellen und zu verwalten, und ihnen Zugriff auf Ihre Anwendungen zu gewähren.
 

@@ -36,7 +36,7 @@ Um Geräte mit Ihrem Cumulocity-Konto zu verbinden, führen Sie folgende Schritt
 5. Klicken Sie **Weiteres Gerät hinzufügen**, um ein weiteres Gerät zu registrieren. Geben Sie auch hier die Geräte-ID ein und weisen Sie optional das Gerät einer Gruppe zu. Auf diese Weise können Sie mehrere Geräte in einem Schritt registrieren.
 6. Klicken Sie **Weiter**, um Ihr(e) Gerät(e) zu registrieren. 
 
-**Info**: In der Enterprise Edition kann der Management-Mandant hier auch einen Untermandanten auswählen, dem das Gerät zugewiesen wird. Beachten Sie jedoch, dass der Management-Mandant Geräte entweder einer Gruppe ODER einem Mandanten zuweisen kann, nicht beides, da der Management-Mandant keinen Zugriff auf die Stammdaten der Untermandanten hat.
+**Info**: Im Enterprise Tenant kann der Management-Mandant hier auch einen Untermandanten auswählen, dem das Gerät zugewiesen wird. Beachten Sie jedoch, dass der Management-Mandant Geräte entweder einer Gruppe ODER einem Mandanten zuweisen kann, nicht beides, da der Management-Mandant keinen Zugriff auf die Stammdaten der Untermandanten hat.
 
 Nach erfolgreicher Registrierung werden Geräte mit dem Status **Warten auf Verbindung** auf der Seite [**Geräteregistrierung**](#dev-registration) angezeigt.
 
@@ -112,4 +112,4 @@ Für beide CSV-Dateiformate werden entsprechende Vorlagen zum Herunterladen bere
 
 Weitere Informationen zum Dateiformat und möglichen CSV-Varianten finden Sie unter [Bulk device credentials](/guides/reference/device-credentials/#creds-upload) im Reference Guide.
  
-**Info**: Wenn Sie mit der Enterprise Edition von Cumulocity arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte "Mandant" hinzufügen und die CSV-Datei vom Management-Mandanten aus importieren. 
+**Info**: Wenn Sie den Enterprise Tenant von Cumulocity IoT abonniert haben, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte "Mandant" hinzufügen und die CSV-Datei vom Management-Mandanten aus importieren. 

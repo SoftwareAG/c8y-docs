@@ -10,7 +10,7 @@ Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen de
 *   [Anwendungseinstellungen](#default-app) ändern,
 *   [Passwortrichtlinien und TFA-Einstellungen](#changing-password-settings) ändern,
 *   die [Attributsbibliothek](#properties) verwalten,
-*   Einstellungen für die Enterprise Edition konfigurieren, siehe [Enterprise Edition](/guides/users-guide/enterprise-edition#customization).
+*   Einstellungen für den Enterprise Tenant konfigurieren, siehe [Enterprise Tenant](/guides/users-guide/enterprise-edition#customization).
 
 ### <a name="single-sign-on"></a>Konfigurieren von Single-Sign-On
 

@@ -36,7 +36,7 @@ Sie werden zur Anmeldeseite Ihrer Standardanwendung weitergeleitet.
 
 > **Wichtig:** Stellen Sie sicher, dass die Adressleiste des Browsers ein Schloss-Symbol zeigt. Das Schloss-Symbol zeigt an, dass Sie eine sichere Verbindung nutzen und tatsächlich mit Cumulocity verbunden sind.
 > 
-> **Info:** Die oben angezeigte URL gilt nur für die Standard Edition von Cumulocity. Die URL für die Enterprise Edition von Cumulocity ist individuell für Ihr Unternehmen.
+> **Info:** Die oben angezeigte URL gilt nur für den Standard Tenant von Cumulocity IoT. Die URL für den Enterprise Tenant von Cumulocity IoT ist individuell für Ihr Unternehmen.
 
 ### <a name="login"></a>Anmelden an der Cumulocity-Plattform
 

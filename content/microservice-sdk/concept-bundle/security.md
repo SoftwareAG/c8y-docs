@@ -25,7 +25,7 @@ Refer to the [OAuth Community Site](https://oauth.net) for more details about th
 
 In general, microservices use the standard Cumulocity authentication mechanisms. This is performed in two steps:
 
-1. The microservice is created in the "management" tenant to request access to tenants that have been subscribed to the microservice itself.
+1. The microservice can be created in any tenant that have **feature-microservice-hosting** enabled.
 2. The microservices access the Tenant API.
 
 At installation time of the microservice, an application is created in the "management" tenant reflecting the new microservice. In addition, a service user is created in the "management" tenant that allows the microservice to retrieve subscriptions.

@@ -11,7 +11,7 @@ You can extend the Cumulocity platform with customer-specific functionality by e
 
 Cumulocity microservices have the following properties:
 
-- By default, they provide one inbound REST or Websocket endpoint.
+- By default, they provide REST or Websocket APIs.
 - Inbound REST and Websocket endpoints are secured by Cumulocity core built-in API gateway functionality.
 - Requests from one microservice to the Cumulocity REST API can be executed using either the original user account (of the inbound request) or by using a service user.
 - Multi-tenant support.

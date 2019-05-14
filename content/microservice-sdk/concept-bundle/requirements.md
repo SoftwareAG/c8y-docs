@@ -1,6 +1,6 @@
 ---
-weight: 100
-title: Microservice requirements
+weight: 20
+title: Requirements and interactions
 layout: redirect
 ---
 
@@ -10,8 +10,14 @@ The following requirements towards Cumulocity microservices must be met:
 * The Docker image must be packaged as _image.tar_ and must include a manifest file (_cumulocity.json_).
 * A microservice must be stateless, i.e. it must contain only ephemeral state. The reason is that a microservice must be able to survive (random) restarts due to hardware reasons (server failure) and operations reasons (upgrade, migration).
 * All persistent states must be stored at the Cumulocity platform via inventory, binary, tenant options and other APIs. Persistent volumes are not supported.
-* A microservice cannot access the database directly and must use Cumulocity API.
+* A microservice cannot access the database directly and must use the Cumulocity API.
 * A microservice must provide one inbound REST API. Additional inbound ports are not supported.
 * A microservice can use multiple outbound ports.
 * The request lifetime must have the maximum. The infrastructure might terminate too long running requests.
-* All log information has to be sent to standard output in order to be captured and persisted by the infrastructure.
+* All log information has to be sent to the standard output in order to be captured and persisted by the infrastructure.
+
+Microservices interact with Cumulocity and the outside world as shown in the following diagram:
+
+![Microservices interactions](/guides/images/microservices-sdk/ms-interactions-diagram.png)
+
+The Microservices' lifecycle is managed using the Microservice Subscription API. This allows registration and subscription of Microservices. External actors (e.g. Web user interfaces, integrations or other microservices) can invoke a microservice by sending REST or Websocket requests to its endpoints <kbd>/service/&lt;microservice-name>/&lt;path></kbd>. A microservice can issue requests to external endpoints or to the Cumulocity REST APIs. Microservices can store logs and metrics in the associated developer tenant.

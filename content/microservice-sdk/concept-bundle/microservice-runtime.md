@@ -2,6 +2,9 @@
 weight: 70
 title: Microservice runtime
 layout: redirect
+aliases:
+  - /reference/microservice-runtime
+  - /reference/microservice-runtime/#environment-variables
 ---
 
 Microservices deployed on the platform have a specific runtime environment and they need to understand certain details about the specific Cumulocity cluster they run in. For example, a microservice needs to know the endpoint address of the Cumulocity REST APIs. This information is provided by environment variables and they are injected by Cumulocity when the container is started.

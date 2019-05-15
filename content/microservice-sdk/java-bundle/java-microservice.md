@@ -1,7 +1,7 @@
 ---
 weight: 30
 layout: redirect
-title: Hello microservice!
+title: Hello world tutorial
 ---
 
 Here you will learn how to create your first microservice that can be run on the [Cumulocity platform](https://cumulocity.com) using the Microservice SDK for Java.
@@ -10,7 +10,7 @@ Here you will learn how to create your first microservice that can be run on the
 
 Create an account on the [Cumulocity platform](https://cumulocity.com), for example by using a free trial. At this step you will be provided with a dedicated URL address.
 
-Use the following command to verify that you have Maven 3 installed with Java 7.
+Use the following command to verify that you have Maven 3 installed with Java 7 or a newest version.
 
 ```shell
 $ mvn -v
@@ -38,12 +38,12 @@ Server: Docker Engine - Community
   OS/Arch:          linux/amd64
 ```
 
-### Developing the "Hello, world!" microservice
+### Developing the "Hello world" microservice
 
-To develop a very simple "Hello, world!" microservice for Cumulocity, you need to
+To develop a very simple "Hello world" microservice for Cumulocity, you need to
 
 * create a Maven project,
-* add a dependency to the Cumulocity Microservice SDK library in the _pom.xml_ file,
+* configure the _pom.xml_ file including a dependency to the Cumulocity Microservice SDK library,
 * create a Java application,
 * configure the microservice,
 * configure the build,
@@ -99,7 +99,6 @@ Also add a dependency element for the Java Microservice SDK library inside the `
 <dependency>
 	<groupId>com.nsn.cumulocity.clients-java</groupId>
 	<artifactId>microservice-autoconfigure</artifactId>
-	<version>${c8y.version}</version>
 </dependency>
 ```
 
@@ -130,9 +129,9 @@ public class App {
 }
 ```
 
-The code uses four annotations; three are part of the Spring Framework and one of the Cumulocity Microservice SDK. The `@RestController` annotation marks the class as a controller where every method returns a domain object instead of a view. The `@RequestMapping` annotation ensures that HTTP requests to <kbd>hello</kbd> are mapped to the `greeting()` method. `@RequestParam` binds the value of the query string parameter <kbd>name</kbd> into the `you` parameter of the `greeting()` method. Refer to the [Spring Guides](https://spring.io/guides) for more details about building RESTful Web Services using the Spring Framework.
+The code uses four annotations; three are part of the Spring Framework and one of the Cumulocity Microservice SDK. The `@RestController` annotation marks the class as a controller where every method returns a domain object instead of a view. The `@RequestMapping` annotation ensures that HTTP requests to <kbd>hello</kbd> endpoint are mapped to the `greeting()` method. `@RequestParam` binds the value of the query string parameter <kbd>name</kbd> into the `you` parameter of the `greeting()` method. Refer to the [Spring Guides](https://spring.io/guides) for more details about building RESTful Web Services using the Spring Framework.
 
-Employing the `@MicroserviceApplication` annotation is a simple way to add required behavior for Cumulocity Microservice including:
+Employing the `@MicroserviceApplication` annotation is a simple way to add required behavior for Cumulocity microservices including:
 
 * Security
 * Subscription
@@ -239,7 +238,7 @@ You can run the Docker container locally in order to test the REST calls from th
 
 The microservice must be deployed to verify the REST calls from Cumulocity to the microservice.
 
-To run a microservice which uses the Cumulocity API locally you need:
+To run a microservice which uses the Cumulocity API locally, you need:
 
 * A valid tenant, a user and a password in order to access Cumulocity.
 * An authorization header as "Basic &lt;Base64(&lt;username>:&lt;password>)>".
@@ -351,7 +350,7 @@ $ docker run -p 8082:80 -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_TENANT> -e C8Y_BOOTST
 
 If your Docker image has run successfully, you shall see the output on the console similar to the one below.
 
-```plaintext
+```shell
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
 ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
@@ -447,4 +446,4 @@ You can also test your microservice with your favorite browser. Remember to ente
 
 ### Improving the microservice
 
-Now that you have done your first steps, check out the section [Developing microservices](/guides/microservice-sdk/java#developing-microservice) to find out what else can be implemented.
+Now that you have done your first steps, check out the section [Developing microservices](/guides/microservice-sdk/java#developing-microservice) to find out what else can be implemented. Review also the [Java example](/guides//microservice-sdk/http) in this guide to learn using more features of the microservice SDK and REST API by employing third-party services.

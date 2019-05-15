@@ -4,7 +4,6 @@ layout: redirect
 weight: 60
 ---
 
-
 The application package (`@c8y/apps`) provides example applications for the Web SDK.
 
 ### Prerequisites
@@ -34,5 +33,3 @@ The following table provides an overview on the currently supported applications
 |`cockpit`| The [Cockpit](/guides/users-guide/cockpit/) default application. Use this to extend the existing Cockpit application. |
 |`devicemanagement`| The [Devicemanagement](/guides/users-guide/devicemanagement/) default application. Use this to extend the existing Device Management application. |
 |`administration`| The [Administration](/guides/users-guide/administration/) default application. Use this to extend the existing Administration application. |
-
- 

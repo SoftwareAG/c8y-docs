@@ -5,7 +5,7 @@ weight: 15
 ---
 
 Each UI application can be customized with a set of defined options.
-The options objects are defined in json and read and merged at runtime with the following order:
+The options objects are defined in JSON and read and merged at runtime with the following order:
 
   - Static options defined at build time
   - Dynamic fetched options on application boot

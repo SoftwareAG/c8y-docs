@@ -4,6 +4,13 @@ layout: redirect
 weight: 20
 ---
 
+To support you with bootstrapping, running and deploying applications we have build a Command Line Interface. The tool is the successor of the `cumulocity-node-tools`. To avoid conflicts, it listens to the new command `c8ycli` instead of `c8y`. You can install it via npm:
+
+```
+npm install -g @c8y/cli
+```
+
+
 ### Usage
 
 ```

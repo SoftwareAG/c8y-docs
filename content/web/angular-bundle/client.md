@@ -4,7 +4,6 @@ layout: redirect
 weight: 50
 ---
 
-
 The @c8y/client is an isomorphic (node and browser) Javascript client library for the [Cumulocity IoT](http://www.cumulocity.com) platform API.
 
 ### Installation
@@ -52,6 +51,50 @@ Use `client.<endpoint>.list()` to request listed data from the Cumulocity REST A
     })();
    ```
 
+### Accessing a microservice with the Fetch API
+
+The client internally uses the Fetch API. By accessing this core function, you can do any authenticated request to any resource. Standalone you can use `core.client.fetch(url, options)` and in `@c8y/ngx-components/data` for Angular you simply need to inject the `FetchClient`:
+
+```typescript
+constructor(private fetchClient: FetchClient) {} // di
+
+async getData() {
+  const options: IFetchOptions = {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' }
+    };
+  const response = await fetchClient.fetch('/service/my-service', options); // Fetch API Response
+}
+```
+
+All fetch responses can be parsed to JSON if the content type is set correctly. Find more information on handling fetch responses in the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
+
+### Authentication strategy
+
+In the Cumulocity platform we currently allow two ways to authenticate: 
+
+ * Basic Auth: The authentication header is injected into each request.
+ * Oauth: The client doesn't know about the authentication header. The header is set in a cookie.
+
+To quickly get you started, the @c8y/client provides a shorthand static function which always uses Basic Auth and verifies the login directly:
+
+```typescript
+await Client.authenticate({ tenant, user, password }), url);
+```
+
+It internally creates a client instance and tries to contact the API to verify if the given credentials are correct. In some cases you need to use a more fine-grained authentication, e.g. when you don't know which authentication strategy the user is going to use. In this case you need to construct an own instance of the client and pass the authentication strategy to it:
+
+```typescript
+ const baseUrl = 'https://acme.cumulocity.com';
+ const client = new Client(new CookieAuth(), baseUrl); // use here `new BasicAuth()` to switch to Basic Auth
+ try {
+  const { data, paging, res } = await client.user.currentUser();
+  console.log('Login with cookie successful');
+ } catch(ex) {
+  console.log('Login failed: ', ex)
+ }
+```
+
 
 ### Subscribe to detail and list data with observables (push)
 
@@ -82,7 +125,7 @@ The `detail$` and `list$` functions allow to subscribe to realtime channels that
   ```js
   {
     hot: true,                                    // true = shares one network request
-    realtime: true,                               // true = listen to realtime changes
+    realtime: true,                               // true = listen to real-time changes
     pagingStrategy: PagingStrategy.PROGRESSIVE,   // ALL = All pages are loaded
                                                   // NONE = only current page is loaded
                                                   // PROGRESSIVE = load pages with more()
@@ -112,7 +155,7 @@ const password = 'pw';
     tenant,
     user,
     password
-  }), baseUrl);
+  }, baseUrl);
   const { data, paging } = await client.inventory.list();
   // data = first page of inventory
   const nextPage = await paging.next();
@@ -134,7 +177,7 @@ const password = 'pw';
     tenant,
     user,
     password
-  }), baseUrl);
+  }, baseUrl);
   client.inventory.list$().subscribe((data) => {
     // request inventory data via fetch and adds realtime if data changes
     console.log(data);
@@ -157,6 +200,3 @@ const observableSubscription = observable$.subscribe((data) => {
 });
 observableSubscription.unsubscribe();
 ```
-
-
-

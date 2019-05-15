@@ -16,7 +16,7 @@ The Web SDK consists of the following packages deployed to npm in the scope `@c8
 
 These packages depend on each other from top to bottom. While the `@c8y/client` is a very low-level API interface with nearly no dependencies, the `@c8y/apps` provide feature rich applications by including `@c8y/ngx-components` and `@c8y/client`. 
 
-The goal of these splittings is to provide the right package for every use case, e.g. if you want to build a small application with React you could use the `@c8y/client` to do the API interaction. If you need a brandable feature rich application which is close to our Cockpit or Device Mangement application you could use `@c8y/ngx-components` together with `@c8y/stlyes`. 
+The goal of these splittings is to provide the right package for every use case, e.g. if you want to build a small application with React you could use the `@c8y/client` to do the API interaction. If you need a brandable feature rich application which is close to our Cockpit or Device Management application you could use `@c8y/ngx-components` together with `@c8y/stlyes`. 
 
 Following is a list which explains the use cases of each package. 
 
@@ -25,34 +25,40 @@ Following is a list which explains the use cases of each package.
  - [@c8y/styles](/guides/web/angular#branding): The styles for the look & feel of an application. Extend this package to apply a custom branding to your application.
  - [@c8y/apps](/guides/web/angular#apps): Example and bootstrapping applications to easily let you start with the Web SDK.
 
-Next, we will showcase how to get started with our Web SDK CLI.
+You can find all our packages [on npm](https://www.npmjs.com/~c8y). To quickly get you bootstrapped with these packages we have built an CLI tool called `@c8y/cli`. Next, we will showcase how to get started with the `@c8y/cli` command line tool.
 
 
 ### Getting started
 
 First install the Command Line Interface (CLI) which helps you with bootstrapping an application:
+
 ```
 $ npm install -g @c8y/cli
 ```
 
 Next, bootstrap a new blank application with the `new` command:
+
 ```
 $ c8ycli new myApp
 ```
-> **Note:** When you want to see the possibilities and implementation details of the Web SDK you should try the tutorial application. You can install it by running `c8ycli new <<your-app-name>> tutorial`.
+
+> **Info:** When you want to see the possibilities and implementation details of the Web SDK you should try the tutorial application. You can install it by running `c8ycli new <<your-app-name>> tutorial`. 
 
 Once the CLI installation is completed change to the newly created folder and run npm install:
+
 ```
 $ cd myapp
 $ npm install
 ```
 
 After all packages are installed you can start the application by running:
+
 ```
 $ npm start
 ```
 
 If you point your browser to http://localhost:9000 you will get a login screen which proxies to the tenant defined in the start script. If you cannot log in, it might be pointing to the wrong instance. To change the proxy to your tenant URL change the `start` script in the script section of the newly created package.json:
+
 ```json
 {
   "start": "c8ycli server -u http://your-tenant.my-provider.com"
@@ -61,13 +67,13 @@ If you point your browser to http://localhost:9000 you will get a login screen w
 
 After logging in you should see a barely empty starter application. If you want to start with a more complex example read the documentation about [@c8y/apps](/guides/web/angular#apps). If you want to build and deploy your application read more about the necessary commands of the [developer command line tool](/guides/web/angular#cli).
 
-> **Info**: Currently Web SDK only supports building new applications. If you want to extend an existing application like Cockpit or Dashboard, read the legacy documentation.
+> **Info**: If you want to extend an existing application like Cockpit you can spin up a hybrid application. This allows you to combine existing AngularJS plugins into the new Web SDK, see [Migration](/guides/web/angular#migration).
 
 ### First route & component
 
 After creating the empty bootstrapping application you might want to start with your first content. To do so, add a new component to your project and save it as `hello.component.ts`:
 
-```
+```typescript
 import { Component } from '@angular/core';
 
 @Component({
@@ -84,7 +90,7 @@ export class HelloComponent {
 
 To hook the new component into the application you need to declare the new component and add it to a route in the `app.module.ts`:
 
-```
+```typescript
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';

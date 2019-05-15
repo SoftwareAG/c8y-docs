@@ -8,7 +8,7 @@ It is described below the different microservice SDK features, including annotat
 
 There are two possible deployment types on the platform:
 
-* Hosted deployment - The default for microservices. For typical use cases the hosted deployment is the suggested one.
+* Hosted deployment - The default for microservices and the suggested one for typical use cases.
 * External/legacy deployment - Requires custom installation of the platform and agent.
 
 For development and testing purposes, one can deploy a microservice on a local Docker container.
@@ -24,7 +24,7 @@ Annotation | Description
 @EnableHealthIndicator | Provides a standard health endpoint used by the platform to monitor the microservice availability
 @EnableMicroserviceSecurity | Provides a standard security mechanism, verifying user and roles against the platform
 @EnableMicroserviceSubscription | Responsible for subscribing microservices to the platform, updating metadata and listening to tenant subscription change events
-@EnableMicroservicePlatformInternalApi | Injects the platform API services into spring context for a microservice to use
+@EnableMicroservicePlatformInternalApi | Injects the platform API services into Spring context for a microservice to use
 @EnableTenantOptionSettings | Provides microservice configuration within tenant options and allows overriding default properties from files
 
 ### Context support
@@ -67,7 +67,6 @@ public PagedEventCollectionRepresentation get10Events () {
 
 The `@EnableMicroserviceSecurity` annotation sets up the standard security configuration for microservices. It requires basic authorization for all endpoints (except for health check endpoint configured using `@EnableHealthIndicator`). A developer can secure its endpoints using standard Spring security annotations, e.g. `@PreAuthorize("hasRole('ROLE_A')")` and user's permissions will be validated against user's roles stored on the platform.
 
-
 ### Microservice subscription
 
 The microservice subscription module is responsible for two main features:
@@ -100,10 +99,9 @@ public void onAdded (MicroserviceSubscriptionAddedEvent event {
 
 On application startup, the `MicroserviceSubscriptionAddedEvent` is triggered for all subscribed tenants.
 
-
 ### Platform API
 
-The package consists of a number of services that are built and injected into Spring context. A developer can use them to perform basic operations against the platform. The beans are built based on properties read from a file. For hosted deployment, most of the properties are provided by the platform.
+The package consists of a number of services that are built and injected into Spring context. A developer can use them to perform basic operations against the platform. The beans are built based on the properties read from a file. For hosted deployment, most of the properties are provided by the platform.
 
 The API provides the following services:
 
@@ -148,17 +146,7 @@ public AlarmRepresentation addHelloAlarm (){
 
 ### Configuration files
 
-The properties file used by the hosted deployment must be located in src/main/resources/application.xml.
-
-For external/legacy deployment, the following paths will be searched in order to find a properties file specific for the environment the application is run on:
-
-* {UPPERCASE(application_name)}_CONF_DIR/.{application_name}
-* {UPPERCASE(application_name)}_CONF_DIR/{application_name}
-* {user/home}/.{application_name}
-* {user/home}/{application_name}
-* {CONF_DIR}/.{application_name}
-* {CONF_DIR}/{application_name}
-* /etc/{application_name}
+The properties file used by the hosted deployment must be located in *src/main/resources/application.properties*.
 
 The properties used by a microservice are:
 
@@ -169,12 +157,11 @@ C8Y.bootstrap.register | Indicates if a microservice should follow self-registra
 C8Y.baseURL | Address of the platform. Provided by the deployment process
 C8Y.baseURL.mqtt | Address of the MQTT service. Provided by the platform
 C8Y.bootstrap.tenant | Microservice owner tenant
-C8Y.bootstrap.user | User used by microservice or by microservice registration process
-C8Y.bootstrap.password | Password used by microservice or by microservice registration process
+C8Y.bootstrap.user | User used by a microservice or by the microservice registration process
+C8Y.bootstrap.password | Password used by a microservice or by the microservice registration process
 C8Y.bootstrap.delay | Subscription refresh delay
 C8Y.bootstrap.initialDelay | Initial subscription delay
 C8Y.microservice.isolation | Microservice isolation. Only PER_TENANT or MULTI_TENANT values are available. MULTI_TENANT by default
-
 
 ### Microservice settings
 
@@ -205,7 +192,7 @@ public int getAccessTimeout() {
 }
 ```
 
-Using Settings service:
+Using settings service:
 
 ```java
 @Autowired
@@ -256,22 +243,9 @@ BODY:
 
 The standard output should be used for hosted deployment.
 
-For external/legacy deployment, logging into the application implies using [Spring Logging](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html).
-
-The following locations are searched for log-back file:
-
-* {UPPERCASE(application_name)}_CONF_DIR/.{application_name}/logging.xml
-* {UPPERCASE(application_name)}_CONF_DIR/{application_name}/logging.xml
-* {user/home}/.{application_name}/logging.xml
-* {user/home}/{application_name}/logging.xml
-* {CONF_DIR}/.{application_name}/logging.xml
-* {CONF_DIR}/{application_name}/logging.xml
-* /etc/{application_name}/logging.xml
-
-
 ### Maven plugin
 
-The package module provides a Maven plugin to prepare a ZIP file required by the microservice deployment, with simple configuration. The build requires an executable jar. To create one, a developer can use `spring-boot-maven-plugin`. An example with minimum configuration is presented below:
+The package module provides a Maven plugin to prepare a ZIP file required by the microservice deployment. The build requires an executable JAR file. To create one, a developer can use `spring-boot-maven-plugin`. An example with minimum configuration is presented below:
 
 ```xml
 <plugin>
@@ -291,7 +265,7 @@ The package module provides a Maven plugin to prepare a ZIP file required by the
 <plugin>
     <groupId>com.nsn.cumulocity.clients-java</groupId>
     <artifactId>microservice-package-maven-plugin</artifactId>
-    <version>9.0.0</version>
+    <version>9.16.2</version>
     <executions>
         <execution>
             <id>package</id>
@@ -330,14 +304,14 @@ It can be configured with the following parameters:
 
 * name (alias package.name) - defaults to project.artifactId
 * description (alias package.description) - defaults to project.description
-* jvmArgs (alias agent-package.jvmArgs) - jvm-gc arguments. The default value is `-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark`". Will be overwritten if other options are provided.
-* arguments (alias agent-package.arguments) - arguments passed on Java application startup
+* jvmArgs (alias agent-package.jvmArgs) - jvm-gc arguments. The default value is `-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark`". It will be overwritten if other options are provided.
+* arguments (alias agent-package.arguments) - arguments passed during application startup
 * encoding (alias project.build.sourceEncoding) - defaults to UTF-8
 * heap (alias agent-package.heap) - defaults to min = 128MB max = 384MB
 * perm (alias agent-package.perm) - defaults to min = 64MB max = 128MB
 * skip (alias skip.agent.package) - to skip the whole packaging part
 * rpmSkip (alias skip.agent.package.rpm) - to skip rpm file creation. False by default
-* containerSkip (alias skip.agent.package.container) - to skip docker image creation. True by default
+* containerSkip (alias skip.agent.package.container) - to skip Docker image creation. True by default
 * manifestFile - points to a manifest file location. Default value: $<basedir>/src/main/configuration/cumulocity.json
 
 Example configuration:
@@ -356,7 +330,7 @@ Example configuration:
 
 The push plugin is responsible for pushing the Docker image to a registry. The registry can be configured by:
 
-* containerSkip (alias skip.agent.package.container) - Prevents the push to execute.  True by default
+* containerSkip (alias skip.agent.package.container) - Prevents the push to execute. True by default
 * registry (alias agent-package.container.registry) - Docker registry address
 
 Example configuration:
@@ -370,15 +344,14 @@ Example configuration:
 
 #### Upload goal
 
-Microservice upload goal is responsible for deploying the microservice to a server.
-
-There are three options to configure server url and credentials:
+The upload goal is responsible for deploying the microservice to a server.
+There are three options to configure the server url and credentials:
 
 * _settings.xml_ - Maven global configuration placed at *~/.m2/settings.xml*
 * _pom.xml_ - Maven project configuration file
 * Command line
 
-All three ways can be used together, i.e. a goal partially can be configured in the _settings.xml_ and partially in the _pom.xml_.
+All three ways can be used together, e.g. a goal partially can be configured in the _settings.xml_ and partially in the _pom.xml_.
 In case of conflicts, the command line configuration has the highest priority and _settings.xml_ configuration the lowest.
 
 To upload a microservice to the server you need to configure the following properties:
@@ -386,7 +359,7 @@ To upload a microservice to the server you need to configure the following prope
 * url - Mandatory URL that will be used for deployment. Empty by default.
 * username - Mandatory tenant ID and user name used for authorization. Empty by default.
 * password - Mandatory password used for authorization. Empty by default.
-* name - Optional name of uploaded application. By default the same as "package.name" property or "artifactId" if "package.name" is not provided.
+* name - Optional name of the uploaded application. By default it is the same as `package.name` property or `artifactId` if `package.name` is not provided.
 
 #### settings.xml
 
@@ -439,12 +412,12 @@ $ mvn microservice:upload -Dupload.application.name=cep -Dupload.url=https://dem
 
 #### Hosted deployment
 
-> **Info**: For your convenience, Cumulocity provides a [Microservice utility tool](/guides/reference/microservice-package) for easy packaging, deployment and subscription.
+> **Info**: For your convenience, Cumulocity provides a [Microservice utility tool](/guides/microservice-sdk/concept/#ms-utility-tool) for easy packaging, deployment and subscription.
 
 To deploy an application on an environment you need the following:
 
 * URL address of your tenant
-* Authorization header = "Basic <Base64(<username>:<password>)>"
+* Authorization header as "Basic <Base64(<username>:<password>)>"
 * Tenant - tenant ID
 * ZIP build from previous steps
 
@@ -461,9 +434,9 @@ Content-Type: "application/json"
 
 BODY:
   {
-		"name": "{APPLICATION_NAME}",
+		"name": "<APPLICATION_NAME>",
 		"type": "MICROSERVICE",
-		"key": "{APPLICATION_NAME}-microservice-key"
+		"key": "<APPLICATION_NAME>-microservice-key"
   }
 ```
 
@@ -477,7 +450,7 @@ $ curl -X POST -s \
       "<URL>/application/applications"
 ```
 
-If the application has been created correctly, you can get the application ID by invoking:
+If the application has been created correctly, you can GET the application ID:
 
 ```http
 GET /application/applicationsByName/<APPLICATION_NAME>
@@ -513,7 +486,7 @@ $ curl -F "data=@<PATH_TO_ZIP>" \
 ##### Step 3 - Subscribe to the microservice
 
 ```http
-POST /tenant/tenants/$TENANT/applications
+POST /tenant/tenants/<TENANT_ID>/applications
 Host: ...
 Authorization: Basic xxxxxxxxxxxxxxxxxxx
 Content-Type: "multipart/form-data"
@@ -532,19 +505,18 @@ Example:
 $ curl -X POST -d '{"application":{"id": "<APPLICATION_ID>"}}'  \
        -H "Authorization: <AUTHORIZATION>" \
        -H "Content-type: application/json" \
-       "<URL>/tenant/tenants/<TENANT>/applications"
+       "<URL>/tenant/tenants/<TENANT_ID>/applications"
 ```
 
 #### Local Docker deployment
 
-To deploy the application on a local Docker container, one needs to inject the environment variables into a container. This is done via the Docker run -e parameter. The full description of available parameters is available in [Environment variables](/guides/reference/microservice-runtime) under the **Microservice runtime** section in the Reference guide.
+To deploy the application on a local Docker container, one needs to inject the environment variables into a container. This is done with the Docker `run -e` command. The full description of available parameters is available in [Environment variables](/guides/microservice-sdk/concept/#environment-variables).
 
 An example execution could be:
 
 ```shell
 $ docker run -e "C8Y_BASEURL=<C8Y_BASEURL>" -e "C8Y_BASEURL_MQTT=<C8Y_BASEURL_MQTT>" <IMAGE_NAME>
 ```
-
 
 ### Monitoring
 
@@ -572,3 +544,30 @@ HTTP/1.1 503
   "status": "DOWN"
 }
 ```
+
+### Legacy Deployment
+
+#### Properties
+
+For external/legacy deployment, the following paths will be searched in order to find a properties file specific for the environment the application is run on:
+
+* {UPPERCASE(application_name)}_CONF_DIR/.{application_name}
+* {UPPERCASE(application_name)}_CONF_DIR/{application_name}
+* {user/home}/.{application_name}
+* {user/home}/{application_name}
+* {CONF_DIR}/.{application_name}
+* {CONF_DIR}/{application_name}
+* /etc/{application_name}
+
+#### Logging
+
+For external/legacy deployment, logging into the application implies using [Spring Logging](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html).
+The following locations are searched for log-back file:
+
+* {UPPERCASE(application_name)}_CONF_DIR/.{application_name}/logging.xml
+* {UPPERCASE(application_name)}_CONF_DIR/{application_name}/logging.xml
+* {user/home}/.{application_name}/logging.xml
+* {user/home}/{application_name}/logging.xml
+* {CONF_DIR}/.{application_name}/logging.xml
+* {CONF_DIR}/{application_name}/logging.xml
+* /etc/{application_name}/logging.xml

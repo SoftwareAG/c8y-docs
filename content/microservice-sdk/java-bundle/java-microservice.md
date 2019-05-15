@@ -135,7 +135,7 @@ Employing the `@MicroserviceApplication` annotation is a simple way to add requi
 
 * Security
 * Subscription
-* Health indicator
+* Health endpoint at <kbd>/service/&lt;microservice-name>/health</kbd>
 * Context
 * Settings
 * Internal platform API

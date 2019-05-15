@@ -2,6 +2,11 @@
 weight: 105
 title: Microservice utility tool
 layout: redirect
+aliases:
+  - /reference/microservice-package
+  - /reference/microservice-package/#packing
+  - /reference/microservice-package/#deploying
+  - /reference/microservice-package/#subscribing
 ---
 
 Cumulocity provides you a utility tool for easy microservice packaging, deployment and subscription. The script requires a local installation of Docker and jq, which is a lightweight and flexible JSON processor.

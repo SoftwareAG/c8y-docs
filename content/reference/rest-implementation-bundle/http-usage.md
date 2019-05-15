@@ -223,5 +223,6 @@ In error cases, Cumulocity returns standard HTTP response codes as described in 
 |422|Invalid Data|General error with entity data format.|
 |422|Non Unique Result|Resource constraints error. Non-unique result from the query.|
 |422|Unprocessable entity|Resource cannot be processed.|
+|429|Requests rate exceeds the limit|Excessive requests are delayed until their number exceeds the maximum burst size in which case the request is terminated with an error.|
 |500|Internal Server Error|An internal error in the software system has occurred and the request could not be processed.|
 |503|Service Unavailable|The service is currently not available. This may be caused by an overloaded instance or it is down for maintenance. Please try it again in a few minutes.|

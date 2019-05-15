@@ -28,11 +28,10 @@ Example request: Retrieve energy readings.
  Accept: application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
 ```
 Example response:
-```json
+```http
 HTTP/1.1 200 OK
 Content-Type: application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
 Content-Length: ...
-
 {
   "self":"...",
   "measurements":[
@@ -96,45 +95,11 @@ Example request: retrieve all series.
 ```
 Example response:
 
-```json
+```http
 HTTP/1.1 200 OK
 Content-Type: application/json
 Content-Length: ...
 
-{
-"values": {
-    "2019-04-15T00:00:00.793Z": [
-        {
-            "min": 29,
-            "max": 29
-        },
-        {
-            "min": 28,
-            "max": 28
-        }],
-    "2019-04-15T00:00:03.131Z": [
-        {
-            "min": 23,
-            "max": 23
-        },
-        {
-            "min": 21,
-            "max": 21
-        }]
-},
-"series": [
-    {
-        "unit": "C",
-        "name": "T4",
-        "type": "c8y_TemperatureMeasurement"
-    },
-    {
-        "unit": "C",
-        "name": "T5",
-        "type": "c8y_TemperatureMeasurement"
-    }],
-"truncated": false
-}
 ```
 
 Series can be filtered by providing additional "series" param with full name of a series (measurement type and series name).
@@ -148,11 +113,10 @@ Example request: retrieve only specific series.
  Accept: application/json
 ```
 Example response:
-```json
+```http
 HTTP/1.1 200 OK
 Content-Type: application/json
 Content-Length: ...
-
 {
  "values": {
      "2014-12-04T17:33:01.538+01:00": [
@@ -189,13 +153,12 @@ Response body: Measurement
 Required role: ROLE\_MEASUREMENT\_ADMIN or owner of source object
 
 Example Request:
-```json
+```http
 POST /measurement/measurements
 Host: ...
 Authorization: Basic ...
 Content-Length: ...
 Content-Type: application/vnd.com.nsn.cumulocity.measurement+json;ver=...
-
 {
   "time" : "2011-09-19T12:03:27.845Z",
   "type" : "KamstrupA220Reading",
@@ -212,11 +175,10 @@ Content-Type: application/vnd.com.nsn.cumulocity.measurement+json;ver=...
 }
 ```
 Example response:
-```json
+```http
 HTTP/1.1 201 Created
 Content-Type: application/vnd.com.nsn.cumulocity.measurement+json;ver=...
 Content-Length: ...
-
 {
   "id" : "43",
   "self" : "<<URL of new measurement>>",
@@ -242,13 +204,12 @@ Please note that for correct visualization of measurement series on UI graphs, p
 
 ### POST - create multiple measurements
 
-```json
+```http
 POST /measurement/measurements
 Host: ...
 Authorization: Basic ...
 Content-Length: ...
 Content-Type: application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
-
 {
 "measurements": [
     {
@@ -277,11 +238,10 @@ Content-Type: application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=
 }
 ```
 Example response:
-```json
+```http
 HTTP/1.1 201 Created
 Content-Type: application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
 Content-Length: ...
-
 {
  "measurements": [
     {

@@ -17,7 +17,7 @@ layout: redirect
 |alarmsForStatusAndTime|AlarmCollection URI template|1|Read-only collection of all alarms for a particular status and time range (placeholder {status}, {dateFrom} and {dateTo}).|
 |alarmsForSourceAndTime|AlarmCollection URI template|1|Read-only collection of all alarms for a particular source and time range (placeholder {source}, {dateFrom} and {dateTo};).|
 |alarmsForSourceAndStatusAndTime|AlarmCollection URI template|1|Read-only collection of all alarms for a particular source, status and time range (placeholder {source}, {status}, {dateFrom} and {dateTo};).|
-|alarmsForSourceWithAssetsAndWithDevices|AlarmCollection URI template|1|Read-only collection of all alarms for a particular source with its children (placeholder {source}, {withAssets} and {withDevices}).|
+|alarmsForSourceWithAssetsAndWithDevices|AlarmCollection URI template|1|Read-only collection of all alarms for a particular source with its children (placeholder {source}, {withSourceAssets} and {withSourceDevices}).|
 |alarmsForSeverity|AlarmCollection URI template|1|Read-only collection of all alarms for a particular severity (placeholder {severity}).|
 |alarmsForResolved|AlarmCollection URI template|1|Read-only collection of all alarms which are resolved (placeholder {resolved}).|
 

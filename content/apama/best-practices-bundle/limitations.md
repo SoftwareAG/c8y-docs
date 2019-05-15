@@ -8,7 +8,7 @@ Using Apama within the Cumulocity IoT environment necessarily has some restricti
 
 There are a number of ways that assets may be deployed to Apama within Cumulocity IoT and the restrictions vary according to those mechanisms:
 
-* “Upload custom Apama rule” - the simplest mechanism to deploy Apama assets into a fully managed Apama correlator, see [Introduction > Deploying EPL](/guides/apama/introduction/#deploying-epl).
+* “Upload custom Apama rule” - the simplest mechanism to deploy Apama assets into a fully managed Apama correlator, see [Basic functionalities > Deploying applications](/guides/apama/analytics-introduction/#deploying-apps).
 * “Custom microservice” – where more complex Apama projects can be built using the Cumulocity microservice SDK, see [Developing applications > Cumulocity microservices](/guides/concepts/applications#microservices) in the Concepts guide.
 
 When designing an Apama solution to be deployed within any form of Cumulocity IoT environment, consider the following points.
@@ -68,7 +68,7 @@ When designing an Apama solution to be deployed within any form of Cumulocity Io
 	* A .mon file must not contain a package statement (to do so is an error).
 	* It is not possible to share event definitions between separate .mon files.
 	* It is not possible to use Apama queries.
-	* You can only use the bundles listed in [Introduction -> Deploying EPL](/guides/apama/introduction/#deploying-epl). This includes:
+	* You can only use the bundles listed in [Basic functionalities > Deploying applications](/guides/apama/analytics-introduction/#deploying-apps). This includes:
 		* Cumulocity IoT Event Definitions
 		* JSON with generic request/response event definitions
 

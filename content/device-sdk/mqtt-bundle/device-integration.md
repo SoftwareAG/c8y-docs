@@ -53,7 +53,7 @@ The process works as follows:
 * Next, you must accept the connection from the device in the **Device Registration** page.
 * When the device sends the next empty message it should receive credentials in the following format:
 
-```plaintext
+```text
 70,<tenant>,<username>,<password>
 ```
 
@@ -67,7 +67,7 @@ The device creation can be achieved by employing the [static template 100](/guid
 
 The device will be linked automatically to the ID the client uses with its MQTT ClientId.
 
-```plaintext
+```text
 100,Device Name,Device Type
 ```
 >**Info:** The topic used for Cumulocity's pre-provided static templates is <kbd>s/us</kbd>.
@@ -78,7 +78,7 @@ Like the root device, also children of it are covered by the automatic device cr
 
 To handle this step manually you can send the [static template 101](/guides/device-sdk/mqtt#static-templates) for creating a child device. The template will only create the child if it does not already exist.
 
-```plaintext
+```text
 101,Unique Child ID,Child Name,Child Type
 ```
 

@@ -43,13 +43,13 @@ Additionally, each double quote within the parameter needs to be escaped with a 
 
 Publish example:
 
-```plaintext
+```text
 100,"This value, needs escaping",This value does not need escaping
 ```
 
 Subscribe example:
 
-```plaintext
+```text
 511,myDeviceSerial,"execute this\nand this\nand \"this\""
 ```
 
@@ -87,7 +87,7 @@ For the simplest version of a client, the MQTT clientId can just be the deviceId
 
 Example ClientIds:
 
-```plaintext
+```text
 mySerialNumber
 d:mySerialNumber
 d:mySerialNumber:myDefaultTemplate

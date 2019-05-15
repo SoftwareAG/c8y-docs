@@ -49,7 +49,9 @@ The bottom arrow represents the push connection (from Cumulocity to the device).
 * Offline (connection not established) - indicated by a red arrow
 * Not monitored - indicated by a grey arrow
 
->**Info**: The Push connection means the connection from Cumulocity to /devicecontrol/notifications API, **not** to real-time API.
+Push connection means the connection from Cumulocity to /devicecontrol/notifications API, **not** to real-time API.
+
+>**Info**: Connection monitoring is not real time. This means that the connection status will not change immediately when you switch off a device. Depending on the used protocol for push connection monitoring this can take up to 20 minutes.
 
 **Maintenance mode**
 
@@ -75,8 +77,6 @@ If an interval is set, you will find the **Maintenance** toggle below it.
 With the **Maintenance** toggle you can turn the maintenance mode for the device on or off which is immediately reflected in the connection status. 
 
 <img src="/guides/images/users-guide/DeviceManagement/devmgmt-devices-deviceinfomaintenance.png" alt="Device status maintenance">
-
->**Info**: Connection monitoring is not real time. This means that the connection status will not change immediately when you switch off a device. Depending on your network, it may take about 20 minutes until a broken connection is discovered, since the network will retry sending data for a significant amount of time.
 
 ### <a name="monitoring-services"></a>Service monitoring
 

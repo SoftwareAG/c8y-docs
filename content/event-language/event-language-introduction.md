@@ -4,4 +4,5 @@ title: Introduction
 layout: bundle
 aliases:
   - "/event-language/introduction"
+  - "/event-language"
 ---

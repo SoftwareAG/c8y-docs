@@ -1,5 +1,5 @@
 ---
-title: TC3G/TCG-4
+title: "TC3G/TCG-4"
 layout: bundle
 image: '/guides/images/devices/device-list/stw.jpg'
 brand: TCG

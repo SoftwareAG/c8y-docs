@@ -21,7 +21,7 @@ The format of channels names is different according to REST api in which the rea
 |subscription|String|1|Name of channel to subscribe to.|
 
 Example Request:
-
+```http
     POST /cep/realtime
     Host: ...
     Authorization: Basic ...
@@ -31,10 +31,10 @@ Example Request:
       {
         "channel": "/meta/subscribe",
         "clientId": "Un1q31d3nt1f13r",
-        "subscription": "/alarms/overHeatAlarms"
+        "subscription": "/alarms/<Device ID>"
       }
     ]
-
+```
 
 ### Response
 
@@ -49,14 +49,16 @@ Example Request:
 
 Example response:
 
+```http
     HTTP/1.1 200 OK
     Content-Type: application/json
     [
       {
         "channel": "/meta/subscribe",
         "clientId": "Un1q31d3nt1f13r",
-        "subscription": "/alarms/overHeatAlarms",
+        "subscription": "/alarms/<Device ID>",
         "successful": true,
         "error": ""
       }
     ]
+```

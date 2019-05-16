@@ -241,16 +241,16 @@ The microservice must be deployed to verify the REST calls from Cumulocity to th
 To run a microservice which uses the Cumulocity API locally, you need:
 
 * A valid tenant, a user and a password in order to access Cumulocity.
-* An authorization header as "Basic &lt;Base64(&lt;username>:&lt;password>)>".
+* An authorization header as "Basic &lt;Base64(&lt;tenantID>/&lt;username>:&lt;password>)>".
 
-For instance, if the username and password are **testuser** and **test123** respectively, you can get the Base64 string with the following command:
+For instance, if your tenant ID, username and password are **tenant**, **testuser** and **secret123** respectively, you can get the Base64 string with the following command:
 
 ```shell
-$ echo testuser:test123 | base64
-dGVzdHVzZXI6dGVzdDEyMwo=
+$ echo -n tenant/testuser:secret123 | base64
+dGVuYW50L3Rlc3R1c2VyOnNlY3JldDEyMw==
 ```
 
-and your authorization header would look like `"Authorization": "Basic dGVzdHVzZXI6dGVzdDEyMwo="`.
+and your authorization header would look like `"Authorization": "Basic dGVuYW50L3Rlc3R1c2VyOnNlY3JldDEyMw=="`.
 
 #### Step 1 - Create the application
 

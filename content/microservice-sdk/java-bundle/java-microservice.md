@@ -10,7 +10,7 @@ Here you will learn how to create your first microservice that can be run on the
 
 Create an account on the [Cumulocity platform](https://cumulocity.com), for example by using a free trial. At this step you will be provided with a dedicated URL address.
 
-Use the following command to verify that you have Maven 3 installed with Java 7 or a newest version.
+Use the following command to verify that you have Maven 3 installed with Java 7 or later.
 
 ```shell
 $ mvn -v

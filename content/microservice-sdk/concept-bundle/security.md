@@ -15,7 +15,7 @@ Microservices typically provide a REST API and Cumulocity provides a light API g
 
 A request to a microservice can be authenticated using basic authentication or OAuth. In case of basic authentication the flow is fairly simple, as credentials can be read and utilized for further authentication to the platform.
 
-Authentication with OAuth is based on Cookies technology, so the access token has to be read from the request Cookie header. There are two important parts of OAuth authorization: an access token stored in the authorization cookie and an X-XSRF-TOKEN header for XSRF attack prevention. Both must be forwarded with the request to the platform. If you use Java for development, we recommend using the Microservice SDK Version 9.12.6 or later for supporting OAuth in Java microservices.
+Authentication with OAuth is based on cookies technology, so the access token has to be read from the request cookie header. There are two important parts of OAuth authorization: an access token stored in the authorization cookie and an X-XSRF-TOKEN header for XSRF attack prevention. Both must be forwarded with the request to the platform. If you use Java for development, we recommend using the Microservice SDK Version 9.12.6 or later for supporting OAuth in Java microservices.
 
 ![OAuth](/guides/images/microservices-sdk/ms-oauth.png)
 
@@ -28,14 +28,14 @@ In general, microservices use the standard Cumulocity authentication mechanisms.
 1. The microservice can be created in any tenant that have **feature-microservice-hosting** enabled.
 2. The microservices access the Tenant API.
 
-At installation time of the microservice, an application is created in the "management" tenant reflecting the new microservice. In addition, a service user is created in the "management" tenant that allows the microservice to retrieve subscriptions.
+At installation time of the microservice, an application is created in the management tenant reflecting the new microservice. In addition, a service user is created in the management tenant that allows the microservice to retrieve subscriptions.
 Whenever required, a platform administrator will subscribe a customer to the new microservice. As part of the subscription, a service user in the customer tenant is created using random credentials.
 
 #### Microservice authorization
 
 Authorization is relevant on two levels:
 
-1. On the "management" tenant level, the only authorization of a microservice is to access its own subscriptions.
+1. On the management tenant level, the only authorization of a microservice is to access its own subscriptions.
 2. For accessing customer tenants, the microservice installs a set of required permissions for being able to operate.
 
 A microservice is associated with a service user in the management tenant, which will make sure that only its subscriptions are returned. A microservice is also associated with a set of permissions that it requires for carrying out its function on a customer tenant.

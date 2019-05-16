@@ -421,7 +421,7 @@ $ curl -F "data=@<PATH_TO_YOUR_ZIP_FILE>" \
 	     "<URL>/application/applications/<APPLICATION_ID>/binaries"
 ```
 
-> **Important**: The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. You shall write an email to [support@cumulocity.com](mailto:support@cumulocity.com) so they can assist you with the activation. Note that this is a paid feature.
+> **Important**: The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. Contact us via [Empower Portal](https://empower.softwareag.com) so that we can assist you with the activation. Note that this is a paid feature.
 
 It is also possible to upload the ZIP file directly on your tenant. In the Administration application, navigate to **Applications** > **Own applications**, click **Add application** and select **Upload microservice** from the options list.
 

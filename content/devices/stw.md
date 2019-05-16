@@ -27,10 +27,3 @@ For further information on the TCG-4 device, refer to the [STW website]( https:/
 ### Configuring TCG modules for Cumulocity
 
 Instructions how to connect a TCG module with the Cumulocity cloud can be found in the [Quick Start Guide](https://www.stw-mobile-machines.com/fileadmin/user_upload/content/STW/Produkte/TCG_Produkte/Anleitung_Inbetriebnahme_TC3G_20190415_EN.PDF).
-
-
-
-
-
-
- 

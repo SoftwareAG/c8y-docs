@@ -36,7 +36,7 @@ To connect a Modbus/RTU device:
 4. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Modbus** tab.
 5. Change the communication settings shown in the section **Serial communication** to match the settings on the bus, if needed.
 6. Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency where measurements are sent to Cumulocity.
-7. Click **Save changes** if you made changes. <br> ![Add Modbus device](/guides/images/users-guide/newmodbusrtudevice.png)<br>
+7. Click **Save changes** if you made changes. <br> ![Add Modbus device](/guides/images/users-guide/CloudFieldbus/fieldbus-newmodbus.png)<br>
 8. To start communication between the terminal and the Modbus device, click **Add new device**.
 9. Enter a name for the device and select the type of the device from the drop-down field. To add new device types, see [Configuring Fieldbus device types](#configure) below. Set the Modbus address of the connected device.
 10. Click **Add**. Cumulocity will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.
@@ -62,7 +62,7 @@ To connect a Modbus/TCP device:
 
 Cumulocity will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.
 
-![Add Modbus device](/guides/images/users-guide/newmodbustcpdevice.png)
+![Add Modbus device](/guides/images/users-guide/CloudFieldbus/fieldbus-newtcpmodbus.png)
 
 > We assume that all Modbus/TCP communication uses the standard Modbus/TCP port 502. On the NTC-6200, the port to be used can be configured through the variable "service.cumulocity.plugin.lua__modbus.port" using, for example, Device Shell or the local web user interface of the device.
 
@@ -113,7 +113,7 @@ Cumulocity will now send a notification to the OPC UA agent that a new device is
 
 After completion, a new child device has been added to the gateway and can now be managed. You can click on the name of the device in the table to navigate to the device.
 
-![Add OPCUA device](/guides/images/users-guide/newopcuadevice.png)
+![Add OPCUA device](/guides/images/users-guide/CloudFieldbus/fieldbus-opcua.png)
 
 #### <a name="connect-profibus"></a>Connecting Profibus devices
 
@@ -162,7 +162,7 @@ Data is collected according to the interval specified in the "transmit rate" pro
 
 If the device type of the Fieldbus device is configured to send alarms, these will be visible in the **Alarms** tab and usable in widgets. To determine the alarm status, the Fieldbus devices are monitored for changes according to the "polling rate" setting of the terminal. If a particular coil or register is non-zero, an alarm will be raised. If the value goes back to zero, the alarm will be cleared.
 
-![Fieldbus alarms](/guides/images/users-guide/modbusalarms.png)
+![Fieldbus alarms](/guides/images/users-guide/CloudFieldbus/fieldbus-modbus-alarms.png)
 
 #### <a name="logging"></a>Logging events
 
@@ -185,7 +185,7 @@ To use the Fieldbus Device widget, follow these steps:
 3. Choose the device that should be shown in the widget in the **Target assets or devices** section.
 4. Select the coils and registers that should be shown on the widget.
 
-![Adding the Fieldbus Device Widget](/guides/images/users-guide/modbusedit.png)
+![Adding the Fieldbus Device Widget](/guides/images/users-guide/CloudFieldbus/fieldbus-widget.png)
 
 In the widget, the selected coils and registers are grouped into display categories as configured in the device type. The Fieldbus Device Widget updates automatically as soon as there is new data available. You do not need to click on reload.
 
@@ -228,7 +228,7 @@ Click **New** in the top menu bar. In the **Device type** field, select the prot
 
 Now you can start adding coils and register definitions to the device type, depending on the selected protocol (see the descriptions below).
 
-![Device Database](/guides/images/users-guide/devicedatabase.png)
+![Device Database](/guides/images/users-guide/CloudFieldbus/fieldbus-deviceprotocols-modbus.png)
 
 #### <a name="configureModbus"></a>Configuring Modbus data
 
@@ -245,7 +245,7 @@ Click **Add** at the top right of the **Coils (discrete inputs)** section, to ad
 1. Select the **Send event** checkbox if an event should be generated each time the value of the coil changes. If **Send event** is selected, you can specify the type of event and the text in the event.
 1. Click **OK** to finish editing the coil.
 
-![Add coil](/guides/images/users-guide/addcoil.png)
+![Add coil](/guides/images/users-guide/CloudFieldbus/fieldbus-deviceprotocols-newcoil.png)
 
 The same functions are available for discrete inputs. However, it is not possible to update the status of a discrete input.
 
@@ -267,7 +267,7 @@ Click **Add** at the top right of the **Holding registers** section, to add a re
 12. Select the **Send event** checkbox if an event should be generated each time the value of the register changes. If **Send event** is selected, you can specify the type of event and the text in the event.
 13. Click **OK** to save your settings.
  
-![Add register](/guides/images/users-guide/addregister.png)
+![Add register](/guides/images/users-guide/CloudFieldbus/fieldbus-deviceprotocols-newregister.png)
 
 In the **Options** section, select the checkbox **Use server time** to create the time stamps for data on the server instead of on the terminal. If you need to support buffering of data on the terminal, leave this checkbox clear.
 
@@ -286,7 +286,7 @@ CAN device types can be configured in a very similar way as Modbus device types.
 * Enter the CAN message ID of the specific message the data should be extracted from. Use a hexadecimal number for the message ID.
 * Conversion of values is extended by an offset parameter. This will be added or substracted from the register value, depending on its sign. The offset calculation is done after applying multiplier and divisor, and before performing decimal shifting.
 
-![Add CAN register](/guides/images/users-guide/addregisterCAN.png)
+![Add CAN register](/guides/images/users-guide/CloudFieldbus/fieldbus-deviceprotocols-newregistercan.png)
 
 #### <a name="configureOPCUA"></a>Configuring OPC UA data
 

@@ -51,7 +51,7 @@ The bottom arrow represents the push connection (from Cumulocity to the device).
 
 Push connection means the connection from Cumulocity to /devicecontrol/notifications API, **not** to real-time API.
 
->**Info**: Connection monitoring is not real time. This means that the connection status will not change immediately when you switch off a device. Depending on the used protocol for push connection monitoring this can take up to 20 minutes.
+>**Info**: Connection monitoring is not real time. This means that the displayed connection status will not change immediately after switching off a device. Depending on the used protocol for push connection monitoring this can take a couple of minutes.
 
 **Maintenance mode**
 

@@ -8,7 +8,7 @@ As the web ecosystem evolves, as a platform we evolve with it - while assuring t
 
 This process involves migration effort, so we believe that providing some background information on how the stack and the build process has evolved over time will help developers to better understand why some parts work the way you see today and why migration effort is needed.
 
-### Terminology: Plugins vs. modules
+### Brief background: plugins vs. modules
 
 From day one the UI has always had a modular architecture. The units of functionality are grouped in “plugins” that can be composed to build applications. In practice plugins are simply modules.
 
@@ -102,17 +102,128 @@ While previously publishing a tgz to our server, we will now deploy to npm:
 
 So far, branding was always considered part of the application, as a module like any other. When there was the need to change it we had to change the application definition. For this we used the targets definitions. Now it is a build time option that reflects into its own entry point in the application. When building an application you will have one entry point for the application and another for the branding. That allows to update the application without redeploying the branding.
 
-#### Migrating
+## Migrating
 
-We still support manifest files as entry points, so it is possible to use these as well as normal package.json files.
+To use the new tooling you need to switch the build tools. Previously, we have published the `c8y` command in the npm package "cumulocity-node-tools". Now we changed the command name to `c8ycli` to avoid conflicts and it is published on npm as "@c8y/cli".
 
-As mentioned above we aimed at making the transition as smooth as possible.
+The following table shows which versions support which tooling:
 
-Looking into the repository [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples/branch/next?dest=develop#diff) the diff with the changes is quite concise:
+<!-- https://codepen.io/confraria/pen/VRrpPV -->
+<table style="width:100%;font-family:sans-serif" class="support-versions">
+  <style>
+    .support-versions .green {
+       background-color: green !important;
+    }
+    .support-versions .red {
+       background-color: red !important;
+    }
+    .support-versions .yellow {
+       background-color: gold !important;
+    }
+    .support-versions tr > td:first-child {
+      font-weight:bold;
+      text-align:right;
+    }
+    .support-versions .sub {
+      font-weight: normal !important;
+      color: gray;
+    }
+  </style>
+  <tr style="text-align:center">
+    <td></td>
+    <th>9.16.x</th>
+    <th>9.22.x</th>
+    <th>9.25.x</th>
+    <th>10.4.0.x</th>
+  <tr>
+  <tr>
+    <td>cumulocity-node-tools</td>
+    <td colspan="3" class="green"></td>
+    <td class="red"></td>
+  </tr>
+  <tr>
+    <td>@c8y/cli</td>
+    <td colspan="4"></td>
+  </tr>
+  <tr>
+    <td class="sub">AngularJS</td>
+    <td colspan="3" class="green"></td>
+    <td class="red"></td>
+  </tr>
+  <tr>
+    <td class="sub">Angular</td>
+    <td colspan="2" class="yellow"></td>
+    <td colspan="2" class="green"></td>
+  </tr>
+  <tr>
+    <td class="sub">Hybrid (Angular & AngularJS)</td>
+    <td colspan="2" class="red"></td>
+    <td colspan="2" class="green"></td>
+  </tr>
+</table>
 
-- Add dependencies
-- Add (CSS) to every http @import declaration inside a less file.
+The table can be understand as follows:
+
+ * The old tooling called "cumulocity-node-tools" only supports AngularJS builds until version 9.22.x
+ * The new tooling called "@c8y/cli" can be used to build AngularJS applications until 9.25.x 
+ * Angular-only applications (= applications that are not extending our default applications: Cockpit, Device Management and Administration) can be build since 9.16.x as beta (yellow). The beta ended in 9.25.x.
+ * Hybrid applications are applications that run with Angular and AngularJS at the same time and enable the use of existing AngularJS plugins in a modern Angular application.
+
+ > **Info**: The Cumulocity platform itself is running as a hybrid application in production since version 9.25.x.
 
 #### Deprecating custom manifests
 
-Now developers have at their disposal all modern js, so they just need to use normal ESM to import and export dependencies. Although the manifest files will still work they are no longer required.
+Now developers have at their disposal all modern JS, so they just need to use normal ESM to import and export dependencies. Although the manifest files will still work, they are no longer required. We still support manifest files as entry points, so it is possible to use these as well as normal package.json files.
+
+The cumulocity.json manifest is in practice a module descriptor, so with @c8y/cli (which uses webpack as a module bundler) applications and plugin manifests are resolved and loaded into webpack as any other module, by using custom loaders and resolvers.
+
+For example, built-in AngularJS plugins are now included like this:
+
+```javascript
+import '@c8y/ng1-modules/dashboard2/cumulocity.json';
+import '@c8y/ng1-modules/dashboardUI/cumulocity.json';
+import '@c8y/ng1-modules/groupsHierarchy/cumulocity.json';
+import '@c8y/ng1-modules/measurements/cumulocity.json';
+import '@c8y/ng1-modules/map/cumulocity.json';
+```
+
+And they can also be imported inside any JS file:
+
+```javascript
+import './plugins/mywidget/cumulocity.json';
+```
+
+#### Running an existing application with @c8y/cli
+
+As observed in [this diff](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples/branches/compare/next%0Dc5431a1#diff) the changes to include the new tooling to an existing project are quite concise.
+
+In [@c8y/cli](/guides/web/angular#cli), the entry point of an application can be a cumulocity.json application manifest or a plain Javascript file.
+
+```bash
+npx c8ycli serve ./cumulocity.json
+npx c8ycli serve ./src/main.js
+```
+
+#### Using target files
+
+Although target files are deprecated, it is still possible to use them if the entry point of an application is a cumulocity.json manifest.
+
+To run the Cockpit application with a specific target:
+
+```
+npx c8ycli serve node_modules/@c8y/ng1-modules/apps/cockpit/cumulocity.json --env.target=mytarget.json
+```
+
+Although the modification to the application is read from the target file, the definition to run or build the application must be passed as an argument to the CLI.
+
+
+#### Alternative to target files
+
+As an alternative to target files developers should now use [applications options](/guides/web/angular#applications-options).
+
+There is no alternative to mutating the list of imported plugins. The recommended approach is to explicitly import the required modules.
+
+
+
+
+

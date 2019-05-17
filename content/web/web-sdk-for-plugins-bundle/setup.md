@@ -17,7 +17,7 @@ You will need the following prerequisites for being able to develop plugins and 
 
 * You will need [Node.js](http://nodejs.org/) *(6.7 or newer)*
 * You will need [npm](https://www.npmjs.com/) *(installed with Node.js)*
-* You will need access to your Cumulocity account, i.e. you need your tenant name, username and password.
+* You will need access to your Cumulocity account, i.e. you need your tenant ID, username and password.
 
 ### <a name="cli-tool"></a>Cumulocity CLI tool
 

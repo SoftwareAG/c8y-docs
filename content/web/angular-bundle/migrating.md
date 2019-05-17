@@ -4,125 +4,72 @@ layout: redirect
 weight: 50
 ---
 
-Since 9.16.0 we have introduced Angular support and as such the build process had to change. There is a transition period where both tools are expected to work.
 
-<!-- https://codepen.io/confraria/pen/VRrpPV -->
-<table style="width:100%;font-family:sans-serif" class="support-versions">
-  <style>
-    .support-versions .green {
-       background-color: green !important;
-    }
-    .support-versions .red {
-       background-color: red !important;
-    }
-    .support-versions .yellow {
-       background-color: gold !important;
-    }
-    .support-versions tr > td:first-child {
-      font-weight:bold;
-      text-align:right;
-    }
-    .support-versions .sub {
-      font-weight: normal !important;
-      color: gray;
-    }
-  </style>
-  <tr style="text-align:center">
-    <td></td>
-    <th>9.16.x</th>
-    <th>9.22.x</th>
-    <th>9.25.x</th>
-    <th>10.4.0.x</th>
-  <tr>
-  <tr>
-    <td>cumulocity-node-tools</td>
-    <td colspan="3" class="green"></td>
-    <td class="red"></td>
-  </tr>
-  <tr>
-    <td>@c8y/cli</td>
-    <td colspan="4"></td>
-  </tr>
-  <tr>
-    <td class="sub">AngularJS</td>
-    <td colspan="3" class="green"></td>
-    <td class="red"></td>
-  </tr>
-  <tr>
-    <td class="sub">Angular</td>
-    <td colspan="2" class="yellow"></td>
-    <td colspan="2" class="green"></td>
-  </tr>
-  <tr>
-    <td class="sub">Hybrid (Angular & AngularJS)</td>
-    <td colspan="2" class="red"></td>
-    <td colspan="2" class="green"></td>
-  </tr>
-  <tr>
-    <td>@c8y/cli build in production</td>
-    <td colspan="4"></td>
-  </tr>
-   <tr>
-    <td class="sub">AngularJS</td>
-    <td class="red"></td>
-    <td class="green"></td>
-    <td colspan="2" class="red"></td>
-  </tr>
-  <tr>
-    <td class="sub">Hybrid (Angular & AngularJS)</td>
-    <td colspan="2" class="red"></td>
-    <td colspan="2" class="green"></td>
-  </tr>
-</table>
+This section targets to developers who have either already developed a plugin with the AngularJS SDK for plugins or want to extend the existing default applications. 
 
-The cumulocity.json manifest is in practice a module descriptor so with `@c8y/cli` (which uses webpack as a module bundler) applications and plugin manifests are resolved and loaded into webpack as any other module, by using a custom loaders and resolvers.
+You should have read and understand the following concepts:
 
-For example built-in AngularJS plugins are now included like this
+* [Overview](/guides/web/angular#overview), explaining when to use which SDK.
+* [Upgrading to Angular](/guides/web/background), explaining since which version you can use the new SDK.
+* [Developer command line tool](/guides/web/angular#developer-command-line-tool), enabling you to install the new tooling.
 
-```javascript
-import '@c8y/ng1-modules/dashboard2/cumulocity.json';
-import '@c8y/ng1-modules/dashboardUI/cumulocity.json';
-import '@c8y/ng1-modules/groupsHierarchy/cumulocity.json';
-import '@c8y/ng1-modules/measurements/cumulocity.json';
-import '@c8y/ng1-modules/map/cumulocity.json';
-```
 
-And they can also be imported inside any js file:
+### Setting up a hybrid application
 
-```javascript
-import './plugins/mywidget/cumulocity.json';
-```
+With a hybrid application AngularJS and Angular can be used at the same time. It allows to use not-migrated plugins written in AngularJS in an Angular context. The CLI automatically sets up a hybrid application, if you use one of our default applications as a template (cockpit, devicemangement or administration). The command to be used is `c8ycli new <your-app-name> <template-name>`. 
 
-## Running an existing app with @c8y/cli
-
-As observed in [this diff](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples/branches/compare/next%0Dc5431a1#diff) the changes to include the new tooling to an existing project are quite concise.
-
-In [@c8y/cli](/guides/web/angular#cli) the entry point of an application can be a cumulocity.json application manifest or a plain javascript file.
-
-```bash
-npx c8ycli serve ./cumulocity.json
-npx c8ycli serve ./src/main.js
-```
-
-## Using target files
-
-Although target files are deprecated, it is still possible to use them if the entry point of an application is a cumulocity.json manifest.
+For example, to override the default cockpit you use:
 
 ```
-# To run the Cockpit application with a specific target
-npx c8ycli serve node_modules/@c8y/ng1-modules/apps/cockpit/cumulocity.json --env.target=mytarget.json
+c8ycli new cockpit cockpit
 ```
 
-Although the modifications to the application is read from the target file, the definition of application to run or build must be passed as an argument to the cli.
+When you run this command it provides you with a very simple file structure that contains the following files:
 
+ - `app.module.ts`: An Angular entry module in which you can hook Angular routes. Note that for a Cumulocity application you don't get access to the root element and therefore there is no root template (index.html) which you can modify.
+ - `package.json`: The package.json describes the dependencies and the application itself. The `c8y.upgrade: true` flag tells our webpack plugins to allow AngularJS plugins.
+ - `ng1.ts`: Our default AngularJS plugins for the Cockpit application.
+ - `index.ts`: The bootstrapping which is setup to bootstrap a hybrid application.
+ - `polyfills.ts`: Polyfills setup to run in IE11.
+ - `tsconfig.json`: The typescript configuration.
 
-## Alternative to target files
+### Importing AngularJS plugins
 
-As an alternative to target files developers should now use [applications options](/guides/web/angular#applications-options).
+If you want to integrate your custom plugin into an application, you first need to set up the hybrid application for the application into which you want to import the plugin. Then you simply copy the plugin to the hybrid applicatiob and reference the `cumulocity.json` of the plugin in the `ng1.ts` file with an import:
 
-There is no alternative to mutating the list of imported plugins. The recommended approach is to explicitly import the required modules.
+```
+import 'my-custom-plugin/cumulocity.json';
+```
 
+Webpack now reads the manifest file and converts the content to CommonJS require imports so that the plugin will be loaded and applied to the application.
 
+### Custom bootstrapping and upgrading
 
+In the `app.module.ts` file we bootstrap the hybrid application with the following code on the `HybridAppModule`. 
 
+```typescript
+import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
+import { ng1Modules } from './ng1';
 
+export abstract class HybridAppModule {
+  ng1Modules = ng1Modules;
+  protected upgrade: NgUpgradeModule;
+
+  ngDoBootstrap() {
+    (window as any).bootstrap();
+    this.upgrade.bootstrap(document.getElementById('app'), this.ng1Modules, { strictDi: false });
+  }
+}
+```
+
+This module not only bootstraps the upgrade module but also initializes the Angular application. 
+
+In the `app.module.ts` you can control the bootstrapping. For example, you can add another module to the bootstrapped ng1 modules:
+
+```typescript
+constructor() {
+  this.ng1Modules.push('my-custom-module');
+}
+```
+
+This will also load your `my-custom-module`. You can use this to override the `ngDoBootstrap()` function to whatever fits your application needs, e.g. upgrade or downgrade Angular services as shown in the Angular docs.

@@ -41,19 +41,19 @@ To establish a connection you need to configure the following parameters:
 - User: &lt;tenant>/&lt;username>
 - Password: &lt;your&#95;cumulocity_password>
 
-For more information, refer to the [Hello MQTT](https://www.cumulocity.com/guides/device-sdk/mqtt/#hello-mqtt) section.
+For more information, refer to the [Hello MQTT](/guides/device-sdk/mqtt/#hello-mqtt) section.
 
 The process works as follows:
 
 * Cumulocity assumes that each device has some form of unique ID. For instance, a good device identifier can be the MAC address of the network adapter, the IMEI of a mobile device or a hardware serial number.
 * When you take a new device into use, you enter this unique ID into **Device registration** in the **Device Management** application in Cumulocity, and start the device.
-* The device will use this ID as part of the [MQTT ClientId](/guides/device-sdk/mqtt#mqtt-clientid) and static user credentials that can be enquired from support@cumulocity.com.
+* The device will use this ID as part of the [MQTT ClientId](/guides/device-sdk/mqtt#mqtt-clientid) and static user credentials that can be enquired via [https://empower.softwareag.com](via https://empower.softwareag.com).
 * The device subscribes to the topic <kbd>s/dcr</kbd>.
 * The device starts publishing continuous empty messages on the topic <kbd>s/ucr</kbd> to notify the server that it is ready to retrieve credentials.
 * Next, you must accept the connection from the device in the **Device Registration** page.
 * When the device sends the next empty message it should receive credentials in the following format:
 
-```plaintext
+```text
 70,<tenant>,<username>,<password>
 ```
 
@@ -67,7 +67,7 @@ The device creation can be achieved by employing the [static template 100](/guid
 
 The device will be linked automatically to the ID the client uses with its MQTT ClientId.
 
-```plaintext
+```text
 100,Device Name,Device Type
 ```
 >**Info:** The topic used for Cumulocity's pre-provided static templates is <kbd>s/us</kbd>.
@@ -78,7 +78,7 @@ Like the root device, also children of it are covered by the automatic device cr
 
 To handle this step manually you can send the [static template 101](/guides/device-sdk/mqtt#static-templates) for creating a child device. The template will only create the child if it does not already exist.
 
-```plaintext
+```text
 101,Unique Child ID,Child Name,Child Type
 ```
 

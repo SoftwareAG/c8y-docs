@@ -25,6 +25,18 @@ Afterwards, any PUT or DELETE requests made on that option by the owner tenant, 
 |key|String|1|Key of option|
 |value|String|1|Value of option|
 
+**Info:** Adding "credentials." prefix to the key will make the value of the option to be encrypted. Additionally, when the option is being sent to the microservice, the "credentials." prefix is removed and the value is decrypted. For example:
+
+	{
+	    "category": "c8y-tutorial-7",
+	    "key": "credentials.mykey",
+	    "value": "myvalue"
+	}
+
+In the request now there will be an additional header:
+
+		"Mykey": "myvalue"
+
 ### GET a representation of a Option.
 
 Response body: Option

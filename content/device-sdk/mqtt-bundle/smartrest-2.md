@@ -101,13 +101,13 @@ When subscribed, the client can send an empty message to the creation topic whic
 
 Empty publish to <kbd>s/ut/myExistingTemplateCollection</kbd>
 
-```plaintext
+```text
 20,myExistingTemplateCollection,<ID of collection>
 ```
 
 Empty publish to <kbd>s/ut/myNotExistingTemplateCollection</kbd>
 
-```plaintext
+```text
 41,myNotExistingTemplateCollection
 ```
 
@@ -348,20 +348,20 @@ Device object:
 
 Template creation:
 
-```plaintext
+```text
 10,999,GET,INVENTORY,,true
 11,888,,c8y_IsDevice,type,c8y_Test,c8y_Configuration
 ```
 
 Client publishes:
 
-```plaintext
+```text
 999,12345
 ```
 
 Client receives:
 
-```plaintext
+```text
 888,myMqttDevice,,"val1=1\nval2=2"
 ```
 
@@ -386,7 +386,7 @@ Operation object:
 
 Template creation:
 
-```plaintext
+```text
 11,111,c8y_CustomConfiguration,deviceId,val1,val2,customValues[*]
 11,222,,deviceId,c8y_CustomConfiguration.val1,c8y_CustomConfiguration.val2
 11,333,,deviceId,val1,val2,customValues[*]
@@ -428,23 +428,22 @@ Device object:
 
 Template creation:
 
-```plaintext
+```text
 10,999,GET,INVENTORY,,true
 11,888,,,"$.myList[*].type"
 ```
 
 Client publishes:
 
-```plaintext
-999,12345
+```text
+99,12345
 ```
 
 Client receives:
 
-```plaintext
+```text
 888,test,test2
 ```
-
 
 ### Using a default collection
 
@@ -457,7 +456,7 @@ You can specify one X-ID within your MQTT ClientId (see [MQTT implementation](/g
 
 Your MQTT ClientId could look like this:
 
-```plaintext
+```text
 d:myDeviceSerial:myDefaultTemplateXID
 ```
 

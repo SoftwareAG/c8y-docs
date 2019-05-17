@@ -20,7 +20,7 @@ OR
 
 On Linux machines, add the following entry to */etc/hosts*:
 
-```plaintext
+```text
 <IP address> <domain_name>
 ```
 

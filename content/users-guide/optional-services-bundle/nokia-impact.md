@@ -30,11 +30,38 @@ The following illustration provides an overview on the Cumulocity IMPACT integra
 
 IMPACT devices do not need to be registered again in Cumulocity. Cumulocity’s device lifecycle integration automatically handles the following events:
 
-|Event type|Description|Actions triggered in IMPACT agent
-|:---|:---|:---
-|Registration|A new device has been registered at IMPACT.|Create device in Cumulocity.<br>Obtain list of resources provided by device (either from request or by querying device).<br>Subscribe to all resources that are mapped as “Auto-Observe” in the corresponding object mapping.
-|Deregistration|A device has been deleted in IMPACT.|At IMPACT, unsubscribe from all resources for this device.
-|Expiration|A device registration in IMPACT has expired.|Mark device in Cumulocity as disabled.
+<table>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+<thead>
+<tr>
+<th align="left">Event type</th>
+<th align="left">Description</th>
+<th align="left">Actions triggered in IMPACT agent</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Registration</td>
+<td align="left">A new device has been registered at IMPACT.</td>
+<td align="left">Create device in Cumulocity.<br>Obtain list of resources provided by device (either from request or by querying device).<br>Subscribe to all resources that are mapped as “Auto-Observe” in the corresponding object mapping.</td>
+</tr>
+
+<tr>
+<td align="left">Deregistration</td>
+<td align="left">A device has been deleted in IMPACT.</td>
+<td align="left">At IMPACT, unsubscribe from all resources for this device.</td>
+</tr>
+
+<tr>
+<td align="left">Expiration</td>
+<td align="left">A device registration in IMPACT has expired.</td>
+<td align="left">Mark device in Cumulocity as disabled.</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -44,7 +71,7 @@ To process data from IMPACT devices, Cumulocity uses device protocols. Through d
 
 Device protocols are accessible through the **Devices types** menu in the Device Management application. For details on the general usage see [Device protocols](/guides/users-guide/device-management#managing-device-types).
 
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-device-protocols.png" alt="Device protocols" style="max-width: 100%">
+![Impact protocols](/guides/images/users-guide/impact/devmgmt-impact-protocols.png)
 
 #### How to add an IMPACT device protocol
 
@@ -53,14 +80,14 @@ To add a new IMPACT device protocol follow these steps:
 1. In the Device Management application, navigate to the **Device protocol** page, accessible from the **Device types** menu in the navigator.
 2. Click **Add device protocol** in the top menu bar. 
 3. In the upcoming window select **IMPACT** as device protocol type.<br><br>
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-DeviceProtocolAdd.png" alt="Add protocol" style="max-width: 50%"><br>
+![New Impact protocol](/guides/images/users-guide/sigfox/sigfox-newprotocol.png)
 4. In the next dialog, enter a unique ID, a name and an optional description for the device protocol.<br><br>
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-DeviceProtocolAdd2.png" alt="Add protocol" style="max-width: 50%"><br>
+![New Impact protocol2](/guides/images/users-guide/impact/impact-newprotocol-idname.png)
 5. Click **Create** to create the new device protocol.
 
 The device protocol will open in a new page.
 
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-DeviceProtocolPage.png" alt="Protocol page" style="max-width: 100%">
+![Impact temperature](/guides/images/users-guide/impact/impact-temperature.png)
 
 In the **Device protocol** page you will see the description at the top left and the ID, the creation date and date of the last update at the top right.
 
@@ -68,7 +95,7 @@ Below a list of resources configured for the device will be listed (which is emp
 
 Example: Resource list for the device protocol "Temperature Measurement":
 
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-DeviceProtocolResources.png" alt="Protocol page" style="max-width: 100%">
+![Impact resources](/guides/images/users-guide/impact/impact-resources.png)
 
 #### How to add a resource to a device
 
@@ -76,18 +103,60 @@ Click **Add resource** at the bottom of the resource list to add a new resource 
 
 For each resource you may specify the following parameters:
 
-|Field|Description|Required 
-|:---|:---|:---
-|ID|The ID of the resource. Must be unique within one protocol object.|Mandatory
-|Name|Name for the resource.|Mandatory
-|Type|The parameter type. May be one of BOOLEAN, STRING, INTEGER or FLOAT.|Mandatory
-|Unit|The parameter unit, e.g. Celsius, meter.|Optional
-|Instance Type|The instance type for the parameter. May be one of "Single" or "Multiple". The default value is "Single".|Optional
-|Description|A more detailed description of the resource.|Optional
+<table>
+<col style="width: 20%;">
+<col style="width: 65%;">
+<col style="width: 15%;">
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Description</th>
+<th align="left">Required</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">ID</td>
+<td align="left">The ID of the resource. Must be unique within one protocol object.</td>
+<td align="left">Mandatory</td>
+</tr>
+
+<tr>
+<td align="left">Name</td>
+<td align="left">Name for the resource.</td>
+<td align="left">Mandatory</td>
+</tr>
+
+<tr>
+<td align="left">Type</td>
+<td align="left">The parameter type. May be one of BOOLEAN, STRING, INTEGER or FLOAT.</td>
+<td align="left">Mandatory</td>
+</tr>
+
+<tr>
+<td align="left">Unit</td>
+<td align="left">The parameter unit, e.g. Celsius, meter.</td>
+<td align="left">Optional</td>
+</tr>
+
+<tr>
+<td align="left">Instance Type</td>
+<td align="left">The instance type for the parameter. May be one of “Single” or “Multiple”. The default value is “Single”.</td>
+<td align="left">Optional</td>
+</tr>
+
+<tr>
+<td align="left">Description</td>
+<td align="left">A more detailed description of the resource.</td>
+<td align="left">Optional</td>
+</tr>
+</tbody>
+</table>
 
 Optionally, you may turn on several functionalities for the resource:
 
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-DeviceProtocolResourceFunctionalities.png" alt="Functionalities" style="max-width: 100%">
+![Impact functionalities](/guides/images/users-guide/impact/impact-functionalities.png)
 
 **Send measurements** 
 
@@ -125,4 +194,4 @@ Finally, click **Save** to create the resource. The resource will be added to th
 
 In the resources list you can see if functionalities have been turned on for a resource. Active functionalities are indicated by the related icons. In the example below, **Send measurements** and **Auto observe** are turned on.
 
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-DeviceProtocolFunctionalitiesOn.png" alt="Functionalities" style="max-width: 100%">
+![Impact sensor value](/guides/images/users-guide/impact/impact-sensor-value.png)

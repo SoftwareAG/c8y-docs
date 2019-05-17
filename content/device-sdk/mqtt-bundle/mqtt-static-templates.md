@@ -24,13 +24,13 @@ The automatic creation of devices is also supported for 1st level child devices.
 
 If a parameter is not declared as mandatory, the client can send an empty string in that place.
 
-```plaintext
+```text
 100,,myType
 ```
 
 Tailing commas is not required. The two lines below result in the same message.
 
-```plaintext
+```text
 100,,
 100
 ```
@@ -53,7 +53,7 @@ Create a new device for the serial number in the inventory if not yet existing. 
 
 **Example**
 
-```plaintext
+```text
 100,myDevice,myType
 ```
 
@@ -69,7 +69,7 @@ Create a new child device for the current device. The newly created object will 
 
 **Example**
 
-```plaintext
+```text
 101,uniqueChildId,myChildDevice,myChildType
 ```
 
@@ -79,7 +79,7 @@ Trigger the sending of child devices of the device.
 
 **Example**
 
-```plaintext
+```text
 105
 ```
 
@@ -95,7 +95,7 @@ Update the hardware properties of the device.
 
 **Example**
 
-```plaintext
+```text
 110,1234567890,myModel,1.2.3
 ```
 
@@ -115,7 +115,7 @@ Update the mobile properties of the device.
 
 **Example**
 
-```plaintext
+```text
 111,1234567890,,54353
 ```
 
@@ -132,7 +132,7 @@ Update the position properties of the device.
 
 **Example**
 
-```plaintext
+```text
 112,50.323423,6.423423
 ```
 
@@ -146,7 +146,7 @@ Update the configuration properties of the device.
 
 Example
 
-```plaintext
+```text
 113,"val1=1\nval2=2"
 ```
 
@@ -160,7 +160,7 @@ Set the supported operations of the device.
 
 **Example**
 
-```plaintext
+```text
 114,c8y_Restart,c8y_Configuration,c8y_SoftwareList
 ```
 
@@ -176,7 +176,7 @@ Set the firmware installed on the device.
 
 **Example**
 
-```plaintext
+```text
 115,firmwareName,firmwareVersion,firmwareUrl
 ```
 
@@ -193,7 +193,7 @@ Set the list of software installed on the device.
 
 **Example**
 
-```plaintext
+```text
 116,software1,version1,url1,software2,,url2,software3,version3
 ```
 
@@ -207,7 +207,7 @@ Set the required interval for availability monitoring. It will only set the valu
 
 **Example**
 
-```plaintext
+```text
 117,60
 ```
 
@@ -227,7 +227,7 @@ Create a measurement with a given fragment and series.
 
 **Example**
 
-```plaintext
+```text
 200,c8y_Temperature,T,25
 ```
 
@@ -243,7 +243,7 @@ Create a measurement of type **c8y_SignalStrength**.
 
 **Example**
 
-```plaintext
+```text
 210,-90,23,2016-06-22T17:03:14.000+02:00
 ```
 
@@ -258,7 +258,7 @@ Create a measurement of type **c8y_TemperatureMeasurement**.
 
 **Example**
 
-```plaintext
+```text
 211,25,2016-06-22T17:03:14.000+02:00
 ```
 
@@ -273,7 +273,7 @@ Create a measurement of type **c8y_Battery**.
 
 **Example**
 
-```plaintext
+```text
 212,95,2016-06-22T17:03:14.000+02:00
 ```
 
@@ -291,7 +291,7 @@ Create a CRITICAL alarm.
 
 **Example**
 
-```plaintext
+```text
 301,c8y_TemperatureAlarm
 ```
 
@@ -307,7 +307,7 @@ Create a MAJOR alarm.
 
 **Example**
 
-```plaintext
+```text
 302,c8y_TemperatureAlarm,"This is an alarm"
 ```
 
@@ -323,7 +323,7 @@ Create a MINOR alarm.
 
 **Example**
 
-```plaintext
+```text
 303,c8y_TemperatureAlarm
 ```
 
@@ -339,7 +339,7 @@ Create a WARNING alarm.
 
 **Example**
 
-```plaintext
+```text
 304,c8y_TemperatureAlarm,,2013-06-22T17:03:14.000+02:00
 ```
 
@@ -354,7 +354,7 @@ Change the severity of an existing alarm.
 
 **Example**
 
-```plaintext
+```text
 305,c8y_TemperatureAlarm,CRITICAL
 ```
 
@@ -368,7 +368,7 @@ Clear an existing alarm.
 
 **Example**
 
-```plaintext
+```text
 306,c8y_TemperatureAlarm
 ```
 
@@ -386,7 +386,7 @@ Create an event of given type and text.
 
 **Example**
 
-```plaintext
+```text
 400,c8y_MyEvent,"Something was triggered"
 ```
 
@@ -404,7 +404,7 @@ Create typical location update event containing **c8y_Position**.
 
 **Example**
 
-```plaintext
+```text
 401,51.151977,6.95173,67
 ```
 
@@ -422,7 +422,7 @@ Create typical location update event containing **c8y_Position**. Additionally t
 
 **Example**
 
-```plaintext
+```text
 402,51.151977,6.95173,67
 ```
 
@@ -434,7 +434,7 @@ Trigger the sending of all PENDING operations for the agent.
 
 **Example**
 
-```plaintext
+```text
 500
 ```
 
@@ -448,7 +448,7 @@ Set the oldest PENDING operation with given fragment to EXECUTING.
 
 **Example**
 
-```plaintext
+```text
 501,c8y_Restart
 ```
 
@@ -463,7 +463,7 @@ Set the oldest EXECUTING operation with given fragment to FAILED.
 
 **Example**
 
-```plaintext
+```text
 502,c8y_Restart,"Could not restart"
 ```
 
@@ -480,7 +480,7 @@ It enables the device to send additional parameters that trigger additional step
 
 **Example**
 
-```plaintext
+```text
 503,c8y_Restart
 ```
 
@@ -501,7 +501,7 @@ List all children of the device.
 
 **Example**
 
-```plaintext
+```text
 106,child1,child2,child3
 ```
 
@@ -515,7 +515,7 @@ Restart a device.
 
 **Example**
 
-```plaintext
+```text
 510,DeviceSerial
 ```
 
@@ -529,7 +529,7 @@ Run the command being sent in the operation.
 
 **Example**
 
-```plaintext
+```text
 511,DeviceSerial,execute this
 ```
 
@@ -543,7 +543,7 @@ Set the configuration being sent in the operation.
 
 **Example**
 
-```plaintext
+```text
 513,DeviceSerial,"val1=1\nval2=2"
 ```
 
@@ -559,7 +559,7 @@ Install the firmware from the url.
 
 **Example**
 
-```plaintext
+```text
 515,DeviceSerial,myFimrware,1.0,http://www.my.url
 ```
 
@@ -576,7 +576,7 @@ Install the software sent in the operation.
 
 **Example**
 
-```plaintext
+```text
 516,DeviceSerial,softwareA,1.0,url1,softwareB,2.0,url2
 ```
 
@@ -590,7 +590,7 @@ Send the measurements specified by the request name.
 
 **Example**
 
-```plaintext
+```text
 517,DeviceSerial,LOGA
 ```
 
@@ -604,7 +604,7 @@ Open or close the relay.
 
 **Example**
 
-```plaintext
+```text
 518,DeviceSerial,OPEN
 ```
 
@@ -618,7 +618,7 @@ Open or close the relays in the array.
 
 **Example**
 
-```plaintext
+```text
 519,DeviceSerial,OPEN,CLOSE,CLOSE,OPEN
 ```
 
@@ -628,7 +628,7 @@ The current configuration is uploaded from Cumulocity to the device.
 
 **Example**
 
-```plaintext
+```text
 520,DeviceSerial
 ```
 
@@ -642,7 +642,7 @@ Download a configuration file from the url.
 
 **Example**
 
-```plaintext
+```text
 521,DeviceSerial,http://www.my.url
 ```
 
@@ -660,7 +660,7 @@ Upload a log file for the given parameters.
 
 **Example**
 
-```plaintext
+```text
 522,DeviceSerial,logfileA,2013-06-22T17:03:14.000+02:00,2013-06-22T18:03:14.000+02:00,ERROR,1000
 ```
 
@@ -674,7 +674,7 @@ Change the communication mode.
 
 **Example**
 
-```plaintext
+```text
 523,DeviceSerial,SMS
 ```
 

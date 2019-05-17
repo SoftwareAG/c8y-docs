@@ -21,60 +21,60 @@ Response body: MeasurementCollection
 Required role: ROLE\_MEASUREMENT\_READ
 
 Example request: Retrieve energy readings.
-
-     GET /measurement/measurements
-     Host: ...
-     Authorization: Basic ...
-     Accept: application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
-
+```http
+ GET /measurement/measurements
+ Host: ...
+ Authorization: Basic ...
+ Accept: application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
+```
 Example response:
-
-    HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
-    Content-Length: ...
-
+```http
+HTTP/1.1 200 OK
+Content-Type: application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
+Content-Length: ...
+{
+  "self":"...",
+  "measurements":[
     {
-      "self":"...",
-      "measurements":[
-        {
-          "id" : "42",
-          "self" : "...",
-          "time" : "2011-09-06T12:03:27.845Z",
-          "type" : "KamstrupA220Reading",
-          "source" : { "id": "12345", "self": "..." },
-          "com_cumulocity_model_energy_measurement_SinglePhaseElectricityMeasurement": {
-            "A+:1": { "value": 123, "unit": "kWh" },
-            "A-:1": { "value": 2, "unit": "kWh" }
-          },
-          "com_cumulocity_model_energy_measurement_ThreePhaseElectricityMeasurement": {
-            "A+:1": { "value": 123, "unit": "kWh" },
-            "A+:2": { "value": 123, "unit": "kWh" },
-            "A+:3": { "value": 123, "unit": "kWh" }
-          }
-        },
-        {
-          "id" : "43",
-          "self" : "...",
-          "time" : "2011-09-19T12:03:27.845Z",
-          "type" : "KamstrupA220Reading",
-          "source" : { "id": "12345", "self": "..." },
-          "com_cumulocity_model_energy_measurement_SinglePhaseElectricityMeasurement": {
-            "A+:1": { "value": 1234, "unit": "kWh" },
-            "A-:1": { "value": 2, "unit": "kWh" }
-          },
-          "com_cumulocity_model_energy_measurement_ThreePhaseElectricityMeasurement": {
-            "A+:1": { "value": 1234, "unit": "kWh" },
-            "A+:2": { "value": 1234, "unit": "kWh" },
-            "A+:3": { "value": 1234, "unit": "kWh" }
-          }
-        }
-      ],
-      "statistics" : {
-        "totalPages" : 2,
-        "pageSize" : 5,
-        "currentPage : 1
+      "id" : "42",
+      "self" : "...",
+      "time" : "2011-09-06T12:03:27.845Z",
+      "type" : "KamstrupA220Reading",
+      "source" : { "id": "12345", "self": "..." },
+      "com_cumulocity_model_energy_measurement_SinglePhaseElectricityMeasurement": {
+        "A+:1": { "value": 123, "unit": "kWh" },
+        "A-:1": { "value": 2, "unit": "kWh" }
+      },
+      "com_cumulocity_model_energy_measurement_ThreePhaseElectricityMeasurement": {
+        "A+:1": { "value": 123, "unit": "kWh" },
+        "A+:2": { "value": 123, "unit": "kWh" },
+        "A+:3": { "value": 123, "unit": "kWh" }
+      }
+    },
+    {
+      "id" : "43",
+      "self" : "...",
+      "time" : "2011-09-19T12:03:27.845Z",
+      "type" : "KamstrupA220Reading",
+      "source" : { "id": "12345", "self": "..." },
+      "com_cumulocity_model_energy_measurement_SinglePhaseElectricityMeasurement": {
+        "A+:1": { "value": 1234, "unit": "kWh" },
+        "A-:1": { "value": 2, "unit": "kWh" }
+      },
+      "com_cumulocity_model_energy_measurement_ThreePhaseElectricityMeasurement": {
+        "A+:1": { "value": 1234, "unit": "kWh" },
+        "A+:2": { "value": 1234, "unit": "kWh" },
+        "A+:3": { "value": 1234, "unit": "kWh" }
       }
     }
+  ],
+  "statistics" : {
+    "totalPages" : 2,
+    "pageSize" : 5,
+    "currentPage : 1
+  }
+}
+```
 
 In case of executing range queries on measurements API, like query by dateFrom and dateTo, the oldest measurements are returned first. It is possible to change the order by adding query parameter "revert=true" to the request URL.
 In many use cases it is needed to get the latest measurement sent from the device. This can be accomplished by passing "revert" param together with "dateFrom" and "dateTo" params to sort the outcome by date, e.g. pass dateFrom from a year ago, and dateTo from the feature.
@@ -88,90 +88,57 @@ Important: for the aggregation to be done correctly the mechanism expects a devi
 Required role: ROLE\_MEASUREMENT\_READ
 
 Example request: retrieve all series.
-
-     GET /measurement/measurements/series...
-     Authorization: Basic ...
-     Accept: application/json
-
+```http
+ GET /measurement/measurements/series...
+ Authorization: Basic ...
+ Accept: application/json
+```
 Example response:
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Content-Length: ...
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: ...
 
-    {
-     values: {
-         2014-12-04T17:33:01.538+01:00: [
-             {
-              min: 13.37,
-              max: 13.37
-             },
-             {
-              min: 11.37,
-              max: 11.37
-             }],
-         2014-12-04T17:34:01.774+01:00: [
-             {
-              min: 10.2,
-              max: 10.2
-             },
-             {
-              min: 11.37,
-              max: 11.37
-             }]
-     },
-     series: [
-             {
-              unit: "m/s2",
-              name: "acceleration",
-              type: "c8y_AccelerationMeasurement"
-             },
-             {
-              unit: "m/s",
-              name: "velocity",
-              type: "c8y_SpeedMeasurement"
-             }],
-     truncated: false
-    }
+```
 
 Series can be filtered by providing additional "series" param with full name of a series (measurement type and series name).
 You can specify more series to filter by adding more "series" param occurrences, e.g.: ...series=c8y_AccelerationMeasurement.acceleration&series=c8y_SpeedMeasurement.velocity...
 Because of this use case, dots must not be used in neither measurement fragment nor series.
 
 Example request: retrieve only specific series.
-
-     GET /measurement/measurements/series?series=c8y_AccelerationMeasurement.acceleration&dateFrom=...
-     Authorization: Basic ...
-     Accept: application/json
-
+```http
+ GET /measurement/measurements/series?series=c8y_AccelerationMeasurement.acceleration&dateFrom=...
+ Authorization: Basic ...
+ Accept: application/json
+```
 Example response:
-
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Content-Length: ...
-
-    {
-     values: {
-         2014-12-04T17:33:01.538+01:00: [
-             {
-              min: 13.37,
-              max: 13.37
-             }],
-         2014-12-04T17:34:01.774+01:00: [
-             {
-              min: 10.2,
-              max: 10.2
-             }]
-     },
-     series: [
-             {
-              unit: "m/s2",
-              name: "acceleration",
-              type: "c8y_AccelerationMeasurement"
-             }],
-     truncated: false
-    }
-
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: ...
+{
+ "values": {
+     "2014-12-04T17:33:01.538+01:00": [
+         {
+          "min": 13.37,
+          "max": 13.37
+         }],
+     "2014-12-04T17:34:01.774+01:00": [
+         {
+          "min": 10.2,
+          "max": 10.2
+         }]
+ },
+ "series": [
+         {
+          "unit": "m/s2",
+          "name": "acceleration",
+          "type": "c8y_AccelerationMeasurement"
+         }],
+ "truncated": false
+}
+```
 Each key in "values" object is a date taken from measurement and it contains a list of min and max pairs. Each pair corresponds to single series definition in "series" object. If there is no aggregation used, min = max in every pair.
 
 Flag "truncated" indicates whether there were more than 5000 values and if the final result was truncated.
@@ -186,51 +153,49 @@ Response body: Measurement
 Required role: ROLE\_MEASUREMENT\_ADMIN or owner of source object
 
 Example Request:
-
-    POST /measurement/measurements
-    Host: ...
-    Authorization: Basic ...
-    Content-Length: ...
-    Content-Type: application/vnd.com.nsn.cumulocity.measurement+json;ver=...
-
-    {
-      "time" : "2011-09-19T12:03:27.845Z",
-      "type" : "KamstrupA220Reading",
-      "source" : { "id": "12345" },
-      "com_cumulocity_model_energy_measurement_SinglePhaseElectricityMeasurement": {
-        "A+:1": { "value": 1234, "unit": "kWh" },
-        "A-:1": { "value": 2, "unit": "kWh" }
-      },
-      "com_cumulocity_model_energy_measurement_ThreePhaseElectricityMeasurement": {
-        "A+:1": { "value": 1234, "unit": "kWh" },
-        "A+:2": { "value": 1234, "unit": "kWh" },
-        "A+:3": { "value": 1234, "unit": "kWh" }
-      }
-    }
-
+```http
+POST /measurement/measurements
+Host: ...
+Authorization: Basic ...
+Content-Length: ...
+Content-Type: application/vnd.com.nsn.cumulocity.measurement+json;ver=...
+{
+  "time" : "2011-09-19T12:03:27.845Z",
+  "type" : "KamstrupA220Reading",
+  "source" : { "id": "12345" },
+  "com_cumulocity_model_energy_measurement_SinglePhaseElectricityMeasurement": {
+    "A+:1": { "value": 1234, "unit": "kWh" },
+    "A-:1": { "value": 2, "unit": "kWh" }
+  },
+  "com_cumulocity_model_energy_measurement_ThreePhaseElectricityMeasurement": {
+    "A+:1": { "value": 1234, "unit": "kWh" },
+    "A+:2": { "value": 1234, "unit": "kWh" },
+    "A+:3": { "value": 1234, "unit": "kWh" }
+  }
+}
+```
 Example response:
-
-    HTTP/1.1 201 Created
-    Content-Type: application/vnd.com.nsn.cumulocity.measurement+json;ver=...
-    Content-Length: ...
-
-    {
-      "id" : "43",
-      "self" : "<<URL of new measurement>>",
-      "time" : "2011-09-19T12:03:27.845Z",
-      "type" : "KamstrupA220Reading",
-      "source" : { "id": "12345", "self": "..." },
-      "com_cumulocity_model_energy_measurement_SinglePhaseElectricityMeasurement": {
-        "A+:1": { "value": 1234, "unit": "kWh" },
-        "A-:1": { "value": 2, "unit": "kWh" }
-      },
-      "com_cumulocity_model_energy_measurement_ThreePhaseElectricityMeasurement": {
-        "A+:1": { "value": 1234, "unit": "kWh" },
-        "A+:2": { "value": 1234, "unit": "kWh" },
-        "A+:3": { "value": 1234, "unit": "kWh" }
-      }
-    }
-
+```http
+HTTP/1.1 201 Created
+Content-Type: application/vnd.com.nsn.cumulocity.measurement+json;ver=...
+Content-Length: ...
+{
+  "id" : "43",
+  "self" : "<<URL of new measurement>>",
+  "time" : "2011-09-19T12:03:27.845Z",
+  "type" : "KamstrupA220Reading",
+  "source" : { "id": "12345", "self": "..." },
+  "com_cumulocity_model_energy_measurement_SinglePhaseElectricityMeasurement": {
+    "A+:1": { "value": 1234, "unit": "kWh" },
+    "A-:1": { "value": 2, "unit": "kWh" }
+  },
+  "com_cumulocity_model_energy_measurement_ThreePhaseElectricityMeasurement": {
+    "A+:1": { "value": 1234, "unit": "kWh" },
+    "A+:2": { "value": 1234, "unit": "kWh" },
+    "A+:3": { "value": 1234, "unit": "kWh" }
+  }
+}
+```
 For POST requests, the source parameter is required to have only an id.
 
 The "id" of the new measurement is generated by the server and returned in the response to the POST operation.
@@ -239,76 +204,75 @@ Please note that for correct visualization of measurement series on UI graphs, p
 
 ### POST - create multiple measurements
 
-	POST /measurement/measurements
-    Host: ...
-    Authorization: Basic ...
-    Content-Length: ...
-    Content-Type: application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
-
-	{
-    "measurements": [
-        {
-         "c8y_SpeedMeasurement": {
-         	"speed": { 
-         		"value": 25,
-         		"unit": "km/h" }
-                },
-         "time":"2013-06-22T17:03:14.000+02:00", 
-         "source": {
-         	"id":"10200" }, 
-         "type": "c8y_SpeedMeasurement"
-        },
-        {
-         "c8y_SpeedMeasurement": {
-       	 	"speed": { 
-            	"value": 22,
-                "unit": "km/h" }
-                },
-         "time":"2013-06-22T17:05:14.000+02:00", 
-         "source": {
-         	"id":"10200" }, 
-         "type": "c8y_SpeedMeasurement"
-        }
-    ]
-	}
-
+```http
+POST /measurement/measurements
+Host: ...
+Authorization: Basic ...
+Content-Length: ...
+Content-Type: application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
+{
+"measurements": [
+    {
+     "c8y_SpeedMeasurement": {
+     	"speed": { 
+     		"value": 25,
+     		"unit": "km/h" }
+            },
+     "time":"2013-06-22T17:03:14.000+02:00", 
+     "source": {
+     	"id":"10200" }, 
+     "type": "c8y_SpeedMeasurement"
+    },
+    {
+     "c8y_SpeedMeasurement": {
+   	 	"speed": { 
+        	"value": 22,
+            "unit": "km/h" }
+            },
+     "time":"2013-06-22T17:05:14.000+02:00", 
+     "source": {
+     	"id":"10200" }, 
+     "type": "c8y_SpeedMeasurement"
+    }
+]
+}
+```
 Example response:
-
-	HTTP/1.1 201 Created
-    Content-Type: application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
-    Content-Length: ...
-
-	{
-     "measurements": [
-        {
-         "time": "2013-06-22T17:03:14.000+02:00",
-         "id": "832254760",
-         "self": "<<URL of new measurement>>"",
-         "source": {"id": "10200","self": "..."},
-         "type": "c8y_SpeedMeasurement",
-         "c8y_SpeedMeasurement": {
-         	"speed": {
-            	"unit": "km/h",
-                "value": 25
-                }
-            }
-        },
-        {
-         "time": "2013-06-22T17:05:14.000+02:00",
-         "id": "832254761",
-         "self": "<<URL of new measurement>>",
-         "source": {"id": "10200","self": "..."},
-         "type": "c8y_SpeedMeasurement",
-         "c8y_SpeedMeasurement": {
-         	"speed": {
-            	"unit": "km/h",
-                "value": 22
-                }
+```http
+HTTP/1.1 201 Created
+Content-Type: application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
+Content-Length: ...
+{
+ "measurements": [
+    {
+     "time": "2013-06-22T17:03:14.000+02:00",
+     "id": "832254760",
+     "self": "<<URL of new measurement>>",
+     "source": {"id": "10200","self": "..."},
+     "type": "c8y_SpeedMeasurement",
+     "c8y_SpeedMeasurement": {
+     	"speed": {
+        	"unit": "km/h",
+            "value": 25
             }
         }
-    ]
-	}
-
+    },
+    {
+     "time": "2013-06-22T17:05:14.000+02:00",
+     "id": "832254761",
+     "self": "<<URL of new measurement>>",
+     "source": {"id": "10200","self": "..."},
+     "type": "c8y_SpeedMeasurement",
+     "c8y_SpeedMeasurement": {
+     	"speed": {
+        	"unit": "km/h",
+            "value": 22
+            }
+        }
+    }
+]
+}
+```
 ### DELETE - delete a measurement collection
 
 The DELETE method allows for deletion of measurement collections. Applicable query parameters are equivalent to GET method.
@@ -320,11 +284,12 @@ Response body: N/A
 Required role: ROLE\_MEASUREMENT\_ADMIN
 
 Example request:
-
-     DELETE: /measurement/measurements....
-     Host: ...
-     Authorization: Basic ...
-
+```http
+ DELETE: /measurement/measurements....
+ Host: ...
+ Authorization: Basic ...
+```
 Example response:
-
-    HTTP/1.1  204 NO CONTENT
+```http
+HTTP/1.1  204 NO CONTENT
+```

@@ -138,19 +138,20 @@ brand: Adeunis RF # brand or manufacturer
 
 ## Redirects
 
-Redirects must be processed through aliases. To add them, go to the target page and add the following in front matter:
+Redirects must be processed through aliases. Add aliases as an array, and make sure to remove `/guides` out of the url. Check the folowing example:
 
 ```yaml
 ---
 title: Introduction to Cumulocity
 layout: bundle
 weight: 10
-# add all the redirects to this page in a array
 aliases:
   - /concepts-guide/introduction-to-cumulocity/
   - /concepts-guide/introduction-to-cumulocity.html
+# this will redirect cumulocity.com/guides/concepts-guide/introduction-to-cumulocity/
+# to cumulocity.com/guides/concepts/introduction
 ---
 ```
 
 ---
-&copy; Cumulocity GmbH  2019 + All rights reserved.
+© Cumulocity GmbH  2019 + All rights reserved.

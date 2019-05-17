@@ -2,8 +2,263 @@
 weight: 30
 title: Microservice manifest
 layout: redirect
+aliases:
+  - /reference/microservice-manifest
 ---
 
-The microservice manifest provides the required settings to manage microservice instances and the Cumulocity application.
+The application manifest provides the required settings to manage microservice instances and the application deployment in the Cumulocity platform. The definition is provided within the _cumulocity.json_ file in the binary uploaded to the Cumulocity platform.
 
-Refer to [Microservice manifest](/guides/reference/microservice-manifest) in the Reference guide to see the full list of options.
+### Settings
+
+<table>
+<col width=150>
+<col width=150>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">apiVersion</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">Document type format discriminator, for future changes in format.</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">Application name</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">contextPath</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">Microservice contextPath is used to define extension points. <br>Default: Microservice name </td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">version</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">Application version. Must be a correct <a href="https://semver.org" target="_blank">SemVer</a> value but "+" sign is disallowed._</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">provider</td>
+<td style="text-align:left">Provider</td>
+<td style="text-align:left">Application provider information. Simple name allowed for predefined providers e.g. c8y. Detailed object for external provider.</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<tr>
+<td style="text-align:left">billingMode</td>
+<td style="text-align:left">Enum</td>
+<td style="text-align:left">Values: RESOURCES, SUBSCRIPTION<br>Default: RESOURCES<br><br> In case of RESOURCES, the number of resources used is exposed for billing calculation per usage. In case of SUBSCRIPTION, all resources usage is counted for the microservice owner and the subtenant is charged for subscription.</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">isolation</td>
+<td style="text-align:left">Enum</td>
+<td style="text-align:left">Values: MULTI_TENANT, PER_TENANT<br>Default: MULTI_TENANT<br><br>Deployment isolation. In case of PER_TENANT, there is a separate instance for each tenant; otherwise, there is one single instance for all subscribed tenants. Should be overridable on subscription and should affect billing.</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">scale</td>
+<td style="text-align:left">Enum</td>
+<td style="text-align:left">Values: AUTO, NONE<br>Default: NONE <br><br>Enables scaling policy. In case of NONE, the platform guarantees that there is maximally one instance of the service per isolation level.</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">resources</td>
+<td style="text-align:left">Resources</td>
+<td style="text-align:left">Configuration for default resource limit. Can be overridden by tenant during subscription.<br><br>Guaranteed resources are CPU=0.25, Memory=256MB<br>Default limits are CPU=0.5, Memory=512MB</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">settings</td>
+<td style="text-align:left">Option[ ]</td>
+<td style="text-align:left">Set of tenant options available to define the configuration of a microservice. <br>Default: [ ] (empty list)</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">requiredRoles</td>
+<td style="text-align:left">String[ ]</td>
+<td style="text-align:left">List of permissions required by a microservice to work.</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">roles</td>
+<td style="text-align:left">String[ ]</td>
+<td style="text-align:left">Roles provided by the microservice. <br>Default: [ ] (empty list)</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">livenessProbe</td>
+<td style="text-align:left">Probe</td>
+<td style="text-align:left">Defines the strategy used to verify if a microservice is alive or requires a restart.</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">readinessProbe</td>
+<td style="text-align:left">Probe</td>
+<td style="text-align:left">Defines the strategy used to verify if a microservice is ready to accept traffic.</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">extensions</td>
+<td style="text-align:left">Extension[ ]</td>
+<td style="text-align:left">Defines a set of extensions that should be enabled for a microservice. <br>Default: [ ] (empty list)</td>
+<td style="text-align:left">No</td>
+</tr>
+</tbody>
+</table>
+
+
+> **Info**: The version has an impact on the microservice upload behavior: <br>
+> - If a new ZIP file for a microservice is uploaded but the version is the same as the previous, e.g. "1.1.0", then there is no guarantee that the Docker image for the microservice will be updated. <br>
+> - If the version is a snapshot (e.g. "1.1.0-SNAPSHOT"), then Docker shall update the image on each ZIP upload.
+
+#### Provider
+
+|Name|Type|Description|Required|
+|:---|:---|:----------|:----------|
+|name|String |Company name of the provider|Yes
+|domain|String |Website of the provider |No
+|support|Email|Email of the support person|No
+
+#### Resources
+
+|Name|Type|Description|Required|
+|:---|:---|:----------|:----------|
+|cpu|String |Limit for number of CPUs or CPU time <br>Default: 0.5|No
+|memory|String |Limit for microservice memory usage <br>Default: 512M <br/>Possible postfix values are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki |No
+
+#### Option
+
+|Name|Type|Description|Required|
+|:---|:---|:----------|:----------|
+|key|String |Key of the option|Yes
+|defaultValue|String|Default value|No
+|editable|Boolean|Defines if the option can be changed by a subscribed tenant on runtime <br>Default: false |No
+|valueSchema|Schema|Defines schema of value and follows the JSON schema defined here <br>Default: {type: string} | No
+
+#### Probe
+
+|Name|Type|Description|Required|
+|:---|:---|:----------|:----------|
+|exec | ExecAction | Commands to be executed on a container to probe the service | No
+|tcpSocket | TCPSocketAction | TCP socket connection attempt as a probe | No
+|httpGet | HTTPGetAction | HTTP request to be executed as a probe | No
+|initialDelaySeconds |Number| Tells the platform for how long it should wait before performing the first probe <br/>Default: 200 | No
+|periodSeconds|Number| Defines how often the probe should be executed<br/>Default: 10 | No
+|successThreshold|Number| Minimum consecutive successes for the probe to be considered successful after having failed<br/> Default: 1 | No
+|timeoutSeconds|Number| Number of seconds after which the probe times out<br/> Default: 1 | No
+|failureThreshold|Number| Number of failed probes after which an action should be taken <br/>Default: 3 | No
+
+#### ExecAction
+
+|Name|Type|Description|Required|
+|:---|:---|:----------|:----------|
+|command | String[ ] | Commands to be executed on a container to probe the service | Yes
+
+#### TCPSocketAction
+
+|Name|Type|Description|Required|
+|:---|:---|:----------|:----------|
+|host | String | Host to verify | Yes
+|port | Number | Port to verify <br/>Default:80 | Yes
+
+#### HTTPGetAction
+
+|Name|Type|Description|Required|
+|:---|:---|:----------|:----------|
+|host | String | Host name to connect to | Yes
+|path | String | Path to access on the HTTP server | Yes
+|port | Number | Port to verify <br/>Default: 80 | No
+|scheme | String | Scheme to use for connecting to the host (HTTP or HTTPS)<br/> Default: HTTP | No
+|headers | HttpHeader | HTTP headers to be added to a request | No
+
+#### HttpHeader
+
+|Name|Type|Description|Required|
+|:---|:---|:----------|:----------|
+|name | String | Header name | Yes
+|value | String | Header value | Yes
+
+#### Extension
+
+|Name|Type|Description|Required|
+|:---|:---|:----------|:----------|
+|type | String | Type ID of the extension | Yes
+|* | any | Configuration parameters | No
+
+
+##### Example Manifest
+
+```json
+{
+    "apiVersion": "v1",
+    "name": "my-microservice",
+    "version": "1.0.0",
+    "provider": {
+        "name": "New Company Ltd.",
+        "domain": "http://new-company.com",
+        "support": "support@new-company.com"
+    },
+    "isolation": "MULTI_TENANT",
+    "scale": "AUTO",
+    "resources": {
+        "cpu": "1",
+        "memory": "1G"
+    },
+    "livenessProbe":{
+      "httpGet":{
+        "path": "/health"
+      },
+      "initialDelaySeconds": 60,
+      "periodSeconds": 10
+    },
+    "readinessProbe":{
+      "httpGet":{
+        "path": "/health",
+        "port": 80
+
+      },
+      "initialDelaySeconds": 20,
+      "periodSeconds": 10
+    },
+    "extensions":[
+      {
+        "type":"prometheus.io"
+      }
+    ]
+}
+```
+
+
+#### Supported Extensions
+
+Extensions supported by the Cumulocity Microservice Manifest.
+
+##### Prometheus monitoring
+
+Enables support for metrics gathering exposed via the Prometheus endpoint.
+The endpoint should not require authentication.
+
+|Name|Type|Description|Required|
+|:---|:---|:----------|:----------|
+|path | String | Path to the Prometheus endpoint. <br/>Default: /prometheus | No
+|port | String | HTTP port where the Prometheus endpoint is available. <br/>Default: 80 | No
+
+Example:
+
+```json
+{
+    "type": "prometheus.io",
+    "path": "/monitoring/prometheus",
+    "port": "4444"
+}
+```

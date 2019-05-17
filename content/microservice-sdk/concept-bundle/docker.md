@@ -1,11 +1,20 @@
 ---
-weight: 20
-title: Docker image and container
+weight: 15
+title: Containerization and orchestration
 layout: redirect
 ---
 
-Cumulocity microservices are based on Docker. Hence, a microservice has to be packaged as a Docker image in order to run on the Cumulocity platform. A Docker image is an executable package which includes everything needed to run an application. Refer to the [Docker documentation](https://docs.Docker.com/get-started/)) for more information about Docker.  
 
-A microservice is executed in a Docker container during runtime. The Docker container ensures that a microservice does not harm other microservices running in Cumulocity. Moreover, Kubernetes is used to orchestrate Docker containers, and it provides many enterprise-grade features for hosting Docker containers including auto-scaling, high availability, load balancing, rolling upgrades to limit downtime, resource quota and more.
+### Images and containers
 
->**Info:** Currently Kubernetes is not exposed to developers or users. This allows changing of the underlying infrastructure in the future.
+Docker is a platform to develop, deploy and run applications with containers. An image is an executable package that includes everything needed to run an application (i.e. the code, a runtime, libraries, environment variables and configuration files). A container is a runtime instance of an image (i.e. what the image becomes in memory when executed). Refer to the [Docker documentation](https://docs.Docker.com/get-started/) for more information about Docker.
+
+Cumulocity microservices are based on Docker. Hence, a microservice has to be packaged as a Docker image in order to run on the Cumulocity platform. A microservice is executed in a Docker container during runtime. The Docker container ensures that a microservice does not harm other microservices running in Cumulocity.
+
+### Pods
+
+Kubernetes is the container orchestration engine for automating deployment, scaling and management of containerized applications. A Pod is the basic building block of Kubernetes and it represents a running process on your cluster. A Pod encapsulates an application container, storage resources, a unique network IP and options that govern how the container should run.
+
+Docker is the most common container runtime used in a Kubernetes Pod. Moreover, Kubernetes is used to orchestrate Docker containers and it provides many enterprise-grade features for hosting Docker containers such as auto-scaling and load balancing. Refer to the [Kubernetes documentation](https://kubernetes.io/docs/home/) for more information about Kubernetes.
+
+Refer to [Troubleshooting](#troubleshooting) in this section to learn about common issues and typical alarms that you may see in **Alarms** in the Cockpit application.

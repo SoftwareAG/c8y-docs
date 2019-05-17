@@ -8,7 +8,7 @@ Using [application options](#application-options), each tenant can customize the
 
 In this tutorial we are publishing 2 web applications:
 
-* `public-options`,where the JSON file containing the configuration will be stored
+* `public-options`, where the JSON file containing the configuration will be stored
 * `ui-assets`, where any required assets will be hosted: images, favicon and translation files
 
 For deploying we use the nodejs `@c8y/cli` that can be installed with the command:
@@ -19,7 +19,7 @@ npm install -g @c8y/cli
 
 ### Downloading or cloning the initial repository
 
-For your convenience you can download or clone the repository available at [https://github.com/Cumulocity/ui-customisation](https://github.com/Cumulocity/ui-customisation), in which you can find an example for branding and for adding a new language.
+For your convenience you can download or clone the repository available at [https://github.com/Cumulocity/ui-customization](https://github.com/Cumulocity/ui-customization), in which you can find an example for branding and for adding a new language.
 
 ```
 git clone https://github.com/Cumulocity/ui-customisation
@@ -42,7 +42,7 @@ To change the favicon, edit the property `faviconUrl` and/or add the correspondi
 
 To change the browser window title, change the property `globalTitle`.
 
-If these configurations are not enough you can still add a a list of URLs to the property `extraCssUrls` and load extra CSS at runtime:
+If these configurations are not enough you can still add a list of URLs to the property `extraCssUrls` and load extra CSS at runtime:
 
 ```json
 {
@@ -54,24 +54,25 @@ If these configurations are not enough you can still add a a list of URLs to the
 
 ### Languages
 
-The platform UI strings used for internationalization are stored in [gettext](https://en.wikipedia.org/wiki/Gettext). If you want to add a new language to the platform you nee a software to edit these files, for example [poedit](https://poedit.net/).
+The platform UI strings used for internationalization are stored in [gettext](https://en.wikipedia.org/wiki/Gettext). If you want to add a new language to the platform you need a software to edit these files, for example [Poedit](https://poedit.net/).
 
 Each translated catalog is loaded at runtime in a JSON format. To convert .po (gettext) files into .json files we rely on `@c8y/cli` installed during the first step.
 
 #### How to add your own translations
 
-1. Download the string catalog from [https://unpkg.com/@c8y/ngx-components@1004.0.6/locales/de.po](https://unpkg.com/@c8y/ngx-components@1004.0.6/locales/de.po) (the version, 1004.0.6,  can be changed  to whatever version running on your instance).
-2. Load the file in your preferred .po file editor and translate each string to the appropriate language and save that file. Repeat the process for as many languages as you like.
+1. Download the string catalog from [@c8y/ngx-components@1004.0.6/locales/locales.pot](https://unpkg.com/@c8y/ngx-components@1004.0.6/locales/locales.pot) (the version, 1004.0.6,  can be changed  to whatever version running on your instance).
+2. Load the file in your preferred .pot file editor and translate each string to the appropriate language and save that file. Repeat the process for as many languages as you like.
+The outcome of this step will be a .po catalogue file for each language. Make sure to store these files in a safe place, as they will be useful when updating the strings in subsequent versions.
 3. Transform the newly created .po file into a .json file using the `c8ycli`:
 
  ```
  c8ycli locale-compile path/to/language.po
  ```
- 
+
 4. Copy the generated .json file into the *ui-assets* folder.
 5. Update the languages fragment in *public-options/options.json*.
 
-	```
+```
 languages?: {
   [langCode: string]: {
     name: string;
@@ -81,7 +82,7 @@ languages?: {
 }
 ```
 
-In the example provided in the repository to be downloaded you can find an example of a Russian translation, which look like this:
+In the example provided in the repository to be downloaded you can find an example of a Russian translation which looks like this:
 
 ```
 "languages": {
@@ -90,7 +91,7 @@ In the example provided in the repository to be downloaded you can find an examp
     "nativeName": "русский язык",
     "url": "/apps/public/ui-assets/ru.json"
   }
-}`
+}
 ```
 
 ### Deploying

@@ -345,7 +345,7 @@ Example configuration:
 #### Upload goal
 
 The upload goal is responsible for deploying the microservice to a server.
-There are three options to configure the server url and credentials:
+There are three options to configure the server URL and credentials:
 
 * _settings.xml_ - Maven global configuration placed at *~/.m2/settings.xml*
 * _pom.xml_ - Maven project configuration file

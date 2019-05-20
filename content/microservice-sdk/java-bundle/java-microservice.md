@@ -135,7 +135,7 @@ Employing the `@MicroserviceApplication` annotation is a simple way to add requi
 
 * Security
 * Subscription
-* Health indicator
+* Health endpoint at <kbd>/service/&lt;microservice-name>/health</kbd>
 * Context
 * Settings
 * Internal platform API
@@ -241,16 +241,16 @@ The microservice must be deployed to verify the REST calls from Cumulocity to th
 To run a microservice which uses the Cumulocity API locally, you need:
 
 * A valid tenant, a user and a password in order to access Cumulocity.
-* An authorization header as "Basic &lt;Base64(&lt;username>:&lt;password>)>".
+* An authorization header as "Basic &lt;Base64(&lt;tenantID>/&lt;username>:&lt;password>)>".
 
-For instance, if the username and password are **testuser** and **test123** respectively, you can get the Base64 string with the following command:
+For instance, if your tenant ID, username and password are **tenant**, **testuser** and **secret123** respectively, you can get the Base64 string with the following command:
 
 ```shell
-$ echo testuser:test123 | base64
-dGVzdHVzZXI6dGVzdDEyMwo=
+$ echo -n tenant/testuser:secret123 | base64
+dGVuYW50L3Rlc3R1c2VyOnNlY3JldDEyMw==
 ```
 
-and your authorization header would look like `"Authorization": "Basic dGVzdHVzZXI6dGVzdDEyMwo="`.
+and your authorization header would look like `"Authorization": "Basic dGVuYW50L3Rlc3R1c2VyOnNlY3JldDEyMw=="`.
 
 #### Step 1 - Create the application
 
@@ -421,7 +421,7 @@ $ curl -F "data=@<PATH_TO_YOUR_ZIP_FILE>" \
 	     "<URL>/application/applications/<APPLICATION_ID>/binaries"
 ```
 
-> **Important**: The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. You shall write an email to [support@cumulocity.com](mailto:support@cumulocity.com) so they can assist you with the activation. Note that this is a paid feature.
+> **Important**: The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. Contact us via [Empower Portal](https://empower.softwareag.com) so that we can assist you with the activation. Note that this is a paid feature.
 
 It is also possible to upload the ZIP file directly on your tenant. In the Administration application, navigate to **Applications** > **Own applications**, click **Add application** and select **Upload microservice** from the options list.
 

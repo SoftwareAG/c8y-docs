@@ -29,8 +29,9 @@ C8Y_TENANT  |  Application user tenant (available only for PER_TENANT isolation)
 C8Y_USER  |  Application user name (available only for PER_TENANT isolation)
 C8Y_PASSWORD  |  Application user password (available only for PER_TENANT isolation)
 MEMORY_LIMIT  |  Max memory that can be used. Default value: 256M
+TZ | Timezone from the host machine or configurable tenant options
 
-##### Example usage
+##### Example
 
 Prerequisite: The microservice has been packed and deployed in the Docker repository. Get the microservice image name and tag with the following command:
 
@@ -45,6 +46,36 @@ $ docker run -e C8Y_BASEURL=<URL> -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_TENANT> -e 
 ```
 
 Use a backslash (\\) before special characters such as `&, !, ;, \`.
+
+#### Timezone variable
+
+The timezone variable allows configuring a default timezone used by the microservice.
+The microservice installer injects the `TZ` environment variable into the microservice according to the following settings:
+
+- Tenant option in the microservice owner tenant
+- Platform application environment variables (MICROSERVICE_RUNTIME_TIMEZONE)
+
+The tenant option has higher priority, i.e. if the parameter is set in both places, the value from the tenant option is taken.
+
+##### Example
+
+Assuming that the microservice owner has the tenant option:
+
+```json
+{
+    "category" : "microservice.runtime",
+    "key" : "timezone",
+    "value" : "Europe/Warsaw"
+}
+```
+
+Deploying and running the microservice inside Docker will result in passing the following variables into the microservice environment:
+
+```properties
+TZ=Europe/Warsaw
+```
+
+When using Java-based microservices this variable is automatically read and applied to the Java process, no additional work is required. Microservices developed with other programming languages may require some manual work, i.e. loading the TZ value from the environment and using it to configure the time zone on the language level programmatically.
 
 #### Proxy variables
 

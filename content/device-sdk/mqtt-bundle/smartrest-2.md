@@ -127,7 +127,7 @@ A request template contains the following basic fields:
 A request template lists all the fragments in the object structure (mandatory and custom) that should be added when creating or updating the data.
 It can set fixed values in the template that will then be replaced by the server. If it does not set the value in the template, the value needs to be included in the publish message (this includes mandatoryValues).
 
-> **Info:** If the message rate limit per second is exceeded, the requests are delayed and kept in queue until the time in which they can be processed. If the requests number in the queue is higher than the predefined, the client messages are rejected and the client is disconnected.
+> **Info:** If the message rate limit per second is exceeded, the requests are delayed and kept in queue. If the queue limit number is exceeded, the client messages are rejected and the client is disconnected.
 
 **Example**
 

@@ -22,7 +22,7 @@ npm install -g @c8y/cli
 For your convenience you can download or clone the repository available at [https://github.com/Cumulocity/ui-customization](https://github.com/Cumulocity/ui-customization), in which you can find an example for branding and for adding a new language.
 
 ```
-git clone https://github.com/Cumulocity/ui-customisation
+git clone https://github.com/Cumulocity/ui-customization
 ```
 
 Inside this folder you can find two other folders:
@@ -62,7 +62,7 @@ Each translated catalog is loaded at runtime in a JSON format. To convert .po (g
 
 1. Download the string catalog from [@c8y/ngx-components@1004.0.6/locales/locales.pot](https://unpkg.com/@c8y/ngx-components@1004.0.6/locales/locales.pot) (the version, 1004.0.6,  can be changed  to whatever version running on your instance).
 2. Load the file in your preferred .pot file editor and translate each string to the appropriate language and save that file. Repeat the process for as many languages as you like.
-The outcome of this step will be a .po catalogue file for each language. Make sure to store these files in a safe place, as they will be useful when updating the strings in subsequent versions.
+The outcome of this step will be a .po catalog file for each language. Make sure to store these files in a safe place, as they will be useful when updating the strings in subsequent versions.
 3. Transform the newly created .po file into a .json file using the `c8ycli`:
 
  ```
@@ -84,7 +84,7 @@ languages?: {
 
 In the example provided in the repository to be downloaded you can find an example of a Russian translation which looks like this:
 
-```
+```json
 "languages": {
   "ru": {
     "name": "Russian",

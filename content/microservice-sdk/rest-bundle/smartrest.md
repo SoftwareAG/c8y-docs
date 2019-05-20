@@ -7,7 +7,7 @@ layout: redirect
 
 The Cumulocity REST APIs provide you with a generic IoT protocol that is simple to use from most environments. It can be ad-hoc adapted to any IoT use case and it uses standard Internet communication and security mechanisms. While this is a great leap forward over tailored IoT protocols with proprietary technologies, it poses some challenges to very constrained environments such as low-end microcontrollers or low-bandwidth communication channels.
 
-For these environments, Cumulocity offers the so-called "SmartREST" protocol. SmartREST combines the benefits of standard technology and tailored protocols:
+For these environments, Cumulocity offers the so-called SmartREST protocol. SmartREST combines the benefits of standard technology and tailored protocols:
 
 * It continues to work on any network by using standard HTTP technology.
 * It supports HTTP authentication and encryption.
@@ -16,8 +16,7 @@ For these environments, Cumulocity offers the so-called "SmartREST" protocol. Sm
 * It is based on CSV (comma-separated values), hence, it is easy to handle from C-based environments.
 * It supports server-generated timestamps for devices without clocks.
 
-In the next section, we will discuss the concepts behind SmartREST and the basic protocol that is used. SmartREST is based on separating metadata from payload data by using so-called templates, which are then described. Finally, we show how to send and receive data using SmartREST. For a detailed description of the protocol, see the [SmartREST reference](/guides/reference/smartrest).
-
+In the next section, we will discuss the concepts behind SmartREST and the basic protocol that is used. SmartREST is based on separating metadata from payload data by using templates, which are described below. Finally, we show how to send and receive data using SmartREST. For a detailed description of the protocol, see the [SmartREST reference](/guides/reference/smartrest).
 
 ### How does SmartREST work?
 
@@ -72,7 +71,7 @@ Transfer-Encoding: chunked
 20,0
 ```
 
-To match the requests and responses, a response line contains, next to the error code, the line of the request that the response answers. In this example, "20" indicates "OK" and "0" refers to the first line of the request.
+To match the requests and responses, a response line contains – next to the error code – the line of the request that the response answers. In this example, `20` indicates "OK" and `0` refers to the first line of the request.
 
 
 ### How are templates registered?
@@ -112,65 +111,63 @@ X-Id: Device_1.0
 ...
 ```
 
-In this example, "10" refers to a request template (whereas "11" would refer to a response template). The template is number "1", so SmartREST requests using this template have a "1" in their first column. The template refers to a "POST" request to the endpoint <kbd>/measurement/measurements</kbd> with a content type of `application/vnd.com.nsn.cumulocity.measurement+json`. The placeholder used in the template is `%%`. The placeholders are a time stamp ("NOW"), an unsigned number and a general number. Finally, the last column contains the body of the request to be filled in an sent.
-
+In this example, `10` refers to a request template (whereas "11" would refer to a response template). The template is number `1`, so SmartREST requests using this template have a "1" in their first column. The template refers to a `POST` request to the endpoint <kbd>/measurement/measurements</kbd> with a content type of `application/vnd.com.nsn.cumulocity.measurement+json`. The placeholder used in the template is `%%`. The placeholders are a time stamp (`NOW`), an unsigned number and a general number. Finally, the last column contains the body of the template to be filled in a POST request.
 
 ### How are responses handled?
 
-The above example illustrated the handling of requests and request templates. For responses, [JSONPath expressions](http://goessner.net/articles/JsonPath/) translate Cumulocity REST responses into CSV. Assume, for example, that a device has a display and can show a message on it. An operation to update the message would look like this:
+The above example illustrated the handling of requests and request templates. For responses, [JSONPath](http://goessner.net/articles/JsonPath/) expressions translate Cumulocity REST responses into CSV. Assume, for example, that a device has a display and can show a message on it. An operation to update the message would look like:
 
 ```json
-	{
+{
+	"c8y_Message": {
+		"text": "Hello, world!"
+	},
+	"creationTime": "2019-02-25T08:32:45.435+01:00",
+		"deviceId": "8789602",
+		"status": "PENDING",
+		...
+}
+```
+
+On the client side, the device mainly needs to know the text to be shown. In JSONPath, the `"text"` property is extracted using the following syntax:
+
+```javascript
+$.c8y_Message.text
+```
+
+In this syntax, `$` refers to the root of the data structure and the dot (`.`) selects an element from the data structure. For more details, refer to the [JSONPath](http://goessner.net/articles/JsonPath/) reference.
+
+A device usually queries for all operations that are associated with it and that are in pending state. The standard Cumulocity response to such queries looks like:
+
+```json
+{
+	"operations": [{
 		"c8y_Message": {
-			 "text": "Hello, world!"
+				"text": "Hello, world!"
 		},
 		"creationTime": "2014-02-25T08:32:45.435+01:00",
 		"deviceId": "8789602",
 		"status": "PENDING",
 		...
-	}
-```
-
-On the client side, the device mainly needs to know the text to be shown. In JSONPath, the `"text"` property is extracted using the following syntax:
-
-```plaintext
-	$.c8y_Message.text
-```
-
-In this syntax, `$` refers to the root of the data structure and the dot (`.`) selects an element from a data structure. For more options, please consult the [JSONPath reference](http://goessner.net/articles/JsonPath/) for more details.
-
-A device usually queries for all operations that are associated with it and that are in pending state. The standard Cumulocity response to such a query is:
-
-```json
-{
-	"operations": [{
-			"c8y_Message": {
-				"text": "Hello, world!"
-			},
-			"creationTime": "2014-02-25T08:32:45.435+01:00",
-			"deviceId": "8789602",
-			"status": "PENDING",
+	}, {
+		"c8y_Relay": {
 			...
-		}, {
-			"c8y_Relay": {
-				...
-			}
-		...
-	  }
-	]
+		}
+	...
+	}]
 }
 ```
 
-That is, the response contains a list of operations which can have different types. To work with such a structure, use the following response template:
+The response contains a list of operations which can have different types. To work with such a structure, use the following response template:
 
-```plaintext
+```shell
 11,2,$.operations,$.c8y_Message,$.c8y_Message.text
 ```
 
 This means, value by value:
 
 * 11: This is a response template.
-* 2: It has number 2.
+* 2: It is the template number 2.
 * $.operations: The response is a list and the list's property is "operations".
 * $.c8y_Message: This template applies to responses with the property "c8y_Message".
 * $.c8y_Message.text: The text will be extracted from the message and will be returned.

@@ -4,7 +4,7 @@ title: Microservice development
 layout: redirect
 ---
 
-This section will introduce you to the basic REST endpoints required for developing microservices. You will also learn the basic use cases where the Cumulocity REST APIs can be employed to develop microservice applications.
+This section will introduce you to the basic REST endpoints required for developing microservices. You will also learn the basic use cases in which the Cumulocity REST APIs can be employed to develop microservice applications.
 
 ### <a name="creating-application"></a> Creating applications
 
@@ -262,7 +262,7 @@ Host: ...
 Authorization: Basic ...
 ```
 
-Example response:
+Response:
 
 ```http
 HTTP/1.1 200 OK
@@ -278,9 +278,9 @@ Content-Type: application/vnd.com.nsn.cumulocity.option+json;charset=UTF-8;ver=0
 
 #### Registering assets
 
-Assets are the objects that your business and your application focus on. For example, assets might be buildings and rooms if your business centers around building management or home automation. Or they might be routes and machines, if your business is about servicing machines.
+Assets are the objects that your business and your application focuses on. For example, assets might be buildings and rooms if your business centers around building management or home automation. Or they might be routes and machines, if your business is about servicing machines.
 
-Assets are stored in the inventory along with the devices, but they often have their own structure independent of devices. You create assets by POSTing them to the collection of managed objects in the inventory. For example, to create a new room in the inventory:
+Assets are stored in the inventory along with the devices, but they often have their own structure independent of devices. You create assets by POSTing them to the collection of managed objects in the inventory. For example, to create a new room in the inventory, use:
 
 ```http
 POST /inventory/managedObjects
@@ -293,7 +293,7 @@ Authorization: Basic ...
 }
 ```
 
-The response would be like:
+Response:
 
 ```http
 HTTP/1.1 201 Created
@@ -395,7 +395,7 @@ Often, Cumulocity will not be the only IT system dealing with a company's asset.
 
 #### Querying particular capabilities
 
-To decouple applications from the specifics of particular types of devices, applications can use fragments to query the inventory (see the Fragments section of [Cumulocity's domain model](/guides/concepts/domain-model)). For example, to find all managed objects having a location:
+To decouple applications from the specifics of particular types of devices, applications can use fragments to query the inventory (see the Fragments section of [Cumulocity's domain model](/guides/concepts/domain-model)). For example, to find all managed objects having a location, use:
 
 ```http
 GET /inventory/managedObjects?fragmentType=c8y_Position&withTotalPages=true
@@ -479,7 +479,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.measurementCollection+json; cha
 
 #### Sending operations to devices
 
-To trigger an operation on a device, POST the operation to the [Device Control API](/guides/reference/device-control). The following example restarts the device with the ID "2480300" (which is the Raspberry Pi that it is integrated in the section [Device integration](/guides/device-sdk/rest#device-integration) of the Device SDK guide.
+To trigger an operation on a device, POST the operation to the [Device Control API](/guides/reference/device-control). The following example restarts the device with the ID "2480300" (which is the Raspberry Pi that is integrated in the section [Device integration](/guides/device-sdk/rest#device-integration) of the Device SDK guide.
 
 ```http
 POST /devicecontrol/operations
@@ -524,7 +524,7 @@ A state of PENDING means here that the device has not yet picked up the operatio
 
 #### Listening for events
 
-Besides querying the Cumulocity data store, you can also process and receive events in real-time as described in [Real-time processing in Cumulocity](/guides/concepts/realtime). For example, assume that you would like to display real-time location updates on a map. Use the Administration application (or the [REST API](/guides/reference/real-time-statements)) to create a new rule module "myRule":
+Besides querying the Cumulocity data store, you can also process and receive events in real time as described in [Real-time processing in Cumulocity](/guides/concepts/realtime). For example, assume that you would like to display real-time location updates on a map. Use the Administration application (or the [REST API](/guides/reference/real-time-statements)) to create a new rule module "myRule":
 
 ```sql
 select *

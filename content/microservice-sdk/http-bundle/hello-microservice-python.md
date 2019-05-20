@@ -9,11 +9,10 @@ On the Cumulocity platform, microservice hosting is built on top of Docker conta
 In this tutorial, you will learn how to create and run a sample microservice written in Python. This example contains:
 
 * A sample Python application using the Flask framework to expose REST endpoints
-* A manifest file with minimal content to run an application
-* The configuration of the Dockerfile which enables to create a ready to run docker image with bundled application (inside light Alpine linux distribution)
+* A application manifest file with minimal content to run a microservice
+* The configuration of the Dockerfile which allows creating a ready to run Docker image with a bundled application (inside a light Alpine linux distribution)
 * Instructions for building and packaging a ZIP file containing the full application (ready to upload into the platform)
 * Instructions for uploading and subscribing to the packaged microservice
-
 
 ### Prerequisites
 
@@ -34,14 +33,14 @@ $ docker version
      OS/Arch:         linux/amd64
 ```
 
-### Developing the "Hello World" microservice
+### Developing the "Hello world" microservice
 
-To develop a simple "Hello, World!" microservice in Python, you need to:
+To develop a simple "Hello world" microservice in Python, you need to:
 
- * Create a Python web application
- * Create the Dockerfile
- * Add the microservice manifest
- * Build and run the application
+* Create a Python web application
+* Create the Dockerfile
+* Add the microservice manifest
+* Build and run the application
 
 #### Creating a Python web application
 

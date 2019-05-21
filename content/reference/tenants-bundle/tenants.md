@@ -19,7 +19,7 @@ Current tenant resource  |  Represents user data for the current logged service 
 
 > **Important**: For all PUT/POST requests, the "Accept" header shall be provided, otherwise an empty response body will be returned.
 
-### Tenant ID and tenant domain
+### <a name="tenant-id-and-domain"></a> Tenant ID and tenant domain
 
 The tenant ID is a unique identifier across all tenants, e.g. t07007007, and it cannot be changed after tenant creation. It is recommended to use auto-generated tenant IDs.
 

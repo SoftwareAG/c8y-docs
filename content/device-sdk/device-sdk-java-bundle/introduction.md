@@ -27,3 +27,5 @@ JavaDoc for the <a href="http://resources.cumulocity.com/documentation/javasdk/c
 
 
 > **Important:** You need to have at least version 7 of the [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) installed in your development environment as older versions of the JRE and JDK are not updated with the latest security patches and are not recommended for use in production.
+
+The examples in this section will require you to provide your Cumulocity credentials. You need to have a valid tenant, user and password in order to access the platform. Refer to [Tenant ID and tenant domain](guides/reference/tenants/#tenant-id-and-domain) in the Reference guide to learn the difference between tenant ID and tenant domain.

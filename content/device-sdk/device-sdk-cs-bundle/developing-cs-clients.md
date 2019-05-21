@@ -30,7 +30,7 @@ Platform platform = new PlatformImpl("https://demos.cumulocity.com", new Cumuloc
 If you use the C# client for developing an application, you need to register an application key (through [Own applications](/guides/users-guide/administration#managing-applications) in the Cumulocity Administration application, or through the [Application API](/guides/reference/applications)).
 
 ```cs
-new CumulocityCredentials("<<tenant>>", "<<user>>", "<<password>>", "<<application key>>")
+new CumulocityCredentials("<<tenantID>>", "<<user>>", "<<password>>", "<<application key>>")
 ```
 
 For testing purposes, every tenant is subscribed to the demo application key "uL27no8nhvLlYmW1JIK1CA==". The constructor for PlatformImpl also allows you to specify the default number of objects returned from the server in one reply with the parameter "pageSize".
@@ -340,7 +340,7 @@ When the code is run, the console should contain a message similar to the follow
 
 ```shell
 The result is
-	
+
 	[21:09:18 APP] Starting...
 	[21:09:18 APP] Method 'DoSomething' in progress
 	[21:09:18 APP] Finishing...

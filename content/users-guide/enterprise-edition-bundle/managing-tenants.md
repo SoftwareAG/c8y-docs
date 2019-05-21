@@ -184,9 +184,9 @@ The following information is provided:
 
 Further details are provided on the **Status** tab of the respective application, see [Administration > Managing applications](/guides/users-guide/administration#managing-applications).
 
-### <a name="microservice-billing"></a>Microservice billing
+### <a name="microservice-billing"></a>Microservice usage
 
-The microservice billing feature gathers information on microservice usage per subtenant for each microservice. This enables Enterprise Tenants and service providers to charge tenant not only based on subscriptions but also based on resources usage.
+The microservice usage feature gathers information on the resource usage per subtenant for each microservice. This enables Enterprise Tenants and service providers to charge tenants not only based on subscriptions but also based on resources usage.
 
 
 #### Billing modes

@@ -25,7 +25,7 @@ As an example:
 
 If you use the Java client for developing an application, you need to register an application key (through [Own applications](/guides/users-guide/administration#managing-applications) in the Cumulocity Administration application, or through the [Application API](/guides/reference/applications)).
 
-	new CumulocityCredentials("<<tenant>>", "<<user>>", "<<password>>", "<<application key>>")
+	new CumulocityCredentials("<<tenantID>>", "<<user>>", "<<password>>", "<<application key>>")
 
 For testing purposes, every tenant is subscribed to the demo application key "uL27no8nhvLlYmW1JIK1CA==". The constructor for PlatformImpl also allows you to specify the default number of objects returned from the server in one reply with the parameter "pageSize".
 
@@ -60,7 +60,7 @@ To create a new managed object, simply construct a local representation of the o
     mo = inventory.create(mo);
     System.out.println(mo.getId());
 
-The result of invoking "create" is a version of the new managed object with a populated unique identifier. 
+The result of invoking "create" is a version of the new managed object with a populated unique identifier.
 
 Now assume that you would like to store additional, own properties along with the device. This can simply be done by creating a new "fragment" in the form of a Java bean. For example, assume that you would like to store tariff information along with your meter. There is a day and a night time tariff, and we need to store the hours during which the night time tariff is active:
 
@@ -277,4 +277,4 @@ The configuration file looks like this:
 
 When the code is run, the console should contain a message similar to the following:
 
-    21:52:02.790 [Start Level Event Dispatcher] DEBUG com.cumulocity.javaclient - A debug message
+    21:52:02.790 [Start Level Event Dispatcher] DEBUG com.cumulocity.javaclient - A debug message

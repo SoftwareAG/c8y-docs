@@ -184,3 +184,12 @@ with proper credentials (user from any subscribed tenant), returns a response as
     "user": "servicebootstrap_hello-microservice"
 }
 ```
+
+
+### Source code
+
+The code of the [sample-python-microservice](https://bitbucket.org/m2m/cumulocity-examples/src/default/microservices/sample-python-microservice/) can be found in our M2M repositories. It is a more comprehensive Python microservice application which uses the Cumulocity REST API and exposes endpoints to:
+
+- verify if the microservice is up and running
+- create a device and random measurements for it
+- get the current application subscriptions for a particular tenant

@@ -29,25 +29,19 @@ Post installation should only be run after the platform initialization is succes
 
 Usually the platform comes up within 2 minutes. 
 
-
 1. Browse to the folder */opt/c8y/utilities*. 
 
-	```shell
-		$ cd /opt/c8y/utilities
-	```
+	`$ cd /opt/c8y/utilities`
 
 2. Run the following command and provide the password when prompted.
 
-	```shell
-		$ su admin 
-		$ Password: <Enter password for admin user>
-	```
+	`$ su admin`
+	
+	`$ Password: <Enter password for admin user>`
 
 3. Run the script *post_installation.sh*.
 
-	```shell
-		$ sudo ./post_installation.sh
-	```
+	` $ sudo ./post_installation.sh`
 
 
 You will be prompted to select one of the following options:
@@ -71,9 +65,7 @@ Option 1 and 4 cannot be invoked from a remote connection like SSH. You will hav
 
 First, select the type of input you want to use.
 
-```shell
-* Enter [F] to take input from file or [C] to take input from console:
-```
+`* Enter [F] to take input from file or [C] to take input from console: `
 
 You have the choice to  enter the network parameters manually via the console or via a file. 
 
@@ -81,27 +73,19 @@ You have the choice to  enter the network parameters manually via the console or
 
 1. Provide the new IP address for the ethernet interface, e.g. 192.168.56.120
 	
-	```shell
-	* Enter new IP address for ethernet interface:
-	```
+	`* Enter new IP address for ethernet interface:`
 	
 2. Provide the netmask IP for your network, e.g. 255.255.255.0
 	
-	```shell
-	* Enter netmask:
-	```
+	`* Enter netmask:`
 
 3. Provide the gateway IP for your network, e.g. 192.168.56.1
 	
-	```shell
-	* Enter gateway IP:
-	```
+	`* Enter gateway IP:`
 
 4. Provide the DNS Server IP for your network, e.g. 192.168.56.1
 	
-	```shell
-	* Enter DNS Server IP:
-	```
+	`* Enter DNS Server IP:`
 	
 	>**Info**: If the DNS Server IP is unknown, you can enter the previously entered gateway IP here. If any of the network parameters are not available, contact your network administrator.
 
@@ -109,9 +93,7 @@ You have the choice to  enter the network parameters manually via the console or
  
 Provide the absolute path of the configuration file. The network parameters will be loaded from the file. In case of any incorrect parameters, the utility will fall back to console mode and will prompt the user to enter the parameters as described above.
 
-```shell
-* Enter existing file path containing network parameters:
-```
+`* Enter existing file path containing network parameters:`
 
 Confirm to continue with the network configuration process.
 
@@ -121,9 +103,7 @@ The network configuration process consists of multiple steps which are executed 
 
 First, select the type of input you want to use.
 
-```shell
-* Enter [F] to take input from file or [C] to take input from console:
-```
+`* Enter [F] to take input from file or [C] to take input from console:`
 
 You have the choice to enter the post-installation parameters manually via the console or via a file. 
 
@@ -131,54 +111,39 @@ You have the choice to enter the post-installation parameters manually via the c
 
 1. Provide a new username for the tenant admin. This username is later used to login to the system using the web browser.
 
-	```shell
-	* Enter tenant admin username:
-	```
+	`* Enter tenant admin username:`
 
 2. Provide a new password for the “tenant admin username”. This password is later used to login to the system using the web browser. 
 
-	```shell
-	* Enter tenant admin password:
-	```
+	`* Enter tenant admin password:`
 
 	>**Info**: The password may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
 
 3. Re-enter the previously entered password to confirm it. 
 
-	```shell
-	* Re-enter tenant admin password:
-	```
+	`* Re-enter tenant admin password:`
 
 4. Provide a fully qualified domain name, e.g. "myown.iot.com". The domain name must match the domain name of the SSL certificate. <br>Moreover, the domain name must match the Cumulocity licence’s domain. The Cumulocity licence is tied up to the domain name being used in the instance and mismatch would result in a setup failure. 
 
-	```shell
-	* Enter tenant domain name:
-	``` 
+	`* Enter tenant domain name:` 
 
 	>**Important**: Once configured, the domain name cannot be changed. Make sure to use the name finally desired.
 
 5. Provide the absolute path of the SSL certificate file. The file extension should either be ".crt" or ".cert", e.g. */home/admin/myown-selfsigned.crt*.
 
-	```shell
-	* Enter domain ({your-domain-name}) SSL certificate file path (*.crt|*.cert):
-	```
+	`* Enter domain ({your-domain-name}) SSL certificate file path (*.crt|*.cert):`
 
 6. Provide the absolute path of the SSL certificate key file. The file extension must be ".key.", e.g. */home/admin/myown-selfsigned.key*.
-	```shell
-	* Enter domain ({your-domain-name}) SSL certificate key file path (*.key):
-	```
+	
+	`* Enter domain ({your-domain-name}) SSL certificate key file path (*.key):`
 
 7. Provide the absolute path of the license file. The file extension must be ".licence", e.g. */home/admin/myown.iot.com.licence*.
 
-	```shell
-	* Enter domain ({your-domain-name}) Cumulocity licence file path (*.licence):
-	```
+	`* Enter domain ({your-domain-name}) Cumulocity licence file path (*.licence):`
 	
 8. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional licence file, you can press [Enter] to continue without providing license.
 
-	```shell
-	* Enter Software AG Apama licence file path (optional):
-	```
+	`* Enter Software AG Apama licence file path (optional):`
 
 		
 Once the input parameters are entered correctly, the parameters will be saved under 
@@ -189,9 +154,7 @@ You can use this file for providing the input parameters to the post-installer.
 
 Provide the absolute path of the configuration file. The installation parameters will be loaded from the file. In case of any incorrect parameters, the utility will fall back to console mode and will prompt the user to enter the parameters as described above.
 
-```shell
-* Enter existing file path containing post-installation parameters:
-```
+`* Enter existing file path containing post-installation parameters:`
 
 Confirm to continue with the post-installation process.
 
@@ -201,9 +164,7 @@ The post-installation process consists of multiple steps which are executed sequ
 
 First, select the type of input you want to use.
 
-```shell
-* Enter [F] to take input from file or [C] to take input from console:
-```
+`* Enter [F] to take input from file or [C] to take input from console:`
 
 You have the choice to enter the update parameters manually via the console or via a file. 
 
@@ -211,27 +172,19 @@ You have the choice to enter the update parameters manually via the console or v
 
 1. Provide the absolute path of the SSL certificate file. The file extension should either be ".crt" or ".cert", e.g. */home/admin/myown-selfsigned.crt*.
 
-	```shell
-	* Enter domain ({previously-entered-domain-name}) SSL certificate file path (*.crt|*.cert):
-	```
+	`* Enter domain ({previously-entered-domain-name}) SSL certificate file path (*.crt|*.cert):`
 
 2. Provide the absolute path of the SSL certificate key file. The file extension must be ".key.", e.g. */home/admin/myown-selfsigned.key*.
 
-	```shell
-	* Enter domain ({previously-entered-domain-name}) SSL certificate key file path (*.key):
-	```
+	`* Enter domain ({previously-entered-domain-name}) SSL certificate key file path (*.key):`
 
 3. Provide the absolute path of the license file. The file extension must be ".licence", e.g. */home/admin/myown.iot.com.licence*.
 
-	```shell
-	* Enter domain ({previously-entered-domain-name}) Cumulocity licence file path (*.licence):
-	```
+	`* Enter domain ({previously-entered-domain-name}) Cumulocity licence file path (*.licence):`
 	
 4. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*.<br> <br>This is an optional licence file, you can press [Enter] to continue without providing license.
 
-	```shell
-	* Enter Software AG Apama licence file path (optional):
-	```
+	`* Enter Software AG Apama licence file path (optional):`
 
 Once the input parameters are entered correctly, the parameters will be saved under 
 */opt/c8y/utilities/post-installer/config.dat* for future reference.
@@ -241,9 +194,7 @@ You can use this file for providing the input parameters to the post-installer.
 
 Provide the absolute path of the configuration file. The update parameters will be loaded from the file. In case of any incorrect parameters, the utility will fall back to console mode and will prompt the user to enter the parameters as described above.
 
-```shell
-* Enter existing file path containing update parameters:
-```
+`* Enter existing file path containing update parameters:`
 
 Confirm to continue with the update process.
 
@@ -286,17 +237,13 @@ The disk size expanding process consists of multiple steps which are executed se
 
 Provide the new password for the edge tenant. This password is later used to login to the platform via the web browser as well as to login to the management tenant using the edgeadmin user.
 
-```shell 
-* Enter new tenant admin password: 
-```
+`* Enter new tenant admin password:`
 
 >**Info**: The password may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]/
 
 Re-enter the previously provided password to confirm it.
 
-```shell 
-* Re-enter tenant admin password:
-```
+`* Re-enter tenant admin password:`
 
 Confirm to continue with updating the tenant password.
 

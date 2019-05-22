@@ -38,7 +38,7 @@ Once the device retrieved the credentials, it needs to store them locally for fu
 To establish a connection you need to configure the following parameters:
 
 - Host: &lt;your&#95;cumulocity_url>
-- User: &lt;tenant>/&lt;username>
+- User: &lt;tenantID>/&lt;username>
 - Password: &lt;your&#95;cumulocity_password>
 
 For more information, refer to the [Hello MQTT](/guides/device-sdk/mqtt/#hello-mqtt) section.
@@ -51,11 +51,7 @@ The process works as follows:
 * The device subscribes to the topic <kbd>s/dcr</kbd>.
 * The device starts publishing continuous empty messages on the topic <kbd>s/ucr</kbd> to notify the server that it is ready to retrieve credentials.
 * Next, you must accept the connection from the device in the **Device Registration** page.
-* When the device sends the next empty message it should receive credentials in the following format:
-
-```text
-70,<tenant>,<username>,<password>
-```
+* When the device sends the next empty message it should receive credentials in the format `70,<tenantID>,<username>,<password>`
 
 After receiving the credentials, the device can close the MQTT connection and create a new one with the received credentials.
 

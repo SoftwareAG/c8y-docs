@@ -71,8 +71,8 @@ You have the choice to  enter the network parameters manually via the console or
 
 ##### Console input
 
-1. Provide the new IP address for the ethernet interface, e.g. 192.168.56.120
-	
+   1. Provide the new IP address for the ethernet interface, e.g. 192.168.56.120
+
 	`* Enter new IP address for ethernet interface:`
 	
 2. Provide the netmask IP for your network, e.g. 255.255.255.0

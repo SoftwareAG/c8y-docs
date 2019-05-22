@@ -137,14 +137,14 @@ As part of suspending the tenant, an email is sent to the tenant administrator i
 >**Info**: If you are a service provider, you can suppress this email.
 
 
-### How to delete a subtenant
+#### How to delete a subtenant
 
 To finally delete a tenant and remove all the data of the tenant, click the menu icon and then click **Remove**.
 
 >**Info**: This action cannot be reverted. For security reasons, it is only available in the management tenant.
 
 
-### <a name="subscribe"></a>Subscribing and monitoring applications
+### <a name="subscribe"></a>Subscribing applications
 
 In the **Applications** tab you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications.
 
@@ -158,7 +158,7 @@ Hover over the applications under **Available applications** on the right and cl
 
 Hover over the applications under **Subscribed applications** on the left and click **Unsubscribe**.
 
-#### Monitoring microservices
+### Monitoring microservices
 
 For all applications hosted as microservices by Cumulocity the status of the microservice is indicated next to its name by symbols:
 
@@ -183,6 +183,31 @@ The following information is provided:
 * Restarts: The number of microservice instance restarts
 
 Further details are provided on the **Status** tab of the respective application, see [Administration > Managing applications](/guides/users-guide/administration#managing-applications).
+
+
+### <a name="tenants-custom-properties"></a>Custom properties
+
+The **Custom properties** tab allows you to view and edit values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/guides/users-guide/administration#properties). Such properties are also displayed as columns in the [Usage Statistics](#usage-stats) page.
+
+![Custom properties](/guides/images/users-guide/Administration/admin-subtenant-custom-properties.png)
+
+#### Limiting subtenant device number
+
+Platform administrators can limit the count of concurrently registered root devices or simply all devices (including children devices) via the custom property "Limit number of devices". 
+
+They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the **[Usage statistics](<a name="usage-stats"></a>)** page.
+
+#### Limiting subtenant request rate
+
+Platform administrators can limit the request rate of each subtenant via the following custom properties:
+
+* Limit HTTP queue - Limit of HTTP request queue for tenant
+* Limit HTTP requests - Limit of HTTP requests for tenant per second
+* Limit stream queue - Limit of MQTT request queue for tenant
+* Limit stream requests - Limit of MQTT requests for tenant per second
+
+When there is no limit on tenant and system level, the limit feature is considered as disabled and the tenant gains unlimited access. To switch off request rate limiting after it was enabled, set the value to "-1".
+
 
 ### <a name="microservice-billing"></a>Microservice usage
 
@@ -277,30 +302,6 @@ Note that an audit record is created for every change of the number of instances
 
 For more information, refer to [Auditing](https://cumulocity.com/guides/reference/auditing) in the **Reference guide**.
 
-#### <a name="tenants-custom-properties"></a>Custom properties
-
-The **Custom properties** tab allows you to view and edit values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/guides/users-guide/administration#properties). Such properties are also displayed as columns in the [usage statistics table](#usage-stats).
-
-![Custom Properties](/guides/images/users-guide/Administration/admin-subtenant-custom-properties.png)
-
-##### Limiting subtenant device number
-
-Platform administrators can limit the count of concurrently registered root devices or simply all devices (including children devices) via the custom properties "Devices". 
-
-Platform administrators can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the **[Usage statistics](<a name="usage-stats"></a>)** page.
-
-##### Limiting subtenant request rate
-
-Platform administrators can limit the request rate of each subtenant via the following custom properties:
-
-* Limit HTTP queue - Limit of HTTP request queue for tenant
-* Limit HTTP requests - Limit of HTTP requests for tenant per second
-* Limit stream queue - Limit of MQTT request queue for tenant
-* Limit stream requests - Limit of MQTT requests for tenant per second
-
-When there is no limit on tenant and system level, the limit feature is considered as disabled and the tenant gains unlimited access. To switch off request rate limiting after it was enabled, set the value to "-1".
-
-
 ### <a name="usage-stats"></a> Retrieving usage statistics
 
 The **Usage statistics** page provides statistical information on each subtenant.
@@ -360,8 +361,8 @@ A tenant policy is a set of tenant options and retention rules. Tenant options a
 Creating a tenant policy with a specific set of options and rules saves time when creating multiple tenants with the same settings.
 
 >**Info**: The options and rules are copied into the tenant. Editing the policy has no effect on tenants that have already been created.
->
->#### Viewing tenant policies
+
+#### Viewing tenant policies
 
 Click **Tenant policies** in the **Tenants** menu to view all available tenant policies.
 

@@ -6,7 +6,7 @@ layout: redirect
 
 This section describes specific aspects of developing microservices using the REST interface.
 
-Cumulocity employs REST for all external communication. Regardless whether the communication originates from IoT devices, from web applications or from backoffice IT systems, the communication protocol is always REST.
+Cumulocity employs REST for all external communication. Regardless whether the communication originates from IoT devices, from web applications or from back-office IT systems, the communication protocol is always REST.
 
 REST is a very simple and secure protocol based on HTTP(S) and TCP. It is today the de-facto Internet standard supported by all networked programming environments ranging from very simple devices up to large-scale IT. One of the many books introducing REST is [RESTful Web Services](http://oreilly.com/catalog/9780596529260).
 
@@ -19,7 +19,7 @@ The description is closely linked to the Reference guide, which describes each i
 - [Sensor library](/guides/reference/sensor-library) specifies the data model for sensors and controls.
 
 If you develop applications using Java or C#, check these relevant sections for even more convenient access to Cumulocity's functionality.
-For further information on REST interfaces in general and on integrating devices with REST, refer to the [REST section](https://cumulocity.com/guides/device-sdk/rest) in the Device SDK guide.
+For further information on REST interfaces in general and on integrating devices with REST, refer to the [REST section](/guides/device-sdk/rest) in the Device SDK guide.
 
 
 ### Using the REST interfaces
@@ -87,12 +87,12 @@ Note that the example contains placeholders, in this case a placeholder _{{url}}
 
 <img src="/guides/images/rest/postmanenvironment.png" alt="Postman environment setup" style="max-width: 50%">
 
-A simple way to determine the correct value for the "auth" key is to use a web tool. For example, assume that your tenant ID is "tenant", your username is "me" and your password is "secret". Go to http://ostermiller.org/calc/encode.html, type `tenant/me:secret` into the text area, then click **Encode** in the row "Base 64". The resulting text is "dGVuYW50L21lOnNlY3JldA==". Use "Basic dGVuYW50L21lOnNlY3JldA==" as value for "auth".
+A simple way to determine the correct value for the "auth" key is using an online Base64 encode/decode tool. For example, assume that your tenant ID is "tenant", your username is "me" and your password is "secret". Go to [ostermiller.org/calc/encode.html](http://ostermiller.org/calc/encode.html), type `tenant/me:secret` into the text area, then click **Encode** in the row "Base 64". The resulting text is "dGVuYW50L21lOnNlY3JldA==". Use "Basic dGVuYW50L21lOnNlY3JldA==" as value for the "auth" key.
 
 You can achieve the same result also by using the Base64 command as follows:
 
 ```shell
-$ echo tenant/me:secret | base64
+$ echo -n tenant/me:secret | base64
 ```
 
 Now it is time to start exploring the API!

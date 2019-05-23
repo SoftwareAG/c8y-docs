@@ -285,3 +285,38 @@ In case of this alarm, you can see that the **Provisioned** status is set to "fa
 The **Provisioned** status is set to true when the device provisioning process is completed and success information is received from the Sigfox platform. Additionally, it is set to true when uplink messages are retrieved from the device.
 
 > **Info:** The status is updated asynchronously which means that sometimes you might have to wait a bit until it is set to true.
+
+#### Callback creation failed
+
+![Callback creation failed](/guides/images/users-guide/sigfox/sigfox-troubleshooting-callback.png)
+
+This alarm is created when one or more callback creation requests have failed in the Sigfox platform. The alarm can be observed either in the "Alarms" page or in the "Home" page.
+
+In order to fix this issue, you have to go to the Sigfox platform web interface and check the device type with the id mentioned in the alarm.
+
+![Device Type Id in the alarm](/guides/images/users-guide/sigfox/sigfox-troubleshooting-callback-typeid.png)
+
+In this case navigate to the following address: "https://backend.sigfox.com/devicetype/5cd3ee2c0499f508834838c3/callbacks"
+
+If the mentioned callbacks cannot be located in the Sigfox platform, you should create them manually. All of the required information needed for the creation of the callbacks is already given in the alarm description. In the case of the above alarm, the following callback is listed first:
+
+ - [[callback=[type=DATA_BIDIR, url=https://ozge.staging-latest.c8y.io/service/sigfox-agent/sigfoxDataCallback, httpMethod=POST, bodyTemplate={"device":"{device}","time":"{time}","snr":"{snr}","station":"{station}","data":"{data}","rssi":"{rssi}","seqNumber":"{seqNumber}","ack":"{ack}"}, contentType=application/json, headers={Authorization=Basic ...}]]
+
+In order to manually create the callback, the following properties must be filled:
+
+ - type
+ - url
+ - httpMethod
+ - bodyTemplate
+ - contentType
+ - headers
+
+**Info:** The Authorization header displayed in the alarm does not show the user credentials.
+
+Non mentioned properties from the alarm are:
+ - sendSni
+ - sendDuplicate
+
+Those properties will be set to false.
+ 
+

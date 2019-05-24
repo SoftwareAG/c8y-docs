@@ -217,7 +217,7 @@ In the next window, fill in the required information:
 - **PAC:** Porting authorization code for your device. The value must be a hexadecimal number.
 - **Contract:** Choose your desired contract.
 - **Device protocol:** Select your desired device protocol from the drop-down list.
-- **Product certificate key:** This key can be located in *https://partners.sigfox.com/*. Navigate to your device and copy the certificate key.
+- **Product certificate key:** This key can be located in *https://partners.sigfox.com/*. Navigate to your device and copy the certificate key. If the checkbox is not selected and no product certificate key is specified, the device will be considered a prototype.
 
 **Info:** The term "Device type" is used both by Sigfox and Cumulocity, but with different meaning. In Sigfox, a device type specifies how to route data from devices. In Cumulocity, a device type describes the data that is sent by devices of a particular type.
 

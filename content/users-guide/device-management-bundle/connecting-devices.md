@@ -77,6 +77,7 @@ To connect larger amounts of devices, Cumulocity offers the option to bulk-regis
 <br>
 Depending on the format of the uploaded CSV file, one of the following registration types will be processed.
 
+> **Info:** Bulk registration creates an elementary representation of the device. Then, the device needs to update it to a full representation with its own status.
 
 **Simple registration**
 

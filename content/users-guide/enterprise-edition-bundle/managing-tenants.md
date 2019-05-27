@@ -26,7 +26,7 @@ Click **Subtenants** in the **Tenants** menu to view all subtenants available in
 The **Tenants** page provides the following information on each subtenant:
 
 * The name of the subtenant, e.g. company name of your customer.
-* The ID and domain. Note: The domain can be changed later on. The ID cannot be changed anymore once the tenant was created.
+* The ID and domain.
 * Optionally, a contact name and phone number.
 * The date when the tenant was created.
 * The status of the tenant, either active (indicated by a green checkmark icon) or suspended (indicated by a red cross icon).
@@ -50,7 +50,7 @@ In the management tenant, you will also find information on the parent tenant, i
 <tbody>
 <tr>
 <td style="text-align:left">Domain/ URL</td>
-<td style="text-align:left">Enter a unique ID as the first part of the URL. For example, if you enter "acme" as ID on cumulocity.com, the tenant's URL will be "acme.cumulocity.com". You can only use one subdomain level. For example, you can only use "acme.cumulocity.com" on cumulocity.com. You cannot use "mycustomer.acme.cumulocity.com". This is not permitted by the TLS standard. </td>
+<td style="text-align:left">Choose a subdomain, for example "acme". The tenant's URL will be "acme.cumulocity.com" on cumulocity.com. You can only use one subdomain level. For example, you can only use "acme.cumulocity.com" on cumulocity.com. You cannot use "mycustomer.acme.cumulocity.com". This is not permitted by the TLS standard. </td>
 </tr>
 <tr>
 <td style="text-align:left">Name</td>

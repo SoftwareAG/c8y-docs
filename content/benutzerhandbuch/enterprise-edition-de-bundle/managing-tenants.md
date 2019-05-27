@@ -26,7 +26,7 @@ Klicken Sie **Untermandanten** im Menü **Mandanten**, um eine Liste aller Unter
 Die Seite **Mandanten** zeigt die folgenden Informationen für jeden Untermandanten an:
 
 *   Name des Untermandanten, z.B. Name des Unternehmens Ihres Kunden.
-*   ID und Domain. Beim Erstellen des Mandanten wird die ID zum ersten Teil der URL. Wenn Sie beispielsweise einen Mandanten mit der ID "acme" auf cumulocity.com erstellen, lautet die URL des Mandanten "acme.cumulocity.com". Beachten Sie, dass Sie, nachdem der Mandant einmal erstellt wurde, zwar die URL später ändern können, nicht aber die ID.
+*   ID und Domain.
 *   Optionaler Kontaktname und Telefonnummer.
 *   Das Erstellungsdatum für den Mandanten.
 *   Status des Mandanten, entweder aktiv (angezeigt durch ein grünes Häkchen) oder gesperrt (angezeigt durch ein rotes Kreuz).
@@ -45,7 +45,7 @@ Geben Sie für den neuen Mandanten folgende Attribute an:
 
 |Feld|Beschreibung
 |:--------|:-----
-|Domain/ URL|Geben Sie eine eindeutige ID als ersten Teil der URL ein. Wenn Sie beispielsweise "acme" als ID auf cumulocity.com eingeben, lautet die URL des Mandanten "acme.cumulocity.com". Sie können nur eine Subdomain-Ebene verwenden. Sie können zum Beispiel nur "acme.cumulocity.com"auf cumulocity.com verwenden. Sie können aber nicht "mycustomer.acme.cumulocity.com" wählen. Dies wird vom TLS-Standard nicht unterstützt. 
+|Domain/ URL| Wählen Sie eine Subdomain, beispielsweise "acme". Auf cumulocity.com, lautet die URL des Mandanten "acme.cumulocity.com". Sie können nur eine Subdomain-Ebene verwenden. Sie können zum Beispiel nur "acme.cumulocity.com" auf cumulocity.com verwenden. Sie können aber nicht "mycustomer.acme.cumulocity.com" wählen. Dies wird vom TLS-Standard nicht unterstützt. 
 |Name|Name des Mandanten, z. B. Name des Unternehmens.
 |E-Mail des Administrators|Sie müssen eine gültige E-Mail-Adresse angeben, damit Benutzer ihr Passwort ändern können.
 |Benutzername des Administrators|Benutzername des Administrators dieses Mandanten.

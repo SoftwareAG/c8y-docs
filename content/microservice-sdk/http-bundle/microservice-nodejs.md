@@ -1,6 +1,6 @@
 ---
 weight: 40
-title: Node.js Microservice
+title: Node.js microservice
 layout: redirect
 ---
 

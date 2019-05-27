@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Python Microservice
+title: Python microservice
 layout: redirect
 ---
 

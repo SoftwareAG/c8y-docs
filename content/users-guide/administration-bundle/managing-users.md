@@ -21,7 +21,7 @@ The user management functionality allows you to manage the users within your ten
 
 To view all users in your tenant, click **Users** in the **Account** menu in the navigator.
 
-![Expanded view](/guides/images/users-guide/userslist.png)
+![Expanded view](/guides/images/users-guide/Administration/admin-users-list.png)
 
 A user list will be displayed, providing the following information for each user:
 
@@ -72,7 +72,7 @@ Click **Save** to create the user.
 
 Click the menu icon at the right of a user entry to open a context menu which provides further functionalities.
 
-<img src="/guides/images/users-guide/Admin_UserContextMenu.png" alt="Context menu" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-user-menu.png" alt="Context menu" style="max-width: 100%">
 
 > **Info:** You need a role with user management permission to perform these options.
 

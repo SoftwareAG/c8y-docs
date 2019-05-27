@@ -45,7 +45,7 @@ Geben Sie für den neuen Mandanten folgende Attribute an:
 
 |Feld|Beschreibung
 |:--------|:-----
-|Domain/ URL| Wählen Sie eine Subdomain, beispielsweise "acme". Auf cumulocity.com, lautet die URL des Mandanten "acme.cumulocity.com". Sie können nur eine Subdomain-Ebene verwenden. Sie können zum Beispiel nur "acme.cumulocity.com" auf cumulocity.com verwenden. Sie können aber nicht "mycustomer.acme.cumulocity.com" wählen. Dies wird vom TLS-Standard nicht unterstützt. 
+|Domain/ URL| Geben Sie eine beliebige Subdomain ein, beispielsweise "acme". Auf cumulocity.com, lautet die URL des Mandanten "acme.cumulocity.com". Sie können nur eine Subdomain-Ebene verwenden. Sie können zum Beispiel nur "acme.cumulocity.com" auf cumulocity.com verwenden. Sie können aber nicht "mycustomer.acme.cumulocity.com" wählen. Dies wird vom TLS-Standard nicht unterstützt. 
 |Name|Name des Mandanten, z. B. Name des Unternehmens.
 |E-Mail des Administrators|Sie müssen eine gültige E-Mail-Adresse angeben, damit Benutzer ihr Passwort ändern können.
 |Benutzername des Administrators|Benutzername des Administrators dieses Mandanten.

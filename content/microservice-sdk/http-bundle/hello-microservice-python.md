@@ -79,7 +79,7 @@ def environment():
     return jsonify(environment_data)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80, debug=True)
+    app.run(host='0.0.0.0', port=80)
 ```
 
 The application is configured to run on port 80 – which is required for microservices – and exposes three endpoints:
@@ -95,8 +95,8 @@ You need to create a Dockerfile in order to build a Docker image with your appli
 ```dockerfile
 FROM python:alpine3.6
 
-ADD application.py /
-RUN pip install flask
+COPY application.py /
+RUN pip install flask==0.10.1
 
 ENTRYPOINT ["python"]
 CMD ["application.py"]

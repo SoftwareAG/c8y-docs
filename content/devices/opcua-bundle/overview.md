@@ -8,8 +8,7 @@ It is platform independent and ensures the seamless flow of information among de
 The specification defined a standard set of objects, interfaces and methods for use in process control and manufacturing automation applications to facilitate interoperability. 
 
 The most common OPC specification is OPC Data Access, which is used to read and write real-time data.
-For details I refer you to [OPC-UA specification](https://opcfoundation.org/developer-tools/specifications-unified-architecture).
-There is number of implementation of OPC-UA Servers provided by other companies like [Kepware](https://www.kepware.com/en-us/)
+For details, refer to [OPC-UA specification](https://opcfoundation.org/developer-tools/specifications-unified-architecture).
 
 ### Architecture
 Cumulocity provides the OPC-UA agent written in Java which integrates the Cloud Fieldbus model and the OPC-UA data model.

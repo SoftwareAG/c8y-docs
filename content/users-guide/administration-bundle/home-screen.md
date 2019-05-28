@@ -12,7 +12,7 @@ The Home screen of the Administration application provides
 * your capacity usage for the current and for the last month,
 * the optional applications you are subscribed to. 
 
-<img src="/guides/images/users-guide/Administration/Admin_HomeScreen.png" alt="Home screen" style="max-width: 100%">
+<img src="/guides/images/users-guide/Administration/admin-home.png" alt="Home screen">
 
 The capacity sections show:
 

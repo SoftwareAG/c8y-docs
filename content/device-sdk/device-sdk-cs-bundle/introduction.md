@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: REST client - overview 
+title: REST client - overview
 layout: redirect
 ---
 
@@ -36,3 +36,4 @@ To verify the version of your .NET Core Software Development Kit, type
 
 The output needs to show a version number later than "2.2.100" for the basic examples.
 
+You need to have a valid tenant, user and password in order to access Cumulocity. Refer to [Tenant ID and tenant domain](guides/reference/tenants/#tenant-id-and-domain) in the Reference guide to learn the difference between tenant ID and tenant domain.

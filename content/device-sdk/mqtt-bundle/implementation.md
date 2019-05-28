@@ -69,7 +69,7 @@ Every operation received will contain the template ID followed by the ID of the 
 
 #### MQTT authentication
 
-MQTT supports setting a username and a password. To connect to Cumulocity, the MQTT username needs to include both tenant and username in the format "tenant/username".
+MQTT supports setting a username and a password. To connect to Cumulocity, the MQTT username needs to include both tenantID and username in the format "tenantID/username".
 
 #### MQTT ClientId
 

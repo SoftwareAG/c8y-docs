@@ -7,13 +7,17 @@ weight: 30
 
 ### Overview
 
-LuvitRED is a browser-based application which allows you to write applications without any programming language. With the help of an editor, you can easily create workflows by utilizing a set of nodes which perform certain tasks respectively.
+LuvitRED is a browser-based application which allows you to write applications without any programming language. With the help of an editor, you can easily create workflows by utilizing a set of nodes which perform certain tasks.
 
-To view the LuvitRED editor, go to the "Plugin" tab in the CloudGate web interface and select "LuvitRED". Click on "Advanced Editor" and the editor will appear.
+To view the LuvitRED editor, navigate to the **Plugin** tab in the CloudGate web interface and select **LuvitRED**. Click **Advanced Editor**.
 
 ![LuvitRED user interface](/guides/images/devices/cloudgate/luvitred.png)
 
-On the left side of the user interface, you can see a list of nodes which are ready to use. To see which purpose the node serves, click on a node and see the description on the right side. Drag a node into the middle area to add it to your current workflow. Before creating a workflow, you have make sure that your device is connected to the CloudGate, otherwise the workflow will not work. In a similar manner, you have to include at least one "c8y" node in your workflow in order to connect to Cumulocity. Type "c8y" into the search bar to view all the nodes which are related to Cumulocity. Adding one of the following "c8y" nodes brings the following features:
+On the left, you will find a list of nodes which are ready to use. To check the function of a node, click it and find a description on the right. Drag a node into the middle area to add it to your current workflow. 
+
+Before creating a workflow, make sure that your device is connected to CloudGate, otherwise the workflow will not work. 
+
+You have to include at least one "c8y" node in your workflow in order to connect to Cumulocity. Type "c8y" into the search bar to view all the nodes which are related to Cumulocity. The "c8y" nodes perform the following tasks:
 
 * [c8y measurement](#measurement): Sends a measurement to the Cumulocity server
 * [c8y alarm](#alarm): Sends an alarm to the Cumulocity server
@@ -22,15 +26,21 @@ On the left side of the user interface, you can see a list of nodes which are re
 * [c8y config](#config): Receives a configuration update sent by the Cumulocity server
 * [c8y response](#response): Sends a response to commands to the Cumulocity server
 
-> Note that nodes in LuvitRED which require the user to write code (e.g. the "function" node) use Lua as a programming language.
+> **Info**: Nodes in LuvitRED which require the user to write code (e.g. the "function" node) use Lua as a programming language.
 
 ### Using LuvitRED with Cumulocity: An Example
 
 #### Basic workflow
 
-In general, a node can have an input and/or output depending on the functionality. Two nodes can be connected by linking the output of one node with the input of another node. A dialog for configuring the node will appear when double-clicking it. After configuring the nodes, the workflow is ready to be deployed. Click on the "Deploy" button in the top right corner to start the workflow. If there are changes in the configuration which have not been deployed yet, a blue dot will appear above the node. If there is at least one parameter in the configuration which has to be specified but is not, a red triangle will appear above the node.
+In general, a node can have an input and/or output, depending on its functionality. 
 
-In the following example, the "inject" and "debug" node will be used. Drag both nodes into the middle area and connect them by clicking on the output of the "inject" node", holding the mouse and releasing it above the input of the "debug" node.
+Two nodes can be connected by linking the output of one node with the input of another node. 
+
+Double-click a node to configure it in the resulting dialog box. After configuring the nodes, the workflow is ready to be deployed. Click  **Deploy** at the top right to start the workflow. 
+
+If changes in the configuration have not yet been deployed, this is indicated by a blue dot above the node. If at least one mandatory parameter in the configuration is not yet specified, this is indicated by a red triangle above the node.
+
+In the following example, the "inject" and "debug" node will be used. Drag both nodes into the middle area and connect them by clicking on the output of the "inject" node, holding the mouse and releasing it above the input of the "debug" node.
 
 ![LuvitRED user interface](/guides/images/devices/cloudgate/basicflow.png)
 

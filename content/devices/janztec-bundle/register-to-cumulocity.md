@@ -3,22 +3,15 @@ title: Register to Cumulocity
 layout: redirect
 weight: 30
 ---
-First, find out the serial number of your device:
+Find out the serial number of your device:
 
 ```shell
 $ grep Serial /proc/cpuinfo
 Serial          : 000000001955c218
 ```
 
-Go to Cumulocity's device registration page, type in the above serial number and click "Register Device". In a few seconds, a green "Accept" button appears, click the button to accept the device.
+To connect your device to the Cumulocity platform, you first need to register it in your Cumulocity account.
 
-![Bootstrap](/guides/images/devices/janztec/bootstrap.png)
+Follow the instructions in [Device Management > Connecting devices](/guides/users-guide/device-management#connecting-devices) in the User guide to register and connect your device.
 
-### Cumulocity IoT Platform
-
-Remotely monitoring the memory usage and system load of your device.
-
-![measurement](/guides/images/devices/janztec/measurement.png)
-
-Troubleshooting your device via Cumulocity's logview feature.
-![logview](/guides/images/devices/janztec/logview.png)
+After connecting your device, you can for example remotely monitor the memory usage and system load of your device in the **Measurement** tab of the device or troubleshoot your device in the **Log** tab, see [Device Management > Device Details](/guides/users-guide/device-management#device-details) in the User guide.  

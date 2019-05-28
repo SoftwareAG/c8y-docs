@@ -25,4 +25,4 @@ The tenant ID is a unique identifier across all tenants, e.g. t07007007, and it 
 
 The location where a tenant can be accessed is called tenant domain, e.g. _mytenant.cumulocity.com_. It needs to be unique across all tenants and it can be changed after tenant creation.
 
-In general, the tenant domain should be used for communication if it is known. With a unique tenant domain, the authentication can be done using the username and password.
+In general, the tenant domain should be used for communication if it is known. 

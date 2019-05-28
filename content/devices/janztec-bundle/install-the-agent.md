@@ -1,11 +1,13 @@
 ---
-title: Install the Agent
+title: Installing the agent
 layout: redirect
 weight: 20
 ---
-The device has been tested to be supported by Cumulocity's Linux agent. First, login to the device, and make sure you are running as least Raspbian 8.0 (Jessie).
+The device has been tested to be supported by Cumulocity's Linux agent. 
 
-```shell
+1. Log into the device and make sure you are running Raspbian 8.0 (Jessie) or higher.
+ 
+	```shell
 $ lsb_release -a
 No LSB modules are available.
 Distributor ID: Raspbian
@@ -13,22 +15,22 @@ Description:    Raspbian GNU/Linux 8.0 (jessie)
 Release:        8.0
 Codename:       jessie
 ```
-
-Second, install the required dependencies for the agent by issuing the following command in the terminal:
-
-```shell
+ 
+2. Install the required dependencies for the agent:
+	
+	```shell
 $ sudo apt-get install libcurl3 liblua5.2-0
 ```
+ 
+3. Download and install the latest Linux agent:
 
-Third, download and install the latest Linux agent:
-
-```shell
+	```shell
 $ wget http://resources.cumulocity.com/examples/c8ydemo-agent-armhf-latest.deb
 $ sudo dpkg -i c8ydemo-agent-armhf-latest.deb
-```
+ ```
+ 
+4. Finally, reboot the device to automatically start the agent:
 
-Finally, reboot the device to automatically start the agent:
-
-```shell
+	```shell
 $ sudo reboot
-```
+ ```

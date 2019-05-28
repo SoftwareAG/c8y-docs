@@ -1,13 +1,9 @@
 ---
-title: Connecting
+title: Connecting to Cumulocity
 layout: redirect
 weight: 30
 ---
 
-First you need a Cumulocity account, then on the left side panel click on "DEVICES > Registration"
+To connect your device to the Cumulocity platform, you first need to register it in your Cumulocity account.
 
-Enter the Device ID in the proper field and click on "Register device". Wait for the "Accept" button to appear, then click on it to register the device.
-
-Now click in "DEVICES > All devices", then search for your device to manage it.
-
-To better understand how our platform works and custom configure the interface, consult our [guidelines](https://www.cumulocity.com/guides/).
+Follow the instructions in [Device Management > Connecting devices](/guides/users-guide/device-management#connecting-devices) in the User guide to register and connect your device.

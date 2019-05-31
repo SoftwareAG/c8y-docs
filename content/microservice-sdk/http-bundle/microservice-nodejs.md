@@ -6,10 +6,7 @@ layout: redirect
 
 Cumulocity provides SDKs for developing microservices using C# or Java. Nevertheless, you are free to choose the tech-stack of your preference to develop a microservice as long as it fulfills the [general requirements](/guides/microservice-sdk/concept/#requirements).
 
-In this example you will learn how to create and deploy a Node.js-based microservice. The application exposes endpoints to:
-
-- verify if the microservice is up and running
-- get some of the environment variables
+In this example you will learn how to create and deploy a Node.js-based microservice. The application exposes endpoints to verify if the microservice is up and running and get some of the environment variables.
 
 It uses the Cumulocity [@c8y/client JavaScript library](https://www.npmjs.com/package/@c8y/client) to subscribe to alarms. When a new alarm is created, a Slack channel gets notified.
 
@@ -53,7 +50,7 @@ It will walk you through creating a *package.json* file which allows to identify
 
 #### Add the source code
 
-Now create a file name *app.js* which is the main entry point of your application. It uses the Express framework to start a server listening on port 80, defines its endpoints and requires controllers to use the Cumulocity and Slack APIs.
+Now create a file *app.js* which is the main entry point of your application. It uses the Express framework to start a server listening on port 80, defines its endpoints and requires controllers to use the Cumulocity and Slack APIs.
 
 ```javascript
 "use strict";
@@ -260,7 +257,7 @@ $ zip node-microservice cumulocity.json image.tar
 ```
 
 The resulting _node-microservice.zip_ file contains your microservice and it is ready to be uploaded to the Cumulocity platform.
-Uploading the _node-microservice.zip_ into the platform can be done via the UI. In the Administration application, navigate to **Applications** > **Own applications** > **Add application** > **Upload microservice**. Drop the ZIP file of the microservice and click **Subscribe** afterwards.
+Uploading the _node-microservice.zip_ into the platform can be done via the UI. In the Administration application, navigate to **Applications** > **Own applications** > **Add application** > **Upload microservice**. Drop the ZIP file of the microservice and then click **Subscribe**.
 
 ![Subscribe microservice](/guides/images/microservices-sdk/admin-microservice-subscribe-up.png)
 
@@ -268,7 +265,7 @@ For more details about uploading a microservice ZIP file, refer to [Managing app
 
 ### Testing the microservice
 
-After the microservice has been successfully uploaded and subscribed by your tenant, it will run in a Docker container. A request similar to:
+After the microservice has been successfully uploaded and subscribed to your tenant, it will run in a Docker container. A request similar to:
 
 ```http
 GET <URL>/service/node-microservice/environment

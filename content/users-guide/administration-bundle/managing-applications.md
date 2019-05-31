@@ -182,14 +182,14 @@ After successfully uploading the zip file to the platform the application is bei
 
 ##### <a name="uploading-microservices"></a>Uploading microservices
 
-In order to upload a microservice, follow these steps:
+Follow these steps in order to upload a microservice:
 
 1. Click **Add application** in the **Own applications** page.
-2. In the upcoming dialog, drop a zip file or browse for it on your computer.
+2. In the upcoming dialog, drop a ZIP file or browse for it on your computer. Note that the size limit of the file to be uploaded is 500 MB.
 
-After successfully uploading the zip file to the platform the application is being created.
+The microservice application is created once the ZIP file has been successfully uploaded.
 
->**Info**: In case of microservices, the package must contain the manifest file and Docker image of the microservice. Refer to [Microservice package reference](/guides/reference/microservice-package) in the Reference guide in order to prepare and deploy the microservice package.
+>**Important**: The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [Packing](/guides/microservice-sdk/concept/#packing) in the Microservice SDK guide under **General aspects** in order to prepare and deploy the microservice package.
 
 
 ##### <a name="external-application"></a>Linking to external applications
@@ -314,7 +314,7 @@ Be aware of the "UI" at the end of the plugin names.
 
 #### Uploading archives
 
-Multiple archive file versions can be stored in Cumulocity when they were created by uploading either a zip file or a mon file. Each version is called an archive. You can upload different versions at the same time and switch between these versions. 
+Multiple archive file versions can be stored in Cumulocity when they were created by uploading either a zip file or a mon file. Each version is called an archive. You can upload different versions at the same time and switch between these versions.
 
 To upload an archive, follow these steps:
 
@@ -353,13 +353,3 @@ To define default microservices for subtenants, the following tenant option can 
 * category: configuration
 * key: default.tenant.microservices
 * value: comma-separated list of microservices names, e.g. device-simulator,smartrule,cep
-
-
-
-
-
-
-
-
-
-

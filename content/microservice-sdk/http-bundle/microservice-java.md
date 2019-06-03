@@ -277,18 +277,18 @@ public String trackLocation (HttpServletRequest request) {
 // Get the tracked IPs and locations
 @RequestMapping("location/locations")
 public ArrayList<Object> getLocations (@RequestParam(value = "max", defaultValue = "5") int max) {
-	var locations = new ArrayList<Object>();
-	var filter = new EventFilter().byType("c8y_LocationUpdate");
+    var locations = new ArrayList<Object>();
+	  var filter = new EventFilter().byType("c8y_LocationUpdate");
     var eventCollection = platform.getEventApi().getEventsByFilter(filter).get(max);
 
     eventCollection.getEvents().forEach((event) -> {
-    	var map = new HashMap<String, Object>();
+        var map = new HashMap<String, Object>();
 
-    	map.put("ip", event.getProperty("ip"));
-    	map.put("coordinates", event.getProperty("c8y_Position"));
-    	map.put("when", event.getCreationDateTime().toString("yyyy-MM-dd hh:mm:ss"));
+    	  map.put("ip", event.getProperty("ip"));
+    	  map.put("coordinates", event.getProperty("c8y_Position"));
+    	  map.put("when", event.getCreationDateTime().toString("yyyy-MM-dd hh:mm:ss"));
 
-    	locations.add(map);
+    	  locations.add(map);
     });
 
     return locations;
@@ -301,9 +301,29 @@ Use the command `mvn clean install` and follow the same steps of the [Hello worl
 
 ### Test
 
-track
-load the tracked
-see the map
+You can test any endpoint of your application using the command line or a web browser. For example, a GET request on <kbd>location/track</kbd> will obtain the client's IP from the request header and use the `createLocationUpdateEvent` method to get the approximate location. A response will be similar to:
+
+```http
+{
+  time: "2019-06-03T08:44:21.730Z",
+    source: {
+      id: "..."
+    },
+    text: "Accessed from ... (Sofia, BG)",
+    type: "c8y_LocationUpdate",
+    c8y_Position: {
+      lng: "23.3175",
+      lat: "42.683"
+    },
+    ip: "..."
+}
+```
+
+Using the endpoint <kbd>location/locations</kbd> will return five stored events by default. You can use the `max` parameter to specify a bigger number.
+
+In Device management, navigate to **Devices** > **All devices** and locate your Microservice tracker. Under **Tracking** you will be able to see a map with the tracked locations. It is also possible to develop your own web application and customize a map widget. Refer to the [Web SDK for Angular](https://cumulocity.com/guides/web/angular/#apps) for more details.
+
+![Microservice tracking](/guides/images/microservices-sdk/ms-tracking-map.png)
 
 ### Source code
 

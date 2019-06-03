@@ -119,7 +119,7 @@ public class App {
                 alarm.setSeverity("WARNING");
                 alarm.setSource(source);
                 alarm.setType("c8y_Application__Microservice_started");
-                alarm.setText("The microservice has been started");
+                alarm.setText("The microservice " + C8Y_ENV.get("app_name") + " has been started");
                 alarm.setStatus("ACTIVE");
                 alarm.setDateTime(new DateTime(System.currentTimeMillis()));
 

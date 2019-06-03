@@ -114,9 +114,15 @@ To view logs open the **Log** tab of the respective microservice.
 
 At the top of the page, the instance of the microservice, for which you want to view the logs, can be selected. Moreover you can adjust the font size and the theme at the right.
 
+If your microservice was re-scaled into two instances you should be able to switch between them, but it is not possible to see the logs from both instances at once.
+
+There is no possibility to see the logs from the previously running instances, however inside the instance there is a docker container running and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated docker container.
+
+Logs are always loaded from the docker container using both `stdout` and `stderr` sources and there is no possibility to distinguish/filter by the source. 
+
 Initially, the **Log** tab shows the logs of the microservice instance for the last 10 minutes. The exact time range for which the logs are displayed is shown below the logs.
 
-Click the arrow buttons "Next" or "Previous" to increase or respectively reduce the time range in 10 minutes steps.
+Click the arrow buttons "Next" or "Previous" to increase or respectively reduce the time range in 10 minutes steps, there is no possibility to get the logs for the custom date and time.
 
 If there have not been any logs in the selected time range, a message is shown accordingly:
 

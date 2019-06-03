@@ -39,7 +39,7 @@ Modify your *pom.xml* file to specify the Java version you want to use:
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <spring-boot-dependencies.version>2.1.4.RELEASE</spring-boot-dependencies.version>
     <c8y.version>9.16.2</c8y.version>
-    <microservice.name>my-first-microservice</microservice.name>
+    <microservice.name>iptracker-microservice</microservice.name>
 </properties>
 ```
 
@@ -83,11 +83,13 @@ public class App {
     private static Map<String, String> C8Y_ENV = null;
     private static String trackerId = "<trackerID>";
 
-	  public static void main (String[] args) {
+    public static void main (String[] args) {
         SpringApplication.run(App.class, args);
 
         // Load environment values
         C8Y_ENV = getEnvironmentValues();
+
+        // Platform credentials
         var username = "<tenantID>/<user>";
         var password = "<password>";
 
@@ -95,7 +97,7 @@ public class App {
             // Login to the platform
             platform = new PlatformImpl(C8Y_ENV.get("url"), new CumulocityCredentials(username, password));
 
-            // Add current user to the environment values
+            // Add the current user to the environment values
             var user = platform.getUserApi();
             var currentUser = user.getCurrentUser();
             C8Y_ENV.put("username", currentUser.getUserName());
@@ -138,7 +140,7 @@ The application will get environment values from the container it is running in,
 
 ### Creating a managed object
 
-An alarm must be associated to a source and it requires an ID. Hence, you need to create a managed object to be your source and use it in your microservice application. The same managed object will track the locations when the microservice get accessed on a particular endpoint.
+An alarm must be associated to a source and it requires an ID. Hence, you need to create a managed object to be your source and use its ID in your microservice application. The same managed object will track the locations when the microservice get accessed on a particular endpoint.
 
 Get your current location (latitude, longitude) using a free service, e.g. [My Current Location](https://mycurrentlocation.net).
 
@@ -163,13 +165,13 @@ BODY:
   }
 ```
 
-You will get the ID of your managed object in the response. Assign this ID to the `trackerId` variable in your *App.java*.
+You will get the ID of your managed object in the response. Assign this ID to the `trackerId` variable in your *App.java* file.
 
-You can also use the UI and navigate to **Devices** > **All devices** in Device management to verify that your device has been created and its location is displayed on a map.
+You can also use the UI and navigate to **Devices** > **All devices** in Device management to verify that your device has been created and its location is displayed on the map.
 
 ### Storing the location
 
-The microservice will get the approximate location based on IP. To achieve this, it uses the free service ipstack and you need to [get a free API key](https://ipstack.com/product). Once you have your key, add the following method to your *App.java* file:
+The microservice will get the approximate location based on the client's IP. To achieve this, it uses the free service ipstack and you need to [get a free API key](https://ipstack.com/product). Once you have your key, add the following method to your *App.java* file:
 
 ```java
 /**
@@ -278,17 +280,17 @@ public String trackLocation (HttpServletRequest request) {
 @RequestMapping("location/locations")
 public ArrayList<Object> getLocations (@RequestParam(value = "max", defaultValue = "5") int max) {
     var locations = new ArrayList<Object>();
-	  var filter = new EventFilter().byType("c8y_LocationUpdate");
+    var filter = new EventFilter().byType("c8y_LocationUpdate");
     var eventCollection = platform.getEventApi().getEventsByFilter(filter).get(max);
 
     eventCollection.getEvents().forEach((event) -> {
         var map = new HashMap<String, Object>();
 
-    	  map.put("ip", event.getProperty("ip"));
-    	  map.put("coordinates", event.getProperty("c8y_Position"));
-    	  map.put("when", event.getCreationDateTime().toString("yyyy-MM-dd hh:mm:ss"));
+        map.put("ip", event.getProperty("ip"));
+        map.put("coordinates", event.getProperty("c8y_Position"));
+        map.put("date", event.getCreationDateTime().toString("yyyy-MM-dd hh:mm:ss"));
 
-    	  locations.add(map);
+        locations.add(map);
     });
 
     return locations;

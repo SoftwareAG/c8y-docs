@@ -48,7 +48,6 @@ Edit the *App.java* file and add the following content:
 ```java
 package c8y.example;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -65,6 +64,7 @@ import org.springframework.web.client.RestTemplate;
 import com.cumulocity.microservice.autoconfigure.MicroserviceApplication;
 import com.cumulocity.model.authentication.CumulocityCredentials;
 import com.cumulocity.model.idtype.GId;
+import com.cumulocity.rest.representation.alarm.AlarmRepresentation;
 import com.cumulocity.rest.representation.event.EventRepresentation;
 import com.cumulocity.rest.representation.inventory.ManagedObjectRepresentation;
 import com.cumulocity.sdk.client.Platform;
@@ -109,12 +109,27 @@ public class App {
                     canCreateAlarms = true;
                 }
             }
+
+            // Create a warning alarm
+            if (canCreateAlarms) {
+                var source = new ManagedObjectRepresentation();
+                source.setId(GId.asGId(trackerId));
+
+                var alarm = new AlarmRepresentation();
+                alarm.setSeverity("WARNING");
+                alarm.setSource(source);
+                alarm.setType("c8y_Application__Microservice_started");
+                alarm.setText("The microservice has been started");
+                alarm.setStatus("ACTIVE");
+                alarm.setDateTime(new DateTime(System.currentTimeMillis()));
+
+                platform.getAlarmApi().create(alarm);
+            }
         } catch (SDKException sdke) {
             if (sdke.getHttpStatus() == 401) {
                 System.err.println("[ERROR] Security/Unauthorized. Invalid credentials!");
             }
         }
-
     }
 
     /**
@@ -169,7 +184,7 @@ You will get the ID of your managed object in the response. Assign this ID to th
 
 You can also use the UI and navigate to **Devices** > **All devices** in Device management to verify that your device has been created and its location is displayed on the map.
 
-### Storing the location
+### Storing the tracked locations
 
 The microservice will get the approximate location based on the client's IP. To achieve this, it uses the free service ipstack and you need to [get a free API key](https://ipstack.com/product). Once you have your key, add the following method to your *App.java* file:
 
@@ -184,7 +199,8 @@ public EventRepresentation createLocationUpdateEvent (String ip) {
 
     // Get location details from ipstack
     var rest = new RestTemplate();
-    var location = rest.getForObject("http://api.ipstack.com/" + ip + "?access_key=<YOUR_IPSTACK_KEY>", Location.class);
+    var apiURL = "http://api.ipstack.com/" + ip + "?access_key=<YOUR_IPSTACK_KEY>";
+    var location = rest.getForObject(apiURL, Location.class);
 
     // Prepare a LocationUpdate event using Cumulocity's API
     var c8y_Position = new JSONObject();
@@ -297,11 +313,11 @@ public ArrayList<Object> getLocations (@RequestParam(value = "max", defaultValue
 }
 ```
 
-### Build and deploy
+### Building and deploying the application
 
 Use the command `mvn clean install` and follow the same steps of the [Hello world tutorial](/guides/microservice-sdk/java/#java-microservice) to deploy your microservice.
 
-### Test
+### Testing
 
 You can test any endpoint of your application using the command line or a web browser. For example, a GET request on <kbd>location/track</kbd> will obtain the client's IP from the request header and use the `createLocationUpdateEvent` method to get the approximate location. A response will be similar to:
 

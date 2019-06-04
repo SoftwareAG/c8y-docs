@@ -6,7 +6,7 @@ layout: redirect
 
 >**Note**: Backup of opcua-agent-server data
 
-For users using opcua-agent-server, the following commands must be executed before following any of the steps described below if your upgrading from Edge 10.4 April 2019 or below. Additionally, please request the Cumulocity support for root user credentials if you don’t have it.
+For users using opcua-agent-server and who are upgrading from Edge 10.4 April 2019 or below to the latest verion, you must execute the below mentioned commands in your EDGE VM. This has to be done before following any of the steps described below. <br>Additionally, please request the Cumulocity support for root user credentials if you don’t have it.
 
 ```shell
 mkdir -p /usr/edge/properties/opcua/db

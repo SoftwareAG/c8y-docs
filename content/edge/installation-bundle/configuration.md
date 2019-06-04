@@ -23,22 +23,22 @@ The files have the following extensions:
 
 Post-installer configuration file is a key-value based configuration file which acts as input to the post_installation script while configuring the EDGE server.
 
-A template of this configuration file is placed with in the EDGE VM under */opt/c8y/utilities/post-installer/* as *config.dat*. In order to use this, you need to update the file with the correct values.
+A template of this configuration file is placed within the EDGE VM under */opt/c8y/utilities/post-installer/* as *config.dat*. In order to use this, you need to update the file with the correct values.
 
 >**Important**: This template file is overwritten if the post_installation script is invoked and inputs are entered manually via console.
 Therefore it is advisable to copy this template file to a different location and edit the same.
 
-Following are the keys available in the configuration file with description to provice the correct value
+Following are the keys available in the configuration file with description to provide the correct value
 
 `tenant.admin.username` : Provide a new username for the tenant admin. This username is later used to login to the system using the web browser.
 
 `tenant.admin.password` : Provide a new password for the *tenant admin username*. This password is later used to login to the system using the web browser.
 
->**Info**: Password should be base64 encoded only. E.g. If you want the password to be “edge@123” then the encoded value ZWRnZUAxMjM= should be used in the configuration file.
+>**Info**: Password should be base64 encoded only. E.g. If you want the password to be edge@123 then the encoded value ZWRnZUAxMjM= should be used in the configuration file.
 
 >**Important**: Password should contain a minimum of 8 and a maximum of 32 characters and it may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
 
-`tenant.domain.name` : Provide a fully qualified domain name, e.g. "myown.iot.com". The domain name must match the domain name of the SSL certificate. <br>Moreover, the domain name must match the Cumulocity licence’s domain. The Cumulocity licence is tied up to the domain name being used in the instance and mismatch would result in a setup failure.
+`tenant.domain.name` : Provide a fully qualified domain name, e.g. "myown.iot.com". The domain name must match the domain name of the SSL certificate. <br>Moreover, the domain name must match the Cumulocity licence's domain. The Cumulocity licence is tied up to the domain name being used in the instance and mismatch would result in a setup failure.
 
 >**Important**: Once configured, the domain name cannot be changed. Make sure to use the name finally desired.
 
@@ -51,7 +51,7 @@ Make sure that the file path is valid and the file exists in the local machine.
 `c8y.license` : Provide the absolute path of the license file. The file extension must be “.licence”, e.g. /home/admin/myown.iot.com.licence.
 Make sure that the file path is valid and the file exists in the local machine.
 
-`apama.license` : Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional licence file, you can leave this field empty
+`apama.license` : Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional licence file, in case you do not want to use it you should  leave this field empty.
 If the file path is specfied, make sure that the file path is valid and the file exists in the local machine.
 
 

@@ -4,9 +4,9 @@ title: Upgrading the system
 layout: redirect
 ---
 
->**Note**: Backup of opcua-agent-server data
+>**Info**: Backup of opcua-agent-server data
 
-For users using opcua-agent-server and who are upgrading from Edge 10.4 April 2019 or below to the latest verion, you must execute the below mentioned commands in your EDGE VM. This has to be done before following any of the steps described below. <br>Additionally, please request the Cumulocity support for root user credentials if you don’t have it.
+If you use opcua-agent-server and you are upgrading from Edge 10.4 April 2019 or below version to the latest version, you must execute the below mentioned commands in your EDGE VM. This has to be done before following any of the steps described below.<br>Additionally, please request the Cumulocity support for root user credentials if you don’t have it.
 
 ```shell
 mkdir -p /usr/edge/properties/opcua/db

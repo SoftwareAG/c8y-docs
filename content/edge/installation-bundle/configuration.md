@@ -19,24 +19,24 @@ The files have the following extensions:
 
 >**Important**: Do not rename the license file received from Cumulocity support. Renaming the license file causes failure of the post-installation process.
 
-### Preparing Cumulocity Post-Installer configuration file
+### Preparing the Cumulocity post-installer configuration file
 
-Post-installer configuration file is a key-value based configuration file which acts as input to the post_installation script while configuring the EDGE server.
+The post-installer configuration file is a key-value based configuration file which acts as input to the post-installation script while configuring the EDGE server.
 
 A template of this configuration file is placed within the EDGE VM under */opt/c8y/utilities/post-installer/* as *config.dat*. In order to use this, you need to update the file with the correct values.
 
->**Important**: This template file is overwritten if the post_installation script is invoked and inputs are entered manually via console.
+>**Important**: This template file is overwritten if the post-installation script is invoked and inputs are entered manually via console.
 Therefore it is advisable to copy this template file to a different location and edit the same.
 
-Following are the keys available in the configuration file with description to provide the correct value
+The following keys are available in the configuration file:
 
 `tenant.admin.username` : Provide a new username for the tenant admin. This username is later used to login to the system using the web browser.
 
 `tenant.admin.password` : Provide a new password for the *tenant admin username*. This password is later used to login to the system using the web browser.
 
->**Info**: Password should be base64 encoded only. E.g. If you want the password to be edge@123 then the encoded value ZWRnZUAxMjM= should be used in the configuration file.
+>**Info**: The password should be base64-encoded only. E.g. If you want the password to be edge@123 then the encoded value ZWRnZUAxMjM= should be used in the configuration file.
 
->**Important**: Password should contain a minimum of 8 and a maximum of 32 characters and it may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
+>**Important**: The password must have a minimum of 8 and a maximum of 32 characters and it may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
 
 `tenant.domain.name` : Provide a fully qualified domain name, e.g. "myown.iot.com". The domain name must match the domain name of the SSL certificate. <br>Moreover, the domain name must match the Cumulocity licence's domain. The Cumulocity licence is tied up to the domain name being used in the instance and mismatch would result in a setup failure.
 
@@ -166,7 +166,7 @@ You have the choice to enter the post-installation parameters manually via the c
 
 	`* Enter tenant admin password:`
 
-	>**Info**: Password should contain a minimum of 8 and a maximum of 32 characters and it may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
+	>**Info**: The password must have a minimum of 8 and a maximum of 32 characters and it may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
 
 3. Re-enter the previously entered password to confirm it. 
 
@@ -288,7 +288,7 @@ Provide the new password for the edge tenant. This password is later used to log
 
 `* Enter new tenant admin password:`
 
->**Info**: Password should contain a minimum of 8 and a maximum of 32 characters and it may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
+>**Info**: The password must have a minimum of 8 and a maximum of 32 characters and it may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
 
 Re-enter the previously provided password to confirm it.
 

@@ -19,6 +19,55 @@ The files have the following extensions:
 
 >**Important**: Do not rename the license file received from Cumulocity support. Renaming the license file causes failure of the post-installation process.
 
+### Preparing Cumulocity Post-Installer configuration file
+
+Post-installer configuration file is a key-value based configuration file which acts as input to the post_installation script while configuring the EDGE server.
+
+A template of this configuration file is placed with in the EDGE VM under */opt/c8y/utilities/post-installer/* as *config.dat*. In order to use this, you need to update the file with the correct values.
+
+>**Important**: This template file is overwritten if the post_installation script is invoked and inputs are entered manually via console.
+Therefore it is advisable to copy this template file to a different location and edit the same.
+
+Following are the keys available in the configuration file with description to provice the correct value
+
+`tenant.admin.username` : Provide a new username for the tenant admin. This username is later used to login to the system using the web browser.
+
+`tenant.admin.password` : Provide a new password for the *tenant admin username*. This password is later used to login to the system using the web browser.
+
+>**Info**: Password should be base64 encoded only. E.g. If you want the password to be “edge@123” then the encoded value ZWRnZUAxMjM= should be used in the configuration file.
+
+>**Important**: Password should contain a minimum of 8 and a maximum of 32 characters and it may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
+
+`tenant.domain.name` : Provide a fully qualified domain name, e.g. "myown.iot.com". The domain name must match the domain name of the SSL certificate. <br>Moreover, the domain name must match the Cumulocity licence’s domain. The Cumulocity licence is tied up to the domain name being used in the instance and mismatch would result in a setup failure.
+
+>**Important**: Once configured, the domain name cannot be changed. Make sure to use the name finally desired.
+
+`ssl.certificate` : Provide the absolute path of the SSL certificate file. The file extension should either be “.crt” or “.cert”, e.g. /home/admin/myown-selfsigned.crt.
+Make sure that the file path is valid and the file exists in the local machine.
+
+`ssl.certificate.key` : Provide the absolute path of the SSL certificate key file. The file extension must be “.key.”, e.g. /home/admin/myown-selfsigned.key.
+Make sure that the file path is valid and the file exists in the local machine.
+
+`c8y.license` : Provide the absolute path of the license file. The file extension must be “.licence”, e.g. /home/admin/myown.iot.com.licence.
+Make sure that the file path is valid and the file exists in the local machine.
+
+`apama.license` : Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional licence file, you can leave this field empty
+If the file path is specfied, make sure that the file path is valid and the file exists in the local machine.
+
+
+The following parameters are required only if you want to update the network parameters in the EDGE VM. You may skip these parameters if network is already configured or it is not applicable in your case.
+
+`network.ip` : Provide the new IP address for the ethernet interface, e.g. 192.168.56.120
+
+`netmask` : Provide the netmask IP for your network, e.g. 255.255.255.0
+
+`gateway.ip` : Provide the gateway IP for your network, e.g. 192.168.56.1
+
+`dns.server.ip` : Provide the DNS Server IP for your network, e.g. 192.168.56.1
+
+>**Info**: If the DNS Server IP is unknown, you can enter the previously entered gateway IP here. If any of the network parameters are not available, contact your network administrator.
+
+
 ### Configuring the Edge server
 
 Once Edge VM is started, you need to run the script *post_installation.sh* to configure the Edge server. The post-installation script is available in the folder */opt/c8y/utilities*.
@@ -117,7 +166,7 @@ You have the choice to enter the post-installation parameters manually via the c
 
 	`* Enter tenant admin password:`
 
-	>**Info**: The password may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
+	>**Info**: Password should contain a minimum of 8 and a maximum of 32 characters and it may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
 
 3. Re-enter the previously entered password to confirm it. 
 
@@ -239,7 +288,7 @@ Provide the new password for the edge tenant. This password is later used to log
 
 `* Enter new tenant admin password:`
 
->**Info**: The password may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]/
+>**Info**: Password should contain a minimum of 8 and a maximum of 32 characters and it may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
 
 Re-enter the previously provided password to confirm it.
 

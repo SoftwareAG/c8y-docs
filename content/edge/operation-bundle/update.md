@@ -4,11 +4,21 @@ title: Upgrading the system
 layout: redirect
 ---
 
+>**Note**: Backup of opcua-agent-server data
+
+For users using opcua-agent-server, the following commands must be executed before following any of the steps described below if your upgrading from Edge 10.4 April 2019 or below. Additionally, please request the Cumulocity support for root user credentials if you don’t have it.
+
+```shell
+mkdir -p /usr/edge/properties/opcua/db
+cp -a /etc/opcua/db/. /usr/edge/properties/opcua/db/
+```
+
+
 Follow the steps below to upgrade the system. 
 
 1. Power off the VM. To do so, access the VM and run the following command in the terminal:<br>
 ```shell
-`sudo shutdown`
+sudo shutdown
 ```
 
 2. Navigate to the VM directory. For VirtualBox it is *[USER-DIRECTORY]\VirtualBox VMs*. Move the entire VM folder (e.g. EDGE-server) to a safe location.

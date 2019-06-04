@@ -12,7 +12,7 @@ Additionally, Cumulocity IoT Edge offers Cloud Fieldbus functionality to collect
 
 Modbus is a serial communications protocol originally published by Modicon and used to establish master-slave/client-server communication between devices.
 
-Before you can connect a Modbus device 
+Before you connect a Modbus device 
 
 * check if the agent is running,
 * register the Modbus agent. This only has to be done once as a preparation step and is not required for every Modbus device.

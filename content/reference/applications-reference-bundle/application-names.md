@@ -38,7 +38,7 @@ These are listed in the following table. The columns show the following informat
 <tr>
 <td style="text-align:center"><a href="/guides/apama" class="no-ajaxy">Apama</a></td>
 <td style="text-align:left">Define business operations for immediate processing of incoming data by using Apama's Event Processing Language (EPL). This is a per-tenant deployment.</td>
-<td style="text-align:left">apama-small=<br> 1 core; 4 GB RAM<br>apama-medium=<br> 2 cores; 8 GB RAM<br>apama-large=<br>4 cores; 16 GB RAM</td>
+<td style="text-align:left">apama-ctrl</td>
 <td style="text-align:left">Microservice</td>
 <td style="text-align:left">Optional service</td>
 </tr>

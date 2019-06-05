@@ -125,7 +125,7 @@ The `detail$` and `list$` functions allow to subscribe to realtime channels that
   ```js
   {
     hot: true,                                    // true = shares one network request
-    realtime: true,                               // true = listen to real-time changes
+    realtime: false,                               // true = listen to real-time changes
     pagingStrategy: PagingStrategy.PROGRESSIVE,   // ALL = All pages are loaded
                                                   // NONE = only current page is loaded
                                                   // PROGRESSIVE = load pages with more()
@@ -199,4 +199,21 @@ const observableSubscription = observable$.subscribe((data) => {
   console.log(data)); // logs all alarm CRUD changes
 });
 observableSubscription.unsubscribe();
+```
+
+#### Authenticate in node.js
+The constructor `new Client([...])` initializes a new Client which allows to request data from the API. Differently to `Client.authenticate([...])` it needs a tenant given and does not verify if the login is correct. This is useful if you are developing a node.js microservice.
+
+```js
+const auth = new BasicAuth({ 
+   user: 'youruser',
+   password: 'yourpassword',
+   tenant: 'acme'
+ });
+
+ const baseUrl = 'https://acme.cumulocity.com';
+ const client = new Client(auth, baseUrl);
+ (async () => {
+   const { data, paging, res }); =  await client.inventory.list({ pageSize: 100 });
+ })();
 ```

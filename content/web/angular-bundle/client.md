@@ -202,7 +202,7 @@ observableSubscription.unsubscribe();
 ```
 
 #### Authenticate in node.js
-The constructor `new Client([...])` initializes a new Client which allows to request data from the API. Differently to `Client.authenticate([...])` it needs a tenant given and does not verify if the login is correct. This is useful if you are developing a node.js microservice.
+The constructor `new Client([...])` initializes a new client which allows to request data from the API. Unlike to `Client.authenticate([...])` it needs a tenant given and does not verify if the login is correct. This is useful if you are developing a node.js microservice.
 
 ```js
 const auth = new BasicAuth({ 

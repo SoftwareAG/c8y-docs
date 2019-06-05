@@ -140,10 +140,10 @@ The Multi Provider extension allows a declarative approach to extend the applica
         {
           "contextPath": "cockpit",
           "addImports": [
-            "my-plugin/welcomeScreen",
+            "my-plugin/cockpit-home",
           ],
           "removeImports": [
-            "core/welcomeScreen"
+            "core/cockpit-home"
           ]
         }
       ]
@@ -154,14 +154,14 @@ The Multi Provider extension allows a declarative approach to extend the applica
     ```javascript
     import '@c8y/ng1-modules/core';
     // [...] more imports removed for readability
-    import '@c8y/ng1-modules/alarmAssets/cumulocity';
-    // import '@c8y/ng1-modules/welcomeScreen/cumulocity';              // 1
-    import '@c8y/ng1-modules/deviceControlMessage/cumulocity';
-    import '@c8y/ng1-modules/deviceControlRelay/cumulocity';
+    import '@c8y/ng1-modules/alarmAssets/cumulocity.json';
+    // import '@c8y/ng1-modules/cockpit-home/cumulocity.json';              // 1
+    import '@c8y/ng1-modules/deviceControlMessage/cumulocity.json';
+    import '@c8y/ng1-modules/deviceControlRelay/cumulocity.json';
     // [...] more imports removed for readability
-    import 'my-plugin/cumulocity';                                      // 2
+    import 'my-plugin/cumulocity.json';                                    // 2
     ```
-    As you can see we simply removed the import of the original welcome screen plugin (1.) and replaced it by the custom implementation (2.). Note that all angular.js plugins need to have the `/cumulocity` addition to tell webpack that a legacy plugin is imported.
+    As you can see we simply removed the import of the original welcome screen plugin (1.) and replaced it by the custom implementation (2.). Note that all angular.js plugins need to have the `/cumulocity.json` addition to tell webpack that a legacy plugin is imported.
 
     To use legacy plugins in your custom non-default application you need to set the `upgrade` flag in the package.json file and use the same import approach like described before:
     ```

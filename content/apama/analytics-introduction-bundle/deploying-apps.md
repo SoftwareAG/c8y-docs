@@ -16,3 +16,6 @@ When the EPL is deployed to Cumulocity, each .mon file is assigned a unique pack
 
 The only non-Cumulocity bundles that your EPL is able to use are the Time Format bundles and the HTTP Client - JSON with generic request/response event definitions.
 
+When any EPL app signals a runtime error, this will be raised as an alarm. Runtime errors include uncaught exceptions, as well as any explicit logging of warnings and errors that your EPL app chooses to do. Health issues that relate to the Apama runtime in general will also be raised as alarms.
+
+For more detailed diagnostics of the Apama runtime and any active EPL apps, you can look at the logs for the **apama-ctrl** microservice. See [log files](/guides/users-guide/administration#managing-applications) for more details. However, some familiarity with Apama is necessary to get the most out of an Apama log file.

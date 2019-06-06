@@ -8,12 +8,12 @@ Using Apama within the Cumulocity IoT environment necessarily has some restricti
 
 There are a number of ways that assets may be deployed to Apama within Cumulocity IoT and the restrictions vary according to those mechanisms:
 
-* “Upload custom Apama rule” - the simplest mechanism to deploy Apama assets into a fully managed Apama correlator, see [Introduction > Deploying EPL](/guides/apama/introduction/#deploying-epl).
+* “Apama-epl” - the simplest mechanism to deploy Apama assets into a fully managed Apama correlator, see [Introduction > Deploying EPL](/guides/apama/introduction/#deploying-epl).
 * “Custom microservice” – where more complex Apama projects can be built using the Cumulocity microservice SDK, see [Developing applications > Cumulocity microservices](/guides/concepts/applications#microservices) in the Concepts guide.
 
 When designing an Apama solution to be deployed within any form of Cumulocity IoT environment, consider the following points.
 
-### General Apama limitations when using “Upload custom Apama rule” or “Custom microservice”
+### General Apama limitations when using “Apama-epl” or “Custom microservice”
 
 * For scalability, a correlator may move between hosts and therefore does not have access to a persistent file system. It is a standard Cumulocity IoT constraint that all microservices (either provided by the platform, or custom) must be stateless – see [Developing applications > Cumulocity microservices](/guides/concepts/applications#microservices) in the Concepts guide.
 
@@ -43,7 +43,7 @@ When designing an Apama solution to be deployed within any form of Cumulocity Io
 	* Debugging from Software AG Designer. Instead, debug your application running in a local correlator.
 	* Correlator REST interface.
 
-### Specific Apama limitations when using “Upload custom Apama rule”
+### Specific Apama limitations when using the “Apama-epl” application
 
 * For ease of use, the correlator startup is controlled by Cumulocity. Thus, features that require you to change configuration files or command line options are not accessible.
 

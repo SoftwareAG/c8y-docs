@@ -10,7 +10,7 @@ To be able to upload single .mon files to Cumulocity, your tenant needs to be su
 
 #### Deploying Apama applications as a single .mon file with the “Apama-epl” application
 
-The **Apama-epl** application provides an interface for uploading EPL apps (.mon files), as well as interactively editing new or pre-existing EPL apps.
+The **Apama-epl** application provides an interface for uploading and deploying EPL apps (.mon files), as well as interactively editing new or pre-existing EPL apps. Any user on the tenant wishing to use this application will need to be a **CEP Manager**. See [managing permissions](/guides/users-guide/administration/#managing-permissions).
 
 When the EPL is deployed to Cumulocity, each .mon file is assigned a unique package name. This prevents conflicts when multiple modules are uploaded. For this reason, you should not specify a 'package' statement in the .mon files. If you need to share events between different parts of your application, then write the event definitions and monitors that use it in a single .mon file.
 

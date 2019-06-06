@@ -37,9 +37,9 @@ These are listed in the following table. The columns show the following informat
 </tr>
 <tr>
 <td style="text-align:center"><a href="/guides/apama" class="no-ajaxy">Apama</a></td>
-<td style="text-align:left">Define business operations for immediate processing of incoming data by using Apama's Event Processing Language (EPL). This is a per-tenant deployment.</td>
-<td style="text-align:left">apama-ctrl</td>
-<td style="text-align:left">Microservice</td>
+<td style="text-align:left">Define business operations for immediate processing of incoming data by using Apama's Event Processing Language (EPL). The microservice is a per-tenant deployment. The web application is required, unless Apama is being used exclusively for Smart Rule functionality.</td>
+<td style="text-align:left">apama-ctrl, apama-epl</td>
+<td style="text-align:left">Microservice, Web application</td>
 <td style="text-align:left">Optional service</td>
 </tr>
 <tr>

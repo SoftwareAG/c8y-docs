@@ -6,9 +6,9 @@ layout: redirect
 
 ### Deploying Apama applications to Cumulocity
 
-To be able to upload custom EPL rules as applications to Cumulocity you need to be subscribed to one of the Apama applications provided in Cumulocity, see also the list of available [applications](/guides/reference/applications#application-names) in the Reference guide.
+To be able to upload single .mon files to Cumulocity, your tenant needs to be subscribed to both Apama applications provided in Cumulocity. See [applications](/guides/reference/applications#application-names) in the Reference guide for details.
 
-#### Deploying Apama applications as a single .mon file
+#### Deploying Apama applications as a single .mon file with the “Apama-epl” application
 
 The **Apama-epl** application provides an interface for uploading EPL apps (.mon files), as well as interactively editing new or pre-existing EPL apps.
 

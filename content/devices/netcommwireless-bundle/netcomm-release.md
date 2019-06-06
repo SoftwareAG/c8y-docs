@@ -30,8 +30,9 @@ The agent supports the following functionality:
 * Configuring and displaying of agent settings on the router's web user interface.
 * Get and put device configuration.
 * View system, ipsec and agent log files.
-* VNC remote access.
+* Cloud remote access for remotely access devices via VNC/Telnet/SSH protocols.
 * MQTT as alternative communication protocol.
+* CANopen protocol support for managing CANopen devices in a CANopen network.
 
 ## Known limitations and bugs
 
@@ -52,9 +53,9 @@ The agent was tested on an NTC-6200 device with firmware version 2.0.36.10. For 
 
 ## Installing the agent
 
-* Download the agent software: http://resources.cumulocity.com/ntc/smartrest-agent_4.0.2_arm.ipk.
-* Download the CA certificate bundle: http://resources.cumulocity.com/ntc/ca-cumulocity_20170118.0_arm.ipk.
-* Download the VNC proxy if you want to use VNC remote access: http://resources.cumulocity.com/ntc/vncproxy_1.0_arm.ipk.
+* Download the agent software: http://resources.cumulocity.com/ntc/smartrest-agent_4.2.3_arm.ipk.
+* Download the CA certificate bundle: http://resources.cumulocity.com/ntc/ca-cumulocity_20190515.0_arm.ipk.
+* Download the VNC proxy if you want to use VNC remote access: http://resources.cumulocity.com/ntc/vncproxy_2.0_arm.ipk.
 * Log in to the web user interface of the NTC-6200.
 * Navigate to the "System" menu. Click on "System configuration", "Choose a file" and select the downloaded software. Click "Upload" to upload the software to the router.
 * Click the "Install" button for the uploaded software which you want to install.
@@ -69,6 +70,18 @@ The agent will automatically start after installation and the router can then be
 For information on using the agent, please visit the [NetComm Agent User's Guide](/guides/images/devices/netcommwireless).
 
 ## History
+
+### 4.2.3
+[Agent Software](http://resources.cumulocity.com/ntc/smartrest-agent_4.2.3_arm.ipk),
+[CA certificate bundle](http://resources.cumulocity.com/ntc/ca-cumulocity_20190515.0_arm.ipk),
+[VNC Proxy](http://resources.cumulocity.com/ntc/vncproxy_2.0_arm.ipk). Changes:
+
+* Add support for modbus 32/64 bit registers, and little/big endianness.
+* Correctly handling special characters in software names so that software upgrade with special characters in their names will fail with a clear reason.
+* Correctly parsing timestamps with UTC "Z" timezone suffix when handling c8y_LogFileRequest operation.
+* Correctly calculate memory usage to fix a bogus memory leak issue.
+* Fixed websocket frame packing issue so that Cloud Remote Access works correctly for SSH protocol.
+* Updated CA certificate bundle to 20190515 version.
 
 ### 4.0.2
 [Agent Software](http://resources.cumulocity.com/ntc/smartrest-agent_4.0.2_arm.ipk),

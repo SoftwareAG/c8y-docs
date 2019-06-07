@@ -86,6 +86,7 @@ export class ApplicationOptions {
   noAppSwitcher?: boolean; // Hides the application from the application switched (saved to the server)
   globalTitle?: string; // HTML page title
   hidePowered?: boolean; // Hide powered by at the bottom of the navigator
+  hideAbout?: boolean; // Show or hide the about link
   supportUrl?: boolean | string; // URL for support link
   supportUserString?: string;
   rightDrawer?: boolean; // Show or hide the right drawer

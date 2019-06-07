@@ -29,4 +29,4 @@ You can either use predefined rules or define your own custom rules which requir
 |CEP rules|required applications
 |:---|:---
 |Pre-defined rules| "smartrule" (included in Cumulocity Standard Tenant) and "apama-ctrl"
-|Custom rules|"apama-ctrl"
+|Custom rules|"apama-ctrl" and "apama-epl"

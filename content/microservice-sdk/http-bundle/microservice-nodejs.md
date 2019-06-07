@@ -289,7 +289,7 @@ with proper credentials (user and password from any subscribed tenant), returns 
 
 If there are active alarms on your tenant, your Slack channel will get notified. You can also [create a new alarm](/guides/reference/alarms/#post-create-a-new-alarm) using the Cumulocity REST API and validate that your microservice is listening to new alarms. Your Slack channel will also get notified.
 
-![Subscribe microservice](/guides/images/microservices-sdk/microservice-slack-alarms.png)
+![Slack app posting alarms](/guides/images/microservices-sdk/microservice-slack-alarms.png)
 
 ### Source code
 

@@ -104,7 +104,7 @@ module.exports = function(app) {
 };
 ```
 
-At this point, your microservice would be accessible via web on its endpoints to return a "Hello world!" message, verify that the microservice is up and running and get some environment variables.
+At this point, your microservice would be accessible via web on its endpoints to return a "Hello world" message, verify that the microservice is up and running and get some environment variables.
 
 In order to implement the controllers, you need first to create a Slack app and get a token to use the Web API. Go to [Slack API: Applications](https://api.slack.com/apps?new_app=1) to create a new app. Choose your workspace and give your app a name, e.g. C8Y Slack bot. Afterwards, [get an OAuth access token](https://slack.dev/node-slack-sdk/getting-started#getting-a-token-to-use-the-web-api).
 
@@ -201,7 +201,7 @@ const auth = new BasicAuth({
 ```
 
 The code has two parts. The first one needs your Slack OAuth token and channel ID (chat group where the messages will be posted).
-A message is formatted using the colors of the different alarm severities that you may see in the Cockpit application. This message get posted to the Slack channel.
+A message is formatted using the colors of the different alarm severities that you may see in the Cockpit application. This message gets posted to the Slack channel.
 
 The second part uses basic authentication to the Cumulocity platform, it gets all active alarms on the tenant and posts alarm messages to the Slack channel. After that, it subscribes to alarms and notifies the channel each time a new alarm is created.
 

@@ -37,10 +37,10 @@ $ docker version
 
 To develop a simple "Hello world" microservice in Python, you need to:
 
-* Create a Python web application
-* Create the Dockerfile
-* Add the microservice manifest
-* Build and run the application
+* Create a Python web application.
+* Create the Dockerfile.
+* Add the microservice manifest.
+* Build and run the application.
 
 #### Creating a Python web application
 

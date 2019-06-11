@@ -3,6 +3,26 @@ weight: 10
 title: Overview
 layout: bundle
 slug: introduction
+aliases:
+  - /developers-guide
+  - /developers-guide/installing-the-sdk
+  - /developers-guide/installing-the-sdk.html
+  - /developers-guide/hello-world
+  - /developers-guide/hello-world.html
+  - /developers-guide/developing-java-clients
+  - /developers-guide/developing-java-clients.html
+  - /developers-guide/an-end-to-end-example
+  - /developers-guide/an-end-to-end-example.html
+  - /java/agents
+  - /java/developing-java-clients
+  - /java/hello-world-basic
+  - /java/hello-world-me
+  - /device-sdk/device-sdk-java
+  - /device-sdk/device-sdk-java/agents
+  - /device-sdk/device-sdk-java/developing-java-clients
+  - /device-sdk/device-sdk-java/hello-world-basic
+  - /device-sdk/device-sdk-java/hello-world-me
+  - /device-sdk/device-sdk-java/introduction
 ---
 
 Cumulocity offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the Cumulocity IoT platform.

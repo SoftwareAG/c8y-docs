@@ -70,9 +70,10 @@ In the first CSV example you can see the following fields:
 <td style="text-align:left">In this example the value of the security mode is “NO_SEC” which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. Currently Cumulocity supports only “NO_SEC” and “PSK”. With “PSK”, the client and server have a common secret symmetric cryptography. In the next example you will see how the CSV file should look when the security mode value is “PSK”.</td>
 </tr>
 </tbody>
-</table>|
+</table>
 
 ![CSV example 2.1](/guides/images/users-guide/LWM2M/example_2_1.png)
+
 ![CSV example 2.2](/guides/images/users-guide/LWM2M/example_2_2.png)
 
 In this CSV example, the security mode value is “PSK”, hence additional fields are required. The table below reflects the full set of possible fields.

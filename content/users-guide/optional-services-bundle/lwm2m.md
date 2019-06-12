@@ -79,10 +79,10 @@ In the first CSV example you can see the following fields:
 In this CSV example, the security mode value is “PSK”, hence additional fields are required. The table below reflects the full set of possible fields.
 
 <table>
-<col style="width=15%">
-<col style="width=15%">
-<col style="width=55%">
-<col style="width=15%">
+<col style="width:25%">
+<col style="width:15%">
+<col style="width:45%">
+<col style="width:15%">
 <thead>
 <tr>
 <th style="text-align:left">Field</th>

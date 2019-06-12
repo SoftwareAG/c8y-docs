@@ -30,7 +30,7 @@ The agent supports the following functionality:
 * Configuring and displaying of agent settings on the router's web user interface.
 * Get and put device configuration.
 * View system, ipsec and agent log files.
-* Cloud remote access for remotely access devices via VNC/Telnet/SSH protocols.
+* Cloud remote access for remotely accessing devices via VNC/Telnet/SSH protocols.
 * MQTT as alternative communication protocol.
 * CANopen protocol support for managing CANopen devices in a CANopen network.
 

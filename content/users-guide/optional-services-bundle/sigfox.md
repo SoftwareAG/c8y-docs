@@ -314,6 +314,7 @@ In order to manually create the callback, the following properties must be fille
 **Info:** The Authorization header displayed in the alarm does not show the user credentials.
 
 Non-mentioned properties from the alarm are:
+
  - sendSni
  - sendDuplicate
 

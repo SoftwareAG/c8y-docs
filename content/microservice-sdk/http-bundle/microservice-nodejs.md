@@ -12,9 +12,16 @@ It uses the Cumulocity [@c8y/client JavaScript library](https://www.npmjs.com/pa
 
 ### Prerequisites
 
-- Cumulocity credentials (tenant, user and password)
-- Slack credentials
-- Docker local installation
+- Cumulocity credentials (tenant, user and password).
+- Slack channel to post messages to, [Slack app and OAuth token](https://slack.dev/node-slack-sdk/getting-started).
+- Docker local installation.
+- A *.env* file in the root directory with the following content:
+
+```properties
+PORT=80
+SLACK_OAUTH_TOKEN=<YOUR-TOKEN-GOES-HERE>
+SLACK_CHANNEL_ID=<YOUR-CHANNEL_ID-GOES-HERE>
+```
 
 ### Developing the microservice
 
@@ -37,7 +44,10 @@ It will walk you through creating a *package.json* file which allows to identify
   "dependencies": {
     "@c8y/client": "^1004.0.7",
     "@slack/web-api": "^5.0.1",
-    "express": "4.17.0"
+    "bluebird": "^3.5.5",
+    "dotenv": "^8.0.0",
+    "express": "4.17.0",
+    "request": "^2.88.0"
   },
   "scripts": {
     "start": "node app.js",
@@ -55,9 +65,9 @@ Now create a file *app.js* which is the main entry point of your application. It
 ```javascript
 "use strict";
 
+require("dotenv").config();
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 80;
 
 // Application endpoints
 const routes = require("./routes");
@@ -65,11 +75,11 @@ routes(app);
 
 // Server listening on port 80
 app.use(express.json());
-app.listen(port);
-console.log(`${process.env.APPLICATION_NAME} started on port ${port}`);
+app.listen(process.env.PORT);
+console.log(`${process.env.APPLICATION_NAME} started on port ${process.env.PORT}`);
 
 // Cumulocity and Slack controllers
-const controllers = require("./controllers");
+require("./controllers");
 ```
 
 As you may have already noticed, `routes` and `controllers` are required. Create a *routes.js* file with the following content:
@@ -78,7 +88,6 @@ As you may have already noticed, `routes` and `controllers` are required. Create
 "use strict";
 
 module.exports = function(app) {
-
     // Hello world
     app.route("/").get(function(req, res) {
         res.json({ "message" : "Hello world!" });
@@ -100,7 +109,6 @@ module.exports = function(app) {
             "bootstrapPassword" : process.env.C8Y_BOOTSTRAP_PASSWORD
         });
     });
-
 };
 ```
 
@@ -117,10 +125,10 @@ Once you have your Slack app and token ready, create the *controllers.js* file w
 
 // Create a new instance of the WebClient class with the OAuth Access Token
 const { WebClient } = require("@slack/web-api");
-const web = new WebClient("xoxp-YOUR-TOKEN-GOES-HERE");
+const web = new WebClient(process.env.SLACK_OAUTH_TOKEN);
 
-// Set your channel ID to know where to send messages to
-const channelId = "MJGBXXX";
+// Slack channel ID to know where to send messages to
+const channelId = process.env.SLACK_CHANNEL_ID;
 
 // Format a message and post it to the channel
 async function postSlackMessage (adata) {
@@ -158,21 +166,41 @@ async function postSlackMessage (adata) {
 
 /********************* Cumulocity *********************/
 
+const Promise = require("bluebird");
+const request = Promise.promisify(require("request"));
+
 const { Client } = require ("@c8y/client");
 const { BasicAuth } = require ("@c8y/client");
 
-// Platform credentials
-const auth = new BasicAuth({
-    user:     "<user>",
-    password: "<password>",
-    tenant:   "<tenant>"
-});
+const baseUrl = process.env.C8Y_BASEURL;
+const serviceAuth = {
+    user: `${process.env.C8Y_BOOTSTRAP_TENANT}/${process.env.C8Y_BOOTSTRAP_USER}`,
+    pass: process.env.C8Y_BOOTSTRAP_PASSWORD,
+    sendImmediately: true
+};
 
+let cachedUsers = [];
+
+// Get the subscribed users
+function getUsers () {
+    return request({
+        baseUrl,
+        url: `/application/currentApplication/subscriptions`,
+        json: true,
+        auth: serviceAuth
+    })
+    .then((res) => res.body.users)
+    .tap((users) => {
+        cachedUsers = users;
+    });
+}
+
+// where the magic happens...
 (async () => {
-    try {
-        // Platform authentication
-        const client = await new Client(auth, process.env.C8Y_BASEURL);
 
+    await getUsers();
+
+    if (Array.isArray(cachedUsers) && cachedUsers.length) {
         // List filter for unresolved alarms only
         const filter = {
             pageSize: 100,
@@ -180,30 +208,48 @@ const auth = new BasicAuth({
             resolved: false
         };
 
-        // Get filtered alarms and post a message to Slack
-        const { data } = await client.alarm.list(filter);
-        data.forEach(alarm => {
-            postSlackMessage(alarm);
-        });
+        try {
+            cachedUsers.forEach(async (user) => {
+                // Service user credentials
+                let auth = new BasicAuth({
+                    user:     user.name,
+                    password: user.password,
+                    tenant:   user.tenant
+                });
 
-        // Real time subscription for active alarms
-        client.realtime.subscribe("/alarms/*", (alarm) => {
-            if (alarm.data.data.status === "ACTIVE") {
-                postSlackMessage(alarm.data.data);
-            }
-        });
-        console.log("listening to alarms...");
+                // Platform authentication
+                let client = await new Client(auth, baseUrl);
+
+                // Get filtered alarms and post a message to Slack
+                let { data } = await client.alarm.list(filter);
+                data.forEach((alarm) => {
+                    postSlackMessage(alarm);
+                });
+
+                // Real time subscription for active alarms
+                client.realtime.subscribe("/alarms/*", (alarm) => {
+                    if (alarm.data.data.status === "ACTIVE") {
+                        postSlackMessage(alarm.data.data);
+                    }
+                });
+            });
+            console.log("listening to alarms...");
+        }
+        catch (err) {
+            console.error(err);
+        }
     }
-    catch (err) {
-        console.error(err);
+    else {
+        console.log("[ERROR]: Not subscribed/authorized users found.");
     }
+
 })();
 ```
 
 The code has two parts. The first one needs your Slack OAuth token and channel ID (chat group where the messages will be posted).
 A message is formatted using the colors of the different alarm severities that you may see in the Cockpit application. This message gets posted to the Slack channel.
 
-The second part uses basic authentication to the Cumulocity platform, it gets all active alarms on the tenant and posts alarm messages to the Slack channel. After that, it subscribes to alarms and notifies the channel each time a new alarm is created.
+The second part uses basic authentication to the Cumulocity platform, it gets all active alarms and posts alarm messages to the Slack channel. After that, it subscribes to alarms and notifies the Slack channel each time a new alarm is created in the subscribed tenants.
 
 #### Dockerfile and application manifest
 

@@ -57,7 +57,7 @@ When designing an Apama solution to be deployed within any form of Cumulocity Io
 
 	The Apama features affected by this include:
 
-	* Accessing the correlator log file or input log.
+	* Accessing the input log.
 	* Using custom plug-ins.
 	* Using file system assets for enrichment.
 

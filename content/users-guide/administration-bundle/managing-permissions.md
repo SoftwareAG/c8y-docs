@@ -4,15 +4,16 @@ title: Managing permissions
 
 ---
 
-Permissions define what a user is allowed to do in Cumulocity applications. To manage permissions more easily, they are grouped in so-called "roles". Every user can be associated with a number of roles, adding up permissions of the user.
+Permissions define what a user is allowed to do in Cumulocity applications. To manage permissions more easily, they are grouped into so-called "roles". Every user can be associated with a number of roles, adding up permissions of the user.
 
 The following types of roles can be associated with users:
 
 - Global roles: Contain permissions that apply to all data within a tenant.
 - Inventory roles: Contain permissions that apply to groups of devices.
-- Application access: Enables a user to use an application.
 
-### <a name="global"></a>Viewing global roles
+Moreover, application access can be granted to enable a user to use an application.
+
+### <a name="global"></a>Global roles
 
 Click **Roles** in the **Account** menu to display a list of configured roles.
 
@@ -27,7 +28,7 @@ The roles "admins" and "devices" have a special status:
 |admin|All permissions are enabled. The initial administrator, the first user created in a tenant, has this role.
 |devices|Typical permission setup for devices. After registration, a device automatically has this role. Edit this role if your devices require less or more permissions, or assign other roles to your devices.
 
-Furthermore, the following roles are configured as a starting point:
+Furthermore, the following roles are initially configured:
 
 |Role|Description|
 |:---|:---|
@@ -40,7 +41,7 @@ Furthermore, the following roles are configured as a starting point:
 |Shared User Manager|Can manage sub-users. The subscription plan needs to include user hierarchies to be able to manage sub-users.
 |Tenant Manager|Can manage tenant-wide settings, such as own applications, data brokerage, data retention, options and tenant statistics.
 
-You may see the following legacy roles:
+You may also see the following legacy roles:
 
 |Role|Description|
 |:---|:---|
@@ -48,13 +49,11 @@ You may see the following legacy roles:
 |readers|Can read all data (including users, in contrast to "Global Readers").
 
 
-### <a name="create-edit-roles"></a>Creating and editing global roles
+#### <a name="create-edit-roles"></a>To add a global role
 
-You can edit the existing global roles and you can create new global roles to meet your particular needs. 
+Click **Add Role** in the **Global roles** tab. 
 
-To edit a global role, simply click on its card. To create a new global role, click **Add Role** in the **Global roles** tab. 
-
-In the role page you will see a list of permission types on the left and a list of applications to be accessed on the right. 
+In the **New global role** page you will see a list of permission types on the left and a list of applications to be accessed on the right. 
 
 The following screenshot shows the settings for the "admins" role.
 
@@ -64,10 +63,10 @@ The following screenshot shows the settings for the "admins" role.
 
 For each type, you can select the following permission levels:
 
-- **READ**: Read the specified data.
-- **CREATE**: Create new data like users and inventory data and edit users within your hierarchy.
-- **UPDATE**: Modify and delete the specified data (not including READ).
-- **ADMIN**: Create, update or delete the specified data.
+- READ: Read the specified data.
+- CREATE: Create new data like users and inventory data and edit users within your hierarchy.
+- UPDATE: Change and delete the specified data (not including READ).
+- ADMIN: Create, update or delete the specified data.
 
 > **Info:** CREATE permissions are related to the concept of ownership in Cumulocity. If you have created an object, you are the owner of it and can manage it without requiring any further permissions. For example, if you have  CREATE permission for "Inventory", you can create devices and groups, and fully manage these devices and groups. You cannot manage any devices or groups that you did not create yourself, unless you also have the UPDATE permission or an additional inventory role (see below). This concept helps to assign minimal permissions to devices. It also enables you to limit user management permissions to sub-users, if you subscribed to user hierarchies.
 
@@ -102,23 +101,31 @@ The following permission categories are available by default:
 
 There may be additional permissions visible depending on the features in your subscription plan. These are documented along with the respective feature.
 
-> **Info:** When new features with new permissions are added to Cumulocity, these are not automatically added to existing roles. If you notice that you cannot use a new feature that was recently announced, check your permissions.
+> **Important:** When new features with new permissions are added to Cumulocity, these are not automatically added to existing roles. If you notice that you cannot use a new feature that was recently announced, check your permissions.
 
-### <a name="attach-global"></a>Assigning global roles to users
+#### <a name="attach-global"></a>Assigning global roles
 
 You can assign global roles to users either directly in the user list, or by opening the page for a particular user and adding them there. 
 
-In the user list, click the **Global roles** column of a particular user to open a list of global roles. Select or clear the respective checkboxes and click **Apply** to save your settings.
+##### To assign global roles from the user list
+
+1. Click the **Global roles** column of a particular user to open a list of global roles. 
+1. Select or clear the respective checkboxes.
+1. Click **Apply** to save your settings.
 
 ![Apply global role](/guides/images/users-guide/Administration/admin-global-roles-apply-1.png)
 
-Alternatively, click on a user in the list to open its details. Select or clear the checkboxes for the relevant global roles at the right and click **Save** at the bottom of the page to save your settings.
+##### To assign global roles from the user page
+
+Click on the row of the respective user in the user list.
+In the user page, select or clear the checkboxes for the relevant global roles at the right.
+Click **Save** to save your settings.
 
 ![Attach global role](/guides/images/users-guide/Administration/admin-global-roles-apply-2.png)
 
-### <a name="inventory"></a>Viewing inventory roles
+### <a name="inventory"></a>Inventory roles
 
-Inventory roles contain permissions that you can assign to groups of devices. For example, an inventory role can contain the permission to restart a device. You can assign this inventory role to a group of devices "Region North" and to a user "smith". The result is that the user "smith" can restart all devices that are in the group "Region North" or any of its subgroups.
+Inventory roles contain permissions that you can assign to groups of devices. For example, an inventory role can contain the permission to restart a device. You can assign this inventory role to a group of devices "region north" and to a user "smith". The result is that the user "smith" can restart all devices that are in the group "region north" or any of its subgroups.
 
 To view the currently configured inventory roles, click **Roles** in the **Account **menu and switch to the **Inventory roles** tab.
 
@@ -126,7 +133,7 @@ To view the currently configured inventory roles, click **Roles** in the **Accou
 
 In the **Inventory roles** tab you can manage user permissions for particular groups and/or its children. There are several default inventory roles defined, but you can define your own according to your needs. 
 
-The following default inventory roles are available in new tenants as a starting point:
+The following default inventory roles are initially available in new tenants:
 
 |Role|Description|
 |:---|:---|
@@ -136,11 +143,9 @@ The following default inventory roles are available in new tenants as a starting
 |Reader|Can read all data of the asset.
 
 
-### Creating and editing inventory roles
+#### To add an inventory role
 
-You can edit the existing inventory roles and you can create new inventory roles to meet your particular needs. 
-
-To edit an inventory role, simply click on its card. To create a new inventory role, click **Add Role** in the **Inventory roles** tab. 
+Click **Add Role** in the **Inventory roles** tab. 
 
 At the top of the page you can edit the name of the inventory role. Click on the name, edit it and click the green checkmark to save your edits.
 
@@ -206,22 +211,21 @@ You can also copy inventory roles from another user. To copy roles, click **Copy
 
 <img src="/guides/images/users-guide/Administration/admin-inventory-role-copy.png" alt="Copy roles">
 
-### <a name="app-access"></a>Granting application access
-
-In the **Application Access** tab you assign applications to the user. 
-
-The **Application Access** tab shows a list of all available applications in your tenant in alphabetical order. Select the applications for the user and click **Save**. For more information on application management, see [Administration > Managing applications](/guides/users-guide/administration#managing-applications).
-
-![Application access](/guides/images/users-guide/Administration/admin-application-access.png)
-
-> **Info:** If a user has global permission to read all applications, an information box will be shown.
 
 ### Troubleshooting permissions
 
 If you try to perform actions without sufficient permissions, an error message will occur.
 
-To help troubleshooting permissions, click the the **User** button at the right of the top bar. From the context menu, select **Access denied requests**. In the upcoming window details on the denied accesses are provided. An administrator user or the support can help in fixing the permissions.
+To help troubleshooting permissions, click the **User** button at the right of the top bar. From the context menu, select **Access denied requests**. In the resulting window details on the denied accesses are provided. An administrator user or the support can help in fixing the permissions.
 
-The example shows a user, who tried to create a simulator without the necessary permissions, hence, a warning message is shown.
+### <a name="app-access"></a>Granting application access
 
-![Access error message](/guides/images/users-guide/noaccess.png)
+The **Application Access** tab shows a list of all available applications in your tenant in alphabetical order. 
+
+To assign applications to the user, simply select the respective applications and click **Save**. 
+
+For more information on application management, see [Administration > Managing applications](/guides/users-guide/administration#managing-applications).
+
+![Application access](/guides/images/users-guide/Administration/admin-application-access.png)
+
+> **Info:** If a user has global permission to read all applications, an information box will be shown.

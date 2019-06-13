@@ -58,5 +58,3 @@ Example Request: Delete a managed object reference
 Example Response:
 
     HTTP/1.1  204 NO CONTENT
-
-> **Info:** Inventory DELETE requests are not synchronous. The response could be returned before the delete request has been completed.

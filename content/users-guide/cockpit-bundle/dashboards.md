@@ -110,6 +110,6 @@ An alternative way to copy a dashboard is to use the
 "dashboard per type" approach.  With the "dashboard per type" approach you share the dashboard from one object with **all** objects of the same type.
 
 
-### Removing dashboards
+### How to remove a dashboard
 
-To delete a dashboard from an object, click **More...** in the top menu bar and from the context menu select **Remove dashboard**. 
+To remove a dashboard from an object, click **More...** in the top menu bar and from the context menu select **Remove dashboard**. 

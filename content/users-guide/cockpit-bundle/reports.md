@@ -14,33 +14,29 @@ To see all existing reports, expand the **Reports** menu in the navigator.
 
 ![Reports menu](/guides/images/users-guide/cockpit/cockpit-reports-navigator.png)
 
-To view a specific report, click the report in the navigator to open it.
+Click a report in the navigator to open it.
 
-#### Creating new reports
+#### How to create a report
 
-To add a new report, click the **Plus** button in the top bar and from the context menu select **New report**.
-
-![Create new report](/guides/images/users-guide/cockpit/cockpit-report-create.png)
-
-Enter a name for the report and optionally select an icon from the dropdown list. Click **Save** to save your settings.
+1. Click the **Plus** button in the top bar and from the action menu select **New report**.
+2. Enter a name for the report and optionally select an icon from the dropdown list. 
+3. Click **Save** to save your settings.
 
 Next, widgets can be added to the report.
 
-#### Adding widgets to reports
+#### How to add widgets to reports
 
 You can add widgets to reports in the same way as adding widgets to dashboards.
 
-Open the report you want to edit from the navigator. 
-
-Click **Add widget** in the top menu bar and select a widget type from the list. 
+1. Open the report you want to edit from the navigator. 
+2. Click **Add widget** in the top menu bar and select a widget type from the list. 
 
 For details on all widgets types available, refer to [Widgets collection](#widgets).
 
-#### Deleting reports
+#### How to delete a report
 
-To delete a report, open the report and click **More...** at the right of the top menu bar. From the context menu, select **Remove report**.
-
-![Delete report](/guides/images/users-guide/cockpit/cockpit-report-remove.png)
+1. Open the report you want to delete and click **More...** at the right of the top menu bar. 
+2. From the action menu, select **Remove report**.
 
 
 ### <a name="export"></a>Exporting data
@@ -58,11 +54,10 @@ In the **Export** page you will find a list displaying all exports with their na
 ![Exports](/guides/images/users-guide/cockpit/cockpit-exports.png)
 
 
-#### Adding exports
+#### How to add an export
 
-To create an export, click **Add export** in the top menu bar.
-
-Enter a name for the export and select the file type (CSV or xlsx) for the report output. 
+1. Click **Add export** in the top menu bar.
+2. Enter a name for the export and select the file type (CSV or XLSX) for the report output. 
 
 ![Create export](/guides/images/users-guide/cockpit/cockpit-export-create.png)
 
@@ -87,7 +82,7 @@ Apart from object- and time-specific filtering you may filter data for specific 
 - Managed objects
 - Measurements
 
-Use the slider to enable/disable a field.
+Use the toggle to enable/disable a field.
 
 ![Filter fields](/guides/images/users-guide/cockpit/cockpit-export-fields.png)
 
@@ -116,7 +111,7 @@ To schedule the export to a CSV or Excel file to any point in time, click the me
 
 ![Export context menu](/guides/images/users-guide/cockpit/cockpit-export-menu.png)
 
-In the upcoming window you can customize the Smart Rule "On timer send export via email" according to your needs.
+In the ressulting dialog box you can customize the Smart Rule "On timer send export via email" according to your needs.
 
 ![Schedule export](/guides/images/users-guide/cockpit/cockpit-export-on-timer-rule.png)
 

@@ -11,6 +11,8 @@ Docker is a platform to develop, deploy and run applications with containers. An
 
 Cumulocity microservices are based on Docker. Hence, a microservice has to be packaged as a Docker image in order to run on the Cumulocity platform. A microservice is executed in a Docker container during runtime. The Docker container ensures that a microservice does not harm other microservices running in Cumulocity.
 
+Containers have an upper thread limit of 4096 for microservices.
+
 ### Pods
 
 Kubernetes is the container orchestration engine for automating deployment, scaling and management of containerized applications. A Pod is the basic building block of Kubernetes and it represents a running process on your cluster. A Pod encapsulates an application container, storage resources, a unique network IP and options that govern how the container should run.

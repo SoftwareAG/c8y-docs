@@ -4,9 +4,7 @@ title: Managing tenants
 layout: redirect
 ---
 
-If you are subscribed to the Enterprise Tenant of Cumulocity IoT, you can make use of the tenants functionality.
-
-The tenants functionality allows you to create subtenants, subscribe them to the applications that you have available and potentially deactivate tenants if they are not in use anymore.
+Using the Enterprise Tenant of Cumulocity IoT, you can make use of the tenants functionality which allows you to create and a manage subtenants.
 
 > **Important**: There is a major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants.
 
@@ -19,7 +17,7 @@ To be able to use the tenant functionality, your user needs to have the appropri
 - UPDATE: Edit tenants (incl. subscriptions) and suspend or activate them.
 - CHANGE: Create, edit and delete tenants.
 
-### Viewing subtenants
+### To view subtenants
 
 Click **Subtenants** in the **Tenants** menu to view all subtenants available in your account, either in a grid or a list.
 
@@ -33,7 +31,7 @@ The **Tenants** page provides the following information on each subtenant:
 
 In the management tenant, you will also find information on the parent tenant, i.e. the tenant that created the listed tenant.
 
-### <a name="creating-tenants"></a>How to create a subtenant
+### <a name="creating-tenants"></a>To create a subtenant
 
 1. Click **Create tenant** at the right of the top menu bar.
 <br>![Create subtenant](/guides/images/users-guide/Administration/admin-subtenant-create.png)<br>
@@ -93,9 +91,9 @@ From the management tenant, you can enable other tenants to create subtenants. T
 
 ![Create subtenant](/guides/images/users-guide/Administration/admin-subtenant-allow.png)
 
-### How to view/edit subtenant properties
+### To view or edit subtenant properties
 
-Click on the desired subtenant or click the menu icon and then click **Edit**.
+Click on the desired subtenant or click the menu icon at the right of the subtenant entry and then click **Edit**.
 
 In the **Properties** tab, all fields are editable except of the ID and the administrator's username. For details on the fields, refer to [Creating sub-tenants](#creating-tenants).
 
@@ -116,7 +114,7 @@ The following information is displayed here:
 |Expiry date|Specifies the date on which support user access for the tenant will expire. If no date has been specified, the expiry date is set to "No limit".
 
 
-### Suspending/deleting subtenants
+### To suspend or delete subtenants
 
 You can temporarily suspend tenants or you can delete subtenants permanently. 
 
@@ -124,9 +122,9 @@ Suspending tenants blocks any access to this tenant, regardless whether the acce
 
 If a tenant is suspended, the tenant's data remains in the database and can be made available any time later. To do so, click **Activate**.
 
-#### How to suspend a subtenant
+#### To suspend a subtenant
 
-1. To suspend a tenant, click the menu icon and then click **Suspend**.
+1. Click the menu icon at the right of the respective subtenant entry and then click **Suspend**.
 
 	![Suspend tenant](/guides/images/users-guide/Administration/admin-subtenant-suspend.png)
 
@@ -137,24 +135,24 @@ As part of suspending the tenant, an email is sent to the tenant administrator i
 >**Info**: If you are a service provider, you can suppress this email.
 
 
-### How to delete a subtenant
+#### To delete a subtenant
 
-To finally delete a tenant and remove all the data of the tenant, click the menu icon and then click **Remove**.
+Click the menu icon at the right of the respective subtenant entry and then click **Remove** to finally delete a tenant and remove all the data of the tenant.
 
 >**Info**: This action cannot be reverted. For security reasons, it is only available in the management tenant.
 
 
-### <a name="subscribe"></a>Subscribing and monitoring applications
+### <a name="subscribe"></a>Applications
 
 In the **Applications** tab you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications.
 
 <img src="/guides/images/users-guide/Administration/admin-subtenant-applications.png" alt="Subscribe tenant" style="max-width: 100%">
 
-#### How to subscribe an application
+#### To subscribe an application
 
 Hover over the applications under **Available applications** on the right and click **Subscribe** on the desired application.
 
-#### How to unsubscribe an application
+#### To unsubscribe an application
 
 Hover over the applications under **Subscribed applications** on the left and click **Unsubscribe**.
 
@@ -184,112 +182,20 @@ The following information is provided:
 
 Further details are provided on the **Status** tab of the respective application, see [Administration > Managing applications](/guides/users-guide/administration#managing-applications).
 
-### <a name="microservice-billing"></a>Microservice billing
 
-The microservice billing feature gathers information on microservice usage per subtenant for each microservice. This enables Enterprise Tenants and service providers to charge tenant not only based on subscriptions but also based on resources usage.
+### <a name="tenants-custom-properties"></a>Custom properties
 
+The **Custom properties** tab allows you to view and edit values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/guides/users-guide/administration#properties). Such properties are also displayed as columns in the [Usage Statistics](#usage-stats) page.
 
-#### Billing modes
+![Custom properties](/guides/images/users-guide/Administration/admin-subtenant-custom-properties.png)
 
-Cumulocity offers two billing modes:
+#### Limiting subtenant device number
 
-* **Subscription-based billing**: Charges a constant price when a tenant is subscribed to a microservice while resource usage is assigned to the owner
+Platform administrators can limit the count of concurrently registered root devices or simply all devices (including children devices) via the custom property "Limit number of devices". 
 
-* **Resource-based billing**: Exposes the number of resources used by a microservice to calculate billing
+They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the **[Usage statistics](<a name="usage-stats"></a>)** page.
 
-The billing modes are specified per microservice in the [microservice manifest](/guides/reference/microservice-manifest) and are set in the field "billingMode".
-
-RESOURCES: Sets the billing mode to resources-based. This is the default mode and will be applied to all microservices that are not explicitly switched to subscription-based billing mode.
-
-SUBSCRIPTION: Sets the billing mode to subscription-based.
-
-#### Isolation level
-
-Two isolation levels are distinguished for microservices: per-tenant isolation and multi-tenant isolation.
-
-In case of subscription-based billing, the entire resources usage is always assigned to the microservice owner, independent of the isolation level,  while the subscribed tenant will be billed for the subscription.
-
-In case of resources-based billing, charging depends on the isolation level:
-
-* Per-tenant - the subscriber tenant is charged for used resources
-* Multi-tenant - the owner of the microservice is charged for used resources
-
-In case of multi-tenant isolation level, the parent tenant as the owner of a microservice (e.g. the management tenant of an Enterprise Tenant or service provider) is charged for both subscribed applications (subscription-based billing) and used resources (resource-based billing) of the subtenants.
-
-#### Resources usage assignment for billing mode and isolation level
-
-|Billing mode|Microservice Isolation|Resources usage assigned to
-|:--------|:-----|:-----
-|Subscription-based|Per-tenant|Owner
-|Subscription-based|Multi-tenant|Owner
-|Resources-based|Per-tenant|Subscriber
-|Resources-based|Multi-tenant|Owner
-
-#### Collected values
-
-The following values are collected on a daily base for each tenant:
-
-* CPU usage, specified in CPU milliseconds (1000m = 1 CPU)
-* Memory usage, specified in MB
-
-Microservice resources are counted based at limits defined in the microservice manifest per day. At the end of each day, the information about resource usage is collected into the tenant statistics. It is also considered that a microservice might not be subscribed for a whole day.
-
-**Example**: If a tenant was subscribed to a microservice for 12h and the microservice has 2 CPU and 2 GB of memory it should be counted as 1000 CPU milliseconds and 1024 MB of memory.
-
-For billing purposes, in addition to CPU usage and memory usage the cause for the billing is collected (e.g. owner, subscription for tenant):
-
-```json
-{
-  "name": "cep",
-	"cpu": 6000,
-	"memory": "20000",
-	"cause": "Owner"
-},
-{
-  "name": "cep-small",
-  "cpu": 1000,
-  "memory": "2000",
-  "cause": "Subscription for tenant"
-}
-```
-
-#### Usage statistics
-
-The information on the microservice usage is presented in the **Usage Statistics** page in the **Tenants** menu of the Administration application.
-
-![Tenant statistics](/guides/images/users-guide/Administration/admin-subtenants-usage-statistics-microservice.png)
-
-For more details, refer to [Tenants > Tenant usage statistics](/guides/reference/tenants/#tenant-usage-statistics) in the Reference guide. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
-
-
-#### Scaling
-
-Auto-scaling monitors your microservices and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. It is easy to configure the microservice scaling by setting the property `scale` in the [Microservice manifest](https://cumulocity.com/guides/reference/microservice-manifest/).
-
-For instance, when you have a microservice with scale policy set to AUTO and the CPU usage points that it is needed to start a new microservice instance for three hours, the billing logs: (24/24 + 3/24) * consumed resources.
-
-24/24 - one instance active for the whole day<br>
- 3/24 - second instance active only three hours
-
-Note that an audit record is created for every change of the number of instances.
-
-![Audit logs](/guides/images/users-guide/Administration/admin-audit-logs-microscaling.png)
-
-For more information, refer to [Auditing](https://cumulocity.com/guides/reference/auditing) in the **Reference guide**.
-
-#### <a name="tenants-custom-properties"></a>Custom properties
-
-The **Custom properties** tab allows you to view and edit values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/guides/users-guide/administration#properties). Such properties are also displayed as columns in the [usage statistics table](#usage-stats).
-
-![Custom Properties](/guides/images/users-guide/Administration/admin-subtenant-custom-properties.png)
-
-##### Limiting subtenant device number
-
-Platform administrators can limit the count of concurrently registered root devices or simply all devices (including children devices) via the custom properties "Devices". 
-
-Platform administrators can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the **[Usage statistics](<a name="usage-stats"></a>)** page.
-
-##### Limiting subtenant request rate
+#### Limiting subtenant request rate
 
 Platform administrators can limit the request rate of each subtenant via the following custom properties:
 
@@ -301,7 +207,7 @@ Platform administrators can limit the request rate of each subtenant via the fol
 When there is no limit on tenant and system level, the limit feature is considered as disabled and the tenant gains unlimited access. To switch off request rate limiting after it was enabled, set the value to "-1".
 
 
-### <a name="usage-stats"></a> Retrieving usage statistics
+### <a name="usage-stats"></a> Usage statistics
 
 The **Usage statistics** page provides statistical information on each subtenant.
 
@@ -341,7 +247,7 @@ Custom properties may be defined in the [Properties Library](/guides/users-guide
 
 You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Getting Started > Features and Functionalities > Filtering](/guides/users-guide/overview#filtering).
 
-#### How to export the usage statistics table
+#### To export the usage statistics table
 
 1. Click Export CSV at the right of the top menu bar to export the current view of the statistics table to a CSV file. 
 2. In the resulting dialog box you can customize the CSV output by specifying a field separator, decimal separator and charset.
@@ -349,6 +255,100 @@ You can filter the usage statistics list for a time period by adding the start a
 3. Click **Download** to start the export.
 
 The CSV file will be downloaded to your file system.
+
+
+#### Microservice usage
+
+The microservice usage feature gathers information on the resource usage per subtenant for each microservice. This enables Enterprise Tenants and service providers to charge tenants not only based on subscriptions but also based on resources usage.
+
+
+##### Billing modes
+
+Cumulocity offers two billing modes:
+
+* **Subscription-based billing**: Charges a constant price when a tenant is subscribed to a microservice while resource usage is assigned to the owner
+
+* **Resource-based billing**: Exposes the number of resources used by a microservice to calculate billing
+
+The billing modes are specified per microservice in the [microservice manifest](/guides/reference/microservice-manifest) and are set in the field "billingMode".
+
+RESOURCES: Sets the billing mode to resources-based. This is the default mode and will be applied to all microservices that are not explicitly switched to subscription-based billing mode.
+
+SUBSCRIPTION: Sets the billing mode to subscription-based.
+
+##### Isolation level
+
+Two isolation levels are distinguished for microservices: per-tenant isolation and multi-tenant isolation.
+
+In case of subscription-based billing, the entire resources usage is always assigned to the microservice owner, independent of the isolation level,  while the subscribed tenant will be billed for the subscription.
+
+In case of resources-based billing, charging depends on the isolation level:
+
+* Per-tenant - the subscriber tenant is charged for used resources
+* Multi-tenant - the owner of the microservice is charged for used resources
+
+In case of multi-tenant isolation level, the parent tenant as the owner of a microservice (e.g. the management tenant of an Enterprise Tenant or service provider) is charged for both subscribed applications (subscription-based billing) and used resources (resource-based billing) of the subtenants.
+
+##### Resources usage assignment for billing mode and isolation level
+
+|Billing mode|Microservice Isolation|Resources usage assigned to
+|:--------|:-----|:-----
+|Subscription-based|Per-tenant|Owner
+|Subscription-based|Multi-tenant|Owner
+|Resources-based|Per-tenant|Subscriber
+|Resources-based|Multi-tenant|Owner
+
+##### Collected values
+
+The following values are collected on a daily base for each tenant:
+
+* CPU usage, specified in CPU milliseconds (1000m = 1 CPU)
+* Memory usage, specified in MB
+
+Microservice resources are counted based at limits defined in the microservice manifest per day. At the end of each day, the information about resource usage is collected into the tenant statistics. It is also considered that a microservice might not be subscribed for a whole day.
+
+**Example**: If a tenant was subscribed to a microservice for 12h and the microservice has 2 CPU and 2 GB of memory it should be counted as 1000 CPU milliseconds and 1024 MB of memory.
+
+For billing purposes, in addition to CPU usage and memory usage the cause for the billing is collected (e.g. owner, subscription for tenant):
+
+```json
+{
+  "name": "cep",
+	"cpu": 6000,
+	"memory": "20000",
+	"cause": "Owner"
+},
+{
+  "name": "cep-small",
+  "cpu": 1000,
+  "memory": "2000",
+  "cause": "Subscription for tenant"
+}
+```
+
+##### Usage statistics
+
+The information on the microservice usage is presented in the **Usage Statistics** page.
+
+![Tenant statistics](/guides/images/users-guide/Administration/admin-subtenants-usage-statistics-microservice.png)
+
+For more details, refer to [Tenants > Tenant usage statistics](/guides/reference/tenants/#tenant-usage-statistics) in the Reference guide. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
+
+
+##### Scaling
+
+Auto-scaling monitors your microservices and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. It is easy to configure the microservice scaling by setting the property `scale` in the [Microservice manifest](https://cumulocity.com/guides/reference/microservice-manifest/).
+
+For instance, when you have a microservice with scale policy set to AUTO and the CPU usage points that it is needed to start a new microservice instance for three hours, the billing logs: (24/24 + 3/24) * consumed resources.
+
+24/24 - one instance active for the whole day<br>
+ 3/24 - second instance active only three hours
+
+Note that an audit record is created for every change of the number of instances.
+
+![Audit logs](/guides/images/users-guide/Administration/admin-audit-logs-microscaling.png)
+
+For more information, refer to [Auditing](https://cumulocity.com/guides/reference/auditing) in the Reference guide.
 
 
 ### <a name="tenant-policies"></a> Tenant policies
@@ -360,8 +360,8 @@ A tenant policy is a set of tenant options and retention rules. Tenant options a
 Creating a tenant policy with a specific set of options and rules saves time when creating multiple tenants with the same settings.
 
 >**Info**: The options and rules are copied into the tenant. Editing the policy has no effect on tenants that have already been created.
->
->#### Viewing tenant policies
+
+#### To view tenant policies
 
 Click **Tenant policies** in the **Tenants** menu to view all available tenant policies.
 
@@ -369,7 +369,7 @@ Click **Tenant policies** in the **Tenants** menu to view all available tenant p
 
 For each tenant policy, the name, an optional description and the number of options and retention rules is provided, either in a list or a grid.
 
-#### How to create a tenant policy
+#### To create a tenant policy
 
 1. Click **Add tenant policy** in the top menu bar.
 <br>![Add new policy](/guides/images/users-guide/Administration/admin-tenant-policy-add.png)<br>
@@ -380,9 +380,9 @@ For each tenant policy, the name, an optional description and the number of opti
 
 The tenant policy will be added to the tenant policies list.
 
-#### How to edit a tenant policy
+#### To edit a tenant policy
 
-To edit a tenant policy, click the desired policy or click the menu icon and then click **Edit**.
+Click the respective policy entry or click the menu icon at the right of the policy entry and then click **Edit**.
 
 ![Policy context menu](/guides/images/users-guide/Administration/admin-tenant-policy-contextmenu.png)
 
@@ -390,10 +390,10 @@ In the resulting dialog box, make your edits and click **Save** to save your set
 
 To delete a retention rule or a tenant option from a policy, hover over it and click the delete icon.
 
-#### How to duplicate a tenant policy
+#### To duplicate a tenant policy
 
-In the tenant policy entry you want to duplicate, click the menu icon and then click **Duplicate**.
+Click the menu icon in the tenant policy entry you want to duplicate and then click **Duplicate**.
 
-#### How to delete a tenant policy
+#### To delete a tenant policy
 
-In the tenant policy entry you want to delete, click the menu icon and then click **Delete**.
+Click the menu icon in the tenant policy entry you want to delete and then click **Delete**.

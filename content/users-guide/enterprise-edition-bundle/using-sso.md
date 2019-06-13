@@ -1,5 +1,5 @@
 ---
-weight: 22
+weight: 70
 title: Using single sign-on (SSO)
 layout: redirect
 ---

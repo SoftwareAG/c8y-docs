@@ -73,33 +73,7 @@ If Karaf is not stopped by executing `service cumulocity-core-karaf stop` you ca
 
 In the example above, the PID is 1525.
 
-### Increasing the MQTT message size
-
-By default, the max size for one MQTT message is 8192 bytes(8KB).
-
-To increase the MQTT message size, add the property “mqtt.max.message.size” 
-in */etc/cumulocity/cumulocity-core.properties*.
-
-Example:
-
-To set the message size to 16KB, set “mqtt.max.message.size=16384”.
-
-
-After increasing the size, restart Karaf by executing:
-
-```shell
-# service cumulocity-core-karaf restart
-```
-
-
 ### Log rotation 
-
-Currently, there are two ways of configuring the log rotation for components.
-<br>
-
-**Under /usr/share/cumulocity-core-karaf/etc/ in org.ops4j.pax.logging.cfg file**
-
-This configuration is done via configuring the RollingFileAppender provided by Log4J. 
 
 The components for which log rotation is configured are as follows:
 
@@ -120,8 +94,6 @@ The components for which log rotation is configured are as follows:
 |MongoDB|/var/log/mongodb/*.log|Daily|50 MB|14|
 |NginX|/var/log/nginx/*.log|Daily|50 MB|14|
 |Apama|/opt/softwareag/cumulocity-apama-rules/deploy/logs/*.log|Daily|50 MB|14|
-
-Configuration can be altered by using daily/weekly/monthly and specifying the corresponding rotate count.
 
 For microservices, there currently is no specific log rotation configured.
 

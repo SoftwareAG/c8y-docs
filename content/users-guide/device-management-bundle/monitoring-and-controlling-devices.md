@@ -21,9 +21,9 @@ In the Device Management application you can monitor the connections to your dev
 
 This can be done at the level of individual devices (see below) or across multiple devices in a list.
 
-#### How to monitor the connection for multiple devices
+#### To monitor the connection for multiple devices
 
-To monitor the connections for multiple devices, open a device list.
+Open a device list to monitor the connections for multiple devices.
 
 The connection status is represented by arrows in the **Status** column in the device list.
 
@@ -57,12 +57,12 @@ Push connection means the connection from Cumulocity to /devicecontrol/notificat
 
 Moreover, the device may be in "Maintenance" mode, indicated by the tool icon in the **Status** column. This is a special connection status indicating that the device is currently being maintained and cannot be monitored. While a device is being maintained, no alarms for that device are raised. 
 
-You can turn maintenance mode on or off for a device through a slider in the **Connection monitoring** card in its **Info** tab, see below. 
+You can turn the maintenance mode on or off for a device through a toggle in the **Connection monitoring** card in its **Info** tab, see below. 
 
 
-#### How to monitor the connection of a particular device
+#### To monitor the connection of a particular device
 
-To monitor the connections of a particular device, navigate to the **Info** tab of this device. Under **Device status**, the connection status for the device is displayed. 
+Navigate to the **Info** tab of a particular device to monitor the connections of this device. Under **Device status**, the connection status for the device is displayed. 
 
 <img src="/guides/images/users-guide/DeviceManagement/devmgmt-devices-deviceinfostatus.png" alt="Device Status">
 
@@ -95,13 +95,13 @@ There may be exceptions from this rule. If your vending machines rely exclusivel
 
 Cumulocity displays service availability at the level of individual devices and across all devices. 
 
-#### How to view the service monitoring of a particular device
+#### To view the service monitoring of a particular device
 
-To check the service monitoring of a particular device, click the **Service monitoring** tab in the details of this specific device.
+Click the **Service monitoring** tab in the details of a particular device to check the service monitoring of this device.
 
-#### How to view the service monitoring across all devices
+#### To view the service monitoring across all devices
 
-To display the overall service across all devices, click **Service monitoring** in the **Device** menu in the navigator.
+Click **Service monitoring** in the **Device** menu in the navigator to display the overall service across all devices.
  
 ![Service monitoring](/guides/images/users-guide/DeviceManagement/devmgmt-devices-servicemonitoring.png)
 
@@ -112,7 +112,7 @@ The **Service monitoring** page shows the availability percentage of devices for
 
 Devices can raise alarms to indicate that there is a problem requiring an intervention. 
 
-#### How to view alarms
+#### To view alarms
 
 Cumulocity displays alarms at the level of individual devices and across all devices:
 
@@ -157,7 +157,7 @@ Click the arrow on the right of a row to expand it and display further details o
 * **Status**: Providing further information on the alarm status and showing the type of the alarm. The type info is used for duplicating alarms and for configuring the priority of alarms in the [Administration application](/guides/users-guide/administration#reprio-alarms).
 * **Change Log**: Providing the server time when the alarm was created, which may differ from the device time.
 
-#### How to change the status of an alarm
+#### To change the status of an alarm
 
 To change the status of an alarm, hover over it and click the button for the desired status or click the menu icon and select the desired status.
 
@@ -173,7 +173,7 @@ It is also possible to change the status of all alarms to "clear" at once. Click
 
 Operations are used to remotely control devices. 
 
-#### How to view operations
+#### To view operations
 
 You can view operations at the level of individual devices and across all devices:
 
@@ -213,13 +213,13 @@ Click **Realtime** at the right of the top menu bar to see operations coming in 
 
 >**Info**: Operations are listed in descending time order. Operations are executed strictly according to this order.
 
-#### How to create and execute operations
+#### To create and execute operations
 
 Operations for a specific device are created and executed in the **Shell** tab of the device, see [Device details > Shell](/guides/users-guide/device-management#shell).
 
 >**Important**:When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
 
-##### <a name="bulk-operations"></a>How to execute bulk operations
+##### <a name="bulk-operations"></a>To execute bulk operations
 
 For easier handling of devices, Cumulocity offers bulk operations. With bulk operations you can at once execute operations for each device within one group.
 
@@ -238,7 +238,7 @@ In order to view the status and progress of your operations, simply select the d
 
 ![Bulk operations tab](/guides/images/users-guide/DeviceManagement/devmgmt-bulkoperations.png)
 
-##### <a name="bulk-operations"></a>How to edit bulk operations
+##### <a name="bulk-operations"></a>To edit bulk operations
 
 1. Hover over the bulk operation you want to edit, click the menu icon and then click **Edit operation schedule**.
 3. In the resulting dialog box you may change the **Start date** and **Delay** values.
@@ -249,7 +249,7 @@ The changes will be applied to the bulk operation accordingly.
 
 ![Edit bulk operations](/guides/images/users-guide/DeviceManagement/devmgmt-bulkoperations-reschedule.png)
 
-##### <a name="bulk-operations"></a>How to delete bulk operations
+##### <a name="bulk-operations"></a>To delete bulk operations
 
 Hover over the bulk operation you want to delete, click the menu icon, and then click **Cancel operation**.
 
@@ -257,7 +257,7 @@ Hover over the bulk operation you want to delete, click the menu icon, and then 
 
 Troubleshooting devices at a more detailed level can be done with the help of events. Events are low-level messages sent by devices that are usually used for application-specific processing. For example, a vending device sends its real-time sales in the form of events. 
 
-#### How to view events
+#### To view events
 
 Cumulocity displays events at the level of individual devices and across all devices: 
 

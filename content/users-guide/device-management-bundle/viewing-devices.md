@@ -62,7 +62,7 @@ For each device, the device list shows the following information provided in col
 
 The devices list displays up to 100 rows. If a list contains more than 100 devices, click **Load more** at the bottom of the list to display the next 100 entries.
 
-#### How to delete a device from the list
+#### To delete a device from the list
 
 1. Hover over the row of the device you want to delete. 
 2. Click the delete icon at the right of the row. 
@@ -72,7 +72,7 @@ The device will be permanently deleted from the platform.
 **Important:** Deleting a device means to remove the device from Cumulocity database including all its generated data. Alternatively, you can arrange all retired devices in one group, see [Grouping Devices](#grouping-devices)). This ensures that all reports remain correct. To prevent alarms from being raised for the retired devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
 
 
-### <a name="searching-devices"></a>How to search for devices
+### <a name="searching-devices"></a>To search for devices
 
 Cumulocity includes a full-text search for devices. 
 
@@ -86,7 +86,7 @@ For details on the search functionality, refer to Getting Started > [GUI functio
 
 ![Search for devices](/guides/images/users-guide/DeviceManagement/devmgmt-search.png)
 
-### <a name="filtering-devices"></a>How to filter devices
+### <a name="filtering-devices"></a>To filter devices
 
 The device list offers a filtering functionality to filter devices in the list for specific criteria. 
 

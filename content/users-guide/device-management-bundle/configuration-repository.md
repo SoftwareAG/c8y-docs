@@ -16,7 +16,7 @@ Click a configuration in the list to open it. You may modify the settings here a
 
 ![Configuration Repository](/guides/images/users-guide/DeviceManagement/devmgmt-configuration-details.png)
 
-### How to add a snapshot configuration from a file
+### To add a snapshot configuration from a file
 
 To add a new configuration from a file, follow these steps:
 
@@ -31,7 +31,7 @@ The snapshot will be added to the Configuration repository.
 ![Configuration Snapshot Repository](/guides/images/users-guide/configsnaprepo.png)
 
 
-### How to retrieve a current snapshot from a device
+### To retrieve a current snapshot from a device
 
 In addition to adding configurations from a file you can also add configurations by retrieving them from a device.
 
@@ -44,7 +44,7 @@ The retrieved snapshot can be found in the **Configuration repository**, accesse
 
 ![Retrieve Configuration Snapshot](/guides/images/users-guide/retrievesnap.png)
 
-### How to apply a configuration snapshot to a device
+### To apply a configuration snapshot to a device
 
 In order to apply a configuration snapshot to a device, follow these steps:
 
@@ -54,7 +54,7 @@ In order to apply a configuration snapshot to a device, follow these steps:
 
 ![Apply new snapshot to a device](/guides/images/users-guide/addsnap.png)
 
-### How to apply a snapshot configuration from one device to another
+### To apply a snapshot configuration from one device to another
 
 In order to apply a configuration snapshot from one device to another, follow these steps:
 

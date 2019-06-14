@@ -25,7 +25,7 @@ In addition to the object name and version, you will here find the name of the f
 Moreover, several action buttons are provided which are explained below.
 
 
-#### How to add a firmware object
+#### To add a firmware object
 
 1. In the **Firmware repository** page, click **Add firmware** at the right of the top menu bar. <br><br>![Add firmware](/guides/images/users-guide/DeviceManagement/devmgmt-firmware-add.png)
 2. In the resulting dialog box, enter a name for the firmware and its version.
@@ -36,7 +36,7 @@ The firmware object will be added to the firmware list.
 
 Similarly, you can add a new software object to the Software repository.
 
-#### How to update a firmware/software object
+#### To update a firmware/software object
 
 1. Click **Details** on a specific object to "turn around" its card and display details.
 3. Update the name or description, or specify a new file for the firmware by either uploading it from the file system or choosing a file. 
@@ -44,21 +44,21 @@ Similarly, you can add a new software object to the Software repository.
 
 The object will be updated.
 
-#### How to download a firmware/software object
+#### To download a firmware/software object
 
 1. Click **Details** on a specific object to "turn around" its card and display details.
 2. Click the download icon. 
 
 The object will be downloaded to your file system.
 
-#### How to install firmware/software on a device
+#### To install firmware/software on a device
 
 1. Click **All devices** in the **Devices** menu in the navigator and select a device from the device list.
 2. Open the **Software** tab for the device and click **Install firmware**, see also the description of the **Software** tab in [Device details](/guides/users-guide/device-management#software).
 
 >**Info:** To store other types of binaries in Cumulocity, switch to the [Administration application](/guides/users-guide/administration#files).
 
-#### How to install firmware/software on multiple devices
+#### To install firmware/software on multiple devices
 
 Cumulocity offers the option to execute firmware or software updates for multiple devices at once. To do so, follow these steps:
 
@@ -68,7 +68,7 @@ Cumulocity offers the option to execute firmware or software updates for multipl
 
 The operation status can be viewed in the **Bulk operations** tab of the selected group, see [Bulk operations](#bulk-operations).
 
-#### How to delete a firmware/software object
+#### To delete a firmware/software object
 
 Click the menu icon at the top right of a firmware/software card and click **Delete firmware** (or **Delete software**).
 
@@ -89,7 +89,7 @@ Click a configuration in the list to open it. You may modify the settings here a
 
 ![Configuration Repository](/guides/images/users-guide/DeviceManagement/devmgmt-management-configrepoedit.png)
 
-#### How to add a snapshot configuration from a file
+#### To add a snapshot configuration from a file
 
 1. Click **Add configuration snapshot** at the right of the top menu bar. 
 2. In the resulting dialog box, enter a unique name and an optional description for the configuration.
@@ -102,7 +102,7 @@ The snapshot will be added to the configuration repository.
 ![Configuration Snapshot Repository](/guides/images/users-guide/DeviceManagement/devmgmt-management-configrepo-addsnapshot.png)
 
 
-#### How to retrieve a current snapshot from a device
+#### To retrieve a current snapshot from a device
 
 In addition to adding configurations from a file you can also add configurations by retrieving them from a device.
 
@@ -115,7 +115,7 @@ The retrieved snapshot can be found in the **Configuration repository**, under  
 
 ![Retrieve Configuration Snapshot](/guides/images/users-guide/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
 
-#### How to apply a configuration snapshot to a device
+#### To apply a configuration snapshot to a device
 
 1. Navigate to the desired device and open its **Configuration** tab. 
 2. Under **Configuration snapshot**, select a configuration from the dropdown field.
@@ -123,7 +123,7 @@ The retrieved snapshot can be found in the **Configuration repository**, under  
 
 ![Apply new snapshot to a device](/guides/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
 
-#### How to apply a snapshot configuration from one device to another
+#### To apply a snapshot configuration from one device to another
 
 1. Navigate to the device which has your desired configuration and open the **Configuration** tab.
 2. Under **Configuration snapshot**, click **Get new snapshot from device** at the top right.
@@ -138,7 +138,7 @@ The **Device credentials** page lists all credentials that have been generated f
 
 ![Device credentials](/guides/images/users-guide/DeviceManagement/devmgmt-device-credentials.png)
 
-#### How to manage permissions for a device
+#### To manage permissions for a device
 
 1. Click the arrow in the **Global roles** column of a device to open a list with available global roles. 
 2. Assign or remove permissions for an individual device by selecting/deselecting roles.
@@ -146,7 +146,7 @@ The **Device credentials** page lists all credentials that have been generated f
 
 The roles for the device will be updated accordingly.
 
-#### How to edit device credentials
+#### To edit device credentials
 
 1. Click the menu icon at the right of a device credentials entry and then click **Edit** to open the device details.
  
@@ -159,13 +159,13 @@ The roles for the device will be updated accordingly.
 The device credentials will be updated accordingly.
 
 
-#### How to disable device credentials
+#### To disable device credentials
 
 Click the menu icon at the right of a device credentials entry and then click **Disable**.
 
 The device credentials will be temporarily disabled.
 
-#### How to delete device device credentials
+#### To delete device device credentials
 
 Click the menu icon at the right of a device credentials entry and then click **Delete**.
 

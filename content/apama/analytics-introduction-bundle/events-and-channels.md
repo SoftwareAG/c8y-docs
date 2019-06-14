@@ -10,7 +10,7 @@ In the Apama Event Processing Language, interactions with the rest of the Cumulo
 
 There are some predefined event types to interact with several Cumulocity APIs. Events are sent to Apama applications automatically when a new measurement, alarm or event is created. For interacting with the Cumulocity backend, you can create an event and send it to the relevant channel. Cumulocity will automatically execute either the database query or create the API calls necessary for sending mails, SMS, or similar.
 
-Look at the [data model](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3/apama10-3/ApamaDoc/com/apama/cumulocity/package-summary.html) to see how the events for each stream are structured.
+Look at the [data model](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3-1/apama10-3-1/ApamaDoc/com/apama/cumulocity/package-summary.html) to see how the events for each stream are structured.
 
 ### Sending events to a channel
 

@@ -4,7 +4,7 @@ title: Listeners
 layout: redirect
 ---
 
-Triggering a statement by an arriving event is not the only possibility. The following sections cover other ways to combine listeners. Refer to the Apama documentation for full details - see the [Defining Event Listeners](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3/apama10-3/apama-webhelp/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_defining_event_listeners.html) topic.
+Triggering a statement by an arriving event is not the only possibility. The following sections cover other ways to combine listeners. Refer to the Apama documentation for full details - see the [Defining Event Listeners](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3-1/apama10-3-1/apama-webhelp/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_defining_event_listeners.html) topic.
 
 ### Filters
 
@@ -81,4 +81,4 @@ Streams can also control how frequently they evaluate, using the `every` specifi
 	// will output average of all 20 measurements after the 20th arrived
 	from m in all Measurement(type="c8y_TemperatureMeasurement") retain 20 every 20 select avg(m.measurements["c8y_TemperatureMeasurement"]["T"].value) as avgValue { }
 
-See the Apama documentation for [built-in aggregates](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3/apama10-3/apama-webhelp/index.html#page/apama-webhelp%2Fre-ApaEplRef_built_in_aggregate_functions.html).
+See the Apama documentation for [built-in aggregates](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3-1/apama10-3-1/apama-webhelp/index.html#page/apama-webhelp%2Fre-ApaEplRef_built_in_aggregate_functions.html).

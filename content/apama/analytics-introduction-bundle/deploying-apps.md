@@ -10,7 +10,7 @@ To be able to upload single .mon files to Cumulocity, your tenant needs to be su
 
 #### Deploying Apama applications as a single .mon file with the “Apama-epl” application
 
-The “Apama-epl” application provides an interface for uploading and deploying EPL apps (.mon files), as well as interactively editing[^1] new or pre-existing EPL apps. Any user on the tenant wishing to use this application will need to be a **CEP Manager**. See [managing permissions](/guides/users-guide/administration/#managing-permissions).
+The “Apama-epl” application provides an interface for uploading and deploying EPL apps (.mon files), as well as interactively editing new or pre-existing EPL apps. Any user on the tenant wishing to use this application will need to be a **CEP Manager**. See [managing permissions](/guides/users-guide/administration/#managing-permissions).
 
 When the EPL is deployed to Cumulocity, each .mon file is assigned a unique package name. This prevents conflicts when multiple modules are uploaded. For this reason, you should not specify a 'package' statement in the .mon files. If you need to share events between different parts of your application, then write the event definitions and monitors that use it in a single .mon file.
 
@@ -20,5 +20,6 @@ When any EPL app signals a runtime error, this will be raised as an alarm. Runti
 
 For more detailed diagnostics of the Apama runtime and any active EPL apps, you can look at the logs for the “apama-ctrl” microservice. See [log files](/guides/users-guide/administration#managing-applications) for more details. However, some familiarity with Apama is necessary to get the most out of an Apama log file.
 
-[^1]:Be aware that the EPL editor makes use of a standard web component. It provides many generic developer functions, some of which are not relevant to EPL, including but not limited to Quick Fix and Show Hover.
+
+>**Side note** Be aware that the EPL editor makes use of a standard web component. It provides many generic developer functions, some of which are not relevant to EPL, including but not limited to Quick Fix and Show Hover.
 

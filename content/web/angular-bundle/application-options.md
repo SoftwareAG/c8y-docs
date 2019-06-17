@@ -83,6 +83,15 @@ export class ApplicationOptions {
   };
   localePath?: string; // The folder where the translations po files are loaded from
   extraCssUrls?: string[]; // URLs for extra CSS files to be loaded at runtime
+  docs?: {
+    noDefault: boolean, // Hide default links to documentation
+    excludeDefault: string[], // The list of regex strings to be matched with the default docs url
+    links: Array<{ // Additional documentation links to be displayed
+        icon: string;
+        label: string;
+        url: string;
+    }>
+  };
   noAppSwitcher?: boolean; // Hides the application from the application switched (saved to the server)
   globalTitle?: string; // HTML page title
   hidePowered?: boolean; // Hide powered by at the bottom of the navigator

@@ -21,11 +21,11 @@ Below is an example code with the `c8y\_Network` fragment:
 	"mac":"00:60:64:dd:a5:c3"
   },
   "c8y_WAN":{
- 	"password":"sim",
+ 	"password":"user-password",
 	"simStatus":"SIM OK",
 	"authType":"chap",
-	"apn":"internet.m2mportal.de",
-	"username":"m2m"
+	"apn":"example.apn.com",
+	"username":"test"
   },
   "c8y_DHCP"":{  
 	"dns2":"null",

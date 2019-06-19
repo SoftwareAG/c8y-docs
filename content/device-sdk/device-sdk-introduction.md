@@ -23,6 +23,12 @@ aliases:
   - /device-sdk/device-sdk-java/hello-world-basic
   - /device-sdk/device-sdk-java/hello-world-me
   - /device-sdk/device-sdk-java/introduction
+  - /device-sdk/java
+  - /device-sdk/java/agents
+  - /device-sdk/java/developing-java-clients
+  - /device-sdk/java/hello-world-basic
+  - /device-sdk/java/hello-world-me
+  - /device-sdk/java/introduction
 ---
 
 Cumulocity offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the Cumulocity IoT platform.

@@ -65,29 +65,32 @@ layout: redirect
 </tbody>
 </table>
 
-### GET a representation of the Inventory API resource
+### GET - Representation of the Inventory API resource
 
 Response body: application/vnd.com.nsn.cumulocity.inventoryApi+json  
 Required role: ROLE\_INVENTORY\_READ
 
-Example request: Get the Inventory API resource
-```http	
-200 - OK
+**Example request:** Get the Inventory API resource
 
-GET {{url}}/inventory
-```
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
 
-Example response:
+```http	
+200 - OK
+
+GET <<url>>/inventory
+```
+
+**Example response:**
 
 |HEADERS||
 |:---|:---|
 |Content-Type|application/vnd.com.nsn.cumulocity.inventoryapi+json;ver=...
 
 ```http
-HTTP/1.1 200 OK
+HTTP/1.1 
+200 - OK
     
 {
     "managedObjectsForFragmentType" : "<<ManagedObjectCollection URL>>?fragmentType={fragmentType}",

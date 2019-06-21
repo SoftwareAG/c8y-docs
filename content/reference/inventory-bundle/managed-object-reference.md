@@ -11,35 +11,46 @@ layout: redirect
 |self|URI|1|Link to this resource.|
 |managedObject|ManagedObject|1|The ManagedObject being referenced.|
 
-### GET a managed object reference
+### GET - Managed object reference
 
 Response body: ManagedObjectReference
 
 Required role: ROLE\_INVENTORY\_READ
 
-Example request:
+**Example request:**
 
-    GET /inventory/managedObjects/<<deviceId>>/<<references>>/<<referenceId>>
-    Host: ...
-    Authorization: Basic ...
-    Accept: application/vnd.com.nsn.cumulocity.managedObjectReference+json;ver=...
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
 
-Example Response:
+```http    
+200 - OK
 
-    HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.managedObjectReference+json;ver=...
-    Content-Length: ...
-    {
-      "self" : "<<This ManagedObjectReference URL>>",
-      "managedObject" : {
-        "self" : "<<ManagedObject 4 URL>>",
-        "name" : "Foo",
-        "id" : "4",
-        ...
-      }
-    }
+GET <<url>>/inventory/managedObjects/<<deviceId>>/<<references>>/<<referenceId>>
+```
 
-### DELETE a managed object reference
+**Example Response:**
+
+|HEADERS||
+|:---|:---|
+|Content-Type|application/vnd.com.nsn.cumulocity.managedObjectReference+json;ver=...
+
+```http
+HTTP/1.1 
+200 - OK
+
+{
+  "self" : "<<This ManagedObjectReference URL>>",
+  "managedObject" : {
+    "self" : "<<ManagedObject 4 URL>>",
+    "name" : "Foo",
+    "id" : "4",
+    ...
+  }
+}
+```
+
+### DELETE - Managed object reference
 
 Request Body: N/A.
 
@@ -49,12 +60,19 @@ Required role: ROLE\_INVENTORY\_ADMIN or parent owner or child owner
 
 Note: This operations just removes the reference, it does not delete the object itself.
 
-Example Request: Delete a managed object reference
+**Example Request:** Delete a managed object reference
 
-    DELETE /inventory/managedObjects/<<deviceId>>/<<references>>/<<referenceId>>
-     Host: [hostname]
-     Authorization: Basic xxxxxxxxxxxxxxxxxxx
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
 
-Example Response:
+```http
+DELETE /inventory/managedObjects/<<deviceId>>/<<references>>/<<referenceId>>
+```
 
-    HTTP/1.1  204 NO CONTENT
+**Example Response:**
+
+```http
+HTTP/1.1
+204 - NO CONTENT
+```

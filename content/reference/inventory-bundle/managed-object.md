@@ -7,7 +7,11 @@ layout: redirect
 ### Managed Object [application/vnd.com.nsn.cumulocity.managedObject+json]
 
 <table>
-<col width = 150>
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:5%">
+<col style="width:50%">
+<col style="width:5%">
 <thead>
 <tr>
 <th style="text-align:left">Name</th>
@@ -113,96 +117,144 @@ Not every GET response contains "parents" collections. It is required to pass "w
 
 > **Info:** If you query childDevices, only the children of the given device are returned without any grandchildren. 
 
-### GET a representation of a managed object
+### GET - Representation of a managed object
 
 Response body: ManagedObject
 
 Required role: ROLE\_INVENTORY\_READ
 
-Example request: Get a representation of a specific manage object
+**Example request:** Get a representation of a specific manage object
 
-    GET /inventory/managedObjects/<<deviceId>>
-    Host: ...
-    Authorization: Basic ...
-    Accept: application/vnd.com.nsn.cumulocity.managedObject+json;=ver...
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
 
-Example response:
+```http
+200 - OK
 
-    HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
-    Content-Length: ...
-    {
-      "id" : "42",
-      "name" : "SomeName",
-      "self" : "<<This ManagedObject URL>>",
-      "type" :"com_nsn_cumulocity_example_Clazz",
-      "lastUpdated": "2012-05-02T19:48:40.006+02:00",
-      "com_othercompany_StrongTypedClass" : { ... },
-      "childDevices": {
-        "self" : "<<ManagedObjectReferenceCollection URL>>",
-        "references" : [
-          {
-            "self" : "<<ManagedObjectReference URL>>",
-            "managedObject": {
-              "id": "1",
-              "self" : "<<ManagedObject URL>>"
-              "name": "Some Child"
-            }
-          },
-          ...
-        ]
+GET <<url>>/inventory/managedObjects/<<deviceId>>
+Accept: application/vnd.com.nsn.cumulocity.managedObject+json;=ver...
+```
+
+**Example response:**
+
+|HEADERS||
+|:---|:---|
+|Content-Type|application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
+
+```
+HTTP/1.1 
+200 - OK
+
+{
+  "id" : "42",
+  "name" : "SomeName",
+  "self" : "<<This ManagedObject URL>>",
+  "type" :"com_nsn_cumulocity_example_Clazz",
+  "lastUpdated": "2012-05-02T19:48:40.006+02:00",
+  "com_othercompany_StrongTypedClass" : { ... },
+  "childDevices": {
+    "self" : "<<ManagedObjectReferenceCollection URL>>",
+    "references" : [
+      {
+        "self" : "<<ManagedObjectReference URL>>",
+        "managedObject": {
+          "id": "1",
+          "self" : "<<ManagedObject URL>>"
+          "name": "Some Child"
+        }
       },
       ...
+    ]
+  },
+  ...
+}
+```
+
+### GET - Supported measurements of a managed object
+
+**Example request:** Retrieve supported measurements of a managed object
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+```http
+200 - OK
+
+GET <<url>>/inventory/managedObjects/<<deviceId>>/supportedMeasurements
+```
+
+**Example response:**
+
+|HEADERS||
+|:---|:---|
+|Content-Type|application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
+
+```http
+HTTP/1.1
+200 - OK
+
+{
+    "c8y_SupportedMeasurements": ["c8y_AnalogMeasurement", "c8y_MotionMeasurement", "c8y_SignalStrength", "c8y_TemperatureMeasurement"]
+}
+```
+
+**Important:** In order to have fragment names included in the supported measurements list, the fragment has to have a specific structure:
+
+```http
+"fragment_name" : {
+    "serie_name" : {
+        "value" : ...
+        "unit" : ...
     }
+}
+```
 
-### GET supported measurements of a managed object
+**Real example:**
 
-Example request: Retrieve supported measurements of a managed object
-
-    GET /inventory/managedObjects/<<deviceId>>/supportedMeasurements
-    Host: ...
-    Authorization: Basic ...
-
-Example response:
-
-    HTTP/1.1 200 OK
-    {
-        "c8y_SupportedMeasurements": ["c8y_AnalogMeasurement", "c8y_MotionMeasurement", "c8y_SignalStrength", "c8y_TemperatureMeasurement"]
-    }
-
-Important: In order to have fragment names included in the supported measurements list, the fragment has to have a specific structure:
-
-	"fragment_name" : {
-	    "serie_name" : {
-	        "value" : ...
-	        "unit" : ...
-	    }
-	}
-
-Real example:
-
-	"c8y_SpeedMeasurement": {
-	      "Speed": { "value": 1234, "unit": "km/h" }
-	}
+```http
+"c8y_SpeedMeasurement": {
+   "Speed": { 
+      "value": 1234,
+      "unit": "km/h"
+   }
+}
+```
 
 Fragment_name and serie_name can be replaced by a different valid json property name, but that name may not contain whitespaces and special characters like [], *. The structure has to be exactly as above, a two-level deep json object.
 
-### GET supported series of a managed object
+### GET - Supported series of a managed object
 
-Example request: Retrieve supported series of a managed object
+**Example request:** Retrieve supported series of a managed object
 
-    GET /inventory/managedObjects/<<deviceId>>/supportedSeries
-    Host: ...
-    Authorization: Basic ...
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
 
-Example response:
+```http
+200 - OK
 
-    HTTP/1.1 200 OK
-    {
-        {"c8y_SupportedSeries":["c8y_TemperatureMeasurement.T","c8y_SpeedMeasurement.speed","c8y_SignalStrength.rssi"]}
-    }
+GET <<url>>/inventory/managedObjects/<<deviceId>>/supportedSeries
+
+```
+
+**Example response:**
+
+|HEADERS||
+|:---|:---|
+|Content-Type|application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
+
+```
+HTTP/1.1 
+200 - OK
+
+{
+    {"c8y_SupportedSeries":["c8y_TemperatureMeasurement.T","c8y_SpeedMeasurement.speed","c8y_SignalStrength.rssi"]}
+}
+```
     
-Important: In order to have fragment names included in the supported series list, the fragment has to have a specific structure. See the explanation above regarding supported measurements.
+**Important:** In order to have fragment names included in the supported series list, the fragment has to have a specific structure. See the explanation above regarding supported measurements.
 
 ### PUT - Update a managed object
 
@@ -212,36 +264,51 @@ Response body: ManagedObject (when the accept header is not provided, an empty 
 
 Required role: ROLE\_INVENTORY\_ADMIN or owner
 
-Example Request: Change the name of a managed object
+**Example Request:** Change the name of a managed object
 
-    PUT /inventory/managedObjects/<<deviceId>>
-    Host: ...
-    Authorization: Basic ...
-    Accept: application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
-    Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
-    Content-Length: ...
-    { "name" : "Life, the Universe and the REST" }
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Accept|application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
+|Content-Type|application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
 
-Example response:
+```http
+200 - OK
 
-    HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
-    {
-      "id" : "42",
-      "name" : "Life, the Universe and the REST",
-      "self" : "<<This ManagedObject URL>>",
-      "type" :"com_nsn_cumulocity_example_Clazz",
-      "lastUpdated": "2012-05-02T19:58:40.006+02:00",
-      "com_othercompany_StrongTypedClass" : { ... },
-      "childDevices": {
-        ...
-      },
-      ...
-    }
+PUT <<url>>/inventory/managedObjects/<<deviceId>>
+{ 
+   "name" : "Life, the Universe and the REST"
+}
+
+```
+
+**Example response:**
+
+|HEADERS||
+|:---|:---|
+|Content-Type|application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
+
+```http
+HTTP/1.1
+200 - OK
+
+{
+  "id" : "42",
+  "name" : "Life, the Universe and the REST",
+  "self" : "<<This ManagedObject URL>>",
+  "type" :"com_nsn_cumulocity_example_Clazz",
+  "lastUpdated": "2012-05-02T19:58:40.006+02:00",
+  "com_othercompany_StrongTypedClass" : { ... },
+  "childDevices": {
+    ...
+  },
+  ...
+}
+```
 
 When a managed object of type 'c8y_SmartRule' is updated, an audit record is created with type 'SmartRule' and activity 'Smart rule updated', 'Smart rule enabled' or 'Smart rule disabled'.
 
-### DELETE a managed object
+### DELETE - Managed object
 
 Request Body: N/A.
 
@@ -249,15 +316,25 @@ Response Message Body: N/A.
 
 Required role: ROLE\_INVENTORY\_ADMIN or owner
 
-Example Request: Delete a managed object
+**Example Request:** Delete a managed object
 
-    DELETE /inventory/managedObjects/<<deviceId>>
-     Host: [hostname]
-     Authorization: Basic xxxxxxxxxxxxxxxxxxx
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
 
-Example Response:
+```http
 
-    HTTP/1.1  204 NO CONTENT
+DELETE <<url>>/inventory/managedObjects/<<deviceId>>
+
+```
+
+**Example Response:**
+
+```http
+HTTP/1.1 
+204 - NO CONTENT
+
+```
 
 If the managed object is a device or a group and the optional query parameter "cascade=true" is used all child devices and child assets will be deleted recursively. By default, the delete operation is propagated to the subgroups only if the deleted object is a group.
 

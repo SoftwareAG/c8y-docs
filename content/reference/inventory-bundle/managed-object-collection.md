@@ -16,11 +16,11 @@ layout: redirect
 
 ### GET - Representation of a ManagedObjectCollection
 
-Response body: ManagedObjectCollection  
+**Response body:** ManagedObjectCollection  
 
-Required role: ROLE\_INVENTORY\_READ
+**Required role:** ROLE\_INVENTORY\_READ
 
-**Example Request:** Get managed objects of a particular type.
+####Example Request - Get managed objects of a particular type.
 
 |HEADERS||
 |:---|:---|
@@ -31,7 +31,7 @@ GET <<url>>/inventory/managedObjects
 Accept: application/vnd.com.nsn.cumulocity.managedObjectCollection+json;ver=...
 ```
 
-**Example Response:**
+####Example Response
 
 |HEADERS||
 |:---|:---|
@@ -68,10 +68,10 @@ HTTP/1.1
 
 ### GET - Representation of a ManagedObjectCollection by query
 
-Response body: ManagedObjectCollection  
-Required role: ROLE\_INVENTORY\_READ
+**Response body:** ManagedObjectCollection  
+**Required role:** ROLE\_INVENTORY\_READ
 
-**Example Request:** Get managed objects finded by query.
+####Example Request - Get managed objects finded by query.
 
 |HEADERS||
 |:---|:---|
@@ -85,7 +85,7 @@ Accept: application/vnd.com.nsn.cumulocity.managedObjectCollection+json;ver=...
 
 ```
 
-**Example Response:**
+#### Example Response:
 
 |HEADERS||
 |:---|:---|
@@ -171,9 +171,7 @@ This part explain, how application will be handle query in parameter 'query'.
 * asc
     * example: $orderby=name, $orderby=name asc
 
-##### Examples:
-
-**Example data:**
+#### Example data
 
 ```json
     {
@@ -210,7 +208,7 @@ This part explain, how application will be handle query in parameter 'query'.
     }
 ```
 
-The query will then return:
+#### Query response
 
     ...query=num eq 1 - {"_id": 1, ...}
     ...query=name eq 'Dev_002' - {"_id": 2, ...}

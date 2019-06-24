@@ -67,10 +67,10 @@ layout: redirect
 
 ### GET - Representation of the Inventory API resource
 
-Response body: application/vnd.com.nsn.cumulocity.inventoryApi+json  
-Required role: ROLE\_INVENTORY\_READ
+**Response body:** application/vnd.com.nsn.cumulocity.inventoryApi+json  
+**Required role:** ROLE\_INVENTORY\_READ
 
-**Example request:** Get the Inventory API resource
+#### Example request - Get the Inventory API resource
 
 |HEADERS||
 |:---|:---|
@@ -82,7 +82,7 @@ Required role: ROLE\_INVENTORY\_READ
 GET <<url>>/inventory
 ```
 
-**Example response:**
+#### Example response
 
 |HEADERS||
 |:---|:---|

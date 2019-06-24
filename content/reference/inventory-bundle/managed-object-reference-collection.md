@@ -16,23 +16,23 @@ layout: redirect
 
 ### GET - Managed object reference collection
 
-Response body: ManagedObjectReferenceCollection
+**Response body:** ManagedObjectReferenceCollection
 
-**Example Request:** Get reference collection of a certain managed object
+#### Example Request - Get reference collection of a certain managed object
 
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
 
-Note that a "404 Not Found" error will appear if the object has no references.
+> **Info:** "404 Not Found" error will appear if the object has no references.
 
 ```http
 GET <<url>>/inventory/managedObjects/<<deviceId>>/<<references>>
 ```
 
-> Please note that references can be either **childDevices** or **childAssets**.
+> **Info:** that references can be either **childDevices** or **childAssets**.
 
-**Example Response:**
+#### Example Response
 
 |HEADERS||
 |:---|:---|
@@ -75,13 +75,13 @@ HTTP/1.1
 
 ### POST - Add a managed object reference to the collection
 
-Request body: ManagedObjectReference
+**Request body:** ManagedObjectReference
 
-Response body: ManagedObjectReference
+**Response body:** ManagedObjectReference
 
-Required role: ROLE\_INVENTORY\_ADMIN or parent and child owner
+**Required role:** ROLE\_INVENTORY\_ADMIN or parent and child owner
 
-**Example Request:** Add a ManagedObjectReference
+#### Example Request - Add a ManagedObjectReference
 
 |HEADERS||
 |:---|:---|
@@ -98,7 +98,7 @@ POST <<url>>/inventory/managedObjects/<<deviceId>>/<<references>>
 
 ```
 
-**Example Response:**
+#### Example Response
 
 |HEADERS||
 |:---|:---|

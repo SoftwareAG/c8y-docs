@@ -8,7 +8,7 @@ Dashboards provide you with a customized visualization of your data by using a s
 
 Cumulocity comes with a number of preset widgets, see [Widgets Collection](#widgets) for details. You can also develop your own widgets and add them to your Cumulocity account. Refer to the [Web SDK Guide](/guides/web/) for details.
 
-### <a name="creating-dashboards"></a>Creating a dashboard
+### <a name="creating-dashboards"></a>To create a dashboard
 
 Select the group or the device in the navigator for which to create a dashboard. 
 

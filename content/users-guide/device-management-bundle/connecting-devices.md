@@ -23,7 +23,7 @@ The devices may have one of the following status:
 * **Pending acceptance** - There is communication from a device with the specified ID, but the user doing the registration must still explicitly accept so that the credentials are sent to the device.
 * **Accepted** - The user has allowed the credentials to be send to the device.Devices can be connected to your Cumulocity account in different ways.
 
-### How to register devices
+### To register devices
 
 To register devices, you may choose one of the following options:
 	
@@ -36,7 +36,7 @@ If you are subscribed to the required applications you will see a third option
 <img src="/guides/images/users-guide/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
 
 
-#### <a name="device-registration-manually"></a>How to connect a  device manually
+#### <a name="device-registration-manually"></a>To connect a  device manually
 
 >**Info**: Depending on the type of device you want to connect, not all steps of the following process may be relevant. 
 
@@ -63,7 +63,7 @@ Click **Accept** to confirm the connection. The status of the device will change
 **Info**: In case of any issues, consult the documentation applicable for your device type in the [Devices guide](/guides/devices) or look up the manual of your device.
 
 
-#### <a name="creds-upload"></a>How to bulk-register devices
+#### <a name="creds-upload"></a>To bulk-register devices
 
 To connect larger amounts of devices, Cumulocity offers the option to bulk-register devices, i.e. to register larger amounts of devices by uploading a CSV file.
 
@@ -114,7 +114,7 @@ After the data is imported, you will get feedback on the number of devices that 
 	
 For your convenience we provide CSV template files for both bulk registration types (simple/full) which you can download to view or copy the structure.
 
-##### How to import CSV data in Microsoft Excel
+##### To import CSV data in Microsoft Excel
 
 1. In Microsoft Excel, switch to the **Data** tab.
 2. In the **Data** tab, select **From Text** in the top menu bar.

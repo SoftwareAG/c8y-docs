@@ -77,7 +77,7 @@ The new user will be added to the user list.
 ### To copy inventory roles
 
 1. Click the menu icon at the right of the respective row and then click **Copy inventory roles from another user**. 
-2. In the resulting dialog, select if you want to merge the roles to be copied with the existing user roles (the default) or if you want to replace the existing user roles.
+2. In the resulting dialog box, select if you want to merge the roles to be copied with the existing user roles (the default) or if you want to replace the existing user roles.
 3. Select the user from which you want to copy roles from the dropdown list.
 4. Click **Copy**. 
 

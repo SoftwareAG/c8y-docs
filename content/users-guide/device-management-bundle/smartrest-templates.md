@@ -26,7 +26,7 @@ There are two ways to add a SmartRest template:
 - Import an already existing template
 - Create a new template
 
-### How to import an existing SmartREST template
+### To import an existing SmartREST template
 
 1. Click **Import** at the right of the top menu bar.
 2. In the resulting dialog box, choose a file to upload by browsing for it.
@@ -35,7 +35,7 @@ There are two ways to add a SmartRest template:
 
 ![Import template](/guides/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-import.png)
 
-### How to create a new SmartREST template
+### To create a new SmartREST template
 
 1. Click **New** at the right of the top menu bar.
 2. In the resulting dialog box, enter a template name and a unique template ID (both mandatory fields). 
@@ -43,7 +43,7 @@ There are two ways to add a SmartRest template:
 
 ![Add new template](/guides/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-new.png)
 
-#### How to add a message
+#### To add a message
 
 The message template contains all necessary information to convert the SmartRest request into a corresponding Rest API call which is then sent to the platform.
 
@@ -69,13 +69,13 @@ The message template contains all necessary information to convert the SmartRest
 
 The message will be added to the SmartREST template.
 
-#### How to remove a message
+#### To remove a message
 
 To remove a message, open it and click **Remove** at the bottom.
 
 The message will be removed from the SmartREST template.
 
-#### How to add a response
+#### To add a response
 
 A response template contains the necessary information to extract data values from a platform REST API call response, which is then sent back to the client in a CSV data format.
 
@@ -97,30 +97,26 @@ A response template contains the necessary information to extract data values fr
 
 The response will be added to the SmartREST template.
  
-#### How to remove a response
+#### To remove a response
  
 To remove a response, open it and click **Remove** at the bottom.
 
-The response will be removed from the SmartREST template.
+### To edit a SmartREST template
 
-### How to edit a SmartREST template
+Either click the desired template or click the menu icon at the top right of the respective template card and then click **Edit**.
 
-To edit a SmartREST template, either click the desired template or click the menu icon and then click **Edit**.
+After editing the template, click **Save** to save your settings.
 
-After editing the template, click **Save**.
+### To delete a SmartREST template
 
-Your settings will be saved to the template.
-
-### How to delete a SmartREST template
-
-To delete a SmartREST template, click the menu icon and then click **Remove**.
-
-The template will be deleted.
+Click the menu icon at the top right of the respective template card and then click **Remove**.
 
 
-### How to export a SmartREST template
+### To export a SmartREST template
 
-To export a SmartREST template, click the menu icon and then click **Export**. The template will automatically be downloaded.
+Click the menu icon at the top right of the respective template card and then click **Export**. 
+
+The template will automatically be downloaded to your file system.
 
 To export a SmartREST template as CSV file follow these steps:
 

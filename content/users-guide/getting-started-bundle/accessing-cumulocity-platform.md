@@ -33,7 +33,7 @@ This will direct you to the login page of your default application.
 
 >**Info:** The above URL is only valid for Cumulocity Standard Tenant subscribers. For Enterprise Tenant deployments of Cumulocity IoT, the URL is specific to your organization.
 
-### <a name="login"></a>Hot to log into the Cumulocity platform
+### <a name="login"></a>To log into the Cumulocity platform
 
 On the Login screen, enter your username and password and click **Login** to enter the application. 
 
@@ -49,7 +49,7 @@ To explicitly logout, click the **User** button at the right of the the top bar 
 
 <img src="/guides/images/users-guide/overview-logout.png" alt="Logout menu" style="max-width: 100%">
 
-### <a name="reset-password"></a>How to reset your password
+### <a name="reset-password"></a>To reset your password
 
 1. Click the **Forgot password?** link on the Login screen. 
 2. In the resulting dialog box, enter your email address and click **Reset password**. 

@@ -29,7 +29,7 @@ layout: redirect
 GET <<url>>/inventory/managedObjects/<<deviceId>>/<<references>>/<<referenceId>>
 ```
 
-#### Example Response
+#### Example response
 
 |HEADERS||
 |:---|:---|
@@ -52,15 +52,15 @@ HTTP/1.1
 
 ### DELETE - Managed object reference
 
-R**equest Body:** N/A.
+**Request body:** N/A
 
-**Response Message Body:** N/A.
+**Response message body:** N/A
 
 **Required role:** ROLE\_INVENTORY\_ADMIN or parent owner or child owner
 
 > **Info:** This operations just removes the reference, it does not delete the object itself.
 
-#### Example Request - Delete a managed object reference
+#### Example request - Delete a managed object reference
 
 |HEADERS||
 |:---|:---|
@@ -70,7 +70,7 @@ R**equest Body:** N/A.
 DELETE /inventory/managedObjects/<<deviceId>>/<<references>>/<<referenceId>>
 ```
 
-#### Example Response
+#### Example response
 
 ```http
 HTTP/1.1

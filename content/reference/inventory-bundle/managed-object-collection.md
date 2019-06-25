@@ -20,7 +20,7 @@ layout: redirect
 
 **Required role:** ROLE\_INVENTORY\_READ
 
-####Example Request - Get managed objects of a particular type.
+#### Example request - Get managed objects of a particular type
 
 |HEADERS||
 |:---|:---|
@@ -31,7 +31,7 @@ GET <<url>>/inventory/managedObjects
 Accept: application/vnd.com.nsn.cumulocity.managedObjectCollection+json;ver=...
 ```
 
-####Example Response
+#### Example response
 
 |HEADERS||
 |:---|:---|
@@ -68,10 +68,11 @@ HTTP/1.1
 
 ### GET - Representation of a ManagedObjectCollection by query
 
-**Response body:** ManagedObjectCollection  
+**Response body:** ManagedObjectCollection 
+ 
 **Required role:** ROLE\_INVENTORY\_READ
 
-####Example Request - Get managed objects finded by query.
+#### Example request - Get managed objects found by query
 
 |HEADERS||
 |:---|:---|
@@ -85,7 +86,7 @@ Accept: application/vnd.com.nsn.cumulocity.managedObjectCollection+json;ver=...
 
 ```
 
-#### Example Response:
+#### Example response
 
 |HEADERS||
 |:---|:---|
@@ -121,55 +122,60 @@ Content-Length: ...
   },  "next" : "...",  "prev" : "..."}
 ```
 
-### Query Language
+### Query language
 
 Query language is applied to all managed objects.
 
-##### User can put query via 'query' parameter. Parameter can be:
+##### User can put query via 'query' parameter. Parameters can be:
+
 * only query to database: ...?query=name eq 'M01'
 * keyword $filter=: ...?query=$filter=name eq  'M01'
 * keyword $orderby=: ...?query=$orderby=id asc
 * keywords $filter= and $orderby=: ...?query=$filter=name eq 'M01' $orderby=id,
 
-This part explain, how application will be handle query in parameter 'query'.
+This part explains, how an application will handle a query in parameter 'query'.
 
 ##### Supported query operations:
-* eq(Equal): City eq 'Redmond'
-* gt(Greater than): Price gt 20
-* ge(Greater than or equal): Price ge 10
-* lt(Less than): Price lt 20
-* le(Less than or equal): Price le 100
-* and(Logical and): Price le 200 and Price gt 3.5
-* or(Logical or): Price le 3.5 or Price gt 200
+
+* eq(equal): City eq 'Redmond'
+* gt(greater than): Price gt 20
+* ge(greater than or equal): Price ge 10
+* lt(less than): Price lt 20
+* le(less than or equal): Price le 100
+* and(logical and): Price le 200 and Price gt 3.5
+* or(logical or): Price le 3.5 or Price gt 200
 
 ##### Supported query functions:
-* has: has(c8y_IsDevice) - match objects with custom property c8y_IsDevice. Supports only custom fragments. 
-  Standard properties are not supported, i.e. id, type, name, self, lastUpdated, owner, creationTime, supportedMeasurements, childAssets, childDevices, childAdditions, externalIds   
-* bygroupid(12) - match objects from group with id equals 12
+
+* has: has(c8y&#95;IsDevice) - match objects with custom property c8y_IsDevice 
+
+	* 	Supports only custom fragments.   
+	*   Standard properties are not supported, i.e. id, type, name, self, lastUpdated, owner, creationTime, supportedMeasurements, childAssets, childDevices, childAdditions, externalIds   
+* bygroupid(12) - match objects from group with ID equals 12
 
 ##### Supported query values:
-* string
-    * examples: name eq `'Dev_002'`, name eq `'Dev*'`, name eq `'*_001'`, name eq `'*'`
-    * string must be surround single quote
-    * string can contains wildcard '*' and this wildcard match form 0 to N characters
-    * matching is sensitive in case
+
+* string; examples: name eq 'Dev002', name eq 'Dev*', name eq '*001', name eq '*'
+    * string must be surrounded by single quotes
+    * string can contain wildcard '*' and this wildcard matches from 0 to N characters
+    * matching is case-sensitive
 * number
-* date
-    * examples: creationTime.date gt '2015-10-24T09:00:53.351+01:00' (+ must be url encoded)
+* date; example: creationTime.date gt '2015-10-24T09:00:53.351+01:00' (+ must be url encoded)
 
 ##### Supported query properties:
+
 * simple: name
 * nested: c8y_Availability.status
 * array: c8y_Availability.statuses = [1, 2, 3]
 
 ##### Grouping query operators:
+
 * ( ) Precedence grouping: (p1 eq 1) and (p2 eq 5 or p2 eq 6)
 
 ##### Supported sort operations:
-* desc
-    * example: $orderby=name desc
-* asc
-    * example: $orderby=name, $orderby=name asc
+
+* desc; example: $orderby=name desc
+* asc; example: $orderby=name, $orderby=name asc
 
 #### Example data
 

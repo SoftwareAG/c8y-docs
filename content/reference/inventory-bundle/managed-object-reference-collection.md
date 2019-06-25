@@ -18,7 +18,7 @@ layout: redirect
 
 **Response body:** ManagedObjectReferenceCollection
 
-#### Example Request - Get reference collection of a certain managed object
+#### Example request - Get reference collection of a certain managed object
 
 |HEADERS||
 |:---|:---|
@@ -30,9 +30,9 @@ layout: redirect
 GET <<url>>/inventory/managedObjects/<<deviceId>>/<<references>>
 ```
 
-> **Info:** that references can be either **childDevices** or **childAssets**.
+> **Info:** References can be either `childDevices` or `childAssets`.
 
-#### Example Response
+#### Example response
 
 |HEADERS||
 |:---|:---|
@@ -81,7 +81,7 @@ HTTP/1.1
 
 **Required role:** ROLE\_INVENTORY\_ADMIN or parent and child owner
 
-#### Example Request - Add a ManagedObjectReference
+#### Example request - Add a ManagedObjectReference
 
 |HEADERS||
 |:---|:---|
@@ -98,7 +98,7 @@ POST <<url>>/inventory/managedObjects/<<deviceId>>/<<references>>
 
 ```
 
-#### Example Response
+#### Example response
 
 |HEADERS||
 |:---|:---|
@@ -119,7 +119,7 @@ HTTP/1.1
 }
 ```
 
-As an alternative it is also allowed to pass the following reference object in the request body when adding to the collection:
+As an alternative, it is also allowed to pass the following reference object in the request body when adding to the collection:
 
 ```http
     {

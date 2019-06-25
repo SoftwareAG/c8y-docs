@@ -6,4 +6,4 @@ aliases:
   - /users-guide/overview
 ---
 
-The Getting Started section describes how to access and login to the Cumulocity platform and will walk you through basic functionalities applying to all Cumulocity applications.
+The Getting Started section describes how to access and log in to the Cumulocity platform and will walk you through basic functionalities applying to all Cumulocity applications.

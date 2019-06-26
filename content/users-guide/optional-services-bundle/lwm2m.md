@@ -67,144 +67,161 @@ In the first CSV example you can see the following fields:
 </tr>
 <tr>
 <td style="text-align:left">securityMode</td>
-<td style="text-align:left">In this example the value of the security mode is “NO_SEC” which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. Currently Cumulocity supports only “NO_SEC” and “PSK”. With “PSK”, the client and server have a common secret symmetric cryptography. In the next example you will see how the CSV file should look when the security mode value is “PSK”.</td>
+<td style="text-align:left">In this example the value of the security mode is “NO_SEC” which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. Currently Cumulocity supports only “NO_SEC” and “PSK”. With “PSK”, the client and server have a common secret symmetric cryptography. In the next example you will see how the CSV file should look when the security mode value is “NO_SEC”.</td>
 </tr>
 </tbody>
 </table>
 
-![CSV example 2.1](/guides/images/users-guide/LWM2M/example_2_1.png)
-
-![CSV example 2.2](/guides/images/users-guide/LWM2M/example_2_2.png)
-
-In this CSV example, the security mode value is “PSK”, hence additional fields are required. The table below reflects the full set of possible fields.
+The table below reflects the full set of possible fields that can be added:
 
 <table>
-<col style="width:25%">
-<col style="width:15%">
-<col style="width:45%">
+<col style="width:20%">
+<col style="width:10%">
+<col style="width:55%">
 <col style="width:15%">
 <thead>
 <tr>
-<th style="text-align:left">Field</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-<th style="text-align:left">Mandatory</th>
+<th style="text-align: left">Field</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Description</th>
+<th style="text-align: left">Mandatory</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">lwm2m psk_key</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">For security mode PSK: The key used by the device for LWM2M in PSK mode. Will be delivered to the device during bootstrap.</td>
-<td style="text-align:left">Mandatory for PSK. Should not be set for NO_SEC</td>
+<td style="text-align: left">endpoint id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">The name of the LWM2M endpoint.</td>
+<td style="text-align: left">Yes</td>
 </tr>
 <tr>
-<td style="text-align:left">lwm2m psk_id</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">For security mode PSK: The ID used by the device for LWM2M in PSK mode. Will be delivered to the device during bootstrap. Mostly the same as the endpoint name.</td>
-<td style="text-align:left">Mandatory for PSK. Should not be set for NO_SEC</td>
+<td style="text-align: left">lwm2m server url</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">The URL of the LWM2M server to be sent to the devices during bootstrap. If you are using the Cumulocity service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap server port is "5683" and the LWM2M port is "5783". Note, that these values can be different for other services.</td>
+<td style="text-align: left">Yes, for LWM2M bootstrap</td>
 </tr>
 <tr>
-<td style="text-align:left">endpoint id</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">The name of the LWM2M endpoint.</td>
-<td style="text-align:left">Yes</td>
+<td style="text-align: left">securityMode</td>
+<td style="text-align: left">String, &ldquo;NO_SEC&rdquo; or &ldquo;PSK</td>
+<td style="text-align: left; height: 40px;">The LWM2M security mode to be used. Possible values are PSK and NO_SEC.</td>
+<td style="text-align: left">Yes</td>
 </tr>
 <tr>
-<td style="text-align:left">bootstrap psk_id</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">For security mode PSK: The ID used by the device for bootstrapping in PSK mode.</td>
-<td style="text-align:left">Yes for PSK</td>
+<td style="text-align: left">serverPublicKey</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">The public key of the server.</td>
+<td style="text-align: left">Optional</td>
 </tr>
 <tr>
-<td style="text-align:left">bootstrap psk_key</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">For security mode PSK: The key used by the device for bootstrapping in PSK mode.</td>
-<td style="text-align:left">Yes for PSK</td>
+<td style="text-align: left">generateBootstrapServerConfig</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">Toggles if Cumulocity generates a server config for the LWM2M bootstrap server and writes that back during bootstrap. Default is false.</td>
+<td style="text-align: left">Optional</td>
 </tr>
 <tr>
-<td style="text-align:left">lwm2m server url</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">The URL of the LWM2M server to be sent to the devices during bootstrap. If you are using the Cumulocity service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap server port is "5683" and the LWM2M port is "5783". Note, that these values can be different for other services.</td>
-<td style="text-align:left">Yes, for LWM2M bootstrap</td>
+<td style="text-align: left">securityInstanceOffset</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">The first instance to be used during bootstrap to which entries are written. Default is "0". If set e.g. to "3", the first instance will be three.</td>
+<td style="text-align: left">Optional</td>
+</tr>
+<tr">
+<td style="text-align: left">bootstrapShortServerId</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">The short server ID to be used for the bootstrap server. Default is "0".</td>
+<td style="text-align: left">Optional</td>
 </tr>
 <tr>
-<td style="text-align:left">securityMode</td>
-<td style="text-align:left">String, “NO_SEC” or “PSK</td>
-<td style="text-align:left">The LWM2M security mode to be used. Possible values are PSK and NO_SEC.</td>
-<td style="text-align:left">Yes</td>
+<td style="text-align: left">lwm2mShortServerId</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">The short server ID to be used for LWM2M server. Default is "1".</td>
+<td style="text-align: left">Optional</td>
 </tr>
 <tr>
-<td style="text-align:left">serverPublicKey</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">The public key of the server.</td>
-<td style="text-align:left">Optional</td>
+<td style="text-align: left; height: 13px;">registrationLifetime</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">The registration lifetime that is sent to the device during bootstrap. Overrides global agent configuration.</td>
+<td style="text-align: left">Optional</td>
 </tr>
 <tr>
-<td style="text-align:left">generateBootstrapServerConfig</td>
-<td style="text-align:left">Boolean</td>
-<td style="text-align:left">Toggles if Cumulocity generates a server config for the LWM2M bootstrap server and writes that back during bootstrap. Default is false.</td>
-<td style="text-align:left">Optional</td>
+<td style="text-align: left">defaultMinimumPeriod</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">The default minimum period to configure during bootstrap. See LWM2M Spec for explanation.</td>
+<td style="text-align: left">Optional</td>
 </tr>
 <tr>
-<td style="text-align:left">securityInstanceOffset</td>
-<td style="text-align:left">Integer</td>
-<td style="text-align:left">The first instance to be used during bootstrap to which entries are written. "0" is default. If set e.g. to "3", the first instance will be three.</td>
-<td style="text-align:left">Optional</td>
+<td style="text-align: left; height: 13px;">defaultMaximumPeriod</td>
+<td style="text-align: left">Integer</td>
+<td style="text-align: left">The default max period to configure during bootstrap. See LWM2M Spec for explanation.</td>
+<td style="text-align: left">Optional</td>
+</tr>
+<tr style="height: 26px;">
+<td style="text-align: left">bindingMode</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">The LWM2M binding mode to be reported to the device. Supported are &ldquo;UQ&rdquo; (default, queuing) and &ldquo;U&rdquo; (unqueued). Note, that Cumulocity will always queue operations.</td>
+<td style="text-align: left">Optional</td>
 </tr>
 <tr>
-<td style="text-align:left">bootstrapShortServerId</td>
-<td style="text-align:left">Integer</td>
-<td style="text-align:left">The short server ID to be used for the bootstrap server. Default is "0".</td>
-<td style="text-align:left">Optional</td>
+<td style="text-align: left; height: 40px;">notificationIfDisabled (true/false)</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">See LWM2M spec. Default: Not configured.</td>
+<td style="text-align: left">Optional, defaults to Leshan default behavior.</td>
+</tr>
+<tr style="height: 40px;">
+<td style="text-align: left">disableTimeout (true/false)</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">See LWM2M spec. Default: Not configured.</td>
+<td style="text-align: left">Optional, defaults to Leshan default behavior.</td>
+</tr>
+</tbody>
+</table>
+
+![CSV example 2.1](/guides/images/users-guide/LWM2M/lwm2m-psk-example.png)
+
+In this CSV example, the security mode value is “PSK”. With "PSK" enabled, additional mandatory fields must be filled. All fields, available to "PSK", can be observed in the table below:
+
+<table>
+<col style="width:20%">
+<col style="width:10%">
+<col style="width:55%">
+<col style="width:15%">
+<thead>
+<tr>
+<th style="text-align: left">Field</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Description</th>
+<th style="text-align: left">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left">lwm2m psk_key</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">For security mode PSK: The key used by the device for LWM2M in PSK mode. Will be delivered to the device during bootstrap.</td>
+<td style="text-align: left; height: 26px;">Mandatory for PSK. Should not be set for NO_SEC.</td>
 </tr>
 <tr>
-<td style="text-align:left">lwm2mShortServerId</td>
-<td style="text-align:left">Integer</td>
-<td style="text-align:left">The short server ID to be used for LWM2M server. Default is "1".</td>
-<td style="text-align:left">Optional</td>
+<td style="text-align: left">lwm2m psk_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">For security mode PSK: The ID used by the device for LWM2M in PSK mode. Will be delivered to the device during bootstrap. Mostly the same as the endpoint name.</td>
+<td style="text-align: left">Mandatory for PSK. Should not be set for NO_SEC.</td>
 </tr>
 <tr>
-<td style="text-align:left">registrationLifetime</td>
-<td style="text-align:left">Integer</td>
-<td style="text-align:left">The registration lifetime that is sent to the device during bootstrap. Overrides global agent configuration.</td>
-<td style="text-align:left">Optional</td>
+<td style="text-align: left">bootstrap psk_id</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">For security mode PSK: The ID used by the device for bootstrapping in PSK mode.</td>
+<td style="text-align: left">Yes for PSK</td>
 </tr>
 <tr>
-<td style="text-align:left">defaultMinimumPeriod</td>
-<td style="text-align:left">Integer</td>
-<td style="text-align:left">The default minimum period to configure during bootstrap. See LWM2M Spec for explanation.</td>
-<td style="text-align:left">Optional</td>
+<td style="text-align: left">bootstrap psk_key</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">For security mode PSK: The key used by the device for bootstrapping in PSK mode.</td>
+<td style="text-align: left">Yes for PSK</td>
 </tr>
 <tr>
-<td style="text-align:left">defaultMaximumPeriod</td>
-<td style="text-align:left">Integer</td>
-<td style="text-align:left">The default max period  to configure during bootstrap. See LWM2M Spec for explanation.</td>
-<td style="text-align:left">Optional</td>
-</tr>
-<tr>
-<td style="text-align:left">bindingMode</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">The LWM2M binding mode to be reported to the device. Supported are “UQ” (default, queuing) and “U” (unqueued). Note, that Cumulocity will always queue operations.</td>
-<td style="text-align:left">Optional</td>
-</tr>
-<tr>
-<td style="text-align:left">notificationIfDisabled (true/false)</td>
-<td style="text-align:left">Boolean</td>
-<td style="text-align:left">See LWM2M spec. Default: Not configured.</td>
-<td style="text-align:left">Optional, defaults to Leshan default behavior</td>
-</tr>
-<tr>
-<td style="text-align:left">disableTimeout (true/false)</td>
-<td style="text-align:left">Boolean</td>
-<td style="text-align:left">See LWM2M spec. Default: Not configured.</td>
-<td style="text-align:left">Optional, defaults to Leshan default behavior</td>
-</tr>
-<tr>
-<td style="text-align:left">external-c8y_BootstrapPskId</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">The ID being used to find a device during bootstrap.</td>
-<td style="text-align:left">Optional</td>
+<td style="text-align: left">external-c8y_BootstrapPskId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">The ID being used to find a device during bootstrap.</td>
+<td style="text-align: left">Optional</td>
 </tr>
 </tbody>
 </table>

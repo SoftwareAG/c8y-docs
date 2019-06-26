@@ -121,7 +121,7 @@ The table below reflects the full set of possible fields that can be added:
 <tr>
 <td style="text-align: left">securityInstanceOffset</td>
 <td style="text-align: left">Integer</td>
-<td style="text-align: left">The first instance to be used during bootstrap to which entries are written. "0" is default. If set e.g. to "3", the first instance will be three.</td>
+<td style="text-align: left">The first instance to be used during bootstrap to which entries are written. Default is "0". If set e.g. to "3", the first instance will be three.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr">
@@ -164,13 +164,13 @@ The table below reflects the full set of possible fields that can be added:
 <td style="text-align: left; height: 40px;">notificationIfDisabled (true/false)</td>
 <td style="text-align: left">Boolean</td>
 <td style="text-align: left">See LWM2M spec. Default: Not configured.</td>
-<td style="text-align: left">Optional, defaults to Leshan default behavior</td>
+<td style="text-align: left">Optional, defaults to Leshan default behavior.</td>
 </tr>
 <tr style="height: 40px;">
 <td style="text-align: left">disableTimeout (true/false)</td>
 <td style="text-align: left">Boolean</td>
 <td style="text-align: left">See LWM2M spec. Default: Not configured.</td>
-<td style="text-align: left">Optional, defaults to Leshan default behavior</td>
+<td style="text-align: left">Optional, defaults to Leshan default behavior.</td>
 </tr>
 </tbody>
 </table>
@@ -197,13 +197,13 @@ In this CSV example, the security mode value is “PSK”. With "PSK" enabled, a
 <td style="text-align: left">lwm2m psk_key</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">For security mode PSK: The key used by the device for LWM2M in PSK mode. Will be delivered to the device during bootstrap.</td>
-<td style="text-align: left; height: 26px;">Mandatory for PSK. Should not be set for NO_SEC</td>
+<td style="text-align: left; height: 26px;">Mandatory for PSK. Should not be set for NO_SEC.</td>
 </tr>
 <tr>
 <td style="text-align: left">lwm2m psk_id</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">For security mode PSK: The ID used by the device for LWM2M in PSK mode. Will be delivered to the device during bootstrap. Mostly the same as the endpoint name.</td>
-<td style="text-align: left">Mandatory for PSK. Should not be set for NO_SEC</td>
+<td style="text-align: left">Mandatory for PSK. Should not be set for NO_SEC.</td>
 </tr>
 <tr>
 <td style="text-align: left">bootstrap psk_id</td>

@@ -2,8 +2,6 @@
 weight: 30
 title: Microservice manifest
 layout: redirect
-aliases:
-  - /reference/microservice-manifest
 ---
 
 The application manifest provides the required settings to manage microservice instances and the application deployment in the Cumulocity platform. The definition is provided within the _cumulocity.json_ file in the binary uploaded to the Cumulocity platform.

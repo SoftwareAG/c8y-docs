@@ -147,11 +147,13 @@ In the **Misc** section you may specify the “Button Border-Radius” by provid
 
 ### <a name="domain-name"></a>Domain name
 
-In the **Domain name** tab you can activate your own custom domain name. 
-
->**Info**: To activate you domain, you need a valid license. Please contact our Sales team at sales@cumulocity.com to install a license for your domain.  
+In the **Domain name** tab you can activate your own custom domain name.
+ 
+>**Important**: To activate you domain, you need a valid license. Please contact our Sales team at sales@cumulocity.com to install a license for your domain.  
 
 <img src="/guides/images/users-guide/Administration/admin-domain-name.png" alt="Domain name">
+
+>**Info**: The custom domain name functionality is only available for cumulocity.com or Private Edition installations which don't use a custom load balancer.
 
 First you have to upload the appropriate certificate by clicking **Upload Certificate**. Make sure that
 

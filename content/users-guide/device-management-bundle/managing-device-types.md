@@ -18,7 +18,7 @@ The device protocol list shows the following information:
 * the device type name 
 * the number of resources for the device (at the right)
 
-### How to add a device protocol
+### To add a device protocol
 
 1. Click **New device protocol** in the top menu bar. 
  
@@ -32,7 +32,7 @@ For details on configuring device protocols, follow the documentation of the par
 
 The device protocol will be added to the device database.
 
-### How to import a device protocol
+### To import a device protocol
 
 To add a device protocol from an existing protocol, perform the following steps:
 
@@ -45,19 +45,19 @@ To add a device protocol from an existing protocol, perform the following steps:
 
 The device protocol will be added to the device database.
 
-### How to edit a device protocol
+### To edit a device protocol
 
 To edit a device protocol, just click on the protocol or click the menu icon at the right of the row and then click **Edit**. 
 
 Details on the fields can be found in the documentation of the particular device type, see [Optional services](/guides/users-guide/optional-services).
 
-### How to remove a device protocol
+### To remove a device protocol
 
 To remove a device protocol, click the menu icon at the right of the row and then click **Remove**.
 
 The device protocol will be removed from the device database.
 
-### How to export a device protocol
+### To export a device protocol
 
 To export a device protocol, click the menu icon at the right of the row and then click **Export**.
 

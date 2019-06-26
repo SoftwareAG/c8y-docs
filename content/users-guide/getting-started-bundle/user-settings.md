@@ -46,7 +46,7 @@ The **User** menu contains the following items:
 </tbody>
 </table>
 
-### <a name="user-settings"></a>How to change user settings
+### <a name="user-settings"></a>To change user settings
 
 Several account settings can be changed by the user. 
 
@@ -67,7 +67,7 @@ Several account settings can be changed by the user.
 
 <img src="/guides/images/users-guide/overview-user-settings.png" alt="User settings"  style="max-width: 100%">
 
-### <a name="change-password"></a>How to change your password
+### <a name="change-password"></a>To change your password
 
 1. Click the **User** button at the right of the top bar and then click **User settings**. 
 2. In the **Edit user** dialog box, click **Change Password**.

@@ -153,7 +153,7 @@ The **Alarms** tab provides information on the alarms of a device. See [Working 
 
 The **Configuration** tab allows you to configure the parameters and initial settings of your device in a text format.
 
-#### How to add or edit a configuration
+#### To add or edit a configuration
 
 2. In the **Configuration** tab, you can manually add or edit the device configuration in the text field.
 4. Click **Save** to save your edits.
@@ -178,20 +178,20 @@ The WAN parameters in the user interface correspond to the first profile stored 
 
 > **Info:** For SMS configuration, the router needs to be configured to accept SMS commands.
 
-#### How to configure WAN parameters
+#### To configure WAN parameters
 
 1. Enter the Access Point Name (APN).
 2. Enter the username and the password of your account in the platform to which you wish to establish a connection.
 3. Select the authentication type.
 4. Click **Save changes** to save your settings.
 
-#### How to configure LAN parameters
+#### To configure LAN parameters
 
 To configure LAN parameters, simply enter **IP address** and **Subnet mask**.
 
 > **Info:** **Name** and **Mac address** fields are not configurable.
 
-#### How to configure DHCP parameters
+#### To configure DHCP parameters
 
 1. Enter the address range in which the connection can be established.
 2. Enter the DNS.
@@ -205,7 +205,7 @@ To configure LAN parameters, simply enter **IP address** and **Subnet mask**.
 
 The **Software** tab allows you to manage and update the firmware of a device and the software installed on a device. 
 
-#### How to install firmware/software
+#### To install firmware/software
 
 Select a firmware from the dropdown list, which contains all firmware available in the [Firmware repository](#software-repo), and click **Install**.
 
@@ -215,7 +215,7 @@ Similarly, to install a software on the device, select a software package from t
 
 Installing software and firmware usually includes a restart of the device. To monitor the progress of an installation, visit the **Control** tab.
 
-#### How to remove firmware/software
+#### To remove firmware/software
 
 To remove a firmware/software object from a device, hover over a particular firmware/software entry and click the delete icon.
 
@@ -236,7 +236,7 @@ The **Location** tab also shows when a device contains c8y_Position property. Wh
 
 In the **Logs** tab you can manage log information from devices. 
 
-#### How to request log information
+#### To request log information
 
 1. In the **Logs** tab, click **Request log file** at the right of the top menu bar. 
 2. In the resulting dialog box, specify a date and time range for the log information.
@@ -255,11 +255,11 @@ After the log has been transferred from the device to Cumulocity, it will be lis
 
 Click on the entry in the list to show the entire log information. 
 
-#### How to download a log
+#### To download a log
 
 Hover over a row and click the download icon, to download the log excerpt to your file system. 
 
-#### How to delete a log
+#### To delete a log
 
 Hover over a row and click the delete icon, to delete the log information.
 

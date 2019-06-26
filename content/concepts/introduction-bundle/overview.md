@@ -17,5 +17,4 @@ Cumulocity works with any network architecture, but is specifically designed to 
 
 ![Solution building](/guides/images/concepts-guide/solution.gif)
 
-Terms and Conditions to use Cumulocity:
-[Terms and Conditions](http://cumulocity.com/terms-and-conditions/)
+Terms and Conditions to use Cumulocity are described at [https://www.softwareag.cloud/site/terms.html#/](https://www.softwareag.cloud/site/terms.html#/).

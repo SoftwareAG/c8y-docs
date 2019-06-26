@@ -15,6 +15,7 @@ aliases:
   - /developers-guide/an-end-to-end-example.html
   - /java/agents
   - /java/developing-java-clients
+  - /java/developing-services-client
   - /java/hello-world-basic
   - /java/hello-world-me
   - /device-sdk/device-sdk-java

@@ -72,7 +72,7 @@ The application manifest provides the required settings to manage microservice i
 <tr>
 <td style="text-align:left">resources</td>
 <td style="text-align:left">Resources</td>
-<td style="text-align:left">Configuration for default resource limit. Can be overridden by tenant during subscription.<br><br>Guaranteed resources are CPU=0.25, Memory=256MB<br>Default limits are CPU=0.5, Memory=512MB</td>
+<td style="text-align:left">Configuration for resources limits.<br>Guaranteed resources are CPU=0.25, Memory=256MB<br>Default limits are CPU=0.5, Memory=512MB</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>

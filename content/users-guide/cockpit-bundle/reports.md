@@ -16,15 +16,15 @@ To see all existing reports, expand the **Reports** menu in the navigator.
 
 Click a report in the navigator to open it.
 
-#### How to create a report
+#### To create a report
 
-1. Click the **Plus** button in the top bar and from the action menu select **New report**.
+1. Click the **Plus** button in the top bar and then click **New report**.
 2. Enter a name for the report and optionally select an icon from the dropdown list. 
 3. Click **Save** to save your settings.
 
 Next, widgets can be added to the report.
 
-#### How to add widgets to reports
+#### To add widgets to reports
 
 You can add widgets to reports in the same way as adding widgets to dashboards.
 
@@ -33,10 +33,10 @@ You can add widgets to reports in the same way as adding widgets to dashboards.
 
 For details on all widgets types available, refer to [Widgets collection](#widgets).
 
-#### How to delete a report
+#### To delete a report
 
-1. Open the report you want to delete and click **More...** at the right of the top menu bar. 
-2. From the action menu, select **Remove report**.
+1. Open the report you want to delete.
+2. Click **More...** at the right of the top menu bar and then click **Remove report**.
 
 
 ### <a name="export"></a>Exporting data
@@ -54,7 +54,7 @@ In the **Export** page you will find a list displaying all exports with their na
 ![Exports](/guides/images/users-guide/cockpit/cockpit-exports.png)
 
 
-#### How to add an export
+#### <a name="add-export"></a>To add an export
 
 1. Click **Add export** in the top menu bar.
 2. Enter a name for the export and select the file type (CSV or XLSX) for the report output. 
@@ -88,7 +88,9 @@ Use the toggle to enable/disable a field.
 
 >**Info**: The time range filter only applies to alarms, events and measurements but not to managed objects. If selected, managed objects will appear in the export, regardless of any specified time range. 
 
-When a field is enabled, predefined or empty properties can be added. 
+When a field is enabled, predefined or empty properties can be added.
+
+##### To add a property 
 
 Click **Add** to add empty properties. To enter a label or path, click **Column** or **Path** and edit the field. For example, if you enable the **Alarms** field you could enter "Severity" in column and path to receive data for alarm severities.
 
@@ -105,13 +107,13 @@ If your field is a valid.key.with.dot then refer to it as ['fragment.key.with.do
 
 In case of measurements enabled, you can also choose **Add from data point**. For details on how to add data points see [Adding data points](#add-data-points). 
  
-#### <a name="schedule-export"></a>Scheduling exports
+#### <a name="schedule-export"></a>To schedule an export
 
-To schedule the export to a CSV or Excel file to any point in time, click the menu icon at the end of the row and from the context menu select **Schedule export**. 
+To schedule the export to a CSV or XLSX file to any point in time, click the menu icon at the end of the row and then click **Schedule export**. 
 
 ![Export context menu](/guides/images/users-guide/cockpit/cockpit-export-menu.png)
 
-In the ressulting dialog box you can customize the Smart Rule "On timer send export via email" according to your needs.
+In the resulting dialog box you can customize the Smart Rule "On timer send export via email" according to your needs.
 
 ![Schedule export](/guides/images/users-guide/cockpit/cockpit-export-on-timer-rule.png)
 
@@ -140,9 +142,9 @@ The Smart Rule will be added to the export details.
 ![Smart Rule](/guides/images/users-guide/cockpit/cockpit-export-schedule.png)
 
 
-#### Exporting data
+#### To export data
 
-To export data to a CSV or xlsx file, select the checkbox in front of the export in the list and at the left of the top menu bar click **Export**.
+To export data to a CSV or XLSX file, select the checkbox in front of the export in the list and at the left of the top menu bar click **Export**.
 
 You will receive an e-mail containing links to each export file.
 
@@ -153,17 +155,19 @@ Standard time properties of documents (like time or creationTime in alarms) are 
 
 Only CSV time contains milliseconds and timezone.
 
-#### Editing exports
+#### To edit an export
 
-To edit an export, just click the respective row or click the menu icon at the end of the row and from the context menu select **Edit**.
+Just click the respective row or click the menu icon at the end of the row and then click **Edit**.
 
-<img src="/guides/images/users-guide/cockpit/cockpit-export-menu-small.png" name="Export context menu"/>
+For details on the fields see [To add an export](#add-export).
 
 
-#### Duplicating exports
+#### To duplicate an export
 
-To duplicate an export, click the menu icon at the end of the row and from the context menu select **Duplicate**. Modify at least the name and click **Save & close** to save the export and return to the export list.
+1. Click the menu icon at the end of the row and then click **Duplicate**. 
+2. Modify at least the name.
+3. Click **Save & close** to save the export and return to the export list.
 
-#### Removing exports
+#### To remove an export
 
-To remove an export, click the menu icon at the end of the row and from the context menu select **Remove**.
+Click the menu icon at the end of the row and then click **Remove**.

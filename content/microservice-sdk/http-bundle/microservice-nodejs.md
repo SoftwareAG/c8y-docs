@@ -44,10 +44,8 @@ It will walk you through creating a *package.json* file which allows to identify
   "dependencies": {
     "@c8y/client": "^1004.0.7",
     "@slack/web-api": "^5.0.1",
-    "bluebird": "^3.5.5",
     "dotenv": "^8.0.0",
-    "express": "4.17.0",
-    "request": "^2.88.0"
+    "express": "4.17.0"
   },
   "scripts": {
     "start": "node app.js",
@@ -164,41 +162,32 @@ async function postSlackMessage (adata) {
 }
 
 
-/********************* Cumulocity *********************/
+/********************* Cumulocity IoT *********************/
 
-const Promise = require("bluebird");
-const request = Promise.promisify(require("request"));
-
-const { Client } = require ("@c8y/client");
-const { BasicAuth } = require ("@c8y/client");
+const { Client, FetchClient, BasicAuth } = require("@c8y/client");
 
 const baseUrl = process.env.C8Y_BASEURL;
-const serviceAuth = {
-    user: `${process.env.C8Y_BOOTSTRAP_TENANT}/${process.env.C8Y_BOOTSTRAP_USER}`,
-    pass: process.env.C8Y_BOOTSTRAP_PASSWORD,
-    sendImmediately: true
-};
-
 let cachedUsers = [];
 
 // Get the subscribed users
-function getUsers () {
-    return request({
-        baseUrl,
-        url: `/application/currentApplication/subscriptions`,
-        json: true,
-        auth: serviceAuth
-    })
-    .then((res) => res.body.users)
-    .tap((users) => {
-        cachedUsers = users;
-    });
-}
+async function getUsers () {
+    const {
+        C8Y_BOOTSTRAP_TENANT: tenant,
+        C8Y_BOOTSTRAP_USER: user,
+        C8Y_BOOTSTRAP_PASSWORD: password
+    } = process.env;
+
+    const client = new FetchClient(new BasicAuth({ tenant, user, password }), baseUrl);
+    const res = await client.fetch("/application/currentApplication/subscriptions");
+
+    return res.json();
+ }
+
 
 // where the magic happens...
 (async () => {
 
-    await getUsers();
+    cachedUsers = (await getUsers()).users;
 
     if (Array.isArray(cachedUsers) && cachedUsers.length) {
         // List filter for unresolved alarms only

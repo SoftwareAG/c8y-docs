@@ -31,16 +31,8 @@ If the agent is not running, start it with the following command:
 $ systemctl start cumulocity-agent
 ```
 
-
-#### How to register the agent
-
-Next, register the agent in the Device management application using "linux-agent" as device ID. 
-
-<img src="/guides/images/edge/register-modbus-agent.png" name="Register agent"/> 
-
-Follow the description in Device Management > [Connecting devices](/guides/users-guide/device-management#connecting-devices) in the User guide to register the agent.
-
-In the Device Management application, click **All devices** in the navigator and find the Modbus agent in the device list.
+The Modbus agent is pre-registered in the post-installation phase.
+In the Device Management application, click “All devices” in the navigator and find the Modbus agent(named linux-agent) in the device list.
 
 <img src="/guides/images/edge/edge-modbus-device.png" name="Device list" style="width:100%;"/> 
 

@@ -216,51 +216,21 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
         "cpu": "1",
         "memory": "1G"
     },
-    "livenessProbe":{
-      "httpGet":{
-        "path": "/health"
-      },
-      "initialDelaySeconds": 60,
-      "periodSeconds": 10
+    "livenessProbe": {
+        "httpGet": {
+            "path": "/health"
+        },
+        "initialDelaySeconds": 60,
+        "periodSeconds": 10
     },
-    "readinessProbe":{
-      "httpGet":{
-        "path": "/health",
-        "port": 80
+    "readinessProbe": {
+        "httpGet": {
+            "path": "/health",
+            "port": 80
 
-      },
-      "initialDelaySeconds": 20,
-      "periodSeconds": 10
-    },
-    "extensions":[
-      {
-        "type":"prometheus.io"
-      }
-    ]
-}
-```
-
-
-#### Supported Extensions
-
-Extensions supported by the Cumulocity Microservice Manifest.
-
-##### Prometheus monitoring
-
-Enables support for metrics gathering exposed via the Prometheus endpoint.
-The endpoint should not require authentication.
-
-|Name|Type|Description|Required|
-|:---|:---|:----------|:----------|
-|path | String | Path to the Prometheus endpoint. <br/>Default: /prometheus | No
-|port | String | HTTP port where the Prometheus endpoint is available. <br/>Default: 80 | No
-
-Example:
-
-```json
-{
-    "type": "prometheus.io",
-    "path": "/monitoring/prometheus",
-    "port": "4444"
+        },
+        "initialDelaySeconds": 20,
+        "periodSeconds": 10
+    }
 }
 ```

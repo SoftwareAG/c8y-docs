@@ -82,6 +82,12 @@ The application manifest provides the required settings to manage microservice i
 <td style="text-align:left">No</td>
 </tr>
 <tr>
+<td style="text-align:left">settingsCategory</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">Allows to specify custom category for microservice settings. By default contextPath is used.</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
 <td style="text-align:left">requiredRoles</td>
 <td style="text-align:left">String[ ]</td>
 <td style="text-align:left">List of permissions required by a microservice to work.</td>

@@ -23,11 +23,11 @@ This feature is enabled since Cumulocity version 9.12. For correct behavior any 
 
 Before switching to the single sign-on option it is mandatory that:
 
-* the authorization server you use supports OAuth2 authentication code grant,
-* the access token is issued as JWT and you know what goes into the token content, 
-* the JWT must consist of a unique user identifier,
-* the Cumulocity platform is in version 9.12 but preferably higher, 
-* all microservices are build with Microservice Java SDK 9.12.6 but preferably higher.
+* the authorization server you use supports OAuth2 authorization code grant
+* the access token is issued as JWT and you know what goes into the token content
+* the JWT must consist of a unique user identifier, "iss" (issuer), "aud" (audience) and "exp" (expiration time) fields
+* the Cumulocity platform is in version 9.12 but preferably higher
+* all microservices are build with Microservice Java SDK 9.12.6 but preferably higher
 
 
 For Microservices custom built, refer to [General aspects > Security](guides/microservice-sdk/concept/#security) in the Microservice SDK guide.
@@ -41,7 +41,7 @@ To enable the feature, the administrator has to configure a connection with the 
 
 Click **Single sign-on** in the **Settings** menu in the navigator. 
 
-At the top left, you can choose a template. The chosen option has an effect on the look of the panel. The default template is "Custom" which allows for a very detailed configuration with virtually any authorization server using OAuth2 authentication code grant. Other templates provide simplified views for well known and supported authorization servers. In the next steps there will first be a definition of how to use the "Custom" template followed by a view dedicated to Azure Active directory. 
+At the top left, you can choose a template. The chosen option has an effect on the look of the panel. The default template is "Custom" which allows for a very detailed configuration with virtually any authorization server using OAuth2 authorization code grant. Other templates provide simplified views for well known and supported authorization servers. In the next steps there will first be a definition of how to use the "Custom" template followed by a view dedicated to Azure Active directory. 
 
 ##### Custom template
 

@@ -4,8 +4,6 @@ title: Overview
 layout: redirect
 ------
 
-> The Web SDK for Plugins is deprecated. We strongly recommend to use the [Web SDK for Angular](/guides/web/angular). If you already developed a plugin with this guide and want to use it in the Web SDK for Angular, please read how you can import plugins in the [migration guide](/guides/web/angular#migrating).
-
 In the following document you will get an overview on the Web SDK for Plugins which allows you to
 * extend applications with your own plugins.
 * add your own applications to Cumulocity’s web application.

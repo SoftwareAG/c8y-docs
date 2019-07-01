@@ -296,7 +296,7 @@ In order to fix this issue, navigate to the Sigfox platform web interface and ch
 
 ![Device Type Id in the alarm](/guides/images/users-guide/sigfox/sigfox-troubleshooting-callback-typeid.png)
 
-In this case navigate to the following address: *https://backend.sigfox.com/devicetype/5cd3ee2c0499f508834838c3/callbacks*
+In this case navigate to the following address: *https://backend.sigfox.com/devicetype/5cd3d97ee833d9746698b27d/callbacks*
 
 If the mentioned callbacks cannot be located in the Sigfox platform, you must create them manually. All of the required information needed for the creation of the callbacks is already given in the alarm description. In the case of the above alarm, the following callback is listed first:
 

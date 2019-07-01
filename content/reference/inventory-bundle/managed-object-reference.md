@@ -11,50 +11,68 @@ layout: redirect
 |self|URI|1|Link to this resource.|
 |managedObject|ManagedObject|1|The ManagedObject being referenced.|
 
-### GET a managed object reference
+### GET - Managed object reference
 
-Response body: ManagedObjectReference
+**Response body:** ManagedObjectReference
 
-Required role: ROLE\_INVENTORY\_READ
+**Required role:** ROLE\_INVENTORY\_READ
 
-Example request:
+#### Example request
 
-    GET /inventory/managedObjects/<<deviceId>>/<<references>>/<<referenceId>>
-    Host: ...
-    Authorization: Basic ...
-    Accept: application/vnd.com.nsn.cumulocity.managedObjectReference+json;ver=...
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
 
-Example Response:
+```http    
+200 - OK
 
-    HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.managedObjectReference+json;ver=...
-    Content-Length: ...
-    {
-      "self" : "<<This ManagedObjectReference URL>>",
-      "managedObject" : {
-        "self" : "<<ManagedObject 4 URL>>",
-        "name" : "Foo",
-        "id" : "4",
-        ...
-      }
-    }
+GET <<url>>/inventory/managedObjects/<<deviceId>>/<<references>>/<<referenceId>>
+```
 
-### DELETE a managed object reference
+#### Example response
 
-Request Body: N/A.
+|HEADERS||
+|:---|:---|
+|Content-Type|application/vnd.com.nsn.cumulocity.managedObjectReference+json;ver=...
 
-Response Message Body: N/A.
+```http
+HTTP/1.1 
+200 - OK
 
-Required role: ROLE\_INVENTORY\_ADMIN or parent owner or child owner
+{
+  "self" : "<<This ManagedObjectReference URL>>",
+  "managedObject" : {
+    "self" : "<<ManagedObject 4 URL>>",
+    "name" : "Foo",
+    "id" : "4",
+    ...
+  }
+}
+```
 
-Note: This operations just removes the reference, it does not delete the object itself.
+### DELETE - Managed object reference
 
-Example Request: Delete a managed object reference
+**Request body:** N/A
 
-    DELETE /inventory/managedObjects/<<deviceId>>/<<references>>/<<referenceId>>
-     Host: [hostname]
-     Authorization: Basic xxxxxxxxxxxxxxxxxxx
+**Response message body:** N/A
 
-Example Response:
+**Required role:** ROLE\_INVENTORY\_ADMIN or parent owner or child owner
 
-    HTTP/1.1  204 NO CONTENT
+> **Info:** This operations just removes the reference, it does not delete the object itself.
+
+#### Example request - Delete a managed object reference
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+```http
+DELETE /inventory/managedObjects/<<deviceId>>/<<references>>/<<referenceId>>
+```
+
+#### Example response
+
+```http
+HTTP/1.1
+204 - NO CONTENT
+```

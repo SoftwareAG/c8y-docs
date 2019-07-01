@@ -67,7 +67,7 @@ If you point your browser to http://localhost:9000/apps/myapp/ you will get a lo
 
 After logging in you should see a barely empty starter application. If you want to start with a more complex example read the documentation about [@c8y/apps](/guides/web/angular#apps). If you want to build and deploy your application read more about the necessary commands of the [developer command line tool](/guides/web/angular#cli).
 
-> **Info**: If you want to extend an existing application like Cockpit you can spin up a hybrid application. This allows you to combine existing AngularJS plugins into the new Web SDK, see [Migration](/guides/web/angular#migration).
+> **Info**: If you want to extend an existing application like Cockpit you can spin up a hybrid application. This allows you to combine existing AngularJS plugins into the new Web SDK, see [Migration](/guides/web/angular#migrating).
 
 > **Info**: You need to provide your tenant name or the tenant ID on login (as the application cannot derive it from the URL on localhost). If you don't know your tenant name or the tenant ID you can use the [REST API to request it](/guides/reference/tenants/#get-the-current-tenant-details).
 

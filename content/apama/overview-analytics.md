@@ -21,9 +21,7 @@ Typical real-time analytics use cases include:
 
 In the following sections, we describe the basics for understanding how the Apama Event Processing Language (EPL) works and how you can create your own analytics or other server-side business logic and automation.
 
->**Info**: This documentation assumes basic familiarity with Apama application development. Refer to the [Apama documentation](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3/apama10-3/apama-webhelp/) for further details.
-
-For more information about the interfaces for real-time processing also see [Real-time Statements](/guides/reference/real-time-statements) in the Reference guide.
+>**Info**: This documentation assumes basic familiarity with Apama application development. Refer to the [Apama documentation](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3-1/apama10-3-1/apama-webhelp/) for further details.
 
 ### CEP applications
 
@@ -33,5 +31,5 @@ You can either use predefined rules or define your own custom rules which requir
 
 |CEP rules|required applications
 |:---|:---
-|Pre-defined rules| "smartrule" (included in Cumulocity Standard Tenant) and "apama-small", "apama-medium" or "apama-large" (optional)
-|Custom rules|"apama-small", "apama-medium" or "apama-large"
+|Pre-defined rules| "smartrule" (included in Cumulocity Standard Tenant) and "apama-ctrl"
+|Custom rules|"apama-ctrl" and "apama-epl"

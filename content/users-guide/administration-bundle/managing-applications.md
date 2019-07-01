@@ -34,14 +34,12 @@ Each application will show the following properties, depending on the applicatio
 <th style="text-align:left">Hosted (Web app)</th>
 <th style="text-align:left">Microservice</th>
 <th style="text-align:left">External</th>
-<th style="text-align:left">CEP rule</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left">ID</td>
 <td style="text-align:left">Unique ID to identify the application</td>
-<td style="text-align:left">Automatically provided</td>
 <td style="text-align:left">Automatically provided</td>
 <td style="text-align:left">Automatically provided</td>
 <td style="text-align:left">Automatically provided</td>
@@ -52,7 +50,6 @@ Each application will show the following properties, depending on the applicatio
 <td style="text-align:left">Automatically created</td>
 <td style="text-align:left">Automatically created, based on the zip file name</td>
 <td style="text-align:left">Specified by the user</td>
-<td style="text-align:left">Automatically created, based on the mon file name </td>
 </tr>
 <tr>
 <td style="text-align:left">Application key</td>
@@ -60,7 +57,6 @@ Each application will show the following properties, depending on the applicatio
 <td style="text-align:left">Automatically created</td>
 <td style="text-align:left">Automatically created based on the zip file name</td>
 <td style="text-align:left">Specified by the user</td>
-<td style="text-align:left">Automatically created based on the mon file name </td>
 </tr>
 <tr>
 <td style="text-align:left">Type</td>
@@ -68,7 +64,6 @@ Each application will show the following properties, depending on the applicatio
 <td style="text-align:left">Hosted application</td>
 <td style="text-align:left">Microservice</td>
 <td style="text-align:left">External</td>
-<td style="text-align:left">Apama CEP rule</td>
 </tr>
 <tr>
 <td style="text-align:left">Path</td>
@@ -76,7 +71,6 @@ Each application will show the following properties, depending on the applicatio
 <td style="text-align:left">Automatically created</td>
 <td style="text-align:left">Automatically created as .../service/&lt;microservice name&gt;</td>
 <td style="text-align:left">Specified by the user. For example, if you use "hello" as application path, the URL of the application will be "/apps/hello".</td>
-<td style="text-align:left">Not available</td>
 </tr>
 </tbody>
 </table>
@@ -138,8 +132,6 @@ Own applications may be
 * web-based UI applications, either deployed as standalone applications or as plugins deployed into a specific application (e.g. a widget to the Cockpit dashboard)
 * server-side business logic deployed through microservices
 
-If you are subscribed to the required application ("apama-small"), you additionally can [upload custom Apama CEP rules](#uploading-cep-rules) as application. 
-
 Your applications are available through the application switcher in the top bar which allows to easily switch between applications.
 
 <img src="/guides/images/users-guide/Administration/admin-app-switcher.png" alt="App switcher">
@@ -170,10 +162,6 @@ In the upcoming dialog choose one of the following methods:
 * [uploading a microservice](#uploading-microservices) - by dropping a ZIP file or browsing for it on your computer
 * [using an external application](#external-application) - by linking to an application running elsewhere 
 * [duplicating an existing application](#clone-application) - by creating a copy of an existing application
-
-If you are subscribed to the required application ("apama-small"), you will also see the option **Upload custom Apama rule** to [upload own Apama CEP rules](#uploading-cep-rules) as application. 
-
-<img src="/guides/images/users-guide/Administration/admin-application-upload-cep-rule.png" alt="Add application CEP rule">
 
 ##### <a name="uploading-zip-files"></a>Uploading web applications
 
@@ -240,23 +228,6 @@ In order to duplicate an application, follow these steps:
 
 For details on the fields, see also [Application properties](#application-properties) below.
 
-##### <a name="uploading-cep-rules"></a>Uploading custom Apama rules
-
-> **Info:** To be able to upload custom Apama CEP rules as applications to Cumulocity you need to be subscribed to the application "apama-small". 
-
-In order to upload custom Apama CEP rules, follow these steps:
-
-1. Click **Add application** in the **Own applications** page.
-2. In the upcoming dialog, select **Upload custom Apama rule**. <br>
-3. The file to be uploaded must be a single mon file, containing a set of event definitions and monitors. Drop the mon file or browse for it on your computer.
-
-After successfully uploading the file to the platform an application of type "Apama CEP rule" is being created.
-
-<img src="/guides/images/users-guide/Administration/admin-application-cep-rule.png" alt="Application type CEP rule">
-
-For details on the fields, see also [Application properties](#application-properties) below.
-
->**Info:** You cannot add a plugin to an application of type "Apama CEP rule". 
 
 #### <a name="editing-and-removing"></a>Editing and removing own applications
 

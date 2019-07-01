@@ -174,7 +174,7 @@ By default the microservice loads the tenant options for the category specified 
 The custom settings category can be specified by the manifest parameter: `settingsCategory`.
 When neither settings category nor context path is provided in the microservice manifest, the application name is used.
 
-> **Note**: Once the microservice is deployed it is not possible to change the category during application upgrade.
+> **Info**: Once the microservice is deployed it is not possible to change the category during application upgrade.
 
 Options can be configured for the application owner or the subscriber. The subscriber can override the owner's option value only when such option is defined as editable.
 

@@ -237,6 +237,7 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
         },
         "initialDelaySeconds": 20,
         "periodSeconds": 10
-    }
+    },
+    "settingsCategory": "my-ms"
 }
 ```

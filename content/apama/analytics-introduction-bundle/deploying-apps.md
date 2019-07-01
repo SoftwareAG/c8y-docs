@@ -4,13 +4,19 @@ title: Deploying applications
 layout: redirect
 ---
 
->**Info**: To be able to upload single .mon files to Cumulocity, your tenant needs to be subscribed to both Apama applications provided in Cumulocity. See [applications](/guides/reference/applications#application-names) in the Reference guide for details.
+There are two distinct approaches to deploy Apama applications to Cumulocity:
 
-### Deploying Apama applications as a single .mon file with the Apama-epl application
+* [Uploading a single *.mon file](#single-mon-file) - the simplest mechanism for deploying Apama applications.
+* [Building a custom microservice](#deploying-as-microservice) – where more complex Apama projects can be built using the Cumulocity microservice SDK.
 
-The Apama-epl application provides an interface for uploading and deploying EPL apps (.mon files), as well as interactively editing new or pre-existing EPL apps. Any user on the tenant wishing to use this application will need to be a **CEP Manager**. See [managing permissions](/guides/users-guide/administration/#managing-permissions).
 
-When the EPL is deployed to Cumulocity, each .mon file is assigned a unique package name. This prevents conflicts when multiple modules are uploaded. For this reason, you should not specify a 'package' statement in the .mon files. If you need to share events between different parts of your application, then write the event definitions and monitors that use it in a single .mon file.
+### <a name="single-mon-file"></a>Deploying Apama applications as a single *.mon file with the Apama-epl application
+
+>**Info**: To be able to upload single *.mon files to Cumulocity, your tenant needs to be subscribed to both Apama applications provided in Cumulocity. See [applications](/guides/reference/applications#application-names) in the Reference guide for details.
+
+The Apama-epl application provides an interface for uploading and deploying EPL apps (*.mon files), as well as interactively editing new or pre-existing EPL apps. Any user on the tenant wishing to use this application will need to be a **CEP Manager**. See [managing permissions](/guides/users-guide/administration/#managing-permissions).
+
+When the EPL is deployed to Cumulocity, each *.mon file is assigned a unique package name. This prevents conflicts when multiple modules are uploaded. For this reason, you should not specify a 'package' statement in the &#8727;.mon files. If you need to share events between different parts of your application, then write the event definitions and monitors that use it in a single &#8727;.mon file.
 
 The only non-Cumulocity bundles that your EPL is able to use are the Time Format bundles and the HTTP Client - JSON with generic request/response event definitions.
 
@@ -21,11 +27,11 @@ For more detailed diagnostics of the Apama runtime and any active EPL apps, you 
 
 >**Side note** Be aware that the EPL editor makes use of a standard web component. It provides many generic developer functions, some of which are not relevant to EPL, including but not limited to Quick Fix and Show Hover.
 
-### Deploying Apama applications as microservices
+### <a name="deploying-as-microservice"></a>Deploying Apama applications as microservices
 
 You may also develop more complex projects which:
 
-* are spread across multiple .mon files
+* are spread across multiple *.mon files
 * need to be isolated from other Apama applications
 * use connectivity plug-ins or EPL plug-ins that are not enabled by default
 

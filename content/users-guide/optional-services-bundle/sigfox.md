@@ -300,7 +300,7 @@ In this case navigate to the following address: *https://backend.sigfox.com/devi
 
 If the mentioned callbacks cannot be located in the Sigfox platform, you must create them manually. All of the required information needed for the creation of the callbacks is already given in the alarm description. In the case of the above alarm, the following callback is listed first:
 
- - [[callback=[type=DATA_BIDIR, url=https://ozge.staging-latest.c8y.io/service/sigfox-agent/sigfoxDataCallback, httpMethod=POST, bodyTemplate={"device":"{device}","time":"{time}","snr":"{snr}","station":"{station}","data":"{data}","rssi":"{rssi}","seqNumber":"{seqNumber}","ack":"{ack}"}, contentType=application/json, headers={Authorization=Basic ...}]]
+ - [[callback=[type=DATA_BIDIR, url=<<tenant_url>>/service/sigfox-agent/sigfoxDataCallback, httpMethod=POST, bodyTemplate={"device":"{device}","time":"{time}","snr":"{snr}","station":"{station}","data":"{data}","rssi":"{rssi}","seqNumber":"{seqNumber}","ack":"{ack}"}, contentType=application/json, headers={Authorization=Basic ...}]]
 
 In order to manually create the callback, the following properties must be filled:
 

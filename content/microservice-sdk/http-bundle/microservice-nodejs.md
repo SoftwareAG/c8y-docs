@@ -33,7 +33,13 @@ Start by creating a folder *node-microservice* to contain your files. Inside you
 $ npm init
 ```
 
-It will walk you through creating a *package.json* file which allows to identify the project as well as handling its dependencies. When prompted, enter your project's information and use *app.js* as entry point. Once the file has been created, edit it adding the project dependencies and a start property. Eventually, it shall look similar to:
+It will walk you through creating a *package.json* file which allows to identify the project as well as handling its dependencies. When prompted, enter your project's information and use *app.js* as entry point. Once the file has been created, install the dependencies using:
+
+```shell
+$ npm install --save @c8y/client @slack/web-api dotenv express
+```
+
+Eventually, your *package.json* file should look similar to:
 
 ```json
 {

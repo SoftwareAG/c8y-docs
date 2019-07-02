@@ -10,4 +10,4 @@ aliases:
   - /web/widget-plugin
 ---
 
-The [Web SDK for plugins](/guides/web/web-sdk-for-plugins) is deprecated. To develop new web applications we recommend using [Web SDK for Angular](/guides/web/angular). If you already developed a plugin, read the [migration guide](/guides/web/angular#migrating) on how you can import plugins into the Web SDK for Angular.
+The [Web SDK for plugins](/guides/web/web-sdk-for-plugins) is deprecated. To develop new web applications we recommend using [Web SDK for Angular](/guides/web/angular). If you have already developed a plugin, refer to [Web SDK for Angular > Migrating](/guides/web/angular#migrating) for information on how to import plugins into the Web SDK for Angular.

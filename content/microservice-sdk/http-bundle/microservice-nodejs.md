@@ -118,7 +118,7 @@ module.exports = function(app) {
 
 At this point, your microservice would be accessible via web on its endpoints to return a "Hello world" message, verify that the microservice is up and running and get some environment variables.
 
-In order to implement the controllers, you need first to create a Slack app and get a token to use the Web API. Go to [Slack API: Applications](https://api.slack.com/apps?new_app=1) to create a new app. Choose your workspace and give your app a name, e.g. C8Y Slack bot. Afterwards, [get an OAuth access token](https://slack.dev/node-slack-sdk/getting-started#getting-a-token-to-use-the-web-api).
+In order to implement the controllers, you first need to create a Slack app and get a token to use the Web API. Go to [Slack API: Applications](https://api.slack.com/apps?new_app=1) to create a new app. Choose your workspace and give your app a name, e.g. C8Y Slack bot. Then [get an OAuth access token](https://slack.dev/node-slack-sdk/getting-started#getting-a-token-to-use-the-web-api).
 
 Once you have your Slack app and token ready, create the *controllers.js* file with the following content:
 
@@ -127,7 +127,7 @@ Once you have your Slack app and token ready, create the *controllers.js* file w
 
 /********************* Slack *********************/
 
-// Create a new instance of the WebClient class with the OAuth Access Token
+// Create a new instance of the WebClient class with the OAuth access token
 const { WebClient } = require("@slack/web-api");
 const web = new WebClient(process.env.SLACK_OAUTH_TOKEN);
 

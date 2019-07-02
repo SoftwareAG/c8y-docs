@@ -2,8 +2,6 @@
 weight: 30
 title: Microservice manifest
 layout: redirect
-aliases:
-  - /reference/microservice-manifest
 ---
 
 The application manifest provides the required settings to manage microservice instances and the application deployment in the Cumulocity platform. The definition is provided within the _cumulocity.json_ file in the binary uploaded to the Cumulocity platform.
@@ -74,13 +72,19 @@ The application manifest provides the required settings to manage microservice i
 <tr>
 <td style="text-align:left">resources</td>
 <td style="text-align:left">Resources</td>
-<td style="text-align:left">Configuration for default resource limit. Can be overridden by tenant during subscription.<br><br>Guaranteed resources are CPU=0.25, Memory=256MB<br>Default limits are CPU=0.5, Memory=512MB</td>
+<td style="text-align:left">Configuration for resources limits.<br>Guaranteed resources are CPU=0.25, Memory=256MB<br>Default limits are CPU=0.5, Memory=512MB</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
 <td style="text-align:left">settings</td>
 <td style="text-align:left">Option[ ]</td>
 <td style="text-align:left">Set of tenant options available to define the configuration of a microservice. <br>Default: [ ] (empty list)</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">settingsCategory</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">Allows to specify custom category for microservice settings. By default contextPath is used.</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
@@ -116,10 +120,14 @@ The application manifest provides the required settings to manage microservice i
 </tbody>
 </table>
 
+#### Version
 
-> **Info**: The version has an impact on the microservice upload behavior: <br>
-> - If a new ZIP file for a microservice is uploaded but the version is the same as the previous, e.g. "1.1.0", then there is no guarantee that the Docker image for the microservice will be updated. <br>
-> - If the version is a snapshot (e.g. "1.1.0-SNAPSHOT"), then Docker shall update the image on each ZIP upload.
+The version has an impact on the microservice upload behavior:
+
+*   If a new ZIP file for a microservice is uploaded but the version is the same as the previous, e.g. "1.1.0", then there is no guarantee that the Docker image for the microservice will be updated.
+*   If the version is a snapshot, e.g. "1.1.0-SNAPSHOT", then Docker will update the image on each ZIP upload.
+
+The snapshot postfix means that the image build is a snapshot of your application at a given time and it is still under development. When your microservice is ready for production release, you can remove the postfix and just use the final version of your application.
 
 #### Provider
 
@@ -152,9 +160,9 @@ The application manifest provides the required settings to manage microservice i
 |exec | ExecAction | Commands to be executed on a container to probe the service | No
 |tcpSocket | TCPSocketAction | TCP socket connection attempt as a probe | No
 |httpGet | HTTPGetAction | HTTP request to be executed as a probe | No
-|initialDelaySeconds |Number| Tells the platform for how long it should wait before performing the first probe <br/>Default: 200 | No
-|periodSeconds|Number| Defines how often the probe should be executed<br/>Default: 10 | No
-|successThreshold|Number| Minimum consecutive successes for the probe to be considered successful after having failed<br/> Default: 1 | No
+|initialDelaySeconds |Number| Tells the platform for how long it should wait before performing <br>the first probe <br/>Default: 200 | No
+|periodSeconds|Number| Defines in which interval the probe should be executed<br/>Default: 10 | No
+|successThreshold|Number| Minimum consecutive successes for the probe to be considered <br>successful after having failed<br/> Default: 1 | No
 |timeoutSeconds|Number| Number of seconds after which the probe times out<br/> Default: 1 | No
 |failureThreshold|Number| Number of failed probes after which an action should be taken <br/>Default: 3 | No
 
@@ -214,51 +222,22 @@ The application manifest provides the required settings to manage microservice i
         "cpu": "1",
         "memory": "1G"
     },
-    "livenessProbe":{
-      "httpGet":{
-        "path": "/health"
-      },
-      "initialDelaySeconds": 60,
-      "periodSeconds": 10
+    "livenessProbe": {
+        "httpGet": {
+            "path": "/health"
+        },
+        "initialDelaySeconds": 60,
+        "periodSeconds": 10
     },
-    "readinessProbe":{
-      "httpGet":{
-        "path": "/health",
-        "port": 80
+    "readinessProbe": {
+        "httpGet": {
+            "path": "/health",
+            "port": 80
 
-      },
-      "initialDelaySeconds": 20,
-      "periodSeconds": 10
+        },
+        "initialDelaySeconds": 20,
+        "periodSeconds": 10
     },
-    "extensions":[
-      {
-        "type":"prometheus.io"
-      }
-    ]
-}
-```
-
-
-#### Supported Extensions
-
-Extensions supported by the Cumulocity Microservice Manifest.
-
-##### Prometheus monitoring
-
-Enables support for metrics gathering exposed via the Prometheus endpoint.
-The endpoint should not require authentication.
-
-|Name|Type|Description|Required|
-|:---|:---|:----------|:----------|
-|path | String | Path to the Prometheus endpoint. <br/>Default: /prometheus | No
-|port | String | HTTP port where the Prometheus endpoint is available. <br/>Default: 80 | No
-
-Example:
-
-```json
-{
-    "type": "prometheus.io",
-    "path": "/monitoring/prometheus",
-    "port": "4444"
+    "settingsCategory": "my-ms"
 }
 ```

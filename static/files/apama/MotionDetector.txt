@@ -1,0 +1,51 @@
+using com.apama.cumulocity.Operation;
+using com.apama.cumulocity.Event;
+
+/**
+* This application raises an operation to turn on/off a light if a MotionDetexted 
+* Event is received.
+*
+* This application sends an operation to switch on light if motion is detected 
+* in room. Also if there is no movement in room for about 30 seconds, an operation
+* is sent out to switch off light.
+*/
+monitor MotionDetector {
+
+	constant float TIMEOUT_PERIOD := 30.0;
+
+	constant string EVENT_TYPE := "MotionDetected";
+
+	dictionary<string, float> motionDetections;
+
+	action onload() {
+
+		on all wait(5.0) {
+			string source;
+			sequence<string> sources := motionDetections.keys();
+			for source in sources {
+				if motionDetections[source] + TIMEOUT_PERIOD < currentTime {
+					log "No movement detected for last "+ TIMEOUT_PERIOD.toString()+
+						" seconds, switching off light for "+source at DEBUG;
+					sendOperation(source, "OFF");
+					motionDetections.remove(source);
+				}
+			}
+		}
+
+		on all Event(type=EVENT_TYPE) as e {
+			if not motionDetections.hasKey(e.source) {
+				log "Movement detected, switching on light for "+e.source at DEBUG;
+				sendOperation(e.source, "ON");
+			}
+			motionDetections.add(e.source, currentTime);
+		}
+	}
+
+	action sendOperation(string source, string operation) {
+		Operation op := new Operation;
+		op.source := source;
+		op.status := "PENDING";
+		op.params.add("LIGHT", operation);
+		send op to Operation.CHANNEL; 
+	}
+}

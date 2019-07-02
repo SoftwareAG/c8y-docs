@@ -25,33 +25,31 @@ A list of available data points will be opened. For each data point, the followi
 * Measurement unit
 * Values (minimum, maximum, red/yellow ranges)
 
-### Adding a data point to the library
+### To add a data point to the library
 
-To add a new data point to the library, click **Add data point** in the top menu bar.
+1. Click **Add data point** in the top menu bar. 
+2. Provide the following information:
 
-![Add data point](/guides/images/users-guide/cockpit/cockpit-data-point-add.png)
-
-Provide the following information:
-
-|Field|Description|
+	|Field|Description|
 |:---|:---|
-|Color|Color for the data point visualization.
-|Label|Label to identify the data point.
-|Fragment|Name of the fragment. 
-|Series|Name of the series.
-|Unit|Unit used for the measurement.
-|Target|Target value.
-|Minimum|Minimum value shown on the y-axis.
-|Maximum|Minimum value shown on the y-axis.
-|Yellow range|Min/max values for the yellow range (MINOR alarms).
-|Red range|Min/max values for the red range (CRITICAL alarms).
+|Color|Color for the data point visualization
+|Label|Label to identify the data point
+|Fragment|Name of the fragment
+|Series|Name of the series
+|Unit|Unit used for the measurement
+|Target|Target value
+|Minimum|Minimum value shown on the y-axis
+|Maximum|Minimum value shown on the y-axis
+|Yellow range|Min/max values for the yellow range (MINOR alarms)
+|Red range|Min/max values for the red range (CRITICAL alarms)
+ 
+3. Click **Save** to add the data point to the library.
 
-Click **Save** to add the data point to the library.
+### To edit a data point
 
-### Editing or removing data points
+Simply click the respective entry in the list or click the menu icon at the right of an entry and then click **Edit**.
 
-To edit a data point, simply click the respective entry in the list or click the menu icon at the right of an entry and in the context menu click **Edit**.
 
-![Data point menu](/guides/images/users-guide/cockpit/cockpit-data-point-menu.png)
+### To remove a data point
 
-To remove a data point, click **Remove** in the context menu.
+Click the menu icon at the right of an entry and then click **Remove**.

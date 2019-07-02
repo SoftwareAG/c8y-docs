@@ -55,7 +55,7 @@ Use `client.<endpoint>.list()` to request listed data from the Cumulocity REST A
 
 The client internally uses the Fetch API. By accessing this core function, you can do any authenticated request to any resource. Standalone you can use `core.client.fetch(url, options)` and in `@c8y/ngx-components/data` for Angular you simply need to inject the `FetchClient`:
 
-```typescript
+```js
 constructor(private fetchClient: FetchClient) {} // di
 
 async getData() {
@@ -78,13 +78,13 @@ In the Cumulocity platform we currently allow two ways to authenticate:
 
 To quickly get you started, the @c8y/client provides a shorthand static function which always uses Basic Auth and verifies the login directly:
 
-```typescript
+```js
 await Client.authenticate({ tenant, user, password }), url);
 ```
 
 It internally creates a client instance and tries to contact the API to verify if the given credentials are correct. In some cases you need to use a more fine-grained authentication, e.g. when you don't know which authentication strategy the user is going to use. In this case you need to construct an own instance of the client and pass the authentication strategy to it:
 
-```typescript
+```js
  const baseUrl = 'https://acme.cumulocity.com';
  const client = new Client(new CookieAuth(), baseUrl); // use here `new BasicAuth()` to switch to Basic Auth
  try {
@@ -199,4 +199,21 @@ const observableSubscription = observable$.subscribe((data) => {
   console.log(data)); // logs all alarm CRUD changes
 });
 observableSubscription.unsubscribe();
+```
+
+#### Authenticate in node.js
+The constructor `new Client([...])` initializes a new client which allows to request data from the API. Unlike to `Client.authenticate([...])` it needs a tenant given and does not verify if the login is correct. This is useful if you are developing a node.js microservice.
+
+```js
+const auth = new BasicAuth({ 
+   user: 'youruser',
+   password: 'yourpassword',
+   tenant: 'acme'
+ });
+
+ const baseUrl = 'https://acme.cumulocity.com';
+ const client = new Client(auth, baseUrl);
+ (async () => {
+   const { data, paging, res }); =  await client.inventory.list({ pageSize: 100 });
+ })();
 ```

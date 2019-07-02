@@ -18,9 +18,9 @@ Per default, Cumulocity comes with the following three standard applications:
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><i class="c8y-icon c8y-icon-device-management c8y-icon-duocolor" style="font-size: 36px;"></i></td>
-<td style="text-align:left"><a href="/guides/users-guide/device-management" class="no-ajaxy">Device Management</a></td>
-<td style="text-align:left">The Device Management application provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.  </td>
+<td style="text-align:center"><i class="c8y-icon c8y-icon-administration c8y-icon-duocolor" style="font-size: 36px;"></i></td>
+<td style="text-align:left"><a href="/guides/users-guide/administration" class="no-ajaxy">Administration</a></td>
+<td style="text-align:left">The Administration application enables account administrators to manage their users, roles, tenants, applications and business rules and lets them configure a number of settings for their account. </td>
 </tr>
 <tr>
 <td style="text-align:center"><i class="c8y-icon c8y-icon-cockpit c8y-icon-duocolor" style="font-size: 36px;"></i></td>
@@ -28,10 +28,11 @@ Per default, Cumulocity comes with the following three standard applications:
 <td style="text-align:left">The Cockpit application provides you with options to manage and monitor  Internet of Things (IoT) assets and data from a business perspective.</td>
 </tr>
 <tr>
-<td style="text-align:center"><i class="c8y-icon c8y-icon-administration c8y-icon-duocolor" style="font-size: 36px;"></i></td>
-<td style="text-align:left"><a href="/guides/users-guide/administration" class="no-ajaxy">Administration</a></td>
-<td style="text-align:left">The Administration application enables account administrators to manage their users, roles, tenants, applications and business rules and lets them configure a number of settings for their account. </td>
+<td style="text-align:center"><i class="c8y-icon c8y-icon-device-management c8y-icon-duocolor" style="font-size: 36px;"></i></td>
+<td style="text-align:left"><a href="/guides/users-guide/device-management" class="no-ajaxy">Device Management</a></td>
+<td style="text-align:left">The Device Management application provides functionalities for managing and monitoring devices and enables you to control and troubleshoot devices remotely.  </td>
 </tr>
+
 </tbody>
 </table>
 

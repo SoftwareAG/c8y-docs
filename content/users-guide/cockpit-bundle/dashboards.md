@@ -8,7 +8,7 @@ Dashboards provide you with a customized visualization of your data by using a s
 
 Cumulocity comes with a number of preset widgets, see [Widgets Collection](#widgets) for details. You can also develop your own widgets and add them to your Cumulocity account. Refer to the [Web SDK Guide](/guides/web/) for details.
 
-### <a name="creating-dashboards"></a>Creating a dashboard
+### <a name="creating-dashboards"></a>To create a dashboard
 
 Select the group or the device in the navigator for which to create a dashboard. 
 
@@ -110,6 +110,6 @@ An alternative way to copy a dashboard is to use the
 "dashboard per type" approach.  With the "dashboard per type" approach you share the dashboard from one object with **all** objects of the same type.
 
 
-### Removing dashboards
+### How to remove a dashboard
 
-To delete a dashboard from an object, click **More...** in the top menu bar and from the context menu select **Remove dashboard**. 
+To remove a dashboard from an object, click **More...** in the top menu bar and from the context menu select **Remove dashboard**. 

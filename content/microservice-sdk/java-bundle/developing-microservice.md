@@ -170,7 +170,11 @@ The microservice settings module provides two features:
 * Configure a microservice by defining tenant options
 * Override existing properties - Tenant options can override default values from properties files
 
-The microservice loads the tenant options for the category specified by the microservice context path. When the context path is not provided in the microservice manifest, the application name is used.
+By default the microservice loads the tenant options for the category specified by the microservice context path. 
+The custom settings category can be specified by the manifest parameter: `settingsCategory`.
+When neither settings category nor context path is provided in the microservice manifest, the application name is used.
+
+> **Info**: Once the microservice is deployed it is not possible to change the category during application upgrade.
 
 Options can be configured for the application owner or the subscriber. The subscriber can override the owner's option value only when such option is defined as editable.
 

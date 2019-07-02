@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 60
 title: Using the data broker
 layout: redirect
 ---
@@ -32,7 +32,7 @@ A data connector describes the subset of the data that you would like to send to
 
 <a name="data-broker-connectors-list"></a> **Viewing data connectors**
 
-In the **Data connectors** page, you can manage existing data connectors or create new ones. Click **Data connectors** to see a list of all currently defined data connectors with their status.
+Click **Data connectors** in the navigator to see a list of all currently defined data connectors with their status.
 
 ![Data broker connectors list](/guides/images/users-guide/data-broker-connector-list.png)
 
@@ -43,34 +43,27 @@ For each data connector, the following information is provided:
 * the status of the connector
 * the number of filters set for the data connector
 
-Use the slider to enable and disable data forwarding to the destination tenant. If data is being forwarded, the slider reads "active". If data is not being forwarded, the slider reads "suspended" or "pending". "Suspended" means that you have disabled forwarding. "Pending" means that the destination tenant has disabled forwarding.
+Use the toggle to enable and disable data forwarding to the destination tenant. If data is being forwarded, the toggle reads "Active". If data is not being forwarded, the toggle reads "Suspended" or "Pending". "Suspended" means that you have disabled forwarding. "Pending" means that the destination tenant has disabled forwarding.
 
-* To modify the data connector's configuration, click the menu icon and from the context menu select **Edit**. The configuration is described in more detail below.
-* Click "**Duplicate** in the context menu to create another data connector with the same configuration.
-* Click **Delete** in the context menu to stop data forwarding and remove the data connector.
+####<a name="data-broker-connector-edit"></a> To add a data connector
 
-<a name="data-broker-connector-edit"></a> **Creating or editing data connectors**
-
-Click **Add data connector** in the top menu bar to create a new data connector.
-
-![Data broker edit connector](/guides/images/users-guide/data-broker-edit-connector.png)
-
-In the **Settings** tab, provide the following information to create a new data connector:
-
-|Field|Description|
+1. Click **Add data connector** in the top menu bar.
+2. In the **Settings** tab, provide the following information to create a new data connector:
+ 
+	|Field|Description|
 |:---|:---|
 |Title|The name of the data connector.
 |Target URL for data connector|The URL of the tenant to which data will be forwarded. Once saved, you cannot edit this value anymore.
 |Description|A textual description of the configuration. Both the name and the description will be visible on the destination side after accepting the subscription.
 |Data filters|A set of filters that define what is copied to the destination. You need to configure at least one filter.
+ 
+3. Click **Add filter** to configure a new filter.
 
-Click **Add filter** to configure a new filter.
-
-![Data broker configure filter](/guides/images/users-guide/data-broker-connector-filter.png)
-
-Each data filter contains the following information:
-
-<table>
+	![Data broker configure filter](/guides/images/users-guide/data-broker-connector-filter.png)
+ 
+4. Each data filter contains the following information:
+ 
+	<table>
 <col width = 150>
 <thead>
 <tr>
@@ -101,36 +94,56 @@ Each data filter contains the following information:
 </tr>
 </tbody>
 </table>
+ 
+ > **Info:** If the **Group or device** field is filled in, the entire descendant structure of the inventory is forwarded to the destination as soon as the connector stays active. if the **Group or device** field is empty or set to  "all" the descendant structure of the inventory is not forwarded; in this case the filter works in "lazy" mode, i.e. forwards the device or asset along with its first event/measurement/alarm.
+ 
+	If operation API is checked in filters, operations created in the target tenant will be forwarded to the source tenant. This applies only to operations that meet the following conditions:
 
-> **Info:** If the **Group or device** field is filled in, the entire descendant structure of the inventory is forwarded to the destination as soon as the connector stays active. if the **Group or device** field is empty or set to  "all" the descendant structure of the inventory is not forwarded; in this case the filter works in "lazy" mode, i.e. forwards the device or asset along with its first event/measurement/alarm.
+	* operation's device itself is a result of forwarding data;
+	* operation matches other filter criteria.
+ 
+	Updates of operation status coming from the source tenant will be forwarded to the destination tenant.
+ 
+	The heading of a data filter summarizes the configuration in one line. The standard properties that are copied by default are:
+ 
+	* **For created alarms**: type, text, time, severity, status
+	* **For updated alarms**: status, text, severity
+	* **For created events**: type, text, time
+	* **For created measurements**: type, text, time
+	* **For created and updated devices**: type, name, c8y&#95;IsBinary, 	c8y&#95;IsDeviceGroup, c8y&#95;IsDevice, c8y&#95;DeviceGroup, 	c8y&#95;DeviceSubgroup, c8y&#95;SmartRule, c8y&#95;DynamicGroup, 	c8y&#95;DeviceQueryString
+	* **For updated operations**: status
+ 
+5. Click **Save** to save the configuration. 
 
-If operation API is checked in filters, operations created in the target tenant will be forwarded to the source tenant. This applies only to operations that meet the following conditions:
-
-* operation's device itself is a result of forwarding data;
-* operation matches other filter criteria.
-
-Updates of operation status coming from the source tenant will be forwarded to the destination tenant.
-
-The heading of a data filter summarizes the configuration in one line. The standard properties that are copied by default are:
-
-* **For created alarms**: type, text, time, severity, status
-* **For updated alarms**: status, text, severity
-* **For created events**: type, text, time
-* **For created measurements**: type, text, time
-* **For created and updated devices**: type, name, c8y&#95;IsBinary, c8y&#95;IsDeviceGroup, c8y&#95;IsDevice, c8y&#95;DeviceGroup, c8y&#95;DeviceSubgroup, c8y&#95;SmartRule, c8y&#95;DynamicGroup, c8y&#95;DeviceQueryString
-* **For updated operations**: status
-
-Once you have configured your data connector, click **Save** to save the configuration. 
-
-After saving, you will see a security code displayed below your configuration. The security code prevents unintended forwarding of data. You need to communicate this security key separately to an administrative user of the destination tenant. You can click the copy icon next to the security code to copy the code to your clipboard.
+You will see a security code displayed below your configuration. The security code prevents unintended forwarding of data. You need to communicate this security key separately to an administrative user of the destination tenant. You can click the copy icon next to the security code to copy the code to your clipboard.
 
 ![Security code](/guides/images/users-guide/data-broker-connector-security-code.png)
 
-Switch to the **Alarms** tab to display current alarms for the data connector.
+
+#### To edit a data connector
+
+Click the menu icon in a data connector entry and then click **Edit**. 
+
+In the **Settings** tab, edit the data connector configuration.
+
+See [To add a data connector](#data-broker-connector-edit) for details on the settings.
+
+#### To duplicate a data connector
+
+Click the menu icon in a data connector entry and then click **Duplicate** to create another data connector with the same configuration.
+
+#### To delete a data connector
+
+Click the menu icon in a data connector entry and then click **Delete** to stop data forwarding and delete the data connector.
+
+#### To view alarms for a data connector
+
+Open a data connector and switch to the **Alarms** tab to display current alarms for the data connector.
 
 ![Warnings tab](/guides/images/users-guide/data-broker-connector-warnings.png)
 
 For details on alarms, see [Monitoring and controlling devices > Working with alarms](alarm-monitoring) in the Device Management section.
+
 
 ### <a name="data-broker-subscriptions"></a> Data subscriptions
 
@@ -142,20 +155,22 @@ Click **Data subscriptions** to see a list of all currently defined data forward
 
 For each subscription, the name, the target tenant and the status (enabled or disabled) is provided on a card.
 
-Use the slider to temporarily stop forwarding data into your tenant.
+Use the toggle to temporarily stop forwarding data into your tenant.
 
-To stop data forwarding and remove the data connector, click the menu icon and from the context menu select **Delete**.
-
-**How to set up data forwarding on the receiving end**
+#### To set up data forwarding on the receiving end
 
 1. Click **Add data subscription** in the top menu bar to receive data. 
 2. In the new card, enter the security code that you received from the sending end of the data.
 3. When the connection is established, click **Accept** to start forwarding data into your tenant. The subscription is active now.
-4. You can move the slider in the card to temporarily stop forwarding data into your tenant.
+4. You can use the toggle in the card to temporarily stop forwarding data into your tenant.
 
-You can now navigate to the Device Management application or the Cockpit application. There will be a new "virtual group" with a specific icon (see the screenshot below) showing the forwarded devices. The group will have the same name as your subscription. Devices are "lazily" created on the destination side whenever they send data for the first time after setting up an active subscription.
+You can now navigate to the Device Management application or the Cockpit application. You will find a new "virtual group" with a specific icon (see the screenshot below) showing the forwarded devices. The group will have the same name as your subscription. Devices are "lazily" created on the destination side whenever they send data for the first time after setting up an active subscription.
 
 ![Data broker group in cockpit app](/guides/images/users-guide/data-broker-group-created.PNG)
+
+#### To delete a data connector
+
+Click the menu icon and then click **Delete** to stop data forwarding and delete the data connector.
 
 ### <a name="data-broker-troubleshooting"></a> Troubleshooting
 

@@ -97,15 +97,12 @@ If dashboards have been created for an object, they will also be added as a tab.
 
 Moreover, additional tabs may be displayed here in case the application has been extended with plugins. See [Web SDK for plugins](/guides/web/introduction) for details.
 
-### <a name="creating-groups"></a>Adding groups
+### <a name="creating-groups"></a>To create a group
 
-To create a new group, follow these steps:
-
-1. Click the **Plus** button at the right of the top bar, then select **New group** from the menu. <br><br>
-<img src="/guides/images/users-guide/cockpit/cockpit-new-menu.png" name="New group"/><br>
-2. In the window that comes up enter a unique group name to identify your group.
+1. Click the **Plus** button at the right of the top bar and then click **New group**.
+2. In the resulting dialog box, enter a unique group name to identify your group.
 3. In the device search field, enter the search criteria for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
-4. Checkmark the devices you want to add from the list.
+4. Select the devices you want to add from the list.
 5. Click **Create group with X device(s)** to finally create your new group. 
 
 <img src="/guides/images/users-guide/cockpit/cockpit-create-group.png" name="Create group"/><br>
@@ -114,51 +111,44 @@ To create a new group, follow these steps:
 
 To add a new group as a child of an existing asset, navigate to its **Sub-asset** tab and click **Add Group** in the top menu bar.
 
-### <a name="assigning-devices"></a>Assigning devices to groups
+### <a name="assigning-devices"></a>To assign devices to a group
 
 Before adding a device to the asset hierarchy, it must be connected to Cumulocity. Connecting devices to the platform is done in the Device Management application. For details on connecting devices refer to [Device Management](/guides/users-guide/device-management).
 
 To assign a device to a group, follow these steps:
 
-1. In the navigator, select a group from the **Group** menu and then open the **Sub-assets** tab. In the **Sub-assets** tab, all devices that are assigned to the respective group are displayed. 
-2. Click **Assign devices** at the right of the top menu bar.<br><br>
-<img src="/guides/images/users-guide/cockpit/cockpit-assign-devices-link.png" name="Assign devices" style="width:100%;"/><br>
-3. In the upcoming window search for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
-3. Checkmark the devices you want to add from the list.
+1. In the navigator, select a group from the **Group** menu and open its the **Sub-assets** tab. In the **Sub-assets** tab, all devices that are assigned to the respective group are displayed. 
+2. Click **Assign devices** at the right of the top menu bar.
+3. In the resulting dialog box, search for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
+3. Select the devices you want to add from the list.
 4. Click **Assign X device(s)** to assign the selected devices. 
 
 <img src="/guides/images/users-guide/cockpit/cockpit-devices-assign.png" name="Assign devices"/>
 
-The devices will be shown as sub-assets in the "Sub-assets" tab.
+The devices will be shown as sub-assets in the **Sub-assets** tab.
 
-### Editing groups
+### To edit a group
 
-To edit the name of a group, navigate to its **Info** tab and click **Edit** next to its name. Edit the name and optionally leave some notes to be displayed in the **Info** tab. Click **Save changes** to apply your settings.
+1. To edit the name of a group, navigate to its **Info** tab and click **Edit** next to its name. 
+2. Edit the name and optionally leave some notes to be displayed in the **Info** tab. 
+3. Click **Save changes** to apply your settings.
 
-### Deleting groups
+### To delete a group
 
 To delete a top-level group from the navigator, follow these steps:
 
 1. Click **Groups** in the navigator. 
-2. Click the menu icon for the group you want to delete.
-3. From the context menu, select **Delete**.
+2. In the **Groups** page, click the menu icon at the right of the group entry and then click **Delete**.
 
 To delete a group from the **Sub-assets** tab of another group, follow these steps:
 
 1. Navigate to the **Sub-assets** tab.
-2. Click the menu icon for the group you want to delete.
-3. From the context menu, select **Delete**.
+2. Click the menu icon at the right of the group entry and then click **Delete**.
 
-<img src="/guides/images/users-guide/cockpit/cockpit-subasset-delete.png" name="Delete sub-asset""/><br>
 
-### Unassigning devices
-
-To unassign a device from a group, follow these steps:
+### To unassign a device from a group
 
 1. Navigate to the **Sub-assets** tab of the group.
-2. Click the menu icon for the device you want to unassign.
-3. From the context menu, select **Unassign**.
-
-<img src="/guides/images/users-guide/cockpit/cockpit-device-unassign.png" name="Unassign devices"/><br>
+2. Click the menu icon at the right of the device you want to unassign and click **Unassign**.
 
 Unassigning a device does not remove the device, sub-devices or any associated data. The device is only removed from its location in the asset hierarchy. It can be assigned to this group or other groups later.

@@ -162,7 +162,7 @@ C8Y.bootstrap.password | Password used by a microservice or by the microservice 
 C8Y.bootstrap.delay | Subscription refresh delay
 C8Y.bootstrap.initialDelay | Initial subscription delay
 C8Y.microservice.isolation | Microservice isolation. Only PER_TENANT or MULTI_TENANT values are available. MULTI_TENANT by default
-C8Y.httpReadTimeout | Read timeout interval for http client, in milliseconds. Defaults to 3 minutes
+C8Y.httpReadTimeout | Read timeout interval for HTTP client in milliseconds. Defaults to 3 minutes
 
 ### Microservice settings
 

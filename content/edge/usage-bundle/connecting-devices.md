@@ -32,7 +32,7 @@ $ systemctl start cumulocity-agent
 ```
 
 The Modbus agent is pre-registered in the post-installation phase.
-In the Device Management application, click “All devices” in the navigator and find the Modbus agent(named linux-agent) in the device list.
+In the Device Management application, click **All devices** in the navigator and find the Modbus agent (called "linux-agent") in the device list.
 
 <img src="/guides/images/edge/edge-modbus-device.png" name="Device list" style="width:100%;"/> 
 

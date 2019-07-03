@@ -18,6 +18,6 @@ We strongly recommend using [Web SDK for Angular](/guides/web/angular) when deve
 
 Web SDK for Angular JS is deprecated. Therefore, its documentation is no longer provided here.  As all Cumulocity REST APIs are backward compatible, Angular JS applications will still continue to work. 
 
-[Web SDK for plugins](/guides/web/web-sdk-for-plugins) is based on Angular JS and is also deprecated. For Angular-based development, we recommend to implement native Angular modules. The documentation is still available for migration purpose e.g. you want to integrate a already developed plugin into the [Web SDK for Angular](/guides/web/angular). You can import them to Angular as described in [ngx-components > Extension points](/guides/web/angular#extension-points).
+[Web SDK for plugins](/guides/web/web-sdk-for-plugins) is based on Angular JS and is also deprecated. For Angular-based development, we recommend to implement native Angular modules. The documentation is still available for migration purpose e.g. you want to integrate a already developed plugin into the [Web SDK for Angular](/guides/web/angular). You can import plugins to Angular as described in [ngx-components > Extension points](/guides/web/angular#extension-points).
 
 If you have previously been working with older versions you might be interested in some short information on the evolution of the UI stack in [Upgrading to Angular](/guides/web/background) to better understand how and why it is now designed the way it is.

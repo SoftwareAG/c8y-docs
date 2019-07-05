@@ -35,7 +35,7 @@ Use the the Device Management application to visualize Tenant SLA Monitoring dat
 
 The management tenant needs to be subscribed to the application “Tenant-sla-monitoring” to see any monitoring results. 
 
-<img src="/guides/images/users-guide/TenantMonitoringApplication.png" alt="Tenant Monitoring application" style="max-width: 100%">
+![Sla-monitoring subscribe](/guides/images/users-guide/sla-monitoring/sla-subscribe.png)
 
 For details on application subscription, refer to [Administration > Managing Tenants > Subscribing to applications](/guides/users-guide/enterprise-edition#subscribe) in the User guide.
 

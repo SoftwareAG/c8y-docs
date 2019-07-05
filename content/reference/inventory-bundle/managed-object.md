@@ -176,6 +176,10 @@ HTTP/1.1
   ...
 }
 ```
+
+> **Info:** Parents of the ManagedObject are always empty unless a flag "withParents" is specified.
+
+
 ### POST - Create a new ManagedObject
 
 **Request body:** ManagedObject

@@ -14,7 +14,7 @@ This how-to recipe explains how to accomplish a new tab in the device details vi
 
 In Web SDK for Angular, this kind of views are called `ViewContext` as they provide a view for a certain context. There are a couple of context views e.g. `Device`, `Group`, `User`, `Application` and `Tenant`. The user can access them by navigating to a certain `Route` with the hash navigation. For example, if you go to the route `apps/cockpit/#/device/1234` the application tries to resolve the device with the ID `1234`. 
 
-On that view there a mostly a couple of `Tabs` show, as the **Info** tab in the screenshot above which is referenced by another route called `/info` but reuses the context of the device to show information about it. 
+The details view usually shows a couple of `Tabs`, like the **Info** tab in the screenshot above which is referenced by another route called `/info` but reuses the context of the device to show information about it. 
 
 In the following, we will guide you through the process of creating a new tab to this view that is accessible through the route `apps/cockpit/#/device/:id/hello`.
 

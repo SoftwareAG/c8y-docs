@@ -6,14 +6,12 @@ layout: redirect
 
 In the Cumulocity platform we distinguish between two kinds of applications:
 
-* Subscribed applications -  all applications subscribed to the tenant (either provided by the platform or a service provider) but not owned
-* [Own applications](#own-applications) - all applications owned by the tenant
+* [Subscribed applications](#subscribed-applications) -  all applications subscribed to the tenant (either provided by the platform or a service provider) but not owned. May not be added, modified or removed by the user.
+* [Own applications](#own-applications) - all applications owned by the tenant. Users can [add custom applications](#add-applications) in various ways as own applications. 
 
 Both applications are available through the **Applications** menu in the navigator:
 
-<img src="/guides/images/users-guide/Administration/admin-menu.png" alt="Applications menu">
-
-Subscribed applications may not be added, modified or removed by the user, while users can [add custom applications](#add-applications) in various ways as own applications. 
+<img src="/guides/images/users-guide/Administration/admin-menu.png" alt="Applications menu"> 
 
 ### <a name="application-properties"></a>Application properties
 
@@ -77,53 +75,45 @@ Each application will show the following properties, depending on the applicatio
 
 >**Info**: ID and type cannot be changed.
 
-### Monitoring microservices
+### <a name="subscribed-applications"></a>Subscribed applications
 
-You can monitor microservices hosted by Cumulocity in two ways.
+Cumulocity provides a variety of applications for different purposes. 
 
-#### Status information
+By default, the following applications are available in the Standard Tenant:
 
-The status of the microservice can be checked on the **Status** tab of the respective application. 
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Application</th>
+<th style="text-align:left">Functionality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="/guides/users-guide/administration" class="no-ajaxy">Administration</a></td>
+<td style="text-align:left">Lets account administrators manage users, roles, tenants and applications.</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="/guides/users-guide/cockpit" class="no-ajaxy">Cockpit</a></td>
+<td style="text-align:left">Manage and monitor IoT assets and data from a business perspective.</td>
+<tr>
+<td style="text-align:center"><a href="/guides/users-guide/device-management" class="no-ajaxy">Device Management</a></td>
+<td style="text-align:left">Manage and monitor devices, and control and troubleshoot devices remotely.</td>
+<tr>
+<td style="text-align:center"><a href="/guides/users-guide/device-management#simulator" class="no-ajaxy">Device simulator</a></td>
+<td style="text-align:left">Simulate all aspects of IoT devices.</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="/guides/users-guide/cockpit#smart-rules" class="no-ajaxy">Smart Rules</a></td>
+<td style="text-align:left">Use the Smart Rule engine and create Smart Rules to perform actions based on realtime data. Requires one of the following applications: "Cep", "Apama"</td>
+</tr>
+</tbody>
+</table>
 
-<img src="/guides/images/users-guide/Administration/admin-microservice-status.png" alt="Microservice status" style="max-width: 100%">
+Your tenant may show other subscribed applications, depending on your installation and/or  optional services. 
 
-The following information is provided on the **Status** tab:
-
-* Instances: Number of active, unhealthy and desired microservice instances for the current tenant
-* Subscribed tenants: Number of active, unhealthy and desired microservice instances for all subtenants subscribed to the microservice
-* Alarms: Alarms for given application, provided in realtime
-* Events: Events for given application, provided in realtime
-
-The status information is available for subscribed applications as well as for own applications. Information on subscribed subtenants is only visible for the application owner. 
-
-To view the status you need the following permissions: ROLE_APPLICATION_MANAGEMENT_READ and ROLE_INVENTORY_READ
-
-#### Log files
-
-Moreover, you may view logs to get more details on the status of microservices.
-
-To view logs open the **Log** tab of the respective microservice.
-
-<img src="/guides/images/users-guide/Administration/admin-microservice-log.png" alt="Microservice log" style="max-width: 100%">
-
-At the top of the page, the instance of the microservice, for which you want to view the logs, can be selected. Moreover you can adjust the font size and the theme at the right.
-
-If your microservice was re-scaled into two instances you should be able to switch between them, but it is not possible to see the logs from both instances at once.
-
-There is no possibility to see the logs from the previously running instances, however inside the instance there is a docker container running and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated docker container.
-
-Logs are always loaded from the docker container using both `stdout` and `stderr` sources and there is no possibility to distinguish/filter by the source. 
-
-Initially, the **Log** tab shows the logs of the microservice instance for the last 10 minutes. The exact time range for which the logs are displayed is shown below the logs.
-
-Click the arrow buttons "Next" or "Previous" to increase or respectively reduce the time range in 10 minutes steps, there is no possibility to get the logs for the custom date and time.
-
-If there have not been any logs in the selected time range, a message is shown accordingly:
-
-<img src="/guides/images/users-guide/Administration/admin-microservice-no-logs.png" alt="Microservice log">
-
-To view the logs you need the permission EVENT_READ.
-
+Refer to [Applications > application list](/guides/reference/applications/#application-names) in the Reference guide for a detailed list of all potentially available applications, including information on its application types, its availability and the string to be used in the API to reference a particular application.
+ 
 ### <a name="own-applications"></a>Own applications
 
 Own applications may be 
@@ -142,75 +132,62 @@ In the **Own applications** page you will find a list of the applications availa
 
 <img src="/guides/images/users-guide/Administration/admin-applications-own.png" alt="Own applications">
 
-To display further information on the application, simply click its card. For details on the fields, refer to [Application properties](#application-properties) below. 
+To display further information on the application, simply click its card. For details on the fields, refer to [Application properties](#application-properties). 
 
 To directly open an application from here, click **Open** on the respective application card. 
 
-Click **Add application** in the **Own applications** page to add an application to your account, see [Adding applications](#adding-applications).
 
-Click the menu icon at the top right of an application to open a context menu from where you can [**Edit** or **Remove**](#editing-and-removing) an application. 
+#### <a name="adding-applications"></a>To add an own application
 
-#### <a name="adding-applications"></a>Adding own applications
-
-To add an application, click **Add application** in the **Own applications** page. 
+Click **Add application** in the **Own applications** page. 
 
 <img src="/guides/images/users-guide/Administration/admin-application-add.png" alt="Add application methods">
 
-In the upcoming dialog choose one of the following methods:
+In the resulting dialog box, choose one of the following methods:
 
-* [uploading a web application](#uploading-zip-files) - by dropping a ZIP file or browsing for it on your computer
-* [uploading a microservice](#uploading-microservices) - by dropping a ZIP file or browsing for it on your computer
-* [using an external application](#external-application) - by linking to an application running elsewhere 
-* [duplicating an existing application](#clone-application) - by creating a copy of an existing application
+* [Upload web application](#uploading-zip-files) - by dropping a ZIP file or browsing for it on your computer.
+* [Upload microservice](#uploading-microservices) - by dropping a ZIP file or browsing for it on your computer
+* [External application](#external-application) - by linking to an application running elsewhere 
+* [Duplicate existing application](#clone-application) - by creating a copy of an existing application
 
-##### <a name="uploading-zip-files"></a>Uploading web applications
-
-In order to upload a web application, follow these steps:
+##### <a name="uploading-zip-files"></a>To upload a web application
 
 1. Click **Add application** in the **Own applications** page.
-2. In the upcoming dialog, drop a zip file or browse for it on your computer.
+2. Select **Upload web application**.
+3. In the resulting dialog box, drop a ZIP file or browse for it on your computer.
 
-After successfully uploading the zip file to the platform the application is being created.
+The application is created once the ZIP file has been successfully uploaded.
 
 <img src="/guides/images/users-guide/Administration/admin-application-upload-web-app.png" alt="Uploading zip file">
 
-##### <a name="uploading-microservices"></a>Uploading microservices
-
-Follow these steps in order to upload a microservice:
+##### <a name="uploading-microservices"></a>To upload a microservice
 
 1. Click **Add application** in the **Own applications** page.
-2. In the upcoming dialog, drop a ZIP file or browse for it on your computer. Note that the size limit of the file to be uploaded is 500 MB.
+2. Select **Upload microservice**.
+3. In the resulting dialog box, drop a ZIP file or browse for it in your file system. Note that the size limit of the file to be uploaded is 500 MB.
 
 The microservice application is created once the ZIP file has been successfully uploaded.
 
 >**Important**: The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [Packing](/guides/microservice-sdk/concept/#packing) in the Microservice SDK guide under **General aspects** in order to prepare and deploy the microservice package.
 
 
-##### <a name="external-application"></a>Linking to external applications
-
-In order to add an application which links to an external application, follow these steps:
+##### <a name="external-application"></a>To link to an external application
 
 1. Click **Add application** in the **Own applications** page.
-2. In the upcoming dialog, select **External application**.
+2. Select **External application**.
 <br><br>
 <img src="/guides/images/users-guide/Administration/admin-application-external.png" alt="External application">
 <br><br>
-3. In the next window, enter the name of the application. The name will be shown as title of the application. 
+3. In the resulting dialog box, enter the name of the application. The name will be shown as title of the application. 
 5. Enter an application key, used to identify this application.
 6. Enter the external URL where the application can be reached. 
-7. Finally, click **Save** to create the application.
+7. Click **Save** to create the application.
 
 For details on the fields, see also [Application properties](#application-properties) below. 
 
-##### <a name="clone-application"></a>Duplicating applications
+##### <a name="clone-application"></a>To duplicate an application
 
-Duplicating an application might be useful if you want to customize a subscribed application according to your needs. 
-
-Duplicating a subscribed application creates a copy of the application as an own application, with a link to the original application.
-
->**Info**: If you want your "own application" to overrule a subscribed standard application, the path of the "own application" needs to be set to the path of the original subscribed application.
-
-In order to duplicate an application, follow these steps:
+Duplicating an application might be useful if you want to customize a subscribed application according to your needs. Duplicating a subscribed application creates a copy of the application as an own application, with a link to the original application.
 
 1. Click **Add application** in the **Own applications** page.
 2. In the upcoming dialog, select **Duplicate existing application**.
@@ -228,21 +205,21 @@ In order to duplicate an application, follow these steps:
 
 For details on the fields, see also [Application properties](#application-properties) below.
 
+>**Info**: If you want your "own application" to overrule a subscribed standard application, the path of the "own application" needs to be set to the path of the original subscribed application.
 
-#### <a name="editing-and-removing"></a>Editing and removing own applications
 
-**Edit**
+#### <a name="editing-and-removing"></a>To edit an own application
 
-To edit an application, simply click the application or click **Edit** in its context menu, accessible through the menu icon. 
+Simply click the application or click the menu icon at the right of an entry and then click **Edit**. 
 
 In the **Properties** tab, several fields can be modified, depending on the application type (see [Application properties](#application-properties)).
 
 >**Important:** Never change the system application names (e.g. "Device Management", "Cockpit"). Otherwise, tenant initialization will fail. 
 
 
-**Remove**
+#### To remove an own application
 
-To remove an application, click the menu icon and from the context menu select **Remove**. 
+Click the menu icon at the right of an entry and then click **Remove**. 
 
 If you remove an application that overwrites a subscribed application, the currently subscribed application becomes available to all users. Additionally, the users will then also benefit from future upgrades of the subscribed application.
 
@@ -293,7 +270,7 @@ Be aware of the "UI" at the end of the plugin names.
 
 Multiple archive file versions can be stored in Cumulocity when they were created by uploading either a zip file or a mon file. Each version is called an archive. You can upload different versions at the same time and switch between these versions.
 
-To upload an archive, follow these steps:
+##### To upload an archive
 
 1. Open the application by clicking on it.
 2. Switch to the **Archives** tab.
@@ -306,9 +283,9 @@ Once uploaded, the recently uploaded version is automatically the active version
 
 >**Info**: The **Archive** tab is not available for subscribed applications, as only the owner of the application can perform this action.
 
-##### Restoring to an older application version
+##### To restore an older application version
 
-Users can restore previous versions of an application from an archive:
+Users can restore previous versions of an application from an archive.
 
 1. Open the application by clicking on it.
 2. Switch to the **Archives** tab.
@@ -316,6 +293,54 @@ Users can restore previous versions of an application from an archive:
 4. Click **Remove** to remove the version from the archive.
 
 <img src="/guides/images/users-guide/Administration/admin-application-set-as-archive.png" alt="Application set as archive">
+
+### Monitoring microservices
+
+You can monitor microservices hosted by Cumulocity in two ways.
+
+#### Status information
+
+The status of the microservice can be checked on the **Status** tab of the respective application. 
+
+<img src="/guides/images/users-guide/Administration/admin-microservice-status.png" alt="Microservice status" style="max-width: 100%">
+
+The following information is provided on the **Status** tab:
+
+* Instances: Number of active, unhealthy and desired microservice instances for the current tenant
+* Subscribed tenants: Number of active, unhealthy and desired microservice instances for all subtenants subscribed to the microservice
+* Alarms: Alarms for given application, provided in realtime
+* Events: Events for given application, provided in realtime
+
+The status information is available for subscribed applications as well as for own applications. Information on subscribed subtenants is only visible for the application owner. 
+
+To view the status you need the following permissions: ROLE_APPLICATION_MANAGEMENT_READ and ROLE_INVENTORY_READ
+
+#### Log files
+
+Moreover, you may view logs to get more details on the status of microservices.
+
+To view logs open the **Log** tab of the respective microservice.
+
+<img src="/guides/images/users-guide/Administration/admin-microservice-log.png" alt="Microservice log" style="max-width: 100%">
+
+At the top of the page, the instance of the microservice, for which you want to view the logs, can be selected. Moreover you can adjust the font size and the theme at the right.
+
+If your microservice was re-scaled into two instances you should be able to switch between them, but it is not possible to see the logs from both instances at once.
+
+There is no possibility to see the logs from the previously running instances, however inside the instance there is a docker container running and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated docker container.
+
+Logs are always loaded from the docker container using both `stdout` and `stderr` sources and there is no possibility to distinguish/filter by the source. 
+
+Initially, the **Log** tab shows the logs of the microservice instance for the last 10 minutes. The exact time range for which the logs are displayed is shown below the logs.
+
+Click the arrow buttons "Next" or "Previous" to increase or respectively reduce the time range in 10 minutes steps, there is no possibility to get the logs for the custom date and time.
+
+If there have not been any logs in the selected time range, a message is shown accordingly:
+
+<img src="/guides/images/users-guide/Administration/admin-microservice-no-logs.png" alt="Microservice log">
+
+To view the logs you need the permission EVENT_READ.
+
 
 ### <a name="default-applications"></a>Default applications
 

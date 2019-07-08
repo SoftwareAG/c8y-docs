@@ -1,6 +1,6 @@
 ---
 weight: 6
-title: Application names
+title: Application list
 layout: redirect
 ---
 

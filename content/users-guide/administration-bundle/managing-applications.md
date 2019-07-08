@@ -6,14 +6,12 @@ layout: redirect
 
 In the Cumulocity platform we distinguish between two kinds of applications:
 
-* [Subscribed applications](#subscribed-applications) -  all applications subscribed to the tenant (either provided by the platform or a service provider) but not owned
-* [Own applications](#own-applications) - all applications owned by the tenant
+* [Subscribed applications](#subscribed-applications) -  all applications subscribed to the tenant (either provided by the platform or a service provider) but not owned. May not be added, modified or removed by the user.
+* [Own applications](#own-applications) - all applications owned by the tenant. Users can [add custom applications](#add-applications) in various ways as own applications. 
 
 Both applications are available through the **Applications** menu in the navigator:
 
-<img src="/guides/images/users-guide/Administration/admin-menu.png" alt="Applications menu">
-
-Subscribed applications may not be added, modified or removed by the user, while users can [add custom applications](#add-applications) in various ways as own applications. 
+<img src="/guides/images/users-guide/Administration/admin-menu.png" alt="Applications menu"> 
 
 ### <a name="application-properties"></a>Application properties
 
@@ -81,7 +79,7 @@ Each application will show the following properties, depending on the applicatio
 
 Cumulocity provides a variety of applications for different purposes. 
 
-by default, the following applications are available in the Standard Tenant:
+By default, the following applications are available in the Standard Tenant:
 
 <table>
 <thead>
@@ -94,10 +92,6 @@ by default, the following applications are available in the Standard Tenant:
 <tr>
 <td style="text-align:center"><a href="/guides/users-guide/administration" class="no-ajaxy">Administration</a></td>
 <td style="text-align:left">Lets account administrators manage users, roles, tenants and applications.</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="/guides/event-language" class="no-ajaxy">Cep</a></td>
-<td style="text-align:left">Define business operations based on realtime data by using the Esper CEP engine. This CEP variant uses a shared instance for multiple tenants. See "Cep-small" for a per-tenant approach.</td>
 </tr>
 <tr>
 <td style="text-align:center"><a href="/guides/users-guide/cockpit" class="no-ajaxy">Cockpit</a></td>
@@ -116,8 +110,10 @@ by default, the following applications are available in the Standard Tenant:
 </tbody>
 </table>
 
-Your tenant may show other subscribed applications, depending on your installation and/or  optional services. For a detailed list of all potentially available applications, including information on the application type, its availability and the string to be used in the API to reference a particular application, refer to [Applications > application list](/guides/reference/applications/#application-names) in the Reference guide. 
+Your tenant may show other subscribed applications, depending on your installation and/or  optional services. 
 
+Refer to [Applications > application list](/guides/reference/applications/#application-names) in the Reference guide for a detailed list of all potentially available applications, including information on its application types, its availability and the string to be used in the API to reference a particular application.
+ 
 ### <a name="own-applications"></a>Own applications
 
 Own applications may be 
@@ -136,13 +132,10 @@ In the **Own applications** page you will find a list of the applications availa
 
 <img src="/guides/images/users-guide/Administration/admin-applications-own.png" alt="Own applications">
 
-To display further information on the application, simply click its card. For details on the fields, refer to [Application properties](#application-properties) below. 
+To display further information on the application, simply click its card. For details on the fields, refer to [Application properties](#application-properties). 
 
 To directly open an application from here, click **Open** on the respective application card. 
 
-Click **Add application** in the **Own applications** page to add an application to your account, see [Adding own applications](#adding-applications).
-
-Click the menu icon at the top right of an application to open a context menu from where you can [**Edit** or **Remove**](#editing-and-removing) an application. 
 
 #### <a name="adding-applications"></a>To add an own application
 
@@ -216,8 +209,6 @@ For details on the fields, see also [Application properties](#application-proper
 
 
 #### <a name="editing-and-removing"></a>To edit an own application
-
-**Edit**
 
 Simply click the application or click the menu icon at the right of an entry and then click **Edit**. 
 

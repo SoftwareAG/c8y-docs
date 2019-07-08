@@ -6,27 +6,34 @@ weight: 10
 
  **Version:** 10.4.11.0 | **Packages:** @c8y/cli and @c8y/ngx-components
 
-Sometimes the provided widgets are not enough and you want to give the possibility to add a custom widget to a dashboard. The dashboards looks like this:
+If the widgets that are provided by the platform do not meet your requirements, you might want to create a custom widget and add it to a dashboard. 
+
+A typical dashboard looks like this, showing various widgets:
 
 ![A dashboard](/guides/images/users-guide/cockpit/cockpit-dashboard-widgets.png)
 
-This recipe will show you how you can archive a custom widget to a dashboard with the `COMPONENT_HOOK`.
+This recipe will show how to archive a custom widget to a dashboard with the `COMPONENT_HOOK`.
 
 ### 1. Initialize the example app
-To start we need an application that shows dashboards. Therefore we gone use the `c8ycli` to create a new cockpit application:
+
+As a starting point, you need an application showing dashboards. For this purpose, create a new Cockpit application using the `c8ycli`:
 
 ```js
 c8ycli new my-cockpit cockpit
 ```
-That will scaffold an cockpit application. You know need to install all dependencies by changing to the new folder and run `npm install`.
+
+Next, you need to install all dependencies. Switch to the new folder and run `npm install`.
 
 ### 2. Create the widget components
+
 Widgets usually consist of two parts:
  
- 1. Configuration: The component that is shown when the user wants to add a widget to a dashboard.
- 2. Widget: The component that is shown when it is added to the dashboard.
+* Configuration: The component that is shown when the user wants to add a widget to a dashboard.
+* Widget: The component that is shown when it is added to the dashboard.
 
-Therefore you must create two components. We will create the `demo-widget.component.ts` first:
+Hence you must create two components. 
+
+First, create the `demo-widget.component.ts`:
 
 ```js
 import { Component, Input } from '@angular/core';
@@ -41,7 +48,9 @@ export class WidgetDemo {
 }
 ```
 
-There is nothing special about this component. It will just show a configured text which is vertical mirrored via CSS. You can basically do everything in it what you can do in any other Angular component. Just the `config` input needs to be present to pass the configuration from the `demo-widget-config.component.ts` which is defined as:
+There is nothing special to mention about this component. It will just show a configured text which is vertically mirrored via CSS. You can basically do everything in it what you can do in any other Angular component. 
+
+It just needs to have the `config` input to pass the configuration from the `demo-widget-config.component.ts` which is defined as:
 
 ```js
 import { Component, Input } from '@angular/core';
@@ -60,10 +69,13 @@ export class WidgetConfigDemo {
 }
 ```
 
-Again here you just need to add a `config` object which you can fill with any serializable configuration that you want to pass to the widget.
+Here again, you just need to add a `config` object which you can fill with any serializable configuration that you want to pass to the widget.
 
 ### 3. Add the widget to your application
-To add the widget you will need to use the `COMPONENT_HOOK` and define the created components as `entryComponent`. To do so, you need to add the following to your `app.module.ts`:
+
+To add the widget you have to use the `COMPONENT_HOOK` and define the created components as `entryComponent`. 
+
+To do so, add the following to your `app.module.ts`:
 
 ```js
 import { NgModule } from '@angular/core';
@@ -120,15 +132,15 @@ export class AppModule extends HybridAppModule {
 
 ```
 
-The changes explained:
+Explanation of the above numbers:
 
- 1. We define the components as entry components and declare them to make them accessible by this module.
- 2. We add a multi provider hook with the `HOOK_COMPONENT`. This hook is collected by the application and adds the widget based on the values you provide.
- 3. The id needs to unique as it identifies the data stored in the inventory. The label and description is show as the title and in the widget-dropdown.
- 4. These part tells the hook to associate the previously defined components to the widget.
+1. Define the components as entry components and declare them to make them accessible by this module.
+1. Add a multi-provider hook with the `HOOK_COMPONENT`. This hook is collected by the application and adds the widget based on the values you provide.
+1. The ID needs to be unique as it identifies the data stored in the inventory. The label and description is shown as the title and in the widget dropdown.
+1. These part tells the hook to associate the previously defined components to the widget.
 
-If you now start your application with `npm start` you should be able to add your custom widget to a dashboard:
-![A custom widget configuration](/guides/images/web-sdk/custom-widget-config.png)
+If you now start your application with `npm start` you should be able to add your custom widget to a dashboard.
 
-And that is how the widget should look like once added to a dashboard:
+Once added to a dashboard, the widget looks similar to this:
+
 ![A custom widget](/guides/images/web-sdk/custom-widget.png)

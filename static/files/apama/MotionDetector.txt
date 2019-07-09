@@ -2,7 +2,7 @@ using com.apama.cumulocity.Operation;
 using com.apama.cumulocity.Event;
 
 /**
-* Raise an operation to turn on/off a light on MotionDetection.
+* Raise an Operation to turn on/off a light on motion detection.
 *
 * This application sends an operation to switch on light if motion is detected 
 * in room. Also if there is no movement in room for about 30 seconds, an

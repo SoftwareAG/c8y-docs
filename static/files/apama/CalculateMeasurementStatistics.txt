@@ -18,13 +18,13 @@ using com.apama.aggregates.stddev;
 using com.apama.aggregates.last;
 
 /**
-* Calculate statistics, persist measurements and raises alarms if required.
+* Calculate statistics, persist Measurement(s) and raise Alarm(s) if required.
 *
 * This application calculates aggregates such as average, min, max, standard
 * deviation for measurements of a specific fragment and series.
 * Raises an Alarm with MINOR severity if incoming measurement value is greater
 * than max value or less than min value. This application also stores
-* statistics in Cumulocity IoT as Measurements and retrieves them on
+* statistics in Cumulocity IoT as Measurement(s) and retrieves them on
 * application restart.
 */
 monitor CalculateMeasurementStatistics {
@@ -73,10 +73,10 @@ monitor CalculateMeasurementStatistics {
 
 	action onload {
 
-		// Get Historical Statistics which are stored as measurements
+		// Get historical statistics which are stored as Measurement(s)
 		getHistoricalStatistics();
 
-		// Get new Measurements
+		// Get new measurements
 		listenForMeasurements();
 
 		// Periodically publish statistics to Cumulocity IoT
@@ -161,7 +161,7 @@ monitor CalculateMeasurementStatistics {
 
 	/**
 	* Get measurements received since the time the last statistics snapshot is
-	* stored in Cumulocity IoT. This is to check if any new measurement are
+	* stored in Cumulocity IoT. This is to check if any new measurements are
 	* received during the time the application is not active (i.e. may be
 	* restarting from a failure).
 	*/
@@ -254,7 +254,7 @@ monitor CalculateMeasurementStatistics {
 			if prev.lastPublishedTime = 0.0 or
 				prev.lastPublishedTime + 5.0 <= currentTime {
 
-				// Add the statistics to a new measurement object
+				// Add the statistics to a new Measurement object
 				Measurement m := new Measurement;
 				m.source := stats.source;
 				m.time := currentTime;

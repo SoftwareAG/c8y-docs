@@ -15,7 +15,7 @@ using com.apama.cumulocity.SendEmail;
 using com.apama.cumulocity.Util;
 
 /**
- * Raise Alarm if no measurements are received in a specified period.
+ * Raise an Alarm if no Measurement(s) are received in a specified period.
  *
  * This application raises an alarm if measurements are not being received from
  * devices. No alarams are raised for device under maintenance.

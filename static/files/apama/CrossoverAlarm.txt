@@ -11,7 +11,7 @@ using com.apama.aggregates.avg;
 using com.apama.aggregates.last;
 
 /**
-* Raise/Clear alarm(s) on crossover of long-term & short-term moving averages.
+* Raise/Clear Alarm(s) on crossover of long-term & short-term moving averages.
 *
 * This application raises an alarm when the short-term moving average
 * exceeds the long-term moving average and clears an existing 

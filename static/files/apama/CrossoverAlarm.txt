@@ -11,17 +11,17 @@ using com.apama.aggregates.avg;
 using com.apama.aggregates.last;
 
 /**
-* This application raises/clears an alarm based on crossover of long term and
-* short term moving averages.
+* Raise/Clear alarm(s) on crossover of long-term & short-term moving averages.
 *
-* This application raises an alarm when the short term moving average
-* exceeds the long term moving average and clear's an existing 
+* This application raises an alarm when the short-term moving average
+* exceeds the long-term moving average and clears an existing 
 * alarm if it goes the other way.
 */
 monitor CrossoverAlarm {
 
 	/**
-	* This is a container for storing both long term and short term moving averages.
+	* This is a container for storing both long-term and short-term moving
+	* averages.
 	*/
 	event Crossover {
 		string source;
@@ -38,15 +38,15 @@ monitor CrossoverAlarm {
 		float average;
 	}
 	
-	//long term moving average window period in secs
+	// Long-term moving average window period in secs
 	// for 24 hrs(1*24*60*60)
 	float LONG_TERM_TIME_WINDOW := 1.0 * 24.0 * 60.0 * 60.0; 
 
-	//short term moving average window period in secs
+	// Short-term moving average window period in secs
 	// for 1 hrs(1*60*60)
 	float SHORT_TERM_TIME_WINDOW := 1.0 * 60.0 * 60.0;
 
-	// the measurement type to be used while creating new 
+	// The measurement type to be used while creating new 
 	// measurement for moving averages.
 	constant string MEASUREMENT_STATISTICS := "movingAverages";
 
@@ -61,7 +61,7 @@ monitor CrossoverAlarm {
 	// crosses above the longer moving average
 	constant string ALARM_TYPE := "CrossoverAlarm";
 	
-	// cache last published time
+	// Cache last published time
 	dictionary<string, float> lastPublishTime;
 	
 	// Local cache to store the previous moving average
@@ -91,7 +91,7 @@ monitor CrossoverAlarm {
 													shortTerm.average,
 													longTerm.average);
 
-				// publish periodically to Cumulocity IoT
+				// Publish periodically to Cumulocity IoT
 				if currentTime - 
 						lastPublishTime.getOrDefault(crossover.source) > 5.0 {
 					sendMovingAverage(crossover);
@@ -105,18 +105,18 @@ monitor CrossoverAlarm {
 
 				Crossover prev := cache[crossover.source];
 
-				// Check if short term moving average exceeded the long term moving
+				// Check if short-term moving average exceeded the long-term moving
 				// average. If so, raise an alarm
 				if prev.shortTerm <= prev.longTerm and
 					crossover.shortTerm > crossover.longTerm {
-					// Store the current short term and long term moving averages
+					// Store the current short-term and long-term moving averages
 					sendMovingAverage(crossover);
 
 					// Raise an alarm
 					sendAlarm("", crossover.source, "ACTIVE",
 					            "MINOR", "CrossoverAlarm created");
 				}
-				// Check if short term moving average went below the long term
+				// Check if short-term moving average went below the long-term
 				// moving average. If so, clear any existing alarms
 				else if prev.shortTerm >= prev.longTerm and
 					crossover.shortTerm < crossover.longTerm {
@@ -125,7 +125,7 @@ monitor CrossoverAlarm {
 					
 					// Check for any alarms that exist for the current source 
 					// with the given type and are still "ACTIVE"
-					integer reqId := integer.incrementCounter("FindAlarmRequest");
+					integer reqId := integer.getUnique();
 					
 					on FindAlarmResponse(reqId=reqId) as resp and 
 					not FindAlarmResponseAck(reqId=reqId) {
@@ -149,7 +149,7 @@ monitor CrossoverAlarm {
 		}	
 	}
 
-	// create moving average stream based on time window
+	// Create moving average stream based on time window
 	action calculateMovingAverage(float timeWindow) {
 
 		// Subscribe to Measurement.CHANNEL 
@@ -191,7 +191,7 @@ monitor CrossoverAlarm {
 		fragment.getOrAddDefault("shortTermAverage").value := crossover.shortTerm;
 		fragment.getOrAddDefault("longTermAverage").value := crossover.longTerm;
 		
-		// Send new measurement to cumulocity
+		// Send new measurement to Cumulocity IoT
 		send m to Measurement.CREATE_CHANNEL;
 	}
 }

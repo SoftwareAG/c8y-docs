@@ -15,10 +15,10 @@ using com.apama.cumulocity.SendEmail;
 using com.apama.cumulocity.Util;
 
 /**
- * Raise Alarm if no measurements are received from a device in a specified period.
+ * Raise Alarm if no measurements are received in a specified period.
  *
  * This application raises an alarm if measurements are not being received from
- * devices. No alarams are raised for Device under maintenance.
+ * devices. No alarams are raised for device under maintenance.
  */
 monitor UnavailabilityAlarm {
 
@@ -35,10 +35,10 @@ monitor UnavailabilityAlarm {
 	constant string ALARM_TYPE := "UnavailabilityAlarm";
 	constant string ALARM_SEVERITY :="MINOR";
 
-	// Populate this with the list of users EMail has to be sent to
+	// Populate this with the list of users email has to be sent to
 	sequence<string> recipients := [<USER@MYDOMAIN.com>];
 
-	// Populate this with the email id to which replies can be sent to
+	// Populate this with the email identifier to which replies can be sent
 	// Usually this will be something similar to noreply@domain.com
 	string replyTo := <NOREPLY@MYDOMAIN.com>;
 
@@ -74,13 +74,13 @@ monitor UnavailabilityAlarm {
 					continue;
 				}
 
-				//We received a measurement in the last polling interval
+				// We received a measurement in the last polling interval
 				if lastSeen.lastSeenTime + TIME_PERIOD >= currentTime {
 					log "Received measurement(s) in the last " +
 							TIME_PERIOD.toString() + " seconds for " + source +
 							", clearing existing alarm(s), if present." at DEBUG;
 					lastSeen.alarmTime := 0.0;
-					// We started receving measurements from the device,
+					// We started receiving measurements from the device
 					// Check if any alarms exist and if so clear them
 					alarmsToClear.append(source);
 					continue;
@@ -98,7 +98,7 @@ monitor UnavailabilityAlarm {
 					sendEmail.append(source);
 				}
 
-				//No new measurements are received
+				// No new measurements are received
 				log alarmMsg + "for " + source + ", raising alarm" at DEBUG;
 				// Delay raising alarms till we clear existing alarms
 				// This can speed up the lookup time later on.
@@ -122,7 +122,7 @@ monitor UnavailabilityAlarm {
 		}
 
 		monitor.subscribe(FindAlarmResponse.CHANNEL);
-		integer reqId := integer.incrementCounter("FindAlarmResponse");
+		integer reqId := integer.getUnique();
 
 		on all FindAlarmResponse(reqId=reqId) as resp
 		and not FindAlarmResponseAck(reqId=reqId) {
@@ -178,7 +178,7 @@ monitor UnavailabilityAlarm {
 
 	action getAllDevices {
 
-		// Get for new devices being created/updated
+		// Get new devices being created/updated
 		monitor.subscribe(ManagedObject.CHANNEL);
 		on all ManagedObject() as managedObject {
 			if managedObject.params.hasKey("c8y_IsDevice") {
@@ -190,7 +190,7 @@ monitor UnavailabilityAlarm {
 
 		// Get list of existing devices
 		monitor.subscribe(FindManagedObjectResponse.CHANNEL);
-		integer reqId := integer.incrementCounter("FindManagedObject");
+		integer reqId := integer.getUnique();
 
 		on all FindManagedObjectResponse(reqId=reqId) as resp
 		and not FindManagedObjectResponseAck(reqId=reqId) {
@@ -204,7 +204,7 @@ monitor UnavailabilityAlarm {
 
 		FindManagedObject findDevice := new FindManagedObject;
 		findDevice.reqId := reqId;
-		// Get all Devices
+		// Get all devices
 		findDevice.params.add("fragmentType", "c8y_IsDevice");
 		send findDevice to FindManagedObject.CHANNEL;
 	}

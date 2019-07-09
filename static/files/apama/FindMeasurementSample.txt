@@ -14,7 +14,7 @@ event MeasurementFilter {
 	/** Param to search for measurements based on the fragmentType.*/
 	constant string FRAGMENT_TYPE := "fragmentType";
 
-	/** Param to Search for measurements based on the type. */
+	/** Param to search for measurements based on the type. */
 	constant string TYPE := "type";
 
 	/** Param to fetch measurements based on the device identifier. */
@@ -23,10 +23,10 @@ event MeasurementFilter {
 	/** Search for measurements from a specific date. */
 	constant string FROM_DATE := "fromDate";
 
-	/** Search for measurements upto a specific date .*/
+	/** Search for measurements up to a specific date .*/
 	constant string TO_DATE := "toDate";
 
-	/** Creates and returns a new MeasurementFilter object. */
+	/** Create and return a new MeasurementFilter object. */
 	static action init() returns MeasurementFilter {
 		return new MeasurementFilter;
 	}
@@ -56,18 +56,19 @@ event MeasurementFilter {
 		return addParam(FROM_DATE, fromDate.toString());
 	}
 
-	/** Search for measurements upto a specific date. */
+	/** Search for measurements up to a specific date. */
 	action toDate(float toDate) returns MeasurementFilter {
 		return addParam(TO_DATE, toDate.toString());
 	}
 
-	/** Add a query parameters. */
-	action addParam(string paramName, string paramValue) returns MeasurementFilter {
+	/** Add a query parameter. */
+	action addParam(string paramName, string paramValue)
+				returns MeasurementFilter {
 		params.add(paramName, paramValue);
 		return self;
 	}
 
-	/** Returns query parameters. */
+	/** Return query parameters. */
 	action getParameters() returns dictionary<string, string> {
 		return params;
 	}
@@ -85,7 +86,7 @@ event MeasurementLookupHelper {
 	/** Callback for completion acknowledgement. */
 	action<integer> responseCompletedCallback;
 
-	/** Creates and returns a new MeasurementLookupHelper object. */
+	/** Create and return a new MeasurementLookupHelper object. */
 	static action init() returns MeasurementLookupHelper {
 		return new MeasurementLookupHelper;
 	}
@@ -115,8 +116,8 @@ event MeasurementLookupHelper {
 		/** Subscribe to FindMeasurementResponse.CHANNEL to listen for responses. */
 		monitor.subscribe(FindMeasurementResponse.CHANNEL);
 
-		/** Unique request Id. */
-		integer reqId := integer.incrementCounter("CumulocityRequestId");
+		/** Unique request identifier. */
+		integer reqId := integer.getUnique();
 
 		/** Listen for matching responses. */
 		on all FindMeasurementResponse(reqId=reqId) as resp
@@ -143,7 +144,7 @@ event MeasurementLookupHelper {
 }
 
 /**
-* This application queries for Measurements based on fragmentType.
+* Query for Measurement(s) based on fragmentType.
 *
 * This application sends a request to query for Measurements with fragmentType
 * "SpeedMeasurement" and creates listeners to listen for 0 or more 
@@ -172,7 +173,7 @@ monitor FindMeasurementSample {
 		log "Find Measurement Response : " + measurement.toString() at DEBUG;
 	}
 
-	/** Request Completed acknowledgement. */
+	/** Request completed acknowledgement. */
 	action queryCompleted(integer reqId) {
 		log "Find Measurement Request completed " + reqId.toString() at DEBUG;
 	}

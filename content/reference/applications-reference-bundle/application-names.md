@@ -1,6 +1,6 @@
 ---
 weight: 6
-title: Application names
+title: Application list
 layout: redirect
 ---
 
@@ -11,8 +11,8 @@ These are listed in the following table. The columns show the following informat
 * **Application**: Application name as visible in the Administration application.
 * **Functionality**: Brief description.
 * **String**: Identification of the application in the API. In case you want to subscribe a tenant to the application using an API (as described on this page), use this string in the argument (as name)
-* **Application type**: Technical type of the application. "Feature" refers to built-in applications subscriptions, i.e. these applications are not represented by an explicit artefact (microservice, web application or custom Apama rule).
-* **Availablity**: Only applications indicated as "Standard Tenant" are available in all installations. Applications of type "microservice", "web application" or "custom Apama rule" indicated as "Optional service" require that the related artefact is installed for the respective Cumulocity instance. The same applies to applications listed as "Enterprise Tenant".
+* **Application type**: Technical type of the application. "Feature" refers to built-in applications subscriptions, i.e. these applications are not represented by an explicit artefact (microservice or web application).
+* **Availablity**: Only applications indicated as "Standard Tenant" are available in all installations. Applications of type "microservice" or "web application" indicated as "Optional service" require that the related artefact is installed for the respective Cumulocity instance. The same applies to applications listed as "Enterprise Tenant".
 
 <table>
 <col width="200">
@@ -37,9 +37,9 @@ These are listed in the following table. The columns show the following informat
 </tr>
 <tr>
 <td style="text-align:center"><a href="/guides/apama" class="no-ajaxy">Apama</a></td>
-<td style="text-align:left">Define business operations for immediate processing of incoming data by using Apama's Event Processing Language (EPL). This is a per-tenant deployment.</td>
-<td style="text-align:left">apama-small=<br> 1 core; 4 GB RAM<br>apama-medium=<br> 2 cores; 8 GB RAM<br>apama-large=<br>4 cores; 16 GB RAM</td>
-<td style="text-align:left">Microservice</td>
+<td style="text-align:left">Define business operations for immediate processing of incoming data by using Apama's Event Processing Language (EPL). The microservice is a per-tenant deployment. The web application is required, unless Apama is being used exclusively for Smart Rule functionality.</td>
+<td style="text-align:left">apama-ctrl, apama-epl</td>
+<td style="text-align:left">Microservice, Web application</td>
 <td style="text-align:left">Optional service</td>
 </tr>
 <tr>

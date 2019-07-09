@@ -73,7 +73,7 @@ Inside the _hello-world-microservice_ folder you will find the _pom.xml_ file. S
 </properties>
 ```
 
-Edit the `<c8y.version>` element to use the latest version of the client library. It may be obtained by reviewing the [Release notes](https://cumulocity.com/guides/release-notes/overview/). This particular example was implemented using version 9.16.2.
+Edit the `<c8y.version>` element to use the latest version of the client library. It may be obtained by reviewing the [Release notes](https://cumulocity.com/guides/release-notes/overview/) or the [Maven repository](http://download.cumulocity.com/maven/repository/com/nsn/cumulocity/clients-java/microservice-dependencies/). This particular example was implemented using version 9.16.2.
 
 Now add repository and plugin elements to point to the Cumulocity Maven repository which stores the client libraries.
 
@@ -446,4 +446,4 @@ You can also test your microservice with your favorite browser. Remember to ente
 
 ### Improving the microservice
 
-Now that you have done your first steps, check out the section [Developing microservices](/guides/microservice-sdk/java#developing-microservice) to find out what else can be implemented. Review also the [Java example](/guides//microservice-sdk/http) in this guide to learn using more features of the microservice SDK and REST API by employing third-party services.
+Now that you have done your first steps, check out the section [Developing microservices](/guides/microservice-sdk/java#developing-microservice) to find out what else can be implemented. Review also the [Java example](/guides/microservice-sdk/http) in this guide to learn using more features of the microservice SDK and REST API by employing third-party services.

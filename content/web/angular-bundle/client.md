@@ -125,7 +125,7 @@ The `detail$` and `list$` functions allow to subscribe to realtime channels that
   ```js
   {
     hot: true,                                    // true = shares one network request
-    realtime: false,                               // true = listen to real-time changes
+    realtime: false,                              // true = listen to real-time changes
     pagingStrategy: PagingStrategy.PROGRESSIVE,   // ALL = All pages are loaded
                                                   // NONE = only current page is loaded
                                                   // PROGRESSIVE = load pages with more()

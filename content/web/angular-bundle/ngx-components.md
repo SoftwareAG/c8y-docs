@@ -112,7 +112,7 @@ The Multi Provider extension allows a declarative approach to extend the applica
    * `HOOK_ACTION`: Enables to define the global actions which should be shown or enabled on certain conditions.
    * `HOOK_BREADCRUMB`: Can be used to show breadcrumbs in the header bar.
    * `HOOK_SEARCH`: Allows to define the search to be shown or not.
-   * `HOOK_ONCE_ROUTE`: Allows to define a route. Use this if you want to use a context route, e.g. adding a new tab to the device detail view. For all other routes you should use the default Angular router.
+   * `HOOK_ONCE_ROUTE`: Allows to define a route. Use this if you want to use a context route, e.g. add a new tab to the device details view. For all other routes you should use the default Angular router.
 
 3. **Services**<br>
    A service is defined for most components of ngx-components. They can be used via the dependency injection concept of Angular, that means that these services can be injected in the constructor of a component and then add or remove certain UI elements. The following example shows how to use that concept with an alert:

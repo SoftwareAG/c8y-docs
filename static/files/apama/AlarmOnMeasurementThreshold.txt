@@ -2,7 +2,7 @@ using com.apama.cumulocity.Measurement;
 using com.apama.cumulocity.Alarm;
 
 /**
-* This application raises an Alarm if Measurement exceeds a threshold value.
+* Raise Alarm if Measurement exceeds a threshold value.
 *
 * This application listens for all measurements of type "c8y_Temperature" with
 * fragment "c8y_Temperature" and series "T" and raises a "TemperatureHighAlarm"

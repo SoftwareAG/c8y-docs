@@ -17,7 +17,7 @@ event ManagedObjectFilter {
 	/** Param to search for managedObjects based on the type. */
 	constant string TYPE := "type";
 
-	/** Creates and returns a new ManagedObjectFilter object. */
+	/** Create and return a new ManagedObjectFilter object. */
 	static action init() returns ManagedObjectFilter {
 		return new ManagedObjectFilter;
 	}
@@ -44,7 +44,7 @@ event ManagedObjectFilter {
 		return self;
 	}
 
-	/** Returns query parameters. */
+	/** Return query parameters. */
 	action getParameters() returns dictionary<string, string> {
 		return params;
 	}
@@ -62,7 +62,7 @@ event ManagedObjectLookupHelper {
 	/** Callback for completion acknowledgement. */
 	action<integer> responseCompletedCallback;
 
-	/** Creates and returns a new ManagedObjectLookupHelper object. */
+	/** Create and return a new ManagedObjectLookupHelper object. */
 	static action init() returns ManagedObjectLookupHelper {
 		return new ManagedObjectLookupHelper;
 	}
@@ -94,8 +94,8 @@ event ManagedObjectLookupHelper {
 		 */
 		monitor.subscribe(FindManagedObjectResponse.CHANNEL);
 
-		/** Unique request Id. */
-		integer reqId := integer.incrementCounter("CumulocityRequestId");
+		/** Unique request identifier. */
+		integer reqId := integer.getUnique();
 
 		/** Listen for matching responses. */
 		on all FindManagedObjectResponse(reqId=reqId) as resp
@@ -124,12 +124,12 @@ event ManagedObjectLookupHelper {
 }
 
 /**
-* This application queries for ManagedObjects based on fragmentType.
+* Query for ManagedObject(s) based on fragmentType.
 *
-* This application sends a request to query for ManagedObjects with fragmentType
-* "c8y_IsDevice" and creates listeners to listen for 0 or more 
-* FindManagedObjectResponse events followed by the FindManagedObjectResponseAck
-* completion acknowledgement event.
+* This application sends a request to query for ManagedObjects with
+* fragmentType "c8y_IsDevice" and creates listeners to listen for 0 or more
+* FindManagedObjectResponse events followed by the
+* FindManagedObjectResponseAck completion acknowledgement event.
 */
 monitor FindManagedObjectSample {
 
@@ -153,7 +153,7 @@ monitor FindManagedObjectSample {
 		log "Find ManagedObject Response : " + managedObject.toString() at DEBUG;
 	}
 
-	/** Request Completed acknowledgement. */
+	/** Request completed acknowledgement. */
 	action queryCompleted(integer reqId) {
 		log "Find ManagedObject Request completed " + reqId.toString() at DEBUG;
 	}

@@ -11,7 +11,7 @@ event AlarmFilter {
 	 */
 	constant string PAGE_SIZE := "pageSize";
 
-	/** Param to Search for alarms based on the type. */
+	/** Param to search for alarms based on the type. */
 	constant string TYPE := "type";
 
 	/** Param to fetch alarms based on the device identifier. */
@@ -26,10 +26,10 @@ event AlarmFilter {
 	/** Search for alarms from a specific date. */
 	constant string FROM_DATE := "fromDate";
 
-	/** Search for alarms upto a specific date .*/
+	/** Search for alarms up to a specific date .*/
 	constant string TO_DATE := "toDate";
 
-	/** Creates and returns a new AlarmFilter object. */
+	/** Create and return a new AlarmFilter object. */
 	static action init() returns AlarmFilter {
 		return new AlarmFilter;
 	}
@@ -64,7 +64,7 @@ event AlarmFilter {
 		return addParam(FROM_DATE, fromDate.toString());
 	}
 
-	/** Search for alarms upto a specific date. */
+	/** Search for alarms up to a specific date. */
 	action toDate(float toDate) returns AlarmFilter {
 		return addParam(TO_DATE, toDate.toString());
 	}
@@ -75,7 +75,7 @@ event AlarmFilter {
 		return self;
 	}
 
-	/** Returns query parameters. */
+	/** Return query parameters. */
 	action getParameters() returns dictionary<string, string> {
 		return params;
 	}
@@ -93,7 +93,7 @@ event AlarmLookupHelper {
 	/** Callback for completion acknowledgement. */
 	action<integer> responseCompletedCallback;
 
-	/** Creates and returns a new AlarmLookupHelper object. */
+	/** Create and return a new AlarmLookupHelper object. */
 	static action init() returns AlarmLookupHelper {
 		return new AlarmLookupHelper;
 	}
@@ -123,8 +123,8 @@ event AlarmLookupHelper {
 		/** Subscribe to FindAlarmResponse.CHANNEL to listen for responses. */
 		monitor.subscribe(FindAlarmResponse.CHANNEL);
 
-		/** Unique request Id. */
-		integer reqId := integer.incrementCounter("CumulocityRequestId");
+		/** Unique request identifier. */
+		integer reqId := integer.getUnique();
 
 		/** Listen for matching responses. */
 		on all FindAlarmResponse(reqId=reqId) as resp
@@ -150,11 +150,12 @@ event AlarmLookupHelper {
 }
 
 /**
-* This application queries for Alarms by type.
+* Query for Alarm(s) based on type.
 *
-* This application sends a request to query for Alarms of type "UnavailabilityAlarm"
-* and creates listeners to listen for 0 or more FindAlarmResponse events
-* followed by the FindAlarmResponseAck completion acknowledgement event.
+* This application sends a request to query for Alarms of type
+* "UnavailabilityAlarm" and creates listeners to listen for 0 or more
+* FindAlarmResponse events followed by the FindAlarmResponseAck completion
+* acknowledgement event.
 */
 monitor FindAlarmSample {
 
@@ -177,7 +178,7 @@ monitor FindAlarmSample {
 		log "Find Alarm Response : " + alarm.toString() at DEBUG;
 	}
 
-	/** Request Completed acknowledgement. */
+	/** Request completed acknowledgement. */
 	action queryCompleted(integer reqId) {
 		log "Find Alarm Request completed " + reqId.toString() at DEBUG;
 	}

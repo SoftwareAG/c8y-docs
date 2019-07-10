@@ -154,8 +154,8 @@ The last line shows that a new device has been successfully created with a parti
 
 ![Hello world device](/guides/images/java/hello.png)
 
-**Got an error message?** Check the [troubleshooting section](/guides/microservice-sdk/cs#troubleshooting) in the Microservice SDK guide.
+**Got an error message?** Check the [troubleshooting section](/guides/microservice-sdk/cs/#troubleshooting) in the Microservice SDK guide.
 
 ### Improving the agent
 
-Now that you have done your first step, check out the section [Developing C# clients](/guides/device-sdk/cs#developing-cs-clients) or examine the [full examples](/guides/device-sdk/java#agents).
+Now that you have done your first step, check out the section [Developing C# clients](/guides/device-sdk/cs/#developing-cs-clients) or examine the [full examples](/guides/device-sdk/cs/#agents).

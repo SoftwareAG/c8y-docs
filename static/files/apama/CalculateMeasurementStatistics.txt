@@ -18,14 +18,14 @@ using com.apama.aggregates.stddev;
 using com.apama.aggregates.last;
 
 /**
-* This application calculates statistics for measurements and stores
-* them back in cumulocity and raises alarms if required.
+* Calculate statistics, persist Measurement(s) and raise Alarm(s) if required.
 *
 * This application calculates aggregates such as average, min, max, standard
 * deviation for measurements of a specific fragment and series.
-* Raises an Alarm with MINOR severity if incoming measurement value is greater than
-* max value or less than min value. This application also stores statistics in
-* Cumulocity IoT as Measurements and retrieves them on application restart.
+* Raises an Alarm with MINOR severity if incoming measurement value is greater
+* than max value or less than min value. This application also stores
+* statistics in Cumulocity IoT as Measurement(s) and retrieves them on
+* application restart.
 */
 monitor CalculateMeasurementStatistics {
 
@@ -41,7 +41,7 @@ monitor CalculateMeasurementStatistics {
 		float last; // copy of the most recent measurement fragment series value
 		float time; // time copied from the most recent measurement
 		float lastPublishedTime; // time at which this statistic was last published
-								// to cumulocity
+								// to Cumulocity IoT
 	}
 
 	// Measurement Type
@@ -55,7 +55,7 @@ monitor CalculateMeasurementStatistics {
 	// statistics.
 	constant string MEASUREMENT_STATISTICS := "TemperatureStatistics";
 
-	// The window size to use for calculating averages and standard devication
+	// The window size to use for calculating averages and standard deviation
 	constant float WINDOW_SIZE := 60.0;
 
 	// Alarm type to be created if measurement value goes above the max value or
@@ -65,7 +65,7 @@ monitor CalculateMeasurementStatistics {
 	// Local cache to store the recorded values
 	dictionary<string, Statistics> cache;
 
-	// Used while retrieving historical information from cumulocity
+	// Used while retrieving historical information from Cumulocity IoT
 	// stores the oldest timestamp where the last statistics are stored
 	float lastRecordedTime := float.MAX;
 
@@ -73,13 +73,13 @@ monitor CalculateMeasurementStatistics {
 
 	action onload {
 
-		// Get Historical Statistics which are stored as measurements
+		// Get historical statistics which are stored as Measurement(s)
 		getHistoricalStatistics();
 
-		// Get new Measurements
+		// Get new measurements
 		listenForMeasurements();
 
-		// Periodically publish statistics to Cumulocity
+		// Periodically publish statistics to Cumulocity IoT
 		publishStatistics();
 	}
 
@@ -120,7 +120,7 @@ monitor CalculateMeasurementStatistics {
 
 		monitor.subscribe(FindMeasurementResponse.CHANNEL);
 
-		integer reqId := integer.incrementCounter("FindMeasurementRequest");
+		integer reqId := integer.getUnique();
 
 		// Retrieve historical min and max values from Cumulocity IoT
 		on all FindMeasurementResponse(reqId=reqId) as resp
@@ -146,7 +146,7 @@ monitor CalculateMeasurementStatistics {
 			monitor.unsubscribe(FindMeasurementResponse.CHANNEL);
 			// This means that we have atleast one historical statistic
 			if lastRecordedTime != float.MAX {
-				//Get measurements since last recorded time
+				// Get measurements since last recorded time
 				getMeasurementsSinceLastSnapshot();
 			}
 			log "Done retrieving past measurement statistics" at INFO;
@@ -161,7 +161,7 @@ monitor CalculateMeasurementStatistics {
 
 	/**
 	* Get measurements received since the time the last statistics snapshot is
-	* stored in Cumulocity IoT. This is to check if any new measurement are
+	* stored in Cumulocity IoT. This is to check if any new measurements are
 	* received during the time the application is not active (i.e. may be
 	* restarting from a failure).
 	*/
@@ -169,7 +169,7 @@ monitor CalculateMeasurementStatistics {
 
 		monitor.subscribe(FindMeasurementResponse.CHANNEL);
 
-		integer reqId := integer.incrementCounter("FindMeasurementRequest");
+		integer reqId := integer.getUnique();
 
 		// Retrieve all measurements since the last time so that min and max
 		// values are up to date
@@ -254,7 +254,7 @@ monitor CalculateMeasurementStatistics {
 			if prev.lastPublishedTime = 0.0 or
 				prev.lastPublishedTime + 5.0 <= currentTime {
 
-				// Add the statistics to a new measurement object
+				// Add the statistics to a new Measurement object
 				Measurement m := new Measurement;
 				m.source := stats.source;
 				m.time := currentTime;
@@ -266,7 +266,7 @@ monitor CalculateMeasurementStatistics {
 				fragment.getOrAddDefault("min").value := prev.min;
 				fragment.getOrAddDefault("max").value := prev.max;
 
-				// Send new measurement to cumulocity
+				// Send new measurement to Cumulocity IoT
 				send m to Measurement.CREATE_CHANNEL;
 				prev.lastPublishedTime := currentTime;
 			}

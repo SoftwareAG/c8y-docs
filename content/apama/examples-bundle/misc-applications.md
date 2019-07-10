@@ -3,13 +3,13 @@ weight: 50
 title: Miscellaneous sample applications
 layout: redirect
 ---
-* [AlarmOnMeasurementThreshold](/guides/files/apama/AlarmOnMeasurementThreshold.txt) - Raises an Alarm if a Measurement exceeds a threshold value.
-* [CalculateMeasurementStatistics](/guides/files/apama/CalculateMeasurementStatistics.txt) - Calculates statistics for Measurements, stores them in the platform, and raises alarms if required.
-* [CrossoverAlarm](/guides/files/apama/CrossoverAlarm.txt) - Raises/clears an alarm based on crossover of long term and short term moving averages.
-* [FindAlarmSample](/guides/files/apama/FindAlarmSample.txt) - Queries for Alarms by type.
-* [FindEventsSample](/guides/files/apama/FindEventsSample.txt) - Queries for Events by type.
-* [FindManagedObjectSample](/guides/files/apama/FindManagedObjectSample.txt) - Queries for ManagedObjects by fragment type.
-* [FindMeasurementSample](/guides/files/apama/FindMeasurementSample.txt) - Queries for Measurements by fragment type.
-* [FindOperationSample](/guides/files/apama/FindOperationsSample.txt) - Queries for Operations by status.
-* [MotionDetector](/guides/files/apama/MotionDetector.txt) - Raises an operation to turn on/off a light based on Events.
-* [UnavailabilityAlarm](/guides/files/apama/UnavailabilityAlarm.txt) - Raises an Alarm if no Measurements are received from a device in a specified period.
+* [AlarmOnMeasurementThreshold](/guides/files/apama/AlarmOnMeasurementThreshold.txt) - Raise Alarm if Measurement exceeds a threshold value.
+* [CalculateMeasurementStatistics](/guides/files/apama/CalculateMeasurementStatistics.txt) - Calculate statistics, persist Measurement(s) and raise Alarm(s) if required.
+* [CrossoverAlarm](/guides/files/apama/CrossoverAlarm.txt) - Raise/Clear Alarm(s) on crossover of long-term & short-term moving averages.
+* [FindAlarmSample](/guides/files/apama/FindAlarmSample.txt) - Query for Alarm(s) based on type.
+* [FindEventSample](/guides/files/apama/FindEventSample.txt) - Query for Event(s) based on type.
+* [FindManagedObjectSample](/guides/files/apama/FindManagedObjectSample.txt) - Query for ManagedObject(s) based on fragmentType.
+* [FindMeasurementSample](/guides/files/apama/FindMeasurementSample.txt) - Query for Measurement(s) based on fragmentType.
+* [FindOperationSample](/guides/files/apama/FindOperationSample.txt) - Query for Operation(s) based on status.
+* [MotionDetector](/guides/files/apama/MotionDetector.txt) - Raise an Operation to turn on/off a light on motion detection.
+* [UnavailabilityAlarm](/guides/files/apama/UnavailabilityAlarm.txt) - Raise an Alarm if no Measurement(s) are received in a specified period.

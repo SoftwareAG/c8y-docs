@@ -10,7 +10,7 @@ Apama can process incoming data and then use a predictive model in Zementis to m
 GET /service/zementis/apply/modelName?record=%7B%22name%22:%22fred%22,%22age%22:37%7D
 ```
 
-Special characters like `"`, `}` and `{` must be encoded in the request. This will happen automatically when using the `setQueryParameter` API.
+Special characters like quotes (") and curly braces must be encoded in the request. This will happen automatically when using the `setQueryParameter` API.
 
 The rest of this guide will assume you have a model with a single parameter which analyzes the RSSI value of WiFi networks
 

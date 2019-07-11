@@ -61,7 +61,7 @@ Registering an Android phone in Cumulocity involves installing the Cloud Sensor 
 
 Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, update the `c_device_source` of the *CONFIG.INI* file with the device ID of your registered Android phone.
 
-#### Data Collection with Cumulocity
+#### Data collection with Cumulocity
 
 Required: No. The training data is provided. See next section.
 
@@ -231,7 +231,7 @@ Data collection can be done by using the below shown and attached script *create
 
 The training data set we collected is packaged as *training_data.zip* under the data sub-folder of the attached *AnomalyDetectionDemo.zip*.
 
-####Train the PMML model
+#### Train the PMML model
 
 For this demo, the anomaly detection machine learning algorithm "Isolation Forest" is applied. Isolation Forest is an approach that detects anomalies by isolating instances, without relying on any distance or density measure.
 
@@ -303,11 +303,9 @@ Instead of creating a new monitor file, the attached *DetectAnomalies.mon* file 
 Assume your tenant name is "tenant", your username is "me" and your password is "secret". 
 
 1. Go to *http://ostermiller.org/calc/encode.html*, type "tenant/me:secret" into the text area, then click **Encode** in the row "Base 64". The resulting text is "dGVuYW50L21lOnNlY3JldA==". 
-1. Use "Basic dGVuYW50L21lOnNlY3JldA==" as value for credentials. 
-1. Additionally set the deviceId variable with the ID your registered device, same as `c_device_source` in the *CONFIG.INI* file mentioned above.
-1. Save your changes and upload this file to your tenant via the **Own Applications** page of the Administration application in Cumulocity. 
-
-See [Administration > Managing applications > Own applications](/guides/users-guide/administration#uploading-cep-rules) in the User guide for details on uploading Apama monitor files.
+2. Use "Basic dGVuYW50L21lOnNlY3JldA==" as value for credentials. 
+3. Additionally set the deviceId variable with the ID your registered device, same as `c_device_source` in the *CONFIG.INI* file mentioned above.
+4. Save your changes and upload this file to your tenant via the **Own Applications** page of the Administration application in Cumulocity. See [Administration > Managing applications > Own applications](/guides/users-guide/administration#uploading-cep-rules) in the User guide for details on uploading Apama monitor files.
 
 	DetectAnomalies.mon
 	using com.apama.cumulocity.Alarm;
@@ -411,7 +409,9 @@ A fully functional demo can be prepared with the help of a demo device. For this
 
 Instead of registering a real phone for anomaly detection use case, a demo device can be registered. This device can be used as a replica of an actual mobile phone.
 
-We have added a script *DemoDeviceCreator.sh* which registers a demo device in Cumulocity. Run the script using the command `sh DemoDeviceCreator.sh`. 
+We have added a script *DemoDeviceCreator.sh* which registers a demo device in Cumulocity. Run the script using the following command:
+
+	sh DemoDeviceCreator.sh 
 
 Use this script to add a device named "DemoDevice" to Cumulocity.
 
@@ -445,9 +445,7 @@ Once registered, try to get the device ID by looking up your device on the **All
 	* Use "Basic dGVuYW50L21lOnNlY3JldA==" as value for credentials. 
 	* Additionally set the deviceId variable with the ID your registered device, same as `c_device_source` in the *CONFIG.INI* file mentioned above.
 
-3. Save your changes and upload this file to your tenant via the **Own Applications** page of the Administration application in Cumulocity. 
-
-	See [Administration > Managing applications > Own applications](/guides/users-guide/administration#uploading-cep-rules) in the User guide for details on uploading Apama monitor files.
+3. Save your changes and upload this file to your tenant via the **Own Applications** page of the Administration application in Cumulocity. See [Administration > Managing applications > Own applications](/guides/users-guide/administration#uploading-cep-rules) in the User guide for details on uploading Apama monitor files.
 
 
 #### Trigger an Anomaly Alert

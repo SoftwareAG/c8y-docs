@@ -666,7 +666,9 @@ A fully functional demo can be prepared with the help of a demo device. For this
 
 Instead of registering a real phone for anomaly detection use case, a demo device can be registered. This device can be used as a replica of an actual mobile phone.
 
-We have added a script *DemoDeviceCreator.sh* which registers a demo device in Cumulocity. Run the script using the command `sh DemoDeviceCreator.sh`. 
+We have added a script *DemoDeviceCreator.sh* which registers a demo device in Cumulocity. Run the script using the following command:
+
+	sh DemoDeviceCreator.sh
 
 Use this script to add a device named "DemoDevice" to Cumulocity.
 
@@ -700,9 +702,8 @@ Once registered, try to get the device ID by looking up your device on the **All
 	* Use "Basic dGVuYW50L21lOnNlY3JldA==" as value for credentials. 
 	* Additionally set the deviceId variable with the ID your registered device, same as `c_device_source` in the *CONFIG.INI* file mentioned above.
 
-3. Save your changes and upload this file to your tenant via the **Own Applications** page of the Administration application in Cumulocity. 
 
-	See [Administration > Managing applications > Own applications](/guides/users-guide/administration#uploading-cep-rules) in the User guide for details on uploading Apama monitor files.
+3. Save your changes and upload this file to your tenant via the **Own Applications** page of the Administration application in Cumulocity. See [Administration > Managing applications > Own applications](/guides/users-guide/administration#uploading-cep-rules) in the User guide for details on uploading Apama monitor files.
 
 
 #### Classify activities

@@ -158,4 +158,4 @@ The last line shows that a new device has been successfully created with a parti
 
 ### Improving the agent
 
-Now that you have done your first step, check out the section [Developing C# clients](/guides/device-sdk/cs/#developing-cs-clients) or examine the [full examples](/guides/device-sdk/cs/#agents).
+Now that you have done your first step, check out the section [Developing C# clients](/guides/device-sdk/device-sdk-cs/#developing-cs-clients).

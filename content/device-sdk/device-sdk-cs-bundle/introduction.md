@@ -15,14 +15,16 @@ To get started, check the "Hello World" examples for the various C# variants.
 
 Note, that you can develop Cumulocity with any IDE and any build tool that you prefer, but the examples focus on .NET Core SDK and Visual Studio.
 
-After reviewing the "Hello world" examples, continue with the section [Developing C# clients](/guides/device-sdk/device-sdk-cs/#developing-cs-clients) or download the complete examples described in the section [C# reference agents](/guides/device-sdk/device-sdk-cs/#agents). There's one full example of a device-side agent demonstrating nearly all Cumulocity features, and one full example of a server-side agent.
+After reviewing the "Hello world" examples, continue with the section [Developing C# clients](/guides/device-sdk/device-sdk-cs/#developing-cs-clients).
+
+<!--or download the complete examples described in the section [C# reference agents](/guides/device-sdk/device-sdk-cs/#agents). There's one full example of a device-side agent demonstrating nearly all Cumulocity features, and one full example of a server-side agent.-->
 
 Finally, here are some references for getting started with the basic technologies underlying the SDK:
 
 -   The client libraries use the Cumulocity REST interfaces as underlying communication protocol as described in the section on [REST](/guides/device-sdk/rest).
 -   All examples and libraries are open source -- check [https://bitbucket.org/m2m](https://bitbucket.org/m2m).
 
-Documentation for the <a href="http://resources.cumulocity.com/documentation/cssdk/current/" target="_blank">C# client API</a> can be found on our resources site.
+<!--Documentation for the <a href="http://resources.cumulocity.com/documentation/cssdk/current/" target="_blank">C# client API</a> can be found on our resources site.-->
 
 
 ### General prerequisites

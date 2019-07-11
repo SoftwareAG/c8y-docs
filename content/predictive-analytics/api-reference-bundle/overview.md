@@ -4,13 +4,13 @@ title: Overview
 weight: redirect
 ---
 
-This guide provides users with a comprehensive set of API (Application Programming Interface) to interact with Zementis Microservice using REST (Representational State Transfer) over HTTP (Hypertext Transfer Protocol). Zementis Microservice API allows users to perform operations on models and custom resources, and process data by issuing a simple request using any HTTP client such as a web browser.
+This guide provides users with a comprehensive set of API (Application Programming Interface) to interact with the Zementis microservice using REST (Representational State Transfer) over HTTP (Hypertext Transfer Protocol). The Zementis microservice API allows users to perform operations on models and custom resources, and process data by issuing a simple request using any HTTP client such as a web browser.
 
 ### URI
 
-A full path to the Zementis Microservice API resource consists of a base path and a resource path. 
+A full path to the Zementis microservice API resource consists of a base path and a resource path. 
 
-The base path URI (Uniform Resource Identifier) for the Zementis Microservice API is `http://domain:port/service/zementis`, where http or https is the protocol name, domain is the internet domain or network address, port is a non-negative integer representing the port number, and service/zementis represents the application context path. The base path is static and does not change between requests; it merely identifies the server with an application on the network. 
+The base path URI (Uniform Resource Identifier) for the Zementis microservice API is `http://domain:port/service/zementis`, where http or https is the protocol name, domain is the internet domain or network address, port is a non-negative integer representing the port number, and service/zementis represents the application context path. The base path is static and does not change between requests; it merely identifies the server with an application on the network. 
 
 Following the base path is the resource path. It may contain path or query parameters depending on the type of the request and available resources on the server. For example, a resource path `/model/Iris_NN/source?annotated=true `contains static path definitions such as model or source, path parameter Iris_NN for a dynamically allocated resource, and a query parameter annotated=true.
 
@@ -32,9 +32,9 @@ In the following examples, `{{ auth }}` represents the base64-encoded `tenant/us
 
 ### Response
 
-The HTTP response message is composed of a message header and a message body. All Zementis Microservice response content types implement standard UTF-8 character set encoding. 
+The HTTP response message is composed of a message header and a message body. All Zementis microservice response content types implement standard UTF-8 character set encoding. 
 
-The header contains response status code and header fields represented as list of key/value pairs, i.e. `Content-Type:application/json`. Every response from Zementis Microservice contains a Content-Type header entry with one of following internet media types (aka MIME) as value.
+The header contains response status code and header fields represented as list of key/value pairs, i.e. `Content-Type:application/json`. Every response from Zementis microservice contains a Content-Type header entry with one of following internet media types (aka MIME) as value.
 
 * application/json
 * application/xml

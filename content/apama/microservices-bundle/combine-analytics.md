@@ -32,6 +32,9 @@ We will start with EPL which connects to Cumulocity and starts listening for mea
 
 ```java
 using com.apama.json.JSONPlugin;
+using com.apama.cumulocity.CumulocityRequestInterface;
+using com.softwareag.connectivity.httpclient.Request;
+using com.softwareag.connectivity.httpclient.Response;
  
 monitor LookForWifiAnomalies
 {

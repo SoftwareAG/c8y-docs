@@ -326,7 +326,7 @@ There are two user-friendly alarm types:
 
 User-friendly alarms are created for the microservice owner tenant only. They are also automatically cleared when the situation gets back to normal, i.e. all the microservice instances are working properly.
 
-User-friendly alarms can be used to create Smart Rules. For details on creating Smart Rules of various types, see [Smart Rules](/guides/users-guide/cockpit#smart-rules). 
+User-friendly alarms can be used to create Smart Rules. For details on creating Smart Rules of various types, see [Smart Rules](/guides/users-guide/cockpit/#smart-rules). 
 
 For example, to send an email, if a microservice is down, create an "On alarm send email" Smart Rule. 
 

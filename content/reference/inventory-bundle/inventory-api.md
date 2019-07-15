@@ -76,6 +76,7 @@ layout: redirect
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
+|Host|{{hostname}}
 
 ```http	
 200 - OK

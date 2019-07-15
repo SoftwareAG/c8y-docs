@@ -1,7 +1,7 @@
 ---
 weight: 40
 layout: redirect
-title: Developing Microservices
+title: Developing microservices
 ---
 
 It is described below the different microservice SDK features, including annotations, services, configuration files, logging and the Maven build plugin.
@@ -170,7 +170,7 @@ The microservice settings module provides two features:
 * Configure a microservice by defining tenant options
 * Override existing properties - Tenant options can override default values from properties files
 
-By default the microservice loads the tenant options for the category specified by the microservice context path. 
+By default the microservice loads the tenant options for the category specified by the microservice context path.
 The custom settings category can be specified by the manifest parameter: `settingsCategory`.
 When neither settings category nor context path is provided in the microservice manifest, the application name is used.
 

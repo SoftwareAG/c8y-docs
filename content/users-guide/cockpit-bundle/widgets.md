@@ -216,6 +216,8 @@ The "HTML" widget shows user-defined content. The content can be formatted using
 "Device" refers to the target device, as selected in the widget configuration parameter.<br>
 "fragment.property" refers to the properties of the respective device. To see the available property names, you can use the "Asset property" or “Asset table” widget and click **+Add property** in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column “Property”. Generated properties of these widgets are not available in the HTML widgets.
 
+![HTML widget](/guides/images/users-guide/cockpit/cockpit-widget-html.png)
+
 ### Linear Gauge
 
 The "Linear gauge" widget visualizes data points in form of a linear gauge. Min and max target values are shown on the gauge as well.
@@ -323,6 +325,10 @@ In the "Rotation" widget you can rotate the object by dragging and moving it aro
 The "SCADA" widget provides a graphic representation of the status of a device.
 
 For details on the "SCADA" widget, refer to [Optional Services > Cloud Fieldbus > Monitoring status using the SCADA widget](/guides/users-guide/optional-services/#scada).
+
+> **Info:** All "svg" files are sanitized in order to remove malicious code.
+
+![SCADA widget](/guides/images/users-guide/cockpit/cockpit-widget-scada.png)
 
 ### Silo
 

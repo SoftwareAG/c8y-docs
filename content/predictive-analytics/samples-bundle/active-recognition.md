@@ -18,7 +18,7 @@ In this demo, we would like to showcase the recognition of the human activities 
 * Create and upload an EPL rule to Cumulocity (C8Y) IoT which does the following:
 	* Gathers specific measurements coming from the source device and conducts any necessary pre-processing steps.
 	* Sends the data via REST request to the the Zementis microservice API for processing.
-	* Creates an update once the user changes activities.
+	* Creates an update alert once the user changes activities.
 
 
 ### Prerequisites
@@ -50,10 +50,10 @@ For this particular demo, a phone or a phone-like device needs to be used, so th
 
 Therefore, the documentation has been split up into two parts:
 
-* [Activity recognition using an iPhone](#iPhone)
-* [Activity recognition using a simulated demo device](#demo-device)
+* [Activity recognition using an iPhone](#activity-recognition-iPhone)
+* [Activity recognition using a simulated demo device](#activity-recognition-demo-device)
 
-### <a name="iPhone"></a>Activity recognition using an iPhone
+### <a name="activity-recognition-iPhone"></a>Activity recognition using an iPhone
 
 This section deals with the basic data science steps of creating an activity recognition model with self-collected data. First of all, you need to register your iPhone. Then follow the sections below for collecting data, training the model and using the model to recognize activities via the phone. Note, that the phone for the entire workflow has to be of the same type because the data and sensors for device types may differ.
 
@@ -113,116 +113,88 @@ For each activity type, the name of the activity and the timestamps need to be u
 	import requests
 	import queue
 	import numpy as np
-	 
-	 
-	def add2Data(d, q_accX, q_accY, q_accZ, writer, activity, lag_count, lag):
-	 
-	    acc = d['c8y_Acceleration']   
-	    accelerationX = acc['accelerationX']
-	    accX_Val=accelerationX['value']
-	    accelerationY = acc['accelerationY']
-	    accY_Val=accelerationY['value']
-	    accelerationZ = acc['accelerationZ']
-	    accZ_Val=accelerationZ['value']
-	                 
-	    accX_stdev = np.std(list(q_accX.queue))
-	    accY_stdev = np.std(list(q_accY.queue))
-	    accZ_stdev = np.std(list(q_accZ.queue))
-	         
-	    # push to the queue after calculation so that only previous values are used
-	    q_accX.put(accX_Val)
-	    q_accY.put(accY_Val)
-	    q_accZ.put(accZ_Val)
-	 
-	     
-	    # cutting off the first instances of the training data as the std dev is not accurate for those
-	    if lag_count>=LAG:               
-	        writer.writerow([accX_Val,accY_Val, accZ_Val, accX_stdev, accY_stdev, accZ_stdev, activity])
-	 
-	    # get rid of first elem
-	    q_accX.get()
-	    q_accY.get()
-	    q_accZ.get()
-	 
+	
+	
+	def add2Data(d, writer, activity):
+	
+		acc = d['c8y_Acceleration']	
+		accelerationX = acc['accelerationX']
+		accX_Val=accelerationX['value']
+		accelerationY = acc['accelerationY']
+		accY_Val=accelerationY['value']
+		accelerationZ = acc['accelerationZ']
+		accZ_Val=accelerationZ['value']
+	
+		
+		# cutting off the first instances of the training data as the std dev is not accurate for those			
+		writer.writerow([accX_Val, accY_Val, accZ_Val, activity])
+	
+	
 	# collect config from CONFIG-INI -> change user and pass
 	config = configparser.ConfigParser()
 	config.read('CONFIG.INI')
-	 
+	
 	# use the dates in which a particular acitvity was perfomed
 	DATE_FROM="2019-05-16T13:15:36.000-07:00"
 	DATE_TO="2019-05-16T13:15:59.000-07:00"
-	 
+	
 	# specify the recorded activity
 	ACTIVITY="jump"
-	 
-	# looking back to the last 5 data readings to calculate standard deviation
-	LAG=5
-	 
+	
 	c_measurements_endpoint="/measurement/measurements/"
-	 
+	
 	# maximum page size is 2000; only taking acceleration measurements
 	c_params={"source":config.get("cumulocity", "c_device_source"),"pageSize":"2000", "dateFrom":DATE_FROM, "dateTo":DATE_TO, "fragmentType":"c8y_Acceleration"}
-	 
-	 
+	
+	
 	# get first page of json data measurements from cumulocity
 	c_auth=config.get("cumulocity", "c_user"),config.get("cumulocity", "c_pass")
-	r=requests.get(config.get("cumulocity","c_url")+c_measurements_endpoint,params=c_params, auth=c_auth)
+	r=requests.get(config.get("cumulocity","c_url")+c_measurements_endpoint,params=c_params, auth=c_auth) 
 	print("Start collecting data from: "+r.url)
 	print("Status code: "+str(r.status_code))
-	 
+	
 	# training data file
 	DIR_DATA="data/"
 	DATA_FILE=DIR_DATA+"generated_dataset_"+ACTIVITY+".csv"
-	 
+	
 	 # collect data
 	json_doc=r.json()
 	data=[]
-	 
+	
 	if not os.path.exists(DIR_DATA):
 	    os.makedirs(DIR_DATA)
-	     
+	    
 	with open(DATA_FILE, mode='w') as training_file:
-	    writer = csv.writer(training_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-	    writer.writerow(["accelerationX","accelerationY","accelerationZ","accX_stdDev","accY_stdDev","accZ_stdDev", "activity"])
-	 
-	    q_accX=queue.Queue()
-	    q_accY=queue.Queue()
-	    q_accZ=queue.Queue()
-	     
-	    for i in range(LAG):
-	        q_accX.put(0.0)
-	        q_accY.put(0.0)
-	        q_accZ.put(0.0)
-	         
-	    lag_count=0
-	     
-	    first_arr=json_doc['measurements']   
-	     
-	    print("Page 1.\tCollecting data at: " +first_arr[0]['time'])
-	     
-	    for d in first_arr:   
-	         
-	        add2Data(d, q_accX, q_accY, q_accZ, writer, ACTIVITY, lag_count, LAG)
-	        lag_count+=1        
-	 
-	    # change the range depending on amount of training data required
-	    for i in range(5):
-	        r=requests.get(json_doc['next'], auth=c_auth)
-	        next_doc=r.json()
-	        measure_arr=next_doc['measurements']
-	     
-	        if not measure_arr:
-	            print("Last page reached.")
-	            break
-	     
-	        print("Page "+ str(i+2)+".\tCollecting data at: "+ measure_arr[0]['time'])
-	 
-	        for d in measure_arr:   
-	            add2Data(d, q_accX, q_accY, q_accZ, writer, ACTIVITY, lag_count, LAG)
-	             
-	        json_doc=next_doc
-	 
+		writer = csv.writer(training_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+		writer.writerow(["accelerationX","accelerationY","accelerationZ", "activity"])
+		
+		first_arr=json_doc['measurements']	
+		
+		print("Page 1.\tCollecting data at: " +first_arr[0]['time'])
+		
+		for d in first_arr:	
+			add2Data(d, writer, ACTIVITY)
+			 
+	
+		# change the range depending on amount of training data required
+		for i in range(5):
+			r=requests.get(json_doc['next'], auth=c_auth) 
+			next_doc=r.json()
+			measure_arr=next_doc['measurements']
+		
+			if not measure_arr:
+				print("Last page reached.")
+				break
+		
+			print("Page "+ str(i+2)+".\tCollecting data at: "+ measure_arr[0]['time'])
+	
+			for d in measure_arr:	
+				add2Data(d, writer, ACTIVITY)
+				
+			json_doc=next_doc
+	
 	print("Data written to " + DATA_FILE)
+	
 
 The training data set we collected is attached as *data/training_demo_data_jump.csv* in the attached *ActivityRecognitionDemo.zip*. The data created in the above script will need to be transformed into that same format once data for all activity types is obtained.
 
@@ -236,39 +208,41 @@ New fields are created by calculating the standard deviation of a sample of 5 pr
 The script also contains a 10-fold cross validation and the evaluation against some test data. This data was obtained by having an additional person perform the three activities. The resulting numbers can give an outlook of how good the model can perform when showcasing the demo. The files that we used for testing are contained in the ZIP folder under *data/test_demo_data_jump.csv*. When you use your own test data, follow the same format. The script will also create a graph-based representation of the decision tree as *graph_decision_tree.pdf*.
 
 	createModel.py
+	from sklearn import tree
+	from sklearn.model_selection import cross_val_score, train_test_split
 	from sklearn.pipeline import Pipeline
-	from sklearn.model_selection import cross_val_score
-	import numpy as np
-	import pandas as pd
-	import os
 	from nyoka import skl_to_pmml
-	 
+	from nyoka.preprocessing import Lag
+	import graphviz
+	import numpy as np
+	import os
+	import pandas as pd
 	import warnings
+	
 	warnings.filterwarnings('ignore')
-	 
+	
 	DIR="data/"
 	FILE_NAME="demo_data_jump"
 	CSV=".csv"
 	TRAINING_FILE_NAME=DIR+"training_"+FILE_NAME+CSV
 	TEST_FILE_NAME=DIR+"test_"+FILE_NAME+CSV
 	PMML_FILE_NAME="pmml/generated_"+FILE_NAME+".pmml"
-	 
-	features=['accX_stdDev', 'accY_stdDev', 'accZ_stdDev']
+	
+	features=['accelerationX', 'accelerationY', 'accelerationZ']
 	category='activity'
-	   
+	
 	df_train = pd.read_csv(TRAINING_FILE_NAME, header = 0)
-	original_headers = list(df_train.columns.values)
-	print(original_headers)
+	
 	X=df_train[features]
 	y=df_train[category]
-	 
+	
 	df_test = pd.read_csv(TEST_FILE_NAME, header = 0)
 	X_test=df_test[features]
 	y_test=df_test[category]
-	 
-	 
+	
+	lag = Lag(aggregation="stddev", value=5)
+	
 	# instantiate the decision model object, here we are using a decision tree,
-	from sklearn import tree
 	model_type="d_tree"
 	model=tree.DecisionTreeClassifier(class_weight=None, criterion='entropy', max_depth=3,
 	            max_features=None, max_leaf_nodes=None,
@@ -278,7 +252,8 @@ The script also contains a 10-fold cross validation and the evaluation against s
 	            splitter='best')
 	             
 	# train the model
-	model.fit(X,y)
+	transformed_X = lag.fit_transform(X)
+	model.fit(transformed_X,y)
 	print("Model trained: ", model)
 	 
 	# the following code can be used to show all classifications for the test data
@@ -286,16 +261,21 @@ The script also contains a 10-fold cross validation and the evaluation against s
 	# print("Computed results: ",output_classes)
 	 
 	# compute the cross validation score
-	scores = cross_val_score(model, X, y, cv=10)
+	scores = cross_val_score(model, transformed_X, y, cv=10)
 	print("Accuracy with 10-fold cross validation:\t %0.2f (+/- %0.2f)%%" % (scores.mean(), scores.std() * 2))
 	 
 	# test the model against data that was generated from another user
-	result=model.score(X_test, y_test)
+	transformed_X_test = lag.fit_transform(X_test)
+	result=model.score(transformed_X_test, y_test)
 	print("Accuracy against test data:\t\t {:.4%}".format(result))
 	 
 	# convert model into PMML
 	print("Start converting the model into PMML...")
+	
+	lag_obj = Lag(aggregation="stddev", value=5)
+	
 	pipeline = Pipeline([
+		('lag', lag_obj),
 	    (model_type, model)
 	])
 	pipeline.fit(X,y)
@@ -303,185 +283,13 @@ The script also contains a 10-fold cross validation and the evaluation against s
 	print("Model with name "+PMML_FILE_NAME+" converted into PMML")
 	 
 	#create graph for visualization of the model; this will only work for decision trees
-	import graphviz
 	dot_data = tree.export_graphviz(model, out_file=None, feature_names=features,
 	                     class_names=model.classes_,
 	                     filled=True, rounded=True, 
 	                     special_characters=True) 
 	graph = graphviz.Source(dot_data)
 	graph.render("graph_"+model_type)
-	print("Graph with decision tree is created as graph_" + model_type + ".pdf.")
-	
-#### Add transformations to the model
-
-The model can perform all pre-processing steps required for calculating the standard deviation itself with the help of model transformations. In order to enable this in the model you created in the previous step, add the `LocalTransformations` element after the `Output` element of the TreeModel in the PMML generated from the above step. Also, replace the created `DataDictionary` and `MiningSchema` with the ones below. The below extract is taken from the attached *pmml/ActivitiesDTreeJump.pmml* file.
-
-	extract from pmml/ActivitiesDTreeJump.pmml
-	<?xml version="1.0" encoding="UTF-8"?>
-	<PMML xmlns="http://www.dmg.org/PMML-4_3" version="4.3Ext">
-	    <Header copyright="Copyright (c) 2018 Software AG" description="Default description">
-	        <Timestamp>2019-03-26 12:01:45.955350</Timestamp>
-	    </Header>
-	...
-	    <DataDictionary numberOfFields="4">
-	        <DataField name="accelerationX" optype="continuous" dataType="double" />
-	        <DataField name="accelerationY" optype="continuous" dataType="double" />
-	        <DataField name="accelerationZ" optype="continuous" dataType="double" />
-	        <DataField name="activity" optype="categorical" dataType="string">
-	            <Value value="run"/>
-	            <Value value="sit"/>
-	            <Value value="jump"/>
-	        </DataField>
-	    </DataDictionary>
-	    <TreeModel modelName="DecisionTreeModel" functionName="classification" missingValuePenalty="1.0">
-	        <MiningSchema>
-	       <MiningField name="accelerationX" usageType="active" optype="continuous" />
-	        <MiningField name="accelerationY" usageType="active" optype="continuous" />
-	        <MiningField name="accelerationZ" usageType="active" optype="continuous" />
-	        <MiningField name="activity" usageType="target" optype="categorical"/>
-	        </MiningSchema>
-	        <Output>
-	            <OutputField name="probability_run" optype="continuous" dataType="double" feature="probability" value="run"/>
-	            <OutputField name="probability_sit" optype="continuous" dataType="double" feature="probability" value="sit"/>
-	            <OutputField name="probability_jump" optype="continuous" dataType="double" feature="probability" value="jump"/>
-	            <OutputField name="predicted_activity" optype="categorical" dataType="string" feature="predictedValue"/>
-	        </Output>
-	       <LocalTransformations>
-	            <DerivedField name="accX_stdDev" optype="continuous" dataType="double">
-	                <Apply function="sqrt">
-	                    <Apply function="/">
-	                        <Apply function="+">
-	                            <Apply function="pow">
-	                                <Apply function="-">
-	                                    <Lag field="accelerationX" n="1" />
-	                                    <Lag field="accelerationX" n="5" aggregate="avg" />
-	                                </Apply>
-	                                <Constant dataType="integer">2</Constant>
-	                            </Apply>
-	                            <Apply function="pow">
-	                                <Apply function="-">
-	                                    <Lag field="accelerationX" n="2" />
-	                                    <Lag field="accelerationX" n="5" aggregate="avg" />
-	                                </Apply>
-	                                <Constant dataType="integer">2</Constant>
-	                            </Apply>
-	                            <Apply function="pow">
-	                                <Apply function="-">
-	                                    <Lag field="accelerationX" n="3" />
-	                                    <Lag field="accelerationX" n="5" aggregate="avg" />
-	                                </Apply>
-	                                <Constant dataType="integer">2</Constant>
-	                            </Apply>
-	                            <Apply function="pow">
-	                                <Apply function="-">
-	                                    <Lag field="accelerationX" n="4" />
-	                                    <Lag field="accelerationX" n="5" aggregate="avg" />
-	                                </Apply>
-	                                <Constant dataType="integer">2</Constant>
-	                            </Apply>
-	                            <Apply function="pow">
-	                                <Apply function="-">
-	                                    <Lag field="accelerationX" n="5" />
-	                                    <Lag field="accelerationX" n="5" aggregate="avg" />
-	                                </Apply>
-	                                <Constant dataType="integer">2</Constant>
-	                            </Apply>
-	                        </Apply>
-	                        <Constant dataType="double">5.0</Constant>
-	                    </Apply>
-	                </Apply>
-	            </DerivedField>
-	            <DerivedField name="accY_stdDev" optype="continuous" dataType="double">
-	                <Apply function="sqrt">
-	                    <Apply function="/">
-	                        <Apply function="+">
-	                            <Apply function="pow">
-	                                <Apply function="-">
-	                                    <Lag field="accelerationY" n="1" />
-	                                    <Lag field="accelerationY" n="5" aggregate="avg" />
-	                                </Apply>
-	                                <Constant dataType="integer">2</Constant>
-	                            </Apply>
-	                            <Apply function="pow">
-	                                <Apply function="-">
-	                                    <Lag field="accelerationY" n="2" />
-	                                    <Lag field="accelerationY" n="5" aggregate="avg" />
-	                                </Apply>
-	                                <Constant dataType="integer">2</Constant>
-	                            </Apply>
-	                            <Apply function="pow">
-	                                <Apply function="-">
-	                                    <Lag field="accelerationY" n="3" />
-	                                    <Lag field="accelerationY" n="5" aggregate="avg" />
-	                                </Apply>
-	                                <Constant dataType="integer">2</Constant>
-	                            </Apply>
-	                            <Apply function="pow">
-	                                <Apply function="-">
-	                                    <Lag field="accelerationY" n="4" />
-	                                    <Lag field="accelerationY" n="5" aggregate="avg" />
-	                                </Apply>
-	                                <Constant dataType="integer">2</Constant>
-	                            </Apply>
-	                            <Apply function="pow">
-	                                <Apply function="-">
-	                                    <Lag field="accelerationY" n="5" />
-	                                    <Lag field="accelerationY" n="5" aggregate="avg" />
-	                                </Apply>
-	                                <Constant dataType="integer">2</Constant>
-	                            </Apply>
-	                        </Apply>
-	                        <Constant dataType="double">5.0</Constant>
-	                    </Apply>
-	                </Apply>
-	            </DerivedField>
-	            <DerivedField name="accZ_stdDev" optype="continuous" dataType="double">
-	                <Apply function="sqrt">
-	                    <Apply function="/">
-	                        <Apply function="+">
-	                            <Apply function="pow">
-	                                <Apply function="-">
-	                                    <Lag field="accelerationZ" n="1" />
-	                                    <Lag field="accelerationZ" n="5" aggregate="avg" />
-	                                </Apply>
-	                                <Constant dataType="integer">2</Constant>
-	                            </Apply>
-	                            <Apply function="pow">
-	                                <Apply function="-">
-	                                    <Lag field="accelerationZ" n="2" />
-	                                    <Lag field="accelerationZ" n="5" aggregate="avg" />
-	                                </Apply>
-	                                <Constant dataType="integer">2</Constant>
-	                            </Apply>
-	                            <Apply function="pow">
-	                                <Apply function="-">
-	                                    <Lag field="accelerationZ" n="3" />
-	                                    <Lag field="accelerationZ" n="5" aggregate="avg" />
-	                                </Apply>
-	                                <Constant dataType="integer">2</Constant>
-	                            </Apply>
-	                            <Apply function="pow">
-	                                <Apply function="-">
-	                                    <Lag field="accelerationZ" n="4" />
-	                                    <Lag field="accelerationZ" n="5" aggregate="avg" />
-	                                </Apply>
-	                                <Constant dataType="integer">2</Constant>
-	                            </Apply>
-	                            <Apply function="pow">
-	                                <Apply function="-">
-	                                    <Lag field="accelerationZ" n="5" />
-	                                    <Lag field="accelerationZ" n="5" aggregate="avg" />
-	                                </Apply>
-	                                <Constant dataType="integer">2</Constant>
-	                            </Apply>
-	                        </Apply>
-	                        <Constant dataType="double">5.0</Constant>
-	                    </Apply>
-	                </Apply>
-	            </DerivedField>
-	        </LocalTransformations>
-	        <Node id="0" recordCount="1828.0">
-	...
+	print("Graph with decision tree is created as graph_" + model_type + ".pdf.")	
 
 #### Upload the model to Cumulocity
 
@@ -493,20 +301,13 @@ A pre-trained model *ActivitiesDTreeJump.pmml* is also attached for reference. T
 
 For this anomaly detection scenario, we need to use Apama streaming analytics. With Apama streaming analytics, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. This user-defined logic can, e.g. alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
 
-We create an EPL-based monitor file and upload it to Cumulocity. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice and raising an alarm when an anomaly is reported by our machine learning model.
+We create an EPL-based monitor file and upload it to Cumulocity. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice and raising an alarm when any change in activity is reported by our machine learning model.
 
-Instead of creating a new monitor file, the attached *RecognizeActivities.mon* file can be used after making minor adjustments. Open *RecognizeActivities.mon* in a text editor and replace the variables tenant and credentials with the appropriate values. For setting the credentials, follow this example:
-
-Assume your tenant name is "tenant", your username is "me" and your password is "secret". 
-
-1. Go to *http://ostermiller.org/calc/encode.html*, type "tenant/me:secret" into the text area, then click **Encode** in the row "Base 64". The resulting text is "dGVuYW50L21lOnNlY3JldA==". 
-1. Use "Basic dGVuYW50L21lOnNlY3JldA==" as value for credentials. 
-1. Additionally set the deviceId variable with the ID your registered device, same as `c_device_source` in the *CONFIG.INI* file mentioned above.
-1. Save your changes and upload this file to your tenant via the **Own Applications** page of the Administration application in Cumulocity. 
+Instead of creating a new monitor file, the attached *RecognizeActivities.mon* file can be used after making minor adjustments. Open *RecognizeActivities.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device, same as `c_device_source` in the *CONFIG.INI* file mentioned above. Save your changes and upload this file to your tenant via the **Own Applications** page of the Administration application in Cumulocity.
 
 See [Administration > Managing applications > Own applications](/guides/users-guide/administration#uploading-cep-rules) in the User guide for details on uploading Apama monitor files.
 
-	RecognizeActivities.mon
+	using com.apama.correlator.Component;
 	using com.apama.cumulocity.Alarm;
 	using com.apama.cumulocity.Measurement;
 	using com.apama.cumulocity.FindAlarm;
@@ -515,150 +316,250 @@ See [Administration > Managing applications > Own applications](/guides/users-gu
 	using com.apama.cumulocity.FindManagedObjectResponse;
 	using com.apama.cumulocity.FindManagedObjectResponseAck;
 	using com.apama.cumulocity.FindManagedObject;
+	using com.softwareag.connectivity.httpclient.HttpOptions;
 	using com.softwareag.connectivity.httpclient.HttpTransport;
 	using com.softwareag.connectivity.httpclient.Request;
 	using com.softwareag.connectivity.httpclient.Response;
 	using com.apama.json.JSONPlugin;
-	  
+	 
 	monitor RecognizeActivities {
-	      
-	    // Please replace with your own tenant and basic auth credentials for that tenant
-	    string tenant := "tenantName.cumulocity.com";
-	    string credentials := "myBasicAuthCredentials";
-	      
+		
 	    // Replace this value with your device id.
 	    string deviceId := "";
-	          
+	         
 	    // Model to be used for recognizing activities
-	    string modelName := "ActivitiesDTreeJump";
-	      
-	    //counter to exclude first five readings
-	    integer counter := 0;
+	    string modelName := "DecisionTreeClassifier";
 	     
+	    //counter to exclude first five readings
+	    integer counter := 0; 
+	    
 	    // counter to include first five detections for the same activity
 	    integer similarActivityCount := 0;
-	     
-	    // threshold value for any activity to be predicted consecutively
-	    integer thresholdValueForDeterminingActivity := 5;
-	     
-	    //initializing activity tracker flags to 'idle state'
-	    string lastActivity := "idle state";
-	    string referenceActivity := "idle state";
-	     
-	     
-	    constant string ALARM_TYPE := "ActivityRecognitionAlarm";
-	     
+		
+		// threshold value for any activity to be predicted consecutively
+		integer thresholdValueForDeterminingActivity := 5; 
+	    
+		//initializing activity tracker flags to 'idle state'
+		string lastActivity := "idle state";
+		string referenceActivity := "idle state";
+		
+		CumulocityRequestInterface cumulocity;
+		
+		constant string ALARM_TYPE := "ActivityRecognitionAlarm";
+		
 	    action onload() {
-	           listenAndActOnMeasurements();
+	    	cumulocity := CumulocityRequestInterface.connectToCumulocity();
+	        listenAndActOnMeasurements();
 	    }
-	   
+	  
 	    action listenAndActOnMeasurements() {
 	        monitor.subscribe(Measurement.CHANNEL);
 	        monitor.subscribe(FindAlarmResponse.CHANNEL);
-	         
-	        on all Measurement(source = deviceId) as m {       
-	                          
+	        
+	        on all Measurement(source = deviceId) as m {        
+	                         
 	            if(m.measurements.hasKey("c8y_Acceleration")){
-	                log "Received Measurement from C8Y - "+ m.measurements.toString();
-	                //Gather the data
-	                string record := JSONPlugin.toJSON(gatherData(m));
-	                log "Sending record to zementis.";
-	                sendRequestToZementisMicroservice(record);
+	            	log "Received Measurement from C8Y.";
+	            	//Gather the data
+	                string record := convertMeasurementToRecord(m);
+	                log "Sending record to zementis - "+ record;
+	                Request zementisRequest := cumulocity.createRequest("GET", "/service/zementis/apply/"+modelName, any());
+			        zementisRequest.setQueryParameter("record", record);
+			        zementisRequest.execute(responseHandler);
+			        log "EPL execution completed.";	
 	            }
-	 
-	            log "EPL execution completed.";
-	        }
+	        } 
 	    }
-	      
-	    action gatherData(Measurement m) returns any {
-	        any json:= new dictionary<string,float>;
-	        json.setField("accelerationX", m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationX").value);
-	        json.setField("accelerationY", m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationY").value);
-	        json.setField("accelerationZ", m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationZ").value);
-	        return json;
-	    }
-	   
-	    action sendRequestToZementisMicroservice(string record) {
-	        string encodedRecord := record.replaceAll("\"","%22").replaceAll("{","%7B").replaceAll("}","%7D");
-	          
-	        // Create a client
-	        HttpTransport httpClient := HttpTransport.getOrCreate(tenant,80);
-	          
-	        // Create the request
-	        Request httpRequest := httpClient.createGETRequest("/service/zementis/apply/"+modelName+"?record=" + encodedRecord);
-	        httpRequest.setHeader("Authorization",credentials);
-	                  
-	        //Send the request
-	        httpRequest.execute(responseHandler);
-	    }
-	  
-	      
-	    action responseHandler(Response apiResponse) {     
+	     
+	    action convertMeasurementToRecord(Measurement m) returns string
+	    {
+	        dictionary<string, any> json := {};
+	       	json["accelerationX"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationX").value;
+	    	json["accelerationY"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationY").value;
+	    	json["accelerationZ"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationZ").value;
+	        return JSONPlugin.toJSON(json);
+	    } 
+	     
+	    action responseHandler(Response apiResponse) {  	
 	        integer statusCode := apiResponse.statusCode;
 	        log "Zementis responded with status -" + statusCode.toString();
-	         
+	        
 	        // Ignore first 5 records and then starting checking the outputs for 200 responses.
 	        // First 5 records need to be cached by Zementis Server. Hence send it out but ignore the incoming response.
 	        if(counter >= 5 and statusCode = 200) {
-	            string currentActivity := apiResponse.payload.getSequence("outputs")[0].getEntry("predicted_activity").valueToString();
-	            log "Last activity was : " + lastActivity + ", Current activity is : " + currentActivity + ", Reference activity is : "+ referenceActivity;
-	                 
-	            if (currentActivity =  referenceActivity) {
-	                similarActivityCount := similarActivityCount + 1;
-	                log "Similarity count is : "+ similarActivityCount.toString();
-	            }
-	            else {
-	                referenceActivity := currentActivity;
-	                similarActivityCount := 1;
-	                log "Similarity count is : "+ similarActivityCount.toString();
-	            }
-	             
-	            // Hold on till you get 5 occurences of the same activity and for 6th activity onwards keep ignoring if its the same activity.
-	            if (similarActivityCount = thresholdValueForDeterminingActivity and lastActivity != referenceActivity){
-	                string alarmMessage := "User switched activity from '" + lastActivity + "' to '" + referenceActivity + "'.";
-	                 
-	                clearOldAlarmAndSendNewAlarm(alarmMessage);
-	                 
-	                // Overwrite the last activity with the last activity so that it doesn't generate duplicate alarms for the same activity.
-	                lastActivity := referenceActivity;
-	            }
-	        }
+		        string currentActivity := apiResponse.payload.getSequence("outputs")[0].getEntry("predicted_activity").valueToString();
+		        log "Last activity was : " + lastActivity + ", Current activity is : " + currentActivity + ", Reference activity is : "+ referenceActivity;
+		            
+		        if (currentActivity =  referenceActivity) {
+		        	similarActivityCount := similarActivityCount + 1;
+		        	log "Similarity count is : "+ similarActivityCount.toString();
+		        }
+		        else {
+		        	referenceActivity := currentActivity;
+		        	similarActivityCount := 1;
+		        	log "Similarity count is : "+ similarActivityCount.toString();
+		        }
+		        
+		        // Hold on till you get 5 occurences of the same activity and for 6th activity onwards keep ignoring if its the same activity.
+				if (similarActivityCount = thresholdValueForDeterminingActivity and lastActivity != referenceActivity){
+					string alarmMessage := "User switched activity from '" + lastActivity + "' to '" + referenceActivity + "'.";
+					
+					clearOldAlarmAndSendNewAlarm(alarmMessage);
+					
+					// Overwrite the last activity with the last activity so that it doesn't generate duplicate alarms for the same activity.
+					lastActivity := referenceActivity;
+				}
+		    }
 	        counter := counter + 1;
 	    }
-	     
+	    
 	    action createNewAlarm(string alarmMessage) {
-	        send Alarm("", ALARM_TYPE, deviceId, currentTime,
-	                   alarmMessage, "ACTIVE", "CRITICAL", 1, new dictionary<string,any>) to Alarm.CHANNEL;
-	        log "Alarm added as - "+alarmMessage;
+	    	send Alarm("", ALARM_TYPE, deviceId, currentTime,
+			           alarmMessage, "ACTIVE", "CRITICAL", 1, new dictionary<string,any>) to Alarm.CHANNEL;
+			log "Alarm added as - "+alarmMessage;
 	    }
-	     
+	    
 	    action clearOldAlarmAndSendNewAlarm(string alarmMessage) {
-	            integer reqId:= integer.getUnique();
-	            send FindAlarm(reqId, {"source": deviceId, "status": "ACTIVE", "type": ALARM_TYPE}) to FindAlarm.CHANNEL;
-	            //only if old alarm is found, clear it
-	            on FindAlarmResponse(reqId=reqId) as alarmResponse and not FindAlarmResponseAck(reqId=reqId) {
-	                send Alarm(alarmResponse.id, ALARM_TYPE, deviceId, currentTime, alarmResponse.alarm.text,
-	                            "CLEARED", alarmResponse.alarm.severity, 1, new dictionary<string, any>) to Alarm.CHANNEL;
-	                log "Old Alarm cleared: " + alarmResponse.alarm.text;
+		    	integer reqId:= integer.getUnique();
+		        send FindAlarm(reqId, {"source": deviceId, "status": "ACTIVE", "type": ALARM_TYPE}) to FindAlarm.CHANNEL;
+		        //only if old alarm is found, clear it
+		        on FindAlarmResponse(reqId=reqId) as alarmResponse and not FindAlarmResponseAck(reqId=reqId) {
+		            send Alarm(alarmResponse.id, ALARM_TYPE, deviceId, currentTime, alarmResponse.alarm.text,
+		                        "CLEARED", alarmResponse.alarm.severity, 1, new dictionary<string, any>) to Alarm.CHANNEL;
+		            log "Old Alarm cleared: " + alarmResponse.alarm.text;
+		        }
+		        reqId:= integer.getUnique();
+		        // now create a new alarm
+		        send FindAlarm(reqId, {"source": deviceId, "status": "ACTIVE", "type": ALARM_TYPE}) to FindAlarm.CHANNEL;
+		        on FindAlarmResponseAck(reqId=reqId){
+		        	//Now create new alarm
+		            createNewAlarm(alarmMessage); 
+		        }
+		}
+	    
+	    /** Cumulocity Request Interface.
+	    *
+	    * This is for making generic REST requests to other
+	    * Cumulocity microservices with JSON payloads.
+	    */
+	   event CumulocityRequestInterface
+	   {
+	      /** @private */
+	      HttpTransport transport;
+	       
+	      /**
+	      * Allows configuration of a HTTPTransport with
+	      * Cumulocity-specific configuration details.
+	      *
+	      * @returns The instance of the event that contains a transport
+	      */
+	      static action connectToCumulocity() returns CumulocityRequestInterface
+	      {
+	         string baseUrl := "";
+	         string basePath := "";
+	         string host := "";
+	         integer port := 0;
+	         string user := "";
+	         string password := "";
+	         boolean https := true;
+	         string tlsFile := "";
+	    
+	         dictionary<string, string> config := {};
+	         dictionary<string, string> envp := Component.getInfo("envp");
+	       
+	          
+	         if envp.hasKey("C8Y_BASEURL") and envp["C8Y_BASEURL"] != "" { // Running internal
+	            baseUrl := envp["C8Y_BASEURL"];
+	             
+	            user := envp["C8Y_TENANT"] + "/" + envp["C8Y_USER"];
+	            password :=envp["C8Y_PASSWORD"];
+	         }
+	         else { // Get the settings from the config properties when running remotely
+	            string k;
+	            dictionary<string, string> props := Component.getConfigProperties();
+	            for k in props.keys() {
+	               if (k = "CUMULOCITY_SERVER_URL") {
+	                  baseUrl := props[k];
+	               }
+	               else if (k = "CUMULOCITY_USERNAME"){
+	                  user := props[k];
+	               }
+	               else if (k = "CUMULOCITY_PASSWORD"){
+	                  password := props[k];
+	               }
+	               else if (k = "CUMULOCITY_TLS_CERT_AUTH_FILE"){
+	                  tlsFile := props[k];
+	               }
+	            }       
+	         }
+	    
+	         if baseUrl.find("/") < 0 {
+	            baseUrl := baseUrl + "/";
+	         }
+	      
+	         // Check if the baseUrl starts with either http or https
+	         if baseUrl.length()>=7 and baseUrl.substring(0,7).toLower() = "http://"{
+	            https := false;
+	            baseUrl := baseUrl.substring(7, baseUrl.length());
+	         }
+	         else if baseUrl.length()>=8 and baseUrl.substring(0,8).toLower() = "https://"{
+	            https := true;
+	            baseUrl := baseUrl.substring(8, baseUrl.length());
+	         }
+	         // Otherwise assume HTTPS and that the URL does not have such a prefix as http or https
+	    
+	         basePath := baseUrl.replace("[^/]*(/.*)?", "$1");
+	         host := baseUrl.replace("(?:(.*):|(.*)/|(.*)).*", "$1$2$3");
+	         port := baseUrl.replace("[^:]*:([0-9]*).*", "$1").toInteger();
+	         if (port = 0){
+	            if https = true{
+	               port := 443;
 	            }
-	            reqId:= integer.getUnique();
-	            // now create a new alarm
-	            send FindAlarm(reqId, {"source": deviceId, "status": "ACTIVE", "type": ALARM_TYPE}) to FindAlarm.CHANNEL;
-	            on FindAlarmResponseAck(reqId=reqId){
-	                //Now create new alarm
-	                createNewAlarm(alarmMessage);
+	            else{
+	               port := 80;
 	            }
-	    }
+	         }
+	          
+	         config := {
+	            HttpTransport.CONFIG_USERNAME:user,
+	            HttpTransport.CONFIG_PASSWORD:password,
+	            HttpTransport.CONFIG_AUTH_TYPE:"HTTP_BASIC",
+	            HttpTransport.CONFIG_BASE_PATH:basePath
+	         };
+	          
+	         if https = true{
+	            config.add(HttpTransport.CONFIG_TLS,"true");
+	            config.add(HttpTransport.CONFIG_TLS_CERT_AUTH_FILE,tlsFile);
+	            config.add(HttpTransport.CONFIG_TLS_ACCEPT_UNRECOGNIZED_CERTS,"true");
+	         }
+	          
+	          
+	         log config.toString() at DEBUG;
+	         return CumulocityRequestInterface(HttpTransport.getOrCreateWithConfigurations(host, port, config));
+	      }
+	       
+	      /**
+	      * Allows creation of a request on a transport that
+	      * has been configured for a Cumulocity connection.
+	      *
+	      * @param method The type of HTTP request, for example "GET".
+	      * @param path A specific path to be appended to the request.
+	      * @param payload A dictionary of elements to be included in the request.
+	      */
+	      action createRequest(string method, string path, any payload) returns Request
+	      { 
+	         return transport.createRequest(method, path, payload, new HttpOptions);
+	      }
+	   }
 	}
-
 
 #### Classify activities
 
 Now that you have all the pieces together, you can try to recognize change in activity patterns with your phone. You could sit down, start jumping or running along with your mobile phone.
 
-You should be able to see alarms being generated from your device which will be visible under the dashboard of your device in the Device Management application.
+You should be able to see alarms being generated from your device which will be visible under the **Info** page of your device in the Device Management application.
 
-### <a name="demo-device"></a>Activity recognition using a demo device
+### <a name="activity-recognition-demo-device"></a>Activity recognition using a demo device
 
 A fully functional demo can be prepared with the help of a demo device. For this, use the artefacts provided as part of the *ActivityRecognitionDemo.zip* file.
 
@@ -694,16 +595,9 @@ Once registered, try to get the device ID by looking up your device on the **All
 
 1. Upload the attached model *ActivitiesDTreeJump.pmml* to Cumulocity. To upload the model to Cumulocity, follow the steps described in [Predictive Analytics application > Managing models](/guides/predictive-analytics/web-app/#managing-models).
 
-2. Download the *RecognizeActivities.mon* file, open it in a text editor and replace the variables tenant and credentials with the appropriate values. For setting the credentials, use the following example:
+2. Download the *RecognizeActivities.mon* file, open it in a text editor and replace the `deviceId` variable with the ID of your registered device, same as `c_device_source` in the *CONFIG.INI* file mentioned above.
 
-	Assume your tenant name is "tenant", your username is "me" and your password is "secret". 
-
-	* Go to *http://ostermiller.org/calc/encode.html*, type "tenant/me:secret" into the text area, then click **Encode** in the row "Base 64". The resulting text is "dGVuYW50L21lOnNlY3JldA==". 
-	* Use "Basic dGVuYW50L21lOnNlY3JldA==" as value for credentials. 
-	* Additionally set the deviceId variable with the ID your registered device, same as `c_device_source` in the *CONFIG.INI* file mentioned above.
-
-
-3. Save your changes and upload this file to your tenant via the **Own Applications** page of the Administration application in Cumulocity. See [Administration > Managing applications > Own applications](/guides/users-guide/administration#uploading-cep-rules) in the User guide for details on uploading Apama monitor files.
+3. Save your changes and upload this monitor file to your tenant via the **Own Applications** page of the Administration application in Cumulocity. See [Administration > Managing applications > Own applications](/guides/users-guide/administration#uploading-cep-rules) in the User guide for details on uploading Apama monitor files.
 
 
 #### Classify activities

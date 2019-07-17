@@ -48,10 +48,10 @@ For this particular demo, a phone or a phone-like device needs to be used, so th
 
 Therefore, the documentation has been split up into two parts:
 
-* [Anomaly detection using an Android phone](#android-phone)
-* [Anomaly detection using a simulated demo device](#demo-device)
+* [Anomaly detection using an Android phone](#anomaly-detection-android-phone)
+* [Anomaly detection using a simulated demo device](#anomaly-detection-demo-device)
 
-### <a name="android-phone"></a>Anomaly detection using an Android phone
+### <a name="anomaly-detection-android-phone"></a>Anomaly detection using an Android phone
 
 This section deals with the basic data science steps of creating an anomaly detection model with self-collected data. First of all, you need to register your Android phone. Then follow the sections below for collecting data, training the model and using the model to detect anomalies via the phone. Note, that the phone for the entire workflow has to be of the same type because the data and sensors for device types may differ.
 
@@ -401,7 +401,7 @@ Now that you have all the pieces together, you can try to generate an anomaly. T
 
 You should be able to see alarms being generated from your device which will be visible under the **Alarms** page of the Device Management application.
 
-### <a name="demo-device"></a>Anomaly detection using a demo device
+### <a name="anomaly-detection-demo-device"></a>Anomaly detection using a demo device
 
 A fully functional demo can be prepared with the help of a demo device. For this, use the artefacts provided as part of the *AnomalyDetectionDemo.zip* file.
 

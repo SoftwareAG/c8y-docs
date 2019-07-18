@@ -20,7 +20,6 @@ For interacting with the Cumulocity backend you can create an event on the respe
 |Alarms|AlarmCreated<br/>AlarmUpdated|CreateAlarm<br/>UpdateAlarm|This group of events represents creation or modification of a single Alarm.|
 |Emails|*(not used)*|SendEmail<br/>SendDashboard|This group of events represents sending of an email.|
 |SMS|*(not used)*|SendSms|This group of events represents sending of a SMS.|
-|Text-to-speech|*(not used)*|SendSpeech|This group of events represents initializing of a phone call.|
 |HTTP|ResponseReceived|SendReqeust|This group of events represents sending http requests to external services.|
 |Export|*(not used)*|SendExport|This group of events represents generating emails with exported data.
 

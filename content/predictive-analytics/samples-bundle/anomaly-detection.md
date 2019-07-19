@@ -21,7 +21,7 @@ Capturing anomalous events through the sensor data of a mobile device on an IoT 
 
 ### Prerequisites
 
-[Download the AnomalyDetectionDemo.zip](https://iwiki.eur.ad.sag/display/RNDZEM/Anomaly+Detection+Demo+Instructions?preview=/576597876/585434376/AnomalyDetectionDemo.zip) file which contains demo scripts, training data set, PMML Model and EPL rule.
+[Download the AnomalyDetectionDemo.zip](/guides/files/zementis/AnomalyDetectionDemo.zip) file which contains demo scripts, training data set, PMML Model and EPL rule.
 
 Running the demo scripts requires 
 

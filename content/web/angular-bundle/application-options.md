@@ -43,7 +43,7 @@ c8ycli build --app.contextPath=cockpit2 --app.dynamicOptionsUrl="/apps/public/pu
 
 ### Dynamic fetched options
 
-Using the static options `dynamicOptionsUrl` the application will try to load a json from the specified URL at boot time. In the platform's built-in applications this option is set to `/apps/public/public-options/options.json` as that mechanism to provide instance level and enterprise tenant customization.
+Using the static options `dynamicOptionsUrl` the application will try to load a json from the specified URL at boot time. In the platform's built-in applications this option is set to `/apps/public/public-options/options.json` as that mechanism to provide instance level and enterprise tenant customization.
 As this property is defined statically at build time, it is possible for the application developer to decide if and where from their applications should load the dynamic fetched options at runtime.
 
 ### URL options
@@ -56,59 +56,5 @@ https://<instance domain>/apps/cockpit?dynamicOptionsUrl=/apps/my-options/option
 
 ### Options
 
-Here is a list of the built-in options. As in the end this is just a plain old javascript object this list can be easily extended  with any property a developer might want to include in his applications or extensions.
-
-```typescript
-export class ApplicationOptions {
-  name: string; // To be saved to the server
-  contextPath: string; // To be saved to the server
-  key: string; // To be saved to the server
-  upgrade?: boolean; // true if the application is hybrid using Angular and angularJS simultaneously
-  brandingEntry?: string; // the entry path to the branding
-  tsConfigPath?: string; // path to tsCconfig if typescript is used, defaults to ./tsconfig.json
-  entryModule?: string;
-  indexTemplate?: string; // path to the index.html to be used, otherwise the default will be used
-  dynamicOptionsUrl?: string; // URL to load the dynamic fetched options
-  faviconUrl?: string; // URL for the favicon
-  brandingUrl?: string; // URL for a CSS that will replace the default branding
-  brandingCssVars?: { // Object with properties that will be converted to CSS custom properties
-    [key: string]: string
-  };
-  languages?: { // Object with properties to add and change the languages available in the applications
-    [langCode: string]: {
-      name: string;
-      nativeName: string;
-      url: string;
-    }
-  };
-  localePath?: string; // The folder where the translations po files are loaded from
-  extraCssUrls?: string[]; // URLs for extra CSS files to be loaded at runtime
-  docs?: {
-    noDefault: boolean, // Hide default links to documentation
-    excludeDefault: string[], // The list of regex strings to be matched with the default docs url
-    links: Array<{ // Additional documentation links to be displayed
-        icon: string;
-        label: string;
-        url: string;
-    }>
-  };
-  noAppSwitcher?: boolean; // Hides the application from the application switched (saved to the server)
-  globalTitle?: string; // HTML page title
-  hidePowered?: boolean; // Hide powered by at the bottom of the navigator
-  supportUrl?: boolean | string; // URL for support link
-  supportUserString?: string;
-  rightDrawer?: boolean; // Show or hide the right drawer
-  hideNavigator?: boolean; // Show or hide the navigator
-  tabsHorizontal?: boolean;  // Show tabs horizontally or vertically
-  loginExtraLink?: { // Extra link to add to login screen
-    url: string,
-    label: string
-  };
-  storageLimitationFeatureEnabled?: boolean;
-  companyName?: string; // Company name used to prompt the user about support staff
-  guideHrefTemplate?: string; // The full URL for documentation, by default it's ${docsBaseUrl}${partialUrl}
-  docsBaseUrl?: string; // The base URL for documentation
-  contentSecurityPolicy?: string; // CSP string added to the index.html
-  imports?: string[]; // legacy plugin imports
-}
-```
+The list of built-in options can be found [here](http://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html).
+This can be easily extended with any properties a developer might want to include in their application or extension.

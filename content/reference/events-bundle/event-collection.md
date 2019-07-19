@@ -201,7 +201,7 @@ The DELETE method allows for deletion of event collections. Applicable query par
 |Host|{{hostname}}
 
 ```http
-     DELETE: /event/events....
+     DELETE: <<url>>/event/events....
 ```
 #### Example response
 

@@ -12,23 +12,40 @@ Every event can have one binary attached.
 
 Required role: ROLE\_EVENT\_READ
 
-Example request:
+#### Example request
 
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Host|{{hostname}} 
+
+```http
     GET <<url>>/event/events/<<eventId>>/binaries
-    Authorization: Basic <<auth>>
-    
-Example response when binary exists:
+``` 
+#### Example response
 
-    HTTP/1.1 200 OK
-    Content-Type: <<content-type>>
-    Content-Disposition: attachment; filename=”file.txt”
-    <<content-body>>
+Response when binary exists:
 
-Response when binary doesn't exists or is only partially uploaded or when event doesn't exist
+|HEADERS||
+|:---|:---|
+|Content-Type|application/vnd.com.nsn.cumulocity.event+json;ver=...
+|Content-Disposition|attachment; filename=”file.txt”|
 
-    HTTP/1.1 404 OK
-    <<error-message>>
-    
+```http
+HTTP/1.1
+200 OK
+
+<<content-body>>
+```
+
+Response when binary doesn't exists or is only partially uploaded or when event doesn't exist:
+
+```http
+HTTP/1.1 
+404 OK
+
+<<error-message>>
+```
 
 ### POST - Upload a binary
 
@@ -36,45 +53,65 @@ Using POST method it is possible to upload binary file as attachment to Event. S
 
 Required role: ROLE\_EVENT\_ADMIN
 
-Example request:
+#### Example request
 
-    POST <<url>>/event/events/<<eventId>>/binaries
-    Content-Type: <<content-type>>
-    Content-Length: <<content-lenght>>
-    Authorization: Basic <<auth>>
-    <<content-body>>
-    
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Host|{{hostname}} 
+
+```http
+POST <<url>>/event/events/<<eventId>>/binaries
+```    
+#### Example response
+
 Successful response:
-    
-    HTTP/1.1 201 Created
-    Location: <<url>>/event/events/<<eventId>>/binaries
-    Content-Type: application/vnd.com.nsn.cumulocity.event+json
-    {
-      "self”: “<<url>>/event/binaries/<<eventId>>”,
-      “type”: “<<content-type>>”,
-      “source”: <<eventId>>,
-      “length”: <<content-lenght>>
-    }
+
+|HEADERS||
+|:---|:---|
+|Content-Type|application/vnd.com.nsn.cumulocity.event+json;ver=...
+  
+```http
+HTTP/1.1 
+201 Created
+
+{
+  "self”: “<<url>>/event/binaries/<<eventId>>”,
+  “type”: “<<content-type>>”,
+  “source”: <<eventId>>,
+  “length”: <<content-lenght>>
+}
+```
 
 Response when event doesn't exist:
 
-    HTTP/1.1 404 NOT FOUND
-    <<error-message>>
+```http
+HTTP/1.1 
+404 NOT FOUND
     
+<<error-message>>
+```
+
 Response when binary already exists:
- 
-    HTTP/1.1 409 CONFLICT
-    <<error-message>>
+
+```http
+HTTP/1.1 
+409 CONFLICT
+
+<<error-message>>
+```
 
 Corresponding event will have fragment:
 
-    {
-      ...
-      “c8y_IsBinary”:  {
-        “type”: “<<content-type>>”
-      }
-      ...
-    }
+```http
+{
+  ...
+  “c8y_IsBinary”:  {
+    “type”: “<<content-type>>”
+  }
+  ...
+}
+```
 
 ### POST multipart/form-data - Upload a binary
 
@@ -82,31 +119,43 @@ Uploading functionality is also available using multipart request.
 
 Required role: ROLE\_EVENT\_ADMIN
 
-Example request:
+#### Example request
 
-    POST <<url>>/event/events/<<eventId>>/binaries
-    Content-Type: multipart/form-data; boundary=--myBoundary
-    Authorization: Basic <<auth>>
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Host|{{hostname}} 
+|Content-Type|multipart/form-data; boundary=--myBoundary
+
+```http
+POST <<url>>/event/events/<<eventId>>/binaries
     
-    --myBoundary
-    Content-Type: application/octet-stream
-    Content-Disposition: form-data; name="file.txt"
-    
-    <<content-body>>
-    --myBoundary--
+--myBoundary
+Content-Type: application/octet-stream
+Content-Disposition: form-data; name="file.txt"
+
+<<content-body>>
+--myBoundary--
+```
     
 Successful response:
 
-    HTTP/1.1 201 Created
-    Location: <<url>>/event/events/<<eventId>>/binaries
-    Content-Type: application/vnd.com.nsn.cumulocity.event+json
-    {
-      "self”: “<<url>>/event/events/<<eventId>>/binaries”,
-      “type”: “application/octet-stream”,
-      “name”: “file.txt”,
-      “source”: <<eventId>>,
-      "length": <<lenght>>
-    }
+|HEADERS||
+|:---|:---|
+|Content-Type|application/vnd.com.nsn.cumulocity.event+json;ver=...
+
+```http
+HTTP/1.1 
+201 Created
+
+{
+  "self”: “<<url>>/event/events/<<eventId>>/binaries”,
+  “type”: “application/octet-stream”,
+  “name”: “file.txt”,
+  “source”: <<eventId>>,
+  "length": <<lenght>>
+}
+```
 
 ### POST content-range - Upload a binary
 
@@ -123,95 +172,143 @@ Size of single chunk cannot exceed 5MB.
 
 Required role: ROLE\_EVENT\_ADMIN
     
-Example first chunk request:
+#### Example first chunk request
 
-    POST <<url>>/event/events/<<eventId>>/binaries
-    Authorization: Basic <<auth>>
-    Content-Type: <<content-type>>
-    Content-Length: 100
-    Content-Range: 0-399/*
-    <<content-body>>
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Host|{{hostname}} 
+|Content-Length|100
+|Content-Range|0-399/*
 
-Example response for first chunk:
+```http
+POST <<url>>/event/events/<<eventId>>/binaries
 
-    HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.event+json
-    {
-      "self”: “<<url>>/event/events/<<eventId>>/binaries”,
-      “type”: “<<content-type>>”,
-      “range”: “0-399/*”,
-      “source”: <<eventId>>
-    }
-    
+<<content-body>>
+```
+
+#### Example response for first chunk
+
+|HEADERS||
+|:---|:---|
+|Content-Type|application/vnd.com.nsn.cumulocity.event+json;ver=...
+
+```http
+HTTP/1.1
+200 OK
+
+{
+"self”: “<<url>>/event/events/<<eventId>>/binaries”,
+“type”: “<<content-type>>”,
+“range”: “0-399/*”,
+“source”: <<eventId>>
+}
+```    
 Corresponding event will have fragment:
 
-    {
-      ...
-      “c8y_IsIncompleteBinary”: {
-        “range”: “0-399/*”
-      }
-      ...
-    }
+```http
+{
+  ...
+  “c8y_IsIncompleteBinary”: {
+    “range”: “0-399/*”
+  }
+  ...
+}
+```
     
-Example last request:
+#### Example last request
 
-    POST <<url>>/event/events/<<eventId>>/binaries
-    Authorization: Basic <<auth>>
-    Content-Type: <<content-type>>
-    Content-Length: 100
-    Content-Range: 400-499/500
-    <<content-body>>
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Host|{{hostname}} 
+|Content-Length|100
+|Content-Range|400-499/500
+
+```http
+POST <<url>>/event/events/<<eventId>>/binaries
+```
     
-Example response for last chunk:
+#### Example response for last chunk
 
-    HTTP/1.1 201 Created
-    Location: <<url>>/event/events/<<eventId>>/binaries
-    Content-Type: application/vnd.com.nsn.cumulocity.event+json
-    {
-      "self”: “<<url>>/event/binaries/<<eventId>>”,
-      “type”: “<<content-type>>”,
-      “source”: <<eventId>>,
-      “length”: <<content-lenght>>
-    }
+|HEADERS||
+|:---|:---|
+|Content-Type|application/vnd.com.nsn.cumulocity.event+json;ver=...
+
+```http
+HTTP/1.1 
+201 Created
+
+{
+  "self”: “<<url>>/event/binaries/<<eventId>>”,
+  “type”: “<<content-type>>”,
+  “source”: <<eventId>>,
+  “length”: <<content-lenght>>
+}
+```
 
 ### PUT - Replace existing binary
 
 Required role: ROLE\_EVENT\_ADMIN  
     
-Example request:
+#### Example request
 
-    PUT <<url>>/event/events/<<eventId>>/binaries
-    Content-Type: <<content-type>>
-    Content-Length: <<content-lenght>>
-    Authorization: Basic <<auth>>
-    <<content-body>>
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Host|{{hostname}} 
+
+```http
+PUT <<url>>/event/events/<<eventId>>/binaries
+
+<<content-body>>
+```    
+#### Successful response
     
-Successful response:
-    
-    HTTP/1.1 201 Created
-    Location: <<url>>/event/events/<<eventId>>/binaries
-    Content-Type: application/vnd.com.nsn.cumulocity.event+json
-    {
-      "self”: “<<url>>/event/binaries/<<eventId>>”,
-      “type”: “<<content-type>>”,
-      “source”: <<eventId>>,
-      “length”: <<content-lenght>>
-    }
+|HEADERS||
+|:---|:---|
+|Content-Type|application/vnd.com.nsn.cumulocity.event+json;ver=...
+
+```http
+HTTP/1.1 
+201 Created
+
+{
+  "self”: “<<url>>/event/binaries/<<eventId>>”,
+  “type”: “<<content-type>>”,
+  “source”: <<eventId>>,
+  “length”: <<content-lenght>>
+}
+```
 
 ### DELETE - Delete a binary
 
 Required role: ROLE\_EVENT\_ADMIN
 
-Example request:
+#### Example request
 
     DELETE <<url>>/event/events/<<eventId>>/binaries
     Authorization: Basic <<auth>>
     
-Example response:
+#### Example response
 
-    HTTP/1.1 204 NO CONTENT
-    
-Example response when binary or event doesn't exist
+Request Body: N/A.
 
-    HTTP/1.1 404 NOT FOUND
-    <<error-message>>
+Response Message Body: N/A.
+
+Example response when binary exists:
+
+```http
+HTTP/1.1 
+204 NO CONTENT
+``` 
+
+Example response when binary or event doesn't exist:
+
+```http
+HTTP/1.1
+404 NOT FOUND
+
+<<error-message>>
+```

@@ -14,38 +14,50 @@ layout: redirect
 |time|String|1|Time of the event.|POST: Mandatory PUT: No|
 |text|String|1|Text description of the event.|POST: Mandatory PUT: Optional|
 |source|ManagedObject|1|The ManagedObject that the event originated from, as object containing properties "id", "self", "name", and "type".|POST: Mandatory PUT: No|
-|\*|Object|0..n|Additional properties of the event.|POST: Optional PUT: Optional|
+|\*|Object|0..n|Additional properties of the event.|POST: Optional <br> PUT: Optional|
 
-### GET a representation of an Event
+### GET - Representation of an Event
 
-Response body: Event
+Response body: application/vnd.com.nsn.cumulocity.event+json
 
 Required role: ROLE\_EVENT\_READ
 
-Example request: Retrieve information about an Event
+#### Example request - Retrieve information about an Event
 
-    GET /event/events/<<eventID>>
-     Host: [hostname]
-     Authorization: Basic xxxxxxxxxxxxxxxxxxx
-     Accept: application/vnd.com.nsn.cumulocity.event+json;ver=0.9
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Host|{{hostname}}   
 
-Example response:
+```http
+GET <<url>>/event/events/<<eventID>>    
+```
 
-    HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.event+json;ver=...
-    Content-Length: ...
+#### Example response
 
-    {
-      "id" : "10",
-      "self" : "...",
-      "time" : "2011-09-06T12:03:27.845+02:00",
-      "creationTime" : "2011-09-06T12:03:27.927+02:00",
-      "type" : "com_cumulocity_model_DoorSensorEvent",
-      "text" : "Door sensor was triggered.",
-      "source" : { "id":"12345", "self ": "..." }
-    }
+|HEADERS||
+|:---|:---|
+|Content-Type|application/vnd.com.nsn.cumulocity.event+json;ver=...
 
-### DELETE an Event
+```http
+HTTP/1.1 
+200 OK
+
+{
+  "id" : "10",
+  "self" : "...",
+  "time" : "2011-09-06T12:03:27.845+02:00",
+  "creationTime" : "2011-09-06T12:03:27.927+02:00",
+  "type" : "com_cumulocity_model_DoorSensorEvent",
+  "text" : "Door sensor was triggered.",
+  "source" : {
+ 	"id":"12345", 
+	"self ": "..."
+  }
+}
+```
+
+### DELETE - Delete an Event
 
 Request Body: N/A.
 
@@ -53,12 +65,19 @@ Response Message Body: N/A.
 
 Required role: ROLE\_EVENT\_ADMIN or owner of source object.
 
-Example Request: Delete an event
+#### Example Request - Delete an event
 
-    DELETE /event/events/<<eventID>>
-     Host: [hostname]
-     Authorization: Basic xxxxxxxxxxxxxxxxxxx
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Host|{{hostname}} 
 
-Example Response:
+```http
+DELETE <<url>>/event/events/<<eventID>>
+```
+#### Example Response
 
-    HTTP/1.1  204 NO CONTENT
+```http
+HTTP/1.1
+204 NO CONTENT
+```

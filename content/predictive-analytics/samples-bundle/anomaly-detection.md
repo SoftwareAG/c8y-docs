@@ -27,8 +27,8 @@ Running the demo scripts requires
 
 * prior experience with Python, JSON, REST and understanding of data science processes.
 * familiarity with Cumulocity and its in-built apps.
-* subscription of the Zementis microservice on the tenant.
-* subscription of the Apama microservice on the tenant.
+* subscription of the Zementis microservice and the Predictive Analytics application on the tenant.
+* subscription of the Apama applications on the tenant.
 
 ### Getting Started
 
@@ -290,7 +290,7 @@ You could try out the data you collected yourself as described in the data colle
 
 In order to upload the model to Cumulocity, follow the steps described in [Predictive Analytics application > Managing models](/guides/predictive-analytics/web-app/#managing-models).
 
-A pre-trained model *iforest_demo.pmml* is also attached for reference. This anomaly detection model was trained with the data available in *training_data.csv* mentioned in the section above.
+A pre-trained model *iforest_demo.pmml* is also attached for reference. This anomaly detection model was trained with the data available in *training_data.zip* mentioned in the section above.
 
 #### Create and upload Apama monitor to Cumulocity
 
@@ -529,7 +529,7 @@ Once registered, try to get the device ID by looking up your device on the **All
 #### Upload the model and Apama monitor to Cumulocity
 
 1. Upload the attached model *iforest_demo.pmml* to Cumulocity. To upload the model to Cumulocity, follow the steps described in [Predictive Analytics application > Managing models](/guides/predictive-analytics/web-app/#managing-models).
-2. Download the *attachedDetectAnomalies.mon* file, open it in a text editor and replace the `deviceId` variable with the ID of your registered device, same as c_device_source in the CONFIG.INI file mentioned above.
+2. Download the attached *DetectAnomalies.mon* file, open it in a text editor and replace the `deviceId` variable with the ID of your registered device, same as c_device_source in the CONFIG.INI file mentioned above.
 3. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as a single *.mon file with the Apama-epl application] (/guides/apama/analytics-introduction/#single-mon-file) in the Analytics guide for details on uploading Apama monitor files.
 
 

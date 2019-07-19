@@ -29,8 +29,8 @@ Running the demo scripts requires
 
 * prior experience with Python, JSON, REST and understanding of data science processes.
 * familiarity with Cumulocity and its in-built apps.
-* subscription of the Zementis microservice on the tenant.
-* subscription of the Apama microservice on the tenant.
+* subscription of the Zementis microservice and the Predictive Analytics application on the tenant.
+* subscription of the Apama applications on the tenant.
 
 ### Getting Started
 
@@ -555,7 +555,7 @@ Instead of creating a new monitor file, the attached *RecognizeActivities.mon* f
 
 Now that you have all the pieces together, you can try to recognize change in activity patterns with your phone. You could sit down, start jumping or running along with your mobile phone.
 
-You should be able to see alarms being generated from your device which will be visible under the **Info** page of your device in the Device Management application.
+You should be able to see alarms being generated from your device which will be visible under the **Alarms** tab of your device in the Device Management application.
 
 ### <a name="activity-recognition-demo-device"></a>Activity recognition using a demo device
 

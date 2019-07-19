@@ -298,99 +298,192 @@ For this anomaly detection scenario, we need to use Apama streaming analytics. W
 
 We create an EPL-based monitor file and upload it to Cumulocity. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice and raising an alarm when an anomaly is reported by our machine learning model.
 
-Instead of creating a new monitor file, the attached *DetectAnomalies.mon* file can be used after making minor adjustments. Open *DetectAnomalies.mon* in a text editor and replace the variables tenant and credentials with the appropriate values. For setting the credentials, follow this example:
+Instead of creating a new monitor file, the attached *DetectAnomalies.mon* file can be used after making minor adjustments. Open *DetectAnomalies.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device, same as c_device_source in the CONFIG.INI file mentioned above. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as a single *.mon file with the Apama-epl application] (/guides/apama/analytics-introduction/#single-mon-file) in the Analytics guide for details on uploading Apama monitor files.
 
-Assume your tenant name is "tenant", your username is "me" and your password is "secret". 
-
-1. Go to *http://ostermiller.org/calc/encode.html*, type "tenant/me:secret" into the text area, then click **Encode** in the row "Base 64". The resulting text is "dGVuYW50L21lOnNlY3JldA==". 
-2. Use "Basic dGVuYW50L21lOnNlY3JldA==" as value for credentials. 
-3. Additionally set the deviceId variable with the ID your registered device, same as `c_device_source` in the *CONFIG.INI* file mentioned above.
-4. Save your changes and upload this file to your tenant via the **Own Applications** page of the Administration application in Cumulocity. See [Administration > Managing applications > Own applications](/guides/users-guide/administration#uploading-cep-rules) in the User guide for details on uploading Apama monitor files.
-
-	DetectAnomalies.mon
+	using com.apama.correlator.Component;
 	using com.apama.cumulocity.Alarm;
 	using com.apama.cumulocity.Measurement;
 	using com.apama.cumulocity.FindManagedObjectResponse;
 	using com.apama.cumulocity.FindManagedObjectResponseAck;
 	using com.apama.cumulocity.FindManagedObject;
+	using com.softwareag.connectivity.httpclient.HttpOptions;
 	using com.softwareag.connectivity.httpclient.HttpTransport;
 	using com.softwareag.connectivity.httpclient.Request;
 	using com.softwareag.connectivity.httpclient.Response;
 	using com.apama.json.JSONPlugin;
-	 
+	
 	monitor DetectAnomalies {
-	     
-	    // Please replace with your own tenant and basic auth credentials for that tenant
-	    string tenant := "tenantName.cumulocity.com";
-	    string credentials := "myBasicAuthCredentials";
-	     
-	    // Replace this value with your device id
-	    string deviceId := "";
-	     
-	    // Model to be used for detecting anomalies
-	    string modelName := "iforest";
-	     
+	
+		CumulocityRequestInterface cumulocity;
+		
 	    action onload() {
-	        listenAndActOnMeasurements();
+	    	cumulocity := CumulocityRequestInterface.connectToCumulocity();
+	    	
+	    	// Replace yourDeviceId with the value of your device id
+			listenAndActOnMeasurements("yourDeviceId", "iforest");
 	    }
-	     
-	    action listenAndActOnMeasurements() {
-	        monitor.subscribe(Measurement.CHANNEL);
-	         
-	        on all Measurement(source = deviceId) as m {
-	            if(m.measurements.hasKey("c8y_SignalStrengthWifi") and m.measurements.hasKey("c8y_Acceleration") and m.measurements.hasKey("c8y_Barometer") and m.measurements.hasKey("c8y_Gyroscope") and m.measurements.hasKey("c8y_Luxometer") and m.measurements.hasKey("c8y_Compass")){       
-	                log "Received Measurement from C8Y - "+ m.measurements.toString();
-	                 
-	                //Gather the data
-	                string record := JSONPlugin.toJSON(gatherData(m));
-	                 
-	                log "Sending record to zementis - " + record;
-	                sendRequestToZementisMicroservice(record);
-	                 
-	                log "EPL execution completed.";
-	            }
-	        }
-	    }
-	     
-	    action gatherData(Measurement m) returns any {
-	        any json:= new dictionary<string,float>;
-	        json.setField("rssi", m.measurements.getOrDefault("c8y_SignalStrengthWifi").getOrDefault("rssi").value);
-	        json.setField("accelerationX", m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationX").value);
-	        json.setField("accelerationY", m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationY").value);
-	        json.setField("accelerationZ", m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationZ").value);
-	        json.setField("air_pressure", m.measurements.getOrDefault("c8y_Barometer").getOrDefault("Air pressure").value);
-	        json.setField("gyroX", m.measurements.getOrDefault("c8y_Gyroscope").getOrDefault("gyroX").value);
-	        json.setField("gyroY", m.measurements.getOrDefault("c8y_Gyroscope").getOrDefault("gyroY").value);
-	        json.setField("gyroZ", m.measurements.getOrDefault("c8y_Gyroscope").getOrDefault("gyroZ").value);
-	        json.setField("lux", m.measurements.getOrDefault("c8y_Luxometer").getOrDefault("lux").value);
-	        json.setField("compassX", m.measurements.getOrDefault("c8y_Compass").getOrDefault("compassX").value);
-	        json.setField("compassY", m.measurements.getOrDefault("c8y_Compass").getOrDefault("compassY").value);
-	        json.setField("compassZ", m.measurements.getOrDefault("c8y_Compass").getOrDefault("compassZ").value);
-	        return json;
-	    }
-	  
-	    action sendRequestToZementisMicroservice(string record) {
-	        string encodedRecord := record.replaceAll("\"","%22").replaceAll("{","%7B").replaceAll("}","%7D");
-	         
-	        // Create a client
-	        HttpTransport httpClient := HttpTransport.getOrCreate(tenant,80);
-	         
-	        // Create the request
-	        Request httpRequest := httpClient.createGETRequest("/service/zementis/apply/"+modelName+"?record=" + encodedRecord);
-	        httpRequest.setHeader("Authorization",credentials);
-	                 
-	        //Send the request
-	        httpRequest.execute(responseHandler);
+	    
+	    action listenAndActOnMeasurements(string deviceId, string modelName) {
+	    	monitor.subscribe(Measurement.CHANNEL);
+	    	
+	    	on all Measurement(source = deviceId) as m {
+				if(m.measurements.hasKey("c8y_SignalStrengthWifi") and m.measurements.hasKey("c8y_Acceleration") and m.measurements.hasKey("c8y_Barometer") and m.measurements.hasKey("c8y_Gyroscope") and m.measurements.hasKey("c8y_Luxometer") and m.measurements.hasKey("c8y_Compass")){		
+					log "Received Measurement from C8Y";
+					string record := convertMeasurementToRecord(m);
+					log "Sending record to zementis - " + record;
+			        Request zementisRequest := cumulocity.createRequest("GET", "/service/zementis/apply/"+modelName, any());
+			        zementisRequest.setQueryParameter("record", record);
+			        zementisRequest.execute(ZementisHandler(deviceId).requestHandler);
+			        log "EPL execution completed.";	
+	        	}
+			} 
 	    }
 	 
+	    action convertMeasurementToRecord(Measurement m) returns string
+	    {
+	        dictionary<string, any> json := {};
+	        json["rssi"] := m.measurements.getOrDefault("c8y_SignalStrengthWifi").getOrDefault("rssi").value;
+	       	json["accelerationX"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationX").value;
+	    	json["accelerationY"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationY").value;
+	    	json["accelerationZ"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationZ").value;
+	    	json["air_pressure"] := m.measurements.getOrDefault("c8y_Barometer").getOrDefault("Air pressure").value;
+	    	json["gyroX"] := m.measurements.getOrDefault("c8y_Gyroscope").getOrDefault("gyroX").value;
+	    	json["gyroY"] := m.measurements.getOrDefault("c8y_Gyroscope").getOrDefault("gyroY").value;
+	    	json["gyroZ"] := m.measurements.getOrDefault("c8y_Gyroscope").getOrDefault("gyroZ").value;
+	    	json["lux"] := m.measurements.getOrDefault("c8y_Luxometer").getOrDefault("lux").value;
+	    	json["compassX"] := m.measurements.getOrDefault("c8y_Compass").getOrDefault("compassX").value;
+	    	json["compassY"] := m.measurements.getOrDefault("c8y_Compass").getOrDefault("compassY").value;
+	    	json["compassZ"] := m.measurements.getOrDefault("c8y_Compass").getOrDefault("compassZ").value;
+	        return JSONPlugin.toJSON(json);
+	    }
+	
+	    /** Cumulocity Request Interface.
+	     *
+	     * This is for making generic REST requests to other
+	     * Cumulocity microservices with JSON payloads.
+	     */
+	    event CumulocityRequestInterface
+	    {
+	       /** @private */
+	       HttpTransport transport;
+	        
+	       /**
+	       * Allows configuration of a HTTPTransport with
+	       * Cumulocity-specific configuration details.
+	       *
+	       * @returns The instance of the event that contains a transport
+	       */
+	       static action connectToCumulocity() returns CumulocityRequestInterface
+	       {
+	          string baseUrl := "";
+	          string basePath := "";
+	          string host := "";
+	          integer port := 0;
+	          string user := "";
+	          string password := "";
+	          boolean https := true;
+	          string tlsFile := "";
 	     
-	    action responseHandler(Response apiResponse) {
-	        integer statusCode := apiResponse.statusCode;
-	        log "Zementis responded with status -" + statusCode.toString();
-	        if (statusCode = 200 and apiResponse.payload.getSequence("outputs")[0].getEntry("outlier").valueToString() = "true"){
-	            send Alarm("", "AnomalyDetectionAlarm", deviceId, currentTime,
-	                       "Anomaly detected", "ACTIVE", "CRITICAL", 1, new dictionary<string,any>) to Alarm.CHANNEL;
-	            log "Alarm raised";
+	          dictionary<string, string> config := {};
+	          dictionary<string, string> envp := Component.getInfo("envp");
+	        
+	           
+	          if envp.hasKey("C8Y_BASEURL") and envp["C8Y_BASEURL"] != "" { // Running internal
+	             baseUrl := envp["C8Y_BASEURL"];
+	              
+	             user := envp["C8Y_TENANT"] + "/" + envp["C8Y_USER"];
+	             password :=envp["C8Y_PASSWORD"];
+	          }
+	          else { // Get the settings from the config properties when running remotely
+	             string k;
+	             dictionary<string, string> props := Component.getConfigProperties();
+	             for k in props.keys() {
+	                if (k = "CUMULOCITY_SERVER_URL") {
+	                   baseUrl := props[k];
+	                }
+	                else if (k = "CUMULOCITY_USERNAME"){
+	                   user := props[k];
+	                }
+	                else if (k = "CUMULOCITY_PASSWORD"){
+	                   password := props[k];
+	                }
+	                else if (k = "CUMULOCITY_TLS_CERT_AUTH_FILE"){
+	                   tlsFile := props[k];
+	                }
+	             }       
+	          }
+	     
+	          if baseUrl.find("/") < 0 {
+	             baseUrl := baseUrl + "/";
+	          }
+	       
+	          // Check if the baseUrl starts with either http or https
+	          if baseUrl.length()>=7 and baseUrl.substring(0,7).toLower() = "http://"{
+	             https := false;
+	             baseUrl := baseUrl.substring(7, baseUrl.length());
+	          }
+	          else if baseUrl.length()>=8 and baseUrl.substring(0,8).toLower() = "https://"{
+	             https := true;
+	             baseUrl := baseUrl.substring(8, baseUrl.length());
+	          }
+	          // Otherwise assume HTTPS and that the URL does not have such a prefix as http or https
+	     
+	          basePath := baseUrl.replace("[^/]*(/.*)?", "$1");
+	          host := baseUrl.replace("(?:(.*):|(.*)/|(.*)).*", "$1$2$3");
+	          port := baseUrl.replace("[^:]*:([0-9]*).*", "$1").toInteger();
+	          if (port = 0){
+	             if https = true{
+	                port := 443;
+	             }
+	             else{
+	                port := 80;
+	             }
+	          }
+	           
+	          config := {
+	             HttpTransport.CONFIG_USERNAME:user,
+	             HttpTransport.CONFIG_PASSWORD:password,
+	             HttpTransport.CONFIG_AUTH_TYPE:"HTTP_BASIC",
+	             HttpTransport.CONFIG_BASE_PATH:basePath
+	          };
+	           
+	          if https = true{
+	             config.add(HttpTransport.CONFIG_TLS,"true");
+	             config.add(HttpTransport.CONFIG_TLS_CERT_AUTH_FILE,tlsFile);
+	             config.add(HttpTransport.CONFIG_TLS_ACCEPT_UNRECOGNIZED_CERTS,"true");
+	          }
+	           
+	           
+	          log config.toString() at DEBUG;
+	          return CumulocityRequestInterface(HttpTransport.getOrCreateWithConfigurations(host, port, config));
+	       }
+	        
+	       /**
+	       * Allows creation of a request on a transport that
+	       * has been configured for a Cumulocity connection.
+	       *
+	       * @param method The type of HTTP request, for example "GET".
+	       * @param path A specific path to be appended to the request.
+	       * @param payload A dictionary of elements to be included in the request.
+	       */
+	       action createRequest(string method, string path, any payload) returns Request
+	       { 
+	          return transport.createRequest(method, path, payload, new HttpOptions);
+	       }
+	    }
+	    
+	    event ZementisHandler
+	    {
+	        string deviceId;
+	        action requestHandler(Response zementisResponse)
+	        {
+	            integer statusCode := zementisResponse.statusCode;
+	            log "Zementis responded with status -" + statusCode.toString();
+	            if (statusCode = 200 and <boolean> zementisResponse.payload.getSequence("outputs")[0].getEntry("outlier") = true) {
+	                send Alarm("", "AnomalyDetectionAlarm", deviceId, currentTime,
+	                    "Anomaly detected", "ACTIVE", "CRITICAL", 1, new dictionary<string, any>) to Alarm.CHANNEL;
+	                log "Alarm raised";
+	            }
 	        }
 	    }
 	}
@@ -436,16 +529,8 @@ Once registered, try to get the device ID by looking up your device on the **All
 #### Upload the model and Apama monitor to Cumulocity
 
 1. Upload the attached model *iforest_demo.pmml* to Cumulocity. To upload the model to Cumulocity, follow the steps described in [Predictive Analytics application > Managing models](/guides/predictive-analytics/web-app/#managing-models).
-
-2. Download the *attachedDetectAnomalies.mon* file, open it in a text editor and replace the variables tenant and credentials with the appropriate values. For setting the credentials, use the following example:
-
-	Assume your tenant name is "tenant", your username is "me" and your password is "secret". 
-
-	* Go to *http://ostermiller.org/calc/encode.html*, type "tenant/me:secret" into the text area, then click **Encode** in the row "Base 64". The resulting text is "dGVuYW50L21lOnNlY3JldA==". 
-	* Use "Basic dGVuYW50L21lOnNlY3JldA==" as value for credentials. 
-	* Additionally set the deviceId variable with the ID your registered device, same as `c_device_source` in the *CONFIG.INI* file mentioned above.
-
-3. Save your changes and upload this file to your tenant via the **Own Applications** page of the Administration application in Cumulocity. See [Administration > Managing applications > Own applications](/guides/users-guide/administration#uploading-cep-rules) in the User guide for details on uploading Apama monitor files.
+2. Download the *attachedDetectAnomalies.mon* file, open it in a text editor and replace the `deviceId` variable with the ID of your registered device, same as c_device_source in the CONFIG.INI file mentioned above.
+3. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as a single *.mon file with the Apama-epl application] (/guides/apama/analytics-introduction/#single-mon-file) in the Analytics guide for details on uploading Apama monitor files.
 
 
 #### Trigger an Anomaly Alert

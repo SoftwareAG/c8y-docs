@@ -103,7 +103,7 @@ The following code block contains the data format of the JSON schema that was as
 	    "activity" : "none"
 	}
 
-Data collection can be done by using the below shown and attached script *createData.py*. This Python script connects to the Cumulocity REST measurements endpoint, pulls the data, transforms the values by calculating the standard deviation of the previous 5 sample values and writes it to a CSV file. 
+Data collection can be done by using the below shown and attached script *createData.py*. This Python script connects to the Cumulocity REST measurements endpoint, pulls the data, and writes it to a CSV file. 
 
 For each activity type, the name of the activity and the timestamps need to be updated in the constants ACTIVITY, DATE_FROM and DATE_TO. Note that the format of the data might look slightly different. After the data sets for all activities are created, they can be combined for model training.
 
@@ -299,13 +299,11 @@ A pre-trained model *ActivitiesDTreeJump.pmml* is also attached for reference. T
 
 #### Create and upload Apama monitor to Cumulocity
 
-For this anomaly detection scenario, we need to use Apama streaming analytics. With Apama streaming analytics, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. This user-defined logic can, e.g. alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
+For this active recognition scenario, we need to use Apama streaming analytics. With Apama streaming analytics, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. This user-defined logic can, e.g. alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
 
 We create an EPL-based monitor file and upload it to Cumulocity. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice and raising an alarm when any change in activity is reported by our machine learning model.
 
-Instead of creating a new monitor file, the attached *RecognizeActivities.mon* file can be used after making minor adjustments. Open *RecognizeActivities.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device, same as `c_device_source` in the *CONFIG.INI* file mentioned above. Save your changes and upload this file to your tenant via the **Own Applications** page of the Administration application in Cumulocity.
-
-See [Administration > Managing applications > Own applications](/guides/users-guide/administration#uploading-cep-rules) in the User guide for details on uploading Apama monitor files.
+Instead of creating a new monitor file, the attached *RecognizeActivities.mon* file can be used after making minor adjustments. Open *RecognizeActivities.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device, same as `c_device_source` in the *CONFIG.INI* file mentioned above. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as a single *.mon file with the Apama-epl application] (/guides/apama/analytics-introduction/#single-mon-file) in the Analytics guide for details on uploading Apama monitor files.
 
 	using com.apama.correlator.Component;
 	using com.apama.cumulocity.Alarm;
@@ -565,7 +563,7 @@ A fully functional demo can be prepared with the help of a demo device. For this
 
 #### Register a demo device in Cumulocity
 
-Instead of registering a real phone for anomaly detection use case, a demo device can be registered. This device can be used as a replica of an actual mobile phone.
+Instead of registering a real phone for active recognition use case, a demo device can be registered. This device can be used as a replica of an actual mobile phone.
 
 We have added a script *DemoDeviceCreator.sh* which registers a demo device in Cumulocity. Run the script using the following command:
 
@@ -597,8 +595,7 @@ Once registered, try to get the device ID by looking up your device on the **All
 
 2. Download the *RecognizeActivities.mon* file, open it in a text editor and replace the `deviceId` variable with the ID of your registered device, same as `c_device_source` in the *CONFIG.INI* file mentioned above.
 
-3. Save your changes and upload this monitor file to your tenant via the **Own Applications** page of the Administration application in Cumulocity. See [Administration > Managing applications > Own applications](/guides/users-guide/administration#uploading-cep-rules) in the User guide for details on uploading Apama monitor files.
-
+3. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as a single *.mon file with the Apama-epl application] (/guides/apama/analytics-introduction/#single-mon-file) in the Analytics guide for details on uploading Apama monitor files.
 
 #### Classify activities
 

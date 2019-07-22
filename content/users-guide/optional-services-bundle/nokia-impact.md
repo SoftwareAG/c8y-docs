@@ -185,7 +185,7 @@ Turn on **Send event** to send an event each time a certain condition has been t
 
 **Custom Actions**
 
-Turn on **Custom Actions** to map device data into Cumulocity using custom data processing actions. For specialized integration use cases, it is required to perform customized data processing on device data. One example are resources of the non standard data type that contain proprietary, binary data, CBOR, XML or alike.
+Turn on **Custom Actions** to map device data into Cumulocity using custom data processing actions. For specialized integration use cases, it is required to perform customized data processing on device data. Examples are resources of non-standard data type that contain proprietary, binary data, CBOR, XML or alike.
 
 The set of custom actions is provided by decoder microservices available in the particular tenant. A decoder microservice is an ordinary Cumulocity microservice that implements a simple decoder interface. The IMPACT microservice calls these microservices for decoding data in a customer-specific way. We provide examples how to write such a decoder microservices in our public [Bitbucket repository](https://bitbucket.org/m2m/cumulocity-examples/src/develop/). 
 

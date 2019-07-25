@@ -56,5 +56,5 @@ https://<instance domain>/apps/cockpit?dynamicOptionsUrl=/apps/my-options/option
 
 ### Options
 
-The list of built-in options can be found [here](http://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html).
+The list of built-in options can be found in the [Web SDK documentation](http://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html).
 This can be easily extended with any properties a developer might want to include in their application or extension.

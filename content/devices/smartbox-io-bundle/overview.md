@@ -20,7 +20,7 @@ Smartbox, based on the Telit Chipset HE910 is a ready to use solution for connec
 | ![Cloudagent](/guides/images/devices/smartbox-io/cloudagent.png) <td colspan=2>  MQTT Agent for Cumulocity IoT, T-Systems- Cloud der Dinge
 
 ### For further information: 
-* please refer to the datasheet [provided by PSsystec](https://www.pssystec.de/downloads/) or download [here](/guides/images/devices/smartbox-io/Datasheet-SMARTbox-IO.pdf)
+* please refer to the datasheet [provided by PSsystec](https://www.pssystec.de/downloads/) or download [here](/guides/images/devices/smartbox-io/Datasheet-SMARTbox_IO.pdf)
 * For installing the agent and SW releases, pls refer to Release notes folder of Device guide in Cumulocity or go to: http://cumulocity.com/guides/images/devices/smartbox-release-notes/ 
 * For getting the device pls contact Cumulocity Hardware support or Pssystec (kontakt@pssystec-gmbh.de) 
 * The full product overview pls download it https://www.pssystec.de/downloads/ 

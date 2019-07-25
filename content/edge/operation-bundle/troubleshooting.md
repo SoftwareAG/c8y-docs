@@ -279,8 +279,8 @@ The solution stores log files at the following locations for the different nodes
 |Component|Files|Location|
 |:---|:---|:---
 |opcua-agent-server|opcua-agent-server-gc.log<br>opcua-agent-server.log<br> opcua-agent-server-2018-04-30.0.log|/var/log/opcua/
-|Smartrule-agent-server-apama|smartrule-agent-server-apama-gc.log<br> smartrule-agent-server-apama.log|/var/log/smartrule-apama/
-|cumulocity-agent|cumulocity-agent.log|/var/log/
+|Smartrule-agent-server-apama|smartrule-agent-server-apama-gc.log<br> smartrule-agent-server-apama.log|/var/log/smartrule/
+|cumulocity-agent|cumulocity-agent.log|var/log/cumulocity-agent/
 
 #### Adjust log level
 

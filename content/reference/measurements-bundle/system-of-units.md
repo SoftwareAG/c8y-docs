@@ -24,36 +24,46 @@ Every measurement fragment which contains "unit" property will be transformed to
 #### Examples
 
 Example measurement:
-
-    ...
-    {
-        ....
-         "c8y_Temperature": {
-             "T": {
-                 "unit": "ºC",
-                 "value": 2.0791169082
-             }
+```http
+...
+{
+    ....
+     "c8y_Temperature": {
+         "T": {
+             "unit": "ºC",
+             "value": 2.0791169082
          }
-    }
-    ...
+     }
+}
+...
+```
 
 Example request:
 
-    GET /measurement/measurements?valueFragmentType=c8y_Temperature&valueFragmentSeries=T&source=663951
-    Host: ...
-    Authorization: Basic ...
-    X-Cumulocity-System-Of-Units: imperial
-    
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Host|{{hostname}}|
+
+```http
+GET /measurement/measurements?valueFragmentType=c8y_Temperature&valueFragmentSeries=T&source=<<sourceID>>
+```
+
 Example response:
 
-    ...
-    {
-        ....
-         "c8y_Temperature": {
-            "T": {
-                "unit": "°F",
-                "value": 35.742410434759904
-            }
+|HEADERS||
+|:---|:---|
+|Content-Type|application/vnd.com.nsn.cumulocity.measurementcollection+json;ver=...
+```http
+...
+{
+    ....
+     "c8y_Temperature": {
+        "T": {
+            "unit": "°F",
+            "value": 35.742410434759904
         }
     }
-    ...
+}
+...
+```

@@ -138,7 +138,7 @@ The DELETE method allows for deletion of alarm collections. Acceptable query par
 
 |Name|Type|Description|
 |:---|:---|:----------|
-|status|String|Coma separated alarm statuses, for example `ACTIVE,CLEARED`. |
+|status|String|Comma separated alarm statuses, for example `ACTIVE,CLEARED`. |
 |source|String|Source device id.|
 |withSourceAssets|Boolean|When set to `true` also alarms for related source assets will be removed. When this parameter is provided also `source` must be defined.|
 |withSourceDevices|Boolean|When set to `true` also alarms for related source devices will be removed. When this parameter is provided also `source` must be defined.|

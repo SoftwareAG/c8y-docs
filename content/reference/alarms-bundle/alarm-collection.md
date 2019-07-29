@@ -164,6 +164,8 @@ Example response:
 
     HTTP/1.1  204 NO CONTENT
 
+> Note that it is possible to call this endpoint without providing any parameter - it will lead to delete all alarms and it is not recommended.
+
 ### PUT - bulk update of alarm collection 
 
 The PUT method allows for updating alarms collections. Currently only the status of alarms can be changed.

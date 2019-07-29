@@ -12,6 +12,9 @@
   @media(min-width: $screen-md-min){
     left:0;
   }
+  @media print{
+    display: none;
+  }
 }
 
 .nav-header{

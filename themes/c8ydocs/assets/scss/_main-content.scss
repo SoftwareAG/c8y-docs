@@ -8,6 +8,9 @@
   @media(min-width: $grid-breakpoint) {
     margin-left: 280px;
   }
+  @media print{
+    display: none!important;
+  }
 }
 
 .main-content {
@@ -62,6 +65,8 @@
     margin: 0 auto!important;
     padding: 0!important;
     max-width: 100%!important;
+    border-radius: 0!important;
+    box-shadow: none!important;
   }
 }
 
@@ -102,6 +107,9 @@
   @media(min-width: $grid-breakpoint) {
     margin: -60px -60px 60px;
     padding: 40px 60px;
+  }
+  @media print{
+    border-radius: 0;
   }
   img {
     margin-right: 10px;

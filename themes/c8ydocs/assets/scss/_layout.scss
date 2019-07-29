@@ -8,6 +8,9 @@ body{
   &.open{
     overflow-x: hidden;
   }
+  @media print{
+    background-color: white;
+  }
 }
 
 * {

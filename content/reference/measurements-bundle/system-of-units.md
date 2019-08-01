@@ -20,10 +20,9 @@ Every measurement fragment which contains "unit" property will be transformed to
 |g (gram)|oz (ounce)|
 |kg (kilogram)|lb (pound)|
 
+### Examples
 
-#### Examples
-
-Example measurement:
+#### Example measurement:
 ```http
 ...
 {
@@ -38,7 +37,7 @@ Example measurement:
 ...
 ```
 
-Example request:
+#### Example request
 
 |HEADERS||
 |:---|:---|
@@ -46,15 +45,17 @@ Example request:
 |Host|{{hostname}}|
 
 ```http
-GET /measurement/measurements?valueFragmentType=c8y_Temperature&valueFragmentSeries=T&source=<<sourceID>>
+GET <<url>>/measurement/measurements?valueFragmentType=c8y_Temperature&valueFragmentSeries=T&source=<<sourceID>>
 ```
 
-Example response:
+#### Example response
 
 |HEADERS||
 |:---|:---|
 |Content-Type|application/vnd.com.nsn.cumulocity.measurementcollection+json;ver=...
 ```http
+HTTP/1.1 
+200 OK
 ...
 {
     ....

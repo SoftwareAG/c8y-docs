@@ -14,24 +14,32 @@ layout: redirect
 |prev|URI|0..1|Link to a potential previous page of measurements.|
 |next|URI|0..1|Link to a potential next page of measurements.|
 
-### GET a collection of measurements
+### GET - Collection of measurements
 
-Response body: MeasurementCollection
+**Response body:** MeasurementCollection
 
-Required role: ROLE\_MEASUREMENT\_READ
+**Required role:** ROLE\_MEASUREMENT\_READ
 
-Example request: Retrieve energy readings.
+#### Example request - Retrieve energy readings
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Host|{{hostname}}|
+
 ```http
- GET /measurement/measurements
- Host: ...
- Authorization: Basic ...
- Accept: application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
+ GET <<url>>/measurement/measurements
 ```
-Example response:
+#### Example response
+
+|HEADERS||
+|:---|:---|
+|Content-Type|application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
+
 ```http
-HTTP/1.1 200 OK
-Content-Type: application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
-Content-Length: ...
+HTTP/1.1
+200 OK
+
 {
   "self":"...",
   "measurements":[
@@ -79,26 +87,39 @@ Content-Length: ...
 In case of executing range queries on measurements API, like query by dateFrom and dateTo, the oldest measurements are returned first. It is possible to change the order by adding query parameter "revert=true" to the request URL.
 In many use cases it is needed to get the latest measurement sent from the device. This can be accomplished by passing "revert" param together with "dateFrom" and "dateTo" params to sort the outcome by date, e.g. pass dateFrom from a year ago, and dateTo from the feature.
 
-### GET - retrieve all or some series of measurements
+### GET - Retrieve all or some series of measurements
 
 This endpoint returns a list of series (all or only those matching specified names; a series is any fragment in measurement that contains "value" property) and their values within given period. Mandatory params are: dateFrom, dateTo and source. No paging is used here.
 It is possible to fetch aggregated results by passing additional param: aggregationType (DAILY, HOURLY, MINUTELY). If no aggregation param is specified, the result contains no more than 5000 values.
 Important: for the aggregation to be done correctly the mechanism expects a device to always use the same time zone when it sends dates.
 
-Required role: ROLE\_MEASUREMENT\_READ
+**Required role: ROLE\_MEASUREMENT\_READ**
 
-Example request: retrieve all series.
+#### Example request - Retrieve all series
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Host|{{hostname}}
+
 ```http
- GET /measurement/measurements/series...
- Authorization: Basic ...
- Accept: application/json
+ GET <<url>>/measurement/measurements/series?source=<<sourdeID>>&dateFrom=<<startDate>>&dateTo=<<endDate>>
 ```
-Example response:
+#### Example response
+
+HEADERS||
+|:---|:---|
+|Content-Type|application/json
 
 ```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-Content-Length: ...
+HTTP/1.1 
+200 OK
+
+{
+    "values": {...},
+    "series": [...],
+    "truncated": false
+}
 
 ```
 
@@ -106,17 +127,26 @@ Series can be filtered by providing additional "series" param with full name of 
 You can specify more series to filter by adding more "series" param occurrences, e.g.: ...series=c8y_AccelerationMeasurement.acceleration&series=c8y_SpeedMeasurement.velocity...
 Because of this use case, dots must not be used in neither measurement fragment nor series.
 
-Example request: retrieve only specific series.
+#### Example request - Retrieve only specific series
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Host|{{hostname}}
+
 ```http
- GET /measurement/measurements/series?series=c8y_AccelerationMeasurement.acceleration&dateFrom=...
- Authorization: Basic ...
- Accept: application/json
+ GET <<url>>/measurement/measurements/series?series=c8y_AccelerationMeasurement.acceleration&dateFrom=<<startDate>>&dateTo=<<endDate>>
 ```
-Example response:
+#### Example response
+
+HEADERS||
+|:---|:---|
+|Content-Type|application/json
+
 ```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-Content-Length: ...
+HTTP/1.1 
+200 OK
+
 {
  "values": {
      "2014-12-04T17:33:01.538+01:00": [
@@ -144,21 +174,26 @@ Each key in "values" object is a date taken from measurement and it contains a l
 Flag "truncated" indicates whether there were more than 5000 values and if the final result was truncated.
 
 
-### POST - create a new measurement
+### POST - Create a new measurement
 
-Request body: Measurement
+**Request body:** application/vnd.com.nsn.cumulocity.measurement+json;ver=...
 
-Response body: Measurement
+**Response body:** application/vnd.com.nsn.cumulocity.measurement+json;ver=...
 
-Required role: ROLE\_MEASUREMENT\_ADMIN or owner of source object
+**Required role:** ROLE\_MEASUREMENT\_ADMIN or owner of source object
 
-Example Request:
+#### Example request
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Host|{{hostname}}
+|Conent-Type|application/json
+|Accept|application/vnd.com.nsn.cumulocity.measurement+json;ver=...
+
 ```http
-POST /measurement/measurements
-Host: ...
-Authorization: Basic ...
-Content-Length: ...
-Content-Type: application/vnd.com.nsn.cumulocity.measurement+json;ver=...
+POST <<url>>/measurement/measurements
+
 {
   "time" : "2011-09-19T12:03:27.845Z",
   "type" : "KamstrupA220Reading",
@@ -174,11 +209,17 @@ Content-Type: application/vnd.com.nsn.cumulocity.measurement+json;ver=...
   }
 }
 ```
-Example response:
+
+#### Example response
+
+HEADERS||
+|:---|:---|
+|Content-Type|application/vnd.com.nsn.cumulocity.measurement+json;ver=...
+
 ```http
-HTTP/1.1 201 Created
-Content-Type: application/vnd.com.nsn.cumulocity.measurement+json;ver=...
-Content-Length: ...
+HTTP/1.1 
+201 Created
+
 {
   "id" : "43",
   "self" : "<<URL of new measurement>>",
@@ -202,14 +243,20 @@ The "id" of the new measurement is generated by the server and returned in the r
 
 Please note that for correct visualization of measurement series on UI graphs, property names used for fragment and serie name should not contain whitespaces and special characters like ```[],*.```.
 
-### POST - create multiple measurements
+### POST - Create multiple measurements
+
+#### Example request
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Host|{{hostname}}
+|Conent-Type|application/json
+|Accept|application/vnd.com.nsn.cumulocity.measurementCollection+json
 
 ```http
-POST /measurement/measurements
-Host: ...
-Authorization: Basic ...
-Content-Length: ...
-Content-Type: application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
+POST <<url>>/measurement/measurements
+
 {
 "measurements": [
     {
@@ -237,11 +284,16 @@ Content-Type: application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=
 ]
 }
 ```
-Example response:
+#### Example response:
+
+HEADERS||
+|:---|:---|
+|Content-Type|application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
+
 ```http
-HTTP/1.1 201 Created
-Content-Type: application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
-Content-Length: ...
+HTTP/1.1 
+201 Created
+
 {
  "measurements": [
     {
@@ -273,23 +325,29 @@ Content-Length: ...
 ]
 }
 ```
-### DELETE - delete a measurement collection
+### DELETE - Delete a measurement collection
 
 The DELETE method allows for deletion of measurement collections. Applicable query parameters are equivalent to GET method.
 
-Request body: N/A
+**Request body:** N/A
 
-Response body: N/A
+**Response body:** N/A
 
-Required role: ROLE\_MEASUREMENT\_ADMIN
+**Required role:** ROLE\_MEASUREMENT\_ADMIN
 
-Example request:
+#### Example request
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Host|{{hostname}}
+
 ```http
- DELETE: /measurement/measurements....
- Host: ...
- Authorization: Basic ...
+ DELETE: <<url>>/measurement/measurements...
 ```
-Example response:
+#### Example response
+
 ```http
-HTTP/1.1  204 NO CONTENT
+HTTP/1.1  
+204 NO CONTENT
 ```

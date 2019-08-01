@@ -17,6 +17,8 @@ The subscription channel needs to contain the managed object ID of the device or
 ```
 The response will additionally to the measurement object contain a "realtimeAction" to identify which action resulted in the given object (CREATE, UPDATE or DELETE). In case of a deletion the data will only contain the id of the deleted measurement.
 
+**Required role:** ROLE\_MEASUREMENT\_READ
+
 #### Example response
 
 |HEADERS||
@@ -55,4 +57,3 @@ HTTP/1.1
   }
 ]
 ```
-**Required role:** ROLE\_MEASUREMENT\_READ

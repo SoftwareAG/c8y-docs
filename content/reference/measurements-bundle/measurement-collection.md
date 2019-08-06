@@ -302,4 +302,4 @@ Example response:
 HTTP/1.1  204 NO CONTENT
 ```
 
-> **Important**: Note that calling this endpoint without any parameter or passing not supported param would result in deleting all available measurements.
+> **Important**: Note that calling this endpoint without any parameter or passing not supported parameters will result in deleting all available measurements.

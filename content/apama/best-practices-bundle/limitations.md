@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 40
 title: Apama limitations in Cumulocity IoT
 layout: redirect
 ---

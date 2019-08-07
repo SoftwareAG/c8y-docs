@@ -315,6 +315,23 @@ The status information is available for subscribed applications as well as for o
 
 To view the status you need the following permissions: ROLE_APPLICATION_MANAGEMENT_READ and ROLE_INVENTORY_READ
 
+##### Alarms and events
+
+Most of the alarms and events visible in the **Status** tab are strictly technical descriptions of what's going on with the microservice.
+
+There are two user-friendly alarm types:
+
+* `c8y_Application_Down` - critical alarm which is created when no microservice instance is available 
+* `c8y_Application_Unhealthy` - minor alarm which is created when there is at least one microservice instance working properly, but not all of them are fully operating
+
+User-friendly alarms are created for the microservice owner tenant only. They are also automatically cleared when the situation gets back to normal, i.e. all the microservice instances are working properly.
+
+User-friendly alarms can be used to create Smart Rules. For details on creating Smart Rules of various types, see [Smart Rules](/guides/users-guide/cockpit/#smart-rules). 
+
+For example, to send an email, if a microservice is down, create an "On alarm send email" Smart Rule. 
+
+In the **On alarm matching** section, use `c8y_Application_Down` as an alarm type. As a target asset select the microservice which you would like to monitor, for example "echo-agent-server".
+
 #### Log files
 
 Moreover, you may view logs to get more details on the status of microservices.

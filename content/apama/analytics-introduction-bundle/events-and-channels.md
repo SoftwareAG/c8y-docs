@@ -19,3 +19,16 @@ Sending an event is done by constructing the event, either with `new <type>` fol
 ### Listening to events
 
 You can trigger your EPL by listening to events on channels. You can subscribe to channels with the monitor.subscribe("string name") method. This can be done in the startup of your monitor, or if you only need to receive events some of the time, called as needed, followed by monitor.unsubscribe("string name"). Listen for events using the `on` statement, followed by the event type that you are listening to, open and close parentheses, and `as <identifier>` to name a variable that will hold the event. By default, a listener will fire once; to make it repeat for all events, use the `all` keyword before the event type.
+
+### Standard event types and channels
+
+For the standard Cumulocity events, there are the following channels for sending and receiving events:
+
+| Event         | Channel for sending          | Channel for receiving |
+| ------------- | ---------------------------- | --------------------- |
+| Operation     | Operation.CHANNEL            |                       |
+| Measurement   | Measurement.CREATE_CHANNEL   | Measurement.CHANNEL   |
+| Event         | Event.CHANNEL                |                       |
+| Alarm         | Alarm.CHANNEL                |                       |
+| ManagedObject | ManagedObject.UPDATE_CHANNEL | ManagedObject.CHANNEL |
+

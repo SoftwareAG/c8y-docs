@@ -51,7 +51,7 @@ Cumulocity allows you to set global permissions that are applicable to all manag
 
 ### Managing roles and assigning permissions
 
-Global roles and inventory roles are created and managed in the **Permission** page of the Administration application.
+Global roles and inventory roles are created and managed in the **Roles** page of the Administration application.
 
 ![Permission page](/guides/images/users-guide/Administration/admin-global-roles.png)
 

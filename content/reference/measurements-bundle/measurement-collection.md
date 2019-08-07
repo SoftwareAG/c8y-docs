@@ -275,7 +275,15 @@ Content-Length: ...
 ```
 ### DELETE - delete a measurement collection
 
-The DELETE method allows for deletion of measurement collections. Applicable query parameters are equivalent to GET method.
+The DELETE method allows for deletion of measurement collections. Acceptable query parameters are:
+
+|Name|Type|Description|
+|:---|:---|:----------|
+|fragmentType|String|Fragment name from measurement.|
+|source|String|Source device id.|
+|dateFrom|DateTime|Start date or date and time of measurement occurrence.|
+|dateTo|DateTime|End date or date and time of measurement occurrence.|
+|type|String|Measurement type.|
 
 Request body: N/A
 
@@ -293,3 +301,5 @@ Example response:
 ```http
 HTTP/1.1  204 NO CONTENT
 ```
+
+> **Important**: Note that calling this endpoint without any parameter or passing not supported parameters will result in deleting all available measurements.

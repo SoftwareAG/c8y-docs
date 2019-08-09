@@ -116,11 +116,13 @@ The following information is displayed here:
 
 ### To suspend or delete subtenants
 
-You can temporarily suspend tenants or you can delete subtenants permanently. 
+Tenants can both be suspended or immediately deleted.
 
 Suspending tenants blocks any access to this tenant, regardless whether the access is from devices, users or other applications.
 
-If a tenant is suspended, the tenant's data remains in the database and can be made available any time later. To do so, click **Activate**.
+If a tenant is suspended, the tenant’s data remains in the database and can be made available later by clicking **Activate**.
+
+>**Important**: Suspended tenants will be deleted automatically and permanently after 30 days.
 
 #### To suspend a subtenant
 

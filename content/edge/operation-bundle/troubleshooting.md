@@ -346,7 +346,7 @@ Change the following entries to adjust the log levels:
 Adjust the log levels by changing the level attribute according to the following values. The levels are inclusive - meaning a given level will also include all “lower” log levels, e.g. when you set the level to WARN you will also get ERROR events.
 
 |Level|Description|
-|:---|:---|:---
+|:---|:---
 |ERROR|Log errors only
 |WARN|Give information up to warnings
 |INFO|Give information about normal operations
@@ -361,7 +361,7 @@ The log level for Apama is defined by the property  “correlator.logLevel” in
 Possible values for the Apama log level are:
 
 |Level|Description|
-|:---|:---|:---
+|:---|:---
 |ERROR|Log errors only
 |WARN|Give information up to warnings
 |INFO|Give information about normal operations

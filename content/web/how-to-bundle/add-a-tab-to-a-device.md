@@ -277,7 +277,7 @@ Explanation of the above numbers:
 
 If you now post a device with the fragment `"acme_HelloWorld": {}` to the API, the **Hello** tab will just be shown for that device and not for others.
 
-## Conclusion
+### Conclusion
 
 Context routes help you to extend existing routes with further information. 
 

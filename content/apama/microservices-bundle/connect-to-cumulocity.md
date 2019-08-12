@@ -1,4 +1,4 @@
-﻿---
+---
 weight: 30
 title: Connecting to the Cumulocity platform
 layout: redirect

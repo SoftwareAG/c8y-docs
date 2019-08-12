@@ -23,7 +23,7 @@ Without working network connection the system is not able to work. The following
 
 The following commands will show the interface and network settings of the machine:
 
-	# ip a
+	$ ip a
 
 This will list all interfaces and their current configuration. 
 
@@ -56,7 +56,7 @@ You need to make sure that the node has an external interface (ethX) and the loo
 
 The following command lists the local routing information.
 
-	# netstat -rn
+	$ netstat -rn
 
 Example:
 
@@ -371,12 +371,10 @@ Save the file. It is re-read by the application every few minutes so you do not 
 
 ### <a name="diagnostics"></a>Diagnostics
 
-The diagnostic utility is auto-enabled and will be running periodically. However, this can also be triggered manually on demand. To execute it manually, follow the steps below. 
+The diagnostic utility enabled by default and runs periodically. However, this can also be triggered manually on demand. To execute it manually, follow the steps below. 
 
-	# cd opt/c8y/utilities/diagnostic-utility
-	# sudo ./run_data_collector.py
-
-The diagnostic utility provides the following information.
+	cd opt/c8y/utilities/diagnostic-utility
+	sudo ./run_data_collector.py
 
 #### Hardware information
 

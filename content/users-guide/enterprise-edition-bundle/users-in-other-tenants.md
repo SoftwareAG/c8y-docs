@@ -28,6 +28,8 @@ The support access is then not restricted to the user who activated it but appli
 
 After a user has activated support access, the menu item changes to **Disable support**, so that the user can disable a pending support request which has been resolved actively before it expires.
 
+> **Info:** If a user with tenant management admin permissions disables the support request, *all* support requests for the tenant will be disabled.
+
 The duration of the active support request is configurable on platform level (default is 24 hours), see [Customizing the platform](/guides/users-guide/enterprise-edition#configuration).
 
 Each new support request will prolong the support duration for the specified number of hours. After the last support request in a subtenant has expired or has been actively disabled by the user, the support user access for the subtenant will immediately be disabled (if not enabled globally). 

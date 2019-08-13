@@ -203,8 +203,7 @@ This results in the following minimal template creations:
 
 ```bash
 # Creation:
-10,100,POST,MEASUREMENT,false,c8y_MyMeasurement,,c8
-y_MyMeasurement.M.value,NUMBER,
+10,100,POST,MEASUREMENT,false,c8y_MyMeasurement,,c8y_MyMeasurement.M.value,NUMBER,
 10,101,POST,EVENT,,c8y_CustomEvent,mytext,,
 10,102,POST,ALARM,,c8y_CustomAlarm,mytext,ACTIVE,MAJOR,
 

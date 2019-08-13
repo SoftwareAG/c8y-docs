@@ -6,104 +6,82 @@ layout: redirect
 
 ### Karaf processes
 
-On the Edge server, execute the following commands as admin user. 
+On the Edge server, execute the following commands as an admin user. 
 
 #### Start Karaf processes
 
-Execute the following command:
+To start the Karaf OSGi container, execute the following command:
 
 	[admin@server ~]$ sudo service cumulocity-core-karaf start
 	
-
-This will start the Karaf OSGi container if required. 
-
 #### Stop Karaf processes
 
-Execute the following command:
+To stop the Karaf OSGi container, execute the following command:
 
 	[admin@server ~]$ sudo service cumulocity-core-karaf stop
 
-This will stop the Karaf OSGi container if required. 
-
 ### opcua-agent-server
 
-On the Edge server, execute the following commands as admin user. 
+On the Edge server, execute the following commands as an admin user. 
 
 #### Start opcua-agent-server
 
-Execute the following command:
+To start the opcua-agent-server, execute the following command:
 
 	[admin@server ~]$ sudo systemctl start opcua-agent-server
 
-This will start the opcua-agent-server if required. 
-
 #### Stop opcua-agent-server
 
-Execute the following command:
+To stop the opcua-agent-server, execute the following command:
 
 	[admin@server ~]$ sudo systemctl stop opcua-agent-server
 
-This will stop the opcua-agent-server if required. 
-
 #### Restart opcua-agent-server
 
-Execute the following command:
+To restart the opcua-agent-server, execute the following command:
 
 	[admin@server ~]$ sudo systemctl restart opcua-agent-server
 
-This will restart the opcua-agent-server if required. 
+### smartrule
 
-### smartrule-agent-server-apama
+On the Edge server, execute the following commands as an admin user. 
 
-On the Edge server, execute the following commands as admin user. 
+#### Start smartrule
 
-#### Start smartrule-agent-server-apama
+To start the smatrule, execute the following command:
 
-Execute the following command:
-
-	# sudo systemctl start smartrule-agent-server-apama
-
-This will start the smartrule-agent-server-apama if required. 
+	[admin@server ~]$ sudo systemctl start smartrule
 
 #### Stop smartrule-agent-server-apama
 
-Execute the following command:
+To stop the smartrule, execute the following command:
 
-	# sudo systemctl stop smartrule-agent-server-apama
+	[admin@server ~]$ sudo systemctl stop smartrule
 
-This will stop the smartrule-agent-server-apama if required. 
+#### Restart smartrule
 
-#### Restart smartrule-agent-server-apama
+To restart the smartrule, execute the following command:
 
-Execute the following command:
-
-	# sudo systemctl restart smartrule-agent-server-apama
-
-This will restart the smartrule-agent-server-apama if required.
+	[admin@server ~]$ sudo systemctl restart smartrule
 
 ### Apama
 
-On the Edge server, execute the following commands as admin user. 
+On the Edge server, execute the following commands as an admin user. 
 
 #### Start apama
 
-Execute the following command:
+To start the apama service, execute the following command:
 
 	[admin@server ~]$ sudo service apama start
 
-This will start the apama service if required. 
-
 #### Stop apama
-Execute the following command:
+
+To stop the apama service, execute the following command:
 
 	[admin@server ~]$ sudo service apama stop
 
-This will stop the apama service if required. 
-
 #### Restart smartrule-agent-server-apama
 
-Execute the following command:
+To restart the apama service, execute the following command:
 
 	[admin@server ~]$ sudo service apama restart
-
-This will restart the apama service if required.

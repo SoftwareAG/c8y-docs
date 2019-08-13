@@ -6,7 +6,7 @@ layout: redirect
 
 ### Karaf processes
 
-On the Edge server, execute the following commands as an admin user. 
+On the Edge server, execute the following commands as admin user. 
 
 #### Start Karaf processes
 
@@ -22,7 +22,7 @@ To stop the Karaf OSGi container, execute the following command:
 
 ### opcua-agent-server
 
-On the Edge server, execute the following commands as an admin user. 
+On the Edge server, execute the following commands as admin user. 
 
 #### Start opcua-agent-server
 
@@ -44,7 +44,7 @@ To restart the opcua-agent-server, execute the following command:
 
 ### smartrule
 
-On the Edge server, execute the following commands as an admin user. 
+On the Edge server, execute the following commands as admin user. 
 
 #### Start smartrule
 
@@ -66,7 +66,7 @@ To restart the smartrule, execute the following command:
 
 ### Apama
 
-On the Edge server, execute the following commands as an admin user. 
+On the Edge server, execute the following commands as admin user. 
 
 #### Start apama
 

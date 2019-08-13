@@ -371,7 +371,7 @@ Save the file. It is re-read by the application every few minutes so you do not 
 
 ### <a name="diagnostics"></a>Diagnostics
 
-The diagnostic utility enabled by default and runs periodically. However, this can also be triggered manually on demand. To execute it manually, follow the steps below. 
+The diagnostic utility is enabled by default and runs periodically. However, this can also be triggered manually on demand. To execute it manually, follow the steps below. 
 
 	cd opt/c8y/utilities/diagnostic-utility
 	sudo ./run_data_collector.py

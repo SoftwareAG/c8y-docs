@@ -266,7 +266,7 @@ Under **Configuration** in the **Settings** menu, you can configure system-wide 
 
 The following placeholder can be observed in the **Configuration** page:
 
-- {host} - The value of this placeholder is "https://" + "``<<tenantId>>``" + "``<<instance_baseURL>>``".
+- {host} - The value of this placeholder is "https://" + "``<<tenantId>>``" + "``<<base-domain>>``". For example, if "tenantId" is auto-generated, the host will be "t12345678.cumulocity.com".
 - {tenant-domain} - This is the location in which a tenant can be accessed. It is equal to "https://" + "``<<tenantDomainName>>``. For example, {tenant-domain} can be "myTenant.cumulocity.com".
 - {token} - An automatically generated system token for password reset purposes.
 

@@ -23,7 +23,7 @@ Without working network connection the system is not able to work. The following
 
 The following commands will show the interface and network settings of the machine:
 
-	# ip a
+	$ ip a
 
 This will list all interfaces and their current configuration. 
 
@@ -56,7 +56,7 @@ You need to make sure that the node has an external interface (ethX) and the loo
 
 The following command lists the local routing information.
 
-	# netstat -rn
+	$ netstat -rn
 
 Example:
 
@@ -279,8 +279,8 @@ The solution stores log files at the following locations for the different nodes
 |Component|Files|Location|
 |:---|:---|:---
 |opcua-agent-server|opcua-agent-server-gc.log<br>opcua-agent-server.log<br> opcua-agent-server-2018-04-30.0.log|/var/log/opcua/
-|Smartrule-agent-server-apama|smartrule-agent-server-apama-gc.log<br> smartrule-agent-server-apama.log|/var/log/smartrule-apama/
-|cumulocity-agent|cumulocity-agent.log|/var/log/
+|Smartrule-agent-server-apama|smartrule-agent-server-apama-gc.log<br> smartrule-agent-server-apama.log|/var/log/smartrule/
+|cumulocity-agent|cumulocity-agent.log|/var/log/cumulocity-agent/
 
 #### Adjust log level
 
@@ -346,7 +346,7 @@ Change the following entries to adjust the log levels:
 Adjust the log levels by changing the level attribute according to the following values. The levels are inclusive - meaning a given level will also include all “lower” log levels, e.g. when you set the level to WARN you will also get ERROR events.
 
 |Level|Description|
-|:---|:---|:---
+|:---|:---
 |ERROR|Log errors only
 |WARN|Give information up to warnings
 |INFO|Give information about normal operations
@@ -361,7 +361,7 @@ The log level for Apama is defined by the property  “correlator.logLevel” in
 Possible values for the Apama log level are:
 
 |Level|Description|
-|:---|:---|:---
+|:---|:---
 |ERROR|Log errors only
 |WARN|Give information up to warnings
 |INFO|Give information about normal operations
@@ -371,12 +371,10 @@ Save the file. It is re-read by the application every few minutes so you do not 
 
 ### <a name="diagnostics"></a>Diagnostics
 
-The diagnostic utility is auto-enabled and will be running periodically. However, this can also be triggered manually on demand. To execute it manually, follow the steps below. 
+The diagnostic utility is enabled by default and runs periodically. However, this can also be triggered manually on demand. To execute it manually, follow the steps below. 
 
-	# cd opt/c8y/utilities/diagnostic-utility
-	# sudo ./run_data_collector.py
-
-The diagnostic utility provides the following information.
+	cd opt/c8y/utilities/diagnostic-utility
+	sudo ./run_data_collector.py
 
 #### Hardware information
 

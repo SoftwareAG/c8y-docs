@@ -366,9 +366,3 @@ To define default applications for subtenants, a tenant policy with the followin
 * category: configuration
 * key: default.tenant.applications
 * value: comma-separated list of applications names, e.g. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
-
-To define default microservices for subtenants, the following tenant option can be defined for the tenant policy:
-
-* category: configuration
-* key: default.tenant.microservices
-* value: comma-separated list of microservices names, e.g. device-simulator,smartrule,cep

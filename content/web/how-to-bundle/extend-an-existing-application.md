@@ -8,7 +8,7 @@ weight: 0
 
 It is a common use case to extend one of our existing apps like Cockpit or Device management. 
 
-This how-to recipe explains step by step, how you can extend the Cockpit app with a custom route and hook this route into the navigator. Before starting with the step-by-step description we will provide some background on what we call a hybrid application and what the [@c8y/apps](/guides/web/angular/#apps) npm package contains.
+This recipe explains step by step, how you can extend the Cockpit app with a custom route and hook this route into the navigator. Before starting with the step-by-step description we will provide some background on what we call a hybrid application and what the [@c8y/apps](/guides/web/angular/#apps) npm package contains.
 
 ### Brief background
 
@@ -179,7 +179,7 @@ export class AppModule extends HybridAppModule {
 }
 ```
 
-The following explains the commented numbers:
+Explanation of the above comment numbers:
 
  1. We provide the `HOOK_NAVIGATOR_NODES`.
  2. We use a certain value. For complex cases we can also define a `useClass` and a `get()` function.

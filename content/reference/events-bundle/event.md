@@ -16,13 +16,13 @@ layout: redirect
 |source|ManagedObject|1|The ManagedObject that the event originated from, as object containing properties "id", "self", "name", and "type".|POST: Mandatory PUT: No|
 |\*|Object|0..n|Additional properties of the event.|POST: Optional <br> PUT: Optional|
 
-### GET - Representation of an Event
+### GET - Representation of an event
 
 Response body: application/vnd.com.nsn.cumulocity.event+json
 
 Required role: ROLE\_EVENT\_READ
 
-#### Example request - Retrieve information about an Event
+#### Example request - Retrieve information about an event
 
 |HEADERS||
 |:---|:---|
@@ -57,7 +57,7 @@ HTTP/1.1
 }
 ```
 
-### DELETE - Delete an Event
+### DELETE - Delete an event
 
 Request Body: N/A.
 

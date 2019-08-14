@@ -264,7 +264,7 @@ Under **Configuration** in the **Settings** menu, you can configure system-wide 
 
 #### Placeholders
 
-The following placeholder can be observed in the **Configuration** page:
+The following placeholder can be found in the **Configuration** page:
 
 - {host} - The value of this placeholder is "https://" + "``<<tenantId>>``" + "``<<base-domain>>``". For example, if "tenantId" is auto-generated, the host will be "t12345678.cumulocity.com".
 - {tenant-domain} - This is the location in which a tenant can be accessed. It is equal to "https://" + "``<<tenantDomainName>>``. For example, {tenant-domain} can be "myTenant.cumulocity.com".

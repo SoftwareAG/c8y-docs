@@ -42,36 +42,14 @@ This is done by starting the VM (follow the steps described in the Installation 
 After increasing the size, restart Karaf by executing:
 
 ```shell
-# service cumulocity-core-karaf stop
+[admin@server ~]$  sudo service cumulocity-core-karaf stop
 ```
 
 and
 
 ```shell
-# service cumulocity-core-karaf start
+[admin@server ~]$  service cumulocity-core-karaf start
 ```
-
-Use the following command to check the JVM process of Karaf:
-
-```shell
-# ps aux | grep karaf
-```
-
-Sample output:
-
-```shell
-[root@server ~]# ps aux | grep karaf
-	karaf     1525 44.1 15.2 3890280 618920 ?      Sl   09:56   2:21 /usr/java/default/bin/java -XX:+UseConcMarkSweepGC -Djava.rmi.server.hostname=127.0.0.1 -Djava.rmi.server.useLocalHostname=true -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8199 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -server -Xms235M -Xmx1024M -XX:PermSize=16M -XX:MaxPermSize=512M -Dcom.sun.management.jmxremote -XX:+UseCompressedOops -XX:+UseParNewGC -XX:+UseConcMarkSweepGC 
-	(rest of output trimmed)
-	```
-
-If Karaf is not stopped by executing `service cumulocity-core-karaf stop` you can search for the PID (process ID) with `command ps aux | grep karaf` and stop it by executing:
-
-```shell	
-# kill -9 <PID>
-```
-
-In the example above, the PID is 1525.
 
 ### Log rotation 
 

@@ -51,22 +51,6 @@ and
 [admin@server ~]$  service cumulocity-core-karaf start
 ```
 
-Use the following command to check the JVM process of Karaf:
-
-```shell
-[admin@server ~]$   ps aux | grep karaf
-```
-
-Sample output:
-
-```shell
-[admin@server ~]$ ps aux | grep karaf
-	karaf     1525 44.1 15.2 3890280 618920 ?      Sl   09:56   2:21 /usr/java/default/bin/java -XX:+UseConcMarkSweepGC -Djava.rmi.server.hostname=127.0.0.1 -Djava.rmi.server.useLocalHostname=true -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8199 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -server -Xms235M -Xmx1024M -XX:PermSize=16M -XX:MaxPermSize=512M -Dcom.sun.management.jmxremote -XX:+UseCompressedOops -XX:+UseParNewGC -XX:+UseConcMarkSweepGC 
-	(rest of output trimmed)
-	```
-
-In the example above, the PID is 1525.
-
 ### Log rotation 
 
 The components for which log rotation is configured are as follows:

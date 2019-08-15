@@ -58,7 +58,7 @@ https://<instance domain>/apps/cockpit?dynamicOptionsUrl=/apps/my-options/option
 
 Here is a list of the built-in options. As in the end this is just a plain old javascript object this list can be easily extended  with any property a developer might want to include in his applications or extensions.
 
-```typescript
+```js
 export class ApplicationOptions {
   name: string; // To be saved to the server
   contextPath: string; // To be saved to the server

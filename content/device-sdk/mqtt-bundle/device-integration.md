@@ -41,7 +41,7 @@ To establish a connection you need to configure the following parameters:
 - User: &lt;tenantID>/&lt;username>
 - Password: &lt;your&#95;cumulocity_password>
 
-For more information, refer to the [Hello MQTT](/guides/device-sdk/mqtt/#hello-mqtt) section.
+For more information, refer to the [Hello MQTT](/guides/device-sdk/mqtt-examples/#hello-mqtt) section.
 
 The process works as follows:
 

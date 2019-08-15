@@ -33,13 +33,13 @@ Host (useful for support):
 
 The .NET Core SDK can be downloaded from the [.NET Downloads](https://dotnet.microsoft.com/download) webpage.
 
-### Developing the "Hello, MQTT world!" client
+### Developing the "Hello MQTT world" client
 
-To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to
+To develop a very simple "Hello world" MQTT client for Cumulocity, you need to:
 
-* create a console project,
-* add a dependency to the MQTT C# client library (in this example we will use [Cumulocity SDK MQTT](https://bitbucket.org/m2m/cumulocity-sdk-cs/src)),
-* build and run the C# application.
+* Create a console project.
+* Add a dependency to the MQTT C# client library (in this example we will use [Cumulocity SDK MQTT](https://bitbucket.org/m2m/cumulocity-sdk-cs/src)).
+* Build and run the C# application.
 
 #### Creating a console project
 
@@ -53,7 +53,7 @@ This will create a new console application _hello-mqtt-cs_ in the current direct
 
 #### Adding the MQTT C# client library
 
-Edit the _hello-mqtt-cs.csproj_ in the _hello-mqtt-cs_ folder. Add a dependency manually to the Cumulocity SDK MQTT.
+Edit the _hello-mqtt-cs.csproj_ in the _hello-mqtt-cs_ folder and add a dependency manually to the Cumulocity SDK MQTT.
 
 ```xml
 <ItemGroup>
@@ -84,9 +84,9 @@ namespace hello_mqtt
 {
 	class Program
 	{
-		static void Main(string[] args)
+		static void Main (string[] args)
 		{
-            Console.WriteLine("Application has started. Ctrl-C to end");
+            Console.WriteLine("The application has started. Press Ctrl-C to stop it.");
 
             var cSource = new CancellationTokenSource();
             var myTask = Task.Factory.StartNew(() => RunJsonViaMqttClientAsync(cSource.Token), cSource.Token);
@@ -96,7 +96,7 @@ namespace hello_mqtt
             Console.WriteLine("Now shutting down");
 		}
 
-        private static async Task RunJsonViaMqttClientAsync(CancellationToken cToken)
+        private static async Task RunJsonViaMqttClientAsync (CancellationToken cToken)
 		{
 			const string serverUrl = "mqtt.cumulocity.com";
 			const string clientId = "my_mqtt_cs_client";
@@ -104,7 +104,7 @@ namespace hello_mqtt
 			const string user = "<<tenant>>/<<username>>";
 			const string password = "<<password>>";
 
-			//connections details
+			// connections details
 			var cDetails = new ConnectionDetailsBuilder()
 				.WithClientId(clientId)
 				.WithHost(serverUrl)
@@ -147,7 +147,7 @@ namespace hello_mqtt
 				.WithMessageContent("114,c8y_Restart")
 				.Build());
 
-			// generate a random temperature (10º-20º) measurement and send it every 1 s
+			// generate a random temperature (10º-20º) measurement and send it every second
 			Random rnd = new Random();
             while (!cToken.IsCancellationRequested)
             {
@@ -176,79 +176,80 @@ namespace hello_mqtt
 		{
 			var content = e.MessageContent;
 		}
-
 	}
 }
 ```
 
 If you use the WS protocol, you must provide the appropriate settings:
 
-
 ```cs
-        var cDetails = new ConnectionDetailsBuilder()
-            .WithClientId(clientId)
-            .WithHost("cumulocity.com/mqtt")
-            .WithCredentials("<<tenant>>/<<username>>", <<password>>)
-            .WithCleanSession(true)
-            .WithWs()
-            .Build();
-
+var cDetails = new ConnectionDetailsBuilder()
+                    .WithClientId(clientId)
+                    .WithHost("cumulocity.com/mqtt")
+                    .WithCredentials("<<tenant>>/<<username>>", <<password>>)
+                    .WithCleanSession(true)
+                    .WithWs()
+                    .Build();
 ```
 
 Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant`, `username` and `password`.
 
-Cumulocity MQTT protocol supports both unsecured TCP and secured SSL connections (i.e. `tcp://mqtt.cumulocity.com:1883` or `ssl://mqtt.cumulocity.com:8883`), so you can pick the one which fits for you and use it in `serverUrl`.
+Cumulocity MQTT supports both unsecured TCP and secured SSL connections (i.e. `tcp://mqtt.cumulocity.com:1883` or `ssl://mqtt.cumulocity.com:8883`), so you can pick the one which fits your needs and use it in `serverUrl`.
 
-What does the code in `main` do?
+What does the code in `Main` do?
 
 -   Configure the MQTT connection.
--   Connect with Cumulocity via a MQTT protocol.
+-   Connect with Cumulocity via MQTT protocol.
 -   Create a new device with a name (`device_name`) and a type (`c8y_MQTTDevice`).
 -   Update the device hardware information by putting a `"S123456789"` serial, a `"MQTT test model"` model and a `"Rev0.1"` revision.
 -   Subscribe to the static operation templates for the device and print all received operations to the console. In case of a c8y_Restart operation, simulate a device restart.
--   Create a new thread which sends temperature measurement every second.
+-   Create a new thread which sends temperature measurements every second.
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId``, the server will not accept it.
 
-####Create new event with Json via Mqtt
-The purpose of this example is to show the creation of an event. Before running the example, you must provide the credentials for the device. For more details follow the [link](https://www.cumulocity.com/guides/device-sdk/rest#step-0-request-device-credentials).
-Do not use new line characters  _\r\n_ and escaping characters spefic for Windows OS.
+#### Create new event with JSON via MQTT
+
+The purpose of this example is to show the creation of an event. Before running the example, you must provide the credentials for the device. For more details review the [Request device credentials](/guides/device-sdk/rest#step-0-request-device-credentials) step.
+
+> **Important**: Do not use new line characters  \r\n and escaping characters specific for Windows OS.
 
 ```cs
-            const string serverUrl = "mqtt.cumulocity.com";
-            const string clientId = "my_mqtt_cs_client";
-            const string device_name = "My new MQTT device";
-            const string user = "<<tenant>>/<<device_username>>";
-            const string password = "<<password>>";
+const string serverUrl = "mqtt.cumulocity.com";
+const string clientId = "my_mqtt_cs_client";
+const string device_name = "My new MQTT device";
+const string user = "<<tenant>>/<<device_username>>";
+const string password = "<<password>>";
 
-            //TCP
-            var cDetails = new ConnectionDetailsBuilder()
-                .WithClientId(clientId)
-                .WithHost(serverUrl)
-                .WithCredentials(user, password)
-                .WithCleanSession(true)
-                .WithProtocol(TransportType.Tcp)
-                .Build();
+// TCP connection details
+var cDetails = new ConnectionDetailsBuilder()
+    .WithClientId(clientId)
+    .WithHost(serverUrl)
+    .WithCredentials(user, password)
+    .WithCleanSession(true)
+    .WithProtocol(TransportType.Tcp)
+    .Build();
 
-            string topicJson = "event/events/create";
-            string msgJson = "{  \"type\": \"TestEvent\", \"text\": \"sensor was triggered\", \"time\": \"2019-04-18T13:03:27.845Z\" }";
+// JSON message details
+string topicJson = "event/events/create";
+string msgJson = "{  \"type\": \"TestEvent\", \"text\": \"sensor was triggered\", \"time\": \"2019-04-18T13:03:27.845Z\" }";
 
-            var messageJson = new MqttMessageRequestBuilder()
-                .WithTopicName(topicJson)
-                .WithQoS(QoS.EXACTLY_ONCE)
-                .WithMessageContent(msgJson)
-                .Build();
+var messageJson = new MqttMessageRequestBuilder()
+    .WithTopicName(topicJson)
+    .WithQoS(QoS.EXACTLY_ONCE)
+    .WithMessageContent(msgJson)
+    .Build();
 
-            MqttClient client = new MqttClient(cDetails);
-            client.MessageReceived += Client_MessageReceived;
-            await client.EstablishConnectionAsync();
-            
-            await client.SubscribeAsync(new MqttMessageRequest() { TopicName = "error" });
+// MQTT client creation
+MqttClient client = new MqttClient(cDetails);
+client.MessageReceived += Client_MessageReceived;
+await client.EstablishConnectionAsync();
 
-            await client.PublishAsync(messageJson);
+await client.SubscribeAsync(new MqttMessageRequest() { TopicName = "error" });
+
+await client.PublishAsync(messageJson);
 ```
 
-For specific procedural details follow the [link](https://www.cumulocity.com/guides/device-sdk/mqtt/#json)
+For specific procedural details review [JSON via MQTT](https://www.cumulocity.com/guides/device-sdk/mqtt/#json).
 
 #### Building and running the application
 
@@ -265,10 +266,10 @@ and this command to run it:
 $ dotnet run
 ```
 
-After starting the application, you should see a new registered device in the Device Management application, listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
+After starting the application, you should see a new registered device in the Device Management application listed in **All devices**. In the **Measurements** tab, you will see the temperature measurements being sent by your client.
 
-Additionally, if there will be a new operation created for this device (e.g. c8y_Restart), information about it will be printed to the console.
+Additionally, if there will be a new operation created for this device (e.g. c8y_Restart), the information about it will be printed to the console.
 
 ### Improving the agent
 
-Now that you have done your first step, check out the section [Hello MQTT](/guides/device-sdk/mqtt-examples#hello-mqtt) to learn more about Cumulocity MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](#hello-mqtt) to learn more about Cumulocity MQTT and improve your application.

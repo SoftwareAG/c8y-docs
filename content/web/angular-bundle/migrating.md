@@ -47,7 +47,7 @@ Webpack now reads the manifest file and converts the content to CommonJS require
 
 In the `app.module.ts` file we bootstrap the hybrid application with the following code on the `HybridAppModule`. 
 
-```javascript
+```js
 import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
 import { ng1Modules } from './ng1';
 
@@ -66,7 +66,7 @@ This module not only bootstraps the upgrade module but also initializes the Angu
 
 In the `app.module.ts` you can control the bootstrapping. For example, you can add another module to the bootstrapped ng1 modules:
 
-```javascript
+```js
 constructor() {
   this.ng1Modules.push('my-custom-module');
 }

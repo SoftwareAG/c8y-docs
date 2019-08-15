@@ -6,7 +6,7 @@ weight: 10
 
  **Version:** 10.4.11.0 | **Packages:** @c8y/cli and @c8y/ngx-components
 
-It is a common use that you want to show additional information to a user in a details view (e.g. for a device or a group). 
+It is a common use case that you want to show additional information to a user in a details view (e.g. for a device or a group). 
 
 This how-to recipe explains how to accomplish a new tab in the device details view:
 

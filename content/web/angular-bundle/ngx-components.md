@@ -21,17 +21,18 @@ $ npm install @c8y/ngx-components
 
 Next, you can add the ngx-components modules to your app module (e.g. app.module.ts):
 
-```
+```js
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { CoreModule, BootstrapComponent} from '@c8y/ngx-components';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule as ngRouterModule } from '@angular/router';
+import { CoreModule, BootstrapComponent, RouterModule } from '@c8y/ngx-components';
 
 @NgModule({
   imports: [
-    BrowserModule,
-    RouterModule.forRoot([], { enableTracing: false, useHash: true }), // 1
-    CoreModule   // 2
+    BrowserAnimationsModule,
+    RouterModule.forRoot(),
+    ngRouterModule.forRoot([], { enableTracing: false, useHash: true }), // 1
+    CoreModule.forRoot() // 2
   ],
   bootstrap: [BootstrapComponent] // 3
 })
@@ -93,8 +94,9 @@ The Multi Provider extension allows a declarative approach to extend the applica
         /* ... */
       ],
       imports: [
-        BrowserModule,
-        RouterModule.forRoot([/* ... */], { enableTracing: false, useHash: true }),
+        BrowserAnimationsModule,
+        RouterModule.forRoot(),
+        ngRouterModule.forRoot([/* ... */], { enableTracing: false, useHash: true }),
         CoreModule.forRoot()
       ],
       providers: [
@@ -177,17 +179,20 @@ The Multi Provider extension allows a declarative approach to extend the applica
     Also the module definition of your application must be changed to support these plugins:
     ```javascript
     import { NgModule } from '@angular/core';
-    import { BrowserModule } from '@angular/platform-browser';
-    import { RouterModule } from '@angular/router';
+    import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+    import { RouterModule as NgRouterModule } from '@angular/router';
     import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
-    import { CoreModule } from '@c8y/ngx-components';
-    import { UpgradeModule, HybridAppModule } from '@c8y/ngx-components/upgrade';
+    import { CoreModule, RouterModule } from '@c8y/ngx-components';
+    import { UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
     import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
 
     @NgModule({
       imports: [
-        BrowserModule,
-        RouterModule.forRoot([], { enableTracing: false, useHash: true }),
+        BrowserAnimationsModule,
+        RouterModule.forRoot(),
+        NgRouterModule.forRoot([
+          ...UPGRADE_ROUTES,
+        ], { enableTracing: false, useHash: true }),
         CoreModule.forRoot(),
         AssetsNavigatorModule,
         NgUpgradeModule,

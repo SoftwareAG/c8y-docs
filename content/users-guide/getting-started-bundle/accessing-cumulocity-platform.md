@@ -6,8 +6,8 @@ layout: redirect
 
 You access the Cumulocity IoT platform via a web browser. Our products have been tested with the following desktop web browsers:
 
-* Edge Browser 
-* Internet Explorer (latest version) 
+* Edge Browser
+* Internet Explorer (latest version)
 * Firefox (latest version)    
 * Chrome (latest version)
 
@@ -17,17 +17,17 @@ You may also use recent smartphone and tablet web browsers. We have tested our p
 
 * Chrome on Android (latest version) on Galaxy smartphones and tablets
 * Safari on iOS (latest version) on Apple iPhone and iPad
-  
+
 >**Info:** Cumulocity on mobile devices may be constrained by the memory and the processing power available on the devices. For example, loading graphs with large amounts of data points may make the mobile device unresponsive.  
 Using the private mode on browsers may not work.
 
 To access the applications for your Cumulocity tenant, use the following URL:
 
 ```http
-https://<account>.cumulocity.com/
+https://<tenant-domain>.cumulocity.com/
 ```
 
-This will direct you to the login page of your default application.
+This will direct you to the login page of your default application. You may review [Tenants > Tenant ID and tenant domain](/guides/reference/tenants/#a-name-tenant-id-and-domain-a-tenant-id-and-tenant-domain) in the **Reference** guide to get a better understanding between tenant ID and tenant domain.
 
 > **Important:** Make sure that the address bar of your browser shows a lock icon. The lock icon indicates that you are using a secure connection and that you are indeed connected to Cumulocity.
 
@@ -35,11 +35,11 @@ This will direct you to the login page of your default application.
 
 ### <a name="login"></a>To log into the Cumulocity platform
 
-On the Login screen, enter your username and password and click **Login** to enter the application. 
+On the Login screen, enter your username and password and click **Login** to enter the application.
 
 <img src="/guides/images/users-guide/overview-login.png" alt="Login prompt">
 
-Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is also convenient if you frequently switch between Cumulocity applications, as Cumulocity will request you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out. 
+Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is also convenient if you frequently switch between Cumulocity applications, as Cumulocity will request you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.
 
 When you log into Cumulocity for the first time, you will be taken to the default application (usually the [Cockpit](/guides/users-guide/cockpit) application if not configured differently).
 
@@ -51,9 +51,9 @@ To explicitly logout, click the **User** button at the right of the the top bar 
 
 ### <a name="reset-password"></a>To reset your password
 
-1. Click the **Forgot password?** link on the Login screen. 
-2. In the resulting dialog box, enter your email address and click **Reset password**. 
-3. Check your email account for an email from the Cumulocity support providing a password reset link. 
+1. Click the **Forgot password?** link on the Login screen.
+2. In the resulting dialog box, enter your email address and click **Reset password**.
+3. Check your email account for an email from the Cumulocity support providing a password reset link.
 4. Click the link in the email and provide your new password.
 
 > **Info:** The password reset link is only valid for one day.
@@ -67,12 +67,12 @@ If you yourself are the primary administrator, your email address used on first 
 You can navigate straight to any place inside a Cumulocity application using the respective URL. For example, to show the basic information for a device, you can enter the following URL:
 
 ```http
-https://<account>.cumulocity.com/apps/devicemanagement/index.html#/device/<id>/info
+https://<tenant-domain>.cumulocity.com/apps/devicemanagement/index.html#/device/<id>/info
 ```
 
-Using such an URL, you can
+Using such an URL, you can:
 
-  * save bookmarks for specific devices or pages,
-  * send emails (manually or automatically, using the real-time event engine) which include a link to devices or sensor data,
-  * use the backward and forward navigation of your browser,
-  * write own web applications which link directly to information contained in a Cumulocity application.
+*   Save bookmarks for specific devices or pages.
+*   Send emails (manually or automatically, using the real-time event engine) which include a link to devices or sensor data.
+*   Use the backward and forward navigation of your browser.
+*   Write own web applications which link directly to information contained in a Cumulocity application.

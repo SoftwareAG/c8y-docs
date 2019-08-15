@@ -26,6 +26,44 @@ layout: redirect
 |customProperties|Object|1|Keeps a list of custom properties|optional|
 |parent|String|1|Name of parent tenant, the creator of this tenant.|Public|
 
+### Current tenant
+
+Content-Type: application/vnd.com.nsn.cumulocity.currentTenant+json
+
+|Field Name|Type|Occurs|Description|
+|:---------|:---|:-----|:----------|
+|name|String|1|Tenant|
+|domainName|String|1|Domain name|
+|allowCreateTenants|Boolean|1|Flag indicating if a tenant can create subtenants|
+
+#### GET the current tenant details
+
+Request for the currently logged service user's tenant.
+
+Required role: ROLE&#95;USER&#95;MANAGEMENT&#95;OWN&#95;READ, or ROLE&#95;SYSTEM
+
+ResponseBody: CurrentTenant
+
+```http
+GET /tenant/currentTenant
+Host: [hostname]
+Authorization: Basic xxxxxxxxxxxxxxxxxxx
+Content-Type: application/vnd.com.nsn.cumulocity.currentTenant+json;;ver=...
+```
+
+Example response:
+
+```json
+{
+    "allowCreateTenants": true,
+    "customProperties": {},
+    "domainName": "...",
+    "name": "..."  
+}
+```
+
+Note that in this case the response property `"name"` is the actual tenant ID.
+
 ### GET a representation of a Tenant.
 
 Response body: Tenant

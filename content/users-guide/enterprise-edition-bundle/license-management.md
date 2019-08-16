@@ -6,7 +6,7 @@ layout: redirect
 
 The management tenant may manage the licenses for the domains of the enterprise tenants via the UI.
 
-![License management](/guides/static/users-guide/Administration/admin-license-management.png)
+![License management](/guides/images/users-guide/Administration/admin-license-management.png)
 
 ### To add and validate a domain license
 

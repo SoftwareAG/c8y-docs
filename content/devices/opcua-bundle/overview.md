@@ -19,7 +19,7 @@ The OPC UA Server is connected to the OPC UA agent using OPC UA/SOAP or a binary
 
 The OPC UA agent finally communicates with Cumulocity using the REST API.
 
-**Important**: The current OPC UA agent is in beta status and not officially supported by Cumulocity. It will soon be deprecated and replaced by the officially tested and supported OPC UA agent 2.0.
+**Important**: The OPC UA agent is in beta state and not supported. 
 
 ### Prerequisites
 

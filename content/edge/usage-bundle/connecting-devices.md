@@ -12,32 +12,39 @@ Additionally, Cumulocity IoT Edge offers Cloud Fieldbus functionality to collect
 
 Modbus is a serial communications protocol originally published by Modicon and used to establish master-slave/client-server communication between devices.
 
-Before you can connect a Modbus device you first have to configure the Modbus agent. This only has to be done once as a preparation step and is not required for every Modbus device.
+Before you connect a Modbus device 
+
+* check if the agent is running,
+* register the Modbus agent. This only has to be done once as a preparation step and is not required for every Modbus device.
    
-Check if the Modbus agent is running in Cumulocity IoT Edge (running on port  6670):  
+#### How to check/change the agent state
+
+Use the following command to check if the agent is running in Cumulocity IoT Edge (running on port  6670):  
 
 ```shell
 $ systemctl status cumulocity-agent
 ```
 
+If the agent is not running, start it with the following command:
 
-#### Registering the agent
+```shell
+$ systemctl start cumulocity-agent
+```
 
-Next, register the agent in the Device management application using "linux-agent" as device ID. 
-
-<img src="/guides/images/edge/register-modbus-agent.png" name="Register agent"/> 
-
-Follow the description in Device Management > [Connecting devices](/guides/users-guide/device-management#connecting-devices) in the User guide to register the agent.
-
-In the Device Management application, click **All devices** in the navigator and find the Modbus agent in the device list.
+The Modbus agent is pre-registered in the post-installation phase.
+In the Device Management application, click **All devices** in the navigator and find the Modbus agent (called "linux-agent") in the device list.
 
 <img src="/guides/images/edge/edge-modbus-device.png" name="Device list" style="width:100%;"/> 
+
+#### How to connect Modbus devices
 
 For further information on connecting and managing Modbus devices, refer to Optional services > [Cloud Fieldbus](/guides/users-guide/optional-services#cloud-fieldbus) in the User guide.
 
 ### Example: Connecting an OPCUA device    
    
 To connect an OPC/UA device in Edge, follow the steps below.
+
+**Important**: The OPC UA agent is in beta state and not supported. 
 
 #### Preparation
    
@@ -48,6 +55,12 @@ $ sudo systemctl status opcua-agent-server
 ```
 
 <img src="/guides/images/edge/edge-device-check-agent.png" name="Check agent" style="width:100%;"/>
+
+If the agent is not running, start it with the following command:
+
+```shell
+$ sudo systemctl start opcua-agent-server
+```
 
 Check if the platform.url in */etc/opcua/opcua-agent-gateway.properties* is pointing to the correct URL, which is *http://localhost*.
 

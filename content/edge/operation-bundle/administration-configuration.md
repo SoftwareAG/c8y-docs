@@ -42,64 +42,16 @@ This is done by starting the VM (follow the steps described in the Installation 
 After increasing the size, restart Karaf by executing:
 
 ```shell
-# service cumulocity-core-karaf stop
+[admin@server ~]$  sudo service cumulocity-core-karaf stop
 ```
 
 and
 
 ```shell
-# service cumulocity-core-karaf start
+[admin@server ~]$  service cumulocity-core-karaf start
 ```
-
-Use the following command to check the JVM process of Karaf:
-
-```shell
-# ps aux | grep karaf
-```
-
-Sample output:
-
-```shell
-[root@server ~]# ps aux | grep karaf
-	karaf     1525 44.1 15.2 3890280 618920 ?      Sl   09:56   2:21 /usr/java/default/bin/java -XX:+UseConcMarkSweepGC -Djava.rmi.server.hostname=127.0.0.1 -Djava.rmi.server.useLocalHostname=true -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8199 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -server -Xms235M -Xmx1024M -XX:PermSize=16M -XX:MaxPermSize=512M -Dcom.sun.management.jmxremote -XX:+UseCompressedOops -XX:+UseParNewGC -XX:+UseConcMarkSweepGC 
-	(rest of output trimmed)
-	```
-
-If Karaf is not stopped by executing `service cumulocity-core-karaf stop` you can search for the PID (process ID) with `command ps aux | grep karaf` and stop it by executing:
-
-```shell	
-# kill -9 <PID>
-```
-
-In the example above, the PID is 1525.
-
-### Increasing the MQTT message size
-
-By default, the max size for one MQTT message is 8192 bytes(8KB).
-
-To increase the MQTT message size, add the property “mqtt.max.message.size” 
-in */etc/cumulocity/cumulocity-core.properties*.
-
-Example:
-
-To set the message size to 16KB, set “mqtt.max.message.size=16384”.
-
-
-After increasing the size, restart Karaf by executing:
-
-```shell
-# service cumulocity-core-karaf restart
-```
-
 
 ### Log rotation 
-
-Currently, there are two ways of configuring the log rotation for components.
-<br>
-
-**Under /usr/share/cumulocity-core-karaf/etc/ in org.ops4j.pax.logging.cfg file**
-
-This configuration is done via configuring the RollingFileAppender provided by Log4J. 
 
 The components for which log rotation is configured are as follows:
 
@@ -120,8 +72,6 @@ The components for which log rotation is configured are as follows:
 |MongoDB|/var/log/mongodb/*.log|Daily|50 MB|14|
 |NginX|/var/log/nginx/*.log|Daily|50 MB|14|
 |Apama|/opt/softwareag/cumulocity-apama-rules/deploy/logs/*.log|Daily|50 MB|14|
-
-Configuration can be altered by using daily/weekly/monthly and specifying the corresponding rotate count.
 
 For microservices, there currently is no specific log rotation configured.
 

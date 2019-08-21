@@ -1,0 +1,160 @@
+using com.apama.cumulocity.ManagedObject;
+using com.apama.cumulocity.FindManagedObject;
+using com.apama.cumulocity.FindManagedObjectResponse;
+using com.apama.cumulocity.FindManagedObjectResponseAck;
+
+/** An object that holds query parameters. */
+event ManagedObjectFilter {
+
+	/** Param to indicate how many entries of the collection
+	 *  are to be retrieved from Cumulocity IoT.
+	 */
+	constant string PAGE_SIZE := "pageSize";
+
+	/** Param to search for managedObjects based on the fragmentType. */
+	constant string FRAGMENT_TYPE := "fragmentType";
+
+	/** Param to search for managedObjects based on the type. */
+	constant string TYPE := "type";
+
+	/** Create and return a new ManagedObjectFilter object. */
+	static action init() returns ManagedObjectFilter {
+		return new ManagedObjectFilter;
+	}
+
+	/** Request with pageSize. */
+	action withPageSize(integer pageSize) returns ManagedObjectFilter {
+		return addParam(PAGE_SIZE, pageSize.toString());
+	}
+
+	/** Filter based on fragmentType. */
+	action byFragmentType(string fragmentType) returns ManagedObjectFilter {
+		return addParam(FRAGMENT_TYPE, fragmentType);
+	}
+
+	/** Filter based on Type. */
+	action byType(string type) returns ManagedObjectFilter {
+		return addParam(TYPE, type);
+	}
+
+	/** Add a query parameter. */
+	action addParam(string paramName, string paramValue)
+			returns ManagedObjectFilter {
+		params.add(paramName, paramValue);
+		return self;
+	}
+
+	/** Return query parameters. */
+	action getParameters() returns dictionary<string, string> {
+		return params;
+	}
+
+	/** Query parameters. */
+	dictionary<string, string> params;
+}
+
+/** Helper to query for managedObjects. */
+event ManagedObjectLookupHelper {
+
+	/** Callback for successful responses. */
+	action<integer, ManagedObject> responseCallback;
+
+	/** Callback for completion acknowledgement. */
+	action<integer> responseCompletedCallback;
+
+	/** Create and return a new ManagedObjectLookupHelper object. */
+	static action init() returns ManagedObjectLookupHelper {
+		return new ManagedObjectLookupHelper;
+	}
+
+	/** Register query response callback. */
+	action withResponseCallback(action<integer, ManagedObject> responseCb) 
+			returns ManagedObjectLookupHelper {
+		responseCallback := responseCb;
+		return self;
+	}
+
+	/** Register query completed callback. */
+	action withResponseCompletedCallback(action<integer> responseCompletedCb)
+			returns ManagedObjectLookupHelper {
+		responseCompletedCallback := responseCompletedCb;
+		return self;
+	}
+
+	/** Simple request without any params to fetch available managedObjects. */
+	action get() returns integer {
+		return getWithFilter(ManagedObjectFilter.init());
+	}
+
+	/** Query for managedObjects based on a filter. */
+	action getWithFilter(ManagedObjectFilter filter) returns integer {
+
+		/** Subscribe to FindManagedObjectResponse.CHANNEL to listen for 
+		 *  responses.
+		 */
+		monitor.subscribe(FindManagedObjectResponse.CHANNEL);
+
+		/** Unique request identifier. */
+		integer reqId := integer.getUnique();
+
+		/** Listen for matching responses. */
+		on all FindManagedObjectResponse(reqId=reqId) as resp
+		and not FindManagedObjectResponseAck(reqId=reqId) {
+			ifpresent responseCallback {
+				responseCallback(reqId, resp.managedObject);
+			}
+		}
+
+		/** Listen for request completed acknowledgement. */
+		on FindManagedObjectResponseAck(reqId=reqId) {
+			monitor.unsubscribe(FindManagedObjectResponse.CHANNEL);
+			ifpresent responseCompletedCallback {
+				responseCompletedCallback(reqId);
+			}
+		}
+
+		/** Send request to find available managedObjects. */
+		FindManagedObject findManagedObject := new FindManagedObject;
+		findManagedObject.reqId := reqId;
+		findManagedObject.params := filter.getParameters();
+		send findManagedObject to FindManagedObject.CHANNEL;
+
+		return reqId;
+	}
+}
+
+/**
+* Query for ManagedObject(s) based on fragmentType.
+*
+* This application sends a request to query for ManagedObjects with
+* fragmentType "c8y_IsDevice" and creates listeners to listen for 0 or more
+* FindManagedObjectResponse events followed by the
+* FindManagedObjectResponseAck completion acknowledgement event.
+*/
+monitor FindManagedObjectSample {
+
+	constant string FRAGMENT_TYPE := "c8y_IsDevice";
+
+	action onload() {
+
+		/* Create a filter to lookup managedObjects based on fragmentType. */
+		ManagedObjectFilter filter :=
+				ManagedObjectFilter.init().byFragmentType(FRAGMENT_TYPE);
+
+		/** Query for managedObjects. */
+		integer reqId := ManagedObjectLookupHelper.init()
+							.withResponseCallback(queryResponse)
+							.withResponseCompletedCallback(queryCompleted)
+							.getWithFilter(filter);
+	}
+
+	/** Receive each individual response. */
+	action queryResponse(integer reqId, ManagedObject managedObject) {
+		log "Find ManagedObject Response : " + managedObject.toString() at DEBUG;
+	}
+
+	/** Request completed acknowledgement. */
+	action queryCompleted(integer reqId) {
+		log "Find ManagedObject Request completed " + reqId.toString() at DEBUG;
+	}
+}

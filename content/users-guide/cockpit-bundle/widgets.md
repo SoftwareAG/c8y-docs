@@ -10,7 +10,7 @@ The Cockpit application includes preset widget types. Each widget type provides 
 
 The following section describes, in alphabetical order, each available widget type and its configuration properties.
 
-### Widget "Alarm list"
+### Alarm list
 
 The "Alarm list" widget shows a list of alarms, filtered by objects, alarm severity and alarm status. For details on the information provided for each alarm, refer to [Working with alarms](/guides/users-guide/device-management/#alarm-monitoring) in the Device Management section.
 
@@ -27,7 +27,7 @@ The "Alarm list" widget shows a list of alarms, filtered by objects, alarm sever
 |Severities|Only show alarms of the selected alarm severity.
 |Order|Alarms may be ordered by the active status (followed by severity and time, the default) or the severity (followed by time).
 
-### Widget "All critical alarms"
+### All critical alarms
 
 The "All critical alarms" widget shows all objects with a critical alarm. Apart from the title, there are no additional parameters to be configured.
 
@@ -35,7 +35,7 @@ The "All critical alarms" widget shows all objects with a critical alarm. Apart 
 
 For details on alarms, refer to [Device Management > Working with alarms](/guides/users-guide/device-management/#alarm-monitoring).
 
-### Widget "Applications"
+### Applications
 
 The "Applications" widget shows a list of links to all available applications. Apart from the title, there are no additional parameters to be configured.
 
@@ -44,7 +44,7 @@ The "Applications" widget shows a list of links to all available applications. A
 For details on applications, refer to [Administration > Managing Applications](/guides/users-guide/administration#managing-applications).
 
 
-### Widget "Asset notes"
+### Asset notes
 
 The "Asset notes" widget displays messages provided by the administrative user to all owners of the current widget. 
 
@@ -53,7 +53,7 @@ The "Asset notes" widget displays messages provided by the administrative user t
 Only users with the permission to edit the home dashboard will be able to provide this message.
 
 
-### Widget "Asset properties"
+### Asset properties
 
 The "Asset properties" widget displays a user-defined list of attributes of the current object. The current object can be a device or a group.
 
@@ -70,7 +70,7 @@ The "Asset properties" widget displays a user-defined list of attributes of the 
 
 >**Info:** In the view mode, this widget only displays the properties which are not empty.
 
-### <a name="widget-asset-table"></a> Widget "Asset table"
+### <a name="widget-asset-table"></a> Asset table
 
 The "Asset table" widget shows details of all child devices in a table. This is a very powerful widget, allowing to arrange selected properties of objects in a table.
 
@@ -91,22 +91,24 @@ In the following screenshot, five columns are configured. Three property columns
 The resulting table is visualized as follows:
 ![Asset table widget example](/guides/images/users-guide/cockpit/cockpit-widget-asset-table-example.png)
 
-**Adding properties**
+#### To add properties
 
-To add a property, click **+Add Properties** and select one or more properties to be added. 
+Click **+Add Properties** and select one or more properties to be added. 
 
 **Info**: The property "Active alarm status" shows active alarms as icons in the table. If you select this property, you also need to configure the renderer "Active Alarm Status" in the list of columns.
 
-**Adding actions**
+#### To add actions
 
-To add an action, click **+Add Action**. Select **Toggle maintenance mode** to add the predefined action to toggle the maintenance mode. Or select **Create operation** to create a button that will execute a shell command. In the following dialog you can then enter the label for the button and the shell command to be executed.
+1. Click **+Add Action**. 
+1. Select **Toggle maintenance mode** to add the predefined action to toggle the maintenance mode. 
+1. Select **Create operation** to create a button that will execute a shell command. In the resulting dialog box you can then enter the label for the button and the shell command to be executed.
 
 ![Reboot device button configuration](/guides/images/users-guide/cockpit/cockpit-widget-asset-table-buttonconfig.png)
 
 >**Info:** The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For more details, refer to [shell commands](/guides/users-guide/device-management/#shell).<br>
 You can also enter the JSON format for the operation that will be sent to the device. For details, contact the device vendor for supported operations.
 
-**Modifying the table**
+#### To modify the table
 
 To edit the header of a column, click on its value in the "Label" column and edit the label.
 
@@ -114,7 +116,7 @@ You can rearrange the columns by clicking the icon at the very left of a row and
 
 To remove a property or an action, hover over the respective row and click **Delete** at the right.
 
-### Widget "Data point graph"
+### Data point graph
 
 The "Data point graph" widget shows a data point (measurement) in a graph. The visualization is the same as in the [data explorer](#visualize).
 
@@ -124,7 +126,7 @@ The easiest way to create a "Data point graph" widget is to navigate to the data
 
 Refer to [Visualizing data using the data explorer](#visualize) for further details on the parameters to be configured.
 
-### Widget "Data point list"
+### Data point list
 
 The "Data point list" widget shows data points (measurements), one in each row, with current values and data point properties.
 
@@ -136,7 +138,7 @@ The "Data point list" widget shows data points (measurements), one in each row, 
 |Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Adding data points](#add-data-points).
 |Column visibility|Select which columns should be visible: <br>Label: Label of the data point. See [Visualizing data using the data explorer](#visualize) for details. <br>Target: Target value. Can be configured in the [data explorer](#visualize) or [Data Point Library](#library).<br>Current: Current value. <br>Diff: Absolute difference between current value and target value. <br>Diff %: Percentage of difference between current value and target value. <br>Asset: Name of the device or group of the data point. 
 
-### Widget "Data point table"
+### Data point table
 
 The "Data point table" widget configuration is similar to the "Data point graph" widget, but instead of visualizing the data as a line-chart, data is visualized as a table.
 
@@ -146,7 +148,7 @@ Out of range values, based on configured yellow and red ranges, are highlighted 
 
 ![Data point table](/guides/images/users-guide/datapointtable.png)
 
-### Widget "Event list"
+### Event list
 
 The "Event list" widget lets you monitor events for a selected device. 
 
@@ -154,23 +156,23 @@ The "Event list" widget lets you monitor events for a selected device.
 
 Additionally, a specific date range can be set and the events can be monitored in realtime. 
 
-### Widget "Fieldbus device"
+### Fieldbus device
 
 The "Fieldbus device" widget lets you see the status of a modbus device and operate it.
 
 For details on the "Fieldbus device" widget, refer to [Optional Services > Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/guides/users-guide/optional-services#fieldbus-device-widget).
 
-### Widget "Help and service"
+### Help and service
 
 The "Help and service" widget displays links to help and service resources. There are no additional parameters to be configured.
 
 ![Help and service widget](/guides/images/users-guide/cockpit/cockpit-widget-help-service.png)
 
-### Widget "Image"
+### Image
 
 The "Image" widget lets you display a single image to be selected from your computer by browsing. There are no additional parameters to be configured.
 
-### Widget "Info Gauge"
+### Info Gauge
 
 The "Info gauge" widget visualizes one data point in form of a radial gauge and multiple data points as labels. 
 
@@ -185,7 +187,7 @@ You can select one data point for the gauge, and multiple data points shown with
 You must enable at least one data point in each section to create the "Info gauge" widget.
 
 
-### Widget "HTML"
+### HTML
 
 The "HTML" widget shows user-defined content. The content can be formatted using HTML.
 
@@ -195,26 +197,28 @@ The "HTML" widget shows user-defined content. The content can be formatted using
 
 * HTML code
 
-The following variables can be used inside the HTML content:
+	The following variables can be used inside the HTML content:
 
-* {{devicesCount}}: Total number of devices.
+	* {{devicesCount}}: Total number of devices.
 
-* {{usersCount}}: Total number of users.
+	* {{usersCount}}: Total number of users.
 
-* {{deviceGroupsCount}}: Total number of groups.
+	* {{deviceGroupsCount}}: Total number of groups.
 
-* {{device.name}}: The name of the device.
+	* {{device.name}}: The name of the device.
 
-* {{device.*property*}}: More general form of the above. You can address any property of the device.
+	* {{device.*property*}}: More general form of the above. You can address any property of the device.
 
-* {{device.c8y_Hardware.model}}: The model of the device.
+	* {{device.c8y_Hardware.model}}: The model of the device.
 
-* {{device.*fragment*.*property*}}: More general form of the above. You can address any property of any fragment of the device.
+	* {{device.*fragment*.*property*}}: More general form of the above. You can address any property of any fragment of the device.
 
->**Info:** "Device" refers to the target device, as selected in the widget configuration parameter.<br>
-*fragment.property* refers to the properties of the respective device. To see the available property names, you can use the "Asset property" or “Asset table” widget and click **+Add property** in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column “Property”. Generated properties of these widgets are not available in the HTML widgets.
+"Device" refers to the target device, as selected in the widget configuration parameter.<br>
+"fragment.property" refers to the properties of the respective device. To see the available property names, you can use the "Asset property" or “Asset table” widget and click **+Add property** in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column “Property”. Generated properties of these widgets are not available in the HTML widgets.
 
-### Widget "Linear Gauge"
+![HTML widget](/guides/images/users-guide/cockpit/cockpit-widget-html.png)
+
+### Linear Gauge
 
 The "Linear gauge" widget visualizes data points in form of a linear gauge. Min and max target values are shown on the gauge as well.
 
@@ -224,7 +228,7 @@ The "Linear gauge" widget visualizes data points in form of a linear gauge. Min 
 
 You must enable at least one data point to create the "Linear gauge" widget.
 
-### Widget "Map"
+### Map
 
 The "Map" widget shows the location of a device or all devices of a group. 
 
@@ -234,11 +238,11 @@ You can drag the map and move its content, and you can zoom in and out by using 
 
 The icons representing the devices are color-coded. The color used follows these rules:
 
-    * Red = At least one critical alarm
-    * Orange = At least one major alarm
-    * Yellow = At least one minor alarm
-    * Blue = At least one warning
-    * Green = No alarm
+* Red = At least one critical alarm
+* Orange = At least one major alarm
+* Yellow = At least one minor alarm
+* Blue = At least one warning
+* Green = No alarm
 
 Click a device icon, to open popup with the following information:
 
@@ -252,11 +256,11 @@ Target assets or devices: Select which devices are shown on the map. If a group 
 
 >**Info**: If none of the target device(s) has a known location, then the widget shows a world map without icons.
 
-### Widget "Message sending"
+### Message sending
 
 The "Message sending" widget sends a message to a device. The behavior of the device itself is device-dependent. Only available for devices that support this type of operation.
 
-### Widget "Pie chart"
+### Pie chart
 
 The "Pie chart" widget displays data points (measurements) with current values in a pie chart presentation.
 
@@ -269,13 +273,13 @@ The "Pie chart" widget displays data points (measurements) with current values i
 |Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Adding data points](#add-data-points).
 
 
-### Widget "Quick links"
+### Quick links
 
 The "Quick links" widget displays several quick links to relevant operations. There are no additional parameters to be configured.
 
 ![Quick links widget](/guides/images/users-guide/cockpit/cockpit-widget-quick-links.png)
 
-### Widget "Radial Gauge"
+### Radial Gauge
 
 The "Radial gauge" widget visualizes data points in form of a radial gauge. 
 
@@ -284,7 +288,7 @@ The "Radial gauge" widget visualizes data points in form of a radial gauge.
 You must enable at least one data point to create the "Radial gauge" widget.
 
 
-### Widget "Recent alarms"
+### Recent alarms
 
 The "Recent alarms" widget shows all alarms of all severity sorted by time. There are no additional parameters to be configured.
 
@@ -292,15 +296,15 @@ The "Recent alarms" widget shows all alarms of all severity sorted by time. Ther
 
 For details on alarms, refer to [Device Management > Working with alarms](/guides/users-guide/device-management/#alarm-monitoring).
 
-### Widget "Relay array control"
+### Relay array control
 
 The "Relay array control" widget lets you switch relays on or off independently in an array of relays. Only available for devices that support this type of operation.
 
-### Widget "Relay control"
+### Relay control
 
 The "Relay control" widget allows you to switch a device relay on or off. Only available for devices that support this type of operation.
 
-### Widget "Rotation"
+### Rotation
 
 The "Rotation" widget lets you render an object model of a device.
 
@@ -316,13 +320,17 @@ The "Rotation" widget lets you render an object model of a device.
 
 In the "Rotation" widget you can rotate the object by dragging and moving it around. Zoom in and out by using the mouse.
 
-### Widget "SCADA"
+### SCADA
 
 The "SCADA" widget provides a graphic representation of the status of a device.
 
 For details on the "SCADA" widget, refer to [Optional Services > Cloud Fieldbus > Monitoring status using the SCADA widget](/guides/users-guide/optional-services/#scada).
 
-### Widget "Silo"
+> **Info:** All "svg" files are sanitized in order to remove malicious code.
+
+![SCADA widget](/guides/images/users-guide/cockpit/cockpit-widget-scada.png)
+
+### Silo
 
 The "Silo" widget displays data points (measurements) with current values in a silo presentation.
 
@@ -333,7 +341,7 @@ The "Silo" widget displays data points (measurements) with current values in a s
 |Title|Widget title. By default, the widget type is simply used as title.
 |Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Adding data points](#add-data-points).
 
-### Widget "Traffic light"
+### Traffic light
 
 The "Traffic light" widget visualizes the states of a device as traffic light.
 
@@ -345,7 +353,7 @@ The "Traffic light" widget visualizes the states of a device as traffic light.
 |Target assets or devices|Select group or device to be displayed.
 |States mapping|Select a property for each light. The value of the property has to be one of the following to have the respective light on: true, 1, any non-empty string, any non-null number.
 
-### Widget "Twitter News"
+### Twitter News
 
 The "Twitter news" widget displays tweets from Twitter's embedded timeline widget.
 

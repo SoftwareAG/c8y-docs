@@ -4,11 +4,15 @@ title: How is real-time processing implemented in Cumulocity?
 layout: redirect
 ---
 
-There are two processing modes for API requests in Cumulocity: *persistent* and *temporary*. The "persistent" mode is the default: It will store data in the Cumulocity database as well as send the data to the real-time engine. After both is done, Cumulocity returns the result of the request.
+There are several processing modes for API requests in Cumulocity: *persistent*, *transient*, *quiescent* and *cep*. 
 
-Data marked as "temporary" is not stored into Cumulocity's database but just handled by the real-time engine. This saves on storage and processing cost for example when tracking devices in real-time without requiring data to be stored.
+Persistent - This is the default mode. It will store data in the Cumulocity database as well as send the data to the real-time engine. After both is done, Cumulocity returns the result of the request.
 
-The "temporary" mode will only send the data to the real-time engine and immediately return asynchronously and not store it in Cumulocity's database. This mode saves storage and processing costs and is useful for example when tracking devices in real-time without requiring data to be stored.
+Transient - Will send data to the real-time engine and immediately return asynchronously and not store it in Cumulocity's database. This mode saves storage and processing costs and is useful for example when tracking devices in real time without requiring data to be stored.
+
+Quiescent - Behaves similar to the "persistent" mode with the exception that no real-time notifications will be sent. The "quiescent" processing mode is applicable only for measurements and events.
+
+Cep - Behaves like the "transient" mode with the exception that no real-time notifications are sent. Currently it is applicable only for measurements and events.
 
 ![CEP architecture](/guides/images/concepts-guide/realtime.png)
 

@@ -58,7 +58,7 @@ https://<instance domain>/apps/cockpit?dynamicOptionsUrl=/apps/my-options/option
 
 Here is a list of the built-in options. As in the end this is just a plain old javascript object this list can be easily extended  with any property a developer might want to include in his applications or extensions.
 
-```typescript
+```js
 export class ApplicationOptions {
   name: string; // To be saved to the server
   contextPath: string; // To be saved to the server
@@ -83,6 +83,15 @@ export class ApplicationOptions {
   };
   localePath?: string; // The folder where the translations po files are loaded from
   extraCssUrls?: string[]; // URLs for extra CSS files to be loaded at runtime
+  docs?: {
+    noDefault: boolean, // Hide default links to documentation
+    excludeDefault: string[], // The list of regex strings to be matched with the default docs url
+    links: Array<{ // Additional documentation links to be displayed
+        icon: string;
+        label: string;
+        url: string;
+    }>
+  };
   noAppSwitcher?: boolean; // Hides the application from the application switched (saved to the server)
   globalTitle?: string; // HTML page title
   hidePowered?: boolean; // Hide powered by at the bottom of the navigator

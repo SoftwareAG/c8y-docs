@@ -62,7 +62,7 @@ To extend and compose an application, ngx-components provide four core architect
 2. **Multi Provider** (MP):<br>
 The Multi Provider extension allows a declarative approach to extend the application. Instead of defining it in the template, you extend an already defined factory via a `HOOK`. This hook gets executed if the application state changes. The return values are then injected into the page. You can use the normal dependency injection system of Angular and as a result you can usually return an Observable, Promise or Array of a certain type. As an example we can define the tabs of certain routes by hooking into the `HOOK_TABS` provider:
 
-   ```
+   ```js
    import { Injectable } from '@angular/core';
    import { Router } from '@angular/router';
    import { Tab, TabFactory, _ } from '@c8y/ngx-components';
@@ -87,7 +87,7 @@ The Multi Provider extension allows a declarative approach to extend the applica
    ```
    By defining a `Injectable()` services which implements the `TabFactory` (1) you can define which tabs you want to show on which page. By using the `Router` service of Angular we check in this example if the URL of the route contains the name **world** (2) and only if this matches the tab labeled `Awesome` is returned (3). By hooking this into your provider definition of your module you make sure, that the `get()` function is checked on each route change:
 
-   ```
+   ```js
     @NgModule({
       declarations: [
         /* ... */
@@ -95,8 +95,7 @@ The Multi Provider extension allows a declarative approach to extend the applica
       imports: [
         BrowserModule,
         RouterModule.forRoot([/* ... */], { enableTracing: false, useHash: true }),
-        CoreModule,
-        CommonModule
+        CoreModule.forRoot()
       ],
       providers: [
         { provide: HOOK_TABS, useClass: ExampleTabFactory, multi: true} // hook the ExampleTabFactory defined earlier
@@ -112,11 +111,12 @@ The Multi Provider extension allows a declarative approach to extend the applica
    * `HOOK_ACTION`: Enables to define the global actions which should be shown or enabled on certain conditions.
    * `HOOK_BREADCRUMB`: Can be used to show breadcrumbs in the header bar.
    * `HOOK_SEARCH`: Allows to define the search to be shown or not.
+   * `HOOK_ONCE_ROUTE`: Allows to define a route. Use this if you want to use a context route, e.g. add a new tab to the device details view. For all other routes you should use the default Angular router.
 
 3. **Services**<br>
    A service is defined for most components of ngx-components. They can be used via the dependency injection concept of Angular, that means that these services can be injected in the constructor of a component and then add or remove certain UI elements. The following example shows how to use that concept with an alert:
 
-   ```
+   ```js
    constructor(private alert: AlertService) {
      try {
        // do something that might throw an exception
@@ -133,17 +133,17 @@ The Multi Provider extension allows a declarative approach to extend the applica
 4. **Legacy plugins**<br>
     If you are extending a default application (Cockpit, Device Management or Administration) you get a file called `ng1.ts`. These are so called plugins which haven't been migrated to Angular yet and are still using angular.js. You can add or remove these plugins to customize the application appearance like it has been done previously in a target file by the `addImports: []` or `removeImports: []` property. The following shows an example which removes the default import in the angular.js target file:
 
-    ```
+    ```json
     {
       "name": "example",
       "applications": [
         {
           "contextPath": "cockpit",
           "addImports": [
-            "my-plugin/welcomeScreen",
+            "my-plugin/cockpit-home",
           ],
           "removeImports": [
-            "core/welcomeScreen"
+            "core/cockpit-home"
           ]
         }
       ]
@@ -154,17 +154,17 @@ The Multi Provider extension allows a declarative approach to extend the applica
     ```javascript
     import '@c8y/ng1-modules/core';
     // [...] more imports removed for readability
-    import '@c8y/ng1-modules/alarmAssets/cumulocity';
-    // import '@c8y/ng1-modules/welcomeScreen/cumulocity';              // 1
-    import '@c8y/ng1-modules/deviceControlMessage/cumulocity';
-    import '@c8y/ng1-modules/deviceControlRelay/cumulocity';
+    import '@c8y/ng1-modules/alarmAssets/cumulocity.json';
+    // import '@c8y/ng1-modules/cockpit-home/cumulocity.json';              // 1
+    import '@c8y/ng1-modules/deviceControlMessage/cumulocity.json';
+    import '@c8y/ng1-modules/deviceControlRelay/cumulocity.json';
     // [...] more imports removed for readability
-    import 'my-plugin/cumulocity';                                      // 2
+    import 'my-plugin/cumulocity.json';                                    // 2
     ```
-    As you can see we simply removed the import of the original welcome screen plugin (1.) and replaced it by the custom implementation (2.). Note that all angular.js plugins need to have the `/cumulocity` addition to tell webpack that a legacy plugin is imported.
+    As you can see we simply removed the import of the original welcome screen plugin (1.) and replaced it by the custom implementation (2.). Note that all angular.js plugins need to have the `/cumulocity.json` addition to tell webpack that a legacy plugin is imported.
 
     To use legacy plugins in your custom non-default application you need to set the `upgrade` flag in the package.json file and use the same import approach like described before:
-    ```
+    ```json
     "c8y": {
       "application": {
         "name": "myapp",
@@ -188,7 +188,7 @@ The Multi Provider extension allows a declarative approach to extend the applica
       imports: [
         BrowserModule,
         RouterModule.forRoot([], { enableTracing: false, useHash: true }),
-        CoreModule,
+        CoreModule.forRoot(),
         AssetsNavigatorModule,
         NgUpgradeModule,
         // Upgrade module must be the last
@@ -209,7 +209,7 @@ To determine which extension points are supported and which concept should be us
 
 The `CommonModule` exports the `DataModule`, an abstraction of the [@c8y/client](/guides/web/angular#client) which allows to use the services of the client with the dependency injection system of Angular. So in any module in which the `CommonModule` or `DataModule` is imported you can use simple injection to access data of the platform:
 
-```
+```js
 import { Component } from '@angular/core';
 import { AlarmService } from '@c8y/client';              // 1
 

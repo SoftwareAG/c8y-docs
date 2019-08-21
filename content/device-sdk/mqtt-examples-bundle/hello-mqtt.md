@@ -22,14 +22,18 @@ In order to follow this tutorial, check the following prerequisites:
 
 To configure the MQTT connection, you need to pass the following connection parameters (see the screenshot below).
 
-* Hostname: For this example, use TCP and Port 1883. You also need to pass the URL to your tenant (e.g. _mqtt.cumulocity.com_).
-* Client ID: You can use the "Generate a random ID" button (most tools will offer such a button) or provide one yourself. This ID will be linked to your device. To reconnect to the same device, use the same ID.
-* Username: You need to enter your tenant and username separated by a slash (tenant/username). For this example, you can use the same username you use for login to Cumulocity.
-* Password: The password of the user.
+*   MQTT Client Name – Give your client a name to identify it, e.g. Cumulocity MQTT.
+*   MQTT Client Id – You can use the "Generate a random ID" button (most tools will offer such a button) or provide one yourself. This ID will be linked to your device in Cumulocity. To reconnect to the same device, use the same ID.
+*   Protocol – Select the protocol to be used, e.g. mqtt/tcp.
+*   Host – Provide in the URL your tenant domain, e.g. _mytenant.cumulocity.com/mqtt_.
+*   Username – In this case, the username is formed as &lt;tenantID>/&lt;service-user>. You can use the same credentials you use to log into the Cumulocity platform. As seen in the example below, for the tenant ID "t76543210" and service user "manga" the username is "t76543210/manga".
+*   Password: The password of the service user.
 
 ![Example MQTTBox Configuration](/guides/images/mqtt/mqttBoxConfig.png)
 
-The other configurations like "clean session" are not important for this example. You can change them to your needs. After clicking **Save**, you will see a screen similar to the following screenshot.
+> **Info**: You may review [Tenants > Tenant ID and tenant domain](/guides/reference/tenants/#a-name-tenant-id-and-domain-a-tenant-id-and-tenant-domain) in the **Reference** guide to get a better understanding between tenant ID and tenant domain.
+
+Other configurations like "clean session" are not important for this example. You can change them to your needs. After clicking **Save**, you will see a screen similar to the following screenshot.
 
 ![MQTTBox Established Connection](/guides/images/mqtt/mqttBoxSuccess.png)
 

@@ -5,7 +5,7 @@ title: Overview
 ---
 
 
-This section describes how to develop and deploy microservices on top of Cumulocity using the Microservice SDK for Java. It also contains a [Hello world tutorial](#java-microservice) that you may follow to get the basics of developing microservices using Java. After you have successfully deployed your first microservice to Cumulocity, you may also continue with the section [Developing Java clients](#developing-services-client).
+This section describes how to develop and deploy microservices on top of Cumulocity using the Microservice SDK for Java. It also contains a [Hello world tutorial](#java-microservice) that you may follow to get the basics of developing microservices using Java. After you have successfully deployed your first microservice to Cumulocity, you may also continue with the section [Developing microservices](#developing-microservice) to learn more about other features and capabilities of the SDK.
 
 > **Info**: You can develop microservices for Cumulocity with any IDE and build tool that you prefer, but this section focuses on Maven and Eclipse.
 

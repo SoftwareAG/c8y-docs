@@ -64,6 +64,8 @@ For convenience, collection resources provide a "next" and "prev" links to retri
 
 Please note that the totalPages property can be expensive to compute, hence it is not returned by default for range queries. To include totalPages in the result, add the query parameter "withTotalPages=true".
 
+> **Info:** If inventory roles are applied to a user, a query by the user may return less than pageSize results even if there are more results in total.
+
 ### <a name="paging"></a>Query result paging for users with restricted access
 
 If a user does not have a global role for reading data from the API resource but rather has [inventory roles](/guides/users-guide/administration#inventory) for reading only particular documents there are some differences in query result paging:

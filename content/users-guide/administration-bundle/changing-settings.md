@@ -6,12 +6,12 @@ layout: redirect
 
 From the **Settings** menu, administrators can modify or manage various settings for the account as
 
-- configuring [single sign-on](#single-sign-on),
-- changing the [application settings](#default-app),
-- changing the [password policy and TFA settings](#changing-password-settings),
-- managing the [properties library](#properties),
-- configure system-wide [configuration properties](#config-platform) in Cumulocity,
-- managing the [connectivity settings](#connectivity).
+- configure [single sign-on](#single-sign-on).
+- change the [application settings](#default-app).
+- change the [password policy and TFA settings](#changing-password-settings).
+- manage the [properties library](#properties).
+- configure system-wide [configuration properties](#config-platform) in Cumulocity.
+- manage the [connectivity settings](#connectivity).
 
 ### <a name="single-sign-on"></a>Configuring single sign-on
 
@@ -23,11 +23,11 @@ This feature is enabled since Cumulocity version 9.12. For correct behavior any 
 
 Before switching to the single sign-on option it is mandatory that:
 
-* the authorization server you use supports OAuth2 authentication code grant,
-* the access token is issued as JWT and you know what goes into the token content, 
-* the JWT must consist of a unique user identifier,
-* the Cumulocity platform is in version 9.12 but preferably higher, 
-* all microservices are build with Microservice Java SDK 9.12.6 but preferably higher.
+* the authorization server you use supports OAuth2 authorization code grant
+* the access token is issued as JWT and you know what goes into the token content
+* the JWT must consist of a unique user identifier, "iss" (issuer), "aud" (audience) and "exp" (expiration time) fields
+* the Cumulocity platform is in version 9.12 but preferably higher
+* all microservices are build with Microservice Java SDK 9.12.6 but preferably higher
 
 
 For Microservices custom built, refer to [General aspects > Security](guides/microservice-sdk/concept/#security) in the Microservice SDK guide.
@@ -41,7 +41,7 @@ To enable the feature, the administrator has to configure a connection with the 
 
 Click **Single sign-on** in the **Settings** menu in the navigator. 
 
-At the top left, you can choose a template. The chosen option has an effect on the look of the panel. The default template is "Custom" which allows for a very detailed configuration with virtually any authorization server using OAuth2 authentication code grant. Other templates provide simplified views for well known and supported authorization servers. In the next steps there will first be a definition of how to use the "Custom" template followed by a view dedicated to Azure Active directory. 
+At the top left, you can choose a template. The chosen option has an effect on the look of the panel. The default template is "Custom" which allows for a very detailed configuration with virtually any authorization server using OAuth2 authorization code grant. Other templates provide simplified views for well known and supported authorization servers. In the next steps there will first be a definition of how to use the "Custom" template followed by a view dedicated to Azure Active directory. 
 
 ##### Custom template
 
@@ -170,35 +170,38 @@ For further information, see http://enable-cors.org.
 
 ### <a name="changing-password-settings"></a>Changing the password policy and TFA settings
 
-To change password settings, click **Password** in the **Settings** menu. 
+Click **Password** in the **Settings** menu. 
 
 ![Password settings](/guides/images/users-guide/Administration/admin-settings-password.png)
 
-Under **Password expiration**, you can limit the validity of user passwords by specifying the number of days after which users have to change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords (default value).
 
-By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in Getting Started > [Accessing and logging into the Cumulocity platform](/guides/users-guide/overview#login).
+#### To change password settings
+
+1. Under **Password expiration**, you can limit the validity of user passwords by specifying the number of days after which users have to change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords (default value).
+2. By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in [Getting Started > Accessing and logging into the Cumulocity platform](/guides/users-guide/overview#login).
+
+	Strong (green) passwords must have "M" characters. By default, the system restricts the use of passwords already used in the past. The last "N" passwords provided by a user are remembered by the system and the system does not allow to use them. The default value for "N" is 10.
+
+	>**Info**: "M" and "N" can be configured by the platform administrator.
+
+3. Click **Save** to apply your settings.
 
 >**Info**: The password validity limit and the enforcing of strong passwords may not be editable, if configured by the platform administrator.
 
-Strong (green) passwords must have "M" characters. By default, the system restricts the use of passwords already used in the past. The last "N" passwords provided by a user are remembered by the system and the system does not allow to use them. The default value for "N" is 10.
+#### To change TFA settings
 
->**Info**: "M" and "N" can be configured by the platform administrator.
-
-Click **Save** to apply your settings.
-
-Under **TFA settings**, you can change the following TFA settings:
-
- - **Limit token validity** - here you can set the lifetime of each session in minutes. When the session expires, the user has to enter a new verification code.
+1. Under **TFA settings**, you can specify the following settings:
+	 - **Limit token validity** - here you can set the lifetime of each session in minutes. When the session expires, the user has to enter a new verification code.
  - **Limit PIN validity** - Here you can set the lifetime of each verification code sent via SMS. When the verification code expires, in order to login the user has to request a new verification code.
 
-To allow two-factor authentication, select the checkbox **Allow two-factor authentication**". 
+2. To allow two-factor authentication, select the checkbox **Allow two-factor authentication**. 
 
-Click **Save TFA settings** to apply your settings.
+1. Click **Save TFA settings** to apply your settings.
 
 ### <a name="properties"></a>Managing the properties library
 
-To add custom properties to inventory objects, alarms, events and tenants, click  **Properties library** in the **Settings** menu.
-
+Click **Properties library** in the **Settings** menu, to add custom properties to inventory objects, alarms, events and tenants.
+ 
 ![Properties library](/guides/images/users-guide/Administration/admin-settings-properties-library.png)
 
 With custom properties, you can extend the data model of Cumulocity built-in objects. You may create the following custom values:
@@ -209,15 +212,17 @@ With custom properties, you can extend the data model of Cumulocity built-in obj
 
 >**Info**: Custom properties are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 
-**Adding properties to the properties library**
+#### <a name="add-property"></a>To add a custom property 
 
-To add a custom property, select the tab for the desired property and click **Add property**. 
+1. Select the tab for the desired property and click **Add property**. 
 
-![Add new property](/guides/images/users-guide/Administration/admin-settings-property-add.png)
+	![Add new property](/guides/images/users-guide/Administration/admin-settings-property-add.png)
+ 
+1. In the resulting dialog box, provide a unique name as identifier and a label for the property and select its data type from the dropdown list. 
 
-In the upcoming form, provide a unique name as identifier and a label for the property and select its data type from the drop down list. Additionally, select validation rules for the new property:
+1. Additionally, select validation rules for the new property:
 
-|Checkbox|Description|
+	|Checkbox|Description|
 |:---|:---|
 |Required|If selected, the property needs to be provided, i.e. during alarm creation. Not available if the property type is "Boolean".
 |Default Value|Provide a default value to be automatically filled in the custom property field. Only available for properties with type "String".
@@ -227,9 +232,19 @@ In the upcoming form, provide a unique name as identifier and a label for the pr
 |Maximum length|Enter the maximum length required for the string.
 |Regular expression|Add a regular expression which will be required in order to fill the custom property field.
 
-Click **Save** to create the new property.
+4. Click **Save** to create the new property.
 
-Click on the name of a property in the list to open it. To edit the property, enter the desired changes and click **Save** to save the settings. Click **Remove** to delete the property.
+#### To edit a custom property
+
+1. Click on the name of a property in the list to open it. 
+2. Do your edits. For details on the fields see [To add a custom property](#add-property). 
+3. Click **Save** to save your settings.
+
+
+#### To remove a custom property
+
+1. Click on the name of a property in the list to open it. 
+2. Click **Remove** to delete the property.
 
 ### <a name="openIT-credentials"></a>Entering OpenIT credentials
 
@@ -247,11 +262,27 @@ Under **Configuration** in the **Settings** menu, you can configure system-wide 
 
 ![Configuration settings](/guides/images/users-guide/Administration/admin-settings-configuration.png)
 
+#### Placeholders
+
+The following placeholders can be found in the **Configuration** page:
+
+- {host} - The value of this placeholder is "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". For example, if "tenantId" is auto-generated, the host will be "t12345678.cumulocity.com".
+- {tenant-domain} - This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be "myTenant.cumulocity.com".
+- {token} - An automatically generated system token for password reset purposes.
+
+>**Info**: In case of Enterprise Edition, {host} and {tenantDomain} placeholders will have different values.
+
+#### Two-factor authentication
+
 In the **Two-factor authentication** section, you can change the SMS template which is sent to the users.
+
+#### Support link
 
 In the **Support link** section, you can enter a URL to be used to link to a Support page. If you do not provide a link here, the default link to the Cumulocity Support will be used. 
 
 Enter "false" to hide the link.
+
+#### Password reset
 
 In the **Password reset** section you can change all settings related to password reset email templates.
 
@@ -265,19 +296,33 @@ In the **Email subject** field, provide a subject for all password reset related
 
 In the following two fields provide an email template to be used on password change confirmation and a template for the invitation email.
 
->**Info**: Placeholders to be used are: {host}, {tenant-domain}, {token}. 
+#### Email server
 
-In the **Email server** section, you can provide the protocol, host, port, username, password and sender address for the email server.
+In the **Email server** section, you can configure custom email server settings. 
 
 <img src="/guides/images/users-guide/Administration/admin-settings-configuration-email-server.png" alt="Configure email server">
+
+In the **Protocol and encryption** field, select a protocol/encryption type from the dropdown list. May be one of: 
+
+* SMTP (no encryption): email.protocol=smtp and email.connection.encrypted=false
+* SMTP (STARTTLS): email.protocol=smtp and email.connection.encrypted=true
+* SMTPS (SSL/TLS): email.protocol=smtps and email.connection.encrypted=true
+
+Provide the host, port, username, password and sender address for the email server.
+
+#### Data export
 
 In the **Data export** section, you can set the email subject and email template for data export and specify the **User unauthorized error message**.
 
 ![Data export settings](/guides/images/users-guide/Administration/admin-settings-configuration-data-export.png)
 
+#### Storage limit
+
 In the **Storage limit** section, you can specify the email subject and email template for emails being send *before* data is removed on exceeding the storage limit and *after* data removal is performed.
 
 ![Storage limit settings](/guides/images/users-guide/Administration/admin-settings-configuration-storage-limit.png)
+
+#### Suspending tenants
 
 In the **Suspending tenants** section, you can provide settings for emails being send on tenant suspension. 
 
@@ -291,7 +336,7 @@ Additional features are available for Enterprise Tenants, see [Enterprise Tenant
 
 ### <a name="connectivity"></a>Managing the connectivity settings
 
-In the **Connectivity** page, you can manage credentials for different providers. In order to add or replace credentials "admin" permissions are required.
+In the **Connectivity** page, you can manage credentials for different providers. In order to add or replace credentials ADMIN permissions are required.
 
 The following provider settings may currently be specified:
 
@@ -302,14 +347,11 @@ The following provider settings may currently be specified:
 
 ![Provider settings](/guides/images/users-guide/Administration/admin-settings-connectivity-sim.png)
 
-To provide or replace credentials, perform the following steps:
+#### To provide or replace credentials
 
 1. Switch to the tab of your desired provider.
-
 2. Enter the URL of the provider.
-
 3. Enter the credentials of your provider platform. Depending on the provider, these credentials will be either the credentials of your account in the provider platform or the credentials with which you can register in the Cumulocity connectivity page, will be displayed in your account in the provider platform.
-
 4. Finally, click **Save** to save your settings.
 
 Depending on the provider you have selected, there may be additional fields, which will be explained in the respective agent documentation, see [Optional services](/guides/users-guide/optional-services).

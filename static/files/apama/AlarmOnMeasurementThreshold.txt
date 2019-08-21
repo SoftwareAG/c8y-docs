@@ -1,0 +1,50 @@
+using com.apama.cumulocity.Measurement;
+using com.apama.cumulocity.Alarm;
+
+/**
+* Raise Alarm if Measurement exceeds a threshold value.
+*
+* This application listens for all measurements of type "c8y_Temperature" with
+* fragment "c8y_Temperature" and series "T" and raises a "TemperatureHighAlarm"
+* if temperature value exceeds 100.0.
+*/
+monitor AlarmOnMeasurementThreshold {
+
+	// Measurement Type
+	constant string MEASUREMENT_TYPE := "c8y_Temperature";
+
+	// Measurement Fragment & Series
+	constant string FRAGMENT := "c8y_Temperature";
+	constant string SERIES := "T";
+
+	// Measurement Threshold -> Raise an alarm if temperature exceeds this value
+	constant float MEASUREMENT_THRESHOLD := 100.0;
+
+	// Type of alarm to be raised when measurement breaches a threshold
+	constant string ALARM_TYPE := "TemperatureHighAlarm";
+	constant string ALARM_SEVERITY := "MINOR";
+
+	action onload() {
+
+		// Subscribe to Measurement.CHANNEL to receive all measurements
+		monitor.subscribe(Measurement.CHANNEL);
+
+		on all Measurement(type=MEASUREMENT_TYPE) as m {
+			float value := m.measurements.getOrDefault(FRAGMENT).
+												getOrDefault(SERIES).value;
+			// Measurement value is greater than the threshold value, raise alarm
+			if value > MEASUREMENT_THRESHOLD {
+				Alarm alarm := new Alarm;
+				alarm.source := m.source;
+				alarm.time := currentTime;
+				alarm.text := "Measurement value " + value.toString() +
+						" exceeded threshold value " +
+						MEASUREMENT_THRESHOLD.toString() + ", raising an alarm";
+				alarm.type := ALARM_TYPE;
+				alarm.status := "ACTIVE";
+				alarm.severity := ALARM_SEVERITY;
+				send alarm to Alarm.CHANNEL;
+			}
+		}
+	}
+}

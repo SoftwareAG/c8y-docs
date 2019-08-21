@@ -1,7 +1,7 @@
 ---
 weight: 40
 layout: redirect
-title: Developing Microservices
+title: Developing microservices
 ---
 
 It is described below the different microservice SDK features, including annotations, services, configuration files, logging and the Maven build plugin.
@@ -162,6 +162,7 @@ C8Y.bootstrap.password | Password used by a microservice or by the microservice 
 C8Y.bootstrap.delay | Subscription refresh delay
 C8Y.bootstrap.initialDelay | Initial subscription delay
 C8Y.microservice.isolation | Microservice isolation. Only PER_TENANT or MULTI_TENANT values are available. MULTI_TENANT by default
+C8Y.httpReadTimeout | Read timeout interval for HTTP client in milliseconds. Defaults to 3 minutes
 
 ### Microservice settings
 
@@ -170,7 +171,11 @@ The microservice settings module provides two features:
 * Configure a microservice by defining tenant options
 * Override existing properties - Tenant options can override default values from properties files
 
-The microservice loads the tenant options for the category specified by the microservice context path. When the context path is not provided in the microservice manifest, the application name is used.
+By default the microservice loads the tenant options for the category specified by the microservice context path.
+The custom settings category can be specified by the manifest parameter: `settingsCategory`.
+When neither settings category nor context path is provided in the microservice manifest, the application name is used.
+
+> **Info**: Once the microservice is deployed it is not possible to change the category during application upgrade.
 
 Options can be configured for the application owner or the subscriber. The subscriber can override the owner's option value only when such option is defined as editable.
 

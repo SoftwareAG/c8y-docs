@@ -79,37 +79,6 @@ Example:
     a.alarm.source.value as deviceId
     from AlarmCreated a;
 
-### SendSpeech
-
-|Parameter|Data type|Description|Mandatory|
-|:--|:----------|:-------------|:----------|
-|phoneNumber|String|The phone number of the receiver|yes|
-|textToSpeech|String|The text that will be read to the receiver|yes|
-|deviceId|String|The ID of the device generating the phone call. A log event will be created for the device|yes|
-|attempts|Long|Amount of additional attempts if the receiver could not be reached (0 = no additional attempts)|yes|
-|timeout|Long|Minutes between two call attempts|yes|
-|alarmId|String|The ID of the alarm generating the call (for acknowledgment)|yes|
-|questionText|String|Acknowledgment question that will be read to the receiver|no|
-|acknowledgeButton|Long|Number of the button the receiver has to press to acknowledge the call|no|
-
-_Note:_
-
-This feature will only work if your tenant is linked to a speech provider. For more information please contact [support](https://support.cumulocity.com).
-
-Example:
-
-    insert into SendSpeech
-    select
-      "+4923456789" as phoneNumber,
-      "Your device lost power connection." as textToSpeech,
-      2 as attempts,
-      5 as timeout,
-      "12345" as deviceId,
-      "67890" as alarmId,
-      "To acknowledge this call please press button 5" as questionText,
-      5 as acknowledgeButton
-    from EventCreated e
-
 ### SendRequest
 
 This stream enables the possibility to send HTTP requests from Cumulocity to external systems.

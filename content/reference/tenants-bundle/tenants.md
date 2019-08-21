@@ -6,13 +6,23 @@ layout: redirect
 
 The tenant interface consists of the following parts:
 
--   The Tenant collection resource - retrieves tenants, accessible by url */tenant/tenants*
--   The Tenant resource - represents an individual tenant that can be viewed, accessible by url */tenant/tenants/{tenantId}*
--   The Tenant application reference collection resource - retrieves applications, accessible by url */tenant/tenants/{tenantId}/applications*
--   The Tenant application reference resource - represents an individual application reference that can be viewed, accessible by url */tenant/tenants/{tenantId}/applications/{applicationId}*
--   The Tenant option collection resource - enables creating new option and viewing existing options, accessible by url */tenant/options*
--   The Tenant option resource - represents an individual option that can be viewed and modified, accessible by url */tenant/options/{optionCategory}/{optionKey}*
--   The Tenant usage statistics resources - return information on the request load and database usage of tenants
--   *current tenant* resource - represents user data for currently logged service user
- 
-> Note that for all PUT/POST requests accept header should be provided, otherwise an empty response body will be returned.
+Resource  |  Description
+------|-------------
+Tenant collection |  Retrieves tenants <br>Accessible by url <kbd>/tenant/tenants</kbd>
+Tenant  |  Represents an individual tenant that can be viewed <br>Accessible by url <kbd>/tenant/tenants/&lt;tenantId></kbd>
+Application reference collection  |  Retrieves applications <br>Accessible by url <kbd>/tenant/tenants/&lt;tenantId>/applications</kbd>
+Application reference  |  Represents an individual application reference that can be viewed <br>Accessible by url <kbd>/tenant/tenants/&lt;tenantId>/applications/&lt;applicationId></kbd>
+Option collection  |  Enables creating new options and viewing existing ones <br>Accessible by url <kbd>/tenant/options</kbd>
+Option  |  Represents an individual option that can be viewed and modified <br>Accessible by url <kbd>/tenant/options/&lt;optionCategory>/&lt;optionKey></kbd>
+Usage statistics  |  Returns information on the request load and database usage of tenants
+Current tenant  |  Represents user data for the current logged service user
+
+> **Important**: For all PUT/POST requests, the "Accept" header shall be provided, otherwise an empty response body will be returned.
+
+### <a name="tenant-id-and-domain"></a> Tenant ID and tenant domain
+
+The tenant ID is a unique identifier across all tenants in Cumulucity, e.g. t07007007, and it cannot be changed after tenant creation. It is recommended to use auto-generated tenant IDs which follow the format t<number>.
+
+The location where a tenant can be accessed is called tenant domain, e.g. _mytenant.cumulocity.com_. It needs to be unique across all tenants and it can be changed after tenant creation.
+
+In general, the tenant domain should be used for communication if it is known. There are no differences to be expected in the behavior when using either the tenant ID or the tenant domain.

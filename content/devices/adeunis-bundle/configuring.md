@@ -3,8 +3,6 @@ weight: 20
 title: Configuring for Cumulocity
 layout: redirect
 ---
-Cumulocity supports connecting Adeunis LoRa Demonstrator devices via Actility ThingPark like any other LoRa devices. For more details refer to the [LoRa documentation](/guides/users-guide/optional-services/#lora) in the User guide.
+Cumulocity supports connecting Adeunis LoRa Demonstrator devices via Actility ThingPark in the same way as any other LoRa devices. 
 
-### Device registration
-
-The device registration for Adeunis LoRa Demonstrator is specific to LoRa devices. For details refer to the [LoRa documentation](/guides/users-guide/optional-services/#lora) in the User guide.
+For details on device registration and measurements refer to the [LoRa documentation](/guides/users-guide/optional-services/#lora) in the User guide.

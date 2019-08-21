@@ -16,7 +16,7 @@ To develop a microservice using the SDK for C#, the starting point is our [Hello
 
 ### <a name="general-prerequisites"></a> Development prerequisites
 
-To use the C# client libraries for development, you need to install .NET Core SDK for your development platform such as Windows, Linux or macOS (at least Version 2 of the [.NET Core SDK](https://www.microsoft.com/net/download/windows)). Note that .NET Core Runtime and .NET Core SDK are different things.
+To use the C# client libraries for development, you need to install .NET Core SDK for your development platform such as Windows or Linux (at least Version 2 of the [.NET Core SDK](https://www.microsoft.com/net/download/windows)). Note that .NET Core Runtime and .NET Core SDK are different things.
 
 Use the following command to verify the version of your .NET Core SDK:
 

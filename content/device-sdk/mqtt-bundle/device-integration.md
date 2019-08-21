@@ -38,24 +38,20 @@ Once the device retrieved the credentials, it needs to store them locally for fu
 To establish a connection you need to configure the following parameters:
 
 - Host: &lt;your&#95;cumulocity_url>
-- User: &lt;tenant>/&lt;username>
+- User: &lt;tenantID>/&lt;username>
 - Password: &lt;your&#95;cumulocity_password>
 
-For more information, refer to the [Hello MQTT](/guides/device-sdk/mqtt/#hello-mqtt) section.
+For more information, refer to the [Hello MQTT](/guides/device-sdk/mqtt-examples/#hello-mqtt) section.
 
 The process works as follows:
 
 * Cumulocity assumes that each device has some form of unique ID. For instance, a good device identifier can be the MAC address of the network adapter, the IMEI of a mobile device or a hardware serial number.
 * When you take a new device into use, you enter this unique ID into **Device registration** in the **Device Management** application in Cumulocity, and start the device.
-* The device will use this ID as part of the [MQTT ClientId](/guides/device-sdk/mqtt#mqtt-clientid) and static user credentials that can be enquired via [https://empower.softwareag.com](via https://empower.softwareag.com).
+* The device will use this ID as part of the [MQTT ClientId](/guides/device-sdk/mqtt#mqtt-clientid) and static user credentials that can be enquired at the [Software AG Empower Portal](https://empower.softwareag.com).
 * The device subscribes to the topic <kbd>s/dcr</kbd>.
 * The device starts publishing continuous empty messages on the topic <kbd>s/ucr</kbd> to notify the server that it is ready to retrieve credentials.
 * Next, you must accept the connection from the device in the **Device Registration** page.
-* When the device sends the next empty message it should receive credentials in the following format:
-
-```text
-70,<tenant>,<username>,<password>
-```
+* When the device sends the next empty message it should receive credentials in the format `70,<tenantID>,<username>,<password>`
 
 After receiving the credentials, the device can close the MQTT connection and create a new one with the received credentials.
 

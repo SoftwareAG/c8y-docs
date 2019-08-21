@@ -38,18 +38,16 @@ In the **Sub-assets** tab you see a list of all devices assigned to the group. F
 
 ![Sub-assets](/guides/images/users-guide/DeviceManagement/devmgmt-groups-subassets.png)
 
-To assign a device to a group, click **Assign devices** at the right of the top menu bar (see [How to assign a device to an existing group](#assigning-devices)).
-
-To unassign a device, click the menu icon in a device entry and from the context menu select **Unassign**.
+See also [To add a group](#add-group) and [To assign a device to a group](#assigning-devices).
 
 **Bulk operations**
 
 In the **Bulk operations** tab, bulk operations created for the group can be managed. With bulk operations you can at once execute operations for each device within one group. For details, refer to [Bulk operations](#bulk-operations).
 
 
-### How to create a new group
+### <a name="add-group"></a>To create a new group
 
-1. Click the **Plus** button at the right of the top bar, then select **New group** from the menu.
+1. Click the **Plus** button at the right of the top bar and then click **New group**.
 2. In the resulting dialog box, enter a unique group name to identify your group.
 3. In the search field, enter the search criteria for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
 4. Checkmark the devices you want to add from the list.
@@ -61,15 +59,43 @@ The new group will be added to the groups list.
 
 ![Create a group](/guides/images/users-guide/DeviceManagement/devmgmt-groups-create.png)
 
-From the **Groups** page, you can also create an empty group by clicking **Add group** in the top menu bar.
+From the **Groups** page, you can also create a new group by clicking **Add group** in the top menu bar. In the resulting dialog box, enter a name for the group and click **Add group**.
 
 ![Add empty group](/guides/images/users-guide/DeviceManagement/devmgmt-groups-add.png)
 
-### <a name="assigning-devices"></a>How to assign a device to an existing group
+### To edit a group
 
-You can assign devices to an existing group in two ways. 
+1. In the navigator, click a group to open it. 
+2. In the **Info** tab, click **Edit**. This allows you to edit the name of the group and to assign user permissions for the group. 
+For further information on permissions, see the [Administration Guide](/guides/users-guide/administration#managing-permissions).
 
-From the device perspective:
+### To delete a group
+
+Click the menu icon in a device entry and then click **Delete**.
+
+### Managing devices in groups
+
+#### <a name="assigning-devices"></a>To assign devices to a group
+
+You can assign devices to groups in several ways. 
+
+**From the group perspective**
+
+You can quickly assign devices to groups by using the drag and drop functionality in the navigator, see [Restructuring groups and devices](#restructuring-groups).  
+
+Moreover, you can assign devices performing the following steps:
+
+1. In the navigator, select a group from the **Group** menu and then open the **Sub-assets** tab. 
+2. Click **Assign devices** at the right of the top menu bar. In the resulting dialog box search for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
+3. Checkmark the devices you want to add from the list.
+4. Click **Assign # device(s)** to assign the selected devices. 
+
+The devices will be assigned to the selected group.
+
+![Assign devices](/guides/images/users-guide/DeviceManagement/devmgmt-groups-assign.png)
+
+
+**From the device perspective**
 
 1. Select a device from the device list and open it.
 2. In the **Info** tab, scroll down to the **Groups assignment** card. From the dropdown field, select the group you want to assign the device to. You can also directly enter a group name here or you can enter just parts of a name to filter the list for it and only show the matching group names.
@@ -79,38 +105,45 @@ The device will be assigned to the selected group.
 
 If you search for a group by its name which does not exist yet, a **New** button will appear so that you can create a new group with this name from here and assign the device to that group.
 
-In order to create a new group, the user must have the following permissions:
-
-- ROLE_INVENTORY\_CREATE
-- ROLE_INVENTORY\_ADMIN
-
+>**Info**: In order to create a new group, the user must have the permissions
+ROLE&#95;INVENTORY\_CREATE and ROLE&#95;INVENTORY\_ADMIN.
 
 <img src="/guides/images/users-guide/DeviceManagement/devmgmt-group-assignment-new.png" alt="new group">
 
-From the group perspective:
 
-1. In the navigator, select a group from the **Group** menu and then open the **Sub-assets** tab. In the **Sub-assets** tab, all devices that are assigned to the respective group are displayed. 
-2. Click **Assign devices** at the right of the top menu bar. In the resulting dialog box search for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
-3. Checkmark the devices you want to add from the list.
-4. Click **Assign # device(s)** to assign the selected devices. 
+#### To unassign a device
 
-The devices will be assigned to the selected group.
+Click the menu icon in a device entry and then click **Unassign**.
 
-![Assign devices](/guides/images/users-guide/DeviceManagement/devmgmt-groups-assign.png)
+#### To delete a device
 
-### How to create a sub-group
+Click the menu icon in a device entry and then click **Delete**. 
 
-1. In the navigator, click a group to open it. 
-2. Click **Add Group** at the right of the top menu bar. 
-2. In the resulting dialog box, enter a name for the sub-group and click **Add group**.
+The device will be permanently deleted.
 
-The new sub-group will be added to the group.
+#### To view the device details
 
-### How to edit a group
+Click the menu icon in a device entry and then click **Device management**. 
 
-1. In the navigator, click a group to open it. 
-2. In the **Info** tab, click **Edit**. This allows you to edit the name of the group and to assign user permissions for the group. 
-For further information on permissions, see the [Administration Guide](/guides/users-guide/administration#managing-permissions).
+The device details for the specific device stored under **All devices** in the Device Management application will open. 
+
+### <a name="restructuring-groups"></a>Restructuring groups and devices
+
+You can easily restructure groups, sub-groups and devices by a drag and drop functionality. 
+
+#### To move a group
+
+1. In the navigator, select a group which you want to move to another group. 
+2. Drag and drop it to the desired group. 
+3. In the resulting dialog box, confirm the operation.
+
+
+#### To move or add a device
+
+1. In the navigator, select the group or device which you want to move or add to another group. 
+2. Drag and drop it to the desired group. 
+3. In the resulting dialog box, select if you want to move or add the device.
+
 
 ### <a name="smart-groups"></a>Using smart groups
 
@@ -122,7 +155,7 @@ Smart groups are groups dynamically constructed based on filtering criteria. The
 
 Smart groups can be created from the device list. 
 
-#### How to create a smart group
+#### To create a smart group
 
 1. To open the device list, click **All devices** in the navigator.
 2. Filter the devices in the list to select the desired devices. Refer to [Filtering devices](#filtering-devices) for details on filtering.
@@ -137,7 +170,7 @@ The new group will appear as a top-level group in the **Groups** menu of the nav
 
 In the **Sub-asset** tab you can adjust your selection and modify the filter settings.
 
-#### How to delete a smart group
+#### To delete a smart group
 
 To delete a smart group, click the menu icon and then click **Delete**. 
 

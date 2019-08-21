@@ -8,7 +8,7 @@ Cumulocity includes a rule engine to analyze data in realtime and to perform act
 
 To easily create rules, the Cockpit application includes a Smart Rules builder which allows you to create rules from templates (so-called smart rule templates).
 
->**Info:** Smart Rules are only visible, if the tenant is subscribed to the Smartrule application. To manage Smart Rules, the user has to have CREATE permission for Inventory and either SMART RULE permission or CEP MANAGEMENT permission.
+>**Info:** Smart Rules are only visible, if the tenant is subscribed to the Smartrule application. To manage Smart Rules, the user has to have CREATE permission for Inventory and either Smartrule permission or CEP management permission.
 
 Smart Rules are parameterized. There are two sources for parameters:
 
@@ -18,9 +18,10 @@ Smart Rules are parameterized. There are two sources for parameters:
 
 Smart Rules can be seen 
 
-* in the **Info** tab of a device or group, <br>![Smart Rules info tab](/guides/images/users-guide/cockpit/cockpit-smart-rules-info-tab.png)
+* in the **Info** tab of a device or group. <br><br>
+![Smart Rules info tab](/guides/images/users-guide/cockpit/cockpit-smart-rules-info-tab.png)
 
-* in the **Smart Rules** page accessible from the **Configuration** menu. <br>
+* in the **Smart Rules** page accessible from the **Configuration** menu. <br><br>
 ![Smart Rules info tab](/guides/images/users-guide/cockpit/cockpit-smart-rules-list.png)
 
 There are two different kinds of Smart Rules:
@@ -37,16 +38,14 @@ The permissions required in order to see the global Smart Rules are:
 - Smartrule = ADMIN permission
 - CEP management = ADMIN permission
 
-### <a name="create-rules"></a>Creating Smart Rules
+
+### <a name="create-rules"></a>To create a Smart Rule
 
 Smart Rules can both be created in the **Global Smart Rules** page, accessible from the **Configuration** menu in the navigator, or from the **Info** tab of any group or a device.
 
-To create a Smart Rule, follow these steps:
-
 1. Click **Add Smart Rule** in the top menu bar. <br>
-![Add Smart Rule](/guides/images/users-guide/cockpit/cockpit-smart-rules-add.png)<br>
 2. Select a Smart Rule template from the list. Note that this list might differ based on your installation.
-3. In the upcoming window, use the slider to select if the rule will be enabled or disabled. 
+3. In the resulting dialog box, use the toggle to select if the rule will be enabled or disabled. 
 4. Next, configure the rule parameters. The parameters differ from rule to rule, for details see individual rule descriptions in [Smart Rules collection](#smart-rules-collection).
 6. Click **Create** to create the Smart Rule.
 
@@ -56,32 +55,36 @@ To avoid confusion, disabled Smart Rules are not displayed in group menus or dev
 
 Smart Rules can be instantiated multiple times.
 
-### Activating or deactivating Smart Rules
+### To deactivate or activate a Smart Rule for a group or device
 
 A Smart Rule can be activated (switched on) and deactivated (switched off) for a single object (group or device). For example, if a device is generating too many threshold alarms, you can deactivate the rule for this single object. The rule is still active for all other objects.
 
-To deactivate or activate a Smart Rule for a group or device, navigate to the **Info** tab of the group or device and enable/disable the respective rule using the slider. 
+Navigate to the **Info** tab of the group or device and enable/disable the respective rule using the toggle. 
 
 <img src="/guides/images/users-guide/cockpit/cockpit-smart-rules-enable.png" name="Smart rule in Info tab" />
 
-### Editing Smart Rules
+### To edit a Smart Rule 
 
-To edit a Smart Rule click the menu icon at the end of the row or in the top right of a card and from the context menu select **Edit**.
+Click the menu icon at the right of an entry and then click **Edit**. 
 
-<img src="/guides/images/users-guide/cockpit/cockpit-smart-rules-menu.png" name="Smart rules context menu" />
+For details on the fields see [To create a Smart Rule](#create-rules).
 
 
-### Duplicating Smart Rules
+### To duplicate a Smart Rule
 
-To duplicate a Smart Rule, click the menu icon at the end of the row and from the context menu select **Duplicate**. Modify at least the name and click **Save & close** to save the Smart Rule and return to the Smart Rule list.
+1. Click the menu icon at the right of an entry and then click **Duplicate**.
+2. Modify at least the name.
+3. Click **Save & close** to save the Smart Rule and return to the Smart Rule list.
 
-### Removing Smart Rules
+### To remove a Smart Rule
 
-To remove a Smart Rule, click the menu icon at the end of the row and from the context menu select **Remove**.
+Click the menu icon at the right of an entry and then click **Remove**.
 
-### Debugging Smart Rules
+### To debug a Smart Rule
 
-For easier debugging, there is a direct link from a Smart Rule to the corresponding event processing module. Click the menu icon at the end of the row and from the context menu select **Inspect** to use this link.
+For easier debugging, there is a direct link from a Smart Rule to the corresponding event processing module. 
+
+Click the menu icon at the right of an entry and then click **Inspect** to use this link.
 
 ### Example: Defining explicit thresholds
 
@@ -106,4 +109,4 @@ Smart Rules can create a new data item on the platform. For example, the thresho
 
 Using this mechanism, it is possible to create a chain of Smart Rules. 
 
->**Info:** If you create a rule chain keep in mind how much data will be created to avoid overload or excessive amount of data.
+>**Info:** If you create a rule chain keep in mind how much data will be created and avoid overload or excessive amount of data.

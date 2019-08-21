@@ -23,7 +23,7 @@ An instruction can either send a message (measurements, alarms, events and inven
 
 A message is defined by choosing a message template (like sending a temperature) and providing the values for this template (e.g. 23.0 degrees). Many predefined message templates are provided, e.g. for creating a measurement, sending an event, creating and cancelling an alarm. These templates are based on MQTT static templates. Additionally, custom message templates can be defined using the [SmartREST template editor](#smartrest-templates). 
 
-### How to view simulators
+### To view simulators
 
 Click **Simulators** in the **Devices** menu in the navigator to open the **Simulators** page.
 
@@ -31,7 +31,7 @@ Click **Simulators** in the **Devices** menu in the navigator to open the **Simu
 
 All simulators which you can access will be listed here. 
 
-### How to create a simulator
+### To create a simulator
 
 1. Click **New Simulator** at the right of the top menu bar. 
 2. In the resulting dialog box, select a simulator type from the dropdown list in the **Presets** field. Select "Empty simulator" to create a simulator from scratch or select one of the sample simulators.
@@ -43,15 +43,13 @@ All simulators which you can access will be listed here.
 
 The simulator will be created and added to the list.
 
-### How to edit a simulator
+### To edit a simulator
 
 1. Click the menu icon at the top right of a simulator card and then click **Edit**, or simply click the simulator card.
 2. In the resulting dialog box, make the relevant changes.
-3. Click **Save**.
+3. Click **Save** to apply your changes.
 
-The changes will be applied accordingly.
-
-### How to duplicate a simulator
+### To duplicate a simulator
 
 1. Click the menu icon at the top right of a simulator card and then click **Duplicate**.
 2. In the resulting dialog box, provide a name for the new simulator.
@@ -59,7 +57,7 @@ The changes will be applied accordingly.
 
 The new simulator will be added to the list.
 
-### How to remove a simulator
+### To remove a simulator
 
 1. Click the menu icon at the top right of a simulator card and then click **Remove**.
 2. In the resulting dialog box, confirm to remove the simulator.
@@ -90,7 +88,7 @@ The "Sleep" instruction requires one value for its duration in seconds.
 
 ![Sleep](/guides/images/users-guide/DeviceManagement/devmgmt-simulator-sleep.png)
 
-#### How to add an instruction
+#### To add an instruction
 
 1. Click **Add instruction** to add a new instruction to the simulator.
 2.  In the resulting dialog box, select a message from the dropdown list.
@@ -99,7 +97,7 @@ The "Sleep" instruction requires one value for its duration in seconds.
 
 The new instruction will be added to the simulator.
 
-#### How to add a sleep
+#### To add a sleep
 
 1. Click **Add sleep** to add a new instruction to the simulator.
 3. In the resulting dialog box, specify the duration.
@@ -107,9 +105,9 @@ The new instruction will be added to the simulator.
 
 The new sleep instruction will be added to the simulator.
 
-#### How to remove an instruction
+#### To remove an instruction
 
-Hover over the instruction or the sleep you remove and click the remove icon.
+Hover over the instruction or the sleep you want to remove and click the remove icon.
 
 The instruction will be removed from the simulator.
 
@@ -121,7 +119,7 @@ In the **Supported operations** tab of a simulator you can find specific operati
 
 Click the toggle to turn the respective operation on or off.
 
-#### How to add a custom operation
+#### To add a custom operation
 
 1. Click **Add custom operation** to specify a customized operation.
 2. In the resulting dialog box, Enter the custom operation type to be supported by the simulator.

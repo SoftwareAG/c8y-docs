@@ -22,13 +22,18 @@ You can trigger your EPL by listening to events on channels. You can subscribe t
 
 ### Standard event types and channels
 
-For the standard Cumulocity events, there are the following channels for sending and receiving events:
+For the standard Cumulocity events, there are constants that contain the channels for sending and receiving events, for example:
+
+```java
+monitor.subscribe(Measurement.CHANNEL);
+send msmnt to Measurement.CREATE_CHANNEL;
+```
 
 | Event         | Channel for sending          | Channel for receiving |
 | ------------- | ---------------------------- | --------------------- |
-| Operation     | Operation.CHANNEL            |                       |
+| Operation     | Operation.CHANNEL            | Measurement.CHANNEL   |
 | Measurement   | Measurement.CREATE_CHANNEL   | Measurement.CHANNEL   |
-| Event         | Event.CHANNEL                |                       |
-| Alarm         | Alarm.CHANNEL                |                       |
+| Event         | Event.CHANNEL                | Measurement.CHANNEL   |
+| Alarm         | Alarm.CHANNEL                | Measurement.CHANNEL   |
 | ManagedObject | ManagedObject.UPDATE_CHANNEL | ManagedObject.CHANNEL |
 

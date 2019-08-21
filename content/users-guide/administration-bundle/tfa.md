@@ -2,7 +2,7 @@
 weight: 61
 title: Two-factor authentication
 ---
-The Two-factor authentication (TFA) is an extra layer of security that requires not only a username and password, but SMS verification as well. TFA can only be set up by administrators. When TFA is [enabled](/guides/users-guide/administration/#authentication), it is impossible to configure it from the **User settings**, it is configurable only from the administration UI.
+The Two-factor authentication (TFA) is an extra layer of security that only completes authentication with a combination of two different factors: something the user knows (username and password) and something they have (ex. smartphone) or something they are (ex. fingerprint). You can read more on how to configure configure tfa in the  [authentication settings section](/guides/users-guide/administration/#authentication).
 
 There are two possible TFA strategies: SMS and TOTP. Only one of them can be active at each moment.
 
@@ -12,7 +12,7 @@ To check whether TFA is enabled for a certain user, go to the **Users** page and
 
 ### SMS
 
-When adding a user and TFA is enabled, you need to provide a phone number for the user. When users without a phone number try to login using TFA, the users will be redirected to a window, to enter their mobile phone number. Without a phone number a login is impossible.
+When adding a user and TFA is enabled, a phone number needs to be provided. When users without a phone number try to login using TFA, they will be prompted for their mobile number. Without a valid monbile number a login is impossible.
 
 #### Enabling a specific user
 
@@ -22,8 +22,7 @@ When adding a user and TFA is enabled, you need to provide a phone number for th
 
 ![Enable TFA](/guides/images/users-guide/Administration/admin-user-enable-tfa.png)
 
-
-  >**Info**: This process can only be executed by an administrator.
+  >**Info**: This process can only be executed in the administration UI and is not available i *User settings*
 
 ### TOTP (Google Authenticator)
 
@@ -36,7 +35,8 @@ Opposed to the the SMS strategy this setup process must be performed by each use
 
 If TFA is enforced, the process will be triggered on login.
 
-The user will be presented with a QR code and a code that should be scanned with the previously installed TOTP mobile application.
+The user will be presented with a QR code that should be scanned with the previously installed TOTP mobile application.
+In alternative the secret can also be inserted manually in case scanning the QR code is not an option.
 
 ![TOTP setup process](/guides/images/users-guide/Administration/admin-user-tfa-setup.png)
 
@@ -45,13 +45,14 @@ After this process the mobile application will generate a new code every 30 seco
 
 #### Revoking
 
-Although the setup must be done by the user must be done by the user, revoking the secret must be done by an administrator. As so, if the user loses the phone or uninstall the application they must contact support.
+Although the setup must be done by the user, revoking the secret is only possible via the administration UI. As so, if the user loses the phone or uninstall the application the tenant administrator.
 
-From the administrator prespective the process to revoke the key is:
+From the tenant administrator prespective the process to revoke the key is:
 
-1. Click on the desired user in the **Users** page.
-2. Scroll down to *Login Options*
-3. Click *Revoke TOTP secret*
-4. Confirm by clicking *Revoke*
+1. Open Administration
+2. Click on the desired user in the **Users** page.
+3. Scroll down to *Login Options*
+4. Click *Revoke TOTP secret*
+5. Confirm by clicking *Revoke*
 
 ![TOTP secret revoke](/guides/images/users-guide/Administration/admin-user-totp-revoke.png)

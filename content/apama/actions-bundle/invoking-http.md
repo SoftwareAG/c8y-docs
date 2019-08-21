@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 40
 title: Invoking HTTP services
 layout: redirect
 ---
@@ -15,4 +15,4 @@ On the Request object, you may set cookies, headers or query parameters as neede
 
 In the callback, the Response object is supplied with statusCode and payload. Fields on the payload are accessible via the AnyExtractor object it is supplied in - see access fragments below.
 
-Refer to the [ApamaDoc](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3-1/apama10-3-1/ApamaDoc/index.html) for further details.
+Refer to the [ApamaDoc](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/ApamaDoc/index.html) for further details.

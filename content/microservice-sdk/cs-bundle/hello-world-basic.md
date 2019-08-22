@@ -1,5 +1,5 @@
 ---
-weight: 20
+order: 20
 title: Hello, world!
 layout: redirect
 ---
@@ -41,10 +41,30 @@ Change the current folder and navigate to the _microservicesdk_ folder.
 cd microservicesdk-win-dev-latest
 ```
 
-Make sure to use the correct SDK version - 2.0.2 or define which .NET Core SDK version is used when you run .NET Core CLI commands.
+Make sure to use the correct SDK version - 2.0.3 or define which .NET Core SDK version is used when you run .NET Core CLI commands.
 
 ```shell
-dotnet new globaljson --sdk-version 2.0.2
+ dotnet --info
+.NET Command Line Tools (2.0.3)
+
+Product Information:
+ Version:            2.0.3
+ Commit SHA-1 hash:  12f0c7efcc
+ ....
+```
+
+If the desired version of SDK has not been installed, it is possible to install SDK using Chocolatey. Run Powershell as Admin.
+
+```shell
+choco install dotnetcore-sdk --version 2.0.3
+```
+
+If you do not have the Chocolatey package manager, follow the [Installing Chocolatey](https://chocolatey.org/install) steps to install it.
+
+For several installed SDKs in the root directory of the new project set the required SDK version
+
+```shell
+dotnet new globaljson --sdk-version 2.0.3
 ```
 
 Run the script *create.ps1* to create a sample project, provide the name of the project and the API application.
@@ -53,10 +73,58 @@ Run the script *create.ps1* to create a sample project, provide the name of the 
 ./create.ps1
 ```
 
+This script _create.ps1_ is able to create an application on the platform if it discovers _settigns.ini_ in the directory. More details in _Step 1 - Create application_
+
 Execute the bootstrapper script to build the application and an image from a Docker file.
 
 ```shell
-./build.ps1
+PS C:\tmp\c8y> .\build.ps1
+Preparing to run build script...
+Running build script...
+
+========================================
+Clean
+========================================
+
+========================================
+DotnetPublish
+========================================
+Microsoft (R) Build Engine version 15.4.8.50001 for .NET Core
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  demo -> C:\tmp\c8y\src\demo\bin\Release\netcoreapp2.0\demo.dll
+  demo -> C:\tmp\c8y\publish\Web\
+
+========================================
+Docker-Build
+========================================
+Sending build context to Docker daemon  65.47MB
+Step 1/4 : FROM microsoft/dotnet:2.0-runtime
+ ---> 79bb740a9a6e
+Step 2/4 : WORKDIR /app
+ ---> Using cache
+ ---> 7e6f85882838
+Step 3/4 : COPY ./publish/Web ./
+ ---> 6c95b8196f9a
+Step 4/4 : ENTRYPOINT ["dotnet", "demo.dll"]
+ ---> Running in 433334757ce3
+Removing intermediate container 433334757ce3
+ ---> 6625aa14ea84
+Successfully built 6625aa14ea84
+Successfully tagged demo:latest
+SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have '-rwxr-xr-x' permissions. It is recommended to double check and reset permissions for sensitive files and directories.
+
+========================================
+Default
+========================================
+
+Task                          Duration
+--------------------------------------------------
+Clean                         00:00:00.0673414
+DotnetPublish                 00:00:25.2592712
+Docker-Build                  00:01:01.8095063
+--------------------------------------------------
+Total:                        00:01:27.1455943
 ```
 
 After a successful build you will be provided with a ZIP file in the target directory. The ZIP can be deployed to the Cumulocity platform as described in the Deployment section.
@@ -305,6 +373,24 @@ appname=sample_application
 
 ```shell
 ./deploy.ps1
+tenant/user
+someurl.com
+appname
+Header: ...
+
+
+StatusCode        : 201
+StatusDescription : Created
+Content           : {}
+RawContent        : HTTP/1.1 201 Created
+                    Connection: keep-alive
+                    Strict-Transport-Security: max-age=31536000; includeSubDomains
+                    Content-Length: 0
+                    Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json;cha...
+Headers           : {[Connection, keep-alive], [Strict-Transport-Security, max-age=31536000; includeSubDomains], [Content-Length, 0], [Content-Type, application/vnd.com.nsn.cumulocity.managedobject+json;charset=UTF-8;ver=0.9]...}
+RawContentLength  : 0
+
+I'm done!
 ```
 
 **Call the script with the _.ini_ name**

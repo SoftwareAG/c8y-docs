@@ -14,7 +14,7 @@ The following differences apply:
 |:---|:---|:--
 |Multi-tenancy|No; single tenant|Yes
 |Cluster|No; single server|Yes
-|High availability|Traditional HA, server failure leads to temporary downtime|Full HA: No downtime on server failure, optionally even for data center failure
+|High availability|HA capabilities depend on the underlying virtualization technology, server failure could lead to temporary downtime*|Full HA: No downtime on server failure, optionally even for data center failure
 |Vertical scalability|Yes, limited to appr. 100 tps per CPU core|Yes, but not used
 |Horizontal scalability|No|Yes, nearly unlimited scalability
 |Upgrades with no downtime|No|Yes
@@ -24,4 +24,6 @@ The following differences apply:
 |Apama real-time analytics|Included|Optional
 |Data Broker|Included|Optional
 
->**Info**: In addition to Cumulocity IoT Edge, we provide a light-weight approach to implement Edge functionality: the Cumulocity agent and Device SDK. These can be installed on less powerful devices like embedded devices. 
+**Footnote**: * The underlying infrastructure including the virtualization is not part of the product. For further details on high availability or fault tolerance options, refer to the relevant information provided by third parties (e.g.[vSphere Availability](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.avail.doc/GUID-63F459B7-8884-4818-8872-C9753B2E0215.html)).
+
+In addition to Cumulocity IoT Edge, we provide a light-weight approach to implement Edge functionality: the Cumulocity agent and Device SDK. These can be installed on less powerful devices like embedded devices. 

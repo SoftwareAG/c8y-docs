@@ -1,10 +1,8 @@
 ---
-order: 20
-title: Hello, world!
+weight: 20
 layout: redirect
+title: Hello world tutorial
 ---
-
-### Overview
 
 This example provides a step-by-step guide to develop a simple microservice in Cumulocity. It uses Cake (C# Make), which is a cross-platform build automation system.
 
@@ -17,9 +15,9 @@ The initial script was used to create a demo, which makes it easier to create an
 The application created in this way uses the ASP.NET Web API framework to create a web API. The API runs on an isolated web server called Kestrel and as a foreground job, which makes it work really well with Docker.
 
 
-### Building and deploying Hello World on Windows
+### Building and deploying on Windows
 
-Building and deploying the "Hello, World" microservice on Windows is similar to the way it is done for Linux. For Windows, Powershell is installed by default and that is why we use it. For Linux, Powershell Core can be considered as an alternative.
+Building and deploying the "Hello world" microservice on Windows is similar to the way it is done for Linux. For Windows, Powershell is installed by default and that is why we use it. For Linux, Powershell Core can be considered as an alternative.
 
 Download the script file to build a "Hello World" application. Manage the version of scripts and replace latest to the right version number.
 

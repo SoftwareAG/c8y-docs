@@ -32,7 +32,7 @@ Users have to install a TOTP application on their smartphone (Google Authenticat
 
 #### Setup
 
-Opposed to the SMS strategy TOTP has to be setup by each user. By clicking **User settings** in the top right corner each trigger the setup process.
+Opposed to the SMS strategy TOTP has to be setup by each user. By opening **User settings** in the top right corner and then clicking on 'Setup two-factor authentication' they can start the setup process.
 ![Trigger TOTP setup](/guides/images/users-guide/Administration/admin-user-tfa-setup-button.png)
 
 IF TFA is enabled, the user will be presented a QR code at login, that needs to be scanned with the previously installed TOTP mobile application.
@@ -45,14 +45,14 @@ After this process the mobile application will generate a new code every 30 seco
 
 #### Revoking
 
-Although the setup must be done by the user, revoking the secret is only possible via the administration UI. As so, if the user loses the phone or uninstall the application they must contact the tenant administrator.
+Although the setup must be done by each individual user, revoking the secret is only possible as a tenant administrator in the Administration application. As so, if the user loses the phone or uninstalls the application they must contact the tenant administrator.
 
 From the tenant administrator perspective the process to revoke the key is:
 
 1. Navigate to the Administration application.
 2. Click on the desired user in the **Users** page.
-2. Scroll down to **Login Options**.
-3. Click **Revoke TOTP secret**.
-4. Confirm by clicking **Revoke**.
+3. Scroll down to **Login Options**.
+4. Click **Revoke TOTP secret**.
+5. Confirm by clicking **Revoke**.
 
 ![TOTP secret revoke](/guides/images/users-guide/Administration/admin-user-totp-revoke.png)

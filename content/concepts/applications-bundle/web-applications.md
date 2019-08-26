@@ -19,7 +19,7 @@ The Cumulocity user interface itself is built around a framework based on Angula
 
 ### Deploying web applications
 
-For an application to be available it has to be deployed at the Cumulocity platform. 
+For an application to be available it has to be deployed on the Cumulocity platform. 
 
 For details on how to deploy an application to Cumulocity, refer to [Administration > Managing applications](/guides/users-guide/administration#applications) in the User guide. 
 
@@ -27,7 +27,7 @@ For details on how to deploy an application to Cumulocity, refer to [Administrat
 
 ### Web application hosting
 
-You can host your own HTML5 and JavaScript web applications through Cumulocity by using the application manager under "Own applications" in the Cumulocity Administration application.
+You can host your own HTML5 and JavaScript web applications through Cumulocity by using the application manager under **Own applications** in the Cumulocity Administration application.
 
 ![List of own applications](/guides/images/users-guide/Administration/admin-applications-own.png)
 

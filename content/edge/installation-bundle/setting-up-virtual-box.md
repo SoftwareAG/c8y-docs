@@ -10,7 +10,7 @@ Download the VirtualBox package for your operating system from [https://www.virt
 
 >**Important**: VirtualBox support is deprecated, therefore we do not recommended to use it in a production environment.
 
->**Info**: Depending on the operating system and VirtualBox version you are using, the following steps and especially the screenshots might slightly differ. The sample screenshot shared below were created using Virtual Box 6.0.
+>**Info**: Depending on the operating system and VirtualBox version you are using, the following steps and the screenshots might slightly differ. The sample screenshots shared below were created using Virtual Box 5.2.8.
 
 1. In the VirtualBox, click **Tools** > **Network** in the top left.<br>
 <img src="/guides/images/edge/edge-vb-01.png" name="Configure network" style="width:75%;"/>

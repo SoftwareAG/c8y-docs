@@ -13,5 +13,5 @@ The following typographical conventions are used throughout this documentation:
 |*Italics*|File names <br>Folder names <br>URLs
 |`Monospace`|Code elements
 |"Quotes"|Field values <br>User input, that is, text you must type<br>Screen and error messages
-|&#60;rectangular brackets&#62;|Variables for which you must supply values specific to your own situation or environment
+|&#60;angle brackets&#62;|Variables for which you must supply values specific to your own situation or environment
 

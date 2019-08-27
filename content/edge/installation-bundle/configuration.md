@@ -178,19 +178,25 @@ You have the choice to enter the post-installation parameters manually via the c
 
 	>**Important**: Once configured, the domain name cannot be changed. Make sure to use the name finally desired.
 
-5. Provide the absolute path of the SSL certificate file. The file extension should either be ".crt" or ".cert", e.g. */home/admin/myown-selfsigned.crt*.
+5. Provide the URL for the Cumulocity tenant (cloud or on-premise). e.g. "https://&lt;tenant-domain&gt;.cumulocity.com".
+
+	`* Enter cloud URL (optional):` 
+
+	>**Important**: To control your Edge device remotely, ensure that you provide the URL of your Cumulocity tenant.
+
+6. Provide the absolute path of the SSL certificate file. The file extension should either be ".crt" or ".cert", e.g. */home/admin/myown-selfsigned.crt*.
 
 	`* Enter domain ({your-domain-name}) SSL certificate file path (*.crt|*.cert):`
 
-6. Provide the absolute path of the SSL certificate key file. The file extension must be ".key.", e.g. */home/admin/myown-selfsigned.key*.
+7. Provide the absolute path of the SSL certificate key file. The file extension must be ".key.", e.g. */home/admin/myown-selfsigned.key*.
 	
 	`* Enter domain ({your-domain-name}) SSL certificate key file path (*.key):`
 
-7. Provide the absolute path of the license file. The file extension must be ".licence", e.g. */home/admin/myown.iot.com.licence*.
+8. Provide the absolute path of the license file. The file extension must be ".licence", e.g. */home/admin/myown.iot.com.licence*.
 
 	`* Enter domain ({your-domain-name}) Cumulocity licence file path (*.licence):`
 	
-8. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional licence file, you can press [Enter] to continue without providing license.
+9. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional licence file, you can press [Enter] to continue without providing license.
 
 	`* Enter Software AG Apama licence file path (optional):`
 

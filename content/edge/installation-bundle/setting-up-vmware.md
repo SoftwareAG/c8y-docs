@@ -1,5 +1,5 @@
 ---
-weight: 60
+weight: 70
 title: Example setup for VMware Workstation Player
 layout: redirect
 ---

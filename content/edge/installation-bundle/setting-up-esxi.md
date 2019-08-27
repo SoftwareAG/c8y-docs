@@ -1,5 +1,5 @@
 ---
-weight: 50
+weight: 60
 title: Example setup for VMware ESXi 
 layout: redirect
 ---

@@ -149,6 +149,19 @@ The second part of the panel is the same as for the "Custom" template, where acc
  ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-aad-2.png)
 
 
+
+
+##### Troubleshooting
+
+It can be particularly helpful to inspect the content of the authorization token sent to the platform as some of it's fields contain the information required for the correct configuration described above.
+
+In Administration application, after clicking on 'Accounts' > 'Audit logs' you can filter by the category 'Single sign-on' and look for entries 'Json web token claims'
+
+The contexts of the token will be presented in JSON format.
+
+![Audit token content](/guides/images/users-guide/Administration/admin-sso-audit-token.png)
+
+
 ### <a name="default-app"></a>Changing application settings
 
 Click **Application** in the **Settings** menu to change applications settings.
@@ -179,9 +192,9 @@ Click **Authentication** in the **Settings** menu if you want to view or change 
 
 #### Login Settings
 
-There are two **Preferred login modes** available: 
+There are two **Preferred login modes** available:
 
-* "OAuth Internal" which is the recommended option as it provides better security.  
+* "OAuth Internal" which is the recommended option as it provides better security.
 * "Basic Auth" which should be chosen only for specific compatibility reasons.
 
 This login mode will be used by the platform's applications as the default method to authenticate users. Device authentication stays unchanged.
@@ -204,7 +217,7 @@ Click **Save** to apply the settings.
 
 Select the checkbox **Allow two-factor authentication** if you want to allow TFA in your tenant (only possible for administrators).
 
-You may choose one of the following options: 
+You may choose one of the following options:
 
 * **SMS-based**, supporting the following settings:
 	- **Limit token validity for**: Lifetime of each session in minutes. When the session expires, the user has to enter a new verification code.

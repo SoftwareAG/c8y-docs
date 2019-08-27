@@ -1,14 +1,18 @@
 ---
-title: Register to Cumulocity
+title: Connecting to Cumulocity
 layout: redirect
 weight: 30
 ---
-Find out the serial number of your device:
+### Find the serial number
+
+Run the following command to find out the serial number of your device:
 
 ```shell
 $ grep Serial /proc/cpuinfo
 Serial          : 000000001955c218
 ```
+
+### Register and connect to Cumulocity
 
 To connect your device to the Cumulocity platform, you first need to register it in your Cumulocity account.
 

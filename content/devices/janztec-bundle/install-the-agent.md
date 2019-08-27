@@ -1,8 +1,11 @@
 ---
-title: Installing the agent
+title: Configuration
 layout: redirect
 weight: 20
 ---
+
+### Installing the agent
+
 The device has been tested to be supported by Cumulocity's Linux agent. 
 
 1. Log into the device and make sure you are running Raspbian 8.0 (Jessie) or higher.

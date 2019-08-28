@@ -6,7 +6,7 @@ layout: redirect
 
 ### Accessing the Edge device from Cumulocity tenant
 
-The Cumulocity Cloud Remote Access microservice allows you to remotely access the Edge device through a web browser. The remote Edge device is represented as a device in the Device Management of Cumulocity. For more information about remote access, see [Cloud Remote Access](/guides/users-guide/optional-services/#cloud-remote-access).
+The Cumulocity Cloud Remote Access microservice allows you to remotely access the Edge device through a web browser. The remote Edge device is represented as a device in the Device Management application of Cumulocity. For more information about remote access, see [Cloud Remote Access](/guides/users-guide/optional-services/#cloud-remote-access).
 
 >**Note**: Only the SSH protocol is supported. 
 

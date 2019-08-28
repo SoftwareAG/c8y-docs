@@ -153,7 +153,7 @@ The second part of the panel is the same as for the "Custom" template, where acc
 
 ##### Troubleshooting
 
-It can be particularly helpful to inspect the content of the authorization token sent to the platform as some of it's fields contain the information required for the correct configuration described above.
+It can be particularly helpful to inspect the content of the authorization token sent to the platform as some of its fields contain the information required for the correct configuration described above.
 
 In Administration application, after clicking on 'Accounts' > 'Audit logs' you can filter by the category 'Single sign-on' and look for entries 'Json web token claims'
 

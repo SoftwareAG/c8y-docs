@@ -178,7 +178,7 @@ You have the choice to enter the post-installation parameters manually via the c
 
 	>**Important**: Once configured, the domain name cannot be changed. Make sure to use the name finally desired.
 
-5. Provide the URL for the Cumulocity tenant (cloud or on-premise). e.g. "https://&lt;tenant-domain&gt;.cumulocity.com".
+5. Provide the URL for the Cumulocity tenant (cloud or on-premise), e.g. "https://&lt;tenant-domain&gt;.cumulocity.com".
 
 	`* Enter cloud URL (optional):` 
 

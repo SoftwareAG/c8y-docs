@@ -12,7 +12,7 @@ There are two distinct approaches to deploy Apama applications to Cumulocity:
 
 ### <a name="single-mon-file"></a>Deploying Apama applications as single \*.mon files with the Apama-epl application
 
->**Info**: To be able to upload single \*.mon files to Cumulocity, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Apama-epl application provided in Cumulocity. See [Application list](/guides/reference/applications#application-names) in the Reference guide for details. If you have Apama "starter", the Apama-epl application is not available in the application switcher; if you want to have this capability, contact Software AG support.
+>**Info**: To be able to upload single \*.mon files to Cumulocity, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Apama-epl application provided in Cumulocity. If you have Apama "starter", the Apama-epl application is not available in the application switcher; if you want to have this capability, contact Software AG support.
 
 The Apama-epl application provides an interface for uploading and deploying EPL apps (\*.mon files), as well as interactively editing new or pre-existing EPL apps. Any user on the tenant wishing to use this application will need to be a **CEP Manager**. See [Managing permissions](/guides/users-guide/administration/#managing-permissions).
 

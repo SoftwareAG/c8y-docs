@@ -6,15 +6,15 @@ layout: redirect
 
 There are two distinct approaches to deploy Apama applications to Cumulocity:
 
-* [Uploading a single \*.mon file](#single-mon-file) - the simplest mechanism for deploying an Apama application.
-* [Building a custom microservice](#deploying-as-microservice) – where more complex Apama projects can be built using the Cumulocity microservice SDK.
+* [Uploading a single \*.mon file with Apama EPL Apps](#single-mon-file) - the simplest mechanism for deploying an Apama application.
+* [Building a custom microservice](#deploying-as-microservice) - where more complex Apama projects can be built using the Cumulocity microservice SDK.
 
 
-### <a name="single-mon-file"></a>Deploying Apama applications as single \*.mon files with the Apama-epl application
+### <a name="single-mon-file"></a>Deploying Apama applications as single \*.mon files with Apama EPL Apps
 
->**Info**: To be able to upload single \*.mon files to Cumulocity, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Apama-epl application provided in Cumulocity. If you have Apama "starter", the Apama-epl application is not available in the application switcher; if you want to have this capability, contact Software AG support.
+>**Info**: To be able to upload single \*.mon files to Cumulocity, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Apama EPL Apps web application provided in Cumulocity. If you have Apama "starter", Apama EPL Apps is not available in the application switcher; if you want to have this capability, contact Software AG support.
 
-The Apama-epl application provides an interface for uploading and deploying EPL apps (\*.mon files), as well as interactively editing new or pre-existing EPL apps. Any user on the tenant wishing to use this application will need to be a **CEP Manager**. See [Managing permissions](/guides/users-guide/administration/#managing-permissions).
+Apama EPL Apps provides an interface for uploading and deploying EPL apps (\*.mon files), as well as interactively editing new or pre-existing EPL apps. Any user on the tenant wishing to use this application will need to be a **CEP Manager**. See [Managing permissions](/guides/users-guide/administration/#managing-permissions).
 
 When the EPL is deployed to Cumulocity, each \*.mon file is assigned a unique package name. This prevents conflicts when multiple modules are uploaded. For this reason, you should not specify a `package` statement in the \*.mon files. If you need to share events between different parts of your application, then write the event definitions and monitors that use it in a single \*.mon file.
 
@@ -25,7 +25,7 @@ When any EPL app signals a runtime error, this will be raised as an alarm. Runti
 For more detailed diagnostics of the Apama runtime and any active EPL apps, you can look at the logs for the Apama-ctrl microservice. See the information on log files in [Managing applications](/guides/users-guide/administration#managing-applications) for more details. However, some familiarity with Apama is necessary to get the most out of an Apama log file.
 
 
->**Side note:** Be aware that the EPL editor makes use of a standard web component. It provides many generic developer functions, some of which are not relevant to EPL, including but not limited to Quick Fix and Show Hover.
+>**Side note:** Be aware that the EPL editor which is part of Apama EPL Apps makes use of a standard web component. It provides many generic developer functions, some of which are not relevant to EPL, including but not limited to Quick Fix and Show Hover.
 
 ### <a name="deploying-as-microservice"></a>Deploying Apama applications as microservices
 
@@ -41,7 +41,7 @@ These kinds of applications should be deployed as microservices to Cumulocity.
 
 #### To deploy an Apama application as a microservice
 
-1. Develop your Cumulocity application in Designer in the usual way (just as shown above). 
+1. Develop your Cumulocity application in Software AG Designer in the usual way (just as shown previously). 
 
 2. You can use Apama's Docker support to turn the entire project into a microservice. In the **Project Explorer** view, right-click the project and select **Apama > Add Docker Support**, which will add a Dockerfile to the root of your project directory. 
 

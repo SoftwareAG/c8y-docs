@@ -1,5 +1,5 @@
 ---
-title: Configuration
+title: Configuring the device
 layout: redirect
 weight: 20
 ---

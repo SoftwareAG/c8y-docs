@@ -8,4 +8,4 @@ weight: 10
 
 For further information, see also the [Software AG Device Partner Portal](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices/10014/3).
 
-The following document describes how to [configure](/guides/devices/janztec#install-the-agent) the device for use with Cumulocity and how to [connect](/guides/devices/janztec#register-to-cumulocity) it to your Cumulocity account.
+The following document describes how to [configure](/guides/devices/janztec/configuration) the device for use with Cumulocity and how to [connect](/guides/devices/janztec/connection) it to your Cumulocity account.

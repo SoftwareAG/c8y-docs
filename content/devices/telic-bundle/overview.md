@@ -4,7 +4,9 @@ layout: redirect
 weight: 10
 ---
 
-[Telic GmbH](http://www.telic.de/en/) offers GPS-based devices for diverse industrial purposes, varying battery lifetime and ruggedness requirements. Cumulocity can record the coordinates of the devices centrally and enables you to create additional business logic on top of the data (for example, sending an email when a geofence is left).
+[Telic GmbH](http://www.telic.de/en/) offers GPS-based devices for diverse industrial purposes, varying battery lifetime and ruggedness requirements. 
+
+Cumulocity can record the coordinates of the devices centrally and enables you to create additional business logic on top of the data (for example, sending an email when a geofence is left).
 
 <img src="/guides/images/devices/telic/sbc_avl_m.jpg" alt="SBC AVL/AVL Power" style="display: inline">
 <img src="/guides/images/devices/telic/sbc3_can.jpg" alt="SBC3 CAN" style="display: inline">
@@ -12,3 +14,7 @@ weight: 10
 <img src="/guides/images/devices/telic/picotrack_ip69k.jpg" alt="Picotrack IP69K" style="display: inline">
 <img src="/guides/images/devices/telic/endurance_primary.jpg" alt="Endurance Primary" style="display: inline">
 <img src="/guides/images/devices/telic/endurance.jpg" alt="Endurance Rechargeable" style="display: inline">
+
+For further information, see also the [Software AG Device Partner Portal](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices/10014/3).
+
+The following document describes how to [register](/guides/devices/telic#register) the device for use with Cumulocity and how to [connect](/guides/devices/telic#connect-to-cumulocity) it to your Cumulocity account. Moreover it provides an overview on the [data](/guides/devices/telic#data) that can be created.

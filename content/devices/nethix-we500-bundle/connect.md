@@ -1,37 +1,39 @@
 ---
-title: Interacting with Cumulocity
+title: Connecting to Cumulocity
 layout: redirect
 weight: 50
 ---
-Once established an Internet connection and created at least one variable, it is possible to let WE500 interact with the Cumulocity platform using the account credentials.
+Once an internet connection has been established and at least one variable has been created, it is possible to let WE500 interact with the Cumulocity platform using the account credentials.
 
-To do so, navigate to **Administration > Cloud > Cumulocity** tab.
+To do so, navigate to the **Administration > Cloud > Cumulocity** tab.
 
 ![Cumulocity](/guides/images/devices/we500/cumulocity.png)
 
-On this page it’s possible to set the following parameters:
+Here you can specify the following parameters:
 
-* **Enable:** It allows to enable or disable the data sending to the Cumulocity platform
-* **URL:** It’s the URL for entering the own reserved area of Cumulocity
-* **Username:** The username used for accessing the platform
-* **Password:** The password used for accessing the platform
-* **Data delivery frequency:** Sets the number of minutes between each data delivery by WE500 to **Cumulocity**
+* **Enable:** Allows to enable or disable sending data to the Cumulocity platform
+* **URL:** URL for entering the own reserved area of Cumulocity
+* **Username:** Username for accessing the platform
+* **Password:** Password for accessing the platform
+* **Data delivery frequency:** Specifies the number of minutes between each data delivery from WE500 to Cumulocity
 
-By clicking on the **Save** button, WE500 will register automatically in **Cumulocity** and will start sending variables that can be monitored from **Devices > All devices > Measurements**:
+By clicking **Save**, WE500 will automatically register in **Cumulocity** and will start sending variables. 
+
+The variables can be monitored in the Device Management application of the Cumulocity platform. Click **All devices** in the **Devices** menu in the navigator and select your device from the devices list. Switch to the **Measurements** tab of the device:
 
 ![Cumulocity_Measurements](/guides/images/devices/we500/cumulocity_device_measurements.png)
 
-### <a name="info"></a>Device information
-WE500 registers automatically in **Cumulocity** with default data that can be later changed in **Devices > All devices > Info**:
+### Modify the registration information
 
-![Cumulocity_Device_Info](/guides/images/devices/we500/cumulocity_device_info.png)
+WE500 registers automatically in the Cumulocity platform with default data that can later be changed in the **Info** tab of the device. For details, see [Device Management > Device details > Info](/guides/users-guide/device-management/#info) in the User guide.
 
-### <a name="update"></a>Software update
-The WE500 firmware can also be updated from **Devices > All devices > Software**:
+### Update the firmware
 
-![Cumulocity_Device_Software](/guides/images/devices/we500/cumulocity_device_software.png)
+You can update the WE500 firmware in the **Software** tab of your device. For details, see [Device Management > Device details > Software](/guides/users-guide/device-management/#software) in the User guide.
 
-### <a name="restart"></a>Restart device
-WE500 can also be remotely rebooted from **Devices > All devices > Control > Restart** device:
+
+### Restart the device
+
+WE500 can be remotely rebooted from the Control tab of your device. For details, see [Device Management > Device details > Control](/guides/users-guide/device-management/#control) in the User guide.
 
 ![Cumulocity_Device_Restart](/guides/images/devices/we500/cumulocity_device_restart.png)

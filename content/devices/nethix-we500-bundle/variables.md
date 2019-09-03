@@ -7,7 +7,7 @@ A variable indicates the value of one parameter of the monitoring/control system
 
 In order to do that, it’s necessary to create a new variable and to enable the *Portal sending* option on the variable creation page.
 
-Navigate to **Administration > Variables > Variables** tab and click *New*, in order to create a new variable.
+Navigate to **Administration > Variables > Variables** and click **New**, in order to create a new variable.
 
 ![Variable_Setup](/guides/images/devices/we500/variable_setup_generic_settings1.png)
 

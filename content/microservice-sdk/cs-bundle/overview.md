@@ -8,7 +8,7 @@ This section describes how to develop and deploy microservices on top of Cumuloc
 
 *   [Prerequisites](#general-prerequisites) – Development and runtime requirements you need to develop and run C# microservices.
 *   [Hello world tutorial](#hello-world) – Step-by-step instructions to develop and deploy your first C# microservice.
-*   [Developing microservices](#developing-microservice) - Information about this SDK and detailed C# API reference.
+*   [Developing microservices](#developing-microservices) - Information about this SDK and detailed C# API reference.
 *   [SSO and OAuth](#sso-oauth) – Information about authentication employing OAuth tokens.
 *   [Troubleshooting](#troubleshooting) – Some identified common problems and their solutions.
 
@@ -17,6 +17,12 @@ To develop a microservice using the SDK for C#, the starting point is our [Hello
 > **Info**: You can develop microservices for Cumulocity with any IDE and build tool that you prefer, but this guide focuses on Cake (C# Make) and Visual Studio.
 
 If you face any issue or need technical support, please use the [Cumulocity community at Stack Overflow](http://stackoverflow.com/questions/tagged/cumulocity). You will find there many useful questions and answers.
+
+#### Upgrading the SDK
+
+To migrate your current version (e.g. 9.20.0) to a new one of the SDK, update all dependencies to the latest version, e.g. 1004.12.0, and update the project to .Net SDK 2.2.
+
+For new projects, you shall use a new bundle of [building scripts](https://bitbucket.org/m2m/cumulocity-clients-cs/src/develop/Examples/BuildingScripts/v2.2/), and it is recommended to use [Cumulocity.SDK.Microservices v1004.12.0](https://www.nuget.org/packages/Cumulocity.SDK.Microservices/1004.12.0) based on .Net Core 2.2.
 
 ### <a name="general-prerequisites"></a> Development prerequisites
 

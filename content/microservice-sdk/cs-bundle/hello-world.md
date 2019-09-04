@@ -17,12 +17,10 @@ The application created in this way uses the ASP.NET Web API framework to create
 
 ### Building and deploying on Windows
 
-Building and deploying the "Hello world" microservice on Windows is similar to the way it is done for Linux. For Windows, Powershell is installed by default and that is why we use it. For Linux, Powershell Core can be considered as an alternative.
-
-Download the script file to build a "Hello World" application. Manage the version of scripts and replace latest to the right version number.
+In Windows systems, Powershell is installed by default. Download the script file to build a "Hello world" application. Manage the version of scripts and replace latest to the right version number.
 
 ```shell
-Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
+C:\c8y> Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
 ```
 
 The latest can be replaced by the version number, e.g. microservicesdk-lin-dev-{X.X.X}.zip.
@@ -30,19 +28,19 @@ The latest can be replaced by the version number, e.g. microservicesdk-lin-dev-{
 Once you have downloaded the source, unzip the file.
 
 ```shell
-Expand-Archive c:\microservicesdk-win-dev-latest.zip -DestinationPath c:\microservicesdk-win-dev-latest
+C:\c8y> Expand-Archive c:\microservicesdk-win-dev-latest.zip -DestinationPath c:\microservicesdk-win-dev-latest
 ```
 
-Change the current folder and navigate to the _microservicesdk_ folder.
+Change the current folder and navigate to the _microservicesdk-win-dev-latest_ folder.
 
 ```shell
-cd microservicesdk-win-dev-latest
+C:\c8y> cd microservicesdk-win-dev-latest
 ```
 
 Make sure to use the correct SDK version - 2.0.3 or define which .NET Core SDK version is used when you run .NET Core CLI commands.
 
 ```shell
- dotnet --info
+C:\c8y> dotnet --info
 .NET Command Line Tools (2.0.3)
 
 Product Information:
@@ -54,7 +52,7 @@ Product Information:
 If the desired version of SDK has not been installed, it is possible to install SDK using Chocolatey. Run Powershell as Admin.
 
 ```shell
-choco install dotnetcore-sdk --version 2.0.3
+C:\c8y> choco install dotnetcore-sdk --version 2.0.3
 ```
 
 If you do not have the Chocolatey package manager, follow the [Installing Chocolatey](https://chocolatey.org/install) steps to install it.
@@ -62,13 +60,13 @@ If you do not have the Chocolatey package manager, follow the [Installing Chocol
 For several installed SDKs in the root directory of the new project set the required SDK version
 
 ```shell
-dotnet new globaljson --sdk-version 2.0.3
+C:\c8y> dotnet new globaljson --sdk-version 2.0.3
 ```
 
 Run the script *create.ps1* to create a sample project, provide the name of the project and the API application.
 
 ```shell
-./create.ps1
+C:\c8y> ./create.ps1
 ```
 
 This script _create.ps1_ is able to create an application on the platform if it discovers _settigns.ini_ in the directory. More details in _Step 1 - Create application_
@@ -76,53 +74,7 @@ This script _create.ps1_ is able to create an application on the platform if it 
 Execute the bootstrapper script to build the application and an image from a Docker file.
 
 ```shell
-PS C:\tmp\c8y> .\build.ps1
-Preparing to run build script...
-Running build script...
-
-========================================
-Clean
-========================================
-
-========================================
-DotnetPublish
-========================================
-Microsoft (R) Build Engine version 15.4.8.50001 for .NET Core
-Copyright (C) Microsoft Corporation. All rights reserved.
-
-  demo -> C:\tmp\c8y\src\demo\bin\Release\netcoreapp2.0\demo.dll
-  demo -> C:\tmp\c8y\publish\Web\
-
-========================================
-Docker-Build
-========================================
-Sending build context to Docker daemon  65.47MB
-Step 1/4 : FROM microsoft/dotnet:2.0-runtime
- ---> 79bb740a9a6e
-Step 2/4 : WORKDIR /app
- ---> Using cache
- ---> 7e6f85882838
-Step 3/4 : COPY ./publish/Web ./
- ---> 6c95b8196f9a
-Step 4/4 : ENTRYPOINT ["dotnet", "demo.dll"]
- ---> Running in 433334757ce3
-Removing intermediate container 433334757ce3
- ---> 6625aa14ea84
-Successfully built 6625aa14ea84
-Successfully tagged demo:latest
-SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have '-rwxr-xr-x' permissions. It is recommended to double check and reset permissions for sensitive files and directories.
-
-========================================
-Default
-========================================
-
-Task                          Duration
---------------------------------------------------
-Clean                         00:00:00.0673414
-DotnetPublish                 00:00:25.2592712
-Docker-Build                  00:01:01.8095063
---------------------------------------------------
-Total:                        00:01:27.1455943
+C:\c8y> .\build.ps1
 ```
 
 After a successful build you will be provided with a ZIP file in the target directory. The ZIP can be deployed to the Cumulocity platform as described in the Deployment section.
@@ -135,23 +87,23 @@ The microservice must be deployed  to verify calls from Cumulocity.
 
 To run a microservice which uses Cumulocity API locally you need the following:
 
-* URL address of the Cumulocity host of your tenant
-* Authorization header = "Basic <Base64(<username>:<password>)>"
-* Tenant - tenant ID
+*   URL address of the Cumulocity host of your tenant
+*   Authorization header = "Basic <Base64(<username>:<password>)>"
+*   Tenant - tenant ID
 
 You may also install the cURL utility. There are several ways to install it on Windows:
 
-* Install it using Chocolatey.
-* Install it with a one-click installer.
-* Using official cURL binaries.
+*   Install it using Chocolatey.
+*   Install it with a one-click installer.
+*   Using official cURL binaries.
 
 Assuming that Chocolatey is installed:
 
 ```shell
-choco install curl
+C:\c8y> choco install curl
 ```
 
-**Step 1 - Create application**
+**Step 1 - Create the application**
 
 If the application does not exist, create a new application on a platform:
 
@@ -174,7 +126,7 @@ BODY:
 Example:
 
 ```shell
-curl -X POST -s \
+C:\c8y> curl -X POST -s \
 -d '{"name":"hello-microservice-1","type":"MICROSERVICE","key":"hello-microservice-1-key"}' \
 -H "Authorization: <AUTHORIZATION>" \
 -H "Content-Type: application/vnd.com.nsn.cumulocity.application+json" \
@@ -231,12 +183,12 @@ Content-Type: application/vnd.com.nsn.cumulocity.user+json
 }
 ```
 
-**Step 3 - Run microservice locally**
+**Step 3 - Run the microservice locally**
 
 The image is already added to the local Docker repository during the build. List all the Docker repository images available:
 
 ```shell
-$ docker images
+C:\c8y> docker images
 
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 api                 latest              a8298ed10cd9        16 hours ago        258MB
@@ -245,10 +197,10 @@ api                 latest              a8298ed10cd9        16 hours ago        
 After you find the image in the list, run the Docker container for the microservice by providing the baseurl and the bootstrap user credentials:
 
 ```bash
-$ docker run -e C8Y_BASEURL=<URL> -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_TENANT> -e C8Y_BOOTSTRAP_USER=<BOOTSTRAP_USERNAME> -e C8Y_BOOTSTRAP_PASSWORD=<BOOTSTRAP_USER_PASSWORD> -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t <DOCKER_REPOSITORY_IMAGE>:<TAG>
+C:\c8y> docker run -e C8Y_BASEURL=<URL> -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_TENANT> -e C8Y_BOOTSTRAP_USER=<BOOTSTRAP_USERNAME> -e C8Y_BOOTSTRAP_PASSWORD=<BOOTSTRAP_USER_PASSWORD> -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t <DOCKER_REPOSITORY_IMAGE>:<TAG>
 ```
 
-**Step 4 - Subscribe to microservice**
+**Step 4 - Subscribe to the microservice**
 
 ```http
 POST <URL>/tenant/tenants/<TENANT_ID>/applications
@@ -265,18 +217,18 @@ BODY:
 Example:
 
 ```shell
-curl -X POST -d '{"application":{"id": "<APPLICATION_ID>"}}'  \
+C:\c8y> curl -X POST -d '{"application":{"id": "<APPLICATION_ID>"}}'  \
 -H "Authorization: <AUTHORIZATION>" \
 -H "Content-type: application/json" \
  "<URL>/tenant/tenants/<TENANT_ID>/applications"
 ```
 
-**Step 5 - Verify if microservice is running**
+**Step 5 - Verify if the microservice is running**
 
 Now you can verify if your application is running by executing
 
 ```shell
-curl -H "Authorization: <AUTHORIZATION>" \
+C:\c8y> curl -H "Authorization: <AUTHORIZATION>" \
   <URL>/service/hello/api/values
 ```
 
@@ -356,7 +308,7 @@ To deploy a microservice application on the platform, you need the following:
 
 Configure the _settings.ini_ file as follows:
 
-```properties
+```
 [deploy]
 username=<tenant>/<user>
 password=<password>
@@ -370,25 +322,7 @@ appname=sample_application
 * If *settings.ini* is not found, an error is shown.
 
 ```shell
-./deploy.ps1
-tenant/user
-someurl.com
-appname
-Header: ...
-
-
-StatusCode        : 201
-StatusDescription : Created
-Content           : {}
-RawContent        : HTTP/1.1 201 Created
-                    Connection: keep-alive
-                    Strict-Transport-Security: max-age=31536000; includeSubDomains
-                    Content-Length: 0
-                    Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json;cha...
-Headers           : {[Connection, keep-alive], [Strict-Transport-Security, max-age=31536000; includeSubDomains], [Content-Length, 0], [Content-Type, application/vnd.com.nsn.cumulocity.managedobject+json;charset=UTF-8;ver=0.9]...}
-RawContentLength  : 0
-
-I'm done!
+C:\c8y> ./deploy.ps1
 ```
 
 **Call the script with the _.ini_ name**
@@ -402,11 +336,11 @@ I'm done!
 * Merge the given arguments and ini configuration. Parameters from the file are overwritten by explicitly defined parameters.
 
 ```shell
-./deploy.ps1 -an hello-world -f settings_alternative.ini
+C:\c8y> ./deploy.ps1 -an hello-world -f settings_alternative.ini
 ```
 
 ```shell
-./deploy.ps1 -s <siteurl> -u <username> -p <password>  -an hello-world -f settings.ini
+C:\c8y> ./deploy.ps1 -s <siteurl> -u <username> -p <password>  -an hello-world -f settings.ini
 ```
 
 ### Improving the microservice
@@ -496,17 +430,17 @@ _Startup.cs_ responsibilities:
 * Setup dependency injection in ConfigureServices
 * Setup the middleware pipeline in Configure
 
-The Dockerfile created by *create.ps1* contains:
+The _Dockerfile_ file created by *create.ps1* contains:
 
-```dockerfile
-	FROM microsoft/dotnet:2.0-runtime
-	WORKDIR /app
-	COPY ./publish/Web ./
-	ENV SERVER_PORT 4700
-	ENTRYPOINT ["dotnet", "api.dll"]
+```docker
+FROM microsoft/dotnet:2.0-runtime
+WORKDIR /app
+COPY ./publish/Web ./
+ENV SERVER_PORT 4700
+ENTRYPOINT ["dotnet", "api.dll"]
 ```
 
-The Dockerfile defines what goes on in the environment inside a container:
+It also defines what goes on in the environment inside a container:
 
 * Sets the working directory
 * Copies all from an application directory to the working directory
@@ -534,6 +468,7 @@ For further information, refer to the [Device SDK guide](https://cumulocity.com/
 **C# MQTT SDK**
 
 It is possible to use the C# MQTT SDK as a nuget-package. A developer can use it to perform basic operations against the platform. For further information, refer to [MQTT examples](https://cumulocity.com/guides/device-sdk/mqtt-examples) in the Device SDK guide.
+
 
 ### Building and deploying on Linux
 

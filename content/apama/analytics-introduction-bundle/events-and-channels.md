@@ -4,7 +4,7 @@ title: Events and channels
 layout: redirect
 ---
 
-In Apama EPL, interactions with the rest of the Cumulocity IoT ecosystem is done via events. A number of event definitions is provided for accessing Cumulocity IoT data.
+In Apama EPL, interactions with the rest of the Cumulocity IoT ecosystem are done via events. A number of event definitions is provided for accessing Cumulocity IoT data.
 
 ### Predefined event types
 

@@ -45,7 +45,7 @@ When designing an Apama solution to be deployed within any form of Cumulocity Io
 
 ### Specific Apama limitations when using Apama EPL Apps
 
-* For ease of use, the correlator startup is controlled by Cumulocity. Thus, features that require you to change configuration files or command line options are not accessible.
+* For ease of use, the correlator startup is controlled by Cumulocity IoT. Thus, features that require you to change configuration files or command line options are not accessible.
 
 	The Apama features affected by this include:
 
@@ -68,8 +68,8 @@ When designing an Apama solution to be deployed within any form of Cumulocity Io
 	* A \*.mon file must not contain a package statement (to do so is an error).
 	* It is not possible to share event definitions between separate \*.mon files.
 	* It is not possible to use Apama queries.
-	* You can only use the bundles listed in [Introduction -> Deploying EPL](/guides/apama/introduction/#deploying-epl). This includes:
-		* Cumulocity IoT Event Definitions
-		* JSON with generic request/response event definitions
+	* You can only use the bundles listed in [Basic functionality](/guides/apama/analytics-introduction/). This includes:
+		* **Cumulocity IoT > Event Definitions for Cumulocity**
+		* **HTTP Client > JSON with generic request/response event definitions**
 
 All of these restrictions are implemented to ensure the smooth and secure operation of Apama applications within Cumulocity IoT.

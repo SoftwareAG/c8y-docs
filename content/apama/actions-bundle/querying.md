@@ -4,11 +4,11 @@ title: Querying Cumulocity data
 layout: redirect
 ---
 
-To interact with your historical data, you can use one of the following request-response event pairs to lookup resources.
+To interact with your historical data, you can use one of the following request-response event pairs to look up resources.
 
-Example: To lookup for Alarms, you can send a FindAlarm request event with appropriate query parameters to FindAlarm.CHANNEL channel, in response you can expect 0 or more FindAlarmResponse events (depending on the number of resources that match the lookup request) and a FindAlarmResponseAck event on the FindAlarmResponse.CHANNEL channel. Similar functionality is also provided for lookup of ManagedObjects, Events, Measurements and Operations.
+Example: To look up alarms, you can send a FindAlarm request event with appropriate query parameters to the FindAlarm.CHANNEL channel. In response, you can expect 0 or more FindAlarmResponse events (depending on the number of resources that match the lookup request) and a FindAlarmResponseAck event on the FindAlarmResponse.CHANNEL channel. Similar functionality is also provided for looking up managed objects, events, measurements and operations.
 
-|To lookup|Request-Response Events|Example|
+|To look up|Request-Response Events|Example|
 |:---------|:-----------------|:---------|
 |ManagedObject|FindManagedObject <br/>FindManagedObjectResponse <br/>FindManagedObjectResponseAck|[Example](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_querying_for_managed_objects.html%23)|
 |Alarm|FindAlarm <br/>FindAlarmResponse <br/>FindAlarmResponseAck|[Example](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_querying_for_alarms.html%23)|

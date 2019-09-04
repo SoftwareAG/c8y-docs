@@ -4,12 +4,7 @@ title: Developing microservices
 layout: redirect
 ---
 
-The SDK is based on ASP.NET Core, a cross-platform, high-performance, open-source framework for building modern, cloud-based, Internet-connected applications. ASP.NET Core apps use a Startup class, which is named Startup by convention. The Startup class
-
-* must include a Configure method to create the app's request processing pipeline, and
-* can optionally include a ConfigureServices method to configure the app's services.
-
-This document describes microservice SDK features, services, configuration files, logging and Cake (C# Make).
+The SDK is based on ASP.NET Core, a cross-platform, high-performance, open-source framework for building modern, cloud-based, Internet-connected applications. ASP.NET Core apps use a Startup class, which is named Startup by convention. The Startup class must include a `Configure` method to create the app's request processing pipeline, and can optionally include a `ConfigureServices` method to configure the app's services.
 
 There are two possible deployment types on the platform:
 
@@ -17,7 +12,6 @@ There are two possible deployment types on the platform:
 * External/legacy deployment - Requires custom installation of the platform and agent.
 
 For development and testing purposes, you can deploy a microservice on a local Docker container. The process is described below.
-
 
 ### Microservice security
 
@@ -44,7 +38,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Platform
 
-The root interface for connecting to Cumulocity from C# is called "Platform". It provides access to all other interfaces of the platform, such as the inventory. In its simplest form, it is instantiated as follows.
+The root interface for connecting to Cumulocity from C# is called `Platform`. It provides access to all other interfaces of the platform, such as the inventory. In its simplest form, it is instantiated as follows.
 
 To enable service providers to run microservices together with the platform, it is required to execute the registration procedure. During this process each microservice receives a dedicated bootstrap user to ensure that the microservice can be identified by the platform and can only access allowed resources.
 
@@ -58,7 +52,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-where Configuration represents a set of key/value application configuration properties.
+The `Configuration` object represents a set of key/value application configuration properties.
 
 ```cs
 public IConfiguration Configuration { get; }
@@ -69,13 +63,13 @@ public Startup(IConfiguration configuration)
 }
 ```
 
-In this way microservices should receive very basic configuration. Besides the properties related to the isolation level, the microservices will receive the following variables:
+In this way microservices receive very basic configuration. Besides the properties related to the isolation level, the microservices will receive the following variables:
 
 Variable      | Description
 --------------|----------------------
 C8Y_BASEURL | URL which points to the core platform
 C8Y_BASEURL_MQTT | URL which points to the core platform with MQTT protocol
-SERVER_PORT | Port on which the microservice should run
+SERVER_PORT | Port on which the microservice runs
 C8Y_MICROSERVICE_ISOLATION | Isolation level
 C8Y_TENANT | Application user tenant (available only for PER_TENANT isolation)
 C8Y_USER | Application user name (available only for PER_TENANT isolation)
@@ -83,7 +77,6 @@ C8Y_PASSWORD | Application user password (available only for PER_TENANT isolatio
 C8Y_BOOTSTRAP_TENANT | Bootstrap user to get platform subscriptions
 C8Y_BOOTSTRAP_USERNAME | Bootstrap user to get platform subscriptions
 C8Y_BOOTSTRAP_PASSWORD | Bootstrap user to get platform subscriptions
-
 
 ### Role-based authorization
 
@@ -380,7 +373,7 @@ public class Program
 }
 ```
 
-The process works like this: each microservice exposes the endpoint e.g. <kbd>/health</kbd>. This endpoint is created by the library ASP.NET Core middleware. When this endpoint is invoked, it runs all the health checks that are configured in the `AddHealthChecks` method in the `Startup` class.
+The process works like this: each microservice exposes the endpoint <kbd>/health</kbd>. This endpoint is created by the library ASP.NET Core middleware. When this endpoint is invoked, it runs all the health checks that are configured in the `AddHealthChecks` method in the `Startup` class.
 
 The `UseHealthChecks` method expects a port or a path. That port or path is the endpoint to use to check the health state of the service. For instance, the catalog microservice uses the path <kbd>/health</kbd>.
 
@@ -426,7 +419,7 @@ public class CheckCDriveHasMoreThan1GbFreeHealthCheck : IHealthCheck
 }
 ```
 
-Then in your ConfigureServices method, register the custom health check with adequate the lifetime of the service that makes sense for the health check and then add it to the `AddHealthChecks` registration that has been done before.
+Then in your `ConfigureServices` method, register the custom health check with adequate the lifetime of the service that makes sense for the health check and then add it to the `AddHealthChecks` registration that has been done before.
 
 ```cs
 public void ConfigureServices(IServiceCollection services)
@@ -455,7 +448,6 @@ public class Startup
     }
 
     public IConfiguration Configuration { get; }
-
 
     public void ConfigureServices(IServiceCollection services)
     {
@@ -486,7 +478,7 @@ public class Startup
 
 Cake is a cross platform build automation system, and it is built on top of Roslyn and the Mono Compiler which uses C# as the scripting language to do things like compiling code, copy files/folders, running unit tests, compress files and build NuGet packages.
 
-The cake script called _build.cake_ has has the predefined tasks. These tasks represent a unit of work in Cake, and you use them to perform specific work in a specific order.
+The Cake script called _build.cake_ has has the predefined tasks. These tasks represent a unit of work in Cake, and you use them to perform specific work in a specific order.
 
 *	Clean - Cleans the specified directory, deletes files.
 *	Build – Restores the dependencies and tools of projects and the task builds all projects, but before that it does the cleaning task.

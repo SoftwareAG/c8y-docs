@@ -1,7 +1,7 @@
 ---
 weight: 40
 layout: redirect
-title: SSO and OAuth
+title: Authentication
 ---
 
 The C# SDK also supports OAuth tokens. Authentication with OAuth is based on cookies technology, so the access token has to be read from the request cookie header. Refer to [Security](/guides/microservice-sdk/concept/#security) for more details.
@@ -35,7 +35,7 @@ It is important to remember that if you want to employ OAuth, only one authentic
 ```cs
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {
-    app.UseAuthentication();                   // to employ OAuth
+    app.UseAuthentication();            // to employ OAuth
     app.UseMvcWithDefaultRoute();
 }
 ```
@@ -58,7 +58,7 @@ public class ValuesController : Controller
 
 Refer to [Authorize with a specific scheme in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/security/authorization/limitingidentitybyscheme?view=aspnetcore-2.2&tabs=aspnetcore2x) for more details.
 
-### Testing the microservice REST API
+### Testing the microservice with OAuth tokens
 
 Third-party tools such as Postman can be used to test your REST API. You need the Cookie and XSRF-token which must be captured from the platform (e.g. by watching network requests in the browser). Note that the token expires within few minutes.
 

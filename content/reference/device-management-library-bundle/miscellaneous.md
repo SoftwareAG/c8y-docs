@@ -42,11 +42,11 @@ Please contact [support](https://support.cumulocity.com) if you would like to pu
 
 #### c8y\_DeviceTypes
 
-To publish sample commands for a subset of devices sharing the same device type, c8y_DeviceTypes fragment must be added:
+To publish sample commands for a subset of devices sharing the same device type, the c8y_DeviceTypes fragment must be added:
 
 	"c8y_DeviceTypes": ["deviceSubsetType"]
 
-If the fragment is present, the list of sample commands for a device type will be extended with the sample commands for the c8y_DeviceTypes. New sample commands created from user interface will be created in the context of the c8y_DeviceTypes.
+If the fragment is present, the list of sample commands for a device type will be extended with the sample commands for the c8y_DeviceTypes. New sample commands created from the user interface will be created in the context of the c8y_DeviceTypes.
 
 #### c8y\_LogfileRequest
 

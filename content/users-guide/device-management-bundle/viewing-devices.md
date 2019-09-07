@@ -60,6 +60,25 @@ For each device, the device list shows the following information provided in col
 </tbody>
 </table>
 
+The columns can alse be configured as needed by clicking on **Configure columns** from the top menu bar
+
+![Configure columns](/guides/images/users-guide/DeviceManagement/devmgmt-configure-columns.png)
+
+
+#### To configure columns
+
+1. Click on **Configure columns** from the top menu bar
+2. Select / De-select any column as per your requirements. On clicking **Save**, **All devices** view shall reflect your changes. If any column is de-selected, it will be removed and vice-versa
+3. Besides that you can add a custom column to show any other device property by clicking on **Add custom column** 
+![Configure columns](/guides/images/users-guide/DeviceManagement/devmgmt-custom-column.png)
+4. The **Header** here refers to the new column header
+5. The  **Fragment path** refers to the property of the device that you want to show in the table. It accepts nested properties. However for nested properties its only possible to select Cumulocity standard fragments like _c8y_Mobile.mcc_
+6. Filter criteria for the new column can be set either to **Fragment value equality** or **Fragment existence**
+7. For **Fragment value equality** option, filtering will be done by value. So if the property value matches your criteria, it will be shown
+8. For **Fragment existence** filtering will be done by existence. So the filtering is done based on whether the property exists or not    
+8. Once you are done, click on **Add** and the new column will be added to the list of columns. Once saved, it appear in **All devices** view
+9. Note that it is only the custom columns that can be deleted permanently. The standard columns can only be shown / hidden as needed.
+
 The devices list displays up to 100 rows. If a list contains more than 100 devices, click **Load more** at the bottom of the list to display the next 100 entries.
 
 #### To delete a device from the list
@@ -99,9 +118,14 @@ In the **Filter options** dialog box, specify your filter options.
 Most columns represent text fields. You can filter these columns by simply entering an arbitrary text into the textbox as in the search field. Click **+ Or** to add another textbox if you want to filter for more than one term. 
 
 Apart from filtering for text there are several other options:
+
 * In case of date fields (e.g. **Registration date**), you specify a date range to filter for. 
 * In the **Status** column you can filter for various criteria representing the send, push or maintenance status of the device.
 * In the **Alarm** column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
+* For custom columns, if the filter criteria was set to **Fragment value equality** during configuration, then a value needs to be provided
+![Filter by value](/guides/images/users-guide/DeviceManagement/devmgmt-filter-value.png)
+* If the filter criteria was set to **Fragment existence**, during configuration then the filtering will be done based on whether the fragment exists or not
+![Filter by existence](/guides/images/users-guide/DeviceManagement/devmgmt-filter-existence.png)
 
 In the **Filter options** dialog box, click **Ascending** or **Descending** if you want the devices to be sorted in a specific order. Finally, click **Apply** to carry out the filtering. 
 

@@ -1,7 +1,7 @@
 ---
 title: Connecting to Cumulocity
 layout: redirect
-weight: 50
+weight: 30
 ---
 Once an internet connection has been established and at least one variable has been created, it is possible to let WE500 interact with the Cumulocity platform using the account credentials.
 

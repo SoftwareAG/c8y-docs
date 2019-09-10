@@ -15,6 +15,4 @@ Cumulocity can record the coordinates of the devices centrally and enables you t
 <img src="/guides/images/devices/telic/endurance_primary.jpg" alt="Endurance Primary" style="display: inline">
 <img src="/guides/images/devices/telic/endurance.jpg" alt="Endurance Rechargeable" style="display: inline">
 
-For further information, see also the [Software AG Device Partner Portal](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices/10014/3).
-
-The following document describes how to [register](/guides/devices/telic#register) the device for use with Cumulocity and how to [connect](/guides/devices/telic#connect-to-cumulocity) it to your Cumulocity account. Moreover it provides an overview on the [data](/guides/devices/telic#data) that can be created.
+The following document describes how to [configure](/guides/devices/telic#configuration) the device for use with Cumulocity and how to [connect](/guides/devices/telic#connection) it to your Cumulocity account. Moreover it provides an overview on the [data](/guides/devices/telic#data) that can be created.

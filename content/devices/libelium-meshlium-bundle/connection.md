@@ -30,7 +30,7 @@ First you need to access Meshlium Manager System Interface, perfomring the follo
 	* 	**Port number**: 1883
 	* 	**User**: &#60;tenant_id&#62;/&#60;alias&#62;, for example techlibelium/iburillo
 	* 	**Password**: Password for your user		
-	<br> It is required to specify an alias for your account in the Cumulocity platform which needs to be used here.
+	<br> **Info**: It is required to specify an alias for your account in the Cumulocity platform which needs to be used here.<br><br>
  
 6. Click **Save** to save your settings.
  

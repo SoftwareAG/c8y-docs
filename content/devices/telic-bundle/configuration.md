@@ -1,5 +1,5 @@
 ---
-title: Configuring Telic devices for Cumulocity
+title: Configuring the device
 layout: redirect
 weight: 20
 ---

@@ -6,7 +6,7 @@ weight: 30
 
 Before you can connect a device to the Cumulocity platform, you first need to register it.
 
-### Register a device
+### Register and connect a device
 
 Follow the instructions in [Device Management > Connecting devices](/guides/users-guide/device-management#connecting-devices) in the User guide to register and connect your device.
 
@@ -22,7 +22,7 @@ If this is the first tracking device you connect to your tenant you next need to
 
 3. Click **Accept** once it shows up.
 
-**Info**: Clicking **Accept** in the agent registration will only work if you have previously requested a first tracker device.
+>**Info**: Clicking **Accept** in the agent registration will only work if you have previously requested a first tracker device.
 
 The device will now send location data according to the device configuration that you set.
 

@@ -1,7 +1,7 @@
 ---
 title: Creating variables
 layout: redirect
-weight: 40
+weight: 25
 ---
 A variable indicates the value of a parameter of the monitoring/control system. For example, the variable called *temperature* indicates the value of the temperature measured by an analogical probe. Variables are fundamental elements of the system, since they indicate the value of the monitored parameters that are sent to the Cumulocity platform.
 

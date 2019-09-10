@@ -1,14 +1,14 @@
 ---
 title: Troubleshooting
 layout: redirect
-weight: 30
+weight: 50
 ---
 
 Here are some general hints if your tracking device does not connect to Cumulocity or shows incorrect data:
 
-* Devices can only registered after they start sending data to Cumulocity.
+* Devices can only be registered after they have started sending data to Cumulocity.
 * Devices may send the location of the last GPS fix if there is no GPS reception.
-* The "Location" and "Tracking" tabs appear only in the user interface when the first GPS coordinate has been received.
+* The **Location** and **Tracking** tabs only appear in the UI after the first GPS coordinate has been received.
 * The LED indicators on the MT90 are *off* when it connected successfully.
 
 ### Getting additional functionality

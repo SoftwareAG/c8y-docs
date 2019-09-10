@@ -1,8 +1,10 @@
 ---
-title: Configuration
+title: Configuring the device
 layout: redirect
 weight: 20
 ---
+
+### Installing the agent
 
 Download the [Cumulocity Snap Agent](http://resources.cumulocity.com/examples/cumulocity-agent_1.0.2_amd64.snap) and copy it to a USB stick.
 

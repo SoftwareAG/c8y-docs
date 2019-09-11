@@ -44,6 +44,8 @@ For further information on connecting and managing Modbus devices, refer to Opti
    
 To connect an OPC/UA device in Edge, follow the steps below.
 
+**Important**: The OPC UA agent is in beta state and not supported. 
+
 #### Preparation
    
 Check if the OPC/UA agent is running in Cumulocity IoT Edge (running on port  6670):  

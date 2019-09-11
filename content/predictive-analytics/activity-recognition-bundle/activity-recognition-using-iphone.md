@@ -93,7 +93,7 @@ For each activity type, the name of the activity and the timestamps need to be u
 	c_measurements_endpoint="/measurement/measurements/"
 	
 	# maximum page size is 2000; only taking acceleration measurements
-	c_params={"source":config.get("cumulocity", "c_device_source"),"pageSize":"2000", "dateFrom":DATE_FROM, "dateTo":DATE_TO, "fragmentType":"c8y_Acceleration"}
+	c_params={"source":config.get("cumulocity", "c_device_source"),"pageSize":"2000", "dateFrom":DATE_FROM, "dateTo":DATE_TO, "valueFragmentType":"c8y_Acceleration"}
 	
 	
 	# get first page of json data measurements from cumulocity

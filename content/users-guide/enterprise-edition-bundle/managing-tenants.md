@@ -213,7 +213,7 @@ The **Usage statistics** page provides statistical information on each subtenant
 
 ![Subtenant statistics](/guides/images/users-guide/Administration/admin-subtenants-usage-statistics.png)
 
-The following information is provided for each subtenant:
+The following information is provided for each subtenant (not completely visible in the screenshot above due to space restrictions):
 
 |Field|Description|
 |:---|:---|
@@ -222,7 +222,7 @@ The following information is provided for each subtenant:
 |Device API requests|ID of the subtenant
 |Storage (MB)|Amount of data stored in your account
 |Peak storage (MB)|Peak value of storage
-|Root Devices|Number of root devices, excluding child devices
+|Root devices|Number of root devices, excluding child devices
 |Peak root devices|Peak number of root devices, excluding child devices
 |Devices|Total number of devices connected to the subtenant, including child devices
 |Peak devices|Peak number of devices, including child devices
@@ -238,6 +238,8 @@ The following information is provided for each subtenant:
 |Events updated|Number of updates on events
 |Measurements created|Number of measurements created
 |Total inbound transfer|Sum of all inbound transfers (alarms created, alarms updated, events created, events updated, inventories created, inventories updated, measurements created)
+|CPU (M)|Microservice CPU usage, specified in CPU milliseconds, see [Microservice usage](#microservice-usage) for details
+|Memory (MB)|Microservice memory usage, see [Microservice usage](#microservice-usage) for details
 |Parent tenant|Name of the parent tenant (available only for management tenant)
 |External reference|This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number
 
@@ -257,7 +259,7 @@ You can filter the usage statistics list for a time period by adding the start a
 The CSV file will be downloaded to your file system.
 
 
-#### Microservice usage
+#### <a name="microservice-usage"></a>Microservice usage
 
 The microservice usage feature gathers information on the resource usage per subtenant for each microservice. This enables Enterprise Tenants and service providers to charge tenants not only based on subscriptions but also based on resources usage.
 
@@ -325,8 +327,6 @@ For billing purposes, in addition to CPU usage and memory usage the cause for th
   "cause": "Subscription for tenant"
 }
 ```
-
-##### Usage statistics
 
 The information on the microservice usage is presented in the **Usage Statistics** page.
 

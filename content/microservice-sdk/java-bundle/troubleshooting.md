@@ -51,9 +51,9 @@ Check if you are using the correct target platform. Go to the **Target Platform*
 
 ##### The microservice application does not compile. I get "Access Restriction" messages
 
-This error may be caused because of a missing package import. Navigate to the **Dependencies** tab of the project manifest file and check if the package of the type that contains the method giving the access restrictionÂ is present in the Import-Package section.
+This error may be caused because of a missing package import. Navigate to the **Dependencies** tab of the project manifest file and check if the package of the type that contains the method giving the access restrictionÊis present in the Import-Package section.
 
-You can find the packageÂ by opening the declaration of the method (right-click and select **Open Declaration** from the context menu).
+You can find the packageÊby opening the declaration of the method (right-click and select **Open Declaration** from the context menu).
 
 ##### When starting an application I get "address already in use" messages
 
@@ -73,3 +73,7 @@ java     12985   neo  45u  IPv6  0x077c76d0       0t0   TCP  *:8080 (LISTEN)
 ```
 
 This means that the process 12985 is using the 8080 port and it can be killed if necessary.
+
+##### When trying to build an application I get a "BeanCreationException: Error creating bean with name methodSecurityInterceptor" error
+
+This is caused mainly by versions incompatibility between the SDK and Spring Boot specified in your _pom.xml_ file. If you want to use a recent version of the SDK, e.g. 10.4.0, the version of Spring Boot must be 1.5.17 or later.

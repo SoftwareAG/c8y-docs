@@ -4,7 +4,7 @@ title: Events and channels
 layout: redirect
 ---
 
-In the Apama Event Processing Language, interactions with the rest of the Cumulocity ecosystem is done via events. A number of event definitions is provided for accessing Cumulocity data.
+In the Apama Event Processing Language, interactions with the rest of the Cumulocity ecosystem is done via events. A number of event definitions is provided for accessing Cumulocity data. 
 
 ### Predefined event types
 

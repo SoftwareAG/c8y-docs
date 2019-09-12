@@ -114,11 +114,9 @@ The following information is displayed here:
 |Expiry date|Specifies the date on which support user access for the tenant will expire. If no date has been specified, the expiry date is set to "No limit".
 
 
-### To suspend or delete subtenants
+### Suspending subtenants
 
-Tenants can both be suspended or immediately deleted.
-
-Suspending tenants blocks any access to this tenant, regardless whether the access is from devices, users or other applications.
+Suspending a tenant blocks any access to this tenant, regardless whether the access is from devices, users or other applications.
 
 If a tenant is suspended, the tenant’s data remains in the database and can be made available later by clicking **Activate**.
 
@@ -137,11 +135,13 @@ As part of suspending the tenant, an email is sent to the tenant administrator i
 >**Info**: If you are a service provider, you can suppress this email.
 
 
+### Deleting subtenants
+
+**Important**: Deleting a subtenant cannot be reverted. For security reasons, it is only available in the management tenant.
+
 #### To delete a subtenant
 
 Click the menu icon at the right of the respective subtenant entry and then click **Remove** to finally delete a tenant and remove all the data of the tenant.
-
->**Info**: This action cannot be reverted. For security reasons, it is only available in the management tenant.
 
 
 ### <a name="subscribe"></a>Applications

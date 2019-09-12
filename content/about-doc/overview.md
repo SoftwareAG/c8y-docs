@@ -61,7 +61,7 @@ The Cumulocity documentation on this website contains the following information:
 
 <tr>
 <td align="left">Analytics documentation</td>
-<td align="left"><a href="/guides/apama/overview-analytics/">Analytics guide</a></td>
+<td align="left"><a href="/guides/apama/overview-analytics/">Streaming analytics guide</a></td>
 <td align="left">Basics for understanding how to create your own analytics or other business logic in Cumulocity IoT with Apama EPL.</td>
 </tr>
 

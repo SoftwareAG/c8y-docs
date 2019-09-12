@@ -1,22 +1,12 @@
 ---
-weight: 10
-title: Introduction
+weight: 15
+title: Previous versions
 layout: bundle
 ---
 
-This documentation describes the **October 2019 release (10.5.0)** of the Cumulocity IoT Core platform.
+The Cumulocity documentation sources are located in a Mercurial repository called "c8y-docs" in Bitbucket. The c8y-docs repository is public which means that no credentials are required to view or copy it. 
 
-This documentation covers all new features and functionality introduced with version 10.5.0 (see the [Release notes](/guides/release-notes#10.5.0) for details). Any other major changes that might have been implemented in the Cumulocity IoT Core documentation since the previous version will also be mentioned in the Release notes. 
-
-For release information of integrated  products (e.g. Apama) refer to the related guides within this documentation. 
-
-### Previous versions
-
-The Cumulocity documentation sources are located in a Mercurial repository called "c8y-docs" in Bitbucket. 
-
-The c8y-docs repository is public which means that no credentials are required to view or copy it. 
-
-You find the documentation sources for the maintainance release versions in the following branches:
+You find the documentation sources for the maintenance release versions in the following branches:
 
 Release 9.20: [https://bitbucket.org/m2m/c8y-docs/branch/release/r9.20.0](https://bitbucket.org/m2m/c8y-docs/branch/release/r9.20.0)
 
@@ -26,6 +16,7 @@ Release 10.4.6: [https://bitbucket.org/m2m/c8y-docs/branch/release/r10.4.6-GA](h
 
 The actual content of the documentation is stored in source files in Markdown format. These Markdown files are located in the folder */content*. You will find a subfolder for every guide here, which again contains subfolders.
 
+For further details on the architecture of the Cumulocity documentation website refer to the [README](https://bitbucket.org/m2m/c8y-docs/src/develop/README.md) at the top level of the repository. 
 
 #### Viewing documentation in HTML format
 

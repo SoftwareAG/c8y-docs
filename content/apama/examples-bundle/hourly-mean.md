@@ -24,21 +24,25 @@ To create the average (mean), we need the following parts in the module:
   ```java
   using com.apama.aggregates.avg;
   using com.apama.aggregates.last;
-  
+  using com.apama.cumulocity.Measurement;
+	
 	monitor HourlyAvgMeasurementDeviceContext {
 	
-		event AverageByDevice {
-			string source;
-			float avgValue;
-			string unit;
-		}
+	    event AverageByDevice {
+	        string source;
+	        float avgValue;
+	        string unit;
+	    }
 	
-		action onload() {
-			from m in all Measurement(type="c8y_TemperatureMeasurement") within (3600.0) 
-				group by m.source select
-					AverageByDevice(m.source,
-						avg(m.measurements["c8y_TemperatureMeasurement"]["T"].value),
-					last(m.measurements["c8y_TemperatureMeasurement"]["T"].unit)) as avgdata {
+	    action onload() {
+	        // Subscribe to Measurement.CHANNEL to receive all measurements
+	        monitor.subscribe(Measurement.CHANNEL);
+			
+	        from m in all Measurement(type="c8y_TemperatureMeasurement") within (3600.0) 
+	            group by m.source select
+	                AverageByDevice(m.source,
+	                    avg(m.measurements["c8y_TemperatureMeasurement"]["T"].value),
+	                    last(m.measurements["c8y_TemperatureMeasurement"]["T"].unit)) as avgdata {
 	
 				send Measurement("", "c8y_AverageTemperatureMeasurement", avgdata.source, currentTime,
 					{"c8y_AverageTemperatureMeasurement":

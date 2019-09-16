@@ -56,6 +56,8 @@ action getBitPositions(string binaryAsText) returns sequence<integer> {
 }
 
 action onload() {
+	// Subscribe to Measurement.CHANNEL to receive all measurements
+	monitor.subscribe(Measurement.CHANNEL);
 	on all Measurement(type = "c8y_BinaryFaultRegister") as m {
 		string faultRegister := m.measurements.getOrDefault("c8y_BinaryFaultRegister").getOrDefault("errors").value.toString();
 		integer bitPosition;
@@ -120,6 +122,8 @@ monitor FillLevelMeasurements {
 	}
 
 	action onload() {
+		// Subscribe to Measurement.CHANNEL to receive all measurements
+		monitor.subscribe(Measurement.CHANNEL);	
 		from m in all Measurement(type = "c8y_WaterTankFillLevel") partition by m.source retain 2 group by m.source having count() = 2
 			select FillLevel(first(m.measurements["c8y_WaterTankFillLevel"]["level"].value), first(m.time), 
 							last(m.measurements["c8y_WaterTankFillLevel"]["level"].value), last(m.time), m.source) as fill {

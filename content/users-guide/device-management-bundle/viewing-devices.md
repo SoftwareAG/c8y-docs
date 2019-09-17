@@ -10,6 +10,8 @@ A detailed device list will be displayed.
 
 ![Device list](/guides/images/users-guide/DeviceManagement/devmgmt-devices-alldevices.png)
 
+### Device information
+
 For each device, the device list shows the following information provided in columns:
 
 <table>
@@ -60,26 +62,38 @@ For each device, the device list shows the following information provided in col
 </tbody>
 </table>
 
-The columns can alse be configured as needed by clicking on **Configure columns** from the top menu bar
-
-![Configure columns](/guides/images/users-guide/DeviceManagement/devmgmt-configure-columns.png)
-
-
-#### To configure columns
-
-1. Click on **Configure columns** from the top menu bar
-2. Select / De-select any column as per your requirements. On clicking **Save**, **All devices** view shall reflect your changes. If any column is de-selected, it will be removed and vice-versa
-3. Besides that you can add a custom column to show any other device property by clicking on **Add custom column** 
-![Configure columns](/guides/images/users-guide/DeviceManagement/devmgmt-custom-column.png)
-4. The **Header** here refers to the new column header
-5. The  **Fragment path** refers to the property of the device that you want to show in the table. It accepts nested properties. However for nested properties its only possible to select Cumulocity standard fragments like _c8y_Mobile.mcc_
-6. Filter criteria for the new column can be set either to **Fragment value equality** or **Fragment existence**
-7. For **Fragment value equality** option, filtering will be done by value. So if the property value matches your criteria, it will be shown
-8. For **Fragment existence** filtering will be done by existence. So the filtering is done based on whether the property exists or not    
-8. Once you are done, click on **Add** and the new column will be added to the list of columns. Once saved, it appear in **All devices** view
-9. Note that it is only the custom columns that can be deleted permanently. The standard columns can only be shown / hidden as needed.
-
 The devices list displays up to 100 rows. If a list contains more than 100 devices, click **Load more** at the bottom of the list to display the next 100 entries.
+
+### Configuring columns
+
+The columns shown in the device list may be configured to your needs.
+
+#### To show/hide standard columns
+
+1. In the top menu bar, click **Configure columns**.
+2. In the resulting dialog box, select/clear the checkboxes for all columns as required. <br>![Configure columns](/guides/images/users-guide/DeviceManagement/devmgmt-device-list-configure-columns.png)
+<br>
+3. Click **Save**.
+
+The device list will reflect your changes and only show the selected columns. 
+
+#### To add custom columns
+
+Moreover, you can add custom columns to show additional device properties.
+
+1. In the **Configure columns** dialog box, click **Add custom column**.<br>
+![Configure columns](/guides/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
+2. In the **Header** field, Enter a header for the new custom column.  
+3. In the **Fragment path** field, enter the property of the device to be shown. Nested properties will be accepted. However, for nested properties its only possible to select Cumulocity standard fragments like `c8y_Mobile.mcc`.
+4. Select the **Filtering mode** for the new column. <br>
+If you select **Fragment value equality**, a value will only be shown if it matches the criteria specified by you in an additional dialog box.<br>
+![Specify values](/guides/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)
+<br>In case of **Fragment existence**, filtering will be done by existence, i.e. filtering is done based on whether the property exists or not.    
+5. Click **Add**.
+
+The new column will be added and displayed in the device list.
+
+>**Info**: While standard columns can only be shown/hidden as required, custom columns may be deleted permanently.
 
 #### To delete a device from the list
 

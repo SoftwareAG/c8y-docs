@@ -13,3 +13,4 @@ You can use predefined rules (see [Smart Rules](/guides/users-guide/cockpit/#sma
 | Define custom rules         | Apama-ctrl microservice and Apama EPL Apps web application.  |
 | Use Apama Analytics Builder | Apama-ctrl microservice and Apama Analytics Builder web application. |
 
+See also [Application list](/guides/reference/applications/#application-names) in the Reference guide for API-related information.

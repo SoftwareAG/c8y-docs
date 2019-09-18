@@ -81,7 +81,12 @@ Each time a user logs in, the content of the access token is verified and is a b
 }
 ```
 
-The user will be granted access to the global roles BUSINESS and APPLICATION COCKPIT. New rules can be added by clicking **Add access mapping** at the bottom. Click the Minus button to remove a rule. A statement can consist of multiple checks like in the image below. Yo can add a check to an existing statement by clicking **and**. 
+The user will be granted access to the global roles BUSINESS and APPLICATION COCKPIT. New rules can be added by clicking **Add access mapping** at the bottom. Click the Minus button to remove a rule. A statement can consist of multiple checks like in the image below. Yo can add a check to an existing statement by clicking **and**.
+
+When using "=" operator it is possible to use wildcards in **Value** field. Supported wildcard is asterisk (\*) and it matches zero or more characters. For example if you specified a "cur\*" it would match "cur", "curiosity", "cursor" and anything that starts with “cur”. "f\*n" will match "fn", "fission", "falcon"", and anything that begins with an "f" and ends with an "n".
+
+In case asterisk character should be matched literally it have to be escaped by adding backslash (\\). For example to match exactly word: "Lorem\*ipsum" value should be: "Lorem\\*ipsum".
+ 
 
  ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-8.png)
 

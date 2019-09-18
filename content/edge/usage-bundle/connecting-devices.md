@@ -8,7 +8,7 @@ Cumulocity uses REST and MQTT as protocols for external communication. Both prot
 
 Additionally, Cumulocity IoT Edge offers Cloud Fieldbus functionality to collect data from fieldbus devices and remotely manage them. To do so, various protocols are provided, e.g. Modbus and OPC/UA. For details on how to integrate devices using Modbus and OPC/UA, refer to Optional Services > [Cloud Fieldbus](/guides/users-guide/optional-services#cloud-fieldbus) in the User guide.
 
->**Note**: Currently, only the Modbus and OPC/UA protocols are supported.
+>**Info**: Currently, only the Modbus and OPC/UA protocols are supported.
    
 ### Connecting a Modbus device
 

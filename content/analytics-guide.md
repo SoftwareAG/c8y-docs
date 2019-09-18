@@ -1,5 +1,5 @@
 ---
-title: Analytics guide
+title: Streaming analytics guide
 bundle: apama
 icon: "c8y-icon c8y-icon-data-explorer"
 type: root

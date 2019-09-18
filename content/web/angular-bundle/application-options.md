@@ -92,6 +92,10 @@ export class ApplicationOptions {
         url: string;
     }>
   };
+  icon?: { // Application icon to be displayed in app switcher and header bar
+    class?: string,
+    url?: string
+  };
   noAppSwitcher?: boolean; // Hides the application from the application switched (saved to the server)
   globalTitle?: string; // HTML page title
   hidePowered?: boolean; // Hide powered by at the bottom of the navigator

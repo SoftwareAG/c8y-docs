@@ -114,13 +114,13 @@ The following information is displayed here:
 |Expiry date|Specifies the date on which support user access for the tenant will expire. If no date has been specified, the expiry date is set to "No limit".
 
 
-### To suspend or delete subtenants
+### Suspending subtenants
 
-You can temporarily suspend tenants or you can delete subtenants permanently. 
+Suspending a tenant blocks any access to this tenant, regardless whether the access is from devices, users or other applications.
 
-Suspending tenants blocks any access to this tenant, regardless whether the access is from devices, users or other applications.
+If a tenant is suspended, the tenant’s data remains in the database and can be made available later by clicking **Activate**.
 
-If a tenant is suspended, the tenant's data remains in the database and can be made available any time later. To do so, click **Activate**.
+>**Important**: Suspended tenants for all Cumulocity IoT Public Cloud instances will be automatically deleted after 30 days.
 
 #### To suspend a subtenant
 
@@ -135,11 +135,13 @@ As part of suspending the tenant, an email is sent to the tenant administrator i
 >**Info**: If you are a service provider, you can suppress this email.
 
 
+### Deleting subtenants
+
+**Important**: Deleting a subtenant cannot be reverted. For security reasons, it is only available in the management tenant.
+
 #### To delete a subtenant
 
 Click the menu icon at the right of the respective subtenant entry and then click **Remove** to finally delete a tenant and remove all the data of the tenant.
-
->**Info**: This action cannot be reverted. For security reasons, it is only available in the management tenant.
 
 
 ### <a name="subscribe"></a>Applications

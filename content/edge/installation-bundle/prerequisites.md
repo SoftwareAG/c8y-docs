@@ -10,7 +10,7 @@ To install Cumulocity IoT Edge, the following is required:
 
 |Item|Details|
 |:---|:---|
-|**Hypervisor**|- VMWare ESXi 6.5+ <br> - VMware Workstation Player 15.0.0 <br> - Virtualbox version 5.2.8, to be downloaded from [https://www.virtualbox.org](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2)<br>**Note**: The Virtualbox version 5.2.8 can be used for testing and it is not recommended to be used in a production environment. Support for VirtualBox is deprecated.
+|**Hypervisor**|- VMWare ESXi 6.5+ <br> - VMware Workstation Player 15.0.0 <br> - Virtualbox version 5.2.8, to be downloaded from [https://www.virtualbox.org](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2)<br>**Note**: Support for VirtualBox is deprecated. The Virtualbox version 5.2.8 can be used for testing and it is not recommended to be used in a production environment. 
 |**Edge VM image**|To be downloaded from the [Software AG Empower portal](https://empower.softwareag.com), based on the target hypervisor. <br> For VMware (ESXi and Workstation Player), download all the 4 files of VMware (ovf ,mf and two disks vmdk files). <br> For VirtualBox, download ova file.|
 |**Cumulocity license file**|To request the license file for Cumulocity, please contact the logistics team for your region:<br> - North and South America: LogisSrvus@softwareagusa.com <br>- All Other Regions: LogisticsServiceCenterGER@softwareag.com <br>In the email, you must include <br> - your company name, under which the license has been bought <br> - the domain name (e.g. myEdge.domain.com), under which Cumulocity IoT Edge will be reachable|
 |**SSL key and SSL certificate**|Use your internal or an external CA (Certification Authority) to create these.|

@@ -40,11 +40,19 @@ To communicate the results of a particular command, the device adds a property "
 
 Please contact [support](https://support.cumulocity.com) if you would like to publish sample commands for your device type.
 
+#### c8y\_DeviceTypes
+
+To publish sample commands for a subset of devices sharing the same device type, the c8y_DeviceTypes fragment must be added:
+
+	"c8y_DeviceTypes": ["deviceSubsetType"]
+
+If the fragment is present, the list of sample commands for a device type will be extended with the sample commands for the c8y_DeviceTypes. New sample commands created from the user interface will be created in the context of the c8y_DeviceTypes.
+
 #### c8y\_LogfileRequest
 
 You can request a device to send a log file and view the log file in Cumulocity's log viewer. If a device supports log viewing, it needs to add "c8y\_LogfileRequest" to its supported operations. In addition, it needs to specify which logs are available on the device:
 
-	c8y_SupportedLogs: ["syslog", "dmesg"]
+	"c8y_SupportedLogs": ["syslog", "dmesg"]
 
 A log file request has the following structure:
 

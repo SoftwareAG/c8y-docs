@@ -5,17 +5,18 @@ layout: redirect
 ---
 
 The measurement notification API permits to receive updates for all measurements for a specific device.
-The basic protocol for receiving notifications is described in the Section "[Real-time notifications](/guides/reference/real-time-notifications)". The URL is
+The basic protocol for receiving notifications is described in [Real-time notifications](/guides/reference/real-time-notifications). The URL is
 
 ```http
 /cep/realtime
 ```
-The subscription channel needs to contain the managed object ID of the device or a "*" as placeholder to receive notifications for the measurements of all devices
+The subscription channel needs to contain the managed object ID of the device or an asterisk (*) as placeholder to receive notifications for the measurements of all devices.
 
 ```http
 /measurements/<<deviceId>>
 ```
-The response will additionally to the measurement object contain a "realtimeAction" to identify which action resulted in the given object (CREATE, UPDATE or DELETE). In case of a deletion the data will only contain the id of the deleted measurement.
+
+In addition to the measurement object, the response will contain a "realtimeAction" to identify which action resulted in the given object (CREATE, UPDATE or DELETE). In case of a deletion the data will only contain the id of the deleted measurement.
 
 **Required role:** ROLE\_MEASUREMENT\_READ
 

@@ -4,9 +4,9 @@ title: System of units
 layout: redirect
 ---
 
-Note that all GET requests support "X-Cumulocity-System-Of-Units" header which allows to set system of units used in response.
+Note that all GET requests support the "X-Cumulocity-System-Of-Units" header which allows to set the system of units used in the response.
 Possible values are "imperial" or "metric".
-Every measurement fragment which contains "unit" property will be transformed to use required system of units.
+Every measurement fragment which contains the "unit" property will be transformed to use the required system of units.
 
 #### Most common conversions:
 

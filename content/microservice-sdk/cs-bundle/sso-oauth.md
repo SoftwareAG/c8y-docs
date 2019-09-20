@@ -29,8 +29,7 @@ public static IServiceCollection AddCumulocityAuthenticationAll(this IServiceCol
     return services;
 }
 ```
-
-It is important to remember that if you want to employ OAuth, only one authentication must be used. Add to the `Configure` method in the *Startup.cs* file the following code and do not use the method `AddBasicAuthentication`.
+The other part which we need to do is to register the authentication middleware. You can do that by calling UseAuthentication() in your `Configure` method in the *Startup.cs* file the following code and do not use the method `AddBasicAuthentication`.
 
 ```cs
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -74,3 +73,4 @@ $cookie.Domain = 'url'
 $session.Cookies.Add($cookie)
 $response = Invoke-WebRequest -Uri 'http://url/api/values' -Method GET -Headers $headers -WebSession $session
 ```
+Now run the Web API project, send request with Authorization header e.g. powershell script as above, and try to hit the GET endpoint. Now the endpoint returns 200 OK response code.

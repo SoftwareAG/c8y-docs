@@ -10,7 +10,7 @@ When you have established a connection to Dremio, you can run SQL queries agains
 
 * YourAccountNameDataLake.YourAccountName.TargetTable
 
-For example, if your account name is JohnSmith and you have defined an offloading configuration to write the alarms collection to the target table 'JohnsAlarms', then an example query would be:
+For example, if your account name is JohnSmith and you have defined an offloading configuration to write the alarms collection to the target table `JohnsAlarms`, then an example query would be:
 
 ```
 SELECT * FROM JohnSmithDataLake.JohnSmith.JohnsAlarms;

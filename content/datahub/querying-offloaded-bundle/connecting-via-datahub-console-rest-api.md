@@ -10,7 +10,7 @@ In contrast to directly calling the Dremio REST API, in this case authentication
 
 ### Request URLs
 
-The URL paths of proxied requests consist of the corresponding Dremio REST API path, prefixed by /dremio. Dremio's SQL and JOB APIs are supported. Headers and request body are as specified in the corresponding Dremio REST API documentation.
+The URL paths of proxied requests consist of the corresponding Dremio REST API path, prefixed by "/dremio". Dremio's SQL and JOB APIs are supported. Headers and request body are as specified in the corresponding Dremio REST API documentation.
 
 Note that you must not provide the authorization header for Dremio when using DataHub Console REST API. Instead you have to provide the authorization header for DataHub Console. 
 
@@ -42,7 +42,7 @@ Note that you must not provide the authorization header for Dremio when using Da
 
 This example submits a Dremio SQL query to fetch the five most recent alarms which already were offloaded, waits for it to complete, and fetches the result. The SQL query, assuming tenant name "Smith", is:
 
-```
+```sql
 SELECT creationTime, severity, text
 FROM SmithDataLake.Smith.alarms
 ORDER BY creationTime DESC
@@ -51,7 +51,7 @@ LIMIT 5
 
 and this request submit the query, with the URL specific to your organization:
 
-```
+```console
 POST /dremio/api/v3/sql HTTP/1.1
 Host: mytenant.cumulocity.com:9090
 Content-Type: application/json
@@ -62,7 +62,7 @@ Content-Type: application/json
 
 The response provides the job id:
 
-```
+```json
 {
     "id": "22feee74-875a-561c-5508-04114bdda000"
 }
@@ -70,14 +70,14 @@ The response provides the job id:
 
 Next, the following request checks for job completion:
 
-```
+```console
 GET /dremio/api/v3/job/22feee74-875a-561c-5508-04114bdda000 HTTP/1.1
 Host: localhost:9090
 ```
 
 and the response shows the job status:
 
-```
+```json
 {
     "jobState": "COMPLETED",
     "rowCount": 5,
@@ -95,14 +95,14 @@ and the response shows the job status:
 
 A job state of RUNNING is returned while the query is still being executed, and eventually it changes to COMPLETED or FAILED. Once the job has been completed, its results are returned by the following request:
 
-```
+```console
 GET /dremio/api/v3/job/22feee74-875a-561c-5508-04114bdda000/results HTTP/1.1
 Host: localhost:9090
 ```
 
 The response might look as follows:
 
-```
+```json
 {
     "rowCount": 5,
     "schema": [

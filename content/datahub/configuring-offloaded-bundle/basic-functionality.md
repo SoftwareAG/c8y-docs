@@ -47,9 +47,9 @@ In addition to the basic settings you can specify additional ones. In the config
 
 In the **Job description** field you can add a description for this offloading pipeline.
 
-In the **Additional result columns** field, you can provide a comma-separated list of additional columns or expressions you want to include. For each collection, the associated default set of data fields is extracted, which is available for each instance of such a base collection. If you have added additional top-level fields while feeding data into Cumulocity and you want to access them in your analytical queries, then you can specify them in this input field. For example, if you feed in measurements with the additional fields myCustomField1 and myCustomField2, you just need to enter 'myCustomField1, myCustomField1' (without the single quotes) into the input field. It is also possible to apply SQL functions on those fields, e.g. BTRIM(myCustomField1, '~') to trim leading and trailing '~' from the text in field myCustomField1.
+In the **Additional result columns** field, you can provide a comma-separated list of additional columns or expressions you want to include. For each collection, the associated default set of data fields is extracted, which is available for each instance of such a base collection. If you have added additional top-level fields while feeding data into Cumulocity and you want to access them in your analytical queries, then you can specify them in this input field. For example, if you feed in measurements with the additional fields `myCustomField1` and `myCustomField2`, you just need to enter 'myCustomField1, myCustomField1' (without the single quotes) into the input field. It is also possible to apply SQL functions on those fields, e.g. `BTRIM(myCustomField1, '~')` to trim leading and trailing '~' from the text in field `myCustomField1`.
 
-In the **Additional filter predicate** field you can specify an additional filter for filtering the data before it is inserted into the data lake. Per default all entries in the collection are inserted, so you can use the predicate to filter out entries you do not want to persist in the data lake. For example, you can filter out outliers or invalid values. The filter predicate is specified in SQL syntax, e.g. status='ACTIVE' AND source > 300. 
+In the **Additional filter predicate** field you can specify an additional filter for filtering the data before it is inserted into the data lake. Per default all entries in the collection are inserted, so you can use the predicate to filter out entries you do not want to persist in the data lake. For example, you can filter out outliers or invalid values. The filter predicate is specified in SQL syntax, e.g. `status='ACTIVE' AND source > 300`. 
 
 ### Validating and previewing an offloading configuration
 
@@ -69,7 +69,7 @@ When the configuration has been saved successfully, you will find additional con
 
 #### Copying a configuration
 
-Click **Copy** to copy the current configuration. The new configuration is an identical copy of the selected configuration except for the task name and the target table, both of which will have the suffix _copy appended.
+Click **Copy** to copy the current configuration. The new configuration is an identical copy of the selected configuration except for the task name and the target table, both of which will have the suffix "_copy" appended.
 
 #### Deleting a configuration
 
@@ -88,7 +88,7 @@ Click **Start offloading** to start the periodic execution of the offloading pip
 
 If the same pipeline has already been started and stopped in the past, a new start of the pipeline does not offload the complete collection, but only data that has been added after the last execution. 
 
-Before restarting the periodic offloading, you may have changed the result schema by adding or removing columns. When you restart the pipeline, existing data in the data lake is not modified, but the new data being offloaded incorporates the new schema. When querying such a data set with different schemas, the system computes a "merged" schema and (virtually) fills up with null values where fields have not yet been provided. This usually works without problems if additional attributes are included or removed from the offloading configuration. However,  schema merging might fail or lead to unexpected behavior in certain cases. One example is if you change data types, e.g. if the old configuration contained 'myCustomField1' as a String and you change that to CAST(myCustomField AS Integer) AS myCustomField1.
+Before restarting the periodic offloading, you may have changed the result schema by adding or removing columns. When you restart the pipeline, existing data in the data lake is not modified, but the new data being offloaded incorporates the new schema. When querying such a data set with different schemas, the system computes a "merged" schema and (virtually) fills up with null values where fields have not yet been provided. This usually works without problems if additional attributes are included or removed from the offloading configuration. However,  schema merging might fail or lead to unexpected behavior in certain cases. One example is if you change data types, e.g. if the old configuration contained `myCustomField1` as a String and you change that to `CAST(myCustomField AS Integer) AS myCustomField1`.
 
 You may have had another offloading pipeline that has already written into the same target table, i.e., the data is stored in the same folder on the data lake. In that case, when starting the new offloading pipeline, you are asked whether you want to flush the existing data or append the data to the existing data. You should only append the data if they share the same schema.
 
@@ -105,7 +105,7 @@ If the periodic offloading is enabled, you can also manually trigger an offloadi
 
 Click **Offload now** to trigger a manual offloading. As for periodic offloading, a manual offloading execution also processes only incremental data that has been added since the last offloading execution (independent of this last execution being triggered manually or by the scheduler).
 
-The tables in the next sections summarize the resulting schemas for each of the standard collections. These schemas additionally include columns dir0, ..., dir4, which are used for internal purposes and must not be queried. The columns are generated during the extraction process, but neither do they have corresponding data in the Cumulocity database, nor are they persisted in the data lake. You must not use dir0, ..., dir4 as additional columns or rename them accordingly in your offloading configuration.
+The tables in the next sections summarize the resulting schemas for each of the standard collections. These schemas additionally include columns `dir0`, ..., `dir4`, which are used for internal purposes and must not be queried. The columns are generated during the extraction process, but neither do they have corresponding data in the Cumulocity database, nor are they persisted in the data lake. You must not use `dir0`, ..., `dir4` as additional columns or rename them accordingly in your offloading configuration.
 
 
 

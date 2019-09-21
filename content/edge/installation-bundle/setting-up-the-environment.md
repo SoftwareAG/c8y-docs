@@ -10,6 +10,7 @@ For your convenience, we provide three hypervisor examples for setting up Cumulo
 * [Example setup for ESXi VMWare](/guides/edge/installation#setting-up-esxi)
 * [Example setup for VMWare Workstation Player](/guides/edge/installation#setting-up-vmware)
 * [Example setup for VirtualBox](/guides/edge/installation#setting-up-virtual-box)
+* [Example setup for Hyper-V](/guides/edge/installation#setting-up-hyper-v)
 
 >**Info**: VirtualBox support is deprecated, so it is not recommended to use it in a production environment.
 

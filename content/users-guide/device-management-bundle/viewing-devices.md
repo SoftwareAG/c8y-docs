@@ -86,9 +86,9 @@ Moreover, you can add custom columns to show additional device properties.
 2. In the **Header** field, Enter a header for the new custom column.  
 3. In the **Fragment path** field, enter the property of the device to be shown. Nested properties will be accepted. However, for nested properties its only possible to select Cumulocity standard fragments like `c8y_Mobile.mcc`.
 4. Select the **Filtering mode** for the new column. <br>
-If you select **Fragment value equality**, a value will only be shown if it matches the criteria specified by you in an additional dialog box.<br>
+If you select **Fragment equals value**, a value will only be shown if it matches the criteria specified by you in an additional dialog box.<br>
 ![Specify values](/guides/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)
-<br>In case of **Fragment existence**, filtering will be done by existence, i.e. filtering is done based on whether the property exists or not.    
+<br>In case of **Fragment exists**, filtering will be done by existence, i.e. filtering is done based on whether the property exists or not.    
 5. Click **Add**.
 
 The new column will be added and displayed in the device list.
@@ -136,9 +136,9 @@ Apart from filtering for text there are several other options:
 * In case of date fields (e.g. **Registration date**), you specify a date range to filter for. 
 * In the **Status** column you can filter for various criteria representing the send, push or maintenance status of the device.
 * In the **Alarm** column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
-* For custom columns, if the filter criteria was set to **Fragment value equality** during configuration, then a value needs to be provided
+* For custom columns, if the filter criteria was set to **Fragment equals value** during configuration, then a value needs to be provided
 ![Filter by value](/guides/images/users-guide/DeviceManagement/devmgmt-filter-value.png)
-* If the filter criteria was set to **Fragment existence**, during configuration then the filtering will be done based on whether the fragment exists or not
+* If the filter criteria was set to **Fragment exists**, during configuration then the filtering will be done based on whether the fragment exists or not
 ![Filter by existence](/guides/images/users-guide/DeviceManagement/devmgmt-filter-existence.png)
 
 In the **Filter options** dialog box, click **Ascending** or **Descending** if you want the devices to be sorted in a specific order. Finally, click **Apply** to carry out the filtering. 

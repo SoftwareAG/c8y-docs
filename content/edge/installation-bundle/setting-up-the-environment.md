@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-For your convenience, we provide three hypervisor examples for setting up Cumulocity IoT Edge:
+For your convenience, we provide the hypervisor examples for setting up Cumulocity IoT Edge:
 
 * [Example setup for ESXi VMWare](/guides/edge/installation#setting-up-esxi)
 * [Example setup for VMWare Workstation Player](/guides/edge/installation#setting-up-vmware)

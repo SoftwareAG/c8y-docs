@@ -32,8 +32,12 @@ ssh admin@<IP address>
 $ Password: manage
 ```
 	
-Use the IP address provided during [network configuration](/guides/edge/installation#configuration). The default value for the Virtual Box is 192.168.56.120.
+Use the IP address provided during [network configuration](/guides/edge/installation#configuration).
 
+|Hypervisor|Default IP Address|
+|:---|:---|
+|Virtual Box|192.168.56.120
+|Hyper-V|192.168.66.10
 
 >**Info**: 
 Root access is not supported in the Edge VM instance. Changes made as root user might cause failure of the described operational procedures. 

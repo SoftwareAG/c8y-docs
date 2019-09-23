@@ -6,8 +6,6 @@ layout: redirect
 
 ### Installation requirements
 
-To install Cumulocity IoT Edge, the following is required:
-
 |Item|Details|
 |:---|:---|
 |**Hypervisor**|- VMWare ESXi 6.5 and 6.7 <br> - VMware Workstation Player 15.x <br> - Virtualbox version 5.2.8, to be downloaded from [https://www.virtualbox.org](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2)<br>**Info**: Support for VirtualBox is deprecated and it is not recommended to be used in a production environment. The Virtualbox version 5.2.8 can be used only for testing. <br> - Hyper-V on Microsoft Windows 10 Pro and Windows 10 Enterprise, version 1809. 

@@ -57,3 +57,5 @@ After creating a NAT virtual switch, you must import the Edge VM image into Hype
 
 7. Right-click the Edge VM image and click **Connect**. <br>
 <img src="/guides/images/edge/edge-hyper-v-007.png" name="Connecting to Edge VM" style="width:75%;"/>
+
+>**Note**: By default, the NTP servers are configured to Europe NTP servers. You can configure the NTP server as per your requirements before using the Edge VM on Hyper-V. 

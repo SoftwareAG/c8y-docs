@@ -21,7 +21,7 @@ PS C:\WINDOWS\system32> New-VMSwitch -SwitchName "NATSwitchForEDGE" -SwitchType 
 PS C:\WINDOWS\system32> Get-NetAdapter
 ```
 <br>
-<img align="centre" src="/guides/images/edge/edge-hyper-v-get-netadapter.png" name="Get-NetAdapter" style="width:75%;"/>
+<img src="/guides/images/edge/edge-hyper-v-get-netadapter.png" name="Get-NetAdapter" style="width:75%;"/>
 Note down the `ifIndex` of the adapter. The `ifIndex` in the above screenshot is 31. The same `ifIndex` should be used in the next step.
 
 3. Assign an IP address for the adapter.

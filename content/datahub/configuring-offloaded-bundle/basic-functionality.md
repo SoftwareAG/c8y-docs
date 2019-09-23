@@ -13,11 +13,12 @@ On the **Offloading** page you do the offloading management and monitoring tasks
 
 <img src="/guides/images/datahub-guide/datahub-configure-offloading-tasks.png" alt="Configuration of offloading tasks"  style="max-width: 100%">
 
-On this page you find in the top section controls for adding a collection for offloading or filtering the list of configurations. Below this section you will find the list of current configurations.
+On this page, you find in the top section controls for adding a collection for offloading or filtering the list of configurations. Below this section you will find the list of current configurations.
 
 The following steps describe how to set up and start an offloading pipeline.
 
 ### Defining an offloading configuration
+
 To define an offloading configuration, click **Add collection** to select the Cumulocity collection you want to offload to the data lake. In the dropdown box select one of the Cumulocity base collections, which are:
 
 * alarms
@@ -43,13 +44,13 @@ The **Target table** denotes the name of the so-called source table that is crea
 
 #### Additional settings
 
-In addition to the basic settings you can specify additional ones. In the configuration form click the checkbox **Show details**. Then the form is expanded and provides the additional settings. If you want to collapse the form, click again on the checkbox.
+In addition to the basic settings you can specify additional ones. In the configuration form, select the checkbox **Show details** at the top right. Then the form is expanded and provides the additional settings. If you want to collapse the form, click again the checkbox to clear it.
 
-In the **Job description** field you can add a description for this offloading pipeline.
+In the **Job description** field, you can add a description for this offloading pipeline.
 
-In the **Additional result columns** field, you can provide a comma-separated list of additional columns or expressions you want to include. For each collection, the associated default set of data fields is extracted, which is available for each instance of such a base collection. If you have added additional top-level fields while feeding data into Cumulocity and you want to access them in your analytical queries, then you can specify them in this input field. For example, if you feed in measurements with the additional fields `myCustomField1` and `myCustomField2`, you just need to enter 'myCustomField1, myCustomField1' (without the single quotes) into the input field. It is also possible to apply SQL functions on those fields, e.g. `BTRIM(myCustomField1, '~')` to trim leading and trailing '~' from the text in field `myCustomField1`.
+In the **Additional result columns** field, you can provide a comma-separated list of additional columns or expressions you want to include. For each collection, the associated default set of data fields is extracted, which is available for each instance of such a base collection. If you have added additional top-level fields while feeding data into Cumulocity and you want to access them in your analytical queries, then you can specify them in this input field. For example, if you feed in measurements with the additional fields `myCustomField1` and `myCustomField2`, you just need to enter "myCustomField1, myCustomField2" (without the quotes) into the input field. It is also possible to apply SQL functions on those fields, e.g. `BTRIM(myCustomField1, '~')` to trim leading and trailing '~' from the text in field `myCustomField1`.
 
-In the **Additional filter predicate** field you can specify an additional filter for filtering the data before it is inserted into the data lake. Per default all entries in the collection are inserted, so you can use the predicate to filter out entries you do not want to persist in the data lake. For example, you can filter out outliers or invalid values. The filter predicate is specified in SQL syntax, e.g. `status='ACTIVE' AND source > 300`. 
+In the **Additional filter predicate** field, you can specify an additional filter for filtering the data before it is inserted into the data lake. Per default all entries in the collection are inserted, so you can use the predicate to filter out entries you do not want to persist in the data lake. For example, you can filter out outliers or invalid values. The filter predicate is specified in SQL syntax, e.g. `status='ACTIVE' AND source > 300`. 
 
 ### Validating and previewing an offloading configuration
 
@@ -63,9 +64,9 @@ At the bottom of each configuration form, you will find buttons for managing the
 
 #### Saving a configuration
 
-Click **Save** to save the current settings. Otherwise the configuration will be lost if you move to another page. During saving, you will be asked whether you want to validate. If you click the **No** button, the configuration will not be validated. If you click the **Yes** button, the configuration will be validated. If the configuration is invalid, you will find an error icon next to the task name, which gives you error details when clicking on it.
+Click **Save** to save the current settings. Otherwise the configuration will be lost if you move to another page. During saving, you will be asked whether you want to validate. If you click **No**, the configuration will not be validated. If you click **Yes**, the configuration will be validated. If the configuration is invalid, you will find an error icon next to the task name, which gives you error details when clicking on it.
 
-When the configuration has been saved successfully, you will find additional controls in the configuration form. At the top of the form there is a checkbox **Show history** which shows the history of offloading jobs. See section [History per offloading job](/guides/datahub/monitoring-offloaded#history-per-offloading-job) for more details. At the bottom you will find two controls **Start periodic offloading** and **Offload now**, which are described in detail in section [Scheduling an offloading job](#scheduling-an-offloading-job). Additionally, next to the task name the schedule is shown with which this pipeline will be executed once it is started, e.g., every hour at minute 6.
+When the configuration has been saved successfully, you will find additional controls in the configuration form. At the top of the form there is a checkbox **Show history** which shows the history of offloading jobs. See the section [History per offloading job](/guides/datahub/monitoring-offloaded#history-per-offloading-job) for more details. At the bottom you will find two controls **Start periodic offloading** and **Offload now**, which are described in detail in [Scheduling an offloading job](#scheduling-an-offloading-job). Additionally, next to the task name the schedule is shown with which this pipeline will be executed once it is started, e.g., every hour at minute 6.
 
 #### Copying a configuration
 
@@ -88,11 +89,12 @@ Click **Start offloading** to start the periodic execution of the offloading pip
 
 If the same pipeline has already been started and stopped in the past, a new start of the pipeline does not offload the complete collection, but only data that has been added after the last execution. 
 
-Before restarting the periodic offloading, you may have changed the result schema by adding or removing columns. When you restart the pipeline, existing data in the data lake is not modified, but the new data being offloaded incorporates the new schema. When querying such a data set with different schemas, the system computes a "merged" schema and (virtually) fills up with null values where fields have not yet been provided. This usually works without problems if additional attributes are included or removed from the offloading configuration. However,  schema merging might fail or lead to unexpected behavior in certain cases. One example is if you change data types, e.g. if the old configuration contained `myCustomField1` as a String and you change that to `CAST(myCustomField AS Integer) AS myCustomField1`.
+Before restarting the periodic offloading, you may have changed the result schema by adding or removing columns. When you restart the pipeline, existing data in the data lake is not modified, but the new data being offloaded incorporates the new schema. When querying such a data set with different schemas, the system computes a "merged" schema and (virtually) fills up with null values where fields have not yet been provided. This usually works without problems if additional attributes are included or removed from the offloading configuration. However,  schema merging might fail or lead to unexpected behavior in certain cases. One example is if you change data types, e.g. if the old configuration contained `myCustomField1` as a string and you change that to `CAST(myCustomField AS Integer) AS myCustomField1`.
 
 You may have had another offloading pipeline that has already written into the same target table, i.e., the data is stored in the same folder on the data lake. In that case, when starting the new offloading pipeline, you are asked whether you want to flush the existing data or append the data to the existing data. You should only append the data if they share the same schema.
 
 #### Scheduling settings
+
 The scheduler is configured to run the offloading pipeline once an hour. The precise minute of the hour at which the offloading starts is shown in the configuration form, right next to the task name. This minute is assigned by the system to balance the load on the Cumulocity's Operational Store, i.e. avoiding that all offloading jobs from different tenants run at the same time. The schedule settings cannot be modified.
 
 #### Stopping periodic offloading

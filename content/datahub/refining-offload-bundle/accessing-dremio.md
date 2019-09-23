@@ -11,15 +11,15 @@ You access Dremio via a web browser. It has been tested with the following web b
 
 > **Info:** Support for mobile devices like smartphones or tablets has not been tested.
 
-To access Dremio, navigate to the **Home** page. Under **Quick links** click on the **Dremio** icon. This will direct you to the login page of Dremio.
+To access Dremio, navigate to the home page. Under **Quick links** click on the **Dremio** icon. This will direct you to the **Login** screen of Dremio.
 
 > **Info:** Your Dremio user does not have administration rights in Dremio.
 
 ### How to log into Dremio
 
-On the Login screen, enter the same credentials as for your DataHub Console. Click **Login** to enter Dremio.
+On the **Login** screen, enter the same credentials as for your DataHub Console. Click **Login** to enter Dremio.
 
 When you log in successfully, you will be taken to the home page of Dremio. 
 
-When you want to log out, click at the right of the top bar on your user name and then select **Log out**.
+When you want to log out, click on your user name at the right of the top bar  and then select **Log out**.
 

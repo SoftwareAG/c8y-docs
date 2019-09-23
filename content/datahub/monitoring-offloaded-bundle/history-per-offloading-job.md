@@ -15,12 +15,12 @@ The table shows the execution history with each execution consisting of the foll
 
 | Column name | Description
 | ---         | --- |
-| Status | The status of the execution, which is either running, succeeded, or failed.
-| Job Name | The name of the pipeline.
-| \# Records | The number of records which have been offloaded during this execution.
-| Execution Time | The point in time the execution has been started.
-| Runtime (s) | The runtime of the execution in seconds.
-| Next Execution Time | The point in time for which the next execution is scheduled.
+| Status | The status of the execution, which is either RUNNING, SUCCEEDED, or FAILED
+| Job Name | The name of the pipeline
+| \# Records | The number of records which have been offloaded during this execution
+| Execution Time | The point in time the execution has been started
+| Runtime (s) | The runtime of the execution in seconds
+| Next Execution Time | The point in time for which the next execution is scheduled
 
 The system is configured to keep a limited history of the last job executions. 
 

@@ -40,7 +40,9 @@ Note that you must not provide the authorization header for Dremio when using Da
 
 ### Example
 
-This example submits a Dremio SQL query to fetch the five most recent alarms which already were offloaded, waits for it to complete, and fetches the result. The SQL query, assuming tenant name "Smith", is:
+This example submits a Dremio SQL query to fetch the five most recent alarms which already were offloaded, waits for it to complete, and fetches the result. 
+
+The SQL query, assuming tenant name "Smith", is:
 
 ```sql
 SELECT creationTime, severity, text
@@ -49,7 +51,7 @@ ORDER BY creationTime DESC
 LIMIT 5
 ```
 
-and this request submit the query, with the URL specific to your organization:
+This request submits the query, with the URL specific to your organization:
 
 ```console
 POST /dremio/api/v3/sql HTTP/1.1
@@ -68,14 +70,14 @@ The response provides the job id:
 }
 ```
 
-Next, the following request checks for job completion:
+The following request checks for job completion:
 
 ```console
 GET /dremio/api/v3/job/22feee74-875a-561c-5508-04114bdda000 HTTP/1.1
 Host: localhost:9090
 ```
 
-and the response shows the job status:
+The response shows the job status:
 
 ```json
 {

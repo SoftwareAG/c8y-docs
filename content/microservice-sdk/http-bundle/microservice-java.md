@@ -418,4 +418,4 @@ In the Device Management application, navigate to **Devices** > **All devices** 
 
 ### Source code
 
-The code of this [iptracker-microservice](https://bitbucket.org/m2m/cumulocity-examples/src/default/microservices/iptracker-microservice/) can be found in our Bitbucket M2M repositories.
+The code of this [iptracker-microservice](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/iptracker-microservice/) can be found in our Bitbucket M2M repositories.

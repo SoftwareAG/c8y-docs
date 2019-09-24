@@ -83,6 +83,20 @@ Trigger the sending of child devices of the device.
 105
 ```
 
+##### Clear device's fragment (107)
+
+Remove one or more fragments from device.
+
+|Position|Parameter|Mandatory|
+|:-------|:-------|:-------|
+|1...|fragmentName|YES|
+
+**Example**
+
+```text
+107,c8y_Position,c8y_Configuration
+```
+
 ##### Configure Hardware (110)
 
 Update the hardware properties of the device.
@@ -372,6 +386,21 @@ Clear an existing alarm.
 306,c8y_TemperatureAlarm
 ```
 
+##### Clear alarm's fragment (307)
+
+Remove one or more fragments from alarm of some type.
+
+|Position|Parameter|Mandatory|
+|:-------|:-------|:-------|
+|1|alarmType|YES|
+|2...|fragmentName|YES|
+
+**Example**
+
+```text
+307,CRITICAL,c8y_Position,c8y_Configuration
+```
+
 #### Event templates (4xx)
 
 ##### Create basic event (400)
@@ -424,6 +453,21 @@ Create typical location update event containing **c8y_Position**. Additionally t
 
 ```text
 402,51.151977,6.95173,67
+```
+
+##### Clear event's fragment (407)
+
+Remove one or more fragments from event of some type.
+
+|Position|Parameter|Mandatory|
+|:-------|:-------|:-------|
+|1|eventType|YES|
+|2...|fragmentName|NO|
+
+**Example**
+
+```text
+407,c8y_MyEvent,c8y_Position,c8y_Configuration
 ```
 
 #### Operation templates (5xx)

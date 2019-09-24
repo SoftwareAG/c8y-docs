@@ -24,7 +24,7 @@ On Linux machines, add the following entry to */etc/hosts*:
 <IP address> <domain_name>
 ```
 
-Use the IP address provided during [network configuration](/guides/edge/installation#configuration). The default value for the Virtual Box is 192.168.56.120.
+Use the IP address provided during [network configuration](/guides/edge/installation#configuration). For example, the default value for Hyper-V is 192.168.66.10.
 
 On Windows machines,  add the same entry to *C:\Windows\System32\Drivers\etc\hosts*.
 

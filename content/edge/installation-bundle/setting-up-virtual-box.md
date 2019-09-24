@@ -1,5 +1,5 @@
 ---
-weight: 80
+weight: 90
 title: Example setup for VirtualBox
 layout: redirect
 ---

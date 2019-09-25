@@ -85,7 +85,7 @@ Trigger the sending of child devices of the device.
 
 ##### Clear device's fragment (107)
 
-Remove one or more fragments from device.
+Remove one or more fragments from a device.
 
 |Position|Parameter|Mandatory|
 |:-------|:-------|:-------|
@@ -388,7 +388,7 @@ Clear an existing alarm.
 
 ##### Clear alarm's fragment (307)
 
-Remove one or more fragments from alarm of some type.
+Remove one or more fragments from an alarm of a specific type.
 
 |Position|Parameter|Mandatory|
 |:-------|:-------|:-------|
@@ -457,7 +457,7 @@ Create typical location update event containing **c8y_Position**. Additionally t
 
 ##### Clear event's fragment (407)
 
-Remove one or more fragments from event of some type.
+Remove one or more fragments from an event of a specific type.
 
 |Position|Parameter|Mandatory|
 |:-------|:-------|:-------|

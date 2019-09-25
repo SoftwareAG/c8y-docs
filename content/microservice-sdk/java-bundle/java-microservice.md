@@ -43,7 +43,7 @@ Server: Docker Engine - Community
 
 You can download the source code of this example from our [Bitbucket M2M](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/) repository to build and run it using your favorite IDE, or follow the instructions below to guide you step-by-step so you may have a better understanding of the code and what needs to be done/configured.
 
-> **Info**: This microservice example has been tested under macOS and Linux with Java 1.8.0_201, Maven 3.6.0, Docker 19.03.2; Eclipse 2019.03 and IntelliJ IDEA 2019.2 as IDE.
+> **Important**: This microservice example has been tested under macOS and Linux with Java 1.8.0_201, Maven 3.6.0, Docker 19.03.2; Eclipse 2019.03 and IntelliJ IDEA 2019.2 as IDE. Different IDE or Java versions may required different configurations.
 
 #### Create a Maven project
 

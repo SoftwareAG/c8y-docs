@@ -10,8 +10,6 @@ Apama's Event Processing Language covers _statements_, which are organized into 
 
 For further information on using Apama's Event Processing Language in Cumulocity IoT refer to [Using Apama Event Processing Language](/guides/concepts/realtime#using-epl) below and to the [Streaming analytics guide](/guides/apama/introduction).
 
-For more information about the interfaces for real-time processing also see [Real-time Statements](/guides/reference/real-time-statements) in the Reference guide.
-
 >**Important**: Support for streaming analytics using CEL (Esper) is now deprecated. All new Cumulocity subscriptions use the Apama CEP engine. While using the Esper CEP engine is still supported for older installations, this will no longer be provided for new subscriptions and will not be invested into in the future. For documentation on using the deprecated CEL functionality based on Esper, refer to the [CEL analytics guide](/guides/event-language/introduction).
 
 

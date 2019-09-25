@@ -10,7 +10,7 @@ To set up Hyper-V, you must first enable Hyper-V on your system, and  create Net
 
 Run all the commands in Windows PowerShell as an administrator.
 
->**IMPORTANT**: You must use the same adapter name and IP addresses as mentioned in these steps.
+>**Important**: You must use the same adapter name and IP addresses as mentioned in these steps.
 
 1. Create a new NAT adapter.
 ```

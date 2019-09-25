@@ -182,7 +182,7 @@ You have the choice to enter the post-installation parameters manually via the c
 
 	`* Enter cloud URL (optional):` 
 
-	>**Important**: To control your Edge device remotely, ensure that you provide the URL of your Cumulocity tenant.
+	>**Important**: To control your Edge device remotely, ensure that you provide the URL of your Cumulocity tenant. Also, note that you will not be able to add the cloud URL once you have completed the post-installation.
 
 6. Provide the absolute path of the SSL certificate file. The file extension should either be ".crt" or ".cert", e.g. */home/admin/myown-selfsigned.crt*.
 

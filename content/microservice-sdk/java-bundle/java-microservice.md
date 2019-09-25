@@ -8,9 +8,9 @@ Here you will learn how to create your first microservice that can be run on the
 
 ### Prerequisites
 
-Create an account on the [Cumulocity platform](https://cumulocity.com), for example by using a free trial. At this step you will be provided with a dedicated URL address for your tenant.
+You need to have Cumulocity credentials and a dedicated tenant. In case you do not have that yet, create an account on the [Cumulocity platform](https://cumulocity.com), for example by using a free trial. At this step you will be provided with a dedicated URL address for your tenant.
 
-Use the following command to verify that you have Maven 3 installed with Java 7 or later. It can be downloaded from the [Maven website](http://maven.apache.org).
+Verify that you have Java 7 or later installed together with Maven 3. It can be downloaded from the [Maven website](https://maven.apache.org/download.cgi).
 
 ```shell
 $ mvn -v
@@ -41,7 +41,7 @@ Server: Docker Engine - Community
 
 ### Developing the "Hello world" microservice
 
-You can download the source code of this example from our [Bitbucket M2M](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/) repository to build and run it using your favorite IDE, or follow the instructions below to guide you step-by-step so you may have a better understanding of the code and what needs to be done/configured.
+You can download the source code of this example from our [Bitbucket M2M](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/) repository to build and run it using your favorite IDE, or follow the instructions below to guide you step-by-step for you to have a better understanding of the code and what needs to be done/configured.
 
 > **Info**: This microservice example has been tested under macOS and Linux with Java 1.8.0_201, Maven 3.6.0, Docker 19.03.2; Eclipse 2019.03 and IntelliJ IDEA 2019.2 as IDE.
 

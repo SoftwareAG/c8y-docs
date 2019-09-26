@@ -398,7 +398,7 @@ Remove one or more fragments from an alarm of a specific type.
 **Example**
 
 ```text
-307,CRITICAL,c8y_Position,c8y_Configuration
+307,c8y_TemperatureAlarm,c8y_Position,c8y_Configuration
 ```
 
 #### Event templates (4xx)

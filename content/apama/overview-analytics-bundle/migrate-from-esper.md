@@ -8,7 +8,7 @@ To migrate from Esper to Apama in Cumulocity, follow these guidelines:
 1. Lock down the Esper custom CEP rules on the existing tenant to prevent change.
 2. Make available the new tenant on which Apama has been enabled.
 3. Manually convert all Esper custom CEP rules from the existing tenant into equivalent Apama EPL applications and move them to the new tenant.
-4. Recreate all Smart Rules from the existing tenant and move them to the new tenant.
+4. Manually recreate all Smart Rules from the existing tenant and move them to the new tenant.
 5. Manually recreate any scheduled exports from the existing tenant and move them to the new tenant.
 6. Remove the existing tenant after all custom CEP rules, Smart Rules and scheduled exports have been moved to the new tenant.
 

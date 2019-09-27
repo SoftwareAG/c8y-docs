@@ -113,19 +113,18 @@ Provides support for extracting values from the `any` type.
 Required to access all the methods of the Time Format plug-in. Useful for formatting and parsing time.
 * **HTTP Client Generic Events** <br>
 Exposes predefined generic events used by the HTTP client connectivity plug-in.
+* **Automatic onApplicationInitialized**<br>
+This starts all connectivity plug-ins immediately on start up.
+* **HTTP Client > JSON with generic request/response event definitions**<br>Allows EPL applications to make HTTP calls.
+* **Cumulocity IoT > Cumulocity Client**<br>Exposes the Cumulocity client to EPL applications.
 
 You may need to add more bundles to your Apama project, depending on the requirements of the application. 
 
 **Step 4 - Create an EPL application**
 
-To create a new Apama EPL file, refer to [Creating new monitor files for EPL applications](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2FWIZARD_NEW_MONITORSCRIPT.html) in the Apama documentation.
+To create a new Apama EPL file, refer to [Creating new monitor files for EPL applications](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2FWIZARD_NEW_MONITORSCRIPT.html) in the Apama documentation. 
 
-Before you import the newly created EPL application to Cumulocity IoT and activate it there, you might want to test if this application works as expected from within Software AG Designer. For debugging, you need to *temporarily* add the following bundles to your Software AG Designer project.
-
-* **Automatic onApplicationInitialized**<br>
-This starts all connectivity plug-ins immediately on start up.
-* **HTTP Client > JSON with generic request/response event definitions**<br>Required to connect to Cumulocity IoT from Software AG Designer.
-* **Cumulocity IoT > Cumulocity Client**<br>Required to connect to Cumulocity IoT from Software AG Designer.
+Before you import the newly created EPL application to Cumulocity IoT and activate it there, you might want to test if this application works as expected from within Software AG Designer.
 
 For further information, see [The Cumulocity IoT Transport Connectivity Plug-in](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_the_cumulocity_connectivity_plug_in.html) in the Apama documentation.
 

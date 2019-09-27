@@ -14,7 +14,7 @@ You will also need a Cumulocity tenant and valid access credentials. Creation of
 
 With this first version of the pollux.cumulocity plugin you will need to register your devices manually using the Cumulocity Device Manager web interface:
 
-![Device Registration](/guides/images/devices/owa3x/devices-owasys3x-register.png)
+![Device Registration](/images/devices/owa3x/devices-owasys3x-register.png)
 
 The value entered in the marked field will be the device name. Using the owasys3x IMEI is a good idea, as it is a good global unique identifier.
 
@@ -52,7 +52,7 @@ In this file, first you need to modify the following properties according to you
 - base64(username + ':' + password)
 - id is the Cumulocity ID assigned to this device during the registration process. Please see below.
 
-![Cumulocity Managed Object ID](/guides/images/devices/owa3x/devices-owasys3x-deviceid.png)
+![Cumulocity Managed Object ID](/images/devices/owa3x/devices-owasys3x-deviceid.png)
 
 In this case the marked field is the device ID that Cumulocity assigns to each device after successful registration. Please note that, the device ID is different from the device name(IMEI).
 

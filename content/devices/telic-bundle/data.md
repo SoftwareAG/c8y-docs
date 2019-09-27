@@ -27,7 +27,7 @@ The "c8y_Position" fragment of the event is also updated in the device ManagedOb
 
 Telic events are listed here:
 
-![Telic Events](/guides/images/devices/telic/telic_events_1.png)
+![Telic Events](/images/devices/telic/telic_events_1.png)
 
 ### Measurements
 
@@ -41,4 +41,4 @@ Telic creates the following measurements:
 
 Telic measurements are presented in the graphs:
 
-![Telic Measurements](/guides/images/devices/telic/telic_measurements_1.png)
+![Telic Measurements](/images/devices/telic/telic_measurements_1.png)

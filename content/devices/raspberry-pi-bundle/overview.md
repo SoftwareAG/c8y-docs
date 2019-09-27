@@ -12,7 +12,7 @@ In this section, we describe how to install a Cumulocity agent with all relevant
 * Identify individual Raspberry Pis remotely based on their hardware serial number.
 * Update the Pi's firmware remotely through the firmware repository on GitHub.
 * Use the [PiFace Digital](http://www.element14.com/community/docs/DOC-52857/l/piface-digital-for-raspberry-pi) adapter board from the cloud.
-* Use [TinkerForge](/guides/images/devices/tinkerforge) sensors and controls from the cloud.
+* Use [TinkerForge](/images/devices/tinkerforge) sensors and controls from the cloud.
 
 > The agent is provided in open source form as-is without support or warranty. For commercial use, we recommend to use industrial hardware and/or the Cumulocity C++ SDK.
 

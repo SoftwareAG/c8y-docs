@@ -61,13 +61,13 @@ The agent was tested on an NTC-6200 device with firmware version 2.0.36.10. For 
 * Click the "Install" button for the uploaded software which you want to install.
 * Reboot the NetComm router.
 
-The agent will automatically start after installation and the router can then be [registered with Cumulocity](/guides/images/devices/netcommwireless#connect). Subsequent upgrades or downgrades can be performed remotely via the agent's software management feature, or locally via the router's web portal.
+The agent will automatically start after installation and the router can then be [registered with Cumulocity](/images/devices/netcommwireless#connect). Subsequent upgrades or downgrades can be performed remotely via the agent's software management feature, or locally via the router's web portal.
 
 > When upgrading from versions older than 2.1.1, the device needs to be re-registered.
 
 ## Using the agent
 
-For information on using the agent, please visit the [NetComm Agent User's Guide](/guides/images/devices/netcommwireless).
+For information on using the agent, please visit the [NetComm Agent User's Guide](/images/devices/netcommwireless).
 
 ## History
 

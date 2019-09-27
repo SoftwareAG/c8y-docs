@@ -48,7 +48,7 @@ Operation on Cars, Trucks, Bus+Train, Industrial Machinery etc. Digital Tachogra
  - Kline interface
  - Programmable 9-axis sensor (Accelerometer / Gyroscope & Magnetometer)
 
-![Owasys4x](/guides/images/devices/owasys4x_interface.png)
+![Owasys4x](/images/devices/owasys4x_interface.png)
 
 ### PSU:
 

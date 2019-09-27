@@ -18,7 +18,7 @@ Navigate to **Data connectors** if you would like to send data to the Cloud acco
 
 Navigate to **Data subscriptions** in your cloud account to receive the data from Edge.
 
-<img src="/guides/images/users-guide/data-broker-navigator.png" alt="Data broker menus">
+<img src="/images/users-guide/data-broker-navigator.png" alt="Data broker menus">
 
 In the same way, you can push operations from a Cumulocity Cloud account to Cumulocity IoT Edge devices.
  

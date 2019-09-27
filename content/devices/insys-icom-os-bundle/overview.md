@@ -11,14 +11,14 @@ The following icom OS Smart Devices support Cumulocity with installed icom Data 
 * [MRX series](http://insys-icom.com/mrx): compact all-in-one routers
 * [MRO series](http://insys-icom.com/mro): fully modular industrial router platform
 
-Cumulocity support for INSYS Smart Devices with INSYS OS is described [here](/guides/images/devices/insys).
+Cumulocity support for INSYS Smart Devices with INSYS OS is described [here](/images/devices/insys).
 
 ### How to Setup an icom OS-based INSYS Smart Device for Cumulocity
 
 The following example for a simple monitoring application (monitoring input 1 of the Smart Device and displaying the status in Cumulocity) is broken up in two steps:
 
-* [Device registration](/guides/images/devices/icom#device-registration)
-* [Application configuration](/guides/images/devices/icom#application-configuration)
+* [Device registration](/images/devices/icom#device-registration)
+* [Application configuration](/images/devices/icom#application-configuration)
 
 It is necessary to make the following settings in both web interfaces, of Cumulocity and the icom Data Suite of the Smart Device.
 

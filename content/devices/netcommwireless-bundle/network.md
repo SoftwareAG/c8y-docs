@@ -12,11 +12,11 @@ For SMS configuring, the router needs to be configured to accept SMS commands. C
 
 > Note configuring WAN parameters via both IP and SMS mode requires Cumulocity 7.26. When you configure a wrong APN setting, the device will lose mobile network connection and can only be managed by limited SMS functionality.
 
-![WAN parameters](/guides/images/devices/netcomm/wan.png)
+![WAN parameters](/images/devices/netcomm/wan.png)
 
 LAN and DHCP parameters can be directly configured from Cumulocity as well.
 
-![LAN parameters](/guides/images/devices/netcomm/lan.png)
+![LAN parameters](/images/devices/netcomm/lan.png)
 
 ## <a name="software"></a>Managing software and firmware
 
@@ -30,4 +30,4 @@ Software packages need to be in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format
 
 Firmware can be uploaded and installed on the router as well. To successfully upgrade the firmware, make sure that the target firmware includes the agent package. If the agent package is not included in the target firmware, the agent will not start after the installation. Firmware files need to follow Netcomm's naming convention ("&lt;name&gt;\_&lt;version&gt;.cdi").
 
-![Software/firmware](/guides/images/devices/netcomm/software.png)
+![Software/firmware](/images/devices/netcomm/software.png)

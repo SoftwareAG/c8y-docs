@@ -8,7 +8,7 @@ The Two-factor authentication (TFA) is an extra layer of security that requires 
 
 To check whether TFA is enabled for a certain user, go to the **Users** page and see the TFA status column right from the password strength column. A key icon indicates that TFA is enabled.
 
-![TFA status](/guides/images/users-guide/Administration/admin-user-tfa-enabled.png)
+![TFA status](/images/users-guide/Administration/admin-user-tfa-enabled.png)
 
 ### To enable two-factor authentication for a user
 
@@ -16,6 +16,6 @@ To check whether TFA is enabled for a certain user, go to the **Users** page and
 2. Select the checkbox next to **Enable two-factor authentication**.
 3. Click **Save**.
 
-![Enable TFA](/guides/images/users-guide/Administration/admin-user-enable-tfa.png)
+![Enable TFA](/images/users-guide/Administration/admin-user-enable-tfa.png)
 
 In the **Users** page, the user will be shown as TFA-enabled.

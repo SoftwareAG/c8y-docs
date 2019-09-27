@@ -68,6 +68,6 @@ When designing an Apama solution to be deployed within any form of Cumulocity Io
 	* A \*.mon file must not contain a package statement (to do so is an error).
 	* It is not possible to share event definitions between separate \*.mon files.
 	* It is not possible to use Apama queries.
-	* You can only use the bundles listed in [Basic functionality](/guides/apama/analytics-introduction/). 
+	* You can only use the bundles listed in [Developing applications with Software AG Designer](/guides/apama/analytics-introduction/#sag-designer). 
 
 All of these restrictions are implemented to ensure the smooth and secure operation of Apama applications within Cumulocity IoT.

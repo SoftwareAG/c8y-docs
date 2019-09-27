@@ -118,7 +118,7 @@ This starts all connectivity plug-ins immediately on start up.
 * **HTTP Client > JSON with generic request/response event definitions**<br>Allows EPL applications to make HTTP calls.
 * **Cumulocity IoT > Cumulocity Client**<br>Exposes the Cumulocity client to EPL applications.
 
-You may need to add more bundles to your Apama project, depending on the requirements of the application. 
+The bundles above are the only ones that are permissible in an EPL application, so be careful not to add any other bundles or your application may not work when activated in Cumulocity IoT.
 
 **Step 4 - Create an EPL application**
 

@@ -44,6 +44,13 @@ For details, see the [How-to recipes](/guides/web/how-to/) in the Web SDK guide.
 [LWM2M] The LWM2M bootstrap server now ignores empty fields. [MTM-26657]
 
 
+### Apama streaming analytics
+
+
+
+The application in the app switcher which was previously called “apama-epl” is now called “Apama EPL Apps”.
+
+
 ### Apama Analytics Builder
 
 Apama Analytics Builder is now available in the Cumulocity IoT Cloud platform. It is integrated as a web application which is available from the application switcher. 

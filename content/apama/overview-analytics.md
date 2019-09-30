@@ -14,7 +14,7 @@ The operation logic is based on Apama's Event Processing Language (EPL).
 >
 >For documentation on the deprecated CEL functionality based on Esper, refer to the [CEL analytics guide](/guides/event-language/introduction).
 >
->For details on migration, see [Migrating from CEL (Esper) to Apama](migrate-from-esper).
+>For details on migration, see [Migrating from CEL (Esper) to Apama](#migrate-from-esper).
 
 
 Typical real-time analytics use cases include:

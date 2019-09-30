@@ -153,7 +153,7 @@ Cumulocity manages microservices by monitoring the microservice instance and sto
 
 #### Heap and perm/metadata
 
-To calculate heap and perm/metadata, it takes the limit defined on the [microservice manifest](#manifest) and it is converted it into Megabytes (MB). <br>
-50 MB are left for “system”. <br>
-10% is taken for PermGen on JDK 7 or Metaspace on JDK 8, but not less than 128 MB and not more then 1024MB. <br>
+To calculate heap and perm/metadata, it takes the limit defined on the [microservice manifest](#manifest) and it is converted it into Megabytes (MB). For java application developed using Java Microservice SDK minimal value is: 170MB <br>
+10% is reserved for “system”, but not less than 50 MB. <br>
+10% is taken for PermGen on JDK 7 or Metaspace on JDK 8, but not less than 64 MB and not more than 1024MB. <br>
 The rest is allocated for heap size.

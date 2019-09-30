@@ -30,6 +30,6 @@ The *Device SDK for C#* documentation has been moved from the [Device SDK guide]
 
 The documentation of the microservice logging feature has been improved, see [Administration > Managing Applications](https://cumulocity.com/guides/users-guide/administration/#managing-applications).
 
-### Streaming analytics guide (formerly (Apama) analytics guide)
+### Analytics guide
 
-The sample applications that were accessible from https://cumulocity.com/guides/apama/examples/#misc-applications have been removed from the documentation. They are now available directly from the Apama EPL Apps application.
+The Analytics guide has been renamed to Streaming analytics guide (as opposed to  Predictive analytics guide).

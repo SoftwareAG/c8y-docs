@@ -44,11 +44,11 @@ For details, see the [How-to recipes](/guides/web/how-to/) in the Web SDK guide.
 [LWM2M] The LWM2M bootstrap server now ignores empty fields. [MTM-26657]
 
 
-### Apama streaming analytics
-
-
+### Apama EPL Apps (formerly Apama-epl)
 
 The application in the app switcher which was previously called “apama-epl” is now called “Apama EPL Apps”.
+
+The sample applications that were previously accessible from https://cumulocity.com/guides/apama/examples/#misc-applications are now available directly from the Apama EPL Apps application. 
 
 
 ### Apama Analytics Builder

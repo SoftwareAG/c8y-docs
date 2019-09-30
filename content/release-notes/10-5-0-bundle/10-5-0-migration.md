@@ -12,3 +12,4 @@ Cumulocity IoT offers a rich audit logging functionality to keep track of ongoin
 Note that retention rules still apply to audit logs and will delete audit log records older than the specified retention time, see also [Auditing > Audit record collection](/guides/reference/auditing/#audit-record-collection
 ) in the Reference guide. 
 
+### Deprecation of Esper CEL

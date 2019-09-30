@@ -6,6 +6,8 @@ layout: bundle
 
 The Cumulocity documentation sources are located in a Mercurial repository called "c8y-docs" in Bitbucket. The c8y-docs repository is public which means that no credentials are required to view or copy it. 
 
+>**Info**: Providing documentation for various versions on the documentation website is currently under development.
+
 You find the documentation sources for the maintenance release versions in the following branches:
 
 Release 9.20: [https://bitbucket.org/m2m/c8y-docs/branch/release/r9.20.0](https://bitbucket.org/m2m/c8y-docs/branch/release/r9.20.0)

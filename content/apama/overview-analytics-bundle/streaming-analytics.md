@@ -7,7 +7,11 @@ Using Apama streaming analytics, you can add your own logic to your IoT solution
 
 The operation logic is based on Apama's Event Processing Language (Apama EPL).
 
->**Important**: Support for streaming analytics using CEL (Esper) is now deprecated. All new Cumulocity IoT subscriptions use the Apama CEP engine. While using the Esper CEP engine is still supported for older installations, this will no longer be provided for new subscriptions and will not be invested into in the future. For documentation on using the deprecated CEL functionality based on Esper, refer to the [CEL analytics guide](/guides/event-language/introduction).
+>**Important**: Support for streaming analytics using CEL (Esper) is deprecated. All new Cumulocity IoT subscriptions use the Apama CEP engine. While using the Esper CEP engine is still supported for older installations, this will no longer be provided for new subscriptions and will not be invested into in the future. 
+>
+>For documentation on using the deprecated CEL functionality based on Esper, refer to the [CEL analytics guide](/guides/event-language/introduction). 
+>
+>For details on migration, see [Migrating from CEL (Esper) to Apama](#migrate-from-esper).
 
 
 Typical real-time analytics use cases include:

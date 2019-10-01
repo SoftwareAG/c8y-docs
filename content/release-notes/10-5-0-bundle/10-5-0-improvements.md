@@ -7,10 +7,13 @@ layout: redirect
 
 ### Cumulocity Core
 
+#### Installation
+
+Cumulocity now provides an **offline installation** of the Cumulocity IoT platform. Details can be found in the *Cumulocity IoT Multi-node installation guide* provided through the [Empower Portal](https://empower.softwareag.com) (credentials required).
 
 #### Administration
 
-A new login mode **OAuth Internal** has been added. This login mode provides much higher security as it stores the username and password in a cookie not reachable by JavaScript. For details, see [Administration > Changing settings](https://cumulocity.com/guides/users-guide/administration/#changing-settings) in the User guide. [26097]
+A new login mode **OAuth Internal** has been added. This login mode provides much higher security as it stores authentication information in a cookie not reachable by JavaScript. For details, see [Administration > Changing settings](/guides/users-guide/administration/#changing-settings) in the User guide. [26097]
 
 It is now possible to see the inbound API requests in the Home page. [MTM-25148]
 
@@ -46,7 +49,7 @@ For details, see the [How-to recipes](/guides/web/how-to/) in the Web SDK guide.
 
 [LWM2M] The LWM2M bootstrap server now ignores empty fields. [MTM-26657]
 
-[Performance] Performance when investigating measurements has been significantly improved through a new search algorithm. Switching to the new algorithm at runtime is now possible via a tenant option. [MTM-27216]
+[Performance] Performance when ingesting measurements has been significantly improved through a new search algorithm. Switching to the new algorithm at runtime is now possible via a tenant option. [MTM-27216]
 
 
 ### Apama EPL Apps (formerly Apama-epl)

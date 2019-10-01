@@ -4,9 +4,20 @@ title: Documentation changes
 layout: redirect
 ---
 
+In addition to all enhancements or changes related to the improvements and fixes of the 10.5.0 release, the following improvements or modifications have been made in the area of documentation.
+
+### Installation and operations guides
+
+The Installation and operation guides for the Cumulocity IoT platform are now available through the [Software AG Empower Portal](https://empower.softwareag.com) (credentials required).
+
 ### General: About section
 
 A new [About](/guides/about/overview/) section has been added to the documentation, showing information on documentation versions, content, conventions and copyrights.
+
+### User guide: Managing applications
+
+The documentation of the microservice logging feature has been improved, see [Administration > Managing Applications](https://cumulocity.com/guides/users-guide/administration/#managing-applications).
+
 
 ### Device guides: New device catalogue
 
@@ -22,13 +33,9 @@ The documentation of the OPCUA Java gateway has been moved from the Device guide
 
 The *Device SDK for Java* documentation has been moved from the [Device SDK guide](/guides/device-sdk/introduction/) to the Java Device SDK sources in Bitbucket at [https://bitbucket.org/m2m/cumulocity-clients-java/src/develop/device-sdk-documentation/](https://bitbucket.org/m2m/cumulocity-clients-java/src/develop/device-sdk-documentation/).
 
-### Device SDK guide: Device SDK for C#
+### Device SDK guide: Device SDK for C &#35;
 
 The *Device SDK for C#* documentation has been moved from the [Device SDK guide](/guides/device-sdk/introduction/) to the C# Device SDK sources in Bitbucket at h[ttps://bitbucket.org/m2m/cumulocity-clients-cs/src/develop/DeviceSDK/Documentation/](https://bitbucket.org/m2m/cumulocity-clients-cs/src/develop/DeviceSDK/Documentation/). 
-
-### User guide: Managing applications
-
-The documentation of the microservice logging feature has been improved, see [Administration > Managing Applications](https://cumulocity.com/guides/users-guide/administration/#managing-applications).
 
 ### Analytics guide
 

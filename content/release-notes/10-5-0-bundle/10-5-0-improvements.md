@@ -49,7 +49,7 @@ For details, see the [How-to recipes](/guides/web/how-to/) in the Web SDK guide.
 
 [LWM2M] The LWM2M bootstrap server now ignores empty fields. [MTM-26657]
 
-[Performance] Performance when ingesting measurements has been significantly improved through a new search algorithm. Switching to the new algorithm at runtime is now possible via a tenant option. [MTM-27216]
+[Performance] Performance when ingesting measurements has been significantly improved through a new algorithm. Switching to the new algorithm at runtime is now possible via a tenant option. [MTM-27216]
 
 
 ### Apama EPL Apps (formerly Apama-epl)

@@ -5,13 +5,12 @@ layout: redirect
 ---
 
 
-### UI
+### Cumulocity Core
 
-A new **Legal notices** item has been added to the right drawer menu. [MTM-24734]
 
-![Legal notices](/guides/images/release-notes/legal-notices.png)
+#### Administration
 
-### Administration
+A new login mode **OAuth Internal** has been added. This login mode provides much higher security as it stores the username and password in a cookie not reachable by JavaScript. For details, see [Administration > Changing settings](https://cumulocity.com/guides/users-guide/administration/#changing-settings) in the User guide. [26097]
 
 It is now possible to see the inbound API requests in the Home page. [MTM-25148]
 
@@ -23,13 +22,13 @@ Improved error messages when uploading microservices. [MTM-25850]
 
 ![Microservice Error Messages](/guides/images/release-notes/microservice-error-messages.png)
 
-### Device Management
+#### Device Management
 
 The filters in the **Devices** > **All Devices** page can now be configured. Subsequently, created smart groups will contain these filters. [MTM-25909]
 
 ![Configurable Columns](/guides/images/release-notes/configurable-columns.png)  
 
-### Web SDK
+#### Web SDK
 
 You can now add context-based routes, for example an additional tab for a certain device. Context routes help you to extend existing routes with further information. [MTM-26856]  
 
@@ -37,13 +36,17 @@ You can now add custom widgets developed in Angular to a Web SDK for Angular bas
 
 For details, see the [How-to recipes](/guides/web/how-to/) in the Web SDK guide.
 
-### Various
+#### Various
+
+[UI] A new **Legal notices** item has been added to the right drawer menu. [MTM-24734]
+
+![Legal notices](/guides/images/release-notes/legal-notices.png)
 
 [CEP] Improved rendering of error messages in the CEL editor in the **Event processing** page on mouse hover. [MTM-25289]
 
 [LWM2M] The LWM2M bootstrap server now ignores empty fields. [MTM-26657]
 
-Performance when investigating measurements has been significantly improved through a new search algorithm. Switching to the new algorithm at runtime is now possible via a tenant option. [MTM-27216]
+[Performance] Performance when investigating measurements has been significantly improved through a new search algorithm. Switching to the new algorithm at runtime is now possible via a tenant option. [MTM-27216]
 
 
 ### Apama EPL Apps (formerly Apama-epl)

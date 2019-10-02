@@ -305,7 +305,7 @@ The following placeholders can be found in the **Configuration** page:
 - {tenant-domain} - This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be "myTenant.cumulocity.com".
 - {token} - An automatically generated system token for password reset purposes. When a user requests a password reset, a new random token will be generated. This token will be associated only with the particular user and will allow for a single password reset action. The standard way of using this placeholder is along with the {tenant-domain} property as "{tenant-domain}?token={token}".
 
->**Info**: In case of Enterprise Edition, the {tenantDomain} placeholders could have different values. An example tenant domain can be "myTenant.myhost.com".
+>**Info**: In case of Enterprise Tenant, the {tenantDomain} placeholders can have different values. An example tenant domain is "myTenant.myhost.com".
 
 #### Two-factor authentication
 

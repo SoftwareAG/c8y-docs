@@ -80,7 +80,7 @@ After creating a NAT adapter, you must import the Edge VM image into Hyper-V.
 
 5. In the **Choose Import Type** wizard, select **Register the virtual machine in-place (use the existing unique ID)** and click **Next**. <br>
 
-6. If you have used default NAT adapter name, skip this step and proceed to step 7. <br>
+6. If you have used the default NAT adapter name, skip this step and proceed with step 7. <br>
 If you have used a different NAT adapter name, you will see the following screen:
 <br>
 <img src="/guides/images/edge/edge-hyper-v-008.png" name="Select-NetAdapter" style="width:75%;"/>

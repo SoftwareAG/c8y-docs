@@ -21,7 +21,7 @@ Current tenant  |  Represents user data for the current logged service user
 
 ### <a name="tenant-id-and-domain"></a> Tenant ID and tenant domain
 
-The tenant ID is a unique identifier across all tenants in Cumulucity, e.g. t07007007, and it cannot be changed after tenant creation. It is recommended to use auto-generated tenant IDs which follow the format t<number>.
+The tenant ID is a unique identifier across all tenants in Cumulucity, e.g. t07007007, and it cannot be changed after tenant creation. It is recommended to use auto-generated tenant IDs which follow the format t<number>. Please note that subtenants can only use auto-generated tenant IDs.
 
 The location where a tenant can be accessed is called tenant domain, e.g. _mytenant.cumulocity.com_. It needs to be unique across all tenants and it can be changed after tenant creation.
 

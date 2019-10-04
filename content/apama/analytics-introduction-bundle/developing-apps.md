@@ -29,7 +29,7 @@ When you invoke Apama EPL Apps, a page listing any existing EPL applications is 
 
 <!--we'll need an up-to-date screenshot later, with the correct icon at the top, some nice names and descriptions on the cards, and at least one card showing an error--> 
 
-Each card that is shown for an application has an actions menu (the three vertical dots that are shown at the top right of a card) which contains commands for managing the model (for example, to edit or remove the application).
+Each card that is shown for an application has an actions menu at the top which allows you to edit or remove the application.
 
 From this page, you can:
 
@@ -39,19 +39,15 @@ From this page, you can:
 
 * Import EPL applications. If you prefer to develop your application outside of Cumulocity IoT (for example, using Software AG Designer), click **Import EPL** in the top menu bar to upload an Apama application into Apama EPL Apps.
 
-* Make existing EPL applications activate or inactive (in other words, deploy or undeploy them). To change the mode, simply click the toggle button that is shown on the card. 
+* Deploy existing EPL applications. On the card that is shown for an application, change the mode from **Inactive** to **Active**. For more information, see [Deploying applications](/guides/apama/analytics-introduction/#deploying-apps).
 
-	When activating an application, any syntax errors are reported back immediately. The error state is shown on the card, helping you to ensure your application is in good shape. This error state will be shown until you edit and save the application. After saving the application, you will need to activate it again (which will again check for errors).
+    When activating an application, any syntax errors are reported back immediately. The error state is shown on the card, helping you to ensure your application is in good shape. Click on the error to display information on what went wrong. It is not possible to activate an application if it has syntax errors. The errors are shown on the card until they have been fixed and the application has been activated again.
 
-	It is not possible to activate applications which have errors.
-
-* Reload all applications. Click **Reload** in the top menu bar to refresh the display to show any changes other users have made since the page loaded, including any errors that have been introduced in the meantime.
-
-If **Error(s)** is shown on a card, the application code contains one or more errors. Click **Error(s)** to display information on what went wrong.
+* Reload all EPL applications. Click **Reload** in the top menu bar to refresh the display to show any changes other users have made since the page loaded, including any errors that have been introduced in the meantime.
 
 **Step 2 - Create an EPL application**
 
-Click **New EPL app** in the top menu bar. Give the application a unique name. You can also also enter a description which will be shown on the card that is created for the new application. 
+Click **New EPL app** in the top menu bar. Give the application a unique name. You can also enter a description which will be shown on the card that is created for the new application. 
 
 The EPL editor is shown next. The EPL code for the new application already contains the typical basic event definitions and utilities that are required for working with Cumulocity IoT. You can adapt them as required for your application. Consult the documentation and samples for more details.
 
@@ -61,15 +57,13 @@ The EPL editor is shown next. The EPL code for the new application already conta
 
 To help you get started, several samples are available. To see them, click **Samples** which is shown to the right of the editor. Click on a sample to see a preview of its contents. You can select part of the sample code and copy it over into your own code using the standard key combinations Ctrl+C and Ctrl+V. You can also use the command buttons to copy the entire code to the clipboard and insert it at an appropriate position in your own code, or to replace all of your existing code with the sample code. 
 
-Use the **Undo** and **Redo** buttons in the top menu bar if you want to undo/redo your last changes in the current session. Or use the standard key combination Ctrl+Z and Ctrl+Y for this.
+Using the buttons in the top menu bar, you can undo/redo your last changes in the current session and you can save your changes.
 
-Click **Save** in the top menu bar to save your changes. Or use the standard key combination Ctrl+S.
-
-If you want to toggle the mode from **Inactive** to **Active** (or vice versa), click the corresponding toggle button in the top menu bar. Again, when there is an error in your EPL code, it is not possible to activate (deploy) the application. Error markers are then shown to the right of the code.
+It is also possible to change the mode from **Inactive** to **Active** (or vice versa) in the EPL editor. Again, when there is an error in your EPL code, it is not possible to activate the application. The errors are highlighted within the code.
 
 > **Side note:** Be aware that the EPL editor makes use of a standard web component. It provides many generic developer functions, some of which are not relevant to EPL, including but not limited to Quick Fix and Show Hover.
 
-Click the **X** in the top menu bar to leave the EPL editor and thus to return to the list of EPL applications.
+Click **X** in the top menu bar to leave the EPL editor and thus to return to the list of EPL applications.
 
 <!--I wanted to use ""/guides/images/apama/apama-epl-apps-exit-button.png", but it looks like it's not possible to define inline images. This is shown in a line of its own. So I'm using the bold X instead.-->
 
@@ -79,7 +73,7 @@ Click the **X** in the top menu bar to leave the EPL editor and thus to return t
 
 Once your application is activated, you should be able to see the results of it running. This may include sending measurements, receiving data, creating alarms, and logging in the Apama-ctrl microservice. 
 
-To check the logs of the Apama-ctrl microservice, go to **Own applications** in the Administration application,  click **Apama-ctrl** and then go to the **Logs** tab. See [Managing applications](/guides/users-guide/administration/#managing-applications) in the *User guide* for more information on log files.
+To check the logs of the Apama-ctrl microservice, go to **Own applications** in the Administration application, click **Apama-ctrl** and then go to the **Logs** tab. See [Managing applications](/guides/users-guide/administration/#managing-applications) in the *User guide* for more information on log files.
 
 See also [Deploying applications](/guides/apama/analytics-introduction/#deploying-apps).
 

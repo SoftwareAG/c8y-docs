@@ -10,11 +10,12 @@ Click **Predictions** in the navigator, to open the **Predictions** page.
 
 ![Predictions](/guides/images/zementis/zementis-predictions.png)
 
-### Running the batch process
+### Batch Processing
+The **Batch Processing** tab allows you to process data records supplied to the model in a CSV or JSON file. The records are processed in batches. It also allows you to pass on image data as a JPEG or PNG file for processing.
 
-Currently, the **Predictions** page allows you to process data records supplied to the model in a CSV or JSON file. The records are processed in batches. It also allows you to pass on image data as a JPEG or PNG file for processing.
+The **Batch Processing** page is primarily targeted for testing the accuracy of your predictive models by applying it against your test data. Hence, it is expected that you know the predicted outputs beforehand.
 
-The **Predictions** page is primarily targeted for testing the accuracy of your predictive models by applying it against your test data. Hence, it is expected that you know the predicted outputs beforehand.
+#### Running the batch process
 
 To run the batch process, perform the following steps:
 
@@ -30,7 +31,7 @@ To run the batch process, perform the following steps:
  
 After the processing has been completed, you will see a corresponding notification.
 
-### Viewing the results
+#### Viewing the results
 
 Click **Show Results** to preview the scored or processed results. 
 
@@ -52,3 +53,54 @@ Click the cogwheel icon <img src="/guides/images/zementis/zementis-cogwheel-icon
 
 Click the file icon <img src="/guides/images/zementis/zementis-file-icon.png" alt="File" style="display:inline-block; margin:0"> in front of a row, to download a full execution trace, showing what exactly happened when that record was applied against the model. In this way, you can investigate why the outputs did not match.
 
+### Scheduled Processing
+The **Scheduled Processing** tab allows you to schedule jobs for scoring device measurements against your predictive models.
+
+The job scheduler can be used to trigger periodic jobs on data captured from devices. Periodic executions of such jobs can be useful when aggregate information on model's predictions is required for a desired time period.
+
+#### Scheduling a job
+
+To schedule a new job, perform the following steps:
+
+1. Click **Create Job** in the **Scheduled Processing** page. 
+2. In the **Job Config** wizard, enter the name and description of the job you want to create. Also, select a target device/device-group from the dropdown. The dropdown lists maximum 2000 devices or groups. Once done, select a target model which you want to use for scoring the data captured from your chosen device or device-group. The dropdown list shows all models which you have uploaded to the **Models** page. <br>
+![Scheduled process 1](/guides/images/zementis/zementis-jobconfig-info.png)
+<br>Click **Next** to proceed. 
+3. Every device would have various measurement which are persisted in Cumulocity. In the **Mappings** section, map which measurement of the device should be fed as data input to the model.<br>
+![Scheduled process 2](/guides/images/zementis/zementis-jobconfig-mapping.png)
+<br>Click **Next** to proceed.
+4. Set the schedule of the job by choosing the frequency for the job followed by when it should run. Also, you need to choose the range of past data which should be used when the job is executed.
+![Scheduled process 3](/guides/images/zementis/zementis-jobconfig-schedule.png)
+<br>Click **Finish** to schedule the job that you just configured.
+
+>**Info**:
+<br>1. For schedule of Periodic frequency, a CRON expression is generated and used by the scheduler.
+<br>2. The data range chosen for the schedule must not exceed 24 hours.
+<br>3. For schedule of Once frequency, you need to choose the date when the job should run. Also, you need to specify the data range from the past which should be used when the job is executed.
+
+After the job is scheduled, you will see a corresponding notification.
+
+#### Viewing the scheduled jobs
+
+![Scheduled Jobs](/guides/images/zementis/zementis-scheduled-jobs.png)
+
+By design, the **Scheduled Processing** page will preview all the scheduled jobs in a paginated manner, displaying 10 jobs per page. 
+Click any link under **NAME** column  to view the configuration of that specific job. Click the delete icon of any job to remove the job. 
+
+#### Viewing the execution results of jobs
+
+To view the execution results of any job, click on the history icon associated to that job in the **My Jobs** section of the **Scheduled Processing** page.
+
+![Job History](/guides/images/zementis/zementis-job-execution-history.png)
+
+By design, the execution results page will preview all the executions of the job in a paginated manner, displaying 10 executions per page. 
+For executions with status **Warning** or **Failure**, hover on the status to see the detailed reason behind the status. Click **Back** to see all the scheduled jobs.
+
+#### Viewing the inferences of a job execution
+
+To view the inferences of any execution of a job, click on the details icon associated to that execution in the **Execution Results** page.
+
+![Execution Inferences](/guides/images/zementis/zementis-execution-inferences.png)
+
+The inferences pop-up would show two different types of charts, a histogram plotting all the model's continuous outputs and a piechart plotting the model's categorical outputs.
+The inferences are shown in a paginated manner, displaying 2000 executions per page. For executions containing device groups, it will also allow you to shuffle between different devices which were part of that execution.

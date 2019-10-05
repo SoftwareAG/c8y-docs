@@ -6,13 +6,230 @@ weight: 40
 
 Operations on jobs scheduled for processing device data.
 
+### JobConfiguration
+|Name|Type|Description|
+|:-----|:-----|:-----|
+|jobName|String|Name of the job.|
+|jobDescription|String|Description of the job.|
+|associatedGroupOrDeviceId|Number|Id of the device whose measurements will be scored <br> when the job executes.|
+|associatedModel|String|Machine learning model which will score the device measurements.|
+|modelToDeviceMappings|Map|Map with the model's inputs as the keys and the measurements <br> as the corresponding values. These mappings ensure which measurement reading <br> should be fed into which input of the model.|
+|jobSchedule|JobSchedule|Information about when the job should be scheduled for executions.|
+
+### JobSchedule
+|Name|Type|Description|
+|:-----|:-----|:-----|
+|frequency|String|Frequncy of job execution. Can be either `periodic` or `once`.|
+|cronExpression|String|CRON expression to specify the execution schedule for a periodic job. Follow <br> http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html <br> for more info on CRON.|
+|dataFromPreviousNSeconds|Number| Number of seconds specifying the amount of time in the past from which <br> data should be fetched for scoring. The value should not exceed 86400 i.e. 24 hours.|
+|timeZone|String|Time zone in which the periodic job should be scheduled.|
+|scheduleAt|String|Datetime string in the future when the job should be scheduled.|
+|dataFrom|String|Datetime string from the past which should be considered as the starting point <br> for data to be fetched for scoring.|'
+|dataTo|String|Datetime string from the past which should be considered as the ending point <br> for data to be fetched for scoring.|
+
+>**Info**:
+<br>1. For *periodic* frequency, `cronExpression`, `dataFromPreviousNSeconds` and `timeZone` fields are mandatory.
+<br>2. For *once* frequency, `scheduleAt`, `dataFrom` and `dataTo` fields are mandatory and should adhere to the ISO-8601 date-time format
+<br> &emsp; i.e. "yyyy-MM-dd'T'HH:mm:ss.SSSXXX", for instance "2019-12-30T22:59:50.235+05:30". 
+<br> &emsp; The difference between `dataFrom` and `dateTo` should not exceed 24 hours.
+
+### POST - Create New Job
+
+```
+{{url}}/service/zementis/job
+```
+
+Create a new job for scheduled data processing.
+
+On creation, a `jobId` would be automatically assigned to the job and `jobCreationDate` will also be added to the response.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Content-Type| application/json
+
+**BODY**
+```
+{
+   "jobName": "<jobName>",
+   "jobDescription": "<jobDescription>",
+   "associatedGroupOrDeviceId" : <associatedGroupOrDeviceId>,
+   "associatedModel": "<associatedModel>",
+   "modelToDeviceMappings": {
+      "<Model_Input1>": "<measurementType>.<seriesName1>.value",
+      "<Model_Input2>": "<measurementType>.<seriesName2>.value",
+      "<Model_Input3>": "<measurementType>.<seriesName3>.value"
+   },
+   "jobSchedule": {
+      "frequency": "<periodic | once>",
+      "cronExpression": "<cronExpression>",
+      "dataFromPreviousNSeconds": <dataFromPreviousNSeconds>,
+      "timeZone":"<timeZone>",
+      "scheduleAt": "<scheduleAt>",
+      "dataFrom": "<dataFrom>",
+      "dataTo": "<dataTo>"
+   }
+}
+```
+
+**Example Request**
+
+```
+201 - Created
+
+curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{auth}}"
+
+{
+   "jobName": "SampleJob",
+   "jobDescription": "SampleDescription",
+   "associatedGroupOrDeviceId" : 123456,
+   "associatedModel": "ActivityRecognitionModel",
+   "modelToDeviceMappings": {
+      "accelerationX": "c8y_Acceleration.c8y_AccelerationX.value",
+      "accelerationY": "c8y_Acceleration.c8y_AccelerationY.value",
+      "accelerationZ": "c8y_Acceleration.c8y_AccelerationZ.value"
+   },
+   "jobSchedule": {
+      "frequency": "periodic",
+      "cronExpression": "10 * * ? * *",
+      "dataFromPreviousNSeconds": 10,
+      "timeZone":"Asia/Kolkata"
+   }
+}
+```
+
+**Example Response**
+
+```
+201 - Created
+
+{
+   "jobId": 11058170, 
+   "jobName": "SampleJob",
+   "jobDescription": "SampleDescription",
+   "jobCreationDate": "2019-10-05T08:12:21.340Z",
+   "associatedGroupOrDeviceId" : 123456,
+   "associatedModel": "ActivityRecognitionModel",
+   "modelToDeviceMappings": {
+      "accelerationX": "c8y_Acceleration.c8y_AccelerationX.value",
+      "accelerationY": "c8y_Acceleration.c8y_AccelerationY.value",
+      "accelerationZ": "c8y_Acceleration.c8y_AccelerationZ.value"
+   },
+   "jobSchedule": {
+      "frequency": "periodic",
+      "cronExpression": "10 * * ? * *",
+      "dataFromPreviousNSeconds": 10,
+      "timeZone":"Asia/Kolkata",
+      "scheduleAt": null,
+      "dataFrom": null,
+      "dataTo": null
+   }
+}
+```
+
+**Example Request**
+
+```
+400 - Bad Request
+
+curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{auth}}"
+
+{
+   "jobName": "SampleJob",
+   "jobDescription": "SampleDescription",
+   "associatedGroupOrDeviceId" : 123456,
+   "associatedModel": "ActivityRecognitionModel",
+   "modelToDeviceMappings": {
+      "accelerationX": "c8y_Acceleration.c8y_AccelerationX.value",
+      "accelerationY": "c8y_Acceleration.c8y_AccelerationY.value",
+      "accelerationZ": "c8y_Acceleration.c8y_AccelerationZ.value"
+   },
+   "jobSchedule": {
+      "frequency": "Invalid",
+      "cronExpression": "10 * * ? * *",
+      "dataFromPreviousNSeconds": 10,
+      "timeZone":"Asia/Kolkata"
+   }
+}
+```
+
+**Example Response**
+
+```
+400 - Bad Request
+
+{
+    "errors": [
+        "frequency can be either once or periodic."
+    ]
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --request POST "{{url}}/service/zementis/job"
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+404 - Not Found
+
+curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{auth}}"
+
+{
+   "jobName": "SampleJob",
+   "jobDescription": "SampleDescription",
+   "associatedGroupOrDeviceId" : 123456,
+   "associatedModel": "Dummy",
+   "modelToDeviceMappings": {
+      "accelerationX": "c8y_Acceleration.c8y_AccelerationX.value",
+      "accelerationY": "c8y_Acceleration.c8y_AccelerationY.value",
+      "accelerationZ": "c8y_Acceleration.c8y_AccelerationZ.value"
+   },
+   "jobSchedule": {
+      "frequency": "once",
+      "scheduleAt": "2019-10-05T14:14:56.235+05:30",
+      "dataFrom": "2019-10-04T12:01:55.235+05:30",
+      "dataTo": "2019-10-05T12:01:55.235+05:30"
+   }
+}
+```
+
+**Example Response**
+
+```
+404 - Not Found
+
+{
+    "errors": [
+        "Model 'Dummy' not found."
+    ]
+}
+```
+
 ### GET - List Available Jobs
 
 ```
 {{url}}/service/zementis/jobs
 ```
 
-Retrieves all the available jobs. Use the ids of these jobs as identifiers for all operations requiring the {jobId} path variable.
+Retrieves all the available jobs. Use the `jobId` of these jobs as identifiers for all operations requiring the {jobId} path variable.
 
 |HEADERS||
 |:---|:---|
@@ -115,6 +332,9 @@ curl --request GET "{{url}}/service/zementis/jobs"
 
 Get information about a specific job.
 
+Apart from **JobConfiguration**, the information contains the status of the job too. If there is no ongoing execution, then the status  is fetched from the job's last execution. 
+Note that the unit of `lastExecutionDuration` is milliseconds.
+
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -212,7 +432,7 @@ curl --request GET "{{url}}/service/zementis/job/000000" --header "Authorization
 {{url}}/service/zementis/job/{{jobId}}/history
 ```
 
-Get list of all executions of a particular job. Use *jobExecutionNumber* of these executions as identifiers for all operations requiring the {executionId} path variable.
+Get list of all executions of a particular job. Use the `jobExecutionNumber` of these executions as identifiers for all operations requiring the {executionId} path variable.
 
 |HEADERS||
 |:---|:---|
@@ -309,6 +529,8 @@ curl --request PUT "{{url}}/service/zementis/job/00000/history" --header "Author
 ```
 
 Get information of a specific job execution.
+
+Note that the unit of `jobExecutionDuration` is milliseconds.
 
 |HEADERS||
 |:---|:---|
@@ -481,202 +703,13 @@ curl --request GET "{{url}}/service/zementis/job/10979435/history/0/inferences" 
 }
 ```
 
-### POST - Create New Job
-
-```
-{{url}}/service/zementis/job
-```
-
-Create a new job for scheduled data processing.
-
-
-|HEADERS||
-|:---|:---|
-|Authorization|{{auth}}
-|Content-Type| application/json
-
-**BODY**
-```
-{
-   "jobName": "<jobName>",
-   "jobDescription": "<jobDescription>",
-   "associatedGroupOrDeviceId" : <associatedGroupOrDeviceId>,
-   "associatedModel": "<associatedModel>",
-   "modelToDeviceMappings": {
-      "<deviceMeasurementSeries[0].type>.<deviceMeasurementSeries[0].name>.value": "<Model_Input1>",
-      "<deviceMeasurementSeries[1].type>.<deviceMeasurementSeries[1].name>.value": "<Model_Input2>",
-      "<deviceMeasurementSeries[2].type>.<deviceMeasurementSeries[2].name>.value": "<Model_Input3>"
-   },
-   "jobSchedule": {
-      "frequency": "<periodic | once>",
-      "cronExpression": "<cronExpression>",
-      "dataFromPreviousNSeconds": <dataFromPreviousNSeconds>,
-      "timeZone":"<timeZone>",
-      "scheduleAt": <scheduleAt>,
-      "dataFrom": <dataFrom>,
-      "dataTo": <dataTo>
-   }
-}
-```
-
-**Example Request**
-
-```
-201 - Created
-
-curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{auth}}"
-
-{
-   "jobName": "SampleJob",
-   "jobDescription": "SampleDescription",
-   "associatedGroupOrDeviceId" : 123456,
-   "associatedModel": "ActivityRecognitionModel",
-   "modelToDeviceMappings": {
-      "c8y_Acceleration.c8y_AccelerationX.value": "accelerationX",
-      "c8y_Acceleration.c8y_AccelerationY.value": "accelerationY",
-      "c8y_Acceleration.c8y_AccelerationZ.value": "accelerationZ"
-   },
-   "jobSchedule": {
-      "frequency": "periodic",
-      "cronExpression": "10 * * ? * *",
-      "dataFromPreviousNSeconds": 10,
-      "timeZone":"Asia/Kolkata"
-   }
-}
-```
-
-**Example Response**
-
-```
-201 - Created
-
-{
-   "jobId": 11058170, 
-   "jobName": "SampleJob",
-   "jobDescription": "SampleDescription",
-   "jobCreationDate": "2019-10-05T08:12:21.340Z",
-   "associatedGroupOrDeviceId" : 123456,
-   "associatedModel": "ActivityRecognitionModel",
-   "modelToDeviceMappings": {
-      "c8y_Acceleration.c8y_AccelerationX.value": "accelerationX",
-      "c8y_Acceleration.c8y_AccelerationY.value": "accelerationY",
-      "c8y_Acceleration.c8y_AccelerationZ.value": "accelerationZ"
-   },
-   "jobSchedule": {
-      "frequency": "periodic",
-      "cronExpression": "10 * * ? * *",
-      "dataFromPreviousNSeconds": 10,
-      "timeZone":"Asia/Kolkata",
-      "scheduleAt": null,
-      "dataFrom": null,
-      "dataTo": null
-   }
-}
-```
-
-**Example Request**
-
-```
-400 - Bad Request
-
-curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{auth}}"
-
-{
-   "jobName": "SampleJob",
-   "jobDescription": "SampleDescription",
-   "associatedGroupOrDeviceId" : 123456,
-   "associatedModel": "ActivityRecognitionModel",
-   "modelToDeviceMappings": {
-      "c8y_Acceleration.c8y_AccelerationX.value": "accelerationX",
-      "c8y_Acceleration.c8y_AccelerationY.value": "accelerationY",
-      "c8y_Acceleration.c8y_AccelerationZ.value": "accelerationZ"
-   },
-   "jobSchedule": {
-      "frequency": "Invalid",
-      "cronExpression": "10 * * ? * *",
-      "dataFromPreviousNSeconds": 10,
-      "timeZone":"Asia/Kolkata"
-   }
-}
-```
-
-**Example Response**
-
-```
-400 - Bad Request
-
-{
-    "errors": [
-        "frequency can be either once or periodic."
-    ]
-}
-```
-
-**Example Request**
-
-```
-401 - Unauthorized
-
-curl --request POST "{{url}}/service/zementis/job"
-```
-
-**Example Response**
-
-```
-401 - Unauthorized
-
-{
-    "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
-}
-```
-
-**Example Request**
-
-```
-404 - Not Found
-
-curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{auth}}"
-
-{
-   "jobName": "SampleJob",
-   "jobDescription": "SampleDescription",
-   "associatedGroupOrDeviceId" : 123456,
-   "associatedModel": "Dummy",
-   "modelToDeviceMappings": {
-      "c8y_Acceleration.c8y_AccelerationX.value": "accelerationX",
-      "c8y_Acceleration.c8y_AccelerationY.value": "accelerationY",
-      "c8y_Acceleration.c8y_AccelerationZ.value": "accelerationZ"
-   },
-   "jobSchedule": {
-      "frequency": "once",
-	  "scheduleAt": "2019-10-05T14:14:56.235+05:30",
-	  "dataFrom": "2019-10-04T12:01:55.235+05:30",
-	  "dataTo": "2019-10-05T12:01:55.235+05:30"
-   }
-}
-```
-
-**Example Response**
-
-```
-404 - Not Found
-
-{
-    "errors": [
-        "Model 'Dummy' not found."
-    ]
-}
-```
-
 ### DEL - Remove Job
 
 ```
 {{url}}/service/zementis/job/{{jobId}}
 ```
 
-Remove the specified model.
+Remove the specified job.
 
 |HEADERS||
 |:---|:---|

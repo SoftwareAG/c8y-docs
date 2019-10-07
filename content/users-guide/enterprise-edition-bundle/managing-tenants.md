@@ -118,7 +118,7 @@ The following information is displayed here:
 
 Suspending a tenant blocks any access to this tenant, regardless whether the access is from devices, users or other applications.
 
-If a tenant is suspended, the tenant’s data remains in the database and can be made available later by clicking **Activate**.
+If a tenant is suspended, the tenantâ€™s data remains in the database and can be made available later by clicking **Activate**.
 
 >**Important**: Suspended tenants for all Cumulocity IoT Public Cloud instances will be automatically deleted after 30 days.
 
@@ -335,7 +335,6 @@ The information on the microservice usage is presented in the **Usage Statistics
 ![Tenant statistics](/guides/images/users-guide/Administration/admin-subtenants-usage-statistics-microservice.png)
 
 For more details, refer to [Tenants > Tenant usage statistics](/guides/reference/tenants/#tenant-usage-statistics) in the Reference guide. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
-
 
 ##### Scaling
 

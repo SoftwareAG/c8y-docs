@@ -124,6 +124,12 @@ In the Standard Tenant you will find the following default applications:
 <td style="text-align:left">Web app</td>
 </tr>
 <tr>
+<td style="text-align:center"><a href="/guides/event-language" class="no-ajaxy">Cep</a></td>
+<td style="text-align:left"><b>This application is deprecated and no longer a default application in the Standard Tenant. Apama now is the standard CEP engine.</b> <br>Define business operations based on realtime data by using the Esper CEP engine. This CEP variant uses a shared instance for multiple tenants. See "Cep-small" for a per-tenant approach.</td>
+<td style="text-align:left">cep</td>
+<td style="text-align:left">Microservice</td>
+</tr>
+<tr>
 <td style="text-align:center"><a href="/guides/users-guide/cockpit" class="no-ajaxy">Cockpit</a></td>
 <td style="text-align:left">Manage and monitor IoT assets and data from a business perspective.</td>
 <td style="text-align:left">cockpit</td>
@@ -213,12 +219,6 @@ In the Standard Tenant you will find the following default applications:
 Manager and editor for Apama Event Processing Language (EPL) apps, for immediate processing of incoming data.</td>
 <td style="text-align:left">Apama EPL Apps</td>
 <td style="text-align:left">Web app</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="/guides/event-language" class="no-ajaxy">Cep</a></td>
-<td style="text-align:left"><b>This application is deprecated and no longer a default application in the Standard Tenant. Apama now is the standard CEP engine.</b> <br>Define business operations based on realtime data by using the Esper CEP engine. This CEP variant uses a shared instance for multiple tenants. See "Cep-small" for a per-tenant approach.</td>
-<td style="text-align:left">cep</td>
-<td style="text-align:left">Microservice</td>
 </tr>
 <tr>
 <td style="text-align:center"><a href="/guides/event-language" class="no-ajaxy">CEP custom rules</a></td>

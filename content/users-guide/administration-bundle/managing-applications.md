@@ -85,7 +85,7 @@ The columns show the following information:
 
 * **Application**: Application name as visible in the Administration application.
 * **Functionality**: Brief description.
-* **ID/name**: Identification of the application in the API. In case you want to subscribe a tenant to the application using an API (as described on this page), use this string in the argument (as name).
+* **Name**: Identification of the application in the API. In case you want to subscribe a tenant to the application using an API, use this string in the argument (as name).
 * **Type**: Technical type of the application. "Feature" refers to built-in applications subscriptions, i.e. these applications are not represented by an explicit artefact (microservice or web application).
 
 ### Standard Tenant default applications

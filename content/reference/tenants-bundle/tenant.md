@@ -186,9 +186,13 @@ Example Response :
 Note that updating adminPass and adminEmail updates these settings in the admin user of the tenant. Updating adminName has no effect.
 
 
-### DELETE  a representation of a Tenant.
+### DELETE a representation of a Tenant.
 
-Response body: N/A
+>**Important**: Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the management tenant. You cannot delete tenants from any tenant but the management tenant. 
+>
+>Administrators in Enterprise Tenants are only allowed to suspend active subtenants, but not to delete them. 
+
+Request body: N/A
 
 Response body: N/A
 

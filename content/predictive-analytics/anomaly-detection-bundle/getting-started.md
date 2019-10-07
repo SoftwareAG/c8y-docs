@@ -21,4 +21,5 @@ For this particular demo, a phone or a phone-like device needs to be used, so th
 Therefore, the documentation has been split up into two parts:
 
 * [Anomaly detection using an Android phone](#anomaly-detection-using-android-phone)
+* [Anomaly detection using an iPhone](#anomaly-detection-using-iphone)
 * [Anomaly detection using a simulated demo device](#anomaly-detection-using-demo-device)

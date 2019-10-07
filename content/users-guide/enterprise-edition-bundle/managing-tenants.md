@@ -137,7 +137,9 @@ As part of suspending the tenant, an email is sent to the tenant administrator i
 
 ### Deleting subtenants
 
-**Important**: Deleting a subtenant cannot be reverted. For security reasons, it is only available in the management tenant.
+>**Important**: Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the management tenant. You cannot delete tenants from any tenant but the management tenant. 
+>
+>Administrators in Enterprise Tenants are only allowed to suspend active subtenants, but not to delete them. 
 
 #### To delete a subtenant
 

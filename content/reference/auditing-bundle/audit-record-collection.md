@@ -104,7 +104,8 @@ Example response:
       }
     }
 
-In case of executing range queries on audit logs API, like query by dateFrom and dateTo, audits are returned in order from the last to the latest.
+In case of executing range queries on audit logs API, like query by dateFrom and dateTo, audits are returned by default in order from the newest to the oldest.
+
 It is possible to change the order by adding query parameter "revert=false" to the request URL. An example request would be: "<<url>>/audit/auditRecords?dateFrom=2019-09-01&dateTo=2019-09-06T08:26:42%2B02:00&revert=false".
 
 ### DELETE - delete an collection of auditRecords

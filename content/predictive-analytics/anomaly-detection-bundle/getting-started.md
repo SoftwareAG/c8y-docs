@@ -18,7 +18,7 @@ First of all, update the *CONFIG.INI* with the appropriate values and save it. R
 
 For this particular demo, a phone or a phone-like device needs to be used, so that the measurement data for that particular device can be captured and be used for detecting anomalies.
 
-Therefore, the documentation has been split up into two parts:
+The documentation provides instructions for the following devices:
 
 * [Anomaly detection using an Android phone](#anomaly-detection-using-android-phone)
 * [Anomaly detection using an iPhone](#anomaly-detection-using-iphone)

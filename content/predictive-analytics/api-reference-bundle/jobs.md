@@ -20,9 +20,9 @@ Operations on jobs scheduled for processing device data.
 #### JobSchedule
 |Name|Type|Description|
 |:-----|:-----|:-----|
-|frequency|String|Frequncy of job execution. Can be either `periodic` or `once`.|
-|cronExpression|String|CRON expression to specify the execution schedule for a periodic job. Follow <br> http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html <br> for more info on CRON.|
-|dataFromPreviousNSeconds|Number| Number of seconds specifying the amount of time in the past from which <br> data should be fetched for processing. The value should not exceed 86400 i.e. 24 hours.|
+|frequency|String|Frequency of job execution. Can be either `periodic` or `once`.|
+|cronExpression|String|CRON expression to specify the execution schedule for a periodic job. Follow <br> [http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) <br> for more info on CRON.|
+|dataFromPreviousNSeconds|Number| Number of seconds in the past from which <br> data should be fetched for processing. The value must not exceed 86400 i.e. 24 hours.|
 |timeZone|String|Time zone in which the periodic job should be scheduled.|
 |scheduleAt|String|Datetime string in the future when the job should be scheduled.|
 |dataFrom|String|Datetime string from the past which should be considered as the starting point <br> for data to be fetched for processing.|'
@@ -32,7 +32,7 @@ Operations on jobs scheduled for processing device data.
 <br>1. For *periodic* frequency, `cronExpression`, `dataFromPreviousNSeconds` and `timeZone` fields are mandatory.
 <br>2. For *once* frequency, `scheduleAt`, `dataFrom` and `dataTo` fields are mandatory and should adhere to the ISO-8601 date-time format
 <br> &emsp; i.e. "yyyy-MM-dd'T'HH:mm:ss.SSSXXX", for instance "2019-12-30T22:59:50.235+05:30". 
-<br> &emsp; The difference between `dataFrom` and `dateTo` should not exceed 24 hours.
+<br> &emsp; The difference between `dataFrom` and `dateTo` must not exceed 24 hours.
 
 ### POST - Create New Job
 
@@ -42,7 +42,7 @@ Operations on jobs scheduled for processing device data.
 
 Create a new job for scheduled data processing.
 
-On creation, a `jobId` would be automatically assigned to the job and `jobCreationDate` will also be added to the response.
+On creation, a `jobId` is automatically assigned to the job and `jobCreationDate` will also be added to the response.
 
 |HEADERS||
 |:---|:---|
@@ -333,7 +333,8 @@ curl --request GET "{{url}}/service/zementis/jobs"
 
 Get information about a specific job.
 
-Apart from **JobConfiguration**, the information contains the status of the job too. If there is no ongoing execution, then the status  is fetched from the job's last execution. 
+Apart from **JobConfiguration**, the information contains the status of the job. If there is no ongoing execution, then the status is fetched from the job's last execution. 
+
 Note that the unit of `lastExecutionDuration` is milliseconds.
 
 |HEADERS||
@@ -433,7 +434,7 @@ curl --request GET "{{url}}/service/zementis/job/000000" --header "Authorization
 {{url}}/service/zementis/job/{{jobId}}/history
 ```
 
-Get execution history of a particular job. This would list all the executions of that specific job. Use the `jobExecutionNumber` of these executions as identifiers for all operations requiring the {executionId} path variable.
+Get execution history of a particular job. Lists all executions of that specific job. Use the `jobExecutionNumber` of these executions as identifiers for all operations requiring the {executionId} path variable.
 
 |HEADERS||
 |:---|:---|
@@ -613,7 +614,7 @@ curl --request GET "{{url}}/service/zementis/job/10979435/history/0" --header "A
 {{url}}/service/zementis/job/{{jobId}}/history/{{executionId}}/inferences
 ```
 
-Get the results/inferences generated in a single job execution. These inferences are the predictions of the machine learning model against the data from the associated device/device-group.
+Get the results/inferences generated in a single job execution. These inferences are the predictions of the machine learning model against the data from the associated device/device group.
 
 |HEADERS||
 |:---|:---|
@@ -623,7 +624,7 @@ Get the results/inferences generated in a single job execution. These inferences
 |:---|:---|
 |jobId (string)|required path variable for job id
 |executionId (string)|required path variable for execution id
-|currentPage (string)|optional parameter for specifying which page to fetch. Each page will contain maximum 2000 inferences.
+|currentPage (string)|optional parameter for specifying which page to fetch; each page will contain maximum 2000 inferences
 
 
 **Example Request**

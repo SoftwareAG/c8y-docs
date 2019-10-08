@@ -8,9 +8,9 @@ This section deals with the basic data science steps of creating an anomaly dete
 
 #### Register an iPhone in Cumulocity
 
-Registering an iPhone on Cumulocity involves installing the Cumulocity IoT Sensor App on your phone and using it for completing the registration. Follow the steps described in [Optional services > Cloud Sensor App](/guides/users-guide/optional-services#android-cloud-sensor-app) in the User guide.
+Registering an iPhone in Cumulocity involves installing the Cloud Sensor App on your iPhone and using it for completing the registration. Follow the steps described in [Optional services > Cloud Sensor App](/guides/users-guide/optional-services#android-cloud-sensor-app) in the User guide.
 
-Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, update the `c_device_source` of the *CONFIG.INI* file with the device ID of your registered Android phone.
+Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, update the `c_device_source` of the *CONFIG.INI* file with the device ID of your registered iPhone.
 
 #### Data collection with Cumulocity
 
@@ -18,7 +18,7 @@ Required: No. The training data is provided. See next section.
 
 In contrast to supervised classification models, no labeled training data is required for anomaly detection models. The training happens with the regular data, and any unseen behavior will later be detected as anomalous. The data can be collected by carrying around the registered device over a few days without any anomalous behavior. All data can then be accessed via the Cumulocity REST interface and be transformed into the training data format. 
 
-Note that for demo purposes, the data is fetched via REST and directly transformed into the training data set. More complex pre-processing might require the use of an offline data store. The format of the JSON data might have changed in the meantime, or some sensors might not be available for some phone types, so check the exact format by viewing a current sample.
+Note, that for demo purposes the data is fetched via REST and directly transformed into the training data set. More complex pre-processing might require the use of an offline data store. The format of the JSON data might have changed in the meantime, or some sensors might not be available for some phone types, so check the exact format by viewing a current sample.
 
 The following code block contains the data format of the JSON schema that was assumed for this demo.
 
@@ -155,9 +155,7 @@ Data collection can be done by using the below shown and attached script *create
             json_doc_acc = next_doc_acc
             json_doc_gyro = next_doc_gyro
     
-    print("Training data written to " + TRAIN_DATA_FILE)
-
-	
+    print("Training data written to " + TRAIN_DATA_FILE)	
 
 The training data set we collected is packaged as *training_data.zip* under the data sub-folder of the attached *AnomalyDetectionDemo.zip*.
 
@@ -169,7 +167,7 @@ The logic arguments goes: isolating anomaly observations is easier as only a few
 
 The attached Python script *createModelForiPhoneData.py* creates an Isolation Forest Model in PMML format using the previously created training data. If no training data was created with the *createModelForiPhoneData.py* script, sample training data can be found under the data sub-folder of the attached ZIP file. It is then used for training the Isolation Forest model with the help of the scikit-learn framework ([https://scikit-learn.org](https://scikit-learn.org)). To obtain a robust and meaningful model, further cleaning of the training data and validating the best model parameters is required. This is not in the scope of this demo and presumes knowledge of data science best practices. After the model is created in scikit-learn format, it is converted into PMML format with the Nyoka library. Make sure to install Nyoka as detailed here: [https://github.com/nyoka-pmml/nyoka](https://github.com/nyoka-pmml/nyoka).
 
-You could try out the data you collected yourself as described in the data collection section. Alternatively, you can unzip the attached *data/training_data.zip* file which contains the sample training data and use it for training your model. Please note that the model trained with the attached data set might not work very well when you try to classify your own data. The reason is that the expected behavior of the training data and the data captured with your device would differ too much and any occurrence will be classified as anomalous.
+You could try out the data you collected yourself as described in the data collection section. Alternatively, you can unzip the attached *data/training_data.zip* file which contains the sample training data and use it for training your model. Note, that the model trained with the attached data set might not work very well when you try to classify your own data. The reason is that the expected behavior of the training data and the data captured with your device would differ too much and any occurrence will be classified as anomalous.
 
 	createModelForiPhoneData.py
     from sklearn.ensemble import IsolationForest

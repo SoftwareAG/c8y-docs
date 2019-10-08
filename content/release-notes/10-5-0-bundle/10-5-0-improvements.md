@@ -9,7 +9,7 @@ layout: redirect
 
 #### Installation
 
-Cumulocity now provides an **offline installation** of the Cumulocity IoT platform. Details can be found in the *Cumulocity IoT Multi-node installation guide* provided through the [Empower Portal](https://empower.softwareag.com) (credentials required).
+Cumulocity now provides an **offline installation** process for the Cumulocity IoT platform. Details can be found in the *Cumulocity IoT Multi-node installation guide* provided through the [Software AG Empower Portal](https://empower.softwareag.com) (credentials required).
 
 #### Administration
 
@@ -54,7 +54,7 @@ For details, see the [How-to recipes](/guides/web/how-to/) in the Web SDK guide.
 
 ### Apama EPL Apps (formerly Apama-epl)
 
-The application in the app switcher which was previously called “apama-epl” is now called “Apama EPL Apps”.
+The application in the app switcher which was previously called “Apama-epl” is now called “Apama EPL Apps”.
 
 The sample applications that were previously accessible from https://cumulocity.com/guides/apama/examples/#misc-applications are now available directly from the Apama EPL Apps application. 
 
@@ -86,5 +86,5 @@ Main features of the Cumulocity IoT DataHub application include:
 * Allows to use scalable and inexpensive storage via providing an easy-to-use data pipeline that extracts data from Cumulocity’s Operational Store to a data lake for long-term archival and efficient analytical querying.
 * Offers a SQL-based Query Interface for querying the data lake and enabling customers to connect arbitrary applications that either support ODBC, JDBC, or REST protocols.
 
-See the [Datahub guide](/guides/datahub/overview) for detailed information.
+See the [Datahub guide](/guides/datahub/datahub-overview) for detailed information.
 

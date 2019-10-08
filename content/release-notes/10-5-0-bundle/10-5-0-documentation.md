@@ -12,7 +12,7 @@ The Installation and operation guides for the Cumulocity IoT platform are now av
 
 ### General: About section
 
-A new [About](/guides/about/overview/) section has been added to the documentation, showing information on documentation versions, content, conventions and copyrights.
+A new [About](/guides/about-doc/intro-documentation/) section has been added to the documentation, showing information on documentation versions, content, conventions and copyrights.
 
 ### User guide: Managing applications
 

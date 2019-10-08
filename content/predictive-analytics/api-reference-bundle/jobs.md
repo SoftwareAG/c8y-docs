@@ -6,26 +6,27 @@ weight: 40
 
 Operations on jobs scheduled for processing device data.
 
-### JobConfiguration
+### Domain Model
+#### JobConfiguration
 |Name|Type|Description|
 |:-----|:-----|:-----|
 |jobName|String|Name of the job.|
 |jobDescription|String|Description of the job.|
-|associatedGroupOrDeviceId|Number|Id of the device whose measurements will be scored <br> when the job executes.|
-|associatedModel|String|Machine learning model which will score the device measurements.|
-|modelToDeviceMappings|Map|Map with the model's inputs as the keys and the measurements <br> as the corresponding values. These mappings ensure which measurement reading <br> should be fed into which input of the model.|
+|associatedGroupOrDeviceId|Number|Id of the device or device group whose measurements will be <br> processed when the job executes.|
+|associatedModel|String|Name of the model which will process the device measurements.|
+|modelToDeviceMappings|Map|Map with the model’s inputs as the keys and the measurements as the <br> corresponding values. These mappings ensure which measurement <br> reading maps to which model input.|
 |jobSchedule|JobSchedule|Information about when the job should be scheduled for executions.|
 
-### JobSchedule
+#### JobSchedule
 |Name|Type|Description|
 |:-----|:-----|:-----|
 |frequency|String|Frequncy of job execution. Can be either `periodic` or `once`.|
 |cronExpression|String|CRON expression to specify the execution schedule for a periodic job. Follow <br> http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html <br> for more info on CRON.|
-|dataFromPreviousNSeconds|Number| Number of seconds specifying the amount of time in the past from which <br> data should be fetched for scoring. The value should not exceed 86400 i.e. 24 hours.|
+|dataFromPreviousNSeconds|Number| Number of seconds specifying the amount of time in the past from which <br> data should be fetched for processing. The value should not exceed 86400 i.e. 24 hours.|
 |timeZone|String|Time zone in which the periodic job should be scheduled.|
 |scheduleAt|String|Datetime string in the future when the job should be scheduled.|
-|dataFrom|String|Datetime string from the past which should be considered as the starting point <br> for data to be fetched for scoring.|'
-|dataTo|String|Datetime string from the past which should be considered as the ending point <br> for data to be fetched for scoring.|
+|dataFrom|String|Datetime string from the past which should be considered as the starting point <br> for data to be fetched for processing.|'
+|dataTo|String|Datetime string from the past which should be considered as the ending point <br> for data to be fetched for processing.|
 
 >**Info**:
 <br>1. For *periodic* frequency, `cronExpression`, `dataFromPreviousNSeconds` and `timeZone` fields are mandatory.
@@ -426,13 +427,13 @@ curl --request GET "{{url}}/service/zementis/job/000000" --header "Authorization
 }
 ```
 
-### GET - List Job Execution History
+### GET - Job Execution History
 
 ```
 {{url}}/service/zementis/job/{{jobId}}/history
 ```
 
-Get list of all executions of a particular job. Use the `jobExecutionNumber` of these executions as identifiers for all operations requiring the {executionId} path variable.
+Get execution history of a particular job. This would list all the executions of that specific job. Use the `jobExecutionNumber` of these executions as identifiers for all operations requiring the {executionId} path variable.
 
 |HEADERS||
 |:---|:---|
@@ -522,13 +523,13 @@ curl --request PUT "{{url}}/service/zementis/job/00000/history" --header "Author
 }
 ```
 
-### GET - Get Specific Job Execution Information
+### GET - Job Execution Detail
 
 ```
 {{url}}/service/zementis/job/{{jobId}}/history/{{executionId}}
 ```
 
-Get information of a specific job execution.
+Get details of a specific job execution.
 
 Note that the unit of `jobExecutionDuration` is milliseconds.
 
@@ -606,13 +607,13 @@ curl --request GET "{{url}}/service/zementis/job/10979435/history/0" --header "A
 }
 ```
 
-### GET - List Inferences of a Job Execution
+### GET - Job Execution Results
 
 ```
 {{url}}/service/zementis/job/{{jobId}}/history/{{executionId}}/inferences
 ```
 
-Get the inferences generated in a single job execution. These inferences are the predictions of the machine learning model against the data from the associated device/device-group.
+Get the results/inferences generated in a single job execution. These inferences are the predictions of the machine learning model against the data from the associated device/device-group.
 
 |HEADERS||
 |:---|:---|
@@ -782,7 +783,7 @@ curl --request DELETE "{{url}}/service/zementis/job/00000" --header "Authorizati
 {{url}}/service/zementis/jobs
 ```
 
-Remove all available jobs and list the remaining jobs.
+Remove all available jobs and list the remaining jobs, if any.
 
 |HEADERS||
 |:---|:---|

@@ -99,85 +99,75 @@ The following code block contains the data format of the JSON schema that was as
 Data collection can be done by using the below shown and attached script *createTrainingData.py*. This Python script connects to the Cumulocity REST measurements endpoint, pulls the data and writes it to a CSV file.
 
 	createTrainingData.py
-	import requests, json
-	import configparser
-	import csv
-	import os
-	 
-	def add2Data(d):
-	# consult returned JSON for exact format
-	    c8y_SignalStrengthWifi = d['c8y_SignalStrengthWifi']
-	    rssi = c8y_SignalStrengthWifi['rssi']
-	    acc = d['c8y_Acceleration']
-	    accelerationY = acc['accelerationY']
-	    accelerationX = acc['accelerationX']
-	    accelerationZ = acc['accelerationZ']
-	    c8y_Barometer = d['c8y_Barometer']
-	    air_pressure = c8y_Barometer['Air pressure']
-	    c8y_Gyroscope = d['c8y_Gyroscope']
-	    gyroX = c8y_Gyroscope['gyroX']
-	    gyroY = c8y_Gyroscope['gyroY']
-	    gyroZ = c8y_Gyroscope['gyroZ']
-	    c8y_Luxometer = d['c8y_Luxometer']
-	    lux = c8y_Luxometer['lux']
-	    c8y_Compass = d['c8y_Compass']
-	    compassX = c8y_Compass['compassX']
-	    compassY = c8y_Compass['compassY']
-	    compassZ = c8y_Compass['compassZ']
-	    return [rssi['value'], accelerationY['value'], accelerationX['value'], accelerationZ['value'], air_pressure['value'], gyroX['value'], gyroY['value'], gyroZ['value'], lux['value'], compassX['value'], compassY['value'], compassZ['value']]
-	     
-	 
-	# collect config from CONFIG-INI -> change user and pass
-	config = configparser.ConfigParser()
-	config.read('CONFIG.INI')
-	 
-	c_measurements_endpoint="/measurement/measurements/"
-	c_params={"source":config.get("cumulocity", "c_device_source"),"pageSize":"2000"}
-	 
-	 
-	# get first page of json data measurements from cumulocity
-	c_auth=config.get("cumulocity", "c_user"),config.get("cumulocity", "c_pass")
-	r=requests.get(config.get("cumulocity","c_url")+c_measurements_endpoint,params=c_params, auth=c_auth)
-	print("Start collecting data from: "+r.url)
-	print("Status code: "+str(r.status_code))
-	 
-	# training data file
-	DIR_DATA="data/"
-	TRAIN_DATA_FILE=DIR_DATA+"dataset_training.csv"
-	 
-	 # collect data
-	json_doc=r.json()
-	data=[]
-	 
-	if not os.path.exists(DIR_DATA):
-	    os.makedirs(DIR_DATA)
-	     
-	with open(TRAIN_DATA_FILE, mode='w') as training_file:
-	    writer = csv.writer(training_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-	    writer.writerow(["rssi","accelerationY","accelerationX","accelerationZ","air_pressure","gyroX","gyroY","gyroZ","lux","compassX","compassY","compassZ"])
-	 
-	 
-	    # write measurements of first page
-	    for measurement in json_doc['measurements']:   
-	        writer.writerow(add2Data(measurement))        
-	 
-	    for i in range(5):
-	        r=requests.get(json_doc['next'], auth=c_auth)
-	        next_doc=r.json()
-	        measure_arr=next_doc['measurements']
-	     
-	        if not measure_arr:
-	            print("Last page reached.")
-	            break
-	     
-	        print("Collecting data at: " +measure_arr[0]['time'])
-	 
-	        for measurement in measure_arr:   
-	            writer.writerow(add2Data(measurement))
-	             
-	        json_doc=next_doc
-	 
-	print("Training data written to " + TRAIN_DATA_FILE)
+    import requests, json 
+    import configparser
+    import csv
+    import os
+    
+    def add2Data(d):
+    # consult returned JSON for exact format
+    	acc = d['c8y_Acceleration']
+    	accelerationY = acc['accelerationY']
+    	accelerationX = acc['accelerationX']
+    	accelerationZ = acc['accelerationZ']
+    	c8y_Gyroscope = d['c8y_Gyroscope']
+    	gyroX = c8y_Gyroscope['gyroX']
+    	gyroY = c8y_Gyroscope['gyroY']
+    	gyroZ = c8y_Gyroscope['gyroZ']
+    	return [accelerationY['value'], accelerationX['value'], accelerationZ['value'], gyroX['value'], gyroY['value'], gyroZ['value']]
+    	
+    
+    # collect config from CONFIG-INI -> change user and pass
+    config = configparser.ConfigParser()
+    config.read('CONFIG.INI')
+    
+    c_measurements_endpoint="/measurement/measurements/"
+    c_params={"source":config.get("cumulocity", "c_device_source"),"pageSize":"2000"}
+    
+    
+    # get first page of json data measurements from cumulocity
+    c_auth=config.get("cumulocity", "c_user"),config.get("cumulocity", "c_pass")
+    r=requests.get(config.get("cumulocity","c_url")+c_measurements_endpoint,params=c_params, auth=c_auth) 
+    print("Start collecting data from: "+r.url)
+    print("Status code: "+str(r.status_code))
+    
+    # training data file
+    DIR_DATA="data/"
+    TRAIN_DATA_FILE=DIR_DATA+"training_data.csv"
+    
+     # collect data
+    json_doc=r.json()
+    data=[]
+    
+    if not os.path.exists(DIR_DATA):
+        os.makedirs(DIR_DATA)
+        
+    with open(TRAIN_DATA_FILE, mode='w', newline='') as training_file:
+    	writer = csv.writer(training_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+    	writer.writerow(["accelerationY","accelerationX","accelerationZ","gyroX","gyroY","gyroZ"])
+    
+    
+    	# write measurements of first page
+    	for measurement in json_doc['measurements']:	
+    		writer.writerow(add2Data(measurement))		 
+    
+    	for i in range(5):
+    		r=requests.get(json_doc['next'], auth=c_auth) 
+    		next_doc=r.json()
+    		measure_arr=next_doc['measurements']
+    	
+    		if not measure_arr:
+    			print("Last page reached.")
+    			break
+    	
+    		print("Collecting data at: " +measure_arr[0]['time'])
+    
+    		for measurement in measure_arr:	
+    			writer.writerow(add2Data(measurement))
+    			
+    		json_doc=next_doc
+    
+    print("Training data written to " + TRAIN_DATA_FILE)
 	
 
 The training data set we collected is packaged as *training_data.zip* under the data sub-folder of the attached *AnomalyDetectionDemo.zip*.
@@ -193,49 +183,49 @@ The attached Python script *createModel.py* creates an Isolation Forest Model in
 You could try out the data you collected yourself as described in the data collection section. Alternatively, you can unzip the attached *data/training_data.zip* file which contains the sample training data and use it for training your model. Please note that the model trained with the attached data set might not work very well when you try to classify your own data. The reason is that the expected behavior of the training data and the data captured with your device would differ too much and any occurrence will be classified as anomalous.
 
 	createModel.py
-	from sklearn.ensemble import IsolationForest
-	from sklearn.pipeline import Pipeline
-	import numpy as np
-	import os
-	import zipfile
-	import csv
-	from nyoka import skl_to_pmml
-	import warnings
-	warnings.filterwarnings('ignore')
-	 
-	# training data file
-	DIR_DATA="data/"
-	TRAIN_DATA_FILE=DIR_DATA+"dataset_training.csv"
-	 
-	DIR_MODEL="model/"
-	PMML_FILE_NAME = DIR_MODEL+"iforest_model.pmml"
-	 
-	if not os.path.exists(DIR_MODEL):
-	    os.makedirs(DIR_MODEL)
-	 
-	# load the data into an array
-	with open(TRAIN_DATA_FILE, newline='') as csvfile:
-	    data = list(csv.reader(csvfile))
-	 
-	# instantiate the isolation forest object
-	iforest = IsolationForest(n_estimators=40, max_samples=3000, contamination=0, random_state=np.random.RandomState(42))
-	 
-	# only use part of the data for quicker results
-	iforest.fit(data[2:5000])
-	 
-	# prepare pipeline for PMML conversion
-	model_type="iforest"
-	print("Start converting the model into PMML...")
-	pipeline = Pipeline([
-	    (model_type, iforest)
-	])
-	 
-	pipeline.fit(data[2:5000])
-	 
-	features = ["rssi","accelerationY","accelerationX","accelerationZ","air_pressure","gyroX","gyroY","gyroZ","lux","compassX","compassY","compassZ"]
-	skl_to_pmml(pipeline, features, "",PMML_FILE_NAME)
-	 
-	print("Model with name "+PMML_FILE_NAME+" converted into PMML")
+    from sklearn.ensemble import IsolationForest
+    from sklearn.pipeline import Pipeline
+    import numpy as np
+    import os
+    import zipfile
+    import csv
+    from nyoka import skl_to_pmml
+    import warnings
+    warnings.filterwarnings('ignore')
+    
+    # training data file
+    DIR_DATA="data/"
+    TRAIN_DATA_FILE=DIR_DATA+"training_data.csv"
+    
+    DIR_MODEL="model/"
+    PMML_FILE_NAME = DIR_MODEL+"iforest_model.pmml"
+    
+    if not os.path.exists(DIR_MODEL):
+        os.makedirs(DIR_MODEL)
+    
+    # load the data into an array
+    with open(TRAIN_DATA_FILE, newline='') as csvfile:
+        data = list(csv.reader(csvfile))
+    
+    # instantiate the isolation forest object
+    iforest = IsolationForest(n_estimators=40, max_samples=3000, contamination=0, random_state=np.random.RandomState(42))
+    
+    # only use part of the data for quicker results
+    iforest.fit(data[2:5000])
+    
+    # prepare pipeline for PMML conversion
+    model_type="iforest"
+    print("Start converting the model into PMML...")
+    pipeline = Pipeline([
+        (model_type, iforest)
+    ])
+    
+    pipeline.fit(data[2:5000])
+    
+    features = ["accelerationY","accelerationX","accelerationZ","gyroX","gyroY","gyroZ"]
+    skl_to_pmml(pipeline, features, "",PMML_FILE_NAME)
+    
+    print("Model with name "+PMML_FILE_NAME+" converted into PMML")
 
 #### Upload the model to Cumulocity
 

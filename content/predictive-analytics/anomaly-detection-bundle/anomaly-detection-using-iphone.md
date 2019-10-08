@@ -73,14 +73,14 @@ The following code block contains the data format of the JSON schema that was as
     }
 
 
-Data collection can be done by using the below shown and attached script *createTrainingData.py*. This Python script connects to the Cumulocity REST measurements endpoint, pulls the data and writes it to a CSV file.
+Data collection can be done by using the below shown and attached script *createTrainingDataForiPhone.py*. This Python script connects to the Cumulocity REST measurements endpoint, pulls the data and writes it to a CSV file.
 
-	createTrainingData.py
-	import requests, json
-	import configparser
-	import csv
-	import os
- 
+	createTrainingDataForiPhone.py
+    import requests, json 
+    import configparser
+    import csv
+    import os
+    
     def add2Data(acc_data, gyro_data, writer):
         acc_X = acc_data['accelerationX']['value']
         acc_Y = acc_data['accelerationY']['value']
@@ -89,63 +89,64 @@ Data collection can be done by using the below shown and attached script *create
         gyro_Y = gyro_data['gyroY']['value']
         gyro_Z = gyro_data['gyroZ']['value']
         writer.writerow([acc_X,acc_Y,acc_Z,gyro_X,gyro_Y,gyro_Z])
-     
+    
     config = configparser.ConfigParser()
     config.read('CONFIG.INI')
-     
+    
     DATE_FROM="2019-09-06T23:00:00.000+05:30"
     DATE_TO="2019-09-07T08:00:00.000+05:30"
-     
+    
     c_measurements_endpoint="/measurement/measurements/"
-    c_params={"source":config.get("cumulocity", "c_device_source"),"pageSize":"2000", "dateFrom":DATE_FROM, "dateTo":DATE_TO,
+    c_params={"source":config.get("cumulocity", "c_device_source"),"pageSize":"2000",
+             "dateFrom":DATE_FROM, "dateTo":DATE_TO,
              "fragmentType":"c8y_Acceleration"}
-     
+    
     c_auth=config.get("cumulocity", "c_user"),config.get("cumulocity", "c_pass")
     r=requests.get(config.get("cumulocity","c_url")+c_measurements_endpoint,params=c_params, auth=c_auth)
     print("Start collecting data from: "+r.url)
     print("Status code: "+str(r.status_code))
-     
+    
     DIR_DATA="data/"
     TRAIN_DATA_FILE=DIR_DATA+"dataset_training_iphone.csv"
-     
+    
     json_doc_acc=r.json()
-     
+    
     if not os.path.exists(DIR_DATA):
         os.makedirs(DIR_DATA)
-     
+    
     with open(TRAIN_DATA_FILE, mode='w', newline='') as training_file:
         writer = csv.writer(training_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         writer.writerow(["accelerationX","accelerationY","accelerationZ","gyroX","gyroY","gyroZ"])
         first_arr=json_doc_acc['measurements']
-     
+    
         c_params.update({'fragmentType':'c8y_Gyroscope'})
         r=requests.get(config.get("cumulocity","c_url")+c_measurements_endpoint,params=c_params, auth=c_auth)
         json_doc_gyro = r.json()
-     
+    
         print("Page 1.\tCollecting data at: " +first_arr[0]['time'])
-     
+    
         for data in first_arr:
             gyro = list(filter(lambda rec: rec['time']==data['time'], json_doc_gyro['measurements']))
             # For some timestamps, acceleration measurements are there but not gyroscope; skipping records with those timestamps
             if len(gyro)>0:
                 add2Data(data['c8y_Acceleration'], gyro[0]['c8y_Gyroscope'], writer)
-     
+    
         for i in range(5):
-            r=requests.get(json_doc_acc['next'], auth=c_auth)
+            r=requests.get(json_doc_acc['next'], auth=c_auth) 
             next_doc_acc=r.json()
             measure_arr=next_doc_acc['measurements']
             if not measure_arr:
                 print("Last page reached.")
                 break
-     
-            r=requests.get(json_doc_gyro['next'], auth=c_auth)
+    
+            r=requests.get(json_doc_gyro['next'], auth=c_auth) 
             next_doc_gyro=r.json()
             if not next_doc_gyro['measurements']:
                 print("Last page reached.")
                 break
-     
+    
             print("Page "+ str(i+2)+".\tCollecting data at: "+ measure_arr[0]['time'])
-     
+    
             for data in measure_arr:
                 gyro = list(filter(lambda rec: rec['time']==data['time'], next_doc_gyro['measurements']))
                 # For some timestamps, acceleration measurements are there but not gyroscope; skipping records with those timestamps
@@ -153,8 +154,9 @@ Data collection can be done by using the below shown and attached script *create
                     add2Data(data['c8y_Acceleration'], gyro[0]['c8y_Gyroscope'], writer)
             json_doc_acc = next_doc_acc
             json_doc_gyro = next_doc_gyro
-     
+    
     print("Training data written to " + TRAIN_DATA_FILE)
+
 	
 
 The training data set we collected is packaged as *training_data.zip* under the data sub-folder of the attached *AnomalyDetectionDemo.zip*.
@@ -165,11 +167,11 @@ For this demo, the anomaly detection machine learning algorithm "Isolation Fores
 
 The logic arguments goes: isolating anomaly observations is easier as only a few conditions are needed to separate those cases from the normal observations. On the other hand, isolating normal observations require more conditions. Therefore, an anomaly score can be calculated as the number of conditions required to separate a given observation. - [Anomaly Detection Using Isolation Forests](https://blog.easysol.net/using-isolation-forests-anamoly-detection/)
 
-The attached Python script *createModel.py* creates an Isolation Forest Model in PMML format using the previously created training data. If no training data was created with the *createTraningData.py* script, sample training data can be found under the data sub-folder of the attached ZIP file. It is then used for training the Isolation Forest model with the help of the scikit-learn framework ([https://scikit-learn.org](https://scikit-learn.org)). To obtain a robust and meaningful model, further cleaning of the training data and validating the best model parameters is required. This is not in the scope of this demo and presumes knowledge of data science best practices. After the model is created in scikit-learn format, it is converted into PMML format with the Nyoka library. Make sure to install Nyoka as detailed here: [https://github.com/nyoka-pmml/nyoka](https://github.com/nyoka-pmml/nyoka).
+The attached Python script *createModelForiPhoneData.py* creates an Isolation Forest Model in PMML format using the previously created training data. If no training data was created with the *createModelForiPhoneData.py* script, sample training data can be found under the data sub-folder of the attached ZIP file. It is then used for training the Isolation Forest model with the help of the scikit-learn framework ([https://scikit-learn.org](https://scikit-learn.org)). To obtain a robust and meaningful model, further cleaning of the training data and validating the best model parameters is required. This is not in the scope of this demo and presumes knowledge of data science best practices. After the model is created in scikit-learn format, it is converted into PMML format with the Nyoka library. Make sure to install Nyoka as detailed here: [https://github.com/nyoka-pmml/nyoka](https://github.com/nyoka-pmml/nyoka).
 
 You could try out the data you collected yourself as described in the data collection section. Alternatively, you can unzip the attached *data/training_data.zip* file which contains the sample training data and use it for training your model. Please note that the model trained with the attached data set might not work very well when you try to classify your own data. The reason is that the expected behavior of the training data and the data captured with your device would differ too much and any occurrence will be classified as anomalous.
 
-	createModel.py
+	createModelForiPhoneData.py
     from sklearn.ensemble import IsolationForest
     from sklearn.pipeline import Pipeline
     import numpy as np
@@ -179,37 +181,37 @@ You could try out the data you collected yourself as described in the data colle
     from nyoka import skl_to_pmml
     import warnings
     warnings.filterwarnings('ignore')
-     
+    
     # training data file
     DIR_DATA="data/"
     TRAIN_DATA_FILE=DIR_DATA+"dataset_training_iphone.csv"
-     
+    
     DIR_MODEL="model/"
     PMML_FILE_NAME = DIR_MODEL+"iforest_model_iphone.pmml"
-     
+    
     if not os.path.exists(DIR_MODEL):
         os.makedirs(DIR_MODEL)
-     
+    
     # load the data into an array
     with open(TRAIN_DATA_FILE, newline='') as csvfile:
         data = list(csv.reader(csvfile))
-     
+    
     # instantiate the isolation forest object
     iforest = IsolationForest(n_estimators=40, max_samples=3000, contamination=0, random_state=np.random.RandomState(42))
     # only use part of the data for quicker results
     iforest.fit(data[1:])
-     
+    
     # prepare pipeline for PMML conversion
     model_type="iforest"
     print("Start converting the model into PMML...")
     pipeline = Pipeline([
         (model_type, iforest)
     ])
-     
+    
     pipeline.fit(data[1:])
     features = ["accelerationY","accelerationX","accelerationZ","gyroX","gyroY","gyroZ"]
     skl_to_pmml(pipeline, features, "",PMML_FILE_NAME)
-     
+    
     print("Model with name "+PMML_FILE_NAME+" converted into PMML")
 
 #### Upload the model to Cumulocity
@@ -226,193 +228,191 @@ We create an EPL-based monitor file and upload it to Cumulocity. As mentioned ea
 
 Instead of creating a new monitor file, the attached *DetectAnomalies.mon* file can be used after making minor adjustments. Open *DetectAnomalies.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device, same as c_device_source in the CONFIG.INI file mentioned above. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps] (/guides/apama/analytics-introduction/#single-mon-file) in the Streaming analytics guide for details on uploading Apama monitor files.
 
-	using com.apama.correlator.Component;
-	using com.apama.cumulocity.Alarm;
-	using com.apama.cumulocity.Measurement;
-	using com.apama.cumulocity.FindManagedObjectResponse;
-	using com.apama.cumulocity.FindManagedObjectResponseAck;
-	using com.apama.cumulocity.FindManagedObject;
-	using com.softwareag.connectivity.httpclient.HttpOptions;
-	using com.softwareag.connectivity.httpclient.HttpTransport;
-	using com.softwareag.connectivity.httpclient.Request;
-	using com.softwareag.connectivity.httpclient.Response;
-	using com.apama.json.JSONPlugin;
-	
-	monitor DetectAnomalies {
-	
-		CumulocityRequestInterface cumulocity;
-		
-	    action onload() {
-	    	cumulocity := CumulocityRequestInterface.connectToCumulocity();
-	    	
-	    	// Replace yourDeviceId with the value of your device id
-			listenAndActOnMeasurements("yourDeviceId", "iforest");
-	    }
-	    
-	    action listenAndActOnMeasurements(string deviceId, string modelName) {
-	    	monitor.subscribe(Measurement.CHANNEL);
-	    	
-	    	on all Measurement(source = deviceId) as m {
-				if(m.measurements.hasKey("c8y_SignalStrengthWifi") and m.measurements.hasKey("c8y_Acceleration") and m.measurements.hasKey("c8y_Barometer") and m.measurements.hasKey("c8y_Gyroscope") and m.measurements.hasKey("c8y_Luxometer") and m.measurements.hasKey("c8y_Compass")){		
-					log "Received Measurement from C8Y";
-					string record := convertMeasurementToRecord(m);
-					log "Sending record to zementis - " + record;
-			        Request zementisRequest := cumulocity.createRequest("GET", "/service/zementis/apply/"+modelName, any());
-			        zementisRequest.setQueryParameter("record", record);
-			        zementisRequest.execute(ZementisHandler(deviceId).requestHandler);
-			        log "EPL execution completed.";	
-	        	}
-			} 
-	    }
-	 
-	    action convertMeasurementToRecord(Measurement m) returns string
-	    {
-	        dictionary<string, any> json := {};
-	        json["rssi"] := m.measurements.getOrDefault("c8y_SignalStrengthWifi").getOrDefault("rssi").value;
-	       	json["accelerationX"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationX").value;
-	    	json["accelerationY"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationY").value;
-	    	json["accelerationZ"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationZ").value;
-	    	json["air_pressure"] := m.measurements.getOrDefault("c8y_Barometer").getOrDefault("Air pressure").value;
-	    	json["gyroX"] := m.measurements.getOrDefault("c8y_Gyroscope").getOrDefault("gyroX").value;
-	    	json["gyroY"] := m.measurements.getOrDefault("c8y_Gyroscope").getOrDefault("gyroY").value;
-	    	json["gyroZ"] := m.measurements.getOrDefault("c8y_Gyroscope").getOrDefault("gyroZ").value;
-	    	json["lux"] := m.measurements.getOrDefault("c8y_Luxometer").getOrDefault("lux").value;
-	    	json["compassX"] := m.measurements.getOrDefault("c8y_Compass").getOrDefault("compassX").value;
-	    	json["compassY"] := m.measurements.getOrDefault("c8y_Compass").getOrDefault("compassY").value;
-	    	json["compassZ"] := m.measurements.getOrDefault("c8y_Compass").getOrDefault("compassZ").value;
-	        return JSONPlugin.toJSON(json);
-	    }
-	
-	    /** Cumulocity Request Interface.
-	     *
-	     * This is for making generic REST requests to other
-	     * Cumulocity microservices with JSON payloads.
-	     */
-	    event CumulocityRequestInterface
-	    {
-	       /** @private */
-	       HttpTransport transport;
-	        
-	       /**
-	       * Allows configuration of a HTTPTransport with
-	       * Cumulocity-specific configuration details.
-	       *
-	       * @returns The instance of the event that contains a transport
-	       */
-	       static action connectToCumulocity() returns CumulocityRequestInterface
-	       {
-	          string baseUrl := "";
-	          string basePath := "";
-	          string host := "";
-	          integer port := 0;
-	          string user := "";
-	          string password := "";
-	          boolean https := true;
-	          string tlsFile := "";
-	     
-	          dictionary<string, string> config := {};
-	          dictionary<string, string> envp := Component.getInfo("envp");
-	        
-	           
-	          if envp.hasKey("C8Y_BASEURL") and envp["C8Y_BASEURL"] != "" { // Running internal
-	             baseUrl := envp["C8Y_BASEURL"];
-	              
-	             user := envp["C8Y_TENANT"] + "/" + envp["C8Y_USER"];
-	             password :=envp["C8Y_PASSWORD"];
-	          }
-	          else { // Get the settings from the config properties when running remotely
-	             string k;
-	             dictionary<string, string> props := Component.getConfigProperties();
-	             for k in props.keys() {
-	                if (k = "CUMULOCITY_SERVER_URL") {
-	                   baseUrl := props[k];
-	                }
-	                else if (k = "CUMULOCITY_USERNAME"){
-	                   user := props[k];
-	                }
-	                else if (k = "CUMULOCITY_PASSWORD"){
-	                   password := props[k];
-	                }
-	                else if (k = "CUMULOCITY_TLS_CERT_AUTH_FILE"){
-	                   tlsFile := props[k];
-	                }
-	             }       
-	          }
-	     
-	          if baseUrl.find("/") < 0 {
-	             baseUrl := baseUrl + "/";
-	          }
-	       
-	          // Check if the baseUrl starts with either http or https
-	          if baseUrl.length()>=7 and baseUrl.substring(0,7).toLower() = "http://"{
-	             https := false;
-	             baseUrl := baseUrl.substring(7, baseUrl.length());
-	          }
-	          else if baseUrl.length()>=8 and baseUrl.substring(0,8).toLower() = "https://"{
-	             https := true;
-	             baseUrl := baseUrl.substring(8, baseUrl.length());
-	          }
-	          // Otherwise assume HTTPS and that the URL does not have such a prefix as http or https
-	     
-	          basePath := baseUrl.replace("[^/]*(/.*)?", "$1");
-	          host := baseUrl.replace("(?:(.*):|(.*)/|(.*)).*", "$1$2$3");
-	          port := baseUrl.replace("[^:]*:([0-9]*).*", "$1").toInteger();
-	          if (port = 0){
-	             if https = true{
-	                port := 443;
-	             }
-	             else{
-	                port := 80;
-	             }
-	          }
-	           
-	          config := {
-	             HttpTransport.CONFIG_USERNAME:user,
-	             HttpTransport.CONFIG_PASSWORD:password,
-	             HttpTransport.CONFIG_AUTH_TYPE:"HTTP_BASIC",
-	             HttpTransport.CONFIG_BASE_PATH:basePath
-	          };
-	           
-	          if https = true{
-	             config.add(HttpTransport.CONFIG_TLS,"true");
-	             config.add(HttpTransport.CONFIG_TLS_CERT_AUTH_FILE,tlsFile);
-	             config.add(HttpTransport.CONFIG_TLS_ACCEPT_UNRECOGNIZED_CERTS,"true");
-	          }
-	           
-	           
-	          log config.toString() at DEBUG;
-	          return CumulocityRequestInterface(HttpTransport.getOrCreateWithConfigurations(host, port, config));
-	       }
-	        
-	       /**
-	       * Allows creation of a request on a transport that
-	       * has been configured for a Cumulocity connection.
-	       *
-	       * @param method The type of HTTP request, for example "GET".
-	       * @param path A specific path to be appended to the request.
-	       * @param payload A dictionary of elements to be included in the request.
-	       */
-	       action createRequest(string method, string path, any payload) returns Request
-	       { 
-	          return transport.createRequest(method, path, payload, new HttpOptions);
-	       }
-	    }
-	    
-	    event ZementisHandler
-	    {
-	        string deviceId;
-	        action requestHandler(Response zementisResponse)
-	        {
-	            integer statusCode := zementisResponse.statusCode;
-	            log "Zementis responded with status -" + statusCode.toString();
-	            if (statusCode = 200 and <boolean> zementisResponse.payload.getSequence("outputs")[0].getEntry("outlier") = true) {
-	                send Alarm("", "AnomalyDetectionAlarm", deviceId, currentTime,
-	                    "Anomaly detected", "ACTIVE", "CRITICAL", 1, new dictionary<string, any>) to Alarm.CHANNEL;
-	                log "Alarm raised";
-	            }
-	        }
-	    }
-	}
+    using com.apama.correlator.Component;
+    using com.apama.cumulocity.Alarm;
+    using com.apama.cumulocity.Measurement;
+    using com.apama.cumulocity.FindManagedObjectResponse;
+    using com.apama.cumulocity.FindManagedObjectResponseAck;
+    using com.apama.cumulocity.FindManagedObject;
+    using com.softwareag.connectivity.httpclient.HttpOptions;
+    using com.softwareag.connectivity.httpclient.HttpTransport;
+    using com.softwareag.connectivity.httpclient.Request;
+    using com.softwareag.connectivity.httpclient.Response;
+    using com.apama.json.JSONPlugin;
+    
+    monitor DetectAnomalies_iPhone {
+    
+        CumulocityRequestInterface cumulocity;
+        
+        action onload() {
+            cumulocity := CumulocityRequestInterface.connectToCumulocity();
+            // Replace yourDeviceId with the value of your device id
+            listenAndActOnMeasurements("yourDeviceId", "IsolationForests");
+        }
+    
+        action listenAndActOnMeasurements(string deviceId, string modelName) {
+            monitor.subscribe(Measurement.CHANNEL);   
+            on all Measurement(source = deviceId) as m {
+    
+                if( m.measurements.hasKey("c8y_Acceleration")){ 
+    			log "Received Measurement c8y_Acceleration from C8Y" + m.toString();
+                	
+                dictionary <string, any> lastMeasurement := {};
+            		lastMeasurement["accelerationX"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationX").value;
+            		lastMeasurement["accelerationY"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationY").value;
+            		lastMeasurement["accelerationZ"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationZ").value;
+                    
+                    listener l := on all Measurement(source = deviceId) as n {
+                    	if n.measurements.hasKey("c8y_Gyroscope"){
+                    		lastMeasurement["gyroX"] := n.measurements.getOrDefault("c8y_Gyroscope").getOrDefault("gyroX").value;
+                    		lastMeasurement["gyroY"] := n.measurements.getOrDefault("c8y_Gyroscope").getOrDefault("gyroY").value;
+                    		lastMeasurement["gyroZ"] := n.measurements.getOrDefault("c8y_Gyroscope").getOrDefault("gyroZ").value;
+                         string record := JSONPlugin.toJSON(lastMeasurement);
+                            
+        	               log "Sending record to zementis - " + record;
+        	               Request zementisRequest := cumulocity.createRequest("GET", "/service/zementis/apply/" + modelName, any());
+        	               zementisRequest.setQueryParameter("record", record);
+        	               zementisRequest.execute(ZementisHandler(deviceId).requestHandler);
+        	               log "EPL execution completed."; 
+        	               l.quit();
+                    	}
+                    }
+                }
+            } 
+        }
+    
+        /** Cumulocity Request Interface.
+        *
+        * This is for making generic REST requests to other
+        * Cumulocity microservices with JSON payloads.
+        */
+       event CumulocityRequestInterface
+       {
+          /** @private */
+          HttpTransport transport;
+    
+          /**
+          * Allows configuration of a HTTPTransport with
+          * Cumulocity-specific configuration details.
+          *
+          * @returns The instance of the event that contains a transport
+          */
+          static action connectToCumulocity() returns CumulocityRequestInterface
+          {
+             string baseUrl := "";
+             string basePath := "";
+             string host := "";
+             integer port := 0;
+             string user := "";
+             string password := "";
+             boolean https := true;
+             string tlsFile := "";
+    
+             dictionary<string, string> config := {};
+             dictionary<string, string> envp := Component.getInfo("envp");
+    
+    
+             if envp.hasKey("C8Y_BASEURL") and envp["C8Y_BASEURL"] != "" { // Running internal
+                baseUrl := envp["C8Y_BASEURL"];
+    
+                user := envp["C8Y_TENANT"] + "/" + envp["C8Y_USER"];
+                password :=envp["C8Y_PASSWORD"];
+             }
+             else { // Get the settings from the config properties when running remotely
+                string k;
+                dictionary<string, string> props := Component.getConfigProperties();
+                for k in props.keys() {
+                   if (k = "CUMULOCITY_SERVER_URL") {
+                      baseUrl := props[k];
+                   }
+                   else if (k = "CUMULOCITY_USERNAME"){
+                      user := props[k];
+                   }
+                   else if (k = "CUMULOCITY_PASSWORD"){
+                      password := props[k];
+                   }
+                   else if (k = "CUMULOCITY_TLS_CERT_AUTH_FILE"){
+                      tlsFile := props[k];
+                   }
+                }       
+             }
+    
+             if baseUrl.find("/") < 0 {
+                baseUrl := baseUrl + "/";
+             }
+    
+             // Check if the baseUrl starts with either http or https
+             if baseUrl.length()>=7 and baseUrl.substring(0,7).toLower() = "http://"{
+                https := false;
+                baseUrl := baseUrl.substring(7, baseUrl.length());
+             }
+             else if baseUrl.length()>=8 and baseUrl.substring(0,8).toLower() = "https://"{
+                https := true;
+                baseUrl := baseUrl.substring(8, baseUrl.length());
+             }
+             // Otherwise assume HTTPS and that the URL does not have such a prefix as http or https
+    
+             basePath := baseUrl.replace("[^/]*(/.*)?", "$1");
+             host := baseUrl.replace("(?:(.*):|(.*)/|(.*)).*", "$1$2$3");
+             port := baseUrl.replace("[^:]*:([0-9]*).*", "$1").toInteger();
+             if (port = 0){
+                if https = true{
+                   port := 443;
+                }
+                else{
+                   port := 80;
+                }
+             }
+    
+             config := {
+                HttpTransport.CONFIG_USERNAME:user,
+                HttpTransport.CONFIG_PASSWORD:password,
+                HttpTransport.CONFIG_AUTH_TYPE:"HTTP_BASIC",
+                HttpTransport.CONFIG_BASE_PATH:basePath
+             };
+    
+             if https = true{
+                config.add(HttpTransport.CONFIG_TLS,"true");
+                config.add(HttpTransport.CONFIG_TLS_CERT_AUTH_FILE,tlsFile);
+                config.add(HttpTransport.CONFIG_TLS_ACCEPT_UNRECOGNIZED_CERTS,"true");
+             }
+    
+    
+             //log config.toString() at DEBUG;
+             return CumulocityRequestInterface(HttpTransport.getOrCreateWithConfigurations(host, port, config));
+          }
+    
+          /**
+          * Allows creation of a request on a transport that
+          * has been configured for a Cumulocity connection.
+          *
+          * @param method The type of HTTP request, for example "GET".
+          * @param path A specific path to be appended to the request.
+          * @param payload A dictionary of elements to be included in the request.
+          */
+          action createRequest(string method, string path, any payload) returns Request
+          { 
+             return transport.createRequest(method, path, payload, new HttpOptions);
+          }
+       }
+    
+       event ZementisHandler
+       {
+           string deviceId;
+           action requestHandler(Response zementisResponse)
+           {
+               integer statusCode := zementisResponse.statusCode;
+               boolean outlier := <boolean> zementisResponse.payload.getSequence("outputs")[0].getEntry("outlier");
+               log "Zementis responded with status:" + statusCode.toString() + " result:" +  (outlier).toString();
+               if (statusCode = 200 and outlier = true) {
+                   send Alarm("", "AnomalyDetectionAlarm", deviceId, currentTime,
+                       "Anomaly detected", "ACTIVE", "CRITICAL", 1, new dictionary<string, any>) to Alarm.CHANNEL;
+                   log "Alarm raised";
+               }
+           }
+       }
+    
+    }
 
 #### Trigger an anomaly alert
 

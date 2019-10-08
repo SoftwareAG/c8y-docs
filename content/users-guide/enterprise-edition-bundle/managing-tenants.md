@@ -85,7 +85,7 @@ In the management tenant, you will also find information on the parent tenant, i
 
 1. Click **Save** to apply your settings.
 
-When the tenant is created, it is automatically provisioned with a first, administrative user ("Administrator's username"). This administrator can create other users and set their permissions. The first user cannot be deleted to prevent you from locking yourself out.
+When the subtenant is created, it gets an auto-generated ID, which cannot be changed. Also, it is automatically provisioned with a first, administrative user ("Administrator's username"). This administrator can create other users and set their permissions. The first user cannot be deleted to prevent you from locking yourself out.
 
 From the management tenant, you can enable other tenants to create subtenants. To do so, check **Allow creation of subtenants** in the tenant editor.
 
@@ -118,7 +118,7 @@ The following information is displayed here:
 
 Suspending a tenant blocks any access to this tenant, regardless whether the access is from devices, users or other applications.
 
-If a tenant is suspended, the tenant’s data remains in the database and can be made available later by clicking **Activate**.
+If a tenant is suspended, the tenantâ€™s data remains in the database and can be made available later by clicking **Activate**.
 
 >**Important**: Suspended tenants for all Cumulocity IoT Public Cloud instances will be automatically deleted after 30 days.
 
@@ -137,7 +137,9 @@ As part of suspending the tenant, an email is sent to the tenant administrator i
 
 ### Deleting subtenants
 
-**Important**: Deleting a subtenant cannot be reverted. For security reasons, it is only available in the management tenant.
+>**Important**: Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the management tenant. You cannot delete tenants from any tenant but the management tenant. 
+>
+>Administrators in Enterprise Tenants are only allowed to suspend active subtenants, but not to delete them. 
 
 #### To delete a subtenant
 
@@ -335,7 +337,6 @@ The information on the microservice usage is presented in the **Usage Statistics
 ![Tenant statistics](/guides/images/users-guide/Administration/admin-subtenants-usage-statistics-microservice.png)
 
 For more details, refer to [Tenants > Tenant usage statistics](/guides/reference/tenants/#tenant-usage-statistics) in the Reference guide. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
-
 
 ##### Scaling
 

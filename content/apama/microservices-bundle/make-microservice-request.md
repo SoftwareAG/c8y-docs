@@ -23,14 +23,14 @@ This takes the HTTP method to use (usually GET, PUT or POST), a path including t
 Requests are executed with a call-back action as an argument which will be invoked when the request is completed with the response as an argument. If you need to set any options, query parameters or headers on the request, you can set those on the `Request` object before calling it. For example:
 
 ```java
-action responseHandled(Response resp) {
+action responseCallback(Response resp) {
     string objectId := resp.payload.getString("id");
     ...
 }
 ...
 Request req := cumulocity.createRequest("GET", "/service/otherService/data", any());
 req.setQueryParameter("type", "object");
-req.execute(responseHandled);
+req.execute(responseCallback);
 ```
 
 The response will also be decoded from JSON and the response payload uses the `AnyExtractor` pattern which you can find linked from the `Response` event in the HTTP Client transport documentation. The above example will be equivalent to the REST request `GET http://cumulocity/service/otherService/data?type=object`.

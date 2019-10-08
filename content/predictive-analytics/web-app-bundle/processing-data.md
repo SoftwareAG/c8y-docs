@@ -54,29 +54,29 @@ Click the cogwheel icon <img src="/guides/images/zementis/zementis-cogwheel-icon
 Click the file icon <img src="/guides/images/zementis/zementis-file-icon.png" alt="File" style="display:inline-block; margin:0"> in front of a row, to download a full execution trace, showing what exactly happened when that record was applied against the model. In this way, you can investigate why the outputs did not match.
 
 ### Scheduled Processing
-The **Scheduled Processing** tab allows you to schedule jobs for scoring device measurements against your predictive models.
+The **Scheduled Processing** tab allows you to schedule batch jobs for processing measurements from device or device group against an available model.
 
-The job scheduler can be used to trigger periodic jobs on data captured from devices. Periodic executions of such jobs can be useful when aggregate information on model's predictions is required for a desired time period.
+The job scheduler can be used to trigger one time or periodic jobs on data captured from devices. The scheduler allows the user to map device data to model inputs by providing a mapping tool. Periodic executions of batch jobs can be useful when aggregate information on model’s predictions is required for a desired time period.
 
 #### Scheduling a job
 
 To schedule a new job, perform the following steps:
 
 1. Click **Create Job** in the **Scheduled Processing** page. 
-2. In the **Job Config** wizard, enter the name and description of the job you want to create. Also, select a target device/device-group from the dropdown. The dropdown lists maximum 2000 devices or groups. Once done, select a target model which you want to use for scoring the data captured from your chosen device or device-group. The dropdown list shows all models which you have uploaded to the **Models** page. <br>
+2. In the **Job Config** wizard, enter the name and description of the job you want to create. Also, select a target device/device-group from the dropdown. The dropdown lists maximum 2000 devices or groups. Once done, select a target model which will be used for processing the data captured from your chosen device or device-group. The dropdown list shows all models which you have uploaded to the **Models** page.<br>
 ![Scheduled process 1](/guides/images/zementis/zementis-jobconfig-info.png)
 <br>Click **Next** to proceed. 
-3. Every device would have various measurement which are persisted in Cumulocity. In the **Mapping** section, map which measurement of the device should be fed as data input to the model.<br>
+3. Each device can have various measurements which are persisted in Cumulocity. In the **Mapping** section, map the device measurements to the corresponding model inputs.<br>
 ![Scheduled process 2](/guides/images/zementis/zementis-jobconfig-mapping.png)
 <br>Click **Next** to proceed.
-4. Set the schedule of the job by choosing the frequency for the job followed by when it should run. Also, you need to choose the range of past data which should be used when the job is executed.
+4. Set the schedule of the job by choosing the frequency for the job followed by when it should run. You will also need to specify the data range which should be used for processing when the job is executed.
 ![Scheduled process 3](/guides/images/zementis/zementis-jobconfig-schedule.png)
 <br>Click **Finish** to schedule the job that you just configured.
 
 >**Info**:
-<br>1. For schedule of Periodic frequency, a CRON expression is generated and used by the scheduler.
+<br>1. For a periodic frequency, a CRON expression is generated and used by the scheduler.
 <br>2. The data range chosen for the schedule must not exceed 24 hours.
-<br>3. For schedule of Once frequency, you need to choose the date when the job should run. Also, you need to specify the data range from the past which should be used when the job is executed.
+<br>3. For a one-time job, you need to choose the date when the job should run. You will also need to specify the data range which should be used for processing when the job is executed.
 
 After the job is scheduled, you will see a corresponding notification.
 
@@ -85,7 +85,7 @@ After the job is scheduled, you will see a corresponding notification.
 ![Scheduled Jobs](/guides/images/zementis/zementis-scheduled-jobs.png)
 
 By design, the **Scheduled Processing** page will preview all the scheduled jobs in a paginated manner, displaying 10 jobs per page. 
-Click any link under **NAME** column  to view the configuration of that specific job. Click the delete icon of any job to remove the job. 
+Click any link under **NAME** column to view the configuration of that specific job. Click the delete icon of any job to remove the job.
 
 #### Viewing the execution results of jobs
 
@@ -98,9 +98,10 @@ For executions with status **Warning** or **Failure**, hover on the status to se
 
 #### Viewing the inferences of a job execution
 
-To view the inferences of any execution of a job, click on the details icon associated to that execution in the **Execution Results** page.
+To view the inferences generated by any execution of a job, click on the details icon associated to that execution in the **Execution Results** page.
 
-![Execution Inferences](/guides/images/zementis/zementis-execution-inferences.png)
+![Execution Inferences Continuous](/guides/images/zementis/zementis-execution-inferences-continuous.png)
+![Execution Inferences Categorical](/guides/images/zementis/zementis-execution-inferences-categorical.png)
 
-The inferences pop-up would show two different types of charts, a histogram plotting all the model's continuous outputs and a piechart plotting the model's categorical outputs.
-The inferences are shown in a paginated manner, displaying 2000 executions per page. For executions containing device groups, it will also allow you to shuffle between different devices which were part of that execution.
+The inferences pop-up would show two different types of charts, a histogram plotting all the model’s continuous outputs and a pie-chart plotting the model’s categorical outputs. 
+The inferences are shown in a paginated manner, displaying 2000 inferences per page. For executions containing device groups, it will also allow you to shuffle between different devices which were part of that execution.

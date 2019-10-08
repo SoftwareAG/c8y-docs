@@ -71,14 +71,14 @@ To schedule a new job, perform the following steps:
 3. Each device can have various measurements which are persisted in Cumulocity. In the **Mapping** section, map the device measurements to the corresponding model inputs.<br>
 ![Scheduled process 2](/guides/images/zementis/zementis-jobconfig-mapping.png)
 <br>Click **Next** to proceed.
-4. Set the schedule of the job by selecting the frequency for the job followed by when it should run. You also need to specify the data range used for processing when the job is executed.
+4. Set the schedule of the job by selecting the frequency for the job followed by when it should run. You also need to specify the data range to be used for processing when the job is executed.
 ![Scheduled process 3](/guides/images/zementis/zementis-jobconfig-schedule.png)
 <br>Click **Finish** to schedule the job that you just configured.
 
 >**Info**:
 <br>1. For a periodic frequency, a CRON expression is generated and used by the scheduler.
 <br>2. The data range selected for the schedule must not exceed 24 hours.
-<br>3. For a one-time job, you need to select the date when the job should run. You also need to specify the data range used for processing when the job is executed.
+<br>3. For a one-time job, you need to select the date when the job should run. You also need to specify the data range to be used for processing when the job is executed.
 
 After the job is scheduled, you will see a corresponding notification.
 

@@ -56,7 +56,7 @@ For details, see the [How-to recipes](/guides/web/how-to/) in the Web SDK guide.
 
 The application in the app switcher which was previously called “Apama-epl” is now called “Apama EPL Apps”.
 
-The sample applications that were previously accessible from https://cumulocity.com/guides/apama/examples/#misc-applications are now available directly from the Apama EPL Apps application. 
+The sample applications that were previously accessible from [Miscellaneous sample applications](/guides/apama/examples/#misc-applications) in the Streaming analytics guide are now available directly from the Apama EPL Apps application. 
 
 
 ### Apama Analytics Builder

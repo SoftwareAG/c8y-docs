@@ -157,7 +157,7 @@ Data collection can be done by using the below shown and attached script *create
     
     print("Training data written to " + TRAIN_DATA_FILE)	
 
-The training data set we collected is packaged as *training_data.zip* under the data sub-folder of the attached *AnomalyDetectionDemo.zip*.
+The training data set we collected is packaged as *dataset_training_iphone.zip* under the data sub-folder of the attached *AnomalyDetectionDemo.zip*.
 
 #### Train the PMML model
 
@@ -167,7 +167,7 @@ The logic arguments goes: isolating anomaly observations is easier as only a few
 
 The attached Python script *createModelForiPhoneData.py* creates an Isolation Forest Model in PMML format using the previously created training data. If no training data was created with the *createModelForiPhoneData.py* script, sample training data can be found under the data sub-folder of the attached ZIP file. It is then used for training the Isolation Forest model with the help of the scikit-learn framework ([https://scikit-learn.org](https://scikit-learn.org)). To obtain a robust and meaningful model, further cleaning of the training data and validating the best model parameters is required. This is not in the scope of this demo and presumes knowledge of data science best practices. After the model is created in scikit-learn format, it is converted into PMML format with the Nyoka library. Make sure to install Nyoka as detailed here: [https://github.com/nyoka-pmml/nyoka](https://github.com/nyoka-pmml/nyoka).
 
-You could try out the data you collected yourself as described in the data collection section. Alternatively, you can unzip the attached *data/training_data.zip* file which contains the sample training data and use it for training your model. Note that the model trained with the attached data set might not work very well when you try to classify your own data. The reason is that the expected behavior of the training data and the data captured with your device would differ too much and any occurrence will be classified as anomalous.
+You could try out the data you collected yourself as described in the data collection section. Alternatively, you can unzip the attached *data/dataset_training_iphone.zip* file which contains the sample training data and use it for training your model. Note that the model trained with the attached data set might not work very well when you try to classify your own data. The reason is that the expected behavior of the training data and the data captured with your device would differ too much and any occurrence will be classified as anomalous.
 
 	createModelForiPhoneData.py
     from sklearn.ensemble import IsolationForest
@@ -216,7 +216,7 @@ You could try out the data you collected yourself as described in the data colle
 
 In order to upload the model to Cumulocity, follow the steps described in [Predictive Analytics application > Managing models](/guides/predictive-analytics/web-app/#managing-models).
 
-A pre-trained model *iforest_model_iphone.pmml* is also attached for reference. This anomaly detection model was trained with the data available in *dataset_training_iphone.csv* mentioned in the section above.
+A pre-trained model *iforest_demo_iphone.pmml* is also attached for reference. This anomaly detection model was trained with the data available in *dataset_training_iphone.zip* mentioned in the section above.
 
 #### Create and upload Apama monitor to Cumulocity
 

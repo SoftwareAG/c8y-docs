@@ -33,12 +33,6 @@ The following code block contains the data format of the JSON schema that was as
 	        "self" : "https://zdev.cumulocity.com/inventory/managedObjects/2046206"
 	    },
 	    "type" : "c8ydemoAndroid",
-	    "c8y_SignalStrengthWifi" : {
-	        "rssi" : {
-	            "unit" : "dBm",
-	            "value" : -46
-	        }
-	    },
 	    "c8y_Acceleration" : {
 	        "accelerationY" : {
 	            "unit" : "G",
@@ -53,12 +47,6 @@ The following code block contains the data format of the JSON schema that was as
 	            "value" : 7.345794677734375
 	        }
 	    },
-	    "c8y_Barometer" : {
-	        "Air pressure" : {
-	            "unit" : "mBar",
-	            "value" : 10.009281005859375
-	        }
-	    },
 	    "c8y_Gyroscope" : {
 	        "gyroX" : {
 	            "unit" : "°/s",
@@ -71,26 +59,6 @@ The following code block contains the data format of the JSON schema that was as
 	        "gyroZ" : {
 	            "unit" : "°/s",
 	            "value" : -4.908660888671875
-	        }
-	    },
-	    "c8y_Luxometer" : {
-	        "lux" : {
-	            "unit" : "lux",
-	            "value" : 240.79098510742188
-	        }
-	    },
-	    "c8y_Compass" : {
-	        "compassX" : {
-	            "unit" : "uT",
-	            "value" : -72.021484375
-	        },
-	        "compassY" : {
-	            "unit" : "uT",
-	            "value" : -24.5941162109375
-	        },
-	        "compassZ" : {
-	            "unit" : "uT",
-	            "value" : -15.24505615234375
 	        }
 	    }
 	}
@@ -241,193 +209,187 @@ We create an EPL-based monitor file and upload it to Cumulocity. As mentioned ea
 
 Instead of creating a new monitor file, the attached *DetectAnomalies.mon* file can be used after making minor adjustments. Open *DetectAnomalies.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device, same as c_device_source in the CONFIG.INI file mentioned above. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps] (/guides/apama/analytics-introduction/#single-mon-file) in the Streaming analytics guide for details on uploading Apama monitor files.
 
-	using com.apama.correlator.Component;
-	using com.apama.cumulocity.Alarm;
-	using com.apama.cumulocity.Measurement;
-	using com.apama.cumulocity.FindManagedObjectResponse;
-	using com.apama.cumulocity.FindManagedObjectResponseAck;
-	using com.apama.cumulocity.FindManagedObject;
-	using com.softwareag.connectivity.httpclient.HttpOptions;
-	using com.softwareag.connectivity.httpclient.HttpTransport;
-	using com.softwareag.connectivity.httpclient.Request;
-	using com.softwareag.connectivity.httpclient.Response;
-	using com.apama.json.JSONPlugin;
-	
-	monitor DetectAnomalies {
-	
-		CumulocityRequestInterface cumulocity;
-		
-	    action onload() {
-	    	cumulocity := CumulocityRequestInterface.connectToCumulocity();
-	    	
-	    	// Replace yourDeviceId with the value of your device id
-			listenAndActOnMeasurements("yourDeviceId", "iforest");
-	    }
-	    
-	    action listenAndActOnMeasurements(string deviceId, string modelName) {
-	    	monitor.subscribe(Measurement.CHANNEL);
-	    	
-	    	on all Measurement(source = deviceId) as m {
-				if(m.measurements.hasKey("c8y_SignalStrengthWifi") and m.measurements.hasKey("c8y_Acceleration") and m.measurements.hasKey("c8y_Barometer") and m.measurements.hasKey("c8y_Gyroscope") and m.measurements.hasKey("c8y_Luxometer") and m.measurements.hasKey("c8y_Compass")){		
-					log "Received Measurement from C8Y";
-					string record := convertMeasurementToRecord(m);
-					log "Sending record to zementis - " + record;
-			        Request zementisRequest := cumulocity.createRequest("GET", "/service/zementis/apply/"+modelName, any());
-			        zementisRequest.setQueryParameter("record", record);
-			        zementisRequest.execute(ZementisHandler(deviceId).requestHandler);
-			        log "EPL execution completed.";	
-	        	}
-			} 
-	    }
-	 
-	    action convertMeasurementToRecord(Measurement m) returns string
-	    {
-	        dictionary<string, any> json := {};
-	        json["rssi"] := m.measurements.getOrDefault("c8y_SignalStrengthWifi").getOrDefault("rssi").value;
-	       	json["accelerationX"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationX").value;
-	    	json["accelerationY"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationY").value;
-	    	json["accelerationZ"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationZ").value;
-	    	json["air_pressure"] := m.measurements.getOrDefault("c8y_Barometer").getOrDefault("Air pressure").value;
-	    	json["gyroX"] := m.measurements.getOrDefault("c8y_Gyroscope").getOrDefault("gyroX").value;
-	    	json["gyroY"] := m.measurements.getOrDefault("c8y_Gyroscope").getOrDefault("gyroY").value;
-	    	json["gyroZ"] := m.measurements.getOrDefault("c8y_Gyroscope").getOrDefault("gyroZ").value;
-	    	json["lux"] := m.measurements.getOrDefault("c8y_Luxometer").getOrDefault("lux").value;
-	    	json["compassX"] := m.measurements.getOrDefault("c8y_Compass").getOrDefault("compassX").value;
-	    	json["compassY"] := m.measurements.getOrDefault("c8y_Compass").getOrDefault("compassY").value;
-	    	json["compassZ"] := m.measurements.getOrDefault("c8y_Compass").getOrDefault("compassZ").value;
-	        return JSONPlugin.toJSON(json);
-	    }
-	
-	    /** Cumulocity Request Interface.
-	     *
-	     * This is for making generic REST requests to other
-	     * Cumulocity microservices with JSON payloads.
-	     */
-	    event CumulocityRequestInterface
-	    {
-	       /** @private */
-	       HttpTransport transport;
-	        
-	       /**
-	       * Allows configuration of a HTTPTransport with
-	       * Cumulocity-specific configuration details.
-	       *
-	       * @returns The instance of the event that contains a transport
-	       */
-	       static action connectToCumulocity() returns CumulocityRequestInterface
-	       {
-	          string baseUrl := "";
-	          string basePath := "";
-	          string host := "";
-	          integer port := 0;
-	          string user := "";
-	          string password := "";
-	          boolean https := true;
-	          string tlsFile := "";
-	     
-	          dictionary<string, string> config := {};
-	          dictionary<string, string> envp := Component.getInfo("envp");
-	        
-	           
-	          if envp.hasKey("C8Y_BASEURL") and envp["C8Y_BASEURL"] != "" { // Running internal
-	             baseUrl := envp["C8Y_BASEURL"];
-	              
-	             user := envp["C8Y_TENANT"] + "/" + envp["C8Y_USER"];
-	             password :=envp["C8Y_PASSWORD"];
-	          }
-	          else { // Get the settings from the config properties when running remotely
-	             string k;
-	             dictionary<string, string> props := Component.getConfigProperties();
-	             for k in props.keys() {
-	                if (k = "CUMULOCITY_SERVER_URL") {
-	                   baseUrl := props[k];
-	                }
-	                else if (k = "CUMULOCITY_USERNAME"){
-	                   user := props[k];
-	                }
-	                else if (k = "CUMULOCITY_PASSWORD"){
-	                   password := props[k];
-	                }
-	                else if (k = "CUMULOCITY_TLS_CERT_AUTH_FILE"){
-	                   tlsFile := props[k];
-	                }
-	             }       
-	          }
-	     
-	          if baseUrl.find("/") < 0 {
-	             baseUrl := baseUrl + "/";
-	          }
-	       
-	          // Check if the baseUrl starts with either http or https
-	          if baseUrl.length()>=7 and baseUrl.substring(0,7).toLower() = "http://"{
-	             https := false;
-	             baseUrl := baseUrl.substring(7, baseUrl.length());
-	          }
-	          else if baseUrl.length()>=8 and baseUrl.substring(0,8).toLower() = "https://"{
-	             https := true;
-	             baseUrl := baseUrl.substring(8, baseUrl.length());
-	          }
-	          // Otherwise assume HTTPS and that the URL does not have such a prefix as http or https
-	     
-	          basePath := baseUrl.replace("[^/]*(/.*)?", "$1");
-	          host := baseUrl.replace("(?:(.*):|(.*)/|(.*)).*", "$1$2$3");
-	          port := baseUrl.replace("[^:]*:([0-9]*).*", "$1").toInteger();
-	          if (port = 0){
-	             if https = true{
-	                port := 443;
-	             }
-	             else{
-	                port := 80;
-	             }
-	          }
-	           
-	          config := {
-	             HttpTransport.CONFIG_USERNAME:user,
-	             HttpTransport.CONFIG_PASSWORD:password,
-	             HttpTransport.CONFIG_AUTH_TYPE:"HTTP_BASIC",
-	             HttpTransport.CONFIG_BASE_PATH:basePath
-	          };
-	           
-	          if https = true{
-	             config.add(HttpTransport.CONFIG_TLS,"true");
-	             config.add(HttpTransport.CONFIG_TLS_CERT_AUTH_FILE,tlsFile);
-	             config.add(HttpTransport.CONFIG_TLS_ACCEPT_UNRECOGNIZED_CERTS,"true");
-	          }
-	           
-	           
-	          log config.toString() at DEBUG;
-	          return CumulocityRequestInterface(HttpTransport.getOrCreateWithConfigurations(host, port, config));
-	       }
-	        
-	       /**
-	       * Allows creation of a request on a transport that
-	       * has been configured for a Cumulocity connection.
-	       *
-	       * @param method The type of HTTP request, for example "GET".
-	       * @param path A specific path to be appended to the request.
-	       * @param payload A dictionary of elements to be included in the request.
-	       */
-	       action createRequest(string method, string path, any payload) returns Request
-	       { 
-	          return transport.createRequest(method, path, payload, new HttpOptions);
-	       }
-	    }
-	    
-	    event ZementisHandler
-	    {
-	        string deviceId;
-	        action requestHandler(Response zementisResponse)
-	        {
-	            integer statusCode := zementisResponse.statusCode;
-	            log "Zementis responded with status -" + statusCode.toString();
-	            if (statusCode = 200 and <boolean> zementisResponse.payload.getSequence("outputs")[0].getEntry("outlier") = true) {
-	                send Alarm("", "AnomalyDetectionAlarm", deviceId, currentTime,
-	                    "Anomaly detected", "ACTIVE", "CRITICAL", 1, new dictionary<string, any>) to Alarm.CHANNEL;
-	                log "Alarm raised";
-	            }
-	        }
-	    }
-	}
+    using com.apama.correlator.Component;
+    using com.apama.cumulocity.Alarm;
+    using com.apama.cumulocity.Measurement;
+    using com.apama.cumulocity.FindManagedObjectResponse;
+    using com.apama.cumulocity.FindManagedObjectResponseAck;
+    using com.apama.cumulocity.FindManagedObject;
+    using com.softwareag.connectivity.httpclient.HttpOptions;
+    using com.softwareag.connectivity.httpclient.HttpTransport;
+    using com.softwareag.connectivity.httpclient.Request;
+    using com.softwareag.connectivity.httpclient.Response;
+    using com.apama.json.JSONPlugin;
+    
+    monitor DetectAnomalies {
+    
+    	CumulocityRequestInterface cumulocity;
+    	
+        action onload() {
+        	cumulocity := CumulocityRequestInterface.connectToCumulocity();
+        	
+        	// Replace yourDeviceId with the value of your device id
+    		listenAndActOnMeasurements("yourDeviceId", "IsolationForests");
+        }
+        
+        action listenAndActOnMeasurements(string deviceId, string modelName) {
+        	monitor.subscribe(Measurement.CHANNEL);
+        	
+        	on all Measurement(source = deviceId) as m {
+    			if(m.measurements.hasKey("c8y_Acceleration") and m.measurements.hasKey("c8y_Gyroscope")){		
+    				log "Received Measurement from C8Y";
+    				string record := convertMeasurementToRecord(m);
+    				log "Sending record to zementis - " + record;
+    		        Request zementisRequest := cumulocity.createRequest("GET", "/service/zementis/apply/"+modelName, any());
+    		        zementisRequest.setQueryParameter("record", record);
+    		        zementisRequest.execute(ZementisHandler(deviceId).requestHandler);
+    		        log "EPL execution completed.";	
+            	}
+    		} 
+        }
+     
+        action convertMeasurementToRecord(Measurement m) returns string
+        {
+            dictionary<string, any> json := {};
+           	json["accelerationX"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationX").value;
+        	json["accelerationY"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationY").value;
+        	json["accelerationZ"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationZ").value;
+        	json["gyroX"] := m.measurements.getOrDefault("c8y_Gyroscope").getOrDefault("gyroX").value;
+        	json["gyroY"] := m.measurements.getOrDefault("c8y_Gyroscope").getOrDefault("gyroY").value;
+        	json["gyroZ"] := m.measurements.getOrDefault("c8y_Gyroscope").getOrDefault("gyroZ").value;
+            return JSONPlugin.toJSON(json);
+        }
+    
+        /** Cumulocity Request Interface.
+         *
+         * This is for making generic REST requests to other
+         * Cumulocity microservices with JSON payloads.
+         */
+        event CumulocityRequestInterface
+        {
+           /** @private */
+           HttpTransport transport;
+            
+           /**
+           * Allows configuration of a HTTPTransport with
+           * Cumulocity-specific configuration details.
+           *
+           * @returns The instance of the event that contains a transport
+           */
+           static action connectToCumulocity() returns CumulocityRequestInterface
+           {
+              string baseUrl := "";
+              string basePath := "";
+              string host := "";
+              integer port := 0;
+              string user := "";
+              string password := "";
+              boolean https := true;
+              string tlsFile := "";
+         
+              dictionary<string, string> config := {};
+              dictionary<string, string> envp := Component.getInfo("envp");
+            
+               
+              if envp.hasKey("C8Y_BASEURL") and envp["C8Y_BASEURL"] != "" { // Running internal
+                 baseUrl := envp["C8Y_BASEURL"];
+                  
+                 user := envp["C8Y_TENANT"] + "/" + envp["C8Y_USER"];
+                 password :=envp["C8Y_PASSWORD"];
+              }
+              else { // Get the settings from the config properties when running remotely
+                 string k;
+                 dictionary<string, string> props := Component.getConfigProperties();
+                 for k in props.keys() {
+                    if (k = "CUMULOCITY_SERVER_URL") {
+                       baseUrl := props[k];
+                    }
+                    else if (k = "CUMULOCITY_USERNAME"){
+                       user := props[k];
+                    }
+                    else if (k = "CUMULOCITY_PASSWORD"){
+                       password := props[k];
+                    }
+                    else if (k = "CUMULOCITY_TLS_CERT_AUTH_FILE"){
+                       tlsFile := props[k];
+                    }
+                 }       
+              }
+         
+              if baseUrl.find("/") < 0 {
+                 baseUrl := baseUrl + "/";
+              }
+           
+              // Check if the baseUrl starts with either http or https
+              if baseUrl.length()>=7 and baseUrl.substring(0,7).toLower() = "http://"{
+                 https := false;
+                 baseUrl := baseUrl.substring(7, baseUrl.length());
+              }
+              else if baseUrl.length()>=8 and baseUrl.substring(0,8).toLower() = "https://"{
+                 https := true;
+                 baseUrl := baseUrl.substring(8, baseUrl.length());
+              }
+              // Otherwise assume HTTPS and that the URL does not have such a prefix as http or https
+         
+              basePath := baseUrl.replace("[^/]*(/.*)?", "$1");
+              host := baseUrl.replace("(?:(.*):|(.*)/|(.*)).*", "$1$2$3");
+              port := baseUrl.replace("[^:]*:([0-9]*).*", "$1").toInteger();
+              if (port = 0){
+                 if https = true{
+                    port := 443;
+                 }
+                 else{
+                    port := 80;
+                 }
+              }
+               
+              config := {
+                 HttpTransport.CONFIG_USERNAME:user,
+                 HttpTransport.CONFIG_PASSWORD:password,
+                 HttpTransport.CONFIG_AUTH_TYPE:"HTTP_BASIC",
+                 HttpTransport.CONFIG_BASE_PATH:basePath
+              };
+               
+              if https = true{
+                 config.add(HttpTransport.CONFIG_TLS,"true");
+                 config.add(HttpTransport.CONFIG_TLS_CERT_AUTH_FILE,tlsFile);
+                 config.add(HttpTransport.CONFIG_TLS_ACCEPT_UNRECOGNIZED_CERTS,"true");
+              }
+               
+               
+              log config.toString() at DEBUG;
+              return CumulocityRequestInterface(HttpTransport.getOrCreateWithConfigurations(host, port, config));
+           }
+            
+           /**
+           * Allows creation of a request on a transport that
+           * has been configured for a Cumulocity connection.
+           *
+           * @param method The type of HTTP request, for example "GET".
+           * @param path A specific path to be appended to the request.
+           * @param payload A dictionary of elements to be included in the request.
+           */
+           action createRequest(string method, string path, any payload) returns Request
+           { 
+              return transport.createRequest(method, path, payload, new HttpOptions);
+           }
+        }
+        
+        event ZementisHandler
+        {
+            string deviceId;
+            action requestHandler(Response zementisResponse)
+            {
+                integer statusCode := zementisResponse.statusCode;
+                log "Zementis responded with status -" + statusCode.toString();
+                if (statusCode = 200 and <boolean> zementisResponse.payload.getSequence("outputs")[0].getEntry("outlier") = true) {
+                    send Alarm("", "AnomalyDetectionAlarm", deviceId, currentTime,
+                        "Anomaly detected", "ACTIVE", "CRITICAL", 1, new dictionary<string, any>) to Alarm.CHANNEL;
+                    log "Alarm raised";
+                }
+            }
+        }
+    }
 
 #### Trigger an anomaly alert
 

@@ -141,7 +141,7 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
-|cpu|String |Limit for number of CPUs or CPU time <br>Default: 0.5, Min: 0.1 or 100m|No
+|cpu|String |Limit for number of CPUs or CPU time <br>Default: 0.5 cpu or 500m cpu time , Min: 0.1 cpu or 100m cpu time <br/>For time limit possible units are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki |No
 |memory|String |Limit for microservice memory usage <br>Default: 512M, Min: 10M, Max: 32G <br/>Possible units are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki |No
 
 #### Option

@@ -10,7 +10,7 @@ There are several processing modes for API requests in Cumulocity: *persistent*,
 
 * Transient - Will send data to the real-time engine and immediately return asynchronously and not store it in Cumulocity's database. This mode saves storage and processing costs and is useful for example when tracking devices in real time without requiring data to be stored.
 
-* Quiescent - Behaves similar to the "persistent" mode with the exception that no real-time notifications will be sent. The "quiescent" processing mode is applicable only for measurements and events.
+* Quiescent - Behaves similarly to the "persistent" mode with the exception that no real-time notifications will be sent. The "quiescent" processing mode is applicable only for measurements and events.
 
 * Cep - Behaves like the "transient" mode with the exception that no real-time notifications are sent. Currently it is applicable only for measurements and events.
 
@@ -18,7 +18,7 @@ There are several processing modes for API requests in Cumulocity: *persistent*,
 
 ### Examples
 
-Assume that location updates from cars should be monitored every second while the car is driving, but only be stored once in a minute into the database for reporting purposes. This is done using the following Apama statement:
+Assume that location updates from cars should be monitored every second while the car is driving, but only be stored once a minute into the database for reporting purposes. This is done using the following Apama statement:
 
 	using com.apama.cumulocity.Event;
 	using com.apama.cumulocity.Measurement;

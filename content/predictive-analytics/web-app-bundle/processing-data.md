@@ -12,15 +12,15 @@ Click **Predictions** in the navigator, to open the **Predictions** page.
 
 ### Batch Processing
 
-The **Batch Processing** tab allows you to process data records supplied to the model in a CSV or JSON file. The records are processed in batches. It also allows you to pass on image data as a JPEG or PNG file for processing.
+The Batch Processing allows you to process data records supplied to the model in a CSV or JSON file. The records are processed in batches. It also allows you to pass on image data as a JPEG or PNG file for processing.
 
-The **Batch Processing** tab is primarily targeted for testing the accuracy of your predictive models by applying it against your test data. Hence, it is expected that you know the predicted outputs beforehand.
+The Batch Processing is primarily targeted for testing the accuracy of your predictive models by applying it against your test data. Hence, it is expected that you know the predicted outputs beforehand.
 
 #### Running the batch process
 
 To run the batch process, perform the following steps:
 
-1. Click **Start** in the **Predictions** page to initiate the batch processing. 
+1. Click **Start** in the **Batch processing** tab to initiate the batch processing. 
 2. In the **Batch Processing** wizard, select a model from the dropdown list. The dropdown list shows all models which you have uploaded to the **Models** page. <br>
 ![Batch process 1](/guides/images/zementis/zementis-batch-process1.jpeg)
 <br>Click **Next** to proceed. 
@@ -56,7 +56,7 @@ Click the file icon <img src="/guides/images/zementis/zementis-file-icon.png" al
 
 ### Scheduled Processing
 
-The **Scheduled Processing** tab allows you to schedule batch jobs for processing measurements from devices or device groups against an available model.
+Scheduled Processing allows you to schedule batch jobs for processing measurements from devices or device groups against an available model.
 
 The job scheduler can be used to trigger one-time or periodic jobs on data captured from devices. The scheduler allows you to map device data to model inputs by providing a mapping tool. Periodic executions of batch jobs can be useful when aggregate information on model’s predictions is required for a desired time period.
 

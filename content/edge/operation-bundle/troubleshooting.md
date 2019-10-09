@@ -260,7 +260,7 @@ The solution stores log files at the following locations for the different nodes
 
 To access the correlator log files, run the command:
 
-	$ docker logs apama-ctrl-edge
+	$ sudo docker logs apama-ctrl-edge
 
 ##### MongoDB log file locations
 

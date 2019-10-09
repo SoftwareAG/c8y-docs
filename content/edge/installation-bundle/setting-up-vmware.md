@@ -46,7 +46,7 @@ You can use the VMware `vmnetcfg` utility to get the necessary details like subn
 
 The following example illustrates the network configuration on a Windows platform. For instructions on Linux platform, see VMware Knowledge Base.  
 
-1. Download the correct version of the `vmnetcfg` utility. It can also be extracted from the VM Workstation Pro installer. 
+1. Download the correct version of the `vmnetcfg` utility. It can also be extracted from the VMware Workstation Pro installer. 
 
 2. Save the vmnetcfg binary file (*vmnetcfg.exe*) in the VMware Workstation Player installation directory. In a Windows environment, this is usually *C:\Program Files (x86)\VMware\VMware Player*.<br>
 3. Open the file with the appropriate rights. <br>

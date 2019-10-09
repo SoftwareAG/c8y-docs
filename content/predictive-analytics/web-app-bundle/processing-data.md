@@ -12,9 +12,9 @@ Click **Predictions** in the navigator, to open the **Predictions** page.
 
 ### Batch Processing
 
-The Batch Processing allows you to process data records supplied to the model in a CSV or JSON file. The records are processed in batches. It also allows you to pass on image data as a JPEG or PNG file for processing.
+Batch Processing allows you to process data records supplied to the model in a CSV or JSON file. The records are processed in batches. It also allows you to pass on image data as a JPEG or PNG file for processing.
 
-The Batch Processing is primarily targeted for testing the accuracy of your predictive models by applying it against your test data. Hence, it is expected that you know the predicted outputs beforehand.
+Batch Processing is primarily targeted for testing the accuracy of your predictive models by applying it against your test data. Hence, it is expected that you know the predicted outputs beforehand.
 
 #### Running the batch process
 

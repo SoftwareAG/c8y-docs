@@ -48,14 +48,16 @@ These kinds of applications should be deployed as microservices to Cumulocity Io
 
 4. Use the Cumulocity IoT microservice utility tool for packaging and deploying the project; for detailed information, see [Microservice utility tool](/guides/microservice-sdk/concept/#ms-utility-tool) in the *Microservice SDK guide*. When creating the directory structure for the microservice utility tool to build from, copy your entire project directory inside that directory with the name "docker/". For example:
 
-	*docker/monitors/*<br>
-	*docker/eventdefinitions/*<br>
-	*docker/Dockerfile*<br>
-	*docker/...*<br>
-	*cumulocity.json*
+  *docker/monitors/*<br>
+  *docker/eventdefinitions/*<br>
+  *docker/Dockerfile*<br>
+  *docker/...*<br>
+  *cumulocity.json*
 
-	You have to create the [microservice manifest](/guides/microservice-sdk/concept/#manifest) manually, but there is no need for anything special in the microservice manifest; no roles or probes are required. However, if you want to configure a liveness or readiness probe, you can configure an `httpGet` probe for the path */ping* on port 15903 (Apama's default port). Enabling auto-scaling is not recommended, as Apama applications are usually stateful and do not automatically partition their input.
-   
-	You can pack, deploy and subscribe from this directory, resulting in your Apama application being turned into a running microservice. The behavior of the application when being run outside of Cumulocity IoT (from Software AG Designer or your test environment) will be near-identical to its behavior inside Cumulocity IoT. As Apama will be using identical Cumulocity IoT configurations in both environments, make sure that the credentials and application key that you are using in your local environment are long-lived.
+  You have to create the [microservice manifest](/guides/microservice-sdk/concept/#manifest) manually, but there is no need for anything special in the microservice manifest; no roles or probes are required. However, if you want to configure a liveness or readiness probe, you can configure an `httpGet` probe for the path */ping* on port 15903 (Apama's default port). Enabling auto-scaling is not recommended, as Apama applications are usually stateful and do not automatically partition their input.
+
+  You can pack, deploy and subscribe from this directory, resulting in your Apama application being turned into a running microservice. The behavior of the application when being run outside of Cumulocity IoT (from Software AG Designer or your test environment) will be near-identical to its behavior inside Cumulocity IoT. When deployed as a microservice, Apama will automatically pick up the
+  credentials to connect to the tenant you deployed it to, overwriting any other
+  credentials provided to Apama.
 
 5. When you are ready to deploy to Cumulocity IoT, upload the application as a microservice through the **Own applications** page in the Administration application. For details, refer to [Administration > Managing applications](/guides/users-guide/administration#managing-applications) in the *User guide*. 

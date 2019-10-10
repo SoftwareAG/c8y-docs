@@ -549,7 +549,7 @@ HTTP/1.1 200 OK
 ...
 [ {
     "id": "1",
-    "supportedConnectionTypes": ["websocket","long-polling"],
+    "supportedConnectionTypes": ["long-polling"],
     "channel": "/meta/handshake",
     "version": "1.0",
     "clientId": "71fjkmy0495rxrkfcmp0mhcev1",

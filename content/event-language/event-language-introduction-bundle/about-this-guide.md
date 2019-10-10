@@ -19,7 +19,7 @@ The CEL analytics guide consists of the following sections:
 * Introduction
 * [Data model](/guides/event-language/data-model)
 * [Functions](/guides/event-language/functions)
-* [Advanced uses cases](/guides/event-language/advanced)
-* [Best practices and troubleshooting](/guides/event-language/best-practices)
+* [Advanced uses cases](/guides/event-language/advanced-cel)
+* [Best practices and troubleshooting](/guides/event-language/best-practices-cel)
 * [Examples](/guides/event-language/examples)
 * [Study: Circular geofence alarms](/guides/event-language/geofence)

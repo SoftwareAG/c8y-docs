@@ -46,7 +46,7 @@ Wenn ein Gerät verbunden ist, wechselt der Status auf **Bitte akzeptieren**. Kl
 
 >**Info**: Bei Problemen finden Sie möglicherweise weitere Information
 >
->* im jeweiligen [Device Guide](/guides/devices) für Ihren Gerätetypen,
+>* in der Beschreibung Ihres Gerätetypen im [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices),
 * im [Developer Center](http://cumulocity.com/dev-center/) auf unserer Website
 * oder im Handbuch Ihres Geräts.
 

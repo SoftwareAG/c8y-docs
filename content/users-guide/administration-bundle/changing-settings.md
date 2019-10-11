@@ -302,7 +302,7 @@ Under **Configuration** in the **Settings** menu, you can configure system-wide 
 The following placeholders can be found in the **Configuration** page:
 
 - {host} - The value of this placeholder is "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". For example, if "tenantId" is auto-generated, the host will be "https://t12345678.cumulocity.com".
-- {tenant-domain} - This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be "myTenant.cumulocity.com".
+- {tenant-domain} - This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be "https://myTenant.cumulocity.com".
 - {token} - An automatically generated system token for password reset purposes. When a user requests a password reset, a new random token will be generated. This token will be associated only with the particular user and will allow for a single password reset action. The standard way of using this placeholder is along with the {tenant-domain} property as "{tenant-domain}?token={token}".
 
 >**Info**: In case of Enterprise Tenant, the {tenantDomain} placeholders can have different values. An example tenant domain is "myTenant.myhost.com".

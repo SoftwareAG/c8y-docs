@@ -48,39 +48,40 @@ A script *AnomalySimulatorForDemoDevice.sh* has been attached which simulates se
 All you need to do is run it as `sh AnomalySimulatorForDemoDevice.sh`.
 
 	AnomalySimulatorForDemoDevice.sh
-	c_url=$(awk -F "=" '/c_url/ {print $2}' ./CONFIG.INI)
-	c_user=$(awk -F "=" '/c_user/ {print $2}' ./CONFIG.INI)
-	c_pass=$(awk -F "=" '/c_pass/ {print $2}' ./CONFIG.INI)
-	c_device_source=$(awk -F "=" '/c_device_source/ {print $2}' ./CONFIG.INI)
-	end=$((SECONDS+30))
-	COUNTER=0
-	DIV=2
-	while [ $SECONDS -lt $end ]; do
-	    result=`expr $COUNTER % $DIV`
-	    if [ $result == 0 ]
-	    then
-	        echo
-	        echo "##########################################"
-	        echo "#  Simulating Non-Anamolous Measurement  #"
-	        echo "##########################################"
-	        echo
-	        curl --user $c_user:$c_pass -X POST $c_url"/measurement/measurements" -H "accept: application/vnd.com.nsn.cumulocity.measurementCollection+json" -H "Content-Type: application/json" \
-	        --data '{"measurements":[{"time":"2019-03-29T17:26:14.000+02:00","source":{"id":"'$c_device_source'"},"type":"c8ydemoAndroid","c8y_SignalStrengthWifi":{"rssi":{"unit":"dBm","value":-46}},"c8y_Acceleration":{"accelerationY":{"unit":"G","value": 9.347839355},"accelerationX":{"unit":"G","value":7.12612915},"accelerationZ":{"unit":"G","value":7.345794678}},"c8y_Barometer":{"Air pressure":{"unit":"mBar","value":10.00928101}},"c8y_Gyroscope":{"gyroX":{"unit":"°/s","value":-1.415344238},"gyroY":{"unit":"°/s","value": 5.859771729},"gyroZ":{"unit":"°/s","value":0.934921265}},"c8y_Luxometer":{"lux":{"unit":"lux","value":240.7909851}},"c8y_Compass":{"compassX":{"unit":"uT","value":-72.02148438},"compassY":{"unit":"uT","value":-24.59411621},"compassZ":{"unit":"uT","value":-15.24505615}}}]}'
-	        sleep 2
-	    fi
-	    if [ $result -eq 1 ]
-	    then
-	        echo
-	        echo "##########################################"
-	        echo "#    Simulating Anamolous Measurement    #"
-	        echo "##########################################"
-	        echo
-	        curl --user $c_user:$c_pass -X POST $c_url"/measurement/measurements" -H "accept: application/vnd.com.nsn.cumulocity.measurementCollection+json" -H "Content-Type: application/json" \
-	        --data '{"measurements":[{"time":"2019-03-29T17:26:14.000+02:00","source":{"id":"'$c_device_source'"},"type":"c8ydemoAndroid","c8y_SignalStrengthWifi":{"rssi":{"unit":"dBm","value":-46}},"c8y_Acceleration":{"accelerationY":{"unit":"G","value":9.347839355},"accelerationX":{"unit":"G","value":7.12612915},"accelerationZ":{"unit":"G","value":7.345794678}},"c8y_Barometer":{"Air pressure":{"unit": "mBar","value":10.00928101}},"c8y_Gyroscope":{"gyroX":{"unit":"°/s","value":5.288024902},"gyroY":{"unit":"°/s","value":-9.42755127},"gyroZ":{"unit":"°/s","value":-4.908660889}},"c8y_Luxometer":{"lux":{"unit":"lux","value":240.7909851}},"c8y_Compass":{"compassX":{"unit":"uT","value":-72.02148438},"compassY":{"unit":"uT","value":-24.59411621},"compassZ":{"unit":"uT","value":-15.24505615}}}]}'
-	        sleep 2
-	    fi
-	    COUNTER=`expr $COUNTER + 1`
-	done
+    c_url=$(awk -F "=" '/c_url/ {print $2}' ./CONFIG.INI)
+    c_user=$(awk -F "=" '/c_user/ {print $2}' ./CONFIG.INI)
+    c_pass=$(awk -F "=" '/c_pass/ {print $2}' ./CONFIG.INI)
+    c_device_source=$(awk -F "=" '/c_device_source/ {print $2}' ./CONFIG.INI)
+    end=$((SECONDS+30))
+    COUNTER=0
+    DIV=2
+    CURRENT_TIME=$(date --iso-8601=seconds)
+    while [ $SECONDS -lt $end ]; do
+        result=`expr $COUNTER % $DIV`
+    	if [ $result == 0 ]
+    	then
+    		echo
+    		echo "##########################################"
+    		echo "#  Simulating Non-Anamolous Measurement  #"
+    		echo "##########################################"
+    		echo
+    		curl --user $c_user:$c_pass -X POST $c_url"/measurement/measurements" -H "accept: application/vnd.com.nsn.cumulocity.measurementCollection+json" -H "Content-Type: application/json" \
+    		--data '{"measurements":[{"time":"'$CURRENT_TIME'","source":{"id":"'$c_device_source'"},"type":"c8ydemoAndroid","c8y_Acceleration":{"accelerationY":{"unit":"G","value": -0.2631993591785431},"accelerationX":{"unit":"G","value":5.769125938415527},"accelerationZ":{"unit":"G","value":8.193016052246094}},"c8y_Gyroscope":{"gyroX":{"unit":"°/s","value":-0.03604104742407799},"gyroY":{"unit":"°/s","value": 0.055571284145116806},"gyroZ":{"unit":"°/s","value":,-0.0010122909443452952}}}]}'
+    		sleep 2
+    	fi
+    	if [ $result -eq 1 ]
+    	then
+    		echo
+    		echo "##########################################"
+    		echo "#    Simulating Anamolous Measurement    #"
+    		echo "##########################################"
+    		echo
+    		curl --user $c_user:$c_pass -X POST $c_url"/measurement/measurements" -H "accept: application/vnd.com.nsn.cumulocity.measurementCollection+json" -H "Content-Type: application/json" \
+    		--data '{"measurements":[{"time":"'$CURRENT_TIME'","source":{"id":"'$c_device_source'"},"type":"c8ydemoAndroid","c8y_Acceleration":{"accelerationY":{"unit":"G","value":-27.943368911743164},"accelerationX":{"unit":"G","value":-26.63686370849609},"accelerationZ":{"unit":"G","value":7.422532558441162}},"c8y_Gyroscope":{"gyroX":{"unit":"°/s","value":-13.211706161499025},"gyroY":{"unit":"°/s","value":7.483762264251709},"gyroZ":{"unit":"°/s","value":-11.959641456604006}}}]}'
+    		sleep 2
+    	fi
+    	COUNTER=`expr $COUNTER + 1`
+    done
 
 This should now start sending alternate anomalous and non-anomalous measurements to Cumulocity on behalf of your demo device for a total duration of 30 seconds.
 

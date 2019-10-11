@@ -25,4 +25,4 @@ Apama brings many capabilities including:
 * Advanced desktop tooling for developers – tools such as inline debugging, data replay, code coverage analysis and memory & CPU profiling.
 * Improved performance and predictable tenant scalability – Apama’s native performance and per-tenant streaming analytics ensures that demanding tenants do not negatively impact the performance of streaming analytics on other tenants.
 
-For details on migration, refer to <a href="//guides/apama/overview-analytics/#migrate-from-esper">Migrating from CEL (Esper) to Apama</a> in the Streaming analytics guide.
+For details on migration, refer to [Migrating from CEL (Esper) to Apama](/guides/apama/overview-analytics/#migrate-from-esper) in the Streaming analytics guide.

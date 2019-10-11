@@ -1,7 +1,7 @@
 ---
 title: Resources
 layout: redirect
-weight: 30
+weight: 20
 ---
 
 Operation on resources.

@@ -109,7 +109,7 @@ The following information is displayed here:
 
 |Field|Description
 |:--------|:-----
-|Status|May be either *Enabled* or *Disabled*. <br>*Enabled* indicates that: <br> - support user access has ben activated on platform level (see [Customizing your platform](/guides/users-guide/enterprise-edition#configuration)), <br> - one or more subtenant users have activated support user access. <br>*Disabled* indicates that: <br> - support user access has been deactivated on platform level, <br> - support user access has been activated on platform level but deactivated for the subtenant, <br> - no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).
+|Status|May be either *Enabled* or *Disabled*. <br>*Enabled* indicates that: <br> - support user access has been activated on platform level (see [Customizing your platform](/guides/users-guide/enterprise-edition#configuration)), <br> - one or more subtenant users have activated support user access. <br>*Disabled* indicates that: <br> - support user access has been deactivated on platform level, <br> - support user access has been activated on platform level but deactivated for the subtenant, <br> - no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).
 |Active requests count|The number of requests currently active in the subtenant. Only displayed if support user access is not enabled globally on platform level. Shown as a number in a small red dot.
 |Expiry date|Specifies the date on which support user access for the tenant will expire. If no date has been specified, the expiry date is set to "No limit".
 

@@ -2,6 +2,8 @@
 weight: 20
 title: Naming statements
 layout: redirect
+aliases:
+  - /event-language/best-practises#naming-statements
 ---
 
 The @Name annotation gives you the possibility to name your statements in the module. A name needs to be unique within a single module.

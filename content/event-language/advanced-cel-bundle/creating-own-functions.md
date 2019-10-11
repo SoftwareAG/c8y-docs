@@ -2,6 +2,8 @@
 weight: 50
 title: Creating own functions 
 layout: redirect
+aliases:
+  - /event-language/advanced#creating-own-functions
 ---
 
 If you want to make more complex calculation than e.g. sum or average you can create your own helper functions and expressions.

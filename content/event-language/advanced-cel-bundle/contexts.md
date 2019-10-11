@@ -2,6 +2,8 @@
 weight: 70
 title: Contexts 
 layout: redirect
+aliases:
+  - /event-language/advanced#contexts
 ---
 
 Contexts give you the possibility to handle and sort events based on defined values.

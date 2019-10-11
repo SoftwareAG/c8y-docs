@@ -2,6 +2,8 @@
 weight: 40
 title: Creating own streams 
 layout: redirect
+aliases:
+  - /event-language/advanced#own-streams
 ---
 
 Creating complex modules is not doable in a single statement. While Cumulocity already provides certain streams it is possible to create additional ones to control your event flow.

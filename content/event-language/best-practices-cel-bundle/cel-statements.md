@@ -2,6 +2,8 @@
 weight: 10
 title: CEP statements and Esper scripts
 layout: redirect
+aliases:
+  - /event-language/best-practises#cel-statements
 ---
 
 **Symptom: Your event processing rules are disabled automatically**

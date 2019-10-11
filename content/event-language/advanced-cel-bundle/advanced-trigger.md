@@ -2,6 +2,8 @@
 weight: 20
 title: Advanced trigger 
 layout: redirect
+aliases:
+  - /event-language/advanced#advanced-trigger
 ---
 
 Triggering a statement by an arriving event in some stream is not the only possibility.

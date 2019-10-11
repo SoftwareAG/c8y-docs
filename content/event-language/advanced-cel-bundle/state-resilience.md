@@ -2,6 +2,8 @@
 weight: 80
 title: State resilience
 layout: redirect
+aliases:
+  - /event-language/advanced#state-resilience
 ---
 
 By default, Cumulocity Event Language is processed purely in memory. This is often sufficient, as many statements do not require state to be preserved over longer time periods. If you rely on such state (for example, as part of an event window), you need to annotate your statement as follows:

@@ -258,7 +258,7 @@ The solution stores log files at the following locations for the different nodes
 
 ##### Apama log file locations
 
-To access the correlator log files, run the command:
+To access the apama-ctrl log files, run the command:
 
 	$ sudo docker logs apama-ctrl-edge
 

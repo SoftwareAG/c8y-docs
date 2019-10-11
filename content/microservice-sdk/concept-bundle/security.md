@@ -60,7 +60,7 @@ These roles can be assigned or revoked to the tenant platform users or groups us
 
 <!-- TODO: add/describe a picture of "required roles" and "provided roles" showing a microservice as a block -->
 
-The roles are set in the [Microservice manifest](#manifest).
+The roles are set in the [Microservice manifest](#manifest). For more details about users and roles, review [Users](https://cumulocity.com/guides/reference/users/) in the **Reference guide**.
 
 ### Microservice bootstrap
 

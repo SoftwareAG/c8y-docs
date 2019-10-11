@@ -105,7 +105,6 @@ Steps:
 4. The microservice iterates over the service user credentials and uses them to create alarms to each tenant.
 5. The microservice returns the result to the platform, and the platform to the invoking user.
 
-
 ### Encryption
 
 There is a mechanism to encrypt the tenant options that afterwards are automatically decrypted when injecting them into microservices requests. Refer to [Option collection](https://cumulocity.com/guides/reference/tenants#option-collection) in the **Tenants** section of the **Reference** guide for more details.

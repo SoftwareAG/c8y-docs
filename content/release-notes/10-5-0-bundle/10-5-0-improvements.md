@@ -25,11 +25,15 @@ Improved error messages when uploading microservices. [MTM-25850]
 
 ![Microservice Error Messages](/guides/images/release-notes/microservice-error-messages.png)
 
+
 #### Device Management
 
 The filters in the **Devices** > **All Devices** page can now be configured. Subsequently, created smart groups will contain these filters. [MTM-25909]
 
-![Configurable Columns](/guides/images/release-notes/configurable-columns.png)  
+![Configurable Columns](/guides/images/release-notes/configurable-columns.png) 
+
+Devices shell now supports commands for Machinelink devices. [MTM-26944]
+ 
 
 #### Web SDK
 

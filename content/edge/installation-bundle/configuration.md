@@ -95,13 +95,14 @@ Usually the platform comes up within 2 minutes.
 
 You will be prompted to select one of the following options:
 
-1. Configure network
-2. Run post-installation
-3. Update license and SSL certificates
-4. Run post-upgrade
-5. Expand data disk size
-6. Update tenant password
-7. Exit
+1. [Configure network](/guides/edge/installation/#option-1-configure-network)
+2. [Run post-installation](/guides/edge/installation/#option-2-run-post-installation)
+3. [Update license and SSL certificates](/guides/edge/installation/#option-3-update-license-and-ssl-certificates)
+4. [Run post-upgrade](/guides/edge/installation/#option-4-run-post-upgrade)
+5. [Expand data disk size](/guides/edge/installation/#option-5-expand-data-disk-size)
+6. [Update tenant password](/guides/edge/installation/#option-6-update-tenant-password)
+7. [Configure Edge Agent](/guides/edge/installation/#option-7-configure-edge-agent)
+8. Exit
 
 >**Important**: Option 3, 4 and 6 will only work after you have successfully completed the post-installation setup (Option 2). 
 Option 1 and 4 cannot be invoked from a remote connection like SSH. You will have to run these directly from the terminal within the VM.
@@ -178,28 +179,27 @@ You have the choice to enter the post-installation parameters manually via the c
 
 	>**Important**: Once configured, the domain name cannot be changed. Make sure to use the name finally desired.
 
-5. Provide the URL for the Cumulocity tenant (cloud or on-premise), e.g. "https://&lt;tenant-domain&gt;.cumulocity.com".
-
-	`* Enter cloud URL (optional):` 
-
-	>**Important**: To control your Edge device remotely, ensure that you provide the URL of your Cumulocity tenant. Also, note that you will not be able to add the cloud URL once you have completed the post-installation.
-
-6. Provide the absolute path of the SSL certificate file. The file extension should either be ".crt" or ".cert", e.g. */home/admin/myown-selfsigned.crt*.
+5. Provide the absolute path of the SSL certificate file. The file extension should either be ".crt" or ".cert", e.g. */home/admin/myown-selfsigned.crt*.
 
 	`* Enter domain ({your-domain-name}) SSL certificate file path (*.crt|*.cert):`
 
-7. Provide the absolute path of the SSL certificate key file. The file extension must be ".key.", e.g. */home/admin/myown-selfsigned.key*.
+6. Provide the absolute path of the SSL certificate key file. The file extension must be ".key.", e.g. */home/admin/myown-selfsigned.key*.
 	
 	`* Enter domain ({your-domain-name}) SSL certificate key file path (*.key):`
 
-8. Provide the absolute path of the license file. The file extension must be ".licence", e.g. */home/admin/myown.iot.com.licence*.
+7. Provide the absolute path of the license file. The file extension must be ".licence", e.g. */home/admin/myown.iot.com.licence*.
 
 	`* Enter domain ({your-domain-name}) Cumulocity licence file path (*.licence):`
 	
-9. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional licence file, you can press [Enter] to continue without providing license.
+8. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional licence file, you can press [Enter] to continue without providing license.
 
 	`* Enter Software AG Apama licence file path (optional):`
 
+9. Provide the URL for the Cumulocity tenant (cloud or on-premise) to control your Edge device remotely. For example, "https://&lt;*tenant-domain*&gt;.cumulocity.com".
+
+	`* Enter cloud URL (leave blank to disable remote management):` 
+
+	You can also configure the Edge agent with the Cumulocity tenant URL by running the post-installation script and selecting [Option 7 - Configure Edge Agent](/guides/edge/installation/#option-7-configure-edge-agent).
 		
 Once the input parameters are entered correctly, the parameters will be saved under 
 */opt/c8y/utilities/post-installer/config.dat* for future reference.
@@ -304,4 +304,10 @@ Confirm to continue with updating the tenant password.
 
 The update tenant password process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process will halt and a failure message will be displayed on the console.
 
->**Info**: The Cumulocity platform does not allow to use any of the last 10 previously used passwords. 
+>**Info**: The Cumulocity platform does not allow to use any of the last 10 previously used passwords.
+
+#### Option 7 - Configure Edge Agent
+
+Provide the URL for the Cumulocity tenant (cloud or on-premise). For example, "https://&lt;*tenant-domain*&gt;.cumulocity.com".
+
+	`* Enter cloud URL (leave blank to disable remote management):`

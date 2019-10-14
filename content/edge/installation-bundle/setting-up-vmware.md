@@ -49,10 +49,12 @@ The following example illustrates the network configuration on a Windows platfor
 1. Download the correct version of the `vmnetcfg` utility. It can also be extracted from the VMware Workstation Pro installer. 
 
 2. Save the vmnetcfg binary file (*vmnetcfg.exe*) in the VMware Workstation Player installation directory. In a Windows environment, this is usually *C:\Program Files (x86)\VMware\VMware Player*.<br>
+
 3. Open the file with the appropriate rights. <br>
 <img src="/guides/images/edge/edge-vmware-05.png" name="Setting up VMware"/>
 
 4. Select "NAT" as external connection.<br>
+
 5. Click **NAT settings** to open the **NAT Settings** window.<br>
 
 6. Note down the gateway IP address and close the **NAT settings** window.<br>

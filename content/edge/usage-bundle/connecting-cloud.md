@@ -4,7 +4,7 @@ title: Connecting to the Cloud
 layout: redirect
 ---
 
-Cumulocity IoT Edge provides the option to upload Edge data to a Cumulocity Cloud account selectively (note that you first need to create a Cloud account).
+Cumulocity IoT Edge provides the option to upload Edge data to a Cumulocity Cloud account selectively. Note that you must first create a cloud account. To configure the cloud account in your Edge device, see [Configure Edge Agent](/guides/edge/installation/#option-7-configure-edge-agent).
 
 You can share the following data:
 
@@ -14,15 +14,15 @@ You can share the following data:
 * measurements
 * operations
 
-Navigate to **Data connectors** if you would like to send data to the Cloud account. 
+Go to **Data connectors** if you would like to send data to the cloud account. 
 
-Navigate to **Data subscriptions** in your cloud account to receive the data from Edge.
+Go to **Data subscriptions** in your cloud account to receive the data from Edge.
 
 <img src="/guides/images/users-guide/data-broker-navigator.png" alt="Data broker menus">
 
-In the same way, you can push operations from a Cumulocity Cloud account to Cumulocity IoT Edge devices.
+In the same way, you can push operations from a Cumulocity cloud account to Cumulocity IoT Edge devices.
  
-For details on sending and receiving data in Cumulocity refer to [Enterprise Tenant > Using the Data Broker](/guides/users-guide/enterprise-edition#data-broker) in the User guide.
+For details about sending and receiving data in Cumulocity, see [Enterprise Tenant > Using the Data Broker](/guides/users-guide/enterprise-edition#data-broker).
 
 
 

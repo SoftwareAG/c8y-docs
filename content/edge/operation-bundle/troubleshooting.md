@@ -224,17 +224,13 @@ Monit can provide a quick status report of all configured services and processes
 
 	$ sudo monit summary
 
-The command will provide an output similar to this:
-
-<img src="/guides/images/edge/edge-monitoring-01.png" name="Status report" style="width:75%;"/> 
-
 There might be cases where Monit has stopped monitoring some resources because of timeout on constant failures or dependency issues. 
 
 <img src="/guides/images/edge/edge-monitoring-02.png" name="Status report" style="width:75%;"/> 
 
-A specific component, e.g. apama-correlator_proc, can be restarted using the following command: 
+A specific component, for example, `apama-ctrl_proc`, can be restarted using the following command: 
 
-	$ sudo monit restart apama-correlator_proc
+	$ sudo monit restart apama-ctrl_proc
 
 The Monit status can be checked by running: 
 
@@ -262,9 +258,9 @@ The solution stores log files at the following locations for the different nodes
 
 ##### Apama log file locations
 
-|Directory|Files|Usage|
-|:---|:---|:---
-|/opt/softwareag/cumulocity-apama-rules/deploy/logs/|correlator.log|Apama log file
+To access the apama-ctrl log files, run the command:
+
+	$ sudo docker logs apama-ctrl-edge
 
 ##### MongoDB log file locations
 
@@ -272,7 +268,6 @@ The solution stores log files at the following locations for the different nodes
 |:---|:---|:---
 |/var/log/mongodb|mongodb_config.log<br>mongors01.log<br> mongors02.log<br> mongors03.log<br> mongomongod7.log |Config server logfile<br> Replication set 1 logfile<br> Replication set 2 logfile<br> Replication set 3 logfile<br> Standalone mongodb logfile
 |/var/log|messages|general log file
-
 
 ##### Agent log file locations
 
@@ -344,21 +339,6 @@ Change the following entries to adjust the log levels:
 	og4j.logger.com.cumulocity.rest.mediatypes=INFO
 
 Adjust the log levels by changing the level attribute according to the following values. The levels are inclusive - meaning a given level will also include all “lower” log levels, e.g. when you set the level to WARN you will also get ERROR events.
-
-|Level|Description|
-|:---|:---
-|ERROR|Log errors only
-|WARN|Give information up to warnings
-|INFO|Give information about normal operations
-|DEBUG|Log all internal debug information
-
-Save the file. It is re-read by the application every few minutes so you do not have to restart the Java process.
-
-##### Changing log level for Apama
-
-The log level for Apama is defined by the property  “correlator.logLevel” in the file `/opt/softwareag/cumulocity-apama-rules/deploy/correlator.properties`,  e.g. correlator.logLevel=INFO.
-
-Possible values for the Apama log level are:
 
 |Level|Description|
 |:---|:---

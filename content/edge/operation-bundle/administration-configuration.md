@@ -77,7 +77,7 @@ The components for which log rotation is configured are as follows:
 |:---|:---|:---|:---|:---|
 |MongoDB|/var/log/mongodb/*.log|Daily|50 MB|14|
 |NginX|/var/log/nginx/*.log|Daily|50 MB|14|
-|Apama|/opt/softwareag/cumulocity-apama-rules/deploy/logs/*.log|Daily|50 MB|14|
+|Apama|/var/log/apama/*.log|Daily|50 MB|14|
 
 For microservices, there currently is no specific log rotation configured.
 

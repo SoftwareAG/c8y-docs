@@ -311,3 +311,7 @@ The update tenant password process consists of multiple steps which are executed
 Provide the URL for the Cumulocity tenant (cloud or on-premise). For example, "https://&lt;*tenant-domain*&gt;.cumulocity.com".
 
 	`* Enter cloud URL (leave blank to disable remote management):`
+
+After providing the tenant URL, you have to register your Edge device with the Cumulocity tenant. For more information, see [Registering an Edge device with Cumulocity tenant](/guides/edge/installation/#registering-edge-device-with-cloud).
+
+>**Important**: If you have configured the Cumulocity tenant URL during the post installation and then use this option with a blank URL, you will disable the Cumulocity tenant connectivity.   

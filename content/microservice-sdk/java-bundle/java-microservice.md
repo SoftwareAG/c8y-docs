@@ -4,13 +4,13 @@ layout: redirect
 title: Hello world tutorial
 ---
 
-Here you will learn how to create your first microservice that can be run on the [Cumulocity platform](https://cumulocity.com) using the Microservice SDK for Java.
+Here you will learn how to create your first microservice that can be deployed on the [Cumulocity platform](https://cumulocity.com) using the Microservice SDK for Java.
 
 ### Prerequisites
 
 You need to have Cumulocity credentials and a dedicated tenant. In case you do not have that yet, create an account on the [Cumulocity platform](https://cumulocity.com), for example by using a free trial. At this step you will be provided with a dedicated URL address for your tenant.
 
-Verify that you have Java 7 or later installed together with Maven 3. It can be downloaded from the [Maven website](https://maven.apache.org/download.cgi).
+Verify that you have Java 7 or 8 installed together with Maven 3. It can be downloaded from the [Maven website](https://maven.apache.org/download.cgi).
 
 ```shell
 $ mvn -v
@@ -43,21 +43,21 @@ Server: Docker Engine - Community
 
 You can download the source code of this example from our [Bitbucket](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/) or [GitHub](https://github.com/SoftwareAG/c8y-microservice-hw-java) repositories to build and run it using your favorite IDE, or follow the instructions below to guide you step-by-step for you to have a better understanding of the code and what needs to be done/configured.
 
-> **Important**: This microservice example has been tested under macOS and Linux with Java 8, Maven 3.6.0, Docker 19.03.2; Eclipse 2019.03 and IntelliJ IDEA 2019.2 as IDE. Other tools or Java versions may require different configurations.
+> **Important**: This microservice example has been tested under macOS, Ubuntu 18 and Windows 10 with Java 8, Maven 3.6.0, Docker 19.03.2; Eclipse 2019.03 and IntelliJ IDEA 2019.2 as IDE. Other tools or Java versions may require different configurations.
 
 #### Create a Maven project
 
-Use the [Maven Archetype Plugin](https://maven.apache.org/archetype/maven-archetype-plugin/) to create a Java project from an existing Maven template. Use `c8y.example` as your groupId and `hello-world-microservice-java` as your artifactId.
+Use the [Maven Archetype Plugin](https://maven.apache.org/archetype/maven-archetype-plugin/) to create a Java project from an existing Maven template. Use `c8y.example` as your groupId and `hello-microservice-java` as your artifactId.
 
 ```shell
-$ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-world-microservice-java -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+$ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-microservice-java -Dversion=1.0.0-SNAPSHOT -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
 
-This will create a folder *hello-world-microservice-java* in the current directory with a skeleton structure for your project.
+This will create a folder *hello-microservice-java* in the current directory with a skeleton structure for your project.
 
 #### Specify the properties
 
-You will find the _pom.xml_ file inside the *hello-world-microservice-java* folder. Edit this file and add a `properties` element to [set the `-source` and `-target` of the Java Compiler](https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html) using version 1.8. This example uses [Spring Boot](https://spring.io/projects/spring-boot) to quickly build and create the application using the Spring Framework. Hence, also specify in the `properties` element the version to use as follows:
+You will find the _pom.xml_ file inside the *hello-microservice-java* folder. Edit this file and add a `<properties>` element to [set the `-source` and `-target` of the Java Compiler](https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html) using version 1.8. This example uses [Spring Boot](https://spring.io/projects/spring-boot) to quickly build and create the application using the Spring Framework. Hence, also specify in the `<properties>` element the version to use as follows:
 
 ```xml
 <properties>
@@ -73,17 +73,18 @@ You need to specify the version of the Cumulocity's microservice library to be u
 
 ![Upload microservice](/guides/images/microservices-sdk/ms-backend-version.png)
 
-In the `properties` element specified above, add a child element `c8y.version` with the backend version of your tenant. Also add a `microservice.name` child element to name your first microservice application.
+In the `<properties>` element specified above, add a child element `<c8y.version>` with the backend version of your tenant. Also add a `<microservice.name>` child element to name your first microservice application.
 
 ```xml
     <c8y.version>1004.6.12</c8y.version>
-    <microservice.name>hello-world-microservice-java</microservice.name>
+    <microservice.name>hello-microservice-java</microservice.name>
 ```
 
+> **Important**: When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
 
-Edit the `<c8y.version>` element to use the latest version of the client library. It may be obtained by reviewing the [Release notes](https://cumulocity.com/guides/release-notes/overview/) or the [Maven repository](http://download.cumulocity.com/maven/repository/com/nsn/cumulocity/clients-java/microservice-dependencies/). This particular example was implemented using version 9.16.2.
+#### Add repositories and dependencies
 
-Now add repository and plugin elements to point to the Cumulocity Maven repository which stores the client libraries.
+Your _pom.xml_ file needs to have repository and plugin elements to point to the Cumulocity Maven repository which stores the client libraries.
 
 ```xml
 <repositories>
@@ -101,90 +102,24 @@ Now add repository and plugin elements to point to the Cumulocity Maven reposito
 </pluginRepositories>
 ```
 
-Also add a dependency element for the Java Microservice SDK library inside the `<dependencies>` node.
+Also add a dependency for the Microservice SDK library inside the `<dependencies>` node.
 
 ```xml
-<dependency>
-	<groupId>com.nsn.cumulocity.clients-java</groupId>
-	<artifactId>microservice-autoconfigure</artifactId>
-</dependency>
+<dependencies>
+    ...
+    <dependency>
+        <groupId>com.nsn.cumulocity.clients-java</groupId>
+        <artifactId>microservice-autoconfigure</artifactId>
+        <version>${c8y.version}</version>
+    </dependency>
+</dependencies>
 ```
 
-#### Creating a Java application
-
-Edit the _App.java_ file located in the folder *hello-world-microservice/src/main/java/c8y/example* with the following content:
-
-```java
-package c8y.example;
-
-import com.cumulocity.microservice.autoconfigure.MicroserviceApplication;
-import org.springframework.boot.SpringApplication;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-@MicroserviceApplication
-@RestController
-public class App {
-    public static void main (String[] args) {
-        SpringApplication.run(App.class, args);
-    }
-
-    @RequestMapping("hello")
-    public String greeting (@RequestParam(value = "name", defaultValue = "World") String you) {
-        return "Hello " + you + "!";
-    }
-}
-```
-
-The code uses four annotations; three are part of the Spring Framework and one of the Cumulocity Microservice SDK. The `@RestController` annotation marks the class as a controller where every method returns a domain object instead of a view. The `@RequestMapping` annotation ensures that HTTP requests to <kbd>hello</kbd> endpoint are mapped to the `greeting()` method. `@RequestParam` binds the value of the query string parameter <kbd>name</kbd> into the `you` parameter of the `greeting()` method. Refer to the [Spring Guides](https://spring.io/guides) for more details about building RESTful Web Services using the Spring Framework.
-
-Employing the `@MicroserviceApplication` annotation is a simple way to add required behavior for Cumulocity microservices including:
-
-* Security
-* Subscription
-* Health endpoint at <kbd>/service/&lt;microservice-name>/health</kbd>
-* Context
-* Settings
-* Internal platform API
-* Spring Boot application
-
-#### Configuring the microservice
-
-Add an _application.properties_ file to the _src/main/resources_ directory with the following properties:
-
-```properties
-application.name=my-first-microservice
-server.port=80
-```
-
-Add a _cumulocity.json_ file to the _src/main/configuration_ directory with the following content:
-
-```json
-{
-  "apiVersion": "1",
-  "version": "@project.version@",
-  "provider": {
-    "name": "Cumulocity GmbH"
-  },
-    "isolation": "MULTI_TENANT",
-    "requiredRoles": [
-    ],
-    "roles": [
-    ]
-}
-```
-
-This is the [Manifest](/guides/microservice-sdk/concept/#manifest) file and it is required to deploy the microservice in the Cumulocity platform.
-
-#### Configuring the build
-
-To create a deployable ZIP file, you need to add the following code to your _pom.xml_ file:
+To automatically manage the required artifacts needed for your microservice application, add a `<dependencyManagement>` element as follows:
 
 ```xml
 <dependencyManagement>
     <dependencies>
-        <!-- microservice api -->
         <dependency>
             <groupId>com.nsn.cumulocity.clients-java</groupId>
             <artifactId>microservice-dependencies</artifactId>
@@ -194,7 +129,13 @@ To create a deployable ZIP file, you need to add the following code to your _pom
         </dependency>
     </dependencies>
 </dependencyManagement>
+```
 
+#### Configure the build plugins
+
+Your microservice application has to be packed as a Docker image in a ZIP file including all the required dependencies. To achive that, include in your _pom.xml_ file build plugins as follows:
+
+```xml
 <build>
     <plugins>
         <plugin>
@@ -229,16 +170,118 @@ To create a deployable ZIP file, you need to add the following code to your _pom
             </executions>
         </plugin>
     </plugins>
-</build>    
+</build>   
 ```
 
-### Building the microservice
+#### Create a Java application
 
-In a terminal, navigate to the folder where your _pom.xml_ is located and execute the following Maven command. Note that after a successful build you will find a ZIP file inside the _target_ directory.
+Edit the _App.java_ file located in the folder */src/main/java/c8y/example* with the following content:
+
+```java
+package c8y.example;
+
+import com.cumulocity.microservice.autoconfigure.MicroserviceApplication;
+import org.springframework.boot.SpringApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@MicroserviceApplication
+@RestController
+public class App {
+    public static void main (String[] args) {
+        SpringApplication.run(App.class, args);
+    }
+
+    @RequestMapping("hello")
+    public String greeting (@RequestParam(value = "name", defaultValue = "World") String you) {
+        return "Hello " + you + "!";
+    }
+}
+```
+
+The code uses four annotations; three are part of the Spring Framework and one of the Cumulocity Microservice SDK. The `@RestController` annotation marks the class as a controller where every method returns a domain object instead of a view. The `@RequestMapping` annotation ensures that HTTP requests to the <kbd>hello</kbd> endpoint are mapped to the `greeting()` method. `@RequestParam` binds the value of the query string parameter <kbd>name</kbd> into the `you` parameter of the `greeting()` method. Refer to the [Spring Guides](https://spring.io/guides) for more details about building RESTful Web Services using the Spring Framework.
+
+Employing the `@MicroserviceApplication` annotation is a simple way to add the required behavior for Cumulocity microservices including:
+
+* Security
+* Subscription
+* Health check endpoint at <kbd>/service/&lt;microservice-name>/health</kbd>
+* Context
+* Settings
+* Internal platform API
+* Spring Boot application
+
+#### Configure the microservice application
+
+Create the directory _src/main/resources_ to contain an _application.properties_ file specifiying the name of the microservice application and the server port:
+
+```properties
+application.name=my-first-microservice
+server.port=80
+```
+
+Create the directory _src/main/configuration_ to contain a _cumulocity.json_ file. This is the [manifest](/guides/microservice-sdk/concept/#manifest) file and it is required to deploy the microservice in the Cumulocity platform.
+
+```json
+{
+  "apiVersion": "1",
+  "version": "@project.version@",
+  "provider": {
+    "name": "Cumulocity GmbH"
+  },
+    "isolation": "MULTI_TENANT",
+    "requiredRoles": [
+    ]
+}
+```
+
+#### Build the microservice application
+
+In a terminal, navigate to the folder where your _pom.xml_ is located and execute the following Maven command:
 
 ```shell
 $ mvn clean install
 ```
+
+After a successful build, you will find a ZIP file inside the _target_ directory.
+
+```shell
+$ ls target | grep zip
+hello-microservice-java-1.0.0-SNAPSHOT.zip
+```
+
+### Deploying the "Hello world" microservice
+
+To deploy your microservice on the Cumulocity platform you need:
+
+* A valid tenant, a user and a password in order to access Cumulocity.
+* The ZIP file built with Maven on the previous steps.
+
+> **Important**: The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. Contact us via [Empower Portal](https://empower.softwareag.com) so that we can assist you with the activation. Note that this is a paid feature.
+
+In the Administration application, navigate to **Applications** > **Own applications**, click **Add application** and select **Upload microservice** from the options list.
+
+![Upload microservice](/guides/images/microservices-sdk/admin-microservice-upload.png)
+
+Upload the ZIP file of your microservice application and click **Subscribe** for your tenant to be to subscribed to the microservice afterwards.
+
+![Subscribe microservice](/guides/images/microservices-sdk/admin-microservice-subscribe-up.png)
+
+Once the ZIP file has been uploaded successfully, you will see a new microservice application created.
+
+#### Test the deployed microservice
+
+Using your tenant credentials, you can test the microservice on any web browser using the URL as follows:
+
+```http
+http://<yourTenantDomain>/service/hello-microservice-java/health
+```
+
+
+
+
+<!-- TODO: enhance this part
 
 ### <a name="run-locally"></a> Running the microservice locally
 
@@ -402,55 +445,7 @@ BODY:
   }
 ```
 
-### Deployment
-
-Once you have tested your microservice locally, you can deploy it on the Cumulocity platform and you need:
-
-* A valid tenant, a user and a password in order to access Cumulocity.
-* An authorization header as "Basic &lt;Base64(&lt;username>:&lt;password>)>".
-* The application created on the previous steps.
-* The ZIP file built with Maven on the previous steps.
-
-You need to upload the ZIP file to the Cumulocity platform and this might require some seconds, depending on your internet connection. Make a POST request to upload your ZIP file as follows:
-
-```http
-POST <URL>/application/applications/<APPLICATION_ID>/binaries
-
-HEADERS:
-  "Authorization": "<AUTHORIZATION>"
-  "Content-Type": "multipart/form-data"
-```
-
-Example:
-
-```shell
-$ curl -F "data=@<PATH_TO_YOUR_ZIP_FILE>" \
-	     -H "Authorization: <AUTHORIZATION>" \
-	     "<URL>/application/applications/<APPLICATION_ID>/binaries"
-```
-
-> **Important**: The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. Contact us via [Empower Portal](https://empower.softwareag.com) so that we can assist you with the activation. Note that this is a paid feature.
-
-It is also possible to upload the ZIP file directly on your tenant. In the Administration application, navigate to **Applications** > **Own applications**, click **Add application** and select **Upload microservice** from the options list.
-
-![Upload microservice](/guides/images/microservices-sdk/admin-microservice-upload.png)
-
-Locate the ZIP file of your microservice application and click **Subscribe** to subscribe the microservice afterwards.
-
-![Subscribe microservice](/guides/images/microservices-sdk/admin-microservice-subscribe-up.png)
-
-Once the ZIP file has been uploaded successfully, you will see a new microservice application created.
-
-#### Test the deployed microservice
-
-The `curl` command can be used to verify that the microservice is up and running using the <kbd>/health</kbd> endpoint:
-
-```shell
-$ curl -H "Authorization: <AUTHORIZATION>" \
-       <URL>/service/my-first-microservice/health
-```
-
-You can also test your microservice with your favorite browser. Remember to enter your user credentials using &lt;tenant>/&lt;username> and your password.
+-->
 
 ### Improving the microservice
 

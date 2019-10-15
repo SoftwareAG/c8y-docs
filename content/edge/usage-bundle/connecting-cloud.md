@@ -4,7 +4,7 @@ title: Connecting to the Cloud
 layout: redirect
 ---
 
-Cumulocity IoT Edge provides the option to upload Edge data to a Cumulocity Cloud account selectively. Note that you must first create a cloud account.
+Cumulocity IoT Edge provides the option to upload Edge data to a Cumulocity cloud account selectively. Note that you must first create a cloud account.
 
 To configure the cloud account in your Edge device, run the post-installation script and select [Option 7 - Configure Edge Agent](/guides/edge/installation/#option-7-configure-edge-agent). For more information, see [Configuring the Edge server](/guides/edge/installation/#configuring-the-edge-server).
 

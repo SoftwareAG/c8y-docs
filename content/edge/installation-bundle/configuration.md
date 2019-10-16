@@ -25,7 +25,7 @@ The post-installer configuration file is a key-value based configuration file wh
 
 A template of this configuration file is placed within the EDGE VM under */opt/c8y/utilities/post-installer/* as *config.dat*. In order to use this, you need to update the file with the correct values.
 
->**Important**: This template file is overwritten if the post-installation script is invoked and inputs are entered manually via console.
+>**Important**: This template file is overwritten if the post-installation script is invoked and inputs are entered manually through console.
 Therefore it is advisable to copy this template file to a different location and edit the same.
 
 The following keys are available in the configuration file:
@@ -104,20 +104,22 @@ You will be prompted to select one of the following options:
 7. [Configure Edge Agent](/guides/edge/installation/#option-7-configure-edge-agent)
 8. Exit
 
->**Important**: Option 3, 4 and 6 will only work after you have successfully completed the post-installation setup (Option 2). 
-Option 1 and 4 cannot be invoked from a remote connection like SSH. You will have to run these directly from the terminal within the VM.
+>**Important**:<br>
+- Option 1 is the first step that you must perform while configuring the Edge server.<br> 
+- Option 3, 4 and 6 will only work after you have successfully completed the post-installation setup (Option 2). <br>
+- Option 1 and 4 cannot be invoked from a remote connection like SSH. You will have to run these directly from the terminal within the VM.
 
 #### Option 1 - Configure network
 
 >**Info**: This option is not required if you use VirtualBox as with VirtualBox the IP is configured out of the box in VM. You can immediately proceed with running the post-installation.
 
->**Important**: This task needs to be invoked from within the VM and cannot be invoked via a remote connection.
+>**Important**: This task needs to be invoked from within the VM and cannot be invoked through a remote connection.
 
 First, select the type of input you want to use.
 
 `* Enter [F] to take input from file or [C] to take input from console: `
 
-You have the choice to  enter the network parameters manually via the console or via a file. 
+You have the choice to  enter the network parameters manually through the console or through a file. 
 
 ##### Console input
 
@@ -155,7 +157,7 @@ First, select the type of input you want to use.
 
 `* Enter [F] to take input from file or [C] to take input from console:`
 
-You have the choice to enter the post-installation parameters manually via the console or via a file. 
+You have the choice to enter the post-installation parameters manually through the console or through a file. 
 
 ##### Console input
 
@@ -173,7 +175,7 @@ You have the choice to enter the post-installation parameters manually via the c
 
 	`* Re-enter tenant admin password:`
 
-4. Provide a fully qualified domain name, e.g. "myown.iot.com". The domain name must match the domain name of the SSL certificate. <br>Moreover, the domain name must match the Cumulocity licence’s domain. The Cumulocity licence is tied up to the domain name being used in the instance and mismatch would result in a setup failure. 
+4. Provide a fully qualified domain name. For example, "myown.iot.com". The domain name must match the domain name of the SSL certificate. <br>Moreover, the domain name must match the Cumulocity licence’s domain. The Cumulocity licence is tied up to the domain name being used in the instance and mismatch would result in a setup failure. 
 
 	`* Enter tenant domain name:` 
 
@@ -221,7 +223,7 @@ First, select the type of input you want to use.
 
 `* Enter [F] to take input from file or [C] to take input from console:`
 
-You have the choice to enter the update parameters manually via the console or via a file. 
+You have the choice to enter the update parameters manually through the console or through a file. 
 
 ##### Console input
 
@@ -257,7 +259,7 @@ The update process consists of multiple steps which are executed sequentially. A
 
 #### Option 4 - Run post-upgrade
 
->**Important**: This task needs to be invoked from within the VM and cannot be invoked via a remote connection.
+>**Important**: This task needs to be invoked from within the VM and cannot be invoked through a remote connection.
 
 >**Info**: During this process, the previously used password in the source will be validated as per Cumulocity's password policy. In case the password is not compliant with the policy, the user will be prompted to enter the tenant password without which the post-upgrade task cannot be completed.
 
@@ -286,11 +288,9 @@ So as a first step you need to carry out the following prior to selecting option
 
 The disk size expanding process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process will halt and a failure message will be displayed on the console.
 
-<img src="/guides/images/edge/edge-expand-disk-size.png" name="Expand disk size"/>
-
 #### Option 6 - Update tenant password
 
-Provide the new password for the edge tenant. This password is later used to login to the platform via the web browser as well as to login to the management tenant using the edgeadmin user.
+Provide the new password for the edge tenant. This password is later used to login to the platform through the web browser as well as to login to the management tenant using the edgeadmin user.
 
 `* Enter new tenant admin password:`
 
@@ -314,4 +314,4 @@ Provide the URL for the Cumulocity tenant (cloud or on-premise). For example, "h
 
 After providing the tenant URL, you have to register your Edge device with the Cumulocity tenant. For more information, see [Registering an Edge device with Cumulocity tenant](/guides/edge/installation/#registering-edge-device-with-cloud).
 
->**Important**: If you have configured the Cumulocity tenant URL during the post installation and then use this option with a blank URL, you will disable the Cumulocity tenant connectivity.   
+>**Important**: If you have configured the Cumulocity tenant URL during the post installation and then use this option with a blank URL, you will disable the Cumulocity tenant connectivity.

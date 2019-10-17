@@ -111,8 +111,6 @@ You will be prompted to select one of the following options:
 
 #### Option 1 - Configure network
 
->**Info**: This option is not required if you use VirtualBox as with VirtualBox the IP is configured out of the box in VM. You can immediately proceed with running the post-installation.
-
 >**Important**: This task needs to be invoked from within the VM and cannot be invoked through a remote connection.
 
 First, select the type of input you want to use.

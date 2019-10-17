@@ -1,7 +1,7 @@
 ---
 title: Prediction
 layout: redirect
-weight: 20
+weight: 30
 ---
 
 Operations on applying model to input data.

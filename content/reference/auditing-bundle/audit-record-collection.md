@@ -104,8 +104,9 @@ Example response:
       }
     }
 
-In case of executing range queries on audit logs API, like query by dateFrom and dateTo, audits are returned in order from the last to the latest.
-It is possible to change the order by adding query parameter "revert=true" to the request URL.
+In case of executing range queries on audit logs API, like query by dateFrom and dateTo, audits are returned by default in order from the newest to the oldest.
+
+It is possible to change the order by adding query parameter "revert=false" to the request URL. An example request would be: "<<url>>/audit/auditRecords?dateFrom=2019-09-01&dateTo=2019-09-06T08:26:42%2B02:00&revert=false".
 
 ### DELETE - delete an collection of auditRecords
 
@@ -126,3 +127,5 @@ Example request:
 Example response:
 
     HTTP/1.1  204 NO CONTENT
+
+> **Important**: This method has been deprecated and will be removed completely with the July 2020 release (10.6.6). With Cumulocity IoT >= 10.6.6 the deletion of audit logs will no longer be permitted. All DELETE requests to the audit API will return the error `405 Method not allowed`. Note that retention rules still apply to audit logs and will delete audit log records older than the specified retention time.

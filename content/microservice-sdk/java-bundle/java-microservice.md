@@ -8,70 +8,78 @@ Here you will learn how to create your first microservice that can be run on the
 
 ### Prerequisites
 
-Create an account on the [Cumulocity platform](https://cumulocity.com), for example by using a free trial. At this step you will be provided with a dedicated URL address.
+You need to have Cumulocity credentials and a dedicated tenant. In case you do not have that yet, create an account on the [Cumulocity platform](https://cumulocity.com), for example by using a free trial. At this step you will be provided with a dedicated URL address for your tenant.
 
-Use the following command to verify that you have Maven 3 installed with Java 7 or later.
+Verify that you have Java 7 or later installed together with Maven 3. It can be downloaded from the [Maven website](https://maven.apache.org/download.cgi).
 
 ```shell
 $ mvn -v
-Apache Maven 3.1.1 (0728685237757ffbf44136acec0402957f723d9a; 2013-09-17 17:22:22+0200)
-Maven home: /usr/local/Cellar/maven/3.1.1/libexec
-Java version: 1.7.0_45, vendor: Oracle Corporation
-Java home: /Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre
+Apache Maven 3.6.0
+Maven home: /Library/Maven/apache-maven-3.6.0
+Java version: 1.8.0_201, vendor: Oracle Corporation
+Java home (runtime): /Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/jre
+OS name: "mac os x", version: "10.14.6", arch: "x86_64", family: "mac"
 ```
 
-Maven can be downloaded from the [Maven website](http://maven.apache.org). You will also need a Docker installation, and in case that you don't have it, go to the [Docker website](https://www.docker.com/get-started) to download and install it.
+You will also need a Docker installation, and in case that you don't have it yet, go to the [Docker website](https://www.docker.com/get-started) to download and install it.
 
 Cumulocity hosts linux/amd64 Docker containers and not Windows containers. The Docker version must be 1.12.6 or above. Use the following command to verify your Docker installation:
 
 ```shell
 $ docker version
 Client: Docker Engine - Community
- Version:           18.09.2
- API version:       1.39
+ Version:           19.03.2
+ API version:       1.40
  OS/Arch:           darwin/amd64
 
 Server: Docker Engine - Community
  Engine:
-  Version:          18.09.2
-  API version:      1.39 (minimum version 1.12)
+  Version:          19.03.2
+  API version:      1.40 (minimum version 1.12)
   OS/Arch:          linux/amd64
 ```
 
 ### Developing the "Hello world" microservice
 
-To develop a very simple "Hello world" microservice for Cumulocity, you need to
+You can download the source code of this example from our [Bitbucket](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/) or [GitHub](https://github.com/SoftwareAG/c8y-microservice-hw-java) repositories to build and run it using your favorite IDE, or follow the instructions below to guide you step-by-step for you to have a better understanding of the code and what needs to be done/configured.
 
-* create a Maven project,
-* configure the _pom.xml_ file including a dependency to the Cumulocity Microservice SDK library,
-* create a Java application,
-* configure the microservice,
-* configure the build,
-* build and run the Java application.
+> **Important**: This microservice example has been tested under macOS and Linux with Java 8, Maven 3.6.0, Docker 19.03.2; Eclipse 2019.03 and IntelliJ IDEA 2019.2 as IDE. Other tools or Java versions may require different configurations.
 
-#### Creating a Maven project
+#### Create a Maven project
 
-Execute the following Maven command to create a plain Java project:
+Use the [Maven Archetype Plugin](https://maven.apache.org/archetype/maven-archetype-plugin/) to create a Java project from an existing Maven template. Use `c8y.example` as your groupId and `hello-world-microservice-java` as your artifactId.
 
 ```shell
-$ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-world-microservice -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+$ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-world-microservice-java -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
 
-This will create a folder *hello-world-microservice* in the current directory with a skeleton structure for your project.
+This will create a folder *hello-world-microservice-java* in the current directory with a skeleton structure for your project.
 
-#### Adding the Java Microservice library
+#### Specify the properties
 
-Inside the _hello-world-microservice_ folder you will find the _pom.xml_ file. Start editing this file by adding a properties element as follows:
+You will find the _pom.xml_ file inside the *hello-world-microservice-java* folder. Edit this file and add a `properties` element to [set the `-source` and `-target` of the Java Compiler](https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html) using version 1.8. This example uses [Spring Boot](https://spring.io/projects/spring-boot) to quickly build and create the application using the Spring Framework. Hence, also specify in the `properties` element the version to use as follows:
 
 ```xml
 <properties>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
-    <spring-boot-dependencies.version>1.5.7.RELEASE</spring-boot-dependencies.version>
-    <c8y.version>9.16.2</c8y.version>
-    <microservice.name>my-first-microservice</microservice.name>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <spring-boot-dependencies.version>1.5.17.RELEASE</spring-boot-dependencies.version>
 </properties>
 ```
+
+#### Add the Cumulocity's microservice library
+
+You need to specify the version of the Cumulocity's microservice library to be used. This can be found on the platform; at the top-right corner, click the tenant user and find the backend version on the pop-up menu.
+
+![Upload microservice](/guides/images/microservices-sdk/ms-backend-version.png)
+
+In the `properties` element specified above, add a child element `c8y.version` with the backend version of your tenant. Also add a `microservice.name` child element to name your first microservice application.
+
+```xml
+    <c8y.version>1004.6.12</c8y.version>
+    <microservice.name>hello-world-microservice-java</microservice.name>
+```
+
 
 Edit the `<c8y.version>` element to use the latest version of the client library. It may be obtained by reviewing the [Release notes](https://cumulocity.com/guides/release-notes/overview/) or the [Maven repository](http://download.cumulocity.com/maven/repository/com/nsn/cumulocity/clients-java/microservice-dependencies/). This particular example was implemented using version 9.16.2.
 

@@ -102,7 +102,7 @@ Use the toggle to enable and disable data forwarding to the destination tenant. 
 	* operation's device itself is a result of forwarding data;
 	* operation matches other filter criteria.
  
-	Updates of operation status coming from the source tenant will be forwarded to the destination tenant.
+	Updates of the operation status coming from the source tenant will be forwarded to the destination tenant.
  
 	The heading of a data filter summarizes the configuration in one line. The standard properties that are copied by default are:
  

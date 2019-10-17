@@ -85,7 +85,7 @@ In the management tenant, you will also find information on the parent tenant, i
 
 1. Click **Save** to apply your settings.
 
-When the tenant is created, it is automatically provisioned with a first, administrative user ("Administrator's username"). This administrator can create other users and set their permissions. The first user cannot be deleted to prevent you from locking yourself out.
+When the subtenant is created, it gets an auto-generated ID, which cannot be changed. Also, it is automatically provisioned with a first, administrative user ("Administrator's username"). This administrator can create other users and set their permissions. The first user cannot be deleted to prevent you from locking yourself out.
 
 From the management tenant, you can enable other tenants to create subtenants. To do so, check **Allow creation of subtenants** in the tenant editor.
 
@@ -109,18 +109,18 @@ The following information is displayed here:
 
 |Field|Description
 |:--------|:-----
-|Status|May be either *Enabled* or *Disabled*. <br>*Enabled* indicates that: <br> - support user access has ben activated on platform level (see [Customizing your platform](/guides/users-guide/enterprise-edition#configuration)), <br> - one or more subtenant users have activated support user access. <br>*Disabled* indicates that: <br> - support user access has been deactivated on platform level, <br> - support user access has been activated on platform level but deactivated for the subtenant, <br> - no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).
+|Status|May be either *Enabled* or *Disabled*. <br>*Enabled* indicates that: <br> - support user access has been activated on platform level (see [Customizing your platform](/guides/users-guide/enterprise-edition#configuration)), <br> - one or more subtenant users have activated support user access. <br>*Disabled* indicates that: <br> - support user access has been deactivated on platform level, <br> - support user access has been activated on platform level but deactivated for the subtenant, <br> - no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).
 |Active requests count|The number of requests currently active in the subtenant. Only displayed if support user access is not enabled globally on platform level. Shown as a number in a small red dot.
 |Expiry date|Specifies the date on which support user access for the tenant will expire. If no date has been specified, the expiry date is set to "No limit".
 
 
-### To suspend or delete subtenants
+### Suspending subtenants
 
-You can temporarily suspend tenants or you can delete subtenants permanently. 
+Suspending a tenant blocks any access to this tenant, regardless whether the access is from devices, users or other applications.
 
-Suspending tenants blocks any access to this tenant, regardless whether the access is from devices, users or other applications.
+If a tenant is suspended, the tenant’s data remains in the database and can be made available later by clicking **Activate**.
 
-If a tenant is suspended, the tenant's data remains in the database and can be made available any time later. To do so, click **Activate**.
+>**Important**: Suspended tenants for all Cumulocity IoT Public Cloud instances will be automatically deleted after 30 days.
 
 #### To suspend a subtenant
 
@@ -135,11 +135,15 @@ As part of suspending the tenant, an email is sent to the tenant administrator i
 >**Info**: If you are a service provider, you can suppress this email.
 
 
+### Deleting subtenants
+
+>**Important**: Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the management tenant. You cannot delete tenants from any tenant but the management tenant. 
+>
+>Administrators in Enterprise Tenants are only allowed to suspend active subtenants, but not to delete them. 
+
 #### To delete a subtenant
 
 Click the menu icon at the right of the respective subtenant entry and then click **Remove** to finally delete a tenant and remove all the data of the tenant.
-
->**Info**: This action cannot be reverted. For security reasons, it is only available in the management tenant.
 
 
 ### <a name="subscribe"></a>Applications
@@ -333,7 +337,6 @@ The information on the microservice usage is presented in the **Usage Statistics
 ![Tenant statistics](/guides/images/users-guide/Administration/admin-subtenants-usage-statistics-microservice.png)
 
 For more details, refer to [Tenants > Tenant usage statistics](/guides/reference/tenants/#tenant-usage-statistics) in the Reference guide. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
-
 
 ##### Scaling
 

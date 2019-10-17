@@ -9,7 +9,7 @@ layout: redirect
 
 The Apama Event Processing Language has a syntax similar to Java. In addition to simple flow control statements such as `if`, `while`, `for`, users can write listeners with the `on` keyword to react to events.
 
-Apama EPL is documented in the [Apama documentation](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3-1/apama10-3-1/apama-webhelp/).
+Apama EPL is documented in the [Apama documentation](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/).
 
 As an example, the following statement listens for new temperature sensor readings greater than a particular temperature:
 
@@ -26,7 +26,7 @@ As an example, the following statement listens for new temperature sensor readin
 		}
 	}
 
-Here, _Measurement_ is a pre-defined event containing the measurements. In this example, "m" is the "Measurement" event, the listener is filtering for measurements which are "c8y_TemperatureMeasurement" and the property is "c8y_TemperatureMeasurement.T.value" is in degrees Celsius of a temperature sensor (see the [sensor library](https://www.cumulocity.com/guides/reference/sensor-library)).
+Here, _Measurement_ is a pre-defined event containing the measurements. In this example, "m" is the "Measurement" event, the listener is filtering for measurements which are "c8y_TemperatureMeasurement" and the property is "c8y_TemperatureMeasurement.T.value" which is in degrees Celsius of a temperature sensor (see the [sensor library](https://www.cumulocity.com/guides/reference/sensor-library)).
 
 Listeners such as the above should be placed in a monitor in the `onload` statement, and the file will need to contain `using` statements for the types used by the listener - for most of the Cumulocity events, these are in the package *com.apama.cumulocity*. The full list is provided below - for the sake of brevity, we will omit these from further examples:
 
@@ -144,4 +144,4 @@ It may be required to query information from the Cumulocity database as part of 
 		}
 	}
 
-Above we create event definitions. These hold the SalesReport (the _Event_ and _ManagedObject_ that identifies a sale) and the information we want to derive from a set of sales: the count and customerId. We listen for _Event_ objects, and send a _FindManagedObject_ request to look up the _ManagedObject_ that the event came from. These SalesReport objects are sent, via the route statement, into a stream query. The stream query fires every hour (3,600 seconds) and selects an aggregate of the sales data per customer, and sends a new Measurement representing the sales for that vending machine.
+In the above example we start by creating definitions for SalesReport and SaleOutput events. These hold the SalesReport (the _Event_ and _ManagedObject_ that identifies a sale) and the information we want to derive from a set of sales: the count and customerId. We listen for _Event_ objects, and send a _FindManagedObject_ request to look up the _ManagedObject_ that the event came from. These SalesReport objects are sent, via the route statement, into a stream query. The stream query fires every hour (3,600 seconds) and selects an aggregate of the sales data per customer, and sends a new Measurement representing the sales for that vending machine.

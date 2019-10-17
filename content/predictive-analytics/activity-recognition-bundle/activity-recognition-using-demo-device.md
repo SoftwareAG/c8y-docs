@@ -40,7 +40,7 @@ Once registered, try to get the device ID by looking up your device on the **All
 
 2. Download the *RecognizeActivities.mon* file, open it in a text editor and replace the `deviceId` variable with the ID of your registered device, same as `c_device_source` in the *CONFIG.INI* file mentioned above.
 
-3. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as a single *.mon file with the Apama-epl application] (/guides/apama/analytics-introduction/#single-mon-file) in the Analytics guide for details on uploading Apama monitor files.
+3. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps] (/guides/apama/analytics-introduction/#single-mon-file) in the Streaming analytics guide for details on uploading Apama monitor files.
 
 #### Classify activities
 

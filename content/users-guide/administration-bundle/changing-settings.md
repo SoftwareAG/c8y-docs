@@ -8,18 +8,18 @@ From the **Settings** menu, administrators can modify or manage various settings
 
 - configure [single sign-on](#single-sign-on).
 - change the [application settings](#default-app).
-- change the [password policy and TFA settings](#changing-password-settings).
+- change the [authentication settings](#authentication).
 - manage the [properties library](#properties).
 - configure system-wide [configuration properties](#config-platform) in Cumulocity.
 - manage the [connectivity settings](#connectivity).
 
 ### <a name="single-sign-on"></a>Configuring single sign-on
 
-Cumulocity provides single sign-on functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory. Currently authorization code grant is supported only with access tokens in form of JWT. 
+Cumulocity provides single sign-on functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory. Currently authorization code grant is supported only with access tokens in form of JWT.
 
-**Info**: This feature is built on top of cookies technology. To be able to use it, you must have cookies enabled in the settings of your browser.  
+**Info**: This feature is built on top of cookies technology. To be able to use it, you must have cookies enabled in the settings of your browser.
 
-This feature is enabled since Cumulocity version 9.12. For correct behavior any microservice needs to use the microservice SDK with version 9.12 or later. 
+This feature is enabled since Cumulocity version 9.12. For correct behavior any microservice needs to use the microservice SDK with version 9.12 or later.
 
 Before switching to the single sign-on option it is mandatory that:
 
@@ -32,24 +32,24 @@ Before switching to the single sign-on option it is mandatory that:
 
 For Microservices custom built, refer to [General aspects > Security](guides/microservice-sdk/concept/#security) in the Microservice SDK guide.
 
-For on premises installation the domain-based tenant resolution is configured properly. 
+For on premises installation the domain-based tenant resolution is configured properly.
 
 
 #### Configuration settings
 
 To enable the feature, the administrator has to configure a connection with the authorization server. This is done in the Administration application.
 
-Click **Single sign-on** in the **Settings** menu in the navigator. 
+Click **Single sign-on** in the **Settings** menu in the navigator.
 
-At the top left, you can choose a template. The chosen option has an effect on the look of the panel. The default template is "Custom" which allows for a very detailed configuration with virtually any authorization server using OAuth2 authorization code grant. Other templates provide simplified views for well known and supported authorization servers. In the next steps there will first be a definition of how to use the "Custom" template followed by a view dedicated to Azure Active directory. 
+At the top left, you can choose a template. The chosen option has an effect on the look of the panel. The default template is "Custom" which allows for a very detailed configuration with virtually any authorization server using OAuth2 authorization code grant. Other templates provide simplified views for well known and supported authorization servers. In the next steps there will first be a definition of how to use the "Custom" template followed by a view dedicated to Azure Active directory.
 
 ##### Custom template
 
 ![Request configuration](/guides/images/users-guide/Administration/admin-sso-1.png)
 
-As the OAuth protocol is based on the execution of HTTP requests and redirects, a generic request configuration is provided. 
+As the OAuth protocol is based on the execution of HTTP requests and redirects, a generic request configuration is provided.
 
-The first part of the **Single sign-on** page consists of the request configuration. Here you can configure the HTTP request address, request parameters, headers and body in case of token and refresh requests. The authorize method is executed as a GET, and others as POST requests. 
+The first part of the **Single sign-on** page consists of the request configuration. Here you can configure the HTTP request address, request parameters, headers and body in case of token and refresh requests. The authorize method is executed as a GET, and others as POST requests.
 
 The **Basic** section of the **Single sign-on** page consists of the following configuration settings:
 
@@ -57,22 +57,22 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 
 |Field|Description|
 |:---|:---|
-|Redirect URI|Redirect parameter. Can be used in request definitions as a ${clientId} place holder 
+|Redirect URI|Redirect parameter. Can be used in request definitions as a ${clientId} place holder
 |Client ID|OAuth connection client ID. Can be used in request definitions as a ${clientId} place holder
 |Button name|Name displayed on the button on the **Login** page
 |Issuer|OAuth token issuer
 |Provider name|Name of the provider
-|Visible on Login page|Indicates whether the login option is enabled or not. 
+|Visible on Login page|Indicates whether the login option is enabled or not.
 |Audience|Expected aud parameter of JWT
 |Group|(Deprecated in favor of dynamic access mapping since 9.20)The initial group assigned to the user on first login
 |Applications|(Deprecated in favor of dynamic access mapping since 9.20)The initial applications assigned to the user on first login
 
-Each time a user logs in, the content of the access token is verified and is a base for user access to the Cumulocity platform. The following section provides the mapping between JWT claims and access to the platform. 
+Each time a user logs in, the content of the access token is verified and is a base for user access to the Cumulocity platform. The following section provides the mapping between JWT claims and access to the platform.
 
  ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-7.png)
- 
+
  In the example above, if a user tries to login a decoded JWT claims look like:
- 
+
 ```json
 {
 ...
@@ -81,7 +81,7 @@ Each time a user logs in, the content of the access token is verified and is a b
 }
 ```
 
-The user will be granted access to the global roles BUSINESS and APPLICATION COCKPIT. New rules can be added by clicking **Add access mapping** at the bottom. Click the Minus button to remove a rule. A statement can consist of multiple checks like in the image below. Yo can add a check to an existing statement by clicking **and**. 
+The user will be granted access to the global roles BUSINESS and APPLICATION COCKPIT. New rules can be added by clicking **Add access mapping** at the bottom. Click the Minus button to remove a rule. A statement can consist of multiple checks like in the image below. Yo can add a check to an existing statement by clicking **and**.
 
  ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-8.png)
 
@@ -100,23 +100,23 @@ In this case the following claim will match the condition:
  }
  ```
 
-As you can see, there is an option to verify if a value exists in a list via the "in" operator. Values can also be embedded in other objects. In this case a dot in the key implies looking into an embedded object. 
+As you can see, there is an option to verify if a value exists in a list via the "in" operator. Values can also be embedded in other objects. In this case a dot in the key implies looking into an embedded object.
 
-When a user logs in with an access token, the username can be derived from a JWT claim. The claim name can be configured in the **User ID configuration** window. 
+When a user logs in with an access token, the username can be derived from a JWT claim. The claim name can be configured in the **User ID configuration** window.
 
  ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-3.png)
 
 Each access token is signed by a signing certificate. Currently there are three options to configure the signing certificates.
- 
-1. By specifying the Azure AD certificate discovery address. 
+
+1. By specifying the Azure AD certificate discovery address.
 
  ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-4.png)
 
-2. By specifying the ADFS manifest address (for ADFS 3.0). 
+2. By specifying the ADFS manifest address (for ADFS 3.0).
 
  ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-9.png)
- 
-3. By providing the public key of a certificate manually to Cumulocity. A certificate definition requires an algorithm information, public key value and validity period. 
+
+3. By providing the public key of a certificate manually to Cumulocity. A certificate definition requires an algorithm information, public key value and validity period.
 
  ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-5.png)
 
@@ -124,9 +124,9 @@ Each access token is signed by a signing certificate. Currently there are three 
 
 ##### Azure AD configuration
 
-The integration was successfully verified against Azure AD. The configuration steps are available in [https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code). 
+The integration was successfully verified against Azure AD. The configuration steps are available in [https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code).
 
-While configuring your Azure AD, redirect_uri is your full domain address. For the purpose of this document we assume that it is http://aad.cumulocity.com. There are no additional steps on Azure AD required. 
+While configuring your Azure AD, redirect_uri is your full domain address. For the purpose of this document we assume that it is http://aad.cumulocity.com. There are no additional steps on Azure AD required.
 
 ##### Cumulocity configuration
 
@@ -136,19 +136,32 @@ When the "Azure AD" template is selected the configuration panel will look simil
 
 |Field|Description|
 |:---|:---|
-|Azure AD Address| Address of your Azure AD tenant 
+|Azure AD Address| Address of your Azure AD tenant
 |Tenant| Azure AD tenant name
 |Application ID| Application ID
 |Redirect URI| Address of your Cumulocity tenant followed by /tenant/oauth
-|Client secret| Azure AD client secret if applicable 
+|Client secret| Azure AD client secret if applicable
 |Button name| Button name
 |Token issuer| Token issuer value in form of a HTTP address
 
-The second part of the panel is the same as for the "Custom" template, where access mapping, user ID field selection and signature verification address are provided. 
+The second part of the panel is the same as for the "Custom" template, where access mapping, user ID field selection and signature verification address are provided.
 
  ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-aad-2.png)
 
- 
+
+
+
+##### Troubleshooting
+
+It can be particularly helpful to inspect the content of the authorization token sent to the platform as some of its fields contain the information required for the correct configuration described above.
+
+In Administration application, after clicking on 'Accounts' > 'Audit logs' you can filter by the category 'Single sign-on' and look for entries 'Json web token claims'
+
+The contexts of the token will be presented in JSON format.
+
+![Audit token content](/guides/images/users-guide/Administration/admin-sso-audit-token.png)
+
+
 ### <a name="default-app"></a>Changing application settings
 
 Click **Application** in the **Settings** menu to change applications settings.
@@ -159,7 +172,7 @@ Under **Default application**, you can select a default application from the lis
 
 >**Info**: All users must have access to this application.
 
-Under **Access control**, administrators can enable cross-origin resource sharing or "CORS" on the Cumulocity API. 
+Under **Access control**, administrators can enable cross-origin resource sharing or "CORS" on the Cumulocity API.
 
 The **Allowed Domain** setting will enable your JavaScript web applications to directly communicate with REST APIs.
 
@@ -168,40 +181,62 @@ The **Allowed Domain** setting will enable your JavaScript web applications to d
 
 For further information, see http://enable-cors.org.
 
-### <a name="changing-password-settings"></a>Changing the password policy and TFA settings
+### <a name="authentication"></a>Changing authentication settings
 
-Click **Password** in the **Settings** menu. 
+Click **Authentication** in the **Settings** menu if you want to view or change the Login or TFA settings.
 
-![Password settings](/guides/images/users-guide/Administration/admin-settings-password.png)
+![Password settings](/guides/images/users-guide/Administration/admin-settings-authentication.png)
+
+>**Info**: If the menu is not visible, confirm the user has one the following roles: `ROLE_TENANT_ADMIN` or `ROLE_TENANT_MANAGEMENT_ADMIN`.
 
 
-#### To change password settings
+#### Login Settings
 
-1. Under **Password expiration**, you can limit the validity of user passwords by specifying the number of days after which users have to change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords (default value).
-2. By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in [Getting Started > Accessing and logging into the Cumulocity platform](/guides/users-guide/overview#login).
+There are two **Preferred login modes** available:
 
-	Strong (green) passwords must have "M" characters. By default, the system restricts the use of passwords already used in the past. The last "N" passwords provided by a user are remembered by the system and the system does not allow to use them. The default value for "N" is 10.
+* "OAuth Internal" which is the recommended option as it provides better security.
+* "Basic Auth" which should be chosen only for specific compatibility reasons.
 
-	>**Info**: "M" and "N" can be configured by the platform administrator.
+This login mode will be used by the platform's applications as the default method to authenticate users. Device authentication stays unchanged.
 
-3. Click **Save** to apply your settings.
+>**Info**: If OAuth Internal is enforced, Basic Auth cannot be used to login to applications anymore. Older applications might fail to display the login correctly and need to be updated.
+
+In the field **Limit password validity for**, you can limit the validity of user passwords by specifying the number of days after which users have to change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords (default value).
 
 >**Info**: The password validity limit and the enforcing of strong passwords may not be editable, if configured by the platform administrator.
 
-#### To change TFA settings
+By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in [Getting Started > Accessing and logging into the Cumulocity platform](/guides/users-guide/overview#login).
 
-1. Under **TFA settings**, you can specify the following settings:
-	 - **Limit token validity** - here you can set the lifetime of each session in minutes. When the session expires, the user has to enter a new verification code.
- - **Limit PIN validity** - Here you can set the lifetime of each verification code sent via SMS. When the verification code expires, in order to login the user has to request a new verification code.
+Strong (green) passwords must have "M" characters. By default, the system restricts the use of passwords already used in the past. The last "N" passwords provided by a user are remembered by the system and the system does not allow to use them. The default value for "N" is 10.
 
-2. To allow two-factor authentication, select the checkbox **Allow two-factor authentication**. 
+>**Info**: "M" and "N" can be configured by the platform administrator.
 
-1. Click **Save TFA settings** to apply your settings.
+Click **Save** to apply the settings.
+
+#### TFA settings
+
+Select the checkbox **Allow two-factor authentication** if you want to allow TFA in your tenant (only possible for administrators).
+
+You may choose one of the following options:
+
+* **SMS-based**, supporting the following settings:
+	- **Limit token validity for**: Lifetime of each session in minutes. When the session expires, the user has to enter a new verification code.
+   - **Limit verification code validity for**: Here you can set the lifetime of each verification code sent via SMS. When the verification code expires, in order to login the user has to request a new verification code.
+
+	> **Info** An SMS gateway microservice must be configured for the tenant. Naturally only users with a valid phone number associated can use this functionality.
+
+* **Google Authenticator** (Time-based One-Time Password = TOTP), supporting the following settings:
+	 - **Enforce TOTP two-factor authentication on all users**: When enabled it will force all users to setup their TFA on login. Otherwise each individual user can choose to activate it or not.
+   - **Limit token validity for**: lifetime of each session in minutes.  When the session expires the user has to re-authenticate.
+
+	> **Info** This strategy is only available together with 'OAuth Internal'. Initially this feature will only be made available to some tenants so it may not be visible on the UI. If this applies to you and you are using a version higher than 1005.0.0, please contact support.
+
+Click **Save TFA settings** to apply your settings.
 
 ### <a name="properties"></a>Managing the properties library
 
 Click **Properties library** in the **Settings** menu, to add custom properties to inventory objects, alarms, events and tenants.
- 
+
 ![Properties library](/guides/images/users-guide/Administration/admin-settings-properties-library.png)
 
 With custom properties, you can extend the data model of Cumulocity built-in objects. You may create the following custom values:
@@ -212,13 +247,13 @@ With custom properties, you can extend the data model of Cumulocity built-in obj
 
 >**Info**: Custom properties are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 
-#### <a name="add-property"></a>To add a custom property 
+#### <a name="add-property"></a>To add a custom property
 
-1. Select the tab for the desired property and click **Add property**. 
+1. Select the tab for the desired property and click **Add property**.
 
 	![Add new property](/guides/images/users-guide/Administration/admin-settings-property-add.png)
- 
-1. In the resulting dialog box, provide a unique name as identifier and a label for the property and select its data type from the dropdown list. 
+
+1. In the resulting dialog box, provide a unique name as identifier and a label for the property and select its data type from the dropdown list.
 
 1. Additionally, select validation rules for the new property:
 
@@ -236,14 +271,14 @@ With custom properties, you can extend the data model of Cumulocity built-in obj
 
 #### To edit a custom property
 
-1. Click on the name of a property in the list to open it. 
-2. Do your edits. For details on the fields see [To add a custom property](#add-property). 
+1. Click on the name of a property in the list to open it.
+2. Do your edits. For details on the fields see [To add a custom property](#add-property).
 3. Click **Save** to save your settings.
 
 
 #### To remove a custom property
 
-1. Click on the name of a property in the list to open it. 
+1. Click on the name of a property in the list to open it.
 2. Click **Remove** to delete the property.
 
 ### <a name="openIT-credentials"></a>Entering OpenIT credentials
@@ -258,7 +293,7 @@ SMS are used throughout the application for various features like [two-factors a
 
 ### <a name="config-platform"></a>Configuration settings
 
-Under **Configuration** in the **Settings** menu, you can configure system-wide properties in Cumulocity. 
+Under **Configuration** in the **Settings** menu, you can configure system-wide properties in Cumulocity.
 
 ![Configuration settings](/guides/images/users-guide/Administration/admin-settings-configuration.png)
 
@@ -266,11 +301,11 @@ Under **Configuration** in the **Settings** menu, you can configure system-wide 
 
 The following placeholders can be found in the **Configuration** page:
 
-- {host} - The value of this placeholder is "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". For example, if "tenantId" is auto-generated, the host will be "t12345678.cumulocity.com".
-- {tenant-domain} - This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be "myTenant.cumulocity.com".
-- {token} - An automatically generated system token for password reset purposes.
+- {host} - The value of this placeholder is "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". For example, if "tenantId" is auto-generated, the host will be "h<span>ttps://t12345678.cumulocity.</span>com".
+- {tenant-domain} - This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be "h<span>ttps://myTenant.cumulocity.</span>com".
+- {token} - An automatically generated system token for password reset purposes. When a user requests a password reset, a new random token will be generated. This token will be associated only with the particular user and will allow for a single password reset action. The standard way of using this placeholder is along with the {tenant-domain} property as "{tenant-domain}?token={token}".
 
->**Info**: In case of Enterprise Edition, {host} and {tenantDomain} placeholders will have different values.
+>**Info**: In case of the Enterprise Tenant, the {tenantDomain} placeholders can have different values. An example tenant domain is "https:/myTenant.myhost.com".
 
 #### Two-factor authentication
 
@@ -278,7 +313,7 @@ In the **Two-factor authentication** section, you can change the SMS template wh
 
 #### Support link
 
-In the **Support link** section, you can enter a URL to be used to link to a Support page. If you do not provide a link here, the default link to the Cumulocity Support will be used. 
+In the **Support link** section, you can enter a URL to be used to link to a Support page. If you do not provide a link here, the default link to the Cumulocity Support will be used.
 
 Enter "false" to hide the link.
 
@@ -298,11 +333,11 @@ In the following two fields provide an email template to be used on password cha
 
 #### Email server
 
-In the **Email server** section, you can configure custom email server settings. 
+In the **Email server** section, you can configure custom email server settings.
 
 <img src="/guides/images/users-guide/Administration/admin-settings-configuration-email-server.png" alt="Configure email server">
 
-In the **Protocol and encryption** field, select a protocol/encryption type from the dropdown list. May be one of: 
+In the **Protocol and encryption** field, select a protocol/encryption type from the dropdown list. May be one of:
 
 * SMTP (no encryption): email.protocol=smtp and email.connection.encrypted=false
 * SMTP (STARTTLS): email.protocol=smtp and email.connection.encrypted=true
@@ -324,7 +359,7 @@ In the **Storage limit** section, you can specify the email subject and email te
 
 #### Suspending tenants
 
-In the **Suspending tenants** section, you can provide settings for emails being send on tenant suspension. 
+In the **Suspending tenants** section, you can provide settings for emails being send on tenant suspension.
 
 <img src="/guides/images/users-guide/Administration/admin-settings-configuration-suspending-tenants.png" alt="Suspended tenants">
 
@@ -340,7 +375,7 @@ In the **Connectivity** page, you can manage credentials for different providers
 
 The following provider settings may currently be specified:
 
-- [Impact](/guides/users-guide/optional-services#nokia-impact) 
+- [Impact](/guides/users-guide/optional-services#nokia-impact)
 - [LoRa](/guides/users-guide/optional-services#lora)
 - [Sigfox](/guides/users-guide/optional-services#sigfox)
 - [SIM](/guides/users-guide/optional-services#connectivity)

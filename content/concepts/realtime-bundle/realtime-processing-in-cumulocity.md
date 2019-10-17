@@ -6,13 +6,15 @@ layout: redirect
 
 On top of Cumulocity IoT you can use the Apama streaming analytics engine to define business operations for immediate processing of incoming data from devices or other data sources. These user-defined operations can for example alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices. The operation logic is implemented in Apama's Event Processing Language (EPL).
 
-Apama's Event Processing Language covers _statements_, which are organized into actions and monitors. These can be deployed one file at a time, where a file may contain multiple monitors and event definitions. Monitor files can be edited with Software AG Designer - an Eclipse-based development environment, and can be deployed as Cumulocity applications, see [Administration > Own applications](/guides/users-guide/administration/#managing-applications) in the User guide.
+Apama’s Event Processing Language covers statements, which are organized into actions and monitors. Monitor files can be edited directly from within Cumulocity IoT using Apama EPL Apps. Alternatively, you can install Apama on your local machine and develop your applications with Software AG Designer - an Eclipse-based development environment. You can deploy your monitor files as Apama applications to Cumulocity IoT, see [Basic functionality](/guides/apama/analytics-introduction) in the Streaming analytics guide for more information.
 
-For further information on using Apama's Event Processing Language in Cumulocity IoT refer to [Using Apama Event Processing Language](/guides/concepts/realtime#using-epl) below and to the [Analytics guide](/guides/apama/introduction).
+For further information on using Apama's Event Processing Language in Cumulocity IoT refer to [Using Apama Event Processing Language](/guides/concepts/realtime#using-epl) below and to the [Streaming analytics guide](/guides/apama/introduction).
 
-For more information about the interfaces for real-time processing also see [Real-time Statements](/guides/reference/real-time-statements) in the Reference guide.
-
->**Important**: Support for streaming analytics using CEL (Esper) is now deprecated. All new Cumulocity subscriptions use the Apama CEP engine. While using the Esper CEP engine is still supported for older installations, this will no longer be provided for new subscriptions and will not be invested into in the future. For documentation on using the deprecated CEL functionality based on Esper, refer to the [CEL analytics guide](/guides/event-language/introduction).
+>**Important**: Support for streaming analytics using CEL (Esper) is deprecated. All new Cumulocity subscriptions use the Apama CEP engine. While using the Esper CEP engine is still supported for older installations, this will no longer be provided for new subscriptions and support for using CEL (Esper) in Cumulocity will be terminated on 31 Dec 2020. 
+>
+>For documentation on using the deprecated CEL functionality based on Esper, refer to the [CEL analytics guide](/guides/event-language/introduction).
+>
+>For details on migration, see [Migrating from CEL (Esper) to Apama](/guides/apama/overview-analytics/#migrate-from-esper) in the Streaming analytics guide. 
 
 
 ### What are the benefits of using real-time processing?

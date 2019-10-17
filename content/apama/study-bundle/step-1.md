@@ -6,9 +6,11 @@ layout: redirect
 
 The main input for this module will be events. To discard non-matching events as early as possible, we perform this as the first check in the listener:
 
-	monitor.subscribe(Measurement.CHANNEL);
-	on all Event() as e {
-		if e.params.hasKey("c8y_Position") {
-			// we have an event
-		}
+```java
+monitor.subscribe(Measurement.CHANNEL);
+on all Event() as e {
+	if e.params.hasKey("c8y_Position") {
+		// we have an event
 	}
+}
+```

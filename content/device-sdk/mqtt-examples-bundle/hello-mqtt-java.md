@@ -50,9 +50,10 @@ Edit the _pom.xml_ in the _hello-mqtt-java_ folder. Add a dependency to the MQTT
 <dependency>
     <groupId>org.eclipse.paho</groupId>
     <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
-    <version>1.2.0</version>
+    <version>[1.2.1,)</version>
 </dependency>
 ```
+
 #### Creating a Java application
 
 Edit the _App.java_ file in the folder _hello-mqtt-java/src/main/java/c8y/example_ with the following content:

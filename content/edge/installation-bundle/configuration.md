@@ -105,7 +105,7 @@ You will be prompted to select one of the following options:
 8. Exit
 
 >**Important**:<br>
-- Option 1 is the first step that you must perform while configuring the Edge server.<br> 
+- Option 1 is the first step that you must perform while configuring the Edge server. Also, if you change the network configuration of a Hypervisor, you must configure the network using option 1.<br> 
 - Option 3, 4 and 6 will only work after you have successfully completed the post-installation setup (Option 2). <br>
 - Option 1 and 4 cannot be invoked from a remote connection like SSH. You will have to run these directly from the terminal within the VM.
 

@@ -43,3 +43,7 @@ The *Device SDK for C#* documentation has been moved from the [Device SDK guide]
 ### Analytics guide
 
 The Analytics guide has been renamed to Streaming analytics guide (as opposed to  Predictive analytics guide).
+
+### DataHub guide
+
+A new [Datahub guide](/guides/datahub/datahub-overview) has been added to the documentation, describing how to perform sophisticated analytical querying over device data with Cumulocity IoT DataHub, which is now available in the Cumulocity IoT Cloud platform as an integrated web application.

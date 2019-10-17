@@ -4,7 +4,9 @@ title: Connecting to the Cloud
 layout: redirect
 ---
 
-Cumulocity IoT Edge provides the option to upload Edge data to a Cumulocity Cloud account selectively (note that you first need to create a Cloud account).
+### Data exchange using Data Broker
+
+Cumulocity IoT Edge provides the option to upload Edge data to a Cumulocity tenant account selectively. Note that you must first create a Cumulocity tenant account.
 
 You can share the following data:
 
@@ -14,19 +16,20 @@ You can share the following data:
 * measurements
 * operations
 
-Navigate to **Data connectors** if you would like to send data to the Cloud account. 
+Go to **Data connectors** if you would like to send data to the tenant account. 
 
-Navigate to **Data subscriptions** in your cloud account to receive the data from Edge.
+Go to **Data subscriptions** in your tenant account to receive the data from Edge.
 
 <img src="/guides/images/users-guide/data-broker-navigator.png" alt="Data broker menus">
 
-In the same way, you can push operations from a Cumulocity Cloud account to Cumulocity IoT Edge devices.
+In the same way, you can push operations from a Cumulocity tenant account to Cumulocity IoT Edge devices.
  
-For details on sending and receiving data in Cumulocity refer to [Enterprise Tenant > Using the Data Broker](/guides/users-guide/enterprise-edition#data-broker) in the User guide.
+For details about sending and receiving data in Cumulocity, see [Enterprise Tenant > Using the Data Broker](/guides/users-guide/enterprise-edition#data-broker).
 
+### Remote Device Management
 
+Cumulocity tenant allows you to remotely manage your Edge device by registering the Edge device in the tenant account. To do so, you must first configure the Cumulocity tenant account in Edge Agent and then register your Edge device in the tenant account.
 
+To configure the tenant account in your Edge device, run the post-installation script and select [Option 7 - Configure Edge Agent](/guides/edge/installation/#option-7-configure-edge-agent). For more information, see [Configuring the Edge server](/guides/edge/installation/#configuring-the-edge-server).
 
-
-
-
+The Cumulocity tenant uses the SSH protocal to access the remote Edge device through a web browser.   

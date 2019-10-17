@@ -6,7 +6,7 @@ layout: redirect
 
 ### Setting up ESXi
 
-To set up an EXSi virtual machine, follow these steps:
+To set up an ESXi virtual machine, follow these steps:
 
 1. Click **Create/Register VM** to open a window to select the creation type.<br>
 <img src="/guides/images/edge/edge-esxi-00.png" name="Setting up ESXi" style="width:75%;"/>

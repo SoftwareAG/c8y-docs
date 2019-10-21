@@ -45,7 +45,7 @@ For each data connector, the following information is provided:
 
 Use the toggle to enable and disable data forwarding to the destination tenant. If data is being forwarded, the toggle reads "Active". If data is not being forwarded, the toggle reads "Suspended" or "Pending". "Suspended" means that you have disabled forwarding. "Pending" means that the destination tenant has disabled forwarding.
 
-####<a name="data-broker-connector-edit"></a> To add a data connector
+#### <a name="data-broker-connector-edit"></a>To add a data connector
 
 1. Click **Add data connector** in the top menu bar.
 2. In the **Settings** tab, provide the following information to create a new data connector:
@@ -94,28 +94,28 @@ Use the toggle to enable and disable data forwarding to the destination tenant. 
 </tr>
 </tbody>
 </table>
- 
- > **Info:** If the **Group or device** field is filled in, the entire descendant structure of the inventory is forwarded to the destination as soon as the connector stays active. if the **Group or device** field is empty or set to  "all" the descendant structure of the inventory is not forwarded; in this case the filter works in "lazy" mode, i.e. forwards the device or asset along with its first event/measurement/alarm.
- 
-	If operation API is checked in filters, operations created in the target tenant will be forwarded to the source tenant. This applies only to operations that meet the following conditions:
 
-	* operation's device itself is a result of forwarding data;
-	* operation matches other filter criteria.
+5. Click Save to save the configuration.
  
-	Updates of the operation status coming from the source tenant will be forwarded to the destination tenant.
+> **Info:** If the **Group or device** field is filled in, the entire descendant structure of the inventory is forwarded to the destination as soon as the connector stays active. if the **Group or device** field is empty or set to  "all" the descendant structure of the inventory is not forwarded; in this case the filter works in "lazy" mode, i.e. forwards the device or asset along with its first event/measurement/alarm.
  
-	The heading of a data filter summarizes the configuration in one line. The standard properties that are copied by default are:
- 
-	* **For created alarms**: type, text, time, severity, status
-	* **For updated alarms**: status, text, severity
-	* **For created events**: type, text, time
-	* **For created measurements**: type, text, time
-	* **For created and updated devices**: type, name, c8y&#95;IsBinary, 	c8y&#95;IsDeviceGroup, c8y&#95;IsDevice, c8y&#95;DeviceGroup, 	c8y&#95;DeviceSubgroup, c8y&#95;SmartRule, c8y&#95;DynamicGroup, 	c8y&#95;DeviceQueryString
-	* **For updated operations**: status
- 
-5. Click **Save** to save the configuration. 
+If operation API is checked in filters, operations created in the target tenant will be forwarded to the source tenant. This applies only to operations that meet the following conditions:
 
-You will see a security code displayed below your configuration. The security code prevents unintended forwarding of data. You need to communicate this security key separately to an administrative user of the destination tenant. You can click the copy icon next to the security code to copy the code to your clipboard.
+* operation's device itself is a result of forwarding data;
+* operation matches other filter criteria.
+ 
+Updates of the operation status coming from the source tenant will be forwarded to the destination tenant.
+ 
+The heading of a data filter summarizes the configuration in one line. The standard properties that are copied by default are:
+ 
+* **For created alarms**: type, text, time, severity, status
+* **For updated alarms**: status, text, severity
+* **For created events**: type, text, time
+* **For created measurements**: type, text, time
+* **For created and updated devices**: type, name, c8y&#95;IsBinary, c8y&#95;IsDeviceGroup, c8y&#95;IsDevice, c8y&#95;DeviceGroup, c8y&#95;DeviceSubgroup, c8y&#95;SmartRule, c8y&#95;DynamicGroup, c8y&#95;DeviceQueryString
+* **For updated operations**: status
+
+After saving the configuration, you will see a security code displayed below your configuration. The security code prevents unintended forwarding of data. You need to communicate this security key separately to an administrative user of the destination tenant. You can click the copy icon next to the security code to copy the code to your clipboard.
 
 ![Security code](/guides/images/users-guide/data-broker-connector-security-code.png)
 

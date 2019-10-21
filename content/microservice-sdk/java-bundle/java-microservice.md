@@ -47,7 +47,7 @@ You can download the source code of this example from our [Bitbucket](https://bi
 
 #### Create a Maven project
 
-Use the [Maven Archetype Plugin](https://maven.apache.org/archetype/maven-archetype-plugin/) to create a Java project from an existing Maven template. Use `c8y.example` as your groupId and `hello-microservice-java` as your artifactId.
+Use the [Maven Archetype Plugin](https://maven.apache.org/archetype/maven-archetype-plugin/) to create a Java project from an existing Maven template. Use `c8y.example` as your groupId, `hello-microservice-java` as your artifactId, and set the version following the SemVer format as specified in [Microservice manifest](/guides/microservice-sdk/concept/#manifest).
 
 ```shell
 $ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-microservice-java -Dversion=1.0.0-SNAPSHOT -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
@@ -73,7 +73,7 @@ You need to specify the version of the Cumulocity's microservice library to be u
 
 ![Upload microservice](/guides/images/microservices-sdk/ms-backend-version.png)
 
-In the `<properties>` element specified above, add a child element `<c8y.version>` with the backend version of your tenant. Also add a `<microservice.name>` child element to name your first microservice application.
+In the `<properties>` element specified above, add a child element `<c8y.version>` with the backend version of your tenant. Also add a `<microservice.name>` child element to name your microservice application.
 
 ```xml
     <c8y.version>1004.6.12</c8y.version>
@@ -115,7 +115,7 @@ Also add a dependency for the Microservice SDK library inside the `<dependencies
 </dependencies>
 ```
 
-To automatically manage the required artifacts needed for your microservice application, add a `<dependencyManagement>` element as follows:
+Add a `<dependencyManagement>` element to automatically manage the required artifacts needed for your microservice application.
 
 ```xml
 <dependencyManagement>
@@ -270,40 +270,44 @@ Upload the ZIP file of your microservice application and click **Subscribe** for
 
 Once the ZIP file has been uploaded successfully, you will see a new microservice application created.
 
+![Deployed microservice](/guides/images/microservices-sdk/admin-microservice-deployed.png)
+
 #### Test the deployed microservice
 
-Using your tenant credentials, you can test the microservice on any web browser using the URL as follows:
+Employing your tenant credentials, you can test the microservice on any web browser using the URL as follows:
 
 ```http
-http://<yourTenantDomain>/service/hello-microservice-java/health
+https://<yourTenantDomain>/service/hello-microservice-java/health
 ```
 
+You can also use third-party applications or commands to make a GET request to your microservice endpoint. To do so, you need:
 
+* A valid tenant, a user and a password in order to access Cumulocity.
+* An authorization header as "Basic &lt;Base64(&lt;tenantID>/&lt;username>:&lt;password>)>".
 
+For instance, if your tenant ID, username and password are **t0071234**, **testuser** and **secret123** respectively, you can get the Base64 string with the following command:
 
-<!-- TODO: enhance this part
+```shell
+$ echo -n t0071234/testuser:secret123 | base64
+dDAwNzEyMzQvdGVzdHVzZXI6c2VjcmV0MTIz
+```
+
+and your authorization header would look like `"Authorization": "Basic dDAwNzEyMzQvdGVzdHVzZXI6c2VjcmV0MTIz"`. Employing the cURL command you can test your microservice as follows:
+
+```shell
+$ curl -H "Authorization: <AUTHORIZATION>" https://<yourTenantDomain>/service/hello-microservice-java/hello?name=Skywalker
+```
 
 ### <a name="run-locally"></a> Running the microservice locally
 
 You can run the Docker container locally in order to test the REST calls from the microservice to Cumulocity.
-
-The microservice must be deployed to verify the REST calls from Cumulocity to the microservice.
 
 To run a microservice which uses the Cumulocity API locally, you need:
 
 * A valid tenant, a user and a password in order to access Cumulocity.
 * An authorization header as "Basic &lt;Base64(&lt;tenantID>/&lt;username>:&lt;password>)>".
 
-For instance, if your tenant ID, username and password are **tenant**, **testuser** and **secret123** respectively, you can get the Base64 string with the following command:
-
-```shell
-$ echo -n tenant/testuser:secret123 | base64
-dGVuYW50L3Rlc3R1c2VyOnNlY3JldDEyMw==
-```
-
-and your authorization header would look like `"Authorization": "Basic dGVuYW50L3Rlc3R1c2VyOnNlY3JldDEyMw=="`.
-
-#### Step 1 - Create the application
+#### Create the application
 
 If the application does not exist, create a new application on the Cumulocity platform employing a POST request.
 
@@ -319,60 +323,56 @@ BODY:
 {
   "name": "<APPLICATION_NAME>",
   "type": "MICROSERVICE",
-  "key": "<APPLICATION_NAME>-microservice-key"
+  "key": "<APPLICATION_NAME>-key"
 }
 ```
 
-You have to replace the values `<URL>` with the URL of your Cumulocity tenant, `<AUTHORIZATION>` is Basic with a Base64 encoded string, and for `<APPLICATION_NAME>` use the desired name for your microservice application and its `key` name.
+You have to replace the values `<URL>` with the URL of your Cumulocity tenant (domain), `<AUTHORIZATION>` is Basic with a Base64 encoded string, and for `<APPLICATION_NAME>` use the desired name for your microservice application and its `key` name.
 
 > **Important**: When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
 
-The `curl` command can be used to create the application with a POST request:
+The cURL command can be used to create the application with a POST request:
 
 ```shell
 $ curl -X POST -s \
-  -d '{"name":"my-first-microservice","type":"MICROSERVICE","key":"my-hello-world-ms-key"}' \
+  -d '{"name":"local-microservice-java","type":"MICROSERVICE","key":"my-hello-world-ms-key"}' \
   -H "Authorization: <AUTHORIZATION>" \
   -H "Content-Type: application/vnd.com.nsn.cumulocity.application+json" \
   -H "Accept: application/vnd.com.nsn.cumulocity.application+json" \
   "<URL>/application/applications"
 ```
 
-In case of errors, e.g. invalid names, you will get the details printed in the console. When the application is created successfully, you will get a response in JSON format as the following example:
+In case of errors, e.g. invalid names, you will get the details printed in the console. When the application is created successfully, you will get a response in JSON format similar to the following example:
 
 ```json
 {
-  "id": "<APPLICATION_ID>",
-  "key": "my-hello-world-ms-key",
-  "name": "my-first-microservice",
-  "type": "MICROSERVICE",
-  "availability": "PRIVATE",
-
-  "self": "<URL>/application/applications/<APPLICATION_ID>",
-
-  "owner": {
-    "self": "...",
-    "tenant": {
-      "id": "<TENANT>"
-    }
-  },
-  "requiredRoles": [],
-  "manifest": {
-    "noAppSwitcher": true
-  },
-  "roles": [],
-  "contextPath": "my-first-microservice"
+    "availability": "PRIVATE",
+    "contextPath": "local-microservice-java",
+    "id": "<APPLICATION_ID>",
+    "key": "my-hello-world-ms-key",
+    "manifest": {
+        "noAppSwitcher": true,
+        "settingsCategory": null
+    },
+    "name": "local-microservice-java",
+    "owner": {
+        "self": "...",
+        "tenant": {
+            "id": "<TENANT_ID>"
+        }
+    },
+    "requiredRoles": [],
+    "roles": [],
+    "self": "<URL>/application/applications/<APPLICATION_ID>",
+    "type": "MICROSERVICE"
 }
 ```
 
-In the Administration application, navigate to **Applications** > **Own applications**. There you will see the newly created microservice.
+In the Administration application, navigate to **Applications** > **Own applications**. There you will see the created microservice.
 
-![Hello World of Microservices](/guides/images/microservices-sdk/admin-first-microservice.png)
+#### Acquire the microservice bootstrap user
 
-
-#### Step 2 - Acquire the microservice bootstrap user
-
-You will need the bootstrap user credentials in order to run the microservice locally. Get the details of your bootstrap user with a GET request as follows:
+You will need the bootstrap user credentials in order to run the microservice locally. Get the details of your bootstrap user with a GET request.
 
 ```http
 GET <URL>/application/applications/<APPLICATION_ID>/bootstrapUser
@@ -382,21 +382,20 @@ HEADERS:
   "Content-Type": application/vnd.com.nsn.cumulocity.user+json
 ```
 
-> **Info**: Besides the `curl` command, you can also employ a graphical interface such as Postman.
+> **Info**: Besides the cURL command, you can also employ a graphical interface such as Postman.
 
+#### Run the Docker container
 
-#### Step 3 - Run the microservice locally
-
-The Docker image was built and added to the local Docker repository during the Maven build. You can list all the Docker images available with the following command:
+The Docker image was built and added to the local Docker repository during the [Maven build](#build-the-microservice-application). You can list all the Docker images available with the following command:
 
 ```shell
 $ docker images
 ```
 
-Get your image ID and tag from the list. While not strictly a means of identifying a container, you can specify a version of an image you would like to run the container with. Run the Docker container for the microservice also providing the URL of your tenant and the bootstrap user credentials. Do not forget to expose the port 80 to a port on your host system, e.g. 8082.
+Get your IMAGE ID and TAG from the list. While not strictly a means of identifying a container, you can specify a version of an image (TAG) you would like to run the container with. Run the Docker container for the microservice also providing the URL of your tenant and the bootstrap user credentials. Do not forget to expose the port 80 to a port on your host system, e.g. 8082.
 
 ```shell
-$ docker run -p 8082:80 -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_TENANT> -e C8Y_BOOTSTRAP_USER=<BOOTSTRAP_USERNAME> -e C8Y_BOOTSTRAP_PASSWORD=<BOOTSTRAP_USER_PASSWORD> -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t -e C8Y_BASEURL=<URL> <DOCKER_REPOSITORY_IMAGE>:<TAG>
+$ docker run -p 8082:80 -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_TENANT> -e C8Y_BOOTSTRAP_USER=<BOOTSTRAP_USERNAME> -e C8Y_BOOTSTRAP_PASSWORD=<BOOTSTRAP_USER_PASSWORD> -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t -e C8Y_BASEURL=<URL> <IMAGE_ID>
 ```
 
 If your Docker image has run successfully, you shall see the output on the console similar to the one below.
@@ -410,42 +409,21 @@ If your Docker image has run successfully, you shall see the output on the conso
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v1.5.7.RELEASE)
 
-2019-03-01 13:57:13.638  INFO 8 --- [main] c8y.example.App                          : Starting App on 855d1971889b with PID 8 (/data/my-first-microservice.jar started by root in /)
-
+2019-10-21 15:53:07.510  INFO 7 --- [main] c8y.example.App                          : Starting App on dff01acae6d8 with PID 7 (/data/hello-microservice-java.jar started by root in /)
 ...
-
-2019-03-01 13:57:24.728  INFO 8 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 80 (http)
-2019-03-01 13:57:24.750  INFO 8 --- [main] c8y.example.App                          : Started App in 12.044 seconds (JVM running for 12.911)
+2019-10-21 15:53:17.583  INFO 7 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 80 (http)
+2019-10-21 15:53:17.598  INFO 7 --- [main] c8y.example.App                          : Started App in 11.32 seconds (JVM running for 12.192)
 ```
 
-At this point, you may open your favorite browser and test your microservice at [http://localhost:8082/hello](http://localhost:8082/hello). Enter your bootstrap user credentials using &lt;tenant>/&lt;username> and your password. You shall see a response message in JSON format like "Microservice my-first-microservice is not subscribed by tenant".
-
-
-#### Step 4 - Subscribe to the microservice
+#### Subscribe to the microservice
 
 In the Administration application, navigate to **Applications** > **Own applications**. Locate your microservice application and click it to open its details. On the top right side click **Subscribe**.
 
 ![Subscribe to a microservice](/guides/images/microservices-sdk/admin-microservice-subscribe.png)
 
-Now you can test your microservice locally using the endpoint <kbd>/hello</kbd> and with a parameter, e.g. <kbd>/hello?name=Neo</kbd>.
+At this point, you may open your favorite browser and test your microservice at <http://localhost:8082/hello>. Enter your bootstrap user credentials using &lt;tenant>/&lt;username> and your password.
 
-It is also possible to subscribe to the microservice with a POST request:
-
-```http
-POST <URL>/tenant/tenants/<TENANT_ID>/applications
-
-HEADERS:
-  "Authorization": "<AUTHORIZATION>"
-
-BODY:
-  {
-    "application": {
-        "id": "<APPLICATION_ID>"
-    }
-  }
-```
-
--->
+You may also use the name parameter, e.g. <http://localhost:8082/hello?name=Neo>.
 
 ### Improving the microservice
 

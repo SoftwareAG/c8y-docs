@@ -2,6 +2,8 @@
 weight: 50
 title: Number formats
 layout: redirect
+aliases:
+  - /event-language/best-practises#number-formats
 ---
 
 When interacting with measurements the values will be in BigDecimal (if you use getNumber()).

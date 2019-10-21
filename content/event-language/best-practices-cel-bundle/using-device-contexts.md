@@ -2,6 +2,8 @@
 weight: 30
 title: Using device contexts
 layout: redirect
+aliases:
+  - /event-language/best-practises#using-device-contexts
 ---
 
 If you need a device context, it is usually not necessary to put every statement into context.

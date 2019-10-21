@@ -2,6 +2,8 @@
 weight: 10
 title: Custom fragments
 layout: redirect
+aliases:
+  - /event-language/advanced#custom-fragments
 ---
 
 Cumulocity APIs give you the possibility to structure your data freely. In the Cumulocity Event Language this is also the case.

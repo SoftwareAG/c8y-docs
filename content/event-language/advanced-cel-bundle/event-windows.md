@@ -2,6 +2,8 @@
 weight: 30
 title: Event windows
 layout: redirect
+aliases:
+  - /event-language/advanced#event-windows
 ---
 
 Event windows give you the possibility to batch together multiple events in a stream for further analysis.

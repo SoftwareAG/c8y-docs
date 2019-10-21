@@ -2,6 +2,8 @@
 weight: 40
 title: Splitting modules
 layout: redirect
+aliases:
+  - /event-language/best-practises#splitting-modules
 ---
 
 If your module gets really big it might be helpful to split it into multiple modules.

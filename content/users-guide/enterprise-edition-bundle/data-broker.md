@@ -74,7 +74,7 @@ Use the toggle to enable and disable data forwarding to the destination tenant. 
 <tbody>
 <tr>
 <td style="text-align:left">Group or device</td>
-<td style="text-align:left">The group or device that is forwarded. Selecting a group here results in all sub-groups and sub-devices being forwarded. Leaving the default option "All objects" selected will synchronize all types of objects, including internal and technical ones (not exclusively groups and devices), which may cause issues on the target tenant.</td>
+<td style="text-align:left">The group or device that is forwarded. If you select a group here all sub-groups and sub-devices of this group will be forwarded. <br><b>Warning</b>: The option "All Objects" is left in the UI to ensure backward compatibility with older versions. We strongly recommend to not use this option. When selected Cumulocity will synchronize all types of objects, system as well as user-defined, and might override objects in the target environment. Such objects may contain references to other objects and also configuration information. It is the user's responsibility to check and ensure consistency of such information in the transferred objects in the target environment. We intend to deprecate this option.</td>
 </tr>
 <tr>
 <td style="text-align:left">API</td>

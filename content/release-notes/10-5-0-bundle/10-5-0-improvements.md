@@ -9,7 +9,7 @@ layout: redirect
 
 #### Installation
 
-Cumulocity now provides an **offline installation** process for the Cumulocity IoT platform. Details can be found in the *Cumulocity IoT Multi-node installation guide* provided through the [Software AG Empower Portal](https://empower.softwareag.com) (credentials required).
+Cumulocity now provides an **offline installation** process for the Cumulocity IoT platform. An on-premise Cumulocity IoT cluster can now be installed and operated without requiring internet connectivity. Details can be found in the *Cumulocity IoT Multi-node installation guide* provided through the [Software AG Empower Portal](https://empower.softwareag.com) (credentials required).
 
 #### Administration
 
@@ -25,17 +25,21 @@ Improved error messages when uploading microservices. [MTM-25850]
 
 ![Microservice Error Messages](/guides/images/release-notes/microservice-error-messages.png)
 
+
 #### Device Management
 
 The filters in the **Devices** > **All Devices** page can now be configured. Subsequently, created smart groups will contain these filters. [MTM-25909]
 
-![Configurable Columns](/guides/images/release-notes/configurable-columns.png)  
+![Configurable Columns](/guides/images/release-notes/configurable-columns.png) 
+
+Devices shell now supports commands for Machinelink devices. [MTM-26944]
+ 
 
 #### Web SDK
 
 You can now add context-based routes, for example an additional tab for a certain device. Context routes help you to extend existing routes with further information. [MTM-26856]  
 
-You can now add custom widgets developed in Angular to a Web SDK for Angular based application.[MTM-25425]
+The Angular Web SDK now also allows for adding custom widgets developed in Angular to a Web SDK for Angular based application. With this addition, the Angular Web SDK supports all functionality of the deprecated Web SDK for AngularJS.[MTM-25425]
 
 For details, see the [How-to recipes](/guides/web/how-to/) in the Web SDK guide.
 
@@ -49,7 +53,7 @@ For details, see the [How-to recipes](/guides/web/how-to/) in the Web SDK guide.
 
 [LWM2M] The LWM2M bootstrap server now ignores empty fields. [MTM-26657]
 
-[Performance] Performance when ingesting measurements has been significantly improved through a new algorithm. Switching to the new algorithm at runtime is now possible via a tenant option. [MTM-27216]
+[Performance] Performance when ingesting complex measurement data structures has been significantly improved through a new algorithm. Switching to the new algorithm at runtime is now possible via a tenant option. [MTM-27216]
 
 
 ### Apama EPL Apps (formerly Apama-epl)

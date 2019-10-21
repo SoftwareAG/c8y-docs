@@ -2,6 +2,8 @@
 weight: 60
 title: Variables 
 layout: redirect
+aliases:
+  - /event-language/advanced#variables
 ---
 
 You can define variables in your modules.

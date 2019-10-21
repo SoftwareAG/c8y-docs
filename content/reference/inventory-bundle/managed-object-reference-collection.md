@@ -23,6 +23,7 @@ layout: redirect
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
+|Host|{{hostname}}
 
 > **Info:** "404 Not Found" error will appear if the object has no references.
 
@@ -86,6 +87,7 @@ HTTP/1.1
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
+|Host|{{hostname}}
 |Content-Type|application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
 
 ```http

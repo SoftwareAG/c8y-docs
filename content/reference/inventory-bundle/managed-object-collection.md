@@ -25,6 +25,7 @@ layout: redirect
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
+|Host|{{hostname}}
 
 ```http
 GET <<url>>/inventory/managedObjects

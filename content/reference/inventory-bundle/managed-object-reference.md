@@ -22,6 +22,7 @@ layout: redirect
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
+|Host|{{hostname}}
 
 ```http    
 200 - OK
@@ -65,6 +66,7 @@ HTTP/1.1
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
+|Host|{{hostname}}
 
 ```http
 DELETE /inventory/managedObjects/<<deviceId>>/<<references>>/<<referenceId>>

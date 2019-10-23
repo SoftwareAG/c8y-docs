@@ -328,6 +328,15 @@ with proper credentials (user and password from any subscribed tenant), returns 
 }
 ```
 
+The authorization header is formed as "Basic &lt;Base64(&lt;tenantID>/&lt;username>:&lt;password>)>". For instance, if your tenant ID, username and password are **t0071234**, **testuser** and **secret123** respectively, you can get the Base64 string with the following command:
+
+```shell
+$ echo -n t0071234/testuser:secret123 | base64
+dDAwNzEyMzQvdGVzdHVzZXI6c2VjcmV0MTIz
+```
+
+and your authorization header would look like `"Authorization": "Basic dDAwNzEyMzQvdGVzdHVzZXI6c2VjcmV0MTIz"`.
+
 If there are active alarms on your tenant, your Slack channel will get notified. You can also [create a new alarm](/guides/reference/alarms/#post-create-a-new-alarm) using the Cumulocity REST API and validate that your microservice is listening to new alarms. Your Slack channel will also get notified.
 
 ![Slack app posting alarms](/guides/images/microservices-sdk/microservice-slack-alarms.png)

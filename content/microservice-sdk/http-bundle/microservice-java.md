@@ -279,7 +279,6 @@ public class App {
 
     /**
     * Create a warning alarm on microservice subscription
-    *
     */
     @EventListener(MicroserviceSubscriptionAddedEvent.class)
     public void createAlarm (MicroserviceSubscriptionAddedEvent event) {
@@ -392,7 +391,13 @@ public class App {
 
 ### Building and deploying the application
 
-Use the command `mvn clean install` and follow the same steps of the [Hello world tutorial](/guides/microservice-sdk/java/#java-microservice) to deploy your microservice.
+Use the command `mvn clean install` and follow the same steps of the [Hello world tutorial](/guides/microservice-sdk/java/#java-microservice) to deploy your microservice. You may also employ the cURL to deploy the microservice.
+
+```shell
+$ curl -F "data=@target/iptracker-microservice-1.0.0-SNAPSHOT.zip" \
+     -H "Authorization: <AUTHORIZATION>" \
+     "<URL>/application/applications/<APPLICATION_ID>/binaries"
+```
 
 ### Testing the application
 

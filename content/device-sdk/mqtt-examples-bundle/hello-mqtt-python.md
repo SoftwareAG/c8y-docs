@@ -44,7 +44,7 @@ import paho.mqtt.client as mqtt
 import time, threading, ssl, random
 
 # client, user and device details
-serverUrl   = "tcp://mqtt.cumulocity.com"
+serverUrl   = "mqtt.cumulocity.com"
 clientId    = "my_mqtt_python_client"
 device_name = "My Python MQTT device"
 tenant      = "<<tenant>>"

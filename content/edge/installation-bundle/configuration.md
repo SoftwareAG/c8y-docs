@@ -67,6 +67,17 @@ The following parameters are required only if you want to update the network par
 
 >**Info**: If the DNS Server IP is unknown, you can enter the previously entered gateway IP here. If any of the network parameters are not available, contact your network administrator.
 
+### Domain name validation
+
+When you are creating a domain name, ensure that you adhere to the following rules:
+
+* The domain name must be case insensitive alphanumeric characters separated by dot ( . ), hyphen ( - ) or underscore ( _ ):
+	* Cannot contain any letters of languages like Chinese, Latin or Arabic.
+	* Cannot contain any special characters like (+ , ! @ # $ % ^ & * ( ) ; \ \ / | < > \ " \ ' ) other than dot ( . ), hyphen ( - ) or underscore ( _ ).
+* The length of the domain name including the dot must not exceed 255 characters.
+* Each segment of the domain name separated by a dot must be between 1 to 63 characters long.
+* The Top-Level Domain (TLD) which refers to the last segment of the domain name must be between two to six characters long.
+* The domain name cannot begin or end with a hyphen or an underscore.
 
 ### Configuring the Edge server
 

@@ -10,10 +10,20 @@ layout: redirect
 |:---|:---|
 |**Hypervisor**|- VMWare ESXi 6.5 and 6.7 <br> - VMware Workstation Player 15.x <br>- Hyper-V on Microsoft Windows 10 Pro and Windows 10 Enterprise, version 1809 <br> - Virtualbox version 5.2.8, to be downloaded from [https://www.virtualbox.org](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2)<br>**Info**: Support for VirtualBox is deprecated and it is not recommended to be used in a production environment. The Virtualbox version 5.2.8 can be used only for testing.. 
 |**Edge VM image**|To be downloaded from the [Software AG Empower portal](https://empower.softwareag.com), based on the target hypervisor. <br> For VMware (ESXi and Workstation Player), download all the 4 files of VMware (ovf, mf and two disks vmdk files). <br> For Hyper-V, download the ZIP file. <br> For VirtualBox, download the OVA file.|
-|**Cumulocity license file**|To request the license file for Cumulocity, please contact the logistics team for your region:<br> - North and South America: LogisSrvus@softwareagusa.com <br>- All Other Regions: LogisticsServiceCenterGER@softwareag.com <br>In the email, you must include <br> - your company name, under which the license has been bought <br> - the domain name (e.g. myEdge.domain.com), under which Cumulocity IoT Edge will be reachable|
+|**Cumulocity license file**|To request the license file for Cumulocity, contact the logistics team for your region:<br> - North and South America: LogisSrvus@softwareagusa.com <br>- All Other Regions: LogisticsServiceCenterGER@softwareag.com <br>In the email, you must include <br> - your company name, under which the license has been bought <br> - the domain name (e.g. myEdge.domain.com), under which Cumulocity IoT Edge will be reachable<br>For more information, see [Procuring the Edge License file](#procuring-the-edge-license-file).|
 |**SSL key and SSL certificate**|Use your internal or an external CA (Certification Authority) to create these.|
 |**Apama license**|The Apama license key is provided as part of your purchase. To request the license keys for your Apama purchase, please contact the logistics team for your region:<br> - North and South America: LogisSrvus@softwareagusa.com <br> - All Other Regions: LogisticsServiceCenterGER@softwareag.com<br>**The Apama license is optional and NOT required for an Cumulocity IoT Edge installation.**<br>|
 |**DNS entry**|The DNS (Domain Name System) is used to resolve human readable host names like www.cumulocity.com to machine readable IP addresses like 192.198.1.10. <br> If you want to connect to Edge VM within your LAN, the DNS entry has to be added for the domain name (URL under which Cumulocity IoT Edge can be reached) with the IP address of the host.|
+
+
+### Procuring the Edge License file
+
+For procuring the Edge license file, you must provide the right domain name to the Software AG's logistics team for Edge license key generation. While providing the domain name, consider the following points:
+
+* The domain name need not be a Fully Qualified Domain Name (FQDN).
+For example, to access the Edge platform with the domain name **iot.yourcompany.com**, request the Edge license for **iot.yourcompany.com** or **yourcompany.com** (without the sub-domain **iot**).
+* If you exclude the sub-domain from the domain name in the Edge license, you should possess a wildcard certificate which can be used with multiple sub-domains (**iot** or others) of the domain (**yourcompany.com**).
+* If you have an Internationalized Domain Name (IDN), then you should provide the translated ASCII equivalent domain name to the Software AG's logistics team. Also, provide the same IDN as the tenant domain name during the Edge post installation process.
 
 
 ### Network connectivity

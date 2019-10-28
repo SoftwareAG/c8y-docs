@@ -122,9 +122,9 @@ Before you import the newly created EPL application to Cumulocity IoT and activa
 
 For further information, see [The Cumulocity IoT Transport Connectivity Plug-in](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_the_cumulocity_connectivity_plug_in.html) in the Apama documentation.
 
-**Step 5 - Provide credentials**
+**Step 5 - Run and test the EPL application**
 
-You will need to provide your Cumulocity IoT credentials in the project configuration. Configure the credentials in the *CumulocityIoT.properties* file under the Cumulocity client. For example:
+When running the project locally, you will need to provide your Cumulocity IoT credentials in the project configuration. Configure the credentials in the *CumulocityIoT.properties* file under the Cumulocity client. For example:
 
 ```
 CUMULOCITY_USERNAME=user@example.com 
@@ -143,4 +143,4 @@ CUMULOCITY_TENANT=my_custom_tenant
 
 You can now proceed with testing your EPL in Software AG Designer.
 
-Once the EPL application is ready, refer to [Deploying applications](/guides/apama/analytics-introduction/#deploying-apps) to import the EPL application as a single \*.mon file.
+Once the EPL application is ready, refer to [Deploying applications](/guides/apama/analytics-introduction/#deploying-apps) to find out how to deploy it to Cumulocity IoT.

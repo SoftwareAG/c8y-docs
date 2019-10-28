@@ -79,10 +79,16 @@ The basic gives an overview on how to use the common endpoints. The following re
 As a starting point, you need an application showing dashboards. For this purpose, create a new Cockpit application using the `c8ycli`:
 
 ```js
-c8ycli new my-cockpit cockpit
+c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0
 ```
 
 Next, you need to install all dependencies. Switch to the new folder and run `npm install`.
+
+> **Tip:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. That way you can also define which version of the app you want to scaffold, e.g.:
+> 
+> - `c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0` will scaffold an app with the version `10.4.11.0`
+> - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an app with the latest official release. Same as used without the `-a` flag
+> - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an app with the latest beta release.
 
 ### 2. Request data directly with fetch
 

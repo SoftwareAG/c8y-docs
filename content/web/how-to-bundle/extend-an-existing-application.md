@@ -40,7 +40,7 @@ Now that you know the limitations we can start to extend the first application a
 As a starting point, you need an application. For this purpose, create a new Cockpit application using the `c8ycli`:
 
 ```js
-c8ycli new my-cockpit cockpit
+c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0
 ```
 
 Next, you need to install all dependencies. Switch to the new folder and run `npm install`.

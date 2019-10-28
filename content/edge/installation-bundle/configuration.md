@@ -69,7 +69,7 @@ The following parameters are required only if you want to update the network par
 
 ### Domain name validation
 
-When you are creating a domain name, ensure that you adhere to the following rules:
+When you create domain name, ensure that you adhere to the following rules:
 
 * The domain name must be case insensitive alphanumeric characters separated by dot ( . ), hyphen ( - ) or underscore ( _ ):
 	* Cannot contain any letters of languages like Chinese, Latin or Arabic.

@@ -18,13 +18,13 @@ layout: redirect
 
 ### Procuring the Edge License file
 
-For procuring the Edge license file, you must provide the right domain name to the Software AG's logistics team for Edge license key generation. While providing the domain name, consider the following points:
+To procure the Edge license file, you must provide the right domain name to the Software AG's logistics team for Edge license key generation. When you provide the domain name, consider the following points:
 
-* The domain name need not be a Fully Qualified Domain Name (FQDN).
-For example, to access the Edge platform with the domain name **iot.yourcompany.com**, request the Edge license for **iot.yourcompany.com** or **yourcompany.com** (without the sub-domain **iot**).
-* If you exclude the sub-domain from the domain name in the Edge license, you should possess a wildcard certificate which can be used with multiple sub-domains (**iot** or others) of the domain (**yourcompany.com**).
-* If you have an Internationalized Domain Name (IDN), then you should provide the translated ASCII equivalent domain name to the Software AG's logistics team. Also, provide the same IDN as the tenant domain name during the Edge post installation process.
+* The domain name need not be a Fully Qualified Domain Name (FQDN).<br>For example, to access the Edge platform with the domain name **iot.yourcompany.com**, request the Edge license for **iot.yourcompany.com** or **yourcompany.com** (without the sub-domain **iot**).
+* If you exclude the sub-domain from the domain name in the Edge license, you should possess a wildcard SSL certificate which can be used with multiple sub-domains (**iot** or others) of the domain (**yourcompany.com**).<br>For example, if you provide **yourcompany.com** as the domain name, you should possess an SSL certificate for ***.mycompany.com**
+* If you have an Internationalized Domain Name (IDN), then you should provide the translated ASCII equivalent domain name to the Software AG's logistics team.<br>For example, if your domain name is **iot.mycömpany.com** (for example, containing **ö**), then you should use **iot.xn--mycmpany-p4a.com**.<br>Also, provide the same IDN as the tenant domain name during the Edge post installation process.<br>
 
+	>**Info**: An Internationalized Domain Name (IDN) is an internet domain name that contains at least one label, in whole or in part, in a language-specific script or alphabet, such as Arabic, Chinese, Cyrillic, Devanagari, Hebrew or the Latin alphabet-based characters with diacritics or ligatures, such as French. The internationalization of domain names is a technical solution to translate names written in language-native scripts into an ASCII text representation that is compatible with the Domain Name System.
 
 ### Network connectivity
 

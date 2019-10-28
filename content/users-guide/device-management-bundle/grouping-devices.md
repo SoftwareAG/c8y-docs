@@ -44,6 +44,8 @@ See also [To add a group](#add-group) and [To assign a device to a group](#assig
 
 In the **Bulk operations** tab, bulk operations created for the group can be managed. With bulk operations you can at once execute operations for each device within one group. For details, refer to [Bulk operations](#bulk-operations).
 
+> **Info:** Bulk operations are ordered by date, showing the latest operation at the top.
+
 
 ### <a name="add-group"></a>To create a new group
 

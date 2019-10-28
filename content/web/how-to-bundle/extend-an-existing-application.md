@@ -45,10 +45,10 @@ c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0
 
 Next, you need to install all dependencies. Switch to the new folder and run `npm install`.
 
-> **Tip:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. That way you can also define which version of the app you want to scaffold, e.g.:
+> **Tip:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the app you want to scaffold, e.g.:
 > 
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0` will scaffold an app with the version `10.4.11.0`
-> - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an app with the latest official release. Same as used without the `-a` flag
+> - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an app with the latest official release. Same as if used without the `-a` flag
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an app with the latest beta release.
 
 ### 2. Bind a custom component to a route

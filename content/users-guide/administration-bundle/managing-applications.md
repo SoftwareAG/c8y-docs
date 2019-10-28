@@ -503,8 +503,6 @@ Cumulocity offers viewing logs which provide more details on the status of micro
 
 To view logs, open the **Logs** tab of the respective microservice. 
 
->**Info**: You need the permission EVENT_READ to view logs.
-
 <img src="/guides/images/users-guide/Administration/admin-applications-logs.png" alt="Microservice log" style="max-width: 100%">
 
 At the top of the page, you can select the instance of the microservice, for which you want to view the logs. 

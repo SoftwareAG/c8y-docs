@@ -499,29 +499,45 @@ In the **On alarm matching** section, use `c8y_Application_Down` as an alarm typ
 
 #### Log files
 
-Moreover, you may view logs to get more details on the status of microservices.
+Cumulocity offers viewing logs which provide more details on the status of microservices.
 
-To view logs open the **Log** tab of the respective microservice.
+To view logs, open the **Logs** tab of the respective microservice. 
 
-<img src="/guides/images/users-guide/Administration/admin-microservice-log.png" alt="Microservice log" style="max-width: 100%">
+>**Info**: You need the permission EVENT_READ to view logs.
 
-At the top of the page, the instance of the microservice, for which you want to view the logs, can be selected. Moreover you can adjust the font size and the theme at the right.
+<img src="/guides/images/users-guide/Administration/admin-applications-logs.png" alt="Microservice log" style="max-width: 100%">
 
-If your microservice was re-scaled into two instances you should be able to switch between them, but it is not possible to see the logs from both instances at once.
+At the top of the page, you can select the instance of the microservice, for which you want to view the logs. 
 
-There is no possibility to see the logs from the previously running instances, however inside the instance there is a docker container running and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated docker container.
+>**Info**: If your microservice was re-scaled into two instances you should be able to switch between them, but it is not possible to see the logs from both instances at once.
 
-Logs are always loaded from the docker container using both `stdout` and `stderr` sources and there is no possibility to distinguish/filter by the source. 
+Next to the instance dropdown you can select the time range for the log entries to be shown by selecting a date from the calendar and entering a time.
 
-Initially, the **Log** tab shows the logs of the microservice instance for the last 10 minutes. The exact time range for which the logs are displayed is shown below the logs.
+>**Info**: The time entered here may differ from the server time due to different time zones.
 
-Click the arrow buttons "Next" or "Previous" to increase or respectively reduce the time range in 10 minutes steps, there is no possibility to get the logs for the custom date and time.
+At the top right, additional functionality is provided:
 
-If there have not been any logs in the selected time range, a message is shown accordingly:
+* **Download** - To download the log data for a specified time range.
+* **Theme** - To select a theme (dark or light).
+* **Unsubscribe** - To unsubscribe the microservice.
+* **Delete** - To delete the microservice.
+
+Initially, the **Logs** tab shows the latest logs of the microservice instance. 
+
+At the bottom right you find navigation buttons to 
+
+* directly navigate to the oldest available log entries.
+* increase the time range in 10 minutes steps.
+* reduce the time range in 10 minutes steps.
+* directly navigate to the latest available log entries.
+  
+If no logs are available in the selected time range, a message is shown accordingly:
 
 <img src="/guides/images/users-guide/Administration/admin-microservice-no-logs.png" alt="Microservice log">
 
-To view the logs you need the permission EVENT_READ.
+>**Info**: There is no possibility to see the logs from the previously running instances, however inside the instance there is a docker container running and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated docker container.
+
+>Logs are always loaded from the docker container using both `stdout` and `stderr` sources and there is no possibility to distinguish/filter by the source. 
 
 
 ### <a name="default-applications"></a>Default applications

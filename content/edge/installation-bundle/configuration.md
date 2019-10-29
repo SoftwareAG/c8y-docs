@@ -12,7 +12,7 @@ You can copy the files to the Edge VM folder */home/admin*.
 
 The files have the following extensions:
 
-* Cumulocity license file: ".licence"
+* Cumulocity IoT Edge license file: ".licence"
 * SSL Key file: ".key"
 * SSL Certificate: ".crt" or ".cert" 
 * Apama license file: “.xml”
@@ -38,7 +38,7 @@ The following keys are available in the configuration file:
 
 >**Important**: The password must have a minimum of 8 and a maximum of 32 characters and it may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
 
-`tenant.domain.name` : Provide a fully qualified domain name, e.g. "myown.iot.com". The domain name must match the domain name of the SSL certificate. <br>Moreover, the domain name must match the Cumulocity licence's domain. The Cumulocity licence is tied up to the domain name being used in the instance and mismatch would result in a setup failure.
+`tenant.domain.name` : Provide a fully qualified domain name, e.g. "myown.iot.com". The domain name must match the domain name of the SSL certificate. <br>Moreover, the domain name must match the Cumulocity IoT Edge license's domain. The Cumulocity IoT Edge license is tied up to the domain name being used in the instance and mismatch would result in a setup failure. The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/guides/edge/installation/#domain-name-validation-for-edge-license-key-generation).
 
 >**Important**: Once configured, the domain name cannot be changed. Make sure to use the name finally desired.
 
@@ -51,7 +51,7 @@ Make sure that the file path is valid and the file exists in the local machine.
 `c8y.license` : Provide the absolute path of the license file. The file extension must be “.licence”, e.g. /home/admin/myown.iot.com.licence.
 Make sure that the file path is valid and the file exists in the local machine.
 
-`apama.license` : Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional licence file, in case you do not want to use it you should  leave this field empty.
+`apama.license` : Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional license file, in case you do not want to use it you should  leave this field empty.
 If the file path is specfied, make sure that the file path is valid and the file exists in the local machine.
 
 
@@ -66,18 +66,6 @@ The following parameters are required only if you want to update the network par
 `dns.server.ip` : Provide the DNS Server IP for your network, e.g. 192.168.56.1
 
 >**Info**: If the DNS Server IP is unknown, you can enter the previously entered gateway IP here. If any of the network parameters are not available, contact your network administrator.
-
-### Domain name validation
-
-When you create domain name, ensure that you adhere to the following rules:
-
-* The domain name must be case insensitive alphanumeric characters separated by dot ( . ), hyphen ( - ) or underscore ( _ ):
-	* Cannot contain any letters of languages like Chinese, Latin or Arabic.
-	* Cannot contain any special characters like (+ , ! @ # $ % ^ & * ( ) ; \ \ / | < > \ " \ ' ) other than dot ( . ), hyphen ( - ) or underscore ( _ ).
-* The length of the domain name including the dot must not exceed 255 characters.
-* Each segment of the domain name separated by a dot must be between 1 to 63 characters long.
-* The Top-Level Domain (TLD) which refers to the last segment of the domain name must be between two to six characters long.
-* The domain name cannot begin or end with a hyphen or an underscore.
 
 ### Configuring the Edge server
 
@@ -184,7 +172,7 @@ You have the choice to enter the post-installation parameters manually through t
 
 	`* Re-enter tenant admin password:`
 
-4. Provide a fully qualified domain name. For example, "myown.iot.com". The domain name must match the domain name of the SSL certificate. <br>Moreover, the domain name must match the Cumulocity licence’s domain. The Cumulocity licence is tied up to the domain name being used in the instance and mismatch would result in a setup failure. 
+4. Provide a fully qualified domain name. For example, "myown.iot.com". The domain name must match the domain name of the SSL certificate. <br>Moreover, the domain name must match the Cumulocity IoT Edge license’s domain. The Cumulocity IoT Edge license is tied up to the domain name being used in the instance and mismatch would result in a setup failure.  The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/guides/edge/installation/#domain-name-validation-for-edge-license-key-generation).
 
 	`* Enter tenant domain name:` 
 
@@ -202,7 +190,7 @@ You have the choice to enter the post-installation parameters manually through t
 
 	`* Enter domain ({your-domain-name}) Cumulocity licence file path (*.licence):`
 	
-8. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional licence file, you can press [Enter] to continue without providing license.
+8. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional license file, you can press [Enter] to continue without providing license.
 
 	`* Enter Software AG Apama licence file path (optional):`
 
@@ -248,7 +236,7 @@ You have the choice to enter the update parameters manually through the console 
 
 	`* Enter domain ({previously-entered-domain-name}) Cumulocity licence file path (*.licence):`
 	
-4. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*.<br> <br>This is an optional licence file, you can press [Enter] to continue without providing license.
+4. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*.<br> <br>This is an optional license file, you can press [Enter] to continue without providing license.
 
 	`* Enter Software AG Apama licence file path (optional):`
 

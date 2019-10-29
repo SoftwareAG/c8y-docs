@@ -26,7 +26,7 @@ Assuming that you have the base code of the "Hello world" example presented in [
 <name>iptracker-microservice</name>
 <artifactId>iptracker-microservice</artifactId>
 <properties>
-    <java.version>12</java.version>
+    <java.version>13</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <spring-boot-dependencies.version>2.1.4.RELEASE</spring-boot-dependencies.version>
@@ -35,7 +35,7 @@ Assuming that you have the base code of the "Hello world" example presented in [
 </properties>
 ```
 
-> **Info**: This example was implemented using Java 12 and Spring Boot 2. You may [install the JDK 12](https://www.oracle.com/technetwork/java/javase/downloads/jdk12-downloads-5295953.html) or adjust this example to the version you already have, e.g. JDK 8. Note that since Java 10 some API were removed or deprecated, so you may get some warning messages during build time but they won't affect the microservice application.
+> **Info**: This example was implemented using Java 13 and Spring Boot 2. You may [install the JDK 13](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or adjust this example to the version you already have, e.g. JDK 8. Note that since Java 10 some API methods were removed or deprecated, so you may get some warning messages during build time but they won't affect the microservice application.
 
 Finally, add the following dependency:
 

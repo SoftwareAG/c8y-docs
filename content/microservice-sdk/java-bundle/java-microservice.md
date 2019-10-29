@@ -142,6 +142,9 @@ Your microservice application has to be packed as a Docker image in a ZIP file i
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
             <version>${spring-boot-dependencies.version}</version>
+            <configuration>
+                <mainClass>c8y.example.App</mainClass>
+            </configuration>
             <executions>
                 <execution>
                     <goals>

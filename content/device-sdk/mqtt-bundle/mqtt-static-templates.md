@@ -170,7 +170,7 @@ Set the supported operations of the device.
 
 |Position|Parameter|Mandatory|
 |:-------|:-------|:-------|
-|1...|List of supported operations| &nbsp;|
+|1...|List of supported operations| NO|
 
 **Example**
 

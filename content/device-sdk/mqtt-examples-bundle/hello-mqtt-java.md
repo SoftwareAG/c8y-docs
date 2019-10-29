@@ -11,7 +11,7 @@ In this tutorial, you will learn how to use the Java MQTT client with Cumulocity
 In order to follow this tutorial, check the following prerequisites:
 
 * You have a valid tenant, a user and a password in order to access Cumulocity.
-* Verify that you have Maven 3 and Java 7 installed. This example is also compatible with Java 8.
+* Verify that you have Maven 3 and at least Java 7 installed.
 
 ```shell
 $ mvn -v
@@ -32,7 +32,7 @@ To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to
 * create a Java application,
 * build and run the Java application.
 
-#### Creating a Maven project
+#### Create a Maven project
 
 To create a plain Java project with Maven, execute the following command:
 
@@ -42,7 +42,7 @@ $ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-mqtt-java -Dar
 
 This will create a folder _hello-mqtt-java_ in the current directory with a skeleton structure for your project.
 
-#### Adding the MQTT Java client library
+#### Add the MQTT Java client library
 
 Edit the _pom.xml_ in the _hello-mqtt-java_ folder. Add a dependency to the MQTT Paho Java Client.
 
@@ -54,9 +54,18 @@ Edit the _pom.xml_ in the _hello-mqtt-java_ folder. Add a dependency to the MQTT
 </dependency>
 ```
 
-#### Creating a Java application
+If you are using Java 9 or later, you must set the source and target as described at the [Apache Maven Compiler Plugin](https://maven.apache.org/plugins/maven-compiler-plugin/) page, adding the following code:
 
-Edit the _App.java_ file in the folder _hello-mqtt-java/src/main/java/c8y/example_ with the following content:
+```xml
+<properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+</properties>
+```
+
+#### Create a Java application
+
+Edit the _App.java_ file located in the folder _hello-mqtt-java/src/main/java/c8y/example_ with the following content:
 
 ```java
 package c8y.example;
@@ -157,7 +166,7 @@ What does the code in `main` do?
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId``, the server will not accept it.
 
-#### Building and running the application
+#### Build and run the application
 
 Use the following commands to build the application:
 

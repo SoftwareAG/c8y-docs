@@ -15,7 +15,7 @@ The format of channels names is different according to REST api in which the rea
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|id|Integer|1|Id of message, required to match reponse message|
+|id|Integer|1|Id of message, required to match response message|
 |channel|String|1|Name of channel, required value "/meta/subscribe"|
 |clientId|String|1|Unique ID of client received during handshake.|
 |subscription|String|1|Name of channel to subscribe to.|

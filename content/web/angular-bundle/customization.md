@@ -88,7 +88,7 @@ In the example provided in the repository to be downloaded you can find an examp
 "languages": {
   "ru": {
     "name": "Russian",
-    "nativeName": "Ñ€ÑƒÑÑÐºÐ¸Ð¹ ÑÐ·Ñ‹Ðº",
+    "nativeName": "русский язык",
     "url": "/apps/public/ui-assets/ru.json"
   }
 }

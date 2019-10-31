@@ -60,8 +60,8 @@ Each translated catalog is loaded at runtime in a JSON format. To convert .po (g
 
 #### How to add your own translations
 
-1. Download the string catalog from [@c8y/ngx-components@1004.0.6/locales/locales.pot](https://unpkg.com/@c8y/ngx-components@1004.0.6/locales/locales.pot) (the version, 1004.0.6,  can be changed  to whatever version running on your instance).
-2. Load the file in your preferred .pot file editor and translate each string to the appropriate language and save that file. Repeat the process for as many languages as you like.
+1. Download the string catalog from [@c8y/ngx-components@1004.0.6/locales/locales.pot](https://unpkg.com/@c8y/ngx-components@latest/locales/locales.pot) (starting from version 1004.0.6,`latest` can be replaced by your current used version).
+2. Load the the downloaded locales.pot template file in your preferred .pot file editor and create a new translation from it. Choose the target language of the translation, e.g. Afrikaans, and translate each string. Repeat the process for as many languages as you like.
 The outcome of this step will be a .po catalog file for each language. Make sure to store these files in a safe place, as they will be useful when updating the strings in subsequent versions.
 3. Transform the newly created .po file into a .json file using the `c8ycli`:
 
@@ -88,24 +88,22 @@ In the example provided in the repository to be downloaded you can find an examp
 "languages": {
   "ru": {
     "name": "Russian",
-    "nativeName": "русский язык",
+    "nativeName": "Ñ€ÑƒÑÑÐºÐ¸Ð¹ ÑÐ·Ñ‹Ðº",
     "url": "/apps/public/ui-assets/ru.json"
   }
 }
 ```
 
+The imported language can be changed in the UI after login. For it open the "user settings" and set the language.
+
 ### Deploying
 
-Inside the folder that contains both `public-options`and `ui-assets` run the command:
+Inside the folder `ui-customization` that contains both `public-options`and `ui-assets` run the command:
 
 ```
-c8ycli deploy ui-options ui-assets
+c8ycli deploy public-options ui-assets
 ```
 
-Fill in your tenant/instance information and the applications will be deployed and will be visible to that specific tenant and its subtenants.
+Fill in your tenant/instance information and the applications will be deployed and will be visible to that specific tenant and its subtenants. 
 
 >**Info**: For performance reasons the options are cached. Therefore the application must be refreshed twice to make the changes visible.
-
-
-
-

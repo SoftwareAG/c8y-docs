@@ -4,15 +4,49 @@ title: Upgrading the system
 layout: redirect
 ---
 
->**Info**: If you use opcua-agent-server and you are upgrading from Edge 10.4 April 2019 or below version to the latest version, you must execute the below mentioned commands in your EDGE VM to backup opcua-agent-server data. This has to be done before following any of the steps described below.<br>Additionally, please request the Cumulocity support for root user credentials if you don’t have it.
+>**Info**: If you use **opcua-agent-server** and you are upgrading from an earlier version of Edge to the latest version, you must execute the below mentioned commands in your EDGE VM to backup **opcua-agent-server** data. This has to be performed before following any of the steps described below.<br>Additionally, please request the Cumulocity support for root user credentials if you don’t have it.
 
->```shell
+```shell
 mkdir -p /usr/edge/properties/opcua/db
 cp -a /etc/opcua/db/. /usr/edge/properties/opcua/db/
 ```
+### Upgrading the system on VMware ESXi
 
+To upgrade the Edge VM on VMware ESXi:
 
-Follow the steps below to upgrade the system. 
+1. Power off the Edge VM from ESXi console.
+
+2. Select the Edge VM and click **Actions** > **Export**.
+<img src="/guides/images/edge/edge-esxi-update-export.png" name="Remove VM" style="width:85%;"/>
+
+3. Click **OK** to download the files.<br>
+This action downloads the following files:
+	- disk-0.vmdk (primary disk)
+	- disk-1.vmdk (secondary disk)
+	- An OVF file (for example, EDGE 9.8.14-1.ovf)
+
+4. Download the latest version to a separate folder.<br>
+For example, if you are upgrading to Cumulocity IoT Edge version 10.5, save the following files to a separate folder:
+	- EDGE-server-10.5.0.0-147-ESXi-disk1.vmdk
+	- EDGE-server-10.5.0.0-147-ESXi-disk2.vmdk
+	- EDGE-server-10.5.0.0-147-ESXi.ovf
+	- EDGE-server-10.5.0.0-147-ESXi.mf
+
+5. Copy the DATA/secondary disk of the exported VM to the latest version.<br>
+For example, copy the secondary disk **disk-1.vmdk** to the folder where you have downloaded the latest version.
+
+6. Remove the secondary disk of the latest version and rename the secondary disk of the exported version to the latest version.<br>
+For example:
+	- Delete **EDGE-server-10.5.0.0-147-ESXi-disk2.vmdk**
+	- Rename **disk-1.vmdk** to **EDGE-server-10.5.0.0-147-ESXi-disk2.vmdk**.
+
+7. If the size of the secondary disk has expanded, you must update the OVF file of the latest version accordingly. In the OVF file, search for the fields **ovf:capacity** and **ovf:capacityAllocationUnits** and update the values as per the values in the exported OVF file.
+
+8. Import the Edge VM image as described in [Setting up ESXi](/guides/edge/installation/#setting-up-esxi).
+
+### Upgrading the system on VirtualBox
+
+To upgrade the Edge VM on VirtualBox:
 
 1. Power off the VM. To do so, access the VM and run the following command in the terminal:<br>
 ```shell

@@ -99,7 +99,7 @@ In the **Properties** tab, all fields are editable except of the ID and the admi
 
 ![Sub-tenants](/guides/images/users-guide/Administration/admin-subtenant-properties.png)
 
-To change the tenant password, click on the **Change password** button. Afterwards, two new fields will appear. Enter the new password and click **Save**.
+To change the tenant password, click **Change password**, enter the new password in the upcoming fields and click **Save**.
 
 #### Support user access
 

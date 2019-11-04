@@ -23,7 +23,7 @@ To upgrade the Edge VM on VMware ESXi:
 This action downloads the following files:
 	- disk-0.vmdk (primary disk)
 	- disk-1.vmdk (secondary disk)
-	- An OVF file (for example, EDGE 9.8.14-1.ovf)
+	- An OVF file (for example, Generic-Edge-10.4.0.0.8.ovf)
 
 4. Download the latest version to a separate folder.<br>
 For example, if you are upgrading to Cumulocity IoT Edge version 10.5, save the following files to a separate folder:

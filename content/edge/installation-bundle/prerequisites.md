@@ -20,18 +20,18 @@ layout: redirect
 
 To procure the Cumulocity IoT Edge license file, you must provide the right domain name to the Software AG's logistics team for Edge license key generation.
 
->**Important**: You must use the same domain when you are running the Edge post installation process.
-
 When you provide the domain name, consider the following points:
 
 * The domain name does not need to be a Fully Qualified Domain Name (FQDN).<br>
-For example, to access the Edge platform with the domain name **iot.yourcompany.com**, request the Edge license for **iot.yourcompany.com** or **yourcompany.com** (without the sub-domain **iot**).
+For example, to access the Edge platform with the domain name **myown.iot.com**, request the Edge license for **myown.iot.com** or **iot.com** (without the sub-domain **myown**).
 
-* If you exclude the sub-domain from the domain name in the Edge license, you should possess a wildcard SSL certificate which can be used with multiple sub-domains (**iot** or others) of the domain (**yourcompany.com**).<br>
-For example, if you provide **yourcompany.com** as the domain name, you should possess an SSL certificate for ***.yourcompany.com**
+	>**Important**: When you are running the Edge post installation process, you must use the FQDN. For example, **myown.iot.com**.
+
+* If you exclude the sub-domain from the domain name in the Edge license, you should possess a wildcard SSL certificate which can be used with multiple sub-domains (**myown** or others) of the domain (**iot.com**).<br>
+For example, if you provide **iot.com** as the domain name, you should possess an SSL certificate for ***.iot.com**.
 
 * If you have an Internationalized Domain Name (IDN), then you should provide the translated ASCII equivalent domain name.<br>
-For example, if your domain name is **iot.yourcömpany.com** (for example, containing **ö**), then you should use **iot.xn--yourcmpany-p4a.com**.<br>Also, provide the same IDN as the tenant domain name during the Edge post installation process.<br>
+For example, if your domain name is **myown.iöt.com** (for example, containing **ö**), then you should use **myown.xn--it-fka.com**.<br>Also, provide the same translated ASCII equivalent domain name as the tenant domain name during the Edge post installation process.<br>
 
 	>**Info**: An Internationalized Domain Name (IDN) is an internet domain name that contains at least one label, in whole or in part, in a language-specific script or alphabet, such as Arabic, Chinese, Cyrillic, Devanagari, Hebrew or the Latin alphabet-based characters with diacritics or ligatures, such as French. The internationalization of domain names is a technical solution to translate names written in language-native scripts into an ASCII text representation that is compatible with the Domain Name System. See [Wikipedia](https://en.wikipedia.org/wiki/Internationalized_domain_name).
 

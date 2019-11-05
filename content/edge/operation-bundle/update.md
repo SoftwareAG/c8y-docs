@@ -33,7 +33,7 @@ For example, if you are upgrading to Cumulocity IoT Edge version 10.5, save the 
 	- EDGE-server-10.5.0.0-147-ESXi.mf
 
 5. Copy the DATA/secondary disk of the exported VM to the latest version.<br>
-For example, copy the secondary disk **disk-1.vmdk** to the folder where you have downloaded the latest version.
+For example, copy the secondary disk **disk-1.vmdk** to the folder to which you have downloaded the latest version.
 
 6. Remove the secondary disk of the latest version and rename the secondary disk of the exported version to the latest version.<br>
 For example:

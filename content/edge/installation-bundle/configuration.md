@@ -12,7 +12,7 @@ You can copy the files to the Edge VM folder */home/admin*.
 
 The files have the following extensions:
 
-* Cumulocity license file: ".licence"
+* Cumulocity IoT Edge license file: ".licence"
 * SSL Key file: ".key"
 * SSL Certificate: ".crt" or ".cert" 
 * Apama license file: “.xml”
@@ -34,39 +34,41 @@ The following keys are available in the configuration file:
 
 `tenant.admin.password` : Provide a new password for the *tenant admin username*. This password is later used to login to the system using the web browser.
 
->**Info**: The password should be base64-encoded only. E.g. If you want the password to be edge@123 then the encoded value ZWRnZUAxMjM= should be used in the configuration file.
+>**Info**: The password should be base64-encoded only. For example, if you want the password to be edge@123 then the encoded value ZWRnZUAxMjM= should be used in the configuration file.
 
 >**Important**: The password must have a minimum of 8 and a maximum of 32 characters and it may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
 
-`tenant.domain.name` : Provide a fully qualified domain name, e.g. "myown.iot.com". The domain name must match the domain name of the SSL certificate. <br>Moreover, the domain name must match the Cumulocity licence's domain. The Cumulocity licence is tied up to the domain name being used in the instance and mismatch would result in a setup failure.
+`tenant.domain.name` : Provide a fully qualified domain name. For example, "myown.iot.com". Here, you must have the Cumulocity IoT Edge license for the domain name **iot.com** or **myown.iot.com**. <br>The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/guides/edge/installation/#domain-name-validation-for-edge-license-key-generation).
 
 >**Important**: Once configured, the domain name cannot be changed. Make sure to use the name finally desired.
 
-`ssl.certificate` : Provide the absolute path of the SSL certificate file. The file extension should either be “.crt” or “.cert”, e.g. /home/admin/myown-selfsigned.crt.
+`ssl.certificate` : Provide the absolute path of the SSL certificate file. The file extension should either be “.crt” or “.cert”. For example, /home/admin/myown-iot-com.crt. Make sure that the file path is valid and the file exists in the local machine.
+
+>**Info**: The SSL certificate that you provide here must be valid for the domain name that you have provided in the previous step. 
+
+`ssl.certificate.key` : Provide the absolute path of the SSL certificate key file. The file extension must be “.key.”. For example, /home/admin/myown-iot-com.key.
 Make sure that the file path is valid and the file exists in the local machine.
 
-`ssl.certificate.key` : Provide the absolute path of the SSL certificate key file. The file extension must be “.key.”, e.g. /home/admin/myown-selfsigned.key.
+>**Info**: The SSL key that you provide here must be valid for the domain name that you have provided in the previous step.
+
+`c8y.license` : Provide the absolute path of the license file. The file extension must be “.licence”. For example, /home/admin/myown.iot.com.licence.
 Make sure that the file path is valid and the file exists in the local machine.
 
-`c8y.license` : Provide the absolute path of the license file. The file extension must be “.licence”, e.g. /home/admin/myown.iot.com.licence.
-Make sure that the file path is valid and the file exists in the local machine.
-
-`apama.license` : Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional licence file, in case you do not want to use it you should  leave this field empty.
+`apama.license` : Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml". For example, */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional license file, in case you do not want to use it you should  leave this field empty.
 If the file path is specfied, make sure that the file path is valid and the file exists in the local machine.
 
 
 The following parameters are required only if you want to update the network parameters in the EDGE VM. You may skip these parameters if network is already configured or it is not applicable in your case.
 
-`network.ip` : Provide the new IP address for the ethernet interface, e.g. 192.168.56.120
+`network.ip` : Provide the new IP address for the ethernet interface. For example, 192.168.56.120
 
-`netmask` : Provide the netmask IP for your network, e.g. 255.255.255.0
+`netmask` : Provide the netmask IP for your network. For example, 255.255.255.0
 
-`gateway.ip` : Provide the gateway IP for your network, e.g. 192.168.56.1
+`gateway.ip` : Provide the gateway IP for your network. For example, 192.168.56.1
 
-`dns.server.ip` : Provide the DNS Server IP for your network, e.g. 192.168.56.1
+`dns.server.ip` : Provide the DNS Server IP for your network. For example, 192.168.56.1
 
 >**Info**: If the DNS Server IP is unknown, you can enter the previously entered gateway IP here. If any of the network parameters are not available, contact your network administrator.
-
 
 ### Configuring the Edge server
 
@@ -121,19 +123,19 @@ You have the choice to  enter the network parameters manually through the consol
 
 ##### Console input
 
-   1. Provide the new IP address for the ethernet interface, e.g. 192.168.56.120
+   1. Provide the new IP address for the ethernet interface. For example, 192.168.56.120
 
 	`* Enter new IP address for ethernet interface:`
 	
-2. Provide the netmask IP for your network, e.g. 255.255.255.0
+2. Provide the netmask IP for your network. For example, 255.255.255.0
 	
 	`* Enter netmask:`
 
-3. Provide the gateway IP for your network, e.g. 192.168.56.1
+3. Provide the gateway IP for your network. For example, 192.168.56.1
 	
 	`* Enter gateway IP:`
 
-4. Provide the DNS Server IP for your network, e.g. 192.168.56.1
+4. Provide the DNS Server IP for your network. For example, 192.168.56.1
 	
 	`* Enter DNS Server IP:`
 	
@@ -173,25 +175,29 @@ You have the choice to enter the post-installation parameters manually through t
 
 	`* Re-enter tenant admin password:`
 
-4. Provide a fully qualified domain name. For example, "myown.iot.com". The domain name must match the domain name of the SSL certificate. <br>Moreover, the domain name must match the Cumulocity licence’s domain. The Cumulocity licence is tied up to the domain name being used in the instance and mismatch would result in a setup failure. 
+4. Provide a fully qualified domain name. For example, "myown.iot.com". Here, you must have the Cumulocity IoT Edge license for the domain name **iot.com** or **myown.iot.com**.<br>The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/guides/edge/installation/#domain-name-validation-for-edge-license-key-generation).
 
 	`* Enter tenant domain name:` 
 
 	>**Important**: Once configured, the domain name cannot be changed. Make sure to use the name finally desired.
 
-5. Provide the absolute path of the SSL certificate file. The file extension should either be ".crt" or ".cert", e.g. */home/admin/myown-selfsigned.crt*.
+5. Provide the absolute path of the SSL certificate file. The file extension should either be ".crt" or ".cert". For example, */home/admin/myown-iot-com.crt*.
 
 	`* Enter domain ({your-domain-name}) SSL certificate file path (*.crt|*.cert):`
 
-6. Provide the absolute path of the SSL certificate key file. The file extension must be ".key.", e.g. */home/admin/myown-selfsigned.key*.
+	>**Info**: The SSL certificate that you provide here must be valid for the domain name that you have provided in the previous step.
+
+6. Provide the absolute path of the SSL certificate key file. The file extension must be ".key.". For example, */home/admin/myown-iot-com.key*.
 	
 	`* Enter domain ({your-domain-name}) SSL certificate key file path (*.key):`
 
-7. Provide the absolute path of the license file. The file extension must be ".licence", e.g. */home/admin/myown.iot.com.licence*.
+	>**Info**: The SSL key that you provide here must be valid for the domain name that you have provided in the previous step.
+
+7. Provide the absolute path of the license file. The file extension must be ".licence". For example, */home/admin/myown.iot.com.licence*.
 
 	`* Enter domain ({your-domain-name}) Cumulocity licence file path (*.licence):`
 	
-8. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional licence file, you can press [Enter] to continue without providing license.
+8. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml". For example, */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional license file, you can press [Enter] to continue without providing license.
 
 	`* Enter Software AG Apama licence file path (optional):`
 
@@ -225,19 +231,19 @@ You have the choice to enter the update parameters manually through the console 
 
 ##### Console input
 
-1. Provide the absolute path of the SSL certificate file. The file extension should either be ".crt" or ".cert", e.g. */home/admin/myown-selfsigned.crt*.
+1. Provide the absolute path of the SSL certificate file. The file extension should either be ".crt" or ".cert". For example, */home/admin/myown-selfsigned.crt*.
 
 	`* Enter domain ({previously-entered-domain-name}) SSL certificate file path (*.crt|*.cert):`
 
-2. Provide the absolute path of the SSL certificate key file. The file extension must be ".key.", e.g. */home/admin/myown-selfsigned.key*.
+2. Provide the absolute path of the SSL certificate key file. The file extension must be ".key.". For example, */home/admin/myown-selfsigned.key*.
 
 	`* Enter domain ({previously-entered-domain-name}) SSL certificate key file path (*.key):`
 
-3. Provide the absolute path of the license file. The file extension must be ".licence", e.g. */home/admin/myown.iot.com.licence*.
+3. Provide the absolute path of the license file. The file extension must be ".licence". For example, */home/admin/myown.iot.com.licence*.
 
 	`* Enter domain ({previously-entered-domain-name}) Cumulocity licence file path (*.licence):`
 	
-4. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*.<br> <br>This is an optional licence file, you can press [Enter] to continue without providing license.
+4. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*.<br> <br>This is an optional license file, you can press [Enter] to continue without providing license.
 
 	`* Enter Software AG Apama licence file path (optional):`
 

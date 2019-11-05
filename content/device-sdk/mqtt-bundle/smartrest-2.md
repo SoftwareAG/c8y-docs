@@ -66,7 +66,7 @@ Several changes in the functionality have been made:
 SmartREST 2.0 lets you create templates for the following matching HTTP methods:
 
 |   API   |GET|POST|PUT|
-|:--------|:--------:|:--------:|:--------:|
+|:--------|:--------|:--------|:--------|
 |Inventory|    x    |    x    |    x    |
 |Alarm    | &nbsp;  |    x    |    x    |
 |Event    | &nbsp;  |    x    |  &nbsp; |
@@ -327,7 +327,7 @@ The SmartREST 2.0 response templates use the same structure as in SmartREST 1.0.
 |condition|String|N|A JsonPath that needs to exist in the object to use the  pattern|
 |pattern|List&lt;String&gt;|Y|A list of JsonPath that will be extracted from the object and returned to the device|
 
-Response will be used for every operation and for any request template that defines the response field with true. In each case, the server will try every registered response template, so there might be multiple response lines for a single operation or request.
+Response templates will be used for every operation and for any request template that defines the response field with true. In each case, the server will try every registered response template, so there might be multiple response lines for a single operation or request.
 
 SmartREST 2.0 will always return a response template if the condition is true (or no condition was defined). Patterns that did not resolve will be returned as empty string.
 

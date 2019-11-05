@@ -33,6 +33,7 @@ Required role: ROLE\_INVENTORY\_READ
 ```http
 HTTP/1.1 
 200 - OK
+
 [
   {
     "channel": "/managedobjects/12345",

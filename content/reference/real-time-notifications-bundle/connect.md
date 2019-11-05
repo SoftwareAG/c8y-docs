@@ -10,11 +10,11 @@ After a Bayeux client has discovered the server's capabilities with a handshake 
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|id|Integer|0..1|Id of message, required to match reponse message|
+|id|Integer|0..1|Id of message, required to match response message|
 |channel|URI|1|Name of channel, required value "/meta/connect".|
 |clientId|String|1|Unique ID of client received during handshake.|
 |connectionType|String|1|Selected connection type.|
-|advice|Object|0..1|Configuration paramaters for current connect message.|
+|advice|Object|0..1|Configuration parameters for current connect message.|
 
 ### Advice
 
@@ -55,39 +55,44 @@ Example response:
     HTTP/1.1 200 OK
     Content-Type: application/json
     [
-      {
-        "channel": "/cepModuleName/cepStatementName",
-        "successful": true,
-        "error": "",
-        "data": [{
-           "id" : "10",
-           "self" : "...",
-           "creationTime" : "2011-09-06T12:03:27.927+02:00",
-           "type" : "com_cumulocity_model_DoorSensorEvent",
-           "time" : "2011-09-06T12:03:27.845+02:00",
-           "text" : "Door sensor was triggered.",
-           "com_othercompany_Extension" : { ... },
-           "source":{ "id":"12345", "self": "..." }
-        }],
-        "clientId": "Un1q31d3nt1f13r"
-      },{
-        "channel": "/cepModuleName/cepStatementName",
-        "successful": true,
-        "error": "",
-        "data": [{
-           "id" : "11",
-           "self" : "...",
-           "creationTime" : "2011-09-06T12:03:27.927+02:00",
-           "type" : "com_cumulocity_model_DoorSensorEvent",
-           "time" : "2011-09-06T12:03:27.845+02:00",
-           "text" : "Door sensor was triggered.",
-           "com_othercompany_Extension" : { ... },
-           "source":{ "id":"12345", "self": "..." }
-        }],
-        "clientId": "Un1q31d3nt1f13r"
-      },
-      {
-        "channel":"/meta/connect",
-        "successful":true
-      }
+        {
+            "channel": "/alarms/208",
+            "id": "79",
+            "data": {
+                "realtimeAction": "UPDATE",
+                "data": {
+                    "severity": "MAJOR",
+                    "creationTime": "2019-10-29T13:10:21.297Z",
+                    "count": 2,
+                    "history": {
+                        "auditRecords": [],
+                        "self": "https://[..]/audit/auditRecords"
+                    },
+                    "source": {
+                        "self": "https://[..]/inventory/managedObjects/208",
+                        "id": "208"
+                    },
+                    "type": "c8y_Application__BackOff",
+                    "firstOccurrenceTime": "2019-10-29T13:10:21.000Z",
+                    "self": "https://[..]/alarm/alarms/327",
+                    "time": "2019-10-29T13:10:36.000Z",
+                    "id": "327",
+                    "text": "Back-off restarting failed container",
+                    "status": "ACTIVE",
+                    "c8y_Application__Metadata": {
+                        "owner": "management",
+                        "tenant": "management"
+                    }
+                }
+            }
+        },
+        {
+            "advice": {
+                "interval": 0,
+                "timeout": 5400000,
+                "reconnect": "retry"
+            },
+            "channel": "/meta/connect",
+            "successful": true
+        }
     ]

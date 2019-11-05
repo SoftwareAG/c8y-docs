@@ -15,29 +15,36 @@ The subscription channel needs to contain the managed object ID of the device or
 
 The response will additionally to the event object contain a "realtimeAction" to identify which action resulted in the given object (CREATE, UPDATE or DELETE). In case of a deletion the data will only contain the id of the deleted event.
 
-Example Response:
+**Required role:** ROLE\_EVENT\_READ
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    [
-      {
-        "channel": "/events/12345",
-        "successful": true,
-        "error": "",
-        "data": [{
-          "realtimeAction": "CREATE",
-          "data": {
-            "id": "1",
-            "self": "...",
-            "source": {
-              "12345"
-            },
-            "creationTime": "2011-09-06T12:03:27.927+02:00",
-            "text": "event has been triggered"
-          }
-        }],
-        "clientId": "Un1q31d3nt1f13r"
+#### Example Response:
+
+|HEADERS||
+|:---|:---|
+|Content-Type|application/json
+
+```http
+HTTP/1.1
+200 - OK
+[
+  {
+    "channel": "/events/12345",
+    "successful": true,
+    "error": "",
+    "data": [{
+      "realtimeAction": "CREATE",
+      "data": {
+        "id": "1",
+        "self": "...",
+        "source": {
+          "12345"
+        },
+        "creationTime": "2011-09-06T12:03:27.927+02:00",
+        "text": "event has been triggered"
       }
-    ]
+    }],
+    "clientId": "Un1q31d3nt1f13r"
+  }
+]
+```
 
-Required role: ROLE\_EVENT\_READ

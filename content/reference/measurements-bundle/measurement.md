@@ -6,69 +6,178 @@ layout: redirect
 
 ### Measurement [application/vnd.com.nsn.cumulocity.measurement+json]
 
-|Name|Type|Occurs|Description|PUT/POST|
-|:---|:---|:-----|:----------|:-------|
-|id|String|1|Uniquely identifies a measurement.|No|
-|self|URI|1|Link to this resource.|No|
-|time|String|1|Time of the measurement.|Mandatory|
-|type|String|1|The most specific type of this entire measurement.|Mandatory|
-|source|ManagedObject|1|The ManagedObject which is the source of this measurement, as object containing the properties "id" and "self".|Mandatory|
-|\*|\*|0..n|List of measurement fragments.|Optional|
+<table>
+<colgroup>
+  <col style="width: 10%;">
+  <col style="width: 10%;">
+  <col style="width: 5%;">
+  <col style="width: 65%;">
+  <col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+<th align="left">PUT/POST</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">id</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Uniquely identifies a measurement.</td>
+<td align="left">No</td>
+</tr>
+
+<tr>
+<td align="left">self</td>
+<td align="left">URI</td>
+<td align="left">1</td>
+<td align="left">Link to this resource.</td>
+<td align="left">No</td>
+</tr>
+
+<tr>
+<td align="left">time</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Time of the measurement.</td>
+<td align="left">Mandatory</td>
+</tr>
+
+<tr>
+<td align="left">type</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">The most specific type of this entire measurement.</td>
+<td align="left">Mandatory</td>
+</tr>
+
+<tr>
+<td align="left">source</td>
+<td align="left">ManagedObject</td>
+<td align="left">1</td>
+<td align="left">The ManagedObject which is the source of this measurement, as object containing the properties “id” and “self”.</td>
+<td align="left">Mandatory</td>
+</tr>
+
+<tr>
+<td align="left">*</td>
+<td align="left">*</td>
+<td align="left">0..n</td>
+<td align="left">List of measurement fragments.</td>
+<td align="left">Optional</td>
+</tr>
+</tbody>
+</table>
 
 Each measurement fragment is an object containing the actual measurements as properties. The property name represents the name of the measurement, the property value is structured as follows:
 
-|Name|Type|Occurs|Description|PUT/POST|
-|:---|:---|:-----|:----------|:-------|
-|value|Number|1|The value of the individual measurement. The maximum precision for floating point numbers is 64-bit IEEE 754. For integers it's a 64-bit two's complement integer.|Mandatory|
-|unit|String|1|The unit of the measurement, such as "Wh" or "C".|Optional|
+<table>
+<colgroup>
+  <col style="width: 10%;">
+  <col style="width: 10%;">
+  <col style="width: 5%;">
+  <col style="width: 65%;">
+  <col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+<th align="left">PUT/POST</th>
+</tr>
+</thead>
 
-### GET a representation of a Measurement
+<tbody>
+<tr>
+<td align="left">value</td>
+<td align="left">Number</td>
+<td align="left">1</td>
+<td align="left">The value of the individual measurement. The maximum precision for floating point numbers is 64-bit IEEE 754. For integers it’s a 64-bit two’s complement integer.</td>
+<td align="left">Mandatory</td>
+</tr>
 
-Response body: Measurement
+<tr>
+<td align="left">unit</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">The unit of the measurement, such as “Wh” or “C”.</td>
+<td align="left">Optional</td>
+</tr>
+</tbody>
+</table>
 
-Required role: ROLE\_MEASUREMENT\_READ
+### GET - Representation of a Measurement
 
-Example request:
+**Response body:** application/vnd.com.nsn.cumulocity.measurement+json;ver=...
 
-    GET /measurement/measurements/<<measurementId>>
-	Host: ...
-	Authorization: Basic ...
+**Required role:** ROLE\_MEASUREMENT\_READ
 
-Example response:
+#### Example request
 
-    Content-Type: application/vnd.com.nsn.cumulocity.measurement+json;ver=...
-    Content-Length: ...
-    {
-      "id" : "43",
-      "self" : "<<URL of the measurement>>",
-      "time" : "2011-09-19T12:03:27.845Z",
-      "type" : "KamstrupA220Reading",
-      "source" : { "id": "12345", "self": "..." },
-      "com_cumulocity_model_energy_measurement_SinglePhaseElectricityMeasurement": {
-        "A+:1": { "value": 1234, "unit": "kWh" },
-        "A-:1": { "value": 2, "unit": "kWh" }
-      },
-      "com_cumulocity_msrmts_ThreePhaseReading": {
-        "A+:1": { "value": 1234, "unit": "kWh" },
-        "A+:2": { "value": 1234, "unit": "kWh" },
-        "A+:3": { "value": 1234, "unit": "kWh" }
-      }
-    }
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Host|{{hostname}}
 
-### DELETE a Measurement
+```http
+GET <<url>>/measurement/measurements/<<measurementId>>
+```
+#### Example response
 
-Request Body: N/A.
+|HEADERS||
+|:---|:---|
+|Content-Type|application/vnd.com.nsn.cumulocity.measurement+json;ver=...
 
-Response Message Body: N/A.
+```http
+HTTP/1.1 
+200 OK
 
-Required role: ROLE\_MEASUREMENT\_ADMIN or owner of source object
+{
+  "id" : "43",
+  "self" : "<<URL of the measurement>>",
+  "time" : "2011-09-19T12:03:27.845Z",
+  "type" : "KamstrupA220Reading",
+  "source" : { "id": "12345", "self": "..." },
+  "com_cumulocity_model_energy_measurement_SinglePhaseElectricityMeasurement": {
+    "A+:1": { "value": 1234, "unit": "kWh" },
+    "A-:1": { "value": 2, "unit": "kWh" }
+  },
+  "com_cumulocity_msrmts_ThreePhaseReading": {
+    "A+:1": { "value": 1234, "unit": "kWh" },
+    "A+:2": { "value": 1234, "unit": "kWh" },
+    "A+:3": { "value": 1234, "unit": "kWh" }
+  }
+}
+```
+### DELETE - Delete a Measurement
 
-Example Request: Delete a measurement
+**Request Body:** N/A.
 
-    DELETE /measurement/measurements/<<measurementID>>
-     Host: [hostname]
-     Authorization: Basic xxxxxxxxxxxxxxxxxxx
+**Response Message Body:** N/A.
 
-Example Response:
+**Required role:** ROLE\_MEASUREMENT\_ADMIN or owner of source object
 
-    HTTP/1.1  204 NO CONTENT
+#### Example Request - Delete a measurement
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Host|{{hostname}}
+
+```http
+DELETE <<url>>/measurement/measurements/<<measurementID>>
+```
+#### Example Response
+
+```http
+HTTP/1.1 
+204 NO CONTENT
+```

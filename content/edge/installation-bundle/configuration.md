@@ -38,7 +38,7 @@ The following keys are available in the configuration file:
 
 >**Important**: The password must have a minimum of 8 and a maximum of 32 characters and it may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
 
-`tenant.domain.name` : Provide a fully qualified domain name. For example, "myown.iot.com". Here, you must have the Cumulocity IoT Edge license for the domain name **iot.com** or **myown.iot.com**. The domain name must match the domain name of the SSL certificate. <br>The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/guides/edge/installation/#domain-name-validation-for-edge-license-key-generation).
+`tenant.domain.name` : Provide a fully qualified domain name. For example, "myown.iot.com". Here, you must have the Cumulocity IoT Edge license for the domain name **iot.com** or **myown.iot.com**. <br>The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/guides/edge/installation/#domain-name-validation-for-edge-license-key-generation).
 
 >**Important**: Once configured, the domain name cannot be changed. Make sure to use the name finally desired.
 
@@ -175,7 +175,7 @@ You have the choice to enter the post-installation parameters manually through t
 
 	`* Re-enter tenant admin password:`
 
-4. Provide a fully qualified domain name. For example, "myown.iot.com". Here, you must have the Cumulocity IoT Edge license for the domain name **iot.com** or **myown.iot.com**.The domain name must match the domain name of the SSL certificate. <br>The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/guides/edge/installation/#domain-name-validation-for-edge-license-key-generation).
+4. Provide a fully qualified domain name. For example, "myown.iot.com". Here, you must have the Cumulocity IoT Edge license for the domain name **iot.com** or **myown.iot.com**.<br>The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/guides/edge/installation/#domain-name-validation-for-edge-license-key-generation).
 
 	`* Enter tenant domain name:` 
 

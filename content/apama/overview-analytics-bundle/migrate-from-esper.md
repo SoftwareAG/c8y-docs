@@ -11,6 +11,55 @@ Any previously configured Smart Rules will be restarted. For Smart Rules which a
 
 Smart Rules will only work correctly if moving from CEL to Apama, not in the opposite direction.
 
+Smart Rules with state:
+
+<table>
+<colgroup>
+   <col style="width: 40%;">
+   <col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align:left">For this Smart Rule</th>
+<th style="text-align:left">Check the following</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">On geofence create alarm</td>
+<td style="text-align:left">Which devices are currently in or out of the geofence?</td>
+</tr>
+<tr>
+<td style="text-align:left">On geofence send email</td>
+<td style="text-align:left">Which devices are currently in or out of the geofence?</td>
+</tr>
+<tr>
+<td style="text-align:left">On alarm escalate it</td>
+<td style="text-align:left">Which alarms have been created?</td>
+</tr>
+<tr>
+<td style="text-align:left">On alarm duration increase severity</td>
+<td style="text-align:left">Which alarms have been created?</td>
+</tr>
+<tr>
+<td style="text-align:left">Calculate energy consumption</td>
+<td style="text-align:left">What are the last meter readings?</td>
+</tr>
+<tr>
+<td style="text-align:left">On missing measurements create alarm</td>
+<td style="text-align:left">What is the previous time of measurement and which devices have sent the measurement before?</td>
+</tr>
+</tbody>
+</table>
+
+Stateless Smart Rules:
+
+- On alarm send email 
+- On alarm send SMS 
+- On alarm execute operation
+- On measurement threshold create alarm 
+- On measurement explicit threshold create alarm 
+
 ### Migrating from CEL when also using custom rules
 
 Migrating from custom rules written in CEL to Apama EPL requires rewriting and retesting the custom rules. As with any scripting or programming, you should thoroughly test significant changes before deploying into a production environment. Thus, the recommended approach is to create a separate tenant for hosting Apama rules as they are developed, and replicate any input data required in that tenant. To do this, follow these steps:
@@ -26,27 +75,6 @@ Migrating from custom rules written in CEL to Apama EPL requires rewriting and r
 5. Manually recreate any scheduled exports from the existing tenant on the new tenant.
 
 6. Test the behavior of the new custom rules, checking for memory leaks and performance as well as correctness. 
-
-    Smart Rules with state:
-
-   - On geofence create alarm: which devices are currently in or out of the geofence?
-   - On geofence send email: which devices are currently in or out of the geofence?
-   - On alarm escalate it: which alarms have been created?
-   - On alarm duration increase severity: which alarms have been created?
-   - Calculate energy consumption: what are the last meter readings?
-   - On missing measurements create alarm: what is the previous time of measurement and which devices have sent the measurement before?
-   
-    
-
-    Stateless Smart Rules:
-
-   - On alarm send email 
-   - On alarm send SMS 
-   - On alarm execute operation
-   - On measurement threshold create alarm 
-   - On measurement explicit threshold create alarm 
-   
-   
 
 7. Remove the existing tenant after all CEP custom rules, Smart Rules and scheduled exports have been moved to or recreated on the new tenant.
 

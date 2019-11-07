@@ -77,8 +77,6 @@ Follow the description in Device Management > [Connecting devices](/guides/users
 
 In the Device Management application, click **All devices** in the navigator and find the OPCUA device in the device list.
 
-<img src="/guides/images/edge/edge-opcua-device.png" name="Device list" style="width:100%;"/> 
-
 For further information on managing and configuring OPCUA devices, refer to Optional services > [Cloud Fieldbus](/guides/users-guide/optional-services#cloud-fieldbus) in the User guide.
 
 

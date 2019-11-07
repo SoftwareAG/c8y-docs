@@ -11,7 +11,7 @@ Any previously configured Smart Rules will be restarted. For Smart Rules which a
 
 Smart Rules will only work correctly if moving from CEL to Apama, not in the opposite direction.
 
-Smart Rules with state:
+The Smart Rules listed in the following table are stateful:
 
 <table>
 <colgroup>
@@ -52,7 +52,7 @@ Smart Rules with state:
 </tbody>
 </table>
 
-Stateless Smart Rules:
+The following Smart Rules are stateless:
 
 - On alarm send email 
 - On alarm send SMS 

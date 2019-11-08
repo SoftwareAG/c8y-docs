@@ -72,6 +72,11 @@ The Cumulocity documentation on this website contains the following information:
 </tr>
 
 <tr>
+<td align="left">Analytics documentation</td>
+<td align="left"><a href="/guides/datahub/datahub-overview/">DataHub guide</a></td>
+<td align="left">How to perform sophisticated analytical querying over device data, potentially covering long periods of time.</td>
+</tr>
+<tr>
 <td align="left"><a href="/guides/release-notes/overview/">Release Notes</a></td>
 <td align="left"></td>
 <td align="left">Find detailed information on new features, improvements and fixes implemented in each single Cumulocity IoT release, including maintenance releases.</td>

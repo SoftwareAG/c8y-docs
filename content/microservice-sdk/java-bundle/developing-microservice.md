@@ -99,6 +99,14 @@ public void onAdded (MicroserviceSubscriptionAddedEvent event {
 
 On application startup, the `MicroserviceSubscriptionAddedEvent` is triggered for all subscribed tenants.
 
+### Heap and perm/metadata
+
+To calculate heap and perm/metadata, it takes the limit defined on the [microservice manifest](/guides/microservice-sdk/concept/#manifest) and it is converted it into Megabytes (MB). 
+For Java applications developed using the Java Microservice SDK the minimal value is: 178MB <br>
+10% is reserved for “system”, but not less than 50 MB. <br>
+10% is taken for PermGen on JDK 7 or Metaspace on JDK 8, but not less than 64 MB and not more than 1024MB. <br>
+The rest is allocated for heap size.
+
 ### Platform API
 
 The package consists of a number of services that are built and injected into Spring context. A developer can use them to perform basic operations against the platform. The beans are built based on the properties read from a file. For hosted deployment, most of the properties are provided by the platform.

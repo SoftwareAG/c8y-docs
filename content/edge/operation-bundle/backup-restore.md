@@ -8,7 +8,7 @@ layout: redirect
 
 To create a backup, follow the steps below. 
 
-1. To power off the VM, right-click on the respective VM (e.g. EDGE-server) in the VirtualBox Manager click **Close** > **Power off**.<br><br>
+1. To power off the VM, right-click on the respective VM (e.g. EDGE-server) in the VirtualBox Manager and click **Close** > **Power off**.<br><br>
 <img src="/guides/images/edge/edge-poweroff.jpg" name="Poweroff Edge" style="width:75%;"/> 
 <br>
 1. Click **File** at the top right and then **Export Appliance**.<br><br>

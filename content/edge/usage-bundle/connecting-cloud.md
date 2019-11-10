@@ -16,9 +16,9 @@ You can share the following data:
 * measurements
 * operations
 
-Go to **Data connectors** if you would like to send data to the tenant account. 
+Go to **Data Broker** > **Data connectors** if you would like to send data to the tenant account. 
 
-Go to **Data subscriptions** in your tenant account to receive the data from Edge.
+Go to **Data Broker** > **Data subscriptions** in your tenant account to receive the data from Edge.
 
 <img src="/guides/images/users-guide/data-broker-navigator.png" alt="Data broker menus">
 

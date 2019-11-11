@@ -36,14 +36,6 @@ When using websockets, a property 'ext' containing an authentication object must
 |version|String|1|Bayeux protocol version used by client.|
 |minimumVersion|String|0..1|Minimum server-side Bayeux protocol version required by client.|
 |supportedConnectionTypes|Array|1|List of connection types supported by client.|
-|advice|Object|0..1|Session configuration parameters.|
-
-### Advice
-
-|Name|Type|Occurs|Description|
-|:---|:---|:-----|:----------|
-|timeout|Integer|0..1|Max. time in milliseconds between sending of a connect message and response from server. Overrides server default settings for session. Default value : 5400000, maximum value 7200000|
-|interval|Integer|0..1|The time, in milliseconds, that the client must wait between the end of one long poll request and the start of the next. Overrides server default settings for session. When not set server allows for max 10 sec delay between next connect request. Default value : 0|
 
 Example request:
 
@@ -62,8 +54,7 @@ Example request:
         }
         "version": "1.0",
         "mininumVersion": "1.0beta",
-        "supportedConnectionTypes": ["websocket","long-polling"],
-        "advice":{"timeout":120000,"interval":30000}
+        "supportedConnectionTypes": ["websocket","long-polling"]
       }
     ]
 

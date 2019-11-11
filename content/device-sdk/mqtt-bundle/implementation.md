@@ -24,7 +24,7 @@ Available ports:
 
 The Cumulocity MQTT implementation uses SmartREST as a payload. SmartREST is a CSV-like message protocol that uses templates on the server side to create data in Cumulocity.
 
-> **Info:** For all MQTT connections to the platform, the maximum accepted payload size is 8092 bytes.
+> **Info:** For all MQTT connections to the platform, the maximum accepted payload size is 16384 bytes.
 
 #### SmartREST basics
 
@@ -79,7 +79,7 @@ The MQTT ClientId is a field to uniquely identify each connected client. The Cum
 
 |Field|Mandatory|Description|
 |:-------|:--------|:--------|
-|connectionType|NO|Indication of connection type default: d (device)|
+|connectionType|NO|Indication of connection type <br>default: d (device)|
 |deviceIdentifier|YES|A unique identifier for your device, e.g. IMEI, Serial number|
 |defaultTemplateIdentifier|NO|Check the SmartREST section for more information about template identifiers|
 
@@ -97,11 +97,18 @@ The uniqueness of the MQTT ClientId is determined only by the deviceIdentifier. 
 
 #### MQTT Quality of Service
 
-The Cumulocity implementation supports all 3 levels of MQTT QoS
+The Cumulocity implementation supports all 3 levels of MQTT QoS:
 
 * QoS 0: At most once
+    - The client just sends the message once (fire and forget)
+    - No reaction from the server
 * QoS 1: At least once
+    - The client repeats the message until it receives a server acknowledgement
 * QoS 2: Exactly once
+    - The client sends a message
+    - The server acknowledges (holds the message)
+    - The client sends a release command
+    - The server processes the messages and acknowledges again
 
 For subscriptions to the operation or error topics, we will deliver all messages in the QoS which the client defined when subscribing to the topic.
 

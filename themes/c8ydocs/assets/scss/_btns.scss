@@ -40,6 +40,9 @@
   @media(min-width: $grid-breakpoint){
     display: none;
   }
+  @media print{
+    display: none;
+  }
 
   .open &{
     left: $main-nav-width + 1.5;
@@ -73,6 +76,9 @@
     color: white;
     opacity: 1;
     outline: none;
+  }
+  @media print{
+    display: none;
   }
 }
 

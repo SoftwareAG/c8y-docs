@@ -4,9 +4,9 @@ title: System of units
 layout: redirect
 ---
 
-Note that all GET requests support "X-Cumulocity-System-Of-Units" header which allows to set system of units used in response.
+Note that all GET requests support the "X-Cumulocity-System-Of-Units" header which allows to set the system of units used in the response.
 Possible values are "imperial" or "metric".
-Every measurement fragment which contains "unit" property will be transformed to use required system of units.
+Every measurement fragment which contains the "unit" property will be transformed to use the required system of units.
 
 #### Most common conversions:
 
@@ -20,40 +20,51 @@ Every measurement fragment which contains "unit" property will be transformed to
 |g (gram)|oz (ounce)|
 |kg (kilogram)|lb (pound)|
 
+### Examples
 
-#### Examples
-
-Example measurement:
-
-    ...
-    {
-        ....
-         "c8y_Temperature": {
-             "T": {
-                 "unit": "ºC",
-                 "value": 2.0791169082
-             }
+#### Example measurement:
+```http
+...
+{
+    ....
+     "c8y_Temperature": {
+         "T": {
+             "unit": "ºC",
+             "value": 2.0791169082
          }
-    }
-    ...
+     }
+}
+...
+```
 
-Example request:
+#### Example request
 
-    GET /measurement/measurements?valueFragmentType=c8y_Temperature&valueFragmentSeries=T&source=663951
-    Host: ...
-    Authorization: Basic ...
-    X-Cumulocity-System-Of-Units: imperial
-    
-Example response:
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Host|{{hostname}}|
 
-    ...
-    {
-        ....
-         "c8y_Temperature": {
-            "T": {
-                "unit": "°F",
-                "value": 35.742410434759904
-            }
+```http
+GET <<url>>/measurement/measurements?valueFragmentType=c8y_Temperature&valueFragmentSeries=T&source=<<sourceID>>
+```
+
+#### Example response
+
+|HEADERS||
+|:---|:---|
+|Content-Type|application/vnd.com.nsn.cumulocity.measurementcollection+json;ver=...
+```http
+HTTP/1.1 
+200 OK
+...
+{
+    ....
+     "c8y_Temperature": {
+        "T": {
+            "unit": "°F",
+            "value": 35.742410434759904
         }
     }
-    ...
+}
+...
+```

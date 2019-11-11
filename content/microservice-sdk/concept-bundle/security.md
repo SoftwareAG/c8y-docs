@@ -60,7 +60,7 @@ These roles can be assigned or revoked to the tenant platform users or groups us
 
 <!-- TODO: add/describe a picture of "required roles" and "provided roles" showing a microservice as a block -->
 
-The roles are set in the [Microservice manifest](#manifest).
+The roles are set in the [Microservice manifest](#manifest). For more details about users and roles, review [Users](https://cumulocity.com/guides/reference/users/) in the **Reference guide**.
 
 ### Microservice bootstrap
 
@@ -104,7 +104,6 @@ Steps:
 3. The microservice reads the bootstrap credentials (from environment variables) and uses them to retrieve the service user credentials for all subscribed tenants.
 4. The microservice iterates over the service user credentials and uses them to create alarms to each tenant.
 5. The microservice returns the result to the platform, and the platform to the invoking user.
-
 
 ### Encryption
 

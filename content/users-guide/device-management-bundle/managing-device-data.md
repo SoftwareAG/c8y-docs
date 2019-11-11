@@ -89,12 +89,12 @@ Click a configuration in the list to open it. You may modify the settings here a
 
 ![Configuration Repository](/guides/images/users-guide/DeviceManagement/devmgmt-management-configrepoedit.png)
 
-#### To add a snapshot configuration from a file
+#### To add a configuration snapshot from a file
 
 1. Click **Add configuration snapshot** at the right of the top menu bar. 
 2. In the resulting dialog box, enter a unique name and an optional description for the configuration.
 3. In the **Device type** field, enter a device type. The device type can be found in the **Info** tab of the target device.
-4. Specify the configuration snapshot file by either uploading it from the file system, specifying a URL from where the firmware can be obtained or choosing a file. 
+4. Specify the configuration snapshot file by either uploading it from the file system, specifying a URL from where the configuration snapshot can be obtained or choosing a file. 
 5. Click **Add configuration snapshot**.
 
 The snapshot will be added to the configuration repository.
@@ -123,14 +123,14 @@ The retrieved snapshot can be found in the **Configuration repository**, under  
 
 ![Apply new snapshot to a device](/guides/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
 
-#### To apply a snapshot configuration from one device to another
+#### To apply a configuration snapshot from one device to another
 
 1. Navigate to the device which has your desired configuration and open the **Configuration** tab.
 2. Under **Configuration snapshot**, click **Get new snapshot from device** at the top right.
 3. Navigate to the other device and open its **Configuration** tab.
 4. Under **Configuration snapshot**, select the new configuration from the dropdown field and click **Put new snapshot to device**.
  
->**Info**: When you apply a snapshot configuration from one device to another, the configuration may contain data which is device-specific.
+>**Info**: When you apply a configuration snapshot from one device to another, the configuration may contain data which is device-specific.
 
 ### <a name="credentials"></a>Managing device credentials
 

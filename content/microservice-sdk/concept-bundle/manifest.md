@@ -41,7 +41,7 @@ The application manifest provides the required settings to manage microservice i
 <tr>
 <td style="text-align:left">version</td>
 <td style="text-align:left">String</td>
-<td style="text-align:left">Application version. Must be a correct <a href="https://semver.org" target="_blank">SemVer</a> value but "+" sign is disallowed._</td>
+<td style="text-align:left">Application version. Must be a correct <a href="https://semver.org" target="_blank">SemVer</a> value but the "+" sign is disallowed._</td>
 <td style="text-align:left">Yes</td>
 </tr>
 <tr>
@@ -141,8 +141,8 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
 
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
-|cpu|String |Limit for number of CPUs or CPU time <br>Default: 0.5|No
-|memory|String |Limit for microservice memory usage <br>Default: 512M <br/>Possible postfix values are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki |No
+|cpu|String |Limit for number of CPUs or CPU time <br>Default CPU: 0.5, min: 0.1<br>Default CPU time: 500m, min: 100m | No
+|memory|String |Limit for microservice memory usage <br>Default: 512M, Min: 10M<br/>Possible units are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki |No
 
 #### Option
 
@@ -222,6 +222,9 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
         "cpu": "1",
         "memory": "1G"
     },
+    "requiredRoles": [
+        "ROLE_ALARM_READ"
+    ],
     "livenessProbe": {
         "httpGet": {
             "path": "/health"

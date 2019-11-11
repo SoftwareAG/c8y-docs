@@ -1,7 +1,7 @@
 ---
 title: Resources
 layout: redirect
-weight: 30
+weight: 20
 ---
 
 Operation on resources.
@@ -241,7 +241,7 @@ Upload a new resource file. The file name in 'file' body parameter will be used 
 
 |PARAMS||
 |:---|:---|
-|file_name (string)|required query parameter for resource file name, if Content-Type is application/octet-stream, <br>or a body parameter for resource file, if Content-Type is multipart/form-data
+|file|required query parameter for resource file name, if Content-Type is application/octet-stream, <br>or a body parameter for resource file, if Content-Type is multipart/form-data
 
 
 **Example Request**

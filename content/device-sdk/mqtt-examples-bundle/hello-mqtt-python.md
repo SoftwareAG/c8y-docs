@@ -30,10 +30,10 @@ $ pip install paho-mqtt
 
 To develop a very simple "Hello, world!" MQTT client for Cumulocity, you need to
 
-* create a python script,
+* create a Python script,
 * run the script.
 
-#### Creating a python script
+#### Create a Python script
 
 Create a script file, for example *hello_mqtt.py* with the following content:
 
@@ -44,8 +44,7 @@ import paho.mqtt.client as mqtt
 import time, threading, ssl, random
 
 # client, user and device details
-serverUrl   = "tcp://mqtt.cumulocity.com"
-port        = 1883
+serverUrl   = "mqtt.cumulocity.com"
 clientId    = "my_mqtt_python_client"
 device_name = "My Python MQTT device"
 tenant      = "<<tenant>>"
@@ -75,7 +74,7 @@ def sendMeasurements():
         thread.start()
         while True: time.sleep(100)
     except (KeyboardInterrupt, SystemExit):
-        print 'Received keyboard interrupt, quitting ...'
+        print("Received keyboard interrupt, quitting ...")
 
 # publish a message
 def publish(topic, message, waitForAck = False):
@@ -93,12 +92,12 @@ client.username_pw_set(tenant + "/" + username, password)
 client.on_message = on_message
 client.on_publish = on_publish
 
-client.connect(serverUrl, port)
+client.connect(serverUrl)
 client.loop_start()
 publish("s/us", "100," + device_name + ",c8y_MQTTDevice", True)
 publish("s/us", "110,S123456789,MQTT test model,Rev0.1")
 publish("s/us", "114,c8y_Restart")
-print "Device registered successfully!"
+print("Device registered successfully!")
 
 client.subscribe("s/ds")
 sendMeasurements()
@@ -128,7 +127,7 @@ What does the ``publish`` message do?
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId``, the server will not accept it.
 
-#### Running the script
+#### Run the script
 
 To run the script just use the command:
 

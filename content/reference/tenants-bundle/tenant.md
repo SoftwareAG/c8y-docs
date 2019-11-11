@@ -26,6 +26,44 @@ layout: redirect
 |customProperties|Object|1|Keeps a list of custom properties|optional|
 |parent|String|1|Name of parent tenant, the creator of this tenant.|Public|
 
+### Current tenant
+
+Content-Type: application/vnd.com.nsn.cumulocity.currentTenant+json
+
+|Field Name|Type|Occurs|Description|
+|:---------|:---|:-----|:----------|
+|name|String|1|Tenant|
+|domainName|String|1|Domain name|
+|allowCreateTenants|Boolean|1|Flag indicating if a tenant can create subtenants|
+
+#### GET the current tenant details
+
+Request for the currently logged service user's tenant.
+
+Required role: ROLE&#95;USER&#95;MANAGEMENT&#95;OWN&#95;READ, or ROLE&#95;SYSTEM
+
+ResponseBody: CurrentTenant
+
+```http
+GET /tenant/currentTenant
+Host: [hostname]
+Authorization: Basic xxxxxxxxxxxxxxxxxxx
+Content-Type: application/vnd.com.nsn.cumulocity.currentTenant+json;;ver=...
+```
+
+Example response:
+
+```json
+{
+    "allowCreateTenants": true,
+    "customProperties": {},
+    "domainName": "...",
+    "name": "..."  
+}
+```
+
+Note that in this case the response property `"name"` is the actual tenant ID.
+
 ### GET a representation of a Tenant.
 
 Response body: Tenant
@@ -148,9 +186,13 @@ Example Response :
 Note that updating adminPass and adminEmail updates these settings in the admin user of the tenant. Updating adminName has no effect.
 
 
-### DELETE  a representation of a Tenant.
+### DELETE a representation of a Tenant.
 
-Response body: N/A
+>**Important**: Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the management tenant. You cannot delete tenants from any tenant but the management tenant. 
+>
+>Administrators in Enterprise Tenants are only allowed to suspend active subtenants, but not to delete them. 
+
+Request body: N/A
 
 Response body: N/A
 

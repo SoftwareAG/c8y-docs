@@ -4,9 +4,7 @@ title: Python microservice
 layout: redirect
 ---
 
-On the Cumulocity platform, microservice hosting is built on top of Docker containers. This makes it technology-agnostic and allows developers to create applications in any technology stack.
-
-In this tutorial, you will learn how to create and run a sample microservice written in Python. This example contains:
+In this tutorial, you will learn how to create and run a microservice written in Python. This example contains:
 
 * A sample Python application using the Flask framework to expose REST endpoints.
 * An application manifest file with minimal content to run a microservice.
@@ -42,7 +40,7 @@ To develop a simple "Hello world" microservice in Python, you need to:
 * Add the microservice manifest.
 * Build and run the application.
 
-#### Creating a Python web application
+#### Create a Python web application
 
 This example uses Python 3 with a Flask microframework which enables simple exposing of endpoints and an embedded HTTP server.
 
@@ -88,7 +86,7 @@ The application is configured to run on port 80 – which is required for micros
 - <kbd>/health</kbd> is the common endpoint to verify if a microservice is up and running.
 - <kbd>/environment</kbd> reads some standard variables provided to the environment by the platform during the microservice installation and returns their values in JSON format.
 
-#### Creating the Dockerfile
+#### Create the Dockerfile
 
 You need to create a Dockerfile in order to build a Docker image with your application. For this example, it shall be in the same directory as the _application.py_ script and with the following content:
 
@@ -104,7 +102,7 @@ CMD ["application.py"]
 
 This build uses Alpine Linux with the Python SDK inside. It is a very thin distribution and the resulting Docker image is small (about 100 MB). The instruction `RUN pip install flask` installs the required Python library using the `pip` installer.
 
-#### Adding the application manifest
+#### Add the application manifest
 
 The microservice manifest file _cumulocity.json_ is required for the application. Create that file with the following content:
 
@@ -123,7 +121,7 @@ The microservice manifest file _cumulocity.json_ is required for the application
 }
 ```
 
-#### Building the application
+#### Build the application
 
 Execute the following Docker commands to build the Docker image and save it as _image.tar_:
 
@@ -140,7 +138,7 @@ $ zip hello-microservice cumulocity.json image.tar
 
 The resulting _hello-microservice.zip_ file contains your microservice and it is ready to be uploaded to the Cumulocity platform.
 
-#### Running the example
+#### Run the example
 
 Uploading the _hello-microservice.zip_ into the platform can be done via the UI. In the Administration application, navigate to **Applications** > **Own applications** > **Add application** > **Upload microservice**. Drop the ZIP file of the microservice and then click **Subscribe**.
 
@@ -157,7 +155,6 @@ For this particular microservice example, the structure shall be:
 
 /docker/Dockerfile <br>
 /docker/application.py <br>
-/docker/requirements <br>
 /cumulocity.json <br>
 
 
@@ -185,7 +182,15 @@ with proper credentials (user from any subscribed tenant), returns a response as
 }
 ```
 
+The authorization header is formed as "Basic &lt;Base64(&lt;tenantID>/&lt;username>:&lt;password>)>". For instance, if your tenant ID, username and password are **t0071234**, **testuser** and **secret123** respectively, you can get the Base64 string with the following command:
+
+```shell
+$ echo -n t0071234/testuser:secret123 | base64
+dDAwNzEyMzQvdGVzdHVzZXI6c2VjcmV0MTIz
+```
+
+and your authorization header would look like `"Authorization": "Basic dDAwNzEyMzQvdGVzdHVzZXI6c2VjcmV0MTIz"`.
 
 ### Source code
 
-The code of the [sample-python-microservice](https://bitbucket.org/m2m/cumulocity-examples/src/default/microservices/sample-python-microservice/) can be found in our M2M repositories. It is a more comprehensive Python microservice application which uses the Cumulocity REST API and exposes endpoints to verify if the microservice is up and running, create a device and random measurements for it, and to get the current application subscriptions for a particular tenant.
+The source code of this Hello world microservice can be found in our [GitHub repository](https://github.com/SoftwareAG/c8y_microservice-python). Moreover, in our Bitbucket repository you can find a more comprehensive [Python microservice application](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/sample-python-microservice/) which uses the Cumulocity REST API and exposes endpoints to verify if the microservice is up and running, create a device and random measurements for it, and to get the current application subscriptions for a particular tenant.

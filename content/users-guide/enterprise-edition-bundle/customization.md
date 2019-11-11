@@ -28,7 +28,7 @@ In the **Passwords** section, you can specify password settings like default str
 
 In the **Support user** section, you configure the parameters for the support user activation for subtenant users.
 
-With the support user feature, support users (i.e. users with specific permissions in the management tenant) can access subtenant users in case of any issues. Refer to [Supporting user access](/guides/users-guide/enterprise-edition#users-in-other-tenants) for more information.
+With the support user feature, support users (i.e. users with specific permissions in the management tenant) can access subtenant users in case of any issues. Refer to [Support user access](/guides/users-guide/enterprise-edition#users-in-other-tenants) for more information.
 
 <img src="/guides/images/users-guide/Administration/admin-settings-configuration-support-user.png" alt="Support user configuration">
 
@@ -240,3 +240,4 @@ HTTP/1.1 200 OK
 
 
 >**Info**: Keep in mind that after changing the DNS entry it might take up to 24 hours until the new entry has been propagated.
+>

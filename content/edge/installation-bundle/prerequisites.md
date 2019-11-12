@@ -14,6 +14,8 @@ layout: redirect
 |**SSL key and SSL certificate**|Use your internal or an external CA (Certification Authority) to create these.|
 |**Apama license**|The Apama license key is provided as part of your purchase. To request the license keys for your Apama purchase, please contact the logistics team for your region:<br> - North and South America: LogisSrvus@softwareagusa.com <br> - All Other Regions: LogisticsServiceCenterGER@softwareag.com<br>**The Apama license is optional and NOT required for an Cumulocity IoT Edge installation.**<br>|
 |**DNS entry**|The DNS (Domain Name System) is used to resolve human readable host names like www.cumulocity.com to machine readable IP addresses like 192.198.1.10. <br> If you want to connect to Edge VM within your LAN, the DNS entry has to be added for the domain name (URL under which Cumulocity IoT Edge can be reached) with the IP address of the host.|
+|**Edge cloud remote access**|To connect and manage one (or multiple) Edge devices to your Cumulocity IoT cloud tenant, you need an active Cumulocity IoT standard tenant with the Data Broker and Cloud Remote Access extensions.<br>**Info**: The Edge cloud remote access is an optional feature in Cumulocity IoT Edge.|
+
 
 
 ### Domain name validation for Edge license key generation
@@ -74,7 +76,7 @@ Depending on additional integrations more ports must be opened.
 
 #### Outgoing Traffic
 
-The core nodes and the CEP node must be able to connect to the internet. Ports required to outside are:
+The core node must be able to connect to the internet. Ports required to outside are:
 
 |Service|Port|
 |:---|:---|

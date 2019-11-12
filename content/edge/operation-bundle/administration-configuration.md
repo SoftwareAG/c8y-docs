@@ -4,12 +4,6 @@ title: Administration and configuration
 layout: redirect
 ---
 
-### Accessing the Edge device from Cumulocity tenant
-
-The Cumulocity Cloud Remote Access microservice allows you to remotely access the Edge device through a web browser. The remote Edge device is represented as a device in the Device Management application of Cumulocity. For more information about remote access, see [Cloud Remote Access](/guides/users-guide/optional-services/#cloud-remote-access).
-
->**Info**: Currently, only the SSH protocol is supported. 
-
 ### Unlocking the tenant admin user
 
 The tenant admin user could be locked if incorrect credentials are passed during login into UI, REST API or MQTT. 
@@ -31,7 +25,6 @@ To configure the "reset password" template and email server settings, perform th
 	* Password: Will be the same as the Edge tenant admin password provided in the post-installation execution
 <br>
 2. Update the email server details and templates following the instructions in [Administration > Changing settings> Configuration settings](/guides/users-guide/administration/#config-platform) in the User guide.
-
 
 ### Increasing the system performance
 

@@ -16,8 +16,9 @@ Modbus is a serial communications protocol originally published by Modicon and u
 
 Before you connect a Modbus device 
 
-* check if the agent is running,
-* register the Modbus agent. This only has to be done once as a preparation step and is not required for every Modbus device.
+* Check if the agent is running.
+* Register the Modbus agent. This only has to be done once as a preparation step and is not required for every Modbus device.
+* Next, you must register the device in the Device Management application with the device ID: “linux-agent".
    
 #### How to check/change the agent state
 

@@ -294,7 +294,7 @@ The disk size expanding process consists of multiple steps which are executed se
 
 #### Option 6 - Update tenant password
 
-The password updated using this option acts as a password for the administrators of both the tenants, that is, **admin** user of the 'edge' tenant and **edgeadmin** user of the management tenant. Using these credentials, the administrators can log in to the respective tenant through a web browser.
+The password updated using this option acts as the password for the administrators of both the tenants, that is, **admin** user of the 'edge' tenant and **edgeadmin** user of the management tenant. Using these credentials, the administrators can log in to the respective tenant through a web browser.
 
 `* Enter new tenant admin password:`
 

@@ -1,6 +1,6 @@
 ---
-weight: 5
-title: Release Notes
+weight: 100
+title: Release notes
 layout: bundle
 ---
 

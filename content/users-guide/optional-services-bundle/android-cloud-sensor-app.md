@@ -32,9 +32,11 @@ Scan this QR code with any scanning application on your smartphone.
 
 You will then be navigated to the Google Play Store for the installation of the Cloud Sensor App for Android.
 
+Alternatively, [click here](https://play.google.com/store/apps/details?id=com.cumulocity.cloudsensor) to install the app directly from the Google Play Store.
+
 #### On an iOS smartphone
 
-To install the Cloud Sensor App on your iOS smartphone, navigate to the App Store, search for **Cumulocity IoT Sensor App** and install the app on your smartphone. 
+To install the Cloud Sensor App on your iOS smartphone, scan the QR code as described above or navigate to the Apple App Store, search for **Cumulocity IoT Sensor App** and install the app on your smartphone. 
 
 ### Registering the Cloud Sensor App to your tenant
 
@@ -101,8 +103,14 @@ To register your iOS smartphone as a new device to the Cumulocity platform, proc
 
 1. On the start screen of the **Cumulocity IoT Sensor App**, press **Connect to Cumulocity**, to connect your device to Cumulocity. <br><br>![Start screen](/guides/images/users-guide/csa/csa-ios-connect.png)<br><br>
 2. If you connect to Cumulocity for the first time, you need to register your device next. <br> 
-In the **Account details** page of the **Cumulocity IoT Sensor App**, provide the relevant details for the Cumulocity account you want to register the device to, i.e. username and password, tenant and the instance on which your IoT Sensor Demo tenant is hosted, e.g. cumulocity.com. The instance can be selected from a drop-down list. <br><br>![Account details](/guides/images/users-guide/csa/csa-ios-account-details.png)<br><br>
-3. Press **Connect** to connect to the Cumulocity platform. <br>
+In the **Account details** page of the **Cumulocity IoT Sensor App**, provide the tenant and the instance on which your IoT Sensor Demo tenant is hosted, e.g. cumulocity.com. Press **Connect**.
+<br><br>![Account details](/guides/images/users-guide/csa/csa-ios-accountdetails-connect.png)<br><br>
+3. Press **Login with Software AG Cloud** or enter your username and password. <br>
+<br><br>![Account details](/guides/images/users-guide/csa/csa-ios-accountdetails-login.png)<br><br>
+
+>**Info**: The option **Login with Software AG Cloud** is only available for subscriptions made via the Software AG Cloud portal.
+
+4. Press **Login** to connect to the Cumulocity platform. <br>
 
 Next, go to your Cumulocity tenant.
 

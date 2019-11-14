@@ -49,7 +49,11 @@ At the top left, you can choose a template. The chosen option has an effect on t
 
 As the OAuth protocol is based on the execution of HTTP requests and redirects, a generic request configuration is provided.
 
-The first part of the **Single sign-on** page consists of the request configuration. Here you can configure the HTTP request address, request parameters, headers and body in case of token and refresh requests. The authorize method is executed as a GET, and others as POST requests.
+The first part of the **Single sign-on** page consists of the request configuration. Here you can configure the HTTP request address, request parameters, headers and body in case of token and refresh requests. The authorize method is executed as a GET, token and refresh method by POST requests.
+
+Logout request is optional. It performs front-channel single logout [OpenId connect front-chanel logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html). When configured, after logout from cumulocity user is redirected to defined authorization server logout url. 
+
+![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-logout-custom.png)
 
 The **Basic** section of the **Single sign-on** page consists of the following configuration settings:
 
@@ -148,6 +152,15 @@ When the "Azure AD" template is selected the configuration panel will look simil
 |Client secret| Azure AD client secret if applicable
 |Button name| Button name
 |Token issuer| Token issuer value in form of a HTTP address
+
+Optionally single logout can be configured:
+
+ ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-logout-azure.png)
+
+|Field|Description|
+|:---|:---|
+|Logout after redirect| Activates single logout by redirecting user, after logout, to authorization server logout endpoint
+|Return url| Address to redirect user back after successful logout from authorization server
 
 The second part of the panel is the same as for the "Custom" template, where access mapping, user ID field selection and signature verification address are provided.
 

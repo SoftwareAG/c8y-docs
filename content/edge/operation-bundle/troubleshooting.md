@@ -362,7 +362,7 @@ The basic hardware information of the target system is captured.  These reports 
 
 The following hardware information is available:
 
-|Information|Description|
+|<div style="width:250px">Information</div>|Description|
 |:----------------|:---|
 |CPU|Reads and gathers CPU information from "/proc/cpuinfo"
 |Memory|Reads and gathers memory information from "/proc/meminfo" 
@@ -378,7 +378,7 @@ The basic software information of the target system is captured. These reports a
 
 The following software information is available:
 
-|Information|Description|
+|<div style="width:250px">Information</div>|Description|
 |:----------------|:---|
 |IP|Reads basic IP information from the target system using the 'ip' command
 |OS|Collects various OS information like name, version, release etc. using the commands 'lsb_release' and 'uname'
@@ -392,7 +392,7 @@ This section contains information on the running Cumulocity processes, health en
 
 The following Cumulocity information is collected:
 
-|Information|Description|
+|<div style="width:250px">Information</div>|Description|
 |:---------------------|:---|
 |Health endpoint result|Cumulocity and its microservices provide health endpoints, from which the user can get the system status. 
 |Mongo command execution result|MongoDB supports commands execution, which can give the status of the MongoDB server. Currently 'ping', 'dbstats' and 'serverStatus' commands are executed on each of the MongoDB nodes (currently it is management and edge). The MongoDB commands give vital information about the MongoDB server like the db version, process-id, uptime information etc.
@@ -449,7 +449,7 @@ The diagnostic utility can be customized using a properties file located under "
 
 Following are the available keys used in the configuration file:
 
-|Information|Description|
+|<div style="width:250px">Information</div>|Description|
 |:----------------|:---|
 |notify.support.by.email|Allows users to select whether they want to receive the diagnostic report via email
 |support.email|Email ID to be used by the utility while sending support email

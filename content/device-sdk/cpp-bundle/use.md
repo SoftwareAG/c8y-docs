@@ -349,105 +349,99 @@ See below an example of a template file.
 
 ### Lua plugin
 
-Instead of using C++ for development, the library also supports rapid development in Lua. For this, you must build the library with explicitly enabling Lua support, as it is disabled by default.
+Instead of using C++ for development, the library also supports rapid development in Lua. For this, you must build the library explicitly enabling Lua support as it is disabled by default. Refer to [Customizing the build](/guides/device-sdk/cpp/#custom) for more details.
 
-Listing 11 demonstrates how to load a `Lua` plugin and add path `lua/` into `Lua`'s `package.path` for library search path.
+The following example shows how to load the Lua plugin and add the path *lua/* into Lua's *package.path* for library search path.
 
-    // ex-06-lua: src/main.cc
-    #include <srluapluginmanager.h>
+```cpp
+// ex-06-lua: src/main.cc
+#include <srluapluginmanager.h>
+// ...
+
+int main()
+{
+    // ...
+    SrLuaPluginManager lua(agent);
+    lua.addLibPath("lua/?.lua");  // add given path to Lua package.path
+    lua.load("lua/myplugin.lua"); // load Lua plugin
     // ...
 
-    int main()
-    {
-            // ...
-            SrLuaPluginManager lua(agent);
-            lua.addLibPath("lua/?.lua");  // add given path to Lua package.path
-            lua.load("lua/myplugin.lua"); // load Lua plugin
-            // ...
-            return 0;
-    }
+    return 0;
+}
+```
 
-Listing 12 shows how to send CPU measurements and handle operation in `Lua` instead of `c++`. All `Lua` plugins are managed by `SrLuaPluginManager`, it is exposed to all `Lua` plugins as an opaque object named *c8y*. The only requirement for a `Lua` plugin is having a `init` function, which will be called by `SrLuaPluginManager` at load time to initialize the `Lua` plugin.
+It is feasible to send CPU measurements and handle operations in Lua instead of C++. All Lua plugins are managed by `SrLuaPluginManager`, and it is exposed to all Lua plugins as an opaque object named `c8y`. The only requirement for a Lua plugin is to have an `init` function, which will be called by `SrLuaPluginManager` at load time to initialize the Lua plugin.
 
-The example also shows how to define your own `Lua` library and share its variable `myString` in your `Lua` plugins.
+The following example shows how to send CPU measurements, define your own Lua library and share its variable `myString` in your Lua plugins.
 
-    -- ex-06-lua: lua/mylib.lua
-    myString = "Hello, Cumulocity!"
+```
+-- ex-06-lua: lua/mylib.lua
+myString = "Hello, Cumulocity!"
 
-    ----------------------------------------
+----------------------------------------
 
-    -- ex-06-lua: lua/myplugin.lua
-    require('mylib')
-    local timer
+-- ex-06-lua: lua/myplugin.lua
+require('mylib')
+local timer
 
-    function restart(r)
-       c8y:send('105,' .. r:value(2) .. ',EXECUTING')
-       for i = 0, r.size - 1 do     -- index in C++ starts from 0.
-          srDebug(r:value(i))
-       end
-       c8y:send('105,' .. r:value(2) .. ',SUCCESSFUL')
-    end
+function restart(r)
+   c8y:send('105,' .. r:value(2) .. ',EXECUTING')
+   for i = 0, r.size - 1 do     -- index in C++ starts from 0.
+      srDebug(r:value(i))
+   end
+   c8y:send('105,' .. r:value(2) .. ',SUCCESSFUL')
+end
 
-    function cpuMeasurement()
-       local cpu = math.random(100)
-       c8y:send('103,' .. c8y.ID .. ',' .. cpu)
-    end
+function cpuMeasurement()
+   local cpu = math.random(100)
+   c8y:send('103,' .. c8y.ID .. ',' .. cpu)
+end
 
-    function init()
-       srDebug(myString)            -- myString from mylib
-       timer = c8y:addTimer(10 * 1000, 'cpuMeasurement')
-       c8y:addMsgHandler(502, 'restart')
-       return 0                     -- signify successful initialization
-    end
+function init()
+   srDebug(myString)            -- myString from mylib
+   timer = c8y:addTimer(10 * 1000, 'cpuMeasurement')
+   c8y:addMsgHandler(502, 'restart')
+   return 0                     -- signify successful initialization
+end
+```
 
-<div class="note">
-You may encounter an error saying "Package lua was not found in the pkg-config search path." when building this example, then you would need to modify the expression `$(shell pkg-config --cflags lua)` to add a proper version number to `lua`. The proper version number depends on your installed Lua version and your Linux distribution.
-
-</div>
+> **Note**: If you encounter an error saying "Package lua was not found in the pkg-config search path." when building this example, then you would need to modify the expression `$(shell pkg-config --cflags lua)` to add a proper version number to Lua. The proper version number depends on your installed Lua version and your Linux distribution.
 
 
 ### Using MQTT instead of HTTP
 
-MQTT is a publish and subscribe based light-weight messaging protocol, renders it very suitable for IoT communication. It solves two major issues inherit to HTTP: 1) HTTP header predominantly overweights SmartREST payload since SmartREST messages are generally very short. 2) MQTT has built-in support for real-time notification via subscribe and publish mechanism, hence, there is no need for a separate connection for device push.
+MQTT is a publish and subscribe based light-weight messaging protocol, and it renders very suitable for IoT communication. It solves two major issues inherit to HTTP: 1) HTTP header predominantly overweights SmartREST payload since SmartREST messages are generally very short. 2) MQTT has built-in support for real-time notification via subscribe and publish mechanism, hence, there is no need for a separate connection for device push.
 
-Above examples are all using HTTP as the transportation layer. Besides HTTP, `SrReporter` also supports MQTT as the transportation layer. Listing 13 shows the modification needed for transforming the example in Section (See section 1.4) from using HTTP into using MQTT.
+All the previous examples are using HTTP as the transportation layer. Besides HTTP, `SrReporter` also supports MQTT as the transportation layer. The following example shows the modification needed for using MQTT instead of HTTP.
 
-    // ex-07-mqtt-legacy: src/main.cc
+```cpp
+// ex-07-mqtt-legacy: src/main.cc
 
-    int main()
-    {
-            // ...
-            SrReporter reporter(string(server) + ":1883", deviceID, agent.XID(),
-                                agent.tenant() + '/' + agent.username(),
-                                agent.password(), agent.egress, agent.ingress);
-            // set MQTT keep-alive interval to 180 seconds.
-            reporter.mqttSetOpt(SR_MQTTOPT_KEEPALIVE, 180);
-            if (reporter.start() != 0)      // Start the reporter thread
-                    return 0;
-            agent.loop();
-            return 0;
-    }
+int main()
+{
+    // ...
+    SrReporter reporter(string(server) + ":1883", deviceID, agent.XID(),
+                        agent.tenant() + '/' + agent.username(),
+                        agent.password(), agent.egress, agent.ingress);
 
-As you can see, all modification needed is to construct `SrReporter` with a different constructor so `SrReporter` knows to use MQTT as underlying communication protocol, and remove `SrDevicePush` in the code since MQTT has built-in support for real-time notification. Optionally, you can set the keep-alive interval for MQTT to prevent the underlying TCP connection from being interrupted.
+    // set MQTT keep-alive interval to 180 seconds.
+    reporter.mqttSetOpt(SR_MQTTOPT_KEEPALIVE, 180);
+    if (reporter.start() != 0)      // Start the reporter thread
+        return 0;
 
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
+    agent.loop();
+    return 0;
+}
+```
 
-<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> All examples can be found in the `examples` folder in the repository.</div>
+As you can see, the modification needed is to construct `SrReporter` with a different constructor, so `SrReporter` now uses MQTT as underlying communication protocol, and removes `SrDevicePush` in the code since MQTT has built-in support for real-time notification. Optionally, you can set the keep-alive interval for MQTT to prevent the underlying TCP connection from being interrupted.
 
-<div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup> The API reference is located in relative path `doc/html/index.html` in the library repository.</div>
+### Final remarks
 
-<div class="footdef"><sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup> The agent loop is an infinite loop, so it will never really returns. We will get back to this function later.</div>
-
-<div class="footdef"><sup><a id="fn.4" name="fn.4" class="footnum" href="#fnr.4">4</a></sup> Consult the [SmartREST reference](http://cumulocity.com/guides/reference/smartrest/) about how to define SmartREST templates.</div>
-
-<div class="footdef"><sup><a id="fn.5" name="fn.5" class="footnum" href="#fnr.5">5</a></sup> The code excerpt only includes the added part, check the *examples* folder for the complete example code.</div>
-
-<div class="footdef"><sup><a id="fn.6" name="fn.6" class="footnum" href="#fnr.6">6</a></sup> This is especially important when you dynamically allocate a timer on the heap, you must not destroy it during the program is running.</div>
-
-<div class="footdef"><sup><a id="fn.7" name="fn.7" class="footnum" href="#fnr.7">7</a></sup> Check `Lua` API reference in `doc/lua.html` for a complete list of all available APIs.</div>
-
-
-</div>
-</div>
+1. All examples can be found in the [cumulocity-sdk-c/examples](https://bitbucket.org/m2m/cumulocity-sdk-c/src/master/examples/) folder in the repository.
+2. The API reference is located in relative path *doc/html/index.html* in the library repository.
+3. The agent loop is an infinite loop, so it will never really returns.
+4. Consult the [SmartREST reference](/guides/reference/smartrest/) about how to define SmartREST templates.
+5. The code excerpts only includes the added part. Check the *examples* folder for the complete example code.
+6. This is especially important when you dynamically allocate a timer on the heap, you must not destroy it during the program is running.
+7. Check the Lua API reference in *doc/lua.html* for a complete list of all available APIs.

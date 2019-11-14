@@ -51,7 +51,7 @@ Moreover it will be added to the group “Phones” (which will be created if no
 ##### Registering with username and password
 
 1. On the start screen of the **Cumulocity IoT Sensor App**, press **Connect to Cumulocity**, to connect your device to Cumulocity.
-2. In the **Account details** page of the **Cumulocity IoT Sensor App**, provide the Cumulocity tenant and instance. These can be seen in the Cumulocity URL from the browser address bar. For example in the URL "mytenant.us.cumulocity.com" the tenant is "mytenant" and the instance is "us.cumulocity.com". Press **Connect**.
+2. In the **Account details** page of the **Cumulocity IoT Sensor App**, provide the Cumulocity tenant and instance. These can be seen in the Cumulocity URL from the browser address bar. For example the screenshot below shows the tenant and instance for a URL "mytenant.us.cumulocity.com". Press **Connect**.
 <br><br>![Account details](/guides/images/users-guide/csa/csa-ios-accountdetails-connect.png)
 
 3. Press **Login with Software AG Cloud** or enter your username and password and press **Login**. 

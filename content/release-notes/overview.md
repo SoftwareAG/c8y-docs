@@ -6,18 +6,18 @@ layout: bundle
 
 <div class="lead">
 These release notes document all relevant changes that have been implemented in a Cumulocity release since the previous release.
-
-We distinguish between standard releases and maintenance releases.
 </div>
+
+We distinguish between Private Edition releases, standard releases and maintenance releases.
+
 #### Standard release
 
-A standard release provides new features and functionality as well as improvements and fixes to a previous release.
+A standard release may provide new functionality as well as improvements and fixes to a previous release.
 
 Standard releases have the format `<major>.<minor>`, e.g. 9.12, 9.13, 9.14. 
 
-A standard release with general availability (GA) is a so-called Private Edition (PE) release. Currently, every fourth standard release is also a PE release. 
+A standard release with general availability (GA) is a so-called Private Edition (PE) release.
 
->**Info**: From 2019, Private Editions will only be published on a quarterly base.
 
 #### Maintenance release
 

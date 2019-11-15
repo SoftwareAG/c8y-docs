@@ -14,11 +14,13 @@ The complete webMethods.io Integration documentation is available at [https://do
 
 To subscribe to webMethods.io Integration, perform the following steps:
 
-1. Log into your Cumulocity tenant as part of Software AG Cloud. 
+1. Log into your Cumulocity tenant as part of **Software AG Cloud**. 
 2. If you are not subscribed to webMethods.io Integration, subscribe to it as follows:
 	* 	Open the application switcher and select **MyCloud**.
+<br><br>![webMethods.io App Switcher My Cloud](/guides/images/users-guide/webMethods.io/wmio-appswitcher-mycloud.png)<br>
 	* 	Under **Other Software AG Cloud products**, click **Start trial** for webMethods.io Integration.
 3. In the application switcher, select **webMethods.io Integration**.
+<br><br>![webMethods.io App Switcher Integration](/guides/images/users-guide/webMethods.io/wmio-appswitcher-integration.png)<br><br>
 
 >**Info**: Both products (webMethods.io Integration and Cumulocity IoT) are integrated into SAG Cloud. Therefore you can easily switch from Cumulocity IoT to webMethods.io and vice versa using the application switcher.  
 

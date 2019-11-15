@@ -4,7 +4,7 @@ layout: redirect
 title: webMethods.io Integration
 ---
 
-webMethods.io Integration is Software AG's cloud based integration solution. It enables you to automate tasks by connecting apps and services (such as Marketo, Salesforce, Evernote, and Gmail) without writing any code.
+webMethods.io Integration is Software AG's cloud based integration solution. It enables you to automate tasks by connecting cloud applications and services (such as Marketo, Salesforce, Evernote, and Gmail) without writing any code.
 
 The complete webMethods.io Integration documentation is available at [https://docs.webmethods.io/](https://docs.webmethods.io/).
 
@@ -15,6 +15,9 @@ The complete webMethods.io Integration documentation is available at [https://do
 To subscribe to webMethods.io Integration, perform the following steps:
 
 1. Log into your Cumulocity tenant as part of **Software AG Cloud**. 
+
+>**Note**: If your tenant has been created outside of SAG Cloud you will not benefit from the user experience described below. You can still use webMethods.io to integrate Cumulocity with other applications, but you cannot use the App Switcher and single sign-on login.
+
 2. If you are not subscribed to webMethods.io Integration, subscribe to it as follows:
 	* 	Open the application switcher and select **MyCloud**.
 <br><br>![webMethods.io App Switcher My Cloud](/guides/images/users-guide/webMethods.io/wmio-appswitcher-mycloud.png)<br>

@@ -78,13 +78,9 @@ In the Login screen, log in with the following credentials:
 
 * Username: edge/&#60;tenant admin username> (as provided during post-installation)
 * Password: &#60;tenant admin password> (as provided during post-installation)
-
 <br>
+
 >**Info**: Cumulocity IoT Edge needs several minutes to start. Then all services should be up and running and you can login to the application.
-
-After successfully logging in, the Cumulocity platform will open:
-
-<img src="/guides/images/users-guide/cockpit/cockpit-home-screen.png" name="Home screen"/>
 
 When you log into Cumulocity for the first time, you will be taken to the [Cockpit](/guides/users-guide/cockpit#overview) application where the **Home screen** initially opens up.
 

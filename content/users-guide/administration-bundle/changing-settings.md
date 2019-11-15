@@ -51,7 +51,7 @@ As the OAuth protocol is based on the execution of HTTP requests and redirects, 
 
 The first part of the **Single sign-on** page consists of the request configuration. Here you can configure the HTTP request address, request parameters, headers and body in case of token and refresh requests. The authorize method is executed as a GET, token and refresh method by POST requests.
 
-Logout request is optional. It performs front-channel single logout [OpenId connect front-chanel logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html). When configured, after logout from cumulocity user is redirected to defined authorization server logout url. 
+Specifying a logout request is optional. It performs front-channel single logout [OpenID connect front-channel logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html). If configured, the user is redirected to the defined authorization server logout URL after logging out from Cumulocity.
 
 ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-logout-custom.png)
 
@@ -159,8 +159,8 @@ Optionally single logout can be configured:
 
 |Field|Description|
 |:---|:---|
-|Logout after redirect| Activates single logout by redirecting user, after logout, to authorization server logout endpoint
-|Return url| Address to redirect user back after successful logout from authorization server
+|Logout after redirect| Activates single logout by redirecting the user, after logout, to the authorization server logout endpoint
+|Redirect URL| Address to redirect the user to after successful logout from the authorization server
 
 The second part of the panel is the same as for the "Custom" template, where access mapping, user ID field selection and signature verification address are provided.
 

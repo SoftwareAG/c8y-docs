@@ -36,9 +36,9 @@ If this information is not available to you, contact your network administrator.
 
 You may also use the `vmnetcfg` utility provided by VMware (see below) to obtain the netmask and gateway IP.
 
-Configure the network by completing the "Configure network" task using the post-installer utility, see [Configuration](/guides/edge/installation/configuration).
+Configure the network by completing the "Configure network" task using the post-installer utility, see [Configuration](/guides/edge/installation/#configuration).
 
-Finish the Cumulocity IoT Edge configuration by completing the "Run post-installation" task using the post-installer utility, see [Configuration](/guides/edge/installation/configuration).
+Finish the Cumulocity IoT Edge configuration by completing the "Run post-installation" task using the post-installer utility, see [Configuration](/guides/edge/installation/#configuration).
 
 ### Setting up for vmnetcfg utility
 

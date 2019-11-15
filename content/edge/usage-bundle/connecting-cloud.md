@@ -6,13 +6,13 @@ layout: redirect
 
 ### Remote Device Management
 
-The Cumulocity tenant allows you to remotely manage your Edge device by registering the Edge device in the tenant account. To do so, you must first configure the Cumulocity tenant account in Edge agent and then register your Edge device in the tenant account.
+The Cumulocity tenant allows you to remotely manage your Edge device by registering the Edge device in the tenant account. To do so, you must first configure the Cumulocity tenant account in the Edge agent and then register your Edge device in the tenant account.
 
 To configure the tenant account in your Edge device, run the post-installation script and select [Option 7 - Configure Edge Agent](/guides/edge/installation/#option-7-configure-edge-agent). For more information, see [Configuring the Edge server](/guides/edge/installation/#configuring-the-edge-server).
 
 The Cumulocity tenant uses the SSH protocol to access the remote Edge device through a web browser.
 
-### Registering the Edge device with a Cumulocity tenant
+### Registering the Edge device with the Cumulocity tenant
 
 Before performing these steps, ensure that you have provided the URL for the Cumulocity tenant in the post-installation procedure.   
 

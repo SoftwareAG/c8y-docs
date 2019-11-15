@@ -10,7 +10,7 @@ Here you will learn how to create your first microservice that can be deployed o
 
 You need to have Cumulocity credentials and a dedicated tenant. In case you do not have that yet, create an account on the [Cumulocity platform](https://cumulocity.com), for example by using a free trial. At this step you will be provided with a dedicated URL address for your tenant.
 
-Verify that you have Java 7 or 8 installed together with Maven 3. It can be downloaded from the [Maven website](https://maven.apache.org/download.cgi).
+Verify that you have Java 8 installed together with Maven 3. It can be downloaded from the [Maven website](https://maven.apache.org/download.cgi).
 
 ```shell
 $ mvn -v
@@ -142,6 +142,9 @@ Your microservice application has to be packed as a Docker image in a ZIP file i
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
             <version>${spring-boot-dependencies.version}</version>
+            <configuration>
+                <mainClass>c8y.example.App</mainClass>
+            </configuration>
             <executions>
                 <execution>
                     <goals>

@@ -26,7 +26,7 @@ Assuming that you have the base code of the "Hello world" example presented in [
 <name>iptracker-microservice</name>
 <artifactId>iptracker-microservice</artifactId>
 <properties>
-    <java.version>12</java.version>
+    <java.version>13</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <spring-boot-dependencies.version>2.1.4.RELEASE</spring-boot-dependencies.version>
@@ -35,7 +35,7 @@ Assuming that you have the base code of the "Hello world" example presented in [
 </properties>
 ```
 
-> **Info**: This example was implemented using Java 12 and Spring Boot 2. You may [install the JDK 12](https://www.oracle.com/technetwork/java/javase/downloads/jdk12-downloads-5295953.html) or adjust this example to the version you already have, e.g. JDK 8. Note that since Java 10 some API were removed or deprecated, so you may get some warning messages during build time but they won't affect the microservice application.
+> **Info**: This example was implemented using Java 13 and Spring Boot 2. You may [install the JDK 13](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or adjust this example to the version you already have, e.g. JDK 8. Note that since Java 10 some API methods were removed or deprecated, so you may get some warning messages during build time but they won't affect the microservice application.
 
 Finally, add the following dependency:
 
@@ -391,7 +391,7 @@ public class App {
 
 ### Building and deploying the application
 
-Use the command `mvn clean install` and follow the same steps of the [Hello world tutorial](/guides/microservice-sdk/java/#java-microservice) to deploy your microservice. You may also employ the cURL to deploy the microservice.
+Use the command `mvn clean install` and follow the same steps of the [Hello world tutorial](/guides/microservice-sdk/java/#java-microservice) to deploy your microservice. You may also employ the cURL command to deploy the microservice.
 
 ```shell
 $ curl -F "data=@target/iptracker-microservice-1.0.0-SNAPSHOT.zip" \
@@ -424,6 +424,16 @@ Using the endpoint <kbd>location/locations</kbd> will return by default five sto
 In the Device Management application, navigate to **Devices** > **All devices** and locate your microservice tracker. Under **Tracking** you will see a map with the tracked locations. It is also possible to develop your own web application and customize a map widget. Refer to the [Web SDK for Angular](https://cumulocity.com/guides/web/angular/#apps) for more details.
 
 ![Microservice tracking](/guides/images/microservices-sdk/ms-tracking-map.png)
+
+#### Run the Docker container
+
+The Docker image was built and added to the local Docker repository during the [Maven build](#build-the-microservice-application). In a similar way as the Hello world tutorial, you can [run the Docker container](/guides/microservice-sdk/java/#run-the-docker-container) locally. Note that in this case the isolation was changed to PER_TENANT. You can also use your Docker image name and tag to run it as follows:
+
+```shell
+$ docker run -p 8082:80 -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_TENANT> -e C8Y_BOOTSTRAP_USER=<BOOTSTRAP_USERNAME> -e C8Y_BOOTSTRAP_PASSWORD=<BOOTSTRAP_USER_PASSWORD> -e C8Y_MICROSERVICE_ISOLATION=PER_TENANT -i -t -e C8Y_BASEURL=<URL> iptracker-microservice:latest
+```
+
+If your Docker image has run successfully, you can test the microservice on any web browser. For instance, using <http://localhost:8082/location/locations> will return all the tracked locations.
 
 ### Source code
 

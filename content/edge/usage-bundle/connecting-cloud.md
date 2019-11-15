@@ -6,15 +6,15 @@ layout: redirect
 
 ### Remote Device Management
 
-Cumulocity tenant allows you to remotely manage your Edge device by registering the Edge device in the tenant account. To do so, you must first configure the Cumulocity tenant account in Edge Agent and then register your Edge device in the tenant account.
+The Cumulocity tenant allows you to remotely manage your Edge device by registering the Edge device in the tenant account. To do so, you must first configure the Cumulocity tenant account in Edge agent and then register your Edge device in the tenant account.
 
 To configure the tenant account in your Edge device, run the post-installation script and select [Option 7 - Configure Edge Agent](/guides/edge/installation/#option-7-configure-edge-agent). For more information, see [Configuring the Edge server](/guides/edge/installation/#configuring-the-edge-server).
 
-The Cumulocity tenant uses the SSH protocal to access the remote Edge device through a web browser.
+The Cumulocity tenant uses the SSH protocol to access the remote Edge device through a web browser.
 
-### Registering an Edge device with Cumulocity tenant
+### Registering the Edge device with a Cumulocity tenant
 
-Before performing these steps, ensure that you have provided the URL for the Cumulocity tenant in the post installation procedure.   
+Before performing these steps, ensure that you have provided the URL for the Cumulocity tenant in the post-installation procedure.   
 
 1. Log in to your Cumulocity tenant. 
 2. Go to **Device Management**.
@@ -31,7 +31,7 @@ Turn on the Edge device and wait for the connection to be established.
 Once the device is connected, the device status changes to **Pending acceptance**.
 8. Click **Accept** to confirm the connection. The status of the device changes to **Accepted**.
 
-### Accessing the Edge device from Cumulocity tenant
+### Accessing the Edge device from the Cumulocity tenant
 
 The Cumulocity Cloud Remote Access microservice allows you to remotely access the Edge device through a web browser. The remote Edge device is represented as a device in the Device Management application of Cumulocity. For more information about remote access, see [Cloud Remote Access](/guides/users-guide/optional-services/#cloud-remote-access).
 

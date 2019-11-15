@@ -316,6 +316,6 @@ Provide the URL for the Cumulocity tenant (cloud or on-premise). For example, "h
 
 	`* Enter cloud URL (leave blank to disable remote management):`
 
-After providing the tenant URL, you have to register your Edge device with the Cumulocity tenant. For more information, see [Registering an Edge device with Cumulocity tenant](/guides/edge/installation/#registering-edge-device-with-cloud).
+After providing the tenant URL, you have to register your Edge device with the Cumulocity tenant. For more information, see [Registering the Edge device with a Cumulocity tenant](/guides/edge/usage/#registering-the-edge-device-with-a-cumulocity-tenant).
 
 >**Important**: If you have configured the Cumulocity tenant URL during the post installation and then use this option with a blank URL, you will disable the Cumulocity tenant connectivity.

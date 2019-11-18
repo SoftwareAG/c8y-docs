@@ -516,7 +516,8 @@ Next to the instance dropdown you can select the time range for the log entries 
 At the top right, additional functionality is provided:
 
 * **Download** - To download the log data for a specified time range.
-* **Theme** - To select a theme (dark or light).
+* **Dark theme** - To turn dark theme on or off.
+* **Auto refresh** - To activate the auto refresh functionality. If activated, the displayed log data will automatically be refreshed every 10 seconds.
 * **Unsubscribe** - To unsubscribe the microservice.
 * **Delete** - To delete the microservice.
 

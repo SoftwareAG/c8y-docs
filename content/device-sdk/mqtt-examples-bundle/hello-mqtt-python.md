@@ -47,7 +47,7 @@ import time, threading, ssl, random
 serverUrl   = "mqtt.cumulocity.com"
 clientId    = "my_mqtt_python_client"
 device_name = "My Python MQTT device"
-tenant      = "<<tenant>>"
+tenant      = "<<tenant_ID>>"
 username    = "<<username>>"
 password    = "<<password>>"
 
@@ -103,7 +103,7 @@ client.subscribe("s/ds")
 sendMeasurements()
 ```
 
-Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant`, `username` and `password`.
+Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant_ID`, `username` and `password`.
 
 Cumulocity MQTT protocol supports both unsecured TCP and secured SSL connections, so when configuring  a port remember to use the correct one. No matter which connection type you choose, your `serverUrl` should stay the same (like `mqtt.cumulocity.com`).
 

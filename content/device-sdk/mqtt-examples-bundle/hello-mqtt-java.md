@@ -81,7 +81,7 @@ public class App {
         final String serverUrl   = "tcp://mqtt.cumulocity.com";     /* ssl://mqtt.cumulocity.com:8883 for a secure connection */
         final String clientId    = "my_mqtt_java_client";
         final String device_name = "My Java MQTT device";
-        final String tenant      = "<<tenant>>";
+        final String tenant      = "<<tenant_ID>>";
         final String username    = "<<username>>";
         final String password    = "<<password>>";
 
@@ -151,7 +151,7 @@ public class App {
 }
 ```
 
-Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant`, `username` and `password`.
+Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant_ID`, `username` and `password`.
 
 Cumulocity MQTT protocol supports both unsecured TCP and secured SSL connections (i.e. `tcp://mqtt.cumulocity.com:1883` or `ssl://mqtt.cumulocity.com:8883`), so you can pick the one which fits for you and use it in `serverUrl`.
 

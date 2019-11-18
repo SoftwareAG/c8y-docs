@@ -46,7 +46,7 @@ const mqtt = require("mqtt");
 const serverUrl   = "tcp://mqtt.cumulocity.com";
 const clientId    = "my_mqtt_nodejs_client";
 const device_name = "My Node.js MQTT device";
-const tenant      = "<<tenant>>";
+const tenant      = "<<tenant_ID>>";
 const username    = "<<username>>";
 const password    = "<<password>>";
 
@@ -97,7 +97,7 @@ client.on("message", function (topic, message) {
 });
 ```
 
-Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant`, `username` and `password`.
+Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant_ID`, `username` and `password`.
 
 The Cumulocity MQTT protocol supports both unsecured TCP and secured SSL connections. No matter which connection type you choose, your `serverUrl` should stay the same (like `mqtt.cumulocity.com`).
 

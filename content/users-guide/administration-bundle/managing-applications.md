@@ -511,7 +511,7 @@ At the top of the page, you can select the instance of the microservice, for whi
 
 Next to the instance dropdown you can select the time range for the log entries to be shown by selecting a date from the calendar and entering a time.
 
->**Info**: The time entered here may differ from the server time due to different time zones.
+>**Info**: Your local time may differ from the log´s timestamp which is in UTC standard.
 
 At the top right, additional functionality is provided:
 
@@ -523,12 +523,12 @@ At the top right, additional functionality is provided:
 
 Initially, the **Logs** tab shows the latest logs of the microservice instance. 
 
-At the bottom right you find navigation buttons to 
+At the bottom right you find navigation buttons:
 
-* directly navigate to the oldest available log entries.
-* increase the time range in 10 minutes steps.
-* reduce the time range in 10 minutes steps.
-* directly navigate to the latest available log entries.
+* **First** - directly navigates to the oldest available log entries for the microservice after its restart (maximum capacity 350MB of logs).
+* **Previous** - increases the time range in 10 minutes steps.
+* **Next** - reduces the time range in 10 minutes steps.
+* **Last** - directly navigates to the latest available log entries.
   
 If no logs are available in the selected time range, a message is shown accordingly:
 

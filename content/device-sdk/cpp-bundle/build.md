@@ -45,21 +45,21 @@ Before starting developing your C++ agents for Cumulocity, you need to build the
 
 ### Compiling the library
 
-First, download a copy of the library from the git repository and change to the directory.
+Download a copy of the library from the Bitbucket repository and change to the directory.
 
 ```shell
 $ git clone https://bitbucket.org/m2m/cumulocity-sdk-c
 $ cd cumulocity-sdk-c
 ```
 
-Second, initialize and update your submodule dependencies – the library depends on the [paho.mqtt.embedded-c](https://github.com/eclipse/paho.mqtt.embedded-c) library for MQTT support.
+Initialize and update your submodule dependencies – the library depends on the [paho.mqtt.embedded-c](https://github.com/eclipse/paho.mqtt.embedded-c) library for MQTT support.
 
 ```shell
 $ git submodule init
 $ git submodule update
 ```
 
-Then, create a *init.mk* file and define specific macros `CPPFLAGS`, `CXXFLAGS` and `LDFLAGS`, `LDLIBS` and `CXX` if cross-compiling.
+Create an *init.mk* file and define the specific macros `CPPFLAGS`, `CXXFLAGS` and `LDFLAGS`, `LDLIBS` and `CXX` if cross-compiling.
 
 ```
 CXX:=/usr/bin/g++
@@ -69,7 +69,7 @@ LDFLAGS:=-L/usr/lib
 LDLIBS:=-lcurl
 ```
 
-That is a typical *init.mk* file example. In essence, it defines the search path for the required C++ header files, preferred warning levels, search path for the required C++ library files, and the necessary linking flags.
+This is a typical *init.mk* file example. In essence, it defines the search path for the required C++ header files, preferred warning levels, search path for the required C++ library files, and the necessary linking flags.
 
 When you do host compiling many of these settings can obviously be omitted; these are more relevant for cross-compiling, which shall be the prevalent use case for the library. Later we will explain that the *init.mk* file is also very important for another purpose, i.e., build customization to tailor the library to your needs.
 

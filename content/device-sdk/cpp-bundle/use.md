@@ -4,7 +4,7 @@ title: C++ Device integration
 layout: redirect
 ---
 
-Before we really get started, we will need a Cumulocity account. Go to <https://cumulocity.com> and apply for a free trial. Click **Try for free** on the top-right corner. After signing-up and login into your tenant, you would find the device registration page in the Device Management application. Later we will show how you may register a device in Cumulocity using the library.
+Before we really get started, we need a Cumulocity account. Go to <https://cumulocity.com> and apply for a free trial. Click **Try for free** on the top-right corner. After signing-up and login into your tenant, you can find the device registration page in the Device Management application. Later we will show how you may register a device in Cumulocity using the library.
 
 ![Cumulocity Registration Page](/guides/images/cpp/img/registerd.png)
 
@@ -43,7 +43,7 @@ For convenience, let's define a shell variable `C8Y_LIB_PATH` to hold the librar
 $ export C8Y_LIB_PATH=/library/root/path
 $ g++ -std=c++11 -I$C8Y_LIB_PATH/include -L$C8Y_LIB_PATH/lib -lsera main.cc
 ```
-> **Important**: You can define the variable `C8Y_LIB_PATH` in your *.bashrc* file, so you don't need to define it every time when launching a new terminal. From now on, let's assume you have done it, so it won't be mentioned in later examples.
+> **Info**: You can define the variable `C8Y_LIB_PATH` in your *.bashrc* file, so you don't need to define it every time when launching a new terminal. From now on, let's assume you have done it, so it won't be mentioned in later examples.
 
 Finally, it's time to run our first program.
 
@@ -61,9 +61,9 @@ Click **Next** and complete the registration. After the program has run, your de
 
 As illustrated previously, the program will print to the standard output *Hello, Cumulocity!* and then exit. Voila! That's all we need to register a device to Cumulocity.
 
-The obtained device credential is stored in the folder */tmp/helloc8y* as defined in variable `credentialPath`. You can also find the credential in **Management** > **Device credentials** in the Device Management application.
+The obtained device credential is stored in the folder */tmp/helloc8y* as defined in the variable `credentialPath`. You can also find the credential in **Management** > **Device credentials** in the Device Management application.
 
-> **Note**: If you re-run the program a second time, it will print *Hello, Cumulocity!* and exit immediately. This is because the program has loaded the available credential from the given credential file. You can manually delete the credential file if you want the program to request a new credential.
+> **Info**: If you re-run the program a second time, it will print *Hello, Cumulocity!* and exit immediately. This is because the program has loaded the available credential from the given credential file. You can manually delete the credential file if you want the program to request a new credential.
 
 ### Integrating to Cumulocity
 
@@ -90,7 +90,7 @@ public:
 #endif /* INTEGRATE_H */
 ```
 
-The following code snippet implements the flow diagram depicted above. You may have noticed that all requests are Comma Separated Values (CSV) since we are using SmartREST instead of REST APIs directly. An important thing to notice is that, you must store the correct SmartREST *X-ID* and device's *Cumulocity ID* in the inherited member variables `xid` and `id`, respectively. They will be used by `SrAgent` after the integrate process for initializing the corresponding internal variables.
+The following code snippet implements the flow diagram depicted above. You may have noticed that all requests are comma-separated values (CSV) since we are using SmartREST instead of REST APIs directly. It is important to mention that you must store the correct SmartREST *X-ID* and device's *Cumulocity ID* in the inherited member variables `xid` and `id`, respectively. They will be used by `SrAgent` after the integrate process for initializing the corresponding internal variables.
 
 ```cpp
 // ex-02-integrate: src/integrate.cc
@@ -180,7 +180,7 @@ int main ()
 }
 ```
 
-After running this example, you will see a device named *HelloC8Y-Agent* in **Devices** > **All devices** in the Device Management application.
+After running this example, you will see a device named *HelloC8Y-Agent* in the devices list under **Devices** > **All devices** in the Device Management application.
 
 ![Created device in Cumulocity after integration process](/guides/images/cpp/img/all-devices.png)
 
@@ -237,7 +237,7 @@ int main ()
 }
 ```
 
-> **Note**: If you add a `SrTimer` to the `SrAgent`, you must ensure its existence throughout the program lifetime, since there is no way to remove a `SrTimer` from the `SrAgent`. Otherwise, you can use `SrTimer.connect` to register a different callback or deactivate it by `SrTimer.stop`. This is a design choice for encouraging timer reuse, instead of dynamically creating and destroying timers.
+> **Info**: If you add a `SrTimer` to the `SrAgent`, you must ensure its existence throughout the program lifetime, since there is no way to remove a `SrTimer` from the `SrAgent`. Otherwise, you can use `SrTimer.connect` to register a different callback or deactivate it by `SrTimer.stop`. This is a design choice for encouraging timer reuse, instead of dynamically creating and destroying timers.
 
 ### Handling operations
 
@@ -320,7 +320,7 @@ int main ()
 The file format required by `readSrTemplate` is as simple as follows:
 
 -   The first line contains only the template version number.
--   Every template must be on one line of its own.
+-   Every template must be in a separate line.
 -   A line starting with `#` as first character (with no leading spaces or tabs) is considered a comment line and will be ignored.
 -   A complete empty line (with no spaces and tabs) will be ignored.
 -   No trailing spaces or tabs are allowed for any line except comment lines.
@@ -405,7 +405,7 @@ function init()
 end
 ```
 
-> **Note**: If you encounter an error saying "Package lua was not found in the pkg-config search path." when building this example, then you would need to modify the expression `$(shell pkg-config --cflags lua)` to add a proper version number to Lua. The proper version number depends on your installed Lua version and your Linux distribution.
+> **Info**: If you encounter an error saying "Package lua was not found in the pkg-config search path." when building this example, then you need to modify the expression `$(shell pkg-config --cflags lua)` to add a proper version number to Lua. The proper version number depends on your installed Lua version and your Linux distribution.
 
 
 ### Using MQTT instead of HTTP
@@ -438,10 +438,10 @@ As you can see, the modification needed is to construct `SrReporter` with a diff
 
 ### Final remarks
 
-1. All examples can be found in the [cumulocity-sdk-c/examples](https://bitbucket.org/m2m/cumulocity-sdk-c/src/master/examples/) folder in the repository.
+1. All examples can be found in the [cumulocity-sdk-c/examples](https://bitbucket.org/m2m/cumulocity-sdk-c/src/master/examples/) folder in the Bitbucket repository.
 2. The API reference is located in relative path *doc/html/index.html* in the library repository.
-3. The agent loop is an infinite loop, so it will never really returns.
+3. The agent loop is an infinite loop, so it will never really return.
 4. Consult the [SmartREST reference](/guides/reference/smartrest/) about how to define SmartREST templates.
-5. The code excerpts only includes the added part. Check the *examples* folder for the complete example code.
-6. This is especially important when you dynamically allocate a timer on the heap, you must not destroy it during the program is running.
+5. The code excerpts only include the added part. Check the *examples* folder for the complete example code.
+6. This is especially important when you dynamically allocate a timer on the heap: you must not destroy it while the program is running.
 7. Check the Lua API reference in *doc/lua.html* for a complete list of all available APIs.

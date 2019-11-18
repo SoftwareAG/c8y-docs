@@ -12,9 +12,9 @@ The tenant admin user could be locked if incorrect credentials are passed during
 
 To unlock the tenant admin user, perform the following steps:
 
-1. Login as sysadmin user (password= sysadmin-pass).
-1. In the Administration application, navigate to the **Users** page and open the tenant admin user.
-1. Activate the user account by switching the toggle next to the username to **Enabled** and save your settings.
+1. Login as **sysadmin** user.
+2. In the Administration application, navigate to the **Users** page and open the tenant admin user.
+3. Activate the user account by switching the toggle next to the username to **Enabled** and save your settings.
 
 ### Configuring email server and password template settings
 

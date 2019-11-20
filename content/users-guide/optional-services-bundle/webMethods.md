@@ -8,15 +8,13 @@ webMethods.io Integration is Software AG's cloud based integration solution. It 
 
 The complete webMethods.io Integration documentation is available at [https://docs.webmethods.io/](https://docs.webmethods.io/).
 
->**Info**: Support for the Cumulocity [Zapier integration](/guides/saas-integration) is discontinued and no new subscriptions are possible. Functionality for existing customers is not affected.
-
 ### Getting started
 
 To subscribe to webMethods.io Integration, perform the following steps:
 
 1. Log into your Cumulocity tenant as part of **Software AG Cloud**. 
 
->**Note**: If your tenant has been created outside of SAG Cloud you will not benefit from the user experience described below. You can still use webMethods.io to integrate Cumulocity with other applications, but you cannot use the App Switcher and single sign-on login.
+    >**Note**: If your tenant has been created outside of SAG Cloud you will not benefit from the user experience described below. You can still use webMethods.io to integrate Cumulocity with other applications, but you cannot use the App Switcher and single sign-on login.
 
 2. If you are not subscribed to webMethods.io Integration, subscribe to it as follows:
 	* 	Open the application switcher and select **MyCloud**.

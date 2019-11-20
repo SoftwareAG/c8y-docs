@@ -17,11 +17,12 @@ To subscribe to webMethods.io Integration, perform the following steps:
     >**Note**: If your tenant has been created outside of SAG Cloud you will not benefit from the user experience described below. You can still use webMethods.io to integrate Cumulocity with other applications, but you cannot use the App Switcher and single sign-on login.
 
 2. If you are not subscribed to webMethods.io Integration, subscribe to it as follows:
-	* 	Open the application switcher and select **MyCloud**.
-<br><br>![webMethods.io App Switcher My Cloud](/guides/images/users-guide/webMethods.io/wmio-appswitcher-mycloud.png)<br>
-	* 	Under **Other Software AG Cloud products**, click **Start trial** for webMethods.io Integration.
+
+	Open the application switcher and select **MyCloud**.
+<br>![webMethods.io App Switcher My Cloud](/guides/images/users-guide/webMethods.io/wmio-appswitcher-mycloud.png)Under **Other Software AG Cloud products**, click **Start trial** for webMethods.io Integration.
+
 3. In the application switcher, select **webMethods.io Integration**.
-<br><br>![webMethods.io App Switcher Integration](/guides/images/users-guide/webMethods.io/wmio-appswitcher-integration.png)<br><br>
+<br><br>![webMethods.io App Switcher Integration](/guides/images/users-guide/webMethods.io/wmio-appswitcher-integration.png)
 
 >**Info**: Both products (webMethods.io Integration and Cumulocity IoT) are integrated into SAG Cloud. Therefore you can easily switch from Cumulocity IoT to webMethods.io and vice versa using the application switcher.  
 
@@ -37,4 +38,4 @@ WebMethods.io also provides pre-configured workflows which are called **Recipes*
 
 ![webMethods.io Example Recipe](/guides/images/users-guide/webMethods.io/wmio-recipe-salesforce.png)
 
-More examples and technical guides can be found on the Software AG TECHcommunity website [https://techcommunity.softwareag.com/](https://techcommunity.softwareag.com/) in the Tips, Tricks and Code section.
+More examples and technical guides can be found on the Software AG TECHcommunity website [https://techcommunity.softwareag.com/](https://techcommunity.softwareag.com/) in the **Tips, Tricks and Code** section.

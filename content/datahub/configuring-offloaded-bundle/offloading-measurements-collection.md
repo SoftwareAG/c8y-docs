@@ -57,5 +57,3 @@ When configuring the offloading configuration for the measurements collection, y
 
 <img src="/guides/images/datahub-guide/datahub-offloading-task-to-target-table.png" alt="Offloading task to target table"  style="max-width: 100%">
 
-> **Info:** The **Type** selection control provides a set of device types to select from. These types are retrieved by sampling the measurements collection. If a device type is missing because it has not been sampled, you can type it into the **Type** selection control.
-

@@ -93,7 +93,7 @@ If you select **Fragment equals value**, a value will only be shown if it matche
 
 The new column will be added and displayed in the device list.
 
->**Info**: While standard columns can only be shown/hidden as required, custom columns may be deleted permanently.
+> **Info**: While standard columns can only be shown/hidden as required, custom columns may be deleted permanently.
 
 #### To delete a device from the list
 
@@ -113,9 +113,9 @@ Click the **Search** button at the top right and enter a search term into the te
 
 Our example shows a search for "Ublox C027". 
 
-**Info**: Unlike filtering, the use of wildcards in a search is not supported.
+> **Info**: Unlike filtering, the use of wildcards in a search is not supported.
 
-For details on the search functionality, refer to Getting Started > [GUI functionalities and features](/guides/users-guide/overview#gui-features). 
+For details on the search functionality, refer to [Getting Started > GUI functionalities and features](/guides/users-guide/overview#gui-features). 
 
 ![Search for devices](/guides/images/users-guide/DeviceManagement/devmgmt-search.png)
 

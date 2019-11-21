@@ -55,6 +55,8 @@ For details, see the [How-to recipes](/guides/web/how-to/) in the Web SDK guide.
 
 [Performance] Performance when ingesting complex measurement data structures has been significantly improved through a new algorithm. Switching to the new algorithm at runtime is now possible via a tenant option. [MTM-27216]
 
+[UI] The application switcher now shows more than one subscribed external applications  [MTM-28921]
+
 
 ### Apama EPL Apps (formerly Apama-epl)
 

@@ -6,7 +6,7 @@ layout: redirect
 
 ### Overview
 
-The **Cumulocity IoT Sensor App** is a smartphone application which sends sensor measurements to the Cumulocity IoT platform. With the app it is also possible to connect a Texas Instruments (TI) Sensor Tag device over bluetooth and send the measurements to Cumulocity. Additionally, commands can also be sent from Cumulocity to the smartphone.  
+The **Cumulocity IoT Sensor App** is a smartphone application which sends sensor measurements to the Cumulocity IoT platform. With the app it is also possible to connect a Texas Instruments (TI) Sensor Tag device over bluetooth and send the measurements to Cumulocity. Commands can also be sent from Cumulocity to the smartphone.  
 
 >**Info**: The TI Sensor Tag is a low energy wireless device manufactured by Texas Instruments © [http://www.ti.com/](http://www.ti.com/).
 
@@ -61,7 +61,7 @@ Moreover it will be added to the group “Phones” (which will be created if no
 
 Next, go to Cumulocity.
 
-Your smartphone will be registered and added to the devices list in the Device Management application, which can be accessed by navigating to **All devices** in the **Devices** menu in the navigator.
+Your smartphone will be registered and added to the devices list in the **Device Management** application, which can be accessed by navigating to **All devices** in the **Devices** menu in the navigator.
 
 ![All devices](/guides/images/users-guide/csa/csa-device-list.png)
 
@@ -89,22 +89,22 @@ The Sensor App sends measurements to Cumulocity every 2 seconds by default. This
 
 ### Connecting TI Sensor Tag to the Cloud Sensor App
 
-The Cloud Sensor App connects to both TI Sensor Tag version 1.20 and 1.30 via bluetooth. 
+The **Cumulocity IoT Sensor App** connects to both TI Sensor Tag version 1.20 and 1.30 via bluetooth. 
 
 **On an Android smartphone**
 
-Use the **Scan devices** button in the Cloud Sensor App to connect a Sensor Tag.
+Use the **Scan devices** button in the Sensor App to connect a Sensor Tag.
 
 ![Scan devices button](/guides/images/users-guide/csa/csa-scan-devices.png)
 
 **On an iOS smartphone**
 
-Press the **Add Tag** button in the Cloud Sensor App to connect a Sensor Tag.
+Press the **Add Tag** button in the Sensor App to connect a Sensor Tag.
 
 ![Add Tag](/guides/images/users-guide/csa/csa-ios-add-tag.png)
 
 
-All Sensor Tags which are discoverable are displayed. To make a Sensor Tag discoverable, press the red button next to it. The Sensor Tag will start blinking to show that it is ready to connect. It should immediately appear in the list of visible bluetooth devices in the Cloud Sensor App.
+All Sensor Tags which are discoverable are displayed. To make a Sensor Tag discoverable, press the red button next to it. The Sensor Tag will start blinking to show that it is ready to connect. It should immediately appear in the list of visible bluetooth devices in the Sensor App.
 
 ![Connect Sensor Tag](/guides/images/users-guide/csa/csa-bluetooth.png)
 
@@ -124,7 +124,7 @@ To detach the Sensor Tag from your smartphone, press **Remove** on its card.
 
 ### Device control
 
-The Cloud Sensor App can receive real-time control commands from Cumulocity. 
+The **Cumulocity IoT Sensor App** can receive real-time control commands from Cumulocity. 
 
 The Messaging widget, for example, can be used to send text notifications to the smartphone. The vibration relay control can be used to turn on/off the vibration motor. 
 

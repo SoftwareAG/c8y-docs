@@ -1,12 +1,12 @@
 ---
 weight: 10
-title: Cloud Sensor App
+title: Smartphone Sensor App
 layout: redirect
 ---
 
 ### Overview
 
-The Cumulocity IoT Sensor App sends sensor measurements from a smartphone to Cumulocity to be securely processed and managed. With the app it is also possible to connect a Texas Instruments (TI) Sensor Tag device over bluetooth and send the measurements to Cumulocity. Additionally, commands can also be sent from Cumulocity to the smartphone. 
+The **Cumulocity IoT Sensor App** is a smartphone application which sends sensor measurements to the Cumulocity IoT platform. With the app it is also possible to connect a Texas Instruments (TI) Sensor Tag device over bluetooth and send the measurements to Cumulocity. Additionally, commands can also be sent from Cumulocity to the smartphone.  
 
 >**Info**: The TI Sensor Tag is a low energy wireless device manufactured by Texas Instruments © [http://www.ti.com/](http://www.ti.com/).
 
@@ -14,7 +14,7 @@ The Sensor App requires a smartphone with Android version 5.0 (or higher) or iOS
 
 ### Installing the Sensor App
 
-To install the Cloud Sensor App on your smartphone, open the Cockpit application in Cumulocity, expand the right drawer and click **Add smartphone** from the quick links.
+To install the Sensor App on your smartphone, open the Cockpit application in Cumulocity, expand the right drawer and click **Add smartphone** from the quick links.
 
 ![Quick Links](/guides/images/users-guide/csa/csa-quick-links.png)
 
@@ -79,17 +79,13 @@ The sensor data (i.e. gyroscope, location, acceleration, magnetic field and baro
 
 The measurements from the sensors of your smartphone will automatically start being sent to your Cumulocity tenant when your smartphone is connected to the platform.
 
-The data points will be displayed in the graphs on the **Info** tab of your smartphone device in the Device Management application.
+The data points will be displayed in the **Phones** group on the dashboard of your smartphone device.
 
-![map in cockpit](/guides/images/users-guide/csa/mapincockpit.png)
+![map in cockpit](/guides/images/users-guide/csa/mapincockpit2.png)
 
 A 3D rotation widget on this dashboard will depict the data from a gyroscope sensor on your smartphone if present.
 
-To save battery power, the Cloud Sensor App sends measurements to Cumulocity only when the data change is significant, or every 20 minutes by default. This interval can be changed in the Device Management application.
-
-Switch to the **Configuration** tab of your device and specify the interval in milliseconds.
-
-![configuration interval](/guides/images/users-guide/csa/csa-configure-interval.png)
+The Sensor App sends measurements to Cumulocity every 2 seconds by default. This interval can be changed in the app.
 
 ### Connecting TI Sensor Tag to the Cloud Sensor App
 

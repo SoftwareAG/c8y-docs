@@ -8,7 +8,7 @@ This section deals with the basic data science steps of creating an anomaly dete
 
 #### Register an iPhone in Cumulocity
 
-Registering an iPhone in Cumulocity involves installing the Cloud Sensor App on your iPhone and using it for completing the registration. Follow the steps described in [Optional services > Cloud Sensor App](/guides/users-guide/optional-services#android-cloud-sensor-app) in the User guide.
+Registering an iPhone in Cumulocity involves installing the Cloud Sensor App on your iPhone and using it for completing the registration. Follow the steps described in [Optional services > Cumulocity IoT Sensor App](/guides/users-guide/optional-services#android-cloud-sensor-app) in the User guide.
 
 Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, update the `c_device_source` of the *CONFIG.INI* file with the device ID of your registered iPhone.
 

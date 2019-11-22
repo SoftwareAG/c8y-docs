@@ -69,7 +69,7 @@ int main(int argc, char* argv[]) {
     MQTTClient client;
     MQTTClient_create(&client, ADDRESS, CLIENTID, MQTTCLIENT_PERSISTENCE_NONE, NULL);
     MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
-    conn_opts.username = "<<tenant>>/<<username>>";
+    conn_opts.username = "<<tenant_ID>>/<<username>>";
     conn_opts.password = "<<password>>";
 
     MQTTClient_setCallbacks(client, NULL, NULL, on_message, NULL);
@@ -97,7 +97,7 @@ int main(int argc, char* argv[]) {
 }
 ```
 
-Replace `<<clientId>>`, `<<serverUrl>>`, `<<tenant>>`, `<<username>>` and `<<password>>` with your data.
+Replace `<<clientId>>`, `<<serverUrl>>`, `<<tenant_ID>>`, `<<username>>` and `<<password>>` with your data.
 
 The Cumulocity MQTT protocol supports both unsecured TCP and secured SSL connections (e.g. ``tcp://mqtt.cumulocity.com:1883`` or ``ssl://mqtt.cumulocity.com:8883``), so as the `<<serverUrl>>` you can pick the one which fits for you.
 When using SSL remember to configure ``MQTTClient_SSLOptions`` and set it in the ``MQTTClient_connectOptions``.

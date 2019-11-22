@@ -1,5 +1,5 @@
 ---
-weight: 40
+weight: 50
 title: Accessing the Cumulocity platform
 layout: redirect
 ---
@@ -24,7 +24,7 @@ On Linux machines, add the following entry to */etc/hosts*:
 <IP address> <domain_name>
 ```
 
-Use the IP address provided during [network configuration](/guides/edge/installation#configuration). The default value for the Virtual Box is 192.168.56.120.
+Use the IP address provided during [network configuration](/guides/edge/installation#configuration). For example, the default value for Hyper-V is 192.168.66.10.
 
 On Windows machines,  add the same entry to *C:\Windows\System32\Drivers\etc\hosts*.
 
@@ -45,6 +45,8 @@ Using &#60;domain_name>, Cumulocity IoT Edge can be connected from the host oper
 
 Once the machine is in running state, open a web browser.
 
+>**Important**: You must first login as **sysadmin** user (password = sysadmin-pass) and change the password for **sysadmin** user. The **sysadmin** user account is used for unlocking the tenant admin user. To change the password, see [User options and settings](/guides/users-guide/getting-started/#user-settings).
+
 #### Entering Cumulocity via domain name
 
 Enter the following:
@@ -53,14 +55,11 @@ Enter the following:
 https://<domain_name>
 ```
 
-The Cumulocity Login screen opens up.
+The Cumulocity Login screen appears.
 
-<img src="/guides/images/users-guide/overview-login.png" name="Login screen"/>
+<img src="/guides/images/edge/edge-login-with-domain.png" name="Login screen"/>
 
-In the Login screen, log in with the following credentials:
-
-* Username: &#60;tenant admin username> (as provided during post-installation)
-* Password: &#60;tenant admin password> (as provided during post-installation)
+In the Login screen, log in with the tenant admin credentials provided during post-installation.
 
 #### Entering Cumulocity via IP
 
@@ -70,21 +69,14 @@ Enter the following:
 https://<IP_Address_Of_Edge>;
 ```
 
-The Cumulocity login screen opens up.
+The Cumulocity login screen appears.
 
 <img src="/guides/images/edge/edge-login-with-tenantid.png" name="Login screen"/>
 
-In the Login screen, log in with the following credentials:
-
-* Username: edge/&#60;tenant admin username> (as provided during post-installation)
-* Password: &#60;tenant admin password> (as provided during post-installation)
-
+In the Login screen, log in with the tenant admin credentials provided during post-installation.
 <br>
+
 >**Info**: Cumulocity IoT Edge needs several minutes to start. Then all services should be up and running and you can login to the application.
-
-After successfully logging in, the Cumulocity platform will open:
-
-<img src="/guides/images/users-guide/cockpit/cockpit-home-screen.png" name="Home screen"/>
 
 When you log into Cumulocity for the first time, you will be taken to the [Cockpit](/guides/users-guide/cockpit#overview) application where the **Home screen** initially opens up.
 

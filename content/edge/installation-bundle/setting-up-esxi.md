@@ -1,15 +1,14 @@
 ---
-weight: 50
+weight: 60
 title: Example setup for VMware ESXi 
 layout: redirect
 ---
 
 ### Setting up ESXi
 
-To set up an EXSi virtual machine, follow these steps:
+To set up an ESXi virtual machine, follow these steps:
 
 1. Click **Create/Register VM** to open a window to select the creation type.<br>
-<img src="/guides/images/edge/edge-esxi-00.png" name="Setting up ESXi" style="width:75%;"/>
 
 2.	Under **Select creation type**, select **Deploy a virtual machine from OVA or OVF template** and click **Next**. <br>
 <img src="/guides/images/edge/edge-esxi-01.png" name="Setting up ESXi" style="width:75%;"/>
@@ -27,8 +26,6 @@ To set up an EXSi virtual machine, follow these steps:
 <img src="/guides/images/edge/edge-esxi-05.png" name="Setting up ESXi" style="width:75%;"/>
 
 A VM with the provided name, e.g. "EDGE-server", should now show up in the **Virtual Machines** section. Notifications will appear accordingly in the **Recent tasks** pane.
-
-<img src="/guides/images/edge/edge-esxi-06.png" name="Setting up ESXi" style="width:75%;"/>
 
 ### VM hardware configuration
 

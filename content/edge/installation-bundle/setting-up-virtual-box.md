@@ -1,5 +1,5 @@
 ---
-weight: 70
+weight: 90
 title: Example setup for VirtualBox
 layout: redirect
 ---
@@ -47,8 +47,6 @@ Alternatively, you can double-click on the provided .ova file. The machine will 
 The machine has predefined settings for disk, CPU and memory.
 
 Once the machine has been imported it will show up in the Manager application.
-
-<img src="/guides/images/edge/edge-vm-import.PNG" name="Import VM" style="width:75%;"/>
 
 Start the virtual machine by clicking **Start** on the top left.
 

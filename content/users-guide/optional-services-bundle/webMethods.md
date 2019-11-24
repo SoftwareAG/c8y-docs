@@ -14,7 +14,7 @@ To subscribe to webMethods.io Integration, perform the following steps:
 
 1. Log into your Cumulocity tenant as part of **Software AG Cloud**. 
 
-    >**Note**: If your tenant has been created outside of SAG Cloud you will not benefit from the user experience described below. You can still use webMethods.io to integrate Cumulocity with other applications, but you cannot use the App Switcher and single sign-on login.
+    >**Info**: If your tenant has been created outside of SAG Cloud you will not benefit from the user experience described below. You can still use webMethods.io to integrate Cumulocity with other applications, but you cannot use the app switcher and single sign-on login.
 
 2. If you are not subscribed to webMethods.io Integration, subscribe to it as follows:
 
@@ -28,13 +28,13 @@ To subscribe to webMethods.io Integration, perform the following steps:
 
 ### Examples
 
-Integrations in webmethods.io are called **Workflows**. A workflow is a connection between two or more web apps or services. It’s like a set of steps required to perform a task.
+Integrations in webmethods.io are called "Workflows". A workflow is a connection between two or more web apps or services. It’s like a set of steps required to perform a task.
 
-The example workflow below is triggered by an alarm in Cumulocity and creates a ticket in Zendesk and sends and SMS message.
+The example workflow below is triggered by an alarm in Cumulocity and creates a ticket in Zendesk and sends an SMS message.
 
 ![webMethods.io Example Workflow](/guides/images/users-guide/webMethods.io/wmio-example1.png)
 
-WebMethods.io also provides pre-configured workflows which are called **Recipes**.
+WebMethods.io also provides pre-configured workflows which are called "Recipes".
 
 ![webMethods.io Example Recipe](/guides/images/users-guide/webMethods.io/wmio-recipe-salesforce.png)
 

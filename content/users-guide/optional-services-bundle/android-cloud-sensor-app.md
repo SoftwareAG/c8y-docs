@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Smartphone Sensor App
+title: Cumulocity IoT Sensor App
 layout: redirect
 ---
 
@@ -73,7 +73,7 @@ Press **View sensors** to view the data from sensors on your smartphone.
 
 The sensor data (i.e. gyroscope, location, acceleration, magnetic field and barometer data), will be shown on the smartphone.
 
->**Info**: Note, that on iOS smartphone you can view sensor data without being connected to Cumulocity. Only when your phone is connected to Cumulocity the sensor data is being sent to the platform.
+>**Info**: On an iOS smartphone you can view sensor data without being connected to Cumulocity. Only when your phone is connected to Cumulocity the sensor data is being sent to the platform.
 
 ### Sending sensor data to Cumulocity
 
@@ -87,7 +87,7 @@ A 3D rotation widget on this dashboard will depict the data from a gyroscope sen
 
 The Sensor App sends measurements to Cumulocity every 2 seconds by default. This interval can be changed in the app.
 
-### Connecting TI Sensor Tag to the Cloud Sensor App
+### Connecting TI Sensor Tag to the Sensor App
 
 The **Cumulocity IoT Sensor App** connects to both TI Sensor Tag version 1.20 and 1.30 via bluetooth. 
 
@@ -108,7 +108,7 @@ All Sensor Tags which are discoverable are displayed. To make a Sensor Tag disco
 
 ![Connect Sensor Tag](/guides/images/users-guide/csa/csa-bluetooth.png)
 
-Press **Connect** next to the Sensor Tag of your choice. The Bluetooth connection between the Sensor Tag and your smartphone will be established. Once the Sensor Tag is paired with your smartphone, you will see it as a record on the Cloud Sensor App’s screen:
+Press **Connect** next to the Sensor Tag of your choice. The Bluetooth connection between the Sensor Tag and your smartphone will be established. Once the Sensor Tag is paired with your smartphone, you will see it as a record on the Sensor App’s screen:
 
 ![Sensor Tag Card](/guides/images/users-guide/csa/csa-ticard.png)
 

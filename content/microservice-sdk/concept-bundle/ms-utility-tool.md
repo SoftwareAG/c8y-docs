@@ -150,10 +150,3 @@ $ ./microservice pack deploy subscribe -n hello-world -d <URL> -u <username> -p 
 ### Operating microservices
 
 Cumulocity manages microservices by monitoring the microservice instance and storing the metrics. In case a microservice exceeds the memory limit, it is restarted automatically. Also, microservices can be auto-scaled in case of high CPU usage. For more information, review the [scaling](#isolation-levels) details above.
-
-#### Heap and perm/metadata
-
-To calculate heap and perm/metadata, it takes the limit defined on the [microservice manifest](#manifest) and it is converted it into Megabytes (MB). <br>
-50 MB are left for “system”. <br>
-10% is taken for PermGen on JDK 7 or Metaspace on JDK 8, but not less than 128 MB and not more then 1024MB. <br>
-The rest is allocated for heap size.

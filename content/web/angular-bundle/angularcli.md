@@ -4,8 +4,8 @@ layout: redirect
 weight: 25
 ---
 
-When developing a pure Angular you can create an Angular CLI project and add Cumulocity CLI to it.
-This functionality is only available after 1004.2.0.
+When developing a pure Angular you can create an Angular CLI (`ng`-cli) project and add Cumulocity CLI to it.
+This functionality is only available after 1004.2.0 and for Angular 7.
 
 ### Install Angular CLI
 

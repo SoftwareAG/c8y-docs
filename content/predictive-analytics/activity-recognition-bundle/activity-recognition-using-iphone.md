@@ -10,7 +10,7 @@ This section deals with the basic data science steps of creating an activity rec
 
 Registering an iPhone on Cumulocity involves installing the Cloud Sensor App on your phone and using it for completing the registration. 
 
-Follow the steps described in [Optional services > Cloud Sensor App](/guides/users-guide/optional-services#android-cloud-sensor-app) in the User guide.
+Follow the steps described in [Optional services > Cumulocity IoT Sensor App](/guides/users-guide/optional-services#android-cloud-sensor-app) in the User guide.
 
 After the download, do the following on your iPhone: Open Settings > Click General > Click Device Management or Profiles & Device Management > Select Software AG > Trust "Software AG“.
 
@@ -252,7 +252,7 @@ For this active recognition scenario, we need to use Apama streaming analytics. 
 
 We create an EPL-based monitor file and upload it to Cumulocity. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice and raising an alarm when any change in activity is reported by our machine learning model.
 
-Instead of creating a new monitor file, the attached *RecognizeActivities.mon* file can be used after making minor adjustments. Open *RecognizeActivities.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device, same as `c_device_source` in the *CONFIG.INI* file mentioned above. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as a single *.mon file with the Apama-epl application] (/guides/apama/analytics-introduction/#single-mon-file) in the Analytics guide for details on uploading Apama monitor files.
+Instead of creating a new monitor file, the attached *RecognizeActivities.mon* file can be used after making minor adjustments. Open *RecognizeActivities.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device, same as `c_device_source` in the *CONFIG.INI* file mentioned above. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps] (/guides/apama/analytics-introduction/#single-mon-file) in the Streaming analytics guide for details on uploading Apama monitor files.
 
 	using com.apama.correlator.Component;
 	using com.apama.cumulocity.Alarm;

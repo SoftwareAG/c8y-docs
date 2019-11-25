@@ -4,7 +4,7 @@ title: Connecting Devices
 layout: redirect
 ---
 
-### <a name="dev-registration"></a> Device registration page
+### <a name="dev-registration">
 
 In the **Device registration** page all devices which currently are in the registration process are displayed either in a list or in a grid.
 
@@ -21,7 +21,9 @@ The devices may have one of the following status:
 
 * **Waiting for connection** - The device has been registered but no device with the specified ID has tried to connect.
 * **Pending acceptance** - There is communication from a device with the specified ID, but the user doing the registration must still explicitly accept so that the credentials are sent to the device.
-* **Accepted** - The user has allowed the credentials to be send to the device.Devices can be connected to your Cumulocity account in different ways.
+* **Accepted** - The user has allowed the credentials to be send to the device.
+
+Devices can be connected to your Cumulocity account in different ways.
 
 ### To register devices
 
@@ -54,13 +56,13 @@ If you are subscribed to the required applications you will see a third option
 
 <img src="/guides/images/users-guide/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration"> 
 
-After successful registration the device(s) will be listed in the [**Device registration** page](#dev-registration) with the status **Waiting for connection**.
+After successful registration the device(s) will be listed in the [**Device registration** page](#dev-registration) with the status "Waiting for connection".
 
 Turn on the device(s) and wait for the connection to be established.
-Once a device is connected, its status will change to **Pending acceptance**.
-Click **Accept** to confirm the connection. The status of the device will change to **Accepted**.
+Once a device is connected, its status will change to "Pending acceptance".
+Click **Accept** to confirm the connection. The status of the device will change to "Accepted".
 
-**Info**: In case of any issues, consult the documentation applicable for your device type in the [Devices guide](/guides/devices) or look up the manual of your device.
+**Info**: In case of any issues, consult the documentation applicable for your device type in the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices) or look up the manual of your device.
 
 
 #### <a name="creds-upload"></a>To bulk-register devices
@@ -90,7 +92,7 @@ The CSV file contains two columns: ID;PATH, where ID is the device identifier, e
 ```
 		
 
-After the file is uploaded, all required new groups will be created, new registrations will be created with status WAITING FOR CONNECTION, and the normal registration process needs to be continued (see above).
+After the file is uploaded, all required new groups will be created, new registrations will be created with status "Waiting for connection", and the normal registration process needs to be continued (see above).
 
 **Full registration**
 

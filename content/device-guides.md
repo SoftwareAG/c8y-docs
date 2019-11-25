@@ -1,7 +1,7 @@
 ---
 title: Device guides
-bundle: devices
-icon: "c8y-icon c8y-icon-device-management"
+bundle: device-guides
+icon: "c8y-icon c8y-icon-tools"
 type: root
 layout: root
 weight: 50

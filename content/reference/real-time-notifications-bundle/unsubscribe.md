@@ -10,7 +10,7 @@ To stop receiving notifications from a channel, send a message to "/meta/unsubsc
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|id|Integer|1|Id of message, required to match reponse message|
+|id|Integer|1|Id of message, required to match response message|
 |channel|URI|1|Name of channel, required value "/meta/unsubscribe".|
 |clientId|String|1|Unique client ID received during handshake.|
 |subscription|String|1|Name of channel.|
@@ -26,7 +26,7 @@ Example Request:
       {
         "channel": "/meta/unsubscribe",
         "clientId": "Un1q31d3nt1f13r",
-        "subscription": "/CepModuleName/CepStatementName"
+        "subscription": "/alarms/<Device ID>"
       }
     ]
 
@@ -49,7 +49,7 @@ Example response:
       {
         "channel": "/meta/unsubscribe",
         "clientId": "Un1q31d3nt1f13r",
-        "subscription": "/CepModuleName/CepStatementName",
+        "subscription": "/alarms/<Device ID>",
         "successful": true,
         "error": ""
       }

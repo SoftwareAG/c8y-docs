@@ -10,6 +10,8 @@ A detailed device list will be displayed.
 
 ![Device list](/guides/images/users-guide/DeviceManagement/devmgmt-devices-alldevices.png)
 
+### Device information
+
 For each device, the device list shows the following information provided in columns:
 
 <table>
@@ -62,6 +64,37 @@ For each device, the device list shows the following information provided in col
 
 The devices list displays up to 100 rows. If a list contains more than 100 devices, click **Load more** at the bottom of the list to display the next 100 entries.
 
+### Configuring columns
+
+The columns shown in the device list may be configured to your needs.
+
+#### To show/hide standard columns
+
+1. In the top menu bar, click **Configure columns**.
+2. In the resulting dialog box, select/clear the checkboxes for all columns as required. <br>![Configure columns](/guides/images/users-guide/DeviceManagement/devmgmt-device-list-configure-columns.png)
+<br>
+3. Click **Save**.
+
+The device list will reflect your changes and only show the selected columns. 
+
+#### To add custom columns
+
+Moreover, you can add custom columns to show additional device properties.
+
+1. In the **Configure columns** dialog box, click **Add custom column**.<br>
+![Configure columns](/guides/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
+2. In the **Header** field, Enter a header for the new custom column.  
+3. In the **Fragment path** field, enter the property of the device to be shown. Nested properties will be accepted. However, for nested properties its only possible to select Cumulocity standard fragments like `c8y_Mobile.mcc`.
+4. Select the **Filtering mode** for the new column. <br>
+If you select **Fragment equals value**, a value will only be shown if it matches the criteria specified by you in an additional dialog box.<br>
+![Specify values](/guides/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)
+<br>In case of **Fragment exists**, filtering will be done by existence, i.e. filtering is done based on whether the property exists or not.    
+5. Click **Add**.
+
+The new column will be added and displayed in the device list.
+
+> **Info**: While standard columns can only be shown/hidden as required, custom columns may be deleted permanently.
+
 #### To delete a device from the list
 
 1. Hover over the row of the device you want to delete. 
@@ -80,9 +113,9 @@ Click the **Search** button at the top right and enter a search term into the te
 
 Our example shows a search for "Ublox C027". 
 
-**Info**: Unlike filtering, the use of wildcards in a search is not supported.
+> **Info**: Unlike filtering, the use of wildcards in a search is not supported.
 
-For details on the search functionality, refer to Getting Started > [GUI functionalities and features](/guides/users-guide/overview#gui-features). 
+For details on the search functionality, refer to [Getting Started > GUI functionalities and features](/guides/users-guide/overview#gui-features). 
 
 ![Search for devices](/guides/images/users-guide/DeviceManagement/devmgmt-search.png)
 
@@ -99,9 +132,14 @@ In the **Filter options** dialog box, specify your filter options.
 Most columns represent text fields. You can filter these columns by simply entering an arbitrary text into the textbox as in the search field. Click **+ Or** to add another textbox if you want to filter for more than one term. 
 
 Apart from filtering for text there are several other options:
+
 * In case of date fields (e.g. **Registration date**), you specify a date range to filter for. 
 * In the **Status** column you can filter for various criteria representing the send, push or maintenance status of the device.
 * In the **Alarm** column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
+* For custom columns, if the filter criteria was set to **Fragment equals value** during configuration, then a value needs to be provided
+![Filter by value](/guides/images/users-guide/DeviceManagement/devmgmt-filter-value.png)
+* If the filter criteria was set to **Fragment exists**, during configuration then the filtering will be done based on whether the fragment exists or not
+![Filter by existence](/guides/images/users-guide/DeviceManagement/devmgmt-filter-existence.png)
 
 In the **Filter options** dialog box, click **Ascending** or **Descending** if you want the devices to be sorted in a specific order. Finally, click **Apply** to carry out the filtering. 
 

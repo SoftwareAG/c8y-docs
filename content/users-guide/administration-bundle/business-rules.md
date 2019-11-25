@@ -23,7 +23,7 @@ If the status of a module is set to **Deployed**, you will see the output produc
 1. Click **New module** in the top menu bar.
 2. Enter a name for the module at the very top. You may only use alphanumeric characters without blanks.
 3. By default, the status is set to **Deployed** which means that the statements you enter will be run immediately. Set the toggle to **Not deployed** if you want to avoid this. 
-4. Enter your CEP statements into the **Source code** textbox. For your convenience, we provide various examples. Click **Examples** and select an appropriate example from the dropdown list. Click **Append example** to paste the example into the **Source code** textbox at the position of the cursor.
+4. Enter your CEP statements into the **Source code** textbox. For your convenience, we provide various examples. Click **Examples** and select an appropriate example from the dropdown list. Click **Append** to paste the example into the **Source code** textbox at the position of the cursor.
 5. Click **Save** to save your settings.
 
 The following example module creates an alarm if the temperature goes below 0 degree.

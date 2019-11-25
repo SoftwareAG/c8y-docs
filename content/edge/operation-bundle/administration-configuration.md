@@ -12,9 +12,9 @@ The tenant admin user could be locked if incorrect credentials are passed during
 
 To unlock the tenant admin user, perform the following steps:
 
-1. Login as sysadmin user (password= sysadmin-pass).
-1. In the Administration application, navigate to the **Users** page and open the tenant admin user.
-1. Activate the user account by switching the toggle next to the username to **Enabled** and save your settings.
+1. Login as **sysadmin** user.
+2. In the Administration application, navigate to the **Users** page and open the tenant admin user.
+3. Activate the user account by switching the toggle next to the username to **Enabled** and save your settings.
 
 ### Configuring email server and password template settings
 
@@ -25,7 +25,6 @@ To configure the "reset password" template and email server settings, perform th
 	* Password: Will be the same as the Edge tenant admin password provided in the post-installation execution
 <br>
 2. Update the email server details and templates following the instructions in [Administration > Changing settings> Configuration settings](/guides/users-guide/administration/#config-platform) in the User guide.
-
 
 ### Increasing the system performance
 
@@ -71,7 +70,7 @@ The components for which log rotation is configured are as follows:
 |:---|:---|:---|:---|:---|
 |MongoDB|/var/log/mongodb/*.log|Daily|50 MB|14|
 |NginX|/var/log/nginx/*.log|Daily|50 MB|14|
-|Apama|/opt/softwareag/cumulocity-apama-rules/deploy/logs/*.log|Daily|50 MB|14|
+|Apama|/var/log/apama/*.log|Daily|50 MB|14|
 
 For microservices, there currently is no specific log rotation configured.
 

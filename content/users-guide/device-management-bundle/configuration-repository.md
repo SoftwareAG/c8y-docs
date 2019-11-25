@@ -27,7 +27,7 @@ Click a configuration in the list to open it. You may modify the settings here a
  
 	* 	Upload - to upload a file from your file system
 	* 	External URL - to provide an external URL
-	* 	Choose file - to select a file  from a list
+	* 	Choose file - to select a file from a list
 
 5. Click **Add configuration snapshot** to save your settings.
 

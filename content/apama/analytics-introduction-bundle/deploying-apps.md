@@ -4,59 +4,58 @@ title: Deploying applications
 layout: redirect
 ---
 
-There are two distinct approaches to deploy Apama applications to Cumulocity:
+There are two distinct approaches to deploy Apama applications to Cumulocity IoT:
 
-* [Uploading a single *.mon file](#single-mon-file) - the simplest mechanism for deploying Apama applications.
-* [Building a custom microservice](#deploying-as-microservice) – where more complex Apama projects can be built using the Cumulocity microservice SDK.
+* You can [develop or import a single \*.mon file with Apama EPL Apps](#single-mon-file). This is the simplest mechanism for deploying an Apama application.
+* Or you can [build a custom microservice](#deploying-as-microservice). In this case, more complex Apama projects can be built using the Cumulocity IoT Microservice SDK. This needs to be developed in Software AG Designer and then uploaded into Cumulocity IoT.
 
-
-### <a name="single-mon-file"></a>Deploying Apama applications as a single *.mon file with the Apama-epl application
-
->**Info**: To be able to upload single *.mon files to Cumulocity, your tenant needs to be subscribed to both Apama applications provided in Cumulocity. See [applications](/guides/reference/applications#application-names) in the Reference guide for details.
-
-The Apama-epl application provides an interface for uploading and deploying EPL apps (*.mon files), as well as interactively editing new or pre-existing EPL apps. Any user on the tenant wishing to use this application will need to be a **CEP Manager**. See [managing permissions](/guides/users-guide/administration/#managing-permissions).
-
-When the EPL is deployed to Cumulocity, each *.mon file is assigned a unique package name. This prevents conflicts when multiple modules are uploaded. For this reason, you should not specify a 'package' statement in the &#8727;.mon files. If you need to share events between different parts of your application, then write the event definitions and monitors that use it in a single &#8727;.mon file.
-
-The only non-Cumulocity bundles that your EPL is able to use are the Time Format bundles and the HTTP Client - JSON with generic request/response event definitions.
-
-When any EPL app signals a runtime error, this will be raised as an alarm. Runtime errors include uncaught exceptions, as well as any explicit logging of warnings and errors that your EPL app chooses to do. Health issues that relate to the Apama runtime in general will also be raised as alarms.
-
-For more detailed diagnostics of the Apama runtime and any active EPL apps, you can look at the logs for the “apama-ctrl” microservice. See [log files](/guides/users-guide/administration#managing-applications) for more details. However, some familiarity with Apama is necessary to get the most out of an Apama log file.
+> **Info:** In Apama EPL Apps, the term "activate" is used for deploying an application.
 
 
->**Side note** Be aware that the EPL editor makes use of a standard web component. It provides many generic developer functions, some of which are not relevant to EPL, including but not limited to Quick Fix and Show Hover.
+### <a name="single-mon-file"></a>Deploying Apama applications as single \*.mon files with Apama EPL Apps
+
+>**Info**: To be able to deploy single \*.mon files with Apama EPL Apps, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Apama EPL Apps web application provided in Cumulocity IoT. If you have Apama "starter", Apama EPL Apps is not available in the application switcher. If you want to have this capability, contact Software AG support.
+
+When an Apama EPL application is activated in Cumulocity IoT, each \*.mon file is assigned a unique package name. This prevents conflicts when multiple modules are activated. For this reason, you should not specify a `package` statement in the \*.mon files. If you need to share events between different parts of your application, then write the event definitions and monitors that use it in a single \*.mon file.
+
+There is a restricted set of utilities and base events available for your EPL application. At the time of writing, these include the **Time Format** and **HTTP Client > JSON with generic request/response event definitions** bundles. 
+
+When any EPL application signals a runtime error, this will be raised as an alarm. Runtime errors include uncaught exceptions, as well as any explicit logging of warnings and errors that your EPL application chooses to do. Health issues that relate to the Apama runtime in general will also be raised as alarms.
+
+For more detailed diagnostics of the Apama runtime and any active EPL applications, you can look at the logs for the Apama-ctrl microservice. See [Managing applications](/guides/users-guide/administration/#managing-applications) in the *User guide* for more information on log files. However, some familiarity with Apama is necessary to get the most out of an Apama log file.
 
 ### <a name="deploying-as-microservice"></a>Deploying Apama applications as microservices
 
-You may also develop more complex projects which:
+Using Software AG Designer, you can also develop more complex projects which:
 
-* are spread across multiple *.mon files
+* are spread across multiple \*.mon files
 * need to be isolated from other Apama applications
 * use connectivity plug-ins or EPL plug-ins that are not enabled by default
 
-These kinds of applications should be deployed as microservice to Cumulocity. 
+These kinds of applications should be deployed as microservices to Cumulocity IoT. 
 
 >**Info**: This only applies if you are using Apama 10.3 or later.
 
-#### To deploy an Apama application as microservice
+#### To deploy an Apama application as a microservice
 
-1. Develop your Cumulocity application in Designer in the usual way (just as shown above). 
+1. Develop your Cumulocity IoT application in Software AG Designer in the usual way. 
+   
+2. You can use Apama's Docker support to turn the entire project into a microservice. In the **Project Explorer** view, right-click the project and select **Apama > Add Docker Support**, which will add a Dockerfile to the root of your project directory. 
 
-2. You can use Apama's Docker support to turn the entire project into a microservice. In the **Project Explorer** view, right-click the project and select **Apama > Add Docker Support**, which will add a Dockerfile to the root of your project directory. <br>
-When used for building, it will make use of the Apama images available in the Docker Store. You will need Docker Store credentials that give you access to the Apama images. Apama Docker images are exclusively Linux-based.
-3. Add any custom steps to the Dockerfile that might be necessary e.g. building a custom plug-in, or copying your license file into the image.
-4. Use the Cumulocity microservice utility for packaging and deploying the project, see [Microservice package and deploy](/guides/reference/microservice-package) in the Reference guide. When creating the directory structure for the 'microservice' tool to build from, copy your entire project directory inside that directory with the name "docker/" e.g.
+	When used for building, it will make use of the Apama images available on Docker Hub. You will need Docker Hub credentials that give you access to the Apama images. Apama Docker images are exclusively Linux-based.
 
-		docker/monitors/
-		docker/eventdefinitions/
-		docker/Dockerfile
-		docker/...
-		cumulocity.json
+3. Add any custom steps to the Dockerfile that might be necessary, for example, building a custom plug-in, or copying your license file into the image.
 
+4. Use the Cumulocity IoT microservice utility tool for packaging and deploying the project; for detailed information, see [Microservice utility tool](/guides/microservice-sdk/concept/#ms-utility-tool) in the *Microservice SDK guide*. When creating the directory structure for the microservice utility tool to build from, copy your entire project directory inside that directory with the name "docker/". For example:
 
-	You have to create the [microservice manifest](/guides/reference/microservice-manifest) manually, but there is no need for anything special in the microservice manifest; no roles or probes are required. However, if you want to configure a liveness or readiness probe, you can configure an 'httpGet' probe for the path '/ping' on port 15903 (Apama's default port). Enabling auto-scaling is not recommended, as Apama applications are usually stateful and do not automatically partition their input.
+    *docker/monitors/*<br>
+    *docker/eventdefinitions/*<br>
+    *docker/Dockerfile*<br>
+    *docker/...*<br>
+    *cumulocity.json*
 
-	You can pack, deploy and subscribe from this directory, resulting in your Apama application being turned into a running microservice. The behaviour of the application when being run outside of Cumulocity (from Designer or your test environment) will be near-identical to its behaviour inside Cumulocity. As Apama will be using identical Cumulocity configuration in both environments, make sure that the credentials and application key that you are using in your local environment are long-lived.
+    You have to create the [microservice manifest](/guides/microservice-sdk/concept/#manifest) manually, but there is no need for anything special in the microservice manifest; no roles or probes are required. However, if you want to configure a liveness or readiness probe, you can configure an `httpGet` probe for the path */ping* on port 15903 (Apama's default port). Enabling auto-scaling is not recommended, as Apama applications are usually stateful and do not automatically partition their input.
 
-5. When you are ready to deploy to Cumulocity, upload the application as a microservice through the **Own applications** page in the Administration application. For details, refer to [Administration > Managing applications](/guides/users-guide/administration#managing-applications). 
+    You can pack, deploy and subscribe from this directory, resulting in your Apama application being turned into a running microservice. The behavior of the application when being run outside of Cumulocity IoT (from Software AG Designer or your test environment) will be near-identical to its behavior inside Cumulocity IoT. When deployed as a microservice doing requests to the Cumulocity API, Apama will automatically pick up the credentials to connect to the tenant you deployed it to, overwriting any other credentials provided to Apama. However, if you wish to receive real-time events, you will need to have valid credentials specified in the project configuration as you do when connecting to Cumulocity IoT from an external Apama environment.
+
+5. When you are ready to deploy to Cumulocity IoT, upload the application as a microservice through the **Own applications** page in the Administration application. For details, refer to [Administration > Managing applications](/guides/users-guide/administration#managing-applications) in the *User guide*. 

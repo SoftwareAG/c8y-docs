@@ -48,7 +48,7 @@ Create a JavaScript file _main.js_ with the following content:
 var serverUrl   = "ws://mqtt.cumulocity.com/mqtt";     /* wss://mqtt.cumulocity.com/mqtt for a secure connection */
 var clientId    = "my_mqtt_js_client";
 var device_name = "My JS MQTT device";
-var tenant      = "<<tenant>>";
+var tenant      = "<<tenant_ID>>";
 var username    = "<<username>>";
 var password    = "<<password>>";
 
@@ -130,7 +130,7 @@ function log (message) {
 init();
 ```
 
-Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant`, `username` and `password`.
+Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to specify the user credentials setting values for `tenant_ID`, `username` and `password`.
 
 The Cumulocity MQTT protocol supports both unsecured TCP and also secured SSL connections (i.e. `ws://mqtt.cumulocity.com/mqtt` or `wss://mqtt.cumulocity.com/mqtt`), so you can pick the one which fits for you and use it in `serverUrl`.
 

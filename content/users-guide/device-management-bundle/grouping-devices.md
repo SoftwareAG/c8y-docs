@@ -44,6 +44,8 @@ See also [To add a group](#add-group) and [To assign a device to a group](#assig
 
 In the **Bulk operations** tab, bulk operations created for the group can be managed. With bulk operations you can at once execute operations for each device within one group. For details, refer to [Bulk operations](#bulk-operations).
 
+> **Info:** Bulk operations are ordered by date, showing the latest operation at the top.
+
 
 ### <a name="add-group"></a>To create a new group
 
@@ -147,11 +149,11 @@ You can easily restructure groups, sub-groups and devices by a drag and drop fun
 
 ### <a name="smart-groups"></a>Using smart groups
 
-Smart groups are groups dynamically constructed based on filtering criteria. They have a temporary character because the group members can change constantly. Smart groups do not have fixed member listings. They have fixed criteria instead. This type of group can be used, for example, for bulk upgrades of devices of a certain type to a new software or firmware version.
+Smart groups are groups dynamically constructed based on filtering criteria. This type of group can be used, for example, for bulk upgrades of devices of a certain type to a new software or firmware version. 
 
 ![Smart groups filter](/guides/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
 
->**Info**: Smart groups are not shown when using the Cockpit application.
+Like any other group they are available in the Cockpit application as well.
 
 Smart groups can be created from the device list. 
 

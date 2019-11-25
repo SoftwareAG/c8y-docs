@@ -42,7 +42,7 @@ Your smartphone will be added to the devices list in the Device Management appli
 
 ![All devices](/guides/images/users-guide/csa/csa-device-list.png)
 
-Moreover it will be added to the group “Phones” (which will be created if not available yet). You will find the group in the **Group** menu in the navigator. This feature is only available in case of QR code registration.
+Moreover it will be added to the group **Phones** (which will be created if not available yet). You will find the group in the **Group** menu in the navigator. This feature is only available in case of QR code registration.
 
 > **Info:** Until you scan the registration credentials QR code, the button will remain in the pending state showing the message “Waiting...”. Scanning the QR code will complete the registration process.
 
@@ -57,9 +57,9 @@ Moreover it will be added to the group “Phones” (which will be created if no
 3. Press **Login with Software AG Cloud** or enter your username and password and press **Login**. 
 <br><br>![Account details](/guides/images/users-guide/csa/csa-ios-accountdetails-login.png)
 
->**Info**: The option **Login with Software AG Cloud** is only available for subscriptions made via the Software AG Cloud portal.
+	>**Info**: The option **Login with Software AG Cloud** is only available for subscriptions made via the Software AG Cloud portal.
 
-Next, go to Cumulocity.
+4. Next, go to Cumulocity.
 
 Your smartphone will be registered and added to the devices list in the **Device Management** application, which can be accessed by navigating to **All devices** in the **Devices** menu in the navigator.
 

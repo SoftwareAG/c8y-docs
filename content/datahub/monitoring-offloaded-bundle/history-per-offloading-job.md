@@ -6,7 +6,7 @@ layout: redirect
 
 <a id="history-per-offloading-job"></a>
 
-If you want to examine the execution history for a particular job, select **Offloading** in the navigation bar and determine the offloading job you are interested in.
+If you want to examine the execution history for a particular job, select **Offloading** in the navigation bar and select the offloading job you are interested in.
 
 Click **Show offloading history** in the context menu of the offloading card to show the history of offloading executions.
 

@@ -27,7 +27,7 @@ To define an offloading configuration, click **Offload collection** to select th
 * inventory
 * measurements
 
-In case of the measurements base collection you have to additionally specify the type of your Cumulocity device.
+In the case of the measurements base collection, you have to additionally specify the type of your Cumulocity device.
 
 Click **Confirm** to continue with the selected collection.
 
@@ -91,7 +91,7 @@ Once you have defined an offloading configuration and saved it, you can start th
 
 #### Starting periodic offloading
 
-Click **Active** to start the periodic execution of the offloading pipeline. The scheduler component of DataHub Console will then trigger periodically the pipeline.
+Click **Active** to start the periodic execution of the offloading pipeline. The scheduler component of DataHub Console will then periodically trigger the pipeline.
 
 If the same pipeline has already been started and stopped in the past, a new start of the pipeline does not offload the complete collection, but only data that has been added after the last execution. 
 
@@ -116,6 +116,7 @@ Click **Offload now** to trigger a manual offloading. As for periodic offloading
 #### Viewing the execution status
 
 At the bottom of each pipeline card, the execution status is shown:
+
 * **Last execution** is empty if the offloading has not been executed yet.
 * **Last execution** shows the execution time and whether the execution was successful or not, indicated by a success or failure icon right next to the time. An additional icon on the left shows whether the execution was scheduled, indicated by a calendar icon, or manually triggered, indicated by a spot icon.
 * **Next execution** shows the point in time for which the next execution is planned. It is only shown if the previous execution was scheduled.

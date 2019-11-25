@@ -22,7 +22,7 @@ A space in Dremio helps organizing your data sets. Cumulocity IoT DataHub auto-c
 
 ### Job history
 
-The **Job History** tab on top of the screen displays jobs/queries you have executed. It allows you to view details of a job by clicking on the particular job and offers filter capabilities (time range, job status, query type, and queue). The **Profile** view inside the job detail view is very useful to investigate optimization potentials in your queries.
+The **Job History** tab at the top of the screen displays jobs/queries you have executed. It allows you to view details of a job by clicking on the particular job and offers filter capabilities (time range, job status, query type, and queue). The **Profile** view inside the job detail view is very useful to investigate optimization potentials in your queries.
 
 > **Info:** The job history only contains queries that you actively run; the jobs related to the data extraction are hidden.
 

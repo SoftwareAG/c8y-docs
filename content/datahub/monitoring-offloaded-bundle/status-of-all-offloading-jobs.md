@@ -4,7 +4,7 @@ title: Status of all offloading jobs
 layout: redirect
 ---
 
-In navigator, select **Offloading** under **Status** to get an overview of the latest status of all pipelines. The list shows the corresponding last execution for all pipelines. Each execution consists of the following details:
+In the navigator, select **Offloading** under **Status** to get an overview of the latest status of all pipelines. The list shows the corresponding last execution for all pipelines. Each execution consists of the following details:
 
 
 | Component | Description |

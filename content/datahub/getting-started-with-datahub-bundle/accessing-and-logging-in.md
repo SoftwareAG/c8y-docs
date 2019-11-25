@@ -13,6 +13,6 @@ You access Cumulocity IoT DataHub Console via a web browser. It has been tested 
 
 ### How to log into DataHub Console
 
-After you have subscribed this service for your Cumulocity tenant, you have to log into your tenant. In the **application switcher** you will find the Cumulocity IoT DataHub Console button. When clicking that button, you will be taken to the home page of DataHub Console. DataHub Console provides the management and monitoring UI of Cumulocity IoT DataHub. Alternatively your tenant administrator can give you the URL directly navigating to DataHub console, which requires a login as well.
+After you have subscribed this service for your Cumulocity tenant, you have to log into your tenant. In the **application switcher** you will find the Cumulocity IoT DataHub Console button. When you click this button, you will be taken to the home page of DataHub Console. DataHub Console provides the management and monitoring UI of Cumulocity IoT DataHub. Alternatively your tenant administrator can give you the URL directly navigating to DataHub console, which requires a login as well.
 
 When you want to log out, click the **User** button at the right of the top bar and from the context menu select **Logout**.

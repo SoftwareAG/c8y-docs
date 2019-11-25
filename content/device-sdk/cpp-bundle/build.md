@@ -71,7 +71,7 @@ LDLIBS:=-lcurl
 
 This is a typical *init.mk* file example. In essence, it defines the search path for the required C++ header files, preferred warning levels, search path for the required C++ library files, and the necessary linking flags.
 
-When you do host compiling many of these settings can obviously be omitted; these are more relevant for cross-compiling, which shall be the prevalent use case for the library. Later we will explain that the *init.mk* file is also very important for another purpose, i.e., build customization to tailor the library to your needs.
+When you do host compiling, many of these settings can be omitted; these are more relevant for cross-compiling, which shall be the prevalent use case for the library. Later we will explain that the *init.mk* file is also very important for another purpose, i.e., build customization to tailor the library to your needs.
 
 With the *init.mk* being defined, it's time to define your *makefile*.
 
@@ -89,7 +89,7 @@ $ make
 
 If everything is configured correctly, this should compile the library and output the final binary into the *lib/* directory, and a watchdog daemon *srwatchdogd* into the *bin/* directory in the root directory.
 
-The build system supports both "debug" and "release" modes. The above command calling `make` without any target defaults to "debug" build. The "debug" build produces a much larger binary, more verbose output, etc; which is suitable for development phase. When releasing your software you will likely want a "release" build. You can clear all intermediate build files and re-build the library in "release" mode when you want to release your software.
+The build system supports both "debug" and "release" modes. The above command calling `make` without any target defaults to "debug" build. The "debug" build produces a much larger binary, more verbose output, etc; which is suitable for development phase. When releasing your software, you will likely want a "release" build. You can clear all intermediate build files and re-build the library in "release" mode when you want to release your software.
 
 ```shell
 $ make clean

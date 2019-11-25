@@ -4,13 +4,14 @@ title: C++ Device integration
 layout: redirect
 ---
 
-Before we really get started, we need a Cumulocity account. Go to <https://cumulocity.com> and apply for a free trial. Click **Try for free** on the top-right corner. After signing-up and login into your tenant, you can find the device registration page in the Device Management application. Later we will show how you may register a device in Cumulocity using the library.
+Before we really get started, we need a Cumulocity account. Go to <https://cumulocity.com> and apply for a free trial. Click **Try for free** on the top-right corner. After signing-up and logging to your tenant, you can find the device registration page in the Device Management application. Later we will show how you may register a device in Cumulocity using the library.
 
 ![Cumulocity Registration Page](/guides/images/cpp/img/registerd.png)
 
-Without any further ado, let's write the customary *Hello world* example. Create a *main.cc* file inside the *src/* folder with the following code:
+Without any further ado, let's write the customary *Hello world* example. Create a *main.cc* file with the following code:
 
 ```cpp
+// ex-01-hello: examples/ex-01-hello/main.cc
 #include <iostream>
 #include <sragent.h>
 #include <srlogger.h>
@@ -41,7 +42,7 @@ For convenience, let's define a shell variable `C8Y_LIB_PATH` to hold the librar
 
 ```shell
 $ export C8Y_LIB_PATH=/library/root/path
-$ g++ -std=c++11 -I$C8Y_LIB_PATH/include -L$C8Y_LIB_PATH/lib -lsera main.cc
+$ g++ -std=c++11 -I$C8Y_LIB_PATH/include main.cc -L$C8Y_LIB_PATH/lib -lsera
 ```
 > **Info**: You can define the variable `C8Y_LIB_PATH` in your *.bashrc* file, so you don't need to define it every time when launching a new terminal. From now on, let's assume you have done it, so it won't be mentioned in later examples.
 
@@ -50,20 +51,23 @@ Finally, it's time to run our first program.
 ```shell
 $ LD_LIBRARY_PATH=$C8Y_LIB_PATH/lib ./a.out
 ...
-Hello, Cumulocity!
+Hello world of Cumulocity!
 ```
 
 Type the `deviceID` into the text field in your registration page as shown in the image below.
 
 ![Cumulocity Registration Page](/guides/images/cpp/img/register-deviceID.png)
 
-Click **Next** and complete the registration. After the program has run, your device will be shown in your tenant.
+Click **Next** to continue with the registration.
+After the program has run, click **Accept** and your device will be registered and shown in your tenant.
 
-As illustrated previously, the program will print to the standard output *Hello, Cumulocity!* and then exit. Voila! That's all we need to register a device to Cumulocity.
+![Cumulocity Registration Page](/guides/images/cpp/img/device-pending.png)
+
+As illustrated previously, the program will print to the standard output *Hello world of Cumulocity!* and then exit. Voila! That's all we need to register a device to Cumulocity.
 
 The obtained device credential is stored in the folder */tmp/helloc8y* as defined in the variable `credentialPath`. You can also find the credential in **Management** > **Device credentials** in the Device Management application.
 
-> **Info**: If you re-run the program a second time, it will print *Hello, Cumulocity!* and exit immediately. This is because the program has loaded the available credential from the given credential file. You can manually delete the credential file if you want the program to request a new credential.
+> **Info**: If you re-run the program a second time, it will print *Hello world of Cumulocity!* and exit immediately. This is because the program has loaded the available credential from the given credential file. You can manually delete the credential file if you want the program to request a new credential.
 
 ### Integrating to Cumulocity
 
@@ -74,7 +78,7 @@ Device integration is a bit more complex as illustrated in the flow diagram belo
 The code snippet below shows the required API interface by `SrAgent` when implementing your own integrate process. Basically, you need to subclass the pure virtual class `SrIntegrate` and implement its virtual function `integrate` with your particular integrate process. This is a callback function, which will be called by `SrAgent` when you call the `integrate` method of the `SrAgent`. By convention, the function shall return 0 for success, and a non-0 value for failure.
 
 ```cpp
-// ex-02-integrate: src/integrate.h
+// ex-02-integrate: examples/ex-02-integrate/integrate.h
 #ifndef INTEGRATE_H
 #define INTEGRATE_H
 #include <sragent.h>
@@ -90,10 +94,10 @@ public:
 #endif /* INTEGRATE_H */
 ```
 
-The following code snippet implements the flow diagram depicted above. You may have noticed that all requests are comma-separated values (CSV) since we are using SmartREST instead of REST APIs directly. It is important to mention that you must store the correct SmartREST *X-ID* and device's *Cumulocity ID* in the inherited member variables `xid` and `id`, respectively. They will be used by `SrAgent` after the integrate process for initializing the corresponding internal variables.
+The following code snippet implements the flow diagram depicted above. You may have noticed that all requests are comma-separated values (CSV) since we are using SmartREST instead of REST APIs directly. It is important to mention that you must store the correct SmartREST *X-ID* and device's *Cumulocity ID* in the inherited member variables `xid` and `id` respectively. They will be used by `SrAgent` after the integrate process for initializing the corresponding internal variables.
 
 ```cpp
-// ex-02-integrate: src/integrate.cc
+// ex-02-integrate: examples/ex-02-integrate/integrate.cc
 #include <srnethttp.h>
 #include <srutils.h>
 #include "integrate.h"
@@ -135,7 +139,7 @@ The corresponding SmartREST templates can be found in the snippet below, which e
 
 
 ```cpp
-// ex-02-integrate: src/main.cc
+// ex-02-integrate: examples/ex-02-integrate/main.cc
 #include <sragent.h>
 #include <srlogger.h>
 #include "integrate.h"
@@ -188,14 +192,14 @@ After running this example, you will see a device named *HelloC8Y-Agent* in the 
 
 Now that we have successfully integrated a demo device to Cumulocity, we can indeed do something more interesting. Let's try sending CPU measurements every 10 seconds.
 
-As shown in [Integrating to Cumulocity](#integrating-to-cumulocity), first we need to add a new SmartREST template for CPU measurement and also increase the template version number. Then we subclass the pure virtual class `SrTimerHandler` and implement the `()` operator. `CPUMEasurement` is a callback function which generates bogus CPU measurements using the `rand` function from the standard library. It will be called by the `SrAgent` at a defined interval of the registered `SrTimer`.
+As shown in [Integrating to Cumulocity](#integrating-to-cumulocity), first we need to add a new SmartREST template for CPU measurement and also increase the template version number. Then we subclass the pure virtual class `SrTimerHandler` and implement the `()` operator. `CPUMEasurement` is a callback functor which generates bogus CPU measurements using the `rand` function from the standard library. It will be called by the `SrAgent` at a defined interval of the registered `SrTimer`.
 
 In the `main` function, we instantiate a `CPUMEasurement` and register it to a `SrTimer` in the class constructor. `SrTimer` supports millisecond resolution, so 10 seconds are 10,000 milliseconds.
 
 The library is built upon an asynchronous model. Hence, the `SrAgent` class is not responsible for any networking duty, rather it is essentially a scheduler for all timer and message handlers. `SrAgent.send` merely places a message into the `SrAgent.egress` queue and returns immediately after. For actually sending SmartREST requests to Cumulocity, we need to instantiate a `SrReporter` object and execute it in a separate thread.
 
 ```cpp
-// ex-03-measurement: src/main.cc
+// ex-03-measurement: examples/ex-03-measurement/main.cc
 #include <cstdlib>
 
 static const char *srversion = "helloc8y_2";
@@ -237,14 +241,14 @@ int main ()
 }
 ```
 
-> **Info**: If you add a `SrTimer` to the `SrAgent`, you must ensure its existence throughout the program lifetime, since there is no way to remove a `SrTimer` from the `SrAgent`. Otherwise, you can use `SrTimer.connect` to register a different callback or deactivate it by `SrTimer.stop`. This is a design choice for encouraging timer reuse, instead of dynamically creating and destroying timers.
+> **Info**: If you add a `SrTimer` to the `SrAgent`, you must ensure its existence throughout the program lifetime since there is no way to remove a `SrTimer` from the `SrAgent`. Alternatively, you can use `SrTimer.connect` to register a different callback or deactivate it by `SrTimer.stop`. This is a design choice for encouraging timer reuse, instead of dynamically creating and destroying timers.
 
 ### Handling operations
 
 Besides sending requests, e.g., measurements to Cumulocity, the other important functionality is to handle messages; either responses from GET queries or real-time operations from Cumulocity. The following example shows how to handle the c8y_Restart operation. Again, first we will need to register the necessary SmartREST templates. Then we define a message handler for handling the restart operation.
 
 ```cpp
-// ex-04-operation: src/main.cc
+// ex-04-operation: examples/ex-04-operation/main.cc
 static const char *srversion = "helloc8y_3";
 static const char *srtemplate =
 // ...
@@ -300,10 +304,10 @@ Your template collection could grow large over time. Hence, you would like to st
 The benefits are two-fold: you don't need to recompile the code every time only because the templates change, and there is no need to escape special characters which is error-prone.
 
 An utility function `readSrTemplate` is provided for reading a template collection from a text file. The following example shows the usage of this function.
-It reads the file *srtemplate.txt* from the current directory and stores the version number and template content into arguments `srversion` and `srtemplate`, respectively.
+It reads the file *srtemplate.txt* from the current directory and stores the version number and template content into arguments `srversion` and `srtemplate` respectively.
 
 ```cpp
-// ex-05-template: src/main.cc
+// ex-05-template: examples/ex-05-template/main.cc
 #include <srutils.h>
 // ...
 
@@ -319,7 +323,7 @@ int main ()
 
 The file format required by `readSrTemplate` is as simple as follows:
 
--   The first line contains only the template version number.
+-   The first line contains only the template ID.
 -   Every template must be in a separate line.
 -   A line starting with `#` as first character (with no leading spaces or tabs) is considered a comment line and will be ignored.
 -   A complete empty line (with no spaces and tabs) will be ignored.
@@ -328,6 +332,8 @@ The file format required by `readSrTemplate` is as simple as follows:
 See below an example of a template file.
 
 ```
+helloc8y_3
+
 10,100,GET,/identity/externalIds/c8y_Serial/%%,,application/json,%%,STRING,
 
 10,101,POST,/inventory/managedObjects,application/json,application/json,%%,, "{""name"":""HelloC8Y-Agent"",""type"":""c8y_hello"", ""c8y_IsDevice"":{},""com_cumulocity_model_Agent"":{}}"
@@ -354,7 +360,7 @@ Instead of using C++ for development, the library also supports rapid developmen
 The following example shows how to load the Lua plugin and add the path *lua/* into Lua's *package.path* for library search path.
 
 ```cpp
-// ex-06-lua: src/main.cc
+// ex-06-lua: examples/ex-06-lua/main.cc
 #include <srluapluginmanager.h>
 // ...
 
@@ -375,12 +381,12 @@ It is feasible to send CPU measurements and handle operations in Lua instead of 
 The following example shows how to send CPU measurements, define your own Lua library and share its variable `myString` in your Lua plugins.
 
 ```
--- ex-06-lua: lua/mylib.lua
+-- ex-06-lua: examples/ex-06-lua/lua/mylib.lua
 myString = "Hello, Cumulocity!"
 
 ----------------------------------------
 
--- ex-06-lua: lua/myplugin.lua
+-- ex-06-lua: examples/ex-06-lua/lua/myplugin.lua
 require('mylib')
 local timer
 
@@ -415,7 +421,7 @@ MQTT is a publish and subscribe based light-weight messaging protocol, and it re
 All the previous examples are using HTTP as the transportation layer. Besides HTTP, `SrReporter` also supports MQTT as the transportation layer. The following example shows the modification needed for using MQTT instead of HTTP.
 
 ```cpp
-// ex-07-mqtt-legacy: src/main.cc
+// ex-07-mqtt-legacy: examples/ex-07-mqtt-legacy/main.cc
 
 int main()
 {

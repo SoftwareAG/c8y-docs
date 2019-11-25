@@ -10,21 +10,18 @@ The complete webMethods.io Integration documentation is available at [https://do
 
 ### Getting started
 
+>**Info**: If your tenant has been created outside of SAG Cloud you will not benefit from the user experience described below. You can still use webMethods.io to integrate Cumulocity with other applications, but you cannot use the app switcher and single sign-on login.
+
 To subscribe to webMethods.io Integration, perform the following steps:
 
-1. Log into your Cumulocity tenant as part of **Software AG Cloud**. 
+1. Log into the Cumulocity IoT platform as part of **Software AG Cloud**. 
 
-    >**Info**: If your tenant has been created outside of SAG Cloud you will not benefit from the user experience described below. You can still use webMethods.io to integrate Cumulocity with other applications, but you cannot use the app switcher and single sign-on login.
+2. In the application switcher, select **webMethods.io Integration**.
 
-2. If you are not subscribed to webMethods.io Integration, subscribe to it as follows:
+![webMethods.io App Switcher Integration](/guides/images/users-guide/webMethods.io/wmio-appswitcher-integration.png)
 
-	Open the application switcher and select **MyCloud**.
-<br>![webMethods.io App Switcher My Cloud](/guides/images/users-guide/webMethods.io/wmio-appswitcher-mycloud.png)Under **Other Software AG Cloud products**, click **Start trial** for webMethods.io Integration. 
-
-3. In the application switcher, select **webMethods.io Integration**.
-<br><br>![webMethods.io App Switcher Integration](/guides/images/users-guide/webMethods.io/wmio-appswitcher-integration.png)
-
->**Info**: Both products (webMethods.io Integration and Cumulocity IoT) are integrated into SAG Cloud. Therefore you can easily switch from Cumulocity IoT to webMethods.io and vice versa using the application switcher.  
+>**Info**: If the icon is unavailable you might not be subscribed to **webMethods.io Integration**. Subscribe to it by opening the application switcher and clicking **MyCloud**. This will take you to the **Software AG Cloud** portal where you can subscribe for a free trial.
+<br><br>![webMethods.io App Switcher My Cloud](/guides/images/users-guide/webMethods.io/wmio-appswitcher-mycloud.png)
 
 ### Examples
 

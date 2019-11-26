@@ -2,6 +2,7 @@
 weight: 10
 title: Cumulocity IoT Sensor App
 layout: redirect
+slug: cumulocity-iot-sensor-app
 ---
 
 ### Overview

@@ -8,13 +8,13 @@ The events collection manages the events. During offloading, the data of the eve
 
 | Column name | Column type
 | ---         |  ---
-| id | BIGINT
+| id | VARCHAR
 | creationTime | TIMESTAMP
 | creationTimeOffset | INTEGER
 | creationTimeWithOffset | TIMESTAMP
 | time | TIMESTAMP
 | timeOffset | INTEGER
 | timeWithOffset | TIMESTAMP
-| source | BIGINT
+| source | VARCHAR
 | text | VARCHAR
 | type | VARCHAR

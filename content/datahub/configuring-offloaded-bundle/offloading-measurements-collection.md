@@ -4,13 +4,13 @@ title: Offloading of measurements collection
 layout: redirect
 ---
 
-The measurements collection manages device measurements. Offloading the measurements collection differs from the other collections as you have to explicitly select a type, which ensures that your offloaded data is of the same type. Separating by type is a necessary preprocessing step, as without such a selection a target table for all types would have potentially a very broad schema and a lot of null values.
+The measurements collection stores device measurements. Offloading the measurements collection differs from the other collections as you have to explicitly select a type, which ensures that your offloaded data is of the same type. Separating by type is a necessary preprocessing step, as without such a selection a target table for all types would have potentially a very broad schema and a lot of null values.
 
 During offloading, the data of the measurements collection is flattened, with the resulting schema being defined as follows:
 
 | Column name | Column type |
 | -----       | -----       |
-| id | BIGINT |
+| id | VARCHAR |
 | creationTime | TIMESTAMP |
 | creationTimeOffset | INTEGER |
 | creationTimeWithOffset | TIMESTAMP |
@@ -20,7 +20,7 @@ During offloading, the data of the measurements collection is flattened, with th
 | lastUpdated | TIMESTAMP |
 | lastUpdatedOffset | INTEGER |
 | lastUpdatedWithOffset | TIMESTAMP |
-| source | BIGINT |
+| source | VARCHAR |
 | type | VARCHAR |
 | fragment_attribute1_name_value | Depends on data type, often FLOAT |
 | fragment_attribute1_name_unit | String |

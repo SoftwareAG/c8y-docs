@@ -9,7 +9,7 @@ The alarm collection keeps track of alarms which have been raised. During offloa
 
 | Column name | Column type
 | ---         |  ---
-| id | BIGINT
+| id | VARCHAR
 | count | INTEGER
 | creationTime | TIMESTAMP
 | creationTimeOffset | INTEGER
@@ -22,7 +22,7 @@ The alarm collection keeps track of alarms which have been raised. During offloa
 | lastUpdatedWithOffset | TIMESTAMP
 | severity | VARCHAR
 | history | VARCHAR
-| source | BIGINT
+| source | VARCHAR
 | status | VARCHAR
 | text | VARCHAR
 | type | VARCHAR

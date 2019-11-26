@@ -42,13 +42,13 @@ Once you have selected a collection for offloading, you have to specify the deta
 The **Offloading task name** is an identifier for the offloading pipeline. Even though it does not have to be unique, it is advisable to use a unique identifier for this task name.
 
 <a id="basic-functionality-additional-settings"></a>
-The **Target source name** denotes the name of the so-called source table that is created in Dremio. This table points to the corresponding folder in the data lake. This is the table used when querying the corresponding data lake folder.
+The **Target source name** denotes the folder name in the data lake. In Dremio a source table is created with the same name, pointing to this data lake folder. This source table is used when querying the corresponding data lake folder.
 
-In the **Description** field, you can add a description for this offloading pipeline.
+In the **Description** field, you can add a description for this offloading pipeline. The description is optional, but it is recommended to use it, as it provides additional information about the pipeline and its purpose.
 
 In the **Additional result columns** field, you can provide a comma-separated list of additional columns or expressions you want to include. For each collection, the associated default set of data fields is extracted, which is available for each instance of such a base collection. If you have added additional top-level fields while feeding data into Cumulocity and you want to access them in your analytical queries, then you can specify them in this input field. For example, if you feed in measurements with the additional fields `myCustomField1` and `myCustomField2`, you just need to enter "myCustomField1, myCustomField2" (without the quotes) into the input field. It is also possible to apply SQL functions on those fields, e.g. `BTRIM(myCustomField1, '~')` to trim leading and trailing '~' from the text in field `myCustomField1`.
 
-In the **Additional filter predicate** field, you can specify an additional filter for filtering the data before it is inserted into the data lake. Per default all entries in the collection are inserted, so you can use the predicate to filter out entries you do not want to persist in the data lake. For example, you can filter out outliers or invalid values. The filter predicate is specified in SQL syntax, e.g. `status='ACTIVE' AND source > 300`.
+In the **Additional filter predicate** field, you can specify an additional filter for filtering the data before it is inserted into the data lake. Per default all entries in the collection are inserted, so you can use the predicate to filter out entries you do not want to persist in the data lake. For example, you can filter out outliers or invalid values. The filter predicate is specified in SQL syntax, e.g., for the alarms collection the filter might be `status='ACTIVE' AND source > 300`.
 
 When working with additional result columns and filter predicates, you may want to inspect what the actual data that will be offloaded looks like. For that purpose, click the button **Check & preview**, which is at the bottom of the configuration form. First, the configuration is validated. If the validation fails, you will get an error description. If validation is successful, a sample of the resulting data is returned. Note that no data is written to the data lake in this preview step. In addition to the query preview, you also get the schedule with which the offloading pipeline will be executed once it is started.
 
@@ -77,7 +77,7 @@ Click **Copy** to copy the current configuration. The new configuration is an id
 
 #### Deleting an offloading pipeline
 
-Click **Delete** to delete a configuration. The data lake artifacts, which have been produced by this offloading pipeline so far, are not deleted. You can only delete an offloading pipeline if it is not scheduled.
+Click **Delete** to delete a configuration. The data lake artifacts, which have been produced by this offloading pipeline so far, are not deleted. To delete the actual data in your data lake, please use the tooling offered by the data lake provider, e.g. AWS Console or Azure Storage Explorer. You can only delete an offloading pipeline if it is not scheduled.
 
 #### Monitoring an offloading pipeline
 
@@ -105,7 +105,7 @@ The scheduler is configured to run the offloading pipeline once an hour. The pre
 
 #### Stopping periodic offloading
 
-Click **Active** to stop the periodic offloading. Then the scheduler stops scheduling new executions; active executions will complete.
+Click **Active** to stop the periodic offloading. Then the scheduler stops scheduling new jobs; active jobs will complete.
 
 #### Triggering a manual offloading job
 

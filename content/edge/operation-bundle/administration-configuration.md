@@ -21,7 +21,8 @@ To unlock the tenant admin user, perform the following steps:
 To configure the "reset password" template and email server settings, perform the following steps:
 
 1. Log into the management tenant using *https://&#60;Edge&#95;VM&#95;IP&#95;Address>/apps/administration/index.html#/configuration*.
-	* User: management/edgeadmin 
+	* Tenant: management
+	* User: edgeadmin 
 	* Password: Will be the same as the Edge tenant admin password provided in the post-installation execution
 <br>
 2. Update the email server details and templates following the instructions in [Administration > Changing settings> Configuration settings](/guides/users-guide/administration/#config-platform) in the User guide.

@@ -83,4 +83,4 @@ In the Login screen, log in with the tenant admin credentials provided during po
 
 When you log into Cumulocity for the first time, you will be taken to the [Cockpit](/guides/users-guide/cockpit#overview) application where the **Home screen** initially opens up.
 
->**Info**: You cannot access the Cockpit application as **edgeadmin** user.
+>**Info**: You cannot access the Cockpit and Device Management application as **edgeadmin** user.

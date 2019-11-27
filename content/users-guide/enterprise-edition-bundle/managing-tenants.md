@@ -123,6 +123,9 @@ Suspending a tenant blocks any access to this tenant, regardless whether the acc
 If a tenant is suspended, the tenant’s data remains in the database and can be made available later by clicking **Activate**.
 
 >**Important**: Suspended tenants for all Cumulocity IoT Public Cloud instances will be automatically deleted after 30 days.
+>
+> **Info**: If data broker connectors are configured for a tenant, suspending this tenant results in suspending all its data broker connectors as well. 
+
 
 #### To suspend a subtenant
 

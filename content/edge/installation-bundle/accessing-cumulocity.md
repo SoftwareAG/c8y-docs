@@ -76,7 +76,7 @@ The Cumulocity login screen appears.
 In the Login screen, log in with the tenant admin credentials provided during post-installation.
 <br>
 
->**Important**: If you have to log in as **edgeadmin** user, log in to the management tenant using the URL *https://&#60;Edge&#95;VM&#95;IP&#95;Address>/apps/administration/index.html#/configuration*.<br>
+>**Important**: If you have to log in as **edgeadmin** user, log in to the management tenant using the URL *https://&#60;Edge&#95;VM&#95;IP&#95;Address>/apps/administration/index.html*.<br>
 >- Tenant: management<br>
 >- Username: edgeadmin<br>
 >- Password: Will be the same as the Edge tenant admin password provided during the post-installation process

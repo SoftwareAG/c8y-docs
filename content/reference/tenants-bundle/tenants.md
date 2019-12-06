@@ -27,7 +27,7 @@ It is recommended to use auto-generated tenant IDs which follow the format `t<nu
 
 The location where a tenant can be accessed is called **tenant domain**, e.g. _mytenant.cumulocity.com_. It needs to be unique across all tenants and it can be changed after tenant creation.
 
-The tenant domain may contain lowercase letters, digits, hyphens and underscores. It must start with a letter; hyphens and underscores are only allowed in the middle; minimum is 2 characters. Note that though the underscore character is allowed we strongly recommend not to use it as this may lead to issues with several components. 
+The tenant domain may contain lowercase letters, digits or hyphens. It must start with a letter; hyphens are only allowed in the middle; minimum is 2 characters. Note that the usage of underscore characters is deprecated but still possible for backward compatibility reasons. 
 
 In general, the tenant domain should be used for communication if it is known. 
 

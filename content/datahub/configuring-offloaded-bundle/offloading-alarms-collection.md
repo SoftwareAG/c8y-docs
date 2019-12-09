@@ -9,7 +9,7 @@ The alarm collection keeps track of alarms which have been raised. During offloa
 
 | Column name | Column type
 | ---         |  ---
-| id | BIGINT
+| id | VARCHAR
 | count | INTEGER
 | creationTime | TIMESTAMP
 | creationTimeOffset | INTEGER
@@ -22,7 +22,14 @@ The alarm collection keeps track of alarms which have been raised. During offloa
 | lastUpdatedWithOffset | TIMESTAMP
 | severity | VARCHAR
 | history | VARCHAR
-| source | BIGINT
+| source | VARCHAR
 | status | VARCHAR
 | text | VARCHAR
 | type | VARCHAR
+
+The alarms collection keeps track of alarms. An alarm may change its state over time. The alarms collection also supports updates to incorporate these changes. For that reason, an offloading pipeline for the alarms collection encompasses additional steps. The first step is to offload those entries of the alarms collection, which were added or updated since the last offload. They are offloaded with above standard schema into the target table of the data lake. As a second step, two views over the target table are defined in Dremio (with alarms used as the target table name in the following examples):
+
+* alarms_all: a view with the updates between two offloading executions, not including the intermediate updates. For example, after the first offloading execution, the status of an alarm is ACTIVE. Then it changes its state from ACTIVE to INACTIVE and afterwards back to ACTIVE. When the next offloading is executed, it will persist the latest status ACTIVE, but not the intermediate status INACTIVE (because it happened between two offloading runs and thus is not seen by DataHub).
+* alarms_latest: a view with the latest status of all alarms, with all previous transitions being discarded.
+
+Both views are provided in your Dremio space. For details on views and spaces in Dremio see section [Refining Offloaded Cumulocity Data](/guides/datahub/refining-offload/).

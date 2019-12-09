@@ -14,39 +14,53 @@ The URL paths of proxied requests consist of the corresponding Dremio REST API p
 
 Note that you must not provide the authorization header for Dremio when using DataHub Console REST API. Instead you have to provide the authorization header for DataHub Console. 
 
+The following APIs are available, followed by an example showing their usage. Each enlisted query functionality comprises:
+
+* The request to send to the DataHub Console backend if you want to run the request using DataHub Console
+* The equivalent request to send to the Dremio backend if you want to run the request directly against Dremio
+* The associated Dremio documentation with details on the request
+
 ### Submitting a query
+
+Submit a query and retrieve the ID of the Dremio job executing this query:
 
 * CDH Backend request: POST /dremio/api/v3/sql
 * Corresponding Dremio API: POST /api/v3/sql
-* [Dremio documentation](https://docs.dremio.com/rest-api/sql/post-sql.html)
+* [Dremio POST SQL documentation](https://docs.dremio.com/rest-api/sql/post-sql.html)
 
 ### Retrieving job status
 
+Retrieve the status of the query job given the job id:
+
 * CDH Backend request: GET /dremio/api/v3/job/{id}
 * Corresponding Dremio API: GET /api/v3/job/{id}
-* [Dremio documentation](https://docs.dremio.com/rest-api/jobs/get-job.html)      
+* [Dremio GET Job documentation](https://docs.dremio.com/rest-api/jobs/get-job.html)      
 
 ### Retrieving job results
 
+Retrieve the results of the query job given the job ID and optional pagination settings:
+
 * CDH Backend request: GET /dremio/api/v3/job/{id}/results?offset={offset}&limit={limit}
 * Corresponding Dremio API:  GET /api/v3/job/{id}/results?offset={offset}&limit={limit}
-* [Dremio documentation](https://docs.dremio.com/rest-api/jobs/get-job.html)
+* [Dremio GET Job documentation](https://docs.dremio.com/rest-api/jobs/get-job.html)
 
 ### Cancelling running jobs
 
+Cancel a query job given the job id:
+
 * CDH Backend request: POST /dremio/api/v3/job/{id}/cancel
 * Corresponding Dremio API: POST /api/v3/job/{id}/cancel
-* [Dremio documentation](https://docs.dremio.com/rest-api/jobs/post-job.html)
+* [Dremio POST Job documentation](https://docs.dremio.com/rest-api/jobs/post-job.html)
 
 ### Example
 
-This example submits a Dremio SQL query to fetch the five most recent alarms which already were offloaded, waits for it to complete, and fetches the result. 
+This example submits a Dremio SQL query to fetch the five most recent alarms which already were offloaded, waits for the query to complete, and fetches the result. 
 
 The SQL query, assuming tenant name "Smith", is:
 
 ```sql
 SELECT creationTime, severity, text
-FROM SmithDataLake.Smith.alarms
+FROM SmithDataLake.dremio.Smith.alarms
 ORDER BY creationTime DESC
 LIMIT 5
 ```
@@ -58,7 +72,7 @@ POST /dremio/api/v3/sql HTTP/1.1
 Host: mytenant.cumulocity.com:9090
 Content-Type: application/json
 {
-    "sql": "SELECT creationTime, severity, text\nFROM SmithDataLake.Smith.alarms\nORDER BY creationTime DESC\nLIMIT 5"
+    "sql": "SELECT creationTime, severity, text\nFROM SmithDataLake.dremio.Smith.alarms\nORDER BY creationTime DESC\nLIMIT 5"
 }
 ```
 

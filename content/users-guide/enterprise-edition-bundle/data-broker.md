@@ -16,15 +16,15 @@ Navigate to **Data connectors** if you would like to send data to another tenant
 
 <img src="/guides/images/users-guide/data-broker-navigator.png" alt="Data broker menus" >
 
->**Info**: Devices that are forwarded using the data broker are charged like normal devices in the destination tenant.
->
->Be aware of the following limitations of the data broker:
-> 
-> * Cloud Remote Access cannot be used on the destination tenant. 
-> * The management tenant cannot be used as data broker source tenant.
-> * Currently, the Fieldbus widget does not work on tenants that receive the fieldbus devices through data broker, as the corresponding data models are not synchronized.
-> * Data broker does not guarantee the same order of messages on destination tenants as it was on the source tenant. 
-> * While we provide backwards compatibility, we cannot ensure that data broker can send data to Cumulocity tenants which run on earlier Cumulocity versions than the source.
+>**Important**: Devices that are forwarded using the data broker are charged like normal devices in the destination tenant.
+
+Be aware of the following limitations of the data broker:
+
+* Cloud Remote Access cannot be used on the destination tenant. 
+* The management tenant cannot be used as data broker source tenant.
+* Currently, the Fieldbus widget does not work on tenants that receive the fieldbus devices through data broker, as the corresponding data models are not synchronized.
+* Data broker does not guarantee the same order of messages on destination tenants as it was on the source tenant. 
+* While we provide backwards compatibility, we cannot ensure that data broker can send data to Cumulocity tenants which run on earlier Cumulocity versions than the source.
 
 ### <a name="data-broker-connectors"></a> Data connectors
 
@@ -44,6 +44,8 @@ For each data connector, the following information is provided:
 * the number of filters set for the data connector
 
 Use the toggle to enable and disable data forwarding to the destination tenant. If data is being forwarded, the toggle reads "Active". If data is not being forwarded, the toggle reads "Suspended" or "Pending". "Suspended" means that you have disabled forwarding. "Pending" means that the destination tenant has disabled forwarding.
+
+> **Info**: If the source tenant has been suspended all its data broker connectors will be suspended as well. 
 
 #### <a name="data-broker-connector-edit"></a>To add a data connector
 

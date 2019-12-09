@@ -76,8 +76,11 @@ The Cumulocity login screen appears.
 In the Login screen, log in with the tenant admin credentials provided during post-installation.
 <br>
 
->**Info**: Cumulocity IoT Edge needs several minutes to start. Then all services should be up and running and you can login to the application.
+>**Important**: If you have to log in as **edgeadmin** user, log in to the management tenant using the URL *https://&#60;Edge&#95;VM&#95;IP&#95;Address>/apps/administration/index.html*.<br>
+>- Tenant: management<br>
+>- Username: edgeadmin<br>
+>- Password: Will be the same as the Edge tenant admin password provided during the post-installation process
 
 When you log into Cumulocity for the first time, you will be taken to the [Cockpit](/guides/users-guide/cockpit#overview) application where the **Home screen** initially opens up.
 
-
+>**Info**: You cannot access the Cockpit and Device Management application as **edgeadmin** user.

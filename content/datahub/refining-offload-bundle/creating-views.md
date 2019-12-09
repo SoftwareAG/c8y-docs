@@ -13,7 +13,7 @@ In Dremio, you can create such a view by defining a corresponding query and savi
 > **Info:** Such a view is per default not materialized, i.e., it is not stored persistently. Each time you query the view, the underlying query defining the view is run against the source data.
 
 ### Example
-Consider the case that you want to visualize data in a reporting tool. The raw data volume is too high, so you want to instead show the hourly average of the column  'myValue'. You can easily do that by creating a view with the following SQL statement and saving it as a view/virtual data set:
+Consider the case that you want to visualize data in a reporting tool. The raw data volume is too high, so you want to instead show the hourly average of the column 'myValue'. You can easily do that by creating a view with the following SQL statement and saving it as a view/virtual data set:
 
 ```sql
 SELECT DATE_TRUNC('HOUR', "time") as "time", avg(myValue) as avg

@@ -5,64 +5,66 @@ layout: redirect
 ---
 ### Overview
 
-Simple Network Management protocol (SNMP) is an application layer protocol, used widely in network management for monitoring network devices. There are two components that helps SNMP enabled devices to connect to Cumulocity Platform,
+Simple Network Management protocol (SNMP) is an application layer protocol, used widely in network management for monitoring network devices. 
 
-1. mib-parser microservice helps in converting Managed Information Base (MIB) files to json representation which is then used to create device protcol
-2. Cumulocity SNMP agent is a device side agent that helps SNMP enabled devices to connect to Cumulocity platform and performs message translation from SNMP specific format to Cumulocity model before forwarding to the Cumulocity platform.
+There are two components that help SNMP-enabled devices to connect to the Cumulocity IoT platform:
 
-The following image provides a general overview of the SNMP enabled device integration with Cumulocity:
+1. The mib-parser microservice helps in converting a Managed Information Base (MIB) file to a JSON representation which is then used to create a device protocol.
+2. The Cumulocity SNMP agent is a device-side agent that helps SNMP-enabled devices to connect to the Cumulocity IoT platform and translates messages from a SNMP-specific format to a Cumulocity model before forwarding them to the Cumulocity.
+
+The following image provides a general overview of the SNMP-enabled device integration with Cumulocity:
 
 ![Cumulocity SNMP Integration](/guides/images/users-guide/snmp/snmp-cumulocity-integration.png)
 
-### Subscribing to mib-parser microservice
+### Subscribing to the mib-parser microservice
 
-**mib-parser** is a open source, multi-tenant microservice. Before starting SNMP device integration, make sure that your tenant is subscribed to the microservice. The source code can be found https://bitbucket.org/m2m/c8y-mib-parser/src/develop. Follow the README.md to build the microservice.
+**mib-parser** is an open source, multi-tenant microservice. Before starting SNMP device integration, make sure that your tenant is subscribed to the microservice. The source code can be found in [https://bitbucket.org/m2m/c8y-mib-parser/src/develop](https://bitbucket.org/m2m/c8y-mib-parser/src/develop). Follow the *README.md* to build the microservice.
 
-#### Using Management tenant
+#### Using the management tenant
 
-1. Login to management tenant
-2. In the Administration application, click on **Tenants** > **Subtenants** in the left menu.  
-3. Click on the subtenant for which microservice needs to be subscribed
+1. Login to the management tenant.
+2. In the Administration application, click **Subtenants** in the **Tenants** menu the navigator.  
+3. In the tenants list, select the subtenant to which you want to subscribe the microservice.
 4. Switch to the **Applications** tab.
 5. Check if mib-parser is listed under **Subscribed applications**.
-6. If the tenant is not yet subscribed to the microservice, search for the microservice in **Available applications** and click on **Subscribe** button.    
-7. On successful subscription, the mib-parser microservice will appear under **Applications** > **Subscribed applications** in the child tenant login.
+6. If the tenant is not yet subscribed to the microservice, search for the microservice in **Available applications** and click **Subscribe**.    
+7. On successful subscription, the mib-parser microservice will appear under **Applications** > **Subscribed applications** in the subtenant.
 
 ![Subscribed applications - Mibparser](/guides/images/users-guide/snmp/snmp-subscribed-applications.png)
 
-#### Tenant having microservice hosting privilege
+#### Using a tenant with microservice hosting privilege
 
-1. Login to the tenant
-2. In the Administration application, click on **Applications** > **Own applications** in the left menu.  
-3. Click on "Add application"
-4. Select the method as **Upload microservice**.
-5. Upload the mib-parser microservice zip file.
-6. In the pop **Subscribe to microservice** click on **Subscribe** button
+1. Login to the management tenant.
+2. In the Administration application, click **Own applications** in the **Applications** menu in the navigator.  
+3. In the top menu bar, click **Add application**.
+4. Select **Upload microservice** and upload the mib-parser microservice ZIP file.
+6. In the resulting dialog box, click **Subscribe** to subscribe to the uploaded microservice.
 7. On successful subscription, the mib-parser microservice will appear under **Own applications**.
-8. Click on the uploaded application (Mibparser) to know more about the microservice.
+8. Click on the uploaded application (Mibparser) to see more details.
 
 ![Own applications - Mibparser](/guides/images/users-guide/snmp/snmp-own-applications.png)
 
-### Creating device protocol
+### Creating a device protocol
 
-SNMP device protocol can be either created manually or by importing an MIB file shared by the device manufacturer. This device protocol will be later used while adding SNMP device to the platform.
+SNMP device protocols can either be created manually or by importing a MIB file shared by the device manufacturer. This device protocol will later be used when adding the SNMP device to the platform.
 
-#### Using MIB file from User Interface
+#### To create a device protocol from the UI
 
-1. Create an zip file using the following format. The zip file should contain top level MIB file along with dependent MIB files and an index file named mib-index which contains the name of the top level MIB file name.
+1. Create a ZIP file which contains the top-level MIB file along with dependent MIB files and an index file named mib-index which contains the name of the top level MIB file.<br>
 ![Subscribed applications](/guides/images/users-guide/snmp/snmp-mib-zipfile-structure.png)
-2. In the Device Management application, click on **Device types** > **Device protocols**
-3. In the resulting screen, click on the **Import** button on the top right menu
-4. In the "SELECT DEVICE PROTOCOL" section, choose the MIB zip file for the field **Or load it from a file**
-5. In the "SAVE WITH THE FOLLOWING NAME" section, provide suitable name for the device protocol in **Name** field
-6. Click on **Import** button.
-7. On successful import, the newly added device protocol will be listed in **Device protocols**
+2. In the Device Management application, click **Device protocols** in the **Device types** menu in the navigator.
+3. In the top menu bar of the **Device protocols** page, click **Import**.
+4. Select the MIB ZIP file from the dropdown list or upload the file from your file system.
+5. In the **Name** field, enter a name for the device protocol.
+6. Click **Import**.
+
+On successful import, the newly added device protocol will be listed in the device protocols list.
 
 ![Device protocol - SNMP](/guides/images/users-guide/snmp/snmp-device-protocol.png)
 
-#### Device protocol via REST API
+#### To create a device protocol via REST API
 
-**Step-1:** Upload the MIB file and note down the json response
+**Step-1:** Upload the MIB file and note down the JSON response:
 
 	POST /service/mibparser/mib/uploadzip
 	Authorization: Basic ...
@@ -73,7 +75,7 @@ SNMP device protocol can be either created manually or by importing an MIB file 
 	Content-Type: application/zip
 	------WebKitFormBoundary8WCDTr2uRkbroQ11--
 
-**Step-2:** Use the json response and create device protocol managed object
+**Step-2:** Use the JSON response and create a device protocol managed object:
 
 	POST /inventory/managedObjects
 	Authorization: Basic ...
@@ -90,44 +92,42 @@ SNMP device protocol can be either created manually or by importing an MIB file 
 		]
 	}
 
-#### Manual Entry
+#### To create a device protocol manually
 
-Device protcol can also be created manually. For this, one needs to know the OIDs supported by the device. This method is suitable for less number of OIDs supported by the device or for testing purpose.
+Device protocols can also be created manually. To do so, you need to know the OIDs supported by the device. This method is suitable for small number of OIDs supported by the device or for testing purposes.
 
-1. Open Device Management application
-2. Click on **Device types** > **Device protocols**
-3. Click on **Add device protocol** on the top right menu
-4. Select SNMP as device protocol
-5. Enter the name for the device protocol and description
-6. Click on the **Create** button. On successful creation, the new device protocol will be listed in the Device protocols screen
-7. Click on the newly created device protocol
-8. Click on **Add component**
-9. Provide OID details and device procotol mapping for the OID
-10. Click on **Save** button
+1. In the Device Management application, click **Device protocols** in the **Device types** menu in the navigator.
+3. In the top menu bar of the **Device protocols** page, click **Add device protocol**.
+4. Select SNMP as device protocol.
+5. Enter the name and a description for the device protocol.
+6. Click **Create**. On successful creation, the new device protocol will be added to the device protocols list.
+7. Open the newly created device protocol.
+8. Click **Add component**.
+9. Provide OID details and device protocol mapping for the OID.
+10. Click **Save** to save your settings.
 
 ![Device protocol - SNMP](/guides/images/users-guide/snmp/snmp-device-protocol-manual.png)
 
 
-### Device protocol mapping
+### Creating device protocol mapping
 
-This is a configuration step and the information is used by the agent. The mapping helps agent to know how to deal with the incoming data from the SNMP-enabled devices. It is basically allows user to configure an OID with corresponding Cumulocity object such as Alarm, Event or Measurement. This information is later used by the agent to convert incoming data (say TRAP) to corresponding Cumulocity object/s that are defined in the mapping.
+The device protocol mapping helps the agent to know how to deal with incoming data from the SNMP-enabled devices. It basically allows users to configure an OID with a corresponding Cumulocity object such as an alarm, event or measurement. This information is later used by the agent to convert incoming data (say TRAP) to corresponding Cumulocity object/s that are defined in the mapping.
 
-#### Creating mapping from User Interface
+#### To create mapping from the UI
 
-1. Open Device Management application
-2. Click on **Device types** > **Device protocols**
-3. Open the device protocol (say snmp-device-protocol). It will show a list of components representing the OIDs.
+1. In the Device Management application, click **Device protocols** in the **Device types** menu in the navigator.
+2. Open the desired device protocol (e.g. snmp-device-protocol). It shows a list of components representing the OIDs.
 
 	![Device protocol details](/guides/images/users-guide/snmp/snmp-device-protocol-detail.png)
  
-4. Click the menu icon at the right side of the component and then click **Edit** to configure the mapping for the component.
-5. Under FUNCTIONALITIES, switch the toggle button to turn ON the mapping for the required Cumulocity model (**Send measurement**, **Raise alarm** and/or **Send event**). Fill in the values for respective fields and click on **Save** button.
+3. Click the menu icon at the right of the component and click **Edit** to configure the mapping for the component.
+4. Under **Functionalities**, switch the toggle button to turn on the mapping for the required Cumulocity model (**Send measurement**, **Raise alarm** and/or **Send event**). Fill in the values for the respective fields and click **Save**.
   
 	![Edit components details](/guides/images/users-guide/snmp/snmp-device-protocol-mapping.png)
 
-6. Click on **Save** button at the device protocol screen to finally save the changes. 
+6. Click **Save** in the **Device protocol** page to finally save the changes. 
 
-#### Creating mapping via REST API
+#### To create mapping via REST API
 
 	PUT /inventory/managedObjects/{{device.protocol.id}}
 	Authorization: Basic ...
@@ -169,11 +169,11 @@ This is a configuration step and the information is used by the agent. The mappi
 	   ]
 	}
 
-### SNMP Agent
+### SNMP agent
 
 #### Introduction
 
-The SNMP Agent is a stand-alone Java program that communicates with SNMP-enabled device(s) and the Cumulocity platform. It receives SNMP data from the devices, converts the data to Cumulocity based object based on the device protocol mapping, persist the data locally, and forwards the data to the Cumulocity platform. The agent has to be registered in the Cumulocity platform before serving the device request.
+The SNMP Agent is a stand-alone Java program that communicates with SNMP-enabled device(s) and the Cumulocity IoT platform. It receives SNMP data from the devices, converts the data to Cumulocity-based objects based on the device protocol mapping, persists the data locally, and forwards the data to Cumulocity. The agent has to be registered in Cumulocity before serving the device request.
 
 #### Configuration
 
@@ -183,34 +183,33 @@ The agent requires Java 8 to run.
 
 ##### Configuration file
 
-The agent expects *snmp-agent-gateway.properties* configuration file to be present in 
+The agent expects the *snmp-agent-gateway.properties* configuration file to be present in 
 
 	${user.home}/.snmp/snmp-agent-gateway.properties
 
-If you install the RPM the property file can be found under */etc/snmp-agent-gateway/snmp-agent-gateway.properties*. Move this file to *${user.home}/.snmp* folder and update the properties.
+If you install the RPM the property file can be found under */etc/snmp-agent-gateway/snmp-agent-gateway.properties*. Move this file to the *${user.home}/.snmp* folder and update the properties.
 
-For detailed information on the *snmp-agent-gateway.properties* file and how to start agent, refer [SNMP Agent Operation Manual](/guides/images/users-guide/snmp/file/snmp_agent_operations_manual.pdf).
+For detailed information on the *snmp-agent-gateway.properties* file and on how to start the agent, refer to the [SNMP agent operation manual](/guides/images/users-guide/snmp/file/snmp_agent_operations_manual.pdf).
 
-### Agent registration
+### Registering the agent
 
-Before any SNMP device can connect to Cumulocity, first the SNMP agent needs to be registered in Cumulocity platform. 
+Before any SNMP device can connect to the Cumulocity IoT platform, first the SNMP agent needs to be registered in the platform. 
 
-#### To register the agent from user interface
+#### To register the agent from the UI
 
-1. In the Device Management application, navigate to **Devices** > **Registration**.
-1. Click on **Register device** button and then select **General device registration**.
-2. In the resulting dialog box, enter the device ID. The device ID correspsonds to the *gateway.identifier* value mentioned in the *snmp-agent-gateway.properties* file.
-3. Click **Next** to proceed with the device registration and click on **Complete** button.
-4. On complete, the **Device registration** page will list the newly added device with status as "WAITING FOR CONNECTION"
-5. If the agent process is started and if the device ID is correct you will see an **Accept** button. If the agent is not started, start the agent application.
-6. Click on **Accept** button to complete the registration process.
-7. After successful registration, the agent device will be added to the device list in the **All devices** page, with device ID as name.
+1. In the Device Management application, click **Registration** in the **Devices** menu in the navigator.
+1. Click **Register device** and then select **General device registration**.
+2. In the resulting dialog box, enter the device ID. The device ID corresponds to the *gateway.identifier* value mentioned in the *snmp-agent-gateway.properties* file.
+3. Click **Next** to proceed with the device registration and then click **Complete**.The device will be shown in the **Device registration** page with the status WAITING FOR CONNECTION.
+4. If the agent process is started and the device ID is correct you will see an **Accept** button. If the agent is not started, start the agent application. Click **Accept** to complete the registration process.
+
+After successful registration, the agent device will be added to the device list in the **All devices** page, with device ID as name.
 
 ![Device list](/guides/images/users-guide/snmp/snmp-devices-list.png)
 
 #### To register the agent via REST API
 
-**Step-1:** Create new device request
+**Step-1:** Create a new device request:
 
 	POST /devicecontrol/newDeviceRequests
 	Authorization: Basic ...
@@ -219,7 +218,7 @@ Before any SNMP device can connect to Cumulocity, first the SNMP agent needs to 
         "id": "snmp-agent" // should be the same as "gateway.identifier" value from the snmp-agent-gateway.properties file.
     }
 
-**Step-2:** Accept the new device request
+**Step-2:** Accept the new device request:
 
 	PUT /devicecontrol/newDeviceRequests/snmp-test
 	Authorization: Basic ...
@@ -230,45 +229,46 @@ Before any SNMP device can connect to Cumulocity, first the SNMP agent needs to 
 
 ### Adding SNMP devices 
 
-SNMP enabled devices can be added manually or through auto-discovery method.
+SNMP-enabled devices can be added manually or through the autodiscovery method.
 
 #### Autodiscovery
 
-The Autodiscovery functionality helps user to scan SNMP enabled devices in the network for the given IP range. Identified devices will be added as a child to the agent device in the platform. This functionality is helpful when there are many devices to be added to the agent, instead of manually adding all the devices, one can use auto-discovery functionality. The **Ip range** field accepts multiple IP ranges separated by comma. For example, "10.23.52.51-10.23.52.54,192.168.0.1-192.168.0.5". It also supports IPv6 IP address format.
+The autodiscovery functionality allows to scan SNMP-enabled devices in the network for a given IP range. Identified devices will automatically be added as a child to the agent device in the platform. This functionality is helpful when you need to add a large number of devices to the agent. Instead of adding all devices manually, you can use the autodiscovery functionality. The **IP range** field accepts multiple IP ranges separated by comma, for example "10.23.52.51-10.23.52.54,192.168.0.1-192.168.0.5". It also supports the IPv6 IP address format.
 
 There are two supported ways of discovering devices.
 
-1. Autodiscovery once - If the number of SNMP enabled devices are fixed and if it doesn't change often, auto-discovery can be done once. This avoids network congession due to repeated auto-discovery of same devices.
-2. Scheduled Autodiscovery - If the number of devices keeps varying (addition and removal of devices happens often), auto-discovery can be scheduled to run for every interval.
+* **Autodiscovery once** - If the number of SNMP-enabled devices is fix and  doesn't change often, autodiscovery can be done once. This avoids network congession due to repeated autodiscovery of same devices.
+* **Scheduled autodiscovery** - If the number of devices keeps varying (addition and removal of devices happens often), autodiscovery can be scheduled to run for every interval.
 
-Both ways of device discovery can be controlled from user interface.
+Both ways of device discovery can be controlled from the user interface.
 
 ![Autodiscovery](/guides/images/users-guide/snmp/snmp-autodiscovery.png)
 
-##### Start autodiscovery from user interface
+##### To start autodiscovery from the UI
 
-1. In the Device Management application, click on **Devices** > **All devices**
-2. In **All devices** screen, click on SNMP agent device
-3. In the SNMP agent device screen, click on **SNMP** tab in the left menu
-4. In the AUTODISCOVERY section, mention the **IP range** and click on **Save changes**
-5. Once the changes are saved, **Start autodiscovery** button gets enabled.
-6. To start autodiscovery once, click on **Start autodiscovery** button. This will create an operation whose status can be monitored in **Control** tab in the left menu
-7. Once the operation gets completed, if there are any new SNMP enabled devices identified, it gets added to **SNMP devices** list. Alternatively, added SNMP devices can be seen in **Child devices** tab in the left menu.
-8. In case if you want to run auto-discovery after every interval, mention the interval in **Scheduled interval** field and click on **Save changes** button. 
-9. On saving the configuration, once the agent refreshes the configuration data, scheduled auto-discovery will be triggered. No need to click on **Start autodiscovery** button for scheduled autodiscovery.
+1. In the Device Management application, click **All devices** in the **Devices** menu in the navigator.
+2. In the devices list, click on the SNMP agent device and open the **SNMP** tab of the device.
+4. Enter the **IP range** and click **Save**.
+5. Once the changes are saved, the **Start autodiscovery** button gets enabled.
+6. Click **Start autodiscovery**. The operation being started can be monitored in the **Control** tab.
+
+If a new SNMP-enabled device is identified, it will be added to the devices list. Alternatively, added SNMP devices can be seen in the **Child devices** tab.
+
+If you want to run autodiscovery after every interval, enter the interval in the **Scheduled interval** field and click **Save**. When the agent refreshes the configuration data, the scheduled autodiscovery will automatically be started. You don´t need to click **Start autodiscovery** in case of scheduled autodiscovery.
 
 ![Autodiscovery SNMP device list](/guides/images/users-guide/snmp/snmp-autodiscovered-devices.png)
 
-Note:
 
-1. For the newly found SNMP device, the default device name will be mentioned as `Device-<device-ip-address>`, the IP Address will be `<device-ip-address>` and the default port number is `161`. All other details will be empty and have to be entered manually.
-2. An alarm will be generated
-	- if an existing device in the platform is not reachable during the autodiscovery scan.
-	- if a device is discovered but it is not SNMP-enabled.
+For the newly found SNMP device, the default device name will be mentioned as `Device-<device-ip-address>`, the IP Address will be `<device-ip-address>` and the default port number is `161`. All other details will be empty and have to be entered manually.
 
-##### Start autodiscovery via REST API
+An alarm will be generated
 
-The following REST call will trigger auto-discovery once
+* 	if an existing device in the platform is not reachable during the autodiscovery scan.
+* 	if a device is discovered but it is not SNMP-enabled.
+
+##### To start autodiscovery via REST API
+
+The following REST call will trigger autodiscovery once:
 
 	POST /devicecontrol/operations
 	Authorization: Basic ...
@@ -281,7 +281,7 @@ The following REST call will trigger auto-discovery once
         }
     }
 
-The following REST call schedules auto-discovery for the given interval.
+The following REST call schedules autodiscovery for the given interval:
 
 	PUT /inventory/managedObjects/{{agent.device.id}}
 	Authorization: Basic ...
@@ -299,39 +299,63 @@ The following REST call schedules auto-discovery for the given interval.
 
 #### Adding SNMP devices manually
 
-1. In the Device Management application, click on **Devices** > **All devices**
-2. In **All devices** screen, click on SNMP agent device
-3. In the SNMP agent device screen, click on **SNMP** tab in the left menu
+##### To add a SNMP device manually from the UI
 
-![SNMP tab](/guides/images/users-guide/snmp/snmp-snmp-tab.png)
+1. In the Device Management application, click **All devices** in the **Devices** menu in the navigator.
+2. In the devices list, click on the SNMP agent device and open the **SNMP** tab of the device.<br><br>![SNMP tab](/guides/images/users-guide/snmp/snmp-snmp-tab.png)<br>
+3. In the **SNMP devices** section, click **Add SNMP device**.
+4. Provide the SNMP device details:
 
-##### To add SNMP device manually from user interface
+	<table>
+	<colgroup>
+       <col style="width: 15%;">
+       <col style="width: 85%;">
+    </colgroup>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
 
-1. In the **SNMP devices** section, click **Add SNMP device**.
-2. Provide the SNMP device details:
-	- **Name**: Provide a meaningful name to identify the device.
-	- **Device Type**: Select the device protocol relevant to the device which is getting added. Device protocol contains OID and mapping of OID to Cumulocity model such as alarm/event/measurement.
-	- **IP Address**: IP Address of the device.
-	- **Port**: Port to be used during device polling.
-	- **SNMP Version**: Select one of the 3 SNMP versions (v1, v2c and v3) supported by the Cumulocity SNMP agent. 
-		- for v1 and v2c, the community target is configurable at the agent side (snmp-agent-gateway.properties)
-		- If you select v3, various additional parameters have to be provided under **DEVICE AUTHENTICATION DETAILS** such as,
-			- **User name**: Provide a valid user name for the device which will be used to authenticate the TRAPs coming from the device.
-			- **Engine ID**: The engine ID must be unique for each device and cannot be edited once saved. The length of the engine ID must have of a minimum of 5 and a maximum of 32 characters.
-			- **Security Level**: There are three types of security levels supported by SNMP v3 (NOAUTH_NOPRIV, AUTH_NOPRIV, AUTH_PRIV). Depending on the security level selected, you need to provide **AUTHENTICATION** and/or **PRIVACY** details. 
-3. Once all the details are provided, click on **Add** button to add the device.
-4. On successful addition, the SNMP device will be listed in **SNMP devices** list and also in **Child devices** tab.
-       
-![Device details](/guides/images/users-guide/snmp/snmp-device-details.png)
+<tbody>
+<tr>
+<td align="left">Name</td>
+<td align="left">Provide a meaningful name to identify the device.</td>
+</tr>
 
-NOTE: 
-In case, if a TRAP is received by the agent from a device which is not registered, the agent raises a major alarm that a TRAP has been received from an unknown device, showing its IP address. The alarm can be viewed in the **Alarms** tab of the agent device.
+<tr>
+<td align="left">Device type</td>
+<td align="left">Select the device protocol relevant for the device being added. The device protocol contains the OID and the mapping of the OID to the Cumulocity model such as alarm/event/measurement.</td>
+</tr>
 
-##### To add SNMP device via REST API
+<tr>
+<td align="left">IP address</td>
+<td align="left">IP address of the device.</td>
+</tr>
 
-**Step-1:** Create a device in the platform
+<tr>
+<td align="left">Port</td>
+<td align="left">Port to be used during device polling.</td>
+</tr>
 
-If you want to create a SNMP device with SNMP v1 or v2c,
+<tr>
+<td align="left">SNMP version</td>
+<td align="left">Select one of the 3 SNMP versions (v1, v2c and v3) supported by the Cumulocity SNMP agent:<br>For v1 and v2c, the community target is configurable at the agent side (snmp-agent-gateway.properties).<br>For v3, various additional parameters have to be provided under <strong>Device authentication details</strong>:<br>- <strong>User name</strong>: Provide a valid user name for the device which will be used to authenticate the TRAPs coming from the device. <br>- <strong>Engine ID</strong>: The engine ID must be unique for each device and cannot be edited once saved. The length of the engine ID must have of a minimum of 5 and a maximum of 32 characters.<br>- <strong>Security Level</strong>: There are three types of security levels supported by SNMP v3 (NOAUTH_NOPRIV, AUTH_NOPRIV, AUTH_PRIV). Depending on the security level selected, you need to provide authentication and/or privacy details.</td>
+</tr>
+</tbody>
+</table>
+5. Click **Add** to add the device.
+
+The SNMP device will be listed in the devices list and in the **Child devices** tab.
+
+> **Info**: If a TRAP is received by the agent from a device which is not registered, the agent raises a major alarm that a TRAP has been received from an unknown device, showing its IP address. The alarm can be viewed in the **Alarms** tab of the agent device.
+
+##### To add a SNMP device via REST API
+
+**Step-1:** Create a device in the platform:
+
+For a SNMP device with SNMP v1 or v2c
 
 	POST /inventory/managedObjects
 	Authorization: Basic ...
@@ -366,7 +390,7 @@ After posting the above request you will get a response similar to the one below
 	   ...
 	}
 
-For SNMP v3, additional Authentication and Privacy details has to be provided as,
+For SNMP v3, additional authentication and privacy details have to be provided:
 
 	POST /inventory/managedObjects
 	Authorization: Basic ...
@@ -392,27 +416,27 @@ For SNMP v3, additional Authentication and Privacy details has to be provided as
     	}
     }
 
-Security level and protocols can have following values,
+Security level and protocols can have the following values:
 
-`securityLevel`
+**securityLevel**
 
     “securityLevel”: 1 //NOAUTH_NOPRIV
     “securityLevel”: 2 //AUTH_NOPRIV
     “securityLevel”: 3 //AUTH_PRIV
    
-`authProtocol`
+**authProtocol**
 
     “authProtocol”: 1 // MD5
     “authProtocol”: 2 // SHA
 
-`privProtocol`
+**privProtocol**
 
     “privProtocol”: 1 // DES	
     “privProtocol”: 2 // AES128
     “privProtocol”: 3 // AES192
     “privProtocol”: 4 // AES256
 
-**Step-2:** Add the SNMP device as a child device under the agent
+**Step-2:** Add the SNMP device as a child device under the agent:
 
 	POST /inventory/managedObjects/{{agent.device.id}}/childDevices
 	Authorization: Basic ...
@@ -446,35 +470,35 @@ To delete the SNMP device, use the following REST API:
 	DELETE /inventory/managedObjects/{{snmp.device.id}}
 	Authorization: Basic ...
 
+
 ### TRAP processing
 
-A TRAP is an urgent message sent from the SNMP device to the agent. The SNMP device needs to send the TRAPs to the agent at the port number defined in *snmp.trapListener.port* in agent configuration file (default port number is 6671). For this, SNMP device needs to be configured with the agent connectivity details. 
+A TRAP is an urgent message sent from the SNMP device to the agent. The SNMP device must send the TRAPs to the agent at the port number defined in `snmp.trapListener.port` in the agent configuration file (default port number is 6671). For this, the SNMP device needs to be configured with the agent connectivity details. 
 
-For SNMP v1 and v2c, community target has to be same in agent and SNMP device. At the agent side, this is configured in snmp-agent-gateway.properties and this should match with the SNMP device. In case of SNMP v3, the authentication and privacy details needs to be configured before SNMP device could send the TRAP to agent.
+For SNMP v1 and v2c, the community target has to be the same in the agent and in the SNMP device. At the agent side, this is configured in *snmp-agent-gateway.properties* and this should match with the SNMP device. In case of SNMP v3, the authentication and privacy details need to be configured before the SNMP device can send the TRAP to agent.
 
-A TRAP contains a PDU object which is configured with an OID and a value. If this OID is configured with a mapping in the device protocol assigned to SNMP device in the platform, based on the mapping configured corresponding Cumulocity object/s such as alarm/event/measurement will be created in the platform.
+A TRAP contains a PDU object which is configured with an OID and a value. If this OID is configured with a mapping in the device protocol assigned to the SNMP device in the platform, corresponding Cumulocity object/s such as alarm/event/measurement will be created in the platform based on the configured mapping.
 
 ### Device polling
 
-The SNMP agent provides capability to poll for SNMP device data by the OID. In the device protocol that is configured for the SNMP device, if any of the OID has measurement mapping enabled, those OIDs will be polled for the data. If the OID does not contain measurement mapping, those will be skipped from polling.
+The SNMP agent provides the capability to poll for SNMP device data by the OID. In the device protocol that is configured for the SNMP device, if any of the OIDs have measurement mapping enabled, these OIDs will be polled for the data. If an OID does not contain measurement mapping it will be skipped from polling.
 
-#### To enable polling from user interface
+#### To enable polling from the UI
 
-1. In the Device Management application, click on **Devices** > **All devices**
-2. In **All devices** screen, click on SNMP agent device
-3. In the SNMP agent device screen, click on **SNMP** tab in the left menu
-4. In the **SNMP communication** section, provide the polling interval in the field **Polling rate**. For example: If the value is set to "5", the agent polls the SNMP devices OID(s) data every 5 seconds. To stop the polling, set the polling interval to 0 or an empty value.  
-5. Click on the **Save changes** button.
-
+1. In the Device Management application, click **All devices** in the **Devices** menu in the navigator.
+2. In the devices list, click on the SNMP agent device and open the **SNMP** tab of the device.
+3. In the **SNMP communication** section, provide the polling interval in the field **Polling rate**. For example: If the value is set to "5", the agent polls the SNMP devices OID(s) data every 5 seconds. To stop the polling, set the polling interval to 0 or an empty value.  
+5. Click **Save changes**.
+<br>
 ![SNMP Device polling](/guides/images/users-guide/snmp/snmp-polling.png)  
 
-The data received via polling is mapped to Cumulocity models based on the mapping defined. As the OIDs contain measurement mapping, the measurements can be viewed in the **Measurements** tab of the snmp device.
+The data received via polling is mapped to the Cumulocity model based on the mapping defined. As the OIDs contain measurement mapping, the measurements can be viewed in the **Measurements** tab of the SNMP device.
 
 ![SNMP device measurement graph](/guides/images/users-guide/snmp/snmp-measurement-graph.png)  
 
 #### To enable polling via REST API
 
-The following REST call schedules the polling with a given time period. 
+The following REST call schedules the polling with a given time period: 
 
 	PUT /inventory/managedObjects/{{agent.device.id}}
 	Authorization: Basic ...
@@ -490,4 +514,4 @@ The following REST call schedules the polling with a given time period.
         }
     }
 
-**Transmit rate** is the interval at which, the data from agent is sent to the platform. For example: if the transmit rate is 5 seconds, the data will be queued up at the agent side and sent to the platform after every 5 seconds. In case of measurements, if the number of measurements is more than 1, the measurements will be grouped and sent to the platform in batches. If number of measurements in the queue is more, maximum batch size will limit to 200 measurements in a single request (default is 200, but configuable in snmp-agent-gateway.properties). If the transmit rate is set to zero, the data will be sent to the platform as and when they are created.
+**Transmit rate** is the interval at which the data from the agent is sent to the platform. For example: If the transmit rate is 5 seconds, the data will be queued up at the agent side and sent to the platform after every 5 seconds. In case of measurements, if the number of measurements is more than 1, the measurements will be grouped and sent to the platform in batches. In case of a large number of measurements in the queue, the maximum batch size will limit to 200 measurements in a single request (default is 200, but configurable in *snmp-agent-gateway.properties*). If the transmit rate is set to zero, the data will be sent to the platform as and when they are created.

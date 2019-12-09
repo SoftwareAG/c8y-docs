@@ -66,5 +66,5 @@ As a result of these extraction and transformation steps, the flattened data is 
 
 DataHub's scheduler runs the offloading pipeline in a periodic manner. The UI displays the execution schedule next to each configuration.  Within each of these executions, newly arrived data is extracted from the Cumulocity collection and transformed and stored in the same way as described above. These incremental offloading tasks are designed to ensure a loss-free and duplicate-free offloading from the collection. For example, if one offloading execution fails, the next execution will automatically pick up the increments the failed one should have processed.
 
-For each of the offloading pipelines, corresponding target tables are created in Dremio that point to the corresponding data folders in the data lake. When you run queries against the offloaded data in the data lake, Dremio uses these target tables.
+For each of the offloading pipelines, corresponding target tables are created in Dremio that point to the corresponding data folders in the data lake. When you run queries against the offloaded data, Dremio uses these target tables.
 

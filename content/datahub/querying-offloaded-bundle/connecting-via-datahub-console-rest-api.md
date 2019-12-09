@@ -56,11 +56,11 @@ Cancel a query job given the job id:
 
 This example submits a Dremio SQL query to fetch the five most recent alarms which already were offloaded, waits for the query to complete, and fetches the result. 
 
-The SQL query, assuming tenant name "Smith", is:
+The SQL query, assuming tenant name "Smith" and "Dremio" as name of your file system in Azure Storage, is:
 
 ```sql
 SELECT creationTime, severity, text
-FROM SmithDataLake.dremio.Smith.alarms
+FROM SmithDataLake.Dremio.Smith.alarms
 ORDER BY creationTime DESC
 LIMIT 5
 ```
@@ -72,7 +72,7 @@ POST /dremio/api/v3/sql HTTP/1.1
 Host: mytenant.cumulocity.com:9090
 Content-Type: application/json
 {
-    "sql": "SELECT creationTime, severity, text\nFROM SmithDataLake.dremio.Smith.alarms\nORDER BY creationTime DESC\nLIMIT 5"
+    "sql": "SELECT creationTime, severity, text\nFROM SmithDataLake.Dremio.Smith.alarms\nORDER BY creationTime DESC\nLIMIT 5"
 }
 ```
 

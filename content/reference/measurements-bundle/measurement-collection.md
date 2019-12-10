@@ -189,8 +189,8 @@ The flag "truncated" indicates whether there were more than 5000 values and if t
 |:---|:---|
 |Authorization|{{auth}}
 |Host|{{hostname}}
-|Conent-Type|application/json
-|Accept|application/vnd.com.nsn.cumulocity.measurement+json;ver=...
+|Conent-Type|application/vnd.com.nsn.cumulocity.measurement+json
+|Accept|application/vnd.com.nsn.cumulocity.measurement+json
 
 ```http
 POST <<url>>/measurement/measurements
@@ -252,7 +252,7 @@ Note that for correct visualization of measurement series on UI graphs, property
 |:---|:---|
 |Authorization|{{auth}}
 |Host|{{hostname}}
-|Conent-Type|application/json
+|Conent-Type|application/vnd.com.nsn.cumulocity.measurementCollection+json
 |Accept|application/vnd.com.nsn.cumulocity.measurementCollection+json
 
 ```http

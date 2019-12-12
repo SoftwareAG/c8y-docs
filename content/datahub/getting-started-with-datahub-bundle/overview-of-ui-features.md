@@ -5,13 +5,12 @@ layout: redirect
 ---
 
 
-DataHub Console provides the UI you use for managing and monitoring your offloading pipelines. The main navigation bar at the top provides you links to the following pages.
+DataHub Console provides the UI you use for managing and monitoring your offloading pipelines. The main navigation bar on the left provides links to the following pages.
 
 | Page | Description
 | ---  | ---
-| Home | Provides you an introduction, quick links to related functionality, as well as the current version number of DataHub Console
+| Home | Get an introduction to DataHub Console and access quick links with related functionality
 | Offloading | Configure and manage your offloading pipelines
-| Status | Investigate the corresponding latest job status of offloading pipelines
-| User | Change your password
-| Log out | Log out from DataHub Console
+| Status | View the latest job status of your offloading pipelines
 
+<img src="/guides/images/datahub-guide/datahub-home-page.png" alt="DataHub homepage.png"  style="max-width: 100%">

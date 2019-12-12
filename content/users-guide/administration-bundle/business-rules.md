@@ -37,11 +37,11 @@ Simply click the row of the module you want to edit or click the menu icon at th
 For details on the fields, see [To add a module](#add-modules).
 
 
-#### To remove a module
+#### To delete a module
 
-Click the menu icon at the right of the respective row and then click **Remove**.
+Click the menu icon at the right of the respective row and then click **Delete**.
 
-Instead of removing the module you can also disable it temporarily by setting its status to "Not deployed".
+Instead of deleting the module you can also disable it temporarily by setting its status to "Not deployed".
 
 
 ### <a name="reprio-alarms"></a>Alarm mapping

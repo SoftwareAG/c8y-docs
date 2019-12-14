@@ -144,7 +144,7 @@ The Smart Rule will be added to the export details.
 
 #### To export data
 
-To export data to a CSV or XLSX file, select the checkbox in front of the export in the list and at the left of the top menu bar click **Export**.
+To export data to a CSV or XLSX file, select the checkbox in front of the respective row in the list and at the left of the top menu bar click **Export**.
 
 You will receive an e-mail containing links to each export file.
 
@@ -168,6 +168,6 @@ For details on the fields see [To add an export](#add-export).
 2. Modify at least the name.
 3. Click **Save & close** to save the export and return to the export list.
 
-#### To remove an export
+#### To delete an export
 
-Click the menu icon at the end of the row and then click **Remove**.
+Click the menu icon at the end of the row and then click **Delete**.

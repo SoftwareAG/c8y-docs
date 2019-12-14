@@ -20,7 +20,7 @@ The asset hierarchy is composed of two types of objects:
 
 In this example, the group objects represent a building asset. The device objects represent the room asset. The group names and hierarchy can be defined individually by the user. The hierarchy can have multiple levels, like region level, city level, street level, building level, floor level and room level. Any device can be part of multiple and different hierarchies, like part of regional hierarchy and part of customer hierarchy.
 
-To position a device in the asset hierarchy, you have to "assign" the device to the respective group. See description below for details.
+To position a device in the asset hierarchy, you have to "assign" the device to the respective group (see below). 
 
 > **Info:** Single devices are not managed in the Cockpit application. They are managed in the Device Management application.
 
@@ -43,13 +43,13 @@ The first example shows how smart devices are linked into the asset hierarchy:
 
 ![image alt text](/guides/images/users-guide/cockpit/cockpit-groups-image2.png)
 
-Smart devices are represented in the Device Management application as top-level devices. In the Cockpit application, you can organize smart devices into groups, as the arrows indicate in the above diagram.
+Smart devices are represented as top-level devices in the Device Management application. In the Cockpit application, you can organize smart devices into groups, as the arrows indicate in the above diagram.
 
 The second example shows how gateway devices can be used in the Cockpit application.
 
 ![image alt text](/guides/images/users-guide/cockpit/cockpit-groups-image3.png)
 
-In the Device Management application, gateway devices are represented as top level devices. Their attached devices (like for example Modbus or KNX devices) are shown as child devices. These child devices can be organized in the asset hierarchy in the Cockpit application as shown above.
+Gateway devices are as well represented as top level devices in the Device Management application. Their attached devices (like for example Modbus or KNX devices) are shown as child devices. These child devices can be organized in the asset hierarchy in the Cockpit application as shown above.
 
 As you can see from the example, devices can have completely different hierarchies in the Device Management application and in the Cockpit application:
 While inside Device Management all child devices are below the gateway device, the same child devices are organized in two different buildings in the Cockpit.
@@ -88,7 +88,7 @@ Several tabs are available for each object, dependent of the object type:
 |Tab|Description|Availability
 |:---|:---|:---
 |Info|Shows a list of [Smart Rules](#smart-rules) created for the object.|Group, Device
-|Alarms|Displays alarms for the device. For details on alarms, refer to [Working with alarms](/guides/users-guide/device-management/#alarm-monitoring) in *Device Management*.|Device
+|Alarms|Displays alarms for the device. For details on alarms, refer to [Device management > Working with alarms](/guides/users-guide/device-management/#alarm-monitoring)|Device
 |Sub-assets|Shows the sub-assets of a group.|Group
 |Data explorer|Shows all data points of the children. For details refer to [Visualizing data using the data explorer](#data-explorer).|Group, Device
 |Location|Shows the current location of a device.|Device

@@ -165,7 +165,7 @@ Click the menu icon at the right of a device credentials entry and then click **
 
 The device credentials will be temporarily disabled.
 
-#### To delete device device credentials
+#### To delete device credentials
 
 Click the menu icon at the right of a device credentials entry and then click **Delete**.
 

@@ -25,10 +25,10 @@ To view all users in your tenant, click **Users** in the **Account** menu in the
 
 A user list will be displayed, providing the following information for each user:
 
-* The user name that is used to access the tenant
-* The name and email of the user, if set
-* The global roles assigned to the user
-* The [strength](/guides/users-guide/overview#login) of the password set for the user
+* The user name that is used to access the tenant.
+* The name and email of the user, if set.
+* The global roles assigned to the user.
+* The [strength](/guides/users-guide/overview#login) of the password set for the user.
 
 To filter the list, you can use the search field at the left of the top menu bar. For details on the search functionality, refer to [Searching](/guides/users-guide/overview##searching) in the *Introduction*.
 

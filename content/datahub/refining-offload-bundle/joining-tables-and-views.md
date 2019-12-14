@@ -10,7 +10,7 @@ A general use case for joining is to enrich your alarms, events, or measurement 
 
 ```sql
 SELECT *
-FROM myAccountDataLake.myAccount.alarms
-JOIN myAccountDataLake.myAccount.inventory
+FROM myAccountDataLake.Dremio.myAccount.alarms
+JOIN myAccountDataLake.Dremio.myAccount.inventory
 USING(id)
 ```

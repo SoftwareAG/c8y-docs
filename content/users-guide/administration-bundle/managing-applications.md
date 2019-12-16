@@ -9,7 +9,7 @@ In the Cumulocity platform we distinguish between two kinds of applications:
 * [Subscribed applications](#subscribed-applications) -  all applications subscribed to the tenant (either provided by the platform or a service provider) but not owned. May not be added, modified or removed by the user.
 * [Own applications](#own-applications) - all applications owned by the tenant. Users can [add custom applications](#add-applications) in various ways as own applications. 
 
-Both applications are available through the **Applications** menu in the navigator:
+Click **Own applications** or **Subscribed applications** in the **Applications** menu in the navigator to display a list of all respective applications in your account.
 
 <img src="/guides/images/users-guide/Administration/admin-menu.png" alt="Applications menu"> 
 
@@ -74,6 +74,8 @@ Each application will show the following properties, depending on the applicatio
 </table>
 
 >**Info**: ID and type cannot be changed.
+>
+
 
 ### <a name="subscribed-applications"></a>Subscribed applications
 

@@ -41,7 +41,7 @@ The **User** menu contains the following items:
 </tr>
 <tr>
 <td style="text-align:left">Version information</td>
-<td style="text-align:left">Shows release information on the Cumulocity version you are using, i.e. 9.16.2, for both Backend and UI. </td>
+<td style="text-align:left">Shows release information on the Cumulocity version you are using, i.e. 10.5.7, for both Backend and UI. Moreover shows the ID of your tenant, which might be required if you request support. Click the copy icon next to the tenant ID to copy it to the clipboard.</td>
 </tr>
 </tbody>
 </table>

@@ -31,4 +31,4 @@ The tenant domain may contain lowercase letters, digits or hyphens. It must star
 
 In general, the tenant domain should be used for communication if it is known. 
 
->**Important**: For support user access, the tenant ID must be used and not the tenant domain.
+>**Important**: For support user access, the tenant ID must be used and not the tenant domain. 

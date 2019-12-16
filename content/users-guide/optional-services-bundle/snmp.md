@@ -45,9 +45,9 @@ Before starting SNMP device integration, make sure that your tenant is subscribe
 2. In the Administration application, click **Own applications** in the **Applications** menu in the navigator.  
 3. In the top menu bar, click **Add application**.
 4. Select **Upload microservice** and upload the mib-parser microservice ZIP file.
-6. In the resulting dialog box, click **Subscribe** to subscribe to the uploaded microservice.
-7. On successful subscription, the Mibparser microservice will appear under **Own applications**.
-8. Click on the uploaded application (Mibparser) to see more details.
+5. In the resulting dialog box, click **Subscribe** to subscribe to the uploaded microservice.
+6. On successful subscription, the Mibparser microservice will appear under **Own applications**.
+7. Click on the uploaded application (Mibparser) to see more details.
 
 ![Own applications - Mibparser](/guides/images/users-guide/snmp/snmp-own-applications.png)
 
@@ -104,14 +104,14 @@ On successful import, the newly added device protocol will be listed in the devi
 Device protocols can also be created manually. To do so, you need to know the OIDs supported by the device. This method is suitable for small number of OIDs supported by the device or for testing purposes.
 
 1. In the Device Management application, click on **Device types > Device protocols** in the left menu.
-3. In the top menu bar of the **Device protocols** page, click **Add device protocol**.
-4. Select SNMP as device protocol.
-5. Enter the name and a description for the device protocol.
-6. Click on **Create** button. On successful creation, the new device protocol will be added to the device protocol list.
-7. Open the newly created device protocol.
-8. Click **Add component**.
-9. Provide OID details and device protocol mapping for the OID.
-10. Click on **Save** button to save your settings.
+2. In the top menu bar of the **Device protocols** page, click **Add device protocol**.
+3. Select SNMP as device protocol.
+4. Enter the name and a description for the device protocol.
+5. Click on **Create** button. On successful creation, the new device protocol will be added to the device protocol list.
+6. Open the newly created device protocol.
+7. Click **Add component**.
+8. Provide OID details and device protocol mapping for the OID.
+9. Click on **Save** button to save your settings.
 
 ![Device protocol - SNMP](/guides/images/users-guide/snmp/snmp-device-protocol-manual.png)
 
@@ -132,7 +132,7 @@ The device protocol mapping helps the agent to know how to deal with incoming da
   
 	![Edit components details](/guides/images/users-guide/snmp/snmp-device-protocol-mapping.png)
 
-6. Click on **Save** button in the **Device protocol** page to finally save the changes. 
+5. Click on **Save** button in the **Device protocol** page to finally save the changes. 
 
 #### To create mapping via REST API
 
@@ -201,45 +201,37 @@ To setup the SNMP agent follow these steps:
 ```
 wget -nv http://resources.cumulocity.com/examples/snmp/snmp-agent-gateway-[version].rpm
 ```
-
 2. Verify the signature of the RPM package:
 ```
 rpm --checksig snmp-agent-gateway-[version].rpm
 ```
-
 3. Install the SNMP agent RPM package:
 ```
 sudo rpm -ivh snmp-agent-gateway-<ga-version>.rpm
 ```
-
 4. Check the installed RPM package:
 ```
 rpm -q snmp-agent-gateway
 ```
-
 5. Configure the agent:
    1. Create .snmp folder in the user home directory:
    ```
    mkdir -p $HOME/.snmp
    ```
-
    2. Copy the snmp properties file inside .snmp folder:
    ```
    cp /etc/snmp-agent-gateway/snmp-agent-gateway.properties $HOME/.snmp
    ```
-
    3. Change the properties according to the Cumulocity environment (e.g. gateway.identifier, Cumulocity bootstrap details, SNMP Community target).
 
 6. Start the service:
 ```
 systemctl start snmp-agent-gateway
 ```
-
 7. Check if the service started properly by checking the status:
 ```
 systemctl status snmp-agent-gateway
 ```
-
 8. Make sure that the agent process is running without any issues. To do so, check the agent log file:
 ```
 $HOME/.snmp/log/snmp-agent-gateway-server.log
@@ -592,7 +584,7 @@ The SNMP agent provides the capability to poll for SNMP device data by an OID. T
 1. In the Device Management application, click on **Devices > All devices** in the left menu.
 2. In the devices list, click on the SNMP agent device and open the **SNMP** tab of the device.
 3. In the **SNMP communication** section, provide the polling interval in the **Polling rate** field. For example: If the value is set to "5", the agent polls for SNMP devices OID(s) data every 5 seconds. To stop the polling, set the polling interval to 0 or an empty value.  
-5. Click on **Save** button.
+4. Click on **Save** button.
 <br>
 ![SNMP Device polling](/guides/images/users-guide/snmp/snmp-polling.png)  
 

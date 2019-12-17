@@ -12,7 +12,7 @@ Data broker lets you share data selectively with other tenants. You can share:
 - measurements,
 - operations.
 
-Navigate to **Data connectors** if you would like to send data to another tenant. Navigate to **Data subscriptions**, if you would like to receive data from another tenant.
+Navigate to **Data connectors** in the **Data Broker** menu if you would like to send data to another tenant. Navigate to **Data subscriptions**, if you would like to receive data from another tenant.
 
 <img src="/guides/images/users-guide/data-broker-navigator.png" alt="Data broker menus" >
 
@@ -97,7 +97,7 @@ Use the toggle to enable and disable data forwarding to the destination tenant. 
 </tbody>
 </table>
 
-5. Click Save to save the configuration.
+5. Click **Save** to save the configuration.
  
 > **Info:** If the **Group or device** field is filled in, the entire descendant structure of the inventory is forwarded to the destination as soon as the connector stays active. if the **Group or device** field is empty or set to  "all" the descendant structure of the inventory is not forwarded; in this case the filter works in "lazy" mode, i.e. forwards the device or asset along with its first event/measurement/alarm.
  
@@ -124,7 +124,7 @@ After saving the configuration, you will see a security code displayed below you
 
 #### To edit a data connector
 
-Click the menu icon in a data connector entry and then click **Edit**. 
+Click the menu icon at the right of a data connector entry and then click **Edit**. 
 
 In the **Settings** tab, edit the data connector configuration.
 
@@ -132,11 +132,11 @@ See [To add a data connector](#data-broker-connector-edit) for details on the se
 
 #### To duplicate a data connector
 
-Click the menu icon in a data connector entry and then click **Duplicate** to create another data connector with the same configuration.
+Click the menu icon at the right of a data connector entry and then click **Duplicate** to create another data connector with the same configuration.
 
 #### To delete a data connector
 
-Click the menu icon in a data connector entry and then click **Delete** to stop data forwarding and delete the data connector.
+Click the menu icon at the right of a data connector entry and then click **Delete** to stop data forwarding and delete the data connector.
 
 #### To view alarms for a data connector
 
@@ -144,7 +144,7 @@ Open a data connector and switch to the **Alarms** tab to display current alarms
 
 ![Warnings tab](/guides/images/users-guide/data-broker-connector-warnings.png)
 
-For details on alarms, see [Monitoring and controlling devices > Working with alarms](alarm-monitoring) in the Device Management section.
+For details on alarms, see [Device Management > Monitoring and controlling devices > Working with alarms](alarm-monitoring).
 
 
 ### <a name="data-broker-subscriptions"></a> Data subscriptions

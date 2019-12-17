@@ -148,7 +148,7 @@ As part of suspending the tenant, an email is sent to the tenant administrator i
 
 #### To delete a subtenant
 
-Click the menu icon at the right of the respective subtenant entry and then click **Remove** to finally delete a tenant and remove all the data of the tenant.
+Click the menu icon at the right of the respective subtenant entry and then click **Delete** to finally delete a tenant and remove all the data of the tenant.
 
 
 ### <a name="subscribe"></a>Applications

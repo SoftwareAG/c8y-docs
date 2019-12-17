@@ -7,7 +7,7 @@ slug: support-user-access
 
 With the support user access feature, support users, i.e. users of the management tenant with specific permissions, can log into accounts of other subtenant's users to provide help in case of any issues.
 
-To so so, support user access must be enabled. This can globally be done on platform level or on user level as described below. 
+To do so, support user access must be enabled. This can globally be done on platform level or on user level as described below. 
 
 
 ### <a name="configuring-support-access"></a>Configuring support user access

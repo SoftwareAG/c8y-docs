@@ -10,7 +10,7 @@ With user hierarchies you can reflect independent organizational entities in Cum
 
 ### Viewing user hierarchies
 
-In the **Users** page, user hierarchies are indicated by an arrow left from the user icon. Clicking on the arrow unfolds the user hierarchy. You can also fold and unfold the entire user hierarchy using the **Expand all** and **Collapse all** links on the top right.
+In the **Users** page, user hierarchies are indicated by an arrow left from the user icon. Clicking on the arrow unfolds the user hierarchy. You can also fold and unfold the entire user hierarchy using the **Expand all** and **Collapse all** links at the right of the top menu bar.
 
 A small number next to the user name shows how many direct sub-users a user has. Sub-users are users that can be managed by their respective parent user and that have at most the permissions of that parent user. In the example below, the user "Demo user" has one direct sub-user. 
 
@@ -26,7 +26,7 @@ User hierarchies are created by assigning an "owner" to a user. The owner can ma
 
 ![Select owner](/guides/images/users-guide/ee-user-hierarchy-assign-owner.png) 
 
->**Info:** When creating a new user, the owner is automatically set to the user who is logged in. The owner can be changed later. Only users with USER ADMIN permission can assign an owner to a user. 
+>**Info:** When creating a new user, the owner is automatically set to the user who is logged in. The owner can be changed later. Only users with "User" ADMIN permission can assign an owner to a user. 
 
 > If you want an owner to manage only their sub-users, make sure that the owner does not have a global role with user management permissions for all users.
 
@@ -56,6 +56,6 @@ If the delegated user also needs to manage specific devices, the admin user must
 
 ### Troubleshooting sub-users
 
-In the example below the user cannot change the access to the Administration application, because the owner of the user has no USER MANAGEMENT permission. As a result, the owner user can not assign built-in applications (and the owned user cannot use them). 
+In the example below the user cannot change the access to the Administration application, because the owner of the user has no "User management" permission. As a result, the owner user can not assign built-in applications (and the owned user cannot use them). 
 
 ![Warning message](/guides/images/users-guide/warning1.png)

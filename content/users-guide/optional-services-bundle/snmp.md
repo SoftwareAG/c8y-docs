@@ -9,7 +9,7 @@ Simple Network Management protocol (SNMP) is an application layer protocol, used
 
 There are two components that help SNMP-enabled devices to connect to the Cumulocity IoT platform:
 
-1. The mib-parser microservice helps in converting a Managed Information Base (MIB) file to a JSON representation which is then used to create a device protocol.
+1. The Mibparser microservice helps in converting a Managed Information Base (MIB) file to a JSON representation which is then used to create a device protocol.
 2. The Cumulocity SNMP agent is a device-side agent that helps SNMP-enabled devices to connect to the Cumulocity IoT platform and translates messages from a SNMP-specific format to a Cumulocity model before forwarding them to the Cumulocity.
 
 The following image provides a general overview of the SNMP-enabled device integration with Cumulocity:
@@ -18,35 +18,36 @@ The following image provides a general overview of the SNMP-enabled device integ
 
 ### Mibparser microservice
 
-**mib-parser** is an open source, multi-tenant microservice.
+**Mibparser** is an open source, multi-tenant microservice.
 
 #### Deployment
-The source code can be found in [https://bitbucket.org/m2m/c8y-mib-parser/src/develop](https://bitbucket.org/m2m/c8y-mib-parser/src/develop). Follow the *README.md* file to build the microservice. The built microservice can be deployed in one the following ways,
+
+The source code can be found in [https://bitbucket.org/m2m/c8y-mib-parser/src/develop](https://bitbucket.org/m2m/c8y-mib-parser/src/develop). Follow the *README.md* file to build the microservice. The built microservice can be deployed in one the following ways.
 
 #### Subscribing to the tenant
 
 Before starting SNMP device integration, make sure that your tenant is subscribed to the microservice.
 
-#### Using the management tenant
+##### Using the management tenant
 
 1. Login to the management tenant.
-2. In the Administration application, click **Subtenants** in the **Tenants** menu the navigator.  
+2. In the Administration application, click **Subtenants** in the **Tenants** menu in the navigator.  
 3. In the tenants list, select the subtenant to which you want to subscribe the microservice.
 4. Switch to the **Applications** tab.
-5. Check if mib-parser is listed under **Subscribed applications**.
+5. Check if Mibparser is listed under **Subscribed applications**.
 6. If the tenant is not yet subscribed to the microservice, search for the microservice in **Available applications** and click **Subscribe**.    
-7. On successful subscription, the mib-parser microservice will appear under **Applications** > **Subscribed applications** in the subtenant.
+7. On successful subscription, the Mibparser microservice will appear under **Applications** > **Subscribed applications** in the subtenant.
 
 ![Subscribed applications - Mibparser](/guides/images/users-guide/snmp/snmp-subscribed-applications.png)
 
-#### Using a tenant with microservice hosting privilege
+##### Using a tenant with microservice hosting privilege
 
 1. Login to the management tenant.
 2. In the Administration application, click **Own applications** in the **Applications** menu in the navigator.  
 3. In the top menu bar, click **Add application**.
 4. Select **Upload microservice** and upload the mib-parser microservice ZIP file.
 5. In the resulting dialog box, click **Subscribe** to subscribe to the uploaded microservice.
-6. On successful subscription, the mib-parser microservice will appear under **Own applications**.
+6. On successful subscription, the Mibparser microservice will appear under **Own applications**.
 7. Click on the uploaded application (Mibparser) to see more details.
 
 ![Own applications - Mibparser](/guides/images/users-guide/snmp/snmp-own-applications.png)
@@ -191,90 +192,87 @@ The SNMP Agent is a stand-alone Java program that communicates with SNMP-enabled
 | Java version  | Java Runtime Environment 8 or newer version.|
 | Heap memory   | The agent Java application can run on as little as 200MB of heap space. <br>However, based on the number of devices and the load, this needs to be adjusted.   |
 | Disk space    | The Cumulocity representation of the SNMP message will be persisted before forwarding to the platform. <br>Based on the load, sufficient disk space should be available to store the objects.     |
-| Hardware and OS    | Linux environment, can run on laptops or industrial PCs.     |
+| Hardware and OS    | Linux environment, can run on laptops or industrial PCs.     
 
 ##### Configuration
 
-The agent expects the *snmp-agent-gateway.properties* configuration file to be present in 
+The agent expects the *snmp-agent-gateway.properties* configuration file to be present in *&dollar;{user.home}/.snmp/snmp-agent-gateway.properties*.
 
-	${user.home}/.snmp/snmp-agent-gateway.properties
-
-If you install the SNMP agent RPM package, the property file can be found under */etc/snmp-agent-gateway/snmp-agent-gateway.properties*. Move this file to the *${user.home}/.snmp* folder and update the properties.
+If you install the SNMP agent RPM package, the property file can be found under */etc/snmp-agent-gateway/snmp-agent-gateway.properties*. Move this file to the *&dollar;{user.home}/.snmp* folder and update the properties.
 
 ##### To install the agent
 
 1. Download the latest SNMP agent RPM:
-```
-wget -nv http://resources.cumulocity.com/examples/snmp/snmp-agent-gateway-[version].rpm
-```
+	
+		wget -nv http://resources.cumulocity.com/examples/snmp/snmp-agent-gateway-[version].rpm
+
 2. Verify the signature of the RPM package:
-```
-rpm --checksig snmp-agent-gateway-[version].rpm
-```
+	
+		rpm --checksig snmp-agent-gateway-[version].rpm
+
 3. Install the SNMP agent RPM package:
-```
-sudo rpm -ivh snmp-agent-gateway-<ga-version>.rpm
-```
+
+		sudo rpm -ivh snmp-agent-gateway-<ga-version>.rpm
+
 4. Check the installed RPM package:
-```
-rpm -q snmp-agent-gateway
-```
+
+		rpm -q snmp-agent-gateway
+
 5. Configure the agent:
-   * Create .snmp folder in the user home directory:
-   ```
-   mkdir -p $HOME/.snmp
-   ```
-   * Copy the snmp properties file inside .snmp folder:
-   ```
-   cp /etc/snmp-agent-gateway/snmp-agent-gateway.properties $HOME/.snmp
-   ```
-   * Change the properties according to the Cumulocity environment (e.g. gateway.identifier, Cumulocity bootstrap details, SNMP Community target).
+
+   * Create the *.snmp* folder in the user home directory:
+   
+			 	 mkdir -p $HOME/.snmp
+  
+   * Copy the snmp properties file inside the *.snmp* folder:
+   
+		   		cp /etc/snmp-agent-gateway/snmp-agent-gateway.properties $HOME/.snmp
+  		 
+   * Change the properties according to the Cumulocity environment (e.g. gateway.identifier, Cumulocity bootstrap details, SNMP community target).
 
 6. Start the service:
-```
-systemctl start snmp-agent-gateway
-```
-7. Check if the service started properly by checking the status:
-```
-systemctl status snmp-agent-gateway
-```
-8. Make sure that the agent process is running without any issues. To do so, check the agent log file:
-```
-$HOME/.snmp/log/snmp-agent-gateway-server.log
-```
 
-> **Info** The agent uses the following location as persistent storage:
-```
-$HOME/.snmp/{gateway.identifier}/chronicle
-```
+		systemctl start snmp-agent-gateway
+	
+7. Check if the service started properly by checking the status:
+	
+		systemctl status snmp-agent-gateway
+
+8. Make sure that the agent process is running without any issues. To do so, check the agent log file: *$HOME/.snmp/log/snmp-agent-gateway-server.log*
+
+>**Info:** The agent uses the following location as persistent storage:
+*$HOME/.snmp/{gateway.identifier}/chronicle*
+
 
 #### Upgrading GA version
+
 > **Info**: This upgrade procedure is only for GA releases. If you have installed any previous release prior to GA release, follow the migration procedure described below.
 
 1. Make sure that the load to the SNMP agent is zero. This can be done by gracefully disconnecting all SNMP devices from the SNMP agent or redirect the traffic to a different endpoint.
 2. If there are pending messages in the SNMP agent to be sent to the platform, wait for the processing to complete.
 3. Once the message processing is complete, stop the agent process:
-```
-systemctl stop snmp-agent-gateway
-```
+
+		systemctl stop snmp-agent-gateway
+
 4. Upgrade the SNMP agent RPM package:
-```
-rpm -Uvh snmp-agent-gateway-<new-ga-version>.rpm
-```
+
+		rpm -Uvh snmp-agent-gateway-<new-ga-version>.rpm
+
 5. Start the service:
-```
-systemctl start snmp-agent-gateway
-```
+
+		systemctl start snmp-agent-gateway
+
 6. Check if the service started properly by checking the status:
-```
-systemctl status snmp-agent-gateway
-```
+
+		systemctl status snmp-agent-gateway
+		
 7. Make sure that the agent process is running without any issues. To do so, check the agent log file:
-```
-$HOME/.snmp/log/snmp-agent-gateway-server.log
-```
+
+		$HOME/.snmp/log/snmp-agent-gateway-server.log
+
 
 #### Migration
+
 The SNMP agent has undergone a major revamp in-terms of persistence storage mechanism, robustness, performance improvements etc. between version 10.4.x and 10.5.x. If the current running version of SNMP is 10.4.x or earlier then follow the steps below to migrate to a GA version.
 
 > **Info**: The migration is equivalent to a fresh installation, as the GA release uses a different persistent store compared to earlier releases. This requires a down time for installation and configuration.
@@ -284,12 +282,12 @@ The SNMP agent has undergone a major revamp in-terms of persistence storage mech
 3. Once the message processing is complete, stop the agent process.
 4. Take a backup of the *$HOME/.snmp* folder, the configuration file in */etc/snmp* (if present) and the agent JAR file (if a JAR file is used for starting the agent).
 5. If the SNMP agent was installed as RPM package, uninstall it:
-```
-rpm -e <snmp-package-name>
-```
+
+		rpm -e <snmp-package-name>
+
 6. Delete the contents inside *$HOME/.snmp/* and */etc/snmp* folder (if present).
 7. Delete the snmp-agent device in Cumulocity, which was registered as part of the installation and all its child SNMP devices. This can be done from the user interface or by using REST endpoints.
-8. Follow the **Installation** procedure in this document, to install/move to GA version.
+8. Follow the **Installation** procedure described above, to install/move to GA version.
 
 > **Info**: Cumulocity SNMP device protocol/s can be retained (unless there are no changes in the SNMP device configuration).
 
@@ -302,7 +300,7 @@ Before any SNMP device can connect to the Cumulocity IoT platform, first the SNM
 
 1. In the Device Management application, click **Registration** in the **Devices** menu in the navigator.
 2. Click **Register device** and then select **General device registration**.
-3. In the resulting dialog box, enter the device ID. The device ID corresponds to the *gateway.identifier* value mentioned in the *snmp-agent-gateway.properties* file.
+3. In the resulting dialog box, enter the device ID. The device ID corresponds to the gateway.identifier value mentioned in the *snmp-agent-gateway.properties* file.
 4. Click **Next** to proceed with the device registration and then click **Complete**.The device will be shown in the **Device registration** page with the status WAITING FOR CONNECTION.
 5. If the agent process is started and the device ID is correct you will see an **Accept** button. If the agent is not started, start the agent application. Click **Accept** to complete the registration process.
 
@@ -362,9 +360,9 @@ If you want to run autodiscovery after every interval, enter the interval in the
 ![Autodiscovery SNMP device list](/guides/images/users-guide/snmp/snmp-autodiscovered-devices.png)
 
 
-For the newly found SNMP device, the default device name will be mentioned as `Device-<device-ip-address>`, the IP Address will be `<device-ip-address>` and the default port number is `161`. All other details will be empty and have to be entered manually.
+For the newly found SNMP device, the default device name will be mentioned as `Device-<device-ip-address>`, the IP address will be `<device-ip-address>` and the default port number is `161`. All other details will be empty and have to be entered manually.
 
-An alarm will be generated
+An alarm will be generated,
 
 * 	if an existing device in the platform is not reachable during the autodiscovery scan.
 * 	if a device is discovered but it is not SNMP-enabled.
@@ -469,7 +467,7 @@ For a SNMP device with SNMP v1 or v2c
 	   }
 	}
 
-After posting the above request you will get a response similar to the one below. Note down the SNMP device ID (snmp.device.id).
+After posting the above request you will get a response similar to the one below. Note down the SNMP device ID (`snmp.device.id`).
 
 	{ 
 	   "id": "18955",
@@ -612,7 +610,7 @@ The following REST call schedules the polling with a given time period:
         }
     }
 
-**Transmit rate** is the interval at which the data from the agent is sent to the platform. For example: If the transmit rate is 5 seconds, the data will be queued up at the agent side and sent to the platform after every 5 seconds. In case of measurements, if the number of measurements is more than 1, the measurements will be grouped and sent to the platform in batches. In case of a large number of measurements in the queue, the maximum batch size will limit to 200 measurements in a single request (default is 200, but configurable in *snmp-agent-gateway.properties*). If the transmit rate is set to zero, the data will be sent to the platform as and when they are created.
+`transmitRate` is the interval at which the data from the agent is sent to the platform. For example: If the transmit rate is 5 seconds, the data will be queued up at the agent side and sent to the platform after every 5 seconds. In case of measurements, if the number of measurements is more than 1, the measurements will be grouped and sent to the platform in batches. In case of a large number of measurements in the queue, the maximum batch size will limit to 200 measurements in a single request (default is 200, but configurable in *snmp-agent-gateway.properties*). If the transmit rate is set to zero, the data will be sent to the platform as and when they are created.
 
 #### Uninstallation
 
@@ -621,56 +619,79 @@ To uninstall the agent completely, follow these steps:
 1. Make sure that the load to the SNMP agent is zero. This can be done by gracefully disconnecting all SNMP devices from the SNMP agent or redirect the traffic to a different endpoint.
 2. If there are any messages to be processed, wait for it to complete. If you do not care about the pending messages to be processed, continue.
 3. Stop the agent process:
-```
-systemctl stop snmp-agent-gateway
-```
+
+		systemctl stop snmp-agent-gateway	
+
 4. Take a backup of the following folders (if required):
-```
-$HOME/.snmp
-/etc/snmp-agent-gateway
-```
+
+		$HOME/.snmp
+		/etc/snmp-agent-gateway
+
 5. Uninstall the SNMP agent RPM package:
-```
-rpm -e snmp-agent-gateway
-```
+
+		rpm -e snmp-agent-gateway
+
 6. Delete the following folders:
-```
-$HOME/.snmp
-/etc/snmp-agent-gateway
-/usr/lib/snmp-agent-gateway
-/var/log/snmp-agent-gateway
-```
+
+		$HOME/.snmp
+		/etc/snmp-agent-gateway
+		/usr/lib/snmp-agent-gateway
+		/var/log/snmp-agent-gateway
+
 
 #### Troubleshooting
 
 1. If there are any issues while starting the service check the status of the service:
-```
-systemctl status snmp-agent.service
-```
+
+		systemctl status snmp-agent.service
+
 2. If there are any issues during the execution: <br>
-The agent has extensive logging to inform the user about the situation and in many cases it will also provide the action that the user can take in case of an error situation. All information is logged into a file and the log file is located at: `$HOME/.snmp/log/snmp-agent-gateway-server.log`.
+The agent has extensive logging to inform the user about the situation and in many cases it will also provide the action that the user can take in case of an error situation. All information is logged into a file and the log file is located at: *&dollar;HOME/.snmp/log/snmp-agent-gateway-server.log*.
 3. How can I find the old logs?<br>
-The latest log can be found in `$HOME/.snmp/log/snmp-agent-gateway-server.log`. However, the agent uses logback and log files are rotated based on a rolling policy. The default rolling policy is FileAndTime based and the max file size is set to 50MB. The old log files are also present in the same directory as the current running log: `$HOME/.snmp/log/snmp-agent-gateway-server-%d.%i.log`.
+The latest log can be found in *&dollar;HOME/.snmp/log/snmp-agent-gateway-server.log*. However, the agent uses logback and log files are rotated based on a rolling policy. The default rolling policy is FileAndTime based and the max file size is set to 50MB. The old log files are also present in the same directory as the current running log: *&dollar;HOME/.snmp/log/snmp-agent-gateway-server-%d.%i.log*.
 4. How can I change the log configuration of the agent process?<br>
 Edit the following startup file and change the "arguments" attribute and add the new log configuration file path. Restart the service for the changes to take effect.
-```
+
+	```
 vi /usr/lib/snmp-agent-gateway/start
 --logging.config=/etc/snmp-agent-gateway/snmp-agent-gateway-logging.xml
 ```
+
 5. How can I change the memory configuration of the agent Java process?<br>
 Edit the following startup file and change the heap memory settings (-Xms128m -Xmx384m) to the desired value. Restart the service for the changes to take effect.
-```
-/usr/lib/snmp-agent-gateway/start 
-```
+
+		/usr/lib/snmp-agent-gateway/start 
+
 6. How can I change the default agent configurations?<br>
-In the installation procedure, many of the agent configurations are defaulted to some value. These default values are set based on testing, common usage assumptions and ease of installation. However, you can change the default value to a value suitable for your environment and usage. To do so, uncomment the property and change the value of the property in `$HOME/.snmp/snmp-agent-gateway.properties`.
+In the installation procedure, many of the agent configurations are defaulted to some value. These default values are set based on testing, common usage assumptions and ease of installation. However, you can change the default value to a value suitable for your environment and usage. To do so, uncomment the property and change the value of the property in *&dollar;HOME/.snmp/snmp-agent-gateway.properties*.
 On saving the changes, restart the agent service for the changes to take effect.
 7. Which Cumulocity services does the agent use?<br>
 The agent makes use of c8y core APIs (most notably inventory, identity, device control, alarm/measurement/event) of the platform. 
-8. What are the ports used by the agent?
-Exposed Network Interfaces  (listening ports)
+8. What are the ports used by the agent?<br>
+Exposed Network Interfaces  (listening ports).
 The table below lists the default values for all inbound listening ports. All ports are configurable in the agent settings config file.
 
-| Default Port  | Protocol     | Remarks                 | Note         |
-| ------------- |:-------------| ----------------------- |:-------------|
-| 6671          | UDP/TCP      | SNMP TRAP listener port | This is the default port number on which <br>SNMP devices connect and sends TRAP. <br>The value can be changed in the property file.|
+<table>
+<thead>
+<colgroup>
+       <col style="width: 20%;">
+       <col style="width: 25%;">
+       <col style="width: 25%;">
+       <col style="width: 30%;">
+    </colgroup>
+<tr>
+<th>Default Port</th>
+<th align="left">Protocol</th>
+<th>Remarks</th>
+<th align="left">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6671</td>
+<td align="left">UDP/TCP</td>
+<td>SNMP TRAP listener port</td>
+<td align="left">This is the default port number on which SNMP devices connect and send TRAP. <br>The value can be changed in the property file.</td>
+</tr>
+</tbody>
+</table>

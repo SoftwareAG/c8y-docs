@@ -125,11 +125,15 @@ The rule name is pre-filled, providing the name of the export, but may be modifi
 
 Define the frequency for sending the export, i.e. every hour, day, week, month or year. Depending on the frequency selected, provide additional timing information. For example, if you have selected "every month", provide the day of month, hour and minute.
 
+>**Info**: Schedule intervals need to be provided in Coordinated Universal Time (UTC).
+
 **3 - Send email:**
 
 Complete the email information. 
 
-In the **Send to** field, provide the email address of the receiver. This field is mandatory. Optionally, you can provide email addresses for sending CC or BCC and add the email address of the sender for reply.
+In the **Send to** field, provide the email address of the recipient. This field is mandatory. Optionally, you can provide email addresses for recipients of copies (CC) or blind copies (BCC). Use comma as separator to enter multiple recipients.
+
+Optionally, add the email address of the sender for reply. 
 
 Specify the subject of the email. This field is pre-filled, but may be modified.
 

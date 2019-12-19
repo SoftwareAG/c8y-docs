@@ -391,6 +391,46 @@ If you remove an application that overwrites a subscribed application, the curre
 It is not possible to remove subscribed applications. This can only be done by the owner of the subscribed application.
 
 
+#### <a name="add-remove-plugin"></a>Adding and removing plugins
+
+>**Important**: This plugin functionality is deprecated and only available in versions earlier then 9.16.
+
+In order to configure and extend the functions provided with an application, you can add plugins to it. 
+
+>**Info:** Because the application itself is modified when adding a plugin, plugins can only be added to own applications. When adding a plugin to a subscribed application, the application must be duplicated first into an own application. This process is supported by the Administration Application wizard.
+
+To add additional plugins, click **Add Plugin** on the card of the desired application in the **Own applications** page. 
+
+The **Plugin** tab for the application will open up, showing all existing plugins and allowing to add plugins by simply dropping the respective ZIP file or browsing for it on your computer.
+
+![Plugins](/guides/images/users-guide/plugins.png)
+
+To remove a plugin, hover over it and click **Remove** at the right.
+
+The following tables list the navigator and menu items with their respective plugins.
+
+
+|Navigator item|Plugin
+|:---|:---|
+|Welcome|Welcome screen
+|Home|Cockpit home screen
+|Smart Rules|Smart Rules UI
+|Groups|Groups Hierarchy
+|Data Explorer|Data Point Explorer UI
+|Data Point Library|Data Point Explorer UI
+|Reporting|Reporting
+|Reports|Dashboard (Note: that there are two plugins with this name. Select the one with the description: "Reports are stand alone dashboards without a context".)
+|Alarms|Alarm Management|
+
+|Menu Item|Plugin|
+|:--------|:-----|
+|Info|Not possible to disable|
+|Subassets|Not possible to disable|
+|Permissions|Device Permission Management Plugin|
+|Data Explorer|Data Point Explorer UI|
+
+Be aware of the "UI" at the end of the plugin names.
+
 #### Uploading archives
 
 Multiple archive file versions can be stored in Cumulocity when they were created by uploading either a ZIP file or a MON file. Each version is called an archive. You can upload different versions at the same time and switch between these versions.
@@ -467,27 +507,28 @@ To view logs, open the **Logs** tab of the respective microservice.
 
 At the top of the page, you can select the instance of the microservice, for which you want to view the logs. 
 
-> **Info**: If your microservice was re-scaled into two instances you should be able to switch between them, but it is not possible to see the logs from both instances at once.
+>**Info**: If your microservice was re-scaled into two instances you should be able to switch between them, but it is not possible to see the logs from both instances at once.
 
 Next to the instance dropdown you can select the time range for the log entries to be shown by selecting a date from the calendar and entering a time.
 
-> **Info**: The time entered here may differ from the server time due to different time zones.
+>**Info**: Your local time may differ from the log´s timestamp which is in UTC standard.
 
 At the top right, additional functionality is provided:
 
 * **Download** - To download the log data for a specified time range.
-* **Theme** - To select a theme (dark or light).
+* **Dark theme** - To turn dark theme on or off.
+* **Auto refresh** - To activate the auto refresh functionality. If activated, the displayed log data will automatically be refreshed every 10 seconds.
 * **Unsubscribe** - To unsubscribe the microservice.
 * **Delete** - To delete the microservice.
 
 Initially, the **Logs** tab shows the latest logs of the microservice instance. 
 
-At the bottom right you find navigation buttons to 
+At the bottom right you find navigation buttons:
 
-* directly navigate to the oldest available log entries.
-* increase the time range in 10 minutes steps.
-* reduce the time range in 10 minutes steps.
-* directly navigate to the latest available log entries.
+* **First** - directly navigates to the oldest available log entries for the microservice after its restart (maximum capacity 350MB of logs).
+* **Previous** - increases the time range in 10 minutes steps.
+* **Next** - reduces the time range in 10 minutes steps.
+* **Last** - directly navigates to the latest available log entries.
   
 If no logs are available in the selected time range, a message is shown accordingly:
 

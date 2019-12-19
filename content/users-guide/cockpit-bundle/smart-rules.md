@@ -8,7 +8,7 @@ Cumulocity includes a rule engine to analyze data in realtime and to perform act
 
 To easily create rules, the Cockpit application includes a Smart Rules builder which allows you to create rules from templates (so-called smart rule templates).
 
->**Info:** Smart Rules are only visible, if the tenant is subscribed to the Smartrule application. To manage Smart Rules, the user has to have CREATE permission for Inventory and either Smartrule permission or CEP management permission.
+>**Info:** Smart Rules are only visible, if the tenant is subscribed to the Smartrule application. To manage Smart Rules, the user has to have CREATE permission for Inventory and either "Smartrule" permission or "CEP management" permission.
 
 Smart Rules are parameterized. There are two sources for parameters:
 
@@ -76,9 +76,9 @@ For details on the fields see [To create a Smart Rule](#create-rules).
 2. Modify at least the name.
 3. Click **Save & close** to save the Smart Rule and return to the Smart Rule list.
 
-### To remove a Smart Rule
+### To delete a Smart Rule
 
-Click the menu icon at the right of an entry and then click **Remove**.
+Click the menu icon at the right of an entry and then click **Delete**.
 
 ### To debug a Smart Rule
 

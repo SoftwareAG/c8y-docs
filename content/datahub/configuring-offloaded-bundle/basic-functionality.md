@@ -27,7 +27,7 @@ To define an offloading configuration, click **Offload collection** to select th
 * inventory
 * measurements
 
-In the case of the measurements base collection, you have to additionally specify the type of your Cumulocity device.
+In the case of the measurements base collection, you have to additionally specify the type of your Cumulocity measurements.
 
 Click **Confirm** to continue with the selected collection.
 

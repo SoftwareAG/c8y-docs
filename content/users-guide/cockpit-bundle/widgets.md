@@ -12,7 +12,7 @@ The following section describes, in alphabetical order, each available widget ty
 
 ### Alarm list
 
-The "Alarm list" widget shows a list of alarms, filtered by objects, alarm severity and alarm status. For details on the information provided for each alarm, refer to [Working with alarms](/guides/users-guide/device-management/#alarm-monitoring) in the Device Management section.
+The "Alarm list" widget shows a list of alarms, filtered by objects, alarm severity and alarm status. For details on the information provided for each alarm, refer to [Device Management > Working with alarms](/guides/users-guide/device-management/#alarm-monitoring).
 
 ![Alarm list widget](/guides/images/users-guide/cockpit/cockpit-widget-alarm-list.png)
 
@@ -105,12 +105,12 @@ Click **+Add Properties** and select one or more properties to be added.
 
 ![Reboot device button configuration](/guides/images/users-guide/cockpit/cockpit-widget-asset-table-buttonconfig.png)
 
->**Info:** The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For more details, refer to [shell commands](/guides/users-guide/device-management/#shell).<br>
+>**Info:** The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For more details, refer to [Device Management > Shell commands](/guides/users-guide/device-management/#shell).<br>
 You can also enter the JSON format for the operation that will be sent to the device. For details, contact the device vendor for supported operations.
 
 #### To modify the table
 
-To edit the header of a column, click on its value in the "Label" column and edit the label.
+To edit the header of a column, click on its value in the **Label** column and edit the label.
 
 You can rearrange the columns by clicking the icon at the very left of a row and dragging and dropping the entry.
 
@@ -135,8 +135,8 @@ The "Data point list" widget shows data points (measurements), one in each row, 
 |Field|Description|
 |:---|:---|
 |Title|Widget title. By default, the widget type is simply used as title.
-|Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Adding data points](#add-data-points).
-|Column visibility|Select which columns should be visible: <br>Label: Label of the data point. See [Visualizing data using the data explorer](#visualize) for details. <br>Target: Target value. Can be configured in the [data explorer](#visualize) or [Data Point Library](#library).<br>Current: Current value. <br>Diff: Absolute difference between current value and target value. <br>Diff %: Percentage of difference between current value and target value. <br>Asset: Name of the device or group of the data point. 
+|Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Data explorer > Adding data points](#add-data-points).
+|Column visibility|Select which columns should be visible: <br>**Label**: Label of the data point. See [Visualizing data using the data explorer](#visualize) for details. <br>**Target**: Target value. Can be configured in the [data explorer](#visualize) or [Data Point Library](#library).<br>Current: Current value. <br>**Diff**: Absolute difference between current value and target value. <br>**Diff %**: Percentage of difference between current value and target value. <br>**Asset**: Name of the device or group of the data point. 
 
 ### Data point table
 
@@ -170,7 +170,7 @@ The "Help and service" widget displays links to help and service resources. Ther
 
 ### Image
 
-The "Image" widget lets you display a single image to be selected from your computer by browsing. There are no additional parameters to be configured.
+The "Image" widget lets you display a single image to be selected from your file system by browsing. There are no additional parameters to be configured.
 
 ### Info Gauge
 
@@ -214,7 +214,7 @@ The "HTML" widget shows user-defined content. The content can be formatted using
 	* {{device.*fragment*.*property*}}: More general form of the above. You can address any property of any fragment of the device.
 
 "Device" refers to the target device, as selected in the widget configuration parameter.<br>
-"fragment.property" refers to the properties of the respective device. To see the available property names, you can use the "Asset property" or “Asset table” widget and click **+Add property** in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column “Property”. Generated properties of these widgets are not available in the HTML widgets.
+"fragment.property" refers to the properties of the respective device. To see the available property names, you can use the "Asset property" or “Asset table” widget and click **+Add property** in the widget configuration. This will show a table of supported properties. You can copy and paste the values from the column **Property**. Generated properties of these widgets are not available in the HTML widgets.
 
 ![HTML widget](/guides/images/users-guide/cockpit/cockpit-widget-html.png)
 
@@ -238,10 +238,10 @@ You can drag the map and move its content, and you can zoom in and out by using 
 
 The icons representing the devices are color-coded. The color used follows these rules:
 
-* Red = At least one critical alarm
-* Orange = At least one major alarm
-* Yellow = At least one minor alarm
-* Blue = At least one warning
+* Red = At least one CRITICAL alarm
+* Orange = At least one MAJOR alarm
+* Yellow = At least one MINOR alarm
+* Blue = At least one WARNING
 * Green = No alarm
 
 Click a device icon, to open popup with the following information:
@@ -270,7 +270,7 @@ The "Pie chart" widget displays data points (measurements) with current values i
 |:---|:---|
 |Title|Widget title. By default, the widget type is simply used as title.
 |Pie chart options|Select from the options to show tooltips, percentages, legends in the pie chart. 
-|Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Adding data points](#add-data-points).
+|Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Data explorer > Adding data points](#add-data-points).
 
 
 ### Quick links
@@ -326,7 +326,7 @@ The "SCADA" widget provides a graphic representation of the status of a device.
 
 For details on the "SCADA" widget, refer to [Optional Services > Cloud Fieldbus > Monitoring status using the SCADA widget](/guides/users-guide/optional-services/#scada).
 
-> **Info:** All "svg" files are sanitized in order to remove malicious code.
+> **Info:** All SVG files are sanitized in order to remove malicious code.
 
 ![SCADA widget](/guides/images/users-guide/cockpit/cockpit-widget-scada.png)
 
@@ -339,7 +339,7 @@ The "Silo" widget displays data points (measurements) with current values in a s
 |Field|Description|
 |:---|:---|
 |Title|Widget title. By default, the widget type is simply used as title.
-|Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Adding data points](#add-data-points).
+|Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Data explorer > Adding data points](#add-data-points).
 
 ### Traffic light
 

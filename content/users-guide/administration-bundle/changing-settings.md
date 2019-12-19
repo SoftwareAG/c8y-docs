@@ -23,11 +23,11 @@ This feature is enabled since Cumulocity version 9.12. For correct behavior any 
 
 Before switching to the single sign-on option it is mandatory that:
 
-* the authorization server you use supports OAuth2 authorization code grant
-* the access token is issued as JWT and you know what goes into the token content
-* the JWT must consist of a unique user identifier, "iss" (issuer), "aud" (audience) and "exp" (expiration time) fields
-* the Cumulocity platform is in version 9.12 but preferably higher
-* all microservices are build with Microservice Java SDK 9.12.6 but preferably higher
+* the authorization server you use supports OAuth2 authorization code grant.
+* the access token is issued as JWT and you know what goes into the token content.
+* the JWT must consist of a unique user identifier, "iss" (issuer), "aud" (audience) and "exp" (expiration time) fields.
+* the Cumulocity platform is in version 9.12 but preferably higher.
+* all microservices are build with Microservice Java SDK 9.12.6 but preferably higher.
 
 
 For Microservices custom built, refer to [General aspects > Security](guides/microservice-sdk/concept/#security) in the Microservice SDK guide.
@@ -81,7 +81,7 @@ Each time a user logs in, the content of the access token is verified and is a b
 }
 ```
 
-The user will be granted access to the global roles BUSINESS and APPLICATION COCKPIT. New rules can be added by clicking **Add access mapping** at the bottom. Click the Minus button to remove a rule. A statement can consist of multiple checks like in the image below. Yo can add a check to an existing statement by clicking **and**.
+The user will be granted access to the global roles "business" and "application cockpit". New rules can be added by clicking **Add access mapping** at the bottom. Click the Minus button to remove a rule. A statement can consist of multiple checks like in the image below. Yo can add a check to an existing statement by clicking **and**.
 
 When using "=" as operator you may use wildcards in the **Value** field. The supported wildcard is asterisk (\*) and it matches zero or more characters. For example, if you enter "cur\*" this matches "cur", "curiosity", "cursor" and anything that starts with “cur”. "f\*n" matches "fn", "fission", "falcon", and anything that begins with an "f" and ends with an "n".
 
@@ -131,7 +131,7 @@ Each access token is signed by a signing certificate. Currently there are three 
 
 The integration was successfully verified against Azure AD. The configuration steps are available in [https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code).
 
-While configuring your Azure AD, redirect_uri is your full domain address. For the purpose of this document we assume that it is http://aad.cumulocity.com. There are no additional steps on Azure AD required.
+While configuring your Azure AD, redirect_uri is your full domain address. For the purpose of this document we assume that it is *http://aad.cumulocity.com*. There are no additional steps on Azure AD required.
 
 ##### Cumulocity configuration
 
@@ -154,13 +154,11 @@ The second part of the panel is the same as for the "Custom" template, where acc
  ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-aad-2.png)
 
 
-
-
 ##### Troubleshooting
 
 It can be particularly helpful to inspect the content of the authorization token sent to the platform as some of its fields contain the information required for the correct configuration described above.
 
-In Administration application, after clicking on 'Accounts' > 'Audit logs' you can filter by the category 'Single sign-on' and look for entries 'Json web token claims'
+In Administration application, after clicking on **Accounts** > **Audit logs** you can filter by the category "Single sign-on" and look for entries "Json web token claims".
 
 The contexts of the token will be presented in JSON format.
 
@@ -184,7 +182,7 @@ The **Allowed Domain** setting will enable your JavaScript web applications to d
 * Set it to "*" to allow communication from any host.
 * Set it to "http://my.host.com, http://myother.host.com" to allow applications from http://my.host.com and from http://myother.host.com to communicate with the platform.
 
-For further information, see http://enable-cors.org.
+For further information, see [http://enable-cors.org](http://enable-cors.org).
 
 ### <a name="authentication"></a>Changing authentication settings
 
@@ -292,7 +290,7 @@ To enter OpenIT credentials, click **OpenIT credentials** in the **Settings** me
 
 ![Enter OpenIT credentials](/guides/images/users-guide/Administration/admin-settings-openit.png)
 
-By providing OPenIT credentials you enable the platform to utilize SMS services provided by [Openit](https://sms.openit.de/main.php).
+By providing OPenIT credentials you enable the platform to utilize SMS services provided by [OpenIt](https://sms.openit.de/main.php).
 
 SMS are used throughout the application for various features like [two-factors authentication](/guides/users-guide/administration#tfa) and user notifications, i.e. on alarms.
 

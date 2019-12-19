@@ -35,7 +35,7 @@ In the management tenant, you will also find information on the parent tenant, i
 
 1. Click **Create tenant** at the right of the top menu bar.
 <br>![Create subtenant](/guides/images/users-guide/Administration/admin-subtenant-create.png)<br>
-1. Provide the following properties:
+2. Provide the following properties:
 
 	<table>
 <col width = 150>
@@ -48,7 +48,7 @@ In the management tenant, you will also find information on the parent tenant, i
 <tbody>
 <tr>
 <td style="text-align:left">Domain/ URL</td>
-<td style="text-align:left">Enter a subdomain of your choice, for example "acme". The tenant's URL will be "acme.cumulocity.com" on cumulocity.com. You can only use one subdomain level. For example, you can only use "acme.cumulocity.com" on cumulocity.com. You cannot use "mycustomer.acme.cumulocity.com". This is not permitted by the TLS standard. </td>
+<td style="text-align:left">Enter a subdomain of your choice, for example "acme". The tenant's URL will be "acme.cumulocity.com" on cumulocity.com. You can only use one subdomain level. For example, you can only use "acme.cumulocity.com" on cumulocity.com. You cannot use "mycustomer.acme.cumulocity.com". This is not permitted by the TLS standard. <br> The tenant domain may contain lowercase letters, digits or hyphens. It must start with a letter; hyphens are only allowed in the middle; minimum is 2 characters. Note that the usage of underscore characters is deprecated but still possible for backward compatibility reasons.  </td>
 </tr>
 <tr>
 <td style="text-align:left">Name</td>
@@ -81,9 +81,7 @@ In the management tenant, you will also find information on the parent tenant, i
 </tbody>
 </table>
 
-	Note, that fields with an asterisk * are mandatory.
-
-1. Click **Save** to apply your settings.
+3. Click **Save** to apply your settings.
 
 When the subtenant is created, it gets an auto-generated ID, which cannot be changed. Also, it is automatically provisioned with a first, administrative user ("Administrator's username"). This administrator can create other users and set their permissions. The first user cannot be deleted to prevent you from locking yourself out.
 
@@ -148,7 +146,7 @@ As part of suspending the tenant, an email is sent to the tenant administrator i
 
 #### To delete a subtenant
 
-Click the menu icon at the right of the respective subtenant entry and then click **Remove** to finally delete a tenant and remove all the data of the tenant.
+Click the menu icon at the right of the respective subtenant entry and then click **Delete** to finally delete a tenant and remove all the data of the tenant.
 
 
 ### <a name="subscribe"></a>Applications
@@ -277,9 +275,9 @@ The microservice usage feature gathers information on the resource usage per sub
 
 Cumulocity offers two billing modes:
 
-* **Subscription-based billing**: Charges a constant price when a tenant is subscribed to a microservice while resource usage is assigned to the owner
+* **Subscription-based billing**: Charges a constant price when a tenant is subscribed to a microservice while resource usage is assigned to the owner.
 
-* **Resource-based billing**: Exposes the number of resources used by a microservice to calculate billing
+* **Resource-based billing**: Exposes the number of resources used by a microservice to calculate billing.
 
 The billing modes are specified per microservice in the [microservice manifest](/guides/reference/microservice-manifest) and are set in the field "billingMode".
 

@@ -6,9 +6,9 @@ layout: redirect
 
 The Data Point Library provides a collection of data points with default values for data point properties. 
 
-Data point properties are similar to "paragraph formats" in word processing applications: You do not want to format each paragraph individually. Instead you want to define a set of default formats and apply them to your paragraphs in your document. 
+Data point properties are similar to paragraph formats in word processing applications. You do not want to format each paragraph individually. Instead you want to define a set of default formats and apply them to your paragraphs in your document. 
 
-The Data Point Library provides the same functionality for data points: It provides a number of default data point "templates" that can be applied easily to your data points from different devices.
+The Data Point Library provides the same functionality for data points. It provides a number of default data point templates that can be applied easily to your data points from different devices.
 
 How does the Cockpit application use the Data Point Library? To find the default visualization for a data point like color or label, Cockpit searches the Data Point Library and tries to find a matching entry. An entry is considered as "matching", if the values for fragment and series in the Data Point Library match those of the measurement. If a matching entry is found, the corresponding data point properties are used for a default visualization.
 
@@ -50,6 +50,6 @@ A list of available data points will be opened. For each data point, the followi
 Simply click the respective entry in the list or click the menu icon at the right of an entry and then click **Edit**.
 
 
-### To remove a data point
+### To delete a data point
 
-Click the menu icon at the right of an entry and then click **Remove**.
+Click the menu icon at the right of an entry and then click **Delete**.

@@ -32,7 +32,7 @@ The rule uses the following parameters:
 |:---|:---|:---|
 |1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
 |2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
-|3|Send SMS:|"Phone number": Target phone number. It is recommended to include mobile country code for all numbers, e.g. "+49" or "0049" for Germany. Multiple numbers can be separated by a comma (",", do not use a space!).<br> "Message": Text of SMS with max. 160 characters. You can use variables of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+|3|Send SMS:|**Phone number**: Target phone number. It is recommended to include mobile country code for all numbers, e.g. "+49" or "0049" for Germany. Multiple numbers can be separated by a comma (",", do not use a space!).<br> **Message**: Text of SMS with max. 160 characters. You can use variables of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
 |4|Target asset or devices|Groups or devices the rule shall be applied to.
 
 **Troubleshooting**
@@ -61,7 +61,7 @@ The rule uses the following parameters:
 |:---|:---|:---|
 |1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
 |2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
-|3|Send e-mail:|"Send to:/Send CC to:/Send BCC to": Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (",", do not use a space!).<br>"Reply to": Address to be used to reply to the message.<br> "Subject": Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.<br> "Message": Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+|3|Send e-mail:|**Send to:/Send CC to:/Send BCC to**: Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (",", do not use a space!).<br>**Reply to**: Address to be used to reply to the message.<br> **Subject**: Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.<br> **Message**: Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
 |4|Target asset or devices|Groups or devices the rule shall be applied to.
 
 **Troubleshooting**
@@ -90,7 +90,7 @@ The rule uses the following parameters:
 |:---|:---|:---|
 |1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
 |2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
-|3|Escalate as follows:|Escalation steps processed in a chain. <br> Click **Add step** to define at least one step: <br> **Type**: Type of action executed in the step. Possible values are: <br> * Email (see "On alarm send e-mail" rule for parameter descriptions). <br> * SMS (see "On alarm send SMS" rule for parameter descriptions). <br> **Condition**: The condition applied when the rule will be executed. Possible values are: <br> * Always: Action will always be executed. <br> * Always: If step N failed. Only phone steps may fail. The step is marked as failed once all retries have been made without a successful call. This option only appears if there already is a phone step configured that can be referred to.
+|3|Escalate as follows:|Escalation steps processed in a chain. <br> Click **Add step** to define at least one step: <br> **Type**: Type of action executed in the step. Possible values are: <br> - Email (see "On alarm send e-mail" rule for parameter descriptions). <br> - SMS (see "On alarm send SMS" rule for parameter descriptions). <br> **Condition**: The condition applied when the rule will be executed. Possible values are: <br> - Always: Action will always be executed. <br> - Always: If step N failed. Only phone steps may fail. The step is marked as failed once all retries have been made without a successful call. This option only appears if there already is a phone step configured that can be referred to.
 |4|Target asset or devices|Groups or devices the rule shall be applied to.
 
 

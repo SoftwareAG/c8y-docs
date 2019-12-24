@@ -292,6 +292,7 @@ The kubernetes_logs.zip file contains the logs of all the Kubernetes platform co
 * kube-scheduler-server
 
 The hosted microservices are captured at “*cumulocity-single-node*” path in the archive. The pre-installed component **kube-registry-persistent-secure-789fb5449d-j2jbx** is already available in the archive. The logs of any additional microservices that are uploaded will also be available at this path.
+
 >**Info**: The alpha numeric sequences in these pod names are for representational purposes and would vary in your environment.
 
 

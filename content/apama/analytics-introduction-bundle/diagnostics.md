@@ -4,9 +4,11 @@ title: Viewing diagnostics information
 layout: redirect
 ---
 
-If a user has READ permissions for "CEP management", then a link for downloading diagnostics information is available in both the Apama EPL Apps and Apama Analytics Builder web applications. This link is shown at the bottom of the web application's starting page (that is, in the EPL application manager and in the model manager). 
+If a user has READ permissions for "CEP management", then two links for downloading diagnostics information are available in both the Apama EPL Apps and Apama Analytics Builder web applications: one for downloading basic diagnostics information and another one for downloading enhanced (more expensive) diagnostics information. These links are shown at the bottom of the web application's starting page (that is, in the EPL application manager and in the model manager). 
 
-The diagnostics information is provided as a zip file (named *diagnostic-overview&lt;timestamp&gt;.zip*), and includes the following information (this should be typically a few Megabytes, and be generated in about 5 seconds):
+It may be useful to capture this diagnostics information when experiencing  problems, or for debugging EPL applications. It is also useful to  provide to support if you are filing a support ticket. 
+
+Basic diagnostics information is provided in a zip file named *diagnostic-overview&lt;timestamp&gt;.zip* and includes the following information (this should be typically a few Megabytes, and be generated in about 5 seconds):
 
 - The microservice log file contents, if available, including a record of the correlator's startup logging and the last hour or maximum of 20,000 lines of logging (this may require the "microservice hosting feature" in the subscribed applications).
 - Apama-internal diagnostics information (similar to the `engine_watch` and `engine_inspect` command-line tools available in Apama).
@@ -16,7 +18,10 @@ The diagnostics information is provided as a zip file (named *diagnostic-overvie
 - Some information from the environment (tenant details, environment variables).
 - Version numbers of the components.
 
-It may be useful to capture this diagnostics information when experiencing  problems, or for debugging EPL applications. It is also useful to  provide to support if you are filing a support ticket. 
+Enhanced diagnostics information is provided in a zip file named *diagnostic-enhanced&lt;timestamp&gt;.zip* and includes the following information:
+
+- Contains what is in the above-mentioned *diagnostic-overview&lt;timestamp&gt;.zip* file. 
+- In addition, it includes requests that are more expensive and may significantly slow down the correlator, including EPL memory profiler snapshots and contents of queues. 
 
 The following endpoints are also available for REST requests. These require authentication as a user with READ permissions for "CEP management": 
 
@@ -28,7 +33,7 @@ The following endpoints are also available for REST requests. These require auth
     Obtains the *diagnostic-overview&lt;timestamp&gt;.zip* file as described above. 
 - `/service/cep/diagnostics/enhanced`  
     GET only. Zip file download.  
-    Obtains the *diagnostic-enhanced&lt;timestamp&gt;.zip* file. Contains what is in the above-mentioned *diagnostic-overview&lt;timestamp&gt;.zip* file. In addition, it includes requests that are more expensive and may significantly slow down the correlator, including EPL memory profiler snapshots and contents of queues. 
+    Obtains the *diagnostic-enhanced&lt;timestamp&gt;.zip* file as described above. 
 - `/service/cep/diagnostics/request`  
     PUT only. JSON.  
     Gives access to generic management requests against the correlator. For details, see "Shutting down and  managing components" in the Apama documentation.

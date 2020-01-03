@@ -61,6 +61,8 @@ Using the buttons in the top menu bar, you can undo/redo your last changes in th
 
 It is also possible to change the mode from **Inactive** to **Active** (or vice versa) in the EPL editor. Again, when there is an error in your EPL code, it is not possible to activate the application. The errors are highlighted within the code.
 
+Keep the following in mind while creating (or importing) an EPL application: When an EPL application is activated, it is possible that some EPL operations are performed that are not allowed for the user who created the application. For example, you may only have **CEP Manager** permissions for injecting EPL and creating  Analytics Builder models. However, when the application is activated, it is also possible that the injected EPL can create or clear an alarm and that an Analytics Builder model can create an operation.
+
 > **Side note:** Be aware that the EPL editor makes use of a standard web component. It provides many generic developer functions, some of which are not relevant to EPL, including but not limited to Quick Fix and Show Hover.
 
 Click **X** in the top menu bar to leave the EPL editor and thus to return to the list of EPL applications.

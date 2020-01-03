@@ -11,7 +11,7 @@ Operations for timeseries data/model.
 |Name|Type|Description|
 |:-----|:-----|:-----|
 |series|array|The time series data specified as an array of values from multiple observations.|
-|observationInterval|TimePeriod|the time interval between two observations|
+|observationInterval|TimePeriod|The time interval between two observations|
 |startDate|DateTime|The timestamp of the first observation in UTC format|
 |seasonality|TimePeriod|Optional parameter to specify the seasonality in the data, if present.|
 

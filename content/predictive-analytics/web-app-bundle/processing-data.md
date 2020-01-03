@@ -82,6 +82,11 @@ To schedule a new job, perform the following steps:
 
 After the job is scheduled, you will see a corresponding notification.
 
+Note that in case if there are too many jobs scheduled, then, over time the underlying MongoDB of a tenant might become over populated with execution data from these jobs. 
+Hence it is recommeneded to have a retention rule in place to clear off data which is too old. <br>
+In order to do so, create a retention rule for Events containing `ZementisExecution` in its `type` property. This rule would not remove the jobs themselves and only the data from the execution of the jobs.
+For details on adding retention rules, see [To add a retention rule](/guides/users-guide/administration/#add-retention-rule). 
+
 #### Viewing the scheduled jobs
 
 ![Scheduled Jobs](/guides/images/zementis/zementis-scheduled-jobs.png)

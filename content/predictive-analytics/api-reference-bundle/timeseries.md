@@ -18,7 +18,7 @@ Operations for timeseries data/model.
 #### TimePeriod
 |Name|Type|Description|
 |:-----|:-----|:-----|
-|timeUnit|ChronoUnit|The value has to be a valid ChronoUnit – “SECONDS”, “MINUTES”, “HOURS”, “DAYS”, “MONTHS”, “YEARS” etc.|
+|timeUnit|ChronoUnit|The value has to be a valid [ChronoUnit](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/ChronoUnit.html) – “SECONDS”, “MINUTES”, “HOURS”, “DAYS”, “MONTHS”, “YEARS” etc.|
 |periodLength|Number|Number to mention the length of the period.|
 
 
@@ -126,7 +126,7 @@ curl --request POST “{{url}}/service/zementis/timeseries” --header “Author
        "timeUnit": "MONTHS",
        "periodLength": 1
     },
-    "startDate": "2019-01-01T00:00:00+05:30",
+    "startDate": "2019-01-01T00:00:00+05:3012",
     "seasonality": {
         "timeUnit": "YEARS",
         "periodLength": 1
@@ -193,7 +193,7 @@ curl --request POST “{{url}}/service/zementis/timeseries” --header “Author
        "timeUnit": "MONTHS",
        "periodLength": 1
     },
-    "startDate": 2019-01-01T00:00:00+05:30",
+    "startDate": "2019-01-01T00:00:00+05:30",
     "seasonality": {
         "timeUnit": "YEARS",
         "periodLength": 1
@@ -220,7 +220,8 @@ curl --request POST “{{url}}/service/zementis/timeseries” --header “Author
 {{url}}/service/zementis/timeseries
 ```
 
-Get the generation status of a timeseries model. 
+Get the status of generation of a specific timeseries model. The status could be either IN_PROGRESS, SUCCESS or FAILURE.<br>
+If FAILURE, the `errorMessage` attribute in the response would hold the reason for failure.
 
 |HEADERS||
 |:---|:---|
@@ -295,7 +296,7 @@ curl --request GET “{{url}}/service/zementis/timeseries/dummy/status” --head
 ```
 500 – Internal Server Error
 
-curl --request GET “{{url}}/service/zementis/timeseries/dummy/status” --header “Authorization: {{auth}}”
+curl --request GET “{{url}}/service/zementis/timeseries/TimeSeries_11-11-2019_11-22-33/status” --header “Authorization: {{auth}}”
 ```
 
 **Example Response**

@@ -6,7 +6,7 @@ layout: redirect
 
 If a user has READ permission for "CEP management", then two links for downloading diagnostics information are available in both the Apama EPL Apps and Apama Analytics Builder web applications: one for downloading basic diagnostics information and another one for downloading enhanced (more expensive) diagnostics information. These links are shown at the bottom of the web application's starting page (that is, in the EPL application manager and in the model manager). 
 
-It may be useful to capture this diagnostics information when experiencing  problems, or for debugging EPL applications. It is also useful to  provide to support if you are filing a support ticket. 
+It may be useful to capture this diagnostics information when experiencing problems, or for debugging EPL applications. It is also useful to provide to support if you are filing a support ticket. 
 
 Basic diagnostics information is provided in a ZIP file named *diagnostic-overview&lt;timestamp&gt;.zip* and includes the following information (this should be typically a few Megabytes, and be generated in about 5 seconds):
 
@@ -36,7 +36,7 @@ The following endpoints are also available for REST requests. These require auth
     Obtains the *diagnostic-enhanced&lt;timestamp&gt;.zip* file as described above. 
 - `/service/cep/diagnostics/request`  
     PUT only. JSON.  
-    Gives access to generic management requests against the correlator. For details, see "Shutting down and  managing components" in the Apama documentation.
+    Gives access to generic management requests against the correlator. For details, see "Shutting down and managing components" in the Apama documentation.
 - `/service/cep/diagnostics/correlator/info`  
     GET only. JSON.  
     Obtains the `engine_inspect` information.

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "aa84bed6-9015-493b-9cb9-b9a6fadfd419",
+		"_postman_id": "bfde8aa2-e316-4d22-9931-cf6a1ef11445",
 		"name": "Zementis Microservice API",
 		"description": "Environment variables for this Postman Collection:\n\nurl = the IP adress/domain of your cumulocity server\nauth = your base64 encoded tenant/username:password or username:password",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -34,6 +34,30 @@
 						"description": "This operation retrieves the model names of all the available PMML models in Zementis Server."
 					},
 					"response": [
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/service/zementis/models",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"models"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"error\": \"general/internalError\",\n    \"message\": \"Not authorized!\",\n    \"info\": \"https://www.cumulocity.com/guides/reference-guide/#error_reporting\"\n}"
+						},
 						{
 							"name": "200 OK",
 							"originalRequest": {
@@ -120,30 +144,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"models\": [\n        \"Iris_ME_Classification\",\n        \"Iris_NN\"\n    ]\n}"
-						},
-						{
-							"name": "401 Unauthorized",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{url}}/service/zementis/models",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"service",
-										"zementis",
-										"models"
-									]
-								}
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "json",
-							"header": [],
-							"cookie": [],
-							"body": "{\n    \"error\": \"general/internalError\",\n    \"message\": \"Not authorized!\",\n    \"info\": \"https://www.cumulocity.com/guides/reference-guide/#error_reporting\"\n}"
 						}
 					]
 				},
@@ -550,6 +550,38 @@
 					},
 					"response": [
 						{
+							"name": "404 Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{auth}}"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/service/zementis/model/dummy/serialized",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"model",
+										"dummy",
+										"serialized"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\r\n  \"errors\": [\r\n    \"Model 'dummy' not found.\"\r\n  ]\r\n}"
+						},
+						{
 							"name": "200 OK",
 							"originalRequest": {
 								"method": "GET",
@@ -637,38 +669,6 @@
 							],
 							"cookie": [],
 							"body": "Binary file"
-						},
-						{
-							"name": "404 Not Found",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "{{auth}}"
-									}
-								],
-								"url": {
-									"raw": "{{url}}/service/zementis/model/dummy/serialized",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"service",
-										"zementis",
-										"model",
-										"dummy",
-										"serialized"
-									]
-								}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": "json",
-							"header": [],
-							"cookie": [],
-							"body": "{\r\n  \"errors\": [\r\n    \"Model 'dummy' not found.\"\r\n  ]\r\n}"
 						},
 						{
 							"name": "401 Unauthorized",
@@ -896,7 +896,7 @@
 							]
 						},
 						"url": {
-							"raw": "{{url}}/service/zementis/model",
+							"raw": "{{url}}/service/zementis/model?",
 							"host": [
 								"{{url}}"
 							],
@@ -917,55 +917,6 @@
 						"description": "Upload new PMML model."
 					},
 					"response": [
-						{
-							"name": "409 Conflict",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{auth}}"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "file",
-											"value": "",
-											"description": "(file) PMML file.",
-											"type": "file"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/service/zementis/model",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"service",
-										"zementis",
-										"model"
-									],
-									"query": [
-										{
-											"key": "applyCleanser",
-											"value": "{{applyCleanser}}",
-											"description": "(boolean) Enable cleanser on the PMML, default=true",
-											"disabled": true
-										}
-									]
-								},
-								"description": "Upload new PMML model."
-							},
-							"status": "Conflict",
-							"code": 409,
-							"_postman_previewlanguage": "json",
-							"header": [],
-							"cookie": [],
-							"body": "{\n    \"errors\": [\n        \"A model with the name 'Iris_KM' already exists.\"\n    ]\n}"
-						},
 						{
 							"name": "401 Unauthorized",
 							"originalRequest": {
@@ -988,7 +939,7 @@
 									]
 								},
 								"url": {
-									"raw": "{{url}}/service/zementis/model",
+									"raw": "{{url}}/service/zementis/model?",
 									"host": [
 										"{{url}}"
 									],
@@ -1014,6 +965,104 @@
 							"header": [],
 							"cookie": [],
 							"body": "{\r\n    \"error\": \"general/internalError\",\r\n    \"message\": \"Not authorized!\",\r\n    \"info\": \"https://www.cumulocity.com/guides/reference-guide/#error_reporting\"\r\n}"
+						},
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"value": "",
+											"description": "(file) PMML file.",
+											"type": "file"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/service/zementis/model?",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"model"
+									],
+									"query": [
+										{
+											"key": "applyCleanser",
+											"value": "{{applyCleanser}}",
+											"description": "(boolean) Enable cleanser on the PMML, default=true",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Upload new PMML model."
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        \"Invalid XML format.\"\n    ]\n}"
+						},
+						{
+							"name": "409 Conflict",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"value": "",
+											"description": "(file) PMML file.",
+											"type": "file"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/service/zementis/model?",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"model"
+									],
+									"query": [
+										{
+											"key": "applyCleanser",
+											"value": "{{applyCleanser}}",
+											"description": "(boolean) Enable cleanser on the PMML, default=true",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Upload new PMML model."
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        \"A model with the name 'Iris_KM' already exists.\"\n    ]\n}"
 						},
 						{
 							"name": "201 Created",
@@ -1062,55 +1111,6 @@
 							"header": [],
 							"cookie": [],
 							"body": "{\n    \"modelName\": \"Iris_KM\",\n    \"description\": \"K-means Cluster Model using normalized Iris dataset\",\n    \"creationDate\": \"Feb 26, 2009\",\n    \"isActive\": true,\n    \"inputFields\": [\n        {\n            \"usage\": \"ACTIVE\",\n            \"name\": \"SEPAL_LE\",\n            \"type\": \"DOUBLE\"\n        },\n        {\n            \"usage\": \"ACTIVE\",\n            \"name\": \"SEPAL_WI\",\n            \"type\": \"DOUBLE\"\n        },\n        {\n            \"usage\": \"ACTIVE\",\n            \"name\": \"PETAL_LE\",\n            \"type\": \"DOUBLE\"\n        },\n        {\n            \"usage\": \"ACTIVE\",\n            \"name\": \"PETAL_WI\",\n            \"type\": \"DOUBLE\"\n        }\n    ],\n    \"outputFields\": [\n        {\n            \"usage\": \"OUTPUT\",\n            \"name\": \"predictedValue_CLASS\",\n            \"type\": \"STRING\"\n        },\n        {\n            \"usage\": \"OUTPUT\",\n            \"name\": \"Cluster ID\",\n            \"type\": \"STRING\"\n        },\n        {\n            \"usage\": \"OUTPUT\",\n            \"name\": \"Cluster Affinity for predicted\",\n            \"type\": \"DOUBLE\"\n        },\n        {\n            \"usage\": \"OUTPUT\",\n            \"name\": \"Cluster Affinity for setosa\",\n            \"type\": \"DOUBLE\"\n        },\n        {\n            \"usage\": \"OUTPUT\",\n            \"name\": \"Cluster Affinity for versic\",\n            \"type\": \"DOUBLE\"\n        },\n        {\n            \"usage\": \"OUTPUT\",\n            \"name\": \"Cluster Affinity for virgin\",\n            \"type\": \"DOUBLE\"\n        }\n    ]\n}"
-						},
-						{
-							"name": "400 Bad Request",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{auth}}"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "file",
-											"value": "",
-											"description": "(file) PMML file.",
-											"type": "file"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/service/zementis/model",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"service",
-										"zementis",
-										"model"
-									],
-									"query": [
-										{
-											"key": "applyCleanser",
-											"value": "{{applyCleanser}}",
-											"description": "(boolean) Enable cleanser on the PMML, default=true",
-											"disabled": true
-										}
-									]
-								},
-								"description": "Upload new PMML model."
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "json",
-							"header": [],
-							"cookie": [],
-							"body": "{\n    \"errors\": [\n        \"Invalid XML format.\"\n    ]\n}"
 						},
 						{
 							"name": "200 OK",
@@ -1246,6 +1246,42 @@
 						"description": "Activates the model with name modelName if it was inactive."
 					},
 					"response": [
+						{
+							"name": "404 Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{auth}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/service/zementis/model/dummy/activate",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"model",
+										"dummy",
+										"activate"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        \"Model 'dummy' not found.\"\n    ]\n}"
+						},
 						{
 							"name": "401 Unauthorized",
 							"originalRequest": {
@@ -1430,42 +1466,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"modelName\": \"Iris_KM\",\n    \"description\": \"K-means Cluster Model using normalized Iris dataset\",\n    \"creationDate\": \"Feb 26, 2009\",\n    \"isActive\": true,\n    \"inputFields\": [\n        {\n            \"usage\": \"ACTIVE\",\n            \"name\": \"SEPAL_LE\",\n            \"type\": \"DOUBLE\"\n        },\n        {\n            \"usage\": \"ACTIVE\",\n            \"name\": \"SEPAL_WI\",\n            \"type\": \"DOUBLE\"\n        },\n        {\n            \"usage\": \"ACTIVE\",\n            \"name\": \"PETAL_LE\",\n            \"type\": \"DOUBLE\"\n        },\n        {\n            \"usage\": \"ACTIVE\",\n            \"name\": \"PETAL_WI\",\n            \"type\": \"DOUBLE\"\n        }\n    ],\n    \"outputFields\": [\n        {\n            \"usage\": \"OUTPUT\",\n            \"name\": \"predictedValue_CLASS\",\n            \"type\": \"STRING\"\n        },\n        {\n            \"usage\": \"OUTPUT\",\n            \"name\": \"Cluster ID\",\n            \"type\": \"STRING\"\n        },\n        {\n            \"usage\": \"OUTPUT\",\n            \"name\": \"Cluster Affinity for predicted\",\n            \"type\": \"DOUBLE\"\n        },\n        {\n            \"usage\": \"OUTPUT\",\n            \"name\": \"Cluster Affinity for setosa\",\n            \"type\": \"DOUBLE\"\n        },\n        {\n            \"usage\": \"OUTPUT\",\n            \"name\": \"Cluster Affinity for versic\",\n            \"type\": \"DOUBLE\"\n        },\n        {\n            \"usage\": \"OUTPUT\",\n            \"name\": \"Cluster Affinity for virgin\",\n            \"type\": \"DOUBLE\"\n        }\n    ]\n}"
-						},
-						{
-							"name": "404 Not Found",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "{{auth}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{url}}/service/zementis/model/dummy/activate",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"service",
-										"zementis",
-										"model",
-										"dummy",
-										"activate"
-									]
-								}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": "json",
-							"header": [],
-							"cookie": [],
-							"body": "{\n    \"errors\": [\n        \"Model 'dummy' not found.\"\n    ]\n}"
 						}
 					]
 				},
@@ -1500,134 +1500,6 @@
 						"description": "De-activates the model with name modelName by making it inactive."
 					},
 					"response": [
-						{
-							"name": "401 Unauthorized",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{auth}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{url}}/service/zementis/model/Iris_KM/deactivate",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"service",
-										"zementis",
-										"model",
-										"Iris_KM",
-										"deactivate"
-									]
-								}
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "openresty"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 03 Apr 2019 13:47:10 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "X-Application-Context",
-									"value": "application:80"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\r\n    \"error\": \"general/internalError\",\r\n    \"message\": \"Not authorized!\",\r\n    \"info\": \"https://www.cumulocity.com/guides/reference-guide/#error_reporting\"\r\n}"
-						},
-						{
-							"name": "404 Not Found",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "{{auth}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{url}}/service/zementis/model/dummy/deactivate",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"service",
-										"zementis",
-										"model",
-										"dummy",
-										"deactivate"
-									]
-								}
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": "json",
-							"header": [],
-							"cookie": [],
-							"body": "{\n    \"errors\": [\n        \"Model 'dummy' not found.\"\n    ]\n}"
-						},
 						{
 							"name": "200 OK",
 							"originalRequest": {
@@ -1720,6 +1592,134 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"modelName\": \"Iris_KM\",\n    \"description\": \"K-means Cluster Model using normalized Iris dataset\",\n    \"creationDate\": \"Feb 26, 2009\",\n    \"isActive\": false,\n    \"inputFields\": [\n        {\n            \"usage\": \"ACTIVE\",\n            \"name\": \"SEPAL_LE\",\n            \"type\": \"DOUBLE\"\n        },\n        {\n            \"usage\": \"ACTIVE\",\n            \"name\": \"SEPAL_WI\",\n            \"type\": \"DOUBLE\"\n        },\n        {\n            \"usage\": \"ACTIVE\",\n            \"name\": \"PETAL_LE\",\n            \"type\": \"DOUBLE\"\n        },\n        {\n            \"usage\": \"ACTIVE\",\n            \"name\": \"PETAL_WI\",\n            \"type\": \"DOUBLE\"\n        }\n    ],\n    \"outputFields\": [\n        {\n            \"usage\": \"OUTPUT\",\n            \"name\": \"predictedValue_CLASS\",\n            \"type\": \"STRING\"\n        },\n        {\n            \"usage\": \"OUTPUT\",\n            \"name\": \"Cluster ID\",\n            \"type\": \"STRING\"\n        },\n        {\n            \"usage\": \"OUTPUT\",\n            \"name\": \"Cluster Affinity for predicted\",\n            \"type\": \"DOUBLE\"\n        },\n        {\n            \"usage\": \"OUTPUT\",\n            \"name\": \"Cluster Affinity for setosa\",\n            \"type\": \"DOUBLE\"\n        },\n        {\n            \"usage\": \"OUTPUT\",\n            \"name\": \"Cluster Affinity for versic\",\n            \"type\": \"DOUBLE\"\n        },\n        {\n            \"usage\": \"OUTPUT\",\n            \"name\": \"Cluster Affinity for virgin\",\n            \"type\": \"DOUBLE\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "404 Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{auth}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/service/zementis/model/dummy/deactivate",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"model",
+										"dummy",
+										"deactivate"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        \"Model 'dummy' not found.\"\n    ]\n}"
+						},
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/service/zementis/model/Iris_KM/deactivate",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"model",
+										"Iris_KM",
+										"deactivate"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "openresty"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Apr 2019 13:47:10 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:80"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"error\": \"general/internalError\",\r\n    \"message\": \"Not authorized!\",\r\n    \"info\": \"https://www.cumulocity.com/guides/reference-guide/#error_reporting\"\r\n}"
 						}
 					]
 				},
@@ -1753,41 +1753,6 @@
 						"description": "Remove the specified model and list the remaining models. "
 					},
 					"response": [
-						{
-							"name": "404 Not Found",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{auth}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{url}}/service/zementis/model/{{model_name}}",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"service",
-										"zementis",
-										"model",
-										"{{model_name}}"
-									]
-								},
-								"description": "Remove the specified model and list the remaining models. "
-							},
-							"code": 404,
-							"_postman_previewlanguage": "json",
-							"header": [],
-							"cookie": [],
-							"body": "{\r\n  \"errors\": [\r\n    \"Model 'dummy' not found.\"\r\n  ]\r\n}"
-						},
 						{
 							"name": "401 Unauthorized",
 							"originalRequest": {
@@ -1915,6 +1880,41 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"models\": [\n        \"Iris_ME_Classification\",\n        \"Iris_NN\"\n    ]\n}"
+						},
+						{
+							"name": "404 Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/service/zementis/model/{{model_name}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"model",
+										"{{model_name}}"
+									]
+								},
+								"description": "Remove the specified model and list the remaining models. "
+							},
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\r\n  \"errors\": [\r\n    \"Model 'dummy' not found.\"\r\n  ]\r\n}"
 						}
 					]
 				},
@@ -1947,41 +1947,6 @@
 						"description": "Remove all available models and list the remaining models. "
 					},
 					"response": [
-						{
-							"name": "401 Unauthorized",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{auth}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{url}}/service/zementis/models",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"service",
-										"zementis",
-										"models"
-									]
-								},
-								"description": "Remove all available models and list the remaining models. "
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "json",
-							"header": [],
-							"cookie": [],
-							"body": "{\r\n    \"error\": \"general/internalError\",\r\n    \"message\": \"Not authorized!\",\r\n    \"info\": \"https://www.cumulocity.com/guides/reference-guide/#error_reporting\"\r\n}"
-						},
 						{
 							"name": "200 OK",
 							"originalRequest": {
@@ -2072,11 +2037,47 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"models\": []\n}"
+						},
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/service/zementis/models",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"models"
+									]
+								},
+								"description": "Remove all available models and list the remaining models. "
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\r\n    \"error\": \"general/internalError\",\r\n    \"message\": \"Not authorized!\",\r\n    \"info\": \"https://www.cumulocity.com/guides/reference-guide/#error_reporting\"\r\n}"
 						}
 					]
 				}
 			],
-			"description": "Operations on predictive analytics models.\t"
+			"description": "Operations on predictive analytics models.\t",
+			"protocolProfileBehavior": []
 		},
 		{
 			"name": "Prediction",
@@ -2443,46 +2444,6 @@
 							"body": "{\r\n    \"error\": \"general/internalError\",\r\n    \"message\": \"Not authorized!\",\r\n    \"info\": \"https://www.cumulocity.com/guides/reference-guide/#error_reporting\"\r\n}"
 						},
 						{
-							"name": "404 Not Found",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{auth}}",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{url}}/service/zementis/apply/{{model_name}}/explain?record={{record}}",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"service",
-										"zementis",
-										"apply",
-										"{{model_name}}",
-										"explain"
-									],
-									"query": [
-										{
-											"key": "record",
-											"value": "{{record}}",
-											"description": "(string)  JSON Record - a map of model input fields and their respective values."
-										}
-									]
-								},
-								"description": "Apply model to a single JSON input record and get the result with details of the performed computation in plain text."
-							},
-							"status": "Not Found",
-							"code": 404,
-							"_postman_previewlanguage": "json",
-							"header": [],
-							"cookie": [],
-							"body": "{\r\n  \"errors\": [\r\n    \"Model 'dummy' not found.\"\r\n  ]\r\n}"
-						},
-						{
 							"name": "200 OK",
 							"originalRequest": {
 								"method": "GET",
@@ -2577,6 +2538,46 @@
 							],
 							"cookie": [],
 							"body": "[petal_length] := 1.4 (DOUBLE)\n[petal_width] := 0.2 (DOUBLE)\n[sepal_length] := 5.1 (DOUBLE)\n[sepal_width] := 3.5 (DOUBLE)\n\n[MiningSchema]\n[petal_length] := 1.4 (DOUBLE)\n[petal_width] := 0.2 (DOUBLE)\n[sepal_length] := 5.1 (DOUBLE)\n[sepal_width] := 3.5 (DOUBLE)\n\n\n[ModelEnsemble]\n\nProcess segment model [1]:\nThe predicate of segment model [1] evaluates [True]\n\n[MiningSchema]\n[petal_length] := 1.4 (DOUBLE)\n[petal_width] := 0.2 (DOUBLE)\n[sepal_length] := 5.1 (DOUBLE)\n[sepal_width] := 3.5 (DOUBLE)\n\n\n[DecisionTree]\nEvaluation of node [0] is [True].\nEvaluation of node [1] is [True].\nThe confidence of the category [Iris-versicolor (STRING)] is [0].\nThe confidence of the category [Iris-setosa (STRING)] is [1].\nThe confidence of the category [Iris-virginica (STRING)] is [0].\n\n[Output]\nThe predicted value of segment model [1] is [Iris-setosa (STRING)]\n\n\nProcess segment model [2]:\nThe predicate of segment model [2] evaluates [True]\n\n[MiningSchema]\n[sepal_length] := 5.1 (DOUBLE)\n[sepal_width] := 3.5 (DOUBLE)\n[petal_length] := 1.4 (DOUBLE)\n[petal_width] := 0.2 (DOUBLE)\n\n[LocalTransformations]\n[derived_sepal_length] := 0.22222222222222213 (DOUBLE)\n[derived_sepal_width] := 0.6818181818181818 (DOUBLE)\n[derived_petal_length] := 0.07017543859649121 (DOUBLE)\n[derived_petal_width] := 0.04166666666666667 (DOUBLE)\n\n[BackPropagationNetwork]\nValue of neural input [0] is [0.222].\nValue of neural input [1] is [0.682].\nValue of neural input [2] is [0.07].\nValue of neural input [3] is [0.042].\nValue of hidden layer neuron [4] is [-1].\nValue of hidden layer neuron [5] is [0.955].\nValue of hidden layer neuron [6] is [0.996].\nValue of hidden layer neuron [7] is [-0.886].\nValue of hidden layer neuron [8] is [0.397].\nValue of hidden layer neuron [9] is [-0.541].\nValue of hidden layer neuron [10] is [-0.345].\nValue of output neuron [11] in the last neural layer is [1].\nValue of output neuron [12] in the last neural layer is [0].\nValue of output neuron [13] in the last neural layer is [0].\n\n[Output]\nThe predicted value of segment model [2] is [Iris-setosa (STRING)]\n\n\nProcess segment model [3]:\nThe predicate of segment model [3] evaluates [True]\n\n[MiningSchema]\n[sepal_length] := 5.1 (DOUBLE)\n[sepal_width] := 3.5 (DOUBLE)\n[petal_length] := 1.4 (DOUBLE)\n[petal_width] := 0.2 (DOUBLE)\n\n[LocalTransformations]\n[derived_sepal_length] := 0.22222222222222213 (DOUBLE)\n[derived_sepal_width] := 0.6818181818181818 (DOUBLE)\n[derived_petal_length] := 0.07017543859649121 (DOUBLE)\n[derived_petal_width] := 0.04166666666666667 (DOUBLE)\n\n[Regression]\nProcessing [RegressionTable] [targetCategory: Iris-versicolor (STRING)]:\nApplied [Intercept], the value is [-14.897].\nApplied [NumericPredictor] [coefficient: 61.867, exponent: 1] on field(s) [derived_sepal_length], the value is [13.748].\nApplied [NumericPredictor] [coefficient: -137.017, exponent: 1] on field(s) [derived_sepal_width], the value is [-93.421].\nApplied [NumericPredictor] [coefficient: 90.432, exponent: 1] on field(s) [derived_petal_length], the value is [6.346].\nApplied [NumericPredictor] [coefficient: 11.529, exponent: 1] on field(s) [derived_petal_width], the value is [0.48].\n\nProcessing [RegressionTable] [targetCategory: Iris-virginica (STRING)]:\nApplied [Intercept], the value is [-202.201].\nApplied [NumericPredictor] [coefficient: -120.94, exponent: 1] on field(s) [derived_sepal_length], the value is [-26.875].\nApplied [NumericPredictor] [coefficient: -129.401, exponent: 1] on field(s) [derived_sepal_width], the value is [-88.228].\nApplied [NumericPredictor] [coefficient: 284.914, exponent: 1] on field(s) [derived_petal_length], the value is [19.994].\nApplied [NumericPredictor] [coefficient: 251.754, exponent: 1] on field(s) [derived_petal_width], the value is [10.49].\n\nProcessing [RegressionTable] [targetCategory: Iris-setosa (STRING)]:\nApplied [Intercept], the value is [0].\n\nThe predicted value of the regression table with category [Iris-versicolor (STRING)] is [-87.743]. Value after normalization is [0].\nThe predicted value of the regression table with category [Iris-virginica (STRING)] is [-286.82]. Value after normalization is [0].\nThe predicted value of the regression table with category [Iris-setosa (STRING)] is [0]. Value after normalization is [1].\n\n[Output]\nThe predicted value of segment model [3] is [Iris-setosa (STRING)]\n\n\n[Output]\nThe [predictedValue] is [Iris-setosa (STRING)]\n[class] := Iris-setosa (STRING)\nThe [probability] of [Iris-setosa (STRING)] is [1.0 (DOUBLE)]\n[Probability_setosa] := 1.0 (DOUBLE)\nThe [probability] of [Iris-versicolor (STRING)] is [0.0 (DOUBLE)]\n[Probability_versicolor] := 0.0 (DOUBLE)\nThe [probability] of [Iris-virginica (STRING)] is [0.0 (DOUBLE)]\n[Probability_virginica] := 0.0 (DOUBLE)\n"
+						},
+						{
+							"name": "404 Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/service/zementis/apply/{{model_name}}/explain?record={{record}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"apply",
+										"{{model_name}}",
+										"explain"
+									],
+									"query": [
+										{
+											"key": "record",
+											"value": "{{record}}",
+											"description": "(string)  JSON Record - a map of model input fields and their respective values."
+										}
+									]
+								},
+								"description": "Apply model to a single JSON input record and get the result with details of the performed computation in plain text."
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\r\n  \"errors\": [\r\n    \"Model 'dummy' not found.\"\r\n  ]\r\n}"
 						}
 					]
 				},
@@ -2613,7 +2614,7 @@
 							]
 						},
 						"url": {
-							"raw": "{{url}}/service/zementis/apply/{{model_name}}",
+							"raw": "{{url}}/service/zementis/apply/{{model_name}}?",
 							"host": [
 								"{{url}}"
 							],
@@ -2640,6 +2641,72 @@
 						}
 					},
 					"response": [
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "",
+										"description": "required header parameter with two accepted values: application/octet-stream or multipart/form-data "
+									},
+									{
+										"key": "Accept",
+										"value": "",
+										"description": "optional header parameter for explicitly specifying text/csv or application/json output format ",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"value": "",
+											"description": "(file) Data file in CSV with header format or as JSON array [Record]",
+											"type": "file"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/service/zementis/apply/{{model_name}}?",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"apply",
+										"{{model_name}}"
+									],
+									"query": [
+										{
+											"key": "maxThreads",
+											"value": null,
+											"description": "(integer) Maximum number of concurrent threads. Default value is twice the number of processor cores.",
+											"disabled": true
+										},
+										{
+											"key": "maxRecordsPerThread",
+											"value": null,
+											"description": "(integer) Maximum number of records processed by a thread in batch. Default value is 5000.",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\r\n    \"error\": \"general/internalError\",\r\n    \"message\": \"Not authorized!\",\r\n    \"info\": \"https://www.cumulocity.com/guides/reference-guide/#error_reporting\"\r\n}"
+						},
 						{
 							"name": "404 Not Found",
 							"originalRequest": {
@@ -2673,7 +2740,7 @@
 									]
 								},
 								"url": {
-									"raw": "{{url}}/service/zementis/apply/{{model_name}}",
+									"raw": "{{url}}/service/zementis/apply/{{model_name}}?",
 									"host": [
 										"{{url}}"
 									],
@@ -2739,7 +2806,7 @@
 									]
 								},
 								"url": {
-									"raw": "{{url}}/service/zementis/apply/{{model_name}}",
+									"raw": "{{url}}/service/zementis/apply/{{model_name}}?",
 									"host": [
 										"{{url}}"
 									],
@@ -2894,76 +2961,11 @@
 							],
 							"cookie": [],
 							"body": "class,Probability_setosa,Probability_versicolor,Probability_virginica\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-setosa,1.0,0.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.2,0.8,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,0.8,0.2\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-virginica,0.0,0.3,0.7\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,0.5,0.5\nIris-versicolor,0.0,0.8,0.2\nIris-versicolor,0.2,0.8,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-versicolor,0.0,1.0,0.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-versicolor,0.0,0.5,0.5\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-versicolor,0.0,0.7,0.3\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-versicolor,0.0,0.5,0.5\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\nIris-virginica,0.0,0.0,1.0\n"
-						},
-						{
-							"name": "401 Unauthorized",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{auth}}"
-									},
-									{
-										"key": "Content-Type",
-										"value": "",
-										"description": "required header parameter with two accepted values: application/octet-stream or multipart/form-data "
-									},
-									{
-										"key": "Accept",
-										"value": "",
-										"description": "optional header parameter for explicitly specifying text/csv or application/json output format ",
-										"disabled": true
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "file",
-											"value": "",
-											"description": "(file) Data file in CSV with header format or as JSON array [Record]",
-											"type": "file"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/service/zementis/apply/{{model_name}}",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"service",
-										"zementis",
-										"apply",
-										"{{model_name}}"
-									],
-									"query": [
-										{
-											"key": "maxThreads",
-											"value": null,
-											"description": "(integer) Maximum number of concurrent threads. Default value is twice the number of processor cores.",
-											"disabled": true
-										},
-										{
-											"key": "maxRecordsPerThread",
-											"value": null,
-											"description": "(integer) Maximum number of records processed by a thread in batch. Default value is 5000.",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "json",
-							"header": [],
-							"cookie": [],
-							"body": "{\r\n    \"error\": \"general/internalError\",\r\n    \"message\": \"Not authorized!\",\r\n    \"info\": \"https://www.cumulocity.com/guides/reference-guide/#error_reporting\"\r\n}"
 						}
 					]
 				}
-			]
+			],
+			"protocolProfileBehavior": []
 		},
 		{
 			"name": "Resources",
@@ -3229,6 +3231,38 @@
 							"body": "{\n    \"errors\": [\n        \"Resource file 'dummy' not found\"\n    ]\n}"
 						},
 						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/service/zementis/resource/{{file_name}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"resource",
+										"{{file_name}}"
+									]
+								},
+								"description": "Get information on the specified resource file. "
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\r\n    \"error\": \"general/internalError\",\r\n    \"message\": \"Not authorized!\",\r\n    \"info\": \"https://www.cumulocity.com/guides/reference-guide/#error_reporting\"\r\n}"
+						},
+						{
 							"name": "200 OK",
 							"originalRequest": {
 								"method": "GET",
@@ -3315,38 +3349,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"fileName\": \"customerAreaMappingTable.xls\",\n    \"resourceType\": \"Lookup Tables\",\n    \"resourceIdentifier\": \"Table Name\",\n    \"resourceNames\": [\n        \"AreaPoints\"\n    ]\n}"
-						},
-						{
-							"name": "401 Unauthorized",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{auth}}",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{url}}/service/zementis/resource/{{file_name}}",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"service",
-										"zementis",
-										"resource",
-										"{{file_name}}"
-									]
-								},
-								"description": "Get information on the specified resource file. "
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "json",
-							"header": [],
-							"cookie": [],
-							"body": "{\r\n    \"error\": \"general/internalError\",\r\n    \"message\": \"Not authorized!\",\r\n    \"info\": \"https://www.cumulocity.com/guides/reference-guide/#error_reporting\"\r\n}"
 						}
 					]
 				},
@@ -3378,7 +3380,7 @@
 					},
 					"response": [
 						{
-							"name": "401 Unauthorized",
+							"name": "404 Not Found",
 							"originalRequest": {
 								"method": "GET",
 								"header": [
@@ -3389,7 +3391,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{url}}/service/zementis/resource/{{file_name}}/source",
+									"raw": "{{url}}/service/zementis/resource/dummy/source",
 									"host": [
 										"{{url}}"
 									],
@@ -3397,18 +3399,74 @@
 										"service",
 										"zementis",
 										"resource",
-										"{{file_name}}",
+										"dummy",
 										"source"
 									]
-								},
-								"description": "Download a resource file. "
+								}
 							},
-							"status": "Unauthorized",
-							"code": 401,
+							"status": "Not Found",
+							"code": 404,
 							"_postman_previewlanguage": "json",
-							"header": [],
+							"header": [
+								{
+									"key": "Server",
+									"value": "openresty"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Apr 2019 12:34:47 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:80"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
 							"cookie": [],
-							"body": "{\r\n    \"error\": \"general/internalError\",\r\n    \"message\": \"Not authorized!\",\r\n    \"info\": \"https://www.cumulocity.com/guides/reference-guide/#error_reporting\"\r\n}"
+							"body": "{\n    \"errors\": [\n        \"Resource file 'dummy' not found\"\n    ]\n}"
 						},
 						{
 							"name": "200 OK",
@@ -3500,7 +3558,7 @@
 							"body": "Resource file"
 						},
 						{
-							"name": "404 Not Found",
+							"name": "401 Unauthorized",
 							"originalRequest": {
 								"method": "GET",
 								"header": [
@@ -3511,7 +3569,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{url}}/service/zementis/resource/dummy/source",
+									"raw": "{{url}}/service/zementis/resource/{{file_name}}/source",
 									"host": [
 										"{{url}}"
 									],
@@ -3519,74 +3577,18 @@
 										"service",
 										"zementis",
 										"resource",
-										"dummy",
+										"{{file_name}}",
 										"source"
 									]
-								}
+								},
+								"description": "Download a resource file. "
 							},
-							"status": "Not Found",
-							"code": 404,
+							"status": "Unauthorized",
+							"code": 401,
 							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "openresty"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 03 Apr 2019 12:34:47 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "X-Application-Context",
-									"value": "application:80"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
+							"header": [],
 							"cookie": [],
-							"body": "{\n    \"errors\": [\n        \"Resource file 'dummy' not found\"\n    ]\n}"
+							"body": "{\r\n    \"error\": \"general/internalError\",\r\n    \"message\": \"Not authorized!\",\r\n    \"info\": \"https://www.cumulocity.com/guides/reference-guide/#error_reporting\"\r\n}"
 						}
 					]
 				},
@@ -3721,47 +3723,6 @@
 							"body": "{\n    \"errors\": [\n        \"Empty input stream.\"\n    ]\n}"
 						},
 						{
-							"name": "201 Created",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{auth}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "file",
-											"description": "(file) Resource file",
-											"type": "file",
-											"src": []
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/service/zementis/resource",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"service",
-										"zementis",
-										"resource"
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "Text",
-							"header": [],
-							"cookie": [],
-							"body": "{\n    \"fileName\": \"customerAreaMappingTable.xls\",\n    \"resourceType\": \"Lookup Tables\",\n    \"resourceIdentifier\": \"Table Name\",\n    \"resourceNames\": [\n        \"AreaPoints\"\n    ]\n}"
-						},
-						{
 							"name": "409 Conflict",
 							"originalRequest": {
 								"method": "POST",
@@ -3854,6 +3815,47 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"errors\": [\n        \"A resource file with the name 'customerAreaMappingTable.xls' already exists.\"\n    ]\n}"
+						},
+						{
+							"name": "201 Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"description": "(file) Resource file",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/service/zementis/resource",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"resource"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"fileName\": \"customerAreaMappingTable.xls\",\n    \"resourceType\": \"Lookup Tables\",\n    \"resourceIdentifier\": \"Table Name\",\n    \"resourceNames\": [\n        \"AreaPoints\"\n    ]\n}"
 						}
 					]
 				},
@@ -3887,6 +3889,42 @@
 						"description": "Remove the specified resource file and list all remaining resources. "
 					},
 					"response": [
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/service/zementis/resource/{{file_name}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"resource",
+										"{{file_name}}"
+									]
+								},
+								"description": "Remove the specified resource file and list all remaining resources. "
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\r\n    \"error\": \"general/internalError\",\r\n    \"message\": \"Not authorized!\",\r\n    \"info\": \"https://www.cumulocity.com/guides/reference-guide/#error_reporting\"\r\n}"
+						},
 						{
 							"name": "404 Not Found",
 							"originalRequest": {
@@ -3978,42 +4016,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"errors\": [\n        \"Resource file 'dummy' not found\"\n    ]\n}"
-						},
-						{
-							"name": "401 Unauthorized",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{auth}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{url}}/service/zementis/resource/{{file_name}}",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"service",
-										"zementis",
-										"resource",
-										"{{file_name}}"
-									]
-								},
-								"description": "Remove the specified resource file and list all remaining resources. "
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "json",
-							"header": [],
-							"cookie": [],
-							"body": "{\r\n    \"error\": \"general/internalError\",\r\n    \"message\": \"Not authorized!\",\r\n    \"info\": \"https://www.cumulocity.com/guides/reference-guide/#error_reporting\"\r\n}"
 						},
 						{
 							"name": "200 OK",
@@ -4303,7 +4305,8 @@
 					]
 				}
 			],
-			"description": "Operations on resources"
+			"description": "Operations on resources",
+			"protocolProfileBehavior": []
 		},
 		{
 			"name": "Jobs",
@@ -4537,7 +4540,813 @@
 					"response": []
 				}
 			],
+			"protocolProfileBehavior": []
+		},
+		{
+			"name": "Timeseries",
+			"item": [
+				{
+					"name": "Generate TimeSeries Model",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"series\": [value1,value2,.....,valueN],\r\n    \"observationInterval\": {\r\n       \"timeUnit\": \"<timeUnit>\",\r\n        \"periodLength\": <periodLength>\r\n    },\r\n    \"startDate\": \"<startDate>\",\r\n    \"seasonality\": {\r\n        \"timeUnit\": \"<timeUnit>\",\r\n        \"periodLength\": <periodLength>\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/service/zementis/timeseries",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"service",
+								"zementis",
+								"timeseries"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"series\": [\r\n         112, 118, 132, 129, 121, 135, 148, 148, 136, 119, 104, 118, 115,\r\n       126, 141, 135, 125, 149, 170, 170, 158, 133, 114, 140, 145, 150,\r\n       178, 163, 172, 178, 199, 199, 184, 162, 146, 166, 171, 180, 193,\r\n       181, 183, 218, 230, 242, 209, 191, 172, 194, 196, 196, 236, 235,\r\n       229, 243, 264, 272, 237, 211, 180, 201, 204, 188, 235, 227, 234,\r\n       264, 302, 293, 259, 229, 203, 229, 242, 233, 267, 269, 270, 315,\r\n       364, 347, 312, 274, 237, 278, 284, 277, 317, 313, 318, 374, 413,\r\n       405, 355, 306, 271, 306, 315, 301, 356, 348, 355, 422, 465, 467,\r\n       404, 347, 305, 336, 340, 318, 362, 348, 363, 435, 491, 505, 404,\r\n       359, 310, 337, 360, 342, 406, 396, 420, 472, 548, 559, 463, 407,\r\n       362, 405, 417, 391, 419, 461, 472, 535, 622, 606, 508, 461, 390,\r\n       432\r\n    ],\r\n    \"observationInterval\": {\r\n       \"timeUnit\": \"MONTHS\",\r\n        \"periodLength\": 1\r\n    },\r\n    \"startDate\": \"1949-01-01T00:00:00+05:3012\",\r\n    \"seasonality\": {\r\n        \"timeUnit\": \"YEARS\",\r\n        \"periodLength\": 1\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/service/zementis/timeseries",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"timeseries"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "openresty"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Dec 2019 11:10:21 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:80"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        \"Invalid start date. Provide start date in yyyy-MM-dd'T'HH:mm:ss.SSSXXX format\"\n    ]\n}"
+						},
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"series\": [\r\n         112, 118, 132, 129, 121, 135, 148, 148, 136, 119, 104, 118, 115,\r\n       126, 141, 135, 125, 149, 170, 170, 158, 133, 114, 140, 145, 150,\r\n       178, 163, 172, 178, 199, 199, 184, 162, 146, 166, 171, 180, 193,\r\n       181, 183, 218, 230, 242, 209, 191, 172, 194, 196, 196, 236, 235,\r\n       229, 243, 264, 272, 237, 211, 180, 201, 204, 188, 235, 227, 234,\r\n       264, 302, 293, 259, 229, 203, 229, 242, 233, 267, 269, 270, 315,\r\n       364, 347, 312, 274, 237, 278, 284, 277, 317, 313, 318, 374, 413,\r\n       405, 355, 306, 271, 306, 315, 301, 356, 348, 355, 422, 465, 467,\r\n       404, 347, 305, 336, 340, 318, 362, 348, 363, 435, 491, 505, 404,\r\n       359, 310, 337, 360, 342, 406, 396, 420, 472, 548, 559, 463, 407,\r\n       362, 405, 417, 391, 419, 461, 472, 535, 622, 606, 508, 461, 390,\r\n       432\r\n    ],\r\n    \"observationInterval\": {\r\n       \"timeUnit\": \"MONTHS\",\r\n        \"periodLength\": 1\r\n    },\r\n    \"startDate\": \"1949-01-01T00:00:00+05:30\",\r\n    \"seasonality\": {\r\n        \"timeUnit\": \"YEARS\",\r\n        \"periodLength\": 1\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/service/zementis/timeseries",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"timeseries"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "openresty"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Dec 2019 11:03:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:80"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"modelName\": \"TimeSeries_11-12-2019_11-03-33\",\n    \"statusUrl\": \"/service/zementis/timeseries/TimeSeries_11-12-2019_11-03-33/status\"\n}"
+						},
+						{
+							"name": "500 Internal Server Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"series\": [\r\n         112, 118, 132, 129, 121, 135, 148, 148, 136, 119, 104, 118, 115,\r\n       126, 141, 135, 125, 149, 170, 170, 158, 133, 114, 140, 145, 150,\r\n       178, 163, 172, 178, 199, 199, 184, 162, 146, 166, 171, 180, 193,\r\n       181, 183, 218, 230, 242, 209, 191, 172, 194, 196, 196, 236, 235,\r\n       229, 243, 264, 272, 237, 211, 180, 201, 204, 188, 235, 227, 234,\r\n       264, 302, 293, 259, 229, 203, 229, 242, 233, 267, 269, 270, 315,\r\n       364, 347, 312, 274, 237, 278, 284, 277, 317, 313, 318, 374, 413,\r\n       405, 355, 306, 271, 306, 315, 301, 356, 348, 355, 422, 465, 467,\r\n       404, 347, 305, 336, 340, 318, 362, 348, 363, 435, 491, 505, 404,\r\n       359, 310, 337, 360, 342, 406, 396, 420, 472, 548, 559, 463, 407,\r\n       362, 405, 417, 391, 419, 461, 472, 535, 622, 606, 508, 461, 390,\r\n       432\r\n    ],\r\n    \"observationInterval\": {\r\n       \"timeUnit\": \"MONTHS\",\r\n        \"periodLength\": 1\r\n    },\r\n    \"startDate\": \"1949-01-01T00:00:00+05:30\",\r\n    \"seasonality\": {\r\n        \"timeUnit\": \"YEARS\",\r\n        \"periodLength\": 1\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/service/zementis/timeseries",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"timeseries"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "openresty"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Dec 2019 05:07:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:80"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        \"Nyoka microservice is unsubscribed. Subscribe to Nyoka microservice to upload timeseries model.\"\n    ]\n}"
+						},
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"series\": [\r\n         112, 118, 132, 129, 121, 135, 148, 148, 136, 119, 104, 118, 115,\r\n       126, 141, 135, 125, 149, 170, 170, 158, 133, 114, 140, 145, 150,\r\n       178, 163, 172, 178, 199, 199, 184, 162, 146, 166, 171, 180, 193,\r\n       181, 183, 218, 230, 242, 209, 191, 172, 194, 196, 196, 236, 235,\r\n       229, 243, 264, 272, 237, 211, 180, 201, 204, 188, 235, 227, 234,\r\n       264, 302, 293, 259, 229, 203, 229, 242, 233, 267, 269, 270, 315,\r\n       364, 347, 312, 274, 237, 278, 284, 277, 317, 313, 318, 374, 413,\r\n       405, 355, 306, 271, 306, 315, 301, 356, 348, 355, 422, 465, 467,\r\n       404, 347, 305, 336, 340, 318, 362, 348, 363, 435, 491, 505, 404,\r\n       359, 310, 337, 360, 342, 406, 396, 420, 472, 548, 559, 463, 407,\r\n       362, 405, 417, 391, 419, 461, 472, 535, 622, 606, 508, 461, 390,\r\n       432\r\n    ],\r\n    \"observationInterval\": {\r\n       \"timeUnit\": \"MONTHS\",\r\n        \"periodLength\": 1\r\n    },\r\n    \"startDate\": \"1949-01-01T00:00:00+05:30\",\r\n    \"seasonality\": {\r\n        \"timeUnit\": \"YEARS\",\r\n        \"periodLength\": 1\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/service/zementis/timeseries",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"timeseries"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "openresty"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Dec 2019 11:32:19 GMT"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "www-authenticate",
+									"value": "Basic realm=\"Cumulocity\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"general/internalError\",\n    \"message\": \"No auth information found\",\n    \"info\": \"https://cumulocity.com/guides/reference/rest-implementation/#error_reporting\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Status of TimeSeries Model",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/service/zementis/timeseries/{{model_name}}/status",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"service",
+								"zementis",
+								"timeseries",
+								"{{model_name}}",
+								"status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/service/zementis/timeseries/TimeSeries_11-12-2019_11-03-33/status",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"timeseries",
+										"TimeSeries_11-12-2019_11-03-33",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "openresty"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Dec 2019 11:33:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:80"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"IN_PROGRESS\",\n    \"errorMessage\": \"null\"\n}"
+						},
+						{
+							"name": "401 Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/service/zementis/timeseries/TimeSeries_11-12-2019_11-42-13/status",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"timeseries",
+										"TimeSeries_11-12-2019_11-42-13",
+										"status"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "openresty"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Dec 2019 11:46:00 GMT"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "www-authenticate",
+									"value": "Basic realm=\"Cumulocity\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"general/internalError\",\n    \"message\": \"No auth information found\",\n    \"info\": \"https://cumulocity.com/guides/reference/rest-implementation/#error_reporting\"\n}"
+						},
+						{
+							"name": "500 Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/service/zementis/timeseries/TimeSeries_11-12-2019_11-42-13/status",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"timeseries",
+										"TimeSeries_11-12-2019_11-42-13",
+										"status"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "openresty"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Dec 2019 11:45:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:80"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        \"Model generation failed, try again\"\n    ]\n}"
+						},
+						{
+							"name": "500 Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/service/zementis/timeseries/TimeSeries_11-12-2019_11-42-13/status",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"timeseries",
+										"TimeSeries_11-12-2019_11-42-13",
+										"status"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "openresty"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Dec 2019 11:44:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:80"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        \"Unable to process the request, check microservice logs for details\"\n    ]\n}"
+						},
+						{
+							"name": "404 Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/service/zementis/timeseries/dummy/status",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"service",
+										"zementis",
+										"timeseries",
+										"dummy",
+										"status"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "openresty"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Dec 2019 11:35:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:80"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        \"Model 'dummy' not found.\"\n    ]\n}"
+						}
+					]
+				}
+			],
 			"protocolProfileBehavior": {}
 		}
-	]
+	],
+	"protocolProfileBehavior": []
 }

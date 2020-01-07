@@ -10,7 +10,7 @@ However, while the base software is the same, there are differences regarding th
  
 The following differences apply:
 
-|AREA|CUMULOCITY IOT EDGE|CUMULOCITY IOT CORE
+|<div style="width:250px">AREA</div>|CUMULOCITY IOT EDGE|CUMULOCITY IOT CORE
 |:---|:---|:--
 |Multi-tenancy|No; single tenant|Yes
 |Cluster|No; single server|Yes

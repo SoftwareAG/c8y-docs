@@ -277,6 +277,26 @@ To access the apama-ctrl log files, run the command:
 |Smartrule-agent-server-apama|smartrule-agent-server-apama-gc.log<br> smartrule-agent-server-apama.log<br>smartrule.log|/var/log/smartrule/
 |cumulocity-agent|cumulocity-agent.log|/var/log/cumulocity-agent/
 
+##### Microservices log file locations
+
+The logs of the Kubernetes components are captured at:
+*/tmp/diagnostic-utility/diagnostic_report_XXXXX/cumulocity/log_archive/kubernetes_logs.zip.*
+
+The kubernetes_logs.zip file contains the logs of all Kubernetes platform components at “kube-system” path in the archive. The components captured are:
+
+* heapster-*xxxxxxxxxx*-*xxxxx*
+* kube-apiserver-server
+* kube-controller-manager-server
+* kube-dns-*xxxxxxxx*-*xxxxx*
+* kube-flannel-ds-*xxxxx*
+* kube-proxy-*xxxxx*
+* kube-scheduler-server
+
+The hosted microservices are captured at *cumulocity-single-node* path in the archive. The pre-installed component **kube-registry-persistent-secure-789fb5449d-j2jbx** is already available in the archive. The logs of any additional microservices that are uploaded will also be available at this path.
+
+>**Info**: The alphanumeric sequences in these pod names are for representational purposes and would vary in your environment.
+
+
 #### Adjust log level
 
 This section describes how to change the log level for Cumulocity-specific applications on the backend side. It does not explain how to change log settings for standard components like databases or other operating system related services. 

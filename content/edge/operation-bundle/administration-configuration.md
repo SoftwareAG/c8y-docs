@@ -81,4 +81,8 @@ For many use cases, and especially when using APAMA, time synchronization must b
 
 Out of the box, for VMWare-based installations, vmtools is responsible for time synchronization with the host OS. For VirtualBox-based installations, VirtualBox guest additions is responsible. 
 
-Additionally, chrony or ntp services can be configured by end users based on their time synchronization needs. Refer to the respective documentation for the configuration of these services. These services are by default stopped and disabled in Edge and can be enabled by standard commands.
+Additionally, `chrony` or `ntp` services can be configured by end users based on their time synchronization needs. These services are by default stopped and disabled in Edge and can be enabled by standard commands. Use the following commands to interact with the `chrony` or `ntp` services:
+ 
+	systemctl start|stop|status|restart ntpd
+	systemctl start|stop|status|restart chronyd 
+

@@ -25,13 +25,13 @@ Before you connect a Modbus device
 Use the following command to check if the agent is running in Cumulocity IoT Edge (running on port  6670):  
 
 ```shell
-$ systemctl status cumulocity-agent
+[admin@server ~]$ systemctl status cumulocity-agent
 ```
 
 If the agent is not running, start it with the following command:
 
 ```shell
-$ systemctl start cumulocity-agent
+[admin@server ~]$ systemctl start cumulocity-agent
 ```
 
 The Modbus agent is pre-registered in the post-installation phase.
@@ -54,7 +54,7 @@ To connect an OPC/UA device in Edge, follow the steps below.
 Check if the OPC/UA agent is running in Cumulocity IoT Edge (running on port  6670):  
 
 ```shell
-$ sudo systemctl status opcua-agent-server
+[admin@server ~]$ sudo systemctl status opcua-agent-server
 ```
 
 <img src="/guides/images/edge/edge-device-check-agent.png" name="Check agent" style="width:100%;"/>
@@ -62,7 +62,7 @@ $ sudo systemctl status opcua-agent-server
 If the agent is not running, start it with the following command:
 
 ```shell
-$ sudo systemctl start opcua-agent-server
+[admin@server ~]$ sudo systemctl start opcua-agent-server
 ```
 
 Check if the platform.url in */etc/opcua/opcua-agent-gateway.properties* is pointing to the correct URL, which is *http://localhost*.

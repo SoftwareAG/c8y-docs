@@ -31,7 +31,7 @@ On Windows machines,  add the same entry to *C:\Windows\System32\Drivers\etc\hos
 Ping the &#60;domain_name> to verify it. 
 
 ```shell
-$ ping <domain_name>
+[admin@server ~]$ ping <domain_name>
 ```
 
 If the ping is successful the DNS resolution is working properly.

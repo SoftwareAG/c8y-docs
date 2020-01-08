@@ -82,17 +82,17 @@ Usually the platform comes up within 2 minutes.
 
 1. Browse to the folder */opt/c8y/utilities*. 
 
-	`$ cd /opt/c8y/utilities`
+	`[admin@server ~]$ cd /opt/c8y/utilities`
 
 2. Run the following command and provide the password when prompted.
 
-	`$ su admin`
+	`[admin@server ~]$ su admin`
 	
-	`$ Password: <Enter password for admin user>`
+	`[admin@server ~]$ Password: <Enter password for admin user>`
 
 3. Run the script *post_installation.sh*.
 
-	` $ sudo ./post_installation.sh`
+	` [admin@server ~]$ sudo ./post_installation.sh`
 
 
 You will be prompted to select one of the following options:

@@ -23,13 +23,13 @@ Without working network connection the system is not able to work. The following
 
 The following commands will show the interface and network settings of the machine:
 
-	$ ip a
+	[admin@server ~]$ ip a
 
 This will list all interfaces and their current configuration. 
 
 Example:
 
-	$ ip a
+	[admin@server ~]$ ip a
 
 	1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -56,11 +56,11 @@ You need to make sure that the node has an external interface (ethX) and the loo
 
 The following command lists the local routing information.
 
-	$ netstat -rn
+	[admin@server ~]$ netstat -rn
 
 Example:
 
-	$ netstat -rn
+	[admin@server ~]$ netstat -rn
 	Kernel IP routing table
 	Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
 	0.0.0.0         10.0.2.2        0.0.0.0         UG        0 0          0 enp0s3
@@ -73,7 +73,7 @@ Make sure you have the destination 0.0.0.0 in the list which then also has the g
 
 Try to reach a well-known address in the internet with the following command:
 
-	$ ping -s 1500 8.8.8.8
+	[admin@server ~]$ ping -s 1500 8.8.8.8
 	PING 8.8.8.8 (8.8.8.8) 1500(1528) bytes of data.
 	64 bytes from 8.8.8.8: icmp_seq=1 ttl=56 time=2.61 ms
 	64 bytes from 8.8.8.8: icmp_seq=2 ttl=56 time=2.80 ms
@@ -189,7 +189,7 @@ The list describes the tenants which on the core node have not been fully initia
 
 Run the following command to check the REST API availability:
 
-	$ curl -u 'edge/<username>:<password>' -v -X GET http://<base_url>/platform
+	[admin@server ~]$ curl -u 'edge/<username>:<password>' -v -X GET http://<base_url>/platform
 	 
 	* About to connect() to <base_url> port 80 (#0)
 	*   Trying 52.29.189.245... connected
@@ -222,7 +222,7 @@ In Edge, Monit is used to monitor processes and take a restart action if any of 
 
 Monit can provide a quick status report of all configured services and processes by running the following command as admin user:
 
-	$ sudo monit summary
+	[admin@server ~]$ sudo monit summary
 
 There might be cases where Monit has stopped monitoring some resources because of timeout on constant failures or dependency issues. 
 
@@ -230,15 +230,15 @@ There might be cases where Monit has stopped monitoring some resources because o
 
 A specific component, for example, `apama-ctrl_proc`, can be restarted using the following command: 
 
-	$ sudo monit restart apama-ctrl_proc
+	[admin@server ~]$ sudo monit restart apama-ctrl_proc
 
 The Monit status can be checked by running: 
 
-	$ sudo systemctl status monit
+	[admin@server ~]$ sudo systemctl status monit
 
 Monit can be restarted by running: 
 	
-	$ sudo systemctl restart monit
+	[admin@server ~]$ sudo systemctl restart monit
 
 The log file for monit is located in /var/log/monit.log.
 
@@ -260,7 +260,7 @@ The solution stores log files at the following locations for the different nodes
 
 To access the apama-ctrl log files, run the command:
 
-	$ sudo docker logs apama-ctrl-edge
+	[admin@server ~]$ sudo docker logs apama-ctrl-edge
 
 ##### MongoDB log file locations
 
@@ -356,7 +356,7 @@ Change the following entries to adjust the log levels:
 			
 	log4j.logger.com.cumulocity.rest.interceptors=INFO,access
 			
-	og4j.logger.com.cumulocity.rest.mediatypes=INFO
+	log4j.logger.com.cumulocity.rest.mediatypes=INFO
 
 Adjust the log levels by changing the level attribute according to the following values. The levels are inclusive - meaning a given level will also include all “lower” log levels, e.g. when you set the level to WARN you will also get ERROR events.
 

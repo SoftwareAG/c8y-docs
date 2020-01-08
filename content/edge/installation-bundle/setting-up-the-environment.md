@@ -30,7 +30,7 @@ Use the following command to log into Edge server via SSH:
 ```shell	
 ssh admin@<IP address>
 	
-[admin@server ~]$ Password: manage
+$ Password: manage
 ```
 	
 Use the IP address provided during [network configuration](/guides/edge/installation#configuration).

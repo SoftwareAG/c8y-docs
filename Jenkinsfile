@@ -8,7 +8,7 @@ pipeline {
   }
   agent {
     docker {
-      image 'jguyomard/hugo-builder'
+      image 'c8y-ubuntu-hugo-deploy:latest'
     }
   }
 
@@ -26,7 +26,13 @@ pipeline {
     stage('Deploy') {
       steps {
         sshagent(['hudson-ssh-resources']) {
-          sh "rsync -avh ./public/* ${env.YUM_USR}@${env.YUM_SRV}:${YUM_DEST_DIR} --delete"
+          sh '''bash --login
+          python /docsRepoScanner.py ./
+          pwd
+          ls           
+          rsync -avh ./public/* ${YUM_USR}@${YUM_SRV}:${YUM_DEST_DIR} --delete
+          '''
+          // sh "rsync -avh ./public/* ${env.YUM_USR}@${env.YUM_SRV}:${YUM_DEST_DIR} --delete"
         }
       }
     }

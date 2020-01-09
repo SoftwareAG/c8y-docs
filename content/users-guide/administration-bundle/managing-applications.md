@@ -22,9 +22,11 @@ Click on an application card to view the application properties.
 Each application will show the following properties, depending on the application type:
 
 <table>
-<col width= 100>
-<col width= 250>
-<col width= 150>
+<col width= 15%
+<col width= 40%>
+<col width= 15%>
+<col width= 15%>
+<col width= 15%>
 <thead>
 <tr>
 <th style="text-align:left">Field</th>
@@ -46,14 +48,14 @@ Each application will show the following properties, depending on the applicatio
 <td style="text-align:left">Name</td>
 <td style="text-align:left">Application name. Will be shown as title of the application in the top bar and in the application switcher.</td>
 <td style="text-align:left">Automatically created</td>
-<td style="text-align:left">Automatically created, based on the zip file name</td>
+<td style="text-align:left">Automatically created, based on the ZIP file name</td>
 <td style="text-align:left">Specified by the user</td>
 </tr>
 <tr>
 <td style="text-align:left">Application key</td>
 <td style="text-align:left">Used to identify the application and to make the application available for subscription, see the <a href="/guides/concepts/applications" class="no-ajaxy">Concepts Guide</a>.</td>
 <td style="text-align:left">Automatically created</td>
-<td style="text-align:left">Automatically created based on the zip file name</td>
+<td style="text-align:left">Automatically created based on the ZIP file name</td>
 <td style="text-align:left">Specified by the user</td>
 </tr>
 <tr>
@@ -73,8 +75,7 @@ Each application will show the following properties, depending on the applicatio
 </tbody>
 </table>
 
->**Info**: ID and type cannot be changed.
->
+In case of applications of the type "microservice", you will additionally find information on its version, as well as on its isolation level and billing mode, see [Enterprise Tenant > Managing tenants > Microservice usage](/guides/users-guide/enterprise-tenant/#microservice-usage) for details on these parameters.  
 
 
 ### <a name="subscribed-applications"></a>Subscribed applications

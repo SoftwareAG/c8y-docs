@@ -29,7 +29,8 @@ pipeline {
           sh '''bash --login
           python /docsRepoScanner.py ./
           pwd
-          ls           
+          ls
+          cp output.json ./public/releases.json
           rsync -avh ./public/* ${YUM_USR}@${YUM_SRV}:${YUM_DEST_DIR} --delete
           '''
           // sh "rsync -avh ./public/* ${env.YUM_USR}@${env.YUM_SRV}:${YUM_DEST_DIR} --delete"

@@ -36,8 +36,8 @@ The **User** menu contains the following items:
 <td style="text-align:left">Allows support users to access your account. This option is only available if support user access is not set globally for subtenant users in the management tenant, see <a href="/guides/users-guide/enterprise-edition#users-in-other-tenants" class="no-ajaxy">Supporting users in other tenants</a> for details. After the support user access has been activated, the menu item switches to <strong>Disable support</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours per default) you can actively disable an active support user request here.</td>
 </tr>
 <tr>
-<td style="text-align:left">Visit support page</td>
-<td style="text-align:left">Opens the URL that has been provided as Support page. If no custom URL is provided, opens the Cumulocity support page.</td>
+<td style="text-align:left">Request support</td>
+<td style="text-align:left">Opens the URL that has been provided as Support page. If no custom URL is provided, opens the Software AG TechCommunity page.</td>
 </tr>
 <tr>
 <td style="text-align:left">Version information</td>

@@ -47,9 +47,9 @@ There are two alternative setups for support users in Cumulocity:
 
 **Management tenant permission**
 
-To enable a management tenant user to support users in other tenants, you need to provide the user with either the SUPPORT global permission or the SUPPORT inventory role (both READ and CHANGE).
+To enable a management tenant user to support users in other tenants, you need to provide the user with either the "Support" global permission or the "Support" inventory role (both READ and CHANGE).
 
-Using the SUPPORT inventory role, you can selectively assign support to particular users. Create a group of the tenants that you want the user to support, then assign the inventory role to the user and the group as described in [Administration > Managing permissions > Assigning inventory roles to users](/guides/users-guide/administration#attach-inventory).
+Using the "Support" inventory role, you can selectively assign support to particular users. Create a group of the tenants that you want the user to support, then assign the inventory role to the user and the group as described in [Administration > Managing permissions > Assigning inventory roles to users](/guides/users-guide/administration#attach-inventory).
 
 **User-provided permission**
 

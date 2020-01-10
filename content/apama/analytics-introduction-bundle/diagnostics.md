@@ -4,7 +4,7 @@ title: Viewing diagnostics information
 layout: redirect
 ---
 
-If a user has READ permission for "CEP management", then two links for downloading diagnostics information are available in both the Apama EPL Apps and Apama Analytics Builder web applications: one for downloading basic diagnostics information and another one for downloading enhanced (more expensive) diagnostics information. These links are shown at the bottom of the web application's starting page (that is, in the EPL application manager and in the model manager). 
+If a user has READ permission for "CEP management", then two links for downloading diagnostics information are available in both the Apama EPL Apps and Apama Analytics Builder web applications: one for downloading basic diagnostics information and another one for downloading enhanced (more resource-intensive) diagnostics information. These links are shown at the bottom of the web application's starting page (that is, in the EPL application manager and in the model manager). 
 
 It may be useful to capture this diagnostics information when experiencing problems, or for debugging EPL applications. It is also useful to provide to support if you are filing a support ticket. 
 
@@ -21,7 +21,7 @@ Basic diagnostics information is provided in a ZIP file named *diagnostic-overvi
 Enhanced diagnostics information is provided in a ZIP file named *diagnostic-enhanced&lt;timestamp&gt;.zip* and includes the following information:
 
 - Contains what is in the above-mentioned *diagnostic-overview&lt;timestamp&gt;.zip* file. 
-- In addition, it includes requests that are more expensive and may significantly slow down the correlator, including EPL memory profiler snapshots and contents of queues. 
+- In addition, it includes requests that are more resource-intensive and may significantly slow down the correlator, including EPL memory profiler snapshots and contents of queues. 
 
 The following endpoints are also available for REST requests. These require authentication as a user with READ permission for "CEP management": 
 

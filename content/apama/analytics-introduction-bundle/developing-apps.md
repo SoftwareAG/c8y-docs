@@ -23,7 +23,7 @@ Any user on the tenant wishing to use Apama EPL Apps will need to be a **CEP Man
 
 Open the application switcher and click the icon for the **Apama EPL Apps** application.
 
-When you invoke Apama EPL Apps, a page listing any existing EPL applications is shown first. Each application is shown as a card. You can add new EPL applications and manage existing EPL applications from here.
+When you invoke Apama EPL Apps, the EPL application manager is shown first, listing any existing EPL applications. Each application is shown as a card. You can add new EPL applications and manage existing EPL applications from here.
 
 ![Apama EPL Apps](/guides/images/apama/apama-epl-apps-cards.png)
 

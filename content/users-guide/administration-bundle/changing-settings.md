@@ -329,7 +329,7 @@ In the **Two-factor authentication** section, you can change the SMS template wh
 
 #### Support link
 
-In the **Support link** section, you can enter a URL to be used to link to a Support page. If you do not provide a link here, the default link to the Cumulocity Support will be used.
+In the **Support link** section, you can enter a URL to be used to link to a Support page. If you do not provide a link here, the default link to the Software AG TechCommunity page will be used.
 
 Enter "false" to hide the link.
 

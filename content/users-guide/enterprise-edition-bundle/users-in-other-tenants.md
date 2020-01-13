@@ -58,18 +58,28 @@ Users can allow support, i.e. a management tenant user logging in as them. To do
 
 ### To log in as support user
 
-To log in as support user, open the destination tenant´s URL (e.g. testtenant.cumulocity.com) and log in using 
+In most environments, for example in secure networks (using a tunnel), support user access requires access to the management tenant. 
 
-```
-<support user>$<user>
-```
+To log in as support user from the management tenant, use a login of the form:
 
+
+	<tenant id>/<support user>$<user>
+
+
+* `tenant id` is the tenant ID of the user to be supported. The tenant ID is shown in the user dropdown menu in the UI.
 * `support user` is the username of the management tenant user that executes the support. 
 * `user` is the username of the supported user.
 
 **Example**
 
-As an example, suppose you get a support call from a user "john" in the tenant *testtenant.cumulocity.com*. The user cannot run certain functionality, and you suspect that it is a permission issue. Your username in the management tenant is "jill" and you are permitted to carry out support for *testtenant.cumulocity.com*. In this case, you can log in to *testtenant.cumulocity.com* using the username "jill&#36;john" and your password for "jill". Now you can reproduce what "john" is seeing. 
+As an example, suppose you get a support call from a user "John" in the tenant *testtenant.cumulocity.com* (which has the ID *t07007007*). The user cannot run certain functionality, and you suspect that it is a permission issue. Your username in the management tenant is "Jill" and you are permitted to carry out support for *testtenant.cumulocity.com*. In this case, you can log in with the following command to reproduce what John is seeing:
+
+	<t07007007>/Jill$John
+
+
+If no management tenant access is required you can simply open the destination tenants URL (e.g. *testtenant.cumulocity.com*) and log in to the tenant using 
+
+	<support user>$<user>
 
 Alternatively, use
 
@@ -78,10 +88,6 @@ Alternatively, use
 ```
 
 In this case, the support user will access the tenant with one of the administrative users.
-
-Quite often, support user access requires access to the management tenant. In some environments, accessing the management tenant might only be allowed from a secure network or through a tunnel. If you use a tunnel to access the management tenant, you need to use a login of the form:
-
- `<tenant ID>/<support user>$<user>`
 
 Audit logs are created for each support user access and for the actions that support users perform. In the column "Who?" the author's name will be shown in the form of "support_user$user".
 	

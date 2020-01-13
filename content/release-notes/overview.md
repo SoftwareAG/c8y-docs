@@ -9,7 +9,7 @@ These release notes document all relevant changes that have been implemented in 
 </div>
 
 <br>
-Cumulocity distinguishes between Private Edition releases, standard releases and maintenance releases:
+Cumulocity distinguishes between GA (General Availability) releases, intermediate releases and maintenance releases:
 
 <table>
 <colgroup>
@@ -26,21 +26,21 @@ Cumulocity distinguishes between Private Edition releases, standard releases and
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">Private Edition</td>
-<td style="text-align:left">A Private Edition release is a standard release with general availability (GA) which is installed on the public production instances of Cumulocity. </td>
+<td style="text-align:left">GA</td>
+<td style="text-align:left">A GA release is a release with general availability (GA) which is installed on the public production instances of Cumulocity. Cumulocity provides GA releases in a 3-month cycle.</td>
 <td style="text-align:left">10.5.0.0, 10.5.7.0</td>
 </tr>
 <tr>
-<td style="text-align:left">Standard</td>
-<td style="text-align:left">Every by-weekly release is a standard release. Standard releases are not installed on the public production instances of Cumulocity but on a preview instance. The focus is to make new and innovative features available to particular customers, so a standard release and the related documentation may contain "beta" features.</td>
+<td style="text-align:left">Intermediate</td>
+<td style="text-align:left">Every by-weekly release between 2 GA releases is called an intermediate release. Intermediate releases are not installed on the public production instances of Cumulocity but on a preview instance. The focus is to make new and innovative features available to particular customers, so a intermediate release and the related documentation may contain "beta" features.</td>
 <td style="text-align:left">10.5.1.0, 10.5.2.0, 10.5.3.0</td>
 </tr>
 <tr>
 <td style="text-align:left">Maintenance</td>
-<td style="text-align:left">A maintenance release provides improvements and fixes to a Private Edition release.</td>
+<td style="text-align:left">A maintenance release provides improvements and fixes to a GA release.</td>
 <td style="text-align:left">10.5.0.1, 10.5.0.2, 10.5.0.3</td>
 </tr>
 </tbody>
 </table>
 
->**Info**: Each release receives a version label `<SAG>.<major>.<minor>.<maintenance>`. `<SAG>` and `<major>` are incremented for marketing purposes. `<minor>` is incremented with each standard release. `<maintenance>` is "0" for the base release and incremented with each maintenance release of this release.
+>**Info**: Each release receives a version label `<SAG>.<major>.<minor>.<maintenance>`. `<SAG>` and `<major>` are incremented for marketing purposes. `<minor>` is incremented with each by-weekly release (intermediate or GA). `<maintenance>` is "0" for the base release and incremented with each maintenance release of this release.

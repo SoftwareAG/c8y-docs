@@ -58,10 +58,7 @@ Users can allow support, i.e. a management tenant user logging in as them. To do
 
 ### To log in as support user
 
-In most environments, for example in secure networks (using a tunnel), support user access requires access to the management tenant. 
-
 To log in as support user from the management tenant, use a login of the form:
-
 
 	<tenant id>/<support user>$<user>
 
@@ -72,12 +69,12 @@ To log in as support user from the management tenant, use a login of the form:
 
 **Example**
 
-As an example, suppose you get a support call from a user "John" in the tenant *testtenant.cumulocity.com* (which has the ID *t07007007*). The user cannot run certain functionality, and you suspect that it is a permission issue. Your username in the management tenant is "Jill" and you are permitted to carry out support for *testtenant.cumulocity.com*. In this case, you can log in with the following command to reproduce what John is seeing:
+Suppose you get a support call from a user "John" in the tenant *testtenant.cumulocity.com* (which has the ID *t07007007*). The user cannot run certain functionality, and you suspect that it is a permission issue. Your username in the management tenant is "Jill" and you are permitted to carry out support for *testtenant.cumulocity.com*. In this case, you can log in with the following command to reproduce what John is seeing:
 
 	<t07007007>/Jill$John
 
 
-If no management tenant access is required you can simply open the destination tenants URL (e.g. *testtenant.cumulocity.com*) and log in to the tenant using 
+In some environments, especially in test environments, you can simply open the destination tenants URL (e.g. *testtenant.cumulocity.com*) and log into the tenant using 
 
 	<support user>$<user>
 
@@ -87,11 +84,6 @@ Alternatively, use
 <support user>$
 ```
 
-In this case, the support user will access the tenant with one of the administrative users.
+to access the tenant with one of the administrative users.
 
 Audit logs are created for each support user access and for the actions that support users perform. In the column "Who?" the author's name will be shown in the form of "support_user$user".
-	
-	
-#### Example
-
-As an example, suppose you get a support call from a user "john" in the tenant `acme.cumulocity.com`. The user cannot run certain functionality, and you suspect that it is a permission issue. Your username in the management tenant is "jill" and you are permitted to carry out support for `acme.cumulocity.com`. In this case, you can log in to `acme.cumulocity.com` using the username "jill&#36;john" and your password for "jill". Now you can reproduce what "john" is seeing. 

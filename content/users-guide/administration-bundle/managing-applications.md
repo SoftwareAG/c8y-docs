@@ -9,7 +9,7 @@ In the Cumulocity platform we distinguish between two kinds of applications:
 * [Subscribed applications](#subscribed-applications) -  all applications subscribed to the tenant (either provided by the platform or a service provider) but not owned. May not be added, modified or removed by the user.
 * [Own applications](#own-applications) - all applications owned by the tenant. Users can [add custom applications](#add-applications) in various ways as own applications. 
 
-Both applications are available through the **Applications** menu in the navigator:
+Click **Own applications** or **Subscribed applications** in the **Applications** menu in the navigator to display a list of all respective applications in your account.
 
 <img src="/guides/images/users-guide/Administration/admin-menu.png" alt="Applications menu"> 
 
@@ -22,9 +22,11 @@ Click on an application card to view the application properties.
 Each application will show the following properties, depending on the application type:
 
 <table>
-<col width= 100>
-<col width= 250>
-<col width= 150>
+<col width= 15%
+<col width= 40%>
+<col width= 15%>
+<col width= 15%>
+<col width= 15%>
 <thead>
 <tr>
 <th style="text-align:left">Field</th>
@@ -46,14 +48,14 @@ Each application will show the following properties, depending on the applicatio
 <td style="text-align:left">Name</td>
 <td style="text-align:left">Application name. Will be shown as title of the application in the top bar and in the application switcher.</td>
 <td style="text-align:left">Automatically created</td>
-<td style="text-align:left">Automatically created, based on the zip file name</td>
+<td style="text-align:left">Automatically created, based on the ZIP file name</td>
 <td style="text-align:left">Specified by the user</td>
 </tr>
 <tr>
 <td style="text-align:left">Application key</td>
 <td style="text-align:left">Used to identify the application and to make the application available for subscription, see the <a href="/guides/concepts/applications" class="no-ajaxy">Concepts Guide</a>.</td>
 <td style="text-align:left">Automatically created</td>
-<td style="text-align:left">Automatically created based on the zip file name</td>
+<td style="text-align:left">Automatically created based on the ZIP file name</td>
 <td style="text-align:left">Specified by the user</td>
 </tr>
 <tr>
@@ -73,7 +75,8 @@ Each application will show the following properties, depending on the applicatio
 </tbody>
 </table>
 
->**Info**: ID and type cannot be changed.
+In case of applications of the type "microservice", you will additionally find information on its version, as well as on its isolation level and billing mode, see [Enterprise Tenant > Managing tenants > Microservice usage](/guides/users-guide/enterprise-tenant/#microservice-usage) for details on these parameters.  
+
 
 ### <a name="subscribed-applications"></a>Subscribed applications
 
@@ -370,7 +373,7 @@ Duplicating an application might be useful if you want to customize a subscribed
 
 For details on the fields, see also [Application properties](#application-properties) below.
 
->**Info**: If you want your "own application" to overrule a subscribed standard application, the path of the "own application" needs to be set to the path of the original subscribed application.
+> **Info**: If you want your "own application" to overrule a subscribed standard application, the path of the "own application" needs to be set to the path of the original subscribed application.
 
 
 #### <a name="editing-and-removing"></a>To edit an own application
@@ -406,7 +409,7 @@ Multiple archive file versions can be stored in Cumulocity when they were create
 
 Once uploaded, the recently uploaded version is automatically the active version, i.e. the version of the application that is currently being served to the users of your account. This version cannot be deleted. 
 
->**Info**: The **Archive** tab is not available for subscribed applications, as only the owner of the application can perform this action.
+> **Info**: The **Archive** tab is not available for subscribed applications, as only the owner of the application can perform this action.
 
 ##### To restore an older application version
 
@@ -476,24 +479,25 @@ Next to the instance dropdown you can select the time range for the log entries 
 At the top right, additional functionality is provided:
 
 * **Download** - To download the log data for a specified time range.
-* **Theme** - To select a theme (dark or light).
+* **Dark theme** - To turn dark theme on or off.
+* **Auto refresh** - To activate the auto refresh functionality. If activated, the displayed log data will automatically be refreshed every 10 seconds.
 * **Unsubscribe** - To unsubscribe the microservice.
 * **Delete** - To delete the microservice.
 
 Initially, the **Logs** tab shows the latest logs of the microservice instance. 
 
-At the bottom right you find navigation buttons to 
+At the bottom right you find navigation buttons:
 
-* directly navigate to the oldest available log entries.
-* increase the time range in 10 minutes steps.
-* reduce the time range in 10 minutes steps.
-* directly navigate to the latest available log entries.
+* **First** - directly navigates to the oldest available log entries for the microservice after its restart (maximum capacity 350MB of logs).
+* **Previous** - increases the time range in 10 minutes steps.
+* **Next** - reduces the time range in 10 minutes steps.
+* **Last** - directly navigates to the latest available log entries.
   
 If no logs are available in the selected time range, a message is shown accordingly:
 
 <img src="/guides/images/users-guide/Administration/admin-microservice-no-logs.png" alt="Microservice log">
 
->**Info**: There is no possibility to see the logs from the previously running instances, however inside the instance there is a docker container running and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated docker container.
+> **Info**: There is no possibility to see the logs from the previously running instances, however inside the instance there is a docker container running and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated docker container.
 
 >Logs are always loaded from the docker container using both `stdout` and `stderr` sources and there is no possibility to distinguish/filter by the source. 
 

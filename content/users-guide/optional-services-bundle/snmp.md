@@ -9,8 +9,8 @@ Simple Network Management protocol (SNMP) is an application layer protocol, used
 
 There are two components that help SNMP-enabled devices to connect to the Cumulocity IoT platform:
 
-1. The Mibparser microservice helps in converting a Managed Information Base (MIB) file to a JSON representation which is then used to create a device protocol.
-2. The Cumulocity SNMP agent is a device-side agent that helps SNMP-enabled devices to connect to the Cumulocity IoT platform and translates messages from a SNMP-specific format to a Cumulocity model before forwarding them to the Cumulocity.
+1. The **Mibparser microservice** helps in converting a Managed Information Base (MIB) file to a JSON representation which is then used to create a device protocol.
+2. The **Cumulocity SNMP agent** is a device-side agent that helps SNMP-enabled devices to connect to the Cumulocity IoT platform and translates messages from a SNMP-specific format to a Cumulocity model before forwarding them to the Cumulocity.
 
 The following image provides a general overview of the SNMP-enabled device integration with Cumulocity:
 
@@ -21,9 +21,9 @@ The following image provides a general overview of the SNMP-enabled device integ
 
 #### Introduction
 
-The SNMP Agent is a stand-alone Java program that communicates with SNMP-enabled device(s) and the Cumulocity IoT platform. It receives SNMP data from the devices, converts the data to Cumulocity-based objects based on the device protocol mapping, persists the data locally, and forwards the data to Cumulocity. The agent has to be registered in Cumulocity before serving the device request.
+The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled device(s) and the Cumulocity IoT platform. It receives SNMP data from the devices, converts the data to Cumulocity-based objects based on the device protocol mapping, persists the data locally, and forwards the data to Cumulocity. The agent has to be registered in Cumulocity before serving the device request.
 
-> **Info:** Mibparser microservice needs to be subscribed to the tenant before installing the agent. The procedure to build and deploy Mibparser microservice is present in https://bitbucket.org/m2m/c8y-mib-parser/src/develop/
+> **Info:** The Mibparser microservice needs to be subscribed to the tenant before installing the agent. The procedure how to build and deploy the Mibparser microservice is described in [https://bitbucket.org/m2m/c8y-mib-parser/src/develop/](https://bitbucket.org/m2m/c8y-mib-parser/src/develop/).
 
 #### Installation
 
@@ -39,77 +39,78 @@ The SNMP Agent is a stand-alone Java program that communicates with SNMP-enabled
 ##### To install the agent
 
 1. Download the latest SNMP agent RPM:
-```
-wget -nv http://resources.cumulocity.com/examples/snmp/snmp-agent-gateway-<ga-version>.rpm
-```
+	
+		wget -nv http://resources.cumulocity.com/examples/snmp/snmp-agent-gateway-<ga-version>.rpm
+
 2. Verify the signature of the RPM package:
-```
-rpm --checksig snmp-agent-gateway-<ga-version>.rpm
-```
+	
+		rpm --checksig snmp-agent-gateway-<ga-version>.rpm
+
 3. Install the SNMP agent RPM package:
-```
-sudo rpm -ivh snmp-agent-gateway-<ga-version>.rpm
-```
+	
+		sudo rpm -ivh snmp-agent-gateway-<ga-version>.rpm
+
 4. Check the installed RPM package:
-```
-rpm -q snmp-agent-gateway
-```
+
+		rpm -q snmp-agent-gateway
+
 5. Configure the agent:
-   * Create .snmp folder in the user home directory:
-   ```
-   mkdir -p $HOME/.snmp
-   ```
-   * Copy the snmp properties file inside .snmp folder:
-   ```
-   cp /etc/snmp-agent-gateway/snmp-agent-gateway.properties $HOME/.snmp
-   ```
+   * Create a .snmp folder in the user home directory:
+   	
+   			mkdir -p $HOME/.snmp
+
+   * Copy the snmp properties file into the .snmp folder:
+   
+   				cp /etc/snmp-agent-gateway/snmp-agent-gateway.properties $HOME/.snmp
+  
    * Change the properties according to the Cumulocity environment (e.g. gateway.identifier, Cumulocity bootstrap details, SNMP Community target).
 
 6. Start the service:
-```
-systemctl start snmp-agent-gateway
-```
+
+		systemctl start snmp-agent-gateway
+
 7. Check if the service started properly by checking the status:
-```
-systemctl status snmp-agent-gateway
-```
+
+		systemctl status snmp-agent-gateway
+
 8. Make sure that the agent process is running without any issues. To do so, check the agent log file:
-```
-$HOME/.snmp/log/snmp-agent-gateway-server.log
-```
+
+		$HOME/.snmp/log/snmp-agent-gateway-server.log
 
 > **Info:** The agent uses the following location as persistent storage:
-```
-$HOME/.snmp/{gateway.identifier}/chronicle
-```
 
-#### Upgrading GA version
+		$HOME/.snmp/{gateway.identifier}/chronicle
+
+
+#### Upgrading a GA version
+
 > **Info:**: This upgrade procedure is only for GA releases. If you have installed any previous release prior to GA release, follow the migration procedure described below.
 
 1. Make sure that the load to the SNMP agent is zero. This can be done by gracefully disconnecting all SNMP devices from the SNMP agent or redirect the traffic to a different endpoint.
 2. If there are pending messages in the SNMP agent to be sent to the platform, wait for the processing to complete.
 3. Once the message processing is complete, stop the agent process:
-```
-systemctl stop snmp-agent-gateway
-```
+
+		systemctl stop snmp-agent-gateway
+
 4. Upgrade the SNMP agent RPM package:
-```
-rpm -Uvh snmp-agent-gateway-<new-ga-version>.rpm
-```
+	
+		rpm -Uvh snmp-agent-gateway-<new-ga-version>.rpm
+
 5. Start the service:
-```
-systemctl start snmp-agent-gateway
-```
+
+		systemctl start snmp-agent-gateway
+
 6. Check if the service started properly by checking the status:
-```
-systemctl status snmp-agent-gateway
-```
+	
+		systemctl status snmp-agent-gateway
+
 7. Make sure that the agent process is running without any issues. To do so, check the agent log file:
-```
-$HOME/.snmp/log/snmp-agent-gateway-server.log
-```
+
+		$HOME/.snmp/log/snmp-agent-gateway-server.log
+
 
 #### Migration
+
 The SNMP agent has undergone a major revamp in-terms of persistence storage mechanism, robustness, performance improvements etc. between version 10.4.x and 10.5.x. If the current running version of SNMP is 10.4.x or earlier then follow the steps below to migrate to a GA version.
 
 > **Info:**: The migration is equivalent to a fresh installation, as the GA release uses a different persistent store compared to earlier releases. This requires a down time for installation and configuration.
@@ -119,9 +120,9 @@ The SNMP agent has undergone a major revamp in-terms of persistence storage mech
 3. Once the message processing is complete, stop the agent process.
 4. Take a backup of the *$HOME/.snmp* folder, the configuration file in */etc/snmp* (if present) and the agent JAR file (if a JAR file is used for starting the agent).
 5. If the SNMP agent was installed as RPM package, uninstall it:
-```
-rpm -e <snmp-package-name>
-```
+
+		rpm -e <snmp-package-name>
+
 6. Delete the contents inside *$HOME/.snmp/* and */etc/snmp* folder (if present).
 7. Delete the snmp-agent device in Cumulocity, which was registered as part of the installation and all its child SNMP devices. This can be done from the user interface or by using REST endpoints.
 8. Follow the **Installation** procedure in this document, to install/move to GA version.
@@ -322,7 +323,7 @@ If you want to run autodiscovery after every interval, enter the interval in the
 ![Autodiscovery SNMP device list](/guides/images/users-guide/snmp/snmp-autodiscovered-devices.png)
 
 
-For the newly found SNMP device, the default device name will be mentioned as `Device-<device-ip-address>`, the IP Address will be `<device-ip-address>` and the default port number is `161`. All other details will be empty and have to be entered manually.
+For the newly found SNMP device, the default device name will be mentioned as `Device-<device-ip-address>`, the IP address will be `<device-ip-address>` and the default port number is `161`. All other details will be empty and have to be entered manually.
 
 An alarm will be generated
 

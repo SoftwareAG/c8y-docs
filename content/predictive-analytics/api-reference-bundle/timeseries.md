@@ -6,6 +6,8 @@ weight: 30
 
 Operations for timeseries data/model.
 
+>**Info**: An active subscription of Nyoka microservice is needed to leverage these timeseries apis.
+
 ### Domain Model
 #### TimeSeries
 |Name|Type|Description|

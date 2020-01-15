@@ -8,5 +8,5 @@ aliases:
   - /rest/introduction
   - /rest/device-integration
   - /rest/hello-rest
+  - /device-sdk/device-sdk-rest
 ---
-

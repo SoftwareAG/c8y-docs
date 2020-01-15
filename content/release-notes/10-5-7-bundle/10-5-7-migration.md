@@ -14,3 +14,7 @@ For details on the Cumulocity Microservice SDK for Java, see [Microservice SDK f
 ### Deprecation of breadcrumbs
 
 The breadcrumb functionality which is currently available in the Cumulocity UI for groups and devices is deprecated and will be removed with the April 2020 release (10.6.0).
+
+### Disabling TLS 1.0 support on all public cloud instances
+
+Encryption based on Transport Layer Security v1.0 will be disabled on all public Cumulocity IoT instances on July 1st, 2020. As all modern browsers do already support by default more recent versions of TLS we do not expect limitations for users. Devices connecting to Cumulocity IoT might need to be updated.

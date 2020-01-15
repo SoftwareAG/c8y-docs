@@ -6,22 +6,22 @@ weight: 30
 
 Operations for timeseries data/model.
 
->**Info**: An active subscription of Nyoka microservice is needed to leverage these timeseries apis.
+>**Info**: An active subscription of Nyoka microservice is required to leverage the timeseries API.
 
 ### Domain Model
 #### TimeSeries
 |Name|Type|Description|
 |:-----|:-----|:-----|
-|series|array|The time series data specified as an array of values from multiple observations.|
-|observationInterval|TimePeriod|The time interval between two observations|
-|startDate|DateTime|The timestamp of the first observation in UTC format|
-|seasonality|TimePeriod|Optional parameter to specify the seasonality in the data, if present.|
+|series|array|The time series data specified as an array of values representing multiple observations.|
+|observationInterval|TimePeriod|The time interval between consecutive observations.|
+|startDate|DateTime|The timestamp of the first observation in UTC format.|
+|seasonality|TimePeriod|Optional parameter to specify the seasonal period in the data, if present.|
 
 #### TimePeriod
 |Name|Type|Description|
 |:-----|:-----|:-----|
 |timeUnit|ChronoUnit|The value has to be a valid [ChronoUnit](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/ChronoUnit.html) – “SECONDS”, “MINUTES”, “HOURS”, “DAYS”, “MONTHS”, “YEARS” etc.|
-|periodLength|Number|Number to mention the length of the period.|
+|periodLength|Number|Length of the period.|
 
 
 ### POST – Generate Timeseries Model using timeseries data
@@ -30,7 +30,7 @@ Operations for timeseries data/model.
 {{url}}/service/zementis/timeseries
 ```
 
-Upload the timeseries data to generate a model.
+Upload the timeseries data to generate a model. This is an Asynchronous call which returns a status URL that can be used to check the status of model creation.
 
 |HEADERS||
 |:---|:---|

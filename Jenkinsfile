@@ -1,6 +1,3 @@
-YUM_DEST_DIR = '/var/www/staticpage-guides/guides/'
-HUGO_PARAMS = ""
-
 pipeline {
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
@@ -13,8 +10,10 @@ pipeline {
   }
 
   environment {
+    HUGO_PARAMS = ""
     YUM_SRV = 'yum.cumulocity.com'
     YUM_USR = 'hudson'
+    YUM_DEST_DIR = '/var/www/staticpage-guides/guides/'
   }
 
   stages {

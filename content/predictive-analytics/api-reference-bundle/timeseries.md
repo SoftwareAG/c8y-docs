@@ -4,9 +4,9 @@ layout: redirect
 weight: 30
 ---
 
-Operations for timeseries data/model.
+Operations for time series data/model.
 
->**Info**: An active subscription of Nyoka microservice is required to leverage the timeseries API.
+>**Info**: An active subscription of Nyoka microservice is required to leverage the time series API.
 
 ### Domain Model
 #### TimeSeries
@@ -24,13 +24,13 @@ Operations for timeseries data/model.
 |periodLength|Number|Length of the period.|
 
 
-### POST – Generate Timeseries Model using timeseries data
+### POST – Generate time series model using time series data
 
 ```
 {{url}}/service/zementis/timeseries
 ```
 
-Upload the timeseries data to generate a model. This is an Asynchronous call which returns a status URL that can be used to check the status of model creation.
+Upload the time series data to generate a model. This is an asynchronous call which returns a status URL that can be used to check the status of model creation.
 
 |HEADERS||
 |:---|:---|
@@ -216,14 +216,14 @@ curl --request POST “{{url}}/service/zementis/timeseries” --header “Author
 ```
 
 
-### GET – Get status of generated Timeseries model
+### GET – Get status of generated time series model
 
 ```
 {{url}}/service/zementis/timeseries
 ```
 
-Get the status of generation of a specific timeseries model. The status could be either IN_PROGRESS, SUCCESS or FAILURE.<br>
-If FAILURE, the `errorMessage` attribute in the response would hold the reason for failure.
+Get the status of the generation of a specific time series model. The status can either be IN_PROGRESS, SUCCESS or FAILURE.<br>
+If the status is FAILURE, the `errorMessage` attribute in the response holds the reason for the failure.
 
 |HEADERS||
 |:---|:---|
@@ -231,7 +231,7 @@ If FAILURE, the `errorMessage` attribute in the response would hold the reason f
 
 |PARAMS||
 |:---|:---|
-|model_name (string)|required path variable for timeseries model name
+|model_name (string)|required path variable for time series model name
 
 
 **Example Request**

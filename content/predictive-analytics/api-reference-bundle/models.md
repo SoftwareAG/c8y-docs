@@ -668,7 +668,7 @@ Note that the size of the uploaded PMML file/zip must not exceed 500 MB.
 |PARAMS||
 |:---|:---|
 |file|required query parameter for PMML file name, if Content-Type is application/octet-stream<br> or a body parameter for PMML file, if Content-Type is multipart/form-data
-|applyCleanser (boolean)|optional parameter used to automatically perform comprehensive syntactic and semantic checks, correct known issues and convert your PMML file to version 4.3 (default is true)
+|applyCleanser (boolean)|optional parameter used to automatically perform comprehensive syntactic and semantic checks, correct known issues and convert your PMML file to version 4.4 (default is true)
 
 **Example Request**
 

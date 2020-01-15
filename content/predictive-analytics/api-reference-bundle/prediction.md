@@ -333,7 +333,7 @@ curl --request GET "{{url}}/service/zementis/apply/Iris_NN/explain record=%7B" -
 }
 ```
 
-### GET - Apply Model to Multiple Records
+### POST - Apply Model to Multiple Records
 
 ```
 {{url}}/service/zementis/apply/{{model_name}}

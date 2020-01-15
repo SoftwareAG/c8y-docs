@@ -1,5 +1,5 @@
 ---
-title: Timeseries
+title: Time series
 layout: redirect
 weight: 30
 ---

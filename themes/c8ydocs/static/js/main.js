@@ -2,10 +2,10 @@ var main = (function ($) {
   function initializer() {
     
     //Load releases menu
-    var json = $.getJSON({'url': "http://localhost:1313/guides/10.4.6/releases.json", 'async': false});  
-    console.log(json);
-    if (json.responseText) {
-      json = JSON.parse(json.responseText);
+    var json = $.getJSON({ 'url': "http://localhost:1313/guides/10.4.6/releases.json", 'async': false })
+    // var json = $.getJSON("//cumulocity.com/guides/releases.json")
+    .done(function (json) {
+      //json = JSON.parse(json.responseText);
       var urls = json.releases;
       var vmenu = $('.dropdown.version');
       var loc = window.location;
@@ -14,7 +14,7 @@ var main = (function ($) {
       for (var index = 0; index < urls.length; index++) {
         var el = urls[index];
         if (loc.href.includes(el.label)) {
-          $('#current-dropdown-version-toggle').text('Release '+ el.label);
+          $('#current-dropdown-version-toggle').text('Release ' + el.label);
           vmenu.find('.dropdown-menu').append(
             '<a href="' + el.url + '" class="dropdown-menu-item active">Release ' + el.label + '</a>'
           );
@@ -24,7 +24,15 @@ var main = (function ($) {
           );
         }
       }
-    }
+    })
+    .fail(function (resp) {
+      console.log('fail', resp);
+      $('#dropdownVersionButton').hide();
+    })
+    .always(function () {
+      console.log('always');
+      console.log(json);
+    });
 
 
     // apply Highlight js

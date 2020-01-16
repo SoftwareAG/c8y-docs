@@ -1,6 +1,6 @@
 ---
 title: TinkerForge
 layout: bundle
-image: '/images/devices/device-list/tinkerforge.jpg'
+image: '/guides/images/devices/device-list/tinkerforge.jpg'
 brand: TinkerForge
 ---

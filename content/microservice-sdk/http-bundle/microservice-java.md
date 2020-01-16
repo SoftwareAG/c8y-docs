@@ -414,7 +414,7 @@ Using the endpoint <kbd>location/locations</kbd> will return by default five sto
 
 In the Device Management application, navigate to **Devices** > **All devices** and locate your microservice tracker. Under **Tracking** you will see a map with the tracked locations. It is also possible to develop your own web application and customize a map widget. Refer to the [Web SDK for Angular](https://cumulocity.com/guides/web/angular/#apps) for more details.
 
-![Microservice tracking](/images/microservices-sdk/ms-tracking-map.png)
+![Microservice tracking](/guides/images/microservices-sdk/ms-tracking-map.png)
 
 ### Source code
 

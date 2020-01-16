@@ -10,7 +10,7 @@ Log in to the Raspberry Pi and install the agent.
 
 Open Cumulocity in a web browser and go to the "Registration" page. Enter the serial number that you wrote down in the previous step and click "Register Device".
 
-![Register device](/images/devices/deviceregistration.png)
+![Register device](/guides/images/devices/deviceregistration.png)
 
 > Note: If you are running a dedicated edition of the Cumulocity platform you will need to configure the host in /usr/share/cumulocity-rpi-agent/cfg/cumulocity.properties and restart the agent using: 
 >
@@ -18,6 +18,6 @@ Open Cumulocity in a web browser and go to the "Registration" page. Enter the se
 
 After that accept the registration.
 
-![Accept device](/images/devices/deviceacceptance.png)
+![Accept device](/guides/images/devices/deviceacceptance.png)
 
 Click on "All devices" to manage the Raspberry Pi. It is by default visible as "RaspPi <<hardware model>> <<serial number>>". You can edit the name in the "Info" tab.

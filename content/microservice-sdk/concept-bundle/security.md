@@ -17,7 +17,7 @@ A request to a microservice can be authenticated using basic authentication or 
 
 Authentication with OAuth is based on cookies technology, so the access token has to be read from the request cookie header. There are two important parts of OAuth authorization: an access token stored in the authorization cookie and an X-XSRF-TOKEN header for XSRF attack prevention. Both must be forwarded with the request to the platform. If you use Java for development, we recommend using the Microservice SDK Version 9.12.6 or later for supporting OAuth in Java microservices.
 
-![OAuth](/images/microservices-sdk/ms-oauth.png)
+![OAuth](/guides/images/microservices-sdk/ms-oauth.png)
 
 Refer to the [OAuth Community Site](https://oauth.net) for more details about the OAuth authorization framework.
 
@@ -93,7 +93,7 @@ Authorization: Basic ...
 
 An example of a typical user switching in multi-tenant isolation is presented below, where – in a hypothetical scenario – there is a need to send an alarm to each tenant subscribed to a microservice.
 
-![microservice_user_switch_example](/images/concepts-guide/microserviceusersexample.png)
+![microservice_user_switch_example](/guides/images/concepts-guide/microserviceusersexample.png)
 
 The user wants to employ microservice capabilities to raise alarms to all subscribed tenants calls.
 

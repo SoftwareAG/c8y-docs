@@ -10,7 +10,7 @@ Data marked as "temporary" is not stored into Cumulocity's database but just han
 
 The "temporary" mode will only send the data to the real-time engine and immediately return asynchronously and not store it in Cumulocity's database. This mode saves storage and processing costs and is useful for example when tracking devices in real-time without requiring data to be stored.
 
-![CEP architecture](/images/concepts-guide/realtime.png)
+![CEP architecture](/guides/images/concepts-guide/realtime.png)
 
 ### Examples
 

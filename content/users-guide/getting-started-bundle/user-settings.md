@@ -6,7 +6,7 @@ layout: redirect
 
 Clicking the **User** button at the top right will open a menu which provides access to various actions or information.
 
-<img src="/images/users-guide/Overview/user-account-menu.png" alt="User account menu"  style="max-width: 60%">
+<img src="/guides/images/users-guide/Overview/user-account-menu.png" alt="User account menu"  style="max-width: 60%">
 
 The **User** menu contains the following items:
 
@@ -65,7 +65,7 @@ Several account settings can be changed by the user.
 4. Click **Change password** to change your current password, see below. 
 5. Click **Save** to apply your settings.
 
-<img src="/images/users-guide/overview-user-settings.png" alt="User settings"  style="max-width: 100%">
+<img src="/guides/images/users-guide/overview-user-settings.png" alt="User settings"  style="max-width: 100%">
 
 ### <a name="change-password"></a>To change your password
 
@@ -76,7 +76,7 @@ Several account settings can be changed by the user.
 
 Make sure to select a strong password. To support you in doing so a password strength indicator is displayed along with a password change. 
 
-<img src="/images/users-guide/overview-passwordstrength.png" alt="Reset password" style="max-width: 100%">
+<img src="/guides/images/users-guide/overview-passwordstrength.png" alt="Reset password" style="max-width: 100%">
 
 By default, the password must consist of at least eight characters. For a strong password you must include at least three of the following character types: uppercase letters, lowercase letters, numbers and symbols. 
 

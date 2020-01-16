@@ -16,7 +16,7 @@ You can find this and all the other plugins described in the documentation insid
 
 This section shows how to create a plugin that adds a new tab "Contact" to devices in your application. Clicking on "Contact" presents the user with a simple form for entering contact details. When the user saves the form, the contact details are stored as part of the device object in the inventory. The new tab looks like this:
 
-![Contact tab](/images/plugins/contact.png)
+![Contact tab](/guides/images/plugins/contact.png)
 
 In order to achieve this goal you need to do the following steps:
 

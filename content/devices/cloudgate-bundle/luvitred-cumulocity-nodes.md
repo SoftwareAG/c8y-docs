@@ -25,7 +25,7 @@ The following parameters are optional:
 
 If you want to add multiple series to a measurement, you have to add a new measurement with the same type to the list.
 
-![c8y measurement](/images/devices/cloudgate/c8ymeasurement.png)
+![c8y measurement](/guides/images/devices/cloudgate/c8ymeasurement.png)
 
 For more information on measurements, refer to "[Cumulocity's domain model](/guides/concepts/domain-model/)".
 
@@ -47,7 +47,7 @@ The following parameters are optional:
   - Q config: Select a queue configuration. Defines how many message can be stored in memory.
 - Default text: The text which will be used if there is no payload.
 
-![c8y alarm](/images/devices/cloudgate/c8yalarm.png)
+![c8y alarm](/guides/images/devices/cloudgate/c8yalarm.png)
 
 For more information on alarms, refer to "[Working with alarms](/guides/users-guide/device-management/#alarm-monitoring)".
 
@@ -67,7 +67,7 @@ The following parameters are optional:
   - Q config: Select a queue configuration. Defines how many message can be stored in memory.
 - Default text: The text which will be used if there is no payload.
 
-![c8y event](/images/devices/cloudgate/c8yevent.png)
+![c8y event](/guides/images/devices/cloudgate/c8yevent.png)
 
 For more information on events, refer to "[Cumulocity's domain model](/guides/concepts/domain-model/)".
 
@@ -107,7 +107,7 @@ For more information on the node, refer to the description which can be seen on 
 
 This node is not visible in the list of nodes as it is used as a configuration which can be shared by multiple nodes. The configuration node defines the type of connection and the credentials which will be used to communicate with Cumulocity.
 
-![c8y platform](/images/devices/cloudgate/c8yplatform.png)
+![c8y platform](/guides/images/devices/cloudgate/c8yplatform.png)
 
 To be able to use the configuration, the type of provision has to be specified ("Manually" or "Automatically").
 

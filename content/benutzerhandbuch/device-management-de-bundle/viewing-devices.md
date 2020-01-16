@@ -8,7 +8,7 @@ Klicken Sie **Alle Geräte** im Menü **Geräte** im Navigator, um alle mit Ihre
 
 Eine detaillierte Geräteliste wird angezeigt.
 
-<img src="/images/benutzerhandbuch/devmgmt-devices-list.png" alt="Geräteliste" style="max-width: 100%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-devices-list.png" alt="Geräteliste" style="max-width: 100%">
 
 
 ### <a name="device-list"></a>Geräteliste
@@ -41,7 +41,7 @@ Klicken Sie auf das Lupensymbol rechts oben und geben Sie einen Suchbegriff in d
 
 Unser Beispiel zeigt eine Suche nach "Ublox C027". 
 
-<img src="/images/benutzerhandbuch/devmgmt-devices-search.png" alt="Gerätesuche" style="max-width: 100%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-devices-search.png" alt="Gerätesuche" style="max-width: 100%">
 
 **Info**: Im Gegensatz zur Filterfunktion, ist die Verwendung von Platzhaltern in einer Suche nicht möglich. 
 
@@ -53,11 +53,11 @@ Die Geräteliste bietet eine Filterfunktion, um Geräte in der Liste nach bestim
 
 Die Filterfunktion steht für jede Spalte zur Verfügung. Klicken Sie auf das Filtersymbol neben dem Namen der Spalte, nach der Sie filtern möchten. 
  
-<img src="/images/users-guide/DeviceManagement/DevMgmt_Filtering.png" alt="Filtering" style="max-width: 100%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_Filtering.png" alt="Filtering" style="max-width: 100%">
 
 Im folgenden Fenster können Sie entsprechende Filterkriterien setzen.
 
-<img src="/images/benutzerhandbuch/devmgmt-device-filter-options.png" alt="Filteroptionen" style="max-width: 50%">
+<img src="/guides/images/benutzerhandbuch/devmgmt-device-filter-options.png" alt="Filteroptionen" style="max-width: 50%">
 
 Die meisten Spalten enthalten Text. Hier können Sie filtern, indem Sie einen beliebigen Text in das Textfeld eingeben wie im Suchfeld. Klicken Sie **+ Oder** ,um ein weiteres Textfeld hinzuzufügen, falls Sie nach mehr als einem Begriff filtern möchten. 
 

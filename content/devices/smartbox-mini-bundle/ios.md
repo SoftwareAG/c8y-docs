@@ -10,4 +10,4 @@ weight: 40
   * 1 x AIN (NTC,0..20mA)
 <br> Note the activation of NTC or 0..20mA must be defined during production
 
-![interface](/images/devices/smartbox-mini/interface-sensors.png)
+![interface](/guides/images/devices/smartbox-mini/interface-sensors.png)

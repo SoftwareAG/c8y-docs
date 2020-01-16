@@ -39,7 +39,7 @@ Refer to [Administration > Managing permissions](/guides/users-guide/administrat
 
 OpenIT credentials can be assigned using the Administration application. Click **OpenIT credentials** in the navigator and save these credentials for your tenant.
 
-![OpenIT Credentials](/images/java/java-client-services/openit_credentials.png)
+![OpenIT Credentials](/guides/images/java/java-client-services/openit_credentials.png)
 
 Note that receiving messages and receiving specific messages are not supported for this provider.
 

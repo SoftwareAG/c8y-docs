@@ -10,7 +10,7 @@ Assets represent business objects in general like buildings, machines, productio
 
 Assets are organized in hierarchies. For example, an energy monitoring application might have the following asset hierarchy:
 
-![image alt text](/images/users-guide/image_2.png)
+![image alt text](/guides/images/users-guide/image_2.png)
 
 The asset hierarchy is composed of two types of objects:
 
@@ -41,13 +41,13 @@ The following section explains how to work with smart devices and gateway device
 
 The first example shows how smart devices are linked into the asset hierarchy:
 
-![image alt text](/images/users-guide/image_3.png)
+![image alt text](/guides/images/users-guide/image_3.png)
 
 Smart devices are represented in the Device Management application as top-level devices. In the Cockpit application, you can organize smart devices into groups, as the arrows indicate in the above diagram.
 
 The second example shows how gateway devices can be used in the Cockpit application.
 
-![image alt text](/images/users-guide/image_4.png)
+![image alt text](/guides/images/users-guide/image_4.png)
 
 In the Device Management application, gateway devices are represented as top level devices. Their attached devices (like for example Modbus or KNX devices) are shown as child devices. These child devices can be organized in the asset hierarchy in the Cockpit application as shown above.
 
@@ -68,17 +68,17 @@ In the asset hierarchy, Cumulocity distinguishes between top-level groups and su
 
 In the navigator, top-level groups are shown in the **Group** menu at top-level. Sub-assets are shown in the navigator under the top-level groups or in the S**ub-asset** tab of a particular group.
 
-<img src="/images/users-guide/cockpit/cockpit-sub-assets.png" name="Sub-assets"/>
+<img src="/guides/images/users-guide/cockpit/cockpit-sub-assets.png" name="Sub-assets"/>
 
 When selecting an object in the asset hierarchy, details on the selected object are displayed at the right.
 
-<img src="/images/users-guide/cockpit/cockpit-info-tab.png" name="Info tab"/>
+<img src="/guides/images/users-guide/cockpit/cockpit-info-tab.png" name="Info tab"/>
 
 If you add a gateway device, the child devices are not shown. To show child devices, you must add them to the related asset. Details related to the child hierarchy are visible and editable in the Device Management application.
 
 To navigate further in the asset hierarchy, use the navigator or select an object in the **Sub-Asset** tab. To navigate up in the asset hierarchy, use the breadcrumb entry below the name of the asset.
 
-<img src="/images/users-guide/cockpit/cockpit-breadcrumb.png" name="Breadcrumb"/>
+<img src="/guides/images/users-guide/cockpit/cockpit-breadcrumb.png" name="Breadcrumb"/>
 
 
 ### Asset details
@@ -105,7 +105,7 @@ Moreover, additional tabs may be displayed here in case the application has been
 4. Select the devices you want to add from the list.
 5. Click **Create group with X device(s)** to finally create your new group. 
 
-<img src="/images/users-guide/cockpit/cockpit-create-group.png" name="Create group"/><br>
+<img src="/guides/images/users-guide/cockpit/cockpit-create-group.png" name="Create group"/><br>
 
 >**Info:** A group can also be created with "0" devices in it.
 
@@ -123,7 +123,7 @@ To assign a device to a group, follow these steps:
 3. Select the devices you want to add from the list.
 4. Click **Assign X device(s)** to assign the selected devices. 
 
-<img src="/images/users-guide/cockpit/cockpit-devices-assign.png" name="Assign devices"/>
+<img src="/guides/images/users-guide/cockpit/cockpit-devices-assign.png" name="Assign devices"/>
 
 The devices will be shown as sub-assets in the **Sub-assets** tab.
 

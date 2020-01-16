@@ -16,7 +16,7 @@ After starting, the agent will synchronize the inventory with the sensor sub-net
 
 To understand inventory synchronization, remember the communication hierarchy described in [Cumulocity's domain model](/guides/concepts/domain-model). In the inventory, agents are located at the roots of the communication hierarchy. Below each agent, the topology of the sub-network that the agent manages is reflected. This topology exists in the real network as well as in snapshot form in the inventory. It may change in the real network, and these changes need to be reflected in the inventory.
 
-![Communication hierarchy](/images/concepts-guide/commshierarchy.png)
+![Communication hierarchy](/guides/images/concepts-guide/commshierarchy.png)
 
 Inventory synchronization is a two step procedure: The first step is to query the agent's entry from the inventory and to create it in the network. The second step is then to discover the sub-network and synchronize it with the inventory based on the queried agent's entry.
 

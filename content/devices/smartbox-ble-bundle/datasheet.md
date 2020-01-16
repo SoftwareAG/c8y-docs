@@ -20,12 +20,12 @@ weight: 20
 
 | Connectivity/ Features | | |
 | --- | --- | --- |
-| Layout <td colspan="2"> ![Layout](/images/devices/smartbox-ble/interface.png)
+| Layout <td colspan="2"> ![Layout](/guides/images/devices/smartbox-ble/interface.png)
 | BLE | Qualification | v5.0 (Bluetooth low energy) |	
 | | Type | GATT Client |
 | | Connectivity | 1-8 Nordic Thingy52 BLE sensors </br> (Automatic Custom service identification of generic BLE sensors – not released yet) |
 | | Chip | NINA-B111-02B (ublox) |
-| Fieldbus Modbus </br> ![ ](/images/devices/smartbox-ble/modbus.png) | Type | Modbus RTU Master |
+| Fieldbus Modbus </br> ![ ](/guides/images/devices/smartbox-ble/modbus.png) | Type | Modbus RTU Master |
 | | Baudrate | 4800, 9600, 19200, 38400, 57600, 115200 |
 | | Parity | Even, ODD, NONE | 
 | | Stoppbits | 2,1 |
@@ -85,5 +85,5 @@ weight: 20
 | Operating humidity | Max. 85% |
 | Storage humidity | Max. 85% |
 | IP Class | IP20/IP54 (opt.) |
-| Approvals | ![ ](/images/devices/smartbox-ble/certification.png) |
+| Approvals | ![ ](/guides/images/devices/smartbox-ble/certification.png) |
 | Conformity Declerations |  <strong>2014/53/EU (Radio Equipment Directive - RED)</strong></br></br><strong>Radio</strong></br>EN301511 v12.5.1 for GSM 900 and 1800 MHz</br>EN301908 v11.1.1 for UMTS band 1 and 8</br>EN300328 v2.1.1 for Bluetooth Low EnergyRoHS-DIrective 2011/65/EU</br></br><strong>EMC</strong></br>EN 301489-1 v2.1.1 general part</br>EN 301489-52 v0.0.7 for GSM and UMTS</br>EN 301489-17 v3.1.1 for for Bluetooth Low Energy</br></br><strong>Safety</strong></br>EN60950-01 |

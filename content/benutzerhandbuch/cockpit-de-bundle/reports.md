@@ -22,7 +22,7 @@ Wählen Sie einen Bericht im Navigator aus, um diesen Bericht anzuzeigen.
 
 Klicken Sie die **Plus**-Schaltfläche in der oberen Leiste und wählen Sie  **Neuer Bericht** im Menü.
 
-![Neuer Bericht](/images/benutzerhandbuch/cockpit-report-create.png)
+![Neuer Bericht](/guides/images/benutzerhandbuch/cockpit-report-create.png)
 
 Geben Sie einen Namen für den Bericht ein und wählen Sie optional ein Symbol aus der Auswahlliste. Klicken Sie **Speichern**, um Ihre Einstellungen zu speichern.
 
@@ -60,7 +60,7 @@ Geben Sie einen Namen für den Export an und wählen Sie das Dateiformat (CSV od
 
 Im Bereich **Filter** können Sie Filter setzen, um Daten für bestimmte Objekte oder Zeiträume anzufragen.
 
-<img src="/images/benutzerhandbuch/cockpit-reporting-create.png" name="Filter für Berichte" style="width:100%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-reporting-create.png" name="Filter für Berichte" style="width:100%;"/>
 
 Um nach bestimmten Objekten zu filtern, geben Sie einen Objektnamen oder einen Attributwert in das Suchfeld ein und klicken Sie auf das Lupensymbol. Es werden alle passenden Geräte oder Gruppen unter dem Feld **Wert** angezeigt. Wählen Sie ein Gerät durch Klicken aus (grün hervorgehoben). 
 
@@ -81,13 +81,13 @@ Aktivieren bzw. deaktivieren Sie diese Felder mit dem Regler.
 
 Wenn ein Feld aktiviert ist, können vordefinierte oder leere Attribute hinzugefügt werden.
 
-<img src="/images/benutzerhandbuch/cockpit-reports-fields.png" name="Report fields" style="width:100%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-reports-fields.png" name="Report fields" style="width:100%;"/>
 
 Klicken Sie **Hinzufügen**, um ein leeres Feld hinzuzufügen. Klicken Sie **Spalte** oder **Pfad**, um eine Spalte und einen Pfad einzugeben. Wenn Sie beispielsweise das Feld **Alarm** aktivieren, können Sie etwa "Schweregrad" als Spalte und "severity" als Pfad eingeben, um nur Berichte zu Alarm-Schweregraden zu erhalten.
 
 Klicken Sie **Vordefiniertes Attribut hinzufügen**, um ein vordefiniertes Attribut hinzuzufügen. Markieren Sie die gewünschten Attribute in der angezeigten Liste und klicken Sie **Auswählen**. Verwenden Sie das Suchfeld, um die Liste nach bestimmten Eigenschaften zu filtern.
 
-<img src="/images/benutzerhandbuch/cockpit-reports-properties.png" name="Select properties" style="width:75%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-reports-properties.png" name="Select properties" style="width:75%;"/>
 
 Wenn Sie mindestens ein Feld haben, dass als eigenes Attribut definiert wurde und nicht aus der Liste der vordefinierten Attribute stammt, dann muss für ein Objekt mindestens dieses Attribut gesetzt sein, damit die entsprechenden Werte im Export erscheinen. 
 
@@ -102,7 +102,7 @@ Wenn Sie **Messwerte** aktiviert haben, sehen Sie die zusätzliche Option **Date
 
 Um einen Export in eine Datei für einen bestimmten Zeitpunkt zu planen, öffnen Sie das Kontextmenü für den entsprechenden Export und klicken Sie **Export planen**. Im folgenden Fenster können Sie die Smart Rule "Bei Timer-Ablauf Export per E-Mail senden" entsprechend einrichten.
 
-<img src="/images/benutzerhandbuch/cockpit-report-schedule-export.png" name="Exporting" style="width:50%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-report-schedule-export.png" name="Exporting" style="width:50%;"/>
 
 **1 - Name der Regel**
 
@@ -126,7 +126,7 @@ Klicken Sie **Erstellen**, um die benutzerdefinierte Smart Rule "Bei Timer-Ablau
 
 Die Smart Rule wird zu den Exportdetails hinzugefügt.
 
-<img src="/images/benutzerhandbuch/cockpit-report-smartrule.png" name="Smart rule" style="width:75;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-report-smartrule.png" name="Smart rule" style="width:75;"/>
 
 
 #### Exportieren von Daten

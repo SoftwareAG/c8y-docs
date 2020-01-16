@@ -42,4 +42,4 @@ From right you can set date range (date from and date to), you can select log fi
 
 Received logs are visible in a list below. You can click on it to show log file content at the bottom of the page. Last requested log is opened automatically.
 
-![Log viewer](/images/devices/netcomm/logs.png)
+![Log viewer](/guides/images/devices/netcomm/logs.png)

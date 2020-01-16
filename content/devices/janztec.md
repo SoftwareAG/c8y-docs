@@ -1,6 +1,6 @@
 ---
 title: Janz Tec emPC-A/RPI
 layout: bundle
-image: '/images/devices/device-list/janztec.jpg'
+image: '/guides/images/devices/device-list/janztec.jpg'
 brand: Jaztec
 ---

@@ -12,7 +12,7 @@ Um die Geräteintegration zu vereinfachen, stellt Cumulocity auch statische Temp
 
 Klicken Sie **SmartREST-Template** im Navigator, um die Liste der SmartREST-Templates zu öffnen. 
 
-![SmartREST-Templates](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest.png)
+![SmartREST-Templates](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest.png)
 
 Für jedes Template werden folgende Informationen bereitgestellt:
 
@@ -33,7 +33,7 @@ SmartREST-Templates können auf zweierlei Weise hinzugefügt werden:
 3. Geben Sie einen Namen und eine eindeutige ID für das Template ein (beide Eingaben sind erforderlich). 
 4. Klicken Sie **Importieren**, um das Template zu importieren.
 
-![Import templates](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest-import.png)
+![Import templates](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest-import.png)
 
 ### Erstellen eines neuen SmartREST-Templates
 
@@ -41,7 +41,7 @@ SmartREST-Templates können auf zweierlei Weise hinzugefügt werden:
 2. Geben Sie einen Namen und eine eindeutige ID für das Template ein (beide Eingaben sind erforderlich). 
 4. Klicken Sie **Weiter**, um Nachrichten oder Antworten hinzuzufügen.
 
-![Add new templates](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest-new.png)
+![Add new templates](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest-new.png)
 
 ### Hinzufügen einer Nachricht
 
@@ -49,7 +49,7 @@ Das Nachrichten-Template enthält alle erforderlichen Informationen, um eine  Sm
 
 Um eine neue Nachricht zu einem Template hinzuzufügen, navigieren Sie zur Registerkarte **Nachrichten** im entsprechenden Template und klicken Sie **Nachricht hinzufügen**. 
 
-![Add messages](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest-addmessage.png)
+![Add messages](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest-addmessage.png)
 
 Füllen Sie die folgenden Felder aus:
 
@@ -74,7 +74,7 @@ Ein Antwort-Template enthält alle erforderlichen Informationen, um Datenwerte a
 
 Um eine neue Antwort hinzuzufügen, navigieren Sie zur Registerkarte **Antworten** im entsprechenden Template und klicken Sie **Antwort hinzufügen**. 
 
-![Add response](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest-addresponse.png)
+![Add response](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest-addresponse.png)
 
 Füllen Sie die folgenden Felder aus:
 
@@ -108,4 +108,4 @@ Um ein SmartREST-Template als CSV-Datei herunterzuladen, führen Sie folgende Sc
 1. Wählen Sie im folgenden Fenster die bevorzugten Optionen für Feldtrennzeichen, Dezimaltrennzeichen und Zeichensatz. 
 2. Klicken Sie **Herunterladen**, um das Template als CSV-Datei herunterzuladen.
 
-![CSV preview](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest-csv.png)
+![CSV preview](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest-csv.png)

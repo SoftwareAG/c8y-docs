@@ -12,7 +12,7 @@ To ease the device integration, Cumulocity supports static templates that can be
 
 Open the **SmartREST template** page from the **Device Types** menu in the navigator. 
 
-![template view](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest.png)
+![template view](/guides/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest.png)
 
 For each template, the following information is provided:
 
@@ -33,7 +33,7 @@ There are two ways to add a SmartRest template:
 3. Enter a template name and a unique template ID (both mandatory fields). 
 4. Click **Import** to import the template.
 
-![Import template](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-import.png)
+![Import template](/guides/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-import.png)
 
 ### To create a new SmartREST template
 
@@ -41,7 +41,7 @@ There are two ways to add a SmartRest template:
 2. In the resulting dialog box, enter a template name and a unique template ID (both mandatory fields). 
 4. Click **Continue** to proceed adding messages or responses.
 
-![Add new template](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-new.png)
+![Add new template](/guides/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-new.png)
 
 #### To add a message
 
@@ -61,7 +61,7 @@ The message template contains all necessary information to convert the SmartRest
 |REST API built-in fields|These fields are optional and vary depending on the target REST API selected. In case no value is provided, a device will be able to set it when sending an actual message.
 |REST API custom fields|Additional fields can be added by clicking **Add field**. Enter the API key and select the desired data type.
 
-	![Add message](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-addmessage.png)
+	![Add message](/guides/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-addmessage.png)
 
 	Under **Preview** you can see a preview of your request message.
 
@@ -91,7 +91,7 @@ A response template contains the necessary information to extract data values fr
 |Condition|Condition value of the response.
 |Pattern|At least one pattern is required. Click **Add pattern** and enter a pattern value.
 
-	![Add template response](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-addresponse.png)
+	![Add template response](/guides/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-addresponse.png)
 
 3. Click **Save**.
 
@@ -124,6 +124,6 @@ To export a SmartREST template as CSV file follow these steps:
 2. In the resulting dialog box, specify the preferred options for the field separator, decimal separator and character set.
 3. In the **CSV preview** tab, which provides additional information on messages and responses, click **Copy to clipboard**. 
 
-![CSV preview tab](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-csv.png)
+![CSV preview tab](/guides/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-csv.png)
 
 The SmartREST template will be exported as CSV file.

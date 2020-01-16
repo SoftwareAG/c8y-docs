@@ -19,7 +19,7 @@ When developing a Cumulocity microservice, a developer is not restricted to any 
 
 The hosting of the Microservice is provided by Cumulocity. This way developers can focus on business logic and leave scaling, security, high availability and monitoring to Cumulocity. Microservices can be built on the top of the API exposed by the Cumulocity platform. This way, Cumulocity microservices are a comfortable means to provide new functionality and extend existing one. 
 
-![microservice_infrastructure](/images/concepts-guide/microservice_infrastructure.png)
+![microservice_infrastructure](/guides/images/concepts-guide/microservice_infrastructure.png)
 
 For detailed information on developing and deploying microservices on top of Cumulocity refer to the [Microservice SDK guide](/guides/microservice-sdk) which provides information on the general concept of microservices in Cumulocity as well as specific guidance and examples for various programming languages. 
 

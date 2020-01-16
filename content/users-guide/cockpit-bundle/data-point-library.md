@@ -16,7 +16,7 @@ Additionally, the properties of the Data Point Library are used by threshold bus
 
 To open the Data Point Library, click **Data Point Library** in the **Configuration** menu of the navigator.
 
-![Data point library](/images/users-guide/cockpit/cockpit-data-point-library.png)
+![Data point library](/guides/images/users-guide/cockpit/cockpit-data-point-library.png)
 
 A list of available data points will be opened. For each data point, the following information is provided in the list:
 

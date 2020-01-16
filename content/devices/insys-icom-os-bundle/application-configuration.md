@@ -6,11 +6,11 @@ weight: 30
 
 The following simple exemplary application monitors input 1 of an INSYS MRX or MRO router and transmits the condition of input 1 to Cumulocity every time it changes. The following configuration steps in the web interface of the icom Data Suite are necessary for this (adding the Cumulocity server has already been done in the previous steps):
 
-* [Adding Input 2.1 as a data point](/images/devices/icom#adding-input-2-1-as-a-data-point)
-* [Adding the Cumulocity message](/images/devices/icom#adding-the-cumulocity-message)
-* [Adding the event](/images/devices/icom#adding-the-event)
-* [Activating the profile](/images/devices/icom#activating-the-profile)
-* [Checking the result](/images/devices/icom#checking-the-result)
+* [Adding Input 2.1 as a data point](/guides/images/devices/icom#adding-input-2-1-as-a-data-point)
+* [Adding the Cumulocity message](/guides/images/devices/icom#adding-the-cumulocity-message)
+* [Adding the event](/guides/images/devices/icom#adding-the-event)
+* [Activating the profile](/guides/images/devices/icom#activating-the-profile)
+* [Checking the result](/guides/images/devices/icom#checking-the-result)
 
 ### Adding Input 2.1 as a data point
 
@@ -21,11 +21,11 @@ It is necessary to add Input 2.1 as a data point in the icom Data Suite. To do s
 3.	Enter a Description for the data point and select the Input 2.1 (Input 2.1 means that this is Input 1 on the card in slot 2)
 4.	Click on Save settings
 
-![Digital I/Os](/images/devices/icom/digitalIO.png)
+![Digital I/Os](/guides/images/devices/icom/digitalIO.png)
 
 Example for Input 1 on the card in Slot 2 of an MRX LAN (similar on other devices):
 
-![Input 1 example](/images/devices/icom/input1Example.png)
+![Input 1 example](/guides/images/devices/icom/input1Example.png)
 
 ### Adding the Cumulocity message
 
@@ -41,7 +41,7 @@ It is necessary to add a message that will be sent to the Cumulocity server when
 8.	Check the desired data point
 9.	Click on Save settings
 
-![Cumulocity message](/images/devices/icom/cumulocityMessage.png)
+![Cumulocity message](/guides/images/devices/icom/cumulocityMessage.png)
 
 ### Adding the event
 
@@ -57,7 +57,7 @@ It is necessary to create an event that sends the message when the condition of 
 8.	Select the respective message
 9.	Click on Save settings
 
-![Adding the event](/images/devices/icom/addingEvent.png)
+![Adding the event](/guides/images/devices/icom/addingEvent.png)
 
 ### Activating the profile
 
@@ -71,6 +71,6 @@ Connect a switch to the configured input and toggle it a few times to generate m
 
 Open in the Devices menu the All Devices page of Cumulocity and click on the device name to open the device page. Click on Measurements to view the chart.
 
-![Final Result](/images/devices/icom/finalResult.png)
+![Final Result](/guides/images/devices/icom/finalResult.png)
 
 Refer to [the INSYS website](https://www.insys-icom.com/monitoring-app) for further information.

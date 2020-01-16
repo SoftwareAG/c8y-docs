@@ -12,7 +12,7 @@ To shield machine-to-machine applications from this numbers of access options, C
 -   It translates the specific domain model of the device into a reference domain model.
 -   It enables secure remote communication in various network architectures.
 
-![Agent architecture](/images/concepts-guide/agents.png)
+![Agent architecture](/guides/images/concepts-guide/agents.png)
 
 **Protocol translation :** The configuration of parameters, readings, events and other information are either send to an agent ("push") or queried by an agent ("pull") through a device-specific protocol on one side. The agent will convert these messages into the protocol that Cumulocity requires. It will also receive device control commands from Cumulocity ("switch off that relay") and translate these into a kind of protocol the device requires.
 
@@ -28,7 +28,7 @@ To summarize the benefits of the agent concept: Agents enable IoT applications t
 
 Agents can be deployed in various ways, as illustrated in the picture below. We distinguish two main variants: *Server-side agents* and *device-side agents*.
 
-![Agent architectures](/images/concepts-guide/agentarchitectures.png)
+![Agent architectures](/guides/images/concepts-guide/agentarchitectures.png)
 
 **Server-side agents** are run in a cloud, hosted on Cumulocity as Microservices or managed by yourself in your own cloud. Devices connect to server-side agents using their device-specific protocol. This option is mainly chosen when one or more of the following complies:
 

@@ -17,7 +17,7 @@ To view the audit log list, click **Audit logs** in the **Account** menu. For ea
 
 Only the last 100 logs are visible. Click **Load more** at the bottom of the list to view more log entries.
 
-![Audit logs](/images/users-guide/Administration/admin-audit-logs.png)
+![Audit logs](/guides/images/users-guide/Administration/admin-audit-logs.png)
 
 >**Info**: The audit log list is not automatically refreshed after a realtime update for operations. Click **Reload** at the right of the top menu bar to update the list to the latest operations.
 

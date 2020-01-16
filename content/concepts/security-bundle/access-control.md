@@ -10,7 +10,7 @@ Cumulocity creates a new realm for each tenant to store the users of that tenant
 
 Each new realm is automatically populated with an initial administrator user who can create further users and user groups (i.e. global roles), and who can assign permissions to them. This enables an enterprise to manage users and their permissions on their own using the Administration application.
 
-![User management](/images/concepts-guide/user-management.png)
+![User management](/guides/images/concepts-guide/user-management.png)
 
 
 ### Permissions and ownership
@@ -53,7 +53,7 @@ Cumulocity allows you to set global permissions that are applicable to all manag
 
 Global roles and inventory roles are created and managed in the **Permission** page of the Administration application.
 
-![Permission page](/images/users-guide/Administration/admin-global-roles.png)
+![Permission page](/guides/images/users-guide/Administration/admin-global-roles.png)
 
 A detailed description on available default roles and on creating and assigning global and inventory roles can be found in [Managing permissions](/guides/users-guide/administration#managing-permissions) in the Administration section of the User guide.
 

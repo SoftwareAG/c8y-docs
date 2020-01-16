@@ -4,7 +4,7 @@ layout: redirect
 weight: 100
 ---
 
-The installed software on the SMARTbox can be remotely managed using the standard software and management feature from Cumulocity, as described in the Device management user's guide. You can also install the agent manually, follow the instructions here: http://cumulocity.com/images/devices/smartbox-release-notes/
+The installed software on the SMARTbox can be remotely managed using the standard software and management feature from Cumulocity, as described in the Device management user's guide. You can also install the agent manually, follow the instructions here: http://cumulocity.com/guides/images/devices/smartbox-release-notes/
 
 You can get the latest Software version in the Release notes folder of Device guide in Cumulocity or go to: https://www.pssystec.de/downloads/
 

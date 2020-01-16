@@ -20,12 +20,12 @@ To remove the necessity of persisting the ID on the device, Cumulocity offers th
 
 A typical device start looks like this:
 
-![REST Receiving Device ID](/images/mqtt/exampleRestDeviceId.png)
+![REST Receiving Device ID](/guides/images/mqtt/exampleRestDeviceId.png)
 
 With MQTT, we automatically use the identity API with the MQTT clientId.
 This removes the necessity to tell the ID to the device, and because the client sends also the other data on this connection, we can associate every measurement, alarm, event, etc. with the correct device.
 
-![MQTT Automatically Resolve ID](/images/mqtt/exampleMqttDeviceId.png)
+![MQTT Automatically Resolve ID](/guides/images/mqtt/exampleMqttDeviceId.png)
 
 #### Example 2: ID of alarms
 
@@ -33,9 +33,9 @@ When a client creates an alarm using the REST API, it needs to ensure that it ge
 
 The client will need this ID to later update the alarm, e.g. to status CLEARED, if the alarm is not active anymore.
 
-![REST Handling Alarms](/images/mqtt/exampleRestAlarmId.png)
+![REST Handling Alarms](/guides/images/mqtt/exampleRestAlarmId.png)
 
 In Cumulocity, a device can only have a single alarm per type in status ACTIVE. If it creates another alarm with the same type, it will get de-duplicated.
 Therefore, the MQTT implementation uses the type of an alarm as identifier. The client only needs to send which type of alarm has been resolved, and the server will find the correct alarm object.
 
-![MQTT Handling Alarms](/images/mqtt/exampleMqttAlarmId.png)
+![MQTT Handling Alarms](/guides/images/mqtt/exampleMqttAlarmId.png)

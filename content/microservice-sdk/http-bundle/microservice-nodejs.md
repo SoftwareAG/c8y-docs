@@ -300,7 +300,7 @@ $ zip node-microservice cumulocity.json image.tar
 The resulting _node-microservice.zip_ file contains your microservice and it is ready to be uploaded to the Cumulocity platform.
 Uploading the _node-microservice.zip_ into the platform can be done via the UI. In the Administration application, navigate to **Applications** > **Own applications** > **Add application** > **Upload microservice**. Drop the ZIP file of the microservice and then click **Subscribe**.
 
-![Subscribe microservice](/images/microservices-sdk/admin-microservice-subscribe-up.png)
+![Subscribe microservice](/guides/images/microservices-sdk/admin-microservice-subscribe-up.png)
 
 For more details about uploading a microservice ZIP file, refer to [Managing applications > Adding own applications](/guides/users-guide/administration#adding-applications) under the Administration section in the User guide.
 
@@ -330,7 +330,7 @@ with proper credentials (user and password from any subscribed tenant), returns 
 
 If there are active alarms on your tenant, your Slack channel will get notified. You can also [create a new alarm](/guides/reference/alarms/#post-create-a-new-alarm) using the Cumulocity REST API and validate that your microservice is listening to new alarms. Your Slack channel will also get notified.
 
-![Slack app posting alarms](/images/microservices-sdk/microservice-slack-alarms.png)
+![Slack app posting alarms](/guides/images/microservices-sdk/microservice-slack-alarms.png)
 
 ### Source code
 

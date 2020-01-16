@@ -11,7 +11,7 @@ weight: 20
 * Connect your sensors, DIN, Analogue Input between Ux and G
 * You can use external 24VDC (200mA) or the with the delivered PowerSupply
 
-![Interface](/images/devices/smartbox-io/io-interface.png)
+![Interface](/guides/images/devices/smartbox-io/io-interface.png)
 
 Note that the SMARTbox IO supports: 
 
@@ -31,4 +31,4 @@ Note that the SMARTbox IO supports:
 
 The connection diagram of the sensors is as follows:
 
-![Interface Sensors](/images/devices/smartbox-io/interface-sensors.png)
+![Interface Sensors](/guides/images/devices/smartbox-io/interface-sensors.png)

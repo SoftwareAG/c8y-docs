@@ -9,7 +9,7 @@ Next to the map, the individual recordings with their time are listed ("location
 
 Activate a regular identification of the location. In Configuration tab you can set. If the value of c8y.LocationCycle is greater 0 then tracking is enabled.
 
-![Tracking](/images/devices/smartbox-io/tracking.png)
+![Tracking](/guides/images/devices/smartbox-io/tracking.png)
 
 Depending on the type of device and the integration into Cumulocity, you can also configure device-side geo-fencing and motion detection.
 

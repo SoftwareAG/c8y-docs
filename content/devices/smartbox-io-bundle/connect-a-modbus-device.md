@@ -21,7 +21,7 @@ We assume that you already defined your Modbus device(s) which you want to conne
    Device3: Frontcooler for Serverline1 on Address5</br>
    Device4: Frontcooler for Serverline2 on Address6
 
-![ ](/images/devices/smartbox-io/modbus-setup.png)   
+![ ](/guides/images/devices/smartbox-io/modbus-setup.png)   
 
 To connect 1 Modbus Device to the RTU network:
 
@@ -36,4 +36,4 @@ To connect 1 Modbus Device to the RTU network:
 9.	Enter a name for the device and select the type of the device from the drop-down box. To add new device types, see "Configuring Fieldbus device types" below. Set the Modbus address of the connected device. 
 10.	Click "Add". Cumulocity will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds. 
 
-![ ](/images/devices/smartbox-io/rtu-network.png)
+![ ](/guides/images/devices/smartbox-io/rtu-network.png)

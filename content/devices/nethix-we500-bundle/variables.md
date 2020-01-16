@@ -9,7 +9,7 @@ In order to do that, it’s necessary to create a new variable and to enable the
 
 Navigate to **Administration > Variables > Variables** tab and click *New*, in order to create a new variable.
 
-![Variable_Setup](/images/devices/we500/variable_setup_generic_settings1.png)
+![Variable_Setup](/guides/images/devices/we500/variable_setup_generic_settings1.png)
 
 Many different types of variables are available, and for each of them parameters may differ. Only the section **Generic Variable** is valid for all types of variables. This section is structured as follows:
 

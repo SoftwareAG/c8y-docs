@@ -15,25 +15,25 @@ First you need to access Meshlium Manager System Interface, to do that, connect 
 
 	10.10.10.1/ManagerSystem
 
-![address bar](/images/devices/meshlium/ManagerSystem-address_bar.png)
+![address bar](/guides/images/devices/meshlium/ManagerSystem-address_bar.png)
 
 Doing so will bring you to the Meshlium Manager System, then click on the "Cloud Connector" button.
 
-![system manager](/images/devices/meshlium/ManagerSystem.png)
+![system manager](/guides/images/devices/meshlium/ManagerSystem.png)
 
 Next click on "IoT Solutions".
 
-![cloud connector](/images/devices/meshlium/CloudConnector.png)
+![cloud connector](/guides/images/devices/meshlium/CloudConnector.png)
 
 Then select "Cumulocity".
 
-![iot solutions](/images/devices/meshlium/IoTSolutions.png)
+![iot solutions](/guides/images/devices/meshlium/IoTSolutions.png)
 
 This will bring you to Cumulocity cloud configurator.
 
 Now fill all the fields with your Cumulocity account settings.
 
-![cloud configurator](/images/devices/meshlium/cumulocity_plugin_configuration.png)
+![cloud configurator](/guides/images/devices/meshlium/cumulocity_plugin_configuration.png)
 
 Click on "Save" to store your settings.
 

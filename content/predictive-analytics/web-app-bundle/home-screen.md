@@ -8,7 +8,7 @@ In the Cumulocity application, you access the Predictive Analytics application t
 
 Clicking **Predictive Analytics** in the app switcher will open the Predictive Analytics application showing the  **Home screen** of the application.
 
-![Home screen](/images/zementis/zementis-home-screen.png)
+![Home screen](/guides/images/zementis/zementis-home-screen.png)
 
 The **Home screen** provides:
 

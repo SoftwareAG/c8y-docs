@@ -5,7 +5,7 @@ layout: redirect
 ---
 Cumulocity enthält eine Reihe von vordefinierten Smart Rules. 
 
-<img src="/images/benutzerhandbuch/cockpit-global-smart-rule-add.png" name="Global Smart Rules" style="width:75%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-global-smart-rule-add.png" name="Global Smart Rules" style="width:75%;"/>
 
 Für jeden globalen Smart Rules-Typen lassen sich verschiedene Parameter konfigurieren.
 
@@ -23,7 +23,7 @@ Wenn ein Alarm erzeugt wird, wird eine SMS gesendet.
 
 Die Regel verwendet die folgenden Parameter:
 
-<img src="/images/benutzerhandbuch/cockpit-smart-rule-on-alarm-send-sms.png" name="Smart Rule SMS senden" style="width:50%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-on-alarm-send-sms.png" name="Smart Rule SMS senden" style="width:50%;"/>
 
 |Schritt|Feld|Beschreibung|
 |:---|:---|:---|
@@ -52,7 +52,7 @@ Wenn ein Alarm erzeugt wird, wird eine E-Mail gesendet.
 
 Die Regel verwendet die folgenden Parameter:
 
-<img src="/images/benutzerhandbuch/cockpit-smart-rule-on-alarm-send-sms.png" name="Smart Rule E-Mail senden" style="width:50%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-on-alarm-send-sms.png" name="Smart Rule E-Mail senden" style="width:50%;"/>
 
 |Schritt|Feld|Beschreibung|
 |:---|:---|:---|
@@ -82,7 +82,7 @@ Wenn ein Alarm erzeugt wird, wird eine E-Mail oder SMS gesendet.
 
 Die Regel verwendet die folgenden Parameter:
 
-<img src="/images/benutzerhandbuch/cockpit-smart-rule-on-alarm-escalate.png" name="Smart Rule Eskalieren" style="width:50%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-on-alarm-escalate.png" name="Smart Rule Eskalieren" style="width:50%;"/>
 
 |Schritt|Feld|Beschreibung|
 |:---|:---|:---|
@@ -109,7 +109,7 @@ Wenn ein Alarm für einen bestimmten Zeitraum aktiviert ist, wird er Schweregrad
 
 Die Regel verwendet die folgenden Parameter:
 
-<img src="/images/benutzerhandbuch/cockpit-smart-rule-on-alarm-increase.png" name="Smart Rule Schweregrad erhöhen" style="width:50%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-on-alarm-increase.png" name="Smart Rule Schweregrad erhöhen" style="width:50%;"/>
 
 |Schritt|Feld|Beschreibung|
 |:---|:---|:---|
@@ -140,7 +140,7 @@ Diese Regel kann für das Betreten oder Verlassen eines Geofence-Bereichs oder f
 
 Die Regel verwendet die folgenden Parameter:
 
-<img src="/images/benutzerhandbuch/cockpit-smart-rule-geofence-alarm.png" name="Smart Rule Geofence Alarm" style="width:50%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-geofence-alarm.png" name="Smart Rule Geofence Alarm" style="width:50%;"/>
 
 |Schritt|Feld|Beschreibung|
 |:---|:---|:---|
@@ -171,7 +171,7 @@ Diese Regel kann für das Betreten oder Verlassen eines Geofence-Bereichs oder f
 
 Die Regel verwendet die folgenden Parameter:
 
-<img src="/images/benutzerhandbuch/cockpit-smart-rule-geofence-email.png" name="Smart Rule Geofence E-Mail" style="width:50%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-geofence-email.png" name="Smart Rule Geofence E-Mail" style="width:50%;"/>
 
 |Schritt|Feld|Beschreibung|
 |:---|:---|:---|
@@ -199,7 +199,7 @@ Erstellt einen Verbrauchs-Datenpunkt basierend auf Daten von einem Strom-, Gas o
 
 Die Regel verwendet die folgenden Parameter:
 
-<img src="/images/benutzerhandbuch/cockpit-smart-rule-consumption.png" name="Smart Rule Energieverbrauch" style="width:50%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-consumption.png" name="Smart Rule Energieverbrauch" style="width:50%;"/>
 
 |Schritt|Feld|Beschreibung|
 |:---|:---|:---|
@@ -228,7 +228,7 @@ Gehen keine neuen Messdaten innerhalb eines bestimmten Zeitraums ein, wird ein A
 
 Die Regel verwendet die folgenden Parameter:
 
-<img src="/images/benutzerhandbuch/cockpit-smart-rule-missing-measurements.png" name="Smart Rule fehlende Messwerte" style="width:50%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-missing-measurements.png" name="Smart Rule fehlende Messwerte" style="width:50%;"/>
 
 |Schritt|Feld|Beschreibung|
 |:---|:---|:---|
@@ -249,7 +249,7 @@ Tritt ein bestimmter Alarm auf, wird das spezifizierte Kommando zum Gerät gesen
 
 Die Regel verwendet die folgenden Parameter:
 
-<img src="/images/benutzerhandbuch/cockpit-smart-rule-execute-command.png" name="Smart Rule Kommando ausführen" style="width:50%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-execute-command.png" name="Smart Rule Kommando ausführen" style="width:50%;"/>
 
 |Schritt|Feld|Beschreibung|
 |:---|:---|:---|
@@ -286,7 +286,7 @@ Durch diesen Mechanismus können globale Schwellwertbereiche in der Datenpunktbi
 
 Die Regel verwendet die folgenden Parameter:
 
-<img src="/images/benutzerhandbuch/cockpit-smart-rule-exceed-threshold.png" name="Smart Rule Schwellwertüberschreitung" style="width:50%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-exceed-threshold.png" name="Smart Rule Schwellwertüberschreitung" style="width:50%;"/>
 
 |Schritt|Feld|Beschreibung|
 |:---|:---|:---|
@@ -350,7 +350,7 @@ Der Schweregrad des Alarms wird folgendermaßen bestimmt:
 
 Die Regel verwendet die folgenden Parameter:
 
-<img src="/images/benutzerhandbuch/cockpit-smart-rule-explicit-threshold.png" name="Smart Rule Messbereichsüberschreitung" style="width:50%;"/>
+<img src="/guides/images/benutzerhandbuch/cockpit-smart-rule-explicit-threshold.png" name="Smart Rule Messbereichsüberschreitung" style="width:50%;"/>
 
 |Schritt|Feld|Beschreibung|
 |:---|:---|:---|

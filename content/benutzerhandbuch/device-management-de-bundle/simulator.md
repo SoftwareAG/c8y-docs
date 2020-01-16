@@ -29,7 +29,7 @@ Klicken Sie **Simulator** im Menü **Geräte**, um die Seite **Simulator** zu ö
 
 Allen Simulatoren, auf die Sie zugreifen können, werden hier angezeigt. Klicken Sie auf das Menüsymbol rechts oben in einer Simulatorkarte, um den Simulator zu bearbeiten, zu duplizieren oder zu löschen.
 
-<img src="/images/users-guide/DeviceManagement/DevMgmt_SimulatorCard.png" alt="Simulator card" style="max-width: 50%">
+<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_SimulatorCard.png" alt="Simulator card" style="max-width: 50%">
 
 ### Hinzufügen eines Simulators 
 
@@ -41,7 +41,7 @@ Um einen neuen Simulator zu erstellen, führen Sie folgende Schritte aus:
 4. Wählen Sie die Anzahl der Instanzen für diesen Simulator (bis zu zehn).
 3. Klicken Sie **Weiter**, um zum nächsten Dialog zu wechseln.
 
-<img src="/images/benutzerhandbuch/addsimde.png" alt="Simulator hinzufügen" style="max-width: 60%">
+<img src="/guides/images/benutzerhandbuch/addsimde.png" alt="Simulator hinzufügen" style="max-width: 60%">
 
 ### Anweisungen
 
@@ -53,15 +53,15 @@ Anweisungen können auf der Registerkarte **Anweisungen** eines Simulators angez
 
 In den voreingestellten Simulatoren sind bereits Beispielanweisungen vorhanden. Der Simulator "Temperaturmesswert" beispielsweise enthält bereits die Schritte "Messwert erstellen" und "Warten". 
 
-![Add Instructions Step 2](/images/users-guide/addinstructions2.png)
+![Add Instructions Step 2](/guides/images/users-guide/addinstructions2.png)
 
 Die Messwertanweisungen beziehen sich auf ein Fragment. Fragmente werden verwendet, um die Kapazitäten von Objekten zu bestimmen. Nähere Informationen zu Fragmenten finden Sie in der [Sensor Library ](/guides/reference/sensor-library/) im Reference Guide.
 
-![Add Instructions Step 3](/images/benutzerhandbuch/addinstructions3de.png)
+![Add Instructions Step 3](/guides/images/benutzerhandbuch/addinstructions3de.png)
 
 Die Anweisung "Warten" erfordert einen einzelnen Wert für die Dauer des Wartens in Sekunden. 
 
-![Add Instructions Step 4](/images/benutzerhandbuch/addinstructions4de.png)
+![Add Instructions Step 4](/guides/images/benutzerhandbuch/addinstructions4de.png)
 
 Der Bereich auf der rechten Seite ändert sich entsprechend des ausgewählten Anweisungstyps.
 
@@ -70,9 +70,9 @@ Der Bereich auf der rechten Seite ändert sich entsprechend des ausgewählten An
 
 in der Registerkarte **Unterstützte Kommandos** eines Simulators können bestimmte Kommandos wie Konfigurationen oder Software-/Firmware-Updates ein- oder abgeschaltet werden.
 
-![Operations Off](/images/benutzerhandbuch/supop1de.png)
+![Operations Off](/guides/images/benutzerhandbuch/supop1de.png)
 
-![Operations On](/images/benutzerhandbuch/supop2de.png)
+![Operations On](/guides/images/benutzerhandbuch/supop2de.png)
 
 Klicken Sie **Benutzerdefiniertes Kommando hinzufügen**, um eigene Kommandos zur Liste hinzuzufügen.
 
@@ -80,4 +80,4 @@ Klicken Sie **Benutzerdefiniertes Kommando hinzufügen**, um eigene Kommandos zu
 
 Die Registerkarte **Alarme** eines Simulators zeigt Alarme an, die den Simulator selbst betreffen (nicht das simulierte Gerät), d.h. Alarme für den Fall, dass der Simulator nicht korrekt arbeitet. Weitere Informationen zu Alarmen finden Sie unter [Arbeiten mit Alarmen](#alarm-monitoring). 
 
-![Simulator Alarm](/images/benutzerhandbuch/simalarmde.png)
+![Simulator Alarm](/guides/images/benutzerhandbuch/simalarmde.png)

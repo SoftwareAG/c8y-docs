@@ -86,7 +86,7 @@ Each managed object in the inventory has an own, "global" identifier that is aut
 
 This identifier will always stay with the object regardless of network restructures or different hardware parts.
 
-![Identity service](/images/concepts-guide/identification.png)
+![Identity service](/guides/images/concepts-guide/identification.png)
 
 To shield applications from these numbers of identifiers, Cumulocity includes an identity service that registers all identifiers for one asset that are used outside of Cumulocity and map these to a single global identifier that is used by applications.
 
@@ -102,13 +102,13 @@ The inventory model supports two default hierarchies of objects: A communication
 
 The communication hierarchy tracks how devices are linked to the M2M platform from a communication point of view. A typical communication hierarchy is shown in the picture below: Agents connect the sensor network to Cumulocity. They often communicate through gateway devices or modems with the sensor network. The gateways, in reverse, connect to devices in the sensor network, which contain sensors and controls. 
 
-![Example communication hierarchy](/images/concepts-guide/commshierarchy.png)
+![Example communication hierarchy](/guides/images/concepts-guide/commshierarchy.png)
 
 The asset hierarchy structures the assets that are remotely supervised and controlled through the M2M devices. 
 
 An example asset hierarchy for building management could be buildings containing rooms. Buildings would be associated with gateways connecting the building to Cumulocity, while rooms would be associated with sensors and controls. This example hierarchy is shown in the picture below.
 
-![Example asset hierarchy](/images/concepts-guide/assethierarchy.png)
+![Example asset hierarchy](/guides/images/concepts-guide/assethierarchy.png)
 
 #### Child objects in hierarchies 
 

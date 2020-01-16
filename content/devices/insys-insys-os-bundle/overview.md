@@ -11,8 +11,8 @@ The following INSYS OS Smart Devices support Cumulocity (Monitoring App 2.5.2 or
 * [EBW series](http://insys-icom.com/EBW): Basic Industrial Routers
 * [MoRoS series](http://insys-icom.com/MoRoS): All-round Industrial Routers
 
-<img src="/images/devices/insys/insys-imon.png" alt="INSYS IMON" style="display: inline;max-width: 25%">
-<img src="/images/devices/insys/insys-ebw.png" alt="INSYS EBW" style="display: inline;max-width: 25%">
-<img src="/images/devices/insys/insys-mores.png" alt="INSYS MoReS" style="display: inline;max-width: 25%">
+<img src="/guides/images/devices/insys/insys-imon.png" alt="INSYS IMON" style="display: inline;max-width: 25%">
+<img src="/guides/images/devices/insys/insys-ebw.png" alt="INSYS EBW" style="display: inline;max-width: 25%">
+<img src="/guides/images/devices/insys/insys-mores.png" alt="INSYS MoReS" style="display: inline;max-width: 25%">
 
-Cumulocity support for INSYS Smart Devices with icom OS is described [here](/images/devices/icom).
+Cumulocity support for INSYS Smart Devices with icom OS is described [here](/guides/images/devices/icom).

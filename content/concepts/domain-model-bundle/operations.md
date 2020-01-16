@@ -45,7 +45,7 @@ The agent will execute the operations on the devices that it manages (Step "3"),
 
 Finally, the application can query the results of the operation (Step "5"). Audit records are generated both for the original request to run the device control operation and for the acknowledgement that the operation was actually run.
 
-![Device control architecture](/images/concepts-guide/control.png)
+![Device control architecture](/guides/images/concepts-guide/control.png)
 
 If there are communication issues while delivering an operation to a device, an alarm should be raised by the agent.
 

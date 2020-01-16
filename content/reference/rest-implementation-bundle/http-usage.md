@@ -91,7 +91,7 @@ Authentication details are exchanged using cookies. There are two parts to it, t
 
 The flow of authenticating with OAuth authentication code grant is as follows:
 
-![Authentication flow](/images/reference-guide/oauth-simple-flow.png)
+![Authentication flow](/guides/images/reference-guide/oauth-simple-flow.png)
 
 The first request executed by the browser is:
 

@@ -18,7 +18,7 @@ In the data explorer, you see a list of available data points on the right. The 
 
 On the left, in the main card, you see its visualization. 
 
-![data explorer](/images/users-guide/cockpit/cockpit-dataexplorer.png)
+![data explorer](/guides/images/users-guide/cockpit/cockpit-dataexplorer.png)
 
 The visualization is generated based on data point properties.
 
@@ -30,7 +30,7 @@ The data points properties are pre-filled as follows:
 
 There can be more than one matching data point entry in the Data Point Library. In this case, the first one is selected automatically by the system. You can overwrite this selection by clicking the menu icon of the respective data point and selecting **Load [NAME] from Library**. 
 
-![edit data points](/images/users-guide/cockpit/cockpit-dataexplorer-edit.png)
+![edit data points](/guides/images/users-guide/cockpit/cockpit-dataexplorer-edit.png)
 
 For details on modifying the visualization in general, see [*Changing data point visualization*](#change-visualization). For details on customizing the properties of a particular data point, see [*Customizing data point properties*](#customize-data-points).
 
@@ -76,7 +76,7 @@ For each datapoint, its visibility can be switched on or off by using the slider
 
 To add a data point to the data explorer, click  **Add data point** at the bottom of the **Data points** card. 
 
-![Add data point](/images/users-guide/cockpit/cockpit-dataexplorer-adddatapoint.png)
+![Add data point](/guides/images/users-guide/cockpit/cockpit-dataexplorer-adddatapoint.png)
 
 In the top of the dialog, select a device from the asset hierarchy. Only the asset hierarchy below the objects selected in the navigator is visible. If **Data explorer** in the navigator was selected, the complete asset hierarchy is visible.
 
@@ -84,7 +84,7 @@ The bottom of the dialog shows all data points of the selected object. Select th
 
 To save the data point to the Data Point Library, click the menu icon of the data point and from the context menu select **Save to library**. 
 
-![Save data point to library](/images/users-guide/cockpit/cockpit-dataexplorer-savedatapoint.png)
+![Save data point to library](/guides/images/users-guide/cockpit/cockpit-dataexplorer-savedatapoint.png)
 
 For details on the Data Point Library refer to [Using the Datapoint Library](#data-point-library).
 
@@ -164,11 +164,11 @@ In this case, both data points share the same y-axis. This y-axis only shows the
 
 In addition to data points you can also add alarms or events to the data explorer.
 
-![Data explorer events](/images/users-guide/cockpit/cockpit-dataexplorer-events.png)
+![Data explorer events](/guides/images/users-guide/cockpit/cockpit-dataexplorer-events.png)
 
 In the **Alarms/ Events** card, click **Add alarm/ event** to add an alarm or event.
 
-![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-eventsadd.png)
+![Data explorer add events](/guides/images/users-guide/cockpit/cockpit-dataexplorer-eventsadd.png)
 
 In the upcoming dialog, you can select an alarm or event from the list of recent alarms and events. Click **Add**, to add your selection.
 
@@ -187,7 +187,7 @@ If you want to keep your current configuration in the data explorer for later us
 
 To create a widget from the data explorer of a particular asset, click **More...** in the top menu bar and select **Send as widget to dashboard** from the context menu.
 
-[Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-sendwidget.png)
+[Data explorer add events](/guides/images/users-guide/cockpit/cockpit-dataexplorer-sendwidget.png)
 
 In the upcoming dialog, select one of the dashboards available for the current object and click **Select** to add the data explorer as widget to the selected dashboard.
 
@@ -197,7 +197,7 @@ In the upcoming dialog, select one of the dashboards available for the current o
 
 To create a widget from the data explorer of in the navigator, click **More...** in the top menu bar and select **Send as a widget to report** from the context menu.
 
-[Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-sendwidget.png) 
+[Data explorer add events](/guides/images/users-guide/cockpit/cockpit-dataexplorer-sendwidget.png) 
 
 In the upcoming dialog, select one of the reports available and click **Select** to add the data explorer as widget to the selected report.
 

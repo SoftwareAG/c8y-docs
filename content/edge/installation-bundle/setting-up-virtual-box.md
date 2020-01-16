@@ -13,28 +13,28 @@ Download the VirtualBox package for your operating system from [https://www.virt
 >**Info**: Depending on the operating system and VirtualBox version you are using, the following steps and especially the screenshots might slightly differ. The sample screenshot shared below were created using Virtual Box 6.0.
 
 1. In the VirtualBox, click **Tools** > **Network** in the top left.<br>
-<img src="/images/edge/edge-vb-01.png" name="Configure network" style="width:75%;"/>
+<img src="/guides/images/edge/edge-vb-01.png" name="Configure network" style="width:75%;"/>
 
 2. Click **Create** to set a host-only network interface for VM.<br>
-<img src="/images/edge/edge-vb-02.png" name="Configure network" style="width:75%;"/>
+<img src="/guides/images/edge/edge-vb-02.png" name="Configure network" style="width:75%;"/>
 
 3. Navigate to **File** > **Preferences** > **Network** to check the network settings. <br>
-<img src="/images/edge/edge-vb-03.png" name="Configure network" style="width:75%;"/>
+<img src="/guides/images/edge/edge-vb-03.png" name="Configure network" style="width:75%;"/>
 
 4. In the **NAT Networks** tab, click the plus icon to add a new network.
 
 5. Click the settings icon on the right and make sure that **Enable network** is activated, which is the default. This network interface is used for outbound Internet/Intranet access. <br>
-<img src="/images/edge/edge-vb-05.png" name="NAT network details" style="width:75%;"/>
+<img src="/guides/images/edge/edge-vb-05.png" name="NAT network details" style="width:75%;"/>
 
 6. Click **Tools** > **Network** in the top left. Select VirtualBox Host-Only Ethernet Adapter.<br>
-<img src="/images/edge/edge-vb-06.png" name="NAT network details" style="width:75%;"/>
+<img src="/guides/images/edge/edge-vb-06.png" name="NAT network details" style="width:75%;"/>
 
 7. Click the properties icon on the right and make sure that **IPv4 Address** and **IPv4 Mask** are set to the following values: IPv4 Adress = 192.168.56.1, IPv4 Mask = 255.255.255.0 <br>
-<img src="/images/edge/edge-vb-07.png" name="NAT network details" style="width:75%;"/><br>
+<img src="/guides/images/edge/edge-vb-07.png" name="NAT network details" style="width:75%;"/><br>
 If, in your VirtualBox, there already is a Host-Only Ethernet Adapter configured with the same IPv4 address, then update its properties as described in the next steps.
 
 8. Click the **DHCP Server** tab and make sure that the DHCP server is not enabled.<br>
-<img src="/images/edge/edge-vb-08.png" name="NAT network details" style="width:75%;"/>
+<img src="/guides/images/edge/edge-vb-08.png" name="NAT network details" style="width:75%;"/>
 
 The VirtualBox now is installed and the network is set.
 
@@ -48,7 +48,7 @@ The machine has predefined settings for disk, CPU and memory.
 
 Once the machine has been imported it will show up in the Manager application.
 
-<img src="/images/edge/edge-vm-import.PNG" name="Import VM" style="width:75%;"/>
+<img src="/guides/images/edge/edge-vm-import.PNG" name="Import VM" style="width:75%;"/>
 
 Start the virtual machine by clicking **Start** on the top left.
 
@@ -58,7 +58,7 @@ Start the virtual machine by clicking **Start** on the top left.
 
 In case of the following error, proceed as described below. 
 
-![Error](/images/edge/edge-vb-error.png)
+![Error](/guides/images/edge/edge-vb-error.png)
 
 Click **Change network setting** and select the VirtualBox Host-Only Ethernet Adapter which has been configured in Step 8 above. 
 
@@ -70,10 +70,10 @@ The VirtualBox metadata files for VM appliance keep the "VirtualBox Host-Only Et
 Follow the steps below, to setup port forwarding.
 
 1. In the Virtual Box, click **Machine Tools** in the top right.<br>
-<img src="/images/edge/edge-port-forwarding1.png" name="Port forwarding Step 1" style="width:75%;"/>
+<img src="/guides/images/edge/edge-port-forwarding1.png" name="Port forwarding Step 1" style="width:75%;"/>
 
 2. Click **Settings** in the top left. Under settings, click **Network**, open the network you previously created and then click **Port forwarding**.<br>
-<img src="/images/edge/edge-port-forwarding2.png" name="Port forwarding Step 2" style="width:75%;"/>
+<img src="/guides/images/edge/edge-port-forwarding2.png" name="Port forwarding Step 2" style="width:75%;"/>
 
 3. In the **Port Forwarding Rules** window, click the plus icon. Add the following details for HTTP:<br>
 **Name**: HTTP <br>
@@ -82,10 +82,10 @@ Follow the steps below, to setup port forwarding.
 **Host port**: 80 <br>
 **Guest IP**: The Edge VM IP address which is always 192.168.56.120.<br>
 **Guest port**: 80<br><br>
-<img src="/images/edge/edge-port-forwarding3.png" name="Port forwarding Step 3" style="width:75%;"/>
+<img src="/guides/images/edge/edge-port-forwarding3.png" name="Port forwarding Step 3" style="width:75%;"/>
 
 4. Follow the same steps and add details for other incoming and outgoing traffic, see [Prerequisites > Network connectivity](#prerequisites).
 Once all port details have been added, it should look similar to the following screenshot:<br>
-<img src="/images/edge/edge-port-forwarding4.png" name="Port forwarding result" style="width:75%;"/>
+<img src="/guides/images/edge/edge-port-forwarding4.png" name="Port forwarding result" style="width:75%;"/>
  
 5. Click **OK** in the **Port Forwarding Rules** window and then in the **Settings** window to complete port forwarding on Edge VM.

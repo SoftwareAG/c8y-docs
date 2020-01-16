@@ -15,6 +15,6 @@ You will be asked for the name and base URL of your tenant, as well as your user
 
 After deploying the application, it appears in the *"Own applications"* menu of the "Administration" application.
 
-![My Application](/images/plugins/applicationeditor.png)
+![My Application](/guides/images/plugins/applicationeditor.png)
 
 To see the "Hello world!" plugin, navigate to the example you just created an select the menu "New plugin". You should be able to see the text "Hello world!". You can also try out the other example plugins. For further information on the example plugins, visit the respective documents in the documentation.

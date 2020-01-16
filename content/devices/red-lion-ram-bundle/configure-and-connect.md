@@ -40,19 +40,19 @@ username&gt;."
 
 > Note: The 4.27 firmware has the **cumulocity.com.cert** Root Certificate Authority already installed on the device. The version of the Root CA is the latest version as of the 4.27 firmware release date (August 2017).*
 
-![Image1](/images/devices/redlion_ram/rlimage1.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage1.png)
 
 **Step 8.** Click on the "Test Server Availability" button at the bottom of the screen.
 
-![Image1](/images/devices/redlion_ram/rlimage2.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage2.png)
 
-![Image1](/images/devices/redlion_ram/rlimage3.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage3.png)
 
 **Step 9.** If the information above was filled out correctly, then an
 Alert message should pop up saying "Device can successfully connect
 to remote host". Click "OK".
 
-![Image1](/images/devices/redlion_ram/rlimage4.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage4.png)
 
 > Note: If a device with the same Device ID is already created, the
 device will fail to connect. Ensure the device is not already
@@ -78,23 +78,23 @@ Management". "Device Management" can be found in the upper right corner
 of the web page. Click the 3x3 matrix icon and navigate to "Device
 Management".
 
-![Image1](/images/devices/redlion_ram/rlimage5.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage5.png)
 
 **Step 2**. "The Device Management" page will load. On the left side
 bar, click "Registration".
 
-![Image1](/images/devices/redlion_ram/rlimage6.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage6.png)
 
 **Step 3**. In the upper right corner of page, click "Register device". This will produce a dropdown menu asking for the "device ID". Enter the serial number of the Red Lion Cellular router into this field then click "Register Device".
 
 > Enter the serial number exactly as it is printed under "Status" and then "Summary" of the Red Lion Cellular router’s web UI.
 
-![Image1](/images/devices/redlion_ram/rlimage7.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage7.png)
 
 **Step 4.** An entry will be added to the "Registration" section of Cumulocity with the Serial Number of the Red Lion Cellular router with a status of "WAITING FOR CONNECTION".
 The rest of the setup will be done on the Red Lion Cellular router.
 
-![Image1](/images/devices/redlion_ram/rlimage8.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage8.png)
 
 **Step 5.** Log into the Red Lion Cellular router and navigate to
 "Services" and then "RAMQTT Client".
@@ -114,20 +114,20 @@ list.
 **Step 11.** Select "cumulocity.com.cert" from the "Device Root CA"
 dropdown list.
 
-![Image1](/images/devices/redlion_ram/rlimage9.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage9.png)
 
 **Step 12.** Click on the "Test Server Availability" button at the bottom
 of the screen.
 
-![Image1](/images/devices/redlion_ram/rlimage2.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage2.png)
 
-![Image1](/images/devices/redlion_ram/rlimage3.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage3.png)
 
 **Step 13.** If the information above was filled out correctly, then an
 alert message should pop up saying "Device can successfully connect to
 remote host". Click "Ok".
 
-![Image1](/images/devices/redlion_ram/rlimage4.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage4.png)
 
 > Note: If a device with the same Device ID is already created, the device will fail to connect. Ensure the device is not already registered to the Cumulocity cloud.
 
@@ -135,34 +135,34 @@ remote host". Click "Ok".
 
 **Step 15.** The RAMQTT client will connect to the "mqtt.cumulocity.com" host and request credentials. Once the request reaches the host, the status of the entry in the registration page will change from "WAITING FOR CONNECTION" to "PENDING ACCEPTANCE".
 
-![Image1](/images/devices/redlion_ram/rlimage10.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage10.png)
 
 **Step 16.** Click "Accept". The Red Lion Cellular router will change status to "Accepted".
 
-![Image1](/images/devices/redlion_ram/rlimage11.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage11.png)
 
 **Step 17.** Click on the "All devices" tab under "Devices" on the right side of page. If the registration was successful, an entry with the Serial Number of the device as the "NAME" and "SERIAL NUMBER" fields will be displayed.
 
 > It may take up to a few minutes for this entry to appear as the device is updating its own configuration with the newly obtained credentials and reconnecting to the actual host.
 
-![Image1](/images/devices/redlion_ram/rlimage12.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage12.png)
 
-![Image1](/images/devices/redlion_ram/rlimage13.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage13.png)
 
 ### Setup User Defined Credentials using CSV Upload
 
 The Cumulocity cloud requires a specific CSV format for each device entry needed. The first row of the CSV file needs to have the following column values:
 
-![Image1](/images/devices/redlion_ram/rlimage14.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage14.png)
 
 Each row afterwards corresponds with one device. The "ID" of the device must be the Serial Number of the device being registered. The "CREDENTIALS" must be at least 8 characters long. The "TENANT" corresponds to the tenant of the account.
 
-![Image1](/images/devices/redlion_ram/rlimage15.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage15.png)
 
 **Step 1.** Upload the created CSV file by clicking the "Registration"
 tab and then clicking "Upload". Select the create CSV file.
 
-![Image1](/images/devices/redlion_ram/rlimage16.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage16.png)
 
 **Step 2.** When complete, click on the "Device credentials" tab. If the registration was successful, there will be a series of entries corresponding to each entry in the CSV file uploaded in the previous step.
 
@@ -189,20 +189,20 @@ number&gt;" .
 **Step 9.** Select "cumulocity.com.cert" from the "Device Root CA"
 dropdown list.
 
-![Image1](/images/devices/redlion_ram/rlimage17.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage17.png)
 
 **Step 10.** Click on the "Test Server Availability" button at the bottom
 of the screen.
 
-![Image1](/images/devices/redlion_ram/rlimage2.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage2.png)
 
-![Image1](/images/devices/redlion_ram/rlimage3.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage3.png)
 
 **Step 11.** If the information above was filled out correctly, then an
 Alert message should pop up saying "Device can successfully connect to
 remote host". Click "Ok".
 
-![Image1](/images/devices/redlion_ram/rlimage4.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage4.png)
 
 > Please note that, if a device with the same Device ID is already created, the
 device will fail to connect. Ensure the device is not already
@@ -214,13 +214,13 @@ registered to the Cumulocity cloud.*
 
 Once communication is successful, data points are added and published from the right side of screen. Data points can be entered by their tag name or by using the type and register location. Adding a data point, using a tag name will auto fill the rest of the fields. When the data point has been entered into its respective field, click "Add Point".
 
-![Image1](/images/devices/redlion_ram/rlimage17.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage17.png)
 
 **Step 1.** Click "Add Multiple Points" to enter multiple data points
 at one time. A tag selection window will appear, and displays all
 available tags.
 
-![Image1](/images/devices/redlion_ram/rlimage18.png)
+![Image1](/guides/images/devices/redlion_ram/rlimage18.png)
 
 **Step 2.** All of the available data points are displayed on the left side
 and all of the currently selected data points are displayed on the right. Select

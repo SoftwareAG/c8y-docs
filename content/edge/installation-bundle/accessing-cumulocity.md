@@ -55,7 +55,7 @@ https://<domain_name>
 
 The Cumulocity Login screen opens up.
 
-<img src="/images/users-guide/overview-login.png" name="Login screen"/>
+<img src="/guides/images/users-guide/overview-login.png" name="Login screen"/>
 
 In the Login screen, log in with the following credentials:
 
@@ -72,7 +72,7 @@ https://<IP_Address_Of_Edge>;
 
 The Cumulocity login screen opens up.
 
-<img src="/images/edge/edge-login-with-tenantid.png" name="Login screen"/>
+<img src="/guides/images/edge/edge-login-with-tenantid.png" name="Login screen"/>
 
 In the Login screen, log in with the following credentials:
 
@@ -84,7 +84,7 @@ In the Login screen, log in with the following credentials:
 
 After successfully logging in, the Cumulocity platform will open:
 
-<img src="/images/users-guide/cockpit/cockpit-home-screen.png" name="Home screen"/>
+<img src="/guides/images/users-guide/cockpit/cockpit-home-screen.png" name="Home screen"/>
 
 When you log into Cumulocity for the first time, you will be taken to the [Cockpit](/guides/users-guide/cockpit#overview) application where the **Home screen** initially opens up.
 

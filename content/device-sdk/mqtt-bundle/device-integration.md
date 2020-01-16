@@ -24,7 +24,7 @@ The cycle phase consists of two kinds of actions:
 * [Step A](#step-a-send-csv-data): Send CSV data
 * [Step B](#step-b-receive-csv-operations): Receive CSV operations
 
-![MQTT phases](/images/mqtt/mqttDeviceIntegration.png)
+![MQTT phases](/guides/images/mqtt/mqttDeviceIntegration.png)
 
 
 ### Startup phase

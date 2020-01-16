@@ -14,7 +14,7 @@ You will also need a Cumulocity tenant and valid access credentials. Creation of
 
 With this first version of the pollux.cumulocity plugin you will need to register your devices manually using the Cumulocity Device Manager web interface:
 
-![Device Registration](/images/devices/owa3x/screenshot1.png)
+![Device Registration](/guides/images/devices/owa3x/screenshot1.png)
 
 This will change in the next release of the plugin, which will support fully automatic registration of devices, so no human intervention will be needed on server side.
 
@@ -48,7 +48,7 @@ In this file, first you need to modify the following properties according to you
 - base64(username + ':' + password)
 - id is the Cumulocity ID assigned to this device during the registration process. Please see below.
 
-![Cumulocity Managed Object ID](/images/devices/owa3x/screenshot2.png)
+![Cumulocity Managed Object ID](/guides/images/devices/owa3x/screenshot2.png)
 
 Apart from devices and table (which will be detailed in the Advanced Configuration section), the rest of the properties of the JSON file usually should not be modified.
 

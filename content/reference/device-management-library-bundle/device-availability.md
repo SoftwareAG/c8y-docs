@@ -54,7 +54,7 @@ The alarm sent when a device becomes unavailable is of type "c8y\_Unavailability
 
 Updates to the availability status may occur with a delay.
 
-![Availability](/images/reference-guide/availability.png)
+![Availability](/guides/images/reference-guide/availability.png)
 
 To flag a device as available without updating any data, a "ping" can be sent. The "ping" can be carried out by simply sending an empty update message to the device (i.e., a PUT request to the managed object with empty content).
 
@@ -67,4 +67,4 @@ The number of currently active and acknowledged alarms is stored in a fragment "
         "major": 3
     }
 
-![Alarm status](/images/reference-guide/alarmstatus.png)
+![Alarm status](/guides/images/reference-guide/alarmstatus.png)

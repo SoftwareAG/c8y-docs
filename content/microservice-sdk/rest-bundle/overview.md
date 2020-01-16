@@ -69,7 +69,7 @@ You will notice that just a subset of the items in the inventory is actually ret
 
 Graphical REST clients such as [Postman](https://www.getpostman.com/) are a convenient way to explore REST interfaces and the Cumulocity database content.
 
-![Example REST client](/images/rest/postman.png)
+![Example REST client](/guides/images/rest/postman.png)
 
 Cumulocity provides numerous online API examples. If you want to make use of them, [download and install Postman](https://www.getpostman.com/). After starting Postman, you can choose to either create an account or click **Take me straight to the app**. Then click the button below and choose the variant of Postman that you have just installed. You may see a browser security prompt asking you if you actually want to run Postman (on Windows "Electron").
 
@@ -85,7 +85,7 @@ Note that the example contains placeholders, in this case a placeholder _{{url}}
 * Configure a key _auth_ with the value of the Authorization header for the REST requests.
 * Click **Add**, then close the dialog. Now select your newly created environment from the drop-down box on the top right, that initially reads "No environment".
 
-<img src="/images/rest/postmanenvironment.png" alt="Postman environment setup" style="max-width: 50%">
+<img src="/guides/images/rest/postmanenvironment.png" alt="Postman environment setup" style="max-width: 50%">
 
 A simple way to determine the correct value for the "auth" key is using an online Base64 encode/decode tool. For example, assume that your tenant ID is "tenant", your username is "me" and your password is "secret". Go to [ostermiller.org/calc/encode.html](http://ostermiller.org/calc/encode.html), type `tenant/me:secret` into the text area, then click **Encode** in the row "Base 64". The resulting text is "dGVuYW50L21lOnNlY3JldA==". Use "Basic dGVuYW50L21lOnNlY3JldA==" as value for the "auth" key.
 

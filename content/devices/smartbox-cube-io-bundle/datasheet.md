@@ -26,8 +26,8 @@ weight: 20
 
 | Connectivity/ Features | | |
 | --- | --- | --- |
-| Layout <td colspan="2"> ![Layout](/images/devices/smartbox-cube-io/interface.png)	
-| Fieldbus Modbus </br> ![ ](/images/devices/smartbox-cube-io/modbus.png) | Type | Modbus RTU Master |
+| Layout <td colspan="2"> ![Layout](/guides/images/devices/smartbox-cube-io/interface.png)	
+| Fieldbus Modbus </br> ![ ](/guides/images/devices/smartbox-cube-io/modbus.png) | Type | Modbus RTU Master |
 | | Baudrate | 4800, 9600, 19200, 38400, 57600, 115200 |
 | | Parity | Even, ODD, NONE | 
 | | Stoppbits | 2,1 |
@@ -96,5 +96,5 @@ weight: 20
 | Operating humidity | Max. 85% |
 | Storage humidity | Max. 85% |
 | IP Class | IP20/IP54 (opt.) |
-| Approvals | ![ ](/images/devices/smartbox-cube-io/certification.png) |
+| Approvals | ![ ](/guides/images/devices/smartbox-cube-io/certification.png) |
 | Conformity Declerations | 2014/53/EU (Radio Equipment Directive - RED)</br></br><strong>Radio</strong></br>EN301511 v12.5.1 for GSM 900 and 1800 MHz</br>EN301908 v11.1.1 for UMTS band 1 and 8</br><strong>EMC</strong></br>EN 301489-1 v2.1.1 general part</br>EN 301489-52 v0.0.7 for GSM and UMTS</br><strong>Safety</strong></br>EN60950-01|</br> |

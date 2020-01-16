@@ -1,7 +1,7 @@
 ---
 title: "TCG-4/TC3G"
 layout: bundle
-image: '/images/devices/device-list/stw.jpg'
+image: '/guides/images/devices/device-list/stw.jpg'
 brand: TCG
 ---
 
@@ -19,7 +19,7 @@ The data management, computing, telematics and gateway platform TC3G connects yo
 
 The platform is Linux-based therefore freely programmable. 
 
-![STW TC3G](/images/devices/stw.jpg)
+![STW TC3G](/guides/images/devices/stw.jpg)
 
 For further information on the TC3G device, refer to the [STW website]( https://www.stw-mobile-machines.com/en/products/connectivity-data-management/tcg-data-modules/tc3g).
 

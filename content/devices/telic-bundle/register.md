@@ -10,7 +10,7 @@ To connect the device to your Cumulocity account perform the following steps.
 
 2. Click **Register device** and select **General device registration**.
 
-2. In the **Device ID** field, enter the last six digits of the IMEI on the device (to be found below the barcode on the sticker) and click **Next** to register the device. <br><br>![Device registration](/guides/images/devices/telic/telic-register-device.png)
+2. In the **Device ID** field, enter the last six digits of the IMEI on the device (to be found below the barcode on the sticker) and click **Next** to register the device. <br><br>![Device registration](/images/devices/telic/telic-register-device.png)
 
 3. The device will be listed with status "Waiting for connection".
 

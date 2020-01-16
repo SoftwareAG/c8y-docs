@@ -27,11 +27,11 @@ To configure the MQTT connection, you need to pass the following connection para
 * Username: You need to enter your tenant ID and username separated by a slash (tenantID/username). For this example, you can use the same username you use for login to Cumulocity.
 * Password: The password of the user.
 
-![Example MQTTBox Configuration](/guides/images/mqtt/mqttBoxConfig.png)
+![Example MQTTBox Configuration](/images/mqtt/mqttBoxConfig.png)
 
 The other configurations like "clean session" are not important for this example. You can change them to your needs. After clicking **Save**, you will see a screen similar to the following screenshot.
 
-![MQTTBox Established Connection](/guides/images/mqtt/mqttBoxSuccess.png)
+![MQTTBox Established Connection](/images/mqtt/mqttBoxSuccess.png)
 
 If there is a blue button on the top bar with a label **Not Connected**, verify your configuration (especially username and password). If the button is green, you successfully established an MQTT connection to Cumulocity.
 
@@ -39,7 +39,7 @@ If there is a blue button on the top bar with a label **Not Connected**, verify 
 
 All MQTT publish messages in this tutorial will be sent to the topic <kbd>s/us</kbd>. This is the topic used for Cumulocity's pre-provided static templates.
 
-![MQTTBox Publish Message](/guides/images/mqtt/mqttBoxPublish.png)
+![MQTTBox Publish Message](/images/mqtt/mqttBoxPublish.png)
 
 ##### Creating the device
 
@@ -157,7 +157,7 @@ You can enter both topics after another in the **Subscribe** field and click **S
 
 Afterwards, your MQTTBox should look like this:
 
-![MQTTBox Subscribed Topics](/guides/images/mqtt/mqttBoxAfterSubscribe.png)
+![MQTTBox Subscribed Topics](/images/mqtt/mqttBoxAfterSubscribe.png)
 
 ##### Receiving operations
 
@@ -175,7 +175,7 @@ We can now create a shell command from the UI and click **Execute**.
 
 In the MQTTBox, you should now have received a new message for the <kbd>s/ds</kbd> subscription.
 
-![MQTTBox Received Operation](/guides/images/mqtt/mqttBoxReceivedOperation.png)
+![MQTTBox Received Operation](/images/mqtt/mqttBoxReceivedOperation.png)
 
 The `511` is indicating what kind of operation we received (in this case `c8y_Command`). This will be followed by the **deviceIdentifier** to locate the device with the dedicated operation. This is required if you have a hierarchy with multiple children. In such case, you need to know for which of the children the operation was dedicated. Finally, you have the operation specific parameters, which in the case of `c8y_Command` is only the command text.
 

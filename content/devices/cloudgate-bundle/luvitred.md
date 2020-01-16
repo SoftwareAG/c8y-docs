@@ -11,7 +11,7 @@ LuvitRED is a browser-based application which allows you to write applications w
 
 To view the LuvitRED editor, navigate to the **Plugin** tab in the CloudGate web interface and select **LuvitRED**. Click **Advanced Editor**.
 
-![LuvitRED user interface](/guides/images/devices/cloudgate/luvitred.png)
+![LuvitRED user interface](/images/devices/cloudgate/luvitred.png)
 
 On the left, you will find a list of nodes which are ready to use. To check the function of a node, click it and find a description on the right. Drag a node into the middle area to add it to your current workflow. 
 
@@ -42,11 +42,11 @@ If changes in the configuration have not yet been deployed, this is indicated by
 
 In the following example, the "inject" and "debug" node will be used. Drag both nodes into the middle area and connect them by clicking on the output of the "inject" node, holding the mouse and releasing it above the input of the "debug" node.
 
-![LuvitRED user interface](/guides/images/devices/cloudgate/basicflow.png)
+![LuvitRED user interface](/images/devices/cloudgate/basicflow.png)
 
 The "debug" node is used for displaying the input it gets on the console (the "debug" tab on the right side of the editor) while the "inject" node is used for sending a customizable value as output. In this case, the "debug" node will just display the value we will configure in the "inject" node. To configure the "inject" node, double-click it.
 
-![LuvitRED user interface](/guides/images/devices/cloudgate/injectdialog.png)
+![LuvitRED user interface](/images/devices/cloudgate/injectdialog.png)
 
 - Payload: Defines what will be sent as output.
   - Select "string" as the type of the payload in the drop-down menu.
@@ -58,21 +58,21 @@ The "debug" node is used for displaying the input it gets on the console (the "d
 
 After deploying the changes, you should be able to see the specified value in the "debug" tab.
 
-![LuvitRED user interface](/guides/images/devices/cloudgate/debug.png)
+![LuvitRED user interface](/images/devices/cloudgate/debug.png)
 
 #### Basic workflow with Cumulocity
 
 In the following example, we will simulate a periodic temperature measurement and send it to Cumulocity. To do so, replace the "debug" node with a "c8y measurement" node.
 
-![LuvitRED user interface](/guides/images/devices/cloudgate/basiccumulocityflow.png)
+![LuvitRED user interface](/images/devices/cloudgate/basiccumulocityflow.png)
 
 To send random numeric values perdiodically, change the configuration of the "inject" node. First, select "random integer" as payload type and choose a range of possible values. Second, select "interval" in the "repeat" field and specify an interval.
 
-![LuvitRED user interface](/guides/images/devices/cloudgate/basiccumulocityflowinjectdialog.png)
+![LuvitRED user interface](/images/devices/cloudgate/basiccumulocityflowinjectdialog.png)
 
 Next, the "c8y measurement" node needs to be configured.
 
-![LuvitRED user interface](/guides/images/devices/cloudgate/basiccumulocityflowmeasurement.png)
+![LuvitRED user interface](/images/devices/cloudgate/basiccumulocityflowmeasurement.png)
 
 - Type: Type of the measurement.
   - Enter "c8y_Temperature" as type.
@@ -82,7 +82,7 @@ Next, the "c8y measurement" node needs to be configured.
 - Platform: Defines the platform the node will use.
   - Click on the "pencil" icon. Another dialog which represents the "c8y platform" node will appear.
 
-![LuvitRED user interface](/guides/images/devices/cloudgate/basiccumulocityflowplatform.png)
+![LuvitRED user interface](/images/devices/cloudgate/basiccumulocityflowplatform.png)
 
 - Provision: Defines if the credentials will be set manually or autoprovisioned.
   - Select "Manually" in the drop-down menu.
@@ -99,4 +99,4 @@ For more information on the "[c8y measurement](#measurement)" and "[platform](#p
 
 After configurating the "c8y measurement", the workflow is ready to be deployed. You should be able to see the measurements sent by the device in the "Measurement" tab of your device in the "Device Management" application of Cumulocity. You can also see the amount of measurements which were sent in the status under the node.
 
-![LuvitRED user interface](/guides/images/devices/cloudgate/temperaturemeasurements.png)
+![LuvitRED user interface](/images/devices/cloudgate/temperaturemeasurements.png)

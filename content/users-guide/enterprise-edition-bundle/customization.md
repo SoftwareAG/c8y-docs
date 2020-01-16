@@ -16,13 +16,13 @@ In the **Settings** menu, you may specify various customization settings.
 
 In the **Applications** section, you can specify the default applications for new tenants as a comma-separated list. 
 
-![Applications settings](/guides/images/users-guide/Administration/admin-settings-configuration-applications.png)
+![Applications settings](/images/users-guide/Administration/admin-settings-configuration-applications.png)
 
 #### Passwords
 
 In the **Passwords** section, you can specify password settings like default strength, length or validity for the users in your tenant.
 
-![Passwords settings](/guides/images/users-guide/Administration/admin-settings-configuration-passwords.png)
+![Passwords settings](/images/users-guide/Administration/admin-settings-configuration-passwords.png)
 
 #### Support user
 
@@ -30,7 +30,7 @@ In the **Support user** section, you configure the parameters for the support us
 
 With the support user feature, support users (i.e. users with specific permissions in the management tenant) can access subtenant users in case of any issues. Refer to [Supporting user access](/guides/users-guide/enterprise-edition#users-in-other-tenants) for more information.
 
-<img src="/guides/images/users-guide/Administration/admin-settings-configuration-support-user.png" alt="Support user configuration">
+<img src="/images/users-guide/Administration/admin-settings-configuration-support-user.png" alt="Support user configuration">
 
 In the field **Enable support user**, specify if support user access is enabled for subtenant users. Possible values you can enter here are:
 
@@ -52,11 +52,11 @@ In the **Branding** tab, you can configure various parameters like logos, colors
 
 The [parameters](#configuration-parameters) are configured on the left side of the tab while on the right you can immediately see your selections applied to a preview extract.
 
-<img src="/guides/images/users-guide/Administration/admin-branding.png" alt="Branding tab">
+<img src="/images/users-guide/Administration/admin-branding.png" alt="Branding tab">
 
 For a more detailed preview of your settings, click **Open preview** in the top menu bar to check the look and feel of your branding settings in the overall platform. You may interact and even switch applications in the preview. Every change that you make in the **Branding** tab will immediately be applied to the **Preview** page.
 
-<img src="/guides/images/users-guide/Administration/admin-branding-preview.png" alt="Branding tab">
+<img src="/images/users-guide/Administration/admin-branding-preview.png" alt="Branding tab">
 
 When you are done or want to store your settings, click **Save** at the bottom of the **Configuration** section to save your branding settings to your tenant.
 
@@ -72,7 +72,7 @@ In the Configuration section, the following branding parameters can be configure
 
 Under **General**, you can edit the title which will be used in the browser tab. 
 
-<img src="/guides/images/users-guide/Administration/admin-branding-general.png" alt="Branding general">
+<img src="/images/users-guide/Administration/admin-branding-general.png" alt="Branding general">
 
 **Main logo**
 
@@ -86,14 +86,14 @@ Under **Main logo**, specify the following items:
 
 Under **Navigator logo** you can provide the navigator logo and set the navigator logo height located on top of the navigator panel.
 
-<img src="/guides/images/users-guide/Administration/admin-branding-navigator-logo.png" alt="Branding general">
+<img src="/images/users-guide/Administration/admin-branding-navigator-logo.png" alt="Branding general">
 
 
 **Type**
 
 In the **Type** section you specify the font settings for your branded version. 
 
-<img src="/guides/images/users-guide/Administration/admin-branding-type.png" alt="Branding type">
+<img src="/images/users-guide/Administration/admin-branding-type.png" alt="Branding type">
 
 You can choose your base and headings font, and select an option for the navigator font (either same as base or same as headings font). You may also add a link to existing remote fonts to be used.
 
@@ -101,7 +101,7 @@ You can choose your base and headings font, and select an option for the navigat
 
 In the **Colors** section you specify the colors to be used in your branding version.
 
-<img src="/guides/images/users-guide/Administration/admin-branding-color.png" alt="Branding color">
+<img src="/images/users-guide/Administration/admin-branding-color.png" alt="Branding color">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -117,7 +117,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 In the **Top bar** section you specify the parameters for the top bar.
 
-<img src="/guides/images/users-guide/Administration/admin-branding-topbar.png" alt="Branding topbar">
+<img src="/images/users-guide/Administration/admin-branding-topbar.png" alt="Branding topbar">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -129,7 +129,7 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 In the **Navigator** section you specify the parameters for the navigator.
 
-<img src="/guides/images/users-guide/Administration/admin-branding-navigator.png" alt="Branding navigator">
+<img src="/images/users-guide/Administration/admin-branding-navigator.png" alt="Branding navigator">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -151,7 +151,7 @@ In the **Domain name** tab you can activate your own custom domain name.
  
 >**Important**: To activate you domain, you need a valid license. Please contact our Sales team at sales@cumulocity.com to install a license for your domain.  
 
-<img src="/guides/images/users-guide/Administration/admin-domain-name.png" alt="Domain name">
+<img src="/images/users-guide/Administration/admin-domain-name.png" alt="Domain name">
 
 >**Info**: The custom domain name functionality is only available for cumulocity.com or Private Edition installations which don't use a custom load balancer.
 

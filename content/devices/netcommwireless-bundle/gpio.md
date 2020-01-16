@@ -53,4 +53,4 @@ The inputs are checked every second for changes.
 
 Digital outputs can be controlled using the "Relay array" plugin, see below in the screenshot. The numbering of the GPIO pins are the same as listed on the router. For the NTC-6200 model, three GPIO pins can be set, while for the NTC-140W model, only the first pin has effect.
 
-![Relay Array](/guides/images/devices/netcomm/relayarray.png)
+![Relay Array](/images/devices/netcomm/relayarray.png)

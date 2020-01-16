@@ -10,4 +10,4 @@ As shown in the screenshot, you can add your VNC, Telnet or SSH servers as an en
 
 > **Info:** The "vncproxy" package is required and must be installed.
 
-![VNC](/guides/images/devices/netcomm/vnctelnetssh.png)
+![VNC](/images/devices/netcomm/vnctelnetssh.png)

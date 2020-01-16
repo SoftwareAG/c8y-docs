@@ -13,13 +13,13 @@ Cumulocity unterscheidet zwischen Top-Level-Gruppen und untergeordneten Gruppen.
 
 Um eine Liste aller Gruppe in Ihrem Konto anzuzeigen, klicken Sie **Gruppen** im Navigator. 
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-groups.png" alt="Gruppen" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/devmgmt-groups.png" alt="Gruppen" style="max-width: 100%">
 
 Für jede Gruppe wir der Name und die Anzahl der Kindern angezeigt.
 
 Klicken Sie auf eine Gruppe, um Details dieser Gruppe anzuzeigen. 
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-group-details.png" alt="Gruppendetails" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/devmgmt-group-details.png" alt="Gruppendetails" style="max-width: 100%">
 
 **Registerkarte Info**
 
@@ -35,7 +35,7 @@ In der Registerkarte **Info** werden folgende Informationen angezeigt:
 
 In der Registerkarte **Kind-Assets** werden alle Geräte angezeigt, die der Gruppe zugewiesen wurden. Für jedes Kind-Asset wird der Name und im Fall einer Gruppe die Anzahl der Kinder angezeigt. 
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-child-assets.png" alt="Kind-Assets" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/devmgmt-child-assets.png" alt="Kind-Assets" style="max-width: 100%">
 
 Um eine Gerät einer Gruppe zuzuweisen, klicken Sie **Geräte zuweisen** rechts in der oberen Menüleiste (siehe [Zuweisen eines Geräts zu einer bestehenden Gruppe](#assigning-devices)).
 
@@ -58,7 +58,7 @@ Um eine neue Gruppe zu erstellen, führen Sie folgende Schritte aus:
 
 >**Info:** Eine Gruppe kann auch mit "0" Geräten erstellt werden.
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-new-group.png" alt="Gruppe erstellen" style="max-width: 50%">
+<img src="/images/benutzerhandbuch/devmgmt-new-group.png" alt="Gruppe erstellen" style="max-width: 50%">
 
 ### <a name="assigning-devices"></a>Zuweisen eines Geräts zu einer bestehenden Gruppe
 
@@ -70,7 +70,7 @@ Aus der Geräteperspektive:
 2. Scrollen Sie in der Registerkarte **Info** zur Karte **Gruppenzuordnung**. Wählen Sie im Auswahlfeld die Gruppe aus, der Sie das Gerät zuweisen möchten.
 3. Klicken Sie **Zuweisen**.
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-assign-device.png" alt=" Gruppe zuweisen" style="max-width: 50%">
+<img src="/images/benutzerhandbuch/devmgmt-assign-device.png" alt=" Gruppe zuweisen" style="max-width: 50%">
 
 Aus der Gruppenperspektive:
 
@@ -79,7 +79,7 @@ Aus der Gruppenperspektive:
 3. Wählen Sie durch Aktivieren des jeweiligen Kontrollkästchens die Geräte aus, die Sie zur Gruppe hinzufügen möchten.
 5. Klicken Sie **Gruppe mit X Gerät(en) erstellen**, um die Geräte zur Gruppe hinzuzufügen. 
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-assign-devices-from-group.png" alt=" Geräte zuweisen" style="max-width: 50%">
+<img src="/images/benutzerhandbuch/devmgmt-assign-devices-from-group.png" alt=" Geräte zuweisen" style="max-width: 50%">
 
 ### Erstellen einen untergeordneten Gruppe
 
@@ -103,17 +103,17 @@ Dynamische Gruppen werden in der Geräteliste erstellt.
 3. Klicken Sie **Dynamische Gruppe erstellen** rechts in der oberen Menüleiste.
 4. Geben Sie einen Namen für die Gruppe ein und klicken Sie **Erstellen**.
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-smartgroup-create.png" alt="Dynamische Gruppe erstellen" style="max-width: 50%">
+<img src="/images/benutzerhandbuch/devmgmt-smartgroup-create.png" alt="Dynamische Gruppe erstellen" style="max-width: 50%">
 
 Die neue Gruppe erscheint als Top-Level-Gruppe im Menü **Gruppe** im Navigator. Dynamische Gruppen werden durch ein kleines Zahnrad im Ordnersymbol gekennzeichnet.  
 
-<img src="/guides/images/users-guide/DeviceManagement/DevMgmt_SmartgroupIcon.png" alt="Smart groups" style="max-width: 100%">
+<img src="/images/users-guide/DeviceManagement/DevMgmt_SmartgroupIcon.png" alt="Smart groups" style="max-width: 100%">
 
 In der Registerkarte **Kind-Assets** können Sie Ihre Auswahl anpassen und die Filtereinstellungen ändern.
 
 Um eine dynamische Gruppe zu löschen, klicken Sie **Gruppen** im Navigator, klicken Sie in der Gruppenliste das Menüsymbol des entsprechenden Eintrags und klicken Sie **Löschen** im Kontextmenü. 
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-smartgroup-delete.png" alt="Dynamische Gruppe löschen" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/devmgmt-smartgroup-delete.png" alt="Dynamische Gruppe löschen" style="max-width: 100%">
 
 **Wichtig**: Das Löschen einer dynamischen Gruppe ist irreversibel. 
 

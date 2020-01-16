@@ -1,18 +1,17 @@
 
 
 # Production
-baseURL = "https://cumulocity.com/guides"
+baseURL = "https://cumulocity.com/guides/10.4.6"
 
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
 title = "Cumulocity IoT Guides"
 theme = "c8ydocs"
 paginate = 12
-# canonifyurls = false
-# publishDir = "public/site"
-# googleAnalytics = "UA-xxxxxxxx-x"
 summaryLength = 30
 buildFuture = true
+publishDir = "10.4.6"
+relativeURLs = true
 
 
 [author]

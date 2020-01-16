@@ -13,7 +13,7 @@ Mittels Echtzeitverarbeitung können Geschäftsregeln definiert werden, die auto
 
 Klicken Sie **Echtzeitverarbeitung** im Menü **Geschäftsregeln**, um die vorhandenen Module anzuzeigen oder neue Module zu erstellen.
 
-![Echtzeitverarbeitung](/guides/images/benutzerhandbuch/admin_event-processing.png)
+![Echtzeitverarbeitung](/images/benutzerhandbuch/admin_event-processing.png)
 
 Für jedes Modul wird in der Liste der Status (bereitgestellt = grünes Häkchen / nicht bereitgestellt = Ausrufungszeichen), der Name und das Datum der letzten Aktualisierung angezeigt.
 
@@ -27,7 +27,7 @@ Anstatt ein Modul zu löschen, können Sie es auch zeitweise deaktivieren, indem
 
 Um ein neues Modul zu erstellen, klicken Sie **Neues Modul** in der oberen Menüleiste.
 
-<img src="/guides/images/benutzerhandbuch/admin-event-processing-new-module.png" alt="Neues Modul" style="max-width: 50%">
+<img src="/images/benutzerhandbuch/admin-event-processing-new-module.png" alt="Neues Modul" style="max-width: 50%">
 
 1.  Geben Sie oben einen Namen für das neue Modul ein. Es sind nur alphanumerische Zeichen ohne Leerzeichen zulässig.
 2.  Standardmäßig ist der Status "Bereitgestellt" voreingestellt, so dass die Anweisungen, die Sie erstellen, unmittelbar ausgeführt werden. Um dies zu verhindern, schieben Sie den Regler auf "Nicht bereitgestellt".
@@ -36,7 +36,7 @@ Um ein neues Modul zu erstellen, klicken Sie **Neues Modul** in der oberen Menü
 
 Das Beispielmodul erzeugt einen Alarm, wenn die Temperatur unter 0 Grad sinkt.
 
-<img src="/guides/images/benutzerhandbuch/admin-event-processing-module-example.png" alt="Beispielmodul" style="max-width: 50%">
+<img src="/images/benutzerhandbuch/admin-event-processing-module-example.png" alt="Beispielmodul" style="max-width: 50%">
 
 Wenn der Status eines Moduls auf "Bereitgestellt" steht, wird dies durch eine grünes Häkchen in der Modulliste angezeigt. Immer wenn eine Anweisung eine Ausgabe generiert, wird diese unter dem Häkchen angezeigt. Klicken Sie auf eine Ausgabezeile, um die detaillierte Ausgabe der Anweisung anzuzeigen. Klicken Sie **Alles löschen**, um die Ausgabe zu entfernen.
 
@@ -46,7 +46,7 @@ Alarmregeln ermöglichen es, den Schweregrad und Text von Alarmen zu ändern, um
 
 Klicken Sie **Alarmregeln** im Menü **Geschäftsregeln**, um eine Liste aller Alarmregeln anzuzeigen.
 
-<img src="/guides/images/benutzerhandbuch/admin-alarm-mapping.png" alt="Alarmregeln" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/admin-alarm-mapping.png" alt="Alarmregeln" style="max-width: 100%">
 
 Für jede Alarmregel wird der Schweregrad und der Name der Regel angezeigt.
 
@@ -58,7 +58,7 @@ Zum Löschen einer Alarmregel bewegen Sie den Mauszeiger darüber und klicken Si
 
 Um eine Alarmregel hinzuzufügen, klicken Sie **Alarmregel hinzufügen** in der oberen Menüleiste.
 
-<img src="/guides/images/benutzerhandbuch/Admin_AlarmMappingAdd.png" alt="Alarmregel hinzufügen" style="max-width: 50%">
+<img src="/images/benutzerhandbuch/Admin_AlarmMappingAdd.png" alt="Alarmregel hinzufügen" style="max-width: 50%">
 
 1.  Geben Sie den Alarmtypen ein, den Sie ändern möchten.
 2.  Geben Sie optional einen neuen Text für den Alarm ein. Wenn Sie keinen Text eingeben, wird der Ursprungstext beibehalten.

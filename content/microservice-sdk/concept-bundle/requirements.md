@@ -18,6 +18,6 @@ The following requirements towards Cumulocity microservices must be met:
 
 Microservices interact with Cumulocity and the outside world as shown in the following diagram:
 
-![Microservices interactions](/guides/images/microservices-sdk/ms-interactions-diagram.png)
+![Microservices interactions](/images/microservices-sdk/ms-interactions-diagram.png)
 
 The Microservices' lifecycle is managed using the microservice subscription API. This allows registration and subscription of Microservices. External actors (e.g. web user interfaces, integrations or other microservices) can invoke a microservice by sending REST or Websocket requests to its endpoints <kbd>/service/&lt;microservice-name>/&lt;path></kbd>. A microservice can issue requests to external endpoints or to the Cumulocity REST APIs. Microservices can store logs and metrics in the associated developer tenant.

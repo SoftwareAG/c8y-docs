@@ -22,4 +22,4 @@ The following sections demonstrate how to use a NetComm router with Cumulocity. 
 * [VNC](#vnc) remote access.
 * Configure [MQTT](#mqtt).
 
-The following sections assume that the router has the NetComm [agent](/guides/images/devices/netcommwireless#netcomm-release) package installed. The agent is compatible with the [NTC-6200](https://www.netcommwireless.com/product/3g-m2m-router-series) and [NTC-140W](http://www.netcommwireless.com/product/4g-wifi-m2m-router). For more information on a particular feature of the router, please consult the respective manual found in the "Downloads" section of the router's home page.
+The following sections assume that the router has the NetComm [agent](/images/devices/netcommwireless#netcomm-release) package installed. The agent is compatible with the [NTC-6200](https://www.netcommwireless.com/product/3g-m2m-router-series) and [NTC-140W](http://www.netcommwireless.com/product/4g-wifi-m2m-router). For more information on a particular feature of the router, please consult the respective manual found in the "Downloads" section of the router's home page.

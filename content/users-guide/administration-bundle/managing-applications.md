@@ -11,13 +11,13 @@ In the Cumulocity platform we distinguish between two kinds of applications:
 
 Both applications are available through the **Applications** menu in the navigator:
 
-<img src="/guides/images/users-guide/Administration/admin-menu.png" alt="Applications menu"> 
+<img src="/images/users-guide/Administration/admin-menu.png" alt="Applications menu"> 
 
 ### <a name="application-properties"></a>Application properties
 
 Click on an application card to view the application properties.
 
-<img src="/guides/images/users-guide/Administration/admin-application-properties.png" alt="Application properties" style="max-width: 100%">
+<img src="/images/users-guide/Administration/admin-application-properties.png" alt="Application properties" style="max-width: 100%">
 
 Each application will show the following properties, depending on the application type:
 
@@ -124,13 +124,13 @@ Own applications may be
 
 Your applications are available through the application switcher in the top bar which allows to easily switch between applications.
 
-<img src="/guides/images/users-guide/Administration/admin-app-switcher.png" alt="App switcher">
+<img src="/images/users-guide/Administration/admin-app-switcher.png" alt="App switcher">
 
 You manage your applications under **Own applications**, accessible through the **Applications** menu. 
 
 In the **Own applications** page you will find a list of the applications available in your account.
 
-<img src="/guides/images/users-guide/Administration/admin-applications-own.png" alt="Own applications">
+<img src="/images/users-guide/Administration/admin-applications-own.png" alt="Own applications">
 
 To display further information on the application, simply click its card. For details on the fields, refer to [Application properties](#application-properties). 
 
@@ -141,7 +141,7 @@ To directly open an application from here, click **Open** on the respective appl
 
 Click **Add application** in the **Own applications** page. 
 
-<img src="/guides/images/users-guide/Administration/admin-application-add.png" alt="Add application methods">
+<img src="/images/users-guide/Administration/admin-application-add.png" alt="Add application methods">
 
 In the resulting dialog box, choose one of the following methods:
 
@@ -158,7 +158,7 @@ In the resulting dialog box, choose one of the following methods:
 
 The application is created once the ZIP file has been successfully uploaded.
 
-<img src="/guides/images/users-guide/Administration/admin-application-upload-web-app.png" alt="Uploading zip file">
+<img src="/images/users-guide/Administration/admin-application-upload-web-app.png" alt="Uploading zip file">
 
 ##### <a name="uploading-microservices"></a>To upload a microservice
 
@@ -176,7 +176,7 @@ The microservice application is created once the ZIP file has been successfully 
 1. Click **Add application** in the **Own applications** page.
 2. Select **External application**.
 <br><br>
-<img src="/guides/images/users-guide/Administration/admin-application-external.png" alt="External application">
+<img src="/images/users-guide/Administration/admin-application-external.png" alt="External application">
 <br><br>
 3. In the resulting dialog box, enter the name of the application. The name will be shown as title of the application. 
 5. Enter an application key, used to identify this application.
@@ -193,11 +193,11 @@ Duplicating an application might be useful if you want to customize a subscribed
 2. In the upcoming dialog, select **Duplicate existing application**.
 3. Select the desired application from the dropdown list. 
 <br><br>
-<img src="/guides/images/users-guide/Administration/admin-application-duplicate.png" alt="Duplicate application">
+<img src="/images/users-guide/Administration/admin-application-duplicate.png" alt="Duplicate application">
 <br><br>
 4. In the next window, provide a name for the application. By default, the name of the original application is provided, extended by a number.
 <br><br>
-<img src="/guides/images/users-guide/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
+<img src="/images/users-guide/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
 <br><br>
 5. Provide an application key, used to identify this application. By default, the key of the original application is provided, extended by a number.
 6. Provide the application path as part of the URL to invoke the application. By default, the path of the original application is provided, extended by a number. If you set it to the path of the original subscribed application, your own application will overrule the subscribed application. 
@@ -238,7 +238,7 @@ To add additional plugins, click **Add Plugin** on the card of the desired appli
 
 The **Plugin** tab for the application will open up, showing all existing plugins and allowing to add plugins by simply dropping the respective ZIP file or browsing for it on your computer.
 
-![Plugins](/guides/images/users-guide/plugins.png)
+![Plugins](/images/users-guide/plugins.png)
 
 To remove a plugin, hover over it and click **Remove** at the right.
 
@@ -277,7 +277,7 @@ Multiple archive file versions can be stored in Cumulocity when they were create
 3. Click **Upload archive** and browse for the archive on your computer or simply drop the archive file.
 4. Click **Upload** to upload the archive to your Cumulocity account.
 
-<img src="/guides/images/users-guide/Administration/admin-application-archive.png" alt="Application archive">
+<img src="/images/users-guide/Administration/admin-application-archive.png" alt="Application archive">
 
 Once uploaded, the recently uploaded version is automatically the active version, i.e. the version of the application that is currently being served to the users of your account. This version cannot be deleted. 
 
@@ -292,7 +292,7 @@ Users can restore previous versions of an application from an archive.
 3. Open the context menu for the desired version by clicking the menu icon and select **Set as active** to make it the active version.
 4. Click **Remove** to remove the version from the archive.
 
-<img src="/guides/images/users-guide/Administration/admin-application-set-as-archive.png" alt="Application set as archive">
+<img src="/images/users-guide/Administration/admin-application-set-as-archive.png" alt="Application set as archive">
 
 ### Monitoring microservices
 
@@ -302,7 +302,7 @@ You can monitor microservices hosted by Cumulocity in two ways.
 
 The status of the microservice can be checked on the **Status** tab of the respective application. 
 
-<img src="/guides/images/users-guide/Administration/admin-microservice-status.png" alt="Microservice status" style="max-width: 100%">
+<img src="/images/users-guide/Administration/admin-microservice-status.png" alt="Microservice status" style="max-width: 100%">
 
 The following information is provided on the **Status** tab:
 
@@ -321,7 +321,7 @@ Moreover, you may view logs to get more details on the status of microservices.
 
 To view logs open the **Log** tab of the respective microservice.
 
-<img src="/guides/images/users-guide/Administration/admin-microservice-log.png" alt="Microservice log" style="max-width: 100%">
+<img src="/images/users-guide/Administration/admin-microservice-log.png" alt="Microservice log" style="max-width: 100%">
 
 At the top of the page, the instance of the microservice, for which you want to view the logs, can be selected. Moreover you can adjust the font size and the theme at the right.
 
@@ -337,7 +337,7 @@ Click the arrow buttons "Next" or "Previous" to increase or respectively reduce 
 
 If there have not been any logs in the selected time range, a message is shown accordingly:
 
-<img src="/guides/images/users-guide/Administration/admin-microservice-no-logs.png" alt="Microservice log">
+<img src="/images/users-guide/Administration/admin-microservice-no-logs.png" alt="Microservice log">
 
 To view the logs you need the permission EVENT_READ.
 

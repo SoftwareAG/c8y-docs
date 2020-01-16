@@ -45,7 +45,7 @@ At the top left, you can choose a template. The chosen option has an effect on t
 
 ##### Custom template
 
-![Request configuration](/guides/images/users-guide/Administration/admin-sso-1.png)
+![Request configuration](/images/users-guide/Administration/admin-sso-1.png)
 
 As the OAuth protocol is based on the execution of HTTP requests and redirects, a generic request configuration is provided. 
 
@@ -53,7 +53,7 @@ The first part of the **Single sign-on** page consists of the request configurat
 
 The **Basic** section of the **Single sign-on** page consists of the following configuration settings:
 
-![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-2.png)
+![OAuth configuration](/images/users-guide/Administration/admin-sso-2.png)
 
 |Field|Description|
 |:---|:---|
@@ -69,7 +69,7 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 
 Each time a user logs in, the content of the access token is verified and is a base for user access to the Cumulocity platform. The following section provides the mapping between JWT claims and access to the platform. 
 
- ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-7.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-7.png)
  
  In the example above, if a user tries to login a decoded JWT claims look like:
  
@@ -83,7 +83,7 @@ Each time a user logs in, the content of the access token is verified and is a b
 
 The user will be granted access to the global roles BUSINESS and APPLICATION COCKPIT. New rules can be added by clicking **Add access mapping** at the bottom. Click the Minus button to remove a rule. A statement can consist of multiple checks like in the image below. Yo can add a check to an existing statement by clicking **and**. 
 
- ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-8.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-8.png)
 
 In this case the following claim will match the condition:
 
@@ -104,21 +104,21 @@ As you can see, there is an option to verify if a value exists in a list via the
 
 When a user logs in with an access token, the username can be derived from a JWT claim. The claim name can be configured in the **User ID configuration** window. 
 
- ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-3.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-3.png)
 
 Each access token is signed by a signing certificate. Currently there are three options to configure the signing certificates.
  
 1. By specifying the Azure AD certificate discovery address. 
 
- ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-4.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-4.png)
 
 2. By specifying the ADFS manifest address (for ADFS 3.0). 
 
- ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-9.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
  
 3. By providing the public key of a certificate manually to Cumulocity. A certificate definition requires an algorithm information, public key value and validity period. 
 
- ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-5.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-5.png)
 
 #### Integration with Azure AD
 
@@ -132,7 +132,7 @@ While configuring your Azure AD, redirect_uri is your full domain address. For t
 
 When the "Azure AD" template is selected the configuration panel will look similar to the following:
 
- ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-aad-basic.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-aad-basic.png)
 
 |Field|Description|
 |:---|:---|
@@ -146,14 +146,14 @@ When the "Azure AD" template is selected the configuration panel will look simil
 
 The second part of the panel is the same as for the "Custom" template, where access mapping, user ID field selection and signature verification address are provided. 
 
- ![OAuth configuration](/guides/images/users-guide/Administration/admin-sso-aad-2.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-aad-2.png)
 
  
 ### <a name="default-app"></a>Changing application settings
 
 Click **Application** in the **Settings** menu to change applications settings.
 
-![Default application](/guides/images/users-guide/Administration/admin-settings-application.png)
+![Default application](/images/users-guide/Administration/admin-settings-application.png)
 
 Under **Default application**, you can select a default application from the list which will apply to all users within the tenant.
 
@@ -172,7 +172,7 @@ For further information, see http://enable-cors.org.
 
 Click **Password** in the **Settings** menu. 
 
-![Password settings](/guides/images/users-guide/Administration/admin-settings-password.png)
+![Password settings](/images/users-guide/Administration/admin-settings-password.png)
 
 
 #### To change password settings
@@ -202,7 +202,7 @@ Click **Password** in the **Settings** menu.
 
 Click **Properties library** in the **Settings** menu, to add custom properties to inventory objects, alarms, events and tenants.
  
-![Properties library](/guides/images/users-guide/Administration/admin-settings-properties-library.png)
+![Properties library](/images/users-guide/Administration/admin-settings-properties-library.png)
 
 With custom properties, you can extend the data model of Cumulocity built-in objects. You may create the following custom values:
 
@@ -216,7 +216,7 @@ With custom properties, you can extend the data model of Cumulocity built-in obj
 
 1. Select the tab for the desired property and click **Add property**. 
 
-	![Add new property](/guides/images/users-guide/Administration/admin-settings-property-add.png)
+	![Add new property](/images/users-guide/Administration/admin-settings-property-add.png)
  
 1. In the resulting dialog box, provide a unique name as identifier and a label for the property and select its data type from the dropdown list. 
 
@@ -250,7 +250,7 @@ With custom properties, you can extend the data model of Cumulocity built-in obj
 
 To enter OpenIT credentials, click **OpenIT credentials** in the **Settings** menu.
 
-![Enter OpenIT credentials](/guides/images/users-guide/Administration/admin-settings-openit.png)
+![Enter OpenIT credentials](/images/users-guide/Administration/admin-settings-openit.png)
 
 By providing OPenIT credentials you enable the platform to utilize SMS services provided by [Openit](https://sms.openit.de/main.php).
 
@@ -260,7 +260,7 @@ SMS are used throughout the application for various features like [two-factors a
 
 Under **Configuration** in the **Settings** menu, you can configure system-wide properties in Cumulocity. 
 
-![Configuration settings](/guides/images/users-guide/Administration/admin-settings-configuration.png)
+![Configuration settings](/images/users-guide/Administration/admin-settings-configuration.png)
 
 #### Two-factor authentication
 
@@ -276,7 +276,7 @@ Enter "false" to hide the link.
 
 In the **Password reset** section you can change all settings related to password reset email templates.
 
-![Configuration menu1](/guides/images/users-guide/Administration/admin-settings-configuration-password-reset.png)
+![Configuration menu1](/images/users-guide/Administration/admin-settings-configuration-password-reset.png)
 
 At the top you can select if you want to allow sending emails to unknown email addresses.
 
@@ -292,7 +292,7 @@ In the following two fields provide an email template to be used on password cha
 
 In the **Email server** section, you can configure custom email server settings. 
 
-<img src="/guides/images/users-guide/Administration/admin-settings-configuration-email-server.png" alt="Configure email server">
+<img src="/images/users-guide/Administration/admin-settings-configuration-email-server.png" alt="Configure email server">
 
 In the **Protocol and encryption** field, select a protocol/encryption type from the dropdown list. May be one of: 
 
@@ -306,19 +306,19 @@ Provide the host, port, username, password and sender address for the email serv
 
 In the **Data export** section, you can set the email subject and email template for data export and specify the **User unauthorized error message**.
 
-![Data export settings](/guides/images/users-guide/Administration/admin-settings-configuration-data-export.png)
+![Data export settings](/images/users-guide/Administration/admin-settings-configuration-data-export.png)
 
 #### Storage limit
 
 In the **Storage limit** section, you can specify the email subject and email template for emails being send *before* data is removed on exceeding the storage limit and *after* data removal is performed.
 
-![Storage limit settings](/guides/images/users-guide/Administration/admin-settings-configuration-storage-limit.png)
+![Storage limit settings](/images/users-guide/Administration/admin-settings-configuration-storage-limit.png)
 
 #### Suspending tenants
 
 In the **Suspending tenants** section, you can provide settings for emails being send on tenant suspension. 
 
-<img src="/guides/images/users-guide/Administration/admin-settings-configuration-suspending-tenants.png" alt="Suspended tenants">
+<img src="/images/users-guide/Administration/admin-settings-configuration-suspending-tenants.png" alt="Suspended tenants">
 
 At the top you can select if you want to send the email to the suspended tenant's administrator and specify an additional email receiver. Below you set the subject and template for the tenant suspended email.
 
@@ -337,7 +337,7 @@ The following provider settings may currently be specified:
 - [Sigfox](/guides/users-guide/optional-services#sigfox)
 - [SIM](/guides/users-guide/optional-services#connectivity)
 
-![Provider settings](/guides/images/users-guide/Administration/admin-settings-connectivity-sim.png)
+![Provider settings](/images/users-guide/Administration/admin-settings-connectivity-sim.png)
 
 #### To provide or replace credentials
 

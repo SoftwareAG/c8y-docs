@@ -6,7 +6,7 @@ weight: 10
 
 Robustel GoRugged R3000 Lite is a rugged cellular router offering state-of-the-art mobile connectivity for machine to machine (M2M) applications.
 
-![R3000](/guides/images/devices/r3000/R3000.png)
+![R3000](/images/devices/r3000/R3000.png)
 
 R3000 Lite is a dual SIM industrial cellular VPN router. It can be support for UMTS/HSPA+/4G LTE networks.
 

@@ -21,4 +21,4 @@ layout: redirect
       "ber": { "value": 0.14, "unit": "%" }
     }
 
-![Signal strength report](/guides/images/reference-guide/signalstrength.png)
+![Signal strength report](/images/reference-guide/signalstrength.png)

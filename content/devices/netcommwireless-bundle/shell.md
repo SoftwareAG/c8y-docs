@@ -11,4 +11,4 @@ With Device Shell, you can read and write individual configuration parameters fr
 
 Multiple get, set and execute commands can be sent using a semicolon as separator. Click the "Get Predefined" link to access frequently used parameters and commands.
 
-![Device Shell](/guides/images/devices/netcomm/shell.png)
+![Device Shell](/images/devices/netcomm/shell.png)

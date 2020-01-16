@@ -28,7 +28,7 @@ To make the tracker send data to Cumulocity, perform the following steps in the 
 
 9. Click **Save** to save your settings.
 
-![Telic Communication Configuration](/guides/images/devices/telic/telic-communication-configuration.png)
+![Telic Communication Configuration](/images/devices/telic/telic-communication-configuration.png)
 
 
 To disable "Acknowledge", follow these steps:
@@ -41,7 +41,7 @@ To disable "Acknowledge", follow these steps:
 
 4. Click **Save** to save your settings.
 
-![Telic Device Configuration](/guides/images/devices/telic/telic-device-configuration.png)
+![Telic Device Configuration](/images/devices/telic/telic-device-configuration.png)
 
 GPS accuracy reporting is not available on all Telic devices. To enable accuracy reporting, follow these steps:
 
@@ -51,7 +51,7 @@ GPS accuracy reporting is not available on all Telic devices. To enable accuracy
 
 4. Select the checkbox **Extended Data (incl. DOPs and Accuracy)**.
 
-![Telic Device Configuration](/guides/images/devices/telic/telicdevlogtype.png)
+![Telic Device Configuration](/images/devices/telic/telicdevlogtype.png)
 
 
 Finally, perform the following steps to send the data to the device.

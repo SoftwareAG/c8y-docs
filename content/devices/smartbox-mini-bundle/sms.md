@@ -19,4 +19,4 @@ work with remote devices. You can send AT commands in the respective language of
  in Chapter "AT commands": https://www.pssystec.de/downloads/. Frequently used
  commands are available by clicking the "Get predefined" button
 
-![Device Shell](/guides/images/devices/smartbox-io/device-shell.png)
+![Device Shell](/images/devices/smartbox-io/device-shell.png)

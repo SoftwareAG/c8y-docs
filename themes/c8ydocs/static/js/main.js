@@ -2,25 +2,27 @@ var main = (function ($) {
   function initializer() {
     
     //Load releases menu
-    var json = $.getJSON({'url': "https://cumulocity.com/guides/releases.json", 'async': false});  
-    json = JSON.parse(json.responseText);
-    var urls = json.releases;
-    var vmenu = $('.dropdown.version');
-    var loc = window.location;
-    vmenu.find('.dropdown-menu').html('');
-    $('#current-dropdown-version-toggle').text('');
-    for (var index = 0; index < urls.length; index++) {
-      var el = urls[index];
-      console.log(el);
-      if (loc.href.includes(el.label)) {
-        $('#current-dropdown-version-toggle').text('Release '+ el.label);
-        vmenu.find('.dropdown-menu').append(
-          '<a href="' + el.url + '" class="dropdown-menu-item active">Release ' + el.label + '</a>'
-        );
-      } else {
-        vmenu.find('.dropdown-menu').append(
-          '<a href="' + el.url + '" class="dropdown-menu-item">Release ' + el.label + '</a>'
-        );
+    var json = $.getJSON({'url': "http://localhost:1313/guides/10.4.6/releases.json", 'async': false});  
+    console.log(json);
+    if (json.responseText) {
+      json = JSON.parse(json.responseText);
+      var urls = json.releases;
+      var vmenu = $('.dropdown.version');
+      var loc = window.location;
+      vmenu.find('.dropdown-menu').html('');
+      $('#current-dropdown-version-toggle').text('');
+      for (var index = 0; index < urls.length; index++) {
+        var el = urls[index];
+        if (loc.href.includes(el.label)) {
+          $('#current-dropdown-version-toggle').text('Release '+ el.label);
+          vmenu.find('.dropdown-menu').append(
+            '<a href="' + el.url + '" class="dropdown-menu-item active">Release ' + el.label + '</a>'
+          );
+        } else {
+          vmenu.find('.dropdown-menu').append(
+            '<a href="' + el.url + '" class="dropdown-menu-item">Release ' + el.label + '</a>'
+          );
+        }
       }
     }
 

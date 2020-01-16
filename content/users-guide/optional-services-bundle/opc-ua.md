@@ -296,12 +296,50 @@ All server connections are listed as child devices even if the servers are disco
 
 The Measurements tab provides visualization of data in the form of charts. In total the gateway contains the following six charts:
 
-- Connected servers - Provides the number of connected and disconnected servers.
-- Gateway active threads -  Shows the number of active threads for the alarm/measurements/event flushes and for the executor. You can also see whether the threadpool size limit is not sufficient, based on the threadpool configurations in the gateway. If the maximum threadpool size is reached then any new activities which require a new thread will be blocked until a thread is available. 
-- Gateway cyclic reads - Number of active cyclic reads done by the gateway. Cyclic reads are actively reading from the OPC UA server within an interval based on the configuration of the device protocol.
-- Gateway memory - Represents the “free”,”max” and “allocated” memory values of the gateway.
-- Gateway repository queues - Before a thread is flushed it is first added to the queue. This chart shows how many threads are currently in the queue. 
-- Server response time - Shows the response time of each currently connected server.
+<table>
+<colgroup>
+<col span="1" style="width: 20%;">
+<col span="1" style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Charts</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Connected servers</td>
+<td align="left">Provides the number of connected and disconnected servers.</td>
+</tr>
+
+<tr>
+<td align="left">Gateway active threads</td>
+<td align="left">Shows the number of active threads for the alarm/measurements/event flushes and for the executor. You can also see whether the threadpool size limit is not sufficient, based on the threadpool configurations in the gateway. If the maximum threadpool size is reached then any new activities which require a new thread will be blocked until a thread is available. </td>
+</tr>
+
+<tr>
+<td align="left">Gateway cyclic reads</td>
+<td align="left">Number of active cyclic reads done by the gateway. Cyclic reads are actively reading from the OPC UA server within an interval based on the configuration of the device protocol.</td>
+</tr>
+
+<tr>
+<td align="left">Gateway memory</td>
+<td align="left">Represents the “free”,”max” and “allocated” memory values of the gateway.</td>
+</tr>
+
+<tr>
+<td align="left">Gateway repository queues</td>
+<td align="left">Before a thread is flushed it is first added to the queue. This chart shows how many threads are currently in the queue. </td>
+</tr>
+
+<tr>
+<td align="left">Server response time</td>
+<td align="left">Shows the response time of each currently connected server. </td>
+</tr>
+</tbody>
+</table>
 
 ![Gateway measurements tab](/guides/images/users-guide/opcua/opcua-gateway-memory.png)
 
@@ -345,7 +383,7 @@ Once the device protocol is created, various configuration settings such as vari
 
 #### Adding a new variable
 
-1. Click **Add variable**. 
+1. Click **Add variable** under the **Variables** section. 
 2. Enter the path and the name of the variable. 
 3. Choose either the default or the custom data reporting. The default option uses the data reporting mechanism used in the device protocol. The custom option will let you configure a data reporting mechanism only for the current variable. 
 4. Additionally, different functionalities such as sending measurements, creating alarms, sending events and custom actions for each variable can be selected. 
@@ -353,7 +391,7 @@ Once the device protocol is created, various configuration settings such as vari
 
 The gateway has a scheduling job and after the variables are saved, the gateway will check whether the variables exist under the subtree of the node. Afterwards, for each node a child device of the server is created. The child devices will contain data based on the configuration of the device protocol. The node child devices will also be listed in the **All devices** page. 
 
-> **Info:** If a reference server was not selected during the device protocol creation, the path should be given with a namespace URI representation. In the OPC UA server the index value can be taken from the namespace array. An example namespace URI representation for browse path “5:Counter1” would be: *http://www.prosysopc.com/OPCUA/SimulationNodes:Counter1*. Node id equal to “ns=5;s=Simulation” will have the following namespace representation *'nsu=http://www.prosysopc.com/OPCUA/SimulationNodes;s=Simulation*. In both examples the server’s namespace array, the 5th element has the value of “http://www.prosysopc.com/OPCUA/SimulationNodes”.
+> **Info:** If no reference server was selected during the device protocol creation, the path should be given with a namespace URI representation. In the OPC UA server the index value can be taken from the namespace array. An example namespace URI representation for browse path “5:Counter1” would be: *http://www.prosysopc.com/OPCUA/SimulationNodes:Counter1*. Node id equal to “ns=5;s=Simulation” will have the following namespace representation *'nsu=http://www.prosysopc.com/OPCUA/SimulationNodes;s=Simulation*. In both examples the server’s namespace array, the 5th element has the value of “http://www.prosysopc.com/OPCUA/SimulationNodes”.
 
 ![OPC UA device protocol](/guides/images/users-guide/opcua/opcua-device-protocol.png)
 
@@ -477,7 +515,7 @@ This operation triggers importing address space for a specific OPC-UA server. Th
 }
 ```
 
-The twinned address space information is persisted in the Cumulocity inventory. It is internally used to support address space browsing and to define Device Type Definitions. Hence this operation is always triggered if a new server is added to the platform.
+The twinned address space information is persisted in the Cumulocity inventory. It is internally used to support address space browsing and to define device types. Hence this operation is always triggered if a new server is added to the platform.
 
 Once the device gateway knows the address space, it uses it to handle different logics, for example applying device types to nodes. So if you already have the address space scanned once and stored in Cumulocity, you might want the device gateway to learn one more time about server’s address space without synchronizing data into Cumulocity. To achieve that, provide “skipSync”: true.
 
@@ -646,7 +684,7 @@ This operation reads history values and applies the mappings except of alarm map
 }
 ```
 
-- tagType - Possible tagType values are “TAG” and “NO_TAG”. "TAG" appends “_Historic” for the mapping types and for the measurement mappings also to the fragment names.
+- tagType - Possible tagType values are “TAG” and “NO_TAG”. "TAG" appends “_Historic” for both the mapping types and for the measurement mappings.
 - processMappings (optional) - by default the value is true. If the value is false then the values will not be processed based on the device type mapping. 
 
 #### Historic data binary upload

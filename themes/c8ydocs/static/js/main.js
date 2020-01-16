@@ -2,10 +2,11 @@ var main = (function ($) {
   function initializer() {
     
     //Load releases menu
-    var json = $.getJSON({ 'url': "http://cumulocity.com/guides/releases.json", 'async': false })
+    var json = $.getJSON({ 'url': "//cumulocity.com/guides/releases.json", 'async': false })
     // var json = $.getJSON("//cumulocity.com/guides/releases.json")
     .done(function (json) {
       //json = JSON.parse(json.responseText);
+      console.log('done: ', json);
       var urls = json.releases;
       var vmenu = $('.dropdown.version');
       var loc = window.location;

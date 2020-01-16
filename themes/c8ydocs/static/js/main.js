@@ -2,7 +2,7 @@ var main = (function ($) {
   function initializer() {
     
     //Load releases menu
-    var json = $.getJSON({ 'url': "http://localhost:1313/guides/10.4.6/releases.json", 'async': false })
+    var json = $.getJSON({ 'url': "http://cumulocity.com/guides/releases.json", 'async': false })
     // var json = $.getJSON("//cumulocity.com/guides/releases.json")
     .done(function (json) {
       //json = JSON.parse(json.responseText);

@@ -26,12 +26,11 @@ var main = (function ($) {
       }
     })
     .fail(function (resp) {
-      console.log('fail', resp);
+      console.error(resp.statusText);
       $('#dropdownVersionButton').hide();
     })
-    .always(function () {
-      console.log('always');
-      console.log(json);
+    .always(function (resp) {
+      console.log(resp);
     });
 
 

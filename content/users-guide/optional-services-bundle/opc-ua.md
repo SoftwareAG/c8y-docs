@@ -10,7 +10,7 @@ The OPC UA Device gateway is a stand-alone Java program that communicates with O
 
 ### <a name="gateway-register"></a>Gateway configuration and registration
 
-YAML file and spring profiles are used for the configuration of the gateway. A default configuration file is embedded in the gateway JAR file, so you only need to set the properties which are different from the default. For more information on the YAML syntax, see [here](https://bitbucket.org/asomov/snakeyaml/src/default/). 
+YAML file and spring profiles are used for the configuration of the gateway. A default configuration file is embedded in the gateway JAR file, so you only need to set the properties which are different from the default. For more information on the YAML syntax, see [https://bitbucket.org/asomov/snakeyaml/src/default/](https://bitbucket.org/asomov/snakeyaml/src/default/). 
 
 > **Important**: When editing the YAML file, make sure to provide valid indentations.
 
@@ -157,7 +157,7 @@ Mac OS
     /opt/opcua/data
 ```
 
-For example, to connect to a tenant, first a profile named application-myTenant.yaml will be created in the "C:/Users/<<userName>>/.opcua/data" directory. The following properties will be added to the file:
+For example, to connect to a tenant, first a profile named *application-myTenant.yaml* will be created in the *C:/Users/<<userName>>/.opcua/data* directory. The following properties will be added to the file:
 
 ```
 C8Y:
@@ -173,12 +173,13 @@ gateway:
 
 > **Info:** Windows OS is used for the example.
 
-To specify your own configuration, Spring arguments can be used in your terminal to run the gateway JAR  file. Multiple locations have to be comma-separated. The configuration locations should be either YAML files or directories. In case of directories, they must end with “/”. For example:
+To specify your own configuration, Spring arguments can be used in your terminal to run the gateway JAR file. Multiple locations have to be comma-separated. The configuration locations should be either YAML files or directories. In case of directories, they must end with “/”. For example:
 
 ```bash
 java -jar gateway.jar --spring.config.location=file:/Users/<<userName>>/.opcua/conf/application-myTenant.yaml,file:/Users/<<userName>>/.opcua/conf/
 ```
-The number of profiles you may have is not limited. To use a specific profile on runtime, the **-Dspring.profiles.active** JVM argument has to be passed when running the gateway JAR file. For example, let’s use the previously created profile. Start a terminal and use the following command: 
+
+The number of profiles you may have is not limited. To use a specific profile on runtime, the "-Dspring.profiles.active" JVM argument has to be passed when running the gateway JAR file. For example, let’s use the previously created profile. Start a terminal and use the following command: 
 
 ```bash
 java -Dspring.profiles.active=default,myTenant -jar gateway.jar
@@ -186,19 +187,27 @@ java -Dspring.profiles.active=default,myTenant -jar gateway.jar
 
 The command above will start a gateway with the default profile and it will override the default properties with the properties defined in the “myTenant” profile.
 
-If both arguments **--spring.config.location** and **-Dspring.profiles.active** are provided, the configuration locations should be directories instead of files. Otherwise, the profile-specific variants will not be considered.
+If both arguments "--spring.config.location" and "-Dspring.profiles.active" are provided, the configuration locations should be directories instead of files. Otherwise, the profile-specific variants will not be considered.
 
 #### Logging
 
-Custom logging configuration can be set during startup by passing the **-Dlogging.config** jvm argument. For more info on how to set up custom logging settings, refer to the “Logback” documentation.
+Custom logging configuration can be set during startup by passing the "-Dlogging.config" jvm argument. For more info on how to set up custom logging settings, refer to the “Logback” documentation.
 
 ### Running the Gateway
 
 The gateway can run with either default or custom settings. To run the gateway run one of the commands below:
 
-- **Default settings and default logging configuration**: java -jar gateway.jar
-- **Custom settings and default logging configuration**: java -Dspring.profiles.active=default,PROFILE_NAME -jar gateway.jar
-- **Custom settings and custom logging configuration**: java -Dlogging.config=file:PATH_TO_LOGBACK_XML -Dspring.profiles.active=default,PROFILE_NAME -jar gateway.jar
+* Default settings and default logging configuration: 
+
+		java -jar gateway.jar
+
+* Custom settings and default logging configuration: 
+
+		java -Dspring.profiles.active=default,PROFILE_NAME -jar gateway.jar
+
+* Custom settings and custom logging configuration:
+
+		java -Dlogging.config=file:PATH_TO_LOGBACK_XML -Dspring.profiles.active=default,PROFILE_NAME -jar gateway.jar
 
 For example, using the profile from the previous section we are going to register the gateway. First, open the terminal and navigate to the location of the gateway.jar file. Next, enter the following command: 
 
@@ -215,21 +224,22 @@ Click **Accept** to complete the registration.
 
 Next, establish a connection between the gateway and the OPC UA server. 
 
-1. In the OPC UA server tab of the respective gateway, click Add server. 
+1. In the **OPC UA server** tab of the respective gateway, click **Add server**. <br>
 ![Add new server](/guides/images/users-guide/opcua/opcua-new-server.png)
 2. Use the **Server connection** toggle, to enable or disable the server connection. 
 3. Enter the **Server URL** which is used to establish a connection between the server and the gateway. 
 4. Enter the **Timeout value** in seconds. The timeout value is calculated for each request. If the timeout value is exceeded the request will be unsuccessful. 
-5. Enter  the **Status check interval** in seconds. The platform constantly checks whether there is incoming data. If the status check interval value is exceeded an alarm is created. The status check interval value has to be greater than the monitoring value of the gateway. 
-6. Select the security mode and security policy depending on the server configuration. For more info, see the [section below](#security-modes).
-7. Select the desired authentication method. For more info, see the [section below](#authentication).
+5. Enter the **Status check interval** in seconds. The platform constantly checks whether there is incoming data. If the status check interval value is exceeded an alarm is created. The status check interval value has to be greater than the monitoring value of the gateway. 
+6. Select the **Security mode** and **Security policy** depending on the server configuration. For more info, see the [section below](#security-modes).
+7. Select the desired uthentication method. For more info, see the [section below](#authentication).
 8. Click **Save**.
 
-> **Info:** Once a connection is established, the servers will be located in the Child devices tab. In there, the servers will contain additional data such as access to the address space. 
+> **Info:** Once a connection is established, the servers will be located in the **Child devices** tab. In there, the servers will contain additional data such as access to the address space. 
 
 #### <a name="security-modes"></a> Security modes
 
-The security mode settings tell the gateway how it should secure the connection between itself and the OPC UA server. When a mode other than **NONE** is selected, the gateway will auto-generate a self-signed application instance certificate and will use it to connect to the server. Possible security mode options are:
+The security mode settings tell the gateway how it should secure the connection between itself and the OPC UA server. When a mode other than NONE is selected, the gateway will auto-generate a self-signed application instance certificate and will use it to connect to the server. Possible security mode options are:
+
 - NONE
 - BASIC128RSA15_SIGN
 - BASIC128RSA15_SIGN_ENCRYPT
@@ -244,15 +254,16 @@ The security mode settings tell the gateway how it should secure the connection 
 
 The authentication setting is used to authenticate and authorize the server user. It tells the gateway how to create a user identity and how to send it to the OPC UA server when establishing a connection. The following authentication methods can be selected:
 
-- **Anonymous** - Anonymous connection will only work when the OPC UA server allows such connections. 
-- **Username/Password** - With this setting the gateway will connect to the server as a specific user represented by a username and password.
-- **Key-based authentication** - The gateway will use an existing certificate to authenticate as a specific user. JKS keystore must be uploaded to Cumulocity as a binary with type “application/octet-stream”. This keystore must follow a few rules:
+- Anonymous - Anonymous connection will only work when the OPC UA server allows such connections. 
+- Username/Password - With this setting the gateway will connect to the server as a specific user represented by a username and password.
+- Key-based authentication - The gateway will use an existing certificate to authenticate as a specific user. JKS keystore must be uploaded to Cumulocity as a binary with type “application/octet-stream”. This keystore must follow the following rules:
     - It has to be a Java keystore (JKS).
     - The keystore itself has to be password-protected.
     - The keystore has to contain user certificate with  “opcuauser” alias.
     - The user certificate has to be password-protected.
 
 The keystore can be create via the following Java keytool command:
+
 ```bash
 keytool -genkey -keyalg RSA -alias opcuauser -keystore keystore.jks -storepass passw0rd_a -validity 3600 -keysize 2048
 ```
@@ -265,7 +276,7 @@ The keystore can then be verified by using a tool like KeystoreExplorer.
 
 ![Keystore explorer2](/guides/images/users-guide/opcua/opcua-keystore-explorer2.png)
 
-Afterwards, the keystore can be uploaded as binary in Cumulocity and it can be used in the server configuration.
+The keystore can then be uploaded as binary in Cumulocity and it can be used in the server configuration.
 
 ![Opcua Keystore](/guides/images/users-guide/opcua/opcua-keystore.png)
 
@@ -285,12 +296,12 @@ All server connections are listed as child devices even if the servers are disco
 
 The Measurements tab provides visualization of data in the form of charts. In total the gateway contains the following six charts:
 
-- **Connected servers** - Provides the number of connected and disconnected servers.
-- **Gateway active threads** -  Shows the number of active threads for the alarm/measurements/event flushes and for the executor. You can also see whether the threadpool size limit is not sufficient, based on the threadpool configurations in the gateway. If the maximum threadpool size is reached then any new activities which require a new thread will be blocked until a thread is available. 
-- **Gateway cyclic reads** - Number of active cyclic reads done by the gateway. Cyclic reads are actively reading from the OPC UA server within an interval based on the configuration of the device protocol
-- **Gateway memory** - Represents the “free”,”max” and “allocated” memory values of the gateway.
-- **Gateway repository queues** - Before a thread is flushed it is first added to the queue. This chart shows how many threads are currently in the queue. 
-- **Server response time** - Shows the response time of each currently connected server.
+- Connected servers - Provides the number of connected and disconnected servers.
+- Gateway active threads -  Shows the number of active threads for the alarm/measurements/event flushes and for the executor. You can also see whether the threadpool size limit is not sufficient, based on the threadpool configurations in the gateway. If the maximum threadpool size is reached then any new activities which require a new thread will be blocked until a thread is available. 
+- Gateway cyclic reads - Number of active cyclic reads done by the gateway. Cyclic reads are actively reading from the OPC UA server within an interval based on the configuration of the device protocol.
+- Gateway memory - Represents the “free”,”max” and “allocated” memory values of the gateway.
+- Gateway repository queues - Before a thread is flushed it is first added to the queue. This chart shows how many threads are currently in the queue. 
+- Server response time - Shows the response time of each currently connected server.
 
 ![Gateway measurements tab](/guides/images/users-guide/opcua/opcua-gateway-memory.png)
 
@@ -298,9 +309,9 @@ The Measurements tab provides visualization of data in the form of charts. In to
 
 The **Alarms** tab shows all alarms raised either in the gateway or in the servers. In total there are three alarms which can be raised:
 
-- **Connection loss** - If the gateway fails to connect to the OPC UA server a critical alarm is raised.
-- **Gateway crash** -  If the gateway crashes or is abruptly shut down a major alarm is raised.
-- **No data arrived within interval** - If the status interval check value in the OPC UA server configuration is exceeded a major alarm is raised.
+- Connection loss - If the gateway fails to connect to the OPC UA server a critical alarm is raised.
+- Gateway crash -  If the gateway crashes or is abruptly shut down a major alarm is raised.
+- No data arrived within interval - If the status interval check value in the OPC UA server configuration is exceeded a major alarm is raised.
 
 ![Gateway alarms tab](/guides/images/users-guide/opcua/opcua-alarms.png)
 
@@ -312,7 +323,7 @@ The **Events** tab shows all events related to the gateway-server connection. Ad
 
 #### Address space
 
-The address space tab shows the attributes and references of the address space node of the servers. The filter searches through the whole hierarchy to find “nodeId”, “browserName” or “displayName” of an attribute. In case of multiple “ancestorNodeIds”, you can click on the desired node to be redirected.
+The **Address space** tab shows the attributes and references of the address space node of the servers. The filter searches through the whole hierarchy to find “nodeId”, “browserName” or “displayName” of an attribute. In case of multiple “ancestorNodeIds”, you can click on the desired node to be redirected.
 
 The address space is automatically scanned when a connection between the gateway and the server is established. The duration of the scan depends on the size of the address space. The address space information is stored locally once it is scanned and then used by this applying process. If the address space information is not yet available, e.g. the address space has not been scanned, another scan will be triggered without synchronizing data into Cumulocity. Performing another address space operation will update the address space information.
 
@@ -322,13 +333,13 @@ The address space is automatically scanned when a connection between the gateway
 
 #### Adding a new device protocol
 
-- Click **New device protocol** in the top menu bar and select OPC UA as device protocol type. 
-- In the resulting dialog box, enter a name and an optional description for the device protocol.
-- Optionally, a reference server can be selected. Selecting a reference server allows you to create device types based on the OPC UA model stored on an OPC UA server. This greatly simplifies the mapping process, since device types can be created based on OPC UA browse paths being actually present on the server.
-- Click **Create**.
+1. Click **New device protocol** in the top menu bar and select OPC UA as device protocol type. 
+2. In the resulting dialog box, enter a name and an optional description for the device protocol.
+3. Optionally, a reference server can be selected. Selecting a reference server allows you to create device types based on the OPC UA model stored on an OPC UA server. This greatly simplifies the mapping process, as device types can be created based on OPC UA browse paths being actually present on the server.
+4. Click **Create**.<br>
 ![Add new device protocol](/guides/images/users-guide/opcua/opcua-add-protocol.png)
 
-> **Info:** Selecting a reference server will require you to select a reference node.
+	> **Info:** Selecting a reference server will require you to select a reference node.
 
 Once the device protocol is created, various configuration settings such as variables, data reporting and constraints can be applied. Initially, the device protocol will be inactive. When active, the gateway will scan the address space of all servers and will automatically apply the device protocol to all nodes which match the criteria. When the device protocol is configured, click **Save**. 
 
@@ -342,7 +353,7 @@ Once the device protocol is created, various configuration settings such as vari
 
 The gateway has a scheduling job and after the variables are saved, the gateway will check whether the variables exist under the subtree of the node. Afterwards, for each node a child device of the server is created. The child devices will contain data based on the configuration of the device protocol. The node child devices will also be listed in the **All devices** page. 
 
-> **Info:** If a reference server was not selected during the device protocol creation, the path should be given with a namespace URI representation. In the OPC UA server the index value can be taken from the namespace array. An example namespace URI representation for browse path “5:Counter1” would be: “http://www.prosysopc.com/OPCUA/SimulationNodes:Counter1”. Node id equal to “ns=5;s=Simulation” will have the following namespace representation “'nsu=http://www.prosysopc.com/OPCUA/SimulationNodes;s=Simulation”. In both examples the server’s namespace array, the 5th element has the value of “http://www.prosysopc.com/OPCUA/SimulationNodes”.
+> **Info:** If a reference server was not selected during the device protocol creation, the path should be given with a namespace URI representation. In the OPC UA server the index value can be taken from the namespace array. An example namespace URI representation for browse path “5:Counter1” would be: *http://www.prosysopc.com/OPCUA/SimulationNodes:Counter1*. Node id equal to “ns=5;s=Simulation” will have the following namespace representation *'nsu=http://www.prosysopc.com/OPCUA/SimulationNodes;s=Simulation*. In both examples the server’s namespace array, the 5th element has the value of “http://www.prosysopc.com/OPCUA/SimulationNodes”.
 
 ![OPC UA device protocol](/guides/images/users-guide/opcua/opcua-device-protocol.png)
 
@@ -350,26 +361,38 @@ The functionalities that can be enabled are the following:
 
 **Send measurement**
 
-Turn on **Send measurement** to specify a measurement.
+Turn on **Send measurement** to specify a measurement. 
 
-- Enter the type of the measurement. For example, “c8y_AccelerationMeasurement”.
-- Series are any fragments in measurements that contain a “value” property. For example, in the series field you can enter: “c8y_AccelerationMeasurement.acceleration”
-- The “Unit” field specifies the unit of the given measurement. For example, “m/s” for velocity.
+Specify the following parameters:
+
+- Enter the type of the measurement, for example, “c8y_AccelerationMeasurement”.
+- Series are any fragments in measurements that contain a “value” property. For example, “c8y_AccelerationMeasurement.acceleration”.
+- The **Unit** field specifies the unit of the given measurement, for example, “m/s” for velocity.
 
 **Create alarm**
- Turn on **Create alarm** if you want to create an alarm out of the resource. Specify the following parameters (all mandatory):
+
+Turn on **Create alarm** if you want to create an alarm out of the resource. 
+
+Specify the following parameters (all mandatory):
+ 
 - Severity - one of CRITICAL, MAJOR, MINOR, WARNING
 - Type
 - Status - one of ACTIVE, ACKNOWLEDGED, CLEARED
 - Text
 
 **Send Event**
-Turn on Send event to send an event each time you receive a resource value. Specify the following parameters:
+
+Turn on Send event to send an event each time you receive a resource value. 
+
+Specify the following parameters:
+
 - Enter the type of the event. For example, “com_cumulocity_model_DoorSensorEvent”.
 - Enter the text which will be sent. For example, “Door sensor was triggered”.
 
 **Custom Actions**
-Custom actions are HTTP POST requests that gateway will send to a defined custom URL. You can define custom headers and body template with the following placeholders available:
+
+Custom actions are HTTP POST requests which the gateway will send to a defined custom URL. You can define custom headers and body template with the following placeholders available:
+
 - ${value} - value of specific node
 - ${serverId} - ID of OPC-UA server
 - ${nodeId} - ID of source node
@@ -432,17 +455,18 @@ The following constraints can be applied:
 - **Limit device type to a set of servers** - Limit the device types to a particular set of servers. This is useful if you want to have 1 device type for each OPC UA server. Simply click on the dropdown menu and select the desired servers.
 - **Limit device type scope in the address space** - Limit the scope to servers which have the entered path in their address space.
 - **Limit device type to servers with a certain fragment** - The device protocol will only be available to the servers which have the entered fragment.
-- **Limit device type to specific root nodes ID** - A list of “root” node IDs (from which your browsePath is defined) to which the device type should be applied. For example, if there is only one server and the device type is applied to two node IDs, two child devices of the server will be created. It’s important to note that if the device type variables do not exist in the root nodes, the device type will not be applied to the root node server.
+- **Limit device type to specific root nodes ID** - A list of “root” node IDs (from which your browsePath is defined) to which the device type should be applied. For example, if there is only one server and the device type is applied to two node IDs, two child devices of the server will be created. Note that if the device type variables do not exist in the root nodes, the device type will not be applied to the root node server.
 
 ![OPC UA device protocol](/guides/images/users-guide/opcua/opcua-auto-constraints.png)
 
 ### Operations
 
-Cumulocity operations is the interface that is used to tell gateway what to do and how to do it. This chapter describes all operations that are currently supported by the gateway. 
+Cumulocity operations is the interface that is used to tell the gateway what to do and how to do it. This section describes all operations that are currently supported by the gateway. 
 
 #### Scanning the address space
 
-Trigger s importing address space for a specific OPC-UA server. The server’s id is passed as a deviceID. The gateway will scan the entire address space of the server and persist a twinned representation of the address space in the Cumulocity platform.
+This operation triggers importing address space for a specific OPC-UA server. The server’s ID is passed as a device ID. The gateway will scan the entire address space of the server and persist a twinned representation of the address space in the Cumulocity platform.
+
 ```
 {
 "deviceId": "23106",
@@ -452,15 +476,16 @@ Trigger s importing address space for a specific OPC-UA server. The server’s i
 "description": "Import address space from root node"
 }
 ```
-The twinned address space information is persisted in the Cumulocity inventory. It is internally used to support address space browsing and for defining Device Type Definitions. For this reason, this operation is always triggered if a new server is added to the platform.
 
-Once the device gateway knows the address space, it uses that knowledge to handling different logics, for example applying device types to nodes, etc. So if you already have address space scanned once and stored in Cumulocity, you might want to ask the device gateway learn one more time about server’s address space without synchronizing data into Cumulocity. To achieve that, provide “skipSync”: true.
+The twinned address space information is persisted in the Cumulocity inventory. It is internally used to support address space browsing and to define Device Type Definitions. Hence this operation is always triggered if a new server is added to the platform.
 
-> **Info:** We do not recommend to directly work with the persisted address space data structures in Cumulocity Inventory, as these might change in the future. Please use the endpoints of the management service to interact with the OPC UA address space.
+Once the device gateway knows the address space, it uses it to handle different logics, for example applying device types to nodes. So if you already have the address space scanned once and stored in Cumulocity, you might want the device gateway to learn one more time about server’s address space without synchronizing data into Cumulocity. To achieve that, provide “skipSync”: true.
+
+> **Info:** We do not recommend to directly work with the persisted address space data structures in the Cumulocity inventory, as these might change in the future. Use the endpoints of the management service to interact with the OPC UA address space.
 
 #### Reading the value of a node/nodes
 
-Reads the value attribute of specific node or list of nodes.
+This operation reads the value attribute of specific node or list of nodes.
 
 ```
 {
@@ -472,7 +497,8 @@ Reads the value attribute of specific node or list of nodes.
   "description":"read value"
 }
 ```
-Other possible values for “timestampsToReturn”: “Source”, “Server” or “Both”.
+
+Other possible values for `timestampsToReturn`: “Source”, “Server” or “Both”.
 
 The result of this operation will contain output in the following format:
 
@@ -496,6 +522,7 @@ The result of this operation will contain output in the following format:
 #### Reading all attributes of a node
 
 This operation returns all attributes of specific node.
+
 ```
 {
   "deviceId" : "59799",
@@ -505,7 +532,9 @@ This operation returns all attributes of specific node.
   "description":"Read node attributes"
 }
 ```
-Result may differ depending on the node type.
+
+The result may differ depending on the node type.
+
 ```
 {
   "Value": { 
@@ -525,7 +554,7 @@ Result may differ depending on the node type.
 
 #### Reading an attribute
 
-Read attribute operation supports to read one or more attributes of one or more nodes. This includes support of the range parameter to read a single element or a range of elements when the attribute value is an array.
+This operation supports to read one or more attributes of one or more nodes. This includes support of the range parameter to read a single element or a range of elements when the attribute value is an array.
 
 ```
 {
@@ -537,35 +566,35 @@ Read attribute operation supports to read one or more attributes of one or more 
     "description": "Read attribute from ns=3;s=FloatArray",
 }
 ```
-Result may differ depending on the node type.
 
+The result may differ depending on the node type.
 
-{
-    "results": {
-   	 "ns=3;s=FloatArray": {
-   		 "13": {
-   			 "value": {
-   				 "value": [1.0, 2.0, 3.0, 4.0, 5.0]
-   			 },
-   			 "statusCode": 0,
-   			 "sourceTimestamp": 1566572540173,
-   			 "sourcePicoseconds": 0,
-   			 "serverTimestamp": 1566573849897,
-   			 "serverPicoseconds": 0
-   		 }
-   	 }
-    }
-}
-
+	{
+	    "results": {
+	   	 "ns=3;s=FloatArray": {
+	   		 "13": {
+	   			 "value": {
+	   				 "value": [1.0, 2.0, 3.0, 4.0, 5.0]
+	   			 },
+	   			 "statusCode": 0,
+	   			 "sourceTimestamp": 1566572540173,
+	   			 "sourcePicoseconds": 0,
+	   			 "serverTimestamp": 1566573849897,
+	   			 "serverPicoseconds": 0
+	   		 }
+	   	 }
+	    }
+	}
 
 The index ranges given below are according to the OPC UA specifications and will be transformed to NumericRange. 
 
-
 The syntax is as following:
+
     NumericRange: <dimension> [',' <dimension>]
     <dimension>: <index> [':' <index>]
 
-Multi-dimensional arrays can be indexed by specifying a range for each dimension separated by a ','. For example, a 2x2 block in a 4x4 matrix could be selected with the range "1:2,0:1". 
+Multi-dimensional arrays can be indexed by specifying a range for each dimension separated by a comma. For example, a 2x2 block in a 4x4 matrix could be selected with the range "1:2,0:1". 
+
 ```
 {
     "description": "Read attribute from ns=3;s=FloatArray",
@@ -577,7 +606,8 @@ Multi-dimensional arrays can be indexed by specifying a range for each dimension
     }
 }
 ```
-Result may differ depending on the node type.
+
+The result may differ depending on the node type.
 
 ```
 {
@@ -600,7 +630,7 @@ Result may differ depending on the node type.
 
 #### Historic read
 
-This operation reads history values and applies the mappings except Alarm mappings.
+This operation reads history values and applies the mappings except of alarm mappings.
 
 ```
 {
@@ -616,13 +646,12 @@ This operation reads history values and applies the mappings except Alarm mappin
 }
 ```
 
-- **tagType** - Possible tagType values are “TAG” and “NO_TAG”
-TAG appends “_Historic” for the mapping types and for the measurement mappings also to the fragment names.
-- **(optional) processMappings** - by default the value is true. If the value is false then the values will not be processed based on the device type mapping. 
+- tagType - Possible tagType values are “TAG” and “NO_TAG”. "TAG" appends “_Historic” for the mapping types and for the measurement mappings also to the fragment names.
+- processMappings (optional) - by default the value is true. If the value is false then the values will not be processed based on the device type mapping. 
 
 #### Historic data binary upload
 
-This operation reads history values and only saves to file that can be retrieved using Binary Api
+This operation reads historic values and only saves to file that can be retrieved using Binary Api
 
 ```
 {
@@ -637,11 +666,13 @@ This operation reads history values and only saves to file that can be retrieved
     "description": "Upload history data"
 }
 ```
-The binary file representations, which can be queried using Binary Api, are created with type “c8y_ua_HistoricData” and operationId with the value of the operation that is generated with.
+
+The binary file representations, which can be queried using Binary API, are created with type “c8y_ua_HistoricData” and operationId with the value of the operation that is generated with.
 
 #### Write value
 
-Write values to the node/nodes.
+This operation writes values to the node/nodes.
+
 ```
 {
   "deviceId" : "2349410",
@@ -658,9 +689,10 @@ Write values to the node/nodes.
   "description":"Write values to different nodes"
 }
 ```
+
 #### Write attribute
 
-This is similar to the previous one, but instead of writing to value attribute, this writes attributes’ values to any writable attributes. Following example write two different attributes to two different nodes.
+This operation is similar to the previous one, but instead of writing to the value attribute, this operation writes attributes’ values to any writable attributes. The following example writes two different attributes to two different nodes.
 
 ```
 {
@@ -680,7 +712,9 @@ This is similar to the previous one, but instead of writing to value attribute, 
   "description":"Write attributes’ values to different attributes of different nodes"
 }
 ```
-Optionally it is possible to write value range when the attribute value is an array.
+
+Optionally, it is possible to write a value range when the attribute value is an array.
+
 Writes to multi-dimensional arrays are not supported. 
 
 ```
@@ -701,8 +735,7 @@ Writes to multi-dimensional arrays are not supported.
 
 #### Get method description
 
-Get method description
-This operation reads description of a method node. 
+This operation reads the description of a method node. 
 
 ```
 {
@@ -749,7 +782,7 @@ The result describes a method, it’s parent object, input and output arguments.
 
 #### Get method
 
-Calls the method on the OPC UA server. This operation requires complete input arguments with an additional “value” fragment. 
+This operation calls the method on the OPC UA server. It requires complete input arguments with an additional “value” fragment. 
 
 ```
 {
@@ -803,7 +836,7 @@ Power of 5 is 25:
 
 ![Permission denied](/guides/images/users-guide/opcua/opcua-permission-denied-error.png)
 
-If the following error appears,  add a baseDir property to the yaml file. For example:
+If the following error appears,  add a baseDir property to the YAML file. For example:
 
 ```
 db:
@@ -812,11 +845,11 @@ db:
 
 #### Unknown host exception when running the gateway JAR
 
-This error appears when the provided baseUrl property in the yaml file is incorrect. 
+This error appears if the provided baseUrl property in the YAML file is incorrect. 
 
 #### Failed to load property source from location when running the gateway JAR
 
-The following error will appear if the indentation of the properties in the yaml files is incorrect.
+The following error appears if the indentation of the properties in the YAML file is incorrect.
 
 ![Failed to load](/guides/images/users-guide/opcua/opcua-failed-to-load.png)
 
@@ -824,4 +857,4 @@ The following error will appear if the indentation of the properties in the yaml
 
 ![Address in use](/guides/images/users-guide/opcua/opcua-address-in-use.png)
 
-If this error appears, it means that there is a java process running in the background. To fix this issue, the process must be stopped/killed.
+If this error appears, a Java process is running in the background. To fix this issue, the process must be stopped/killed.

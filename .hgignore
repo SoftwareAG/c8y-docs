@@ -2,7 +2,6 @@
 node_modules
 out/
 public/
-resources/
 .docpad.db
 .idea/
 syntax: glob

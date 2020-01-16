@@ -124,8 +124,8 @@ The SNMP agent has undergone a major revamp in-terms of persistence storage mech
 		rpm -e <snmp-package-name>
 
 6. Delete the contents inside *$HOME/.snmp/* and */etc/snmp* folder (if present).
-7. Delete the snmp-agent device in Cumulocity, which was registered as part of the installation and all its child SNMP devices. This can be done from the user interface or by using REST endpoints.
-8. Follow the **Installation** procedure in this document, to install/move to GA version.
+7. Delete the snmp-agent device in Cumulocity which was registered as part of the installation and all its child SNMP devices. This can be done from the user interface or by using REST endpoints.
+8. Follow the installation procedure described above, to install/move to GA version.
 
 > **Info:**: Cumulocity SNMP device protocol/s can be retained (unless there are no changes in the SNMP device configuration).
 
@@ -582,60 +582,72 @@ To uninstall the agent completely, follow these steps:
 1. Make sure that the load to the SNMP agent is zero. This can be done by gracefully disconnecting all SNMP devices from the SNMP agent or redirect the traffic to a different endpoint.
 2. If there are any messages to be processed, wait for it to complete. If you do not care about the pending messages to be processed, continue.
 3. Stop the agent process:
-```
-systemctl stop snmp-agent-gateway
-```
+
+		systemctl stop snmp-agent-gateway
+
 4. Take a backup of the following folders (if required):
-```
-$HOME/.snmp
-/etc/snmp-agent-gateway
-```
+
+		$HOME/.snmp
+		/etc/snmp-agent-gateway
+
 5. Uninstall the SNMP agent RPM package:
-```
-rpm -e snmp-agent-gateway
-```
+
+		rpm -e snmp-agent-gateway
+
 6. Delete the following folders:
-```
-$HOME/.snmp
-/etc/snmp-agent-gateway
-/usr/lib/snmp-agent-gateway
-/var/log/snmp-agent-gateway
-```
+
+		$HOME/.snmp
+		/etc/snmp-agent-gateway
+		/usr/lib/snmp-agent-gateway
+		/var/log/snmp-agent-gateway
+
 
 #### Troubleshooting
 
-##### If there are any issues while starting the service check the status of the service:
+##### If there are any issues while starting the service
+
+Check the status of the service:
+
 ```
 systemctl status snmp-agent.service
 ```
 
-##### If there are any issues during the execution: <br>
+##### If there are any issues during the execution
+
 The agent has extensive logging to inform the user about the situation and in many cases it will also provide the action that the user can take in case of an error situation. All information is logged into a file and the log file is located at: `$HOME/.snmp/log/snmp-agent-gateway-server.log`.
 
-##### How can I find the old logs?<br>
+##### How can I find the old logs?
+
 The latest log can be found in `$HOME/.snmp/log/snmp-agent-gateway-server.log`. However, the agent uses logback and log files are rotated based on a rolling policy. The default rolling policy is FileAndTime based and the max file size is set to 50MB. The old log files are also present in the same directory as the current running log: `$HOME/.snmp/log/snmp-agent-gateway-server-%d.%i.log`.
 
-##### How can I change the log configuration of the agent process?<br>
+##### How can I change the log configuration of the agent process?
+
 Edit the following startup file and change the "arguments" attribute and add the new log configuration file path. Restart the service for the changes to take effect.
+
 ```
 vi /usr/lib/snmp-agent-gateway/start
 --logging.config=/etc/snmp-agent-gateway/snmp-agent-gateway-logging.xml
 ```
 
-##### How can I change the memory configuration of the agent Java process?<br>
+##### How can I change the memory configuration of the agent Java process?
+
 Edit the following startup file and change the heap memory settings (-Xms128m -Xmx384m) to the desired value. Restart the service for the changes to take effect.
+
 ```
 /usr/lib/snmp-agent-gateway/start 
 ```
 
-##### How can I change the default agent configurations?<br>
+##### How can I change the default agent configurations?
+
 In the installation procedure, many of the agent configurations are defaulted to some value. These default values are set based on testing, common usage assumptions and ease of installation. However, you can change the default value to a value suitable for your environment and usage. To do so, uncomment the property and change the value of the property in `$HOME/.snmp/snmp-agent-gateway.properties`.
 On saving the changes, restart the agent service for the changes to take effect.
 
-##### Which Cumulocity services does the agent use?<br>
+##### Which Cumulocity services does the agent use?
+
 The agent makes use of c8y core APIs (most notably inventory, identity, device control, alarm/measurement/event) of the platform. 
 
 ##### What are the ports used by the agent?
+
 Exposed Network Interfaces  (listening ports)
 The table below lists the default values for all inbound listening ports. All ports are configurable in the agent settings config file.
 

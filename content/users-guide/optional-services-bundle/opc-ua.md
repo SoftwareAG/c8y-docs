@@ -4,7 +4,7 @@ title: OPC UA 2.0
 layout: redirect
 --- 
 
-The OPC UA Device gateway is a stand-alone Java program that communicates with OPC UA server(s) and the Cumulocity platform. It stores data into the Cumulocity database via REST. Additionally, C8Y commands are executed to perform various operations on the OPC UA servers. The gateway has to be registered as Cumulocity device in a specific tenant and the opcua-device-gateway must run in the users’ environment. In order to use OPC UA, subscription to the “opcua-mgmt-service” microservice is required. 
+The OPC UA device gateway is a stand-alone Java program that communicates with OPC UA server(s) and the Cumulocity platform. It stores data into the Cumulocity database via REST. Additionally, C8Y commands are executed to perform various operations on the OPC UA servers. The gateway has to be registered as Cumulocity device in a specific tenant and the opcua-device-gateway must run in the users’ environment. In order to use OPC UA, subscription to the “opcua-mgmt-service” microservice is required. 
 
 > **Info**: The gateway requires at least Java 8 in order to run.
 

@@ -30,7 +30,9 @@ The single sign-on functionality has been further enhanced:
 
 **TOTP**
 
-A new two-factor authentication strategy has been added. You can now also use **TOTP (Google authenticator)** as authentication method. For details, see [Administration > Two-factor authentication](/guides/users-guide/administration/#tfa) in the User guide.
+A new two-factor authentication strategy has been added. You can now also use **TOTP (Google authenticator)** as authentication method. 
+
+For details, see [Administration > Two-factor authentication](/guides/users-guide/administration/#tfa) in the User guide.
 
 
 **Tenant ID**
@@ -53,6 +55,7 @@ The following functionalities are now available:
 * Addressing OPC UA nodes via URN
 * Largely extended support for mapping the OPC UA and Cumulocity information models
 
+For details, see [Optional services > OPC UA 2.0](/guides/users-guide/optional-services/opc-ua) in the User guide. 
 
 ### SNMP
 
@@ -63,4 +66,4 @@ Support for integration of SNMP-enabled devices has been added to the Cumulocity
 
 ![SNMP device protocol details](/guides/images/release-notes/snmp-device-protocol-detail.png)
 
-For details see [Optional services > SNMP](https://cumulocity.com/guides/users-guide/optional-services/#snmp) in the User guide.
+For details see [Optional services > SNMP](/guides/users-guide/optional-services/#snmp) in the User guide.

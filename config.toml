@@ -11,7 +11,7 @@ paginate = 12
 summaryLength = 30
 buildFuture = true
 # publishDir = "10.4.6"
-relativeURLs = true
+# relativeURLs = true
 
 
 [author]

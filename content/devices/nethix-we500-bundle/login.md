@@ -17,7 +17,7 @@ It is necessary that the PC used for connecting to WE500 belongs to the same net
 
 	192.168.1.160
 
-![Login](/guides/images/devices/we500/login1.png)
+![Login](/images/devices/we500/login1.png)
 
 The authentication procedure of the web interface will ask for the user credentials. The default username and password are the following:
 

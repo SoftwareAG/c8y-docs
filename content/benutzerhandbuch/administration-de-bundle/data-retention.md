@@ -12,7 +12,7 @@ Datenhaltungsregeln werden üblicherweise während der Nacht ausgeführt. Wenn S
 
 Klicken Sie **Datenhaltungsregeln** im Menü **Verwaltung**, um eine Liste aller Datenhaltungsregeln in Ihrem Konto anzuzeigen.
 
-<img src="/guides/images/benutzerhandbuch/admin-retention-rules.png" alt="Datenhaltungsregeln" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/admin-retention-rules.png" alt="Datenhaltungsregeln" style="max-width: 100%">
 
 Für jede Regel wird der Name, Details zu den Daten, die gelöscht werden sollen (Fragmenttyp, Typ und Quelle, siehe unten) und die maximale Anzahl an Tagen angezeigt.
 
@@ -22,7 +22,7 @@ Das Sternsymbol ("*") zeigt an, dass alle Daten, unabhängig vom jeweiligen Wert
 
 Um eine Datenhaltungsregel hinzuzufügen, klicken Sie **Regel hinzufügen** in der oberen Menüleiste.
 
-<img src="/guides/images/benutzerhandbuch/admin-retention-rule-add.png" alt="Datenhaltungsregel hinzufügen" style="max-width: 50%">
+<img src="/images/benutzerhandbuch/admin-retention-rule-add.png" alt="Datenhaltungsregel hinzufügen" style="max-width: 50%">
 
 > **Info:** Standardmäßig ist in allen Feldern außer im Feld **Maximales Alter** ein Sternsymbol ("*") gesetzt, um alle Werte einzuschließen.
 
@@ -46,7 +46,7 @@ Die angezeigten Dateien können aus verschiedenen Quellen stammen. Es kann sich 
 
 Für jede Datei wird der Name, sein Eigentümer, der Dateityp (z. B. image/bmp, text/csv), die Dateigröße und das Datum der letzten Aktualisierung angezeigt.
 
-![Dateiablage](/guides/images/benutzerhandbuch/admin-file-repository.png)
+![Dateiablage](/images/benutzerhandbuch/admin-file-repository.png)
 
 Um eine Datei von Ihrem Computer hochzuladen, klicken Sie in der oberen Menüleiste auf **Datei hochladen**.
 

@@ -1,7 +1,7 @@
 ---
 title: Tixi
 layout: bundle
-image: '/guides/images/devices/device-list/tixi.jpg'
+image: '/images/devices/device-list/tixi.jpg'
 brand: Tixi
 ---
 

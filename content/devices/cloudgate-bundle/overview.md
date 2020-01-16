@@ -13,4 +13,4 @@ In the following, we describe how to configure the CloudGate device so that you 
 - Change the configuration
 - Send measurements, events and alarms
 
-![CloudGate](/guides/images/devices/cloudgate/cloudgate-front.jpg)
+![CloudGate](/images/devices/cloudgate/cloudgate-front.jpg)

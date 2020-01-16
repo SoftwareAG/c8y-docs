@@ -14,11 +14,11 @@ Click **Firmware repository** in the **Management** menu in the navigator.
 
 The available firmware objects will be displayed, presented as cards in a grid.
 
-![Firmware List](/guides/images/users-guide/DeviceManagement/devmgmt-management-firmwarerepo.png)
+![Firmware List](/images/users-guide/DeviceManagement/devmgmt-management-firmwarerepo.png)
 
 Click **Details** on a specific object to "turn around" its card and display details.
 
-![Firmware details](/guides/images/users-guide/DeviceManagement/devmgmt-firmware-details.png)
+![Firmware details](/images/users-guide/DeviceManagement/devmgmt-firmware-details.png)
 
 In addition to the object name and version, you will here find the name of the file containing the firmware. 
 
@@ -27,7 +27,7 @@ Moreover, several action buttons are provided which are explained below.
 
 #### To add a firmware object
 
-1. In the **Firmware repository** page, click **Add firmware** at the right of the top menu bar. <br><br>![Add firmware](/guides/images/users-guide/DeviceManagement/devmgmt-firmware-add.png)
+1. In the **Firmware repository** page, click **Add firmware** at the right of the top menu bar. <br><br>![Add firmware](/images/users-guide/DeviceManagement/devmgmt-firmware-add.png)
 2. In the resulting dialog box, enter a name for the firmware and its version.
 3. Specify the file for the firmware by either uploading it from the file system, specifying a URL from where the firmware can be obtained or choosing a file previously added in the [Administration application](/guides/users-guide/administration#files). 
 4. Click **Save**.
@@ -83,11 +83,11 @@ Configuration snapshots help you, for example, to apply the same configuration t
 
 Click **Configuration repository** in the the **Management** menu in the navigator. In the **Configuration repository** page, all available configurations are listed. Each entry shows the configuration name, the device from which it has been uploaded and the upload timestamp.
 
-![Configuration Repository](/guides/images/users-guide/DeviceManagement/devmgmt-management-configrepo.png)
+![Configuration Repository](/images/users-guide/DeviceManagement/devmgmt-management-configrepo.png)
 
 Click a configuration in the list to open it. You may modify the settings here and apply them by clicking **Save**. Refer to the section below for details on the fields.
 
-![Configuration Repository](/guides/images/users-guide/DeviceManagement/devmgmt-management-configrepoedit.png)
+![Configuration Repository](/images/users-guide/DeviceManagement/devmgmt-management-configrepoedit.png)
 
 #### To add a snapshot configuration from a file
 
@@ -99,7 +99,7 @@ Click a configuration in the list to open it. You may modify the settings here a
 
 The snapshot will be added to the configuration repository.
 
-![Configuration Snapshot Repository](/guides/images/users-guide/DeviceManagement/devmgmt-management-configrepo-addsnapshot.png)
+![Configuration Snapshot Repository](/images/users-guide/DeviceManagement/devmgmt-management-configrepo-addsnapshot.png)
 
 
 #### To retrieve a current snapshot from a device
@@ -113,7 +113,7 @@ In order to retrieve a current configuration snapshot from a device, follow thes
 
 The retrieved snapshot can be found in the **Configuration repository**, under  **Management** menu in the navigator.
 
-![Retrieve Configuration Snapshot](/guides/images/users-guide/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
+![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
 
 #### To apply a configuration snapshot to a device
 
@@ -121,7 +121,7 @@ The retrieved snapshot can be found in the **Configuration repository**, under  
 2. Under **Configuration snapshot**, select a configuration from the dropdown field.
 3. Click **Put new snapshot to device** to apply the selected snapshot to the device.
 
-![Apply new snapshot to a device](/guides/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
+![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
 
 #### To apply a snapshot configuration from one device to another
 
@@ -136,7 +136,7 @@ The retrieved snapshot can be found in the **Configuration repository**, under  
 
 The **Device credentials** page lists all credentials that have been generated for your connected devices. Each device that has been [registered](#device-registration) shows up here with the naming convention "device_&lt;id&gt;".
 
-![Device credentials](/guides/images/users-guide/DeviceManagement/devmgmt-device-credentials.png)
+![Device credentials](/images/users-guide/DeviceManagement/devmgmt-device-credentials.png)
 
 #### To manage permissions for a device
 
@@ -152,7 +152,7 @@ The roles for the device will be updated accordingly.
  
 2. In the details page, you may disable/enable a device by clicking the **Active** toggle, change the password for a device, or assign or remove permissions by selecting/deselecting roles in the **Global roles** list. 
  
-	![Device credentials details](/guides/images/users-guide/DeviceManagement/devmgmt-device-credentials-details.png)
+	![Device credentials details](/images/users-guide/DeviceManagement/devmgmt-device-credentials-details.png)
 
 3. Click **Save**.
 

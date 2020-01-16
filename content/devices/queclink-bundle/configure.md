@@ -12,4 +12,4 @@ Use the Queclink Manage Tool to set up a device for Cumulocity:
 
 The screenshot below illustrates the setting.
 
-![Queclink Manage Tool](/guides/images/devices/queclink/queclinkmanage.jpg)
+![Queclink Manage Tool](/images/devices/queclink/queclinkmanage.jpg)

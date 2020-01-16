@@ -7,13 +7,13 @@ weight: 30
 The device is now connected to Cumulocity and sends sensor data periodically. You can now browse and process the collected data in the cloud in various ways:
 
 Browse the collected sensor data under "Measurements" tab, as shown in the following screenshot:
-![Measurement Screenshot](/guides/images/devices/mbed/measurements.png)
+![Measurement Screenshot](/images/devices/mbed/measurements.png)
 
 The device sends new sensor data only when the sensor values are changing. If the values remain constant, no new values are sent until 15 minutes when a sending is forced to inform the platform of device connectivity.
 
 Create a dashboard to customize the representation of the sensor data from the device. You can create a new dashboard by selecting the mbed device, clicking on the small cog symbol on the top right and selecting "Create Dashboard".
 An example dashboard created for an mbed device is shown below:
-![Dashboard Screenshot](/guides/images/devices/mbed/dashboard.png)
+![Dashboard Screenshot](/images/devices/mbed/dashboard.png)
 
 For further details, see the [Cumulocity User Guide](/guides/users-guide/device-management).
 
@@ -21,7 +21,7 @@ For further details, see the [Cumulocity User Guide](/guides/users-guide/device-
 
 The "Control" page features a listing of all possible operations that are supported by a u-blox device, as shown in the following screenshot:
 
-![Control Operations Screenshot](/guides/images/devices/mbed/controls.png)
+![Control Operations Screenshot](/images/devices/mbed/controls.png)
 
 
 Currently  the u-blox firmware supports three operations:

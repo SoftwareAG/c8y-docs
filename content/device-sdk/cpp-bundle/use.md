@@ -7,7 +7,7 @@ layout: redirect
 
 Before we really get started, we will need a *Cumulocity* account. Go to <https://cumulocity.com/>, you can apply for a free trial account by click the "TRY CUMULOCITY FREE" button on the top-right corner. After signing-up and login to your tenant, you would find the device registration page in *Device Management*. Next, we will demonstrate how to register a device to *Cumulocity* using the library.
 
-![img](/guides/images/cpp/img/register.png "Cumulocity Registration Page.")
+![img](/images/cpp/img/register.png "Cumulocity Registration Page.")
 
 Without any further ado, let's write our first program, the customary *hello world* example shown in Listing 1.
 
@@ -65,7 +65,7 @@ If you re-run the program the second time, the program will print *Hello, Cumulo
 
 Device integration is a little more complex. The whole process is depicted in Fig 12. Refer to [Device SDK for REST > Device integration](/guides/device-sdk/rest#device-integration) for detailed explanation. Steps *1*, *2* and *3* are specific to the SmartREST protocol as SmartREST requires predefined templates, see [Using the REST interface > Using SmartREST](/guides/microservice-sdk/rest#smartrest) in the Microservice SDK guide and the [SmartREST reference](http://cumulocity.com/guides/reference/smartrest/) in the Reference guide for more information. Step *4* checks if the device is already stored in *Cumulocity*'s database and only create it when it's not found. Steps *6* and *7* get the *Cumulocity* ID of the device from *Cumulocity*'s database. Step *8* sets the *Cumulocity* ID as an alias for the device ID so that the device can find its *Cumulocity* ID next time by querying with its device ID.
 
-![img](/guides/images/cpp/img/integrate.png "Device integration flowchart.")
+![img](/images/cpp/img/integrate.png "Device integration flowchart.")
 
     // ex-02-integrate: src/integrate.h
     #ifndef INTEGRATE_H
@@ -126,7 +126,7 @@ Listing 4 shows the required API interfaceby `SrAgent` when implementing your ow
 
 Listing 5 realizes the flow chart depicted in Fig 12. You may have noticed all requests are Comma Separated Values (CSV) since we are using SmartREST instead of REST APIs directly. The corresponding SmartREST templates can be found in Listing 6. Important thing to note is that, you must store the correct SmartREST *X-ID* and device's *Cumulocity ID* in the inherited member variables `xid` and `id`, respectively. They will be used by `SrAgent` after the integrate process for initializing corresponding internal variables.
 
-![img](/guides/images/cpp/img/mo.png "Created device in *Cumulocity* after integrate process.")
+![img](/images/cpp/img/mo.png "Created device in *Cumulocity* after integrate process.")
 
 Listing 6 extends the code in Listing 1. The only addition inside the `main` function is the call to `SrAgent`'s member function `integrate` for integrating to *Cumulocity* and `loop` for executing the agent loop. Above the `main` function is the definition of the SmartREST template version number and actual template content.
 
@@ -276,7 +276,7 @@ In the `main` function, we register the `RestartHandler` for SmartREST template 
 
 Now run the program, then go to your *Cumulocity* tenant, execute an restart operation as shown in Fig 26. You should see the message printed in `cerr` and the operation is set to *SUCCESSFUL* in your control tab in *Cumulocity*.
 
-![img](/guides/images/cpp/img/restart.png "Execute a restart operation in *Cumulocity*.")
+![img](/images/cpp/img/restart.png "Execute a restart operation in *Cumulocity*.")
 
 
 ### Storing SmartREST templates in a file

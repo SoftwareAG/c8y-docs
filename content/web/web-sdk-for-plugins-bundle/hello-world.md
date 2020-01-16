@@ -6,7 +6,7 @@ layout: redirect
 
 The purpose of this plugin is to add a new application to the app switcher menu. This application will consist of a single menu item which will display a simple "Hello world!" page when selected by the user. At the end, the application should look as follows:
 
-![Hello world plugin](/guides/images/plugins/hello.png)
+![Hello world plugin](/images/plugins/hello.png)
 
 In order to achieve this goal we need to do the following steps:
 
@@ -79,7 +79,7 @@ You will be asked for the name and base URL of your tenant, as well as your user
 
 After deploying your application, it appears in the *"Own applications"* menu of the "Administration" application.
 
-![My Application](/guides/images/plugins/applicationeditor.png)
+![My Application](/images/plugins/applicationeditor.png)
 
 ### Test your application
 
@@ -138,7 +138,7 @@ http://localhost:9000/apps/devicemanagement/  Packaged App
 
 Now, you can test your application by opening your browser at the URL "http://localhost:9000/apps/myapplication/". If you access your application now, you should be able to see the following:
 
-![My Application](/guides/images/plugins/emptyapplication.png)
+![My Application](/images/plugins/emptyapplication.png)
 
 What is missing now is a plugin which adds a menu item to the navigator.
 

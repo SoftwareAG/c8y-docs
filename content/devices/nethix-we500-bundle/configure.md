@@ -13,7 +13,7 @@ WE500 need an Internet connection to be able to connect to your Cumulocity accou
 ### <a name="wan"></a>WAN
 To establish a “WAN” connection through WE500 you need first to insert a SIM card as shown below:
 
-![Sim](/guides/images/devices/we500/sim1.png)
+![Sim](/images/devices/we500/sim1.png)
 
 The SIM card contacts must face the pluggable screw terminal and the cut angle faced to the front of the device.
 
@@ -24,13 +24,13 @@ After that, connect a quad band GSM antenna with the right cable and, if require
 
 After the login procedure, navigate to the **Administration > Networking > SIM** tab.
 
-![Networking_Sim](/guides/images/devices/we500/networking_sim1.png)
+![Networking_Sim](/images/devices/we500/networking_sim1.png)
 
 Fill the required fields with the correct parameters, according to your provider.
 
 WE500 is ready now to establish a WAN connection. In order to activate the connection, navigate to the **Administration > Networking > HSPA** tab.
 
-![Networking_hspa](/guides/images/devices/we500/networking_hspa1.png)
+![Networking_hspa](/images/devices/we500/networking_hspa1.png)
 
 Once enabled the service with a flag on the field **Enable**, it’s required to specify whether the connection must be always on or on demand.
 
@@ -45,7 +45,7 @@ It’s possible to check the quality of the connection by using the diagnostic t
 
 LAN parameters can be configured from **Administration > Networking > LAN** tab.
 
-![Networking_LAN](/guides/images/devices/we500/networking_lan1.png)
+![Networking_LAN](/images/devices/we500/networking_lan1.png)
 
 First of all the **MAC address** of the device will be displayed, with the option of using the LAN network on static IP address or on DHCP.
 
@@ -64,7 +64,7 @@ WLAN parameters can be configured from **Administration > Networking > WLAN** ta
 
 Please note that this option is available only if, at order confirmation, the *Wi-Fi on USB port* option has been selected.
 
-![Networking_WLAN](/guides/images/devices/we500/networking_wlan.png)
+![Networking_WLAN](/images/devices/we500/networking_wlan.png)
 
 First of all it will be displayed the **MAC address** of the Wi-Fi device connected to WE500, and it will be given the possibility to choose between a static or dynamic IP address.
 

@@ -23,8 +23,8 @@ weight: 20
 
 | Connectivity/ Features | | |
 | --- | --- | --- |
-| Layout <td colspan="2"> ![Layout](/guides/images/devices/smartbox-dp/interface.png)
-| CAN (Raw) </br> ![ ](/guides/images/devices/smartbox-can/can.png) | Type | CAN (Raw) &#124; physical CAN |
+| Layout <td colspan="2"> ![Layout](/images/devices/smartbox-dp/interface.png)
+| CAN (Raw) </br> ![ ](/images/devices/smartbox-can/can.png) | Type | CAN (Raw) &#124; physical CAN |
 | | Standard | CAN 2.0A &#124; CAN 2.0B </br> (CAN FD not supported) |
 | | Independent CAN-Ports | 2 (only 1 supported by firmware) |
 | | Isolation | galvanic isolation up to 2500V RMS, each port insulated separately |
@@ -37,7 +37,7 @@ weight: 20
 | | Receive filters | automatic configuration of hardware filters | 
 | | LED Link | CAN-Status </br></br>Off: CAN not active</br>Flickering: CAN RX/TX</br>On: CAN not active (CAN objects not defined) |
 | | LED Act | Device-Status</br></br> Off: Device is off</br>Blinking: Firmware is running (waiting for cloud data)</br>Flickering: Firmware is running (process data transfer) |
-| Fieldbus Modbus </br> ![ ](/guides/images/devices/smartbox-can/modbus.png) | Type | Modbus RTU Master |
+| Fieldbus Modbus </br> ![ ](/images/devices/smartbox-can/modbus.png) | Type | Modbus RTU Master |
 | | Baudrate | 4800, 9600, 19200, 38400, 57600, 115200 |
 | | Parity | Even, ODD, NONE | 
 | | Stoppbits | 2,1 |
@@ -92,7 +92,7 @@ weight: 20
 | Operating humidity | Max. 85% |
 | Storage humidity | Max. 85% |
 | IP Class | IP20/IP54 (opt.) |
-| Approvals | ![ ](/guides/images/devices/smartbox-dp/certification.png) |
+| Approvals | ![ ](/images/devices/smartbox-dp/certification.png) |
 | Conformity Declerations | 2014/53/EU (Radio Equipment Directive - RED)</br></br>Radio</br>EN301511 v12.5.1 for GSM 900 and 1800 MHz</br>EN301908 v11.1.1 for UMTS band 1 and 8</br></br>EMC</br>EN 301489-1 v2.1.1 general part</br>EN 301489-52 v0.0.7 for GSM and UMTS</br></br>Safety</br>EN60950-01 |
 
 

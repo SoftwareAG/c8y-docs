@@ -10,4 +10,4 @@ Cumulocity directly supports various devices with ready-made software libraries 
 
 Outside of the specific kits, many other devices can run the software with no or little modification. That is why the software is provided in source code form for you to extend it to any other device that you may have. There are also generic client libraries for Java, JavaME, C/C++ and Lua for your own implementation. If your device uses a completely proprietary runtime environment, you can always use Cumulocity's REST resp. HTTP interfaces. These will work on practically any Internet-connected device today, down to the smallest systems.
 
-![Supported devices](/guides/images/concepts-guide/devices.png)
+![Supported devices](/images/concepts-guide/devices.png)

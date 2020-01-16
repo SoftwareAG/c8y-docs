@@ -20,14 +20,14 @@ Es wird eine Liste der verfügbaren Datenpunkte angezeigt. Jeder Datenpunkt enth
 * Name und Serie des Fragments
 * Einheit des Messwerts
 
-![image alt text](/guides/images/benutzerhandbuch/cockpit-datapointlibrary.png)
+![image alt text](/images/benutzerhandbuch/cockpit-datapointlibrary.png)
 
 
 ### Hinzufügen eines Datenpunkts
 
 Klicken Sie "**Datenpunkt hinzufügen**" in der oberen Menüleiste, um einen Datenpunkt zur Bibliothek hinzuzufügen. 
 
-<img src="/guides/images/benutzerhandbuch/cockpit-add-datapoint.png" name="Datenpunkt hinzufügen" style="width:50%;"/>
+<img src="/images/benutzerhandbuch/cockpit-add-datapoint.png" name="Datenpunkt hinzufügen" style="width:50%;"/>
 
 Geben Sie die folgenden Informationen ein:
 
@@ -46,7 +46,7 @@ Geben Sie die folgenden Informationen ein:
 
 Beispiel:
 
-<img src="/guides/images/benutzerhandbuch/cockpit-datapoint-example.png" name="Datenpunkt Beispiel" style="width:50%;"/>
+<img src="/images/benutzerhandbuch/cockpit-datapoint-example.png" name="Datenpunkt Beispiel" style="width:50%;"/>
 
 Klicken Sie **Speichern**, um den Datenpunkt zur Bibliothek hinzuzufügen.
 

@@ -10,4 +10,4 @@ The functionality described above already provides a wide range of device manage
 * Set up a graphical dashboard with your most important KPIs.
 * Subscribe to plugins that contribute new functionality to the Cumulocity application.
 
-![Rules](/guides/images/concepts-guide/rules.png)
+![Rules](/images/concepts-guide/rules.png)

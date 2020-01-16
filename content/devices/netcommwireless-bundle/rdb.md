@@ -10,7 +10,7 @@ You can also request a configuration snapshot from the device and later apply th
 
 Starting from agent version 3.1.1 and Cumulocity version 7.26 there is also RDB snapshot support, which is a super-set of the configurations. This is mainly for troubleshooting purpose.
 
-![RDB setup](/guides/images/devices/netcomm/rdb.png)
+![RDB setup](/images/devices/netcomm/rdb.png)
 
 > Prior to Cumulocity 6.9, this widget was in the "Control" tab. Starting from Cumulocity 6.9, you can also take entire configuration snapshots including the non-textual parts of the device and send reference configuration snapshots back to the device.
 
@@ -21,6 +21,6 @@ To use SMS commands for devices, open the router's web interface and navigate to
 * Either disable "Only accept authenticated SMS messages", or add permitted senders to the white list. Usage of passwords is not supported.
 * Turn the other settings on.
 
-![Enable SMS mode](/guides/images/devices/netcomm/sms_mode.png)
+![Enable SMS mode](/images/devices/netcomm/sms_mode.png)
 
 > For more information please refer to "[Control devices via SMS](/guides/reference/device-control#control_via_sms)".

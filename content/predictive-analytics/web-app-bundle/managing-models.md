@@ -16,7 +16,7 @@ Model management functionality includes:
 
 Click **Models** in the navigator, to open the **Models** page. 
 
-![Models manager](/guides/images/zementis/zementis-models.png)
+![Models manager](/images/zementis/zementis-models.png)
 
 ### Uploading models
 
@@ -38,9 +38,9 @@ For each format a clickable icon is provided in the model cards.
 
 |Icon|Download format|
 |:---|:---|
-|![Download icon 1](/guides/images/zementis/zementis-download-icon1.png)|downloads the PMML source as PMML file without annotations
-|![Download icon 2](/guides/images/zementis/zementis-download-icon2.png)|downloads the PMML source as PMML file with annotations
-|![Download icon 3](/guides/images/zementis/zementis-download-icon3.png)|downloads the model´s serialized version as binary file
+|![Download icon 1](/images/zementis/zementis-download-icon1.png)|downloads the PMML source as PMML file without annotations
+|![Download icon 2](/images/zementis/zementis-download-icon2.png)|downloads the PMML source as PMML file with annotations
+|![Download icon 3](/images/zementis/zementis-download-icon3.png)|downloads the model´s serialized version as binary file
 
 ### Activating or deactivating models
 
@@ -59,11 +59,11 @@ Once a model is deleted, it will be removed permanently from your list of models
 
 A model has many important properties such as model inputs and outputs as well as meaningful KPIs like memory snapshots which help you to get an insight into the run-time performance  of the model. 
 
-Click the details icon <img src="/guides/images/zementis/zementis-details-icon.png" alt="Details" style="display:inline-block; margin:0"> on the top right of a card, to view the properties and KPIs of a model.
+Click the details icon <img src="/images/zementis/zementis-details-icon.png" alt="Details" style="display:inline-block; margin:0"> on the top right of a card, to view the properties and KPIs of a model.
 
 Besides the name, description and status of the model, the **Model Details** window shows the inputs and outputs of the model and some useful charts created using the KPIs. These charts currently include the Memory Metrics and the Prediction Metrics.
 
-![Model details](/guides/images/zementis/zementis-model-details.png)
+![Model details](/images/zementis/zementis-model-details.png)
 
 Memory Metrics provides information about the memory footprint of the model on the server and its related attributes like used memory, free memory and total memory of the application. The same information is represented as a vertical bar chart.
 

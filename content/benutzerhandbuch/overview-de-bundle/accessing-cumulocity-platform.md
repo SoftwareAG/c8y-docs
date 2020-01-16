@@ -42,20 +42,20 @@ Sie werden zur Anmeldeseite Ihrer Standardanwendung weitergeleitet.
 
 Geben Sie auf der Anmeldeseite Ihren Benutzernamen und Ihr Passwort ein und klicken Sie **Anmelden**, um die Anwendung zu öffnen.
 
-![Anmelden](/guides/images/benutzerhandbuch/Einloggen.png)
+![Anmelden](/images/benutzerhandbuch/Einloggen.png)
 
 Aktivieren Sie die Checkbox **Passwort merken**, damit der Browser sich Ihre Zugangsdaten merkt, so dass Sie diese nicht wieder bereitstellen müssen, wenn Sie die Anwendung das nächste mal öffnen. Dies ist außerdem praktisch, wenn Sie häufig zwischen Anwendungen wechseln, da Cumulocity Sie sonst bei jedem Wechsel auffordert, sich zu authentifizieren. Melden Sie sich explizit ab, damit der Browser Ihre Zugangsdaten "vergisst".
 
 Um sich abzumelden, klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie im Kontextmenü **Abmelden**.
 
-![Logout](/guides/images/benutzerhandbuch/Overview_Logout.png)
+![Logout](/images/benutzerhandbuch/Overview_Logout.png)
 
 
 ### <a name="welcome"></a>Begrüßungsbildschirm
 
 Wenn Sie sich das erste mal bei Cumulocity anmelden, werden Sie zur Standardanwendung (falls nicht anders konfiguriert, ist dies die Cockpit-Anwendung) weitergeleitet, wo zunächst der **Begrüßungsbildschirm** angezeigt wird.
 
-<img src="/guides/images/benutzerhandbuch/Overview_WelcomeScreen.png" name="Welcome screen" style="width:100%;"/>
+<img src="/images/benutzerhandbuch/Overview_WelcomeScreen.png" name="Welcome screen" style="width:100%;"/>
 
 Der **Begrüßungsbildschirm** enthält folgende Elemente:
 
@@ -81,7 +81,7 @@ Wenn Sie Ihr Passwort vergessen haben, führen Sie folgende Schritte durch:
 
 > **Info:** Der Link zum Zurücksetzen des Passworts ist nur einen Tag gültig.
 
-![Passwort zurücksetzen](/guides/images/benutzerhandbuch/Passwort-Reset.png)
+![Passwort zurücksetzen](/images/benutzerhandbuch/Passwort-Reset.png)
 
 > **Info:** Das automatisierte Zurücksetzen des Passworts funktioniert nur, wenn Ihre E-Mail-Adresse in Ihrem Benutzerkonto hinterlegt ist. Wenn Sie eine Warnung erhalten, dass Ihr Passwort nicht zurückgesetzt werden konnte, verwenden Sie entweder eine andere E-Mail-Adresse als in Ihrem Benutzerkonto hinterlegt, oder es ist keine E-Mail-Adresse hinterlegt. Kontaktieren Sie in beiden Fällen den Cumulocity-Administrator in Ihrem Unternehmen. Ein Administrator kann Ihr Passwort zurücksetzen. Wenn Sie selbst der Hauptadministrator sind, wird die E-Mail-Adresse, die Sie bei der ersten Registrierung angegeben haben, automatisch gespeichert. Wenn Sie weitere Fragen haben, kontaktieren Sie den Cumulocity-Support.
 
@@ -96,7 +96,7 @@ Wenn Sie Ihr Passwort ändern möchten, führen Sie folgende Schritte durch:
 
 Stellen Sie sicher, dass Sie ein starkes Passwort gewählt haben. Um Sie dabei zu unterstützen, wird während der Passwortänderung ein Passwortstärke-Indikator angezeigt.
 
-![Passwort ändern](/guides/images/benutzerhandbuch/Passwort-aendern.png)
+![Passwort ändern](/images/benutzerhandbuch/Passwort-aendern.png)
 
 Standardmäßig muss das Passwort 8 Zeichen enthalten. Ein starkes Passwort muss mindestens 3 der folgenden Zeichentypen enthalten: Großbuchstaben, Kleinbuchstaben, Zahlen und Symbole.
 

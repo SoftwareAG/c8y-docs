@@ -23,9 +23,9 @@ weight: 20
 
 |Version|Release Date|Download|
 |---|:-:|:-:|
-|1.9      | 18.Feb 2015 | [download](/guides/images/devices/mbed/firmware-1.9.bin)     |
-|2.0      | 6.Mar 2015  | [download](/guides/images/devices/mbed/firmware-2.0c8y.bin)  |
-|2.2      | 10.Aug 2015 | [download](/guides/images/devices/mbed/firmware-2.2c8y.bin)  |
+|1.9      | 18.Feb 2015 | [download](/images/devices/mbed/firmware-1.9.bin)     |
+|2.0      | 6.Mar 2015  | [download](/images/devices/mbed/firmware-2.0c8y.bin)  |
+|2.2      | 10.Aug 2015 | [download](/images/devices/mbed/firmware-2.2c8y.bin)  |
 
 ### Connect the C027
 

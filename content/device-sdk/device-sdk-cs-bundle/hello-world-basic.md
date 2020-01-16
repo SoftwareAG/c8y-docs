@@ -152,7 +152,7 @@ Url: http://demos.cumulocity.com/inventory/managedObjects/110160902
 
 The last line shows that a new device has been successfully created with a particular URL. Open the Cumulocity application and go to the device list. You should see a new "Hello, world!" device.
 
-![Hello world device](/guides/images/java/hello.png)
+![Hello world device](/images/java/hello.png)
 
 **Got an error message?** Check the [troubleshooting section](/guides/microservice-sdk/cs/#troubleshooting) in the Microservice SDK guide.
 

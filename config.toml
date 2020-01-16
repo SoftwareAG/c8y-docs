@@ -10,7 +10,7 @@ theme = "c8ydocs"
 paginate = 12
 summaryLength = 30
 buildFuture = true
-publishDir = "10.4.6"
+# publishDir = "10.4.6"
 relativeURLs = true
 
 

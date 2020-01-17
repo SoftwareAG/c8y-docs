@@ -35,7 +35,7 @@ Use the the Device Management application to visualize Tenant SLA Monitoring dat
 
 The management tenant needs to be subscribed to the application “Tenant-sla-monitoring” to see any monitoring results. 
 
-![Sla-monitoring subscribe](/guides/images/users-guide/sla-monitoring/sla-subscribe.png)
+![Sla-monitoring subscribe](/images/users-guide/sla-monitoring/sla-subscribe.png)
 
 For details on application subscription, refer to [Administration > Managing Tenants > Subscribing to applications](/guides/users-guide/enterprise-edition#subscribe) in the User guide.
 
@@ -51,7 +51,7 @@ Moreover, for each subscribed tenant (i.e. management tenant), a source in the D
 
 To view the measurements showing the monitoring results, open the management tenant´s source (device) in **All devices** in the Device Management application and switch to the **Measurements** tab.
 
-<img src="/guides/images/users-guide/TenantMonitoringMeasurements.png" alt="Tenant Monitoring measurements" style="max-width: 100%">
+<img src="/images/users-guide/TenantMonitoringMeasurements.png" alt="Tenant Monitoring measurements" style="max-width: 100%">
 
 In the API Response Time diagram, you see the response time of the tenants in milliseconds.
 
@@ -63,7 +63,7 @@ Additionally, you will find diagrams showing the average availability values for
 
 These average values are calculated by summing up the timespan of all timeout and response time alarms (e.g. created if data is missing, see below) for the specific time period and divide it by the total timespan.
 
-<img src="/guides/images/users-guide/TenantMonitoringDayAverage.png" alt="Tenant Monitoring Day Average" style="max-width: 100%">
+<img src="/images/users-guide/TenantMonitoringDayAverage.png" alt="Tenant Monitoring Day Average" style="max-width: 100%">
 
 For further details on measurements refer to [Device Management > Device details > Measurements](/guides/users-guide/device-management#measurements) in the User guide.
 

@@ -20,7 +20,7 @@ layout: redirect
       "serialNumber": "00000000e2f5ad4d"
     }
 
-![Hardware information](/guides/images/reference-guide/hardware.png)
+![Hardware information](/images/reference-guide/hardware.png)
 
 #### c8y\_Firmware
 
@@ -38,7 +38,7 @@ layout: redirect
       "url": "31aab9856861b1a587e2094690c2f6e272712cb1"
     }
 
-![Firmware information](/guides/images/reference-guide/firmware.png)
+![Firmware information](/images/reference-guide/firmware.png)
 
 In the example above, the device is requested to install firmware version "1.20140107-1". The device has a pre-configured software repository location, hence it only needs the relative URL "31aab9856861b1a587e2094690c2f6e272712cb1" to download the requested firmware image.
 
@@ -72,7 +72,7 @@ To enable software installation through the user interface, add "c8y\_SoftwareLi
       }
     ]
 
-![Software information](/guides/images/reference-guide/software.png)
+![Software information](/images/reference-guide/software.png)
 
 #### c8y\_Mobile
 
@@ -102,7 +102,7 @@ c8y_Mobile.mnc
 c8y_Mobile.lac
 c8y_Mobile.msisdn
 
-![Modem information](/guides/images/reference-guide/mobile.png)
+![Modem information](/images/reference-guide/mobile.png)
 
 #### c8y\_CellInfo
 

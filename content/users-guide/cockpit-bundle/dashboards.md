@@ -14,11 +14,11 @@ Select the group or the device in the navigator for which to create a dashboard.
 
 Click the **Plus** button in the top bar and from the context menu select **New dashboard**. 
 
-<img src="/guides/images/users-guide/cockpit/cockpit-dashboard-menu.png" name="New dashboard"/>
+<img src="/images/users-guide/cockpit/cockpit-dashboard-menu.png" name="New dashboard"/>
 
 The dashboard editor opens.
 
-<img src="/guides/images/users-guide/cockpit/cockpit-dashboard-create.png" name="Create dashboard"/>
+<img src="/images/users-guide/cockpit/cockpit-dashboard-create.png" name="Create dashboard"/>
 
 In the **Dashboard info** section of the dashboard editor, provide the following information:
 
@@ -38,14 +38,14 @@ Click **Save** to create and open the dashboard.
 
 Since there will be no widgets on the dashboard yet, you will see an **Add Widget** button instead.
 
-<img src="/guides/images/users-guide/cockpit/cockpit-dashboard-empty.png" name="Empty dashboard"/> 
+<img src="/images/users-guide/cockpit/cockpit-dashboard-empty.png" name="Empty dashboard"/> 
 
 
 ### <a name="adding-widgets"></a>Adding a widget to a dashboard
 
 To add a widget to a dashboard, click the **Add widget** button (in case of an empty dashboard) or click **Add widget** in the top menu bar.
 
-<img src="/guides/images/users-guide/cockpit/cockpit-dashboard-widget-add.png" name="Add widget"/> 
+<img src="/images/users-guide/cockpit/cockpit-dashboard-widget-add.png" name="Add widget"/> 
 
 In the upcoming dialog, select a widget type from the dropdown list. Depending on the widget type selected, additional fields and checkboxes will be displayed to be filled in or selected. For details on all widgets refer to [Widgets Collection](#widgets). 
 
@@ -57,19 +57,19 @@ Click **Save** to add the widget to the dashboard.
 
 Widgets may be rearranged on the dashboard. By dragging and dropping you can move the widget to another position. 
 
-<img src="/guides/images/users-guide/cockpit/cockpit-dashboard-widgets.png" name="Arrange widgets"/> 
+<img src="/images/users-guide/cockpit/cockpit-dashboard-widgets.png" name="Arrange widgets"/> 
 
 By dragging the arrows on the bottom right corner of a widget, you can resize it. 
 
 To edit the properties of a widget on a dashboard, click the cogwheel icon at the top right corner of the widget and from the context menu select **Edit**.
 
-<img src="/guides/images/users-guide/cockpit/cockpit-dashboard-widget-menu.png" name="Edit widget"/> 
+<img src="/images/users-guide/cockpit/cockpit-dashboard-widget-menu.png" name="Edit widget"/> 
 
 To delete a widget from a dashboard, click the cogwheel icon at the top right corner of the widget and from the context menu select **Remove**.
 
 Widgets can only be modified, if the dashboard is unlocked. To lock/unlock a dashboard, use the slider with the lock icon on the top menu bar.
 
-<img src="/guides/images/users-guide/cockpit/cockpit-dashboard-lock.png" name="Lock dashboard"/> 
+<img src="/images/users-guide/cockpit/cockpit-dashboard-lock.png" name="Lock dashboard"/> 
 
 >**Info:** On touch devices like smartphones or tablets some functions may not be supported.
 
@@ -82,7 +82,7 @@ To do so, select the option **Apply dashboard to all devices of type [TYPE]** ([
 
 A corresponding message will be displayed in the editor.
 
-<img src="/guides/images/users-guide/cockpit/cockpit-dashboard-share.png" name="Shared dashboard"/> 
+<img src="/images/users-guide/cockpit/cockpit-dashboard-share.png" name="Shared dashboard"/> 
 
 Changes made to this dashboard are automatically applied to all dashboard instances.
 
@@ -93,7 +93,7 @@ Changes made to this dashboard are automatically applied to all dashboard instan
 
 To edit a dashboard, click **Edit** in the top menu bar. 
 
-<img src="/guides/images/users-guide/cockpit/cockpit-dashboard-edit.png" name="Edit dashboard"/> 
+<img src="/images/users-guide/cockpit/cockpit-dashboard-edit.png" name="Edit dashboard"/> 
 
 The dashboard editor will open up. For details on the fields, refer to [Creating dashboards](#creating-dashboards).
 
@@ -102,7 +102,7 @@ The dashboard editor will open up. For details on the fields, refer to [Creating
 
 To copy a dashboard from one object to another, click **More...** in the top menu bar and from the context menu select **Copy dashboard**. 
 
-<img src="/guides/images/users-guide/cockpit/cockpit-dashboard-copy.png" name="Copy dashboard"/> 
+<img src="/images/users-guide/cockpit/cockpit-dashboard-copy.png" name="Copy dashboard"/> 
 
 Next, navigate to the object you want to copy the dashboard to and from the context menu select **Paste dashboard [NAME]** to insert the dashboard.
 

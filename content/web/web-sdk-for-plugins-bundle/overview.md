@@ -10,7 +10,7 @@ In the following document you will get an overview on the Web SDK for Plugins wh
 * enhance the visualization of data with custom widgets.
 * implement functionalities tailored to your use case.
 
-![Architecture](/guides/images/plugins/overview.png)
+![Architecture](/images/plugins/overview.png)
 
 The illustration above shows the structure behind the application and plugin development. The same as the core applications, your applications will be built on AngularJS and the "c8y.core" and "c8y.ui" [JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules). Both modules offer you services to interact with the Cumulocity web application. While the module "c8y.core" provides services to access different kinds of data, such as users and managed objects, as well as basic functionalities, the module "c8y.ui" provides services to modify the user interface of your application or plugin, such as adding menu items or widgets. The modules in turn use the [REST API](/guides/rest/introduction) provided by Cumulocity. You can find examples on how to use the services in the plugin examples.
 

@@ -21,7 +21,7 @@ Before performing these steps, ensure that you have provided the URL for the Cum
 3. Click **Registration** in the **Devices** menu and then click **Register device**.
 4. Select **General device registration**.
 
-	<img src="/guides/images/users-guide/DeviceManagement/devmgmt-registration-general.png" alt="General device registration" style="max-width: 100%">
+	<img src="/images/users-guide/DeviceManagement/devmgmt-registration-general.png" alt="General device registration" style="max-width: 100%">
 
 5. In the **Device ID** field, enter the Edge device ID. The Edge device ID is available at */usr/edge/properties/edge-agent/device-id* in your Edge device.
 6. Click **Next**.
@@ -53,7 +53,7 @@ Go to **Data Broker** > **Data connectors** if you would like to send data to th
 
 Go to **Data Broker** > **Data subscriptions** in your tenant account to receive the data from Edge.
 
-<img src="/guides/images/users-guide/data-broker-navigator.png" alt="Data broker menus">
+<img src="/images/users-guide/data-broker-navigator.png" alt="Data broker menus">
 
 In the same way, you can push operations from a Cumulocity tenant account to Cumulocity IoT Edge devices.
  

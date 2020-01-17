@@ -57,7 +57,7 @@ https://<domain_name>
 
 The Cumulocity Login screen appears.
 
-<img src="/guides/images/edge/edge-login-with-domain.png" name="Login screen"/>
+<img src="/images/edge/edge-login-with-domain.png" name="Login screen"/>
 
 In the Login screen, log in with the tenant admin credentials provided during post-installation.
 
@@ -71,7 +71,7 @@ https://<IP_Address_Of_Edge>;
 
 The Cumulocity login screen appears.
 
-<img src="/guides/images/edge/edge-login-with-tenantid.png" name="Login screen"/>
+<img src="/images/edge/edge-login-with-tenantid.png" name="Login screen"/>
 
 In the Login screen, log in with the tenant admin credentials provided during post-installation.
 <br>

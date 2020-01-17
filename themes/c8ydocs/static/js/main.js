@@ -15,7 +15,7 @@ var main = (function ($) {
           if (loc.href.includes(el.label)) {
             $('#current-dropdown-version-toggle').text('Release ' + el.label);
             vmenu.find('.dropdown-menu').append(
-              '<a href="' + el.url + '" class="dropdown-menu-item active">Release ' + el.label + '</a>'
+              '<a href="' + el.url + '/users-guide/getting-started/" class="dropdown-menu-item active">Release ' + el.label + '</a>'
             );
           } else {
             vmenu.find('.dropdown-menu').append(

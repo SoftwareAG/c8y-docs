@@ -17,7 +17,7 @@ In der Registerkarte **Branding**, können Sie das Erscheinungsbild der Benutzer
 
 Die Branding-Funktion ermöglicht es, die Logos und Farben in den Anwendungen zu bearbeiten. Nach dem Speichern der Einstellungen werden alle Untermandanten automatisch aktualisiert.
 
-![Registerkarte Branding](/guides/images/users-guide/Administration/admin-branding.png)
+![Registerkarte Branding](/images/users-guide/Administration/admin-branding.png)
 
 **Allgemein**
 
@@ -39,7 +39,7 @@ Unter **Navigatorlogo** können Sie das Logo, das oben im Navigator angezeigt wi
 
 Im Bereich **Typ** definieren Sie die Schriftarten für Ihre Branding-Version.
 
-![Branding-Typ](/guides/images/users-guide/Administration/admin-branding-type.png)
+![Branding-Typ](/images/users-guide/Administration/admin-branding-type.png)
 
 Sie können die Basisschriftart und die Schriftart für Überschriften wählen sowie eine Option für die im Navigator verwendete Schriftart (entweder identisch mit Basis- oder Überschriftenschriftart). Sie können außerdem einen Link auf externe Schriftarten setzen, die Sie verwenden möchten.
 
@@ -47,7 +47,7 @@ Sie können die Basisschriftart und die Schriftart für Überschriften wählen s
 
 Im Bereich **Farben** definieren Sie die Farben für Ihre Branding-Version.
 
-![Branding-Farbe](/guides/images/users-guide/Administration/admin-branding-color.png)
+![Branding-Farbe](/images/users-guide/Administration/admin-branding-color.png)
 
 Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
 
@@ -61,7 +61,7 @@ Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
 
 Unter **Obere Leiste** definieren Sie die Parameter für die obere Leiste.
 
-![Branding Ober Leiste](/guides/images/users-guide/Administration/admin-branding-topbar.png)
+![Branding Ober Leiste](/images/users-guide/Administration/admin-branding-topbar.png)
 
 Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
 
@@ -73,7 +73,7 @@ Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
 
 Unter **Navigator** definieren Sie die Parameter für die obere Leiste.
 
-![Branding - obere Leiste](/guides/images/users-guide/Administration/admin_BrandingTopbar.png)
+![Branding - obere Leiste](/images/users-guide/Administration/admin_BrandingTopbar.png)
 
 Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
 
@@ -103,7 +103,7 @@ Die folgende Abbildung zeigt ein Beispiel mit
 *   der Hintergrundfarbe der oberen Leiste in grün,
 *   der Hintergrundfarbe des Navigators in pink.
 
-![Branding-Beispiel](/guides/images/users-guide/Administration/admin_BrandingColored.png)
+![Branding-Beispiel](/images/users-guide/Administration/admin_BrandingColored.png)
 
 ### Domain-Name
 
@@ -111,7 +111,7 @@ In der Registerkarte **Domain-Name** können Sie Ihren eigenen Domain-Namen fest
 
 >**Info**: Sie benötigen eine gültige Lizenz, um Ihre Domain zu aktivieren. Bitte kontaktieren Sie unser Sales-Team unter sales@cumulocity.com, um eine Lizenz für Ihre Domain zu installieren.
 
-![Domain-Name](/guides/images/users-guide/Administration/admin_DomainName.png)
+![Domain-Name](/images/users-guide/Administration/admin_DomainName.png)
 
 Zunächst müssen Sie eine entsprechendes Zertifikat hochladen, in dem Sie **Zertifikat hochladen** klicken. Stellen Sie sicher, dass
 

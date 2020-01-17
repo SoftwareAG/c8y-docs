@@ -12,11 +12,11 @@ For details on configuration management also refer to [Device management library
 
 In the **Configuration repository** page which you open from the **Management** menu in the navigator, all available configurations are listed. Each entry shows the configuration name, the device from which it has been uploaded and the upload timestamp.
 
-![Configuration repository](/guides/images/users-guide/DeviceManagement/devmgmt-configuration-repository.png)
+![Configuration repository](/images/users-guide/DeviceManagement/devmgmt-configuration-repository.png)
 
 Click a configuration in the list to open it. You may modify the settings here and apply them by clicking **Save**. Refer to the section below for details on the fields.
 
-![Configuration snapshot details](/guides/images/users-guide/DeviceManagement/devmgmt-configuration-snapshot-details.png)
+![Configuration snapshot details](/images/users-guide/DeviceManagement/devmgmt-configuration-snapshot-details.png)
 
 ### To add a snapshot configuration from a file
 
@@ -43,7 +43,7 @@ In addition to adding configurations from a file you can also add configurations
 
 The retrieved snapshot will be added to the configuration repository.
 
-![Retrieve snapshot](/guides/images/users-guide/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
+![Retrieve snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
 
 ### To apply a configuration snapshot to a device
 
@@ -51,7 +51,7 @@ The retrieved snapshot will be added to the configuration repository.
 2. Under **Configuration snapshot**, select a configuration from the dropdown field.
 3. Click **Put new snapshot to device** to apply the selected snapshot to the device.
 
-![Apply snapshot](/guides/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
+![Apply snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
 
 ### To apply a snapshot configuration from one device to another
 

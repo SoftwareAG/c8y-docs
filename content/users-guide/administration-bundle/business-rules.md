@@ -12,7 +12,7 @@ Using event processing, you can specify real-time business logic that is automat
 
 Click **Event processing** in the **Business rules** menu to view all modules.
 
-<img src="/guides/images/users-guide/Administration/admin-event-processing.png" alt="Event processing">
+<img src="/images/users-guide/Administration/admin-event-processing.png" alt="Event processing">
 
 For each module in the list, the status (deployed = indicated by a green checkmark / not deployed = indicated by an exclamation mark), the name and the date when is was last updated is provided.
 
@@ -28,7 +28,7 @@ If the status of a module is set to **Deployed**, you will see the output produc
 
 The following example module creates an alarm if the temperature goes below 0 degree.
 
-<img src="/guides/images/users-guide/Administration/admin-event-processing-sample-module.png" alt="Example module" style="max-width: 100%">
+<img src="/images/users-guide/Administration/admin-event-processing-sample-module.png" alt="Example module" style="max-width: 100%">
 
 #### To edit a module
 
@@ -50,7 +50,7 @@ Alarm mapping enables you to change the severity and text of alarms to adapt the
 
 Click **Alarm mapping** in the **Business Rules** menu to see a list of all alarm mappings.
 
-<img src="/guides/images/users-guide/Administration/admin-alarm-mapping.png" alt="Alarm mapping">
+<img src="/images/users-guide/Administration/admin-alarm-mapping.png" alt="Alarm mapping">
 
 For each alarm mapping, the alarm severity and the name of the mapping is shown.
 
@@ -66,10 +66,10 @@ For each alarm mapping, the alarm severity and the name of the mapping is shown.
 
 Simply expand an alarm mapping to edit it. See [To add an alarm mapping](#add-alarm-mapping) for details on the fields.
 
-<img src="/guides/images/users-guide/Administration/admin-alarm-mapping-edit.png" alt="Edit alarm mapping">
+<img src="/images/users-guide/Administration/admin-alarm-mapping-edit.png" alt="Edit alarm mapping">
 
 #### To delete an alarm mapping
 
 To delete an alarm mapping, hover over it and click the delete icon.
 
-<img src="/guides/images/users-guide/Administration/admin-alarm-mapping-delete.png" alt="Delete alarm mapping">
+<img src="/images/users-guide/Administration/admin-alarm-mapping-delete.png" alt="Delete alarm mapping">

@@ -10,7 +10,7 @@ It is a common use case that you want to show additional information to a user i
 
 This how-to recipe explains how to accomplish a new tab in the device details view:
 
-![Device info with custom tab](/guides/images/web-sdk/device-detail-custom-tab.png)
+![Device info with custom tab](/images/web-sdk/device-detail-custom-tab.png)
 
 In Web SDK for Angular, this kind of views are called `ViewContext` as they provide a view for a certain context. There are a couple of context views e.g. `Device`, `Group`, `User`, `Application` and `Tenant`. The user can access them by navigating to a certain `Route` with the hash navigation. For example, if you go to the route `apps/cockpit/#/device/1234` the application tries to resolve the device with the ID `1234`. 
 
@@ -179,7 +179,7 @@ export class AppModule extends HybridAppModule {
 
 When you now start your application with `npm start` and navigate to a details view of a device it should look like this:
 
-![Device info with custom tab](/guides/images/web-sdk/device-detail-custom-tab.png)
+![Device info with custom tab](/images/web-sdk/device-detail-custom-tab.png)
 
 Congratulations, you added a tab to a device. You can do the same for tenants, users or applications details views. 
 

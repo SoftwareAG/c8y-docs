@@ -55,5 +55,5 @@ is represented as
 
 When configuring the offloading configuration for the measurements collection, you have to specify the measurement type. The offloading pipeline only offloads data for the selected measurement type. Then the target table in the data lake consists of homogeneous data from the same type.
 
-<img src="/guides/images/datahub-guide/datahub-offloading-task-to-target-table.png" alt="Offloading task to target table"  style="max-width: 100%">
+<img src="/images/datahub-guide/datahub-offloading-task-to-target-table.png" alt="Offloading task to target table"  style="max-width: 100%">
 

@@ -21,7 +21,7 @@ var main = (function ($) {
             );
           } else {
             vmenu.find('.dropdown-menu').append(
-              '<a href="' + el.url + '" class="dropdown-menu-item">Release ' + el.label + '</a>'
+              '<a href="' + el.url + '/users-guide/getting-started/" class="dropdown-menu-item">Release ' + el.label + '</a>'
             );
           }
         }

@@ -45,6 +45,7 @@ aliases:
   - /cs/developing-cs-clients
   - /cs/developing-the-client-mqtt
   - /cs/cs-static-templates
+  - /device-sdk/device-sdk-introduction
 ---
 
 Cumulocity offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the Cumulocity IoT platform.

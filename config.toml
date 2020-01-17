@@ -14,6 +14,7 @@ paginate = 12
 summaryLength = 30
 buildFuture = true
 
+relativeURLs = true
 
 [author]
   name = "Carlos Ceia @ Cumulocity"

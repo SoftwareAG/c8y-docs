@@ -8,20 +8,26 @@ var main = (function ($) {
         var urls = json.releases;
         var vmenu = $('.dropdown.version');
         var loc = window.location;
+        var active = false;
         vmenu.find('.dropdown-menu').html('');
         $('#current-dropdown-version-toggle').text('');
         for (var index = 0; index < urls.length; index++) {
           var el = urls[index];
           if (loc.href.includes(el.label)) {
+            active = true;
             $('#current-dropdown-version-toggle').text('Release ' + el.label);
             vmenu.find('.dropdown-menu').append(
               '<a href="' + el.url + '/users-guide/getting-started/" class="dropdown-menu-item active">Release ' + el.label + '</a>'
             );
           } else {
             vmenu.find('.dropdown-menu').append(
-              '<a href="' + el.url + '/users-guide/getting-started/" class="dropdown-menu-item">Release ' + el.label + '</a>'
+              '<a href="' + el.url + '" class="dropdown-menu-item">Release ' + el.label + '</a>'
             );
           }
+        }
+        if (!active) {
+          vmenu.find('a:first-child').addClass('active');
+          $('#current-dropdown-version-toggle').text(vmenu.find('a:first-child').text());
         }
       })
       .fail(function (resp) {

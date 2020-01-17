@@ -14,7 +14,7 @@ Cumulocity can interface with Sigfox devices through the Sigfox Cloud. You can:
 
 The following illustration grants you a quick overview of the Cumulocity Sigfox integration:
 
-![Cumulocity Sigfox integration](/guides/images/users-guide/sigfox/cumulocity-sigfox-integration.png)
+![Cumulocity Sigfox integration](/images/users-guide/sigfox/cumulocity-sigfox-integration.png)
 
 The following sections describe how to:
 
@@ -47,7 +47,7 @@ The group name is not constrained. "Cumulocity" is used as a sample group name t
 
 First, enter into your Sigfox Cloud account and create a new user. Add the user to the group and select the “Customer [R]” and “Device Manager [W]” profiles.
 
-![New user](/guides/images/users-guide/sigfox/newuser.png)
+![New user](/images/users-guide/sigfox/newuser.png)
 
 #### Step 2
 
@@ -56,7 +56,7 @@ After creating an “Associated user” with the proper group and profiles navig
 - Customer [R]
 - Device Manager [W]
 
-![API access page](/guides/images/users-guide/sigfox/api-access.png)
+![API access page](/images/users-guide/sigfox/api-access.png)
 
 #### Step 3 
 
@@ -70,9 +70,9 @@ The following information has to be provided:
 
 > **Info:**The group name in the screenshot below is only an example. It does  not necessarily have to be "Cumulocity".
 
-![API access page](/guides/images/users-guide/sigfox/parentgroupid.png)
+![API access page](/images/users-guide/sigfox/parentgroupid.png)
 
-![API access page](/guides/images/users-guide/sigfox/sigfox-connectivity.png)
+![API access page](/images/users-guide/sigfox/sigfox-connectivity.png)
 
 Click **Save credentials** to save your settings. If everything is correct, a message "Credentials successfully saved" will be displayed.
 
@@ -100,7 +100,7 @@ Select the desired predefined device type or upload it from a file. When ready, 
 
 In the **Device protocols** page, click **New device protocol** and select **Sigfox** from the options list. 
 
-![New Sigfox protocol](/guides/images/users-guide/sigfox/sigfox-newprotocol.png)
+![New Sigfox protocol](/images/users-guide/sigfox/sigfox-newprotocol.png)
 
 Provide a name for the device protocol an and optional description, and click **Create**. 
 
@@ -112,23 +112,23 @@ In the **Source** field, select the way the message type is encoded:
 
 In the following sample payload structure, the first byte indicates the message type source (as highlighted).
 
-<img src="/guides/images/users-guide/actility/payload-example1.png" alt="Example payload: message type source" style="max-width: 100%">
+<img src="/images/users-guide/actility/payload-example1.png" alt="Example payload: message type source" style="max-width: 100%">
 
 In the user interface, you can enter this type of message type source information as follows: In the **Start bit** field, indicate where the message type information starts in the payload.  In the **Number of bits** field, indicate how long this information is. For example, start bit = "0" and number of bits = "8".
 
-![Sigfox protocol](/guides/images/users-guide/sigfox/sigfox-bits.png)
+![Sigfox protocol](/images/users-guide/sigfox/sigfox-bits.png)
 
 ##### Configuring values
 
 Click **Add value** to create the value configuration. 
 	
-![Sigfox protocol add value](/guides/images/users-guide/sigfox/sigfox-addvalue.png)
+![Sigfox protocol add value](/images/users-guide/sigfox/sigfox-addvalue.png)
 
 In the following window, configure the relevant values as shown in this example. 
 
-![LoRa protocol add new value](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-loranewvalue.png)
+![LoRa protocol add new value](/images/users-guide/actility/devmgmt-devicetypes-protocols-loranewvalue.png)
 
-![LoRa protocol add new value](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-loranewvalue2.png)
+![LoRa protocol add new value](/images/users-guide/actility/devmgmt-devicetypes-protocols-loranewvalue2.png)
 
 The value configuration maps the value in the payload of a message type to the Cumulocity data. 
 
@@ -136,9 +136,9 @@ Under **Message type**, configure the **Message ID** according to your device me
 
 In this sample payload structure the message ID is "1".
 
-<img src="/guides/images/users-guide/actility/payload-example2.png" alt="Example payload: message type source" style="max-width: 100%">
+<img src="/images/users-guide/actility/payload-example2.png" alt="Example payload: message type source" style="max-width: 100%">
 
-![LoRa bits](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-loraid.png)
+![LoRa bits](/images/users-guide/actility/devmgmt-devicetypes-protocols-loraid.png)
 
 Under **General**, specify a name for the value and the category under which it will be displayed in the values list.  
 
@@ -146,9 +146,9 @@ Under **Value selection**, specify from where the value should be extracted. In 
 
 In this example, the "Channel 1 Type" information starts in byte 2 (i.e. start bit = "16") and is 1 byte long (i.e. number of bits = "8").
 
-<img src="/guides/images/users-guide/actility/payload-example3.png" alt="Example payload: value selection" style="max-width: 100%">
+<img src="/images/users-guide/actility/payload-example3.png" alt="Example payload: value selection" style="max-width: 100%">
 
-![LoRa bits](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-lorabits.png)
+![LoRa bits](/images/users-guide/actility/devmgmt-devicetypes-protocols-lorabits.png)
 
 The hexadecimal value is converted to a decimal number and afterwards a "value normalization" is applied.
 
@@ -176,7 +176,7 @@ You can also have a nested structure with several values within a measurement, e
 
 Click **OK** to add the values to your device protocol. 
 
-![Value configurations of created device protocol](/guides/images/users-guide/sigfox/sigfox-protocol.png)
+![Value configurations of created device protocol](/images/users-guide/sigfox/sigfox-protocol.png)
 
 Click **Save** to create the device protocol.
 
@@ -184,9 +184,9 @@ Click **Save** to create the device protocol.
 
 The following images show an example for a message which sends a measurement when the battery level value changes. 
 
-![Battery level changes example](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-battery.png)
+![Battery level changes example](/images/users-guide/actility/devmgmt-devicetypes-protocols-battery.png)
 
-![Battery level changes example](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-battery2.png)
+![Battery level changes example](/images/users-guide/actility/devmgmt-devicetypes-protocols-battery2.png)
 
 
 **<a name="nested-structure-example"></a>Example with nested structure**
@@ -195,19 +195,19 @@ The following images show an example of a nested structure for a device protocol
 
 The message ID should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the **Managed object fragment** field and create a new value for each: longitude and latitude.
 
-![Value creation: Longitude-nested](/guides/images/users-guide/actility/lora-protocols-lng.png)
+![Value creation: Longitude-nested](/images/users-guide/actility/lora-protocols-lng.png)
 
-![Value creation: Latitude-nested](/guides/images/users-guide/actility/lora-protocols-lat.png)
+![Value creation: Latitude-nested](/images/users-guide/actility/lora-protocols-lat.png)
 
 This will be the result: 
 
-![Value configuration in detail: nested structure](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-gpsexample.png)
+![Value configuration in detail: nested structure](/images/users-guide/actility/devmgmt-devicetypes-protocols-gpsexample.png)
 
 ### <a name="register-device-sigfox"></a>Registering Sigfox devices
 
 To register a Sigfox device, navigate to the **Registration** page in the **Devices** menu in the Device Management application and click **Register devices**. In the upcoming window, select **Custom device registration** and then **Sigfox**.
 
-![Register devices](/guides/images/users-guide/sigfox/sigfox-registration.png)
+![Register devices](/images/users-guide/sigfox/sigfox-registration.png)
 
 **Info:** If Sigfox is not one of the available options, your tenant is not subscribed to the relevant applications, see information at the top.
 
@@ -221,7 +221,7 @@ In the next window, fill in the required information:
 
 **Info:** The term "Device type" is used both by Sigfox and Cumulocity, but with different meaning. In Sigfox, a device type specifies how to route data from devices. In Cumulocity, a device type describes the data that is sent by devices of a particular type.
 
-![Register devices1](/guides/images/users-guide/sigfox/sigfox-registration1.png)
+![Register devices1](/images/users-guide/sigfox/sigfox-registration1.png)
 
 After clicking **Next** the device registration request will be submitted and the device will be created.
 
@@ -250,13 +250,13 @@ If the device supports sending hexadecimal commands, you can send commands from 
 
 #### No contracts available
 
-![No contracts available error](/guides/images/users-guide/sigfox/sigfox-troubleshooting-nocontracts.png)
+![No contracts available error](/images/users-guide/sigfox/sigfox-troubleshooting-nocontracts.png)
 
 In order to resolve this error, please contact support.sigfox.com to create a contract for your Sigfox account.
 
 #### Sigfox callbacks in backend.sigfox.com are not created correctly
 
-![Callback information](/guides/images/users-guide/sigfox/sigfox-troubleshooting-callbacks.png)
+![Callback information](/images/users-guide/sigfox/sigfox-troubleshooting-callbacks.png)
 
 The information for the callback setup is retrieved by a microservice.
 
@@ -270,13 +270,13 @@ To verify whether your setup is correct, execute the following REST API request:
 
 #### Issues with alarm provisioning
 
-![!Failed operation](/guides/images/users-guide/sigfox/sigfox-troubleshooting-failedoperation.png)
+![!Failed operation](/images/users-guide/sigfox/sigfox-troubleshooting-failedoperation.png)
 
 If the "transfer operation failed" alarm is triggered, the device is already provisioned in the Sigfox platform and changing the device type in the Sigfox platform failed. In order to fix this issue, you have to manually change the device type in the Sigfox platform to the intended one.
 
 #### Provisioned status is set to false
 
-![!False provision](/guides/images/users-guide/sigfox/sigfox-troubleshooting-falseprovision.png)
+![!False provision](/images/users-guide/sigfox/sigfox-troubleshooting-falseprovision.png)
 
 In case of this alarm, you can see that the **Provisioned** status is set to "false" which means that no data is coming from the Sigfox platform. In the alarm message there is more information regarding the error. In this case the PAC code given during registration was invalid. 
 
@@ -288,13 +288,13 @@ The **Provisioned** status is set to true when the device provisioning process i
 
 #### Callback creation failed
 
-![Callback creation failed](/guides/images/users-guide/sigfox/sigfox-troubleshooting-callback.png)
+![Callback creation failed](/images/users-guide/sigfox/sigfox-troubleshooting-callback.png)
 
 This alarm is created when one or more callback creation requests have failed in the Sigfox platform. You can view the alarm either in the **Alarms** page or in the **Home** page.
 
 In order to fix this issue, navigate to the Sigfox platform web interface and check the device type with the id mentioned in the alarm.
 
-![Device Type Id in the alarm](/guides/images/users-guide/sigfox/sigfox-troubleshooting-callback-typeid.png)
+![Device Type Id in the alarm](/images/users-guide/sigfox/sigfox-troubleshooting-callback-typeid.png)
 
 In this case navigate to the following address: *https://backend.sigfox.com/devicetype/5cd3d97ee833d9746698b27d/callbacks*
 

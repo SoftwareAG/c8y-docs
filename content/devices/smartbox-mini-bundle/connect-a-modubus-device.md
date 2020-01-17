@@ -22,7 +22,7 @@ Device2: Energy Meter on Address2</br>
 Device3: Frontcooler for Serverline1 on Address5</br>
 Device4: Frontcooler for Serverline2 on Address6
 
-![ ](/guides/images/devices/smartbox-mini/use-case.png)
+![ ](/images/devices/smartbox-mini/use-case.png)
 
 To connect 1 Modbus Device to the RTU network:
 
@@ -37,4 +37,4 @@ To connect 1 Modbus Device to the RTU network:
 9. Enter a name for the device and select the type of the device from the drop-down box. To add new device types, see "Configuring Fieldbus device types" below. Set the Modbus address of the connected device. 
 10. Click "Add". Cumulocity will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds. 
 
-![Terminal](/guides/images/devices/smartbox-mini/terminal-modbus.png)
+![Terminal](/images/devices/smartbox-mini/terminal-modbus.png)

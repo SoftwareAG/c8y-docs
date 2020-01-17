@@ -19,7 +19,7 @@ Im Dialog **Geräte registrieren** können Sie eine der folgenden Optionen wähl
 
 Wenn Sie eine entsprechende Anwendung abonniert haben, sehen Sie außerdem die Option **Benutzerdefinierte Geräteregistrierung** zum Registrieren von bestimmten Gerätetypen wie etwa LoRa oder Sigfox. Weitere Informationen finden Sie in der Dokumentation zu diesen optionalen Services.  
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-register-devices-custom.png" alt="Geräte registrieren" style="max-width: 50%">
+<img src="/images/benutzerhandbuch/devmgmt-register-devices-custom.png" alt="Geräte registrieren" style="max-width: 50%">
 
 
 ### <a name="device-registration-manually"></a>Manuelles Verbinden eines Geräts
@@ -30,7 +30,7 @@ Um Geräte mit Ihrem Cumulocity-Konto zu verbinden, führen Sie folgende Schritt
 
 1. Öffnen Sie die Seite **Geräteregistrierung** im Menü **Geräte** und klicken Sie **Gerät registrieren**.
 2. Wählen Sie im im Dialog **Geräte registrieren** die Option **Manuelle Geräteregistrierung**.<br><br>
-<img src="/guides/images/benutzerhandbuch/devmgmt-device-registration-general.png" alt="Manuelle Geräteregistrierung" style="max-width: 50%"><br><br>
+<img src="/images/benutzerhandbuch/devmgmt-device-registration-general.png" alt="Manuelle Geräteregistrierung" style="max-width: 50%"><br><br>
 3. Geben Sie im Feld **Geräte-ID** die eindeutige Kennung des Geräts ein. Diese finden Sie in der Gerätedokumentation. Bei mobilen Geräten handelt es sich dabei meistens um die IMEI (International Mobile Equipment Identity), die häufig auf der Rückseite des Geräts zu finden ist. 
 4. Wählen Sie optional eine Gruppe aus, der Sie das Gerät nach der Registrierung zuweisen möchten. Weiter Informationen zum Zuweisen zu Gruppen finden Sie unter [Gruppieren von Geräten](#grouping-devices).
 5. Klicken Sie **Weiteres Gerät hinzufügen**, um ein weiteres Gerät zu registrieren. Geben Sie auch hier die Geräte-ID ein und weisen Sie optional das Gerät einer Gruppe zu. Auf diese Weise können Sie mehrere Geräte in einem Schritt registrieren.
@@ -54,7 +54,7 @@ Wenn ein Gerät verbunden ist, wechselt der Status auf **Bitte akzeptieren**. Kl
 
 Auf der Seite **Geräteregistrierung** werden alle Geräte angezeigt, die sich aktuell im Registrierungsprozess befinden.
 
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-device-registration.png" alt="Seite Geräteregistrierung" style="max-width: 100%">
+<img src="/images/users-guide/DeviceManagement/devmgmt-device-registration.png" alt="Seite Geräteregistrierung" style="max-width: 100%">
 
 Für jedes Gerät werden die folgenden Informationen angezeigt:
 
@@ -75,7 +75,7 @@ Um eine größere Anzahl von Geräten zu registrieren, bietet Cumulocity die Mö
 
 1. Öffnen Sie die Seite **Geräteregistrierung** im Menü **Geräte** und wählen Sie **Gerät registrieren**.
 2. Wählen Sie im Im Dialog **Geräte registrieren** die Option **Bulk-Geräteregistrierung**.<br><br>
-<img src="/guides/images/benutzerhandbuch/devmgmt-bulk-registration.png" alt="Bulk-Registrierung" style="max-width: 50%"><br><br>
+<img src="/images/benutzerhandbuch/devmgmt-bulk-registration.png" alt="Bulk-Registrierung" style="max-width: 50%"><br><br>
 3. Klicken Sie **Datei zum Hochladen auswählen** und wählen Sie die hochzuladende CSV-Datei auf Ihrem Computer aus. 
 
 Abhängig vom Format der hochgeladenen CSV-Datei wird eine der beiden folgenden Registrierungsarten ausgeführt:

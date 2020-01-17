@@ -33,13 +33,13 @@ Die Seite **Mandanten** zeigt die folgenden Informationen für jeden Untermandan
 
 Wenn Sie den Management-Mandanten verwenden, sehen Sie eine weitere Spalte **Übergeordneter Mandant**. Die Spalte zeigt den Mandanten an, der den aktuellen Mandanten erstellt hat.
 
-![Untermandanten](/guides/images/benutzerhandbuch/ee-subtenants.png)
+![Untermandanten](/images/benutzerhandbuch/ee-subtenants.png)
 
 ### <a name="creating-tenants"></a>Anlegen von Untermandanten
 
 Um einen neuen Mandanten zu erstellen, klicken Sie **Mandanten anlegen** rechts oben in der Menüleiste. 
 
-![Mandanten anlegen](/guides/images/benutzerhandbuch/ee-subtenant-create.png)
+![Mandanten anlegen](/images/benutzerhandbuch/ee-subtenant-create.png)
 
 Geben Sie für den neuen Mandanten folgende Attribute an:
 
@@ -75,7 +75,7 @@ Sie können Mandanten zeitweilig sperren. Das Sperren eines Mandanten verhindert
 
 Um einen Mandanten zu sperren, klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü **Entfernen**.
 
-![Sperren eines Mandanten](/guides/images/benutzerhandbuch/ee-subtenant-suspend.png)
+![Sperren eines Mandanten](/images/benutzerhandbuch/ee-subtenant-suspend.png)
 
 Bestätigen Sie im folgenden Dialogfenster das Sperren, indem Sie **OK** klicken und Ihr Passwort eingeben Der Mandant wird durch ein rotes Kreuzsymbol als gesperrt gekennzeichnet. Außerdem wird eine E-Mail an den Administrator des Mandanten gesendet, wenn eine entsprechende E-Mail-Adresse konfiguriert ist.
 
@@ -94,7 +94,7 @@ Um einen Untermandanten und alle seine Daten endgültig zu löschen, klicken Sie
 
 In der Registerkarte **Anwendungen** können Sie alle für einen Mandanten abonnierten Anwendungen ansehen sowie Anwendungen für einen Mandanten abonnieren oder entfernen. Standardmäßig werden für einen Mandanten die Standardanwendungen von Cumulocity abonniert.
 
-![Anwendung abonnieren](/guides/images/benutzerhandbuch/ee-subtenants-applications.png)
+![Anwendung abonnieren](/images/benutzerhandbuch/ee-subtenants-applications.png)
 
 Um eine Anwendung für einen Mandanten zu abonnieren, bewegen Sie den Mauszeiger über die Anwendungen unter **Verfügbare Anwendungen** auf der rechten Seite und klicken Sie bei der gewünschten Anwendung **Abonnieren**.
 
@@ -104,17 +104,17 @@ Um eine Anwendung zu löschen, bewegen Sie den Mauszeiger über die Anwendungen 
 
 Für alle Anwendungen, die als Microservices von Cumulocity gehostet werden, wird neben dem Namen der Microservice-Status als Symbol angezeigt:
 
-<img src="/guides/images/benutzerhandbuch/admin-applications-status.png" alt="Anwendungsstatus" style="max-width: 75%">
+<img src="/images/benutzerhandbuch/admin-applications-status.png" alt="Anwendungsstatus" style="max-width: 75%">
 
 Der Microservice kann sich in einem der folgenden Status befinden:
 
-* <img src="/guides/images/icons/ok.png" alt="Up" style="max-width: 100%"> Microservice ist in Betrieb
-* <img src="/guides/images/icons/warning.png" alt="Up" style="max-width: 100%"> Microservice ist gestört
-* <img src="/guides/images/icons/danger.png" alt="Up" style="max-width: 100%"> Microservice ist außer Betrieb
+* <img src="/images/icons/ok.png" alt="Up" style="max-width: 100%"> Microservice ist in Betrieb
+* <img src="/images/icons/warning.png" alt="Up" style="max-width: 100%"> Microservice ist gestört
+* <img src="/images/icons/danger.png" alt="Up" style="max-width: 100%"> Microservice ist außer Betrieb
 
 Details zum Status können durch Ausklappen des jeweiligen Eintrags angezeigt werden. 
 
-<img src="/guides/images/users-guide/Administration/admin-application-details.png" alt="Anwendungsdetails" style="max-width: 75%">
+<img src="/images/users-guide/Administration/admin-application-details.png" alt="Anwendungsdetails" style="max-width: 75%">
 
 Folgende Informationen werden angezeigt:
 
@@ -130,7 +130,7 @@ Weitere Details finden Sie in der Registerkarte **Status** der entsprechenden An
 
 Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Ändern von Werten von benutzerdefinierten Attributen, sowohl vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/guides/benutzerhandbuch/administration#properties) definiert sind. Solche Attribute werden auch als Spalten in der [Benutzungsstatistiktabelle](#usage-stats) angezeigt.
 
-![Benutzerdefinierte Attribute](/guides/images/benutzerhandbuch/Admin_SubtenantCustomProperties.png)
+![Benutzerdefinierte Attribute](/images/benutzerhandbuch/Admin_SubtenantCustomProperties.png)
 
 **Begrenzen der Geräteanzahl für Untermandanten**
 
@@ -168,13 +168,13 @@ Außerdem werden benutzerdefinierte Attribute angezeigt, falls vorhanden.
 
 Benutzerdefinierte Attribute können in der [Attributsbibliothek](/guides/benutzerhandbuch/administration#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte [Benutzerdefinierte Attribute](#tenants-custom-properties) des Mandanten eingestellt werden.
 
-![Nutzungsstatistiken](/guides/images/benutzerhandbuch/Admin_TenantUsageStatistics.png)
+![Nutzungsstatistiken](/images/benutzerhandbuch/Admin_TenantUsageStatistics.png)
 
 Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum filtern, indem Sie einen Start- und einen Endzeitpunkt in der oberen Menüleiste eingeben und **Filter** klicken. Sie können außerdem die Liste nach jeder Spalte filtern und und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Weitere Informationen zur Filterfunktionalität finden Sie unter [Filtern](/guides/benutzerhandbuch/overview#filtering) im Abschnitt Erste Schritte.
 
 Klicken Sie **Export CSV** rechts oben in der Menüleiste, um die aktuelle Ansicht der Statistikentabelle als CSV-Datei zu exportieren. Im folgenden Fenster können Sie die CSV-Ausgabe anpassen.
 
-<img src="/guides/images/benutzerhandbuch/Admin_UsageStatisticsExport.png" alt="Export statistics" style="max-width: 50%">
+<img src="/images/benutzerhandbuch/Admin_UsageStatisticsExport.png" alt="Export statistics" style="max-width: 50%">
 
 ### <a name="tenant-policies"></a>Mandantenregeln
 
@@ -186,7 +186,7 @@ Das Erstellen einer Mandantenregel mit bestimmten Optionen und Regeln spart Zeit
 
 Klicken Sie **Mandantenregeln** im Menü **Mandanten**, um alle verfügbaren Regeln anzuzeigen.
 
-![Mandantenregeln](/guides/images/benutzerhandbuch/ee-tenant-policies.png)
+![Mandantenregeln](/images/benutzerhandbuch/ee-tenant-policies.png)
 
 Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anzahl der Optionen und Datenerhaltungsregeln angezeigt, wahlweise in Listen- oder Gitteransicht.
 
@@ -194,7 +194,7 @@ Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anza
 
 Klicken Sie **Mandantenregel hinzufügen** in der oberen Menüleiste, um eine neue Mandantenregel zu erstellen.
 
-![Neue Regel hinzufügen](/guides/images/benutzerhandbuch/Admin_TenantsAddPolicy.png)
+![Neue Regel hinzufügen](/images/benutzerhandbuch/Admin_TenantsAddPolicy.png)
 
 1.  Geben Sie einen Namen und optional eine Beschreibung ein.
 2.  Geben Sie mindestens eine Datenerhaltungsregel ein. Weitere Informationen zur Erstellung von Datenerhaltungsregeln finden Sie unter [Datenerhaltungsregeln](/guides/benutzerhandbuch/administration#retention-rules).
@@ -213,4 +213,4 @@ Um eine Regel zu duplizieren, klicken Sie auf das Menüsymbol und wählen Sie im
 
 Um eine Regel zu löschen, klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü **Löschen**.
 
-![Manantenregeln Kontextmenü](/guides/images/benutzerhandbuch/ee-tenant-policy-contextmenu.png)
+![Manantenregeln Kontextmenü](/images/benutzerhandbuch/ee-tenant-policy-contextmenu.png)

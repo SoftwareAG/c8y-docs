@@ -17,7 +17,7 @@ Die Funktion der Benutzerverwaltung ermöglicht es Ihnen, innerhalb Ihres Mandan
 
 Klicken Sie **Benutzer** im Menü **Konto**, um eine Liste aller Benutzer in Ihrem Mandanten anzuzeigen.
 
-<img src="/guides/images/benutzerhandbuch/admin-user-list.png" alt="Benutzerliste" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/admin-user-list.png" alt="Benutzerliste" style="max-width: 100%">
 
 Es wird eine Benutzerliste angezeigt, die für jeden Benutzer die folgenden Informationen bereitstellt:
 
@@ -36,7 +36,7 @@ Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie 
 
 Um einen neuen Benutzer zu Ihrem Mandanten hinzuzufügen, klicken Sie **Benutzer hinzufügen** rechts oben in der Menüleiste.
 
-<img src="/guides/images/benutzerhandbuch/admin-add-user.png" alt="Benutzer hinzufügen" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/admin-add-user.png" alt="Benutzer hinzufügen" style="max-width: 100%">
 
 Geben Sie links im Fenster **Neuer Benutzer** folgende Informationen ein, um den Benutzer zu identifizieren:
 
@@ -68,7 +68,7 @@ Klicken Sie **Speichern**, um den Benutzer anzulegen.
 
 Klicken Sie auf das Menüsymbol rechts in einem Benutzereintrag, um ein Kontextmenü mit weiteren Funktionen zu öffnen.
 
-<img src="/guides/images/benutzerhandbuch/admin-user-contextmenu.png" alt="Benutzer Kontextmenü" style="max-width: 50%">
+<img src="/images/benutzerhandbuch/admin-user-contextmenu.png" alt="Benutzer Kontextmenü" style="max-width: 50%">
 
 > **Info:** Für diese Funktionen müssen Sie eine Rolle mit Benutzerverwaltungsberechtigung haben.
 

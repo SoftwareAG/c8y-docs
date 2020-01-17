@@ -14,7 +14,7 @@ Die folgende Beschreibung bezieht sich exemplarisch auf Firmware, gilt aber anal
 
 Die verfügbaren Firmware-Objekte werden angezeigt, dargestellt als Karten in einem Raster.
 
-![Firmware repository](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-management-firmwarerepo.png)
+![Firmware repository](/images/benutzerhandbuch/DeviceManagement/devmgmt-management-firmwarerepo.png)
 
 Klicken Sie **Details** auf einer Karte, um diese "umzudrehen" und Details zum Firmware-Objekt anzuzeigen.
 
@@ -58,7 +58,7 @@ Der Kommandostatus wird in der Registerkarte **Stapelkommandos** der ausgewählt
 
 Die Seite **Gerätezugangsdaten** listet alle Zugangsdaten auf, die für Ihre verbundenen Geräte erstellt wurden. Jedes Gerät, das [registriert](#device-registration) wurde, wird hier mit der Namenskonvention "device_&lt;id&gt;" angezeigt.
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-device-credentials.png" alt="Gerätezugangsdaten" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/devmgmt-device-credentials.png" alt="Gerätezugangsdaten" style="max-width: 100%">
 
 Klicken Sie auf den Pfeil in der Spalte **Globale Rollen**, um eine Liste mit globalen Rollen anzuzeigen. Weisen Sie Berechtigungen für ein Gerät zu oder entfernen Sie Berechtigungen, indem Sie die entsprechenden Kontrollkästchen aktivieren oder deaktivieren. Klicken Sie **Anwenden**, um Ihre Einstellungen zu speichern.
 
@@ -76,9 +76,9 @@ In der Detail-Seite der Gerätezugangsdaten, die angezeigt wird, wenn Sie im Kon
 * das Passwort für ein Gerät ändern,
 * Berechtigungen zuweisen oder entfernen durch aktivieren bzw. deaktivieren der Kontrollkästchen in der Liste **Globale Rollen**. 
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-device-credentials-details.png" alt="Details Gerätezugangsdaten" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/devmgmt-device-credentials-details.png" alt="Details Gerätezugangsdaten" style="max-width: 100%">
 
 <!--
-![Bulk provisioning](/guides/images/users-guide/autoregister.png)
+![Bulk provisioning](/images/users-guide/autoregister.png)
 
 Device credentials can also be provided from a CSV file. Files can be uploaded using the button pointed with an arrow. More details on the file structure can be found in under [Bulk-registering devices](#creds-upload) above.-->

@@ -13,7 +13,7 @@ Supported events:
 * Tow event
 * Ignition on/off events
 
-![Queclink Events](/guides/images/devices/queclink/Events.png)
+![Queclink Events](/images/devices/queclink/Events.png)
 
 Supported measurements:
 
@@ -22,7 +22,7 @@ Supported measurements:
 * Tracker mileage measurement
 * Speed measurement
 
-![Queclink Measurement](/guides/images/devices/queclink/Measurement.png)
+![Queclink Measurement](/images/devices/queclink/Measurement.png)
 
 Supported alarms:
 

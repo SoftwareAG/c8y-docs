@@ -1,6 +1,6 @@
 ---
 title: SMARTBox IO
 layout: bundle
-image: '/guides/images/devices/device-list/smartbox-io.jpg'
+image: '/images/devices/device-list/smartbox-io.jpg'
 brand: SMARTBox
 ---

@@ -9,4 +9,4 @@ The terminal features cell location and is available in Location tab on terminal
 3.	Activate a regular identification of the location. In Configuration tab you can set:
 </br>c8y.LocationCycle=60; define in min, how often the location should be checked. 0 means the cycled checking is disabled. If a value >0 ist set, also the tracking is enabled
 
-![Location](/guides/images/devices/smartbox-mini/location.png)
+![Location](/images/devices/smartbox-mini/location.png)

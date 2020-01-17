@@ -15,8 +15,8 @@ By default the terminal supports cloud fieldbus from Cumulocity. To use it you s
 
 In the cumulocity Devicemanagement go to the menu in Device Registration. Enter the Terminal's IMEI as an ID. The IMEI is printed on the devices itself:
 
-![IMEI](/guides/images/devices/smartbox-io/imei.png)
+![IMEI](/images/devices/smartbox-io/imei.png)
 
 After accepting the device (this process may tale 30 seconds) you should be able to see it in the All Devices list after a short delay. 
 
-![Terminal in all devcies](/guides/images/devices/smartbox-io/terminal-in-all-devices.png)
+![Terminal in all devcies](/images/devices/smartbox-io/terminal-in-all-devices.png)

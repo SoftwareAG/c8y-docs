@@ -1,7 +1,7 @@
 
 
 # Production
-baseURL = "https://cumulocity.com/guides"
+baseURL = "https://cumulocity.com/guides/10.4.6-test"
 
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
@@ -13,6 +13,8 @@ paginate = 12
 # googleAnalytics = "UA-xxxxxxxx-x"
 summaryLength = 30
 buildFuture = true
+
+relativeURLs = true
 
 
 [author]

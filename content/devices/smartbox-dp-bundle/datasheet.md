@@ -23,8 +23,8 @@ weight: 20
 
 | Connectivity/ Features | | |
 | --- | --- | --- |
-| Layout <td colspan="2"> ![Layout](/guides/images/devices/smartbox-dp/interface.png)
-| Fieldbus Profibus </br> ![ ](/guides/images/devices/smartbox-dp/profibus.png) | Type | Profibus Slave |
+| Layout <td colspan="2"> ![Layout](/images/devices/smartbox-dp/interface.png)
+| Fieldbus Profibus </br> ![ ](/images/devices/smartbox-dp/profibus.png) | Type | Profibus Slave |
 | | Standard | DP-V0 |
 | | Baudrate | Automatic Baudrate Detection </br> Supported Baudrates:</br> &#124;9,6kbit &#124; 19,2kbit &#124; 45,45kbit &#124; 93,75kbit &#124; 187,5kbit &#124; 500kbit &#124; 1500kbit &#124; 3000kbit &#124; 6000kbit &#124; 12000kbit |
 | | GSD File | ID Number : 1023 HEX </br>GSD file : PSYS1023.GSD | 
@@ -32,7 +32,7 @@ weight: 20
 | | Output Register | 16 (16bit) |
 | | Profibus Slave address | Selectable by Cloud, Default: 24 |
 | | ASIC | VPC3+S (Profichip) |
-| Fieldbus Modbus </br> ![ ](/guides/images/devices/smartbox-dp/modbus.png) | Type | Modbus RTU Master |
+| Fieldbus Modbus </br> ![ ](/images/devices/smartbox-dp/modbus.png) | Type | Modbus RTU Master |
 | | Baudrate | 4800, 9600, 19200, 38400, 57600, 115200 |
 | | Parity | Even, ODD, NONE | 
 | | Stoppbits | 2,1 |
@@ -87,7 +87,7 @@ weight: 20
 | Operating humidity | Max. 85% |
 | Storage humidity | Max. 85% |
 | IP Class | IP20/IP54 (opt.) |
-| Approvals | ![ ](/guides/images/devices/smartbox-dp/certification.png) |
+| Approvals | ![ ](/images/devices/smartbox-dp/certification.png) |
 | Conformity Declerations | 2014/53/EU (Radio Equipment Directive - RED)</br></br>Radio</br>EN301511 v12.5.1 for GSM 900 and 1800 MHz</br>EN301908 v11.1.1 for UMTS band 1 and 8</br></br>EMC</br>EN 301489-1 v2.1.1 general part</br>EN 301489-52 v0.0.7 for GSM and UMTS</br></br>Safety</br>EN60950-01 |
 | Profibus Organisation | ID Number : 1023 HEX </br> GSD file : PSYS1023.GSD |
 

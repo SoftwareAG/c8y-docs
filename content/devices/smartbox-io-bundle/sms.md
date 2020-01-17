@@ -21,5 +21,5 @@ All AT command supported are listed here: http://www.pssystec.de/downloads/ </br
 
 The device shell enables you to read and write configuration parameters to interactively work with remote devices. You can send AT commands in the respective language of the device and view the results of the commands. You can sent any At Command. Check here in Chapter "supported AT commands": https://www.pssystec.de/downloads/. Frequently used commands are available by clicking the "Get predefined" button.
 
-![Device Shell](/guides/images/devices/smartbox-io/device-shell.png)
+![Device Shell](/images/devices/smartbox-io/device-shell.png)
 

@@ -7,7 +7,7 @@ Once established an Internet connection and created at least one variable, it is
 
 To do so, navigate to **Administration > Cloud > Cumulocity** tab.
 
-![Cumulocity](/guides/images/devices/we500/cumulocity.png)
+![Cumulocity](/images/devices/we500/cumulocity.png)
 
 On this page it’s possible to set the following parameters:
 
@@ -19,19 +19,19 @@ On this page it’s possible to set the following parameters:
 
 By clicking on the **Save** button, WE500 will register automatically in **Cumulocity** and will start sending variables that can be monitored from **Devices > All devices > Measurements**:
 
-![Cumulocity_Measurements](/guides/images/devices/we500/cumulocity_device_measurements.png)
+![Cumulocity_Measurements](/images/devices/we500/cumulocity_device_measurements.png)
 
 ### <a name="info"></a>Device information
 WE500 registers automatically in **Cumulocity** with default data that can be later changed in **Devices > All devices > Info**:
 
-![Cumulocity_Device_Info](/guides/images/devices/we500/cumulocity_device_info.png)
+![Cumulocity_Device_Info](/images/devices/we500/cumulocity_device_info.png)
 
 ### <a name="update"></a>Software update
 The WE500 firmware can also be updated from **Devices > All devices > Software**:
 
-![Cumulocity_Device_Software](/guides/images/devices/we500/cumulocity_device_software.png)
+![Cumulocity_Device_Software](/images/devices/we500/cumulocity_device_software.png)
 
 ### <a name="restart"></a>Restart device
 WE500 can also be remotely rebooted from **Devices > All devices > Control > Restart** device:
 
-![Cumulocity_Device_Restart](/guides/images/devices/we500/cumulocity_device_restart.png)
+![Cumulocity_Device_Restart](/images/devices/we500/cumulocity_device_restart.png)

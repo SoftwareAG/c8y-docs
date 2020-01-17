@@ -16,6 +16,6 @@ You will get details of the running machine.
 
 Depending on your Modbus Slave e.g. the chiller from the example above, you have to define all datapoints of your connected Slave device. Here you will find a detailled description of one datapoint (Holding Register and a coil) and its metadata which you can define to control Cloud Visualization. 
 
-![Device Database](/guides/images/devices/smartbox-io/device-database1.png)
+![Device Database](/images/devices/smartbox-io/device-database1.png)
 
-![Device Database](/guides/images/devices/smartbox-io/device-database2.png)
+![Device Database](/images/devices/smartbox-io/device-database2.png)

@@ -14,7 +14,7 @@ Retention rules are usually run during the night. When you edit a retention rule
 
 Click **Retention rules** in the **Management** menu to view a list of retention rules configured for your account.
 
-<img src="/guides/images/users-guide/Administration/admin-retention-rules.png" alt="Retention rules">
+<img src="/images/users-guide/Administration/admin-retention-rules.png" alt="Retention rules">
 
 For each rule, the rule name, details on the data to be deleted (fragment type, type and source, see below) and the maximum age in days is provided.
 
@@ -47,7 +47,7 @@ For details on the fields, see [To add a retention rule](#add-retention-rule).
 
 Hover over the rule you want to delete and click the delete icon at the right.
 
-<img src="/guides/images/users-guide/Administration/admin-retention-rules-delete.png" alt="Delete retention rule">
+<img src="/images/users-guide/Administration/admin-retention-rules-delete.png" alt="Delete retention rule">
 
 
 ### <a name="files"></a>Managing files in the file repository
@@ -60,7 +60,7 @@ The files listed can come from various sources. They can be software images, con
 
 For each file, the name of the file, its owner, the file type (i.e. image/bmp, text/csv), its size and the date when it was last updated is provided.
 
-<img src="/guides/images/users-guide/Administration/admin-files-repository.png" alt="Files Repository" style="max-width: 100%">
+<img src="/images/users-guide/Administration/admin-files-repository.png" alt="Files Repository" style="max-width: 100%">
 
 #### To upload a file from your computer
 

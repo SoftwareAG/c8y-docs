@@ -16,7 +16,7 @@ Im Daten-Explorer finden Sie auf der rechten Seite eine Liste aller verfügbaren
 
 Auf der linken Seite, in der Hauptkarte, sehen Sie die entsprechende Visualisierung.
 
-<img src="/guides/images/benutzerhandbuch/cockpit-data-explorer.png" name="Daten-Explorer" style="width:100%;"/><br>
+<img src="/images/benutzerhandbuch/cockpit-data-explorer.png" name="Daten-Explorer" style="width:100%;"/><br>
 
 Die Visualisierung wird auf Basis von Datenpunktattributen erstellt.
 
@@ -67,7 +67,7 @@ Die Sichtbarkeit eines Datenpunkts kann mit dem Regler links neben dem Datenpunk
 
 Klicken Sie **Datenpunkt hinzufügen** am Ende der Datenpunktliste, um einen Datenpunkt zum Daten-Explorer hinzuzufügen. 
 
-<img src="/guides/images/benutzerhandbuch/cockpit-data-explorer-add-datapoint.png" name="Datenpunkt hinzufügen" style="width:50%;"/><br>
+<img src="/images/benutzerhandbuch/cockpit-data-explorer-add-datapoint.png" name="Datenpunkt hinzufügen" style="width:50%;"/><br>
 
 Wählen Sie im folgenden Fenster oben ein Gerät aus der Asset-Hierarchie. Es wird nur die Asset-Hierarchie unterhalb des im Navigator ausgewählten Objekts angezeigt. Wenn im Navigator "Daten-Explorer" ausgewählt wurde, wird die gesamte Asset-Hierarchie angezeigt.
 
@@ -75,7 +75,7 @@ Unten im Fenster werden alle Datenpunkte des ausgewählten Objekts angezeigt. W�
 
 Um einen Datenpunkt in die Datenpunktbibliothek zu speichern, öffnen Sie das Kontextmenü des Datenpunkts über das Menüsymbol und wählen Sie **In Bibliothek speichern**. 
 
-<img src="/guides/images/benutzerhandbuch/cockpit-data-explorer-contextmenu.png" name="Datenpunkt-Kontextmenü" style="width:75%;"/>
+<img src="/images/benutzerhandbuch/cockpit-data-explorer-contextmenu.png" name="Datenpunkt-Kontextmenü" style="width:75%;"/>
 
 Weitere Informationen zur Datenpunktbibliothek finden Sie unter [Datenpunktbibliothek](#data-point-library).
 
@@ -85,7 +85,7 @@ Klicken Sie im Kontextmenü **Von der Liste löschen**, um einen Datenpunkt aus 
 
 Sie können die Visualisierung eines einzelnen Datenpunkts nach Ihren Wünschen anpassen. Erweitern Sie dazu den Datenpunkteintrag in der Datenpunktliste durch Klicken auf das Pfeilsymbol.
 
-<img src="/guides/images/benutzerhandbuch/cockpit-data-explorer-datapoint-edit.png" name="Datenpunkt-Kontextmenü" style="width:75%;"/>
+<img src="/images/benutzerhandbuch/cockpit-data-explorer-datapoint-edit.png" name="Datenpunkt-Kontextmenü" style="width:75%;"/>
 
 Die folgenden Felder können bearbeitet werden:
 
@@ -121,7 +121,7 @@ Neben Datenpunkten können Sie auch Alarme oder Ereignisse zum Daten-Explorer hi
 
 Klicken Sie **Alarm/Ereignis hinzufügen** in der Karte **Alarme/ Ereignisse**, um einen Alarm oder ein Ereignis hinzuzufügen.
 
-<img src="/guides/images/benutzerhandbuch/cockpit-data-explorer-add-alarm.png" name="Add widget" style="width:75%;"/> 
+<img src="/images/benutzerhandbuch/cockpit-data-explorer-add-alarm.png" name="Add widget" style="width:75%;"/> 
 
 Im folgenden Fenster können Sie einen Alarm oder ein Ereignis aus der Auswahlliste auswählen. Klicken Sie **Hinzufügen**, um Ihre Auswahl hinzuzufügen.
 
@@ -140,7 +140,7 @@ Wenn Sie die aktuelle Konfiguration des Daten-Explorers aufbewahren möchten, k�
 
 Klicken Sie **Mehr...** in der oberen Menüleiste und wählen Sie **Als Widget einem Dashboard hinzufügen**, um ein Widget aus dem Daten-Explorer eines bestimmten Assets zu erstellen. 
 
-<img src="/guides/images/benutzerhandbuch/cockpit-data-explorer-add-widget.png" name="Als Widget einem Dashboard hinzufügen" style="width:50%;"/> 
+<img src="/images/benutzerhandbuch/cockpit-data-explorer-add-widget.png" name="Als Widget einem Dashboard hinzufügen" style="width:50%;"/> 
 
 Wählen Sie im folgenden Fenster eines der für das aktuelle Objekt verfügbaren Dashboards und klicken Sie **Auswählen**, um den Daten-Explorer als Widget zum ausgewählten Dashboard hinzuzufügen. 
 
@@ -150,7 +150,7 @@ Wählen Sie im folgenden Fenster eines der für das aktuelle Objekt verfügbaren
 
 Klicken Sie **Mehr...** in der oberen Menüleiste und wählen Sie **Als Widget einem Bericht hinzufügen**, um ein Widget aus dem Daten-Explorer des Navigators zu erstellen.
 
-<img src="/guides/images/benutzerhandbuch/cockpit-data-explorer-add-to-report.png" name="Send as widget to report" style="width:50%;"/> 
+<img src="/images/benutzerhandbuch/cockpit-data-explorer-add-to-report.png" name="Send as widget to report" style="width:50%;"/> 
 
 Wählen Sie im folgenden Fenster einen der angezeigten Berichte und klicken Sie **Auswählen**, um den Daten-Explorer als Widget zum ausgewählten Bericht hinzuzufügen. 
 

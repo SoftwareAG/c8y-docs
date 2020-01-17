@@ -21,7 +21,7 @@ The user management feature allows you to manage the users within your tenant. W
 
 To view all users in your tenant, click **Users** in the **Account** menu in the navigator.
 
-![Expanded view](/guides/images/users-guide/Administration/admin-users-list.png)
+![Expanded view](/images/users-guide/Administration/admin-users-list.png)
 
 A user list will be displayed, providing the following information for each user:
 

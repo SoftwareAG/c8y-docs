@@ -15,6 +15,6 @@ All this is provided through a cloud-based subscription service making the creat
 
 Cumulocity works with any network architecture, but is specifically designed to work out of the box with mobile networks. In the following sections, we will give a short overview of the different functional areas with references to more detailed descriptions.
 
-![Solution building](/guides/images/concepts-guide/solution.gif)
+![Solution building](/images/concepts-guide/solution.gif)
 
 Terms and Conditions to use Cumulocity are described at [https://www.softwareag.cloud/site/terms.html#/](https://www.softwareag.cloud/site/terms.html#/).

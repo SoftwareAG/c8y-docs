@@ -12,7 +12,7 @@ On the **Offloading** page you do the offloading management and monitoring tasks
 * Scheduling or manually triggering offloading executions
 * Viewing the history of offloading executions
 
-<img src="/guides/images/datahub-guide/datahub-configure-offloading-tasks.png" alt="Configuration of offloading tasks"  style="max-width: 100%">
+<img src="/images/datahub-guide/datahub-configure-offloading-tasks.png" alt="Configuration of offloading tasks"  style="max-width: 100%">
 
 On this page, you find in the top menu bar controls for adding a collection for offloading or reloading the list of configurations. Below this section you will find the current set of configurations.
 
@@ -35,7 +35,7 @@ Click **Confirm** to continue with the selected collection.
 
 Once you have selected a collection for offloading, you have to specify the details of this offloading pipeline. The pipeline has default configuration settings, which you can modify according to your needs.
 
-<img src="/guides/images/datahub-guide/datahub-define-an-offloading-task.png" alt="Define an offloading task"  style="max-width: 100%">
+<img src="/images/datahub-guide/datahub-define-an-offloading-task.png" alt="Define an offloading task"  style="max-width: 100%">
 
 #### Pipeline settings
 
@@ -54,7 +54,7 @@ When working with additional result columns and filter predicates, you may want 
 
 Once you have defined all pipeline settings, click **Save** to save the pipeline. Otherwise click **Cancel** to cancel the pipeline creation.
 
-<img src="/guides/images/datahub-guide/datahub-validate-an-offloading-configuration.png" alt="Validate an offloading configuration"  style="max-width: 100%">
+<img src="/images/datahub-guide/datahub-validate-an-offloading-configuration.png" alt="Validate an offloading configuration"  style="max-width: 100%">
 
 ### Overview of offloading pipelines
 In the main panel of the **Offloading** page, you will find all pipelines being defined as well as their current status. Each pipeline is shown as a card. In the action bar you will find the **Reload** button, which reloads the set of pipelines as well as their current status. 
@@ -65,7 +65,7 @@ Each pipeline card has controls for managing the offloading process. Besides the
 
 In the context menu of each configuration pipeline, you will find actions for managing and monitoring the configuration.
 
-<img src="/guides/images/datahub-guide/datahub-offloading-context-menu.png" alt="Context menu of an offloading configuration"  style="max-width: 100%">
+<img src="/images/datahub-guide/datahub-offloading-context-menu.png" alt="Context menu of an offloading configuration"  style="max-width: 100%">
 
 #### Editing an offloading pipeline
 

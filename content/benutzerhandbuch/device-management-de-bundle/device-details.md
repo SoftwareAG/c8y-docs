@@ -10,7 +10,7 @@ Zu jedem Gerät werden im Device Management detaillierte Informationen angezeigt
 
 Klicken Sie auf ein Gerät in der Geräteliste, um die Gerätedetails anzuzeigen.
 
-<img src="/guides/images/benutzerhandbuch/devmgmt-device-details.png" alt="Device details" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/devmgmt-device-details.png" alt="Device details" style="max-width: 100%">
 
 Die Gerätedetails sind in verschiedene Registerkarten aufgeteilt. Die Anzahl der Registerkarten ist dynamisch und abhängig von den jeweils verfügbaren Informationen, d.h. Registerkarten werden nur angezeigt, wenn entsprechende Informationen für das jeweilige Gerät vorhanden sind.
 
@@ -44,7 +44,7 @@ Ist das Gerät Teil einer Asset-Hierarchie (wie einer Gruppe), wird unter dem Ge
 
 Abhängig vom Gerätetypen und seiner Nutzung sind weitere Aktionen möglich, die in einem Kontextmenü angezeigt werden, wenn Sie **Mehr...** rechts in der oberen Menüleiste klicken. 
 
-![More menu](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-more.png)
+![More menu](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-more.png)
 
 Details zu den einzelnen Menüpunkten sind dort beschrieben, wo diese relevant sind.
 
@@ -52,7 +52,7 @@ Details zu den einzelnen Menüpunkten sind dort beschrieben, wo diese relevant s
 
 Die Registerkarte **Info** fasst die Geräteinformationen in einem Dashboard zusammen, die aus Managementsicht relevant sind.
 
-![Device Info](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-infotab.png)
+![Device Info](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-infotab.png)
 
 Die Information wird auf den folgenden Karten bereitgstellt:
 
@@ -78,7 +78,7 @@ Die Registerkarte **Messwerte** zeigt eine Standardvisualisierung der vom Gerät
 
 Die Diagramme sind in Messwert-Typen aufgeteilt, die jeweils mehrere Graphen und "Series" enthalten können. Die Abbildung unten zeigt beispielsweise ein Diagramm mit Bewegungsmesswerten, einschließlich Graphen für Beschleunigung in drei Dimensionen sowie ein Diagramm mit Modemstatistiken im Form von Signalstärken und Bit-Fehlerraten.  
 
-![Measurements](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-measurements.png)
+![Measurements](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-measurements.png)
 
 Wenn ein Diagramm Graphen mit verschiedenen Einheiten enthält, wir pro Einheit eine Y-Achse dargestellt. In der Beispielabbildung bestehen die Bewegungsmesswerte aus drei Parametern mit der Einheit "Meter je Sekundequadrat", daher wird nur eine Achse dargestellt. Die Modemstatistiken bestehen aus einer Signalstärke in Dezibel Milliwatt und der Bit-Fehlerrate in Prozent, daher wird eine Achse pro Graph dargestellt.
 
@@ -125,7 +125,7 @@ Die Registerkarte **Konfiguratio**n ermöglicht das manuelle Konfigurieren der P
 
 im Textfeld können Sie die gewünschten Einstellungen im Textformat eingeben. Klicken Sie **Speichern**, um Ihre Einstellungen zu speichern. 
 
-<img src="/guides/images/users-guide/textconfig.png" alt="Device details" style="max-width: 100%">
+<img src="/images/users-guide/textconfig.png" alt="Device details" style="max-width: 100%">
 
 Alternativ können Sie sogenannte Konfigurationssnapshots verwenden, siehe [Konfigurationssnapshots](#configuration-repository).
 
@@ -133,7 +133,7 @@ Alternativ können Sie sogenannte Konfigurationssnapshots verwenden, siehe [Konf
 
 Die Registerkarte **Steuerung** enthält eine Liste der and das Gerät gesendeten Kommandos. Weitere Informationen zu Kommandos finden Sie unter [Verwenden von Kommandos](#operation-monitoring).
 
-![Device Control](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-control.png)
+![Device Control](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-control.png)
 
 ### <a name="network"></a>Netzwerk
 
@@ -150,7 +150,7 @@ Um eine neue Firmware zu installieren, klicken Sie **Firmware installieren**, w�
 
 Um eine Software auf einem Gerät zu installieren, klicken Sie entsprechend **Software installieren**, wählen Sie ein Software-Paket aus dem [Software-Repository](#software-repo) und klicken Sie **Installieren**. 
 
-![Device Software tab](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-software.png)
+![Device Software tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-software.png)
 
 Das Installieren von Software oder Firmware beinhaltet normalerweise einen Geräteneustart. Um den Fortschritt einer Installation zu überwachen, wechseln Sie zur Registerkarte **Steuerung**.
 
@@ -181,7 +181,7 @@ Im folgenden Fenster können Sie die folgende Einstellungen für die Loginformat
 
 Klicken Sie **Logdatei anfordern**, um die spezifizierten Daten für das Gerät zu anzufordern.
 
-![Logs tab](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-logs.png)
+![Logs tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-logs.png)
 
 Das Anfordern einer Logdatei kann je nach Datenvolumen einige Zeit dauern. 
 
@@ -195,16 +195,16 @@ Wenn Sie mit dem Mauszeiger über einen Eintrag fahren, erscheinen die Schaltfl�
 
 In the “Objects” tab of a LWM2M device, you can view all objects, resources and instances of the device. Additionally, you can create new operations, see all currently pending operations and view the history of all previous operations.
 
-![Objects view](/guides/images/users-guide/DeviceManagement/DevMgmt_objects-view.png)
+![Objects view](/images/users-guide/DeviceManagement/DevMgmt_objects-view.png)
 
 **Info**: In order to see resources in the “Objects” tab, the resources first have to be added in the “Device Protocols” page.
 
 The following operations can be observed in each instance:
 
 - Read Object: Reads all instances for the selected object and lists all available resources for each instance.
-![Read Objects](/guides/images/users-guide/DeviceManagement/DevMgmt_read-object.png)
+![Read Objects](/images/users-guide/DeviceManagement/DevMgmt_read-object.png)
 - Read Instance: Reads the current instance of the given object and lists all available resources.
-![Read Instance](/guides/images/users-guide/DeviceManagement/DevMgmt_read-instance.png)
+![Read Instance](/images/users-guide/DeviceManagement/DevMgmt_read-instance.png)
 - Create Instance: Creates a new instance for the selected object.
 - Delete Instance: Deletes the selected instance.
 
@@ -212,20 +212,20 @@ The following operations can be observed in each instance:
 
 Some object cards show additional operations which can be performed. These operations become available after reading the object/instance. For example, device “Reboot” or “Reset error code”. In order to perform these operations, click **Execute**.
 
-![Execute operation](/guides/images/users-guide/DeviceManagement/DevMgmt_execute-operation.png)
+![Execute operation](/images/users-guide/DeviceManagement/DevMgmt_execute-operation.png)
 
 More information can be acquired for each resource by hovering over the tooltip icon.
 
-![Tooltip](/guides/images/users-guide/DeviceManagement/DevMgmt_tooltip-hover.png)
+![Tooltip](/images/users-guide/DeviceManagement/DevMgmt_tooltip-hover.png)
 
 Additional information on recent operations can be viewed by clicking the operations button located on the right side of an instance card. The button is only visible if any operation has been performed. The number of unread operations can be seen on the top right of the button. In the example below there is only one.
 
-![Recent operations](/guides/images/users-guide/DeviceManagement/DevMgmt_recent-operations.png)
-![Recent operations 2](/guides/images/users-guide/DeviceManagement/DevMgmt_recent-operations2.png)
+![Recent operations](/images/users-guide/DeviceManagement/DevMgmt_recent-operations.png)
+![Recent operations 2](/images/users-guide/DeviceManagement/DevMgmt_recent-operations2.png)
 
 To view the history of all operations, simply click **View history**. Note that, you will be redirected to the “Control” tab.
 
-![Control tab](/guides/images/users-guide/DeviceManagement/DevMgmt_operations.png)-->
+![Control tab](/images/users-guide/DeviceManagement/DevMgmt_operations.png)-->
 
 ### <a name="service-monitoring"></a>Serviceüberwachung
 
@@ -243,11 +243,11 @@ Klicken Sie **Historie ansehen** rechts in der oberen Menüleiste, um eine Liste
 
 Die Liste zeigt den Status, das Datum und den Text eines Kommandos an. Durch Klicken einer Zeile wird das Ergebnis angezeigt, vorausgesetzt, das Kommando wurde ausgeführt. 
 
-![Device shell](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-shell.png)
+![Device shell](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-shell.png)
 
 Cumulocity stellt für manche Gerätetypen einige häufig verwendete Kommandos bereit. Klicken Sie **<_Beispielkommando auswählen** rechts in der oberen Menüleiste, um eine Liste der verfügbaren vordefinierten Kommandos anzuzeigen. Wählen Sie das gewünschte Kommando aus und klicken Sie **Verwenden**, um das ausgewählte Kommando in der Kommandozeile einzufügen oder klicken Sie **Ausführen**, um das Kommando unmittelbar auszuführen. Sie können auch selbst neue Kommandos zur Wiederverwendung hinzufügen. 
 
-![Shell Commands](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-shell-precommands.png)
+![Shell Commands](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-shell-precommands.png)
 
 ### <a name="tracking"></a>Tracking
 
@@ -257,7 +257,7 @@ In Cumulocity können Geräte die Historie ihrer Bewegungen festhalten. Diese Be
 
 In der Auswahlliste oben rechts können Sie ein Zeitintervall auswählen (oder eines eingeben, indem Sie "Benutzerdefiniert" auswählen). Die Bewegungen des Geräts während des ausgewählten Zeitintervalls werden als rote Linien in der Karte visualisiert. 
 
-![Tracking tab](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-tracking.png)
+![Tracking tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-tracking.png)
 
 Neben der Karte werden die einzelnen Einträge mit Zeitangabe aufgelistet ("Standortaktualisierungsereignisse"). Wenn Sie auf einen Eintrag klicken, zeigt ein "Pin" auf der Karte den Standort zu diesem Zeitpunkt an. 
 

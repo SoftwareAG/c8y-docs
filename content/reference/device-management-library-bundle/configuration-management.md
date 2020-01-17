@@ -25,7 +25,7 @@ The following fragments can be observed:
       "config": "#Tue Jul 02 16:10:36 UTC 2013\nc8y.log.alarmLevel=ERROR\nc8y.modem.signalPolling=10000\nc8y.log.eventLevel=INFO"
     }
 
-![Device configuration](/guides/images/reference-guide/configuration.png)
+![Device configuration](/images/reference-guide/configuration.png)
 
 #### c8y\_ConfigurationDump
 

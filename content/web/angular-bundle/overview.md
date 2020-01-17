@@ -118,5 +118,5 @@ export class AppModule {}
 
 If you start this application and log in you will see an application similar to the following screenshot. To extend this application you can use the [Angular Router](https://angular.io/guide/router#router-imports) in combination with our [@c8y/ngx-components](#ngx-components).
 
-![An Angular based application](/guides/images/web-sdk/hello-world-example.png)
+![An Angular based application](/images/web-sdk/hello-world-example.png)
 

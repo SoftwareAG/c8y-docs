@@ -29,7 +29,7 @@ Moreover, password reset in Cumulocity is disabled for users created through an 
 
 To view all users in your tenant, click **Users** in the **Account** menu in the navigator.
 
-![Expanded view](/guides/images/users-guide/Administration/admin-users-list.png)
+![Expanded view](/images/users-guide/Administration/admin-users-list.png)
 
 A user list will be displayed, providing the following information for each user:
 

@@ -71,7 +71,7 @@ You will find the _pom.xml_ file inside the *hello-microservice-java* folder. Ed
 
 You need to specify the version of the Cumulocity's microservice library to be used. This can be found on the platform; at the top-right corner, click the tenant user and find the backend version on the pop-up menu.
 
-![Upload microservice](/guides/images/microservices-sdk/ms-backend-version.png)
+![Upload microservice](/images/microservices-sdk/ms-backend-version.png)
 
 In the `<properties>` element specified above, add a child element `<c8y.version>` with the backend version of your tenant. Also add a `<microservice.name>` child element to name your microservice application.
 
@@ -265,15 +265,15 @@ To deploy your microservice on the Cumulocity platform you need:
 
 In the Administration application, navigate to **Applications** > **Own applications**, click **Add application** and select **Upload microservice** from the options list.
 
-![Upload microservice](/guides/images/microservices-sdk/admin-microservice-upload.png)
+![Upload microservice](/images/microservices-sdk/admin-microservice-upload.png)
 
 Upload the ZIP file of your microservice application and click **Subscribe** for your tenant to be to subscribed to the microservice afterwards.
 
-![Subscribe microservice](/guides/images/microservices-sdk/admin-microservice-subscribe-up.png)
+![Subscribe microservice](/images/microservices-sdk/admin-microservice-subscribe-up.png)
 
 Once the ZIP file has been uploaded successfully, you will see a new microservice application created.
 
-![Deployed microservice](/guides/images/microservices-sdk/admin-microservice-deployed.png)
+![Deployed microservice](/images/microservices-sdk/admin-microservice-deployed.png)
 
 #### Test the deployed microservice
 
@@ -422,7 +422,7 @@ If your Docker image has run successfully, you shall see the output on the conso
 
 In the Administration application, navigate to **Applications** > **Own applications**. Locate your microservice application and click it to open its details. On the top right side click **Subscribe**.
 
-![Subscribe to a microservice](/guides/images/microservices-sdk/admin-microservice-subscribe.png)
+![Subscribe to a microservice](/images/microservices-sdk/admin-microservice-subscribe.png)
 
 At this point, you may open your favorite browser and test your microservice at <http://localhost:8082/hello>. Enter your bootstrap user credentials using &lt;tenant>/&lt;username> and your password.
 

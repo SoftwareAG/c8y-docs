@@ -1,5 +1,34 @@
 var main = (function ($) {
-  function initializer(){
+  function initializer() {
+    
+    //Load releases menu
+    var json = $.getJSON({ 'url': "//cumulocity.com/guides/releases.json", 'async': false })
+      .done(function (json) {
+        //json = JSON.parse(json.responseText);
+        var urls = json.releases;
+        var vmenu = $('.dropdown.version');
+        var loc = window.location;
+        vmenu.find('.dropdown-menu').html('');
+        $('#current-dropdown-version-toggle').text('');
+        for (var index = 0; index < urls.length; index++) {
+          var el = urls[index];
+          if (loc.href.includes(el.label)) {
+            $('#current-dropdown-version-toggle').text('Release ' + el.label);
+            vmenu.find('.dropdown-menu').append(
+              '<a href="' + el.url + '/users-guide/getting-started/" class="dropdown-menu-item active">Release ' + el.label + '</a>'
+            );
+          } else {
+            vmenu.find('.dropdown-menu').append(
+              '<a href="' + el.url + '" class="dropdown-menu-item">Release ' + el.label + '</a>'
+            );
+          }
+        }
+      })
+      .fail(function (resp) {
+        console.error(resp.statusText);
+        $('#dropdownVersionButton').hide();
+      });
+
 
     // apply Highlight js
     hljs.initHighlightingOnLoad();
@@ -85,5 +114,3 @@ var main = (function ($) {
 })(jQuery);
 
 main.init();
-
-

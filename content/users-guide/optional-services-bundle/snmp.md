@@ -14,7 +14,7 @@ There are two components that help SNMP-enabled devices to connect to the Cumulo
 
 The following image provides a general overview of the SNMP-enabled device integration with Cumulocity:
 
-![Cumulocity SNMP Integration](/guides/images/users-guide/snmp/snmp-cumulocity-integration.png)
+![Cumulocity SNMP Integration](/images/users-guide/snmp/snmp-cumulocity-integration.png)
 
 
 ### SNMP agent
@@ -144,7 +144,7 @@ Before any SNMP device can connect to the Cumulocity IoT platform, first the SNM
 
 After successful registration, the agent device will be added to the device list in the **All devices** page, with device ID as name.
 
-![Device list](/guides/images/users-guide/snmp/snmp-devices-list.png)
+![Device list](/images/users-guide/snmp/snmp-devices-list.png)
 
 #### To register the agent via REST API
 
@@ -173,7 +173,7 @@ SNMP device protocols can either be created manually or by importing a MIB file 
 #### To create a device protocol from the UI
 
 1. Create a ZIP file which contains the top-level MIB file along with dependent MIB files and an index file named mib-index which contains the name of the top level MIB file.<br>
-![Subscribed applications](/guides/images/users-guide/snmp/snmp-mib-zipfile-structure.png)
+![Subscribed applications](/images/users-guide/snmp/snmp-mib-zipfile-structure.png)
 2. In the Device Management application, click **Device protocols** in the **Device types** menu in the navigator.
 3. In the top menu bar of the **Device protocols** page, click **Import**.
 4. Select the MIB ZIP file from the dropdown list or upload the file from your file system.
@@ -182,7 +182,7 @@ SNMP device protocols can either be created manually or by importing a MIB file 
 
 On successful import, the newly added device protocol will be listed in the device protocols list.
 
-![Device protocol - SNMP](/guides/images/users-guide/snmp/snmp-device-protocol.png)
+![Device protocol - SNMP](/images/users-guide/snmp/snmp-device-protocol.png)
 
 #### To create a device protocol via REST API
 
@@ -228,7 +228,7 @@ Device protocols can also be created manually. To do so, you need to know the OI
 8. Provide OID details and device protocol mapping for the OID.
 9. Click **Save** to save your settings.
 
-![Device protocol - SNMP](/guides/images/users-guide/snmp/snmp-device-protocol-manual.png)
+![Device protocol - SNMP](/images/users-guide/snmp/snmp-device-protocol-manual.png)
 
 
 ### Creating device protocol mapping
@@ -240,12 +240,12 @@ The device protocol mapping helps the agent to know how to deal with incoming da
 1. In the Device Management application, click **Device protocols** in the **Device types** menu in the navigator.
 2. Open the desired device protocol (e.g. snmp-device-protocol). It shows a list of components representing the OIDs.
 
-	![Device protocol details](/guides/images/users-guide/snmp/snmp-device-protocol-detail.png)
+	![Device protocol details](/images/users-guide/snmp/snmp-device-protocol-detail.png)
  
 3. Click the menu icon at the right of the component and click **Edit** to configure the mapping for the component.
 4. Under **Functionalities**, switch the toggle button to turn on the mapping for the required Cumulocity model (**Send measurement**, **Raise alarm** and/or **Send event**). Fill in the values for the respective fields and click **Save**.
   
-	![Edit components details](/guides/images/users-guide/snmp/snmp-device-protocol-mapping.png)
+	![Edit components details](/images/users-guide/snmp/snmp-device-protocol-mapping.png)
 
 5. Click **Save** in the **Device protocol** page to finally save the changes. 
 
@@ -306,7 +306,7 @@ There are two supported ways of discovering devices.
 
 Both ways of device discovery can be controlled from the user interface.
 
-![Autodiscovery](/guides/images/users-guide/snmp/snmp-autodiscovery.png)
+![Autodiscovery](/images/users-guide/snmp/snmp-autodiscovery.png)
 
 ##### To start autodiscovery from the UI
 
@@ -320,7 +320,7 @@ If a new SNMP-enabled device is identified, it will be added to the devices list
 
 If you want to run autodiscovery after every interval, enter the interval in the **Scheduled interval** field and click **Save**. When the agent refreshes the configuration data, the scheduled autodiscovery will automatically be started. You don´t need to click **Start autodiscovery** in case of scheduled autodiscovery.
 
-![Autodiscovery SNMP device list](/guides/images/users-guide/snmp/snmp-autodiscovered-devices.png)
+![Autodiscovery SNMP device list](/images/users-guide/snmp/snmp-autodiscovered-devices.png)
 
 
 For the newly found SNMP device, the default device name will be mentioned as `Device-<device-ip-address>`, the IP address will be `<device-ip-address>` and the default port number is `161`. All other details will be empty and have to be entered manually.
@@ -366,7 +366,7 @@ The following REST call schedules autodiscovery for the given interval:
 ##### To add a SNMP device manually from the UI
 
 1. In the Device Management application, click **All devices** in the **Devices** menu in the navigator.
-2. In the devices list, click on the SNMP agent device and open the **SNMP** tab of the device.<br><br>![SNMP tab](/guides/images/users-guide/snmp/snmp-snmp-tab.png)<br>
+2. In the devices list, click on the SNMP agent device and open the **SNMP** tab of the device.<br><br>![SNMP tab](/images/users-guide/snmp/snmp-snmp-tab.png)<br>
 3. In the **SNMP devices** section, click **Add SNMP device**.
 4. Provide the SNMP device details:
 <table>
@@ -549,11 +549,11 @@ The SNMP agent provides the capability to poll for SNMP device data by the OID. 
 3. In the **SNMP communication** section, provide the polling interval in the field **Polling rate**. For example: If the value is set to "5", the agent polls the SNMP devices OID(s) data every 5 seconds. To stop the polling, set the polling interval to 0 or an empty value.  
 4. Click **Save**.
 <br>
-![SNMP Device polling](/guides/images/users-guide/snmp/snmp-polling.png)  
+![SNMP Device polling](/images/users-guide/snmp/snmp-polling.png)  
 
 The data received via polling is mapped to the Cumulocity model based on the mapping defined. As the OIDs contain measurement mapping, the measurements can be viewed in the **Measurements** tab of the SNMP device.
 
-![SNMP device measurement graph](/guides/images/users-guide/snmp/snmp-measurement-graph.png)  
+![SNMP device measurement graph](/images/users-guide/snmp/snmp-measurement-graph.png)  
 
 #### To enable polling via REST API
 

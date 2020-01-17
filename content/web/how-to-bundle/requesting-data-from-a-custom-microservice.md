@@ -169,7 +169,7 @@ export class AppModule extends HybridAppModule {
 
 When you run the application with `c8cli server` and point your browser to the path defined in the module `http://localhost:9000/apps/cockpit/#/acme`, you should see the following:
 
-![Custom client service](/guides/images/web-sdk/custom-client-service.png)
+![Custom client service](/images/web-sdk/custom-client-service.png)
 
 The request fails as we don't have a microservice with this context path running. But as you can see (in the dev tools) the request has an authorization cookie attached. So if the microservice would exist, the request would pass and the data would be displayed.
 

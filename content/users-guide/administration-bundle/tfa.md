@@ -8,7 +8,7 @@ There are two possible TFA strategies: SMS and TOTP. Only one of them can be act
 
 To check whether TFA is enabled for a certain user, go to the **Users** page and see the TFA status column right from the password strength column. A key icon indicates that TFA is enabled and by hovering over it you can see the strategy that is being used.
 
-![TFA status](/guides/images/users-guide/Administration/admin-user-tfa-enabled.png)
+![TFA status](/images/users-guide/Administration/admin-user-tfa-enabled.png)
 
 ### SMS
 
@@ -21,7 +21,7 @@ When adding a user and TFA is enabled, a phone number needs to be provided. When
 2. Select the checkbox next to **Enable two-factor authentication**.
 3. Click **Save**.
 
-![Enable TFA](/guides/images/users-guide/Administration/admin-user-enable-tfa.png)
+![Enable TFA](/images/users-guide/Administration/admin-user-enable-tfa.png)
 
 >**Info**: This process can only be executed in the administration UI and is not available under **User settings**.
 
@@ -33,13 +33,13 @@ Users have to install a TOTP application on their smartphone (Google Authenticat
 #### Setup
 
 Opposed to the SMS strategy TOTP has to be setup by each user. By opening **User settings** in the top right corner and then clicking on **Setup two-factor authentication** they can start the setup process.
-![Trigger TOTP setup](/guides/images/users-guide/Administration/admin-user-tfa-setup-button.png)
+![Trigger TOTP setup](/images/users-guide/Administration/admin-user-tfa-setup-button.png)
 
 IF TFA is enabled, the user will be presented a QR code at login, that needs to be scanned with the previously installed TOTP mobile application.
 
 Alternatively, the secret can also be inserted manually in case scanning the QR code is not an option.
 
-![TOTP setup process](/guides/images/users-guide/Administration/admin-user-tfa-setup.png)
+![TOTP setup process](/images/users-guide/Administration/admin-user-tfa-setup.png)
 
 After this process the mobile application will generate a new code every 30 seconds that can be used to complete the authentication process.
 
@@ -55,4 +55,4 @@ From the tenant administrator perspective the process to revoke the key is:
 4. Click **Revoke TOTP secret**.
 5. Confirm by clicking **Revoke**.
 
-![TOTP secret revoke](/guides/images/users-guide/Administration/admin-user-totp-revoke.png)
+![TOTP secret revoke](/images/users-guide/Administration/admin-user-totp-revoke.png)

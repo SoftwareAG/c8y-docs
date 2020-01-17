@@ -14,7 +14,7 @@ There are several processing modes for API requests in Cumulocity: *persistent*,
 
 * Cep - Behaves like the "transient" mode with the exception that no real-time notifications are sent. Currently it is applicable only for measurements and events.
 
-![CEP architecture](/guides/images/concepts-guide/realtime.png)
+![CEP architecture](/images/concepts-guide/realtime.png)
 
 ### Examples
 

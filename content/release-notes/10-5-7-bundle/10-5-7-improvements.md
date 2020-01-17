@@ -15,7 +15,7 @@ Usability in the **Logs** tab of subscribed applications has been enhanced.
 * The date specifying the time range can now be selected from a calendar and the theme can be selected through a toggle. [MTM-26441]
 * Moreover, an **Auto-refresh** button has been added. If enabled, the displayed logs automatically get updated every 10 seconds. [MTM-27531]
 
-![Microservice logging](/guides/images/users-guide/Administration/admin-applications-logs.png)
+![Microservice logging](/images/users-guide/Administration/admin-applications-logs.png)
 
 For details, see [Administration > Managing applications](/guides/users-guide/administration/managing-applications) in the User guide. 
 
@@ -38,7 +38,7 @@ For details, see [Administration > Two-factor authentication](/guides/users-guid
 **Tenant ID**
 
 Tenant ID information is now included in the dropdown user menu. [MTM-28565]
-<br><br>![User menu](/guides/images/users-guide/Overview/user-account-menu.png)
+<br><br>![User menu](/images/users-guide/Overview/user-account-menu.png)
 
 
 ### OPCUA
@@ -48,10 +48,10 @@ OPC UA 2.0 is now available. The feature stores data into the Cumulocity databas
 The following functionalities are now available:
 
 * Support for multiple OPC UA servers
-<br>![Multiple OPC UA servers](/guides/images/release-notes/opcua1.png)
+<br>![Multiple OPC UA servers](/images/release-notes/opcua1.png)
 
 * Support for browsing and searching of the address space
-<br>![OPC UA browsing](/guides/images/release-notes/opcua2.png)
+<br>![OPC UA browsing](/images/release-notes/opcua2.png)
 * Addressing OPC UA nodes via URN
 * Largely extended support for mapping the OPC UA and Cumulocity information models
 
@@ -64,6 +64,6 @@ Support for integration of SNMP-enabled devices has been added to the Cumulocity
 * The mib-parser microservice converts a Managed Information Base (MIB) file to a JSON representation which is then used to create a device protocol.
 * The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled device(s) and the Cumulocity IoT platform. It receives SNMP data from the devices, converts the data to Cumulocity-based objects based on the device protocol mapping, persists the data locally, and forwards the data to Cumulocity. 
 
-![SNMP device protocol details](/guides/images/release-notes/snmp-device-protocol-detail.png)
+![SNMP device protocol details](/images/release-notes/snmp-device-protocol-detail.png)
 
 For details see [Optional services > SNMP](/guides/users-guide/optional-services/#snmp) in the User guide.

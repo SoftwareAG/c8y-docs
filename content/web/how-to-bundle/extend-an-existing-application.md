@@ -189,7 +189,7 @@ Explanation of the above comment numbers:
 
 After we implement this extension hook we get a new entry in the navigator which looks like this (note that the property `priority` of the `NavigatorNode` interface defines in which order the nodes are shown):
 
-![The extended Cockpit application](/guides/images/web-sdk/route-extension-hook.png)
+![The extended Cockpit application](/images/web-sdk/route-extension-hook.png)
 
 As you can see the `hello.component.ts` is now like a blank canvas inside the Cockpit app. In that, you can implement any kind of feature you need, while the given functionality of the Cockpit isn't touched.
 

@@ -132,7 +132,7 @@ You will get the ID of your managed object in the response. Assign this ID in yo
 
 On the Cumulocity platform, navigate to **Devices** > **All devices** in the Device Management application to verify that your device has been created and its location is displayed on the map.
 
-![Microservice tracking](/guides/images/microservices-sdk/ms-tracking-newdevice.png)
+![Microservice tracking](/images/microservices-sdk/ms-tracking-newdevice.png)
 
 ### Getting the client's location
 
@@ -423,7 +423,7 @@ Using the endpoint <kbd>location/locations</kbd> will return by default five sto
 
 In the Device Management application, navigate to **Devices** > **All devices** and locate your microservice tracker. Under **Tracking** you will see a map with the tracked locations. It is also possible to develop your own web application and customize a map widget. Refer to the [Web SDK for Angular](https://cumulocity.com/guides/web/angular/#apps) for more details.
 
-![Microservice tracking](/guides/images/microservices-sdk/ms-tracking-map.png)
+![Microservice tracking](/images/microservices-sdk/ms-tracking-map.png)
 
 #### Run the Docker container
 

@@ -28,7 +28,7 @@ PS C:\WINDOWS\system32> New-VMSwitch -SwitchName "NATSwitchForEDGE" -SwitchType 
 PS C:\WINDOWS\system32> Get-NetAdapter
 ```
 <br>
-<img src="/guides/images/edge/edge-hyper-v-get-netadapter.png" name="Get-NetAdapter" style="width:75%;"/>
+<img src="/images/edge/edge-hyper-v-get-netadapter.png" name="Get-NetAdapter" style="width:75%;"/>
 Note down the `ifIndex` of the adapter. The `ifIndex` in the above screenshot is 31. The `ifIndex` may vary in your system and the same `ifIndex` should be used in the next step. 
 
 3. Assign an IP address for the adapter.
@@ -70,7 +70,7 @@ PS C:\WINDOWS\system32> New-NetNat -Name EdgeNATRule1 -InternalIPInterfaceAddres
 After creating a NAT adapter, you must import the Edge VM image into Hyper-V.
 
 1. In Hyper-V Manager, go to **Action** > **Import Virtual Machine**. <br>
-<img src="/guides/images/edge/edge-hyper-v-001.png" name="Import Virtual Machine" style="width:75%;"/>
+<img src="/images/edge/edge-hyper-v-001.png" name="Import Virtual Machine" style="width:75%;"/>
 
 2. In the **Before You Begin** wizard, click **Next**. <br>
 
@@ -83,13 +83,13 @@ After creating a NAT adapter, you must import the Edge VM image into Hyper-V.
 6. If you have used the default NAT adapter name, skip this step and proceed with step 7. <br>
 If you have used a different NAT adapter name, you will see the following screen:
 <br>
-<img src="/guides/images/edge/edge-hyper-v-008.png" name="Select-NetAdapter" style="width:75%;"/>
+<img src="/images/edge/edge-hyper-v-008.png" name="Select-NetAdapter" style="width:75%;"/>
 Select the adapter from the **Connection** drop down list and click **Next**.
 
 7. Click **Finish**. The Edge VM image appears in the Hyper-V Manager. <br> 
 
 8. Right-click the Edge VM image and click **Connect**. <br>
-<img src="/guides/images/edge/edge-hyper-v-007.png" name="Connecting to Edge VM" style="width:75%;"/>
+<img src="/images/edge/edge-hyper-v-007.png" name="Connecting to Edge VM" style="width:75%;"/>
 
 9. If you have defined the adapter name and IP address other than the default settings, you must first configure the network before running the post installation. See [Configuring the Edge Server](/guides/edge/installation/#configuring-the-edge-server).
 

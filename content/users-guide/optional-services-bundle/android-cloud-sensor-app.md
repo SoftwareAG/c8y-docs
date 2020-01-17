@@ -17,11 +17,11 @@ The Sensor App requires a smartphone with Android version 5.0 (or higher) or iOS
 
 To install the Sensor App on your smartphone, open the Cockpit application in Cumulocity, expand the right drawer and click **Add smartphone** from the quick links.
 
-![Quick Links](/guides/images/users-guide/csa/csa-quick-links.png)
+![Quick Links](/images/users-guide/csa/csa-quick-links.png)
 
 This will start a wizard showing the QR code for downloading the Sensor App.
 
-![Install App](/guides/images/users-guide/csa/csa-qr-code.png)
+![Install App](/images/users-guide/csa/csa-qr-code.png)
 
 Scanning the QR code with your smartphone will take you to the App Store where you can install the app.
 
@@ -37,11 +37,11 @@ If you are not able to scan the code or if are using an iOS smartphone, you can 
 
 In Cumulocity click **Next** in the **Add Smartphone** wizard to display step 2 with the second QR code which registers the smartphone in Cumulocity.
 
-![Register phone QR](/guides/images/users-guide/csa/csa-register-phone.png)
+![Register phone QR](/images/users-guide/csa/csa-register-phone.png)
 
 Your smartphone will be added to the devices list in the Device Management application, which can be accessed by navigating to **All devices** in the **Devices** menu in the navigator.
 
-![All devices](/guides/images/users-guide/csa/csa-device-list.png)
+![All devices](/images/users-guide/csa/csa-device-list.png)
 
 Moreover it will be added to the group **Phones** (which will be created if not available yet). You will find the group in the **Group** menu in the navigator. This feature is only available in case of QR code registration.
 
@@ -53,10 +53,10 @@ Moreover it will be added to the group **Phones** (which will be created if not 
 
 1. On the start screen of the **Cumulocity IoT Sensor App**, press **Connect to Cumulocity**, to connect your device to Cumulocity.
 2. In the **Account details** page of the **Cumulocity IoT Sensor App**, provide the Cumulocity tenant and instance. These can be seen in the Cumulocity URL from the browser address bar. For example the screenshot below shows the tenant and instance for a URL "mytenant.us.cumulocity.com". Press **Connect**.
-<br><br>![Account details](/guides/images/users-guide/csa/csa-ios-accountdetails-connect.png)
+<br><br>![Account details](/images/users-guide/csa/csa-ios-accountdetails-connect.png)
 
 3. Press **Login with Software AG Cloud** or enter your username and password and press **Login**. 
-<br><br>![Account details](/guides/images/users-guide/csa/csa-ios-accountdetails-login.png)
+<br><br>![Account details](/images/users-guide/csa/csa-ios-accountdetails-login.png)
 
 	>**Info**: The option **Login with Software AG Cloud** is only available for subscriptions made via the Software AG Cloud portal.
 
@@ -64,7 +64,7 @@ Moreover it will be added to the group **Phones** (which will be created if not 
 
 Your smartphone will be registered and added to the devices list in the **Device Management** application, which can be accessed by navigating to **All devices** in the **Devices** menu in the navigator.
 
-![All devices](/guides/images/users-guide/csa/csa-device-list.png)
+![All devices](/images/users-guide/csa/csa-device-list.png)
 
 For further information about registering a device on the platform manually, refer to [Connecting devices](/guides/users-guide/device-management#device-registration) in the Device Management section.
 
@@ -82,7 +82,7 @@ The measurements from the sensors of your smartphone will automatically start be
 
 The data points will be displayed in the **Phones** group on the dashboard of your smartphone device.
 
-![map in cockpit](/guides/images/users-guide/csa/mapincockpit2.png)
+![map in cockpit](/images/users-guide/csa/mapincockpit2.png)
 
 A 3D rotation widget on this dashboard will depict the data from a gyroscope sensor on your smartphone if present.
 
@@ -96,30 +96,30 @@ The **Cumulocity IoT Sensor App** connects to both TI Sensor Tag version 1.20 an
 
 Use the **Scan devices** button in the Sensor App to connect a Sensor Tag.
 
-![Scan devices button](/guides/images/users-guide/csa/csa-scan-devices.png)
+![Scan devices button](/images/users-guide/csa/csa-scan-devices.png)
 
 **On an iOS smartphone**
 
 Press the **Add Tag** button in the Sensor App to connect a Sensor Tag.
 
-![Add Tag](/guides/images/users-guide/csa/csa-ios-add-tag.png)
+![Add Tag](/images/users-guide/csa/csa-ios-add-tag.png)
 
 
 All Sensor Tags which are discoverable are displayed. To make a Sensor Tag discoverable, press the red button next to it. The Sensor Tag will start blinking to show that it is ready to connect. It should immediately appear in the list of visible bluetooth devices in the Sensor App.
 
-![Connect Sensor Tag](/guides/images/users-guide/csa/csa-bluetooth.png)
+![Connect Sensor Tag](/images/users-guide/csa/csa-bluetooth.png)
 
 Press **Connect** next to the Sensor Tag of your choice. The Bluetooth connection between the Sensor Tag and your smartphone will be established. Once the Sensor Tag is paired with your smartphone, you will see it as a record on the Sensor App’s screen:
 
-![Sensor Tag Card](/guides/images/users-guide/csa/csa-ticard.png)
+![Sensor Tag Card](/images/users-guide/csa/csa-ticard.png)
 
 Observing information and sensor data from the TI Sensor Tag is possible by pressing **View sensors** on its card.
 
-![Sensor Tag Info](/guides/images/users-guide/csa/csa-sensortag-info.png)
+![Sensor Tag Info](/images/users-guide/csa/csa-sensortag-info.png)
 
 In your Cumulocity tenant, the data points for the Sensor Tag will be displayed on the graphs in the dashboard of your smartphone and as measurements in the Device Management application.
 
-![Sensor tag data points](/guides/images/users-guide/csa/sensortagdatapoints.png)
+![Sensor tag data points](/images/users-guide/csa/sensortagdatapoints.png)
 
 To detach the Sensor Tag from your smartphone, press **Remove** on its card.
 
@@ -135,11 +135,11 @@ Add the Messaging widget to the dashboard, for details see [Widgets collection](
 
 To send a message from Cumulocity, enter a text into the Messaging widget and click **Send**.
 
-![message widget](/guides/images/users-guide/csa/csa-messaging-widget.png)
+![message widget](/images/users-guide/csa/csa-messaging-widget.png)
 
 The message will appear as a pop-up on the screen of your smartphone.
 
-![Hello World Message](/guides/images/users-guide/csa/helloworldnew.png)
+![Hello World Message](/images/users-guide/csa/helloworldnew.png)
 
 If the vibration switch is turned on, the smartphone will start vibrating until the switch is turned off again.
 

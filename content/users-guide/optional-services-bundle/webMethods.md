@@ -18,10 +18,10 @@ To subscribe to webMethods.io Integration, perform the following steps:
 
 2. In the application switcher, select **webMethods.io Integration**.
 
-![webMethods.io App Switcher Integration](/guides/images/users-guide/webMethods.io/wmio-appswitcher-integration.png)
+![webMethods.io App Switcher Integration](/images/users-guide/webMethods.io/wmio-appswitcher-integration.png)
 
 >**Info**: If the icon is unavailable you might not be subscribed to **webMethods.io Integration**. Subscribe to it by opening the application switcher and clicking **MyCloud**. This will take you to the **Software AG Cloud** portal where you can subscribe for a free trial.
-<br><br>![webMethods.io App Switcher My Cloud](/guides/images/users-guide/webMethods.io/wmio-appswitcher-mycloud.png)
+<br><br>![webMethods.io App Switcher My Cloud](/images/users-guide/webMethods.io/wmio-appswitcher-mycloud.png)
 
 ### Examples
 
@@ -29,10 +29,10 @@ Integrations in webmethods.io are called "workflows". A workflow is a connection
 
 The example workflow below is triggered by an alarm in Cumulocity and creates a ticket in Zendesk and sends an SMS message.
 
-![webMethods.io Example Workflow](/guides/images/users-guide/webMethods.io/wmio-example1.png)
+![webMethods.io Example Workflow](/images/users-guide/webMethods.io/wmio-example1.png)
 
 WebMethods.io also provides pre-configured workflows which are called "recipes".
 
-![webMethods.io Example Recipe](/guides/images/users-guide/webMethods.io/wmio-recipe-salesforce.png)
+![webMethods.io Example Recipe](/images/users-guide/webMethods.io/wmio-recipe-salesforce.png)
 
 More examples and technical guides can be found on the Software AG TECHcommunity website [https://techcommunity.softwareag.com/](https://techcommunity.softwareag.com/) in the **Tips, Tricks and Code** section.

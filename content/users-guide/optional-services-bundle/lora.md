@@ -14,7 +14,7 @@ Cumulocity can interface with LoRa devices through Actility's ThingPark Wireless
 
 The following illustration gives an overview of the Cumulocity LoRa Actility integration.
 
-![Cumulocity LoRa Actility integration](/guides/images/users-guide/actility/Cumulocity-LoRa-Actility-integration.png)
+![Cumulocity LoRa Actility integration](/images/users-guide/actility/Cumulocity-LoRa-Actility-integration.png)
 
 The following sections describe how to:
 
@@ -46,7 +46,7 @@ Enter the following information:
 Do not use the same ThingPark login (username and password) for other tenants. 
 The profile ID, username and password are used to retrieve an access token to send further requests to the ThingPark platform. It is possible to renew the access token by replacing the account credentials.
 
-![Setting provider credentials](/guides/images/users-guide/actility/admin-settings-connectivity-lora.png)
+![Setting provider credentials](/images/users-guide/actility/admin-settings-connectivity-lora.png)
 
 Click **Save**. If everything is okay, there will be a message "Credentials successfully saved".
 
@@ -56,7 +56,7 @@ In order to replace your credentials, click **Replace credentials**.
 
 Enter your profile ID, username, password and application EUI (for details on profile ID and application EUI see [Creating new account credentials](#create-new-credentials).
 
-![Replace credentials](/guides/images/users-guide/actility/admin-settings-connectivity-lorareplace.png)
+![Replace credentials](/images/users-guide/actility/admin-settings-connectivity-lorareplace.png)
 
 Click **Save**. Your old credentials will now be replaced with the new ones.
 
@@ -77,7 +77,7 @@ In the **Device protocols** page, click **Import**.
 
 Select the predefined device type, for example "LoRaWAN Demonstrator" or upload from a file. Click **Import**.
 
-![Import device protocol](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-import.png)
+![Import device protocol](/images/users-guide/actility/devmgmt-devicetypes-protocols-import.png)
 
 Alternatively, you may also load the device protocol from a file and import it.
 
@@ -85,7 +85,7 @@ Alternatively, you may also load the device protocol from a file and import it.
 
 In the **Device protocols** page, click **New device protocol** in the top menu bar. The following window will open:
 
-![Create new LoRa protocol](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-loranew.png)
+![Create new LoRa protocol](/images/users-guide/actility/devmgmt-devicetypes-protocols-loranew.png)
 
 Select **LoRa** as the device protocol type, provide a name for it and click **Create**.
  
@@ -98,21 +98,21 @@ Select the way the message type is encoded in the **Source** dropdown box:
 
 In the following example payload structure, the first byte indicates the message type source (as highlighted).
 
-<img src="/guides/images/users-guide/actility/payload-example1.png" alt="Example payload: message type source" style="max-width: 100%">
+<img src="/images/users-guide/actility/payload-example1.png" alt="Example payload: message type source" style="max-width: 100%">
 
 In the user interface you can enter this type of message type source information as follows: In the **Start bit** field, indicate where the message type information starts in the payload and in the **Number of bits** field, indicate how long this information is, for example start bit = "0" and number of bits = "8".
 
-![LoRa protocol payload](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-lorapayload.png)
+![LoRa protocol payload](/images/users-guide/actility/devmgmt-devicetypes-protocols-lorapayload.png)
 
 Click **Add value** to create the value configuration. 
 
-![LoRa protocol add value](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-addvalue.png)
+![LoRa protocol add value](/images/users-guide/actility/devmgmt-devicetypes-protocols-addvalue.png)
 
 In the upcoming window, configure the relevant values as shown in this example. 
 
-![LoRa protocol add new value](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-loranewvalue.png)
+![LoRa protocol add new value](/images/users-guide/actility/devmgmt-devicetypes-protocols-loranewvalue.png)
 
-![LoRa protocol add new value](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-loranewvalue2.png)
+![LoRa protocol add new value](/images/users-guide/actility/devmgmt-devicetypes-protocols-loranewvalue2.png)
 
 The value configuration maps the value in the payload of a message type to the Cumulocity data. 
 
@@ -120,9 +120,9 @@ Under **Message type**, configure the **Message ID** according to your device me
 
 In this example payload structure the message ID is "1".
 
-<img src="/guides/images/users-guide/actility/payload-example2.png" alt="Example payload: message type source" style="max-width: 100%">
+<img src="/images/users-guide/actility/payload-example2.png" alt="Example payload: message type source" style="max-width: 100%">
 
-![LoRa bits](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-loraid.png)
+![LoRa bits](/images/users-guide/actility/devmgmt-devicetypes-protocols-loraid.png)
 
 Under **General**, specify a name for the value and the category under which it will be displayed in the values list. The associated name for this value will be displayed under the **Display category** given.
 
@@ -130,9 +130,9 @@ Under **Value selection**, define from where the value should be extracted. In o
 
 In this example the "Channel 1 Type" information starts in byte 2 (i.e. start bit = "16") and is 1 byte long (i.e. number of bits = "8").
 
-<img src="/guides/images/users-guide/actility/payload-example3.png" alt="Example payload: value selection" style="max-width: 100%">
+<img src="/images/users-guide/actility/payload-example3.png" alt="Example payload: value selection" style="max-width: 100%">
 
-![LoRa bits](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-lorabits.png)
+![LoRa bits](/images/users-guide/actility/devmgmt-devicetypes-protocols-lorabits.png)
 
 The hexadecimal value is converted to a decimal number and afterwards a "value normalisation" is applied.
 
@@ -162,7 +162,7 @@ You can also have a nested structure with several values within a measurement, e
 
 Click **OK** to add the values to your device protocol. 
 
-![Value configurations of created device protocol](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-loraprotocol.png)
+![Value configurations of created device protocol](/images/users-guide/actility/devmgmt-devicetypes-protocols-loraprotocol.png)
 
 After clicking **Save**, your device protocol is created with the values you defined.
 
@@ -170,9 +170,9 @@ After clicking **Save**, your device protocol is created with the values you def
 
 The following image shows an example for a message which sends a measurement when the battery level changes. 
 
-![Battery level changes example](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-battery.png)
+![Battery level changes example](/images/users-guide/actility/devmgmt-devicetypes-protocols-battery.png)
 
-![Battery level changes example](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-battery2.png)
+![Battery level changes example](/images/users-guide/actility/devmgmt-devicetypes-protocols-battery2.png)
 
 **<a name="nested-structure-example"></a>Example with nested structure**
 
@@ -180,13 +180,13 @@ The following image shows an example of a nested structure for a device protocol
 
 The message ID should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the **Managed object fragment** field and create a new value for each: longitude and latitude. 
 
-![Value creation: Longitude-nested](/guides/images/users-guide/actility/lora-protocols-lng.png)
+![Value creation: Longitude-nested](/images/users-guide/actility/lora-protocols-lng.png)
 
-![Value creation: Latitude-nested](/guides/images/users-guide/actility/lora-protocols-lat.png)
+![Value creation: Latitude-nested](/images/users-guide/actility/lora-protocols-lat.png)
 
 This will be the result: 
 
-![Value configuration in detail: nested structure](/guides/images/users-guide/actility/devmgmt-devicetypes-protocols-gpsexample.png)
+![Value configuration in detail: nested structure](/images/users-guide/actility/devmgmt-devicetypes-protocols-gpsexample.png)
 
 ### <a name="register-device"></a>Registering LoRa devices
 
@@ -194,7 +194,7 @@ To register a LoRa device, navigate to the Device Management application and cli
 
 In the upcoming window, click **Custom device registration** and select **LoRa**:
 
-![Register devices](/guides/images/users-guide/sigfox/sigfox-registration.png)
+![Register devices](/images/users-guide/sigfox/sigfox-registration.png)
 
 Cumulocity fully supports the LoRa device provisioning with Over-the-Air Activation (OTAA) which is the preferred and most secure way to connect with the LoRa network.
 If Activation by Personalization (ABP) is required to be used, refer to the [LoRa device registration with ABP](#device-registration-with-abp-activation) section.
@@ -208,7 +208,7 @@ In the next window fill in the required information:
 JOIN communication. You can find this key on the device itself.
 - **Connectivity plan**: Select the appropriate connectivity plan from the dropdown list.
 
-![Register devices](/guides/images/users-guide/actility/lora-registration.png)
+![Register devices](/images/users-guide/actility/lora-registration.png)
 
 Click **Next** to submit the device registration request and create the device.
 
@@ -216,13 +216,13 @@ You can verify that the device is really connected by checking that events are a
 
 The provision status is shown under **Device data** in the **Info** tab of the device.
 
-![Device data](/guides/images/users-guide/actility/devmgmt-devices-devicedata.png)
+![Device data](/images/users-guide/actility/devmgmt-devices-devicedata.png)
 
 For more information on viewing and managing your connected devices, also refer to [Device Management](/guides/users-guide/device-management).
 
 #### <a name="device-registration-process"></a>LoRa device registration process
 
-<img src="/guides/images/users-guide/actility/lora_device_registration_process.png" style="max-width: 60%">
+<img src="/images/users-guide/actility/lora_device_registration_process.png" style="max-width: 60%">
 
 A device is created based on the above workflow. 
 
@@ -248,7 +248,7 @@ You can deprovision a LoRa device in the ThingPark platform. This means that the
 
 To deprovision a device, navigate to the respective device in the Device Management application under **All devices**. Click **More** in the top right and select **Deprovision device**. 
 
-![Deprovision device](/guides/images/users-guide/actility/lora-devices-deprovision.png)
+![Deprovision device](/images/users-guide/actility/lora-devices-deprovision.png)
 
 After confirming the deprovisioning, the device will be deprovisioned in ThingPark.
 
@@ -261,13 +261,13 @@ In order to send an operation, navigate to the device you want to send an operat
 
 In the following screenshot you can find some examples of a device protocol's predefined commands and their format.
 
-![Predefined shell commands](/guides/images/users-guide/actility/lora-devices-predefinedshell.png)
+![Predefined shell commands](/images/users-guide/actility/lora-devices-predefinedshell.png)
 
 Enter the shell command or view/edit the predefined command in the **>_Command** field. 
 
 If you enter the command without defining a port, it will be sent to the default target port (i.e. 1) of the device. If you enter the command and define a port (format "command:port"), it will be sent to the specified target port instead of the default port. 
 
-![Port configuration](/guides/images/users-guide/actility/lora-devices-port.png)
+![Port configuration](/images/users-guide/actility/lora-devices-port.png)
 
 Click **Execute**. The operation will be sent to the device. The timing depends on Actility ThingPark.
 
@@ -277,7 +277,7 @@ The status of the operation is set to SUCCESSFUL when the operation has successf
 
 The ThingPark API is monitored and if it is not reachable, an alarm is created to notify all subscribed tenants using this feature. The alarm is cleared right after the ThingPark API is reachable again. 
 
-<img src="/guides/images/users-guide/actility/thingpark-api-monitor-alarm.png" alt="ThingPark API monitoring alarm" style="max-width: 100%">
+<img src="/images/users-guide/actility/thingpark-api-monitor-alarm.png" alt="ThingPark API monitoring alarm" style="max-width: 100%">
 
 ### <a name="lora-troubleshooting"></a> Troubleshooting
 
@@ -287,7 +287,7 @@ The ThingPark API is monitored and if it is not reachable, an alarm is created t
 
 This warning message shows up if a provided profile ID, username or password is invalid.
 
-<img src="/guides/images/users-guide/actility/lora-connectivity-invalid-credentials.png" alt="Account credentials" style="max-width: 100%">
+<img src="/images/users-guide/actility/lora-connectivity-invalid-credentials.png" alt="Account credentials" style="max-width: 100%">
 
 To resolve this, provide correct credentials and try again.
 
@@ -297,7 +297,7 @@ To resolve this, provide correct credentials and try again.
 
 This warning message shows up when there already exists a provisioned device in ThingPark with the same device EUI used for device registration and the validation comparing those devices based on application EUI (for OTAA activation) and device profile has failed.
 
-<img src="/guides/images/users-guide/actility/lora-device-registration-forbidden-device.png" alt="Device registration failure for comparison validation" style="max-width: 100%">
+<img src="/images/users-guide/actility/lora-device-registration-forbidden-device.png" alt="Device registration failure for comparison validation" style="max-width: 100%">
 
 To resolve this, provide the correct application EUI from [Connectivity](#configure-credentials) application and device profile and try again.
 
@@ -305,7 +305,7 @@ To resolve this, provide the correct application EUI from [Connectivity](#config
 
 This warning message shows up when there are no credentials set up for the ThingPark account.
 
-<img src="/guides/images/users-guide/actility/lora-device-registration-no-credentials.png" alt="Device registration failure without credentials" style="max-width: 100%">
+<img src="/images/users-guide/actility/lora-device-registration-no-credentials.png" alt="Device registration failure without credentials" style="max-width: 100%">
 
 To resolve this, refer to [Configure ThingPark credentials](#configure-credentials).
 
@@ -314,7 +314,7 @@ To resolve this, refer to [Configure ThingPark credentials](#configure-credentia
 This warning message shows up when the tenant's access token to Thingpark becomes invalid.
 Invalidation of the token might happen when the same ThingPark credentials are used for another tenant.
 
-<img src="/guides/images/users-guide/actility/lora-device-registration-invalidated-token.png" alt="Device registration failure with invalidated token" style="max-width: 100%">
+<img src="/images/users-guide/actility/lora-device-registration-invalidated-token.png" alt="Device registration failure with invalidated token" style="max-width: 100%">
 
 This issue can be solved by reconfiguring the ThingPark credentials to renew the access token. Refer to [configure ThingPark credentials](#configure-credentials) for reconfiguration of the credentials.
  
@@ -322,7 +322,7 @@ This issue can be solved by reconfiguring the ThingPark credentials to renew the
 
 This warning message shows up when no LoRa device protocol exists to be used for device registration.
 
-<img src="/guides/images/users-guide/actility/lora-device-registration-no-device-type.png" alt="No device protocol given for LoRa" style="max-width: 100%">
+<img src="/images/users-guide/actility/lora-device-registration-no-device-type.png" alt="No device protocol given for LoRa" style="max-width: 100%">
 
 To resolve this, configure at least one device protocol using [Device database](#create-device-types).
 
@@ -330,6 +330,6 @@ To resolve this, configure at least one device protocol using [Device database](
 
 This warning message shows up when the connectivity plan in ThingPark has reached the limit for the device count.
 
-<img src="/guides/images/users-guide/actility/lora-device-registration-no-free-slots.png" alt="No free slots by device registration" style="max-width: 100%">
+<img src="/images/users-guide/actility/lora-device-registration-no-free-slots.png" alt="No free slots by device registration" style="max-width: 100%">
 
 To resolve this, either contact ThingPark on the device quota limits for your connectivity plans or remove unused devices from ThingPark and retry registering the device in Cumulocity.

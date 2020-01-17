@@ -76,7 +76,7 @@ Once Edge VM is started, you need to run the script *post_installation.sh* to co
 
 Post installation should only be run after the platform initialization is successful which can be checked by running below REST API: 
 
-<img src="/guides/images/edge/edge-check-platform.png" name="Check platform initialization"/> 
+<img src="/images/edge/edge-check-platform.png" name="Check platform initialization"/> 
 
 Usually the platform comes up within 2 minutes. 
 
@@ -284,7 +284,7 @@ So as a first step you need to carry out the following prior to selecting option
  
 1. Shutdown the VM.
 
-2. Edit the VM and on the **Virtual Hardware** tab increase the disk space of **Hard disk 2** to your needs.<br><img src="/guides/images/edge/edge-configuration-edit.png" name="Edit VMware"/> 
+2. Edit the VM and on the **Virtual Hardware** tab increase the disk space of **Hard disk 2** to your needs.<br><img src="/images/edge/edge-configuration-edit.png" name="Edit VMware"/> 
 
 3. Start the VM and run the *post_installation.sh* script.
 

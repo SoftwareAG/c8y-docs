@@ -6,7 +6,7 @@ layout: redirect
 
 Before we really get started, we need a Cumulocity account. Go to <https://cumulocity.com> and apply for a free trial. Click **Try for free** on the top-right corner. After signing-up and logging to your tenant, you can find the device registration page in the Device Management application. Later we will show how you may register a device in Cumulocity using the library.
 
-![Cumulocity Registration Page](/guides/images/cpp/img/registerd.png)
+![Cumulocity Registration Page](/images/cpp/img/registerd.png)
 
 Without any further ado, let's write the customary *Hello world* example. Create a *main.cc* file with the following code:
 
@@ -56,12 +56,12 @@ Hello world of Cumulocity!
 
 Type the `deviceID` into the text field in your registration page as shown in the image below.
 
-![Cumulocity Registration Page](/guides/images/cpp/img/register-deviceID.png)
+![Cumulocity Registration Page](/images/cpp/img/register-deviceID.png)
 
 Click **Next** to continue with the registration.
 After the program has run, click **Accept** and your device will be registered and shown in your tenant.
 
-![Cumulocity Registration Page](/guides/images/cpp/img/device-pending.png)
+![Cumulocity Registration Page](/images/cpp/img/device-pending.png)
 
 As illustrated previously, the program will print to the standard output *Hello world of Cumulocity!* and then exit. Voila! That's all we need to register a device to Cumulocity.
 
@@ -73,7 +73,7 @@ The obtained device credential is stored in the folder */tmp/helloc8y* as define
 
 Device integration is a bit more complex as illustrated in the flow diagram below. Refer to [Device SDK for REST > Device integration](/guides/device-sdk/rest#device-integration) for a detailed explanation. **Steps 1**, **2** and **3** are specific to the SmartREST protocol as SmartREST requires predefined templates, see [Using the REST interface > Using SmartREST](/guides/microservice-sdk/rest#smartrest) in the Microservice SDK guide and the [SmartREST reference](http://cumulocity.com/guides/reference/smartrest/) in the Reference guide for more information. **Step 4** checks if the device is already stored in Cumulocity's database and only creates it when it's not found. **Steps 6** and **7** get the ID of the device from the Cumulocity's database. **Step 8** sets the Cumulocity ID as an alias for the device ID, so that the device can find its Cumulocity ID next time by querying with its device ID.
 
-![Device integration flowchart](/guides/images/cpp/img/integrate.png)
+![Device integration flowchart](/images/cpp/img/integrate.png)
 
 The code snippet below shows the required API interface by `SrAgent` when implementing your own integrate process. Basically, you need to subclass the pure virtual class `SrIntegrate` and implement its virtual function `integrate` with your particular integrate process. This is a callback function, which will be called by `SrAgent` when you call the `integrate` method of the `SrAgent`. By convention, the function shall return 0 for success, and a non-0 value for failure.
 
@@ -186,7 +186,7 @@ int main ()
 
 After running this example, you will see a device named *HelloC8Y-Agent* in the devices list under **Devices** > **All devices** in the Device Management application.
 
-![Created device in Cumulocity after integration process](/guides/images/cpp/img/all-devices.png)
+![Created device in Cumulocity after integration process](/images/cpp/img/all-devices.png)
 
 ### Sending measurements
 
@@ -296,7 +296,7 @@ In the `main` function, we register the `RestartHandler` for SmartREST template 
 Now run the program and go to your Cumulocity tenant, execute a restart operation as shown in the image below.
 Afterwards, you should see the message printed in the standard output `cout` and the operation status set to SUCCESSFUL in your control tab.
 
-![Execute a restart operation](/guides/images/cpp/img/restarted-device.png)
+![Execute a restart operation](/images/cpp/img/restarted-device.png)
 
 ### Storing SmartREST templates in a file
 

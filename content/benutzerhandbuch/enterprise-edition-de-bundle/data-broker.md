@@ -30,7 +30,7 @@ Ein Datenkonnektor beschreibt die Daten, die Sie zu einem Zielmandanten senden m
 
 Auf der Seite **Datenkonnektor** können Sie bestehende Datenkonnektoren verwalten und neue anlegen. Klicken Sie **Datenkonnektor**, um eine Liste mit allen aktuell definierten Datenkonnektoren mit ihrem jeweiligen Status anzuzeigen.
 
-![Datenkonnektor](/guides/images/benutzerhandbuch/ee-data-connector.png)
+![Datenkonnektor](/images/benutzerhandbuch/ee-data-connector.png)
 
 Für jeden Datenkonnektor wird die folgenden Information bereitgestellt:
 
@@ -50,7 +50,7 @@ Verwenden Sie den Regler, um das Weiterleiten von Daten an den Zielmandanten zu 
 
 Klicken Sie **Datenkonnektor hinzufügen** in der oberen Menüleiste, um einen neuen Datenkonnektor zu erstellen.
 
-![Konnektor bearbeiten](/guides/images/benutzerhandbuch/ee-data-connector-add.png)
+![Konnektor bearbeiten](/images/benutzerhandbuch/ee-data-connector-add.png)
 
 Stellen Sie folgende Informationen bereit, um einen Datenkonnektor zu bearbeiten:
 
@@ -190,7 +190,7 @@ Wenn Sie den Datenkonnektor konfiguriert haben, klicken Sie **Speichern**, um di
 
 Nach dem Speichern wird ein Sicherheitscode unter der Konfiguration angezeigt. Dieser Sicherheitscode verhindert unbeabsichtigtes Weiterleiten von Daten. Sie müssen diesen Sicherheitscode getrennt einem Benutzer mit Administrationsrechten für den Zielmandanten mitteilen. Über das Symbol neben dem Sicherheitscode können Sie diesen in Ihr Clipboard kopieren.
 
-![Sicherheitscode](/guides/images/users-guide/securitycode.png)
+![Sicherheitscode](/images/users-guide/securitycode.png)
 
 ### <a name="data-broker-subscriptions"></a>Datenabonnements
 
@@ -198,7 +198,7 @@ Auf der Seite **Datenabonnements** können Sie bestehende Datenabonnements verwa
 
 Klicken Sie **Datenabonnements**, um eine Liste mit allen aktuell zu Ihrem Mandanten weitergeleiteten Daten anzuzeigen.
 
-![Datenabonnements](/guides/images/benutzerhandbuch/ee-data-subscription.png)
+![Datenabonnements](/images/benutzerhandbuch/ee-data-subscription.png)
 
 Für jedes Abonnement wird der Name, der Zielmandant und der Status (aktiviert oder deaktiviert) auf einer Karte bereitgestellt.
 
@@ -215,7 +215,7 @@ Um das Weiterleiten von Daten ganz zu beenden und den Datenkonnektor zu entferne
 
 Navigieren Sie nun zur Device Management- oder Cockpit-Anwendung. Dort gibt es eine neue "virtuelle Gruppe" mit einem speziellen Symbol (siehe Abbildung unten), die die weitergeleiteten Geräte anzeigt. Diese Gruppe hat denselben Namen wie das Abonnement. Geräte werden auf der Empfängerseite verzögert erstellt, sobald sie, nach Einrichten eines aktiven Abonnements, das erste mal Daten senden.
 
-![Data Broker-Gruppe in Cockpit-Anwendung](/guides/images/benutzerhandbuch/ee-data-broker-group.png)
+![Data Broker-Gruppe in Cockpit-Anwendung](/images/benutzerhandbuch/ee-data-broker-group.png)
 
 ### <a name="data-broker-troubleshooting"></a> Fehlerbehebung
 

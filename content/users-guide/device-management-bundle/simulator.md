@@ -27,7 +27,7 @@ A message is defined by choosing a message template (like sending a temperature)
 
 Click **Simulators** in the **Devices** menu in the navigator to open the **Simulators** page.
 
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-simulator.png" alt="Simulator page">
+<img src="/images/users-guide/DeviceManagement/devmgmt-simulator.png" alt="Simulator page">
 
 All simulators which you can access will be listed here. 
 
@@ -39,7 +39,7 @@ All simulators which you can access will be listed here.
 4. Select the number of instances for this simulator (up to ten).
 5. Click **Create**.
 
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-simulator-add.png" alt="Create simulator">
+<img src="/images/users-guide/DeviceManagement/devmgmt-simulator-add.png" alt="Create simulator">
 
 The simulator will be created and added to the list.
 
@@ -71,7 +71,7 @@ For each simulator, you can create instructions specifying what the simulator is
 
 Instructions can be viewed and edited on the **Instructions** tab of the simulator.
 
-![Add Instructions](/guides/images/users-guide/DeviceManagement/devmgmt-simulator-instructions.png)
+![Add Instructions](/images/users-guide/DeviceManagement/devmgmt-simulator-instructions.png)
 
 **Examples**
 
@@ -79,14 +79,14 @@ The simulator presets already contain sample instructions. For example, the "Tem
 
 The panel on the right changes according to the type of instruction selected on the left.
 
-![Fragment](/guides/images/users-guide/DeviceManagement/devmgmt-simulator-fragment.png)
+![Fragment](/images/users-guide/DeviceManagement/devmgmt-simulator-fragment.png)
 
 The measurement instruction refers to a fragment. Fragments are used to identify capabilities of a managed object. Find more details about fragments in  
 [Sensor Library](/guides/reference/sensor-library/) in the Reference guide. 
 
 The "Sleep" instruction requires one value for its duration in seconds. 
 
-![Sleep](/guides/images/users-guide/DeviceManagement/devmgmt-simulator-sleep.png)
+![Sleep](/images/users-guide/DeviceManagement/devmgmt-simulator-sleep.png)
 
 #### To add an instruction
 
@@ -115,7 +115,7 @@ The instruction will be removed from the simulator.
 
 In the **Supported operations** tab of a simulator you can find specific operations like configurations or software/firmware updates.
 
-![Supported operations](/guides/images/users-guide/DeviceManagement/devmgmt-simulator-supported-operations.png)
+![Supported operations](/images/users-guide/DeviceManagement/devmgmt-simulator-supported-operations.png)
 
 Click the toggle to turn the respective operation on or off.
 
@@ -131,4 +131,4 @@ The custom operation will be added to the operation list.
 
 The **Alarm** tab of a simulator displays alarms related to the simulator itself, not related to the simulated device, i.e. if the simulator itself does not work correctly. See [Working with alarms](#alarms) for information on alarms. 
 
-![Alarms](/guides/images/users-guide/DeviceManagement/devmgmt-simulator-alarm.png)
+![Alarms](/images/users-guide/DeviceManagement/devmgmt-simulator-alarm.png)

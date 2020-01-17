@@ -16,5 +16,5 @@ Cumulocity provides extensive device management for fully certified devices. Thi
 
 The level of depth in device management may depend on device features. (E.g., if a device does not support remote firmware upgrade, it will also not be available through Cumulocity.) For interfacing devices not yet certified with Cumulocity, the [Device management library](/guides/reference/device-management) and the [Device SDK guide](/guides/device-sdk/rest#device-integration) is publicly available.
 
-![Device Management](/guides/images/users-guide/DeviceManagement/devmgmt-devices-info.png)
+![Device Management](/images/users-guide/DeviceManagement/devmgmt-devices-info.png)
 

@@ -8,7 +8,7 @@ Einige Kontoeinstellungen können vom Benutzer geändert werden.
 
 Klicken Sie auf die **Benutzer**-Schaltfläche rechts in der oberen Leiste und wählen Sie im Kontextmenü **Benutzereinstellungen**.
 
-<img src="/guides/images/benutzerhandbuch/Overview_UserSettings.png" name="Benutzereinstellungen" style="width:50%;"/>
+<img src="/images/benutzerhandbuch/Overview_UserSettings.png" name="Benutzereinstellungen" style="width:50%;"/>
 
 Zusätzlich zum Ändern von E-Mail-Adresse, Namen und Telefonnummer, die für Ihr Konto hinterlegt sind, können Sie die Sprache der Benutzeroberfläche wählen.
 

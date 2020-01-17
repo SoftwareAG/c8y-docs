@@ -11,4 +11,4 @@ It also adapts itself to the web browser that you use. For example, if you use a
 
 Through the [Sensor library](/guides/reference/sensor-library), common sensor and control types are rendered  correctly regardless of the device that produces the sensor data.
 
-![Dashboard](/guides/images/users-guide/cockpit/cockpit-dataexplorer.png)
+![Dashboard](/images/users-guide/cockpit/cockpit-dataexplorer.png)

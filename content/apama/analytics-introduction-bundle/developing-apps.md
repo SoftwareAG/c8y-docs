@@ -25,7 +25,7 @@ Open the application switcher and click the icon for the **Apama EPL Apps** appl
 
 When you invoke Apama EPL Apps, the EPL application manager is shown first, listing any existing EPL applications. Each application is shown as a card. You can add new EPL applications and manage existing EPL applications from here.
 
-![Apama EPL Apps](/guides/images/apama/apama-epl-apps-cards.png)
+![Apama EPL Apps](/images/apama/apama-epl-apps-cards.png)
 
 <!--we'll need an up-to-date screenshot later, with the correct icon at the top, some nice names and descriptions on the cards, and at least one card showing an error--> 
 
@@ -51,7 +51,7 @@ Click **New EPL app** in the top menu bar. Give the application a unique name. Y
 
 The EPL editor is shown next. The EPL code for the new application already contains the typical basic event definitions and utilities that are required for working with Cumulocity IoT. You can adapt them as required for your application. Consult the documentation and samples for more details.
 
-![EPL editor](/guides/images/apama/apama-epl-apps-editor.png)
+![EPL editor](/images/apama/apama-epl-apps-editor.png)
 
 <!--we'll need an up-to-date screenshot later, with the correct icon at the top, and with appropriate content in the editor--> 
 
@@ -67,7 +67,7 @@ Keep the following in mind while creating (or importing) an EPL application: Whe
 
 Click **X** in the top menu bar to leave the EPL editor and thus to return to the list of EPL applications.
 
-<!--I wanted to use ""/guides/images/apama/apama-epl-apps-exit-button.png", but it looks like it's not possible to define inline images. This is shown in a line of its own. So I'm using the bold X instead.-->
+<!--I wanted to use ""/images/apama/apama-epl-apps-exit-button.png", but it looks like it's not possible to define inline images. This is shown in a line of its own. So I'm using the bold X instead.-->
 
 > **Caution:** All unsaved changes are lost when you navigate to a different URL or close the browser window.
 

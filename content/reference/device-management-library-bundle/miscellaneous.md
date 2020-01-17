@@ -10,7 +10,7 @@ To restart a device, an operation with a "c8y\_Restart" fragment is sent. To ena
 
     "c8y_Restart": {}
 
-![Restart button](/guides/images/reference-guide/restartsupported.png)
+![Restart button](/images/reference-guide/restartsupported.png)
 
 #### <a name="communication_mode"></a>c8y\_CommunicationMode
 

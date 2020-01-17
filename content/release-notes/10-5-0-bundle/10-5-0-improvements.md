@@ -17,20 +17,20 @@ A new login mode **OAuth Internal** has been added. This login mode provides muc
 
 It is now possible to see the inbound API requests in the Home page. [MTM-25148]
 
-![Inbound API requests](/guides/images/release-notes/inbound-api-requests.png)
+![Inbound API requests](/images/release-notes/inbound-api-requests.png)
 
 Login alias validation in the users details page is now available. [MTM-26694]
 
 Improved error messages when uploading microservices. [MTM-25850]
 
-![Microservice Error Messages](/guides/images/release-notes/microservice-error-messages.png)
+![Microservice Error Messages](/images/release-notes/microservice-error-messages.png)
 
 
 #### Device Management
 
 The filters in the **Devices** > **All Devices** page can now be configured. Subsequently, created smart groups will contain these filters. [MTM-25909]
 
-![Configurable Columns](/guides/images/release-notes/configurable-columns.png) 
+![Configurable Columns](/images/release-notes/configurable-columns.png) 
 
 Devices shell now supports commands for Machinelink devices. [MTM-26944]
  
@@ -47,7 +47,7 @@ For details, see the [How-to recipes](/guides/web/how-to/) in the Web SDK guide.
 
 [UI] A new **Legal notices** item has been added to the right drawer menu. [MTM-24734]
 
-![Legal notices](/guides/images/release-notes/legal-notices.png)
+![Legal notices](/images/release-notes/legal-notices.png)
 
 [CEP] Improved rendering of error messages in the CEL editor in the **Event processing** page on mouse hover. [MTM-25289]
 

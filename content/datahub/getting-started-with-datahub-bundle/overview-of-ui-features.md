@@ -13,4 +13,4 @@ DataHub Console provides the UI you use for managing and monitoring your offload
 | Offloading | Configure and manage your offloading pipelines
 | Status | View the latest job status of your offloading pipelines
 
-<img src="/guides/images/datahub-guide/datahub-home-page.png" alt="DataHub homepage.png"  style="max-width: 100%">
+<img src="/images/datahub-guide/datahub-home-page.png" alt="DataHub homepage.png"  style="max-width: 100%">

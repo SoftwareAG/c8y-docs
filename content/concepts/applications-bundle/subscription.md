@@ -10,11 +10,11 @@ Tenants can be subscribed to applications which have been deployed by their supe
 
 Granting access to subtenants and subscribing to applications is done in the Administration application. 
 
-![Application Subscription](/guides/images/users-guide/Administration/admin-subtenant-applications.png)
+![Application Subscription](/images/users-guide/Administration/admin-subtenant-applications.png)
 
 Tenants can also have their own application marketplace, which can be viewed in the **Own Applications** page in the Administration application.
 
-<img src="/guides/images/users-guide/Administration/admin-applications-own.png" alt="Own applications" style="max-width: 100%">
+<img src="/images/users-guide/Administration/admin-applications-own.png" alt="Own applications" style="max-width: 100%">
 
 Owned applications and granted applications can also be subscribed to the subtenants by the tenant.
 

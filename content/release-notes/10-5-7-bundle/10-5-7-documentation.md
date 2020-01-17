@@ -16,9 +16,9 @@ The Cumulocity IoT Sensor App documentation has been updated and improved, see [
 
 The webMethods.io Integration documentation has been enhanced, see [Optional services > webMethods.io Integration](/guides/users-guide/optional-services/#webMethods) in the User guide.
 
-A new chapter [OPC UA 2.0](/guides/users-guide/optional-services/opc-ua) has been added, which describes in detail the functionalities of the new OPC UA device gateway.
+A new chapter [OPC UA 2.0](/guides/users-guide/optional-services/#opc-ua) has been added, which describes in detail the functionalities of the new OPC UA device gateway.
 
-A new chapter [SNMP](/guides/users-guide/optional-services/snmp) has been added, which describes in detail the functionalities of the recently added SNMP agent.
+A new chapter [SNMP](/guides/users-guide/optional-services#snmp) has been added, which describes in detail the functionalities of the recently added SNMP agent.
 
 ### Device SDK guide: Device SDK for C++
 

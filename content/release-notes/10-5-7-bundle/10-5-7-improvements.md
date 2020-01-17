@@ -15,7 +15,7 @@ Usability in the **Logs** tab of subscribed applications has been enhanced.
 * The date specifying the time range can now be selected from a calendar and the theme can be selected through a toggle. [MTM-26441]
 * Moreover, an **Auto-refresh** button has been added. If enabled, the displayed logs automatically get updated every 10 seconds. [MTM-27531]
 
-![Microservice logging](/guides/images/Administration/admin-applications-logs.png)
+![Microservice logging](/guides/images/users-guide/Administration/admin-applications-logs.png)
 
 For details, see [Administration > Managing applications](/guides/users-guide/administration/managing-applications) in the User guide. 
 
@@ -38,7 +38,7 @@ For details, see [Administration > Two-factor authentication](/guides/users-guid
 **Tenant ID**
 
 Tenant ID information is now included in the dropdown user menu. [MTM-28565]
-<br><br>![User menu](/guides/images/Administration/administration-user-menu.png)
+<br><br>![User menu](/guides/images/users-guide/Overview/user-account-menu.png)
 
 
 ### OPCUA
@@ -55,7 +55,7 @@ The following functionalities are now available:
 * Addressing OPC UA nodes via URN
 * Largely extended support for mapping the OPC UA and Cumulocity information models
 
-For details, see [Optional services > OPC UA 2.0](/guides/users-guide/optional-services/opc-ua) in the User guide. 
+For details, see [Optional services > OPC UA 2.0](/guides/users-guide/optional-services/#opc-ua) in the User guide. 
 
 ### SNMP
 

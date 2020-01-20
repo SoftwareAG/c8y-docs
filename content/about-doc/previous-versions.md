@@ -50,7 +50,7 @@ The Markdown files are converted to HTML files by an application called "Hugo".
 	
 5. Open a browser and enter the following URL:
 
-		http://localhost:1313/guides/about
+		http://localhost:1313/guides/about-doc
 
 The documentation will show up.
 

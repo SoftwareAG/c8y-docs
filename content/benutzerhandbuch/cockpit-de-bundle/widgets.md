@@ -355,17 +355,3 @@ Das Widget "Tacho" visualisiert Datenpunkte in Form eines Tachos.
 
 Sie müssen mindestens einen Datenpunkt aktivieren, um das Widget "Tacho" zu erstellen.
 
-### Twitter-Nachrichten
-
-Das Widget "Twitter-Nachrichten" zeigt Tweets von dem in Twitter integrierten Timeline-Widget an.
-
-<img src="/images/benutzerhandbuch/cockpit/Cockpit_TwitterNewsWidget.png" name="Twitter news widget" style="width:50%;"/>
-
-**Konfigurierbare Parameter**
-
-|Feld|Beschreibung|
-|:---|:---|
-|Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
-|Twitter-Benutzername|Benutzername für das darzustellende Twitter-Konto.
-|Twitter-Widget-ID|ID für das Twitter-Widget. Die ID kann in den Widget-Einstellungen nachgesehen werden.
-|Optionen|Wahlweise kann die Darstellung einer Kopfzeile, Fußzeile, eines Rahmens oder eine transparente Darstellung aktiviert bzw. deaktiviert werden.

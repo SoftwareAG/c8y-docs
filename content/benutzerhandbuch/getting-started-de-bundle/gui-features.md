@@ -7,7 +7,7 @@ layout: default
 
 Die grundsätzliche Struktur, die in allen Cumulocity-Anwendungen vorhanden ist, umfasst die folgenden Bildschirmelemente:
 
-![Cumulocity application](/guides/images/benutzerhandbuch/overview-screen-elements.png)
+![Cumulocity application](/images/benutzerhandbuch/overview-screen-elements.png)
 
 <table>
 <col width="150">
@@ -32,7 +32,7 @@ Die grundsätzliche Struktur, die in allen Cumulocity-Anwendungen vorhanden ist,
 </tr>
 <tr>
 <td style="text-align:left"><strong>Obere Leiste</strong></td>
-<td style="text-align:left"><strong>Seitentitel</strong><br> Links in der oberen Leiste wird der Titel der aktiven Seite angezeigt, falls vorhanden. <br> <br><img src="/guides/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <strong>Suche-Schaltfläche</strong><br> Klicken Sie die <strong>Suche</strong>-Schaltfläche, um ein Textfeld für die Eingabe von Suchkriterien anzuzeigen. Weitere Informationen finden Sie unter <a href="#searching" class="no-ajaxy">Suchen</a>. Nicht immer verfügbar.<br><br> <img src="/guides/images/icons/plus-icon.png" alt="Plus" style="max-width:100%"> <strong>Plus-Schaltfläche</strong><br> Die meisten Seiten zeigen eine <strong>Plus</strong>-Schaltfläche in der oberen Leiste. Klicken Sie darauf, um ein Kontextmenü mit weiteren Funktionen zu öffnen. Das Kontextmenü wird dynamisch erzeugt, dass heißt, die angezeigten Inhalte sind abhängig von der aktiven Seite. <br><br><img src="/guides/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <strong>Schaltfläche Application Switcher</strong><br> Durch Klicken auf die Schaltfläche <strong>Application Switcher</strong> wird der <a href="#app-switcher" class="no-ajaxy">Application Switcher</a> geöffnet, der das schnelle Wechseln zwischen den verfügbaren Anwendungen ermöglicht. <br><br> <img src="/guides/images/icons/user-icon.png" alt="User" style="max-width:100%"> <strong>Benutzer-Schaltfläche</strong><br> Rechts neben dem Application Switcher befindet sich die <strong>Benutzer</strong>-Schaltfläche mit Ihrem Benutzernamen. Klicken Sie darauf, um ein Kontextmenü mit Befehlen zu Ihren Kontoeinstellungen zu öffnen. <br> <br>Je nach aktiver Anwendung und Seite sind weitere Schaltflächen und Informationen in der oberen Leiste verfügbar. </td>
+<td style="text-align:left"><strong>Seitentitel</strong><br> Links in der oberen Leiste wird der Titel der aktiven Seite angezeigt, falls vorhanden. <br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <strong>Suche-Schaltfläche</strong><br> Klicken Sie die <strong>Suche</strong>-Schaltfläche, um ein Textfeld für die Eingabe von Suchkriterien anzuzeigen. Weitere Informationen finden Sie unter <a href="#searching" class="no-ajaxy">Suchen</a>. Nicht immer verfügbar.<br><br> <img src="/images/icons/plus-icon.png" alt="Plus" style="max-width:100%"> <strong>Plus-Schaltfläche</strong><br> Die meisten Seiten zeigen eine <strong>Plus</strong>-Schaltfläche in der oberen Leiste. Klicken Sie darauf, um ein Kontextmenü mit weiteren Funktionen zu öffnen. Das Kontextmenü wird dynamisch erzeugt, dass heißt, die angezeigten Inhalte sind abhängig von der aktiven Seite. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <strong>Schaltfläche Application Switcher</strong><br> Durch Klicken auf die Schaltfläche <strong>Application Switcher</strong> wird der <a href="#app-switcher" class="no-ajaxy">Application Switcher</a> geöffnet, der das schnelle Wechseln zwischen den verfügbaren Anwendungen ermöglicht. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <strong>Benutzer-Schaltfläche</strong><br> Rechts neben dem Application Switcher befindet sich die <strong>Benutzer</strong>-Schaltfläche mit Ihrem Benutzernamen. Klicken Sie darauf, um ein Kontextmenü mit Befehlen zu Ihren Kontoeinstellungen zu öffnen. <br> <br>Je nach aktiver Anwendung und Seite sind weitere Schaltflächen und Informationen in der oberen Leiste verfügbar. </td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Obere Menüleiste</b></td>
@@ -47,7 +47,7 @@ Die grundsätzliche Struktur, die in allen Cumulocity-Anwendungen vorhanden ist,
 
 Auf kleineren Bildschirmen weicht das Layout geringfügig ab. Der Navigator ist verborgen und kann durch Klicken auf das Pfeilsymbol links oben aufgerufen werden. Nur die aktive Registerkarte wird angezeigt. Zum Umschalten zwischen Registerkarten klicken Sie auf den Pfeil an der Kopfzeile der Registerkarte und wählen Sie eine Registerkarte aus der Liste aus.
 
-<img src="/guides/images/benutzerhandbuch/overview-small-screen.png" alt="Layout on small devices" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/overview-small-screen.png" alt="Layout on small devices" style="max-width: 100%">
 
 > **Info:** Die Cumulocity-Anwendungen enthalten Tooltips, die angezeigt werden, wenn Sie mit dem Mauszeiger über ein Bildschirmelement fahren. Auf Geräten mit einem Touch-Screen werden diese Tooltips angezeigt, wenn Sie ein Bildschirmelement längere Zeit berühren.
 
@@ -55,13 +55,13 @@ Auf kleineren Bildschirmen weicht das Layout geringfügig ab. Der Navigator ist 
 
 Über den Application Switcher können Sie rasch zwischen verschiedenen Anwendungen wechseln. Klicken Sie auf die Schaltfläche **Application Switcher** rechts in der oberen Leiste, um eine Liste der Symbole für die Anwendungen anzuzeigen. 
 
-<img src="/guides/images/benutzerhandbuch/overview-application-switcher.png" alt="Application switcher" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/overview-application-switcher.png" alt="Application switcher" style="max-width: 100%">
 
-Der Application Switcher zeigt alle Cumulocity-Anwendungen an, auf die Sie momentan Zugriff haben. Dies können integrierte oder benutzerdefinierte abonnierte Anwendungen sowie [eigene Anwendungen](/guides/benutzerhandbuch/administration#own-applications) sein. Klicken Sie einfach auf das Symbol für die gewünschte Anwendung, um sie als aktive Anwendung zu öffnen.
+Der Application Switcher zeigt alle Cumulocity-Anwendungen an, auf die Sie momentan Zugriff haben. Dies können integrierte oder benutzerdefinierte abonnierte Anwendungen sowie [eigene Anwendungen](/benutzerhandbuch/administration#own-applications) sein. Klicken Sie einfach auf das Symbol für die gewünschte Anwendung, um sie als aktive Anwendung zu öffnen.
 
 Wenn Sie die SAG Cloud nutzen, werden im Application Switcher an erster Stelle weitere SAG Cloud-Anwendungen, gefolgt von Cumulocity-Anwendungen, angezeigt:
 
-<img src="/guides/images/benutzerhandbuch/overview-app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/overview-app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 100%">
 
 
 ### <a name="searching-and-filtering"></a>Such- und Filterfunktionalität

@@ -186,14 +186,14 @@ Navigate to the **Registration** page and click **Register device > General devi
 
 Click **Accept** to complete the registration.
 
-![Device Registration](/guides/images/users-guide/opcua/opcua-device-registration.png)
+![Device Registration](/images/users-guide/opcua/opcua-device-registration.png)
 
 ### Connecting the gateway to the server
 
 Next, establish a connection between the gateway and the OPC UA server. 
 
 1. In the **OPC UA server** tab of the respective gateway, click **Add server**. <br>
-![Add new server](/guides/images/users-guide/opcua/opcua-new-server.png)
+![Add new server](/images/users-guide/opcua/opcua-new-server.png)
 2. Use the **Server connection** toggle, to enable or disable the server connection. 
 3. Enter the **Server URL** which is used to establish a connection between the server and the gateway. 
 4. Enter the **Timeout value** in seconds. The timeout value is calculated for each request. If the timeout value is exceeded the request will be unsuccessful. 
@@ -235,30 +235,30 @@ The keystore can be create via the following Java keytool command:
 ```bash
 keytool -genkey -keyalg RSA -alias opcuauser -keystore keystore.jks -storepass passw0rd_a -validity 3600 -keysize 2048
 ```
-![terminal](/guides/images/users-guide/opcua/opcua-terminal.png)
+![terminal](/images/users-guide/opcua/opcua-terminal.png)
 
 The keystore can then be verified by using a tool like KeystoreExplorer. 
 
-![Keystore explorer](/guides/images/users-guide/opcua/opcua-keystore-explorer1.png)
+![Keystore explorer](/images/users-guide/opcua/opcua-keystore-explorer1.png)
 
 
-![Keystore explorer2](/guides/images/users-guide/opcua/opcua-keystore-explorer2.png)
+![Keystore explorer2](/images/users-guide/opcua/opcua-keystore-explorer2.png)
 
 The keystore can then be uploaded as binary in Cumulocity and it can be used in the server configuration.
 
-![Opcua Keystore](/guides/images/users-guide/opcua/opcua-keystore.png)
+![Opcua Keystore](/images/users-guide/opcua/opcua-keystore.png)
 
 ### Gateway device details
 
 In this section, only OPC UA specific information related to the tabs in the device details page will be explained. For more info on all tabs, see [Device Management > Device Details](/guides/users-guide/device-management/#device-details) in the User guide.
 
-![Gateway device details](/guides/images/users-guide/opcua/opcua-device-details.png)
+![Gateway device details](/images/users-guide/opcua/opcua-device-details.png)
 
 #### Child devices 
 
 All server connections are listed as child devices even if the servers are disconnected. To stop a server connection, either delete the server child device or disable/remove the connection from the **OPC UA server** tab.
 
-![Gateway child devices](/guides/images/users-guide/opcua/opcua-server-child-device.png)
+![Gateway child devices](/images/users-guide/opcua/opcua-server-child-device.png)
 
 #### Measurements
 
@@ -309,7 +309,7 @@ The Measurements tab provides visualization of data in the form of charts. In to
 </tbody>
 </table>
 
-![Gateway measurements tab](/guides/images/users-guide/opcua/opcua-gateway-memory.png)
+![Gateway measurements tab](/images/users-guide/opcua/opcua-gateway-memory.png)
 
 #### Alarms
 
@@ -319,13 +319,13 @@ The **Alarms** tab shows all alarms raised either in the gateway or in the serve
 - Gateway crash -  If the gateway crashes or is abruptly shut down a major alarm is raised.
 - No data arrived within interval - If the status interval check value in the OPC UA server configuration is exceeded a major alarm is raised.
 
-![Gateway alarms tab](/guides/images/users-guide/opcua/opcua-alarms.png)
+![Gateway alarms tab](/images/users-guide/opcua/opcua-alarms.png)
 
 #### Events
 
 The **Events** tab shows all events related to the gateway-server connection. Additionally, you can see when the gateway has started and when it ends. 
 
-![Gateway events tab](/guides/images/users-guide/opcua/opcua-events.png)
+![Gateway events tab](/images/users-guide/opcua/opcua-events.png)
 
 #### Address space
 
@@ -333,7 +333,7 @@ The **Address space** tab shows the attributes and references of the address spa
 
 The address space is automatically scanned when a connection between the gateway and the server is established. The duration of the scan depends on the size of the address space. The address space information is stored locally once it is scanned and then used by this applying process. If the address space information is not yet available, e.g. the address space has not been scanned, another scan will be triggered without synchronizing data into Cumulocity. Performing another address space operation will update the address space information.
 
-![Gateway events tab](/guides/images/users-guide/opcua/opcua-address.png)
+![Gateway events tab](/images/users-guide/opcua/opcua-address.png)
 
 ### Device protocols
 
@@ -343,7 +343,7 @@ The address space is automatically scanned when a connection between the gateway
 2. In the resulting dialog box, enter a name and an optional description for the device protocol.
 3. Optionally, a reference server can be selected. Selecting a reference server allows you to create device types based on the OPC UA model stored on an OPC UA server. This greatly simplifies the mapping process, as device types can be created based on OPC UA browse paths being actually present on the server.
 4. Click **Create**.<br>
-![Add new device protocol](/guides/images/users-guide/opcua/opcua-add-protocol.png)
+![Add new device protocol](/images/users-guide/opcua/opcua-add-protocol.png)
 
 	> **Info:** Selecting a reference server will require you to select a reference node.
 
@@ -361,7 +361,7 @@ The gateway has a scheduling job and after the variables are saved, the gateway 
 
 > **Info:** If no reference server was selected during the device protocol creation, the path should be given with a namespace URI representation. In the OPC UA server the index value can be taken from the namespace array. An example namespace URI representation for browse path “5:Counter1” would be: *http://www.prosysopc.com/OPCUA/SimulationNodes:Counter1*. Node id equal to “ns=5;s=Simulation” will have the following namespace representation *'nsu=http://www.prosysopc.com/OPCUA/SimulationNodes;s=Simulation*. In both examples the server’s namespace array, the 5th element has the value of “http://www.prosysopc.com/OPCUA/SimulationNodes”.
 
-![OPC UA device protocol](/guides/images/users-guide/opcua/opcua-device-protocol.png)
+![OPC UA device protocol](/images/users-guide/opcua/opcua-device-protocol.png)
 
 The functionalities that can be enabled are the following:
 
@@ -450,7 +450,7 @@ There are three data reporting mechanisms which can be applied to read all mappe
 - Cyclic Read - The gateway reads values from mapped nodes at specified interval rates in milliseconds. The minimum allowed rate is 50 milliseconds. 
 - Subscription - The sampling interval defines a time interval individually for each mapped node. This is the rate at which the server checks the data source for changes. If an absolute deadband filter is chosen, the value will contain the absolute change in a data value that will cause a notification to be generated. This parameter applies only to variables with any number data type. If percent deadband value is chosen, the value is defined as the percentage of the EU range. It applies only to analog items with a valid EU range property. This range is multiplied with the deadband value and is then compared to the actual value change in order to determine the need for a data change notification.
 
-![OPC UA device protocol](/guides/images/users-guide/opcua/opcua-data-reporting.png)
+![OPC UA device protocol](/images/users-guide/opcua/opcua-data-reporting.png)
 
 #### Applying constraints
 
@@ -463,7 +463,7 @@ The following constraints can be applied:
 - **Limit device type to servers with a certain fragment** - The device protocol will only be available to the servers which have the entered fragment.
 - **Limit device type to specific root nodes ID** - A list of “root” node IDs (from which your browsePath is defined) to which the device type should be applied. For example, if there is only one server and the device type is applied to two node IDs, two child devices of the server will be created. Note that if the device type variables do not exist in the root nodes, the device type will not be applied to the root node server.
 
-![OPC UA device protocol](/guides/images/users-guide/opcua/opcua-auto-constraints.png)
+![OPC UA device protocol](/images/users-guide/opcua/opcua-auto-constraints.png)
 
 ### Operations
 
@@ -837,7 +837,7 @@ Power of 5 is 25:
 
 #### Permission denied error when running the gateway JAR file on a Linux OS
 
-![Permission denied](/guides/images/users-guide/opcua/opcua-permission-denied-error.png)
+![Permission denied](/images/users-guide/opcua/opcua-permission-denied-error.png)
 
 If the following error appears,  add a baseDir property to the YAML file. For example:
 
@@ -854,10 +854,10 @@ This error appears if the provided baseUrl property in the YAML file is incorrec
 
 The following error appears if the indentation of the properties in the YAML file is incorrect.
 
-![Failed to load](/guides/images/users-guide/opcua/opcua-failed-to-load.png)
+![Failed to load](/images/users-guide/opcua/opcua-failed-to-load.png)
 
 #### java.net.BindException: Address already in use
 
-![Address in use](/guides/images/users-guide/opcua/opcua-address-in-use.png)
+![Address in use](/images/users-guide/opcua/opcua-address-in-use.png)
 
 If this error appears, a Java process is running in the background. To fix this issue, the process must be stopped/killed.

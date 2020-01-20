@@ -108,7 +108,7 @@ weight: 10 # to set the position in the page
 
 * Certified hardware kits and software libraries you can use to bring your remote assets into the cloud.
 * Device management, data visualization and remote control functionality through the web.
-* Rapid customization of the above through [real-time processing](/guides/concepts/realtime) and [Cumulocity applications](/guides/concepts/applications).
+* Rapid customization of the above through [real-time processing](/concepts/realtime) and [Cumulocity applications](/concepts/applications).
 * APIs for extending the existing functionality or interfacing Cumulocity with your other IT services such as ERP or CRM systems. Cumulocity can also host your HTML5 applications.
 […]
 ```
@@ -121,20 +121,6 @@ Keep all file names url friendly (lowercase, no special characters, and no empty
 
 To use the images in your pages, just add the relative path e.g `![image title](/images/<directory name>/<file name>)`.
 
-### 6. Add devices into device guides
-
-Device guides include a overview page with thumbnails of the devices and a filtering field.
-
-When adding a new device, make sure to include an image sized 350 x 350px and provide the path to it on the front matter:
-
-```yaml
----
-title: Adeunis LoRaWAN Demonstrator # device name
-layout: bundle # don't change
-image: '/guides/images/devices/device-list/adeunis_rf-lorawan.jpg' #must include the full url
-brand: Adeunis RF # brand or manufacturer
----
-```
 
 ## Redirects
 
@@ -152,6 +138,16 @@ aliases:
 # to cumulocity.com/guides/concepts/introduction
 ---
 ```
+
+## Deploying
+
+Cumulocity provides documentation for multiple releases, for that you'll have to create a release branch for every public release, e.g. `release/r10.5.0-GA`. When creating this type of branches you´ll have to take the following steps:
+- Create the branch following the same pattern: `release/r[version number]-GA`
+
+- Edit the `config.toml` file and append the version number to the base url, e.g.: `baseURL = "https://cumulocity.com/guides/10.5.0"`
+- Still on `config.toml` change the `guidesRedirect` to target the about page on the release, e.g.: `guidesRedirect = "https://cumulocity.com/guides/10.5.0/about-doc/intro-documentation/"`
+- Deploy using the jenkins task `Deploy-c8y-docs-manual-release` and provide the release version
+- Deploy the `default`branch to regenerate the version dropdown links
 
 ---
 © Cumulocity GmbH  2019 + All rights reserved.

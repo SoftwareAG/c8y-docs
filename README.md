@@ -139,7 +139,7 @@ aliases:
 ---
 ```
 
-## Deploying
+## Deploying to cumulocity.com/guides
 
 Cumulocity provides documentation for multiple releases, for that you'll have to create a release branch for every public release, e.g. `release/r10.5.0-GA`. When creating these branches follow the next steps:
 - Create the branch following the same pattern: `release/r[version number]-GA`

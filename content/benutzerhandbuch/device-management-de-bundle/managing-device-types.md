@@ -3,26 +3,59 @@ weight: 50
 title: Verwalten von Gerätetypen
 layout: redirect
 ---
+ 
+Um Daten aus verschiedenen Gerätetypen zu verarbeiten, verwendet Cumulocity sogenannte Geräteprotokolle, die in einer Datenbank gespeichert sind.
 
-Cumulocity verwendet Geräteprotokolle, um Daten von verschiedenen Gerätetypen zu verarbeiten. 
+Klicken Sie **Geräteprotokolle** im Menü **Gerätetypen** des Navigators.
 
-Klicken Sie **Geräteprotokolle** im Menü **Gerätetypen** im Navigator.
+Die Seite **Geräteprotokolle** zeigt eine Liste aller in Ihrem Konto verfügbaren Geräteprotokolle an.
 
-Die Seite G**eräteprotokolle** zeigt eine Liste aller in Ihrem Konto verfügbaren Geräteprotokolle an.
+![Device protocols](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-protocols.png)
 
-![Device Protocols](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-deviceprotocols.png)
+Die Geräteprotokoll-Liste zeigt die folgenden Informationen an:
 
-Die Geräteprotokoll-Liste zeigt die folgenden Information zu jedem Eintrag an:
-
-* den Geräteprotokolltypen (IMPACT, LWM2M)
-* den Geräteprotokollnamen 
+* den Geräteprotokolltypen (z. B. Modbus, CANOpen, LoRa, IMPACT)
+* den Gerätetypnamen 
 * die Anzahl der Ressourcen für das Gerät (auf der rechten Seite)
 
-Um ein neues Geräteprotokoll hinzuzufügen, klicken Sie **Geräteprotokoll hinzufügen** in der oberen Leiste. Detaillierte Informationen zum Hinzufügen eines Protokolls finden Sie in der Beschreibung des jeweiligen Gerätetyps, den Sie hinzufügen möchten:
+### So fügen Sie ein Geräteprotokoll hinzu
 
-* [IMPACT](/users-guide/optional-services#nokia-impact)
-* [LWM2M](/users-guide/optional-services#lwm2m)
+1. Klicken Sie **Geräteprotokoll hinzufügen** in der oberen Menüleiste. 
+	<br>![Add device protocol](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-protocol-add.png)
+2. Wählen Sie einen der verfügbaren Geräteprotokolltypen aus der Liste. 
+3. Geben Sie im darauf folgenden Dialog einen Namen und eine optionale Beschreibung für das Geräteprotokoll ein und klicken Sie **Erstellen**. 
+4. Geben Sie die Konfiguration für das Geräteprotokoll ein. Die Konfiguration des Geräteprotokolls hängt vom Protokolltypen ab. <br>
+Weitere Informationen zum Konfigurieren von Geräteprotokollen finden Sie in der Beschreibung des jeweiligen Gerätetyps, den Sie hinzufügen möchten, siehe [Optionale Services](/benutzerhandbuch/optional-services).
+5. Klicken Sie **Speichern**.
 
-Klicken Sie auf einen Eintrag, um diesen zu bearbeiten, oder öffnen Sie das Kontextmenü über das Menüsymbol und klicken Sie **Bearbeiten**. 
+Das Geräteprotokoll wird der Gerätedatenbank hinzugefügt.
 
-Um ein Geräteprotokoll zu löschen, klicken Sie **Löschen** im Kontextmenü.
+### So importieren Sie ein Geräteprotokoll
+
+Um ein Geräteprotokoll aus einem bestehenden Protokoll hinzuzufügen, gehen Sie folgendermaßen vor:
+
+1. Klicken Sie **Importieren** in der oberen Menüleiste.
+ <br>![Import device protocol](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-protocol-import.png)
+2. Wählen Sie das zu importierende Geräteprotokoll entweder aus einer Liste der vordefinierten Protokolle aus oder laden Sie es aus einer Datei, indem Sie zu dieser navigieren.
+3. Geben Sie einen Namen für das neue Protokoll ein und klicken Sie **Speichern**.
+
+Das Geräteprotokoll wird der Gerätedatenbank hinzugefügt.
+
+### So bearbeiten Sie ein Geräteprotokoll
+
+Zum Bearbeiten eines Geräteprotokolls klicken Sie einfach auf das Protokoll oder auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Bearbeiten**. 
+
+Weitere Informationen zu den Feldern finden Sie in der Beschreibung des jeweiligen Gerätetyps, siehe [Optionale Services](/benutzerhandbuch/optional-services).
+
+### So entfernen Sie ein Geräteprotokoll
+
+Zum Entfernen eines Geräteprotokolls klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Löschen**.
+
+Das Geräteprotokoll wird aus der Gerätedatenbank entfernt.
+
+### So exportieren Sie ein Geräteprotokoll
+
+Zum Exportieren eines Geräteprotokolls klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Exportieren**.
+
+Das Geräteprotokoll wird in Ihr Dateisystem exportiert.
+

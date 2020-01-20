@@ -3,82 +3,174 @@ weight: 60
 title: Verwalten von Gerätedaten
 layout: redirect
 ---
-
 ### <a name="software-repo"></a> Verwalten von Firmware und Software
 
 Mit dem Firmware-Repository und dem Software-Repository bietet Cumulocity die Möglichkeit, Referenz-Firmware bzw. -Software für Geräte zu verwalten.
 
-Die folgende Beschreibung bezieht sich exemplarisch auf Firmware, gilt aber analog auch für Geräte-Software.
+> **Info**: Die folgenden Beschreibungen beziehen sich auf Firmware, gelten aber analog auch für Geräte-Software.
 
-Öffnen Sie das **Firmware-Repository** im Menü **Verwaltung** im Navigator.
+Klicken Sie **Firmware Repository** im Menü **Verwaltung** des Navigators.
 
 Die verfügbaren Firmware-Objekte werden angezeigt, dargestellt als Karten in einem Raster.
 
-![Firmware repository](/images/benutzerhandbuch/DeviceManagement/devmgmt-management-firmwarerepo.png)
+![Firmware List](/images/benutzerhandbuch/DeviceManagement/devmgmt-management-firmwarerepo.png)
 
 Klicken Sie **Details** auf einer Karte, um diese "umzudrehen" und Details zum Firmware-Objekt anzuzeigen.
 
-Zusätzlich zum Objektnamen und der Version finden Sie hier den Namen der Datei, die die Firmware enthält. 
+![Firmware details](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-details.png)
 
-Darüber hinaus gibt es verschiedene Schaltflächen, die das Aktualisieren der Informationen ermöglichen (siehe unten Hinzufügen eines Firmware-Objekts).
+Neben dem Objektnamen und der Version finden Sie hier den Namen der Datei, die die Firmware enthält. 
 
-**Hinzufügen eines Firmware-Objekts**
+Zusätzlich sind mehrere Aktionsschaltflächen verfügbar, die im Folgenden erläutert werden.
 
-Um ein Firmware-Objekt hinzuzufügen, führen Sie folgende Schritte aus:
 
-1. Laden Sie die Firmware-Datei in der ["Administration"-Anwendung](/benutzerhandbuch/administration#files) hoch. Dieser Schritt ist nicht immer erforderlich, da manche Hersteller die Firmware online anbieten. 
-2. Klicken Sie in der Seite **Firmware-Repository** rechts in der oberen Menüleiste **Firmware hinzufügen**. 
-3. Geben Sie im folgenden Fenster einen Namen und die Version der Firmware ein.
-4. Geben Sie die Datei an, die die Firmware enthält, indem Sie entweder zur Datei navigieren bzw.  diese hochladen oder die URL angeben, unter welcher das Gerät die Firmware herunterladen kann. 
-5. Klicken Sie **Speichern**, um Ihre Einstellungen zu speichern.
+#### So fügen Sie ein Firmware-Objekt hinzu
 
-Analog können Sie eine neue Software zum Software-Repository hinzufügen. 
+1. Klicken Sie auf der Seite **Firmware-Repository** rechts in der oberen Menüleiste auf **Firmware hinzufügen**. <br><br>![Add firmware](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-add.png)
+2. Geben Sie im darauf folgenden Dialog einen Namen und die Version der Firmware ein.
+3. Geben Sie die Datei an, die die Firmware enthält, indem Sie sie aus dem Dateisystem hochladen, indem Sie eine URL angeben, über die die Firmware abgerufen werden kann, oder indem Sie eine Datei auswählen, die zuvor in der ["Administration"-Anwendung](/benutzerhandbuch/administration#files) hinzugefügt wurde. 
+4. Klicken Sie **Speichern**.
 
-**Installieren von Firmware auf einem Gerät**
+Das Firmware-Objekt wird der Firmware-Liste hinzugefügt.
 
-Klicken Sie im Navigator auf **Alle Geräte**, um die Geräteliste anzuzeigen und wählen Sie ein Gerät aus. 
+Analog können Sie eine neue Software zum Software-Repository hinzufügen.
 
-Wechseln Sie zur Registerkarte **Software** für das Gerät und klicken Sie **Firmware installieren**. 
+#### So aktualisieren Sie ein Firmware-/Software-Objekt
 
-Weitere Informationen finden Sie in der Beschreibung der Registerkarte [**Software**](#software).
+1. Klicken Sie **Details** auf einer Karte, um diese "umzudrehen" und Details zum Firmware-Objekt anzuzeigen.
+3. Aktualisieren Sie den Namen oder die Beschreibung oder geben Sie eine neue Datei für die Firmware an, indem Sie sie aus dem Dateisystem hochladen oder indem Sie eine Datei auswählen. 
+4. Klicken Sie **Speichern**.
+
+Das Objekt wird aktualisiert.
+
+#### So laden Sie ein Firmware-/Software-Objekt herunter
+
+1. Klicken Sie **Details** auf einer Karte, um diese "umzudrehen" und Details zum Firmware-Objekt anzuzeigen.
+2. Klicken Sie auf das Download-Symbol. 
+
+Das Objekt wird in Ihr Dateisystem heruntergeladen.
+
+#### So installieren Sie Firmware/Software auf einem Gerät
+
+1. Klicken Sie auf **Alle Geräte** im Menü **Geräte** des Navigators und wählen Sie ein Gerät aus der Geräteliste.
+2. Öffnen Sie die Registerkarte **Software** für das Gerät und klicken Sie **Firmware installieren**. Siehe dazu auch die Beschreibung der Registerkarte **Software** unter [Gerätedetails](/benutzerhandbuch/device-management#software).
 
 >**Info:** Um andere Binärcode-Typen in Cumulocity zu speichern, wechseln Sie zur ["Administration"-Anwendung](/benutzerhandbuch/administration#files).
 
-**Installieren von Firmware auf mehreren Geräten**
+#### So installieren Sie Firmware/Software auf mehreren Geräten
 
 Cumulocity bietet die Möglichkeit, Updates von Firmware oder Software für mehrere Geräte gleichzeitig durchzuführen. Führen Sie dazu die folgenden Schritte aus:
 
 1. Führen Sie das Update zunächst für ein Gerät aus, um sicherzustellen, dass das Update funktioniert.
-2. Navigieren Sie zu **Kommandos** und wählen Sie **Für alle Gruppenelemente ausführen**.
-3. Geben Sie einen Zeitpunkt an, an welchem das Sammelkommando ausgeführt werden soll und klicken Sie **Erstellen**.
+2. Navigieren Sie zu Kommandos und wählen Sie **Für alle Gruppenelemente ausführen**.
+3. Geben Sie einen Zeitpunkt an, zu dem das Sammelkommando ausgeführt werden soll, und klicken Sie **Erstellen**.
 
-Der Kommandostatus wird in der Registerkarte **Stapelkommandos** der ausgewählten Gruppe angezeigt. Weitere Informationen finden Sie unter [Stapelkommandos](#bulk-operations).
+Der Kommandostatus wird in der Registerkarte **Stapelkommandos** der ausgewählten Gruppe angezeigt, siehe [Stapelkommandos](#bulk-operations).
+
+#### So löschen Sie ein Firmware-/Software-Objekt
+
+Klicken Sie auf das Menüsymbol rechts oben in der jeweiligen Firmware-/Software-Karte und klicken Sie **Firmware löschen** (bzw. **Software löschen**).
+
+Das Objekt wird aus der Liste gelöscht.
+
+
+### <a name="configuration-repository"></a>Konfigurations-Repository
+
+In Cumulocity können Sie Konfigurationsdaten von einem Gerät abrufen oder aus einer Datei laden und diese in einem Konfigurations-Repository speichern und verwalten. Konfigurationsdaten enthalten die Grundeinstellungen und Parameter eines Geräts.
+
+Solche Konfigurationssnapshots sind beispielsweise nützlich, um die gleiche Konfiguration auf mehrere Geräte anzuwenden, wie im Folgenden beschrieben. 
+
+Weitere Informationen zum Konfigurationsmanagement finden Sie auch unter [Device management library > Configuration management](/reference/device-management/#configuration-management) im Reference Guide.
+
+Klicken Sie **Konfigurations-Repository** im Menü **Management** im Navigator, um alle verfügbaren Konfigurationen anzuzeigen. Jeder Eintrag enthält den Konfigurationsnamen, das Gerät, von welchem die Konfiguration stammt und den Zeitpunkt des Uploads.
+
+![Configuration repository](/images/benutzerhandbuch/DeviceManagement/devmgmt-configuration-repository.png)
+
+Um einen Konfigurationssnapshot zu öffnen, klicken Sie auf den entsprechenden Eintrag. Sie können die Angaben hier bearbeiten. Klicken Sie **Speichern**,um Ihre Änderungen zu speichern. Nähere Informationen zu den einzelnen Feldern finden Sie im nächsten Abschnitt.
+
+![Configuration snapshot details](/images/benutzerhandbuch/DeviceManagement/devmgmt-configuration-snapshot-details.png)
+
+#### So fügen Sie eine Snapshot-Konfiguration aus einer Datei hinzu
+
+1. Klicken Sie **Konfigurationssnapshot hinzufügen** rechts in der oberen Menüleiste. 
+2. Geben Sie im darauf folgenden Dialog einen eindeutigen Namen und eine optionale Beschreibung für die Konfiguration ein.
+3. Geben Sie im Feld **Gerätetyp** einen Gerätetypen ein. Den Gerätetypen finden Sie in der Registerkarte **Info** des Zielgeräts.
+4. Klicken Sie unter **Datei mit Konfigurationssnapshot** auf eine der verfügbaren Optionen, um die Datei auszuwählen:
+ 
+	* 	Hochladen - Dient zum Hochladen einer Datei aus ihrem Dateisystem.
+	* 	Externe URL - Dient zum Bereitstellen einer externen URL.
+	* 	Datei auswählen - Dient zum Auswählen einer Datei aus einer Liste.
+
+5. Klicken Sie **Konfigurationssnapshot hinzufügen**, um Ihre Einstellungen zu speichern.
+
+Der Snapshot wird dem Konfigurations-Repository hinzugefügt.
+
+
+#### So laden Sie einen Snapshot von einem Gerät
+
+Neben dem Hinzufügen einer Konfiguration aus einer Datei können Sie auch eine Konfiguration hinzufügen, indem Sie diese von einem Gerät abrufen.
+
+1. Navigieren Sie zu dem entsprechenden Gerät unter **Geräte** > **Alle Geräte** und wechseln Sie zur Registerkarte **Konfiguration**. 
+2. Klicken Sie **Neuen Snapshot vom Gerät laden** rechts oben unter **Konfigurationssnapshot**. 
+
+Der geladene Snapshot wird dem Konfigurations-Repository hinzugefügt.
+
+![Retrieve snapshot](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
+
+#### So wenden Sie einen Konfigurationssnapshot auf ein Gerät an
+
+1. Navigieren Sie zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte **Konfiguration**. 
+2. Wählen Sie unter **Konfigurationssnapshot** eine Konfiguration aus der Auswahlliste.
+3. Klicken Sie **Snapshot an Gerät senden**, um den ausgewählten Snapshot an das Gerät zu senden.
+
+![Apply snapshot](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
+
+#### So wenden Sie den Konfigurationssnapshot eines Geräts auf ein anderes Gerät an
+
+1. Navigieren Sie zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte **Konfiguration**.
+2. Klicken Sie **Neuen Snapshot vom Gerät laden** rechts oben unter **Konfigurationssnapshot**.
+3. Navigieren Sie zu dem anderen Gerät und wechseln Sie zur Registerkarte **Konfiguration**.
+4. Wählen Sie unter **Konfigurationssnapshot** die neue Konfiguration aus der Auswahlliste und klicken Sie **Snapshot an Gerät senden**.
+ 
+> **Info**: Wenn Sie eine Konfiguration von einem Gerät auf ein anderes anwenden, enthält die Konfiguration möglicherweise gerätespezifische Daten.
 
 ### <a name="credentials"></a>Verwalten von Gerätezugangsdaten
 
-Die Seite **Gerätezugangsdaten** listet alle Zugangsdaten auf, die für Ihre verbundenen Geräte erstellt wurden. Jedes Gerät, das [registriert](#device-registration) wurde, wird hier mit der Namenskonvention "device_&lt;id&gt;" angezeigt.
+Die Registerkarte **Gerätezugangsdaten** listet alle Zugangsdaten auf, die für Ihre verbundenen Geräte erstellt wurden. Jedes Gerät, das [registriert](#device-registration) wurde, wird hier mit der Namenskonvention "device_&lt;id&gt;" angezeigt.
 
-<img src="/images/benutzerhandbuch/devmgmt-device-credentials.png" alt="Gerätezugangsdaten" style="max-width: 100%">
+![Device credentials](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-credentials.png)
 
-Klicken Sie auf den Pfeil in der Spalte **Globale Rollen**, um eine Liste mit globalen Rollen anzuzeigen. Weisen Sie Berechtigungen für ein Gerät zu oder entfernen Sie Berechtigungen, indem Sie die entsprechenden Kontrollkästchen aktivieren oder deaktivieren. Klicken Sie **Anwenden**, um Ihre Einstellungen zu speichern.
+#### So verwalten Sie Berechtigungen für ein Gerät
 
-Klicken Sie auf das Menüsymbol rechts von einem Gerät, um über ein Kontextmenü auf folgenden Funktionen zuzugreifen:
+1. Klicken Sie auf den Pfeil in der Spalte **Globale Rollen**, um eine Liste mit globalen Rollen anzuzeigen. 
+2. Zum Zuweisen oder Entfernen von Berechtigungen für ein einzelnes Gerät aktivieren bzw. deaktivieren Sie die jeweiligen Rollen.
+3. Klicken Sie **Anwenden**.
 
-* **Bearbeiten** - Um die Details der Gerätezugangsdaten anzuzeigen (siehe unten).
+Die Rollen für die Geräte werden entsprechend aktualisiert.
 
-* **Abschalten** - Um zeitweise die Verbindung zu einem Gerät zu unterbrechen.
+#### So bearbeiten Sie Gerätezugangsdaten
 
-* **Löschen** - Um die Zugangsdaten für ein Gerät zu löschen. Dies kann erforderlich sein, wenn Sie ein Gerät auf die Werkseinstellungen zurückgesetzt haben. In diesem Fall verliert das Gerät häufig seine zugewiesenen Zugangsdaten. Löschen Sie diese und fahren Sie mit dem normalen [Registrierungsprozess](#device-registration) fort, um das Gerät erneut zu registrieren.
+1. Klicken Sie auf das Menüsymbol rechts neben einem Gerätezugangsdaten-Eintrag und anschließend auf **Bearbeiten**, um die Gerätedetails zu öffnen.
+ 
+2. In der Detail-Seite können Sie ein Gerät deaktivieren/aktivieren, indem Sie auf den Umschalter **Aktiv** klicken, das Passwort für ein Gerät ändern oder in der Liste **Globale Rollen** Berechtigung zuweisen oder entfernen. 
+ 
+	![Device credentials details](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-credentials-details.png)
 
-In der Detail-Seite der Gerätezugangsdaten, die angezeigt wird, wenn Sie im Kontextmenü eines Geräts **Bearbeiten** klicken, können Sie 
+3. Klicken Sie **Speichern**.
 
-* ein Gerät per Schieberegler ein-, bzw. abschalten,
-* das Passwort für ein Gerät ändern,
-* Berechtigungen zuweisen oder entfernen durch aktivieren bzw. deaktivieren der Kontrollkästchen in der Liste **Globale Rollen**. 
+Die Gerätezugangsdaten werden entsprechend aktualisiert.
 
-<img src="/images/benutzerhandbuch/devmgmt-device-credentials-details.png" alt="Details Gerätezugangsdaten" style="max-width: 100%">
 
-<!--
-![Bulk provisioning](/images/users-guide/autoregister.png)
+#### So deaktivieren Sie Gerätezugangsdaten
 
-Device credentials can also be provided from a CSV file. Files can be uploaded using the button pointed with an arrow. More details on the file structure can be found in under [Bulk-registering devices](#creds-upload) above.-->
+Klicken Sie auf das Menüsymbol rechts neben dem Gerätezugangsdaten-Eintrag und anschließend auf **Abschalten**.
+
+Die Gerätezugangsdaten werden vorübergehend deaktiviert.
+
+#### So löschen Sie Gerätezugangsdaten
+
+Klicken Sie auf das Menüsymbol rechts neben dem Gerätezugangsdaten-Eintrag und anschließend auf **Löschen**.
+
+Die Gerätezugangsdaten werden dauerhaft gelöscht.
+
+Das Löschen von Gerätezugangsdaten kann erforderlich sein, wenn Sie ein Gerät auf die Werkseinstellungen zurückgesetzt haben. In diesem Fall verliert das Gerät häufig seine zugewiesenen Zugangsdaten. Löschen Sie diese und fahren Sie mit dem normalen [Registrierungsprozess](#device-registration) fort, um das Gerät erneut zu registrieren.

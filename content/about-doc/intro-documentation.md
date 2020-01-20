@@ -4,7 +4,7 @@ title: Introduction
 layout: bundle
 ---
 
-This documentation describes the **October 2019 release (10.5.0)** of the Cumulocity IoT Platform.
+This documentation describes the **10.5.0 GA release (October 2019)** of the Cumulocity IoT Platform.
 
 This documentation covers all new features and functionality introduced with release 10.5.0 (see the [Release notes](/release-notes#10.5.0) for details). 
 

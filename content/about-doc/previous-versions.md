@@ -8,13 +8,13 @@ The Cumulocity documentation sources are located in a Mercurial repository calle
 
 >**Info**: Providing documentation for various versions on the documentation website is currently under development.
 
-You find the documentation sources for the maintenance release versions in the following branches:
-
-Release 9.20: [https://bitbucket.org/m2m/c8y-docs/branch/release/r9.20.0](https://bitbucket.org/m2m/c8y-docs/branch/release/r9.20.0)
+You find the documentation sources for the maintenance releases and the current release in the following branches:
 
 Release 10.4.0: [https://bitbucket.org/m2m/c8y-docs/branch/release/10.4.0-GA](https://bitbucket.org/m2m/c8y-docs/branch/release/10.4.0-GA)
 
 Release 10.4.6: [https://bitbucket.org/m2m/c8y-docs/branch/release/r10.4.6-GA](https://bitbucket.org/m2m/c8y-docs/branch/release/r10.4.6-GA)
+
+Release 10.5.0: [https://bitbucket.org/m2m/c8y-docs/branch/release/r10.5.0-GA](https://bitbucket.org/m2m/c8y-docs/branch/release/r10.5.0-GA)
 
 The actual content of the documentation is stored in source files in Markdown format. These Markdown files are located in the folder */content*. You will find a subfolder for every guide here, which again contains subfolders.
 

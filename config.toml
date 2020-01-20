@@ -37,7 +37,7 @@ relativeURLs= true
 
   logo = "images/cumulocity-iot.svg"
 
-  guidesRedirect = "https://cumulocity.com/guides/10.5.0/users-guide/getting-started/"
+  guidesRedirect = "https://cumulocity.com/guides/10.5.0/about-doc/intro-documentation/"
 
   # Your favicon path, default is "/favicon.png"
   favicon = "/favicon.ico"

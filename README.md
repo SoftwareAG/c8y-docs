@@ -141,13 +141,13 @@ aliases:
 
 ## Deploying
 
-Cumulocity provides documentation for multiple releases, for that you'll have to create a release branch for every public release, e.g. `release/r10.5.0-GA`. When creating this type of branches you´ll have to take the following steps:
+Cumulocity provides documentation for multiple releases, for that you'll have to create a release branch for every public release, e.g. `release/r10.5.0-GA`. When creating these branches follow the next steps:
 - Create the branch following the same pattern: `release/r[version number]-GA`
 
 - Edit the `config.toml` file and append the version number to the base url, e.g.: `baseURL = "https://cumulocity.com/guides/10.5.0"`
 - Still on `config.toml` change the `guidesRedirect` to target the about page on the release, e.g.: `guidesRedirect = "https://cumulocity.com/guides/10.5.0/about-doc/intro-documentation/"`
 - Deploy using the jenkins task `Deploy-c8y-docs-manual-release` and provide the release version
-- Deploy the `default`branch to regenerate the version dropdown links
+- Deploy the `default` branch using the jenkins task `Deploy-c8y-docs`  to regenerate the version dropdown links
 
 ---
 © Cumulocity GmbH  2019 + All rights reserved.

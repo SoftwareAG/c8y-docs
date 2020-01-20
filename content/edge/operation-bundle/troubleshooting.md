@@ -284,18 +284,17 @@ The logs of the Kubernetes components are captured at:
 
 The kubernetes_logs.zip file contains the logs of all Kubernetes platform components at “kube-system” path in the archive. The components captured are:
 
-* heapster-*xxxxxxxxxx*-*xxxxx*
+* heapster-*XX*
 * kube-apiserver-server
 * kube-controller-manager-server
-* kube-dns-*xxxxxxxx*-*xxxxx*
-* kube-flannel-ds-*xxxxx*
-* kube-proxy-*xxxxx*
+* kube-dns-*XX*
+* kube-flannel-ds-*XX*
+* kube-proxy-*XX*
 * kube-scheduler-server
 
+>**Info**: The *XX* represents randomly generated alphanumeric sequences in these pod names and would vary in your environment.
+
 The hosted microservices are captured at *cumulocity-single-node* path in the archive. The pre-installed component **kube-registry-persistent-secure-789fb5449d-j2jbx** is already available in the archive. The logs of any additional microservices that are uploaded will also be available at this path.
-
->**Info**: The alphanumeric sequences in these pod names are for representational purposes and would vary in your environment.
-
 
 #### Adjust log level
 

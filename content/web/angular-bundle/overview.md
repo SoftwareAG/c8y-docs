@@ -20,10 +20,10 @@ The goal of these splittings is to provide the right package for every use case,
 
 Following is a list which explains the use cases of each package. 
 
- - [@c8y/client](/guides/web/angular#client): Use this client to access our API. The client is isomorphic, that means it could be used in node.js and in the browser.
- - [@c8y/ngx-components](/guides/web/angular#ngx-components): A components collection and data access layer for Angular applications. This package can be used to build Angular applications.
- - [@c8y/styles](/guides/web/angular#branding): The styles for the look & feel of an application. Extend this package to apply a custom branding to your application.
- - [@c8y/apps](/guides/web/angular#apps): Example and bootstrapping applications to easily let you start with the Web SDK.
+ - [@c8y/client](/web/angular#client): Use this client to access our API. The client is isomorphic, that means it could be used in node.js and in the browser.
+ - [@c8y/ngx-components](/web/angular#ngx-components): A components collection and data access layer for Angular applications. This package can be used to build Angular applications.
+ - [@c8y/styles](/web/angular#branding): The styles for the look & feel of an application. Extend this package to apply a custom branding to your application.
+ - [@c8y/apps](/web/angular#apps): Example and bootstrapping applications to easily let you start with the Web SDK.
 
 You can find all our packages [on npm](https://www.npmjs.com/~c8y). To quickly get you bootstrapped with these packages we have built an CLI tool called `@c8y/cli`. Next, we will showcase how to get started with the `@c8y/cli` command line tool.
 
@@ -65,11 +65,11 @@ If you point your browser to http://localhost:9000/apps/myapp/ you will get a lo
 }
 ```
 
-After logging in you should see a barely empty starter application. If you want to start with a more complex example read the documentation about [@c8y/apps](/guides/web/angular#apps). If you want to build and deploy your application read more about the necessary commands of the [developer command line tool](/guides/web/angular#cli).
+After logging in you should see a barely empty starter application. If you want to start with a more complex example read the documentation about [@c8y/apps](/web/angular#apps). If you want to build and deploy your application read more about the necessary commands of the [developer command line tool](/web/angular#cli).
 
-> **Info**: If you want to extend an existing application like Cockpit you can spin up a hybrid application. This allows you to combine existing AngularJS plugins into the new Web SDK, see [Migration](/guides/web/angular#migration).
+> **Info**: If you want to extend an existing application like Cockpit you can spin up a hybrid application. This allows you to combine existing AngularJS plugins into the new Web SDK, see [Migration](/web/angular#migration).
 
-> **Info**: You need to provide your tenant name or the tenant ID on login (as the application cannot derive it from the URL on localhost). If you don't know your tenant name or the tenant ID you can use the [REST API to request it](/guides/reference/tenants/#get-the-current-tenant-details).
+> **Info**: You need to provide your tenant name or the tenant ID on login (as the application cannot derive it from the URL on localhost). If you don't know your tenant name or the tenant ID you can use the [REST API to request it](/reference/tenants/#get-the-current-tenant-details).
 
 ### First route & component
 

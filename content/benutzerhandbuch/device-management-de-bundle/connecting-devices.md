@@ -46,7 +46,7 @@ Wenn ein Gerät verbunden ist, wechselt der Status auf **Bitte akzeptieren**. Kl
 
 >**Info**: Bei Problemen finden Sie möglicherweise weitere Information
 >
->* im jeweiligen [Device Guide](/guides/devices) für Ihren Gerätetypen,
+>* im jeweiligen [Device Guide](/devices) für Ihren Gerätetypen,
 * im [Developer Center](http://cumulocity.com/dev-center/) auf unserer Website
 * oder im Handbuch Ihres Geräts.
 
@@ -110,6 +110,6 @@ Nachdem die Daten importiert wurden, erhalten Sie Informationen zu der Anzahl de
 	
 Für beide CSV-Dateiformate werden entsprechende Vorlagen zum Herunterladen bereitgestellt, aus denen Sie die Struktur ersehen oder kopieren können. 
 
-Weitere Informationen zum Dateiformat und möglichen CSV-Varianten finden Sie unter [Bulk device credentials](/guides/reference/device-credentials/#creds-upload) im Reference Guide.
+Weitere Informationen zum Dateiformat und möglichen CSV-Varianten finden Sie unter [Bulk device credentials](/reference/device-credentials/#creds-upload) im Reference Guide.
  
 **Info**: Wenn Sie den Enterprise Tenant von Cumulocity IoT abonniert haben, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte "Mandant" hinzufügen und die CSV-Datei vom Management-Mandanten aus importieren. 

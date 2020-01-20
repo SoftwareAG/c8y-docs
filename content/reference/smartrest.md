@@ -2,6 +2,6 @@
 weight: 15
 title: SmartREST
 layout: bundle
-collection: 'guides/reference/smartrest'
+collection: 'reference/smartrest'
 toc: true
 ---

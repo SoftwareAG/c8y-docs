@@ -51,7 +51,7 @@ Each application will show the following properties, depending on the applicatio
 </tr>
 <tr>
 <td style="text-align:left">Application key</td>
-<td style="text-align:left">Used to identify the application and to make the application available for subscription, see the <a href="/guides/concepts/applications" class="no-ajaxy">Concepts Guide</a>.</td>
+<td style="text-align:left">Used to identify the application and to make the application available for subscription, see the <a href="/concepts/applications" class="no-ajaxy">Concepts Guide</a>.</td>
 <td style="text-align:left">Automatically created</td>
 <td style="text-align:left">Automatically created based on the zip file name</td>
 <td style="text-align:left">Specified by the user</td>
@@ -90,21 +90,21 @@ By default, the following applications are available in the Standard Tenant:
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><a href="/guides/users-guide/administration" class="no-ajaxy">Administration</a></td>
+<td style="text-align:center"><a href="/users-guide/administration" class="no-ajaxy">Administration</a></td>
 <td style="text-align:left">Lets account administrators manage users, roles, tenants and applications.</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/guides/users-guide/cockpit" class="no-ajaxy">Cockpit</a></td>
+<td style="text-align:center"><a href="/users-guide/cockpit" class="no-ajaxy">Cockpit</a></td>
 <td style="text-align:left">Manage and monitor IoT assets and data from a business perspective.</td>
 <tr>
-<td style="text-align:center"><a href="/guides/users-guide/device-management" class="no-ajaxy">Device Management</a></td>
+<td style="text-align:center"><a href="/users-guide/device-management" class="no-ajaxy">Device Management</a></td>
 <td style="text-align:left">Manage and monitor devices, and control and troubleshoot devices remotely.</td>
 <tr>
-<td style="text-align:center"><a href="/guides/users-guide/device-management#simulator" class="no-ajaxy">Device simulator</a></td>
+<td style="text-align:center"><a href="/users-guide/device-management#simulator" class="no-ajaxy">Device simulator</a></td>
 <td style="text-align:left">Simulate all aspects of IoT devices.</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/guides/users-guide/cockpit#smart-rules" class="no-ajaxy">Smart Rules</a></td>
+<td style="text-align:center"><a href="/users-guide/cockpit#smart-rules" class="no-ajaxy">Smart Rules</a></td>
 <td style="text-align:left">Use the Smart Rule engine and create Smart Rules to perform actions based on realtime data. Requires one of the following applications: "Cep", "Apama"</td>
 </tr>
 </tbody>
@@ -112,7 +112,7 @@ By default, the following applications are available in the Standard Tenant:
 
 Your tenant may show other subscribed applications, depending on your installation and/or  optional services. 
 
-Refer to [Applications > application list](/guides/reference/applications/#application-names) in the Reference guide for a detailed list of all potentially available applications, including information on its application types, its availability and the string to be used in the API to reference a particular application.
+Refer to [Applications > application list](/reference/applications/#application-names) in the Reference guide for a detailed list of all potentially available applications, including information on its application types, its availability and the string to be used in the API to reference a particular application.
  
 ### <a name="own-applications"></a>Own applications
 
@@ -168,7 +168,7 @@ The application is created once the ZIP file has been successfully uploaded.
 
 The microservice application is created once the ZIP file has been successfully uploaded.
 
->**Important**: The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [Packing](/guides/microservice-sdk/concept/#packing) in the Microservice SDK guide under **General aspects** in order to prepare and deploy the microservice package.
+>**Important**: The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [Packing](/microservice-sdk/concept/#packing) in the Microservice SDK guide under **General aspects** in order to prepare and deploy the microservice package.
 
 
 ##### <a name="external-application"></a>To link to an external application

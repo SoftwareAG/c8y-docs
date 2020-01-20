@@ -37,7 +37,7 @@ Add the following Apama bundles to the newly created Apama project. For instruct
 
 To create a new Apama EPL file, refer to [Creating new monitor files for EPL applications](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-3-1/apama10-3-1/apama-webhelp/index.html#page/apama-webhelp%2FWIZARD_NEW_MONITORSCRIPT.html).
 
-Follow the steps as described in [Using EPL](/guides/concepts/realtime/#using-epl) to create a sample EPL application.
+Follow the steps as described in [Using EPL](/concepts/realtime/#using-epl) to create a sample EPL application.
 
 Before you deploy this EPL application to Cumulocity, you might want to test if this application works as expected. To do so, you need to add the following bundles to your Designer project.
 
@@ -59,7 +59,7 @@ CUMULOCITY_PASSWORD=examplePassword
 CUMULOCITY_APPKEY=apamaAppKey 
 ```
 
->**Info:** You need to [create an application](/guides/users-guide/administration#managing-applications) in Cumulocity to get a value for CUMULOCITY_APPKEY.
+>**Info:** You need to [create an application](/users-guide/administration#managing-applications) in Cumulocity to get a value for CUMULOCITY_APPKEY.
 
 Note that the above description assumes that you are connecting to a tenant hosted on cumulocity.com (Example: mytenant.cumulocity.com). If you want to connect to a tenant hosted at a different location, you can append a custom URL configuration to `CumulocityIoT.yaml`.
       
@@ -75,4 +75,4 @@ CUMULOCITY_URL=my_custom_tenant.mydomain.com
 
 You can now proceed with testing your EPL in Software AG Designer.
 
-Once the EPL application is ready, refer to [Deploying applications](/guides/apama/analytics-introduction/#deploying-apps) to upload the EPL application as a single .mon file.
+Once the EPL application is ready, refer to [Deploying applications](/apama/analytics-introduction/#deploying-apps) to upload the EPL application as a single .mon file.

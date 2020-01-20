@@ -37,7 +37,7 @@ The management tenant needs to be subscribed to the application “Tenant-sla-mo
 
 ![Sla-monitoring subscribe](/images/users-guide/sla-monitoring/sla-subscribe.png)
 
-For details on application subscription, refer to [Administration > Managing Tenants > Subscribing to applications](/guides/users-guide/enterprise-edition#subscribe) in the User guide.
+For details on application subscription, refer to [Administration > Managing Tenants > Subscribing to applications](/users-guide/enterprise-edition#subscribe) in the User guide.
 
 ### How the service works
 
@@ -65,7 +65,7 @@ These average values are calculated by summing up the timespan of all timeout an
 
 <img src="/images/users-guide/TenantMonitoringDayAverage.png" alt="Tenant Monitoring Day Average" style="max-width: 100%">
 
-For further details on measurements refer to [Device Management > Device details > Measurements](/guides/users-guide/device-management#measurements) in the User guide.
+For further details on measurements refer to [Device Management > Device details > Measurements](/users-guide/device-management#measurements) in the User guide.
 
 ### Creating alarms
 

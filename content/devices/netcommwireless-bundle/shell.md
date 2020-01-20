@@ -3,7 +3,7 @@ title: Device Shell
 layout: redirect
 weight: 80
 ---
-With Device Shell, you can read and write individual configuration parameters from the device, as well as execute diagnostic commands. For more information, please refer to the [user guide](/guides/users-guide/device-management#shell). Consult the Netcomm documentation for valid parameters and diagnostic commands. The general format is:
+With Device Shell, you can read and write individual configuration parameters from the device, as well as execute diagnostic commands. For more information, please refer to the [user guide](/users-guide/device-management#shell). Consult the Netcomm documentation for valid parameters and diagnostic commands. The general format is:
 
 * "get &lt;parameter&gt;" to read a parameter from the device.
 * "set &lt;parameter&gt;=&lt;value&gt;" to write a parameter to the device.

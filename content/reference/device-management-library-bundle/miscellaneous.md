@@ -21,7 +21,7 @@ In order to send commands as text messages to devices, the devices must be put i
 		"mode": "SMS"
 	}
 
-For more information, please refer to [Device control via SMS](/guides/reference/device-control#control_via_sms).
+For more information, please refer to [Device control via SMS](/reference/device-control#control_via_sms).
 
 #### c8y\_Command
 
@@ -63,7 +63,7 @@ The parameters in the request define filtering criteria to be applied to the log
 * "searchText" provides a text that needs to be present in the log entry.
 * "maximumLines" gives an upper limit of the number of lines that should be sent to Cumulocity after filtering.
 
-When the device receives such a request, it filters the log file according to the criteria and sends the result as a file to the [Binary API](/guides/reference/binaries). It then puts a link to this file into the log file request:
+When the device receives such a request, it filters the log file according to the criteria and sends the result as a file to the [Binary API](/reference/binaries). It then puts a link to this file into the log file request:
 
 	"c8y_LogfileRequest": {
 		"logFile": "syslog",

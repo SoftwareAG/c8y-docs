@@ -4,7 +4,7 @@ title: Device integration
 layout: redirect
 ---
 
-The basic life cycle for integrating devices into Cumulocity is discussed in [Interfacing devices](/guides/concepts/interfacing-devices) in the Concepts guide. In this section, we will show how this life cycle is implemented on REST level. The life cycle consists of two phases, a startup phase and a cycle phase. 
+The basic life cycle for integrating devices into Cumulocity is discussed in [Interfacing devices](/concepts/interfacing-devices) in the Concepts guide. In this section, we will show how this life cycle is implemented on REST level. The life cycle consists of two phases, a startup phase and a cycle phase. 
 
 The startup phase is responsible for connecting the device to Cumulocity and updating the device data in the inventory. It also performs cleanup tasks required for operations. It consists of the following steps:
 
@@ -28,7 +28,7 @@ The cycle phase follows. It continuously updates the inventory, writes measureme
 
 ![Cycle phase](/images/rest/cyclephase.png)
 
-Reference models for the data can be found in the [Device management library](/guides/reference/device-management) and in the [Sensor library](/guides/reference/sensor-library) in the Reference guide.
+Reference models for the data can be found in the [Device management library](/reference/device-management) and in the [Sensor library](/reference/sensor-library) in the Reference guide.
 
 
 ### Startup Phase
@@ -71,7 +71,7 @@ The device can now connect to Cumulocity using the tenant ID, username and passw
 
 #### Step 1: Check if the device is already registered
 
-The unique ID of the device is also used for registering the device in the inventory. The registration is carried out using the [Identity API](/guides/reference/identity). In the Identity API, each managed object can be associated with multiple identifiers distinguished by type. Types are, for example, "c8y\_Serial" for a hardware serial, "c8y\_MAC" for a MAC address and "c8y\_IMEI" for an IMEI.
+The unique ID of the device is also used for registering the device in the inventory. The registration is carried out using the [Identity API](/reference/identity). In the Identity API, each managed object can be associated with multiple identifiers distinguished by type. Types are, for example, "c8y\_Serial" for a hardware serial, "c8y\_MAC" for a MAC address and "c8y\_IMEI" for an IMEI.
 
 To check if a device is already registered, use a GET request on the identity API using the device identifier and its type. The following example shows a check for a Raspberry Pi with hardware serial "0000000017b769d5".
 
@@ -103,7 +103,7 @@ If a device is not yet registered, a 404 status code and an error message is ret
     ...
     {
         "error": "identity/Not Found",
-        "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting",
+        "info": "https://www.cumulocity.com/reference-guide/#error_reporting",
         "message": "External id not found; external id = ID [type=c8y_Serial, value=raspi-0000000017b769d6]"
     }
 
@@ -184,7 +184,7 @@ The example above contains a number of metadata items for the device:
 -   "com\_cumulocity\_model\_Agent" marks devices running a Cumulocity agent. Such devices will receive all operations targeted to themselves and their children for routing.
 -   "c8y\_SupportedOperations" states that this device can be restarted and configured. In addition, it can carry out software and firmware updates.
 
-For more information, refer to the [Device management library](/guides/reference/device-management) in the Reference guide.
+For more information, refer to the [Device management library](/reference/device-management) in the Reference guide.
 
 If the device could be successfully created, a status code of 201 is returned. If the original request contains an "Accept" header as in the example, the complete created object is returned including the ID and URL to reference the object in future requests. The returned object also include references to collections of child devices and child assets that can be used to add children to the device (see below).
 
@@ -220,7 +220,7 @@ Continuing the above example, we would associate the newly created device "24803
 
 #### Step 4: Update the device in the inventory
 
-If Step 1 above returned that the device was previously registered already, we need to make sure that the inventory representation of the device is up to date with respect to the current state of the actual device. For this purpose, a PUT request is sent to the URL of the device in the inventory. Note, that only fragments that can actually change need to be transmitted. (See [Cumulocity's domain model](/guides/concepts/domain-model) in the Concepts guide for more information on fragments.)
+If Step 1 above returned that the device was previously registered already, we need to make sure that the inventory representation of the device is up to date with respect to the current state of the actual device. For this purpose, a PUT request is sent to the URL of the device in the inventory. Note, that only fragments that can actually change need to be transmitted. (See [Cumulocity's domain model](/concepts/domain-model) in the Concepts guide for more information on fragments.)
 
 For example, the hardware information of a device will usually not change, but the software installation may change. So it may make sense to bring the software information in the inventory up to the latest state after a reboot of the device:
 
@@ -312,7 +312,7 @@ The restart seems to have executed well -- we are back after all. So let's set t
 
     HTTP/1.1 200 OK
 
-Then, listen to new operations created in Cumulocity. The mechanism for listening to real-time data in Cumulocity is described in [Real-time notifications](/guides/reference/real-time-notifications) in the Reference guide and is based on the standard Bayeux protocol. First, a handshake is required. The handshake tells Cumulocity what protocols the agent supports for notifications and allocates a client ID to the agent.
+Then, listen to new operations created in Cumulocity. The mechanism for listening to real-time data in Cumulocity is described in [Real-time notifications](/reference/real-time-notifications) in the Reference guide and is based on the standard Bayeux protocol. First, a handshake is required. The handshake tells Cumulocity what protocols the agent supports for notifications and allocates a client ID to the agent.
 
     POST /devicecontrol/notifications HTTP/1.1
     Content-Type: application/json
@@ -499,4 +499,4 @@ In contrast to events, alarms can be updated. If an issue is resolved (e.g. the 
 
     HTTP/1.1 200 OK
 
-If you are uncertain on whether to send an event or raise an alarm, you can simply just raise an event and let the user decide with a [CEP rule](/guides/concepts/realtime) if they want to convert the event into an alarm.
+If you are uncertain on whether to send an event or raise an alarm, you can simply just raise an event and let the user decide with a [CEP rule](/concepts/realtime) if they want to convert the event into an alarm.

@@ -130,7 +130,7 @@ What does the code in "main" do?
 -   Line 3 creates a new managed object.
 -   Line 4 sets the display name of the new managed object.
 -   Line 5 says that this managed object should be a device (should show up in Device Management).
--   Line 6 creates the managed object in the inventory. This will return the managed object back with a fresh, generated ID. (See "Object identity" section in [Cumulocity's domain model](/guides/concepts/domain-model)).
+-   Line 6 creates the managed object in the inventory. This will return the managed object back with a fresh, generated ID. (See "Object identity" section in [Cumulocity's domain model](/concepts/domain-model)).
 -   Line 7 prints the URL to the new managed object that has just been stored in the inventory.
 
 #### Building and running the agent
@@ -154,8 +154,8 @@ The last line shows that a new device has been successfully created with a parti
 
 ![Hello world device](/images/java/hello.png)
 
-**Got an error message?** Check the [troubleshooting section](/guides/microservice-sdk/cs/#troubleshooting) in the Microservice SDK guide.
+**Got an error message?** Check the [troubleshooting section](/microservice-sdk/cs/#troubleshooting) in the Microservice SDK guide.
 
 ### Improving the agent
 
-Now that you have done your first step, check out the section [Developing C# clients](/guides/device-sdk/device-sdk-cs/#developing-cs-clients).
+Now that you have done your first step, check out the section [Developing C# clients](/device-sdk/device-sdk-cs/#developing-cs-clients).

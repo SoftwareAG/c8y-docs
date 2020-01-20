@@ -56,7 +56,7 @@ Für jede Anwendung werden die folgenden Attribute angezeigt:
 </tr>
 <tr>
 <td style="text-align:left">Anwendungsschlüssel</td>
-<td style="text-align:left">Wird zur Identifikation der Anwendung verwendet. Wird außerdem verwendet, um die Anwendung als Abonnement zur Verfügung zu stellen, siehe auch <a href="/guides/concepts/applications" class="no-ajaxy">Concepts Guide</a>.</td>
+<td style="text-align:left">Wird zur Identifikation der Anwendung verwendet. Wird außerdem verwendet, um die Anwendung als Abonnement zur Verfügung zu stellen, siehe auch <a href="/concepts/applications" class="no-ajaxy">Concepts Guide</a>.</td>
 <td style="text-align:left">Automatisch generiert, basierend auf dem Namen der ZIP-Datei</td>
 <td style="text-align:left">Automatisch generiert, basierend auf dem Namen der ZIP-Datei</td>
 <td style="text-align:left">Vom Benutzer vergeben</td>
@@ -183,7 +183,7 @@ Um einen Microservice hochzuladen, führen Sie folgende Schritte aus:
 
 Nachdem die Datei auf die Plattform hochgeladen wurde, wird die Anwendung erstellt. 
 
->**Info**: Um Microservices zur Plattform hinzuzufügen, muss die gepackte Datei die Manifest-Datei und das Docker Image für den Microservice enthalten. Nähere Informationen zum Vorbereiten und Deployen des Microservice-Pakets finden Sie unter [Microservice package reference](/guides/reference/microservice-package) im Reference guide.
+>**Info**: Um Microservices zur Plattform hinzuzufügen, muss die gepackte Datei die Manifest-Datei und das Docker Image für den Microservice enthalten. Nähere Informationen zum Vorbereiten und Deployen des Microservice-Pakets finden Sie unter [Microservice package reference](/reference/microservice-package) im Reference guide.
 
 ##### <a name="external-application"></a>Verweisen auf eine externe Anwendung
 

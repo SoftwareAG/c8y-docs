@@ -15,13 +15,13 @@ All subscribed web applications of a tenant appear in the application switcher o
 
 <img src="/images/concepts-guide/Administration/admin-app-switcher.png" alt="App switcher">
 
-The Cumulocity user interface itself is built around a framework based on AngularJS and Bootstrap, the modern HTML5 web application frameworks. It is designed in a modular fashion around a set of plugins so that developers can create their own configurations of the Cumulocity user interfaces. For more information on developing plugins, refer to the [Web SDK for Plugins](/guides/web/introduction) in the Web Developer's guide.
+The Cumulocity user interface itself is built around a framework based on AngularJS and Bootstrap, the modern HTML5 web application frameworks. It is designed in a modular fashion around a set of plugins so that developers can create their own configurations of the Cumulocity user interfaces. For more information on developing plugins, refer to the [Web SDK for Plugins](/web/introduction) in the Web Developer's guide.
 
 ### Deploying web applications
 
 For an application to be available it has to be deployed at the Cumulocity platform. 
 
-For details on how to deploy an application to Cumulocity, refer to [Administration > Managing applications](/guides/users-guide/administration#applications) in the User guide. 
+For details on how to deploy an application to Cumulocity, refer to [Administration > Managing applications](/users-guide/administration#applications) in the User guide. 
 
 > **Info:** In case of a web application, the application is active for you as owner without subscribing to it.
 
@@ -31,4 +31,4 @@ You can host your own HTML5 and JavaScript web applications through Cumulocity b
 
 ![List of own applications](/images/concepts-guide/Administration/admin-applications-own.png)
 
-For details refer to  [Administration > Managing applications](/guides/users-guide/administration#applications) in the User guide. 
+For details refer to  [Administration > Managing applications](/users-guide/administration#applications) in the User guide. 

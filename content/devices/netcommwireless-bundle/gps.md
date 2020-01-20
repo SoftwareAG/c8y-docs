@@ -9,4 +9,4 @@ To locate or trace the router, connect a GPS antenna to the router and enable it
 	set service.cumulocity.gps.update_interval=<update interval>
 	set service.cumulocity.gps.interval=<event interval>
 
-After you applied the configuration changes, wait a moment for the first GPS data to arrive, then refresh the page. A "Location" and a "Tracking" tab should now appear. See the "[Location](/guides/users-guide/device-management#location)" and "[Tracking](/guides/users-guide/device-management#tracking)" sections in the user guide for more information.
+After you applied the configuration changes, wait a moment for the first GPS data to arrive, then refresh the page. A "Location" and a "Tracking" tab should now appear. See the "[Location](/users-guide/device-management#location)" and "[Tracking](/users-guide/device-management#tracking)" sections in the user guide for more information.

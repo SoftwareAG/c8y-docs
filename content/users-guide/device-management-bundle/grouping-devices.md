@@ -67,7 +67,7 @@ From the **Groups** page, you can also create a new group by clicking **Add grou
 
 1. In the navigator, click a group to open it. 
 2. In the **Info** tab, click **Edit**. This allows you to edit the name of the group and to assign user permissions for the group. 
-For further information on permissions, see the [Administration Guide](/guides/users-guide/administration#managing-permissions).
+For further information on permissions, see the [Administration Guide](/users-guide/administration#managing-permissions).
 
 ### To delete a group
 

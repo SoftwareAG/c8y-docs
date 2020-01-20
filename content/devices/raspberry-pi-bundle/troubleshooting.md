@@ -9,4 +9,4 @@ The agent writes debug information to the Pi's syslog. To troubleshoot, for exam
 
 ## Developing the agent
 
-If you would like to connect other devices to the Raspberry Pi and manage these from Cumulocity, check the [Java agent documentation](/guides/device-sdk/java#agents).
+If you would like to connect other devices to the Raspberry Pi and manage these from Cumulocity, check the [Java agent documentation](/device-sdk/java#agents).

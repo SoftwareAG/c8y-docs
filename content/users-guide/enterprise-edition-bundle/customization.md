@@ -10,7 +10,7 @@ In the **Settings** menu, you may specify various customization settings.
 
 ### <a name="configuration"></a>Configuration
 
->**Info**: For information on the general settings in the **Customization** tab, see [Changing Settings > Configuration settings](/guides/users-guide/administration/#config-platform) in the Administration section. Here, only the features will be explained which are exclusively available for Enterprise Tenants.
+>**Info**: For information on the general settings in the **Customization** tab, see [Changing Settings > Configuration settings](/users-guide/administration/#config-platform) in the Administration section. Here, only the features will be explained which are exclusively available for Enterprise Tenants.
 
 #### Applications
 
@@ -28,7 +28,7 @@ In the **Passwords** section, you can specify password settings like default str
 
 In the **Support user** section, you configure the parameters for the support user activation for subtenant users.
 
-With the support user feature, support users (i.e. users with specific permissions in the management tenant) can access subtenant users in case of any issues. Refer to [Supporting user access](/guides/users-guide/enterprise-edition#users-in-other-tenants) for more information.
+With the support user feature, support users (i.e. users with specific permissions in the management tenant) can access subtenant users in case of any issues. Refer to [Supporting user access](/users-guide/enterprise-edition#users-in-other-tenants) for more information.
 
 <img src="/images/users-guide/Administration/admin-settings-configuration-support-user.png" alt="Support user configuration">
 
@@ -42,7 +42,7 @@ In the **Validity limit** field, you can optionally specify the support duration
 
 The expiry date-time will be updated based on the duration specified in the **Validity limit** field, e.g. if the current expiry date-time is 01/09/2018 15:00 and duration has been kept at 24 hours, the enabling support user will update the expiry date to 01/10/2018 15:00.
 
-Details on the status of support user requests and support user access for a tenant can be found in the **Properties** tab of the tenant, see [Managing tenants](/guides/users-guide/enterprise-edition#managing-tenants).
+Details on the status of support user requests and support user access for a tenant can be found in the **Properties** tab of the tenant, see [Managing tenants](/users-guide/enterprise-edition#managing-tenants).
 
 ### <a name="branding"></a>Branding
 

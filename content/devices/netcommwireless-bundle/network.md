@@ -8,7 +8,7 @@ You can view and configure the essential mobile network ("WAN") and local area n
 
 The mobile network ("WAN") parameters shown in the user interface correspond to the first profile stored in the router. These parameters can be remotely configured directly or via SMS.
 
-For SMS configuring, the router needs to be configured to accept SMS commands. Consult the router's manual on the relevant parameters for SMS configuration, or use the router's web user interface. You also need to have an SMS gateway configured with your account. Contact [support](https://support.cumulocity.com) for setting up an SMS gateway. For more information on Device Shell, consult the  [user's guide](https://cumulocity.com/guides/users-guide/device-management/#shell).
+For SMS configuring, the router needs to be configured to accept SMS commands. Consult the router's manual on the relevant parameters for SMS configuration, or use the router's web user interface. You also need to have an SMS gateway configured with your account. Contact [support](https://support.cumulocity.com) for setting up an SMS gateway. For more information on Device Shell, consult the  [user's guide](https://cumulocity.com/users-guide/device-management/#shell).
 
 > Note configuring WAN parameters via both IP and SMS mode requires Cumulocity 7.26. When you configure a wrong APN setting, the device will lose mobile network connection and can only be managed by limited SMS functionality.
 
@@ -20,7 +20,7 @@ LAN and DHCP parameters can be directly configured from Cumulocity as well.
 
 ## <a name="software"></a>Managing software and firmware
 
-The installed software and firmware on the router can be remotely managed using the standard software and firmware management feature from Cumulocity, as described in the [Device management user's guide](/guides/users-guide/device-management#software-repo).
+The installed software and firmware on the router can be remotely managed using the standard software and firmware management feature from Cumulocity, as described in the [Device management user's guide](/users-guide/device-management#software-repo).
 
 Software packages need to be in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format and follow the naming convention "&lt;package&gt;\_&lt;version&gt;\_&lt;arch&gt;.ipk". Version numbers including letters are not supported. All package management methods (install, upgrade, downgrade, removal) are supported through the router's package manager. If software packages have dependencies, please make sure to install these first.
 

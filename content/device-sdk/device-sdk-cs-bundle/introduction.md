@@ -11,17 +11,17 @@ Cumulocity comes with elaborate support for developing clients in C#. You can us
 
 To get started, check the "Hello World" examples for the various C# variants.
 
-* The most simple starting point is the [C# example](/guides/device-sdk/device-sdk-cs/#hello-world-basic).
+* The most simple starting point is the [C# example](/device-sdk/device-sdk-cs/#hello-world-basic).
 
 Note, that you can develop Cumulocity with any IDE and any build tool that you prefer, but the examples focus on .NET Core SDK and Visual Studio.
 
-After reviewing the "Hello world" examples, continue with the section [Developing C# clients](/guides/device-sdk/device-sdk-cs/#developing-cs-clients).
+After reviewing the "Hello world" examples, continue with the section [Developing C# clients](/device-sdk/device-sdk-cs/#developing-cs-clients).
 
-<!--or download the complete examples described in the section [C# reference agents](/guides/device-sdk/device-sdk-cs/#agents). There's one full example of a device-side agent demonstrating nearly all Cumulocity features, and one full example of a server-side agent.-->
+<!--or download the complete examples described in the section [C# reference agents](/device-sdk/device-sdk-cs/#agents). There's one full example of a device-side agent demonstrating nearly all Cumulocity features, and one full example of a server-side agent.-->
 
 Finally, here are some references for getting started with the basic technologies underlying the SDK:
 
--   The client libraries use the Cumulocity REST interfaces as underlying communication protocol as described in the section on [REST](/guides/device-sdk/rest).
+-   The client libraries use the Cumulocity REST interfaces as underlying communication protocol as described in the section on [REST](/device-sdk/rest).
 -   All examples and libraries are open source -- check [https://bitbucket.org/m2m](https://bitbucket.org/m2m).
 
 <!--Documentation for the <a href="http://resources.cumulocity.com/documentation/cssdk/current/" target="_blank">C# client API</a> can be found on our resources site.-->
@@ -38,4 +38,4 @@ To verify the version of your .NET Core Software Development Kit, type
 
 The output needs to show a version number later than "2.2.100" for the basic examples.
 
-You need to have a valid tenant, user and password in order to access Cumulocity. Refer to [Tenant ID and tenant domain](guides/reference/tenants/#tenant-id-and-domain) in the Reference guide to learn the difference between tenant ID and tenant domain.
+You need to have a valid tenant, user and password in order to access Cumulocity. Refer to [Tenant ID and tenant domain](reference/tenants/#tenant-id-and-domain) in the Reference guide to learn the difference between tenant ID and tenant domain.

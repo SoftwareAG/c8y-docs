@@ -4,7 +4,7 @@ layout: redirect
 weight: 70
 ---
 
-You can retrieve, modify and save user configuration data. To do this, navigate to the "[Configuration](/guides/users-guide/device-management#operation-monitoring)" tab of the router, click on the "Reload" button in the "CONFIGURATION" widget to request configuration data. It will take a few seconds to download. After the configuration data has arrived, you will see a list of parameters and their corresponding values. You can then make changes to the configuration and save them back to the device.
+You can retrieve, modify and save user configuration data. To do this, navigate to the "[Configuration](/users-guide/device-management#operation-monitoring)" tab of the router, click on the "Reload" button in the "CONFIGURATION" widget to request configuration data. It will take a few seconds to download. After the configuration data has arrived, you will see a list of parameters and their corresponding values. You can then make changes to the configuration and save them back to the device.
 
 You can also request a configuration snapshot from the device and later apply the configuration snapshot to other devices.
 
@@ -23,4 +23,4 @@ To use SMS commands for devices, open the router's web interface and navigate to
 
 ![Enable SMS mode](/images/devices/netcomm/sms_mode.png)
 
-> For more information please refer to "[Control devices via SMS](/guides/reference/device-control#control_via_sms)".
+> For more information please refer to "[Control devices via SMS](/reference/device-control#control_via_sms)".

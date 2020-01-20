@@ -197,7 +197,7 @@ import './plugins/mywidget/cumulocity.json';
 
 As observed in [this diff](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples/branches/compare/next%0Dc5431a1#diff) the changes to include the new tooling to an existing project are quite concise.
 
-In [@c8y/cli](/guides/web/angular#cli), the entry point of an application can be a cumulocity.json application manifest or a plain Javascript file.
+In [@c8y/cli](/web/angular#cli), the entry point of an application can be a cumulocity.json application manifest or a plain Javascript file.
 
 ```bash
 npx c8ycli serve ./cumulocity.json
@@ -219,7 +219,7 @@ Although the modification to the application is read from the target file, the d
 
 #### Alternative to target files
 
-As an alternative to target files developers should now use [applications options](/guides/web/angular#applications-options).
+As an alternative to target files developers should now use [applications options](/web/angular#applications-options).
 
 There is no alternative to mutating the list of imported plugins. The recommended approach is to explicitly import the required modules.
 

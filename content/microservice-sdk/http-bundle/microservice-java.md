@@ -4,7 +4,7 @@ title: Java microservice
 layout: redirect
 ---
 
-> **Important**: Review the [Hello world tutorial](/guides/microservice-sdk/java/#java-microservice) presented in **Microservice SDK for Java** and follow the setup steps there before continuing with this example as the basic configuration steps are not explained here.
+> **Important**: Review the [Hello world tutorial](/microservice-sdk/java/#java-microservice) presented in **Microservice SDK for Java** and follow the setup steps there before continuing with this example as the basic configuration steps are not explained here.
 
 This microservice application creates a warning alarm message (for demonstration purposes) and it exposes endpoints to:
 
@@ -18,7 +18,7 @@ It also uses the Cumulocity UI to display the tracked locations on a map.
 
 ### Updating the project object model
 
-Assuming that you have the base code of the "Hello world" example presented in [Microservice SDK for Java](/guides/microservice-sdk/java/), modify your *pom.xml* file adding the following dependency:
+Assuming that you have the base code of the "Hello world" example presented in [Microservice SDK for Java](/microservice-sdk/java/), modify your *pom.xml* file adding the following dependency:
 
 ```xml
 <dependency>
@@ -52,7 +52,7 @@ In your _cumulocity.json_ file:
 1. Add the required roles to be able to create events and alarms.
 2. Add the readiness and liveness probes.
 3. Add two keys for the microservice settings: `"ipstack.key"` and `"tracker.id"`.
-4. Set the isolation level to PER_TENANT, which means that there will be a separate instance for each tenant. For more details see the Settings section in [General aspects > Microservice manifest](/guides/microservice-sdk/concept/#manifest).
+4. Set the isolation level to PER_TENANT, which means that there will be a separate instance for each tenant. For more details see the Settings section in [General aspects > Microservice manifest](/microservice-sdk/concept/#manifest).
 
 Your manifest file should look similar to this:
 
@@ -388,7 +388,7 @@ public class App {
 
 ### Building and deploying the application
 
-Use the command `mvn clean install` and follow the same steps of the [Hello world tutorial](/guides/microservice-sdk/java/#java-microservice) to deploy your microservice.
+Use the command `mvn clean install` and follow the same steps of the [Hello world tutorial](/microservice-sdk/java/#java-microservice) to deploy your microservice.
 
 ### Testing the application
 
@@ -412,7 +412,7 @@ You can test any endpoint of your application using the command line or a web br
 
 Using the endpoint <kbd>location/locations</kbd> will return by default five stored events. You can use the `max` parameter to specify a higher number.
 
-In the Device Management application, navigate to **Devices** > **All devices** and locate your microservice tracker. Under **Tracking** you will see a map with the tracked locations. It is also possible to develop your own web application and customize a map widget. Refer to the [Web SDK for Angular](https://cumulocity.com/guides/web/angular/#apps) for more details.
+In the Device Management application, navigate to **Devices** > **All devices** and locate your microservice tracker. Under **Tracking** you will see a map with the tracked locations. It is also possible to develop your own web application and customize a map widget. Refer to the [Web SDK for Angular](https://cumulocity.com/web/angular/#apps) for more details.
 
 ![Microservice tracking](/images/microservices-sdk/ms-tracking-map.png)
 

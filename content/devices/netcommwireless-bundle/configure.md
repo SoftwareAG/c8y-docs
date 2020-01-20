@@ -51,7 +51,7 @@ The web interface also shows the status of the connection to Cumulocity:
 
 ## <a name="connect"></a>Connecting the router
 
-To register your NetComm router to Cumulocity, you need the router's serial number as _Device ID_. The registration process is described in section "[Connecting devices](/guides/users-guide/device-management/#device-registration)" in the User Guide. The serial number is printed on the back side of the router as shown below. Alternately, it is also available in the router's web user interface. Navigate to "System", "Internet of Things" and view the "Device ID" field.
+To register your NetComm router to Cumulocity, you need the router's serial number as _Device ID_. The registration process is described in section "[Connecting devices](/users-guide/device-management/#device-registration)" in the User Guide. The serial number is printed on the back side of the router as shown below. Alternately, it is also available in the router's web user interface. Navigate to "System", "Internet of Things" and view the "Device ID" field.
 
 > Users of version 2.x or upgrading from 2.x to 3.x should use the router's MAC address. Please make sure to use only lowercase letters and numbers when entering the MAC address. Do not use colons to separate the MAC address. For example, the MAC address from the picture would be entered as
 

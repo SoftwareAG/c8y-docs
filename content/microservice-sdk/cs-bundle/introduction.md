@@ -8,11 +8,11 @@ This section describes how to develop and deploy microservices on top of Cumuloc
 
 * [General prerequisites](#general-prerequisites) – Requirements you need to develop and run C# microservices.
 
-* [Hello World](/guides/microservice-sdk/cs/#hello-world-basic) – Implement and run you first C# microservice.
+* [Hello World](/microservice-sdk/cs/#hello-world-basic) – Implement and run you first C# microservice.
 
-* [Developing C# microservices](/guides/microservice-sdk/cs/#developing-microservice) - Detailed information about this SDK.
+* [Developing C# microservices](/microservice-sdk/cs/#developing-microservice) - Detailed information about this SDK.
 
-The most simple starting point is the [C# Hello World example](/guides/microservice-sdk/cs/#hello-world-basic).
+The most simple starting point is the [C# Hello World example](/microservice-sdk/cs/#hello-world-basic).
 
 >**Info**: You can develop Cumulocity with any IDE and any build tool that you prefer, but the examples focus on Cake (C# Make) and Visual Studio.
 

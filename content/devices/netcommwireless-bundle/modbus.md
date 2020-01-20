@@ -31,7 +31,7 @@ where `<mode>` can be rs232, rs422 or rs485. You may need to reboot the device a
 Then:
 
 * Subscribe your account to the Cloud Fieldbus app by contacting [support](https://support.cumulocity.com).
-* Configure Modbus communication as described in the [Cloud Fieldbus user's guide](/guides/users-guide/cloud-fieldbus).
+* Configure Modbus communication as described in the [Cloud Fieldbus user's guide](/users-guide/cloud-fieldbus).
 * Enable or disable write permission by setting the "Modbus read only" property in the Cumulocity menu on the device's web UI, see "[Configuring the router](#configure)". Set it to 0 means allow write permission, while 1 means disallow Modbus write permission.
 
 ## <a name="logs"></a>Log viewer

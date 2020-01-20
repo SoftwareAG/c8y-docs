@@ -96,4 +96,4 @@ What does the code in "main" do?
 
 ### Improving the agent
 
-Now that you have done your first step, check out the section [Hello MQTT](/guides/device-sdk/mqtt#hello-mqtt) to learn more about Cumulocity MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/device-sdk/mqtt#hello-mqtt) to learn more about Cumulocity MQTT and improve your application.

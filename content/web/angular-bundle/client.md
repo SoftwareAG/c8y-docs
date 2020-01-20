@@ -26,7 +26,7 @@ Use `client.<endpoint>.list()` to request listed data from the Cumulocity REST A
 | Method | Description | Parameters | Return |
 | --- | --- | --- | --- |
 |`detail(entityOrId)` | Request detail data of a specific entity. |  `entityOrId: string | number | IIdentified`: An object which contains an id or an id as number or string. | `Promise<IResult<TData>>`: The list as Promise wrapped in an IResult. IResultList contains data and response. |
-|`list(filter)` | Request a list of data with an optional filter. | `filter:object`: (optional) A filter for [paging](/guides/reference/rest-implementation/#-a-name-paging-a-query-result-paging) or [filtering](/guides/reference/inventory/#query-language) of the list. | `Promise<IResultList<TData>>`: The list as Promise wrapped in an IResultList. IResultList contains data, response and paging.
+|`list(filter)` | Request a list of data with an optional filter. | `filter:object`: (optional) A filter for [paging](/reference/rest-implementation/#-a-name-paging-a-query-result-paging) or [filtering](/reference/inventory/#query-language) of the list. | `Promise<IResultList<TData>>`: The list as Promise wrapped in an IResultList. IResultList contains data, response and paging.
 
 * Example for receiving details of one managedObject of the inventory via `detail`:
 
@@ -103,7 +103,7 @@ The `detail$` and `list$` functions allow to subscribe to realtime channels that
 | Method | Description | Parameters | Return |
 | --- | --- | --- | --- |
 | `detail$(entityOrId, options)` | Returns an observable for detail data of one entity | `entityOrId: string | number | IIdentified`: An object which contains an id or an id as number or string.<br>`options: IObservableOptions`: (optional) An configuration object to define the observable. | `Observable<TData>>`: The list as subscribable observable. |
-| `list$(filter, options)` | Returns an observable for a list of entities. | `filter: object`: (optional) A filter for [paging](/guides/reference/rest-implementation/#-a-name-paging-a-query-result-paging) or [filtering](/guides/reference/inventory/#query-language) of the list (optional).<br>`options: IObservableOptions`: (optional) An configuration object to define the observable. | `ObservableList<TData>>`: The list as subscribable observable.
+| `list$(filter, options)` | Returns an observable for a list of entities. | `filter: object`: (optional) A filter for [paging](/reference/rest-implementation/#-a-name-paging-a-query-result-paging) or [filtering](/reference/inventory/#query-language) of the list (optional).<br>`options: IObservableOptions`: (optional) An configuration object to define the observable. | `ObservableList<TData>>`: The list as subscribable observable.
 
 * Example for receiving details of one managedObject of the inventory via `detail$`:
 
@@ -138,7 +138,7 @@ The `detail$` and `list$` functions allow to subscribe to realtime channels that
 
 ### Examples
 
-Below some examples are provided which may help you to get started. To see a complex and full implementation of the client into Angular, have a look at [@c8y/cli](/guides/web/angular#cli) and the `new` command to spin up a example application for Angular.
+Below some examples are provided which may help you to get started. To see a complex and full implementation of the client into Angular, have a look at [@c8y/cli](/web/angular#cli) and the `new` command to spin up a example application for Angular.
 
 
 #### Requesting list data from the inventory:

@@ -10,8 +10,8 @@ This section explains how to use Cumulocity's REST interfaces to interface devic
 
 The description is closely linked to the reference guide, which describes each interface in detail. Relevant chapters in the reference guide are in particular
 
--   [REST implementation](/guides/reference/rest-implementation) is the reference for all general concepts.
--   [Device management library](/guides/reference/device-management) specifies the data model for device management.
--   [Sensor library](/guides/reference/sensor-library) specifies the data model for sensors and controls.
+-   [REST implementation](/reference/rest-implementation) is the reference for all general concepts.
+-   [Device management library](/reference/device-management) specifies the data model for device management.
+-   [Sensor library](/reference/sensor-library) specifies the data model for sensors and controls.
 
 If you develop using Java ME/SE, JavaScript or C/C++, check the relevant chapters in this guide for even more convenient access to Cumulocity's functionality. Also, if you use any of the supported development boards, see the corresponding description in the Devices guide for more information.

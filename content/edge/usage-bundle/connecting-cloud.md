@@ -22,7 +22,7 @@ Navigate to **Data subscriptions** in your cloud account to receive the data fro
 
 In the same way, you can push operations from a Cumulocity Cloud account to Cumulocity IoT Edge devices.
  
-For details on sending and receiving data in Cumulocity refer to [Enterprise Tenant > Using the Data Broker](/guides/users-guide/enterprise-edition#data-broker) in the User guide.
+For details on sending and receiving data in Cumulocity refer to [Enterprise Tenant > Using the Data Broker](/users-guide/enterprise-edition#data-broker) in the User guide.
 
 
 

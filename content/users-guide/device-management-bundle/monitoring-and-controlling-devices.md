@@ -91,7 +91,7 @@ While a machine is offline, Cumulocity assumes by default
 * that the machine continues to stay in service during the connection outage, if this was the status before it lost connection.
 * that the machine continues to stay out of service, if this was the status before it lost connection.
 
-There may be exceptions from this rule. If your vending machines rely exclusively on cashless payment, losing the connection to the network means that your machine is out of service and stops selling. In this case, unavailability alarms must be set in the [Administration application](/guides/users-guide/administration#reprio-alarms) which have CRITICAL severity instead of MAJOR severity.
+There may be exceptions from this rule. If your vending machines rely exclusively on cashless payment, losing the connection to the network means that your machine is out of service and stops selling. In this case, unavailability alarms must be set in the [Administration application](/users-guide/administration#reprio-alarms) which have CRITICAL severity instead of MAJOR severity.
 
 Cumulocity displays service availability at the level of individual devices and across all devices. 
 
@@ -154,7 +154,7 @@ In each row, the following information for an alarm is provided:
 
 Click the arrow on the right of a row to expand it and display further details on the alarm.
 
-* **Status**: Providing further information on the alarm status and showing the type of the alarm. The type info is used for duplicating alarms and for configuring the priority of alarms in the [Administration application](/guides/users-guide/administration#reprio-alarms).
+* **Status**: Providing further information on the alarm status and showing the type of the alarm. The type info is used for duplicating alarms and for configuring the priority of alarms in the [Administration application](/users-guide/administration#reprio-alarms).
 * **Change Log**: Providing the server time when the alarm was created, which may differ from the device time.
 
 #### To change the status of an alarm
@@ -215,7 +215,7 @@ Click **Realtime** at the right of the top menu bar to see operations coming in 
 
 #### To create and execute operations
 
-Operations for a specific device are created and executed in the **Shell** tab of the device, see [Device details > Shell](/guides/users-guide/device-management#shell).
+Operations for a specific device are created and executed in the **Shell** tab of the device, see [Device details > Shell](/users-guide/device-management#shell).
 
 >**Important**:When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
 

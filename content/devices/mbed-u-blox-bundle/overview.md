@@ -15,7 +15,7 @@ For demonstration purposes, the [mbed application shield](http://mbed.org/compon
 The Cumulocity mbed agent connects the C027 application board to Cumulocity and provides the following features:
 
 * Network dial-up using the C027 modem.
-* Efficient communication through [SmartREST](/guides/microservice-sdk/rest#smartrest).
+* Efficient communication through [SmartREST](/microservice-sdk/rest#smartrest).
 * Full auto-registration using Cumulocity's bootstrap and device registration.
 * Collection and storage of temperature, GPS, accelerometer and analog sensor readings.
 * Control the device LED's and LCD display remotely from Cumulocity.

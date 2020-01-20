@@ -4,7 +4,7 @@ title: Smart Rules
 layout: redirect
 ---
 
-Cumulocity includes a rule engine to analyze data in realtime and to perform actions based on data. These rules are specified in a scripting language and are managed in the [Administration application](/guides/users-guide/administration).
+Cumulocity includes a rule engine to analyze data in realtime and to perform actions based on data. These rules are specified in a scripting language and are managed in the [Administration application](/users-guide/administration).
 
 To easily create rules, the Cockpit application includes a Smart Rules builder which allows you to create rules from templates (so-called smart rule templates).
 
@@ -96,7 +96,7 @@ To define a threshold rule follow these steps:
 4. Click the menu icon at the end of the row of the respective data point and select **Create Smart Rule**. <br><br> <img src="/images/users-guide/cockpit/cockpit-smart-rules-data-point.png" name="Data point example"/>
 <br>
 5. Select the Smart Rule "On measurement explicit threshold create alarm". 
-6. Fill in the red range minimum and red range maximum value. When the measurement value enters or leaves the RED range, an alarm is created or respectively cleared. For details, see the description of the rule "On measurement explicit threshold create alarm" in the [Smart Rules collection](/guides/users-guide/cockpit#smart-rules-collection).
+6. Fill in the red range minimum and red range maximum value. When the measurement value enters or leaves the RED range, an alarm is created or respectively cleared. For details, see the description of the rule "On measurement explicit threshold create alarm" in the [Smart Rules collection](/users-guide/cockpit#smart-rules-collection).
 7. Under **Create Alarm** you can optionally edit the alarm type and the alarm text.
 8. Under **Target assets or devices** you can select the object this rule will be applied to.
 9. Click **Create** to create the Smart Rule.

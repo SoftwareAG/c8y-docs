@@ -12,11 +12,11 @@ Cloud Fieldbus is a Cumulocity application with the ability to collect data from
 
 It is supported out of the box by the following terminals:
 
-* [Pssystec Smartbox-Modbus](/guides/devices/smartbox-mini) for Modbus/RTU
-* [Netcomm Wireless NTC-6200](/guides/devices/netcommwireless) for Modbus/TCP and Modbus/RTU
-* [Cinterion Java modules](/guides/devices/cinterion) for Modbus/RTU and CAN bus
-* [OPC-UA](/guides/devices/opcua) for OPC-UA Servers
-* [Pssystec SmartBox DP](/guides/devices/smartbox-dp) for Profibus
+* [Pssystec Smartbox-Modbus](/devices/smartbox-mini) for Modbus/RTU
+* [Netcomm Wireless NTC-6200](/devices/netcommwireless) for Modbus/TCP and Modbus/RTU
+* [Cinterion Java modules](/devices/cinterion) for Modbus/RTU and CAN bus
+* [OPC-UA](/devices/opcua) for OPC-UA Servers
+* [Pssystec SmartBox DP](/devices/smartbox-dp) for Profibus
 
 OPC UA support is implemented in Java and runs on any system running JRE7 (Java Runtime Environment 7) or newer.
 
@@ -125,7 +125,7 @@ Connecting Profibus differs slightly from the regular Plug & Play approach of Cl
 3. The baud rate is automatically detected by the gateway and is just being displayed here.
 4. Change the transmit rate according to your requirements. The transmit rate is the interval at which measurements are sent to Cumulocity.
 5. Set the slave address of the terminal.
-6. Configure your Profibus Master device to communicate to that slave address. To do so, refer to the gateway manual (e.g. [SmartBox DP](/guides/devices/smartbox-db)).
+6. Configure your Profibus Master device to communicate to that slave address. To do so, refer to the gateway manual (e.g. [SmartBox DP](/devices/smartbox-db)).
 7. Click **Save** to update the gateway with the new settings.
 
 **Adding child devices**
@@ -152,7 +152,7 @@ Once connected, you can now manage your device. Switch to the **Child devices** 
 
 #### <a name="collect"></a>Collecting measurements
 
-If the device type of the Fieldbus device is configured to collect measurements, these will be visible in the **Measurements** tab. They will also be available for usage in the [Data Explorer](/guides/users-guide/cockpit#visualize) and in [Dashboard widgets](/guides/users-guide/cockpit#dashboards).
+If the device type of the Fieldbus device is configured to collect measurements, these will be visible in the **Measurements** tab. They will also be available for usage in the [Data Explorer](/users-guide/cockpit#visualize) and in [Dashboard widgets](/users-guide/cockpit#dashboards).
 
 Data is collected according to the interval specified in the "transmit rate" property of the terminal as described above. To optimize the data traffic, data that is exactly the same as collected previously may not be sent again.
 
@@ -172,7 +172,7 @@ Similar to alarms, changes in Fieldbus devices can be monitored and logged as ev
 
 #### <a name="status"></a>Monitor a device status
 
-The status of devices can be monitored in real time using dashboard widgets in the Cockpit application. Navigate to the Cockpit application, create a dashboard or report, and add widgets as described in the [Cockpit section](/guides/users-guide/cockpit) in the User guide. The Cloud Fieldbus has two new widgets: The "Fieldbus Device" widget and the "SCADA" widget.
+The status of devices can be monitored in real time using dashboard widgets in the Cockpit application. Navigate to the Cockpit application, create a dashboard or report, and add widgets as described in the [Cockpit section](/users-guide/cockpit) in the User guide. The Cloud Fieldbus has two new widgets: The "Fieldbus Device" widget and the "SCADA" widget.
 
 #### <a name="fieldbus-device-widget"></a>Monitoring device status using the Fieldbus Device widget
 

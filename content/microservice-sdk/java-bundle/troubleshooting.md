@@ -8,7 +8,7 @@ Some common problems and their solutions have been identified and documented bel
 
 ##### SSL or certificate errors
 
-You can use both HTTP and HTTPS from the Java client libraries. To use HTTPS, you may need to import the Cumulocity production certificate into your Java Runtime Environment. [Download](/guides/cumulocity.com.cert "cumulocity.com certificate") the certificate and import it using the following command:
+You can use both HTTP and HTTPS from the Java client libraries. To use HTTPS, you may need to import the Cumulocity production certificate into your Java Runtime Environment. [Download](/cumulocity.com.cert "cumulocity.com certificate") the certificate and import it using the following command:
 
 ```shell
 $ $JAVA_HOME/bin/keytool -import -alias cumulocity -file cumulocity.com.crt -storepass changeit

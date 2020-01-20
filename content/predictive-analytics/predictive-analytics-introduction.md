@@ -9,4 +9,4 @@ The predictive analytics capabilities in the Cumulocity IoT platform enable you 
 
 These capabilities can be leveraged either from a web browser via an easy to use UI (Predictive Analytics application) or programmatically via REST API (Zementis Microservice). 
 
-This guide provides detailed information on the functionalities of the [Predictive Analytics application](/guides/predictive-analytics/web-app) and a comprehensive listing of [REST API](/guides/predictive-analytics/api-reference) exposed by Zementis Microservice.
+This guide provides detailed information on the functionalities of the [Predictive Analytics application](/predictive-analytics/web-app) and a comprehensive listing of [REST API](/predictive-analytics/api-reference) exposed by Zementis Microservice.

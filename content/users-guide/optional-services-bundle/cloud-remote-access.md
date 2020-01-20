@@ -44,7 +44,7 @@ The following gateways are supported:
 	* Can be used on any linux-based gateway device
 	* Latest version required
 * Third-party devices
-	* Many third-party devices are supported, for details see [Devices guide](/guides/devices)
+	* Many third-party devices are supported, for details see [Devices guide](/devices)
 
 ### How Cloud Remote Access works
 
@@ -58,7 +58,7 @@ The following protocols are supported:
 * Secure Shell (SSH)
 * Terminal (Telnet)
 
-Cloud Remote Access works as in the illustration below. The remotely controlled device runs a VNC, SSH or Telnet server and is connected to a gateway compatible with Cloud Remote Access. This gateway must be registered as a device within the Device Management application in Cumulocity. More information about registering devices and instructions can be found in [Device Management > Device Registration](/guides/users-guide/device-management/#device-registration) in the User guide.
+Cloud Remote Access works as in the illustration below. The remotely controlled device runs a VNC, SSH or Telnet server and is connected to a gateway compatible with Cloud Remote Access. This gateway must be registered as a device within the Device Management application in Cumulocity. More information about registering devices and instructions can be found in [Device Management > Device Registration](/users-guide/device-management/#device-registration) in the User guide.
 
 ![VNC2](/images/users-guide/cra-VNC2.png)
 
@@ -107,7 +107,7 @@ The "endpoint" is the IP address and port of the VNC, SSH or Telnet server runni
 
 To configure new remote devices, click **Add endpoint**. Follow the descriptions below for configuring the various types of endpoints.
 
->**Info**: To be able to configure an endpoint, you need ADMIN permission for "Remote access" and "Device control". To read data, a READ permission is sufficient. For more information on permissions, refer to [Administration > Managing permissions](/guides/users-guide/administration/#managing-permissions) in the User guide.
+>**Info**: To be able to configure an endpoint, you need ADMIN permission for "Remote access" and "Device control". To read data, a READ permission is sufficient. For more information on permissions, refer to [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the User guide.
 
 #### Adding remote access endpoints via VNC 
 
@@ -258,7 +258,7 @@ To set up new endpoints, you need ADMIN permission for "Device control" to be ab
 
 To establish a connection to a remote operating panel, a READ permission for "Remote access" is sufficient.
 
-For more information on permissions, refer to [Administration > Managing permissions](/guides/users-guide/administration/#managing-permissions) in the User guide.
+For more information on permissions, refer to [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the User guide.
 
 **Connection fails**
 

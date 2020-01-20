@@ -15,7 +15,7 @@ Die Asset-Hierarchie besteht aus zwei Objekttypen:
 
 * **Gruppen**: Objekte, die einzelne Geräte oder andere Gruppen gruppieren. Gruppen können sowohl in der Cockpit-Anwendung als auch in der Device-Management-Anwendung erstellt werden.
 
-* **Geräte**: Geräte, die mit der Asset-Hierarchie verknüpft werden. Bevor Sie Geräte in der Cockpit-Anwendung verwenden können, müssen diese mit Cumulocity verbunden werden. Dies erfolgt in der Device Management-Anwendung. Nähere Informationen zum Verbinden von Geräten finde Sie im Abschnitt [Device Management](/guides/benutzerhandbuch/device-management).
+* **Geräte**: Geräte, die mit der Asset-Hierarchie verknüpft werden. Bevor Sie Geräte in der Cockpit-Anwendung verwenden können, müssen diese mit Cumulocity verbunden werden. Dies erfolgt in der Device Management-Anwendung. Nähere Informationen zum Verbinden von Geräten finde Sie im Abschnitt [Device Management](/benutzerhandbuch/device-management).
 
 In Beispiel oben repräsentieren die Gruppenobjekte einen Gebäudebestand und die Geräteobjekte die Räume. Die Namen und Hierarchien können individuell vom Benutzer festgelegt werden. Hierarchien können mehrere Ebenen haben wie etwa Ebenen für Region, Stadt, Straße, Gebäude, Etage oder Raum. Jedes Gerät kann mit mehreren und verschiedenen Hierarchien verknüpft sein, und etwa Teil einer regionalen Hierarchie sowie einer Kundenhierarchie sein. 
 
@@ -28,7 +28,7 @@ Um ein Gerät mit der Asset-Hierarchie zu verknüpfen, muss das Gerät einer Gru
 Cumulocity unterstützt zwei Hierarchietypen: die Gerätehierarchie und die
 Asset-Hierarchie.
 
-Die Gerätehierarchie bildet die Verknüpfung von Geräten mit Cumulocity aus Kommunikationssicht ab. Die Asset-Hierarchie strukturiert die Assets, die über die M2M-Geräte fernüberwacht und gesteuert werden. Nähere Informationen finden Sie unter [Cumulocity's Domain Model](/guides/concepts/domain-model) im Concepts guide.
+Die Gerätehierarchie bildet die Verknüpfung von Geräten mit Cumulocity aus Kommunikationssicht ab. Die Asset-Hierarchie strukturiert die Assets, die über die M2M-Geräte fernüberwacht und gesteuert werden. Nähere Informationen finden Sie unter [Cumulocity's Domain Model](/concepts/domain-model) im Concepts guide.
 
 In der Cockpit-Anwendung konstruieren Sie Ihre Asset-Hierarchie, indem Sie Gruppenobjekte erstellen und Geräte mit den Gruppen verknüpfen. 
 Die Asset-Hierarchie hängt von den verwendeten IoT-Geräten ab. 
@@ -89,14 +89,14 @@ Für jedes Objekt gibt es verschiedene Registerkarten, abhängig vom Objekttypen
 |Registerkarte|Beschreibung|Verfügbarkeit
 |:---|:---|:---
 |Info|Zeigt eine Liste von [Smart Rules](#smart-rules), die für dieses Objekt erstellt wurden.|Gruppe, Gerät
-|Alarme|Zeigt Alarme für das Gerät. Nähere Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/guides/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt Device Management.|Gerät
+|Alarme|Zeigt Alarme für das Gerät. Nähere Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt Device Management.|Gerät
 |Kind-Assets|Zeigt die Kind-Assets einer Gruppe.|Gruppe
 |Daten-Explorer|Zeigt alle Datenpunkte der Kinder, siehe auch [Visualisieren von Daten mit dem Daten-Explorer](#data-explorer).|Gruppe, Gerät
 |Standort|Zeigt den aktuellen Standort des Geräts.|Gerät
 
 Wenn für ein Gerät Dashboards erstellt wurden, werden diese ebenfalls als Registerkarten angezeigt. Weitere Informationen finden Sie unter [Verwenden von Dashboards](#dashboards).
 
-Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit Plugins erweitert wurde. Siehe auch [Web SDK for plugins](/guides/web/introduction).
+Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit Plugins erweitert wurde. Siehe auch [Web SDK for plugins](/web/introduction).
 
 ### <a name="creating-groups"></a>Erstellen von Gruppen
 
@@ -115,7 +115,7 @@ Um eine neue Gruppe als Kind zu einer existierenden Gruppe hinzuzufügen, navigi
 
 ### <a name="assigning-devices"></a>Zuweisen von Geräten zu Gruppen
 
-Bevor Sie ein Gerät zu einer Asset-Hierarchie hinzufügen können, muss das Gerät mit Cumulocity verbunden werden. Das Verbinden von Geräten mit der Plattform erfolgt in der Device Management-Anwendung. Weitere Informationen zum Verbinden von Geräten finden Sie unter [Device Management](/guides/users-guide/device-management).
+Bevor Sie ein Gerät zu einer Asset-Hierarchie hinzufügen können, muss das Gerät mit Cumulocity verbunden werden. Das Verbinden von Geräten mit der Plattform erfolgt in der Device Management-Anwendung. Weitere Informationen zum Verbinden von Geräten finden Sie unter [Device Management](/users-guide/device-management).
 
 Führen Sie die folgenden Schritte aus, um ein Gerät einer Gruppe zuzuweisen:
 

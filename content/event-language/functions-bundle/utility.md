@@ -56,7 +56,7 @@ Example:
 
 ### inMaintenanceMode
 
-The inMaintenaceMode() function is a fast way to check if the device is currently in maintenance mode. It takes an [ID](/guides/event-language/data-model#id) as paramter and will return a boolean value.
+The inMaintenaceMode() function is a fast way to check if the device is currently in maintenance mode. It takes an [ID](/event-language/data-model#id) as paramter and will return a boolean value.
 
 Example:
 
@@ -112,7 +112,7 @@ Example:
 The toNumberSetParameter() function helps you to configure timer patterns outside of the module. When deploying a module with timer patterns the pattern has to be fixed to the point of deployment and cannot be changed without redeploying the module.
 It is possible to configure timer patterns with variables if the variables get resolved immediately on deployment. This enables you to store the timer pattern in a ManagedObject. On deployment you load it and fill it with the timer pattern.
 The toNumberSetParameter() function transforms strings to the NumberSetParameter type which is the input for timer patterns.
-For more information about timer patterns please check [here](/guides/event-language/advanced).
+For more information about timer patterns please check [here](/event-language/advanced).
 
 Example:
 

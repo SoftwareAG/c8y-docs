@@ -11,7 +11,7 @@ This section describes how to develop and deploy microservices on top of Cumuloc
 
 These are some useful references to get started with the basic technologies underlying the SDK:
 
-- The client libraries use the Cumulocity REST interfaces as underlying communication protocol as described in the section [Using the REST interface](/guides/microservice-sdk/rest).
+- The client libraries use the Cumulocity REST interfaces as underlying communication protocol as described in the section [Using the REST interface](/microservice-sdk/rest).
 - All examples and libraries are open source and can be reviewed at the [M2M Repositories](https://bitbucket.org/m2m).
 - The JavaDoc for the
 <a href="http://resources.cumulocity.com/documentation/microservicesdk/current/" target="_blank">Java Microservice SDK</a> can be found on our resources website.

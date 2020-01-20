@@ -63,4 +63,4 @@ The products of the owa4X family are predestined for all telematics applications
 
 ### Installation, configuration and integration to Cumulocity
 
-For more info, refer to [Owasys3x > Integration with Cumulocity](/guides/devices/owasys3x#cumulocity-integration)
+For more info, refer to [Owasys3x > Integration with Cumulocity](/devices/owasys3x#cumulocity-integration)

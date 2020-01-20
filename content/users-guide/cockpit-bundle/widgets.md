@@ -12,7 +12,7 @@ The following section describes, in alphabetical order, each available widget ty
 
 ### Alarm list
 
-The "Alarm list" widget shows a list of alarms, filtered by objects, alarm severity and alarm status. For details on the information provided for each alarm, refer to [Working with alarms](/guides/users-guide/device-management/#alarm-monitoring) in the Device Management section.
+The "Alarm list" widget shows a list of alarms, filtered by objects, alarm severity and alarm status. For details on the information provided for each alarm, refer to [Working with alarms](/users-guide/device-management/#alarm-monitoring) in the Device Management section.
 
 ![Alarm list widget](/images/users-guide/cockpit/cockpit-widget-alarm-list.png)
 
@@ -33,7 +33,7 @@ The "All critical alarms" widget shows all objects with a critical alarm. Apart 
 
 ![Critical alarms](/images/users-guide/cockpit/cockpit-widget-critical-alarms.png)
 
-For details on alarms, refer to [Device Management > Working with alarms](/guides/users-guide/device-management/#alarm-monitoring).
+For details on alarms, refer to [Device Management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
 
 ### Applications
 
@@ -41,7 +41,7 @@ The "Applications" widget shows a list of links to all available applications. A
 
 ![Applications widget](/images/users-guide/cockpit/cockpit-widget-applications.png)
 
-For details on applications, refer to [Administration > Managing Applications](/guides/users-guide/administration#managing-applications).
+For details on applications, refer to [Administration > Managing Applications](/users-guide/administration#managing-applications).
 
 
 ### Asset notes
@@ -105,7 +105,7 @@ Click **+Add Properties** and select one or more properties to be added.
 
 ![Reboot device button configuration](/images/users-guide/cockpit/cockpit-widget-asset-table-buttonconfig.png)
 
->**Info:** The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For more details, refer to [shell commands](/guides/users-guide/device-management/#shell).<br>
+>**Info:** The dialog shows the predefined shell commands of the first device that supports shell commands. The list is empty if there is no such device. For more details, refer to [shell commands](/users-guide/device-management/#shell).<br>
 You can also enter the JSON format for the operation that will be sent to the device. For details, contact the device vendor for supported operations.
 
 #### To modify the table
@@ -160,7 +160,7 @@ Additionally, a specific date range can be set and the events can be monitored i
 
 The "Fieldbus device" widget lets you see the status of a modbus device and operate it.
 
-For details on the "Fieldbus device" widget, refer to [Optional Services > Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/guides/users-guide/optional-services#fieldbus-device-widget).
+For details on the "Fieldbus device" widget, refer to [Optional Services > Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/users-guide/optional-services#fieldbus-device-widget).
 
 ### Help and service
 
@@ -294,7 +294,7 @@ The "Recent alarms" widget shows all alarms of all severity sorted by time. Ther
 
 ![Recent alarms widget](/images/users-guide/cockpit/cockpit-widget-recent-alarms.png)
 
-For details on alarms, refer to [Device Management > Working with alarms](/guides/users-guide/device-management/#alarm-monitoring).
+For details on alarms, refer to [Device Management > Working with alarms](/users-guide/device-management/#alarm-monitoring).
 
 ### Relay array control
 
@@ -324,7 +324,7 @@ In the "Rotation" widget you can rotate the object by dragging and moving it aro
 
 The "SCADA" widget provides a graphic representation of the status of a device.
 
-For details on the "SCADA" widget, refer to [Optional Services > Cloud Fieldbus > Monitoring status using the SCADA widget](/guides/users-guide/optional-services/#scada).
+For details on the "SCADA" widget, refer to [Optional Services > Cloud Fieldbus > Monitoring status using the SCADA widget](/users-guide/optional-services/#scada).
 
 > **Info:** All "svg" files are sanitized in order to remove malicious code.
 

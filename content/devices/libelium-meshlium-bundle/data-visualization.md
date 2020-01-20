@@ -21,6 +21,6 @@ Select the child device that you wish to see, then click on "Measurements" to se
 
 ![measurements](/images/devices/meshlium/measurements.png)
 
-To better understand how our platform works and custom configure the interface, consult our [guidelines](https://www.cumulocity.com/guides/).
+To better understand how our platform works and custom configure the interface, consult our [guidelines](https://www.cumulocity.com/).
 
 

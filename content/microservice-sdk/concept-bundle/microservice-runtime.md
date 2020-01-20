@@ -76,7 +76,7 @@ When using Java-based microservices this variable is automatically read and appl
 
 #### Proxy variables
 
-Proxy variables are used to set a proxy URL for different protocols. For the microservices written in Java, setting each variable will result in passing the corresponding parameter into the JVM runtime (for detailed information see the [Java Networking and Proxies](https://docs.oracle.com/javase/8/docs/technotes/guides/net/proxies.html) webpage).
+Proxy variables are used to set a proxy URL for different protocols. For the microservices written in Java, setting each variable will result in passing the corresponding parameter into the JVM runtime (for detailed information see the [Java Networking and Proxies](https://docs.oracle.com/javase/8/docs/technotes/net/proxies.html) webpage).
 
 Proxy variables are passed into the microservice environment during installation. The microservice installer passes the variables into the environment according to the following settings:
 

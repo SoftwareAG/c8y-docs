@@ -70,7 +70,7 @@ curl --request GET "{{url}}/service/zementis/resources"
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -129,7 +129,7 @@ curl --request GET "{{url}}/service/zementis/resource/customerAreaMappingTable.x
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -202,7 +202,7 @@ curl --request GET "{{url}}/service/zementis/resource/customerAreaMappingTable.x
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -303,7 +303,7 @@ curl --request POST "{{url}}/service/zementis/resource" --form "file=@custom-fun
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -387,7 +387,7 @@ curl --request DELETE "{{url}}/service/zementis/resource/customerAreaMappingTabl
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -458,6 +458,6 @@ curl --request DELETE "{{url}}/service/zementis/resources"
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```

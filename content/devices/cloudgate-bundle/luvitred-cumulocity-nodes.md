@@ -27,7 +27,7 @@ If you want to add multiple series to a measurement, you have to add a new measu
 
 ![c8y measurement](/images/devices/cloudgate/c8ymeasurement.png)
 
-For more information on measurements, refer to "[Cumulocity's domain model](/guides/concepts/domain-model/)".
+For more information on measurements, refer to "[Cumulocity's domain model](/concepts/domain-model/)".
 
 For more information on the node, refer to the description which can be seen on the "Info" tab on the right side when selecting the node.
 
@@ -49,7 +49,7 @@ The following parameters are optional:
 
 ![c8y alarm](/images/devices/cloudgate/c8yalarm.png)
 
-For more information on alarms, refer to "[Working with alarms](/guides/users-guide/device-management/#alarm-monitoring)".
+For more information on alarms, refer to "[Working with alarms](/users-guide/device-management/#alarm-monitoring)".
 
 For more information on the node, refer to the description which can be seen on the "Info" tab on the right side when selecting the node.
 
@@ -69,7 +69,7 @@ The following parameters are optional:
 
 ![c8y event](/images/devices/cloudgate/c8yevent.png)
 
-For more information on events, refer to "[Cumulocity's domain model](/guides/concepts/domain-model/)".
+For more information on events, refer to "[Cumulocity's domain model](/concepts/domain-model/)".
 
 For more information on the node, refer to the description which can be seen on the "Info" tab on the right side when selecting the node.
 
@@ -81,7 +81,7 @@ To be able to run the node, the following parameters need to be defined:
 
 - Platform: Select a [platform](#platform) for this node.
 
-For more information on events, refer to "[Shell](/guides/users-guide/device-management/#shell)".
+For more information on events, refer to "[Shell](/users-guide/device-management/#shell)".
 
 For more information on the node, refer to the description which can be seen on the "Info" tab on the right side when selecting the node.
 
@@ -93,7 +93,7 @@ To be able to run the node, the following parameters need to be defined:
 
 - Platform: Select a [platform](#platform) for this node.
 
-For more information on events, refer to "[Configuration](/guides/users-guide/device-management/#config)".
+For more information on events, refer to "[Configuration](/users-guide/device-management/#config)".
 
 For more information on the node, refer to the description which can be seen on the "Info" tab on the right side when selecting the node.
 
@@ -113,4 +113,4 @@ To be able to use the configuration, the type of provision has to be specified (
 
 In case of "Manually", the user has to enter a tenant, username and password. After starting the workflow, the nodes which use this configuration should be able to connect to Cumulocity, provided that the credentials are correct.
 
-In case of "Automatically", the user can enter a servername and authentication string. If not, the node will use default values. Before or after starting the workflow, the user has to register the device with its serial number in the desired tenant. For more information on registering devices, refer to "[Connecting devices manually](/guides/users-guide/device-management/#device-registration)". After accepting the device in the tenant, the nodes which use this configuration should be able to connect to Cumulocity, provided that the credentials are correct.
+In case of "Automatically", the user can enter a servername and authentication string. If not, the node will use default values. Before or after starting the workflow, the user has to register the device with its serial number in the desired tenant. For more information on registering devices, refer to "[Connecting devices manually](/users-guide/device-management/#device-registration)". After accepting the device in the tenant, the nodes which use this configuration should be able to connect to Cumulocity, provided that the credentials are correct.

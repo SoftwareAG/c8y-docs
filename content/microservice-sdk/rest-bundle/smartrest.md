@@ -16,7 +16,7 @@ For these environments, Cumulocity offers the so-called SmartREST protocol. Smar
 * It is based on CSV (comma-separated values), hence, it is easy to handle from C-based environments.
 * It supports server-generated timestamps for devices without clocks.
 
-In the next section, we will discuss the concepts behind SmartREST and the basic protocol that is used. SmartREST is based on separating metadata from payload data by using templates, which are described below. Finally, we show how to send and receive data using SmartREST. For a detailed description of the protocol, see the [SmartREST reference](/guides/reference/smartrest).
+In the next section, we will discuss the concepts behind SmartREST and the basic protocol that is used. SmartREST is based on separating metadata from payload data by using templates, which are described below. Finally, we show how to send and receive data using SmartREST. For a detailed description of the protocol, see the [SmartREST reference](/reference/smartrest).
 
 ### How does SmartREST work?
 

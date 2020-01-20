@@ -12,7 +12,7 @@ As an example, the following statement continuously retrieves new temperature se
     from MeasurementCreated e
     where getNumber(e, "c8y_TemperatureMeasurement.T.value") > 100
 
-Here, *MeasurementCreated* is a stream containing an event for each measurement that is created in the system. Selecting a subset of these events is done using *where*, similar to SQL. *getNumber()* is a function to read out a numeric value from an event. In this example, "e" is the "MeasurementCreated" event and the property is "c8y\_TemperatureMeasurement". "T.value", is a  value in degrees Celsius of a temperature sensor (see the [sensor library](/guides/reference/sensor-library)).
+Here, *MeasurementCreated* is a stream containing an event for each measurement that is created in the system. Selecting a subset of these events is done using *where*, similar to SQL. *getNumber()* is a function to read out a numeric value from an event. In this example, "e" is the "MeasurementCreated" event and the property is "c8y\_TemperatureMeasurement". "T.value", is a  value in degrees Celsius of a temperature sensor (see the [sensor library](/reference/sensor-library)).
 
 ### How can I create derived data from CEL?
 
@@ -29,7 +29,7 @@ There are special streams provided by the system to perform predefined operation
     from MeasurementCreated e
     where getNumber(e, "c8y_TemperatureMeasurement.T.value") > 100
 
-Technically, this statement produces a new "AlarmCreated" event each time a temperature sensor reads more than 100 degrees Celsius and puts it into the "CreateAlarm" output stream. The property names in the selected clause have to match the properties of "AlarmCreated" (see the [Cumulocity Event Language reference](/guides/reference/real-time-statements)).
+Technically, this statement produces a new "AlarmCreated" event each time a temperature sensor reads more than 100 degrees Celsius and puts it into the "CreateAlarm" output stream. The property names in the selected clause have to match the properties of "AlarmCreated" (see the [Cumulocity Event Language reference](/reference/real-time-statements)).
 
 ### How can I control devices from CEL?
 

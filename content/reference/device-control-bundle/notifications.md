@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 There are two options to receive real-time notifications for the device control API.
-The basic protocol for receiving notifications is described in the Section "[Real-time notifications](/guides/reference/real-time-notifications)".
+The basic protocol for receiving notifications is described in the Section "[Real-time notifications](/reference/real-time-notifications)".
 
 ### Receive operations for an agent
 

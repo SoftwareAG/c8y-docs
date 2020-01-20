@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 The measurement notification API permits to receive updates for all measurements for a specific device.
-The basic protocol for receiving notifications is described in the Section "[Real-time notifications](/guides/reference/real-time-notifications)". The URL is
+The basic protocol for receiving notifications is described in the Section "[Real-time notifications](/reference/real-time-notifications)". The URL is
 
     /cep/realtime
 

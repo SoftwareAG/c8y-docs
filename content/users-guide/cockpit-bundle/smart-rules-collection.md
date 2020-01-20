@@ -39,9 +39,9 @@ The rule uses the following parameters:
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/guides/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 >**Important:** There is a limit of 160 characters as a total count. If you use variables and after applying the variables the text counts more than 160 characters the SMS will not be sent.
 
@@ -68,9 +68,9 @@ The rule uses the following parameters:
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/guides/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 * Check your spam folder.
 
@@ -98,9 +98,9 @@ The rule uses the following parameters:
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/guides/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 
 ### On alarm duration increase severity
@@ -159,9 +159,9 @@ The rule uses the following parameters:
 
 * Make sure the device was inside the geofence at least once after creating/activating the rule.
  
-* Check if the device is in [maintenance](/guides/reference/device-management) mode. No new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/reference/device-management) mode. No new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 ### On geofence send e-mail
 
@@ -355,9 +355,9 @@ If no red/yellow ranges are defined, no alarms are generated.
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/guides/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 * Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 
@@ -394,9 +394,9 @@ The rule uses the following parameters:
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/guides/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 * Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 

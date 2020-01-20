@@ -80,9 +80,9 @@ For a rpm installation
     platform.proxyPassword=<proxy-password>
 
 ### Register to Cumulocity
-To register the agent to Cumulocity, follow the [Device registration guide](/guides/users-guide/device-management/#device-registration) using an identifier configured in the properties file. 
+To register the agent to Cumulocity, follow the [Device registration guide](/users-guide/device-management/#device-registration) using an identifier configured in the properties file. 
 If the identifier is already used, use an unique one.
 
 ### Configure devices
-To configure the agent, follow [Cloud Fieldbus connect guide](/guides/users-guide/cloud-fieldbus/#connect).
+To configure the agent, follow [Cloud Fieldbus connect guide](/users-guide/cloud-fieldbus/#connect).
 

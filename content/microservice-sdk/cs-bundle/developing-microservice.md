@@ -156,7 +156,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Microservice subscription
 
-The following section refers to the user management as described under [General aspects](/guides/microservice-sdk/concept) of microservices in Cumulocity.
+The following section refers to the user management as described under [General aspects](/microservice-sdk/concept) of microservices in Cumulocity.
 
 This SDK has a task `CurrentApplicationSubscriptionsTask` which only fetches a list of all subscriptions. The `CurrentApplicationSubscriptionsTask` is the `IScheduledTask` implementation which runs every hour:
 

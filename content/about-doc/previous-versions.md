@@ -1,20 +1,24 @@
 ---
 weight: 15
-title: Previous versions
+title: Previous versions and sources
 layout: bundle
 ---
 
-The Cumulocity documentation sources are located in a Mercurial repository called "c8y-docs" in Bitbucket. The c8y-docs repository is public which means that no credentials are required to view or copy it. 
+The documentation website provides the documentation for all GA releases under maintenance, i.e. for the current GA release and the previous two GA releases. 
 
->**Info**: Providing documentation for various versions on the documentation website is currently under development.
+You can switch between the versions by using the dropdown list at the top right.
+
+### Documentation sources
+
+The Cumulocity documentation sources are located in a Mercurial repository called "c8y-docs" in Bitbucket. The c8y-docs repository is public which means that no credentials are required to view or copy it. 
 
 You find the documentation sources for the maintenance release versions in the following branches:
 
-Release 9.20: [https://bitbucket.org/m2m/c8y-docs/branch/release/r9.20.0](https://bitbucket.org/m2m/c8y-docs/branch/release/r9.20.0)
-
-Release 10.4.0: [https://bitbucket.org/m2m/c8y-docs/branch/release/10.4.0-GA](https://bitbucket.org/m2m/c8y-docs/branch/release/10.4.0-GA)
-
 Release 10.4.6: [https://bitbucket.org/m2m/c8y-docs/branch/release/r10.4.6-GA](https://bitbucket.org/m2m/c8y-docs/branch/release/r10.4.6-GA)
+
+Release 10.5.0: [https://bitbucket.org/m2m/c8y-docs/branch/release/r10.5.0-GA](https://bitbucket.org/m2m/c8y-docs/branch/release/r10.5.0-GA)
+
+You may also find the sources of older versions here in corresponding branches.
 
 The actual content of the documentation is stored in source files in Markdown format. These Markdown files are located in the folder */content*. You will find a subfolder for every guide here, which again contains subfolders.
 
@@ -22,7 +26,7 @@ For further details on the architecture of the Cumulocity documentation website 
 
 #### Viewing documentation in HTML format
 
-To view the documentation in HTML format you need to be a little familiar with working in a version control system like Git or Mercurial.
+To view the documentation in HTML format you need to be a bit familiar with working in a version control system like Git or Mercurial.
 
 First you need to make a copy of the repository (called a "clone") on your local machine either by using a desktop client (for example Sourcetree) or through the command line in a terminal.
 
@@ -46,7 +50,7 @@ The Markdown files are converted to HTML files by an application called "Hugo".
 	
 5. Open a browser and enter the following URL:
 
-		http://localhost:1313/guides/concepts
+		http://localhost:1313/guides/about
 
 The documentation will show up.
 

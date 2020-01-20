@@ -146,6 +146,10 @@ Cumulocity provides documentation for multiple releases, for that you'll have to
 
 - Edit the `config.toml` file and append the version number to the base url, e.g.: `baseURL = "https://cumulocity.com/guides/10.5.0"`
 - Still on `config.toml` change the `guidesRedirect` to target the about page on the release, e.g.: `guidesRedirect = "https://cumulocity.com/guides/10.5.0/about-doc/intro-documentation/"`
+- Add the file `properties.json` adding the name and the long name for the release version, e.g.: ```{
+  "name":"10.5.0", 
+  "longname": "Release 10.5.0 (Private Edition)"
+}```
 - Deploy using the jenkins task `Deploy-c8y-docs-manual-release` and provide the release version
 - Deploy the `default` branch using the jenkins task `Deploy-c8y-docs`  to regenerate the version dropdown links
 

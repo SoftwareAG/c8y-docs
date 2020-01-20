@@ -163,7 +163,7 @@ Permissions are grouped into the following categories:
 |Device control|Permissions to remote control devices.
 |Full access|Complete access to the associated devices, mainly to simplify configuration.
 
-> **Info:** Service providers will see an additional permission "Support" in their management tenant. This permission lets users of the service provider give support to their customer's users, see [Supporting users in other tenants](/guides/users-guide/enterprise-edition#users-in-other-tenants).
+> **Info:** Service providers will see an additional permission "Support" in their management tenant. This permission lets users of the service provider give support to their customer's users, see [Supporting users in other tenants](/users-guide/enterprise-edition#users-in-other-tenants).
 
 Add a permission to the role by clicking the plus icon next to the desired category.
 
@@ -173,7 +173,7 @@ For example, assume that your device sends measurements related to device manage
 
 By default, the **Type** field contains an asterisk "*" selecting all types.
 
-> **Info:** For further information on possible types, check your device documentation, the Cumulocity [sensor library](/guides/reference/sensor-library) or the [device management library](/guides/reference/device-management). The type being used here is the so-called "fragment type", not the "type" property. You need to enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
+> **Info:** For further information on possible types, check your device documentation, the Cumulocity [sensor library](/reference/sensor-library) or the [device management library](/reference/device-management). The type being used here is the so-called "fragment type", not the "type" property. You need to enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
 
 In the **Permission** field, select a permission level from the dropdown list: 
 
@@ -187,7 +187,7 @@ In the **Permission** field, select a permission level from the dropdown list:
 
 <img src="/images/users-guide/Administration/admin-inventory-role-warning.png" alt="warning message">
 
-As another example, assume that you are using tracking devices. You want to allow your user to see all devices, but not to change anything. In addition, the user should be able to follow tracks of devices on a map. Tracks are recorded using an event with fragment type "c8y&#95;Position" (see [Sensor library](/guides/reference/sensor-library)). To do so, assign READ permission on inventory as well as on events with type "c8y&#95;Position" as shown in the image below.
+As another example, assume that you are using tracking devices. You want to allow your user to see all devices, but not to change anything. In addition, the user should be able to follow tracks of devices on a map. Tracks are recorded using an event with fragment type "c8y&#95;Position" (see [Sensor library](/reference/sensor-library)). To do so, assign READ permission on inventory as well as on events with type "c8y&#95;Position" as shown in the image below.
 
 <img src="/images/users-guide/Administration/admin-inventory-role-example.png" alt="Permission example">
 
@@ -224,7 +224,7 @@ The **Application Access** tab shows a list of all available applications in you
 
 To assign applications to the user, simply select the respective applications and click **Save**. 
 
-For more information on application management, see [Administration > Managing applications](/guides/users-guide/administration#managing-applications).
+For more information on application management, see [Administration > Managing applications](/users-guide/administration#managing-applications).
 
 ![Application access](/images/users-guide/Administration/admin-application-access.png)
 

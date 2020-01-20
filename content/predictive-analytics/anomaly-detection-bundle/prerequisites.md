@@ -4,7 +4,7 @@ layout: redirect
 weight: 20
 ---
 
-[Download the AnomalyDetectionDemo.zip](/guides/files/zementis/AnomalyDetectionDemo.zip) file which contains demo scripts, training data set, PMML Model and EPL rule.
+[Download the AnomalyDetectionDemo.zip](/files/zementis/AnomalyDetectionDemo.zip) file which contains demo scripts, training data set, PMML Model and EPL rule.
 
 Running the demo scripts requires 
 

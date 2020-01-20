@@ -55,7 +55,7 @@ Global roles and inventory roles are created and managed in the **Roles** page o
 
 ![Permission page](/images/users-guide/Administration/admin-global-roles.png)
 
-A detailed description on available default roles and on creating and assigning global and inventory roles can be found in [Managing permissions](/guides/users-guide/administration#managing-permissions) in the Administration section of the User guide.
+A detailed description on available default roles and on creating and assigning global and inventory roles can be found in [Managing permissions](/users-guide/administration#managing-permissions) in the Administration section of the User guide.
 
 ### Globally accessible objects
 

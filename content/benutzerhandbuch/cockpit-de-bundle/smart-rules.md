@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-Cumulocity enthält eine Regel-Engine, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Diese Regeln werden in einer Skriptsprache erstellt und in der Anwendung ["Administration"](/guides/benutzerhandbuch/administration) verwaltet.
+Cumulocity enthält eine Regel-Engine, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Diese Regeln werden in einer Skriptsprache erstellt und in der Anwendung ["Administration"](/benutzerhandbuch/administration) verwaltet.
 
 Zum einfachen Erstellen von Regeln enthält die Cockpit-Anwendung einen "Smart Rule Builder". Mit dem Smart Rule Builder können Regeln aus Vorlagen erstellt werden. 
 
@@ -48,7 +48,7 @@ Führen Sie folgende Schritte zum Erstellen einer Smart Rule aus:
 1. Klicken Sie **Smart Rule hinzufügen** in der oberen Menüleiste. 
 2. Wählen Sie ein Smart Rule-Template aus. 
 3. Verwenden Sie im folgenden Fenster den Regler, um einzustellen, ob die Regel aktiviert oder deaktiviert ist. 
-4. Konfigurieren Sie die Regelparameter. Die Parameter variieren von Regel zu Regel. Details zu den jeweiligen Parametern finden Sie unter [Smart Rule-Sammlung](/guides/benutzerhandbuch/cockpit#smart-rules-collection). 
+4. Konfigurieren Sie die Regelparameter. Die Parameter variieren von Regel zu Regel. Details zu den jeweiligen Parametern finden Sie unter [Smart Rule-Sammlung](/benutzerhandbuch/cockpit#smart-rules-collection). 
 5. Im Feld **Ziel-Assets oder Geräte** können Sie Assets oder Geräte festlegen, für die die Regel gelten soll.  
 6. Klicken Sie **Erstellen** um die Smart Rule zu erstellen.
 
@@ -99,7 +99,7 @@ Führen Sie folgende Schritte aus, um eine Schwellwertregel zu definieren:
 4. Öffnen Sie über das Menüsymbol das Kontextmenü für den entsprechenden Datenpunkt und klicken Sie **Smart Rule erstellen**. <br><br> <img src="/images/benutzerhandbuch/cockpit-smart-rule-datapoint.png" name="Datenpunkt-Beispiel" style="width:75%;"/>
 <br>
 5. Wählen Sie die Smart Rule "Bei Schwellwertüberschreitung Alarm erzeugen". <br><br> <img src="/images/benutzerhandbuch/cockpit-smart-rule-example.png" name="Smart Rule-Beispiel" style="width:50%;"/><br>
-6. Geben Sie den minimalen und den maximalen Wert für den roten Bereich ein. Wenn der Messwert den roten Bereich betritt oder verlässt, wird ein KRITISCHER Alarm erzeugt bzw. gelöscht. Weitere Informationen finden Sie in der Beschreibung der Regel "Bei Messbereichsüberschreitung Alarm erzeugen" in der [Smart Rules-Sammlung](/guides/benutzerhandbuch/cockpit#smart-rules-collection).
+6. Geben Sie den minimalen und den maximalen Wert für den roten Bereich ein. Wenn der Messwert den roten Bereich betritt oder verlässt, wird ein KRITISCHER Alarm erzeugt bzw. gelöscht. Weitere Informationen finden Sie in der Beschreibung der Regel "Bei Messbereichsüberschreitung Alarm erzeugen" in der [Smart Rules-Sammlung](/benutzerhandbuch/cockpit#smart-rules-collection).
 7. Unter **Alarm erzeugen** können Sie optional den Alarmtyp und Alarmtext definieren.
 8. Unter **Ziel-Assets oder Geräte** können Sie die Objekte auswählen, auf die diese Regel angewendet werden soll.
 9. Klicken Sie **Erstellen** um die Smart Rule zu erstellen.

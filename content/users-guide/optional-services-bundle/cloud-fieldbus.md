@@ -151,7 +151,7 @@ Once connected, you can now manage your device. Switch to the **Child devices** 
 
 #### <a name="collect"></a>Collecting measurements
 
-If the device type of the Fieldbus device is configured to collect measurements, these will be visible in the **Measurements** tab. They will also be available for usage in the [Data Explorer](/guides/users-guide/cockpit#visualize) and in [Dashboard widgets](/guides/users-guide/cockpit#dashboards).
+If the device type of the Fieldbus device is configured to collect measurements, these will be visible in the **Measurements** tab. They will also be available for usage in the [Data Explorer](/users-guide/cockpit#visualize) and in [Dashboard widgets](/users-guide/cockpit#dashboards).
 
 Data is collected according to the interval specified in the "transmit rate" property of the terminal as described above. To optimize the data traffic, data that is exactly the same as collected previously may not be sent again.
 
@@ -171,7 +171,7 @@ Similar to alarms, changes in Fieldbus devices can be monitored and logged as ev
 
 #### <a name="status"></a>Monitor a device status
 
-The status of devices can be monitored in real time using dashboard widgets in the Cockpit application. Navigate to the Cockpit application, create a dashboard or report, and add widgets as described in the [Cockpit section](/guides/users-guide/cockpit) in the User guide. The Cloud Fieldbus has two new widgets: The "Fieldbus Device" widget and the "SCADA" widget.
+The status of devices can be monitored in real time using dashboard widgets in the Cockpit application. Navigate to the Cockpit application, create a dashboard or report, and add widgets as described in the [Cockpit section](/users-guide/cockpit) in the User guide. The Cloud Fieldbus has two new widgets: The "Fieldbus Device" widget and the "SCADA" widget.
 
 #### <a name="fieldbus-device-widget"></a>Monitoring device status using the Fieldbus Device widget
 

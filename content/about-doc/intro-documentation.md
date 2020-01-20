@@ -6,6 +6,6 @@ layout: bundle
 
 This documentation describes the **January 2020 release (10.5.7)** of the Cumulocity IoT Platform.
 
-This documentation covers all new features and functionality introduced with release 10.5.7 (see the [Release notes](/guides/release-notes#10.5.7) for details). 
+This documentation covers all new features and functionality introduced with release 10.5.7 (see the [Release notes](/release-notes#10.5.7) for details). 
 
 Any other relevant changes that have been made to the Cumulocity documentation since the previous version will be mentioned in the release notes as well.  

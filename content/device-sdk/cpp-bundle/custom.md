@@ -4,7 +4,7 @@ title: Customizing the build
 layout: redirect
 ---
 
-In [Building the C++ library](/guides/device-sdk/cpp/#build) we briefly explained how to build the library. In this section we will go into depth about how to customize the build options to tailor an optimal build for your particular use case.
+In [Building the C++ library](/device-sdk/cpp/#build) we briefly explained how to build the library. In this section we will go into depth about how to customize the build options to tailor an optimal build for your particular use case.
 
 All the following customization options shall be added in your *init.mk* file.
 

@@ -71,7 +71,7 @@ The obtained device credential is stored in the folder */tmp/helloc8y* as define
 
 ### Integrating to Cumulocity
 
-Device integration is a bit more complex as illustrated in the flow diagram below. Refer to [Device SDK for REST > Device integration](/guides/device-sdk/rest#device-integration) for a detailed explanation. **Steps 1**, **2** and **3** are specific to the SmartREST protocol as SmartREST requires predefined templates, see [Using the REST interface > Using SmartREST](/guides/microservice-sdk/rest#smartrest) in the Microservice SDK guide and the [SmartREST reference](http://cumulocity.com/guides/reference/smartrest/) in the Reference guide for more information. **Step 4** checks if the device is already stored in Cumulocity's database and only creates it when it's not found. **Steps 6** and **7** get the ID of the device from the Cumulocity's database. **Step 8** sets the Cumulocity ID as an alias for the device ID, so that the device can find its Cumulocity ID next time by querying with its device ID.
+Device integration is a bit more complex as illustrated in the flow diagram below. Refer to [Device SDK for REST > Device integration](/device-sdk/rest#device-integration) for a detailed explanation. **Steps 1**, **2** and **3** are specific to the SmartREST protocol as SmartREST requires predefined templates, see [Using the REST interface > Using SmartREST](/microservice-sdk/rest#smartrest) in the Microservice SDK guide and the [SmartREST reference](http://cumulocity.com/reference/smartrest/) in the Reference guide for more information. **Step 4** checks if the device is already stored in Cumulocity's database and only creates it when it's not found. **Steps 6** and **7** get the ID of the device from the Cumulocity's database. **Step 8** sets the Cumulocity ID as an alias for the device ID, so that the device can find its Cumulocity ID next time by querying with its device ID.
 
 ![Device integration flowchart](/images/cpp/img/integrate.png)
 
@@ -355,7 +355,7 @@ helloc8y_3
 
 ### Lua plugin
 
-Instead of using C++ for development, the library also supports rapid development in Lua. For this, you must build the library explicitly enabling Lua support as it is disabled by default. Refer to [Customizing the build](/guides/device-sdk/cpp/#custom) for more details.
+Instead of using C++ for development, the library also supports rapid development in Lua. For this, you must build the library explicitly enabling Lua support as it is disabled by default. Refer to [Customizing the build](/device-sdk/cpp/#custom) for more details.
 
 The following example shows how to load the Lua plugin and add the path *lua/* into Lua's *package.path* for library search path.
 
@@ -447,7 +447,7 @@ As you can see, the modification needed is to construct `SrReporter` with a diff
 1. All examples can be found in the [cumulocity-sdk-c/examples](https://bitbucket.org/m2m/cumulocity-sdk-c/src/master/examples/) folder in the Bitbucket repository.
 2. The API reference is located in relative path *doc/html/index.html* in the library repository.
 3. The agent loop is an infinite loop, so it will never really return.
-4. Consult the [SmartREST reference](/guides/reference/smartrest/) about how to define SmartREST templates.
+4. Consult the [SmartREST reference](/reference/smartrest/) about how to define SmartREST templates.
 5. The code excerpts only include the added part. Check the *examples* folder for the complete example code.
 6. This is especially important when you dynamically allocate a timer on the heap: you must not destroy it while the program is running.
 7. Check the Lua API reference in *doc/lua.html* for a complete list of all available APIs.

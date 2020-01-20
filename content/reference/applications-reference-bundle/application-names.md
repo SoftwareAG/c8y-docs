@@ -8,4 +8,4 @@ For each tenant, Cumulocity manages the subscribed applications. Cumulocity prov
 
 In case you want to subscribe a tenant to an application using an API, you need to use the application name in the argument (as name). 
 
-Refer to the tables in [Administration > Managing applications](/guides/users-guide/administration#managing-applications) in the User guide for the respective application name to be used.
+Refer to the tables in [Administration > Managing applications](/users-guide/administration#managing-applications) in the User guide for the respective application name to be used.

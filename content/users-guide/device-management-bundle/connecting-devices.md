@@ -33,7 +33,7 @@ To register devices, you may choose one of the following options:
 * **[Bulk device registration](#creds-upload)** - to register larger amounts of devices in one step
 
 If you are subscribed to the required applications you will see a third option
-**Custom device registration** for registering devices of specific types, e.g. LoRa or Sigfox, see the documentation for these services in [Optional services](/guides/users-guide/optional-services). 
+**Custom device registration** for registering devices of specific types, e.g. LoRa or Sigfox, see the documentation for these services in [Optional services](/users-guide/optional-services). 
 
 <img src="/images/users-guide/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
 
@@ -125,6 +125,6 @@ For your convenience we provide CSV template files for both bulk registration ty
 5. In Step 2 of the **Text Import Wizard**, select **Semicolon** as delimiter and click **Finish**.
 
 For further information on the file format and accepted CSV variants, also refer to 
-[Bulk device credentials](/guides/reference/device-credentials/#creds-upload) in the Reference guide.
+[Bulk device credentials](/reference/device-credentials/#creds-upload) in the Reference guide.
 
 >**Info**: In an Enterprise Tenant you may also register devices across multiple tenants by adding a **Tenant** column to the spreadsheet and importing the CSV file from the management tenant.

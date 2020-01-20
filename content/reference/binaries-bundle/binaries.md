@@ -33,7 +33,7 @@ Required role: ROLE\_INVENTORY\_ADMIN or ROLE\_INVENTORY\_CREATE
 
 The PUT request will replace the binary attached to the managed object only.
 For changing the managed object storing information about the binary it is possible
-to update the managed object directly as described at this section [Update Managed Object](/guides/reference/inventory#managed-object).
+to update the managed object directly as described at this section [Update Managed Object](/reference/inventory#managed-object).
 
 Example request:
 

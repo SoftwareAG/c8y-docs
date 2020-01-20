@@ -27,7 +27,7 @@ To access the applications for your Cumulocity tenant, use the following URL:
 https://<tenant-domain>.cumulocity.com/
 ```
 
-This will direct you to the login page of your default application. You may review [Tenants > Tenant ID and tenant domain](/guides/reference/tenants/#a-name-tenant-id-and-domain-a-tenant-id-and-tenant-domain) in the **Reference** guide to get a better understanding between tenant ID and tenant domain.
+This will direct you to the login page of your default application. You may review [Tenants > Tenant ID and tenant domain](/reference/tenants/#a-name-tenant-id-and-domain-a-tenant-id-and-tenant-domain) in the **Reference** guide to get a better understanding between tenant ID and tenant domain.
 
 > **Important:** Make sure that the address bar of your browser shows a lock icon. The lock icon indicates that you are using a secure connection and that you are indeed connected to Cumulocity.
 
@@ -41,7 +41,7 @@ On the Login screen, enter your username and password and click **Login** to ent
 
 Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is also convenient if you frequently switch between Cumulocity applications, as Cumulocity will request you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.
 
-When you log into Cumulocity for the first time, you will be taken to the default application (usually the [Cockpit](/guides/users-guide/cockpit) application if not configured differently).
+When you log into Cumulocity for the first time, you will be taken to the default application (usually the [Cockpit](/users-guide/cockpit) application if not configured differently).
 
 ![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
 

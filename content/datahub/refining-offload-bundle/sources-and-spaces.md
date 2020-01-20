@@ -18,7 +18,7 @@ When you click on your data source it will be shown in the main panel. Clicking 
 
 ### Spaces
 
-A space in Dremio helps organizing your data sets. Cumulocity IoT DataHub auto-configures a space which is named `YourAccountNameSpace`. A dataset in the space is referred in queries as `YourAccountNameSpace.YourDataset`. As described in section [Offloading of inventory collection](/guides/datahub/configuring-offloaded/#offloading-inventory-collection), the inventory collection already ships two views "inventory_all" and "inventory_latest" which are available in your space.
+A space in Dremio helps organizing your data sets. Cumulocity IoT DataHub auto-configures a space which is named `YourAccountNameSpace`. A dataset in the space is referred in queries as `YourAccountNameSpace.YourDataset`. As described in section [Offloading of inventory collection](/datahub/configuring-offloaded/#offloading-inventory-collection), the inventory collection already ships two views "inventory_all" and "inventory_latest" which are available in your space.
 
 ### Job history
 

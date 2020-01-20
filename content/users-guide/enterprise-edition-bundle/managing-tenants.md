@@ -10,7 +10,7 @@ Using the Enterprise Tenant of Cumulocity IoT, you can make use of the tenants f
 
 >**Info**: If you would like to use this feature, please contact sales@cumulocity.com.
 
-To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [Creating and editing global roles](/guides/users-guide/administration#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
+To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [Creating and editing global roles](/users-guide/administration#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 
 - READ: Browse and view tenants.
 - CREATE: Create new tenants.
@@ -72,7 +72,7 @@ In the management tenant, you will also find information on the parent tenant, i
 </tr>
 <tr>
 <td style="text-align:left">Send password reset link as email</td>
-<td style="text-align:left">Selected by default. If you deselect this option, you need to provide a password and confirm the password (see <a href="/guides/users-guide/overview#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the Cumulocity platform</a> for more information on password strength).</td>
+<td style="text-align:left">Selected by default. If you deselect this option, you need to provide a password and confirm the password (see <a href="/users-guide/overview#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the Cumulocity platform</a> for more information on password strength).</td>
 </tr>
 <tr>
 <td style="text-align:left">Tenant policy</td>
@@ -109,7 +109,7 @@ The following information is displayed here:
 
 |Field|Description
 |:--------|:-----
-|Status|May be either *Enabled* or *Disabled*. <br>*Enabled* indicates that: <br> - support user access has been activated on platform level (see [Customizing your platform](/guides/users-guide/enterprise-edition#configuration)), <br> - one or more subtenant users have activated support user access. <br>*Disabled* indicates that: <br> - support user access has been deactivated on platform level, <br> - support user access has been activated on platform level but deactivated for the subtenant, <br> - no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).
+|Status|May be either *Enabled* or *Disabled*. <br>*Enabled* indicates that: <br> - support user access has been activated on platform level (see [Customizing your platform](/users-guide/enterprise-edition#configuration)), <br> - one or more subtenant users have activated support user access. <br>*Disabled* indicates that: <br> - support user access has been deactivated on platform level, <br> - support user access has been activated on platform level but deactivated for the subtenant, <br> - no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).
 |Active requests count|The number of requests currently active in the subtenant. Only displayed if support user access is not enabled globally on platform level. Shown as a number in a small red dot.
 |Expiry date|Specifies the date on which support user access for the tenant will expire. If no date has been specified, the expiry date is set to "No limit".
 
@@ -187,12 +187,12 @@ The following information is provided:
 * Name: Microservice instance name
 * Restarts: The number of microservice instance restarts
 
-Further details are provided on the **Status** tab of the respective application, see [Administration > Managing applications](/guides/users-guide/administration#managing-applications).
+Further details are provided on the **Status** tab of the respective application, see [Administration > Managing applications](/users-guide/administration#managing-applications).
 
 
 ### <a name="tenants-custom-properties"></a>Custom properties
 
-The **Custom properties** tab allows you to view and edit values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/guides/users-guide/administration#properties). Such properties are also displayed as columns in the [Usage Statistics](#usage-stats) page.
+The **Custom properties** tab allows you to view and edit values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/users-guide/administration#properties). Such properties are also displayed as columns in the [Usage Statistics](#usage-stats) page.
 
 ![Custom properties](/images/users-guide/Administration/admin-subtenant-custom-properties.png)
 
@@ -252,9 +252,9 @@ The following information is provided for each subtenant (not completely visible
 
 Moreover custom properties are displayed, if configured.
 
-Custom properties may be defined in the [Properties Library](/guides/users-guide/administration#properties) and then set their values in the [Custom properties](#tenants-custom-properties) tab of the tenant.
+Custom properties may be defined in the [Properties Library](/users-guide/administration#properties) and then set their values in the [Custom properties](#tenants-custom-properties) tab of the tenant.
 
-You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Getting Started > Features and Functionalities > Filtering](/guides/users-guide/overview#filtering).
+You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Getting Started > Features and Functionalities > Filtering](/users-guide/overview#filtering).
 
 #### To export the usage statistics table
 
@@ -279,7 +279,7 @@ Cumulocity offers two billing modes:
 
 * **Resource-based billing**: Exposes the number of resources used by a microservice to calculate billing.
 
-The billing modes are specified per microservice in the [microservice manifest](/guides/reference/microservice-manifest) and are set in the field "billingMode".
+The billing modes are specified per microservice in the [microservice manifest](/reference/microservice-manifest) and are set in the field "billingMode".
 
 RESOURCES: Sets the billing mode to resources-based. This is the default mode and will be applied to all microservices that are not explicitly switched to subscription-based billing mode.
 
@@ -339,11 +339,11 @@ The information on the microservice usage is presented in the **Usage Statistics
 
 ![Tenant statistics](/images/users-guide/Administration/admin-subtenants-usage-statistics-microservice.png)
 
-For more details, refer to [Tenants > Tenant usage statistics](/guides/reference/tenants/#tenant-usage-statistics) in the Reference guide. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
+For more details, refer to [Tenants > Tenant usage statistics](/reference/tenants/#tenant-usage-statistics) in the Reference guide. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
 
 ##### Scaling
 
-Auto-scaling monitors your microservices and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. It is easy to configure the microservice scaling by setting the property `scale` in the [Microservice manifest](https://cumulocity.com/guides/reference/microservice-manifest/).
+Auto-scaling monitors your microservices and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. It is easy to configure the microservice scaling by setting the property `scale` in the [Microservice manifest](https://cumulocity.com/reference/microservice-manifest/).
 
 For instance, when you have a microservice with scale policy set to AUTO and the CPU usage points that it is needed to start a new microservice instance for three hours, the billing logs: (24/24 + 3/24) * consumed resources.
 
@@ -354,7 +354,7 @@ Note that an audit record is created for every change of the number of instances
 
 ![Audit logs](/images/users-guide/Administration/admin-audit-logs-microscaling.png)
 
-For more information, refer to [Auditing](https://cumulocity.com/guides/reference/auditing) in the Reference guide.
+For more information, refer to [Auditing](https://cumulocity.com/reference/auditing) in the Reference guide.
 
 
 ### <a name="tenant-policies"></a> Tenant policies
@@ -380,7 +380,7 @@ For each tenant policy, the name, an optional description and the number of opti
 1. Click **Add tenant policy** in the top menu bar.
 <br>![Add new policy](/images/users-guide/Administration/admin-tenant-policy-add.png)<br>
 2. In the resulting dialog box, enter a name and an optional description.
-3. Add at least one retention rule. For details on creating retention rules, see [Administration > Managing data retention > Retention rules](/guides/users-guide/administration#retention-rules).
+3. Add at least one retention rule. For details on creating retention rules, see [Administration > Managing data retention > Retention rules](/users-guide/administration#retention-rules).
 4. Optionally, add a tenant option.
 5. Click **Save**.
 

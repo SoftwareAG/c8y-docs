@@ -12,18 +12,18 @@ Starting with Cumulocity IoT release 10.5.7, the documentation website now offer
 
 ### User guide: Optional services
 
-The Cumulocity IoT Sensor App documentation has been updated and improved, see [Optional services > Cumulocity IoT Sensor App](/guides/users-guide/optional-services/#android-cloud-sensor-app) in the User guide.
+The Cumulocity IoT Sensor App documentation has been updated and improved, see [Optional services > Cumulocity IoT Sensor App](/users-guide/optional-services/#android-cloud-sensor-app) in the User guide.
 
-The webMethods.io Integration documentation has been enhanced, see [Optional services > webMethods.io Integration](/guides/users-guide/optional-services/#webMethods) in the User guide.
+The webMethods.io Integration documentation has been enhanced, see [Optional services > webMethods.io Integration](/users-guide/optional-services/#webMethods) in the User guide.
 
-A new chapter [OPC UA 2.0](/guides/users-guide/optional-services/#opc-ua) has been added, which describes in detail the functionalities of the new OPC UA device gateway.
+A new chapter [OPC UA 2.0](/users-guide/optional-services/#opc-ua) has been added, which describes in detail the functionalities of the new OPC UA device gateway.
 
-A new chapter [SNMP](/guides/users-guide/optional-services#snmp) has been added, which describes in detail the functionalities of the recently added SNMP agent.
+A new chapter [SNMP](/users-guide/optional-services#snmp) has been added, which describes in detail the functionalities of the recently added SNMP agent.
 
 ### Device SDK guide: Device SDK for C++
 
-The *Device SDK for C++* documentation has been updated and improved, see [Device SDK for C++](/guides/device-sdk/cpp/) in the Device SDK guide.
+The *Device SDK for C++* documentation has been updated and improved, see [Device SDK for C++](/device-sdk/cpp/) in the Device SDK guide.
 
 ### Cumulocity IoT Edge
 
-The [Cumulocity IoT Edge guide](/guides/edge/overview) has been updated to include all new features and functionalities related to the Cumulocity IoT Edge 10.5 release from November 2019.
+The [Cumulocity IoT Edge guide](/edge/overview) has been updated to include all new features and functionalities related to the Cumulocity IoT Edge 10.5 release from November 2019.

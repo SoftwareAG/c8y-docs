@@ -40,7 +40,7 @@ The general syntax is:
       var3Name var3Type
     );
 
-You can use every basic Java data type, data types from the imported [Java libraries](/guides/event-language/functions#java-functions), Cumulocity data types (like Event, Measurement, ManagedObject, ...) and other streams.
+You can use every basic Java data type, data types from the imported [Java libraries](/event-language/functions#java-functions), Cumulocity data types (like Event, Measurement, ManagedObject, ...) and other streams.
 
     create schema TwoMyEvents(
       firstEvent MyEvent,

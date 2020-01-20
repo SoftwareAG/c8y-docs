@@ -164,7 +164,7 @@ curl --request POST “{{url}}/service/zementis/timeseries” --header “Conten
 {
     "error": "general/internalError",
     "message": "No auth information found",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -269,7 +269,7 @@ curl --request GET “{{url}}/service/zementis/timeseries/TimeSeries_11-12-2019_
 {
     "error": "general/internalError",
     "message": "No auth information found",
-    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
+    "info": "https://cumulocity.com/reference/rest-implementation/#error_reporting"
 }
 ```
 

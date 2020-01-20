@@ -6,7 +6,7 @@ layout: redirect
 
 Inventory notifications permit the monitoring of changes in the inventory (CREATE, UPDATE and DELETE).
 
-The basic protocol for receiving notifications is described in [Real-time notifications](/guides/reference/real-time-notifications). 
+The basic protocol for receiving notifications is described in [Real-time notifications](/reference/real-time-notifications). 
 
 The URL is:
 

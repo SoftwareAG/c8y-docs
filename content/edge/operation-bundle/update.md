@@ -42,7 +42,7 @@ For example:
 
 7. If the size of the secondary disk has expanded, you must update the OVF file of the latest version accordingly. In the OVF file, search for the fields **ovf:capacity** and **ovf:capacityAllocationUnits** and update the values as per the values in the exported OVF file.
 
-8. Import the Edge VM image as described in [Setting up ESXi](/guides/edge/installation/#setting-up-esxi).
+8. Import the Edge VM image as described in [Setting up ESXi](/edge/installation/#setting-up-esxi).
 
 ### Upgrading the system on VirtualBox
 
@@ -77,6 +77,6 @@ sudo shutdown
 sudo ./post_installation.sh
 ```
 
-11. Choose the post-upgrade task (option 4). Provide inputs if prompted and complete the post-upgrade task. For details see [Configuration](/guides/edge/installation#configuration).
+11. Choose the post-upgrade task (option 4). Provide inputs if prompted and complete the post-upgrade task. For details see [Configuration](/edge/installation#configuration).
 
 10. Verify, whether DB and property files are intact and unchanged.

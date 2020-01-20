@@ -30,7 +30,7 @@ Before switching to the single sign-on option it is mandatory that:
 * all microservices are build with Microservice Java SDK 9.12.6 but preferably higher.
 
 
-For Microservices custom built, refer to [General aspects > Security](guides/microservice-sdk/concept/#security) in the Microservice SDK guide.
+For Microservices custom built, refer to [General aspects > Security](microservice-sdk/concept/#security) in the Microservice SDK guide.
 
 For on premises installation the domain-based tenant resolution is configured properly.
 
@@ -221,7 +221,7 @@ In the field **Limit password validity for**, you can limit the validity of user
 
 >**Info**: The password validity limit and the enforcing of strong passwords may not be editable, if configured by the platform administrator.
 
-By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in [Getting Started > Accessing and logging into the Cumulocity platform](/guides/users-guide/overview#login).
+By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in [Getting Started > Accessing and logging into the Cumulocity platform](/users-guide/overview#login).
 
 Strong (green) passwords must have "M" characters. By default, the system restricts the use of passwords already used in the past. The last "N" passwords provided by a user are remembered by the system and the system does not allow to use them. The default value for "N" is 10.
 
@@ -305,7 +305,7 @@ To enter OpenIT credentials, click **OpenIT credentials** in the **Settings** me
 
 By providing OPenIT credentials you enable the platform to utilize SMS services provided by [OpenIt](https://sms.openit.de/main.php).
 
-SMS are used throughout the application for various features like [two-factors authentication](/guides/users-guide/administration#tfa) and user notifications, i.e. on alarms.
+SMS are used throughout the application for various features like [two-factors authentication](/users-guide/administration#tfa) and user notifications, i.e. on alarms.
 
 ### <a name="config-platform"></a>Configuration settings
 
@@ -383,7 +383,7 @@ At the top you can select if you want to send the email to the suspended tenant'
 
 Click **Save configuration** to save your settings.
 
-Additional features are available for Enterprise Tenants, see [Enterprise Tenant > Customizing your platform](/guides/users-guide/enterprise-edition#customization).
+Additional features are available for Enterprise Tenants, see [Enterprise Tenant > Customizing your platform](/users-guide/enterprise-edition#customization).
 
 ### <a name="connectivity"></a>Managing the connectivity settings
 
@@ -391,10 +391,10 @@ In the **Connectivity** page, you can manage credentials for different providers
 
 The following provider settings may currently be specified:
 
-- [Impact](/guides/users-guide/optional-services#nokia-impact)
-- [LoRa](/guides/users-guide/optional-services#lora)
-- [Sigfox](/guides/users-guide/optional-services#sigfox)
-- [SIM](/guides/users-guide/optional-services#connectivity)
+- [Impact](/users-guide/optional-services#nokia-impact)
+- [LoRa](/users-guide/optional-services#lora)
+- [Sigfox](/users-guide/optional-services#sigfox)
+- [SIM](/users-guide/optional-services#connectivity)
 
 ![Provider settings](/images/users-guide/Administration/admin-settings-connectivity-sim.png)
 
@@ -405,4 +405,4 @@ The following provider settings may currently be specified:
 3. Enter the credentials of your provider platform. Depending on the provider, these credentials will be either the credentials of your account in the provider platform or the credentials with which you can register in the Cumulocity connectivity page, will be displayed in your account in the provider platform.
 4. Finally, click **Save** to save your settings.
 
-Depending on the provider you have selected, there may be additional fields, which will be explained in the respective agent documentation, see [Optional services](/guides/users-guide/optional-services).
+Depending on the provider you have selected, there may be additional fields, which will be explained in the respective agent documentation, see [Optional services](/users-guide/optional-services).

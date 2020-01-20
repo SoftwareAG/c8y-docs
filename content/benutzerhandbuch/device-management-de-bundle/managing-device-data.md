@@ -26,7 +26,7 @@ Darüber hinaus gibt es verschiedene Schaltflächen, die das Aktualisieren der I
 
 Um ein Firmware-Objekt hinzuzufügen, führen Sie folgende Schritte aus:
 
-1. Laden Sie die Firmware-Datei in der ["Administration"-Anwendung](/guides/benutzerhandbuch/administration#files) hoch. Dieser Schritt ist nicht immer erforderlich, da manche Hersteller die Firmware online anbieten. 
+1. Laden Sie die Firmware-Datei in der ["Administration"-Anwendung](/benutzerhandbuch/administration#files) hoch. Dieser Schritt ist nicht immer erforderlich, da manche Hersteller die Firmware online anbieten. 
 2. Klicken Sie in der Seite **Firmware-Repository** rechts in der oberen Menüleiste **Firmware hinzufügen**. 
 3. Geben Sie im folgenden Fenster einen Namen und die Version der Firmware ein.
 4. Geben Sie die Datei an, die die Firmware enthält, indem Sie entweder zur Datei navigieren bzw.  diese hochladen oder die URL angeben, unter welcher das Gerät die Firmware herunterladen kann. 
@@ -42,7 +42,7 @@ Wechseln Sie zur Registerkarte **Software** für das Gerät und klicken Sie **Fi
 
 Weitere Informationen finden Sie in der Beschreibung der Registerkarte [**Software**](#software).
 
->**Info:** Um andere Binärcode-Typen in Cumulocity zu speichern, wechseln Sie zur ["Administration"-Anwendung](/guides/benutzerhandbuch/administration#files).
+>**Info:** Um andere Binärcode-Typen in Cumulocity zu speichern, wechseln Sie zur ["Administration"-Anwendung](/benutzerhandbuch/administration#files).
 
 **Installieren von Firmware auf mehreren Geräten**
 

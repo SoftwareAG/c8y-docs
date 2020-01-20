@@ -86,7 +86,7 @@ Note that if there are too many jobs scheduled, then, over time the underlying M
 Hence it is recommended to have a retention rule in place to clean up data which is too old.  <br>
 In order to do so, create a retention rule for events containing `ZementisExecution` in its `type` field. This rule would not remove the jobs themselves but only the 
 data from the execution of the jobs. 
-For details on adding retention rules, see [To add a retention rule](/guides/users-guide/administration/#add-retention-rule). 
+For details on adding retention rules, see [To add a retention rule](/users-guide/administration/#add-retention-rule). 
 
 #### Viewing the scheduled jobs
 

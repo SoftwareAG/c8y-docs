@@ -84,7 +84,7 @@ Your smartphone will be registered and added to the devices list in the Device M
 
 ![All devices](/images/users-guide/csa/csa-device-list.png)
 
-For further information about registering a device on the platform manually, refer to [Connecting devices](/guides/users-guide/device-management#device-registration) in the Device Management section.
+For further information about registering a device on the platform manually, refer to [Connecting devices](/users-guide/device-management#device-registration) in the Device Management section.
 
 Next, you need to accept several permission requests allowing for accessing data (photos, media and files) on your device, make and manage phone calls and access the location (including network information and GPS data) to let the smartphone transfer network and GPS data to the cloud. This requests only show up once.
 
@@ -113,7 +113,7 @@ Your smartphone will be registered and added to the devices list in the Device M
 
 ![All devices](/images/users-guide/csa/csa-device-list.png)
 
-For further information about registering a device on the platform manually, refer to [Connecting devices](/guides/users-guide/device-management#device-registration) in the Device Management section.
+For further information about registering a device on the platform manually, refer to [Connecting devices](/users-guide/device-management#device-registration) in the Device Management section.
 
 Pressing the "**i**" symbol in the upper right corner of the start screen of the **Cumulocity IoT Sensor App** will open the "About" information of the application.
 
@@ -213,9 +213,9 @@ The Cloud Sensor App can receive real-time control commands from Cumulocity.
 
 The Messaging widget, for example, can be used to send text notifications to the smartphone. The vibration relay control can be used to turn on/off the vibration motor. 
 
-Create a dashboard for your smartphone device as described in [Creating a dashboard](/guides/users-guide/cockpit#creating-dashboards) in the Cockpit section. 
+Create a dashboard for your smartphone device as described in [Creating a dashboard](/users-guide/cockpit#creating-dashboards) in the Cockpit section. 
 
-Add the Messaging widget to the dashboard, for details see [Widgets collection](guides/users-guide/cockpit/widgets). 
+Add the Messaging widget to the dashboard, for details see [Widgets collection](users-guide/cockpit/widgets). 
 
 To send a message from Cumulocity, enter a text into the Messaging widget and click **Send**.
 

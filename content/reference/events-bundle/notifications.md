@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 With the event notification API it is possible to receive updates for all events for a specific device.
-The basic protocol for receiving notifications is described in the Section "[Real-time notifications](/guides/reference/real-time-notifications)". The URL is
+The basic protocol for receiving notifications is described in the Section "[Real-time notifications](/reference/real-time-notifications)". The URL is
 
     /cep/realtime
 

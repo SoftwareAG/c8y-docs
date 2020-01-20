@@ -45,7 +45,7 @@ Unser Beispiel zeigt eine Suche nach "Ublox C027".
 
 **Info**: Im Gegensatz zur Filterfunktion, ist die Verwendung von Platzhaltern in einer Suche nicht möglich. 
 
-Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche](/guides/users-guide/overview#gui-features). 
+Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche](/users-guide/overview#gui-features). 
 
 ### <a name="filtering-devices"></a>Filtern von Geräten
 
@@ -61,7 +61,7 @@ Im folgenden Fenster können Sie entsprechende Filterkriterien setzen.
 
 Die meisten Spalten enthalten Text. Hier können Sie filtern, indem Sie einen beliebigen Text in das Textfeld eingeben wie im Suchfeld. Klicken Sie **+ Oder** ,um ein weiteres Textfeld hinzuzufügen, falls Sie nach mehr als einem Begriff filtern möchten. 
 
-Weitere Informationen finden Sie auch unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche](/guides/users-guide/overview#gui-features). 
+Weitere Informationen finden Sie auch unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche](/users-guide/overview#gui-features). 
 
 Abgesehen vom Filtern nach Text gibt es folgende weitere Optionen:
 

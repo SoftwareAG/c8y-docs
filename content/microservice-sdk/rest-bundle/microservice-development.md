@@ -113,7 +113,7 @@ The ZIP file must consist of:
 
 ### <a name="acquiring-microservice-credentials"></a>Acquiring microservice credentials
 
-The following section is a wrap up for user management as described under [General aspects](/guides/microservice-sdk/concept) of microservices in Cumulocity.
+The following section is a wrap up for user management as described under [General aspects](/microservice-sdk/concept) of microservices in Cumulocity.
 
 Microservice related endpoints require a microservice bootstrap user, which can be obtained by a service provider using:
 
@@ -388,14 +388,14 @@ Content-Type: application/vnd.com.nsn.cumulocity.managedObjectReference+json
 
 #### Synchronizing assets with external systems
 
-Often, Cumulocity will not be the only IT system dealing with a company's asset. The technical procedure for synchronizing assets stored in external IT systems is exactly the same as the [procedure used for registering devices](/guides/device-sdk/rest#device-integration):
+Often, Cumulocity will not be the only IT system dealing with a company's asset. The technical procedure for synchronizing assets stored in external IT systems is exactly the same as the [procedure used for registering devices](/device-sdk/rest#device-integration):
 
 - Use the Identity API to link the asset ID of the external IT system to the asset ID of Cumulocity.
 - Use the Inventory API to create or update the assets in Cumulocity's inventory based on the external system's data.
 
 #### Querying particular capabilities
 
-To decouple applications from the specifics of particular types of devices, applications can use fragments to query the inventory (see the Fragments section of [Cumulocity's domain model](/guides/concepts/domain-model)). For example, to find all managed objects having a location, use:
+To decouple applications from the specifics of particular types of devices, applications can use fragments to query the inventory (see the Fragments section of [Cumulocity's domain model](/concepts/domain-model)). For example, to find all managed objects having a location, use:
 
 ```http
 GET /inventory/managedObjects?fragmentType=c8y_Position&withTotalPages=true
@@ -434,11 +434,11 @@ Content-Type: application/vnd.com.nsn.cumulocity.managedObjectCollection+json; c
 }
 ```
 
-Now you could, for example, use the `c8y_Position` property to locate/pin the object on a map. Standard fragments are defined in the [Device management library](/guides/reference/device-management) and in the [Sensor library](/guides/reference/sensor-library).
+Now you could, for example, use the `c8y_Position` property to locate/pin the object on a map. Standard fragments are defined in the [Device management library](/reference/device-management) and in the [Sensor library](/reference/sensor-library).
 
-Querying the <kbd>/platform</kbd> resource will show you further possibilities for querying your data (see also [Device integration using REST](/guides/device-sdk/rest) in the Device SDK guide).
+Querying the <kbd>/platform</kbd> resource will show you further possibilities for querying your data (see also [Device integration using REST](/device-sdk/rest) in the Device SDK guide).
 
-Note that queries do not necessarily return all query results at once, but only a page of the results. For more information on paging, refer to [REST implementation > REST usage > Query result paging](/guides/reference/rest-implementation#rest-usage) in the Reference guide. The optional parameter `withTotalPages` will make the query contain full page statistics at the expense of slightly slower performance.
+Note that queries do not necessarily return all query results at once, but only a page of the results. For more information on paging, refer to [REST implementation > REST usage > Query result paging](/reference/rest-implementation#rest-usage) in the Reference guide. The optional parameter `withTotalPages` will make the query contain full page statistics at the expense of slightly slower performance.
 
 #### Querying readings from sensors
 
@@ -479,7 +479,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.measurementCollection+json; cha
 
 #### Sending operations to devices
 
-To trigger an operation on a device, POST the operation to the [Device Control API](/guides/reference/device-control). The following example restarts the device with the ID "2480300" (which is the Raspberry Pi that is integrated in the section [Device integration](/guides/device-sdk/rest#device-integration) of the Device SDK guide.
+To trigger an operation on a device, POST the operation to the [Device Control API](/reference/device-control). The following example restarts the device with the ID "2480300" (which is the Raspberry Pi that is integrated in the section [Device integration](/device-sdk/rest#device-integration) of the Device SDK guide.
 
 ```http
 POST /devicecontrol/operations
@@ -524,7 +524,7 @@ A state of PENDING means here that the device has not yet picked up the operatio
 
 #### Listening for events
 
-Besides querying the Cumulocity data store, you can also process and receive events in real time as described in [Real-time processing in Cumulocity](/guides/concepts/realtime). For example, assume that you would like to display real-time location updates on a map. Use the Administration application (or the [REST API](/guides/reference/real-time-statements)) to create a new rule module "myRule":
+Besides querying the Cumulocity data store, you can also process and receive events in real time as described in [Real-time processing in Cumulocity](/concepts/realtime). For example, assume that you would like to display real-time location updates on a map. Use the Administration application (or the [REST API](/reference/real-time-statements)) to create a new rule module "myRule":
 
 ```sql
 select *
@@ -532,7 +532,7 @@ from EventCreated e
 where e.event.type = "c8y_LocationUpdate";
 ```
 
-If you have a device that sends location updates, you should see them immediately in the user interface. To receive them in your own REST client, you can use the [Notification API](/guides/reference/real-time-notifications) to subscribe to them. The API is based on the Bayeux protocol using HTTPS long-polling. The restrictions that apply are described in [Real-time notifications](/guides/reference/real-time-notifications) in the Reference guide. First, a handshake is required. The handshake tells Cumulocity what protocols the client supports for notifications and allocates a client ID to the client.
+If you have a device that sends location updates, you should see them immediately in the user interface. To receive them in your own REST client, you can use the [Notification API](/reference/real-time-notifications) to subscribe to them. The API is based on the Bayeux protocol using HTTPS long-polling. The restrictions that apply are described in [Real-time notifications](/reference/real-time-notifications) in the Reference guide. First, a handshake is required. The handshake tells Cumulocity what protocols the client supports for notifications and allocates a client ID to the client.
 
 ```http
 POST /cep/notifications

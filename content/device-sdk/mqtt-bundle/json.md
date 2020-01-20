@@ -41,7 +41,7 @@ To publish messages in CEP mode:
 c/<api>/<resource>/<action>/<id>
 ```
 
-Refer to [Processing mode](/guides/reference/rest-implementation#processingmode) for more information about transient, quiescent and CEP data processing.
+Refer to [Processing mode](/reference/rest-implementation#processingmode) for more information about transient, quiescent and CEP data processing.
 
 #### Topic actions
 
@@ -57,17 +57,17 @@ The following actions are available:
 
 ### Supported endpoint
 
-The current JSON MQTT implementation does not cover all SmartREST 2.0 operations, so for example the whole [device bootstrap process](/guides/device-sdk/mqtt#device-integration) has to be done using SmartREST 2.0.
+The current JSON MQTT implementation does not cover all SmartREST 2.0 operations, so for example the whole [device bootstrap process](/device-sdk/mqtt#device-integration) has to be done using SmartREST 2.0.
 
 The following endpoints and actions are supported:
 
 |Endpoint|create|createBulk|update|delete|
 |:-------|:-----|:---------|:-----|:-----|
-|[event/events](/guides/reference/events)|x|x|x|x|
-|[alarm/alarms](/guides/reference/alarms)|x|x|x|&nbsp;|
-|[measurement/measurements](/guides/reference/measurements)|x|x|&nbsp;|x|
-|[inventory/managedObjects](/guides/reference/inventory)|x|&nbsp;|x|&nbsp;|
-|[inventory/managedObjects/&lt;DeviceID>/childDevices](/guides/reference/inventory)|x|&nbsp;|&nbsp;|&nbsp;|
+|[event/events](/reference/events)|x|x|x|x|
+|[alarm/alarms](/reference/alarms)|x|x|x|&nbsp;|
+|[measurement/measurements](/reference/measurements)|x|x|&nbsp;|x|
+|[inventory/managedObjects](/reference/inventory)|x|&nbsp;|x|&nbsp;|
+|[inventory/managedObjects/&lt;DeviceID>/childDevices](/reference/inventory)|x|&nbsp;|&nbsp;|&nbsp;|
 
 If the operation is not supported, a proper error message will be sent to the <kbd>error</kbd> topic.
 
@@ -142,7 +142,7 @@ Example payload:
 
 A notification client can subscribe to the <kbd>devicecontrol/notifications</kbd> topic to receive notifications of newly created operations. Initially upon subscription, all operations which are not yet forwarded will be published.
 
-Additionally, it contains an [External ID](/guides/reference/identity#external-id), so the client can identify for which child the operation is executed.
+Additionally, it contains an [External ID](/reference/identity#external-id), so the client can identify for which child the operation is executed.
 
 Example notification:
 

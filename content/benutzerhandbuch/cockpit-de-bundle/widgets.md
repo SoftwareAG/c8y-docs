@@ -12,13 +12,13 @@ Das Widget "Aktuelle Alarme" zeigt alle Alarme aller Schweregrade, sortiert nach
 
 <img src="/images/users-guide/cockpit/Cockpit_CreateAlarmList.png" name="Alarm list widget" style="width:75%;"/>
 
-Nähere Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/guides/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt Device Management.
+Nähere Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt Device Management.
 
 ### Widget "Alarmliste"
 
 Das Widget "Alarmliste" zeigt eine Liste von Alarmen, gefiltert nach Objekten, Alarmschweregrad und Alarmstatus. 
 
-Nähere Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/guides/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt Device Management.
+Nähere Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt Device Management.
 
 **Konfigurierbare Parameter**
 
@@ -37,7 +37,7 @@ Nähere Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/guide
 
 Das Widget "Alle kritischen Alarme" zeigt alle Objekte mit einem kritischen Alarm. Es können keinen zusätzlichen Parameter konfiguriert werden.  
 
-Nähere Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/guides/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt Device Management.
+Nähere Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt Device Management.
 
 
 ### Widget "Ampel"
@@ -57,7 +57,7 @@ Das "Ampel"-Widget visualisiert den Status eines Geräts im Form einer Ampel.
 
 Das Widget "Anwendungen" zeigt alle Liste mit Links zu allen verfügbaren Anwendungen. Es können keinen zusätzlichen Parameter konfiguriert werden. 
 
-Nähere Informationen zu Anwendungen finden Sie unter [Administration > Verwalten von Anwendungen](/guides/benutzerhandbuch/administration#managing-applications).
+Nähere Informationen zu Anwendungen finden Sie unter [Administration > Verwalten von Anwendungen](/benutzerhandbuch/administration#managing-applications).
 
 
 ### Widget "Asset-Attribute"
@@ -117,7 +117,7 @@ Um eine Aktion hinzuzufügen, klicken Sie **+Aktion hinzufügen**. Wählen Sie *
 
 ![image alt text](/images/users-guide/image_19.png)
 
->**Info:** Der Dialog zeigt die vordefinierten Shell-Kommandos des ersten Geräts, das Shell-Kommandos unterstützt. Gibt es kein solches Gerät, ist die Liste leer. Weitere Informationen finden Sie unter [Shell-Kommandos](/guides/benutzerhandbuch/device-management/#shell) im Abschnitt Device Management.<br>
+>**Info:** Der Dialog zeigt die vordefinierten Shell-Kommandos des ersten Geräts, das Shell-Kommandos unterstützt. Gibt es kein solches Gerät, ist die Liste leer. Weitere Informationen finden Sie unter [Shell-Kommandos](/benutzerhandbuch/device-management/#shell) im Abschnitt Device Management.<br>
 Sie können auch das JSON-Format für das Kommando eingeben, das zum Gerät gesendet wird. Fragen Sie den Gerätehersteller nach unterstützten Kommandos, um weitere Details zu erfahren. 
 
 **Ändern der Tabelle**
@@ -181,7 +181,7 @@ Außerdem kann ein Zeitintervall festgelegt und Ereignisse können in Echtzeit �
 
 Das Widget "Fieldbus-Gerät" ermöglicht es, den Status eines Modbus-Geräts anzuzeigen und dieses zu betreiben. 
 
-Weitere Informationen zum Widget "Fieldbus-Gerät" finden Sie unter [Optionale Services > Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/guides/users-guide/optional-services/#fieldbus-device-widget).
+Weitere Informationen zum Widget "Fieldbus-Gerät" finden Sie unter [Optionale Services > Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/users-guide/optional-services/#fieldbus-device-widget).
 
 
 ### Widget "Gerätenachricht"
@@ -330,7 +330,7 @@ Im Widget "Rotationsmodell" kann das Objekt durch Ziehen und Bewegen gedreht wer
 
 Das "SCADA"-Widget bietet eine graphische Darstellung eines Gerätestatus. 
 
-Nähere Informationen zum "SCADA"-Widget finden Sie unter [Optionale Services > Cloud Fieldbus > Monitoring status using the SCADA widget](/guides/users-guide/optional-services#scada).
+Nähere Informationen zum "SCADA"-Widget finden Sie unter [Optionale Services > Cloud Fieldbus > Monitoring status using the SCADA widget](/users-guide/optional-services#scada).
 
 
 ### Widget "Silo"

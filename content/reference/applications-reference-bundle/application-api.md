@@ -46,4 +46,4 @@ Content-Length: ...
 }
 ```
 
-Refer to [Tenants > Current tenant](/guides/reference/tenants#current-tenant) in the Reference guide for details on how to get the tenant ID.
+Refer to [Tenants > Current tenant](/reference/tenants#current-tenant) in the Reference guide for details on how to get the tenant ID.

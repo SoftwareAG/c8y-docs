@@ -22,7 +22,7 @@ There is a restricted set of utilities and base events available for your EPL ap
 
 When any EPL application signals a runtime error, this will be raised as an alarm. Runtime errors include uncaught exceptions, as well as any explicit logging of warnings and errors that your EPL application chooses to do. Health issues that relate to the Apama runtime in general will also be raised as alarms.
 
-For more detailed diagnostics of the Apama runtime and any active EPL applications, you can look at the logs for the Apama-ctrl microservice. See [Managing applications](/guides/users-guide/administration/#managing-applications) in the *User guide* for more information on log files. However, some familiarity with Apama is necessary to get the most out of an Apama log file.
+For more detailed diagnostics of the Apama runtime and any active EPL applications, you can look at the logs for the Apama-ctrl microservice. See [Managing applications](/users-guide/administration/#managing-applications) in the *User guide* for more information on log files. However, some familiarity with Apama is necessary to get the most out of an Apama log file.
 
 ### <a name="deploying-as-microservice"></a>Deploying Apama applications as microservices
 
@@ -46,7 +46,7 @@ These kinds of applications should be deployed as microservices to Cumulocity Io
 
 3. Add any custom steps to the Dockerfile that might be necessary, for example, building a custom plug-in, or copying your license file into the image.
 
-4. Use the Cumulocity IoT microservice utility tool for packaging and deploying the project; for detailed information, see [Microservice utility tool](/guides/microservice-sdk/concept/#ms-utility-tool) in the *Microservice SDK guide*. When creating the directory structure for the microservice utility tool to build from, copy your entire project directory inside that directory with the name "docker/". For example:
+4. Use the Cumulocity IoT microservice utility tool for packaging and deploying the project; for detailed information, see [Microservice utility tool](/microservice-sdk/concept/#ms-utility-tool) in the *Microservice SDK guide*. When creating the directory structure for the microservice utility tool to build from, copy your entire project directory inside that directory with the name "docker/". For example:
 
     *docker/monitors/*<br>
     *docker/eventdefinitions/*<br>
@@ -54,8 +54,8 @@ These kinds of applications should be deployed as microservices to Cumulocity Io
     *docker/...*<br>
     *cumulocity.json*
 
-    You have to create the [microservice manifest](/guides/microservice-sdk/concept/#manifest) manually, but there is no need for anything special in the microservice manifest; no roles or probes are required. However, if you want to configure a liveness or readiness probe, you can configure an `httpGet` probe for the path */ping* on port 15903 (Apama's default port). Enabling auto-scaling is not recommended, as Apama applications are usually stateful and do not automatically partition their input.
+    You have to create the [microservice manifest](/microservice-sdk/concept/#manifest) manually, but there is no need for anything special in the microservice manifest; no roles or probes are required. However, if you want to configure a liveness or readiness probe, you can configure an `httpGet` probe for the path */ping* on port 15903 (Apama's default port). Enabling auto-scaling is not recommended, as Apama applications are usually stateful and do not automatically partition their input.
 
     You can pack, deploy and subscribe from this directory, resulting in your Apama application being turned into a running microservice. The behavior of the application when being run outside of Cumulocity IoT (from Software AG Designer or your test environment) will be near-identical to its behavior inside Cumulocity IoT. When deployed as a microservice, Apama will automatically pick up the credentials to connect to the tenant you deployed it to, overwriting any other credentials provided to Apama.
 
-5. When you are ready to deploy to Cumulocity IoT, upload the application as a microservice through the **Own applications** page in the Administration application. For details, refer to [Administration > Managing applications](/guides/users-guide/administration#managing-applications) in the *User guide*. 
+5. When you are ready to deploy to Cumulocity IoT, upload the application as a microservice through the **Own applications** page in the Administration application. For details, refer to [Administration > Managing applications](/users-guide/administration#managing-applications) in the *User guide*. 

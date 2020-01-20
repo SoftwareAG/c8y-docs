@@ -90,7 +90,7 @@ Aus der Gruppenperspektive:
 ### Bearbeiten einer Gruppe
 
 1. Klicken Sie im Menü **Gruppe** im Navigator auf eine Gruppe, um diese zu öffnen. 
-2. Klicken Sie **Bearbeiten** in der Registerkarte **Info**. Sie können den Namen der Gruppe bearbeiten sowie Benutzerberechtigungen für die Gruppe zuweisen. Weitere Informationen zu den Berechtigungen finden Sie unter Administration > [Verwalten von Berechtigungen](/guides/benutzerhandbuch/administration#managing-permissions).
+2. Klicken Sie **Bearbeiten** in der Registerkarte **Info**. Sie können den Namen der Gruppe bearbeiten sowie Benutzerberechtigungen für die Gruppe zuweisen. Weitere Informationen zu den Berechtigungen finden Sie unter Administration > [Verwalten von Berechtigungen](/benutzerhandbuch/administration#managing-permissions).
 
 ### <a name="smart-groups"></a>Verwenden von dynamischen Gruppen
 

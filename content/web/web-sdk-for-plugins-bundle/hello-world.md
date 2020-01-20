@@ -343,7 +343,7 @@ The build process for an app includes the following steps:
 
 ### <a name="target"></a>Deploy your plugin to the core applications
 
-You can also add or [replace](/guides/web/branding-plugin#branding) plugins in the core applications by specifying a target .json file. This file is not restricted in its name or path.
+You can also add or [replace](/web/branding-plugin#branding) plugins in the core applications by specifying a target .json file. This file is not restricted in its name or path.
 
 ```json
 {

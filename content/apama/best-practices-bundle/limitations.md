@@ -8,14 +8,14 @@ Using Apama within the Cumulocity IoT environment necessarily has some restricti
 
 There are a number of ways that assets may be deployed to Apama within Cumulocity IoT and the restrictions vary according to those mechanisms:
 
-* Apama EPL Apps - the simplest mechanism to deploy Apama assets into a fully managed Apama correlator, see [Basic functionality > Deploying applications](/guides/apama/analytics-introduction/#deploying-apps).
-* Custom microservice – where more complex Apama projects can be built using the Cumulocity Microservice SDK, see [Developing applications > Cumulocity microservices](/guides/concepts/applications#microservices) in the *Concepts guide*.
+* Apama EPL Apps - the simplest mechanism to deploy Apama assets into a fully managed Apama correlator, see [Basic functionality > Deploying applications](/apama/analytics-introduction/#deploying-apps).
+* Custom microservice – where more complex Apama projects can be built using the Cumulocity Microservice SDK, see [Developing applications > Cumulocity microservices](/concepts/applications#microservices) in the *Concepts guide*.
 
 When designing an Apama solution to be deployed within any form of Cumulocity IoT environment, consider the following points.
 
 ### General Apama limitations when using Apama EPL Apps or a custom microservice
 
-* For scalability, a correlator may move between hosts and therefore does not have access to a persistent file system. It is a standard Cumulocity IoT constraint that all microservices (either provided by the platform, or custom) must be stateless – see [Developing applications > Cumulocity microservices](/guides/concepts/applications#microservices) in the *Concepts guide*.
+* For scalability, a correlator may move between hosts and therefore does not have access to a persistent file system. It is a standard Cumulocity IoT constraint that all microservices (either provided by the platform, or custom) must be stateless – see [Developing applications > Cumulocity microservices](/concepts/applications#microservices) in the *Concepts guide*.
 
 	The Apama features affected by this include:
 
@@ -32,7 +32,7 @@ When designing an Apama solution to be deployed within any form of Cumulocity Io
 	* 	Distributed memory stores.
 	* 	Connections between correlators.
 
-* For security and implementing user access control, Cumulocity IoT does not make the correlator port available to external processes – see [Developing applications > Cumulocity microservices](/guides/concepts/applications#microservices) in the *Concepts guide*.
+* For security and implementing user access control, Cumulocity IoT does not make the correlator port available to external processes – see [Developing applications > Cumulocity microservices](/concepts/applications#microservices) in the *Concepts guide*.
 
 	The following capabilities require access to the correlator port and hence are not compatible with this access control:
 
@@ -68,6 +68,6 @@ When designing an Apama solution to be deployed within any form of Cumulocity Io
 	* A \*.mon file must not contain a package statement (to do so is an error).
 	* It is not possible to share event definitions between separate \*.mon files.
 	* It is not possible to use Apama queries.
-	* You can only use the bundles listed in [Developing applications with Software AG Designer](/guides/apama/analytics-introduction/#sag-designer). 
+	* You can only use the bundles listed in [Developing applications with Software AG Designer](/apama/analytics-introduction/#sag-designer). 
 
 All of these restrictions are implemented to ensure the smooth and secure operation of Apama applications within Cumulocity IoT.

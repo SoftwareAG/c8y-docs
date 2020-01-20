@@ -19,7 +19,7 @@ Es gibt zwei verschiedene Einstellungen für Supportbenutzer in Cumulocity:
 
 Damit ein Benutzer des Management-Mandanten für Benutzer in anderen Mandanten Support leisten kann, müssen Sie dem Benutzer entweder die globale Berechtigung "Support" oder die Stammdatenrolle "Support" (jeweils "Lesen" und "Ändern") zuweisen.
 
-Über die Stammdatenrolle "Support" können Sie dediziert die Supportberechtigung für einzelne Benutzer zuweisen. Erstellen Sie eine Gruppen der Mandanten, denen der Benutzer Support geben soll und weisen Sie dem Benutzer und der Gruppe die Stammdatenrolle zu wie unter [Zuweisen von Stammdatenrollen](/guides/benutzerhandbuch/administration#attach-inventory) beschrieben.
+Über die Stammdatenrolle "Support" können Sie dediziert die Supportberechtigung für einzelne Benutzer zuweisen. Erstellen Sie eine Gruppen der Mandanten, denen der Benutzer Support geben soll und weisen Sie dem Benutzer und der Gruppe die Stammdatenrolle zu wie unter [Zuweisen von Stammdatenrollen](/benutzerhandbuch/administration#attach-inventory) beschrieben.
 
 **Vom Benutzer erteilte Berechtigung**
 

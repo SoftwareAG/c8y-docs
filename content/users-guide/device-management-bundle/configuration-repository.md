@@ -8,7 +8,7 @@ Cumulocity allows to retrieve configuration data and store and manage it in a co
 
 Configuration snapshots help you, for example, to apply the same configuration to multiple devices as described below. 
 
-For details on configuration management also refer to [Device management library > Configuration management](/guides/reference/device-management/#configuration-management) in the Reference guide.
+For details on configuration management also refer to [Device management library > Configuration management](/reference/device-management/#configuration-management) in the Reference guide.
 
 In the **Configuration repository** page which you open from the **Management** menu in the navigator, all available configurations are listed. Each entry shows the configuration name, the device from which it has been uploaded and the upload timestamp.
 

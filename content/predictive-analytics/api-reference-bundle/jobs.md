@@ -182,7 +182,7 @@ curl --request POST "{{url}}/service/zementis/job"
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -320,7 +320,7 @@ curl --request GET "{{url}}/service/zementis/jobs"
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -404,7 +404,7 @@ curl --request GET "{{url}}/service/zementis/job/10979435"
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -500,7 +500,7 @@ curl --request GET "{{url}}/service/zementis/job/10979435/history"
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -584,7 +584,7 @@ curl --request GET "{{url}}/service/zementis/job/10979435/history/1"
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -681,7 +681,7 @@ curl --request GET "{{url}}/service/zementis/job/10979435/history/1/inferences"
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -754,7 +754,7 @@ curl --request DELETE "{{url}}/service/zementis/job/11058170"
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -822,6 +822,6 @@ curl --request DELETE "{{url}}/service/zementis/jobs"
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```

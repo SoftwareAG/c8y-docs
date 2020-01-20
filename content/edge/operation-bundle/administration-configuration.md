@@ -24,7 +24,7 @@ To configure the "reset password" template and email server settings, perform th
 	* User: management/edgeadmin 
 	* Password: Will be the same as the Edge tenant admin password provided in the post-installation execution
 <br>
-2. Update the email server details and templates following the instructions in [Administration > Changing settings> Configuration settings](/guides/users-guide/administration/#config-platform) in the User guide.
+2. Update the email server details and templates following the instructions in [Administration > Changing settings> Configuration settings](/users-guide/administration/#config-platform) in the User guide.
 
 
 ### Increasing the system performance

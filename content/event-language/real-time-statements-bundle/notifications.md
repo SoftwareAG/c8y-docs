@@ -4,7 +4,7 @@ title: Notifications
 layout: redirect
 ---
 
-The real-time notifications allow for receiving almost immediately outputs from statements. They are available on URL *"/cep/notifications"*, the usage is described in a separate [document](/guides/reference/real-time-notifications).
+The real-time notifications allow for receiving almost immediately outputs from statements. They are available on URL *"/cep/notifications"*, the usage is described in a separate [document](/reference/real-time-notifications).
   
 Required role: ROLE\_NOTIFICATION\_READ
 

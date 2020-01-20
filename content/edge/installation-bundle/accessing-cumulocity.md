@@ -24,7 +24,7 @@ On Linux machines, add the following entry to */etc/hosts*:
 <IP address> <domain_name>
 ```
 
-Use the IP address provided during [network configuration](/guides/edge/installation#configuration). The default value for the Virtual Box is 192.168.56.120.
+Use the IP address provided during [network configuration](/edge/installation#configuration). The default value for the Virtual Box is 192.168.56.120.
 
 On Windows machines,  add the same entry to *C:\Windows\System32\Drivers\etc\hosts*.
 
@@ -38,7 +38,7 @@ If the ping is successful the DNS resolution is working properly.
 
 Using &#60;domain_name>, Cumulocity IoT Edge can be connected from the host operating system (operating system which is hosting the Edge VM instance). If you want to connect Edge VM within your LAN, which is outside of the host operating system, you need to do following:
 
-* Port forwarding must be enabled as mentioned in [Setting up the environment](/guides/edge/installation#setting-up-the-environment).
+* Port forwarding must be enabled as mentioned in [Setting up the environment](/edge/installation#setting-up-the-environment).
 * The DNS entry needs to be added in your LAN’s DNS server/Name server. The DNS entry must have the domain name (provided in post_installation step) and the IP address of the host operating system. Note that this is not the Edge VM IP.
 
 ### Entering Cumulocity
@@ -86,6 +86,6 @@ After successfully logging in, the Cumulocity platform will open:
 
 <img src="/images/users-guide/cockpit/cockpit-home-screen.png" name="Home screen"/>
 
-When you log into Cumulocity for the first time, you will be taken to the [Cockpit](/guides/users-guide/cockpit#overview) application where the **Home screen** initially opens up.
+When you log into Cumulocity for the first time, you will be taken to the [Cockpit](/users-guide/cockpit#overview) application where the **Home screen** initially opens up.
 
 

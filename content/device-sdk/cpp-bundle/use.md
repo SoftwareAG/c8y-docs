@@ -63,7 +63,7 @@ If you re-run the program the second time, the program will print *Hello, Cumulo
 
 ### Integrating to Cumulocity
 
-Device integration is a little more complex. The whole process is depicted in Fig 12. Refer to [Device SDK for REST > Device integration](/guides/device-sdk/rest#device-integration) for detailed explanation. Steps *1*, *2* and *3* are specific to the SmartREST protocol as SmartREST requires predefined templates, see [Using the REST interface > Using SmartREST](/guides/microservice-sdk/rest#smartrest) in the Microservice SDK guide and the [SmartREST reference](http://cumulocity.com/guides/reference/smartrest/) in the Reference guide for more information. Step *4* checks if the device is already stored in *Cumulocity*'s database and only create it when it's not found. Steps *6* and *7* get the *Cumulocity* ID of the device from *Cumulocity*'s database. Step *8* sets the *Cumulocity* ID as an alias for the device ID so that the device can find its *Cumulocity* ID next time by querying with its device ID.
+Device integration is a little more complex. The whole process is depicted in Fig 12. Refer to [Device SDK for REST > Device integration](/device-sdk/rest#device-integration) for detailed explanation. Steps *1*, *2* and *3* are specific to the SmartREST protocol as SmartREST requires predefined templates, see [Using the REST interface > Using SmartREST](/microservice-sdk/rest#smartrest) in the Microservice SDK guide and the [SmartREST reference](http://cumulocity.com/reference/smartrest/) in the Reference guide for more information. Step *4* checks if the device is already stored in *Cumulocity*'s database and only create it when it's not found. Steps *6* and *7* get the *Cumulocity* ID of the device from *Cumulocity*'s database. Step *8* sets the *Cumulocity* ID as an alias for the device ID so that the device can find its *Cumulocity* ID next time by querying with its device ID.
 
 ![img](/images/cpp/img/integrate.png "Device integration flowchart.")
 
@@ -422,7 +422,7 @@ As you can see, all modification needed is to construct `SrReporter` with a diff
 
 <div class="footdef"><sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup> The agent loop is an infinite loop, so it will never really returns. We will get back to this function later.</div>
 
-<div class="footdef"><sup><a id="fn.4" name="fn.4" class="footnum" href="#fnr.4">4</a></sup> Consult the [SmartREST reference](http://cumulocity.com/guides/reference/smartrest/) about how to define SmartREST templates.</div>
+<div class="footdef"><sup><a id="fn.4" name="fn.4" class="footnum" href="#fnr.4">4</a></sup> Consult the [SmartREST reference](http://cumulocity.com/reference/smartrest/) about how to define SmartREST templates.</div>
 
 <div class="footdef"><sup><a id="fn.5" name="fn.5" class="footnum" href="#fnr.5">5</a></sup> The code excerpt only includes the added part, check the *examples* folder for the complete example code.</div>
 

@@ -47,6 +47,6 @@ sudo shutdown
 sudo ./post_installation.sh
 ```
 
-11. Choose the post-upgrade task (option 4). Provide inputs if prompted and complete the post-upgrade task. For details see [Configuration](/guides/edge/installation#configuration).
+11. Choose the post-upgrade task (option 4). Provide inputs if prompted and complete the post-upgrade task. For details see [Configuration](/edge/installation#configuration).
 
 10. Verify, whether DB and property files are intact and unchanged.

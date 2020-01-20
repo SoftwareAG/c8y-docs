@@ -8,7 +8,7 @@ weight: 0
 
 It is a common use case to extend one of our existing apps like Cockpit or Device management. 
 
-This recipe explains step by step, how you can extend the Cockpit app with a custom route and hook this route into the navigator. Before starting with the step-by-step description we will provide some background on what we call a hybrid application and what the [@c8y/apps](/guides/web/angular/#apps) npm package contains.
+This recipe explains step by step, how you can extend the Cockpit app with a custom route and hook this route into the navigator. Before starting with the step-by-step description we will provide some background on what we call a hybrid application and what the [@c8y/apps](/web/angular/#apps) npm package contains.
 
 ### Brief background
 
@@ -16,8 +16,8 @@ The default applications consist of three application which are shipped with our
 
 The hybrid mode, however, comes with some limitations we will cover later in this recipe. Due to these limitations, we decided to provide a **pure** Angular empty starter application which comes without the possibility to integrate angularjs plugins. That pure version of the app comes in two flavors:
  
- - [Angular CLI](/guides/web/angular/#angularcli): When using the Angular CLI you benefit from the whole Angular ecosystem so that you can re-use many of the tools of the Angular CLI (e.g. testing).
- - [@c8y/cli](/guides/web/angular/#cli): Is our pre-caved way that integrates well with our tooling but most likely will not allow special cases.
+ - [Angular CLI](/web/angular/#angularcli): When using the Angular CLI you benefit from the whole Angular ecosystem so that you can re-use many of the tools of the Angular CLI (e.g. testing).
+ - [@c8y/cli](/web/angular/#cli): Is our pre-caved way that integrates well with our tooling but most likely will not allow special cases.
 
  So in total, there are three possibilities to start with the Web SDK: Extending an existing hybrid app, building a pure Angular app with Angular CLI or building it with @c8y/cli. Which one to choose heavily depends on the application you want to build. E.g. if you want an application that just follows the look&feel of the platform but want to use special dependencies for certain scenarios (e.g. Material-Framework), you are best with the pure Angular CLI solution. 
  
@@ -70,7 +70,7 @@ export class HelloComponent {
 }
 ```
 
-This is a very basic component. Only the template uses a special feature called "content projection" to show a title. Content projection is an Angular concept to display content in other places then they are defined. Which components support content projection is described in the [@c8y/ngx-components](http://localhost:1313/guides/web/angular/#ngx-components) documentation.
+This is a very basic component. Only the template uses a special feature called "content projection" to show a title. Content projection is an Angular concept to display content in other places then they are defined. Which components support content projection is described in the [@c8y/ngx-components](http://localhost:1313/web/angular/#ngx-components) documentation.
 
 We can now bind this custom component to a route by changing the `app.module.ts` the following way:
 

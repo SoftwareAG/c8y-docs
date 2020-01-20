@@ -275,7 +275,7 @@ To show all the functions are available, type
 ./microservice.ps1 --help
 ```
 
-For further information refer to [Microservice package and deploy](https://cumulocity.com/guides/reference/microservice-package/) in the Reference guide.
+For further information refer to [Microservice package and deploy](https://cumulocity.com/reference/microservice-package/) in the Reference guide.
 
 **Deployment**
 
@@ -445,11 +445,11 @@ The API provides the following services:
 * ManagedObject - InventoryApi
 * Measurement - MeasurementApi
 
-For further information, refer to the [Device SDK guide](https://cumulocity.com/guides/device-sdk/).
+For further information, refer to the [Device SDK guide](https://cumulocity.com/device-sdk/).
 
 **C# MQTT SDK**
 
-It is possible to use the C# MQTT SDK as a nuget-package. A developer can use it to perform basic operations against the platform. For further information, refer to [MQTT examples](https://cumulocity.com/guides/device-sdk/mqtt-examples) in the Device SDK guide.
+It is possible to use the C# MQTT SDK as a nuget-package. A developer can use it to perform basic operations against the platform. For further information, refer to [MQTT examples](https://cumulocity.com/device-sdk/mqtt-examples) in the Device SDK guide.
 
 ### Building and deploying on Linux
 
@@ -535,7 +535,7 @@ To show all options, type
 $ ./microservice help
 ```
 
-For further information, refer to [Microservice package and deploy](https://cumulocity.com/guides/reference/microservice-package/)in the Reference guide.
+For further information, refer to [Microservice package and deploy](https://cumulocity.com/reference/microservice-package/)in the Reference guide.
 
 **Deployment**
 

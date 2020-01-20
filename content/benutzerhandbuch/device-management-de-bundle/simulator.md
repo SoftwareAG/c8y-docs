@@ -55,7 +55,7 @@ In den voreingestellten Simulatoren sind bereits Beispielanweisungen vorhanden. 
 
 ![Add Instructions Step 2](/images/users-guide/addinstructions2.png)
 
-Die Messwertanweisungen beziehen sich auf ein Fragment. Fragmente werden verwendet, um die Kapazitäten von Objekten zu bestimmen. Nähere Informationen zu Fragmenten finden Sie in der [Sensor Library ](/guides/reference/sensor-library/) im Reference Guide.
+Die Messwertanweisungen beziehen sich auf ein Fragment. Fragmente werden verwendet, um die Kapazitäten von Objekten zu bestimmen. Nähere Informationen zu Fragmenten finden Sie in der [Sensor Library ](/reference/sensor-library/) im Reference Guide.
 
 ![Add Instructions Step 3](/images/benutzerhandbuch/addinstructions3de.png)
 

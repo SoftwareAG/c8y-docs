@@ -4,7 +4,7 @@ layout: redirect
 weight: 20
 ---
 
-[Download the ActivityRecognitionDemo.zip](/guides/files/zementis/ActivityRecognitionDemo.zip) file which contains demo scripts, training data set, PMML Model and EPL rule.
+[Download the ActivityRecognitionDemo.zip](/files/zementis/ActivityRecognitionDemo.zip) file which contains demo scripts, training data set, PMML Model and EPL rule.
 
 Running the demo scripts requires 
 

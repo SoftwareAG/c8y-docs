@@ -26,7 +26,7 @@ As an example, the following statement listens for new temperature sensor readin
 		}
 	}
 
-Here, _Measurement_ is a pre-defined event containing the measurements. In this example, "m" is the "Measurement" event, the listener is filtering for measurements which are "c8y_TemperatureMeasurement" and the property is "c8y_TemperatureMeasurement.T.value" which is in degrees Celsius of a temperature sensor (see the [sensor library](https://www.cumulocity.com/guides/reference/sensor-library)).
+Here, _Measurement_ is a pre-defined event containing the measurements. In this example, "m" is the "Measurement" event, the listener is filtering for measurements which are "c8y_TemperatureMeasurement" and the property is "c8y_TemperatureMeasurement.T.value" which is in degrees Celsius of a temperature sensor (see the [sensor library](https://www.cumulocity.com/reference/sensor-library)).
 
 Listeners such as the above should be placed in a monitor in the `onload` statement, and the file will need to contain `using` statements for the types used by the listener - for most of the Cumulocity events, these are in the package *com.apama.cumulocity*. The full list is provided below - for the sake of brevity, we will omit these from further examples:
 

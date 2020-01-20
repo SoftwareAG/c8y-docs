@@ -38,7 +38,7 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 |[Tracking](#tracking)|Zeigt die Bewegungen des Geräts, falls verfügbar.
 |[Identifikator](#identity)|Zeigt die für das Gerät gespeicherten Identifikatoren. Für jedes Gerät vorhanden.
 
->**Info**: Mögliche weitere spezielle Registerkarten, die nicht hier aufgeführt sind, werden in dem entsprechenden Kontext an anderer Stelle in der Cumulocity-Dokumentation beschrieben. Die Registerkarte **Modbus** beispielsweise ist in der Modbus-Beschreibung unter [Optionale Services > Cloud Fieldbus](/guides/users-guide/optional-services/#cloud-fieldbus) zu finden. 
+>**Info**: Mögliche weitere spezielle Registerkarten, die nicht hier aufgeführt sind, werden in dem entsprechenden Kontext an anderer Stelle in der Cumulocity-Dokumentation beschrieben. Die Registerkarte **Modbus** beispielsweise ist in der Modbus-Beschreibung unter [Optionale Services > Cloud Fieldbus](/users-guide/optional-services/#cloud-fieldbus) zu finden. 
 
 Ist das Gerät Teil einer Asset-Hierarchie (wie einer Gruppe), wird unter dem Gerätenamen eine Liste von Breadcrumbs angezeigt, um einfach in der Hierarchie navigieren zu können. Da Geräte zu mehreren Hierarchien gehören können, werden möglicherweise mehrere Breadcrumb-Zeilen angezeigt. 
 
@@ -60,7 +60,7 @@ Die Information wird auf den folgenden Karten bereitgstellt:
 |:---|:---|
 |Anmerkungen|Enthält optionale Anmerkungen, die über aktuelle Aktivitäten informieren. Anmerkungen können normalerweise nur vom Administrator bearbeitet werden. Um eine Anmerkungen hinzuzufügen oder zu bearbeiten, klicken Sie **Bearbeiten**, geben Sie eine neue Anmerkung oder Änderungen im Textfeld ein und bestätigen Sie Ihre Eingaben, indem Sie das grüne Häkchen rechts vom Textfeld klicken. 
 |Gerätestatus|Enthält verbindungsrelevante Informationen, die im Detail unter [Verbindungsüberwachung](#connection-monitoring) beschrieben sind. 
-|Gerät und Kommunikation|Enthält einen Datenpunktgraphen, der Echtzeitdaten von bestimmten Messwerten anzeigt. Detaillierte Informationen finden Sie unter [Verwenden des Datenexplorers](/guides/benutzerhandbuch/cockpit#data-explorer) in der Cockpit-Dokumentation.
+|Gerät und Kommunikation|Enthält einen Datenpunktgraphen, der Echtzeitdaten von bestimmten Messwerten anzeigt. Detaillierte Informationen finden Sie unter [Verwenden des Datenexplorers](/benutzerhandbuch/cockpit#data-explorer) in der Cockpit-Dokumentation.
 |Gerätedaten|Enthält editierbare Informationen zum Gerät ( Name, Typ, ID, Besitzer, zuletzt aktualisiert). Die Felder **ID** und **Zuletzt aktualisiert** können nicht bearbeitet werden. Außerdem werden hier Informationen zur Hardware (editierbar) und Firmware (nicht editierbar) angezeigt, falls verfügbar.
 |Aktive kritische Alarme|Zeigt die aktiven kritischen Alarme für das Gerät an. 
 |Gruppenzuordnung|Zeigt die Gruppen an, zu denen das Gerät gehört. Außerdem kann das Gerät hier weiteren Gruppen zugeordnet werden oder eine Zuordnung aufgehoben werden. Detaillierte Informationen zum Gruppieren von Geräten finden Sie unter [Gruppieren von Geräten](#grouping-devices).
@@ -94,7 +94,7 @@ Dies ermöglicht einen effizienten Überblick über größere Zeitintervalle. Es
 
 Klicken Sie **Echtzeit**, um Echtzeitaktualisierungen der Graphen zu erhalten, sobald neue Daten von den Geräten empfangen werden. 
 
-Sie können die graphische Darstellung und Achsenbegrenzung durch sogenannte "KPIs" modifizieren, siehe [Administration](/guides/benutzerhandbuch/administration).
+Sie können die graphische Darstellung und Achsenbegrenzung durch sogenannte "KPIs" modifizieren, siehe [Administration](/benutzerhandbuch/administration).
 
 **Messwerteformate**
 

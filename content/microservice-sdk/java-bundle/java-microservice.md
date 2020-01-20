@@ -81,7 +81,7 @@ In the `properties` element specified above, add a child element `c8y.version` w
 ```
 
 
-Edit the `<c8y.version>` element to use the latest version of the client library. It may be obtained by reviewing the [Release notes](https://cumulocity.com/guides/release-notes/overview/) or the [Maven repository](http://download.cumulocity.com/maven/repository/com/nsn/cumulocity/clients-java/microservice-dependencies/). This particular example was implemented using version 9.16.2.
+Edit the `<c8y.version>` element to use the latest version of the client library. It may be obtained by reviewing the [Release notes](https://cumulocity.com/release-notes/overview/) or the [Maven repository](http://download.cumulocity.com/maven/repository/com/nsn/cumulocity/clients-java/microservice-dependencies/). This particular example was implemented using version 9.16.2.
 
 Now add repository and plugin elements to point to the Cumulocity Maven repository which stores the client libraries.
 
@@ -175,7 +175,7 @@ Add a _cumulocity.json_ file to the _src/main/configuration_ directory with the 
 }
 ```
 
-This is the [Manifest](/guides/microservice-sdk/concept/#manifest) file and it is required to deploy the microservice in the Cumulocity platform.
+This is the [Manifest](/microservice-sdk/concept/#manifest) file and it is required to deploy the microservice in the Cumulocity platform.
 
 #### Configuring the build
 
@@ -454,4 +454,4 @@ You can also test your microservice with your favorite browser. Remember to ente
 
 ### Improving the microservice
 
-Now that you have done your first steps, check out the section [Developing microservices](/guides/microservice-sdk/java#developing-microservice) to find out what else can be implemented. Review also the [Java example](/guides/microservice-sdk/http) in this guide to learn using more features of the microservice SDK and REST API by employing third-party services.
+Now that you have done your first steps, check out the section [Developing microservices](/microservice-sdk/java#developing-microservice) to find out what else can be implemented. Review also the [Java example](/microservice-sdk/http) in this guide to learn using more features of the microservice SDK and REST API by employing third-party services.

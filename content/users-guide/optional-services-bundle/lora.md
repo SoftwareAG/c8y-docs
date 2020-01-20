@@ -218,7 +218,7 @@ The provision status is shown under **Device data** in the **Info** tab of the d
 
 ![Device data](/images/users-guide/actility/devmgmt-devices-devicedata.png)
 
-For more information on viewing and managing your connected devices, also refer to [Device Management](/guides/users-guide/device-management).
+For more information on viewing and managing your connected devices, also refer to [Device Management](/users-guide/device-management).
 
 #### <a name="device-registration-process"></a>LoRa device registration process
 

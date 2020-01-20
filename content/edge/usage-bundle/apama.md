@@ -16,7 +16,7 @@ With Apama you can
 * detect and analyze events and event patterns of interest
 * respond to them in real time 
 
-For further information refer to the [Apama guide](/guides/apama) or see the topic Developing Apama Applications in EPL in the [Apama documentation](http://www.apamacommunity.com/documents/10.1.0.3/apama_10.1.0.3_webhelp/apama-webhelp/) for full details. 
+For further information refer to the [Apama guide](/apama) or see the topic Developing Apama Applications in EPL in the [Apama documentation](http://www.apamacommunity.com/documents/10.1.0.3/apama_10.1.0.3_webhelp/apama-webhelp/) for full details. 
 
 
 ### Uploading a custom Apama CEP rule

@@ -29,7 +29,7 @@ Moreover, several action buttons are provided which are explained below.
 
 1. In the **Firmware repository** page, click **Add firmware** at the right of the top menu bar. <br><br>![Add firmware](/images/users-guide/DeviceManagement/devmgmt-firmware-add.png)
 2. In the resulting dialog box, enter a name for the firmware and its version.
-3. Specify the file for the firmware by either uploading it from the file system, specifying a URL from where the firmware can be obtained or choosing a file previously added in the [Administration application](/guides/users-guide/administration#files). 
+3. Specify the file for the firmware by either uploading it from the file system, specifying a URL from where the firmware can be obtained or choosing a file previously added in the [Administration application](/users-guide/administration#files). 
 4. Click **Save**.
 
 The firmware object will be added to the firmware list.
@@ -54,9 +54,9 @@ The object will be downloaded to your file system.
 #### To install firmware/software on a device
 
 1. Click **All devices** in the **Devices** menu in the navigator and select a device from the device list.
-2. Open the **Software** tab for the device and click **Install firmware**, see also the description of the **Software** tab in [Device details](/guides/users-guide/device-management#software).
+2. Open the **Software** tab for the device and click **Install firmware**, see also the description of the **Software** tab in [Device details](/users-guide/device-management#software).
 
->**Info:** To store other types of binaries in Cumulocity, switch to the [Administration application](/guides/users-guide/administration#files).
+>**Info:** To store other types of binaries in Cumulocity, switch to the [Administration application](/users-guide/administration#files).
 
 #### To install firmware/software on multiple devices
 

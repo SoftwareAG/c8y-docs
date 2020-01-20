@@ -209,7 +209,7 @@ Note that the subscription is established after the device creation, otherwise i
 
 #### Create new event with JSON via MQTT
 
-The purpose of this example is to show the creation of an event. Before running the example, you must provide the credentials for the device. For more details review the [Request device credentials](/guides/device-sdk/rest#step-0-request-device-credentials) step.
+The purpose of this example is to show the creation of an event. Before running the example, you must provide the credentials for the device. For more details review the [Request device credentials](/device-sdk/rest#step-0-request-device-credentials) step.
 
 > **Important**: Do not use new line characters  \r\n and escaping characters specific for Windows OS.
 
@@ -249,7 +249,7 @@ await client.SubscribeAsync(new MqttMessageRequest() { TopicName = "error" });
 await client.PublishAsync(messageJson);
 ```
 
-For specific procedural details review [JSON via MQTT](https://www.cumulocity.com/guides/device-sdk/mqtt/#json).
+For specific procedural details review [JSON via MQTT](https://www.cumulocity.com/device-sdk/mqtt/#json).
 
 #### Building and running the application
 

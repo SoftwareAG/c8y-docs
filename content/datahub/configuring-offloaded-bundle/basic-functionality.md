@@ -81,7 +81,7 @@ Click **Delete** to delete a configuration. The data lake artifacts, which have 
 
 #### Monitoring an offloading pipeline
 
-Click **Show offloading history** to examine the execution history of a pipeline. See section [History per offloading job](/guides/datahub/monitoring-offloaded#history-per-offloading-job) for more details.
+Click **Show offloading history** to examine the execution history of a pipeline. See section [History per offloading job](/datahub/monitoring-offloaded#history-per-offloading-job) for more details.
 
 <a id="scheduling-an-offloading-job"></a>
 

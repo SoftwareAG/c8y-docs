@@ -89,7 +89,7 @@ Ist ein Gerät offline, nimmt Cumulocity standardmäßig an,
 * dass das Gerät während des Verbindungsabbruchs weiterhin in Betrieb bleibt, wenn dies zuvor der Fall war.
 * dass das Gerät während des Verbindungsabbruchs weiterhin nicht in Betrieb ist, wenn dies zuvor der Fall war.
 
-Es gibt möglicherweise Ausnahmen zu dieser Regel. Wenn Ihr Verkaufsautomat beispielsweise nur mit bargeldloser Bezahlung funktioniert, bedeutet ein Verbindungsabbruch, dass der Automat nichts mehr verkaufen kann und damit nicht mehr betriebsbereit ist. In diesem Fall müssen Nichtverfügbarkeits-Alarme in der ["Administration"-Anwendung](/guides/benutzerhandbuch/administration#reprio-alarms) eingestellt werden, die einen "kritischen" anstatt eines "wichtigen" Schweregrads haben.
+Es gibt möglicherweise Ausnahmen zu dieser Regel. Wenn Ihr Verkaufsautomat beispielsweise nur mit bargeldloser Bezahlung funktioniert, bedeutet ein Verbindungsabbruch, dass der Automat nichts mehr verkaufen kann und damit nicht mehr betriebsbereit ist. In diesem Fall müssen Nichtverfügbarkeits-Alarme in der ["Administration"-Anwendung](/benutzerhandbuch/administration#reprio-alarms) eingestellt werden, die einen "kritischen" anstatt eines "wichtigen" Schweregrads haben.
 
 Cumulocity zeigt die Serviceverfügbarkeit für einzelne Geräte sowie für alle Geräte an. 
 
@@ -143,7 +143,7 @@ In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:
 
 Klicken Sie auf den Pfeil rechts in einem Eintrag, um die Zeile auszuklappen und weitere Details zum Alarm anzuzeigen.
 
-* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information wird verwendet, um die Priorität von Alarmen zu konfigurieren, siehe [Priorisieren von Alarmen](/guides/benutzerhandbuch/administration#reprio-alarms) in der "Administration"-Anwendung.
+* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information wird verwendet, um die Priorität von Alarmen zu konfigurieren, siehe [Priorisieren von Alarmen](/benutzerhandbuch/administration#reprio-alarms) in der "Administration"-Anwendung.
 * **Änderungsprotokoll**: Gibt die Serverzeit an, zu der der Alarm erstellt wurde. Diese kann von der Gerätezeit abweichen. 
 
 Um den Status eines Alarms zu ändern, bewegen Sie den Mauszeiger rechts über die Zeile und klicken Sie die entsprechende Schaltfläche oder öffnen Sie das Kontextmenü über das Menüsymbol und wählen Sie den gewünschten Status.  

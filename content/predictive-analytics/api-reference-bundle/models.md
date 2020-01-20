@@ -57,7 +57,7 @@ curl --request GET "{{url}}/service/zementis/models"
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -160,7 +160,7 @@ curl --request GET "{{url}}/service/zementis/model/Iris_ME_Classification"
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -471,7 +471,7 @@ curl --request GET "{{url}}/service/zementis/model/Iris_ME_Classification/source
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -543,7 +543,7 @@ curl --request GET "{{url}}/service/zementis/model/Iris_ME_Classification/serial
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -626,7 +626,7 @@ curl --request GET "{{url}}/service/zementis/model/Iris_ME_Classification/metric
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -862,7 +862,7 @@ curl --request POST "{{url}}/service/zementis/model"
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -994,7 +994,7 @@ curl --request PUT "{{url}}/service/zementis/model/Iris_KM/activate"
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -1126,7 +1126,7 @@ curl --request PUT "{{url}}/service/zementis/model/Iris_KM/deactivate"
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -1205,7 +1205,7 @@ curl --request DELETE "{{url}}/service/zementis/model/Iris_KM"
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -1275,6 +1275,6 @@ curl --request DELETE "{{url}}/service/zementis/models"
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```

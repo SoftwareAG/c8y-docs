@@ -1,12 +1,14 @@
 ---
 weight: 70
-title: OPC UA 2.0
+title: OPC UA
 layout: redirect
 --- 
 
 The OPC UA device gateway is a stand-alone Java program that communicates with OPC UA server(s) and the Cumulocity platform. It stores data into the Cumulocity database via REST. Additionally, C8Y commands are executed to perform various operations on the OPC UA servers. The gateway has to be registered as Cumulocity device in a specific tenant and the opcua-device-gateway must run in the users’ environment. In order to use OPC UA, subscription to the “opcua-mgmt-service” microservice is required. 
 
-> **Info**: The gateway requires at least Java 8 in order to run.
+To download the gateway navigate to [Cumulocity resources.](http://resources.cumulocity.com/examples/opcua-device-gateway-1005.7.1.jar)
+
+> **Info**: The gateway requires Java 8 in order to run.
 
 ### <a name="gateway-register"></a>Gateway configuration and registration
 
@@ -21,123 +23,89 @@ The following properties can be manually configured :
 name: opcua-device-gateway
 # Platform location and configuration
 C8Y:
-baseUrl: http://localhost
-forceInitialHost: true
+  baseUrl: http://localhost
+  forceInitialHost: true
 
 gateway:
 # Gateway version - this is filled automatically during the build process - do not change this property
-version: ${project.version}
+  version: ${project.version}
 # Following two properties will be set to the name of the computer that is running the gateway
 # unless it's overridden manually
 #  identifier: mygateway
 #  name: mygateway
-db:
+  db:
 # The gateway uses the local database to store platform credentials and local cache. This parameter shows the location in which the local data should be stored.
-baseDir: ${user.home}/.opcua/data
+    baseDir: ${user.home}/.opcua/data
 
 # Credentials for device bootstrap - enter tenant that gateway should register to.
-Bootstrap:
+  Bootstrap:
 # ID of the tenant to which the device will be registered.
-tenantId: management
-username: devicebootstrap
-password: Fhdt1bb1f
-# On start, the gateway will wait <delay> milliseconds before connecting to the platform and searching for a device.
-delay: 5000
+    tenantId: management
+    username: devicebootstrap
+    password: <devicebootstrap user password>
+# On start, the gateway will wait <delay> milliseconds before connecting to the platform and searching for a      device.
+    delay: 5000
 # If true then gateway will drop stored device credentials and fetch them from platform
-force: false
+    force: false
 
 # Scheduled tasks and thread pools configuration. Unless required, modifying these properties is not recommended.
-scheduler:
-threadpool:
-    size: 10
-executor:
-threadpool:
-    coreSize: 5
-    maxSize: 20
+  scheduler:
+    threadpool:
+      size: 10
+  executor:
+    threadpool:
+      coreSize: 5
+      maxSize: 20
 # mappings execution thread pool configuration. Unless required, modifying these properties is not recommended.
-mappingExecution:
-http:
-    connectionRequestTimeout: 3000
-    connectionTimeout: 3000
-    socketTimeout: 5000
-refreshInterval: 60000
-threadpool:
-    size: 200
-cyclicRead:
-threadpool:
-    size: 30
-subscription:
-reportingRate: 100
-maxKeepAliveCount: 200
+  mappingExecution:
+    http:
+      connectionRequestTimeout: 3000
+      connectionTimeout: 3000
+      socketTimeout: 5000
+    refreshInterval: 60000
+    threadpool:
+      size: 200
+  cyclicRead:
+    threadpool:
+      size: 30
+  subscription:
+    reportingRate: 100
+    maxKeepAliveCount: 200
 # Should be at least 3 times greater than maxKeepAliveCount
-lifetimeCount: 600
+    lifetimeCount: 600
 # Repositories thread pool configuration. Unless required, modifying these properties is not recommended.
 
-repositories:
-flushInterval: 10000
-eventsThreadpool: 30
-alarmsThreadpool: 30
-measurementsThreadpool: 60
+  repositories:
+    flushInterval: 10000
+    eventsThreadpool: 30
+    alarmsThreadpool: 30
+    measurementsThreadpool: 60
 # Platform connection configuration. Unless required, modifying these properties is not recommended.
 
-platform:
-connectionPool:
-    max: 250
-    perHost: 150
+  platform:
+    connectionPool:
+      max: 250
+      perHost: 150
 # Monitoring interval - how often in milliseconds gateway sends monitoring data to Cumulocity.     
-Monitoring:
+  Monitoring:
     # This parameter describes how often in milliseconds the gateway sends monitoring data to Cumulocity.
-interval: 10000
+    interval: 10000
 # Time after which the gateway will publish a snapshot of values for the UI to the server.
-valueMap:
-lifeTime: 30
+  valueMap:
+    lifeTime: 30
 
 # How often (in milliseconds) gateway checks for changes in configured servers.
-childrenAddedOrRemoveCheck:
-interval: 30000
+  childrenAddedOrRemoveCheck:
+    interval: 30000
 
 # Interval in milliseconds after which the gateway will read pending operations from the platform.
-shortPolling:
-enabled: true
-fixedDelay: 15000
+  shortPolling:
+    enabled: true
+    fixedDelay: 15000
 
 # Time in days for which the certificate is valid.
-applicationIdentity:
-validityTime: 3650
-
-# JMX config - Unless required, modifying these properties is not recommended.
-
-management:
-endpoints:
-jmx:
-    domain: com.cumulocity.opcua.client.gateway
-jmx:
-rmi:
-host: localhost
-port: 1099
-
-# SSH access configuration
-ssh:
-shell:
-actuator:
-    enable: true
-# 'simple' or 'security'
-authentication: simple
-# for ssh helper 'confirm' method
-confirmation-words:
-    - y
-    - yes
-enable: true
-history-file: ${user.home}/.opcua/sshShellHistory.log
-host: 127.0.0.1
-host-key-file: ${user.home}/.opcua/hostKey.ser
-password: passw0rd_a
-port: 2222
-user: opcua
-prompt:
-    # in enum: com.github.fonimus.ssh.shell.PromptColor
-    color: white
-    text: 'gateway>'
+  applicationIdentity:
+    validityTime: 3650
 ```
 
 To run the gateway locally, the default settings should be overridden in a customized profile. To use the customized profile, create a YAML file which must follow the naming convention:
@@ -506,13 +474,15 @@ Cumulocity operations is the interface that is used to tell the gateway what to 
 This operation triggers importing address space for a specific OPC-UA server. The server’s ID is passed as a device ID. The gateway will scan the entire address space of the server and persist a twinned representation of the address space in the Cumulocity platform.
 
 ```
-{
-"deviceId": "23106",
-"c8y_ua_command_ScanAddressSpace": {
-        “skipSync”: false
-    },
-"description": "Import address space from root node"
-}
+POST /devicecontrol/operations/
+
+	{
+	"deviceId": "<server-device-Id>",
+	"c8y_ua_command_ScanAddressSpace": {
+	        “skipSync”: false
+	    },
+	"description": "Import address space from root node"
+	}
 ```
 
 The twinned address space information is persisted in the Cumulocity inventory. It is internally used to support address space browsing and to define device types. Hence this operation is always triggered if a new server is added to the platform.
@@ -526,14 +496,16 @@ Once the device gateway knows the address space, it uses it to handle different 
 This operation reads the value attribute of specific node or list of nodes.
 
 ```
-{
-  "deviceId" : "57733",
-  "c8y_ua_command_ReadValue": {
-	"nodes": ["NODE_ID"],
-      “timestampsToReturn”: “Neither”   
-  },
-  "description":"read value"
-}
+POST /devicecontrol/operations/
+
+	{
+	  "deviceId" : "<server-device-Id>",
+	  "c8y_ua_command_ReadValue": {
+		"nodes": ["NODE_ID"],
+	     “timestampsToReturn”: “Neither”   
+	  },
+	  "description":"read value"
+	}
 ```
 
 Other possible values for `timestampsToReturn`: “Source”, “Server” or “Both”.
@@ -542,18 +514,18 @@ The result of this operation will contain output in the following format:
 
 ```
 {
-  "results": {
-	"ns=2;s=MyLevel": {
-  	"13": {
-    	"value": {
-      	"value": 77.0
-    	},
-    	"statusCode": 0,
-    	"sourcePicoseconds": 0,
-    	"serverPicoseconds": 0
-  	}
+	"results": {
+		"ns=2;s=MyLevel": {
+			"13": {
+				"value": {
+					"value": 77.0
+				},
+				"statusCode": 0,
+				"sourcePicoseconds": 0,
+				"serverPicoseconds": 0
+			}
+		}
 	}
-  }
 }
 ```
 
@@ -563,11 +535,11 @@ This operation returns all attributes of specific node.
 
 ```
 {
-  "deviceId" : "59799",
-  "c8y_ua_command_ReadNodeAttributes": {
-	"node": "ns=2;s=MyEnumObject"
-  },
-  "description":"Read node attributes"
+	"deviceId": "<server-device-Id>",
+	"c8y_ua_command_ReadNodeAttributes": {
+		"node": "ns=2;s=MyEnumObject"
+	},
+	"description": "Read node attributes"
 }
 ```
 
@@ -575,18 +547,18 @@ The result may differ depending on the node type.
 
 ```
 {
-  "Value": { 
-    "value": 1
-  },
-  "DataType": "ns=2;s=MyEnumType",
-  "ValueRank": -1,
-  "AccessLevel": 3,
-  "UserAccessLevel": 3,
-  "MinimumSamplingInterval": -1.0,
-  "Historizing": false,
-  "DisplayName": "MyEnumObject",
-  "WriteMask": 0,
-  "UserWriteMask": 0
+	"Value": {
+		"value": 1
+	},
+	"DataType": "ns=2;s=MyEnumType",
+	"ValueRank": -1,
+	"AccessLevel": 3,
+	"UserAccessLevel": 3,
+	"MinimumSamplingInterval": -1.0,
+	"Historizing": false,
+	"DisplayName": "MyEnumObject",
+	"WriteMask": 0,
+	"UserWriteMask": 0
 }
 ```
 
@@ -596,51 +568,52 @@ This operation supports to read one or more attributes of one or more nodes. Thi
 
 ```
 {
-    "deviceId": "641073",
+    "deviceId": "<server-device-Id>",
     "c8y_ua_command_ReadAttribute": {
-   	 "nodes": ["ns=3;s=FloatArray"],
-   	 "attribute":"13"
+   	  "nodes": ["ns=3;s=FloatArray"],
+   	  "attribute":"13"
     }
     "description": "Read attribute from ns=3;s=FloatArray",
 }
 ```
 
 The result may differ depending on the node type.
-
-	{
-	    "results": {
-	   	 "ns=3;s=FloatArray": {
-	   		 "13": {
-	   			 "value": {
-	   				 "value": [1.0, 2.0, 3.0, 4.0, 5.0]
-	   			 },
-	   			 "statusCode": 0,
-	   			 "sourceTimestamp": 1566572540173,
-	   			 "sourcePicoseconds": 0,
-	   			 "serverTimestamp": 1566573849897,
-	   			 "serverPicoseconds": 0
-	   		 }
-	   	 }
-	    }
+```
+{
+	"results": {
+		"ns=3;s=FloatArray": {
+			"13": {
+				"value": {
+					"value": [1.0, 2.0, 3.0, 4.0, 5.0]
+				},
+				"statusCode": 0,
+				"sourceTimestamp": 1566572540173,
+				"sourcePicoseconds": 0,
+				"serverTimestamp": 1566573849897,
+				"serverPicoseconds": 0
+			}
+		}
 	}
-
+}
+```
 The index ranges given below are according to the OPC UA specifications and will be transformed to NumericRange. 
 
 The syntax is as following:
 
+```
     NumericRange: <dimension> [',' <dimension>]
     <dimension>: <index> [':' <index>]
+```
 
-Multi-dimensional arrays can be indexed by specifying a range for each dimension separated by a comma. For example, a 2x2 block in a 4x4 matrix could be selected with the range "1:2,0:1". 
 
 ```
 {
     "description": "Read attribute from ns=3;s=FloatArray",
-    "deviceId": "641073",
+    "deviceId": "<server-device-Id>",
     "c8y_ua_command_ReadAttribute": {
-   	 "nodes": ["ns=3;s=FloatArray"],
-   	 "attribute":"13",
-   	 "ranges":"0:1"
+   	  "nodes": ["ns=3;s=FloatArray"],
+   	  "attribute":"13",
+   	  "ranges":"0:1"
     }
 }
 ```
@@ -672,7 +645,7 @@ This operation reads history values and applies the mappings except of alarm map
 
 ```
 {
-    "deviceId": "113767",    
+    "deviceId": "<server-device-Id>",    
     "c8y_ua_command_HistoricReadOperation": {
    	 "nodeId": "ns=2;s=MyLevel",
        "processMappings": true,
@@ -689,11 +662,11 @@ This operation reads history values and applies the mappings except of alarm map
 
 #### Historic data binary upload
 
-This operation reads historic values and only saves to file that can be retrieved using Binary Api
+his operation reads historic values and only saves those values to a file which can be retrieved using the binary API.
 
 ```
 {
-    "deviceId": "51181",
+    "deviceId": "<server-device-Id>",
     "c8y_ua_command_HistoricDataUploadOperation": {
    	 "nodeId": "ns=2;s=MyLevel",
    	 "dateFrom": "2019-01-03T09:53:00+02:00",
@@ -705,7 +678,7 @@ This operation reads historic values and only saves to file that can be retrieve
 }
 ```
 
-The binary file representations, which can be queried using Binary API, are created with type “c8y_ua_HistoricData” and operationId with the value of the operation that is generated with.
+The binary file representations, which can be queried using binary API, are created with the type “c8y_ua_HistoricData” and an operationId with the value of the operation with which it has been generated.
 
 #### Write value
 
@@ -713,18 +686,18 @@ This operation writes values to the node/nodes.
 
 ```
 {
-  "deviceId" : "2349410",
-  "c8y_ua_command_WriteValue": {
-     	 "values": {
-     		 "ns=3;s=LocalizedText": {
-                "value": "This is a localized text" 
-     		 },
-             "ns=3;s=Double": {
-                 "value": "3.14159"
-             }
-     	 }
-  },
-  "description":"Write values to different nodes"
+	"deviceId": "<server-device-Id>",
+	"c8y_ua_command_WriteValue": {
+		"values": {
+			"ns=3;s=LocalizedText": {
+				"value": "This is a localized text"
+			},
+			"ns=3;s=Double": {
+				"value": "3.14159"
+			}
+		}
+	},
+	"description": "Write values to different nodes"
 }
 ```
 
@@ -734,40 +707,38 @@ This operation is similar to the previous one, but instead of writing to the val
 
 ```
 {
-  "deviceId" : "2349410",
-  "c8y_ua_command_WriteAttribute": {
-     	 "values": {
-     		 "ns=3;s=LocalizedText": {
-                "attribute": "13",
-                "value": "This is a localized text" 
-     		 },
-             "ns=3;s=Double": {
-                 "attribute": "13",
-                 "value": "3.14159"
-             }
-     	 }
-  },
-  "description":"Write attributes’ values to different attributes of different nodes"
+	"deviceId": "<server-device-Id>",
+	"c8y_ua_command_WriteAttribute": {
+		"values": {
+			"ns=3;s=LocalizedText": {
+				"attribute": "13",
+				"value": "This is a localized text"
+			},
+			"ns=3;s=Double": {
+				"attribute": "13",
+				"value": "3.14159"
+			}
+		}
+	},
+	"description": "Write attributes’ values to different attributes of different nodes"
 }
 ```
 
-Optionally, it is possible to write a value range when the attribute value is an array.
-
-Writes to multi-dimensional arrays are not supported. 
+Optionally, it is possible to write a value range when the attribute value is an array. 
 
 ```
 {
-  "deviceId" : "2349410",
-  "c8y_ua_command_WriteAttribute": {
-     	 "values": {
-     		 "ns=3;s=FloatArray": {
-                "attribute": "13",
-                "ranges": "0:1",
-                "value": "2.0,4.0" 
-     		 }
-     	 }
-  },
-  "description":"Write attribute value to array attribute"
+	"deviceId": "<server-device-Id>",
+	"c8y_ua_command_WriteAttribute": {
+		"values": {
+			"ns=3;s=FloatArray": {
+				"attribute": "13",
+				"ranges": "0:1",
+				"value": "2.0,4.0"
+			}
+		}
+	},
+	"description": "Write attribute value to array attribute"
 }
 ```
 
@@ -777,11 +748,11 @@ This operation reads the description of a method node.
 
 ```
 {
-  "deviceId" : "59799",
-  "c8y_ua_command_GetMethodDescriptionOperation": {
-	"nodeId": "ns=2;s=MyMethod"
-  },
-  "description":"get method description"
+	"deviceId": "<server-device-Id>",
+	"c8y_ua_command_GetMethodDescriptionOperation": {
+		"nodeId": "ns=2;s=MyMethod"
+	},
+	"description": "get method description"
 }
 ```
 
@@ -789,32 +760,29 @@ The result describes a method, it’s parent object, input and output arguments.
 
 ```
 {
-  "nodeId": "ns=2;s=MyMethod",
-  "name": "MyMethod",
-  "parentNodeId": "ns=2;s=MyDevice",
-  "parentName": "MyDevice",
-  "inputArguments": [
-	{
-  	"name": "Operation",
-  	"description": "The operation to perform on parameter: valid functions are sin, cos, tan, pow",
-  	"dataType": "String",
-  	"dataTypeId": "i=12"
-	},
-	{
-  	"name": "Parameter",
-  	"description": "The parameter for operation",
-  	"dataType": "Double",
-  	"dataTypeId": "i=11"
-	}
-  ],
-  "outputArguments": [
-	{
-  	"name": "Result",
-  	"description": "The result of 'operation(parameter)'",
-  	"dataType": "Double",
-  	"dataTypeId": "i=11"
-	}
-  ]
+	"nodeId": "ns=2;s=MyMethod",
+	"name": "MyMethod",
+	"parentNodeId": "ns=2;s=MyDevice",
+	"parentName": "MyDevice",
+	"inputArguments": [{
+			"name": "Operation",
+			"description": "The operation to perform on parameter: valid functions are sin, cos, tan, pow",
+			"dataType": "String",
+			"dataTypeId": "i=12"
+		},
+		{
+			"name": "Parameter",
+			"description": "The parameter for operation",
+			"dataType": "Double",
+			"dataTypeId": "i=11"
+		}
+	],
+	"outputArguments": [{
+		"name": "Result",
+		"description": "The result of 'operation(parameter)'",
+		"dataType": "Double",
+		"dataTypeId": "i=11"
+	}]
 }
 ```
 
@@ -824,29 +792,28 @@ This operation calls the method on the OPC UA server. It requires complete input
 
 ```
 {
-  "deviceId" : "59799",
-  "c8y_ua_command_CallMethodOperation": {
-	"request": {
-   	 "nodeId": "ns=2;s=MyMethod",
-   	 "arguments": [
-   		 {
-   	   	"name": "Operation",
-   	   	"description": "The operation to perform on parameter: valid functions are sin, cos, tan, pow",
-   	   	"dataType": "String",
-   	   	"dataTypeId": "i=12",
-   	   	"value": "pow"
-   	 	},
-   	 	{
-   	   	"name": "Parameter",
-   	   	"description": "The parameter for operation",
-   	   	"dataType": "Double",
-   	   	"dataTypeId": "i=11",
-   	   	"value": "5"
-   	 	}
-   	 ]
-	}
-  },
-  "description":"call method"
+	"deviceId": "<server-device-Id>",
+	"c8y_ua_command_CallMethodOperation": {
+		"request": {
+			"nodeId": "ns=2;s=MyMethod",
+			"arguments": [{
+					"name": "Operation",
+					"description": "The operation to perform on parameter: valid functions are sin, cos, tan, pow",
+					"dataType": "String",
+					"dataTypeId": "i=12",
+					"value": "pow"
+				},
+				{
+					"name": "Parameter",
+					"description": "The parameter for operation",
+					"dataType": "Double",
+					"dataTypeId": "i=11",
+					"value": "5"
+				}
+			]
+		}
+	},
+	"description": "call method"
 }
 ```
 
@@ -855,16 +822,14 @@ Power of 5 is 25:
 
 ```
 {
-  "statusCode": 0,
-  "result": [
-	{
-  	"name": "Result",
-  	"description": "The result of 'operation(parameter)'",
-  	"dataType": "Double",
-  	"dataTypeId": "i=11",
-  	"value": "25.0"
-	}
-  ]
+	"statusCode": 0,
+	"result": [{
+		"name": "Result",
+		"description": "The result of 'operation(parameter)'",
+		"dataType": "Double",
+		"dataTypeId": "i=11",
+		"value": "25.0"
+	}]
 }
 ```
 

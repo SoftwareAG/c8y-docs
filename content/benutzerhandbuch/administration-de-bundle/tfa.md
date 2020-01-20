@@ -3,13 +3,13 @@ weight: 61
 title: Zwei-Faktor-Authentifizierung
 ---
 
-Die Zwei-Faktor-Authentifizierung (TFA, two-factor authentication) ist eine zusätzliche Sicherheitsebene, mit der eine Authentifizierung nur durch eine Kombination von zwei verschiedenen Faktoren möglich ist: etwas, was die Benutzer wissen (Benutzername und Passwort), und etwas, was sie haben (z. B. Smartphone) oder sind (z. B. Fingerabdruck). Näheres zum Konfigurieren der TFA erfahren Sie im Abschnitt zum Thema [Authentifizierungseinstellungen](/guides/benutzerhandbuch/administration/#authentication).
+Die Zwei-Faktor-Authentifizierung (TFA, two-factor authentication) ist eine zusätzliche Sicherheitsebene, mit der eine Authentifizierung nur durch eine Kombination von zwei verschiedenen Faktoren möglich ist: etwas, was die Benutzer wissen (Benutzername und Passwort), und etwas, was sie haben (z. B. Smartphone) oder sind (z. B. Fingerabdruck). Näheres zum Konfigurieren der TFA erfahren Sie im Abschnitt zum Thema [Authentifizierungseinstellungen](/benutzerhandbuch/administration/#authentication).
 
 Es gibt zwei mögliche TFA-Strategien: SMS und TOTP. Es kann immer nur eine von beiden aktiv sein.
 
 Ob TFA für einen bestimmten Benutzer aktiviert ist, können Sie überprüfen, indem Sie die Seite **Benutzer** aufrufen und in der Spalte "TFA-Status" rechts neben der Spalte "Passwortstärke" nachsehen. Ein Schlüsselsymbol bedeutet, dass TFA aktiviert ist, und indem Sie den Mauszeiger darüber bewegen, können Sie sehen, welche Strategie verwendet wird.
 
-![TFA status](/guides/images/benutzerhandbuch/Administration/admin-user-tfa-enabled.png)
+![TFA status](/images/benutzerhandbuch/Administration/admin-user-tfa-enabled.png)
 
 ### SMS
 
@@ -22,7 +22,7 @@ Wenn Sie einen Benutzer hinzufügen und TFA aktiviert ist, muss eine Telefonnumm
 2. Aktivieren Sie die Checkbox **Zwei-Faktor-Authentifizierung aktivieren**.
 3. Klicken Sie **Speichern**.
 
-![Enable TFA](/guides/images/benutzerhandbuch/Administration/admin-user-enable-tfa.png)
+![Enable TFA](/images/benutzerhandbuch/Administration/admin-user-enable-tfa.png)
 
 > **Info**: Dieser Prozess kann nur über die Administrationsoberfläche ausgeführt werden und ist unter **Benutzereinstellungen** nicht verfügbar.
 
@@ -35,13 +35,13 @@ Benutzer müssen auf ihrem Smartphone eine TOTP-Anwendung installieren (Google A
 
 Anders als bei der SMS-Strategie muss TOTP von jedem einzelnen Benutzer eingerichtet werden. Das Einrichten kann durch Öffnen von **Benutzereinstellungen** in der oberen rechten Ecke und Klicken auf **Zweifaktor-Authentifizierung einrichten** gestartet werden.
 
-![Trigger TOTP setup](/guides/images/benutzerhandbuch/Administration/admin-user-tfa-setup-button.png)
+![Trigger TOTP setup](/images/benutzerhandbuch/Administration/admin-user-tfa-setup-button.png)
 
 Wenn TFA aktiviert ist, wird dem Benutzer ein QR-Code angezeigt, den er mit der zuvor installierten TOTP-App scannen muss.
 
 Alternativ kann das Secret auch manuell eingegeben werden, falls das Scannen des QR-Codes nicht möglich ist.
 
-![TOTP setup process](/guides/images/benutzerhandbuch/Administration/admin-user-tfa-setup.png)
+![TOTP setup process](/images/benutzerhandbuch/Administration/admin-user-tfa-setup.png)
 
 Nach diesem Vorgang generiert die TOTP-App alle 30 Sekunden einen neuen Code, der zum Abschließen des Authentifizierungsprozesses verwendet werden kann.
 
@@ -57,4 +57,4 @@ Zum Zurücksetzen des Schlüssels muss der Mandantenadministrator folgende Schri
 4. Klicken Sie **TOTP-Secret zurücksetzen**.
 5. Bestätigen Sie dies durch Klicken auf **Zurücksetzen**.
 
-![TOTP secret revoke](/guides/images/benutzerhandbuch/Administration/admin-user-totp-revoke.png)
+![TOTP secret revoke](/images/benutzerhandbuch/Administration/admin-user-totp-revoke.png)

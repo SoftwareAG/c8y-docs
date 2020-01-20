@@ -12,7 +12,7 @@ Bei Dashboard-Berichten handelt es sich um globale Dashboard-Seiten, unabhängig
 
 Erweitern Sie das Menü **Berichte** im Navigator, um alle verfügbaren Berichte anzuzeigen.
 
-![Reports menu](/guides/images/benutzerhandbuch/cockpit/cockpit-reports-navigator.png)
+![Reports menu](/images/benutzerhandbuch/cockpit/cockpit-reports-navigator.png)
 
 Klicken Sie im Navigator auf einen Bericht, um ihn zu öffnen.
 
@@ -51,14 +51,14 @@ Um alle Exporte anzuzeigen, klicken Sie **Exportieren** im Menü **Berichte**.
 
 Die Seite **Exportieren** listet alle Exporte mit Namen und Zeitintervall auf.
 
-![Exports](/guides/images/benutzerhandbuch/cockpit/cockpit-exports.png)
+![Exports](/images/benutzerhandbuch/cockpit/cockpit-exports.png)
 
 
 #### <a name="add-export"></a>So fügen Sie einen Export hinzu
 
 1. Klicken Sie **Export hinzufügen** in der oberen Menüleiste.
 
-	![Create export](/guides/images/benutzerhandbuch/cockpit/cockpit-export-create.png)
+	![Create export](/images/benutzerhandbuch/cockpit/cockpit-export-create.png)
 2. Geben Sie einen Namen für den Bericht ein und wählen Sie das Dateiformat (CSV oder XLSX) für die Berichtausgabe. 
 
 
@@ -83,7 +83,7 @@ Neben dem Filtern nach bestimmten Objekten oder Zeiträumen können Daten nach b
 
 Aktivieren bzw. deaktivieren Sie diese Felder mit dem Umschalter.
 
-![Filter fields](/guides/images/benutzerhandbuch/cockpit/cockpit-export-fields.png)
+![Filter fields](/images/benutzerhandbuch/cockpit/cockpit-export-fields.png)
 
 > **Info**: Der Zeitintervall-Filter gilt nur für Alarme, Ereignisse und Messwerte, nicht jedoch für Objekte. Wenn ausgewählt, erscheinen Objekte im Export, unabhängig von einem ggf. festgelegten Zeitintervall. 
 
@@ -95,7 +95,7 @@ Klicken Sie **Hinzufügen**, um ein leeres Feld hinzuzufügen. Klicken Sie **Spa
 
 Klicken Sie **Vordefiniertes Attribut hinzufügen**, um ein vordefiniertes Attribut hinzuzufügen. Markieren Sie die gewünschten Attribute in der angezeigten Liste und klicken Sie **Auswählen**. Verwenden Sie das Suchfeld, um die Liste nach bestimmten Eigenschaften zu filtern.
 
-![Select properties](/guides/images/benutzerhandbuch/cockpit/cockpit-export-properties.png)
+![Select properties](/images/benutzerhandbuch/cockpit/cockpit-export-properties.png)
 
 Wenn Sie mindestens ein Feld haben, dass als eigenes Attribut definiert wurde und nicht aus der Liste der vordefinierten Attribute stammt, dann muss für ein Objekt mindestens dieses Attribut gesetzt sein, damit die entsprechenden Werte im Export erscheinen. 
 
@@ -110,11 +110,11 @@ Wenn Sie Messwerte aktiviert haben, sehen Sie die zusätzliche Option **Datenpun
 
 Um einen Export in eine CSV- oder XLSX-Datei für einen bestimmten Zeitpunkt zu planen, klicken Sie auf das Menüsymbol am Ende der Zeile und anschließend auf **Export planen**. 
 
-![Export context menu](/guides/images/benutzerhandbuch/cockpit/cockpit-export-menu.png)
+![Export context menu](/images/benutzerhandbuch/cockpit/cockpit-export-menu.png)
 
 Im darauf folgenden Dialog können Sie die Smart Rule "Bei Timer-Ablauf Export per E-Mail senden" entsprechend einrichten.
 
-![Schedule export](/guides/images/benutzerhandbuch/cockpit/cockpit-export-on-timer-rule.png)
+![Schedule export](/images/benutzerhandbuch/cockpit/cockpit-export-on-timer-rule.png)
 
 **1 - Name der Regel**
 
@@ -138,7 +138,7 @@ Klicken Sie **Erstellen**, um die benutzerdefinierte Smart Rule "Bei Timer-Ablau
 
 Die Smart Rule wird zu den Exportdetails hinzugefügt.
 
-![Smart Rule](/guides/images/benutzerhandbuch/cockpit/cockpit-export-schedule.png)
+![Smart Rule](/images/benutzerhandbuch/cockpit/cockpit-export-schedule.png)
 
 
 #### So exportieren Sie Daten
@@ -170,3 +170,4 @@ Weitere Informationen zu den Feldern finden Sie unter [So fügen Sie einen Expor
 #### So löschen Sie einen Export
 
 Klicken Sie auf das Menüsymbol am Ende der Zeile und anschließend auf **Löschen**.
+/

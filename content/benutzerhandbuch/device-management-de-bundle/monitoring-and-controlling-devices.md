@@ -12,7 +12,7 @@ Klicken Sie **Karte** im Menü **Geräte** im Navigator, um eine Karte zu öffne
 
 Die Geräte sind als "Pins" dargestellt. Klicken Sie auf einen Pin, um den Namen des entsprechenden Geräts anzuzeigen. Klicken Sie auf den Gerätenamen, um zur Ansicht der Gerätedetails zu wechseln. 
 
-![Device map](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-map.png)
+![Device map](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-map.png)
 
 ### <a name="connection-monitoring"></a>Verbindungsüberwachung
 
@@ -26,7 +26,7 @@ Dies kann auf der Ebene einzelner Geräte erfolgen (siehe unten) oder für mehre
 
 Der Verbindungsstatus wird durch Pfeile in der Spalte **Status** in der Geräteliste angezeigt.
 
-<img src="/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-connectionstatus.png" alt="Connection Status">
+<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-connectionstatus.png" alt="Connection Status">
 
 **Sendeverbindungen**
 
@@ -63,7 +63,7 @@ In der Karte **Verbindungsüberwachung** in der Registerkarte **Info** eines Ger
 
 Navigieren Sie zur Registerkarte **Info** eines bestimmten Geräts, um dessen Verbindungen zu überwachen. Unter **Gerätestatus** wird der Verbindungsstatus für das Gerät angezeigt. 
 
-<img src="/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-deviceinfostatus.png" alt="Device Status">
+<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-deviceinfostatus.png" alt="Device Status">
 
 Unter dem Status für die Sende- und Push-Verbindungen wird der Zeitpunkt der letzten Kommunikation angezeigt. 
 
@@ -75,7 +75,7 @@ Wenn ein Intervall angegeben ist, befindet sich darunter der Umschalter **Wartun
 
 Mit dem Umschalter **Wartung** können Sie den Wartungsmodus für das Gerät ein- oder ausschalten. Dies wird unmittelbar im Verbindungsstatus angezeigt. 
 
-<img src="/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-deviceinfomaintenance.png" alt="Device status maintenance">
+<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-deviceinfomaintenance.png" alt="Device status maintenance">
 
 ### <a name="monitoring-services"></a>Serviceüberwachung
 
@@ -90,7 +90,7 @@ Ist ein Gerät offline, nimmt Cumulocity standardmäßig an,
 * dass das Gerät während des Verbindungsabbruchs weiterhin in Betrieb bleibt, wenn dies zuvor der Fall war.
 * dass das Gerät während des Verbindungsabbruchs weiterhin nicht in Betrieb ist, wenn dies zuvor der Fall war.
 
-Es gibt möglicherweise Ausnahmen zu dieser Regel. Wenn Ihr Verkaufsautomat beispielsweise nur mit bargeldloser Bezahlung funktioniert, bedeutet ein Verbindungsabbruch, dass der Automat nichts mehr verkaufen kann und damit nicht mehr betriebsbereit ist. In diesem Fall müssen Nichtverfügbarkeits-Alarme in der ["Administration"-Anwendung](/guides/benutzerhandbuch/administration/#reprio-alarms) eingestellt werden, die den Schweregrad KRITISCH statt des Schweregrads WICHTIG haben.
+Es gibt möglicherweise Ausnahmen zu dieser Regel. Wenn Ihr Verkaufsautomat beispielsweise nur mit bargeldloser Bezahlung funktioniert, bedeutet ein Verbindungsabbruch, dass der Automat nichts mehr verkaufen kann und damit nicht mehr betriebsbereit ist. In diesem Fall müssen Nichtverfügbarkeits-Alarme in der ["Administration"-Anwendung](/benutzerhandbuch/administration/#reprio-alarms) eingestellt werden, die den Schweregrad KRITISCH statt des Schweregrads WICHTIG haben.
 
 Cumulocity zeigt die Serviceverfügbarkeit für einzelne Geräte sowie für alle Geräte an. 
 
@@ -102,7 +102,7 @@ Klicken Sie auf die Registerkarte **Serviceüberwachung** in den Details eines b
 
 Klicken Sie **Serviceüberwachung** im Menü **Geräte** im Navigator, um den Gesamtservice aller Geräte anzuzeigen.
  
-![Service monitoring](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-servicemonitoring.png)
+![Service monitoring](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-servicemonitoring.png)
 
 Die Seite **Serviceüberwachung** zeigt die prozentuale Verfügbarkeit aller Geräte während des letzten Tags, der letzten Woche und des letzten Monats an. 
 
@@ -118,7 +118,7 @@ Cumulocity zeigt Alarme für einzelne Geräte sowie für alle Geräte an.
 * Um die Alarme für alle Geräte zu überprüfen, klicken Sie **Alarme** im Menü **Übersichten** im Navigator. 
 * Um die Alarme eines bestimmten Geräts zu überprüfen, wechseln Sie zur Registerkarte **Alarm** in den Details dieses Geräts.
 
-![Alarms page](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-alarms.png)
+![Alarms page](/images/benutzerhandbuch/DeviceManagement/devmgmt-alarms.png)
 
 Standardmäßig 
 
@@ -153,14 +153,14 @@ In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:
 
 Klicken Sie auf den Pfeil rechts in einem Eintrag, um die Zeile auszuklappen und weitere Details zum Alarm anzuzeigen.
 
-* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information wird verwendet, um die Priorität von Alarmen zu konfigurieren, siehe [Administration > Priorisieren von Alarmen](/guides/benutzerhandbuch/administration/#reprio-alarms).
+* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information wird verwendet, um die Priorität von Alarmen zu konfigurieren, siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration/#reprio-alarms).
 * **Änderungsprotokoll**: Gibt die Serverzeit an, zu der der Alarm erstellt wurde. Diese kann von der Gerätezeit abweichen.
 
 #### So ändern Sie den Status eines Alarms
 
 Um den Status eines Alarms zu ändern, bewegen Sie den Mauszeiger über die Zeile und klicken Sie auf die entsprechende Schaltfläche oder klicken Sie auf das Menüsymbol und wählen Sie den gewünschten Status.
 
-![Alarm change status](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-alarms-status.png)
+![Alarm change status](/images/benutzerhandbuch/DeviceManagement/devmgmt-alarms-status.png)
 
 Außerdem ist es möglich, den Status aller Alarme auf einmal auf "aufgehoben" zu setzen. Klicken Sie **Alle aufheben** in der oberen Menüleiste, um alle Alarme der gewählten Schweregrade aufzuheben.
 
@@ -179,7 +179,7 @@ Sie können Kommandos für einzelne Geräte oder für alle Geräte anzeigen:
 * Um die Kommandos für alle Geräte anzuzeigen, klicken Sie **Gerätesteuerung** im Menü **Übersichten** im Navigator.
 * Um die Kommandos eines bestimmten Geräts anzuzeigen, wechseln Sie zur Registerkarte **Steuerung** in den Details dieses Geräts.
 
-![Device Control](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol.png)
+![Device Control](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol.png)
 
 Kommandos können sich in einem der folgenden vier Status befinden:
 
@@ -203,7 +203,7 @@ Durch Klicken einer Zeile wird diese aufgeklappt und weitere Details zum Kommand
 * **Details**: Nähere Beschreibung und Status des Kommandos. Lautet der Status = ABGEBROCHEN, wird die Ursache für das Fehlschlagen angegeben. 
 * **Änderungshistorie**: Informationen zu den letzten Änderungen des Kommandos.
 
-![Operation Details](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-history.png)
+![Operation Details](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-history.png)
 
 
 Durch Klicken der Status-Schaltflächen oben auf der Seite werden die entsprechenden Kommandos ausgeblendet. Erneutes Klicken der entsprechenden Schaltfläche zeigt die Kommandos wieder an.
@@ -214,7 +214,7 @@ Klicken Sie **Echtzeit** rechts in der oberen Menüleiste, um die vom Gerät emp
 
 #### So erstellen Sie Kommandos und führen Sie aus
 
-Kommandos für ein bestimmtes Gerät werden in der Registerkarte **Shell** des Geräts ausgeführt, siehe [Gerätedetails > Shell](/guides/benutzerhandbuch/device-management#shell).
+Kommandos für ein bestimmtes Gerät werden in der Registerkarte **Shell** des Geräts ausgeführt, siehe [Gerätedetails > Shell](/benutzerhandbuch/device-management#shell).
 
 > **Wichtig**: Wenn Sie Cumulocity IoT zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Fernkommandos den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
 
@@ -231,11 +231,11 @@ Um ein Stapelkommando für eine Gruppe auszuführen, führen Sie folgende Schrit
 
 Das Kommando wird für alle Geräte in der Gruppe ausgeführt.
 
-![Execute bulk operations](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk.png)
+![Execute bulk operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk.png)
 
 Um den Status und Fortschritt der Kommandos zu verfolgen, wählen Sie die entsprechende Gruppe im Navigator und wechseln Sie zur Registerkarte **Stapelkommandos**.
 
-![Bulk operations tab](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-bulkoperations.png)
+![Bulk operations tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-bulkoperations.png)
 
 ##### <a name="bulk-operations"></a>So bearbeiten Sie Stapelkommandos
 
@@ -246,7 +246,7 @@ Um den Status und Fortschritt der Kommandos zu verfolgen, wählen Sie die entspr
 
 Die Änderungen werden entsprechend auf das Stapelkommando angewendet.
 
-![Edit bulk operations](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-bulkoperations-reschedule.png)
+![Edit bulk operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-bulkoperations-reschedule.png)
 
 ##### <a name="bulk-operations"></a>So löschen Sie Stapelkommandos
 
@@ -263,7 +263,7 @@ Cumulocity zeigt Ereignisse für einzelne Geräte sowie für alle Geräte an:
 * Um die Ereignisse für alle Geräte anzuzeigen, klicken Sie **Ereignisse** im Menü **Übersichten** im Navigator.
 * Um die Ereignisse eines bestimmten Geräts anzuzeigen, wechseln Sie zur Registerkarte **Ereignisse** in den Details dieses Geräts.
  
-![Events](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-events.png)
+![Events](/images/benutzerhandbuch/DeviceManagement/devmgmt-events.png)
 
 Standardmäßig werden die Ereignisse in Echtzeit angezeigt, sobald sie vom Gerät empfangen werden. Um die Echtzeitaktualisierung zu deaktivieren, klicken Sie **Echtzeit** rechts in der oberen Menüleiste.
 

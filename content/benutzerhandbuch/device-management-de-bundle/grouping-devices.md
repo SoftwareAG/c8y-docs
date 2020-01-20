@@ -13,13 +13,13 @@ Cumulocity unterscheidet zwischen Top-Level-Gruppen und untergeordneten Gruppen:
 
 Um eine Liste aller Gruppen in Ihrem Konto anzuzeigen, klicken Sie **Gruppen** im Navigator. 
 
-![Groups list](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-groups.png)
+![Groups list](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups.png)
 
 Für jede Gruppe wird der Name und die Anzahl der Kinder angezeigt.
 
 Klicken Sie auf eine Gruppe, um Details dieser Gruppe anzuzeigen. 
 
-![Group info](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-info.png)
+![Group info](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-info.png)
 
 **Registerkarte Info**
 
@@ -58,7 +58,7 @@ In der Registerkarte **Info** werden folgende Informationen angezeigt:
 
 In der Registerkarte **Kind-Assets** werden alle Geräte angezeigt, die der Gruppe zugewiesen wurden. Für jedes Kind-Asset wird der Name und im Fall einer Gruppe die Anzahl der Kinder angezeigt.
 
-![Sub-assets](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-subassets.png)
+![Sub-assets](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-subassets.png)
 
 Siehe auch [So fügen Sie eine Gruppe hinzu](#add-group) und [So weisen Sie einer Gruppe ein Gerät zu](#assigning-devices).
 
@@ -81,13 +81,13 @@ Die neue Gruppe wird der Gruppenliste hinzugefügt.
 
 Auf der Seite **Gruppen** können Sie auch eine neue Gruppe erstellen, in dem Sie in der oberen Menüleiste auf **Gruppe hinzufügen** klicken. Geben Sie im darauf folgenden Dialog einen Namen für die Gruppe an und klicken Sie **Gruppe hinzufügen**.
 
-![Add empty group](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-add.png)
+![Add empty group](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-add.png)
 
 ### So bearbeiten Sie eine Gruppe
 
 1. Wählen Sie im Navigator eine Gruppe aus. 
 2. Klicken Sie **Bearbeiten** in der Registerkarte **Info**. Sie können den Namen der Gruppe bearbeiten sowie Benutzerberechtigungen für die Gruppe zuweisen. 
-Weitere Informationen zu den Berechtigungen finden Sie unter Administration > [Verwalten von Berechtigungen](/guides/benutzerhandbuch/administration#managing-permissions).
+Weitere Informationen zu den Berechtigungen finden Sie unter Administration > [Verwalten von Berechtigungen](/benutzerhandbuch/administration#managing-permissions).
 
 ### So löschen Sie eine Gruppe
 
@@ -112,7 +112,7 @@ Darüber hinaus können Sie Geräte auch durch folgende Schritte zuweisen:
 
 Die Geräte werden der ausgewählten Gruppe zugewiesen.
 
-![Assign devices](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-assign.png)
+![Assign devices](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-assign.png)
 
 
 **Aus der Geräteperspektive**
@@ -128,7 +128,7 @@ Wenn Sie nach einer Gruppe anhand eines Namens suchen, der noch nicht existiert,
 > **Info**: Zum Erstellen einer neuen Gruppe muss der Benutzer über folgende Berechtigungen verfügen:
 ROLE&#95;INVENTORY\_CREATE und ROLE&#95;INVENTORY\_ADMIN.
 
-<img src="/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-group-assignment-new.png" alt="new group">
+<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-group-assignment-new.png" alt="new group">
 
 
 #### So heben Sie die Zuweisung eines Geräts auf
@@ -169,7 +169,7 @@ Durch Ziehen und Ablegen können Sie Gruppen, Untergruppen und Geräte auf einfa
 
 Dynamische Gruppen werden basierend auf Filterkriterien erstellt. Dieser Gruppentyp kann beispielsweise eingesetzt werden, um Bulk-Upgrades von Geräten eines bestimmten Typs auf eine neue Software- oder Firmware-Version durchzuführen. 
 
-![Smart groups filter](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
+![Smart groups filter](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
 
 Wie jede andere Gruppe sind auch dynamische Gruppen in der Anwendung Cockpit verfügbar.
 
@@ -182,11 +182,11 @@ Dynamische Gruppen werden in der Geräteliste erstellt.
 3. Klicken Sie **Dynamische Gruppe erstellen** rechts in der oberen Menüleiste.
 4. Geben Sie einen Namen für die Gruppe ein und klicken Sie **Erstellen**.
 
-![Create smart groups](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-smartgroups-create.png)
+![Create smart groups](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-smartgroups-create.png)
 
 Die neue Gruppe erscheint als Top-Level-Gruppe im Menü **Gruppe** im Navigator. Dynamische Gruppen werden durch ein kleines Zahnrad im Ordnersymbol gekennzeichnet. 
 
-![Smart groups icon](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-smartgroups-icon.png)
+![Smart groups icon](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-smartgroups-icon.png)
 
 In der Registerkarte **Kind-Assets** können Sie Ihre Auswahl anpassen und die Filtereinstellungen ändern.
 
@@ -194,7 +194,8 @@ In der Registerkarte **Kind-Assets** können Sie Ihre Auswahl anpassen und die F
 
 Um eine dynamische Gruppe zu löschen, klicken Sie auf das Menüsymbol und anschließend auf **Löschen**. 
 
-![Delete smart groups](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-delete.png)
+![Delete smart groups](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-delete.png)
 
 > **Wichtig**: Das Löschen einer dynamischen Gruppe ist irreversibel.
 
+/

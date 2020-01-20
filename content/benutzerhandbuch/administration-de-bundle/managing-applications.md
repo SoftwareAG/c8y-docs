@@ -11,13 +11,13 @@ In der Cumulocity-Plattform gibt es zwei Arten von Anwendungen:
 
 Beide Anwendungsarten finden sich im Menü **Anwendungen** im Navigator:
 
-<img src="/guides/images/benutzerhandbuch/Administration/admin-menu.png" alt="Applications menu"> 
+<img src="/images/benutzerhandbuch/Administration/admin-menu.png" alt="Applications menu"> 
 
 ### <a name="application-properties"></a>Anwendungsattribute
 
 Klicken Sie auf eine Anwendungskarte, um die Attribute der Anwendung anzuzeigen.
 
-<img src="/guides/images/benutzerhandbuch/Administration/admin-application-properties.png" alt="Application properties" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/Administration/admin-application-properties.png" alt="Application properties" style="max-width: 100%">
 
 Für jede Anwendung werden die folgenden Attribute angezeigt:
 
@@ -51,7 +51,7 @@ Für jede Anwendung werden die folgenden Attribute angezeigt:
 </tr>
 <tr>
 <td style="text-align:left">Anwendungsschlüssel</td>
-<td style="text-align:left">Wird zur Identifikation der Anwendung verwendet. Wird außerdem verwendet, um die Anwendung als Abonnement zur Verfügung zu stellen, siehe <a href="/guides/concepts/applications" class="no-ajaxy">Concepts Guide</a>.</td>
+<td style="text-align:left">Wird zur Identifikation der Anwendung verwendet. Wird außerdem verwendet, um die Anwendung als Abonnement zur Verfügung zu stellen, siehe <a href="/concepts/applications" class="no-ajaxy">Concepts Guide</a>.</td>
 <td style="text-align:left">Automatisch generiert</td>
 <td style="text-align:left">Automatisch generiert, basierend auf dem Namen der ZIP-Datei</td>
 <td style="text-align:left">Vom Benutzer vergeben</td>
@@ -106,50 +106,50 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><a href="/guides/benutzerhandbuch/administration" class="no-ajaxy">Administration</a></td>
+<td style="text-align:center"><a href="/benutzerhandbuch/administration" class="no-ajaxy">Administration</a></td>
 <td style="text-align:left">Gibt Konto-Administratoren die Möglichkeit, Rollen, Mandanten und Anwendungen zu verwalten.</td>
 <td style="text-align:left">administration</td>
 <td style="text-align:left">Web-Anwendung</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/guides/apama" class="no-ajaxy">Apama-ctrl*</a></td>
+<td style="text-align:center"><a href="/apama" class="no-ajaxy">Apama-ctrl*</a></td>
 <td style="text-align:left">Laufzeit für Apama EPL-Apps, Smart Rules und Analytics Builder.</td>
 <td style="text-align:left">apama-ctrl-* (verschiedene Zeichenketten für verschiedene Größen-/Kapazitätsoptionen)</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/guides/apama" class="no-ajaxy">Apama Analytics Builder</a></td>
+<td style="text-align:center"><a href="/apama" class="no-ajaxy">Apama Analytics Builder</a></td>
 <td style="text-align:left">Analytics Builder Modellmanager und -editor – ermöglicht die grafische Erstellung von Modellen, um Daten von Geräten zu verarbeiten und darauf zu reagieren.</td>
 <td style="text-align:left">Apama Analytics Builder</td>
 <td style="text-align:left">Web-Anwendung</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/guides/event-language" class="no-ajaxy">Cep</a></td>
+<td style="text-align:center"><a href="/event-language" class="no-ajaxy">Cep</a></td>
 <td style="text-align:left"><b>Diese Anwendung ist veraltet und keine Standardanwendung im Standard Tenant mehr. Apama ist nun die Standard-CEP-Engine.</b> <br>Definieren Sie geschäftliche Aktivitäten anhand von Echtzeitdaten über die Esper CEP Engine. Diese CEP-Variante verwendet eine gemeinsame Instanz für mehrere Mandanten. Siehe "Cep-small" für eine mandantenspezifische Bereitstellung.</td>
 <td style="text-align:left">cep</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/guides/benutzerhandbuch/cockpit" class="no-ajaxy">Cockpit</a></td>
+<td style="text-align:center"><a href="/benutzerhandbuch/cockpit" class="no-ajaxy">Cockpit</a></td>
 <td style="text-align:left">Verwalten und überwachen Sie IoT-Assets und Daten aus Geschäftssicht.</td>
 <td style="text-align:left">cockpit</td>
 <td style="text-align:left">Web-Anwendung</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/guides/benutzerhandbuch/device-management" class="no-ajaxy">Device Management</a></td>
+<td style="text-align:center"><a href="/benutzerhandbuch/device-management" class="no-ajaxy">Device Management</a></td>
 <td style="text-align:left">Verwalten und überwachen Sie Geräte und führen Sie die Steuerung und Fehlerbehebung von Geräten per Fernzugriff durch.</td>
 <td style="text-align:left">devicemanagement</td>
 <td style="text-align:left">Web-Anwendung</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/guides/benutzerhandbuch/device-management#simulator" class="no-ajaxy">Device simulator</a></td>
+<td style="text-align:center"><a href="/benutzerhandbuch/device-management#simulator" class="no-ajaxy">Device simulator</a></td>
 <td style="text-align:left">Simulieren Sie alle Aspekte von IoT-Geräten.</td>
 <td style="text-align:left">device-simulator</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/guides/benutzerhandbuch/cockpit#smart-rules" class="no-ajaxy">Smart Rules</a></td>
-<td style="text-align:left">Verwenden Sie die Smart Rule Engine und erstellen Sie <a href="/guides/benutzerhandbuch/cockpit#smart-rules" class="no-ajaxy">Smart Rules</a>, um Aktionen anhand von Echtzeitdaten auszuführen. Erfordert eine der folgenden Anwendungen: "Cep", "Apama“</td>
+<td style="text-align:center"><a href="/benutzerhandbuch/cockpit#smart-rules" class="no-ajaxy">Smart Rules</a></td>
+<td style="text-align:left">Verwenden Sie die Smart Rule Engine und erstellen Sie <a href="/benutzerhandbuch/cockpit#smart-rules" class="no-ajaxy">Smart Rules</a>, um Aktionen anhand von Echtzeitdaten auszuführen. Erfordert eine der folgenden Anwendungen: "Cep", "Apama“</td>
 <td style="text-align:left">smartrule</td>
 <td style="text-align:left">Microservice</td>
 </tr>
@@ -173,25 +173,25 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><a href="/guides/benutzerhandbuch/enterprise-edition/#branding" class="no-ajaxy">Branding</a></td>
+<td style="text-align:center"><a href="/benutzerhandbuch/enterprise-edition/#branding" class="no-ajaxy">Branding</a></td>
 <td style="text-align:left">Passen Sie das Erscheinungsbild Ihrer Mandanten nach Ihren Vorlieben an.</td>
 <td style="text-align:left">branding</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/guides/benutzerhandbuch/enterprise-edition/#data-broker" class="no-ajaxy">Data Broker</a></td>
+<td style="text-align:center"><a href="/benutzerhandbuch/enterprise-edition/#data-broker" class="no-ajaxy">Data Broker</a></td>
 <td style="text-align:left">Bietet die Möglichkeit, Daten gezielt mit anderen Mandanten zu teilen.</td>
 <td style="text-align:left">feature-broker</td>
 <td style="text-align:left">Funktion</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/guides/benutzerhandbuch/enterprise-edition#customization" class="no-ajaxy">SSL management</a></td>
+<td style="text-align:center"><a href="/benutzerhandbuch/enterprise-edition#customization" class="no-ajaxy">SSL management</a></td>
 <td style="text-align:left">Aktivieren Sie einen eigenen benutzerdefinierten Domain-Namen durch Verwendung eines SSL-Zertifikats.</td>
 <td style="text-align:left">sslmanagement</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/guides/benutzerhandbuch/enterprise-edition/#user-hierarchies" class="no-ajaxy">User hierarchies</a></td>
+<td style="text-align:center"><a href="/benutzerhandbuch/enterprise-edition/#user-hierarchies" class="no-ajaxy">User hierarchies</a></td>
 <td style="text-align:left">Hiermit können Sie in Cumulocity verschiedene Organisationen getrennt verwalten, die dieselbe Datenbank teilen.</td>
 <td style="text-align:left">feature-user-hierarchy</td>
 <td style="text-align:left">Funktion</td>
@@ -214,38 +214,38 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 </tr>
 </thead>
 <tbody>
-<td style="text-align:center"><a href="/guides/apama" class="no-ajaxy">Apama EPL Apps</a></td>
+<td style="text-align:center"><a href="/apama" class="no-ajaxy">Apama EPL Apps</a></td>
 <td style="text-align:left"><b>Diese Anwendung ist ein optionaler Service in Cumulocity IoT Core, aber ein Standardservice in Cumulocity IoT Edge.</b><br>
 Manager und Editor für Apama Event Processing Language (EPL) Apps zur sofortigen Verarbeitung eingehender Daten.</td>
 <td style="text-align:left">Apama EPL Apps</td>
 <td style="text-align:left">Web-Anwendung</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/guides/event-language" class="no-ajaxy">CEP custom rules</a></td>
+<td style="text-align:center"><a href="/event-language" class="no-ajaxy">CEP custom rules</a></td>
 <td style="text-align:left"><b>Diese Anwendung ist veraltet.</b><br>Laden Sie Ihre eigenen mit Esper erstellten CEP-Regeln in einer mandantenspezifischen Bereitstellung hoch. Sie müssen die Anwendung "Cep-small" abonnieren, um diese Funktion nutzen zu können.</td>
 <td style="text-align:left">feature-cep-custom-rules</td>
 <td style="text-align:left">Funktion</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/guides/event-language" class="no-ajaxy">Cep-small</a></td>
+<td style="text-align:center"><a href="/event-language" class="no-ajaxy">Cep-small</a></td>
 <td style="text-align:left"><b>Diese Anwendung ist veraltet.</b><br>CEP-Variante. Ermöglicht das Arbeiten mit CEP-Regeln auf Basis von Esper in einer mandantenspezifischen Bereitstellung (im Unterschied zu "Cep", das eine gemeinsame Instanz verwendet). Sie müssen "CEP custom rules" abonnieren, um eigene Esper CEP-Regeln hochladen zu können.</td>
 <td style="text-align:left">cep-small</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/guides/users-guide/optional-services/#cloud-fieldbus" class="no-ajaxy">Cloud Fieldbus</a></td>
+<td style="text-align:center"><a href="/users-guide/optional-services/#cloud-fieldbus" class="no-ajaxy">Cloud Fieldbus</a></td>
 <td style="text-align:left">Erfassen Sie Daten von Fieldbus-Geräten und verwalten Sie sie per Fernzugriff in Cumulocity.</td>
 <td style="text-align:left">feature-fieldbus4</td>
 <td style="text-align:left">Funktion</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/guides/users-guide/optional-services/#cloud-remote-access" class="no-ajaxy">Cloud Remote Access</a></td>
+<td style="text-align:center"><a href="/users-guide/optional-services/#cloud-remote-access" class="no-ajaxy">Cloud Remote Access</a></td>
 <td style="text-align:left">Implementiert Virtual Network Computing (VNC) für den Fernzugriff auf Bedienfelder und andere Geräte über einen Webbrowser.</td>
 <td style="text-align:left">cloud-remote-access</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/guides/users-guide/optional-services/#connectivity" class="no-ajaxy">Connectivity</a></td>
+<td style="text-align:center"><a href="/users-guide/optional-services/#connectivity" class="no-ajaxy">Connectivity</a></td>
 <td style="text-align:left">Schaffen Sie eine Schnittstelle zu Mobilgeräten über verschiedene SIM-Anbieter wie Jasper, Ericsson und Comarch.</td>
 <td style="text-align:left">connectivity-agent-server</td>
 <td style="text-align:left">Microservice</td>
@@ -257,19 +257,19 @@ Manager und Editor für Apama Event Processing Language (EPL) Apps zur sofortige
 <td style="text-align:left">Funktion</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/guides/users-guide/optional-services#nokia-impact" class="no-ajaxy">Nokia IMPACT agent</a></td>
+<td style="text-align:center"><a href="/users-guide/optional-services#nokia-impact" class="no-ajaxy">Nokia IMPACT agent</a></td>
 <td style="text-align:left">Schaffen Sie eine Schnittstelle zu heterogenen Geräten über den Nokia IMPACT Data Collector.</td>
 <td style="text-align:left">impact</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/guides/users-guide/optional-services#sigfox" class="no-ajaxy">Sigfox</a></td>
+<td style="text-align:center"><a href="/users-guide/optional-services#sigfox" class="no-ajaxy">Sigfox</a></td>
 <td style="text-align:left">Schaffen Sie eine Schnittstelle zu Sigfox-Geräten über die Sigfox-Cloud. Erfordert die folgende Anwendung: "feature-fieldbus4“</td>
 <td style="text-align:left">sigfox-agent</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/guides/users-guide/optional-services/#tenant-sla-monitoring" class="no-ajaxy">Tenant SLA Monitoring</a></td>
+<td style="text-align:center"><a href="/users-guide/optional-services/#tenant-sla-monitoring" class="no-ajaxy">Tenant SLA Monitoring</a></td>
 <td style="text-align:left">Gibt Service Providern die Möglichkeit, die Verfügbarkeit und Reaktionszeit von Mandanten und Untermandanten zu überwachen.</td>
 <td style="text-align:left">tenant-sla-monitoring</td>
 <td style="text-align:left">Microservice</td>
@@ -289,13 +289,13 @@ Eigene Anwendungen können sein:
 
 Der Name wird als Titel oben links auf der Anwendungsseite angezeigt. Er wird außerdem im Application Switcher verwendet.
 
-<img src="/guides/images/benutzerhandbuch/Administration/admin-app-switcher.png" alt="App switcher">
+<img src="/images/benutzerhandbuch/Administration/admin-app-switcher.png" alt="App switcher">
 
 Eigene Anwendungen werden unter **Eigene Anwendungen** im Menü **Anwendungen** verwaltet. 
 
 Auf der Seite **Eigene Anwendungen** wird eine Liste aller eigenen Anwendungen in Ihrem Konto angezeigt.
 
-<img src="/guides/images/benutzerhandbuch/Administration/admin-applications-own.png" alt="Own applications">
+<img src="/images/benutzerhandbuch/Administration/admin-applications-own.png" alt="Own applications">
 
 Um weitere Informationen zu der Anwendung anzuzeigen, klicken Sie einfach auf deren Karte. Weitere Informationen zu den Feldern finden Sie unter [Anwendungsattribute](#application-properties). 
 
@@ -306,7 +306,7 @@ Klicken Sie **Öffnen** auf der Karte einer Anwendung, um die Anwendung direkt v
 
 Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**. 
 
-<img src="/guides/images/benutzerhandbuch/Administration/admin-application-add.png" alt="Add application methods">
+<img src="/images/benutzerhandbuch/Administration/admin-application-add.png" alt="Add application methods">
 
 Wählen Sie im darauf folgenden Dialog eine der folgenden Methoden:
 
@@ -323,7 +323,7 @@ Wählen Sie im darauf folgenden Dialog eine der folgenden Methoden:
 
 Die Anwendung wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wurde.
 
-<img src="/guides/images/benutzerhandbuch/Administration/admin-application-upload-web-app.png" alt="Uploading zip file">
+<img src="/images/benutzerhandbuch/Administration/admin-application-upload-web-app.png" alt="Uploading zip file">
 
 ##### <a name="uploading-microservices"></a>So laden Sie einen Microservice hoch
 
@@ -333,7 +333,7 @@ Die Anwendung wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wurde.
 
 Der Microservice wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wurde.
 
->**Wichtig**: Um Microservices zur Plattform hinzuzufügen, muss die gepackte Datei die Manifest-Datei und das Docker Image für den Microservice enthalten. Zur Vorbereitung und Bereitstellung des Microservice-Pakets lesen Sie den Abschnitt [Packing](/guides/microservice-sdk/concept/#packing) unter **General aspects** im Microservice SDK Guide.
+>**Wichtig**: Um Microservices zur Plattform hinzuzufügen, muss die gepackte Datei die Manifest-Datei und das Docker Image für den Microservice enthalten. Zur Vorbereitung und Bereitstellung des Microservice-Pakets lesen Sie den Abschnitt [Packing](/microservice-sdk/concept/#packing) unter **General aspects** im Microservice SDK Guide.
 
 
 ##### <a name="external-application"></a>So verweisen Sie auf eine externe Anwendung
@@ -341,7 +341,7 @@ Der Microservice wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wur
 1. Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
 2. Wählen Sie **Externe Anwendung**.
 <br><br>
-<img src="/guides/images/benutzerhandbuch/Administration/admin-application-external.png" alt="External application">
+<img src="/images/benutzerhandbuch/Administration/admin-application-external.png" alt="External application">
 <br><br>
 3. Geben Sie im darauf folgenden Dialog einen Namen für die Anwendung ein. Der Name wird als Titel oben links auf der Anwendungsseite angezeigt. 
 5. Geben Sie einen Anwendungsschlüssel ein, um diese Anwendung zu identifizieren.
@@ -358,11 +358,11 @@ Das Duplizieren einer Anwendung ist erforderlich, wenn Sie eine abonnierte Anwen
 2. Wählen Sie im folgenden Dialog **Existierende Anwendung duplizieren**.
 3. Wählen Sie die gewünschte Anwendung aus der Auswahlliste. 
 <br><br>
-<img src="/guides/images/benutzerhandbuch/Administration/admin-application-duplicate.png" alt="Duplicate application">
+<img src="/images/benutzerhandbuch/Administration/admin-application-duplicate.png" alt="Duplicate application">
 <br><br>
 4. Geben Sie im nächsten Fenster den Namen der Anwendung ein. Standardmäßig wird der Name der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen.
 <br><br>
-<img src="/guides/images/benutzerhandbuch/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
+<img src="/images/benutzerhandbuch/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
 <br><br>
 5. Geben Sie einen Anwendungsschlüssel ein, um die Anwendung zu identifizieren. Standardmäßig wird der Anwendungsschlüssel der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen.
 6. Geben Sie einen Pfad für die Anwendung ein. Dieser Pfad ist Teil der URL, um die Anwendung aufzurufen. Standardmäßig wird der Pfad der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen. Wenn Sie hier den Pfad der Originalanwendung verwenden, wird Ihre eigene Anwendung die Originalanwendung überschreiben. 
@@ -402,7 +402,7 @@ Es können mehrere Anwendungsversionen in Cumulocity gespeichert werden, indem s
 3. Klicken Sie **Archiv hochladen** und navigieren Sie zu der Datei auf Ihrem Computer oder ziehen Sie die Datei auf das entsprechende Feld.
 4. Klicken Sie **Hochladen**, um das Archiv auf Ihr Cumulocity-Konto hochzuladen.
 
-<img src="/guides/images/benutzerhandbuch/Administration/admin-application-archive.png" alt="Application archive">
+<img src="/images/benutzerhandbuch/Administration/admin-application-archive.png" alt="Application archive">
 
 Das aktive Archiv (durch ein Cloud-Symbol gekennzeichnet) ist die Version der Anwendung, die aktuell den Benutzern Ihres Kontos zur Verfügung steht. Diese Version kann nicht gelöscht werden. 
 
@@ -417,7 +417,7 @@ Benutzer können ältere Versionen einer Anwendung aus einem Archiv wiederherste
 3. Öffnen Sie das Kontextmenü der gewünschten Version über das Menüsymbol und klicken Sie **Aktivieren**, um diese Version zur aktiven Version zu machen.
 4. Klicken Sie **Entfernen** um eine Version aus dem Archiv zu löschen.
 
-<img src="/guides/images/benutzerhandbuch/Administration/admin-application-set-as-archive.png" alt="Application set as archive">
+<img src="/images/benutzerhandbuch/Administration/admin-application-set-as-archive.png" alt="Application set as archive">
 
 ### Überwachen von Microservices
 
@@ -427,7 +427,7 @@ Es gibt zwei Möglichkeiten, Microservices in der Cumulocity-Plattform zu überw
 
 Der Status eines Microservices kann in der Registerkarte **Status** der entsprechenden Anwendung überprüft werden. 
 
-<img src="/guides/images/benutzerhandbuch/Administration/admin-microservice-status.png" alt="Microservice status" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/Administration/admin-microservice-status.png" alt="Microservice status" style="max-width: 100%">
 
 Folgende Information werden in der Registerkarte **Status** angezeigt:
 
@@ -451,7 +451,7 @@ Es gibt zwei benutzerfreundliche Alarmtypen:
 
 Benutzerfreundliche Alarme werden nur für den Microservice-Eigentümer-Mandanten erzeugt. Sie werden auch automatisch gelöscht, wenn der Normalzustand wiederhergestellt ist, d. h., wenn alle Microservice-Instanzen korrekt funktionieren.
 
-Benutzerfreundliche Alarme können zum Erstellen von Smart Rules verwendet werden. Weitere Informationen zum Erstellen verschiedener Arten von Smart Rules finden Sie unter [Smart Rules](/guides/benutzerhandbuch/cockpit/#smart-rules). 
+Benutzerfreundliche Alarme können zum Erstellen von Smart Rules verwendet werden. Weitere Informationen zum Erstellen verschiedener Arten von Smart Rules finden Sie unter [Smart Rules](/benutzerhandbuch/cockpit/#smart-rules). 
 
 Soll zum Beispiel eine E-Mail gesendet werden, wenn ein Microservice außer Betrieb ist, erstellen Sie eine Smart Rule "Bei Alarm E-Mail senden". 
 
@@ -463,7 +463,7 @@ Für detaillierte Informationen über den Status von Microservices stehen außer
 
 Um Logdaten anzuzeigen, öffnen Sie die Registerkarte **Logdateien** des jeweiligen Microservice.
 
-<img src="/guides/images/benutzerhandbuch/Administration/admin-microservice-log.png" alt="Microservice log" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/Administration/admin-microservice-log.png" alt="Microservice log" style="max-width: 100%">
 
 Links oben auf der Seite können Sie die Microservice-Instanz auswählen, für die Sie Logdaten anzeigen möchten. Darüberhinaus können Sie rechts Ihre bevorzugte Schriftgröße und das Themendesign wählen.
 
@@ -479,7 +479,7 @@ Klicken Sie die Pfeiltasten "Vor" oder "Zurück", um das Zeitintervall um jeweil
 
 Wenn es im ausgewählten Zeitintervall keine Logdaten gibt, wird eine entsprechende Meldung angezeigt.
 
-<img src="/guides/images/benutzerhandbuch/Administration/admin-microservice-no-logs.png" alt="Microservice log">
+<img src="/images/benutzerhandbuch/Administration/admin-microservice-no-logs.png" alt="Microservice log">
 
 Um Logdaten lesen zu können, benötigen Sie die Berechtigung EVENT_READ.
 
@@ -490,4 +490,4 @@ Um Standardanwendungen für Untermandanten zu definieren, kann beim Anlegen neue
 
 * category: configuration
 * key: default.tenant.applications
-* value: kommaseparierte Liste von Anwendungsnamen, z. B. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules
+* value: kommaseparierte Liste von Anwendungsnamen, z. B. administration,devicemanagement,cockpit,feature-microservice-hosting,feature-cep-custom-rules/

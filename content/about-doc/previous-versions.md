@@ -1,6 +1,6 @@
 ---
 weight: 15
-title: Previous versions and sources
+title: Documentation versions and sources
 layout: bundle
 ---
 

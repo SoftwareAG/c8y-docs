@@ -4,7 +4,7 @@ title: Introduction
 layout: bundle
 ---
 
-This documentation describes the **January 2020 release (10.5.7)** of the Cumulocity IoT Platform.
+This documentation describes the **10.5.7 GA release (January 2020)** of the Cumulocity IoT Platform.
 
 This documentation covers all new features and functionality introduced with release 10.5.7 (see the [Release notes](/guides/release-notes#10.5.7) for details). 
 

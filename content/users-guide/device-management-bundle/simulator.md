@@ -82,7 +82,7 @@ The panel on the right changes according to the type of instruction selected on 
 ![Fragment](/images/users-guide/DeviceManagement/devmgmt-simulator-fragment.png)
 
 The measurement instruction refers to a fragment. Fragments are used to identify capabilities of a managed object. Find more details about fragments in  
-[Sensor Library](/guides/reference/sensor-library/) in the Reference guide. 
+[Sensor Library](/reference/sensor-library/) in the Reference guide. 
 
 The "Sleep" instruction requires one value for its duration in seconds. 
 

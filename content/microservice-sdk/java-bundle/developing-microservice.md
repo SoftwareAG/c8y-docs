@@ -29,7 +29,7 @@ Annotation | Description
 
 ### Context support
 
-It is described below the context support as utility tool for the user management described in [General aspects](/guides/microservice-sdk/concept) of microservices in Cumulocity.
+It is described below the context support as utility tool for the user management described in [General aspects](/microservice-sdk/concept) of microservices in Cumulocity.
 
 `@UserScope` and `@TenantScope` at type level annotation indicate that a bean created from class will be created in the scope defined. The user scope implies using tenant platform user credentials for platform calls. The tenant scope implies using service user credentials.
 
@@ -86,7 +86,7 @@ C8Y.bootstrap.user=<username>
 C8Y.bootstrap.password=<password>
 ```
 
-To create an application and acquire credentials, refer to [Creating applications](/guides/microservice-sdk/rest#creating-application) and [Acquiring microservice credentials](/guides/microservice-sdk/rest#acquiring-microservice-credentials) in the **Using the REST interface** section.
+To create an application and acquire credentials, refer to [Creating applications](/microservice-sdk/rest#creating-application) and [Acquiring microservice credentials](/microservice-sdk/rest#acquiring-microservice-credentials) in the **Using the REST interface** section.
 
 The subscription package provides means to monitor and it acts upon changes in tenant subscriptions to a microservice. To add a custom behavior, a developer can add an event listener for `MicroserviceSubscriptionAddedEvent` and `MicroserviceSubscriptionRemovedEvent` as the following example:
 
@@ -424,7 +424,7 @@ $ mvn microservice:upload -Dupload.application.name=cep -Dupload.url=https://dem
 
 #### Hosted deployment
 
-> **Info**: For your convenience, Cumulocity provides a [Microservice utility tool](/guides/microservice-sdk/concept/#ms-utility-tool) for easy packaging, deployment and subscription.
+> **Info**: For your convenience, Cumulocity provides a [Microservice utility tool](/microservice-sdk/concept/#ms-utility-tool) for easy packaging, deployment and subscription.
 
 To deploy an application on an environment you need the following:
 
@@ -522,7 +522,7 @@ $ curl -X POST -d '{"application":{"id": "<APPLICATION_ID>"}}'  \
 
 #### Local Docker deployment
 
-To deploy the application on a local Docker container, one needs to inject the environment variables into a container. This is done with the Docker `run -e` command. The full description of available parameters is available in [Environment variables](/guides/microservice-sdk/concept/#environment-variables).
+To deploy the application on a local Docker container, one needs to inject the environment variables into a container. This is done with the Docker `run -e` command. The full description of available parameters is available in [Environment variables](/microservice-sdk/concept/#environment-variables).
 
 An example execution could be:
 

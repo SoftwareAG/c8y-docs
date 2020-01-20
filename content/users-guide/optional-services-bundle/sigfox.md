@@ -227,7 +227,7 @@ After clicking **Next** the device registration request will be submitted and th
 
 You can verify that the device is really connected by checking that events are actually coming in. You can do so by clicking on a device and opening its **Events** tab. All events related to this device are listed here.
 
-For more information on viewing and managing your connected devices, also refer to [Device Management](http://cumulocity.com/guides/users-guide/device-management).
+For more information on viewing and managing your connected devices, also refer to [Device Management](http://cumulocity.com/users-guide/device-management).
 
 ### <a name="old-registration"></a>Updating devices registered with the general device registration
 
@@ -266,7 +266,7 @@ To verify whether your setup is correct, execute the following REST API request:
 	GET {{url}}/tenant/currentTenant 
 	```
 
-**Info:** The request above is simply an example API request that could be used. For more info on REST API requests, refer to the [Tenants](https://www.cumulocity.com/guides/reference/tenants) in the Reference guide.
+**Info:** The request above is simply an example API request that could be used. For more info on REST API requests, refer to the [Tenants](https://www.cumulocity.com/reference/tenants) in the Reference guide.
 
 #### Issues with alarm provisioning
 

@@ -226,14 +226,14 @@ In this CSV example, the security mode value is “PSK”. With "PSK" enabled, a
 </tbody>
 </table>
 
-> **Info**: Firmware updates are also supported. For more information, see [Device Management > Managing device data](/guides/users-guide/device-management/#software-repo) in the User guide.
+> **Info**: Firmware updates are also supported. For more information, see [Device Management > Managing device data](/users-guide/device-management/#software-repo) in the User guide.
 
 After creation, the bootstrap parameters can be viewed and changed in the **LWM2M bootstrap parameters** tab in the **Device details** page, see [LWM2M bootstrap parameters](#lwm2m-bootstrap).
 
 ### <a name="device_protocols"></a>LWM2M device protocols
 
 To process data from LWM2M devices, Cumulocity uses device protocols.
-Device protocols are accessible through the **Devices Types** menu in the Device Management application. For details on the general usage, see [Device Management > Managing device types](/guides/users-guide/device-management/#managing-device-types).
+Device protocols are accessible through the **Devices Types** menu in the Device Management application. For details on the general usage, see [Device Management > Managing device types](/users-guide/device-management/#managing-device-types).
 
 #### <a name="creating_device_protocols"></a>Creating LWM2M device protocols
 
@@ -318,7 +318,7 @@ If **Auto-Observe** is turned on for a resource, the LWM2M server observes a spe
 
 ### LWM2M device details
 
->**Info**: In the Device management application, you can view all details of a device. The following details are specific to LWM2M devices. For information on general details refer to [Device details](/guides/users-guide/device-management#device-details) in the Device management section.
+>**Info**: In the Device management application, you can view all details of a device. The following details are specific to LWM2M devices. For information on general details refer to [Device details](/users-guide/device-management#device-details) in the Device management section.
 
 #### <a name="objects"></a> Objects
 

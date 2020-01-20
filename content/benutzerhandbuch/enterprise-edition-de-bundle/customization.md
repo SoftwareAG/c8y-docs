@@ -7,7 +7,7 @@ layout: redirect
 
 Unter **Enterprise Tenant** in der Anwendung "Administration" können Einstellungen vorgenommen werden, die Benutzern des Enterprise Tenant von Cumulocity über den Umfang der Standardedition hinaus zu Verfügung stehen.
 
-**Info**: Informationen zu den Einstellungen in der Registerkarte  **Konfiguration** finden Sie in [Ändern von Einstellungen > Konfigurationseinstellungen](/guides/benutzerhandbuch/administration/#config-platform) unter Administration.
+**Info**: Informationen zu den Einstellungen in der Registerkarte  **Konfiguration** finden Sie in [Ändern von Einstellungen > Konfigurationseinstellungen](/benutzerhandbuch/administration/#config-platform) unter Administration.
 
 
 

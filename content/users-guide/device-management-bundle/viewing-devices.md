@@ -115,7 +115,7 @@ Our example shows a search for "Ublox C027".
 
 > **Info**: Unlike filtering, the use of wildcards in a search is not supported.
 
-For details on the search functionality, refer to [Getting Started > GUI functionalities and features](/guides/users-guide/overview#gui-features). 
+For details on the search functionality, refer to [Getting Started > GUI functionalities and features](/users-guide/overview#gui-features). 
 
 ![Search for devices](/images/users-guide/DeviceManagement/devmgmt-search.png)
 

@@ -87,5 +87,5 @@ This is an example of an alarm that has been cleared:
 	...
 }</code></pre>
 
-More examples can be found in [Events](/guides/reference/events), [Alarms](/guides/reference/alarms) and [Auditing](/guides/reference/auditing) in the Reference guide.
+More examples can be found in [Events](/reference/events), [Alarms](/reference/alarms) and [Auditing](/reference/auditing) in the Reference guide.
 

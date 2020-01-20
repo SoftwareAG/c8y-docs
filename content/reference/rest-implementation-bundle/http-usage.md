@@ -41,7 +41,7 @@ Cumulocity supports [JWT token](https://en.wikipedia.org/wiki/JSON_Web_Token) au
 	
 The JWT token must be signed using RSA signature with SHA-256 (RS256). The minimal RSA key size is 512 bit. You can generate an example key [here](http://travistidwell.com/jsencrypt/demo/).
 
-You must upload your public key to the [tenant options](/guides/reference/tenants) to the "token.publicKey" category.
+You must upload your public key to the [tenant options](/reference/tenants) to the "token.publicKey" category.
 
 Example:
 
@@ -85,7 +85,7 @@ If tenant/username don't match or the token is expired or the signature is inval
 
 #### OAuth authentication code grant 
 
-The login with OAuth requires a correct configuration on the [Cumulocity side](/guides/users-guide/administration#single-sign-on). With the configuration, an additional button is available on the Login page. After clicking the button, the user is redirected to authenticate with the configured authorization server. On successful login, the user is redirected to Cumulocity. 
+The login with OAuth requires a correct configuration on the [Cumulocity side](/users-guide/administration#single-sign-on). With the configuration, an additional button is available on the Login page. After clicking the button, the user is redirected to authenticate with the configured authorization server. On successful login, the user is redirected to Cumulocity. 
 
 Authentication details are exchanged using cookies. There are two parts to it, the first is the authentication cookie that is handled automatically by the Cumulocity platform. The second is the XSRF-TOKEN cookie. When a client receives the cookie, it should take the value and put it in the X-XSRF-TOKEN request header in all subsequent requests.  
 
@@ -166,7 +166,7 @@ To explicitly control the processing mode of an update request, an "X-Cumulocity
 ### Authorization
 
 All requests issued to Cumulocity are subject to authorization. To determine the required permissions, see the
-"Required role" entries in the reference documentation for the individual requests. To learn more about the different permissions and the concept of ownership in Cumulocity, see "Managing permissions and ownership" in the Section "[Security aspects](/guides/concepts/security)".
+"Required role" entries in the reference documentation for the individual requests. To learn more about the different permissions and the concept of ownership in Cumulocity, see "Managing permissions and ownership" in the Section "[Security aspects](/concepts/security)".
 
 ### Media types
 

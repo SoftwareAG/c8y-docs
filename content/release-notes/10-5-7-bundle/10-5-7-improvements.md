@@ -17,7 +17,7 @@ Usability in the **Logs** tab of subscribed applications has been enhanced.
 
 ![Microservice logging](/images/users-guide/Administration/admin-applications-logs.png)
 
-For details, see [Administration > Managing applications](/guides/users-guide/administration/managing-applications) in the User guide. 
+For details, see [Administration > Managing applications](/users-guide/administration/managing-applications) in the User guide. 
 
 
 **Single sign-on**
@@ -25,14 +25,14 @@ For details, see [Administration > Managing applications](/guides/users-guide/ad
 The single sign-on functionality has been further enhanced: 
 
 * If single sign-on is the only defined login option, the users will not see the Cumulocity IoT login page, but will be redirected to the login window of the external auth provider. Basic authentication cannot be deleted via the Administration UI. It can only be done via the login options API. [MTM-23157]
-* A new single logout mechanism is now provided. If configured, the user is redirected to the defined authorization server logout URL after logging out from Cumulocity. For details see [Administration > Changing settings > Single sign-on](/guides/users-guide/administration/#single-sign-on). [MTM-23522] 
-* On creating a new user, a warning message is now displayed stating that a user, which is created locally, will not be able to use the single sign-on functionality. Limitations of local users in the context of single sign-on have been added to the documentation. For details see [Administration > Managing users](/guides/users-guide/administration/#managing-users). [MTM-29103]
+* A new single logout mechanism is now provided. If configured, the user is redirected to the defined authorization server logout URL after logging out from Cumulocity. For details see [Administration > Changing settings > Single sign-on](/users-guide/administration/#single-sign-on). [MTM-23522] 
+* On creating a new user, a warning message is now displayed stating that a user, which is created locally, will not be able to use the single sign-on functionality. Limitations of local users in the context of single sign-on have been added to the documentation. For details see [Administration > Managing users](/users-guide/administration/#managing-users). [MTM-29103]
 
 **TOTP**
 
 A new two-factor authentication strategy has been added. You can now also use **TOTP (Google authenticator)** as authentication method. 
 
-For details, see [Administration > Two-factor authentication](/guides/users-guide/administration/#tfa) in the User guide.
+For details, see [Administration > Two-factor authentication](/users-guide/administration/#tfa) in the User guide.
 
 
 **Tenant ID**
@@ -55,7 +55,7 @@ The following functionalities are now available:
 * Addressing OPC UA nodes via URN
 * Largely extended support for mapping the OPC UA and Cumulocity information models
 
-For details, see [Optional services > OPC UA 2.0](/guides/users-guide/optional-services/#opc-ua) in the User guide. 
+For details, see [Optional services > OPC UA 2.0](/users-guide/optional-services/#opc-ua) in the User guide. 
 
 ### SNMP
 
@@ -66,4 +66,4 @@ Support for integration of SNMP-enabled devices has been added to the Cumulocity
 
 ![SNMP device protocol details](/images/release-notes/snmp-device-protocol-detail.png)
 
-For details see [Optional services > SNMP](/guides/users-guide/optional-services/#snmp) in the User guide.
+For details see [Optional services > SNMP](/users-guide/optional-services/#snmp) in the User guide.

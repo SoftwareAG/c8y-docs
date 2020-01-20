@@ -10,7 +10,7 @@ layout: redirect
 Output streams contain the possibility to CREATE, UPDATE and DELETE data in Cumulocity.
 When updating or deleting data it is necessary to provide the ID of the object that will be updated or deleted.
 When creating data, Cumulocity will generate an ID if not set in the event processing. The creation of data also requires certain parameters to be set (the same as at our REST APIs).
-In addition to the predefined parameters listed, it is possible to add any custom fragment to the data. Please take a look at the [custom fragments](/guides/event-language/advanced-cel/#custom-fragments) section for adding custom fragments.
+In addition to the predefined parameters listed, it is possible to add any custom fragment to the data. Please take a look at the [custom fragments](/event-language/advanced-cel/#custom-fragments) section for adding custom fragments.
 
 Note:
 Creating your own ID will only work on ManagedObjects.
@@ -25,12 +25,12 @@ Creating your own ID will only work on ManagedObjects.
 
 |Parameter|Data type|Description|Mandatory|
 |:--|:----------|:-------------|:----------|
-|id|[ID](/guides/event-language/data-model#id) or String|ID of the ManagedObject|UPDATE and DELETE|
+|id|[ID](/event-language/data-model#id) or String|ID of the ManagedObject|UPDATE and DELETE|
 |type|String|The type of the ManagedObject|No|
 |name|String|The name of the ManagedObject|No|
 |owner|String|The owner of the ManagedObject. If not set data created from event processing will have the owner "cep"|No|
-|childAssets|Set&lt;String&gt; or Set&lt;[ID](/guides/event-language/data-model#id)&gt;|A set of [IDs](/guides/event-language/data-model#id) of all child assets|No|
-|childDevices|Set&lt;String&gt; or Set&lt;[ID](/guides/event-language/data-model#id)&gt;|A set of [IDs](/guides/event-language/data-model#id) of all child devices|No|
+|childAssets|Set&lt;String&gt; or Set&lt;[ID](/event-language/data-model#id)&gt;|A set of [IDs](/event-language/data-model#id) of all child assets|No|
+|childDevices|Set&lt;String&gt; or Set&lt;[ID](/event-language/data-model#id)&gt;|A set of [IDs](/event-language/data-model#id) of all child devices|No|
 
 Example:
 
@@ -62,11 +62,11 @@ Example:
 
 |Parameter|Data type|Description|Mandatory|
 |:--|:----------|:-------------|:----------|
-|id|[ID](/guides/event-language/data-model#id) or String|The ID of the Event|DELETE|
+|id|[ID](/event-language/data-model#id) or String|The ID of the Event|DELETE|
 |type|String|The type of the Event|CREATE|
 |text|String|The text of the Event|CREATE|
 |time|Date|The time when the Event was created (as sent by device)|CREATE|
-|source|[ID](/guides/event-language/data-model#id) or String|The ID of the device which created the Event|CREATE|
+|source|[ID](/event-language/data-model#id) or String|The ID of the device which created the Event|CREATE|
 
 Example:
 
@@ -92,10 +92,10 @@ Example:
 
 |Parameter|Data type|Description|Mandatory|
 |:--|:----------|:-------------|:----------|
-|id|[ID](/guides/event-language/data-model#id) or String|The ID of the Measurement|DELETE|
+|id|[ID](/event-language/data-model#id) or String|The ID of the Measurement|DELETE|
 |type|String|The type of the Measurement|CREATE|
 |time|Date|The time when the Measurement was created (as sent by device)|CREATE|
-|source|[ID](/guides/event-language/data-model#id) or String|The ID of the device which created the Measurement|CREATE|
+|source|[ID](/event-language/data-model#id) or String|The ID of the device which created the Measurement|CREATE|
 
 Example:
 
@@ -123,9 +123,9 @@ Example:
 
 |Parameter|Data type|Description|Mandatory|
 |:--|:----------|:-------------|:----------|
-|id|[ID](/guides/event-language/data-model#id) or String|The ID of the Operation|UPDATE|
-|status|[OperationStatus](/guides/event-language/data-model#operationstatus) or String|The current status of the Operation|CREATE|
-|deviceId|[ID](/guides/event-language/data-model#id) or String|The ID of the device which should execute the Operation|CREATE|
+|id|[ID](/event-language/data-model#id) or String|The ID of the Operation|UPDATE|
+|status|[OperationStatus](/event-language/data-model#operationstatus) or String|The current status of the Operation|CREATE|
+|deviceId|[ID](/event-language/data-model#id) or String|The ID of the device which should execute the Operation|CREATE|
 
 Example:
 
@@ -153,13 +153,13 @@ Example:
 
 |Parameter|Data type|Description|Mandatory|
 |:--|:----------|:-------------|:----------|
-|id|[ID](/guides/event-language/data-model#id) or String|The ID of the Alarm|UPDATE|
+|id|[ID](/event-language/data-model#id) or String|The ID of the Alarm|UPDATE|
 |type|String|The type of the Alarm|CREATE|
-|severity|[Severity](/guides/event-language/data-model#severity) or String|The severity of the Alarm|CREATE|
-|status|[AlarmStatus](/guides/event-language/data-model#alarmstatus) or String|The status of the Alarm|CREATE|
+|severity|[Severity](/event-language/data-model#severity) or String|The severity of the Alarm|CREATE|
+|status|[AlarmStatus](/event-language/data-model#alarmstatus) or String|The status of the Alarm|CREATE|
 |text|String|The text of the Event|CREATE|
 |time|Date|The time when the Event was created (as sent by device)|CREATE|
-|source|[ID](/guides/event-language/data-model#id) or String|The ID of the device which created the Alarm|CREATE|
+|source|[ID](/event-language/data-model#id) or String|The ID of the device which created the Alarm|CREATE|
 
 Example:
 

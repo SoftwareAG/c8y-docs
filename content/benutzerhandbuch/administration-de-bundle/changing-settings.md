@@ -10,7 +10,7 @@ Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen de
 *   [Anwendungseinstellungen](#default-app) ändern,
 *   [Passwortrichtlinien und TFA-Einstellungen](#changing-password-settings) ändern,
 *   die [Attributsbibliothek](#properties) verwalten,
-*   Einstellungen für den Enterprise Tenant konfigurieren, siehe [Enterprise Tenant](/guides/users-guide/enterprise-edition#customization).
+*   Einstellungen für den Enterprise Tenant konfigurieren, siehe [Enterprise Tenant](/users-guide/enterprise-edition#customization).
 
 ### <a name="single-sign-on"></a>Konfigurieren von Single-Sign-On
 
@@ -28,7 +28,7 @@ Bevor Sie zur Single-Sign-On-Option wechseln, stellen Sie sicher, dass:
 * Cumulocity-Plattform Version 9.12 oder vorzugsweise höher verwendet wird, 
 * alle Microservices mit dem Microservice Java SDK 9.12.6, oder vorzugsweise höher, erstellt wurden.
 
-Informationen zu benutzerspezifischen Microservices finden Sie unter [General aspects > Security](guides/microservice-sdk/concept/#security) im Microservice SDK Guide.
+Informationen zu benutzerspezifischen Microservices finden Sie unter [General aspects > Security](microservice-sdk/concept/#security) im Microservice SDK Guide.
 
 Bei lokalen Installationen ist die Domain-basierte Mandantenabbildung bereits korrekt konfiguriert.
 
@@ -158,7 +158,7 @@ Um die Passwortrichtlinien zu ändern, klicken Sie **Passwort** im Menü **Einst
 
 Unter **Passwortbeschränkung** können Sie die Gültigkeit von Benutzerpasswörtern beschränken, in dem Sie die Anzahl der Tage eingeben, nach der Benutzer ihre Passwörter ändern müssen. Wenn Sie keine Passwortänderung erzwingen möchten, verwenden Sie "0" für die uneingeschränkte Gültigkeit von Passwörtern (Standardwert).
 
-Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Nur starke (grüne) Passwörter zulassen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Anmelden](/guides/benutzerhandbuch/overview#login) beschrieben.
+Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Nur starke (grüne) Passwörter zulassen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Anmelden](/benutzerhandbuch/overview#login) beschrieben.
 
 > **Info:** Passwortbeschränkung und das Erzwingen starker Passörter sind möglicherweise nicht editierbar, falls vom Plattformadministrator so konfiguriert.
 
@@ -283,7 +283,7 @@ Klicken Sie auf den Namen eines Attributs in der Liste, um dieses zu öffnen. Um
 
 Durch die Eingabe von OPenIT- Zugangsdaten erlauben Sie der Plattform, SMS-Dienste zu verwenden, die von [Openit](https://sms.openit.de/main.php) bereitgestellt werden.
 
-SMS werden für verschiedene Funktionen in den Anwendungen verwendet wie [Zwei-Faktor-Authentifizierung](/guides/benutzerhandbuch/administration#tfa) und Benachrichtigungen etwa bei Alarmen.
+SMS werden für verschiedene Funktionen in den Anwendungen verwendet wie [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration#tfa) und Benachrichtigungen etwa bei Alarmen.
 
 ### Konfiguration
 

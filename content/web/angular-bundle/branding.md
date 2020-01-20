@@ -51,14 +51,14 @@ Here is a list of the available variables.
 }
 ```
 
-Note that these can be customized at runtime using [application options](/guides/web/angular#application-options) using the property `brandingCssVars`.
+Note that these can be customized at runtime using [application options](/web/angular#application-options) using the property `brandingCssVars`.
 The option is only available after version 9.22.0.
 
 ## Using LESS
 
 ### Prerequisites
 
-If you do not use the [@c8y/cli](/guides/web/angular#cli) make sure that you install the base styles from npm with:
+If you do not use the [@c8y/cli](/web/angular#cli) make sure that you install the base styles from npm with:
 
 ```
 npm install @c8y/style
@@ -110,7 +110,7 @@ What about changing the main logo that is located at the top of the login dialog
  @brand-logo-height: 48%;
  ```
 
-You can check the branding changes with the help of the [@c8y/cli](/guides/web/angular#cli).
+You can check the branding changes with the help of the [@c8y/cli](/web/angular#cli).
 
  ```
  c8ycli server --app.brandingEntry="<path-to-your-branding.less>"

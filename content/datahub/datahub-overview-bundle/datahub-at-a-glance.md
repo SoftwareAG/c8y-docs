@@ -4,7 +4,7 @@ title: Cumulocity IoT DataHub at a glance
 layout: redirect
 ---
 
-The Cumulocity IoT platform allows you to manage and monitor a variety of devices. The data emitted by these devices is stored in Cumulocity's Operational Store, with older data potentially being removed (based on data retention settings). In order to run an ad-hoc query against recent device data, Cumulocity offers a [REST API](/guides/reference/rest-implementation/).
+The Cumulocity IoT platform allows you to manage and monitor a variety of devices. The data emitted by these devices is stored in Cumulocity's Operational Store, with older data potentially being removed (based on data retention settings). In order to run an ad-hoc query against recent device data, Cumulocity offers a [REST API](/reference/rest-implementation/).
 
 In addition to this simple ad-hoc querying, various use cases require more sophisticated analytical querying over the device data, potentially covering long periods of time. Cumulocity IoT DataHub is the tool designed for this purpose. 
 
@@ -14,7 +14,7 @@ With Cumulocity IoT DataHub, you can connect existing tools and applications to 
 
 * Machine learning applications (mainly written in Python using ODBC)
 
-* Arbitrary custom applications (using JDBC for Java applications, ODBC for .NET, Python, node.js, and others, or REST for [Cumulocity web applications](/guides/concepts/applications/#web-applications)) 
+* Arbitrary custom applications (using JDBC for Java applications, ODBC for .NET, Python, node.js, and others, or REST for [Cumulocity web applications](/concepts/applications/#web-applications)) 
 
 The main features of the Cumulocity IoT DataHub application are:
 
@@ -58,7 +58,7 @@ The starting point is one of the base Cumulocity collections, such as the measur
 
 When an offloading job runs, the contents of the collection are offloaded. The document-based entities of Cumulocity's Operational Store are transformed into a relational format by flattening the entries and mapping them to relational rows.
 
-> **Info:** The mapping automatically extracts a "standard" set of attributes from each entity, such as "time", "source", "id", and "type". It transforms them into columns in the data lake table. Furthermore, it automatically transforms the contents of measurement fragments into columns of the table. Here, the fragment name becomes part of the column name; the fragment's value is stored in a column suffixed with "_value" (resulting in `<fragment name>_value` as the column name); the unit is stored in a column suffixed "_unit". Non-standard fields can also be processed to a limited extent as described in [Additional settings](/guides/datahub/configuring-offloaded#basic-functionality-additional-settings).
+> **Info:** The mapping automatically extracts a "standard" set of attributes from each entity, such as "time", "source", "id", and "type". It transforms them into columns in the data lake table. Furthermore, it automatically transforms the contents of measurement fragments into columns of the table. Here, the fragment name becomes part of the column name; the fragment's value is stored in a column suffixed with "_value" (resulting in `<fragment name>_value` as the column name); the unit is stored in a column suffixed "_unit". Non-standard fields can also be processed to a limited extent as described in [Additional settings](/datahub/configuring-offloaded#basic-functionality-additional-settings).
 
 As a result of these extraction and transformation steps, the flattened data is stored in Parquet files in the data lake. Apache Parquet is a column-based storage format which allows for compression and efficient data fetching. For performance reasons, these Parquet files are managed in a folder structure based on a temporal hierarchy. The reason for the temporal hierarchy is that most analytical queries have a temporal background, e.g. compute the average oil pressure of last month. In order to ensure a compact layout of the Parquet files, DataHub Console also regularly runs a compaction algorithm over these files behind the scenes. When data is stored in a time-based hierarchical manner in the data lake, DataHub can efficiently prune partitions. In addition, queries can explicitly leverage the structure to increase query performance.
 

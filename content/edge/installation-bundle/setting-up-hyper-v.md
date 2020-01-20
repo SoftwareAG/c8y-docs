@@ -10,8 +10,8 @@ To set up Hyper-V, you must first enable Hyper-V on your system, and  create Net
 
 You can create a NAT adapter using two ways:
 
-* [Using default settings](/guides/edge/installation/#creating-a-nat-adapter-using-default-settings)  
-* [Using user-defined settings](/guides/edge/installation/#creating-a-nat-adapter-using-user-defined-settings) 
+* [Using default settings](/edge/installation/#creating-a-nat-adapter-using-default-settings)  
+* [Using user-defined settings](/edge/installation/#creating-a-nat-adapter-using-user-defined-settings) 
 
 Run all the commands in Windows PowerShell as an administrator.
 
@@ -91,6 +91,6 @@ Select the adapter from the **Connection** drop down list and click **Next**.
 8. Right-click the Edge VM image and click **Connect**. <br>
 <img src="/images/edge/edge-hyper-v-007.png" name="Connecting to Edge VM" style="width:75%;"/>
 
-9. If you have defined the adapter name and IP address other than the default settings, you must first configure the network before running the post installation. See [Configuring the Edge Server](/guides/edge/installation/#configuring-the-edge-server).
+9. If you have defined the adapter name and IP address other than the default settings, you must first configure the network before running the post installation. See [Configuring the Edge Server](/edge/installation/#configuring-the-edge-server).
 
 >**Info**: By default, the NTP servers are configured to Europe NTP servers. You can configure the NTP server as per your requirements.

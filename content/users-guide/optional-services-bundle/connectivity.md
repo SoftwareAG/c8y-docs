@@ -62,7 +62,7 @@ Process the following step to configure the connectivity in Cumulocity:
 
 1. Use a Cumulocity administrator user to log into the Cumulocity platform.
 1. Switch to the Administration application.
-1. Click **Connectivity** in the **Settings** menu of the navigator. If the menu item is not displayed, make sure that your user has [ADMIN permission for Connectivity](/guides/users-guide/administration#managing-permissions). If the menu item is still not available, contact [support](https://support.cumulocity.com) to make the Connectivity agent available in your tenant.
+1. Click **Connectivity** in the **Settings** menu of the navigator. If the menu item is not displayed, make sure that your user has [ADMIN permission for Connectivity](/users-guide/administration#managing-permissions). If the menu item is still not available, contact [support](https://support.cumulocity.com) to make the Connectivity agent available in your tenant.
 2. Switch to the **SIM provider settings** tab.
 3. Select a provider from the drop-down list.
 1. Enter the credentials (URL, key (in case of Jasper), username and password) for the respective SIM provider account. If you do not have any credentials, ask your administrator.
@@ -149,7 +149,7 @@ In the **Connectivity** tab, check if
 
 * the SIM is activated. If the SIM card is not activated, you can activate it selecting "Activated" from the status drop-down menu. <br> ![Activate SIM card](/images/users-guide/SIM-connectivity-status-activate.png) <br> It may take a while until the SIM card is activated in the network. There may be a reset of the device needed to make it dial up to the network again.
 * The device is connected to the network. If the device is not connected to the network, this may have several reasons:
- * The device is in a location without mobile network coverage. If the device reports network quality parameters, you can navigate to the [**Measurements** tab](/guides/users-guide/device-management#measurements) of the device and verify the last reported signal strength and error rate parameters. 
+ * The device is in a location without mobile network coverage. If the device reports network quality parameters, you can navigate to the [**Measurements** tab](/users-guide/device-management#measurements) of the device and verify the last reported signal strength and error rate parameters. 
  * There is a network or hardware problem (antenna, modem). For the Jasper Control Center, for example, click the cogwheel icon on the top right and select **SIM details**, then open the Jasper Control Center diagnostics tool. If the device is not attempting to connect to the network, it may be broken.
 * The device is in a data session. If the device is not in a data session, this may, again, have several reasons:
  * The APN settings are incorrectly configured in the device.
@@ -161,7 +161,7 @@ In the **Connectivity** tab, check if
 Data connectivity can be analyzed in various places:
 
 * If the device reports its network configuration, navigate to the **Network** tab and verify, potentially edit, APN settings.
-* If the device supports shell, navigate to the [**Shell** tab](/guides/users-guide/device-management/#shell) and verify, potentially edit, APN settings and roaming configuration.
+* If the device supports shell, navigate to the [**Shell** tab](/users-guide/device-management/#shell) and verify, potentially edit, APN settings and roaming configuration.
 * Check the **Sessions** section on the **Connectivity** tab to see if the device has been communicating earlier and how much traffic it used.
 * Check the **Audit logs** section on the **Connectivity** tab to see if there were any recent changes to the SIM card.
 * Finally, click the cogwheel on the top right and select **SIM details** to navigate to the SIM configuration in Jasper Control Center.
@@ -170,5 +170,5 @@ Data connectivity can be analyzed in various places:
 
 If the device is still not reporting to Cumulocity, there may be a configuration or software problem on the device.
 
-* The device may have lost its credentials, for example, due to a factory reset or full loss of power. In this case, you can [re-register the device](/guides/users-guide/device-management#device-registration).
+* The device may have lost its credentials, for example, due to a factory reset or full loss of power. In this case, you can [re-register the device](/users-guide/device-management#device-registration).
 * There may be a configuration or software problem with the device, which has to be analyzed in a device-specific way.

@@ -12,7 +12,7 @@ Die Mandantenverwaltung ermöglicht es Ihnen, eigene Untermandanten zu erstellen
 > 
 > **Info**: Wenn Sie diese Funktion verwenden möchten, wenden Sie sich bitte an sales@cumulocity.com.
 
-Um die Mandantenfunktionalität nutzen zu können, muss Ihr Benutzer über die entsprechenden Berechtigungen verfügen. Informationen zum Bearbeiten von Berechtigungen finden sie unter [Erstellen und Bearbeiten von Rollen](/guides/benutzerhandbuch/administration#managing-permissions) im Abschnitt Verwalten von Berechtigungen. Da es sich bei der Bearbeitung von Mandanten um ein sensibles Verfahren handelt, sind die entsprechenden Berechtigungen granularer:
+Um die Mandantenfunktionalität nutzen zu können, muss Ihr Benutzer über die entsprechenden Berechtigungen verfügen. Informationen zum Bearbeiten von Berechtigungen finden sie unter [Erstellen und Bearbeiten von Rollen](/benutzerhandbuch/administration#managing-permissions) im Abschnitt Verwalten von Berechtigungen. Da es sich bei der Bearbeitung von Mandanten um ein sensibles Verfahren handelt, sind die entsprechenden Berechtigungen granularer:
 
 *   Read: Durchsuchen und Ansehen von Mandanten.
 *   Create: Erstellen neuer Mandanten.
@@ -51,7 +51,7 @@ Geben Sie für den neuen Mandanten folgende Attribute an:
 |Benutzername des Administrators|Benutzername des Administrators dieses Mandanten.
 |Kontaktname|Optionaler Name des Ansprechpartners.
 |Telefonnummer|Optionale Telefonnummer des Ansprechpartner.
-|Link zum Zurücksetzen des Passworts als E-Mail senden|Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie eine Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter [Anmelden](/guides/benutzerhandbuch/overview#login) im Abschnitt Erste Schritte).
+|Link zum Zurücksetzen des Passworts als E-Mail senden|Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie eine Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter [Anmelden](/benutzerhandbuch/overview#login) im Abschnitt Erste Schritte).
 |Mandantenregel|Sie können eine Mandantenregel aus der Dropdown-Liste auswählen, die auf den Mandanten angewendet werden soll.
 
 Felder, die mit einem Sternsymbol * gekennzeichnet sind, sind Pflichtfelder.
@@ -124,11 +124,11 @@ Folgende Informationen werden angezeigt:
 * Name: Name der Microservice-Instanz
 * Neustarts: Anzahl der Neustarts von Microservice-Instanzen
 
-Weitere Details finden Sie in der Registerkarte **Status** der entsprechenden Anwendung, siehe [Administration > Verwalten von Anwendungen](/guides/users-guide/administration#managing-applications).
+Weitere Details finden Sie in der Registerkarte **Status** der entsprechenden Anwendung, siehe [Administration > Verwalten von Anwendungen](/users-guide/administration#managing-applications).
 
 ### <a name="tenants-custom-properties"></a>Bearbeitung von benutzerdefinierten Attributen
 
-Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Ändern von Werten von benutzerdefinierten Attributen, sowohl vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/guides/benutzerhandbuch/administration#properties) definiert sind. Solche Attribute werden auch als Spalten in der [Benutzungsstatistiktabelle](#usage-stats) angezeigt.
+Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Ändern von Werten von benutzerdefinierten Attributen, sowohl vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/benutzerhandbuch/administration#properties) definiert sind. Solche Attribute werden auch als Spalten in der [Benutzungsstatistiktabelle](#usage-stats) angezeigt.
 
 ![Benutzerdefinierte Attribute](/images/benutzerhandbuch/Admin_SubtenantCustomProperties.png)
 
@@ -166,11 +166,11 @@ Die folgenden Informationen werden für jeden Untermandanten angezeigt:
 
 Außerdem werden benutzerdefinierte Attribute angezeigt, falls vorhanden.
 
-Benutzerdefinierte Attribute können in der [Attributsbibliothek](/guides/benutzerhandbuch/administration#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte [Benutzerdefinierte Attribute](#tenants-custom-properties) des Mandanten eingestellt werden.
+Benutzerdefinierte Attribute können in der [Attributsbibliothek](/benutzerhandbuch/administration#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte [Benutzerdefinierte Attribute](#tenants-custom-properties) des Mandanten eingestellt werden.
 
 ![Nutzungsstatistiken](/images/benutzerhandbuch/Admin_TenantUsageStatistics.png)
 
-Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum filtern, indem Sie einen Start- und einen Endzeitpunkt in der oberen Menüleiste eingeben und **Filter** klicken. Sie können außerdem die Liste nach jeder Spalte filtern und und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Weitere Informationen zur Filterfunktionalität finden Sie unter [Filtern](/guides/benutzerhandbuch/overview#filtering) im Abschnitt Erste Schritte.
+Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum filtern, indem Sie einen Start- und einen Endzeitpunkt in der oberen Menüleiste eingeben und **Filter** klicken. Sie können außerdem die Liste nach jeder Spalte filtern und und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Weitere Informationen zur Filterfunktionalität finden Sie unter [Filtern](/benutzerhandbuch/overview#filtering) im Abschnitt Erste Schritte.
 
 Klicken Sie **Export CSV** rechts oben in der Menüleiste, um die aktuelle Ansicht der Statistikentabelle als CSV-Datei zu exportieren. Im folgenden Fenster können Sie die CSV-Ausgabe anpassen.
 
@@ -197,7 +197,7 @@ Klicken Sie **Mandantenregel hinzufügen** in der oberen Menüleiste, um eine ne
 ![Neue Regel hinzufügen](/images/benutzerhandbuch/Admin_TenantsAddPolicy.png)
 
 1.  Geben Sie einen Namen und optional eine Beschreibung ein.
-2.  Geben Sie mindestens eine Datenerhaltungsregel ein. Weitere Informationen zur Erstellung von Datenerhaltungsregeln finden Sie unter [Datenerhaltungsregeln](/guides/benutzerhandbuch/administration#retention-rules).
+2.  Geben Sie mindestens eine Datenerhaltungsregel ein. Weitere Informationen zur Erstellung von Datenerhaltungsregeln finden Sie unter [Datenerhaltungsregeln](/benutzerhandbuch/administration#retention-rules).
 3.  Geben Sie optional eine Mandantenoption ein.
 4.  Klicken Sie **Speichern**, um Ihre Eingaben zu speichern.
 

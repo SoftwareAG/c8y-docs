@@ -4,7 +4,7 @@ title: Node.js microservice
 layout: redirect
 ---
 
-Cumulocity provides SDKs for developing microservices using C# or Java. Nevertheless, you are free to choose the tech-stack of your preference to develop a microservice as long as it fulfills the [general requirements](/guides/microservice-sdk/concept/#requirements).
+Cumulocity provides SDKs for developing microservices using C# or Java. Nevertheless, you are free to choose the tech-stack of your preference to develop a microservice as long as it fulfills the [general requirements](/microservice-sdk/concept/#requirements).
 
 In this example you will learn how to create and deploy a Node.js-based microservice. The application exposes endpoints to verify if the microservice is up and running and get some of the environment variables.
 
@@ -302,7 +302,7 @@ Uploading the _node-microservice.zip_ into the platform can be done via the UI. 
 
 ![Subscribe microservice](/images/microservices-sdk/admin-microservice-subscribe-up.png)
 
-For more details about uploading a microservice ZIP file, refer to [Managing applications > Adding own applications](/guides/users-guide/administration#adding-applications) under the Administration section in the User guide.
+For more details about uploading a microservice ZIP file, refer to [Managing applications > Adding own applications](/users-guide/administration#adding-applications) under the Administration section in the User guide.
 
 ### Testing the microservice
 
@@ -337,7 +337,7 @@ dDAwNzEyMzQvdGVzdHVzZXI6c2VjcmV0MTIz
 
 and your authorization header would look like `"Authorization": "Basic dDAwNzEyMzQvdGVzdHVzZXI6c2VjcmV0MTIz"`.
 
-If there are active alarms on your tenant, your Slack channel will get notified. You can also [create a new alarm](/guides/reference/alarms/#post-create-a-new-alarm) using the Cumulocity REST API and validate that your microservice is listening to new alarms. Your Slack channel will also get notified.
+If there are active alarms on your tenant, your Slack channel will get notified. You can also [create a new alarm](/reference/alarms/#post-create-a-new-alarm) using the Cumulocity REST API and validate that your microservice is listening to new alarms. Your Slack channel will also get notified.
 
 ![Slack app posting alarms](/images/microservices-sdk/microservice-slack-alarms.png)
 

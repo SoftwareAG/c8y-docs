@@ -542,7 +542,7 @@ Die Berechtigungen sind in die folgenden Kategorien eingeteilt:
 
 </table>
 
-> **Info:** Service Provider sehen eine weitere Berechtigung "Support" in Ihrem Management-Mandanten. Diese Berechtigung ermöglicht Benutzern des Service Providers den Benutzern ihrer Kunden Support zu geben. Siehe [Support für Benutzer anderer Mandanten](/guides/benutzerhandbuch/enterprise-edition#users-in-other-tenants).
+> **Info:** Service Provider sehen eine weitere Berechtigung "Support" in Ihrem Management-Mandanten. Diese Berechtigung ermöglicht Benutzern des Service Providers den Benutzern ihrer Kunden Support zu geben. Siehe [Support für Benutzer anderer Mandanten](/benutzerhandbuch/enterprise-edition#users-in-other-tenants).
 
 Fügen Sie einer Rolle eine Berechtigung hinzu, indem Sie das Plus-Symbol neben der gewünschten Kategorie klicken.
 
@@ -552,7 +552,7 @@ Nehmen wir etwa an, ihr Gerät sendet Messwerte zum Device Management, wie "c8y&
 
 Standardmäßig enthält das Feld **Typ** ein Sternsymbol *, so dass alle Typen eingeschlossen sind.
 
-> **Info:** Weitere Informationen zu möglichen Typen finden Sie in Ihrer Gerätedokumentation, der [Sensor Library](/guides/reference/sensor-library) von Cumulocity oder der [Device Management Library](/guides/reference/device-management). Der Typ, der hier verwendet wird, ist der sogenannte "Fragmenttyp", nicht das "Type"-Attribut. Sie müssen alle Fragmenttypen, die in einem Messwert gesendet werden, eingeben, damit der Messwert sichtbar wird; ähnliches gilt für andere Datentypen.
+> **Info:** Weitere Informationen zu möglichen Typen finden Sie in Ihrer Gerätedokumentation, der [Sensor Library](/reference/sensor-library) von Cumulocity oder der [Device Management Library](/reference/device-management). Der Typ, der hier verwendet wird, ist der sogenannte "Fragmenttyp", nicht das "Type"-Attribut. Sie müssen alle Fragmenttypen, die in einem Messwert gesendet werden, eingeben, damit der Messwert sichtbar wird; ähnliches gilt für andere Datentypen.
 
 Wählen Sie im Feld **Berechtigung** eine Berechtigungsebene aus der Auswahlliste:
 
@@ -566,7 +566,7 @@ Wählen Sie im Feld **Berechtigung** eine Berechtigungsebene aus der Auswahllist
 
 ![Warnmeldung](/images/users-guide/overriddenperm.png)
 
-Nehmen wir als weiteres Beispiel an, dass sie Tracking-Geräte verwenden. Sie möchten, dass Ihr Benutzer alle Geräte sehen, aber nichts ändern kann. Außerdem soll der Benutzer in der Lage sein, die Wege von Geräten auf einer Karte zu verfolgen. Wege werden über ein Ereignis mit dem Fragmenttypen "c8y&#95;Position" aufgezeichnet (siehe [Sensor Library](/guides/reference/sensor-library)). Erteilen Sie dem Benutzer Leseberechtigung auf Stammdaten und auf Ereignisse mit dem Typen "c8y_Position", wie in der Abbildung unten dargestellt.
+Nehmen wir als weiteres Beispiel an, dass sie Tracking-Geräte verwenden. Sie möchten, dass Ihr Benutzer alle Geräte sehen, aber nichts ändern kann. Außerdem soll der Benutzer in der Lage sein, die Wege von Geräten auf einer Karte zu verfolgen. Wege werden über ein Ereignis mit dem Fragmenttypen "c8y&#95;Position" aufgezeichnet (siehe [Sensor Library](/reference/sensor-library)). Erteilen Sie dem Benutzer Leseberechtigung auf Stammdaten und auf Ereignisse mit dem Typen "c8y_Position", wie in der Abbildung unten dargestellt.
 
 <img src="/images/benutzerhandbuch/admin-role-permission-example.png" alt="Beispielberechtigung" style="max-width: 100%">
 
@@ -595,7 +595,7 @@ Sie können auch Stammdatenrollen eines anderen Benutzers kopieren. Klicken Sie 
 
 In der Registerkarte **Anwendungen** können Sie Benutzern Zugriff auf Anwendungen erteilen.
 
-Die Registerkarte **Anwendungen** zeigt eine Liste aller verfügbaren Anwendungen in Ihrem Mandanten in alphabetischer Reihenfolge. Wählen Sie die Anwendungen für den Benutzer und klicken Sie **Speichern**. Weitere Informationen zur Anwendungsverwaltung finden Sie unter [Verwalten von Anwendungen](/guides/benutzerhandbuch/administration#managing-applications).
+Die Registerkarte **Anwendungen** zeigt eine Liste aller verfügbaren Anwendungen in Ihrem Mandanten in alphabetischer Reihenfolge. Wählen Sie die Anwendungen für den Benutzer und klicken Sie **Speichern**. Weitere Informationen zur Anwendungsverwaltung finden Sie unter [Verwalten von Anwendungen](/benutzerhandbuch/administration#managing-applications).
 
 <img src="/images/benutzerhandbuch/admin-user-application-access.png" alt="Anwendungszugriff" style="max-width: 100%">
 

@@ -38,7 +38,7 @@ The following keys are available in the configuration file:
 
 >**Important**: The password must have a minimum of 8 and a maximum of 32 characters and it may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
 
-`tenant.domain.name` : Provide a fully qualified domain name. For example, "myown.iot.com". Here, you must have the Cumulocity IoT Edge license for the domain name **iot.com** or **myown.iot.com**. <br>The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/guides/edge/installation/#domain-name-validation-for-edge-license-key-generation).
+`tenant.domain.name` : Provide a fully qualified domain name. For example, "myown.iot.com". Here, you must have the Cumulocity IoT Edge license for the domain name **iot.com** or **myown.iot.com**. <br>The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/edge/installation/#domain-name-validation-for-edge-license-key-generation).
 
 >**Important**: Once configured, the domain name cannot be changed. Make sure to use the name finally desired.
 
@@ -97,13 +97,13 @@ Usually the platform comes up within 2 minutes.
 
 You will be prompted to select one of the following options:
 
-1. [Configure network](/guides/edge/installation/#option-1-configure-network)
-2. [Run post-installation](/guides/edge/installation/#option-2-run-post-installation)
-3. [Update license and SSL certificates](/guides/edge/installation/#option-3-update-license-and-ssl-certificates)
-4. [Run post-upgrade](/guides/edge/installation/#option-4-run-post-upgrade)
-5. [Expand data disk size](/guides/edge/installation/#option-5-expand-data-disk-size)
-6. [Update tenant password](/guides/edge/installation/#option-6-update-tenant-password)
-7. [Configure Edge Agent](/guides/edge/installation/#option-7-configure-edge-agent)
+1. [Configure network](/edge/installation/#option-1-configure-network)
+2. [Run post-installation](/edge/installation/#option-2-run-post-installation)
+3. [Update license and SSL certificates](/edge/installation/#option-3-update-license-and-ssl-certificates)
+4. [Run post-upgrade](/edge/installation/#option-4-run-post-upgrade)
+5. [Expand data disk size](/edge/installation/#option-5-expand-data-disk-size)
+6. [Update tenant password](/edge/installation/#option-6-update-tenant-password)
+7. [Configure Edge Agent](/edge/installation/#option-7-configure-edge-agent)
 8. Exit
 
 >**Important**:<br>
@@ -175,7 +175,7 @@ You have the choice to enter the post-installation parameters manually through t
 
 	`* Re-enter tenant admin password:`
 
-4. Provide a fully qualified domain name. For example, "myown.iot.com". Here, you must have the Cumulocity IoT Edge license for the domain name **iot.com** or **myown.iot.com**.<br>The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/guides/edge/installation/#domain-name-validation-for-edge-license-key-generation).
+4. Provide a fully qualified domain name. For example, "myown.iot.com". Here, you must have the Cumulocity IoT Edge license for the domain name **iot.com** or **myown.iot.com**.<br>The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/edge/installation/#domain-name-validation-for-edge-license-key-generation).
 
 	`* Enter tenant domain name:` 
 
@@ -205,7 +205,7 @@ You have the choice to enter the post-installation parameters manually through t
 
 	`* Enter cloud URL (leave blank to disable remote management):` 
 
-	You can also configure the Edge agent with the Cumulocity tenant URL by running the post-installation script and selecting [Option 7 - Configure Edge Agent](/guides/edge/installation/#option-7-configure-edge-agent).
+	You can also configure the Edge agent with the Cumulocity tenant URL by running the post-installation script and selecting [Option 7 - Configure Edge Agent](/edge/installation/#option-7-configure-edge-agent).
 		
 Once the input parameters are entered correctly, the parameters will be saved under 
 */opt/c8y/utilities/post-installer/config.dat* for future reference.
@@ -316,6 +316,6 @@ Provide the URL for the Cumulocity tenant (cloud or on-premise). For example, "h
 
 	`* Enter cloud URL (leave blank to disable remote management):`
 
-After providing the tenant URL, you have to register your Edge device with the Cumulocity tenant. For more information, see [Registering the Edge device with a Cumulocity tenant](/guides/edge/usage/#registering-the-edge-device-with-the-cumulocity-tenant).
+After providing the tenant URL, you have to register your Edge device with the Cumulocity tenant. For more information, see [Registering the Edge device with a Cumulocity tenant](/edge/usage/#registering-the-edge-device-with-the-cumulocity-tenant).
 
 >**Important**: If you have configured the Cumulocity tenant URL during the post installation and then use this option with a blank URL, you will disable the Cumulocity tenant connectivity.

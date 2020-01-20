@@ -24,5 +24,5 @@ The inventory collection keeps track of managed objects. Note that DataHub autom
 * inventory_all: a view with the updates between two offloading executions, not including the intermediate updates. For example, after the first offloading execution, the status of a device is ACTIVE. Then it changes its state from ACTIVE to INACTIVE and afterwards to ERROR. When the next offloading is executed, it will persist the status ERROR, but not the intermediate status INACTIVE (because it happened between two offloading runs and thus is not seen by DataHub).
 * inventory_latest: a view with the latest status of all managed objects, with all previous transitions being discarded.
 
-Both views are provided in your Dremio space. For details on views and spaces in Dremio see section [Refining Offloaded Cumulocity Data](/guides/datahub/refining-offload/).
+Both views are provided in your Dremio space. For details on views and spaces in Dremio see section [Refining Offloaded Cumulocity Data](/datahub/refining-offload/).
 

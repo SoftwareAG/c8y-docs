@@ -11,7 +11,7 @@ All input streams share the same base structure.
 |Parameter|Data type|Description|
 |:--|:----------|:-------------|
 |_type|String|The type of the event. See the table below which value types can be used for different streams.|
-|_mode|String|The processing mode in which the data was sent to Cumulocity. See [Processing mode](/guides/reference/rest-implementation#processing-mode).|
+|_mode|String|The processing mode in which the data was sent to Cumulocity. See [Processing mode](/reference/rest-implementation#processing-mode).|
 |_origin|String|The origin of the event. If the data was created by a cep rule the origin will be "cep".|
 |payload|Object|The actual data contained in the event|
 
@@ -37,11 +37,11 @@ For simpler access you can receive the payload directly in the data type of the 
 
 |API|Parameter|Data type|
 |:--|:----------|:-------------|
-|Inventory|managedObject|[ManagedObject](/guides/event-language/data-model#managedobject)|
-|Events|event|[Event](/guides/event-language/data-model#event)|
-|Measurements|measurement|[Measurement](/guides/event-language/data-model#measurement)|
-|Device control|operation|[Operation](/guides/event-language/data-model#operation)|
-|Alarms|alarm|[Alarm](/guides/event-language/data-model#alarm)|
+|Inventory|managedObject|[ManagedObject](/event-language/data-model#managedobject)|
+|Events|event|[Event](/event-language/data-model#event)|
+|Measurements|measurement|[Measurement](/event-language/data-model#measurement)|
+|Device control|operation|[Operation](/event-language/data-model#operation)|
+|Alarms|alarm|[Alarm](/event-language/data-model#alarm)|
 
 ### ManagedObject
 
@@ -49,17 +49,17 @@ class: com.cumulocity.model.ManagedObject
 
 |Parameter|Data type|Description|
 |:--|:----------|:-------------|:----------|
-|id|[ID](/guides/event-language/data-model#id)|ID of the ManagedObject|
+|id|[ID](/event-language/data-model#id)|ID of the ManagedObject|
 |type|String|The type of the ManagedObject|
 |name|String|The name of the ManagedObject|
 |lastUpdated|Date|The time when the ManagedObject was last updated|
 |owner|String|The owner of the ManagedObject|
-|childAssets|Object[]|An array of the [IDs](/guides/event-language/data-model#id) of all child assets|
-|childDevices|Object[]|An array of the [IDs](/guides/event-language/data-model#id) of all child devices|
-|assetParents|Object[]|An array of the [IDs](/guides/event-language/data-model#id) of all parent assets|
-|deviceParents|Object[]|An array of the [IDs](/guides/event-language/data-model#id) of all child devices|
+|childAssets|Object[]|An array of the [IDs](/event-language/data-model#id) of all child assets|
+|childDevices|Object[]|An array of the [IDs](/event-language/data-model#id) of all child devices|
+|assetParents|Object[]|An array of the [IDs](/event-language/data-model#id) of all parent assets|
+|deviceParents|Object[]|An array of the [IDs](/event-language/data-model#id) of all child devices|
 
-The Object[] for the references to the parents and children contains only [IDs](/guides/event-language/data-model#id). You can use the cast function e.g. `cast(event.managedObject.childAssets[0], com.cumulocity.model.ID)`.
+The Object[] for the references to the parents and children contains only [IDs](/event-language/data-model#id). You can use the cast function e.g. `cast(event.managedObject.childAssets[0], com.cumulocity.model.ID)`.
 
 Example:
 
@@ -81,12 +81,12 @@ class: com.cumulocity.model.event.Event
 
 |Parameter|Data type|Description|
 |:--|:----------|:-------------|:----------|
-|id|[ID](/guides/event-language/data-model#id)|The ID of the Event|
+|id|[ID](/event-language/data-model#id)|The ID of the Event|
 |creationTime|Date|The time when the Event was created in the database|
 |type|String|The type of the Event|
 |text|String|The text of the Event|
 |time|Date|The time when the Event was created (as sent by device)|
-|source|[ID](/guides/event-language/data-model#id)|The ID of the device which created the Event|
+|source|[ID](/event-language/data-model#id)|The ID of the device which created the Event|
 
 Example:
 
@@ -106,10 +106,10 @@ class: com.cumulocity.model.measurement.Measurement
 
 |Parameter|Data type|Description|
 |:--|:----------|:-------------|:----------|
-|id|[ID](/guides/event-language/data-model#id)|The ID of the Measurement|
+|id|[ID](/event-language/data-model#id)|The ID of the Measurement|
 |type|String|The type of the Measurement|
 |time|Date|The time when the Measurement was created (as sent by device)|
-|source|[ID](/guides/event-language/data-model#id)|The ID of the device which created the Measurement|
+|source|[ID](/event-language/data-model#id)|The ID of the device which created the Measurement|
 
 Example:
 
@@ -127,10 +127,10 @@ class: com.cumulocity.model.operation.Operation
 
 |Parameter|Data type|Description|
 |:--|:----------|:-------------|:----------|
-|id|[ID](/guides/event-language/data-model#id)|The ID of the Operation|
+|id|[ID](/event-language/data-model#id)|The ID of the Operation|
 |creationTime|Date|The time when the Operation was created in the database|
-|status|[OperationStatus](/guides/event-language/data-model#operationstatus)|The current status of the Operation|
-|deviceId|[ID](/guides/event-language/data-model#id)|The ID of the device which should execute the Operation|
+|status|[OperationStatus](/event-language/data-model#operationstatus)|The current status of the Operation|
+|deviceId|[ID](/event-language/data-model#id)|The ID of the device which should execute the Operation|
 
 Example:
 
@@ -147,15 +147,15 @@ class: com.cumulocity.model.event.Alarm
 
 |Parameter|Data type|Description|
 |:--|:----------|:-------------|:----------|
-|id|[ID](/guides/event-language/data-model#id)|The ID of the Alarm|
+|id|[ID](/event-language/data-model#id)|The ID of the Alarm|
 |creationTime|Date|The time when the Alarm was created in the database|
 |type|String|The type of the Alarm|
 |count|long|The number of times the alarm was reported while active|
-|severity|[Severity](/guides/event-language/data-model#severity)|The severity of the Alarm|
-|status|[AlarmStatus](/guides/event-language/data-model#alarmstatus)|The status of the Alarm|
+|severity|[Severity](/event-language/data-model#severity)|The severity of the Alarm|
+|status|[AlarmStatus](/event-language/data-model#alarmstatus)|The status of the Alarm|
 |text|String|The text of the Event|
 |time|Date|The time when the Event was created (as sent by device)|
-|source|[ID](/guides/event-language/data-model#id)|The ID of the device which created the Alarm|
+|source|[ID](/event-language/data-model#id)|The ID of the device which created the Alarm|
 
 Example:
 

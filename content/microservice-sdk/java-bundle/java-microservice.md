@@ -47,7 +47,7 @@ You can download the source code of this example from our [Bitbucket](https://bi
 
 #### Create a Maven project
 
-Use the [Maven Archetype Plugin](https://maven.apache.org/archetype/maven-archetype-plugin/) to create a Java project from an existing Maven template. Use `c8y.example` as your groupId, `hello-microservice-java` as your artifactId, and set the version following the SemVer format as specified in [Microservice manifest](/guides/microservice-sdk/concept/#manifest).
+Use the [Maven Archetype Plugin](https://maven.apache.org/archetype/maven-archetype-plugin/) to create a Java project from an existing Maven template. Use `c8y.example` as your groupId, `hello-microservice-java` as your artifactId, and set the version following the SemVer format as specified in [Microservice manifest](/microservice-sdk/concept/#manifest).
 
 ```shell
 $ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-microservice-java -Dversion=1.0.0-SNAPSHOT -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
@@ -224,7 +224,7 @@ application.name=my-first-microservice
 server.port=80
 ```
 
-Create the directory _src/main/configuration_ to contain a _cumulocity.json_ file. This is the [manifest](/guides/microservice-sdk/concept/#manifest) file and it is required to deploy the microservice in the Cumulocity platform.
+Create the directory _src/main/configuration_ to contain a _cumulocity.json_ file. This is the [manifest](/microservice-sdk/concept/#manifest) file and it is required to deploy the microservice in the Cumulocity platform.
 
 ```json
 {
@@ -430,4 +430,4 @@ You may also use the name parameter, e.g. <http://localhost:8082/hello?name=Neo>
 
 ### Improving the microservice
 
-Now that you have done your first steps, check out the section [Developing microservices](/guides/microservice-sdk/java#developing-microservice) to find out what else can be implemented. Review also the [Java example](/guides/microservice-sdk/http) in this guide to learn using more features of the microservice SDK and REST API by employing third-party services.
+Now that you have done your first steps, check out the section [Developing microservices](/microservice-sdk/java#developing-microservice) to find out what else can be implemented. Review also the [Java example](/microservice-sdk/http) in this guide to learn using more features of the microservice SDK and REST API by employing third-party services.

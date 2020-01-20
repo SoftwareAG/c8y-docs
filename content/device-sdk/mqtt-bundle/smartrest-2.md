@@ -36,7 +36,7 @@ To publish messages in CEP mode:
 c/uc/<X-ID>
 ```
 
-Refer to SmartREST > [Processing mode](/guides/reference/smartrest#processing-mode) in the Reference guide for more information about transient, quiescent & CEP data processing.
+Refer to SmartREST > [Processing mode](/reference/smartrest#processing-mode) in the Reference guide for more information about transient, quiescent & CEP data processing.
 
 To subscribe for responses:
 
@@ -454,7 +454,7 @@ If anyway the device uses mostly (or completely) a single collection, it makes s
 
 With a default collection specified, the client can use special topics which do not require the X-ID, and instead the server will use the X-ID previously specified. The topics are <kbd>s/ud</kbd> for publishing and <kbd>s/dd</kbd> for subscribing.
 
-You can specify one X-ID within your MQTT ClientId (see [MQTT implementation](/guides/device-sdk/mqtt#mqtt-clientid)).
+You can specify one X-ID within your MQTT ClientId (see [MQTT implementation](/device-sdk/mqtt#mqtt-clientid)).
 
 Your MQTT ClientId could look like this:
 

@@ -10,7 +10,7 @@ Cumulocity ensures that your data stays confidential and cannot be tampered with
 
 This communication architecture is illustrated below. Inside the sensor networks and from the sensor networks to agents, device- and gateway-specific protocols may be in use (such as ZigBee or Modbus). Securing these is a device-specific matter. Agents communicate with the Cumulocity platform using HTTPS to send and receive data. Similarly, IoT applications use HTTPS for communication. If an IoT application exposes own interfaces towards web browsers, it is recommended that these use HTTPS. This way, the whole path from agents to the end user is secured.
 
-<center><img src="/guides/images/concepts-guide/commsecurity.png" alt="Communication security" style="max-width: 100%"></center>
+<center><img src="/images/concepts-guide/commsecurity.png" alt="Communication security" style="max-width: 100%"></center>
 
 As mentioned above, Cumulocity does not require any device that might expose ports or services on the Internet. This is an important feature: it not only simplifies the connection of devices to Cumulocity, but also simplifies the safety backup of these devices drastically. When deploying an IoT solution, check other services that might make a device available on the Internet or expose it, such as web-based device managers or SMS-based configuration options.
 

@@ -10,7 +10,7 @@ layout: default
 
 The general structure common to all Cumulocity applications includes the following screen elements:
 
-![Cumulocity application](/guides/images/users-guide/overview-screen-elements.png)
+![Cumulocity application](/images/users-guide/overview-screen-elements.png)
 
 <table>
 <col width="150">
@@ -35,7 +35,7 @@ The general structure common to all Cumulocity applications includes the followi
 </tr>
 <tr>
 <td style="text-align:left"><strong>Top bar</strong></td>
-<td style="text-align:left"><strong>Page title</strong><br> At the left of the top bar the title of the active page is displayed, if any. <br> <br><img src="/guides/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <strong>Search button</strong><br> Clicking the <strong>Search</strong> button opens a search field to enter text for a full-text search. For details, see <a href="#searching" class="no-ajaxy">Searching</a> below. Not always available.<br><br> <img src="/guides/images/icons/plus-icon.png" alt="Plus" style="max-width:100%"> <strong>Plus button</strong><br> Most application pages show an <strong>Plus</strong> button at the top bar. Clicking it opens a context menu providing further functionalities. The context menu is created dynamically, i.e. it depends on the active page which commands are provided. <br><br><img src="/guides/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <strong>Application Switcher button</strong><br> Clicking the <strong>Application Switcher</strong> button opens the <a href="#app-switcher" class="no-ajaxy">application switcher</a> which allows you to quickly switch between applications. <br><br> <img src="/guides/images/icons/user-icon.png" alt="User" style="max-width:100%"> <strong>User button</strong><br> Right from the Application Switcher button you will find the <strong>User</strong> button with your user name. Clicking it will open up a context menu with commands related to your account settings. <br> <br>Other buttons/ information may be available in the top bar depending on the application and the page being displayed. </td>
+<td style="text-align:left"><strong>Page title</strong><br> At the left of the top bar the title of the active page is displayed, if any. <br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <strong>Search button</strong><br> Clicking the <strong>Search</strong> button opens a search field to enter text for a full-text search. For details, see <a href="#searching" class="no-ajaxy">Searching</a> below. Not always available.<br><br> <img src="/images/icons/plus-icon.png" alt="Plus" style="max-width:100%"> <strong>Plus button</strong><br> Most application pages show an <strong>Plus</strong> button at the top bar. Clicking it opens a context menu providing further functionalities. The context menu is created dynamically, i.e. it depends on the active page which commands are provided. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <strong>Application Switcher button</strong><br> Clicking the <strong>Application Switcher</strong> button opens the <a href="#app-switcher" class="no-ajaxy">application switcher</a> which allows you to quickly switch between applications. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <strong>User button</strong><br> Right from the Application Switcher button you will find the <strong>User</strong> button with your user name. Clicking it will open up a context menu with commands related to your account settings. <br> <br>Other buttons/ information may be available in the top bar depending on the application and the page being displayed. </td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>Top menu bar</strong></td>
@@ -50,7 +50,7 @@ The general structure common to all Cumulocity applications includes the followi
 
 On smaller screens, the layout is slightly different. The navigator is hidden and can be accessed by clicking the arrow icon on the top left. Only the active tab is displayed. To switch tabs, click the arrow on the tab header and select a tab from the list.
 
-<img src="/guides/images/users-guide/overview-small-screen.png" alt="Layout on small devices" style="max-width: 100%">
+<img src="/images/users-guide/overview-small-screen.png" alt="Layout on small devices" style="max-width: 100%">
 
 > **Info:** Cumulocity applications provide tooltips when you hover over a particular screen element. When you use Cumulocity applications on touch devices, tooltips are shown when you touch a screen element for a longer time.
 
@@ -58,13 +58,13 @@ On smaller screens, the layout is slightly different. The navigator is hidden an
 
 The application switcher allows you to quickly switch between applications. Click the **Application Switcher** button at the right of the top bar to display a list of icons representing applications. 
 
-<img src="/guides/images/users-guide/overview-application-switcher.png" alt="Application switcher" style="max-width: 100%">
+<img src="/images/users-guide/overview-application-switcher.png" alt="Application switcher" style="max-width: 100%">
 
-The application switcher shows all Cumulocity applications you currently have access to. These can be subscribed applications, either built-in or custom ones, and [own applications](/guides/user-guide/administration#own-applications). Just click the icon for the desired application to open it as active application.
+The application switcher shows all Cumulocity applications you currently have access to. These can be subscribed applications, either built-in or custom ones, and [own applications](/user-guide/administration#own-applications). Just click the icon for the desired application to open it as active application.
 
 If you are using SAG Cloud, the application switcher also shows other SAG Cloud applications at the first level, followed by the Cumulocity applications:
 
-<img src="/guides/images/users-guide/overview-app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 100%">
+<img src="/images/users-guide/overview-app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 100%">
 
 
 ### <a name="searching-and-filtering"></a>Search and filter functionality

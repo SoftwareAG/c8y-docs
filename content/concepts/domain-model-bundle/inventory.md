@@ -76,7 +76,7 @@ The approach also enables developing generic application components. For example
 
 Fragments use a naming convention to avoid conflicts between different parties supplying fragment information, similar to Java or other programming languages. 
 
-In the example above, "c8y_Position" is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". Together they form a set of standard fragments. Fragment definitions can be found in [Sensor library](/guides/reference/sensor-library) and in the [Device management library](/guides/reference/device-management) in the Reference guide.
+In the example above, "c8y_Position" is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". Together they form a set of standard fragments. Fragment definitions can be found in [Sensor library](/reference/sensor-library) and in the [Device management library](/reference/device-management) in the Reference guide.
 
 Note that Cumulocity follows a document-oriented approach for storing data. All characteristics of an object can be inferred from the document with the object data itself. There is no explicit separate metadata model that needs to be configured and managed. However, applications can add own metadata and store values in the inventory additionally. For example, a vending application can maintain metadata about slot configurations of the diverse vending machine types in the inventory.
 
@@ -86,7 +86,7 @@ Each managed object in the inventory has an own, "global" identifier that is aut
 
 This identifier will always stay with the object regardless of network restructures or different hardware parts.
 
-![Identity service](/guides/images/concepts-guide/identification.png)
+![Identity service](/images/concepts-guide/identification.png)
 
 To shield applications from these numbers of identifiers, Cumulocity includes an identity service that registers all identifiers for one asset that are used outside of Cumulocity and map these to a single global identifier that is used by applications.
 
@@ -94,7 +94,7 @@ This service is used by agents (to register external identifiers) and is used by
 
 As an example, assume that a smart meter would be faulty and a new meter with another meter number and asset tag needs to be installed in a household. The routine business process for replacing faulty hardware can now just update the asset tag and meter ID associated with a customer in the identity service. Afterwards both previously collected and new meter readings are related to the correct customer.
 
-More information can be found in [Identity](/guides/reference/identity) in the Reference guide.
+More information can be found in [Identity](/reference/identity) in the Reference guide.
 
 ### Object hierarchies
 
@@ -102,17 +102,17 @@ The inventory model supports two default hierarchies of objects: A communication
 
 The communication hierarchy tracks how devices are linked to the M2M platform from a communication point of view. A typical communication hierarchy is shown in the picture below: Agents connect the sensor network to Cumulocity. They often communicate through gateway devices or modems with the sensor network. The gateways, in reverse, connect to devices in the sensor network, which contain sensors and controls. 
 
-![Example communication hierarchy](/guides/images/concepts-guide/commshierarchy.png)
+![Example communication hierarchy](/images/concepts-guide/commshierarchy.png)
 
 The asset hierarchy structures the assets that are remotely supervised and controlled through the M2M devices. 
 
 An example asset hierarchy for building management could be buildings containing rooms. Buildings would be associated with gateways connecting the building to Cumulocity, while rooms would be associated with sensors and controls. This example hierarchy is shown in the picture below.
 
-![Example asset hierarchy](/guides/images/concepts-guide/assethierarchy.png)
+![Example asset hierarchy](/images/concepts-guide/assethierarchy.png)
 
 #### Child objects in hierarchies 
 
-The two hierarchies above are explicitly supported by the [inventory interface](/guides/reference/inventory) and client libraries, that provide methods for adding and removing children in hierarchies. The hierarchies themselves are constructed by client applications. The communication hierarchy is constructed by agents, the asset hierarchy is added by applications on top.
+The two hierarchies above are explicitly supported by the [inventory interface](/reference/inventory) and client libraries, that provide methods for adding and removing children in hierarchies. The hierarchies themselves are constructed by client applications. The communication hierarchy is constructed by agents, the asset hierarchy is added by applications on top.
 
 Note that the object hierarchies are not required to form a tree, the same asset can be a child of multiple parent assets. This enables applications to create additional, user-defined groups of objects such as working sets or virtual networks. Applications can, in addition, use fragments to define arbitrary alternative hierarchies.
 
@@ -126,5 +126,5 @@ Addressing the device lifecycle properly is important when designing agents. An 
 
 ### Working with the inventory
 
-More examples for working with the inventory can be found in [Inventory reference](/guides/reference/inventory) in the Reference guide.
+More examples for working with the inventory can be found in [Inventory reference](/reference/inventory) in the Reference guide.
 

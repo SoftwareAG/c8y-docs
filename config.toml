@@ -14,6 +14,7 @@ paginate = 12
 summaryLength = 30
 buildFuture = true
 
+relativeURLs = true
 
 [author]
   name = "Carlos Ceia @ Cumulocity"
@@ -46,5 +47,6 @@ buildFuture = true
     copyright = "Cumulocity GmbH | All rights reserved"
     c8ylink = "https://www.softwareag.cloud/site/product/cumulocity-iot.html"
 
-
-
+# ensure html is rendered properly
+[markup.goldmark.renderer]
+  unsafe = true

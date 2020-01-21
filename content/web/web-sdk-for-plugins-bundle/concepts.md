@@ -14,7 +14,7 @@ Before building an application or plugin, it is important to understand what exa
 
 This is illustrated below:
 
-![Extension points for plugins](/guides/images/concepts-guide/extensionpoints.png)
+![Extension points for plugins](/images/concepts-guide/extensionpoints.png)
 
 Or, as an example, let us take a look at an extract of the list of plugins the “Cockpit” application uses. It consists of, i.a.
 * Cockpit Home: a plugin, which adds the "Home" menu to the navigator.
@@ -22,7 +22,7 @@ Or, as an example, let us take a look at an extract of the list of plugins the �
 * Data point table: a plugin, which adds a widget to dashboards providing a visualization of measurements in tabular form.
 * etc.
 
-> Note that you can [extend](#target) the core applications of Cumulocity (Administration, Cockpit, Device Management) with new functionality. For normal tenants, you must create a duplicate of the core application before you can extend it. To create a duplicate of an application, you can either [copy it via the UI in "Administration"](/guides/users-guide/administration#clone-application) or [create a new application which uses the exact same plugins as the desired application](/guides/web/tab-plugin#dependencies).
+> Note that you can [extend](#target) the core applications of Cumulocity (Administration, Cockpit, Device Management) with new functionality. For normal tenants, you must create a duplicate of the core application before you can extend it. To create a duplicate of an application, you can either [copy it via the UI in "Administration"](/users-guide/administration#clone-application) or [create a new application which uses the exact same plugins as the desired application](/web/tab-plugin#dependencies).
 
 ### Project structure
 
@@ -40,7 +40,7 @@ Whenever you create a new application or plugin, you have to comply with the fol
 ```
 
 Inside the root folder of your application, the so-called "[application manifest](#application-manifest)" is stored in the "cumulocity.json" file. The folder "plugins" contains one folder per plugin contributed by the application. The plugin folder name together with the application name uniquely identifies the plugin. Inside each plugin folder, the so-called "[plugin manifest](#plugin-manifest)" is stored in another "cumulocity.json" file. The format of the application manifest and the plugin manifest is described [below](#manifests).
-In case that you only want to create a plugin and [add it to an already existing application](/guides/users-guide/administration#add-remove-plugin), use the exact folder structure described above:
+In case that you only want to create a plugin and [add it to an already existing application](/users-guide/administration#add-remove-plugin), use the exact folder structure described above:
 
 ```console
 <<root folder>>
@@ -85,4 +85,4 @@ The plugin manifest describes how your plugin is shown in the Cumulocity adminis
 * **less**: [OPTIONAL] A list of LESS files to be loaded, paths relative to plugin’s root folder.
 * **copy**: [OPTIONAL] A list of files that should be copied into the built.
 
-Most of the content of the manifest file corresponds to the application API properties, described in the [REST reference](/guides/reference/applications). Examples of manifest files can be found in the [examples](http://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
+Most of the content of the manifest file corresponds to the application API properties, described in the [REST reference](/reference/applications). Examples of manifest files can be found in the [examples](http://bitbucket.org/m2m/cumulocity-ui-plugin-examples).

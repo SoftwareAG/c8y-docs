@@ -19,7 +19,7 @@ Click **Roles** in the **Account** menu to display a list of configured roles.
 
 In the **Global roles** tab you can find the roles which grant permissions on a general level. There are several default global roles defined, but you can define your own according to your needs. 
 
-<img src="/guides/images/users-guide/Administration/admin-global-roles.png" alt="Context menu">
+<img src="/images/users-guide/Administration/admin-global-roles.png" alt="Context menu">
 
 The roles "admins" and "devices" have a special status:
 
@@ -57,7 +57,7 @@ In the **New global role** page you will see a list of permission types on the l
 
 The following screenshot shows the settings for the "admins" role.
 
-![Admin example](/guides/images/users-guide/Administration/admin-global-role-admin.png)
+![Admin example](/images/users-guide/Administration/admin-global-role-admin.png)
 
 **Permission levels**
 
@@ -113,7 +113,7 @@ You can assign global roles to users either directly in the user list, or by ope
 1. Select or clear the respective checkboxes.
 1. Click **Apply** to save your settings.
 
-![Apply global role](/guides/images/users-guide/Administration/admin-global-roles-apply-1.png)
+![Apply global role](/images/users-guide/Administration/admin-global-roles-apply-1.png)
 
 ##### To assign global roles from the user page
 
@@ -121,7 +121,7 @@ Click on the row of the respective user in the user list.
 In the user page, select or clear the checkboxes for the relevant global roles at the right.
 Click **Save** to save your settings.
 
-![Attach global role](/guides/images/users-guide/Administration/admin-global-roles-apply-2.png)
+![Attach global role](/images/users-guide/Administration/admin-global-roles-apply-2.png)
 
 ### <a name="inventory"></a>Inventory roles
 
@@ -129,7 +129,7 @@ Inventory roles contain permissions that you can assign to groups of devices. Fo
 
 To view the currently configured inventory roles, click **Roles** in the **Account **menu and switch to the **Inventory roles** tab.
 
-<img src="/guides/images/users-guide/Administration/admin-roles-inventory.png" alt="Context menu">
+<img src="/images/users-guide/Administration/admin-roles-inventory.png" alt="Context menu">
 
 In the **Inventory roles** tab you can manage user permissions for particular groups and/or its children. There are several default inventory roles defined, but you can define your own according to your needs. 
 
@@ -149,7 +149,7 @@ Click **Add Role** in the **Inventory roles** tab.
 
 At the top of the page you can edit the name of the inventory role. Click on the name, edit it and click the green checkmark to save your edits.
 
-![Role details](/guides/images/users-guide/Administration/admin-inventory-role-edit.png)
+![Role details](/images/users-guide/Administration/admin-inventory-role-edit.png)
 
 Permissions are grouped into the following categories:
 
@@ -163,7 +163,7 @@ Permissions are grouped into the following categories:
 |Device control|Permissions to remote control devices.
 |Full access|Complete access to the associated devices, mainly to simplify configuration.
 
-> **Info:** Service providers will see an additional permission "Support" in their management tenant. This permission lets users of the service provider give support to their customer's users, see [Supporting users in other tenants](/guides/users-guide/enterprise-edition#users-in-other-tenants).
+> **Info:** Service providers will see an additional permission "Support" in their management tenant. This permission lets users of the service provider give support to their customer's users, see [Supporting users in other tenants](/users-guide/enterprise-edition#users-in-other-tenants).
 
 Add a permission to the role by clicking the plus icon next to the desired category.
 
@@ -173,7 +173,7 @@ For example, assume that your device sends measurements related to device manage
 
 By default, the **Type** field contains an asterisk "*" selecting all types.
 
-> **Info:** For further information on possible types, check your device documentation, the Cumulocity [sensor library](/guides/reference/sensor-library) or the [device management library](/guides/reference/device-management). The type being used here is the so-called "fragment type", not the "type" property. You need to enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
+> **Info:** For further information on possible types, check your device documentation, the Cumulocity [sensor library](/reference/sensor-library) or the [device management library](/reference/device-management). The type being used here is the so-called "fragment type", not the "type" property. You need to enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
 
 In the **Permission** field, select a permission level from the dropdown list: 
 
@@ -181,15 +181,15 @@ In the **Permission** field, select a permission level from the dropdown list:
 * CHANGE - to modify objects (does not include READ permission)
 * ALL - to read AND modify objects
 
-<img src="/guides/images/users-guide/Administration/admin-inventory-roles-permission.png" alt="Role permissions">
+<img src="/images/users-guide/Administration/admin-inventory-roles-permission.png" alt="Role permissions">
 
 >**Important:** When you add a permission, you may see a small exclamation mark. The exclamation mark indicates that the permission that you have just added is not effective, because another, "higher" permission set for the user already includes the respective permission. Check if you have set, for example, "Full access" or if there is another permission in the same section with "*" as type and ALL as permission.
 
-<img src="/guides/images/users-guide/Administration/admin-inventory-role-warning.png" alt="warning message">
+<img src="/images/users-guide/Administration/admin-inventory-role-warning.png" alt="warning message">
 
-As another example, assume that you are using tracking devices. You want to allow your user to see all devices, but not to change anything. In addition, the user should be able to follow tracks of devices on a map. Tracks are recorded using an event with fragment type "c8y&#95;Position" (see [Sensor library](/guides/reference/sensor-library)). To do so, assign READ permission on inventory as well as on events with type "c8y&#95;Position" as shown in the image below.
+As another example, assume that you are using tracking devices. You want to allow your user to see all devices, but not to change anything. In addition, the user should be able to follow tracks of devices on a map. Tracks are recorded using an event with fragment type "c8y&#95;Position" (see [Sensor library](/reference/sensor-library)). To do so, assign READ permission on inventory as well as on events with type "c8y&#95;Position" as shown in the image below.
 
-<img src="/guides/images/users-guide/Administration/admin-inventory-role-example.png" alt="Permission example">
+<img src="/images/users-guide/Administration/admin-inventory-role-example.png" alt="Permission example">
 
 ### <a name="attach-inventory"></a>Assigning inventory roles to users
 
@@ -201,7 +201,7 @@ In the **Inventory roles** tab you will see a tree of device groups. To assign a
 
 > **Important**: If a user already has a global role containing inventory permissions, the user will be able to see or change all devices regardless of what inventory roles you set here.
 
-![Inventory roles](/guides/images/users-guide//Administration/admin-inventory-role-apply.png)
+![Inventory roles](/images/users-guide//Administration/admin-inventory-role-apply.png)
 
 Inventory roles are inherited from groups to all their direct and indirect subgroups, and to the devices in these groups. If you select, for example, a role with read permissions on alarms for a group of devices, the user will be able to see alarms of all devices in this group and all its subgroups.
 
@@ -209,7 +209,7 @@ If a user has inventory access to a group of devices, the user will also have th
 
 You can also copy inventory roles from another user. To copy roles, click **Copy inventory roles from another user**. In the upcoming window, select a user from the list and click **Copy**. At the top you can select if you want to merge the roles with the existing user roles (the default) or if you want to replace the existing user roles. Copying roles makes it easier to manage the permissions of many users as you can create a reference user and then copy the permissions from there.
 
-<img src="/guides/images/users-guide/Administration/admin-inventory-role-copy.png" alt="Copy roles">
+<img src="/images/users-guide/Administration/admin-inventory-role-copy.png" alt="Copy roles">
 
 
 ### Troubleshooting permissions
@@ -224,8 +224,8 @@ The **Application Access** tab shows a list of all available applications in you
 
 To assign applications to the user, simply select the respective applications and click **Save**. 
 
-For more information on application management, see [Administration > Managing applications](/guides/users-guide/administration#managing-applications).
+For more information on application management, see [Administration > Managing applications](/users-guide/administration#managing-applications).
 
-![Application access](/guides/images/users-guide/Administration/admin-application-access.png)
+![Application access](/images/users-guide/Administration/admin-application-access.png)
 
 > **Info:** If a user has global permission to read all applications, an information box will be shown.

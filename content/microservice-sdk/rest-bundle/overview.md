@@ -14,12 +14,12 @@ With this API description you will learn how to use Cumulocity's REST interfaces
 
 The description is closely linked to the Reference guide, which describes each interface in detail. Relevant chapters in the reference guide are in particular:
 
-- [REST implementation](/guides/reference/rest-implementation) is the reference for all general concepts.
-- [Device management library](/guides/reference/device-management) specifies the data model for device management.
-- [Sensor library](/guides/reference/sensor-library) specifies the data model for sensors and controls.
+- [REST implementation](/reference/rest-implementation) is the reference for all general concepts.
+- [Device management library](/reference/device-management) specifies the data model for device management.
+- [Sensor library](/reference/sensor-library) specifies the data model for sensors and controls.
 
 If you develop applications using Java or C#, check these relevant sections for even more convenient access to Cumulocity's functionality.
-For further information on REST interfaces in general and on integrating devices with REST, refer to the [REST section](/guides/device-sdk/rest) in the Device SDK guide.
+For further information on REST interfaces in general and on integrating devices with REST, refer to the [REST section](/device-sdk/rest) in the Device SDK guide.
 
 
 ### Using the REST interfaces
@@ -63,13 +63,13 @@ From this point, you can navigate further to the different returned objects. For
 $ curl -u <username>:<password> https://<yourTenant>.cumulocity.com/inventory/managedObjects
 ```
 
-You will notice that just a subset of the items in the inventory is actually returned, a so-called "page". More information on page handling can be found under [Query result paging](/guides/reference/rest-implementation#paging).
+You will notice that just a subset of the items in the inventory is actually returned, a so-called "page". More information on page handling can be found under [Query result paging](/reference/rest-implementation#paging).
 
 ### Using Postman
 
 Graphical REST clients such as [Postman](https://www.getpostman.com/) are a convenient way to explore REST interfaces and the Cumulocity database content.
 
-![Example REST client](/guides/images/rest/postman.png)
+![Example REST client](/images/rest/postman.png)
 
 Cumulocity provides numerous online API examples. If you want to make use of them, [download and install Postman](https://www.getpostman.com/). After starting Postman, you can choose to either create an account or click **Take me straight to the app**. Then click the button below and choose the variant of Postman that you have just installed. You may see a browser security prompt asking you if you actually want to run Postman (on Windows "Electron").
 
@@ -85,7 +85,7 @@ Note that the example contains placeholders, in this case a placeholder _{{url}}
 * Configure a key _auth_ with the value of the Authorization header for the REST requests.
 * Click **Add**, then close the dialog. Now select your newly created environment from the drop-down box on the top right, that initially reads "No environment".
 
-<img src="/guides/images/rest/postmanenvironment.png" alt="Postman environment setup" style="max-width: 50%">
+<img src="/images/rest/postmanenvironment.png" alt="Postman environment setup" style="max-width: 50%">
 
 A simple way to determine the correct value for the "auth" key is using an online Base64 encode/decode tool. For example, assume that your tenant ID is "tenant", your username is "me" and your password is "secret". Go to [ostermiller.org/calc/encode.html](http://ostermiller.org/calc/encode.html), type `tenant/me:secret` into the text area, then click **Encode** in the row "Base 64". The resulting text is "dGVuYW50L21lOnNlY3JldA==". Use "Basic dGVuYW50L21lOnNlY3JldA==" as value for the "auth" key.
 

@@ -12,7 +12,7 @@ Dashboard reports are global dashboard pages, regardless of the asset hierarchy.
 
 To see all existing reports, expand the **Reports** menu in the navigator.
 
-![Reports menu](/guides/images/users-guide/cockpit/cockpit-reports-navigator.png)
+![Reports menu](/images/users-guide/cockpit/cockpit-reports-navigator.png)
 
 Click a report in the navigator to open it.
 
@@ -51,7 +51,7 @@ To show all exports, click **Export** in the **Reports** menu.
 
 In the **Export** page you will find a list displaying all exports with their names and time range.
 
-![Exports](/guides/images/users-guide/cockpit/cockpit-exports.png)
+![Exports](/images/users-guide/cockpit/cockpit-exports.png)
 
 
 #### <a name="add-export"></a>To add an export
@@ -59,13 +59,13 @@ In the **Export** page you will find a list displaying all exports with their na
 1. Click **Add export** in the top menu bar.
 2. Enter a name for the export and select the file type (CSV or XLSX) for the report output. 
 
-![Create export](/guides/images/users-guide/cockpit/cockpit-export-create.png)
+![Create export](/images/users-guide/cockpit/cockpit-export-create.png)
 
 **Filters**
 
 In the **Filter** section, you can select filters to request object- or time-specific data.
 
-![Export filters](/guides/images/users-guide/cockpit/cockpit-export-filter.png)
+![Export filters](/images/users-guide/cockpit/cockpit-export-filter.png)
 
 To filter for a particular object, enter a name or property value into the search field and click the search icon. All matching devices or groups will be displayed below the **Value** field. Click a device to select it (highlighted in green). 
 
@@ -84,7 +84,7 @@ Apart from object- and time-specific filtering you may filter data for specific 
 
 Use the toggle to enable/disable a field.
 
-![Filter fields](/guides/images/users-guide/cockpit/cockpit-export-fields.png)
+![Filter fields](/images/users-guide/cockpit/cockpit-export-fields.png)
 
 >**Info**: The time range filter only applies to alarms, events and measurements but not to managed objects. If selected, managed objects will appear in the export, regardless of any specified time range. 
 
@@ -96,7 +96,7 @@ Click **Add** to add empty properties. To enter a label or path, click **Column*
 
 Click **Add predefined**, to add predefined properties. Simply select the desired properties from the list and click **Select**. Use the search field at the top to search for a specific property.
 
-![Select properties](/guides/images/users-guide/cockpit/cockpit-export-properties.png)
+![Select properties](/images/users-guide/cockpit/cockpit-export-properties.png)
 
 If you have at least one field that is not originating from the "Add predefined" list but defined as a custom property, then you need to set up at least one property for the custom values to appear in the export. 
 
@@ -111,11 +111,11 @@ In case of measurements enabled, you can also choose **Add from data point**. Fo
 
 To schedule the export to a CSV or XLSX file to any point in time, click the menu icon at the end of the row and then click **Schedule export**. 
 
-![Export context menu](/guides/images/users-guide/cockpit/cockpit-export-menu.png)
+![Export context menu](/images/users-guide/cockpit/cockpit-export-menu.png)
 
 In the resulting dialog box you can customize the Smart Rule "On timer send export via email" according to your needs.
 
-![Schedule export](/guides/images/users-guide/cockpit/cockpit-export-on-timer-rule.png)
+![Schedule export](/images/users-guide/cockpit/cockpit-export-on-timer-rule.png)
 
 **1 - Rule name**
 
@@ -125,11 +125,15 @@ The rule name is pre-filled, providing the name of the export, but may be modifi
 
 Define the frequency for sending the export, i.e. every hour, day, week, month or year. Depending on the frequency selected, provide additional timing information. For example, if you have selected "every month", provide the day of month, hour and minute.
 
+>**Info**: Schedule intervals need to be provided in Coordinated Universal Time (UTC).
+
 **3 - Send email:**
 
 Complete the email information. 
 
-In the **Send to** field, provide the email address of the receiver. This field is mandatory. Optionally, you can provide email addresses for sending CC or BCC and add the email address of the sender for reply.
+In the **Send to** field, provide the email address of the recipient. This field is mandatory. Optionally, you can provide email addresses for recipients of copies (CC) or blind copies (BCC). Use comma as separator to enter multiple recipients.
+
+Optionally, add the email address of the sender for reply. 
 
 Specify the subject of the email. This field is pre-filled, but may be modified.
 
@@ -139,12 +143,12 @@ Click **Create** to create the customized Smart Rule "On timer send export via e
 
 The Smart Rule will be added to the export details.
 
-![Smart Rule](/guides/images/users-guide/cockpit/cockpit-export-schedule.png)
+![Smart Rule](/images/users-guide/cockpit/cockpit-export-schedule.png)
 
 
 #### To export data
 
-To export data to a CSV or XLSX file, select the checkbox in front of the export in the list and at the left of the top menu bar click **Export**.
+To export data to a CSV or XLSX file, select the checkbox in front of the respective row in the list and at the left of the top menu bar click **Export**.
 
 You will receive an e-mail containing links to each export file.
 
@@ -168,6 +172,6 @@ For details on the fields see [To add an export](#add-export).
 2. Modify at least the name.
 3. Click **Save & close** to save the export and return to the export list.
 
-#### To remove an export
+#### To delete an export
 
-Click the menu icon at the end of the row and then click **Remove**.
+Click the menu icon at the end of the row and then click **Delete**.

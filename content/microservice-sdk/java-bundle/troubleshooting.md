@@ -8,7 +8,7 @@ Some common problems and their solutions have been identified and documented bel
 
 ##### SSL or certificate errors
 
-You can use both HTTP and HTTPS from the Java client libraries. To use HTTPS, you may need to import the Cumulocity production certificate into your Java Runtime Environment. [Download](/guides/cumulocity.com.cert "cumulocity.com certificate") the certificate and import it using the following command:
+You can use both HTTP and HTTPS from the Java client libraries. To use HTTPS, you may need to import the Cumulocity production certificate into your Java Runtime Environment. [Download](/cumulocity.com.cert "cumulocity.com certificate") the certificate and import it using the following command:
 
 ```shell
 $ $JAVA_HOME/bin/keytool -import -alias cumulocity -file cumulocity.com.crt -storepass changeit
@@ -51,9 +51,9 @@ Check if you are using the correct target platform. Go to the **Target Platform*
 
 ##### The microservice application does not compile. I get "Access Restriction" messages
 
-This error may be caused because of a missing package import. Navigate to the **Dependencies** tab of the project manifest file and check if the package of the type that contains the method giving the access restrictionÊis present in the Import-Package section.
+This error may be caused because of a missing package import. Navigate to the **Dependencies** tab of the project manifest file and check if the package of the type that contains the method giving the access restrictionï¿½is present in the Import-Package section.
 
-You can find the packageÊby opening the declaration of the method (right-click and select **Open Declaration** from the context menu).
+You can find the packageï¿½by opening the declaration of the method (right-click and select **Open Declaration** from the context menu).
 
 ##### When starting an application I get "address already in use" messages
 

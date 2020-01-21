@@ -8,4 +8,4 @@ aliases:
 ---
 
 
->**Info**: This section has formerly been part of the [Reference guide](/guides/reference/) but moved here as it only applies to the deprecated Esper CEP engine.
+>**Info**: This section has formerly been part of the [Reference guide](/reference/) but moved here as it only applies to the deprecated Esper CEP engine.

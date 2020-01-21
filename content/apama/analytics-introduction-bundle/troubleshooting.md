@@ -1,5 +1,5 @@
 ---
-weight: 60
+weight: 70
 title: Troubleshooting
 layout: redirect
 ---
@@ -10,5 +10,5 @@ If there has been a recent large burst of updates (such as new measurements, esp
 
 When the alarm is raised, older updates will be discarded. This may affect the behavior of Smart Rules, Analytics Builder models or EPL applications.
 
-Please review the Apama microservice log file (see [Managing applications](http://localhost:1313/guides/users-guide/administration/#managing-applications) in the *User guide* for more information on log files) and contact support if needed.
+Please review the Apama microservice log file (see [Managing applications](http://localhost:1313/users-guide/administration/#managing-applications) in the *User guide* for more information on log files) and contact support if needed.
 

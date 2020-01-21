@@ -10,7 +10,7 @@ A device marked in the inventory with a *c8y\_IsDevice* fragment supports device
 
     "c8y_IsDevice": {}
 
-![Device in Device Management](/guides/images/reference-guide/devicemanagement.png)
+![Device in Device Management](/images/reference-guide/devicemanagement.png)
 
 #### c8y\_SupportedOperations
 
@@ -19,4 +19,4 @@ A device marked in the inventory with a *c8y\_IsDevice* fragment supports device
 
     "c8y_SupportedOperations": [ "c8y_Restart" ]
 
-![Device supports restart](/guides/images/reference-guide/restartsupported.png)
+![Device supports restart](/images/reference-guide/restartsupported.png)

@@ -76,7 +76,7 @@ When using Java-based microservices this variable is automatically read and appl
 
 #### Proxy variables
 
-Proxy variables are used to set a proxy URL for different protocols. For the microservices written in Java, setting each variable will result in passing the corresponding parameter into the JVM runtime (for detailed information see the [Java Networking and Proxies](https://docs.oracle.com/javase/8/docs/technotes/guides/net/proxies.html) webpage).
+Proxy variables are used to set a proxy URL for different protocols. For the microservices written in Java, setting each variable will result in passing the corresponding parameter into the JVM runtime (for detailed information see the [Java Networking and Proxies](https://docs.oracle.com/javase/8/docs/technotes/net/proxies.html) webpage).
 
 Proxy variables are passed into the microservice environment during installation. The microservice installer passes the variables into the environment according to the following settings:
 
@@ -173,3 +173,5 @@ SOCKS_HTTP_HOST=10.11.12.13
 To execute requests against the Cumulocity platform running a microservice, you have to send requests to the host specified by the `C8Y_BASEURL` variable.
 
 A microservice does not have direct access to other microservices running on the platform. Instead, a microservice must use the platform as a proxy. The endpoint used to access other applications is <kbd>&lt;C8Y_BASEURL>/service/&lt;OTHER_APPLICATION_NAME>/</kbd>.
+
+> **Important**: `C8Y_BASEURL` allows access only to microservices' REST endpoints. Hence, a microservice cannot retrieve information from UI applications.

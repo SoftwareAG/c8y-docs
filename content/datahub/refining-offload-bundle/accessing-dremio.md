@@ -17,7 +17,7 @@ To access Dremio, navigate to the home page. Under **Quick links** click on the 
 
 ### How to log into Dremio
 
-On the **Login** screen, enter the same credentials as for your DataHub Console. Click **Login** to enter Dremio.
+On the **Login** screen, enter your Dremio account credentials. Click **Login** to enter Dremio.
 
 When you log in successfully, you will be taken to the home page of Dremio. 
 

@@ -226,7 +226,7 @@ Monit can provide a quick status report of all configured services and processes
 
 There might be cases where Monit has stopped monitoring some resources because of timeout on constant failures or dependency issues. 
 
-<img src="/guides/images/edge/edge-monitoring-02.png" name="Status report" style="width:75%;"/> 
+<img src="/images/edge/edge-monitoring-02.png" name="Status report" style="width:75%;"/> 
 
 A specific component, for example, `apama-ctrl_proc`, can be restarted using the following command: 
 

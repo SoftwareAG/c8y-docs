@@ -24,7 +24,7 @@ Available ports:
 
 The Cumulocity MQTT implementation uses SmartREST as a payload. SmartREST is a CSV-like message protocol that uses templates on the server side to create data in Cumulocity.
 
-> **Info:** For all MQTT connections to the platform, the maximum accepted payload size is 16384 bytes.
+> **Info:** For all MQTT connections to the platform, the maximum accepted payload size is 16384 bytes, which includes both message header and body. The header size varies, but its minimum is 2 bytes.
 
 #### SmartREST basics
 

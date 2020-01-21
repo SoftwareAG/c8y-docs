@@ -4,7 +4,7 @@ title: Cumulocity IoT DataHub at a glance
 layout: redirect
 ---
 
-The Cumulocity IoT platform allows you to manage and monitor a variety of devices. The data emitted from these devices is stored in Cumulocity's Operational Store, with older data potentially being removed (based on data retention settings). In order to run an ad-hoc query against recent device data, Cumulocity offers a [REST API](/guides/reference/rest-implementation/).
+The Cumulocity IoT platform allows you to manage and monitor a variety of devices. The data emitted by these devices is stored in Cumulocity's Operational Store, with older data potentially being removed (based on data retention settings). In order to run an ad-hoc query against recent device data, Cumulocity offers a [REST API](/reference/rest-implementation/).
 
 In addition to this simple ad-hoc querying, various use cases require more sophisticated analytical querying over the device data, potentially covering long periods of time. Cumulocity IoT DataHub is the tool designed for this purpose. 
 
@@ -14,19 +14,19 @@ With Cumulocity IoT DataHub, you can connect existing tools and applications to 
 
 * Machine learning applications (mainly written in Python using ODBC)
 
-* Arbitrary custom applications (using JDBC for Java applications, ODBC for .NET, Python, node.js, and others, or REST for [Cumulocity web applications](/guides/concepts/applications/#web-applications)) 
+* Arbitrary custom applications (using JDBC for Java applications, ODBC for .NET, Python, node.js, and others, or REST for [Cumulocity web applications](/concepts/applications/#web-applications)) 
 
 The main features of the Cumulocity IoT DataHub application are:
 
 * It allows you to use scalable and inexpensive storage by providing an easy-to-use data pipeline that extracts data from Cumulocity's Operational Store to a **data lake** for long-term archival and efficient analytical querying.
-* It offers an **SQL-based Query Interface** for querying the data lake and enabling customers to connect arbitrary applications that support ODBC, JDBC, or REST protocols.
+* It offers an **SQL-based Query Interface** for querying the data lake and enables you to connect arbitrary applications that support ODBC, JDBC, or REST protocols.
 
-The following diagram illustrates the basic workflow.
+The following diagram illustrates the high-level concepts.
 
-<img src="/guides/images/datahub-guide/datahub-highlevel-concept.png" alt="DataHub high level concept.png"  style="max-width: 100%">
+<img src="/images/datahub-guide/datahub-highlevel-concept.png" alt="DataHub high level concept.png"  style="max-width: 100%">
 
 
-The central component of Cumulocity IoT DataHub is Dremio, a distributed SQL engine that is used for the two purposes mentioned above. The user-facing part offers an SQL API which can be accessed via JDBC, ODBC, and REST. The "machine-room" part is an Extract-Transform-Load (ETL) pipeline that:
+The central component of Cumulocity IoT DataHub is Dremio, a distributed SQL engine that is used for the two purposes mentioned above. It offers an SQL API which can be accessed via JDBC, ODBC, and REST. Dremio enables the creation of Extract-Transform-Load (ETL) pipelines that:
 
 * Periodically extracts data from Cumulocity's Operational Store.
 * Transforms the data into a relational format.
@@ -54,11 +54,13 @@ Offloading refers to moving data from Cumulocity's Operational Store to a data l
 
 The starting point is one of the base Cumulocity collections, such as the measurements collection, that is to be offloaded into the data lake. Once an offloading pipeline for this collection has been configured and started, a couple of actions take place.
 
-When an offloading job runs (i.e., the pipeline is active), the contents of the collection are offloaded. The document-based entities of Cumulocity's Operational Store are transformed into a relational format by flattening the entries and mapping them to relational rows.
+> **Info:** DataHub only supports offloading for the base Cumulocity collections, which are alarms, events, inventory, measurements. Offloading other collections is currently not supported.
 
-> **Info:** The mapping automatically extracts a "standard" set of attributes from each entity, such as "time", "source", "id", and "type". It transforms them into columns in the data lake table. Furthermore, it automatically transforms the contents of measurement fragments into columns of the table. Here, the fragment name becomes part of the column name; the fragment's value is stored in a column suffixed with "_value" (resulting in `<fragment name>_value` as the column name); the unit is stored in a column suffixed "_unit". Non-standard fields can also be processed to a limited extent as described in [Additional settings](/guides/datahub/configuring-offloaded#basic-functionality-additional-settings).
+When an offloading job runs, the contents of the collection are offloaded. The document-based entities of Cumulocity's Operational Store are transformed into a relational format by flattening the entries and mapping them to relational rows.
 
-As a result of these extraction and transformation steps, the flattened data is stored in Parquet files in the data lake. Apache Parquet is a column-based storage format which allows for compression and efficient data fetching. For performance reasons, these Parquet files are managed in a folder structure based on a temporal hierarchy. The reason for the temporal hierarchy is that most analytical queries have a temporal background, e.g. compute the average oil pressure of last month. In order to ensure a compact layout of the Parquet files, DataHub Console also regularly runs a compaction algorithm over these files behind the scenes.
+> **Info:** The mapping automatically extracts a "standard" set of attributes from each entity, such as "time", "source", "id", and "type". It transforms them into columns in the data lake table. Furthermore, it automatically transforms the contents of measurement fragments into columns of the table. Here, the fragment name becomes part of the column name; the fragment's value is stored in a column suffixed with "_value" (resulting in `<fragment name>_value` as the column name); the unit is stored in a column suffixed "_unit". Non-standard fields can also be processed to a limited extent as described in [Additional settings](/datahub/configuring-offloaded#basic-functionality-additional-settings).
+
+As a result of these extraction and transformation steps, the flattened data is stored in Parquet files in the data lake. Apache Parquet is a column-based storage format which allows for compression and efficient data fetching. For performance reasons, these Parquet files are managed in a folder structure based on a temporal hierarchy. The reason for the temporal hierarchy is that most analytical queries have a temporal background, e.g. compute the average oil pressure of last month. In order to ensure a compact layout of the Parquet files, DataHub Console also regularly runs a compaction algorithm over these files behind the scenes. When data is stored in a time-based hierarchical manner in the data lake, DataHub can efficiently prune partitions. In addition, queries can explicitly leverage the structure to increase query performance.
 
 > **Important:** You must not modify the data lake contents as this will corrupt your offloading pipelines and neither data consistency nor completeness can be guaranteed any more.
 

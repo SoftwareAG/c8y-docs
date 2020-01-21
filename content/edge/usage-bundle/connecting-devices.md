@@ -4,9 +4,9 @@ title: Connecting devices
 layout: redirect
 ---
 
-Cumulocity uses REST and MQTT as protocols for external communication. Both protocols may be used to interface devices with Cumulocity. For details refer to   the sections on [Device integration using REST](/guides/device-sdk/rest) and [Device integration using MQTT](/guides/device-sdk/mqtt) in the Device SDK guide.
+Cumulocity uses REST and MQTT as protocols for external communication. Both protocols may be used to interface devices with Cumulocity. For details refer to   the sections on [Device integration using REST](/device-sdk/rest) and [Device integration using MQTT](/device-sdk/mqtt) in the Device SDK guide.
 
-Additionally, Cumulocity IoT Edge offers Cloud Fieldbus functionality to collect data from fieldbus devices and remotely manage them. To do so, various protocols are provided, e.g. Modbus and OPC/UA. For details on how to integrate devices using Modbus and OPC/UA, refer to Optional Services > [Cloud Fieldbus](/guides/users-guide/optional-services#cloud-fieldbus) in the User guide.
+Additionally, Cumulocity IoT Edge offers Cloud Fieldbus functionality to collect data from fieldbus devices and remotely manage them. To do so, various protocols are provided, e.g. Modbus and OPC/UA. For details on how to integrate devices using Modbus and OPC/UA, refer to Optional Services > [Cloud Fieldbus](/users-guide/optional-services#cloud-fieldbus) in the User guide.
 
 >**Info**: Currently, only the Modbus and OPC/UA protocols are supported.
    
@@ -37,11 +37,11 @@ $ systemctl start cumulocity-agent
 The Modbus agent is pre-registered in the post-installation phase.
 In the Device Management application, click **All devices** in the navigator and find the Modbus agent (called "linux-agent") in the device list.
 
-<img src="/guides/images/edge/edge-modbus-device.png" name="Device list" style="width:100%;"/> 
+<img src="/images/edge/edge-modbus-device.png" name="Device list" style="width:100%;"/> 
 
 #### How to connect Modbus devices
 
-For further information on connecting and managing Modbus devices, refer to Optional services > [Cloud Fieldbus](/guides/users-guide/optional-services#cloud-fieldbus) in the User guide.
+For further information on connecting and managing Modbus devices, refer to Optional services > [Cloud Fieldbus](/users-guide/optional-services#cloud-fieldbus) in the User guide.
 
 ### Example: Connecting an OPCUA device    
    
@@ -57,7 +57,7 @@ Check if the OPC/UA agent is running in Cumulocity IoT Edge (running on port  66
 $ sudo systemctl status opcua-agent-server
 ```
 
-<img src="/guides/images/edge/edge-device-check-agent.png" name="Check agent" style="width:100%;"/>
+<img src="/images/edge/edge-device-check-agent.png" name="Check agent" style="width:100%;"/>
 
 If the agent is not running, start it with the following command:
 
@@ -72,13 +72,13 @@ Check if the platform.url in */etc/opcua/opcua-agent-gateway.properties* is poin
 
 Next, you need to register a device in the Device Management application with the same device ID as the gateway.identifier in */etc/opcua/opcua-agent-gateway.properties*, e.g. “opcua”.
 
-<img src="/guides/images/edge/edge-device-registration-example.png" name="Register device"/> 
+<img src="/images/edge/edge-device-registration-example.png" name="Register device"/> 
 
-Follow the description in Device Management > [Connecting devices](/guides/users-guide/device-management#connecting-devices) in the User guide to register a device.
+Follow the description in Device Management > [Connecting devices](/users-guide/device-management#connecting-devices) in the User guide to register a device.
 
 In the Device Management application, click **All devices** in the navigator and find the OPCUA device in the device list.
 
-For further information on managing and configuring OPCUA devices, refer to Optional services > [Cloud Fieldbus](/guides/users-guide/optional-services#cloud-fieldbus) in the User guide.
+For further information on managing and configuring OPCUA devices, refer to Optional services > [Cloud Fieldbus](/users-guide/optional-services#cloud-fieldbus) in the User guide.
 
 
 

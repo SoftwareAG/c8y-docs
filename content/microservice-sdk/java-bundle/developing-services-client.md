@@ -31,7 +31,7 @@ Using this handle, you can send and retrieve the SMS messages from Java by calli
 ### Assigning required roles
 
 To use the SMS messaging API, the user must have the required roles SMS_ADMIN and SMS_READ for sending and receiving messages respectively.
-Refer to [Administration > Managing permissions](/guides/users-guide/administration#managing-permissions) in the User guide.
+Refer to [Administration > Managing permissions](/users-guide/administration#managing-permissions) in the User guide.
 
 ### Choosing a SMS provider
 
@@ -39,13 +39,13 @@ Refer to [Administration > Managing permissions](/guides/users-guide/administrat
 
 OpenIT credentials can be assigned using the Administration application. Click **OpenIT credentials** in the navigator and save these credentials for your tenant.
 
-![OpenIT Credentials](/guides/images/java/java-client-services/openit_credentials.png)
+![OpenIT Credentials](/images/java/java-client-services/openit_credentials.png)
 
 Note that receiving messages and receiving specific messages are not supported for this provider.
 
 #### Jasper Control Center
 
-Refer to [Optional services > Connectivity](/guides/users-guide/optional-services#connectivity) in the User guide for information about how to set these credentials.
+Refer to [Optional services > Connectivity](/users-guide/optional-services#connectivity) in the User guide for information about how to set these credentials.
 
 #### Ericsson
 

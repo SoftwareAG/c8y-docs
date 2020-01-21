@@ -20,7 +20,7 @@ The IMPACT agent in Cumulocity registers itself at the Nokia IMPACT platform. Si
 
 The following illustration provides an overview on the Cumulocity IMPACT integration.
 
-<img src="/guides/images/users-guide/DeviceManagement/ImpactIntegration.png" alt="IMPACT integration" style="max-width: 100%">
+<img src="/images/users-guide/DeviceManagement/ImpactIntegration.png" alt="IMPACT integration" style="max-width: 100%">
 
 >**Info**: Your subscription needs to include the IMPACT feature. If you do not see the functionality described in this document, please contact the Cumulocity support.
 
@@ -69,9 +69,9 @@ IMPACT devices do not need to be registered again in Cumulocity. Cumulocity’s 
 
 To process data from IMPACT devices, Cumulocity uses device protocols. Through device protocols you can observe your resources and perform other actions like creating alarms.
 
-Device protocols are accessible through the **Devices types** menu in the Device Management application. For details on the general usage see [Device protocols](/guides/users-guide/device-management#managing-device-types).
+Device protocols are accessible through the **Devices types** menu in the Device Management application. For details on the general usage see [Device protocols](/users-guide/device-management#managing-device-types).
 
-![Impact protocols](/guides/images/users-guide/impact/devmgmt-impact-protocols.png)
+![Impact protocols](/images/users-guide/impact/devmgmt-impact-protocols.png)
 
 #### How to add an IMPACT device protocol
 
@@ -80,14 +80,14 @@ To add a new IMPACT device protocol follow these steps:
 1. In the Device Management application, navigate to the **Device protocol** page, accessible from the **Device types** menu in the navigator.
 2. Click **Add device protocol** in the top menu bar. 
 3. In the upcoming window select **IMPACT** as device protocol type.<br><br>
-![New Impact protocol](/guides/images/users-guide/sigfox/sigfox-newprotocol.png)
+![New Impact protocol](/images/users-guide/sigfox/sigfox-newprotocol.png)
 4. In the next dialog, enter a unique ID, a name and an optional description for the device protocol.<br><br>
-![New Impact protocol2](/guides/images/users-guide/impact/impact-newprotocol-idname.png)
+![New Impact protocol2](/images/users-guide/impact/impact-newprotocol-idname.png)
 5. Click **Create** to create the new device protocol.
 
 The device protocol will open in a new page.
 
-![Impact temperature](/guides/images/users-guide/impact/impact-temperature.png)
+![Impact temperature](/images/users-guide/impact/impact-temperature.png)
 
 In the **Device protocol** page you will see the description at the top left and the ID, the creation date and date of the last update at the top right.
 
@@ -95,7 +95,7 @@ Below a list of resources configured for the device will be listed (which is emp
 
 Example: Resource list for the device protocol "Temperature Measurement":
 
-![Impact resources](/guides/images/users-guide/impact/impact-resources.png)
+![Impact resources](/images/users-guide/impact/impact-resources.png)
 
 #### How to add a resource to a device
 
@@ -156,7 +156,7 @@ For each resource you may specify the following parameters:
 
 Optionally, you may turn on several functionalities for the resource:
 
-![Impact functionalities](/guides/images/users-guide/impact/impact-functionalities.png)
+![Impact functionalities](/images/users-guide/impact/impact-functionalities.png)
 
 **Send measurements** 
 
@@ -199,4 +199,4 @@ Finally, click **Save** to create the resource. The resource will be added to th
 
 In the resources list you can see if functionalities have been turned on for a resource. Active functionalities are indicated by the related icons. In the example below, **Send measurements** and **Auto observe** are turned on.
 
-![Impact sensor value](/guides/images/users-guide/impact/impact-sensor-value.png)
+![Impact sensor value](/images/users-guide/impact/impact-sensor-value.png)

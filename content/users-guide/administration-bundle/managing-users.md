@@ -14,31 +14,42 @@ The user management feature allows you to manage the users within your tenant. W
 
 > **Info:** The user needs to have a role with the user management permission ADMIN or CREATE to be able to do so.
 
->**Info**: If your tenant is configured for using SSO (Single Sign-On) in SAG Cloud, new users should be created under **My Cloud**, accessible through the application switcher in the upper right corner, so that they are able to use the SSO feature. For users created in **My Cloud**, password reset in Cumulocity is disabled.
+If your tenant is configured for using single sign-on (SSO) in SAG Cloud, new users should be created under **My Cloud**, accessible through the application switcher in the upper right corner, so that they are able to use the single sign-on feature. 
+
+For users created via an external authorization server, updating the following settings in Cumulocity will have no effect (will be reset on the next user re-login):
+
+* user info (login alias, email, first name, last name, telephone)
+* global roles → configurable via SSO access mapping
+* application access → configurable via SSO access mapping
+
+Moreover, password reset in Cumulocity is disabled for users created through an external authentication server.
 
 
 ### Viewing users
 
 To view all users in your tenant, click **Users** in the **Account** menu in the navigator.
 
-![Expanded view](/guides/images/users-guide/Administration/admin-users-list.png)
+![Expanded view](/images/users-guide/Administration/admin-users-list.png)
 
 A user list will be displayed, providing the following information for each user:
 
-* The user name that is used to access the tenant
-* The name and email of the user, if set
-* The global roles assigned to the user
-* The [strength](/guides/users-guide/overview#login) of the password set for the user
+* The user name that is used to access the tenant.
+* The name and email of the user, if set.
+* The global roles assigned to the user.
+* The [strength](/users-guide/overview#login) of the password set for the user.
 
-To filter the list, you can use the search field at the left of the top menu bar. For details on the search functionality, refer to [Searching](/guides/users-guide/overview##searching) in the *Introduction*.
+To filter the list, you can use the search field at the left of the top menu bar. For details on the search functionality, refer to [Searching](/users-guide/overview##searching) in the *Introduction*.
 
 Moreover you can filter by global roles. Select the desired roles from the dropdown list and click **Apply** to limit the users shown in the list to users with the selected roles.
 
-Initially, the **User** page only shows the top-level users. To see all users in your account at once, click **Expand all** at the right of the top bar. This will expand all top-level users, showing their sub-users. Click **Collapse all** to just show the top-level users again. For details on user hierarchies, refer to [Managing user hierarchies](/guides/users-guide/enterprise-edition#user-hierarchies).
+Initially, the **User** page only shows the top-level users. To see all users in your account at once, click **Expand all** at the right of the top bar. This will expand all top-level users, showing their sub-users. Click **Collapse all** to just show the top-level users again. For details on user hierarchies, refer to [Managing user hierarchies](/users-guide/enterprise-edition#user-hierarchies).
 
 ### <a name="creating-users"></a>To add a user
 
 1. Click **Add user** at the right of the top menu bar.  
+
+	>**Info**: If single sign-on is enabled for your tenant, a message will show up which reminds you that you are about to create a local user which will not be able to login via single sign-on. Create new users in **My Cloud** instead, accessible through the application switcher in the upper right corner, to enable them using the single sign-on feature.
+	
 2. At the left of the **New user** window, provide the following information to identify the user:
 
 	|Field|Description|
@@ -50,15 +61,15 @@ Initially, the **User** page only shows the top-level users. To see all users in
 	|First name|First name of the user. When the user is logged in, this name appears at the right of the top bar on the **User** button. 
 	|Last name|Last name of the user.
 	|Telephone|A valid phone number. The phone number is required if the user is configured to use two-factor authentication.
-	|Owner|Another user that manages ("owns") the new user. Select a user from the dropdown list and click **Done** to confirm. Refer to [Managing user hierarchies](/guides/users-guide/enterprise-edition#user-hierarchies) for details on user hierarchies.
-	|Delegated by|Can be activated to delegate user hierarchies and permissions to the user. Refer to [Managing user hierarchies](/guides/users-guide/enterprise-edition#user-hierarchies) for details on delegation.
+	|Owner|Another user that manages ("owns") the new user. Select a user from the dropdown list and click **Done** to confirm. Refer to [Managing user hierarchies](/users-guide/enterprise-edition#user-hierarchies) for details on user hierarchies.
+	|Delegated by|Can be activated to delegate user hierarchies and permissions to the user. Refer to [Managing user hierarchies](/users-guide/enterprise-edition#user-hierarchies) for details on delegation.
 
 3. Select the login options for the user.
 
-	* If you select **User must reset the password on next login**, you need to provide a password which the user needs to reset on the next login. <br>Enter a password and confirm it. While entering the password, the strength of the password will be shown. See [Logging into the Cumulocity platform](/guides/users-guide/overview/#login) for further information on password strength.  
+	* If you select **User must reset the password on next login**, you need to provide a password which the user needs to reset on the next login. <br>Enter a password and confirm it. While entering the password, the strength of the password will be shown. See [Logging into the Cumulocity platform](/users-guide/overview/#login) for further information on password strength.  
 	* If you select **Send password reset link as email**, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above.
 
-4. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing Permissions](/guides/users-guide/administration#managing-permissions).
+4. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing Permissions](/users-guide/administration#managing-permissions).
 5. Click **Save** to save your settings.
 
 The new user will be added to the user list.
@@ -91,7 +102,7 @@ Click the menu icon at the right of the respective row and then click **Delegate
 
 Click **Undelegate** to remove a delegation. 
 
-Refer to [Managing User Hierarchies](/guides/users-guide/enterprise-edition#user-hierarchies) for details on delegation.
+Refer to [Managing User Hierarchies](/users-guide/enterprise-edition#user-hierarchies) for details on delegation.
 
 > **Info:** You need a role with user management permission to perform this option.
 

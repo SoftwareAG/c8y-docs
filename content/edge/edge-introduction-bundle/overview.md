@@ -25,4 +25,4 @@ Features of Cumulocity IoT Edge include:
 * Easy installation, upgrades and backup/restore
 * Full online support and documentation
 
-<img src="/guides/images/edge/cumulocity-edge-overview.png" name="Cumulocity Edge overview" style="width:75%;"/>
+<img src="/images/edge/cumulocity-edge-overview.png" name="Cumulocity Edge overview" style="width:75%;"/>

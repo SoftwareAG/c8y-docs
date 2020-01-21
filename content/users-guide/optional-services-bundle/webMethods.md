@@ -1,27 +1,38 @@
 ---
 weight: 90
 layout: redirect
-title: webMethods Integration Cloud
+title: webMethods.io Integration
 ---
 
-To connect your Cumulocity IoT solution to external applications, use webMethods.io Integration. 
+webMethods.io Integration is Software AG's cloud based integration solution. It enables you to automate tasks by connecting cloud applications and services (such as Marketo, Salesforce, Evernote, and Gmail) without writing any code.
 
-More information on the webMethods Integration Cloud is available at [https://www.softwareag.cloud/site/product/webmethods-integration.html](https://www.softwareag.cloud/site/product/webmethods-integration.html#/).
+The complete webMethods.io Integration documentation is available at [https://docs.webmethods.io/](https://docs.webmethods.io/).
 
->**Info**: Support for the Cumulocity [Zapier integration](/guides/saas-integration) is discontinued and no new subscriptions are possible. Functionality for existing customers is not affected.
+### Getting started
 
+>**Info**: If your tenant has been created outside of SAG Cloud you will not benefit from the user experience described below. You can still use webMethods.io to integrate Cumulocity with other applications, but you cannot use the app switcher and single sign-on login.
 
-### Creating new integrations
+To subscribe to webMethods.io Integration, perform the following steps:
 
-To create a new integration, perform the following steps:
+1. Log into the Cumulocity IoT platform as part of **Software AG Cloud**. 
 
-1. Log into your Cumulocity tenant as part of Software AG Cloud. 
-2. If you are not subscribed to webMethods.io Integration, subscribe to it as follows:
-	* 	Open the application switcher and select **MyCloud**.
-	* 	Under **Other Software AG Cloud products**, click **Start trial** for webMethods.io Integration.
-3. In the application switcher, select **webMethods.io Integration**.
-1. Create an new integration using the predefined Cumulocity trigger. You must create a Cumulocity local user and use it as account in the trigger.
- 
+2. In the application switcher, select **webMethods.io Integration**.
 
-**Info**: Both products (webMethods.io Integration and Cumulocity IoT) are integrated into SAG Cloud. Therefore you can easily switch from Cumulocity IoT to webMethods.io and vice versa using the application switcher.  
- 
+![webMethods.io App Switcher Integration](/images/users-guide/webMethods.io/wmio-appswitcher-integration.png)
+
+>**Info**: If the icon is unavailable you might not be subscribed to **webMethods.io Integration**. Subscribe to it by opening the application switcher and clicking **MyCloud**. This will take you to the **Software AG Cloud** portal where you can subscribe for a free trial.
+<br><br>![webMethods.io App Switcher My Cloud](/images/users-guide/webMethods.io/wmio-appswitcher-mycloud.png)
+
+### Examples
+
+Integrations in webmethods.io are called "workflows". A workflow is a connection between two or more web apps or services. It’s like a set of steps required to perform a task.
+
+The example workflow below is triggered by an alarm in Cumulocity and creates a ticket in Zendesk and sends an SMS message.
+
+![webMethods.io Example Workflow](/images/users-guide/webMethods.io/wmio-example1.png)
+
+WebMethods.io also provides pre-configured workflows which are called "recipes".
+
+![webMethods.io Example Recipe](/images/users-guide/webMethods.io/wmio-recipe-salesforce.png)
+
+More examples and technical guides can be found on the Software AG TECHcommunity website [https://techcommunity.softwareag.com/](https://techcommunity.softwareag.com/) in the **Tips, Tricks and Code** section.

@@ -12,4 +12,4 @@ You can use the following request-response events:
 * GenericResponse
 * GenericResponseComplete
 
-For more information, see [REST implementation](/guides/reference/rest-implementation/) and [Invoking other parts of the Cumulocity REST API](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_invoking_other_parts_of_the_cumulocity_rest_api.html) in the Apama documentation.
+For more information, see [REST implementation](/reference/rest-implementation/) and [Invoking other parts of the Cumulocity REST API](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_invoking_other_parts_of_the_cumulocity_rest_api.html) in the Apama documentation.

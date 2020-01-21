@@ -10,19 +10,19 @@ Das Cockpit enthält voreingestellte Widget-Typen. Jeder Widget-Typ ermöglicht 
 
 Das Widget "Aktuelle Alarme" zeigt alle Alarme aller Schweregrade, sortiert nach Zeit. Es können keinen zusätzlichen Parameter konfiguriert werden.
 
-<img src="/guides/images/users-guide/cockpit/Cockpit_CreateAlarmList.png" name="Alarm list widget" style="width:75%;"/>
+<img src="/images/users-guide/cockpit/Cockpit_CreateAlarmList.png" name="Alarm list widget" style="width:75%;"/>
 
-Nähere Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/guides/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt Device Management.
+Nähere Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt Device Management.
 
 ### Widget "Alarmliste"
 
 Das Widget "Alarmliste" zeigt eine Liste von Alarmen, gefiltert nach Objekten, Alarmschweregrad und Alarmstatus. 
 
-Nähere Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/guides/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt Device Management.
+Nähere Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt Device Management.
 
 **Konfigurierbare Parameter**
 
-<img src="/guides/images/users-guide/cockpit/Cockpit_CreateAlarmList.png" name="Create Alarm list widget" style="width:75%;"/>
+<img src="/images/users-guide/cockpit/Cockpit_CreateAlarmList.png" name="Create Alarm list widget" style="width:75%;"/>
 
 |Feld|Beschreibung|
 |:---|:---|
@@ -37,7 +37,7 @@ Nähere Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/guide
 
 Das Widget "Alle kritischen Alarme" zeigt alle Objekte mit einem kritischen Alarm. Es können keinen zusätzlichen Parameter konfiguriert werden.  
 
-Nähere Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/guides/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt Device Management.
+Nähere Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt Device Management.
 
 
 ### Widget "Ampel"
@@ -57,7 +57,7 @@ Das "Ampel"-Widget visualisiert den Status eines Geräts im Form einer Ampel.
 
 Das Widget "Anwendungen" zeigt alle Liste mit Links zu allen verfügbaren Anwendungen. Es können keinen zusätzlichen Parameter konfiguriert werden. 
 
-Nähere Informationen zu Anwendungen finden Sie unter [Administration > Verwalten von Anwendungen](/guides/benutzerhandbuch/administration#managing-applications).
+Nähere Informationen zu Anwendungen finden Sie unter [Administration > Verwalten von Anwendungen](/benutzerhandbuch/administration#managing-applications).
 
 
 ### Widget "Asset-Attribute"
@@ -79,7 +79,7 @@ Das Widget "Asset-Attribute" zeigt eine benutzerdefinierte Liste von Attributen 
 
 Das Widget "Asset-Nachrichten" zeigt Benachrichtigungen, die allen Besitzern des aktuellen Objekts vom Administrator bereitgestellt werden. 
 
-<img src="/guides/images/users-guide/cockpit/Cockpit_AssetNotes.png" name="Asset notes widget" style="width:75%;"/>
+<img src="/images/users-guide/cockpit/Cockpit_AssetNotes.png" name="Asset notes widget" style="width:75%;"/>
 
 Nur Benutzer, die die Berechtigung haben, das Start-Dashboard zu bearbeiten, können solche Benachrichtigungen bereitstellen.
 
@@ -100,10 +100,10 @@ Das Widget "Asset-Tabelle" zeigt eine Tabelle mit Details zu den Kindgeräten an
 
 Im folgenden Screenshot sind 5 Spalten konfiguriert. Die Spalten "Meter", “Vendor”, und “Owner” beziehen sich auf die Attribute “name”, type” und “owner”. Außerdem gibt es zwei Aktionen, eine für das Umschalten des Wartungsmodus und eine für das Neustarten des Systems. 
 
-![image alt text](/guides/images/users-guide/image_17.png)
+![image alt text](/images/users-guide/image_17.png)
 
 Die daraus resultierende Tabelle wird folgendermaßen visualisiert:
-![image alt text](/guides/images/users-guide/image_18.png)
+![image alt text](/images/users-guide/image_18.png)
 
 **Hinzufügen von Attributen**
 
@@ -115,9 +115,9 @@ Um ein Attribut hinzuzufügen, klicken Sie **+Attribut hinzufügen** und wählen
 
 Um eine Aktion hinzuzufügen, klicken Sie **+Aktion hinzufügen**. Wählen Sie **Wartungsmodus umschalten** um die entsprechende vordefinierte Aktion hinzuzufügen. Oder wählen Sie **Kommando erstellen**, um eine Schaltfläche zu erstellen, die ein Shell-Kommando ausführt. Im folgenden Dialog können Sie eine Beschriftung für die Schaltfläche und das auszuführende Shell-Kommando eingeben. 
 
-![image alt text](/guides/images/users-guide/image_19.png)
+![image alt text](/images/users-guide/image_19.png)
 
->**Info:** Der Dialog zeigt die vordefinierten Shell-Kommandos des ersten Geräts, das Shell-Kommandos unterstützt. Gibt es kein solches Gerät, ist die Liste leer. Weitere Informationen finden Sie unter [Shell-Kommandos](/guides/benutzerhandbuch/device-management/#shell) im Abschnitt Device Management.<br>
+>**Info:** Der Dialog zeigt die vordefinierten Shell-Kommandos des ersten Geräts, das Shell-Kommandos unterstützt. Gibt es kein solches Gerät, ist die Liste leer. Weitere Informationen finden Sie unter [Shell-Kommandos](/benutzerhandbuch/device-management/#shell) im Abschnitt Device Management.<br>
 Sie können auch das JSON-Format für das Kommando eingeben, das zum Gerät gesendet wird. Fragen Sie den Gerätehersteller nach unterstützten Kommandos, um weitere Details zu erfahren. 
 
 **Ändern der Tabelle**
@@ -137,7 +137,7 @@ Das "Bild"-Widget ermöglicht es, ein einzelnes Bild anzuzeigen, das Sie von Ihr
 
 Das Widget "Datenpunktgraph" zeigt einen Datenpunkt (Messwert) in einem Graphen. Die Visualisierung ist identisch mit der im [Daten-Explorer](#data-explorer).
 
-<img src="/guides/images/users-guide/cockpit/Cockpit_DataPointsGraphWidget.png" name="Data Point Graph widget" style="width:75%;"/>
+<img src="/images/users-guide/cockpit/Cockpit_DataPointsGraphWidget.png" name="Data Point Graph widget" style="width:75%;"/>
 
 Am einfachsten erstellen Sie ein "Datenpunktgraph"-Widget, indem Sie zum Daten-Explorer navigieren, **Mehr...** in der oberen Menüleiste klicken und **Als Widget zum Dashboard senden** wählen.
 
@@ -165,14 +165,14 @@ Das Widget "Datenpunkttabelle" zeigt Daten basierend auf ausgewählten Datenpunk
 
 Werte außerhalb eines bestimmten Bereichs, basierend auf konfigurierten gelben und roten Bereichen, werden in der Tabelle hervorgehoben.
 
-![Data point table](/guides/images/users-guide/datapointtable.png)
+![Data point table](/images/users-guide/datapointtable.png)
 
 
 ### Widget "Ereignisliste"
 
 Das Widget "Ereignisliste" ermöglicht es, Ereignisse für ein ausgewähltes Gerät zu überwachen. 
 
-<img src="/guides/images/users-guide/cockpit/Cockpit_EventList.png" name="Event list widget" style="width:75%;"/>
+<img src="/images/users-guide/cockpit/Cockpit_EventList.png" name="Event list widget" style="width:75%;"/>
 
 Außerdem kann ein Zeitintervall festgelegt und Ereignisse können in Echtzeit überwacht werden. 
 
@@ -181,7 +181,7 @@ Außerdem kann ein Zeitintervall festgelegt und Ereignisse können in Echtzeit �
 
 Das Widget "Fieldbus-Gerät" ermöglicht es, den Status eines Modbus-Geräts anzuzeigen und dieses zu betreiben. 
 
-Weitere Informationen zum Widget "Fieldbus-Gerät" finden Sie unter [Optionale Services > Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/guides/users-guide/optional-services/#fieldbus-device-widget).
+Weitere Informationen zum Widget "Fieldbus-Gerät" finden Sie unter [Optionale Services > Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/users-guide/optional-services/#fieldbus-device-widget).
 
 
 ### Widget "Gerätenachricht"
@@ -193,7 +193,7 @@ Das Widget "Gerätenachricht" sendet eine Nachricht an das Gerät. Das Verhalten
 
 Das Widget "Hilfe und Service" zeigt Links zu Hilfe- und Serviceangeboten. Es können keinen zusätzlichen Parameter konfiguriert werden.
 
-<img src="/guides/images/users-guide/cockpit/Cockpit_HelpAndServiceWidget.png" name="Help and service widget" style="width:75%;"/>
+<img src="/images/users-guide/cockpit/Cockpit_HelpAndServiceWidget.png" name="Help and service widget" style="width:75%;"/>
 
 
 ### Widget "HTML"
@@ -230,11 +230,11 @@ Die folgenden Variablen können im HTML-Code verwendet werden:
 
 Das Widget "Infoanzeige" visualisiert einen Datenpunkt in Form eines Tachos und mehrere Datenpunkte als Beschriftung.  
 
-<img src="/guides/images/users-guide/cockpit/Cockpit_InfoGauge.png" name="Info gauge widget" style="width:75%;"/>
+<img src="/images/users-guide/cockpit/Cockpit_InfoGauge.png" name="Info gauge widget" style="width:75%;"/>
 
 Sie können einen Datenpunkt für das Tacho auswählen sowie mehrere Datenpunkte, die als Beschriftung auf der linken Seite angezeigt werden.  
 
-<img src="/guides/images/users-guide/cockpit/Cockpit_InfoGaugeDataPoints.png" name="Info gauge data points" style="width:75%;"/>
+<img src="/images/users-guide/cockpit/Cockpit_InfoGaugeDataPoints.png" name="Info gauge data points" style="width:75%;"/>
 
 Sie müssen mindestens einen Datenpunkt in jedem Bereich aktivieren, um das Widget "Infoanzeige" zu erstellen.
  
@@ -243,7 +243,7 @@ Sie müssen mindestens einen Datenpunkt in jedem Bereich aktivieren, um das Widg
 
 Das Widget "Karte" zeigt den Standort eines Geräts oder aller Geräte einer Gruppe an. 
 
-<img src="/guides/images/users-guide/cockpit/Cockpit_MapWidget.png" name="Map widget" style="width:75%;"/>
+<img src="/images/users-guide/cockpit/Cockpit_MapWidget.png" name="Map widget" style="width:75%;"/>
 
 Sie können den Inhalt der Karte mit dem Mauszeiger verschieben sowie mit den Schaltflächen **Plus** und **Minus** rein- bzw. rauszoomen.
 
@@ -285,7 +285,7 @@ Das Widget "Kuchendiagramm" zeigt Datenpunkte (Messwerte) mit aktuellen Werten i
 
 Das Widget "Linearer Zeiger" visualisiert Datenpunkte in Form eines linearen Messgeräts. Minimale und and maximale Zielwerte werden ebenfalls angezeigt.
 
-<img src="/guides/images/users-guide/cockpit/Cockpit_LinearGauge.png" name="Linear gauge widget" style="width:75%;"/>
+<img src="/images/users-guide/cockpit/Cockpit_LinearGauge.png" name="Linear gauge widget" style="width:75%;"/>
 
 >**Info:** Wenn eine Beschriftung nicht vollständig angezeigt werden kann, können Sie sich damit behelfen, den minimalen und maximalen Wert zu erhöhen und so die Beschriftung in den lesbaren Bereich zu verschieben. 
 
@@ -296,7 +296,7 @@ Sie müssen mindestens einen Datenpunkt aktivieren, um das Widget "Linearer Zeig
 
 Das Widget "Quick links" zeigt verschiedene Links für den schnellen Zugriff auf relevante Kommandos an. Es können keinen zusätzlichen Parameter konfiguriert werden.
 
-<img src="/guides/images/users-guide/cockpit/Cockpit_QuickLinksWidget.png" name="Quick links widget" style="width:75%;"/>
+<img src="/images/users-guide/cockpit/Cockpit_QuickLinksWidget.png" name="Quick links widget" style="width:75%;"/>
 
 
 ### Widget "Relaisfeldsteuerung"
@@ -330,7 +330,7 @@ Im Widget "Rotationsmodell" kann das Objekt durch Ziehen und Bewegen gedreht wer
 
 Das "SCADA"-Widget bietet eine graphische Darstellung eines Gerätestatus. 
 
-Nähere Informationen zum "SCADA"-Widget finden Sie unter [Optionale Services > Cloud Fieldbus > Monitoring status using the SCADA widget](/guides/users-guide/optional-services#scada).
+Nähere Informationen zum "SCADA"-Widget finden Sie unter [Optionale Services > Cloud Fieldbus > Monitoring status using the SCADA widget](/users-guide/optional-services#scada).
 
 
 ### Widget "Silo"
@@ -349,7 +349,7 @@ Das "Silo"-Widget zeigt Datenpunkte (Messwerte) mit aktuellen Werten in einer Si
 
 Das "Tacho"-Widget visualisiert Datenpunkte in Form eines Tachos. 
 
-<img src="/guides/images/users-guide/cockpit/Cockpit_RadialGauge.png" name="Radial gauge widget" style="width:75%;"/>
+<img src="/images/users-guide/cockpit/Cockpit_RadialGauge.png" name="Radial gauge widget" style="width:75%;"/>
 
 Sie müssen mindestens einen Datenpunkt aktivieren, um das "Tacho"-Widget zu erstellen.
 
@@ -358,7 +358,7 @@ Sie müssen mindestens einen Datenpunkt aktivieren, um das "Tacho"-Widget zu ers
 
 Das Widget "Twitter-Nachrichten" zeigt Tweets von dem in Twitter integrierten Timeline-Widget an.
 
-<img src="/guides/images/users-guide/cockpit/Cockpit_TwitterNewsWidget.png" name="Twitter news widget" style="width:50%;"/>
+<img src="/images/users-guide/cockpit/Cockpit_TwitterNewsWidget.png" name="Twitter news widget" style="width:50%;"/>
 
 **Konfigurierbare Parameter**
 

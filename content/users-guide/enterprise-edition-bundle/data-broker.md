@@ -12,19 +12,19 @@ Data broker lets you share data selectively with other tenants. You can share:
 - measurements,
 - operations.
 
-Navigate to **Data connectors** if you would like to send data to another tenant. Navigate to **Data subscriptions**, if you would like to receive data from another tenant.
+Navigate to **Data connectors** in the **Data Broker** menu if you would like to send data to another tenant. Navigate to **Data subscriptions**, if you would like to receive data from another tenant.
 
-<img src="/guides/images/users-guide/data-broker-navigator.png" alt="Data broker menus" >
+<img src="/images/users-guide/data-broker-navigator.png" alt="Data broker menus" >
 
->**Info**: Devices that are forwarded using the data broker are charged like normal devices in the destination tenant.
->
->Be aware of the following limitations of the data broker:
-> 
-> * Cloud Remote Access cannot be used on the destination tenant. 
-> * The management tenant cannot be used as data broker source tenant.
-> * Currently, the Fieldbus widget does not work on tenants that receive the fieldbus devices through data broker, as the corresponding data models are not synchronized.
-> * Data broker does not guarantee the same order of messages on destination tenants as it was on the source tenant. 
-> * While we provide backwards compatibility, we cannot ensure that data broker can send data to Cumulocity tenants which run on earlier Cumulocity versions than the source.
+>**Important**: Devices that are forwarded using the data broker are charged like normal devices in the destination tenant.
+
+Be aware of the following limitations of the data broker:
+
+* Cloud Remote Access cannot be used on the destination tenant. 
+* The management tenant cannot be used as data broker source tenant.
+* Currently, the Fieldbus widget does not work on tenants that receive the fieldbus devices through data broker, as the corresponding data models are not synchronized.
+* Data broker does not guarantee the same order of messages on destination tenants as it was on the source tenant. 
+* While we provide backwards compatibility, we cannot ensure that data broker can send data to Cumulocity tenants which run on earlier Cumulocity versions than the source.
 
 ### <a name="data-broker-connectors"></a> Data connectors
 
@@ -34,7 +34,7 @@ A data connector describes the subset of the data that you would like to send to
 
 Click **Data connectors** in the navigator to see a list of all currently defined data connectors with their status.
 
-![Data broker connectors list](/guides/images/users-guide/data-broker-connector-list.png)
+![Data broker connectors list](/images/users-guide/data-broker-connector-list.png)
 
 For each data connector, the following information is provided:
 
@@ -44,6 +44,8 @@ For each data connector, the following information is provided:
 * the number of filters set for the data connector
 
 Use the toggle to enable and disable data forwarding to the destination tenant. If data is being forwarded, the toggle reads "Active". If data is not being forwarded, the toggle reads "Suspended" or "Pending". "Suspended" means that you have disabled forwarding. "Pending" means that the destination tenant has disabled forwarding.
+
+> **Info**: If the source tenant has been suspended all its data broker connectors will be suspended as well. 
 
 #### <a name="data-broker-connector-edit"></a>To add a data connector
 
@@ -59,7 +61,7 @@ Use the toggle to enable and disable data forwarding to the destination tenant. 
  
 3. Click **Add filter** to configure a new filter.
 
-	![Data broker configure filter](/guides/images/users-guide/data-broker-connector-filter.png)
+	![Data broker configure filter](/images/users-guide/data-broker-connector-filter.png)
  
 4. Each data filter contains the following information:
  
@@ -74,7 +76,7 @@ Use the toggle to enable and disable data forwarding to the destination tenant. 
 <tbody>
 <tr>
 <td style="text-align:left">Group or device</td>
-<td style="text-align:left">The group or device that is forwarded. If you select a group here all sub-groups and sub-devices of this group will be forwarded. <br><b>Warning</b>: The option "All Objects" is left in the UI to ensure backward compatibility with older versions. We strongly recommend to not use this option. When selected Cumulocity will synchronize all types of objects, system as well as user-defined, and might override objects in the target environment. Such objects may contain references to other objects and also configuration information. It is the user's responsibility to check and ensure consistency of such information in the transferred objects in the target environment. We intend to deprecate this option.</td>
+<td style="text-align:left">The group or device that is forwarded. If you select a group here all sub-groups and sub-devices of this group will be forwarded. <b>See the warning below on the usage of All objects.</b> </td>
 </tr>
 <tr>
 <td style="text-align:left">API</td>
@@ -95,9 +97,20 @@ Use the toggle to enable and disable data forwarding to the destination tenant. 
 </tbody>
 </table>
 
-5. Click Save to save the configuration.
+5. Click **Save** to save the configuration.
+
+>**Warning on the usage of All objects**
+
+>The option **All Objects** is left in the UI to ensure backward compatibility with older versions. We intend to deprecate it and we strongly recommend to not use this option. 
  
-> **Info:** If the **Group or device** field is filled in, the entire descendant structure of the inventory is forwarded to the destination as soon as the connector stays active. if the **Group or device** field is empty or set to  "all" the descendant structure of the inventory is not forwarded; in this case the filter works in "lazy" mode, i.e. forwards the device or asset along with its first event/measurement/alarm.
+>When selected, Cumulocity will synchronize all types of objects, system as well as user-defined, and might override, or create out of context, objects in the destination tenant. Such objects may contain references to other objects and also configuration information. It is the user's responsibility to check and ensure consistency of such information in the transferred objects in the target environment.
+
+>This concerns items such as Smartrest templates, device protocols, smart rule configurations and dashboards.
+
+>For example, when you create a smart rule on the source tenant and you synchronize all objects, then the data broker creates a smart rule managed object on the destination tenant. The rule itself is not copied, because a synchronized smart rule would perform the same action on the same device for the same configuration. That would create duplicate emails for the same recipients when an alarm occurs.
+ 
+
+If the **Group or device** field is filled in, the entire descendant structure of the inventory is forwarded to the destination as soon as the connector stays active. if the **Group or device** field is empty or set to  "all" the descendant structure of the inventory is not forwarded; in this case the filter works in "lazy" mode, i.e. forwards the device or asset along with its first event/measurement/alarm.
  
 If operation API is checked in filters, operations created in the target tenant will be forwarded to the source tenant. This applies only to operations that meet the following conditions:
 
@@ -117,12 +130,12 @@ The heading of a data filter summarizes the configuration in one line. The stand
 
 After saving the configuration, you will see a security code displayed below your configuration. The security code prevents unintended forwarding of data. You need to communicate this security key separately to an administrative user of the destination tenant. You can click the copy icon next to the security code to copy the code to your clipboard.
 
-![Security code](/guides/images/users-guide/data-broker-connector-security-code.png)
+![Security code](/images/users-guide/data-broker-connector-security-code.png)
 
 
 #### To edit a data connector
 
-Click the menu icon in a data connector entry and then click **Edit**. 
+Click the menu icon at the right of a data connector entry and then click **Edit**. 
 
 In the **Settings** tab, edit the data connector configuration.
 
@@ -130,19 +143,19 @@ See [To add a data connector](#data-broker-connector-edit) for details on the se
 
 #### To duplicate a data connector
 
-Click the menu icon in a data connector entry and then click **Duplicate** to create another data connector with the same configuration.
+Click the menu icon at the right of a data connector entry and then click **Duplicate** to create another data connector with the same configuration.
 
 #### To delete a data connector
 
-Click the menu icon in a data connector entry and then click **Delete** to stop data forwarding and delete the data connector.
+Click the menu icon at the right of a data connector entry and then click **Delete** to stop data forwarding and delete the data connector.
 
 #### To view alarms for a data connector
 
 Open a data connector and switch to the **Alarms** tab to display current alarms for the data connector.
 
-![Warnings tab](/guides/images/users-guide/data-broker-connector-warnings.png)
+![Warnings tab](/images/users-guide/data-broker-connector-warnings.png)
 
-For details on alarms, see [Monitoring and controlling devices > Working with alarms](alarm-monitoring) in the Device Management section.
+For details on alarms, see [Device Management > Monitoring and controlling devices > Working with alarms](alarm-monitoring).
 
 
 ### <a name="data-broker-subscriptions"></a> Data subscriptions
@@ -151,7 +164,7 @@ In the **Data subscriptions** page, you can manage existing data subscriptions o
 
 Click **Data subscriptions** to see a list of all currently defined data forwarded to your tenant. 
 
-<img src="/guides/images/users-guide/Administration/Admin_Subscriptions.png" alt="Data subscriptions">
+<img src="/images/users-guide/Administration/Admin_Subscriptions.png" alt="Data subscriptions">
 
 For each subscription, the name, the target tenant and the status (enabled or disabled) is provided on a card.
 
@@ -166,7 +179,7 @@ Use the toggle to temporarily stop forwarding data into your tenant.
 
 You can now navigate to the Device Management application or the Cockpit application. You will find a new "virtual group" with a specific icon (see the screenshot below) showing the forwarded devices. The group will have the same name as your subscription. Devices are "lazily" created on the destination side whenever they send data for the first time after setting up an active subscription.
 
-![Data broker group in cockpit app](/guides/images/users-guide/data-broker-group-created.PNG)
+![Data broker group in cockpit app](/images/users-guide/data-broker-group-created.PNG)
 
 #### To delete a data connector
 

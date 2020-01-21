@@ -10,7 +10,7 @@ Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen de
 *   [Anwendungseinstellungen](#default-app) ändern,
 *   [Passwortrichtlinien und TFA-Einstellungen](#changing-password-settings) ändern,
 *   die [Attributsbibliothek](#properties) verwalten,
-*   Einstellungen für den Enterprise Tenant konfigurieren, siehe [Enterprise Tenant](/guides/users-guide/enterprise-edition#customization).
+*   Einstellungen für den Enterprise Tenant konfigurieren, siehe [Enterprise Tenant](/users-guide/enterprise-edition#customization).
 
 ### <a name="single-sign-on"></a>Konfigurieren von Single-Sign-On
 
@@ -28,7 +28,7 @@ Bevor Sie zur Single-Sign-On-Option wechseln, stellen Sie sicher, dass:
 * Cumulocity-Plattform Version 9.12 oder vorzugsweise höher verwendet wird, 
 * alle Microservices mit dem Microservice Java SDK 9.12.6, oder vorzugsweise höher, erstellt wurden.
 
-Informationen zu benutzerspezifischen Microservices finden Sie unter [General aspects > Security](guides/microservice-sdk/concept/#security) im Microservice SDK Guide.
+Informationen zu benutzerspezifischen Microservices finden Sie unter [General aspects > Security](microservice-sdk/concept/#security) im Microservice SDK Guide.
 
 Bei lokalen Installationen ist die Domain-basierte Mandantenabbildung bereits korrekt konfiguriert.
 
@@ -42,7 +42,7 @@ Links oben können Sie eine Vorlage für das Layout der Seite auswählen. Die St
 
 ##### Benutzerdefinierte Vorlage
 
-![Request configuration](/guides/images/benutzerhandbuch/admin-sso-1.png)
+![Request configuration](/images/benutzerhandbuch/admin-sso-1.png)
 
 Da das OAuth-Protokoll auf der Ausführung von HTTP-Anfragen und -Redirects basiert, wird eine generische Anfragekonfiguration bereitgestellt. 
 
@@ -50,7 +50,7 @@ Der erste Teil der **Single-Sign-On**-Seite besteht aus der Anfragekonfiguration
 
 Der Bereich **Grundeinstellungen** der **Single-Sign-On**-Seite besteht aus den folgenden Konfigurationseinstellungen:
 
-![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-2.png)
+![OAuth configuration](/images/benutzerhandbuch/admin-sso-2.png)
 
 |Feld|Beschreibung|
 |:---|:---|
@@ -66,7 +66,7 @@ Der Bereich **Grundeinstellungen** der **Single-Sign-On**-Seite besteht aus den 
 
 Jedesmal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens verifiziert und dient als Basis für den Benutzerzugang zur Cumulocity-Plattform. Der folgende Abschnitt beschreibt die Zuordnung zwischen JWT-Claims und dem Zugang zur Plattform. 
 
- ![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-7.png)
+ ![OAuth configuration](/images/benutzerhandbuch/admin-sso-7.png)
  
  Wenn ein Benutzer versucht sich anzumelden, sieht der dekodierte JWT-Claim für das oben abgebildete Beispiel folgendermaßen aus:
 
@@ -81,7 +81,7 @@ Jedesmal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens ver
 
 Dem Benutzer werden die globalen Rollen BUSINESS und APPLICATION COCKPIT zugewiesen. Klicken Sie **Rechtezuordnung hinzufügen**, um weitere Berechtigungen zu vergeben. Klicken Sie das Minus-Symbol, um eine Regel zu entfernen. Eine Anweisung kann mehrere Überprüfungen enthalten, wie im Beispiel unten. Klicken Sie **und**, um eine Überprüfung zu einer vorhandenen Anweisung hinzuzufügen. 
 
- ![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-8.png)
+ ![OAuth configuration](/images/benutzerhandbuch/admin-sso-8.png)
 
 In diesem Fall sieht der JWT-Claim folgendermaßen aus:
 
@@ -102,15 +102,15 @@ Wie Sie sehen, besteht durch den "in"-Operator die Möglichkeit, zu verifizieren
 
 Wenn der Benutzer sich mit einem Access Token anmeldet, kann der Benutzername aus einem JWT-Claim abgeleitet werden. Der Name des Claims kann unter **Benutzer-ID** konfiguriert werden. 
 
- ![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-3.png)
+ ![OAuth configuration](/images/benutzerhandbuch/admin-sso-3.png)
 
 Jedes Access Token wird durch ein Signing-Zertifikat signiert. Aktuell gibt es drei Möglichkeiten, die Signing-Zertifikate zu konfigurieren. 
  
-1. Durch Spezifizieren der URL für den öffentlichen Schlüssel des Azure AD-Zertifikats. <br>![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-4.png)
+1. Durch Spezifizieren der URL für den öffentlichen Schlüssel des Azure AD-Zertifikats. <br>![OAuth configuration](/images/benutzerhandbuch/admin-sso-4.png)
  
-2. Durch Spezifizieren der ADFS-Manifest-Adresse (für ADFS 3.0). <br>![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-9.png)
+2. Durch Spezifizieren der ADFS-Manifest-Adresse (für ADFS 3.0). <br>![OAuth configuration](/images/benutzerhandbuch/admin-sso-9.png)
   
-3. Durch manuelles Bereitstellen des öffentlichen Schlüssels eines Zertifikats. Eine Zertifikatsdefinition benötigt eine Algorithmus-Information, einen Wert für den öffentlichen Schlüssel und ein Gültigkeitsintervall. <br>![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-5.png)
+3. Durch manuelles Bereitstellen des öffentlichen Schlüssels eines Zertifikats. Eine Zertifikatsdefinition benötigt eine Algorithmus-Information, einen Wert für den öffentlichen Schlüssel und ein Gültigkeitsintervall. <br>![OAuth configuration](/images/benutzerhandbuch/admin-sso-5.png)
 
 #### Integration mit Azure AD
 
@@ -124,7 +124,7 @@ Während der Konfiguration der Azure AD entspricht die Redirect-URI Ihrer vollst
 
 Wenn die Vorlage "Azure AD" ausgewählt ist, sehen die Grundeinstellungen in etwa folgendermaßen aus:
 
- ![OAuth configuration](/guides/images/benutzerhandbuch/admin-sso-aad-basic.png)
+ ![OAuth configuration](/images/benutzerhandbuch/admin-sso-aad-basic.png)
 
 |Feld|Beschreibung|
 |:---|:---|
@@ -158,7 +158,7 @@ Um die Passwortrichtlinien zu ändern, klicken Sie **Passwort** im Menü **Einst
 
 Unter **Passwortbeschränkung** können Sie die Gültigkeit von Benutzerpasswörtern beschränken, in dem Sie die Anzahl der Tage eingeben, nach der Benutzer ihre Passwörter ändern müssen. Wenn Sie keine Passwortänderung erzwingen möchten, verwenden Sie "0" für die uneingeschränkte Gültigkeit von Passwörtern (Standardwert).
 
-Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Nur starke (grüne) Passwörter zulassen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Anmelden](/guides/benutzerhandbuch/overview#login) beschrieben.
+Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Nur starke (grüne) Passwörter zulassen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Anmelden](/benutzerhandbuch/overview#login) beschrieben.
 
 > **Info:** Passwortbeschränkung und das Erzwingen starker Passörter sind möglicherweise nicht editierbar, falls vom Plattformadministrator so konfiguriert.
 
@@ -168,7 +168,7 @@ Starke (grüne) Passwörter müssen "M" Zeichen haben. Standardmäßig sind Pass
 
 Klicken Sie **Speichern**, um die Passwortrichtlinien zu speichern.
 
-![Passwortrichtlinien](/guides/images/benutzerhandbuch/Admin_Password.png)
+![Passwortrichtlinien](/images/benutzerhandbuch/Admin_Password.png)
 
 Unter **TFA-Einstellungen** können Sie die folgenden TFA-Einstellungen bearbeiten:
 
@@ -183,7 +183,7 @@ Klicken Sie **TFA-Einstellungen speichern**, um Ihre Einstellungen zu speichern.
 
 In der "Attributsbibiothek" im Menü "Einstellungen" können benutzerdefinierte Attribute zu den Stammdaten, Alarmen, Ereignissen und Mandanten hinzugefügt werden.
 
-![Attributsbibiothek](/guides/images/benutzerhandbuch/Admin_PropertiesLibrary.png)
+![Attributsbibiothek](/images/benutzerhandbuch/Admin_PropertiesLibrary.png)
 
 Mit benutzerdefinierten Attributen können Sie das Datenmodell der in Cumulocity integrierten Objekte erweitern. Sie können die folgenden eigenen Attribute erstellen:
 
@@ -195,7 +195,7 @@ Mit benutzerdefinierten Attributen können Sie das Datenmodell der in Cumulocity
 
 Um ein benutzerdefiniertes Attribut hinzuzufügen, wählen Sie die Registerkarte für das gewünschte Attribut und klicken Sie **Attribut hinzufügen**.
 
-![Neues Attribut hinzufügen](/guides/images/benutzerhandbuch/Admin_AddProperty.png)
+![Neues Attribut hinzufügen](/images/benutzerhandbuch/Admin_AddProperty.png)
 
 Geben Sie im folgenden Editor einen eindeutigen Namen als Identifikator und eine Beschriftung für das Attribut ein, und wählen Sie einen Datentypen aus der Dropdown-Liste. Wählen Sie außerdem Validierungsregeln für das neue Attribut aus:
 
@@ -283,7 +283,7 @@ Klicken Sie auf den Namen eines Attributs in der Liste, um dieses zu öffnen. Um
 
 Durch die Eingabe von OPenIT- Zugangsdaten erlauben Sie der Plattform, SMS-Dienste zu verwenden, die von [Openit](https://sms.openit.de/main.php) bereitgestellt werden.
 
-SMS werden für verschiedene Funktionen in den Anwendungen verwendet wie [Zwei-Faktor-Authentifizierung](/guides/benutzerhandbuch/administration#tfa) und Benachrichtigungen etwa bei Alarmen.
+SMS werden für verschiedene Funktionen in den Anwendungen verwendet wie [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration#tfa) und Benachrichtigungen etwa bei Alarmen.
 
 ### Konfiguration
 
@@ -297,7 +297,7 @@ Geben Sie "false" ein, um den Link zu verbergen.
 
 Im Bereich "Passwort zurücksetzen" können Sie alle Einstellungen im Zusammenhang mit E-Mail-Vorlagen zum Zurücksetzen des Passworts ändern.
 
-![Konfiguration](/guides/images/users-guide/configuration_tab2.png)
+![Konfiguration](/images/users-guide/configuration_tab2.png)
 
 Ganz oben können Sie festlegen, ob Sie zulassen möchten, E-Mails an unbekannte E-Mail-Adressen zu senden.
 
@@ -311,17 +311,17 @@ Geben Sie in den folgenden beiden Feldern jeweils eine Vorlage für die E-Mails 
 
 Im Bereich "E-Mail-Server" können Sie "Protokoll", "Host", "Port", "Benutzername", "Passwort" und "Senderadresse" für den E-Mail-Server angeben.
 
-![E-Mail-Server konfigurieren](/guides/images/users-guide/Administration/Admin_ConfigurationServer.png)
+![E-Mail-Server konfigurieren](/images/users-guide/Administration/Admin_ConfigurationServer.png)
 
 Im Bereich "Datenexport" können Sie den E-Mail-Betreff und die E-Mail-Vorlage für den Datenexport angeben sowie die “Fehlermeldung bei unauthorisierten Benutzern” definieren.
 
-![Konfiguration](/guides/images/users-guide/configuration_tab4.png)
+![Konfiguration](/images/users-guide/configuration_tab4.png)
 
 Im Bereich "Speicherbegrenzung" können Sie den E-Mail-Betreff und die E-Mail-Vorlage für E-Mails festlegen, die gesendet werden, _bevor_ Daten bei Überschreitung der Speicherbegrenzung gelöscht werden und _nachdem_Daten gelöscht wurden.
 
 Im Bereich "Sperren von Mandanten" können Sie Einstellungen für E-Mails vornehmen, die gesendet werden, wenn ein Mandant gesperrt wurde.
 
-![Sperren von Mandanten](/guides/images/users-guide/Administration/Admin_ConfigurationSuspended.png)
+![Sperren von Mandanten](/images/users-guide/Administration/Admin_ConfigurationSuspended.png)
 
 Oben können Sie auswählen, ob Sie die E-Mail zum Administrator des gesperrten Mandanten senden möchten und einen weiteren E-Mail-Empfänger angeben. Unten definieren Sie den Betreff und die Vorlage für die E-Mail "Gesperrter Benutzer".
 

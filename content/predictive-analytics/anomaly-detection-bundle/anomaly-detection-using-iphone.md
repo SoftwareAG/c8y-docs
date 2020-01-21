@@ -8,7 +8,7 @@ This section deals with the basic data science steps of creating an anomaly dete
 
 #### Register an iPhone in Cumulocity
 
-Registering an iPhone in Cumulocity involves installing the Cloud Sensor App on your iPhone and using it for completing the registration. Follow the steps described in [Optional services > Cumulocity IoT Sensor App](/guides/users-guide/optional-services#android-cloud-sensor-app) in the User guide.
+Registering an iPhone in Cumulocity involves installing the Cloud Sensor App on your iPhone and using it for completing the registration. Follow the steps described in [Optional services > Cumulocity IoT Sensor App](/users-guide/optional-services#android-cloud-sensor-app) in the User guide.
 
 Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, update the `c_device_source` of the *CONFIG.INI* file with the device ID of your registered iPhone.
 
@@ -214,7 +214,7 @@ You could try out the data you collected yourself as described in the data colle
 
 #### Upload the model to Cumulocity
 
-In order to upload the model to Cumulocity, follow the steps described in [Predictive Analytics application > Managing models](/guides/predictive-analytics/web-app/#managing-models).
+In order to upload the model to Cumulocity, follow the steps described in [Predictive Analytics application > Managing models](/predictive-analytics/web-app/#managing-models).
 
 A pre-trained model *iforest_demo_iphone.pmml* is also attached for reference. This anomaly detection model was trained with the data available in *dataset_training_iphone.zip* mentioned in the section above.
 
@@ -224,7 +224,7 @@ For this anomaly detection scenario, we need to use Apama streaming analytics. W
 
 We create an EPL-based monitor file and upload it to Cumulocity. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice and raising an alarm when an anomaly is reported by our machine learning model.
 
-Instead of creating a new monitor file, the attached *DetectAnomalies_iPhone.mon* file can be used after making minor adjustments. Open *DetectAnomalies_iPhone.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device, same as c_device_source in the CONFIG.INI file mentioned above. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps] (/guides/apama/analytics-introduction/#single-mon-file) in the Streaming analytics guide for details on uploading Apama monitor files.
+Instead of creating a new monitor file, the attached *DetectAnomalies_iPhone.mon* file can be used after making minor adjustments. Open *DetectAnomalies_iPhone.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device, same as c_device_source in the CONFIG.INI file mentioned above. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps] (/apama/analytics-introduction/#single-mon-file) in the Streaming analytics guide for details on uploading Apama monitor files.
 
     using com.apama.correlator.Component;
     using com.apama.cumulocity.Alarm;

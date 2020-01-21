@@ -8,7 +8,7 @@ layout: redirect
 
 Cumulocity includes preset global Smart Rule types. 
 
-![Global smart rules](/guides/images/users-guide/cockpit/cockpit-globalsmartrules.png)
+![Global smart rules](/images/users-guide/cockpit/cockpit-globalsmartrules.png)
 
 Each global Smart Rule type provides different parameters to configure. 
 
@@ -26,22 +26,22 @@ When an alarm is created, a SMS is sent.
 
 The rule uses the following parameters:
 
-![On alarm send SMS](/guides/images/users-guide/cockpit/cockpit-globalsmartrules-sendsms.png)
+![On alarm send SMS](/images/users-guide/cockpit/cockpit-globalsmartrules-sendsms.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
 |1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
 |2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
-|3|Send SMS:|"Phone number": Target phone number. It is recommended to include mobile country code for all numbers, e.g. "+49" or "0049" for Germany. Multiple numbers can be separated by a comma (",", do not use a space!).<br> "Message": Text of SMS with max. 160 characters. You can use variables of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+|3|Send SMS:|**Phone number**: Target phone number. It is recommended to include mobile country code for all numbers, e.g. "+49" or "0049" for Germany. Multiple numbers can be separated by a comma (",", do not use a space!).<br> **Message**: Text of SMS with max. 160 characters. You can use variables of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
 |4|Target asset or devices|Groups or devices the rule shall be applied to.
 
 **Troubleshooting**
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/guides/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 >**Important:** There is a limit of 160 characters as a total count. If you use variables and after applying the variables the text counts more than 160 characters the SMS will not be sent.
 
@@ -55,22 +55,22 @@ When an alarm is created, an email is sent.
 
 The rule uses the following parameters:
 
-![On alarm send email](/guides/images/users-guide/cockpit/cockpit-globalsmartrules-sendemail.png)
+![On alarm send email](/images/users-guide/cockpit/cockpit-globalsmartrules-sendemail.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
 |1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
 |2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
-|3|Send e-mail:|"Send to:/Send CC to:/Send BCC to": Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (",", do not use a space!).<br>"Reply to": Address to be used to reply to the message.<br> "Subject": Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.<br> "Message": Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
+|3|Send e-mail:|**Send to:/Send CC to:/Send BCC to**: Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (",", do not use a space!).<br>**Reply to**: Address to be used to reply to the message.<br> **Subject**: Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.<br> **Message**: Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
 |4|Target asset or devices|Groups or devices the rule shall be applied to.
 
 **Troubleshooting**
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/guides/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 * Check your spam folder.
 
@@ -84,13 +84,13 @@ When an alarm is created, sends e-mail or SMS.
 
 The rule uses the following parameters:
 
-![On alarm escalate](/guides/images/users-guide/cockpit/cockpit-globalsmartrules-escalate.png)
+![On alarm escalate](/images/users-guide/cockpit/cockpit-globalsmartrules-escalate.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
 |1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
 |2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
-|3|Escalate as follows:|Escalation steps processed in a chain. <br> Click **Add step** to define at least one step: <br> **Type**: Type of action executed in the step. Possible values are: <br> * Email (see "On alarm send e-mail" rule for parameter descriptions). <br> * SMS (see "On alarm send SMS" rule for parameter descriptions). <br> **Condition**: The condition applied when the rule will be executed. Possible values are: <br> * Always: Action will always be executed. <br> * Always: If step N failed. Only phone steps may fail. The step is marked as failed once all retries have been made without a successful call. This option only appears if there already is a phone step configured that can be referred to.
+|3|Escalate as follows:|Escalation steps processed in a chain. <br> Click **Add step** to define at least one step: <br> **Type**: Type of action executed in the step. Possible values are: <br> - Email (see "On alarm send e-mail" rule for parameter descriptions). <br> - SMS (see "On alarm send SMS" rule for parameter descriptions). <br> **Condition**: The condition applied when the rule will be executed. Possible values are: <br> - Always: Action will always be executed. <br> - Always: If step N failed. Only phone steps may fail. The step is marked as failed once all retries have been made without a successful call. This option only appears if there already is a phone step configured that can be referred to.
 |4|Target asset or devices|Groups or devices the rule shall be applied to.
 
 
@@ -98,9 +98,9 @@ The rule uses the following parameters:
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/guides/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 
 ### On alarm duration increase severity
@@ -113,7 +113,7 @@ If an alarm is active for a certain time, the severity is increased.
 
 The rule uses the following parameters:
 
-![On alarm increase severity](/guides/images/users-guide/cockpit/cockpit-globalsmartrules-severity.png)
+![On alarm increase severity](/images/users-guide/cockpit/cockpit-globalsmartrules-severity.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -144,7 +144,7 @@ The rule can be configured for entering or leaving the geofence, or both. Existi
 
 The rule uses the following parameters:
 
-![On geofence create alarm](/guides/images/users-guide/cockpit/cockpit-globalsmartrules-geofencealarm.png)
+![On geofence create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-geofencealarm.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -159,9 +159,9 @@ The rule uses the following parameters:
 
 * Make sure the device was inside the geofence at least once after creating/activating the rule.
  
-* Check if the device is in [maintenance](/guides/reference/device-management) mode. No new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/reference/device-management) mode. No new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 ### On geofence send e-mail
 
@@ -173,7 +173,7 @@ If a geofence border is crossed, an email is sent.
 
 The rule uses the following parameters:
 
-![On geofence send e-mail](/guides/images/users-guide/cockpit/cockpit-globalsmartrules-geofenceemail.png)
+![On geofence send e-mail](/images/users-guide/cockpit/cockpit-globalsmartrules-geofenceemail.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -201,7 +201,7 @@ Creates consumption data point based on data from an electric-, gas-, water- met
 
 The rule uses the following parameters:
 
-![Calculate energy consumption](/guides/images/users-guide/cockpit/cockpit-globalsmartrules-energy.png)
+![Calculate energy consumption](/images/users-guide/cockpit/cockpit-globalsmartrules-energy.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -231,7 +231,7 @@ If no new measurement data has been received for a specified time, an alarm is c
 
 The rule uses the following parameters:
 
-![On missing measurements create alarm](/guides/images/users-guide/cockpit/cockpit-globalsmartrules-missingmeasurement.png)
+![On missing measurements create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-missingmeasurement.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -253,7 +253,7 @@ If a certain alarm occurs, the specified operation will be send to the device.
 
 The rule uses the following parameters:
 
-![On alarm execute operation](/guides/images/users-guide/cockpit/cockpit-globalsmartrules-operation.png)
+![On alarm execute operation](/images/users-guide/cockpit/cockpit-globalsmartrules-operation.png)
 
 <table>
 <col style="width:5%">
@@ -318,7 +318,7 @@ Using this mechanism, you can configure global threshold ranges in the Data Poin
 
 The rule uses the following parameters:
 
-![On measurement threshold create alarm](/guides/images/users-guide/cockpit/cockpit-globalsmartrules-thresholdalarm.png)
+![On measurement threshold create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-thresholdalarm.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -355,9 +355,9 @@ If no red/yellow ranges are defined, no alarms are generated.
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/guides/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 * Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 
@@ -381,7 +381,7 @@ The severity of alarm is determined as follows:
 
 The rule uses the following parameters:
 
-![On measurement explicit threshold create alarm](/guides/images/users-guide/cockpit/cockpit-globalsmartrules-measurementthreshold.png)
+![On measurement explicit threshold create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-measurementthreshold.png)
 
 |Step|Field|Description|
 |:---|:---|:---|
@@ -394,9 +394,9 @@ The rule uses the following parameters:
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/guides/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/guides/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 * Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 

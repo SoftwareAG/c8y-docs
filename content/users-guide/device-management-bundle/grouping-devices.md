@@ -14,13 +14,13 @@ Cumulocity distinguishes between top-level groups and subgroups:
 
 To display a list of all groups in the account, click **Groups** in the navigator. 
 
-![Groups list](/guides/images/users-guide/DeviceManagement/devmgmt-groups.png)
+![Groups list](/images/users-guide/DeviceManagement/devmgmt-groups.png)
 
 For each group, the name and the number of children is displayed.
 
 Click a group to view its details. 
 
-![Group info](/guides/images/users-guide/DeviceManagement/devmgmt-groups-info.png)
+![Group info](/images/users-guide/DeviceManagement/devmgmt-groups-info.png)
 
 **Info Tab**
 
@@ -36,7 +36,7 @@ In the **Info** tab, the following information is provided:
 
 In the **Sub-assets** tab you see a list of all devices assigned to the group. For each device, the name and the number of children is displayed.
 
-![Sub-assets](/guides/images/users-guide/DeviceManagement/devmgmt-groups-subassets.png)
+![Sub-assets](/images/users-guide/DeviceManagement/devmgmt-groups-subassets.png)
 
 See also [To add a group](#add-group) and [To assign a device to a group](#assigning-devices).
 
@@ -59,17 +59,17 @@ The new group will be added to the groups list.
 
 >**Info:** A group can be created with "0" devices in it.
 
-![Create a group](/guides/images/users-guide/DeviceManagement/devmgmt-groups-create.png)
+![Create a group](/images/users-guide/DeviceManagement/devmgmt-groups-create.png)
 
 From the **Groups** page, you can also create a new group by clicking **Add group** in the top menu bar. In the resulting dialog box, enter a name for the group and click **Add group**.
 
-![Add empty group](/guides/images/users-guide/DeviceManagement/devmgmt-groups-add.png)
+![Add empty group](/images/users-guide/DeviceManagement/devmgmt-groups-add.png)
 
 ### To edit a group
 
 1. In the navigator, click a group to open it. 
 2. In the **Info** tab, click **Edit**. This allows you to edit the name of the group and to assign user permissions for the group. 
-For further information on permissions, see the [Administration Guide](/guides/users-guide/administration#managing-permissions).
+For further information on permissions, see the [Administration Guide](/users-guide/administration#managing-permissions).
 
 ### To delete a group
 
@@ -94,7 +94,7 @@ Moreover, you can assign devices performing the following steps:
 
 The devices will be assigned to the selected group.
 
-![Assign devices](/guides/images/users-guide/DeviceManagement/devmgmt-groups-assign.png)
+![Assign devices](/images/users-guide/DeviceManagement/devmgmt-groups-assign.png)
 
 
 **From the device perspective**
@@ -110,7 +110,7 @@ If you search for a group by its name which does not exist yet, a **New** button
 >**Info**: In order to create a new group, the user must have the permissions
 ROLE&#95;INVENTORY\_CREATE and ROLE&#95;INVENTORY\_ADMIN.
 
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-group-assignment-new.png" alt="new group">
+<img src="/images/users-guide/DeviceManagement/devmgmt-group-assignment-new.png" alt="new group">
 
 
 #### To unassign a device
@@ -151,7 +151,7 @@ You can easily restructure groups, sub-groups and devices by a drag and drop fun
 
 Smart groups are groups dynamically constructed based on filtering criteria. This type of group can be used, for example, for bulk upgrades of devices of a certain type to a new software or firmware version. 
 
-![Smart groups filter](/guides/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
+![Smart groups filter](/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
 
 Like any other group they are available in the Cockpit application as well.
 
@@ -164,11 +164,11 @@ Smart groups can be created from the device list.
 3. Click **Create smart group** at the right of the top menu bar.
 4. Enter a name for the group and click **Create**.
 
-![Create smart groups](/guides/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-create.png)
+![Create smart groups](/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-create.png)
 
 The new group will appear as a top-level group in the **Groups** menu of the navigator. Smart groups can be distinguished by a small cogwheel in the folder icon. 
 
-![Smart groups icon](/guides/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-icon.png)
+![Smart groups icon](/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-icon.png)
 
 In the **Sub-asset** tab you can adjust your selection and modify the filter settings.
 
@@ -176,7 +176,7 @@ In the **Sub-asset** tab you can adjust your selection and modify the filter set
 
 To delete a smart group, click the menu icon and then click **Delete**. 
 
-![Delete smart groups](/guides/images/users-guide/DeviceManagement/devmgmt-groups-delete.png)
+![Delete smart groups](/images/users-guide/DeviceManagement/devmgmt-groups-delete.png)
 
 **Important**: Deleting a smart group is irreversible.
 

@@ -66,7 +66,7 @@ curl --request GET "{{url}}/service/zementis/apply/Iris_NN record=%7B%22petal_le
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -285,7 +285,7 @@ curl --request GET "{{url}}/service/zementis/apply/Iris_NN/explain record=%7B%22
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -333,7 +333,7 @@ curl --request GET "{{url}}/service/zementis/apply/Iris_NN/explain record=%7B" -
 }
 ```
 
-### GET - Apply Model to Multiple Records
+### POST - Apply Model to Multiple Records
 
 ```
 {{url}}/service/zementis/apply/{{model_name}}
@@ -566,7 +566,7 @@ curl --request POST "{{url}}/service/zementis/apply/Iris_ME_Classification " \
 {
     "error": "general/internalError",
     "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/guides/reference-guide/#error_reporting"
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 

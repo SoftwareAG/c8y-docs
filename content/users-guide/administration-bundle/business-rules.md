@@ -8,11 +8,11 @@ title: Managing business rules
 
 Using event processing, you can specify real-time business logic that is automatically run by Cumulocity as soon as new data arrives or existing data is modified. The logic is deployed in so-called "modules" which consist of a set of CEP statements. 
 
->**Info**: A user-friendly way to specify real-time business logic is provided in the Cockpit application through the so-called "[Smart Rules](/guides/users-guide/cockpit#smart-rules)". Smart Rules are "under the hood" also implemented as CEP statements, and you can see them in the **Event Processing** page. However, you cannot edit Smart Rules from here.
+>**Info**: A user-friendly way to specify real-time business logic is provided in the Cockpit application through the so-called "[Smart Rules](/users-guide/cockpit#smart-rules)". Smart Rules are "under the hood" also implemented as CEP statements, and you can see them in the **Event Processing** page. However, you cannot edit Smart Rules from here.
 
 Click **Event processing** in the **Business rules** menu to view all modules.
 
-<img src="/guides/images/users-guide/Administration/admin-event-processing.png" alt="Event processing">
+<img src="/images/users-guide/Administration/admin-event-processing.png" alt="Event processing">
 
 For each module in the list, the status (deployed = indicated by a green checkmark / not deployed = indicated by an exclamation mark), the name and the date when is was last updated is provided.
 
@@ -28,7 +28,7 @@ If the status of a module is set to **Deployed**, you will see the output produc
 
 The following example module creates an alarm if the temperature goes below 0 degree.
 
-<img src="/guides/images/users-guide/Administration/admin-event-processing-sample-module.png" alt="Example module" style="max-width: 100%">
+<img src="/images/users-guide/Administration/admin-event-processing-sample-module.png" alt="Example module" style="max-width: 100%">
 
 #### To edit a module
 
@@ -37,11 +37,11 @@ Simply click the row of the module you want to edit or click the menu icon at th
 For details on the fields, see [To add a module](#add-modules).
 
 
-#### To remove a module
+#### To delete a module
 
-Click the menu icon at the right of the respective row and then click **Remove**.
+Click the menu icon at the right of the respective row and then click **Delete**.
 
-Instead of removing the module you can also disable it temporarily by setting its status to "Not deployed".
+Instead of deleting the module you can also disable it temporarily by setting its status to "Not deployed".
 
 
 ### <a name="reprio-alarms"></a>Alarm mapping
@@ -50,7 +50,7 @@ Alarm mapping enables you to change the severity and text of alarms to adapt the
 
 Click **Alarm mapping** in the **Business Rules** menu to see a list of all alarm mappings.
 
-<img src="/guides/images/users-guide/Administration/admin-alarm-mapping.png" alt="Alarm mapping">
+<img src="/images/users-guide/Administration/admin-alarm-mapping.png" alt="Alarm mapping">
 
 For each alarm mapping, the alarm severity and the name of the mapping is shown.
 
@@ -66,10 +66,10 @@ For each alarm mapping, the alarm severity and the name of the mapping is shown.
 
 Simply expand an alarm mapping to edit it. See [To add an alarm mapping](#add-alarm-mapping) for details on the fields.
 
-<img src="/guides/images/users-guide/Administration/admin-alarm-mapping-edit.png" alt="Edit alarm mapping">
+<img src="/images/users-guide/Administration/admin-alarm-mapping-edit.png" alt="Edit alarm mapping">
 
 #### To delete an alarm mapping
 
 To delete an alarm mapping, hover over it and click the delete icon.
 
-<img src="/guides/images/users-guide/Administration/admin-alarm-mapping-delete.png" alt="Delete alarm mapping">
+<img src="/images/users-guide/Administration/admin-alarm-mapping-delete.png" alt="Delete alarm mapping">

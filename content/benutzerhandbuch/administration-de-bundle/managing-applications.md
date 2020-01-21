@@ -11,7 +11,7 @@ In der Cumulocity-Plattform gibt es zwei Arten von Anwendungen:
 
 Beide Anwendungsarten finden sich im Menü **Anwendungen** im Navigator:
 
-<img src="/guides/images/benutzerhandbuch/admin-menu.png" alt="Anwendungen" style="max-width: 25%">
+<img src="/images/benutzerhandbuch/admin-menu.png" alt="Anwendungen" style="max-width: 25%">
 
 Abonnierte Anwendungen können vom Benutzer nicht hinzugefügt, geändert oder entfernt werden, wohingegen benutzerdefinierte Anwendungen auf verschiedene Weise [als eigene Anwendungen hinzugefügt](#add-applications) werden können.  
 
@@ -19,7 +19,7 @@ Abonnierte Anwendungen können vom Benutzer nicht hinzugefügt, geändert oder e
 
 Klicken Sie auf eine Anwendungskarte, um die Attribute der Anwendung anzuzeigen.
 
-<img src="/guides/images/benutzerhandbuch/admin-own-application-attributes.png" alt="Anwendungsattribute" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/admin-own-application-attributes.png" alt="Anwendungsattribute" style="max-width: 100%">
 
 Für jede Anwendung werden die folgenden Attribute angezeigt:
 
@@ -56,7 +56,7 @@ Für jede Anwendung werden die folgenden Attribute angezeigt:
 </tr>
 <tr>
 <td style="text-align:left">Anwendungsschlüssel</td>
-<td style="text-align:left">Wird zur Identifikation der Anwendung verwendet. Wird außerdem verwendet, um die Anwendung als Abonnement zur Verfügung zu stellen, siehe auch <a href="/guides/concepts/applications" class="no-ajaxy">Concepts Guide</a>.</td>
+<td style="text-align:left">Wird zur Identifikation der Anwendung verwendet. Wird außerdem verwendet, um die Anwendung als Abonnement zur Verfügung zu stellen, siehe auch <a href="/concepts/applications" class="no-ajaxy">Concepts Guide</a>.</td>
 <td style="text-align:left">Automatisch generiert, basierend auf dem Namen der ZIP-Datei</td>
 <td style="text-align:left">Automatisch generiert, basierend auf dem Namen der ZIP-Datei</td>
 <td style="text-align:left">Vom Benutzer vergeben</td>
@@ -91,7 +91,7 @@ Es gibt zwei Möglichkeiten, Microservices in der Cumulocity-Plattform zu überw
 
 Der Status eines Microservices kann in der Registerkarte **Status** der entsprechenden Anwendung überprüft werden. 
 
-<img src="/guides/images/benutzerhandbuch/admin-microservice-status.png" alt="Microservice-Status" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/admin-microservice-status.png" alt="Microservice-Status" style="max-width: 100%">
 
 Folgende Information werden in der Registerkarte **Status** angezeigt:
 
@@ -110,7 +110,7 @@ Für detaillierte Informationen über den Status von Microservices stehen außer
 
 Öffnen Sie die Registerkarte **Logdaten** des jeweiligen Microservice, um Logdaten anzuzeigen.
 
-<img src="/guides/images/benutzerhandbuch/admin-microservice-log.png" alt="Microservice-Logdaten" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/admin-microservice-log.png" alt="Microservice-Logdaten" style="max-width: 100%">
 
 Links oben auf der Seite können Sie die Microservice-Instanz auswählen, für die Sie  Logdaten anzeigen möchten. Darüberhinaus können Sie rechts Ihre bevorzugte Schriftgröße und das Themendesign wählen. 
 
@@ -138,7 +138,7 @@ Eigene Anwendungen werden unter **Eigene Anwendungen** im Menü **Anwendungen** 
 
 Auf der Seite **Eigene Anwendungen** wird eine Liste aller eigenen Anwendungen in Ihrem Konto angezeigt. Weitere Informationen zu den Feldern finden Sie unter [Anwendungsattribute](#application-properties).
 
-![Eigene Anwendungen](/guides/images/benutzerhandbuch/admin-own-applications.png)
+![Eigene Anwendungen](/images/benutzerhandbuch/admin-own-applications.png)
 
 Klicken Sie **Öffnen** auf der Karte einer Anwendung, um die Anwendung direkt von hier zu starten. 
 
@@ -155,7 +155,7 @@ Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**, um e
 * [Externe Anwendung](#external-application), um auf eine Anwendung zu verweisen, die woanders betrieben wird 
 * [Existierende Anwendung duplizieren](#clone-application), um eine bestehende Anwendung zu duplizieren
 
-<img src="/guides/images/benutzerhandbuch/admin-application-add.png" alt="Hinzufügen von Anwendungen" style="max-width: 50%">
+<img src="/images/benutzerhandbuch/admin-application-add.png" alt="Hinzufügen von Anwendungen" style="max-width: 50%">
 
 Wenn Sie die entsprechende Anwendung abonniert haben ("apama-small"), sehen Sie außerdem die Option **Eigene Apama-Regel hochladen**, um [eigene Apama CEP-Regeln](#uploading-cep-rules) als Anwendung hochzuladen. 
 
@@ -167,7 +167,7 @@ Um eine Web-Anwendung hochzuladen, führen Sie folgende Schritte aus:
 2. Wählen Sie im folgenden Dialog **Web-Anwendung hochladen**.
 3. Ziehen Sie eine entsprechende ZIP-Datei in das dafür vorgesehene Feld oder navigieren Sie auf Ihrem Computer zu der Datei.
 
-	<img src="/guides/images/benutzerhandbuch/admin-upload-zip-file.png" alt="Web-Anwendung hochladen" style="max-width: 50%">
+	<img src="/images/benutzerhandbuch/admin-upload-zip-file.png" alt="Web-Anwendung hochladen" style="max-width: 50%">
 
 Nachdem die Datei auf die Plattform hochgeladen wurde, wird die Anwendung erstellt. 
 
@@ -179,11 +179,11 @@ Um einen Microservice hochzuladen, führen Sie folgende Schritte aus:
 2. Wählen Sie im folgenden Dialog **Microservice hochladen**.
 3. Ziehen Sie eine entsprechende ZIP-Datei in das dafür vorgesehene Feld oder navigieren Sie auf Ihrem Computer zu der Datei.
 
-	<img src="/guides/images/benutzerhandbuch/admin-upload-zip-file.png" alt="Web-Anwendung hochladen" style="max-width: 50%">
+	<img src="/images/benutzerhandbuch/admin-upload-zip-file.png" alt="Web-Anwendung hochladen" style="max-width: 50%">
 
 Nachdem die Datei auf die Plattform hochgeladen wurde, wird die Anwendung erstellt. 
 
->**Info**: Um Microservices zur Plattform hinzuzufügen, muss die gepackte Datei die Manifest-Datei und das Docker Image für den Microservice enthalten. Nähere Informationen zum Vorbereiten und Deployen des Microservice-Pakets finden Sie unter [Microservice package reference](/guides/reference/microservice-package) im Reference guide.
+>**Info**: Um Microservices zur Plattform hinzuzufügen, muss die gepackte Datei die Manifest-Datei und das Docker Image für den Microservice enthalten. Nähere Informationen zum Vorbereiten und Deployen des Microservice-Pakets finden Sie unter [Microservice package reference](/reference/microservice-package) im Reference guide.
 
 ##### <a name="external-application"></a>Verweisen auf eine externe Anwendung
 
@@ -192,7 +192,7 @@ Um eine Anwendung hinzuzufügen, die auf eine externe Anwendung verweist, führe
 1. Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
 2. Wählen Sie im folgenden Dialog **Externe Anwendung**.
 <br><br>
-<img src="/guides/images/benutzerhandbuch/admin-own-applications-external.png" alt="Externe Anwendung" style="max-width: 50%">
+<img src="/images/benutzerhandbuch/admin-own-applications-external.png" alt="Externe Anwendung" style="max-width: 50%">
 <br><br>
 3. Geben Sie im nächsten Fenster einen Namen für die Anwendung ein. Der Name wird als Titel oben links auf der Anwendungsseite angezeigt. Er wird außerdem im Application Switcher verwendet.  
 5. Geben Sie einen Anwendungsschlüssel ein, um diese Anwendung zu identifizieren.
@@ -215,7 +215,7 @@ Führen Sie die folgende Schritte aus, um eine Anwendung zu duplizieren:
 2.  Wählen Sie im folgenden Dialog **Existierende Anwendung duplizieren**.
 3.  Wählen Sie die gewünschte Anwendung aus der Auswahlliste. 
 <br><br>
-<img src="/guides/images/benutzerhandbuch/admin-own-applications-duplicate.png" alt="Anwendung duplizieren" style="max-width: 50%">
+<img src="/images/benutzerhandbuch/admin-own-applications-duplicate.png" alt="Anwendung duplizieren" style="max-width: 50%">
 <br><br>
 4.  Geben Sie im nächsten Fenster den Namen der Anwendung ein. Standardmäßig wird der Name der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen. Der Name wird als Titel oben links auf der Anwendungsseite angezeigt. Er wird außerdem im Application Switcher verwendet.
 5.  Geben Sie einen Anwendungsschlüssel ein, um die Anwendung zu identifizieren. Standardmäßig wird der Anwendungsschlüssel der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen. 
@@ -236,7 +236,7 @@ Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute]
 
 Nachdem die Datei auf die Plattform hochgeladen wurde, wird eine Anwendung des Typs "Apama CEP-Regel" erstellt. 
 
-<img src="/guides/images/users-guide/Administration/Admin_ApplicationCEPRule.png" alt="Uploading zip file" style="max-width: 100%">
+<img src="/images/users-guide/Administration/Admin_ApplicationCEPRule.png" alt="Uploading zip file" style="max-width: 100%">
 
 >**Info:** Sie können zu einer Anwendung des Typs "Apama CEP-Regel" keine Plugins hinzufügen. 
 
@@ -272,7 +272,7 @@ Klicken Sie **Plugin hinzufügen** auf der Karte der gewünschten Anwendung, um 
 
 Die Registerkarte **Plugin** für die Anwendung wird geöffnet und zeigt alle vorhandenen Plugins an. Außerdem können weitere Plugins durch Ablegen einer ZIP-Datei oder Durchsuchen Ihres Computers hinzugefügt werden.
 
-![Plugins](/guides/images/benutzerhandbuch/admin-plugins.png)
+![Plugins](/images/benutzerhandbuch/admin-plugins.png)
 
 Um eine Regel zu entfernen, bewegen Sie den Mauszeiger darüber und klicken Sie **Entfernen**.
 
@@ -446,7 +446,7 @@ Zum Hochladen eines Archiv führen Sie die folgenden Schritte aus:
 3.  Klicken Sie **Archiv hochladen** und navigieren Sie zu der Datei auf Ihrem Computer oder ziehen Sie die Datei auf das entsprechende Feld.
 4.  Klicken Sie **Hochladen**, um das Archiv auf Ihr Cumulocity-Konto hochzuladen.
 
-<img src="/guides/images/benutzerhandbuch/admin-upload-archive.png" alt="Archiv hochladen" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/admin-upload-archive.png" alt="Archiv hochladen" style="max-width: 100%">
 
 Hochgeladene Archive können aktiviert, heruntergeladen oder gelöscht werden. Das aktive Archiv (durch ein Cloud-Symbol gekennzeichnet) ist die Version der Anwendung, die aktuell den Benutzern Ihres Kontos zur Verfügung steht. Diese Version kann nicht gelöscht werden.
 

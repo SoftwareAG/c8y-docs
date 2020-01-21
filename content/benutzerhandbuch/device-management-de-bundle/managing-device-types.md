@@ -10,7 +10,7 @@ Klicken Sie **Geräteprotokolle** im Menü **Gerätetypen** im Navigator.
 
 Die Seite G**eräteprotokolle** zeigt eine Liste aller in Ihrem Konto verfügbaren Geräteprotokolle an.
 
-![Device Protocols](/guides/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-deviceprotocols.png)
+![Device Protocols](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-deviceprotocols.png)
 
 Die Geräteprotokoll-Liste zeigt die folgenden Information zu jedem Eintrag an:
 
@@ -20,8 +20,8 @@ Die Geräteprotokoll-Liste zeigt die folgenden Information zu jedem Eintrag an:
 
 Um ein neues Geräteprotokoll hinzuzufügen, klicken Sie **Geräteprotokoll hinzufügen** in der oberen Leiste. Detaillierte Informationen zum Hinzufügen eines Protokolls finden Sie in der Beschreibung des jeweiligen Gerätetyps, den Sie hinzufügen möchten:
 
-* [IMPACT](/guides/users-guide/optional-services#nokia-impact)
-* [LWM2M](/guides/users-guide/optional-services#lwm2m)
+* [IMPACT](/users-guide/optional-services#nokia-impact)
+* [LWM2M](/users-guide/optional-services#lwm2m)
 
 Klicken Sie auf einen Eintrag, um diesen zu bearbeiten, oder öffnen Sie das Kontextmenü über das Menüsymbol und klicken Sie **Bearbeiten**. 
 

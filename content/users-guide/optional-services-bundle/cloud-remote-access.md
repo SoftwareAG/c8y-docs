@@ -50,7 +50,7 @@ The following gateways are supported:
 
 Cloud Remote Access is a secure way to directly access remote devices through a web browser.
 
-![VNC](/guides/images/users-guide/cra-VNC1a.png)
+![VNC](/images/users-guide/cra-VNC1a.png)
 
 The following protocols are supported:
 
@@ -58,9 +58,9 @@ The following protocols are supported:
 * Secure Shell (SSH)
 * Terminal (Telnet)
 
-Cloud Remote Access works as in the illustration below. The remotely controlled device runs a VNC, SSH or Telnet server and is connected to a gateway compatible with Cloud Remote Access. This gateway must be registered as a device within the Device Management application in Cumulocity. More information about registering devices and instructions can be found in [Device Management > Device Registration](/guides/users-guide/device-management/#device-registration) in the User guide.
+Cloud Remote Access works as in the illustration below. The remotely controlled device runs a VNC, SSH or Telnet server and is connected to a gateway compatible with Cloud Remote Access. This gateway must be registered as a device within the Device Management application in Cumulocity. More information about registering devices and instructions can be found in [Device Management > Device Registration](/users-guide/device-management/#device-registration) in the User guide.
 
-![VNC2](/guides/images/users-guide/cra-VNC2.png)
+![VNC2](/images/users-guide/cra-VNC2.png)
 
 With Cloud Remote Access users can
 
@@ -68,7 +68,7 @@ With Cloud Remote Access users can
 * connect to remote devices easily as complex VPN setups are not required, 
 * establish connection via Telnet or SSH to the gateway itself or to any device in the local area network. 
 
-![VNC1b](/guides/images/users-guide/cra-VNC1b.png)
+![VNC1b](/images/users-guide/cra-VNC1b.png)
 
 The connection to remote devices is securely encrypted through TLS technology. Additionally, passwords are encrypted in your Cumulocity account, so that you do not need to manage them elsewhere.
 
@@ -86,11 +86,11 @@ To use Cloud Remote Access, the following prerequisites have to be met:
 
 Click **All devices** and select the desired gateway from the device list. 
 
-![Device list](/guides/images/users-guide/cra-device-list.png)
+![Device list](/images/users-guide/cra-device-list.png)
 
 When you open the gateway you will find the **Remote access** tab in its tab list. 
 
-![Remote access tab](/guides/images/users-guide/cra-remote-access-tab.png)
+![Remote access tab](/images/users-guide/cra-remote-access-tab.png)
 
 In the **Remote Access** tab, you can configure devices for remote control, so-called "endpoints", and connect to remote devices.
 
@@ -103,17 +103,17 @@ Connections can be established to the gateway itself (localhost) or to any devic
 
 The "endpoint" is the IP address and port of the VNC, SSH or Telnet server running on the remote device. The IP address and port need to be reachable from the gateway. 	
 
-![Endpoints](/guides/images/users-guide/cra-endpoint-add.png)
+![Endpoints](/images/users-guide/cra-endpoint-add.png)
 
 To configure new remote devices, click **Add endpoint**. Follow the descriptions below for configuring the various types of endpoints.
 
->**Info**: To be able to configure an endpoint, you need ADMIN permission for "Remote access" and "Device control". To read data, a READ permission is sufficient. For more information on permissions, refer to [Administration > Managing permissions](/guides/users-guide/administration/#managing-permissions) in the User guide.
+>**Info**: To be able to configure an endpoint, you need ADMIN permission for "Remote access" and "Device control". To read data, a READ permission is sufficient. For more information on permissions, refer to [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the User guide.
 
 #### Adding remote access endpoints via VNC 
 
 To configure a remote access endpoint via VNC, enter a description for the remote access endpoint, the IP address and port, and the password of the VNC server. Click **Save** to add the endpoint to the list.
 
-![Remote access endpoint](/guides/images/users-guide/cra-endpoint-vnc.png)
+![Remote access endpoint](/images/users-guide/cra-endpoint-vnc.png)
 
 Once the connection is established, a new browser tab will open displaying the front screen or operating panel of the remote device you are connected to. The top bar of the screen will show “starting VNC handshake” when the process is starting. 
 
@@ -121,7 +121,7 @@ Once the connection is established, a new browser tab will open displaying the f
 
 Enter the name of the endpoint. Select the Telnet protocol from the dropdown menu. Enter the IP address and the port. When ready, click **Save**.
 
-![Remote access Telnet endpoint](/guides/images/users-guide/cra-endpoint-telnet.png)
+![Remote access Telnet endpoint](/images/users-guide/cra-endpoint-telnet.png)
 
 >**Important**: Be aware, that Telnet is considered to be an insecure protocol lacking built-in security measures. For network communication in a production environment we highly recommend to use the SSH protocol instead.
 
@@ -132,11 +132,11 @@ To configure a remote access endpoint via SSH, enter the name of the endpoint, s
 
 - Username and password: If this method is selected, it is mandatory to enter username and password.
 
-	![SSH username and password sign in](/guides/images/users-guide/cra-endpoint-ssh-username.png)
+	![SSH username and password sign in](/images/users-guide/cra-endpoint-ssh-username.png)
 
 - Public/private keys: Automatically generate public and private keys or simply paste pre-generated keys. The keys can also be uploaded from a file. 
 
-	![SSH public/private keys sign in](/guides/images/users-guide/cra-endpoint-ssh-publicprivatekeys.png)
+	![SSH public/private keys sign in](/images/users-guide/cra-endpoint-ssh-publicprivatekeys.png)
 
 **Info**: The public key needs to be installed on the remote device as authorized_key.
 
@@ -162,7 +162,7 @@ The following algorithms are supported when adding new keys:
 
 To edit or remove an endpoint, click the menu icon at the right of a row and select **Edit** or **Remove** from the context menu.
 
-![Edit endpoints](/guides/images/users-guide/cra-endpoint-menu.png)
+![Edit endpoints](/images/users-guide/cra-endpoint-menu.png)
 
 #### Auto-saving host key
 
@@ -172,17 +172,17 @@ By enabling the auto-saving host key functionality you will no longer need to en
 
 In order to enable the auto-save host key functionality, navigate to the **Remote access** page under the **Settings** menu in the **Administration** application. Activate the checkbox and then click **Save**.
 
-![Save host key](/guides/images/users-guide/administration-settings-cra.png)
+![Save host key](/images/users-guide/administration-settings-cra.png)
 
 ### Connecting to endpoints
 
 To connect to configured endpoints, choose an endpoint in the **Remote access** tab and click **Connect**. 
 
-![Connect Endpoint](/guides/images/users-guide/cra-endpoint-connect.png)
+![Connect Endpoint](/images/users-guide/cra-endpoint-connect.png)
 
 The connection to the configured remote device is established and the VNC, SSH or Telnet screen is shared in the client area. 
 
-![Telnet connection](/guides/images/users-guide/cra-connect-telnet.png)
+![Telnet connection](/images/users-guide/cra-connect-telnet.png)
 
 To terminate the connection, click **Disconnect**.
 
@@ -194,7 +194,7 @@ For each connection the Cloud Remote Access microservice creates an operation in
 
 The audit logs can be found in the **Control** tab of the gateway device.
 
-![Display Audit logs](/guides/images/users-guide/cra-control-tab.png)
+![Display Audit logs](/images/users-guide/cra-control-tab.png)
 
 ### Compatibility and limitations
 
@@ -258,7 +258,7 @@ To set up new endpoints, you need ADMIN permission for "Device control" to be ab
 
 To establish a connection to a remote operating panel, a READ permission for "Remote access" is sufficient.
 
-For more information on permissions, refer to [Administration > Managing permissions](/guides/users-guide/administration/#managing-permissions) in the User guide.
+For more information on permissions, refer to [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the User guide.
 
 **Connection fails**
 

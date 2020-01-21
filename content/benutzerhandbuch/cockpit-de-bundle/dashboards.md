@@ -6,7 +6,7 @@ layout: redirect
 
 Dashboards ermöglichen eine individuelle Visualisierung Ihrer Daten anhand verschiedener Widgets. Widgets können Karten, Bilder, Graphen, Tabellen und andere grafische Darstellungen von Daten anzeigen. 
 
-Cumulocity bietet eine Reihe voreingestellter Widgets (Details finden Sie im Abschnitt [Widgets-Sammlung](#widgets)). Sie können auch eigene Widgets entwickeln und diese zu Ihrem Cumulocity-Konto hinzufügen, siehe [Web developer's guide](/guides/web/).
+Cumulocity bietet eine Reihe voreingestellter Widgets (Details finden Sie im Abschnitt [Widgets-Sammlung](#widgets)). Sie können auch eigene Widgets entwickeln und diese zu Ihrem Cumulocity-Konto hinzufügen, siehe [Web developer's guide](/web/).
 
 ### <a name="creating-dashboards"></a>Erstellen von Dashboards
 
@@ -14,7 +14,7 @@ Wählen Sie im Navigator das Objekt (Gruppe oder Gerät) aus, für welches Sie e
 
 Klicken Sie auf die **Plus**-Schaltfläche in der oberen Leiste und wählen Sie im Menü **Neues Dashboard**. 
 
-<img src="/guides/images/benutzerhandbuch/cockpit-dashboard-create.png" name="Create dashboard" style="width:75%;"/>
+<img src="/images/benutzerhandbuch/cockpit-dashboard-create.png" name="Create dashboard" style="width:75%;"/>
 
 Gaben Sie im Abschnitt **Dashboard-Info** des Dashboard-Editors folgende Informationen ein:
 
@@ -35,7 +35,7 @@ Da noch keine Widgets im Dashboard vorhanden sind, wird nur die Schaltfläche **
 
 Klicken Sie **Widget hinzufügen** in der oberen Menüleiste (oder in einem leeren Dashboard) Um ein Widget zu einem Dashboard hinzuzufügen.
 
-<img src="/guides/images/benutzerhandbuch/cockpit-dashboard-add-widget.png" name="Add widget" style="width:75%;"/> 
+<img src="/images/benutzerhandbuch/cockpit-dashboard-add-widget.png" name="Add widget" style="width:75%;"/> 
 
 Wählen Sie im folgenden Fenster einen Widget-Typen aus der Auswahlliste. Abhängig vom ausgewählten Typen werden weitere Felder zur Bearbeitung eingeblendet. Details zu allen Widget-Typen finden Sie unter [Widgets-Sammlung](#widgets). 
 
@@ -56,7 +56,7 @@ Klicken Sie auf das Zahnrad-Symbol in der oberen rechten Ecke eines Widgets und 
 
 Sie können Dashboards nur bearbeiten, wenn diese entsperrt sind. Verwenden Sie den Regler mit dem Schloss-Symbol in der oberen Menüleiste, um ein Widget zu sperren bzw. entsperren.
 
-<img src="/guides/images/benutzerhandbuch/cockpit-dashboard-lock.png" name="Dashboard sperren" style="width:50%;"/> 
+<img src="/images/benutzerhandbuch/cockpit-dashboard-lock.png" name="Dashboard sperren" style="width:50%;"/> 
 
 >**Info:** Auf Touch-Geräten wie Smartphones oder Tablets werden einige Funktionen nicht unterstützt.
 
@@ -69,7 +69,7 @@ Wählen Sie dazu die Option **Dashboard auf alle Geräte des Typs [TYP] anwenden
 
 In Dashboard-Editor wird die folgende Nachricht angezeigt:
 
-<img src="/guides/images/benutzerhandbuch/cockpit-dashboard-share.png" name="Geteiltes Dashboard" style="width:75%;"/> 
+<img src="/images/benutzerhandbuch/cockpit-dashboard-share.png" name="Geteiltes Dashboard" style="width:75%;"/> 
 
 Änderungen an diesem Dashboard werden automatisch auf alle Dashboard-Instanzen angewendet.
 

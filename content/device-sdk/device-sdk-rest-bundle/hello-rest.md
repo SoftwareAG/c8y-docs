@@ -10,7 +10,7 @@ This section gives a very basic example how to create a device representation in
 
 All steps are performed by calling REST interfaces. Those REST calls are demonstrated by CURL statements that can be executed on command line. 
 
-Refer to the [introduction](/guides/microservice-sdk/rest#overview) in the Microservice SDK guide for a short introduction to CURL.
+Refer to the [introduction](/microservice-sdk/rest#overview) in the Microservice SDK guide for a short introduction to CURL.
 
 
 ### Prerequisites
@@ -107,7 +107,7 @@ In our case, we will send a temperature measurement in the unit of Celsius which
 >Replace the id value with the appropriate value you received in the fist step.
 
 >Furthermore, you should update the time value to a recent timestamp in order to make it easy to find back the measurement on Cumulocity UI later. 
->Note the data format for timestamp values which is explained in the [Reference guide](http://www.cumulocity.com/guides/reference/rest-implementation/).
+>Note the data format for timestamp values which is explained in the [Reference guide](http://www.cumulocity.com/reference/rest-implementation/).
 
     curl -v -u <username>:<password> \
        -H 'Accept: application/vnd.com.nsn.cumulocity.measurement+json; charset=UTF-8; ver=0.9' \
@@ -147,8 +147,8 @@ If you do not see data, you might need to change the filter setting to e.g. "las
 
 #### Go further
 
-The sequence of REST calls demonstrated here is just a shortened procedure of those described in [Device integration](/guides/device-sdk/rest#device-integration).
+The sequence of REST calls demonstrated here is just a shortened procedure of those described in [Device integration](/device-sdk/rest#device-integration).
 The first step (creating a new device) is part of the 'startup phase', whereas step two (sending measurements) references to the 'cycle phase'.
 
-Refer to the section on [Device integration](/guides/device-sdk/rest#device-integration) to get the necessary information required for implementing
+Refer to the section on [Device integration](/device-sdk/rest#device-integration) to get the necessary information required for implementing
 real-world agents.

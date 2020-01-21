@@ -13,7 +13,7 @@ Click **Map** in the **Devices** menu in the navigator to display a map showing 
 
 Devices are represented as "pins". Click a pin to see the name of the respective device. Click the device name to switch to its device details. 
 
-![Device map](/guides/images/users-guide/DeviceManagement/devmgmt-devices-map.png)
+![Device map](/images/users-guide/DeviceManagement/devmgmt-devices-map.png)
 
 ### <a name="connection-monitoring"></a>Connection monitoring
 
@@ -27,7 +27,7 @@ Open a device list to monitor the connections for multiple devices.
 
 The connection status is represented by arrows in the **Status** column in the device list.
 
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-devices-connectionstatus.png" alt="Connection Status">
+<img src="/images/users-guide/DeviceManagement/devmgmt-devices-connectionstatus.png" alt="Connection Status">
 
 **Send connections**
 
@@ -64,7 +64,7 @@ You can turn the maintenance mode on or off for a device through a toggle in the
 
 Navigate to the **Info** tab of a particular device to monitor the connections of this device. Under **Device status**, the connection status for the device is displayed. 
 
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-devices-deviceinfostatus.png" alt="Device Status">
+<img src="/images/users-guide/DeviceManagement/devmgmt-devices-deviceinfostatus.png" alt="Device Status">
 
 Below the send connection and push connection status, the time of the last communication is displayed. 
 
@@ -76,7 +76,7 @@ If an interval is set, you will find the **Maintenance** toggle below it.
 
 With the **Maintenance** toggle you can turn the maintenance mode for the device on or off which is immediately reflected in the connection status. 
 
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-devices-deviceinfomaintenance.png" alt="Device status maintenance">
+<img src="/images/users-guide/DeviceManagement/devmgmt-devices-deviceinfomaintenance.png" alt="Device status maintenance">
 
 ### <a name="monitoring-services"></a>Service monitoring
 
@@ -91,7 +91,7 @@ While a machine is offline, Cumulocity assumes by default
 * that the machine continues to stay in service during the connection outage, if this was the status before it lost connection.
 * that the machine continues to stay out of service, if this was the status before it lost connection.
 
-There may be exceptions from this rule. If your vending machines rely exclusively on cashless payment, losing the connection to the network means that your machine is out of service and stops selling. In this case, unavailability alarms must be set in the [Administration application](/guides/users-guide/administration#reprio-alarms) which have CRITICAL severity instead of MAJOR severity.
+There may be exceptions from this rule. If your vending machines rely exclusively on cashless payment, losing the connection to the network means that your machine is out of service and stops selling. In this case, unavailability alarms must be set in the [Administration application](/users-guide/administration#reprio-alarms) which have CRITICAL severity instead of MAJOR severity.
 
 Cumulocity displays service availability at the level of individual devices and across all devices. 
 
@@ -103,7 +103,7 @@ Click the **Service monitoring** tab in the details of a particular device to ch
 
 Click **Service monitoring** in the **Device** menu in the navigator to display the overall service across all devices.
  
-![Service monitoring](/guides/images/users-guide/DeviceManagement/devmgmt-devices-servicemonitoring.png)
+![Service monitoring](/images/users-guide/DeviceManagement/devmgmt-devices-servicemonitoring.png)
 
 The **Service monitoring** page shows the availability percentage of devices for the last day, last week and last month. 
 
@@ -119,7 +119,7 @@ Cumulocity displays alarms at the level of individual devices and across all dev
 * To check the alarms for all devices, click **Alarms** in the **Overview** menu in the navigator. 
 * To check the alarms of a particular device, switch to the **Alarm** tab in the details of this device.
 
-![Alarms page](/guides/images/users-guide/DeviceManagement/devmgmt-alarms.png)
+![Alarms page](/images/users-guide/DeviceManagement/devmgmt-alarms.png)
 
 By default, 
 
@@ -154,14 +154,14 @@ In each row, the following information for an alarm is provided:
 
 Click the arrow on the right of a row to expand it and display further details on the alarm.
 
-* **Status**: Providing further information on the alarm status and showing the type of the alarm. The type info is used for duplicating alarms and for configuring the priority of alarms in the [Administration application](/guides/users-guide/administration#reprio-alarms).
+* **Status**: Providing further information on the alarm status and showing the type of the alarm. The type info is used for duplicating alarms and for configuring the priority of alarms in the [Administration application](/users-guide/administration#reprio-alarms).
 * **Change Log**: Providing the server time when the alarm was created, which may differ from the device time.
 
 #### To change the status of an alarm
 
 To change the status of an alarm, hover over it and click the button for the desired status or click the menu icon and select the desired status.
 
-![Alarm change status](/guides/images/users-guide/DeviceManagement/devmgmt-alarms-status.png)
+![Alarm change status](/images/users-guide/DeviceManagement/devmgmt-alarms-status.png)
 
 It is also possible to change the status of all alarms to "clear" at once. Click **Clear all** in the top menu bar, to clear all alarms of the selected severities.
 
@@ -180,7 +180,7 @@ You can view operations at the level of individual devices and across all device
 * To view the operations for all devices, click **Device control** in the **Overview** menu in the navigator.
 * To view the operations of a particular device, switch to the **Control** tab in the details of this device.
 
-![Device Control](/guides/images/users-guide/DeviceManagement/devmgmt-devicecontrol.png)
+![Device Control](/images/users-guide/DeviceManagement/devmgmt-devicecontrol.png)
 
 Operations can be in one of the following four states:
 
@@ -204,7 +204,7 @@ Clicking a row expands it and displays further details on the operation.
 * **Details**: Providing information on the operation name and status. In case of status = FAILED the reason for the failure is provided. 
 * **History of Changes**: Providing information on the past changes of the operation.
 
-![Operation Details](/guides/images/users-guide/DeviceManagement/devmgmt-devicecontrol-history.png)
+![Operation Details](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-history.png)
 
 
 By clicking one of the state buttons at the top, the corresponding operations will be hidden. Click it again to show the operations again.
@@ -215,7 +215,7 @@ Click **Realtime** at the right of the top menu bar to see operations coming in 
 
 #### To create and execute operations
 
-Operations for a specific device are created and executed in the **Shell** tab of the device, see [Device details > Shell](/guides/users-guide/device-management#shell).
+Operations for a specific device are created and executed in the **Shell** tab of the device, see [Device details > Shell](/users-guide/device-management#shell).
 
 >**Important**:When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
 
@@ -232,11 +232,11 @@ To execute bulk operations for a group, follow these steps:
 
 The operation will be executed for all devices in the group.
 
-![Execute bulk operations](/guides/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk.png)
+![Execute bulk operations](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk.png)
 
 In order to view the status and progress of your operations, simply select the desired group and click the **Bulk operations** tab.
 
-![Bulk operations tab](/guides/images/users-guide/DeviceManagement/devmgmt-bulkoperations.png)
+![Bulk operations tab](/images/users-guide/DeviceManagement/devmgmt-bulkoperations.png)
 
 ##### <a name="bulk-operations"></a>To edit bulk operations
 
@@ -247,7 +247,7 @@ In order to view the status and progress of your operations, simply select the d
 
 The changes will be applied to the bulk operation accordingly.
 
-![Edit bulk operations](/guides/images/users-guide/DeviceManagement/devmgmt-bulkoperations-reschedule.png)
+![Edit bulk operations](/images/users-guide/DeviceManagement/devmgmt-bulkoperations-reschedule.png)
 
 ##### <a name="bulk-operations"></a>To delete bulk operations
 
@@ -264,7 +264,7 @@ Cumulocity displays events at the level of individual devices and across all dev
 * To view the events for all devices, click **Events** in the **Overview** menu in the navigator.
 * To view the events of a particular device, switch to the **Events** tab in the details of this device.
  
-![Events](/guides/images/users-guide/DeviceManagement/devmgmt-events.png)
+![Events](/images/users-guide/DeviceManagement/devmgmt-events.png)
 
 Per default, events are shown as coming in from the devices in real time. To disable real-time updates, click **Realtime** at the right of the top menu bar.
 

@@ -8,10 +8,10 @@ In this section, fragments related to configuration management are listed.
 
 The following fragments can be observed:
 
-- c8y_Configuration: Text configuration fragment that allows you to configure parameters and initial settings of your device. For further information, see [Device Management > Device details > Configuration](/guides/users-guide/device-management#config) in the User guide.
-- c8y_ConfigurationDump: Potentially large size configuration archive. For further information, see [Device Management > Configuration repository](/guides/users-guide/device-management#configuration-repository) in the User guide.
-- c8y_UploadConfigFile: Upload potentially large size configuration files. For further information, see “To apply a configuration snapshot to a device” in [Device Management > Configuration repository](/guides/users-guide/device-management#configuration-repository) in the User guide.
-- c8y_DownloadConfigFile:  Download potentially large size configuration files. For further information, see “To retrieve a configuration snapshot from a device” in [Device Management > Configuration repository](/guides/users-guide/device-management#configuration-repository) in the User guide.
+- c8y_Configuration: Text configuration fragment that allows you to configure parameters and initial settings of your device. For further information, see [Device Management > Device details > Configuration](/users-guide/device-management#config) in the User guide.
+- c8y_ConfigurationDump: Potentially large size configuration archive. For further information, see [Device Management > Configuration repository](/users-guide/device-management#configuration-repository) in the User guide.
+- c8y_UploadConfigFile: Upload potentially large size configuration files. For further information, see “To apply a configuration snapshot to a device” in [Device Management > Configuration repository](/users-guide/device-management#configuration-repository) in the User guide.
+- c8y_DownloadConfigFile:  Download potentially large size configuration files. For further information, see “To retrieve a configuration snapshot from a device” in [Device Management > Configuration repository](/users-guide/device-management#configuration-repository) in the User guide.
 
 #### c8y\_Configuration
 
@@ -25,7 +25,7 @@ The following fragments can be observed:
       "config": "#Tue Jul 02 16:10:36 UTC 2013\nc8y.log.alarmLevel=ERROR\nc8y.modem.signalPolling=10000\nc8y.log.eventLevel=INFO"
     }
 
-![Device configuration](/guides/images/reference-guide/configuration.png)
+![Device configuration](/images/reference-guide/configuration.png)
 
 #### c8y\_ConfigurationDump
 

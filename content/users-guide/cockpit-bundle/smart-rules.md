@@ -4,11 +4,11 @@ title: Smart Rules
 layout: redirect
 ---
 
-Cumulocity includes a rule engine to analyze data in realtime and to perform actions based on data. These rules are specified in a scripting language and are managed in the [Administration application](/guides/users-guide/administration).
+Cumulocity includes a rule engine to analyze data in realtime and to perform actions based on data. These rules are specified in a scripting language and are managed in the [Administration application](/users-guide/administration).
 
 To easily create rules, the Cockpit application includes a Smart Rules builder which allows you to create rules from templates (so-called smart rule templates).
 
->**Info:** Smart Rules are only visible, if the tenant is subscribed to the Smartrule application. To manage Smart Rules, the user has to have CREATE permission for Inventory and either Smartrule permission or CEP management permission.
+>**Info:** Smart Rules are only visible, if the tenant is subscribed to the Smartrule application. To manage Smart Rules, the user has to have CREATE permission for Inventory and either "Smartrule" permission or "CEP management" permission.
 
 Smart Rules are parameterized. There are two sources for parameters:
 
@@ -19,10 +19,10 @@ Smart Rules are parameterized. There are two sources for parameters:
 Smart Rules can be seen 
 
 * in the **Info** tab of a device or group. <br><br>
-![Smart Rules info tab](/guides/images/users-guide/cockpit/cockpit-smart-rules-info-tab.png)
+![Smart Rules info tab](/images/users-guide/cockpit/cockpit-smart-rules-info-tab.png)
 
 * in the **Smart Rules** page accessible from the **Configuration** menu. <br><br>
-![Smart Rules info tab](/guides/images/users-guide/cockpit/cockpit-smart-rules-list.png)
+![Smart Rules info tab](/images/users-guide/cockpit/cockpit-smart-rules-list.png)
 
 There are two different kinds of Smart Rules:
 
@@ -61,7 +61,7 @@ A Smart Rule can be activated (switched on) and deactivated (switched off) for a
 
 Navigate to the **Info** tab of the group or device and enable/disable the respective rule using the toggle. 
 
-<img src="/guides/images/users-guide/cockpit/cockpit-smart-rules-enable.png" name="Smart rule in Info tab" />
+<img src="/images/users-guide/cockpit/cockpit-smart-rules-enable.png" name="Smart rule in Info tab" />
 
 ### To edit a Smart Rule 
 
@@ -76,9 +76,9 @@ For details on the fields see [To create a Smart Rule](#create-rules).
 2. Modify at least the name.
 3. Click **Save & close** to save the Smart Rule and return to the Smart Rule list.
 
-### To remove a Smart Rule
+### To delete a Smart Rule
 
-Click the menu icon at the right of an entry and then click **Remove**.
+Click the menu icon at the right of an entry and then click **Delete**.
 
 ### To debug a Smart Rule
 
@@ -93,10 +93,10 @@ To define a threshold rule follow these steps:
 1. In the navigator, select the desired group or device to apply a threshold to.
 2. Switch to the **Data explorer** tab.
 3. If the data point that should raise the threshold is not visible by default, select **Add data point** and [add a data point](#add-data-points). 
-4. Click the menu icon at the end of the row of the respective data point and select **Create Smart Rule**. <br><br> <img src="/guides/images/users-guide/cockpit/cockpit-smart-rules-data-point.png" name="Data point example"/>
+4. Click the menu icon at the end of the row of the respective data point and select **Create Smart Rule**. <br><br> <img src="/images/users-guide/cockpit/cockpit-smart-rules-data-point.png" name="Data point example"/>
 <br>
 5. Select the Smart Rule "On measurement explicit threshold create alarm". 
-6. Fill in the red range minimum and red range maximum value. When the measurement value enters or leaves the RED range, an alarm is created or respectively cleared. For details, see the description of the rule "On measurement explicit threshold create alarm" in the [Smart Rules collection](/guides/users-guide/cockpit#smart-rules-collection).
+6. Fill in the red range minimum and red range maximum value. When the measurement value enters or leaves the RED range, an alarm is created or respectively cleared. For details, see the description of the rule "On measurement explicit threshold create alarm" in the [Smart Rules collection](/users-guide/cockpit#smart-rules-collection).
 7. Under **Create Alarm** you can optionally edit the alarm type and the alarm text.
 8. Under **Target assets or devices** you can select the object this rule will be applied to.
 9. Click **Create** to create the Smart Rule.

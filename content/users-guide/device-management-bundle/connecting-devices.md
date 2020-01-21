@@ -8,7 +8,7 @@ layout: redirect
 
 In the **Device registration** page all devices which currently are in the registration process are displayed either in a list or in a grid.
 
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-device-registration.png" alt="Device registration page">
+<img src="/images/users-guide/DeviceManagement/devmgmt-device-registration.png" alt="Device registration page">
 
 The following information is shown for each device:
 
@@ -33,9 +33,9 @@ To register devices, you may choose one of the following options:
 * **[Bulk device registration](#creds-upload)** - to register larger amounts of devices in one step
 
 If you are subscribed to the required applications you will see a third option
-**Custom device registration** for registering devices of specific types, e.g. LoRa or Sigfox, see the documentation for these services in [Optional services](/guides/users-guide/optional-services). 
+**Custom device registration** for registering devices of specific types, e.g. LoRa or Sigfox, see the documentation for these services in [Optional services](/users-guide/optional-services). 
 
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
+<img src="/images/users-guide/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
 
 
 #### <a name="device-registration-manually"></a>To connect a  device manually
@@ -45,7 +45,7 @@ If you are subscribed to the required applications you will see a third option
 1. Click **Registration** in the **Devices** menu of the navigator and then click **Register device**.
 2. In the resulting **Register devices** dialog box, select **General device registration**.
 
-	<img src="/guides/images/users-guide/DeviceManagement/devmgmt-registration-general.png" alt="General device registration" style="max-width: 100%">
+	<img src="/images/users-guide/DeviceManagement/devmgmt-registration-general.png" alt="General device registration" style="max-width: 100%">
 
 3. In the **Device ID** field, enter a unique ID for the device. To determine the ID, consult the device documentation. In case of mobile devices the ID usually is the IMEI (International Mobile Equipment Identity) often found on the back of the device.
 4. Optionally, select a group to assign your device to after registration, see also [Grouping devices](#grouping-devices).
@@ -54,7 +54,7 @@ If you are subscribed to the required applications you will see a third option
 
 **Info**: In an Enterprise Tenant, the management tenant may also directly select a tenant to which the device will be added from here. Note that since the management tenant does not have access to the subtenant's inventory you can either register devices to a tenant OR to a group, not both. 
 
-<img src="/guides/images/users-guide/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration"> 
+<img src="/images/users-guide/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration"> 
 
 After successful registration the device(s) will be listed in the [**Device registration** page](#dev-registration) with the status "Waiting for connection".
 
@@ -72,7 +72,7 @@ To connect larger amounts of devices, Cumulocity offers the option to bulk-regis
 1. Click **Registration** in the **Devices** menu of the navigator and then click **Register device**.
 2. In the resulting **Register devices** dialog box select **Bulk device registration**.
 
-	<img src="/guides/images/users-guide/DeviceManagement/devmgmt-bulk-registration.png" alt="Bulk registration" style="max-width: 100%">
+	<img src="/images/users-guide/DeviceManagement/devmgmt-bulk-registration.png" alt="Bulk registration" style="max-width: 100%">
 
 3. Click **Select file to upload** and select the CSV file you want to upload by browsing for it on your computer.
 
@@ -125,6 +125,6 @@ For your convenience we provide CSV template files for both bulk registration ty
 5. In Step 2 of the **Text Import Wizard**, select **Semicolon** as delimiter and click **Finish**.
 
 For further information on the file format and accepted CSV variants, also refer to 
-[Bulk device credentials](/guides/reference/device-credentials/#creds-upload) in the Reference guide.
+[Bulk device credentials](/reference/device-credentials/#creds-upload) in the Reference guide.
 
 >**Info**: In an Enterprise Tenant you may also register devices across multiple tenants by adding a **Tenant** column to the spreadsheet and importing the CSV file from the management tenant.

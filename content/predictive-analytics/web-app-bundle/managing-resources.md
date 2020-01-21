@@ -14,7 +14,7 @@ Resource management functionality includes:
 
 Click **Resources** in the navigator, to open the **Resources** page. 
 
-![Resources](/guides/images/zementis/zementis-resources.png)
+![Resources](/images/zementis/zementis-resources.png)
 
 ### Uploading resources
 

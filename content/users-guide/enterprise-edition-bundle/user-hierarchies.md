@@ -10,11 +10,11 @@ With user hierarchies you can reflect independent organizational entities in Cum
 
 ### Viewing user hierarchies
 
-In the **Users** page, user hierarchies are indicated by an arrow left from the user icon. Clicking on the arrow unfolds the user hierarchy. You can also fold and unfold the entire user hierarchy using the **Expand all** and **Collapse all** links on the top right.
+In the **Users** page, user hierarchies are indicated by an arrow left from the user icon. Clicking on the arrow unfolds the user hierarchy. You can also fold and unfold the entire user hierarchy using the **Expand all** and **Collapse all** links at the right of the top menu bar.
 
 A small number next to the user name shows how many direct sub-users a user has. Sub-users are users that can be managed by their respective parent user and that have at most the permissions of that parent user. In the example below, the user "Demo user" has one direct sub-user. 
 
-![User hierarchies](/guides/images/users-guide/ee-user-hierarchy.png)
+![User hierarchies](/images/users-guide/ee-user-hierarchy.png)
 
 ### <a name="sub-users"></a> To create a sub-user
 
@@ -24,15 +24,15 @@ User hierarchies are created by assigning an "owner" to a user. The owner can ma
 2. In the **Owner** field, select the user you want to assign as owner from the dropdown list.
 3. Click **Done** to confirm.
 
-![Select owner](/guides/images/users-guide/ee-user-hierarchy-assign-owner.png) 
+![Select owner](/images/users-guide/ee-user-hierarchy-assign-owner.png) 
 
->**Info:** When creating a new user, the owner is automatically set to the user who is logged in. The owner can be changed later. Only users with USER ADMIN permission can assign an owner to a user. 
+>**Info:** When creating a new user, the owner is automatically set to the user who is logged in. The owner can be changed later. Only users with "User" ADMIN permission can assign an owner to a user. 
 
 > If you want an owner to manage only their sub-users, make sure that the owner does not have a global role with user management permissions for all users.
 
 As an example, the sample below shows a user with a business role. The user becomes the owner of a new user. Therefore the new user can only get a business role assigned as the user cannot have higher permissions than the owner.
 
-![Owner Sample](/guides/images/users-guide/ee-user-hierarchy-roles.png)
+![Owner Sample](/images/users-guide/ee-user-hierarchy-roles.png)
 
 ### <a name="delegate"></a>Delegating user hierarchies to other users
 
@@ -44,18 +44,18 @@ You may of course also delegate on a temporary basis, for example if you are tem
 
 Either open the user and click the delegate icon in the **Delegated by** field, or click the menu icon at the right of the user entry in the user list and from the context menu, select **Delegate**.
 
-![User delegation](/guides/images/users-guide/ee-user-hierarchy-delegate.png)
+![User delegation](/images/users-guide/ee-user-hierarchy-delegate.png)
 
 #### To undelegate permissions
 
 Remove the delegation in the **Delegate by** field, or click the menu icon at the right of the user entry in the user list and from the context menu, select **Undelegate**.
 
-If the delegated user also needs to manage specific devices, the admin user must assign this device permissions (inventory roles) directly to the intended user. This can be done by using **Copy inventory roles from another user**. For details refer to [Administration > Managing permissions > Assigning inventory roles to users](/guides/users-guide/administration#attach-inventory).
+If the delegated user also needs to manage specific devices, the admin user must assign this device permissions (inventory roles) directly to the intended user. This can be done by using **Copy inventory roles from another user**. For details refer to [Administration > Managing permissions > Assigning inventory roles to users](/users-guide/administration#attach-inventory).
 
 > **Info:** Delegation works only inside user management and does not have any implication to other places. 
 
 ### Troubleshooting sub-users
 
-In the example below the user cannot change the access to the Administration application, because the owner of the user has no USER MANAGEMENT permission. As a result, the owner user can not assign built-in applications (and the owned user cannot use them). 
+In the example below the user cannot change the access to the Administration application, because the owner of the user has no "User management" permission. As a result, the owner user can not assign built-in applications (and the owned user cannot use them). 
 
-![Warning message](/guides/images/users-guide/warning1.png)
+![Warning message](/images/users-guide/warning1.png)

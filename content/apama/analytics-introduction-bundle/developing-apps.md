@@ -9,13 +9,13 @@ You can develop Apama EPL applications in two different ways:
 * You can use [Apama EPL Apps](#apama-epl-apps) which is available from Cumulocity IoT's application switcher and develop your applications within Cumulocity IoT.
 * Or you can install Apama on your local machine and then develop your applications in [Software AG Designer](#sag-designer), that is, in a separate environment.
 
-See also [Using the Apama Event Processing Language (EPL)](/guides/concepts/realtime/#using-epl) in the *Concepts guide*.
+See also [Using the Apama Event Processing Language (EPL)](/concepts/realtime/#using-epl) in the *Concepts guide*.
 
 ### <a name="apama-epl-apps"></a>Developing applications with Apama EPL Apps
 
 Apama EPL Apps provides an interface for interactively editing new or existing EPL applications (\*.mon files) as well as importing and activating (deploying) EPL applications. 
 
-Any user on the tenant wishing to use Apama EPL Apps will need to be a **CEP Manager**. See [Managing permissions](/guides/users-guide/administration/#managing-permissions) in the *User guide*.
+Any user on the tenant wishing to use Apama EPL Apps will need to be a **CEP Manager**. See [Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
 
 > **Info**: To be able to develop applications with Apama EPL Apps and/or to import them from Software AG Designer into Cumulocity IoT, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Apama EPL Apps web application provided in Cumulocity IoT. If you have Apama "starter", Apama EPL Apps is not available in the application switcher. If you want to have this capability, contact Software AG support.
 
@@ -23,9 +23,9 @@ Any user on the tenant wishing to use Apama EPL Apps will need to be a **CEP Man
 
 Open the application switcher and click the icon for the **Apama EPL Apps** application.
 
-When you invoke Apama EPL Apps, a page listing any existing EPL applications is shown first. Each application is shown as a card. You can add new EPL applications and manage existing EPL applications from here.
+When you invoke Apama EPL Apps, the EPL application manager is shown first, listing any existing EPL applications. Each application is shown as a card. You can add new EPL applications and manage existing EPL applications from here.
 
-![Apama EPL Apps](/guides/images/apama/apama-epl-apps-cards.png)
+![Apama EPL Apps](/images/apama/apama-epl-apps-cards.png)
 
 <!--we'll need an up-to-date screenshot later, with the correct icon at the top, some nice names and descriptions on the cards, and at least one card showing an error--> 
 
@@ -39,7 +39,7 @@ From this page, you can:
 
 * Import EPL applications. If you prefer to develop your application outside of Cumulocity IoT (for example, using Software AG Designer), click **Import EPL** in the top menu bar to upload an Apama application into Apama EPL Apps.
 
-* Deploy existing EPL applications. On the card that is shown for an application, change the mode from **Inactive** to **Active**. For more information, see [Deploying applications](/guides/apama/analytics-introduction/#deploying-apps).
+* Deploy existing EPL applications. On the card that is shown for an application, change the mode from **Inactive** to **Active**. For more information, see [Deploying applications](/apama/analytics-introduction/#deploying-apps).
 
     When activating an application, any syntax errors are reported back immediately. The error state is shown on the card, helping you to ensure your application is in good shape. Click on the error to display information on what went wrong. It is not possible to activate an application if it has syntax errors. The errors are shown on the card until they have been fixed and the application has been activated again.
 
@@ -51,7 +51,7 @@ Click **New EPL app** in the top menu bar. Give the application a unique name. Y
 
 The EPL editor is shown next. The EPL code for the new application already contains the typical basic event definitions and utilities that are required for working with Cumulocity IoT. You can adapt them as required for your application. Consult the documentation and samples for more details.
 
-![EPL editor](/guides/images/apama/apama-epl-apps-editor.png)
+![EPL editor](/images/apama/apama-epl-apps-editor.png)
 
 <!--we'll need an up-to-date screenshot later, with the correct icon at the top, and with appropriate content in the editor--> 
 
@@ -61,21 +61,23 @@ Using the buttons in the top menu bar, you can undo/redo your last changes in th
 
 It is also possible to change the mode from **Inactive** to **Active** (or vice versa) in the EPL editor. Again, when there is an error in your EPL code, it is not possible to activate the application. The errors are highlighted within the code.
 
+Keep the following in mind while creating (or importing) an EPL application: When an EPL application is activated, it is possible that some EPL operations are performed that are not allowed for the user who created the application. For example, you may only have ADMIN permission for "CEP management" for injecting EPL and creating Analytics Builder models. However, when the application is activated, it is also possible that the injected EPL can create or clear an alarm and that an Analytics Builder model can create an operation.
+
 > **Side note:** Be aware that the EPL editor makes use of a standard web component. It provides many generic developer functions, some of which are not relevant to EPL, including but not limited to Quick Fix and Show Hover.
 
 Click **X** in the top menu bar to leave the EPL editor and thus to return to the list of EPL applications.
 
-<!--I wanted to use ""/guides/images/apama/apama-epl-apps-exit-button.png", but it looks like it's not possible to define inline images. This is shown in a line of its own. So I'm using the bold X instead.-->
+<!--I wanted to use ""/images/apama/apama-epl-apps-exit-button.png", but it looks like it's not possible to define inline images. This is shown in a line of its own. So I'm using the bold X instead.-->
 
-> **Caution:**  All unsaved changes are lost when you navigate to a different URL or close the browser window.
+> **Caution:** All unsaved changes are lost when you navigate to a different URL or close the browser window.
 
 **Step 3 - Test the EPL application**
 
 Once your application is activated, you should be able to see the results of it running. This may include sending measurements, receiving data, creating alarms, and logging in the Apama-ctrl microservice. 
 
-To check the logs of the Apama-ctrl microservice, go to **Own applications** in the Administration application, click **Apama-ctrl** and then go to the **Logs** tab. See [Managing applications](/guides/users-guide/administration/#managing-applications) in the *User guide* for more information on log files.
+To check the logs of the Apama-ctrl microservice, go to **Own applications** in the Administration application, click **Apama-ctrl** and then go to the **Logs** tab. See [Managing applications](/users-guide/administration/#managing-applications) in the *User guide* for more information on log files.
 
-See also [Deploying applications](/guides/apama/analytics-introduction/#deploying-apps).
+See also [Deploying applications](/apama/analytics-introduction/#deploying-apps).
 
 ### <a name="sag-designer"></a>Developing applications with Software AG Designer
 
@@ -133,7 +135,7 @@ CUMULOCITY_PASSWORD=examplePassword
 CUMULOCITY_APPKEY=apamaAppKey
 ```
 
->**Info:** You need to [create an application](/guides/users-guide/administration#managing-applications) in Cumulocity IoT to get a value for `CUMULOCITY_APPKEY`.
+>**Info:** You need to [create an application](/users-guide/administration#managing-applications) in Cumulocity IoT to get a value for `CUMULOCITY_APPKEY`.
 
 Note that the above description assumes that you are connecting to a tenant where the URL identifies the tenant. If that is not true (for example, if you are connecting by an IP address), you may need to set this in the *CumulocityIoT.properties* file: 
 
@@ -143,4 +145,4 @@ CUMULOCITY_TENANT=my_custom_tenant
 
 You can now proceed with testing your EPL in Software AG Designer.
 
-Once the EPL application is ready, refer to [Deploying applications](/guides/apama/analytics-introduction/#deploying-apps) to find out how to deploy it to Cumulocity IoT.
+Once the EPL application is ready, refer to [Deploying applications](/apama/analytics-introduction/#deploying-apps) to find out how to deploy it to Cumulocity IoT.

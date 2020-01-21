@@ -142,13 +142,13 @@ The resulting _hello-microservice.zip_ file contains your microservice and it is
 
 Uploading the _hello-microservice.zip_ into the platform can be done via the UI. In the Administration application, navigate to **Applications** > **Own applications** > **Add application** > **Upload microservice**. Drop the ZIP file of the microservice and then click **Subscribe**.
 
-![Subscribe microservice](/guides/images/microservices-sdk/admin-microservice-subscribe-up.png)
+![Subscribe microservice](/images/microservices-sdk/admin-microservice-subscribe-up.png)
 
-For more details about uploading a microservice ZIP file, refer to [Managing applications > Adding own applications](/guides/users-guide/administration#adding-applications) under the Administration section in the User guide.
+For more details about uploading a microservice ZIP file, refer to [Managing applications > Adding own applications](/users-guide/administration#adding-applications) under the Administration section in the User guide.
 
 ### Using the microservice utility tool
 
-You can also build, upload and subscribe the application using the [microservice utility tool](/guides/microservice-sdk/concept/#ms-utility-tool). In this case, the files must follow the directory structure required by the script.
+You can also build, upload and subscribe the application using the [microservice utility tool](/microservice-sdk/concept/#ms-utility-tool). In this case, the files must follow the directory structure required by the script.
 
 For this particular microservice example, the structure shall be:
 

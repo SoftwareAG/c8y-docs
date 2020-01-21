@@ -47,7 +47,7 @@ You can download the source code of this example from our [Bitbucket](https://bi
 
 #### Create a Maven project
 
-Use the [Maven Archetype Plugin](https://maven.apache.org/archetype/maven-archetype-plugin/) to create a Java project from an existing Maven template. Use `c8y.example` as your groupId, `hello-microservice-java` as your artifactId, and set the version following the SemVer format as specified in [Microservice manifest](/guides/microservice-sdk/concept/#manifest).
+Use the [Maven Archetype Plugin](https://maven.apache.org/archetype/maven-archetype-plugin/) to create a Java project from an existing Maven template. Use `c8y.example` as your groupId, `hello-microservice-java` as your artifactId, and set the version following the SemVer format as specified in [Microservice manifest](/microservice-sdk/concept/#manifest).
 
 ```shell
 $ mvn archetype:generate -DgroupId=c8y.example -DartifactId=hello-microservice-java -Dversion=1.0.0-SNAPSHOT -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
@@ -71,7 +71,7 @@ You will find the _pom.xml_ file inside the *hello-microservice-java* folder. Ed
 
 You need to specify the version of the Cumulocity's microservice library to be used. This can be found on the platform; at the top-right corner, click the tenant user and find the backend version on the pop-up menu.
 
-![Upload microservice](/guides/images/microservices-sdk/ms-backend-version.png)
+![Upload microservice](/images/microservices-sdk/ms-backend-version.png)
 
 In the `<properties>` element specified above, add a child element `<c8y.version>` with the backend version of your tenant. Also add a `<microservice.name>` child element to name your microservice application.
 
@@ -224,7 +224,7 @@ application.name=my-first-microservice
 server.port=80
 ```
 
-Create the directory _src/main/configuration_ to contain a _cumulocity.json_ file. This is the [manifest](/guides/microservice-sdk/concept/#manifest) file and it is required to deploy the microservice in the Cumulocity platform.
+Create the directory _src/main/configuration_ to contain a _cumulocity.json_ file. This is the [manifest](/microservice-sdk/concept/#manifest) file and it is required to deploy the microservice in the Cumulocity platform.
 
 ```json
 {
@@ -265,15 +265,15 @@ To deploy your microservice on the Cumulocity platform you need:
 
 In the Administration application, navigate to **Applications** > **Own applications**, click **Add application** and select **Upload microservice** from the options list.
 
-![Upload microservice](/guides/images/microservices-sdk/admin-microservice-upload.png)
+![Upload microservice](/images/microservices-sdk/admin-microservice-upload.png)
 
 Upload the ZIP file of your microservice application and click **Subscribe** for your tenant to be to subscribed to the microservice afterwards.
 
-![Subscribe microservice](/guides/images/microservices-sdk/admin-microservice-subscribe-up.png)
+![Subscribe microservice](/images/microservices-sdk/admin-microservice-subscribe-up.png)
 
 Once the ZIP file has been uploaded successfully, you will see a new microservice application created.
 
-![Deployed microservice](/guides/images/microservices-sdk/admin-microservice-deployed.png)
+![Deployed microservice](/images/microservices-sdk/admin-microservice-deployed.png)
 
 #### Test the deployed microservice
 
@@ -422,7 +422,7 @@ If your Docker image has run successfully, you shall see the output on the conso
 
 In the Administration application, navigate to **Applications** > **Own applications**. Locate your microservice application and click it to open its details. On the top right side click **Subscribe**.
 
-![Subscribe to a microservice](/guides/images/microservices-sdk/admin-microservice-subscribe.png)
+![Subscribe to a microservice](/images/microservices-sdk/admin-microservice-subscribe.png)
 
 At this point, you may open your favorite browser and test your microservice at <http://localhost:8082/hello>. Enter your bootstrap user credentials using &lt;tenant>/&lt;username> and your password.
 
@@ -430,4 +430,4 @@ You may also use the name parameter, e.g. <http://localhost:8082/hello?name=Neo>
 
 ### Improving the microservice
 
-Now that you have done your first steps, check out the section [Developing microservices](/guides/microservice-sdk/java#developing-microservice) to find out what else can be implemented. Review also the [Java example](/guides/microservice-sdk/http) in this guide to learn using more features of the microservice SDK and REST API by employing third-party services.
+Now that you have done your first steps, check out the section [Developing microservices](/microservice-sdk/java#developing-microservice) to find out what else can be implemented. Review also the [Java example](/microservice-sdk/http) in this guide to learn using more features of the microservice SDK and REST API by employing third-party services.

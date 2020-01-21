@@ -13,24 +13,24 @@ Cumulocity now provides an **offline installation** process for the Cumulocity I
 
 #### Administration
 
-A new login mode **OAuth Internal** has been added. This login mode provides much higher security as it stores authentication information in a cookie not reachable by JavaScript. For details, see [Administration > Changing settings](/guides/users-guide/administration/#changing-settings) in the User guide. [26097]
+A new login mode **OAuth Internal** has been added. This login mode provides much higher security as it stores authentication information in a cookie not reachable by JavaScript. For details, see [Administration > Changing settings](/users-guide/administration/#changing-settings) in the User guide. [26097]
 
 It is now possible to see the inbound API requests in the Home page. [MTM-25148]
 
-![Inbound API requests](/guides/images/release-notes/inbound-api-requests.png)
+![Inbound API requests](/images/release-notes/inbound-api-requests.png)
 
 Login alias validation in the users details page is now available. [MTM-26694]
 
 Improved error messages when uploading microservices. [MTM-25850]
 
-![Microservice Error Messages](/guides/images/release-notes/microservice-error-messages.png)
+![Microservice Error Messages](/images/release-notes/microservice-error-messages.png)
 
 
 #### Device Management
 
 The filters in the **Devices** > **All Devices** page can now be configured. Subsequently, created smart groups will contain these filters. [MTM-25909]
 
-![Configurable Columns](/guides/images/release-notes/configurable-columns.png) 
+![Configurable Columns](/images/release-notes/configurable-columns.png) 
 
 Devices shell now supports commands for Machinelink devices. [MTM-26944]
  
@@ -41,13 +41,13 @@ You can now add context-based routes, for example an additional tab for a certai
 
 The Angular Web SDK now also allows for adding custom widgets developed in Angular to a Web SDK for Angular based application. With this addition, the Angular Web SDK supports all functionality of the deprecated Web SDK for AngularJS.[MTM-25425]
 
-For details, see the [How-to recipes](/guides/web/how-to/) in the Web SDK guide.
+For details, see the [How-to recipes](/web/how-to/) in the Web SDK guide.
 
 #### Various
 
 [UI] A new **Legal notices** item has been added to the right drawer menu. [MTM-24734]
 
-![Legal notices](/guides/images/release-notes/legal-notices.png)
+![Legal notices](/images/release-notes/legal-notices.png)
 
 [CEP] Improved rendering of error messages in the CEL editor in the **Event processing** page on mouse hover. [MTM-25289]
 
@@ -55,12 +55,14 @@ For details, see the [How-to recipes](/guides/web/how-to/) in the Web SDK guide.
 
 [Performance] Performance when ingesting complex measurement data structures has been significantly improved through a new algorithm. Switching to the new algorithm at runtime is now possible via a tenant option. [MTM-27216]
 
+[UI] The application switcher now shows more than one subscribed external applications  [MTM-28921]
+
 
 ### Apama EPL Apps (formerly Apama-epl)
 
 The application in the app switcher which was previously called “Apama-epl” is now called “Apama EPL Apps”.
 
-The sample applications that were previously accessible from [Miscellaneous sample applications](/guides/apama/examples/#misc-applications) in the Streaming analytics guide are now available directly from the Apama EPL Apps application. 
+The sample applications that were previously accessible from [Miscellaneous sample applications](/apama/examples/#misc-applications) in the Streaming analytics guide are now available directly from the Apama EPL Apps application. 
 
 
 ### Apama Analytics Builder
@@ -90,5 +92,5 @@ Main features of the Cumulocity IoT DataHub application include:
 * Allows to use scalable and inexpensive storage via providing an easy-to-use data pipeline that extracts data from Cumulocity’s Operational Store to a data lake for long-term archival and efficient analytical querying.
 * Offers a SQL-based Query Interface for querying the data lake and enabling customers to connect arbitrary applications that either support ODBC, JDBC, or REST protocols.
 
-See the [Datahub guide](/guides/datahub/datahub-overview) for detailed information.
+See the [Datahub guide](/datahub/datahub-overview) for detailed information.
 

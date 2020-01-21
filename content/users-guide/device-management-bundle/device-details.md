@@ -7,7 +7,7 @@ For each device, detailed information is available. The kind of information actu
 
 To view detailed information on the device, click a device in the device list. 
 
-![Device info](/guides/images/users-guide/DeviceManagement/devmgmt-devices-info.png)
+![Device info](/images/users-guide/DeviceManagement/devmgmt-devices-info.png)
 
 The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, i.e. tabs are only displayed if the kind of information is available for the particular device. 
 
@@ -35,13 +35,13 @@ The following tabs are the most common ones, each described in detail in a separ
 |[Tracking](#tracking)|Shows the movement of a device, if available.
 |[Identity](#identity)|Displays identities recorded for a particular device. Available for each device.
 
->**Info**: Several individual tabs, which you do not find listed here, may be described in a different context in another section of the Cumulocity documentation. Use the Search function to switch to the relevant sections. A detailed description on the **Modbus** tab, for example, can be found in [Optional services > Cloud fieldbus](guides/users-guide/optional-services/cloud-fieldbus).
+>**Info**: Several individual tabs, which you do not find listed here, may be described in a different context in another section of the Cumulocity documentation. Use the Search function to switch to the relevant sections. A detailed description on the **Modbus** tab, for example, can be found in [Optional services > Cloud fieldbus](users-guide/optional-services/cloud-fieldbus).
 
 Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be part of multiple hierarchies, several rows of breadcrumbs may be shown.
 
 Depending of the type and usage of a device, further actions are provided in an action menu when clicking **More...** at the right of the top menu bar. 
 
-![More menu](/guides/images/users-guide/DeviceManagement/devmgmt-devices-more.png)
+![More menu](/images/users-guide/DeviceManagement/devmgmt-devices-more.png)
 
 Details on these additional menu items are provided where required.
 
@@ -49,7 +49,7 @@ Details on these additional menu items are provided where required.
 
 The **Info** tab summarizes management-relevant device information in a dashboard.
 
-![Device Info](/guides/images/users-guide/DeviceManagement/devmgmt-devices-infotab.png)
+![Device Info](/images/users-guide/DeviceManagement/devmgmt-devices-infotab.png)
 
 The information is provided on the following cards:
 
@@ -72,7 +72,7 @@ The information is provided on the following cards:
 </tr>
 <tr>
 <td style="text-align:left">Device and communication</td>
-<td style="text-align:left">Shows a data point graph displaying real-time data on particular measurements. For details on data point graphs, refer to <a href="/guides/users-guide/cockpit#data-explorer" class="no-ajaxy">Using the data explorer</a> in the Cockpit documentation. <br>The following measurements may be shown here: <br> 
+<td style="text-align:left">Shows a data point graph displaying real-time data on particular measurements. For details on data point graphs, refer to <a href="/users-guide/cockpit#data-explorer" class="no-ajaxy">Using the data explorer</a> in the Cockpit documentation. <br>The following measurements may be shown here: <br> 
 <strong>Data points</strong>: c8y_Battery.level, c8y_SignalStrength.rssi, c8y_MemoryMeasurement.Used, c8y_CPUMeasurement.Workload, c8y_NetworkStatistics.Upload, c8y_SignalStrength.RCSP, c8y_SignalStrength.ber, c8y_SignalStrength.ECN0, c8y_NetworkStatistics.Download, c8y_MemoryMeasurement.Total <br>
 <strong>Alarms</strong>: c8y_UnavailabilityAlarm<br>
 <strong>Events</strong>: c8y_LocationUpdate</td>
@@ -108,7 +108,7 @@ The **Measurements** tab provides a default visualization of numeric data provid
 
 The screenshot below, for example, shows a chart for motion measurement including graphs for acceleration in the three dimensions, and a chart with modem statistics in the form of signal strength and bit error rate.
 
-![Measurements](/guides/images/users-guide/DeviceManagement/devmgmt-devices-measurements.png)
+![Measurements](/images/users-guide/DeviceManagement/devmgmt-devices-measurements.png)
 
 If a chart contains graphs with different units, one Y-axis is rendered per unit. In the example above, motion measurements consist of three parameters with unit "meter per square second", so only one axis is rendered. Modem statistics consist of signal strength in decibel milliwatts and bit error rate in percent, so one axis is rendered for each graph.
 
@@ -124,7 +124,7 @@ This enables you to get an efficient overview over larger time periods. A graph 
 
 Clicking **Realtime** will enable real-time user interface updates of the graphs as new data flows into the system from the connected devices. 
 
-You can influence the graphical display and axes limits by setting up so-called "KPIs", see the [Administration Guide](/guides/users-guide/administration).
+You can influence the graphical display and axes limits by setting up so-called "KPIs", see the [Administration Guide](/users-guide/administration).
 
 **Measurement format**
 
@@ -158,7 +158,7 @@ The **Configuration** tab allows you to configure the parameters and initial set
 2. In the **Configuration** tab, you can manually add or edit the device configuration in the text field.
 4. Click **Save** to save your edits.
 
-<img src="/guides/images/users-guide/textconfig.png" alt="Device details" style="max-width: 100%">
+<img src="/images/users-guide/textconfig.png" alt="Device details" style="max-width: 100%">
 
 Alternatively, you can work with configuration snapshots, see [Configuration snapshots](#configuration-repository).
 
@@ -166,13 +166,13 @@ Alternatively, you can work with configuration snapshots, see [Configuration sna
 
 The **Control** tab lists the operations being sent to a device. See [Working with operations](#operation-monitoring) for detailed information on operations.
 
-![Operations](/guides/images/users-guide/DeviceManagement/devmgmt-devices-control.png)
+![Operations](/images/users-guide/DeviceManagement/devmgmt-devices-control.png)
 
 ### <a name="network"></a>Network
 
 In the **Network** tab, mobile network (WAN) and local area network (LAN) parameters can be viewed and configured.
 
-![Network tab](/guides/images/users-guide/DeviceManagement/devmgmt-devices-network.png)
+![Network tab](/images/users-guide/DeviceManagement/devmgmt-devices-network.png)
 
 The WAN parameters in the user interface correspond to the first profile stored in the router. These parameter can be configured remotely or via SMS.
 
@@ -211,7 +211,7 @@ Select a firmware from the dropdown list, which contains all firmware available 
 
 Similarly, to install a software on the device, select a software package from the dropdown list, which contains all software available in the [Software repository](#software-repo), and click **Install**. 
 
-![Device Software tab](/guides/images/users-guide/DeviceManagement/devmgmt-devices-software.png)
+![Device Software tab](/images/users-guide/DeviceManagement/devmgmt-devices-software.png)
 
 Installing software and firmware usually includes a restart of the device. To monitor the progress of an installation, visit the **Control** tab.
 
@@ -227,7 +227,7 @@ The **Events** tab displays events related to a device. This enables low-level t
 
 The **Location** tab by default shows the location of a device on a map and as coordinates, as reported by the device. For devices that do not report a location you may manually set the location. Simply place the "pin" in the correct place of the displayed map.
 
-![Location tab](/guides/images/users-guide/DeviceManagement/devmgmt-devices-location.png)
+![Location tab](/images/users-guide/DeviceManagement/devmgmt-devices-location.png)
 
 The **Location** tab also shows when a device contains c8y_Position property. When you send a new c8y-position event, you can set the same c8y-Position fragment on the device and it will automatically mark its position on the map.
 
@@ -247,7 +247,7 @@ In the **Logs** tab you can manage log information from devices.
 
 The log information will be requested from the device.
 
-![Logs tab](/guides/images/users-guide/DeviceManagement/devmgmt-devices-logs.png)
+![Logs tab](/images/users-guide/DeviceManagement/devmgmt-devices-logs.png)
 
 >Requesting a log from a device may take some time. 
 
@@ -275,7 +275,7 @@ The **Shell** tab presents a command prompt to enter commands.
 
 In the command prompt you can enter arbitrary command text. To send the command text to the device, click **Execute**. This button only is activated if the device is online.
 
-![Device shell](/guides/images/users-guide/DeviceManagement/devmgmt-devices-shell.png)
+![Device shell](/images/users-guide/DeviceManagement/devmgmt-devices-shell.png)
 
 >**Important**:When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
 
@@ -283,7 +283,7 @@ Click **View history** at the right of the top menu bar to switch to the **Contr
 
 For your convenience, Cumulocity provides several frequently used commands for some devices. Click **<_Get predefined commands** at the right of the top menu bar to open a window containing a list of available pre-defined commands. Select the command of your choice and click **Use**, to copy the command to the command prompt, or **Execute**, to execute the command straight away. You may also add new commands here for re-use.
 
-![Device shell predefined](/guides/images/users-guide/DeviceManagement/devmgmt-devices-shell-precommands.png)
+![Device shell predefined](/images/users-guide/DeviceManagement/devmgmt-devices-shell-precommands.png)
 
 
 ### <a name="tracking"></a>Tracking
@@ -294,7 +294,7 @@ Devices can record the history of their movements in Cumulocity. This movements 
 
 In the dropdown list at the top right you can select a time period (or specify one by selecting "Custom- from the list) and visualize the movements of the device during this period. Movements are shown as red lines in the map.
 
-![Tracking tab](/guides/images/users-guide/DeviceManagement/devmgmt-devices-tracking.png)
+![Tracking tab](/images/users-guide/DeviceManagement/devmgmt-devices-tracking.png)
 
 Next to the map, the individual recordings with their time are listed ("location update events"). When you click a recording, a "pin" on the map will show the location at the time of the recording.
 

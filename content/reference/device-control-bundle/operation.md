@@ -12,7 +12,7 @@ layout: redirect
 |self|URI|1|Link to this resource.|No|
 |creationTime|String|1|Time when the operation was created in the database.|No|
 |deviceID|String|1|Identifies the target device on which this operation should be performed.|POST: Mandatory PUT: No|
-|deviceExternalIDs|ExternalIDCollection|0..n|External IDs of the target device, see the [Identity](/guides/reference/identity) interface.|No|
+|deviceExternalIDs|ExternalIDCollection|0..n|External IDs of the target device, see the [Identity](/reference/identity) interface.|No|
 |bulkOperationId|String|1|Reference to bulkOperationId, if this operation was scheduled from Bulk Operation|No|
 |status|String|1|Operation status, can be one of SUCCESSFUL, FAILED, EXECUTING or PENDING.|POST: No PUT: Mandatory|
 |failureReason|String|0..1|Reason for the failure.|No|

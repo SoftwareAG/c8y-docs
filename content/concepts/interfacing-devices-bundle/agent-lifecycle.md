@@ -14,9 +14,9 @@ After starting, the agent will synchronize the inventory with the sensor sub-net
 
 ### Synchronizing inventory data
 
-To understand inventory synchronization, remember the communication hierarchy described in [Cumulocity's domain model](/guides/concepts/domain-model). In the inventory, agents are located at the roots of the communication hierarchy. Below each agent, the topology of the sub-network that the agent manages is reflected. This topology exists in the real network as well as in snapshot form in the inventory. It may change in the real network, and these changes need to be reflected in the inventory.
+To understand inventory synchronization, remember the communication hierarchy described in [Cumulocity's domain model](/concepts/domain-model). In the inventory, agents are located at the roots of the communication hierarchy. Below each agent, the topology of the sub-network that the agent manages is reflected. This topology exists in the real network as well as in snapshot form in the inventory. It may change in the real network, and these changes need to be reflected in the inventory.
 
-![Communication hierarchy](/guides/images/concepts-guide/commshierarchy.png)
+![Communication hierarchy](/images/concepts-guide/commshierarchy.png)
 
 Inventory synchronization is a two step procedure: The first step is to query the agent's entry from the inventory and to create it in the network. The second step is then to discover the sub-network and synchronize it with the inventory based on the queried agent's entry.
 
@@ -35,7 +35,7 @@ It is important to know that the device agent is assuming data ownership of conf
 
 ### Receiving data and commands from applications
 
-Now that the topology is established in the inventory, the devices are visible and operable from IoT applications. As described in the device control section of [Cumulocity's domain model](/guides/concepts/domain-model), IoT applications can send operations to devices, which are queued in the core. The agent has to query the core for operations intended for its devices.
+Now that the topology is established in the inventory, the devices are visible and operable from IoT applications. As described in the device control section of [Cumulocity's domain model](/concepts/domain-model), IoT applications can send operations to devices, which are queued in the core. The agent has to query the core for operations intended for its devices.
 
 If an operation was sent to an agent's device, the agent will translate the operation into the device-specific representation. For example, a Multispeak agent would translate an operation to set the state of a switch to a SOAP "initiateConnectDisconnect" request for an electricity meter. The translated operation is then sent to the device.
 

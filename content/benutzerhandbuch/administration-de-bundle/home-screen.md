@@ -14,7 +14,7 @@ Die Startseite der Anwendung "Administration" enthält
 *   Ihre Kapazitätsnutzung im aktuellen und vergangenen Monat,
 *   die von Ihnen abonnierten optionalen Anwendungen.
 
-<img src="/guides/images/benutzerhandbuch/admin-home-screen.png" alt="Startseite" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/admin-home-screen.png" alt="Startseite" style="max-width: 100%">
 
 Die Kapazitätsbereiche zeigen:
 
@@ -23,6 +23,6 @@ Die Kapazitätsbereiche zeigen:
 *   Speicher: Insgesamt gespeicherte Daten in Ihrem Konto. Die Datenmenge kann durch [Datenhaltungsregeln](#retention) und durch die Menge und Größe [gespeicherter Daten](#files) verändert werden.
 *   Speicherbegrenzung: Wenn eine Speicherbegrenzung pro Gerät definiert wurde, ist der Benutzer auf eine [maximale Datennutzung](/guides#benutzerhandbuch/enterprise-edition#storage-quota) beschränkt.
 *   Hauptgeräte: Die Anzahl der Hauptgeräte, die mit Ihrem Konto verbunden sind, ohne Kindgeräte.
-*   Geräte: Die Gesamtanzahl der mit Ihrem Konto verbundenen Geräte einschließlich Kindgeräte. Dies ist die Summe der Geräte, die unter [Alle Geräte](/guides/users-guide/device-management#viewing-devices) in der Device Management-Anwendung aufgelistet sind, sowie deren direkte und indirekte Kindgeräte.
+*   Geräte: Die Gesamtanzahl der mit Ihrem Konto verbundenen Geräte einschließlich Kindgeräte. Dies ist die Summe der Geräte, die unter [Alle Geräte](/users-guide/device-management#viewing-devices) in der Device Management-Anwendung aufgelistet sind, sowie deren direkte und indirekte Kindgeräte.
 *   Benutzer: Die Anzahl aller Geräte in diesem Konto, aktiv sowie inaktiv.
 

@@ -4,6 +4,7 @@ title: Optionale Services
 layout: bundle
 slug: optional-services
 ---
+
 Zusätzlich zu den in Cumulocity IoT verfügbaren integrierten Anwendungen für den Standard Tenant und den Enterprise Tenant gibt es zahlreiche optionale Services, die Sie abonnieren können, wie etwa Agenten für verschiedene Gerätetypen. 
 
 Die folgenden Services sind aktuell verfügbar:

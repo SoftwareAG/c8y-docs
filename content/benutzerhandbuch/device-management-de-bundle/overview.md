@@ -3,7 +3,6 @@ weight: 10
 title: Übersicht
 layout: redirect
 ---
-
 Die folgenden Abschnitte beschreiben detailliert alle Funktionalitäten der Device Management-Anwendung. Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokuments.
 
 |Abschnitt|Inhalt|
@@ -15,7 +14,7 @@ Die folgenden Abschnitte beschreiben detailliert alle Funktionalitäten der Devi
 |[Überwachen und Steuern von Geräten](#monitoring-and-controlling-devices)|Wie man die [Verbindungsqualität](#connection-monitoring) und den [Service-Status](#monitoring-services) von Geräten überwacht, wie man mit [Alarmen](#alarm-monitoring) von Geräten arbeitet, wie man [Geräte fernsteuert](#operation-monitoring) und [Fehler behebt](#events-all).
 |[Verwalten von Gerätetypen](#managing-device-types)|Wie man Daten von verschiedenen Gerätetypen mit Hilfe von [Geräteprotokollen](#managing-device-types) verarbeitet. 
 |[Verwalten von Gerätedaten](#managing-device-data)|Wie man [Firmware and Software](#software-repo) für Geräte verwaltet sowie [Konfigurationssnapshots](#configuration-repository). 
+|[SmartREST-Templates](#smartrest-templates)|Wie man [SmartREST-  Templates](#Smartrest-templates) verwendet, eine Sammlung von Anfrage- und Antwort-Templates, die zum Konvertieren von CSV-Daten und Cumulocity Rest API-Aufrufen verwendet werden.
 |[Arbeiten mit Simulatoren](#simulator)|Wie man Geräte mit der [Simulatorfunktion](#simulator) abbildet, um die Funktionalität von verbundenen Hardware-Geräten zu simulieren.
-|[Verwenden von SmartREST-Templates](#smartrest-templates)|Wie man [SmartREST-  Templates](#smartrest-templates) verwendet, eine Sammlung von Anfrage- und Antwort-Templates, die zum Konvertieren von CSV-Daten und Cumulocity Rest API-Aufrufen verwendet werden.
 
 

@@ -14,7 +14,7 @@ Data broker lets you share data selectively with other tenants. You can share:
 
 Navigate to **Data connectors** in the **Data Broker** menu if you would like to send data to another tenant. Navigate to **Data subscriptions**, if you would like to receive data from another tenant.
 
-<img src="/guides/images/users-guide/data-broker-navigator.png" alt="Data broker menus" >
+<img src="/images/users-guide/data-broker-navigator.png" alt="Data broker menus" >
 
 >**Important**: Devices that are forwarded using the data broker are charged like normal devices in the destination tenant.
 
@@ -34,7 +34,7 @@ A data connector describes the subset of the data that you would like to send to
 
 Click **Data connectors** in the navigator to see a list of all currently defined data connectors with their status.
 
-![Data broker connectors list](/guides/images/users-guide/data-broker-connector-list.png)
+![Data broker connectors list](/images/users-guide/data-broker-connector-list.png)
 
 For each data connector, the following information is provided:
 
@@ -61,7 +61,7 @@ Use the toggle to enable and disable data forwarding to the destination tenant. 
  
 3. Click **Add filter** to configure a new filter.
 
-	![Data broker configure filter](/guides/images/users-guide/data-broker-connector-filter.png)
+	![Data broker configure filter](/images/users-guide/data-broker-connector-filter.png)
  
 4. Each data filter contains the following information:
  
@@ -130,7 +130,7 @@ The heading of a data filter summarizes the configuration in one line. The stand
 
 After saving the configuration, you will see a security code displayed below your configuration. The security code prevents unintended forwarding of data. You need to communicate this security key separately to an administrative user of the destination tenant. You can click the copy icon next to the security code to copy the code to your clipboard.
 
-![Security code](/guides/images/users-guide/data-broker-connector-security-code.png)
+![Security code](/images/users-guide/data-broker-connector-security-code.png)
 
 
 #### To edit a data connector
@@ -153,7 +153,7 @@ Click the menu icon at the right of a data connector entry and then click **Dele
 
 Open a data connector and switch to the **Alarms** tab to display current alarms for the data connector.
 
-![Warnings tab](/guides/images/users-guide/data-broker-connector-warnings.png)
+![Warnings tab](/images/users-guide/data-broker-connector-warnings.png)
 
 For details on alarms, see [Device Management > Monitoring and controlling devices > Working with alarms](alarm-monitoring).
 
@@ -164,7 +164,7 @@ In the **Data subscriptions** page, you can manage existing data subscriptions o
 
 Click **Data subscriptions** to see a list of all currently defined data forwarded to your tenant. 
 
-<img src="/guides/images/users-guide/Administration/Admin_Subscriptions.png" alt="Data subscriptions">
+<img src="/images/users-guide/Administration/Admin_Subscriptions.png" alt="Data subscriptions">
 
 For each subscription, the name, the target tenant and the status (enabled or disabled) is provided on a card.
 
@@ -179,7 +179,7 @@ Use the toggle to temporarily stop forwarding data into your tenant.
 
 You can now navigate to the Device Management application or the Cockpit application. You will find a new "virtual group" with a specific icon (see the screenshot below) showing the forwarded devices. The group will have the same name as your subscription. Devices are "lazily" created on the destination side whenever they send data for the first time after setting up an active subscription.
 
-![Data broker group in cockpit app](/guides/images/users-guide/data-broker-group-created.PNG)
+![Data broker group in cockpit app](/images/users-guide/data-broker-group-created.PNG)
 
 #### To delete a data connector
 

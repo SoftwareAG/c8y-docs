@@ -16,13 +16,13 @@ Im Menü **Einstellungen** können Sie verschiedene Anpassungseinstellungen vorn
 
 Im Bereich **Anwendungen** können Sie die Standardanwendungen für neue Mandanten als kommagetrennte Liste festlegen. 
 
-![Applications settings](/images/benutzerhandbuch/enterprise-tenant/admin-settings-configuration-applications.png)
+![Applications settings](/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-applications.png)
 
 #### Passwörter
 
 Im Bereich **Passwörter** können Sie Passworteinstellungen wie Standardstärke, Länge oder Gültigkeit für die Benutzer in Ihrem Mandanten festlegen.
 
-![Passwords settings](/images/benutzerhandbuch/enterprise-tenant/admin-settings-configuration-passwords.png)
+![Passwords settings](/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-passwords.png)
 
 #### Supportbenutzer
 
@@ -30,7 +30,7 @@ Im Bereich **Supportbenutzer** konfigurieren Sie die Parameter für die Aktivier
 
 Mit Hilfe dieser Funktion können Supportbenutzer (d. h. Benutzer mit spezifischen Berechtigungen im Management-Mandanten) bei etwaigen Problemen auf Benutzer von Untermandanten zugreifen. Weitere Informationen finden Sie unter [Supportbenutzerzugriff](/benutzerhandbuch/enterprise-edition#users-in-other-tenants).
 
-<img src="/images/benutzerhandbuch/Administration/admin-settings-configuration-support-user.png" alt="Support user configuration">
+<img src="/images/benutzerhandbuch/Administration/et-settings-configuration-support-user.png" alt="Support user configuration">
 
 Legen Sie im Feld **Supportbenutzer aktivieren** fest, ob der Supportbenutzerzugriff für Untermandanten-Benutzer aktiviert sein soll. Hier sind folgende Werte möglich:
 

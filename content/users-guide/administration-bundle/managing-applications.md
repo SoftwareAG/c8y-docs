@@ -9,7 +9,7 @@ In the Cumulocity platform we distinguish between two kinds of applications:
 * [Subscribed applications](#subscribed-applications) -  all applications subscribed to the tenant (either provided by the platform or a service provider) but not owned. May not be added, modified or removed by the user.
 * [Own applications](#own-applications) - all applications owned by the tenant. Users can [add custom applications](#add-applications) in various ways as own applications. 
 
-Click **Own applications** or **Subscribed applications** in the **Applications** menu in the navigator to display a list of all respective applications in your account.
+Both applications are available through the **Applications** menu in the navigator:
 
 <img src="/images/users-guide/Administration/admin-menu.png" alt="Applications menu"> 
 
@@ -22,11 +22,9 @@ Click on an application card to view the application properties.
 Each application will show the following properties, depending on the application type:
 
 <table>
-<col width= 15%
-<col width= 40%>
-<col width= 15%>
-<col width= 15%>
-<col width= 15%>
+<col width= 100>
+<col width= 250>
+<col width= 150>
 <thead>
 <tr>
 <th style="text-align:left">Field</th>
@@ -48,14 +46,14 @@ Each application will show the following properties, depending on the applicatio
 <td style="text-align:left">Name</td>
 <td style="text-align:left">Application name. Will be shown as title of the application in the top bar and in the application switcher.</td>
 <td style="text-align:left">Automatically created</td>
-<td style="text-align:left">Automatically created, based on the ZIP file name</td>
+<td style="text-align:left">Automatically created, based on the zip file name</td>
 <td style="text-align:left">Specified by the user</td>
 </tr>
 <tr>
 <td style="text-align:left">Application key</td>
 <td style="text-align:left">Used to identify the application and to make the application available for subscription, see the <a href="/concepts/applications" class="no-ajaxy">Concepts Guide</a>.</td>
 <td style="text-align:left">Automatically created</td>
-<td style="text-align:left">Automatically created based on the ZIP file name</td>
+<td style="text-align:left">Automatically created based on the zip file name</td>
 <td style="text-align:left">Specified by the user</td>
 </tr>
 <tr>
@@ -75,8 +73,7 @@ Each application will show the following properties, depending on the applicatio
 </tbody>
 </table>
 
-In case of applications of the type "microservice", you will additionally find information on its version, as well as on its isolation level and billing mode, see [Enterprise Tenant > Managing tenants > Microservice usage](/users-guide/enterprise-tenant/#microservice-usage) for details on these parameters.  
-
+> **Info**: ID and type cannot be changed.
 
 ### <a name="subscribed-applications"></a>Subscribed applications
 
@@ -474,7 +471,7 @@ At the top of the page, you can select the instance of the microservice, for whi
 
 Next to the instance dropdown you can select the time range for the log entries to be shown by selecting a date from the calendar and entering a time.
 
-> **Info**: The time entered here may differ from the server time due to different time zones.
+> **Info**: Your local time may differ from the log´s timestamp which is in UTC standard.
 
 At the top right, additional functionality is provided:
 

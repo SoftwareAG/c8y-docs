@@ -23,23 +23,83 @@ In the **Global roles** tab you can find the roles which grant permissions on a 
 
 The roles "admins" and "devices" have a special status:
 
-|Role&nbsp;&nbsp;&nbsp;|Description|
-|:---|:---|
-|admins|All permissions are enabled. The initial administrator, the first user created in a tenant, has this role.
-|devices|Typical permission setup for devices. After registration, a device automatically has this role. Edit this role if your devices require less or more permissions, or assign other roles to your devices.
+<table>
+<col style="width: 15%;">
+<col style="width: 85%;">
+<thead>
+<tr>
+<th align="left">Role&nbsp;&nbsp;&nbsp;</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">admins</td>
+<td align="left">All permissions are enabled. The initial administrator, the first user created in a tenant, has this role.</td>
+</tr>
+
+<tr>
+<td align="left">devices</td>
+<td align="left">Typical permission setup for devices. After registration, a device automatically has this role. Edit this role if your devices require less or more permissions, or assign other roles to your devices.</td>
+</tr>
+</tbody>
+</table>
 
 Furthermore, the following roles are initially configured:
 
-|Role|Description|
-|:---|:---|
-|CEP Manager|Can access all smart rules and event processing rules.
-|Cockpit User|Can access the Cockpit application. In addition, you should add a role providing access to devices.
-|Device management User|Can access the Device Management application. The user will be able to use the simulator and to run bulk operations. In addition, you should add a role providing access to devices.
-|Global Manager|Can read and write all devices.
-|Global Reader|Can read all devices.
-|Global User Manager|Can manage all users.
-|Shared User Manager|Can manage sub-users. The subscription plan needs to include user hierarchies to be able to manage sub-users.
-|Tenant Manager|Can manage tenant-wide settings, such as own applications, data brokerage, data retention, options and tenant statistics.
+<table>
+<col style="width: 20%;">
+<col style="width: 80%;">
+<thead>
+<tr>
+<th align="left">Role</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">CEP Manager</td>
+<td align="left">Can access all smart rules and event processing rules.</td>
+</tr>
+
+<tr>
+<td align="left">Cockpit User</td>
+<td align="left">Can access the Cockpit application. In addition, you should add a role providing access to devices.</td>
+</tr>
+
+<tr>
+<td align="left">Device management User</td>
+<td align="left">Can access the Device Management application. The user will be able to use the simulator and to run bulk operations. In addition, you should add a role providing access to devices.</td>
+</tr>
+
+<tr>
+<td align="left">Global Manager</td>
+<td align="left">Can read and write all devices.</td>
+</tr>
+
+<tr>
+<td align="left">Global Reader</td>
+<td align="left">Can read all devices.</td>
+</tr>
+
+<tr>
+<td align="left">Global User Manager</td>
+<td align="left">Can manage all users.</td>
+</tr>
+
+<tr>
+<td align="left">Shared User Manager</td>
+<td align="left">Can manage sub-users. The subscription plan needs to include user hierarchies to be able to manage sub-users.</td>
+</tr>
+
+<tr>
+<td align="left">Tenant Manager</td>
+<td align="left">Can manage tenant-wide settings, such as own applications, data brokerage, data retention, options and tenant statistics.</td>
+</tr>
+</tbody>
+</table>
 
 You may also see the following legacy roles:
 
@@ -76,28 +136,118 @@ Select the checkbox at the top of a column to set the respective level to all pe
 
 The following permission categories are available by default:
 
-|Category|Description|
-|:---|:---|
-|Alarms|View or edit alarms for devices.
-|Application management|View or edit the applications available in this account.
-|Audits|View or create audit logs for devices.
-|Bulk operations|View or create bulk operations.
-|CEP management|View or edit CEP rules.
-|Data broker|Send data to other tenants or receive data from other tenants.
-|Device control|View or edit commands for devices resp. send commands to devices. Also used for device registration.
-|Events|View or create events for devices.
-|Global Smart Rules|Configure global Smart Rules.
-|Identity|View or edit identifiers for devices.
-|Inventory|View or edit inventory data.
-|Measurements|View or create measurements for devices.
-|Option management|View or edit account options such as password policies.
-|Retention rules|View or edit retention rules.
-|Simulator|Configure simulated devices.
-|Sms|Configure SMS.
-|Tenant management|View, create, edit or delete subtenants.
-|Tenant statistics|View the usage data for this account, as shown on the Home screen of the Administration application.
-|User management|View or edit users, global roles and permissions.
-|Own user management|View or edit your own user.
+<table>
+<col style="width: 20%;">
+<col style="width: 80%;">
+<thead>
+<tr>
+<th align="left">Category</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Alarms</td>
+<td align="left">View or edit alarms for devices.</td>
+</tr>
+
+<tr>
+<td align="left">Application management</td>
+<td align="left">View or edit the applications available in this account.</td>
+</tr>
+
+<tr>
+<td align="left">Audits</td>
+<td align="left">View or create audit logs for devices.</td>
+</tr>
+
+<tr>
+<td align="left">Bulk operations</td>
+<td align="left">View or create bulk operations.</td>
+</tr>
+
+<tr>
+<td align="left">CEP management</td>
+<td align="left">View or edit CEP rules.</td>
+</tr>
+
+<tr>
+<td align="left">Data broker</td>
+<td align="left">Send data to other tenants or receive data from other tenants.</td>
+</tr>
+
+<tr>
+<td align="left">Device control</td>
+<td align="left">View or edit commands for devices resp. send commands to devices. Also used for device registration.</td>
+</tr>
+
+<tr>
+<td align="left">Events</td>
+<td align="left">View or create events for devices.</td>
+</tr>
+
+<tr>
+<td align="left">Global Smart Rules</td>
+<td align="left">Configure global Smart Rules.</td>
+</tr>
+
+<tr>
+<td align="left">Identity</td>
+<td align="left">View or edit identifiers for devices.</td>
+</tr>
+
+<tr>
+<td align="left">Inventory</td>
+<td align="left">View or edit inventory data.</td>
+</tr>
+
+<tr>
+<td align="left">Measurements</td>
+<td align="left">View or create measurements for devices.</td>
+</tr>
+
+<tr>
+<td align="left">Option management</td>
+<td align="left">View or edit account options such as password policies.</td>
+</tr>
+
+<tr>
+<td align="left">Retention rules</td>
+<td align="left">View or edit retention rules.</td>
+</tr>
+
+<tr>
+<td align="left">Simulator</td>
+<td align="left">Configure simulated devices.</td>
+</tr>
+
+<tr>
+<td align="left">Sms</td>
+<td align="left">Configure SMS.</td>
+</tr>
+
+<tr>
+<td align="left">Tenant management</td>
+<td align="left">View, create, edit or delete subtenants.</td>
+</tr>
+
+<tr>
+<td align="left">Tenant statistics</td>
+<td align="left">View the usage data for this account, as shown on the Home screen of the Administration application.</td>
+</tr>
+
+<tr>
+<td align="left">User management</td>
+<td align="left">View or edit users, global roles and permissions.</td>
+</tr>
+
+<tr>
+<td align="left">Own user management</td>
+<td align="left">View or edit your own user.</td>
+</tr>
+</tbody>
+</table>
 
 There may be additional permissions visible depending on the features in your subscription plan. These are documented along with the respective feature.
 
@@ -181,11 +331,7 @@ In the **Permission** field, select a permission level from the dropdown list:
 * CHANGE - to modify objects (does not include READ permission)
 * ALL - to read AND modify objects
 
-<img src="/images/users-guide/Administration/admin-inventory-roles-permission.png" alt="Role permissions">
-
 >**Important:** When you add a permission, you may see a small exclamation mark. The exclamation mark indicates that the permission that you have just added is not effective, because another, "higher" permission set for the user already includes the respective permission. Check if you have set, for example, "Full access" or if there is another permission in the same section with "*" as type and ALL as permission.
-
-<img src="/images/users-guide/Administration/admin-inventory-role-warning.png" alt="warning message">
 
 As another example, assume that you are using tracking devices. You want to allow your user to see all devices, but not to change anything. In addition, the user should be able to follow tracks of devices on a map. Tracks are recorded using an event with fragment type "c8y&#95;Position" (see [Sensor library](/reference/sensor-library)). To do so, assign READ permission on inventory as well as on events with type "c8y&#95;Position" as shown in the image below.
 
@@ -200,8 +346,6 @@ To assign inventory roles, click **User** in the **Account** menu, select a user
 In the **Inventory roles** tab you will see a tree of device groups. To assign an inventory role, click on the arrow right from a group. Select the relevant roles and click **Apply**. For details on the roles hover over the info icon next to it or refer to [Viewing inventory roles](#inventory).
 
 > **Important**: If a user already has a global role containing inventory permissions, the user will be able to see or change all devices regardless of what inventory roles you set here.
-
-![Inventory roles](/images/users-guide//Administration/admin-inventory-role-apply.png)
 
 Inventory roles are inherited from groups to all their direct and indirect subgroups, and to the devices in these groups. If you select, for example, a role with read permissions on alarms for a group of devices, the user will be able to see alarms of all devices in this group and all its subgroups.
 

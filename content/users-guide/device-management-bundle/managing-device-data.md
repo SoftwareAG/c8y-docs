@@ -108,7 +108,7 @@ In addition to adding configurations from a file you can also add configurations
 
 In order to retrieve a current configuration snapshot from a device, follow these steps:
 
-1. Navigate to the desired device and open its **Configuration** tab. 
+1. Navigate to the desired device in **Devices** > **All devices** and open its **Configuration** tab. 
 2. Under **Configuration snapshot**, click **Get new snapshot from device** at the top right. 
 
 The retrieved snapshot can be found in the **Configuration repository**, under  **Management** menu in the navigator.

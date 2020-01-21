@@ -33,8 +33,6 @@ There are two ways to add a SmartRest template:
 3. Enter a template name and a unique template ID (both mandatory fields). 
 4. Click **Import** to import the template.
 
-![Import template](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-import.png)
-
 ### To create a new SmartREST template
 
 1. Click **New** at the right of the top menu bar.

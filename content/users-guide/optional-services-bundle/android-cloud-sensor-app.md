@@ -131,7 +131,7 @@ The Messaging widget, for example, can be used to send text notifications to the
 
 Create a dashboard for your smartphone device as described in [Creating a dashboard](/users-guide/cockpit#creating-dashboards) in the Cockpit section. 
 
-Add the Messaging widget to the dashboard, for details see [Widgets collection](users-guide/cockpit/widgets). 
+Add the Messaging widget to the dashboard, for details see [Widgets collection](guides/users-guide/cockpit/widgets). 
 
 To send a message from Cumulocity, enter a text into the Messaging widget and click **Send**.
 

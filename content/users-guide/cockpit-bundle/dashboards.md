@@ -12,7 +12,7 @@ Cumulocity comes with a number of preset widgets, see [Widgets Collection](#widg
 
 Select the group or the device in the navigator for which to create a dashboard. 
 
-Click the **Plus** button in the top bar and from the context menu select **New dashboard**. 
+Click the **Plus** button in the top bar and from the context menu select **Add dashboard**. 
 
 <img src="/images/users-guide/cockpit/cockpit-dashboard-menu.png" name="New dashboard"/>
 
@@ -28,7 +28,7 @@ In the **Dashboard info** section of the dashboard editor, provide the following
 
 In the **Dashboard layout** section you can select a theme for the dashboard (one of "Light", "Dark", "Transparent" or "Branded") and a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"). Moreover, you can change the default widget margin (default value is 15 px).
 
-Additionally, you can enable the option "Translate widget titles if possible". If enabled, the widget title will be translated every time the language is changed.
+Additionally, you can enable the option **Translate widget titles if possible**. If enabled, the widget title will be translated every time the language is changed.
 
 > **Info:** The widget titles will be translated only if a valid translation is available. 
 
@@ -44,8 +44,6 @@ Since there will be no widgets on the dashboard yet, you will see an **Add Widge
 ### <a name="adding-widgets"></a>Adding a widget to a dashboard
 
 To add a widget to a dashboard, click the **Add widget** button (in case of an empty dashboard) or click **Add widget** in the top menu bar.
-
-<img src="/images/users-guide/cockpit/cockpit-dashboard-widget-add.png" name="Add widget"/> 
 
 In the upcoming dialog, select a widget type from the dropdown list. Depending on the widget type selected, additional fields and checkboxes will be displayed to be filled in or selected. For details on all widgets refer to [Widgets Collection](#widgets). 
 

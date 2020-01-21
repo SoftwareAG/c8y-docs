@@ -66,7 +66,7 @@ For building management, it is most common that a group of sensors inside a buil
 
 In the asset hierarchy, Cumulocity distinguishes between top-level groups and subgroups, so called sub-assets.
 
-In the navigator, top-level groups are shown in the **Group** menu at top-level. Sub-assets are shown in the navigator under the top-level groups or in the S**ub-asset** tab of a particular group.
+In the navigator, top-level groups are shown in the **Group** menu at top-level. Sub-assets are shown under its top-level group. Moreover, sub-assets are shown  in the **Sub-asset** tab of the particular group.
 
 <img src="/images/users-guide/cockpit/cockpit-sub-assets.png" name="Sub-assets"/>
 
@@ -77,9 +77,6 @@ When selecting an object in the asset hierarchy, details on the selected object 
 If you add a gateway device, the child devices are not shown. To show child devices, you must add them to the related asset. Details related to the child hierarchy are visible and editable in the Device Management application.
 
 To navigate further in the asset hierarchy, use the navigator or select an object in the **Sub-Asset** tab. To navigate up in the asset hierarchy, use the breadcrumb entry below the name of the asset.
-
-<img src="/images/users-guide/cockpit/cockpit-breadcrumb.png" name="Breadcrumb"/>
-
 
 ### Asset details
 

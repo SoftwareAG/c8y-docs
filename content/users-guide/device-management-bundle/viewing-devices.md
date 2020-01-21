@@ -136,10 +136,8 @@ Apart from filtering for text there are several other options:
 * In case of date fields (e.g. **Registration date**), you specify a date range to filter for. 
 * In the **Status** column you can filter for various criteria representing the send, push or maintenance status of the device.
 * In the **Alarm** column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
-* For custom columns, if the filter criteria was set to **Fragment equals value** during configuration, then a value needs to be provided
-![Filter by value](/images/users-guide/DeviceManagement/devmgmt-filter-value.png)
-* If the filter criteria was set to **Fragment exists**, during configuration then the filtering will be done based on whether the fragment exists or not
-![Filter by existence](/images/users-guide/DeviceManagement/devmgmt-filter-existence.png)
+* For custom columns, if the filter criteria was set to **Fragment equals value** during configuration, then a value needs to be provided.
+* If the filter criteria was set to **Fragment exists** during configuration then the filtering will be done based on whether the fragment exists or not.
 
 In the **Filter options** dialog box, click **Ascending** or **Descending** if you want the devices to be sorted in a specific order. Finally, click **Apply** to carry out the filtering. 
 

@@ -146,7 +146,7 @@ The "Data point table" widget displays data based on selected data points, time 
 
 Out of range values, based on configured yellow and red ranges, are highlighted in the table.
 
-![Data point table](/images/users-guide/datapointtable.png)
+![Data point table](/images/users-guide/cockpit/cockpit-datapointtable.png)
 
 ### Event list
 
@@ -352,18 +352,3 @@ The "Traffic light" widget visualizes the states of a device as traffic light.
 |Title|Widget title. By default, the widget type is simply used as title.
 |Target assets or devices|Select group or device to be displayed.
 |States mapping|Select a property for each light. The value of the property has to be one of the following to have the respective light on: true, 1, any non-empty string, any non-null number.
-
-### Twitter News
-
-The "Twitter news" widget displays tweets from Twitter's embedded timeline widget.
-
-<img src="/images/users-guide/cockpit/Cockpit_TwitterNewsWidget.png" name="Twitter news widget" style="width:50%;"/>
-
-**Parameters to configure**
-
-|Field|Description|
-|:---|:---|
-|Title|Widget title. By default, the widget type is simply used as title.
-|Twitter's username|User name for the Twitter account being displayed.
-|Twitter's widget ID|ID for the Twitter widget. You can obtain the ID from widgets settings.
-|Options|Select if you want to display a header, footer, borders or transparency.

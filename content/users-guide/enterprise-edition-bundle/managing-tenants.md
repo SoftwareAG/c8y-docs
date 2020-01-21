@@ -34,7 +34,7 @@ In the management tenant, you will also find information on the parent tenant, i
 ### <a name="creating-tenants"></a>To create a subtenant
 
 1. Click **Create tenant** at the right of the top menu bar.
-<br>![Create subtenant](/images/users-guide/Administration/admin-subtenant-create.png)<br>
+<br>![Create subtenant](/images/users-guide/enterprise-tenant/et-subtenant-create.png)<br>
 2. Provide the following properties:
 
 	<table>
@@ -87,15 +87,11 @@ When the subtenant is created, it gets an auto-generated ID, which cannot be cha
 
 From the management tenant, you can enable other tenants to create subtenants. To do so, check **Allow creation of subtenants** in the tenant editor.
 
-![Create subtenant](/images/users-guide/Administration/admin-subtenant-allow.png)
-
 ### To view or edit subtenant properties
 
 Click on the desired subtenant or click the menu icon at the right of the subtenant entry and then click **Edit**.
 
 In the **Properties** tab, all fields are editable except of the ID and the administrator's username. For details on the fields, refer to [Creating sub-tenants](#creating-tenants).
-
-![Sub-tenants](/images/users-guide/Administration/admin-subtenant-properties.png)
 
 To change the tenant password, click **Change password**, enter the new password in the upcoming fields and click **Save**.
 
@@ -103,7 +99,7 @@ To change the tenant password, click **Change password**, enter the new password
 
 In the management tenant, you will moreover find information here on the support user requests/access for the subtenants.
 
-<img src="/images/users-guide/Administration/admin-support-user-properties.png" alt="Support user access information" style="max-width: 100%">
+<img src="/images/users-guide/enterprise-tenant/et-support-user-properties.png" alt="Support user access information" style="max-width: 100%">
 
 The following information is displayed here:
 
@@ -129,7 +125,7 @@ If a tenant is suspended, the tenant’s data remains in the database and can be
 
 1. Click the menu icon at the right of the respective subtenant entry and then click **Suspend**.
 
-	![Suspend tenant](/images/users-guide/Administration/admin-subtenant-suspend.png)
+	![Suspend tenant](/images/users-guide/enterprise-tenant/et-subtenant-suspend.png)
 
 2. In the resulting dialog box confirm the suspension by clicking **OK** and entering your password.
 
@@ -153,7 +149,7 @@ Click the menu icon at the right of the respective subtenant entry and then clic
 
 In the **Applications** tab you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications.
 
-<img src="/images/users-guide/Administration/admin-subtenant-applications.png" alt="Subscribe tenant" style="max-width: 100%">
+<img src="/images/users-guide/enterprise-tenant/et-subtenant-applications.png" alt="Subscribe tenant" style="max-width: 100%">
 
 #### To subscribe an application
 
@@ -167,7 +163,7 @@ Hover over the applications under **Subscribed applications** on the left and cl
 
 For all applications hosted as microservices by Cumulocity the status of the microservice is indicated next to its name by symbols:
 
-<img src="/images/users-guide/Administration/admin-applications-status.png" alt="Application details">
+<img src="/images/users-guide/enterprise-tenant/et-applications-status.png" alt="Application details">
 
 The microservice may be in one of the following states:
 
@@ -177,7 +173,7 @@ The microservice may be in one of the following states:
 
 You may view details on their status by expanding the respective entry.
 
-<img src="/images/users-guide/Administration/admin-application-details.png" alt="Application details">
+<img src="/images/users-guide/enterprise-tenant/et-application-details.png" alt="Application details">
 
 The following information is provided:
 
@@ -194,7 +190,7 @@ Further details are provided on the **Status** tab of the respective application
 
 The **Custom properties** tab allows you to view and edit values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/users-guide/administration#properties). Such properties are also displayed as columns in the [Usage Statistics](#usage-stats) page.
 
-![Custom properties](/images/users-guide/Administration/admin-subtenant-custom-properties.png)
+![Custom properties](/images/users-guide/enterprise-tenant/et-subtenant-custom-properties.png)
 
 #### Limiting subtenant device number
 
@@ -218,7 +214,7 @@ When there is no limit on tenant and system level, the limit feature is consider
 
 The **Usage statistics** page provides statistical information on each subtenant.
 
-![Subtenant statistics](/images/users-guide/Administration/admin-subtenants-usage-statistics.png)
+![Subtenant statistics](/images/users-guide/enterprise-tenant/et-subtenants-usage-statistics.png)
 
 The following information is provided for each subtenant (not completely visible in the screenshot above due to space restrictions):
 
@@ -260,7 +256,7 @@ You can filter the usage statistics list for a time period by adding the start a
 
 1. Click Export CSV at the right of the top menu bar to export the current view of the statistics table to a CSV file. 
 2. In the resulting dialog box you can customize the CSV output by specifying a field separator, decimal separator and charset.
-<br> <img src="/images/users-guide/Administration/admin-subtenant-statistics-export.png"></img> <br>
+<br> <img src="/images/users-guide/enterprise-tenant/et-subtenant-statistics-export.png"></img> <br>
 3. Click **Download** to start the export.
 
 The CSV file will be downloaded to your file system.
@@ -337,7 +333,7 @@ For billing purposes, in addition to CPU usage and memory usage the cause for th
 
 The information on the microservice usage is presented in the **Usage Statistics** page.
 
-![Tenant statistics](/images/users-guide/Administration/admin-subtenants-usage-statistics-microservice.png)
+![Tenant statistics](/images/users-guide/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
 
 For more details, refer to [Tenants > Tenant usage statistics](/reference/tenants/#tenant-usage-statistics) in the Reference guide. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
 
@@ -352,7 +348,7 @@ For instance, when you have a microservice with scale policy set to AUTO and the
 
 Note that an audit record is created for every change of the number of instances.
 
-![Audit logs](/images/users-guide/Administration/admin-audit-logs-microscaling.png)
+![Audit logs](/images/users-guide/enterprise-tenant/et-audit-logs-microscaling.png)
 
 For more information, refer to [Auditing](https://cumulocity.com/reference/auditing) in the Reference guide.
 
@@ -361,7 +357,7 @@ For more information, refer to [Auditing](https://cumulocity.com/reference/audit
 
 A tenant policy is a set of tenant options and retention rules. Tenant options and retention rules may be specified during tenant creation.
 
-<img src="/images/users-guide/Administration/admin-tenant-policy-assign.png" alt="Assign tenant policy">
+<img src="/images/users-guide/enterprise-tenant/et-tenant-policy-assign.png" alt="Assign tenant policy">
 
 Creating a tenant policy with a specific set of options and rules saves time when creating multiple tenants with the same settings.
 
@@ -371,14 +367,14 @@ Creating a tenant policy with a specific set of options and rules saves time whe
 
 Click **Tenant policies** in the **Tenants** menu to view all available tenant policies.
 
-<img src="/images/users-guide/Administration/admin-tenant-policies.png" alt="Tenant policies">
+<img src="/images/users-guide/enterprise-tenant/et-tenant-policies.png" alt="Tenant policies">
 
 For each tenant policy, the name, an optional description and the number of options and retention rules is provided, either in a list or a grid.
 
 #### To create a tenant policy
 
 1. Click **Add tenant policy** in the top menu bar.
-<br>![Add new policy](/images/users-guide/Administration/admin-tenant-policy-add.png)<br>
+<br>![Add new policy](/images/users-guide/enterprise-tenant/et-tenant-policy-add.png)<br>
 2. In the resulting dialog box, enter a name and an optional description.
 3. Add at least one retention rule. For details on creating retention rules, see [Administration > Managing data retention > Retention rules](/users-guide/administration#retention-rules).
 4. Optionally, add a tenant option.
@@ -389,8 +385,6 @@ The tenant policy will be added to the tenant policies list.
 #### To edit a tenant policy
 
 Click the respective policy entry or click the menu icon at the right of the policy entry and then click **Edit**.
-
-![Policy context menu](/images/users-guide/Administration/admin-tenant-policy-contextmenu.png)
 
 In the resulting dialog box, make your edits and click **Save** to save your settings.
 

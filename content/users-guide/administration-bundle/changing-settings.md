@@ -30,7 +30,7 @@ Before switching to the single sign-on option it is mandatory that:
 * all microservices are build with Microservice Java SDK 9.12.6 but preferably higher.
 
 
-For Microservices custom built, refer to [General aspects > Security](microservice-sdk/concept/#security) in the Microservice SDK guide.
+For Microservices custom built, refer to [General aspects > Security](guides/microservice-sdk/concept/#security) in the Microservice SDK guide.
 
 For on premises installation the domain-based tenant resolution is configured properly.
 
@@ -49,11 +49,7 @@ At the top left, you can choose a template. The chosen option has an effect on t
 
 As the OAuth protocol is based on the execution of HTTP requests and redirects, a generic request configuration is provided.
 
-The first part of the **Single sign-on** page consists of the request configuration. Here you can configure the HTTP request address, request parameters, headers and body in case of token and refresh requests. The authorize method is executed as a GET, token and refresh method by POST requests.
-
-Specifying a logout request is optional. It performs front-channel single logout [OpenID connect front-channel logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html). If configured, the user is redirected to the defined authorization server logout URL after logging out from Cumulocity.
-
-![OAuth configuration](/images/users-guide/Administration/admin-sso-logout-custom.png)
+The first part of the **Single sign-on** page consists of the request configuration. Here you can configure the HTTP request address, request parameters, headers and body in case of token and refresh requests. The authorize method is executed as a GET, and others as POST requests.
 
 The **Basic** section of the **Single sign-on** page consists of the following configuration settings:
 
@@ -152,15 +148,6 @@ When the "Azure AD" template is selected the configuration panel will look simil
 |Client secret| Azure AD client secret if applicable
 |Button name| Button name
 |Token issuer| Token issuer value in form of a HTTP address
-
-Optionally single logout can be configured:
-
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-logout-azure.png)
-
-|Field|Description|
-|:---|:---|
-|Logout after redirect| Activates single logout by redirecting the user, after logout, to the authorization server logout endpoint
-|Redirect URL| Address to redirect the user to after successful logout from the authorization server
 
 The second part of the panel is the same as for the "Custom" template, where access mapping, user ID field selection and signature verification address are provided.
 
@@ -329,7 +316,7 @@ In the **Two-factor authentication** section, you can change the SMS template wh
 
 #### Support link
 
-In the **Support link** section, you can enter a URL to be used to link to a Support page. If you do not provide a link here, the default link to the Software AG TechCommunity page will be used.
+In the **Support link** section, you can enter a URL to be used to link to a Support page. If you do not provide a link here, the default link to the Cumulocity Support will be used.
 
 Enter "false" to hide the link.
 

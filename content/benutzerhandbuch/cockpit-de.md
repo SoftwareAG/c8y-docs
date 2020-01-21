@@ -1,6 +1,6 @@
 ---
-weight: 40
+weight: 30
 title: Cockpit
 layout: bundle
-slug: cockpit
 ---
+Die Cockpit-Anwendung umfasst Optionen für die Verwaltung und Überwachung von IoT-Assets und Daten aus Geschäftssicht.

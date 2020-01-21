@@ -14,7 +14,6 @@ aliases:
   - /users-guide/zapier
   - /users-guide/data-broker
   - /users-guide/IMPACT
-  - /users-guide/opc-ua
   - /devices/netcomm/cloud-fieldbus
   - /devices/sigfox
   - /benutzerhandbuch/cloud-fieldbus-deutsch

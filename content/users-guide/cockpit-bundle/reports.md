@@ -56,16 +56,15 @@ In the **Export** page you will find a list displaying all exports with their na
 
 #### <a name="add-export"></a>To add an export
 
-1. Click **Add export** in the top menu bar.
+1. Click **Add export** in the top menu bar.<br>
+	![Create export](/images/users-guide/cockpit/cockpit-export-create.png)
+
 2. Enter a name for the export and select the file type (CSV or XLSX) for the report output. 
 
-![Create export](/images/users-guide/cockpit/cockpit-export-create.png)
 
 **Filters**
 
 In the **Filter** section, you can select filters to request object- or time-specific data.
-
-![Export filters](/images/users-guide/cockpit/cockpit-export-filter.png)
 
 To filter for a particular object, enter a name or property value into the search field and click the search icon. All matching devices or groups will be displayed below the **Value** field. Click a device to select it (highlighted in green). 
 
@@ -84,7 +83,7 @@ Apart from object- and time-specific filtering you may filter data for specific 
 
 Use the toggle to enable/disable a field.
 
-![Filter fields](/images/users-guide/cockpit/cockpit-export-fields.png)
+![Filter fields](/images/benutzerhandbuch/cockpit/cockpit-export-fields.png)
 
 >**Info**: The time range filter only applies to alarms, events and measurements but not to managed objects. If selected, managed objects will appear in the export, regardless of any specified time range. 
 

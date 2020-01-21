@@ -15,6 +15,9 @@ It is supported out of the box by the following terminals:
 * [Pssystec Smartbox-Modbus](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices/10043/3) for Modbus/RTU
 * [Pssystec SmartBox DP](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices/10041/3) for Profibus
 * [Netcomm Wireless NTC-6200](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices/10034/3) for Modbus/TCP and Modbus/RTU
+* [OPC-UA](https://bitbucket.org/m2m/cumulocity-agents-opc/src/develop/opcua-agent/documentation/) for OPC-UA Servers
+
+OPC UA support is implemented in Java and runs on any system running JRE7 (Java Runtime Environment 7) or newer.
 
 > If you want to support Cloud Fieldbus with your terminal, please contact info@cumulocity.com for more information.
 

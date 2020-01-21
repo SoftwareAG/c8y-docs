@@ -49,7 +49,7 @@ In the **Bulk operations** tab, bulk operations created for the group can be man
 
 ### <a name="add-group"></a>To create a new group
 
-1. Click the **Plus** button at the right of the top bar and then click **New group**.
+1. Click the **Plus** button at the right of the top bar and then click **New group**.<br>
 2. In the resulting dialog box, enter a unique group name to identify your group.
 3. In the search field, enter the search criteria for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
 4. Checkmark the devices you want to add from the list.

@@ -35,7 +35,7 @@ The following tabs are the most common ones, each described in detail in a separ
 |[Tracking](#tracking)|Shows the movement of a device, if available.
 |[Identity](#identity)|Displays identities recorded for a particular device. Available for each device.
 
->**Info**: Several individual tabs, which you do not find listed here, may be described in a different context in another section of the Cumulocity documentation. Use the Search function to switch to the relevant sections. A detailed description on the **Modbus** tab, for example, can be found in [Optional services > Cloud fieldbus](users-guide/optional-services/cloud-fieldbus).
+>**Info**: Several individual tabs, which you do not find listed here, may be described in a different context in another section of the Cumulocity documentation. Use the Search function to switch to the relevant sections. A detailed description on the **Modbus** tab, for example, can be found in [Optional services > Cloud fieldbus](/users-guide/optional-services/cloud-fieldbus).
 
 Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be part of multiple hierarchies, several rows of breadcrumbs may be shown.
 
@@ -54,7 +54,8 @@ The **Info** tab summarizes management-relevant device information in a dashboar
 The information is provided on the following cards:
 
 <table>
-<col width = 150>
+<col width = 25%>
+<col width = 75%>
 <thead>
 <tr>
 <th style="text-align:left">Card</th>
@@ -130,20 +131,20 @@ You can influence the graphical display and axes limits by setting up so-called 
 
 In order to see measurement graphs, the device has to send measurements in a specified fragment format.
 
-"fragment<span>&#95;</span>name" : {
-	"serie<span>&#95;</span>name" : {
-		"value" : ...
-		"unit" : ...
+	"fragment_name" : {
+		"serie_name" : {
+			"value" : ...
+			"unit" : ...
+		}
 	}
-}
 
 Example: 
 
-"c8y_SpeedMeasurement": {
-      "Speed": { "value": 1234, "unit": "km/h" }
-}
+	"c8y_SpeedMeasurement": {
+	      "Speed": { "value": 1234, "unit": "km/h" }
+	}
 
-Fragment<span>&#95;</span>name and serie<span>&#95;</span>name can be replaced by different valid JSON property names, but no whitespaces and special characters like [ ],* are allowed. The structure has to be exactly as above, two-level deep JSON object.
+`"Fragment_name"` and `"serie_name"` can be replaced by different valid JSON property names, but no whitespaces and special characters like [ ],* are allowed. The structure has to be exactly as above, two-level deep JSON object.
 
 ### <a name="alarms"></a>Alarms
 
@@ -155,10 +156,8 @@ The **Configuration** tab allows you to configure the parameters and initial set
 
 #### To add or edit a configuration
 
-2. In the **Configuration** tab, you can manually add or edit the device configuration in the text field.
-4. Click **Save** to save your edits.
-
-<img src="/images/users-guide/textconfig.png" alt="Device details" style="max-width: 100%">
+1. In the **Configuration** tab, you can manually add or edit the device configuration in the text field.
+2. Click **Save** to save your edits.
 
 Alternatively, you can work with configuration snapshots, see [Configuration snapshots](#configuration-repository).
 

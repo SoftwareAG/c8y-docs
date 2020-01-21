@@ -14,15 +14,7 @@ The user management feature allows you to manage the users within your tenant. W
 
 > **Info:** The user needs to have a role with the user management permission ADMIN or CREATE to be able to do so.
 
-If your tenant is configured for using single sign-on (SSO) in SAG Cloud, new users should be created under **My Cloud**, accessible through the application switcher in the upper right corner, so that they are able to use the single sign-on feature. 
-
-For users created via an external authorization server, updating the following settings in Cumulocity will have no effect (will be reset on the next user re-login):
-
-* user info (login alias, email, first name, last name, telephone)
-* global roles → configurable via SSO access mapping
-* application access → configurable via SSO access mapping
-
-Moreover, password reset in Cumulocity is disabled for users created through an external authentication server.
+>**Info**: If your tenant is configured for using SSO (Single Sign-On) in SAG Cloud, new users should be created under **My Cloud**, accessible through the application switcher in the upper right corner, so that they are able to use the SSO feature. For users created in **My Cloud**, password reset in Cumulocity is disabled.
 
 
 ### Viewing users
@@ -47,22 +39,67 @@ Initially, the **User** page only shows the top-level users. To see all users in
 ### <a name="creating-users"></a>To add a user
 
 1. Click **Add user** at the right of the top menu bar.  
-
-	>**Info**: If single sign-on is enabled for your tenant, a message will show up which reminds you that you are about to create a local user which will not be able to login via single sign-on. Create new users in **My Cloud** instead, accessible through the application switcher in the upper right corner, to enable them using the single sign-on feature.
-	
 2. At the left of the **New user** window, provide the following information to identify the user:
 
-	|Field|Description|
-	|:---|:---|
-	|Username|Serves as a user ID to identify the user at the system. Note that the username cannot be changed once the user has been created. This field is mandatory.
-	|Login alias|In addition to the user name, an optional alias can be provided to be used to log on. Other then the username, this alias may be changed if required.
-	|Active|Enable/disable the user account here. If the user account is disabled the user cannot login. 
-	|E-mail|A valid email address. This is required to enable the user to reset the password. This field is mandatory.
-	|First name|First name of the user. When the user is logged in, this name appears at the right of the top bar on the **User** button. 
-	|Last name|Last name of the user.
-	|Telephone|A valid phone number. The phone number is required if the user is configured to use two-factor authentication.
-	|Owner|Another user that manages ("owns") the new user. Select a user from the dropdown list and click **Done** to confirm. Refer to [Managing user hierarchies](/users-guide/enterprise-edition#user-hierarchies) for details on user hierarchies.
-	|Delegated by|Can be activated to delegate user hierarchies and permissions to the user. Refer to [Managing user hierarchies](/users-guide/enterprise-edition#user-hierarchies) for details on delegation.
+	<div class="table-responsive"><table>
+	   <colgroup>
+       <col style="width: 15%;">
+       <col style="width: 85%;">
+    	</colgroup>
+	<thead>
+	<tr>
+	<th align="left">Field</th>
+	<th align="left">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	<tr>
+	<td align="left">Username</td>
+	<td align="left">Serves as a user ID to identify the user at the system. Note that the username cannot be changed once the user has been created. This field is mandatory.</td>
+	</tr>
+	
+	<tr>
+	<td align="left">Login alias</td>
+	<td align="left">In addition to the user name, an optional alias can be provided to be used to log on. Other then the username, this alias may be changed if required.</td>
+	</tr>
+	
+	<tr>
+	<td align="left">Active</td>
+	<td align="left">Enable/disable the user account here. If the user account is disabled the user cannot login.</td>
+	</tr>
+	
+	<tr>
+	<td align="left">E-mail</td>
+	<td align="left">A valid email address. This is required to enable the user to reset the password. This field is mandatory.</td>
+	</tr>
+	
+	<tr>
+	<td align="left">First name</td>
+	<td align="left">First name of the user. When the user is logged in, this name appears at the right of the top bar on the <strong>User</strong> button.</td>
+	</tr>
+	
+	<tr>
+	<td align="left">Last name</td>
+	<td align="left">Last name of the user.</td>
+	</tr>
+	
+	<tr>
+	<td align="left">Telephone</td>
+	<td align="left">A valid phone number. The phone number is required if the user is configured to use two-factor authentication.</td>
+	</tr>
+	
+	<tr>
+	<td align="left">Owner</td>
+	<td align="left">Another user that manages (“owns”) the new user. Select a user from the dropdown list and click <strong>Done</strong> to confirm. Refer to <a href="/users-guide/enterprise-edition#user-hierarchies">Managing user hierarchies</a> for details on user hierarchies.</td>
+	</tr>
+	
+	<tr>
+	<td align="left">Delegated by</td>
+	<td align="left">Can be activated to delegate user hierarchies and permissions to the user. Refer to <a href="/users-guide/enterprise-edition#user-hierarchies">Managing user hierarchies</a> for details on delegation.</td>
+	</tr>
+	</tbody>
+	</table></div>
 
 3. Select the login options for the user.
 

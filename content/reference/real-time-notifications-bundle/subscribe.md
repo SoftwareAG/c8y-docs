@@ -4,12 +4,9 @@ title: Subscribe
 layout: redirect
 ---
 
-A notification client can send subscribe messages where can specify desired channel to receive output messages from cumulocity server. The client will receive the messages in succeeding connect requests.
+A notification client can send subscribe messages and specify there the desired channel to receive output messages from Cumulocity server. The client will receive the messages in succeeding connect requests.
 
-The format of channels names is different according to REST api in which the real-time notification service is used. For details go to :
-
--   The Real-time statements
--   The Device control
+The format of channels names is different according to the REST API in which the real-time notification service is used. See [Device control](/reference/device-control) for more details.
 
 ### Request
 
@@ -22,18 +19,18 @@ The format of channels names is different according to REST api in which the rea
 
 Example Request:
 ```http
-    POST /cep/realtime
-    Host: ...
-    Authorization: Basic ...
-    Content-Length: ...
-    Content-Type: application/json
-    [
-      {
-        "channel": "/meta/subscribe",
-        "clientId": "Un1q31d3nt1f13r",
-        "subscription": "/alarms/<Device ID>"
-      }
-    ]
+POST /cep/realtime
+Host: ...
+Authorization: Basic ...
+Content-Length: ...
+Content-Type: application/json
+[
+  {
+    "channel": "/meta/subscribe",
+    "clientId": "Un1q31d3nt1f13r",
+    "subscription": "/alarms/<Device ID>"
+  }
+]
 ```
 
 ### Response
@@ -50,15 +47,15 @@ Example Request:
 Example response:
 
 ```http
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    [
-      {
-        "channel": "/meta/subscribe",
-        "clientId": "Un1q31d3nt1f13r",
-        "subscription": "/alarms/<Device ID>",
-        "successful": true,
-        "error": ""
-      }
-    ]
+HTTP/1.1 200 OK
+Content-Type: application/json
+[
+  {
+    "channel": "/meta/subscribe",
+    "clientId": "Un1q31d3nt1f13r",
+    "subscription": "/alarms/<Device ID>",
+    "successful": true,
+    "error": ""
+  }
+]
 ```

@@ -4,7 +4,7 @@ title: Disconnect
 layout: redirect
 ---
 
-To stop receiving notifications from all channels and close the conversation, send a message to the "/meta/disconnect" channel.
+To stop receiving notifications from all channels and close the conversation, send a message to the <kbd>/meta/disconnect</kbd> channel.
 
 ### Request
 
@@ -16,17 +16,19 @@ To stop receiving notifications from all channels and close the conversation, se
 
 Example response :
 
-    POST /cep/realtime
-    Host: ...
-    Authorization: Basic ...
-    Content-Length: ...
-    Content-Type: application/json
-    [
-      {
-        "channel": "/meta/disconnect",
-        "clientId": "Un1q31d3nt1f13r",
-      }
-    ]
+```http
+POST /cep/realtime
+Host: ...
+Authorization: Basic ...
+Content-Length: ...
+Content-Type: application/json
+[
+  {
+    "channel": "/meta/disconnect",
+    "clientId": "Un1q31d3nt1f13r",
+  }
+]
+```
 
 ### Response
 
@@ -40,12 +42,14 @@ Example response :
 
 Example response :
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    [
-      {
-        "channel": "/meta/disconnect",
-        "clientId": "Un1q31d3nt1f13r",
-        "successful": true
-      }
-    ]
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+[
+  {
+    "channel": "/meta/disconnect",
+    "clientId": "Un1q31d3nt1f13r",
+    "successful": true
+  }
+]
+```

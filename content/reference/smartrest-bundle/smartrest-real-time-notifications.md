@@ -1,6 +1,6 @@
 ---
 weight: 60
-title: SmartREST Real-time Notificationss
+title: SmartREST Real-time Notifications
 layout: redirect
 ---
 

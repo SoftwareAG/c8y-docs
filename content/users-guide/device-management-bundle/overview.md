@@ -8,7 +8,7 @@ The following sections will walk you through all functionalities of the Device M
 
 |SECTION|CONTENT|
 |:---|:---|
-|[Connecting devices](#device-registration)|How to [register one or more devices manually](#device-registration-manually) and how to [bulk-register devices](#creds-upload) in order to connect devices to your account.
+|[Connecting devices](#dev-registration)|How to [register one or more devices manually](#device-registration-manually) and how to [bulk-register devices](#creds-upload) in order to connect devices to your account.
 |[Viewing devices](#viewing-devices)|What is displayed in the [device list](#device-list) and how to sort devices by [searching for devices](#searching-devices) and [filtering devices](#filtering-devices).
 |[Grouping devices](#grouping-devices)|Why and how to group devices into top-level groups, subgroups and [smart groups](#smart-groups).
 |[Device details](#device-details)|Detailed description of the various kind of  information available for various types of  devices.
@@ -16,7 +16,7 @@ The following sections will walk you through all functionalities of the Device M
 |[Managing device types](#managing-device-types)|How to process data from various device types by using [device protocols](#managing-device-types). 
 |[Managing device data](#managing-device-data)|How to retrieve and manage [firmware and software](#software-repo) for devices. 
 |[Configuration repository](#configuration-repository)|How to retrieve configuration data and store and manage it in a configuration repository as [configuration snapshots](#configuration-repository). 
-|[SmartREST templates](#smartrest-templates)|How to work with [SmartREST  templates](#Smartrest-templates), a collection of request and response templates used to convert CSV data and Cumulocity Rest API calls.
+|[SmartREST templates](#smartrest-templates)|How to work with [SmartREST  templates](#smartrest-templates), a collection of request and response templates used to convert CSV data and Cumulocity Rest API calls.
 |[Working with simulators](#simulator)|How to model devices with the [simulator](#simulator) in order to have the same level of functionality as connected hardware devices.
 
 

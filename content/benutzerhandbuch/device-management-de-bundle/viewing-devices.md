@@ -9,7 +9,7 @@ Eine detaillierte Geräteliste wird angezeigt.
 
 ![Device list](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-alldevices.png)
 
-### Geräteinformationen
+### <a name="device-list"></a>Geräteinformationen
 
 Die Liste enthält eine Zeile für jedes Gerät mit den folgenden Informationen, dargestellt in Spalten:
 

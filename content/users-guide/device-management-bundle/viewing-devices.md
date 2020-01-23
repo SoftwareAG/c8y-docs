@@ -10,13 +10,16 @@ A detailed device list will be displayed.
 
 ![Device list](/images/users-guide/DeviceManagement/devmgmt-devices-alldevices.png)
 
-### Device information
+### <a name="device-list"></a>Device information
 
 For each device, the device list shows the following information provided in columns:
 
 <table>
 <thead>
-<Column width = 150>
+<colgroup>
+   <col style="width: 20%;">
+   <col style="width: 80%;">
+   </colgroup><thead>
 <tr>
 <th style="text-align:left">Column</th>
 <th style="text-align:left">Description</th>
@@ -61,7 +64,6 @@ For each device, the device list shows the following information provided in col
 </tr>
 </tbody>
 </table>
-
 The devices list displays up to 100 rows. If a list contains more than 100 devices, click **Load more** at the bottom of the list to display the next 100 entries.
 
 ### Configuring columns
@@ -102,7 +104,7 @@ The new column will be added and displayed in the device list.
 
 The device will be permanently deleted from the platform.
 
-**Important:** Deleting a device means to remove the device from Cumulocity database including all its generated data. Alternatively, you can arrange all retired devices in one group, see [Grouping Devices](#grouping-devices)). This ensures that all reports remain correct. To prevent alarms from being raised for the retired devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
+**Important:** Deleting a device means to remove the device from Cumulocity database including all its generated data. Alternatively, you can arrange all retired devices in one group, see [Grouping devices](#grouping-devices)). This ensures that all reports remain correct. To prevent alarms from being raised for the retired devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
 
 
 ### <a name="searching-devices"></a>To search for devices
@@ -115,7 +117,7 @@ Our example shows a search for "Ublox C027".
 
 > **Info**: Unlike filtering, the use of wildcards in a search is not supported.
 
-For details on the search functionality, refer to [Getting Started > GUI functionalities and features](/users-guide/overview#gui-features). 
+For details on the search functionality, refer to [Getting Started > GUI functionalities and features](/users-guide/getting-started#gui-features). 
 
 ![Search for devices](/images/users-guide/DeviceManagement/devmgmt-search.png)
 

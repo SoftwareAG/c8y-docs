@@ -5,23 +5,44 @@ layout: bundle
 ---
 
 <div class="lead">
-These release notes document all relevant changes that have been implemented in a Cumulocity release since the previous release.
-
-We distinguish between standard releases and maintenance releases.
+These release notes document all relevant changes that have been implemented in a Cumulocity IoT release since the previous release.
 </div>
-#### Standard release
 
-A standard release provides new features and functionality as well as improvements and fixes to a previous release.
+>**Info**: These release notes cover information on the release of the documentation version and on its two prior releases. For older release notes refer to older documentation versions.
 
-Standard releases have the format `<major>.<minor>`, e.g. 9.12, 9.13, 9.14. 
+<br>
+Cumulocity distinguishes between the following release types:
 
-A standard release with general availability (GA) is a so-called Private Edition (PE) release. Currently, every fourth standard release is also a PE release. 
+<table>
+<colgroup>
+       <col style="width: 15%;">
+       <col style="width: 70%;">
+       <col style="width: 15%;">
+    </colgroup>
+    <thead>
+<tr>
+<th style="text-align:left">Release type</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">GA Release</td>
+<td style="text-align:left">A GA Release is a release with general availability (GA). GA Releases are provided in a 3-month cycle. They are published on all Cumulocity IoT public cloud instances and they are provided to customers with an on-premises instance through the Software Download Center on the Software AG Empower Portal. GA Releases include new features, improvements and fixes.</td>
+<td style="text-align:left">10.5.0.x, 10.4.6.x</td>
+</tr>
+<tr>
+<td style="text-align:left">Incremental Releases</td>
+<td style="text-align:left">Between two GA releases, Cumulocity builds so-called Incremental Releases every two weeks. Incremental Releases are not installed on the public production instances of Cumulocity but on a preview instance (eu-latest). The focus is to make new and innovative features available to our customers and partners as early as possible. Incremental Releases may therefore contain new features (and the related documentation) in a beta state, in addition to improvements and fixes. Incremental Releases are not for production use.  </td>
+<td style="text-align:left">10.4.7, 10.4.8, 10.4.9</td>
+</tr>
+<tr>
+<td style="text-align:left">Maintenance Release</td>
+<td style="text-align:left">Every two weeks, Cumulocity provides Maintenance Releases for supported Cumulocity IoT GA releases. A Maintenance Release contains fixes and improvements for a GA release but no new features.</td>
+<td style="text-align:left">10.4.6.1, 10.4.6.2, 10.4.6.3</td>
+</tr>
+</tbody>
+</table>
 
->**Info**: From 2019, Private Editions will only be published on a quarterly base.
-
-#### Maintenance release
-
-A maintenance release provides improvements and fixes to a previous release. Maintenance releases do not contain new functionality. In general, Cumulocity maintains the current and the previous PE release. 
-
-Maintenance releases have the format `<major>.<minor>.<maintenance>`, e.g. 9.12.1, 9.12.2, 9.12.3. 
-
+>**Info**: Each release receives a version label `<SAG>.<major>.<minor>.<maintenance>`. `<SAG>` and `<major>` are incremented for marketing purposes. `<minor>` is incremented with each bi-weekly release (Continuous or GA). `<maintenance>` is "0" for the base release and incremented with each Maintenance release of this release.

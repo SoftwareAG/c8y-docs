@@ -20,7 +20,7 @@ Das Menü **Benutzer** enthält folgende Elemente:
 <tbody>
 <tr>
 <td style="text-align:left">Ändern von Benutzereinstellungen</td>
-<td style="text-align:left">Ermöglicht Zugriff auf die <a href="/benutzerhandbuch/overview#user-settings" class="no-ajaxy">Benutzereinstellungen</a>, siehe unten. </td>
+<td style="text-align:left">Ermöglicht Zugriff auf die Benutzereinstellungen, siehe unten. </td>
 </tr>
 <tr>
 <td style="text-align:left">Verweigerte Anfragen</td>
@@ -32,7 +32,7 @@ Das Menü **Benutzer** enthält folgende Elemente:
 </tr>
 <tr>
 <td style="text-align:left">Support aktivieren (deaktivieren)</td>
-<td style="text-align:left">Erlaubt Kundenservice-Benutzern den Zugriff auf Ihr Konto. Diese Option ist nur verfügbar, wenn der Supportbenutzerzugriff im Management-Mandanten nicht global für Untermandanten-Benutzer festgelegt ist, weitere Informationen siehe <a href="/benutzerhandbuch/enterprise-edition#users-in-other-tenants" class="no-ajaxy">Support für Benutzer in anderen Mandanten</a>. Nachdem der Supportbenutzerzugriff aktiviert wurde, wird das Menüelement durch <strong>Support deaktivieren</strong> ersetzt. Wenn sich Ihre Supportanfrage erledigt hat, doch die Dauer für den Supportbenutzerzugriff noch nicht abgelaufen ist (standardmäßig 24 Stunden), können Sie eine Supportbenutzeranfrage hier aktiv deaktivieren.</td>
+<td style="text-align:left">Erlaubt Kundenservice-Benutzern den Zugriff auf Ihr Konto. Diese Option ist nur verfügbar, wenn der Supportbenutzerzugriff im Management-Mandanten nicht global für Untermandanten-Benutzer festgelegt ist, weitere Informationen siehe <a href="/benutzerhandbuch/enterprise-tenant#users-in-other-tenants" class="no-ajaxy">Support für Benutzer in anderen Mandanten</a>. Nachdem der Supportbenutzerzugriff aktiviert wurde, wird das Menüelement durch <strong>Support deaktivieren</strong> ersetzt. Wenn sich Ihre Supportanfrage erledigt hat, doch die Dauer für den Supportbenutzerzugriff noch nicht abgelaufen ist (standardmäßig 24 Stunden), können Sie eine Supportbenutzeranfrage hier aktiv deaktivieren.</td>
 </tr>
 <tr>
 <td style="text-align:left">Supportanfrage stellen</td>

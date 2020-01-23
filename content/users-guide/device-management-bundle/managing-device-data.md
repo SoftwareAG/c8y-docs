@@ -134,7 +134,7 @@ The retrieved snapshot can be found in the **Configuration repository**, under  
 
 ### <a name="credentials"></a>Managing device credentials
 
-The **Device credentials** page lists all credentials that have been generated for your connected devices. Each device that has been [registered](#device-registration) shows up here with the naming convention "device_&lt;id&gt;".
+The **Device credentials** page lists all credentials that have been generated for your connected devices. Each device that has been [registered](#dev-registration) shows up here with the naming convention "device_&lt;id&gt;".
 
 ![Device credentials](/images/users-guide/DeviceManagement/devmgmt-device-credentials.png)
 
@@ -171,4 +171,4 @@ Click the menu icon at the right of a device credentials entry and then click **
 
 The device credentials will be permanently deleted.
 
-Deleting device credentials might be required if you have carried out a factory reset on a device. In this case, the device will often loose its assigned credentials. Delete it and continue with the normal [registration process](#device-registration) to re-register the device.
+Deleting device credentials might be required if you have carried out a factory reset on a device. In this case, the device will often loose its assigned credentials. Delete it and continue with the normal [registration process](#dev-registration) to re-register the device.

@@ -8,7 +8,7 @@ layout: bundle
 These release notes document all relevant changes that have been implemented in a Cumulocity IoT release since the previous release.
 </div>
 
->**Info**: These release notes cover information on the release of the documentation version and on its two prior releases. For older release notes refer to older documentation versions.
+>**Info**: These release notes cover information on the release related to the current documentation and on its two prior releases. For older release notes refer to older documentation versions.
 
 <br>
 Cumulocity distinguishes between the following release types:

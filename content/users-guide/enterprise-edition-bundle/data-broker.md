@@ -164,7 +164,7 @@ In the **Data subscriptions** page, you can manage existing data subscriptions o
 
 Click **Data subscriptions** to see a list of all currently defined data forwarded to your tenant. 
 
-<img src="/images/users-guide/Administration/Admin_Subscriptions.png" alt="Data subscriptions">
+<img src="/images/users-guide/enterprise-tenant/et-subscriptions.png" alt="Data subscriptions">
 
 For each subscription, the name, the target tenant and the status (enabled or disabled) is provided on a card.
 

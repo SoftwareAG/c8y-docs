@@ -38,11 +38,11 @@ A user list will be displayed, providing the following information for each user
 * The global roles assigned to the user.
 * The [strength](/users-guide/overview#login) of the password set for the user.
 
-To filter the list, you can use the search field at the left of the top menu bar. For details on the search functionality, refer to [Searching](/users-guide/overview##searching) in the *Introduction*.
+To filter the list, you can use the search field at the left of the top menu bar. For details on the search functionality, refer to [Searching](/users-guide/getting-started#searching) in the *Introduction*.
 
 Moreover you can filter by global roles. Select the desired roles from the dropdown list and click **Apply** to limit the users shown in the list to users with the selected roles.
 
-Initially, the **User** page only shows the top-level users. To see all users in your account at once, click **Expand all** at the right of the top bar. This will expand all top-level users, showing their sub-users. Click **Collapse all** to just show the top-level users again. For details on user hierarchies, refer to [Managing user hierarchies](/users-guide/enterprise-edition#user-hierarchies).
+Initially, the **User** page only shows the top-level users. To see all users in your account at once, click **Expand all** at the right of the top bar. This will expand all top-level users, showing their sub-users. Click **Collapse all** to just show the top-level users again. For details on user hierarchies, refer to [Managing user hierarchies](/users-guide/enterprise-edition/user-hierarchies).
 
 ### <a name="creating-users"></a>To add a user
 

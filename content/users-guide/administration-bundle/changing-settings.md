@@ -30,7 +30,7 @@ Before switching to the single sign-on option it is mandatory that:
 * all microservices are build with Microservice Java SDK 9.12.6 but preferably higher.
 
 
-For Microservices custom built, refer to [General aspects > Security](microservice-sdk/concept/#security) in the Microservice SDK guide.
+For Microservices custom built, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the Microservice SDK guide.
 
 For on premises installation the domain-based tenant resolution is configured properly.
 

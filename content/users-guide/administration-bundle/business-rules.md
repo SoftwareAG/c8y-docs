@@ -64,7 +64,7 @@ For each alarm mapping, the alarm severity and the name of the mapping is shown.
 
 #### To edit an alarm mapping
 
-Simply expand an alarm mapping to edit it. See [To add an alarm mapping](#add-alarm-mapping) for details on the fields.
+Simply expand an alarm mapping to edit it. See above for details on the fields.
 
 <img src="/images/users-guide/Administration/admin-alarm-mapping-edit.png" alt="Edit alarm mapping">
 

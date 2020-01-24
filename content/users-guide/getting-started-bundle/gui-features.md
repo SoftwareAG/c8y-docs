@@ -2,6 +2,8 @@
 weight: 40
 title: GUI functionalities and features
 layout: default
+aliases:
+  - /overview/gui-features
 ---
 
 

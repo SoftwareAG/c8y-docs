@@ -118,13 +118,13 @@ To remove a property or an action, hover over the respective row and click **Del
 
 ### Data point graph
 
-The "Data point graph" widget shows a data point (measurement) in a graph. The visualization is the same as in the [data explorer](#visualize).
+The "Data point graph" widget shows a data point (measurement) in a graph. The visualization is the same as in the [data explorer](/users-guide/cockpit/#data-explorer).
 
 <img src="/images/users-guide/cockpit/Cockpit_DataPointsGraphWidget.png" name="Data Point Graph widget" style="width:75%;"/>
 
 The easiest way to create a "Data point graph" widget is to navigate to the data explorer, click the **More...** button in the top menu bar and select **Send as widget to dashboard**.
 
-Refer to [Visualizing data using the data explorer](#visualize) for further details on the parameters to be configured.
+Refer to [Visualizing data using the data explorer](/users-guide/cockpit/#data-explorer) for further details on the parameters to be configured.
 
 ### Data point list
 

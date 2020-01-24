@@ -187,7 +187,7 @@ If you want to keep your current configuration in the data explorer for later us
 
 To create a widget from the data explorer of a particular asset, click **More...** in the top menu bar and select **Send as widget to dashboard** from the context menu.
 
-[Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-sendwidget.png)
+![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-sendwidget.png)
 
 In the upcoming dialog, select one of the dashboards available for the current object and click **Select** to add the data explorer as widget to the selected dashboard.
 
@@ -197,7 +197,7 @@ In the upcoming dialog, select one of the dashboards available for the current o
 
 To create a widget from the data explorer of in the navigator, click **More...** in the top menu bar and select **Send as a widget to report** from the context menu.
 
-[Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-sendwidget.png) 
+![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-sendwidget.png) 
 
 In the upcoming dialog, select one of the reports available and click **Select** to add the data explorer as widget to the selected report.
 

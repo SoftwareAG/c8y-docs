@@ -4,7 +4,6 @@ title: Storage quota
 layout: redirect
 ---
 
-<a name="storageQuota"></a>
 
 The storage quota is in place for a tenant when a storage quota per device is set by the platform administrator. The total storage available to the user is calculated using the formula `storage quota per device x number of devices`. A check is performed every night to ensure the quota is not exceeded.
 

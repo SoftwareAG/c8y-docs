@@ -221,7 +221,7 @@ In the field **Limit password validity for**, you can limit the validity of user
 
 >**Info**: The password validity limit and the enforcing of strong passwords may not be editable, if configured by the platform administrator.
 
-By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in [Getting Started > Accessing and logging into the Cumulocity platform](/users-guide/overview#login).
+By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in [Getting Started > Accessing and logging into the Cumulocity platform](/users-guide/getting-started/#login).
 
 Strong (green) passwords must have "M" characters. By default, the system restricts the use of passwords already used in the past. The last "N" passwords provided by a user are remembered by the system and the system does not allow to use them. The default value for "N" is 10.
 

@@ -7,6 +7,8 @@ layout: redirect
 Cumulocity uses REST and MQTT as protocols for external communication. Both protocols may be used to interface devices with Cumulocity. For details refer to   the sections on [Device integration using REST](/device-sdk/rest) and [Device integration using MQTT](/device-sdk/mqtt) in the Device SDK guide.
 
 Additionally, Cumulocity IoT Edge offers Cloud Fieldbus functionality to collect data from fieldbus devices and remotely manage them. To do so, various protocols are provided, e.g. Modbus and OPC/UA. For details on how to integrate devices using Modbus and OPC/UA, refer to Optional Services > [Cloud Fieldbus](/users-guide/optional-services#cloud-fieldbus) in the User guide.
+
+>**Info**: Currently, only the Modbus and OPC/UA protocols are supported.
    
 ### Connecting a Modbus device
 
@@ -14,8 +16,9 @@ Modbus is a serial communications protocol originally published by Modicon and u
 
 Before you connect a Modbus device 
 
-* check if the agent is running,
-* register the Modbus agent. This only has to be done once as a preparation step and is not required for every Modbus device.
+* Check if the agent is running.
+* Register the Modbus agent. This only has to be done once as a preparation step and is not required for every Modbus device.
+* Next, you must register the device in the Device Management application with the device ID: “linux-agent".
    
 #### How to check/change the agent state
 
@@ -74,8 +77,6 @@ Next, you need to register a device in the Device Management application with th
 Follow the description in Device Management > [Connecting devices](/users-guide/device-management#connecting-devices) in the User guide to register a device.
 
 In the Device Management application, click **All devices** in the navigator and find the OPCUA device in the device list.
-
-<img src="/images/edge/edge-opcua-device.png" name="Device list" style="width:100%;"/> 
 
 For further information on managing and configuring OPCUA devices, refer to Optional services > [Cloud Fieldbus](/users-guide/optional-services#cloud-fieldbus) in the User guide.
 

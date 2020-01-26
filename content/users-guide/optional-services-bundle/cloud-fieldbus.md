@@ -12,9 +12,9 @@ Cloud Fieldbus is a Cumulocity application with the ability to collect data from
 
 It is supported out of the box by the following terminals:
 
-* [Pssystec Smartbox-Modbus](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices/10043/3) for Modbus/RTU
-* [Pssystec SmartBox DP](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices/10041/3) for Profibus
-* [Netcomm Wireless NTC-6200](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices/10034/3) for Modbus/TCP and Modbus/RTU
+* [Pssystec Smartbox-Modbus](https://devicepartnerportal.softwareag.com/web/#/devices/10043/3) for Modbus/RTU
+* [Pssystec SmartBox DP](https://devicepartnerportal.softwareag.com/web/#/devices/10041/3) for Profibus
+* [Netcomm Wireless NTC-6200](https://devicepartnerportal.softwareag.com/web/#/devices/10034/3) for Modbus/TCP and Modbus/RTU
 
 > If you want to support Cloud Fieldbus with your terminal, please contact info@cumulocity.com for more information.
 
@@ -121,7 +121,7 @@ Connecting Profibus differs slightly from the regular Plug & Play approach of Cl
 3. The baud rate is automatically detected by the gateway and is just being displayed here.
 4. Change the transmit rate according to your requirements. The transmit rate is the interval at which measurements are sent to Cumulocity.
 5. Set the slave address of the terminal.
-6. Configure your Profibus Master device to communicate to that slave address. To do so, refer to the gateway manual (e.g. [SmartBox DP](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices/10041/3)).
+6. Configure your Profibus Master device to communicate to that slave address. To do so, refer to the gateway manual (e.g. [SmartBox DP](https://devicepartnerportal.softwareag.com/web/#/devices/10041/3)).
 7. Click **Save** to update the gateway with the new settings.
 
 **Adding child devices**

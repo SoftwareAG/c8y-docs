@@ -169,7 +169,7 @@ aliases:
   - /devices/smartbox-modus
   
 ---
-A new [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/) has been implemented, offering an extensive [collection of devices](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices) with guaranteed plug-and-play compatibility and full functional support in the Cumulocity IoT platform. Apart from general information on each device you can find quick start guides here, describing how to configure the particular device and connect it to the Cumulocity IoT platform. 
+A new [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/web/#/) has been implemented, offering an extensive [collection of devices](https://devicepartnerportal.softwareag.com/web/#/devices) with guaranteed plug-and-play compatibility and full functional support in the Cumulocity IoT platform. Apart from general information on each device you can find quick start guides here, describing how to configure the particular device and connect it to the Cumulocity IoT platform. 
 
 Most of the device integration descriptions formerly provided in the Device guides of the Cumulocity documentation have been moved to the Partner Portal. 
 

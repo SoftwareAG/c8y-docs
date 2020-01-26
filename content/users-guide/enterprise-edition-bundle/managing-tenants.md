@@ -275,7 +275,7 @@ Cumulocity offers two billing modes:
 
 * **Resource-based billing**: Exposes the number of resources used by a microservice to calculate billing.
 
-The billing modes are specified per microservice in the [microservice manifest](/reference/microservice-manifest) and are set in the field "billingMode".
+The billing modes are specified per microservice in the [microservice manifest](/microservice-sdk/concept/#manifest) and are set in the field "billingMode".
 
 RESOURCES: Sets the billing mode to resources-based. This is the default mode and will be applied to all microservices that are not explicitly switched to subscription-based billing mode.
 
@@ -339,7 +339,7 @@ For more details, refer to [Tenants > Tenant usage statistics](/reference/tenant
 
 ##### Scaling
 
-Auto-scaling monitors your microservices and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. It is easy to configure the microservice scaling by setting the property `scale` in the [Microservice manifest](https://cumulocity.com/reference/microservice-manifest/).
+Auto-scaling monitors your microservices and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. It is easy to configure the microservice scaling by setting the property `scale` in the [Microservice manifest](/microservice-sdk/concept/#manifest).
 
 For instance, when you have a microservice with scale policy set to AUTO and the CPU usage points that it is needed to start a new microservice instance for three hours, the billing logs: (24/24 + 3/24) * consumed resources.
 
@@ -350,7 +350,7 @@ Note that an audit record is created for every change of the number of instances
 
 ![Audit logs](/images/users-guide/enterprise-tenant/et-audit-logs-microscaling.png)
 
-For more information, refer to [Auditing](https://cumulocity.com/reference/auditing) in the Reference guide.
+For more information, refer to [Auditing](/reference/auditing/) in the Reference guide.
 
 
 ### <a name="tenant-policies"></a> Tenant policies

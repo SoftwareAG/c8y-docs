@@ -44,7 +44,7 @@ The following gateways are supported:
 	* Can be used on any linux-based gateway device
 	* Latest version required
 * Third-party devices
-	* Many third-party devices are supported, for details see [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices).
+	* Many third-party devices are supported, for details see [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/web/#/devices).
 
 ### How Cloud Remote Access works
 
@@ -58,7 +58,7 @@ The following protocols are supported:
 * Secure Shell (SSH)
 * Terminal (Telnet)
 
-Cloud Remote Access works as in the illustration below. The remotely controlled device runs a VNC, SSH or Telnet server and is connected to a gateway compatible with Cloud Remote Access. This gateway must be registered as a device within the Device Management application in Cumulocity. More information about registering devices and instructions can be found in [Device Management > Device Registration](/users-guide/device-management/#device-registration) in the User guide.
+Cloud Remote Access works as in the illustration below. The remotely controlled device runs a VNC, SSH or Telnet server and is connected to a gateway compatible with Cloud Remote Access. This gateway must be registered as a device within the Device Management application in Cumulocity. More information about registering devices and instructions can be found in [Device Management > Device Registration](/users-guide/device-management/#connecting-devices) in the User guide.
 
 ![VNC2](/images/users-guide/cra-VNC2.png)
 

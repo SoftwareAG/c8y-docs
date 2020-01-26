@@ -162,7 +162,7 @@ Before activating the custom domain name, make sure that
 * you have added a wildcard CNAME record (starting with `*.`) to your DNS server of the following format:<br>
  Domain name = "&ast;.&lt;your domain name>", e.g. "*.iot.mycompany.com" <br>
  Type = CNAME <br>
- Target = the domain of the platform you want to point to, e.g. if you use "https://demos.cumulocity.com" to access your tenant, use "demos.cumulocity.com" as target.<br>
+ Target = the domain of the platform you want to point to, e.g. if you use `https://demos.cumulocity.com` to access your tenant, use "demos.cumulocity.com" as target.<br>
 Make sure to remove all A entries for the wildcard domain. For example, if you already have an A entry for "xxx.iot.mycompany.com", you cannot create tenants with the URL "xxx".
 
 After successful activation you will be redirected to your Enterprise Tenant at the new domain. You will also receive an email with information about the activation.

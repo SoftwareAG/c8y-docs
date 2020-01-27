@@ -44,7 +44,7 @@ The following gateways are supported:
 	* Can be used on any linux-based gateway device
 	* Latest version required
 * Third-party devices
-	* Many third-party devices are supported, for details see [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices).
+	* Many third-party devices are supported, for details see [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/web/#/devices).
 
 ### How Cloud Remote Access works
 

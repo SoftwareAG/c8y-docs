@@ -61,7 +61,7 @@ Schalten Sie das Gerät bzw. die Geräte ein und warten Sie, bis die Verbindung 
 Wenn ein Gerät verbunden ist, wechselt der Status auf "Bitte akzeptieren".
 Klicken Sie **Akzeptieren**, um die Verbindung zu bestätigen. Der Status des Geräts wechselt auf "Akzeptiert".
 
-> **Info**: Im Falle von Problemen lesen Sie die Dokumentation zu Ihrem Gerätetyp im [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices) oder schlagen Sie im Handbuch zu Ihrem Gerät nach.
+> **Info**: Im Falle von Problemen lesen Sie die Dokumentation zu Ihrem Gerätetyp im [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/web/#/devices) oder schlagen Sie im Handbuch zu Ihrem Gerät nach.
 
 
 #### <a name="creds-upload"></a>So führen Sie eine Bulk-Registrierung von Geräten durch

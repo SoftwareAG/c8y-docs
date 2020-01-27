@@ -21,7 +21,7 @@ The documentation of the microservice logging feature has been improved, see [Ad
 
 ### Device guides: New device catalogue
 
-A new [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/) has been implemented, offering an extensive [collection of devices](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices) with guaranteed plug-and-play compatibility and full functional support in the Cumulocity IoT platform. Apart from general information on each device you can find quick start guides here, describing how to configure the particular device and connect it to the Cumulocity IoT platform. 
+A new [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/web/#/) has been implemented, offering an extensive [collection of devices](https://devicepartnerportal.softwareag.com/web/#/devices) with guaranteed plug-and-play compatibility and full functional support in the Cumulocity IoT platform. Apart from general information on each device you can find quick start guides here, describing how to configure the particular device and connect it to the Cumulocity IoT platform. 
 
 The information formerly provided in the Device guides on the [Cumulocity documentation website](https://www.softwareag.cloud/site/dev-center/cumulocity-iot.html#/) has been moved to the Partner Portal. The former Device guides are no longer available.  
 

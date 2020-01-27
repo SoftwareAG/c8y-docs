@@ -60,7 +60,7 @@ Turn on the device(s) and wait for the connection to be established.
 Once a device is connected, its status will change to **Pending acceptance**.
 Click **Accept** to confirm the connection. The status of the device will change to **Accepted**.
 
-**Info**: In case of any issues, consult the documentation applicable for your device type in the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices) or look up the manual of your device.
+**Info**: In case of any issues, consult the documentation applicable for your device type in the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/web/#/devices) or look up the manual of your device.
 
 
 #### <a name="creds-upload"></a>To bulk-register devices

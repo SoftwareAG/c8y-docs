@@ -18,17 +18,17 @@ The following illustration grants you a quick overview of the Cumulocity Sigfox 
 
 The following sections describe how to:
 
-- [Manage the connectivity settings](#connectivity) in Cumulocity.
+- [Manage the connectivity settings](#connectivity-sigfox) in Cumulocity.
 - [Create device protocols](#create-device-protocols-sigfox) with Cumulocity's device database.
 - [Register devices](#register-device-sigfox) and visualize the Sigfox payload using Cumulocity.
 - [Update devices](#old-registration) registered with the general device registration.
-- [Send operations](#operations) to devices.
+- [Send operations](#operations-sigfox) to devices.
 
 Moreover, check out the [Troubleshooting](#sigfox-troubleshooting) section in case of any issues.
 
 **Info:** To be able to use the Sigfox agent, your tenant needs to be subscribed to the following applications: sigfox-agent, feature-fieldbus4. In case of any issues, please contact support.
 
-### <a name="connectivity"></a>Managing the connectivity settings
+### <a name="connectivity-sigfox"></a>Managing the connectivity settings
 
 Before you register a device, you need to configure Sigfox Cloud credentials in the **Connectivity** page in the Administration application. You have to set up these Sigfox Cloud credentials in Sigfox. 
 
@@ -82,7 +82,7 @@ If you wish to overwrite your previous credentials, click **Replace credentials*
 
 To process data from Sigfox devices, Cumulocity needs to understand the payload format of the devices. Mapping payload data to Cumulocity data can be done by creating a Sigfox device protocol.
 
-During the [device registration](#register-device), you can associate this device protocol. The received uplink callbacks for this device with a hexadecimal payload will then be mapped to the ones you have configured in your device protocol.
+During the [device registration](#register-device-sigfox), you can associate this device protocol. The received uplink callbacks for this device with a hexadecimal payload will then be mapped to the ones you have configured in your device protocol.
 
 If a device protocol has been changed after being associated to a device, the reflection of the change can take up to 10 minutes because of the refresh mechanism of the Sigfox microservice.
 
@@ -227,7 +227,7 @@ After clicking **Next** the device registration request will be submitted and th
 
 You can verify that the device is really connected by checking that events are actually coming in. You can do so by clicking on a device and opening its **Events** tab. All events related to this device are listed here.
 
-For more information on viewing and managing your connected devices, also refer to [Device Management](http://cumulocity.com/users-guide/device-management).
+For more information on viewing and managing your connected devices, also refer to [Device Management](/users-guide/device-management/).
 
 ### <a name="old-registration"></a>Updating devices registered with the general device registration
 
@@ -240,7 +240,7 @@ If devices have previously been registered via the general device registration t
 
 **Info**: General device registration for Sigfox devices is no longer supported.
 
-### <a name="operations"></a>Sending operations
+### <a name="operations-sigfox"></a>Sending operations
 
 If the device supports sending hexadecimal commands, you can send commands from the “Shell”. In the Device Management application, navigate to the device you want to send an operation to in the **All devices** page. Switch to the **Shell** tab.
 

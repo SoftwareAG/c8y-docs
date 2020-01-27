@@ -12,9 +12,9 @@ Cloud Fieldbus is a Cumulocity application with the ability to collect data from
 
 It is supported out of the box by the following terminals:
 
-* [Pssystec Smartbox-Modbus](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices/10043/3) for Modbus/RTU
-* [Pssystec SmartBox DP](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices/10041/3) for Profibus
-* [Netcomm Wireless NTC-6200](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices/10034/3) for Modbus/TCP and Modbus/RTU
+* [Pssystec Smartbox-Modbus](https://devicepartnerportal.softwareag.com/web/#/devices/10043/3) for Modbus/RTU
+* [Pssystec SmartBox DP](https://devicepartnerportal.softwareag.com/web/#/devices/10041/3) for Profibus
+* [Netcomm Wireless NTC-6200](https://devicepartnerportal.softwareag.com/web/#/devices/10034/3) for Modbus/TCP and Modbus/RTU
 
 > If you want to support Cloud Fieldbus with your terminal, please contact info@cumulocity.com for more information.
 
@@ -121,7 +121,7 @@ Connecting Profibus differs slightly from the regular Plug & Play approach of Cl
 3. The baud rate is automatically detected by the gateway and is just being displayed here.
 4. Change the transmit rate according to your requirements. The transmit rate is the interval at which measurements are sent to Cumulocity.
 5. Set the slave address of the terminal.
-6. Configure your Profibus Master device to communicate to that slave address. To do so, refer to the gateway manual (e.g. [SmartBox DP](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices/10041/3)).
+6. Configure your Profibus Master device to communicate to that slave address. To do so, refer to the gateway manual (e.g. [SmartBox DP](https://devicepartnerportal.softwareag.com/web/#/devices/10041/3)).
 7. Click **Save** to update the gateway with the new settings.
 
 **Adding child devices**
@@ -148,7 +148,7 @@ Once connected, you can now manage your device. Switch to the **Child devices** 
 
 #### <a name="collect"></a>Collecting measurements
 
-If the device type of the Fieldbus device is configured to collect measurements, these will be visible in the **Measurements** tab. They will also be available for usage in the [Data Explorer](/users-guide/cockpit#visualize) and in [Dashboard widgets](/users-guide/cockpit#dashboards).
+If the device type of the Fieldbus device is configured to collect measurements, these will be visible in the **Measurements** tab. They will also be available for usage in the [Data Explorer](/users-guide/cockpit/#data-explorer) and in [Dashboard widgets](/users-guide/cockpit#dashboards).
 
 Data is collected according to the interval specified in the "transmit rate" property of the terminal as described above. To optimize the data traffic, data that is exactly the same as collected previously may not be sent again.
 
@@ -209,7 +209,7 @@ To use the SCADA widget, follow these steps:
 
 The SCADA widgets inspect uploaded SVG files for placeholders. These placeholders are replaced by actual values from devices. Placeholders have a specific syntax and can be used anywhere in the SVG file. To add a placeholder, enter the name of the placeholder in double curly braces using your design application or a text editor. 
 
-When creating svg files, we recommend you to use "https://boxy-svg.com/". It is easy to use, quality chrome extension. 
+When creating SVG files, we recommend you to use [https://boxy-svg.com/](https://boxy-svg.com/). It is an easy to use, quality chrome extension. 
 
 	<text class="text" xt-anchor="middle" x="100" y="236.982125" width="200" ...>
 		{{batteryValue}}

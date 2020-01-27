@@ -155,7 +155,7 @@ Open a data connector and switch to the **Alarms** tab to display current alarms
 
 ![Warnings tab](/images/users-guide/enterprise-tenant/et-data-broker-connector-warnings.png)
 
-For details on alarms, see [Device Management > Monitoring and controlling devices > Working with alarms](alarm-monitoring).
+For details on alarms, see [Device Management > Monitoring and controlling devices > Working with alarms](/users-guide/device-management/#alarm-monitoring).
 
 
 ### <a name="data-broker-subscriptions"></a> Data subscriptions

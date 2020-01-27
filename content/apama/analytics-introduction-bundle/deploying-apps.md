@@ -34,7 +34,28 @@ Using Software AG Designer, you can also develop more complex projects which:
 
 These kinds of applications should be deployed as microservices to Cumulocity IoT. 
 
+Apama can only be used in a per-tenant microservice. Specifically, the microservice manifest must set the isolation to `PER_TENANT`. The reason for this is that Apama's Cumulocity IoT transport connectivity plug-in can only be configured to talk to a single tenant, namely the tenant to which it is deployed. Therefore, having an Apama shared between multiple tenants is invalid.
+
 >**Info**: This only applies if you are using Apama 10.3 or later.
+
+#### Required permissions
+
+Specific permissions are required by the microservice to start up and work properly. For example, Apama's Cumulocity IoT transport performs a lookup for an application by name to retrieve the application key, which requires READ permission for "Application management" to complete successfully. Similarly, so that the Apama APIs for creating, updating and looking up managed objects, events, alarms, operations and measurements will work as expected, the microservice also requires special permissions. 
+
+The following table lists the minimum set of permissions that is required by the microservice:
+
+| Permission type        | Permission level    |
+| ---------------------- | ------------------- |
+| Application management | READ                |
+| Inventory              | READ, ADMIN, CREATE |
+| Measurements           | READ, ADMIN         |
+| Events                 | READ, ADMIN         |
+| Alarms                 | READ, ADMIN         |
+| Device control         | READ, ADMIN         |
+| Identity               | READ                |
+| Option management      | READ                |
+
+This is typically achieved by using a global role which has those permissions, and where the role has access to the microservice. For more details, see [Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
 
 #### To deploy an Apama application as a microservice
 

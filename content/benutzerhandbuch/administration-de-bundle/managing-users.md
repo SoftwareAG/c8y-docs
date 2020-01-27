@@ -27,9 +27,9 @@ Es wird eine Benutzerliste angezeigt, die für jeden Benutzer die folgenden Info
 * Den Benutzernamen, der für den Zugang zum Mandanten verwendet wird.
 * Name und E-Mail-Adresse des Benutzers, falls angegeben.
 * Die globalen Rollen, die für den Benutzer vergeben wurden.
-* Die [Stärke](/benutzerhandbuch/overview#login) des Passworts, das für den Benutzer gesetzt ist.
+* Die [Stärke](/benutzerhandbuch/getting-started/#login) des Passworts, das für den Benutzer gesetzt ist.
 
-Zum Filtern der Liste können Sie das Suchfeld links in der oberen Menüleiste verwenden. Weitere Informationen zur Suchfunktionalität finden Sie unter [Suchen](/benutzerhandbuch/overview##searching) im Abschnitt *Erste Schritte*.
+Zum Filtern der Liste können Sie das Suchfeld links in der oberen Menüleiste verwenden. Weitere Informationen zur Suchfunktionalität finden Sie unter [Suchen](/benutzerhandbuch/getting-started/#searching) im Abschnitt *Erste Schritte*.
 
 Darüber hinaus können Sie nach globalen Rollen filtern. Wählen Sie die gewünschten Rollen aus der Auswahlliste, und klicken Sie **Anwenden**, um die angezeigten Benutzer auf solche mit den ausgewählten Rollen zu beschränken.
 
@@ -102,7 +102,7 @@ Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie 
 
 3. Wählen Sie die Anmeldeoptionen für den Benutzer aus.
 
-	* Wenn Sie **Benutzer muss sein Passwort beim nächsten Anmelden zurücksetzen** auswählen, müssen Sie ein Passwort angeben, dass der Benutzer beim nächsten Anmelden zurücksetzen muss. <br>Geben Sie ein Passwort ein und bestätigen Sie es. Während der Passworteingabe wird die Stärke des Passworts angezeigt. Weitere Informationen zur Passwortstärke finden Sie unter [Anmelden an der Cumulocity-Plattform](/benutzerhandbuch/overview/#login).  
+	* Wenn Sie **Benutzer muss sein Passwort beim nächsten Anmelden zurücksetzen** auswählen, müssen Sie ein Passwort angeben, dass der Benutzer beim nächsten Anmelden zurücksetzen muss. <br>Geben Sie ein Passwort ein und bestätigen Sie es. Während der Passworteingabe wird die Stärke des Passworts angezeigt. Weitere Informationen zur Passwortstärke finden Sie unter [Anmelden an der Cumulocity-Plattform](/benutzerhandbuch/getting-started/#login).  
 	* Wenn Sie **Link für das Zurücksetzen des Passworts per E-Mail senden** auswählen, erhält der Benutzer eine E-Mail mit dem Link zum Setzen des Passworts. Die E-Mail wird zu der oben konfigurierten Adresse gesendet.
 
 4. Wählen Sie auf der rechten Seite die globalen Rollen für den Benutzer. Informationen zu den globalen Rollen finden Sie unter [Verwalten von Berechtigungen](/benutzerhandbuch/administration#managing-permissions).

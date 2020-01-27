@@ -22,7 +22,7 @@ Wenn Supportbenutzerzugriff aktiviert ist, können sich Supportbenutzer bei jede
 
 **Untermandanten-/Benutzerebene** 
 
-Wenn Supportbenutzerzugriff auf der Plattform-Ebene deaktiviert ist, kann er immer noch durch einen Untermandanten-Benutzer aktiviert werden. Dies erfolgt durch Klicken auf **Support aktivieren** im Menü **Benutzer**, siehe [Erste Schritte > Benutzeroptionen und -einstellungen](/benutzerhandbuch/overview#user-settings). 
+Wenn Supportbenutzerzugriff auf der Plattform-Ebene deaktiviert ist, kann er immer noch durch einen Untermandanten-Benutzer aktiviert werden. Dies erfolgt durch Klicken auf **Support aktivieren** im Menü **Benutzer**, siehe [Erste Schritte > Benutzeroptionen und -einstellungen](/benutzerhandbuch/getting-started/#user-settings). 
 
 Der Supportzugriff ist dann nicht auf den Benutzer beschränkt, der ihn aktiviert hat, sondern gilt für alle Benutzer des Untermandanten. Dies ist notwendig, um Probleme mit Rollen/Rechten nachvollziehen zu können.
 
@@ -53,7 +53,7 @@ Mit der Stammdatenrolle "Support" können Sie einzelnen Benutzern selektiv Suppo
 
 **Vom Benutzer erteilte Berechtigung**
 
-Benutzer können Support anfragen und einem Benutzer des Management-Mandanten erlauben, sich an ihrem Konto anzumelden. Klicken Sie hierzu auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie im Kontextmenü **Supportbenutzer aktivieren**. Weitere Informationen finden Sie unter [Erste Schritte > Benutzeroptionen und -einstellungen](/benutzerhandbuch/overview#user-settings).
+Benutzer können Support anfragen und einem Benutzer des Management-Mandanten erlauben, sich an ihrem Konto anzumelden. Klicken Sie hierzu auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie im Kontextmenü **Supportbenutzer aktivieren**. Weitere Informationen finden Sie unter [Erste Schritte > Benutzeroptionen und -einstellungen](/benutzerhandbuch/getting-started/#user-settings).
 
 
 ### So melden Sie sich als Supportbenutzer an

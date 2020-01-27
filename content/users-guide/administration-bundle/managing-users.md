@@ -28,9 +28,9 @@ A user list will be displayed, providing the following information for each user
 * The user name that is used to access the tenant
 * The name and email of the user, if set
 * The global roles assigned to the user
-* The [strength](/users-guide/overview#login) of the password set for the user
+* The [strength](/users-guide/getting-started/#login) of the password set for the user
 
-To filter the list, you can use the search field at the left of the top menu bar. For details on the search functionality, refer to [Searching](/users-guide/overview##searching) in the *Introduction*.
+To filter the list, you can use the search field at the left of the top menu bar. For details on the search functionality, refer to [Searching](/users-guide/getting-started/#searching) in the *Introduction*.
 
 Moreover you can filter by global roles. Select the desired roles from the dropdown list and click **Apply** to limit the users shown in the list to users with the selected roles.
 
@@ -55,7 +55,7 @@ Initially, the **User** page only shows the top-level users. To see all users in
 
 3. Select the login options for the user.
 
-	* If you select **User must reset the password on next login**, you need to provide a password which the user needs to reset on the next login. <br>Enter a password and confirm it. While entering the password, the strength of the password will be shown. See [Logging into the Cumulocity platform](/users-guide/overview/#login) for further information on password strength.  
+	* If you select **User must reset the password on next login**, you need to provide a password which the user needs to reset on the next login. <br>Enter a password and confirm it. While entering the password, the strength of the password will be shown. See [Logging into the Cumulocity platform](/users-guide/getting-started/#login) for further information on password strength.  
 	* If you select **Send password reset link as email**, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above.
 
 4. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing Permissions](/users-guide/administration#managing-permissions).

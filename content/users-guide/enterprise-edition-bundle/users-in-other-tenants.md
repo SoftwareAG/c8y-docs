@@ -22,7 +22,7 @@ If support user access is enabled, support users can log into any subtenant as a
 
 **Subtenant/user level** 
 
-If support user access is disabled on platform level, it may still be enabled by a subtenant user. This is done by clicking **Enable support** in the **User** menu, see [Getting started > User options and settings](/users-guide/overview#user-settings). 
+If support user access is disabled on platform level, it may still be enabled by a subtenant user. This is done by clicking **Enable support** in the **User** menu, see [Getting started > User options and settings](/users-guide/getting-started#user-settings). 
 
 The support access is then not restricted to the user who activated it but applies to all users of the subtenant. This is necessary for retracing of role/right issues.
 
@@ -53,7 +53,7 @@ Using the SUPPORT inventory role, you can selectively assign support to particul
 
 **User-provided permission**
 
-Users can allow support, i.e. a management tenant user logging in as them. To do so, click the **User** button at the right of the top bar and from the context menu select **Enable support access**. For details, refer to [Getting started > User options and settings](/users-guide/overview#user-settings).
+Users can allow support, i.e. a management tenant user logging in as them. To do so, click the **User** button at the right of the top bar and from the context menu select **Enable support access**. For details, refer to [Getting started > User options and settings](/users-guide/getting-started/#user-settings).
 
 
 ### To log in as support user

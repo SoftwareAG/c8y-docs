@@ -114,7 +114,7 @@ Unser Beispiel zeigt eine Suche nach "Ublox C027".
 
 > **Info**: Im Gegensatz zur Filterfunktion, ist die Verwendung von Platzhaltern in einer Suche nicht möglich.
 
-Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche](/benutzerhandbuch/overview#gui-features). 
+Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche](/benutzerhandbuch/getting-started/#gui-features). 
 
 ![Search for devices](/images/benutzerhandbuch/DeviceManagement/devmgmt-search.png)
 

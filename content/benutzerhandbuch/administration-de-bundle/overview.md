@@ -15,4 +15,4 @@ Die folgenden Abschnitte beschreiben detailliert alle Funktionalitäten der "Adm
 |[Anwenden von Geschäftsregeln](#business-rules)|Wie [Echtzeitregeln](#event-processing) aufgesetzt und Alarme durch [Alarmregeln](#reprio-alarms) repriorisiert werden.
 |[Verwalten der Datenhaltung](#retention-rules)|Wie [Datenhaltungsregeln](#retention-rules) für Ihre Daten konfiguriert und wie Ihre [gespeicherten Daten](#files) in der Dateiablage verwaltet werden.
 |[Zwei-Faktor-Authentizierung](#tfa)|Wie [Zwei-Faktor-Authentizierung](#tfa) für einen Benutzer aktiviert/deaktiviert wird.
-|[Änderung von Einstellungen](#changing-settings)|Wie [Einstellungen für den Enterprise Tenant](#config-platform), z. B. [Anwendungseinstellungen](#default-app) oder [Passwort- und TFA-Einstellungen](#changing-password-settings), geändert werden und wie die [Attributsbibliothek](#properties) verwaltet wird.
+|[Änderung von Einstellungen](#changing-settings)|Wie [Einstellungen für den Enterprise Tenant](#config-platform), z. B. [Anwendungseinstellungen](#default-app) oder [Autorisierungseinstellungen](#authentication), geändert werden und wie die [Attributsbibliothek](#properties) verwaltet wird.

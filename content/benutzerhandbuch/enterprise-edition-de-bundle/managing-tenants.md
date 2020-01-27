@@ -72,7 +72,7 @@ Im Management-Mandanten finden Sie zudem Informationen über den übergeordneten
 </tr>
 <tr>
 <td style="text-align:left">Link zum Zurücksetzen des Passworts als E-Mail senden</td>
-<td style="text-align:left">Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie ein Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter <a href="/benutzerhandbuch/overview#login" class="no-ajaxy">Erste Schritte &gt; Aufrufen und Anmelden an der Cumulocity-Plattform</a>.</td>
+<td style="text-align:left">Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie ein Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter <a href="/benutzerhandbuch/getting-started/#login" class="no-ajaxy">Erste Schritte &gt; Aufrufen und Anmelden an der Cumulocity-Plattform</a>.</td>
 </tr>
 <tr>
 <td style="text-align:left">Mandantenregel</td>
@@ -245,7 +245,7 @@ Außerdem werden benutzerdefinierte Attribute angezeigt, falls vorhanden.
 
 Benutzerdefinierte Attribute können in der [Attributsbibliothek](/benutzerhandbuch/administration#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte [Benutzerdefinierte Attribute](#tenants-custom-properties) des Mandanten eingestellt werden.
 
-Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum filtern, indem Sie einen Start- und einen Endzeitpunkt in der oberen Menüleiste eingeben und **Filter** klicken. Sie können außerdem die Liste nach jeder Spalte filtern und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Siehe auch [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/benutzerhandbuch/overview#filtering).
+Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum filtern, indem Sie einen Start- und einen Endzeitpunkt in der oberen Menüleiste eingeben und **Filter** klicken. Sie können außerdem die Liste nach jeder Spalte filtern und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Siehe auch [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/benutzerhandbuch/getting-started/#filtering).
 
 #### So exportieren Sie die Nutzungsstatistik-Tabelle
 
@@ -270,7 +270,7 @@ Cumulocity bietet zwei Abrechnungsmodi:
 
 * **Ressourcenbasierte Abrechnung**: Legt die Menge der von einem Microservice genutzten Ressourcen offen, um die Gebühr zu berechnen.
 
-Die Abrechnungsmodi werden pro Microservice im [Microservice-Manifest](/reference/microservice-manifest) angegeben und im Feld "billingMode" festgelegt.
+Die Abrechnungsmodi werden pro Microservice im [Microservice-Manifest](/microservice-sdk/concept/#manifest) angegeben und im Feld "billingMode" festgelegt.
 
 RESOURCES: Legt den ressourcenbasierten Abrechnungsmodus fest. Dies ist der Standardmodus. Er wird auf alle Microservices angewendet, für die nicht explizit der abonnementbasierte Abrechnungsmodus festgelegt wurde.
 
@@ -334,7 +334,7 @@ Weitere Informationen finden Sie unter [Tenants > Tenant usage statistics](/refe
 
 ##### Skalierung
 
-Die automatische Skalierung überwacht Ihre Microservices und passt automatisch die Kapazität an, um eine stetige, prognostizierbare Leistung zu geringstmöglichen Kosten aufrechtzuerhalten. Die Microservice-Skalierung lässt sich durch Festlegen des Attributs `scale` im [Microservice-Manifest](https://cumulocity.com/reference/microservice-manifest/) leicht konfigurieren.
+Die automatische Skalierung überwacht Ihre Microservices und passt automatisch die Kapazität an, um eine stetige, prognostizierbare Leistung zu geringstmöglichen Kosten aufrechtzuerhalten. Die Microservice-Skalierung lässt sich durch Festlegen des Attributs `scale` im [Microservice-Manifest](/microservice-sdk/concept/#manifest) leicht konfigurieren.
 
 Wenn Sie beispielsweise einen Microservice haben, dessen Skalierungsregel auf AUTO gesetzt ist und der über die notwendigen CPU-Nutzungspunkte zum Starten einer neuen Microservice-Instanz für drei Stunden verfügt, wird Folgendes abgerechnet: (24/24 + 3/24) * verbrauchte Ressourcen.
 
@@ -345,7 +345,7 @@ Beachten Sie, dass für jede Änderung der Anzahl der Instanzen ein Auditeintrag
 
 ![Audit logs](/images/benutzerhandbuch/enterprise-tenant/et-audit-logs-microscaling.png)
 
-Weitere Informationen finden Sie unter [Auditing](https://cumulocity.com/reference/auditing) im Reference Guide.
+Weitere Informationen finden Sie unter [Auditing](/reference/auditing/) im Reference Guide.
 
 
 ### <a name="tenant-policies"></a> Mandantenregeln

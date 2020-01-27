@@ -72,7 +72,7 @@ In the management tenant, you will also find information on the parent tenant, i
 </tr>
 <tr>
 <td style="text-align:left">Send password reset link as email</td>
-<td style="text-align:left">Selected by default. If you deselect this option, you need to provide a password and confirm the password (see <a href="/users-guide/overview#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the Cumulocity platform</a> for more information on password strength).</td>
+<td style="text-align:left">Selected by default. If you deselect this option, you need to provide a password and confirm the password (see <a href="/users-guide/getting-started#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the Cumulocity platform</a> for more information on password strength).</td>
 </tr>
 <tr>
 <td style="text-align:left">Tenant policy</td>
@@ -251,7 +251,7 @@ Moreover custom properties are displayed, if configured.
 
 Custom properties may be defined in the [Properties Library](/users-guide/administration#properties) and then set their values in the [Custom properties](#tenants-custom-properties) tab of the tenant.
 
-You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Getting Started > Features and Functionalities > Filtering](/users-guide/overview#filtering).
+You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Getting Started > Features and Functionalities > Filtering](/users-guide/getting-started/#filtering).
 
 #### To export the usage statistics table
 
@@ -276,7 +276,7 @@ Cumulocity offers two billing modes:
 
 * **Resource-based billing**: Exposes the number of resources used by a microservice to calculate billing
 
-The billing modes are specified per microservice in the [microservice manifest](/reference/microservice-manifest) and are set in the field "billingMode".
+The billing modes are specified per microservice in the [microservice manifest](/microservice-sdk/concept/#manifest) and are set in the field "billingMode".
 
 RESOURCES: Sets the billing mode to resources-based. This is the default mode and will be applied to all microservices that are not explicitly switched to subscription-based billing mode.
 
@@ -340,7 +340,7 @@ For more details, refer to [Tenants > Tenant usage statistics](/reference/tenant
 
 ##### Scaling
 
-Auto-scaling monitors your microservices and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. It is easy to configure the microservice scaling by setting the property `scale` in the [Microservice manifest](https://cumulocity.com/reference/microservice-manifest/).
+Auto-scaling monitors your microservices and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. It is easy to configure the microservice scaling by setting the property `scale` in the [Microservice manifest](/microservice-sdk/concept/#manifest).
 
 For instance, when you have a microservice with scale policy set to AUTO and the CPU usage points that it is needed to start a new microservice instance for three hours, the billing logs: (24/24 + 3/24) * consumed resources.
 
@@ -351,7 +351,7 @@ Note that an audit record is created for every change of the number of instances
 
 ![Audit logs](/images/users-guide/Administration/admin-audit-logs-microscaling.png)
 
-For more information, refer to [Auditing](https://cumulocity.com/reference/auditing) in the Reference guide.
+For more information, refer to [Auditing](/reference/auditing/) in the Reference guide.
 
 
 ### <a name="tenant-policies"></a> Tenant policies

@@ -136,7 +136,7 @@ Der geladene Snapshot wird dem Konfigurations-Repository hinzugefügt.
 
 ### <a name="credentials"></a>Verwalten von Gerätezugangsdaten
 
-Die Registerkarte **Gerätezugangsdaten** listet alle Zugangsdaten auf, die für Ihre verbundenen Geräte erstellt wurden. Jedes Gerät, das [registriert](#device-registration) wurde, wird hier mit der Namenskonvention "device_&lt;id&gt;" angezeigt.
+Die Registerkarte **Gerätezugangsdaten** listet alle Zugangsdaten auf, die für Ihre verbundenen Geräte erstellt wurden. Jedes Gerät, das [registriert](#connecting-devices) wurde, wird hier mit der Namenskonvention "device_&lt;id&gt;" angezeigt.
 
 ![Device credentials](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-credentials.png)
 
@@ -173,4 +173,4 @@ Klicken Sie auf das Menüsymbol rechts neben dem Gerätezugangsdaten-Eintrag und
 
 Die Gerätezugangsdaten werden dauerhaft gelöscht.
 
-Das Löschen von Gerätezugangsdaten kann erforderlich sein, wenn Sie ein Gerät auf die Werkseinstellungen zurückgesetzt haben. In diesem Fall verliert das Gerät häufig seine zugewiesenen Zugangsdaten. Löschen Sie diese und fahren Sie mit dem normalen [Registrierungsprozess](#device-registration) fort, um das Gerät erneut zu registrieren.
+Das Löschen von Gerätezugangsdaten kann erforderlich sein, wenn Sie ein Gerät auf die Werkseinstellungen zurückgesetzt haben. In diesem Fall verliert das Gerät häufig seine zugewiesenen Zugangsdaten. Löschen Sie diese und fahren Sie mit dem normalen [Registrierungsprozess](#connecting-devices) fort, um das Gerät erneut zu registrieren.

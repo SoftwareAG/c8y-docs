@@ -199,7 +199,7 @@ Next, establish a connection between the gateway and the OPC UA server.
 4. Enter the **Timeout value** in seconds. The timeout value is calculated for each request. If the timeout value is exceeded the request will be unsuccessful. 
 5. Enter the **Status check interval** in seconds. The platform constantly checks whether there is incoming data. If the status check interval value is exceeded an alarm is created. The status check interval value has to be greater than the monitoring value of the gateway. 
 6. Select the **Security mode** and **Security policy** depending on the server configuration. For more info, see the [section below](#security-modes).
-7. Select the desired uthentication method. For more info, see the [section below](#authentication).
+7. Select the desired authentication method. For more info, see the [section below](#authentication).
 8. Click **Save**.
 
 > **Info:** Once a connection is established, the servers will be located in the **Child devices** tab. In there, the servers will contain additional data such as access to the address space. 
@@ -250,7 +250,7 @@ The keystore can then be uploaded as binary in Cumulocity and it can be used in 
 
 ### Gateway device details
 
-In this section, only OPC UA specific information related to the tabs in the device details page will be explained. For more info on all tabs, see [Device Management > Device Details](/guides/users-guide/device-management/#device-details) in the User guide.
+In this section, only OPC UA specific information related to the tabs in the device details page will be explained. For more info on all tabs, see [Device Management > Device Details](/users-guide/device-management/#device-details) in the User guide.
 
 ![Gateway device details](/images/users-guide/opcua/opcua-device-details.png)
 

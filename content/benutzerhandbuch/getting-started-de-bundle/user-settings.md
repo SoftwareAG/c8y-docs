@@ -20,7 +20,7 @@ Das Menü **Benutzer** enthält folgende Elemente:
 <tbody>
 <tr>
 <td style="text-align:left">Ändern von Benutzereinstellungen</td>
-<td style="text-align:left">Ermöglicht Zugriff auf die <a href="/benutzerhandbuch/overview#user-settings" class="no-ajaxy">Benutzereinstellungen</a>, siehe unten. </td>
+<td style="text-align:left">Ermöglicht Zugriff auf die Benutzereinstellungen, siehe unten. </td>
 </tr>
 <tr>
 <td style="text-align:left">Verweigerte Anfragen</td>

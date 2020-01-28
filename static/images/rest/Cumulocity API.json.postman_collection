@@ -1240,7 +1240,7 @@
 			"synced": false,
 			"isFromCollection": true,
 			"collectionRequestId": "34deb025-0fc2-f79f-f0a3-a7cdb2c58e6e",
-			"rawModeData": "[\n\t{\n    \t\"version\":\"1.0\",\n        \"minimumVersion\":\"0.9\",\n        \"channel\":\"/meta/handshake\",\n        \"supportedConnectionTypes\":[\"long-polling\"],\n        \"advice\":{\n        \t\"timeout\":60000,\"interval\":0\n        }\n    }\n]"
+			"rawModeData": "[\n\t{\n    \t\"version\":\"1.0\",\n        \"minimumVersion\":\"0.9\",\n        \"channel\":\"/meta/handshake\",\n        \"supportedConnectionTypes\":[\"long-polling\"]\n    }\n]"
 		},
 		{
 			"id": "c409055b-7b24-a622-8337-27295a1fc9aa",

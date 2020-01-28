@@ -6,7 +6,7 @@ layout: redirect
 
 REST is a very simple and secure protocol based on HTTP(S) and TCP. It is today the de-facto Internet standard supported by all networked programming environments ranging from very simple devices up to large-scale IT. One of the many books introducing REST is [RESTful Web Services](http://oreilly.com/catalog/9780596529260).
 
-This section explains how to use Cumulocity's REST interfaces to interface devices with Cumulocity. For general information on using REST interfaces and for information on developing applications on top of Cumulocity using REST refer to the Microservice SDK guide.
+This section explains how to use Cumulocity's REST interfaces to integrate devices with Cumulocity. For general information on using REST interfaces and for information on developing applications on top of Cumulocity using REST refer to the Microservice SDK guide.
 
 The description is closely linked to the reference guide, which describes each interface in detail. Relevant chapters in the reference guide are in particular
 

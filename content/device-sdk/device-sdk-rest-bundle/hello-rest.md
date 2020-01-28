@@ -55,10 +55,11 @@ This call can be done by executing the following curl statement:
        -H 'Content-type: application/vnd.com.nsn.cumulocity.managedObject+json; charset=UTF-8; ver=0.9' \
        -X POST \
        -d '{"c8y_IsDevice":{},"name":"HelloWorldDevice"}' \
-       http://<tenant-ID>.cumulocity.com/inventory/managedObjects
+       http://<tenant-name>.cumulocity.com/inventory/managedObjects
 
-> Replace &lt;username&gt;, &lt;password&gt; and &lt;tenant-ID&gt; with the appropriate credentials given to you when registering with Cumulocity.
-> The same credentials used to access the Cumulocity Web GUI can be used to execute the REST calls.
+Replace `<username>`, `<password>` and `<tenant-name>` with the appropriate credentials given to you when registering with Cumulocity.
+
+The same credentials used to access the Cumulocity Web GUI can be used to execute the REST calls.
 
 You will receive a response like that:
 
@@ -76,8 +77,7 @@ You will receive a response like that:
         ...
     }
 
-When creating a device, Cumulocity generates an ID, which is needed in further calls in order to reference the device. 
-We can find this ID as the "id" attribute-value pair in the response.
+When creating a device, Cumulocity generates an ID, which is needed in further calls in order to reference the device. You can find this ID as the "id" attribute-value pair in the response.
 
 
 #### Sending measurement data
@@ -104,17 +104,18 @@ In our case, we will send a temperature measurement in the unit of Celsius which
         "type":"c8y_PTCMeasurement"
     }
 
->Replace the id value with the appropriate value you received in the fist step.
+Replace the id value with the appropriate value you received in the first step.
 
->Furthermore, you should update the time value to a recent timestamp in order to make it easy to find back the measurement on Cumulocity UI later. 
->Note the data format for timestamp values which is explained in the [Reference guide](http://www.cumulocity.com/reference/rest-implementation/).
+Furthermore, you should update the time value to a recent timestamp in order to make it easy to find back the measurement on Cumulocity UI later. 
+
+Note the data format for timestamp values which is explained in the [Reference guide](/reference/rest-implementation/).
 
     curl -v -u <username>:<password> \
        -H 'Accept: application/vnd.com.nsn.cumulocity.measurement+json; charset=UTF-8; ver=0.9' \
        -H 'Content-type: application/vnd.com.nsn.cumulocity.measurement+json; charset=UTF-8; ver=0.9' \
        -X POST \
        -d '{"c8y_TemperatureMeasurement":{"T":{"value":21.23,"unit":"C"}},"time":"2014-12-15T13:00:00.123+02:00","source":{"id":"1231234"},"type":"c8y_PTCMeasurement"}' \
-       http://<tenant-ID>.cumulocity.com/measurement/measurements/
+       http://<tenant-name>.cumulocity.com/measurement/measurements/
 
 The response to that request will look like this:
 

@@ -34,28 +34,30 @@ Using Software AG Designer, you can also develop more complex projects which:
 
 These kinds of applications should be deployed as microservices to Cumulocity IoT. 
 
-Apama can only be used in a per-tenant microservice. Specifically, the microservice manifest must set the isolation to `PER_TENANT`. The reason for this is that Apama's Cumulocity IoT transport connectivity plug-in can only be configured to talk to a single tenant, namely the tenant to which it is deployed. Therefore, having an Apama shared between multiple tenants is invalid.
-
 >**Info**: This only applies if you are using Apama 10.3 or later.
 
-#### Required permissions
+#### Required settings in the microservice manifest
 
-Specific permissions are required by the microservice to start up and work properly. For example, Apama's Cumulocity IoT transport performs a lookup for an application by name to retrieve the application key, which requires READ permission for "Application management" to complete successfully. Similarly, so that the Apama APIs for creating, updating and looking up managed objects, events, alarms, operations and measurements will work as expected, the microservice also requires special permissions. 
+The microservice manifest provides the required settings to manage microservice instances and the application deployment in Cumulocity IoT. For detailed information, see [Microservice manifest](/guides/microservice-sdk/concept/#manifest) in the *Microservice SDK guide*.
 
-The following table lists the minimum set of permissions that is required by the microservice:
+Apama can only be used in a single-tenant microservice. Therefore, the microservice manifest must set the isolation level to PER_TENANT. The reason for this is that Apama's Cumulocity IoT transport connectivity plug-in can only communicate with the tenant to which it is deployed. Therefore, having an Apama shared between multiple tenants is invalid.
 
-| Permission type        | Permission level    |
-| ---------------------- | ------------------- |
-| Application management | READ                |
-| Inventory              | READ, ADMIN, CREATE |
-| Measurements           | READ, ADMIN         |
-| Events                 | READ, ADMIN         |
-| Alarms                 | READ, ADMIN         |
-| Device control         | READ, ADMIN         |
-| Identity               | READ                |
-| Option management      | READ                |
+Specific permissions are required by the microservice to start up and work properly. These are set with requiredRoles in the microservice manifest. The minimum set of permissions is the following:
 
-This is typically achieved by using a global role which has those permissions, and where the role has access to the microservice. For more details, see [Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
+- ROLE_APPLICATION_MANAGEMENT_READ
+- ROLE_INVENTORY_READ
+- ROLE_INVENTORY_ADMIN
+- ROLE_INVENTORY_CREATE
+- ROLE_MEASUREMENT_READ
+- ROLE_MEASUREMENT_ADMIN
+- ROLE_EVENT_READ
+- ROLE_EVENT_ADMIN
+- ROLE_ALARM_READ
+- ROLE_ALARM_ADMIN
+- ROLE_DEVICE_CONTROL_READ
+- ROLE_DEVICE_CONTROL_ADMIN
+- ROLE_IDENTITY_READ
+- ROLE_OPTION_MANAGEMENT_READ
 
 #### To deploy an Apama application as a microservice
 

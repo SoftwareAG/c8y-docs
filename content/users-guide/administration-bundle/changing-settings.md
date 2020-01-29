@@ -17,7 +17,7 @@ From the **Settings** menu, administrators can modify or manage various settings
 
 Cumulocity provides single sign-on functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory. Currently authorization code grant is supported only with access tokens in form of JWT.
 
-**Info**: This feature is built on top of cookies technology. To be able to use it, you must have cookies enabled in the settings of your browser.
+> **Info**: This feature is built on top of cookies technology. To be able to use it, you must have cookies enabled in the settings of your browser.
 
 This feature is enabled since Cumulocity version 9.12. For correct behavior any microservice needs to use the microservice SDK with version 9.12 or later.
 
@@ -90,7 +90,7 @@ The user will be granted access to the global roles "business" and "application 
 When using "=" as operator you may use wildcards in the **Value** field. The supported wildcard is asterisk (\*) and it matches zero or more characters. For example, if you enter "cur\*" this matches "cur", "curiosity", "cursor" and anything that starts with “cur”. "f\*n" matches "fn", "fission", "falcon", and anything that begins with an "f" and ends with an "n".
 
 In case the asterisk character should be matched literally it has to be escaped by adding a backslash (\\). For example, to match exactly the string "Lorem\*ipsum" the value must be "Lorem\\*ipsum".
- 
+
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-8.png)
 

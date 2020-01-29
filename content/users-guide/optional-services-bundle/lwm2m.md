@@ -306,7 +306,7 @@ Turn on **Custom Actions** to map LWM2M data into Cumulocity using custom data p
 
 ![Custom actions](/images/users-guide/LWM2M/devmgmt-lwm2m-customactions.png)
 
-Cumulocity LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary Cumulocity microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We are providing an according example how to write such a decoder microservice in our public [Bitbucket repository](https://bitbucket.org/m2m/cumulocity-examples/src/develop/). 
+Cumulocity LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary Cumulocity microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We are providing an according example how to write such a decoder microservice in our public [Bitbucket repository](https://bitbucket.org/m2m/cumulocity-examples/src/develop/).
 
 **Auto observe**
 
@@ -326,7 +326,7 @@ In the **Objects** tab of a LWM2M device, you can view all objects, resources an
 
 ![Objects view](/images/users-guide/LWM2M/devmgmt-lwm2m-objects.png)
 
-**Info**: In order to see resources in the **Objects** tab, the resources first have to be added in the **Device Protocols** page.
+> **Info**: In order to see resources in the **Objects** tab, the resources first have to be added in the **Device Protocols** page.
 
 The following operations may be available in each instance:
 
@@ -341,7 +341,7 @@ The following operations may be available in each instance:
 - Create Instance: Creates a new instance for the selected object.
 - Delete Instance: Deletes the selected instance.
 
-**Info:**  Some instances do not have all of the listed operations.
+> **Info:**  Some instances do not have all of the listed operations.
 
 Some object cards show additional operations which can be performed. These operations become available after reading the object/instance, for example, device **Update**. In order to perform the operation, click **Execute**.
 
@@ -442,7 +442,7 @@ After selecting a type, the following rules can be chosen:
 - Greater or equals than
 - Lower or equals than
 
-**Info:** Not all rules are available to each type.
+> **Info:** Not all rules are available to each type.
 
 To delete a rule, simply click on the delete icon:
 

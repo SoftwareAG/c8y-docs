@@ -6,20 +6,20 @@ layout: redirect
 
 ## Overview
 
-The Tenant SLA Monitoring service lets service providers monitor the availability and response time of tenants and sub-tenants. 
+The Tenant SLA Monitoring service lets service providers monitor the availability and response time of tenants and sub-tenants.
 
 >**Info:** The Tenant SLA Monitoring service is only available to the main Management Tenant.
 
 In detail, it offers the following features:
 
-* monitoring of the availability for each tenant 
+* monitoring of the availability for each tenant
 * information on the current availability status of tenants (yes/no)
 * information on the tenants availability in percentage
 	* during the last day
 	* during the last week
 	* during the last month
 
-By using Tenant SLA Monitoring, service providers can instantly check 
+By using Tenant SLA Monitoring, service providers can instantly check
 
 * if any tenant is currently down,
 * if all tenants are fully functional,
@@ -33,17 +33,17 @@ Use the the Device Management application to visualize Tenant SLA Monitoring dat
 
 ### Prerequisites  
 
-The management tenant needs to be subscribed to the application “Tenant-sla-monitoring” to see any monitoring results. 
+The management tenant needs to be subscribed to the application “Tenant-sla-monitoring” to see any monitoring results.
 
 ![Sla-monitoring subscribe](/images/users-guide/sla-monitoring/sla-subscribe.png)
 
-For details on application subscription, refer to [Administration > Managing Tenants > Subscribing to applications](/users-guide/enterprise-edition#subscribe) in the User guide.
+For details on application subscription, refer to [Enterprise Tenant > Managing Tenants > Application](/users-guide/enterprise-tenant#subscribe) in the User guide.
 
 ### How the service works
 
 Every 5 minutes, the Tenant SLA Monitoring service probes for the response time of each tenant, and all its sub-tenants (if not disabled), and stores the results.
 
-To be able to do so, the service automatically subscribes to all sub-tenants of a subscribed tenant, to get its credentials and gain access to its API. 
+To be able to do so, the service automatically subscribes to all sub-tenants of a subscribed tenant, to get its credentials and gain access to its API.
 
 Moreover, for each subscribed tenant (i.e. management tenant), a source in the Device Management application is created in which the monitoring results, including those of the sub-tenants, are stored as measurements.
 
@@ -56,7 +56,7 @@ To view the measurements showing the monitoring results, open the management ten
 In the API Response Time diagram, you see the response time of the tenants in milliseconds.
 
 Additionally, you will find diagrams showing the average availability values for the tenants for the following periods:
- 
+
 * Api Availability Day Average - 24 hours
 * Api Availability Week Average - 7 days
 * Api Availability Month Average - 30 days
@@ -71,9 +71,9 @@ For further details on measurements refer to [Device Management > Device details
 
 The Tenant SLA Monitoring service will create alarms in case of the following scenarios:
 
-* Unavailability of a tenant - Whenever a tenant is not reachable, the service will not store any measurement but will leave gaps in the measurement series. When the tenant becomes available again, the service will search for the last measurement stored for the tenant and create an alarm for the calculated time of unavailability. 
-* High response times - If the required response time is not met (defaults to 300ms). This alarm will be active until the response time drops below the defined limit again. 
-* Time spans which have not been monitored 
+* Unavailability of a tenant - Whenever a tenant is not reachable, the service will not store any measurement but will leave gaps in the measurement series. When the tenant becomes available again, the service will search for the last measurement stored for the tenant and create an alarm for the calculated time of unavailability.
+* High response times - If the required response time is not met (defaults to 300ms). This alarm will be active until the response time drops below the defined limit again.
+* Time spans which have not been monitored
 
 These alarms are used to calculate the availability of the system in percentage, shown as measurements (see above).
 

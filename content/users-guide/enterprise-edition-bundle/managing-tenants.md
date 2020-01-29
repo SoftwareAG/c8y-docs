@@ -116,7 +116,7 @@ The following information is displayed here:
 
 ### To suspend or delete subtenants
 
-You can temporarily suspend tenants or you can delete subtenants permanently. 
+You can temporarily suspend tenants or you can delete subtenants permanently.
 
 Suspending tenants blocks any access to this tenant, regardless whether the access is from devices, users or other applications.
 
@@ -191,7 +191,7 @@ The **Custom properties** tab allows you to view and edit values of custom prope
 
 #### Limiting subtenant device number
 
-Platform administrators can limit the count of concurrently registered root devices or simply all devices (including children devices) via the custom property "Limit number of devices". 
+Platform administrators can limit the count of concurrently registered root devices or simply all devices (including children devices) via the custom property "Limit number of devices".
 
 They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the **[Usage statistics](<a name="usage-stats"></a>)** page.
 
@@ -249,7 +249,7 @@ You can filter the usage statistics list for a time period by adding the start a
 
 #### To export the usage statistics table
 
-1. Click Export CSV at the right of the top menu bar to export the current view of the statistics table to a CSV file. 
+1. Click Export CSV at the right of the top menu bar to export the current view of the statistics table to a CSV file.
 2. In the resulting dialog box you can customize the CSV output by specifying a field separator, decimal separator and charset.
 <br> <img src="/images/users-guide/Administration/admin-subtenant-statistics-export.png"></img> <br>
 3. Click **Download** to start the export.

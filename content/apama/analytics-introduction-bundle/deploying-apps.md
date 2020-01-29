@@ -14,7 +14,7 @@ There are two distinct approaches to deploy Apama applications to Cumulocity IoT
 
 ### <a name="single-mon-file"></a>Deploying Apama applications as single \*.mon files with Apama EPL Apps
 
->**Info**: To be able to deploy single \*.mon files with Apama EPL Apps, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Apama EPL Apps web application provided in Cumulocity IoT. If you have Apama "starter", Apama EPL Apps is not available in the application switcher. If you want to have this capability, contact Software AG support.
+>**Info**: To be able to deploy single \*.mon files with Apama EPL Apps, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Apama EPL Apps web application provided in Cumulocity IoT. If you have Apama Starter, Apama EPL Apps is not available in the application switcher. If you want to have this capability, contact Software AG support.
 
 When an Apama EPL application is activated in Cumulocity IoT, each \*.mon file is assigned a unique package name. This prevents conflicts when multiple modules are activated. For this reason, you should not specify a `package` statement in the \*.mon files. If you need to share events between different parts of your application, then write the event definitions and monitors that use it in a single \*.mon file.
 

@@ -4,6 +4,7 @@ title: Verbinden von Geräten
 layout: redirect
 ---
 
+
 <a name="device-registration"></a>
 
 Dieser Abschnitt beschreibt, wie Sie Geräte mit Ihrem Cumulocity-Konto verbinden können, sowohl manuell als auch durch Bulk-Registrierung. 

@@ -4,6 +4,7 @@ title: Datenpunktbibliothek
 layout: redirect
 ---
 
+
 Die Datenpunktbibliothek enthält eine Sammlung von Datenpunkten mit Standardwerten für Datenpunktattribute. Datenpunktattribute ähneln den "Absatzformaten" in Textverarbeitungsanwendungen: Sie möchten nicht jeden Absatz einzeln formatieren. Stattdessen möchten Sie einen Satz von Standardformaten definieren und diese auf Ihre Absätze in Ihrem Dokument anwenden. 
 
 Die Datenpunktbibliothek bietet die gleiche Funktionalität für Datenpunkte: Sie bietet eine Reihe von standardisierten Datenpunkt-"Vorlagen", die problemlos auf Ihre Datenpunkte von verschiedenen Geräten angewendet werden können.

@@ -4,6 +4,7 @@ title: Ändern von Einstellungen
 layout: redirect
 ---
 
+
 Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen des Kontos ändern oder verwalten, wie
 
 *   [Single Sign-On](#single-sign-on) konfigurieren,

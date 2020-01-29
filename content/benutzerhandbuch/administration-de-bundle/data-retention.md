@@ -4,6 +4,7 @@ title: Verwalten der Datenhaltung
 layout: redirect
 ---
 
+
 ### <a name="retention-rules"></a>Datenhaltungsregeln
 
 Mit Datenhaltungsregeln können Sie steuern, wie lange Daten in Ihrem Konto gespeichert bleiben. Vielleicht möchten Sie Messwerte 90 Tage speichern, Alarme aber bereits nach 10 Tagen löschen. Standardmäßig werden alle historischen Daten nach 60 Tage gelöscht (konfigurierbar in den Systemeinstellungen).

@@ -4,7 +4,6 @@ title: Startseite
 layout: redirect
 ---
 
-
 <a name="home"></a>
 
 Die Startseite der Anwendung "Administration" enthält

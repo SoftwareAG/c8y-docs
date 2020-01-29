@@ -4,6 +4,7 @@ title: Visualisieren von Daten mit dem Daten-Explorer
 layout: redirect
 ---
 
+
 Im Daten-Explorer können Datenpunkte (Messwerte oder Sensordaten) visualisiert werden.
 
 Der Daten-Explorer ist sowohl für alle Assets als auch für einzelne Assets verfügbar.

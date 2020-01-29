@@ -4,6 +4,7 @@ title: Verwalten von Gerätedaten
 layout: redirect
 ---
 
+
 ### <a name="software-repo"></a> Verwalten von Firmware und Software
 
 Mit dem Firmware-Repository und dem Software-Repository bietet Cumulocity die Möglichkeit, Referenz-Firmware bzw. -Software für Geräte zu verwalten.

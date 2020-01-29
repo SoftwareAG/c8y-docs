@@ -4,6 +4,7 @@ title: Cumulocity-Anwendungen
 layout: redirect
 ---
 
+
 Cumulocity umfasst die drei folgenden Standardanwendungen:
 
 | &nbsp; |Application|Description|

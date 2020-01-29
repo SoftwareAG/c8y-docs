@@ -3,6 +3,7 @@ weight: 20
 title: Verwalten von Assets
 layout: redirect
 ---
+
 ### Einleitung
 
 Assets repräsentieren ganz allgemein Geschäftsobjekte wie Gebäude, Maschinen, Produktionseinheiten oder Autos.

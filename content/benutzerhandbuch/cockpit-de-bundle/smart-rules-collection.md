@@ -3,6 +3,7 @@ weight: 90
 title: Smart Rules-Sammlung
 layout: redirect
 ---
+
 Cumulocity enthält eine Reihe von vordefinierten Smart Rules. 
 
 <img src="/images/benutzerhandbuch/cockpit-global-smart-rule-add.png" name="Global Smart Rules" style="width:75%;"/>

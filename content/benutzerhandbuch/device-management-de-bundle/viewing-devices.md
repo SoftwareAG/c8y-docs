@@ -4,6 +4,7 @@ title: Anzeigen von Geräten
 layout: redirect
 ---
 
+
 Klicken Sie **Alle Geräte** im Menü **Geräte** im Navigator, um alle mit Ihrem Konto verbundenen Geräte anzuzeigen.
 
 Eine detaillierte Geräteliste wird angezeigt.

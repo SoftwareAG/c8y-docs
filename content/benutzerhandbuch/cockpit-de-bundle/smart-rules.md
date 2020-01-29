@@ -4,7 +4,6 @@ title: Smart Rules
 layout: redirect
 ---
 
-
 Cumulocity enthält eine Regel-Engine, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Diese Regeln werden in einer Skriptsprache erstellt und in der Anwendung ["Administration"](/benutzerhandbuch/administration) verwaltet.
 
 Zum einfachen Erstellen von Regeln enthält die Cockpit-Anwendung einen "Smart Rule Builder". Mit dem Smart Rule Builder können Regeln aus Vorlagen erstellt werden. 

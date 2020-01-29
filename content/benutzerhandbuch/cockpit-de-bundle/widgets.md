@@ -4,6 +4,7 @@ title: Widgets-Sammlung
 layout: redirect
 ---
 
+
 Das Cockpit enthält voreingestellte Widget-Typen. Jeder Widget-Typ ermöglicht es, verschiedene Parameter zu konfigurieren und verschiedene Daten anzuzeigen. Im folgenden Abschnitt werden, in alphabetischer Reihenfolge, alle verfügbaren Widget-Typen und ihre Konfigurationsparameter beschrieben.
 
 ### Widget "Aktuelle Alarme"

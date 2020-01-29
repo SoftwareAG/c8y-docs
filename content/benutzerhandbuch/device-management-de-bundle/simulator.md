@@ -4,6 +4,7 @@ title: Simulatoren
 layout: redirect
 ---
 
+
 Mit dem Simulator in Cumulocity können alle Aspekte von IoT-Geräten simuliert werden:
 
 * Einrichten eines simulierten Geräts oder eines Netzwerks von simulierten Geräten

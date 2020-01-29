@@ -4,6 +4,7 @@ title: Übersicht
 layout: redirect
 ---
 
+
 Die folgenden Abschnitte beschreiben detailliert alle Funktionalitäten der Cockpit-Anwendung. Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokuments.
 
 |Abschnitt|Inhalt|

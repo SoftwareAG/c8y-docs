@@ -99,6 +99,19 @@ Usually the platform comes up within 2 minutes.
 
 The Edge server configuration is complete.
 
+### Post installation tasks
+
+The following sections explain the tasks that can be performed using the post-installation script:
+
+1. [Configure network](/guides/edge/installation/#configuring-the-edge-network)
+2. [Run post-installation](/guides/edge/installation/#running-the-post-installation-process)
+3. [Update license and SSL certificates](/guides/edge/installation/#updating-the-license-and-ssl-certificates)
+4. [Run post-upgrade](/guides/edge/installation/#running-post-upgrade)
+5. [Expand data disk size](/guides/edge/installation/##expanding-the-data-disk-size)
+6. [Update tenant password](/guides/edge/installation/#updating-the-tenant-password)
+7. [Configure Edge Agent](/guides/edge/installation/#configuring-edge-agent)
+8. Exit
+
 >**Important**:<br>
 - Option 1 is the first step that you must perform while configuring the Edge server. Also, if you change the network configuration of a Hypervisor, you must configure the network using option 1.<br> 
 - Option 3, 4 and 6 will only work after you have successfully completed the post-installation setup (Option 2). <br>

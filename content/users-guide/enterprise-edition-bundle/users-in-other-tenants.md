@@ -2,7 +2,6 @@
 weight: 50
 title: Support user access
 layout: redirect
-slug: support-user-access
 ---
 
 With the support user access feature, support users, i.e. users of the management tenant with specific permissions, can log into accounts of other subtenant's users to provide help in case of any issues.
@@ -16,7 +15,7 @@ Support user access may be enabled on different levels.
 
 **Platform level**
 
-The management tenant can enable support user access for all subtenants on platform level. This is done in the **Configuration** page, see [Customizing the platform](/users-guide/enterprise-edition#configuration). 
+The management tenant can enable support user access for all subtenants on platform level. This is done in the **Configuration** page, see [Customizing the platform](/users-guide/enterprise-edition#customization). 
 
 If support user access is enabled, support users can log into any subtenant as any user, unless overridden on subtenant level. Subtenant users cannot enable/disable access themselves. If support user access is disabled support users can log in only to subtenants for which at least one user has explicitly enabled such access, as described next.
 
@@ -30,7 +29,7 @@ After a user has activated support access, the menu item changes to **Disable su
 
 > **Info:** If a user with tenant management admin permissions disables the support request, *all* support requests for the tenant will be disabled.
 
-The duration of the active support request is configurable on platform level (default is 24 hours), see [Customizing the platform](/users-guide/enterprise-edition#configuration).
+The duration of the active support request is configurable on platform level (default is 24 hours), see [Customizing the platform](/users-guide/enterprise-edition#customization).
 
 Each new support request will prolong the support duration for the specified number of hours. After the last support request in a subtenant has expired or has been actively disabled by the user, the support user access for the subtenant will immediately be disabled (if not enabled globally). 
 

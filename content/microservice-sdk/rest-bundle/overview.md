@@ -73,7 +73,7 @@ Graphical REST clients such as [Postman](https://www.getpostman.com/) are a conv
 
 Cumulocity provides numerous online API examples. If you want to make use of them, [download and install Postman](https://www.getpostman.com/). After starting Postman, you can choose to either create an account or click **Take me straight to the app**. Then click the button below and choose the variant of Postman that you have just installed. You may see a browser security prompt asking you if you actually want to run Postman (on Windows "Electron").
 
-Import the APIs as a [JSON file](/files/rest/Cumulocity_API.json).
+Import the APIs as a [JSON file](/files/rest/Cumulocity_API.postman_collection.json).
 
 Now, click the **Collections** tab on the top left of Postman. You should see a folder _Cumulocity API_ with the examples. Open that folder and the sub-folder _Alarms_, then click **Get collection of alarms**. This shows an example on how to get alarms from Cumulocity.
 

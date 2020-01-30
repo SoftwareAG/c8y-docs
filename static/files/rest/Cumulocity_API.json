@@ -1,9 +1,0 @@
-{
-	"info": {
-		"name": "Cumulocity API",
-		"_postman_id": "8c023c63-3157-25bc-72d2-6f740e9fa98d",
-		"description": "Environment variables for this Postman Collection:\n\nurl = the IP adress/domain of your cumulocity server\nauth = your base64 encoded tenant/username:password or username:password",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": []
-}

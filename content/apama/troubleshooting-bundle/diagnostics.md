@@ -1,5 +1,5 @@
 ---
-weight: 60
+weight: 20
 title: Viewing diagnostics information
 layout: redirect
 ---

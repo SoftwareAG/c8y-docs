@@ -325,9 +325,31 @@
 			"folders_order": []
 		}
 	],
+	"folders_order": [
+		"0266e68e-0389-3675-43cc-043a4c84b1b1",
+		"3eb5b8bd-2f4c-9877-86aa-ed3e51b2831a",
+		"639a8770-92b6-c2d7-7fb7-0072c179f55c",
+		"0232dbce-11bd-280c-2100-ad26bdc7f36a",
+		"31780044-9c4b-79c9-bbbc-b1b890c5a676",
+		"a645dc87-f79d-77b6-f90b-582b7465f8d4",
+		"27437fa4-10c3-2b8b-03c8-660ab71db8e0",
+		"a1e3a83d-8edf-5979-7bf9-5a83541deff1",
+		"b6ac1a68-d0b7-9ecd-17d0-9d34b2d83097",
+		"d2bddc84-c63a-40eb-3ef6-59b0cec0d2a5",
+		"003a68e9-1351-8061-db53-e9c131aaf0ae",
+		"bfed0c61-f2ab-d4c3-7ecc-c154e4841b92",
+		"a3ccf3b0-2744-94e6-6dd6-ef1b62c50f84",
+		"4b88ea1e-177b-e708-e47d-a25b129590d4",
+		"95219b6d-6837-2c50-2c0d-c630d65ac9b1",
+		"518854f0-1af4-31c4-9b24-bf5e9d292974",
+		"f9686709-10d6-2dec-16d3-746284b24824",
+		"7149ec99-2ed9-8f8c-e446-45c2a091591e",
+		"15a238e8-63b4-d4cf-34f2-59bf370c5d06",
+		"03dc1ec1-ce3c-6eb2-89a2-555b86697cdf"
+	],
+	"timestamp": 0,
 	"owner": "2725447",
-	"hasRequests": true,
-	"folders_order": [],
+	"public": false,
 	"requests": [
 		{
 			"id": "01493335-fd33-29c3-60a5-cc275304ac8d",
@@ -654,7 +676,7 @@
 			"tests": "",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1580396176032,
+			"time": 1580397477992,
 			"name": "Handshake session",
 			"description": "#### For a detailed description of the API please check out our [Real-time Notification Reference Guide](http://cumulocity.com/guides/reference/real-time-notifications/)",
 			"collectionId": "8c023c63-3157-25bc-72d2-6f740e9fa98d",
@@ -2261,20 +2283,39 @@
 		},
 		{
 			"id": "edd62bc4-b347-2b20-adfd-aad34bb5c18f",
+			"headers": "Authorization: {{auth}}\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{auth}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/cep/realtime",
+			"folder": "4b88ea1e-177b-e708-e47d-a25b129590d4",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1580397437889,
 			"name": "Long Polling connection for retrieving notifications",
 			"description": "#### For a detailed description of the API please check out our [Real-time Notification Reference Guide](http://cumulocity.com/guides/reference/real-time-notifications/)",
 			"collectionId": "8c023c63-3157-25bc-72d2-6f740e9fa98d",
-			"method": "POST",
-			"headers": "Authorization: {{auth}}\nContent-Type: application/json",
-			"dataMode": "raw",
-			"data": [],
-			"rawModeData": "[\n\t{\n    \t\"channel\":\"/meta/connect\",\n      \t\"connectionType\":\"long-polling\",\n      \t\"clientId\":\"{{clientId}}\"\n    }\n]",
-			"url": "{{url}}/cep/realtime",
 			"responses": [],
-			"folder": "4b88ea1e-177b-e708-e47d-a25b129590d4",
-			"collection_id": "8c023c63-3157-25bc-72d2-6f740e9fa98d",
-			"preRequestScript": "",
-			"tests": ""
+			"rawModeData": "[\n\t{\n    \t\"channel\":\"/meta/connect\",\n      \t\"connectionType\":\"long-polling\",\n      \t\"clientId\":\"{{clientId}}\",\n      \t\"advice\": {\n      \t\t\"timeout\": 60000,\n      \t\t\"interval\": 0\n      \t}\n    }\n]"
 		},
 		{
 			"id": "eed14969-c2c7-5957-c73b-7dd45f29ac96",
@@ -2431,20 +2472,39 @@
 		},
 		{
 			"id": "fbe06e9f-368a-1445-db61-89adf76e80c5",
+			"headers": "Authorization: {{auth}}\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{auth}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{url}}/devicecontrol/notifications",
+			"folder": "a1e3a83d-8edf-5979-7bf9-5a83541deff1",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1580397475266,
 			"name": "Device Push Handshake session",
 			"description": "#### For a detailed description of the API please check out our [Real-time Notification Reference Guide](http://cumulocity.com/guides/reference/real-time-notifications/)",
 			"collectionId": "8c023c63-3157-25bc-72d2-6f740e9fa98d",
-			"method": "POST",
-			"headers": "Authorization: {{auth}}\nContent-Type: application/json",
-			"dataMode": "raw",
-			"data": [],
-			"rawModeData": "[\n\t{\n    \t\"version\":\"1.0\",\n        \"minimumVersion\":\"0.9\",\n        \"channel\":\"/meta/handshake\",\n        \"supportedConnectionTypes\":[\"long-polling\"],\n        \"advice\":{\n        \t\"timeout\":60000,\"interval\":0\n        }\n    }\n]",
-			"url": "{{url}}/devicecontrol/notifications",
 			"responses": [],
-			"folder": "a1e3a83d-8edf-5979-7bf9-5a83541deff1",
-			"collection_id": "8c023c63-3157-25bc-72d2-6f740e9fa98d",
-			"preRequestScript": "",
-			"tests": ""
+			"rawModeData": "[\n\t{\n    \t\"version\":\"1.0\",\n        \"minimumVersion\":\"0.9\",\n        \"channel\":\"/meta/handshake\",\n        \"supportedConnectionTypes\":[\"long-polling\"]\n    }\n]"
 		},
 		{
 			"id": "fbe215dc-1c2d-5011-61a3-3fb2fd77e1cb",

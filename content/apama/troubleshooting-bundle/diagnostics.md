@@ -10,7 +10,7 @@ It may be useful to capture this diagnostics information when experiencing probl
 
 Basic diagnostics information is provided in a ZIP file named *diagnostic-overview&lt;timestamp&gt;.zip* and includes the following information (this should be typically a few Megabytes, and be generated in about 5 seconds):
 
-- The microservice log file contents, if available, including a record of the correlator's startup logging and the last hour or maximum of 20,000 lines of logging (this may require the "microservice hosting feature" in the subscribed applications).
+- The microservice log file contents, if available, including a record of the correlator's startup logging and the last hour or maximum of 20,000 lines of logging.
 - Apama-internal diagnostics information (similar to the `engine_watch` and `engine_inspect` command-line tools available in Apama).
 - A copy of all EPL applications, Smart Rules and Analytics Builder models.
 - A copy of any alarms that the Apama-ctrl microservice has raised.

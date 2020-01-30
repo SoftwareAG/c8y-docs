@@ -14,3 +14,11 @@ You can use predefined rules (see [Smart Rules](/users-guide/cockpit/#smart-rule
 | Use Apama Analytics Builder | Apama-ctrl microservice and Apama Analytics Builder web application. |
 
 See also the tables listing the available applications under [Managing applications](/users-guide/administration/#managing-applications) in the *User guide*.
+
+If your tenant is subscribed to the Apama Starter microservice (instead of other Apama-ctrl microservices), then the following applies for Apama:
+
+- Unlimited number of Smart Rules.
+- Apama Analytics Builder is limited to at most 3 active models.
+- Apama EPL Apps is not available in the application switcher.
+
+Contact Software AG Support to discuss adding more capabilities.

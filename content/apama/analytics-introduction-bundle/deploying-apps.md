@@ -38,7 +38,7 @@ These kinds of applications should be deployed as microservices to Cumulocity Io
 
 #### Required settings in the microservice manifest
 
-The microservice manifest provides the required settings to manage microservice instances and the application deployment in Cumulocity IoT. For detailed information, see [Microservice manifest](/guides/microservice-sdk/concept/#manifest) in the *Microservice SDK guide*.
+The microservice manifest provides the required settings to manage microservice instances and the application deployment in Cumulocity IoT. For detailed information, see [Microservice manifest](/microservice-sdk/concept/#manifest) in the *Microservice SDK guide*.
 
 Apama can only be used in a single-tenant microservice. Therefore, the microservice manifest must set the isolation level to PER_TENANT. The reason for this is that Apama's Cumulocity IoT transport connectivity plug-in can only communicate with the tenant to which it is deployed. Therefore, having an Apama shared between multiple tenants is invalid.
 

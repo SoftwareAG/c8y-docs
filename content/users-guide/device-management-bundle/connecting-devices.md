@@ -28,7 +28,7 @@ Devices can be connected to your Cumulocity account in different ways.
 ### To register devices
 
 To register devices, you may choose one of the following options:
-	
+
 * **[General device registration](#device-registration-manually)** - to manually connect one or more devices
 * **[Bulk device registration](#creds-upload)** - to register larger amounts of devices in one step
 
@@ -52,7 +52,7 @@ If you are subscribed to the required applications you will see a third option
 5. Click **Add another device** to register one more device. Again, enter the device ID and optionally select a group. This way, you can add multiple devices in one step.
 6. Click **Next** to register your device(s). 
 
-**Info**: In an Enterprise Tenant, the management tenant may also directly select a tenant to which the device will be added from here. Note that since the management tenant does not have access to the subtenant's inventory you can either register devices to a tenant OR to a group, not both. 
+> **Info**: In an Enterprise Tenant, the management tenant may also directly select a tenant to which the device will be added from here. Note that since the management tenant does not have access to the subtenant's inventory you can either register devices to a tenant OR to a group, not both.
 
 <img src="/images/users-guide/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration"> 
 
@@ -62,7 +62,7 @@ Turn on the device(s) and wait for the connection to be established.
 Once a device is connected, its status will change to "Pending acceptance".
 Click **Accept** to confirm the connection. The status of the device will change to "Accepted".
 
-**Info**: In case of any issues, consult the documentation applicable for your device type in the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/web/#/devices) or look up the manual of your device.
+> **Info**: In case of any issues, consult the documentation applicable for your device type in the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices) or look up the manual of your device.
 
 
 #### <a name="creds-upload"></a>To bulk-register devices

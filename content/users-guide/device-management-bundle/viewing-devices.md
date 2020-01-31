@@ -104,7 +104,7 @@ The new column will be added and displayed in the device list.
 
 The device will be permanently deleted from the platform.
 
-**Important:** Deleting a device means to remove the device from Cumulocity database including all its generated data. Alternatively, you can arrange all retired devices in one group, see [Grouping devices](#grouping-devices)). This ensures that all reports remain correct. To prevent alarms from being raised for the retired devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
+> **Important:** Deleting a device means to remove the device from Cumulocity database including all its generated data. Alternatively, you can arrange all retired devices in one group, see [Grouping devices](#grouping-devices)). This ensures that all reports remain correct. To prevent alarms from being raised for the retired devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
 
 
 ### <a name="searching-devices"></a>To search for devices

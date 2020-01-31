@@ -37,7 +37,7 @@ The management tenant needs to be subscribed to the application “Tenant-sla-mo
 
 ![Sla-monitoring subscribe](/images/users-guide/sla-monitoring/sla-subscribe.png)
 
-For details on application subscription, refer to [Enterprise Tenant > Managing Tenants > Application](/users-guide/enterprise-tenant#subscribe) in the User guide.
+For details on application subscription, refer to [Enterprise Tenant > Managing Tenants > Application](/users-guide/enterprise-edition#subscribe) in the User guide.
 
 ### How the service works
 

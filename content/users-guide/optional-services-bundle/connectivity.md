@@ -170,5 +170,5 @@ Data connectivity can be analyzed in various places:
 
 If the device is still not reporting to Cumulocity, there may be a configuration or software problem on the device.
 
-* The device may have lost its credentials, for example, due to a factory reset or full loss of power. In this case, you can [re-register the device](/users-guide/device-management#device-registration).
+* The device may have lost its credentials, for example, due to a factory reset or full loss of power. In this case, you can [re-register the device](/users-guide/device-management#dev-registration).
 * There may be a configuration or software problem with the device, which has to be analyzed in a device-specific way.

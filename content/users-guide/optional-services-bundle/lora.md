@@ -232,7 +232,7 @@ First it is checked, if the device already exists. If no device exists with the 
 
 Activating the device by personalization is not recommended and not fully supported in Cumulocity LoRa device registration.
 
-However, if you would like to create a device with this activation type in Cumulocity and use the LoRa features - such as sending operations to a device, deprovisioning a device and setting LoRa device protocol type with custom device protocol configuration - you must first provision the device in the ThingPark platform. Moreover you have to create "AS Routing Profile" for Cumulocity using destination "http://actility-server.cumulocity.com" as a "Third Party AS (HTTP)" and assign it to your devices manually. Afterwards, you can register this device using LoRa device registration. In this case, the **Application key** field in the LoRa device registration is invalid.
+However, if you would like to create a device with this activation type in Cumulocity and use the LoRa features - such as sending operations to a device, deprovisioning a device and setting LoRa device protocol type with custom device protocol configuration - you must first provision the device in the ThingPark platform. Moreover you have to create "AS Routing Profile" for Cumulocity using destination `http://actility-server.cumulocity.com` as a "Third Party AS (HTTP)" and assign it to your devices manually. Afterwards, you can register this device using LoRa device registration. In this case, the **Application key** field in the LoRa device registration is invalid.
 
 #### <a name="legacy-LoRa-devices"></a>Limitations for LoRa devices created with general device registration
 

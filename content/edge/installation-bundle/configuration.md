@@ -94,16 +94,22 @@ Usually the platform comes up within 2 minutes.
 
 	` [admin@server ~]$ sudo ./post_installation.sh`
 
+4. Configure the network for your Edge server. See [Configuring the network](/guides/edge/installation/#configuring-the-edge-network).
+5. Perform the post-installation process. See [Running the post installation process](/guides/edge/installation/#running-the-post-installation-process).
 
-You will be prompted to select one of the following options:
+The Edge server configuration is complete.
 
-1. [Configure network](/guides/edge/installation/#option-1-configure-network)
-2. [Run post-installation](/guides/edge/installation/#option-2-run-post-installation)
-3. [Update license and SSL certificates](/guides/edge/installation/#option-3-update-license-and-ssl-certificates)
-4. [Run post-upgrade](/guides/edge/installation/#option-4-run-post-upgrade)
-5. [Expand data disk size](/guides/edge/installation/#option-5-expand-data-disk-size)
-6. [Update tenant password](/guides/edge/installation/#option-6-update-tenant-password)
-7. [Configure Edge Agent](/guides/edge/installation/#option-7-configure-edge-agent)
+### Post installation tasks
+
+The following sections explain the tasks that can be performed using the post-installer utility:
+
+1. [Configure network](/guides/edge/installation/#configuring-the-edge-network)
+2. [Run post-installation](/guides/edge/installation/#running-the-post-installation-process)
+3. [Update license and SSL certificates](/guides/edge/installation/#updating-the-license-and-ssl-certificates)
+4. [Run post-upgrade](/guides/edge/installation/#running-post-upgrade)
+5. [Expand data disk size](/guides/edge/installation/##expanding-the-data-disk-size)
+6. [Update tenant password](/guides/edge/installation/#updating-the-tenant-password)
+7. [Configure Edge Agent](/guides/edge/installation/#configuring-edge-agent)
 8. Exit
 
 >**Important**:<br>
@@ -111,19 +117,23 @@ You will be prompted to select one of the following options:
 - Option 3, 4 and 6 will only work after you have successfully completed the post-installation setup (Option 2). <br>
 - Option 1 and 4 cannot be invoked from a remote connection like SSH. You will have to run these directly from the terminal within the VM.
 
-#### Option 1 - Configure network
+#### Configuring the Edge network
 
 >**Important**: This task needs to be invoked from within the VM and cannot be invoked through a remote connection.
 
-First, select the type of input you want to use.
+1. Run the post-installation script *post_installation.sh*.
 
-`* Enter [F] to take input from file or [C] to take input from console: `
+2. Select the option **1. Configure network**.
+
+3. Select the type of input you want to use.
+
+	`* Enter [F] to take input from file or [C] to take input from console: `
 
 You have the choice to  enter the network parameters manually through the console or through a file. 
 
 ##### Console input
 
-   1. Provide the new IP address for the ethernet interface. For example, 192.168.56.120
+1. Provide the new IP address for the ethernet interface. For example, 192.168.56.120
 
 	`* Enter new IP address for ethernet interface:`
 	
@@ -145,17 +155,21 @@ You have the choice to  enter the network parameters manually through the consol
  
 Provide the absolute path of the configuration file. The network parameters will be loaded from the file. In case of any incorrect parameters, the utility will fall back to console mode and will prompt the user to enter the parameters as described above.
 
-`* Enter existing file path containing network parameters:`
+	`* Enter existing file path containing network parameters:`
 
 Confirm to continue with the network configuration process.
 
 The network configuration process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process will halt and a failure message will be displayed on the console.
 
-#### Option 2 - Run post-installation
+#### Running the post installation process
 
-First, select the type of input you want to use.
+1. Run the post-installation script *post_installation.sh*.
 
-`* Enter [F] to take input from file or [C] to take input from console:`
+2. Select the option **2. Run post-installation**.
+
+3. Select the type of input you want to use.
+
+	`* Enter [F] to take input from file or [C] to take input from console: `
 
 You have the choice to enter the post-installation parameters manually through the console or through a file. 
 
@@ -205,7 +219,7 @@ You have the choice to enter the post-installation parameters manually through t
 
 	`* Enter cloud URL (leave blank to disable remote management):` 
 
-	You can also configure the Edge agent with the Cumulocity tenant URL by running the post-installation script and selecting [Option 7 - Configure Edge Agent](/guides/edge/installation/#option-7-configure-edge-agent).
+	You can also configure the Edge agent with the Cumulocity tenant URL by running the post-installation script and selecting [Configuring Edge Agent](/guides/edge/installation/#configuring-edge-agent).
 		
 Once the input parameters are entered correctly, the parameters will be saved under 
 */opt/c8y/utilities/post-installer/config.dat* for future reference.
@@ -215,17 +229,21 @@ You can use this file for providing the input parameters to the post-installer.
 
 Provide the absolute path of the configuration file. The installation parameters will be loaded from the file. In case of any incorrect parameters, the utility will fall back to console mode and will prompt the user to enter the parameters as described above.
 
-`* Enter existing file path containing post-installation parameters:`
+	`* Enter existing file path containing post-installation parameters:`
 
 Confirm to continue with the post-installation process.
 
 The post-installation process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process will halt and a failure message will be displayed on the console.
 
-#### Option 3 - Update license and SSL certificates
+#### Updating the license and SSL certificates.
 
-First, select the type of input you want to use.
+1. Run the post-installation script *post_installation.sh*.
 
-`* Enter [F] to take input from file or [C] to take input from console:`
+2. Select the option **3. Update license and SSL certificates**.
+
+3. Select the type of input you want to use.
+
+	`* Enter [F] to take input from file or [C] to take input from console: `
 
 You have the choice to enter the update parameters manually through the console or through a file. 
 
@@ -255,64 +273,82 @@ You can use this file for providing the input parameters to the post-installer.
 
 Provide the absolute path of the configuration file. The update parameters will be loaded from the file. In case of any incorrect parameters, the utility will fall back to console mode and will prompt the user to enter the parameters as described above.
 
-`* Enter existing file path containing update parameters:`
+	`* Enter existing file path containing update parameters:`
 
 Confirm to continue with the update process.
 
 The update process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process will halt and a failure message will be displayed on the console.
 
-#### Option 4 - Run post-upgrade
+#### Running post-upgrade
 
 >**Important**: This task needs to be invoked from within the VM and cannot be invoked through a remote connection.
 
 >**Info**: During this process, the previously used password in the source will be validated as per Cumulocity's password policy. In case the password is not compliant with the policy, the user will be prompted to enter the tenant password without which the post-upgrade task cannot be completed.
 
-Confirm to continue with the post-upgrade process.
+1. Run the post-installation script *post_installation.sh*.
+
+2. Select the option **4. Run post-upgrade**.
+
+3. Confirm to continue with the post-upgrade process.
 
 The post-upgrade process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process will halt and a failure message will be displayed on the console.
 
-If users have configured the network in the ‘source’ version the new configuration will be done in the upgrade version when this task is executed.
+If you have configured the network in the ‘source’ version, the new configuration will be performed in the upgrade version when this task is executed.
 
-#### Option 5 - Expand data disk size
+#### Expanding the data disk size
 
 Expanding the data disk size consists of two steps:
 
 1. Increasing the physical HDD size from the hypervisor level
 2. From within the VM, add space to the disk by executing option 5 of the post-installation script
 
-So as a first step you need to carry out the following prior to selecting option 5.
+So as a first step you need to carry out the following before selecting option 5.
  
 1. Shutdown the VM.
 
 2. Edit the VM and on the **Virtual Hardware** tab increase the disk space of **Hard disk 2** to your needs.<br><img src="/guides/images/edge/edge-configuration-edit.png" name="Edit VMware"/> 
 
-3. Start the VM and run the *post_installation.sh* script.
+3. Start the VM.
 
-4. From the option list, select option 5, and confirm to continue with expanding the data disk size.
+4. Run the *post_installation.sh* script.
+
+5. Select the option **5. Expand data disk size**.
+
+6. Confirm to continue with expanding the data disk size.
 
 The disk size expanding process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process will halt and a failure message will be displayed on the console.
 
-#### Option 6 - Update tenant password
+#### Updating the tenant password
 
 The password updated using this option acts as the password for the administrators of both the tenants, that is, **admin** user of the 'edge' tenant and **edgeadmin** user of the management tenant. Using these credentials, the administrators can log in to the respective tenant through a web browser.
 
-`* Enter new tenant admin password:`
+1. Run the post-installation script *post_installation.sh*.
+
+2. Select the option **6. Update tenant password**.
+
+3. Enter the new tenant password.
+
+	`* Enter new tenant admin password:`
 
 >**Info**: The password must have a minimum of 8 and a maximum of 32 characters and it may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
 
-Re-enter the previously provided password to confirm it.
+4. Re-enter the previously provided password to confirm it.
 
-`* Re-enter tenant admin password:`
+	`* Re-enter tenant admin password:`
 
-Confirm to continue with updating the tenant password.
+5. Confirm to continue with updating the tenant password.
 
 The update tenant password process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process will halt and a failure message will be displayed on the console.
 
 >**Info**: The Cumulocity platform does not allow to use any of the last 10 previously used passwords.
 
-#### Option 7 - Configure Edge Agent
+#### Configuring Edge Agent
 
-Provide the URL for the Cumulocity tenant (cloud or on-premise). For example, "https://&lt;*tenant-domain*&gt;.cumulocity.com".
+1. Run the post-installation script *post_installation.sh*.
+
+2. Select the option **7. Configure Edge Agent**.
+
+3. Provide the URL for the Cumulocity tenant (cloud or on-premise). For example, "https://&lt;*tenant-domain*&gt;.cumulocity.com".
 
 	`* Enter cloud URL (leave blank to disable remote management):`
 

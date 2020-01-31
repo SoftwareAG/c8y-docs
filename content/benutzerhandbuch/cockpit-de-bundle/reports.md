@@ -4,6 +4,7 @@ title: Verwalten von Berichten und Exportdaten
 layout: redirect
 ---
 
+
 In der Cockpit-Anwendung gibt es zwei Arten von Berichten. 
 
 * [Dashboard-Berichte](#reports) ermöglichen das Nachverfolgen von Anwendungen, Alarmen, Assets, Ereignissen und anderen Widgets. 

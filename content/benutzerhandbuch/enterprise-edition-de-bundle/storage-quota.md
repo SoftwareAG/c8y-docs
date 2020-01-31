@@ -4,7 +4,6 @@ title: Speicherbegrenzung
 layout: redirect
 ---
 
-
 <a name="storageQuota"></a>
 
 Die Speicherbegrenzung gilt für einen Mandanten, wenn der Plattformadministrator ein Speicherkontingent pro Gerät eingerichtet hat. Der insgesamt verfügbare Speicher für einen Benutzer wird mittels der Formel `Speicherkontingent pro Gerät x Anzahl der Geräte` berechnet. Jede Nacht wird überprüft, ob das Kontingent überschritten wurde.

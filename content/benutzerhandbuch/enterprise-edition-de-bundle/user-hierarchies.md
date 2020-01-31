@@ -4,6 +4,7 @@ title: Verwalten von Benutzerhierarchien
 layout: redirect
 ---
 
+
 Mit Benutzerhierarchien können Sie verschiedene Organisationen in Cumulocity getrennt verwalten, die dennoch dieselbe Datenbank teilen. Diese Organisationen können eingeschränkten Zugriff auf eine Untermenge der geteilten Daten haben und ihre eigenen untergeordneten Benutzer verwalten.
 
 > Info: Um diese Funktion verwenden zu können, muss Ihr Mandant die folgende Anwendung abonniert haben: "feature-user-hierarchies".

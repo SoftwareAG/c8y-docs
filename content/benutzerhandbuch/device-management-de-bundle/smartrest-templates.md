@@ -4,6 +4,7 @@ title: Verwenden von SmartREST-Templates
 layout: redirect
 ---
 
+
 ### Einführung
 
 Bei den SmartREST-Templates handelt es sich um eine Sammlung von Anfrage- und Antwort-Templates, die verwendet werden, um CSV-Daten und Cumulocity Rest API-Aufrufe zu konvertieren.  Sie können SmartREST-Templates etwa verwenden, um einfach Geräte zur Plattform hinzuzufügen anstatt jedesmal manuell eine Anfrage zu schreiben. 

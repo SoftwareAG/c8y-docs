@@ -4,6 +4,7 @@ title: Verwalten von Berechtigungen
 layout: redirect
 ---
 
+
 Berechtigungen legen fest, welche Funktionen ein Benutzer in Cumulocity-Anwendungen ausführen darf. Um das Verwalten von Berechtigungen zu vereinfachen, sind sie in sogenannte Rollen eingeteilt. Jedem Benutzer kann eine Reihe von Rollen zugewiesen werden, deren Berechtigungen addiert werden.
 
 Die folgenden Rollen können zugewiesen werden:

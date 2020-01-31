@@ -4,6 +4,7 @@ title: Data Broker
 layout: redirect
 ---
 
+
 Mit Data Broker können Daten gezielt mit anderen Mandanten geteilt werden. Sie können folgenden Daten teilen:
 
 *   Geräte (und ganz allgemein Objekte),

@@ -4,6 +4,7 @@ title: Support für Benutzer in anderen Mandanten
 layout: redirect
 ---
 
+
 Supportbenutzer sind Benutzer im Management-Mandanten, die über die spezielle Berechtigung verfügen, sich als andere Benutzer des Mandanten anmelden zu können. Nehmen wir an, Sie erhalten eine Support-Anfrage von einem Benutzer "john" im Mandanten "acme.cumulocity.com". Der Benutzer kann eine bestimmte Funktion nicht verwenden und Sie vermuten, dass es sich um ein Berechtigungsproblem handelt. Ihr Benutzername im Management-Mandanten ist "jill" und Sie haben die Berechtigung, Support für "acme.cumulocity.com" zu leisten. In diesem Fall melden Sie sich auf "acme.cumulocity.com" mit dem Benutzernamen "jill&#36;john" und Ihrem Passwort für "jill" an. Nun können Sie reproduzieren, was "john" sieht.
 
 ### Konfigurieren von Supportbenutzern

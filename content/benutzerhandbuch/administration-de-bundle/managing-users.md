@@ -3,6 +3,7 @@ weight: 12
 title: Verwalten von Benutzern
 layout: redirect
 ---
+
 Die Funktion der Benutzerverwaltung ermöglicht es Ihnen, innerhalb Ihres Mandanten Benutzer zu verwalten. Sie bietet folgende Möglichkeiten:
 
 *   Erstellen von Benutzern

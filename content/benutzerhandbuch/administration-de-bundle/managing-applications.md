@@ -4,6 +4,7 @@ title: Verwalten von Anwendungen
 layout: redirect
 ---
 
+
 In der Cumulocity-Plattform gibt es zwei Arten von Anwendungen:
 
 * Abonnierte Anwendungen -  alle Anwendungen, die für den Mandanten abonniert sind (entweder durch die Plattform oder einen Service Provider), aber die er nicht besitzt  

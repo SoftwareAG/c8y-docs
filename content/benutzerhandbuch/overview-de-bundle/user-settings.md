@@ -4,6 +4,7 @@ title: Ändern von Benutzereinstellungen
 layout: redirect
 ---
 
+
 Einige Kontoeinstellungen können vom Benutzer geändert werden.
 
 Klicken Sie auf die **Benutzer**-Schaltfläche rechts in der oberen Leiste und wählen Sie im Kontextmenü **Benutzereinstellungen**.

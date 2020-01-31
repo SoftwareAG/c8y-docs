@@ -4,6 +4,7 @@ title: Anwenden von Geschäftsregeln
 layout: redirect
 ---
 
+
 <a name="event-processing"></a>
 ### Echtzeitverarbeitung
 

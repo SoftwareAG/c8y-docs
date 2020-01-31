@@ -4,6 +4,7 @@ title: Eigenschaften und Funktionen der Benutzeroberfläche
 layout: redirect
 ---
 
+
 ### <a name="screen"></a>Hauptbildschirmelemente
 
 Die grundsätzliche Struktur, die in allen Cumulocity-Anwendungen vorhanden ist, umfasst die folgenden Bildschirmelemente:

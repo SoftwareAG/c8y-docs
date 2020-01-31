@@ -4,6 +4,7 @@ title: Gerätedetails
 layout: redirect
 ---
 
+
 <a name="device-details"></a>
 
 Zu jedem Gerät werden im Device Management detaillierte Informationen angezeigt. Welche Informationen jeweils angezeigt werden, ist abhängig vom Gerätetypen, der Gerätenutzung und der Konfiguration der Plattform. 

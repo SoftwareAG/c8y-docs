@@ -4,6 +4,7 @@ title: Verwalten von Gerätetypen
 layout: redirect
 ---
 
+
 Cumulocity verwendet Geräteprotokolle, um Daten von verschiedenen Gerätetypen zu verarbeiten. 
 
 Klicken Sie **Geräteprotokolle** im Menü **Gerätetypen** im Navigator.

@@ -4,7 +4,6 @@ title: Überwachen und Steuern von Geräten
 layout: redirect
 ---
 
-
 ### <a name="map"></a>Lokalisieren von Geräten
 
 Cumulocity bietet die Möglichkeit, den Standort aller Geräte in Ihrem Konto auf eine Karte anzuzeigen. 

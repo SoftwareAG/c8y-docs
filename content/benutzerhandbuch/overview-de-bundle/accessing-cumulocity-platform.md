@@ -4,6 +4,7 @@ title: Aufrufen und Anmelden an der Cumulocity-Plattform
 layout: redirect
 ---
 
+
 <a name="accessing"></a>
 
 ### Aufrufen von Cumulocity

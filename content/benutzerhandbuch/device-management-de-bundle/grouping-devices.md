@@ -4,6 +4,7 @@ title: Gruppieren von Geräten
 layout: redirect
 ---
 
+
 Sie können Geräte beliebig nach Ihren Bedürfnissen gruppieren. Ein Gerät kann sich in mehreren Gruppen befinden und Gruppen selbst können wiederum Teil von mehreren anderen Gruppen sein. 
 
 Cumulocity unterscheidet zwischen Top-Level-Gruppen und untergeordneten Gruppen. 

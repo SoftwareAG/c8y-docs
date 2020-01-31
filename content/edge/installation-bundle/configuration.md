@@ -101,7 +101,7 @@ The Edge server configuration is complete.
 
 ### Post installation tasks
 
-The following sections explain the tasks that can be performed using the post-installation script:
+The following sections explain the tasks that can be performed using the post-installer utility:
 
 1. [Configure network](/guides/edge/installation/#configuring-the-edge-network)
 2. [Run post-installation](/guides/edge/installation/#running-the-post-installation-process)

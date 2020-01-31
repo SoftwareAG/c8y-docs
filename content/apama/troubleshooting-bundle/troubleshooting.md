@@ -12,3 +12,4 @@ When the alarm is raised, older updates will be discarded. This may affect the b
 
 Please review the Apama microservice log file (see [Managing applications](/users-guide/administration/#managing-applications) in the *User guide* for more information on log files) and contact support if needed.
 
+To review the logs, you can also download diagnostics information as described in [Downloading diagnostics and logs](#diagnostics-download).

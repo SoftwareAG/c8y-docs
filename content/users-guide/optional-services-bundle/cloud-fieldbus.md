@@ -151,7 +151,7 @@ Once connected, you can now manage your device. Switch to the **Child devices** 
 
 #### <a name="collect"></a>Collecting measurements
 
-If the device type of the Fieldbus device is configured to collect measurements, these will be visible in the **Measurements** tab. They will also be available for usage in the [Data Explorer](/users-guide/cockpit#visualize) and in [Dashboard widgets](/users-guide/cockpit#dashboards).
+If the device type of the Fieldbus device is configured to collect measurements, these will be visible in the **Measurements** tab. They will also be available for usage in the [Data Explorer](/users-guide/cockpit#data-explorer) and in [Dashboard widgets](/users-guide/cockpit#dashboards).
 
 Data is collected according to the interval specified in the "transmit rate" property of the terminal as described above. To optimize the data traffic, data that is exactly the same as collected previously may not be sent again.
 
@@ -212,7 +212,7 @@ To use the SCADA widget, follow these steps:
 
 The SCADA widgets inspect uploaded SVG files for placeholders. These placeholders are replaced by actual values from devices. Placeholders have a specific syntax and can be used anywhere in the SVG file. To add a placeholder, enter the name of the placeholder in double curly braces using your design application or a text editor. 
 
-When creating svg files, we recommend you to use "https://boxy-svg.com/". It is easy to use, quality chrome extension. 
+When creating svg files, we recommend you to use [https://boxy-svg.com/](https://boxy-svg.com/). It is easy to use, quality chrome extension. 
 
 	<text class="text" xt-anchor="middle" x="100" y="236.982125" width="200" ...>
 		{{batteryValue}}

@@ -191,7 +191,7 @@ Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeige
 
 Über das benutzerdefinierte Attribut "Geräteanzahl begrenzen" können Plattformadministratoren die Anzahl der gleichzeitig registrierten Hauptgeräte oder der registrierten Geräte insgesamt (einschließlich Kindgeräte) begrenzen. 
 
-Sie können auf der Seite **[Nutzungsstatistiken](<a name="usage-stats"></a>)** die Höchstanzahl registrierter Geräte bzw. Hauptgeräte sowie den Höchstwert des genutzten Datenspeichers einsehen.
+Sie können auf der Seite **[Nutzungsstatistiken](#usage-stats)** die Höchstanzahl registrierter Geräte bzw. Hauptgeräte sowie den Höchstwert des genutzten Datenspeichers einsehen.
 
 #### Begrenzen der Anfragerate für Untermandanten
 

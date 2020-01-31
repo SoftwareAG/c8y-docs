@@ -142,7 +142,7 @@ Open a data connector and switch to the **Alarms** tab to display current alarms
 
 ![Warnings tab](/images/users-guide/data-broker-connector-warnings.png)
 
-For details on alarms, see [Monitoring and controlling devices > Working with alarms](alarm-monitoring) in the Device Management section.
+For details on alarms, see [Monitoring and controlling devices > Working with alarms](users-guide/device-management#alarm-monitoring) in the Device Management section.
 
 
 ### <a name="data-broker-subscriptions"></a> Data subscriptions

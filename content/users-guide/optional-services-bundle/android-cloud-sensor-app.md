@@ -84,7 +84,7 @@ Your smartphone will be registered and added to the devices list in the Device M
 
 ![All devices](/images/users-guide/csa/csa-device-list.png)
 
-For further information about registering a device on the platform manually, refer to [Connecting devices](/users-guide/device-management#device-registration) in the Device Management section.
+For further information about registering a device on the platform manually, refer to [Connecting devices](/users-guide/device-management#connecting-devices) in the Device Management section.
 
 Next, you need to accept several permission requests allowing for accessing data (photos, media and files) on your device, make and manage phone calls and access the location (including network information and GPS data) to let the smartphone transfer network and GPS data to the cloud. This requests only show up once.
 
@@ -215,7 +215,7 @@ The Messaging widget, for example, can be used to send text notifications to the
 
 Create a dashboard for your smartphone device as described in [Creating a dashboard](/users-guide/cockpit#creating-dashboards) in the Cockpit section. 
 
-Add the Messaging widget to the dashboard, for details see [Widgets collection](users-guide/cockpit/widgets). 
+Add the Messaging widget to the dashboard, for details see [Widgets collection](/users-guide/cockpit/#widgets). 
 
 To send a message from Cumulocity, enter a text into the Messaging widget and click **Send**.
 

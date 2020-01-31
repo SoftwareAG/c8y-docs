@@ -197,7 +197,7 @@ The **Custom properties** tab allows you to view and edit values of custom prope
 
 Platform administrators can limit the count of concurrently registered root devices or simply all devices (including children devices) via the custom property "Limit number of devices". 
 
-They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the **[Usage statistics](<a name="usage-stats"></a>)** page.
+They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the **[Usage statistics](#usage-stats)** page.
 
 #### Limiting subtenant request rate
 
@@ -251,7 +251,7 @@ Moreover custom properties are displayed, if configured.
 
 Custom properties may be defined in the [Properties Library](/users-guide/administration#properties) and then set their values in the [Custom properties](#tenants-custom-properties) tab of the tenant.
 
-You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Getting Started > Features and Functionalities > Filtering](/users-guide/getting-started/#filtering).
+You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Getting Started > UI functionalities and features > Filtering](/users-guide/getting-started/#filtering).
 
 #### To export the usage statistics table
 

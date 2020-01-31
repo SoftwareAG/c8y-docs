@@ -162,7 +162,7 @@ Bevor Sie den eigenen Domain-Namen aktivieren, stellen Sie sicher, dass
 * Sie einen Wildcard-CNAME-Eintrag (beginnend mit `*.`) in folgendem Format zu Ihrem DNS-Server hinzugefügt haben:<br>
  Domain-Name = "&ast;.&lt;ihr domain name>", z.B. "*.iot.mycompany.com" <br>
  Typ = CNAME <br>
- Ziel = Domain der Plattform, auf die Sie verweisen wollen. Wenn Sie z. B. "https://demos.cumulocity.com" verwenden, um auf Ihren Mandanten zuzugreifen, verwenden Sie "demos.cumulocity.com" als Ziel.<br>
+ Ziel = Domain der Plattform, auf die Sie verweisen wollen. Wenn Sie z. B. `https://demos.cumulocity.com` verwenden, um auf Ihren Mandanten zuzugreifen, verwenden Sie "demos.cumulocity.com" als Ziel.<br>
 Vergewissern Sie sich, dass Sie alle A-Einträge für die Wildcard-Domain entfernt haben. Wenn Sie bereits einen Eintrag A für "xxx.iot.mycompany.com" haben, können Sie keine Mandanten mit der URL "xxx" anlegen.
 
 Nach erfolgreicher Aktivierung werden Sie zu Ihrem Enterprise Tenant unter der neuen Domain umgeleitet. Sie erhalten eine Email mit Informationen über die Aktivierung.

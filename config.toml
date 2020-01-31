@@ -16,6 +16,11 @@ buildFuture = true
 
 relativeURLs = true
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [author]
   name = "Carlos Ceia @ Cumulocity"
 

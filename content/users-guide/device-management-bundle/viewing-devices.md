@@ -4,11 +4,13 @@ title: Viewing devices
 layout: redirect
 ---
 
-To view all devices connected to your account, click **All devices** in the **Devices** menu in the navigator. 
+To view all devices connected to your account, click **All devices** in the **Devices** menu in the navigator.
 
 A detailed device list will be displayed.
 
 ![Device list](/images/users-guide/DeviceManagement/devmgmt-devices-alldevices.png)
+
+### <a name="device-list"></a> Device information
 
 For each device, the device list shows the following information provided in columns:
 
@@ -64,8 +66,8 @@ The devices list displays up to 100 rows. If a list contains more than 100 devic
 
 #### To delete a device from the list
 
-1. Hover over the row of the device you want to delete. 
-2. Click the delete icon at the right of the row. 
+1. Hover over the row of the device you want to delete.
+2. Click the delete icon at the right of the row.
 
 The device will be permanently deleted from the platform.
 
@@ -74,40 +76,39 @@ The device will be permanently deleted from the platform.
 
 ### <a name="searching-devices"></a>To search for devices
 
-Cumulocity includes a full-text search for devices. 
+Cumulocity includes a full-text search for devices.
 
 Click the **Search** button at the top right and enter a search term into the textbox. Cumulocity returns all devices containing this term in any property (name, model, any fragment...)
 
-Our example shows a search for "Ublox C027". 
+Our example shows a search for "Ublox C027".
 
 **Info**: Unlike filtering, the use of wildcards in a search is not supported.
 
-For details on the search functionality, refer to Getting Started > [GUI functionalities and features](/users-guide/overview#gui-features). 
+For details on the search functionality, refer to [Getting Started > GUI functionalities and features](/users-guide/getting-started#gui-features).
 
 ![Search for devices](/images/users-guide/DeviceManagement/devmgmt-search.png)
 
 ### <a name="filtering-devices"></a>To filter devices
 
-The device list offers a filtering functionality to filter devices in the list for specific criteria. 
+The device list offers a filtering functionality to filter devices in the list for specific criteria.
 
-Filtering is available on every column. Just click the filter icon next to the name of the column you want to set a filter for. 
+Filtering is available on every column. Just click the filter icon next to the name of the column you want to set a filter for.
 
 ![Device filtering](/images/users-guide/DeviceManagement/devmgmt-devices-filter.png)
 
 In the **Filter options** dialog box, specify your filter options.
 
-Most columns represent text fields. You can filter these columns by simply entering an arbitrary text into the textbox as in the search field. Click **+ Or** to add another textbox if you want to filter for more than one term. 
+Most columns represent text fields. You can filter these columns by simply entering an arbitrary text into the textbox as in the search field. Click **+ Or** to add another textbox if you want to filter for more than one term.
 
 Apart from filtering for text there are several other options:
-* In case of date fields (e.g. **Registration date**), you specify a date range to filter for. 
+* In case of date fields (e.g. **Registration date**), you specify a date range to filter for.
 * In the **Status** column you can filter for various criteria representing the send, push or maintenance status of the device.
 * In the **Alarm** column the filtering options you may select correspond to the alarm types (critical, major, minor, warning, no alarms).
 
-In the **Filter options** dialog box, click **Ascending** or **Descending** if you want the devices to be sorted in a specific order. Finally, click **Apply** to carry out the filtering. 
+In the **Filter options** dialog box, click **Ascending** or **Descending** if you want the devices to be sorted in a specific order. Finally, click **Apply** to carry out the filtering.
 
 The devices list will now only display devices matching the filtering options.
 
 Click **Clear filters** at the left of the top menu bar if you want to clear all filters and view all devices.
 
 >**Info**: If you select to sort a text field, e.g. device name, in ascending or descending order, keep in mind that the resulting alphabetical sorting is based on ASCII/UTF: A < B < ... < Z < ... < a < b ... < z. Names starting with lower case letters will be sorted below all names with uppercase letters or vice versa.
-

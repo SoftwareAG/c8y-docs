@@ -2,7 +2,6 @@
 weight: 50
 title: Enterprise Tenant
 layout: bundle
-slug: enterprise-tenant
 ---
 
 

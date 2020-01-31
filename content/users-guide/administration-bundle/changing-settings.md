@@ -236,7 +236,7 @@ Select the checkbox **Allow two-factor authentication** if you want to allow TFA
 You may choose one of the following options:
 
 * **SMS-based**, supporting the following settings:
-	- **Limit token validity for**: Lifetime of each session in minutes. When the session expires, the user has to enter a new verification code.
+	- **Limit token validity for**: Lifetime of each session in minutes. When the session expires or a user logs out, the user has to enter a new verification code.
    - **Limit verification code validity for**: Here you can set the lifetime of each verification code sent via SMS. When the verification code expires, in order to login the user has to request a new verification code.
 
 	> **Info** An SMS gateway microservice must be configured for the tenant. Naturally only users with a valid phone number associated can use this functionality.

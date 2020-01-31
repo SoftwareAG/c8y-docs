@@ -38,7 +38,7 @@ Message identifier | Message parameters              | Description
 #### Error messages
 
 Message identifier | Error message
--------------------|-------------------------|------------
+-------------------|-------------------------
 41 | Cannot create templates for already existing template object
 41 | Duplicate message identifiers are not allowed
 41 | Bad request template definition

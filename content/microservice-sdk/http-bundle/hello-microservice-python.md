@@ -90,7 +90,7 @@ The application is configured to run on port 80 – which is required for micros
 
 You need to create a Dockerfile in order to build a Docker image with your application. For this example, it shall be in the same directory as the _application.py_ script and with the following content:
 
-```
+```dockerfile
 FROM python:alpine3.6
 
 COPY application.py /

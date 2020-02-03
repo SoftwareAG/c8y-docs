@@ -26,4 +26,3 @@ Die folgenden Services sind aktuell verfügbar:
 <br>
 
 > **Info**: Die Dokumentation der optionalen Services liegt ausschließlich in englischer Sprache vor. 
-

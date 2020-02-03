@@ -2,6 +2,8 @@
 weight: 30
 title: Troubleshooting the system
 layout: redirect
+aliases:
+  - /edge/operation/troubleshooting
 ---
 
 In case of any issues we provide a number of options which help you find out what might be the cause and give advice how to fix it. 

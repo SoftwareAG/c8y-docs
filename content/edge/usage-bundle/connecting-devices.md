@@ -2,6 +2,8 @@
 weight: 20
 title: Connecting devices
 layout: redirect
+aliases:
+  - /edge/usage/connecting-devices
 ---
 
 Cumulocity uses REST and MQTT as protocols for external communication. Both protocols may be used to interface devices with Cumulocity. For details refer to   the sections on [Device integration using REST](/device-sdk/rest) and [Device integration using MQTT](/device-sdk/mqtt) in the Device SDK guide.

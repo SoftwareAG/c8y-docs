@@ -13,14 +13,14 @@ The setup of DataHub requires the administrator to choose a Dremio account name,
 #### Dremio Account
 Under **Dremio Account** name and password of the Dremio account are defined. 
 
-The name is composed of three parts. The third part can be freely chosen (following the rules defined in 3.):
+The name is composed of three parts:
 1. tenant id
 2. forward slash
 3. string with a minimum length of two starting with a character and consisting of numbers, characters, dash, or underline
 
-If your tenant id is `t12345`, then `t12345/user` is a valid name. The system would also set this value as initial value in the account field.
+If your tenant id is `t12345`, then `t12345/user` is a valid name. The system would also set this value as the initial value in the account field.
 
-The password of the Dremio account has to have at minimum eight characters, including at least one character and one number.
+The password of the Dremio account has to have at least eight characters, including at least one character and one number.
 
 #### Data Lake
 The type of data lake to be used is preconfigured for the DataHub microservice; the type cannot be changed afterwards. Depending on the data lake type, you have to specify different settings.
@@ -32,7 +32,7 @@ The following types of data lakes are currently supported:
 |Settings|Description|
 |:---|:---|
 |Data Lake Store resource name|The name of the instance created in Azure Data Lake|
-|Application ID|The id of the registered application under Azure Active Directory|
+|Application ID|The ID of the registered application under Azure Active Directory|
 |OAuth 2.0 token endpoint|The OAuth 2.0 authentication endpoint for registered applications|
 |Root path|The root path in the data lake under which the offloaded data will be stored|
 |Access key value|The password for the registered application|

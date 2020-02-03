@@ -72,8 +72,8 @@ Select a compaction job overview as described in section [Compaction history per
 | Component | Description |
 | ---         | --- |
 | Job name | The name of the pipeline
-| Job ID | The internal id of the job
-| Job execution ID | The Dremio id of this execution
+| Job ID | The internal ID of the job
+| Job execution ID | The Dremio ID of this execution
 | Target source name | The folder name in the data lake
 | Target folder | The path to the target source in the data lake
 | Daily run | Indicates whether the job is executed daily
@@ -86,7 +86,7 @@ During daily compaction the files are merged, following a temporal hierarchy. As
 | Component | Description |
 | ---         | --- |
 | File size | The size of the file
-| Fragment | The hierarchical id of the fragment
+| Fragment | The hierarchical ID of the fragment
 | Partition | The partition with which the file is associated
 | Path | The path to the file in the data lake
 | Records | The number of records stored in the file
@@ -98,7 +98,7 @@ During monthly compaction the files are merged, following a temporal hierarchy. 
 | Component | Description |
 | ---         | --- |
 | File size | The size of the file
-| Fragment | The hierarchical id of the fragment
+| Fragment | The hierarchical ID of the fragment
 | Partition | The partition with which the file is associated
 | Path | The path to the file in the data lake
 | Records | The number of records stored in the file

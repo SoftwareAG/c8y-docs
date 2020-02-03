@@ -49,13 +49,13 @@ Note that the API might change any time and Software AG does not provide any gua
 
 ### Connecting via DataHub REST API
 
-DataHub server also can handle REST requests for Dremio query processing. DataHub server acts as a proxy for these requests and forwards them to Dremio for evaluation. This API might change any time.
+The DataHub server also can handle REST requests for Dremio query processing. The DataHub server acts as a proxy for these requests and forwards them to Dremio for evaluation. This API might change any time.
 
-In contrast to directly calling the Dremio REST API, in this case authentication is done against DataHub; thus, you need to provide Cumulocity credentials instead of Dremio credentials. You need the corresponding Cumulocity permission to use this API. See section [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for further details on the required permission. In future releases it is planned that no authorization will be required due to the use of single sign-on.
+In contrast to directly calling the Dremio REST API, in this case authentication is done against DataHub; thus, you need to provide Cumulocity credentials instead of Dremio credentials. You need the corresponding Cumulocity permission to use this API. See section [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for further details on the required permission.
 
 #### Request URLs
 
-The URL paths of proxied requests consist of 
+The URL paths of proxied requests consist of: 
 * the path of the microservice, which you will find in its application properties (see also section [Managing applications](/users-guide/administration#managing-applications))
 * the corresponding Dremio REST API path, prefixed by "/dremio".
 
@@ -82,26 +82,26 @@ Submit a query and retrieve the ID of the Dremio job executing this query:
 
 #### Retrieving job status
 
-Retrieve the status of the query job given the job id:
+Retrieve the status of the query job given the job ID:
 
-* DataHub request: GET /dremio/api/v3/job/{id}
-* Corresponding Dremio API: GET /api/v3/job/{id}
+* DataHub request: GET /dremio/api/v3/job/{ID}
+* Corresponding Dremio API: GET /api/v3/job/{ID}
 * [Dremio GET Job documentation](https://docs.dremio.com/rest-api/jobs/get-job.html)      
 
 #### Retrieving job results
 
 Retrieve the results of the query job given the job ID and optional pagination settings:
 
-* DataHub request: GET /dremio/api/v3/job/{id}/results?offset={offset}&limit={limit}
-* Corresponding Dremio API:  GET /api/v3/job/{id}/results?offset={offset}&limit={limit}
+* DataHub request: GET /dremio/api/v3/job/{ID}/results?offset={offset}&limit={limit}
+* Corresponding Dremio API:  GET /api/v3/job/{ID}/results?offset={offset}&limit={limit}
 * [Dremio GET Job documentation](https://docs.dremio.com/rest-api/jobs/get-job.html)
 
 #### Cancelling running jobs
 
-Cancel a query job given the job id:
+Cancel a query job given the job ID:
 
-* DataHub request: POST /dremio/api/v3/job/{id}/cancel
-* Corresponding Dremio API: POST /api/v3/job/{id}/cancel
+* DataHub request: POST /dremio/api/v3/job/{ID}/cancel
+* Corresponding Dremio API: POST /api/v3/job/{ID}/cancel
 * [Dremio POST Job documentation](https://docs.dremio.com/rest-api/jobs/post-job.html)
 
 #### Example
@@ -128,7 +128,7 @@ Content-Type: application/json
 }
 ```
 
-The response provides the job id:
+The response provides the job ID:
 
 ```json
 {

@@ -14,4 +14,4 @@ DataHub provides the UI you use for managing and monitoring your offloading pipe
 | Status | View the latest job status of your offloading pipelines | DATAHUB_ADMINISTRATOR or DATAHUB_MANAGER
 | Auditing | View the audit log | DATAHUB_ADMINISTRATOR
 | Administration | Check system status | DATAHUB_ADMINISTRATOR
-<img src="/images/datahub-guide/datahub-home-page.png" alt="DataHub homepage.png"  style="max-width: 100%">
+<img src="/images/datahub-guide/datahub-home-page.png" alt="DataHub homepage"  style="max-width: 100%">

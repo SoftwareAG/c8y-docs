@@ -6,4 +6,4 @@ layout: redirect
 
 The DataHub instance you have access to is tenant-specific, i.e., this instance solely serves your tenant. You use your Cumulocity account to access your DataHub instance.
 
-In addition to your Cumulocity account, you have a separate account (which is created during the initial setup) for accessing Dremio. You have to contact your administrator for the Dremio account credentials. On the **Home** page there is a direct link to the Dremio instance under **Quick links** .
+In addition to your Cumulocity account, you have a separate account (which is created during the initial setup) for accessing Dremio. Contact your administrator for the Dremio account credentials. On the **Home** page there is a direct link to the Dremio instance under **Quick links** .

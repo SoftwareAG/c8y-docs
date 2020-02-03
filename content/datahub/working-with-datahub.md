@@ -4,6 +4,6 @@ weight: 40
 layout: bundle
 ---
 
-This section describes how to offload data from Cumulocity database to a data lake using Cumulocity IoT DataHub.
+This section describes how to offload data from the Cumulocity database to a data lake using Cumulocity IoT DataHub.
 
 >**Info**: You need configuration or administration permissions to work with offloading pipelines. See section [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.

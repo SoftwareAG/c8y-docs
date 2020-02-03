@@ -6,7 +6,7 @@ layout: redirect
 
 Audit logs show the operations that users have carried out.
 
-<img src="/guides/images/datahub-guide/datahub-auditing.png" alt="DataHub settings"  style="max-width: 100%">
+<img src="/images/datahub-guide/datahub-auditing.png" alt="DataHub settings"  style="max-width: 100%">
 
 In the navigator, select **Auditing** to view the audit log list. For each log entry, the following information is provided:
 

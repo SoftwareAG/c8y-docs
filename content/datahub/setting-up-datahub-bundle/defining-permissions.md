@@ -9,24 +9,24 @@ Dedicated permissions define what a user is allowed to do in DataHub. To ease as
 ### DataHub roles and permissions
 
 #### DataHub administrator
-The administrator primarily sets up data lake and Dremio account and conducts administrative tasks like viewing audit logs or monitoring the system status. The administrator can also manage offloading pipelines, e.g., defining and starting a pipeline. 
+The administrator primarily sets up the data lake and Dremio account and conducts administrative tasks like viewing audit logs or monitoring the system status. The administrator can also manage offloading pipelines, e.g., defining and starting a pipeline. 
 
 For those tasks the default role **DATAHUB_ADMINISTRATOR** is created. The permissions for this role are defined as follows:
 
 |Type|READ|ADMIN|
 |:---|:---|:---|
-|Cdh configure|x|x|
-|Cdh manage|x|x|
-|Cdh use|-|x|
+|Cdh configure|yes|yes|
+|Cdh manage|yes|yes|
+|Cdh use|no|yes|
 
 #### DataHub configurator
 The configurator manages offloading pipelines, e.g., defining and starting a pipeline. For those tasks the default role **DATAHUB_MANAGER** is created. The permissions for this role are defined as follows:
 
 |Type|READ|ADMIN|
 |:---|:---|:---|
-|Cdh configure|x|x|
-|Cdh manage|-|-|
-|Cdh use|x|-|
+|Cdh configure|yes|yes|
+|Cdh manage|no|no|
+|Cdh use|yes|no|
 
 #### DataHub user
 The user runs queries against the data in the data lake. For details see section [Querying offloaded Cumulocity data](/datahub/querying-offloaded). To run queries the following approaches can be used:
@@ -38,9 +38,9 @@ The permissions for the role **DATAHUB_READER** are defined as follows:
 
 |Type|READ|ADMIN|
 |:---|:---|:---|
-|Cdh configure|-|-|
-|Cdh manage|-|-|
-|Cdh use|x|-|
+|Cdh configure|no|no|
+|Cdh manage|no|no|
+|Cdh use|yes|no|
 
 ### Assignment of DataHub roles and permissions
 The roles **DATAHUB_ADMINISTRATOR**, **DATAHUB_MANAGER**, and **DATAHUB_READER** have to be assigned to the respective users of your tenant. For assigning roles to users see section [Managing permissions](/users-guide/administration/#managing-permissions). You need at least one user with the **DATAHUB_ADMINISTRATOR** role to complete the DataHub configuration. 

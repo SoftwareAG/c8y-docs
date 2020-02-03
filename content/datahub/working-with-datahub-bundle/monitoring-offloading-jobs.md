@@ -38,7 +38,7 @@ If you want to examine the execution history for a particular job, select **Offl
 
 Click **Show offloading history** in the context menu of the offloading card to show the history of offloading executions.
 
-The list shows the execution history with each execution consisting of the following details:
+The list shows the execution history, with each execution consisting of the following details:
 
 | Component | Description |
 | ---         | --- |
@@ -85,8 +85,8 @@ Select a job overview as described in section [History per offloading job](/data
 | Component | Description |
 | ---         | --- |
 | Job name | The name of the pipeline
-| Job id | The internal id of the job
-| Job execution id | The Dremio id of this execution
+| Job id | The internal ID of the job
+| Job execution id | The Dremio ID of this execution
 | Source collection | The name of the Cumulocity source collection
 | Target source name | The folder name in the data lake
 | Target folder | The path to the target source in the data lake
@@ -100,7 +100,7 @@ During offloading the data is organized in newly created files within the data l
 | Component | Description |
 | ---         | --- |
 | File size | The size of the file
-| Fragment | The hierarchical id of the fragment
+| Fragment | The hierarchical ID of the fragment
 | Partition | The partition with which the file is associated
 | Path | The path to the file in the data lake
 | Records | The number of records stored in the file

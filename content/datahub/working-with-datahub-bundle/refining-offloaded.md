@@ -31,13 +31,13 @@ When you want to log out, click on your user name at the right of the top bar  a
 
 ### Sources and spaces
 
-On the home page of Dremio you will find at the left under **Datasets** two panels called **Spaces** and **Sources** respectively.
+On the home page of Dremio you will find at the left under **Datasets** two panels called **Spaces** and **Sources**.
 
 #### Sources
 
 In the **Sources** panel there is the data source `YourTenantIdDataLake`. This source has been auto-configured for you and points to your data lake.
 
-> **Info:** Terminology-wise Cumulocity IoT DataHub replicates data from Cumulocity Operational Store into the data lake. For Dremio the data lake and its target tables is a data source as it allows reading data from it.
+> **Info:** Terminology-wise, Cumulocity IoT DataHub replicates data from the Cumulocity Operational Store into the data lake. For Dremio the data lake and its target tables is a data source as it allows reading data from it.
 
 When you click on your data source it will be shown in the main panel. Clicking on the source in the main panel navigates into the data source. Here, you see a list of all target tables of your offloading pipelines. Clicking one of these target tables opens an SQL editor which allows you to run queries against that target table.
 
@@ -45,7 +45,7 @@ When you click on your data source it will be shown in the main panel. Clicking 
 
 #### Spaces
 
-A space in Dremio helps organizing your data sets. Cumulocity IoT DataHub auto-configures a space which is named `YourTenantIdNameSpace`. A dataset in the space is referred in queries as `YourTenantIdSpace.YourDataset`. As described in sections [Offloading of inventory collection](/datahub/configuring-offloaded/#offloading-inventory-collection) and [Offloading of alarms collection](/datahub/configuring-offloaded/#offloading-alarms-collection), inventory and alarms collection already ships two views `inventory_all` and `inventory_latest` which are made available in your space.
+A space in Dremio helps in organizing your data sets. Cumulocity IoT DataHub auto-configures a space which is named `YourTenantIdNameSpace`. A dataset in the space is referred to in queries as `YourTenantIdSpace.YourDataset`. As described in sections [Offloading of inventory collection](/datahub/configuring-offloaded/#offloading-inventory-collection) and [Offloading of alarms collection](/datahub/configuring-offloaded/#offloading-alarms-collection), the inventory and alarms collections already ship two views `inventory_all` and `inventory_latest` which are made available in your space.
 
 #### Job history
 

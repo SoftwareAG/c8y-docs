@@ -1,10 +1,7 @@
 ---
 weight: 10
-title: Documentation
+title: Information
 layout: bundle
-aliases:
-  - /devices/overview
-  - /devices/adeunis/#overview
 ---
 
 The latest Cumulocity IoT Edge version is Release 10.5 (October 2019) which uses Cumulocity IoT Core 10.5.0. 

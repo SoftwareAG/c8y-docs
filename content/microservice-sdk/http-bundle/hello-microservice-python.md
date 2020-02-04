@@ -97,7 +97,7 @@ COPY application.py /
 RUN pip install flask==0.10.1
 
 ENTRYPOINT ["python"]
-CMD ["application.py"]
+CMD ["-u", "application.py"]
 ```
 
 This build uses Alpine Linux with the Python SDK inside. It is a very thin distribution and the resulting Docker image is small (about 100 MB). The instruction `RUN pip install flask` installs the required Python library using the `pip` installer.

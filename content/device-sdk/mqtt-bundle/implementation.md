@@ -32,14 +32,13 @@ A SmartREST message is a single row in which each parameter is separated by comm
 
 #### SmartREST escaping
 
-The following characters within a parameter need to be enclosed in double quotes:
+The CSV (comma-separated values) format is used for communication with the SmartREST endpoint. The following rules must be followed to ensure a frictionless communication.
 
-* Comma (,)
-* Line break (\n)
-* Carriage return (\r)
-* Double quotes (")
+* Every row must be terminated by the `\n` character sequence.
+* Values are always separated by a comma (`,`).
+* If a value contains double-quotes (`"`), commas (`,`), leading or trailing whitespace, line-breaks (`\n`), carriage returns (`\r`) or tab stops, it must be surrounded by quotes (`"`). Contained double-quotes (`"`) must be escaped by prepending another double-quote (`""`).
 
-Additionally, each double quote within the parameter needs to be escaped with a backslash `\`. The same escaping rules apply to messages that will be sent from the server to the client.
+The same escaping rules apply to messages that will be sent from the server to the client.
 
 Publish example:
 
@@ -50,7 +49,7 @@ Publish example:
 Subscribe example:
 
 ```text
-511,myDeviceSerial,"execute this\nand this\nand \"this\""
+511,myDeviceSerial,"execute this\nand this\nand ""this"""
 ```
 
 ### Device hierarchies

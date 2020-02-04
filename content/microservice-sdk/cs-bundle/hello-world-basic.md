@@ -517,11 +517,7 @@ In order to deploy the application, run the deploy script. You must provide the 
 
 #### Microservice package and deploy
 
-Cumulocity provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running Docker and can be found here:
-
-```shell
-$ wget http://resources.cumulocity.com/examples/microservice
-```
+Cumulocity provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running Docker and can be found in [cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/scripts/microservice):
 
 Next, add execution permissions
 

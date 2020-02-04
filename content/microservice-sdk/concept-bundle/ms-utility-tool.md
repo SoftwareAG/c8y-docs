@@ -69,17 +69,7 @@ or
 
 ### Configure the microservice utility tool
 
-Execute the following command to download the script on Linux systems:
-
-```shell
-$ wget http://resources.cumulocity.com/examples/microservice
-```
-
-For macOS, use the following command:
-
-```shell
-$ curl -O http://resources.cumulocity.com/examples/microservice
-```
+The script can be found in [cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/scripts/microservice)
 
 Change the mode to allow the script to be executed:
 

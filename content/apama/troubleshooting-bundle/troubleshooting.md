@@ -1,5 +1,5 @@
 ---
-weight: 70
+weight: 10
 title: Troubleshooting
 layout: redirect
 ---
@@ -10,5 +10,12 @@ If there has been a recent large burst of updates (such as new measurements, esp
 
 When the alarm is raised, older updates will be discarded. This may affect the behavior of Smart Rules, Analytics Builder models or EPL applications.
 
-Please review the Apama microservice log file (see [Managing applications](http://localhost:1313/users-guide/administration/#managing-applications) in the *User guide* for more information on log files) and contact support if needed.
+There are two ways to get the logs of the Apama microservice:
+
+- Download diagnostics information as described in [Downloading diagnostics and logs](#diagnostics-download).
+- In some cases, it is useful to view the log file of the Apama microservice using Cumulocity IoT functionality. See [Managing applications](/users-guide/administration/#managing-applications) in the *User guide* for information on how to view log files.
+
+Contact Software AG Support if needed.
+
+
 

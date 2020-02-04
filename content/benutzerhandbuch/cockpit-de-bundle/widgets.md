@@ -162,7 +162,7 @@ Das Widget "Datenpunktliste" zeigt Datenpunkte (Messwerte) in einer Liste, einen
 |:---|:---|
 |Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
 |Datenpunkte|Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie **Datenpunkt hinzufügen**, um einen Datenpunkt zur Liste hinzuzufügen. Informationen zum Hinzufügen von Datenpunkten finden Sie unter [Daten-Explorer > Hinzufügen von Datenpunkten](#add-data-points).
-|Sichtbare Tabellenspalten|Spalten, die angezeigt werden: <br>**Beschriftung**: Beschriftung des Datenpunkts. Details finden Sie unter [Visualisieren von Daten im Daten-Explorer](#data-explorer). <br>**Ziel**: Zielwert. Kann im [Daten-Explorer](#data-explorer) oder in der [Datenpunktbibliothek](#library) konfiguriert werden.<br>**Aktuell**: Aktueller Wert. <br>**Differenz**: Absolute Differenz zwischen aktuellem Wert und Zielwert. <br>**Differenz %**: Prozentwert der Differenz zwischen aktuellem Wert und Zielwert. <br>**Asset**: Name des Geräts oder der Gruppe des Datenpunkts. 
+|Sichtbare Tabellenspalten|Spalten, die angezeigt werden: <br>**Beschriftung**: Beschriftung des Datenpunkts. Details finden Sie unter [Visualisieren von Daten im Daten-Explorer](#data-explorer). <br>**Ziel**: Zielwert. Kann im [Daten-Explorer](#data-explorer) oder in der [Datenpunktbibliothek](#data-point-library) konfiguriert werden.<br>**Aktuell**: Aktueller Wert. <br>**Differenz**: Absolute Differenz zwischen aktuellem Wert und Zielwert. <br>**Differenz %**: Prozentwert der Differenz zwischen aktuellem Wert und Zielwert. <br>**Asset**: Name des Geräts oder der Gruppe des Datenpunkts. 
 
 ### Datenpunkttabelle
 

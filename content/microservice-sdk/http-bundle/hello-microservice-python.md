@@ -90,14 +90,14 @@ The application is configured to run on port 80 – which is required for micros
 
 You need to create a Dockerfile in order to build a Docker image with your application. For this example, it shall be in the same directory as the _application.py_ script and with the following content:
 
-```
+```dockerfile
 FROM python:alpine3.6
 
 COPY application.py /
 RUN pip install flask==0.10.1
 
 ENTRYPOINT ["python"]
-CMD ["application.py"]
+CMD ["-u", "application.py"]
 ```
 
 This build uses Alpine Linux with the Python SDK inside. It is a very thin distribution and the resulting Docker image is small (about 100 MB). The instruction `RUN pip install flask` installs the required Python library using the `pip` installer.

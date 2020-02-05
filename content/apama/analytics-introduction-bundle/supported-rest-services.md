@@ -175,9 +175,7 @@ Endpoint: `/service/cep/eplfiles`
 
 #### Example request
 
-```
-POST /service/cep/eplfiles
-```
+`POST /service/cep/eplfiles`
 
 #### Example response
 
@@ -266,9 +264,7 @@ Endpoint: `/service/cep/eplfiles/{id}`
 
 #### Example request
 
-```
-PUT /service/cep/eplfiles/{id}
-```
+`PUT /service/cep/eplfiles/{id}`
 
 #### Example response
 

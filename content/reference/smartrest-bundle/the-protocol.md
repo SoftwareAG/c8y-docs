@@ -34,7 +34,7 @@ The CSV (comma-separated values) format is used for communication with the Smart
 
 * Every row must be terminated by the `\n` character sequence.
 * Values are always separated by a comma (`,`).
-* If a value contains double-quotes (`"`), commas (`,`), leading or trailing whitespace, line-breaks (`\n`), carriage returns (`\r`) or tab stops, it must be surrounded by quotes (`"`). Contained double-quotes (`"`) must be escaped by prepending another double-quote (`""`).
+* If a value contains double-quotes (`"`), commas (`,`), leading or trailing whitespaces, line-breaks (`\n`), carriage returns (`\r`) or tab stops, it must be surrounded by quotes (`"`). Contained double-quotes (`"`) must be escaped by prepending another double-quote (`""`).
 
 The same escaping rules apply to messages that will be sent from the server to the client.
 

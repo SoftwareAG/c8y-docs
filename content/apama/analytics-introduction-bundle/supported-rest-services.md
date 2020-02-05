@@ -177,12 +177,16 @@ Endpoint: `/service/cep/eplfiles`
 
 ```
 POST /service/cep/eplfiles
+```
 
+#### Example response
+
+```
 {
-"name": "Ordinal1",
-"contents": "monitor M1 { action onload() { on wait(1.0) { log \"Hello\" at INFO; }}}",
-"state": "active",
-"description": ""
+  "name": "Ordinal1",
+  "contents": "monitor M1 { action onload() { on wait(1.0) { log \"Hello\" at INFO; }}}",
+  "state": "active",
+  "description": ""
 }
 ```
 
@@ -264,12 +268,16 @@ Endpoint: `/service/cep/eplfiles/{id}`
 
 ```
 PUT /service/cep/eplfiles/{id}
+```
 
+#### Example response
+
+```
 {
-"name": "Ordinal1",
-"contents": "monitor M1 { action onload() { on wait(1.0) { log \"Hello\" at INFO; }}}",
-"state": "active",
-"description": ""
+  "name": "Ordinal1",
+  "contents": "monitor M1 { action onload() { on wait(1.0) { log \"Hello\" at INFO; }}}",
+  "state": "active",
+  "description": ""
 }
 ```
 

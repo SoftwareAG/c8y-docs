@@ -414,12 +414,12 @@ _Startup.cs_ responsibilities:
 
 The Dockerfile created by *create.ps1* contains:
 
-```dockerfile
-	FROM microsoft/dotnet:2.0-runtime
-	WORKDIR /app
-	COPY ./publish/Web ./
-	ENV SERVER_PORT 4700
-	ENTRYPOINT ["dotnet", "api.dll"]
+```
+FROM microsoft/dotnet:2.0-runtime
+WORKDIR /app
+COPY ./publish/Web ./
+ENV SERVER_PORT 4700
+ENTRYPOINT ["dotnet", "api.dll"]
 ```
 
 The Dockerfile defines what goes on in the environment inside a container:

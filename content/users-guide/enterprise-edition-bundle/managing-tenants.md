@@ -207,7 +207,7 @@ Platform administrators can limit the request rate of each subtenant via the fol
 * Limit stream queue - Limit of MQTT request queue for tenant
 * Limit stream requests - Limit of MQTT requests for tenant per second
 
-It is also possible to customize cep-queue and data-broker-queue buffer size for a particular tenant. This can be done from the management tenant by using the following subtenant custom fragments:
+It is also possible to customize the buffer size for the CEP queue and the data broker queue for a particular tenant. This can be done from the management tenant by using the following subtenant custom fragments:
 
  - cep.queue.limit
  - data-broker.queue.limit

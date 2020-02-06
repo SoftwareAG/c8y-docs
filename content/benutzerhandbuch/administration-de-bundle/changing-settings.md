@@ -202,7 +202,7 @@ Im Feld **Passwortgültigkeit begrenzen für** können Sie die Gültigkeit von B
 
 > **Info**: Passwortbeschränkung und das Erzwingen starker Passörter sind möglicherweise nicht editierbar, falls vom Plattformadministrator so konfiguriert.
 
-Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Nur starke (grüne) Passwörter zulassen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Aufrufen und Anmelden an der Cumulocity-Plattform](/benutzerhandbuch/getting-started/#login) beschrieben.
+Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Nur starke (grüne) Passwörter zulassen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Aufrufen und Anmelden an der Cumulocity-Plattform](/benutzerhandbuch/getting-started-de/#login) beschrieben.
 
 Starke (grüne) Passwörter müssen "M" Zeichen haben. Die Verwendung bereits früher genutzter Passwörter wird standardmäßig eingeschränkt. Das System merkt sich die letzten "N" von einem Benutzer bereitgestellten Passwörter und erlaubt nicht, diese zu verwenden. Der Standardwert für "N" ist 10.
 
@@ -364,7 +364,7 @@ Oben können Sie auswählen, ob Sie die E-Mail zum Administrator des gesperrten 
 
 Klicken Sie **Konfiguration speichern**, um Ihre Eingaben zu speichern.
 
-Für Enterprise Tenants stehen zusätzliche Funktionen zur Verfügung, siehe [Enterprise Tenant > Anpassen der Plattform](/benutzerhandbuch/enterprise-edition#customization).
+Für Enterprise Tenants stehen zusätzliche Funktionen zur Verfügung, siehe [Enterprise Tenant > Anpassen der Plattform](/benutzerhandbuch/enterprise-edition-de#customization).
 
 ### <a name="connectivity"></a>Verwalten der Konnektivitätseinstellungen
 

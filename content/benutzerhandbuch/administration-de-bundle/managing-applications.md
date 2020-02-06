@@ -173,25 +173,25 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><a href="/benutzerhandbuch/enterprise-edition/#branding" class="no-ajaxy">Branding</a></td>
+<td style="text-align:center"><a href="/benutzerhandbuch/enterprise-edition-de/#branding" class="no-ajaxy">Branding</a></td>
 <td style="text-align:left">Passen Sie das Erscheinungsbild Ihrer Mandanten nach Ihren Vorlieben an.</td>
 <td style="text-align:left">branding</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/benutzerhandbuch/enterprise-edition/#data-broker" class="no-ajaxy">Data Broker</a></td>
+<td style="text-align:center"><a href="/benutzerhandbuch/enterprise-edition-de/#data-broker" class="no-ajaxy">Data Broker</a></td>
 <td style="text-align:left">Bietet die Möglichkeit, Daten gezielt mit anderen Mandanten zu teilen.</td>
 <td style="text-align:left">feature-broker</td>
 <td style="text-align:left">Funktion</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/benutzerhandbuch/enterprise-edition#customization" class="no-ajaxy">SSL management</a></td>
+<td style="text-align:center"><a href="/benutzerhandbuch/enterprise-edition-de#customization" class="no-ajaxy">SSL management</a></td>
 <td style="text-align:left">Aktivieren Sie einen eigenen benutzerdefinierten Domain-Namen durch Verwendung eines SSL-Zertifikats.</td>
 <td style="text-align:left">sslmanagement</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/benutzerhandbuch/enterprise-edition/#user-hierarchies" class="no-ajaxy">User hierarchies</a></td>
+<td style="text-align:center"><a href="/benutzerhandbuch/enterprise-edition-de/#user-hierarchies" class="no-ajaxy">User hierarchies</a></td>
 <td style="text-align:left">Hiermit können Sie in Cumulocity verschiedene Organisationen getrennt verwalten, die dieselbe Datenbank teilen.</td>
 <td style="text-align:left">feature-user-hierarchy</td>
 <td style="text-align:left">Funktion</td>

@@ -72,7 +72,7 @@ Im Management-Mandanten finden Sie zudem Informationen über den übergeordneten
 </tr>
 <tr>
 <td style="text-align:left">Link zum Zurücksetzen des Passworts als E-Mail senden</td>
-<td style="text-align:left">Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie ein Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter <a href="/benutzerhandbuch/getting-started/#login" class="no-ajaxy">Erste Schritte &gt; Aufrufen und Anmelden an der Cumulocity-Plattform</a>.</td>
+<td style="text-align:left">Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie ein Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter <a href="/benutzerhandbuch/getting-started-de/#login" class="no-ajaxy">Erste Schritte &gt; Aufrufen und Anmelden an der Cumulocity-Plattform</a>.</td>
 </tr>
 <tr>
 <td style="text-align:left">Mandantenregel</td>
@@ -103,7 +103,7 @@ Hier werden die folgenden Informationen angezeigt:
 
 |Feld|Beschreibung
 |:--------|:-----
-|Status|Kann entweder *Eingeschaltet* oder *Ausgeschaltet* sein. <br>*Eingeschaltet* bedeutet: <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene aktiviert (siehe [Anpassen der Plattform](/benutzerhandbuch/enterprise-edition#customization)), <br> - ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert. <br>*Ausgeschaltet* bedeutet: <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene deaktiviert, <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene aktiviert, aber für den Untermandanten deaktiviert, <br> - kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h., jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).
+|Status|Kann entweder *Eingeschaltet* oder *Ausgeschaltet* sein. <br>*Eingeschaltet* bedeutet: <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene aktiviert (siehe [Anpassen der Plattform](/benutzerhandbuch/enterprise-edition-de#customization)), <br> - ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert. <br>*Ausgeschaltet* bedeutet: <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene deaktiviert, <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene aktiviert, aber für den Untermandanten deaktiviert, <br> - kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h., jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).
 |Anzahl aktiver Anfragen|Anzahl der aktuell aktiven Anfragen im Untermandanten. Wird nur angezeigt, wenn Supportbenutzerzugriff nicht global auf Plattform-Ebene aktiviert ist. Wird als Zahl in einem kleinen roten Punkt angezeigt.
 |Ablaufdatum|Legt das Datum fest, an dem der Supportbenutzerzugriff für den Mandanten abläuft. Wenn kein Datum festgelegt wurde, wird das Ablaufdatum auf "Unbegrenzt" gesetzt.
 
@@ -245,7 +245,7 @@ Außerdem werden benutzerdefinierte Attribute angezeigt, falls vorhanden.
 
 Benutzerdefinierte Attribute können in der [Attributsbibliothek](/benutzerhandbuch/administration#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte [Benutzerdefinierte Attribute](#tenants-custom-properties) des Mandanten eingestellt werden.
 
-Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum filtern, indem Sie einen Start- und einen Endzeitpunkt in der oberen Menüleiste eingeben und **Filter** klicken. Sie können außerdem die Liste nach jeder Spalte filtern und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Siehe auch [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/benutzerhandbuch/getting-started/#filtering).
+Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum filtern, indem Sie einen Start- und einen Endzeitpunkt in der oberen Menüleiste eingeben und **Filter** klicken. Sie können außerdem die Liste nach jeder Spalte filtern und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Siehe auch [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/benutzerhandbuch/getting-started-de/#filtering).
 
 #### So exportieren Sie die Nutzungsstatistik-Tabelle
 

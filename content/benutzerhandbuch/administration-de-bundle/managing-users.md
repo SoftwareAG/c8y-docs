@@ -27,13 +27,13 @@ Es wird eine Benutzerliste angezeigt, die für jeden Benutzer die folgenden Info
 * Den Benutzernamen, der für den Zugang zum Mandanten verwendet wird.
 * Name und E-Mail-Adresse des Benutzers, falls angegeben.
 * Die globalen Rollen, die für den Benutzer vergeben wurden.
-* Die [Stärke](/benutzerhandbuch/getting-started/#login) des Passworts, das für den Benutzer gesetzt ist.
+* Die [Stärke](/benutzerhandbuch/getting-started-de/#login) des Passworts, das für den Benutzer gesetzt ist.
 
-Zum Filtern der Liste können Sie das Suchfeld links in der oberen Menüleiste verwenden. Weitere Informationen zur Suchfunktionalität finden Sie unter [Suchen](/benutzerhandbuch/getting-started/#searching) im Abschnitt *Erste Schritte*.
+Zum Filtern der Liste können Sie das Suchfeld links in der oberen Menüleiste verwenden. Weitere Informationen zur Suchfunktionalität finden Sie unter [Suchen](/benutzerhandbuch/getting-started-de/#searching) im Abschnitt *Erste Schritte*.
 
 Darüber hinaus können Sie nach globalen Rollen filtern. Wählen Sie die gewünschten Rollen aus der Auswahlliste, und klicken Sie **Anwenden**, um die angezeigten Benutzer auf solche mit den ausgewählten Rollen zu beschränken.
 
-Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie **Alle ausklappen** rechts in der oberen Leiste, um alle Benutzer in Ihrem Konto auf einmal anzuzeigen. Dadurch werden alle Hauptbenutzereinträge ausgeklappt, so dass auch die Unterbenutzer angezeigt werden. Klicken Sie **Alle einklappen**, um wieder nur die Hauptbenutzer anzuzeigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter [Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-edition#user-hierarchies).
+Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie **Alle ausklappen** rechts in der oberen Leiste, um alle Benutzer in Ihrem Konto auf einmal anzuzeigen. Dadurch werden alle Hauptbenutzereinträge ausgeklappt, so dass auch die Unterbenutzer angezeigt werden. Klicken Sie **Alle einklappen**, um wieder nur die Hauptbenutzer anzuzeigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter [Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-edition-de#user-hierarchies).
 
 ### <a name="creating-users"></a>So fügen Sie einen Benutzer hinzu
 
@@ -90,19 +90,19 @@ Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie 
 	
 	<tr>
 	<td align="left">Eigentümer</td>
-	<td align="left">Ein anderer Benutzer, der diesen Benutzer “besitzt” (verwaltet). Wählen Sie einen Benutzer aus der Auswahlliste und klicken Sie <strong>Fertig</strong> zum Bestätigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter <a href="/benutzerhandbuch/enterprise-edition#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
+	<td align="left">Ein anderer Benutzer, der diesen Benutzer “besitzt” (verwaltet). Wählen Sie einen Benutzer aus der Auswahlliste und klicken Sie <strong>Fertig</strong> zum Bestätigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter <a href="/benutzerhandbuch/enterprise-edition-de#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
 	</tr>
 	
 	<tr>
 	<td align="left">Delegiert von</td>
-	<td align="left">Kann aktiviert werden, um Benutzerhierarchien und Berechtigungen an einen Benutzer zu delegieren. Weitere Informationen zum Delegieren finden Sie unter <a href="/benutzerhandbuch/enterprise-edition#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
+	<td align="left">Kann aktiviert werden, um Benutzerhierarchien und Berechtigungen an einen Benutzer zu delegieren. Weitere Informationen zum Delegieren finden Sie unter <a href="/benutzerhandbuch/enterprise-edition-de#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
 	</tr>
 	</tbody>
 	</table>
 
 3. Wählen Sie die Anmeldeoptionen für den Benutzer aus.
 
-	* Wenn Sie **Benutzer muss sein Passwort beim nächsten Anmelden zurücksetzen** auswählen, müssen Sie ein Passwort angeben, dass der Benutzer beim nächsten Anmelden zurücksetzen muss. <br>Geben Sie ein Passwort ein und bestätigen Sie es. Während der Passworteingabe wird die Stärke des Passworts angezeigt. Weitere Informationen zur Passwortstärke finden Sie unter [Anmelden an der Cumulocity-Plattform](/benutzerhandbuch/getting-started/#login).  
+	* Wenn Sie **Benutzer muss sein Passwort beim nächsten Anmelden zurücksetzen** auswählen, müssen Sie ein Passwort angeben, dass der Benutzer beim nächsten Anmelden zurücksetzen muss. <br>Geben Sie ein Passwort ein und bestätigen Sie es. Während der Passworteingabe wird die Stärke des Passworts angezeigt. Weitere Informationen zur Passwortstärke finden Sie unter [Anmelden an der Cumulocity-Plattform](/benutzerhandbuch/getting-started-de/#login).  
 	* Wenn Sie **Link für das Zurücksetzen des Passworts per E-Mail senden** auswählen, erhält der Benutzer eine E-Mail mit dem Link zum Setzen des Passworts. Die E-Mail wird zu der oben konfigurierten Adresse gesendet.
 
 4. Wählen Sie auf der rechten Seite die globalen Rollen für den Benutzer. Informationen zu den globalen Rollen finden Sie unter [Verwalten von Berechtigungen](/benutzerhandbuch/administration#managing-permissions).
@@ -138,7 +138,7 @@ Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließ
 
 Klicken Sie **Delegierung aufheben**, um eine Delegierung zu entfernen. 
 
-Detaillierte Informationen zum Delegieren finden Sie unter [Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-edition#user-hierarchies).
+Detaillierte Informationen zum Delegieren finden Sie unter [Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-edition-de#user-hierarchies).
 
 > **Info:** Für diese Option müssen Sie eine Rolle mit Benutzerverwaltungsberechtigung haben.
 

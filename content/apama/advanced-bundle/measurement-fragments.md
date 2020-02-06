@@ -10,7 +10,7 @@ Instead of listening for all measurements and looking inside a dictionary, you c
 
 You can also use measurement fragments when you have just a single fragment and series. This makes coding simpler.
 
-For your EPL application, you can enable having both, complete measurements and measurement fragments, or you can chose to only have complete measurements.
+For your EPL application, you can enable having both, complete measurements and measurement fragments, or you can choose to only have complete measurements.
 
 To customize the setting of the measurement format, you need to change the tenant options by sending a REST request to Cumulocity IoT. Specify one of the following values in the REST request: 
 
@@ -32,7 +32,7 @@ For example, specify the following to set the measurement format value to send b
 }
 ```
 
-You can also change the tenant options using the command line. For example, specify the following when using the curl command-line tool (see https://curl.haxx.se/ for detailed information on curl):
+You can also change the tenant options using the command line. For example, specify the following when using the curl command-line tool (see [https://curl.haxx.se/](https://curl.haxx.se/) for detailed information on curl): 
 
 ```
 curl --user User123 -X POST -H 'Content-Type: application/json' -d '{"category": "apama", "key": "measurementFormat", "value": "BOTH"}' -k https://mytenant/tenant/options

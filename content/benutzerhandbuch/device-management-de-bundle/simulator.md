@@ -3,6 +3,7 @@ weight: 80
 title: Verwenden von Simulatoren
 layout: redirect
 ---
+
 Mit dem Simulator in Cumulocity können alle Aspekte von IoT-Geräten simuliert werden, wie:
 
 * Einrichten eines simulierten Geräts oder eines Netzwerks von simulierten Geräten
@@ -26,19 +27,19 @@ Eine Nachricht wird durch Auswählen eines Nachricht-Templates (z. B. Senden ein
 
 Klicken Sie **Simulatoren** im Menü **Geräte** des Navigators, um die Seite **Simulatoren** zu öffnen.
 
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator.png" alt="Simulator page">
+<img src="/images/users-guide/DeviceManagement/devmgmt-simulator.png" alt="Simulator page">
 
-Allen Simulatoren, auf die Sie zugreifen können, werden hier angezeigt. 
+Alle Simulatoren, auf die Sie zugreifen können, werden hier angezeigt. 
 
 ### So erstellen Sie einen Simulator
 
-1. Klicken Sie **Simulator hinzufügen** recht in der oberen Menüleiste. 
+1. Klicken Sie **Simulator hinzufügen** rechts in der oberen Menüleiste. 
 2. Wählen Sie im darauf folgenden Dialog aus der Auswahlliste im Feld **Voreinstellungen** einen Simulatortypen. Wählen Sie "Leerer Simulator", um einen eigenen Simulator zu erstellen.
 3. Geben Sie einen Namen für den Simulator ein. 
 4. Wählen Sie die Anzahl der Instanzen für diesen Simulator (bis zu zehn).
 5. Klicken Sie **Erstellen**.
 
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-add.png" alt="Create simulator">
+<img src="/images/users-guide/DeviceManagement/devmgmt-simulator-add.png" alt="Create simulator">
 
 Der Simulator wird erstellt und der Liste hinzugefügt.
 
@@ -70,7 +71,7 @@ Für jeden Simulator können Sie Anweisungen erstellen, die angeben, was der Sim
 
 Anweisungen können auf der Registerkarte **Anweisungen** eines Simulators angezeigt und bearbeitet werden.
 
-![Add Instructions](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-instructions.png)
+![Add Instructions](/images/users-guide/DeviceManagement/devmgmt-simulator-instructions.png)
 
 **Beispiele**
 
@@ -78,13 +79,13 @@ Die Simulator-Voreinstellungen enthalten bereits Beispielanweisungen. Beispielsw
 
 Der Bereich auf der rechten Seite ändert sich entsprechend des ausgewählten Anweisungstyps.
 
-![Fragment](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-fragment.png)
+![Fragment](/images/users-guide/DeviceManagement/devmgmt-simulator-fragment.png)
 
-Die Messwertanweisungen beziehen sich auf ein Fragment. Fragmente werden verwendet, um die Kapazitäten von Objekten zu bestimmen. Weitere Informationen zu Fragmenten finden Sie unter[Sensor Library](/reference/sensor-library/) im Reference Guide. 
+Die Messwertanweisungen beziehen sich auf ein Fragment. Fragmente werden verwendet, um die Kapazitäten von Objekten zu bestimmen. Nähere Informationen zu Fragmenten finden Sie in der [Sensor Library](/reference/sensor-library/) im Reference Guide. 
 
 Die Anweisung "Warten" erfordert einen einzelnen Wert für die Dauer des Wartens in Sekunden. 
 
-![Sleep](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-sleep.png)
+![Sleep](/images/users-guide/DeviceManagement/devmgmt-simulator-sleep.png)
 
 #### So fügen Sie eine Anweisung hinzu
 
@@ -105,7 +106,7 @@ Die neue Warteanweisung wird dem Simulator hinzugefügt.
 
 #### So löschen Sie eine Anweisung
 
-Bewegen Sie den Mauszeiger über die Anweisung oder die Wartezeit, die Sie löschen möchten, und klicken Sie auf das Löschen-Symbol.
+Bewegen Sie den Mauszeiger über die Anweisung oder die Wartezeit, die Sie entfernen möchten, und klicken Sie auf das Löschen-Symbol.
 
 Die Anweisung wird aus dem Simulator entfernt.
 
@@ -113,7 +114,7 @@ Die Anweisung wird aus dem Simulator entfernt.
 
 In der Registerkarte **Unterstützte Kommandos** eines Simulators finden Sie spezielle Kommandos, etwa für Konfigurationen oder für Software-/Firmware-Updates.
 
-![Supported operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-supported-operations.png)
+![Supported operations](/images/users-guide/DeviceManagement/devmgmt-simulator-supported-operations.png)
 
 Klicken Sie auf den Umschalter, um das jeweilige Kommando ein- oder auszuschalten.
 
@@ -129,4 +130,4 @@ Das benutzerdefinierte Kommando wird der Kommandoliste hinzugefügt.
 
 Die Registerkarte **Alarme** eines Simulators zeigt Alarme an, die den Simulator selbst und nicht das simulierte Gerät betreffen, d. h. Alarme für den Fall, dass der Simulator nicht korrekt arbeitet. Informationen zu Alarmen finden Sie unter [Arbeiten mit Alarmen](#alarms). 
 
-![Alarms](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-alarm.png)
+![Alarms](/images/users-guide/DeviceManagement/devmgmt-simulator-alarm.png)

@@ -3,10 +3,10 @@ weight: 90
 title: Lizenzverwaltung
 layout: redirect
 ---
- 
+
 Der Management-Mandant kann die Lizenzen für die Domains der Enterprise Tenants über die Benutzeroberfläche verwalten.
 
-![License management](/images/benutzerhandbuch/enterprise-tenant/et-license-management.png)
+![License management](/images/users-guide/enterprise-tenant/et-license-management.png)
 
 ### So können Sie eine Domain-Lizenz hinzufügen und validieren
 

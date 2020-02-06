@@ -3,6 +3,7 @@ weight: 20
 title: Aufrufen und Anmelden an der Cumulocity-Plattform
 layout: redirect
 ---
+
 Auf die Cumulocity IoT-Plattform können Sie über einen Webbrowser zugreifen. Unsere Produkte wurden mit den folgenden Webbrowsern getestet:
 
 * Edge Browser
@@ -26,27 +27,27 @@ Um auf die Anwendungen Ihres Cumulocity-Mandanten zuzugreifen, verwenden Sie die
 https://<tenant-domain>.cumulocity.com/
 ```
 
-Sie werden zur Anmeldeseite Ihrer Standardanwendung weitergeleitet. Sie können [Tenants > Tenant ID and tenant domain](/reference/tenants/#a-name-tenant-id-and-domain-a-tenant-id-and-tenant-domain) im Reference guide nachschlagen, um die Beziehung zwischen Mandanten-ID und Mandanten-Domain besser zu verstehen.
+Sie werden zur Anmeldeseite Ihrer Standardanwendung weitergeleitet. Sie können [Tenants > Tenant ID and tenant domain](/reference/tenants/#a-name-tenant-id-and-domain-a-tenant-id-and-tenant-domain) im **Reference guide** nachschlagen, um die Beziehung zwischen Mandanten-ID und Mandanten-Domain besser zu verstehen.
 
 > **Wichtig:** Stellen Sie sicher, dass die Adressleiste des Browsers ein Schloss-Symbol zeigt. Das Schloss-Symbol zeigt an, dass Sie eine sichere Verbindung nutzen und tatsächlich mit Cumulocity verbunden sind.
 
->**Info:** Die oben angezeigte URL gilt nur, wenn Sie einen Cumulocity Standard Tenant nutzen. Die URL für Enterprise Tenants von Cumulocity IoT ist individuell für Ihr Unternehmen.
+>**Info:** Die oben angezeigte URL gilt nur, wenn Sie einen Cumulocity Standard Tenant nutzen. Die URL für die Enterprise Tenants von Cumulocity IoT ist individuell für Ihr Unternehmen.
 
 ### <a name="login"></a>So melden Sie sich an der Cumulocity-Plattform an
 
 Geben Sie auf der Anmeldeseite Ihren Benutzernamen und Ihr Passwort ein und klicken Sie **Anmelden**, um die Anwendung zu öffnen.
 
-<img src="/images/benutzerhandbuch/overview-login.png" alt="Login prompt">
+<img src="/images/users-guide/overview-login.png" alt="Login prompt">
 
 Aktivieren Sie die Checkbox **Passwort merken**, damit der Browser sich Ihre Zugangsdaten merkt, so dass Sie diese nicht wieder bereitstellen müssen, wenn Sie die Anwendung das nächste mal öffnen. Dies ist außerdem praktisch, wenn Sie häufig zwischen Anwendungen wechseln, da Cumulocity Sie sonst bei jedem Wechsel auffordert, sich zu authentifizieren. Melden Sie sich explizit ab, damit der Browser Ihre Zugangsdaten "vergisst".
 
-Wenn Sie sich das erste Mal bei Cumulocity anmelden, werden Sie zur Standardanwendung (falls nicht anders konfiguriert, ist dies die [Cockpit](/benutzerhandbuch/cockpit)-Anwendung) weitergeleitet.
+Wenn Sie sich das erste Mal bei Cumulocity anmelden, werden Sie zur Standardanwendung (falls nicht anders konfiguriert, ist dies die [Cockpit](/users-guide/cockpit)-Anwendung) weitergeleitet.
 
-![image alt text](/images/benutzerhandbuch/cockpit/cockpit-home-screen.png)
+![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
 
 Um sich explizit abzumelden, klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie im Kontextmenü **Abmelden**.
 
-<img src="/images/benutzerhandbuch/overview-logout.png" alt="Logout menu" style="max-width: 100%">
+<img src="/images/users-guide/overview-logout.png" alt="Logout menu" style="max-width: 100%">
 
 ### <a name="reset-password"></a>So setzen Sie Ihr Passwort zurück
 

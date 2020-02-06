@@ -8,7 +8,7 @@ Apama EPL Apps is designed to listen for REST (Representational State Transfer) 
 
 To perform these operations, you must have READ and ADMIN permissions for "CEP management" (see also [Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*).
 
-> **Info**: This API requires version 10.6 or above of the Apama-ctrl microservice.
+> **Info**: This API requires version 10.6.0 or above of the Apama-ctrl microservice.
 
 ### Request headers for all operations
 
@@ -138,7 +138,7 @@ Endpoint: `/service/cep/eplfiles/{id}`
 | Code | Description                                                  |
 | ---- | ------------------------------------------------------------ |
 | 200  | Successful operation. See also the example value below.      |
-| 404  | File with identifier not found. See also the example value for this response code at the end of this section. |
+| 404  | File with identifier not found. See also the [example value for this response code](#example-404) at the end of this section. |
 
 Example value for response code 200:
 
@@ -261,7 +261,7 @@ See also the information given for the POST request.
 | Code | Description                                                  |
 | ---- | ------------------------------------------------------------ |
 | 200  | Successfully updated. See also the example values below.     |
-| 404  | File with identifier not found. See also the example value for this response code at the end of this section. |
+| 404  | File with identifier not found. See also the [example value for this response code](#example-404) at the end of this section. |
 
 Example value for response code 200 when successfully updated with no errors:
 
@@ -322,9 +322,9 @@ Endpoint: `/service/cep/eplfiles/{id}`
 | Code | Description                                                  |
 | ---- | ------------------------------------------------------------ |
 | 200  | Successfully deleted.                                        |
-| 404  | File with identifier not found. See also the example value for this response code at the end of this section. |
+| 404  | File with identifier not found. See also the [example value for this response code](#example-404) at the end of this section. |
 
-### Example value for response code 404
+### Example value for response code 404<a name="example-404"></a>
 
 The response code 404 indicates that a file with a specific identifier was not found. 
 

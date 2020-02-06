@@ -140,7 +140,7 @@ Klicken Sie in einem Datenkonnektor-Eintrag rechts auf das Menüsymbol und ansch
 
 Öffnen Sie einen Datenkonnektor und wechseln Sie zur Registerkarte **Alarme**, um aktuelle Alarme für den Datenkonnektor anzuzeigen.
 
-![Warnings tab](/images/benutzerhandbuch/enterprise-tenant/data-broker-connector-warnings.png)
+![Warnings tab](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-connector-warnings.png)
 
 Weitere Informationen zu Alarmen finden Sie unter [Überwachen und Steuern von Geräten > Verwenden von Alarmen](alarm-monitoring) im Abschnitt *Device Management*.
 

@@ -3,7 +3,7 @@ weight: 20
 title: Versions
 layout: redirect
 aliases:
-  - /edge/edge-introduction/versions
+  - /edge/edge-introduction/#versions
 ---
 
 Cumulocity IoT Edge “October 2019 release” uses the following versions:

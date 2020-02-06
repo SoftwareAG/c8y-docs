@@ -3,7 +3,7 @@ weight: 80
 title: Example setup for Hyper-V
 layout: redirect
 aliases:
-  - /edge/installation/setting-up-hyper-v
+  - /edge/installation/#setting-up-hyper-v
 ---
 
 To set up Hyper-V, you must first enable Hyper-V on your system, and  create Network Address Translation (NAT) adapter. For enabling Hyper-V, see the Microsoft documentation.

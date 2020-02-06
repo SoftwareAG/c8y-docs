@@ -2,8 +2,6 @@
 weight: 10
 title: Documentation
 layout: bundle
-aliases:
-  - /edge/overview
 ---
 
 The following documentation is available for Cumulocity IoT Edge:

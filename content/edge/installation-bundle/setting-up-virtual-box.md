@@ -3,7 +3,7 @@ weight: 90
 title: Example setup for VirtualBox
 layout: redirect
 aliases:
-  - /edge/installation/setting-up-virtual-box
+  - /edge/installation/#setting-up-virtual-box
 ---
 
 ### Setting up VirtualBox

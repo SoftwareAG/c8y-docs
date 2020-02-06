@@ -3,7 +3,7 @@ weight: 30
 title: Configuration
 layout: redirect
 aliases:
-  - /edge/installation/configuration
+  - /edge/installation/#configuration
 ---
 
 ### Preparation

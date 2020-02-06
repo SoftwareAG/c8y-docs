@@ -1,21 +1,22 @@
 ---
 weight: 61
 title: Zwei-Faktor-Authentifizierung
-layout: redirect
 ---
 
-Die Zwei-Faktor-Authentifizierung (TFA, two-factor authentication) ist eine weitere Sicherheitsebene, die neben einem Benutzernamen und einem Passwort auch eine SMS-Bestätigung erfordert. TFA kann nur von Administratoren eingerichtet werden. Wenn TFA aktiviert ist, kann es nicht in den "Benutzereinstellungen" konfiguriert werden, sondern nur über die Administrationsoberfläche.
+Die Zwei-Faktor-Authentifizierung (TFA, two-factor authentication) ist eine weitere Sicherheitsebene, die neben einem Benutzernamen und einem Passwort auch eine SMS-Bestätigung erfordert. TFA kann nur von Administratoren eingerichtet werden. Wenn TFA aktiviert ist, kann es nicht in den **Benutzereinstellungen** konfiguriert werden, sondern nur über die Administrationsoberfläche.
 
-> **Info:** Beachten Sie, dass eine Telefonnummer bereitgestellt werden muss, wenn ein Benutzer hinzugefügt wird und TFA aktiviert ist. Wenn Benutzer ohne Telefonnummer versuchen, sich über TFA anzumelden, werden sie in einem separaten Fenster aufgefordert, eine Telefonnummer einzugeben. Ohne Telefonnummer ist eine Anmeldung nicht möglich.
+>**Info**: Wenn ein Benutzer hinzugefügt ist während TFA aktiviert ist, müssen Sie eine Telefonnummer des Benutzers angeben. Wenn Benutzer ohne Telefonnummer versuchen sich über TFA anzumelden, werden die Benutzer in ein Fenster umgeleitet, in dem sie ihre Mobiltelefonnummer eingeben können. Ohne eine Mobiltelefonnummer ist eine Anmeldung nicht möglich.
 
-Auf der Seite **Benutzer** zeigt ein Schlüsselsymbol rechts neben der Passwortstärke im Benutzereintrag an, wenn für einen Benutzer TFA aktiviert ist.
+Ob TFA für einen bestimmten Benutzer aktiviert ist, können Sie überprüfen, indem Sie die Seite **Benutzer** aufrufen und in der Spalte "TFA-Status" rechts neben der Spalte "Passwortstärke" nachsehen. Ein Schlüsselsymbol weist darauf hin, dass TFA aktiviert ist.
 
-<img src="/images/benutzerhandbuch/admin-tfa-status.png" alt="TFA-Status" style="max-width: 100%">
+![TFA status](/images/benutzerhandbuch/Administration/admin-user-tfa-enabled.png)
 
-Um für einen Benutzer Zwei-Faktor-Authentifizierung zu aktivieren, führen Sie folgende Schritte aus:
+### Um für einen Benutzer Zwei-Faktor-Authentifizierung zu aktivieren
 
-*   Klicken Sie auf den gewünschten Benutzer in der Seite **Benutzer**.
-*   Aktivieren Sie die Checkbox **Zwei-Faktor-Authentifizierung aktivieren**.
-*   Klicken Sie **Speichern**.
+1. Klicken Sie auf den gewünschten Benutzer in der Seite **Benutzer**.
+2. Aktivieren Sie die Checkbox **Zwei-Faktor-Authentifizierung aktivieren**.
+3. Klicken Sie **Speichern**.
 
-<img src="/images/benutzerhandbuch/admin-tfa-enabled.png" alt="TFA aktivieren" style="max-width: 100%">
+![Enable TFA](/images/benutzerhandbuch/Administration/admin-user-enable-tfa.png)
+
+In der Seite **Benutzer**, wird der Benutzer als TFA-fähig angezeigt.

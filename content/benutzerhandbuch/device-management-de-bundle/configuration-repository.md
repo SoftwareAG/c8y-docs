@@ -5,63 +5,62 @@ layout: redirect
 ---
 
 
-In Cumulocity können Sie Konfigurationsdaten von einem Gerät abrufen oder aus einer Datei laden und diese in einem Konfigurations-Repository speichern und verwalten. Konfigurationsdaten enthalten die Grundeinstellungen und Parameter eines Geräts. 
+In Cumulocity können Sie Konfigurationsdaten von einem Gerät abrufen oder aus einer Datei laden und diese in einem Konfigurations-Repository speichern und verwalten. Konfigurationsdaten enthalten die Grundeinstellungen und Parameter eines Geräts.
 
 Solche Konfigurationssnapshots sind beispielsweise nützlich, um die gleiche Konfiguration auf mehrere Geräte anzuwenden, wie im Folgenden beschrieben. 
 
-Klicken Sie **Konfigurations-Repository** im Menü **Management** im Navigator, um alle verfügbaren Konfigurationen anzuzeigen. Jeder Eintrag enthält den Konfigurationsnamen, das Gerät, von welchem die Konfiguration stammt und den Zeitpunkt des Uploads.  
+Weitere Informationen zum Konfigurationsmanagement finden Sie auch unter [Device management library > Configuration management](/reference/device-management/#configuration-management) im Reference Guide.
 
-![Konfigurations-Repository](/images/benutzerhandbuch/DeviceManagement/devmgmt-management-configrepo.png)
+Klicken Sie **Konfigurations-Repository** im Menü **Management** im Navigator, um alle verfügbaren Konfigurationen anzuzeigen. Jeder Eintrag enthält den Konfigurationsnamen, das Gerät, von welchem die Konfiguration stammt und den Zeitpunkt des Uploads.
 
-Um einen Konfigurationssnapshot zu öffnen, klicken Sie auf den entsprechenden Eintrag. Sie können die Angaben hier bearbeiten. Klicken Sie **Speichern**,um Ihre Änderungen zu speichern. Nähere Informationen zu den einzelnen Feldern finden Sie im nächsten Abschnitt. 
+![Configuration repository](/images/benutzerhandbuch/DeviceManagement/devmgmt-configuration-repository.png)
 
-![Konfigurationssnapshot](/images/benutzerhandbuch/DeviceManagement/devmgmt-management-configrepoedit.png)
+Um einen Konfigurationssnapshot zu öffnen, klicken Sie auf den entsprechenden Eintrag. Sie können die Angaben hier bearbeiten. Klicken Sie **Speichern**, um Ihre Änderungen zu speichern. Nähere Informationen zu den einzelnen Feldern finden Sie im nächsten Abschnitt.
 
-### Hinzufügen einer Snapshot-Konfiguration aus einer Datei 
+![Configuration snapshot details](/images/benutzerhandbuch/DeviceManagement/devmgmt-configuration-snapshot-details.png)
 
-Um eine neue Konfiguration aus einer Datei hinzuzufügen, führen Sie folgende Schritte aus:
+### So fügen Sie eine Snapshot-Konfiguration aus einer Datei hinzu
 
 1. Klicken Sie **Konfigurationssnapshot hinzufügen** rechts in der oberen Menüleiste. 
-2. Geben Sie im folgenden Fenster einen eindeutigen Namen und eine optionale Beschreibung für die Konfiguration ein. 
-3. Geben Sie im Feld **Gerätetyp** einen Gerätetypen ein. Den Gerätetypen finden Sie in der Registerkarte **Info** des Zielgeräts. 
-4. Wählen Sie die Datei mit dem Konfigurationssnapshot, indem Sie eine Datei von Ihrem Computer hochladen, eine externe URL bereitstellen oder eine vorhandene Datei auswählen. 
-5. Klicken Sie **Konfigurationssnapshot hinzufügen**, um Ihre Einstellungen zu speichern. 
+2. Geben Sie im darauf folgenden Dialog einen eindeutigen Namen und eine optionale Beschreibung für die Konfiguration ein.
+3. Geben Sie im Feld **Gerätetyp** einen Gerätetypen ein. Den Gerätetypen finden Sie in der Registerkarte **Info** des Zielgeräts.
+4. Klicken Sie unter **Datei mit Konfigurationssnapshot** auf eine der verfügbaren Optionen, um die Datei auszuwählen:
+ 
+	* 	Hochladen - Dient zum Hochladen einer Datei aus ihrem Dateisystem.
+	* 	Externe URL - Dient zum Bereitstellen einer externen URL.
+	* 	Datei auswählen - Dient zum Auswählen einer Datei aus einer Liste.
+
+5. Klicken Sie **Konfigurationssnapshot hinzufügen**, um Ihre Einstellungen zu speichern.
 
 Der Snapshot wird dem Konfigurations-Repository hinzugefügt.
 
-![Konfigurationssnapshot hinzufügen](/images/benutzerhandbuch/DeviceManagement/devmgmt-management-configrepo-addsnapshot.png)
 
-
-### Laden eines Snapshots von einem Gerät
+### So laden Sie einen Snapshot von einem Gerät
 
 Neben dem Hinzufügen einer Konfiguration aus einer Datei können Sie auch eine Konfiguration hinzufügen, indem Sie diese von einem Gerät abrufen.
 
-Um eine Konfiguration von einem Gerät zu laden, führen Sie folgende Schritte aus:
+1. Navigieren Sie zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte **Konfiguration**. 
+2. Klicken Sie **Neuen Snapshot vom Gerät laden** rechts oben unter **Konfigurationssnapshot**. 
 
-1. Navigieren Sie zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte  **Konfiguration**. 
-2. Klicken Sie **Neuen Snapshot vom Gerät laden** rechts oben unter **Konfigurationssnapshot**.
-
-Der geladene Snapshot wird zum Konfigurations-Repository hinzugefügt.
+Der geladene Snapshot wird dem Konfigurations-Repository hinzugefügt.
 
 ![Retrieve snapshot](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
 
-### Anwenden eines Konfigurationssnapshots auf ein Gerät
+### So wenden Sie einen Konfigurationssnapshot auf ein Gerät an
 
-Um einen Konfigurationssnapshot auf ein Gerät anzuwenden, führen Sie folgende Schritte aus:
-
-1. Navigieren Sie zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte  **Konfiguration**. 
+1. Navigieren Sie zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte **Konfiguration**. 
 2. Wählen Sie unter **Konfigurationssnapshot** eine Konfiguration aus der Auswahlliste.
-3. Klicken Sie **Snapshot an Gerät senden**, um den ausgewählten Snapshot an das Gerät zu senden. 
+3. Klicken Sie **Snapshot an Gerät senden**, um den ausgewählten Snapshot an das Gerät zu senden.
 
-![Senden eines Snapshots](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
+![Apply snapshot](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
 
-### Anwenden des Konfigurationssnapshots eines Geräts auf ein anderes Gerät
+### So wenden Sie den Konfigurationssnapshot eines Geräts auf ein anderes Gerät an
 
-Um den Konfigurationssnapshot eines Geräts auf ein anderes Gerät anzuwenden, führen Sie folgende Schritte aus:
-
-1. Navigieren Sie zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte  **Konfiguration**. 
+1. Navigieren Sie zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte **Konfiguration**.
 2. Klicken Sie **Neuen Snapshot vom Gerät laden** rechts oben unter **Konfigurationssnapshot**.
-3. Navigieren Sie zu dem anderen Gerät und wechseln Sie zur Registerkarte  **Konfiguration**. 
+3. Navigieren Sie zu dem anderen Gerät und wechseln Sie zur Registerkarte **Konfiguration**.
 4. Wählen Sie unter **Konfigurationssnapshot** die neue Konfiguration aus der Auswahlliste und klicken Sie **Snapshot an Gerät senden**.
  
 >**Info**: Wenn Sie eine Konfiguration von einem Gerät auf ein anderes anwenden, enthält die Konfiguration möglicherweise gerätespezifische Daten.
+
+

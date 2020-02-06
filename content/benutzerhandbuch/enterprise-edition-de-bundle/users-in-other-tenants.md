@@ -1,46 +1,75 @@
 ---
-weight: 21
-title: Support für Benutzer in anderen Mandanten
+weight: 50
+title: Supportbenutzerzugriff
 layout: redirect
+slug: support-user-access
 ---
 
 
-Supportbenutzer sind Benutzer im Management-Mandanten, die über die spezielle Berechtigung verfügen, sich als andere Benutzer des Mandanten anmelden zu können. Nehmen wir an, Sie erhalten eine Support-Anfrage von einem Benutzer "john" im Mandanten "acme.cumulocity.com". Der Benutzer kann eine bestimmte Funktion nicht verwenden und Sie vermuten, dass es sich um ein Berechtigungsproblem handelt. Ihr Benutzername im Management-Mandanten ist "jill" und Sie haben die Berechtigung, Support für "acme.cumulocity.com" zu leisten. In diesem Fall melden Sie sich auf "acme.cumulocity.com" mit dem Benutzernamen "jill&#36;john" und Ihrem Passwort für "jill" an. Nun können Sie reproduzieren, was "john" sieht.
+Mit der Funktion "Supportbenutzerzugriff" können sich Supportbenutzer, d. h. Benutzer des Management-Mandanten mit spezifischen Berechtigungen, bei Konten von Benutzern anderer Untermandanten anmelden, um bei Problemen Hilfe zu leisten.
+
+Hierzu muss der Supportbenutzerzugriff aktiviert sein. Dies kann global auf Plattform-Ebene oder auf Benutzerebene erfolgen, wie unten beschrieben. 
+
+
+### <a name="configuring-support-access"></a>Konfigurieren von Supportbenutzerzugriff
+
+Supportbenutzerzugriff kann auf verschiedenen Ebenen aktiviert werden.
+
+**Plattform-Ebene**
+
+Der Management-Mandant kann den Supportbenutzerzugriff für alle Untermandanten auf Plattform-Ebene aktivieren. Dies erfolgt auf der Seite **Konfiguration**, siehe [Anpassen der Plattform](/benutzerhandbuch/enterprise-edition#configuration). 
+
+Wenn Supportbenutzerzugriff aktiviert ist, können sich Supportbenutzer bei jedem Untermandanten als beliebiger Benutzer anmelden, sofern dies nicht auf Untermandanten-Ebene außer Kraft gesetzt ist. Untermandanten-Benutzer können den Zugriff nicht selbst aktivieren/deaktivieren. Wenn Supportbenutzerzugriff deaktiviert ist, können sich Supportbenutzer nur bei Untermandanten anmelden, für die mindestens ein Benutzer diesen Zugriff explizit ermöglicht hat, siehe folgende Beschreibung.
+
+**Untermandanten-/Benutzerebene** 
+
+Wenn Supportbenutzerzugriff auf der Plattform-Ebene deaktiviert ist, kann er immer noch durch einen Untermandanten-Benutzer aktiviert werden. Dies erfolgt durch Klicken auf **Support aktivieren** im Menü **Benutzer**, siehe [Erste Schritte > Benutzeroptionen und -einstellungen](/benutzerhandbuch/getting-started#user-settings). 
+
+Der Supportzugriff ist dann nicht auf den Benutzer beschränkt, der ihn aktiviert hat, sondern gilt für alle Benutzer des Untermandanten. Dies ist notwendig, um Probleme mit Rollen/Rechten nachvollziehen zu können.
+
+Nachdem ein Benutzer den Supportzugriff aktiviert hat, ändert sich der Menüpunkt auf **Support deaktivieren**, so dass der Benutzer eine ausstehende Supportanfrage deaktivieren kann, die sich erübrigt hat, bevor sie abläuft.
+
+Die Dauer der aktiven Supportanfrage ist auf Plattform-Ebene konfigurierbar (der Standardwert ist 24 Stunden), siehe [Anpassen der Plattform](/benutzerhandbuch/enterprise-edition#configuration).
+
+Jede neue Supportanfrage verlängert die Supportdauer um die angegebene Anzahl von Stunden. Nachdem die letzte Supportanfrage in einem Untermandanten abgelaufen ist oder vom Benutzer aktiv deaktiviert wurde, wird der Supportbenutzerzugriff für den Untermandanten sofort deaktiviert (sofern er nicht global aktiviert ist). 
+
+Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [Verwalten von Mandanten](/benutzerhandbuch/enterprise-edition#managing-tenants).
 
 ### Konfigurieren von Supportbenutzern
 
-Es gibt zwei verschiedene Einstellungen für Supportbenutzer in Cumulocity:
+Es gibt zwei verschiedene Einstellungen für Supportbenutzer in Cumulocity: 
 
-*   Ein Service Provider konfiguriert bestimmte Berechtigungen für Benutzer des Management-Mandanten, die Ihnen ermöglichen, Support zu leisten.
-*   Benutzer eines Mandanten fragen Support an und erteilen so Benutzern des Management-Mandanten Zugriff.
+- Ein Service Provider konfiguriert bestimmte Berechtigungen für Benutzer des Management-Mandanten, die diesen ermöglichen, Support zu leisten.
+- Benutzer eines Mandanten fragen Support an und erteilen so Benutzern des Management-Mandanten Zugriff.
 
 > **Info:** Die Supportbenutzer-Funktion funktioniert nicht, wenn der Supportbenutzer Zwei-Faktor-Authentifizierung aktiviert, aber keine Telefonnummer hinterlegt hat. Die Telefonnummer muss zunächst hinterlegt werden, um sich als Supportbenutzer einloggen zu können.
 
 **Berechtigung über den Management-Mandanten**
 
-Damit ein Benutzer des Management-Mandanten für Benutzer in anderen Mandanten Support leisten kann, müssen Sie dem Benutzer entweder die globale Berechtigung "Support" oder die Stammdatenrolle "Support" (jeweils "Lesen" und "Ändern") zuweisen.
+Damit ein Benutzer des Management-Mandanten für Benutzer in anderen Mandanten Support leisten kann, müssen Sie dem Benutzer entweder die globale Berechtigung "Support" oder die Stammdatenrolle "Support" (jeweils LESEN und AKTUALISIEREN) zuweisen.
 
-Über die Stammdatenrolle "Support" können Sie dediziert die Supportberechtigung für einzelne Benutzer zuweisen. Erstellen Sie eine Gruppen der Mandanten, denen der Benutzer Support geben soll und weisen Sie dem Benutzer und der Gruppe die Stammdatenrolle zu wie unter [Zuweisen von Stammdatenrollen](/benutzerhandbuch/administration#attach-inventory) beschrieben.
+Mit der Stammdatenrolle "Support" können Sie einzelnen Benutzern selektiv Support zuweisen. Erstellen Sie eine Gruppe der Mandanten, die der Benutzer unterstützen soll, und weisen Sie dann die Stammdatenrolle dem Benutzer und der Gruppe zu, wie unter [Administration > Verwalten von Berechtigungen > Zuweisen von Stammdatenrollen](/benutzerhandbuch/administration#attach-inventory) beschrieben.
 
 **Vom Benutzer erteilte Berechtigung**
 
-Benutzer können Support anfragen und einem Benutzer des Management-Mandanten erlauben, sich an ihrem Konto anzumelden. Klicken Sie auf die **Benutzer**-Schaltfläche rechts in der oberen Leiste und wählen Sie im Kontextmenü **Supportanfrage stellen**. Füllen Sie im folgenden Fenster das Formular aus.
+Benutzer können Support anfragen und einem Benutzer des Management-Mandanten erlauben, sich an ihrem Konto anzumelden. Klicken Sie hierzu auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie im Kontextmenü **Supportbenutzer aktivieren**. Weitere Informationen finden Sie unter [Erste Schritte > Benutzeroptionen und -einstellungen](/benutzerhandbuch/getting-started#user-settings).
 
-<img src="/images/users-guide/ee-support-request.png" alt="Support ermöglichen" style="max-width: 50%">
 
-### Melden Sie sich als Supportbenutzer an.
+### So melden Sie sich als Supportbenutzer an
 
 Verwenden Sie den folgenden Benutzernamen, um sich als Supportbenutzer anzumelden:
 
-    <Supportbenutzer>$<Benutzer>
+```
+<support user>$<user>
+```
 
-"Supportbenutzer" ist der Supportbenutzer im Management-Mandanten, der den Support ausführt. "user" ist der unterstützte Benutzer.
+`support user` ist der Benutzer im Management-Mandanten, der den Support ausführt. `user` ist der unterstützte Benutzer.
 
-Alternativ können Sie
+Alternativ können Sie verwenden.
 
-    <Supportbenutzer>$
-
-verwenden.
+```
+<support user>$
+```
 
 In diesem Fall greift der Supportbenutzer über einen der Administrationsbenutzer auf den Mandanten zu.
 
@@ -48,6 +77,11 @@ In diesem Fall greift der Supportbenutzer über einen der Administrationsbenutze
 
 Audit-Logs werden für jeden Zugriff eines Supportbenutzers erstellt sowie für jede ausgeführte Aktion. In der Spalte "Wer?" wird der Name des Autors folgendermaßen angezeigt:
 
-    "Supportbenutzer$Benutzer"
+```
+"support_user$user"
+```
+	
+	
+### Beispiel
 
-
+Nehmen wir an, Sie erhalten eine Supportanfrage von einem Benutzer "john" im Mandanten `acme.cumulocity.com`. Der Benutzer kann eine bestimmte Funktion nicht verwenden und Sie vermuten, dass es sich um ein Berechtigungsproblem handelt. Ihr Benutzername im Management-Mandanten ist "jill" und Sie haben die Berechtigung, Support für `acme.cumulocity.com` zu leisten. In diesem Fall melden Sie sich auf `acme.cumulocity.com` mit dem Benutzernamen "jill&#36;john" und Ihrem Passwort für "jill" an. Nun können Sie reproduzieren, was "john" sieht. 

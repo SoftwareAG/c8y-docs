@@ -27,6 +27,20 @@ The following common error response codes can be expected for all requests:
 
 Any other response codes that can be expected from a specific request are given below.
 
+### Common field descriptions
+
+The following common fields are available with the responses, depending on the operation:
+
+| Field       | Description                                                  |
+| ----------- | ------------------------------------------------------------ |
+| contents    | The full contents of the EPL file.                           |
+| description | A description of the file.                                   |
+| errors      | A list of all compilation errors in the file, if any, with line numbers and text. |
+| id          | A unique identifier of the file.                             |
+| name        | The name provided for this bit of EPL.                       |
+| state       | Whether the EPL is injected into the correlator and running. This can either be `active` or `inactive`. |
+| warnings    | A list of all compilation warnings in the file, if any, with line numbers and text. |
+
 ### GET - Retrieve all available EPL files
 
 Endpoint: `/service/cep/eplfiles`
@@ -62,15 +76,6 @@ Example value for response code 200:
   ]
 }
 ```
-
-where
-
-- `description` is a description of the file.
-- `errors` is a list of all compilation errors in the file, if any, with line numbers and text.
-- `id` is a unique identifier of the file.
-- `name` is the name provided for this bit of EPL.
-- `state` is whether the EPL is injected into the correlator and running. This can either be `active` or `inactive`.
-- `warnings` is a list of all compilation warnings in the file, if any, with line numbers and text.
 
 ### GET - Retrieve all available EPL files with their contents
 
@@ -112,16 +117,6 @@ Example value for response code 200:
 }
 ```
 
-where
-
-- `contents` is the full contents of the EPL files.
-- `description` is a description of the file.
-- `errors` is a list of all compilation errors in the file, if any, with line numbers and text.
-- `id` is a unique identifier of the file created.
-- `name` is the name provided for this bit of EPL.
-- `state` is whether the EPL is injected into the correlator and running. This can either be `active` or `inactive`.
-- `warnings` is a list of all compilation warnings in the file, if any, with line numbers and text.
-
 ### GET - Retrieve EPL file by identifier
 
 Endpoint: `/service/cep/eplfiles/{id}`
@@ -159,16 +154,6 @@ Example value for response code 200:
 }
 ```
 
-where
-
-- `contents` is the full EPL contents of the file.
-- `description` is a description of the file.
-- `errors` is a list of all compilation errors in the file, if any, with line numbers and text.
-- `id` is a unique identifier of the file created.
-- `name` is the name provided for this bit of EPL.
-- `state` is whether the EPL is injected into the correlator and running. This can either be `active` or `inactive`.
-- `warnings` is a list of all compilation warnings in the file, if any, with line numbers and text.
-
 ### POST - Create a new EPL application
 
 Endpoint: `/service/cep/eplfiles`
@@ -188,12 +173,11 @@ Endpoint: `/service/cep/eplfiles`
 }
 ```
 
-where
+Note the following:
 
-- `name` is the name provided for this bit of EPL. To avoid a clash with other files, this name is used for the package of the file (rather than a user-provided package). It must be valid to use as an EPL identifier which consists of letters and numbers only. The name must be unique across all EPL files. 
-- `contents` is the full EPL contents. Make sure to provide safely escaped content.
-- `state` is whether the EPL is injected into the correlator and running. This can either be `active` or `inactive`.
-- `description` is a description of this EPL file. This is optional and can be empty.
+- To avoid a clash with other files, the `name` is used for the package of the file (rather than a user-provided package). It must be valid to use as an EPL identifier which consists of letters and numbers only. The name must be unique across all EPL files. 
+- Make sure to provide safely escaped `contents`.
+- `description` is optional and can be empty.
 
 
 #### Responses
@@ -243,15 +227,6 @@ Example for response code 201 when created with warnings or errors:
 }
 ```
 
-where
-
-- `description` is a description of the file (same as request).
-- `errors` is a list of all compilation errors in the file, if any, with line numbers and text.
-- `id` is a unique identifier of the file created.
-- `name` is the name provided for this bit of EPL (same as request).
-- `state` is whether the EPL is injected into the correlator and running. This can either be `active` or `inactive`.
-- `warnings` is a list of all compilation warnings in the file, if any, with line numbers and text.
-
 ### PUT - Update EPL file by identifier
 
 Endpoint: `/service/cep/eplfiles/{id}`
@@ -277,12 +252,7 @@ Endpoint: `/service/cep/eplfiles/{id}`
 }
 ```
 
-where
-
-- `name` is the name provided for this bit of EPL. To avoid a clash with other files, this name is used for the package of the file (rather than a user-provided package). It must be valid to use as an EPL identifier which consists of letters and numbers only. The name must be unique across all EPL files. 
-- `contents` is the full EPL contents. Make sure to provide safely escaped content.
-- `state` is whether the EPL is injected into the correlator and running. This can either be `active` or `inactive`.
-- `description` is a description of this EPL file. This is optional and can be empty.
+See also the information given for the POST request.
 
 #### Responses
 
@@ -330,8 +300,6 @@ Example value for response code 200 when updated with errors or warnings:
   ]
 }
 ```
-
-See the POST operation for the descriptions of these fields.
 
 ### DELETE - Delete EPL file by identifier
 

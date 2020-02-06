@@ -2,6 +2,8 @@
 weight: 20
 title: Aufrufen und Anmelden an der Cumulocity-Plattform
 layout: redirect
+aliases:
+  - /benutzerhandbuch/overview#accessing-cumulocity-platform
 ---
 
 

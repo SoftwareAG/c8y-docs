@@ -22,7 +22,7 @@ Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokument
 |[Smart Rules-Sammlung](#smart-rules-collection)|Verwenden Sie [globale Smart Rules](#smart-rules-collection), um Regeln zu konfigurieren, etwa für Geofencing, Alarmeskalation oder Benachrichtigungen (SMS/E-Mail/Sprache). Beschreibt detailliert jede Smart Rule und ihre konfigurierbaren Parameter.
 
 
-Mehr über allgemeine Aspekte der Cumulocity-Plattform und ihrer Anwendungen erfahren Sie unter [Erste Schritte](/benutzerhandbuch/getting-started/).
+Mehr über allgemeine Aspekte der Cumulocity-Plattform und ihrer Anwendungen erfahren Sie unter [Erste Schritte](/benutzerhandbuch/getting-started-de/).
 
 ### <a name="home"></a>Startseite
 

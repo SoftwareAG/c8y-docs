@@ -2,7 +2,8 @@
 weight: 10
 title: Erste Schritte
 layout: bundle
-slug: overview
+aliases:
+  - /benutzerhandbuch/overview
 ---
 
 

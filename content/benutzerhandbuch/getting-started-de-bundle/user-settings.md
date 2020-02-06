@@ -2,6 +2,8 @@
 weight: 50
 title: Benutzeroptionen und -einstellungen
 layout: redirect
+aliases:
+  - /benutzerhandbuch/overview#user-settings
 ---
 
 

@@ -2,6 +2,8 @@
 weight: 30
 title: Cumulocity-Anwendungen
 layout: redirect
+aliases:
+  - /benutzerhandbuch/overview#cumulocity-applications
 ---
 
 

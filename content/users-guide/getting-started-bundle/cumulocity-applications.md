@@ -2,6 +2,8 @@
 weight: 30
 title: Cumulocity applications
 layout: redirect
+aliases:
+  - /users-guide/overview#cumulocity-applications
 ---
 
 Per default, Cumulocity comes with the following three standard applications:

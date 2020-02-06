@@ -12,7 +12,7 @@ Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen de
 - Einstellungen für die Enterprise Edition konfigurieren, siehe [Enterprise Edition](#config-platform).
 - [Konnektivitätseinstellungen](#connectivity) verwalten.
 
-### <a name="single-sign-on"></a>Single Sign-On konfigurieren
+### <a name="single-sign-on"></a>Konfigurieren von Single Sign-On
 
 Cumulocity bietet Single-Sign-On-Funktionalität, die es dem Anwender ermöglicht, sich mit einem einzigen 3rd-Party-Autorisierungsserver über ein OAuth2-Protokoll, beispielsweise Azure Active Directory, anzumelden. Aktuell wird die Vergabe von Autorisierungscodes nur mit Access Tokens im JWT-Format unterstützt.
 
@@ -159,7 +159,7 @@ Die Kontexte des Tokens werden im JSON-Format dargestellt.
 ![Audit token content](/images/benutzerhandbuch/Administration/admin-sso-audit-token.png)
 
 
-### <a name="default-app"></a>Anwendungseinstellungen ändern
+### <a name="default-app"></a>Ändern von Anwendungseinstellungen
 
 Klicken Sie **Anwendung**, um Anwendungseinstellungen zu bearbeiten.
 
@@ -178,7 +178,7 @@ Die Einstellung **Zulässige Domain** ermöglicht es Ihren JavaScript-Webanwendu
 
 Weitere Information erhalten Sie unter [http://enable-cors.org](http://enable-cors.org).
 
-### <a name="authentication"></a>Authentifizierungseinstellungen ändern
+### <a name="authentication"></a>Ändern von Authentifizierungseinstellungen
 
 Klicken Sie **Authentifizierung** im Menü **Einstellungen**, wenn Sie die Anmelde- oder TFA-Einstellungen ändern möchten.
 
@@ -230,7 +230,7 @@ Sie können eine der folgenden Optionen wählen:
 
 Klicken Sie **TFA-Einstellungen speichern**, um Ihre Einstellungen zu speichern.
 
-### <a name="properties"></a>Attributsbibliothek verwalten
+### <a name="properties"></a>Verwalten der Attributsbibliothek
 
 Klicken Sie **Attributsbibliothek** im Menü **Einstellungen**, um Stammdaten-Objekten, Alarmen, Ereignissen und Mandanten benutzerdefinierte Attribute hinzuzufügen.
 
@@ -366,7 +366,7 @@ Klicken Sie **Konfiguration speichern**, um Ihre Eingaben zu speichern.
 
 Für Enterprise Tenants stehen zusätzliche Funktionen zur Verfügung, siehe [Enterprise Tenant > Anpassen der Plattform](/benutzerhandbuch/enterprise-edition#customization).
 
-### <a name="connectivity"></a>Konnektivitätseinstellungen verwalten
+### <a name="connectivity"></a>Verwalten der Konnektivitätseinstellungen
 
 Auf der Seite **Connectivity** können Sie Zugangsdaten für verschiedene Anbieter verwalten. Zum Hinzufügen oder Ersetzen von Zugangsdaten sind ADMIN-Berechtigungen erforderlich.
 

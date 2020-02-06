@@ -2,6 +2,8 @@
 weight: 50
 title: User options and settings
 layout: redirect
+aliases:
+  - /users-guide/overview#user-settings
 ---
 
 Clicking the **User** button at the top right will open a menu which provides access to various actions or information.

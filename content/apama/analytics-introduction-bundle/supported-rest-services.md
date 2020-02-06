@@ -8,6 +8,8 @@ Apama EPL Apps is designed to listen for REST (Representational State Transfer) 
 
 To perform these operations, you must have READ and ADMIN permissions for "CEP management" (see also [Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*).
 
+> **Info**: This API requires version 10.6 or above of the Apama-ctrl microservice.
+
 ### Request headers for all operations
 
 Each request must be authenticated to Cumulocity IoT.

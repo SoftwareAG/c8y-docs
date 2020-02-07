@@ -476,8 +476,9 @@ Following are the available keys used in the configuration file:
 |smtp.server.port|SMTP port to be used by the utility while sending support email
 |smtp.username|SMTP username to be used by the utility while sending support email
 |smtp.password|SMTP password to be used by the utility while sending support email
-|components.for.log.backup|Components for which log backup has to be done <br> Valid component names - cumulocity, mongodb, nginx, opcua, smartrule, apama, cumulocity-agent, monit, diagnostic-utility, post-installer
+|components.for.log.backup|Components for which log backup has to be done
 |components.for.configuration.backup|Components for which configuration backup has to be done
 |report.directory|Report directory where the diagnostic reports have to be placed
 |{component-name}.log.path|Absolute log path of components who do not use /var/log as their logging directory
 
+In the table above, the word 'component' refers to valid component names: cumulocity, mongodb, nginx, opcua, smartrule, apama, cumulocity-agent, monit, diagnostic-utility, post-installer.

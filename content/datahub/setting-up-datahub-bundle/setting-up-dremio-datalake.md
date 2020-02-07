@@ -8,8 +8,6 @@ The setup of DataHub requires the administrator to choose a Dremio account name,
 
 ### Defining new settings
 
-<img src="/images/datahub-guide/datahub-settings.png" alt="DataHub settings"  style="max-width: 100%">
-
 #### Dremio Account
 Under **Dremio Account** name and password of the Dremio account are defined. 
 

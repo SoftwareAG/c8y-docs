@@ -85,7 +85,7 @@ Click **Delete** to delete a configuration. You can only delete an offloading pi
 Data in the data lake which has already been exported by this offloading pipeline is not deleted. To delete the actual data in your data lake, please use the tooling offered by the data lake provider, e.g. AWS S3 Console or Azure Storage Explorer. 
 ##### Monitoring an offloading pipeline
 
-Click **Show offloading history** to examine the execution history of a pipeline. See section [History per offloading job](/datahub/monitoring-offloaded#history-per-offloading-job) for more details.
+Click **Show offloading history** to examine the execution history of a pipeline. See section [Monitoring offloading jobs](/datahub/working-with-datahub/#monitoring-offloading-jobs) for more details.
 
 <a id="scheduling-an-offloading-job"></a>
 
@@ -156,7 +156,7 @@ The alarms collection keeps track of alarms. An alarm may change its state over 
 * alarms_all: a view with the updates between two offloading executions, not including the intermediate updates. For example, after the first offloading execution, the status of an alarm is ACTIVE. Then it changes its state from ACTIVE to INACTIVE and afterwards back to ACTIVE. When the next offloading is executed, it will persist the latest status ACTIVE, but not the intermediate status INACTIVE (because it happened between two offloading runs and thus is not seen by DataHub).
 * alarms_latest: a view with the latest status of all alarms, with all previous transitions being discarded.
 
-Both views are provided in your Dremio space. For details on views and spaces in Dremio see section [Refining Offloaded Cumulocity Data](/datahub/refining-offload/).
+Both views are provided in your Dremio space. For details on views and spaces in Dremio see section [Refining Offloaded Cumulocity Data](/datahub/working-with-datahub/#refining-offloaded).
 
 ### Offloading the events collection
 
@@ -197,7 +197,7 @@ The inventory collection keeps track of managed objects. Note that DataHub autom
 * inventory_all: a view with the updates between two offloading executions, not including the intermediate updates. For example, after the first offloading execution, the status of a device is ACTIVE. Then it changes its state from ACTIVE to INACTIVE and afterwards to ERROR. When the next offloading is executed, it will persist the status ERROR, but not the intermediate status INACTIVE (because it happened between two offloading runs and thus is not seen by DataHub).
 * inventory_latest: a view with the latest status of all managed objects, with all previous transitions being discarded.
 
-Both views are provided in your Dremio space. For details on views and spaces in Dremio see section [Refining Offloaded Cumulocity Data](/datahub/refining-offload/).
+Both views are provided in your Dremio space. For details on views and spaces in Dremio see section [Refining Offloaded Cumulocity Data](/datahub/working-with-datahub/#refining-offloaded).
 
 ### Offloading the measurements collection
 

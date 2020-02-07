@@ -56,7 +56,7 @@ You can filter the entries by their status by using the filter control at the to
 
 For a given compaction job, you can examine additional details of its execution. 
 
-Select a compaction job overview as described in section [Compaction history per offloading job](/datahub/monitoring-offloaded#history-compaction-per-offloading-job) or in section [Status of all compaction jobs](/datahub/status-of-all-compaction-jobs). In the corresponding list of jobs click on the job you are specifically interested in. A details view encompasses the following information:
+Select a compaction job overview in the compaction history per offloading job or in the status of all compaction jobs. In the corresponding list of jobs click on the job you are specifically interested in. A details view encompasses the following information:
 
 **Execution schedule**
 

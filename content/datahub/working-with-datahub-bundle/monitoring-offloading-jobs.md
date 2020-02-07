@@ -62,7 +62,7 @@ For a given offloading job, you can examine additional details of its execution.
 
 >**Info**: You need administration permissions to access the job details.
 
-Select a job overview as described in section [History per offloading job](/datahub/monitoring-offloaded#history-per-offloading-job) or in section [Status of all offloading jobs](/datahub/status-of-all-offloading-jobs). In the corresponding list of jobs click on the job you are specifically interested in. A details view encompasses the following information:
+Select a job overview in the history per offloading job or in the status of all offloading jobs. In the corresponding list of jobs click on the job you are specifically interested in. A details view encompasses the following information:
 
 **Execution schedule**
 

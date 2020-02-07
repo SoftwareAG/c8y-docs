@@ -17,7 +17,7 @@ For those tasks the default role **DATAHUB_ADMINISTRATOR** is created. The permi
 |:---|:---|:---|
 |Cdh configure|yes|yes|
 |Cdh manage|yes|yes|
-|Cdh use|no|yes|
+|Cdh use|yes|no|
 
 #### DataHub configurator
 The configurator manages offloading pipelines, e.g., defining and starting a pipeline. For those tasks the default role **DATAHUB_MANAGER** is created. The permissions for this role are defined as follows:
@@ -29,7 +29,7 @@ The configurator manages offloading pipelines, e.g., defining and starting a pip
 |Cdh use|yes|no|
 
 #### DataHub user
-The user runs queries against the data in the data lake. For details see section [Querying offloaded Cumulocity data](/datahub/querying-offloaded). To run queries the following approaches can be used:
+The user runs queries against the data in the data lake. For details see section [Querying offloaded Cumulocity data](/datahub/working-with-datahub#querying-offloaded). To run queries the following approaches can be used:
 * Dremio UI: The Dremio account defined in section [Setting up Dremio account and data lake](/datahub/setting-up-datahub#setting-up-dremio-datalake) is used for logging into the UI.
 * Dremio API: The Dremio account defined in section [Setting up Dremio account and data lake](/datahub/setting-up-datahub#setting-up-dremio-datalake) is used for authenticating the requests against the Dremio REST API.
 * DataHub proxy API: The Cumulocity user needs the role **DATAHUB_READER** in order to run queries using the proxy API.

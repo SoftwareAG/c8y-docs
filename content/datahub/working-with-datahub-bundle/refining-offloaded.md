@@ -1,6 +1,6 @@
 ---
 weight: 40
-title: Refining offloading Cumulocity data
+title: Refining offloaded Cumulocity data
 layout: redirect
 ---
 
@@ -45,7 +45,7 @@ When you click on your data source it will be shown in the main panel. Clicking 
 
 #### Spaces
 
-A space in Dremio helps in organizing your data sets. Cumulocity IoT DataHub auto-configures a space which is named `YourTenantIdNameSpace`. A dataset in the space is referred to in queries as `YourTenantIdSpace.YourDataset`. As described in sections [Offloading of inventory collection](/datahub/configuring-offloaded/#offloading-inventory-collection) and [Offloading of alarms collection](/datahub/configuring-offloaded/#offloading-alarms-collection), the inventory and alarms collections already ship two views `inventory_all` and `inventory_latest` which are made available in your space.
+A space in Dremio helps in organizing your data sets. Cumulocity IoT DataHub auto-configures a space which is named `YourTenantIdNameSpace`. A dataset in the space is referred to in queries as `YourTenantIdSpace.YourDataset`. As described in section [Configuring offloading jobs](/datahub/working-with-datahub/#configuring-offloading-jobs), the inventory and alarms collections already ship two views `inventory_all` and `inventory_latest` which are made available in your space.
 
 #### Job history
 
@@ -59,7 +59,7 @@ With Cumulocity IoT DataHub, you can replicate data from a Cumulocity collection
 
 Depending on your use cases, you will often find the need to provide a view on the data, which limits, filters, or transforms the data, e.g. converting Celsius to Fahrenheit or extracting data from JSON fragments.
 
-In Dremio, you can create such a view by defining a corresponding query and saving it as a new dataset. When saving that new dataset, you must select your space as the location and can freely choose a name for the view. Once that is done, you can work with the new dataset as with any other source and run queries against it. This includes in particular querying this view from other clients as described in section [Querying Offloaded Cumulocity Data](/datahub/querying-offloaded/).
+In Dremio, you can create such a view by defining a corresponding query and saving it as a new dataset. When saving that new dataset, you must select your space as the location and can freely choose a name for the view. Once that is done, you can work with the new dataset as with any other source and run queries against it. This includes in particular querying this view from other clients as described in section [Querying offloaded Cumulocity Data](/datahub/working-with-datahub/#querying-offloaded).
 
 > **Info:** Such a view is per default not materialized, i.e., it is not stored persistently. Each time you query the view, the underlying query defining the view is run against the source data.
 

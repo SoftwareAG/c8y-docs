@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Querying offloading Cumulocity data
+title: Querying offloaded Cumulocity data
 layout: redirect
 ---
 

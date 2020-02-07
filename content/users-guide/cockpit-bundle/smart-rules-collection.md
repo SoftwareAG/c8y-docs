@@ -6,11 +6,11 @@ layout: redirect
 
 <a name="business"></a>
 
-Cumulocity includes preset global Smart Rule types. 
+Cumulocity includes preset global smart rule types. 
 
 ![Global smart rules](/images/users-guide/cockpit/cockpit-globalsmartrules.png)
 
-Each global Smart Rule type provides different parameters to configure. 
+Each global smart rule type provides different parameters to configure. 
 
 The following section describes each available type and its configuration properties.
 
@@ -20,7 +20,7 @@ The following section describes each available type and its configuration proper
 
 When an alarm is created, a SMS is sent.
 
->**Info:** This rule is only available if your tenant has a configured SMS provider.
+> **Info:** This rule is only available if your tenant has a configured SMS provider.
 
 **Parameters**
 
@@ -28,18 +28,53 @@ The rule uses the following parameters:
 
 ![On alarm send SMS](/images/users-guide/cockpit/cockpit-globalsmartrules-sendsms.png)
 
-|Step|Field|Description|
-|:---|:---|:---|
-|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
-|2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
-|3|Send SMS:|"Phone number": Target phone number. It is recommended to include mobile country code for all numbers, e.g. "+49" or "0049" for Germany. Multiple numbers can be separated by a comma (",", do not use a space!).<br> "Message": Text of SMS with max. 160 characters. You can use variables of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
-|4|Target asset or devices|Groups or devices the rule shall be applied to.
+<table>
+<thead>
+<colgroup>
+       <col style="width: 10%;">
+       <col style="width: 20%;">
+       <col style="width: 70%;">
+    </colgroup><thead>
+<tr>
+<th align="left">Step</th>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Rule name</td>
+<td align="left">Pre-filled with the name of the rule template. Can be modified according to your needs.</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">On alarm matching</td>
+<td align="left">The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Send SMS</td>
+<td align="left"><strong>Phone number</strong>: Target phone number. It is recommended to include mobile country code for all numbers, e.g. “+49” or “0049” for Germany. Multiple numbers can be separated by a comma (“,”, do not use a space!).<br> <strong>Message</strong>: Text of SMS with max. 160 characters. You can use variables of the form #{name}. Supported variables are listed under “Smart rule variables” below.</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Target asset or devices</td>
+<td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
+If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
+For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>. 
+</td>
+</tr>
+</tbody>
+</table>
+
+you can select a single group or a single device (just one, not multiple). To enable it in other assets or devices you'll have to navigate to each context and enable it there. Afterwards you're able to see all target assets or devices in a list with the title "Active for target asset or devices" in the smart rule detail
 
 **Troubleshooting**
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/users-guide/device-management/#monitoring-and-controlling-devices) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/reference/device-management/) mode. In this case no new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
@@ -57,18 +92,49 @@ The rule uses the following parameters:
 
 ![On alarm send email](/images/users-guide/cockpit/cockpit-globalsmartrules-sendemail.png)
 
-|Step|Field|Description|
-|:---|:---|:---|
-|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
-|2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
-|3|Send e-mail:|"Send to:/Send CC to:/Send BCC to": Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (",", do not use a space!).<br>"Reply to": Address to be used to reply to the message.<br> "Subject": Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.<br> "Message": Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
-|4|Target asset or devices|Groups or devices the rule shall be applied to.
-
-**Troubleshooting**
+<table>
+<thead>
+<colgroup>
+       <col style="width: 10%;">
+       <col style="width: 20%;">
+       <col style="width: 70%;">
+    </colgroup><thead>
+<tr>
+<th align="left">Step</th>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Rule name</td>
+<td align="left">Pre-filled with the name of the rule template. Can be modified according to your needs.</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">On alarm matching</td>
+<td align="left">The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Send e-mail</td>
+<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (“,”, do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under “Smart rule variables” below.<br> <strong>Message</strong>: Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under “Smart rule variables” below.</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Target asset or devices</td>
+<td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
+If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
+For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>. 
+</td>
+</tr>
+</tbody>
+</table>
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/users-guide/device-management/#monitoring-and-controlling-devices) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/reference/device-management/) mode. In this case no new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
@@ -86,19 +152,52 @@ The rule uses the following parameters:
 
 ![On alarm escalate](/images/users-guide/cockpit/cockpit-globalsmartrules-escalate.png)
 
-|Step|Field|Description|
-|:---|:---|:---|
-|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
-|2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
-|3|Escalate as follows:|Escalation steps processed in a chain. <br> Click **Add step** to define at least one step: <br> **Type**: Type of action executed in the step. Possible values are: <br> * Email (see "On alarm send e-mail" rule for parameter descriptions). <br> * SMS (see "On alarm send SMS" rule for parameter descriptions). <br> **Condition**: The condition applied when the rule will be executed. Possible values are: <br> * Always: Action will always be executed. <br> * Always: If step N failed. Only phone steps may fail. The step is marked as failed once all retries have been made without a successful call. This option only appears if there already is a phone step configured that can be referred to.
-|4|Target asset or devices|Groups or devices the rule shall be applied to.
+<table>
+<thead>
+<colgroup>
+       <col style="width: 10%;">
+       <col style="width: 20%;">
+       <col style="width: 70%;">
+    </colgroup><thead>
+<tr>
+<th align="left">Step</th>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Rule name</td>
+<td align="left">Pre-filled with the name of the rule template. Can be modified according to your needs.</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">On alarm matching</td>
+<td align="left">The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Escalate as follows</td>
+<td align="left">Escalation steps processed in a chain. <br> Click <strong>Add step</strong> to define at least one step: <br> <strong>Type</strong>: Type of action executed in the step. Possible values are: <br> - Email (see “On alarm send e-mail” rule for parameter descriptions). <br> - SMS (see “On alarm send SMS” rule for parameter descriptions). <br> <strong>Condition</strong>: The condition applied when the rule will be executed. Possible values are: <br> - Always: Action will always be executed. <br> - Always: If step N failed. Only phone steps may fail. The step is marked as failed once all retries have been made without a successful call. This option only appears if there already is a phone step configured that can be referred to.</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Target asset or devices</td>
+<td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
+If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
+For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>. 
+</td>
+</tr>
+</tbody>
+</table>
 
 
 **Troubleshooting**
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/users-guide/device-management/#monitoring-and-controlling-devices) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/reference/device-management/) mode. In this case no new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
@@ -115,12 +214,45 @@ The rule uses the following parameters:
 
 ![On alarm increase severity](/images/users-guide/cockpit/cockpit-globalsmartrules-severity.png)
 
-|Step|Field|Description|
-|:---|:---|:---|
-|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
-|2|On alarm matching:|The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.
-|3|Increase alarm severity|Duration, an alarm must be active, before increasing the severity.
-|4|Target asset or devices|Groups or devices the rule shall be applied to.
+<table>
+<thead>
+<colgroup>
+       <col style="width: 10%;">
+       <col style="width: 20%;">
+       <col style="width: 70%;">
+    </colgroup><thead>
+<tr>
+<th align="left">Step</th>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Rule name</td>
+<td align="left">Pre-filled with the name of the rule template. Can be modified according to your needs.</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">On alarm matching</td>
+<td align="left">The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Increase alarm severity</td>
+<td align="left">Duration, an alarm must be active, before increasing the severity.</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Target asset or devices</td>
+<td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
+If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
+For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>. 
+</td>
+</tr>
+</tbody>
+</table>
 
 **Description**
 
@@ -130,7 +262,7 @@ If the alarm is still active after the specified duration, the severity will be 
 
 If the alarm has reached CRITICAL, it will stop monitoring because there is no further action possible.
 
->**Info:** The rule checks once a minute if the configured duration has been exceeded. Therefore it might happen that the alarm severity won't change in the second it exceeds the duration but only after the following check.
+> **Info:** The rule checks once a minute if the configured duration has been exceeded. Therefore it might happen that the alarm severity won't change in the second it exceeds the duration but only after the following check.
 
 ### On geofence create alarm
 
@@ -146,20 +278,53 @@ The rule uses the following parameters:
 
 ![On geofence create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-geofencealarm.png)
 
-|Step|Field|Description|
-|:---|:---|:---|
-|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
-|2|On geofence violation:|Polygon that defines the borders of an area. Click **Edit geofence** and set the area. Double-click to add points and click and drag them to adjust.
-|3|Create alarm:|Reason for triggering the alarm: "On entering", "On leaving" (the default), "On entering and leaving".<br>Type of alarm being raised. <br> Severity of alarm being raised. <br>Alarm text.
-|4|Target asset or devices|Groups or devices the rule shall be applied to.
+|<table>
+<thead>
+<colgroup>
+       <col style="width: 10%;">
+       <col style="width: 20%;">
+       <col style="width: 70%;">
+    </colgroup><thead>
+<tr>
+<th align="left">Step</th>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Rule name</td>
+<td align="left">Pre-filled with the name of the rule template. Can be modified according to your needs.</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">On geofence violation</td>
+<td align="left">Polygon that defines the borders of an area. Click <strong>Edit geofence</strong> and set the area. Double-click to add points and click and drag them to adjust.</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Create alarm</td>
+<td align="left">Reason for triggering the alarm: “On entering”, “On leaving” (the default), “On entering and leaving”.<br>Type of alarm being raised. <br> Severity of alarm being raised. <br>Alarm text.</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Target asset or devices</td>
+<td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
+If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
+For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>. 
+</td>
+</tr>
+</tbody>
+</table>
 
-**Info**: In order to raise an alarm the device had to be inside the geofence at least once after creating the rule.
+> **Info**: In order to raise an alarm the device had to be inside the geofence at least once after creating the rule.
 
 **Troubleshooting**
 
 * Make sure the device was inside the geofence at least once after creating/activating the rule.
  
-* Check if the device is in [maintenance](/users-guide/device-management/#monitoring-and-controlling-devices) mode. No new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/reference/device-management/) mode. No new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
@@ -175,14 +340,47 @@ The rule uses the following parameters:
 
 ![On geofence send e-mail](/images/users-guide/cockpit/cockpit-globalsmartrules-geofenceemail.png)
 
-|Step|Field|Description|
-|:---|:---|:---|
-|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
-|2|On geofence violation:|Polygon that defines the borders of an area. Click **Edit geofence** and set the area. Double-click to add points and click and drag them to adjust.
-|3|Send e-mail:|**Send to:/Send CC to:/Send BCC to**: Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (",", do not use a space!).<br>**Reply to**: Address to be used to reply to the message.<br> **Subject**: Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.<br> **Message**: Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under "Smart Rule Variables" below.
-|4|Target asset or devices|Groups or devices the rule shall be applied to.
+<table>
+<thead>
+<colgroup>
+       <col style="width: 10%;">
+       <col style="width: 20%;">
+       <col style="width: 70%;">
+    </colgroup><thead>
+<tr>
+<th align="left">Step</th>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Rule name</td>
+<td align="left">Pre-filled with the name of the rule template. Can be modified according to your needs.</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">On geofence violation</td>
+<td align="left">Polygon that defines the borders of an area. Click <strong>Edit geofence</strong> and set the area. Double-click to add points and click and drag them to adjust.</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Send e-mail</td>
+<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (“,”, do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under “Smart rule variables” below.<br> <strong>Message</strong>: Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under “Smart rule variables” below.</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Target asset or devices</td>
+<td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
+If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
+For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>. 
+</td>
+</tr>
+</tbody>
+</table>
 
-**Info**: In order to perform the rule the device had to be inside the geofence at least once after creating the rule.
+> **Info**: In order to perform the rule the device had to be inside the geofence at least once after creating the rule.
 
 **Troubleshooting**
 
@@ -203,12 +401,45 @@ The rule uses the following parameters:
 
 ![Calculate energy consumption](/images/users-guide/cockpit/cockpit-globalsmartrules-energy.png)
 
-|Step|Field|Description|
-|:---|:---|:---|
-|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
-|2|Monitored measurement:|**Fragment/Series**: Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment/series name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> **Time interval**: Interval in which consumption values shall be calculated. Specifies how often per hour the consumption is calculated.
-|3|Energy consumption measurement:|Name of the measurement fragment and series that shall be generated.
-|4|Target asset or devices|Groups or devices the rule shall be applied to.
+<table>
+<thead>
+<colgroup>
+       <col style="width: 10%;">
+       <col style="width: 20%;">
+       <col style="width: 70%;">
+    </colgroup><thead>
+<tr>
+<th align="left">Step</th>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Rule name</td>
+<td align="left">Pre-filled with the name of the rule template. Can be modified according to your needs.</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">Monitored measurement</td>
+<td align="left"><strong>Fragment/Series</strong>: Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment/series name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> <strong>Time interval</strong>: Interval in which consumption values shall be calculated. Specifies how often per hour the consumption is calculated.</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Energy consumption measurement</td>
+<td align="left">Name of the measurement fragment and series that shall be generated.</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Target asset or devices</td>
+<td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
+If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
+For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>. 
+</td>
+</tr>
+</tbody>
+</table>
 
 The unit of the consumption measurement is always per hour (i.e. if the measurements are in "kg" the consumption will be in "kg/h").
 
@@ -233,14 +464,47 @@ The rule uses the following parameters:
 
 ![On missing measurements create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-missingmeasurement.png)
 
-|Step|Field|Description|
-|:---|:---|:---|
-|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
-|2|Monitored measurement:|**Type**: Type of measurement. The incoming measurement must have the same type as configured. When creating a rule from the data explorer, the type is already filled in.<br> **Time interval**: Interval for calculating consumption values.
-|3|Create alarm:|Type of alarm being raised. <br> Severity of alarm being raised. <br>Alarm text.
-|4|Target asset or devices|Groups or devices the rule shall be applied to.
+<table>
+<thead>
+<colgroup>
+       <col style="width: 10%;">
+       <col style="width: 20%;">
+       <col style="width: 70%;">
+    </colgroup><thead>
+<tr>
+<th align="left">Step</th>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Rule name</td>
+<td align="left">Pre-filled with the name of the rule template. Can be modified according to your needs.</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">Monitored measurement</td>
+<td align="left"><strong>Type</strong>: Type of measurement. The incoming measurement must have the same type as configured. When creating a rule from the data explorer, the type is already filled in.<br> <strong>Time interval</strong>: Interval for calculating consumption values.</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Create alarm</td>
+<td align="left">Type of alarm being raised. <br> Severity of alarm being raised. <br>Alarm text.</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Target asset or devices</td>
+<td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
+If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
+For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>. 
+</td>
+</tr>
+</tbody>
+</table>
 
->**Info:** The rule checks once a minute if the configured time interval was exceeded. Therefore it can take up to one minute to create the alarm after the time interval was exceeded. To check if the time interval was exceeded there must be at least one incoming measurement after the activation of the rule.
+> **Info:** The rule checks once a minute if the configured time interval was exceeded. Therefore it can take up to one minute to create the alarm after the time interval was exceeded. To check if the time interval was exceeded there must be at least one incoming measurement after the activation of the rule.
 
 ### On alarm execute operation
 
@@ -256,9 +520,11 @@ The rule uses the following parameters:
 ![On alarm execute operation](/images/users-guide/cockpit/cockpit-globalsmartrules-operation.png)
 
 <table>
-<col style="width:5%">
-<col style="width:10%">
-<col style="width:85%">
+<colgroup>
+       <col style="width: 10%;">
+       <col style="width: 20%;">
+       <col style="width: 70%;">
+    </colgroup><thead>
 <thead>
 <tr>
 <th style="text-align:left">Step</th>
@@ -274,18 +540,21 @@ The rule uses the following parameters:
 </tr>
 <tr>
 <td style="text-align:left">2</td>
-<td style="text-align:left">On alarm matching:</td>
+<td style="text-align:left">On alarm matching</td>
 <td style="text-align:left">The types of alarms triggering the rule. For each newly created alarm with one of these types in the list the rule is triggered.</td>
 </tr>
 <tr>
 <td style="text-align:left">3</td>
-<td style="text-align:left">Execute operation:</td>
+<td style="text-align:left">Execute operation</td>
 <td style="text-align:left">The operation that will be sent. The operation is provided as JSON description. Some standard operations can be selected below the <strong>Operation</strong> field. To use a standard operation, select one, and press the arrow button on the right. This will insert the JSON of the selected operation.</td>
 </tr>
 <tr>
-<td style="text-align:left">4</td>
-<td style="text-align:left">Target asset or devices</td>
-<td style="text-align:left">Groups or devices the rule shall be applied to.</td>
+<td align="left">4</td>
+<td align="left">Target asset or devices</td>
+<td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
+If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
+For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>. 
+</td>
 </tr>
 </tbody>
 </table>
@@ -320,12 +589,45 @@ The rule uses the following parameters:
 
 ![On measurement threshold create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-thresholdalarm.png)
 
-|Step|Field|Description|
-|:---|:---|:---|
-|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
-|2|On threshold:|**Fragment/Series**: Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> **Data Point Library entry**: Name of the entry in the Data Point Library. This is used to find the default values for red and yellow ranges in case they are not configured for an individual object.
-|3|Create alarm:|**Type**: Type of alarm being raised. <br>**Text**: Alarm message.
-|4|Target asset or devices|Groups or devices the rule shall be applied to.
+<table>
+<thead>
+<colgroup>
+       <col style="width: 10%;">
+       <col style="width: 20%;">
+       <col style="width: 70%;">
+    </colgroup><thead>
+<tr>
+<th align="left">Step</th>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Rule name</td>
+<td align="left">Pre-filled with the name of the rule template. Can be modified according to your needs.</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">On threshold</td>
+<td align="left"><strong>Fragment/Series</strong>: Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> <strong>Data Point Library entry</strong>: Name of the entry in the Data Point Library. This is used to find the default values for red and yellow ranges in case they are not configured for an individual object.</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Create alarm</td>
+<td align="left"><strong>Type</strong>: Type of alarm being raised. <br><strong>Text</strong>: Alarm message.</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Target asset or devices</td>
+<td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
+If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
+For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>. 
+</td>
+</tr>
+</tbody>
+</table>
 
 **Description**
 
@@ -343,7 +645,7 @@ For each incoming measurement value, the rule performs the following steps:
 
 If no red/yellow ranges are defined, no alarms are generated.
 
->**Info:** Range values defined in the source object have a higher priority than those defined in the Data Point Library. You can also just overwrite a single value (e.g. yellow range max) by setting it in the source object. The other values will then be taken from the Data Point Library.
+> **Info:** Range values defined in the source object have a higher priority than those defined in the Data Point Library. You can also just overwrite a single value (e.g. yellow range max) by setting it in the source object. The other values will then be taken from the Data Point Library.
 
 * Incoming value inside the yellow range: <br>If there is an active alarm of given type for the object, set severity to MINOR. Otherwise create new MINOR alarm with given parameters.
 
@@ -355,13 +657,13 @@ If no red/yellow ranges are defined, no alarms are generated.
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/users-guide/device-management/#monitoring-and-controlling-devices) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/reference/device-management/) mode. In this case no new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 * Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 
->**Info:**  If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
+> **Info:**  If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
 
 ### On measurement explicit threshold create alarm
 
@@ -375,7 +677,7 @@ The severity of alarm is determined as follows:
 
 * If the measurement value moves into GREEN range, the alarm is cleared.
 
->**Info:** This rule is similar to the rule "On measurement threshold create alarm". However, in this rule here the RED threshold value is provided explicitly. The threshold rule "On measurement threshold create alarm" extracts the thresholds values from the device or Data Point Library.
+> **Info:** This rule is similar to the rule "On measurement threshold create alarm". However, in this rule here the RED threshold value is provided explicitly. The threshold rule "On measurement threshold create alarm" extracts the thresholds values from the device or Data Point Library.
 
 **Parameters**
 
@@ -383,26 +685,59 @@ The rule uses the following parameters:
 
 ![On measurement explicit threshold create alarm](/images/users-guide/cockpit/cockpit-globalsmartrules-measurementthreshold.png)
 
-|Step|Field|Description|
-|:---|:---|:---|
-|1|Rule name|Pre-filled with the name of the rule template. Can be modified according to your needs.
-|2|On threshold:|**Fragment/Series**: Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> **Minimum, Maximum**: When a value is in the specified range [minimum; maximum], the configured alarm is raised.
-|3|Create alarm:|**Type**: Type of alarm being raised. <br>**Text**: Alarm message.
-|4|Target asset or devices|Groups or devices the rule shall be applied to.
+<table>
+<thead>
+<colgroup>
+       <col style="width: 10%;">
+       <col style="width: 20%;">
+       <col style="width: 70%;">
+    </colgroup><thead>
+<tr>
+<th align="left">Step</th>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Rule name</td>
+<td align="left">Pre-filled with the name of the rule template. Can be modified according to your needs.</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">On threshold</td>
+<td align="left"><strong>Fragment/Series</strong>: Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> <strong>Minimum, Maximum</strong>: When a value is in the specified range [minimum; maximum], the configured alarm is raised.</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Create alarm</td>
+<td align="left"><strong>Type</strong>: Type of alarm being raised. <br><strong>Text</strong>: Alarm message.</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Target asset or devices</td>
+<td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
+If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
+For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>. 
+</td>
+</tr>
+</tbody>
+</table>
 
 **Troubleshooting**
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/users-guide/device-management/#monitoring-and-controlling-devices) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/reference/device-management/) mode. In this case no new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 * Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 
->**Info:**  If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
+> **Info:**  If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
 
-### Smart Rule Variables
+### Smart rule variables
 
 In certain rule parameters, variables can be used. When a rule is triggered, the variables are replaced by their actual values. You can use this mechanism to insert device names or alarm text into various outputs (email, SMS). You can include any information of the triggering event (like the alarm) and its source device.
 
@@ -468,4 +803,4 @@ The following table lists example variables:
 </table>
 
 
->**Info:** In case the variable does not exist or is misspelled, the generated content is displayed.
+> **Info:** In case the variable does not exist or is misspelled, the generated content is displayed.

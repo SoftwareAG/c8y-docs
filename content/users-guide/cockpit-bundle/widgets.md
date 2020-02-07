@@ -136,7 +136,7 @@ The "Data point list" widget shows data points (measurements), one in each row, 
 |:---|:---|
 |Title|Widget title. By default, the widget type is simply used as title.
 |Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Data explorer > Adding data points](#add-data-points).
-|Column visibility|Select which columns should be visible: <br>**Label**: Label of the data point. See [Visualizing data using the data explorer](#visualize) for details. <br>**Target**: Target value. Can be configured in the [data explorer](#visualize) or [Data Point Library](#library).<br>Current: Current value. <br>**Diff**: Absolute difference between current value and target value. <br>**Diff %**: Percentage of difference between current value and target value. <br>**Asset**: Name of the device or group of the data point.
+|Column visibility|Select which columns should be visible: <br>**Label**: Label of the data point. See [Visualizing data using the data explorer](/users-guide/cockpit/#data-explorer) for details. <br>**Target**: Target value. Can be configured in the [data explorer](/users-guide/cockpit/#data-explorer) or [Data Point Library](/users-guide/cockpit/#data-point-library).<br>Current: Current value. <br>**Diff**: Absolute difference between current value and target value. <br>**Diff %**: Percentage of difference between current value and target value. <br>**Asset**: Name of the device or group of the data point.
 
 ### Data point table
 

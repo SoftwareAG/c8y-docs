@@ -269,7 +269,7 @@ Create a microservice manifest *cumulocity.json* with the following content:
 
 Finally, Docker needs to know how to build your microservice. Create a *Dockerfile* as follows:
 
-```docker
+```
 FROM node:alpine
 
 WORKDIR /usr/app

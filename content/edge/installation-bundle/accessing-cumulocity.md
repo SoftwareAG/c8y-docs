@@ -73,7 +73,7 @@ The Cumulocity login screen appears.
 
 <img src="/guides/images/edge/edge-login-with-tenantid.png" name="Login screen"/>
 
-In the Login screen, log in with the tenant admin credentials provided during post-installation.
+In the Login screen, the tenant is always **edge**. Log in with the tenant admin credentials provided during post-installation.
 <br>
 
 >**Important**: If you have to log in as **edgeadmin** user, log in to the management tenant using the URL *https://&#60;Edge&#95;VM&#95;IP&#95;Address>/apps/administration/index.html*.<br>

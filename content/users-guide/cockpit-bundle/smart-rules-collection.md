@@ -6,11 +6,11 @@ layout: redirect
 
 <a name="business"></a>
 
-Cumulocity includes preset global Smart Rule types. 
+Cumulocity includes preset global smart rule types. 
 
 ![Global smart rules](/images/users-guide/cockpit/cockpit-globalsmartrules.png)
 
-Each global Smart Rule type provides different parameters to configure. 
+Each global smart rule type provides different parameters to configure. 
 
 The following section describes each available type and its configuration properties.
 
@@ -55,15 +55,20 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Send SMS</td>
-<td align="left"><strong>Phone number</strong>: Target phone number. It is recommended to include mobile country code for all numbers, e.g. “+49” or “0049” for Germany. Multiple numbers can be separated by a comma (“,”, do not use a space!).<br> <strong>Message</strong>: Text of SMS with max. 160 characters. You can use variables of the form #{name}. Supported variables are listed under “Smart Rule Variables” below.</td>
+<td align="left"><strong>Phone number</strong>: Target phone number. It is recommended to include mobile country code for all numbers, e.g. “+49” or “0049” for Germany. Multiple numbers can be separated by a comma (“,”, do not use a space!).<br> <strong>Message</strong>: Text of SMS with max. 160 characters. You can use variables of the form #{name}. Supported variables are listed under “Smart rule variables” below.</td>
 </tr>
 <tr>
 <td align="left">4</td>
 <td align="left">Target asset or devices</td>
-<td align="left">Groups or devices the rule shall be applied to.</td>
+<td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
+If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
+For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>. 
+</td>
 </tr>
 </tbody>
 </table>
+
+you can select a single group or a single device (just one, not multiple). To enable it in other assets or devices you'll have to navigate to each context and enable it there. Afterwards you're able to see all target assets or devices in a list with the title "Active for target asset or devices" in the smart rule detail
 
 **Troubleshooting**
 
@@ -114,12 +119,15 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Send e-mail</td>
-<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (“,”, do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under “Smart Rule Variables” below.<br> <strong>Message</strong>: Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under “Smart Rule Variables” below.</td>
+<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (“,”, do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under “Smart rule variables” below.<br> <strong>Message</strong>: Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under “Smart rule variables” below.</td>
 </tr>
 <tr>
 <td align="left">4</td>
 <td align="left">Target asset or devices</td>
-<td align="left">Groups or devices the rule shall be applied to.</td>
+<td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
+If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
+For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>. 
+</td>
 </tr>
 </tbody>
 </table>
@@ -176,7 +184,10 @@ The rule uses the following parameters:
 <tr>
 <td align="left">4</td>
 <td align="left">Target asset or devices</td>
-<td align="left">Groups or devices the rule shall be applied to.</td>
+<td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
+If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
+For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>. 
+</td>
 </tr>
 </tbody>
 </table>
@@ -235,7 +246,10 @@ The rule uses the following parameters:
 <tr>
 <td align="left">4</td>
 <td align="left">Target asset or devices</td>
-<td align="left">Groups or devices the rule shall be applied to.</td>
+<td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
+If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
+For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>. 
+</td>
 </tr>
 </tbody>
 </table>
@@ -296,7 +310,10 @@ The rule uses the following parameters:
 <tr>
 <td align="left">4</td>
 <td align="left">Target asset or devices</td>
-<td align="left">Groups or devices the rule shall be applied to.</td>
+<td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
+If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
+For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>. 
+</td>
 </tr>
 </tbody>
 </table>
@@ -350,12 +367,15 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Send e-mail</td>
-<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (“,”, do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under “Smart Rule Variables” below.<br> <strong>Message</strong>: Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under “Smart Rule Variables” below.</td>
+<td align="left"><strong>Send to:/Send CC to:/Send BCC to</strong>: Email addresses for sending the e-mail to. Multiple addresses can be separated by a comma (“,”, do not use a space!).<br><strong>Reply to</strong>: Address to be used to reply to the message.<br> <strong>Subject</strong>: Subject of e-mail. You can use a variable of the form #{name}. Supported variables are listed under “Smart rule variables” below.<br> <strong>Message</strong>: Text of the e-mail. You can use a variable of the form #{name}. Supported variables are listed under “Smart rule variables” below.</td>
 </tr>
 <tr>
 <td align="left">4</td>
 <td align="left">Target asset or devices</td>
-<td align="left">Groups or devices the rule shall be applied to.</td>
+<td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
+If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
+For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>. 
+</td>
 </tr>
 </tbody>
 </table>
@@ -413,7 +433,10 @@ The rule uses the following parameters:
 <tr>
 <td align="left">4</td>
 <td align="left">Target asset or devices</td>
-<td align="left">Groups or devices the rule shall be applied to.</td>
+<td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
+If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
+For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>. 
+</td>
 </tr>
 </tbody>
 </table>
@@ -473,7 +496,10 @@ The rule uses the following parameters:
 <tr>
 <td align="left">4</td>
 <td align="left">Target asset or devices</td>
-<td align="left">Groups or devices the rule shall be applied to.</td>
+<td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
+If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
+For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>. 
+</td>
 </tr>
 </tbody>
 </table>
@@ -523,9 +549,12 @@ The rule uses the following parameters:
 <td style="text-align:left">The operation that will be sent. The operation is provided as JSON description. Some standard operations can be selected below the <strong>Operation</strong> field. To use a standard operation, select one, and press the arrow button on the right. This will insert the JSON of the selected operation.</td>
 </tr>
 <tr>
-<td style="text-align:left">4</td>
-<td style="text-align:left">Target asset or devices</td>
-<td style="text-align:left">Groups or devices the rule shall be applied to.</td>
+<td align="left">4</td>
+<td align="left">Target asset or devices</td>
+<td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
+If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
+For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>. 
+</td>
 </tr>
 </tbody>
 </table>
@@ -592,7 +621,10 @@ The rule uses the following parameters:
 <tr>
 <td align="left">4</td>
 <td align="left">Target asset or devices</td>
-<td align="left">Groups or devices the rule shall be applied to.</td>
+<td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
+If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
+For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>. 
+</td>
 </tr>
 </tbody>
 </table>
@@ -685,7 +717,10 @@ The rule uses the following parameters:
 <tr>
 <td align="left">4</td>
 <td align="left">Target asset or devices</td>
-<td align="left">Groups or devices the rule shall be applied to.</td>
+<td align="left">Select a group or device the rule shall be applied to. To activate the smart rule in other assets or devices, navigate to the respective objects and enable the smart rule. The smart rules details will show a list "Active for target asset or devices". <br>
+If you leave this field empty, the smart rule will be applied to every group and device. You can then deactivate the smart rule for specific assets or devices. In this case the smart rules details will show a list "Inactive for target asset or devices". <br>
+For details on activating/deactivating a smart rule, see <a href="#toggle-rules" class="no-ajaxy">To deactivate or activate a smart rule for a group or device</a>. 
+</td>
 </tr>
 </tbody>
 </table>
@@ -702,7 +737,7 @@ The rule uses the following parameters:
 
 > **Info:**  If you clear an alarm, you state that the alarm is resolved. A new alarm is not raised unless the device changes its state and exceeds the thresholds again.
 
-### Smart Rule Variables
+### Smart rule variables
 
 In certain rule parameters, variables can be used. When a rule is triggered, the variables are replaced by their actual values. You can use this mechanism to insert device names or alarm text into various outputs (email, SMS). You can include any information of the triggering event (like the alarm) and its source device.
 

@@ -12,7 +12,7 @@ Alarms are created by user applications in the Cumulocity IoT tenant (for exampl
 
 1. In the Cockpit application. See [Cockpit](/users-guide/cockpit/) in the *User guide* for detailed information.
 2. In the Administration application, in the **Applications** menu under **Subscribed applications** (or possibly under **Own applications**). Click the card for Apama-ctrl and then click **Status**. See [Managing applications](/users-guide/administration/#managing-applications) and especially its subsection "Monitoring microservices" in the *User guide* for detailed information.
-3. From the Apama EPL Apps or Apama Analytics Builder application. Click the **Diagnostics** (or **Enhanced**) link which is provided with either application. A ZIP file is then downloaded that contains alarms information under */alarms/alarms_apama-ctrl-object.json*. See [Downloading diagnostics and logs](#diagnostics-download) for detailed information. 
+3. From the Apama EPL Apps and Apama Analytics Builder applications. Click the **Diagnostics** (or **Enhanced**) link which is provided with either application. A ZIP file is then downloaded that contains alarms information under */alarms/alarms_apama-ctrl-object.json*. See [Downloading diagnostics and logs](#diagnostics-download) for detailed information. 
 
 ### Alarm severities
 

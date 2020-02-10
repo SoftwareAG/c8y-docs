@@ -52,20 +52,20 @@ Several account settings can be changed by the user.
 
 1. Click the **User** button at the right of the top bar and then click **User Settings**.  
 2. In the **Edit user** dialog box, make the relevant changes. 
-3. To change the language, select a language from the dropdown list in the  **Language** field.
-
- >**Info:** The user interface language will be selected along the following criteria, in the order listed below:
- 
-	>	*  The language selected in the Cumulocity user settings.
-	>	*  The language selected in the browser preferences.
-	>	* 	The operating system language.
- 
-	> The default language is English.
- 
+3. To change the language, select a language from the dropdown list in the  **Language** field. 
 4. Click **Change password** to change your current password, see below. 
 5. Click **Save** to apply your settings.
 
 <img src="/images/users-guide/overview-user-settings.png" alt="User settings"  style="max-width: 100%">
+
+The user interface language will be selected along the following criteria, in the order listed below:
+ 
+*  The language selected in the Cumulocity user settings.
+*  The language selected in the browser preferences.
+* 	The operating system language.
+ 
+The default language is English.
+
 
 ### <a name="change-password"></a>To change your password
 

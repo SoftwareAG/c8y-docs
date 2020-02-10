@@ -25,7 +25,7 @@ Die Liste enthält eine Zeile für jedes Gerät mit den folgenden Informationen,
 <tbody>
 <tr>
 <td style="text-align:left">Status</td>
-<td style="text-align:left">Symbol für den Verbindungsstatus. Weitere Informationen finden Sie unter <a href="#connection-monitoring" class="no-ajaxy">Überwachen von Verbindungen</a> in "Überwachen und Steuern von Geräten".</td>
+<td style="text-align:left">Symbol für den Verbindungsstatus. Weitere Informationen finden Sie unter <a href="#connection-monitoring" class="no-ajaxy">Überwachen und Steuern von Geräten > Überwachen von Verbindungen</a>.</td>
 </tr>
 <tr>
 <td style="text-align:left">Name</td>
@@ -57,7 +57,7 @@ Die Liste enthält eine Zeile für jedes Gerät mit den folgenden Informationen,
 </tr>
 <tr>
 <td style="text-align:left">Alarme</td>
-<td style="text-align:left">Der Alarmstatus des Geräts. Zeigt Anzahl und Typ der zur Zeit für dieses Gerät aktiven Alarme an. Weitere Informationen zu Alarmen finden Sie unter <a href="#alarm-monitoring" class="no-ajaxy">Arbeiten mit Alarmen</a>.</td>
+<td style="text-align:left">Der Alarmstatus des Geräts. Zeigt Anzahl und Typ der zur Zeit für dieses Gerät aktiven Alarme an. Weitere Informationen zu Alarmen finden Sie unter <a href="#alarm-monitoring" class="no-ajaxy">Verwenden von Alarmen</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -102,7 +102,7 @@ Die neue Spalte wird hinzugefügt und in der Geräteliste angezeigt.
 
 Das Objekt wird dauerhaft aus der Plattform gelöscht.
 
-**Wichtig:** Wenn Sie ein Gerät löschen, wird dieses aus der Cumulocity-Datenbank gelöscht, einschließlich aller erzeugter Daten. Alternativ können Sie alle nicht mehr benötigten Geräte in einer Gruppe zusammenfassen (siehe [Gruppieren von Geräten](#grouping-devices)). So stellen Sie sicher, dass alle Berichte korrekt erhalten bleiben. Damit für stillgelegten Geräte keine Alarme mehr ausgelöst werden, deaktivieren Sie die [Verbindungsüberwachung](#connection-monitoring) für das entsprechende Gerät. Löschen Sie ein Gerät, werden dadurch nicht die Daten der Kindgeräte gelöscht.
+> **Wichtig:** Wenn Sie ein Gerät löschen, wird dieses aus der Cumulocity-Datenbank gelöscht, einschließlich aller erzeugter Daten. Alternativ können Sie alle nicht mehr benötigten Geräte in einer Gruppe zusammenfassen (siehe [Gruppieren von Geräten](#grouping-devices)). So stellen Sie sicher, dass alle Berichte korrekt erhalten bleiben. Damit für stillgelegten Geräte keine Alarme mehr ausgelöst werden, deaktivieren Sie die [Verbindungsüberwachung](#connection-monitoring) für das entsprechende Gerät. Löschen Sie ein Gerät, werden dadurch nicht die Daten der Kindgeräte gelöscht.
 
 
 ### <a name="searching-devices"></a>So suchen Sie nach Geräten

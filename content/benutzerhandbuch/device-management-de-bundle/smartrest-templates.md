@@ -39,8 +39,6 @@ SmartREST-Templates können auf zweierlei Weise hinzugefügt werden:
 2. Geben Sie im darauf folgenden Dialog einen Namen und eine eindeutige ID für das Template ein (beide Eingaben sind erforderlich). 
 4. Klicken Sie **Weiter**, um Nachrichten oder Antworten hinzuzufügen.
 
-![Add new template](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicetypes-smartrest-new.png)
-
 #### So fügen Sie eine Nachricht hinzu
 
 Das Nachrichten-Template enthält alle erforderlichen Informationen, um eine  SmartREST-Anfrage in einen entsprechenden Rest API-Aufruf zu konvertieren, der dann zur Plattform gesendet wird.

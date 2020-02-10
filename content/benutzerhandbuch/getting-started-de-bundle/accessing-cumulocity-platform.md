@@ -2,6 +2,8 @@
 weight: 20
 title: Aufrufen und Anmelden an der Cumulocity-Plattform
 layout: redirect
+aliases:
+  - /overview/accessing-cumulocity-platform
 ---
 
 Auf die Cumulocity IoT-Plattform können Sie über einen Webbrowser zugreifen. Unsere Produkte wurden mit den folgenden Webbrowsern getestet:
@@ -27,7 +29,7 @@ Um auf die Anwendungen Ihres Cumulocity-Mandanten zuzugreifen, verwenden Sie die
 https://<tenant-domain>.cumulocity.com/
 ```
 
-Sie werden zur Anmeldeseite Ihrer Standardanwendung weitergeleitet. Sie können [Tenants > Tenant ID and tenant domain](/reference/tenants/#a-name-tenant-id-and-domain-a-tenant-id-and-tenant-domain) im **Reference guide** nachschlagen, um die Beziehung zwischen Mandanten-ID und Mandanten-Domain besser zu verstehen.
+Sie werden zur Anmeldeseite Ihrer Standardanwendung weitergeleitet. Sie können [Tenants > Tenant ID and tenant domain](/reference/tenants/#a-name-tenant-id-and-domain-a-tenant-id-and-tenant-domain) im Reference Guide nachschlagen, um die Beziehung zwischen Mandanten-ID und Mandanten-Domain besser zu verstehen.
 
 > **Wichtig:** Stellen Sie sicher, dass die Adressleiste des Browsers ein Schloss-Symbol zeigt. Das Schloss-Symbol zeigt an, dass Sie eine sichere Verbindung nutzen und tatsächlich mit Cumulocity verbunden sind.
 

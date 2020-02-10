@@ -17,25 +17,82 @@ Jedes Gerät enthält mindestens die folgenden Registerkarten: **Info**, **Alarm
 
 Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in den folgenden Abschnitten detailliert beschrieben:
 
-|Registerkarte|Beschreibung|
-|:---|:---|
-|[Info](#info)|Enthält allgemeine Informationen zum Gerät. Für jedes Gerät vorhanden.
-|[Kindgeräte](#child-devices)|Listet die Geräte auf, die mit dem aktuellen Gerät verbunden sind.
-|[Messwerte](#measurements)|Zeigt eine Standardvisualisierung der vom Gerät bereitgestellten numerischen Daten in Form von Diagrammen.
-|[Alarme](#alarms)|Enthält Informationen zu den Alarmen des Geräts. Siehe auch [Arbeiten mit Alarmen](#alarm-monitoring). Für jedes Gerät vorhanden.
-|[Konfiguration](#config)|Ermöglicht die manuelle Konfiguration von Geräteparametern und Einstellungen als Eingaben in einem Textformat. Siehe auch [Konfigurations-Repository](#configuration-repository) für Informationen zu binärer Konfiguration.
-|[Steuerung](#control)|Zeigt Kommandos an, die zum Gerät gesendet werden. Siehe auch [Verwenden von Kommandos](#operation-monitoring). Für jedes Gerät vorhanden.
-|[Netzwerk](#network)|Zeigt Netzwerkinformationen für das Gerät an.
-|[Software](#software)|Verwaltet die Firmware des Geräts und die Software, die auf dem Gerät installiert ist.
-|[Ereignisse](#events)|Zeigt die mit dem Gerät verbundenen Ereignisse, hilfreich für die Fehlersuche. Siehe auch [Fehlerbehebung von Geräten](#events-all). Für jedes Gerät vorhanden.
-|[Standort](#location)|Zeigt den Standort eines Geräts an, falls verfügbar.
-|[Logdateien](#logs)|Ermöglicht das Abfragen von Loginformationen für das Gerät.
-|[Serviceüberwachung](#service-monitoring)|Ermöglicht die Serviceüberwachung von Maschinen. Siehe auch [Serviceüberwachung](#monitoring-services). Für jedes Gerät vorhanden.
-|[Shell](#shell)|Ermöglicht es, über eine Kommandozeile mit entfernten Geräten zu interagieren.
-|[Tracking](#tracking)|Zeigt die Bewegungen des Geräts, falls verfügbar.
-|[Identifikator](#identity)|Zeigt die für das Gerät gespeicherten Identifikatoren. Für jedes Gerät vorhanden.
+<table>
+<thead>
+<colgroup>
+   <col style="width: 20%;">
+   <col style="width: 80%;">
+</colgroup><thead>
+<tr>
+<th align="left">Registerkarte</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="#info">Info</a></td>
+<td align="left">Enthält allgemeine Informationen zum Gerät. Für jedes Gerät vorhanden.</td>
+</tr>
+<tr>
+<td align="left"><a href="#child-devices">Kindgeräte</a></td>
+<td align="left">Listet die Geräte auf, die mit dem aktuellen Gerät verbunden sind.</td>
+</tr>
+<tr>
+<td align="left"><a href="#measurements">Messwerte</a></td>
+<td align="left">Zeigt eine Standardvisualisierung der vom Gerät bereitgestellten numerischen Daten in Form von Diagrammen.</td>
+</tr>
+<tr>
+<td align="left"><a href="#alarms">Alarme</a></td>
+<td align="left">Enthält Informationen zu den Alarmen des Geräts. Siehe auch <a href="#alarm-monitoring">Arbeiten mit Alarmen</a>. Für jedes Gerät vorhanden.</td>
+</tr>
+<tr>
+<td align="left"><a href="#config">Konfiguration</a></td>
+<td align="left">Ermöglicht die manuelle Konfiguration von Geräteparametern und Einstellungen als Eingaben in einem Textformat. Siehe auch <a href="#configuration-repository">Konfigurations-Repository</a> für Informationen zu binärer Konfiguration.</td>
+</tr>
+<tr>
+<td align="left"><a href="#control">Steuerung</a></td>
+<td align="left">Zeigt Kommandos an, die zum Gerät gesendet werden. Siehe auch <a href="#operation-monitoring">Verwenden von Kommandos</a>. Für jedes Gerät vorhanden.</td>
+</tr>
+<tr>
+<td align="left"><a href="#network">Netzwerk</a></td>
+<td align="left">Zeigt Netzwerkinformationen für das Gerät an.</td>
+</tr>
+<tr>
+<td align="left"><a href="#software">Software</a></td>
+<td align="left">Verwaltet die Firmware des Geräts und die Software, die auf dem Gerät installiert ist.</td>
+</tr>
+<tr>
+<td align="left"><a href="#events">Ereignisse</a></td>
+<td align="left">Zeigt die mit dem Gerät verbundenen Ereignisse, hilfreich für die Fehlersuche. Siehe auch <a href="#events-all">Fehlerbehebung von Geräten</a>. Für jedes Gerät vorhanden.</td>
+</tr>
+<tr>
+<td align="left"><a href="#location">Standort</a></td>
+<td align="left">Zeigt den Standort eines Geräts an, falls verfügbar.</td>
+</tr>
+<tr>
+<td align="left"><a href="#logs">Logdateien</a></td>
+<td align="left">Ermöglicht das Abfragen von Loginformationen für das Gerät.</td>
+</tr>
+<tr>
+<td align="left"><a href="#service-monitoring">Serviceüberwachung</a></td>
+<td align="left">Ermöglicht die Serviceüberwachung von Maschinen. Siehe auch <a href="#monitoring-services">Serviceüberwachung</a>. Für jedes Gerät vorhanden.</td>
+</tr>
+<tr>
+<td align="left"><a href="#shell">Shell</a></td>
+<td align="left">Ermöglicht es, über eine Kommandozeile mit entfernten Geräten zu interagieren.</td>
+</tr>
+<tr>
+<td align="left"><a href="#tracking">Tracking</a></td>
+<td align="left">Zeigt die Bewegungen des Geräts, falls verfügbar.</td>
+</tr>
+<tr>
+<td align="left"><a href="#identity">Identifikator</a></td>
+<td align="left">Zeigt die für das Gerät gespeicherten Identifikatoren. Für jedes Gerät vorhanden.</td>
+</tr>
+</tbody>
+</table>
 
->**Info**: Mögliche weitere spezielle Registerkarten, die nicht hier aufgeführt sind, werden in dem entsprechenden Kontext an anderer Stelle in der Cumulocity-Dokumentation beschrieben. Nutzen Sie die Suchfunktion, um zu den betreffenden Abschnitten zu gelangen. Die Registerkarte **Modbus** beispielsweise ist in der Modbus-Beschreibung unter [Optionale Services > Cloud Fieldbus](/users-guide/optional-services/cloud-fieldbus) zu finden.
+>**Info**: Mögliche weitere spezielle Registerkarten, die nicht hier aufgeführt sind, werden in dem entsprechenden Kontext an anderer Stelle in der Cumulocity-Dokumentation beschrieben. Nutzen Sie die Suchfunktion, um zu den betreffenden Abschnitten zu gelangen. Die Registerkarte **Modbus** beispielsweise ist in der Modbus-Beschreibung unter [Optionale Services > Cloud Fieldbus](/users-guide/optional-services/#cloud-fieldbus) zu finden.
 
 Unter dem Namen wird eine Liste von Breadcrumbs angezeigt. Ist das Gerät Teil einer Asset-Hierarchie (z. B. einer Gruppe), können Sie mit Hilfe der Breadcrumbs einfach in der Hierarchie nach oben navigieren. Da Geräte zu mehreren Hierarchien gehören können, werden möglicherweise mehrere Breadcrumb-Zeilen angezeigt.
 
@@ -54,8 +111,10 @@ Die Registerkarte **Info** fasst die Geräteinformationen, die aus Managementsic
 Die Information wird auf den folgenden Karten bereitgestellt:
 
 <table>
-<col width = 25%>
-<col width = 75%>
+<colgroup>
+   <col style="width: 20%;">
+   <col style="width: 80%;">
+</colgroup><thead>
 <thead>
 <tr>
 <th style="text-align:left">Karte</th>
@@ -148,7 +207,7 @@ Beispiel:
 
 ### <a name="alarms"></a>Alarme
 
-Die Registerkarte **Alarme** enthält Informationen zu den Alarmen für ein Gerät. Weitere Informationen finden Sie unter [Arbeiten mit Alarmen](#alarm-monitoring).
+Die Registerkarte **Alarme** enthält Informationen zu den Alarmen für ein Gerät. Weitere Informationen finden Sie unter [Verwenden von Alarmen](#alarm-monitoring).
 
 ### <a name="config"></a> Konfiguration
 

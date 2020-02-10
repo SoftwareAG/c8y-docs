@@ -26,11 +26,32 @@ Klicken Sie auf eine Gruppe, um Details dieser Gruppe anzuzeigen.
 
 In der Registerkarte **Info** werden folgende Informationen angezeigt:
 
-|Karte|Beschreibung|
-|:---|:---|
-|Anmerkungen|Enthält optionale Anmerkungen, die über aktuelle Aktivitäten informieren. Anmerkungen können normalerweise nur vom Administrator bearbeitet werden. Um eine Anmerkung hinzuzufügen oder zu bearbeiten, klicken Sie **Bearbeiten**, geben Sie eine neue Anmerkung oder Änderungen im Textfeld ein und bestätigen Sie Ihre Eingaben, indem Sie auf das grüne Häkchen rechts vom Textfeld klicken. 
-|Gruppendaten|Editierbare Informationen zur Gruppe (Name, Beschreibung).
-|Aktive kritische Alarme|Aktive kritische Alarme für die Geräte in der Gruppe.
+<table>
+<thead>
+<colgroup>
+   <col style="width: 20%;">
+   <col style="width: 80%;">
+</colgroup><thead>
+<tr>
+<th align="left">Karte</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Anmerkungen</td>
+<td align="left">Enthält optionale Anmerkungen, die über aktuelle Aktivitäten informieren. Anmerkungen können normalerweise nur vom Administrator bearbeitet werden. Um eine Anmerkung hinzuzufügen oder zu bearbeiten, klicken Sie <strong>Bearbeiten</strong>, geben Sie eine neue Anmerkung oder Änderungen im Textfeld ein und bestätigen Sie Ihre Eingaben, indem Sie auf das grüne Häkchen rechts vom Textfeld klicken.</td>
+</tr>
+<tr>
+<td align="left">Gruppendaten</td>
+<td align="left">Editierbare Informationen zur Gruppe (Name, Beschreibung).</td>
+</tr>
+<tr>
+<td align="left">Aktive kritische Alarme</td>
+<td align="left">Aktive kritische Alarme für die Geräte in der Gruppe.</td>
+</tr>
+</tbody>
+</table>
 
 **Kind-Assets**
 
@@ -59,8 +80,6 @@ Die neue Gruppe wird der Gruppenliste hinzugefügt.
 
 >**Info:** Eine Gruppe kann mit "0" Geräten erstellt werden.
 
-![Create a group](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-create.png)
-
 Auf der Seite **Gruppen** können Sie auch eine neue Gruppe erstellen, in dem Sie in der oberen Menüleiste auf **Gruppe hinzufügen** klicken. Geben Sie im darauf folgenden Dialog einen Namen für die Gruppe an und klicken Sie **Gruppe hinzufügen**.
 
 ![Add empty group](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-add.png)
@@ -69,7 +88,7 @@ Auf der Seite **Gruppen** können Sie auch eine neue Gruppe erstellen, in dem Si
 
 1. Wählen Sie im Navigator eine Gruppe aus. 
 2. Klicken Sie **Bearbeiten** in der Registerkarte **Info**. Sie können den Namen der Gruppe bearbeiten sowie Benutzerberechtigungen für die Gruppe zuweisen. 
-Weitere Informationen zu den Berechtigungen finden Sie unter Administration > [Verwalten von Berechtigungen](/benutzerhandbuch/administration-de#managing-permissions).
+Weitere Informationen zu den Berechtigungen finden Sie unter [Verwalten von Berechtigungen](/benutzerhandbuch/administration-de#managing-permissions) im Bereich *Administration*.
 
 ### So löschen Sie eine Gruppe
 
@@ -83,7 +102,7 @@ Geräte können Gruppen auf mehrere Arten zugewiesen werden.
 
 **Aus der Gruppenperspektive**
 
-Durch Ziehen und Ablegen können Sie im Navigator auf schnelle Weise Geräte zu Gruppen zuweisen, siehe [Restrukturieren von Gruppen und Geräten](#restructuring-groups).  
+Durch Ziehen und Ablegen können Sie im Navigator auf schnelle Weise Geräte zu Gruppen zuweisen, siehe [Umsortieren von Gruppen und Geräten](#restructuring-groups).  
 
 Darüber hinaus können Sie Geräte auch durch folgende Schritte zuweisen:
 
@@ -129,7 +148,7 @@ Klicken Sie bei einem Geräteeintrag auf das Menüsymbol und anschließend auf *
 
 Die Gerätedetails für das jeweilige Gerät, die unter **Alle Geräte** in der Anwendung Device Management gespeichert sind, werden geöffnet. 
 
-### <a name="restructuring-groups"></a>Restrukturieren von Gruppen und Geräten
+### <a name="restructuring-groups"></a>Umsortieren von Gruppen und Geräten
 
 Durch Ziehen und Ablegen können Sie Gruppen, Untergruppen und Geräte auf einfache Weise neu strukturieren. 
 

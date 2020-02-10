@@ -47,11 +47,11 @@ Zum Bearbeiten eines Geräteprotokolls klicken Sie einfach auf das Protokoll ode
 
 Weitere Informationen zu den Feldern finden Sie in der Beschreibung des jeweiligen Gerätetyps, siehe [Optionale Services](/benutzerhandbuch/optional-services).
 
-### So entfernen Sie ein Geräteprotokoll
+### So löschen Sie ein Geräteprotokoll
 
-Zum Entfernen eines Geräteprotokolls klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Löschen**.
+Zum Löschen eines Geräteprotokolls klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Löschen**.
 
-Das Geräteprotokoll wird aus der Gerätedatenbank entfernt.
+Das Geräteprotokoll wird aus der Gerätedatenbank gelöscht.
 
 ### So exportieren Sie ein Geräteprotokoll
 

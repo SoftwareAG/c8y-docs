@@ -2,6 +2,8 @@
 weight: 50
 title: Benutzeroptionen und -einstellungen
 layout: redirect
+aliases:
+  - /overview/user-settings
 ---
 
 Durch Klicken auf die Schaltfläche **Benutzer** rechts oben wird ein Menü geöffnet, das Zugriff auf verschiedene Aktionen oder Informationen ermöglicht.
@@ -21,7 +23,7 @@ Das Menü **Benutzer** enthält folgende Elemente:
 <tbody>
 <tr>
 <td style="text-align:left">Ändern von Benutzereinstellungen</td>
-<td style="text-align:left">Ermöglicht Zugriff auf die <a href="/user-guide/overview#user-settings" class="no-ajaxy">Benutzereinstellungen</a>, siehe unten. </td>
+<td style="text-align:left">Ermöglicht Zugriff auf die Benutzereinstellungen, siehe unten. </td>
 </tr>
 <tr>
 <td style="text-align:left">Verweigerte Anfragen</td>
@@ -33,7 +35,7 @@ Das Menü **Benutzer** enthält folgende Elemente:
 </tr>
 <tr>
 <td style="text-align:left">Support aktivieren (deaktivieren)</td>
-<td style="text-align:left">Erlaubt Supportbenutzern den Zugriff auf Ihr Konto. Diese Option ist nur verfügbar, wenn der Supportbenutzerzugriff im Management-Mandanten nicht global für Untermandanten-Benutzer festgelegt ist, weitere Informationen siehe <a href="/users-guide/enterprise-edition#users-in-other-tenants" class="no-ajaxy">Support für Benutzer in anderen Mandanten</a>. Nachdem der Supportbenutzerzugriff aktiviert wurde, wird das Menüelement durch <strong>Support deaktivieren</strong> ersetzt. Wenn sich Ihre Supportanfrage erledigt hat, doch die Dauer für den Supportbenutzerzugriff noch nicht abgelaufen ist (standardmäßig 24 Stunden), können Sie eine Supportbenutzeranfrage hier aktiv deaktivieren.</td>
+<td style="text-align:left">Erlaubt Supportbenutzern den Zugriff auf Ihr Konto. Diese Option ist nur verfügbar, wenn der Supportbenutzerzugriff im Management-Mandanten nicht global für Untermandanten-Benutzer festgelegt ist, weitere Informationen siehe <a href="/benutzerhandbuch/enterprise-edition-de#users-in-other-tenants" class="no-ajaxy">Support für Benutzer in anderen Mandanten</a>. Nachdem der Supportbenutzerzugriff aktiviert wurde, wird das Menüelement durch <strong>Support deaktivieren</strong> ersetzt. Wenn sich Ihre Supportanfrage erledigt hat, doch die Dauer für den Supportbenutzerzugriff noch nicht abgelaufen ist (standardmäßig 24 Stunden), können Sie eine Supportbenutzeranfrage hier aktiv deaktivieren.</td>
 </tr>
 <tr>
 <td style="text-align:left">Supportanfrage stellen</td>
@@ -53,19 +55,21 @@ Einige Kontoeinstellungen können vom Benutzer geändert werden.
 1. Klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und anschließend auf **Benutzereinstellungen**.  
 2. Nehmen Sie im Dialog **Benutzer bearbeiten** die gewünschten Änderungen vor. 
 3. Zum Ändern der Sprache wählen Sie eine Sprache aus der Auswahlliste des Feldes **Sprache**.
-
- >**Info:** Die Sprache der Benutzeroberfläche wird nach folgenden Kriterien, in der aufgeführten Reihenfolge, ermittelt:
- 
-	>	*  Die in den Cumulocity-Benutzereinstellungen ausgewählte Sprache.
-	>	*  Die in den Browser-Einstellungen ausgewählte Sprache.
-	>	* 	Die Sprache des Betriebssystems.
- 
-	> Die Standardsprache ist Englisch.
- 
 4. Klicken Sie **Passwort ändern**, um Ihr aktuelles Passwort zu ändern, siehe unten. 
 5. Klicken Sie **Speichern**, um Ihre Eingaben zu speichern.
 
 <img src="/images/benutzerhandbuch/overview-user-settings.png" alt="User settings"  style="max-width: 100%">
+
+
+Die Sprache der Benutzeroberfläche wird nach folgenden Kriterien, in der aufgeführten Reihenfolge, ermittelt:
+ 
+*  Die in den Cumulocity-Benutzereinstellungen ausgewählte Sprache.
+*  Die in den Browser-Einstellungen ausgewählte Sprache.
+* 	Die Sprache des Betriebssystems.
+ 
+Die Standardsprache ist Englisch.
+ 
+
 
 ### <a name="change-password"></a>So ändern Sie Ihr Passwort
 

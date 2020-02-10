@@ -47,11 +47,11 @@ To edit a device protocol, just click on the protocol or click the menu icon at 
 
 Details on the fields can be found in the documentation of the particular device type, see [Optional services](/users-guide/optional-services).
 
-### To remove a device protocol
+### To delete a device protocol
 
-To remove a device protocol, click the menu icon at the right of the row and then click **Remove**.
+To delete a device protocol, click the menu icon at the right of the row and then click **Delete**.
 
-The device protocol will be removed from the device database.
+The device protocol will be deleted from the device database.
 
 ### To export a device protocol
 

@@ -2,6 +2,8 @@
 weight: 30
 title: Cumulocity-Anwendungen
 layout: redirect
+aliases:
+  - /overview/cumulocity-applications
 ---
 
 Cumulocity umfasst die drei folgenden Standardanwendungen:

@@ -128,6 +128,6 @@ Das benutzerdefinierte Kommando wird der Kommandoliste hinzugefügt.
 
 ### Alarme für den Simulator
 
-Die Registerkarte **Alarme** eines Simulators zeigt Alarme an, die den Simulator selbst und nicht das simulierte Gerät betreffen, d. h. Alarme für den Fall, dass der Simulator nicht korrekt arbeitet. Informationen zu Alarmen finden Sie unter [Arbeiten mit Alarmen](#alarms). 
+Die Registerkarte **Alarme** eines Simulators zeigt Alarme an, die den Simulator selbst und nicht das simulierte Gerät betreffen, d. h. Alarme für den Fall, dass der Simulator nicht korrekt arbeitet. Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](#alarms). 
 
 ![Alarms](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-alarm.png)

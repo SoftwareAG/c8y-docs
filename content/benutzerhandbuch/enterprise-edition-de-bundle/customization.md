@@ -10,19 +10,19 @@ Im Menü **Einstellungen** können Sie verschiedene Anpassungseinstellungen vorn
 
 ### <a name="configuration"></a>Konfiguration
 
->**Info**: Informationen zu den Einstellungen in der Registerkarte **Konfiguration** finden Sie in [Ändern von Einstellungen > Konfigurationseinstellungen](/users-guide/administration/#config-platform) unter Administration. Hier werden nur die Funktionen erläutert, die ausschließlich für Enterprise Tenants verfügbar sind.
+>**Info**: Informationen zu den Einstellungen in der Registerkarte **Konfiguration** finden Sie in [Ändern von Einstellungen > Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#config-platform) unter Administration. Hier werden nur die Funktionen erläutert, die ausschließlich für Enterprise Tenants verfügbar sind.
 
 #### Anwendungen
 
 Im Bereich **Anwendungen** können Sie die Standardanwendungen für neue Mandanten als kommagetrennte Liste festlegen. 
 
-![Applications settings](/images/users-guide/enterprise-tenant/et-settings-configuration-applications.png)
+![Applications settings](/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-applications.png)
 
 #### Passwörter
 
 Im Bereich **Passwörter** können Sie Passworteinstellungen wie Standardstärke, Länge oder Gültigkeit für die Benutzer in Ihrem Mandanten festlegen.
 
-![Passwords settings](/images/users-guide/enterprise-tenant/et-settings-configuration-passwords.png)
+![Passwords settings](/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-passwords.png)
 
 #### Supportbenutzer
 
@@ -30,7 +30,7 @@ Im Bereich **Supportbenutzer** konfigurieren Sie die Parameter für die Aktivier
 
 Mit Hilfe dieser Funktion können Supportbenutzer (d. h. Benutzer mit spezifischen Berechtigungen im Management-Mandanten) bei etwaigen Problemen auf Benutzer von Untermandanten zugreifen. Weitere Informationen finden Sie unter [Supportbenutzerzugriff](/users-guide/enterprise-edition#users-in-other-tenants).
 
-<img src="/images/users-guide/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
 
 Legen Sie im Feld **Supportbenutzer aktivieren** fest, ob der Supportbenutzerzugriff für Untermandanten-Benutzer aktiviert sein soll. Hier sind folgende Werte möglich:
 
@@ -52,11 +52,11 @@ In der Registerkarte **Branding** können Sie verschiedene Parameter wie Logos, 
 
 Die [Parameter](#configuration-parameters) werden auf der linken Seite der Registerkarte konfiguriert, während Sie auf der rechten Seite in einer Vorschau sehen können, wie sich Ihre Auswahl auswirkt.
 
-<img src="/images/users-guide/enterprise-tenant/et-branding.png" alt="Branding tab">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-branding.png" alt="Branding tab">
 
 Für eine detailliertere Vorschau Ihrer Einstellungen klicken Sie in der oberen Menüleiste auf **Vorschau anzeigen**, um das Erscheinungsbild Ihrer Branding-Einstellungen in der gesamten Plattform zu überprüfen. In der Vorschau können Sie interagieren und sogar zwischen verschiedenen Anwendungen wechseln. Jede Änderung, die Sie in der Registerkarte **Branding** vornehmen, wird sofort auf die Seite **Vorschau** angewendet.
 
-<img src="/images/users-guide/enterprise-tenant/et-branding-preview.png" alt="Branding tab">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-branding-preview.png" alt="Branding tab">
 
 Wenn Sie fertig sind oder Ihre Einstellungen speichern möchten, klicken Sie am unteren Rand des Bereichs **Konfiguration** auf **Speichern**, um Ihre Branding-Einstellungen in Ihrem Mandanten zu speichern.
 
@@ -138,7 +138,7 @@ In der Registerkarte **Domain-Name** können Sie Ihren eigenen Domain-Namen fest
  
 >**Wichtig**: Sie benötigen eine gültige Lizenz, um Ihre Domain zu aktivieren. Bitte kontaktieren Sie unser Sales-Team unter sales@cumulocity.com, um eine Lizenz für Ihre Domain zu installieren.  
 
-<img src="/images/users-guide/enterprise-tenant/et-domain-name.png" alt="Domain name">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-domain-name.png" alt="Domain name">
 
 >**Info**: Die Funktionalität "Benutzerdefinierter Domain-Name" ist nur für cumulocity.com- oder Private Edition-Installationen verfügbar, bei denen kein benutzerdefinierter Load Balancer verwendet wird.
 

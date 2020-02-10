@@ -45,7 +45,7 @@ Links oben können Sie eine Vorlage auswählen. Diese wirkt sich auf das Layout 
 
 ##### Benutzerdefinierte Vorlage
 
-![Request configuration](/images/users-guide/Administration/admin-sso-1.png)
+![Request configuration](/images/benutzerhandbuch/Administration/admin-sso-1.png)
 
 Da das OAuth-Protokoll auf der Ausführung von HTTP-Anfragen und -Redirects basiert, wird eine generische Anfragekonfiguration bereitgestellt.
 
@@ -53,11 +53,11 @@ Der erste Teil der **Single-Sign-On**-Seite besteht aus der Anfragekonfiguration
 
 Eine Abmeldeanfrage kann optional festgelegt werden. Sie führt ein Front-Channel Single Logout [OpenID Connect Front-Channel Logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html) aus. Wenn diese Option konfiguriert ist, wird der Benutzer nach dem Abmelden aus Cumulocity zur festgelegten Abmelde-URL des Autorisierungsservers umgeleitet.
 
-![OAuth configuration](/images/users-guide/Administration/admin-sso-logout-custom.png)
+![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-logout-custom.png)
 
 Der Bereich **Grundeinstellungen** der **Single-Sign-On**-Seite besteht aus den folgenden Konfigurationseinstellungen:
 
-![OAuth configuration](/images/users-guide/Administration/admin-sso-2.png)
+![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-2.png)
 
 |Feld|Beschreibung|
 |:---|:---|
@@ -73,7 +73,7 @@ Der Bereich **Grundeinstellungen** der **Single-Sign-On**-Seite besteht aus den 
 
 Jedesmal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens verifiziert und dient als Basis für den Benutzerzugang zur Cumulocity-Plattform. Der folgende Abschnitt beschreibt die Zuordnung zwischen JWT-Claims und dem Zugang zur Plattform.
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-7.png)
+ ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-7.png)
 
  Wenn ein Benutzer versucht sich anzumelden, sieht der dekodierte JWT-Claim für das oben abgebildete Beispiel folgendermaßen aus:
 
@@ -92,7 +92,7 @@ Mit "=" als Operator können Sie Platzhalter im Feld **Wert** verwenden. Der unt
 Soll der Platzhalter dem Sternsymbol selbst entsprechen, muss dieses durch Hinzufügen eines umgekehrten Schrägstrichs (\\) geschützt werden. Um zum Beispiel eine genaue Übereinstimmung mit der Zeichenkette "Lorem\*ipsum" zu erzielen, muss der Wert "Lorem\\*ipsum" lauten.
  
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-8.png)
+ ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-8.png)
 
 In diesem Fall sieht der JWT-Claim folgendermaßen aus:
 
@@ -113,21 +113,21 @@ Wie Sie sehen, besteht durch den "in"-Operator die Möglichkeit, zu verifizieren
 
 Wenn der Benutzer sich mit einem Access Token anmeldet, kann der Benutzername aus einem JWT-Claim abgeleitet werden. Der Name des Claims kann unter **Benutzer-ID** konfiguriert werden.
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-3.png)
+ ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-3.png)
 
 Jedes Access Token wird durch ein Signing-Zertifikat signiert. Aktuell gibt es drei Möglichkeiten, die Signing-Zertifikate zu konfigurieren.
 
 1. Durch Spezifizieren der URL für den öffentlichen Schlüssel des Azure AD-Zertifikats.
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-4.png)
+ ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-4.png)
 
 2. Durch Spezifizieren der ADFS-Manifest-Adresse (für ADFS 3.0).
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
+ ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-9.png)
 
 3. Durch manuelles Bereitstellen des öffentlichen Schlüssels eines Zertifikats. Eine Zertifikatsdefinition benötigt eine Algorithmus-Information, einen Wert für den öffentlichen Schlüssel und ein Gültigkeitsintervall.
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-5.png)
+ ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-5.png)
 
 #### Integration mit Azure AD
 
@@ -141,7 +141,7 @@ Während der Konfiguration der Azure AD entspricht die Redirect-URI Ihrer vollst
 
 Wenn die Vorlage "Azure AD" ausgewählt ist, sehen die Grundeinstellungen in etwa folgendermaßen aus:
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-aad-basic.png)
+ ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-aad-basic.png)
 
 |Feld|Beschreibung|
 |:---|:---|
@@ -155,7 +155,7 @@ Wenn die Vorlage "Azure AD" ausgewählt ist, sehen die Grundeinstellungen in etw
 
 Optional kann Single Logout konfiguriert werden:
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-logout-azure.png)
+ ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-logout-azure.png)
 
 |Feld|Beschreibung|
 |:---|:---|
@@ -164,7 +164,7 @@ Optional kann Single Logout konfiguriert werden:
 
 Der zweite Teil der Seite sieht genauso aus wie im Fall der benutzerdefinierten Vorlage und ermöglicht die Konfiguration der Rechtezuordnung, Benutzer-ID und Signaturverifizierung.
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-aad-2.png)
+ ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-aad-2.png)
 
 
 ##### Troubleshooting
@@ -175,14 +175,14 @@ In der "Administration-Anwendung" können Sie nach Klicken auf **Konten** > **Au
 
 Die Kontexte des Tokens werden im JSON-Format dargestellt.
 
-![Audit token content](/images/users-guide/Administration/admin-sso-audit-token.png)
+![Audit token content](/images/benutzerhandbuch/Administration/admin-sso-audit-token.png)
 
 
 ### <a name="default-app"></a>Anwendungseinstellungen ändern
 
 Klicken Sie **Anwendung**, um Anwendungseinstellungen zu bearbeiten.
 
-![Default application](/images/users-guide/Administration/admin-settings-application.png)
+![Default application](/images/benutzerhandbuch/Administration/admin-settings-application.png)
 
 Unter **Standardanwendung** können Sie eine Standardanwendung für alle Benutzer Ihres Mandanten festlegen.
 
@@ -201,7 +201,7 @@ Weitere Information erhalten Sie unter [http://enable-cors.org](http://enable-co
 
 Klicken Sie **Authentifizierung** im Menü **Einstellungen**, wenn Sie die Anmelde- oder TFA-Einstellungen ändern möchten.
 
-![Password settings](/images/users-guide/Administration/admin-settings-authentication.png)
+![Password settings](/images/benutzerhandbuch/Administration/admin-settings-authentication.png)
 
 >**Info**: Wenn das Menü nicht sichtbar ist, stellen Sie sicher, dass der Benutzer eine der folgenden Rollen hat: `ROLE_TENANT_ADMIN` oder `ROLE_TENANT_MANAGEMENT_ADMIN`.
 
@@ -221,7 +221,7 @@ Im Feld **Passwortgültigkeit begrenzen für** können Sie die Gültigkeit von B
 
 >**Info**: Passwortbeschränkung und das Erzwingen starker Passörter sind möglicherweise nicht editierbar, falls vom Plattformadministrator so konfiguriert.
 
-Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Nur starke (grüne) Passwörter zulassen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Aufrufen und Anmelden an der Cumulocity-Plattform](/users-guide/overview#login) beschrieben.
+Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Nur starke (grüne) Passwörter zulassen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Aufrufen und Anmelden an der Cumulocity-Plattform](/benutzerhandbuch/getting-started-de#login) beschrieben.
 
 Starke (grüne) Passwörter müssen "M" Zeichen haben. Die Verwendung bereits früher genutzter Passwörter wird standardmäßig eingeschränkt. Das System merkt sich die letzten "N" von einem Benutzer bereitgestellten Passwörter und erlaubt nicht, diese zu verwenden. Der Standardwert für "N" ist 10.
 
@@ -253,7 +253,7 @@ Klicken Sie **TFA-Einstellungen speichern**, um Ihre Einstellungen zu speichern.
 
 Klicken Sie **Attributsbibliothek** im Menü **Einstellungen**, um Stammdaten-Objekten, Alarmen, Ereignissen und Mandanten benutzerdefinierte Attribute hinzuzufügen.
 
-![Properties library](/images/users-guide/Administration/admin-settings-properties-library.png)
+![Properties library](/images/benutzerhandbuch/Administration/admin-settings-properties-library.png)
 
 Mit benutzerdefinierten Attributen können Sie das Datenmodell der in Cumulocity integrierten Objekte erweitern. Sie können die folgenden eigenen Attribute erstellen:
 
@@ -267,7 +267,7 @@ Mit benutzerdefinierten Attributen können Sie das Datenmodell der in Cumulocity
 
 1. Wählen Sie die Registerkarte für das gewünschte Attribut und klicken Sie **Attribut hinzufügen**.
 
-	![Add new property](/images/users-guide/Administration/admin-settings-property-add.png)
+	![Add new property](/images/benutzerhandbuch/Administration/admin-settings-property-add.png)
 
 1. Geben Sie im folgenden Dialog einen eindeutigen Namen als Bezeichnung und eine Beschriftung für das Attribut ein und wählen Sie einen Datentyp aus der Auswahlliste.
 
@@ -301,17 +301,17 @@ Mit benutzerdefinierten Attributen können Sie das Datenmodell der in Cumulocity
 
 Um OpenIT-Zugangsdaten einzugeben, klicken Sie **OpenIT-Zugangsdaten** im Menü **Einstellungen**.
 
-![Enter OpenIT credentials](/images/users-guide/Administration/admin-settings-openit.png)
+![Enter OpenIT credentials](/images/benutzerhandbuch/Administration/admin-settings-openit.png)
 
 Durch die Eingabe von OPenIT-Zugangsdaten erlauben Sie der Plattform, SMS-Dienste zu verwenden, die von [OpenIt](https://sms.openit.de/main.php) bereitgestellt werden.
 
-SMS werden für verschiedene Funktionen in den Anwendungen verwendet wie [Zwei-Faktor-Authentifizierung](/users-guide/administration#tfa) und Benachrichtigungen etwa bei Alarmen.
+SMS werden für verschiedene Funktionen in den Anwendungen verwendet wie [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration-de#tfa) und Benachrichtigungen etwa bei Alarmen.
 
 ### <a name="config-platform"></a>Konfigurationseinstellungen
 
 Unter **Konfiguration** im Menü **Einstellungen** können Sie systemweite Attribute konfigurieren.
 
-![Configuration settings](/images/users-guide/Administration/admin-settings-configuration.png)
+![Configuration settings](/images/benutzerhandbuch/Administration/admin-settings-configuration.png)
 
 #### Platzhalter
 
@@ -337,7 +337,7 @@ Geben Sie "false" ein, um den Link zu verbergen.
 
 Im Bereich **Passwort zurücksetzen** können Sie alle Einstellungen im Zusammenhang mit E-Mail-Templates zum Zurücksetzen des Passworts ändern.
 
-![Configuration menu1](/images/users-guide/Administration/admin-settings-configuration-password-reset.png)
+![Configuration menu1](/images/benutzerhandbuch/Administration/admin-settings-configuration-password-reset.png)
 
 Ganz oben können Sie festlegen, ob Sie zulassen möchten, E-Mails an unbekannte E-Mail-Adressen zu senden.
 
@@ -351,7 +351,7 @@ Geben Sie in den folgenden beiden Feldern jeweils ein Template für die E-Mails 
 
 Im Bereich **E-Mail-Server** können Sie benutzerdefinierte E-Mail-Server-Einstellungen konfigurieren.
 
-<img src="/images/users-guide/Administration/admin-settings-configuration-email-server.png" alt="Configure email server">
+<img src="/images/benutzerhandbuch/Administration/admin-settings-configuration-email-server.png" alt="Configure email server">
 
 Wählen Sie im Feld **Protokoll und Verschlüsselung** einen Protokoll-/Verschlüsselungstyp aus der Auswahlliste. Hierbei kann es sich um einen der folgenden Typen handeln:
 
@@ -365,19 +365,19 @@ Geben Sie Host, Port, Benutzername, Passwort und Senderadresse für den E-Mail-S
 
 Im Bereich **Datenexport** können Sie den E-Mail-Betreff und das E-Mail-Template für den Datenexport angeben sowie die **Fehlermeldung, wenn Benutzer nicht autorisiert ist** definieren.
 
-![Data export settings](/images/users-guide/Administration/admin-settings-configuration-data-export.png)
+![Data export settings](/images/benutzerhandbuch/Administration/admin-settings-configuration-data-export.png)
 
 #### Speicherbegrenzung
 
 Im Bereich **Speicherbegrenzung** können Sie den E-Mail-Betreff und das E-Mail-Template für E-Mails festlegen, die gesendet werden, *bevor* Daten bei Überschreitung der Speicherbegrenzung gelöscht werden und *nachdem* Daten gelöscht wurden.
 
-![Storage limit settings](/images/users-guide/Administration/admin-settings-configuration-storage-limit.png)
+![Storage limit settings](/images/benutzerhandbuch/Administration/admin-settings-configuration-storage-limit.png)
 
 #### Mandanten werden gesperrt
 
 Im Bereich **Mandanten werden gesperrt** können Sie Einstellungen für E-Mails vornehmen, die gesendet werden, wenn ein Mandant gesperrt wurde.
 
-<img src="/images/users-guide/Administration/admin-settings-configuration-suspending-tenants.png" alt="Suspended tenants">
+<img src="/images/benutzerhandbuch/Administration/admin-settings-configuration-suspending-tenants.png" alt="Suspended tenants">
 
 Oben können Sie auswählen, ob Sie die E-Mail zum Administrator des gesperrten Mandanten senden möchten und einen weiteren E-Mail-Empfänger angeben. Unten definieren Sie den Betreff und die Vorlage für die E-Mail "Gesperrter Benutzer".
 
@@ -396,7 +396,7 @@ Derzeit können folgende Anbietereinstellungen festgelegt werden:
 - [Sigfox](/users-guide/optional-services#sigfox)
 - [SIM](/users-guide/optional-services#connectivity)
 
-![Provider settings](/images/users-guide/Administration/admin-settings-connectivity-sim.png)
+![Provider settings](/images/benutzerhandbuch/Administration/admin-settings-connectivity-sim.png)
 
 #### So können Sie Zugangsdaten bereitstellen oder ersetzen
 
@@ -405,4 +405,4 @@ Derzeit können folgende Anbietereinstellungen festgelegt werden:
 3. Geben Sie die Zugangsdaten Ihrer Anbieterplattform ein. Je nach Anbieter handelt es sich hierbei entweder um Zugangsdaten für Ihr Konto auf der Anbieterplattform oder um die Zugangsdaten, mit denen Sie sich auf der Cumulocity-Konnektivitätsseite registrieren können. Diese werden in Ihrem Konto in der Anbieter-Plattform angezeigt.
 4. Klicken Sie abschließend auf **Speichern**, um Ihre Einstellungen zu speichern.
 
-Je nach gewähltem Anbieter können zusätzliche Felder vorhanden sein, die in der Dokumentation des entsprechenden Agents erläutert werden, siehe [Optionale Services](/users-guide/optional-services).
+Je nach gewähltem Anbieter können zusätzliche Felder vorhanden sein, die in der Dokumentation des entsprechenden Agents erläutert werden, siehe [Optionale Services](/benutzerhandbuch/optional-services).

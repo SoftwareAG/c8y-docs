@@ -22,7 +22,7 @@ Wenn Supportbenutzerzugriff aktiviert ist, können sich Supportbenutzer bei jede
 
 **Untermandanten-/Benutzerebene** 
 
-Wenn Supportbenutzerzugriff auf der Plattform-Ebene deaktiviert ist, kann er immer noch durch einen Untermandanten-Benutzer aktiviert werden. Dies erfolgt durch Klicken auf **Support aktivieren** im Menü **Benutzer**, siehe [Erste Schritte > Benutzeroptionen und -einstellungen](/users-guide/overview#user-settings). 
+Wenn Supportbenutzerzugriff auf der Plattform-Ebene deaktiviert ist, kann er immer noch durch einen Untermandanten-Benutzer aktiviert werden. Dies erfolgt durch Klicken auf **Support aktivieren** im Menü **Benutzer**, siehe [Erste Schritte > Benutzeroptionen und -einstellungen](/benutzerhandbuch/getting-started-de#user-settings). 
 
 Der Supportzugriff ist dann nicht auf den Benutzer beschränkt, der ihn aktiviert hat, sondern gilt für alle Benutzer des Untermandanten. Dies ist notwendig, um Probleme mit Rollen/Rechten nachvollziehen zu können.
 
@@ -49,11 +49,11 @@ Es gibt zwei verschiedene Einstellungen für Supportbenutzer in Cumulocity:
 
 Damit ein Benutzer des Management-Mandanten für Benutzer in anderen Mandanten Support leisten kann, müssen Sie dem Benutzer entweder die globale Rolle "Support" oder die Stammdatenrolle "Support" (jeweils LESEN und AKTUALISIEREN) zuweisen.
 
-Mit der Stammdatenrolle "Support" können Sie einzelnen Benutzern selektiv Support zuweisen. Erstellen Sie eine Gruppe der Mandanten, die der Benutzer unterstützen soll, und weisen Sie dann die Stammdatenrolle dem Benutzer und der Gruppe zu, wie unter [Administration > Verwalten von Berechtigungen > Zuweisen von Stammdatenrollen](/users-guide/administration#attach-inventory) beschrieben.
+Mit der Stammdatenrolle "Support" können Sie einzelnen Benutzern selektiv Support zuweisen. Erstellen Sie eine Gruppe der Mandanten, die der Benutzer unterstützen soll, und weisen Sie dann die Stammdatenrolle dem Benutzer und der Gruppe zu, wie unter [Administration > Verwalten von Berechtigungen > Zuweisen von Stammdatenrollen](/benutzerhandbuch/administration-de#attach-inventory) beschrieben.
 
 **Vom Benutzer erteilte Berechtigung**
 
-Benutzer können Support anfragen und einem Benutzer des Management-Mandanten erlauben, sich an ihrem Konto anzumelden. Klicken Sie hierzu auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie im Kontextmenü **Supportbenutzer aktivieren**. Weitere Informationen finden Sie unter [Erste Schritte > Benutzeroptionen und -einstellungen](/users-guide/overview#user-settings).
+Benutzer können Support anfragen und einem Benutzer des Management-Mandanten erlauben, sich an ihrem Konto anzumelden. Klicken Sie hierzu auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie im Kontextmenü **Supportbenutzer aktivieren**. Weitere Informationen finden Sie unter [Erste Schritte > Benutzeroptionen und -einstellungen](/benutzerhandbuch/getting-started-de#user-settings).
 
 
 ### So melden Sie sich als Supportbenutzer an

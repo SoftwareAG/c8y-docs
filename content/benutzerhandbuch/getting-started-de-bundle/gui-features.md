@@ -10,7 +10,7 @@ layout: default
 
 Die grundsätzliche Struktur, die in allen Cumulocity-Anwendungen vorhanden ist, umfasst die folgenden Bildschirmelemente:
 
-![Cumulocity application](/images/users-guide/overview-screen-elements.png)
+![Cumulocity application](/images/benutzerhandbuch/overview-screen-elements.png)
 
 <table>
 <col width="150">
@@ -50,7 +50,7 @@ Die grundsätzliche Struktur, die in allen Cumulocity-Anwendungen vorhanden ist,
 
 Auf kleineren Bildschirmen weicht das Layout geringfügig ab. Der Navigator ist verborgen und kann durch Klicken auf das Pfeilsymbol links oben aufgerufen werden. Nur die aktive Registerkarte wird angezeigt. Zum Umschalten zwischen Registerkarten klicken Sie auf den Pfeil an der Kopfzeile der Registerkarte und wählen Sie eine Registerkarte aus der Liste aus.
 
-<img src="/images/users-guide/overview-small-screen.png" alt="Layout on small devices" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/overview-small-screen.png" alt="Layout on small devices" style="max-width: 100%">
 
 > **Info:** Die Cumulocity-Anwendungen enthalten Tooltips, die angezeigt werden, wenn Sie mit dem Mauszeiger über ein Bildschirmelement fahren. Auf Geräten mit einem Touch-Screen werden diese Tooltips angezeigt, wenn Sie ein Bildschirmelement längere Zeit berühren.
 
@@ -58,13 +58,13 @@ Auf kleineren Bildschirmen weicht das Layout geringfügig ab. Der Navigator ist 
 
 Über den Application Switcher können Sie rasch zwischen verschiedenen Anwendungen wechseln. Klicken Sie auf die Schaltfläche **Application Switcher** rechts in der oberen Leiste, um eine Liste der Symbole für die Anwendungen anzuzeigen. 
 
-<img src="/images/users-guide/overview-application-switcher.png" alt="Application switcher" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/overview-application-switcher.png" alt="Application switcher" style="max-width: 100%">
 
 Der Application Switcher zeigt alle Cumulocity-Anwendungen an, auf die Sie momentan Zugriff haben. Dies können integrierte oder benutzerdefinierte abonnierte Anwendungen sowie [eigene Anwendungen](/user-guide/administration#own-applications) sein. Klicken Sie einfach auf das Symbol für die gewünschte Anwendung, um sie als aktive Anwendung zu öffnen.
 
 Wenn Sie die SAG Cloud nutzen, werden im Application Switcher an erster Stelle weitere SAG Cloud-Anwendungen, gefolgt von Cumulocity-Anwendungen, angezeigt:
 
-<img src="/images/users-guide/overview-app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/overview-app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 100%">
 
 
 ### <a name="searching-and-filtering"></a>Such- und Filterfunktionalität

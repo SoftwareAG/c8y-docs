@@ -10,6 +10,14 @@ Die Cockpit-Anwendung enthält voreingestellte Widget-Typen. Jeder Widget-Typ er
 
 Im folgenden Abschnitt werden, in alphabetischer Reihenfolge, alle verfügbaren Widget-Typen und ihre Konfigurationsparameter beschrieben.
 
+### Aktuelle Alarme
+
+Das Widget "Aktuelle Alarme" zeigt alle Alarme aller Schweregrade, sortiert nach Zeit. Es können keinen zusätzlichen Parameter konfiguriert werden.
+
+![Recent alarms widget](/images/benutzerhandbuch/cockpit/cockpit-widget-recent-alarms.png)
+
+Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring) im Abschnitt Device Management.
+
 ### Alarmliste
 
 Das Widget "Alarmliste" zeigt eine Liste von Alarmen, gefiltert nach Objekten, Alarmschweregrad und Alarmstatus. Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring).
@@ -34,6 +42,18 @@ Das Widget "Alle kritischen Alarme" zeigt alle Objekte mit einem kritischen Alar
 ![Critical alarms](/images/benutzerhandbuch/cockpit/cockpit-widget-critical-alarms.png)
 
 Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring) im Abschnitt Device Management.
+
+### Ampel
+
+Das "Ampel"-Widget visualisiert den Status eines Geräts im Form einer Ampel.
+
+**Konfigurierbare Parameter**
+
+|Feld|Beschreibung|
+|:---|:---|
+|Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
+|Ziel-Assets oder -geräte|Objekt (Gruppe oder Gerät), das dargestellt wird.
+|Statusregeln|Wählen Sie ein Attribut für jede Lampe. Wenn das Attribut einen der folgenden Werte hat, geht die entsprechende Lampe an: true, 1, jede nicht-leere Zeichenkette, jede Zahl außer 0.
 
 ### Anwendungen
 
@@ -116,15 +136,19 @@ Sie können die Spalten umsortieren, in dem Sie auf das Symbol ganz links in ein
 
 Um ein Attribut oder eine Aktion zu löschen, fahren Sie mit dem Mauszeiger über die entsprechende Zeile und klicken Sie **Löschen** auf der rechten Seite.
 
+### Bild
+
+Das Widget "Bild" ermöglicht es, ein einzelnes Bild anzuzeigen, das Sie aus Ihrem Dateisystem hochladen können. Es können keinen zusätzlichen Parameter konfiguriert werden.
+
 ### Datenpunktgraph
 
-Das Widget "Datenpunktgraph" zeigt einen Datenpunkt (Messwert) in einem Graphen. Die Visualisierung ist identisch mit der im [Daten-Explorer](#visualize).
+Das Widget "Datenpunktgraph" zeigt einen Datenpunkt (Messwert) in einem Graphen. Die Visualisierung ist identisch mit der im [Daten-Explorer](#data-explorer).
 
 <img src="/images/benutzerhandbuch/cockpit/Cockpit_DataPointsGraphWidget.png" name="Data Point Graph widget" style="width:75%;"/>
 
 Am einfachsten erstellen Sie ein "Datenpunktgraph"-Widget, in dem Sie zum Daten-Explorer navigieren, **Mehr...** in der oberen Menüleiste klicken und **Als Widget zum Dashboard senden** wählen.
 
-Weitere Informationen zu den konfigurierbaren Parametern finden Sie unter [Visualisieren von Daten mit dem Daten-Explorer](#visualize).
+Weitere Informationen zu den konfigurierbaren Parametern finden Sie unter [Visualisieren von Daten mit dem Daten-Explorer](#data-explorer).
 
 ### Datenpunktliste
 
@@ -132,11 +156,32 @@ Das Widget "Datenpunktliste" zeigt Datenpunkte (Messwerte) in einer Liste, einen
 
 **Konfigurierbare Parameter**
 
-|Feld|Beschreibung|
-|:---|:---|
-|Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
-|Datenpunkte|Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie **Datenpunkt hinzufügen**, um einen Datenpunkt zur Liste hinzuzufügen. Informationen zum Hinzufügen von Datenpunkten finden Sie unter [Daten-Explorer > Hinzufügen von Datenpunkten](#add-data-points).
-|Sichtbare Tabellenspalten|Spalten, die angezeigt werden: <br>**Beschriftung**: Beschriftung des Datenpunkts. Details finden Sie unter [Visualisieren von Daten im Daten-Explorer](#visualize). <br>**Ziel**: Zielwert. Kann im [Daten-Explorer](#visualize) oder in der [Datenpunktbibliothek](#library) konfiguriert werden.<br>Aktuel: Aktueller Wert. <br>**Differenz**: Absolute Differenz zwischen aktuellem Wert und Zielwert. <br>**Differenz %**: Prozentwert der Differenz zwischen aktuellem Wert und Zielwert. <br>**Asset**: Name des Geräts oder der Gruppe des Datenpunkts. 
+<table>
+<thead>
+<colgroup>
+   <col style="width: 20%;">
+   <col style="width: 80%;">
+</colgroup>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Titel</td>
+<td align="left">Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.</td>
+</tr>
+<tr>
+<td align="left">Datenpunkte</td>
+<td align="left">Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie <strong>Datenpunkt hinzufügen</strong>, um einen Datenpunkt zur Liste hinzuzufügen. Informationen zum Hinzufügen von Datenpunkten finden Sie unter <a href="#add-data-points">Daten-Explorer &gt; Hinzufügen von Datenpunkten</a>.</td>
+</tr>
+<tr>
+<td align="left">Sichtbare Tabellenspalten</td>
+<td align="left">Spalten, die angezeigt werden: <br><strong>Beschriftung</strong>: Beschriftung des Datenpunkts. Details finden Sie unter <a href="#visualize">Visualisieren von Daten im Daten-Explorer</a>. <br><strong>Ziel</strong>: Zielwert. Kann im <a href="#visualize">Daten-Explorer</a> oder in der <a href="#library">Datenpunktbibliothek</a> konfiguriert werden.<br>Aktuel: Aktueller Wert. <br><strong>Differenz</strong>: Absolute Differenz zwischen aktuellem Wert und Zielwert. <br><strong>Differenz %</strong>: Prozentwert der Differenz zwischen aktuellem Wert und Zielwert. <br><strong>Asset</strong>: Name des Geräts oder der Gruppe des Datenpunkts.</td>
+</tr>
+</tbody>
+</table>
 
 ### Datenpunkttabelle
 
@@ -160,17 +205,18 @@ Außerdem kann ein Zeitintervall festgelegt und Ereignisse können in Echtzeit �
 
 Das Widget "Fieldbus-Gerät" ermöglicht es, den Status eines Modbus-Geräts anzuzeigen und dieses zu betreiben.
 
-Weitere Informationen zum Widget "Fieldbus-Gerät" finden Sie unter [Optionale Services > Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/users-guide/optional-services#fieldbus-device-widget).
+Weitere Informationen zum Widget "Fieldbus-Gerät" finden Sie unter [Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/users-guide/optional-services#fieldbus-device-widget) im Abschnitt *Optional Services*.
+
+### Gerätenachricht
+
+Das Widget "Gerätenachricht" sendet eine Nachricht an ein Gerät. Das Verhalten des Geräts selbst ist geräteunabhängig. Nur verfügbar für Geräte, die diese Art von Kommando unterstützen.
+
 
 ### Hilfe und Service
 
 Das Widget "Hilfe und Service" zeigt Links zu Hilfe- und Serviceangeboten. Es können keinen zusätzlichen Parameter konfiguriert werden.
 
 ![Help and service widget](/images/benutzerhandbuch/cockpit/cockpit-widget-help-service.png)
-
-### Bild
-
-Das Widget "Bild" ermöglicht es, ein einzelnes Bild anzuzeigen, das Sie aus Ihrem Dateisystem hochladen können. Es können keinen zusätzlichen Parameter konfiguriert werden.
 
 ### Infoanzeige
 
@@ -256,21 +302,40 @@ Ziel-Assets oder -geräte: Geräte, die auf der Karte angezeigt werden. Im Falle
 
 >**Info**: Wenn keines der Zielgeräte einen bekannten Standort hat, zeigt das Widget eine Weltkarte ohne Symbol.
 
-### Gerätenachricht
-
-Das Widget "Gerätenachricht" sendet eine Nachricht an ein Gerät. Das Verhalten des Geräts selbst ist geräteunabhängig. Nur verfügbar für Geräte, die diese Art von Kommando unterstützen.
 
 ### Kuchendiagramm
 
 Das Widget "Kuchendiagramm" zeigt Datenpunkte (Messwerte) mit aktuellen Werten in einem Kuchendiagramm.
 
+
 **Konfigurierbare Parameter**
 
-|Feld|Beschreibung|
-|:---|:---|
-|Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
-|Kuchendiagramm-Optionen|Auswahloptionen zum Anzeigen von Tooltips, Prozentwerten und Legenden im Kuchendiagramm. 
-|Datenpunkte|Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie **Datenpunkt hinzufügen**, um einen Datenpunkt zur Liste hinzuzufügen. Informationen zum Hinzufügen von Datenpunkten finden Sie unter [Daten-Explorer > Hinzufügen von Datenpunkten](#add-data-points).
+<table>
+<thead>
+<colgroup>
+   <col style="width: 20%;">
+   <col style="width: 80%;">
+</colgroup>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Titel</td>
+<td align="left">Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.</td>
+</tr>
+<tr>
+<td align="left">Kuchendiagramm-Optionen</td>
+<td align="left">Auswahloptionen zum Anzeigen von Tooltips, Prozentwerten und Legenden im Kuchendiagramm.</td>
+</tr>
+<tr>
+<td align="left">Datenpunkte</td>
+<td align="left">Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie <strong>Datenpunkt hinzufügen</strong>, um einen Datenpunkt zur Liste hinzuzufügen. Informationen zum Hinzufügen von Datenpunkten finden Sie unter <a href="#add-data-points">Daten-Explorer &gt; Hinzufügen von Datenpunkten</a>.</td>
+</tr>
+</tbody>
+</table>
 
 
 ### Quick Links
@@ -286,15 +351,6 @@ Das Widget "Tacho" visualisiert Datenpunkte in Form eines Tachos.
 ![Radial gauge widget](/images/benutzerhandbuch/cockpit/cockpit-widget-radial-gauge.png)
 
 Sie müssen mindestens einen Datenpunkt aktivieren, um das Widget "Tacho" zu erstellen.
-
-
-### Aktuelle Alarme
-
-Das Widget "Aktuelle Alarme" zeigt alle Alarme aller Schweregrade, sortiert nach Zeit. Es können keinen zusätzlichen Parameter konfiguriert werden.
-
-![Recent alarms widget](/images/benutzerhandbuch/cockpit/cockpit-widget-recent-alarms.png)
-
-Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring) im Abschnitt Device Management.
 
 ### Relaisfeldsteuerung
 
@@ -336,19 +392,25 @@ Das "Silo"-Widget zeigt Datenpunkte (Messwerte) mit aktuellen Werten in einer Si
 
 **Konfigurierbare Parameter**
 
-|Feld|Beschreibung|
-|:---|:---|
-|Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
-|Datenpunkte|Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie **Datenpunkt hinzufügen**, um einen Datenpunkt zur Liste hinzuzufügen. Informationen zum Hinzufügen von Datenpunkten finden Sie unter [Daten-Explorer > Hinzufügen von Datenpunkten](#add-data-points).
-
-### Ampel
-
-Das "Ampel"-Widget visualisiert den Status eines Geräts im Form einer Ampel.
-
-**Konfigurierbare Parameter**
-
-|Feld|Beschreibung|
-|:---|:---|
-|Titel|Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.
-|Ziel-Assets oder -geräte|Objekt (Gruppe oder Gerät), das dargestellt wird.
-|Statusregeln|Wählen Sie ein Attribut für jede Lampe. Wenn das Attribut einen der folgenden Werte hat, geht die entsprechende Lampe an: true, 1, jede nicht-leere Zeichenkette, jede Zahl außer 0.
+<table>
+<thead>
+<colgroup>
+   <col style="width: 20%;">
+   <col style="width: 80%;">
+</colgroup>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Titel</td>
+<td align="left">Widget-Titel. Standardmäßig wird der Widget-Typ als Titel verwendet.</td>
+</tr>
+<tr>
+<td align="left">Datenpunkte</td>
+<td align="left">Zeigt eine Liste verfügbarer Datenpunkte. Sie müssen mindestens einen Datenpunkt aktivieren. Klicken Sie <strong>Datenpunkt hinzufügen</strong>, um einen Datenpunkt zur Liste hinzuzufügen. Informationen zum Hinzufügen von Datenpunkten finden Sie unter <a href="#add-data-points">Daten-Explorer &gt; Hinzufügen von Datenpunkten</a>.</td>
+</tr>
+</tbody>
+</table>

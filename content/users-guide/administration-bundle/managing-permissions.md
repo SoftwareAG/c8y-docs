@@ -48,6 +48,8 @@ The roles "admins" and "devices" have a special status:
 
 Furthermore, the following roles are initially configured:
 
+**Info**: 
+
 <table>
 <col style="width: 20%;">
 <col style="width: 80%;">

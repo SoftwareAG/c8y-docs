@@ -3,7 +3,7 @@ weight: 70
 title: Example setup for VMware Workstation Player
 layout: redirect
 aliases:
-  - /edge/installation/#setting-up-vmware
+  - https://cumulocity.com/guides/edge/installation/#setting-up-vmware
 ---
 
 ### Setting up for VMware

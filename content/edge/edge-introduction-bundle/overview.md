@@ -3,7 +3,7 @@ weight: 10
 title: Overview
 layout: redirect
 aliases:
-  - /edge/edge-introduction/#overview
+  - https://cumulocity.com/guides/edge/edge-introduction/#overview
 ---
 
 Cumulocity IoT Edge is an onsite, single-server variant of the Cumulocity IoT Core platform. It is delivered as a software appliance designed to run on industrial PC’s or local servers.

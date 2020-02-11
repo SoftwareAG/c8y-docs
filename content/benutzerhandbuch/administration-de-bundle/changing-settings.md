@@ -51,7 +51,7 @@ Da das OAuth-Protokoll auf der Ausführung von HTTP-Anfragen und -Redirects basi
 
 Der erste Teil der **Single-Sign-On**-Seite besteht aus der Anfragekonfiguration. Hier werden die Anfrage-Adresse, Anfrageparameter, Kopfzeile sowie Body von Token- und Refresh-Anfragen konfiguriert. Die Autorisierungsmethode wird von POST-Anfragen als GET-, Token- und Refresh-Anfrage ausgeführt.
 
-Eine Abmeldeanfrage kann optional festgelegt werden. Sie führt ein Front-Channel Single Logout [OpenID Connect Front-Channel Logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html) aus. Wenn diese Option konfiguriert ist, wird der Benutzer nach dem Abmelden aus Cumulocity zur festgelegten Abmelde-URL des Autorisierungsservers umgeleitet.
+Eine Abmeldeanfrage kann optional festgelegt werden. Sie führt ein [Front Channel Single Logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html) aus. Wenn diese Option konfiguriert ist, wird der Benutzer nach dem Abmelden aus Cumulocity zur festgelegten Abmelde-URL des Autorisierungsservers weitergeleitet.
 
 ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-logout-custom.png)
 
@@ -159,8 +159,8 @@ Optional kann Single Logout konfiguriert werden:
 
 |Feld|Beschreibung|
 |:---|:---|
-|Abmeldung nach Umleitung| Aktiviert Single Logout, indem der Benutzer nach dem Abmelden zum Abmelde-Endpunkt des Autorisierungsservers umgeleitet wird.
-|Redirect-URL| Adresse, an die der Benutzer umgeleitet werden soll, nachdem er sich vom Autorisierungsserver erfolgreich abgemeldet hat.
+|Nach Abmeldung weiterleiten| Aktiviert Single Logout, indem der Benutzer nach dem Abmelden zum Abmelde-Endpunkt des Autorisierungsservers weitergeleitet wird.
+|Redirect-URL| Adresse, an die der Benutzer weitergeleitet werden soll, nachdem er sich vom Autorisierungsserver erfolgreich abgemeldet hat.
 
 Der zweite Teil der Seite sieht genauso aus wie im Fall der benutzerdefinierten Vorlage und ermöglicht die Konfiguration der Rechtezuordnung, Benutzer-ID und Signaturverifizierung.
 

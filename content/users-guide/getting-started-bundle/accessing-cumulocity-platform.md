@@ -3,7 +3,7 @@ weight: 20
 title: Accessing and logging into the Cumulocity platform
 layout: redirect
 aliases:
-  - /users-guide/overview/accessing-cumulocity-platform
+  - /users-guide/overview/#accessing-cumulocity-platform
 ---
 
 You access the Cumulocity IoT platform via a web browser. Our products have been tested with the following desktop web browsers:

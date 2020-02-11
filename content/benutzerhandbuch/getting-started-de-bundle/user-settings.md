@@ -3,7 +3,7 @@ weight: 50
 title: Benutzeroptionen und -einstellungen
 layout: redirect
 aliases:
-  - /benutzerhandbuch/overview/user-settings
+  - /benutzerhandbuch/overview/#user-settings
 ---
 
 Durch Klicken auf die Schaltfläche **Benutzer** rechts oben wird ein Menü geöffnet, das Zugriff auf verschiedene Aktionen oder Informationen ermöglicht.

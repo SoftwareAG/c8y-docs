@@ -3,7 +3,7 @@ weight: 40
 title: UI functionalities and features
 layout: default
 aliases:
-  - /users-guide/overview/gui-features
+  - /users-guide/overview/#gui-features
 ---
 
 

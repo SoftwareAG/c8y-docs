@@ -103,7 +103,7 @@ Verwenden Sie den Umschalter, um das Weiterleiten von Daten an den Zielmandanten
 
 >Die Option **Alle Objekte** ist weiterhin in der Benutzeroberfläche vorhanden, um Rückwärtskompatibilität mit älteren Versionen sicherzustellen. Wir planen, diese Option künftig nicht mehr zu unterstützen, und empfehlen dringend, sie nicht zu verwenden. 
  
->Wird sie gewählt, synchronisiert Cumulocity alle Arten von System- und benutzerdefinierten Daten und könnte Objekte im Zielmandanten außer Kraft setzen oder kontextfern erstellen. Solche Objekte können Referenzen zu anderen Objekten sowie Konfigurationsinformationen enthalten. Es liegt in der Verantwortung des Benutzers, die Konsistenz solcher Informationen in den übertragenen Objekten in der Zielumgebung sicherzustellen.
+>Wird sie gewählt, synchronisiert Cumulocity alle Arten von System- und benutzerdefinierten Daten und könnte Objekte im Zielmandanten außer Kraft setzen oder remote erstellen. Solche Objekte können Referenzen zu anderen Objekten sowie Konfigurationsinformationen enthalten. Es liegt in der Verantwortung des Benutzers, die Konsistenz solcher Informationen in den übertragenen Objekten in der Zielumgebung sicherzustellen.
 
 >Dies betrifft Elemente wie SmartREST-Templates, Geräteprotokolle, Smart-Rule-Konfigurationen und Dashboards.
 
@@ -155,7 +155,7 @@ Klicken Sie auf das Menüsymbol rechts neben einem Datenkonnektor-Eintrag und an
 
 ![Warnings tab](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-connector-warnings.png)
 
-Weitere Informationen zu Alarmen finden Sie unter [Device Management > Überwachen und Steuern von Geräten > Verwenden von Alarmen](alarm-monitoring).
+Weitere Informationen zu Alarmen finden Sie unter [Überwachen und Steuern von Geräten > Verwenden von Alarmen](/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt *Device Management*.
 
 
 ### <a name="data-broker-subscriptions"></a> Datenabonnements
@@ -178,8 +178,6 @@ Verwenden Sie den Umschalter, um zeitweilig das Weiterleiten von Daten in Ihren 
 4. Verschieben Sie den Umschalter in der Karte, um zeitweilig das Weiterleiten von Daten in Ihren Mandanten zu beenden.
 
 Navigieren Sie nun zur Device Management- oder Cockpit-Anwendung. Dort finden Sie eine neue "virtuelle Gruppe" mit einem speziellen Symbol (siehe Abbildung unten), die die weitergeleiteten Geräte anzeigt. Diese Gruppe hat denselben Namen wie das Abonnement. Geräte werden auf der Empfängerseite verzögert erstellt, sobald sie, nach Einrichten eines aktiven Abonnements, das erste mal Daten senden.
-
-![Data broker group in cockpit app](/images/benutzerhandbuch/data-broker-group-created.PNG)
 
 #### So löschen Sie einen Datenkonnektor
 

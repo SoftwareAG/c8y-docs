@@ -7,7 +7,7 @@ layout: redirect
 In der Cumulocity-Plattform gibt es zwei Arten von Anwendungen:
 
 * [Abonnierte Anwendungen](#subscribed-applications) - alle Anwendungen, die für den Mandanten abonniert sind (entweder durch die Plattform oder einen Service Provider), aber die er nicht besitzt. Diese können vom Benutzer nicht hinzugefügt, geändert oder entfernt werden.
-* [Eigene Anwendungen](#own-applications) - alle Anwendungen, die der Mandant besitzt. Benutzer können diese Anwendungen auf verschiedene Weise [als eigene Anwendungen hinzufügen](#add-applications). 
+* [Eigene Anwendungen](#own-applications) - alle Anwendungen, die der Mandant besitzt. Benutzer können diese Anwendungen auf verschiedene Weise [als eigene Anwendungen hinzufügen](#adding-applications). 
 
 Klicken Sie auf **Eigene Anwendungen** oder **Abonnierte Anwendungen** im Menü **Anwendungen** des Navigators, um eine Liste aller entsprechenden Anwendungen in Ihrem Konto anzuzeigen.
 
@@ -75,7 +75,7 @@ Für jede Anwendung werden die folgenden Attribute angezeigt:
 </tbody>
 </table>
 
-Bei Anwendungen des Typs "Microservice" finden Sie zusätzlich Informationen zu dessen Version sowie zu dessen Isolationsstufe und Abrechnungsmodus. Details zu diesen Parametern siehe [Enterprise Tenant > Verwalten von Mandanten > Microservice-Nutzung](/users-guide/enterprise-tenant/#microservice-usage).  
+Bei Anwendungen des Typs "Microservice" finden Sie zusätzlich Informationen zu dessen Version sowie zu dessen Isolationsstufe und Abrechnungsmodus. Details zu diesen Parametern siehe [Enterprise Tenant > Verwalten von Mandanten > Microservice-Nutzung](/benutzerhandbuch/enterprise-edition-de/#microservice-usage).  
 
 
 ### <a name="subscribed-applications"></a>Abonnierte Anwendungen
@@ -101,7 +101,7 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 <col width="200">
 <thead>
 <tr>
-<th style="text-align:center">Anwendung</th>
+<th style="text-align:left">Anwendung</th>
 <th style="text-align:left">Funktionalität</th>
 <th style="text-align:left">Name (wie in der API verwendet)</th>
 <th style="text-align:left">Typ</th>
@@ -109,49 +109,49 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><a href="/benutzerhandbuch/administration-de" class="no-ajaxy">Administration</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/administration-de" class="no-ajaxy">Administration</a></td>
 <td style="text-align:left">Gibt Konto-Administratoren die Möglichkeit, Rollen, Mandanten und Anwendungen zu verwalten.</td>
 <td style="text-align:left">administration</td>
 <td style="text-align:left">Web-Anwendung</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/apama" class="no-ajaxy">Apama-ctrl*</a></td>
+<td style="text-align:left"><a href="/apama" class="no-ajaxy">Apama-ctrl*</a></td>
 <td style="text-align:left">Laufzeit für Apama EPL-Apps, Smart Rules und Analytics Builder.</td>
 <td style="text-align:left">apama-ctrl-* (verschiedene Zeichenketten für verschiedene Größen-/Kapazitätsoptionen)</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/apama" class="no-ajaxy">Apama Analytics Builder</a></td>
+<td style="text-align:left"><a href="/apama" class="no-ajaxy">Apama Analytics Builder</a></td>
 <td style="text-align:left">Analytics Builder Modellmanager und -editor – ermöglicht die grafische Erstellung von Modellen, um Daten von Geräten zu verarbeiten und darauf zu reagieren.</td>
 <td style="text-align:left">Apama Analytics Builder</td>
 <td style="text-align:left">Web-Anwendung</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/event-language" class="no-ajaxy">Cep</a></td>
+<td style="text-align:left"><a href="/event-language" class="no-ajaxy">Cep</a></td>
 <td style="text-align:left"><b>Diese Anwendung ist veraltet und keine Standardanwendung im Standard Tenant mehr. Apama ist nun die Standard-CEP-Engine.</b> <br>Definieren Sie geschäftliche Aktivitäten anhand von Echtzeitdaten über die Esper CEP Engine. Diese CEP-Variante verwendet eine gemeinsame Instanz für mehrere Mandanten. Siehe "Cep-small" für eine mandantenspezifische Bereitstellung.</td>
 <td style="text-align:left">cep</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/benutzerhandbuch/cockpit-de" class="no-ajaxy">Cockpit</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/cockpit-de" class="no-ajaxy">Cockpit</a></td>
 <td style="text-align:left">Verwalten und überwachen Sie IoT-Assets und Daten aus Geschäftssicht.</td>
 <td style="text-align:left">cockpit</td>
 <td style="text-align:left">Web-Anwendung</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/benutzerhandbuch/device-management-de" class="no-ajaxy">Device Management</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/device-management-de" class="no-ajaxy">Device Management</a></td>
 <td style="text-align:left">Verwalten und überwachen Sie Geräte und führen Sie die Steuerung und Fehlerbehebung von Geräten per Fernzugriff durch.</td>
 <td style="text-align:left">devicemanagement</td>
 <td style="text-align:left">Web-Anwendung</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/benutzerhandbuch/device-management-de#simulator" class="no-ajaxy">Device simulator</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/device-management-de#simulator" class="no-ajaxy">Device simulator</a></td>
 <td style="text-align:left">Simulieren Sie alle Aspekte von IoT-Geräten.</td>
 <td style="text-align:left">device-simulator</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/benutzerhandbuch/cockpit-de#smart-rules" class="no-ajaxy">Smart Rules</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/cockpit-de#smart-rules" class="no-ajaxy">Smart Rules</a></td>
 <td style="text-align:left">Verwenden Sie die Smart Rule Engine und erstellen Sie <a href="/benutzerhandbuch/cockpit-de#smart-rules" class="no-ajaxy">Smart Rules</a>, um Aktionen anhand von Echtzeitdaten auszuführen. Erfordert eine der folgenden Anwendungen: "Cep", "Apama“</td>
 <td style="text-align:left">smartrule</td>
 <td style="text-align:left">Microservice</td>
@@ -168,7 +168,7 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 <col width="200">
 <thead>
 <tr>
-<th style="text-align:center">Anwendung</th>
+<th style="text-align:left">Anwendung</th>
 <th style="text-align:left">Funktionalität</th>
 <th style="text-align:left">Name (wie in der API verwendet)</th>
 <th style="text-align:left">Typ</th>
@@ -176,25 +176,25 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><a href="/users-guide/enterprise-edition/#branding" class="no-ajaxy">Branding</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-edition-de/#branding" class="no-ajaxy">Branding</a></td>
 <td style="text-align:left">Passen Sie das Erscheinungsbild Ihrer Mandanten nach Ihren Vorlieben an.</td>
 <td style="text-align:left">branding</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/users-guide/enterprise-edition/#data-broker" class="no-ajaxy">Data Broker</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-edition-de/#data-broker" class="no-ajaxy">Data Broker</a></td>
 <td style="text-align:left">Bietet die Möglichkeit, Daten gezielt mit anderen Mandanten zu teilen.</td>
 <td style="text-align:left">feature-broker</td>
 <td style="text-align:left">Funktion</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/users-guide/enterprise-edition#customization" class="no-ajaxy">SSL-Verwaltung</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-edition-de#customization" class="no-ajaxy">SSL-Verwaltung</a></td>
 <td style="text-align:left">Aktivieren Sie einen eigenen benutzerdefinierten Domain-Namen durch Verwendung eines SSL-Zertifikats.</td>
 <td style="text-align:left">sslmanagement</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/users-guide/enterprise-edition/#user-hierarchies" class="no-ajaxy">User hierarchies</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-edition-de/#user-hierarchies" class="no-ajaxy">User hierarchies</a></td>
 <td style="text-align:left">Hiermit können Sie in Cumulocity verschiedene Organisationen getrennt verwalten, die dieselbe Datenbank teilen.</td>
 <td style="text-align:left">feature-user-hierarchy</td>
 <td style="text-align:left">Funktion</td>
@@ -210,69 +210,69 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 <col width="200">
 <thead>
 <tr>
-<th style="text-align:center">Anwendung</th>
+<th style="text-align:left">Anwendung</th>
 <th style="text-align:left">Funktionalität</th>
 <th style="text-align:left">Name (wie in der API verwendet)</th>
 <th style="text-align:left">Typ</th>
 </tr>
 </thead>
 <tbody>
-<td style="text-align:center"><a href="/apama" class="no-ajaxy">Apama EPL Apps</a></td>
+<td style="text-align:left"><a href="/apama" class="no-ajaxy">Apama EPL Apps</a></td>
 <td style="text-align:left"><b>Diese Anwendung ist ein optionaler Service in Cumulocity IoT Core, aber ein Standardservice in Cumulocity IoT Edge.</b><br>
 Manager und Editor für Apama Event Processing Language (EPL) Apps zur sofortigen Verarbeitung eingehender Daten.</td>
 <td style="text-align:left">Apama EPL Apps</td>
 <td style="text-align:left">Web-Anwendung</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/event-language" class="no-ajaxy">CEP custom rules</a></td>
+<td style="text-align:left"><a href="/event-language" class="no-ajaxy">CEP custom rules</a></td>
 <td style="text-align:left"><b>Diese Anwendung ist veraltet.</b><br>Laden Sie Ihre eigenen mit Esper erstellten CEP-Regeln in einer mandantenspezifischen Bereitstellung hoch. Sie müssen die Anwendung "Cep-small" abonnieren, um diese Funktion nutzen zu können.</td>
 <td style="text-align:left">feature-cep-custom-rules</td>
 <td style="text-align:left">Funktion</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/event-language" class="no-ajaxy">Cep-small</a></td>
+<td style="text-align:left"><a href="/event-language" class="no-ajaxy">Cep-small</a></td>
 <td style="text-align:left"><b>Diese Anwendung ist veraltet.</b><br>CEP-Variante. Ermöglicht das Arbeiten mit CEP-Regeln auf Basis von Esper in einer mandantenspezifischen Bereitstellung (im Unterschied zu "Cep", das eine gemeinsame Instanz verwendet). Sie müssen "CEP custom rules" abonnieren, um eigene Esper CEP-Regeln hochladen zu können.</td>
 <td style="text-align:left">cep-small</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/users-guide/optional-services/#cloud-fieldbus" class="no-ajaxy">Cloud Fieldbus</a></td>
+<td style="text-align:left"><a href="/users-guide/optional-services/#cloud-fieldbus" class="no-ajaxy">Cloud Fieldbus</a></td>
 <td style="text-align:left">Erfassen Sie Daten von Fieldbus-Geräten und verwalten Sie sie per Fernzugriff in Cumulocity.</td>
 <td style="text-align:left">feature-fieldbus4</td>
 <td style="text-align:left">Funktion</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/users-guide/optional-services/#cloud-remote-access" class="no-ajaxy">Cloud Remote Access</a></td>
+<td style="text-align:left"><a href="/users-guide/optional-services/#cloud-remote-access" class="no-ajaxy">Cloud Remote Access</a></td>
 <td style="text-align:left">Implementiert Virtual Network Computing (VNC) für den Fernzugriff auf Bedienfelder und andere Geräte über einen Webbrowser.</td>
 <td style="text-align:left">cloud-remote-access</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/users-guide/optional-services/#connectivity" class="no-ajaxy">Connectivity</a></td>
+<td style="text-align:left"><a href="/users-guide/optional-services/#connectivity" class="no-ajaxy">Connectivity</a></td>
 <td style="text-align:left">Schaffen Sie eine Schnittstelle zu Mobilgeräten über verschiedene SIM-Anbieter wie Jasper, Ericsson und Comarch.</td>
 <td style="text-align:left">connectivity-agent-server</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:center">Microservice hosting</td>
+<td style="text-align:left">Microservice hosting</td>
 <td style="text-align:left">Hosten Sie Ihre eigenen Microservices zusätzlich zu Cumulocity.</td>
 <td style="text-align:left">feature-microservice-hosting</td>
 <td style="text-align:left">Funktion</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/users-guide/optional-services#nokia-impact" class="no-ajaxy">Nokia IMPACT agent</a></td>
+<td style="text-align:left"><a href="/users-guide/optional-services#nokia-impact" class="no-ajaxy">Nokia IMPACT agent</a></td>
 <td style="text-align:left">Schaffen Sie eine Schnittstelle zu heterogenen Geräten über den Nokia IMPACT Data Collector.</td>
 <td style="text-align:left">impact</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/users-guide/optional-services#sigfox" class="no-ajaxy">Sigfox</a></td>
+<td style="text-align:left"><a href="/users-guide/optional-services#sigfox" class="no-ajaxy">Sigfox</a></td>
 <td style="text-align:left">Schaffen Sie eine Schnittstelle zu Sigfox-Geräten über die Sigfox-Cloud. Erfordert die folgende Anwendung: "feature-fieldbus4“</td>
 <td style="text-align:left">sigfox-agent</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/users-guide/optional-services/#tenant-sla-monitoring" class="no-ajaxy">Tenant SLA Monitoring</a></td>
+<td style="text-align:left"><a href="/users-guide/optional-services/#tenant-sla-monitoring" class="no-ajaxy">Tenant SLA Monitoring</a></td>
 <td style="text-align:left">Gibt Service Providern die Möglichkeit, die Verfügbarkeit und Reaktionszeit von Mandanten und Untermandanten zu überwachen.</td>
 <td style="text-align:left">tenant-sla-monitoring</td>
 <td style="text-align:left">Microservice</td>

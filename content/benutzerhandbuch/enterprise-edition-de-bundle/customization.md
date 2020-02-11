@@ -28,7 +28,7 @@ Im Bereich **Passwörter** können Sie Passworteinstellungen wie Standardstärke
 
 Im Bereich **Supportbenutzer** konfigurieren Sie die Parameter für die Aktivierung eines Supportbenutzers für Untermandanten-Benutzer.
 
-Mit Hilfe dieser Funktion können Supportbenutzer (d. h. Benutzer mit spezifischen Berechtigungen im Management-Mandanten) bei etwaigen Problemen auf Benutzer von Untermandanten zugreifen. Weitere Informationen finden Sie unter [Supportbenutzerzugriff](/users-guide/enterprise-edition#users-in-other-tenants).
+Mit Hilfe dieser Funktion können Supportbenutzer (d. h. Benutzer mit spezifischen Berechtigungen im Management-Mandanten) bei etwaigen Problemen auf Benutzer von Untermandanten zugreifen. Weitere Informationen finden Sie unter [Supportbenutzerzugriff](/benutzerhandbuch/enterprise-edition-de#users-in-other-tenants).
 
 <img src="/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
 
@@ -42,7 +42,7 @@ Im Feld **Gültigkeitsdauer** können Sie optional die Supportdauer angeben, d. 
 
 Ablaufdatum und -uhrzeit werden anhand der im Feld **Gültigkeitsdauer** angegebenen Dauer aktualisiert. Beispiel: Wenn das aktuelle Ablaufdatum 01/09/2018 15:00 lautet und die Dauer von 24 Stunden beibehalten wurde, aktualisiert der aktivierende Supportbenutzer das Ablaufdatum auf 01/10/2018 15:00.
 
-Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [Verwalten von Mandanten](/users-guide/enterprise-edition#managing-tenants).
+Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [Verwalten von Mandanten](/benutzerhandbuch/enterprise-edition-de#managing-tenants).
 
 ### <a name="branding"></a>Branding
 
@@ -162,7 +162,7 @@ Bevor Sie den eigenen Domain-Namen aktivieren, stellen Sie sicher, dass
 * Sie einen Wildcard-CNAME-Eintrag (beginnend mit `*.`) in folgendem Format zu Ihrem DNS-Server hinzugefügt haben:<br>
  Domain-Name = "&ast;.&lt;ihr domain name>", z.B. "*.iot.mycompany.com" <br>
  Typ = CNAME <br>
- Ziel = Domain der Plattform, auf die Sie verweisen wollen. Wenn Sie z. B. "https://demos.cumulocity.com" verwenden, um auf Ihren Mandanten zuzugreifen, verwenden Sie "demos.cumulocity.com" als Ziel.<br>
+ Ziel = Domain der Plattform, auf die Sie verweisen wollen. Wenn Sie z. B. `https://demos.cumulocity.com` verwenden, um auf Ihren Mandanten zuzugreifen, verwenden Sie "demos.cumulocity.com" als Ziel.<br>
 Vergewissern Sie sich, dass Sie alle A-Einträge für die Wildcard-Domain entfernt haben. Wenn Sie bereits einen Eintrag A für "xxx.iot.mycompany.com" haben, können Sie keine Mandanten mit der URL "xxx" anlegen.
 
 Nach erfolgreicher Aktivierung werden Sie zu Ihrem Enterprise Tenant unter der neuen Domain umgeleitet. Sie erhalten eine Email mit Informationen über die Aktivierung.

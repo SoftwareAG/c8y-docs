@@ -105,7 +105,7 @@ Hier werden die folgenden Informationen angezeigt:
 
 |Feld|Beschreibung
 |:--------|:-----
-|Status|Kann entweder *Eingeschaltet* oder *Ausgeschaltet* sein. <br>*Eingeschaltet* bedeutet: <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene aktiviert (siehe [Anpassen der Plattform](/users-guide/enterprise-edition#configuration)), <br> - ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert. <br>*Ausgeschaltet* bedeutet: <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene deaktiviert, <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene aktiviert, aber für den Untermandanten deaktiviert, <br> - kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h., jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).
+|Status|Kann entweder *Eingeschaltet* oder *Ausgeschaltet* sein. <br>*Eingeschaltet* bedeutet: <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene aktiviert (siehe [Anpassen der Plattform](/benutzerhandbuch/enterprise-edition-de#configuration)), <br> - ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert. <br>*Ausgeschaltet* bedeutet: <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene deaktiviert, <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene aktiviert, aber für den Untermandanten deaktiviert, <br> - kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h., jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).
 |Anzahl aktiver Anfragen|Anzahl der aktuell aktiven Anfragen im Untermandanten. Wird nur angezeigt, wenn Supportbenutzerzugriff nicht global auf Plattform-Ebene aktiviert ist. Wird als Zahl in einem kleinen roten Punkt angezeigt.
 |Ablaufdatum|Legt das Datum fest, an dem der Supportbenutzerzugriff für den Mandanten abläuft. Wenn kein Datum festgelegt wurde, wird das Ablaufdatum auf "Unbegrenzt" gesetzt.
 
@@ -196,7 +196,7 @@ Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeige
 
 Über das benutzerdefinierte Attribut "Geräteanzahl begrenzen" können Plattformadministratoren die Anzahl der gleichzeitig registrierten Hauptgeräte oder der registrierten Geräte insgesamt (einschließlich Kindgeräte) begrenzen. 
 
-Sie können auf der Seite **[Nutzungsstatistiken](<a name="usage-stats"></a>)** die Höchstanzahl registrierter Geräte bzw. Hauptgeräte sowie den Höchstwert des genutzten Datenspeichers einsehen.
+Sie können auf der Seite **[Nutzungsstatistiken](#usage-stats)** die Höchstanzahl registrierter Geräte bzw. Hauptgeräte sowie den Höchstwert des genutzten Datenspeichers einsehen.
 
 #### Begrenzen der Anfragerate für Untermandanten
 
@@ -218,34 +218,120 @@ Die Seite **Nutzungsstatistiken** zeigt statistische Informationen für jeden Un
 
 Die folgenden Informationen werden für jeden Untermandanten bereitgestellt (im Screenshot oben aus Platzgründen nicht vollständig zu sehen):
 
-|Feld|Beschreibung|
-|:---|:---|
-|ID|ID des Untermandanten
-|API-Anfragen|Gesamtanzahl der API-Anfragen, einschließlich Anfragen von Geräten und Anwendungen
-|API-Anfrage von Geräten|ID des Untermandanten
-|Speicherplatz (MB)|Gespeicherte Daten in Ihrem Konto
-|Höchstwert Speicher (MB)|Höchstwert der Speicherung
-|Hauptgeräte|Anzahl der Geräte ohne Kindgeräte
-|Höchstwert Hauptgeräte|Höchstanzahl Hauptgeräte, ohne Kindgeräte
-|Geräte|Die Gesamtanzahl der mit dem Untermandanten verbundenen Geräte
-|Höchstwert Geräte|Höchstanzahl Geräte, einschließlich Kindgeräte
-|Endpunktgeräte|ID des Untermandanten
-|ID|Blattgeräte (ohne Gateways und Kinder)
-|Abonnierte Anwendungen|Anzahl der vom Untermandanten abonnierten Anwendungen
-|Erstellungszeitpunkt|Datum und Zeit der Erstellung des Untermandanten
-|Erzeugte Alarme|Anzahl der erzeugten Alarme
-|Aktualisierte Alarme|Anzahl der aktualisierten Alarme
-|Erstellte Stammdaten|Anzahl der erstellten Managed Objects
-|Aktualisierte Stammdaten|Anzahl der aktualisierten Managed Objects
-|Erstellte Ereignisse|Anzahl der erstellten Ereignisse
-|Aktualisierte Ereignisse|Anzahl der aktualisierten Ereignisse
-|Erstellte Messwerte|Anzahl der erstellten Messwerte
-|Gesamt Inbound-Transfer|Summe aller Inbound-Transfers (erzeugte Alarme, aktualisierte Alarme, erstellte Ereignisse, aktualisierte Ereignisse, erstellte Stammdaten, aktualisierte Stammdaten, erstellte Messwerte).
-|CPU (m)|Microservice-CPU-Nutzung, angegeben in CPU-Millisekunden, weitere Informationen siehe [Microservice-Nutzung](#microservice-usage)
-|Speicher (MB)|Microservice-Speichernutzung, weitere Informationen siehe [Microservice-Nutzung](#microservice-usage)
-|Übergeordneter Mandant|Name des übergeordneten Mandanten (nur verfügbar für den Management-Mandanten)
-|Externe Referenz|Dieses Feld ist für den individuellen Gebrauch. Sie können hier beispielsweise einen Link zum CRM-System oder eine interne Kundennummer einfügen.
-
+<table>
+<thead>
+<colgroup>
+   <col style="width: 20%;">
+   <col style="width: 80%;">
+</colgroup>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">ID</td>
+<td align="left">ID des Untermandanten</td>
+</tr>
+<tr>
+<td align="left">API-Anfragen</td>
+<td align="left">Gesamtanzahl der API-Anfragen, einschließlich Anfragen von Geräten und Anwendungen</td>
+</tr>
+<tr>
+<td align="left">API-Anfrage von Geräten</td>
+<td align="left">ID des Untermandanten</td>
+</tr>
+<tr>
+<td align="left">Speicherplatz (MB)</td>
+<td align="left">Gespeicherte Daten in Ihrem Konto</td>
+</tr>
+<tr>
+<td align="left">Höchstwert Speicher (MB)</td>
+<td align="left">Höchstwert der Speicherung</td>
+</tr>
+<tr>
+<td align="left">Hauptgeräte</td>
+<td align="left">Anzahl der Geräte ohne Kindgeräte</td>
+</tr>
+<tr>
+<td align="left">Höchstwert Hauptgeräte</td>
+<td align="left">Höchstanzahl Hauptgeräte, ohne Kindgeräte</td>
+</tr>
+<tr>
+<td align="left">Geräte</td>
+<td align="left">Die Gesamtanzahl der mit dem Untermandanten verbundenen Geräte</td>
+</tr>
+<tr>
+<td align="left">Höchstwert Geräte</td>
+<td align="left">Höchstanzahl Geräte, einschließlich Kindgeräte</td>
+</tr>
+<tr>
+<td align="left">Endpunktgeräte</td>
+<td align="left">ID des Untermandanten</td>
+</tr>
+<tr>
+<td align="left">ID</td>
+<td align="left">Blattgeräte (ohne Gateways und Kinder)</td>
+</tr>
+<tr>
+<td align="left">Abonnierte Anwendungen</td>
+<td align="left">Anzahl der vom Untermandanten abonnierten Anwendungen</td>
+</tr>
+<tr>
+<td align="left">Erstellungszeitpunkt</td>
+<td align="left">Datum und Zeit der Erstellung des Untermandanten</td>
+</tr>
+<tr>
+<td align="left">Erzeugte Alarme</td>
+<td align="left">Anzahl der erzeugten Alarme</td>
+</tr>
+<tr>
+<td align="left">Aktualisierte Alarme</td>
+<td align="left">Anzahl der aktualisierten Alarme</td>
+</tr>
+<tr>
+<td align="left">Erstellte Stammdaten</td>
+<td align="left">Anzahl der erstellten Managed Objects</td>
+</tr>
+<tr>
+<td align="left">Aktualisierte Stammdaten</td>
+<td align="left">Anzahl der aktualisierten Managed Objects</td>
+</tr>
+<tr>
+<td align="left">Erstellte Ereignisse</td>
+<td align="left">Anzahl der erstellten Ereignisse</td>
+</tr>
+<tr>
+<td align="left">Aktualisierte Ereignisse</td>
+<td align="left">Anzahl der aktualisierten Ereignisse</td>
+</tr>
+<tr>
+<td align="left">Erstellte Messwerte</td>
+<td align="left">Anzahl der erstellten Messwerte</td>
+</tr>
+<tr>
+<td align="left">Gesamt Inbound-Transfer</td>
+<td align="left">Summe aller Inbound-Transfers (erzeugte Alarme, aktualisierte Alarme, erstellte Ereignisse, aktualisierte Ereignisse, erstellte Stammdaten, aktualisierte Stammdaten, erstellte Messwerte).</td>
+</tr>
+<tr>
+<td align="left">CPU (m)</td>
+<td align="left">Microservice-CPU-Nutzung, angegeben in CPU-Millisekunden, weitere Informationen siehe <a href="#microservice-usage">Microservice-Nutzung</a></td>
+</tr>
+<tr>
+<td align="left">Speicher (MB)</td>
+<td align="left">Microservice-Speichernutzung, weitere Informationen siehe <a href="#microservice-usage">Microservice-Nutzung</a></td>
+</tr>
+<tr>
+<td align="left">Übergeordneter Mandant</td>
+<td align="left">Name des übergeordneten Mandanten (nur verfügbar für den Management-Mandanten)</td>
+</tr>
+<tr>
+<td align="left">Externe Referenz</td>
+<td align="left">Dieses Feld ist für den individuellen Gebrauch. Sie können hier beispielsweise einen Link zum CRM-System oder eine interne Kundennummer einfügen.</td>
+</tr>
+</tbody>
+</table>
 Außerdem werden benutzerdefinierte Attribute angezeigt, falls vorhanden.
 
 Benutzerdefinierte Attribute können in der [Attributsbibliothek](/benutzerhandbuch/administration-de#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte [Benutzerdefinierte Attribute](#tenants-custom-properties) des Mandanten eingestellt werden.
@@ -275,7 +361,7 @@ Cumulocity bietet zwei Abrechnungsmodi:
 
 * **Ressourcenbasierte Abrechnung**: Legt die Menge der von einem Microservice genutzten Ressourcen offen, um die Gebühr zu berechnen.
 
-Die Abrechnungsmodi werden pro Microservice im [Microservice-Manifest](/reference/microservice-manifest) angegeben und im Feld "billingMode" festgelegt.
+Die Abrechnungsmodi werden pro Microservice im [Microservice-Manifest](/microservice-sdk/concept/#manifest) angegeben und im Feld "billingMode" festgelegt.
 
 RESOURCES: Legt den ressourcenbasierten Abrechnungsmodus fest. Dies ist der Standardmodus. Er wird auf alle Microservices angewendet, für die nicht explizit der abonnementbasierte Abrechnungsmodus festgelegt wurde.
 
@@ -339,7 +425,7 @@ Weitere Informationen finden Sie unter [Tenants > Tenant usage statistics](/refe
 
 ##### Skalierung
 
-Die automatische Skalierung überwacht Ihre Microservices und passt automatisch die Kapazität an, um eine stetige, prognostizierbare Leistung zu geringstmöglichen Kosten aufrechtzuerhalten. Die Microservice-Skalierung lässt sich durch Festlegen des Attributs `scale` im [Microservice-Manifest](https://cumulocity.com/reference/microservice-manifest/) leicht konfigurieren.
+Die automatische Skalierung überwacht Ihre Microservices und passt automatisch die Kapazität an, um eine stetige, prognostizierbare Leistung zu geringstmöglichen Kosten aufrechtzuerhalten. Die Microservice-Skalierung lässt sich durch Festlegen des Attributs `scale` im [Microservice-Manifest](/microservice-sdk/concept/#manifest) leicht konfigurieren.
 
 Wenn Sie beispielsweise einen Microservice haben, dessen Skalierungsregel auf AUTO gesetzt ist und der über die notwendigen CPU-Nutzungspunkte zum Starten einer neuen Microservice-Instanz für drei Stunden verfügt, wird Folgendes abgerechnet: (24/24 + 3/24) * verbrauchte Ressourcen.
 
@@ -350,7 +436,7 @@ Beachten Sie, dass für jede Änderung der Anzahl der Instanzen ein Auditeintrag
 
 ![Audit logs](/images/benutzerhandbuch/enterprise-tenant/et-audit-logs-microscaling.png)
 
-Weitere Informationen finden Sie unter [Auditing](https://cumulocity.com/reference/auditing) im Reference Guide.
+Weitere Informationen finden Sie unter [Auditing](/reference/auditing) im Reference Guide.
 
 
 ### <a name="tenant-policies"></a> Mandantenregeln

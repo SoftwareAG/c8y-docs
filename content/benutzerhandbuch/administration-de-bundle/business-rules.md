@@ -64,7 +64,7 @@ Für jede Alarmregel wird der Schweregrad und der Name der Regel angezeigt.
 
 #### So bearbeiten Sie eine Alarmregel
 
-Um Alarmregeln zu bearbeiten, klappen Sie diese einfach aus. Weitere Informationen zu den Feldern finden Sie unter [So fügen Sie Alarmregeln hinzu](#add-alarm-mapping).
+Um Alarmregeln zu bearbeiten, klappen Sie diese einfach aus. Weitere Informationen zu den Feldern finden Sie oben.
 
 <img src="/images/benutzerhandbuch/Administration/admin-alarm-mapping-edit.png" alt="Edit alarm mapping">
 

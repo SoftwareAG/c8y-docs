@@ -9,11 +9,11 @@ layout: bundle
  
 The [u-blox C027](https://mbed.org/platforms/u-blox-C027/ "u-blox C027") is a starter kit that allows quick prototyping of a variety of applications for the Internet of Things. The device comes with a cellular module as well as a GPS/GNSS receiver. These enable straightforward development of applications with location-aware communication capability.
 
-![u-blox C027](/images/device-demos/ublox_c027.png)
+![u-blox C027](/images/device-demos/ublox/ublox_c027.png)
 
 For demonstration purposes, the [mbed application shield](http://mbed.org/components/mbed-Application-Shield/) can be attached to the C027. It provides various sensors, two dials and an LCD display.
 
-![mbed application shield](/images/device-demos/ublox_applicationshield.jpg)
+![mbed application shield](/images/device-demos/ublox/ublox_applicationshield.jpg)
 
 The Cumulocity mbed agent connects the C027 application board to Cumulocity and provides the following features:
 
@@ -58,9 +58,9 @@ Comment ALC: The links to the firmware are no longer correct. I can't find any o
 
 |Version|Release Date|Download|
 |---|:-:|:-:|
-|1.9      | 18.Feb 2015 | [download](/images/device-demos/devices/mbed/firmware-1.9.bin)     |
-|2.0      | 6.Mar 2015  | [download](/images/device-demos/devices/mbed/firmware-2.0c8y.bin)  |
-|2.2      | 10.Aug 2015 | [download](/images/device-demos/devices/mbed/firmware-2.2c8y.bin)  |
+|1.9      | 18.Feb 2015 | [download](/images/device-demos/ublox/devices/mbed/firmware-1.9.bin)     |
+|2.0      | 6.Mar 2015  | [download](/images/device-demos/ublox/devices/mbed/firmware-2.0c8y.bin)  |
+|2.2      | 10.Aug 2015 | [download](/images/device-demos/ublox/devices/mbed/firmware-2.2c8y.bin)  |
 
 <a id="Connecting_the_C027"></a>
 #### Connecting the C027
@@ -82,7 +82,7 @@ The Application Switcher on the right of the Top Bar provides access to the Devi
 
 You can browse the collected sensor data in the **Measurements** tab:
 
-![Measurement Screenshot](/images/device-demos/ublox_measurements.png)
+![Measurement Screenshot](/images/device-demos/ublox/ublox_measurements.png)
 
 The device sends new sensor data only when the sensor values are changing. If the values remain constant, no new values are sent except for a forced sending every 15 minutes in order to retain connectivity with the platform.
 
@@ -104,7 +104,7 @@ Here you can set up the dashboard according to your requirements. Using **Add wi
 
 An example dashboard created for an mbed device is shown below:
 
-![Dashboard Screenshot](/images/device-demos/ublox_dashboard.png)
+![Dashboard Screenshot](/images/device-demos/ublox/ublox_dashboard.png)
 
 <a id="Interacting_with_the_control_operations"></a>
 #### Interacting with the control operations
@@ -113,21 +113,21 @@ In the **Control** tab several operations are listed that are supported by a u-b
 
 Open the **Control** tab of the "Mbed Test Device".
 
-![Control Operations Screenshot](/images/device-demos/ublox_operations.png)
+![Control Operations Screenshot](/images/device-demos/ublox/ublox_operations.png)
 
 Currently  the u-blox firmware supports three operations:
 
 * RELAY: Click the **On** or **Off** button on the "Relay" widget. If you click **On**, the LED will be turned on.
 
-![Interval Screenshot](/images/device-demos/ublox_message.png)
+![Interval Screenshot](/images/device-demos/ublox/ublox_message.png)
 
 * SEND MESSAGE: In the "Message sending" widget, enter a message in the text field, and then click **Send**. After several seconds, the first line of the LCD display should display the message you sent. This message will be displayed in the first line until you send another message or restart the device.
 
-![Interval Screenshot](/images/device-demos/ublox_relay.png)
+![Interval Screenshot](/images/device-demos/ublox/ublox_relay.png)
 
 * CONFIGURATION: In the **Configuration** tab of the "Mbed Test Device", the supported configuration parameters are shown with their current values. Currently for the Mbed u-blox, the only parameter is "interval" with the default value of 20 minutes, which determines the time period at which the Cumulocity IoT platform will check the availability of the device. It must be set to the same value as in the **Required interval** in the **Info** tab. 
 
-![Interval Screenshot](/images/device-demos/ublox_interval.png)
+![Interval Screenshot](/images/device-demos/ublox/ublox_interval.png)
 
 <a id="Troubleshooting"></a>
 ### Troubleshooting

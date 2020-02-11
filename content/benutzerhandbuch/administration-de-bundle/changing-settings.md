@@ -255,7 +255,7 @@ Um OpenIT-Zugangsdaten einzugeben, klicken Sie **OpenIT-Zugangsdaten** im Menü 
 
 Durch die Eingabe von OPenIT- Zugangsdaten erlauben Sie der Plattform, SMS-Dienste zu verwenden, die von [OpenIt](https://sms.openit.de/main.php) bereitgestellt werden.
 
-SMS werden für verschiedene Funktionen in den Anwendungen verwendet wie [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration#tfa) und Benachrichtigungen etwa bei Alarmen.
+SMS werden für verschiedene Funktionen in den Anwendungen verwendet wie [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration-de#tfa) und Benachrichtigungen etwa bei Alarmen.
 
 ### <a name="config-platform"></a>Konfigurationseinstellungen
 
@@ -325,7 +325,7 @@ Oben können Sie auswählen, ob Sie die E-Mail zum Administrator des gesperrten 
 
 Klicken Sie **Konfiguration speichern**, um Ihre Eingaben zu speichern.
 
-Für Enterprise Tenants stehen zusätzliche Funktionen zur Verfügung, siehe [Enterprise Tenant > Anpassen der Plattform](/benutzerhandbuch/enterprise-edition#customization).
+Für Enterprise Tenants stehen zusätzliche Funktionen zur Verfügung, siehe [Enterprise Tenant > Anpassen der Plattform](/benutzerhandbuch/enterprise-edition-de#customization).
 
 ### <a name="connectivity"></a>Verwalten der Konnektivitätseinstellungen
 

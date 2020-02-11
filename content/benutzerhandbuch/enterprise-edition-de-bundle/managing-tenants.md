@@ -106,7 +106,7 @@ Hier werden die folgenden Informationen angezeigt:
 
 |Feld|Beschreibung
 |:--------|:-----
-|Status|Kann entweder *Eingeschaltet* oder *Ausgeschaltet* sein. <br>*Eingeschaltet* bedeutet: <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene aktiviert (siehe [Anpassen der Plattform](/benutzerhandbuch/enterprise-edition#customization)), <br> - ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert. <br>*Ausgeschaltet* bedeutet: <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene deaktiviert, <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene aktiviert, aber für den Untermandanten deaktiviert, <br> - kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h., jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).
+|Status|Kann entweder *Eingeschaltet* oder *Ausgeschaltet* sein. <br>*Eingeschaltet* bedeutet: <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene aktiviert (siehe [Anpassen der Plattform](/benutzerhandbuch/enterprise-edition-de#customization)), <br> - ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert. <br>*Ausgeschaltet* bedeutet: <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene deaktiviert, <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene aktiviert, aber für den Untermandanten deaktiviert, <br> - kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h., jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).
 |Anzahl aktiver Anfragen|Anzahl der aktuell aktiven Anfragen im Untermandanten. Wird nur angezeigt, wenn Supportbenutzerzugriff nicht global auf Plattform-Ebene aktiviert ist. Wird als Zahl in einem kleinen roten Punkt angezeigt.
 |Ablaufdatum|Legt das Datum fest, an dem der Supportbenutzerzugriff für den Mandanten abläuft. Wenn kein Datum festgelegt wurde, wird das Ablaufdatum auf "Unbegrenzt" gesetzt.
 
@@ -182,7 +182,7 @@ Weitere Details finden Sie in der Registerkarte **Status** der entsprechenden An
 
 ### <a name="tenants-custom-properties"></a>Benutzerdefinierte Attribute
 
-Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Bearbeiten von Werten von benutzerdefinierten Attributen, sowohl von vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/benutzerhandbuch/administration#properties) definiert sind. Solche Attribute werden auch als Spalten auf der Seite [Nutzungsstatistiken](#usage-stats) angezeigt.
+Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Bearbeiten von Werten von benutzerdefinierten Attributen, sowohl von vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/benutzerhandbuch/administration-de#properties) definiert sind. Solche Attribute werden auch als Spalten auf der Seite [Nutzungsstatistiken](#usage-stats) angezeigt.
 
 ![Custom properties](/images/benutzerhandbuch/enterprise-tenant/et-subtenant-custom-properties.png)
 
@@ -345,7 +345,7 @@ Beachten Sie, dass für jede Änderung der Anzahl der Instanzen ein Auditeintrag
 
 ![Audit logs](/images/benutzerhandbuch/enterprise-tenant/et-audit-logs-microscaling.png)
 
-Weitere Informationen finden Sie unter [Auditing](https://cumulocity.com/reference/auditing) im Reference Guide.
+Weitere Informationen finden Sie unter [Auditing](/reference/auditing) im Reference Guide.
 
 
 ### <a name="tenant-policies"></a> Mandantenregeln
@@ -371,7 +371,7 @@ Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anza
 1. Klicken Sie **Mandantenregel hinzufügen** in der oberen Menüleiste.
 <br>![Add new policy](/images/benutzerhandbuch/enterprise-tenant/et-tenant-policy-add.png)<br>
 2. Geben Sie im darauf folgenden Dialog einen Namen und eine optionale Beschreibung ein.
-3. Geben Sie mindestens eine Datenerhaltungsregel ein. Weitere Informationen zur Erstellung von Datenerhaltungsregeln finden Sie unter [Administration > Verwalten der Datenhaltung > Datenerhaltungsregeln](/benutzerhandbuch/administration#retention-rules).
+3. Geben Sie mindestens eine Datenerhaltungsregel ein. Weitere Informationen zur Erstellung von Datenerhaltungsregeln finden Sie unter [Administration > Verwalten der Datenhaltung > Datenerhaltungsregeln](/benutzerhandbuch/administration-de#retention-rules).
 4. Geben Sie optional eine Mandantenoption ein.
 5. Klicken Sie **Speichern**.
 

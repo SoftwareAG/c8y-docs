@@ -3,6 +3,7 @@ weight: 30
 title: Gruppieren von Geräten
 layout: redirect
 ---
+
 Sie können Geräte beliebig nach Ihren Bedürfnissen gruppieren. Ein Gerät kann sich in mehreren Gruppen befinden und Gruppen selbst können wiederum Teil von mehreren anderen Gruppen sein.
 
 Cumulocity unterscheidet zwischen Top-Level-Gruppen und untergeordneten Gruppen: 
@@ -26,11 +27,11 @@ Klicken Sie auf eine Gruppe, um Details dieser Gruppe anzuzeigen.
 In der Registerkarte **Info** werden folgende Informationen angezeigt:
 
 <table>
-<colgroup>
-       <col style="width: 20%;">
-       <col style="width: 800%;">
-    </colgroup>
 <thead>
+<colgroup>
+   <col style="width: 20%;">
+   <col style="width: 80%;">
+</colgroup><thead>
 <tr>
 <th align="left">Karte</th>
 <th align="left">Beschreibung</th>
@@ -52,8 +53,6 @@ In der Registerkarte **Info** werden folgende Informationen angezeigt:
 </tbody>
 </table>
 
-|Aktive kritische Alarme|Aktive kritische Alarme für die Geräte in der Gruppe.
-
 **Kind-Assets**
 
 In der Registerkarte **Kind-Assets** werden alle Geräte angezeigt, die der Gruppe zugewiesen wurden. Für jedes Kind-Asset wird der Name und im Fall einer Gruppe die Anzahl der Kinder angezeigt.
@@ -65,6 +64,8 @@ Siehe auch [So fügen Sie eine Gruppe hinzu](#add-group) und [So weisen Sie eine
 **Stapelkommandos**
 
 In der Registerkarte **Stapelkommandos** können Stapelkommandos, die für die Gruppe erstellt wurden, verwaltet werden. Mit Stapelkommandos können Sie ein Kommando in einem Schritt für jedes Gerät in einer Gruppe ausführen. Weitere Informationen finden Sie unter [Stapelkommandos](#bulk-operations) in "Überwachen und Steuern von Geräten".
+
+> **Info:** Stapelkommandos werden nach Datum geordnet, wobei das letzte Kommando an erster Stelle erscheint.
 
 
 ### <a name="add-group"></a>So erstellen Sie eine neue Gruppe
@@ -87,7 +88,7 @@ Auf der Seite **Gruppen** können Sie auch eine neue Gruppe erstellen, in dem Si
 
 1. Wählen Sie im Navigator eine Gruppe aus. 
 2. Klicken Sie **Bearbeiten** in der Registerkarte **Info**. Sie können den Namen der Gruppe bearbeiten sowie Benutzerberechtigungen für die Gruppe zuweisen. 
-Weitere Informationen zu den Berechtigungen finden Sie unter Administration > [Verwalten von Berechtigungen](/benutzerhandbuch/administration#managing-permissions).
+Weitere Informationen zu den Berechtigungen finden Sie unter [Verwalten von Berechtigungen](/benutzerhandbuch/administration-de#managing-permissions) im Bereich *Administration*.
 
 ### So löschen Sie eine Gruppe
 
@@ -101,11 +102,11 @@ Geräte können Gruppen auf mehrere Arten zugewiesen werden.
 
 **Aus der Gruppenperspektive**
 
-Durch Ziehen und Ablegen können Sie im Navigator auf schnelle Weise Geräte zu Gruppen zuweisen, siehe [Restrukturieren von Gruppen und Geräten](#restructuring-groups).  
+Durch Ziehen und Ablegen können Sie im Navigator auf schnelle Weise Geräte zu Gruppen zuweisen, siehe [Umsortieren von Gruppen und Geräten](#restructuring-groups).  
 
 Darüber hinaus können Sie Geräte auch durch folgende Schritte zuweisen:
 
-1. Wählen Sie im Navigator eine Gruppe aus dem Menü **Gruppe** und wechseln Sie zur Registerkarte **Kind-Assets**. 
+1. Wählen Sie im Navigator eine Gruppe aus dem Menü **Gruppen** und wechseln Sie zur Registerkarte **Kind-Assets**. 
 2. Klicken Sie **Geräte zuweisen** rechts in der oberen Menüleiste. Im darauf folgenden Dialog können Sie Suchkriterien für die Geräte eingeben, die Sie zu der Gruppe hinzufügen möchten (z. B. "ublox"). Eine Liste mit passenden Geräten wird angezeigt. 
 3. Wählen Sie die Geräte aus, die Sie hinzufügen möchten.
 4. Klicken Sie **Gruppe mit # Gerät(en) erstellen**, um die Geräte der Gruppe zuzuweisen. 
@@ -125,7 +126,7 @@ Das Geräte wird der ausgewählten Gruppe zugewiesen.
 
 Wenn Sie nach einer Gruppe anhand eines Namens suchen, der noch nicht existiert, wird die Schaltfläche **Neu** angezeigt, so dass Sie von hier aus eine neue Gruppe mit diesem Namen erstellen und ihr das Gerät zuweisen können.
 
-> **Info**: Zum Erstellen einer neuen Gruppe muss der Benutzer über folgende Berechtigungen verfügen:
+>**Info**: Zum Erstellen einer neuen Gruppe muss der Benutzer über folgende Berechtigungen verfügen:
 ROLE&#95;INVENTORY\_CREATE und ROLE&#95;INVENTORY\_ADMIN.
 
 <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-group-assignment-new.png" alt="new group">
@@ -147,7 +148,7 @@ Klicken Sie bei einem Geräteeintrag auf das Menüsymbol und anschließend auf *
 
 Die Gerätedetails für das jeweilige Gerät, die unter **Alle Geräte** in der Anwendung Device Management gespeichert sind, werden geöffnet. 
 
-### <a name="restructuring-groups"></a>Restrukturieren von Gruppen und Geräten
+### <a name="restructuring-groups"></a>Umsortieren von Gruppen und Geräten
 
 Durch Ziehen und Ablegen können Sie Gruppen, Untergruppen und Geräte auf einfache Weise neu strukturieren. 
 
@@ -196,5 +197,5 @@ Um eine dynamische Gruppe zu löschen, klicken Sie auf das Menüsymbol und ansch
 
 ![Delete smart groups](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-delete.png)
 
-> **Wichtig**: Das Löschen einer dynamischen Gruppe ist irreversibel.
+**Wichtig**: Das Löschen einer dynamischen Gruppe ist irreversibel.
 

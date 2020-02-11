@@ -3,13 +3,14 @@ weight: 20
 title: Anzeigen von Geräten
 layout: redirect
 ---
+
 Klicken Sie **Alle Geräte** im Menü **Geräte** des Navigators, um alle mit Ihrem Konto verbundenen Geräte anzuzeigen. 
 
 Eine detaillierte Geräteliste wird angezeigt.
 
 ![Device list](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-alldevices.png)
 
-### <a name="device-list"></a>Geräteinformationen
+### Geräteinformationen
 
 Die Liste enthält eine Zeile für jedes Gerät mit den folgenden Informationen, dargestellt in Spalten:
 
@@ -56,7 +57,7 @@ Die Liste enthält eine Zeile für jedes Gerät mit den folgenden Informationen,
 </tr>
 <tr>
 <td style="text-align:left">Alarme</td>
-<td style="text-align:left">Der Alarmstatus des Geräts. Zeigt Anzahl und Typ der zur Zeit für dieses Gerät aktiven Alarme an. Weitere Informationen zu Alarmen finden Sie unter <a href="#alarm-monitoring" class="no-ajaxy">Arbeiten mit Alarmen</a>.</td>
+<td style="text-align:left">Der Alarmstatus des Geräts. Zeigt Anzahl und Typ der zur Zeit für dieses Gerät aktiven Alarme an. Weitere Informationen zu Alarmen finden Sie unter <a href="#alarm-monitoring" class="no-ajaxy">Verwenden von Alarmen</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -87,7 +88,7 @@ Darüber hinaus können Sie benutzerdefinierte Spalten hinzufügen, in denen zus
 4. Wählen Sie einen **Filtermodus** für die neue Spalte aus. <br>
 Wenn Sie **Fragment entspricht Wert** wählen, wird nur dann ein Wert angezeigt, wenn er den Kriterien entspricht, die Sie in einem weiteren Dialog festgelegt haben.<br>
 ![Specify values](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-list-custom-column.png)
-<br>Im Fall von **Fragment existiert** wird nach vorhandenen Fragmenten gefiltert, also danach, ob das Attribut vorhanden ist oder nicht.    
+<br>In case of **Fragment exists**, filtering will be done by existence, i.e. filtering is done based on whether the property exists or not.    
 5. Klicken Sie **Hinzufügen**.
 
 Die neue Spalte wird hinzugefügt und in der Geräteliste angezeigt.
@@ -101,7 +102,7 @@ Die neue Spalte wird hinzugefügt und in der Geräteliste angezeigt.
 
 Das Objekt wird dauerhaft aus der Plattform gelöscht.
 
-**Wichtig:** Wenn Sie ein Gerät löschen, wird dieses aus der Cumulocity-Datenbank gelöscht, einschließlich aller erzeugter Daten. Alternativ können Sie alle nicht mehr benötigten Geräte in einer Gruppe zusammenfassen (siehe [Gruppieren von Geräten](#grouping-devices)). So stellen Sie sicher, dass alle Berichte korrekt erhalten bleiben. Damit für stillgelegten Geräte keine Alarme mehr ausgelöst werden, deaktivieren Sie die [Verbindungsüberwachung](#connection-monitoring) für das entsprechende Gerät. Löschen Sie ein Gerät, werden dadurch nicht die Daten der Kindgeräte gelöscht.
+> **Wichtig:** Wenn Sie ein Gerät löschen, wird dieses aus der Cumulocity-Datenbank gelöscht, einschließlich aller erzeugter Daten. Alternativ können Sie alle nicht mehr benötigten Geräte in einer Gruppe zusammenfassen (siehe [Gruppieren von Geräten](#grouping-devices)). So stellen Sie sicher, dass alle Berichte korrekt erhalten bleiben. Damit für stillgelegten Geräte keine Alarme mehr ausgelöst werden, deaktivieren Sie die [Verbindungsüberwachung](#connection-monitoring) für das entsprechende Gerät. Löschen Sie ein Gerät, werden dadurch nicht die Daten der Kindgeräte gelöscht.
 
 
 ### <a name="searching-devices"></a>So suchen Sie nach Geräten
@@ -114,7 +115,7 @@ Unser Beispiel zeigt eine Suche nach "Ublox C027".
 
 > **Info**: Im Gegensatz zur Filterfunktion, ist die Verwendung von Platzhaltern in einer Suche nicht möglich.
 
-Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche](/benutzerhandbuch/overview#gui-features). 
+Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche](/benutzerhandbuch/getting-started-de#gui-features). 
 
 ![Search for devices](/images/benutzerhandbuch/DeviceManagement/devmgmt-search.png)
 
@@ -144,5 +145,5 @@ Die Geräteliste zeigt nun nur noch die Geräte an, auf die die Filterbedingunge
 
 Klicken Sie **Filter zurücksetzen** links in der oberen Menüleiste, wenn Sie alle Filter zurücksetzen und wieder alle Geräte anzeigen möchten.
 
-> **Info**: Wenn Sie die Liste anhand eines Textfelds, z.B. **Gerätename**, in aufsteigender oder absteigender Reihenfolge sortieren lassen, beachten Sie, dass die daraus resultierende alphabetische Sortierung auf ASCII/UTF basiert: A < B < ... < Z < ... < a < b ... < z. Namen, die mit Kleinbuchstaben beginnen, werden unter allen Namen mit Großbuchstaben aufgelistet bzw. umgekehrt.
+>**Info**: Wenn Sie die Liste anhand eines Textfelds, z.B. **Gerätename**, in aufsteigender oder absteigender Reihenfolge sortieren lassen, beachten Sie, dass die daraus resultierende alphabetische Sortierung auf ASCII/UTF basiert: A < B < ... < Z < ... < a < b ... < z. Namen, die mit Kleinbuchstaben beginnen, werden unter allen Namen mit Großbuchstaben aufgelistet bzw. umgekehrt.
 

@@ -3,7 +3,7 @@ weight: 50
 title: Verwalten von Gerätetypen
 layout: redirect
 ---
- 
+
 Um Daten aus verschiedenen Gerätetypen zu verarbeiten, verwendet Cumulocity sogenannte Geräteprotokolle, die in einer Datenbank gespeichert sind.
 
 Klicken Sie **Geräteprotokolle** im Menü **Gerätetypen** des Navigators.
@@ -21,7 +21,7 @@ Die Geräteprotokoll-Liste zeigt die folgenden Informationen an:
 ### So fügen Sie ein Geräteprotokoll hinzu
 
 1. Klicken Sie **Geräteprotokoll hinzufügen** in der oberen Menüleiste. 
-	<br>![Add device protocol](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-protocol-add.png)
+ <br>![Add device protocol](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-protocol-add.png)
 2. Wählen Sie einen der verfügbaren Geräteprotokolltypen aus der Liste. 
 3. Geben Sie im darauf folgenden Dialog einen Namen und eine optionale Beschreibung für das Geräteprotokoll ein und klicken Sie **Erstellen**. 
 4. Geben Sie die Konfiguration für das Geräteprotokoll ein. Die Konfiguration des Geräteprotokolls hängt vom Protokolltypen ab. <br>
@@ -47,11 +47,11 @@ Zum Bearbeiten eines Geräteprotokolls klicken Sie einfach auf das Protokoll ode
 
 Weitere Informationen zu den Feldern finden Sie in der Beschreibung des jeweiligen Gerätetyps, siehe [Optionale Services](/benutzerhandbuch/optional-services).
 
-### So entfernen Sie ein Geräteprotokoll
+### So löschen Sie ein Geräteprotokoll
 
-Zum Entfernen eines Geräteprotokolls klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Löschen**.
+Zum Löschen eines Geräteprotokolls klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Löschen**.
 
-Das Geräteprotokoll wird aus der Gerätedatenbank entfernt.
+Das Geräteprotokoll wird aus der Gerätedatenbank gelöscht.
 
 ### So exportieren Sie ein Geräteprotokoll
 

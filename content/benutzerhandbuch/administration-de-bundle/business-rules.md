@@ -1,12 +1,14 @@
 ---
 weight: 50
 title: Anwenden von Geschäftsregeln
+
 ---
+
 ### Echtzeitverarbeitung
 
 Mittels Echtzeitverarbeitung können Geschäftsregeln definiert werden, die automatisch in Echtzeit ausgeführt werden, sobald neue Daten eingehen oder bestehende Daten geändert werden. Die Logik wird in sogenannten Modulen implementiert, die aus einer Menge von CEP-Anweisungen bestehen. 
 
-> **Info**: Eine benutzerfreundliche Methode, Echtzeitgeschäftsregeln zu definieren, wird in der Cockpit-Anwendung mit den sogenannten [Smart Rules](/benutzerhandbuch/cockpit#smart-rules) bereitgestellt. Smart Rules sind ebenfalls CEP-Anweisungen, die in der Liste der **Echtzeitverarbeitung** angezeigt werden. Smart Rules können hier jedoch nicht bearbeitet werden.
+>**Info**: Eine benutzerfreundliche Methode, Echtzeitgeschäftsregeln zu definieren, wird in der Cockpit-Anwendung mit den sogenannten [Smart Rules](/benutzerhandbuch/cockpit-de#smart-rules) bereitgestellt. Smart Rules sind ebenfalls CEP-Anweisungen, die in der Liste der **Echtzeitverarbeitung** angezeigt werden. Smart Rules können hier jedoch nicht bearbeitet werden.
 
 Klicken Sie **Echtzeitverarbeitung** im Menü **Geschäftsregeln**, um alle Module anzuzeigen.
 
@@ -14,7 +16,7 @@ Klicken Sie **Echtzeitverarbeitung** im Menü **Geschäftsregeln**, um alle Modu
 
 Für jedes Modul wird in der Liste der Status (bereitgestellt = grünes Häkchen / nicht bereitgestellt = Ausrufungszeichen), der Name und das Datum der letzten Aktualisierung angezeigt.
 
-Wenn der Status eines Moduls auf **Gestartet** gesetzt ist, wird die durch das Statement erzeugte Ausgabe unterhalb des Häckchen-Symbols angezeigt. Klicken Sie auf eine Ausgabezeile, um die detaillierte Ausgabe der Anweisung anzuzeigen. Klicken Sie **Alle löschen**, um die Ausgabe zu entfernen.
+Wenn der Status eines Moduls auf **Gestartet** gesetzt ist, wird die durch die Anweisung erzeugte Ausgabe unterhalb des Häkchen-Symbols angezeigt. Klicken Sie auf eine Ausgabezeile, um die detaillierte Ausgabe der Anweisung anzuzeigen. Klicken Sie **Alle löschen**, um die Ausgabe zu entfernen.
 
 #### <a name="add-modules"></a>So fügen Sie ein Modul hinzu
 
@@ -62,7 +64,7 @@ Für jede Alarmregel wird der Schweregrad und der Name der Regel angezeigt.
 
 #### So bearbeiten Sie eine Alarmregel
 
-Um Alarmregeln zu bearbeiten, klappen Sie diese einfach aus. Weitere Informationen zu den Feldern finden Sie unter [So fügen Sie Alarmregeln hinzu](#add-alarm-mapping).
+Um Alarmregeln zu bearbeiten, klappen Sie diese einfach aus. Weitere Informationen zu den Feldern finden Sie oben.
 
 <img src="/images/benutzerhandbuch/Administration/admin-alarm-mapping-edit.png" alt="Edit alarm mapping">
 

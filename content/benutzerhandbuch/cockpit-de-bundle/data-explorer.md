@@ -4,7 +4,6 @@ title: Daten-Explorer
 layout: redirect
 ---
 
-
 <a name="data explorer"></a>
 
 Im Daten-Explorer können Datenpunkte (Messwerte oder Sensordaten) visualisiert werden.
@@ -35,7 +34,7 @@ In der Datenpunktbibliothek kann es mehr als einen übereinstimmenden Datenpunkt
 
 Allgemeine Informationen zum Ändern der Visualisierung finden Sie unter [Ändern der Daten-Explorer-Visualisierung](#change-visualization). Informationen zum Anpassen der Attribute eines bestimmten Datenpunkts finden Sie unter[Anpassen von Datenpunktattributen](#customize-data-points).
 
-> **Info**: Datenpunkte sind für alle authentifizierten Benutzer des Mandanten sichtbar, unabhängig von ihrer Stammdatenrollen-Berechtigung.
+>**Info**: Datenpunkte sind für alle authentifizierten Benutzer des Mandanten sichtbar, unabhängig von ihrer Stammdatenrollen-Berechtigung.
 
 
 ### <a name="change-visualization"></a>Ändern der Daten-Explorer-Visualisierung
@@ -53,7 +52,7 @@ Um das Zeitintervall auf der X-Achse zu ändern,
 * bewegen Sie die X-Achse mit dem Mauszeiger nach links oder rechts um das Zeitintervall zu verschieben,
 * Zoomen Sie durch Doppelklicken in den Daten-Explorer. 
 
-> **Info**: Echtzeitaktualisierungen werden abgeschaltet, wenn Sie ein Zeitintervall wählen, dass in der Vergangenheit liegt.
+>**Info**: Echtzeitaktualisierungen werden abgeschaltet, wenn Sie ein Zeitintervall wählen, dass in der Vergangenheit liegt.
 
 **Aggregation**
 
@@ -165,8 +164,6 @@ In diesem Fall teilen sich die Datenpunkte eine Y-Achse. Diese Y-Achse zeigt nur
 
 Neben Datenpunkten können Sie auch Alarme oder Ereignisse zum Daten-Explorer hinzufügen.
 
-![Data explorer events](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-events.png)
-
 Klicken Sie **Alarm/Ereignis** hinzufügen in der Karte **Alarm/Ereignis**, um einen Alarm oder ein Ereignis hinzuzufügen.
 
 ![Data explorer add events](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-eventsadd.png)
@@ -175,9 +172,9 @@ Im folgenden Fenster können Sie einen Alarm oder ein Ereignis aus der Auswahlli
 
 Klicken Sie auf das Pfeilsymbol, um ein Ereignis zu erweitern.
 
-Klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü die Option **Löschen**, um den Eintrag aus der Liste zu entfernen.
+Klicken Sie auf das Menüsymbol und wählen Sie im Kontextmenü die Option **Entfernen**, um den Eintrag aus der Liste zu entfernen.
 
-Wie bei den Datenpunkten kann auch die Sichtbarkeit von Alarmen und Ereignissen im Daten-Exlorer durch einen Umschalter ein- oder abgeschaltet werden.
+Wie bei den Datenpunkten kann auch die Sichtbarkeit von Alarmen und Ereignissen im Daten-Explorer durch einen Umschalter ein- oder abgeschaltet werden.
 
 
 ### <a name="create-widget"></a>Erstellen von Widgets im Daten-Explorer
@@ -192,7 +189,7 @@ Klicken Sie **Mehr...** in der oberen Menüleiste und wählen Sie **Als Widget e
 
 Wählen Sie im folgenden Fenster eines der für das aktuelle Objekt verfügbaren Dashboards und klicken Sie **Auswählen**, um den Daten-Explorer als Widget zum ausgewählten Dashboard hinzuzufügen.
 
-> **Info**: Um diese Funktion nutzen zu können, muss ein Dashboard vorhanden sein. Weitere Informationen zu Dashboards finden Sie unter [Verwenden von Dashboards](#dashboards).
+**Info**: Um diese Funktion nutzen zu können, muss ein Dashboard vorhanden sein. Weitere Informationen zu Dashboards finden Sie unter [Verwenden von Dashboards](#dashboards).
 
 **Als Widget einem Bericht hinzufügen**
 
@@ -218,4 +215,4 @@ Messwerte können als CSV- oder Excel-Datei exportiert werden. Die exportierten 
 
 Klicken Sie **Mehr...** in der oberen Menüleiste und wählen Sie je nach Bedarf entweder **Als CSV herunterladen** oder **Als Excel herunterladen**. 
 
-Die Download-Datei wird erstellt, wie im folgenden Fenster angezeigt. Dies kann eine Weile dauern, abhängig von der Anzahl der Datenpunkte im Daten-Explorer. Wenn die Download-Datei fertiggestellt ist, klicken Sie **Herunterladen**.
+Die Download-Datei wird erstellt, wir im folgenden Fenster angezeigt. Dies kann eine Weile dauern, abhängig von der Anzahl der Datenpunkte im Daten-Explorer. Wenn die Download-Datei fertiggestellt ist, klicken Sie **Herunterladen**.

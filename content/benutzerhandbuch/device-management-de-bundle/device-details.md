@@ -3,7 +3,6 @@ weight: 31
 title: Gerätedetails
 layout: redirect
 ---
-
 Zu jedem Gerät werden im Device Management detaillierte Informationen angezeigt. Welche Informationen jeweils angezeigt werden, ist abhängig vom Gerätetypen, der Gerätenutzung und der Konfiguration der Plattform. 
 
 Klicken Sie auf ein Gerät in der Geräteliste, um die Gerätedetails anzuzeigen. 
@@ -14,29 +13,86 @@ Die Gerätedetails sind in verschiedene Registerkarten aufgeteilt. Die Anzahl de
 
 Eingangs wird die Registerkarte **Info** angezeigt, die allgemeine Informationen zu einem Gerät enthält und bei allen Geräte vorhanden ist. 
 
-Jedes Gerät enthält mindestens die folgenden Registerkarten: Info, **Alarme**, **Steuerung**, **Ereignisse**, **Serviceüberwachung**, **Identifikator** (siehe auch die folgende Liste der Registerkarten).
+Jedes Gerät enthält mindestens die folgenden Registerkarten: **Info**, **Alarme**, **Steuerung**, **Ereignisse**, **Serviceüberwachung**, **Identifikator** (siehe auch die folgende Liste der Registerkarten).
 
 Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in den folgenden Abschnitten detailliert beschrieben:
 
-|Registerkarte|Beschreibung|
-|:---|:---|
-|[Info](#info)|Enthält allgemeine Informationen zum Gerät. Für jedes Gerät vorhanden.
-|[Kindgeräte](#child-devices)|Listet die Geräte auf, die mit dem aktuellen Gerät verbunden sind.
-|[Messwerte](#measurements)|Zeigt eine Standardvisualisierung der vom Gerät bereitgestellten numerischen Daten in Form von Diagrammen.
-|[Alarme](#alarms)|Enthält Informationen zu den Alarmen des Geräts. Siehe auch [Arbeiten mit Alarmen](#alarm-monitoring). Für jedes Gerät vorhanden.
-|[Konfiguration](#config)|Ermöglicht die manuelle Konfiguration von Geräteparametern und Einstellungen als Eingaben in einem Textformat. Siehe auch [Konfigurations-Repository](#configuration-repository) für Informationen zu binärer Konfiguration.
-|[Steuerung](#control)|Zeigt Kommandos an, die zum Gerät gesendet werden. Siehe auch [Verwenden von Kommandos](#operation-monitoring). Für jedes Gerät vorhanden.
-|[Netzwerk](#network)|Zeigt Netzwerkinformationen für das Gerät an.
-|[Software](#software)|Verwaltet die Firmware des Geräts und die Software, die auf dem Gerät installiert ist.
-|[Ereignisse](#events)|Zeigt die mit dem Gerät verbundenen Ereignisse, hilfreich für die Fehlersuche. Siehe auch [Fehlerbehebung von Geräten](#events-all). Für jedes Gerät vorhanden.
-|[Standort](#location)|Zeigt den Standort eines Geräts an, falls verfügbar.
-|[Logdateien](#logs)|Ermöglicht das Abfragen von Loginformationen für das Gerät.
-|[Serviceüberwachung](#service-monitoring)|Ermöglicht die Serviceüberwachung von Maschinen. Siehe auch [Serviceüberwachung](#monitoring-services). Für jedes Gerät vorhanden.
-|[Shell](#shell)|Ermöglicht es, über eine Kommandozeile mit entfernten Geräten zu interagieren.
-|[Tracking](#tracking)|Zeigt die Bewegungen des Geräts, falls verfügbar.
-|[Identifikator](#identity)|Zeigt die für das Gerät gespeicherten Identifikatoren. Für jedes Gerät vorhanden.
+<table>
+<thead>
+<colgroup>
+   <col style="width: 20%;">
+   <col style="width: 80%;">
+</colgroup><thead>
+<tr>
+<th align="left">Registerkarte</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="#info">Info</a></td>
+<td align="left">Enthält allgemeine Informationen zum Gerät. Für jedes Gerät vorhanden.</td>
+</tr>
+<tr>
+<td align="left"><a href="#child-devices">Kindgeräte</a></td>
+<td align="left">Listet die Geräte auf, die mit dem aktuellen Gerät verbunden sind.</td>
+</tr>
+<tr>
+<td align="left"><a href="#measurements">Messwerte</a></td>
+<td align="left">Zeigt eine Standardvisualisierung der vom Gerät bereitgestellten numerischen Daten in Form von Diagrammen.</td>
+</tr>
+<tr>
+<td align="left"><a href="#alarms">Alarme</a></td>
+<td align="left">Enthält Informationen zu den Alarmen des Geräts. Siehe auch <a href="#alarm-monitoring">Arbeiten mit Alarmen</a>. Für jedes Gerät vorhanden.</td>
+</tr>
+<tr>
+<td align="left"><a href="#config">Konfiguration</a></td>
+<td align="left">Ermöglicht die manuelle Konfiguration von Geräteparametern und Einstellungen als Eingaben in einem Textformat. Siehe auch <a href="#configuration-repository">Konfigurations-Repository</a> für Informationen zu binärer Konfiguration.</td>
+</tr>
+<tr>
+<td align="left"><a href="#control">Steuerung</a></td>
+<td align="left">Zeigt Kommandos an, die zum Gerät gesendet werden. Siehe auch <a href="#operation-monitoring">Verwenden von Kommandos</a>. Für jedes Gerät vorhanden.</td>
+</tr>
+<tr>
+<td align="left"><a href="#network">Netzwerk</a></td>
+<td align="left">Zeigt Netzwerkinformationen für das Gerät an.</td>
+</tr>
+<tr>
+<td align="left"><a href="#software">Software</a></td>
+<td align="left">Verwaltet die Firmware des Geräts und die Software, die auf dem Gerät installiert ist.</td>
+</tr>
+<tr>
+<td align="left"><a href="#events">Ereignisse</a></td>
+<td align="left">Zeigt die mit dem Gerät verbundenen Ereignisse, hilfreich für die Fehlersuche. Siehe auch <a href="#events-all">Fehlerbehebung von Geräten</a>. Für jedes Gerät vorhanden.</td>
+</tr>
+<tr>
+<td align="left"><a href="#location">Standort</a></td>
+<td align="left">Zeigt den Standort eines Geräts an, falls verfügbar.</td>
+</tr>
+<tr>
+<td align="left"><a href="#logs">Logdateien</a></td>
+<td align="left">Ermöglicht das Abfragen von Loginformationen für das Gerät.</td>
+</tr>
+<tr>
+<td align="left"><a href="#service-monitoring">Serviceüberwachung</a></td>
+<td align="left">Ermöglicht die Serviceüberwachung von Maschinen. Siehe auch <a href="#monitoring-services">Serviceüberwachung</a>. Für jedes Gerät vorhanden.</td>
+</tr>
+<tr>
+<td align="left"><a href="#shell">Shell</a></td>
+<td align="left">Ermöglicht es, über eine Kommandozeile mit entfernten Geräten zu interagieren.</td>
+</tr>
+<tr>
+<td align="left"><a href="#tracking">Tracking</a></td>
+<td align="left">Zeigt die Bewegungen des Geräts, falls verfügbar.</td>
+</tr>
+<tr>
+<td align="left"><a href="#identity">Identifikator</a></td>
+<td align="left">Zeigt die für das Gerät gespeicherten Identifikatoren. Für jedes Gerät vorhanden.</td>
+</tr>
+</tbody>
+</table>
 
-> **Info**: Mögliche weitere spezielle Registerkarten, die nicht hier aufgeführt sind, werden in dem entsprechenden Kontext an anderer Stelle in der Cumulocity-Dokumentation beschrieben. Nutzen Sie die Suchfunktion, um zu den betreffenden Abschnitten zu gelangen. Die Registerkarte **Modbus** beispielsweise ist in der Modbus-Beschreibung unter [Optionale Services > Cloud Fieldbus](/users-guide/optional-services/cloud-fieldbus) zu finden.
+>**Info**: Mögliche weitere spezielle Registerkarten, die nicht hier aufgeführt sind, werden in dem entsprechenden Kontext an anderer Stelle in der Cumulocity-Dokumentation beschrieben. Nutzen Sie die Suchfunktion, um zu den betreffenden Abschnitten zu gelangen. Die Registerkarte **Modbus** beispielsweise ist in der Modbus-Beschreibung unter [Optionale Services > Cloud Fieldbus](/users-guide/optional-services/#cloud-fieldbus) zu finden.
 
 Unter dem Namen wird eine Liste von Breadcrumbs angezeigt. Ist das Gerät Teil einer Asset-Hierarchie (z. B. einer Gruppe), können Sie mit Hilfe der Breadcrumbs einfach in der Hierarchie nach oben navigieren. Da Geräte zu mehreren Hierarchien gehören können, werden möglicherweise mehrere Breadcrumb-Zeilen angezeigt.
 
@@ -55,8 +111,10 @@ Die Registerkarte **Info** fasst die Geräteinformationen, die aus Managementsic
 Die Information wird auf den folgenden Karten bereitgestellt:
 
 <table>
-<col width = 25%>
-<col width = 75%>
+<colgroup>
+   <col style="width: 20%;">
+   <col style="width: 80%;">
+</colgroup><thead>
 <thead>
 <tr>
 <th style="text-align:left">Karte</th>
@@ -66,7 +124,7 @@ Die Information wird auf den folgenden Karten bereitgestellt:
 <tbody>
 <tr>
 <td style="text-align:left">Anmerkungen</td>
-<td style="text-align:left">Enthält optionale Anmerkungen, die über aktuelle Aktivitäten informieren. Anmerkungen können normalerweise nur vom Administrator bearbeitet werden. Um eine Anmerkung hinzuzufügen oder zu bearbeiten, klicken Sie <b>Bearbeiten</b>, geben Sie eine neue Anmerkung oder Änderungen im Textfeld ein und bestätigen Sie Ihre Eingaben, indem Sie auf das grüne Häkchen rechts vom Textfeld klicken. </td>
+<td style="text-align:left">Enthält optionale Anmerkungen, die über aktuelle Aktivitäten informieren. Anmerkungen können normalerweise nur vom Administrator bearbeitet werden. Um eine Anmerkung hinzuzufügen oder zu bearbeiten, klicken Sie <strong>Bearbeiten</strong>, geben Sie eine neue Anmerkung oder Änderungen im Textfeld ein und bestätigen Sie Ihre Eingaben, indem Sie auf das grüne Häkchen rechts vom Textfeld klicken. </td>
 </tr>
 <tr>
 <td style="text-align:left">Gerätestatus</td>
@@ -74,14 +132,14 @@ Die Information wird auf den folgenden Karten bereitgestellt:
 </tr>
 <tr>
 <td style="text-align:left">Gerät und Kommunikation</td>
-<td style="text-align:left">Enthält einen Datenpunktgraphen, der Echtzeitdaten von bestimmten Messwerten anzeigt. Detaillierte Informationen zu Datenpunktgraphen finden Sie unter <a href="/benutzerhandbuch/cockpit/#data-explorer" class="no-ajaxy">Verwenden des Datenexplorers</a> in der Cockpit-Dokumentation. <br>Folgende Messwerte können hier angezeigt werden: <br> 
+<td style="text-align:left">Enthält einen Datenpunktgraphen, der Echtzeitdaten von bestimmten Messwerten anzeigt. Detaillierte Informationen zu Datenpunktgraphen finden Sie unter <a href="/benutzerhandbuch/cockpit-de#data-explorer" class="no-ajaxy">Verwenden des Datenexplorers</a> in der Cockpit-Dokumentation. <br>Folgende Messwerte können hier angezeigt werden: <br> 
 <strong>Datenpunkte</strong>: c8y_Battery.level, c8y_SignalStrength.rssi, c8y_MemoryMeasurement.Used, c8y_CPUMeasurement.Workload, c8y_NetworkStatistics.Upload, c8y_SignalStrength.RCSP, c8y_SignalStrength.ber, c8y_SignalStrength.ECN0, c8y_NetworkStatistics.Download, c8y_MemoryMeasurement.Total <br>
 <strong>Alarme</strong>: c8y_UnavailabilityAlarm<br>
 <strong>Ereignisse</strong>: c8y_LocationUpdate</td>
 </tr>
 <tr>
 <td style="text-align:left">Gerätedaten</td>
-<td style="text-align:left">Enthält Informationen zum Gerät ( ID, Name, Typ, Besitzer, zuletzt aktualisiert). Die Felder <b>Name</b> und <b>Typ</b> können bearbeitet werden. Unterhalb der allgemeinen Geräteinformationen werden auf der Karte Statusinformationen (nicht editierbar) zu aktiven Alarmen, Verfügbarkeit und Verbindung angezeigt. Außerdem werden hier Informationen zur Hardware (editierbar) und Firmware (nicht editierbar) angezeigt, falls verfügbar.</td>
+<td style="text-align:left">Enthält Informationen zum Gerät (ID, Name, Typ, Besitzer, zuletzt aktualisiert). Die Felder <strong>Name</strong> und <strong>Typ</strong> können bearbeitet werden. Unterhalb der allgemeinen Geräteinformationen werden auf der Karte Statusinformationen (nicht editierbar) zu aktiven Alarmen, Verfügbarkeit und Verbindung angezeigt. Außerdem werden hier Informationen zur Hardware (editierbar) und Firmware (nicht editierbar) angezeigt, falls verfügbar.</td>
 </tr>
 <tr>
 <td style="text-align:left">Aktive kritische Alarme</td>
@@ -114,7 +172,7 @@ Die Abbildung unten zeigt beispielsweise ein Diagramm mit Bewegungsmesswerten, e
 
 Wenn ein Diagramm Graphen mit verschiedenen Einheiten enthält, wird pro Einheit eine Y-Achse dargestellt. In der Beispielabbildung bestehen die Bewegungsmesswerte aus drei Parametern mit der Einheit "Meter je Sekundequadrat", daher wird nur eine Achse dargestellt. Die Modemstatistiken bestehen aus einer Signalstärke in Dezibel Milliwatt und der Bit-Fehlerrate in Prozent, daher wird eine Achse pro Graph dargestellt.
 
-Bewegen Sie den Mauszeiger über den Graphen, um detaillierte Informationen zu den Messwerten anzuzeigen. Neben dem Mauszeiger wird ein Tooltip mit Details zum jeweiligen Messwert angezeigt (der Tooltip rastet bei dem am nächste liegenden Messwert ein).
+Bewegen Sie den Mauszeiger über den Graphen, um detaillierte Informationen zu den Messwerten anzuzeigen. Neben dem Mauszeiger wird ein Tooltip mit Details zum jeweiligen Messwert angezeigt (der Tooltip rastet bei dem am nächsten liegenden Messwert ein).
 
 **Zeitintervall und Aggregation**
 
@@ -126,7 +184,7 @@ Dies ermöglicht einen effizienten Überblick über größere Zeitintervalle. Es
 
 Klicken Sie **Echtzeit**, um Echtzeitaktualisierungen der Graphen zu erhalten, sobald neue Daten von den Geräten empfangen werden. 
 
-Sie können die graphische Darstellung und Achsenbegrenzung durch sogenannte "KPIs" modifizieren, siehe [Administration](/benutzerhandbuch/administration).
+Sie können die graphische Darstellung und Achsenbegrenzung durch sogenannte "KPIs" modifizieren, siehe [Administration](/benutzerhandbuch/administration-de).
 
 **Messwerteformate**
 
@@ -145,11 +203,11 @@ Beispiel:
 	      "Speed": { "value": 1234, "unit": "km/h" }
 	}
 
-`"fragment_name"` und `"serie_name"` können durch verschiedene gültige JSON-Property-Namen ersetzt werden, aber es sind keine Leerzeichen oder Sonderzeichen wie [ ],* zulässig. Die Struktur muss genau wie oben ein JSON-Objekt mit zwei Ebenen sein.
+`"Fragment_name"` und `"serie_name"` können durch verschiedene gültige JSON-Attributnamen ersetzt werden, aber es sind keine Leerzeichen oder Sonderzeichen wie [ ],* zulässig. Die Struktur muss genau wie oben ein JSON-Objekt mit zwei Ebenen sein.
 
 ### <a name="alarms"></a>Alarme
 
-Die Registerkarte **Alarme** enthält Informationen zu den Alarmen für ein Gerät. Weitere Informationen finden Sie unter [Arbeiten mit Alarmen](#alarm-monitoring).
+Die Registerkarte **Alarme** enthält Informationen zu den Alarmen für ein Gerät. Weitere Informationen finden Sie unter [Verwenden von Alarmen](#alarm-monitoring).
 
 ### <a name="config"></a> Konfiguration
 
@@ -257,7 +315,7 @@ Klicken Sie auf den Eintrag in der Liste, um die gesamten Loginformationen anzuz
 
 #### So laden Sie eine Logdatei herunter
 
-Bewegen Sie den Mauszeiger über eine Zeile und klicken Sie auf das Herunterladen-Symbol, um den Log-Auszug in Ihr Dateisystem herunterzuladen. 
+Bewegen Sie den Mauszeiger über eine Zeile und klicken Sie auf das Herunterladen-Symbol, um den Logauszug in Ihr Dateisystem herunterzuladen. 
 
 #### So löschen Sie eine Logdatei
 
@@ -277,7 +335,7 @@ In der Kommandozeile kann beliebiger Kommandotext eingegeben werden. Klicken Sie
 
 ![Device shell](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-shell.png)
 
-> **Wichtig**: Wenn Sie Cumulocity IoT zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Fernkommandos den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
+>**Wichtig**: Wenn Sie Cumulocity IoT zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Fernkommandos den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
 
 Klicken Sie **Historie ansehen** rechts in der oberen Menüleiste, um zur Registerkarte **Steuerung** zu wechseln, in der eine Liste der zuvor ausgeführten Kommandos angezeigt wird. Weitere Informationen finden Sie unter [Überwachen und Steuern von Geräten > Verwenden von Kommandos](#operation-monitoring).
 
@@ -290,7 +348,7 @@ Cumulocity stellt für manche Gerätetypen einige häufig verwendete Kommandos b
 
 In Cumulocity können Geräte die Historie ihrer Bewegungen festhalten. Diese Bewegungen können in der Registerkarte **Tracking** angezeigt werden.
 
-> **Info**: Die Registerkarte **Tracking** wird nur angezeigt, wenn ein Gerät das Attribut "c8y_Position" enthält.
+**Info**: Die Registerkarte **Tracking** wird nur angezeigt, wenn ein Gerät das Attribut "c8y_Position" enthält.
 
 In der Auswahlliste oben rechts können Sie ein Zeitintervall auswählen (oder eines eingeben, indem Sie "Benutzerdefiniert" auswählen). Die Bewegungen des Geräts während des ausgewählten Zeitintervalls werden als rote Linien in der Karte visualisiert.
 
@@ -300,7 +358,7 @@ Neben der Karte werden die einzelnen Einträge mit Zeitangabe aufgelistet ("Stan
 
 Abhängig vom Gerätetypen und der Integration in Cumulocity, können Sie geräteseitiges Geofencing und Bewegungserfassung konfigurieren.
 
-> **Info**: Wenn diese Funktion aktiviert und das Gerät kompatibel ist, kann die Zellen-ID-Information genutzt werden, um die Position des Geräts zu bestimmen. Aktuell werden die Services von [Combain](https://combain.com/) und [Google](https://developers.google.com/maps/documentation/geolocation/intro) unterstützt. Der Benutzer kann die Ortungen basierend auf beiden Datentypen ansehen oder nach GPS-basierten Daten oder Zellen-ID-basierten Daten filtern.
+>**Info**: Wenn diese Funktion aktiviert und das Gerät kompatibel ist, kann die Zellen-ID-Information genutzt werden, um die Position des Geräts zu bestimmen. Aktuell werden die Services von [Combain](https://combain.com/) und [Google](https://developers.google.com/maps/documentation/geolocation/intro) unterstützt. Der Benutzer kann die Ortungen basierend auf beiden Datentypen ansehen oder nach GPS-basierten Daten oder Zellen-ID-basierten Daten filtern.
 
 ### <a name="identity"></a>Identifikator
 

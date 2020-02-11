@@ -132,11 +132,32 @@ The "Data point list" widget shows data points (measurements), one in each row, 
 
 **Parameters to configure**
 
-|Field|Description|
-|:---|:---|
-|Title|Widget title. By default, the widget type is simply used as title.
-|Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Data explorer > Adding data points](#add-data-points).
-|Column visibility|Select which columns should be visible: <br>**Label**: Label of the data point. See [Visualizing data using the data explorer](/users-guide/cockpit/#data-explorer) for details. <br>**Target**: Target value. Can be configured in the [data explorer](/users-guide/cockpit/#data-explorer) or [Data Point Library](/users-guide/cockpit/#data-point-library).<br>Current: Current value. <br>**Diff**: Absolute difference between current value and target value. <br>**Diff %**: Percentage of difference between current value and target value. <br>**Asset**: Name of the device or group of the data point.
+<table>
+<thead>
+<colgroup>
+   <col style="width: 20%;">
+   <col style="width: 80%;">
+</colgroup>
+<tr>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Title</td>
+<td align="left">Widget title. By default, the widget type is simply used as title.</td>
+</tr>
+<tr>
+<td align="left">Data point</td>
+<td align="left">Shows a list of available data points. You must enable at least one data point. Click <strong>Add data point</strong> to add a data point to the list. For details on how to add data points see <a href="#add-data-points">Data explorer &gt; Adding data points</a>.</td>
+</tr>
+<tr>
+<td align="left">Column visibility</td>
+<td align="left">Select which columns should be visible: <br><strong>Label</strong>: Label of the data point. See <a href="../../users-guide/cockpit/#data-explorer">Visualizing data using the data explorer</a> for details. <br><strong>Target</strong>: Target value. Can be configured in the <a href="../../users-guide/cockpit/#data-explorer">data explorer</a> or <a href="../../users-guide/cockpit/#data-point-library">Data Point Library</a>.<br>Current: Current value. <br><strong>Diff</strong>: Absolute difference between current value and target value. <br><strong>Diff %</strong>: Percentage of difference between current value and target value. <br><strong>Asset</strong>: Name of the device or group of the data point.</td>
+</tr>
+</tbody>
+</table>
 
 ### Data point table
 
@@ -266,12 +287,32 @@ The "Pie chart" widget displays data points (measurements) with current values i
 
 **Parameters to configure**
 
-|Field|Description|
-|:---|:---|
-|Title|Widget title. By default, the widget type is simply used as title.
-|Pie chart options|Select from the options to show tooltips, percentages, legends in the pie chart.
-|Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Data explorer > Adding data points](#add-data-points).
-
+<table>
+<thead>
+<colgroup>
+   <col style="width: 20%;">
+   <col style="width: 80%;">
+</colgroup>
+<tr>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Title</td>
+<td align="left">Widget title. By default, the widget type is simply used as title.</td>
+</tr>
+<tr>
+<td align="left">Pie chart options</td>
+<td align="left">Select from the options to show tooltips, percentages, legends in the pie chart.</td>
+</tr>
+<tr>
+<td align="left">Data point</td>
+<td align="left">Shows a list of available data points. You must enable at least one data point. Click <strong>Add data point</strong> to add a data point to the list. For details on how to add data points see <a href="#add-data-points">Data explorer &gt; Adding data points</a>.</td>
+</tr>
+</tbody>
+</table>
 
 ### Quick links
 
@@ -336,10 +377,28 @@ The "Silo" widget displays data points (measurements) with current values in a s
 
 **Parameters to configure**
 
-|Field|Description|
-|:---|:---|
-|Title|Widget title. By default, the widget type is simply used as title.
-|Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Data explorer > Adding data points](#add-data-points).
+<table>
+<thead>
+<colgroup>
+   <col style="width: 20%;">
+   <col style="width: 80%;">
+</colgroup>
+<tr>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Title</td>
+<td align="left">Widget title. By default, the widget type is simply used as title.</td>
+</tr>
+<tr>
+<td align="left">Data point</td>
+<td align="left">Shows a list of available data points. You must enable at least one data point. Click <strong>Add data point</strong> to add a data point to the list. For details on how to add data points see <a href="#add-data-points">Data explorer &gt; Adding data points</a>.</td>
+</tr>
+</tbody>
+</table>
 
 ### Traffic light
 

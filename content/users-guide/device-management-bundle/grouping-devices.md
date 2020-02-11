@@ -26,11 +26,32 @@ Click a group to view its details.
 
 In the **Info** tab, the following information is provided:
 
-|Card|Description|
-|:---|:---|
-|Notes|Provides optional notes to inform about current activities. Notes usually may only be edited by an administrator. To add or edit a note, click **Edit**, enter your note or your modifications in the text box and save your edits by clicking the green checkmark at the right of the text box.
-|Group data|Displays editable information on the group (name, description).
-|Active, critical alarms|Shows the active critical alarms for the devices in the group.
+<table>
+<thead>
+<colgroup>
+   <col style="width: 20%;">
+   <col style="width: 80%;">
+</colgroup><thead>
+<tr>
+<th align="left">Card</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Notes</td>
+<td align="left">Provides optional notes to inform about current activities. Notes usually may only be edited by an administrator. To add or edit a note, click <strong>Edit</strong>, enter your note or your modifications in the text box and save your edits by clicking the green checkmark at the right of the text box.</td>
+</tr>
+<tr>
+<td align="left">Group data</td>
+<td align="left">Displays editable information on the group (name, description).</td>
+</tr>
+<tr>
+<td align="left">Active, critical alarms</td>
+<td align="left">Shows the active critical alarms for the devices in the group.</td>
+</tr>
+</tbody>
+</table>
 
 **Sub-assets**
 
@@ -59,8 +80,6 @@ The new group will be added to the groups list.
 
 >**Info:** A group can be created with "0" devices in it.
 
-![Create a group](/images/users-guide/DeviceManagement/devmgmt-groups-create.png)
-
 From the **Groups** page, you can also create a new group by clicking **Add group** in the top menu bar. In the resulting dialog box, enter a name for the group and click **Add group**.
 
 ![Add empty group](/images/users-guide/DeviceManagement/devmgmt-groups-add.png)
@@ -69,7 +88,7 @@ From the **Groups** page, you can also create a new group by clicking **Add grou
 
 1. In the navigator, click a group to open it.
 2. In the **Info** tab, click **Edit**. This allows you to edit the name of the group and to assign user permissions for the group.
-For further information on permissions, see the [Administration Guide](/users-guide/administration#managing-permissions).
+For further information on permissions, see [Managing permissions](/users-guide/administration#managing-permissions) in the Administration section.
 
 ### To delete a group
 

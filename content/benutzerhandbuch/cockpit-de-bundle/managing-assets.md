@@ -3,7 +3,6 @@ weight: 20
 title: Verwalten von Assets
 layout: redirect
 ---
-
 <a name="assets"></a>
 ### Einführung
 
@@ -17,7 +16,7 @@ Die Asset-Hierarchie besteht aus zwei Objekttypen:
 
 * **Gruppen**: Objekte, die einzelne Geräte oder andere Gruppen gruppieren. Gruppen können sowohl in der Cockpit-Anwendung als auch in der Device-Management-Anwendung erstellt werden.
 
-* **Geräte**: Geräte, die mit der Asset-Hierarchie verknüpft werden. Bevor Sie Geräte in der Cockpit-Anwendung verwenden können, müssen diese mit Cumulocity verbunden werden. Dies erfolgt in der Device Management-Anwendung. Weitere Informationen zum Verbinden von Geräten finden Sie unter [Verbinden von Geräten](/benutzerhandbuch/device-management#connecting-devices) im Abschnitt "Device Management".
+* **Geräte**: Geräte, die mit der Asset-Hierarchie verknüpft werden. Bevor Sie Geräte in der Cockpit-Anwendung verwenden können, müssen diese mit Cumulocity verbunden werden. Dies erfolgt in der Device Management-Anwendung. Weitere Informationen zum Verbinden von Geräten finden Sie unter [Verbinden von Geräten](/benutzerhandbuch/device-management-de#connecting-devices) im Abschnitt "Device Management".
 
 Im vorliegenden Beispiel repräsentieren die Gruppenobjekte einen Gebäudebestand. Die Geräteobjekte repräsentieren die Räume. Die Namen und Hierarchien können individuell vom Benutzer festgelegt werden. Hierarchien können mehrere Ebenen haben wie etwa Ebenen für Region, Stadt, Straße, Gebäude, Etage oder Raum. Jedes Gerät kann mit mehreren und verschiedenen Hierarchien verknüpft sein, und etwa Teil einer regionalen Hierarchie sowie einer Kundenhierarchie sein.
 
@@ -32,7 +31,7 @@ Asset-Hierarchie.
 
 Die Gerätehierarchie bildet die Verknüpfung von Geräten mit Cumulocity aus Kommunikationssicht ab. Die Asset-Hierarchie strukturiert die Assets, die über die M2M-Geräte fernüberwacht und gesteuert werden. Nähere Informationen finden Sie unter [Cumulocity's Domain Model](/concepts/domain-model) im Concepts Guide.
 
-In the Cockpit-Anwendung konstruieren Sie Ihre Asset-Hierarchie in dem Sie Gruppenobjekte erstellen und Geräte mit den Gruppen verknüpfen. Die Asset-Hierarchie hängt von den verwendeten IoT-Geräten ab. Es gibt viele verschiedene Typen von IoT-Geräten, wobei diese zwei Typen besonders häufig sind:
+In der Cockpit-Anwendung konstruieren Sie Ihre Asset-Hierarchie in dem Sie Gruppenobjekte erstellen und Geräte mit den Gruppen verknüpfen. Die Asset-Hierarchie hängt von den verwendeten IoT-Geräten ab. Es gibt viele verschiedene Typen von IoT-Geräten, wobei diese zwei Typen besonders häufig sind:
 
 * **Smart-Geräte** sind eigenständige Geräte, die Sensoren, Aktoren und ein Kommunikationsmodul enthalten. Diese sind typischerweise mit einem einzelnen Asset verbunden. Smart-Geräte sind etwa Tracker, Wetterstationen oder ganz allgemein "intelligente" Sensoren mit eingebautem Kommunikationsmodul.
 
@@ -67,7 +66,7 @@ Beim Gebäudemanagement ist es häufig so, dass eine Gruppe von Sensoren in eine
 
 In der Asset-Hierarchie unterscheidet Cumulocity zwischen Top-Level-Gruppen und untergeordneten Assets (Kind-Assets).
 
-Im Navigator werden Top-Level-Gruppen im Menü **Gruppen** auf oberster Ebene angezeigt. Untergeordnete Assets werden darunter angezeigt. Außerdem werden sie in der Registerkarte **Kind-Assets** der entsprechenden Gruppe angezeigt.
+Im Navigator werden Top-Level-Gruppen im Menü **Gruppen** auf oberster Ebene angezeigt. Kind-Assets werden unterhalb ihrer Top-Level-Gruppe angezeigt. Zudem werden Kind-Assets in der Registerkarte **Kind-Assets** der jeweiligen Gruppe angezeigt.
 
 <img src="/images/benutzerhandbuch/cockpit/cockpit-sub-assets.png" name="Sub-assets"/>
 
@@ -77,7 +76,7 @@ Wenn Sie ein Objekt im Navigator auswählen, werden auf der rechten Seite entspr
 
 Wenn Sie ein Gateway-Gerät hinzufügen, werden die Kindgeräte nicht angezeigt. Um Kindgeräte anzuzeigen, müssen diese zum jeweiligen Asset hinzugefügt werden. Details zur untergeordneten Hierarchie können in der Device Management-Anwendung eingesehen und editiert werden.
 
-Um in der Asset-Hierarchie weiter zu navigieren, verwenden Sie den Navigator oder wählen Sie ein Objekt in der Registerkarte **Kind-Asset** aus. Um in der Asset-Hierarchie nach oben zu navigieren, verwenden Sie den Eintrag in der Pfadnavigation unter dem Namen des Assets.
+Um in der Asset-Hierarchie weiter zu navigieren, verwenden Sie den Navigator oder wählen Sie ein Objekt in der Registerkarte **Kind-Assets** aus. Um in der Asset-Hierarchie nach oben zu navigieren, verwenden Sie den Eintrag in der Pfadnavigation unter dem Namen des Assets.
 
 ### Asset-Details
 
@@ -86,7 +85,7 @@ Für jedes Objekt gibt es verschiedene Registerkarten, abhängig vom Objekttypen
 |Registerkarte|Beschreibung|Verfügbarkeit
 |:---|:---|:---
 |Info|Zeigt eine Liste von [Smart Rules](#smart-rules), die für dieses Objekt erstellt wurden.|Gruppe, Gerät
-|Alarme|Zeigt Alarme für das Gerät. Nähere Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt Device Management.|Gerät
+|Alarme|Zeigt Alarme für das Gerät. Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring).|Gerät
 |Kind-Assets|Zeigt die Kind-Assets einer Gruppe.|Gruppe
 |Daten-Explorer|Zeigt alle Datenpunkte der Kinder. Weitere Informationen finden Sie unter [Visualisieren von Daten mit dem Daten-Explorer](#data-explorer).|Gruppe, Gerät
 |Standort|Zeigt den aktuellen Standort des Geräts.|Gerät
@@ -97,11 +96,13 @@ Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit
 
 ### <a name="creating-groups"></a>So erstellen Sie eine Gruppe
 
-1. Klicken Sie auf die Schaltfläche **Plus** rechts in der oberen Leiste und anschließend auf **Neue Gruppe**.
+1. Klicken Sie auf die Schaltfläche **Plus** rechts in der oberen Leiste und anschließend auf **Gruppe hinzufügen**.
 2. Geben Sie im darauf folgenden Dialog einen eindeutigen Namen für die Gruppe an.
 3. Geben Sie im Suchfeld Suchkriterien für die Geräte ein, die Sie zur Gruppe hinzufügen möchten (z. B. "ublox"). Eine Liste mit passenden Geräten wird angezeigt. 
 4. Wählen Sie die Geräte aus, die Sie hinzufügen möchten.
 5. Klicken Sie **Gruppe mit X Gerät(en) erstellen**, um die neue Gruppe zu erstellen. 
+
+<img src="/images/benutzerhandbuch/cockpit/cockpit-create-group.png" name="Create group"/><br>
 
 >**Info:** Eine Gruppe kann auch mit "0" Geräten erstellt werden.
 
@@ -109,7 +110,7 @@ Um eine neue Gruppe als Kind zu einer existierenden Gruppe hinzuzufügen, navigi
 
 ### <a name="assigning-devices"></a>So weisen Sie einer Gruppe Geräte zu
 
-Bevor Sie ein Gerät zu einer Asset-Hierarchie hinzufügen können, muss das Gerät mit Cumulocity verbunden werden. Das Verbinden von Geräten mit der Plattform erfolgt in der Device Management-Anwendung. Nähere Informationen zum Verbinden von Geräten finde Sie im Abschnitt [Device Management](/benutzerhandbuch/device-management).
+Bevor Sie ein Gerät zu einer Asset-Hierarchie hinzufügen können, muss das Gerät mit Cumulocity verbunden werden. Das Verbinden von Geräten mit der Plattform erfolgt in der Device Management-Anwendung. Nähere Informationen zum Verbinden von Geräten finde Sie im Abschnitt [Device Management](/benutzerhandbuch/device-management-de).
 
 Führen Sie die folgenden Schritte aus, um ein Gerät einer Gruppe zuzuweisen:
 

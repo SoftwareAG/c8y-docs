@@ -17,23 +17,80 @@ Each device at least shows the following tabs: **Info**, **Alarms**, **Control**
 
 The following tabs are the most common ones, each described in detail in a separate section:
 
-|Tab|Description|
-|:---|:---|
-|[Info](#info)|Provides general information on a device. Available for each device.
-|[Child Devices](#child-devices)|Lists devices being connected to the current device.
-|[Measurements](#measurements)|Provides a default visualization of numeric data provided by the device in the form of charts.
-|[Alarms](#alarms)|Provides information on the alarms for a device. See also [Working with alarms](#alarm-monitoring). Available for each device.
-|[Configuration](#config)|Allows manual configuration of device parameters and settings entered in a text format. See also [Configuration repository](#configuration-repository) for binary configuration.
-|[Control](#control)|Displays operations being sent to a device. Also refer to [Working with operations](#operation-monitoring). Available for each device.
-|[Network](#network)|Displays network information for a device.
-|[Software](#software)|Manages firmware of a device and software installed on a device.
-|[Events](#events)|Displays events related to a device, helpful for low-level troubleshooting. Also refer to [Troubleshooting devices](#events-all). Available for each device.
-|[Location](#location)|Shows the location of a device, if available.
-|[Logs](#logs)|Allows requesting log information for a device.
-|[Service monitoring](#service-monitoring)|Allows the service monitoring of machines. See also [Monitoring services](#monitoring-services). Available for each device.
-|[Shell](#shell)|Enables you to interact with remote devices via a command prompt.
-|[Tracking](#tracking)|Shows the movement of a device, if available.
-|[Identity](#identity)|Displays identities recorded for a particular device. Available for each device.
+<table>
+<thead>
+<colgroup>
+   <col style="width: 20%;">
+   <col style="width: 80%;">
+</colgroup><thead>
+<tr>
+<th align="left">Tab</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="#info">Info</a></td>
+<td align="left">Provides general information on a device. Available for each device.</td>
+</tr>
+<tr>
+<td align="left"><a href="#child-devices">Child Devices</a></td>
+<td align="left">Lists devices being connected to the current device.</td>
+</tr>
+<tr>
+<td align="left"><a href="#measurements">Measurements</a></td>
+<td align="left">Provides a default visualization of numeric data provided by the device in the form of charts.</td>
+</tr>
+<tr>
+<td align="left"><a href="#alarms">Alarms</a></td>
+<td align="left">Provides information on the alarms for a device. See also <a href="#alarm-monitoring">Working with alarms</a>. Available for each device.</td>
+</tr>
+<tr>
+<td align="left"><a href="#config">Configuration</a></td>
+<td align="left">Allows manual configuration of device parameters and settings entered in a text format. See also <a href="#configuration-repository">Configuration repository</a> for binary configuration.</td>
+</tr>
+<tr>
+<td align="left"><a href="#control">Control</a></td>
+<td align="left">Displays operations being sent to a device. Also refer to <a href="#operation-monitoring">Working with operations</a>. Available for each device.</td>
+</tr>
+<tr>
+<td align="left"><a href="#network">Network</a></td>
+<td align="left">Displays network information for a device.</td>
+</tr>
+<tr>
+<td align="left"><a href="#software">Software</a></td>
+<td align="left">Manages firmware of a device and software installed on a device.</td>
+</tr>
+<tr>
+<td align="left"><a href="#events">Events</a></td>
+<td align="left">Displays events related to a device, helpful for low-level troubleshooting. Also refer to <a href="#events-all">Troubleshooting devices</a>. Available for each device.</td>
+</tr>
+<tr>
+<td align="left"><a href="#location">Location</a></td>
+<td align="left">Shows the location of a device, if available.</td>
+</tr>
+<tr>
+<td align="left"><a href="#logs">Logs</a></td>
+<td align="left">Allows requesting log information for a device.</td>
+</tr>
+<tr>
+<td align="left"><a href="#service-monitoring">Service monitoring</a></td>
+<td align="left">Allows the service monitoring of machines. See also <a href="#monitoring-services">Monitoring services</a>. Available for each device.</td>
+</tr>
+<tr>
+<td align="left"><a href="#shell">Shell</a></td>
+<td align="left">Enables you to interact with remote devices via a command prompt.</td>
+</tr>
+<tr>
+<td align="left"><a href="#tracking">Tracking</a></td>
+<td align="left">Shows the movement of a device, if available.</td>
+</tr>
+<tr>
+<td align="left"><a href="#identity">Identity</a></td>
+<td align="left">Displays identities recorded for a particular device. Available for each device.</td>
+</tr>
+</tbody>
+</table>
 
 >**Info**: Several individual tabs, which you do not find listed here, may be described in a different context in another section of the Cumulocity documentation. Use the Search function to switch to the relevant sections. A detailed description on the **Modbus** tab, for example, can be found in [Optional services > Cloud fieldbus](/users-guide/optional-services#cloud-fieldbus).
 
@@ -54,8 +111,8 @@ The **Info** tab summarizes management-relevant device information in a dashboar
 The information is provided on the following cards:
 
 <table>
-<col width = 25%>
-<col width = 75%>
+<col width = 20%>
+<col width = 80%>
 <thead>
 <tr>
 <th style="text-align:left">Card</th>

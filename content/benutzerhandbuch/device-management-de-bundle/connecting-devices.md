@@ -3,7 +3,8 @@ weight: 11
 title: Verbinden von Geräten
 layout: redirect
 ---
-### <a name="dev-registration"></a> 
+
+### <a name="dev-registration">
 
 Auf der Seite **Geräteregistrierung** werden alle Geräte, die sich aktuell im Registrierungsprozess befinden, entweder als Liste oder als Raster angezeigt.
 
@@ -20,7 +21,7 @@ Die Geräte können einen der folgenden Status haben:
 
 * **Wartet auf Verbindung** - Das Gerät wurde registriert, aber kein Gerät mit der angegebenen ID hat versucht, eine Verbindung herzustellen.
 * **Bitte akzeptieren** - Es liegt eine Kommunikation von einem Gerät mit der angegebenen ID vor, doch der Benutzer, der die Registrierung vornimmt, muss noch explizit zustimmen, damit die Zugangsdaten an das Gerät gesendet werden.
-* **Akzeptiert** - Der Benutzer hat erlaubt, dass die Zugangsdaten an das Gerät gesendet werden. 
+* **Akzeptiert** - Der Benutzer hat erlaubt, dass die Zugangsdaten an das Gerät gesendet werden.
 
 Geräte können auf verschiedene Weise mit Ihrem Cumulocity-Konto verbunden werden.
 
@@ -29,17 +30,17 @@ Geräte können auf verschiedene Weise mit Ihrem Cumulocity-Konto verbunden werd
 Um Geräte zu registrieren, können Sie eine der folgenden Optionen wählen:
 	
 * **[Manuelle Geräteregistrierung](#device-registration-manually)** - zum manuellen Herstellen einer Verbindung mit einem oder mehreren Geräten
-* **[Bulk-Geräteregistrierung](#creds-upload)** - zum Registrieren größerer Gerätemengen in einem Schritt
+* **[Bulk-Geräteregistrierungg](#creds-upload)** - zum Registrieren größerer Gerätemengen in einem Schritt
 
 Sofern Sie die erforderlichen Anwendungen abonniert haben, wird Ihnen eine dritte Option angezeigt:
-**Benutzerdefinierte Geräteregistrierung** - zum Registrieren von Geräten spezifischer Typen, z. B. LoRa oder Sigfox, siehe die Dokumentation zu diesen Services unter [Optionale Services](/users-guide/optional-services). 
+**Benutzerdefinierte Geräteregistrierung** - zum Registrieren von Geräten spezifischer Typen, z. B. LoRa oder Sigfox, siehe die Dokumentation zu diesen Services unter [Optionale Services](/benutzerhandbuch/optional-services). 
 
 <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
 
 
 #### <a name="device-registration-manually"></a>So verbinden Sie ein Gerät manuell
 
-> **Info**: Je nach Gerätetyp sind möglicherweise nicht alle beschriebenen Schritte relevant. 
+>**Info**: Je nach Gerätetyp sind möglicherweise nicht alle beschriebenen Schritte relevant. 
 
 1. Klicken Sie **Geräteregistrierung** im Menü **Geräte** des Navigators und klicken Sie dann **Gerät registrieren**.
 2. Wählen Sie im darauf folgenden Dialog **Geräte registrieren** die Option **Manuelle Geräteregistrierung**.
@@ -55,13 +56,13 @@ Sofern Sie die erforderlichen Anwendungen abonniert haben, wird Ihnen eine dritt
 
 <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration"> 
 
-Nach erfolgreicher Registrierung werden die Geräte auf der Seite [**Geräteregistrierung**](#dev-registration) mit dem Status "Warten auf Verbindung" angezeigt.
+Nach erfolgreicher Registrierung werden die Geräte auf der [Seite **Geräteregistrierung**](#dev-registration) mit dem Status "Warten auf Verbindung" angezeigt.
 
 Schalten Sie das Gerät bzw. die Geräte ein und warten Sie, bis die Verbindung hergestellt wird.
 Wenn ein Gerät verbunden ist, wechselt der Status auf "Bitte akzeptieren".
 Klicken Sie **Akzeptieren**, um die Verbindung zu bestätigen. Der Status des Geräts wechselt auf "Akzeptiert".
 
-> **Info**: Im Falle von Problemen lesen Sie die Dokumentation zu Ihrem Gerätetyp im [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/dcp-publicweb/#/devices) oder schlagen Sie im Handbuch zu Ihrem Gerät nach.
+> **Info**: Im Falle von Problemen lesen Sie die Dokumentation zu Ihrem Gerätetyp im [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/web/#/devices) oder schlagen Sie im Handbuch zu Ihrem Gerät nach.
 
 
 #### <a name="creds-upload"></a>So führen Sie eine Bulk-Registrierung von Geräten durch
@@ -91,7 +92,7 @@ Die CSV-Datei enthält zwei Spalten: ID;PATH, wobei ID die Gerätebezeichnung, z
 ```
 		
 
-Nachdem die Datei hochgeladen wurde, werden alle erforderlichen neuen Gruppen erstellt und neue Registrierungen mit dem Status "Warte auf Verbindung" angelegt, und der normale Registrierungsprozess muss fortgesetzt werden (siehe oben).
+Nachdem die Datei hochgeladen wurde, werden alle erforderlichen neuen Gruppen erstellt und neue Registrierungen mit dem Status "Wartet auf Verbindung" angelegt und der normale Registrierungsprozess muss fortgesetzt werden (siehe oben).
 
 **Vollständige Registrierung**
 
@@ -124,6 +125,6 @@ Für beide Bulk-Registrierungstypen (einfach/vollständig) stellen wir praktisch
 5. Wählen Sie in Schritt 2 des **Textimport-Assistenten** die Option **Semikolon** und klicken Sie **Fertig stellen**.
 
 Weitere Informationen zum Dateiformat und akzeptierten CSV-Varianten finden Sie auch unter 
-[Bulk device credentials](/reference/device-credentials/#creds-upload) im Reference guide.
+[Bulk device credentials](/reference/device-credentials/#creds-upload) im Reference Guide.
 
-> **Info**: Wenn Sie mit der Enterprise Edition von Cumulocity arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte **Mandant** hinzufügen und die CSV-Datei vom Management-Mandanten aus importieren.
+>**Info**: Wenn Sie mit der Enterprise Edition von Cumulocity arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte **Mandant** hinzufügen und die CSV-Datei vom Management-Mandanten aus importieren.

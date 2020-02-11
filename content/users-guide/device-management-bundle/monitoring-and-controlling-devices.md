@@ -143,14 +143,44 @@ Within each section, the alarms are sorted by their occurrence, displaying the m
 
 In each row, the following information for an alarm is provided:
 
-|Info|Description|
-|:---|:---|
-|Severity|One of CRITICAL, MAJOR, MINOR, WARNING (see above).
-|Count|The number of times this alarm was sent by the device. Only one alarm of a particular type can be active for a certain device. If another alarm of the same type is sent by the device, the number is increased by 1.
-|Description|An arbitrary text describing the alarm.
-|Status|The status of the alarm. An alarm can be: <br/> **Active**: When it was raised and nobody is so far working on the alarm. <br/>**Acknowledged**: When someone changed the status to "Acknowledged" to indicate that someone is working on the alarm.<br/>**Cleared**: When either someone manually set the status to "clear" or when the device detected by itself that the problem has gone.
-|Last occurrence|Timestamp of the last occurrence of the alarm (device time).
-|Device|The name of the device. Clicking the name leads you to the detailed view of the device.
+<table>
+<thead>
+<colgroup>
+   <col style="width: 20%;">
+   <col style="width: 80%;">
+</colgroup>
+<tr>
+<th align="left">Info</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Severity</td>
+<td align="left">One of CRITICAL, MAJOR, MINOR, WARNING (see above).</td>
+</tr>
+<tr>
+<td align="left">Count</td>
+<td align="left">The number of times this alarm was sent by the device. Only one alarm of a particular type can be active for a certain device. If another alarm of the same type is sent by the device, the number is increased by 1.</td>
+</tr>
+<tr>
+<td align="left">Description</td>
+<td align="left">An arbitrary text describing the alarm.</td>
+</tr>
+<tr>
+<td align="left">Status</td>
+<td align="left">The status of the alarm. An alarm can be: <br> <strong>Active</strong>: When it was raised and nobody is so far working on the alarm. <br><strong>Acknowledged</strong>: When someone changed the status to “Acknowledged” to indicate that someone is working on the alarm.<br><strong>Cleared</strong>: When either someone manually set the status to “clear” or when the device detected by itself that the problem has gone.</td>
+</tr>
+<tr>
+<td align="left">Last occurrence</td>
+<td align="left">Timestamp of the last occurrence of the alarm (device time).</td>
+</tr>
+<tr>
+<td align="left">Device</td>
+<td align="left">The name of the device. Clicking the name leads you to the detailed view of the device.</td>
+</tr>
+</tbody>
+</table>
 
 Click the arrow on the right of a row to expand it and display further details on the alarm.
 
@@ -189,7 +219,7 @@ Operations can be in one of the following four states:
 |PENDING|The operation has just been created and is waiting for the device to pick it up.
 |EXECUTING|The operation has been picked up by the device and is being executed.
 |SUCCESSFUL|The operation has been successfully executed by the device.
-|FAILED|The operation could not be executed by the device.For each operation, the following information is provided:
+|FAILED|The operation could not be executed by the device.
 
 In each row, the following information for an operation is provided:
 

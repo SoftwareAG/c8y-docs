@@ -4,6 +4,8 @@ title: Verwenden von SmartREST-Templates
 layout: redirect
 ---
 
+### Einführung
+
 Bei den SmartREST-Templates handelt es sich um eine Sammlung von Anfrage- und Antwort-Templates, die verwendet werden, um CSV-Daten und Cumulocity Rest API-Aufrufe zu konvertieren. Sie können SmartREST-Templates etwa verwenden, um einfach Geräte zur Plattform hinzuzufügen anstatt jedesmal manuell eine Anfrage zu schreiben.
 
 Um die Geräteintegration zu vereinfachen, stellt Cumulocity auch statische Templates bereit, so dass Sie keine eigenen Templates erstellen müssen. Diese Templates konzentrieren sich jedoch nur auf häufig verwendete Nachrichten für die Geräteverwaltung. Weitere Informationen zu statischen Templates finden Sie im [Device SDK Guide](/device-sdk/mqtt#static-templates).
@@ -93,7 +95,7 @@ Die Antwort wird dem SmartREST-Template hinzugefügt.
  
 #### So löschen Sie eine Antwort
  
-Um eine Antwort zu entfernen, öffnen Sie diese und klicken Sie unten **Löschen**.
+Um eine Antwort zu löschen, öffnen Sie diese und klicken Sie unten **Löschen**.
 
 ### So bearbeiten Sie ein SmartREST-Template
 

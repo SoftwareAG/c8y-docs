@@ -3,6 +3,7 @@ weight: 60
 title: Verwalten von Daten
 
 ---
+
 ### <a name="retention-rules"></a>Datenhaltungsregeln
 
 Mit Datenhaltungsregeln können Sie steuern, wie lange Daten in Ihrem Konto gespeichert bleiben. Standardmäßig werden alle historischen Daten nach 60 Tage gelöscht (konfigurierbar in den Systemeinstellungen).
@@ -31,9 +32,9 @@ Das Sternsymbol ("*") zeigt an, dass alle Daten, unabhängig vom jeweiligen Wert
 
 Die Datenhaltungsregel wird zu den Berichtsdetails hinzugefügt.
 
-> **Info**: Standardmäßig ist in allen Feldern außer im Feld **Maximales Alter** ein Sternsymbol ("*") gesetzt, um alle Werte einzuschließen.
+>**Info**: Standardmäßig ist in allen Feldern außer im Feld **Maximales Alter** ein Sternsymbol ("*") gesetzt, um alle Werte einzuschließen.
 
-> **Info**: Beachten Sie, dass Alarme nur entfernt werden, wenn Sie den Status GELÖSCHT haben.
+>**Info**: Beachten Sie, dass Alarme nur entfernt werden, wenn sie den Status GELÖSCHT haben.
 
 #### So bearbeiten Sie eine Datenhaltungsregel
 
@@ -74,4 +75,4 @@ Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließ
 
 Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Löschen**.
 
-> **Info**: Wenn die Datei einer aktiven Anwendung entspricht, kann sie nicht gelöscht werden. Sie müssen die Anwendung erst entfernen oder aktualisieren, um sie löschen zu können.
+>**Info**: Wenn die Datei einer aktiven Anwendung entspricht, kann sie nicht gelöscht werden. Sie müssen die Anwendung erst entfernen oder ein Update ausführen, um die Datei löschen zu können.

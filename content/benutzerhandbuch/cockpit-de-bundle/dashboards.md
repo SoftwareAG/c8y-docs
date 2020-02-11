@@ -4,7 +4,6 @@ title: Verwenden von Dashboards
 layout: redirect
 ---
 
-
 Dashboards ermöglichen eine individuelle Visualisierung Ihrer Daten anhand verschiedener Widgets. Widgets können Karten, Bilder, Graphen, Tabellen und andere grafische Darstellungen von Daten anzeigen. 
 
 Cumulocity bietet eine Reihe voreingestellter Widgets (Details finden Sie im Abschnitt [Widgets-Sammlung](#widgets)). Sie können auch eigene Widgets entwickeln und Ihrem Cumulocity-Konto hinzufügen. Weitere Informationen finden Sie im [Web SDK Guide](/web/).

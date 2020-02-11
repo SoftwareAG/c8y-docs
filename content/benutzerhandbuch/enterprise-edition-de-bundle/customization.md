@@ -3,14 +3,14 @@ weight: 40
 title: Anpassen der Plattform
 layout: redirect
 ---
- 
+
 Mit dem Enterprise Tenant von Cumulocity können Sie Ihre Plattform nach Ihren Wünschen und Bedürfnissen individuell anpassen. 
 
 Im Menü **Einstellungen** können Sie verschiedene Anpassungseinstellungen vornehmen.
 
 ### <a name="configuration"></a>Konfiguration
 
-> **Info**: Informationen zu den Einstellungen in der Registerkarte **Konfiguration** finden Sie in [Ändern von Einstellungen > Konfigurationseinstellungen](/benutzerhandbuch/administration/#config-platform) unter Administration. Hier werden nur die Funktionen erläutert, die ausschließlich für Enterprise Tenants verfügbar sind.
+>**Info**: Informationen zu den Einstellungen in der Registerkarte **Konfiguration** finden Sie in [Ändern von Einstellungen > Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#config-platform) unter Administration. Hier werden nur die Funktionen erläutert, die ausschließlich für Enterprise Tenants verfügbar sind.
 
 #### Anwendungen
 
@@ -28,9 +28,9 @@ Im Bereich **Passwörter** können Sie Passworteinstellungen wie Standardstärke
 
 Im Bereich **Supportbenutzer** konfigurieren Sie die Parameter für die Aktivierung eines Supportbenutzers für Untermandanten-Benutzer.
 
-Mit Hilfe dieser Funktion können Supportbenutzer (d. h. Benutzer mit spezifischen Berechtigungen im Management-Mandanten) bei etwaigen Problemen auf Benutzer von Untermandanten zugreifen. Weitere Informationen finden Sie unter [Supportbenutzerzugriff](/benutzerhandbuch/enterprise-edition#users-in-other-tenants).
+Mit Hilfe dieser Funktion können Supportbenutzer (d. h. Benutzer mit spezifischen Berechtigungen im Management-Mandanten) bei etwaigen Problemen auf Benutzer von Untermandanten zugreifen. Weitere Informationen finden Sie unter [Supportbenutzerzugriff](/benutzerhandbuch/enterprise-edition-de#users-in-other-tenants).
 
-<img src="/images/benutzerhandbuch/Administration/et-settings-configuration-support-user.png" alt="Support user configuration">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
 
 Legen Sie im Feld **Supportbenutzer aktivieren** fest, ob der Supportbenutzerzugriff für Untermandanten-Benutzer aktiviert sein soll. Hier sind folgende Werte möglich:
 
@@ -38,11 +38,11 @@ Legen Sie im Feld **Supportbenutzer aktivieren** fest, ob der Supportbenutzerzug
 * *false*: Supportbenutzerzugriff ist deaktiviert. Wenn Supportbenutzerzugriff deaktiviert ist, können sich Supportbenutzer nur bei Untermandanten anmelden, für die mindestens ein Benutzer diesen Zugriff explizit ermöglicht hat.
 * Ein explizites Datum im Datum-Uhrzeit-Format, bis zu dem die Supportbenutzer-Aktivierung aktiviert bleiben soll. Wenn kein Datum festgelegt wird, wird der Wert auf "Unbegrenzt" gesetzt.
 
-Im Feld **Gültigkeitsdauer** können Sie optional die Supportdauer angeben, d. h. um wie viele Stunden der Supportbenutzerzugriff nach einer Supportbenutzer-Anfrage verlängert wird. Geben Sie die Anzahl der Stunden ein. Der Standardwert ist 24 Stunden.
+Im Feld **Gültigkeitsdauer** können Sie optional die Supportdauer angeben, d. h. um wie viele Stunden der Supportbenutzerzugriff nach einer Supportbenutzeranfrage verlängert wird. Geben Sie die Anzahl der Stunden ein. Der Standardwert ist 24 Stunden.
 
 Ablaufdatum und -uhrzeit werden anhand der im Feld **Gültigkeitsdauer** angegebenen Dauer aktualisiert. Beispiel: Wenn das aktuelle Ablaufdatum 01/09/2018 15:00 lautet und die Dauer von 24 Stunden beibehalten wurde, aktualisiert der aktivierende Supportbenutzer das Ablaufdatum auf 01/10/2018 15:00.
 
-Details zum Status von Supportbenutzer-Anfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [Verwalten von Mandanten](/benutzerhandbuch/enterprise-edition#managing-tenants).
+Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [Verwalten von Mandanten](/benutzerhandbuch/enterprise-edition-de#managing-tenants).
 
 ### <a name="branding"></a>Branding
 
@@ -136,11 +136,11 @@ Im Bereich **Sonstiges** können Sie den Rand-Radius für Schaltflächen durch A
 
 In der Registerkarte **Domain-Name** können Sie Ihren eigenen Domain-Namen festlegen.
  
-> **Wichtig**: Sie benötigen eine gültige Lizenz, um Ihre Domain zu aktivieren. Bitte kontaktieren Sie unser Sales-Team unter sales@cumulocity.com, um eine Lizenz für Ihre Domain zu installieren.  
+>**Wichtig**: Sie benötigen eine gültige Lizenz, um Ihre Domain zu aktivieren. Bitte kontaktieren Sie unser Sales-Team unter sales@cumulocity.com, um eine Lizenz für Ihre Domain zu installieren.  
 
 <img src="/images/benutzerhandbuch/enterprise-tenant/et-domain-name.png" alt="Domain name">
 
-> **Info**: Die Funktionalität "Benutzerdefinierter Domain-Name" ist nur für cumulocity.com- oder Private Edition-Installationen verfügbar, bei denen kein benutzerdefinierter Load Balancer verwendet wird.
+>**Info**: Die Funktionalität "Benutzerdefinierter Domain-Name" ist nur für cumulocity.com- oder Private Edition-Installationen verfügbar, bei denen kein benutzerdefinierter Load Balancer verwendet wird.
 
 Zunächst müssen Sie ein entsprechendes Zertifikat hochladen, in dem Sie **Zertifikat hochladen** klicken. Stellen Sie sicher, dass
 
@@ -162,12 +162,12 @@ Bevor Sie den eigenen Domain-Namen aktivieren, stellen Sie sicher, dass
 * Sie einen Wildcard-CNAME-Eintrag (beginnend mit `*.`) in folgendem Format zu Ihrem DNS-Server hinzugefügt haben:<br>
  Domain-Name = "&ast;.&lt;ihr domain name>", z.B. "*.iot.mycompany.com" <br>
  Typ = CNAME <br>
- Ziel = Domain der Plattform, auf die Sie verweisen wollen. Wenn Sie z. B. "https://demos.cumulocity.com" verwenden, um auf Ihren Mandanten zuzugreifen, verwenden Sie "demos.cumulocity.com" als Ziel.<br>
+ Ziel = Domain der Plattform, auf die Sie verweisen wollen. Wenn Sie z. B. `https://demos.cumulocity.com` verwenden, um auf Ihren Mandanten zuzugreifen, verwenden Sie "demos.cumulocity.com" als Ziel.<br>
 Vergewissern Sie sich, dass Sie alle A-Einträge für die Wildcard-Domain entfernt haben. Wenn Sie bereits einen Eintrag A für "xxx.iot.mycompany.com" haben, können Sie keine Mandanten mit der URL "xxx" anlegen.
 
 Nach erfolgreicher Aktivierung werden Sie zu Ihrem Enterprise Tenant unter der neuen Domain umgeleitet. Sie erhalten eine Email mit Informationen über die Aktivierung.
 
-> **Info**: Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht mehr mit der Cumulocity-Domain zugreifen. Verwenden Sie anstatt dessen Ihren eigenen Domain-Namen.
+>**Info**: Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht mehr mit der Cumulocity-Domain zugreifen. Verwenden Sie anstatt dessen Ihren eigenen Domain-Namen.
 
 
 #### Aktualisieren des Zertifikats
@@ -180,14 +180,14 @@ Wenn Ihr Zertifikat abläuft, müssen Sie es durch ein neues Zertifikat mit eine
 * das Zertifikat exakt denselben Domain-Namen wie das aktuell aktive Zertifikat hat.
 * Sie einen CNAME-Eintrag zu Ihrem DNS-Server hinzugefügt haben. Details zum CNAME-Eintrag finden Sie weiter oben.
 
-> **Info**: Berücksichtigen Sie, dass es nach dem Ersetzen des Zertifikats einige Minuten dauern kann, bis das neue Zertifikat den Benutzern/Browsern bereitgestellt wird.
+>**Info**: Berücksichtigen Sie, dass es nach dem Ersetzen des Zertifikats einige Minuten dauern kann, bis das neue Zertifikat den Benutzern/Browsern bereitgestellt wird.
 
 
 #### Deaktivieren eines Zertifikats
 
 Wenn Sie zu Ihrer alten Domain auf Cumulocity zurückkehren möchten, können Sie Ihr Zertifikat ganz einfach wieder deaktivieren. 
 
-> **Wichtig**: Verwenden Sie diese Funktion mit Vorsicht. Ihre Kunden werden nicht mehr in der Lage sein, auf Ihre Untermandanten zuzugreifen.
+>**Wichtig**: Verwenden Sie diese Funktion mit Vorsicht. Ihre Kunden werden nicht mehr in der Lage sein, auf Ihre Untermandanten zuzugreifen.
 
 #### Troubleshooting
 
@@ -226,5 +226,5 @@ HTTP/1.1 200 OK
 ```
 
 
-> **Info**: Berücksichtigen Sie, dass es nach dem Ändern des DNS-Eintrags bis zu 24 Stunden dauern kann, bis der neue Eintrag propagiert wurde.
+>**Info**: Berücksichtigen Sie, dass es nach dem Ändern des DNS-Eintrags bis zu 24 Stunden dauern kann, bis der neue Eintrag propagiert wurde.
 >

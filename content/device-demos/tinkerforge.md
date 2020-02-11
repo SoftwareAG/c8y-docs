@@ -14,7 +14,7 @@ layout: bundle
 
 ### Installation
 
-Cumulocity's Java agent supports TinkerForge out of the box. For installing and running the Java agent on the Raspberry Pi, refer to the [Raspberry Pi section](../raspberry-pi).
+Cumulocity's Java agent supports TinkerForge out of the box. For installing and running the Java agent on the Raspberry Pi, refer to the [Raspberry Pi section](../raspberry-pi-4).
 
 ![Raspberry Pi and TinkerForge](/images/device-demos/tinkerforge/tinkerforge.jpg)
 
@@ -32,7 +32,7 @@ Bricklets can be configured remotely using the c8y_Configuration operation. To a
 
 ![Bricklet Configuration](/images/device-demos/tinkerforge/tinkerforgeconfiguration.png)
 
-#### Barometer, humidtiy, ambient light, moisture, distance, voltage, current and temperature bricklets
+#### Barometer, humidity, ambient light, moisture, distance, voltage, current and temperature bricklets
 
 Sensor data can be visualized by clicking on the "Measurements" tab of a sensor.
 
@@ -204,7 +204,7 @@ This operation will find up to four outputs starting from A0 to B7 and switch th
 
 #### Distance InfraRed and UltraSound bricklets
 
-Additionally to providing measurement data, the Distance US and IR bricklets also send events. Similar to a button press on the display, interrupting the sensor of the distance bricklets will send an event. The event can be seen on the "Events" tab of the distance bricklet and can be post-processed with [CEP](/guides/concepts/realtime). The type of the event is "c8y_EntranceEvent". Additionally the following configuration options are provided:
+Additionally to providing measurement data, the Distance US and IR bricklets also send events. Similar to a button press on the display, interrupting the sensor of the distance bricklets will send an event. The event can be seen on the "Events" tab of the distance bricklet and can be post-processed with [CEP](/concepts/realtime). The type of the event is "c8y_EntranceEvent". Additionally the following configuration options are provided:
 
 * c8y.distanceir.eventSlackTime, c8y.distanceus.eventSlackTime - sets the minimum time between events. Time is in ms. Default is 10000ms.
 * c8y.distanceir.eventTreshold - sets the minimum distance in mm that would trigger an event.  Default is 400mm;

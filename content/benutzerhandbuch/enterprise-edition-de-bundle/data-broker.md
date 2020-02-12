@@ -142,7 +142,7 @@ Klicken Sie in einem Datenkonnektor-Eintrag rechts auf das Menüsymbol und ansch
 
 ![Warnings tab](/images/benutzerhandbuch/enterprise-tenant/data-broker-connector-warnings.png)
 
-Weitere Informationen zu Alarmen finden Sie unter [Überwachen und Steuern von Geräten > Verwenden von Alarmen](/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt *Device Management*.
+Weitere Informationen zu Alarmen finden Sie unter [Überwachen und Steuern von Geräten > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring) im Abschnitt *Device Management*.
 
 
 ### <a name="data-broker-subscriptions"></a> Datenabonnements

@@ -106,7 +106,7 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><a href="/benutzerhandbuch/administration" class="no-ajaxy">Administration</a></td>
+<td style="text-align:center"><a href="/benutzerhandbuch/administration-de" class="no-ajaxy">Administration</a></td>
 <td style="text-align:left">Gibt Konto-Administratoren die Möglichkeit, Rollen, Mandanten und Anwendungen zu verwalten.</td>
 <td style="text-align:left">administration</td>
 <td style="text-align:left">Web-Anwendung</td>
@@ -136,13 +136,13 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 <td style="text-align:left">Web-Anwendung</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/benutzerhandbuch/device-management" class="no-ajaxy">Device Management</a></td>
+<td style="text-align:center"><a href="/benutzerhandbuch/device-management-de" class="no-ajaxy">Device Management</a></td>
 <td style="text-align:left">Verwalten und überwachen Sie Geräte und führen Sie die Steuerung und Fehlerbehebung von Geräten per Fernzugriff durch.</td>
 <td style="text-align:left">devicemanagement</td>
 <td style="text-align:left">Web-Anwendung</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/benutzerhandbuch/device-management#simulator" class="no-ajaxy">Device simulator</a></td>
+<td style="text-align:center"><a href="/benutzerhandbuch/device-management-de#simulator" class="no-ajaxy">Device simulator</a></td>
 <td style="text-align:left">Simulieren Sie alle Aspekte von IoT-Geräten.</td>
 <td style="text-align:left">device-simulator</td>
 <td style="text-align:left">Microservice</td>

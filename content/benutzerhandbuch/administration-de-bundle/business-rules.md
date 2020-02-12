@@ -6,7 +6,7 @@ title: Anwenden von Geschäftsregeln
 
 Mittels Echtzeitverarbeitung können Geschäftsregeln definiert werden, die automatisch in Echtzeit ausgeführt werden, sobald neue Daten eingehen oder bestehende Daten geändert werden. Die Logik wird in sogenannten Modulen implementiert, die aus einer Menge von CEP-Anweisungen bestehen. 
 
-> **Info**: Eine benutzerfreundliche Methode, Echtzeitgeschäftsregeln zu definieren, wird in der Cockpit-Anwendung mit den sogenannten [Smart Rules](/benutzerhandbuch/cockpit#smart-rules) bereitgestellt. Smart Rules sind ebenfalls CEP-Anweisungen, die in der Liste der **Echtzeitverarbeitung** angezeigt werden. Smart Rules können hier jedoch nicht bearbeitet werden.
+> **Info**: Eine benutzerfreundliche Methode, Echtzeitgeschäftsregeln zu definieren, wird in der Cockpit-Anwendung mit den sogenannten [Smart Rules](/benutzerhandbuch/cockpit-de#smart-rules) bereitgestellt. Smart Rules sind ebenfalls CEP-Anweisungen, die in der Liste der **Echtzeitverarbeitung** angezeigt werden. Smart Rules können hier jedoch nicht bearbeitet werden.
 
 Klicken Sie **Echtzeitverarbeitung** im Menü **Geschäftsregeln**, um alle Module anzuzeigen.
 

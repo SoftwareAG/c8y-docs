@@ -25,7 +25,7 @@ Cumulocity umfasst die drei folgenden Standardanwendungen:
 </tr>
 <tr>
 <td style="text-align:center"><i class="c8y-icon c8y-icon-cockpit c8y-icon-duocolor" style="font-size: 36px;"></i></td>
-<td style="text-align:left"><a href="/benutzerhandbuch/cockpit" class="no-ajaxy">Cockpit</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/cockpit-de" class="no-ajaxy">Cockpit</a></td>
 <td style="text-align:left">Die Cockpit-Anwendung umfasst Optionen für die Verwaltung und Überwachung von IoT-Assets und Daten aus Geschäftssicht.</td>
 </tr>
 <tr>

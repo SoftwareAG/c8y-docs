@@ -18,7 +18,7 @@ Die folgenden Abschnitte beschreiben detailliert alle Funktionalitäten der Cock
 |[Verwenden von Smart Rules](#smart-rules)|[Erstellen und verwalten Sie Geschäftsregeln](#create-rules), um eingehende Daten in Echtzeit zu verarbeiten und entsprechende Aktionen auszuführen.
 |[Smart Rules-Sammlung](#smart-rules-collection)|Verwenden Sie [globale Smart Rules](#smart-rules-collection), um Regeln zu konfigurieren, etwa für Geofencing, Alarmeskalation oder Benachrichtigungen (SMS/E-Mail/Sprache). Beschreibt detailliert jede Smart Rule und ihre konfigurierbaren Parameter.
 
-Mehr über allgemeine Aspekte der Cumulocity-Plattform und ihrer Anwendungen erfahren Sie unter [Erste Schritte](/benutzerhandbuch/overview).
+Mehr über allgemeine Aspekte der Cumulocity-Plattform und ihrer Anwendungen erfahren Sie unter [Erste Schritte](/benutzerhandbuch/getting-started-de).
 
 ### <a name="home"></a>Startseite
 

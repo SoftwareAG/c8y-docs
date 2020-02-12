@@ -58,6 +58,8 @@ The following types of data lakes are currently supported:
 |:---|:---|
 |Mount path|The mount path of the NAS|
 
+For **Azure Data Lake Storage Gen1**, **Azure Storage**, and **Amazon S3** data lakes, you can also define additional connection properties. Click **Add property** and define an additional property consisting of a key/value pair.
+
 #### Saving settings
 Once all settings are defined, click **Save** in the action bar to the right. During the save process, the following steps are automatically conducted:
 * A Dremio account is created, with the account having standard Dremio user privileges, not admin privileges.

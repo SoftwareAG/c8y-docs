@@ -1,7 +1,7 @@
 ---
 weight: 13
 title: Managing permissions
-
+layout: redirect
 ---
 
 Permissions define what a user is allowed to do in Cumulocity applications. To manage permissions more easily, they are grouped into so-called "roles". Every user can be associated with a number of roles, adding up permissions of the user.
@@ -13,32 +13,35 @@ The following types of roles can be associated with users:
 
 Moreover, application access can be granted to enable a user to use an application.
 
+
 ### <a name="global"></a>Global roles
 
 Click **Roles** in the **Account** menu to display a list of configured roles.
 
-In the **Global roles** tab you can find the roles which grant permissions on a general level. There are several default global roles defined, but you can define your own according to your needs. 
-
 <img src="/images/users-guide/Administration/admin-global-roles.png" alt="Context menu">
+
+In the **Global roles** tab you can find the roles which grant permissions on a general level. There are several global roles pre-defined, but you can define your own according to your needs. 
+
+> **Info**: The pre-defined roles are not fully configured. They can be seen as samples which are pre-configured for a particular purpose. You may use them as a starting point and further adapt them to your individual needs.
+
+> On creating a new user, make sure that the global roles you assign to the user cover all permissions relevant for this particular user. If, for example, a user only has the role "Cockpit User" (see below), the user will only be able to access the Cockpit application and nothing more.  
 
 The roles "admins" and "devices" have a special status:
 
 <table>
-<col style="width: 15%;">
-<col style="width: 85%;">
+<col style="width: 20%;">
+<col style="width: 80%;">
 <thead>
 <tr>
 <th align="left">Role&nbsp;&nbsp;&nbsp;</th>
 <th align="left">Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">admins</td>
 <td align="left">All permissions are enabled. The initial administrator, the first user created in a tenant, has this role.</td>
 </tr>
-
 <tr>
 <td align="left">devices</td>
 <td align="left">Typical permission setup for devices. After registration, a device automatically has this role. Edit this role if your devices require less or more permissions, or assign other roles to your devices.</td>
@@ -46,10 +49,8 @@ The roles "admins" and "devices" have a special status:
 </tbody>
 </table>
 
-Furthermore, the following roles are initially configured:
-
-**Info**: 
-
+Furthermore, the following pre-configured roles are initially provided.
+ 
 <table>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -59,43 +60,35 @@ Furthermore, the following roles are initially configured:
 <th align="left">Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">CEP Manager</td>
 <td align="left">Can access all smart rules and event processing rules.</td>
 </tr>
-
 <tr>
 <td align="left">Cockpit User</td>
 <td align="left">Can access the Cockpit application. In addition, you should add a role providing access to devices.</td>
 </tr>
-
 <tr>
 <td align="left">Device management User</td>
 <td align="left">Can access the Device Management application. The user will be able to use the simulator and to run bulk operations. In addition, you should add a role providing access to devices.</td>
 </tr>
-
 <tr>
 <td align="left">Global Manager</td>
 <td align="left">Can read and write all devices.</td>
 </tr>
-
 <tr>
 <td align="left">Global Reader</td>
 <td align="left">Can read all devices.</td>
 </tr>
-
 <tr>
 <td align="left">Global User Manager</td>
 <td align="left">Can manage all users.</td>
 </tr>
-
 <tr>
 <td align="left">Shared User Manager</td>
 <td align="left">Can manage sub-users. The subscription plan needs to include user hierarchies to be able to manage sub-users.</td>
 </tr>
-
 <tr>
 <td align="left">Tenant Manager</td>
 <td align="left">Can manage tenant-wide settings, such as own applications, data brokerage, data retention, options and tenant statistics.</td>

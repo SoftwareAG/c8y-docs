@@ -18,7 +18,7 @@ The following illustration grants you a quick overview of the Cumulocity Sigfox 
 
 The following sections describe how to:
 
-- [Manage the connectivity settings](#connectivity) in Cumulocity.
+- [Manage the connectivity settings](#connectivity-sigfox) in Cumulocity.
 - [Create device protocols](#create-device-protocols-sigfox) with Cumulocity's device database.
 - [Register devices](#register-device-sigfox) and visualize the Sigfox payload using Cumulocity.
 - [Update devices](#old-registration) registered with the general device registration.
@@ -28,9 +28,9 @@ Moreover, check out the [Troubleshooting](#sigfox-troubleshooting) section in ca
 
 **Info:** To be able to use the Sigfox agent, your tenant needs to be subscribed to the following applications: sigfox-agent, feature-fieldbus4. In case of any issues, please contact support.
 
-### <a name="connectivity"></a>Managing the connectivity settings
+### <a name="connectivity-sigfox"></a>Managing the connectivity settings
 
-Before you register a device, you need to configure Sigfox Cloud credentials in the **Connectivity** page in the Administration application. You have to set up these Sigfox Cloud credentials in Sigfox. 
+Before you register a device, you need to configure Sigfox Cloud credentials in the **Connectivity** page in the Administration application. You have to set up these Sigfox Cloud credentials in Sigfox.
 
 Before you create API access to Cumulocity, you need to have an “Associated user” which is added to the Cumulocity group in Sigfox Cloud and has the following profiles:
 
@@ -58,9 +58,9 @@ After creating an “Associated user” with the proper group and profiles navig
 
 ![API access page](/images/users-guide/sigfox/api-access.png)
 
-#### Step 3 
+#### Step 3
 
-After the API access entry has been created, you can connect your Sigfox Cloud account to Cumulocity via the **Connectivity** page in the Administration application. Navigate to the **Connectivity** page and switch to the **Sigfox provider settings** tab. 
+After the API access entry has been created, you can connect your Sigfox Cloud account to Cumulocity via the **Connectivity** page in the Administration application. Navigate to the **Connectivity** page and switch to the **Sigfox provider settings** tab.
 
 The following information has to be provided:
 
@@ -82,29 +82,29 @@ If you wish to overwrite your previous credentials, click **Replace credentials*
 
 To process data from Sigfox devices, Cumulocity needs to understand the payload format of the devices. Mapping payload data to Cumulocity data can be done by creating a Sigfox device protocol.
 
-During the [device registration](#register-device), you can associate this device protocol. The received uplink callbacks for this device with a hexadecimal payload will then be mapped to the ones you have configured in your device protocol.
+During the [device registration](#register-device-sigfox), you can associate this device protocol. The received uplink callbacks for this device with a hexadecimal payload will then be mapped to the ones you have configured in your device protocol.
 
 If a device protocol has been changed after being associated to a device, the reflection of the change can take up to 10 minutes because of the refresh mechanism of the Sigfox microservice.
 
-**Info:** Device protocol mapping only supports decoding for fixed byte positions based on the message type. 
+**Info:** Device protocol mapping only supports decoding for fixed byte positions based on the message type.
 
-To create device protocols, select **Device protocols** in the **Device types** menu in the navigator of the Device Management application. You can either import an existing device protocol or create a new one. 
+To create device protocols, select **Device protocols** in the **Device types** menu in the navigator of the Device Management application. You can either import an existing device protocol or create a new one.
 
 #### <a name="import-device-type"></a>Importing a device protocol
 
-In the **Device protocols** page, click **Import**. 
+In the **Device protocols** page, click **Import**.
 
 Select the desired predefined device type or upload it from a file. When ready, click **Import** again.
 
 #### <a name="create-new-device-type"></a>Creating a new device protocol
 
-In the **Device protocols** page, click **New device protocol** and select **Sigfox** from the options list. 
+In the **Device protocols** page, click **New device protocol** and select **Sigfox** from the options list.
 
 ![New Sigfox protocol](/images/users-guide/sigfox/sigfox-newprotocol.png)
 
-Provide a name for the device protocol an and optional description, and click **Create**. 
+Provide a name for the device protocol an and optional description, and click **Create**.
 
-Under **Message types**, specify the message types. Sigfox devices can send messages of different types with different encodings per type. Depending on the device, the type can be determined by looking either at the FPort parameter of a message (Source: FPort) or at the subset of the message payload itself (Source: Payload). 
+Under **Message types**, specify the message types. Sigfox devices can send messages of different types with different encodings per type. Depending on the device, the type can be determined by looking either at the FPort parameter of a message (Source: FPort) or at the subset of the message payload itself (Source: Payload).
 
 In the **Source** field, select the way the message type is encoded:  
 
@@ -120,17 +120,17 @@ In the user interface, you can enter this type of message type source informatio
 
 ##### Configuring values
 
-Click **Add value** to create the value configuration. 
-	
+Click **Add value** to create the value configuration.
+
 ![Sigfox protocol add value](/images/users-guide/sigfox/sigfox-addvalue.png)
 
-In the following window, configure the relevant values as shown in this example. 
+In the following window, configure the relevant values as shown in this example.
 
 ![LoRa protocol add new value](/images/users-guide/actility/devmgmt-devicetypes-protocols-loranewvalue.png)
 
 ![LoRa protocol add new value](/images/users-guide/actility/devmgmt-devicetypes-protocols-loranewvalue2.png)
 
-The value configuration maps the value in the payload of a message type to the Cumulocity data. 
+The value configuration maps the value in the payload of a message type to the Cumulocity data.
 
 Under **Message type**, configure the **Message ID** according to your device message specification. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device protocol main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
 
@@ -154,13 +154,13 @@ The hexadecimal value is converted to a decimal number and afterwards a "value n
 
 Under **Value normalization**, specify how the raw value should be transformed before being stored in the platform and enter the appropriate values for:
 
-- **Multiplier**: This value is multiplied with the value extracted from the **Value selection**. It can be decimal, negative or positive. By default it is set to 1. 
+- **Multiplier**: This value is multiplied with the value extracted from the **Value selection**. It can be decimal, negative or positive. By default it is set to 1.
 - **Offset**: This value defines the offset that is added or subtracted. It can be decimal, negative or positive. By default it is set to 0.
 - **Unit** (optional): A unit can be defined which is saved together with the value (e.g. temperature unit "C" for degree Celsius).
 
-For detailed information on how to decode the payload, refer to the documentation of the device. 
+For detailed information on how to decode the payload, refer to the documentation of the device.
 
-Under Options, select on of the following options, if required: 
+Under Options, select on of the following options, if required:
 
 * **Signed** - if the value is a signed number
 * **Packed decimal** - if the value is BCD encoded
@@ -174,7 +174,7 @@ Under **Functionalities**, specify how this device protocol should behave:
 
 You can also have a nested structure with several values within a measurement, event or managed object fragment. In case of a measurement, all the properties of the same type will be merged to create a nested structure. In case of an event or a managed object all the properties with the same fragment are merged to create a nested structure. (Also refer to the [example](#nested-structure-example) of a nested structure for a "Position" device protocol below.)
 
-Click **OK** to add the values to your device protocol. 
+Click **OK** to add the values to your device protocol.
 
 ![Value configurations of created device protocol](/images/users-guide/sigfox/sigfox-protocol.png)
 
@@ -182,7 +182,7 @@ Click **Save** to create the device protocol.
 
 **Example with single property**
 
-The following images show an example for a message which sends a measurement when the battery level value changes. 
+The following images show an example for a message which sends a measurement when the battery level value changes.
 
 ![Battery level changes example](/images/users-guide/actility/devmgmt-devicetypes-protocols-battery.png)
 
@@ -191,7 +191,7 @@ The following images show an example for a message which sends a measurement whe
 
 **<a name="nested-structure-example"></a>Example with nested structure**
 
-The following images show an example of a nested structure for a device protocol, reporting the current position of a GPS device. The device protocol is named "Position" and contains values for longitude and latitude. 
+The following images show an example of a nested structure for a device protocol, reporting the current position of a GPS device. The device protocol is named "Position" and contains values for longitude and latitude.
 
 The message ID should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the **Managed object fragment** field and create a new value for each: longitude and latitude.
 
@@ -199,7 +199,7 @@ The message ID should be the same for all the values. Enter the rest of the para
 
 ![Value creation: Latitude-nested](/images/users-guide/actility/lora-protocols-lat.png)
 
-This will be the result: 
+This will be the result:
 
 ![Value configuration in detail: nested structure](/images/users-guide/actility/devmgmt-devicetypes-protocols-gpsexample.png)
 
@@ -227,16 +227,16 @@ After clicking **Next** the device registration request will be submitted and th
 
 You can verify that the device is really connected by checking that events are actually coming in. You can do so by clicking on a device and opening its **Events** tab. All events related to this device are listed here.
 
-For more information on viewing and managing your connected devices, also refer to [Device Management](http://cumulocity.com/users-guide/device-management).
+For more information on viewing and managing your connected devices, also refer to [Device Management](/users-guide/device-management).
 
 ### <a name="old-registration"></a>Updating devices registered with the general device registration
 
 If devices have previously been registered via the general device registration the following URLs have to be manually changed in the Sigfox Cloud:
 
-- *https://sigfox-agent.cumulocity.com/sigfoxDataCallback* to *https://<tenantId>.cumulocity.com/service/sigfox-agent/sigfoxDataCallback*
-- *https://sigfox-agent.cumulocity.com/sigfoxServiceAcknowledgeCallback* to *https://<tenantId>.cumulocity.com/service/sigfox-agent/sigfoxServiceAcknowledgeCallback*
-- *https://sigfox-agent.cumulocity.com/sigfoxServiceStatusCallback* to *https://<tenantId>.cumulocity.com/service/sigfox-agent/sigfoxServiceStatusCallback*
-- *https://sigfox-agent.cumulocity.com/sigfoxErrorCallback* to *https://<tenantId>.cumulocity.com/service/sigfox-agent/sigfoxErrorCallback*
+- `https://sigfox-agent.cumulocity.com/sigfoxDataCallback` to `https://<tenantId>.cumulocity.com/service/sigfox-agent/sigfoxDataCallback`
+- `https://sigfox-agent.cumulocity.com/sigfoxServiceAcknowledgeCallback` to `https://<tenantId>.cumulocity.com/service/sigfox-agent/sigfoxServiceAcknowledgeCallback`
+- `https://sigfox-agent.cumulocity.com/sigfoxServiceStatusCallback` to `https://<tenantId>.cumulocity.com/service/sigfox-agent/sigfoxServiceStatusCallback`
+- `https://sigfox-agent.cumulocity.com/sigfoxErrorCallback` to `https://<tenantId>.cumulocity.com/service/sigfox-agent/sigfoxErrorCallback`
 
 **Info**: General device registration for Sigfox devices is no longer supported.
 
@@ -263,7 +263,7 @@ The information for the callback setup is retrieved by a microservice.
 To verify whether your setup is correct, execute the following REST API request:
 
 	```http
-	GET {{url}}/tenant/currentTenant 
+	GET {{url}}/tenant/currentTenant
 	```
 
 **Info:** The request above is simply an example API request that could be used. For more info on REST API requests, refer to the [Tenants](https://www.cumulocity.com/reference/tenants) in the Reference guide.
@@ -278,7 +278,7 @@ If the "transfer operation failed" alarm is triggered, the device is already pro
 
 ![!False provision](/images/users-guide/sigfox/sigfox-troubleshooting-falseprovision.png)
 
-In case of this alarm, you can see that the **Provisioned** status is set to "false" which means that no data is coming from the Sigfox platform. In the alarm message there is more information regarding the error. In this case the PAC code given during registration was invalid. 
+In case of this alarm, you can see that the **Provisioned** status is set to "false" which means that no data is coming from the Sigfox platform. In the alarm message there is more information regarding the error. In this case the PAC code given during registration was invalid.
 
 > **Info:** If the provisioning process has been completed, but has failed, information is returned as an alarm with the reason of the failure provided.
 
@@ -319,5 +319,3 @@ Non-mentioned properties from the alarm are:
  - sendDuplicate
 
 These properties will be set to false.
- 
-

@@ -109,14 +109,14 @@ The following information is displayed here:
 
 |Field|Description
 |:--------|:-----
-|Status|May be either *Enabled* or *Disabled*. <br>*Enabled* indicates that: <br> - support user access has ben activated on platform level (see [Customizing your platform](/users-guide/enterprise-edition#configuration)), <br> - one or more subtenant users have activated support user access. <br>*Disabled* indicates that: <br> - support user access has been deactivated on platform level, <br> - support user access has been activated on platform level but deactivated for the subtenant, <br> - no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).
+|Status|May be either *Enabled* or *Disabled*. <br>*Enabled* indicates that: <br> - support user access has ben activated on platform level (see [Configuration](/users-guide/enterprise-edition#configuration)), <br> - one or more subtenant users have activated support user access. <br>*Disabled* indicates that: <br> - support user access has been deactivated on platform level, <br> - support user access has been activated on platform level but deactivated for the subtenant, <br> - no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).
 |Active requests count|The number of requests currently active in the subtenant. Only displayed if support user access is not enabled globally on platform level. Shown as a number in a small red dot.
 |Expiry date|Specifies the date on which support user access for the tenant will expire. If no date has been specified, the expiry date is set to "No limit".
 
 
 ### To suspend or delete subtenants
 
-You can temporarily suspend tenants or you can delete subtenants permanently. 
+You can temporarily suspend tenants or you can delete subtenants permanently.
 
 Suspending tenants blocks any access to this tenant, regardless whether the access is from devices, users or other applications.
 
@@ -191,9 +191,9 @@ The **Custom properties** tab allows you to view and edit values of custom prope
 
 #### Limiting subtenant device number
 
-Platform administrators can limit the count of concurrently registered root devices or simply all devices (including children devices) via the custom property "Limit number of devices". 
+Platform administrators can limit the count of concurrently registered root devices or simply all devices (including children devices) via the custom property "Limit number of devices".
 
-They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the **[Usage statistics](<a name="usage-stats"></a>)** page.
+They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the [**Usage statistics**](#usage-stats) page.
 
 #### Limiting subtenant request rate
 
@@ -207,7 +207,7 @@ Platform administrators can limit the request rate of each subtenant via the fol
 When there is no limit on tenant and system level, the limit feature is considered as disabled and the tenant gains unlimited access. To switch off request rate limiting after it was enabled, set the value to "-1".
 
 
-### <a name="usage-stats"></a> Usage statistics
+### <a name="usage-stats"></a>Usage statistics
 
 The **Usage statistics** page provides statistical information on each subtenant.
 
@@ -245,11 +245,11 @@ Moreover custom properties are displayed, if configured.
 
 Custom properties may be defined in the [Properties Library](/users-guide/administration#properties) and then set their values in the [Custom properties](#tenants-custom-properties) tab of the tenant.
 
-You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Getting Started > Features and Functionalities > Filtering](/users-guide/overview#filtering).
+You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Getting Started > Features and Functionalities > Filtering](/users-guide/getting-started#filtering).
 
 #### To export the usage statistics table
 
-1. Click Export CSV at the right of the top menu bar to export the current view of the statistics table to a CSV file. 
+1. Click Export CSV at the right of the top menu bar to export the current view of the statistics table to a CSV file.
 2. In the resulting dialog box you can customize the CSV output by specifying a field separator, decimal separator and charset.
 <br> <img src="/images/users-guide/Administration/admin-subtenant-statistics-export.png"></img> <br>
 3. Click **Download** to start the export.
@@ -270,7 +270,7 @@ Cumulocity offers two billing modes:
 
 * **Resource-based billing**: Exposes the number of resources used by a microservice to calculate billing
 
-The billing modes are specified per microservice in the [microservice manifest](/reference/microservice-manifest) and are set in the field "billingMode".
+The billing modes are specified per microservice in the [microservice manifest](/microservice-sdk/concept/#manifest) and are set in the field "billingMode".
 
 RESOURCES: Sets the billing mode to resources-based. This is the default mode and will be applied to all microservices that are not explicitly switched to subscription-based billing mode.
 
@@ -337,7 +337,7 @@ For more details, refer to [Tenants > Tenant usage statistics](/reference/tenant
 
 ##### Scaling
 
-Auto-scaling monitors your microservices and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. It is easy to configure the microservice scaling by setting the property `scale` in the [Microservice manifest](https://cumulocity.com/reference/microservice-manifest/).
+Auto-scaling monitors your microservices and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. It is easy to configure the microservice scaling by setting the property `scale` in the [Microservice manifest](/microservice-sdk/concept/#manifest).
 
 For instance, when you have a microservice with scale policy set to AUTO and the CPU usage points that it is needed to start a new microservice instance for three hours, the billing logs: (24/24 + 3/24) * consumed resources.
 
@@ -348,7 +348,7 @@ Note that an audit record is created for every change of the number of instances
 
 ![Audit logs](/images/users-guide/Administration/admin-audit-logs-microscaling.png)
 
-For more information, refer to [Auditing](https://cumulocity.com/reference/auditing) in the Reference guide.
+For more information, refer to [Auditing](/reference/auditing) in the Reference guide.
 
 
 ### <a name="tenant-policies"></a> Tenant policies

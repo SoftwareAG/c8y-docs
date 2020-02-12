@@ -7,11 +7,11 @@ layout: redirect
 In the Cumulocity platform we distinguish between two kinds of applications:
 
 * [Subscribed applications](#subscribed-applications) -  all applications subscribed to the tenant (either provided by the platform or a service provider) but not owned. May not be added, modified or removed by the user.
-* [Own applications](#own-applications) - all applications owned by the tenant. Users can [add custom applications](#add-applications) in various ways as own applications. 
+* [Own applications](#own-applications) - all applications owned by the tenant. Users can [add custom applications](#adding-applications) in various ways as own applications. 
 
 Both applications are available through the **Applications** menu in the navigator:
 
-<img src="/images/users-guide/Administration/admin-menu.png" alt="Applications menu"> 
+<img src="/images/users-guide/Administration/admin-menu.png" alt="Applications menu">
 
 ### <a name="application-properties"></a>Application properties
 
@@ -77,7 +77,7 @@ Each application will show the following properties, depending on the applicatio
 
 ### <a name="subscribed-applications"></a>Subscribed applications
 
-Cumulocity provides a variety of applications for different purposes. 
+Cumulocity provides a variety of applications for different purposes.
 
 By default, the following applications are available in the Standard Tenant:
 
@@ -110,13 +110,13 @@ By default, the following applications are available in the Standard Tenant:
 </tbody>
 </table>
 
-Your tenant may show other subscribed applications, depending on your installation and/or  optional services. 
+Your tenant may show other subscribed applications, depending on your installation and/or  optional services.
 
 Refer to [Applications > application list](/reference/applications/#application-names) in the Reference guide for a detailed list of all potentially available applications, including information on its application types, its availability and the string to be used in the API to reference a particular application.
- 
+
 ### <a name="own-applications"></a>Own applications
 
-Own applications may be 
+Own applications may be
 
 * duplicates of subscribed applications (in order to be able to customize them)
 * web-based UI applications, either deployed as standalone applications or as plugins deployed into a specific application (e.g. a widget to the Cockpit dashboard)
@@ -126,20 +126,20 @@ Your applications are available through the application switcher in the top bar 
 
 <img src="/images/users-guide/Administration/admin-app-switcher.png" alt="App switcher">
 
-You manage your applications under **Own applications**, accessible through the **Applications** menu. 
+You manage your applications under **Own applications**, accessible through the **Applications** menu.
 
 In the **Own applications** page you will find a list of the applications available in your account.
 
 <img src="/images/users-guide/Administration/admin-applications-own.png" alt="Own applications">
 
-To display further information on the application, simply click its card. For details on the fields, refer to [Application properties](#application-properties). 
+To display further information on the application, simply click its card. For details on the fields, refer to [Application properties](#application-properties).
 
-To directly open an application from here, click **Open** on the respective application card. 
+To directly open an application from here, click **Open** on the respective application card.
 
 
 #### <a name="adding-applications"></a>To add an own application
 
-Click **Add application** in the **Own applications** page. 
+Click **Add application** in the **Own applications** page.
 
 <img src="/images/users-guide/Administration/admin-application-add.png" alt="Add application methods">
 
@@ -147,7 +147,7 @@ In the resulting dialog box, choose one of the following methods:
 
 * [Upload web application](#uploading-zip-files) - by dropping a ZIP file or browsing for it on your computer.
 * [Upload microservice](#uploading-microservices) - by dropping a ZIP file or browsing for it on your computer
-* [External application](#external-application) - by linking to an application running elsewhere 
+* [External application](#external-application) - by linking to an application running elsewhere
 * [Duplicate existing application](#clone-application) - by creating a copy of an existing application
 
 ##### <a name="uploading-zip-files"></a>To upload a web application
@@ -178,12 +178,12 @@ The microservice application is created once the ZIP file has been successfully 
 <br><br>
 <img src="/images/users-guide/Administration/admin-application-external.png" alt="External application">
 <br><br>
-3. In the resulting dialog box, enter the name of the application. The name will be shown as title of the application. 
+3. In the resulting dialog box, enter the name of the application. The name will be shown as title of the application.
 5. Enter an application key, used to identify this application.
-6. Enter the external URL where the application can be reached. 
+6. Enter the external URL where the application can be reached.
 7. Click **Save** to create the application.
 
-For details on the fields, see also [Application properties](#application-properties) below. 
+For details on the fields, see also [Application properties](#application-properties) below.
 
 ##### <a name="clone-application"></a>To duplicate an application
 
@@ -191,7 +191,7 @@ Duplicating an application might be useful if you want to customize a subscribed
 
 1. Click **Add application** in the **Own applications** page.
 2. In the upcoming dialog, select **Duplicate existing application**.
-3. Select the desired application from the dropdown list. 
+3. Select the desired application from the dropdown list.
 <br><br>
 <img src="/images/users-guide/Administration/admin-application-duplicate.png" alt="Duplicate application">
 <br><br>
@@ -200,7 +200,7 @@ Duplicating an application might be useful if you want to customize a subscribed
 <img src="/images/users-guide/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
 <br><br>
 5. Provide an application key, used to identify this application. By default, the key of the original application is provided, extended by a number.
-6. Provide the application path as part of the URL to invoke the application. By default, the path of the original application is provided, extended by a number. If you set it to the path of the original subscribed application, your own application will overrule the subscribed application. 
+6. Provide the application path as part of the URL to invoke the application. By default, the path of the original application is provided, extended by a number. If you set it to the path of the original subscribed application, your own application will overrule the subscribed application.
 7. Finally, click **Duplicate** to create the application.
 
 For details on the fields, see also [Application properties](#application-properties) below.
@@ -210,16 +210,16 @@ For details on the fields, see also [Application properties](#application-proper
 
 #### <a name="editing-and-removing"></a>To edit an own application
 
-Simply click the application or click the menu icon at the right of an entry and then click **Edit**. 
+Simply click the application or click the menu icon at the right of an entry and then click **Edit**.
 
 In the **Properties** tab, several fields can be modified, depending on the application type (see [Application properties](#application-properties)).
 
->**Important:** Never change the system application names (e.g. "Device Management", "Cockpit"). Otherwise, tenant initialization will fail. 
+>**Important:** Never change the system application names (e.g. "Device Management", "Cockpit"). Otherwise, tenant initialization will fail.
 
 
 #### To remove an own application
 
-Click the menu icon at the right of an entry and then click **Remove**. 
+Click the menu icon at the right of an entry and then click **Remove**.
 
 If you remove an application that overwrites a subscribed application, the currently subscribed application becomes available to all users. Additionally, the users will then also benefit from future upgrades of the subscribed application.
 
@@ -230,11 +230,11 @@ It is not possible to remove subscribed applications. This can only be done by t
 
 >**Important**: This plugin functionality is deprecated and only available in versions earlier then 9.16.
 
-In order to configure and extend the functions provided with an application, you can add plugins to it. 
+In order to configure and extend the functions provided with an application, you can add plugins to it.
 
 >**Info:** Because the application itself is modified when adding a plugin, plugins can only be added to own applications. When adding a plugin to a subscribed application, the application must be duplicated first into an own application. This process is supported by the Administration Application wizard.
 
-To add additional plugins, click **Add Plugin** on the card of the desired application in the **Own applications** page. 
+To add additional plugins, click **Add Plugin** on the card of the desired application in the **Own applications** page.
 
 The **Plugin** tab for the application will open up, showing all existing plugins and allowing to add plugins by simply dropping the respective ZIP file or browsing for it on your computer.
 
@@ -279,7 +279,7 @@ Multiple archive file versions can be stored in Cumulocity when they were create
 
 <img src="/images/users-guide/Administration/admin-application-archive.png" alt="Application archive">
 
-Once uploaded, the recently uploaded version is automatically the active version, i.e. the version of the application that is currently being served to the users of your account. This version cannot be deleted. 
+Once uploaded, the recently uploaded version is automatically the active version, i.e. the version of the application that is currently being served to the users of your account. This version cannot be deleted.
 
 >**Info**: The **Archive** tab is not available for subscribed applications, as only the owner of the application can perform this action.
 
@@ -300,7 +300,7 @@ You can monitor microservices hosted by Cumulocity in two ways.
 
 #### Status information
 
-The status of the microservice can be checked on the **Status** tab of the respective application. 
+The status of the microservice can be checked on the **Status** tab of the respective application.
 
 <img src="/images/users-guide/Administration/admin-microservice-status.png" alt="Microservice status" style="max-width: 100%">
 
@@ -311,7 +311,7 @@ The following information is provided on the **Status** tab:
 * Alarms: Alarms for given application, provided in realtime
 * Events: Events for given application, provided in realtime
 
-The status information is available for subscribed applications as well as for own applications. Information on subscribed subtenants is only visible for the application owner. 
+The status information is available for subscribed applications as well as for own applications. Information on subscribed subtenants is only visible for the application owner.
 
 To view the status you need the following permissions: ROLE_APPLICATION_MANAGEMENT_READ and ROLE_INVENTORY_READ
 
@@ -329,7 +329,7 @@ If your microservice was re-scaled into two instances you should be able to swit
 
 There is no possibility to see the logs from the previously running instances, however inside the instance there is a docker container running and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated docker container.
 
-Logs are always loaded from the docker container using both `stdout` and `stderr` sources and there is no possibility to distinguish/filter by the source. 
+Logs are always loaded from the docker container using both `stdout` and `stderr` sources and there is no possibility to distinguish/filter by the source.
 
 Initially, the **Log** tab shows the logs of the microservice instance for the last 10 minutes. The exact time range for which the logs are displayed is shown below the logs.
 

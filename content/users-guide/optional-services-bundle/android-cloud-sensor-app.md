@@ -6,15 +6,15 @@ layout: redirect
 
 ### Overview
 
-The Cumulocity IoT Cloud Sensor App sends sensor measurements from an Android smartphone, an iOS smartphone or a Texas Instruments (TI) Sensor Tag to Cumulocity to be securely processed and managed. Additionally, all devices can be remote-controlled by Cumulocity. 
+The Cumulocity IoT Cloud Sensor App sends sensor measurements from an Android smartphone, an iOS smartphone or a Texas Instruments (TI) Sensor Tag to Cumulocity to be securely processed and managed. Additionally, all devices can be remote-controlled by Cumulocity.
 
 >**Info**: The TI Sensor Tag is a low energy wireless device manufactured by Texas Instruments © [http://www.ti.com/](http://www.ti.com/).
 
-To use the Cloud Sensor App for Android you need a smartphone with Android version 5.0 or higher. 
+To use the Cloud Sensor App for Android you need a smartphone with Android version 5.0 or higher.
 
-To use the Cloud Sensor App for iOS you need a smartphone with iOS version 11.0 (or higher). 
+To use the Cloud Sensor App for iOS you need a smartphone with iOS version 11.0 (or higher).
 
-**Info**: The screenshots are exemplarily taken from an Android smartphone. Unless mentioned otherwise the screens look similar in the Cloud Sensor App for iOS. 
+**Info**: The screenshots are exemplarily taken from an Android smartphone. Unless mentioned otherwise the screens look similar in the Cloud Sensor App for iOS.
 
 ### Installing the Cloud Sensor App
 
@@ -28,13 +28,13 @@ This will start a wizard showing the QR code for downloading the Cloud Sensor Ap
 
 ![Install App](/images/users-guide/csa/csa-qr-code.png)
 
-Scan this QR code with any scanning application on your smartphone. 
+Scan this QR code with any scanning application on your smartphone.
 
 You will then be navigated to the Google Play Store for the installation of the Cloud Sensor App for Android.
 
 #### On an iOS smartphone
 
-To install the Cloud Sensor App on your iOS smartphone, navigate to the App Store, search for **Cumulocity IoT Sensor App** and install the app on your smartphone. 
+To install the Cloud Sensor App on your iOS smartphone, navigate to the App Store, search for **Cumulocity IoT Sensor App** and install the app on your smartphone.
 
 ### Registering the Cloud Sensor App to your tenant
 
@@ -84,7 +84,7 @@ Your smartphone will be registered and added to the devices list in the Device M
 
 ![All devices](/images/users-guide/csa/csa-device-list.png)
 
-For further information about registering a device on the platform manually, refer to [Connecting devices](/users-guide/device-management#device-registration) in the Device Management section.
+For further information about registering a device on the platform manually, refer to [Connecting devices](/users-guide/device-management#connecting-devices) in the Device Management section.
 
 Next, you need to accept several permission requests allowing for accessing data (photos, media and files) on your device, make and manage phone calls and access the location (including network information and GPS data) to let the smartphone transfer network and GPS data to the cloud. This requests only show up once.
 
@@ -100,7 +100,7 @@ To register your iOS smartphone as a new device to the Cumulocity platform, proc
 >**Info**: In case of an iOS smartphone, no QR-code-based registration is provided.
 
 1. On the start screen of the **Cumulocity IoT Sensor App**, press **Connect to Cumulocity**, to connect your device to Cumulocity. <br><br>![Start screen](/images/users-guide/csa/csa-ios-connect.png)<br><br>
-2. If you connect to Cumulocity for the first time, you need to register your device next. <br> 
+2. If you connect to Cumulocity for the first time, you need to register your device next. <br>
 In the **Account details** page of the **Cumulocity IoT Sensor App**, provide the relevant details for the Cumulocity account you want to register the device to, i.e. username and password, tenant and the instance on which your IoT Sensor Demo tenant is hosted, e.g. cumulocity.com. The instance can be selected from a drop-down list. <br><br>![Account details](/images/users-guide/csa/csa-ios-account-details.png)<br><br>
 3. Press **Connect** to connect to the Cumulocity platform. <br>
 
@@ -113,7 +113,7 @@ Your smartphone will be registered and added to the devices list in the Device M
 
 ![All devices](/images/users-guide/csa/csa-device-list.png)
 
-For further information about registering a device on the platform manually, refer to [Connecting devices](/users-guide/device-management#device-registration) in the Device Management section.
+For further information about registering a device on the platform manually, refer to [Connecting devices](/users-guide/device-management#connecting-devices) in the Device Management section.
 
 Pressing the "**i**" symbol in the upper right corner of the start screen of the **Cumulocity IoT Sensor App** will open the "About" information of the application.
 
@@ -133,9 +133,9 @@ The sensor data (i.e. gyroscope, location, acceleration, magnetic field and baro
 Example 1
 
 ![GPS sensor](/images/users-guide/csa/csa-gps-sensor.png)
- 
+
 Example 2
- 
+
 ![Acceleration sensor](/images/users-guide/csa/csa-acceleration-sensor.png)
 
 **On an iOS smartphone**
@@ -149,9 +149,9 @@ The sensor data (i.e. gyroscope, location, acceleration, magnetic field and baro
 Example 1
 
 ![GPS sensor](/images/users-guide/csa/csa-ios-sensor-data.png)
- 
+
  Example 2
- 
+
 ![Acceleration sensor](/images/users-guide/csa/csa-ios-sensor-data2.png)
 
 >**Info**: Note, that on on IoS smartphone you can view sensor data without being connected to Cumulocity. However, only on connecting your phone to Cumulocity the sensor data is being sent to the platform.
@@ -174,7 +174,7 @@ Switch to the **Configuration** tab of your device and specify the interval in m
 
 ### Connecting TI Sensor Tag to the Cloud Sensor App
 
-The Cloud Sensor App connects to both TI Sensor Tag version 1.20 and 1.30 via bluetooth. 
+The Cloud Sensor App connects to both TI Sensor Tag version 1.20 and 1.30 via bluetooth.
 
 **On an Android smartphone**
 
@@ -209,13 +209,13 @@ To detach the Sensor Tag from your smartphone, press **Remove** on its card.
 
 ### Device control
 
-The Cloud Sensor App can receive real-time control commands from Cumulocity. 
+The Cloud Sensor App can receive real-time control commands from Cumulocity.
 
-The Messaging widget, for example, can be used to send text notifications to the smartphone. The vibration relay control can be used to turn on/off the vibration motor. 
+The Messaging widget, for example, can be used to send text notifications to the smartphone. The vibration relay control can be used to turn on/off the vibration motor.
 
-Create a dashboard for your smartphone device as described in [Creating a dashboard](/users-guide/cockpit#creating-dashboards) in the Cockpit section. 
+Create a dashboard for your smartphone device as described in [Creating a dashboard](/users-guide/cockpit#creating-dashboards) in the Cockpit section.
 
-Add the Messaging widget to the dashboard, for details see [Widgets collection](users-guide/cockpit/widgets). 
+Add the Messaging widget to the dashboard, for details see [Widgets collection](/users-guide/cockpit#widgets).
 
 To send a message from Cumulocity, enter a text into the Messaging widget and click **Send**.
 
@@ -227,4 +227,4 @@ The message will appear as a pop-up on the screen of your smartphone.
 
 If the vibration switch is turned on, the smartphone will start vibrating until the switch is turned off again.
 
-> **Info:** The smartphone must remain connected to the platform to receive these commands. 
+> **Info:** The smartphone must remain connected to the platform to receive these commands.

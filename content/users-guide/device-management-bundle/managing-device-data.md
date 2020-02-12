@@ -130,7 +130,7 @@ The retrieved snapshot can be found in the **Configuration repository**, under  
 3. Navigate to the other device and open its **Configuration** tab.
 4. Under **Configuration snapshot**, select the new configuration from the dropdown field and click **Put new snapshot to device**.
 
->**Info**: When you apply a configuration snapshot from one device to another, the configuration may contain data which is device-specific.
+>**Info:** When you apply a configuration snapshot from one device to another, the configuration may contain data which is device-specific.
 
 ### <a name="credentials"></a>Managing device credentials
 

@@ -47,7 +47,9 @@ Once the cause of an alarm is resolved, you have to acknowledge and clear the al
 
 #### Change in tenant options and restart of Apama-ctrl
 
-This alarm is raised when a change is made to any tenant option. For details on the tenant options, refer to [Option](/reference/tenants/#option) in the *Reference guide*.
+This alarm is raised only when a tenant option changes in the `analytics.builder` category. For details on the tenant options, refer to [Option](/reference/tenants/#option) in the *Reference guide*.
+
+> **Info:** This is not triggered for all tenant options changes.
 
 - Alarm type: `tenant_option_change`
 - Alarm text: Apama detected changes in tenant option. Apama will restart in order to use it.
@@ -87,7 +89,7 @@ It is recommended that you also check for any other alarms after the restart, ju
 
 #### License expiry
 
-This alarm is raised when the license is about to expire. It keeps coming seven days prior to the license expiry date.
+This alarm is raised when the license is about to expire. It is repeated seven days prior to the license expiry date.
 
 - Alarm type: `apama_licenseexpiry`
 - Alarm text: The Apama license will expire at &lt;expiry-date&gt;. Please contact support or your administrator.
@@ -113,7 +115,7 @@ Safe mode is a state where Apama-ctrl deactivates all Apama Analytics Builder mo
 
 If any user is manually stopping or restarting the microservice within 20 minutes, even though it is not a crash, the microservice treats this as a crash and enables Safe mode, even if everything is otherwise fine.
 
-You can check the mode of the microservice (either Normal or Safe mode) by making a REST request to *service/cep/diagnostics/apamaCtrlStatus*, which contains a `safe_mode` flag in its response.
+You can check the mode of the microservice (either Normal or Safe mode) by making a REST request to *service/cep/diagnostics/apamaCtrlStatus* (available as of Apama EPL Apps 10.5.7 and Apama Analytics Builder 10.5.7), which contains a `safe_mode` flag in its response.
 
 To diagnose the cause of a correlator crash, you can try the following:
 
@@ -204,7 +206,6 @@ For example, the following is a simple monitor which prints a sequence and logs 
 
 ```java
 monitor Sample{
-   sequence<string> values := ["10", "20", "30"];
    action onload() {
       log "Info"; // default log level is now INFO
       log "Fatal Error" at FATAL; // log level is FATAL

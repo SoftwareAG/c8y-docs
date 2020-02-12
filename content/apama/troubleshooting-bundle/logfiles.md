@@ -1,5 +1,5 @@
 ---
-weight: 10
+weight: 20
 title: Log files of the Apama-ctrl microservice
 layout: redirect
 ---

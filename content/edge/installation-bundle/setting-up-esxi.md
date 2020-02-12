@@ -3,7 +3,7 @@ weight: 60
 title: Example setup for VMware ESXi 
 layout: redirect
 aliases:
-  - https://cumulocity.com/guides/edge/installation/#setting-up-esxi
+  - /edge/installation/#setting-up-esxi
 ---
 
 ### Setting up ESXi

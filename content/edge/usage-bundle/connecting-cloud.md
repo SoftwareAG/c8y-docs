@@ -3,7 +3,7 @@ weight: 30
 title: Connecting to the Cloud
 layout: redirect
 aliases:
-  - https://cumulocity.com/guides/edge/usage/#connecting-cloud
+  - /edge/usage/#connecting-cloud
 ---
 
 ### Remote Device Management

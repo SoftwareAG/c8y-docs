@@ -3,7 +3,7 @@ weight: 60
 title: Administration and configuration
 layout: redirect
 aliases:
-  - https://cumulocity.com/guides/edge/operation/#administration-configuration
+  - /edge/operation/#administration-configuration
 ---
 
 ### Unlocking the tenant admin user

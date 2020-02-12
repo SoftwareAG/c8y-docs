@@ -3,7 +3,7 @@ weight: 10
 title: Architecture
 layout: redirect
 aliases:
-  - https://cumulocity.com/guides/edge/operation/#overall-concepts
+  - /edge/operation/#overall-concepts
 ---
 
 ### Networking overlay

@@ -3,7 +3,7 @@ weight: 10
 title: Requirements
 layout: redirect
 aliases:
-  - https://cumulocity.com/guides/edge/installation/#prerequisites
+  - /edge/installation/#prerequisites
 ---
 
 ### Installation requirements

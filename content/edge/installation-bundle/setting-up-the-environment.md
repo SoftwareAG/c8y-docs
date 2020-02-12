@@ -3,7 +3,7 @@ weight: 20
 title: Setting up the environment
 layout: redirect
 aliases:
-  - https://cumulocity.com/guides/edge/installation/#setting-up-the-environment
+  - /edge/installation/#setting-up-the-environment
 ---
 
 

@@ -3,7 +3,7 @@ weight: 10
 title: IoT platform
 layout: redirect
 aliases:
-  - https://cumulocity.com/guides/edge/usage/#iot-platform
+  - /edge/usage/#iot-platform
 ---
 
 Cumulocity IoT Edge comes with three built-in applications - Device Management, Cockpit and Application. 

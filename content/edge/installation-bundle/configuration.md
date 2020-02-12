@@ -3,7 +3,7 @@ weight: 30
 title: Configuration
 layout: redirect
 aliases:
-  - https://cumulocity.com/guides/edge/installation/#configuration
+  - /edge/installation/#configuration
 ---
 
 ### Preparation

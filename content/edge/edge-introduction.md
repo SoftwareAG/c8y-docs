@@ -4,7 +4,7 @@ title: Introduction
 layout: bundle
 slug: introduction
 aliases:
-  - https://cumulocity.com/guides/edge/edge-introduction
+  - /edge/edge-introduction
 ---
 
 This document describes conceptual aspects of Cumulocity IoT Edge, the local version of Cumulocity.

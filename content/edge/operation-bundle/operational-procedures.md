@@ -3,7 +3,7 @@ weight: 70
 title: Restarting services
 layout: redirect
 aliases:
-  - https://cumulocity.com/guides/edge/operation/#operational-procedures
+  - /edge/operation/#operational-procedures
 ---
 
 ### Karaf processes

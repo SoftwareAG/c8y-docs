@@ -3,7 +3,7 @@ weight: 50
 title: Accessing the Cumulocity platform
 layout: redirect
 aliases:
-  - https://cumulocity.com/guides/edge/installation/#accessing-cumulocity
+  - /edge/installation/#accessing-cumulocity
 ---
 
 ### Configuring the access via domain name

@@ -14,7 +14,7 @@ The user management feature allows you to manage the users within your tenant. W
 
 > **Info:** The user needs to have a role with the user management permission ADMIN or CREATE to be able to do so.
 
-If your tenant is configured for using single sign-on (SSO) in SAG Cloud, new users should be created under **My Cloud**, accessible through the application switcher in the upper right corner, so that they are able to use the single sign-on feature. 
+If your tenant is configured for using single sign-on (SSO) in SAG Cloud, new users should be created under **My Cloud**, accessible through the application switcher in the upper right corner, so that they are able to use the single sign-on feature.
 
 For users created via an external authorization server, updating the following settings in Cumulocity will have no effect (will be reset on the next user re-login):
 
@@ -48,8 +48,8 @@ Initially, the **User** page only shows the top-level users. To see all users in
 
 1. Click **Add user** at the right of the top menu bar.  
 
-	>**Info**: If single sign-on is enabled for your tenant, a message will show up which reminds you that you are about to create a local user which will not be able to login via single sign-on. Create new users in **My Cloud** instead, accessible through the application switcher in the upper right corner, to enable them using the single sign-on feature.
-	
+	>**Info:** If single sign-on is enabled for your tenant, a message will show up which reminds you that you are about to create a local user which will not be able to login via single sign-on. Create new users in **My Cloud** instead, accessible through the application switcher in the upper right corner, to enable them using the single sign-on feature.
+
 2. At the left of the **New user** window, provide the following information to identify the user:
 
 	<table>
@@ -118,18 +118,18 @@ The new user will be added to the user list.
 
 ### To edit a user
 
-1. Click the menu icon at the right of the respective row and then click **Edit**. All fields except **Username** and **Send password reset link as email** can be changed. For details on the fields, see [To add a user](#creating-users). 
-2. Click **Change password** to change the password. 
+1. Click the menu icon at the right of the respective row and then click **Edit**. All fields except **Username** and **Send password reset link as email** can be changed. For details on the fields, see [To add a user](#creating-users).
+2. Click **Change password** to change the password.
 3. Click **Save** to apply your settings.
 
 > **Info:** You need a role with user management permission to perform this option.
 
 ### To copy inventory roles
 
-1. Click the menu icon at the right of the respective row and then click **Copy inventory roles from another user**. 
+1. Click the menu icon at the right of the respective row and then click **Copy inventory roles from another user**.
 2. In the resulting dialog box, select if you want to merge the roles to be copied with the existing user roles (the default) or if you want to replace the existing user roles.
 3. Select the user from which you want to copy roles from the dropdown list.
-4. Click **Copy**. 
+4. Click **Copy**.
 
 The inventory roles will be copied from the selected user.
 
@@ -139,7 +139,7 @@ The inventory roles will be copied from the selected user.
 
 Click the menu icon at the right of the respective row and then click **Delegate** to delegate your user hierarchies and permissions to a user.
 
-Click **Undelegate** to remove a delegation. 
+Click **Undelegate** to remove a delegation.
 
 Refer to [Managing User Hierarchies](/users-guide/enterprise-edition#user-hierarchies) for details on delegation.
 

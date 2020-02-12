@@ -8,9 +8,9 @@ layout: redirect
 
 The **Cumulocity IoT Sensor App** is a smartphone application which sends sensor measurements to the Cumulocity IoT platform. With the app it is also possible to connect a Texas Instruments (TI) Sensor Tag device over bluetooth and send the measurements to Cumulocity. Commands can also be sent from Cumulocity to the smartphone.  
 
->**Info**: The TI Sensor Tag is a low energy wireless device manufactured by Texas Instruments © [http://www.ti.com/](http://www.ti.com/).
+>**Info:** The TI Sensor Tag is a low energy wireless device manufactured by Texas Instruments © [http://www.ti.com/](http://www.ti.com/).
 
-The Sensor App requires a smartphone with Android version 5.0 (or higher) or iOS version 11.0 (or higher). 
+The Sensor App requires a smartphone with Android version 5.0 (or higher) or iOS version 11.0 (or higher).
 
 ### Installing the Sensor App
 
@@ -28,7 +28,7 @@ Scanning the QR code with your smartphone will take you to the App Store where y
 
 ### Registering the Sensor App in Cumulocity
 
-The easiest way to register your smartphone as a new device in Cumulocity is by scanning the QR code in step 2 of the **Add Smartphone** wizard. This feature is only available for Android smartphones. 
+The easiest way to register your smartphone as a new device in Cumulocity is by scanning the QR code in step 2 of the **Add Smartphone** wizard. This feature is only available for Android smartphones.
 
 If you are not able to scan the code or if are using an iOS smartphone, you can connect via username and password.
 
@@ -54,10 +54,10 @@ Moreover it will be added to the group **Phones** (which will be created if not 
 2. In the **Account details** page of the **Cumulocity IoT Sensor App**, provide the Cumulocity tenant and instance. These can be seen in the Cumulocity URL from the browser address bar. For example the screenshot below shows the tenant and instance for a URL "mytenant.us.cumulocity.com". Press **Connect**.
 <br><br>![Account details](/images/users-guide/csa/csa-ios-accountdetails-connect.png)
 
-3. Press **Login with Software AG Cloud** or enter your username and password and press **Login**. 
+3. Press **Login with Software AG Cloud** or enter your username and password and press **Login**.
 <br><br>![Account details](/images/users-guide/csa/csa-ios-accountdetails-login.png)
 
-	>**Info**: The option **Login with Software AG Cloud** is only available for subscriptions made via the Software AG Cloud portal.
+	>**Info:** The option **Login with Software AG Cloud** is only available for subscriptions made via the Software AG Cloud portal.
 
 4. Next, go to Cumulocity.
 
@@ -73,7 +73,7 @@ Press **View sensors** to view the data from sensors on your smartphone.
 
 The sensor data (i.e. gyroscope, location, acceleration, magnetic field and barometer data), will be shown on the smartphone.
 
->**Info**: On an iOS smartphone you can view sensor data without being connected to Cumulocity. Only when your phone is connected to Cumulocity the sensor data is being sent to the platform.
+>**Info:** On an iOS smartphone you can view sensor data without being connected to Cumulocity. Only when your phone is connected to Cumulocity the sensor data is being sent to the platform.
 
 ### Sending sensor data to Cumulocity
 
@@ -89,7 +89,7 @@ The Sensor App sends measurements to Cumulocity every 2 seconds by default. This
 
 ### Connecting TI Sensor Tag to the Sensor App
 
-The **Cumulocity IoT Sensor App** connects to both TI Sensor Tag version 1.20 and 1.30 via bluetooth. 
+The **Cumulocity IoT Sensor App** connects to both TI Sensor Tag version 1.20 and 1.30 via bluetooth.
 
 **On an Android smartphone**
 
@@ -124,13 +124,13 @@ To detach the Sensor Tag from your smartphone, press **Remove** on its card.
 
 ### Device control
 
-The **Cumulocity IoT Sensor App** can receive real-time control commands from Cumulocity. 
+The **Cumulocity IoT Sensor App** can receive real-time control commands from Cumulocity.
 
-The Messaging widget, for example, can be used to send text notifications to the smartphone. The vibration relay control can be used to turn on/off the vibration motor. 
+The Messaging widget, for example, can be used to send text notifications to the smartphone. The vibration relay control can be used to turn on/off the vibration motor.
 
-Create a dashboard for your smartphone device as described in [Creating a dashboard](/users-guide/cockpit#creating-dashboards) in the Cockpit section. 
+Create a dashboard for your smartphone device as described in [Creating a dashboard](/users-guide/cockpit#creating-dashboards) in the Cockpit section.
 
-Add the Messaging widget to the dashboard, for details see [Widgets collection](guides/users-guide/cockpit/#widgets). 
+Add the Messaging widget to the dashboard, for details see [Widgets collection](guides/users-guide/cockpit/#widgets).
 
 To send a message from Cumulocity, enter a text into the Messaging widget and click **Send**.
 
@@ -142,4 +142,4 @@ The message will appear as a pop-up on the screen of your smartphone.
 
 If the vibration switch is turned on, the smartphone will start vibrating until the switch is turned off again.
 
-> **Info:** The smartphone must remain connected to the platform to receive these commands. 
+> **Info:** The smartphone must remain connected to the platform to receive these commands.

@@ -6,9 +6,9 @@ layout: redirect
 
 Using the Enterprise Tenant of Cumulocity IoT, you can make use of the tenants functionality which allows you to create and a manage subtenants.
 
-> **Important**: There is a major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants.
+> **Important:** There is a major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants.
 
->**Info**: If you would like to use this feature, please contact sales@cumulocity.com.
+>**Info:** If you would like to use this feature, please contact sales@cumulocity.com.
 
 To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [Creating and editing global roles](/users-guide/administration#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 
@@ -116,9 +116,9 @@ Suspending a tenant blocks any access to this tenant, regardless whether the acc
 
 If a tenant is suspended, the tenant’s data remains in the database and can be made available later by clicking **Activate**.
 
->**Important**: Suspended tenants for all Cumulocity IoT Public Cloud instances will be automatically deleted after 30 days.
+>**Important:** Suspended tenants for all Cumulocity IoT Public Cloud instances will be automatically deleted after 30 days.
 >
-> **Info**: If data broker connectors are configured for a tenant, suspending this tenant results in suspending all its data broker connectors as well. 
+> **Info:** If data broker connectors are configured for a tenant, suspending this tenant results in suspending all its data broker connectors as well.
 
 
 #### To suspend a subtenant
@@ -131,14 +131,14 @@ If a tenant is suspended, the tenant’s data remains in the database and can be
 
 As part of suspending the tenant, an email is sent to the tenant administrator if an email address is configured for that administrator.
 
->**Info**: If you are a service provider, you can suppress this email.
+>**Info:** If you are a service provider, you can suppress this email.
 
 
 ### Deleting subtenants
 
->**Important**: Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the management tenant. You cannot delete tenants from any tenant but the management tenant. 
+>**Important:** Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the management tenant. You cannot delete tenants from any tenant but the management tenant.
 >
->Administrators in Enterprise Tenants are only allowed to suspend active subtenants, but not to delete them. 
+>Administrators in Enterprise Tenants are only allowed to suspend active subtenants, but not to delete them.
 
 #### To delete a subtenant
 
@@ -194,7 +194,7 @@ The **Custom properties** tab allows you to view and edit values of custom prope
 
 #### Limiting subtenant device number
 
-Platform administrators can limit the count of concurrently registered root devices or simply all devices (including children devices) via the custom property "Limit number of devices". 
+Platform administrators can limit the count of concurrently registered root devices or simply all devices (including children devices) via the custom property "Limit number of devices".
 
 They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the **[Usage statistics](#usage-stats)** page.
 
@@ -346,7 +346,7 @@ You can filter the usage statistics list for a time period by adding the start a
 
 #### To export the usage statistics table
 
-1. Click Export CSV at the right of the top menu bar to export the current view of the statistics table to a CSV file. 
+1. Click Export CSV at the right of the top menu bar to export the current view of the statistics table to a CSV file.
 2. In the resulting dialog box you can customize the CSV output by specifying a field separator, decimal separator and charset.
 <br> <img src="/images/users-guide/enterprise-tenant/et-subtenant-statistics-export.png"></img> <br>
 3. Click **Download** to start the export.
@@ -453,7 +453,7 @@ A tenant policy is a set of tenant options and retention rules. Tenant options a
 
 Creating a tenant policy with a specific set of options and rules saves time when creating multiple tenants with the same settings.
 
->**Info**: The options and rules are copied into the tenant. Editing the policy has no effect on tenants that have already been created.
+>**Info:** The options and rules are copied into the tenant. Editing the policy has no effect on tenants that have already been created.
 
 #### To view tenant policies
 

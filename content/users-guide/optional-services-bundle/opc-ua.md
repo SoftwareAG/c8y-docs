@@ -404,43 +404,9 @@ Custom actions are HTTP POST requests which the gateway will send to a defined c
 - ${nodeId} - ID of source node
 - ${deviceId} - ID of source device 
 
-Below there is an example of a full device type that configures a custom action:
+Below there is an example of a device type that configures a custom action:
 
-```
-{
-   "name": "My device type for HttpPost",
-   "referencedServerId": "{serverId}",
-   "referencedRootNodeId": "ns=2;s=HelloWorld/Dynamic",
-   "enabled": true,
-   "subscriptionType" : {
-     "type": "Subscription",
-     "subscriptionParameters": {
-       "samplingRate": 1000
-     }
-   },
-   "applyConstraints": {
-     "matchesNodeIds": [
-       "ns=2;s=HelloWorld/Dynamic1"
-     ]
-   },
-   "mappings": [
-       {
-           "browsePath": [
-               "2:Double"
-           ],
-           "customAction": {
-               "type": "HttpPost",
-               "endpoint": "http://my.endpoint.local",
-               "bodyTemplate": "{\"text\": \"I am coming from Http POST, value: ${value} \", \"type\": \"HttpPostMO\"}",
-               "headers": {
-                   "Authorization": "Basic MYAUTHCREDENTIALS==",
-                   "Content-Type": "application/json"
-               }
-           }
-       }
-   ]
-}
-```
+![OPC UA custom action](/images/users-guide/opcua/opcua-custom-actions.png)
 
 ### Data reporting
 

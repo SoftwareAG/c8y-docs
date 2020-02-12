@@ -20,7 +20,7 @@ The asset hierarchy is composed of two types of objects:
 
 In this example, the group objects represent a building asset. The device objects represent the room asset. The group names and hierarchy can be defined individually by the user. The hierarchy can have multiple levels, like region level, city level, street level, building level, floor level and room level. Any device can be part of multiple and different hierarchies, like part of regional hierarchy and part of customer hierarchy.
 
-To position a device in the asset hierarchy, you have to "assign" the device to the respective group (see below). 
+To position a device in the asset hierarchy, you have to "assign" the device to the respective group (see below).
 
 > **Info:** Single devices are not managed in the Cockpit application. They are managed in the Device Management application.
 
@@ -98,9 +98,9 @@ Moreover, additional tabs may be displayed here in case the application has been
 
 1. Click the **Plus** button at the right of the top bar and then click **New group**.
 2. In the resulting dialog box, enter a unique group name to identify your group.
-3. In the device search field, enter the search criteria for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
+3. In the device search field, enter the search criteria for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed.
 4. Select the devices you want to add from the list.
-5. Click **Create group with X device(s)** to finally create your new group. 
+5. Click **Create group with X device(s)** to finally create your new group.
 
 <img src="/images/users-guide/cockpit/cockpit-create-group.png" name="Create group"/><br>
 
@@ -114,11 +114,11 @@ Before adding a device to the asset hierarchy, it must be connected to Cumulocit
 
 To assign a device to a group, follow these steps:
 
-1. In the navigator, select a group from the **Group** menu and open its the **Sub-assets** tab. In the **Sub-assets** tab, all devices that are assigned to the respective group are displayed. 
+1. In the navigator, select a group from the **Group** menu and open its the **Sub-assets** tab. In the **Sub-assets** tab, all devices that are assigned to the respective group are displayed.
 2. Click **Assign devices** at the right of the top menu bar.
-3. In the resulting dialog box, search for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
+3. In the resulting dialog box, search for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed.
 3. Select the devices you want to add from the list.
-4. Click **Assign X device(s)** to assign the selected devices. 
+4. Click **Assign X device(s)** to assign the selected devices.
 
 <img src="/images/users-guide/cockpit/cockpit-devices-assign.png" name="Assign devices"/>
 
@@ -127,14 +127,14 @@ The devices will be shown as sub-assets in the **Sub-assets** tab.
 ### To edit a group
 
 1. To edit the name of a group, navigate to its **Info** tab and click **Edit** next to its name. 
-2. Edit the name and optionally leave some notes to be displayed in the **Info** tab. 
+2. Edit the name and optionally leave some notes to be displayed in the **Info** tab.
 3. Click **Save changes** to apply your settings.
 
 ### To delete a group
 
 To delete a top-level group from the navigator, follow these steps:
 
-1. Click **Groups** in the navigator. 
+1. Click **Groups** in the navigator.
 2. In the **Groups** page, click the menu icon at the right of the group entry and then click **Delete**.
 
 To delete a group from the **Sub-assets** tab of another group, follow these steps:

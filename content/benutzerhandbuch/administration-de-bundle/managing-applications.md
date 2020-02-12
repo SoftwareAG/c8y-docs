@@ -95,7 +95,7 @@ Standardmäßig sind folgende Anwendungen im Standard Tenant verfügbar:
 <td style="text-align:left">Gibt Konto-Administratoren die Möglichkeit, Rollen, Mandanten und Anwendungen zu verwalten.</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/benutzerhandbuch/cockpit" class="no-ajaxy">Cockpit</a></td>
+<td style="text-align:center"><a href="/benutzerhandbuch/cockpit-de" class="no-ajaxy">Cockpit</a></td>
 <td style="text-align:left">Verwalten und überwachen Sie IoT-Assets und Daten aus Geschäftssicht.</td>
 <tr>
 <td style="text-align:center"><a href="/benutzerhandbuch/device-management-de" class="no-ajaxy">Device Management</a></td>
@@ -105,7 +105,7 @@ Standardmäßig sind folgende Anwendungen im Standard Tenant verfügbar:
 <td style="text-align:left">Simulieren Sie alle Aspekte von IoT-Geräten.</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="/benutzerhandbuch/cockpit#smart-rules" class="no-ajaxy">Smart Rules</a></td>
+<td style="text-align:center"><a href="/benutzerhandbuch/cockpit-de#smart-rules" class="no-ajaxy">Smart Rules</a></td>
 <td style="text-align:left">Verwenden Sie die Smart Rule Engine und erstellen Sie Smart Rules, um Aktionen anhand von Echtzeitdaten auszuführen. Erfordert eine der folgenden Anwendungen: "Cep", "Apama“</td>
 </tr>
 </tbody>

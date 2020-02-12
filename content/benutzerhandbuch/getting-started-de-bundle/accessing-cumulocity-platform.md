@@ -44,7 +44,7 @@ Geben Sie auf der Anmeldeseite Ihren Benutzernamen und Ihr Passwort ein und klic
 
 Aktivieren Sie die Checkbox **Passwort merken**, damit der Browser sich Ihre Zugangsdaten merkt, so dass Sie diese nicht wieder bereitstellen müssen, wenn Sie die Anwendung das nächste mal öffnen. Dies ist außerdem praktisch, wenn Sie häufig zwischen Anwendungen wechseln, da Cumulocity Sie sonst bei jedem Wechsel auffordert, sich zu authentifizieren. Melden Sie sich explizit ab, damit der Browser Ihre Zugangsdaten "vergisst". 
 
-Wenn Sie sich das erste Mal bei Cumulocity anmelden, werden Sie zur Standardanwendung (falls nicht anders konfiguriert, ist dies die [Cockpit](/benutzerhandbuch/cockpit)-Anwendung) weitergeleitet.
+Wenn Sie sich das erste Mal bei Cumulocity anmelden, werden Sie zur Standardanwendung (falls nicht anders konfiguriert, ist dies die [Cockpit](/benutzerhandbuch/cockpit-de)-Anwendung) weitergeleitet.
 
 ![image alt text](/images/benutzerhandbuch/cockpit/cockpit-home-screen.png)
 

@@ -91,17 +91,17 @@ Standardmäßig sind folgende Anwendungen im Standard Tenant verfügbar:
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><a href="/benutzerhandbuch/administration" class="no-ajaxy">Administration</a></td>
+<td style="text-align:center"><a href="/benutzerhandbuch/administration-de" class="no-ajaxy">Administration</a></td>
 <td style="text-align:left">Gibt Konto-Administratoren die Möglichkeit, Rollen, Mandanten und Anwendungen zu verwalten.</td>
 </tr>
 <tr>
 <td style="text-align:center"><a href="/benutzerhandbuch/cockpit" class="no-ajaxy">Cockpit</a></td>
 <td style="text-align:left">Verwalten und überwachen Sie IoT-Assets und Daten aus Geschäftssicht.</td>
 <tr>
-<td style="text-align:center"><a href="/benutzerhandbuch/device-management" class="no-ajaxy">Device Management</a></td>
+<td style="text-align:center"><a href="/benutzerhandbuch/device-management-de" class="no-ajaxy">Device Management</a></td>
 <td style="text-align:left">Verwalten und überwachen Sie Geräte und führen Sie die Steuerung und Fehlerbehebung von Geräten per Fernzugriff durch.</td>
 <tr>
-<td style="text-align:center"><a href="/benutzerhandbuch/device-management#simulator" class="no-ajaxy">Device simulator</a></td>
+<td style="text-align:center"><a href="/benutzerhandbuch/device-management-de#simulator" class="no-ajaxy">Device simulator</a></td>
 <td style="text-align:left">Simulieren Sie alle Aspekte von IoT-Geräten.</td>
 </tr>
 <tr>

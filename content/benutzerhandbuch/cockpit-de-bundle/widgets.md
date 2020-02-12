@@ -13,7 +13,7 @@ Im folgenden Abschnitt werden, in alphabetischer Reihenfolge, alle verfügbaren 
 
 ### Alarmliste
 
-Das Widget "Alarmliste" zeigt eine Liste von Alarmen, gefiltert nach Objekten, Alarmschweregrad und Alarmstatus. Nähere Informationen zu den einzelnen Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management/#alarm-monitoring).
+Das Widget "Alarmliste" zeigt eine Liste von Alarmen, gefiltert nach Objekten, Alarmschweregrad und Alarmstatus. Nähere Informationen zu den einzelnen Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring).
 
 ![Alarm list widget](/images/benutzerhandbuch/cockpit/cockpit-widget-alarm-list.png)
 
@@ -34,7 +34,7 @@ Das Widget "Alle kritischen Alarme" zeigt alle Objekte mit einem kritischen Alar
 
 ![Critical alarms](/images/benutzerhandbuch/cockpit/cockpit-widget-critical-alarms.png)
 
-Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt Device Management.
+Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring) im Abschnitt Device Management.
 
 ### Anwendungen
 
@@ -42,7 +42,7 @@ Das Widget "Anwendungen" zeigt eine Liste mit Links zu allen verfügbaren Anwend
 
 ![Applications widget](/images/benutzerhandbuch/cockpit/cockpit-widget-applications.png)
 
-Nähere Informationen zu Anwendungen finden Sie unter [Administration > Verwalten von Anwendungen](/benutzerhandbuch/administration#managing-applications).
+Nähere Informationen zu Anwendungen finden Sie unter [Administration > Verwalten von Anwendungen](/benutzerhandbuch/administration-de#managing-applications).
 
 
 ### Asset-Anmerkungen
@@ -106,7 +106,7 @@ Klicken Sie **+Attribut hinzufügen** und wählen Sie ein oder mehrere Attribute
 
 ![Reboot device button configuration](/images/benutzerhandbuch/cockpit/cockpit-widget-asset-table-buttonconfig.png)
 
->**Info:** Der Dialog zeigt die vordefinierten Shell-Kommandos des ersten Geräts, das Shell-Kommandos unterstützt. Gibt es kein solches Gerät, ist die Liste leer. Weitere Informationen finden Sie unter [Device Management > Shell-Kommandos](/benutzerhandbuch/device-management/#shell).<br>
+>**Info:** Der Dialog zeigt die vordefinierten Shell-Kommandos des ersten Geräts, das Shell-Kommandos unterstützt. Gibt es kein solches Gerät, ist die Liste leer. Weitere Informationen finden Sie unter [Device Management > Shell-Kommandos](/benutzerhandbuch/device-management-de/#shell).<br>
 Sie können auch das JSON-Format für das Kommando eingeben, das zum Gerät gesendet wird. Fragen Sie den Gerätehersteller nach unterstützten Kommandos, um weitere Details zu erfahren.
 
 #### So ändern Sie die Tabelle
@@ -295,7 +295,7 @@ Das Widget "Aktuelle Alarme" zeigt alle Alarme aller Schweregrade, sortiert nach
 
 ![Recent alarms widget](/images/benutzerhandbuch/cockpit/cockpit-widget-recent-alarms.png)
 
-Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt Device Management.
+Nähere Informationen zu Alarmen finden Sie unter [Device Management > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring) im Abschnitt Device Management.
 
 ### Relaisfeldsteuerung
 

@@ -30,7 +30,7 @@ Zusätzlich sind mehrere Aktionsschaltflächen verfügbar, die im Folgenden erl�
 
 1. Klicken Sie auf der Seite **Firmware-Repository** rechts in der oberen Menüleiste auf **Firmware hinzufügen**. <br><br>![Add firmware](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-add.png)
 2. Geben Sie im darauf folgenden Dialog einen Namen und die Version der Firmware ein.
-3. Geben Sie die Datei an, die die Firmware enthält, indem Sie sie aus dem Dateisystem hochladen, indem Sie eine URL angeben, über die die Firmware abgerufen werden kann, oder indem Sie eine Datei auswählen, die zuvor in der ["Administration"-Anwendung](/benutzerhandbuch/administration#files) hinzugefügt wurde. 
+3. Geben Sie die Datei an, die die Firmware enthält, indem Sie sie aus dem Dateisystem hochladen, indem Sie eine URL angeben, über die die Firmware abgerufen werden kann, oder indem Sie eine Datei auswählen, die zuvor in der ["Administration"-Anwendung](/benutzerhandbuch/administration-de#files) hinzugefügt wurde. 
 4. Klicken Sie **Speichern**.
 
 Das Firmware-Objekt wird der Firmware-Liste hinzugefügt.
@@ -55,9 +55,9 @@ Das Objekt wird in Ihr Dateisystem heruntergeladen.
 #### So installieren Sie Firmware/Software auf einem Gerät
 
 1. Klicken Sie auf **Alle Geräte** im Menü **Geräte** des Navigators und wählen Sie ein Gerät aus der Geräteliste.
-2. Öffnen Sie die Registerkarte **Software** für das Gerät und klicken Sie **Firmware installieren**. Siehe dazu auch die Beschreibung der Registerkarte **Software** unter [Gerätedetails](/benutzerhandbuch/device-management#software).
+2. Öffnen Sie die Registerkarte **Software** für das Gerät und klicken Sie **Firmware installieren**. Siehe dazu auch die Beschreibung der Registerkarte **Software** unter [Gerätedetails](/benutzerhandbuch/device-management-de#software).
 
->**Info:** Um andere Binärcode-Typen in Cumulocity zu speichern, wechseln Sie zur ["Administration"-Anwendung](/benutzerhandbuch/administration#files).
+>**Info:** Um andere Binärcode-Typen in Cumulocity zu speichern, wechseln Sie zur ["Administration"-Anwendung](/benutzerhandbuch/administration-de#files).
 
 #### So installieren Sie Firmware/Software auf mehreren Geräten
 
@@ -77,7 +77,7 @@ Das Objekt wird aus der Liste gelöscht.
 
 ### <a name="credentials"></a>Verwalten von Gerätezugangsdaten
 
-Die Registerkarte **Gerätezugangsdaten** listet alle Zugangsdaten auf, die für Ihre verbundenen Geräte erstellt wurden. Jedes Gerät, das [registriert](/benutzerhandbuch/device-management/#connecting-devices) wurde, wird hier mit der Namenskonvention "device_&lt;id&gt;" angezeigt.
+Die Registerkarte **Gerätezugangsdaten** listet alle Zugangsdaten auf, die für Ihre verbundenen Geräte erstellt wurden. Jedes Gerät, das [registriert](/benutzerhandbuch/device-management-de/#connecting-devices) wurde, wird hier mit der Namenskonvention "device_&lt;id&gt;" angezeigt.
 
 ![Device credentials](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-credentials.png)
 
@@ -114,4 +114,4 @@ Klicken Sie auf das Menüsymbol rechts neben dem Gerätezugangsdaten-Eintrag und
 
 Die Gerätezugangsdaten werden dauerhaft gelöscht.
 
-Das Löschen von Gerätezugangsdaten kann erforderlich sein, wenn Sie ein Gerät auf die Werkseinstellungen zurückgesetzt haben. In diesem Fall verliert das Gerät häufig seine zugewiesenen Zugangsdaten. Löschen Sie diese und fahren Sie mit dem normalen [Registrierungsprozess](/benutzerhandbuch/device-management/#connecting-devices) fort, um das Gerät erneut zu registrieren.
+Das Löschen von Gerätezugangsdaten kann erforderlich sein, wenn Sie ein Gerät auf die Werkseinstellungen zurückgesetzt haben. In diesem Fall verliert das Gerät häufig seine zugewiesenen Zugangsdaten. Löschen Sie diese und fahren Sie mit dem normalen [Registrierungsprozess](/benutzerhandbuch/device-management-de/#connecting-devices) fort, um das Gerät erneut zu registrieren.

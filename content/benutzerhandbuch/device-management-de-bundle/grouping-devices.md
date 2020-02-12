@@ -66,7 +66,7 @@ Auf der Seite **Gruppen** können Sie auch eine neue Gruppe erstellen, in dem Si
 
 1. Wählen Sie im Navigator eine Gruppe aus. 
 2. Klicken Sie **Bearbeiten** in der Registerkarte **Info**. Sie können den Namen der Gruppe bearbeiten sowie Benutzerberechtigungen für die Gruppe zuweisen. 
-Weitere Informationen zu den Berechtigungen finden Sie unter Administration > [Verwalten von Berechtigungen](/benutzerhandbuch/administration#managing-permissions).
+Weitere Informationen zu den Berechtigungen finden Sie unter Administration > [Verwalten von Berechtigungen](/benutzerhandbuch/administration-de#managing-permissions).
 
 ### So löschen Sie eine Gruppe
 

@@ -49,12 +49,12 @@ For your convenience find an overview on the content of this document below.
 <td align="left">Manage default settings (“profiles”) of your devices and apply them automatically using the <a href="#data-point-library">Data Point Library</a>.</td>
 </tr>
 <tr>
-<td align="left"><a href="#smart-rules">Working with Smart Rules</a></td>
+<td align="left"><a href="#smart-rules">Working with smart rules</a></td>
 <td align="left"><a href="#create-rules">Create and manage business rules</a> to work on incoming data in realtime and to perform actions based on this data.</td>
 </tr>
 <tr>
 <td align="left"><a href="#smart-rules-collection">Smart Rules collection</a></td>
-<td align="left">Use pre-defined <a href="#smart-rules-collection">global Smart Rules</a> to configure rules for geofencing, thresholds or alarm escalation and notifications (SMS/email/voice). Describes each SmartRule and its configurable parameters in detail.</td>
+<td align="left">Use pre-defined <a href="#smart-rules-collection">global smart rules</a> to configure rules for geofencing, thresholds or alarm escalation and notifications (SMS/email/voice). Describes each SmartRule and its configurable parameters in detail.</td>
 </tr>
 </tbody>
 </table>

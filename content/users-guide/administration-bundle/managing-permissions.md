@@ -22,7 +22,7 @@ Click **Roles** in the **Account** menu to display a list of configured roles.
 
 In the **Global roles** tab you can find the roles which grant permissions on a general level. There are several global roles pre-defined, but you can define your own according to your needs. 
 
-> **Info**: The pre-defined roles are not fully configured. They can be seen as samples which are pre-configured for a particular purpose. You may use them as a starting point and further adapt them to your individual needs.
+> **Info:** The pre-defined roles are not fully configured. They can be seen as samples which are pre-configured for a particular purpose. You may use them as a starting point and further adapt them to your individual needs.
 
 > On creating a new user, make sure that the global roles you assign to the user cover all permissions relevant for this particular user. If, for example, a user only has the role "Cockpit User" (see below), the user will only be able to access the Cockpit application and nothing more.  
 
@@ -184,7 +184,7 @@ The following permission categories are available by default:
 
 <tr>
 <td align="left">Global Smart Rules</td>
-<td align="left">Configure global Smart Rules.</td>
+<td align="left">Configure global smart rules.</td>
 </tr>
 
 <tr>

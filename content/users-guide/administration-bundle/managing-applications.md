@@ -116,7 +116,7 @@ In the Standard Tenant you will find the following default applications:
 </tr>
 <tr>
 <td style="text-align:left"><a href="/apama" class="no-ajaxy">Apama-ctrl*</a></td>
-<td style="text-align:left">Runtime for Apama EPL Apps, Smart Rules and Analytics Builder.</td>
+<td style="text-align:left">Runtime for Apama EPL Apps, smart rules and Analytics Builder.</td>
 <td style="text-align:left">apama-ctrl-* (different strings for different size/capability options)</td>
 <td style="text-align:left">Microservice</td>
 </tr>
@@ -454,7 +454,7 @@ There are two user-friendly alarm types:
 
 User-friendly alarms are created for the microservice owner tenant only. They are also automatically cleared when the situation gets back to normal, i.e. all the microservice instances are working properly.
 
-User-friendly alarms can be used to create Smart Rules. For details on creating Smart Rules of various types, see [Smart Rules](/users-guide/cockpit/#smart-rules).
+User-friendly alarms can be used to create smart rules. For details on creating smart rules of various types, see [Smart rules](/users-guide/cockpit/#smart-rules).
 
 For example, to send an email, if a microservice is down, create an "On alarm send email" Smart Rule.
 

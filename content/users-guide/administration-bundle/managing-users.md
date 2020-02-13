@@ -108,7 +108,7 @@ Initially, the **User** page only shows the top-level users. To see all users in
 	If you select **User must reset the password on next login**, you need to provide a password which the user needs to reset on the next login. Enter a password and confirm it. While entering the password, the strength of the password will be shown. See [To log into the Cumulocity platform](/users-guide/getting-started/#login) for further information on password strength.  
 If you select **Send password reset link as email**, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above.
 
-4. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing Permissions](/users-guide/administration#managing-permissions).
+4. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing Permissions](/users-guide/administration#managing-permissions). 
 5. Click **Save** to save your settings.
 
 The new user will be added to the user list.

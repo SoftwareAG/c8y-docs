@@ -17,7 +17,7 @@ From the **Settings** menu, administrators can modify or manage various settings
 
 Cumulocity provides single sign-on functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory. Currently authorization code grant is supported only with access tokens in form of JWT.
 
-> **Info**: This feature is built on top of cookies technology. To be able to use it, you must have cookies enabled in the settings of your browser.
+> **Info:** This feature is built on top of cookies technology. To be able to use it, you must have cookies enabled in the settings of your browser.
 
 This feature is enabled since Cumulocity version 9.12. For correct behavior any microservice needs to use the microservice SDK with version 9.12 or later.
 
@@ -186,7 +186,7 @@ Click **Application** in the **Settings** menu to change applications settings.
 
 Under **Default application**, you can select a default application from the list which will apply to all users within the tenant.
 
->**Info**: All users must have access to this application.
+>**Info:** All users must have access to this application.
 
 Under **Access control**, administrators can enable cross-origin resource sharing or "CORS" on the Cumulocity API.
 
@@ -203,7 +203,7 @@ Click **Authentication** in the **Settings** menu if you want to view or change 
 
 ![Password settings](/images/users-guide/Administration/admin-settings-authentication.png)
 
->**Info**: If the menu is not visible, confirm the user has one the following roles: `ROLE_TENANT_ADMIN` or `ROLE_TENANT_MANAGEMENT_ADMIN`.
+>**Info:** If the menu is not visible, confirm the user has one the following roles: `ROLE_TENANT_ADMIN` or `ROLE_TENANT_MANAGEMENT_ADMIN`.
 
 
 #### Login Settings
@@ -215,17 +215,17 @@ There are two **Preferred login modes** available:
 
 This login mode will be used by the platform's applications as the default method to authenticate users. Device authentication stays unchanged.
 
->**Info**: If OAuth Internal is enforced, Basic Auth cannot be used to login to applications anymore. Older applications might fail to display the login correctly and need to be updated.
+>**Info:** If OAuth Internal is enforced, Basic Auth cannot be used to login to applications anymore. Older applications might fail to display the login correctly and need to be updated.
 
 In the field **Limit password validity for**, you can limit the validity of user passwords by specifying the number of days after which users have to change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords (default value).
 
->**Info**: The password validity limit and the enforcing of strong passwords may not be editable, if configured by the platform administrator.
+>**Info:** The password validity limit and the enforcing of strong passwords may not be editable, if configured by the platform administrator.
 
 By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in [Getting Started > Accessing and logging into the Cumulocity platform](/users-guide/getting-started/#login).
 
 Strong (green) passwords must have "M" characters. By default, the system restricts the use of passwords already used in the past. The last "N" passwords provided by a user are remembered by the system and the system does not allow to use them. The default value for "N" is 10.
 
->**Info**: "M" and "N" can be configured by the platform administrator.
+>**Info:** "M" and "N" can be configured by the platform administrator.
 
 Click **Save** to apply the settings.
 
@@ -239,13 +239,13 @@ You may choose one of the following options:
 	- **Limit token validity for**: Lifetime of each session in minutes. When the session expires or a user logs out, the user has to enter a new verification code.
    - **Limit verification code validity for**: Here you can set the lifetime of each verification code sent via SMS. When the verification code expires, in order to login the user has to request a new verification code.
 
-	> **Info** An SMS gateway microservice must be configured for the tenant. Naturally only users with a valid phone number associated can use this functionality.
+	> **Info:** An SMS gateway microservice must be configured for the tenant. Naturally only users with a valid phone number associated can use this functionality.
 
 * **Google Authenticator** (Time-based One-Time Password = TOTP), supporting the following settings:
 	 - **Enforce TOTP two-factor authentication on all users**: When enabled it will force all users to setup their TFA on login. Otherwise each individual user can choose to activate it or not.
    - **Limit token validity for**: lifetime of each session in minutes.  When the session expires the user has to re-authenticate.
 
-	> **Info** This strategy is only available together with 'OAuth Internal'. Initially this feature will only be made available to some tenants so it may not be visible on the UI. If this applies to you and you are using a version higher than 1005.0.0, please contact support.
+	> **Info:** This strategy is only available together with 'OAuth Internal'. Initially this feature will only be made available to some tenants so it may not be visible on the UI. If this applies to you and you are using a version higher than 1005.0.0, please contact support.
 
 Click **Save TFA settings** to apply your settings.
 
@@ -261,7 +261,7 @@ With custom properties, you can extend the data model of Cumulocity built-in obj
 - Custom tenant properties are available during tenant creation. The custom properties can be edited under **Subtenants** in the **Custom properties** tab of each tenant. Additionally, these properties can be viewed and exported in the **Usage statistics**.
 - Custom alarm and event properties can be used as custom fields which can be added to your reports and will be available in the **Export** page in the Cockpit application.
 
->**Info**: Custom properties are visible to all authenticated users of the tenant, regardless of their inventory role permission.
+>**Info:** Custom properties are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 
 #### <a name="add-property"></a>To add a custom property
 
@@ -321,7 +321,7 @@ The following placeholders can be found in the **Configuration** page:
 - {tenant-domain} - This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be "h<span>ttps://myTenant.cumulocity.</span>com".
 - {token} - An automatically generated system token for password reset purposes. When a user requests a password reset, a new random token will be generated. This token will be associated only with the particular user and will allow for a single password reset action. The standard way of using this placeholder is along with the {tenant-domain} property as "{tenant-domain}?token={token}".
 
->**Info**: In case of the Enterprise Tenant, the {tenantDomain} placeholders can have different values. An example tenant domain is "https://myTenant.myhost.com".
+>**Info:** In case of the Enterprise Tenant, the {tenantDomain} placeholders can have different values. An example tenant domain is "https://myTenant.myhost.com".
 
 #### Two-factor authentication
 

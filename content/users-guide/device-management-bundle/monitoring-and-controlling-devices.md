@@ -51,7 +51,7 @@ The bottom arrow represents the push connection (from Cumulocity to the device).
 
 Push connection means the connection from Cumulocity to /devicecontrol/notifications API, **not** to real-time API.
 
->**Info**: Connection monitoring is not real time. This means that the displayed connection status will not change immediately after switching off a device. Depending on the used protocol for push connection monitoring this can take a couple of minutes.
+>**Info:** Connection monitoring is not real time. This means that the displayed connection status will not change immediately after switching off a device. Depending on the used protocol for push connection monitoring this can take a couple of minutes.
 
 **Maintenance mode**
 
@@ -68,7 +68,7 @@ Navigate to the **Info** tab of a particular device to monitor the connections o
 
 Below the send connection and push connection status, the time of the last communication is displayed.
 
-> **Info**: "Last communication" and "Last updated" are two entirely different time stamps. "Last communication" indicates when a device has last sent data. "Last updated" indicates when the inventory entry of the device was last updated. This update may have originated from the device, from the web user interface or from another application.
+> **Info:** "Last communication" and "Last updated" are two entirely different time stamps. "Last communication" indicates when a device has last sent data. "Last updated" indicates when the inventory entry of the device was last updated. This update may have originated from the device, from the web user interface or from another application.
 
 In the  **Required interval** field you can specify an interval. This parameter defines how often you expect to hear from the device. If, for example, you set the required interval to 60, you expect the device at least to communicate once in an hour with Cumulocity. The interval is either set by the device itself, based on the device's knowledge how often it will try to send data, or it is set manually by you.
 
@@ -241,13 +241,13 @@ By clicking one of the state buttons at the top, the corresponding operations wi
 
 Click **Realtime** at the right of the top menu bar to see operations coming in from the devices in realtime.
 
->**Info**: Operations are listed in descending time order. Operations are executed strictly according to this order.
+>**Info:** Operations are listed in descending time order. Operations are executed strictly according to this order.
 
 #### To create and execute operations
 
 Operations for a specific device are created and executed in the **Shell** tab of the device, see [Device details > Shell](/users-guide/device-management#shell).
 
->**Important**:When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
+>**Important:** When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
 
 ##### <a name="bulk-operations"></a>To execute bulk operations
 

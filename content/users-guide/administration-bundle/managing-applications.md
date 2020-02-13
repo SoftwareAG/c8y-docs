@@ -336,7 +336,7 @@ The application is created once the ZIP file has been successfully uploaded.
 
 The microservice application is created once the ZIP file has been successfully uploaded.
 
->**Important**: The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [Packing](/microservice-sdk/concept/#packing) in the Microservice SDK guide under **General aspects** in order to prepare and deploy the microservice package.
+>**Important:** The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [Packing](/microservice-sdk/concept/#packing) in the Microservice SDK guide under **General aspects** in order to prepare and deploy the microservice package.
 
 
 ##### <a name="external-application"></a>To link to an external application
@@ -373,7 +373,7 @@ Duplicating an application might be useful if you want to customize a subscribed
 
 For details on the fields, see also [Application properties](#application-properties) below.
 
-> **Info**: If you want your "own application" to overrule a subscribed standard application, the path of the "own application" needs to be set to the path of the original subscribed application.
+> **Info:** If you want your "own application" to overrule a subscribed standard application, the path of the "own application" needs to be set to the path of the original subscribed application.
 
 
 #### <a name="editing-and-removing"></a>To edit an own application
@@ -409,7 +409,7 @@ Multiple archive file versions can be stored in Cumulocity when they were create
 
 Once uploaded, the recently uploaded version is automatically the active version, i.e. the version of the application that is currently being served to the users of your account. This version cannot be deleted.
 
-> **Info**: The **Archive** tab is not available for subscribed applications, as only the owner of the application can perform this action.
+> **Info:** The **Archive** tab is not available for subscribed applications, as only the owner of the application can perform this action.
 
 ##### To restore an older application version
 
@@ -470,11 +470,11 @@ To view logs, open the **Logs** tab of the respective microservice.
 
 At the top of the page, you can select the instance of the microservice, for which you want to view the logs.
 
-> **Info**: If your microservice was re-scaled into two instances you should be able to switch between them, but it is not possible to see the logs from both instances at once.
+> **Info:** If your microservice was re-scaled into two instances you should be able to switch between them, but it is not possible to see the logs from both instances at once.
 
 Next to the instance dropdown you can select the time range for the log entries to be shown by selecting a date from the calendar and entering a time.
 
-> **Info**: The time entered here may differ from the server time due to different time zones.
+> **Info:** The time entered here may differ from the server time due to different time zones.
 
 At the top right, additional functionality is provided:
 
@@ -497,7 +497,7 @@ If no logs are available in the selected time range, a message is shown accordin
 
 <img src="/images/users-guide/Administration/admin-microservice-no-logs.png" alt="Microservice log">
 
-> **Info**: There is no possibility to see the logs from the previously running instances. However, inside the instance there is a Docker container running, and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated Docker container.
+> **Info:** There is no possibility to see the logs from the previously running instances. However, inside the instance there is a Docker container running, and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated Docker container.
 
 >Logs are always loaded from the Docker container using both `stdout` and `stderr` sources, and there is no possibility to distinguish/filter by the source.
 

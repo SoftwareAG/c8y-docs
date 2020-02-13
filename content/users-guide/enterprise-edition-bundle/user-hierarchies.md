@@ -6,13 +6,13 @@ layout: redirect
 
 With user hierarchies you can reflect independent organizational entities in Cumulocity that still share the same database. These entities can have limited permissions to subsets of the shared data and can manage their own sub-users.
 
-> **Info**: To be able to use this feature, your tenant must be subscribed to the application "feature-user-hierachy".
+> **Info:** To be able to use this feature, your tenant must be subscribed to the application "feature-user-hierachy".
 
 ### Viewing user hierarchies
 
 In the **Users** page, user hierarchies are indicated by an arrow left from the user icon. Clicking on the arrow unfolds the user hierarchy. You can also fold and unfold the entire user hierarchy using the **Expand all** and **Collapse all** links at the right of the top menu bar.
 
-A small number next to the user name shows how many direct sub-users a user has. Sub-users are users that can be managed by their respective parent user and that have at most the permissions of that parent user. In the example below, the user "Demo user" has one direct sub-user. 
+A small number next to the user name shows how many direct sub-users a user has. Sub-users are users that can be managed by their respective parent user and that have at most the permissions of that parent user. In the example below, the user "Demo user" has one direct sub-user.
 
 ![User hierarchies](/images/users-guide/enterprise-tenant/et-user-hierarchy.png)
 
@@ -20,13 +20,13 @@ A small number next to the user name shows how many direct sub-users a user has.
 
 User hierarchies are created by assigning an "owner" to a user. The owner can manage the user. The user can have at most the same permissions as the owner.
 
-1. Select the user in the **Users** page. 
+1. Select the user in the **Users** page.
 2. In the **Owner** field, select the user you want to assign as owner from the dropdown list.
 3. Click **Done** to confirm.
 
-![Select owner](/images/users-guide/enterprise-tenant/et-user-hierarchy-assign-owner.png) 
+![Select owner](/images/users-guide/enterprise-tenant/et-user-hierarchy-assign-owner.png)
 
->**Info:** When creating a new user, the owner is automatically set to the user who is logged in. The owner can be changed later. Only users with "User" ADMIN permission can assign an owner to a user. 
+>**Info:** When creating a new user, the owner is automatically set to the user who is logged in. The owner can be changed later. Only users with "User" ADMIN permission can assign an owner to a user.
 
 > If you want an owner to manage only their sub-users, make sure that the owner does not have a global role with user management permissions for all users.
 
@@ -38,7 +38,7 @@ A user A has the role "business". User A becomes the owner of a new user B. User
 
 ### <a name="delegate"></a>Delegating user hierarchies to other users
 
-In Cumulocity, users can delegate their user hierarchies and permissions to another user. The delegated user then has the same user management permissions as the user who activated the delegation. 
+In Cumulocity, users can delegate their user hierarchies and permissions to another user. The delegated user then has the same user management permissions as the user who activated the delegation.
 
 You may of course also delegate on a temporary basis, for example if you are temporarily unavailable.
 
@@ -54,10 +54,10 @@ Remove the delegation in the **Delegate by** field, or click the menu icon at th
 
 If the delegated user also needs to manage specific devices, the admin user must assign this device permissions (inventory roles) directly to the intended user. This can be done by using **Copy inventory roles from another user**. For details refer to [Administration > Managing permissions > Assigning inventory roles to users](/users-guide/administration#attach-inventory).
 
-> **Info:** Delegation works only inside user management and does not have any implication to other places. 
+> **Info:** Delegation works only inside user management and does not have any implication to other places.
 
 ### Troubleshooting sub-users
 
-In the example below the user cannot change the access to the Administration application, because the owner of the user has no "User management" permission. As a result, the owner user can not assign built-in applications (and the owned user cannot use them). 
+In the example below the user cannot change the access to the Administration application, because the owner of the user has no "User management" permission. As a result, the owner user can not assign built-in applications (and the owned user cannot use them).
 
 ![Warning message](/images/users-guide/enterprise-tenant/et-warning.png)

@@ -23,7 +23,7 @@ When adding a user and TFA is enabled, a phone number needs to be provided. When
 
 ![Enable TFA](/images/users-guide/Administration/admin-user-enable-tfa.png)
 
->**Info**: This process can only be executed in the administration UI and is not available under **User settings**.
+>**Info:** This process can only be executed in the administration UI and is not available under **User settings**.
 
 
 ### TOTP (Google Authenticator)

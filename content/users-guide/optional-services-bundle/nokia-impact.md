@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-This document describes 
+This document describes
 
 * in which way Nokia [IMPACT integrates with the Cumulocity platform](#integration),
 * how [IMPACT devices are registered](#device-lifecycle) at Cumulocity through the IMPACT agent,
@@ -14,15 +14,15 @@ This document describes
 ### <a name="integration"></a>IMPACT Integration
 Cumulocity offers an integration with the Nokia IMPACT Data Collector which is designed to collect data from heterogeneous devices. Integrating Cumulocity with IMPACT, enables you to make use of existing Cumulocity features like connectivity monitoring, data visualization or real-time analytics with IMPACT devices.
 
->**Info**: Currently only the integration of LWM2M devices has been tested.
+>**Info:** Currently only the integration of LWM2M devices has been tested.
 
-The IMPACT agent in Cumulocity registers itself at the Nokia IMPACT platform. Similarly, it subscribes to events such as devices coming online or reporting data at IMPACT. 
+The IMPACT agent in Cumulocity registers itself at the Nokia IMPACT platform. Similarly, it subscribes to events such as devices coming online or reporting data at IMPACT.
 
 The following illustration provides an overview on the Cumulocity IMPACT integration.
 
 <img src="/images/users-guide/DeviceManagement/ImpactIntegration.png" alt="IMPACT integration" style="max-width: 100%">
 
->**Info**: Your subscription needs to include the IMPACT feature. If you do not see the functionality described in this document, please contact the Cumulocity support.
+>**Info:** Your subscription needs to include the IMPACT feature. If you do not see the functionality described in this document, please contact the Cumulocity support.
 
 >To be able to communicate with a device through IMPACT the device must be registered in IMPACT. How to register a device in IMPACT is not in the scope of this document.
 
@@ -78,7 +78,7 @@ Device protocols are accessible through the **Devices types** menu in the Device
 To add a new IMPACT device protocol follow these steps:
 
 1. In the Device Management application, navigate to the **Device protocol** page, accessible from the **Device types** menu in the navigator.
-2. Click **Add device protocol** in the top menu bar. 
+2. Click **Add device protocol** in the top menu bar.
 3. In the upcoming window select **IMPACT** as device protocol type.<br><br>
 ![New Impact protocol](/images/users-guide/sigfox/sigfox-newprotocol.png)
 4. In the next dialog, enter a unique ID, a name and an optional description for the device protocol.<br><br>
@@ -158,14 +158,14 @@ Optionally, you may turn on several functionalities for the resource:
 
 ![Impact functionalities](/images/users-guide/impact/impact-functionalities.png)
 
-**Send measurements** 
+**Send measurements**
 
-Turn on **Send measurements** to specify a measurement. 
+Turn on **Send measurements** to specify a measurement.
 
 * In the **Type** field, enter the type of the measurement, for example “c8y_AccelerationMeasurement”.
 * Series are any fragments in measurements that contain a “value” property. In the **Series** field you can enter for example “c8y_AccelerationMeasurement.acceleration”.
 * The **Unit** field specifies the unit of the given measurement, for example “m/s” for velocity.
- 
+
 
 **Create alarm**
 
@@ -187,13 +187,13 @@ Turn on **Send event** to send an event each time a certain condition has been t
 
 Turn on **Custom Actions** to map device data into Cumulocity using custom data processing actions. For specialized integration use cases, it is required to perform customized data processing on device data. Examples are resources of non-standard data type that contain proprietary, binary data, CBOR, XML or alike.
 
-The set of custom actions is provided by decoder microservices available in the particular tenant. A decoder microservice is an ordinary Cumulocity microservice that implements a simple decoder interface. The IMPACT microservice calls these microservices for decoding data in a customer-specific way. We provide examples how to write such a decoder microservices in our public [Bitbucket repository](https://bitbucket.org/m2m/cumulocity-examples/src/develop/). 
+The set of custom actions is provided by decoder microservices available in the particular tenant. A decoder microservice is an ordinary Cumulocity microservice that implements a simple decoder interface. The IMPACT microservice calls these microservices for decoding data in a customer-specific way. We provide examples how to write such a decoder microservices in our public [Bitbucket repository](https://bitbucket.org/m2m/cumulocity-examples/src/develop/).
 
 **Auto observe**
 
 Enabling **Auto observe** for a resource means, that each time the device with this particular resource appears, Cumulocity will automatically receive all values. It is not necessary, to subscribe to it manually.
 
->**Info**: At least one functionality must be set to enable **Auto observe**. 
+>**Info:** At least one functionality must be set to enable **Auto observe**. 
 
 Finally, click **Save** to create the resource. The resource will be added to the resource list.
 

@@ -10,7 +10,7 @@ In the **Settings** menu, you may specify various customization settings.
 
 ### <a name="configuration"></a>Configuration
 
->**Info**: For information on the general settings in the **Customization** tab, see [Changing Settings > Configuration settings](/users-guide/administration/#config-platform) in the Administration section. Here, only the features will be explained which are exclusively available for Enterprise Tenants.
+>**Info:** For information on the general settings in the **Customization** tab, see [Changing Settings > Configuration settings](/users-guide/administration/#config-platform) in the Administration section. Here, only the features will be explained which are exclusively available for Enterprise Tenants.
 
 #### Applications
 
@@ -146,11 +146,11 @@ The following parameters can be specified:
 
 In the **Domain name** tab you can activate your own custom domain name.
 
->**Important**: To activate you domain, you need a valid license. Please contact our Sales team at sales@cumulocity.com to install a license for your domain.  
+>**Important:** To activate you domain, you need a valid license. Please contact our Sales team at sales@cumulocity.com to install a license for your domain.  
 
 <img src="/images/users-guide/enterprise-tenant/et-domain-name.png" alt="Domain name">
 
->**Info**: The custom domain name functionality is only available for cumulocity.com or Private Edition installations which don't use a custom load balancer.
+>**Info:** The custom domain name functionality is only available for cumulocity.com or Private Edition installations which don't use a custom load balancer.
 
 First you have to upload the appropriate certificate by clicking **Upload Certificate**. Make sure that
 
@@ -158,7 +158,7 @@ First you have to upload the appropriate certificate by clicking **Upload Certif
 * the certificate is not password protected,
 * you are using a wildcard certificate to enable creation of subtenants.
 
-> **Info**: If your certificate is not in a valid PKCS#12 format but you have PEM files for certificate, private key and authorization chain then you can generate a valid PKCS#12 file using the following command:
+> **Info:** If your certificate is not in a valid PKCS#12 format but you have PEM files for certificate, private key and authorization chain then you can generate a valid PKCS#12 file using the following command:
 
 ```shell
 openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -certfile chain.pe
@@ -177,7 +177,7 @@ Make sure to remove all A entries for the wildcard domain. For example, if you a
 
 After successful activation you will be redirected to your Enterprise Tenant at the new domain. You will also receive an email with information about the activation.
 
->**Info**: After the activation is completed you will no longer be able to access your tenant with the cumulocity domain name. Instead, use your custom domain name.
+>**Info:** After the activation is completed you will no longer be able to access your tenant with the cumulocity domain name. Instead, use your custom domain name.
 
 
 #### Updating your certificate
@@ -190,14 +190,14 @@ When your certificate expires, you must update your certificate with a new one w
 * the certificate has exactly the same common name (domain name) as the currently active certificate,
 * you have added a CNAME record to your DNS server. For details on the CNAME record see above.
 
->**Info**: Keep in mind that after replacing the certificate it may take some minutes until the new certificate has been delivered to the users/browsers.
+>**Info:** Keep in mind that after replacing the certificate it may take some minutes until the new certificate has been delivered to the users/browsers.
 
 
 #### Deactivating your certificate
 
 If you wish to return to your old domain at Cumulocity, you can simply deactivate you certificate.
 
->**Important**: Use with care. Your customers will not be able to access their subtenants anymore.
+>**Important:** Use with care. Your customers will not be able to access their subtenants anymore.
 
 #### Troubleshooting
 
@@ -236,5 +236,5 @@ HTTP/1.1 200 OK
 ```
 
 
->**Info**: Keep in mind that after changing the DNS entry it might take up to 24 hours until the new entry has been propagated.
+>**Info:** Keep in mind that after changing the DNS entry it might take up to 24 hours until the new entry has been propagated.
 >

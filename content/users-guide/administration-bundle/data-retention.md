@@ -8,7 +8,7 @@ title: Managing data
 
 Retention rules gives you control on how long data is stored in your account. By default, all historical data is deleted after 60 days (configurable in the system settings).
 
-You might however want to store measurements for 90 days for example, but delete alarms already after 10 days. 
+You might however want to store measurements for 90 days for example, but delete alarms already after 10 days.
 
 Retention rules are usually run during the night. When you edit a retention rule, you will not see an immediate effect in the **Usage** section on the **Home** screen of the Administration application.
 
@@ -23,7 +23,7 @@ The asterisk ("*") indicates that data with any value will be cleaned up.
 
 #### <a name="add-retention-rule"></a>To add a retention rule
 
-1. Click **Add rule** in the top menu bar. 
+1. Click **Add rule** in the top menu bar.
 2. In the resulting dialog box, select the type of data to be cleaned up (alarms, measurements, events, operations, audit logs or all).
 3. Enter a fragment type if you want to be more specific about the data to be cleaned up. To clean up all connection loss alarms with this rule, select "alarms" and enter "c8y_UnavailabilityAlarm" as property into the **Type** field.
 4. If you want to remove data only from a specific device, enter the device ID into the **Source** field.
@@ -32,9 +32,9 @@ The asterisk ("*") indicates that data with any value will be cleaned up.
 
 The retention rule will be added to the list.
 
->**Info**: Per default, an asterisk ("*") is set in all fields except the **Maximum age** field, to include all values.
+>**Info:** Per default, an asterisk ("*") is set in all fields except the **Maximum age** field, to include all values.
 
->**Info**: Alarms are only removed if they are in CLEARED state.
+>**Info:** Alarms are only removed if they are in CLEARED state.
 
 #### To edit a retention rule
 
@@ -54,9 +54,9 @@ Hover over the rule you want to delete and click the delete icon at the right.
 
 The file repository provides an overview of the files stored in your account.
 
-Click **Files repository** in the **Management** menu to see a list of files. 
+Click **Files repository** in the **Management** menu to see a list of files.
 
-The files listed can come from various sources. They can be software images, configuration snapshots taken from devices, log files from devices or web applications uploaded from the **Own applications** page. 
+The files listed can come from various sources. They can be software images, configuration snapshots taken from devices, log files from devices or web applications uploaded from the **Own applications** page.
 
 For each file, the name of the file, its owner, the file type (i.e. image/bmp, text/csv), its size and the date when it was last updated is provided.
 
@@ -75,4 +75,4 @@ Click the menu icon at the right of the respective row and then click **Download
 
 Click the menu icon at the right of the respective row and then click **Delete**.
 
->**Info**: If the file corresponds to an active application, it cannot be deleted. You first need to remove or upgrade the application to be able to delete it.
+>**Info:** If the file corresponds to an active application, it cannot be deleted. You first need to remove or upgrade the application to be able to delete it.

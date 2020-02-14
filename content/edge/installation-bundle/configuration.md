@@ -107,7 +107,7 @@ The following sections explain the tasks that can be performed using the post-in
 2. [Run post-installation](/guides/edge/installation/#running-the-post-installation-process)
 3. [Update license and SSL certificates](/guides/edge/installation/#updating-the-license-and-ssl-certificates)
 4. [Run post-upgrade](/guides/edge/installation/#running-post-upgrade)
-5. [Expand data disk size](/guides/edge/installation/##expanding-the-data-disk-size)
+5. [Expand data disk size](/guides/edge/installation/#expanding-the-data-disk-size)
 6. [Update tenant password](/guides/edge/installation/#updating-the-tenant-password)
 7. [Configure Edge Agent](/guides/edge/installation/#configuring-edge-agent)
 8. Exit
@@ -297,16 +297,9 @@ If you have configured the network in the ‘source’ version, the new configur
 
 #### Expanding the data disk size
 
-Expanding the data disk size consists of two steps:
-
-1. Increasing the physical HDD size from the hypervisor level
-2. From within the VM, add space to the disk by executing option 5 of the post-installation script
-
-So as a first step you need to carry out the following before selecting option 5.
- 
 1. Shutdown the VM.
 
-2. Edit the VM and on the **Virtual Hardware** tab increase the disk space of **Hard disk 2** to your needs.<br><img src="/guides/images/edge/edge-configuration-edit.png" name="Edit VMware"/> 
+2. Edit the data disk size in the hypervisor. See the hypervisor specific documentation for increasing the disk size.  
 
 3. Start the VM.
 

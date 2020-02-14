@@ -28,19 +28,19 @@ Geräte können auf verschiedene Weise mit Ihrem Cumulocity-Konto verbunden werd
 ### So registrieren Sie Geräte
 
 Um Geräte zu registrieren, können Sie eine der folgenden Optionen wählen:
-	
+
 * **[Manuelle Geräteregistrierung](#device-registration-manually)** - zum manuellen Herstellen einer Verbindung mit einem oder mehreren Geräten
 * **[Bulk-Geräteregistrierungg](#creds-upload)** - zum Registrieren größerer Gerätemengen in einem Schritt
 
 Sofern Sie die erforderlichen Anwendungen abonniert haben, wird Ihnen eine dritte Option angezeigt:
-**Benutzerdefinierte Geräteregistrierung** - zum Registrieren von Geräten spezifischer Typen, z. B. LoRa oder Sigfox, siehe die Dokumentation zu diesen Services unter [Optionale Services](/benutzerhandbuch/optional-services). 
+**Benutzerdefinierte Geräteregistrierung** - zum Registrieren von Geräten spezifischer Typen, z. B. LoRa oder Sigfox, siehe die Dokumentation zu diesen Services unter [Optionale Services](/benutzerhandbuch/optional-services).
 
 <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
 
 
 #### <a name="device-registration-manually"></a>So verbinden Sie ein Gerät manuell
 
->**Info**: Je nach Gerätetyp sind möglicherweise nicht alle beschriebenen Schritte relevant. 
+>**Info**: Je nach Gerätetyp sind möglicherweise nicht alle beschriebenen Schritte relevant.
 
 1. Klicken Sie **Geräteregistrierung** im Menü **Geräte** des Navigators und klicken Sie dann **Gerät registrieren**.
 2. Wählen Sie im darauf folgenden Dialog **Geräte registrieren** die Option **Manuelle Geräteregistrierung**.
@@ -50,11 +50,11 @@ Sofern Sie die erforderlichen Anwendungen abonniert haben, wird Ihnen eine dritt
 3. Geben Sie im Feld **Geräte-ID** die eindeutige ID des Geräts ein. Diese finden Sie in der Gerätedokumentation. Bei mobilen Geräten handelt es sich dabei meistens um die IMEI (International Mobile Equipment Identity), die häufig auf der Rückseite des Geräts zu finden ist.
 4. Wählen Sie optional eine Gruppe aus, der Sie das Gerät nach der Registrierung zuweisen möchten, siehe auch [Gruppieren von Geräten](#grouping-devices).
 5. Klicken Sie **Weiteres Gerät hinzufügen**, um ein weiteres Gerät zu registrieren. Geben Sie auch hier die Geräte-ID ein und weisen Sie optional das Gerät einer Gruppe zu. Auf diese Weise können Sie mehrere Geräte in einem Schritt registrieren.
-6. Klicken Sie **Weiter**, um Ihr(e) Gerät(e) zu registrieren. 
+6. Klicken Sie **Weiter**, um Ihr(e) Gerät(e) zu registrieren.
 
-> **Info**: In einem Enterprise Tenant kann der Management-Mandant auch direkt einen Mandanten auswählen, dem das Gerät von hier aus hinzugefügt werden soll. Bitte beachten Sie: Da der Management-Mandant keinen Zugriff auf die Stammdaten des Untermandanten hat, können Sie Geräte entweder für einen Mandanten ODER für eine Gruppe registrieren, nicht jedoch für beides. 
+> **Info**: In einem Enterprise Tenant kann der Management-Mandant auch direkt einen Mandanten auswählen, dem das Gerät von hier aus hinzugefügt werden soll. Bitte beachten Sie: Da der Management-Mandant keinen Zugriff auf die Stammdaten des Untermandanten hat, können Sie Geräte entweder für einen Mandanten ODER für eine Gruppe registrieren, nicht jedoch für beides.
 
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration"> 
+<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-device-registration-tenant.png" alt="General device registration">
 
 Nach erfolgreicher Registrierung werden die Geräte auf der [Seite **Geräteregistrierung**](#dev-registration) mit dem Status "Warten auf Verbindung" angezeigt.
 
@@ -90,15 +90,15 @@ Die CSV-Datei enthält zwei Spalten: ID;PATH, wobei ID die Gerätebezeichnung, z
 		Device1;Group A
 		Device2;Group A/Group B			
 ```
-		
+
 
 Nachdem die Datei hochgeladen wurde, werden alle erforderlichen neuen Gruppen erstellt und neue Registrierungen mit dem Status "Wartet auf Verbindung" angelegt und der normale Registrierungsprozess muss fortgesetzt werden (siehe oben).
 
 **Vollständige Registrierung**
 
-Die CSV-Dateien müssen mindestens die IDs als Gerätebezeichnung und die Zugangsdaten der Geräte enthalten. 
-	
-Neben diesen Spalten kann die Datei auch andere Spalten wie ICCID, NAME oder TYPE enthalten, wie in diesem Beispiel gezeigt. 
+Die CSV-Dateien müssen mindestens die IDs als Gerätebezeichnung und die Zugangsdaten der Geräte enthalten.
+
+Neben diesen Spalten kann die Datei auch andere Spalten wie ICCID, NAME oder TYPE enthalten, wie in diesem Beispiel gezeigt.
 
 ```asciidoc
 		ID;Credentials;PATH;ICCID;NAME;TYPE
@@ -113,7 +113,7 @@ Um die Geräte zu verbinden, werden diese mit den relevanten Informationen vorre
 * Gerätedaten - Felder TYPE, NAME, ICCID, IDTYPE, PATH, SHELL in der CSV-Datei.
 
 Nachdem die Daten importiert wurden, erhalten Sie eine Rückmeldung zur Anzahl der Geräte, die vorregistriert wurden, sowie zu gegebenenfalls aufgetretenen Fehlern.
-	
+
 Für beide Bulk-Registrierungstypen (einfach/vollständig) stellen wir praktische CSV-Vorlagendateien bereit, die Sie herunterladen können, um die Struktur anzuzeigen oder zu kopieren.
 
 ##### So importieren Sie CSV-Daten in Microsoft Excel
@@ -124,7 +124,7 @@ Für beide Bulk-Registrierungstypen (einfach/vollständig) stellen wir praktisch
 4. Behalten Sie in Schritt 1 des **Textimport-Assistenten** die Standardeinstellungen bei und klicken Sie **Weiter**.
 5. Wählen Sie in Schritt 2 des **Textimport-Assistenten** die Option **Semikolon** und klicken Sie **Fertig stellen**.
 
-Weitere Informationen zum Dateiformat und akzeptierten CSV-Varianten finden Sie auch unter 
-[Bulk device credentials](/reference/device-credentials/#creds-upload) im Reference Guide.
+Weitere Informationen zum Dateiformat und akzeptierten CSV-Varianten finden Sie auch unter
+[Bulk device credentials](/reference/device-credentials/#bulk-device-credentials) im Reference Guide.
 
 >**Info**: Wenn Sie mit der Enterprise Edition von Cumulocity arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte **Mandant** hinzufügen und die CSV-Datei vom Management-Mandanten aus importieren.

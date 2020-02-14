@@ -21,7 +21,7 @@ The Cumulocity mbed agent connects the C027 application board to Cumulocity and 
 * Efficient communication through [SmartREST](/microservice-sdk/rest#smartrest).
 * Full auto-registration using Cumulocity's bootstrap and device registration.
 * Collection and storage of temperature, GPS, accelerometer and analog sensor readings.
-* Remote control the device LED's and LCD display from Cumulocity.
+* Remote control of the device LEDs and LCD display from Cumulocity.
 * Status monitoring using the LCD display of the application shield.
 
 #### Prerequisites
@@ -44,13 +44,15 @@ To run the Cumulocity mbed agent, the following items are required:
 5. Connect a USB cable to the C027 and to your computer. The C027 will appear as "MBED" drive on your computer.
 6. Plug in the power supply and connect it to the application board.
 
-**Info**: The device cannot be flashed without the power supply connected.
+> **Info**: The device cannot be flashed without the power supply connected.
 
-> Further information is available on [https://os.mbed.com/users/ublox/notebook/u-blox-C027-Getting-Started/] (https://os.mbed.com/users/ublox/notebook/u-blox-C027-Getting-Started/) and [https://os.mbed.com/users/ublox/notebook/u-blox-C027-Downloading/] (https://os.mbed.com/users/ublox/notebook/u-blox-C027-Downloading/).
+Further information is available on [https://os.mbed.com/users/ublox/notebook/u-blox-C027-Getting-Started/] (https://os.mbed.com/users/ublox/notebook/u-blox-C027-Getting-Started/) and [https://os.mbed.com/users/ublox/notebook/u-blox-C027-Downloading/] (https://os.mbed.com/users/ublox/notebook/u-blox-C027-Downloading/).
 
 #### Installing the agent
 
+<!-- 
 Comment ALC: The links to the firmware are no longer correct. I can't find any of such files. Perhaps this is worth a ticket? 
+-->
 
 1. Download the firmware to your computer, see table below.
 2. Copy the downloaded file to the "MBED" drive.
@@ -65,12 +67,12 @@ Comment ALC: The links to the firmware are no longer correct. I can't find any o
 <a id="Connecting_the_C027"></a>
 #### Connecting the C027
 
-* The C027 will now dial up to the Internet. You will see the status "updated" in the LCD display. If the device cannot connect to the Internet, it will display an error message. In case of an error message "Wrong APN setting" or "Unknown APN setting", follow the instructions below in the section [Troubleshooting] (#Troubleshooting).
+* The C027 will now dial up to the Internet. You will see the status "updated" in the LCD display. If the device cannot connect to the Internet, it will display an error message. If there is an error message "Wrong APN setting" or "Unknown APN setting", follow the instructions below in the section [Troubleshooting](#Troubleshooting).
 * On successful connection for the first time, the device shows "Bootstrapping" and below the IMEI of the cellular modem on the LCD display.
   **Info**: The IMEI can also be found on the white sticker on the modem chip of the C027.
-* Log in to the Cumulocity web interface. Navigate to the Device Management application using the application switcher at the top right. To register the device follow the instructions in [Device Management > Connecting devices] (/users-guide/device-management/#connecting-devices).
+* Log into the Cumulocity web interface. Navigate to the **Device management** application using the application switcher at the top right. To register the device follow the instructions in [Device Management > Connecting devices] (/users-guide/device-management/#connecting-devices).
 * After successful registration the device will be listed in **All devices** with the name "Mbed Test Device".
-* When the device is connected to the Cumulocity IoT platform, it will show its current status in the LCD display. The first line always displays the tenant name (until there is a message received from the platform, see the section [Interacting with the Control Operations] (#Interacting_with_the_control_operations)). The second line shows the signal quality in units of dBm. The third line displays information about which sensor data the u-blox is sending and their corresponding values. In case of repeatedly sending similar data, the third line remains empty.
+* When the device is connected to the Cumulocity IoT platform, it will show its current status in the LCD display. The first line always displays the tenant name (until there is a message received from the platform, see the section [Interacting with the Control Operations] (#Interacting_with_the_control_operations)). The second line shows the signal quality in units of dBm. The third line displays information about which sensor data the u-blox is sending and their corresponding values. In the case of repeatedly sending similar data, the third line remains empty.
 
 ### Interacting with the Cumulocity IoT platform
 
@@ -78,7 +80,7 @@ The device is now connected to Cumulocity and sends sensor data periodically. Yo
 
 #### Measurements
 
-The Application Switcher on the right of the Top Bar provides access to the Device Management Application. Select Devices > All Devices in the Navigator and then select the "Mbed Test Device".
+The Application Switcher on the right of the Top Bar provides access to the **Device management** application. Select **Devices > All Devices** in the Navigator and then select the "Mbed Test Device".
 
 You can browse the collected sensor data in the **Measurements** tab:
 
@@ -92,9 +94,9 @@ Add the "Mbed Test Device" to a group, see [Grouping devices] (users-guide/devic
 
 The representation of sensor data can be customized. 
 
-Switch to the Cockpit application using the application switcher and then navigate to **Groups** > <Your New Group> where you will find the "Mbed Test Device". 
+Switch to the Cockpit application using the application switcher and then navigate to **Groups > \<Your New Group>** where you will find the "Mbed Test Device". 
 
-Using the Add > Add Dashboard functionality you can create a new dashboard. To create a new dashboard, click the **Plus** button in the top bar and from the context menu select **Add dashboard**.
+Using the **Add > Add dashboard** functionality you can create a new dashboard. To create a new dashboard, click the **Plus** button in the top bar and from the context menu select **Add dashboard**.
 
 The new dashboard will appear in the top menu bar.
 
@@ -142,13 +144,13 @@ Currently  the u-blox firmware supports three operations:
 
 * **My GPS does not work**: This problem originates from a different data format returned by a new GPS model. Support for this new data format has been added as of version 2.2. If your GPS function does not work, download the latest firmware from the link above and follow the instructions to flash the firmware.
 
-* **No Network Coverage**: Make sure you have the modem antenna correctly mounted to the "WL_INT" connector, otherwise the device will not be able to connect to a network.
+* **No Network Coverage**: Make sure you have the modem antenna correctly mounted to the "WL\_INT" connector, otherwise the device will not be able to connect to a network.
 
-* **Agent Init Failure**: To troubleshoot this issue, we recommend to connect the device to your computer and enable debug mode to collect more information via a serial port. See [Enabling debug mode] (#Enabling_debug_ mode) below.
+* **Agent Init Failure**: To troubleshoot this issue, we recommend you to connect the device to your computer and enable debug mode to collect more information via a serial port. See [Enabling debug mode] (#Enabling_debug_ mode) below.
 
 * **Integration/Config Failure** and **Integrate Failure**: This error occurs when you attempt to connect to a server that has not been set in the firmware. Perform a factory reset and register the device again. If this doesn't solve the problem then it's likely to be a server-side issue. Contact your network administrator if you are connecting to your own Cloud instance or contact [support](https://empower.softwareag.com/ContactSupport/) if you are connecting directly to Cumulocity.
 
-* **The device failed to join a network and displays "Wrong APN setting" or "Unknown APN setting"**: Review the source code file `C027_Support/MDMAPN.h` and add an entry with the Mobile Country Code (MCC), Mobile Network Code (MNC) and your APN setting. The current MMC and MNC code should be shown on the LCD display below the error message "Wrong APN setting" or "Unknown APN setting".
+* **The device failed to join a network and displays "Wrong APN setting" or "Unknown APN setting"**: Review the source code file _C027_Support/MDMAPN.h_ and add an entry with the Mobile Country Code (MCC), Mobile Network Code (MNC) and your APN setting. The current MMC and MNC code should be shown on the LCD display below the error message "Wrong APN setting" or "Unknown APN setting".
 
 * **The device does not appear as *Connected* in the device registration process**: Review the application output using a serial console. See https://os.mbed.com/handbook/SerialPC for details. Also make sure you flashed the device with the correct firmware version, i.e. the one that performs the bootstrap against the correct server.
 
@@ -198,7 +200,7 @@ The debug information is printed to the serial port of the device. To view its c
 If you want to change the behaviour of the agent, go to mbed.org and adopt the source code. Here are the steps required to do so:
 
 1. Sign up for an account in [mbed](https://mbed.org) for free.
-2. Login to the mbed.org site and visit the [C027 page](https://mbed.org/platforms/u-blox-C027/). Click **Add to your mbed Compiler**.
+2. Log into the mbed.org site and visit the [C027 page](https://mbed.org/platforms/u-blox-C027/). Click **Add to your mbed Compiler**.
 3. Visit <a href="http://mbed.org/users/Cumulocity/code/MbedSmartRestMain/">Cumulocity Mbed SmartREST main application</a> and click **Import into Compiler** to import the agent into your online Mbed IDE.
 4. In the IDE, click **Compile**. The IDE will download the compiled application to your computer.
 5. Copy the downloaded file to the "MBED" drive.

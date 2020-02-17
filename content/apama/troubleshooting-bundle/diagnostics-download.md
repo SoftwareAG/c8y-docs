@@ -14,7 +14,7 @@ Basic diagnostics information is provided in a ZIP file named *diagnostic-overvi
 
 - The microservice log file contents, if available, including a record of the correlator's startup logging and the last hour or maximum of 20,000 lines of logging.
 - Apama-internal diagnostics information (similar to the `engine_watch` and `engine_inspect` command-line tools available in Apama).
-- A copy of all EPL applications, Smart Rules and Analytics Builder models.
+- A copy of all EPL applications, smart rules and Analytics Builder models.
 - A copy of any alarms that the Apama-ctrl microservice has raised.
 - CPU profiling (over a duration of 5 seconds).
 - Some information from the environment (tenant details, environment variables).

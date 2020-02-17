@@ -35,7 +35,7 @@ monitor MonitorDevicesForCircularGeofence {
 			if e.params.hasKey("c8y_Position") {
 				// we have an event
 				integer reqId := integer.getUnique();
-				send FindManagedObject(reqId, e.source, new dictionary<string,string>) to FindManagedObject.CHANNEL;
+				send FindManagedObject(reqId, e.source, new dictionary<string,string>) to FindManagedObject.SEND_CHANNEL;
 				on FindManagedObjectResponse(reqId = reqId) as resp
 				and not FindManagedObjectResponseAck(reqId) {
 				ManagedObject dev := resp.managedObject;

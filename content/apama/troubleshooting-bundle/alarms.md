@@ -93,7 +93,7 @@ The Apama license key has the expiry date as one of its parameters. During the s
 
 Currently, when the Apama-ctrl microservice goes down due to license expiry, it generates an alarm with a generic message saying "Apama has exited unexpectedly. As a precaution, user-provided EPL and Analytics Builder models that might have caused this have been disabled, refer audit log for more details. Please check any recent alarms, or contact support or your administrator". 
 
-Refer to Software AG support or the Operations guide for how to upload a new license file. After uploading a new license file, you have to re-start the Apama-ctrl microservice manually.
+Refer to Software AG support or the *Operations guide* (available from the [Software AG Empower Product Support](https://empower.softwareag.com/) website) for how to upload a new license file. After uploading a new license file, you have to re-start the Apama-ctrl microservice manually.
 
 You can view the license information using the diagnostics information as described in [Downloading diagnostics and logs](#diagnostics-download). When you click the **Diagnostics** link, a ZIP file is downloaded which contains license information in the file */info/license.json*. 
 

@@ -26,8 +26,7 @@ Um ein Gerät mit der Asset-Hierarchie zu verknüpfen, muss das Gerät einer Gru
 
 ### <a name="hierarchies"></a>Asset-Hierarchie versus Gerätehierarchie
 
-Cumulocity IoT unterstützt zwei Hierarchietypen: die Gerätehierarchie und die
-Asset-Hierarchie.
+Cumulocity IoT unterstützt zwei Hierarchietypen: die Gerätehierarchie und die Asset-Hierarchie.
 
 Die Gerätehierarchie bildet die Verknüpfung von Geräten mit Cumulocity IoT aus Kommunikationssicht ab. Die Asset-Hierarchie strukturiert die Assets, die über die M2M-Geräte fernüberwacht und gesteuert werden. Nähere Informationen finden Sie unter [Cumulocity IoT's Domain Model](/concepts/domain-model) im Concepts Guide.
 

@@ -188,7 +188,7 @@ Unter **Standardanwendung** können Sie eine Standardanwendung für alle Benutze
 
 >**Info**: Alle Benutzer müssen Zugriff auf diese Anwendung haben.
 
-Unter **Zugriffskontrolle** können Administratoren CORS (Cross-Origin Resource Sharing) über die Cumulocity IoT API aktivieren.
+Unter **Zugriffskontrolle** können Administratoren CORS (Cross-Origin Resource Sharing) über die Cumulocity IoT-API aktivieren.
 
 Die Einstellung **Zulässige Domain** ermöglicht es Ihren JavaScript-Webanwendungen, direkt mit REST APIs zu kommunizieren.
 

@@ -1,5 +1,5 @@
 ---
-weight: 20
+weight: 10
 title: Downloading diagnostics and logs
 layout: redirect
 ---

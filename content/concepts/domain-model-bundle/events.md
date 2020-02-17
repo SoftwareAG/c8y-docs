@@ -5,15 +5,15 @@ title: Events
 layout: redirect
 ---
 
-Events are used to pass real-time information through Cumulocity.
+Events are used to pass real-time information through Cumulocity IoT.
 
 Events come in three types:
 
--   A base event signals when something happens. An event can be triggered when a switch is switched on or off.
+-   A **base event** signals when something happens. An event can be triggered when a switch is switched on or off.
 
--   An alarm signals an event that requires manual action, for example, when a meter has been tampered with or the temperature of a fridge increases above a particular threshold.
+-   An **alarm** signals an event that requires manual action, for example, when a meter has been tampered with or the temperature of a fridge increases above a particular threshold.
 
--   An audit log stores events that are security-relevant and should be stored for auditing. For example, an audit log should be generated when a user logs into a gateway.
+-   An **audit log** stores events that are security-relevant and should be stored for auditing. For example, an audit log should be generated when a user logs into a gateway.
 
 An event has one specific type (as specified in its naming convention), a time when the event occurred and a text to describe the event. An event refers to a source managed object in the inventory. This is an example of an event:
 
@@ -29,7 +29,7 @@ An event has one specific type (as specified in its naming convention), a time w
 	}
 }</code></pre>
 
-Any event can be extended in the same way as described for managed objects above. In this example, we not only signalled that an object moved, we also included the new position of the object in the form of a "c8y_Position" fragment.
+Any event can be extended in the same way as described for managed objects above. In this example, we not only signal that an object moved, we also include the new position of the object in the form of a "c8y_Position" fragment.
 
 An audit log extends an event through
 
@@ -56,7 +56,7 @@ An alarm extends events through
 
 -   A status showing whether the alarm is active or cleared.
 -   A time stamp when the alarm was last updated.
--   It can have classifications such as critical, major, minor and can include a warning.
+-   A classification such as critical, major, minor, warning.
 -   A history of changes to the event in form of audit logs.
 
 This is an example of an alarm that has been cleared:
@@ -87,5 +87,5 @@ This is an example of an alarm that has been cleared:
 	...
 }</code></pre>
 
-More examples can be found in [Events](/reference/events), [Alarms](/reference/alarms) and [Auditing](/reference/auditing) in the Reference guide.
+More detailed information can be found in [Events](/reference/events), [Alarms](/reference/alarms) and [Auditing](/reference/auditing) in the Reference guide.
 

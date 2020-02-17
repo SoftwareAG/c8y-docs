@@ -38,6 +38,7 @@ The following is a list of the alarms. The information further down below explai
 - High memory usage.
 - Warning or higher level logging from an EPL file.
 - An EPL file throws an uncaught exception.
+- Invalid measurement format.
 - The CEP queue is full (this alarm is coming from Cumulocity IoT core, but concerns Apama-ctrl). 
 
 Once the cause of an alarm is resolved, you have to acknowledge and clear the alarm in the Cumulocity IoT tenant. Otherwise, you will continue to see the alarm until a further restart of the Apama-ctrl microservice.
@@ -94,7 +95,7 @@ Currently, when the Apama-ctrl microservice goes down due to license expiry, it 
 
 Refer to Software AG support or the Operations guide for how to upload a new license file. After uploading a new license file, you have to re-start the Apama-ctrl microservice manually.
 
-You can view the license information using the diagnostics information as described in [Downloading diagnostics and logs](#diagnostics-download). When you click the **Diagnostics** link, a ZIP file is downloaded which contains license information under */diagnostics/license*. 
+You can view the license information using the diagnostics information as described in [Downloading diagnostics and logs](#diagnostics-download). When you click the **Diagnostics** link, a ZIP file is downloaded which contains license information in the file */info/license.json*. 
 
 #### Safe mode on startup
 
@@ -104,7 +105,7 @@ This alarm is raised whenever the Apama-ctrl microservice switches to Safe mode.
 - Alarm text: Apama has exited unexpectedly. As a precaution, user-provided EPL and Analytics Builder models that might have caused this have been disabled, refer audit log for more details. Please check any recent alarms, or contact support or your administrator.
 - Alarm severity: CRITICAL
 
-Safe mode is a state where Apama-ctrl deactivates all Apama Analytics Builder models, Apama EPL files and extensions in Analytics Builder. Apama-ctrl raises an alarm and adds audit log entries with details on all deactivated models, EPL files and extensions. This is triggered when the correlator encounters a crash that may occur because of several reasons, such as running out of memory, uncaught exceptions in injected EPL files, license expiry, etc. To prevent an infinite loop of Apama-ctrl restarts followed by a correlator crash (mostly likely due to a problem with injected EPL files), the microservice checks on every restart if it has restarted in the last 20 minutes. If yes, the microservice considers the restart as a crash and enables Safe mode for Apama-ctrl. Otherwise, it treats the restart as a normal restart. 
+Safe mode is a state where Apama-ctrl deactivates all Apama Analytics Builder models, extensions in Apama Analytics Builder, and EPL applications. Apama-ctrl raises an alarm and adds audit log entries with details on all deactivated models, extensions and EPL applications. This is triggered when the correlator encounters a crash that may occur because of several reasons, such as running out of memory, uncaught exceptions in injected EPL files, license expiry, etc. To prevent an infinite loop of Apama-ctrl restarts followed by a correlator crash (mostly likely due to a problem with injected EPL files), the microservice checks on every restart if it has restarted in the last 20 minutes. If yes, the microservice considers the restart as a crash and enables Safe mode for Apama-ctrl. Otherwise, it treats the restart as a normal restart. 
 
 If any user is manually stopping or restarting the microservice within 20 minutes, even though it is not a crash, the microservice treats this as a crash and enables Safe mode, even if everything is otherwise fine.
 
@@ -253,6 +254,16 @@ Apama-ctrl generates the following alarm for the above example:
 You can diagnose the issue by the monitor name and line number given in the alarm. 
 
 For more details, you can also check the Apama logs if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these uncaught exceptions will terminate the execution of that monitor instance, which will typically mean that your application is not going to function correctly. This might even lead to a correlator crash if not handled properly.
+
+### Invalid measurement format
+
+This alarm is raised whenever the `measurementFormat` key is set with an invalid value in the tenant option.
+
+- Alarm type: `apama_measurementformat_invalid`
+- Alarm text: The measurementFormat property set in the tenant option is not supported. Setting it to default.
+- Alarm severity: WARNING
+
+Valid `measurementFormat` values for any tenant are `MEASUREMENT_ONLY` and `BOTH`. The default value is `MEASUREMENT_ONLY`.
 
 #### The CEP queue is full
 

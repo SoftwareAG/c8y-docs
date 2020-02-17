@@ -4,7 +4,7 @@ title: Verwalten von Gerätetypen
 layout: redirect
 ---
 
-Um Daten aus verschiedenen Gerätetypen zu verarbeiten, verwendet Cumulocity sogenannte Geräteprotokolle, die in einer Datenbank gespeichert sind.
+Um Daten aus verschiedenen Gerätetypen zu verarbeiten, verwendet Cumulocity IoT sogenannte Geräteprotokolle, die in einer Datenbank gespeichert sind.
 
 Klicken Sie **Geräteprotokolle** im Menü **Gerätetypen** des Navigators.
 
@@ -15,15 +15,15 @@ Die Seite **Geräteprotokolle** zeigt eine Liste aller in Ihrem Konto verfügbar
 Die Geräteprotokoll-Liste zeigt die folgenden Informationen an:
 
 * den Geräteprotokolltypen (z. B. Modbus, CANOpen, LoRa, IMPACT)
-* den Gerätetypnamen 
+* den Gerätetypnamen
 * die Anzahl der Ressourcen für das Gerät (auf der rechten Seite)
 
 ### So fügen Sie ein Geräteprotokoll hinzu
 
-1. Klicken Sie **Geräteprotokoll hinzufügen** in der oberen Menüleiste. 
+1. Klicken Sie **Geräteprotokoll hinzufügen** in der oberen Menüleiste.
  <br>![Add device protocol](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-protocol-add.png)
-2. Wählen Sie einen der verfügbaren Geräteprotokolltypen aus der Liste. 
-3. Geben Sie im darauf folgenden Dialog einen Namen und eine optionale Beschreibung für das Geräteprotokoll ein und klicken Sie **Erstellen**. 
+2. Wählen Sie einen der verfügbaren Geräteprotokolltypen aus der Liste.
+3. Geben Sie im darauf folgenden Dialog einen Namen und eine optionale Beschreibung für das Geräteprotokoll ein und klicken Sie **Erstellen**.
 4. Geben Sie die Konfiguration für das Geräteprotokoll ein. Die Konfiguration des Geräteprotokolls hängt vom Protokolltypen ab. <br>
 Weitere Informationen zum Konfigurieren von Geräteprotokollen finden Sie in der Beschreibung des jeweiligen Gerätetyps, den Sie hinzufügen möchten, siehe [Optionale Services](/benutzerhandbuch/optional-services).
 5. Klicken Sie **Speichern**.
@@ -43,7 +43,7 @@ Das Geräteprotokoll wird der Gerätedatenbank hinzugefügt.
 
 ### So bearbeiten Sie ein Geräteprotokoll
 
-Zum Bearbeiten eines Geräteprotokolls klicken Sie einfach auf das Protokoll oder auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Bearbeiten**. 
+Zum Bearbeiten eines Geräteprotokolls klicken Sie einfach auf das Protokoll oder auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Bearbeiten**.
 
 Weitere Informationen zu den Feldern finden Sie in der Beschreibung des jeweiligen Gerätetyps, siehe [Optionale Services](/benutzerhandbuch/optional-services).
 
@@ -58,4 +58,3 @@ Das Geräteprotokoll wird aus der Gerätedatenbank gelöscht.
 Zum Exportieren eines Geräteprotokolls klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Exportieren**.
 
 Das Geräteprotokoll wird in Ihr Dateisystem exportiert.
-

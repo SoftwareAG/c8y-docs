@@ -34,7 +34,7 @@ Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokument
 </tr>
 <tr>
 <td align="left"><a href="#widgets">Widgets-Sammlung</a></td>
-<td align="left">Verwenden Sie verschiedene <a href="#widgets">Widget-Typen</a> aus der in Cumulocity enthaltenen Widgets-Sammlung und konfigurieren Sie diese nach Ihren individuellen Bedürfnissen.</td>
+<td align="left">Verwenden Sie verschiedene <a href="#widgets">Widget-Typen</a> aus der in Cumulocity IoT enthaltenen Widgets-Sammlung und konfigurieren Sie diese nach Ihren individuellen Bedürfnissen.</td>
 </tr>
 <tr>
 <td align="left"><a href="../../benutzerhandbuch/device-management-de/#alarm-monitoring">Verwenden von Alarmen</a></td>
@@ -59,7 +59,7 @@ Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokument
 </tbody>
 </table>
 
-Mehr über allgemeine Aspekte der Cumulocity-Plattform und ihrer Anwendungen erfahren Sie unter [Erste Schritte](/benutzerhandbuch/getting-started-de).
+Mehr über allgemeine Aspekte der Cumulocity IoT-Plattform und ihrer Anwendungen erfahren Sie unter [Erste Schritte](/benutzerhandbuch/getting-started-de).
 
 ### <a name="home"></a>Startseite
 
@@ -69,7 +69,7 @@ Bei der Startseite der Cockpit-Anwendung handelt es sich um ein Dashboard, das D
 
 Die Daten, die auf der Startseite angezeigt werden, werden von allen Benutzern des Mandanten gemeinsam genutzt. Standardmäßig zeigt die Startseite eine Begrüßung, die aktiven kritischen Alarme, neueste Alarme und eine Karte mit allen Geräten.
 
-Die Startseite kann nach Ihren eigenen Bedürfnissen bearbeitet und gestaltet werden. Sie können die angezeigten Widgets ändern oder entfernen oder neue Widgets hinzufügen. 
+Die Startseite kann nach Ihren eigenen Bedürfnissen bearbeitet und gestaltet werden. Sie können die angezeigten Widgets ändern oder entfernen oder neue Widgets hinzufügen.
 
 Details zum Bearbeiten von Dashboards finden Sie unter [Arbeiten mit Dashboards](#dashboards).
 

@@ -4,9 +4,9 @@ title: OPC UA
 layout: redirect
 ---
 
-The OPC UA device gateway is a stand-alone Java program that communicates with OPC UA server(s) and the Cumulocity platform. It stores data into the Cumulocity database via REST. Additionally, C8Y commands are executed to perform various operations on the OPC UA servers. The gateway has to be registered as Cumulocity device in a specific tenant and the opcua-device-gateway must run in the users’ environment. In order to use OPC UA, subscription to the “opcua-mgmt-service” microservice is required.
+The OPC UA device gateway is a stand-alone Java program that communicates with OPC UA server(s) and the Cumulocity IoT platform. It stores data into the Cumulocity IoT database via REST. Additionally, C8Y commands are executed to perform various operations on the OPC UA servers. The gateway has to be registered as Cumulocity IoT device in a specific tenant and the opcua-device-gateway must run in the users’ environment. In order to use OPC UA, subscription to the “opcua-mgmt-service” microservice is required.
 
-To download the gateway navigate to [Cumulocity resources.](http://resources.cumulocity.com/examples/opcua-device-gateway-1005.7.1.jar)
+To download the gateway navigate to [Cumulocity IoT resources.](http://resources.cumulocity.com/examples/opcua-device-gateway-1005.7.1.jar)
 
 > **Info:** The gateway requires Java 8 in order to run.
 
@@ -224,7 +224,7 @@ The authentication setting is used to authenticate and authorize the server user
 
 - Anonymous - Anonymous connection will only work when the OPC UA server allows such connections.
 - Username/Password - With this setting the gateway will connect to the server as a specific user represented by a username and password.
-- Key-based authentication - The gateway will use an existing certificate to authenticate as a specific user. JKS keystore must be uploaded to Cumulocity as a binary with type “application/octet-stream”. This keystore must follow the following rules:
+- Key-based authentication - The gateway will use an existing certificate to authenticate as a specific user. JKS keystore must be uploaded to Cumulocity IoT as a binary with type “application/octet-stream”. This keystore must follow the following rules:
     - It has to be a Java keystore (JKS).
     - The keystore itself has to be password-protected.
     - The keystore has to contain user certificate with  “opcuauser” alias.
@@ -244,7 +244,7 @@ The keystore can then be verified by using a tool like KeystoreExplorer.
 
 ![Keystore explorer2](/images/users-guide/opcua/opcua-keystore-explorer2.png)
 
-The keystore can then be uploaded as binary in Cumulocity and it can be used in the server configuration.
+The keystore can then be uploaded as binary in Cumulocity IoT and it can be used in the server configuration.
 
 ![Opcua Keystore](/images/users-guide/opcua/opcua-keystore.png)
 
@@ -331,7 +331,7 @@ The **Events** tab shows all events related to the gateway-server connection. Ad
 
 The **Address space** tab shows the attributes and references of the address space node of the servers. The filter searches through the whole hierarchy to find “nodeId”, “browserName” or “displayName” of an attribute. In case of multiple “ancestorNodeIds”, you can click on the desired node to be redirected.
 
-The address space is automatically scanned when a connection between the gateway and the server is established. The duration of the scan depends on the size of the address space. The address space information is stored locally once it is scanned and then used by this applying process. If the address space information is not yet available, e.g. the address space has not been scanned, another scan will be triggered without synchronizing data into Cumulocity. Performing another address space operation will update the address space information.
+The address space is automatically scanned when a connection between the gateway and the server is established. The duration of the scan depends on the size of the address space. The address space information is stored locally once it is scanned and then used by this applying process. If the address space information is not yet available, e.g. the address space has not been scanned, another scan will be triggered without synchronizing data into Cumulocity IoT. Performing another address space operation will update the address space information.
 
 ![Gateway events tab](/images/users-guide/opcua/opcua-address.png)
 
@@ -433,11 +433,11 @@ The following constraints can be applied:
 
 ### Operations
 
-Cumulocity operations is the interface that is used to tell the gateway what to do and how to do it. This section describes all operations that are currently supported by the gateway.
+Cumulocity IoT operations is the interface that is used to tell the gateway what to do and how to do it. This section describes all operations that are currently supported by the gateway.
 
 #### Scanning the address space
 
-This operation triggers importing address space for a specific OPC-UA server. The server’s ID is passed as a device ID. The gateway will scan the entire address space of the server and persist a twinned representation of the address space in the Cumulocity platform.
+This operation triggers importing address space for a specific OPC-UA server. The server’s ID is passed as a device ID. The gateway will scan the entire address space of the server and persist a twinned representation of the address space in the Cumulocity IoT platform.
 
 ```
 POST /devicecontrol/operations/
@@ -451,11 +451,11 @@ POST /devicecontrol/operations/
 	}
 ```
 
-The twinned address space information is persisted in the Cumulocity inventory. It is internally used to support address space browsing and to define device types. Hence this operation is always triggered if a new server is added to the platform.
+The twinned address space information is persisted in the Cumulocity IoT inventory. It is internally used to support address space browsing and to define device types. Hence this operation is always triggered if a new server is added to the platform.
 
-Once the device gateway knows the address space, it uses it to handle different logics, for example applying device types to nodes. So if you already have the address space scanned once and stored in Cumulocity, you might want the device gateway to learn one more time about server’s address space without synchronizing data into Cumulocity. To achieve that, provide “skipSync”: true.
+Once the device gateway knows the address space, it uses it to handle different logics, for example applying device types to nodes. So if you already have the address space scanned once and stored in Cumulocity IoT, you might want the device gateway to learn one more time about server’s address space without synchronizing data into Cumulocity IoT. To achieve that, provide “skipSync”: true.
 
-> **Info:** We do not recommend to directly work with the persisted address space data structures in the Cumulocity inventory, as these might change in the future. Use the endpoints of the management service to interact with the OPC UA address space.
+> **Info:** We do not recommend to directly work with the persisted address space data structures in the Cumulocity IoT inventory, as these might change in the future. Use the endpoints of the management service to interact with the OPC UA address space.
 
 #### Reading the value of a node/nodes
 

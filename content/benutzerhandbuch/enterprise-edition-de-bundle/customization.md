@@ -4,7 +4,7 @@ title: Anpassen der Plattform
 layout: redirect
 ---
 
-Mit dem Enterprise Tenant von Cumulocity können Sie Ihre Plattform nach Ihren Wünschen und Bedürfnissen individuell anpassen. 
+Mit dem Enterprise Tenant von Cumulocity IoT können Sie Ihre Plattform nach Ihren Wünschen und Bedürfnissen individuell anpassen.
 
 Im Menü **Einstellungen** können Sie verschiedene Anpassungseinstellungen vornehmen.
 
@@ -14,7 +14,7 @@ Im Menü **Einstellungen** können Sie verschiedene Anpassungseinstellungen vorn
 
 #### Anwendungen
 
-Im Bereich **Anwendungen** können Sie die Standardanwendungen für neue Mandanten als kommagetrennte Liste festlegen. 
+Im Bereich **Anwendungen** können Sie die Standardanwendungen für neue Mandanten als kommagetrennte Liste festlegen.
 
 ![Applications settings](/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-applications.png)
 
@@ -34,7 +34,7 @@ Mit Hilfe dieser Funktion können Supportbenutzer (d. h. Benutzer mit spezifisch
 
 Legen Sie im Feld **Supportbenutzer aktivieren** fest, ob der Supportbenutzerzugriff für Untermandanten-Benutzer aktiviert sein soll. Hier sind folgende Werte möglich:
 
-* *true*: Supportbenutzerzugriff ist aktiviert. Wenn Supportbenutzerzugriff aktiviert ist, können sich Supportbenutzer bei jedem Untermandanten als beliebiger Benutzer anmelden, sofern dies nicht auf Untermandanten-Ebene außer Kraft gesetzt ist. Untermandanten-Benutzer können den Zugriff nicht selbst deaktivieren. 
+* *true*: Supportbenutzerzugriff ist aktiviert. Wenn Supportbenutzerzugriff aktiviert ist, können sich Supportbenutzer bei jedem Untermandanten als beliebiger Benutzer anmelden, sofern dies nicht auf Untermandanten-Ebene außer Kraft gesetzt ist. Untermandanten-Benutzer können den Zugriff nicht selbst deaktivieren.
 * *false*: Supportbenutzerzugriff ist deaktiviert. Wenn Supportbenutzerzugriff deaktiviert ist, können sich Supportbenutzer nur bei Untermandanten anmelden, für die mindestens ein Benutzer diesen Zugriff explizit ermöglicht hat.
 * Ein explizites Datum im Datum-Uhrzeit-Format, bis zu dem die Supportbenutzer-Aktivierung aktiviert bleiben soll. Wenn kein Datum festgelegt wird, wird der Wert auf "Unbegrenzt" gesetzt.
 
@@ -46,9 +46,9 @@ Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Man
 
 ### <a name="branding"></a>Branding
 
-Mit der Branding-Funktion können Sie das Erscheinungsbild der Benutzeroberfläche für Ihre Mandanten nach Ihren Vorlieben gestalten. 
+Mit der Branding-Funktion können Sie das Erscheinungsbild der Benutzeroberfläche für Ihre Mandanten nach Ihren Vorlieben gestalten.
 
-In der Registerkarte **Branding** können Sie verschiedene Parameter wie Logos, Farben und Schriftarten konfigurieren, die auf der gesamten Plattform verwendet werden. 
+In der Registerkarte **Branding** können Sie verschiedene Parameter wie Logos, Farben und Schriftarten konfigurieren, die auf der gesamten Plattform verwendet werden.
 
 Die [Parameter](#configuration-parameters) werden auf der linken Seite der Registerkarte konfiguriert, während Sie auf der rechten Seite in einer Vorschau sehen können, wie sich Ihre Auswahl auswirkt.
 
@@ -62,7 +62,7 @@ Wenn Sie fertig sind oder Ihre Einstellungen speichern möchten, klicken Sie am 
 
 Durch Speichern werden die Einstellungen noch nicht auf den aktuellen Mandanten und die entsprechenden Untermandanten angewendet. Um dies zu bewirken, klicken Sie in der oberen Menüleiste auf **Anwenden**.
 
-Klicken Sie in der oberen Menüleiste auf **Zurücksetzen**, um das Branding des aktuellen Mandanten und seiner Untermandanten auf die Standardeinstellungen zurückzusetzen. Die benutzerdefinierten Einstellungen werden weiterhin gespeichert, aber nicht mehr angewendet. 
+Klicken Sie in der oberen Menüleiste auf **Zurücksetzen**, um das Branding des aktuellen Mandanten und seiner Untermandanten auf die Standardeinstellungen zurückzusetzen. Die benutzerdefinierten Einstellungen werden weiterhin gespeichert, aber nicht mehr angewendet.
 
 #### <a name="configuration-parameters"></a>Konfigurationsparameter
 
@@ -70,7 +70,7 @@ Unter "Konfiguration" können die folgenden Branding-Parameter konfiguriert werd
 
 **Allgemein**
 
-Im Bereich **Allgemein** können Sie den Titel bearbeiten, der im Browser-Tab verwendet wird. 
+Im Bereich **Allgemein** können Sie den Titel bearbeiten, der im Browser-Tab verwendet wird.
 
 **Hauptlogo**
 
@@ -86,7 +86,7 @@ Unter **Navigatorlogo** können Sie das Logo, das oben im Navigator angezeigt wi
 
 **Typ**
 
-Im Bereich **Typ** definieren Sie die Schriftarten für Ihre Branding-Version. 
+Im Bereich **Typ** definieren Sie die Schriftarten für Ihre Branding-Version.
 
 Sie können die Basisschriftart und die Schriftart für Überschriften wählen sowie eine Option für die im Navigator verwendete Schriftart (entweder identisch mit Basis- oder Überschriftenschriftart). Sie können außerdem einen Link auf externe Schriftarten setzen, die Sie verwenden möchten.
 
@@ -135,7 +135,7 @@ Im Bereich **Sonstiges** können Sie den Rand-Radius für Schaltflächen durch A
 ### <a name="domain-name"></a>Domain-Name
 
 In der Registerkarte **Domain-Name** können Sie Ihren eigenen Domain-Namen festlegen.
- 
+
 >**Wichtig**: Sie benötigen eine gültige Lizenz, um Ihre Domain zu aktivieren. Bitte kontaktieren Sie unser Sales-Team unter sales@cumulocity.com, um eine Lizenz für Ihre Domain zu installieren.  
 
 <img src="/images/benutzerhandbuch/enterprise-tenant/et-domain-name.png" alt="Domain name">
@@ -167,7 +167,7 @@ Vergewissern Sie sich, dass Sie alle A-Einträge für die Wildcard-Domain entfer
 
 Nach erfolgreicher Aktivierung werden Sie zu Ihrem Enterprise Tenant unter der neuen Domain umgeleitet. Sie erhalten eine Email mit Informationen über die Aktivierung.
 
->**Info**: Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht mehr mit der Cumulocity-Domain zugreifen. Verwenden Sie anstatt dessen Ihren eigenen Domain-Namen.
+>**Info**: Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht mehr mit der Cumulocity IoT-Domain zugreifen. Verwenden Sie anstatt dessen Ihren eigenen Domain-Namen.
 
 
 #### Aktualisieren des Zertifikats
@@ -185,44 +185,44 @@ Wenn Ihr Zertifikat abläuft, müssen Sie es durch ein neues Zertifikat mit eine
 
 #### Deaktivieren eines Zertifikats
 
-Wenn Sie zu Ihrer alten Domain auf Cumulocity zurückkehren möchten, können Sie Ihr Zertifikat ganz einfach wieder deaktivieren. 
+Wenn Sie zu Ihrer alten Domain auf Cumulocity IoT zurückkehren möchten, können Sie Ihr Zertifikat ganz einfach wieder deaktivieren.
 
 >**Wichtig**: Verwenden Sie diese Funktion mit Vorsicht. Ihre Kunden werden nicht mehr in der Lage sein, auf Ihre Untermandanten zuzugreifen.
 
 #### Troubleshooting
 
-Für den Fall, dass Sie Cumulocity mit Ihrer eigenen Domain nicht erreichen können, empfehlen wir, zunächst die folgenden Überprüfungen durchzuführen, um Ihre DNS-Einstellungen zu verifizieren.
+Für den Fall, dass Sie Cumulocity IoT mit Ihrer eigenen Domain nicht erreichen können, empfehlen wir, zunächst die folgenden Überprüfungen durchzuführen, um Ihre DNS-Einstellungen zu verifizieren.
 
 **Prüfen, ob der DNS-Eintrag korrekt ist**
 
 Führen Sie folgendes Kommando aus:
 
-```shell	
+```shell
 host management.<ihr domain name>
 ```
-	
+
 Es sollte das folgende Ergebnis angezeigt werden:
 
 ```shell
 management.<ihr domain name> ist ein Alias für <instanz domain name>
 <instanz domain name> hat die Adresse <IP-Adresse>
 ```
-	
 
-**Prüfen, ob die API antwortet** 
+
+**Prüfen, ob die API antwortet**
 
 Führen Sie folgendes Kommando aus:
 
 ```shell
 curl -v -u '<Mandanten-ID>/<ihr benutzer>:<ihr password>' --head http://management.<ihr domain name>/inventory/managedObjects
 ```
-	
+
 Es sollte das folgende Ergebnis angezeigt werden:
 
 ```shell
 ...
 HTTP/1.1 200 OK
-...	
+...
 ```
 
 

@@ -6,7 +6,7 @@ layout: redirect
 
 <a name="business"></a>
 
-Cumulocity includes preset global smart rule types.
+Cumulocity IoT includes preset global smart rule types.
 
 ![Global smart rules](/images/users-guide/cockpit/cockpit-globalsmartrules.png)
 

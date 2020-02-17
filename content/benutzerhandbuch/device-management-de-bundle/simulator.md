@@ -4,7 +4,7 @@ title: Verwenden von Simulatoren
 layout: redirect
 ---
 
-Mit dem Simulator in Cumulocity können alle Aspekte von IoT-Geräten simuliert werden, wie:
+Mit dem Simulator in Cumulocity IoT können alle Aspekte von IoT-Geräten simuliert werden, wie:
 
 * Einrichten eines simulierten Geräts oder eines Netzwerks von simulierten Geräten
 * Bestimmen der Kommandos, die ein Gerät verarbeiten kann
@@ -19,9 +19,9 @@ Mit dem Simulator können Sie "künstliche" Geräte erstellen, die den gleichen 
 
 Ein Simulator verwendet eine Play-Liste, um Nachrichten zu simulieren, die das Gerät an die Cumulocity IoT-Plattform sendet. Eine Play-Liste ist eine Reihe von Anweisungen, die der Simulator nacheinander ausführt. Wenn die letzte Anweisung erreicht ist, beginnt der Simulator wieder von vorne.
 
-Eine Anweisung kann entweder eine Nachricht senden (Messwerte, Alarme, Ereignisse und Stammdaten) oder eine bestimmte Zeit warten. 
+Eine Anweisung kann entweder eine Nachricht senden (Messwerte, Alarme, Ereignisse und Stammdaten) oder eine bestimmte Zeit warten.
 
-Eine Nachricht wird durch Auswählen eines Nachricht-Templates (z. B. Senden einer Temperatur) und Bereitstellen des entsprechenden Werts (z. B. 23,0 Grad) definiert. Es gibt viele vordefinierte Nachricht-Templates, etwa für das Senden eines Messwerts oder das Erstellen oder Aufheben eines Alarms. Diese Templates basieren auf statischen MQTT-Templates. Darüber hinaus können mit dem [SmartREST-Template-Editor](#smartrest-templates) eigene Nachricht-Templates erstellt werden. 
+Eine Nachricht wird durch Auswählen eines Nachricht-Templates (z. B. Senden einer Temperatur) und Bereitstellen des entsprechenden Werts (z. B. 23,0 Grad) definiert. Es gibt viele vordefinierte Nachricht-Templates, etwa für das Senden eines Messwerts oder das Erstellen oder Aufheben eines Alarms. Diese Templates basieren auf statischen MQTT-Templates. Darüber hinaus können mit dem [SmartREST-Template-Editor](#smartrest-templates) eigene Nachricht-Templates erstellt werden.
 
 ### So zeigen Sie Simulatoren an
 
@@ -29,13 +29,13 @@ Klicken Sie **Simulatoren** im Menü **Geräte** des Navigators, um die Seite **
 
 <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator.png" alt="Simulator page">
 
-Alle Simulatoren, auf die Sie zugreifen können, werden hier angezeigt. 
+Alle Simulatoren, auf die Sie zugreifen können, werden hier angezeigt.
 
 ### So erstellen Sie einen Simulator
 
-1. Klicken Sie **Simulator hinzufügen** rechts in der oberen Menüleiste. 
+1. Klicken Sie **Simulator hinzufügen** rechts in der oberen Menüleiste.
 2. Wählen Sie im darauf folgenden Dialog aus der Auswahlliste im Feld **Voreinstellungen** einen Simulatortypen. Wählen Sie "Leerer Simulator", um einen eigenen Simulator zu erstellen.
-3. Geben Sie einen Namen für den Simulator ein. 
+3. Geben Sie einen Namen für den Simulator ein.
 4. Wählen Sie die Anzahl der Instanzen für diesen Simulator (bis zu zehn).
 5. Klicken Sie **Erstellen**.
 
@@ -67,7 +67,7 @@ Der Simulator wird aus der Liste gelöscht.
 
 ### Anweisungen
 
-Für jeden Simulator können Sie Anweisungen erstellen, die angeben, was der Simulator tun soll. Anweisungen sind einzelne Aufgaben, die einer Play-Liste hinzugefügt und vom Simulator nacheinander ausführt werden. 
+Für jeden Simulator können Sie Anweisungen erstellen, die angeben, was der Simulator tun soll. Anweisungen sind einzelne Aufgaben, die einer Play-Liste hinzugefügt und vom Simulator nacheinander ausführt werden.
 
 Anweisungen können auf der Registerkarte **Anweisungen** eines Simulators angezeigt und bearbeitet werden.
 
@@ -75,15 +75,15 @@ Anweisungen können auf der Registerkarte **Anweisungen** eines Simulators angez
 
 **Beispiele**
 
-Die Simulator-Voreinstellungen enthalten bereits Beispielanweisungen. Beispielsweise enthält der Simulator "Temperaturmesswerte" Anweisungen für die Schritte "Messwert erstellen" und "Warten", siehe Abbildung oben. 
+Die Simulator-Voreinstellungen enthalten bereits Beispielanweisungen. Beispielsweise enthält der Simulator "Temperaturmesswerte" Anweisungen für die Schritte "Messwert erstellen" und "Warten", siehe Abbildung oben.
 
 Der Bereich auf der rechten Seite ändert sich entsprechend des ausgewählten Anweisungstyps.
 
 ![Fragment](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-fragment.png)
 
-Die Messwertanweisungen beziehen sich auf ein Fragment. Fragmente werden verwendet, um die Kapazitäten von Objekten zu bestimmen. Nähere Informationen zu Fragmenten finden Sie in der [Sensor Library](/reference/sensor-library/) im Reference Guide. 
+Die Messwertanweisungen beziehen sich auf ein Fragment. Fragmente werden verwendet, um die Kapazitäten von Objekten zu bestimmen. Nähere Informationen zu Fragmenten finden Sie in der [Sensor Library](/reference/sensor-library/) im Reference Guide.
 
-Die Anweisung "Warten" erfordert einen einzelnen Wert für die Dauer des Wartens in Sekunden. 
+Die Anweisung "Warten" erfordert einen einzelnen Wert für die Dauer des Wartens in Sekunden.
 
 ![Sleep](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-sleep.png)
 
@@ -128,6 +128,6 @@ Das benutzerdefinierte Kommando wird der Kommandoliste hinzugefügt.
 
 ### Alarme für den Simulator
 
-Die Registerkarte **Alarme** eines Simulators zeigt Alarme an, die den Simulator selbst und nicht das simulierte Gerät betreffen, d. h. Alarme für den Fall, dass der Simulator nicht korrekt arbeitet. Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](#alarms). 
+Die Registerkarte **Alarme** eines Simulators zeigt Alarme an, die den Simulator selbst und nicht das simulierte Gerät betreffen, d. h. Alarme für den Fall, dass der Simulator nicht korrekt arbeitet. Informationen zu Alarmen finden Sie unter [Verwenden von Alarmen](#alarms).
 
 ![Alarms](/images/benutzerhandbuch/DeviceManagement/devmgmt-simulator-alarm.png)

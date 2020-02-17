@@ -4,23 +4,23 @@ title: Sigfox
 layout: redirect
 ---
 
-Cumulocity can interface with Sigfox devices through the Sigfox Cloud. You can:
+Cumulocity IoT can interface with Sigfox devices through the Sigfox Cloud. You can:
 
-- Provision Sigfox devices easily using Cumulocity Device Management.
+- Provision Sigfox devices easily using Cumulocity IoT Device Management.
 - Decode upstream payload packets using a web-based user interface.
-- Debug and post-process raw device data through Cumulocity events.
-- Send downstream data to the device using Cumulocity operations.
-- Make use of existing Cumulocity features with Sigfox devices, for example: connectivity monitoring, device management, data visualization with dashboards, real-time analytics and more.
+- Debug and post-process raw device data through Cumulocity IoT events.
+- Send downstream data to the device using Cumulocity IoT operations.
+- Make use of existing Cumulocity IoT features with Sigfox devices, for example: connectivity monitoring, device management, data visualization with dashboards, real-time analytics and more.
 
-The following illustration grants you a quick overview of the Cumulocity Sigfox integration:
+The following illustration grants you a quick overview of the Cumulocity IoT Sigfox integration:
 
-![Cumulocity Sigfox integration](/images/users-guide/sigfox/cumulocity-sigfox-integration.png)
+![Cumulocity IoT Sigfox integration](/images/users-guide/sigfox/cumulocity-sigfox-integration.png)
 
 The following sections describe how to:
 
-- [Manage the connectivity settings](#connectivity-sigfox) in Cumulocity.
-- [Create device protocols](#create-device-protocols-sigfox) with Cumulocity's device database.
-- [Register devices](#register-device-sigfox) and visualize the Sigfox payload using Cumulocity.
+- [Manage the connectivity settings](#connectivity-sigfox) in Cumulocity IoT.
+- [Create device protocols](#create-device-protocols-sigfox) with Cumulocity IoT's device database.
+- [Register devices](#register-device-sigfox) and visualize the Sigfox payload using Cumulocity IoT.
 - [Update devices](#old-registration) registered with the general device registration.
 - [Send operations](#operations-sigfox) to devices.
 
@@ -32,7 +32,7 @@ Moreover, check out the [Troubleshooting](#sigfox-troubleshooting) section in ca
 
 Before you register a device, you need to configure Sigfox Cloud credentials in the **Connectivity** page in the Administration application. You have to set up these Sigfox Cloud credentials in Sigfox.
 
-Before you create API access to Cumulocity, you need to have an “Associated user” which is added to the Cumulocity group in Sigfox Cloud and has the following profiles:
+Before you create API access to Cumulocity IoT, you need to have an “Associated user” which is added to the Cumulocity IoT group in Sigfox Cloud and has the following profiles:
 
 - Customer [R]
 - Device Manager [W]
@@ -60,7 +60,7 @@ After creating an “Associated user” with the proper group and profiles navig
 
 #### Step 3
 
-After the API access entry has been created, you can connect your Sigfox Cloud account to Cumulocity via the **Connectivity** page in the Administration application. Navigate to the **Connectivity** page and switch to the **Sigfox provider settings** tab.
+After the API access entry has been created, you can connect your Sigfox Cloud account to Cumulocity IoT via the **Connectivity** page in the Administration application. Navigate to the **Connectivity** page and switch to the **Sigfox provider settings** tab.
 
 The following information has to be provided:
 
@@ -80,7 +80,7 @@ If you wish to overwrite your previous credentials, click **Replace credentials*
 
 ### <a name="create-device-protocols-sigfox"></a>Creating device protocols
 
-To process data from Sigfox devices, Cumulocity needs to understand the payload format of the devices. Mapping payload data to Cumulocity data can be done by creating a Sigfox device protocol.
+To process data from Sigfox devices, Cumulocity IoT needs to understand the payload format of the devices. Mapping payload data to Cumulocity IoT data can be done by creating a Sigfox device protocol.
 
 During the [device registration](#register-device-sigfox), you can associate this device protocol. The received uplink callbacks for this device with a hexadecimal payload will then be mapped to the ones you have configured in your device protocol.
 
@@ -130,7 +130,7 @@ In the following window, configure the relevant values as shown in this example.
 
 ![LoRa protocol add new value](/images/users-guide/actility/devmgmt-devicetypes-protocols-loranewvalue2.png)
 
-The value configuration maps the value in the payload of a message type to the Cumulocity data.
+The value configuration maps the value in the payload of a message type to the Cumulocity IoT data.
 
 Under **Message type**, configure the **Message ID** according to your device message specification. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device protocol main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
 
@@ -219,7 +219,7 @@ In the next window, fill in the required information:
 - **Device protocol:** Select your desired device protocol from the drop-down list.
 - **Product certificate key:** This key can be located in *https://partners.sigfox.com/*. Navigate to your device and copy the certificate key. If the checkbox is not selected and no product certificate key is specified, the device will be considered a prototype.
 
-> **Info:** The term "Device type" is used both by Sigfox and Cumulocity, but with different meaning. In Sigfox, a device type specifies how to route data from devices. In Cumulocity, a device type describes the data that is sent by devices of a particular type.
+> **Info:** The term "Device type" is used both by Sigfox and Cumulocity IoT, but with different meaning. In Sigfox, a device type specifies how to route data from devices. In Cumulocity IoT, a device type describes the data that is sent by devices of a particular type.
 
 ![Register devices1](/images/users-guide/sigfox/sigfox-registration1.png)
 

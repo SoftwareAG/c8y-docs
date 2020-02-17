@@ -15,18 +15,18 @@ Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen de
 
 ### <a name="single-sign-on"></a>Konfigurieren von Single-Sign-On
 
-Cumulocity bietet Single-Sign-On-Funktionalität, die es dem Anwender ermöglicht, sich mit einem einzigen 3rd-Party-Autorisierungsserver über ein OAuth2-Protokoll, beispielsweise Azure Active Directory, anzumelden. Aktuell wird die Vergabe von Autorisierungscodes nur mit Access Tokens im JWT-Format unterstützt.
+Cumulocity IoT bietet Single-Sign-On-Funktionalität, die es dem Anwender ermöglicht, sich mit einem einzigen 3rd-Party-Autorisierungsserver über ein OAuth2-Protokoll, beispielsweise Azure Active Directory, anzumelden. Aktuell wird die Vergabe von Autorisierungscodes nur mit Access Tokens im JWT-Format unterstützt.
 
 **Info**: Die Single-Sign-On-Funktionalität verwendet Cookies-Technologien. Sie kann nur genutzt werden, wenn Cookies in den Einstellungen Ihres Browsers zugelassen sind.
 
-Die Single-Sign-On-Funktionalität wurde mit der Cumulocity-Version 9.12 aktiviert. Microservices müssen mit dem Microservice SDK der Version 9.12 oder höher erstellt sein, um korrektes Funktionieren zu gewährleisten.
+Die Single-Sign-On-Funktionalität wurde mit der Cumulocity IoT-Version 9.12 aktiviert. Microservices müssen mit dem Microservice SDK der Version 9.12 oder höher erstellt sein, um korrektes Funktionieren zu gewährleisten.
 
 Bevor Sie zur Single-Sign-On-Option wechseln, stellen Sie sicher, dass:
 
 * der Autorisierungsserver, den Sie verwenden, die Vergabe von OAuth2-Autorisierungscodes unterstützt.
 * das Access Token als JWT ausgegeben wird und Sie wissen, was der Token Content enthalten muss.
 * das JWT aus einer einzigartigen Benutzeridentifikation (unique user identifier) sowie aus den Feldern "iss" (issuer), "aud" (audience) und "exp" (expiration time) besteht.
-* Cumulocity-Plattform Version 9.12 oder vorzugsweise höher verwendet wird.
+* Cumulocity IoT-Plattform Version 9.12 oder vorzugsweise höher verwendet wird.
 * alle Microservices mit dem Microservice Java SDK 9.12.6, oder vorzugsweise höher, erstellt wurden.
 
 
@@ -51,7 +51,7 @@ Da das OAuth-Protokoll auf der Ausführung von HTTP-Anfragen und -Redirects basi
 
 Der erste Teil der **Single-Sign-On**-Seite besteht aus der Anfragekonfiguration. Hier werden die Anfrage-Adresse, Anfrageparameter, Kopfzeile sowie Body von Token- und Refresh-Anfragen konfiguriert. Die Autorisierungsmethode wird von POST-Anfragen als GET-, Token- und Refresh-Anfrage ausgeführt.
 
-Eine Abmeldeanfrage kann optional festgelegt werden. Sie führt ein [Front Channel Single Logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html) aus. Wenn diese Option konfiguriert ist, wird der Benutzer nach dem Abmelden aus Cumulocity zur festgelegten Abmelde-URL des Autorisierungsservers weitergeleitet.
+Eine Abmeldeanfrage kann optional festgelegt werden. Sie führt ein [Front Channel Single Logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html) aus. Wenn diese Option konfiguriert ist, wird der Benutzer nach dem Abmelden aus Cumulocity IoT zur festgelegten Abmelde-URL des Autorisierungsservers weitergeleitet.
 
 ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-logout-custom.png)
 
@@ -71,7 +71,7 @@ Der Bereich **Grundeinstellungen** der **Single-Sign-On**-Seite besteht aus den 
 |Gruppe|Gruppe, der der Benutzer beim ersten Anmelden zugeordnet wird (ab Version 9.20 ersetzt durch dynamische Rechtezuordnung, siehe unten)
 |Anwendungen|Anwendungen, die dem Benutzer beim ersten Anmelden zugewiesen werden (ab Version 9.20 ersetzt durch dynamische Rechtezuordnung, siehe unten)
 
-Jedesmal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens verifiziert und dient als Basis für den Benutzerzugang zur Cumulocity-Plattform. Der folgende Abschnitt beschreibt die Zuordnung zwischen JWT-Claims und dem Zugang zur Plattform.
+Jedesmal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens verifiziert und dient als Basis für den Benutzerzugang zur Cumulocity IoT-Plattform. Der folgende Abschnitt beschreibt die Zuordnung zwischen JWT-Claims und dem Zugang zur Plattform.
 
  ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-7.png)
 
@@ -90,7 +90,7 @@ Dem Benutzer werden die globalen Rollen "business" und "application cockpit" zug
 Mit "=" als Operator können Sie Platzhalter im Feld **Wert** verwenden. Der unterstützte Platzhalter ist das Sternsymbol (\*), das null oder mehr Zeichen entspricht. Wenn Sie beispielsweise "cur\*" eingeben, entspricht dies den Zeichenketten "cur", "curiosity", "cursor" und allen anderen, die mit “cur” beginnen. "f\*n" entspricht den Zeichenketten "fn", "fission", "falcon" und allen anderen, die mit "f" beginnen und mit "n" enden.
 
 Soll der Platzhalter dem Sternsymbol selbst entsprechen, muss dieses durch Hinzufügen eines umgekehrten Schrägstrichs (\\) geschützt werden. Um zum Beispiel eine genaue Übereinstimmung mit der Zeichenkette "Lorem\*ipsum" zu erzielen, muss der Wert "Lorem\\*ipsum" lauten.
- 
+
 
  ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-8.png)
 
@@ -137,7 +137,7 @@ Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschri
 
 Während der Konfiguration der Azure AD entspricht die Redirect-URI Ihrer vollständigen Domain-Adresse. In diesem Dokument verwenden wir beispielhaft *http://aad.cumulocity.com*. In Azure AD sind keine weitere Schritte erforderlich.
 
-##### Cumulocity-Konfiguration
+##### Cumulocity IoT-Konfiguration
 
 Wenn die Vorlage "Azure AD" ausgewählt ist, sehen die Grundeinstellungen in etwa folgendermaßen aus:
 
@@ -148,7 +148,7 @@ Wenn die Vorlage "Azure AD" ausgewählt ist, sehen die Grundeinstellungen in etw
 |Azure AD-Adresse| Adresse Ihres Azure AD-Mandanten
 |Mandant| Name des Azure AD-Mandanten
 |Anwendungs-ID| Anwendungs-ID
-|Redirect-URI| Adresse Ihres Cumulocity-Mandanten, gefolgt von /tenant/oauth
+|Redirect-URI| Adresse Ihres Cumulocity IoT-Mandanten, gefolgt von /tenant/oauth
 |Client-Secret| Azure AD-Client-Secret, falls vorhanden
 |Name der Schaltfläche| Name der Schaltfläche
 |Token-Issuer| Token-Issuer-Wert im Format einer HTTP-Adresse
@@ -188,7 +188,7 @@ Unter **Standardanwendung** können Sie eine Standardanwendung für alle Benutze
 
 >**Info**: Alle Benutzer müssen Zugriff auf diese Anwendung haben.
 
-Unter **Zugriffskontrolle** können Administratoren CORS (Cross-Origin Resource Sharing) über die Cumulocity API aktivieren.
+Unter **Zugriffskontrolle** können Administratoren CORS (Cross-Origin Resource Sharing) über die Cumulocity IoT API aktivieren.
 
 Die Einstellung **Zulässige Domain** ermöglicht es Ihren JavaScript-Webanwendungen, direkt mit REST APIs zu kommunizieren.
 
@@ -221,7 +221,7 @@ Im Feld **Passwortgültigkeit begrenzen für** können Sie die Gültigkeit von B
 
 >**Info**: Passwortbeschränkung und das Erzwingen starker Passörter sind möglicherweise nicht editierbar, falls vom Plattformadministrator so konfiguriert.
 
-Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Nur starke (grüne) Passwörter zulassen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Aufrufen und Anmelden an der Cumulocity-Plattform](/benutzerhandbuch/getting-started-de#login) beschrieben.
+Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Nur starke (grüne) Passwörter zulassen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Aufrufen und Anmelden an der Cumulocity IoT-Plattform](/benutzerhandbuch/getting-started-de#login) beschrieben.
 
 Starke (grüne) Passwörter müssen "M" Zeichen haben. Die Verwendung bereits früher genutzter Passwörter wird standardmäßig eingeschränkt. Das System merkt sich die letzten "N" von einem Benutzer bereitgestellten Passwörter und erlaubt nicht, diese zu verwenden. Der Standardwert für "N" ist 10.
 
@@ -255,7 +255,7 @@ Klicken Sie **Attributsbibliothek** im Menü **Einstellungen**, um Stammdaten-Ob
 
 ![Properties library](/images/benutzerhandbuch/Administration/admin-settings-properties-library.png)
 
-Mit benutzerdefinierten Attributen können Sie das Datenmodell der in Cumulocity integrierten Objekte erweitern. Sie können die folgenden eigenen Attribute erstellen:
+Mit benutzerdefinierten Attributen können Sie das Datenmodell der in Cumulocity IoT integrierten Objekte erweitern. Sie können die folgenden eigenen Attribute erstellen:
 
 - Eigene Stammdatenattribute werden verwendet, um das Stammdatenmodell zu erweitern. Sie können in den Widgets “Asset-Tabelle” und “Asset-Attribute” genutzt werden.
 - Eigene Mandantenattribute sind bei der Erstellung von Mandanten verfügbar. Die eigenen Attribute können unter Untermandanten in der Registerkarte Benutzerdefinierte Attribute bearbeitet werden. Außerdem können diese Attribute in den Nutzungsstatistiken eingesehen und exportiert werden.
@@ -402,7 +402,7 @@ Derzeit können folgende Anbietereinstellungen festgelegt werden:
 
 1. Wechseln Sie zur Registerkarte Ihres gewünschten Anbieters.
 2. Geben Sie die URL des Anbieters ein.
-3. Geben Sie die Zugangsdaten Ihrer Anbieterplattform ein. Je nach Anbieter handelt es sich hierbei entweder um Zugangsdaten für Ihr Konto auf der Anbieterplattform oder um die Zugangsdaten, mit denen Sie sich auf der Cumulocity-Konnektivitätsseite registrieren können. Diese werden in Ihrem Konto in der Anbieter-Plattform angezeigt.
+3. Geben Sie die Zugangsdaten Ihrer Anbieterplattform ein. Je nach Anbieter handelt es sich hierbei entweder um Zugangsdaten für Ihr Konto auf der Anbieterplattform oder um die Zugangsdaten, mit denen Sie sich auf der Cumulocity IoT-Konnektivitätsseite registrieren können. Diese werden in Ihrem Konto in der Anbieter-Plattform angezeigt.
 4. Klicken Sie abschließend auf **Speichern**, um Ihre Einstellungen zu speichern.
 
 Je nach gewähltem Anbieter können zusätzliche Felder vorhanden sein, die in der Dokumentation des entsprechenden Agents erläutert werden, siehe [Optionale Services](/benutzerhandbuch/optional-services).

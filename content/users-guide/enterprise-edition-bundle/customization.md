@@ -4,7 +4,7 @@ title: Customizing your platform
 layout: redirect
 ---
 
-Using the Enterprise Tenant of Cumulocity, you can customize your platform according to your wishes and requirements.
+Using the Enterprise Tenant of Cumulocity IoT, you can customize your platform according to your wishes and requirements.
 
 In the **Settings** menu, you may specify various customization settings.
 
@@ -177,7 +177,7 @@ Make sure to remove all A entries for the wildcard domain. For example, if you a
 
 After successful activation you will be redirected to your Enterprise Tenant at the new domain. You will also receive an email with information about the activation.
 
->**Info:** After the activation is completed you will no longer be able to access your tenant with the cumulocity domain name. Instead, use your custom domain name.
+>**Info:** After the activation is completed you will no longer be able to access your tenant with the Cumulocity IoT domain name. Instead, use your custom domain name.
 
 
 #### Updating your certificate
@@ -195,13 +195,13 @@ When your certificate expires, you must update your certificate with a new one w
 
 #### Deactivating your certificate
 
-If you wish to return to your old domain at Cumulocity, you can simply deactivate you certificate.
+If you wish to return to your old domain at Cumulocity IoT, you can simply deactivate you certificate.
 
 >**Important:** Use with care. Your customers will not be able to access their subtenants anymore.
 
 #### Troubleshooting
 
-In case you cannot reach Cumulocity using your custom domain, we recommend to perform the following checks to verify your DNS setup.
+In case you cannot reach Cumulocity IoT using your custom domain, we recommend to perform the following checks to verify your DNS setup.
 
 **Check if the DNS entry is correct**
 

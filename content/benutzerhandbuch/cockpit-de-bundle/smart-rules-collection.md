@@ -6,7 +6,7 @@ layout: redirect
 
 <a name="business"></a>
 
-Cumulocity enthält eine Reihe von vordefinierten Smart Rules.
+Cumulocity IoT enthält eine Reihe von vordefinierten Smart Rules.
 
 ![Global smart rules](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules.png)
 

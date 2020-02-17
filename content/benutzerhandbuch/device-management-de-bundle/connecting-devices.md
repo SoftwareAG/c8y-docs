@@ -23,7 +23,7 @@ Die Geräte können einen der folgenden Status haben:
 * **Bitte akzeptieren** - Es liegt eine Kommunikation von einem Gerät mit der angegebenen ID vor, doch der Benutzer, der die Registrierung vornimmt, muss noch explizit zustimmen, damit die Zugangsdaten an das Gerät gesendet werden.
 * **Akzeptiert** - Der Benutzer hat erlaubt, dass die Zugangsdaten an das Gerät gesendet werden.
 
-Geräte können auf verschiedene Weise mit Ihrem Cumulocity-Konto verbunden werden.
+Geräte können auf verschiedene Weise mit Ihrem Cumulocity IoT-Konto verbunden werden.
 
 ### So registrieren Sie Geräte
 
@@ -67,7 +67,7 @@ Klicken Sie **Akzeptieren**, um die Verbindung zu bestätigen. Der Status des Ge
 
 #### <a name="creds-upload"></a>So führen Sie eine Bulk-Registrierung von Geräten durch
 
-Um eine größere Anzahl von Geräten zu registrieren, bietet Cumulocity die Möglichkeit der Bulk-Registrierung, d. h. einer Registrierung mehrerer Geräte durch Hochladen einer CSV-Datei.
+Um eine größere Anzahl von Geräten zu registrieren, bietet Cumulocity IoT die Möglichkeit der Bulk-Registrierung, d. h. einer Registrierung mehrerer Geräte durch Hochladen einer CSV-Datei.
 
 1. Klicken Sie **Geräteregistrierung** im Menü **Geräte** des Navigators und klicken Sie dann **Gerät registrieren**.
 2. Wählen Sie im darauf folgenden Dialog **Geräte registrieren** die Option **Bulk-Geräteregistrierung**.
@@ -108,8 +108,8 @@ Neben diesen Spalten kann die Datei auch andere Spalten wie ICCID, NAME oder TYP
 
 Um die Geräte zu verbinden, werden diese mit den relevanten Informationen vorregistriert. Genauer gesagt wird jedes Gerät folgendermaßen konfiguriert:
 
-* Benutzername - der Benutzername für das Cumulocity-Konto im Format &lt;tenant&gt;/device_&lt;id&gt;, wobei sich &lt;tenant&gt; auf den Mandanten bezieht, von welchem die CSV-Datei importiert wird, und &lt;id&gt; auf den entsprechenden Wert in der CSV-Datei.
-* Passwort - das Passwort für den Zugang zu Cumulocity, entspricht dem Wert "Credentials" in der CSV-Datei.
+* Benutzername - der Benutzername für das Cumulocity IoT-Konto im Format &lt;tenant&gt;/device_&lt;id&gt;, wobei sich &lt;tenant&gt; auf den Mandanten bezieht, von welchem die CSV-Datei importiert wird, und &lt;id&gt; auf den entsprechenden Wert in der CSV-Datei.
+* Passwort - das Passwort für den Zugang zu Cumulocity IoT, entspricht dem Wert "Credentials" in der CSV-Datei.
 * Gerätedaten - Felder TYPE, NAME, ICCID, IDTYPE, PATH, SHELL in der CSV-Datei.
 
 Nachdem die Daten importiert wurden, erhalten Sie eine Rückmeldung zur Anzahl der Geräte, die vorregistriert wurden, sowie zu gegebenenfalls aufgetretenen Fehlern.
@@ -120,11 +120,11 @@ Für beide Bulk-Registrierungstypen (einfach/vollständig) stellen wir praktisch
 
 1. Wechseln Sie in Microsoft Excel zur Registerkarte **Daten**.
 2. Wählen Sie in der Registerkarte **Daten** in der oberen Menüleiste die Option **Aus Text**.
-3. Wählen Sie die zu importierende CSV-Datei aus, indem Sie zu ihr navigieren (in diesem Fall zu der Vorlagendatei, die Sie von der Cumulocity-Plattform heruntergeladen haben).
+3. Wählen Sie die zu importierende CSV-Datei aus, indem Sie zu ihr navigieren (in diesem Fall zu der Vorlagendatei, die Sie von der Cumulocity IoT-Plattform heruntergeladen haben).
 4. Behalten Sie in Schritt 1 des **Textimport-Assistenten** die Standardeinstellungen bei und klicken Sie **Weiter**.
 5. Wählen Sie in Schritt 2 des **Textimport-Assistenten** die Option **Semikolon** und klicken Sie **Fertig stellen**.
 
 Weitere Informationen zum Dateiformat und akzeptierten CSV-Varianten finden Sie auch unter
 [Bulk device credentials](/reference/device-credentials/#bulk-device-credentials) im Reference Guide.
 
->**Info**: Wenn Sie mit der Enterprise Edition von Cumulocity arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte **Mandant** hinzufügen und die CSV-Datei vom Management-Mandanten aus importieren.
+>**Info**: Wenn Sie mit der Enterprise Edition von Cumulocity IoT arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte **Mandant** hinzufügen und die CSV-Datei vom Management-Mandanten aus importieren.

@@ -13,10 +13,8 @@ Die folgenden Abschnitte beschreiben detailliert alle Funktionalitäten der Devi
 |[Gruppieren von Geräten](#grouping-devices)|Wie und warum Geräte in Top-Level-Gruppen, untergeordneten Gruppen und [dynamischen Gruppe](#smart-groups) angeordnet werden.
 |[Gerätedetails](#device-details)|Beschreibt detailliert die verschiedenen Informationen, die für verschiedene Gerätetypen bereitgestellt werden.
 |[Überwachen und Steuern von Geräten](#monitoring-and-controlling-devices)|Wie man die [Verbindungsqualität](#connection-monitoring) und den [Service-Status](#monitoring-services) von Geräten überwacht, wie man mit [Alarmen](#alarm-monitoring) von Geräten arbeitet, wie man [Geräte fernsteuert](#operation-monitoring) und [Fehler behebt](#events-all).
-|[Verwalten von Gerätetypen](#managing-device-types)|Wie man Daten von verschiedenen Gerätetypen mit Hilfe von [Geräteprotokollen](#managing-device-types) verarbeitet. 
-|[Verwalten von Gerätedaten](#managing-device-data)|Wie man [Firmware und Software](#software-repo) für Geräte abruft und verwaltet. 
-|[Konfigurations-Repository](#configuration-repository)|Wie man Konfigurationsdaten von einem Gerät abruft und sie als [Konfigurationssnapshots](#configuration-repository) in einem Konfigurations-Repository speichert und verwaltet. 
-|[SmartREST-Templates](#smartrest-templates)|Wie man [SmartREST-Templates](#smartrest-templates) verwendet, eine Sammlung von Anfrage- und Antwort-Templates, die zum Konvertieren von CSV-Daten und Cumulocity Rest API-Aufrufen verwendet werden.
+|[Verwalten von Gerätetypen](#managing-device-types)|Wie man Daten von verschiedenen Gerätetypen mit Hilfe von [Geräteprotokollen](#managing-device-types) verarbeitet.
+|[Verwalten von Gerätedaten](#managing-device-data)|Wie man [Firmware und Software](#software-repo) für Geräte abruft und verwaltet.
+|[Konfigurations-Repository](#configuration-repository)|Wie man Konfigurationsdaten von einem Gerät abruft und sie als [Konfigurationssnapshots](#configuration-repository) in einem Konfigurations-Repository speichert und verwaltet.
+|[SmartREST-Templates](#smartrest-templates)|Wie man [SmartREST-Templates](#smartrest-templates) verwendet, eine Sammlung von Anfrage- und Antwort-Templates, die zum Konvertieren von CSV-Daten und Cumulocity IoT Rest API-Aufrufen verwendet werden.
 |[Arbeiten mit Simulatoren](#simulator)|Wie man Geräte mit der [Simulatorfunktion](#simulator) abbildet, um die Funktionalität von verbundenen Hardware-Geräten zu simulieren.
-
-

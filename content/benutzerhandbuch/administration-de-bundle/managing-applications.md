@@ -4,14 +4,14 @@ title: Verwalten von Anwendungen
 layout: redirect
 ---
 
-In der Cumulocity-Plattform gibt es zwei Arten von Anwendungen:
+In der Cumulocity IoT-Plattform gibt es zwei Arten von Anwendungen:
 
 * [Abonnierte Anwendungen](#subscribed-applications) - alle Anwendungen, die für den Mandanten abonniert sind (entweder durch die Plattform oder einen Service Provider), aber die er nicht besitzt. Diese können vom Benutzer nicht hinzugefügt, geändert oder entfernt werden.
-* [Eigene Anwendungen](#own-applications) - alle Anwendungen, die der Mandant besitzt. Benutzer können diese Anwendungen auf verschiedene Weise [als eigene Anwendungen hinzufügen](#adding-applications). 
+* [Eigene Anwendungen](#own-applications) - alle Anwendungen, die der Mandant besitzt. Benutzer können diese Anwendungen auf verschiedene Weise [als eigene Anwendungen hinzufügen](#adding-applications).
 
 Klicken Sie auf **Eigene Anwendungen** oder **Abonnierte Anwendungen** im Menü **Anwendungen** des Navigators, um eine Liste aller entsprechenden Anwendungen in Ihrem Konto anzuzeigen.
 
-<img src="/images/benutzerhandbuch/Administration/admin-menu.png" alt="Applications menu"> 
+<img src="/images/benutzerhandbuch/Administration/admin-menu.png" alt="Applications menu">
 
 ### <a name="application-properties"></a>Anwendungsattribute
 
@@ -80,9 +80,9 @@ Bei Anwendungen des Typs "Microservice" finden Sie zusätzlich Informationen zu 
 
 ### <a name="subscribed-applications"></a>Abonnierte Anwendungen
 
-Cumulocity stellt vielerlei Anwendungen für verschiedene Zwecke bereit. 
+Cumulocity IoT stellt vielerlei Anwendungen für verschiedene Zwecke bereit.
 
-Je nach Ihrer Installation und/oder Ihren optionalen Services zeigt Ihr Mandant eine Auswahl der unten genannten potenziell verfügbaren Anwendungen an. 
+Je nach Ihrer Installation und/oder Ihren optionalen Services zeigt Ihr Mandant eine Auswahl der unten genannten potenziell verfügbaren Anwendungen an.
 
 Die Spalten enthalten folgende Informationen:
 
@@ -195,7 +195,7 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 </tr>
 <tr>
 <td style="text-align:left"><a href="/benutzerhandbuch/enterprise-edition-de/#user-hierarchies" class="no-ajaxy">User hierarchies</a></td>
-<td style="text-align:left">Hiermit können Sie in Cumulocity verschiedene Organisationen getrennt verwalten, die dieselbe Datenbank teilen.</td>
+<td style="text-align:left">Hiermit können Sie in Cumulocity IoT verschiedene Organisationen getrennt verwalten, die dieselbe Datenbank teilen.</td>
 <td style="text-align:left">feature-user-hierarchy</td>
 <td style="text-align:left">Funktion</td>
 </tr>
@@ -237,7 +237,7 @@ Manager und Editor für Apama Event Processing Language (EPL) Apps zur sofortige
 </tr>
 <tr>
 <td style="text-align:left"><a href="/users-guide/optional-services/#cloud-fieldbus" class="no-ajaxy">Cloud Fieldbus</a></td>
-<td style="text-align:left">Erfassen Sie Daten von Fieldbus-Geräten und verwalten Sie sie per Fernzugriff in Cumulocity.</td>
+<td style="text-align:left">Erfassen Sie Daten von Fieldbus-Geräten und verwalten Sie sie per Fernzugriff in Cumulocity IoT.</td>
 <td style="text-align:left">feature-fieldbus4</td>
 <td style="text-align:left">Funktion</td>
 </tr>
@@ -255,7 +255,7 @@ Manager und Editor für Apama Event Processing Language (EPL) Apps zur sofortige
 </tr>
 <tr>
 <td style="text-align:left">Microservice hosting</td>
-<td style="text-align:left">Hosten Sie Ihre eigenen Microservices zusätzlich zu Cumulocity.</td>
+<td style="text-align:left">Hosten Sie Ihre eigenen Microservices zusätzlich zu Cumulocity IoT.</td>
 <td style="text-align:left">feature-microservice-hosting</td>
 <td style="text-align:left">Funktion</td>
 </tr>
@@ -281,10 +281,10 @@ Manager und Editor für Apama Event Processing Language (EPL) Apps zur sofortige
 </tbody>
 </table>
 
- 
+
 ### <a name="own-applications"></a>Eigene Anwendungen
 
-Eigene Anwendungen können sein: 
+Eigene Anwendungen können sein:
 
 * Duplikate von abonnierten Anwendungen (um diese den eigenen Bedürfnissen anzupassen)
 * webbasierte UI-Anwendungen, die entweder als eigenständige Anwendungen oder als Plugins innerhalb einer Anwendung (z. B. als Widget in der Cockpit-Anwendung) implementiert sind
@@ -294,20 +294,20 @@ Der Name wird als Titel oben links auf der Anwendungsseite angezeigt. Er wird au
 
 <img src="/images/benutzerhandbuch/Administration/admin-app-switcher.png" alt="App switcher">
 
-Eigene Anwendungen werden unter **Eigene Anwendungen** im Menü **Anwendungen** verwaltet. 
+Eigene Anwendungen werden unter **Eigene Anwendungen** im Menü **Anwendungen** verwaltet.
 
 Auf der Seite **Eigene Anwendungen** wird eine Liste aller eigenen Anwendungen in Ihrem Konto angezeigt.
 
 <img src="/images/benutzerhandbuch/Administration/admin-applications-own.png" alt="Own applications">
 
-Um weitere Informationen zu der Anwendung anzuzeigen, klicken Sie einfach auf deren Karte. Weitere Informationen zu den Feldern finden Sie unter [Anwendungsattribute](#application-properties). 
+Um weitere Informationen zu der Anwendung anzuzeigen, klicken Sie einfach auf deren Karte. Weitere Informationen zu den Feldern finden Sie unter [Anwendungsattribute](#application-properties).
 
-Klicken Sie **Öffnen** auf der Karte einer Anwendung, um die Anwendung direkt von hier zu starten. 
+Klicken Sie **Öffnen** auf der Karte einer Anwendung, um die Anwendung direkt von hier zu starten.
 
 
 #### <a name="adding-applications"></a>So fügen Sie eine eigene Anwendung hinzu
 
-Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**. 
+Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
 
 <img src="/images/benutzerhandbuch/Administration/admin-application-add.png" alt="Add application methods">
 
@@ -315,7 +315,7 @@ Wählen Sie im darauf folgenden Dialog eine der folgenden Methoden:
 
 * [Web-Anwendung hochladen](#uploading-zip-files), um eine Web-Anwendung mittels einer ZIP-Datei bereitzustellen
 * [Microservice hochladen](#uploading-microservices), um einen Microservice mittels einer ZIP-Datei bereitzustellen
-* [Externe Anwendung](#external-application), um auf eine Anwendung zu verweisen, die woanders betrieben wird 
+* [Externe Anwendung](#external-application), um auf eine Anwendung zu verweisen, die woanders betrieben wird
 * [Existierende Anwendung duplizieren](#clone-application), um eine bestehende Anwendung zu duplizieren
 
 ##### <a name="uploading-zip-files"></a>So laden Sie eine Web-Anwendung hoch
@@ -346,12 +346,12 @@ Der Microservice wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wur
 <br><br>
 <img src="/images/benutzerhandbuch/Administration/admin-application-external.png" alt="External application">
 <br><br>
-3. Geben Sie im darauf folgenden Dialog einen Namen für die Anwendung ein. Der Name wird als Titel oben links auf der Anwendungsseite angezeigt. 
+3. Geben Sie im darauf folgenden Dialog einen Namen für die Anwendung ein. Der Name wird als Titel oben links auf der Anwendungsseite angezeigt.
 5. Geben Sie einen Anwendungsschlüssel ein, um diese Anwendung zu identifizieren.
-6. Geben Sie die externe URL ein, unter welcher auf die Anwendung zugegriffen werden kann. 
+6. Geben Sie die externe URL ein, unter welcher auf die Anwendung zugegriffen werden kann.
 7. Klicken Sie **Speichern**, um die Anwendung zu erstellen.
 
-Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties). 
+Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties).
 
 ##### <a name="clone-application"></a>So duplizieren Sie eine Anwendung
 
@@ -359,7 +359,7 @@ Das Duplizieren einer Anwendung ist erforderlich, wenn Sie eine abonnierte Anwen
 
 1. Klicken Sie **Anwendung hinzufügen** auf der Seite **Eigene Anwendungen**.
 2. Wählen Sie im folgenden Dialog **Existierende Anwendung duplizieren**.
-3. Wählen Sie die gewünschte Anwendung aus der Auswahlliste. 
+3. Wählen Sie die gewünschte Anwendung aus der Auswahlliste.
 <br><br>
 <img src="/images/benutzerhandbuch/Administration/admin-application-duplicate.png" alt="Duplicate application">
 <br><br>
@@ -368,7 +368,7 @@ Das Duplizieren einer Anwendung ist erforderlich, wenn Sie eine abonnierte Anwen
 <img src="/images/benutzerhandbuch/Administration/admin-application-duplicate-2.png" alt="Duplicate application">
 <br><br>
 5. Geben Sie einen Anwendungsschlüssel ein, um die Anwendung zu identifizieren. Standardmäßig wird der Anwendungsschlüssel der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen.
-6. Geben Sie einen Pfad für die Anwendung ein. Dieser Pfad ist Teil der URL, um die Anwendung aufzurufen. Standardmäßig wird der Pfad der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen. Wenn Sie hier den Pfad der Originalanwendung verwenden, wird Ihre eigene Anwendung die Originalanwendung überschreiben. 
+6. Geben Sie einen Pfad für die Anwendung ein. Dieser Pfad ist Teil der URL, um die Anwendung aufzurufen. Standardmäßig wird der Pfad der Originalanwendung, erweitert durch eine Zahl, vorgeschlagen. Wenn Sie hier den Pfad der Originalanwendung verwenden, wird Ihre eigene Anwendung die Originalanwendung überschreiben.
 7. Klicken Sie abschließend **Duplizieren**, um die Anwendung zu erstellen.
 
 Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties).
@@ -378,16 +378,16 @@ Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute]
 
 #### <a name="editing-and-removing"></a>So bearbeiten Sie eine eigene Anwendung
 
-Klicken Sie einfach auf die Anwendung oder auf das Menüsymbol rechts neben einem Eintrag und anschließend auf **Bearbeiten**. 
+Klicken Sie einfach auf die Anwendung oder auf das Menüsymbol rechts neben einem Eintrag und anschließend auf **Bearbeiten**.
 
 In der Registerkarte **Attribute** können einige Felder bearbeitet werden, abhängig vom Typ der Anwendung.
 
->**Wichtig:** Ändern Sie niemals Namen der Systemanwendungen (z. B. "Device Management", "Cockpit"). Andernfalls schlägt die Mandanteninitialisierung fehl. 
+>**Wichtig:** Ändern Sie niemals Namen der Systemanwendungen (z. B. "Device Management", "Cockpit"). Andernfalls schlägt die Mandanteninitialisierung fehl.
 
 
 #### So entfernen Sie eine eigene Anwendung
 
-Klicken Sie auf das Menüsymbol rechts neben einem Eintrag und anschließend auf **Löschen**. 
+Klicken Sie auf das Menüsymbol rechts neben einem Eintrag und anschließend auf **Löschen**.
 
 Wenn Sie eine Anwendung löschen, die eine abonnierte Anwendung überschreibt, wird die derzeit abonnierte Anwendung für alle Benutzer verfügbar. Die Benutzer profitieren so außerdem von zukünftigen Upgrades der abonnierten Anwendung.
 
@@ -396,18 +396,18 @@ Abonnierte Anwendungen können nicht gelöscht werden. Dies kann nur durch den E
 
 #### Hochladen von Archiven
 
-Es können mehrere Anwendungsversionen in Cumulocity gespeichert werden, indem sie als ZIP- oder MON-Dateien hochgeladen werden. Jede Version wird als Archiv bezeichnet. Es können verschiedene Versionen gleichzeitig hochgeladen werden und Sie können zwischen den Versionen wechseln.
+Es können mehrere Anwendungsversionen in Cumulocity IoT gespeichert werden, indem sie als ZIP- oder MON-Dateien hochgeladen werden. Jede Version wird als Archiv bezeichnet. Es können verschiedene Versionen gleichzeitig hochgeladen werden und Sie können zwischen den Versionen wechseln.
 
 ##### So laden Sie ein Archiv hoch
 
 1. Klicken Sie zum Öffnen auf die gewünschte Anwendung.
 2. Wechseln Sie zur Registerkarte **Archiv**.
 3. Klicken Sie **Archiv hochladen** und navigieren Sie zu der Datei auf Ihrem Computer oder ziehen Sie die Datei auf das entsprechende Feld.
-4. Klicken Sie **Hochladen**, um das Archiv auf Ihr Cumulocity-Konto hochzuladen.
+4. Klicken Sie **Hochladen**, um das Archiv auf Ihr Cumulocity IoT-Konto hochzuladen.
 
 <img src="/images/benutzerhandbuch/Administration/admin-application-archive.png" alt="Application archive">
 
-Das aktive Archiv (durch ein Cloud-Symbol gekennzeichnet) ist die Version der Anwendung, die aktuell den Benutzern Ihres Kontos zur Verfügung steht. Diese Version kann nicht gelöscht werden. 
+Das aktive Archiv (durch ein Cloud-Symbol gekennzeichnet) ist die Version der Anwendung, die aktuell den Benutzern Ihres Kontos zur Verfügung steht. Diese Version kann nicht gelöscht werden.
 
 > **Info**: Die Registerkarte **Archiv** steht für abonnierte Anwendungen nicht zur Verfügung, da nur der Eigentümer der Anwendung ältere Versionen wiederherstellen kann.
 
@@ -424,11 +424,11 @@ Benutzer können ältere Versionen einer Anwendung aus einem Archiv wiederherste
 
 ### Überwachen von Microservices
 
-Es gibt zwei Möglichkeiten, Microservices in der Cumulocity-Plattform zu überwachen.
+Es gibt zwei Möglichkeiten, Microservices in der Cumulocity IoT-Plattform zu überwachen.
 
 #### Statusinformation
 
-Der Status eines Microservices kann in der Registerkarte **Status** der entsprechenden Anwendung überprüft werden. 
+Der Status eines Microservices kann in der Registerkarte **Status** der entsprechenden Anwendung überprüft werden.
 
 <img src="/images/benutzerhandbuch/Administration/admin-microservice-status.png" alt="Microservice status" style="max-width: 100%">
 
@@ -439,7 +439,7 @@ Folgende Information werden in der Registerkarte **Status** angezeigt:
 * Alarme: Alarme für die aktuelle Anwendung, angezeigt in Echtzeit
 * Ereignisse: Ereignisse für die aktuelle Anwendung, angezeigt in Echtzeit
 
-Die Statusinformation ist sowohl für abonnierte als auch für eigene Anwendungen verfügbar. Die Informationen zu den abonnierten Mandanten sind jedoch nur für den Besitzer der Anwendung sichtbar. 
+Die Statusinformation ist sowohl für abonnierte als auch für eigene Anwendungen verfügbar. Die Informationen zu den abonnierten Mandanten sind jedoch nur für den Besitzer der Anwendung sichtbar.
 
 Um den Status sehen zu können, benötigen Sie folgende Berechtigungen: ROLE&#95;APPLICATION&#95;MANAGEMENT&#95;READ and ROLE&#95;INVENTORY&#95;READ
 
@@ -449,26 +449,26 @@ Die meisten in der Registerkarte **Status** angezeigten Alarme und Ereignisse si
 
 Es gibt zwei benutzerfreundliche Alarmtypen:
 
-* `c8y_Application_Down` - kritischer Alarm, der erzeugt wird, wenn keine Microservice-Instanz verfügbar ist 
+* `c8y_Application_Down` - kritischer Alarm, der erzeugt wird, wenn keine Microservice-Instanz verfügbar ist
 * `c8y_Application_Unhealthy` - weniger wichtiger Alarm, der erzeugt wird, wenn mindestens eine Microservice-Instanz korrekt funktioniert, aber nicht alle Instanzen vollständig in Betrieb sind
 
 Benutzerfreundliche Alarme werden nur für den Microservice-Eigentümer-Mandanten erzeugt. Sie werden auch automatisch gelöscht, wenn der Normalzustand wiederhergestellt ist, d. h., wenn alle Microservice-Instanzen korrekt funktionieren.
 
-Benutzerfreundliche Alarme können zum Erstellen von Smart Rules verwendet werden. Weitere Informationen zum Erstellen verschiedener Arten von Smart Rules finden Sie unter [Smart Rules](/benutzerhandbuch/cockpit-de/#smart-rules). 
+Benutzerfreundliche Alarme können zum Erstellen von Smart Rules verwendet werden. Weitere Informationen zum Erstellen verschiedener Arten von Smart Rules finden Sie unter [Smart Rules](/benutzerhandbuch/cockpit-de/#smart-rules).
 
-Soll zum Beispiel eine E-Mail gesendet werden, wenn ein Microservice außer Betrieb ist, erstellen Sie eine Smart Rule "Bei Alarm E-Mail senden". 
+Soll zum Beispiel eine E-Mail gesendet werden, wenn ein Microservice außer Betrieb ist, erstellen Sie eine Smart Rule "Bei Alarm E-Mail senden".
 
 Verwenden Sie im Bereich **Bei Alarm vom Typ** den Alarmtyp `c8y_Application_Down`. Wählen Sie als Ziel-Asset den Microservice, den Sie überwachen möchten, z. B. "echo-agent-server".
 
 #### Logdateien
 
-Cumulocity ermöglicht das Anzeigen von Logdaten, die weitere Informationen zum Status von Microservices liefern.
+Cumulocity IoT ermöglicht das Anzeigen von Logdaten, die weitere Informationen zum Status von Microservices liefern.
 
-Um Logdaten anzuzeigen, öffnen Sie die Registerkarte **Logdaten** des jeweiligen Microservice. 
+Um Logdaten anzuzeigen, öffnen Sie die Registerkarte **Logdaten** des jeweiligen Microservice.
 
 <img src="/images/benutzerhandbuch/Administration/admin-applications-logs.png" alt="Microservice log" style="max-width: 100%">
 
-Links oben auf der Seite können Sie die Microservice-Instanz auswählen, für die Sie Logdaten anzeigen möchten. 
+Links oben auf der Seite können Sie die Microservice-Instanz auswählen, für die Sie Logdaten anzeigen möchten.
 
 > **Info**: Falls Ihr Microservice in zwei Instanzen aufgeteilt wurde, können Sie zwar zwischen diesen wechseln, es ist jedoch nicht möglich, die Logdaten beider Instanzen gleichzeitig anzuzeigen.
 
@@ -484,7 +484,7 @@ Rechts oben stehen weitere Funktionalitäten zur Verfügung:
 * **Abbestellen** - zum Abbestellen des Microservice.
 * **Löschen** - zum Löschen des Microservice.
 
-Anfänglich werden auf der Registerkarte **Logdaten** der ausgewählten Microservice-Instanz die neuesten Logdaten angezeigt. 
+Anfänglich werden auf der Registerkarte **Logdaten** der ausgewählten Microservice-Instanz die neuesten Logdaten angezeigt.
 
 Rechts unten finden Sie die folgenden Navigationsschaltflächen:
 
@@ -492,14 +492,14 @@ Rechts unten finden Sie die folgenden Navigationsschaltflächen:
 * **Zurück** - erhöht das Zeitintervall in Schritten von 10 Minuten.
 * **Vor** - verringert das Zeitintervall in Schritten von 10 Minuten.
 * **Zum Ende** - führt direkt zu den neuesten verfügbaren Logeinträgen.
-  
+
 Wenn im ausgewählten Zeitintervall keine Logdaten verfügbar sind, wird eine entsprechende Meldung angezeigt:
 
 <img src="/images/benutzerhandbuch/Administration/admin-microservice-no-logs.png" alt="Microservice log">
 
 > **Info**: Es gibt keine Möglichkeit, die Logdaten der zuvor ausgeführten Instanzen anzuzeigen, allerdings wird in jeder Instanz ein Docker-Container ausgeführt, und wenn nur dieser (nicht die gesamte Instanz) neu gestartet wurde, sollte es möglich sein, die Logdaten des aktuell aktiven sowie des kürzlich beendeten Docker-Containers anzuzeigen.
 
->Logdaten werden aus dem Docker-Container immer mittels der beiden Quellen `stdout` und `stderr` geladen und es gibt keine Möglichkeit, nach der Quelle zu unterscheiden bzw. zu filtern. 
+>Logdaten werden aus dem Docker-Container immer mittels der beiden Quellen `stdout` und `stderr` geladen und es gibt keine Möglichkeit, nach der Quelle zu unterscheiden bzw. zu filtern.
 
 
 ### <a name="default-applications"></a>Standardanwendungen

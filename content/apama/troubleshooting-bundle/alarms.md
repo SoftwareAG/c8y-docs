@@ -11,8 +11,8 @@ Alarms are created by user applications in the Cumulocity IoT tenant (for exampl
  You can view alarms in the following ways:
 
 1. In the Cockpit application. See [Cockpit](/users-guide/cockpit/) in the *User guide* for detailed information.
-2. In the Administration application, in the **Applications** menu under **Subscribed applications** (or possibly under **Own applications**). Click the card for Apama-ctrl and then click **Status**. See [Managing applications](/users-guide/administration/#managing-applications) and especially its subsection "Monitoring microservices" in the *User guide* for detailed information.
-3. From the Apama EPL Apps and Apama Analytics Builder applications. Click the **Diagnostics** (or **Enhanced**) link which is provided with either application. A ZIP file is then downloaded that contains alarms information under */alarms/alarms_apama-ctrl-object.json*. See [Downloading diagnostics and logs](#diagnostics-download) for detailed information. 
+2. In the Administration application, in the **Applications** menu under **Subscribed applications** (or possibly under **Own applications**). Click the card for Apama-ctrl and then click **Status**. See [Managing applications](/users-guide/administration/#managing-applications) and especially its subsection *Monitoring microservices* in the *User guide* for detailed information.
+3. From the Apama EPL Apps and Apama Analytics Builder applications. Click the **Diagnostics** (or **Enhanced**) link which is provided with both applications. A ZIP file is then downloaded that contains alarms information under */alarms/alarms_apama-ctrl-object.json*. See [Downloading diagnostics and logs](#diagnostics-download) for detailed information. 
 
 ### Alarm severities
 
@@ -29,23 +29,23 @@ Apama-ctrl can create alarms to notify users in scenarios such as Apama license 
 
 The following is a list of the alarms. The information further down below explains when these alarms will occur, their consequences, and how to resolve them. 
 
-- Change in tenant options and restart of Apama-ctrl.
-- No license found on startup.
-- License change and restart of Apama-ctrl.
-- License expiry.
-- Safe mode on startup.
-- Deactivating models in Apama Starter.
-- High memory usage.
-- Warning or higher level logging from an EPL file.
-- An EPL file throws an uncaught exception.
-- Invalid measurement format.
-- The CEP queue is full (this alarm is coming from Cumulocity IoT core, but concerns Apama-ctrl). 
+- [Change in tenant options and restart of Apama-ctrl](#tenant_option_change)
+- [No license found on startup](#apama_license_none)
+- [License change and restart of Apama-ctrl](#apama_license_found)
+- [License expiry](#apama_licenseexpiry)
+- [Safe mode on startup](#apama_safe_mode)
+- [Deactivating models in Apama Starter](#apama_ctrl_starter)
+- [High memory usage](#apama_highmemoryusage)
+- [Warning or higher level logging from an EPL file](#apama_ctrl_fatalcritwarn)
+- [An EPL file throws an uncaught exception](#apama_ctrl_error)
+- [Invalid measurement format](#apama_measurementformat_invalid)
+- [The CEP queue is full](#cep_queue_full) (this alarm is coming from Cumulocity IoT Core, but concerns Apama-ctrl)
 
 Once the cause of an alarm is resolved, you have to acknowledge and clear the alarm in the Cumulocity IoT tenant. Otherwise, you will continue to see the alarm until a further restart of the Apama-ctrl microservice.
 
-> **Info**: The alarm texts for the alarms below may undergo minor changes in the future.
+> **Info:** The alarm texts for the alarms below may undergo minor changes in the future.
 
-#### Change in tenant options and restart of Apama-ctrl
+#### <a name="tenant_option_change"></a>Change in tenant options and restart of Apama-ctrl
 
 This alarm is raised only when a tenant option changes in the `analytics.builder` category. For details on the tenant options, refer to [Option](/reference/tenants/#option) in the *Reference guide*.
 
@@ -57,7 +57,7 @@ Apama Analytics Builder allows you to configure its settings by changing the ten
 
 Once you see this alarm, you can be sure that your change is effective.
 
-#### No license found on startup
+#### <a name="apama_license_none"></a>No license found on startup
 
 This alarm is raised when correlator cannot find a valid Apama license. Software AG provides an Apama license file for use during the product installation. For more details, see [About Apama license files](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2Fco-IntToApa_about_apama_license_files.html) in the Apama documentation.
 
@@ -69,7 +69,7 @@ The Apama correlator looks for a license key during its startup. If a license ke
 
 When a valid Apama license is not found, an alarm of MAJOR severity with the above type and text is raised by the Apama-ctrl microservice. You can either continue without an Apama license with limited capabilities or upload a valid Apama license file to get the full functionality of Apama EPL Apps and Apama Analytics Builder. For getting a license, refer to [License file](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2Fco-InsApa_license_file.html) in the Apama documentation.
 
-#### License change and restart of Apama-ctrl
+#### <a name="apama_license_found"></a>License change and restart of Apama-ctrl
 
 This alarm is raised when Apama-ctrl restarts due to license changes.
 
@@ -79,9 +79,9 @@ This alarm is raised when Apama-ctrl restarts due to license changes.
 
 The Apama-ctrl microservice detects changes in the license file. To apply the latest changes, the Apama-ctrl microservice has to be restarted. To notify the users about the restart, the microservice raises an alarm with MINOR severity.
 
-It is recommended that you also check for any other alarms after the restart, just to make sure Apama-ctrl is able start with the new license.
+It is recommended that you also check for any other alarms after the restart, just to make sure Apama-ctrl is able to start with the new license.
 
-#### License expiry
+#### <a name="apama_licenseexpiry"></a>License expiry
 
 This alarm is raised when the license is about to expire. It is repeated seven days prior to the license expiry date.
 
@@ -97,7 +97,7 @@ Refer to Software AG support or the Operations guide for how to upload a new lic
 
 You can view the license information using the diagnostics information as described in [Downloading diagnostics and logs](#diagnostics-download). When you click the **Diagnostics** link, a ZIP file is downloaded which contains license information in the file */info/license.json*. 
 
-#### Safe mode on startup
+#### <a name="apama_safe_mode"></a>Safe mode on startup
 
 This alarm is raised whenever the Apama-ctrl microservice switches to Safe mode.
 
@@ -128,7 +128,7 @@ To diagnose the cause of a correlator crash, you can try the following:
 
 In Safe mode, all previously active Apama Analytics Builder models and Apama EPL applications are deactivated and must be manually re-activated.
 
-#### Deactivating models in Apama Starter
+#### <a name="apama_ctrl_starter"></a>Deactivating models in Apama Starter
 
 This alarm is raised when Apama-ctrl switches from the licensed microservice to Apama Starter with more than 3 active models.
 
@@ -138,11 +138,11 @@ This alarm is raised when Apama-ctrl switches from the licensed microservice to 
 
 In Apama Starter, a user can have a maximum of 3 active models. For example, a user is working with the licensed Apama-ctrl microservice and has 5 active models, and then switches to Apama Starter. Since Apama Starter does not allow more than 3 active models, it deactivates all the active models (5) and raises an alarm to notify the user.
 
-#### High memory usage
+#### <a name="apama_highmemoryusage"></a>High memory usage
 
 This alarm is raised whenever the correlator consumes 90% of the maximum memory permitted for the microservice container. During this time, the Apama-ctrl microservice automatically generates the diagnostics overview ZIP file which contains diagnostics information used for identifying the most likely cause for memory consumption.
 
-There are 3 variants of this alarm, depending on the time and count restrictions of the generated diagnostics overview zip file. 
+There are 3 variants of this alarm, depending on the time and count restrictions of the generated diagnostics overview ZIP file. 
 
 First variant:
 
@@ -190,7 +190,7 @@ If the memory continues to grow, then when it reaches the limit, the correlator 
 
 See also the TECHniques blog post at "[Diagnostic tools for Apama in Cumulocity IoT](http://techcommunity.softwareag.com/techniques-blog/-/blogs/apama-in-cumulocity-iot)".
 
-#### Warning or higher level logging from an EPL file
+#### <a name="apama_ctrl_fatalcritwarn"></a>Warning or higher level logging from an EPL file
 
 This alarm is raised whenever messages are logged by Apama EPL files with specific log levels (including CRITICAL, FATAL, ERROR and WARNING).
 
@@ -229,7 +229,7 @@ Third alarm:
 - Alarm text: &lt;Monitor name&gt;-Warning.
 - Alarm severity: WARNING
 
-#### An EPL file throws an uncaught exception
+#### <a name="apama_ctrl_error"></a>An EPL file throws an uncaught exception
 
 You have seen that the Apama-ctrl microservice raises alarms for logged messages. In addition, there can also be uncaught exceptions (during runtime). Apama-ctrl identifies such exceptions and raises alarms so that you can identify and fix the problem. 
 
@@ -255,7 +255,7 @@ You can diagnose the issue by the monitor name and line number given in the alar
 
 For more details, you can also check the Apama logs if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these uncaught exceptions will terminate the execution of that monitor instance, which will typically mean that your application is not going to function correctly. This might even lead to a correlator crash if not handled properly.
 
-### Invalid measurement format
+### <a name="apama_measurementformat_invalid"></a>Invalid measurement format
 
 This alarm is raised whenever the `measurementFormat` key is set with an invalid value in the tenant option.
 
@@ -265,7 +265,7 @@ This alarm is raised whenever the `measurementFormat` key is set with an invalid
 
 Valid `measurementFormat` values for any tenant are `MEASUREMENT_ONLY` and `BOTH`. The default value is `MEASUREMENT_ONLY`.
 
-#### The CEP queue is full
+#### <a name="cep_queue_full"></a>The CEP queue is full
 
 This alarm is raised whenever the CEP queue for the respective tenant is full.
 
@@ -282,4 +282,4 @@ To diagnose the cause, you can try the following. It may be that the Apama-ctrl 
 
 - If both input and output queues are full, this suggests a slow receiver, possibly EPL sending too many requests (or too expensive a request) to Cumulocity IoT.
 - Else, if only the input queue is full, EPL is probably running in a tight loop. Try analyzing the *cpuProfile.csv* output in the diagnostic overview ZIP file, especially the monitor name and CPU time. The data collected in the profiler may also help in identifying other possible bottlenecks. For details, refer to [Using the CPU profiler](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2Fta-DepAndManApaApp_using_the_cpu_profiler.html) in the Apama documentation. 
-- Else, the cause may be some issue with connectivity or in Cumulocity IoT core.
+- Else, the cause may be some issue with connectivity or in Cumulocity IoT Core.

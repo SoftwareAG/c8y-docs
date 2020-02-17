@@ -73,11 +73,15 @@ Open the Cumulocity UI in a web browser, open the **Device management** applicat
 
 By default, TinkerForge components are named using the name of the device that they are connected to (for example, "RaspPi BCM2708 10000000e2f5ad4d"), the type of component (for example, "TFHumidityBricklet", indicating the Tinkerforge bricklet that measures humidity) and the serial number of the component (for example, "nBL"). You can edit the name in the **Info** tab of the device.
 
+#### Barometer, humidity, ambient light, moisture, distance, voltage, current and temperature bricklets
 
-<!-- ChrisB: commented out this section, since the info is presented elsewhere in this document
-#### Configuration of Cockpit display/logging for sensor data
+Sensor data can be visualized in the Cumulocity Cockpit application by clicking on the **Data explorer** tab of the RaspPi. Under **Data points** you can select which sensor readings from the Weather Station you wish to display. The display updates in real time to show a graph of the sensor data over a defined period of time (for example, over the last hour). The period of time is selectable via a drop-down box adjacent to the graph.
 
-You can configure the way in which Cumulocity displays sensor data or logs status information coming from the Weather Station.  To access this functionality in the Cumulocity UI, go to the **Device Management** application, navigate to the RaspPi and open the **Configuration** panel. It contains different client-side defined options that can be altered, for example:
+<!--
+![Sensor measurements](/images/device-demos/tinkerforge/tinkerforgemeasurements.png)
+-->
+
+The data is regularly collected by the Cumulocity agent on the RaspPi. The frequency of the collection can be configured on the **Configuration** panel of the RaspPi in the **Device management** application of the Cumulocity web interface. Typical entries in the **Configuration** panel are:
 
 ````console
 c8y.barometer.interval=5000
@@ -89,20 +93,7 @@ c8y.humidity.interval=5000
 
 The settings with `.interval` are given in milliseconds. If you want to change any of the settings, change the configuration value accordingly in this display and save your changes. For example, if you change the value of `c8y.light.interval` from 5000 to 10000, the Data Explorer for the RaspPi in the Cockpit will show updated values for the Weather Station's ambient light bricklet every 10 seconds. 
 
-![Bricklet Configuration](/images/device-demos/tinkerforge/tinkerforgeconfiguration.png)
--->
-
-#### Barometer, humidity, ambient light, moisture, distance, voltage, current and temperature bricklets
-
-Sensor data can be visualized in the Cumulocity Cockpit application by clicking on the **Data explorer** tab of the RaspPi. Under **Data points** you can select which sensor readings from the Weather Station you wish to display. The display updates in real time to show a graph of the sensor data over a defined period of time (for example, over the last hour). The period of time is selectable via a drop-down box adjacent to the graph.
-
-<!--
-![Sensor measurements](/images/device-demos/tinkerforge/tinkerforgemeasurements.png)
--->
-
-The data is regularly collected by the Cumulocity agent on the RaspPi. The frequency of the collection can be configured on the **Configuration** panel of the RaspPi in the **Device management** application of the Cumulocity web interface. For example, "c8y.light.interval=5000" means that the light sensor is queried every 5000 milliseconds.
-
-<!-- ChrisB  2020-02-13: omitting the PTC bricklet for the updated demo doc 
+<!-- omitting the PTC bricklet for the updated demo doc 
 #### PTC bricklet
 
 ![PTC bricklet](/images/device-demos/tinkerforge/ptc.jpg)
@@ -129,7 +120,7 @@ To operate the display from Cumulocity, proceed as follows:
 
 Similarly, if you want to toggle the LCD display's backlight on and off, create a **Relay Control** widget, set it up to use the **Display** asset of the RaspPi, and use the on/off setting.
 
-<!-- ChrisB 2020-02-14: This part doesn't appear to be present in the latest Cumulocity UI
+<!-- omitting this for the updated demo doc
 
 ![Display usage](/images/device-demos/tinkerforge/tinkerforgedisplay.png)
 
@@ -139,7 +130,7 @@ The display has four buttons at the bottom. Operating these buttons will send an
 
 -->
 
-<!-- ChrisB  2020-02-13: omitting this for the updated demo doc 
+<!-- omitting this for the updated demo doc 
 
 #### 4x7 Segment Display bricklet
 
@@ -149,7 +140,7 @@ The 4x7 Segment Display's implementation is similar to that of the LCD Display b
 
 -->
 
-<!-- ChrisB  2020-02-13: omitting this for the updated demo doc 
+<!-- omitting this for the updated demo doc 
 
 #### Remote Switch bricklet
 
@@ -231,7 +222,7 @@ will turn off "device2" and turn on "device1".
 
 -->
 
-<!-- ChrisB  2020-02-13: omitting this for the updated demo doc 
+<!-- omitting this for the updated demo doc 
 
 #### Dual Relay Bricklet
 
@@ -254,7 +245,7 @@ For example, the operation above will set the state of relay one to "OPEN" and r
 
 -->
 
-<!-- ChrisB  2020-02-13: omitting this for the updated demo doc 
+<!-- omitting this for the updated demo doc 
 
 #### IO16 bricklet
 
@@ -299,7 +290,7 @@ This operation will find up to four outputs starting from A0 to B7 and switch th
 
 -->
 
-<!-- ChrisB  2020-02-13: omitting this for the updated demo doc 
+<!-- omitting this for the updated demo doc 
 
 #### Distance InfraRed and UltraSound bricklets
 
@@ -313,7 +304,7 @@ Note: The DistanceUS bricklet measures distance in percentages, where 0% would b
 
 -->
 
-<!-- ChrisB  2020-02-13: omitting this for the updated demo doc 
+<!-- omitting this for the updated demo doc 
 
 #### GPS bricklet
 

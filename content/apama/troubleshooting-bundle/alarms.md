@@ -260,7 +260,7 @@ For more details, you can also check the Apama logs if the tenant has the "micro
 This alarm is raised whenever the `measurementFormat` key is set with an invalid value in the tenant option.
 
 - Alarm type: `apama_measurementformat_invalid`
-- Alarm text: The measurementFormat property set in the tenant option is not supported. Setting it to default.
+- Alarm text: The measurementFormat tenant option is set to an invalid value "FRAGMENT_ONLY". Setting it to "MEASUREMENT_ONLY".
 - Alarm severity: WARNING
 
 Valid `measurementFormat` values for any tenant are `MEASUREMENT_ONLY` and `BOTH`. The default value is `MEASUREMENT_ONLY`.

@@ -1,12 +1,12 @@
 ---
 weight: 20
-title: Querying Cumulocity data
+title: Querying Cumulocity IoT data
 layout: redirect
 ---
 
 To interact with your historical data, you can use one of the following request-response event pairs to look up resources.
 
-Example: To look up alarms, you can send a FindAlarm request event with appropriate query parameters to the FindAlarm.CHANNEL channel. In response, you can expect 0 or more FindAlarmResponse events (depending on the number of resources that match the lookup request) and a FindAlarmResponseAck event on the FindAlarmResponse.CHANNEL channel. Similar functionality is also provided for looking up managed objects, events, measurements and operations.
+Example: To look up alarms, you can send a FindAlarm request event with appropriate query parameters to the FindAlarm.SEND_CHANNEL channel. In response, you can expect 0 or more FindAlarmResponse events (depending on the number of resources that match the lookup request) and a FindAlarmResponseAck event on the FindAlarmResponse.SUBSCRIBE_CHANNEL channel. Similar functionality is also provided for looking up managed objects, events, measurements and operations.
 
 |To look up|Request-Response Events|Example|
 |:---------|:-----------------|:---------|

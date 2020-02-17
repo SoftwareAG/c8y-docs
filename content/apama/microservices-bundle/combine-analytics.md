@@ -56,7 +56,7 @@ First we need to collect some data from measurements. This will use techniques w
 ```java
 action listenForSignalStrength(string deviceId, string modelName)
 {
-    monitor.subscribe(Measurement.CHANNEL);
+    monitor.subscribe(Measurement.SUBSCRIBE_CHANNEL);
     on all Measurement(source = deviceId) as m {
         if (m.measurements.hasKey("c8y_SignalStrengthWifi")) {
             string record := convertMeasurementToRecord(m);
@@ -96,7 +96,7 @@ event ZementisHandler
         integer statusCode := zementisResponse.statusCode;
         if (statusCode = 200 and <boolean> zementisResponse.payload.getSequence("outputs")[0].getEntry("outlier") = true) {
             send Alarm("", "AnomalyDetectionAlarm", deviceId, currentTime,
-                "Anomaly detected", "ACTIVE", "CRITICAL", 1, new dictionary<string, any>) to Alarm.CHANNEL;
+                "Anomaly detected", "ACTIVE", "CRITICAL", 1, new dictionary<string, any>) to Alarm.SEND_CHANNEL;
         }
     }
 }

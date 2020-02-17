@@ -28,9 +28,9 @@ monitor MonitorDevicesForCircularGeofence {
 	}
 
 	action onload {
-		monitor.subscribe(Measurement.CHANNEL);
-		monitor.subscribe(FindManagedObjectResponse.CHANNEL);
-		monitor.subscribe(FindAlarmResponse.CHANNEL);
+		monitor.subscribe(Measurement.SUBSCRIBE_CHANNEL);
+		monitor.subscribe(FindManagedObjectResponse.SUBSCRIBE_CHANNEL);
+		monitor.subscribe(FindAlarmResponse.SUBSCRIBE_CHANNEL);
 		on all Event() as e {
 			if e.params.hasKey("c8y_Position") {
 				// we have an event
@@ -66,19 +66,19 @@ monitor MonitorDevicesForCircularGeofence {
 					secondPos.distance > secondPos.maxDistance {
 					send Alarm("", "c8y_GeofenceAlarm", firstPos.source, currentTime,
 							"Device moved out of circular geofence", "ACTIVE",
-							"MAJOR", 1, new dictionary<string,any>) to Alarm.CHANNEL;
+							"MAJOR", 1, new dictionary<string,any>) to Alarm.SEND_CHANNEL;
 				}
 
 				if firstPos.distance > firstPos.maxDistance and
 					secondPos.distance <= secondPos.maxDistance {
 					integer reqId:= integer.getUnique();
 					send FindAlarm(reqId, {"source": firstPos.source, 
-						"status": "ACTIVE", "type": "c8y_GeofenceAlarm"}) to FindAlarm.CHANNEL;
+						"status": "ACTIVE", "type": "c8y_GeofenceAlarm"}) to FindAlarm.SEND_CHANNEL;
 					on FindAlarmResponse(reqId=reqId) as alarmResponse
 					and not FindAlarmResponseAck(reqId=reqId) {
 						send Alarm(alarmResponse.id, "c8y_GeofenceAlarm",
 								firstPos.source, currentTime, "Device moved back into circular geofence",
-								"CLEARED", alarmResponse.alarm.severity, 1, new dictionary<string, any>) to Alarm.CHANNEL;
+								"CLEARED", alarmResponse.alarm.severity, 1, new dictionary<string, any>) to Alarm.SEND_CHANNEL;
 					}
 				}
 			}

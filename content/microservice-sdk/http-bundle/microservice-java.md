@@ -16,7 +16,7 @@ This microservice application creates a warning alarm message (for demonstration
 - Track a user's approximate location and store it in the platform.
 - Get the tracked IPs and locations.
 
-It also uses the Cumulocity UI to display the tracked locations on a map.
+It also uses the Cumulocity IoT UI to display the tracked locations on a map.
 
 #### Update the Project Object Model
 
@@ -130,7 +130,7 @@ BODY:
 
 You will get the ID of your managed object in the response. Assign this ID in your _cumulocity.json_ file to the `"tracker.id"` key.
 
-On the Cumulocity platform, navigate to **Devices** > **All devices** in the Device Management application to verify that your device has been created and its location is displayed on the map.
+On the Cumulocity IoT platform, navigate to **Devices** > **All devices** in the Device Management application to verify that your device has been created and its location is displayed on the map.
 
 ![Microservice tracking](/images/microservices-sdk/ms-tracking-newdevice.png)
 
@@ -314,7 +314,7 @@ public class App {
         var apiURL = "http://api.ipstack.com/" + ip + "?access_key=" + c8yEnv.get("ipstack.key");
         var location = rest.getForObject(apiURL, Location.class);
 
-        // Prepare a LocationUpdate event using Cumulocity's API
+        // Prepare a LocationUpdate event using Cumulocity IoT's API
         var c8y_Position = new JSONObject();
         c8y_Position.put("lat", location.getLatitude());
         c8y_Position.put("lng", location.getLongitude());

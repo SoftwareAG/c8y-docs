@@ -13,11 +13,19 @@ You can see a version number in the EPL application manager and in the model man
 Basic diagnostics information is provided in a ZIP file named *diagnostic-overview&lt;timestamp&gt;.zip* and includes the following information (this should be typically a few Megabytes, and be generated in about 5 seconds):
 
 - The microservice log file contents, if available, including a record of the correlator's startup logging and the last hour or maximum of 20,000 lines of logging.
+
+    > **Info:** In case of Cumulocity IoT Edge 10.6.0, since Apama is not a microservice, Apama logs can be retrieved using the diagnostic utility. For more details, see [Apama log file locations](/edge/operation/#apama-log-file-locations) and [Diagnostics](/edge/operation/#diagnostics) both in the *Cumulocity IoT Edge* guide.
+
 - Apama-internal diagnostics information (similar to the `engine_watch` and `engine_inspect` command-line tools available in Apama).
+
 - A copy of all EPL applications, smart rules and Analytics Builder models.
+
 - A copy of any alarms that the Apama-ctrl microservice has raised.
+
 - CPU profiling (over a duration of 5 seconds).
+
 - Some information from the environment (tenant details, environment variables).
+
 - Version numbers of the components.
 
 Enhanced diagnostics information is provided in a ZIP file named *diagnostic-enhanced&lt;timestamp&gt;.zip* and includes the following information:

@@ -32,10 +32,10 @@ To run the Cumulocity mbed agent, the following items are required:
 * [mbed appliation shield](https://mbed.org/components/mbed-Application-Shield/).
 * A USB type A to type B adapter.
 * A power supply.
-* A SIM card with data plan for Internet access. The SIM card should have no SIM PIN. The SIM PIN can be deactivated using any mobile phone.
+* A SIM card with data plan for internet access. The SIM card should have no SIM PIN. The SIM PIN can be deactivated using any mobile phone.
 * You need access to the Cumulocity IoT platform. If you do not have access yet, try Cumulocity for free. Go to Software AG Cloud > [Cumulocity IoT] (https://www.softwareag.cloud/site/product/cumulocity-iot.html#/) and select "Try for free". 
 
-### Setup
+### Setting up and registering the device
 
 1. Insert the SIM card into the SIM slot on the backside of the u-blox C027.
 2. Attach the cellular antenna to the board.
@@ -58,21 +58,23 @@ Comment ALC: The links to the firmware are no longer correct. I can't find any o
 2. Copy the downloaded file to the "MBED" drive.
 3. Press the reset button on the C027 to start the agent.
 
-|Version|Release Date|Download|
-|---|:-:|:-:|
-|1.9      | 18.Feb 2015 | [download](/images/device-demos/ublox/devices/mbed/firmware-1.9.bin)     |
-|2.0      | 6.Mar 2015  | [download](/images/device-demos/ublox/devices/mbed/firmware-2.0c8y.bin)  |
-|2.2      | 10.Aug 2015 | [download](/images/device-demos/ublox/devices/mbed/firmware-2.2c8y.bin)  |
+| Version | Release date | Download |
+| --- | --- | --- |
+| 1.9      | 18.Feb 2015 | [download](/images/device-demos/ublox/devices/mbed/firmware-1.9.bin)     |
+| 2.0      | 6.Mar 2015  | [download](/images/device-demos/ublox/devices/mbed/firmware-2.0c8y.bin)  |
+| 2.2      | 10.Aug 2015 | [download](/images/device-demos/ublox/devices/mbed/firmware-2.2c8y.bin)  |
 
 <a id="Connecting_the_C027"></a>
-#### Connecting the C027
+#### Registering the device to the Cumulocity IoT platform
 
-* The C027 will now dial up to the Internet. You will see the status "updated" in the LCD display. If the device cannot connect to the Internet, it will display an error message. If there is an error message "Wrong APN setting" or "Unknown APN setting", follow the instructions below in the section [Troubleshooting](#Troubleshooting).
-* On successful connection for the first time, the device shows "Bootstrapping" and below the IMEI of the cellular modem on the LCD display.
+1. The C027 will now dial up to the internet. You will see the status "updated" in the LCD display. If the device cannot connect to the internet, it will display an error message. If there is an error message "Wrong APN setting" or "Unknown APN setting", follow the instructions below in the section [Troubleshooting](#Troubleshooting).
+2. On successful connection for the first time, the device shows "Bootstrapping" and below the IMEI of the cellular modem on the LCD display.
   **Info**: The IMEI can also be found on the white sticker on the modem chip of the C027.
-* Log into the Cumulocity web interface. Navigate to the **Device management** application using the application switcher at the top right. To register the device follow the instructions in [Device Management > Connecting devices] (/users-guide/device-management/#connecting-devices).
-* After successful registration the device will be listed in **All devices** with the name "Mbed Test Device".
-* When the device is connected to the Cumulocity IoT platform, it will show its current status in the LCD display. The first line always displays the tenant name (until there is a message received from the platform, see the section [Interacting with the Control Operations] (#Interacting_with_the_control_operations)). The second line shows the signal quality in units of dBm. The third line displays information about which sensor data the u-blox is sending and their corresponding values. In the case of repeatedly sending similar data, the third line remains empty.
+3. Log into the Cumulocity IoT platform. 
+4. Navigate to the Device Management application using the application switcher at the top right. 
+5. To register the device follow the instructions in [Device Management > Connecting devices] (/users-guide/device-management/#connecting-devices) in the User guide.
+6. After successful registration the device will be listed in **All devices** with the name "Mbed Test Device".
+7. When the device is connected to the Cumulocity IoT platform, it will show its current status in the LCD display. The first line always displays the tenant name (until there is a message received from the platform, see the section [Interacting with the control operations] (#Interacting_with_the_control_operations)). The second line shows the signal quality in units of dBm. The third line displays information about which sensor data the u-blox is sending and their corresponding values. In the case of repeatedly sending similar data, the third line remains empty.
 
 ### Interacting with the Cumulocity IoT platform
 
@@ -80,7 +82,7 @@ The device is now connected to Cumulocity and sends sensor data periodically. Yo
 
 #### Measurements
 
-The Application Switcher on the right of the Top Bar provides access to the **Device management** application. Select **Devices > All Devices** in the Navigator and then select the "Mbed Test Device".
+In the Device Management application, select **Devices > All Devices** in the navigator and then select the "Mbed Test Device".
 
 You can browse the collected sensor data in the **Measurements** tab:
 
@@ -96,7 +98,7 @@ The representation of sensor data can be customized.
 
 Switch to the Cockpit application using the application switcher and then navigate to **Groups > \<Your New Group>** where you will find the "Mbed Test Device". 
 
-Using the **Add > Add dashboard** functionality you can create a new dashboard. To create a new dashboard, click the **Plus** button in the top bar and from the context menu select **Add dashboard**.
+To create a new dashboard, click the **Plus** button in the top bar and from the context menu select **Add dashboard**.
 
 The new dashboard will appear in the top menu bar.
 
@@ -108,6 +110,8 @@ An example dashboard created for an mbed device is shown below:
 
 ![Dashboard Screenshot](/images/device-demos/ublox/ublox_dashboard.png)
 
+For details refer to [Dashboards](/users-guide/cockpit/#dashboards) and [Widgets collection](/users-guide/cockpit/#widgets) in the User guide.
+
 <a id="Interacting_with_the_control_operations"></a>
 #### Interacting with the control operations
 
@@ -117,50 +121,24 @@ Open the **Control** tab of the "Mbed Test Device".
 
 ![Control Operations Screenshot](/images/device-demos/ublox/ublox_operations.png)
 
-Currently  the u-blox firmware supports three operations:
+Currently the u-blox firmware supports three operations.
 
-* RELAY: Click the **On** or **Off** button on the "Relay" widget. If you click **On**, the LED will be turned on.
+##### Relay
 
-![Interval Screenshot](/images/device-demos/ublox/ublox_message.png)
+In the "Relay control" widget, switch the toggle to turn the LED on or off. 
 
-* SEND MESSAGE: In the "Message sending" widget, enter a message in the text field, and then click **Send**. After several seconds, the first line of the LCD display should display the message you sent. This message will be displayed in the first line until you send another message or restart the device.
 
-![Interval Screenshot](/images/device-demos/ublox/ublox_relay.png)
+##### Send Message
 
-* CONFIGURATION: In the **Configuration** tab of the "Mbed Test Device", the supported configuration parameters are shown with their current values. Currently for the Mbed u-blox, the only parameter is "interval" with the default value of 20 minutes, which determines the time period at which the Cumulocity IoT platform will check the availability of the device. It must be set to the same value as in the **Required interval** in the **Info** tab. 
+In the "Message sending" widget, enter a message in the text field, and then click **Send**. After several seconds, the first line of the LCD display should display the message you sent. This message will be displayed in the first line until you send another message or restart the device.
+
+
+##### Configuration
+
+In the **Configuration** tab of the "Mbed Test Device", the supported configuration parameters are shown with their current values. Currently for the Mbed u-blox, the only parameter is "interval" with the default value of 20 minutes, which determines the time period at which the Cumulocity IoT platform will check the availability of the device. It must be set to the same value as in the **Required interval** in the **Info** tab. 
 
 ![Interval Screenshot](/images/device-demos/ublox/ublox_interval.png)
 
-<a id="Troubleshooting"></a>
-### Troubleshooting
-
-* **I can't log in to the platform** (applies to Deutsche Telekom Industrie 4.0 kit only): Upper case 'i' and lower case 'l' are hard to distinguish. You may need to try different combinations to make sure the password you entered is the right one.
-
-* **The device freezes or resets when booting up**: This is commonly an issue originated from a bad power connection. Unplug and plug in your power connector again and make sure the connection is firm and stable.
-
-* **"Modem Init Failure", "No SIM card found", or "SIM has PIN code"**: Make sure you inserted the SIM card in the right direction and side. Verify that the SIM card holder is locked so that the SIM card has good contact to the device. If the SIM card has a PIN code, remove the PIN code (for example, using a mobile phone).
-
-* **GPS Init Failure**: Sometimes the agent is unable to initialize the GPS unit. Simply restart the device to resolve the issue. Note that the GPS initialization process works without an actual GPS receiver. It is therefore usually not necessary to actually attach the GPS receiver to resolve this problem.
-
-* **My GPS does not work**: This problem originates from a different data format returned by a new GPS model. Support for this new data format has been added as of version 2.2. If your GPS function does not work, download the latest firmware from the link above and follow the instructions to flash the firmware.
-
-* **No Network Coverage**: Make sure you have the modem antenna correctly mounted to the "WL\_INT" connector, otherwise the device will not be able to connect to a network.
-
-* **Agent Init Failure**: To troubleshoot this issue, we recommend you to connect the device to your computer and enable debug mode to collect more information via a serial port. See [Enabling debug mode] (#Enabling_debug_ mode) below.
-
-* **Integration/Config Failure** and **Integrate Failure**: This error occurs when you attempt to connect to a server that has not been set in the firmware. Perform a factory reset and register the device again. If this doesn't solve the problem then it's likely to be a server-side issue. Contact your network administrator if you are connecting to your own Cloud instance or contact [support](https://empower.softwareag.com/ContactSupport/) if you are connecting directly to Cumulocity.
-
-* **The device failed to join a network and displays "Wrong APN setting" or "Unknown APN setting"**: Review the source code file _C027_Support/MDMAPN.h_ and add an entry with the Mobile Country Code (MCC), Mobile Network Code (MNC) and your APN setting. The current MMC and MNC code should be shown on the LCD display below the error message "Wrong APN setting" or "Unknown APN setting".
-
-* **The device does not appear as *Connected* in the device registration process**: Review the application output using a serial console. See https://os.mbed.com/handbook/SerialPC for details. Also make sure you flashed the device with the correct firmware version, i.e. the one that performs the bootstrap against the correct server.
-
-* **The device does not appear in the devices list in the UI**: Review the application output using a serial console. See https://os.mbed.com/handbook/SerialPC for details.
-
-* **Upon boot-up, the device displays "Connect to Cloud" right after "Agent Run", instead of showing "Bootstrapping" and IMEI**: The device is already registered with Cumulocity under another user account, a factory reset has to be performed to unregister the device.
-
-* **The device does not send GPS data**: The GPS receiver needs to have direct sight to the sky to receive satellite signals. Bad weather can also influence GPS reception.
-
-* **I have accidentally deleted my device from the devices list**: Restart your device and wait a while. Your device will automatically re-register with Cumulocity and appear again.
 
 ### Tips and tricks for users
 
@@ -179,13 +157,13 @@ When a u-blox device is already registered under a certain tenant, a factory res
 
 * Press and hold the joystick when (re)starting an already registered device.
 * Prior to 2.1, after the LCD display shows "Join Network" and the device is correctly joined to the network, you should see "Reset Success" shown on the LCD display, which indicates a successful factory reset. Starting from version 2.1, a factory reset is much faster, simply wait for "Factory resetting" to appear on the screen, and you can release your finger. After about 2 seconds, you should see "Reset Success" on the display.
-* Now restart the u-blox device and follow the instructions described in Section [Connecting the C027](#Connecting_the_C027) to register the device again under your tenant.
+* Now restart the u-blox device and follow the instructions described in section [Registering the device to the Cumulocity IoT platform](#Connecting_the_C027) to register the device again under your tenant.
 
 
-#### Tips and tricks for developers
+### Tips and tricks for developers
 
 <a id="Enabling_debug_ mode"></a>
-##### Enabling debug mode
+#### Enabling debug mode
 
 By default, the agent runs in production mode, which does not write any information to the serial port. You can enable the debug mode to see a detailed log of the agent running. Prior to version 2.1, in order to enable debug mode, you can either push up the joystick before starting the agent, or at any time after the agent is *connected* to the cloud and running. Starting from version 2.1, simply push up the joystick at any time to enable the debug mode.
 
@@ -195,7 +173,7 @@ The debug information is printed to the serial port of the device. To view its c
 
 > When the agent is running in debug mode, many operations will be slowed down by a factor of 2 to 3 because of the large amount of I/O operations. If you want to disable the debug mode and switch back to express mode, simply push down the joystick and hold for several seconds (no holding is required starting from version 2.1).
 
-##### Changing the agent source code
+#### Changing the agent source code
 
 If you want to change the behaviour of the agent, go to mbed.org and adopt the source code. Here are the steps required to do so:
 
@@ -204,9 +182,9 @@ If you want to change the behaviour of the agent, go to mbed.org and adopt the s
 3. Visit <a href="http://mbed.org/users/Cumulocity/code/MbedSmartRestMain/">Cumulocity Mbed SmartREST main application</a> and click **Import into Compiler** to import the agent into your online Mbed IDE.
 4. In the IDE, click **Compile**. The IDE will download the compiled application to your computer.
 5. Copy the downloaded file to the "MBED" drive.
-6 Press the reset button on the C027 to start the agent.
+6. Press the reset button on the C027 to start the agent.
 
-##### Changing the reporting interval in the source code
+#### Changing the reporting interval in the source code
 
 By default the reporting intervals for all sensor values are 15 minutes. You can change the reporting intervals by changing the defined corresponding macros in the source code (all units in second):
 
@@ -216,7 +194,7 @@ By default the reporting intervals for all sensor values are 15 minutes. You can
 * `measurement/SignalQualityMeasurement.cpp`: TIME_LIMIT_SIG
 * `measurement/Temperature.cpp`: TIME_LIMIT_TEMP
 
-##### Changing the reporting sensitivity threshold in the source code
+#### Changing the reporting sensitivity threshold in the source code
 
 Due to the jittering nature of the sensor readings, there is a threshold set for all sensor values to avoid constantly reporting false positive sensor reading changes. As the sensitivity of the sensors varies, the thresholds for different sensors vary. These thresholds are defined as a fraction of the last reported sensor values and you can also change them in the corresponding source file (all in real fraction numbers):
 
@@ -225,3 +203,33 @@ Due to the jittering nature of the sensor readings, there is a threshold set for
 * `measurement/LocationUpdate.cpp`: THRESHOLD_PERCENT_LOC [default: 0.05]
 * `measurement/SignalQualityMeasurement.cpp`: THRESHOLD_PERCENT_SIG [default: 0.06]
 * `measurement/Temperature.cpp`: THRESHOLD_PERCENT_TEMP [default: 0.02]
+
+<a id="Troubleshooting"></a>
+### Troubleshooting
+
+* **The device freezes or resets when booting up**: This is commonly an issue originated from a bad power connection. Unplug and plug in your power connector again and make sure the connection is firm and stable.
+
+* **"Modem Init Failure", "No SIM card found", or "SIM has PIN code"**: Make sure you inserted the SIM card in the right direction and side. Verify that the SIM card holder is locked so that the SIM card has good contact to the device. If the SIM card has a PIN code, remove the PIN code (for example, using a mobile phone).
+
+* **GPS Init Failure**: Sometimes the agent is unable to initialize the GPS unit. Simply restart the device to resolve the issue. Note that the GPS initialization process works without an actual GPS receiver. It is therefore usually not necessary to actually attach the GPS receiver to resolve this problem.
+
+* **My GPS does not work**: This problem originates from a different data format returned by a new GPS model. Support for this new data format has been added as of version 2.2. If your GPS function does not work, download the latest firmware from the link above and follow the instructions to flash the firmware.
+
+* **No Network Coverage**: Make sure you have the modem antenna correctly mounted to the "WL\_INT" connector, otherwise the device will not be able to connect to a network.
+
+* **Agent Init Failure**: To troubleshoot this issue, we recommend you to connect the device to your computer and enable debug mode to collect more information via a serial port. See [Enabling debug mode] (#Enabling_debug_ mode) below.
+
+* **Integration/Config Failure** and **Integrate Failure**: This error occurs when you attempt to connect to a server that has not been set in the firmware. Perform a factory reset and register the device again. If this doesn't solve the problem then it's likely to be a server-side issue. Contact your network administrator if you are connecting to your own Cloud instance or contact [support](https://empower.softwareag.com/ContactSupport/) if you are connecting directly to Cumulocity.
+
+* **The device failed to join a network and displays "Wrong APN setting" or "Unknown APN setting"**: Review the source code file _C027_Support/MDMAPN.h_ and add an entry with the Mobile Country Code (MCC), Mobile Network Code (MNC) and your APN setting. The current MMC and MNC code should be shown on the LCD display below the error message "Wrong APN setting" or "Unknown APN setting".
+
+* **The device does not appear as CONNECTED in the device registration process**: Review the application output using a serial console. See https://os.mbed.com/handbook/SerialPC for details. Also make sure you flashed the device with the correct firmware version, i.e. the one that performs the bootstrap against the correct server.
+
+* **The device does not appear in the devices list in the UI**: Review the application output using a serial console. See https://os.mbed.com/handbook/SerialPC for details.
+
+* **Upon boot-up, the device displays "Connect to Cloud" right after "Agent Run", instead of showing "Bootstrapping" and IMEI**: The device is already registered with Cumulocity under another user account, a factory reset has to be performed to unregister the device.
+
+* **The device does not send GPS data**: The GPS receiver needs to have direct sight to the sky to receive satellite signals. Bad weather can also influence GPS reception.
+
+* **I have accidentally deleted my device from the devices list**: Restart your device and wait a while. Your device will automatically re-register with Cumulocity and appear again.
+

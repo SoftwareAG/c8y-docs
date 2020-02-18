@@ -7,7 +7,7 @@ layout: bundle
 
 ### Overview
 
-This tutorial describes how to register a Raspberry Pi 4 Model B device on the Cumulocity IoT platform.
+This tutorial describes how to register a Raspberry Pi 4 Model B device to the Cumulocity IoT platform.
 
 The [Raspberry Pi](http://en.wikipedia.org/wiki/Raspberry_Pi) is a popular, low-cost mini computer. It is ideally suited for prototyping machine-to-machine solutions through its GPIO pins, USB support and inbuilt WLAN support. Its operating system is [Raspbian](http://www.raspberrypi.org/downloads), which is the default Linux distribution of the Raspberry Pi.
 
@@ -45,10 +45,10 @@ The output of this command contains the serial number in a line like:
 Serial		: 1000000017b769d5
 ```
 
-Write down the number in the line "Serial". The serial number is the device ID that you will require in a later step when you register the device on the Cumulocity IoT platform. 
+Write down the number in the line "Serial". The serial number is the device ID that you will require in a later step when you register the device to the Cumulocity IoT platform. 
 
 
-### Installation and registration
+### Setting up and registering the device
 
 #### Installing the Cumulocity agent
 
@@ -59,7 +59,7 @@ $ wget http://resources.cumulocity.com/examples/cumulocity-rpi-agent-latest.deb
 $ sudo dpkg -i cumulocity-rpi-agent-latest.deb
 ```
 
-#### Setting up the tenant URL in the _cumulocity.properties_ file
+#### Setting up the tenant URL in the cumulocity.properties file
 
 When the Cumulocity agent on the Raspberry Pi connects to the Cumulocity platform, it uses the host URL that is defined in the file 
 */usr/share/cumulocity-rpi-agent/cfg/cumulocity.properties* on the Raspberry Pi. The URL is defined in a line like:
@@ -100,15 +100,15 @@ Alternatively, you can use the desktop method:
 3.	Set **SPI** to "Enabled".
 
 
-#### Registering the Raspberry Pi on Cumulocity
+#### Registering the Raspberry Pi to Cumulocity IoT
 
 Open the Cumulocity UI in a web browser. The URL must match the host URL that you defined in the *cumulocity.properties* file on the Raspberry Pi, as described above.
 
-To register the device, follow the general instructions for registration of devices in the section [Device Management > Connecting Devices](/users-guide/device-management/#connecting-devices) of the Cumulocity User Guide. When you follow the instructions, select the option **General device registration**, and use the Raspberry PI's serial number (as described in the [Prerequisites](#prerequisites) section above) as the device ID. 
+To register the device, follow the general instructions for registration of devices in the section [Device Management > Connecting Devices](/users-guide/device-management/#connecting-devices) in the User guide. When you follow the instructions, select the option **General device registration**, and use the Raspberry PI's serial number (as described in the [Prerequisites](#prerequisites) section above) as the device ID. 
 
 To view the device in your Cumulocity account, click **All devices** in the **Device management** menu in the navigator. By default, the device is displayed as **RaspPi \<hardware model> \<serial number>**. 
 
-### Managing the Raspberry Pi in Cumulocity
+### Interacting with the Cumulocity IoT platform
 
 After the Raspberry Pi has been successfully registered, you can view the device's status in the Cumulocity UI's standard applications (Device nanagement, Cockpit and Administration).
 
@@ -118,7 +118,7 @@ The Raspberry Pi by itself delivers only static information, so if you want to v
 
 ### Tinkerforge bricks and bricklets
 
-The agent supports Tinkerforge devices out of the box, provided the [Tinkerforge daemon for Raspberry Pi](http://www.tinkerforge.com/de/doc/Embedded/Raspberry_Pi.html) is installed. See the [Tinkerforge demo page](../tinkerforge) in this guide for further details.
+The agent supports Tinkerforge devices out of the box, provided that the [Tinkerforge daemon for Raspberry Pi](http://www.tinkerforge.com/de/doc/Embedded/Raspberry_Pi.html) is installed. See the [Tinkerforge tutorial](../tinkerforge) in this guide for further details.
 
 ### PiFace Digital
 
@@ -132,7 +132,7 @@ The Cumulocity agent permits you to upgrade the firmware of a Raspberry Pi throu
 
 To configure a firmware version:
 
-1. Open the Cumulocity platform and click **Firmware**.
+1. In the Device Management application, click **Firmware Repository** in the **Management** menu in the navigator.
 
 2. Click **Add Firmware**.
 

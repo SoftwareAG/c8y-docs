@@ -1,5 +1,5 @@
 ---
-title: Device demos
+title: Device integration tutorials
 bundle: device-demos # add the directory holding the section pages
 icon: "c8y-icon c8y-icon-tools" # use either fontawesome or c8y-icons
 type: root # don't change

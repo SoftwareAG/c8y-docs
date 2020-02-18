@@ -4,7 +4,7 @@ layout: redirect
 title: Hello world tutorial
 ---
 
-This example provides a step-by-step guide to develop a simple microservice in Cumulocity. It uses Cake (C# Make), which is a cross-platform build automation system.
+This example provides a step-by-step guide to develop a simple microservice in Cumulocity IoT. It uses Cake (C# Make), which is a cross-platform build automation system.
 
 To start building .NET apps, you just need to download and install the [.NET SDK](https://www.microsoft.com/net/download). Follow the instructions on the download page for the last stable release or alternatively you can also try using 2.0.
 
@@ -77,17 +77,17 @@ Execute the bootstrapper script to build the application and an image from a Doc
 C:\c8y> .\build.ps1
 ```
 
-After a successful build you will be provided with a ZIP file in the target directory. The ZIP can be deployed to the Cumulocity platform as described in the Deployment section.
+After a successful build you will be provided with a ZIP file in the target directory. The ZIP can be deployed to the Cumulocity IoT platform as described in the Deployment section.
 
 ### <a name="run-locally"></a> Running the microservice locally
 
-In order to test the microservice calls to Cumulocity, you can run the Docker container locally.
+In order to test the microservice calls to Cumulocity IoT, you can run the Docker container locally.
 
-The microservice must be deployed  to verify calls from Cumulocity.
+The microservice must be deployed  to verify calls from Cumulocity IoT.
 
-To run a microservice which uses Cumulocity API locally you need the following:
+To run a microservice which uses Cumulocity IoT API locally you need the following:
 
-*   URL address of the Cumulocity host of your tenant
+*   URL address of the Cumulocity IoT host of your tenant
 *   Authorization header = "Basic <Base64(<username>:<password>)>"
 *   Tenant - tenant ID
 
@@ -281,7 +281,7 @@ It is possible to check if the application communicates with the platform by def
 
 ### Microservice package and deploy
 
-Cumulocity provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running Docker and can be found in the ZIP file *microservicesdk-win-dev-latest.zip*. Use the following command to download it.
+Cumulocity IoT provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running Docker and can be found in the ZIP file *microservicesdk-win-dev-latest.zip*. Use the following command to download it.
 
 ```shell
 Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
@@ -301,7 +301,7 @@ In addition, there is a *deploy.ps1* script that uses credentials stored locally
 
 To deploy a microservice application on the platform, you need the following:
 
-* URL address of the Cumulocity host of your tenant
+* URL address of the Cumulocity IoT host of your tenant
 * Username and password to log in with
 * An application created on the platform
 * ZIP build from previous steps for deployment
@@ -536,7 +536,7 @@ In order to deploy the application, run the deploy script. You must provide the 
 
 #### Microservice package and deploy
 
-Cumulocity provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running Docker and can be found here:
+Cumulocity IoT provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running Docker and can be found here:
 
 ```shell
 $ wget http://resources.cumulocity.com/examples/microservice
@@ -562,7 +562,7 @@ In addition, there is a *deploy.ps1* script that uses credentials stored locally
 
 To deploy a microservice application on an environment you need the following:
 
-* URL address of the Cumulocity host of your tenant
+* URL address of the Cumulocity IoT host of your tenant
 * username and password to log in with
 * application name created on the platform
 * ZIP build from previous steps for deployment

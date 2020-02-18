@@ -4,7 +4,7 @@ title: Overview
 layout: redirect
 ---
 
-This section describes how to develop and deploy microservices on top of Cumulocity using the Microservice SDK for C#, and it contains:
+This section describes how to develop and deploy microservices on top of Cumulocity IoT using the Microservice SDK for C#, and it contains:
 
 *   [Prerequisites](#general-prerequisites) – Development and runtime requirements you need to develop and run C# microservices.
 *   [Hello world tutorial](#hello-world) – Step-by-step instructions to develop and deploy your first C# microservice.
@@ -14,9 +14,9 @@ This section describes how to develop and deploy microservices on top of Cumuloc
 
 To develop a microservice using the SDK for C#, the starting point is our [Hello world tutorial](#hello-world).
 
-> **Info**: You can develop microservices for Cumulocity with any IDE and build tool that you prefer, but this guide focuses on Cake (C# Make) and Visual Studio.
+> **Info:** You can develop microservices for Cumulocity IoT with any IDE and build tool that you prefer, but this guide focuses on Cake (C# Make) and Visual Studio.
 
-If you face any issue or need technical support, please use the [Cumulocity community at Stack Overflow](http://stackoverflow.com/questions/tagged/cumulocity). You will find there many useful questions and answers.
+If you face any issue or need technical support, please use the [Cumulocity IoT community at Stack Overflow](http://stackoverflow.com/questions/tagged/cumulocity). You will find there many useful questions and answers.
 
 #### Upgrading the SDK
 
@@ -63,6 +63,6 @@ The most important requirement is an installation of [Docker 17.06](https://docs
 
 The recommended image for production is `microsoft/dotnet:<version>-runtime` as it contains the .NET Core (runtime and libraries) and it is optimized for running .NET Core applications.
 
-> **Important**: Cumulocity supports only Linux containers. Nevertheless, for development – should you wish to do so – it is possible to use Windows containers.
+> **Important:** Cumulocity IoT supports only Linux containers. Nevertheless, for development – should you wish to do so – it is possible to use Windows containers.
 
 The SDK is based on the package `Cumulocity.SDK.Microservices` and it has a dependency on `Cumulocity.AspNetCore.Authentication.Basic` which is a package wrapper around the [Basic Authentication for Microsoft ASP.NET Core Security](https://github.com/bruno-garcia/Bazinga.AspNetCore.Authentication.Basic) which ensures adding basic authentication to Asp.Net Core.

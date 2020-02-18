@@ -86,7 +86,7 @@ Moreover, you can add custom columns to show additional device properties.
 1. In the **Configure columns** dialog box, click **Add custom column**.<br>
 ![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
 2. In the **Header** field, Enter a header for the new custom column.  
-3. In the **Fragment path** field, enter the property of the device to be shown. Nested properties will be accepted. However, for nested properties its only possible to select Cumulocity standard fragments like `c8y_Mobile.mcc`.
+3. In the **Fragment path** field, enter the property of the device to be shown. Nested properties will be accepted. However, for nested properties its only possible to select Cumulocity IoT standard fragments like `c8y_Mobile.mcc`.
 4. Select the **Filtering mode** for the new column. <br>
 If you select **Fragment equals value**, a value will only be shown if it matches the criteria specified by you in an additional dialog box.<br>
 ![Specify values](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)
@@ -104,14 +104,14 @@ The new column will be added and displayed in the device list.
 
 The device will be permanently deleted from the platform.
 
-> **Important:** Deleting a device means to remove the device from Cumulocity database including all its generated data. Alternatively, you can arrange all retired devices in one group, see [Grouping devices](#grouping-devices)). This ensures that all reports remain correct. To prevent alarms from being raised for the retired devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
+> **Important:** Deleting a device means to remove the device from the Cumulocity IoT database including all its generated data. Alternatively, you can arrange all retired devices in one group, see [Grouping devices](#grouping-devices)). This ensures that all reports remain correct. To prevent alarms from being raised for the retired devices, disable [connection monitoring](#connection-monitoring). Deleting a device does not delete the data of its child devices.
 
 
 ### <a name="searching-devices"></a>To search for devices
 
-Cumulocity includes a full-text search for devices.
+Cumulocity IoT includes a full-text search for devices.
 
-Click the **Search** button at the top right and enter a search term into the textbox. Cumulocity returns all devices containing this term in any property (name, model, any fragment...)
+Click the **Search** button at the top right and enter a search term into the textbox. Cumulocity IoT returns all devices containing this term in any property (name, model, any fragment...)
 
 Our example shows a search for "Ublox C027".
 

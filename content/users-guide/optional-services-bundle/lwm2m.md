@@ -6,7 +6,7 @@ layout: redirect
 
 Lightweight M2M (LWM2M) is a traffic and resource-optimized protocol to remotely manage IoT devices. The protocol is standardized by the Open Mobile Alliance. For more information, see [http://openmobilealliance.org/iot/lightweight-m2m-lwm2m](http://openmobilealliance.org/iot/lightweight-m2m-lwm2m).
 
-You can connect any device supporting LWM2M to Cumulocity without programming. Instead, you configure how LWM2M devices are mapped to Cumulocity using device protocols.
+You can connect any device supporting LWM2M to Cumulocity IoT without programming. Instead, you configure how LWM2M devices are mapped to Cumulocity IoT using device protocols.
 
 ![Device protocols](/images/users-guide/LWM2M/devmgmt-lwm2m-deviceprotocol.png)
 
@@ -63,11 +63,11 @@ In the first CSV example you can see the following fields:
 </tr>
 <tr>
 <td style="text-align:left">lwm2m server url</td>
-<td style="text-align:left">The URL the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the Cumulocity service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap server port is "5683" and the LWM2M port is "5783". Note, that these values can be different for other services.</td>
+<td style="text-align:left">The URL the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the Cumulocity IoT service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap server port is "5683" and the LWM2M port is "5783". Note, that these values can be different for other services.</td>
 </tr>
 <tr>
 <td style="text-align:left">securityMode</td>
-<td style="text-align:left">In this example the value of the security mode is “NO_SEC” which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. Currently Cumulocity supports only “NO_SEC” and “PSK”. With “PSK”, the client and server have a common secret symmetric cryptography. In the next example you will see how the CSV file should look when the security mode value is “NO_SEC”.</td>
+<td style="text-align:left">In this example the value of the security mode is “NO_SEC” which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. Currently Cumulocity IoT supports only “NO_SEC” and “PSK”. With “PSK”, the client and server have a common secret symmetric cryptography. In the next example you will see how the CSV file should look when the security mode value is “NO_SEC”.</td>
 </tr>
 </tbody>
 </table>
@@ -97,7 +97,7 @@ The table below reflects the full set of possible fields that can be added:
 <tr>
 <td style="text-align: left">lwm2m server url</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The URL of the LWM2M server to be sent to the devices during bootstrap. If you are using the Cumulocity service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap server port is "5683" and the LWM2M port is "5783". Note, that these values can be different for other services.</td>
+<td style="text-align: left">The URL of the LWM2M server to be sent to the devices during bootstrap. If you are using the Cumulocity IoT service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap server port is "5683" and the LWM2M port is "5783". Note, that these values can be different for other services.</td>
 <td style="text-align: left">Yes, for LWM2M bootstrap</td>
 </tr>
 <tr>
@@ -115,7 +115,7 @@ The table below reflects the full set of possible fields that can be added:
 <tr>
 <td style="text-align: left">generateBootstrapServerConfig</td>
 <td style="text-align: left">Boolean</td>
-<td style="text-align: left">Toggles if Cumulocity generates a server config for the LWM2M bootstrap server and writes that back during bootstrap. Default is false.</td>
+<td style="text-align: left">Toggles if Cumulocity IoT generates a server config for the LWM2M bootstrap server and writes that back during bootstrap. Default is false.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
@@ -157,7 +157,7 @@ The table below reflects the full set of possible fields that can be added:
 <tr style="height: 26px;">
 <td style="text-align: left">bindingMode</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The LWM2M binding mode to be reported to the device. Supported are &ldquo;UQ&rdquo; (default, queuing) and &ldquo;U&rdquo; (unqueued). Note, that Cumulocity will always queue operations.</td>
+<td style="text-align: left">The LWM2M binding mode to be reported to the device. Supported are &ldquo;UQ&rdquo; (default, queuing) and &ldquo;U&rdquo; (unqueued). Note, that Cumulocity IoT will always queue operations.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
@@ -232,7 +232,7 @@ After creation, the bootstrap parameters can be viewed and changed in the **LWM2
 
 ### <a name="device_protocols"></a>LWM2M device protocols
 
-To process data from LWM2M devices, Cumulocity uses device protocols.
+To process data from LWM2M devices, Cumulocity IoT uses device protocols.
 Device protocols are accessible through the **Devices Types** menu in the Device Management application. For details on the general usage, see [Device Management > Managing device types](/users-guide/device-management/#managing-device-types).
 
 #### <a name="creating_device_protocols"></a>Creating LWM2M device protocols
@@ -302,11 +302,11 @@ Turn on **Send event** to send an event each time you receive a resource value. 
 
 **Custom Actions**
 
-Turn on **Custom Actions** to map LWM2M data into Cumulocity using custom data processing actions. For specialized integration use cases, it is required to perform customized data processing on LWM2M data. One example are LWM2M resources of the OPAQUE data type that contain proprietary, binary data, CBOR, XML or alike.
+Turn on **Custom Actions** to map LWM2M data into Cumulocity IoT using custom data processing actions. For specialized integration use cases, it is required to perform customized data processing on LWM2M data. One example are LWM2M resources of the OPAQUE data type that contain proprietary, binary data, CBOR, XML or alike.
 
 ![Custom actions](/images/users-guide/LWM2M/devmgmt-lwm2m-customactions.png)
 
-Cumulocity LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary Cumulocity microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We are providing an according example how to write such a decoder microservice in our public [Bitbucket repository](https://bitbucket.org/m2m/cumulocity-examples/src/develop/).
+Cumulocity IoT LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary Cumulocity IoT microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We are providing an according example how to write such a decoder microservice in our public [Bitbucket repository](https://bitbucket.org/m2m/cumulocity-examples/src/develop/).
 
 **Auto observe**
 

@@ -31,7 +31,7 @@ The **User** menu contains the following items:
 </tr>
 <tr>
 <td style="text-align:left">Logout</td>
-<td style="text-align:left">Logs you out from your Cumulocity account. </td>
+<td style="text-align:left">Logs you out from your Cumulocity IoT account. </td>
 </tr>
 <tr>
 <td style="text-align:left">Enable (Disable) support</td>
@@ -43,43 +43,43 @@ The **User** menu contains the following items:
 </tr>
 <tr>
 <td style="text-align:left">Version information</td>
-<td style="text-align:left">Shows release information on the Cumulocity version you are using, i.e. 10.5.7, for both Backend and UI. Moreover shows the ID of your tenant, which might be required if you request support. Click the copy icon next to the tenant ID to copy it to the clipboard.</td>
+<td style="text-align:left">Shows release information on the Cumulocity IoT version you are using, i.e. 10.5.7, for both Backend and UI. Moreover shows the ID of your tenant, which might be required if you request support. Click the copy icon next to the tenant ID to copy it to the clipboard.</td>
 </tr>
 </tbody>
 </table>
 
 ### <a name="user-settings"></a>To change user settings
 
-Several account settings can be changed by the user. 
+Several account settings can be changed by the user.
 
 1. Click the **User** button at the right of the top bar and then click **User Settings**.  
-2. In the **Edit user** dialog box, make the relevant changes. 
-3. To change the language, select a language from the dropdown list in the  **Language** field. 
-4. Click **Change password** to change your current password, see below. 
+2. In the **Edit user** dialog box, make the relevant changes.
+3. To change the language, select a language from the dropdown list in the  **Language** field.
+4. Click **Change password** to change your current password, see below.
 5. Click **Save** to apply your settings.
 
 <img src="/images/users-guide/overview-user-settings.png" alt="User settings"  style="max-width: 100%">
 
 The user interface language will be selected along the following criteria, in the order listed below:
- 
-*  The language selected in the Cumulocity user settings.
+
+*  The language selected in the Cumulocity IoT user settings.
 *  The language selected in the browser preferences.
 * 	The operating system language.
- 
+
 The default language is English.
 
 
 ### <a name="change-password"></a>To change your password
 
-1. Click the **User** button at the right of the top bar and then click **User settings**. 
+1. Click the **User** button at the right of the top bar and then click **User settings**.
 2. In the **Edit user** dialog box, click **Change Password**.
 3. Enter a password and confirm it.
 4. Click **Save** to apply your settings.
 
-Make sure to select a strong password. To support you in doing so a password strength indicator is displayed along with a password change. 
+Make sure to select a strong password. To support you in doing so a password strength indicator is displayed along with a password change.
 
 <img src="/images/users-guide/overview-passwordstrength.png" alt="Reset password" style="max-width: 100%">
 
-By default, the password must consist of at least eight characters. For a strong password you must include at least three of the following character types: uppercase letters, lowercase letters, numbers and symbols. 
+By default, the password must consist of at least eight characters. For a strong password you must include at least three of the following character types: uppercase letters, lowercase letters, numbers and symbols.
 
 > **Info:** The password rules can be configured by the administrator, i.e. your administrator can configure your account to enforce a password policy. You may be required to pick a strong password for example or to change your password regularly.

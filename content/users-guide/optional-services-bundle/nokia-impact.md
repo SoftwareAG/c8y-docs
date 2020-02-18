@@ -7,28 +7,28 @@ layout: redirect
 
 This document describes
 
-* in which way Nokia [IMPACT integrates with the Cumulocity platform](#integration),
-* how [IMPACT devices are registered](#device-lifecycle) at Cumulocity through the IMPACT agent,
+* in which way Nokia [IMPACT integrates with the Cumulocity IoT platform](#integration),
+* how [IMPACT devices are registered](#device-lifecycle) at Cumulocity IoT through the IMPACT agent,
 * how to work with [IMPACT device protocols](#device-protocol).
 
 ### <a name="integration"></a>IMPACT Integration
-Cumulocity offers an integration with the Nokia IMPACT Data Collector which is designed to collect data from heterogeneous devices. Integrating Cumulocity with IMPACT, enables you to make use of existing Cumulocity features like connectivity monitoring, data visualization or real-time analytics with IMPACT devices.
+Cumulocity IoT offers an integration with the Nokia IMPACT Data Collector which is designed to collect data from heterogeneous devices. Integrating Cumulocity IOT with IMPACT, enables you to make use of existing Cumulocity IoT features like connectivity monitoring, data visualization or real-time analytics with IMPACT devices.
 
 >**Info:** Currently only the integration of LWM2M devices has been tested.
 
-The IMPACT agent in Cumulocity registers itself at the Nokia IMPACT platform. Similarly, it subscribes to events such as devices coming online or reporting data at IMPACT.
+The IMPACT agent in Cumulocity IoT registers itself at the Nokia IMPACT platform. Similarly, it subscribes to events such as devices coming online or reporting data at IMPACT.
 
-The following illustration provides an overview on the Cumulocity IMPACT integration.
+The following illustration provides an overview on the Cumulocity IoT IMPACT integration.
 
 <img src="/images/users-guide/DeviceManagement/ImpactIntegration.png" alt="IMPACT integration" style="max-width: 100%">
 
->**Info:** Your subscription needs to include the IMPACT feature. If you do not see the functionality described in this document, please contact the Cumulocity support.
+>**Info:** Your subscription needs to include the IMPACT feature. If you do not see the functionality described in this document, please contact the Cumulocity IoT support.
 
 >To be able to communicate with a device through IMPACT the device must be registered in IMPACT. How to register a device in IMPACT is not in the scope of this document.
 
 ### <a name="device-lifecycle"></a>Device lifecycle integration
 
-IMPACT devices do not need to be registered again in Cumulocity. Cumulocity’s device lifecycle integration automatically handles the following events:
+IMPACT devices do not need to be registered again in Cumulocity IoT. Cumulocity IoT’s device lifecycle integration automatically handles the following events:
 
 <table>
 <col style="width: 20%;">
@@ -46,7 +46,7 @@ IMPACT devices do not need to be registered again in Cumulocity. Cumulocity’s 
 <tr>
 <td align="left">Registration</td>
 <td align="left">A new device has been registered at IMPACT.</td>
-<td align="left">Create device in Cumulocity.<br>Obtain list of resources provided by device (either from request or by querying device).<br>Subscribe to all resources that are mapped as “Auto-Observe” in the corresponding object mapping.</td>
+<td align="left">Create device in Cumulocity IoT.<br>Obtain list of resources provided by device (either from request or by querying device).<br>Subscribe to all resources that are mapped as “Auto-Observe” in the corresponding object mapping.</td>
 </tr>
 
 <tr>
@@ -58,7 +58,7 @@ IMPACT devices do not need to be registered again in Cumulocity. Cumulocity’s 
 <tr>
 <td align="left">Expiration</td>
 <td align="left">A device registration in IMPACT has expired.</td>
-<td align="left">Mark device in Cumulocity as disabled.</td>
+<td align="left">Mark device in Cumulocity IoT as disabled.</td>
 </tr>
 </tbody>
 </table>
@@ -67,7 +67,7 @@ IMPACT devices do not need to be registered again in Cumulocity. Cumulocity’s 
 
 ### <a name="device-protocol"></a>IMPACT device protocols
 
-To process data from IMPACT devices, Cumulocity uses device protocols. Through device protocols you can observe your resources and perform other actions like creating alarms.
+To process data from IMPACT devices, Cumulocity IoT uses device protocols. Through device protocols you can observe your resources and perform other actions like creating alarms.
 
 Device protocols are accessible through the **Devices types** menu in the Device Management application. For details on the general usage see [Device protocols](/users-guide/device-management#managing-device-types).
 
@@ -185,15 +185,15 @@ Turn on **Send event** to send an event each time a certain condition has been t
 
 **Custom Actions**
 
-Turn on **Custom Actions** to map device data into Cumulocity using custom data processing actions. For specialized integration use cases, it is required to perform customized data processing on device data. Examples are resources of non-standard data type that contain proprietary, binary data, CBOR, XML or alike.
+Turn on **Custom Actions** to map device data into Cumulocity IoT using custom data processing actions. For specialized integration use cases, it is required to perform customized data processing on device data. Examples are resources of non-standard data type that contain proprietary, binary data, CBOR, XML or alike.
 
-The set of custom actions is provided by decoder microservices available in the particular tenant. A decoder microservice is an ordinary Cumulocity microservice that implements a simple decoder interface. The IMPACT microservice calls these microservices for decoding data in a customer-specific way. We provide examples how to write such a decoder microservices in our public [Bitbucket repository](https://bitbucket.org/m2m/cumulocity-examples/src/develop/).
+The set of custom actions is provided by decoder microservices available in the particular tenant. A decoder microservice is an ordinary Cumulocity IoT microservice that implements a simple decoder interface. The IMPACT microservice calls these microservices for decoding data in a customer-specific way. We provide examples how to write such a decoder microservices in our public [Bitbucket repository](https://bitbucket.org/m2m/cumulocity-examples/src/develop/).
 
 **Auto observe**
 
-Enabling **Auto observe** for a resource means, that each time the device with this particular resource appears, Cumulocity will automatically receive all values. It is not necessary, to subscribe to it manually.
+Enabling **Auto observe** for a resource means, that each time the device with this particular resource appears, Cumulocity IoT will automatically receive all values. It is not necessary, to subscribe to it manually.
 
->**Info:** At least one functionality must be set to enable **Auto observe**. 
+>**Info:** At least one functionality must be set to enable **Auto observe**.
 
 Finally, click **Save** to create the resource. The resource will be added to the resource list.
 

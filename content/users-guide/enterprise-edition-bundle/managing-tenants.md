@@ -72,7 +72,7 @@ In the management tenant, you will also find information on the parent tenant, i
 </tr>
 <tr>
 <td style="text-align:left">Send password reset link as email</td>
-<td style="text-align:left">Selected by default. If you deselect this option, you need to provide a password and confirm the password (see <a href="/users-guide/getting-started/#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the Cumulocity platform</a> for more information on password strength).</td>
+<td style="text-align:left">Selected by default. If you deselect this option, you need to provide a password and confirm the password (see <a href="/users-guide/getting-started/#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the Cumulocity IoT platform</a> for more information on password strength).</td>
 </tr>
 <tr>
 <td style="text-align:left">Tenant policy</td>
@@ -147,7 +147,7 @@ Click the menu icon at the right of the respective subtenant entry and then clic
 
 ### <a name="subscribe"></a>Applications
 
-In the **Applications** tab you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications.
+In the **Applications** tab you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity IoT applications.
 
 <img src="/images/users-guide/enterprise-tenant/et-subtenant-applications.png" alt="Subscribe tenant" style="max-width: 100%">
 
@@ -161,7 +161,7 @@ Hover over the applications under **Subscribed applications** on the left and cl
 
 #### Monitoring microservices
 
-For all applications hosted as microservices by Cumulocity the status of the microservice is indicated next to its name by symbols:
+For all applications hosted as microservices by Cumulocity IoT the status of the microservice is indicated next to its name by symbols:
 
 <img src="/images/users-guide/enterprise-tenant/et-applications-status.png" alt="Application details">
 
@@ -361,7 +361,7 @@ The microservice usage feature gathers information on the resource usage per sub
 
 ##### Billing modes
 
-Cumulocity offers two billing modes:
+Cumulocity IoT offers two billing modes:
 
 * **Subscription-based billing**: Charges a constant price when a tenant is subscribed to a microservice while resource usage is assigned to the owner.
 

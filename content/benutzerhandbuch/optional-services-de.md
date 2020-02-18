@@ -5,7 +5,7 @@ layout: bundle
 slug: optional-services
 ---
 
-Zusätzlich zu den in Cumulocity IoT verfügbaren integrierten Anwendungen für den Standard Tenant und den Enterprise Tenant gibt es zahlreiche optionale Services, die Sie abonnieren können, wie etwa Agenten für verschiedene Gerätetypen. 
+Zusätzlich zu den in Cumulocity IoT verfügbaren integrierten Anwendungen für den Standard Tenant und den Enterprise Tenant gibt es zahlreiche optionale Services, die Sie abonnieren können, wie etwa Agenten für verschiedene Gerätetypen.
 
 Die folgenden Services sind aktuell verfügbar:
 
@@ -18,11 +18,11 @@ Die folgenden Services sind aktuell verfügbar:
 |[IMPACT](/users-guide/optional-services/#nokia-impact)|Ermöglicht die Integration von Nokia IMPACT in die Cumulocity-Plattform, um Daten von heterogenen Geräten zu verarbeiten.
 |[LoRa Actility](/users-guide/optional-services/#lora)|Ermöglicht die Kommunikation mit LoRa-Geräten über Actility's ThingPark Wireless.
 |[LightweightM2M](/users-guide/optional-services/#lwm2m)|Ermöglicht die Kommunikation mit allen Geräten, die das LWM2M-Protokoll unterstützen.
-|[OPC UA](/users-guide/optional-services/#opc-ua)|Ermöglicht die Kommunikation zwischen der Cumulocity IoT-Plattform und einem OPC-UA-Server über ein OPC-UA-Gateway. 
+|[OPC UA](/users-guide/optional-services/#opc-ua)|Ermöglicht die Kommunikation zwischen der Cumulocity IoT-Plattform und einem OPC-UA-Server über ein OPC-UA-Gateway.
 |[Sigfox](/users-guide/optional-services/#sigfox)|Ermöglicht die Kommunikation mit Sigfox-Geräten über die Sigfox-Cloud.
 |[SNMP](/users-guide/optional-services/#snmp)|Ermöglicht die Kommunikation mit SNMP-fähigen Geräten.
 
 
 <br>
 
-> **Info**: Die Dokumentation der optionalen Services liegt ausschließlich in englischer Sprache vor. 
+> **Info**: Die Dokumentation der optionalen Services liegt ausschließlich in englischer Sprache vor.

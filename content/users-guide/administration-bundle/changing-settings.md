@@ -10,23 +10,23 @@ From the **Settings** menu, administrators can modify or manage various settings
 - change the [application settings](#default-app).
 - change the [authentication settings](#authentication).
 - manage the [properties library](#properties).
-- configure system-wide [configuration properties](#config-platform) in Cumulocity.
+- configure system-wide [configuration properties](#config-platform) in Cumulocity IoT.
 - manage the [connectivity settings](#connectivity).
 
 ### <a name="single-sign-on"></a>Configuring single sign-on
 
-Cumulocity provides single sign-on functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory. Currently authorization code grant is supported only with access tokens in form of JWT.
+Cumulocity IoT provides single sign-on functionality, that allows a user to login with a single 3rd-party authorization server using the OAuth2 protocol, for example Azure Active Directory. Currently authorization code grant is supported only with access tokens in form of JWT.
 
 > **Info:** This feature is built on top of cookies technology. To be able to use it, you must have cookies enabled in the settings of your browser.
 
-This feature is enabled since Cumulocity version 9.12. For correct behavior any microservice needs to use the microservice SDK with version 9.12 or later.
+This feature is enabled since Cumulocity IoT version 9.12. For correct behavior any microservice needs to use the microservice SDK with version 9.12 or later.
 
 Before switching to the single sign-on option it is mandatory that:
 
 * the authorization server you use supports OAuth2 authorization code grant.
 * the access token is issued as JWT and you know what goes into the token content.
 * the JWT must consist of a unique user identifier, "iss" (issuer), "aud" (audience) and "exp" (expiration time) fields.
-* the Cumulocity platform is in version 9.12 but preferably higher.
+* the Cumulocity IoT platform is in version 9.12 but preferably higher.
 * all microservices are build with Microservice Java SDK 9.12.6 but preferably higher.
 
 
@@ -51,7 +51,7 @@ As the OAuth protocol is based on the execution of HTTP requests and redirects, 
 
 The first part of the **Single sign-on** page consists of the request configuration. Here you can configure the HTTP request address, request parameters, headers and body in case of token and refresh requests. The authorize method is executed as a GET, token and refresh method by POST requests.
 
-Specifying a logout request is optional. It performs [front-channel single logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html). If configured, the user is redirected to the defined authorization server logout URL after logging out from Cumulocity.
+Specifying a logout request is optional. It performs [front-channel single logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html). If configured, the user is redirected to the defined authorization server logout URL after logging out from Cumulocity IoT.
 
 ![OAuth configuration](/images/users-guide/Administration/admin-sso-logout-custom.png)
 
@@ -71,7 +71,7 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 |Group|(Deprecated in favor of dynamic access mapping since 9.20)The initial group assigned to the user on first login
 |Applications|(Deprecated in favor of dynamic access mapping since 9.20)The initial applications assigned to the user on first login
 
-Each time a user logs in, the content of the access token is verified and is a base for user access to the Cumulocity platform. The following section provides the mapping between JWT claims and access to the platform.
+Each time a user logs in, the content of the access token is verified and is a base for user access to the Cumulocity IoT platform. The following section provides the mapping between JWT claims and access to the platform.
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-7.png)
 
@@ -125,7 +125,7 @@ Each access token is signed by a signing certificate. Currently there are three 
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
 
-3. By providing the public key of a certificate manually to Cumulocity. A certificate definition requires an algorithm information, public key value and validity period.
+3. By providing the public key of a certificate manually to Cumulocity IoT. A certificate definition requires an algorithm information, public key value and validity period.
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-5.png)
 
@@ -137,7 +137,7 @@ The integration was successfully verified against Azure AD. The configuration st
 
 While configuring your Azure AD, redirect_uri is your full domain address. For the purpose of this document we assume that it is *http://aad.cumulocity.com*. There are no additional steps on Azure AD required.
 
-##### Cumulocity configuration
+##### Cumulocity IoT configuration
 
 When the "Azure AD" template is selected the configuration panel will look similar to the following:
 
@@ -148,7 +148,7 @@ When the "Azure AD" template is selected the configuration panel will look simil
 |Azure AD Address| Address of your Azure AD tenant
 |Tenant| Azure AD tenant name
 |Application ID| Application ID
-|Redirect URI| Address of your Cumulocity tenant followed by /tenant/oauth
+|Redirect URI| Address of your Cumulocity IoT tenant followed by /tenant/oauth
 |Client secret| Azure AD client secret if applicable
 |Button name| Button name
 |Token issuer| Token issuer value in form of a HTTP address
@@ -188,7 +188,7 @@ Under **Default application**, you can select a default application from the lis
 
 >**Info:** All users must have access to this application.
 
-Under **Access control**, administrators can enable cross-origin resource sharing or "CORS" on the Cumulocity API.
+Under **Access control**, administrators can enable cross-origin resource sharing or "CORS" on the Cumulocity IoT API.
 
 The **Allowed Domain** setting will enable your JavaScript web applications to directly communicate with REST APIs.
 
@@ -221,7 +221,7 @@ In the field **Limit password validity for**, you can limit the validity of user
 
 >**Info:** The password validity limit and the enforcing of strong passwords may not be editable, if configured by the platform administrator.
 
-By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in [Getting Started > Accessing and logging into the Cumulocity platform](/users-guide/getting-started/#login).
+By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in [Getting Started > Accessing and logging into the Cumulocity IoT platform](/users-guide/getting-started/#login).
 
 Strong (green) passwords must have "M" characters. By default, the system restricts the use of passwords already used in the past. The last "N" passwords provided by a user are remembered by the system and the system does not allow to use them. The default value for "N" is 10.
 
@@ -255,7 +255,7 @@ Click **Properties library** in the **Settings** menu, to add custom properties 
 
 ![Properties library](/images/users-guide/Administration/admin-settings-properties-library.png)
 
-With custom properties, you can extend the data model of Cumulocity built-in objects. You may create the following custom values:
+With custom properties, you can extend the data model of Cumulocity IoT built-in objects. You may create the following custom values:
 
 - Custom inventory properties are used to extend the inventory data model. They can be used in the “Asset table” and “Asset properties” widgets.
 - Custom tenant properties are available during tenant creation. The custom properties can be edited under **Subtenants** in the **Custom properties** tab of each tenant. Additionally, these properties can be viewed and exported in the **Usage statistics**.
@@ -309,7 +309,7 @@ SMS are used throughout the application for various features like [two-factors a
 
 ### <a name="config-platform"></a>Configuration settings
 
-Under **Configuration** in the **Settings** menu, you can configure system-wide properties in Cumulocity.
+Under **Configuration** in the **Settings** menu, you can configure system-wide properties in Cumulocity IoT.
 
 ![Configuration settings](/images/users-guide/Administration/admin-settings-configuration.png)
 
@@ -402,7 +402,7 @@ The following provider settings may currently be specified:
 
 1. Switch to the tab of your desired provider.
 2. Enter the URL of the provider.
-3. Enter the credentials of your provider platform. Depending on the provider, these credentials will be either the credentials of your account in the provider platform or the credentials with which you can register in the Cumulocity connectivity page, will be displayed in your account in the provider platform.
+3. Enter the credentials of your provider platform. Depending on the provider, these credentials will be either the credentials of your account in the provider platform or the credentials with which you can register in the Cumulocity IoT connectivity page, will be displayed in your account in the provider platform.
 4. Finally, click **Save** to save your settings.
 
 Depending on the provider you have selected, there may be additional fields, which will be explained in the respective agent documentation, see [Optional services](/users-guide/optional-services).

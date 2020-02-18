@@ -4,7 +4,7 @@ title: Verwalten von Berechtigungen
 
 ---
 
-Berechtigungen legen fest, welche Funktionen ein Benutzer in Cumulocity-Anwendungen ausführen darf. Um das Verwalten von Berechtigungen zu vereinfachen, sind diese in sogenannte Rollen eingeteilt. Jedem Benutzer kann eine Reihe von Rollen zugewiesen werden, deren Berechtigungen addiert werden.
+Berechtigungen legen fest, welche Funktionen ein Benutzer in Cumulocity IoT-Anwendungen ausführen darf. Um das Verwalten von Berechtigungen zu vereinfachen, sind diese in sogenannte Rollen eingeteilt. Jedem Benutzer kann eine Reihe von Rollen zugewiesen werden, deren Berechtigungen addiert werden.
 
 Die folgenden Rollen können zugewiesen werden:
 
@@ -17,7 +17,7 @@ Darüber hinaus kann der Zugriff auf Anwendungen erteilt werden.
 
 Klicken Sie **Rollen** im Menü **Konto**, um die Liste der konfigurierten Rollen anzuzeigen.
 
-In der Registerkarte **Globale Rollen** finden Sie die Rollen, die allgemeine Berechtigungen erteilen. Es gibt verschiedene globale Standardrollen, aber Sie können auch eigene nach Ihren Bedürfnissen erstellen. 
+In der Registerkarte **Globale Rollen** finden Sie die Rollen, die allgemeine Berechtigungen erteilen. Es gibt verschiedene globale Standardrollen, aber Sie können auch eigene nach Ihren Bedürfnissen erstellen.
 
 <img src="/images/benutzerhandbuch/Administration/admin-global-roles.png" alt="Context menu">
 
@@ -111,9 +111,9 @@ Unter Umständen werden auch die folgenden älteren Rollen angezeigt:
 
 #### <a name="create-edit-roles"></a>So fügen Sie eine globale Rolle hinzu
 
-Klicken Sie **Rolle hinzufügen** in der Registerkarte **Globale Rollen**. 
+Klicken Sie **Rolle hinzufügen** in der Registerkarte **Globale Rollen**.
 
-Auf der Seite **Neue globale Rolle** sehen Sie links eine Liste mit Berechtigungstypen und rechts eine Liste der Anwendungen, auf die zugegriffen werden kann. 
+Auf der Seite **Neue globale Rolle** sehen Sie links eine Liste mit Berechtigungstypen und rechts eine Liste der Anwendungen, auf die zugegriffen werden kann.
 
 Der folgende Screenshot zeigt die Einstellungen für die Rolle "admins".
 
@@ -128,7 +128,7 @@ Für jeden Typen können Sie die folgenden Berechtigungsebenen wählen:
 - AKTUALISIEREN: Ändern und Löschen der jeweiligen Daten (beinhaltet nicht READ).
 - ADMIN: Erstellen, Aktualisieren und Löschen der jeweiligen Daten.
 
-> **Info:** CREATE-Berechtigungen sind mit dem Eigentumskonzept in Cumulocity verbunden. Wenn Sie ein Objekt erstellt haben, sind Sie der Eigentümer und können das Objekt ohne weitere Berechtigungen verwalten. Wenn Sie beispielsweise die CREATE-Berechtigung für Stammdaten haben, können Sie Geräte und Gruppen erstellen und diese vollständig verwalten. Sie können jedoch keine Geräte und Gruppen, die Sie nicht selbst erstellt haben, verwalten, ohne dafür eine UPDATE-Berechtigung oder eine zusätzliche Stammdatenrolle zu haben (siehe unten). Diese Konzept unterstützt es, Geräten minimale Berechtigungen zuzuweisen. Es ermöglicht Ihnen auch, Benutzerverwaltungsrechte auf untergeordnete Benutzer zu beschränken, wenn Sie Benutzerhierarchien abonniert haben.
+> **Info:** CREATE-Berechtigungen sind mit dem Eigentumskonzept in Cumulocity IoT verbunden. Wenn Sie ein Objekt erstellt haben, sind Sie der Eigentümer und können das Objekt ohne weitere Berechtigungen verwalten. Wenn Sie beispielsweise die CREATE-Berechtigung für Stammdaten haben, können Sie Geräte und Gruppen erstellen und diese vollständig verwalten. Sie können jedoch keine Geräte und Gruppen, die Sie nicht selbst erstellt haben, verwalten, ohne dafür eine UPDATE-Berechtigung oder eine zusätzliche Stammdatenrolle zu haben (siehe unten). Diese Konzept unterstützt es, Geräten minimale Berechtigungen zuzuweisen. Es ermöglicht Ihnen auch, Benutzerverwaltungsrechte auf untergeordnete Benutzer zu beschränken, wenn Sie Benutzerhierarchien abonniert haben.
 
 Aktivieren Sie die Checkbox oben in einer Spalte, wenn Sie die entsprechende Berechtigungsebene auf alle Berechtigungstypen anwenden möchten.
 
@@ -251,15 +251,15 @@ Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
 
 Möglicherweise werden weitere Berechtigungen angezeigt, abhängig von den Funktionen in Ihrem Abonnementplan. Diese werden in Verbindung mit den jeweiligen Funktionen beschrieben.
 
-> **Wichtig:** Werden neue Funktionen mit neuen Berechtigungen zu Cumulocity hinzugefügt, so werden diese nicht automatisch zu bestehenden Rollen hinzugefügt. Sollten Sie feststellen, dass Sie eine kürzlich angekündigte Funktion nicht verwenden können, überprüfen Sie zunächst Ihre Berechtigungen.
+> **Wichtig:** Werden neue Funktionen mit neuen Berechtigungen zu Cumulocity IoT hinzugefügt, so werden diese nicht automatisch zu bestehenden Rollen hinzugefügt. Sollten Sie feststellen, dass Sie eine kürzlich angekündigte Funktion nicht verwenden können, überprüfen Sie zunächst Ihre Berechtigungen.
 
 #### <a name="attach-global"></a>Zuweisen von globalen Rollen
 
-Sie können Benutzern globale Rollen entweder direkt in der Benutzerliste oder auf der entsprechenden Benutzerseite zuweisen. 
+Sie können Benutzern globale Rollen entweder direkt in der Benutzerliste oder auf der entsprechenden Benutzerseite zuweisen.
 
 ##### So weisen Sie globale Rollen aus der Benutzerliste zu
 
-1. Klicken Sie auf die Spalte **Globale Rollen** eines bestimmten Benutzers, um eine Liste mit globalen Rollen anzuzeigen. 
+1. Klicken Sie auf die Spalte **Globale Rollen** eines bestimmten Benutzers, um eine Liste mit globalen Rollen anzuzeigen.
 1. Aktivieren oder deaktivieren Sie die entsprechenden Checkboxen.
 1. Klicken Sie **Anwenden**, um Ihre Einstellungen zu speichern.
 
@@ -281,7 +281,7 @@ Um die konfigurierten Stammdatenrollen anzuzeigen, wählen Sie **Rollen** im Men
 
 <img src="/images/benutzerhandbuch/Administration/admin-roles-inventory.png" alt="Context menu">
 
-In der Registerkarte **Stammdatenrollen** können Sie Berechtigungen für bestimmte Gruppen und/oder deren Kinder verwalten. Es gibt verschiedene voreingestellte Stammdatenrollen, aber Sie können auch eigene Rollen nach Ihren Bedürfnissen erstellen. 
+In der Registerkarte **Stammdatenrollen** können Sie Berechtigungen für bestimmte Gruppen und/oder deren Kinder verwalten. Es gibt verschiedene voreingestellte Stammdatenrollen, aber Sie können auch eigene Rollen nach Ihren Bedürfnissen erstellen.
 
 Die folgenden Stammdatenrollen sind in neuen Mandanten voreingestellt:
 
@@ -295,7 +295,7 @@ Die folgenden Stammdatenrollen sind in neuen Mandanten voreingestellt:
 
 #### So fügen Sie eine Stammdatenrolle hinzu
 
-Klicken Sie **Rolle hinzufügen** in der Registerkarte **Stammdatenrollen**. 
+Klicken Sie **Rolle hinzufügen** in der Registerkarte **Stammdatenrollen**.
 
 Oben auf der Seite können Sie einen Namen für die Stammdatenrolle vergeben. Klicken Sie in das Feld, geben Sie einen Namen ein und klicken Sie auf das grüne Häkchen zum Speichern Ihrer Eingabe.
 
@@ -317,15 +317,15 @@ Die Berechtigungen sind in die folgenden Kategorien eingeteilt:
 
 Fügen Sie einer Rolle eine Berechtigung hinzu, indem Sie das Plus-Symbol neben der gewünschten Kategorie klicken.
 
-Geben Sie im Feld **Typ** einen Typen ein, um den Datentypen weiter einzuschränken, für den diese Berechtigung gelten soll. 
+Geben Sie im Feld **Typ** einen Typen ein, um den Datentypen weiter einzuschränken, für den diese Berechtigung gelten soll.
 
 Nehmen wir etwa an, ihr Gerät sendet Messwerte zum Device Management, wie "c8y&#95;SignalStrength", sowie aktuelle Produktionsmesswerte. Sie möchten aber, dass der Benutzer nur die Device Management-Messwerte sieht. In diesem Fall geben Sie "c8ySignalStrength" als Typ ein.
 
 Standardmäßig enthält das Feld **Typ** ein Sternsymbol *, so dass alle Typen eingeschlossen sind.
 
-> **Info:** Weitere Informationen zu möglichen Typen finden Sie in Ihrer Gerätedokumentation, der [Sensor Library](/reference/sensor-library) von Cumulocity oder der [Device Management Library](/reference/device-management). Der Typ, der hier verwendet wird, ist der sogenannte "Fragmenttyp", nicht das "Type"-Attribut. Sie müssen alle Fragmenttypen, die in einem Messwert gesendet werden, eingeben, damit der Messwert sichtbar wird; ähnliches gilt für andere Datentypen.
+> **Info:** Weitere Informationen zu möglichen Typen finden Sie in Ihrer Gerätedokumentation, der [Sensor Library](/reference/sensor-library) von Cumulocity IoT oder der [Device Management Library](/reference/device-management). Der Typ, der hier verwendet wird, ist der sogenannte "Fragmenttyp", nicht das "Type"-Attribut. Sie müssen alle Fragmenttypen, die in einem Messwert gesendet werden, eingeben, damit der Messwert sichtbar wird; ähnliches gilt für andere Datentypen.
 
-Wählen Sie im Feld **Berechtigung** eine Berechtigungsebene aus der Auswahlliste: 
+Wählen Sie im Feld **Berechtigung** eine Berechtigungsebene aus der Auswahlliste:
 
 * READ - zum Anzeigen von Objekten
 * CHANGE - zum Ändern von Objekten (schließt nicht die READ-Berechtigung ein)
@@ -339,9 +339,9 @@ Nehmen wir als weiteres Beispiel an, dass Sie Tracking-Geräte verwenden. Sie m�
 
 ### <a name="attach-inventory"></a>Zuweisen von Stammdatenrollen zu Benutzern
 
-Stammdatenrollen werden einem Benutzer und einer Gerätegruppe zugewiesen. 
+Stammdatenrollen werden einem Benutzer und einer Gerätegruppe zugewiesen.
 
-Klicken Sie **Benutzer** im Menü **Konto**, wählen Sie einen Benutzer aus der Benutzerliste und wechseln Sie zur Registerkarte **Stammdatenrollen**. 
+Klicken Sie **Benutzer** im Menü **Konto**, wählen Sie einen Benutzer aus der Benutzerliste und wechseln Sie zur Registerkarte **Stammdatenrollen**.
 
 In der Registerkarte **Stammdatenrollen** sehen Sie einen Baum mit Gerätegruppen. Klicken Sie auf den Pfeil rechts von einer Gruppe, um eine Stammdatenrollen zuzuweisen. Wählen Sie die gewünschten Rollen und klicken Sie **Anwenden**. Weitere Informationen zu den Rollen erhalten Sie, wenn Sie den Mauszeiger über das Info-Symbol bewegen, oder unter [Anzeigen von Stammdatenrollen](#inventory).
 
@@ -364,9 +364,9 @@ Klicken Sie für Hilfe bei der Fehlersuche auf die Schaltfläche **Benutzer** in
 
 ### <a name="app-access"></a>Gewähren von Anwendungszugriff
 
-Die Registerkarte **Anwendungen** zeigt eine Liste aller verfügbaren Anwendungen in Ihrem Mandanten in alphabetischer Reihenfolge. 
+Die Registerkarte **Anwendungen** zeigt eine Liste aller verfügbaren Anwendungen in Ihrem Mandanten in alphabetischer Reihenfolge.
 
-Um dem Benutzer Anwendungen zuzuweisen, wählen Sie einfach die entsprechenden Anwendungen aus und klicken **Speichern**. 
+Um dem Benutzer Anwendungen zuzuweisen, wählen Sie einfach die entsprechenden Anwendungen aus und klicken **Speichern**.
 
 Weitere Informationen zur Anwendungsverwaltung finden Sie unter [Verwalten von Anwendungen](/benutzerhandbuch/administration-de#managing-applications).
 

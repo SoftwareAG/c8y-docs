@@ -50,7 +50,7 @@ If the fragment is present, the list of sample commands for a device type will b
 
 #### c8y\_LogfileRequest
 
-You can request a device to send a log file and view the log file in Cumulocity's log viewer. If a device supports log viewing, it needs to add "c8y\_LogfileRequest" to its supported operations. In addition, it needs to specify which logs are available on the device:
+You can request a device to send a log file and view the log file in Cumulocity IoT's log viewer. If a device supports log viewing, it needs to add "c8y\_LogfileRequest" to its supported operations. In addition, it needs to specify which logs are available on the device:
 
 	"c8y_SupportedLogs": ["syslog", "dmesg"]
 
@@ -69,7 +69,7 @@ The parameters in the request define filtering criteria to be applied to the log
 * "logFile" indicates the log file to select.
 * "dateFrom" and "dateTo" specify the time range of log entries in the log file to be sent.
 * "searchText" provides a text that needs to be present in the log entry.
-* "maximumLines" gives an upper limit of the number of lines that should be sent to Cumulocity after filtering.
+* "maximumLines" gives an upper limit of the number of lines that should be sent to Cumulocity IoT after filtering.
 
 When the device receives such a request, it filters the log file according to the criteria and sends the result as a file to the [Binary API](/reference/binaries). It then puts a link to this file into the log file request:
 

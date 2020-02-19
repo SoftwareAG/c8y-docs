@@ -12,9 +12,9 @@ Cloud Fieldbus is a Cumulocity application with the ability to collect data from
 
 It is supported out of the box by the following terminals:
 
-* [Pssystec Smartbox-Modbus](https://devicepartnerportal.softwareag.com/web/#/devices/10043/3) for Modbus/RTU
-* [Pssystec SmartBox DP](https://devicepartnerportal.softwareag.com/web/#/devices/10041/3) for Profibus
-* [Netcomm Wireless NTC-6200](https://devicepartnerportal.softwareag.com/web/#/devices/10034/3) for Modbus/TCP and Modbus/RTU
+* [Pssystec Smartbox-Modbus](https://devicepartnerportal.softwareag.com/web/#/devices/10043) for Modbus/RTU
+* [Pssystec SmartBox DP](https://devicepartnerportal.softwareag.com/web/#/devices/10041) for Profibus
+* [Netcomm Wireless NTC-6200](https://devicepartnerportal.softwareag.com/web/#/devices/10034) for Modbus/TCP and Modbus/RTU
 * [OPC-UA](https://bitbucket.org/m2m/cumulocity-agents-opc/src/develop/opcua-agent/documentation/) for OPC-UA Servers
 
 OPC UA support is implemented in Java and runs on any system running JRE7 (Java Runtime Environment 7) or newer.
@@ -50,14 +50,14 @@ To connect a Modbus/TCP device:
 2. Check the network settings of the device using the instructions provided with the device.
 3. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Network** tab. Verify that the LAN settings of the terminal match the settings of the device so that TCP communication can be established.
 4. Switch to the **Modbus** tab.
-5. Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency at which measurements are sent to Cumulocity. 
+5. Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency at which measurements are sent to Cumulocity.
 6. Click **Save changes** if you made changes.
 
 **Adding child devices**
 
 1. To start communication between the terminal and the Modbus device, click **Add new device**.
 2. Enter a name for the device and select the type of the device from the dropdown field. To add new device types, see [Configuring Fieldbus device types](#configure) below. Set the Modbus address and the IP address of the connected device.
-3. Click **Add**. 
+3. Click **Add**.
 
 Cumulocity will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.
 
@@ -71,7 +71,7 @@ To connect a CAN device:
 
 1. Physically wire the CAN device through to the terminal.
 2. Check the serial communication baud rate of the device according to the instructions provided with the device. These have to match all devices on the bus.
-3. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **CAN bus** tab. 
+3. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **CAN bus** tab.
 4. Change the baud rate setting shown in the section **CAN bus communication** to match the settings on the bus, if needed.
 5. Change the transmit rate according to your requirements. The transmit rate is the frequency where measurements are sent to Cumulocity.
 6. Click **Save changes** if you made changes.
@@ -80,7 +80,7 @@ To connect a CAN device:
 
 1. To start communication between the terminal and the CAN device, click **Add CAN device**.
 2. Enter a name for the device and select the type of the device from the dropdown field. To add new device types, see [Configuring Fieldbus device types](#configure) below.
-3. Click **Add**. 
+3. Click **Add**.
 
 Cumulocity will now send a notification to the Fieldbus terminal that a new device is ready to be managed. This may take a few seconds.
 
@@ -90,15 +90,15 @@ After completion, a new child device has been added to the terminal and can now 
 
 #### <a name="connect-opcua"></a>Connecting OPC UA servers
 
-To connect an OPC UA server to Cumulocity, you need a gateway or industrial PC running the Cumulocity OPC UA agent. 
+To connect an OPC UA server to Cumulocity, you need a gateway or industrial PC running the Cumulocity OPC UA agent.
 
-1. Make sure that the OPC UA server is connected to the gateway or PC, i.e. directly through an Ethernet cable or through a switch. 
+1. Make sure that the OPC UA server is connected to the gateway or PC, i.e. directly through an Ethernet cable or through a switch.
 2. Check the network settings of the gateway and make sure that the OPC UA server is reachable from the gateway.
 3. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the gateway and switch to the  **OPCUA** tab.
 4. In the **URL** field, enter the URL of the OPC UA server as seen from the gateway.
 5. Set the username and password to access the OPC UA server.
 6. Change the transmit rate and the polling rate according to your requirements. The transmit rate is the frequency at which measurements are sent to Cumulocity. The polling rate is the frequency at which the OPC UA server polls for changes. Note that not all OPC UA servers support setting a polling rate. In such cases, the OPC UA server sends data usually whenever it changes.
-7. Click **Save changes** if you made changes. 
+7. Click **Save changes** if you made changes.
 
 **Adding child devices**
 
@@ -108,7 +108,7 @@ To connect an OPC UA server to Cumulocity, you need a gateway or industrial PC r
 4. Select the type of the child device from the drop-down box. To add new device types, see [Configuring Fieldbus device types](#configure) below.
 5. Click **Add**.
 
-Cumulocity will now send a notification to the OPC UA agent that a new device is ready to be managed. This may take a few seconds. 
+Cumulocity will now send a notification to the OPC UA agent that a new device is ready to be managed. This may take a few seconds.
 
 After completion, a new child device has been added to the gateway and can now be managed. You can click on the name of the device in the table to navigate to the device.
 
@@ -124,7 +124,7 @@ Connecting Profibus differs slightly from the regular Plug & Play approach of Cl
 3. The baud rate is automatically detected by the gateway and is just being displayed here.
 4. Change the transmit rate according to your requirements. The transmit rate is the interval at which measurements are sent to Cumulocity.
 5. Set the slave address of the terminal.
-6. Configure your Profibus Master device to communicate to that slave address. To do so, refer to the gateway manual (e.g. [SmartBox DP](https://devicepartnerportal.softwareag.com/web/#/devices/10041/3)).
+6. Configure your Profibus Master device to communicate to that slave address. To do so, refer to the gateway manual (e.g. [SmartBox DP](https://devicepartnerportal.softwareag.com/web/#/devices/10041)).
 7. Click **Save** to update the gateway with the new settings.
 
 **Adding child devices**
@@ -175,7 +175,7 @@ The status of devices can be monitored in real time using dashboard widgets in t
 
 #### <a name="fieldbus-device-widget"></a>Monitoring device status using the Fieldbus Device widget
 
-The Fieldbus Device widget provides you with a tabular display of the status of a device. The status of the device can also be modified through the widget. 
+The Fieldbus Device widget provides you with a tabular display of the status of a device. The status of the device can also be modified through the widget.
 
 To use the Fieldbus Device widget, follow these steps:
 
@@ -194,7 +194,7 @@ Registers and coils that can be changed are represented by active widgets. For e
 
 #### <a name="scada"></a>Monitoring status using the SCADA widget
 
-The SCADA widget provides you with a graphic representation of the status of a device. 
+The SCADA widget provides you with a graphic representation of the status of a device.
 
 To use the SCADA widget, follow these steps:
 
@@ -210,9 +210,9 @@ To use the SCADA widget, follow these steps:
 
 #### <a name="scadasvg"></a>Preparing SVG files for the SCADA widget
 
-The SCADA widgets inspect uploaded SVG files for placeholders. These placeholders are replaced by actual values from devices. Placeholders have a specific syntax and can be used anywhere in the SVG file. To add a placeholder, enter the name of the placeholder in double curly braces using your design application or a text editor. 
+The SCADA widgets inspect uploaded SVG files for placeholders. These placeholders are replaced by actual values from devices. Placeholders have a specific syntax and can be used anywhere in the SVG file. To add a placeholder, enter the name of the placeholder in double curly braces using your design application or a text editor.
 
-When creating svg files, we recommend you to use [https://boxy-svg.com/](https://boxy-svg.com/). It is easy to use, quality chrome extension. 
+When creating svg files, we recommend you to use [https://boxy-svg.com/](https://boxy-svg.com/). It is easy to use, quality chrome extension.
 
 	<text class="text" xt-anchor="middle" x="100" y="236.982125" width="200" ...>
 		{{batteryValue}}
@@ -221,9 +221,9 @@ When creating svg files, we recommend you to use [https://boxy-svg.com/](https:/
 
 ### <a name="configure"></a>Configuring Fieldbus device types
 
-New Fieldbus device types can be set up in the **Device database** page which you open from the **Device Types** menu in the navigator. 
+New Fieldbus device types can be set up in the **Device database** page which you open from the **Device Types** menu in the navigator.
 
-Click **New** in the top menu bar. In the **Device type** field, select the protocol of your device and enter a name for it. 
+Click **New** in the top menu bar. In the **Device type** field, select the protocol of your device and enter a name for it.
 
 Now you can start adding coils and register definitions to the device type, depending on the selected protocol (see the descriptions below).
 
@@ -265,12 +265,12 @@ Click **Add** at the top right of the **Holding registers** section, to add a re
 11. Select the **Raise alarm** checkbox if an alarm should be raised when the register is not zero in the device measurement. In this case, you can specify the type of the alarm raised, its text and its severity. Note, that there can only be one alarm active of a particular type for a particular device.
 12. Select the **Send event** checkbox if an event should be generated each time the value of the register changes. If **Send event** is selected, you can specify the type of event and the text in the event.
 13. Click **OK** to save your settings.
- 
+
 ![Add register](/images/users-guide/CloudFieldbus/fieldbus-deviceprotocols-newregister.png)
 
 In the **Options** section, select the checkbox **Use server time** to create the time stamps for data on the server instead of on the terminal. If you need to support buffering of data on the terminal, leave this checkbox clear.
 
-Finally, click **Save** to save your settings. 
+Finally, click **Save** to save your settings.
 
 If you edit a device type that is currently in use, you may need to
 
@@ -289,11 +289,11 @@ CAN device types can be configured in a very similar way as Modbus device types.
 
 #### <a name="configureOPCUA"></a>Configuring OPC UA data
 
-OPC UA device types can be configured in a very similar way as Modbus device types. For more information, see [Configuring Modbus data](#configureModbus) above. 
+OPC UA device types can be configured in a very similar way as Modbus device types. For more information, see [Configuring Modbus data](#configureModbus) above.
 
-The main difference is how data is addressed. OPC UA servers provide a hierarchical object model of connected nodes. The nodes are addressed by the browse path from the root of the object model to the respective node. 
+The main difference is how data is addressed. OPC UA servers provide a hierarchical object model of connected nodes. The nodes are addressed by the browse path from the root of the object model to the respective node.
 
-To simplify configuration, the browse path is split into two parts in Cloud Fieldbus: 
+To simplify configuration, the browse path is split into two parts in Cloud Fieldbus:
 
  * From the root to the OPC UA device (configured [above](#connect-opcua)).
  * From the OPC UA device to a node with data of that device.
@@ -304,13 +304,13 @@ When you click **Add**, enter the second part of the path into the **** field as
 
 #### <a name="configureProfibus"></a>Configuring Profibus data
 
-To configure a Profibus device type, select "Profibus" as device type from the dropdown list and enter a name for it. 
+To configure a Profibus device type, select "Profibus" as device type from the dropdown list and enter a name for it.
 
 In the Register section, click **Add** at the right to add one or more register definitions as described exemplarily for Modbus devices in [Adding a register definition](#addRegister) above.  
 
 In the **Options** section, select the checkbox **Use server time** to create the time stamps for data on the server instead of on the terminal. If you need to support buffering of data on the terminal, leave this checkbox clear.
 
-Finally, click **Save** to save your settings. 
+Finally, click **Save** to save your settings.
 
 If you edit a device type that is currently in use, you may need to
 
@@ -336,17 +336,17 @@ In the **Variables** section, you determine the CANopen variables. Variables ins
 The following fields can be observed:
 
 - **Name:** The name of the variable.
-- **Display category:** This field is used to group variables into sections in the visualization. 
-- **Index:** Index of the variable in the OD of the device. 
+- **Display category:** This field is used to group variables into sections in the visualization.
+- **Index:** Index of the variable in the OD of the device.
 - **Sub-index:** Sub-Index of the variable in the OD of the device.
 - **Data type:** The type of the variable (e.g. boolean, unsigned).
 - **Access type:** E.g. read only, write only, etc.
 - **Unit:** Logical unit of the variable.
-- **Show status:** Defines how the variable is shown in the inventory. 
+- **Show status:** Defines how the variable is shown in the inventory.
 - **Update status:** Defines how the variable is updated in Cumulocity.
 - **Send measurement:** Create a measurement when the value of the variable is changed.
 - **Raise alarm:** Create an alarm if a given mask matches with the value of the variable ((value & mask) == mask). Therefore, it is possible to raise alarms on single bits of e.g. an Unsigned8 variable, like the Error-Register.
-- **Raise event:** Create an event, whenever the value of the variable is changed. 
+- **Raise event:** Create an event, whenever the value of the variable is changed.
 
 After adding variables to the new device type, they are listed in the **Variables** section of the device type. All variables are grouped by the given display category, i.e. variables with same category are grouped together.
 
@@ -379,7 +379,7 @@ In the **CANopen** section, up to 127 CANopen devices can be added to the gatewa
 - **Node ID:** The CANopen node ID of the device. It is used for addressing the device inside the CANopen network.
 
 > The device type and node ID need to match with the real CANopen device, otherwise setting up the communication is not possible or wrong values will be transmitted.
- 
+
 ### <a name="import"></a>Exporting and importing device types
 
 To manage device types more conveniently, you can export device types to a file once they are edited in the user interface. The file can be re-imported to  set up other Cumulocity accounts easily or to restore the types from a backup. The import functionality also supports importing ready-made device types provided by device manufacturers.

@@ -188,7 +188,7 @@ To diagnose high-memory-consuming models and EPL applications, you can try the f
 
 If the memory continues to grow, then when it reaches the limit, the correlator will run out of memory and Apama-ctrl will shut down. To prevent the microservice from going down, you have to fix this as a priority.
 
-See also the TECHniques blog post at "[Diagnostic tools for Apama in Cumulocity IoT](http://techcommunity.softwareag.com/techniques-blog/-/blogs/apama-in-cumulocity-iot)".
+See also the TECHniques blog post at [Diagnostic tools for Apama in Cumulocity IoT](http://techcommunity.softwareag.com/techniques-blog/-/blogs/apama-in-cumulocity-iot).
 
 #### <a name="apama_ctrl_fatalcritwarn"></a>Warning or higher level logging from an EPL file
 

@@ -9,7 +9,7 @@ Using Apama within the Cumulocity IoT environment necessarily has some restricti
 There are a number of ways that assets may be deployed to Apama within Cumulocity IoT and the restrictions vary according to those mechanisms:
 
 * Apama EPL Apps - the simplest mechanism to deploy Apama assets into a fully managed Apama correlator, see [Basic functionality > Deploying applications](/apama/analytics-introduction/#deploying-apps).
-* Custom microservice – where more complex Apama projects can be built using the Cumulocity Microservice SDK, see [Developing applications > Cumulocity microservices](/concepts/applications#microservices) in the *Concepts guide*.
+* Custom microservice – where more complex Apama projects can be built using Cumulocity IoT's Microservice SDK, see [Developing applications > Cumulocity microservices](/concepts/applications#microservices) in the *Concepts guide*.
 
 When designing an Apama solution to be deployed within any form of Cumulocity IoT environment, consider the following points.
 

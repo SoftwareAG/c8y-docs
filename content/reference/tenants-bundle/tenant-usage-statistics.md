@@ -21,7 +21,7 @@ layout: redirect
 
  * "requestCount" and "deviceRequestCount" are updated every 5 minutes.
  * "deviceCount", "deviceEndpointCount", "deviceWithChildrenCount", "storageSize" and "subscribedApplications" are updated daily starting at 23:57.
- * "storageSize" is affected by your retention rules. It is also affected by the regularly running database optimization functions running in Cumulocity. If the size decreases, it does not necessarily mean that data was deleted.
+ * "storageSize" is affected by your retention rules. It is also affected by the regularly running database optimization functions running in Cumulocity IoT. If the size decreases, it does not necessarily mean that data was deleted.
  * Days are counted according to server timezone.
 
 "deviceRequestCount" - device requests are recognized as requests that do not contain "X-Cumulocity-Application-Key" header.
@@ -35,7 +35,7 @@ Request counting in SmartREST and MQTT:
 
 Inbound data transfer refers to the total number of inbound requests performed to transfer data into the Cumulocity IoT platform. This includes sensor readings, alarms, events, commands and alike that are transferred between devices and the Cumulocity IoT platform using the REST and/or MQTT interfaces. Such an inbound request could also originate from a custom microservice, website or any other client.
 
-The table below lists all counters that enhance the Cumulocity tenant statistics and measure the inbound data transfers:
+The table below lists all counters that enhance the Cumulocity IoT tenant statistics and measure the inbound data transfers:
 
 <div class="table-responsive"><table>
 <col width="200">

@@ -4,9 +4,9 @@ title: Access control
 layout: redirect
 ---
 
-Cumulocity uses a standard authentication and authorization process based on realms, users, user groups, and authorities. A *realm* is a database of users and user groups, who follow the same authentication and authorization policy. A *user* is a person or an external system entitled to access protected resources inside Cumulocity. 
+Cumulocity IoT uses a standard authentication and authorization process based on realms, users, user groups, and authorities. A *realm* is a database of users and user groups, who follow the same authentication and authorization policy. A *user* is a person or an external system entitled to access protected resources inside Cumulocity IoT. 
 
-Cumulocity creates a new realm for each tenant to store the users of that tenant. Realms provide an own namespace for usernames, allowing users to keep the names that they are familiar with from their own enterprise IT or other IT systems. There is no conflict between user names: A user "smith" of one particular tenant is different from a user "smith" of another tenant. This username is valid for all Cumulocity applications that a tenant subscribes to.
+Cumulocity IoT creates a new realm for each tenant to store the users of that tenant. Realms provide an own namespace for usernames, allowing users to keep the names that they are familiar with from their own enterprise IT or other IT systems. There is no conflict between user names: A user "smith" of one particular tenant is different from a user "smith" of another tenant. This username is valid for all Cumulocity IoT applications that a tenant subscribes to.
 
 Each new realm is automatically populated with an initial administrator user who can create further users and user groups (i.e. global roles), and who can assign permissions to them. This enables an enterprise to manage users and their permissions on their own using the Administration application.
 
@@ -19,18 +19,18 @@ The ability to execute certain functionality on the system depends on two concep
 
 Permissions define explicitly what functionality can be executed by a user. 
 
-Cumulocity distinguishes read permissions and administration permissions. Read permissions enable users to read data. Administration permissions enable users to create, update and delete data. Read and administration permissions are separately available for the different types of data in Cumulocity. For example, there are read permissions for inventory data, measurements, operations and so forth.
+Cumulocity IoT distinguishes read permissions and administration permissions. Read permissions enable users to read data. Administration permissions enable users to create, update and delete data. Read and administration permissions are separately available for the different types of data in Cumulocity IoT. For example, there are read permissions for inventory data, measurements, operations and so forth.
 
 To manage permissions more easily, they are grouped into so-called "roles". Every user can be associated with a number of roles, adding up permissions of the user. 
 
 The following types of roles can be associated with users:
 
-Global roles: Contain permissions that apply to all data within a tenant.
-Inventory roles: Contain permissions that apply to groups of devices.
+* **Global roles**: Contain permissions that apply to all data within a tenant.
+* **Inventory roles**: Contain permissions that apply to groups of devices.
 
 Objects in the inventory also have an owner associated with them. If you have created an object, you are the owner of it and can manage it without requiring any further permissions. Owners can always, regardless of their other permissions,
 
--   Read, Update and delete the inventory objects they own.
+-   Read, update and delete the inventory objects they own.
 -   Create, read, update and delete data associated with the objects they own.
 
 For example, if you are the owner of a smart meter in the inventory, you can store meter readings for that smart meter even if you do not have any other measurement permissions.
@@ -43,7 +43,7 @@ This concept helps to assign minimal permissions to devices.
 
 ### Limiting access to managed objects
 
-Cumulocity allows you to set global permissions that are applicable to all managed objects, measurements, events and so forth. It also allows a limitation of permits.
+Cumulocity IoT allows you to set global permissions that are applicable to all managed objects, measurements, events and so forth. It also allows a limitation of permits
 
 * To specific managed objects or a set of managed objects. 
 * To a single user or a group of users.

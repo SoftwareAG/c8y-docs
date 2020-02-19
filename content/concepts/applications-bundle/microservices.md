@@ -4,8 +4,6 @@ title: Cumulocity IoT microservices
 layout: redirect
 ---
 
-### Overview
-
 Microservices are server-side applications. Microservices can be used to develop for example the following functionality on top of Cumulocity IoT:
 
 * Integrations
@@ -17,7 +15,7 @@ Microservices are deployed as Docker images to Cumulocity IoT, and follow specif
 
 When developing a Cumulocity IoT microservice, a developer is not restricted to any programming language. However, a microservice must serve as a HTTP server working on port 80 and must be encapsulated in a Docker image.
 
-The hosting of the microservice is provided by Cumulocity IoT. This way developers can focus on business logic and leave scaling, security, high availability and monitoring to Cumulocity IoT. Microservices can be built on the top of the API exposed by the Cumulocity IoT platform. This way, Cumulocity IoT microservices are a comfortable means to provide new functionality and extend existing one.
+The hosting of the microservice is provided by Cumulocity IoT. This way developers can focus on business logic and leave scaling, security, high availability and monitoring to Cumulocity IoT. Microservices can be built on top of the API exposed by the Cumulocity IoT platform. This way, Cumulocity IoT microservices are a comfortable means to provide new functionality and extend existing ones.
 
 ![microservice_infrastructure](/images/concepts-guide/microservice_infrastructure.png)
 

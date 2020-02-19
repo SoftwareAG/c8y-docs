@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Introduction to Cumulocity
+title: Introduction to Cumulocity IoT
 layout: bundle
 aliases:
   - /concepts-guide/introduction-to-cumulocity

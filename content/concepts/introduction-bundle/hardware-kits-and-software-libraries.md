@@ -3,7 +3,7 @@ title: Software libraries
 weight: 20
 ---
 
-Cumulocity offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the Cumulocity IoT platform.
+Cumulocity IoT offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the Cumulocity IoT platform.
 
 We offer generic client libraries for [C++](/device-sdk/cpp) and [C#](/device-sdk/hello-mqtt-cs-0). If your device uses a completely proprietary runtime environment, you can always  use [MQTT](/device-sdk/mqtt) and [SmartREST 2](/device-sdk/rest). These will work on practically any Internet-connected device today, down to the smallest systems.
 

@@ -8,4 +8,4 @@ This documentation describes the **10.5.7 GA release (January 2020)** of the Cum
 
 This documentation covers all new features and functionality introduced with release 10.5.7 (see the [Release notes](/release-notes#10.5.7) for details). 
 
-Any other relevant changes that have been made to the Cumulocity documentation since the previous version will be mentioned in the release notes as well.  
+Any other relevant changes that have been made to the Cumulocity IoT documentation since the previous version will be mentioned in the release notes as well.  

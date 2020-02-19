@@ -324,7 +324,7 @@ This warning message shows up when no LoRa device protocol exists to be used for
 
 <img src="/images/users-guide/actility/lora-device-registration-no-device-type.png" alt="No device protocol given for LoRa" style="max-width: 100%">
 
-To resolve this, configure at least one device protocol using [Device database](#create-device-types).
+To resolve this, configure at least one device protocol using [Device database](/users-guide/device-management/#managing-device-types).
 
 ##### No connectivity plans with free slots available
 

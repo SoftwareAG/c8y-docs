@@ -123,6 +123,6 @@ For your convenience we provide CSV template files for both bulk registration ty
 5. In Step 2 of the **Text Import Wizard**, select **Semicolon** as delimiter and click **Finish**.
 
 For further information on the file format and accepted CSV variants, also refer to
-[Bulk device credentials](/reference/device-credentials/#creds-upload) in the Reference guide.
+[Bulk device credentials](/reference/device-credentials/#bulk-device-credentials) in the Reference guide.
 
 >**Info**: In an Enterprise Tenant you may also register devices across multiple tenants by adding a **Tenant** column to the spreadsheet and importing the CSV file from the management tenant.

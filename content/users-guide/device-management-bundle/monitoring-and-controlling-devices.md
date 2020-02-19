@@ -53,7 +53,7 @@ Push connection means the connection from Cumulocity to /devicecontrol/notificat
 
 >**Info**: Connection monitoring is not real time. This means that the displayed connection status will not change immediately after switching off a device. Depending on the used protocol for push connection monitoring this can take a couple of minutes.
 
-**Maintenance mode**
+<a name="maintenance-mode"></a>**Maintenance mode**
 
 Moreover, the device may be in "Maintenance" mode, indicated by the tool icon in the **Status** column. This is a special connection status indicating that the device is currently being maintained and cannot be monitored. While a device is being maintained, no alarms for that device are raised.
 

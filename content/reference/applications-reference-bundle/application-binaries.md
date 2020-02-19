@@ -6,7 +6,7 @@ layout: redirect
 
 ### POST - upload application binary
 
-For the applications of type "microservice" and "web application" to be available for Cumulocity platform users, a binary zip file must be uploaded.
+For the applications of type "microservice" and "web application" to be available for Cumulocity IoT platform users, a binary zip file must be uploaded.
 
      POST /application/applications/{APPLICATION_ID}/binaries
      Host: ...

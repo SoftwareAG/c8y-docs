@@ -3,20 +3,20 @@ weight: 90
 title: Smart Rules-Sammlung
 layout: redirect
 ---
- 
+
 <a name="business"></a>
 
-Cumulocity enthält eine Reihe von vordefinierten Smart Rules. 
+Cumulocity enthält eine Reihe von vordefinierten Smart Rules.
 
 ![Global smart rules](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules.png)
 
-Für jeden globalen Smart Rules-Typen lassen sich verschiedene Parameter konfigurieren. 
+Für jeden globalen Smart Rules-Typen lassen sich verschiedene Parameter konfigurieren.
 
 Im folgenden Abschnitt werden alle verfügbaren Typen mit den jeweils konfigurierbaren Parametern beschrieben.
 
 ### Bei Alarm SMS senden
 
-**Funktionalität** 
+**Funktionalität**
 
 Wenn ein Alarm erzeugt wird, wird eine SMS gesendet.
 
@@ -69,7 +69,7 @@ Die Regel verwendet die folgenden Parameter:
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de/#monitoring-and-controlling-devices) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de/#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
 * Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
@@ -77,7 +77,7 @@ Die Regel verwendet die folgenden Parameter:
 
 ### Bei Alarm E-Mail senden
 
-**Funktionalität** 
+**Funktionalität**
 
 Wenn ein Alarm erzeugt wird, wird eine E-Mail gesendet.
 
@@ -129,7 +129,7 @@ Die Regel verwendet die folgenden Parameter:
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de/#monitoring-and-controlling-devices) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de/#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
 * Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
@@ -137,7 +137,7 @@ Die Regel verwendet die folgenden Parameter:
 
 ### Bei Alarm eskalieren
 
-**Funktionalität** 
+**Funktionalität**
 
 Sendet eine E-Mail oder SMS, wenn ein Alarm erzeugt wird.
 
@@ -189,14 +189,14 @@ Die Regel verwendet die folgenden Parameter:
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de/#monitoring-and-controlling-devices) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de/#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
 * Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 
 ### Bei Alarmdauer Schweregrad erhöhen
 
-**Funktionalität** 
+**Funktionalität**
 
 Wenn ein Alarm für einen bestimmten Zeitraum aktiviert ist, wird er Schweregrad erhöht.
 
@@ -225,9 +225,9 @@ Wenn der Alarm den Schweregrad KRITISCH erreicht hat, wird die Überwachung been
 
 ### Bei Geofence Alarm erzeugen
 
-**Funktionalität** 
+**Funktionalität**
 
-Wird ein Geofence-Bereich überschritten, wird ein Alarm erzeugt. 
+Wird ein Geofence-Bereich überschritten, wird ein Alarm erzeugt.
 
 Diese Regel kann für das Betreten oder Verlassen eines Geofence-Bereichs oder für beides konfiguriert werden. Bestehende Alarme werden gelöscht, wenn wieder die gegenteilige Bedingung zutrifft, z. B. wenn ein Auto, das den Geofence-Bereich verlassen hat, wieder in den Bereich eintritt.
 
@@ -279,16 +279,16 @@ Die Regel verwendet die folgenden Parameter:
 **Fehlerbehebung**
 
 * Stellen Sie sicher, dass das Gerät mindestens einmal im Geofence-Bereich war, nachdem die Regel erstellt/aktiviert wurde.
- 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de/#monitoring-and-controlling-devices) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de/#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
 * Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 ### Bei Geofence E-Mail senden
 
-**Funktionalität** 
+**Funktionalität**
 
-Wenn ein Geofence-Bereich überschritten wird, wird eine E-Mail gesendet. 
+Wenn ein Geofence-Bereich überschritten wird, wird eine E-Mail gesendet.
 
 **Parameter**
 
@@ -344,7 +344,7 @@ Die Regel verwendet die folgenden Parameter:
 
 ### Energieverbrauch berechnen
 
-**Funktionalität** 
+**Funktionalität**
 
 Erstellt einen Verbrauchs-Datenpunkt basierend auf Daten von einem Strom-, Gas oder Wasserzähler.
 
@@ -404,9 +404,9 @@ Wenn keine weiteren Messdaten im letzten Intervall erzeugt wurden, wird ein Mess
 
 ### Bei fehlenden Messdaten Alarm erzeugen
 
-**Funktionalität** 
+**Funktionalität**
 
-Gehen keine neuen Messdaten innerhalb eines bestimmten Zeitraums ein, wird ein Alarm erzeugt. 
+Gehen keine neuen Messdaten innerhalb eines bestimmten Zeitraums ein, wird ein Alarm erzeugt.
 
 **Parameter**
 
@@ -455,7 +455,7 @@ Die Regel verwendet die folgenden Parameter:
 
 ### Bei Alarm Kommando ausführen
 
-**Funktionalität** 
+**Funktionalität**
 
 Tritt ein bestimmter Alarm auf, wird das spezifizierte Kommando zum Gerät gesendet.
 
@@ -505,7 +505,7 @@ Die Regel verwendet die folgenden Parameter:
 
 ### Bei Schwellwert Alarm erzeugen
 
-**Funktionalität** 
+**Funktionalität**
 
 Wenn der Messwert einen definierten roten oder gelben Bereich betritt oder verlässt, wird ein Alarm erzeugt bzw. gelöscht.
 
@@ -581,7 +581,7 @@ Die Regel führt für jeden eingehenden Messwert folgende Schritte aus:
 * Die Daten für den roten und gelben Bereich stammen aus:
 
 	- dem Quellobjekt (Messwert) oder
-	
+
 	- der Datenpunktbibliothek (Kontrollparameter).
 
 Sind keine roten/gelben Bereiche definiert, werden keine Alarme ausgelöst.
@@ -598,7 +598,7 @@ Sind keine roten/gelben Bereiche definiert, werden keine Alarme ausgelöst.
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de/#monitoring-and-controlling-devices) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de/#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
 * Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
@@ -608,7 +608,7 @@ Sind keine roten/gelben Bereiche definiert, werden keine Alarme ausgelöst.
 
 ### Bei explizitem Schwellwert Alarm erzeugen
 
-**Funktionalität** 
+**Funktionalität**
 
 Wenn der Messwert den roten Bereich betritt oder verlässt, wird ein KRITISCHER Alarm erzeugt bzw. gelöscht.
 
@@ -667,7 +667,7 @@ Die Regel verwendet die folgenden Parameter:
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de/#monitoring-and-controlling-devices) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de/#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
 * Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 

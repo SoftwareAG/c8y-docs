@@ -12,6 +12,7 @@ The setup of DataHub requires the administrator to choose a Dremio account name,
 Under **Dremio Account** name and password of the Dremio account are defined. 
 
 The name is composed of three parts:
+
 1. tenant id
 2. forward slash
 3. string with a minimum length of two starting with a character and consisting of numbers, characters, dash, or underline
@@ -51,12 +52,15 @@ The following types of data lakes are currently supported:
 |AWS access key|The access key|
 |Access secret|The access secret|
 |Bucket name|The name of the S3 bucket|
+|Root path in bucket|The root path within the S3 bucket|
 
 **NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for on-premise installations. The following settings need to be defined for this data lake:
 
 |Settings|Description|
 |:---|:---|
 |Mount path|The mount path of the NAS|
+
+For **Azure Data Lake Storage Gen1**, **Azure Storage**, and **Amazon S3** data lakes, you can also define additional connection properties. Click **Add property** and define an additional property consisting of a key/value pair.
 
 #### Saving settings
 Once all settings are defined, click **Save** in the action bar to the right. During the save process, the following steps are automatically conducted:

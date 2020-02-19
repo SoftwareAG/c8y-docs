@@ -74,7 +74,7 @@ you can select a single group or a single device (just one, not multiple). To en
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/users-guide/device-management#connection-monitoring) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/users-guide/device-management#maintenance-mode) mode. In this case no new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
@@ -134,7 +134,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/users-guide/device-management#connection-monitoring) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/users-guide/device-management#maintenance-mode) mode. In this case no new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
@@ -197,7 +197,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/users-guide/device-management#connection-monitoring) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/users-guide/device-management#maintenance-mode) mode. In this case no new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
@@ -324,7 +324,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 * Make sure the device was inside the geofence at least once after creating/activating the rule.
 
-* Check if the device is in [maintenance](/users-guide/device-management#connection-monitoring) mode. No new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/users-guide/device-management#maintenance-mode) mode. No new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
@@ -657,7 +657,7 @@ If no red/yellow ranges are defined, no alarms are generated.
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/users-guide/device-management#connection-monitoring) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/users-guide/device-management#maintenance-mode) mode. In this case no new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
@@ -729,7 +729,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/users-guide/device-management#connection-monitoring) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/users-guide/device-management#maintenance-mode) mode. In this case no new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 

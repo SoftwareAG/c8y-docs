@@ -6,7 +6,7 @@ layout: redirect
 
 Machine-to-machine (M2M) devices come with a wide variety of protocols, parameters and network connectivity options. Protocols of devices range from low-level serial links to full-blown IT protocols such as web services. Today's IoT standards rarely define exactly how to access particular readings of particular sensors or manipulate particular controls. Devices can be connected through mobile networks and gateways.
 
-To shield machine-to-machine applications from this numbers of access options, Cumulocity uses *agents*. An agent is a function that complies with three duties for a specific vendor and type of devices:
+To shield machine-to-machine applications from this numbers of access options, Cumulocity IoT uses *agents*. An agent is a function that complies with three duties for a specific vendor and type of devices:
 
 -   It translates the device-specific interface protocol into a single reference protocol.
 -   It translates the specific domain model of the device into a reference domain model.
@@ -14,23 +14,29 @@ To shield machine-to-machine applications from this numbers of access options, C
 
 ![Agent architecture](/images/concepts-guide/agents.png)
 
-**Protocol translation :** The configuration of parameters, readings, events and other information are either send to an agent ("push") or queried by an agent ("pull") through a device-specific protocol on one side. The agent will convert these messages into the protocol that Cumulocity requires. It will also receive device control commands from Cumulocity ("switch off that relay") and translate these into a kind of protocol the device requires.
+#### Protocol translation 
 
-Cumulocity uses a simple and secure reference protocol based on REST (i.e., HTTPS) and JSON, which can be used for a wide variety of programming environments down to small embedded systems. To support real-time scenarios, the protocol is designed around a "push" model, i.e., data is sent as soon as it is available.
+The configuration of parameters, readings, events and other information is either send to an agent ("push") or queried by an agent ("pull") through a device-specific protocol on one side. The agent will convert these messages into the protocol that Cumulocity IoT requires. It will also receive device control commands from Cumulocity IoT ("switch off that relay") and translate these into a kind of protocol the device requires.
 
-**Model transformation** The Configuration parameters, readings, events, they all have their device-specific name (and possibly units). An agent for a particular device will transform this device-specific model to the Cumulocity reference model. For example, an electricity meter provides the main reading as a parameter "Received Wh", so the agent will transform this reading into a reference "Total active energy" in kWh.
+Cumulocity IoT uses a simple and secure reference protocol based on REST (i.e. HTTPS) and JSON, which can be used for a wide variety of programming environments down to small embedded systems. To support real-time scenarios, the protocol is designed around a "push" model, i.e. data is sent as soon as it is available.
 
-**Secure remote communication** Devices can provide a protocol that is unsuitable for secure remote communication, in particular in public cloud environments. The protocol only supports local networking and does not pass through firewalls and proxies and it can contain sensitive data in clear text form. To avoid security issues like these, an agent can be co-located to the device and provide a secure, internet-enabled link to the remote device via Cumulocity.
+#### Model transformation
+
+The configuration parameters, readings, events, they all have their device-specific name (and possibly units). An agent for a particular device will transform this device-specific model to the Cumulocity IoT reference model. For example, an electricity meter provides the main reading as a parameter "Received Wh", so the agent will transform this reading into a reference "Total active energy" in kWh.
+
+#### Secure remote communication
+
+Devices can provide a protocol that is unsuitable for secure remote communication, in particular in public cloud environments. The protocol only supports local networking and does not pass through firewalls and proxies and it can contain sensitive data in clear text form. To avoid security issues like these, an agent can be co-located to the device and provide a secure, internet-enabled link to the remote device via Cumulocity IoT.
 
 To summarize the benefits of the agent concept: Agents enable IoT applications to securely interface with any type of remote IoT device and without imposing any mandatory system requirement on the device itself. They drastically simplify developing IoT applications by shielding the applications from the variety of IoT devices and protocols.
 
 ### What agent architecture is supported?
 
-Agents can be deployed in various ways, as illustrated in the picture below. We distinguish two main variants: *Server-side agents* and *device-side agents*.
+Agents can be deployed in various ways, as illustrated in the picture below. We distinguish two main variants: **server-side agents** and **device-side agents**.
 
 ![Agent architectures](/images/concepts-guide/agentarchitectures.png)
 
-**Server-side agents** are run in a cloud, hosted on Cumulocity as Microservices or managed by yourself in your own cloud. Devices connect to server-side agents using their device-specific protocol. This option is mainly chosen when one or more of the following complies:
+**Server-side agents** are run in a cloud, hosted on Cumulocity IoT as microservices or managed by yourself in your own cloud. Devices connect to server-side agents using their device-specific protocol. This option is mainly chosen when one or more of the following complies:
 
 * The device is "closed", i.e. it is not programmable and supports only one particular, pre-defined protocol to communicate with the outside world.
 * The protocol on the device is secure and internet-enabled, i.e. the device connects to the cloud and not vice-versa.

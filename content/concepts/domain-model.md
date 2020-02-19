@@ -8,4 +8,4 @@ aliases:
   - /konzepte/domain-modell
 ---
 
-The following sections describe several concepts related to devices and assets in Cumulocity.
+The following section describes the general technical concepts behind Cumulocity IoT.

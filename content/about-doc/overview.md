@@ -4,7 +4,7 @@ title: Documentation overview
 layout: bundle
 ---
 
-The Cumulocity documentation on this website contains the following information:
+The Cumulocity IoT documentation on this website contains the following information:
 
 <table>
 <col width = 150>
@@ -67,8 +67,8 @@ The Cumulocity documentation on this website contains the following information:
 
 <tr>
 <td align="left">Analytics documentation</td>
-<td align="left"><a href="/predictive-analytics/introduction/">Predictive analytics guide</a></td>
-<td align="left">Detailed information on the predictive analytics capabilities in the Cumulocity IoT platform.</td>
+<td align="left"><a href="/predictive-analytics/introduction/">Machine Learning guide</a></td>
+<td align="left">Detailed information on the machine learning capabilities in the Cumulocity IoT platform.</td>
 </tr>
 
 <tr>

@@ -78,4 +78,4 @@ Migrating from custom rules written in CEL to Apama EPL requires rewriting and r
 
 7. Remove the existing tenant after all CEP custom rules, smart rules and scheduled exports have been moved to or recreated on the new tenant.
 
-You can also choose to work with Software AG Professional Services to help ensure the migration is as smooth as possible. Software AG Professional Services can help migrate CEL code into Apama EPL code and they can also provide training on using Apama in Cumulocity.
+You can also choose to work with Software AG Professional Services to help ensure the migration is as smooth as possible. Software AG Professional Services can help migrate CEL code into Apama EPL code and they can also provide training on using Apama in Cumulocity IoT.

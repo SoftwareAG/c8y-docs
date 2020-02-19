@@ -15,27 +15,29 @@ For demonstration purposes, the [mbed application shield](http://mbed.org/compon
 
 ![mbed application shield](/images/device-demos/ublox/ublox_applicationshield.jpg)
 
-The Cumulocity mbed agent connects the C027 application board to Cumulocity and provides the following features:
+The Cumulocity IoT mbed agent connects the C027 application board to Cumulocity IoT and provides the following features:
 
 * Network dial-up using the C027 modem.
 * Efficient communication through [SmartREST](/microservice-sdk/rest#smartrest).
-* Full auto-registration using Cumulocity's bootstrap and device registration.
+* Full auto-registration using Cumulocity IoT's bootstrap and device registration.
 * Collection and storage of temperature, GPS, accelerometer and analog sensor readings.
-* Remote control of the device LEDs and LCD display from Cumulocity.
+* Remote control of the device LEDs and LCD display from Cumulocity IoT.
 * Status monitoring using the LCD display of the application shield.
 
 #### Prerequisites
 
-To run the Cumulocity mbed agent, the following items are required:
+To run the Cumulocity IoT mbed agent, the following items are required:
 
 * [u-blox C027](https://mbed.org/platforms/u-blox-C027/) Internet of Things starter kit, 2G or 3G version.
 * [mbed appliation shield](https://mbed.org/components/mbed-Application-Shield/).
 * A USB type A to type B adapter.
 * A power supply.
 * A SIM card with data plan for internet access. The SIM card should have no SIM PIN. The SIM PIN can be deactivated using any mobile phone.
-* You need access to the Cumulocity IoT platform. If you do not have access yet, try Cumulocity for free. Go to Software AG Cloud > [Cumulocity IoT] (https://www.softwareag.cloud/site/product/cumulocity-iot.html#/) and select "Try for free". 
+* You need access to the Cumulocity IoT platform. If you do not have access yet, try Cumulocity IoT for free. Go to Software AG Cloud > [Cumulocity IoT] (https://www.softwareag.cloud/site/product/cumulocity-iot.html#/) and select "Try for free". 
 
 ### Setting up and registering the device
+
+#### To get started
 
 1. Insert the SIM card into the SIM slot on the backside of the u-blox C027.
 2. Attach the cellular antenna to the board.
@@ -48,7 +50,7 @@ To run the Cumulocity mbed agent, the following items are required:
 
 Further information is available on [https://os.mbed.com/users/ublox/notebook/u-blox-C027-Getting-Started/] (https://os.mbed.com/users/ublox/notebook/u-blox-C027-Getting-Started/) and [https://os.mbed.com/users/ublox/notebook/u-blox-C027-Downloading/] (https://os.mbed.com/users/ublox/notebook/u-blox-C027-Downloading/).
 
-#### Installing the agent
+#### To install the agent
 
 <!-- 
 Comment ALC: The links to the firmware are no longer correct. I can't find any of such files. Perhaps this is worth a ticket? 
@@ -60,12 +62,12 @@ Comment ALC: The links to the firmware are no longer correct. I can't find any o
 
 | Version | Release date | Download |
 | --- | --- | --- |
-| 1.9      | 18.Feb 2015 | [download](/images/device-demos/ublox/devices/mbed/firmware-1.9.bin)     |
-| 2.0      | 6.Mar 2015  | [download](/images/device-demos/ublox/devices/mbed/firmware-2.0c8y.bin)  |
-| 2.2      | 10.Aug 2015 | [download](/images/device-demos/ublox/devices/mbed/firmware-2.2c8y.bin)  |
+| 1.9      | 18.Feb 2015 | [download](/device-demos/ublox/devices/mbed/firmware-1.9.bin)     |
+| 2.0      | 6.Mar 2015  | [download](/device-demos/ublox/devices/mbed/firmware-2.0c8y.bin)  |
+| 2.2      | 10.Aug 2015 | [download](/device-demos/ublox/devices/mbed/firmware-2.2c8y.bin)  |
 
 <a id="Connecting_the_C027"></a>
-#### Registering the device to the Cumulocity IoT platform
+#### To register the device to Cumulocity IoT
 
 1. The C027 will now dial up to the internet. You will see the status "updated" in the LCD display. If the device cannot connect to the internet, it will display an error message. If there is an error message "Wrong APN setting" or "Unknown APN setting", follow the instructions below in the section [Troubleshooting](#Troubleshooting).
 2. On successful connection for the first time, the device shows "Bootstrapping" and below the IMEI of the cellular modem on the LCD display.
@@ -74,54 +76,34 @@ Comment ALC: The links to the firmware are no longer correct. I can't find any o
 4. Navigate to the Device Management application using the application switcher at the top right. 
 5. To register the device follow the instructions in [Device Management > Connecting devices] (/users-guide/device-management/#connecting-devices) in the User guide.
 6. After successful registration the device will be listed in **All devices** with the name "Mbed Test Device".
-7. When the device is connected to the Cumulocity IoT platform, it will show its current status in the LCD display. The first line always displays the tenant name (until there is a message received from the platform, see the section [Interacting with the control operations] (#Interacting_with_the_control_operations)). The second line shows the signal quality in units of dBm. The third line displays information about which sensor data the u-blox is sending and their corresponding values. In the case of repeatedly sending similar data, the third line remains empty.
+7. When the device is connected to Cumulocity IoT, it will show its current status in the LCD display. The first line always displays the tenant name (until there is a message received from the platform, see the section [To interact with control operations] (#Interacting_with_the_control_operations)). The second line shows the signal quality in units of dBm. The third line displays information about which sensor data the u-blox is sending and their corresponding values. In the case of repeatedly sending similar data, the third line remains empty.
 
-### Interacting with the Cumulocity IoT platform
+### Interacting with Cumulocity IoT
 
-The device is now connected to Cumulocity and sends sensor data periodically. You can now browse and process the collected data in the cloud in various ways.
+The device is now connected to Cumulocity IoT and sends sensor data periodically. You can now browse and process the collected data in the cloud in various ways.
 
-#### Measurements
+#### To view measurements
 
-In the Device Management application, select **Devices > All Devices** in the navigator and then select the "Mbed Test Device".
-
-You can browse the collected sensor data in the **Measurements** tab:
+1. In the Device Management application, click **Devices > All Devices** in the navigator and then select the "Mbed Test Device" from the device list.
+2. In the **Measurements** tab of the device, you can browse the collected sensor data:
 
 ![Measurement Screenshot](/images/device-demos/ublox/ublox_measurements.png)
 
 The device sends new sensor data only when the sensor values are changing. If the values remain constant, no new values are sent except for a forced sending every 15 minutes in order to retain connectivity with the platform.
 
-Add the "Mbed Test Device" to a group, see [Grouping devices] (users-guide/device-management/#grouping-devices) for details.
-
-#### Creating a dashboard
+#### To create a dashboard
 
 The representation of sensor data can be customized. 
 
-Switch to the Cockpit application using the application switcher and then navigate to **Groups > \<Your New Group>** where you will find the "Mbed Test Device". 
-
-To create a new dashboard, click the **Plus** button in the top bar and from the context menu select **Add dashboard**.
+1. Add the "Mbed Test Device" to a group, see [Grouping devices] (/users-guide/device-management/#grouping-devices) for details.
+2. Switch to the Cockpit application using the application switcher and then navigate to **Groups > \<Your New Group>** where you will find the "Mbed Test Device".  
+3. To create a new dashboard, click the **Plus** button in the top bar and from the context menu select **Add dashboard**.
 
 The new dashboard will appear in the top menu bar.
 
-In this dashboard you can add widgets and connect them to data collected from devices such as the "Mbed Test Device".
+You can set up the dashboard according to your requirements. Using **Add widget** provides access to numerous predefined widgets.
 
-Here you can set up the dashboard according to your requirements. Using **Add widget** provides access to numerous predefined widgets. 
-
-An example dashboard created for an mbed device is shown below:
-
-![Dashboard Screenshot](/images/device-demos/ublox/ublox_dashboard.png)
-
-For details refer to [Dashboards](/users-guide/cockpit/#dashboards) and [Widgets collection](/users-guide/cockpit/#widgets) in the User guide.
-
-<a id="Interacting_with_the_control_operations"></a>
-#### Interacting with the control operations
-
-In the **Control** tab several operations are listed that are supported by a u-blox device.
-
-Open the **Control** tab of the "Mbed Test Device".
-
-![Control Operations Screenshot](/images/device-demos/ublox/ublox_operations.png)
-
-Currently the u-blox firmware supports three operations.
+Try the following examples:
 
 ##### Relay
 
@@ -132,10 +114,17 @@ In the "Relay control" widget, switch the toggle to turn the LED on or off.
 
 In the "Message sending" widget, enter a message in the text field, and then click **Send**. After several seconds, the first line of the LCD display should display the message you sent. This message will be displayed in the first line until you send another message or restart the device.
 
+An example dashboard created for an mbed device is shown below:
 
-##### Configuration
+![Dashboard Screenshot](/images/device-demos/ublox/ublox_dashboard.png)
 
-In the **Configuration** tab of the "Mbed Test Device", the supported configuration parameters are shown with their current values. Currently for the Mbed u-blox, the only parameter is "interval" with the default value of 20 minutes, which determines the time period at which the Cumulocity IoT platform will check the availability of the device. It must be set to the same value as in the **Required interval** in the **Info** tab. 
+For details refer to [Dashboards](/users-guide/cockpit/#dashboards) and [Widgets collection](/users-guide/cockpit/#widgets) in the User guide.
+
+<a id="Interacting_with_the_control_operations"></a>
+#### To interact with control operations
+
+1. In the Device Management application, click **Devices > All Devices** in the navigator and select the "Mbed Test Device" from the device list.
+2. In the **Configuration** tab of the device, the supported configuration parameters are shown with their current values. Currently for the mbed u-blox, the only parameter is "interval" with the default value of 20 minutes, which determines the time period at which Cumulocity IoT will check the availability of the device. It must be set to the same value as in the **Required interval** in the **Info** tab. 
 
 ![Interval Screenshot](/images/device-demos/ublox/ublox_interval.png)
 
@@ -157,7 +146,7 @@ When a u-blox device is already registered under a certain tenant, a factory res
 
 * Press and hold the joystick when (re)starting an already registered device.
 * Prior to 2.1, after the LCD display shows "Join Network" and the device is correctly joined to the network, you should see "Reset Success" shown on the LCD display, which indicates a successful factory reset. Starting from version 2.1, a factory reset is much faster, simply wait for "Factory resetting" to appear on the screen, and you can release your finger. After about 2 seconds, you should see "Reset Success" on the display.
-* Now restart the u-blox device and follow the instructions described in section [Registering the device to the Cumulocity IoT platform](#Connecting_the_C027) to register the device again under your tenant.
+* Now restart the u-blox device and follow the instructions described in section [To register the device to Cumulocity IoT](#Connecting_the_C027) to register the device again under your tenant.
 
 
 ### Tips and tricks for developers
@@ -179,7 +168,7 @@ If you want to change the behaviour of the agent, go to mbed.org and adopt the s
 
 1. Sign up for an account in [mbed](https://mbed.org) for free.
 2. Log into the mbed.org site and visit the [C027 page](https://mbed.org/platforms/u-blox-C027/). Click **Add to your mbed Compiler**.
-3. Visit <a href="http://mbed.org/users/Cumulocity/code/MbedSmartRestMain/">Cumulocity Mbed SmartREST main application</a> and click **Import into Compiler** to import the agent into your online Mbed IDE.
+3. Visit <a href="http://mbed.org/users/Cumulocity/code/MbedSmartRestMain/">Cumulocity MbedSmartRESTMain application</a> and click **Import into Compiler** to import the agent into your online Mbed IDE.
 4. In the IDE, click **Compile**. The IDE will download the compiled application to your computer.
 5. Copy the downloaded file to the "MBED" drive.
 6. Press the reset button on the C027 to start the agent.
@@ -219,7 +208,7 @@ Due to the jittering nature of the sensor readings, there is a threshold set for
 
 * **Agent Init Failure**: To troubleshoot this issue, we recommend you to connect the device to your computer and enable debug mode to collect more information via a serial port. See [Enabling debug mode] (#Enabling_debug_ mode) below.
 
-* **Integration/Config Failure** and **Integrate Failure**: This error occurs when you attempt to connect to a server that has not been set in the firmware. Perform a factory reset and register the device again. If this doesn't solve the problem then it's likely to be a server-side issue. Contact your network administrator if you are connecting to your own Cloud instance or contact [support](https://empower.softwareag.com/ContactSupport/) if you are connecting directly to Cumulocity.
+* **Integration/Config Failure** and **Integrate Failure**: This error occurs when you attempt to connect to a server that has not been set in the firmware. Perform a factory reset and register the device again. If this doesn't solve the problem then it's likely to be a server-side issue. Contact your network administrator if you are connecting to your own Cloud instance or contact [support](https://empower.softwareag.com/ContactSupport/) if you are connecting directly to Cumulocity IoT.
 
 * **The device failed to join a network and displays "Wrong APN setting" or "Unknown APN setting"**: Review the source code file _C027_Support/MDMAPN.h_ and add an entry with the Mobile Country Code (MCC), Mobile Network Code (MNC) and your APN setting. The current MMC and MNC code should be shown on the LCD display below the error message "Wrong APN setting" or "Unknown APN setting".
 
@@ -227,9 +216,9 @@ Due to the jittering nature of the sensor readings, there is a threshold set for
 
 * **The device does not appear in the devices list in the UI**: Review the application output using a serial console. See https://os.mbed.com/handbook/SerialPC for details.
 
-* **Upon boot-up, the device displays "Connect to Cloud" right after "Agent Run", instead of showing "Bootstrapping" and IMEI**: The device is already registered with Cumulocity under another user account, a factory reset has to be performed to unregister the device.
+* **Upon boot-up, the device displays "Connect to Cloud" right after "Agent Run", instead of showing "Bootstrapping" and IMEI**: The device is already registered with Cumulocity IoT under another user account, a factory reset has to be performed to unregister the device.
 
 * **The device does not send GPS data**: The GPS receiver needs to have direct sight to the sky to receive satellite signals. Bad weather can also influence GPS reception.
 
-* **I have accidentally deleted my device from the devices list**: Restart your device and wait a while. Your device will automatically re-register with Cumulocity and appear again.
+* **I have accidentally deleted my device from the devices list**: Restart your device and wait a while. Your device will automatically re-register with Cumulocity IoT and appear again.
 

@@ -53,7 +53,7 @@ Push-Verbindung bedeutet Verbindung von Cumulocity IoT zu /device/control/notifi
 
 >**Info**: Die Verbindungsüberwachung erfolgt nicht in Echtzeit. Dies bedeutet, dass sich der angezeigte Verbindungsstatus nach dem Ausschalten eines Geräts nicht sofort ändert. Je nach verwendetem Protokoll für die Push-Verbindungsüberwachung kann dies einige Minuten dauern.
 
-<a name="wartungsmodus"></a> **Wartungsmodus**
+<a name="maintenance-mode"></a> **Wartungsmodus**
 
 Außerdem kann sich ein Gerät im Wartungsmodus befinden. Dies wird durch ein Werkzeug-Symbol in der Spalte **Status** gekennzeichnet. Dieser spezielle Verbindungsstatus zeigt an, dass das Gerät gerade gewartet wird und nicht überwacht werden kann. Während ein Gerät gewartet wird, werden keine Alarme für dieses Gerät ausgelöst.
 

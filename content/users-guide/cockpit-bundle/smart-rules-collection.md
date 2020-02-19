@@ -6,17 +6,17 @@ layout: redirect
 
 <a name="business"></a>
 
-Cumulocity includes preset global Smart Rule types. 
+Cumulocity includes preset global Smart Rule types.
 
 ![Global smart rules](/images/users-guide/cockpit/cockpit-globalsmartrules.png)
 
-Each global Smart Rule type provides different parameters to configure. 
+Each global Smart Rule type provides different parameters to configure.
 
 The following section describes each available type and its configuration properties.
 
 ### On alarm send SMS
 
-**Functionality** 
+**Functionality**
 
 When an alarm is created, a SMS is sent.
 
@@ -39,7 +39,7 @@ The rule uses the following parameters:
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/users-guide/device-management/#maintenance-mode) mode. In this case no new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
@@ -47,7 +47,7 @@ The rule uses the following parameters:
 
 ### On alarm send e-mail
 
-**Functionality** 
+**Functionality**
 
 When an alarm is created, an email is sent.
 
@@ -68,7 +68,7 @@ The rule uses the following parameters:
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/users-guide/device-management/#maintenance-mode)mode. In this case no new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
@@ -76,7 +76,7 @@ The rule uses the following parameters:
 
 ### On alarm escalate it
 
-**Functionality** 
+**Functionality**
 
 When an alarm is created, sends e-mail or SMS.
 
@@ -98,14 +98,14 @@ The rule uses the following parameters:
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/users-guide/device-management/#maintenance-mode) mode. In this case no new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 
 ### On alarm duration increase severity
 
-**Functionality** 
+**Functionality**
 
 If an alarm is active for a certain time, the severity is increased.
 
@@ -134,9 +134,9 @@ If the alarm has reached CRITICAL, it will stop monitoring because there is no f
 
 ### On geofence create alarm
 
-**Functionality** 
+**Functionality**
 
-If a geofence border is crossed, an alarm is created. 
+If a geofence border is crossed, an alarm is created.
 
 The rule can be configured for entering or leaving the geofence, or both. Existing alarms are cleared when the opposite condition is true again, e.g. if a tracked car which has left the geofence area is re-entering the geofence area.
 
@@ -158,16 +158,16 @@ The rule uses the following parameters:
 **Troubleshooting**
 
 * Make sure the device was inside the geofence at least once after creating/activating the rule.
- 
-* Check if the device is in [maintenance](/reference/device-management) mode. No new alarm will be created because of suppression policy.
+
+* Check if the device is in [maintenance](/users-guide/device-management/#maintenance-mode) mode. No new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 ### On geofence send e-mail
 
-**Functionality** 
+**Functionality**
 
-If a geofence border is crossed, an email is sent. 
+If a geofence border is crossed, an email is sent.
 
 **Parameters**
 
@@ -193,7 +193,7 @@ The rule uses the following parameters:
 
 ### Calculate energy consumption
 
-**Functionality** 
+**Functionality**
 
 Creates consumption data point based on data from an electric-, gas-, water- meter.
 
@@ -223,9 +223,9 @@ If no new measurement was created in the last period a measurement with consumpt
 
 ### On missing measurements create alarm
 
-**Functionality** 
+**Functionality**
 
-If no new measurement data has been received for a specified time, an alarm is created. 
+If no new measurement data has been received for a specified time, an alarm is created.
 
 **Parameters**
 
@@ -244,7 +244,7 @@ The rule uses the following parameters:
 
 ### On alarm execute operation
 
-**Functionality** 
+**Functionality**
 
 If a certain alarm occurs, the specified operation will be send to the device.
 
@@ -292,7 +292,7 @@ The rule uses the following parameters:
 
 ### On measurement threshold create alarm
 
-**Functionality** 
+**Functionality**
 
 When the measurement value enters or leaves the RED/YELLOW range, an alarm is created or respectively cleared.
 
@@ -355,7 +355,7 @@ If no red/yellow ranges are defined, no alarms are generated.
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/users-guide/device-management/#maintenance-mode) mode. In this case no new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
@@ -365,7 +365,7 @@ If no red/yellow ranges are defined, no alarms are generated.
 
 ### On measurement explicit threshold create alarm
 
-**Functionality** 
+**Functionality**
 
 When the measurement value enters or leaves the RED range, a CRITICAL alarm is generated or cleared.
 
@@ -394,7 +394,7 @@ The rule uses the following parameters:
 
 * Verify that the alarm was created and not duplicated from somewhere.
 
-* Check if the device is in [maintenance](/reference/device-management) mode. In this case no new alarm will be created because of suppression policy.
+* Check if the device is in [maintenance](/users-guide/device-management/#maintenance-mode) mode. In this case no new alarm will be created because of suppression policy.
 
 * If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 

@@ -4,7 +4,7 @@ title: Subscribe
 layout: redirect
 ---
 
-A notification client can send subscribe messages and specify there the desired channel to receive output messages from Cumulocity server. The client will receive the messages in succeeding connect requests.
+A notification client can send subscribe messages and specify there the desired channel to receive output messages from Cumulocity IoT server. The client will receive the messages in succeeding connect requests.
 
 The format of channels names is different according to the REST API in which the real-time notification service is used. See [Device control](/reference/device-control) for more details.
 

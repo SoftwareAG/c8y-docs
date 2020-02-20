@@ -15,7 +15,7 @@ npm install @c8y/client
 
 ### Usage
 
-Use `client.<endpoint>.list()` to request listed data from the Cumulocity REST API and
+Use `client.<endpoint>.list()` to request listed data from the Cumulocity IoT REST API and
 `client.<endpoint>.detail(<id>)` to request detail information. These methods always return a promise. To get an observable use `list$` or `detail$`.
 
 > In the following sections, the default signature of these functions is described. For detailed information, refer to the [complete documentation](http://resources.cumulocity.com/documentation/websdk/client/)).
@@ -71,7 +71,7 @@ All fetch responses can be parsed to JSON if the content type is set correctly. 
 
 ### Authentication strategy
 
-In the Cumulocity platform we currently allow two ways to authenticate: 
+In the Cumulocity IoT platform we currently allow two ways to authenticate: 
 
  * Basic Auth: The authentication header is injected into each request.
  * Oauth: The client doesn't know about the authentication header. The header is set in a cookie.

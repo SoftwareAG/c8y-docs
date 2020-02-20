@@ -62,9 +62,9 @@ Comment ALC: The links to the firmware are no longer correct. I can't find any o
 
 | Version | Release date | Download |
 | --- | --- | --- |
-| 1.9      | 18.Feb 2015 | [download](/device-demos/ublox/devices/mbed/firmware-1.9.bin)     |
-| 2.0      | 6.Mar 2015  | [download](/device-demos/ublox/devices/mbed/firmware-2.0c8y.bin)  |
-| 2.2      | 10.Aug 2015 | [download](/device-demos/ublox/devices/mbed/firmware-2.2c8y.bin)  |
+| 1.9      | 18.Feb 2015 | [download](/images/device-demos/ublox/devices/mbed/firmware-1.9.bin)     |
+| 2.0      | 6.Mar 2015  | [download](/images/device-demos/ublox/devices/mbed/firmware-2.0c8y.bin)  |
+| 2.2      | 10.Aug 2015 | [download](/images/device-demos/ublox/devices/mbed/firmware-2.2c8y.bin)  |
 
 <a id="Connecting_the_C027"></a>
 #### To register the device to Cumulocity IoT
@@ -206,7 +206,7 @@ Due to the jittering nature of the sensor readings, there is a threshold set for
 
 * **No Network Coverage**: Make sure you have the modem antenna correctly mounted to the "WL\_INT" connector, otherwise the device will not be able to connect to a network.
 
-* **Agent Init Failure**: To troubleshoot this issue, we recommend you to connect the device to your computer and enable debug mode to collect more information via a serial port. See [Enabling debug mode] (#Enabling_debug_ mode) below.
+* **Agent Init Failure**: To troubleshoot this issue, we recommend you to connect the device to your computer and enable debug mode to collect more information via a serial port. See the section [Enabling debug mode] (#Enabling_debug_ mode).
 
 * **Integration/Config Failure** and **Integrate Failure**: This error occurs when you attempt to connect to a server that has not been set in the firmware. Perform a factory reset and register the device again. If this doesn't solve the problem then it's likely to be a server-side issue. Contact your network administrator if you are connecting to your own Cloud instance or contact [support](https://empower.softwareag.com/ContactSupport/) if you are connecting directly to Cumulocity IoT.
 

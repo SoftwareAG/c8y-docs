@@ -118,7 +118,7 @@ The Raspberry Pi by itself delivers only static information, so if you want to v
 
 #### Tinkerforge bricks and bricklets
 
-The agent supports Tinkerforge devices out of the box, provided that the [Tinkerforge daemon for Raspberry Pi](http://www.tinkerforge.com/de/doc/Embedded/Raspberry_Pi.html) is installed. See the [Tinkerforge tutorial](#tinkerforge) in this guide for further details.
+The agent supports Tinkerforge devices out of the box, provided that the [Tinkerforge daemon for Raspberry Pi](http://www.tinkerforge.com/en/doc/Embedded/Raspberry_Pi.html) is installed. See the [Tinkerforge tutorial](../tinkerforge) in this guide for further details.
 
 #### PiFace Digital
 

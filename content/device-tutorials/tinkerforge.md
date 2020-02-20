@@ -58,7 +58,7 @@ You should now see the text in the LCD display on the Weather Station.
 
 The connection between the Tinkerforge Weather Station and Cumulocity IoT is routed over the RaspPi. The connection between the RaspPi and Cumulocity IoT is implemented by installing and running the Cumulocity IoT Java agent on the RaspPi. The Java agent on the RaspPi supports TinkerForge out of the box.
 
-For details on installing and running the Cumulocity IoT Java agent on the Raspberry Pi, refer to the [tutorial for the Raspberry Pi](#raspberry-pi-4).
+For details on installing and running the Cumulocity IoT Java agent on the Raspberry Pi, refer to the [tutorial for the Raspberry Pi](../raspberry-pi-4).
 
 <!-- ![Raspberry Pi and TinkerForge](/images/device-demos/tinkerforge/tinkerforge.jpg) -->
 
@@ -70,7 +70,7 @@ As a final configuration step, you need to register the RaspPi device to the Cum
 
 To view the device in your Cumulocity IoT account, switch to the Device Management application and click **All devices** in the **Devices** menu in the navigator. By default, the device is displayed as "RaspPi \<hardware model> \<serial number>". 
 
-Add the RaspPi device to a group, see [Grouping devices] (users-guide/device-management/#grouping-devices) for details. You can select an existing group or define a new group for testing purposes. 
+Add the RaspPi device to a group, see [Grouping devices] (/users-guide/device-management/#grouping-devices) for details. You can select an existing group or define a new group for testing purposes. 
 
 Now click the **Child devices** tab of the RaspPi to list the connected TinkerForge components. The display will look similar to the following:
 

@@ -41,7 +41,7 @@ The following types of data lakes are currently supported:
 |Settings|Description|
 |:---|:---|
 |Azure Storage account name|The name of the Azure storage account|
-|Azure Storage container|The name of the storage container|
+|Azure Storage container|The name of the storage container; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
 |Root path|The root path in the data lake under which the offloaded data will be stored|
 |Azure Storage shared access key|The access key used for authentication|
 
@@ -51,7 +51,7 @@ The following types of data lakes are currently supported:
 |:---|:---|
 |AWS access key|The access key|
 |Access secret|The access secret|
-|Bucket name|The name of the S3 bucket|
+|Bucket name|The name of the S3 bucket; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
 |Root path in bucket|The root path within the S3 bucket|
 
 **NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for on-premise installations. The following settings need to be defined for this data lake:

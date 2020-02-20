@@ -62,9 +62,9 @@ Comment ALC: The links to the firmware are no longer correct. I can't find any o
 
 | Version | Release date | Download |
 | --- | --- | --- |
-| 1.9      | 18.Feb 2015 | [download](/images/device-demos/ublox/devices/mbed/firmware-1.9.bin)     |
-| 2.0      | 6.Mar 2015  | [download](/images/device-demos/ublox/devices/mbed/firmware-2.0c8y.bin)  |
-| 2.2      | 10.Aug 2015 | [download](/images/device-demos/ublox/devices/mbed/firmware-2.2c8y.bin)  |
+| 1.9 | 18. Feb 2015 | [download](/images/device-demos/ublox/firmware-1.9.bin)     |
+| 2.0 | 06. Mar 2015 | [download](/images/device-demos/ublox/firmware-2.0c8y.bin)  |
+| 2.2 | 10. Aug 2015 | [download](/images/device-demos/ublox/firmware-2.2c8y.bin)  |
 
 <a id="Connecting_the_C027"></a>
 #### To register the device to Cumulocity IoT

@@ -47,6 +47,11 @@ The **Offloading task name** is an identifier for the offloading pipeline. Even 
 
 <a id="basic-functionality-additional-settings"></a>
 The **Target source name** denotes the folder name in the data lake. In Dremio a table is created with the same name, pointing to this data lake folder. This table is used when querying the corresponding data lake folder.
+The target source name must follow these syntax rules:
+* It needs to start with an alphanumeric character (letters and numbers).
+* It may contain alphanumeric characters, underscores (_) and dashes (-).
+* Each underscore or dash must be preceded by an alphanumeric character.
+* The name must be at least two characters long.
 
 In the **Description** field, you can add a description for this offloading pipeline. The description is optional, but it is recommended to use it, as it provides additional information about the pipeline and its purpose.
 

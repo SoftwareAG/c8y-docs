@@ -39,7 +39,7 @@ Sie werden zur Anmeldeseite Ihrer Standardanwendung weitergeleitet. Sie können 
 
 Geben Sie auf der Anmeldeseite Ihren Benutzernamen und Ihr Passwort ein und klicken Sie **Anmelden**, um die Anwendung zu öffnen.
 
-<img src="/images/benutzerhandbuch/overview-login.png" alt="Login prompt">
+<img src="/images/benutzerhandbuch/getting-started/getting-started-login.png" alt="Login prompt">
 
 Aktivieren Sie die Checkbox **Passwort merken**, damit der Browser sich Ihre Zugangsdaten merkt, so dass Sie diese nicht wieder bereitstellen müssen, wenn Sie die Anwendung das nächste mal öffnen. Dies ist außerdem praktisch, wenn Sie häufig zwischen Anwendungen wechseln, da Cumulocity IoT Sie sonst bei jedem Wechsel auffordert, sich zu authentifizieren. Melden Sie sich explizit ab, damit der Browser Ihre Zugangsdaten "vergisst".
 
@@ -49,7 +49,7 @@ Wenn Sie sich das erste Mal bei Cumulocity IoT anmelden, werden Sie zur Standard
 
 Um sich explizit abzumelden, klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie im Kontextmenü **Abmelden**.
 
-<img src="/images/benutzerhandbuch/overview-logout.png" alt="Logout menu" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/getting-started/getting-started-logout.png" alt="Logout menu" style="max-width: 100%">
 
 ### <a name="reset-password"></a>So setzen Sie Ihr Passwort zurück
 

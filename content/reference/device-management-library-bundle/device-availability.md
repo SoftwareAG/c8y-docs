@@ -14,14 +14,14 @@ Devices that have not sent any message in the response interval are considered u
 
 #### c8y\_Availability
 
-The availability information computed by Cumulocity is stored in fragments: "c8y\_Availability" and "c8y\_Connection" of the device.
+The availability information computed by Cumulocity IoT is stored in fragments: "c8y\_Availability" and "c8y\_Connection" of the device.
 
     "c8y_Availability": { "lastMessage": "2013-05-21...", "status": "AVAILABLE" },
     "c8y_Connection": {"status":"CONNECTED"}
 
 |Name|Type|Description|
 |:---|:---|:----------|
-|lastMessage|Date|The time when the device sent the last message to Cumulocity.|
+|lastMessage|Date|The time when the device sent the last message to Cumulocity IoT.|
 |status|String|The current status, one of AVAILABLE, MAINTENANCE, UNAVAILABLE.|
 
 The following messages update the last message timestamp of a device:

@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Cumulocity's domain model
+title: Cumulocity IoT's domain model
 layout: bundle
 aliases:
   - /concepts-guide/modeling-and-managing-m2m-assets

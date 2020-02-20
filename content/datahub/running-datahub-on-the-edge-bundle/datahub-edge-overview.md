@@ -48,4 +48,4 @@ DataHub Edge uses the same software as DataHub does, though in the following asp
 | Dremio cluster setup | 1 master, 1 executor | scalable in the number of masters and executors |
 | Dremio container management | Docker daemon | Kubernetes |
 | DataHub backend container management | Docker daemon | Microservice in Cumulocity Core |
-| Data lakes | NAS, (S3, ADLS, Azure Storage only if edge has internet access) | S3, ADLS, Azure Storage |
+| Data lakes | NAS | S3, ADLS, Azure Storage |

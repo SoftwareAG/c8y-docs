@@ -1,6 +1,6 @@
 ---
 weight: 40
-title: Refining offloaded Cumulocity data
+title: Refining offloaded Cumulocity IoT data
 layout: redirect
 ---
 
@@ -37,7 +37,7 @@ On the home page of Dremio you will find at the left under **Datasets** two pane
 
 In the **Sources** panel there is the data source `YourTenantIdDataLake`. This source has been auto-configured for you and points to your data lake.
 
-> **Info:** Terminology-wise, Cumulocity IoT DataHub replicates data from the Cumulocity Operational Store into the data lake. For Dremio the data lake and its target tables is a data source as it allows reading data from it.
+> **Info:** Terminology-wise, Cumulocity IoT DataHub replicates data from the Operational Store of Cumulocity IoT into the data lake. For Dremio the data lake and its target tables is a data source as it allows reading data from it.
 
 When you click on your data source it will be shown in the main panel. Clicking on the source in the main panel navigates into the data source. Here, you see a list of all target tables of your offloading pipelines. Clicking one of these target tables opens an SQL editor which allows you to run queries against that target table.
 
@@ -55,11 +55,11 @@ The **Job History** tab at the top of the screen displays jobs/queries you have 
 
 ### Creating views
 
-With Cumulocity IoT DataHub, you can replicate data from a Cumulocity collection to a data lake using a default transformation of the data. As requirements for subsequent data analysis of the offloaded device data may vary over time, you should configure your offloading pipeline so that all potentially relevant data is included. 
+With Cumulocity IoT DataHub, you can replicate data from a Cumulocity IoT collection to a data lake using a default transformation of the data. As requirements for subsequent data analysis of the offloaded device data may vary over time, you should configure your offloading pipeline so that all potentially relevant data is included. 
 
 Depending on your use cases, you will often find the need to provide a view on the data, which limits, filters, or transforms the data, e.g. converting Celsius to Fahrenheit or extracting data from JSON fragments.
 
-In Dremio, you can create such a view by defining a corresponding query and saving it as a new dataset. When saving that new dataset, you must select your space as the location and can freely choose a name for the view. Once that is done, you can work with the new dataset as with any other source and run queries against it. This includes in particular querying this view from other clients as described in section [Querying offloaded Cumulocity Data](/datahub/working-with-datahub/#querying-offloaded).
+In Dremio, you can create such a view by defining a corresponding query and saving it as a new dataset. When saving that new dataset, you must select your space as the location and can freely choose a name for the view. Once that is done, you can work with the new dataset as with any other source and run queries against it. This includes in particular querying this view from other clients as described in section [Querying offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#querying-offloaded).
 
 > **Info:** Such a view is per default not materialized, i.e., it is not stored persistently. Each time you query the view, the underlying query defining the view is run against the source data.
 

@@ -4,13 +4,13 @@ title: Configuring offloading jobs
 layout: redirect
 ---
 
-Cumulocity IoT DataHub provides functionality to configure, manage, and execute offloading pipelines that extract and transform data from Cumulocity Operational Store to a data lake.
+Cumulocity IoT DataHub provides functionality to configure, manage, and execute offloading pipelines that extract and transform data from the Operational Store of Cumulocity IoT to a data lake.
 
 ### Basic functionality
 
 On the **Offloading** page you do the offloading management and monitoring tasks:
 
-* Selecting a Cumulocity collection to offload
+* Selecting a Cumulocity IoT collection to offload
 * Defining and validating an offloading configuration
 * Saving, copying, or deleting an offloading configuration
 * Scheduling or manually triggering offloading executions
@@ -24,18 +24,18 @@ The following steps describe how to set up and start an offloading pipeline.
 
 #### Defining an offloading configuration
 
-To define an offloading configuration, click **Offload collection**. In the dropdown box select one of the Cumulocity base collections, which are:
+To define an offloading configuration, click **Offload collection**. In the dropdown box select one of the Cumulocity IoT base collections, which are:
 
 * alarms
 * events
 * inventory
 * measurements
 
-In the case of the measurements base collection, you have to additionally specify the type of Cumulocity measurements you want to offload to the data lake.
+In the case of the measurements base collection, you have to additionally specify the type of Cumulocity IoT measurements you want to offload to the data lake.
 
 Click **Confirm** to continue with the selected collection.
 
-> **Info:** You can define multiple offloading pipelines for each Cumulocity collection. For example, you can filter the alarms collection by different criteria with each one resulting in a separate pipeline. Be aware that each pipeline must create its own table in the data lake, i.e., you must choose distinct table names for each offloading configuration.
+> **Info:** You can define multiple offloading pipelines for each Cumulocity IoT collection. For example, you can filter the alarms collection by different criteria with each one resulting in a separate pipeline. Be aware that each pipeline must create its own table in the data lake, i.e., you must choose distinct table names for each offloading configuration.
 
 Once you have selected a collection for offloading, you have to specify the details of this offloading pipeline. The pipeline has default configuration settings, which you can modify according to your needs.
 
@@ -55,7 +55,7 @@ The target source name must follow these syntax rules:
 
 In the **Description** field, you can add a description for this offloading pipeline. The description is optional, but it is recommended to use it, as it provides additional information about the pipeline and its purpose.
 
-In the **Additional result columns** field, you can provide a comma-separated list of additional columns or expressions you want to include. For each collection, the associated default set of data fields is extracted, which is available for each base collection. If you have added additional top-level fields while feeding data into Cumulocity and you want to access them in your analytical queries, then you can specify them in this input field. For example, if you feed in measurements with the additional fields `myCustomField1` and `myCustomField2`, you just need to enter "myCustomField1, myCustomField2" (without the quotes) into the input field to add both fields to the offloading configuration. If you only want to offload `myCustomField2`, just add "myCustomField2". It is also possible to apply SQL functions on those fields, e.g. `BTRIM(myCustomField1, '~')` to trim leading and trailing '~' from the text in field `myCustomField1`.
+In the **Additional result columns** field, you can provide a comma-separated list of additional columns or expressions you want to include. For each collection, the associated default set of data fields is extracted, which is available for each base collection. If you have added additional top-level fields while feeding data into Cumulocity IoT and you want to access them in your analytical queries, then you can specify them in this input field. For example, if you feed in measurements with the additional fields `myCustomField1` and `myCustomField2`, you just need to enter "myCustomField1, myCustomField2" (without the quotes) into the input field to add both fields to the offloading configuration. If you only want to offload `myCustomField2`, just add "myCustomField2". It is also possible to apply SQL functions on those fields, e.g. `BTRIM(myCustomField1, '~')` to trim leading and trailing '~' from the text in field `myCustomField1`.
 
 In the **Additional filter predicate** field, you can specify an additional filter for filtering the data before it is inserted into the data lake. Per default all entries in the collection are inserted; you can use the predicate to filter out entries you do not want to persist in the data lake. For example, you can filter out outliers or invalid values. The filter predicate is specified in SQL syntax, e.g., for the alarms collection the filter might be `status='ACTIVE' AND severity='WARNING'`. Filtering on custom fields is also possible, e.g. `myCustomField2 >= 2020` for a numeric field.
 
@@ -78,7 +78,7 @@ In the context menu of each configuration pipeline, you will find actions for ma
 
 ##### Editing an offloading pipeline
 
-Click **Edit** to edit or view the current settings. Note that only inactive pipelines can be edited. Also note that you cannot change the Cumulocity base collection selected for this pipeline. Also note that changes to additional filter predicates, and additional result columns are not applied to already exported data, i.e. a change to the offloading pipeline only affects data to be exported in the future.
+Click **Edit** to edit or view the current settings. Note that only inactive pipelines can be edited. Also note that you cannot change the Cumulocity IoT base collection selected for this pipeline. Also note that changes to additional filter predicates, and additional result columns are not applied to already exported data, i.e. a change to the offloading pipeline only affects data to be exported in the future.
 
 ##### Copying an offloading pipeline
 
@@ -110,7 +110,7 @@ You may have had another offloading pipeline that has already written into the s
 
 ##### Scheduling settings
 
-The scheduler is configured to run the offloading pipeline once an hour. The precise minute of the hour at which the offloading starts is shown in the pipeline configuration. This minute is assigned by the system to balance the load on Cumulocity's Operational Store, i.e., to avoid that all offloading jobs from different tenants run at the same time. The schedule settings cannot be modified.
+The scheduler is configured to run the offloading pipeline once an hour. The precise minute of the hour at which the offloading starts is shown in the pipeline configuration. This minute is assigned by the system to balance the load on the Operational Store of Cumulocity IoT, i.e., to avoid that all offloading jobs from different tenants run at the same time. The schedule settings cannot be modified.
 
 ##### Stopping periodic offloading
 
@@ -130,7 +130,7 @@ At the bottom of each pipeline card, the execution status is shown:
 * **Last execution** shows the execution time and whether the execution was successful or not, indicated by a success or failure icon right next to the time. An additional icon on the left shows whether the execution was scheduled, indicated by a calendar icon, or manually triggered, indicated by a spot icon.
 * **Next execution** shows the point in time for which the next execution is planned. It is only shown if the previous execution was scheduled.
 
-The tables in the next sections summarize the resulting schemas for each of the Cumulocity standard collections. These schemas additionally include virtual columns `dir0`, ..., `dir4`, which are used for internal purposes. The columns are generated during the extraction process, but neither do they have corresponding data in the Cumulocity database, nor are they persisted in the data lake. You must not use `dir0`, ..., `dir4` as additional columns or you must rename them accordingly in your offloading configuration.
+The tables in the next sections summarize the resulting schemas for each of the Cumulocity IoT standard collections. These schemas additionally include virtual columns `dir0`, ..., `dir4`, which are used for internal purposes. The columns are generated during the extraction process, but neither do they have corresponding data in the Cumulocity IoT database, nor are they persisted in the data lake. You must not use `dir0`, ..., `dir4` as additional columns or you must rename them accordingly in your offloading configuration.
 
 ### Offloading the alarms collection
 
@@ -161,7 +161,7 @@ The alarms collection keeps track of alarms. An alarm may change its state over 
 * alarms_all: a view with the updates between two offloading executions, not including the intermediate updates. For example, after the first offloading execution, the status of an alarm is ACTIVE. Then it changes its state from ACTIVE to INACTIVE and afterwards back to ACTIVE. When the next offloading is executed, it will persist the latest status ACTIVE, but not the intermediate status INACTIVE (because it happened between two offloading runs and thus is not seen by DataHub).
 * alarms_latest: a view with the latest status of all alarms, with all previous transitions being discarded.
 
-Both views are provided in your Dremio space. For details on views and spaces in Dremio see section [Refining Offloaded Cumulocity Data](/datahub/working-with-datahub/#refining-offloaded).
+Both views are provided in your Dremio space. For details on views and spaces in Dremio see section [Refining Offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#refining-offloaded).
 
 ### Offloading the events collection
 
@@ -197,12 +197,12 @@ The inventory collection keeps track of managed objects. During offloading, the 
 | owner | VARCHAR
 | type | VARCHAR
 
-The inventory collection keeps track of managed objects. Note that DataHub automatically filters out internal objects of the Cumulocity platform. These internal objects are also not returned when using the Cumulocity REST API. A managed object may change its state over time. The inventory collection also supports updates to incorporate these changes. For that reason, an offloading pipeline for the inventory encompasses additional steps. The first step is to offload the entries of the inventory collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake. As a second step, two views over the target table are defined in Dremio (with inventory used as the target table name in the following examples):
+The inventory collection keeps track of managed objects. Note that DataHub automatically filters out internal objects of the Cumulocity IoT platform. These internal objects are also not returned when using the Cumulocity IoT REST API. A managed object may change its state over time. The inventory collection also supports updates to incorporate these changes. For that reason, an offloading pipeline for the inventory encompasses additional steps. The first step is to offload the entries of the inventory collection that were added or updated since the last offload. They are offloaded with the above mentioned standard schema into the target table of the data lake. As a second step, two views over the target table are defined in Dremio (with inventory used as the target table name in the following examples):
 
 * inventory_all: a view with the updates between two offloading executions, not including the intermediate updates. For example, after the first offloading execution, the status of a device is ACTIVE. Then it changes its state from ACTIVE to INACTIVE and afterwards to ERROR. When the next offloading is executed, it will persist the status ERROR, but not the intermediate status INACTIVE (because it happened between two offloading runs and thus is not seen by DataHub).
 * inventory_latest: a view with the latest status of all managed objects, with all previous transitions being discarded.
 
-Both views are provided in your Dremio space. For details on views and spaces in Dremio see section [Refining Offloaded Cumulocity Data](/datahub/working-with-datahub/#refining-offloaded).
+Both views are provided in your Dremio space. For details on views and spaces in Dremio see section [Refining Offloaded Cumulocity IoT Data](/datahub/working-with-datahub/#refining-offloaded).
 
 ### Offloading the measurements collection
 

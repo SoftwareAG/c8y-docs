@@ -245,7 +245,7 @@ The script also contains a 10-fold cross validation and the evaluation against s
 
 #### Upload the model to Cumulocity IoT
 
-In order to upload the model to Cumulocity IoT, follow the steps described in [Machine Learning application > Managing models](/predictive-analytics/web-app/#managing-models).
+In order to upload the model to Cumulocity IoT, follow the steps described in [Machine Learning application > Managing models](/machine-learning/web-app/#managing-models).
 
 A pre-trained model *ActivitiesDTreeJump.pmml* is also attached for reference. This activity recognition model was trained with the data available in *data/training_demo_data_jump.csv* mentioned in the previous section.
 

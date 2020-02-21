@@ -39,7 +39,7 @@ Once registered, try to get the device ID by looking up your device on the **All
 
 #### Upload the model and Apama monitor to Cumulocity IoT
 
-1. Upload the attached model *ActivitiesDTreeJump.pmml* to Cumulocity IoT. To upload the model to Cumulocity IoT, follow the steps described in [Machine Learning application > Managing models](/predictive-analytics/web-app/#managing-models).
+1. Upload the attached model *ActivitiesDTreeJump.pmml* to Cumulocity IoT. To upload the model to Cumulocity IoT, follow the steps described in [Machine Learning application > Managing models](/machine-learning/web-app/#managing-models).
 
 2. Download the *RecognizeActivities.mon* file, open it in a text editor and replace the `deviceId` variable with the ID of your registered device, same as `c_device_source` in the *CONFIG.INI* file mentioned above.
 

@@ -12,4 +12,4 @@ The machine learning capabilities in the Cumulocity IoT platform enable you to d
 
 These capabilities can be leveraged either from a web browser via an easy to use UI (Machine Learning application) or programmatically via REST API (Zementis microservice). 
 
-This guide provides detailed information on the functionalities of the [Machine Learning application](/predictive-analytics/web-app) and a comprehensive listing of [REST API](/predictive-analytics/api-reference) exposed by the Zementis microservice.
+This guide provides detailed information on the functionalities of the [Machine Learning application](/machine-learning/web-app) and a comprehensive listing of [REST API](/machine-learning/api-reference) exposed by the Zementis microservice.

@@ -68,7 +68,7 @@ To schedule a new job, perform the following steps:
 2. In the **Job Config** wizard, enter the name and description of the job you want to create. Select a target device or device group from the dropdown list. The list shows maximum 2000 devices or groups. Once done, select a target model which will be used for processing the data captured from your selected device or device group. The dropdown list shows all models which you have uploaded to the **Models** page.<br>
 ![Scheduled process 1](/images/zementis/zementis-jobconfig-info.png)
 <br>Click **Next** to proceed. 
-3. Each device can have various measurements which are persisted in Cumulocity. In the **Mapping** section, map the device measurements to the corresponding model inputs.<br>
+3. Each device can have various measurements which are persisted in Cumulocity IoT. In the **Mapping** section, map the device measurements to the corresponding model inputs.<br>
 ![Scheduled process 2](/images/zementis/zementis-jobconfig-mapping.png)
 <br>Click **Next** to proceed.
 4. Set the schedule of the job by selecting the frequency for the job followed by when it should run. You also need to specify the data range to be used for processing when the job is executed.

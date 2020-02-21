@@ -6,15 +6,15 @@ weight: 50
 
 A fully functional demo can be prepared with the help of a demo device. For this, use the artefacts provided as part of the *ActivityRecognitionDemo.zip* file.
 
-#### Register a demo device in Cumulocity
+#### Register a demo device in Cumulocity IoT
 
 Instead of registering a real phone for active recognition use case, a demo device can be registered. This device can be used as a replica of an actual mobile phone.
 
-We have added a script *DemoDeviceCreator.sh* which registers a demo device in Cumulocity. Run the script using the following command:
+We have added a script *DemoDeviceCreator.sh* which registers a demo device in Cumulocity IoT. Run the script using the following command:
 
 	sh DemoDeviceCreator.sh
 
-Use this script to add a device named "DemoDevice" to Cumulocity.
+Use this script to add a device named "DemoDevice" to Cumulocity IoT.
 
 	DemoDeviceCreator.sh
 	c_url=$(awk -F "=" '/c_url/ {print $2}' ./CONFIG.INI)
@@ -34,9 +34,9 @@ Use this script to add a device named "DemoDevice" to Cumulocity.
 
 Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, update the `c_device_source` of the *CONFIG.INI* file with the device ID of this demo device.
 
-#### Upload the model and Apama monitor to Cumulocity
+#### Upload the model and Apama monitor to Cumulocity IoT
 
-1. Upload the attached model *ActivitiesDTreeJump.pmml* to Cumulocity. To upload the model to Cumulocity, follow the steps described in [Predictive Analytics application > Managing models](/predictive-analytics/web-app/#managing-models).
+1. Upload the attached model *ActivitiesDTreeJump.pmml* to Cumulocity IoT. To upload the model to Cumulocity IoT, follow the steps described in [Machine Learning application > Managing models](/predictive-analytics/web-app/#managing-models).
 
 2. Download the *RecognizeActivities.mon* file, open it in a text editor and replace the `deviceId` variable with the ID of your registered device, same as `c_device_source` in the *CONFIG.INI* file mentioned above.
 
@@ -44,7 +44,7 @@ Once registered, try to get the device ID by looking up your device on the **All
 
 #### Classify activities
 
-A script *ActivitySimulatorForDemoDevice.sh* has been attached which simulates sending of readings corresponding to different activities to Cumulocity from our demo device. This script can be used to depict the recognition of various activities.
+A script *ActivitySimulatorForDemoDevice.sh* has been attached which simulates sending of readings corresponding to different activities to Cumulocity IoT from our demo device. This script can be used to depict the recognition of various activities.
 
 All you need to do is run it as `sh ActivitySimulatorForDemoDevice.sh`.
 
@@ -101,6 +101,6 @@ All you need to do is run it as `sh ActivitySimulatorForDemoDevice.sh`.
 	echo "#      Stopping all simulations now      #"
 	echo "##########################################"
 
-This should now start sending measurements to Cumulocity on behalf of your demo device. It would try to simulate transition of activities in the order  sit → jump → run → jump → sit.
+This should now start sending measurements to Cumulocity IoT on behalf of your demo device. It would try to simulate transition of activities in the order  sit → jump → run → jump → sit.
 
 You should notice your device generating activity recognition alarms for every transition of activity. These alarms generated from your device will be visible under the **Alarms** tab of your device in the Device Management application. Click **Show Cleared Alarms** in the top bar to see the history of all the alarms.

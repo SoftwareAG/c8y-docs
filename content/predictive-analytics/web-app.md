@@ -1,5 +1,5 @@
 ---
 weight: 20
-title: Predictive Analytics application
+title: Machine Learning application
 layout: bundle
 ---

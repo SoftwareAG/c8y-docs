@@ -6,15 +6,15 @@ weight: 50
 
 A fully functional demo can be prepared with the help of a demo device. For this, use the artefacts provided as part of the *AnomalyDetectionDemo.zip* file.
 
-#### Register a demo device in Cumulocity
+#### Register a demo device in Cumulocity IoT
 
 Instead of registering a real phone for anomaly detection use case, a demo device can be registered. This device can be used as a replica of an actual mobile phone.
 
-We have added a script *DemoDeviceCreator.sh* which registers a demo device in Cumulocity. Run the script using the following command:
+We have added a script *DemoDeviceCreator.sh* which registers a demo device in Cumulocity IoT. Run the script using the following command:
 
 	sh DemoDeviceCreator.sh 
 
-Use this script to add a device named "DemoDevice" to Cumulocity.
+Use this script to add a device named "DemoDevice" to Cumulocity IoT.
 
 	DemoDeviceCreator.sh
 	c_url=$(awk -F "=" '/c_url/ {print $2}' ./CONFIG.INI)
@@ -34,16 +34,16 @@ Use this script to add a device named "DemoDevice" to Cumulocity.
 
 Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, update the `c_device_source` of the *CONFIG.INI* file with the device ID of this demo device.
 
-#### Upload the model and Apama monitor to Cumulocity
+#### Upload the model and Apama monitor to Cumulocity IoT
 
-1. Upload the attached model *iforest_demo.pmml* to Cumulocity. To upload the model to Cumulocity, follow the steps described in [Predictive Analytics application > Managing models](/predictive-analytics/web-app/#managing-models).
+1. Upload the attached model *iforest_demo.pmml* to Cumulocity IoT. To upload the model to Cumulocity IoT, follow the steps described in [Machine Learning application > Managing models](/predictive-analytics/web-app/#managing-models).
 2. Download the attached *DetectAnomalies.mon* file, open it in a text editor and replace the `deviceId` variable with the ID of your registered device, same as c_device_source in the CONFIG.INI file mentioned above.
 3. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps] (/apama/analytics-introduction/#single-mon-file) in the Streaming analytics guide for details on uploading Apama monitor files.
 
 
 #### Trigger an Anomaly Alert
 
-A script *AnomalySimulatorForDemoDevice.sh* has been attached which simulates sending of alternate anomalous and non-anomalous readings to Cumulocity from our demo device. This script can be used to depict the generation of anomalies.
+A script *AnomalySimulatorForDemoDevice.sh* has been attached which simulates sending of alternate anomalous and non-anomalous readings to Cumulocity IoT from our demo device. This script can be used to depict the generation of anomalies.
 
 All you need to do is run it as `sh AnomalySimulatorForDemoDevice.sh`.
 
@@ -83,6 +83,6 @@ All you need to do is run it as `sh AnomalySimulatorForDemoDevice.sh`.
     	COUNTER=`expr $COUNTER + 1`
     done
 
-This should now start sending alternate anomalous and non-anomalous measurements to Cumulocity on behalf of your demo device for a total duration of 30 seconds.
+This should now start sending alternate anomalous and non-anomalous measurements to Cumulocity IoT on behalf of your demo device for a total duration of 30 seconds.
 
 You should notice anomaly detection alarms for every anomalous measurement that it sends. These alarms generated from your device will be visible under the **Alarms** page of the Device Management application.

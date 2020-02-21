@@ -6,17 +6,17 @@ weight: 40
 
 This section deals with the basic data science steps of creating an anomaly detection model with self-collected data. First of all, you need to register your Android phone. Then follow the sections below for collecting data, training the model and using the model to detect anomalies via the phone. Note that the phone for the entire workflow has to be of the same type because the data and sensors for device types may differ.
 
-#### Register an Android phone in Cumulocity
+#### Register an Android phone in Cumulocity IoT
 
-Registering an Android phone in Cumulocity involves installing the Cloud Sensor App on your Android phone and using it for completing the registration. Follow the steps described in [Optional services > Cumulocity IoT Sensor App](/users-guide/optional-services#android-cloud-sensor-app) in the User guide.
+Registering an Android phone in Cumulocity IoT involves installing the Cloud Sensor App on your Android phone and using it for completing the registration. Follow the steps described in [Optional services > Cumulocity IoT Sensor App](/users-guide/optional-services#android-cloud-sensor-app) in the User guide.
 
 Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, update the `c_device_source` of the *CONFIG.INI* file with the device ID of your registered Android phone.
 
-#### Data collection with Cumulocity
+#### Data collection with Cumulocity IoT
 
 Required: No. The training data is provided. See next section.
 
-In contrast to supervised classification models, no labeled training data is required for anomaly detection models. The training happens with the regular data, and any unseen behavior will later be detected as anomalous. The data can be collected by carrying around the registered device over a few days without any anomalous behavior. All data can then be accessed via the Cumulocity REST interface and be transformed into the training data format. 
+In contrast to supervised classification models, no labeled training data is required for anomaly detection models. The training happens with the regular data, and any unseen behavior will later be detected as anomalous. The data can be collected by carrying around the registered device over a few days without any anomalous behavior. All data can then be accessed via the Cumulocity IoT REST interface and be transformed into the training data format. 
 
 Note that for demo purposes the data is fetched via REST and directly transformed into the training data set. More complex pre-processing might require the use of an offline data store. The format of the JSON data might have changed in the meantime, or some sensors might not be available for some phone types, so check the exact format by viewing a current sample.
 
@@ -64,7 +64,7 @@ The following code block contains the data format of the JSON schema that was as
 	}
 
 
-Data collection can be done by using the below shown and attached script *createTrainingData.py*. This Python script connects to the Cumulocity REST measurements endpoint, pulls the data and writes it to a CSV file.
+Data collection can be done by using the below shown and attached script *createTrainingData.py*. This Python script connects to the Cumulocity IoT REST measurements endpoint, pulls the data and writes it to a CSV file.
 
 	createTrainingData.py
     import requests, json 
@@ -195,17 +195,17 @@ You could try out the data you collected yourself as described in the data colle
     
     print("Model with name "+PMML_FILE_NAME+" converted into PMML")
 
-#### Upload the model to Cumulocity
+#### Upload the model to Cumulocity IoT
 
-In order to upload the model to Cumulocity, follow the steps described in [Predictive Analytics application > Managing models](/predictive-analytics/web-app/#managing-models).
+In order to upload the model to Cumulocity IoT, follow the steps described in [Machine Learning application > Managing models](/predictive-analytics/web-app/#managing-models).
 
 A pre-trained model *iforest_demo.pmml* is also attached for reference. This anomaly detection model was trained with the data available in *training_data.zip* mentioned in the section above.
 
-#### Create and upload Apama monitor to Cumulocity
+#### Create and upload Apama monitor to Cumulocity IoT
 
 For this anomaly detection scenario, we need to use Apama streaming analytics. With Apama streaming analytics, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. This user-defined logic can, e.g. alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
 
-We create an EPL-based monitor file and upload it to Cumulocity. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice and raising an alarm when an anomaly is reported by our machine learning model.
+We create an EPL-based monitor file and upload it to Cumulocity IoT. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice and raising an alarm when an anomaly is reported by our machine learning model.
 
 Instead of creating a new monitor file, the attached *DetectAnomalies.mon* file can be used after making minor adjustments. Open *DetectAnomalies.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device, same as c_device_source in the CONFIG.INI file mentioned above. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps] (/apama/analytics-introduction/#single-mon-file) in the Streaming analytics guide for details on uploading Apama monitor files.
 

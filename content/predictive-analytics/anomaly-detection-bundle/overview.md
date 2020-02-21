@@ -10,7 +10,7 @@ Capturing anomalous events through the sensor data of a mobile device on an IoT 
 
 * Collect sensor data from a user performing regular everyday tasks.
 * Train an anomaly detection model with the collected data and transform the model to PMML.
-* Deploy the model to Cumulocity IoT using the Predictive Analytics app.
+* Deploy the model to Cumulocity IoT using the Machine Learning application.
 * Create and upload an EPL rule to Cumulocity (C8Y) IoT which does the following:
 	* Gathers specific measurements coming from the source device and conducts any necessary pre-processing steps.
 	* Sends the data via REST request to the Zementis microservice API for processing.

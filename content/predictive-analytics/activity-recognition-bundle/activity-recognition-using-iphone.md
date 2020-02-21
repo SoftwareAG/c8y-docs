@@ -6,9 +6,9 @@ weight: 40
 
 This section deals with the basic data science steps of creating an activity recognition model with self-collected data. First of all, you need to register your iPhone. Then follow the sections below for collecting data, training the model and using the model to recognize activities via the phone. Note, that the phone for the entire workflow has to be of the same type because the data and sensors for device types may differ.
 
-#### Register an iPhone in Cumulocity
+#### Register an iPhone in Cumulocity IoT
 
-Registering an iPhone on Cumulocity involves installing the Cloud Sensor App on your phone and using it for completing the registration. 
+Registering an iPhone on Cumulocity IoT involves installing the Cloud Sensor App on your phone and using it for completing the registration. 
 
 Follow the steps described in [Optional services > Cumulocity IoT Sensor App](/users-guide/optional-services#android-cloud-sensor-app) in the User guide.
 
@@ -16,9 +16,9 @@ After the download, do the following on your iPhone: Open Settings > Click Gener
 
 Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, update the `c_device_source` of the *CONFIG.INI* file with the device ID of your registered iPhone.
 
-#### Data collection with Cumulocity
+#### Data collection with Cumulocity IoT
 
-Collecting training data for activity recognition is done by starting the Cumulocity Cloud Sensor App, performing each one of the activities over a few minutes and noting the exact time period. As a next step, the instructions and scripts provided below can be used to collect training data per activity type. The resulting CSV files can be combined for the different activity classes, so that the final training data includes instances for all activity types.
+Collecting training data for activity recognition is done by starting the Cumulocity IoT Cloud Sensor App, performing each one of the activities over a few minutes and noting the exact time period. As a next step, the instructions and scripts provided below can be used to collect training data per activity type. The resulting CSV files can be combined for the different activity classes, so that the final training data includes instances for all activity types.
 
 Note that for demo purposes, the data is fetched via REST and directly transformed into the training data set. More complex pre-processing might require the use of an offline data store. The format of the JSON data might have changed in the meantime, or some sensors might not be available for some phone types, so check the exact format by viewing a current sample.
 
@@ -52,7 +52,7 @@ The following code block contains the data format of the JSON schema that was as
 	    "activity" : "none"
 	}
 
-Data collection can be done by using the below shown and attached script *createData.py*. This Python script connects to the Cumulocity REST measurements endpoint, pulls the data, and writes it to a CSV file. 
+Data collection can be done by using the below shown and attached script *createData.py*. This Python script connects to the Cumulocity IoT REST measurements endpoint, pulls the data, and writes it to a CSV file. 
 
 For each activity type, the name of the activity and the timestamps need to be updated in the constants ACTIVITY, DATE_FROM and DATE_TO. Note that the format of the data might look slightly different. After the data sets for all activities are created, they can be combined for model training.
 
@@ -240,17 +240,17 @@ The script also contains a 10-fold cross validation and the evaluation against s
 	graph.render("graph_"+model_type)
 	print("Graph with decision tree is created as graph_" + model_type + ".pdf.")	
 
-#### Upload the model to Cumulocity
+#### Upload the model to Cumulocity IoT
 
-In order to upload the model to Cumulocity, follow the steps described in [Predictive Analytics application > Managing models](/predictive-analytics/web-app/#managing-models).
+In order to upload the model to Cumulocity IoT, follow the steps described in [Machine Learning application > Managing models](/predictive-analytics/web-app/#managing-models).
 
 A pre-trained model *ActivitiesDTreeJump.pmml* is also attached for reference. This activity recognition model was trained with the data available in *data/training_demo_data_jump.csv* mentioned in the previous section.
 
-#### Create and upload Apama monitor to Cumulocity
+#### Create and upload Apama monitor to Cumulocity IoT
 
 For this active recognition scenario, we need to use Apama streaming analytics. With Apama streaming analytics, you can add your own logic to your IoT solution for immediate processing of incoming data from devices or other data sources. This user-defined logic can, e.g. alert applications of new incoming data, create new operations based on the received data (such as sending an alarm when a threshold for a sensor is exceeded), or trigger operations on devices.
 
-We create an EPL-based monitor file and upload it to Cumulocity. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice and raising an alarm when any change in activity is reported by our machine learning model.
+We create an EPL-based monitor file and upload it to Cumulocity IoT. As mentioned earlier, the Apama EPL monitor file takes care of reading the measurements coming from the mobile device, sending it to the Zementis microservice and raising an alarm when any change in activity is reported by our machine learning model.
 
 Instead of creating a new monitor file, the attached *RecognizeActivities.mon* file can be used after making minor adjustments. Open *RecognizeActivities.mon* in a text editor and replace the `deviceId` variable with the ID of your registered device, same as `c_device_source` in the *CONFIG.INI* file mentioned above. Save your changes and upload this monitor file to your tenant. See [Deploying Apama applications as single \*.mon files with Apama EPL Apps] (/apama/analytics-introduction/#single-mon-file) in the Streaming analytics guide for details on uploading Apama monitor files.
 

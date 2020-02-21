@@ -4,9 +4,9 @@ layout: redirect
 weight: 20
 ---
 
-In the Cumulocity application, you access the Predictive Analytics application through the app switcher. 
+In Cumulocity IoT, you access the Machine Learning application through the app switcher. 
 
-Clicking **Predictive Analytics** in the app switcher will open the Predictive Analytics application showing the  **Home screen** of the application.
+Clicking **Machine Learning** in the app switcher will open the Machine Learning application showing the  **Home screen** of the application.
 
 ![Home screen](/images/zementis/zementis-home-screen.png)
 

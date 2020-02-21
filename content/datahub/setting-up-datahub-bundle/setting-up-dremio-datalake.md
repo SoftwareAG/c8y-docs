@@ -66,7 +66,7 @@ For **Azure Data Lake Storage Gen1**, **Azure Storage**, and **Amazon S3** data 
 Once all settings are defined, click **Save** in the action bar to the right. During the save process, the following steps are automatically conducted:
 * A Dremio account is created, with the account having standard Dremio user privileges, not admin privileges.
 * A data lake source in Dremio is created using the provided data lake settings.
-* A source in Dremio is created which connects to the Cumulocity database.
+* A source in Dremio is created which connects to the Cumulocity IoT database.
 * A space in Dremio is created which you can use to organize your custom Dremio entities, e.g. views.
 
 ### Editing settings

@@ -4,7 +4,7 @@ title: Monitoring compaction jobs
 layout: redirect
 ---
 
-During offloading, data from the Cumulocity database is written into files in the data lake. In order to ensure a compact physical layout of those files, DataHub automatically runs periodic compaction jobs in the background. For each offloading pipeline, a corresponding compaction job is set up and scheduled.
+During offloading, data from the Cumulocity IoT database is written into files in the data lake. In order to ensure a compact physical layout of those files, DataHub automatically runs periodic compaction jobs in the background. For each offloading pipeline, a corresponding compaction job is set up and scheduled.
 
 You can examine the corresponding latest compaction job for all offloading pipelines or examine the compaction job history for a specific pipeline.
 

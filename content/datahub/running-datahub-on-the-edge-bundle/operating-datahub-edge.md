@@ -4,9 +4,9 @@ title: Operating DataHub Edge
 layout: redirect
 ---
 
-DataHub Edge provides the same operation capabilities the cloud variant does. See section [Operating Datahub](/datahub/operating-datahub) for details on checking system information and viewing audit logs.
+As the cloud variant does, DataHub Edge UI allows you to check system information and view audit logs. See section [Operating DataHub](/datahub/operating-datahub) for details.
 
-Operating DataHub Edge includes additional aspects.
+When managing DataHub Edge, the following standard tasks are additionally relevant.
 
 ### Troubleshooting the system
 
@@ -22,10 +22,10 @@ If you still need to contact SAG support, include the output of the diagnostics 
 
 ##### Check DataHub Edge backend status
 
-You can check the status of the backend in the Administration page of the DataHub UI. This page requires administrative rights. Alternatively you can query the *isalive* endpoint:
+You can check the status of the backend in the Administration page of the DataHub UI. Alternatively you can query the *isalive* endpoint:
 
 ```shell	
-TODO: stimmen die credentials?
+TODO: stimmen die credentials? oder <your_password> nehmen?
 curl --user admin:manage https://<edge_domain_name>/service/datahub/isalive
 
 {
@@ -48,29 +48,31 @@ You can check the status of Dremio using the *live* endpoint:
 curl http://datahub.<edge_domain_name>:9047/live
 ```
 
-The response is an HTML page which has an object holding the server configuration, including the server status.
+The response is an HTML page which includes the server configuration and particularly the server status.
 
-TODO: what else? DB, data disk
+If Dremio cannot be reached, you will get an error response.
+
+TODO: what else? DB, data disk...?
 
 #### <a name="log-files"></a>Log files
 
-Log files are stored at /var/log/cdh.
+Log files are stored at */var/log/cdh*.
 
-TODO: include the CDH logs in the Edge documentation as well.
+TODO: include the CDH logs in the C8Y Edge documentation as well.
 
 | File | Usage |
 | -----   | -----   |
 | xyz.log | logfile for DataHub Edge backend |
 | xyz.log | logfile for Dremio |
 
-TODO: Dremio logs: access like that or via docker logs? Logs for both cluster nodes and ZooKeeper?
+TODO: Dremio logs: access like that or via docker logs? Logs for both cluster nodes and ZooKeeper? Separate logs for master and executor?
 
 #### <a name="monitoring"></a>Monitoring
 Cumulocity IoT Edge uses Monit for management and monitoring of relevant processes. See section [Monitoring](/edge/operation/#monitoring) for details. The DataHub Edge processes, namely the DataHub backend and the Dremio nodes, are also monitored by Monit.
 
 ### Data disc management and monitoring
 
-The data disk is used for storing the state of DataHub and Dremio and serves as data lake. In order to ensure that the system can work properly, the disk must not run out of space. The main factors for the disk space allocation are the Dremio job profiles and the data lake contents.
+The data disk is used for storing the state of DataHub and Dremio and serves as data lake. In order to ensure that the system can work properly, the disk must not run out of space. The main factors for the disk space allocation of DataHub Edge are the Dremio job profiles and the data lake contents.
 
 #### Cleanup of Dremio job history
 

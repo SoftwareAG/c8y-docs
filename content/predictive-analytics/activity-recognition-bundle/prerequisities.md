@@ -2,6 +2,9 @@
 title: Prerequisites
 layout: redirect
 weight: 20
+
+aliases:
+  - /predictive-analytics/activity-recognition/#prerequisities
 ---
 
 [Download the ActivityRecognitionDemo.zip](/files/zementis/ActivityRecognitionDemo.zip) file which contains demo scripts, training data set, PMML Model and EPL rule.

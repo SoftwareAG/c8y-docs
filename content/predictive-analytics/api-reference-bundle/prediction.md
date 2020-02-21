@@ -2,6 +2,9 @@
 title: Prediction
 layout: redirect
 weight: 30
+
+aliases:
+  - /predictive-analytics/api-reference/#prediction
 ---
 
 Operations on applying model to input data.

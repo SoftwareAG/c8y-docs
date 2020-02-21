@@ -2,6 +2,9 @@
 title: Anomaly detection using an Android phone
 layout: redirect
 weight: 40
+
+aliases:
+  - /predictive-analytics/anomaly-detection/#anomaly-detection-using-android-phone
 ---
 
 This section deals with the basic data science steps of creating an anomaly detection model with self-collected data. First of all, you need to register your Android phone. Then follow the sections below for collecting data, training the model and using the model to detect anomalies via the phone. Note that the phone for the entire workflow has to be of the same type because the data and sensors for device types may differ.

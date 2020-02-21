@@ -2,6 +2,9 @@
 title: Getting Started
 layout: redirect
 weight: 30
+
+aliases:
+  - /predictive-analytics/anomaly-detection/#getting-started
 ---
 
 We have added a *CONFIG.INI* file to the zip. This file is meant for capturing the tenant details and credentials which will be used by the demo scripts.

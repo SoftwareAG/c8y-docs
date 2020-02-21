@@ -2,6 +2,9 @@
 title: Jobs
 layout: redirect
 weight: 40
+
+aliases:
+  - /predictive-analytics/api-reference/#jobs
 ---
 
 Operations on jobs scheduled for processing device data.

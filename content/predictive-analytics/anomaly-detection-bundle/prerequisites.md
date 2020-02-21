@@ -2,6 +2,9 @@
 title: Prerequisites
 layout: redirect
 weight: 20
+
+aliases:
+  - /predictive-analytics/anomaly-detection/#prerequisites
 ---
 
 [Download the AnomalyDetectionDemo.zip](/files/zementis/AnomalyDetectionDemo.zip) file which contains demo scripts, training data set, PMML Model and EPL rule.

@@ -2,6 +2,9 @@
 title: Managing models
 layout: redirect
 weight: 30
+
+aliases:
+  - /predictive-analytics/web-app/#managing-models
 ---
 
 In the **Models** page you actually do the model management. 

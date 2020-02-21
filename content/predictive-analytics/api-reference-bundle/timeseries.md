@@ -2,6 +2,9 @@
 title: Time series
 layout: redirect
 weight: 30
+
+aliases:
+  - /predictive-analytics/api-reference/#timeseries
 ---
 
 Operations for time series data/model.

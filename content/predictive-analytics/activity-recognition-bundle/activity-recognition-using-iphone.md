@@ -2,6 +2,9 @@
 title: Activity recognition using an iPhone
 layout: redirect
 weight: 40
+
+aliases:
+  - /predictive-analytics/activity-recognition/#activity-recognition-using-iphone
 ---
 
 This section deals with the basic data science steps of creating an activity recognition model with self-collected data. First of all, you need to register your iPhone. Then follow the sections below for collecting data, training the model and using the model to recognize activities via the phone. Note, that the phone for the entire workflow has to be of the same type because the data and sensors for device types may differ.

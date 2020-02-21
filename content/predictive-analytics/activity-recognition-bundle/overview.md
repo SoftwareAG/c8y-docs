@@ -2,6 +2,9 @@
 title: Overview
 layout: redirect
 weight: 10
+
+aliases:
+  - /predictive-analytics/activity-recognition/#overview
 ---
 
 Sensor-based activity recognition can be used to model a wide range of human activities. Mobile devices, such as smart phones provide sufficient sensor data and calculation power to enable physical activity recognition to provide an estimation of the energy consumption during everyday life.

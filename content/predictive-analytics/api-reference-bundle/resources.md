@@ -2,6 +2,9 @@
 title: Resources
 layout: redirect
 weight: 20
+
+aliases:
+  - /predictive-analytics/api-reference/#resources
 ---
 
 Operation on resources.

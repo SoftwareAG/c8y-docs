@@ -2,6 +2,9 @@
 title: Managing resources
 layout: redirect
 weight: 40
+
+aliases:
+  - /predictive-analytics/web-app/#managing-resources
 ---
 
 In the **Resources** page you manage the resources, i.e. the custom functions and look-up tables which a model might need.

@@ -2,6 +2,9 @@
 order: 5
 title: Overview
 weight: redirect
+
+aliases:
+  - /predictive-analytics/api-reference/#overview
 ---
 
 This guide provides users with a comprehensive set of API (Application Programming Interface) to interact with the Zementis microservice using REST (Representational State Transfer) over HTTP (Hypertext Transfer Protocol). The Zementis microservice API allows users to perform operations on models and custom resources, and process data by issuing a simple request using any HTTP client such as a web browser.

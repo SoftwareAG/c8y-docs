@@ -2,6 +2,9 @@
 title: Activity recognition using a demo device
 layout: redirect
 weight: 50
+
+aliases:
+  - /predictive-analytics/activity-recognition/#activity-recognition-using-demo-device
 ---
 
 A fully functional demo can be prepared with the help of a demo device. For this, use the artefacts provided as part of the *ActivityRecognitionDemo.zip* file.

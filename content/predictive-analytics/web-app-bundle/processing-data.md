@@ -2,6 +2,9 @@
 title: Processing data
 layout: redirect
 weight: 50
+
+aliases:
+  - /predictive-analytics/web-app/#processing-data
 ---
 
 The **Predictions** page allows you to do meaningful predictions by scoring the data from your devices against your predictive models.

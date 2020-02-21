@@ -2,6 +2,9 @@
 title: Models
 layout: redirect
 weight: 10
+
+aliases:
+  - /predictive-analytics/api-reference/#models
 ---
 
 Operations on AI/Machine Learning models.

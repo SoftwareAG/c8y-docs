@@ -2,6 +2,9 @@
 title: Using Postman
 layout: redirect
 weight: 40
+
+aliases:
+  - /predictive-analytics/api-reference/#postman
 ---
 
 Graphical REST clients such as Postman are a convenient way to explore REST interfaces and the Cumulocity IoT database content.

@@ -2,6 +2,9 @@
 title: Home screen
 layout: redirect
 weight: 20
+
+aliases:
+  - /predictive-analytics/web-app/#home-screen
 ---
 
 In Cumulocity IoT, you access the Machine Learning application through the app switcher. 

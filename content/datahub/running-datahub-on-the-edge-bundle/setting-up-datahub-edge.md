@@ -10,7 +10,7 @@ Before setting up DataHub Edge, you have to check the following prerequisites:
 
 | Item | Details |
 | -----   | -----   |
-| Cumulocity IoT Edge | The local version of Cumulocity IoT is set up on a Virtual Machine (VM). TODO: link to edge setup |
+| Cumulocity IoT Edge | The local version of Cumulocity IoT is set up on a Virtual Machine (VM). See also section [Setting up Cumulocity IoT Edge](/edge/installation). |
 | DataHub Edge archive | You have to download the archive with all installation artifacts from the [Software AG Empower portal](https://empower.softwareag.com/). |
 | Internet access | Internet access is not required. |
 | TODO: what else? | ??? |
@@ -40,8 +40,8 @@ Run the install script in the unzipped folder.
 It takes a few minutes to complete the installation.
 
 The install script runs the following basic steps:
-* Deploy the DataHub Edge UI as web application to Cumulocity Core.
-* Configure corresponding roles and permissions in Cumulocity Core.
+* Deploy the DataHub Edge UI as web application to Cumulocity IoT Core.
+* Configure corresponding roles and permissions in Cumulocity IoT Core.
 * Start a Docker container with the DataHub Edge backend and the database system for managing the backend state.
 * Start a Docker container with the Dremio master and a ZooKeeper instance.
 * Start a Docker container with the Dremio executor.
@@ -81,7 +81,7 @@ The different DataHub Edge interfaces can be accessed in the same way as in a cl
 
 | Interface | Description |
 | -----   | -----   |
-| DataHub Edge UI | The UI can be accessed in the **application switcher** after you have logged in into Cumulocity IoT Edge UI with your admin account. TODO: add link. Alternatively you can access it directly under https://<edge_domain_name>/apps/datahub-ui. |
+| DataHub Edge UI | The UI can be accessed in the **application switcher** after you have logged in into Cumulocity IoT Edge UI with your admin account. Alternatively you can access it directly under https://<edge_domain_name>/apps/datahub-ui. |
 | Dremio UI | On the DataHub Edge home page you will find a link to the Dremio UI. Alternatively you can access it directly under https://datahub.<edge_domain_name>:9047 |
 | DataHub JDBC/ODBC | You find the connection settings for JDBC/ODBC in the DataHub Edge UI on the **Home** page. |
 | DataHub REST API | The path of the microservice hosting the API is https://<edge_domain_name>/service/datahub. |
@@ -89,10 +89,10 @@ The different DataHub Edge interfaces can be accessed in the same way as in a cl
 
 ### Defining Datahub permissions and roles
 
-The definition and assignment of permissions and roles is done in the same way as in a cloud deployment. See section TODO: XYZ for details.
+The definition and assignment of permissions and roles is done in the same way as in a cloud deployment. See section [Defining DataHub permissions and roles](/datahub/setting-up-datahub/#defining-permissions) for details.
 
 ### Setting up Dremio account and data lake
 
-The setup of the Dremio account and the data lake is done in the same way as in a cloud deployment. See section TODO: XYZ for details.
+The setup of the Dremio account and the data lake is done in the same way as in a cloud deployment. See section [Setting up Dremio account and data lake](/datahub/setting-up-datahub/#setting-up-dremio-datalake) for details.
 
 DataHub Edge is configured to use an NAS as data lake. When configuring the NAS use as mount path **/where/to/mount/to?**.

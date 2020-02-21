@@ -4,7 +4,7 @@ title: Operating DataHub Edge
 layout: redirect
 ---
 
-DataHub Edge provides the same operation capabilities the cloud variant does. See section TODO: XYZ for details on checking system information and viewing audit logs.
+DataHub Edge provides the same operation capabilities the cloud variant does. See section [Operating Datahub](/datahub/operating-datahub) for details on checking system information and viewing audit logs.
 
 Operating DataHub Edge includes additional aspects.
 
@@ -12,13 +12,13 @@ Operating DataHub Edge includes additional aspects.
 
 In case of problems, we recommend to follow these steps:
 
-- Perform a health check, see the TODO HealthCheck section.
-- Check the log files, see the TODO Log files section.
-- Monitor the system processes, see the TODO Monitoring section.
+- Perform a health check, see the [Health check](#health-check) section.
+- Check the log files, see the [Log files](#log-files) section.
+- Monitor the system processes, see the [Monitoring](#monitoring) section.
 
-If you still need to contact SAG support, include the output of the diagnostics script. See the TODO Diagostics section on details how to run it.
+If you still need to contact SAG support, include the output of the diagnostics script. See the [Diagnostics](/edge/operation/#diagnostics) section on details how to run it.
 
-#### Health check
+#### <a name="health-check"></a>Health check
 
 ##### Check DataHub Edge backend status
 
@@ -52,7 +52,8 @@ The response is an HTML page which has an object holding the server configuratio
 
 TODO: what else? DB, data disk
 
-#### Log files
+#### <a name="log-files"></a>Log files
+
 Log files are stored at /var/log/cdh.
 
 TODO: include the CDH logs in the Edge documentation as well.
@@ -64,8 +65,8 @@ TODO: include the CDH logs in the Edge documentation as well.
 
 TODO: Dremio logs: access like that or via docker logs? Logs for both cluster nodes and ZooKeeper?
 
-#### Monitoring
-Cumulocity IoT Edge uses Monit for management and monitoring of relevant processes. See section TODO for details. The DataHub Edge processes, namely the DataHub backend and the Dremio nodes, are also monitored by Monit.
+#### <a name="monitoring"></a>Monitoring
+Cumulocity IoT Edge uses Monit for management and monitoring of relevant processes. See section [Monitoring](/edge/operation/#monitoring) for details. The DataHub Edge processes, namely the DataHub backend and the Dremio nodes, are also monitored by Monit.
 
 ### Data disc management and monitoring
 

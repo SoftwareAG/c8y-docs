@@ -19,16 +19,16 @@ For your convenience, here is an overview of the contents:
 
 ### DataHub Edge at a glance
 
-Cumulocity IoT Edge (TODO: add link to edge docu) is an onsite, single-server variant of the Cumulocity IoT Core platform. It is delivered as a software appliance designed to run on industrial PC’s or local servers. This appliance can optionally include DataHub Edge, which is the edge variant of DataHub.
+[Cumulocity IoT Edge](/edge/introduction) is an onsite, single-server variant of the Cumulocity IoT Core platform. It is delivered as a software appliance designed to run on industrial PC’s or local servers. This appliance can optionally include DataHub Edge, which is the edge variant of DataHub.
 
-DataHub Edge offers the same functionality as the cloud-variant of DataHub does. You can define offloading pipelines, which regularly move data from the internal Cumulocity database into a data lake. Dremio as internal engine of DataHub can access the datalake and run analytical queries against its contents, using standard SQL as query interface. In an edge setup, the data lake is typically defined as an NAS for local storage of the data.
+DataHub Edge offers the same functionality as the cloud-variant of DataHub does. You can define offloading pipelines, which regularly move data from the internal Cumulocity IoT database into a data lake. Dremio as internal engine of DataHub can access the datalake and run analytical queries against its contents, using standard SQL as query interface. In an edge setup, the data lake is typically defined as an NAS for local storage of the data.
 
 TODO: usage scenarios for CDH edge
 
 <img src="/images/datahub-guide/datahub-edge-overview.png" alt="Overview of DataHub Edge" style="max-width: 70%">
 
 DataHub Edge consists of the following building blocks:
-* The DataHub UI is deployed as web application into the Cumulocity core. It is the frontend for managing offloading pipelines and operating DataHub Edge.
+* The DataHub UI is deployed as web application into the Cumulocity IoT core. It is the frontend for managing offloading pipelines and operating DataHub Edge.
 * The DataHub backend manages offloading pipelines and their scheduled execution. The backend and its internal database run within one Docker container in the Docker daemon. Its associated state is persisted on the central data disk.
 * The query processing engine bases on a Dremio master and a Dremio executor as well as of a Zookeeper instance. Dremio master and Zookeeper run in one Docker container and Dremio executor runs in another one. Both containers run in the Docker daemon. The associated state of the containers is persisted on the central data disk.
 * The data lake is also hosted on the central data disk.
@@ -47,5 +47,5 @@ DataHub Edge uses the same software as DataHub does, though in the following asp
 | Installation | Offline | Online |
 | Dremio cluster setup | 1 master, 1 executor | scalable in the number of masters and executors |
 | Dremio container management | Docker daemon | Kubernetes |
-| DataHub backend container management | Docker daemon | Microservice in Cumulocity Core |
+| DataHub backend container management | Docker daemon | Microservice in Cumulocity IoT Core |
 | Data lakes | NAS | S3, ADLS, Azure Storage |

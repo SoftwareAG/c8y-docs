@@ -6,11 +6,11 @@ layout: redirect
 
 ### Introduction
 
-SmartREST templates are a collection of request and response templates used to convert CSV data and Cumulocity Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time.
+SmartREST templates are a collection of request and response templates used to convert CSV data and Cumulocity IoT Rest API calls. For example, you can use SmartREST templates to easily add devices to the platform instead of manually writing the requests each time.
 
-To ease the device integration, Cumulocity supports static templates that can be used without the need for creating your own templates. These templates focus only on the most commonly used messages for device management. For further information on static templates, refer to the [Device SDK guide](/device-sdk/mqtt#static-templates).
+To ease the device integration, Cumulocity IoT supports static templates that can be used without the need for creating your own templates. These templates focus only on the most commonly used messages for device management. For further information on static templates, refer to the [Device SDK guide](/device-sdk/mqtt#static-templates).
 
-Open the **SmartREST template** page from the **Device Types** menu in the navigator. 
+Open the **SmartREST template** page from the **Device Types** menu in the navigator.
 
 ![template view](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest.png)
 
@@ -30,22 +30,21 @@ There are two ways to add a SmartRest template:
 
 1. Click **Import** at the right of the top menu bar.
 2. In the resulting dialog box, choose a file to upload by browsing for it.
-3. Enter a template name and a unique template ID (both mandatory fields). 
+3. Enter a template name and a unique template ID (both mandatory fields).
 4. Click **Import** to import the template.
 
 ### To create a new SmartREST template
 
 1. Click **New** at the right of the top menu bar.
-2. In the resulting dialog box, enter a template name and a unique template ID (both mandatory fields). 
-4. Click **Continue** to proceed adding messages or responses.
+2. In the resulting dialog box, enter a template name and a unique template ID (both mandatory fields).
+3. Click **Continue** to proceed adding messages or responses.
 
-![Add new template](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-new.png)
 
 #### To add a message
 
 The message template contains all necessary information to convert the SmartRest request into a corresponding Rest API call which is then sent to the platform.
 
-1. To add a new message, navigate to the **Messages** tab in your desired SmartREST template and click **Add message**. 
+1. To add a new message, navigate to the **Messages** tab in your desired SmartREST template and click **Add message**.
 
 1. Complete the following fields:
 
@@ -77,13 +76,13 @@ The message will be removed from the SmartREST template.
 
 A response template contains the necessary information to extract data values from a platform REST API call response, which is then sent back to the client in a CSV data format.
 
-1. To add a new response, navigate to the **Response** tab in your desired SmartREST template and click **Add response**. 
- 
+1. To add a new response, navigate to the **Response** tab in your desired SmartREST template and click **Add response**.
+
 2. Complete the following fields:
 
 	|Field|Description|
 |:---|:---|
-|Response ID|Unique integer that will be used as a response identifier. 
+|Response ID|Unique integer that will be used as a response identifier.
 |Name|Name for the response. Mandatory.
 |Base Pattern|Base pattern for the response.
 |Condition|Condition value of the response.
@@ -94,9 +93,9 @@ A response template contains the necessary information to extract data values fr
 3. Click **Save**.
 
 The response will be added to the SmartREST template.
- 
+
 #### To remove a response
- 
+
 To remove a response, open it and click **Remove** at the bottom.
 
 ### To edit a SmartREST template
@@ -112,15 +111,15 @@ Click the menu icon at the top right of the respective template card and then cl
 
 ### To export a SmartREST template
 
-Click the menu icon at the top right of the respective template card and then click **Export**. 
+Click the menu icon at the top right of the respective template card and then click **Export**.
 
 The template will automatically be downloaded to your file system.
 
 To export a SmartREST template as CSV file follow these steps:
 
-1. Open the template you want to export and select the **CSV preview** tab. 
+1. Open the template you want to export and select the **CSV preview** tab.
 2. In the resulting dialog box, specify the preferred options for the field separator, decimal separator and character set.
-3. In the **CSV preview** tab, which provides additional information on messages and responses, click **Copy to clipboard**. 
+3. In the **CSV preview** tab, which provides additional information on messages and responses, click **Copy to clipboard**.
 
 ![CSV preview tab](/images/users-guide/DeviceManagement/devmgmt-devicetypes-smartrest-csv.png)
 

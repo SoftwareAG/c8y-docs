@@ -6,19 +6,19 @@ layout: redirect
 
 Sie können Geräte beliebig nach Ihren Bedürfnissen gruppieren. Ein Gerät kann sich in mehreren Gruppen befinden und Gruppen selbst können wiederum Teil von mehreren anderen Gruppen sein.
 
-Cumulocity unterscheidet zwischen Top-Level-Gruppen und untergeordneten Gruppen: 
+Cumulocity IoT unterscheidet zwischen Top-Level-Gruppen und untergeordneten Gruppen: 
 
 **Top-Level-Gruppen** werden im Menü **Gruppen** des Navigators auf oberster Ebene angezeigt. <br>**Untergeordnete Gruppen** dienen zur weiteren Unterteilung von Top-Level-Gruppen.
 
 ### Anzeigen von Gruppen
 
-Um eine Liste aller Gruppen in Ihrem Konto anzuzeigen, klicken Sie **Gruppen** im Navigator. 
+Um eine Liste aller Gruppen in Ihrem Konto anzuzeigen, klicken Sie **Gruppen** im Navigator.
 
 ![Groups list](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups.png)
 
 Für jede Gruppe wird der Name und die Anzahl der Kinder angezeigt.
 
-Klicken Sie auf eine Gruppe, um Details dieser Gruppe anzuzeigen. 
+Klicken Sie auf eine Gruppe, um Details dieser Gruppe anzuzeigen.
 
 ![Group info](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-info.png)
 
@@ -72,9 +72,9 @@ In der Registerkarte **Stapelkommandos** können Stapelkommandos, die für die G
 
 1. Klicken Sie auf die Schaltfläche **Plus** rechts in der oberen Leiste und anschließend auf **Gruppe hinzufügen**.<br>
 2. Geben Sie im darauf folgenden Dialog einen eindeutigen Namen für die Gruppe an.
-3. Geben Sie im Suchfeld die Suchkriterien für die Geräte ein, die Sie zur Gruppe hinzufügen möchten (z. B. "ublox"). Eine Liste mit passenden Geräten wird angezeigt. 
+3. Geben Sie im Suchfeld die Suchkriterien für die Geräte ein, die Sie zur Gruppe hinzufügen möchten (z. B. "ublox"). Eine Liste mit passenden Geräten wird angezeigt.
 4. Wählen Sie die Geräte aus, die Sie hinzufügen möchten.
-5. Klicken Sie **Gruppe mit # Gerät(en) erstellen**, um die neue Gruppe zu erstellen. 
+5. Klicken Sie **Gruppe mit # Gerät(en) erstellen**, um die neue Gruppe zu erstellen.
 
 Die neue Gruppe wird der Gruppenliste hinzugefügt.
 
@@ -86,8 +86,8 @@ Auf der Seite **Gruppen** können Sie auch eine neue Gruppe erstellen, in dem Si
 
 ### So bearbeiten Sie eine Gruppe
 
-1. Wählen Sie im Navigator eine Gruppe aus. 
-2. Klicken Sie **Bearbeiten** in der Registerkarte **Info**. Sie können den Namen der Gruppe bearbeiten sowie Benutzerberechtigungen für die Gruppe zuweisen. 
+1. Wählen Sie im Navigator eine Gruppe aus.
+2. Klicken Sie **Bearbeiten** in der Registerkarte **Info**. Sie können den Namen der Gruppe bearbeiten sowie Benutzerberechtigungen für die Gruppe zuweisen.
 Weitere Informationen zu den Berechtigungen finden Sie unter [Verwalten von Berechtigungen](/benutzerhandbuch/administration-de#managing-permissions) im Bereich *Administration*.
 
 ### So löschen Sie eine Gruppe
@@ -98,7 +98,7 @@ Klicken Sie bei einem Geräteeintrag auf das Menüsymbol und anschließend auf *
 
 #### <a name="assigning-devices"></a>So weisen Sie einer Gruppe Geräte zu
 
-Geräte können Gruppen auf mehrere Arten zugewiesen werden. 
+Geräte können Gruppen auf mehrere Arten zugewiesen werden.
 
 **Aus der Gruppenperspektive**
 
@@ -106,10 +106,10 @@ Durch Ziehen und Ablegen können Sie im Navigator auf schnelle Weise Geräte zu 
 
 Darüber hinaus können Sie Geräte auch durch folgende Schritte zuweisen:
 
-1. Wählen Sie im Navigator eine Gruppe aus dem Menü **Gruppen** und wechseln Sie zur Registerkarte **Kind-Assets**. 
-2. Klicken Sie **Geräte zuweisen** rechts in der oberen Menüleiste. Im darauf folgenden Dialog können Sie Suchkriterien für die Geräte eingeben, die Sie zu der Gruppe hinzufügen möchten (z. B. "ublox"). Eine Liste mit passenden Geräten wird angezeigt. 
+1. Wählen Sie im Navigator eine Gruppe aus dem Menü **Gruppen** und wechseln Sie zur Registerkarte **Kind-Assets**.
+2. Klicken Sie **Geräte zuweisen** rechts in der oberen Menüleiste. Im darauf folgenden Dialog können Sie Suchkriterien für die Geräte eingeben, die Sie zu der Gruppe hinzufügen möchten (z. B. "ublox"). Eine Liste mit passenden Geräten wird angezeigt.
 3. Wählen Sie die Geräte aus, die Sie hinzufügen möchten.
-4. Klicken Sie **Gruppe mit # Gerät(en) erstellen**, um die Geräte der Gruppe zuzuweisen. 
+4. Klicken Sie **Gruppe mit # Gerät(en) erstellen**, um die Geräte der Gruppe zuzuweisen.
 
 Die Geräte werden der ausgewählten Gruppe zugewiesen.
 
@@ -138,43 +138,43 @@ Klicken Sie bei einem Geräteeintrag auf das Menüsymbol und anschließend auf *
 
 #### So löschen Sie ein Gerät
 
-Klicken Sie bei einem Geräteeintrag auf das Menüsymbol und anschließend auf **Löschen**. 
+Klicken Sie bei einem Geräteeintrag auf das Menüsymbol und anschließend auf **Löschen**.
 
 Das Gerät wird dauerhaft gelöscht.
 
 #### So zeigen Sie die Gerätedetails an
 
-Klicken Sie bei einem Geräteeintrag auf das Menüsymbol und anschließend auf **Device Management**. 
+Klicken Sie bei einem Geräteeintrag auf das Menüsymbol und anschließend auf **Device Management**.
 
-Die Gerätedetails für das jeweilige Gerät, die unter **Alle Geräte** in der Anwendung Device Management gespeichert sind, werden geöffnet. 
+Die Gerätedetails für das jeweilige Gerät, die unter **Alle Geräte** in der Anwendung Device Management gespeichert sind, werden geöffnet.
 
 ### <a name="restructuring-groups"></a>Umsortieren von Gruppen und Geräten
 
-Durch Ziehen und Ablegen können Sie Gruppen, Untergruppen und Geräte auf einfache Weise neu strukturieren. 
+Durch Ziehen und Ablegen können Sie Gruppen, Untergruppen und Geräte auf einfache Weise neu strukturieren.
 
 #### So verschieben Sie eine Gruppe
 
-1. Wählen Sie im Navigator eine Gruppe aus, die Sie zu einer andere Gruppe verschieben möchten. 
-2. Ziehen Sie sie zur gewünschten Gruppe und legen Sie sie dort ab. 
+1. Wählen Sie im Navigator eine Gruppe aus, die Sie zu einer andere Gruppe verschieben möchten.
+2. Ziehen Sie sie zur gewünschten Gruppe und legen Sie sie dort ab.
 3. Bestätigen Sie das Kommando im darauf folgenden Dialog.
 
 
 #### So können Sie ein Gerät verschieben oder hinzufügen
 
-1. Wählen Sie im Navigator die Gruppe oder das Gerät aus, die/das Sie zu einer anderen Gruppe verschieben oder dieser hinzufügen möchten. 
-2. Ziehen Sie sie zur gewünschten Gruppe und legen Sie sie dort ab. 
+1. Wählen Sie im Navigator die Gruppe oder das Gerät aus, die/das Sie zu einer anderen Gruppe verschieben oder dieser hinzufügen möchten.
+2. Ziehen Sie sie zur gewünschten Gruppe und legen Sie sie dort ab.
 3. Wählen Sie im darauf folgenden Dialog, ob das Gerät verschoben oder hinzugefügt werden soll.
 
 
 ### <a name="smart-groups"></a>Verwenden von dynamischen Gruppen
 
-Dynamische Gruppen werden basierend auf Filterkriterien erstellt. Dieser Gruppentyp kann beispielsweise eingesetzt werden, um Bulk-Upgrades von Geräten eines bestimmten Typs auf eine neue Software- oder Firmware-Version durchzuführen. 
+Dynamische Gruppen werden basierend auf Filterkriterien erstellt. Dieser Gruppentyp kann beispielsweise eingesetzt werden, um Bulk-Upgrades von Geräten eines bestimmten Typs auf eine neue Software- oder Firmware-Version durchzuführen.
 
 ![Smart groups filter](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
 
 Wie jede andere Gruppe sind auch dynamische Gruppen in der Anwendung Cockpit verfügbar.
 
-Dynamische Gruppen werden in der Geräteliste erstellt. 
+Dynamische Gruppen werden in der Geräteliste erstellt.
 
 #### So erstellen Sie eine dynamische Gruppe
 
@@ -185,7 +185,7 @@ Dynamische Gruppen werden in der Geräteliste erstellt.
 
 ![Create smart groups](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-smartgroups-create.png)
 
-Die neue Gruppe erscheint als Top-Level-Gruppe im Menü **Gruppe** im Navigator. Dynamische Gruppen werden durch ein kleines Zahnrad im Ordnersymbol gekennzeichnet. 
+Die neue Gruppe erscheint als Top-Level-Gruppe im Menü **Gruppe** im Navigator. Dynamische Gruppen werden durch ein kleines Zahnrad im Ordnersymbol gekennzeichnet.
 
 ![Smart groups icon](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-smartgroups-icon.png)
 
@@ -193,9 +193,8 @@ In der Registerkarte **Kind-Assets** können Sie Ihre Auswahl anpassen und die F
 
 #### So löschen Sie eine dynamische Gruppe
 
-Um eine dynamische Gruppe zu löschen, klicken Sie auf das Menüsymbol und anschließend auf **Löschen**. 
+Um eine dynamische Gruppe zu löschen, klicken Sie auf das Menüsymbol und anschließend auf **Löschen**.
 
 ![Delete smart groups](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-delete.png)
 
 **Wichtig**: Das Löschen einer dynamischen Gruppe ist irreversibel.
-

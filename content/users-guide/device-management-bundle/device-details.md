@@ -3,15 +3,15 @@ weight: 31
 title: Device details
 layout: redirect
 ---
-For each device, detailed information is available. The kind of information actually provided for a device depends on the device type, device usage and the configuration of your user interface. 
+For each device, detailed information is available. The kind of information actually provided for a device depends on the device type, device usage and the configuration of your user interface.
 
-To view detailed information on the device, click a device in the device list. 
+To view detailed information on the device, click a device in the device list.
 
 ![Device info](/images/users-guide/DeviceManagement/devmgmt-devices-info.png)
 
-The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, i.e. tabs are only displayed if the kind of information is available for the particular device. 
+The device details are divided into tabs. The number of tabs is dynamic and depends on the available information, i.e. tabs are only displayed if the kind of information is available for the particular device.
 
-Initially the **Info** tab is shown, which offers general information on a device and is available for each device. 
+Initially the **Info** tab is shown, which offers general information on a device and is available for each device.
 
 Each device at least shows the following tabs: **Info**, **Alarms**, **Control**, **Events**, **Service monitoring**, **Identity** (also see the tab list below).
 
@@ -92,11 +92,11 @@ The following tabs are the most common ones, each described in detail in a separ
 </tbody>
 </table>
 
->**Info**: Several individual tabs, which you do not find listed here, may be described in a different context in another section of the Cumulocity documentation. Use the Search function to switch to the relevant sections. A detailed description on the **Modbus** tab, for example, can be found in [Optional services > Cloud fieldbus](/users-guide/optional-services#cloud-fieldbus).
+>**Info:** Several individual tabs, which you do not find listed here, may be described in a different context in another section of the Cumulocity IoT documentation. Use the Search function to switch to the relevant sections. A detailed description on the **Modbus** tab, for example, can be found in [Optional services > Cloud fieldbus](/users-guide/optional-services#cloud-fieldbus).
 
 Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be part of multiple hierarchies, several rows of breadcrumbs may be shown.
 
-Depending of the type and usage of a device, further actions are provided in an action menu when clicking **More...** at the right of the top menu bar. 
+Depending of the type and usage of a device, further actions are provided in an action menu when clicking **More...** at the right of the top menu bar.
 
 ![More menu](/images/users-guide/DeviceManagement/devmgmt-devices-more.png)
 
@@ -130,7 +130,7 @@ The information is provided on the following cards:
 </tr>
 <tr>
 <td style="text-align:left">Device and communication</td>
-<td style="text-align:left">Shows a data point graph displaying real-time data on particular measurements. For details on data point graphs, refer to <a href="/users-guide/cockpit#data-explorer" class="no-ajaxy">Using the data explorer</a> in the Cockpit documentation. <br>The following measurements may be shown here: <br> 
+<td style="text-align:left">Shows a data point graph displaying real-time data on particular measurements. For details on data point graphs, refer to <a href="/users-guide/cockpit#data-explorer" class="no-ajaxy">Using the data explorer</a> in the Cockpit documentation. <br>The following measurements may be shown here: <br>
 <strong>Data points</strong>: c8y_Battery.level, c8y_SignalStrength.rssi, c8y_MemoryMeasurement.Used, c8y_CPUMeasurement.Workload, c8y_NetworkStatistics.Upload, c8y_SignalStrength.RCSP, c8y_SignalStrength.ber, c8y_SignalStrength.ECN0, c8y_NetworkStatistics.Download, c8y_MemoryMeasurement.Total <br>
 <strong>Alarms</strong>: c8y_UnavailabilityAlarm<br>
 <strong>Events</strong>: c8y_LocationUpdate</td>
@@ -162,7 +162,7 @@ For details provided in the child device list, see [Viewing devices](#viewing-de
 
 ### <a name="measurements"></a>Measurements
 
-The **Measurements** tab provides a default visualization of numeric data provided by the device in the form of charts. Charts are grouped into types of measurements, which can contain multiple graphs or "series". 
+The **Measurements** tab provides a default visualization of numeric data provided by the device in the form of charts. Charts are grouped into types of measurements, which can contain multiple graphs or "series".
 
 The screenshot below, for example, shows a chart for motion measurement including graphs for acceleration in the three dimensions, and a chart with modem statistics in the form of signal strength and bit error rate.
 
@@ -180,7 +180,7 @@ If you increase the time range, the value in the **Aggregation** field will auto
 
 This enables you to get an efficient overview over larger time periods. A graph will only show 5.000 data points per graph maximum to avoid overloading your desktop browser. If you select a fine focus resulting in more than 5.000 data points, a warning message will be shown: "Truncated data. Change aggregation or select shorter date range."
 
-Clicking **Realtime** will enable real-time user interface updates of the graphs as new data flows into the system from the connected devices. 
+Clicking **Realtime** will enable real-time user interface updates of the graphs as new data flows into the system from the connected devices.
 
 You can influence the graphical display and axes limits by setting up so-called "KPIs", see the [Administration Guide](/users-guide/administration).
 
@@ -195,7 +195,7 @@ In order to see measurement graphs, the device has to send measurements in a spe
 		}
 	}
 
-Example: 
+Example:
 
 	"c8y_SpeedMeasurement": {
 	      "Speed": { "value": 1234, "unit": "km/h" }
@@ -259,13 +259,13 @@ To configure LAN parameters, simply enter **IP address** and **Subnet mask**.
 
 ### <a name="software"></a>Software
 
-The **Software** tab allows you to manage and update the firmware of a device and the software installed on a device. 
+The **Software** tab allows you to manage and update the firmware of a device and the software installed on a device.
 
 #### To install firmware/software
 
 Select a firmware from the dropdown list, which contains all firmware available in the [Firmware repository](#software-repo), and click **Install**.
 
-Similarly, to install a software on the device, select a software package from the dropdown list, which contains all software available in the [Software repository](#software-repo), and click **Install**. 
+Similarly, to install a software on the device, select a software package from the dropdown list, which contains all software available in the [Software repository](#software-repo), and click **Install**.
 
 ![Device Software tab](/images/users-guide/DeviceManagement/devmgmt-devices-software.png)
 
@@ -290,30 +290,30 @@ The **Location** tab also shows when a device contains c8y_Position property. Wh
 
 ### <a name="logs"></a>Logs
 
-In the **Logs** tab you can manage log information from devices. 
+In the **Logs** tab you can manage log information from devices.
 
 #### To request log information
 
-1. In the **Logs** tab, click **Request log file** at the right of the top menu bar. 
+1. In the **Logs** tab, click **Request log file** at the right of the top menu bar.
 2. In the resulting dialog box, specify a date and time range for the log information.
 3. Select the type of log from the dropdown field. The supported logs listed are usually device-specific.
 4. Optionally, specify a text filter. For example, if you enter "Users", only lines including the term "Users" will appear in the returned log information.
-5. Specify the maximum number of lines to be returned (counted from the end). The default value is 1000. 
+5. Specify the maximum number of lines to be returned (counted from the end). The default value is 1000.
 1. Click **Request log**.
 
 The log information will be requested from the device.
 
 ![Logs tab](/images/users-guide/DeviceManagement/devmgmt-devices-logs.png)
 
->Requesting a log from a device may take some time. 
+>Requesting a log from a device may take some time.
 
-After the log has been transferred from the device to Cumulocity, it will be listed in the **Logs** tab. The row in the list shows the requested log time range. 
+After the log has been transferred from the device to Cumulocity IoT, it will be listed in the **Logs** tab. The row in the list shows the requested log time range.
 
-Click on the entry in the list to show the entire log information. 
+Click on the entry in the list to show the entire log information.
 
 #### To download a log
 
-Hover over a row and click the download icon, to download the log excerpt to your file system. 
+Hover over a row and click the download icon, to download the log excerpt to your file system.
 
 #### To delete a log
 
@@ -321,30 +321,30 @@ Hover over a row and click the delete icon, to delete the log information.
 
 ### <a name="service-monitoring"></a>Service monitoring
 
-In addition to connection monitoring, Cumulocity offers a separate service monitoring for machines, see [Service monitoring](#monitoring-services) for more information.
+In addition to connection monitoring, Cumulocity IoT offers a separate service monitoring for machines, see [Service monitoring](#monitoring-services) for more information.
 
 ### <a name="shell"></a>Shell
 
 The device shell enables you to interactively work with remote devices. Many industrial devices support some form of command language, like AT commands for modems, CSV-style commands for many tracking devices or elaborate scripting mechanisms such as Tixi TiXML. In the shell, you can send commands in the respective language of the device and interactively view the results of the commands.
 
-The **Shell** tab presents a command prompt to enter commands. 
+The **Shell** tab presents a command prompt to enter commands.
 
 In the command prompt you can enter arbitrary command text. To send the command text to the device, click **Execute**. This button only is activated if the device is online.
 
 ![Device shell](/images/users-guide/DeviceManagement/devmgmt-devices-shell.png)
 
->**Important**:When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
+>**Important:** When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
 
 Click **View history** at the right of the top menu bar to switch to the **Control** tab which displays a list of the previously executed commands. For details, refer to [Monitoring and controlling devices > Working with operations](#operation-monitoring).
 
-For your convenience, Cumulocity provides several frequently used commands for some devices. Click **<_Get predefined commands** at the right of the top menu bar to open a window containing a list of available pre-defined commands. Select the command of your choice and click **Use**, to copy the command to the command prompt, or **Execute**, to execute the command straight away. You may also add new commands here for re-use.
+For your convenience, Cumulocity IoT provides several frequently used commands for some devices. Click **<_Get predefined commands** at the right of the top menu bar to open a window containing a list of available pre-defined commands. Select the command of your choice and click **Use**, to copy the command to the command prompt, or **Execute**, to execute the command straight away. You may also add new commands here for re-use.
 
 ![Device shell predefined](/images/users-guide/DeviceManagement/devmgmt-devices-shell-precommands.png)
 
 
 ### <a name="tracking"></a>Tracking
 
-Devices can record the history of their movements in Cumulocity. This movements may be viewed in the **Tracking** tab.
+Devices can record the history of their movements in Cumulocity IoT. This movements may be viewed in the **Tracking** tab.
 
 **Note** that the **Tracking** tab only shows up when a device contains c8y_Position property.
 
@@ -354,13 +354,12 @@ In the dropdown list at the top right you can select a time period (or specify o
 
 Next to the map, the individual recordings with their time are listed ("location update events"). When you click a recording, a "pin" on the map will show the location at the time of the recording.
 
-Depending on the type of device and the integration into Cumulocity, you can configure device-side geo-fencing and motion detection.
+Depending on the type of device and the integration into Cumulocity IoT, you can configure device-side geo-fencing and motion detection.
 
->**Info**: When this feature is activated and the device is compatible, Cell ID information can be used to determine the position of the device. Currently, the services from [Combain](https://combain.com/) and [Google](https://developers.google.com/maps/documentation/geolocation/intro) are supported. The user can see the tracks based on both data, or filter out GPS based data or Cell ID-based data.
+>**Info:** When this feature is activated and the device is compatible, Cell ID information can be used to determine the position of the device. Currently, the services from [Combain](https://combain.com/) and [Google](https://developers.google.com/maps/documentation/geolocation/intro) are supported. The user can see the tracks based on both data, or filter out GPS based data or Cell ID-based data.
 
 ### <a name="identity"></a>Identity
 
-Cumulocity can associate devices and assets with multiple external identities. For example, devices can often be identified by the IMEI of their modem, by a micro-controller serial number or by an asset tag. The **Identity** tab lists all the identities recorded for a particular device.
+Cumulocity IoT can associate devices and assets with multiple external identities. For example, devices can often be identified by the IMEI of their modem, by a micro-controller serial number or by an asset tag. The **Identity** tab lists all the identities recorded for a particular device.
 
 This is useful, for example, when you have non-functional hardware and need to replace the hardware without losing the data that was recorded. Just connect the new hardware to your account and modify the identity entry of the old hardware, to contain the identity of the new hardware.
-

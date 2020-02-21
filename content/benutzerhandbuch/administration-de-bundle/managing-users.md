@@ -14,15 +14,15 @@ Die Benutzerverwaltungsfunktion ermöglicht es Ihnen, innerhalb Ihres Mandanten 
 
 > **Info:** Für diese Funktionen muss der Benutzer eine Rolle mit den Benutzerverwaltungsberechtigungen ADMIN oder CREATE haben.
 
-Wenn für Ihren Mandanten in SAG Cloud die Verwendung von Single-Sign-On (SSO) konfiguriert ist, sollten neue Benutzer unter **My Cloud** angelegt werden, um die SSO-Funktion nutzen zu können. My Cloud kann über den Application Switcher in der oberen rechten Ecke aufgerufen werden. 
+Wenn für Ihren Mandanten in SAG Cloud die Verwendung von Single-Sign-On (SSO) konfiguriert ist, sollten neue Benutzer unter **My Cloud** angelegt werden, um die SSO-Funktion nutzen zu können. My Cloud kann über den Application Switcher in der oberen rechten Ecke aufgerufen werden.
 
-Für Benutzer, die über einen externen Autorisierungsserver angelegt werden, haben die folgenden Einstellungen in Cumulocity keine Auswirkung (sie werden bei der nächsten erneuten Benutzeranmeldung zurückgesetzt):
+Für Benutzer, die über einen externen Autorisierungsserver angelegt werden, haben die folgenden Einstellungen in Cumulocity IoT keine Auswirkung (sie werden bei der nächsten erneuten Benutzeranmeldung zurückgesetzt):
 
 * Benutzerinfo (Anmelde-Alias, E-Mail, Vorname, Nachname, Telefon)
 * globale Rollen → konfigurierbar über SSO-Rechtezuordnung
 * Anwendungszugriff → konfigurierbar über SSO-Rechtezuordnung
 
-Außerdem ist das Zurücksetzen des Passworts in Cumulocity für Benutzer deaktiviert, die über einen externen Autorisierungsserver angelegt wurden.
+Außerdem ist das Zurücksetzen des Passworts in Cumulocity IoT für Benutzer deaktiviert, die über einen externen Autorisierungsserver angelegt wurden.
 
 
 ### Anzeigen von Benutzern
@@ -49,7 +49,7 @@ Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie 
 1. Klicken Sie **Benutzer hinzufügen** rechts in der oberen Menüleiste.  
 
 	>**Info**: Wenn Single-Sign-On für Ihren Mandanten aktiviert ist, werden Sie durch eine Meldung daran erinnert, dass Sie im Begriffe sind, einen lokalen Benutzer anzulegen, der sich nicht per Single-Sign-On anmelden kann. Legen Sie stattdessen in **My Cloud** neue Benutzer an, die über die Single-Sign-On-Funktion aktiviert werden können. My Cloud kann über den Application Switcher in der oberen rechten Ecke aufgerufen werden.
-	
+
 2. Geben Sie links im Fenster **Neuer Benutzer** folgende Informationen ein, um den Benutzer zu identifizieren:
 
 	<table>
@@ -103,7 +103,7 @@ Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie 
 </table>
 3. Wählen Sie die Anmeldeoptionen für den Benutzer aus.
 
-	Wenn Sie **Benutzer muss sein Passwort beim nächsten Anmelden zurücksetzen** auswählen, müssen Sie ein Passwort angeben, dass der Benutzer beim nächsten Anmelden zurücksetzen muss. Geben Sie ein Passwort ein und bestätigen Sie es. Während der Passworteingabe wird die Stärke des Passworts angezeigt. Weitere Informationen zur Passwortstärke finden Sie unter [Anmelden an der Cumulocity-Plattform](/benutzerhandbuch/getting-started-de/#login).  
+	Wenn Sie **Benutzer muss sein Passwort beim nächsten Anmelden zurücksetzen** auswählen, müssen Sie ein Passwort angeben, dass der Benutzer beim nächsten Anmelden zurücksetzen muss. Geben Sie ein Passwort ein und bestätigen Sie es. Während der Passworteingabe wird die Stärke des Passworts angezeigt. Weitere Informationen zur Passwortstärke finden Sie unter [Anmelden an der Cumulocity IoT-Plattform](/benutzerhandbuch/getting-started-de/#login).  
 Wenn Sie **Link für das Zurücksetzen des Passworts per E-Mail senden** auswählen, erhält der Benutzer eine E-Mail mit dem Link zum Setzen des Passworts. Die E-Mail wird zu der oben konfigurierten Adresse gesendet.
 
 4. Wählen Sie auf der rechten Seite die globalen Rollen für den Benutzer. Informationen zu den globalen Rollen finden Sie unter [Verwalten von Berechtigungen](/benutzerhandbuch/administration-de#managing-permissions).
@@ -116,18 +116,18 @@ Der neue Benutzer wird der Benutzerliste hinzugefügt.
 
 ### So bearbeiten Sie einen Benutzer
 
-1. Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Bearbeiten**. Alle Felder mit Ausnahme von **Benutzername** und **Link zum Zurücksetzen des Passworts per E-Mail senden** können bearbeitet werden. Weitere Informationen zu den Feldern finden Sie unter [So fügen Sie einen Benutzer hinzu](#creating-users). 
-2. Klicken Sie **Passwort ändern**, um das Passwort zu ändern. 
+1. Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Bearbeiten**. Alle Felder mit Ausnahme von **Benutzername** und **Link zum Zurücksetzen des Passworts per E-Mail senden** können bearbeitet werden. Weitere Informationen zu den Feldern finden Sie unter [So fügen Sie einen Benutzer hinzu](#creating-users).
+2. Klicken Sie **Passwort ändern**, um das Passwort zu ändern.
 3. Klicken Sie **Speichern**, um Ihre Eingaben zu speichern.
 
 > **Info:** Für diese Option müssen Sie eine Rolle mit Benutzerverwaltungsberechtigung haben.
 
 ### So kopieren Sie Stammdatenrollen
 
-1. Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Stammdatenrollen eines anderen Benutzers kopieren**. 
+1. Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Stammdatenrollen eines anderen Benutzers kopieren**.
 2. Im darauf folgenden Dialog können Sie auswählen, ob Sie die zu kopierenden Rollen mit den vorhandenen Rollen zusammenführen möchten (Standardeinstellung) oder ob Sie die vorhandenen Rollen ersetzen möchten.
 3. Wählen Sie den Benutzer, von dem Sie Rollen kopieren möchten, aus der Auswahlliste.
-4. Klicken Sie **Kopieren**. 
+4. Klicken Sie **Kopieren**.
 
 Die Stammdatenrollen werden vom ausgewählten Benutzer kopiert.
 
@@ -137,7 +137,7 @@ Die Stammdatenrollen werden vom ausgewählten Benutzer kopiert.
 
 Klicken Sie auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Delegieren**, um Ihre Benutzerhierarchien und Berechtigungen an einen Benutzer zu delegieren.
 
-Klicken Sie **Delegierung aufheben**, um eine Delegierung zu entfernen. 
+Klicken Sie **Delegierung aufheben**, um eine Delegierung zu entfernen.
 
 Detaillierte Informationen zum Delegieren finden Sie unter [Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-edition-de#user-hierarchies).
 

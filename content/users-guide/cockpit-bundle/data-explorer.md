@@ -16,7 +16,7 @@ The data explorer is available for all assets or just for a particular asset.
 
 In the data explorer, you see a list of available data points on the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [*Adding data points*](#add-data-points).
 
-On the left, in the main card, you see its visualization. 
+On the left, in the main card, you see its visualization.
 
 ![data explorer](/images/users-guide/cockpit/cockpit-dataexplorer.png)
 
@@ -28,13 +28,13 @@ The data points properties are pre-filled as follows:
 
 * If the data points have a matching definition in the Data Point Library, the values from the Data Point Library are used.
 
-There can be more than one matching data point entry in the Data Point Library. In this case, the first one is selected automatically by the system. You can overwrite this selection by clicking the menu icon of the respective data point and selecting **Load [NAME] from Library**. 
+There can be more than one matching data point entry in the Data Point Library. In this case, the first one is selected automatically by the system. You can overwrite this selection by clicking the menu icon of the respective data point and selecting **Load [NAME] from Library**.
 
 ![edit data points](/images/users-guide/cockpit/cockpit-dataexplorer-edit.png)
 
 For details on modifying the visualization in general, see [*Changing data point visualization*](#change-visualization). For details on customizing the properties of a particular data point, see [*Customizing data point properties*](#customize-data-points).
 
->**Info**: Data points are visible to all authenticated users of the tenant, regardless of their inventory role permission.
+>**Info:** Data points are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 
 
 ### <a name="change-visualization"></a>Changing data explorer visualization
@@ -43,27 +43,27 @@ To change the visualization in the data explorer, you can modify several propert
 
 **Time range**
 
-You can change the time range being shown. By default, you see the values for the last hour. 
+You can change the time range being shown. By default, you see the values for the last hour.
 
 To change the time range on the X-axis,
 
-* select a different time range from the dropdown list in the top menu bar, 
+* select a different time range from the dropdown list in the top menu bar,
 * enter a custom time range into the **From** and **To** fields in the data explorer,
 * drag the X-axis and move of left or right to move the time period,
-* double-click into the data explorer to zoom out. 
+* double-click into the data explorer to zoom out.
 
->**Info**: Real-time updates will be switched off if you set a time range in the past.
+>**Info:** Real-time updates will be switched off if you set a time range in the past.
 
 **Aggregation**
 
-You may aggregate the data being displayed to get an efficient overview over larger time periods. 
+You may aggregate the data being displayed to get an efficient overview over larger time periods.
 
 By default, aggregation is set to "None". This value may be changed in the **Aggregation** field in the top menu bar. Available values are "Minutely", "Hourly" or "Daily", depending on the selected time range.
 
 
 **Realtime updating**
 
-By default, realtime updating is enabled which means that the data being shown is updated as new data flows into the system from the connected devices. 
+By default, realtime updating is enabled which means that the data being shown is updated as new data flows into the system from the connected devices.
 
 To turn realtime updating on or off, click **Realtime** in the top menu bar. A green light indicates, that realtime updating is enabled.
 
@@ -74,7 +74,7 @@ For each datapoint, its visibility can be switched on or off by using the slider
 
 ### <a name="add-data-points"></a>Adding data points
 
-To add a data point to the data explorer, click  **Add data point** at the bottom of the **Data points** card. 
+To add a data point to the data explorer, click  **Add data point** at the bottom of the **Data points** card.
 
 ![Add data point](/images/users-guide/cockpit/cockpit-dataexplorer-adddatapoint.png)
 
@@ -82,7 +82,7 @@ In the top of the dialog, select a device from the asset hierarchy. Only the ass
 
 The bottom of the dialog shows all data points of the selected object. Select the data points you want to show in the data explorer. Click **Add** to add all selected data points to the list of data points.
 
-To save the data point to the Data Point Library, click the menu icon of the data point and from the context menu select **Save to library**. 
+To save the data point to the Data Point Library, click the menu icon of the data point and from the context menu select **Save to library**.
 
 ![Save data point to library](/images/users-guide/cockpit/cockpit-dataexplorer-savedatapoint.png)
 
@@ -144,7 +144,7 @@ The following fields my be modified:
 <td style="text-align:left">Defines where the y-axis is shown. May be one of "Auto", "Left", "Right". Default value is "Auto". </td>
 </tr>
 </tbody>
-</table> 
+</table>
 
 After customizing the properties of a data point, you can save the modified settings to the Data Point Library. Click the menu icon and from the context menu select **Update [NAME] to library**.
 
@@ -189,17 +189,17 @@ To create a widget from the data explorer of a particular asset, click **More...
 
 In the upcoming dialog, select one of the dashboards available for the current object and click **Select** to add the data explorer as widget to the selected dashboard.
 
-> **Info**: To use this function, first a dashboard has to be created. For details on dashboards, refer to [Working with Dashboards](#dashboards).
+> **Info:** To use this function, first a dashboard has to be created. For details on dashboards, refer to [Working with Dashboards](#dashboards).
 
 **Send as widget to report**
 
 To create a widget from the data explorer of in the navigator, click **More...** in the top menu bar and select **Send as a widget to report** from the context menu.
 
-![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-sendwidget.png) 
+![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-sendwidget.png)
 
 In the upcoming dialog, select one of the reports available and click **Select** to add the data explorer as widget to the selected report.
 
-> **Info**: To use this function, first a report has to be created. For details on reports, refer to [Working with Dashboard reports](#reports).
+> **Info:** To use this function, first a report has to be created. For details on reports, refer to [Working with Dashboard reports](#reports).
 
 
 ### <a name="export-data"></a>Exporting measurement data
@@ -213,6 +213,6 @@ You may download measurement data as CSV or Excel files. The exported data shows
  - Value of the measurement
  - Unit used for a particular measurement (e.g. "C", "km/h", "sec")
 
-To export measurement data, click the **More...** button in the top menu bar and select either **Download as CSV** or **Download as Excel**, according to your preferences. 
+To export measurement data, click the **More...** button in the top menu bar and select either **Download as CSV** or **Download as Excel**, according to your preferences.
 
 The download will be generated, as shown in the upcoming dialog. This make take a while, depending on the number of data points added to the data explorer. Once the loading has been completed, click **Download**.

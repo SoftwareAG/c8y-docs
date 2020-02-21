@@ -6,7 +6,7 @@ layout: redirect
 
 ### <a name="software-repo"></a> Managing device firmware and software
 
-In the firmware and in the software repository, Cumulocity offers to collect reference firmware and software for devices respectively.
+In the firmware and in the software repository, Cumulocity IoT offers to collect reference firmware and software for devices respectively.
 
 > **Info:** The descriptions below refer to firmware but also apply to device software.
 
@@ -56,11 +56,11 @@ The object will be downloaded to your file system.
 1. Click **All devices** in the **Devices** menu in the navigator and select a device from the device list.
 2. Open the **Software** tab for the device and click **Install firmware**, see also the description of the **Software** tab in [Device details](/users-guide/device-management#software).
 
->**Info:** To store other types of binaries in Cumulocity, switch to the [Administration application](/users-guide/administration#files).
+>**Info:** To store other types of binaries in Cumulocity IoT, switch to the [Administration application](/users-guide/administration#files).
 
 #### To install firmware/software on multiple devices
 
-Cumulocity offers the option to execute firmware or software updates for multiple devices at once. To do so, follow these steps:
+Cumulocity IoT offers the option to execute firmware or software updates for multiple devices at once. To do so, follow these steps:
 
 1. Execute the software update in a single device to test that the new version really works.
 2. Navigate to operation and select **Execute for the whole group**.
@@ -77,7 +77,7 @@ The object will be deleted from the list.
 
 ### <a name="configuration-repository"></a>Configuration repository
 
-Cumulocity allows to retrieve configuration data and store and manage it in a configuration repository. The configuration data contains the parameters and the initial settings of your device.
+Cumulocity IoT allows to retrieve configuration data and store and manage it in a configuration repository. The configuration data contains the parameters and the initial settings of your device.
 
 Configuration snapshots help you, for example, to apply the same configuration to multiple devices as described below.
 
@@ -130,7 +130,7 @@ The retrieved snapshot can be found in the **Configuration repository**, under  
 3. Navigate to the other device and open its **Configuration** tab.
 4. Under **Configuration snapshot**, select the new configuration from the dropdown field and click **Put new snapshot to device**.
 
->**Info**: When you apply a configuration snapshot from one device to another, the configuration may contain data which is device-specific.
+>**Info:** When you apply a configuration snapshot from one device to another, the configuration may contain data which is device-specific.
 
 ### <a name="credentials"></a>Managing device credentials
 

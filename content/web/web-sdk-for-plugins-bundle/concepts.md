@@ -4,7 +4,7 @@ title: Concepts
 layout: redirect
 ---
 
-Before building an application or plugin, it is important to understand what exactly applications and plugins are. In this context, applications are based on the Cumulocity UI framework and make up the Cumulocity UI. By default, the Cumulocity UI consists of three core applications, namely "Device Management", "Administration" and "Cockpit". In turn, applications consist of plugins. A plugin represents any functionality you would like to add to an application. With a plugin, you can:
+Before building an application or plugin, it is important to understand what exactly applications and plugins are. In this context, applications are based on the Cumulocity IoT UI framework and make up the Cumulocity IoT UI. By default, the Cumulocity IoT UI consists of three core applications, namely "Device Management", "Administration" and "Cockpit". In turn, applications consist of plugins. A plugin represents any functionality you would like to add to an application. With a plugin, you can:
 * Modify the branding,
 * Add new navigation items to the menu,
 * Add new widgets to dashboards,
@@ -22,7 +22,7 @@ Or, as an example, let us take a look at an extract of the list of plugins the â
 * Data point table: a plugin, which adds a widget to dashboards providing a visualization of measurements in tabular form.
 * etc.
 
-> Note that you can [extend](#target) the core applications of Cumulocity (Administration, Cockpit, Device Management) with new functionality. For normal tenants, you must create a duplicate of the core application before you can extend it. To create a duplicate of an application, you can either [copy it via the UI in "Administration"](/users-guide/administration#clone-application) or [create a new application which uses the exact same plugins as the desired application](/web/tab-plugin#dependencies).
+> Note that you can [extend](#target) the core applications of Cumulocity IoT (Administration, Cockpit, Device Management) with new functionality. For normal tenants, you must create a duplicate of the core application before you can extend it. To create a duplicate of an application, you can either [copy it via the UI in "Administration"](/users-guide/administration#clone-application) or [create a new application which uses the exact same plugins as the desired application](/web/tab-plugin#dependencies).
 
 ### Project structure
 
@@ -56,14 +56,14 @@ In case that you only want to create a plugin and [add it to an already existing
 
 #### <a name="application-manifest"></a>Application manifest
 
-The application manifest describes where your application is stored and how it is exposed to Cumulocity. The following properties are available:
+The application manifest describes where your application is stored and how it is exposed to Cumulocity IoT. The following properties are available:
 
 * **name**: A descriptive name for the application. It will appear in the application switcher menu.
 * **availability**: "PRIVATE", if the application is only available in your tenant, "MARKET", if it is a public application.
 * **contextPath**: The path to be used for hosted applications. The URL of the application will be "&lt;&lt;yourURL&gt;&gt;/apps/&lt;&lt;contextPath&gt;&gt;".
 * **key**: The application key that is used for associating requests of an application with the application and for subscribing to applications.
 * **resourcesUrl**: If the application is serving an upload zip file (which is the case for Smartapps) this value will be '/'. If it's a full URL all the request will proxied to that address.
-* **type**: *HOSTED*, if the application is hosted through Cumulocity, *EXTERNAL*, if the application is hosted elsewhere.
+* **type**: *HOSTED*, if the application is hosted through Cumulocity IoT, *EXTERNAL*, if the application is hosted elsewhere.
 * **imports**: A list of plugins used by the application. List of *&lt;&lt;applicationName&gt;&gt;/&lt;&lt;pluginName&gt;&gt;*.
 * **noAppSwitcher**: [OPTIONAL] If set to true, the application will not appear in the App Switcher menu. A possible use case is, for example, if the application only exposes plugins.
 * **options**:
@@ -74,7 +74,7 @@ The application manifest describes where your application is stored and how it i
 
 #### <a name="plugin-manifest"></a>Plugin manifest
 
-The plugin manifest describes how your plugin is shown in the Cumulocity administration application (name, description, category, gallery, list) and what files need to be built and loaded in order to run the plugin (ngModules, js, imports, css, less, copy).
+The plugin manifest describes how your plugin is shown in the Cumulocity IoT Administration application (name, description, category, gallery, list) and what files need to be built and loaded in order to run the plugin (ngModules, js, imports, css, less, copy).
 
 * **name**: A descriptive name for the plugin, required.
 * **description**: [OPTIONAL] A longer description of the plugin.

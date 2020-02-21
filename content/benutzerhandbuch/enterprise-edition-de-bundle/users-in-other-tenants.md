@@ -7,7 +7,7 @@ slug: support-user-access
 
 Mit der Funktion "Supportbenutzerzugriff" können sich Supportbenutzer, d. h. Benutzer des Management-Mandanten mit spezifischen Berechtigungen, bei Konten von Benutzern anderer Untermandanten anmelden, um bei Problemen Hilfe zu leisten.
 
-Hierzu muss der Supportbenutzerzugriff aktiviert sein. Dies kann global auf Plattform-Ebene oder auf Benutzerebene erfolgen, wie unten beschrieben. 
+Hierzu muss der Supportbenutzerzugriff aktiviert sein. Dies kann global auf Plattform-Ebene oder auf Benutzerebene erfolgen, wie unten beschrieben.
 
 
 ### <a name="configuring-support-access"></a>Konfigurieren von Supportbenutzerzugriff
@@ -16,13 +16,13 @@ Supportbenutzerzugriff kann auf verschiedenen Ebenen aktiviert werden.
 
 **Plattform-Ebene**
 
-Der Management-Mandant kann den Supportbenutzerzugriff für alle Untermandanten auf Plattform-Ebene aktivieren. Dies erfolgt auf der Seite **Konfiguration**, siehe [Anpassen der Plattform](/benutzerhandbuch/enterprise-edition-de#customization). 
+Der Management-Mandant kann den Supportbenutzerzugriff für alle Untermandanten auf Plattform-Ebene aktivieren. Dies erfolgt auf der Seite **Konfiguration**, siehe [Anpassen der Plattform](/benutzerhandbuch/enterprise-edition-de#customization).
 
 Wenn Supportbenutzerzugriff aktiviert ist, können sich Supportbenutzer bei jedem Untermandanten als beliebiger Benutzer anmelden, sofern dies nicht auf Untermandanten-Ebene außer Kraft gesetzt ist. Untermandanten-Benutzer können den Zugriff nicht selbst deaktivieren. Wenn Supportbenutzerzugriff deaktiviert ist, können sich Supportbenutzer nur bei Untermandanten anmelden, für die mindestens ein Benutzer diesen Zugriff explizit ermöglicht hat, siehe folgende Beschreibung.
 
-**Untermandanten-/Benutzerebene** 
+**Untermandanten-/Benutzerebene**
 
-Wenn Supportbenutzerzugriff auf der Plattform-Ebene deaktiviert ist, kann er immer noch durch einen Untermandanten-Benutzer aktiviert werden. Dies erfolgt durch Klicken auf **Support aktivieren** im Menü **Benutzer**, siehe [Erste Schritte > Benutzeroptionen und -einstellungen](/benutzerhandbuch/getting-started-de#user-settings). 
+Wenn Supportbenutzerzugriff auf der Plattform-Ebene deaktiviert ist, kann er immer noch durch einen Untermandanten-Benutzer aktiviert werden. Dies erfolgt durch Klicken auf **Support aktivieren** im Menü **Benutzer**, siehe [Erste Schritte > Benutzeroptionen und -einstellungen](/benutzerhandbuch/getting-started-de#user-settings).
 
 Der Supportzugriff ist dann nicht auf den Benutzer beschränkt, der ihn aktiviert hat, sondern gilt für alle Benutzer des Untermandanten. Dies ist notwendig, um Probleme mit Rollen/Rechten nachvollziehen zu können.
 
@@ -32,13 +32,13 @@ Nachdem ein Benutzer den Supportzugriff aktiviert hat, ändert sich der Menüpun
 
 Die Dauer der aktiven Supportanfrage ist auf Plattform-Ebene konfigurierbar (der Standardwert ist 24 Stunden), siehe [Anpassen der Plattform](/benutzerhandbuch/enterprise-edition-de#customization).
 
-Jede neue Supportanfrage verlängert die Supportdauer um die angegebene Anzahl von Stunden. Nachdem die letzte Supportanfrage in einem Untermandanten abgelaufen ist oder vom Benutzer aktiv deaktiviert wurde, wird der Supportbenutzerzugriff für den Untermandanten sofort deaktiviert (sofern er nicht global aktiviert ist). 
+Jede neue Supportanfrage verlängert die Supportdauer um die angegebene Anzahl von Stunden. Nachdem die letzte Supportanfrage in einem Untermandanten abgelaufen ist oder vom Benutzer aktiv deaktiviert wurde, wird der Supportbenutzerzugriff für den Untermandanten sofort deaktiviert (sofern er nicht global aktiviert ist).
 
 Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [Verwalten von Mandanten](/benutzerhandbuch/enterprise-edition-de#managing-tenants).
 
 ### Konfigurieren von Supportbenutzern
 
-Es gibt zwei verschiedene Einstellungen für Supportbenutzer in Cumulocity: 
+Es gibt zwei verschiedene Einstellungen für Supportbenutzer in Cumulocity IoT: 
 
 - Ein Service Provider konfiguriert bestimmte Berechtigungen für Benutzer des Management-Mandanten, die diesen ermöglichen, Support zu leisten.
 - Benutzer eines Mandanten fragen Support an und erteilen so Benutzern des Management-Mandanten Zugriff.
@@ -64,7 +64,7 @@ Um sich vom Management-Mandanten aus als Supportbenutzer anzumelden, verwenden S
 
 
 * `Mandanten-ID (tenant id)` ist die Mandanten-ID des zu unterstützenden Benutzers. Die Mandanten-ID wird im Benutzer-Auswahlmenü der Benutzeroberfläche angezeigt.
-* `Supportbenutzer (support user)` ist der Benutzername des Management-Mandant-Benutzers, der den Support leistet. 
+* `Supportbenutzer (support user)` ist der Benutzername des Management-Mandant-Benutzers, der den Support leistet.
 * `Benutzer (user)` ist der Benutzername des unterstützten Benutzers.
 
 **Beispiel**
@@ -74,7 +74,7 @@ Angenommen, Sie erhalten einen Supportanruf von einem Benutzer "John" im Mandant
 	<t07007007>/Jill$John
 
 
-In manchen Umgebungen, insbesondere in Testumgebungen, können Sie einfach die Zielmandanten-URL (z. B. *testtenant.cumulocity.com*) aufrufen und sich mit Folgendem beim Mandanten anmelden: 
+In manchen Umgebungen, insbesondere in Testumgebungen, können Sie einfach die Zielmandanten-URL (z. B. *testtenant.cumulocity.com*) aufrufen und sich mit Folgendem beim Mandanten anmelden:
 
 	<support user>$<user>
 

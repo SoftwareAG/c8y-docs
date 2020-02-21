@@ -4,17 +4,17 @@ title: Cloud Remote Access
 layout: redirect
 ---
 
-The Cumulocity Cloud Remote Access microservice allows you to remotely access operating panels and other devices via a web browser.
+The Cumulocity IoT Cloud Remote Access microservice allows you to remotely access operating panels and other devices via a web browser.
 
 ### When to use Cloud Remote Access
 
-To provide the best level of control, remote devices should be represented as devices in the Device Management of Cumulocity, with the corresponding reporting, remote control and real-time functionality.
+To provide the best level of control, remote devices should be represented as devices in the Device Management of Cumulocity IoT, with the corresponding reporting, remote control and real-time functionality.
 
-In some cases however, it is not possible or not economic to implement every aspect of a machine or remote device in a Cumulocity agent. For example, it might be a legacy device that does not have APIs for accessing certain parts of the functionality, or it may have many very low-level configuration parameters that would be very involved to map to Cumulocity.
+In some cases however, it is not possible or not economic to implement every aspect of a machine or remote device in a Cumulocity IoT agent. For example, it might be a legacy device that does not have APIs for accessing certain parts of the functionality, or it may have many very low-level configuration parameters that would be very involved to map to Cumulocity IoT.
 
 In this case, you can use Cloud Remote Access to securely manage remote devices. The benefit is that you manage the device in the same way as if you had it physically close to you.
 
->**Important**: Be aware that using Cloud Remote Access includes administrative intervention:
+>**Important:** Be aware that using Cloud Remote Access includes administrative intervention:
 >
 >* Often, devices have no detailed permission management, so you give a user very fundamental access to the device.
 * When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards.
@@ -58,7 +58,7 @@ The following protocols are supported:
 * Secure Shell (SSH)
 * Terminal (Telnet)
 
-Cloud Remote Access works as in the illustration below. The remotely controlled device runs a VNC, SSH or Telnet server and is connected to a gateway compatible with Cloud Remote Access. This gateway must be registered as a device within the Device Management application in Cumulocity. More information about registering devices and instructions can be found in [Device Management > Device Registration](/users-guide/device-management/#connecting-devices) in the User guide.
+Cloud Remote Access works as in the illustration below. The remotely controlled device runs a VNC, SSH or Telnet server and is connected to a gateway compatible with Cloud Remote Access. This gateway must be registered as a device within the Device Management application in Cumulocity IoT. More information about registering devices and instructions can be found in [Device Management > Device Registration](/users-guide/device-management/#connecting-devices) in the User guide.
 
 ![VNC2](/images/users-guide/cra-VNC2.png)
 
@@ -70,7 +70,7 @@ With Cloud Remote Access users can
 
 ![VNC1b](/images/users-guide/cra-VNC1b.png)
 
-The connection to remote devices is securely encrypted through TLS technology. Additionally, passwords are encrypted in your Cumulocity account, so that you do not need to manage them elsewhere.
+The connection to remote devices is securely encrypted through TLS technology. Additionally, passwords are encrypted in your Cumulocity IoT account, so that you do not need to manage them elsewhere.
 
 
 ### Using Cloud Remote Access
@@ -79,7 +79,7 @@ Cloud Remote Access is available in the Device Management application.
 
 To use Cloud Remote Access, the following prerequisites have to be met:
 
-* a Cloud Remote Access compatible gateway connected to your Cumulocity account;
+* a Cloud Remote Access compatible gateway connected to your Cumulocity IoT account;
 * a remote device with a VNC, SSH or Telnet server that is connected to the gateway and reachable from the gateway;
 * "Remote access" permission granted to the tenant user;
 * Cloud Remote Access microservice included into your subscription plan.
@@ -96,8 +96,8 @@ In the **Remote Access** tab, you can configure devices for remote control, so-c
 
 Connections can be established to the gateway itself (localhost) or to any device in the local area network reachable by the device.
 
->**Info**: If the prerequisites are met and you do not see the **Remote access** tab in the tab list of your gateway, please contact sales@cumulocity.com.<br>
->**Info**: If you are a gateway manufacturer and would like to support Cloud Remote Access on your gateway, please contact us via [empower.softwareag.com](https://empower.softwareag.com).
+>**Info:** If the prerequisites are met and you do not see the **Remote access** tab in the tab list of your gateway, please contact sales@cumulocity.com.<br>
+>**Info:** If you are a gateway manufacturer and would like to support Cloud Remote Access on your gateway, please contact us via [empower.softwareag.com](https://empower.softwareag.com).
 
 ### Configuring endpoints
 
@@ -107,7 +107,7 @@ The "endpoint" is the IP address and port of the VNC, SSH or Telnet server runni
 
 To configure new remote devices, click **Add endpoint**. Follow the descriptions below for configuring the various types of endpoints.
 
->**Info**: To be able to configure an endpoint, you need ADMIN permission for "Remote access" and "Device control". To read data, a READ permission is sufficient. For more information on permissions, refer to [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the User guide.
+>**Info:** To be able to configure an endpoint, you need ADMIN permission for "Remote access" and "Device control". To read data, a READ permission is sufficient. For more information on permissions, refer to [Administration > Managing permissions](/users-guide/administration/#managing-permissions) in the User guide.
 
 #### Adding remote access endpoints via VNC
 
@@ -123,7 +123,7 @@ Enter the name of the endpoint. Select the Telnet protocol from the dropdown men
 
 ![Remote access Telnet endpoint](/images/users-guide/cra-endpoint-telnet.png)
 
->**Important**: Be aware, that Telnet is considered to be an insecure protocol lacking built-in security measures. For network communication in a production environment we highly recommend to use the SSH protocol instead.
+>**Important:** Be aware, that Telnet is considered to be an insecure protocol lacking built-in security measures. For network communication in a production environment we highly recommend to use the SSH protocol instead.
 
 
 #### Adding remote access endpoints via SSH
@@ -138,7 +138,7 @@ To configure a remote access endpoint via SSH, enter the name of the endpoint, s
 
 	![SSH public/private keys sign in](/images/users-guide/cra-endpoint-ssh-publicprivatekeys.png)
 
-> **Info**: The public key needs to be installed on the remote device as authorized_key.
+> **Info:** The public key needs to be installed on the remote device as authorized_key.
 
 Optionally, you can also add a host key to ensure connection to the correct device. This key can also be uploaded from a file.
 

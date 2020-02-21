@@ -95,7 +95,7 @@ The resulting table is visualized as follows:
 
 Click **+Add Properties** and select one or more properties to be added.
 
-> **Info**: The property "Active alarm status" shows active alarms as icons in the table. If you select this property, you also need to configure the renderer "Active Alarm Status" in the list of columns.
+> **Info:** The property "Active alarm status" shows active alarms as icons in the table. If you select this property, you also need to configure the renderer "Active Alarm Status" in the list of columns.
 
 #### To add actions
 
@@ -275,7 +275,7 @@ Click a device icon, to open popup with the following information:
 
 Target assets or devices: Select which devices are shown on the map. If a group is selected, all devices in that group (but not in any subgroups) are visible.
 
->**Info**: If none of the target device(s) has a known location, then the widget shows a world map without icons.
+>**Info:** If none of the target device(s) has a known location, then the widget shows a world map without icons.
 
 ### Message sending
 

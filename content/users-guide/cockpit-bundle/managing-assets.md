@@ -16,26 +16,26 @@ The asset hierarchy is composed of two types of objects:
 
 * **Groups**: Objects which group single devices or other groups. Groups can either be created in the Cockpit application or in the Device Management application.
 
-* **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they need to be connected to Cumulocity. This is done in the Device Management application. For details on connecting devices refer to [Connecting Devices](/users-guide/device-management#connecting-devices) in the Device Management section.
+* **Devices**: Devices which are linked into the asset hierarchy. Before you can use devices in the Cockpit application, they need to be connected to Cumulocity IoT. This is done in the Device Management application. For details on connecting devices refer to [Connecting Devices](/users-guide/device-management#connecting-devices) in the Device Management section.
 
 In this example, the group objects represent a building asset. The device objects represent the room asset. The group names and hierarchy can be defined individually by the user. The hierarchy can have multiple levels, like region level, city level, street level, building level, floor level and room level. Any device can be part of multiple and different hierarchies, like part of regional hierarchy and part of customer hierarchy.
 
-To position a device in the asset hierarchy, you have to "assign" the device to the respective group (see below). 
+To position a device in the asset hierarchy, you have to "assign" the device to the respective group (see below).
 
 > **Info:** Single devices are not managed in the Cockpit application. They are managed in the Device Management application.
 
 ### <a name="hierarchies"></a>Asset hierarchy versus device hierarchy
 
-Cumulocity supports two types of hierarchies: a device hierarchy and an
+Cumulocity IoT supports two types of hierarchies: a device hierarchy and an
 asset hierarchy.
 
-The device hierarchy tracks how devices are linked to Cumulocity from a communications point of view. The asset hierarchy structures the assets that are being remotely supervised and controlled through the M2M devices. For details, refer to [Cumulocity's domain model](/concepts/domain-model) in the Concepts guide.
+The device hierarchy tracks how devices are linked to Cumulocity IoT from a communications point of view. The asset hierarchy structures the assets that are being remotely supervised and controlled through the M2M devices. For details, refer to [Cumulocity IoT's domain model](/concepts/domain-model) in the Concepts guide.
 
 In the Cockpit application, you construct your asset hierarchy by creating group objects and by linking devices into the hierarchy. The asset hierarchy depends on the IoT devices used. There are many types of IoT devices, but these two types are very common:
 
 * **Smart devices** are self-contained devices that include sensors, actuators and a communication module. They are typically connected to a single asset. Smart devices are trackers, weather stations or general "smart" sensors with a built-in communication module.
 
-* **Gateway devices** establish the communication from other devices to Cumulocity but do not include sensors or actuators. Typical gateway devices include Zigbee, Modbus, M-Bus or KNX gateways.
+* **Gateway devices** establish the communication from other devices to Cumulocity IoT but do not include sensors or actuators. Typical gateway devices include Zigbee, Modbus, M-Bus or KNX gateways.
 
 The following section explains how to work with smart devices and gateway devices in the Cockpit application.
 
@@ -58,13 +58,13 @@ While inside Device Management all child devices are below the gateway device, t
 
 The mapping of objects in the Cockpit asset hierarchy is a virtual hierarchy.
 
-If you manage trucks within the Cumulocity platform, then each truck is represented via its individual tracking device communicating with Cumulocity.
+If you manage trucks within the Cumulocity IoT platform, then each truck is represented via its individual tracking device communicating with Cumulocity IoT.
 
-For building management, it is most common that a group of sensors inside a building represents the building as a group communicating with the Cumulocity platform.
+For building management, it is most common that a group of sensors inside a building represents the building as a group communicating with the Cumulocity IoT platform.
 
 ### Navigating assets
 
-In the asset hierarchy, Cumulocity distinguishes between top-level groups and subgroups, so called sub-assets.
+In the asset hierarchy, Cumulocity IoT distinguishes between top-level groups and subgroups, so called sub-assets.
 
 In the navigator, top-level groups are shown in the **Group** menu at top-level. Sub-assets are shown under its top-level group. Moreover, sub-assets are shown  in the **Sub-asset** tab of the particular group.
 
@@ -98,9 +98,9 @@ Moreover, additional tabs may be displayed here in case the application has been
 
 1. Click the **Plus** button at the right of the top bar and then click **New group**.
 2. In the resulting dialog box, enter a unique group name to identify your group.
-3. In the device search field, enter the search criteria for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
+3. In the device search field, enter the search criteria for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed.
 4. Select the devices you want to add from the list.
-5. Click **Create group with X device(s)** to finally create your new group. 
+5. Click **Create group with X device(s)** to finally create your new group.
 
 <img src="/images/users-guide/cockpit/cockpit-create-group.png" name="Create group"/><br>
 
@@ -110,15 +110,15 @@ To add a new group as a child of an existing asset, navigate to its **Sub-asset*
 
 ### <a name="assigning-devices"></a>To assign devices to a group
 
-Before adding a device to the asset hierarchy, it must be connected to Cumulocity. Connecting devices to the platform is done in the Device Management application. For details on connecting devices refer to [Device Management](/users-guide/device-management).
+Before adding a device to the asset hierarchy, it must be connected to Cumulocity IoT. Connecting devices to the platform is done in the Device Management application. For details on connecting devices refer to [Device Management](/users-guide/device-management).
 
 To assign a device to a group, follow these steps:
 
-1. In the navigator, select a group from the **Group** menu and open its the **Sub-assets** tab. In the **Sub-assets** tab, all devices that are assigned to the respective group are displayed. 
+1. In the navigator, select a group from the **Group** menu and open its the **Sub-assets** tab. In the **Sub-assets** tab, all devices that are assigned to the respective group are displayed.
 2. Click **Assign devices** at the right of the top menu bar.
-3. In the resulting dialog box, search for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed. 
+3. In the resulting dialog box, search for the devices you might want to add to your group (e.g. "ublox"). A list of devices that match your search criteria will be displayed.
 3. Select the devices you want to add from the list.
-4. Click **Assign X device(s)** to assign the selected devices. 
+4. Click **Assign X device(s)** to assign the selected devices.
 
 <img src="/images/users-guide/cockpit/cockpit-devices-assign.png" name="Assign devices"/>
 
@@ -126,15 +126,15 @@ The devices will be shown as sub-assets in the **Sub-assets** tab.
 
 ### To edit a group
 
-1. To edit the name of a group, navigate to its **Info** tab and click **Edit** next to its name. 
-2. Edit the name and optionally leave some notes to be displayed in the **Info** tab. 
+1. To edit the name of a group, navigate to its **Info** tab and click **Edit** next to its name.
+2. Edit the name and optionally leave some notes to be displayed in the **Info** tab.
 3. Click **Save changes** to apply your settings.
 
 ### To delete a group
 
 To delete a top-level group from the navigator, follow these steps:
 
-1. Click **Groups** in the navigator. 
+1. Click **Groups** in the navigator.
 2. In the **Groups** page, click the menu icon at the right of the group entry and then click **Delete**.
 
 To delete a group from the **Sub-assets** tab of another group, follow these steps:

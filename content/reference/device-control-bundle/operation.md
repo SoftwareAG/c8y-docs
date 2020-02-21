@@ -6,19 +6,19 @@ layout: redirect
 
 ### Operation [application/vnd.com.nsn.cumulocity.operation+json]
 
-|Name|Type|Occurs|Description|PUT/POST|
+|Name|Type|Occurs|Description|PUT/POST Mandatory|
 |:---|:---|:-----|:----------|--------|
 |id|String|1|Uniquely identifies an operation.|No|
 |self|URI|1|Link to this resource.|No|
 |creationTime|String|1|Time when the operation was created in the database.|No|
-|deviceID|String|1|Identifies the target device on which this operation should be performed.|POST: Mandatory PUT: No|
+|deviceID|String|1|Identifies the target device on which this operation should be performed.|POST: Mandatory<br>PUT: No|
 |deviceExternalIDs|ExternalIDCollection|0..n|External IDs of the target device, see the [Identity](/reference/identity) interface.|No|
 |bulkOperationId|String|1|Reference to bulkOperationId, if this operation was scheduled from Bulk Operation|No|
-|status|String|1|Operation status, can be one of SUCCESSFUL, FAILED, EXECUTING or PENDING.|POST: No PUT: Mandatory|
+|status|String|1|Operation status, can be one of SUCCESSFUL, FAILED, EXECUTING or PENDING.|POST: No<br>PUT: Mandatory|
 |failureReason|String|0..1|Reason for the failure.|No|
 |\*|Object|1..n|Additional properties describing the operation which will be performed on the device.|POST: Optional PUT: Optional|
 
-> **Note**: failureReason is optional only when the PUT status is "failed".
+> **Note:** You must set the `failureReason` message only when `status` is FAILED during a PUT operation.
 
 An "ExternalID" embedded in the "deviceExternalIDs" collection contains the properties "type" and "externalId".
 

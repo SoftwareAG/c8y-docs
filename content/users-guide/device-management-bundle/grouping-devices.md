@@ -6,7 +6,7 @@ layout: redirect
 
 Devices can be arbitrarily grouped according to a particular use case. A device can be located in multiple groups, and groups themselves can again be part of multiple groups.
 
-Cumulocity distinguishes between top-level groups and subgroups:
+Cumulocity IoT distinguishes between top-level groups and subgroups:
 
 **Top-level groups** are shown in the **Group** menu in the navigator at top-level. <br>**Subgroups** are used to further subdivide top-level groups.
 
@@ -126,7 +126,7 @@ The device will be assigned to the selected group.
 
 If you search for a group by its name which does not exist yet, a **New** button will appear so that you can create a new group with this name from here and assign the device to that group.
 
->**Info**: In order to create a new group, the user must have the permissions
+>**Info:** In order to create a new group, the user must have the permissions
 ROLE&#95;INVENTORY\_CREATE and ROLE&#95;INVENTORY\_ADMIN.
 
 <img src="/images/users-guide/DeviceManagement/devmgmt-group-assignment-new.png" alt="new group">
@@ -197,4 +197,4 @@ To delete a smart group, click the menu icon and then click **Delete**.
 
 ![Delete smart groups](/images/users-guide/DeviceManagement/devmgmt-groups-delete.png)
 
-> **Important**: Deleting a smart group is irreversible.
+> **Important:** Deleting a smart group is irreversible.

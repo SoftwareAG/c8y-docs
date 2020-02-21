@@ -72,7 +72,7 @@ Im Management-Mandanten finden Sie zudem Informationen über den übergeordneten
 </tr>
 <tr>
 <td style="text-align:left">Link zum Zurücksetzen des Passworts als E-Mail senden</td>
-<td style="text-align:left">Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie ein Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter <a href="/benutzerhandbuch/getting-started-de#login" class="no-ajaxy">Erste Schritte &gt; Aufrufen und Anmelden an der Cumulocity-Plattform</a>.</td>
+<td style="text-align:left">Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie ein Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter <a href="/benutzerhandbuch/getting-started-de#login" class="no-ajaxy">Erste Schritte &gt; Aufrufen und Anmelden an der Cumulocity IoT-Plattform</a>.</td>
 </tr>
 <tr>
 <td style="text-align:left">Mandantenregel</td>
@@ -118,7 +118,7 @@ Ist ein Mandant gesperrt, bleiben die Daten des Mandanten in der Datenbank und k
 
 >**Wichtig**: Mandanten, die für alle Cumulocity IoT Public Cloud-Instanzen gesperrt sind, werden nach 30 Tagen automatisch gelöscht.
 >
-> **Info**: Wenn Data Broker-Konnektoren für einen Mandanten konfiguriert sind, führt das Sperren dieses Mandanten dazu, dass alle seine Data Broker-Konnektoren ebenfalls gesperrt werden. 
+> **Info**: Wenn Data Broker-Konnektoren für einen Mandanten konfiguriert sind, führt das Sperren dieses Mandanten dazu, dass alle seine Data Broker-Konnektoren ebenfalls gesperrt werden.
 
 
 #### So sperren Sie einen Untermandanten
@@ -136,9 +136,9 @@ Während des Sperrvorgangs wird eine E-Mail an den Administrator des Mandanten g
 
 ### Löschen von Untermandanten
 
->**Wichtig**: Das Löschen eines Untermandanten kann nicht rückgängig gemacht werden. Deshalb ist diese Funktion aus Sicherheitsgründen nur im Management-Mandanten verfügbar. Mandanten können ausschließlich vom Management-Mandanten aus gelöscht werden. 
+>**Wichtig**: Das Löschen eines Untermandanten kann nicht rückgängig gemacht werden. Deshalb ist diese Funktion aus Sicherheitsgründen nur im Management-Mandanten verfügbar. Mandanten können ausschließlich vom Management-Mandanten aus gelöscht werden.
 >
->Administratoren in Enterprise Tenants dürfen aktive Untermandanten nur sperren, aber nicht löschen. 
+>Administratoren in Enterprise Tenants dürfen aktive Untermandanten nur sperren, aber nicht löschen.
 
 #### So löschen Sie einen Untermandanten
 
@@ -147,7 +147,7 @@ Klicken Sie auf das Menüsymbol rechts im jeweiligen Untermandanten-Eintrag und 
 
 ### <a name="subscribe"></a>Anwendungen
 
-In der Registerkarte **Anwendungen** können Sie alle für einen Mandanten abonnierten Anwendungen ansehen sowie Anwendungen für einen Mandanten abonnieren oder entfernen. Standardmäßig werden für einen Mandanten die Standardanwendungen von Cumulocity abonniert.
+In der Registerkarte **Anwendungen** können Sie alle für einen Mandanten abonnierten Anwendungen ansehen sowie Anwendungen für einen Mandanten abonnieren oder entfernen. Standardmäßig werden für einen Mandanten die Standardanwendungen von Cumulocity IoT abonniert.
 
 <img src="/images/benutzerhandbuch/enterprise-tenant/et-subtenant-applications.png" alt="Subscribe tenant" style="max-width: 100%">
 
@@ -161,7 +161,7 @@ Bewegen Sie den Mauszeiger über die Anwendungen unter **Abonnierte Anwendungen*
 
 #### Überwachen von Microservices
 
-Für alle Anwendungen, die als Microservices von Cumulocity gehostet werden, wird neben dem Namen der Microservice-Status als Symbol angezeigt:
+Für alle Anwendungen, die als Microservices von Cumulocity IoT gehostet werden, wird neben dem Namen der Microservice-Status als Symbol angezeigt:
 
 <img src="/images/benutzerhandbuch/enterprise-tenant/et-applications-status.png" alt="Application details">
 
@@ -194,7 +194,7 @@ Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeige
 
 #### Begrenzen der Geräteanzahl für Untermandanten
 
-Über das benutzerdefinierte Attribut "Geräteanzahl begrenzen" können Plattformadministratoren die Anzahl der gleichzeitig registrierten Hauptgeräte oder der registrierten Geräte insgesamt (einschließlich Kindgeräte) begrenzen. 
+Über das benutzerdefinierte Attribut "Geräteanzahl begrenzen" können Plattformadministratoren die Anzahl der gleichzeitig registrierten Hauptgeräte oder der registrierten Geräte insgesamt (einschließlich Kindgeräte) begrenzen.
 
 Sie können auf der Seite **[Nutzungsstatistiken](#usage-stats)** die Höchstanzahl registrierter Geräte bzw. Hauptgeräte sowie den Höchstwert des genutzten Datenspeichers einsehen.
 
@@ -340,7 +340,7 @@ Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum fil
 
 #### So exportieren Sie die Nutzungsstatistik-Tabelle
 
-1. Klicken Sie CSV-Export rechts oben in der Menüleiste, um die aktuelle Ansicht der Statistikentabelle als CSV-Datei zu exportieren. 
+1. Klicken Sie CSV-Export rechts oben in der Menüleiste, um die aktuelle Ansicht der Statistikentabelle als CSV-Datei zu exportieren.
 2. Im darauf folgenden Dialog können Sie die CSV-Ausgabe individuell anpassen, indem Sie ein Feldtrennzeichen, ein Dezimaltrennzeichen und einen Zeichensatz festlegen.
 <br> <img src="/images/benutzerhandbuch/enterprise-tenant/et-subtenant-statistics-export.png"></img> <br>
 3. Klicken Sie **Herunterladen**, um den Export zu starten.
@@ -355,7 +355,7 @@ Die Funktion Microservice-Nutzung sammelt Informationen über die Ressourcennutz
 
 ##### Abrechnungsmodi
 
-Cumulocity bietet zwei Abrechnungsmodi:
+Cumulocity IoT bietet zwei Abrechnungsmodi:
 
 * **Abonnementbasierte Abrechnung**: Berechnet einen Festpreis, wenn ein Mandant einen Microservice abonniert hat, während die Ressourcennutzung dem Eigentümer zugewiesen wird.
 

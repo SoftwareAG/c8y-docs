@@ -87,11 +87,11 @@ Select a job overview in the history per offloading job or in the status of all 
 | Job name | The name of the pipeline
 | Job id | The internal ID of the job
 | Job execution id | The Dremio ID of this execution
-| Source collection | The name of the Cumulocity source collection
+| Source collection | The name of the Cumulocity IoT source collection
 | Target source name | The folder name in the data lake
 | Target folder | The path to the target source in the data lake
 | Dir0 | The name of the folder to which the pipeline has offloaded the data
-| Last watermark | The last watermark which indicates the data in the Cumulocity collection that has already been processed
+| Last watermark | The last watermark which indicates the data in the Cumulocity IoT collection that has already been processed
 
 **CTAS result**
 

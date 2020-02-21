@@ -4,10 +4,10 @@ title: Managing applications
 layout: redirect
 ---
 
-In the Cumulocity platform we distinguish between two kinds of applications:
+In the Cumulocity IoT platform we distinguish between two kinds of applications:
 
 * [Subscribed applications](#subscribed-applications) -  all applications subscribed to the tenant (either provided by the platform or a service provider) but not owned. May not be added, modified or removed by the user.
-* [Own applications](#own-applications) - all applications owned by the tenant. Users can [add custom applications](#add-applications) in various ways as own applications.
+* [Own applications](#own-applications) - all applications owned by the tenant. Users can [add custom applications](#adding-applications) in various ways as own applications.
 
 Click **Own applications** or **Subscribed applications** in the **Applications** menu in the navigator to display a list of all respective applications in your account.
 
@@ -80,7 +80,7 @@ In case of applications of the type "microservice", you will additionally find i
 
 ### <a name="subscribed-applications"></a>Subscribed applications
 
-Cumulocity provides a variety of applications for different purposes.
+Cumulocity IoT provides a variety of applications for different purposes.
 
 Depending on your installation and/or optional services your tenant will show a selection of the potentially available applications listed below.
 
@@ -116,7 +116,7 @@ In the Standard Tenant you will find the following default applications:
 </tr>
 <tr>
 <td style="text-align:left"><a href="/apama" class="no-ajaxy">Apama-ctrl*</a></td>
-<td style="text-align:left">Runtime for Apama EPL Apps, Smart Rules and Analytics Builder.</td>
+<td style="text-align:left">Runtime for Apama EPL Apps, smart rules and Analytics Builder.</td>
 <td style="text-align:left">apama-ctrl-* (different strings for different size/capability options)</td>
 <td style="text-align:left">Microservice</td>
 </tr>
@@ -195,7 +195,7 @@ In the Standard Tenant you will find the following default applications:
 </tr>
 <tr>
 <td style="text-align:left"><a href="/users-guide/enterprise-edition/#user-hierarchies" class="no-ajaxy">User hierarchies</a></td>
-<td style="text-align:left">Reflect independent organizational entities in Cumulocity that share the same database.</td>
+<td style="text-align:left">Reflect independent organizational entities in Cumulocity IoT that share the same database.</td>
 <td style="text-align:left">feature-user-hierarchy</td>
 <td style="text-align:left">Feature</td>
 </tr>
@@ -237,7 +237,7 @@ Manager and editor for Apama Event Processing Language (EPL) apps, for immediate
 </tr>
 <tr>
 <td style="text-align:left"><a href="/users-guide/optional-services/#cloud-fieldbus" class="no-ajaxy">Cloud Fieldbus</a></td>
-<td style="text-align:left">Collect data from fieldbus devices and remotely manage them in Cumulocity.</td>
+<td style="text-align:left">Collect data from fieldbus devices and remotely manage them in Cumulocity IoT.</td>
 <td style="text-align:left">feature-fieldbus4</td>
 <td style="text-align:left">Feature</td>
 </tr>
@@ -255,7 +255,7 @@ Manager and editor for Apama Event Processing Language (EPL) apps, for immediate
 </tr>
 <tr>
 <td style="text-align:left">Microservice hosting</td>
-<td style="text-align:left">Host your own microservices on top of Cumulocity.</td>
+<td style="text-align:left">Host your own microservices on top of Cumulocity IoT.</td>
 <td style="text-align:left">feature-microservice-hosting</td>
 <td style="text-align:left">Feature</td>
 </tr>
@@ -336,7 +336,7 @@ The application is created once the ZIP file has been successfully uploaded.
 
 The microservice application is created once the ZIP file has been successfully uploaded.
 
->**Important**: The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [Packing](/microservice-sdk/concept/#packing) in the Microservice SDK guide under **General aspects** in order to prepare and deploy the microservice package.
+>**Important:** The ZIP file must contain the application manifest and the Docker image of the microservice. Refer to [Packing](/microservice-sdk/concept/#packing) in the Microservice SDK guide under **General aspects** in order to prepare and deploy the microservice package.
 
 
 ##### <a name="external-application"></a>To link to an external application
@@ -373,7 +373,7 @@ Duplicating an application might be useful if you want to customize a subscribed
 
 For details on the fields, see also [Application properties](#application-properties) below.
 
-> **Info**: If you want your "own application" to overrule a subscribed standard application, the path of the "own application" needs to be set to the path of the original subscribed application.
+> **Info:** If you want your "own application" to overrule a subscribed standard application, the path of the "own application" needs to be set to the path of the original subscribed application.
 
 
 #### <a name="editing-and-removing"></a>To edit an own application
@@ -396,20 +396,20 @@ It is not possible to remove subscribed applications. This can only be done by t
 
 #### Uploading archives
 
-Multiple archive file versions can be stored in Cumulocity when they were created by uploading either a ZIP file or a MON file. Each version is called an archive. You can upload different versions at the same time and switch between these versions.
+Multiple archive file versions can be stored in Cumulocity IoT when they were created by uploading either a ZIP file or a MON file. Each version is called an archive. You can upload different versions at the same time and switch between these versions.
 
 ##### To upload an archive
 
 1. Open the application by clicking on it.
 2. Switch to the **Archives** tab.
 3. Click **Upload archive** and browse for the archive on your computer or simply drop the archive file.
-4. Click **Upload** to upload the archive to your Cumulocity account.
+4. Click **Upload** to upload the archive to your Cumulocity IoT account.
 
 <img src="/images/users-guide/Administration/admin-application-archive.png" alt="Application archive">
 
 Once uploaded, the recently uploaded version is automatically the active version, i.e. the version of the application that is currently being served to the users of your account. This version cannot be deleted.
 
-> **Info**: The **Archive** tab is not available for subscribed applications, as only the owner of the application can perform this action.
+> **Info:** The **Archive** tab is not available for subscribed applications, as only the owner of the application can perform this action.
 
 ##### To restore an older application version
 
@@ -424,7 +424,7 @@ Users can restore previous versions of an application from an archive.
 
 ### Monitoring microservices
 
-You can monitor microservices hosted by Cumulocity in two ways.
+You can monitor microservices hosted by Cumulocity IoT in two ways.
 
 #### Status information
 
@@ -454,7 +454,7 @@ There are two user-friendly alarm types:
 
 User-friendly alarms are created for the microservice owner tenant only. They are also automatically cleared when the situation gets back to normal, i.e. all the microservice instances are working properly.
 
-User-friendly alarms can be used to create Smart Rules. For details on creating Smart Rules of various types, see [Smart Rules](/users-guide/cockpit/#smart-rules).
+User-friendly alarms can be used to create smart rules. For details on creating smart rules of various types, see [Smart rules](/users-guide/cockpit/#smart-rules).
 
 For example, to send an email, if a microservice is down, create an "On alarm send email" Smart Rule.
 
@@ -462,7 +462,7 @@ In the **On alarm matching** section, use `c8y_Application_Down` as an alarm typ
 
 #### Log files
 
-Cumulocity offers viewing logs which provide more details on the status of microservices.
+Cumulocity IoT offers viewing logs which provide more details on the status of microservices.
 
 To view logs, open the **Logs** tab of the respective microservice.
 
@@ -470,11 +470,11 @@ To view logs, open the **Logs** tab of the respective microservice.
 
 At the top of the page, you can select the instance of the microservice, for which you want to view the logs.
 
-> **Info**: If your microservice was re-scaled into two instances you should be able to switch between them, but it is not possible to see the logs from both instances at once.
+> **Info:** If your microservice was re-scaled into two instances you should be able to switch between them, but it is not possible to see the logs from both instances at once.
 
 Next to the instance dropdown you can select the time range for the log entries to be shown by selecting a date from the calendar and entering a time.
 
-> **Info**: The time entered here may differ from the server time due to different time zones.
+> **Info:** The time entered here may differ from the server time due to different time zones.
 
 At the top right, additional functionality is provided:
 
@@ -497,7 +497,7 @@ If no logs are available in the selected time range, a message is shown accordin
 
 <img src="/images/users-guide/Administration/admin-microservice-no-logs.png" alt="Microservice log">
 
-> **Info**: There is no possibility to see the logs from the previously running instances. However, inside the instance there is a Docker container running, and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated Docker container.
+> **Info:** There is no possibility to see the logs from the previously running instances. However, inside the instance there is a Docker container running, and if only this one was restarted (not the whole instance) you should see the logs from the currently running and also lately terminated Docker container.
 
 >Logs are always loaded from the Docker container using both `stdout` and `stderr` sources, and there is no possibility to distinguish/filter by the source.
 

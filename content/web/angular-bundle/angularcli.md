@@ -4,7 +4,7 @@ layout: redirect
 weight: 25
 ---
 
-When developing a pure Angular you can create an Angular CLI (`ng`-cli) project and add Cumulocity CLI to it.
+When developing a pure Angular you can create an Angular CLI (`ng`-cli) project and add Cumulocity IoT CLI to it.
 This functionality is only available after 1004.2.0 and for Angular 7.
 
 ### Install Angular CLI
@@ -22,7 +22,7 @@ ng new my-first-iot-project
 cd my-first-iot-project
 ```
 
-### Add Cumulocity CLI
+### Add Cumulocity IoT CLI
 
 ```sh
 cd my-first-iot-project

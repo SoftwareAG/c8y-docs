@@ -1,14 +1,14 @@
 ---
 weight: 30
-title: Querying offloaded Cumulocity data
+title: Querying offloaded Cumulocity IoT data
 layout: redirect
 ---
 
-Cumulocity IoT DataHub offers an SQL interface so that you can efficiently query offloaded (device) data and leverage the results in your own applications. A prerequisite for running SQL queries over device data is that you have configured and executed offloading pipelines that replicate and transform data from Cumulocity's Operational Store to the data lake.
+Cumulocity IoT DataHub offers an SQL interface so that you can efficiently query offloaded (device) data and leverage the results in your own applications. A prerequisite for running SQL queries over device data is that you have configured and executed offloading pipelines that replicate and transform data from the Operational Store of Cumulocity IoT to the data lake.
 
 ### Overview
 
-As described in section [Cumulocity IoT DataHub at a glance](/datahub/datahub-overview/#datahub-at-a-glance), Cumulocity IoT DataHub manages offloading pipelines which periodically extract data from Cumulocity's Operational Store, transform the data into a relational format and finally store it in a data lake. Instead of querying the Operational Store, you run your queries against the data lake. The distributed SQL engine Dremio provides the query interfaces to access the data lake.
+As described in section [Cumulocity IoT DataHub at a glance](/datahub/datahub-overview/#datahub-at-a-glance), Cumulocity IoT DataHub manages offloading pipelines which periodically extract data from the Operational Store of Cumulocity IoT, transform the data into a relational format and finally store it in a data lake. Instead of querying the Operational Store, you run your queries against the data lake. The distributed SQL engine Dremio provides the query interfaces to access the data lake.
 
 Different standard interfaces exist for that purpose, namely JDBC, ODBC, and REST. In order to work with one of those interfaces, select **Home** in the navigation bar. Under **Quick links** you will find starting points for the different interfaces.
 
@@ -51,7 +51,7 @@ Note that the API might change any time and Software AG does not provide any gua
 
 The DataHub server also can handle REST requests for Dremio query processing. The DataHub server acts as a proxy for these requests and forwards them to Dremio for evaluation. This API might change any time.
 
-In contrast to directly calling the Dremio REST API, in this case authentication is done against DataHub; thus, you need to provide Cumulocity credentials instead of Dremio credentials. You need the corresponding Cumulocity permission to use this API. See section [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for further details on the required permission.
+In contrast to directly calling the Dremio REST API, in this case authentication is done against DataHub; thus, you need to provide Cumulocity IoT credentials instead of Dremio credentials. You need the corresponding Cumulocity IoT permission to use this API. See section [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for further details on the required permission.
 
 #### Request URLs
 

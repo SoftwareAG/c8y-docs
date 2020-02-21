@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 
-### Cumulocity Core
+### Cumulocity IoT Core
 
 #### Installation
 
@@ -89,7 +89,7 @@ With Cumulocity IoT DataHub, you can connect existing tools and applications to 
 
 Main features of the Cumulocity IoT DataHub application include:
 
-* Allows to use scalable and inexpensive storage via providing an easy-to-use data pipeline that extracts data from Cumulocity’s Operational Store to a data lake for long-term archival and efficient analytical querying.
+* Allows to use scalable and inexpensive storage via providing an easy-to-use data pipeline that extracts data from Cumulocity IoT’s Operational Store to a data lake for long-term archival and efficient analytical querying.
 * Offers a SQL-based Query Interface for querying the data lake and enabling customers to connect arbitrary applications that either support ODBC, JDBC, or REST protocols.
 
 See the [Datahub guide](/datahub/datahub-overview) for detailed information.

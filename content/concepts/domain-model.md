@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Cumulocity's domain model
+title: Cumulocity IoT's domain model
 layout: bundle
 aliases:
   - /concepts-guide/modeling-and-managing-m2m-assets
@@ -8,4 +8,4 @@ aliases:
   - /konzepte/domain-modell
 ---
 
-The following sections describe several concepts related to devices and assets in Cumulocity.
+The following section describes the general technical concepts behind Cumulocity IoT.

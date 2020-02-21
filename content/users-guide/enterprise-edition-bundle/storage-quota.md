@@ -9,7 +9,7 @@ The storage quota is in place for a tenant when a storage quota per device is se
 
 In case the quota is exceeded, an email is sent to all tenant administrators to warn them that data will be deleted the following night. After 24h, if the quota is still exceeded, all data retention limits are reduced by a fixed percentage. The storage quota per device will be reduced as a result of this rule.
 
->**Info**: The storage quota feature needs to be defined on the tenant and cannot be enabled/disabled by configuration.
+>**Info:** The storage quota feature needs to be defined on the tenant and cannot be enabled/disabled by configuration.
 
 #### Example
 
@@ -24,8 +24,8 @@ The total storage is now at 9.8 GB.
 
 ### <a name="warningEmail"></a>Managing storage quota warning email
 
-This feature is only visible if a storage quota was set for the tenant. 
+This feature is only visible if a storage quota was set for the tenant.
 
 The tenant administrators can set a user group (global role) and threshold for an email to be sent once a day if the storage used is higher than a particular percentage of the storage quota. The default setup is sending an email to the "admin" role when the storage reaches 80% of maximum storage.
 
-The email warning can also be disabled. 
+The email warning can also be disabled.

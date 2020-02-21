@@ -1,12 +1,12 @@
 ---
 weight: 30
-title: Cumulocity-Anwendungen
+title: Cumulocity IoT-Anwendungen
 layout: redirect
 aliases:
   - /benutzerhandbuch/overview/#cumulocity-applications
 ---
 
-Cumulocity umfasst die drei folgenden Standardanwendungen:
+Cumulocity IoT umfasst die drei folgenden Standardanwendungen:
 
 <table>
 <col width = 100>
@@ -38,15 +38,15 @@ Cumulocity umfasst die drei folgenden Standardanwendungen:
 </tbody>
 </table>
 
-Neben diesen in Cumulocity enthaltenen Standardwendungen gibt es zahlreiche weitere Anwendungen, die sie abonnieren können, wie etwa integrierte Agenten für verschiedene Gerätetypen. Die Verfügbarkeit dieser Anwendungen hängt davon ab, welchen Mandanten Sie verwenden und welche Anwendungen Ihr Unternehmen abonniert hat.
+Neben diesen in Cumulocity IoT enthaltenen Standardwendungen gibt es zahlreiche weitere Anwendungen, die sie abonnieren können, wie etwa integrierte Agenten für verschiedene Gerätetypen. Die Verfügbarkeit dieser Anwendungen hängt davon ab, welchen Mandanten Sie verwenden und welche Anwendungen Ihr Unternehmen abonniert hat.
 
-Eine ausführliche Liste aller mit Cumulocity verfügbaren Anwendungen finden Sie unter [Applications > Application names](/reference/applications#application-names) im Reference Guide.
+Eine ausführliche Liste aller mit Cumulocity IoT verfügbaren Anwendungen finden Sie unter [Applications > Application names](/reference/applications#application-names) im Reference Guide.
 
-Darüber hinaus bietet Cumulocity vielfältige Funktionalitäten zur Nutzung Ihrer eigenen Anwendungen über Ihr Cumulocity-Konto, siehe Details unter [Administration > Verwalten von Anwendungen](/benutzerhandbuch/administration-de#managing-applications).
+Darüber hinaus bietet Cumulocity IoT vielfältige Funktionalitäten zur Nutzung Ihrer eigenen Anwendungen über Ihr Cumulocity IoT-Konto, siehe Details unter [Administration > Verwalten von Anwendungen](/benutzerhandbuch/administration-de#managing-applications).
 
-Der Inhalt der Cumulocity-Plattform ist also vollständig dynamisch und wird anhand der folgenden Kriterien generiert:
+Der Inhalt der Cumulocity IoT-Plattform ist also vollständig dynamisch und wird anhand der folgenden Kriterien generiert:
 
 * Anwendungen, die Ihr Unternehmen abonniert hat.
-* Anwendungen, die Ihr Unternehmen selbst für Cumulocity entwickelt oder konfiguriert hat.
+* Anwendungen, die Ihr Unternehmen selbst für Cumulocity IoT entwickelt oder konfiguriert hat.
 * Funktionalitäten, die Ihr Benutzer sehen kann.
 * Konfiguration der Benutzeroberfläche, wie etwa Gruppen oder Berichte.

@@ -4,46 +4,46 @@ title: LoRa Actility
 layout: redirect
 ---
 
-Cumulocity can interface with LoRa devices through Actility's ThingPark Wireless. You can:
+Cumulocity IoT can interface with LoRa devices through Actility's ThingPark Wireless. You can:
 
-* Provision and deprovision LoRa devices easily using the Cumulocity Device Management. No interaction in the ThingPark user interface is required. 
+* Provision and deprovision LoRa devices easily using the Cumulocity IoT Device Management. No interaction in the ThingPark user interface is required.
 * Decode upstream payload packets using a web-based user interface.
-* Debug and postprocess raw device data through Cumulocity events.
-* Send downstream data to the device using Cumulocity operations.
-* Make use of existing Cumulocity features with LoRa devices, for example: connectivity monitoring, device management, data visualization with dashboards, real-time analytics and more.
+* Debug and postprocess raw device data through Cumulocity IoT events.
+* Send downstream data to the device using Cumulocity IoT operations.
+* Make use of existing Cumulocity IoT features with LoRa devices, for example: connectivity monitoring, device management, data visualization with dashboards, real-time analytics and more.
 
-The following illustration gives an overview of the Cumulocity LoRa Actility integration.
+The following illustration gives an overview of the Cumulocity IoT LoRa Actility integration.
 
-![Cumulocity LoRa Actility integration](/images/users-guide/actility/Cumulocity-LoRa-Actility-integration.png)
+![Cumulocity IoT LoRa Actility integration](/images/users-guide/actility/Cumulocity-LoRa-Actility-integration.png)
 
 The following sections describe how to:
 
-* [Configure your ThingPark account credentials](#configure-credentials) in Cumulocity
+* [Configure your ThingPark account credentials](#configure-credentials) in Cumulocity IoT
 * [Create device protocols](#create-device-protocols) for all devices.
-* [Register devices](#register-device) and visualize Actility payload using Cumulocity
+* [Register devices](#register-device) and visualize Actility payload using Cumulocity IoT
 * [Deprovision a device](#deprovision-device) in ThingPark
 * [Send operations](#configurable-port) to a device
-* [ThingPark Api availability monitoring](#thingpark-monitoring) in Cumulocity
+* [ThingPark Api availability monitoring](#thingpark-monitoring) in Cumulocity IoT
 * [Troubleshooting](#lora-troubleshooting) for warning messages
 
 > Note that your subscription needs to include this feature. If you do not see the functionality described in this document, please contact support.
 
 ### <a name="configure-credentials"></a>Configuring ThingPark account credentials and application EUI
 
-Before using LoRa devices with Cumulocity, you need to configure your ThingPark account details in the Administration application. In order to create new credentials or replace existing ones, go to the Administration application and select **Connectivity** in the **Settings** menu in the navigator. 
+Before using LoRa devices with Cumulocity IoT, you need to configure your ThingPark account details in the Administration application. In order to create new credentials or replace existing ones, go to the Administration application and select **Connectivity** in the **Settings** menu in the navigator.
 
 #### <a name="create-new-credentials"></a>Creating new account credentials
 
-If you go to **Connectivity** for the first time, you will be asked to provide credentials and application EUI which is used for LoRa device provisioning. 
+If you go to **Connectivity** for the first time, you will be asked to provide credentials and application EUI which is used for LoRa device provisioning.
 
 Enter the following information:
 
 - **profile ID**: This depends on your ThingPark account and environment. If you are using, for example, the Dev1 ThingPark environment your profile ID will be "dev1-api". Multiple tenants can have the same profile ID.
 - **username**: your ThingPark user name
-- **password**: your ThingPark password 
+- **password**: your ThingPark password
 - **application EUI**: This is a global application ID in the IEEE EUI64 address space that uniquely identifies the application provider of the device. It is a 16 character (8 byte) long hexadecimal number. There can be only one application EUI for a tenant but multiple tenants can have the same application EUI.
 
-Do not use the same ThingPark login (username and password) for other tenants. 
+Do not use the same ThingPark login (username and password) for other tenants.
 The profile ID, username and password are used to retrieve an access token to send further requests to the ThingPark platform. It is possible to renew the access token by replacing the account credentials.
 
 ![Setting provider credentials](/images/users-guide/actility/admin-settings-connectivity-lora.png)
@@ -62,18 +62,18 @@ Click **Save**. Your old credentials will now be replaced with the new ones.
 
 ### <a name="create-device-protocols"></a>Creating device protocols
 
-To process data from LoRa devices, Cumulocity needs to understand the payload format of the devices. Mapping a payload data to Cumulocity data can be done by creating a LoRa device protocol.
+To process data from LoRa devices, Cumulocity IoT needs to understand the payload format of the devices. Mapping a payload data to Cumulocity IoT data can be done by creating a LoRa device protocol.
 
 During the [device registration](#register-device), you can associate this device protocol. The received uplink callbacks for this device with a hexadecimal payload will then be mapped to the ones you have configured in your device protocol.
 If a device protocol has been changed after being associated to a device, the reflection of the change can take up to 10 minutes because of the refresh mechanism of the Actility Server Side Agent.
 
-> **Info**: Device protocol mapping only supports decoding for fixed byte positions based on the message type. 
+> **Info:** Device protocol mapping only supports decoding for fixed byte positions based on the message type.
 
-In order to create a device protocol, navigate to the Device Management application and select **Device protocols** in the **Device types** menu in the navigator. You can either import an existing device protocol or create a new one. 
+In order to create a device protocol, navigate to the Device Management application and select **Device protocols** in the **Device types** menu in the navigator. You can either import an existing device protocol or create a new one.
 
 #### <a name="import-device-type"></a>Importing a predefined device protocol
 
-In the **Device protocols** page, click **Import**. 
+In the **Device protocols** page, click **Import**.
 
 Select the predefined device type, for example "LoRaWAN Demonstrator" or upload from a file. Click **Import**.
 
@@ -88,7 +88,7 @@ In the **Device protocols** page, click **New device protocol** in the top menu 
 ![Create new LoRa protocol](/images/users-guide/actility/devmgmt-devicetypes-protocols-loranew.png)
 
 Select **LoRa** as the device protocol type, provide a name for it and click **Create**.
- 
+
 Under **Message types**, specify the message types. LoRa devices can send messages of different types with different encodings per type.
 
 Select the way the message type is encoded in the **Source** dropdown box:  
@@ -104,19 +104,19 @@ In the user interface you can enter this type of message type source information
 
 ![LoRa protocol payload](/images/users-guide/actility/devmgmt-devicetypes-protocols-lorapayload.png)
 
-Click **Add value** to create the value configuration. 
+Click **Add value** to create the value configuration.
 
 ![LoRa protocol add value](/images/users-guide/actility/devmgmt-devicetypes-protocols-addvalue.png)
 
-In the upcoming window, configure the relevant values as shown in this example. 
+In the upcoming window, configure the relevant values as shown in this example.
 
 ![LoRa protocol add new value](/images/users-guide/actility/devmgmt-devicetypes-protocols-loranewvalue.png)
 
 ![LoRa protocol add new value](/images/users-guide/actility/devmgmt-devicetypes-protocols-loranewvalue2.png)
 
-The value configuration maps the value in the payload of a message type to the Cumulocity data. 
+The value configuration maps the value in the payload of a message type to the Cumulocity IoT data.
 
-Under **Message type**, configure the **Message ID** according to your device message specification and map it to the Cumulocity data. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device protocol main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
+Under **Message type**, configure the **Message ID** according to your device message specification and map it to the Cumulocity IoT data. The message ID is the numeric value identifying the message type. It will be matched with the message ID found in the source specified on the device protocol main page (i.e. Payload or FPort). The message ID needs to be entered in decimal numbers (not hex).
 
 In this example payload structure the message ID is "1".
 
@@ -138,15 +138,15 @@ The hexadecimal value is converted to a decimal number and afterwards a "value n
 
 Under **Value normalisation** define how the raw value should be transformed before being stored in the platform and enter the appropriate values for:
 
-- **Multiplier**: This value is multiplied with the value extracted from the **Value selection**. It can be decimal, negative and positive. By default it is set to 1. 
+- **Multiplier**: This value is multiplied with the value extracted from the **Value selection**. It can be decimal, negative and positive. By default it is set to 1.
 - **Offset**: This value defines the offset that is added or subtracted. It can be decimal, negative and positive. By default it is set to 0.
 - **Unit** (optional): A unit can be defined which is saved together with the value (e.g. temperature unit "C" for degree Celsius).
 
 For detailed information on how to decode the payload, refer to the documentation of the device.
 
-> **Info**: "Little endian" support to decode the payload has been added.
+> **Info:** "Little endian" support to decode the payload has been added.
 
-Under Options, select on of the following options, if required: 
+Under Options, select on of the following options, if required:
 
 * **Signed** - if the value is a signed number
 * **Packed decimal** - if the value is BCD encoded
@@ -160,7 +160,7 @@ Under **Functionalities**, specify how this device protocol should behave:
 
 You can also have a nested structure with several values within a measurement, event or managed object fragment. In case of a measurement all the properties of the same type will be merged to create a nested structure. In case of an event or a managed object all the properties with the same fragment are merged to create a nested structure. Also refer to the [example](#nested-structure-example) of a nested structure for a "Position" device protocol below.
 
-Click **OK** to add the values to your device protocol. 
+Click **OK** to add the values to your device protocol.
 
 ![Value configurations of created device protocol](/images/users-guide/actility/devmgmt-devicetypes-protocols-loraprotocol.png)
 
@@ -168,7 +168,7 @@ After clicking **Save**, your device protocol is created with the values you def
 
 **Example with single property**
 
-The following image shows an example for a message which sends a measurement when the battery level changes. 
+The following image shows an example for a message which sends a measurement when the battery level changes.
 
 ![Battery level changes example](/images/users-guide/actility/devmgmt-devicetypes-protocols-battery.png)
 
@@ -176,33 +176,33 @@ The following image shows an example for a message which sends a measurement whe
 
 **<a name="nested-structure-example"></a>Example with nested structure**
 
-The following image shows an example of a nested structure for a device protocol reporting the current position of a GPS device. The display category is named "Position" and contains values for longitude and latitude. 
+The following image shows an example of a nested structure for a device protocol reporting the current position of a GPS device. The display category is named "Position" and contains values for longitude and latitude.
 
-The message ID should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the **Managed object fragment** field and create a new value for each: longitude and latitude. 
+The message ID should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the **Managed object fragment** field and create a new value for each: longitude and latitude.
 
 ![Value creation: Longitude-nested](/images/users-guide/actility/lora-protocols-lng.png)
 
 ![Value creation: Latitude-nested](/images/users-guide/actility/lora-protocols-lat.png)
 
-This will be the result: 
+This will be the result:
 
 ![Value configuration in detail: nested structure](/images/users-guide/actility/devmgmt-devicetypes-protocols-gpsexample.png)
 
 ### <a name="register-device"></a>Registering LoRa devices
 
-To register a LoRa device, navigate to the Device Management application and click **Registration** in the **Devices** menu in the navigator. Click **Register device**. 
+To register a LoRa device, navigate to the Device Management application and click **Registration** in the **Devices** menu in the navigator. Click **Register device**.
 
 In the upcoming window, click **Custom device registration** and select **LoRa**:
 
 ![Register devices](/images/users-guide/sigfox/sigfox-registration.png)
 
-Cumulocity fully supports the LoRa device provisioning with Over-the-Air Activation (OTAA) which is the preferred and most secure way to connect with the LoRa network.
+Cumulocity IoT fully supports the LoRa device provisioning with Over-the-Air Activation (OTAA) which is the preferred and most secure way to connect with the LoRa network.
 If Activation by Personalization (ABP) is required to be used, refer to the [LoRa device registration with ABP](#device-registration-with-abp-activation) section.
 
-In the next window fill in the required information: 
+In the next window fill in the required information:
 
-- **Device profile**: Select the appropriate device profile from the dropdown list. 
-- **Device protocol**: Select the appropriate device protocol from the dropdown list. 
+- **Device profile**: Select the appropriate device profile from the dropdown list.
+- **Device protocol**: Select the appropriate device protocol from the dropdown list.
 - **Device EUI**: This is the unique identifier for the device. It is a 16 character (8 byte) long hexadecimal number. You can find it on the device itself.
 - **Application key**: This is an AES-128 application key specific for the device that is assigned to the device by the application owner and is responsible to encrypt. The application key is a 32 character (16 byte) long hexadecimal number.
 JOIN communication. You can find this key on the device itself.
@@ -224,36 +224,36 @@ For more information on viewing and managing your connected devices, also refer 
 
 <img src="/images/users-guide/actility/lora_device_registration_process.png" style="max-width: 60%">
 
-A device is created based on the above workflow. 
+A device is created based on the above workflow.
 
-First it is checked, if the device already exists. If no device exists with the same device EUI in the ThingPark account, the device is first provisioned on the ThingPark platform and then created on the Cumulocity platform with a link to the device in the ThingPark platform. If the device exists in the ThingPark account, a validation will be applied to compare these devices based on application EUI (for OTAA activation) and device profile. If the validation is successful, the device is created only in Cumulocity with a link to the device in the ThingPark platform. If the validation fails, a failure message will be shown (see [troubleshooting section for device registration](#lora-device-registration-troubleshooting)) and the device is not created in Cumulocity.
+First it is checked, if the device already exists. If no device exists with the same device EUI in the ThingPark account, the device is first provisioned on the ThingPark platform and then created on the Cumulocity IoT platform with a link to the device in the ThingPark platform. If the device exists in the ThingPark account, a validation will be applied to compare these devices based on application EUI (for OTAA activation) and device profile. If the validation is successful, the device is created only in Cumulocity IoT with a link to the device in the ThingPark platform. If the validation fails, a failure message will be shown (see [troubleshooting section for device registration](#lora-device-registration-troubleshooting)) and the device is not created in Cumulocity IoT.
 
 #### <a name="device-registration-with-abp-activation"></a>LoRa device registration with Activation by Personalization (ABP)
 
-Activating the device by personalization is not recommended and not fully supported in Cumulocity LoRa device registration.
+Activating the device by personalization is not recommended and not fully supported in Cumulocity IoT LoRa device registration.
 
-However, if you would like to create a device with this activation type in Cumulocity and use the LoRa features - such as sending operations to a device, deprovisioning a device and setting LoRa device protocol type with custom device protocol configuration - you must first provision the device in the ThingPark platform. Moreover you have to create "AS Routing Profile" for Cumulocity using the destination `http://actility-server.cumulocity.com` as a "Third Party AS (HTTP)" and assign it to your devices manually. Afterwards, you can register this device using LoRa device registration. In this case, the **Application key** field in the LoRa device registration is invalid.
+However, if you would like to create a device with this activation type in Cumulocity IoT and use the LoRa features - such as sending operations to a device, deprovisioning a device and setting LoRa device protocol type with custom device protocol configuration - you must first provision the device in the ThingPark platform. Moreover you have to create "AS Routing Profile" for Cumulocity IoT using the destination `http://actility-server.cumulocity.com` as a "Third Party AS (HTTP)" and assign it to your devices manually. Afterwards, you can register this device using LoRa device registration. In this case, the **Application key** field in the LoRa device registration is invalid.
 
 #### <a name="legacy-LoRa-devices"></a>Limitations for LoRa devices created with general device registration
 
 The general device registration for LoRa devices is no longer supported.
 
-Existing LoRa devices that have been created in Cumulocity with the general device registration process have limitations. For those devices, it is not possible to send operations to the device, deprovision the device and set the LoRa device protocol type with custom device protocol configuration.
+Existing LoRa devices that have been created in Cumulocity IoT with the general device registration process have limitations. For those devices, it is not possible to send operations to the device, deprovision the device and set the LoRa device protocol type with custom device protocol configuration.
 
 It is recommended to delete and re-register these devices using LoRa device registration to fully use the LoRa feature.
 
 ### <a name="deprovision-device"></a>Deprovisioning LoRa devices
 
-You can deprovision a LoRa device in the ThingPark platform. This means that the device will no longer be connected to the network. Its history data will still be available in Cumulocity, but the device will be deleted in ThingPark.  
+You can deprovision a LoRa device in the ThingPark platform. This means that the device will no longer be connected to the network. Its history data will still be available in Cumulocity IoT, but the device will be deleted in ThingPark.  
 
-To deprovision a device, navigate to the respective device in the Device Management application under **All devices**. Click **More** in the top right and select **Deprovision device**. 
+To deprovision a device, navigate to the respective device in the Device Management application under **All devices**. Click **More** in the top right and select **Deprovision device**.
 
 ![Deprovision device](/images/users-guide/actility/lora-devices-deprovision.png)
 
 After confirming the deprovisioning, the device will be deprovisioned in ThingPark.
 
-To provision the device again, the device should be deleted and re-registered using LoRa device registration. 
- 
+To provision the device again, the device should be deleted and re-registered using LoRa device registration.
+
 ### <a name="configurable-port"></a>Sending operations
 
 If a LoRa device supports receiving hexadecimal commands, you can send them using shell operations. Notice that these commands are not serial monitor commands.
@@ -263,9 +263,9 @@ In the following screenshot you can find some examples of a device protocol's pr
 
 ![Predefined shell commands](/images/users-guide/actility/lora-devices-predefinedshell.png)
 
-Enter the shell command or view/edit the predefined command in the **>_Command** field. 
+Enter the shell command or view/edit the predefined command in the **>_Command** field.
 
-If you enter the command without defining a port, it will be sent to the default target port (i.e. 1) of the device. If you enter the command and define a port (format "command:port"), it will be sent to the specified target port instead of the default port. 
+If you enter the command without defining a port, it will be sent to the default target port (i.e. 1) of the device. If you enter the command and define a port (format "command:port"), it will be sent to the specified target port instead of the default port.
 
 ![Port configuration](/images/users-guide/actility/lora-devices-port.png)
 
@@ -275,7 +275,7 @@ The status of the operation is set to SUCCESSFUL when the operation has successf
 
 ### <a name="thingpark-monitoring"></a>ThingPark API availability monitoring
 
-The ThingPark API is monitored and if it is not reachable, an alarm is created to notify all subscribed tenants using this feature. The alarm is cleared right after the ThingPark API is reachable again. 
+The ThingPark API is monitored and if it is not reachable, an alarm is created to notify all subscribed tenants using this feature. The alarm is cleared right after the ThingPark API is reachable again.
 
 <img src="/images/users-guide/actility/thingpark-api-monitor-alarm.png" alt="ThingPark API monitoring alarm" style="max-width: 100%">
 
@@ -301,7 +301,7 @@ This warning message shows up when there already exists a provisioned device in 
 
 To resolve this, provide the correct application EUI from [Connectivity](#configure-credentials) application and device profile and try again.
 
-##### No LoRa provider settings found 
+##### No LoRa provider settings found
 
 This warning message shows up when there are no credentials set up for the ThingPark account.
 
@@ -317,14 +317,14 @@ Invalidation of the token might happen when the same ThingPark credentials are u
 <img src="/images/users-guide/actility/lora-device-registration-invalidated-token.png" alt="Device registration failure with invalidated token" style="max-width: 100%">
 
 This issue can be solved by reconfiguring the ThingPark credentials to renew the access token. Refer to [configure ThingPark credentials](#configure-credentials) for reconfiguration of the credentials.
- 
+
 ##### No device protocols configured
 
 This warning message shows up when no LoRa device protocol exists to be used for device registration.
 
 <img src="/images/users-guide/actility/lora-device-registration-no-device-type.png" alt="No device protocol given for LoRa" style="max-width: 100%">
 
-To resolve this, configure at least one device protocol in the [Device database](users-guide/device-management/#managing-device-types).
+To resolve this, configure at least one device protocol in the [Device database](/users-guide/device-management/#managing-device-types).
 
 ##### No connectivity plans with free slots available
 
@@ -332,4 +332,4 @@ This warning message shows up when the connectivity plan in ThingPark has reache
 
 <img src="/images/users-guide/actility/lora-device-registration-no-free-slots.png" alt="No free slots by device registration" style="max-width: 100%">
 
-To resolve this, either contact ThingPark on the device quota limits for your connectivity plans or remove unused devices from ThingPark and retry registering the device in Cumulocity.
+To resolve this, either contact ThingPark on the device quota limits for your connectivity plans or remove unused devices from ThingPark and retry registering the device in Cumulocity IoT.

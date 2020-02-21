@@ -34,7 +34,7 @@ For your convenience find an overview on the content of this document below.
 </tr>
 <tr>
 <td align="left"><a href="#widgets">Widgets collection</a></td>
-<td align="left">Use various types of <a href="#widgets">widgets</a> from the Widgets collection that comes with Cumulocity and configure them according your needs.</td>
+<td align="left">Use various types of <a href="#widgets">widgets</a> from the Widgets collection that comes with Cumulocity IoT and configure them according your needs.</td>
 </tr>
 <tr>
 <td align="left"><a href="../../users-guide/device-management/#alarm-monitoring">Working with alarms</a></td>
@@ -49,17 +49,17 @@ For your convenience find an overview on the content of this document below.
 <td align="left">Manage default settings (“profiles”) of your devices and apply them automatically using the <a href="#data-point-library">Data Point Library</a>.</td>
 </tr>
 <tr>
-<td align="left"><a href="#smart-rules">Working with Smart Rules</a></td>
+<td align="left"><a href="#smart-rules">Working with smart rules</a></td>
 <td align="left"><a href="#create-rules">Create and manage business rules</a> to work on incoming data in realtime and to perform actions based on this data.</td>
 </tr>
 <tr>
 <td align="left"><a href="#smart-rules-collection">Smart Rules collection</a></td>
-<td align="left">Use pre-defined <a href="#smart-rules-collection">global Smart Rules</a> to configure rules for geofencing, thresholds or alarm escalation and notifications (SMS/email/voice). Describes each SmartRule and its configurable parameters in detail.</td>
+<td align="left">Use pre-defined <a href="#smart-rules-collection">global smart rules</a> to configure rules for geofencing, thresholds or alarm escalation and notifications (SMS/email/voice). Describes each SmartRule and its configurable parameters in detail.</td>
 </tr>
 </tbody>
 </table>
 
-If you want to learn more about general aspects of the Cumulocity platform and its applications, refer to [Getting Started](/users-guide/overview).
+If you want to learn more about general aspects of the Cumulocity IoT platform and its applications, refer to [Getting Started](/users-guide/overview).
 
 ### <a name="home"></a>Home dashboard
 

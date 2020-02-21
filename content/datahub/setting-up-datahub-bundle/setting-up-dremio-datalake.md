@@ -12,6 +12,7 @@ The setup of DataHub requires the administrator to choose a Dremio account name,
 Under **Dremio Account** name and password of the Dremio account are defined. 
 
 The name is composed of three parts:
+
 1. tenant id
 2. forward slash
 3. string with a minimum length of two starting with a character and consisting of numbers, characters, dash, or underline
@@ -40,7 +41,7 @@ The following types of data lakes are currently supported:
 |Settings|Description|
 |:---|:---|
 |Azure Storage account name|The name of the Azure storage account|
-|Azure Storage container|The name of the storage container|
+|Azure Storage container|The name of the storage container; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
 |Root path|The root path in the data lake under which the offloaded data will be stored|
 |Azure Storage shared access key|The access key used for authentication|
 
@@ -50,7 +51,8 @@ The following types of data lakes are currently supported:
 |:---|:---|
 |AWS access key|The access key|
 |Access secret|The access secret|
-|Bucket name|The name of the S3 bucket|
+|Bucket name|The name of the S3 bucket; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
+|Root path in bucket|The root path within the S3 bucket|
 
 **NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for on-premise installations. The following settings need to be defined for this data lake:
 
@@ -58,11 +60,13 @@ The following types of data lakes are currently supported:
 |:---|:---|
 |Mount path|The mount path of the NAS|
 
+For **Azure Data Lake Storage Gen1**, **Azure Storage**, and **Amazon S3** data lakes, you can also define additional connection properties. Click **Add property** and define an additional property consisting of a key/value pair.
+
 #### Saving settings
 Once all settings are defined, click **Save** in the action bar to the right. During the save process, the following steps are automatically conducted:
 * A Dremio account is created, with the account having standard Dremio user privileges, not admin privileges.
 * A data lake source in Dremio is created using the provided data lake settings.
-* A source in Dremio is created which connects to the Cumulocity database.
+* A source in Dremio is created which connects to the Cumulocity IoT database.
 * A space in Dremio is created which you can use to organize your custom Dremio entities, e.g. views.
 
 ### Editing settings

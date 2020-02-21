@@ -6,9 +6,9 @@ title: Managing business rules
 
 ### Event processing
 
-Using event processing, you can specify real-time business logic that is automatically run by Cumulocity as soon as new data arrives or existing data is modified. The logic is deployed in so-called "modules" which consist of a set of CEP statements. 
+Using event processing, you can specify real-time business logic that is automatically run by Cumulocity IoT as soon as new data arrives or existing data is modified. The logic is deployed in so-called "modules" which consist of a set of CEP statements.
 
->**Info**: A user-friendly way to specify real-time business logic is provided in the Cockpit application through the so-called "[Smart Rules](/users-guide/cockpit#smart-rules)". Smart Rules are "under the hood" also implemented as CEP statements, and you can see them in the **Event Processing** page. However, you cannot edit Smart Rules from here.
+>**Info:** A user-friendly way to specify real-time business logic is provided in the Cockpit application through the so-called "[Smart Rules](/users-guide/cockpit#smart-rules)". Smart rules are "under the hood" also implemented as CEP statements, and you can see them in the **Event Processing** page. However, you cannot edit smart rules from here.
 
 Click **Event processing** in the **Business rules** menu to view all modules.
 
@@ -22,7 +22,7 @@ If the status of a module is set to **Deployed**, you will see the output produc
 
 1. Click **New module** in the top menu bar.
 2. Enter a name for the module at the very top. You may only use alphanumeric characters without blanks.
-3. By default, the status is set to **Deployed** which means that the statements you enter will be run immediately. Set the toggle to **Not deployed** if you want to avoid this. 
+3. By default, the status is set to **Deployed** which means that the statements you enter will be run immediately. Set the toggle to **Not deployed** if you want to avoid this.
 4. Enter your CEP statements into the **Source code** textbox. For your convenience, we provide various examples. Click **Examples** and select an appropriate example from the dropdown list. Click **Append** to paste the example into the **Source code** textbox at the position of the cursor.
 5. Click **Save** to save your settings.
 
@@ -60,7 +60,7 @@ For each alarm mapping, the alarm severity and the name of the mapping is shown.
 2. Enter the alarm type to be modified.
 3. Optionally, enter a new text for the alarm. If you do not enter any text, the original text in the alarm will be kept.
 4. Select the desired new severity, or select "Drop" to not show the alarm at all.
-5. Click **Save** to save your settings. 
+5. Click **Save** to save your settings.
 
 #### To edit an alarm mapping
 

@@ -6,7 +6,7 @@ weight: 110
 
 ### Overview
 
-To ease device integration Cumulocity already supports a number of static templates that can be used by any client without the need to create your own templates. These templates focus on the most commonly used messages for device management purposes.
+To ease device integration Cumulocity IoT already supports a number of static templates that can be used by any client without the need to create your own templates. These templates focus on the most commonly used messages for device management purposes.
 
 To use the templates listed below, you need to publish the messages to the topic <kbd>s/us</kbd> (<kbd>t/us</kbd> for transient processing of published content, <kbd>q/us</kbd> for quiescent processing of published content or <kbd>c/us</kbd> for CEP processing of published content. Refer to [SmartREST > Processing mode](/reference/smartrest#processing-mode) in the Reference guide for further information.
 
@@ -15,7 +15,7 @@ You need to subscribe to the topic <kbd>s/ds</kbd> to receive operations with th
 
 ### Automatic device creation
 
-The topic for static templates supports an automatic creation of devices. Whenever there is no child associated with your MQTT ClientID and you send data, Cumulocity will automatically create a device for the MQTT ClientID. If you want to create the device on your own, your first message must be the device creation. In this case Cumulocity will create the device from the template.
+The topic for static templates supports an automatic creation of devices. Whenever there is no child associated with your MQTT ClientID and you send data, Cumulocity IoT will automatically create a device for the MQTT ClientID. If you want to create the device on your own, your first message must be the device creation. In this case Cumulocity IoT will create the device from the template.
 
 The automatic creation of devices is also supported for 1st level child devices. For child devices on a deeper level, you must use the template for creating a child device by sending it to the topic of the child device under the one you want to place the new child.
 
@@ -668,7 +668,7 @@ Open or close the relays in the array.
 
 ##### Upload configuration file (520)
 
-The current configuration is uploaded from Cumulocity to the device.
+The current configuration is uploaded from Cumulocity IoT to the device.
 
 **Example**
 

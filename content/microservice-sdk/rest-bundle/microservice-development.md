@@ -4,7 +4,7 @@ title: Microservice development
 layout: redirect
 ---
 
-This section will introduce you to the basic REST endpoints required for developing microservices. You will also learn the basic use cases in which the Cumulocity REST APIs can be employed to develop microservice applications.
+This section will introduce you to the basic REST endpoints required for developing microservices. You will also learn the basic use cases in which the Cumulocity IoT REST APIs can be employed to develop microservice applications.
 
 ### <a name="creating-application"></a> Creating applications
 
@@ -29,8 +29,8 @@ A success response consists of a 201 status and a location header similar to `<H
 
 The properties `key`, `name` and `type` from the above request body are self explanatory, and about the roles:
 
-* `requiredRoles` - A list of Cumulocity permissions the microservice user needs in order to get data from Cumulocity, e.g. if the microservice creates a managed object, one of the required roles shall be `ROLE_INVENTORY_ADMIN`.
-* `roles` - A list of microservice permissions. If the microservice exposes an own REST API, it can be secured with an own set of permissions, e.g. a SMS microservice would require `SMS_ADMIN` permission to send SMS messages. These permissions become available in the tenant after microservice subscription. Afterwards, an admin user can grant such permission to  another user that wants to send SMS messages via the Cumulocity platform.
+* `requiredRoles` - A list of Cumulocity IoT permissions the microservice user needs in order to get data from Cumulocity IoT, e.g. if the microservice creates a managed object, one of the required roles shall be `ROLE_INVENTORY_ADMIN`.
+* `roles` - A list of microservice permissions. If the microservice exposes an own REST API, it can be secured with an own set of permissions, e.g. a SMS microservice would require `SMS_ADMIN` permission to send SMS messages. These permissions become available in the tenant after microservice subscription. Afterwards, an admin user can grant such permission to  another user that wants to send SMS messages via the Cumulocity IoT platform.
 
 The application ID for existing applications can be obtained employing a GET request with the name of the application:
 
@@ -96,7 +96,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.application+json
 
 ### Deploying applications
 
-A microservice application gets available for Cumulocity platform users by uploading a binary ZIP file.
+A microservice application gets available for Cumulocity IoT platform users by uploading a binary ZIP file.
 
 ```http
 POST /application/applications/<APPLICATION_ID>/binaries
@@ -113,7 +113,7 @@ The ZIP file must consist of:
 
 ### <a name="acquiring-microservice-credentials"></a>Acquiring microservice credentials
 
-The following section is a wrap up for user management as described under [General aspects](/microservice-sdk/concept) of microservices in Cumulocity.
+The following section is a wrap up for user management as described under [General aspects](/microservice-sdk/concept) of microservices in Cumulocity IoT.
 
 Microservice related endpoints require a microservice bootstrap user, which can be obtained by a service provider using:
 
@@ -252,7 +252,7 @@ The response consists of service user credentials dedicated for each tenant. A s
 
 The microservice settings are available to microservice users through the authorized bootstrap or service user.
 When using the bootstrap user, all settings are always loaded for the microservice owner.
-The settings are stored in Cumulocity as tenant options, where category is by default `contextPath` (or `applicationName` in case context path is not defined).
+The settings are stored in Cumulocity IoT as tenant options, where category is by default `contextPath` (or `applicationName` in case context path is not defined).
 
 Request:
 
@@ -388,14 +388,14 @@ Content-Type: application/vnd.com.nsn.cumulocity.managedObjectReference+json
 
 #### Synchronizing assets with external systems
 
-Often, Cumulocity will not be the only IT system dealing with a company's asset. The technical procedure for synchronizing assets stored in external IT systems is exactly the same as the [procedure used for registering devices](/device-sdk/rest#device-integration):
+Often, Cumulocity IoT will not be the only IT system dealing with a company's asset. The technical procedure for synchronizing assets stored in external IT systems is exactly the same as the [procedure used for registering devices](/device-sdk/rest#device-integration):
 
-- Use the Identity API to link the asset ID of the external IT system to the asset ID of Cumulocity.
-- Use the Inventory API to create or update the assets in Cumulocity's inventory based on the external system's data.
+- Use the Identity API to link the asset ID of the external IT system to the asset ID of Cumulocity IoT.
+- Use the Inventory API to create or update the assets in Cumulocity IoT's inventory based on the external system's data.
 
 #### Querying particular capabilities
 
-To decouple applications from the specifics of particular types of devices, applications can use fragments to query the inventory (see the Fragments section of [Cumulocity's domain model](/concepts/domain-model)). For example, to find all managed objects having a location, use:
+To decouple applications from the specifics of particular types of devices, applications can use fragments to query the inventory (see the Fragments section of [Cumulocity IoT's domain model](/concepts/domain-model)). For example, to find all managed objects having a location, use:
 
 ```http
 GET /inventory/managedObjects?fragmentType=c8y_Position&withTotalPages=true
@@ -524,7 +524,7 @@ A state of PENDING means here that the device has not yet picked up the operatio
 
 #### Listening for events
 
-Besides querying the Cumulocity data store, you can also process and receive events in real time as described in [Real-time processing in Cumulocity](/concepts/realtime). For example, assume that you would like to display real-time location updates on a map. Use the Administration application (or the [REST API](/reference/real-time-statements)) to create a new rule module "myRule":
+Besides querying the Cumulocity IoT data store, you can also process and receive events in real time as described in [Real-time processing in Cumulocity IoT](/concepts/realtime). For example, assume that you would like to display real-time location updates on a map. Use the Administration application (or the [REST API](/reference/real-time-statements)) to create a new rule module "myRule":
 
 ```sql
 select *
@@ -532,7 +532,7 @@ from EventCreated e
 where e.event.type = "c8y_LocationUpdate";
 ```
 
-If you have a device that sends location updates, you should see them immediately in the user interface. To receive them in your own REST client, you can use the [Notification API](/reference/real-time-notifications) to subscribe to them. The API is based on the Bayeux protocol using HTTPS long-polling. The restrictions that apply are described in [Real-time notifications](/reference/real-time-notifications) in the Reference guide. First, a handshake is required. The handshake tells Cumulocity what protocols the client supports for notifications and allocates a client ID to the client.
+If you have a device that sends location updates, you should see them immediately in the user interface. To receive them in your own REST client, you can use the [Notification API](/reference/real-time-notifications) to subscribe to them. The API is based on the Bayeux protocol using HTTPS long-polling. The restrictions that apply are described in [Real-time notifications](/reference/real-time-notifications) in the Reference guide. First, a handshake is required. The handshake tells Cumulocity IoT what protocols the client supports for notifications and allocates a client ID to the client.
 
 ```http
 POST /cep/notifications

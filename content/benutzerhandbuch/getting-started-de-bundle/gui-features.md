@@ -52,7 +52,7 @@ Die grundsätzliche Struktur, die in allen Cumulocity IoT-Anwendungen vorhanden 
 
 Auf kleineren Bildschirmen weicht das Layout geringfügig ab. Der Navigator ist verborgen und kann durch Klicken auf das Pfeilsymbol links oben aufgerufen werden. Nur die aktive Registerkarte wird angezeigt. Zum Umschalten zwischen Registerkarten klicken Sie auf den Pfeil an der Kopfzeile der Registerkarte und wählen Sie eine Registerkarte aus der Liste aus.
 
-<img src="/images/benutzerhandbuch/getting-started/getting-started-small-screen.png" alt="Layout on small devices" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/getting-started/getting-started-small-screen-elements.png" alt="Layout on small devices" style="max-width: 100%">
 
 > **Info:** Die Cumulocity IoT-Anwendungen enthalten Tooltips, die angezeigt werden, wenn Sie mit dem Mauszeiger über ein Bildschirmelement fahren. Auf Geräten mit einem Touch-Screen werden diese Tooltips angezeigt, wenn Sie ein Bildschirmelement längere Zeit berühren.
 

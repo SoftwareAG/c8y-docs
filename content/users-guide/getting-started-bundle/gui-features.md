@@ -52,7 +52,7 @@ The general structure common to all Cumulocity IoT applications includes the fol
 
 On smaller screens, the layout is slightly different. The navigator is hidden and can be accessed by clicking the arrow icon on the top left. Only the active tab is displayed. To switch tabs, click the arrow on the tab header and select a tab from the list.
 
-<img src="/images/users-guide/getting-started/getting-started-small-screen.png" alt="Layout on small devices" style="max-width: 100%">
+<img src="/images/users-guide/getting-started/getting-started-small-screen-elements.png" alt="Layout on small devices" style="max-width: 100%">
 
 > **Info:** Cumulocity IoT applications provide tooltips when you hover over a particular screen element. When you use Cumulocity IoT applications on touch devices, tooltips are shown when you touch a screen element for a longer time.
 

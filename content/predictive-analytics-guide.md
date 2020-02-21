@@ -1,5 +1,5 @@
 ---
-title: Predictive analytics guide
+title: Machine Learning guide
 bundle: predictive-analytics
 icon: "c8y-icon c8y-icon-data-explorer"
 type: root

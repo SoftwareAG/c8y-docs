@@ -3,6 +3,9 @@ weight: 10
 title: Introduction
 layout: bundle
 slug: introduction
+
+aliases:
+  - /predictive-analytics/introduction
 ---
 
 The machine learning capabilities in the Cumulocity IoT platform enable you to deploy and manage machine-learning models and custom resources, and use them for generating predictions on data gathered from your devices.

@@ -217,7 +217,7 @@ You could try out the data you collected yourself as described in the data colle
 
 #### Upload the model to Cumulocity IoT
 
-In order to upload the model to Cumulocity IoT, follow the steps described in [Machine Learning application > Managing models](/predictive-analytics/web-app/#managing-models).
+In order to upload the model to Cumulocity IoT, follow the steps described in [Machine Learning application > Managing models](/machine-learning/web-app/#managing-models).
 
 A pre-trained model *iforest_demo_iphone.pmml* is also attached for reference. This anomaly detection model was trained with the data available in *dataset_training_iphone.zip* mentioned in the section above.
 

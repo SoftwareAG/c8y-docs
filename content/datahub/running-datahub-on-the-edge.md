@@ -1,5 +1,5 @@
 ---
-title: Running DataHub on the edge
+title: Running DataHub on the Edge
 weight: 60
 layout: bundle
 ---

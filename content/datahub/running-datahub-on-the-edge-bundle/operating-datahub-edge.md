@@ -10,7 +10,7 @@ When managing DataHub Edge, the following standard tasks are additionally releva
 
 ### Troubleshooting the system
 
-In case of problems, we recommend to follow these steps:
+In case of problems, you should follow these steps:
 
 - Perform a health check, see the [Health check](#health-check) section.
 - Check the log files, see the [Log files](#log-files) section.
@@ -25,8 +25,7 @@ If you still need to contact SAG support, include the output of the diagnostics 
 You can check the status of the backend in the Administration page of the DataHub UI. Alternatively you can query the *isalive* endpoint:
 
 ```shell	
-TODO: stimmen die credentials? oder <your_password> nehmen?
-curl --user admin:manage https://<edge_domain_name>/service/datahub/isalive
+curl --user admin:<your_password> https://<edge_domain_name>/service/datahub/isalive
 
 {
   "timestamp" : 1582204706844,
@@ -42,35 +41,35 @@ If the backend cannot be reached, you will get an error response.
 
 ##### Check Dremio backend status
 
-You can check the status of Dremio using the *live* endpoint:
+You can check the status of Dremio using the *server_status* endpoint:
 
 ```shell	
-curl http://datahub.<edge_domain_name>:9047/live
+curl http://datahub.<edge_domain_name>:9047/apiv2/server_status
+"OK"
 ```
-
-The response is an HTML page which includes the server configuration and particularly the server status.
-
-If Dremio cannot be reached, you will get an error response.
-
-TODO: what else? DB, data disk...?
+Dremio is running if *OK* is returned. No response will be returned if it is not running or accessible.
 
 #### <a name="log-files"></a>Log files
 
 Log files are stored at */var/log/cdh*.
 
-TODO: include the CDH logs in the C8Y Edge documentation as well.
+TODO: list the CDH logs in the C8Y Edge documentation as well.
 
 | File | Usage |
 | -----   | -----   |
-| xyz.log | logfile for DataHub Edge backend |
-| xyz.log | logfile for Dremio |
+| clean_history.log | log file for cleanup of job history |
+| install.log | installation log file |
 
-TODO: Dremio logs: access like that or via docker logs? Logs for both cluster nodes and ZooKeeper? Separate logs for master and executor?
+In order to access the logs of the DataHub and Dremio containers, you have to use Docker *logs* command. For example, to follow the logs of cdh-master you have to run:
+
+```shell	
+docker logs -f cdh-master
+```
 
 #### <a name="monitoring"></a>Monitoring
 Cumulocity IoT Edge uses Monit for management and monitoring of relevant processes. See section [Monitoring](/edge/operation/#monitoring) for details. The DataHub Edge processes, namely the DataHub backend and the Dremio nodes, are also monitored by Monit.
 
-### Data disc management and monitoring
+### Data disk management and monitoring
 
 The data disk is used for storing the state of DataHub and Dremio and serves as data lake. In order to ensure that the system can work properly, the disk must not run out of space. The main factors for the disk space allocation of DataHub Edge are the Dremio job profiles and the data lake contents.
 
@@ -84,7 +83,7 @@ Cleanup is executed by a preconfigured cron job, running script
 /opt/softwareag/cdh-executor/scripts/clean_history.sh <max_job_days>
 ``` 
 
-This uses a Dremio admin command for the actual cleanup, but Dremio must not be running during execution of the admin command. The script will thus stop Dremio, run the Dremio admin command, and restart Dremio, so cleanup execution will cause a short outage of Dremio service. There is one parameter, max_job_days, specifying the number of days of job history to keep. By default, cleanup removes all job history except for the last 7 days, and the cron job is scheduled to run early Sunday morning at 2 a.m.
+This uses a Dremio admin command for the actual cleanup, but Dremio must not be running during execution of the admin command. The script will thus stop Dremio, run the Dremio admin command, and restart Dremio, so cleanup execution will cause a short outage of Dremio service. There is one parameter, *max_job_days*, specifying the number of days of job history to keep. By default, cleanup removes all job history except for the last 7 days, and the cron job is scheduled to run early Sunday morning at 2 a.m.
 
 Job history cleanup can be reconfigured using script
 

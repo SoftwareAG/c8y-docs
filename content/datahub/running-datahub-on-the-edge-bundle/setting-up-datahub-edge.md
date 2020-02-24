@@ -14,40 +14,36 @@ Before setting up DataHub Edge, you have to check the following prerequisites:
 | DataHub Edge archive | You have downloaded the archive with all installation artifacts from the [Software AG Empower portal](https://empower.softwareag.com/). |
 | Internet access | Internet access is not required. |
 
-### Setting up the environment
+### Setting up DataHub Edge
 
 Copy the DataHub Edge archive to the Cumulocity IoT Edge.
 
 ```shell	
-scp cdh.tgz admin@<edge_ip__address>:/opt/datahub TODO: target path?
+scp datahub-<version>.tgz admin@<edge_ip_address>:/tmp
 ```
 
-Log in as admin into Cumulocity IoT Edge and unzip the DataHub Edge archive.
+Log in as admin into Cumulocity IoT Edge.
 
 ```shell	
 ssh admin@<edge_ip_address>
-
-tar -xfvz /opt/datahub/cdh.tgz
 ```
 
-Run the install script in the unzipped folder.
+Run the install script.
 
 ```shell	
-./opt/datahub/cdh/install_datahub.sh
+sudo /opt/c8y/utilities/install_signed_package.sh /tmp/datahub-<version>.tar
 ```
 
-TODO: delete the archive afterwards?
-
-It takes a few minutes to complete the installation.
+It takes a few minutes to complete the installation. After completion you can delete the DataHub Edge archive.
 
 The install script runs the following basic steps:
 * Deploy the DataHub Edge UI as web application to Cumulocity IoT Core.
-* Configure corresponding roles and permissions in Cumulocity IoT Core.
 * Start a Docker container with the DataHub Edge backend and the database system for managing the backend state.
 * Start a Docker container with the Dremio master and a ZooKeeper instance.
 * Start a Docker container with the Dremio executor.
+* Configure corresponding roles and permissions in Cumulocity IoT Core.
 
-The Docker containers are configured to restart automatically in case the container itself fails or the applications within are no more reachable.
+The Docker containers will be restarted automatically in case the container itself fails or the applications within are no more reachable.
 
 The containers are configured to store their application state on the data disk under **/opt/mongodb**:
 * **/cdh-server/data**: the state of the Dremio master
@@ -55,7 +51,7 @@ The containers are configured to store their application state on the data disk 
 * **/cdh-console/db**: the state of the DataHub Edge backend
 * **/cdh-server/datalake**: the data lake folder
 
->**Info**: You must not modify the contents of these folders as this will corrupt your installation.
+>**Warning**: You must not modify the contents of these folders as this will corrupt your installation.
 
 ### Configuration
 
@@ -71,13 +67,11 @@ TODO: elaborate on...?
 
 These adaptations have to be done before running the install script. If you want to modify an already running installation, you have to stop the containers, change the settings, and restart the containers.
 
-TODO: adapting an existing installation requires to stop the Docker containers.
-
 TODO: describe an uninstall?
 
 ### Upgrading an existing installation
 
-If you want to upgrade an existing installation, you have to run the install script of the new version. During installation the data folders will be kept, while the DataHub Edge components are upgraded.
+If you want to upgrade an existing installation, you have to run the install script of the new version. During installation the data folders will be kept, while the DataHub Edge components are upgraded. During this process DataHub will be temporarily offline.
 
 TODO: do we really want to keep the state? what about breaking changes? parameterize that step...?
 
@@ -87,11 +81,11 @@ The different DataHub Edge interfaces can be accessed in the same way as in a cl
 
 | Interface | Description |
 | -----   | -----   |
-| DataHub Edge UI | The UI can be accessed in the **application switcher** after you have logged into the Cumulocity IoT Edge UI with your admin account. Alternatively you can access it directly under *https://<edge_domain_name>/apps/datahub-ui*, which requires a login as well. |
-| Dremio UI | On the DataHub Edge home page you will find a link to the Dremio UI. Alternatively you can access it directly under *https://datahub.<edge_domain_name>:9047* |
+| DataHub Edge UI | The UI can be accessed in the **application switcher** after you have logged into the Cumulocity IoT Edge UI. Alternatively you can access it directly under *https://<edge_domain_name>/apps/datahub-ui*, which requires a login as well. |
+| Dremio UI | On the DataHub Edge home page you will find a link to the Dremio UI. Alternatively you can access it directly under *https://datahub.<edge_domain_name>:9047*. |
 | DataHub JDBC/ODBC | You find the connection settings for JDBC/ODBC in the DataHub Edge UI on the **Home** page. |
 | DataHub REST API | The path of the microservice which hosts the API is *https://<edge_domain_name>/service/datahub*. |
-| Dremio REST API | TODO: ??? |
+| Dremio REST API | The Dremio URL to run REST API requests against is *https://datahub.<edge_domain_name>:9047*. |
 
 ### Defining DataHub permissions and roles
 
@@ -101,4 +95,4 @@ The definition and assignment of permissions and roles is done in the same way a
 
 The setup of the Dremio account and the data lake is done in the same way as in a cloud deployment. See section [Setting up Dremio account and data lake](/datahub/setting-up-datahub/#setting-up-dremio-datalake) for details.
 
-DataHub Edge is configured to use an NAS as data lake. When configuring the NAS use as mount path *TODO: /where/to/mount/to?*.
+DataHub Edge is configured to use an NAS as data lake. When configuring the NAS use as mount path */datalake*. This path is mounted to */opt/mongodb/cdh-master/datalake*.

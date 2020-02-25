@@ -134,7 +134,7 @@ The following table shows which versions support which tooling:
     <th>9.16.x</th>
     <th>9.22.x</th>
     <th>9.25.x</th>
-    <th>10.4.0.x (ff.)</th>
+    <th>10.4.0.x and higher</th>
   <tr>
   <tr>
     <td>cumulocity-node-tools</td>

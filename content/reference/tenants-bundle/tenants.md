@@ -31,4 +31,9 @@ The tenant domain may contain lowercase letters, digits or hyphens. It must star
 
 In general, the tenant domain should be used for communication if it is known.
 
->**Important**: For support user access, the tenant ID must be used and not the tenant domain. Users can find their tenant ID in the user dropdown menu in the UI, see [Getting started > User options and settings](/users-guide/getting-started/#user-settings) in the User guide.
+>**Important**: For support user access, the tenant ID must be used and not the tenant domain. 
+
+See [Tenant > Current tenant](/reference/tenants#current-tenant) for information on how to retrieve the tenant ID and domain of the current tenant via the API.
+
+In the UI, the tenant ID is displayed in the user dropdown menu, see [Getting started > User options and settings](/users-guide/getting-started/#user-settings) in the User guide.
+

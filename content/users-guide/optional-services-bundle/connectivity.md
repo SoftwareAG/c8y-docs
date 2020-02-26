@@ -68,7 +68,7 @@ Process the following step to configure the connectivity in Cumulocity IoT:
 1. Enter the credentials (URL, key (in case of Jasper), username and password) for the respective SIM provider account. If you do not have any credentials, ask your administrator.
 2. Click **Save** to save your settings.
 
-![Jasper settings](/images/users-guide/SIM-connectivity-item.png)
+![Jasper settings](/images/users-guide/SIM-connectivity/SIM-connectivity-item.png)
 
 The Connectivity agent is now set up.
 
@@ -82,7 +82,7 @@ Switch to the Device Management application and navigate to a device that is con
 
 To assign permissions, navigate to the Administration application and make sure that your user has a role assigned with READ or ADMIN permission for Connectivity.
 
-<img src="/images/users-guide/SIM-connectivity-permissions.png" alt="Connectivity permission settings"  style="max-width: 80%">
+<img src="/images/users-guide/SIM-connectivity/SIM-connectivity-permissions.png" alt="Connectivity permission settings"  style="max-width: 80%">
 
 Jasper and Comarch identify SIM cards through their ICCID (Integrated Circuit Card Identifier). Ericsson is using MSISDN (Mobile Station International Subscriber Directory Number) instead. In most cases, devices will report the ICCID and MSISDN of their SIM card automatically to Cumulocity IoT.
 
@@ -103,13 +103,13 @@ In the **Connectivity** tab you will find the following sections:
 * Sessions
 * Audit logs
 
-![Connectivity tab](/images/users-guide/SIM-connectivity-tab.png)
+![Connectivity tab](/images/users-guide/SIM-connectivity/SIM-connectivity-tab.png)
 
 >**Info:** Some sections may not appear or may be empty. For example, if there have been no SMS sent and you do not have permission to send SMS, you will not see the SMS section.
 
 The **Status** section lists summary information for the SIM card.
 
-![Status section](/images/users-guide/SIM-connectivity-status.png)
+![Status section](/images/users-guide/SIM-connectivity/SIM-connectivity-status.png)
 
 The first row shows if the device is currently running a data session. If it is, the start of the session and the current WAN IP address of the device is displayed.
 
@@ -132,7 +132,7 @@ Provided you have ADMIN permission for Connectivity, you can also send text mess
 
 The **Sessions** section shows the log of data sessions carried out by the device. It lists when the session started, how long it took and how much data traffic was consumed.
 
-![Sessions section](/images/users-guide/SIM-connectivity-sessions.png)
+![Sessions section](/images/users-guide/SIM-connectivity/SIM-connectivity-sessions.png)
 
 The **Audit logs** section lists all changes to the SIM card and its tariff. It shows the type of change, old and new values when the change was carried out by whom, and if it was successful.
 
@@ -147,7 +147,7 @@ If you suspect that a device is not correctly reporting to Cumulocity IoT, or it
 
 In the **Connectivity** tab, check if
 
-* the SIM is activated. If the SIM card is not activated, you can activate it selecting "Activated" from the status drop-down menu. <br> ![Activate SIM card](/images/users-guide/SIM-connectivity-status-activate.png) <br> It may take a while until the SIM card is activated in the network. There may be a reset of the device needed to make it dial up to the network again.
+* the SIM is activated. If the SIM card is not activated, you can activate it selecting "Activated" from the status drop-down menu. <br> ![Activate SIM card](/images/users-guide/SIM-connectivity/SIM-connectivity-status-activate.png) <br> It may take a while until the SIM card is activated in the network. There may be a reset of the device needed to make it dial up to the network again.
 * The device is connected to the network. If the device is not connected to the network, this may have several reasons:
  * The device is in a location without mobile network coverage. If the device reports network quality parameters, you can navigate to the [**Measurements** tab](/users-guide/device-management#measurements) of the device and verify the last reported signal strength and error rate parameters.
  * There is a network or hardware problem (antenna, modem). For the Jasper Control Center, for example, click the cogwheel icon on the top right and select **SIM details**, then open the Jasper Control Center diagnostics tool. If the device is not attempting to connect to the network, it may be broken.

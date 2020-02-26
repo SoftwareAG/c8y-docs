@@ -12,7 +12,7 @@ aliases:
 
 The general structure common to all Cumulocity IoT applications includes the following screen elements:
 
-![Cumulocity IoT application](/images/users-guide/overview-screen-elements.png)
+![Cumulocity IoT application](/images/users-guide/getting-started/getting-started-screen-elements.png)
 
 <table>
 <col width="150">
@@ -52,7 +52,7 @@ The general structure common to all Cumulocity IoT applications includes the fol
 
 On smaller screens, the layout is slightly different. The navigator is hidden and can be accessed by clicking the arrow icon on the top left. Only the active tab is displayed. To switch tabs, click the arrow on the tab header and select a tab from the list.
 
-<img src="/images/users-guide/overview-small-screen.png" alt="Layout on small devices" style="max-width: 100%">
+<img src="/images/users-guide/getting-started/getting-started-small-screen-elements.png" alt="Layout on small devices" style="max-width: 100%">
 
 > **Info:** Cumulocity IoT applications provide tooltips when you hover over a particular screen element. When you use Cumulocity IoT applications on touch devices, tooltips are shown when you touch a screen element for a longer time.
 
@@ -60,13 +60,13 @@ On smaller screens, the layout is slightly different. The navigator is hidden an
 
 The application switcher allows you to quickly switch between applications. Click the **Application Switcher** button at the right of the top bar to display a list of icons representing applications.
 
-<img src="/images/users-guide/overview-application-switcher.png" alt="Application switcher" style="max-width: 100%">
+<img src="/images/users-guide/getting-started/getting-started-application-switcher.png" alt="Application switcher" style="max-width: 100%">
 
 The application switcher shows all Cumulocity IoT applications you currently have access to. These can be subscribed applications, either built-in or custom ones, and [own applications](/users-guide/administration#own-applications). Just click the icon for the desired application to open it as active application.
 
 If you are using SAG Cloud, the application switcher also shows other SAG Cloud applications at the first level, followed by the Cumulocity IoT applications:
 
-<img src="/images/users-guide/overview-app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 100%">
+<img src="/images/users-guide/getting-started/getting-started-app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 100%">
 
 
 ### <a name="searching-and-filtering"></a>Search and filter functionality

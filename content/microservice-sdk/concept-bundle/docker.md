@@ -9,7 +9,7 @@ layout: redirect
 
 Docker is a platform to develop, deploy and run applications with containers. An image is an executable package that includes everything needed to run an application (i.e. the code, a runtime, libraries, environment variables and configuration files). A container is a runtime instance of an image (i.e. what the image becomes in memory when executed). Refer to the [Docker documentation](https://docs.Docker.com/get-started/) for more information about Docker.
 
-Cumulocity microservices are based on Docker. Hence, a microservice has to be packaged as a Docker image in order to run on the Cumulocity platform. A microservice is executed in a Docker container during runtime. The Docker container ensures that a microservice does not harm other microservices running in Cumulocity.
+Cumulocity IoT microservices are based on Docker. Hence, a microservice has to be packaged as a Docker image in order to run on the Cumulocity IoT platform. A microservice is executed in a Docker container during runtime. The Docker container ensures that a microservice does not harm other microservices running in Cumulocity IoT.
 
 Containers have an upper thread limit of 4096 for microservices.
 
@@ -19,4 +19,4 @@ Kubernetes is the container orchestration engine for automating deployment, scal
 
 Docker is the most common container runtime used in a Kubernetes Pod. Moreover, Kubernetes is used to orchestrate Docker containers and it provides many enterprise-grade features for hosting Docker containers such as auto-scaling and load balancing. Refer to the [Kubernetes documentation](https://kubernetes.io/docs/home/) for more information about Kubernetes.
 
-When Docker faces some issues, e.g. a Pod synchronization error, an alarm is created and can be seen in **Alarms** in the Cockpit application. Refer to [Troubleshooting](#troubleshooting) in this section to learn about common issues. 
+When Docker faces some issues, e.g. a Pod synchronization error, an alarm is created and can be seen in **Alarms** in the Cockpit application. Refer to [Troubleshooting](#troubleshooting) in this section to learn about common issues.

@@ -93,8 +93,8 @@ export class ApplicationOptions {
     }>
   };
   icon?: { // Application icon to be displayed in app switcher and header bar
-    class?: string,
-    url?: string
+    class?: string;
+    url?: string;
   };
   noAppSwitcher?: boolean; // Hides the application from the application switched (saved to the server)
   globalTitle?: string; // HTML page title
@@ -105,8 +105,8 @@ export class ApplicationOptions {
   hideNavigator?: boolean; // Show or hide the navigator
   tabsHorizontal?: boolean;  // Show tabs horizontally or vertically
   loginExtraLink?: { // Extra link to add to login screen
-    url: string,
-    label: string
+    url: string;
+    label: string;
   };
   storageLimitationFeatureEnabled?: boolean;
   companyName?: string; // Company name used to prompt the user about support staff
@@ -114,5 +114,10 @@ export class ApplicationOptions {
   docsBaseUrl?: string; // The base URL for documentation
   contentSecurityPolicy?: string; // CSP string added to the index.html
   imports?: string[]; // legacy plugin imports
+  cookieBanner?: { // Cookie Banner configuration
+    cookieBannerTitle?: string;
+    cookieBannerText?: string;
+    policyUrl?: string;
+  };
 }
 ```

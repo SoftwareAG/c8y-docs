@@ -2,6 +2,8 @@
 weight: 70
 title: Example setup for VMware Workstation Player
 layout: redirect
+aliases:
+  - /edge/installation/#setting-up-vmware
 ---
 
 ### Setting up for VMware

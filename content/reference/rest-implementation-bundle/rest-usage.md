@@ -36,7 +36,7 @@ The client would need to fill the "type" and "source" placeholders with the desi
 
 ### Interface structure
 
-In general, Cumulocity REST resources are modelled according to the following pattern:
+In general, Cumulocity IoT REST resources are modelled according to the following pattern:
 
 -   The starting point are API resources, which will provide access to the actual data through URIs and URI templates to collection resources. For example, the above event API resource provides the "events" URI and the "eventsForSourceAndType" URI to access collections of events.
 -   Collection resources aggregate member resources and allow creating new member resources in the collection. For example, through the "events" collection resource, new events can be created.
@@ -78,7 +78,7 @@ If a user does not have a global role for reading data from the API resource but
 
 -   The query parameter "withTotalPages=true" has no effect and value of "totalPages" property is always null.
 
-The above behavior results from the fact that the querying mechanism is iterating maximally over 10 * max(pageSize, 100) documents per request and stops though the full page of data accessible for the user could not be collected. When the next page is requested the querying mechanism starts the iteration where it finished the previous time. 
+The above behavior results from the fact that the querying mechanism is iterating maximally over 10 * max(pageSize, 100) documents per request and stops though the full page of data accessible for the user could not be collected. When the next page is requested the querying mechanism starts the iteration where it finished the previous time.
 
 ### <a name="dates"></a>Query result by time interval
 

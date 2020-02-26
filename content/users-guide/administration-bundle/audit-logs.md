@@ -4,7 +4,7 @@ title: Viewing audit logs
 
 ---
 
-Audit logs show the operations that users have carried out. 
+Audit logs show the operations that users have carried out.
 
 To view the audit log list, click **Audit logs** in the **Account** menu. For each log entry, the following information is provided:
 
@@ -47,7 +47,7 @@ Only the last 100 logs are visible. Click **Load more** at the bottom of the lis
 
 ![Audit logs](/images/users-guide/Administration/admin-audit-logs.png)
 
->**Info**: The audit log list is not automatically refreshed after a realtime update for operations. Click **Reload** at the right of the top menu bar to update the list to the latest operations.
+>**Info:** The audit log list is not automatically refreshed after a realtime update for operations. Click **Reload** at the right of the top menu bar to update the list to the latest operations.
 
 ### Filtering logs
 

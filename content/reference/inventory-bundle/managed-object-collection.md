@@ -39,7 +39,7 @@ Accept: application/vnd.com.nsn.cumulocity.managedObjectCollection+json;ver=...
 |Content-Type|application/vnd.com.nsn.cumulocity.managedObjectCollection+json;ver=...
 
 ```http
-HTTP/1.1 
+HTTP/1.1
 200 OK
 
 {
@@ -51,7 +51,7 @@ HTTP/1.1
   "type" :"bg_mps_D413",
   "name" : "Meter1",
   ...
-}, 
+},
 {
   "self" : "<<Object 43 URL>>",
   "id": "43",
@@ -69,8 +69,8 @@ HTTP/1.1
 
 ### GET - Representation of a ManagedObjectCollection by query
 
-**Response body:** ManagedObjectCollection 
- 
+**Response body:** ManagedObjectCollection
+
 **Required role:** ROLE\_INVENTORY\_READ
 
 #### Example request - Get managed objects found by query
@@ -81,7 +81,7 @@ HTTP/1.1
 
 ```http
 200 - OK
-   
+
 GET <<url>>/inventory/managedObjects?query=<<query language statement>>
 Accept: application/vnd.com.nsn.cumulocity.managedObjectCollection+json;ver=...
 
@@ -94,7 +94,7 @@ Accept: application/vnd.com.nsn.cumulocity.managedObjectCollection+json;ver=...
 |Content-Type|application/vnd.com.nsn.cumulocity.managedObjectCollection+json;ver=..
 
 ```http
-HTTP/1.1 
+HTTP/1.1
 200 OK
 Content-Type: application/vnd.com.nsn.cumulocity.managedObjectCollection+json;ver=...
 Content-Length: ...
@@ -148,7 +148,7 @@ This part explains, how an application will handle a query in parameter 'query'.
 
 ##### Supported query functions:
 
-* has: has(c8y&#95;IsDevice) - match objects with custom property c8y_IsDevice 
+* has: has(c8y&#95;IsDevice) - match objects with custom property c8y_IsDevice
 
 	* 	Supports only custom fragments.   
 	*   Standard properties are not supported, i.e. id, type, name, self, lastUpdated, owner, creationTime, supportedMeasurements, childAssets, childDevices, childAdditions, externalIds   
@@ -177,6 +177,8 @@ This part explains, how an application will handle a query in parameter 'query'.
 
 * desc; example: $orderby=name desc
 * asc; example: $orderby=name, $orderby=name asc
+
+> **Important**: If you query `/inventory/managedObjects?type=c8y_Firmware&query=$filter=(name+eq+'Controller 1')` the `type` queryParam is ignored.<br>Instead `url/inventory/managedObjects?query=$filter=(type+eq+c8y_Firmware+and+c8y_Filter.type+eq+'Controller 1')` has to be queried.
 
 #### Example data
 

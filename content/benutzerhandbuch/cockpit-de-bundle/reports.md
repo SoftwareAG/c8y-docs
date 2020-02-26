@@ -3,7 +3,7 @@ weight: 60
 title: Verwalten von Berichten und Exporten
 layout: redirect
 ---
- 
+
 ### <a name="reports"></a>Verwalten von Berichten
 
 Dashboard-Berichte ermöglichen das Nachverfolgen von Anwendungen, Alarmen, Assets, Ereignissen und anderen Widgets. 
@@ -56,9 +56,9 @@ Die Seite **Exportieren** listet alle Exporte mit Namen und Zeitintervall auf.
 
 #### <a name="add-export"></a>So fügen Sie einen Export hinzu
 
-1. Klicken Sie **Export hinzufügen** in der oberen Menüleiste.
-
+1. Klicken Sie **Export hinzufügen** in der oberen Menüleiste.<br>
 	![Create export](/images/benutzerhandbuch/cockpit/cockpit-export-create.png)
+
 2. Geben Sie einen Namen für den Bericht ein und wählen Sie das Dateiformat (CSV oder XLSX) für die Berichtausgabe. 
 
 
@@ -85,7 +85,7 @@ Aktivieren bzw. deaktivieren Sie diese Felder mit dem Umschalter.
 
 ![Filter fields](/images/benutzerhandbuch/cockpit/cockpit-export-fields.png)
 
-> **Info**: Der Zeitintervall-Filter gilt nur für Alarme, Ereignisse und Messwerte, nicht jedoch für Objekte. Wenn ausgewählt, erscheinen Objekte im Export, unabhängig von einem ggf. festgelegten Zeitintervall. 
+>**Info**: Der Zeitintervall-Filter gilt nur für Alarme, Ereignisse und Messwerte, nicht jedoch für Objekte. Wenn ausgewählt, erscheinen Objekte im Export, unabhängig von einem ggf. festgelegten Zeitintervall. 
 
 Wenn ein Feld aktiviert ist, können vordefinierte oder leere Attribute hinzugefügt werden.
 
@@ -104,7 +104,7 @@ Ein Export hat 4 definierte Felder: Zeitintervall, Gerätename, Typ und c8y&#95;
 
 Wenn Ihr Attribut ein "valid.key.with.dot" ist, dann verweisen Sie im Pfad darauf als ['fragment.key.with.dot'], z. B.: ['fragment.key.with.dot'].series.value
 
-Wenn Sie Messwerte aktiviert haben, sehen Sie die zusätzliche Option **Datenpunkt auswählen**. Informationen zum Hinzufügen von Datenpunkten finden Sie unter Daten-Explorer >[Hinzufügen von Datenpunkten](#add-data-points). 
+Wenn Sie Messwerte aktiviert haben, sehen Sie die zusätzliche Option **Datenpunkt auswählen**. Informationen zum Hinzufügen von Datenpunkten finden Sie unter [Daten-Explorer > Hinzufügen von Datenpunkten](#add-data-points). 
  
 #### <a name="schedule-export"></a>So planen Sie einen Export
 
@@ -124,17 +124,21 @@ Der Name der Regel ist mit dem Namen des Exports vorausgefüllt, kann aber geän
 
 Bestimmen Sie die Frequenz für das Senden des Exports, z. B. stündlich, täglich, wöchentlich oder monatlich. Je nach ausgewählter Frequenz können Sie weitere Optionen für den Zeitpunkt angeben. Haben Sie etwa "Monat" gewählt, können Sie den Tag des Monats und die Uhrzeit festlegen.
 
+>**Info**: Intervalle müssen in koordinierter Weltzeit (UTC) angegeben werden.
+
 **3 - E-Mail senden:**
 
 Vervollständigen Sie die E-Mail-Informationen. 
 
-Geben Sie im Feld **Senden an** die E-Mail-Adresse des Empfängers ein. Diese Eingabe ist obligatorisch. Optional können Sie unter "CC" und "BCC" weitere E-Mail-Adressen eingeben oder die E-Mail-Adresse des Senders für eine mögliche Antwort eingeben.
+Geben Sie im Feld **Senden an** die E-Mail-Adresse des Empfängers ein. Diese Eingabe ist obligatorisch. Optional können Sie E-Mail-Adressen für Kopieempfänger (CC) oder Blindkopieempfänger (BCC) angeben. Zur Eingabe mehrerer Empfänger verwenden Sie ein Komma als Trennzeichen.
+
+Optional können Sie die E-Mail-Adresse des Absenders für Antworten hinzufügen. 
 
 Geben Sie den Betreff der E-Mail ein. Diese Feld ist vorausgefüllt, kann aber bearbeitet werden.
 
 Geben Sie die eigentliche E-Mail-Nachricht ein. Verfügbare Platzhalter sind {host}, {binaryId}. Der Standardeintrag lautet "Die exportierte Datei kann unter {host}/inventory/binaries/{binaryId} heruntergeladen werden". 
 
-Klicken Sie **Erstellen**, um die benutzerdefinierte Smart Rule "Bei Timer-Ablauf Export per E-Mail senden" zu erstellen.
+Klicken Sie **Erstellen**, um die benutzerdefinierte Smart Rule "Bei Timer-Ablauf Export per E-Mail senden“ zu erstellen.
 
 Die Smart Rule wird zu den Exportdetails hinzugefügt.
 
@@ -143,7 +147,7 @@ Die Smart Rule wird zu den Exportdetails hinzugefügt.
 
 #### So exportieren Sie Daten
 
-Um Daten in eine CSV-oder XLSX-Datei zu exportieren, aktivieren Sie die Checkbox vor dem entsprechenden Eintrag in der Liste und klicken Sie links in der oberen Menüleiste **Exportieren**.
+Um Daten in eine CSV- oder XLSX-Datei zu exportieren, aktivieren Sie die Checkbox vor dem entsprechenden Eintrag in der Liste und klicken Sie links in der oberen Menüleiste **Exportieren**.
 
 Sie erhalten eine E-Mail mit einem Link zu jeder Export-Datei.
 

@@ -4,11 +4,11 @@ title: Device integration
 layout: redirect
 ---
 
-The basic life cycle for integrating devices into Cumulocity is discussed in [Interfacing devices](/concepts/interfacing-devices) in the Concepts guide. In this section, we will show how this life cycle is implemented on REST level. The life cycle consists of two phases, a startup phase and a cycle phase. 
+The basic life cycle for integrating devices into Cumulocity IoT is discussed in [Interfacing devices](/concepts/interfacing-devices) in the Concepts guide. In this section, we will show how this life cycle is implemented on REST level. The life cycle consists of two phases, a startup phase and a cycle phase.
 
-The startup phase is responsible for connecting the device to Cumulocity and updating the device data in the inventory. It also performs cleanup tasks required for operations. It consists of the following steps:
+The startup phase connects the device to Cumulocity IoT and updates the device data in the inventory. It also performs cleanup tasks required for operations. It consists of the following steps:
 
--   [Step 0](#step-0-request-device-credentials): Request device credentials, if they have not been requested yet.
+-   [Step 0](#step-0-request-device-credentials): Request device credentials, if not already requested.
 -   [Step 1](#step-1-check-if-the-device-is-already-registered): Check if the device is already registered.
 -   [Step 2](#step-2-create-the-device-in-the-inventory): If not, create the device in the inventory and
 -   [Step 3](#step-3-register-the-device): Register the device.
@@ -18,7 +18,7 @@ The startup phase is responsible for connecting the device to Cumulocity and upd
 
 ![Startup phase](/images/rest/startupphase.png)
 
-The cycle phase follows. It continuously updates the inventory, writes measurements, alarms and events and executes operations when required. It can be considered to be the "main loop" of the device which is executed until the device shuts down. The loop consists of the following steps:
+The cycle phase follows. It continuously updates the inventory, writes measurements, alarms and events and executes operations as necessary. It can be considered to be the "main loop" of the device which is executed until the device shuts down. The loop consists of the following steps:
 
 -   [Step 7](#step-7-execute-operations): Execute operations.
 -   [Step 8](#step-8-update-inventory): Update inventory.
@@ -35,26 +35,26 @@ Reference models for the data can be found in the [Device management library](/r
 
 #### Step 0: Request device credentials
 
-Since every request to Cumulocity needs to be authenticated, also requests from devices need to be authenticated. If you want to assign individual credentials to devices, you can use the device credentials API to generate new credentials automatically. To do so, request device credentials at first startup through the API and store them locally on the device for further requests. 
+Every request to Cumulocity IoT needs to be authenticated, including requests from devices. If you want to assign individual credentials to devices, you can use the device credentials API to generate new credentials automatically. To do so, request device credentials at first startup through the API and store them locally on the device for further requests.
 
 The process works as follows:
 
-* Cumulocity assumes each device to have some form of unique ID. A good device identifier may be the MAC address of the network adapter, the IMEI of a mobile device or a hardware serial number. 
-* When you take a new device into use, you enter this unique ID into "Device registration" in Cumulocity and start the device.
-* The device will connect to Cumulocity and send its unique ID repeatedly. For this purpose, Cumulocity provides static credentials that can be enquired by contacting [support](https://support.cumulocity.com).
-* You can accept the connection from the device in "Device registration", in which case Cumulocity sends generated credentials to the device.
-* The device will use these credentials for all further requests.
+* Cumulocity IoT assumes each device to have some form of unique ID. A good device identifier may be the MAC address of the network adapter, the IMEI of a mobile device or a hardware serial number.
+* When you take a new device into use, you enter this unique ID into the device registration dialog in the tenant UI and start the device.
+* Once started, the device will connect to Cumulocity IoT and send its unique ID repeatedly. For this purpose, Cumulocity IoT provides static bootstrap credentials that can be obtained by contacting [support](https://empower.softwareag.com/ContactSupport/).
+* You can accept the connection from the device in the device registration dialog in the tenant UI, in which case Cumulocity IoT then sends generated credentials to the device.
+* The device will store and use these credentials for all further requests.
 
-From device perspective, this is a single REST request:
+From a device perspective, this request for credentials is a single REST request:
 
     POST /devicecontrol/deviceCredentials
     Content-Type: application/vnd.com.nsn.cumulocity.deviceCredentials+json;ver=...
-    Authorization: Basic ...
+    Authorization: Basic <<Base64 encoded bootstrap credentials>>
     {
       "id" : "0000000017b769d5"
     }
 
-The device issues this request repeatedly. While the user has not yet registered and accepted the device, the request returns "404 Not Found." After the device is accepted, the following response is returned:
+The device issues this request repeatedly. While the user has not yet registered and accepted the device in the tenant UI, the request returns "404 Not Found." After the device has been accepted in the tenant UI, the following response is returned:
 
     HTTP/1.1 200 OK
     Content-Type: application/vnd.com.nsn.cumulocity.deviceCredentials+json;ver=...
@@ -67,7 +67,20 @@ The device issues this request repeatedly. While the user has not yet registered
       "password" : "3rasfst4swfa"
     }
 
-The device can now connect to Cumulocity using the tenant ID, username and password.
+The device can now connect to Cumulocity IoT using the tenant ID, username and password.
+
+With the introduction of the concept of Enterprise Tenants, it is no longer safe to assume the tenant name is the same as the tenant ID. The credentials request returns the tenant ID only. This cannot be used as the subdomain, combined with the domain name to provide a tenant URL that can be accessed with username only (and password). Access to the correct tenant can only be ensured by using the tenant ID and the username in authentication, e.g. `<tenant ID>/<username>` with the password returned by the credentials request. In this case, the subdomain is irrelevant.
+
+Request header should be:
+
+	Authorization: Basic <<Base64 encoded credentials <tenant ID>/<username>:<password> >>
+
+For example, a credentials request for a device added to *xyz.cumulocity.com* could return a user ID, password and a tenant ID of "t123456789". The tenant ID "t123456789" cannot be used as a subdomain (i.e. *t123456789.cumulocity.com*) for requests with the user ID and password - it will return "http 403". The tenant ID has to be used with the user ID in the form "t123456789/<userid>", along with the password. The actual subdomain is then irrelevant. *t123456789.cumulocity.com* or *management.cumulocity.com* or even *anything.cumulocity.com* can be used.
+
+Cumulocity IoT uses the tenant ID specified with the user ID for FULL authentication and routing of the request to the correct tenant.
+
+If the valid tenant URL is known (e.g. *xyz.cumulocity.com* in the example above), then the username does not have to be prefixed by "<tenant ID>" for authentication.
+
 
 #### Step 1: Check if the device is already registered
 
@@ -90,7 +103,7 @@ To check if a device is already registered, use a GET request on the identity AP
         "type": "c8y_Serial"
     }
 
-Note that while MAC addresses are guaranteed to be globally unique, serial numbers for hardware may overlap across different hardwares. Hence, in the above example, we prefixed the serial number with a "raspi-".
+Note that while MAC addresses are guaranteed to be globally unique, serial numbers for hardware may overlap across different hardwares. Hence, in the above example, we prefixed the serial number with a "raspi-" when registering the device (see Step 3).
 
 In this case, the device is already registered and a status code of 200 is returned. In the response, a URL to the device in the inventory is returned in "managedObject.self". This URL can be used to work with the device later on.
 
@@ -103,14 +116,14 @@ If a device is not yet registered, a 404 status code and an error message is ret
     ...
     {
         "error": "identity/Not Found",
-        "info": "https://www.cumulocity.com/reference-guide/#error_reporting",
+        "info": "https://www.cumulocity.com/guides/reference/#error_reporting",
         "message": "External id not found; external id = ID [type=c8y_Serial, value=raspi-0000000017b769d6]"
     }
 
 
 #### Step 2: Create the device in the inventory
 
-If Step 1 above indicated that no managed object representing the device exists, create the managed object in Cumulocity. The managed object describes the device, both its instance and metadata. Instance data includes hardware and software information, serial numbers, and device configuration data. Metadata describes the capabilities of the devices, including the supported operations.
+If Step 1 above indicated that no managed object representing the device exists, create the managed object in Cumulocity IoT. The managed object describes the device, both its instance and metadata. Instance data includes hardware and software information, serial numbers, and device configuration data. Metadata describes the capabilities of the devices, including the supported operations.
 
 To create a managed object, issue a POST request on the managed objects collection in the Inventory API. The following example creates a Raspberry Pi using the Linux agent:
 
@@ -180,8 +193,8 @@ To create a managed object, issue a POST request on the managed objects collecti
 
 The example above contains a number of metadata items for the device:
 
--   "c8y\_IsDevice" marks devices that can be managed using Cumulocity's Device Management.
--   "com\_cumulocity\_model\_Agent" marks devices running a Cumulocity agent. Such devices will receive all operations targeted to themselves and their children for routing.
+-   "c8y\_IsDevice" marks devices that can be managed using Cumulocity IoT's Device Management.
+-   "com\_cumulocity\_model\_Agent" marks devices running a Cumulocity IoT agent. Such devices will receive all operations targeted to themselves and their children for routing.
 -   "c8y\_SupportedOperations" states that this device can be restarted and configured. In addition, it can carry out software and firmware updates.
 
 For more information, refer to the [Device management library](/reference/device-management) in the Reference guide.
@@ -191,7 +204,7 @@ If the device could be successfully created, a status code of 201 is returned. I
 
 #### Step 3: Register the device
 
-After the new device has been created, it can now be associated with its built-in identifier as described in Step 1. This ensures that the device can find itself in Cumulocity after the next power-up.
+After the new device has been created, it can now be associated with its built-in identifier as described in Step 1. This ensures that the device can find itself in Cumulocity IoT after the next power-up.
 
 Continuing the above example, we would associate the newly created device "2480300" with its hardware serial number:
 
@@ -220,7 +233,7 @@ Continuing the above example, we would associate the newly created device "24803
 
 #### Step 4: Update the device in the inventory
 
-If Step 1 above returned that the device was previously registered already, we need to make sure that the inventory representation of the device is up to date with respect to the current state of the actual device. For this purpose, a PUT request is sent to the URL of the device in the inventory. Note, that only fragments that can actually change need to be transmitted. (See [Cumulocity's domain model](/concepts/domain-model) in the Concepts guide for more information on fragments.)
+If Step 1 above returned that the device was previously registered already, we need to make sure that the inventory representation of the device is up to date with respect to the current state of the actual device. For this purpose, a PUT request is sent to the URL of the device in the inventory. Note, that only fragments that can actually change need to be transmitted. (See [Cumulocity IoT's domain model](/concepts/domain-model) in the Concepts guide for more information on fragments.)
 
 For example, the hardware information of a device will usually not change, but the software installation may change. So it may make sense to bring the software information in the inventory up to the latest state after a reboot of the device:
 
@@ -247,7 +260,9 @@ For example, assume a child device with the URL "https://.../inventory/managedOb
 
     POST /inventory/managedObjects/2480300/childDevices HTTP/1.1
     Content-Type: application/vnd.com.nsn.cumulocity.managedObjectReference+json
-    { "managedObject" : { "self" : "https://.../inventory/managedObjects/2543801" } } 
+    {
+    "managedObject" : { "self" : "https://.../inventory/managedObjects/2543801" }
+    }
 
     HTTP/1.1 201 Created
 
@@ -263,11 +278,11 @@ This does not delete the device itself in the inventory, only the reference. To 
 
     HTTP/1.1 204 No Content
 
-This request will also delete all data associated with the device including its registration information, measurements, alarms, events and operations. Usually, it is not recommended to delete devices automatically. For example, if a device has just temporarily lost its connection, you usually do not want to loose all historical information associated with the device.
+This request will also delete all data associated with the device including its registration information, measurements, alarms, events and operations. Usually, it is not recommended to delete devices automatically. For example, if a device has just temporarily lost its connection, you usually do not want to lose all historical information associated with the device.
 
 #### Working with operations
 
-Each operation in Cumulocity is cycled through an execution flow. When an operation is created through a Cumulocity application, its state is PENDING, i.e. it has been queued for executing but it hasn't executed yet. When an agent picks up the operation and starts executing it, it marks the operations as EXECUTING in Cumulocity. The agent will then carry out the operation on the device or its children (for example, it will restart the device, or set a relay). Then it will possibly update the inventory reflecting the new state of the device or its children (e.g. it updates the current state of the relay in the inventory). Then the agent will mark the operation in Cumulocity as either SUCCESSFUL or FAILED, potentially indicating the error.
+Each operation in Cumulocity IoT is cycled through an execution flow. When an operation is created through a Cumulocity IoT application, its state is PENDING, i.e. it has been queued for executing but it hasn't executed yet. When an agent picks up the operation and starts executing it, it marks the operations as EXECUTING in Cumulocity IoT. The agent will then carry out the operation on the device or its children (for example, it will restart the device, or set a relay). Then it will possibly update the inventory reflecting the new state of the device or its children (e.g. it updates the current state of the relay in the inventory). Then the agent will mark the operation in Cumulocity IoT as either SUCCESSFUL or FAILED, potentially indicating the error.
 
 ![Operation status diagram](/images/rest/operations.png)
 
@@ -312,7 +327,7 @@ The restart seems to have executed well -- we are back after all. So let's set t
 
     HTTP/1.1 200 OK
 
-Then, listen to new operations created in Cumulocity. The mechanism for listening to real-time data in Cumulocity is described in [Real-time notifications](/reference/real-time-notifications) in the Reference guide and is based on the standard Bayeux protocol. First, a handshake is required. The handshake tells Cumulocity what protocols the agent supports for notifications and allocates a client ID to the agent.
+Then, listen to new operations created in Cumulocity IoT. The mechanism for listening to real-time data in Cumulocity IoT is described in [Real-time notifications](/reference/real-time-notifications) in the Reference guide and is based on the standard Bayeux protocol. First, a handshake is required. The handshake tells Cumulocity IoT what protocols the agent supports for notifications and allocates a client ID to the agent.
 
     POST /devicecontrol/notifications HTTP/1.1
     Content-Type: application/json
@@ -350,7 +365,7 @@ Afterwards, the device respectively the agent needs to subscribe to notification
 
     HTTP/1.1 200 OK
     ...
-    [ { 
+    [ {
         "id":"2",
         "channel": "/meta/subscribe",
         "subscription": "/2480300",
@@ -384,9 +399,9 @@ Assume now that an operation is queued for the agent. This will make the long po
 
     HTTP/1.1 200 OK
     ...
-    [ 
+    [
         {
-            "id": "139", 
+            "id": "139",
             "data": {
                 "creationTime":"2013-09-04T10:53:35.128+02:00",
                 "deviceId": "2480300",
@@ -395,7 +410,7 @@ Assume now that an operation is queued for the agent. This will make the long po
                 "status": "PENDING",
                 "description": "Configuration update",
                 "c8y_Configuration": { "config": "#Wed Sep 04 10:54:06 CEST 2013\n..." }
-            }, 
+            },
             "channel": "/2480300"
         }, {
             "id": "3",
@@ -404,9 +419,9 @@ Assume now that an operation is queued for the agent. This will make the long po
         }
     ]
 
-When the agent picks up the operation, it sets it to EXECUTING state in Cumulocity using a PUT request (see above example for FAILED). It carries out the operation on the device and runs possible updates of the Cumulocity inventory. Finally, it sets the operation to SUCCESSFUL or FAILED depending on the outcome. Then, it will reconnect again to "/devicecontrol/notifications" as described above and wait for the next operation.
+When the agent picks up the operation, it sets it to EXECUTING state in Cumulocity IoT using a PUT request (see above example for FAILED). It carries out the operation on the device and runs possible updates of the Cumulocity IoT inventory. Finally, it sets the operation to SUCCESSFUL or FAILED depending on the outcome. Then, it will reconnect again to "/devicecontrol/notifications" as described above and wait for the next operation.
 
-> The device should reconnect within ten seconds to the server to not loose queued operations. This is the time that Cumulocity buffers real-time data. The interval can be specified upon handshake.
+The device should reconnect within ten seconds to the server to not lose queued operations. This is the time that Cumulocity IoT buffers real-time data. The interval can be specified upon handshake.
 
 
 #### Step 8: Update inventory
@@ -416,7 +431,7 @@ The inventory entry of a device usually represents its current state, which may 
 
 #### Step 9: Send measurements
 
-To create new measurements in Cumulocity, issue a POST request with the measurement. The example below shows how to create a signal strength measurement.
+To create new measurements in Cumulocity IoT, issue a POST request with the measurement. The example below shows how to create a signal strength measurement.
 
     POST /measurement/measurements HTTP/1.1
     Content-Type: application/vnd.com.nsn.cumulocity.measurement+json
@@ -427,7 +442,7 @@ To create new measurements in Cumulocity, issue a POST request with the measurem
         "type": "huawei_E3131SignalStrength",
         "c8y_SignalStrength": {
             "rssi": { "value": -53, "unit": "dBm" },
-            "ber": { "value": 0.14, "unit": "%" } 
+            "ber": { "value": 0.14, "unit": "%" }
         }
     }
 
@@ -455,7 +470,7 @@ Similar, use a POST request for events. The following example shows a location u
 
     HTTP/1.1 201 Created
 
-Note that all data types in Cumulocity can include arbitrary extensions in the form of additional fragments. In this case, the event includes a position, but also self-defined fragments can be added.
+Note that all data types in Cumulocity IoT can include arbitrary extensions in the form of additional fragments. In this case, the event includes a position, but also self-defined fragments can be added.
 
 
 ### Step 11: Send alarms

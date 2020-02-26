@@ -2,6 +2,8 @@
 weight: 30
 title: Cumulocity IoT Edge versus other Cumulocity deployments
 layout: redirect
+aliases:
+  - /edge/edge-introduction/#edge-vs-core
 ---
 
 Cumulocity IoT Edge uses the same software as Cumulocity IoT Core. 

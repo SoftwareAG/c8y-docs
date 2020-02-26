@@ -202,7 +202,7 @@ layout: redirect
 
 > The query parameter "fragmentType" is deprecated. It is still available in the API, but clients are recommended to replace the parameter with "valueFragmentType" and "valueFragmentSeries". This leads to much better query performance. Note that you can only query fragments holding standard measurements with these parameters. Other formats cannot be queried.
 
-> For large measurement collections querying late pages without filter can be slow as it requires the server to scan from the beginning of the input results set before beginning to return results. For cases when latest measurements should be retrieved Cumulocity recommends to narrow the scope by using time range query and base query on time stamp reported by device. Scope of query can be also significantly reduced by doing query by source.
+> For large measurement collections querying late pages without filter can be slow as it requires the server to scan from the beginning of the input results set before beginning to return results. For cases when latest measurements should be retrieved Cumulocity IoT recommends to narrow the scope by using time range query and base query on time stamp reported by device. Scope of query can be also significantly reduced by doing query by source.
 
 
 ### GET - Measurement API resource
@@ -230,7 +230,7 @@ GET <<url>>/measurement
 |Content-Type|application/vnd.com.nsn.cumulocity.measurementApi+json;ver=...
 
 ```http
-HTTP/1.1 
+HTTP/1.1
 200 OK
 
 {

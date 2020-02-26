@@ -17,7 +17,7 @@ Apama EPL Apps provides an interface for interactively editing new or existing E
 
 Any user on the tenant wishing to use Apama EPL Apps will need to be a **CEP Manager**. See [Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
 
-> **Info**: To be able to develop applications with Apama EPL Apps and/or to import them from Software AG Designer into Cumulocity IoT, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Apama EPL Apps web application provided in Cumulocity IoT. If you have Apama "starter", Apama EPL Apps is not available in the application switcher. If you want to have this capability, contact Software AG support.
+> **Info**: To be able to develop applications with Apama EPL Apps and/or to import them from Software AG Designer into Cumulocity IoT, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Apama EPL Apps web application provided in Cumulocity IoT. If you have Apama Starter, Apama EPL Apps is not available in the application switcher. If you want to have this capability, contact Software AG support.
 
 **Step 1 - Invoke Apama EPL Apps**
 
@@ -73,9 +73,7 @@ Click **X** in the top menu bar to leave the EPL editor and thus to return to th
 
 **Step 3 - Test the EPL application**
 
-Once your application is activated, you should be able to see the results of it running. This may include sending measurements, receiving data, creating alarms, and logging in the Apama-ctrl microservice. 
-
-To check the logs of the Apama-ctrl microservice, go to **Own applications** in the Administration application, click **Apama-ctrl** and then go to the **Logs** tab. See [Managing applications](/users-guide/administration/#managing-applications) in the *User guide* for more information on log files.
+Once your application is activated, you should be able to see the results of it running. This may include sending measurements, receiving data, creating alarms, and logging in the Apama-ctrl microservice. For information on how to check the log files of the Apama-ctrl microservice, see [Managing applications](/users-guide/administration/#managing-applications) in the *User guide*.
 
 See also [Deploying applications](/apama/analytics-introduction/#deploying-apps).
 

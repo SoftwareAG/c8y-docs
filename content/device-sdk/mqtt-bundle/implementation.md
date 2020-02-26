@@ -4,11 +4,11 @@ title: MQTT implementation
 layout: redirect
 ---
 
-This section will list the implementation details for the MQTT protocol. The Cumulocity implementation supports MQTT Version 3.1.1.
+This section will list the implementation details for the MQTT protocol. The Cumulocity IoT implementation supports MQTT Version 3.1.1.
 
 ### Connecting via MQTT
 
-Cumulocity supports MQTT both via TCP and WebSockets. As URL you use _mqtt.cumulocity.com_.
+Cumulocity IoT supports MQTT both via TCP and WebSockets. As URL you use _mqtt.cumulocity.com_.
 
 Available ports:
 
@@ -22,7 +22,7 @@ Available ports:
 
 ### SmartREST payload
 
-The Cumulocity MQTT implementation uses SmartREST as a payload. SmartREST is a CSV-like message protocol that uses templates on the server side to create data in Cumulocity.
+The Cumulocity IoT MQTT implementation uses SmartREST as a payload. SmartREST is a CSV-like message protocol that uses templates on the server side to create data in Cumulocity IoT.
 
 > **Info:** For all MQTT connections to the platform, the maximum accepted payload size is 16384 bytes, which includes both message header and body. The header size varies, but its minimum is 2 bytes.
 
@@ -32,14 +32,13 @@ A SmartREST message is a single row in which each parameter is separated by comm
 
 #### SmartREST escaping
 
-The following characters within a parameter need to be enclosed in double quotes:
+The CSV (comma-separated values) format is used for communication with the SmartREST endpoint. The following rules must be followed to ensure a frictionless communication.
 
-* Comma (,)
-* Line break (\n)
-* Carriage return (\r)
-* Double quotes (")
+* Every row must be terminated by the `\n` character sequence.
+* Values are always separated by a comma (`,`).
+* If a value contains double-quotes (`"`), commas (`,`), leading or trailing whitespaces, line-breaks (`\n`), carriage returns (`\r`) or tab stops, it must be surrounded by quotes (`"`). Contained double-quotes (`"`) must be escaped by prepending another double-quote (`""`).
 
-Additionally, each double quote within the parameter needs to be escaped with a backslash `\`. The same escaping rules apply to messages that will be sent from the server to the client.
+The same escaping rules apply to messages that will be sent from the server to the client.
 
 Publish example:
 
@@ -50,7 +49,7 @@ Publish example:
 Subscribe example:
 
 ```text
-511,myDeviceSerial,"execute this\nand this\nand \"this\""
+511,myDeviceSerial,"execute this\nand this\nand ""this"""
 ```
 
 ### Device hierarchies
@@ -69,11 +68,11 @@ Every operation received will contain the template ID followed by the ID of the 
 
 #### MQTT authentication
 
-MQTT supports setting a username and a password. To connect to Cumulocity, the MQTT username needs to include both tenantID and username in the format "tenantID/username".
+MQTT supports setting a username and a password. To connect to Cumulocity IoT, the MQTT username needs to include both tenantID and username in the format "tenantID/username".
 
 #### MQTT ClientId
 
-The MQTT ClientId is a field to uniquely identify each connected client. The Cumulocity implementation also uses the ClientId to link the client directly to a device. Therefore the following format should be used for the ClientId:
+The MQTT ClientId is a field to uniquely identify each connected client. The Cumulocity IoT implementation also uses the ClientId to link the client directly to a device. Therefore the following format should be used for the ClientId:
 
 "connectionType:deviceIdentifier:defaultTemplateIdentifier"
 
@@ -97,7 +96,7 @@ The uniqueness of the MQTT ClientId is determined only by the deviceIdentifier. 
 
 #### MQTT Quality of Service
 
-The Cumulocity implementation supports all 3 levels of MQTT QoS:
+The Cumulocity IoT implementation supports all 3 levels of MQTT QoS:
 
 * QoS 0: At most once
     - The client just sends the message once (fire and forget)
@@ -116,12 +115,12 @@ For subscriptions to the operation or error topics, we will deliver all messages
 
 MQTT clients can set the clean session flag to "0" (false). This will ensure that in case the client disconnects, your subscription will still work and when you reconnect the client will receive the missed messages.
 
->**Info:** Cumulocity requires clean session to be set to "1" (true). Currently we cannot guarantee that disabling clean session will work reliably, hence we recommend to always enable clean session.
+>**Info:** Cumulocity IoT requires clean session to be set to "1" (true). Currently we cannot guarantee that disabling clean session will work reliably, hence we recommend to always enable clean session.
 
 #### MQTT retained flag
 
-In the current Cumulocity implementation, subscriptions to topics where devices publish data are not allowed. Publishing data with the retained flag on this topic is allowed but has no practical difference to sending it without the flag.
-Messages published by Cumulocity like operations and errors do not contain the retained flag.
+In the current Cumulocity IoT implementation, subscriptions to topics where devices publish data are not allowed. Publishing data with the retained flag on this topic is allowed but has no practical difference to sending it without the flag.
+Messages published by Cumulocity IoT like operations and errors do not contain the retained flag.
 
 #### MQTT last will
 

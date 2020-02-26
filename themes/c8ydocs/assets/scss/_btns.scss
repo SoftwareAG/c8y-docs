@@ -1,20 +1,20 @@
-.btn-link{
+.btn-link {
   padding: 0;
   margin: 0;
   background: transparent;
   background-image: none;
   box-shadow: none;
-  border:0;
+  border: 0;
   color: $blue-primary;
-  &:hover,&:focus{
+  &:hover,
+  &:focus {
     text-decoration: none;
     outline: none;
   }
 }
 
-
 .sidebar-toggle {
-  position: fixed!important;
+  position: fixed !important;
   top: 10px;
   left: 24px;
   z-index: 2002;
@@ -28,7 +28,7 @@
   background-image: none;
   color: white;
   font-size: 10px;
-  transition: left .3s $ease;
+  transition: left 0.3s $ease;
   .icon-bar {
     display: block;
     margin: 4px auto;
@@ -37,24 +37,22 @@
     background-color: white;
   }
 
-  @media(min-width: $grid-breakpoint){
+  @media (min-width: $grid-breakpoint) {
     display: none;
   }
-  @media print{
+  @media print {
     display: none;
   }
 
-  .open &{
+  .open & {
     left: $main-nav-width + 1.5;
   }
 }
 
-
-
 .to-the-top {
   position: fixed;
-  right: 48px;
-  bottom: 20px;
+  right: 3rem;
+  bottom: 4rem;
   z-index: 38;
   font-size: 1rem;
   display: block;
@@ -67,24 +65,24 @@
   background-color: transparent;
   color: $gray-60;
   text-align: center;
-  opacity: .5;
+  opacity: 0.5;
   transition: all 0.4s ease;
   cursor: pointer;
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     border-color: transparent;
     background-color: $blue-primary;
     color: white;
     opacity: 1;
     outline: none;
   }
-  @media print{
+  @media print {
     display: none;
   }
 }
 
 // copy link
 .bookmark {
-
   &:focus {
     outline: none;
   }
@@ -106,7 +104,7 @@
   }
   &.copied {
     position: relative;
-    opacity: 1!important;
+    opacity: 1 !important;
     &:before {
       position: absolute;
       bottom: 100%;
@@ -114,9 +112,9 @@
       margin-left: 0;
       padding: 5px 3px 3px;
       border-radius: 3px;
-      background: rgba($blue-primary, .8);
+      background: rgba($blue-primary, 0.8);
       color: white;
-      content: 'Copied!';
+      content: "Copied!";
       font-size: 12px;
     }
     &:after {
@@ -128,8 +126,8 @@
       height: 0;
       border-width: 5px 5px 5px 5px;
       border-style: solid;
-      border-color: rgba($blue-primary, .8) transparent transparent;
-      content: '';
+      border-color: rgba($blue-primary, 0.8) transparent transparent;
+      content: "";
     }
   }
 }

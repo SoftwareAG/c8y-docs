@@ -14,7 +14,7 @@ There are two distinct approaches to deploy Apama applications to Cumulocity IoT
 
 ### <a name="single-mon-file"></a>Deploying Apama applications as single \*.mon files with Apama EPL Apps
 
->**Info**: To be able to deploy single \*.mon files with Apama EPL Apps, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Apama EPL Apps web application provided in Cumulocity IoT. If you have Apama "starter", Apama EPL Apps is not available in the application switcher. If you want to have this capability, contact Software AG support.
+>**Info**: To be able to deploy single \*.mon files with Apama EPL Apps, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Apama EPL Apps web application provided in Cumulocity IoT. If you have Apama Starter, Apama EPL Apps is not available in the application switcher. If you want to have this capability, contact Software AG support.
 
 When an Apama EPL application is activated in Cumulocity IoT, each \*.mon file is assigned a unique package name. This prevents conflicts when multiple modules are activated. For this reason, you should not specify a `package` statement in the \*.mon files. If you need to share events between different parts of your application, then write the event definitions and monitors that use it in a single \*.mon file.
 
@@ -35,6 +35,29 @@ Using Software AG Designer, you can also develop more complex projects which:
 These kinds of applications should be deployed as microservices to Cumulocity IoT. 
 
 >**Info**: This only applies if you are using Apama 10.3 or later.
+
+#### Required settings in the microservice manifest
+
+The microservice manifest provides the required settings to manage microservice instances and the application deployment in Cumulocity IoT. For detailed information, see [Microservice manifest](/microservice-sdk/concept/#manifest) in the *Microservice SDK guide*.
+
+Apama can only be used in a single-tenant microservice. Therefore, the microservice manifest must set the isolation level to PER_TENANT. The reason for this is that Apama's Cumulocity IoT transport connectivity plug-in can only communicate with the tenant to which it is deployed. Therefore, having an Apama shared between multiple tenants is invalid.
+
+Specific permissions are required by the microservice to start up and work properly. These are set with requiredRoles in the microservice manifest. The minimum set of permissions is the following:
+
+- ROLE_APPLICATION_MANAGEMENT_READ
+- ROLE_INVENTORY_READ
+- ROLE_INVENTORY_ADMIN
+- ROLE_INVENTORY_CREATE
+- ROLE_MEASUREMENT_READ
+- ROLE_MEASUREMENT_ADMIN
+- ROLE_EVENT_READ
+- ROLE_EVENT_ADMIN
+- ROLE_ALARM_READ
+- ROLE_ALARM_ADMIN
+- ROLE_DEVICE_CONTROL_READ
+- ROLE_DEVICE_CONTROL_ADMIN
+- ROLE_IDENTITY_READ
+- ROLE_OPTION_MANAGEMENT_READ
 
 #### To deploy an Apama application as a microservice
 
@@ -58,4 +81,4 @@ These kinds of applications should be deployed as microservices to Cumulocity Io
 
     You can pack, deploy and subscribe from this directory, resulting in your Apama application being turned into a running microservice. The behavior of the application when being run outside of Cumulocity IoT (from Software AG Designer or your test environment) will be near-identical to its behavior inside Cumulocity IoT. When deployed as a microservice doing requests to the Cumulocity API, Apama will automatically pick up the credentials to connect to the tenant you deployed it to, overwriting any other credentials provided to Apama. However, if you wish to receive real-time events, you will need to have valid credentials specified in the project configuration as you do when connecting to Cumulocity IoT from an external Apama environment.
 
-5. When you are ready to deploy to Cumulocity IoT, upload the application as a microservice through the **Own applications** page in the Administration application. For details, refer to [Administration > Managing applications](/users-guide/administration#managing-applications) in the *User guide*. 
+5. When you are ready to deploy to Cumulocity IoT, upload the application as a microservice. For details, refer to [Administration > Managing applications](/users-guide/administration#managing-applications) in the *User guide*. 

@@ -3,20 +3,20 @@ weight: 90
 title: Smart Rules-Sammlung
 layout: redirect
 ---
- 
+
 <a name="business"></a>
 
-Cumulocity enthält eine Reihe von vordefinierten Smart Rules. 
+Cumulocity IoT enthält eine Reihe von vordefinierten Smart Rules.
 
 ![Global smart rules](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules.png)
 
-Für jeden globalen Smart Rules-Typen lassen sich verschiedene Parameter konfigurieren. 
+Für jeden globalen Smart Rules-Typen lassen sich verschiedene Parameter konfigurieren.
 
 Im folgenden Abschnitt werden alle verfügbaren Typen mit den jeweils konfigurierbaren Parametern beschrieben.
 
 ### Bei Alarm SMS senden
 
-**Funktionalität** 
+**Funktionalität**
 
 Wenn ein Alarm erzeugt wird, wird eine SMS gesendet.
 
@@ -36,7 +36,7 @@ Die Regel verwendet die folgenden Parameter:
        <col style="width: 70%;">
     </colgroup><thead>
 <tr>
-<th align="left">Schritt</th>
+<th align="left">Step</th>
 <th align="left">Feld</th>
 <th align="left">Beschreibung</th>
 </tr>
@@ -55,7 +55,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">3</td>
 <td align="left">SMS senden</td>
-<td align="left"><strong>Telefonnummer</strong>: Telefonnummer des Empfängers. Es empfiehlt sich, die Ländervorwahl hinzuzufügen, z. B. “+49” or “0049” für Deutschland. Mehrere Telefonnummern können durch ein Komma getrennt werden (“,”, ohne Leerzeichen!).<br> <strong>Nachricht</strong>: SMS-Text mit max. 160 Zeichen. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter “Smart Rules-Variablen” aufgelistet.</td>
+<td align="left"><strong>Telefonnummer</strong>: Telefonnummer des Empfängers. Es empfiehlt sich, die Ländervorwahl hinzuzufügen, z. B. "+49" oder "0049" für Deutschland. Mehrere Telefonnummern können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br> <strong>Nachricht</strong>: SMS-Text mit max. 160 Zeichen. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter "Smart Rules-Variablen" aufgelistet.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -69,15 +69,15 @@ Die Regel verwendet die folgenden Parameter:
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/reference/device-management) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 >**Wichtig:** Die Textgröße ist auf insgesamt 160 Zeichen beschränkt. Wenn Sie Variablen verwenden und der Text nach Anwenden der Variablen 160 Zeichen überschreitet, wird die SMS nicht gesendet.
 
 ### Bei Alarm E-Mail senden
 
-**Funktionalität** 
+**Funktionalität**
 
 Wenn ein Alarm erzeugt wird, wird eine E-Mail gesendet.
 
@@ -95,7 +95,7 @@ Die Regel verwendet die folgenden Parameter:
        <col style="width: 70%;">
     </colgroup><thead>
 <tr>
-<th align="left">Schritt</th>
+<th align="left">Step</th>
 <th align="left">Feld</th>
 <th align="left">Beschreibung</th>
 </tr>
@@ -114,7 +114,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">3</td>
 <td align="left">E-Mail senden</td>
-<td align="left"><strong>Senden an:/CC an:/BCC an</strong>: E-Mail-Adressen der Empfänger. Mehrere Adressen können durch ein Komma getrennt werden (“,”, ohne Leerzeichen!).<br><strong>Antwort an</strong>: Adresse, die für eine Antwort verwendet werden kann.<br> <strong>Betreff</strong>: Betreff der E-Mail. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter “Smart Rules-Variablen” aufgelistet.<br> <strong>Nachricht</strong>: Text der E-Mail. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter “Smart Rules-Variablen” aufgelistet.</td>
+<td align="left"><strong>Senden an:/CC an:/BCC an</strong>: E-Mail-Adressen der Empfänger. Mehrere Adressen können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br><strong>Antwort an</strong>: Adresse, die für eine Antwort verwendet werden kann.<br> <strong>Betreff</strong>: Betreff der E-Mail. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter "Smart Rules-Variablen" aufgelistet.<br> <strong>Nachricht</strong>: Text der E-Mail. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter "Smart Rules-Variablen" aufgelistet.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -124,20 +124,17 @@ Die Regel verwendet die folgenden Parameter:
 </tbody>
 </table>
 
-
-**Fehlerbehebung**
-
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/reference/device-management) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 * Sehen Sie in Ihr Spam-Verzeichnis.
 
 ### Bei Alarm eskalieren
 
-**Funktionalität** 
+**Funktionalität**
 
 Sendet eine E-Mail oder SMS, wenn ein Alarm erzeugt wird.
 
@@ -155,8 +152,7 @@ Die Regel verwendet die folgenden Parameter:
        <col style="width: 70%;">
     </colgroup><thead>
 <tr>
-<tr>
-<th align="left">Schritt</th>
+<th align="left">Step</th>
 <th align="left">Feld</th>
 <th align="left">Beschreibung</th>
 </tr>
@@ -175,7 +171,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">3</td>
 <td align="left">Wie folgt eskalieren</td>
-<td align="left">Eskalationsschritte, die nacheinander ausgeführt werden. <br> Klicken Sie <strong>Schritt hinzufügen</strong>, um mindestens einen Schritt zu definieren: <br> <strong>Typ</strong>: Typ des ausgeführten Schritts. Mögliche Werte sind: <br> - E-Mail (siehe Regel “Bei Alarm E-Mail senden” für die Beschreibung der Parameter). <br> - SMS (siehe Regel “Bei Alarm SMS senden” für die Beschreibung der Parameter). <br> <strong>Bedingung</strong>: Die Bedingung, die angewendet wird, wenn die Regel ausgeführt wird. Mögliche Werte sind: <br> * Immer: Aktion wird immer ausgeführt. <br> * Immer: Wenn Schritt N fehlgeschlagen ist. Nur Schritte des Typs Telefon können fehlschlagen. Der Schritt wird als fehlgeschlagen gekennzeichnet, wenn alle Wiederholungen erfolglos ausgeführt wurden. Diese Option ist nur verfügbar, wenn bereits ein Schritt des Typs Telefon konfiguriert wurde, auf den Bezug genommen werden kann.</td>
+<td align="left">Eskalationsschritte, die nacheinander ausgeführt werden. <br> Klicken Sie <strong>Schritt hinzufügen</strong>, um mindestens einen Schritt zu definieren: <br> <strong>Typ</strong>: Typ des ausgeführten Schritts. Mögliche Werte sind: <br> - E-Mail (siehe Regel "Bei Alarm E-Mail senden" für die Beschreibung der Parameter). <br> - SMS (siehe Regel "Bei Alarm SMS senden" für die Beschreibung der Parameter). <br> <strong>Bedingung</strong>: Die Bedingung, die angewendet wird, wenn die Regel ausgeführt wird. Mögliche Werte sind: <br> - Immer: Aktion wird immer ausgeführt. <br> - Immer: Wenn Schritt N fehlgeschlagen ist. Nur Schritte des Typs Telefon können fehlschlagen. Der Schritt wird als fehlgeschlagen gekennzeichnet, wenn alle Wiederholungen erfolglos ausgeführt wurden. Diese Option ist nur verfügbar, wenn bereits ein Schritt des Typs Telefon konfiguriert wurde, auf den Bezug genommen werden kann.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -185,18 +181,19 @@ Die Regel verwendet die folgenden Parameter:
 </tbody>
 </table>
 
+
 **Fehlerbehebung**
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/reference/device-management) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 
 ### Bei Alarmdauer Schweregrad erhöhen
 
-**Funktionalität** 
+**Funktionalität**
 
 Wenn ein Alarm für einen bestimmten Zeitraum aktiviert ist, wird er Schweregrad erhöht.
 
@@ -206,12 +203,42 @@ Die Regel verwendet die folgenden Parameter:
 
 ![On alarm increase severity](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-severity.png)
 
-|Schritt|Feld|Beschreibung|
-|:---|:---|:---|
-|1|Name der Regel|Vorausgefüllt mit dem Namen des Regel-Templates. Kann individuell geändert werden.
-|2|Bei Alarm vom Typ:|Die Alarmtypen, die die Regel auslösen. Für jeden neu erzeugten Alarm eines dieser Typen wird eine Regel ausgelöst.
-|3|Alarmschweregrad erhöhen:|Dauer, die ein Alarm aktiv sein muss, bevor der Schweregrad erhöht wird.
-|4|Ziel-Assets oder -geräte|Gruppen oder Geräte, auf die die Regel angewendet werden soll.
+<table>
+<thead>
+<colgroup>
+       <col style="width: 10%;">
+       <col style="width: 20%;">
+       <col style="width: 70%;">
+    </colgroup><thead>
+<tr>
+<th align="left">Step</th>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">Name der Regel</td>
+<td align="left">Vorausgefüllt mit dem Namen des Regel-Templates. Kann individuell geändert werden.</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">Bei Alarm vom Typ</td>
+<td align="left">Die Alarmtypen, die die Regel auslösen. Für jeden neu erzeugten Alarm eines dieser Typen wird eine Regel ausgelöst.</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Alarmschweregrad erhöhen:</td>
+<td align="left">Dauer, die ein Alarm aktiv sein muss, bevor der Schweregrad erhöht wird.</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Ziel-Assets oder -geräte</td>
+<td align="left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+</tr>
+</tbody>
+</table>
 
 **Beschreibung**
 
@@ -225,9 +252,9 @@ Wenn der Alarm den Schweregrad KRITISCH erreicht hat, wird die Überwachung been
 
 ### Bei Geofence Alarm erzeugen
 
-**Funktionalität** 
+**Funktionalität**
 
-Wird ein Geofence-Bereich überschritten, wird ein Alarm erzeugt. 
+Wird ein Geofence-Bereich überschritten, wird ein Alarm erzeugt.
 
 Diese Regel kann für das Betreten oder Verlassen eines Geofence-Bereichs oder für beides konfiguriert werden. Bestehende Alarme werden gelöscht, wenn wieder die gegenteilige Bedingung zutrifft, z. B. wenn ein Auto, das den Geofence-Bereich verlassen hat, wieder in den Bereich eintritt.
 
@@ -237,7 +264,7 @@ Die Regel verwendet die folgenden Parameter:
 
 ![On geofence create alarm](/images/benutzerhandbuch/cockpit/cockpit-globalsmartrules-geofencealarm.png)
 
-<table>
+|<table>
 <thead>
 <colgroup>
        <col style="width: 10%;">
@@ -245,7 +272,7 @@ Die Regel verwendet die folgenden Parameter:
        <col style="width: 70%;">
     </colgroup><thead>
 <tr>
-<th align="left">Schritt</th>
+<th align="left">Step</th>
 <th align="left">Feld</th>
 <th align="left">Beschreibung</th>
 </tr>
@@ -264,7 +291,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">3</td>
 <td align="left">Alarm erzeugen</td>
-<td align="left">Grund für das Auslösen eines Alarms: “Bei Betreten”, “Bei Verlassen” (der Standardwert), “Bei Betreten und Verlassen”.<br>Typ des auszulösenden Alarms. <br> Schweregrad des auszulösenden Alarms. <br>Alarmtext.</td>
+<td align="left">Grund für das Auslösen eines Alarms: "Bei Betreten", "Bei Verlassen" (der Standardwert), "Bei Betreten und Verlassen".<br>Typ des auszulösenden Alarms. <br> Schweregrad des auszulösenden Alarms. <br>Alarmtext.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -279,16 +306,16 @@ Die Regel verwendet die folgenden Parameter:
 **Fehlerbehebung**
 
 * Stellen Sie sicher, dass das Gerät mindestens einmal im Geofence-Bereich war, nachdem die Regel erstellt/aktiviert wurde.
- 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/reference/device-management) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 ### Bei Geofence E-Mail senden
 
-**Funktionalität** 
+**Funktionalität**
 
-Wenn ein Geofence-Bereich überschritten wird, wird eine E-Mail gesendet. 
+Wenn ein Geofence-Bereich überschritten wird, wird eine E-Mail gesendet.
 
 **Parameter**
 
@@ -304,7 +331,7 @@ Die Regel verwendet die folgenden Parameter:
        <col style="width: 70%;">
     </colgroup><thead>
 <tr>
-<th align="left">Schritt</th>
+<th align="left">Step</th>
 <th align="left">Feld</th>
 <th align="left">Beschreibung</th>
 </tr>
@@ -323,7 +350,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">3</td>
 <td align="left">E-Mail senden</td>
-<td align="left"><strong>Senden an:/CC an:/BCC an</strong>: E-Mail-Adressen der Empfänger. Mehrere Adressen können durch ein Komma getrennt werden (“,”, ohne Leerzeichen!).<br><strong>Antwort an</strong>: Adresse, die für eine Antwort verwendet werden kann.<br> <strong>Betreff</strong>: Betreff der E-Mail. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter “Smart Rules-Variablen” aufgelistet.<br> <strong>Nachricht</strong>: Text der E-Mail. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter “Smart Rules-Variablen” aufgelistet.</td>
+<td align="left"><strong>Senden an:/CC an:/BCC an</strong>: E-Mail-Adressen der Empfänger. Mehrere Adressen können durch ein Komma getrennt werden (",", ohne Leerzeichen!).<br><strong>Antwort an</strong>: Adresse, die für eine Antwort verwendet werden kann.<br> <strong>Betreff</strong>: Betreff der E-Mail. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter "Smart Rules-Variablen" aufgelistet.<br> <strong>Nachricht</strong>: Text der E-Mail. Es können Variablen im Format #{name} verwendet werden. Die unterstützten Variablen werden weiter unten unter "Smart Rules-Variablen" aufgelistet.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -344,7 +371,7 @@ Die Regel verwendet die folgenden Parameter:
 
 ### Energieverbrauch berechnen
 
-**Funktionalität** 
+**Funktionalität**
 
 Erstellt einen Verbrauchs-Datenpunkt basierend auf Daten von einem Strom-, Gas oder Wasserzähler.
 
@@ -362,7 +389,7 @@ Die Regel verwendet die folgenden Parameter:
        <col style="width: 70%;">
     </colgroup><thead>
 <tr>
-<th align="left">Schritt</th>
+<th align="left">Step</th>
 <th align="left">Feld</th>
 <th align="left">Beschreibung</th>
 </tr>
@@ -404,9 +431,9 @@ Wenn keine weiteren Messdaten im letzten Intervall erzeugt wurden, wird ein Mess
 
 ### Bei fehlenden Messdaten Alarm erzeugen
 
-**Funktionalität** 
+**Funktionalität**
 
-Gehen keine neuen Messdaten innerhalb eines bestimmten Zeitraums ein, wird ein Alarm erzeugt. 
+Gehen keine neuen Messdaten innerhalb eines bestimmten Zeitraums ein, wird ein Alarm erzeugt.
 
 **Parameter**
 
@@ -422,7 +449,7 @@ Die Regel verwendet die folgenden Parameter:
        <col style="width: 70%;">
     </colgroup><thead>
 <tr>
-<th align="left">Schritt</th>
+<th align="left">Step</th>
 <th align="left">Feld</th>
 <th align="left">Beschreibung</th>
 </tr>
@@ -436,7 +463,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">2</td>
 <td align="left">Verwendeter Messwert</td>
-<td align="left"><strong>Typ</strong>: Typ des Messwerts. Der eingehende Messwert muss den gleichen Typen haben. Wenn eine Regel im Daten-Explorer erstellt wird, ist der Typ bereits angegeben.<br> <strong>Zeitintervall</strong>: Intervall, in welchem Verbrauchswerte berechnet werden.</td>
+<td align="left"><strong>Typ</strong>: Typ des Messwerts. Der eingehende Messwert muss den gleichen Typen haben. Wenn eine Regel im Daten-Explorer erstellt wird, ist der Typ bereits angegeben. <br> <strong>Zeitintervall</strong>: Intervall, in welchem Verbrauchswerte berechnet werden.</td>
 </tr>
 <tr>
 <td align="left">3</td>
@@ -455,7 +482,7 @@ Die Regel verwendet die folgenden Parameter:
 
 ### Bei Alarm Kommando ausführen
 
-**Funktionalität** 
+**Funktionalität**
 
 Tritt ein bestimmter Alarm auf, wird das spezifizierte Kommando zum Gerät gesendet.
 
@@ -474,7 +501,7 @@ Die Regel verwendet die folgenden Parameter:
     </colgroup><thead>
 <thead>
 <tr>
-<th style="text-align:center">Schritt</th>
+<th style="text-align:left">Schritt</th>
 <th style="text-align:left">Feld</th>
 <th style="text-align:left">Beschreibung</th>
 </tr>
@@ -505,7 +532,7 @@ Die Regel verwendet die folgenden Parameter:
 
 ### Bei Schwellwert Alarm erzeugen
 
-**Funktionalität** 
+**Funktionalität**
 
 Wenn der Messwert einen definierten roten oder gelben Bereich betritt oder verlässt, wird ein Alarm erzeugt bzw. gelöscht.
 
@@ -541,7 +568,7 @@ Die Regel verwendet die folgenden Parameter:
        <col style="width: 70%;">
     </colgroup><thead>
 <tr>
-<th align="left">Schritt</th>
+<th align="left">Step</th>
 <th align="left">Feld</th>
 <th align="left">Beschreibung</th>
 </tr>
@@ -554,7 +581,7 @@ Die Regel verwendet die folgenden Parameter:
 </tr>
 <tr>
 <td align="left">2</td>
-<td align="left">Bei Schwellwertbereich</td>
+<td align="left">Bei Schwellwert</td>
 <td align="left"><strong>Fragment/Series</strong>: Fragment/Series des Messwerts. Der eingehende Messwert muss exakt die gleichen Fragment/Series-Werte haben. Wenn eine Regel im Daten-Explorer erstellt wird, sind diese Felder bereits ausgefüllt. <br> <strong>Eintrag in der Datenpunktbibliothek</strong>: Name des Eintrags in der Datenpunktbibliothek. Wird verwendet, um die Standardwerte für den roten und gelben Bereich zu ermitteln, wenn diese nicht individuell konfiguriert wurden.</td>
 </tr>
 <tr>
@@ -580,9 +607,9 @@ Die Regel führt für jeden eingehenden Messwert folgende Schritte aus:
 
 * Die Daten für den roten und gelben Bereich stammen aus:
 
-	- dem Quellobjekt (Messwert) oder
-	
-	- der Datenpunktbibliothek (Kontrollparameter).
+- dem Quellobjekt (Messwert) oder
+
+- der Datenpunktbibliothek (Kontrollparameter).
 
 Sind keine roten/gelben Bereiche definiert, werden keine Alarme ausgelöst.
 
@@ -598,9 +625,9 @@ Sind keine roten/gelben Bereiche definiert, werden keine Alarme ausgelöst.
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/reference/device-management) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 * Prüfen Sie, ob der Alarm bereits durch die nächste Messung mit Werten im grünen Bereich gelöscht wurde.
 
@@ -608,7 +635,7 @@ Sind keine roten/gelben Bereiche definiert, werden keine Alarme ausgelöst.
 
 ### Bei explizitem Schwellwert Alarm erzeugen
 
-**Funktionalität** 
+**Funktionalität**
 
 Wenn der Messwert den roten Bereich betritt oder verlässt, wird ein KRITISCHER Alarm erzeugt bzw. gelöscht.
 
@@ -634,7 +661,7 @@ Die Regel verwendet die folgenden Parameter:
        <col style="width: 70%;">
     </colgroup><thead>
 <tr>
-<th align="left">Schritt</th>
+<th align="left">Step</th>
 <th align="left">Feld</th>
 <th align="left">Beschreibung</th>
 </tr>
@@ -647,7 +674,7 @@ Die Regel verwendet die folgenden Parameter:
 </tr>
 <tr>
 <td align="left">2</td>
-<td align="left">Bei Schwellwertbereich</td>
+<td align="left">Bei Schwellwert</td>
 <td align="left"><strong>Fragment/Series</strong>: Fragment/Series des Messwerts. Der eingehende Messwert muss exakt die gleichen Fragment/Series-Werte haben. Wenn eine Regel im Daten-Explorer erstellt wird, sind diese Felder bereits ausgefüllt. <br> <strong>Minimum, Maximum</strong>: Wenn sich ein Wert im angegebenen Bereich [minimum; maximum] befindet, wird der konfigurierte Alarm ausgelöst.</td>
 </tr>
 <tr>
@@ -667,9 +694,9 @@ Die Regel verwendet die folgenden Parameter:
 
 * Stellen Sie sicher, dass der Alarm erzeugt und nicht dupliziert wurde.
 
-* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/reference/device-management) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
+* Prüfen Sie, ob sich das Gerät im [Wartungsmodus](/benutzerhandbuch/device-management-de#maintenance-mode) befindet. In diesem Fall wird das Erzeugen eines Alarms unterdrückt.
 
-* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
+* Wenn Sie eine Alarmregel erstellt haben (siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration-de#reprio-alarms)), die den Schweregrad des Alarms ändert, zeigt der Alarm einen anderen Schweregrad als möglicherweise erwartet.
 
 * Prüfen Sie, ob der Alarm bereits durch die nächste Messung mit Werten im grünen Bereich gelöscht wurde.
 

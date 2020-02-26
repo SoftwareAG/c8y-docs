@@ -10,7 +10,7 @@ Apama’s Event Processing Language covers statements, which are organized into 
 
 For further information on using Apama's Event Processing Language in Cumulocity IoT refer to [Using Apama Event Processing Language](/concepts/realtime#using-epl) below and to the [Streaming analytics guide](/apama/introduction).
 
->**Important**: Support for streaming analytics using CEL (Esper) is deprecated. All new Cumulocity subscriptions use the Apama CEP engine. While using the Esper CEP engine is still supported for older installations, this will no longer be provided for new subscriptions and support for using CEL (Esper) in Cumulocity will be terminated on 31 Dec 2020. 
+>**Important:** Support for streaming analytics using CEL (Esper) is deprecated. All new Cumulocity IoT subscriptions use the Apama CEP engine. While using the Esper CEP engine is still supported for older installations, this will no longer be provided for new subscriptions and support for using CEL (Esper) in Cumulocity IoT will be terminated on 31 Dec 2020. 
 >
 >For documentation on using the deprecated CEL functionality based on Esper, refer to the [CEL analytics guide](/event-language/introduction).
 >
@@ -19,11 +19,11 @@ For further information on using Apama's Event Processing Language in Cumulocity
 
 ### What are the benefits of using real-time processing?
 
-Cumulocity's real-time processing feature has the following benefits:
+Cumulocity IoT's real-time processing feature has the following benefits:
 
 - React instantly to events from remote sensors.
 - Develop highly interactive IoT applications.
-- Run IoT use cases directly inside Cumulocity without software development and leave the hosting and management to Cumulocity.
+- Run IoT use cases directly inside Cumulocity IoT without software development and leave the hosting and management to Cumulocity IoT.
 - Validate, normalize and derive data according to your own business rules across different device makes.
 - Trigger automated remote control actions based on events.
 - Use powerful, stream-oriented business logic, like time windows and joins.

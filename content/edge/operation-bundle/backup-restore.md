@@ -2,6 +2,8 @@
 weight: 50
 title: Backup and restore
 layout: redirect
+aliases:
+  - /edge/operation/#backup-restore
 ---
 
 ### Backup

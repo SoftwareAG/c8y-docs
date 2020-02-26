@@ -2,6 +2,8 @@
 weight: 30
 title: Connecting to the Cloud
 layout: redirect
+aliases:
+  - /edge/usage/#connecting-cloud
 ---
 
 ### Remote Device Management

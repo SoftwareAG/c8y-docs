@@ -2,6 +2,8 @@
 weight: 10
 title: Requirements
 layout: redirect
+aliases:
+  - /edge/installation/#prerequisites
 ---
 
 ### Installation requirements

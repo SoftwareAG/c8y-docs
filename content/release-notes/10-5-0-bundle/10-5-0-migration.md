@@ -14,9 +14,9 @@ Note that retention rules still apply to audit logs and will delete audit log re
 
 ### Deprecation of CEL (Esper)
 
-Software AG will terminate support for using CEL (Esper) in Cumulocity on 31 Dec 2020 following its deprecation in 2018.
+Software AG will terminate support for using CEL (Esper) in Cumulocity IoT on 31 Dec 2020 following its deprecation in 2018.
 
-Cumulocity now uses Apama to provide streaming analytics. As a result, existing customers using CEL must migrate to Apama.
+Cumulocity IoT now uses Apama to provide streaming analytics. As a result, existing customers using CEL must migrate to Apama.
 
 Apama brings many capabilities including:
 

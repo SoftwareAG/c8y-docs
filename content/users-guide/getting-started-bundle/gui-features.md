@@ -1,16 +1,18 @@
 ---
 weight: 40
-title: GUI functionalities and features
+title: UI functionalities and features
 layout: default
+aliases:
+  - /users-guide/overview/#gui-features
 ---
 
 
 
 ### <a name="screen"></a>Main screen elements
 
-The general structure common to all Cumulocity applications includes the following screen elements:
+The general structure common to all Cumulocity IoT applications includes the following screen elements:
 
-![Cumulocity application](/images/users-guide/overview-screen-elements.png)
+![Cumulocity IoT application](/images/users-guide/overview-screen-elements.png)
 
 <table>
 <col width="150">
@@ -52,17 +54,17 @@ On smaller screens, the layout is slightly different. The navigator is hidden an
 
 <img src="/images/users-guide/overview-small-screen.png" alt="Layout on small devices" style="max-width: 100%">
 
-> **Info:** Cumulocity applications provide tooltips when you hover over a particular screen element. When you use Cumulocity applications on touch devices, tooltips are shown when you touch a screen element for a longer time.
+> **Info:** Cumulocity IoT applications provide tooltips when you hover over a particular screen element. When you use Cumulocity IoT applications on touch devices, tooltips are shown when you touch a screen element for a longer time.
 
 ### <a name="app-switcher"></a>Application switcher
 
-The application switcher allows you to quickly switch between applications. Click the **Application Switcher** button at the right of the top bar to display a list of icons representing applications. 
+The application switcher allows you to quickly switch between applications. Click the **Application Switcher** button at the right of the top bar to display a list of icons representing applications.
 
 <img src="/images/users-guide/overview-application-switcher.png" alt="Application switcher" style="max-width: 100%">
 
-The application switcher shows all Cumulocity applications you currently have access to. These can be subscribed applications, either built-in or custom ones, and [own applications](/users-guide/administration#own-applications). Just click the icon for the desired application to open it as active application.
+The application switcher shows all Cumulocity IoT applications you currently have access to. These can be subscribed applications, either built-in or custom ones, and [own applications](/users-guide/administration#own-applications). Just click the icon for the desired application to open it as active application.
 
-If you are using SAG Cloud, the application switcher also shows other SAG Cloud applications at the first level, followed by the Cumulocity applications:
+If you are using SAG Cloud, the application switcher also shows other SAG Cloud applications at the first level, followed by the Cumulocity IoT applications:
 
 <img src="/images/users-guide/overview-app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 100%">
 
@@ -71,7 +73,7 @@ If you are using SAG Cloud, the application switcher also shows other SAG Cloud 
 
 #### <a name="searching"></a>Searching
 
-The Cumulocity search field provides a full-text search of the whole inventory. 
+The Cumulocity IoT search field provides a full-text search of the whole inventory.
 
 Entering multiple words separated by a blank returns all objects that match any of the words. For example, entering
 
@@ -79,17 +81,17 @@ Entering multiple words separated by a blank returns all objects that match any 
 My Demo Device
 ```
 
-will return objects containing "My", "Demo" or "Device". 
+will return objects containing "My", "Demo" or "Device".
 
 If you want to search for objects matching an exact phrase enclose it in quotation marks:
 
-```text	
+```text
 "My Demo Device"
 ```
 
 You can also exclude words by putting a hyphen before the word to search the inventory for objects containing e.g. "My" or "Demo" but not "Device":
 
-```text	
+```text
 My Demo -Device
 ```
 
@@ -112,7 +114,7 @@ my demo device
 
 Some pages offer a filtering functionality to filter objects in a list.
 
-As opposed to the search functionality, on entering filtering criteria you must not necessarily enter complete words. 
+As opposed to the search functionality, on entering filtering criteria you must not necessarily enter complete words.
 
 In many cases you can just enter any arbitrary text into a text field, even just single characters. Entering
 
@@ -132,8 +134,8 @@ The list will be reduced to the selected objects accordingly.
 
 ### Real-time behavior of the navigator
 
-In the navigator, changes are not updated in real time, i.e. new, removed or renamed devices or groups will not be updated immediately. 
+In the navigator, changes are not updated in real time, i.e. new, removed or renamed devices or groups will not be updated immediately.
 
-You will only see such changes in the navigator of the application, in which you have made the changes. For example, if you unassign a device from a group in the Device Management application you will immediately see it removed from the group in the navigator of your current application, but if you have another window open with e.g. the Cockpit application you won't see the changes. 
+You will only see such changes in the navigator of the application, in which you have made the changes. For example, if you unassign a device from a group in the Device Management application you will immediately see it removed from the group in the navigator of your current application, but if you have another window open with e.g. the Cockpit application you won't see the changes.
 
 You will only see the changes after a refresh or another request (expanding a group in the navigator for example).

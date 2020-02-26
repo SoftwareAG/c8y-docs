@@ -21,7 +21,7 @@ For your convenience, here is an overview of the contents:
 
 [Cumulocity IoT Edge](/edge/introduction) is an onsite, single-server variant of the Cumulocity IoT Core platform. It is delivered as a software appliance designed to run on industrial PC’s or local servers. This appliance can optionally include DataHub Edge, which is the Edge variant of DataHub.
 
-DataHub Edge offers the same functionality as the cloud-variant of DataHub does. You can define offloading pipelines, which regularly move data from the internal Cumulocity IoT database into a data lake. Dremio as internal engine of DataHub can access the data lake and run analytical queries against its contents, using SQL as query interface. In an Edge setup, an NAS is used as data lake.
+DataHub Edge offers the same functionality as the cloud-variant of DataHub does. You can define offloading pipelines, which regularly move data from the internal Cumulocity IoT database into a data lake. In an Edge setup, an NAS is used as data lake. Dremio, the internal engine of DataHub, can access the data lake and run analytical queries against its contents, using SQL as query interface.
 
 <img src="/images/datahub-guide/datahub-edge-overview.png" alt="Overview of DataHub Edge" style="max-width: 70%">
 

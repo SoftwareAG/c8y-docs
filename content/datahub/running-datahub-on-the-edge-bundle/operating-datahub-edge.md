@@ -53,18 +53,20 @@ Dremio is running if *OK* is returned. No response will be returned if it is not
 
 Log files are stored at */var/log/cdh*.
 
-TODO: list the CDH logs in the C8Y Edge documentation as well.
-
 | File | Usage |
 | -----   | -----   |
-| clean_history.log | log file for cleanup of job history |
-| install.log | installation log file |
+| clean_history.log | Log file for cleanup of job history |
+| install.log | Installation log file |
+
+TODO: mention those log files in Edge section as well?
 
 In order to access the logs of the DataHub and Dremio containers, you have to use Docker *logs* command. For example, to follow the logs of cdh-master you have to run:
 
 ```shell	
 docker logs -f cdh-master
 ```
+
+The containers are configured to rotate log files with rotation settings of two days and a maximum file size of 10 MB. 
 
 #### <a name="monitoring"></a>Monitoring
 Cumulocity IoT Edge uses Monit for management and monitoring of relevant processes. See section [Monitoring](/edge/operation/#monitoring) for details. The DataHub Edge processes, namely the DataHub backend and the Dremio nodes, are also monitored by Monit.
@@ -95,8 +97,8 @@ The arguments are:
 
 | Interface | Description |
 | -----   | -----   |
-| max_job_days | the number of days to keep job history (default: 7) |
-| cron_expression | the cron expression for running the cleanup job (default: '0 2 * * 0', i.e. on Sundays at 2 a.m.) |
+| max_job_days | The number of days to keep job history (default: 7) |
+| cron_expression | The cron expression for running the cleanup job (default: '0 2 * * 0', i.e. on Sundays at 2 a.m.) |
 
 Be sure to provide a proper cron expression and pass it to the configuration script in single quotes. The configuration can be verified by
 

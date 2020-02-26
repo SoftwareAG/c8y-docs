@@ -279,6 +279,10 @@ To access the apama-ctrl log files, run the command:
 |Smartrule-agent-server-apama|smartrule-agent-server-apama-gc.log<br> smartrule-agent-server-apama.log<br>smartrule.log|/var/log/smartrule/
 |cumulocity-agent|cumulocity-agent.log|/var/log/cumulocity-agent/
 
+##### DataHub log file locations
+
+See [Log files](/datahub/running-datahub-on-the-edge/#log-files) for an details on DataHub log files.
+
 #### Adjust log level
 
 This section describes how to change the log level for Cumulocity-specific applications on the backend side. It does not explain how to change log settings for standard components like databases or other operating system related services. 
@@ -400,7 +404,7 @@ The following Cumulocity information is collected:
 |Mongo command execution result|MongoDB supports commands execution, which can give the status of the MongoDB server. Currently 'ping', 'dbstats' and 'serverStatus' commands are executed on each of the MongoDB nodes (currently it is management and edge). The MongoDB commands give vital information about the MongoDB server like the db version, process-id, uptime information etc.
 |Mongo top output|The output of mongo top command is captured here
 |Thread dumps|Thread dumps of all the running java processes and mongo processes are captured. For java processes the 'jstack' command is executed to get the thread dumps. For non-java processes like MongoDB, the 'pstack' command is used. Furthermore the 'pstack' command is applied on java processes as well.
-|Log files|Archive of log files from Cumulocity, its microservices and Apama is created. In case of Cumulocity, only the 'live' logs are considered and roll-over log files are discarded.
+|Log files|Archive of log files from Cumulocity, its microservices, Apama, and DataHub (if installed) is created. In case of Cumulocity, only the 'live' logs are considered and roll-over log files are discarded.
 |Configuration files|Archive of Cumulocity configuration files from Cumulocity and its microservices is created.
 |Jstat dumps|Jstat command provides performance statistics for a given JVM. 
 

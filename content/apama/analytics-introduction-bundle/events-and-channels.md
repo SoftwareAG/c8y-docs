@@ -54,7 +54,7 @@ The Apama mapping codec can turn measurements into measurement fragments, if req
 By setting the tenant option `apama.measurementFormat` to `BOTH`, or starting the Apama correlator with the property `CUMULOCITY_MEASUREMENT_FORMAT` set to `BOTH` , you can generate listeners in EPL that will match on the contents of `MeasurementFragment` events rather than `Measurement` events. For example:
 
 ```
-on all MeasurementFragment(valueFragment = 'c8y_speed', valueSeries = 'speedX', value > SPEED_LIMIT) as mf {
+on all MeasurementFragment(type="c8y_SpeedMeasurement", valueFragment = "c8y_speed", valueSeries = "speedX", value > SPEED_LIMIT) as mf {
 }
 ```
 

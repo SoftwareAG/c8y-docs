@@ -85,32 +85,6 @@ After completion, a new child device has been added to the terminal and can now 
 
 ![Add CAN device](/images/users-guide/newcandevice.png)
 
-#### <a name="connect-opcua"></a>Connecting OPC UA servers
-
-To connect an OPC UA server to Cumulocity IoT, you need a gateway or industrial PC running the Cumulocity IoT OPC UA agent.
-
-1. Make sure that the OPC UA server is connected to the gateway or PC, i.e. directly through an Ethernet cable or through a switch.
-2. Check the network settings of the gateway and make sure that the OPC UA server is reachable from the gateway.
-3. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the gateway and switch to the  **OPCUA** tab.
-4. In the **URL** field, enter the URL of the OPC UA server as seen from the gateway.
-5. Set the username and password to access the OPC UA server.
-6. Change the transmit rate and the polling rate according to your requirements. The transmit rate is the frequency at which measurements are sent to Cumulocity IoT. The polling rate is the frequency at which the OPC UA server polls for changes. Note that not all OPC UA servers support setting a polling rate. In such cases, the OPC UA server sends data usually whenever it changes.
-7. Click **Save changes** if you made changes.
-
-**Adding child devices**
-
-1. To start communication between the gateway and the OPC UA server, click **Add OPCUA device**. An OPC UA server may host many devices as part of its object model.
-2. Enter a name for the OPC UA device.
-3. Enter the absolute **Browse path** of the OPC UA device. The browse path of the device is configured on the OPC UA server and represents the "root" of the OPC UA device in the OPC UA server object model.
-4. Select the type of the child device from the drop-down box. To add new device types, see [Configuring Fieldbus device types](#configure) below.
-5. Click **Add**.
-
-Cumulocity IoT will now send a notification to the OPC UA agent that a new device is ready to be managed. This may take a few seconds.
-
-After completion, a new child device has been added to the gateway and can now be managed. You can click on the name of the device in the table to navigate to the device.
-
-![Add OPCUA device](/images/users-guide/CloudFieldbus/fieldbus-opcua.png)
-
 #### <a name="connect-profibus"></a>Connecting Profibus devices
 
 Connecting Profibus differs slightly from the regular Plug & Play approach of Cloud Fieldbus. The gateway device acts as slave on the Profibus so it can easily be integrated into existing infrastructure. This means that Profibus data must be actively sent to the gateway though. Typically this is done by programming a PLC to actively send information to the gateway via it’s configured Profibus slave address.
@@ -152,7 +126,7 @@ If the device type of the Fieldbus device is configured to collect measurements,
 
 Data is collected according to the interval specified in the "transmit rate" property of the terminal as described above. To optimize the data traffic, data that is exactly the same as collected previously may not be sent again.
 
-![Fieldbus measurements](/images/users-guide/modbusmeasurements.png)
+![Fieldbus measurements](/images/users-guide/CloudFieldbus/modbusmeasurements.png)
 
 #### <a name="alarms"></a>Monitoring alarms
 
@@ -185,7 +159,7 @@ To use the Fieldbus Device widget, follow these steps:
 
 In the widget, the selected coils and registers are grouped into display categories as configured in the device type. The Fieldbus Device Widget updates automatically as soon as there is new data available. You do not need to click on reload.
 
-![Use the Fieldbus Device Widget](/images/users-guide/modbusstatus.png)
+![Use the Fieldbus Device Widget](/images/users-guide/CloudFieldbus/modbusstatus.png)
 
 Registers and coils that can be changed are represented by active widgets. For example, in the screenshot above, the "Master switch" coil and the "Mode" register are editable. If you click a switch, an operation to change the corresponding coil or register is sent to the terminal. Similar, if you change a value and click **Set**, an operation is created. The terminal will then carry out the configuration change on the device, as requested through the operation. While the operation is being processed, a progress indicator is shown.
 

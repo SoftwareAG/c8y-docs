@@ -406,7 +406,7 @@ Custom actions are HTTP POST requests which the gateway will send to a defined c
 
 Below there is an example of a device type that configures a custom action:
 
-![OPC UA custom action](/images/users-guide/opcua/opcua-custom-actions.png)
+![OPC UA custom action](/images/users-guide/opcua/opcua-custom-action.png)
 
 ### Data reporting
 

@@ -67,7 +67,7 @@ The Cumulocity IoT documentation on this website contains the following informat
 
 <tr>
 <td align="left">Analytics documentation</td>
-<td align="left"><a href="/predictive-analytics/introduction/">Machine Learning guide</a></td>
+<td align="left"><a href="/predictive-analytics/introduction/">Machine learning guide</a></td>
 <td align="left">Detailed information on the machine learning capabilities in the Cumulocity IoT platform.</td>
 </tr>
 

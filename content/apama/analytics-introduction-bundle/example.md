@@ -17,12 +17,12 @@ The resulting \*.mon file can look like this:
 using com.apama.cumulocity.Alarm;
 using com.apama.cumulocity.MeasurementFragment;
  
-monitor ForwardMeasurementsFragments {
+monitor TriggerAlarmForSpeedBreach {
     constant float SPEED_LIMIT := 30.0;
     action onload() {
         monitor.subscribe(MeasurementFragment.SUBSCRIBE_CHANNEL);
         // Everytime a measurement fragment with the specific details of the match criteria is triggered then we should raise an alarm
-        on all MeasurementFragment(type="c8y_SpeedMeasurement", valueFragment = 'c8y_speed', valueSeries = 'speedX', value > SPEED_LIMIT) as mf {
+        on all MeasurementFragment(type="c8y_SpeedMeasurement", valueFragment = "c8y_speed", valueSeries = "speedX", value > SPEED_LIMIT) as mf {
             send Alarm("", "c8y_SpeedAlarm", mf.source, currentTime,
                         "Speed limit breached", "ACTIVE", "CRITICAL", 1,
                         new dictionary<string,any>) to Alarm.SEND_CHANNEL;

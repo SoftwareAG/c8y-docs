@@ -179,7 +179,7 @@ Use the toggle to temporarily stop forwarding data into your tenant.
 
 You can now navigate to the Device Management application or the Cockpit application. You will find a new "virtual group" with a specific icon (see the screenshot below) showing the forwarded devices. The group will have the same name as your subscription. Devices are "lazily" created on the destination side whenever they send data for the first time after setting up an active subscription.
 
-![Data broker group in cockpit app](/images/users-guide/data-broker-group-created.PNG)
+![Data broker group in cockpit app](/images/users-guide/enterprise-tenant/et-data-broker-group-created.png)
 
 #### To delete a data connector
 

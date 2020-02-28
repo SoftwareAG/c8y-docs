@@ -179,6 +179,9 @@ Verwenden Sie den Umschalter, um zeitweilig das Weiterleiten von Daten in Ihren 
 
 Navigieren Sie nun zur Device Management- oder Cockpit-Anwendung. Dort finden Sie eine neue "virtuelle Gruppe" mit einem speziellen Symbol (siehe Abbildung unten), die die weitergeleiteten Geräte anzeigt. Diese Gruppe hat denselben Namen wie das Abonnement. Geräte werden auf der Empfängerseite verzögert erstellt, sobald sie, nach Einrichten eines aktiven Abonnements, das erste mal Daten senden.
 
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-data-broker-group-created.png" alt="Data subscriptions">
+
+
 #### So löschen Sie einen Datenkonnektor
 
 Klicken Sie auf das Menüsymbol und anschließend auf **Löschen**, um die Datenweiterleitung zu stoppen und den Datenkonnektor zu löschen.

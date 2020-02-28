@@ -111,6 +111,13 @@ In this case the following claim will match the condition:
 
 As you can see, there is an option to verify if a value exists in a list via the "in" operator. Values can also be embedded in other objects. In this case a dot in the key implies looking into an embedded object.
 
+Assignment of several roles
+
+If the user’s realm_access.roles array contains several roles, e.g. both administrators and operators, the user will get admin and business role. 
+Roles from each mapping that returns true are assigned the user.
+
+New roles are added to the user from every matching access mapping, if one access mapping assign role "admin", the second one assign role "business" and both meet defined condition, then the user will be granted access to the global roles “business" and "admin".
+
 When a user logs in with an access token, the username can be derived from a JWT claim. The claim name can be configured in the **User ID configuration** window.
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-3.png)

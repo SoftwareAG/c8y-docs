@@ -168,7 +168,7 @@ Klicken Sie **Alarm/Ereignis** hinzufügen in der Karte **Alarm/Ereignis**, um e
 
 Im folgenden Fenster können Sie einen Alarm oder ein Ereignis aus der Auswahlliste auswählen. Klicken Sie **Hinzufügen**, um Ihre Auswahl hinzuzufügen.
 
-![Data explorer add events](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-events.png)
+![Data explorer add events](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-eventsadd.png)
 
 Klicken Sie auf das Pfeilsymbol, um ein Ereignis zu erweitern.
 

@@ -445,7 +445,7 @@ The API provides the following services:
 * ManagedObject - InventoryApi
 * Measurement - MeasurementApi
 
-For further information, refer to the [Device SDK guide](https://cumulocity.com/device-sdk/).
+For further information, refer to the [Device SDK guide](https://cumulocity.com/guides/device-sdk/).
 
 **C# MQTT SDK**
 

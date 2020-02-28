@@ -6,15 +6,15 @@ weight: 20
 
  **Version:** 10.4.11.0 | **Packages:** @c8y/client and @c8y/ngx-components
 
-In some situations, the UI needs data from a custom microservice. While you can always read that data with any HTTP client (e.g. the `HttpModule` from Angular) you might want to have authentication out of the box. 
+In some situations, the UI needs data from a custom microservice. While you can always read that data with any HTTP client (e.g. the `HttpModule` from Angular) you might want to have authentication out of the box.
 
 This recipe shows how to access custom endpoints with the `@c8y/client` and get authenticated automatically. But first, it will take a deeper look at the basics to explain how the client works in Angular applications.
 
 ### Basic: How the client works
 
-Let's first clarify how the `@c8y/client` (short just client) works and what its benefits are. 
+Let's first clarify how the `@c8y/client` (short just client) works and what its benefits are.
 
-The client handles HTTP requests from the browser (or if desire from node.js) to the platform. As most APIs of the platform are secured it allows to set the authentication to use. 
+The client handles HTTP requests from the browser (or if desire from node.js) to the platform. As most APIs of the platform are secured it allows to set the authentication to use.
 
 Currently, there are two possible authentication methods:
 
@@ -27,7 +27,7 @@ When you set the authentication method on a new client instance you can define w
 const client = new Client(new BasicAuth({
   user: 'admin',
   password: 'password',
-  tenant: 'acme' 
+  tenant: 'acme'
 }), 'https://acme.cumulocity.com');
 try {
  const { data, paging, res } = await client.inventory.list();
@@ -40,13 +40,13 @@ try {
 
 Each of the pre-configured endpoints returns an object containing the `data`, an optional `paging` object and the `res` object. Last is the response given by [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), a next-generation XHR API which is implemented in all modern browsers (and can be polyfilled for IE11).
 
-In conclusion, the `@c8y/client` is a helper library for JavaScript that abstracts fetch to allow easy authentication and direct access on the common platform APIs. 
+In conclusion, the `@c8y/client` is a helper library for JavaScript that abstracts fetch to allow easy authentication and direct access on the common platform APIs.
 
 In the next section, we will show how you can easily use that concept in an Angular app with the help of the Dependency Injection (DI) model of Angular.
 
 ### Basic: Interaction between @c8y/client and an Angular application
 
-`@c8y/ngx-components` is an Angular component that allows to spin up an application. It is used in our basic apps like Cockpit, Administration and Device Management to display for example the login screen. When you spin up a new Angular-based application the `@c8y/client` and the `@c8y/ngx-components` are always included. Moreover the ngx-components have a sub-package which is called `@c8y/ngx-components/api` which exports a `DataModule`. That module already imports all common endpoint services, so that you can just use the standard dependency injection of Angular to access data. 
+`@c8y/ngx-components` is an Angular component that allows to spin up an application. It is used in our basic apps like Cockpit, Administration and Device Management to display for example the login screen. When you spin up a new Angular-based application the `@c8y/client` and the `@c8y/ngx-components` are always included. Moreover the ngx-components have a sub-package which is called `@c8y/ngx-components/api` which exports a `DataModule`. That module already imports all common endpoint services, so that you can just use the standard dependency injection of Angular to access data.
 
 The example above in a Angular application would look like this:
 
@@ -85,7 +85,7 @@ c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0
 Next, you need to install all dependencies. Switch to the new folder and run `npm install`.
 
 > **Tip:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the app you want to scaffold, e.g.:
-> 
+>
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0` will scaffold an app with the version `10.4.11.0`
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an app with the latest official release. Same as if used without the `-a` flag
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an app with the latest beta release.
@@ -115,7 +115,7 @@ export class AcmeComponent implements OnInit {
 ```
 
 1. We inject the `FetchClient` which is the `fetch` abstraction used by the client.
-2. We request the data via `fetchClient.fetch`. The function is identical to the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) (as a second parameter it accepts for example the method or data) except that it adds the authentication to the platform. 
+2. We request the data via `fetchClient.fetch`. The function is identical to the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) (as a second parameter it accepts for example the method or data) except that it adds the authentication to the platform.
 3. We parse the data and set it onto our controller to display it in the template.
 
 Next, we need to add a route to our application where we can show this component. The following code does this in the `app.module.ts`, without going into many details, as this is already explained in other recipes:
@@ -167,7 +167,7 @@ export class AppModule extends HybridAppModule {
 
 ### 3. Run and verify the application
 
-When you run the application with `c8cli server` and point your browser to the path defined in the module `http://localhost:9000/apps/cockpit/#/acme`, you should see the following:
+When you run the application with `c8ycli server` and point your browser to the path defined in the module `http://localhost:9000/apps/cockpit/#/acme`, you should see the following:
 
 ![Custom client service](/images/web-sdk/custom-client-service.png)
 
@@ -175,13 +175,13 @@ The request fails as we don't have a microservice with this context path running
 
 ### 4. Bonus: Write a Service.ts abstraction
 
-In the above example, we have just used the underlying `fetch` abstraction to directly access a custom microservice. You might want to get the same simplicity as the common service of the client. It handles the URL and the JSON parsing for you internally. To achieve this you can extend the `Service` class returned by the `@c8y/client` and override the necessary methods or properties. 
+In the above example, we have just used the underlying `fetch` abstraction to directly access a custom microservice. You might want to get the same simplicity as the common service of the client. It handles the URL and the JSON parsing for you internally. To achieve this you can extend the `Service` class returned by the `@c8y/client` and override the necessary methods or properties.
 
 Let's do this for the `acme` microservice example by creating a new file called `acme.service.ts`:
 
 ```js
 import { Injectable } from '@angular/core';
-import { Service, FetchClient } from '@c8y/client'; 
+import { Service, FetchClient } from '@c8y/client';
 
 @Injectable({
   providedIn: 'root'

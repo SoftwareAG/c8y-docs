@@ -164,13 +164,11 @@ In this case, both data points share the same y-axis. This y-axis only shows the
 
 In addition to data points you can also add alarms or events to the data explorer.
 
-![Data explorer events](/images/users-guide/cockpit/cockpit-dataexplorer-events.png)
-
 In the **Alarms/ Events** card, click **Add alarm/ event** to add an alarm or event.
 
-![Data explorer add events](/images/users-guide/cockpit/cockpit-dataexplorer-eventsadd.png)
-
 In the upcoming dialog, you can select an alarm or event from the list of recent alarms and events. Click **Add**, to add your selection.
+
+![Data explorer events](/images/users-guide/cockpit/cockpit-dataexplorer-events.png)
 
 Expand an event, to modify its properties.
 

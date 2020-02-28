@@ -468,7 +468,7 @@ The diagnostic utility can be customized using a properties file located under "
 
 Following are the available keys used in the configuration file:
 
-|<div style="width:250px">Information</div>|Description|
+|<div style="width:300px">Information</div>|Description|
 |:----------------|:---|
 |notify.support.by.email|Allows users to select whether they want to receive the diagnostic report via email
 |support.email|Email ID to be used by the utility while sending support email
@@ -476,8 +476,7 @@ Following are the available keys used in the configuration file:
 |smtp.server.port|SMTP port to be used by the utility while sending support email
 |smtp.username|SMTP username to be used by the utility while sending support email
 |smtp.password|SMTP password to be used by the utility while sending support email
-|log.backup|Components for which log backup has to be done
-|configuration.backup|Components for which configuration backup has to be done
+|components.for.log.backup|Components for which the log backup has to be performed
+|components.for.configuration.backup|Components for which the configuration backup has to be performed
 |report.directory|Report directory where the diagnostic reports have to be placed
-|{component-name}.log.path|Absolute log path of components who do not use /var/log as their logging directory
-
+|{component-name}.log.path|Absolute log path of the components under "component.for.log.backup" which do not use /var/log as the logging directory

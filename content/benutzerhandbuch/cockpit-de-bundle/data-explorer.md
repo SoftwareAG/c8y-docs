@@ -165,11 +165,9 @@ In diesem Fall teilen sich die Datenpunkte eine Y-Achse. Diese Y-Achse zeigt nur
 
 Neben Datenpunkten können Sie auch Alarme oder Ereignisse zum Daten-Explorer hinzufügen.
 
-![Data explorer events](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-events.png)
-
 Klicken Sie **Alarm/Ereignis** hinzufügen in der Karte **Alarm/Ereignis**, um einen Alarm oder ein Ereignis hinzuzufügen.
 
-![Data explorer add events](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-eventsadd.png)
+![Data explorer events](/images/benutzerhandbuch/cockpit/cockpit-dataexplorer-events.png)
 
 Im folgenden Fenster können Sie einen Alarm oder ein Ereignis aus der Auswahlliste auswählen. Klicken Sie **Hinzufügen**, um Ihre Auswahl hinzuzufügen.
 

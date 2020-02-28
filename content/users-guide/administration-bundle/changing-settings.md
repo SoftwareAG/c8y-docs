@@ -245,7 +245,7 @@ You may choose one of the following options:
 	 - **Enforce TOTP two-factor authentication on all users**: When enabled it will force all users to setup their TFA on login. Otherwise each individual user can choose to activate it or not.
    - **Limit token validity for**: lifetime of each session in minutes.  When the session expires the user has to re-authenticate.
 
-	> **Info:** This strategy is only available together with 'OAuth Internal'. Initially this feature will only be made available to some tenants so it may not be visible on the UI. If this applies to you and you are using a version higher than 1005.0.0, please contact support.
+	> **Info:** This strategy is only available together with 'OAuth Internal'. 
 
 Click **Save TFA settings** to apply your settings.
 

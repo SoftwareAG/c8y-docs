@@ -24,7 +24,7 @@ As you can see, Jasper currently is the most feature-rich provider.
 
 The following description is primarily based on Jasper, but the same configuration and usage also applies to the other providers. If there are any differences, they will be stated explicitly.
 
-<img src="/images/users-guide/jasperarchitecture.png" alt="Jasper architecture">
+<img src="/images/users-guide/SIM-connectivity/SIM-connectivity-jasperarchitecture.png" alt="Jasper architecture">
 
 The following sections describe:
 
@@ -51,7 +51,7 @@ To create a user in Jasper Control Center perform the following steps:
 1. If you want to be able to activate and deactivate SIM cards from Cumulocity IoT, or to send SMS from Cumulocity IoT, use the role ACCOUNTUSER. Otherwise, use the role ACCOUNTREADONLY.
 1. Click **OK** to create the user, then enter your admin password and click **OK** again.
 
-![Jasper user management](/images/users-guide/jasperadmin.png)
+![Jasper user management](/images/users-guide/SIM-connectivity/SIM-connectivity-jasperadmin.png)
 
 The user is now created but does not have a password yet. Follow the instructions emailed to you by Control Center to set a password.
 
@@ -128,7 +128,7 @@ The **SMS** section shows the text messages sent to the device and received from
 
 Provided you have ADMIN permission for Connectivity, you can also send text messages to the device by entering the text and clicking **Send SMS**.
 
-![SMS section](/images/users-guide/jaspersms.png)
+![SMS section](/images/users-guide/SIM-connectivity/SIM-connectivity-jaspersms.png)
 
 The **Sessions** section shows the log of data sessions carried out by the device. It lists when the session started, how long it took and how much data traffic was consumed.
 
@@ -136,7 +136,7 @@ The **Sessions** section shows the log of data sessions carried out by the devic
 
 The **Audit logs** section lists all changes to the SIM card and its tariff. It shows the type of change, old and new values when the change was carried out by whom, and if it was successful.
 
-![Audit logs section](/images/users-guide/jasperaudits.png)
+![Audit logs section](/images/users-guide/SIM-connectivity/SIM-connectivity-jasperaudits.png)
 
 The **Connectivity** tab does not update in real-time. To show current data, click the **Reload** in the top menu bar.
 

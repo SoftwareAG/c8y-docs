@@ -479,4 +479,4 @@ Following are the available keys used in the configuration file:
 |components.for.log.backup|Components for which the log backup has to be performed
 |components.for.configuration.backup|Components for which the configuration backup has to be performed
 |report.directory|Report directory where the diagnostic reports have to be placed
-|{component-name}.log.path|Absolute log path of the components under component.for.log.backup which do not use /var/log as the logging directory
+|{component-name}.log.path|Absolute log path of the components under "component.for.log.backup" which do not use /var/log as the logging directory

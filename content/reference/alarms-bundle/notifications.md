@@ -44,4 +44,4 @@ Example Response:
       }
     ]
 
-Required role: ROLE\_ALARMS\_READ
+Required role: ROLE\_ALARM\_READ

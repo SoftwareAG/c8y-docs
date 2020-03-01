@@ -6,7 +6,7 @@ aliases:
   - /users-guide/overview/#user-settings
 ---
 
-Clicking the User button at the top right will open a menu which provides access to various actions or information.
+Clicking the **User** button at the top right will open a menu which provides access to various actions or information.
 
 <img src="/images/users-guide/getting-started/getting-started-user-account-menu.png" alt="User account menu"  style="max-width: 60%">
 

@@ -32,7 +32,7 @@ To connect a Modbus/RTU device:
 4. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Modbus** tab.
 5. Change the communication settings shown in the section **Serial communication** to match the settings on the bus, if needed.
 6. Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency where measurements are sent to Cumulocity IoT.
-7. Click **Save changes** if you made changes. <br> ![Add Modbus device](/images/users-guide/cloud-fieldbus/fieldbus-newmodbus.png)<br>
+7. Click **Save changes** if you made changes. <br> ![Add Modbus device](/images/users-guide/cloud-fieldbus/fieldbus-new-modbus.png)<br>
 8. To start communication between the terminal and the Modbus device, click **Add new device**.
 9. Enter a name for the device and select the type of the device from the drop-down field. To add new device types, see [Configuring Fieldbus device types](#configure) below. Set the Modbus address of the connected device.
 10. Click **Add**. Cumulocity IoT will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.
@@ -58,7 +58,7 @@ To connect a Modbus/TCP device:
 
 Cumulocity IoT will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.
 
-![Add Modbus device](/images/users-guide/cloud-fieldbus/fieldbus-newtcpmodbus.png)
+![Add Modbus device](/images/users-guide/cloud-fieldbus/fieldbus-new-tcpmodbus.png)
 
 > We assume that all Modbus/TCP communication uses the standard Modbus/TCP port 502. On the NTC-6200, the port to be used can be configured through the variable "service.cumulocity.plugin.lua__modbus.port" using, for example, Device Shell or the local web user interface of the device.
 
@@ -83,7 +83,7 @@ Cumulocity IoT will now send a notification to the Fieldbus terminal that a new 
 
 After completion, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the table to navigate to the device. If you have not yet added Fieldbus devices to the terminal, you may have to reload your browser window to make the "Child Devices" tab visible.
 
-![Add CAN device](/images/users-guide/cloud-fieldbus/fieldbus-newcandevice.png)
+![Add CAN device](/images/users-guide/cloud-fieldbus/fieldbus-new-candevice.png)
 
 #### <a name="connect-profibus"></a>Connecting Profibus devices
 
@@ -281,13 +281,13 @@ There are two ways to create a new device type. Either manually from scratch via
 
 Navigate to the **Device database** page and click **New**. The following window will open:
 
-![New device type](/images/users-guide/cloud-fieldbus/fieldbus-newtype.png)
+![New device type](/images/users-guide/cloud-fieldbus/fieldbus-new-type.png)
 
 Select “CANopen” as fieldbus type and enter a name for your device type. Specific to CANopen is the **CANopen device type** field which accepts a hex number.
 
 In the **Variables** section, you determine the CANopen variables. Variables inside the “Object Dictionary”(OD) of the CANopen device can be accessed later by adding the variables to the device type definition. Via the **Add** button at the right of the **Variables** section, new variables can be configured.
 
-![New variable](/images/users-guide/cloud-fieldbus/fieldbus-newvariable.png)
+![New variable](/images/users-guide/cloud-fieldbus/fieldbus-new-variable.png)
 
 The following fields can be observed:
 

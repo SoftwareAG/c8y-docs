@@ -6,7 +6,11 @@ aliases:
   - /users-guide/overview/#accessing-cumulocity-platform
 ---
 
-You access the Cumulocity IoT platform via a web browser. Our products have been tested with the following desktop web browsers:
+You access the Cumulocity IoT platform via a web browser. 
+
+### Supported browsers
+
+Our products have been tested with the following desktop web browsers:
 
 * Edge Browser
 * Internet Explorer (latest version)
@@ -20,8 +24,13 @@ You may also use recent smartphone and tablet web browsers. We have tested our p
 * Chrome on Android (latest version) on Galaxy smartphones and tablets
 * Safari on iOS (latest version) on Apple iPhone and iPad
 
->**Info:** Cumulocity IoT on mobile devices may be constrained by the memory and the processing power available on the devices. For example, loading graphs with large amounts of data points may make the mobile device unresponsive.  
-Using the private mode on browsers may not work.
+>**Info:** Cumulocity IoT on mobile devices shows some limitations:
+>
+* The usage may be constrained by the memory and the processing power available on the devices. For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
+* Using the private mode on browsers may not work.
+* [Apama Analytics Builder](/apama/overview-analytics/#analytics-builder) (an optional component) does not support mobile/ touch devices.
+
+### URL
 
 To access the applications for your Cumulocity IoT tenant, use the following URL:
 
@@ -29,11 +38,11 @@ To access the applications for your Cumulocity IoT tenant, use the following URL
 https://<tenant-domain>.cumulocity.com/
 ```
 
-This will direct you to the login page of your default application. You may review [Tenants > Tenant ID and tenant domain](/reference/tenants/#a-name-tenant-id-and-domain-a-tenant-id-and-tenant-domain) in the **Reference** guide to get a better understanding between tenant ID and tenant domain.
-
-> **Important:** Make sure that the address bar of your browser shows a lock icon. The lock icon indicates that you are using a secure connection and that you are indeed connected to the Cumulocity IoT platform.
+This will direct you to the login page of your default application. See [Tenants > Tenant ID and tenant domain](/reference/tenants/#a-name-tenant-id-and-domain-a-tenant-id-and-tenant-domain) in the **Reference** guide for further details on tenant ID and tenant domain.
 
 >**Info:** The above URL is only valid for Cumulocity IoT Standard Tenant subscribers. For Enterprise Tenant deployments of Cumulocity IoT, the URL is specific to your organization.
+
+> **Important:** Make sure that the address bar of your browser shows a lock icon. The lock icon indicates that you are using a secure connection and that you are indeed connected to the Cumulocity IoT platform.
 
 ### <a name="login"></a>To log into the Cumulocity IoT platform
 

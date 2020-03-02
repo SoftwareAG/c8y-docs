@@ -312,4 +312,4 @@ Clicking a row expands it and displays further details on the event (as type and
 
 Since devices may send large amounts of event data, you can filter the data to be displayed by date.
 
-Select a start date and an end date from the fields in the top menu bar and click the **Filter** button to apply the filter. Click the **Clear** button to clear the filter again.
+Select a start date and an end date from the fields in the top menu bar and click **Apply** to apply the filter. Click **Clear** to clear the filter again.

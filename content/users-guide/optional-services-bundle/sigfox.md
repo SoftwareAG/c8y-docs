@@ -14,7 +14,7 @@ Cumulocity IoT can interface with Sigfox devices through the Sigfox Cloud. You c
 
 The following illustration grants you a quick overview of the Cumulocity IoT Sigfox integration:
 
-![Cumulocity IoT Sigfox integration](/images/users-guide/sigfox/cumulocity-sigfox-integration.png)
+![Cumulocity IoT Sigfox integration](/images/users-guide/sigfox/sigfox-cumulocity-integration.png)
 
 The following sections describe how to:
 
@@ -47,7 +47,7 @@ The group name is not constrained. "Cumulocity" is used as a sample group name t
 
 First, enter into your Sigfox Cloud account and create a new user. Add the user to the group and select the “Customer [R]” and “Device Manager [W]” profiles.
 
-![New user](/images/users-guide/sigfox/newuser.png)
+![New user](/images/users-guide/sigfox/sigfox-newuser.png)
 
 #### Step 2
 
@@ -56,7 +56,7 @@ After creating an “Associated user” with the proper group and profiles navig
 - Customer [R]
 - Device Manager [W]
 
-![API access page](/images/users-guide/sigfox/api-access.png)
+![API access page](/images/users-guide/sigfox/sigfox-api-access.png)
 
 #### Step 3
 
@@ -70,7 +70,7 @@ The following information has to be provided:
 
 > **Info:** The group name in the screenshot below is only an example. It does  not necessarily have to be "Cumulocity".
 
-![API access page](/images/users-guide/sigfox/parentgroupid.png)
+![API access page](/images/users-guide/sigfox/sigfox-parentgroupid.png)
 
 ![API access page](/images/users-guide/sigfox/sigfox-connectivity.png)
 

@@ -23,7 +23,7 @@ Cumulocity IoT uses the URL in the ["Host" header](http://en.wikipedia.org/wiki/
 
 	<<tenant ID>>/<<user name>>:<<password>>
 
-Typically, the tenant ID corresponds to the first part of the URL that you are using to access Cumulocity IoT, e.g. if you use "mytenant.cumulocity.com" as URL, the tenant ID will be "mytenant".
+For details on the tenant ID, refer to [Tenants > Tenant ID and tenant domain](/reference/tenants/#tenant-id-and-domain).
 
 Cumulocity IoT supports two factor authentication. If it is enabled, the two factor authentication token is sent in header:
 

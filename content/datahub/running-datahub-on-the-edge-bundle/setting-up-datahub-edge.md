@@ -51,29 +51,7 @@ The containers are configured to store their application state on the data disk 
 * **/cdh-console/db**: the state of the DataHub Edge backend
 * **/cdh-server/datalake**: the data lake folder
 
->**Warning**: You must not modify the contents of these folders as this will corrupt your installation.
-
-### Configuration
-
-TODO: keep this section or not?
-
-DataHub Edge is automatically configured so that it can operate seamlessly on your Cumulocity IoT Edge instance. In some cases, it might be necessary to change the default configuration of DataHub Edge.
-
-TODO: elaborate on...?
-- Data disk size
-- Container settings: Dremio container limited to 2 CPUs
-- Dremio settings: some are online configurable, others require to change the Dremio properties (dremio-env file)
-- CDH settings: env variables of Docker container
-
-These adaptations have to be done before running the install script. If you want to modify an already running installation, you have to stop the containers, change the settings, and restart the containers.
-
-TODO: describe an uninstall?
-
-### Upgrading an existing installation
-
-If you want to upgrade an existing installation, you have to run the install script of the new version. During installation the data folders will be kept, while the DataHub Edge components are upgraded. During this process DataHub will be temporarily offline.
-
-TODO: do we really want to keep the state? what about breaking changes? parameterize that step...?
+>**Warning**: You must not modify the contents of these folders as this may corrupt your installation.
 
 ### Accessing DataHub Edge
 
@@ -81,13 +59,13 @@ The different DataHub Edge interfaces can be accessed in the same way as in a cl
 
 | Interface | Description |
 | -----   | -----   |
-| DataHub Edge UI | The UI can be accessed in the **application switcher** after you have logged into the Cumulocity IoT Edge UI. Alternatively you can access it directly under *https://<edge_domain_name>/apps/datahub-ui*, which requires a login as well. |
-| Dremio UI | On the DataHub Edge home page you will find a link to the Dremio UI. Alternatively you can access it directly under *http://datahub.<edge_domain_name>* or *https://datahub.<edge_domain_name>*, depending on whether TLS is used or not. You can log in as *admin* using password *datahub4edge@customer!*. |
+| DataHub Edge UI | The UI can be accessed in the **application switcher** after you have logged into the Cumulocity IoT Edge UI. Alternatively you can access it directly under *http://<edge_domain_name>/apps/datahub-ui* or *https://<edge_domain_name>/apps/datahub-ui*, depending on whether TLS is used or not. A login is required as well. |
+| Dremio UI | On the DataHub Edge home page you will find a link to the Dremio UI. Alternatively you can access it directly under *http://datahub.<edge_domain_name>* or *https://datahub.<edge_domain_name>*, depending on whether TLS is used or not. You can log in as *admin* using password *'datahub4edge@customer!'*. |
 | DataHub JDBC/ODBC | You find the connection settings for JDBC/ODBC in the DataHub Edge UI on the **Home** page. |
 | DataHub REST API | The path of the microservice which hosts the API is *https://<edge_domain_name>/service/datahub*. |
 | Dremio REST API | The Dremio URL to run REST API requests against is either *http://datahub.<edge_domain_name>* or *https://datahub.<edge_domain_name>*, depending on whether TLS is used or not. |
 
-> **Info**: For JDBC/ODBC you have to configure Cumulocity IoT Edge so that port 31010 can be accessed from the host system. For instructions on port forwarding see section "Setting up port forwarding" under [Setting up the environment](/edge/installation/#setting-up-the-environment). TODO: is that enough?
+> **Info**: For JDBC/ODBC you have to configure Cumulocity IoT Edge so that port 31010 can be accessed from the host system. For instructions on port forwarding see section "Setting up port forwarding" under [Setting up the environment](/edge/installation/#setting-up-the-environment).
 
 ### Defining DataHub permissions and roles
 

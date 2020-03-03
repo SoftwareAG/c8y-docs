@@ -22,7 +22,7 @@ If you still need to contact SAG support, include the output of the diagnostics 
 
 ##### Check DataHub Edge backend status
 
-You can check the status of the backend in the Administration page of the DataHub UI. Alternatively you can query the *isalive* endpoint:
+You can check the status of the backend in the Administration page of the DataHub UI. Alternatively you can query the *isalive* endpoint, which should produce an output similar to:
 
 ```shell	
 curl --user admin:<your_password> https://<edge_domain_name>/service/datahub/isalive
@@ -44,7 +44,7 @@ If the backend cannot be reached, you will get an error response.
 You can check the status of Dremio using the *server_status* endpoint:
 
 ```shell	
-curl http://datahub.<edge_domain_name>:9047/apiv2/server_status
+curl http://datahub.<edge_domain_name>/apiv2/server_status
 "OK"
 ```
 Dremio is running if *OK* is returned. No response will be returned if it is not running or inaccessible.
@@ -58,12 +58,16 @@ Log files are stored at */var/log/cdh*.
 | clean_history.log | Log file for cleanup of job history |
 | install.log | Installation log file |
 
-TODO: mention those log files in Edge section as well?
-
-In order to access the logs of the DataHub and Dremio containers, you have to use Docker *logs* command. For example, to follow the logs of cdh-master you have to run:
+In order to access the logs of the DataHub and Dremio containers, you have to use Docker *logs* command. To follow the logs of cdh-master you have to run:
 
 ```shell	
 docker logs -f cdh-master
+```
+
+ To follow the logs of cdh-executor you have to run:
+
+```shell	
+docker logs -f cdh-executor
 ```
 
 The containers are configured to rotate log files with rotation settings of two days and a maximum file size of 10 MB. 
@@ -110,6 +114,10 @@ crontab -l
 
 The data lake contents are not automatically purged as the main purpose of DataHub is to maintain a history of data. However, if disk space is critical and cannot be freed otherwise, parts of the data lake contents need to be deleted.
 
-Browse to the data lake folder **/opt/mongodb/cdh-server/datalake**. The data within the data lake is organized hierarchically. Delete the temporal folders you deem adequate to be deleted.
+Browse to the data lake folder **/opt/mongodb/cdh-server/datalake**. The data within the data lake is organized hierarchically. Delete the temporal folders you deem adequate to be deleted. After that you need to run the following query in Dremio:
+
+```
+ALTER PDS <deleted_folder_path> REFRESH METADATA FORCE UPDATE
+```
 
 >**Warning**: Data being deleted from the data lake cannot be recovered anymore.

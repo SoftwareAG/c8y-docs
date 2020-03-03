@@ -19,9 +19,9 @@ For your convenience, here is an overview of the contents:
 
 ### DataHub Edge at a glance
 
-[Cumulocity IoT Edge](/edge/introduction) is an onsite, single-server variant of the Cumulocity IoT Core platform. It is delivered as a software appliance designed to run on industrial PC’s or local servers. This appliance can optionally include DataHub Edge, which is the Edge variant of DataHub.
+[Cumulocity IoT Edge](/edge/introduction) is an onsite, single-server variant of the Cumulocity IoT Core platform. It is delivered as a software appliance designed to run on industrial PC’s or local servers. DataHub is available as an addon to Cumulocity IoT Edge.
 
-DataHub Edge offers the same functionality as the cloud-variant of DataHub does. You can define offloading pipelines, which regularly move data from the internal Cumulocity IoT database into a data lake. In an Edge setup, an NAS is used as data lake. Dremio, the internal engine of DataHub, can access the data lake and run analytical queries against its contents, using SQL as query interface.
+DataHub Edge offers the same functionality as the cloud-variant of DataHub does, but stores the data locally. You can define offloading pipelines, which regularly move data from the internal Cumulocity IoT database into a data lake. In an Edge setup, an NAS is used as data lake. Dremio, the internal engine of DataHub, can access the data lake and run analytical queries against its contents, using SQL as query interface.
 
 <img src="/images/datahub-guide/datahub-edge-overview.png" alt="Overview of DataHub Edge" style="max-width: 70%">
 
@@ -38,9 +38,9 @@ DataHub Edge uses the same software as DataHub does, though in the following asp
 | Area | DataHub Edge | DataHub |
 | -----   | -----   | -----   |
 | High Availability | Depending on the underlying virtualization technology | Depending on the cloud deployment setup |
-| Vertical scalability | Yes | TODO: Yes |
+| Vertical scalability | Yes | Yes |
 | Horizontal scalability | No | Yes |
-| Upgrades with no downtime | No | TODO: No |
+| Upgrades with no downtime | No | No |
 | Root access | No | Yes, if customer is hosting |
 | Installation | Offline | Online |
 | Dremio cluster setup | 1 master, 1 executor | Minimum 1 master, 1 executor |

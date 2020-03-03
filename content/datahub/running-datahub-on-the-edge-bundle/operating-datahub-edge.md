@@ -47,7 +47,7 @@ You can check the status of Dremio using the *server_status* endpoint:
 curl http://datahub.<edge_domain_name>:9047/apiv2/server_status
 "OK"
 ```
-Dremio is running if *OK* is returned. No response will be returned if it is not running or accessible.
+Dremio is running if *OK* is returned. No response will be returned if it is not running or inaccessible.
 
 #### <a name="log-files"></a>Log files
 

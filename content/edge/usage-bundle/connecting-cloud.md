@@ -35,7 +35,51 @@ Once the device is connected, the device status changes to **Pending acceptance*
 
 The Cumulocity Cloud Remote Access microservice allows you to remotely access the Edge device through a web browser. The remote Edge device is represented as a device in the Device Management application of Cumulocity. For more information about remote access, see [Cloud Remote Access](/guides/users-guide/optional-services/#cloud-remote-access).
 
->**Info**: Currently, only the SSH protocol is supported.
+### Using VNC server to access the Edge device from the Cumulocity tenant
+
+You can access the Edge device from the Cumulocity tenant by installing the VNC components on your Edge device.
+
+**Info:** Ensure that you have registered your Edge device with the Cumulocity tenant.
+
+#### Step 1: Installing the VNC components:
+
+1. Browse to the folder */opt/c8y/utilities*. 
+
+	` [admin@server ~]$ cd /opt/c8y/utilities`
+
+2. Run the script *vnc-setup.sh*.
+
+	` [admin@server ~]$ sudo ./vnc-setup.sh`
+
+The *vnc-setup.sh* script installs the VNC components. After installing the VNC components, you must run the *vnc-user-setup.sh* script.
+
+#### Step 2: Running the VNC user setup script
+
+The VNC user setup script enables the users to use VNC components and set a VNC password. Also, the VNC user setup script creates the *vnc-display-mapping* file that contains the list of users and ports allocated for the users.
+ 
+1. Run the script *vnc-user-setup.sh*.
+
+	` [admin@server ~]$ /opt/c8y/utilities/vnc-user-setup.sh`
+
+2. Provide and verify the password.
+
+3. Select **Y** or **N** to enter a view-only password.
+
+Record the allocated port number. This port number will be used to connect to the VNC server on your Edge device.
+
+**Info:** You can also get the allocated port number from */opt/c8y/utilities/vnc-display-mapping* file. In this file, you will find the port number allocated for each user. For example, admin:1. You must prefix 5900 to the number associated with the user. In this example, the port number for the user **admin** is 59001.
+
+#### Step 3: Connecting to the Edge device using VNC
+
+To access and connect to the Edge device, you must create a remote access point.
+
+1. In the Cumulocity tenant for your registered Edge device, add a remote access endpoint. See [Adding remote access endpoints](/guides/users-guide/optional-services/#adding-remote-access-endpoints-via-vnc). You must use the same port number that is allocated for you.
+
+2. Connect to the endpoint. See [Connecting to endpoints](/guides/users-guide/optional-services/#connecting-to-endpoints).
+
+#### Changing the VNC password
+
+You can change the VNC password by running the *vnc-user-setup.sh* script. After changing the password, you must update the password in the remote access endpoint.
 
 ### Data exchange using Data Broker
 

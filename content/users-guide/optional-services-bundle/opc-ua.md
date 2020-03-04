@@ -59,14 +59,14 @@ Mac OS
 The number of profiles you may have is not limited. To use a specific profile on runtime, the "-Dspring.profiles.active" JVM argument has to be passed when running the gateway JAR file. For example, let’s use the previously created profile. Start a terminal and use the following command: 
 
 ```bash
-java -Dspring.profiles.active=default,myTenant -jar <<opcua-device-gateway-version>>.jar
+java -Dspring.profiles.active=default,myTenant -jar opcua-device-gateway-<<version>>.jar
 ```
 The command above will start a gateway with the default profile and it will override the default properties with the properties defined in the “myTenant” profile.
 
 **Optional**: To specify your own configuration, Spring arguments can be used in your terminal to run the gateway JAR file. Multiple locations have to be comma-separated. The configuration locations should be either YAML files or directories. In case of directories, they must end with “/”. For example:
 
 ```bash
-java -jar <<opcua-device-gateway-version>>.jar --spring.config.location=file:<<location>>/.opcua/conf/application-myTenant.yaml,file:<<location>>/.opcua/conf/
+java -jar opcua-device-gateway-<<version>>.jar --spring.config.location=file:<<location>>/.opcua/conf/application-myTenant.yaml,file:<<location>>/.opcua/conf/
 ```
 
 If both arguments "--spring.config.location" and "-Dspring.profiles.active" are provided, the configuration locations should be directories instead of files. Otherwise, the profile-specific variants will not be considered.
@@ -177,20 +177,20 @@ The gateway can run with either default or custom settings. To run the gateway r
 
 * Default settings and default logging configuration: 
 
-		java -jar <<opcua-device-gateway-version>>.jar
+		java -jar opcua-device-gateway-<<version>>.jar
 
 * Custom settings and default logging configuration: 
 
-		java -Dspring.profiles.active=default,PROFILE_NAME -jar <<opcua-device-gateway-version>>.jar
+		java -Dspring.profiles.active=default,PROFILE_NAME -jar opcua-device-gateway-<<version>>.jar
 
 * Custom settings and custom logging configuration:
 
-		java -Dlogging.config=file:PATH_TO_LOGBACK_XML -Dspring.profiles.active=default,PROFILE_NAME -jar <<opcua-device-gateway-version>>.jar
+		java -Dlogging.config=file:PATH_TO_LOGBACK_XML -Dspring.profiles.active=default,PROFILE_NAME -jar opcua-device-gateway-<<version>>.jar
 
 For example, using the profile from the previous section we are going to register the gateway. First, open the terminal and navigate to the location of the gateway.jar file. Next, enter the following command: 
 
 ```
-java -Dspring.profiles.active=default,myTenant -jar <<opcua-device-gateway-version>>.jar
+java -Dspring.profiles.active=default,myTenant -jar opcua-device-gateway-<<version>>.jar
 ```
 Navigate to the **Registration** page and click **Register device > General device registration**. Enter the Identifier name (in our example it is “Gateway_Device”) and then click **Next**.
 

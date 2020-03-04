@@ -22,7 +22,61 @@ YAML file and spring profiles are used for the configuration of the gateway. A d
 
 > **Important**: When editing the YAML file, make sure to provide valid indentations.
 
-The following properties can be manually configured :
+To run the gateway locally, the default settings should be overridden in a customized profile. To use the customized profile, create a YAML file which must follow the naming convention:
+
+    application-<<Profile_name>>.yaml
+
+For example, to connect to a tenant, first a profile named *application-myTenant.yaml* will be created. The following properties will be added to the file:
+
+```bash
+C8Y:
+    baseUrl: https://<<yourTenant>>.cumulocity.com
+gateway:
+    bootstrap:
+        tenantId: <<yourTenantId>>
+    identifier: Gateway_Device
+    name: My Gateway
+    db:
+# The gateway uses the local database to store platform credentials and local cache. This parameter shows the location in which the local data should be stored.
+        baseDir: C:/Users/<<userName>>/.opcua/data
+```
+
+> **Info:** Windows OS is used for the example.
+
+Depending on your OS, the file must be saved to one of the following directories:
+
+```
+Windows OS
+    /C:/opcua/
+Linux OS
+    /etc/opcua/
+    /etc/opcua/data
+Mac OS
+    /opt/opcua/
+    /opt/opcua/data
+```
+
+The number of profiles you may have is not limited. To use a specific profile on runtime, the "-Dspring.profiles.active" JVM argument has to be passed when running the gateway JAR file. For example, let’s use the previously created profile. Start a terminal and use the following command: 
+
+```bash
+java -Dspring.profiles.active=default,myTenant -jar opcua-device-gateway-<<version>>.jar
+```
+The command above will start a gateway with the default profile and it will override the default properties with the properties defined in the “myTenant” profile.
+
+**Optional**: To specify your own configuration, Spring arguments can be used in your terminal to run the gateway JAR file. Multiple locations have to be comma-separated. The configuration locations should be either YAML files or directories. In case of directories, they must end with “/”. For example:
+
+```bash
+java -jar opcua-device-gateway-<<version>>.jar --spring.config.location=file:<<location>>/.opcua/conf/application-myTenant.yaml,file:<<location>>/.opcua/conf/
+```
+
+If both arguments "--spring.config.location" and "-Dspring.profiles.active" are provided, the configuration locations should be directories instead of files. Otherwise, the profile-specific variants will not be considered.
+
+
+#### Additional customizations
+
+> **Info**: If no additional customizations are required, you can skip this section.
+
+The following properties can be manually configured in the YAML file:
 
 ```bash
 # Name of the application - this should not change
@@ -35,17 +89,16 @@ C8Y:
 gateway:
 # Gateway version - this is filled automatically during the build process - do not change this property
   version: ${project.version}
-# Following two properties will be set to the name of the computer that is running the gateway
-# unless it's overridden manually
-#  identifier: mygateway
-#  name: mygateway
+# The following two properties will be set to the name of the computer that is running the gateway unless it's overridden manually
+  identifier: mygateway
+  name: mygateway
   db:
 # The gateway uses the local database to store platform credentials and local cache. This parameter shows the location in which the local data should be stored.
     baseDir: ${user.home}/.opcua/data
 
 # Credentials for device bootstrap - enter tenant that gateway should register to.
-  Bootstrap:
-# ID of the tenant to which the device will be registered.
+  bootstrap:
+# ID of the tenant to which the device will be registered. 
     tenantId: management
     username: devicebootstrap
     password: <devicebootstrap user password>
@@ -114,55 +167,6 @@ gateway:
     validityTime: 3650
 ```
 
-To run the gateway locally, the default settings should be overridden in a customized profile. To use the customized profile, create a YAML file which must follow the naming convention:
-
-    application-<<Profile_name>>.yaml
-
-Depending on your OS, the file must be saved to one of the following directories:
-
-```
-Windows OS
-    /C:/opcua/
-Linux OS
-    /etc/opcua/
-    /etc/opcua/data
-Mac OS
-    /opt/opcua/
-    /opt/opcua/data
-```
-
-For example, to connect to a tenant, first a profile named *application-myTenant.yaml* will be created in the *C:/Users/<<userName>>/.opcua/data* directory. The following properties will be added to the file:
-
-```
-C8Y:
-    baseUrl: https://<<yourTenant>>.cumulocity.com
-gateway:
-    bootstrap:
-        tenantId: t1234567
-    identifier: Gateway_Device
-    name: My Gateway
-    db:
-        baseDir: C:/Users/<<userName>>/.opcua/data
-```
-
-> **Info:** Windows OS is used for the example.
-
-To specify your own configuration, Spring arguments can be used in your terminal to run the gateway JAR file. Multiple locations have to be comma-separated. The configuration locations should be either YAML files or directories. In case of directories, they must end with “/”. For example:
-
-```bash
-java -jar gateway.jar --spring.config.location=file:/Users/<<userName>>/.opcua/conf/application-myTenant.yaml,file:/Users/<<userName>>/.opcua/conf/
-```
-
-The number of profiles you may have is not limited. To use a specific profile on runtime, the "-Dspring.profiles.active" JVM argument has to be passed when running the gateway JAR file. For example, let’s use the previously created profile. Start a terminal and use the following command: 
-
-```bash
-java -Dspring.profiles.active=default,myTenant -jar gateway.jar
-```
-
-The command above will start a gateway with the default profile and it will override the default properties with the properties defined in the “myTenant” profile.
-
-If both arguments "--spring.config.location" and "-Dspring.profiles.active" are provided, the configuration locations should be directories instead of files. Otherwise, the profile-specific variants will not be considered.
-
 #### Logging
 
 Custom logging configuration can be set during startup by passing the "-Dlogging.config" jvm argument. For more info on how to set up custom logging settings, refer to the “Logback” documentation.
@@ -173,20 +177,20 @@ The gateway can run with either default or custom settings. To run the gateway r
 
 * Default settings and default logging configuration: 
 
-		java -jar gateway.jar
+		java -jar opcua-device-gateway-<<version>>.jar
 
 * Custom settings and default logging configuration: 
 
-		java -Dspring.profiles.active=default,PROFILE_NAME -jar gateway.jar
+		java -Dspring.profiles.active=default,PROFILE_NAME -jar opcua-device-gateway-<<version>>.jar
 
 * Custom settings and custom logging configuration:
 
-		java -Dlogging.config=file:PATH_TO_LOGBACK_XML -Dspring.profiles.active=default,PROFILE_NAME -jar gateway.jar
+		java -Dlogging.config=file:PATH_TO_LOGBACK_XML -Dspring.profiles.active=default,PROFILE_NAME -jar opcua-device-gateway-<<version>>.jar
 
 For example, using the profile from the previous section we are going to register the gateway. First, open the terminal and navigate to the location of the gateway.jar file. Next, enter the following command: 
 
 ```
-java -Dspring.profiles.active=default,myTenant -jar gateway.jar
+java -Dspring.profiles.active=default,myTenant -jar opcua-device-gateway-<<version>>.jar
 ```
 Navigate to the **Registration** page and click **Register device > General device registration**. Enter the Identifier name (in our example it is “Gateway_Device”) and then click **Next**.
 

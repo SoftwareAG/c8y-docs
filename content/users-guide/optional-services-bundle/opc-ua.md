@@ -74,7 +74,7 @@ If both arguments "--spring.config.location" and "-Dspring.profiles.active" are 
 
 #### Additional customizations
 
-> **Info** If additional customizations are not required, you can skip this section.
+> **Info**: If no additional customizations are required, you can skip this section.
 
 The following properties can be manually configured in the YAML file:
 
@@ -89,7 +89,7 @@ C8Y:
 gateway:
 # Gateway version - this is filled automatically during the build process - do not change this property
   version: ${project.version}
-# Following two properties will be set to the name of the computer that is running the gateway unless it's overridden manually
+# The following two properties will be set to the name of the computer that is running the gateway unless it's overridden manually
   identifier: mygateway
   name: mygateway
   db:

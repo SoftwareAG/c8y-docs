@@ -161,7 +161,7 @@ export class AppModule extends HybridAppModule {
 
 ### 3. Run and verify the application
 
-When you run the application with `c8cli server` and point your browser to the path defined in the module `http://localhost:9000/apps/cockpit/#/acme`, you should see the following:
+When you run the application with `c8ycli server` and point your browser to the path defined in the module `http://localhost:9000/apps/cockpit/#/acme`, you should see the following:
 
 ![Custom client service](/images/web-sdk/custom-client-service.png)
 

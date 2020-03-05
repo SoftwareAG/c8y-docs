@@ -39,18 +39,15 @@ The Cumulocity Cloud Remote Access microservice allows you to remotely access th
 
 The following protocols are supported to connect to the Edge device through remote access from the Cumulocity tenant:
 
-- Remote Desktop (VNC). See [Accessing the Edge device remotely through VNC](/guides/edge/usage/#accessing-the-edge-device-remotely-through-vnc).
-	- Shares the desktop of the remote device
-	- Mouse and keyboard for interaction
-
-- Secure Shell (SSH)
-	- Console for command line access
-	- Keyboard for interaction
-
-- Terminal (Telnet)
-	- Protocol used for old device types
-	- Console for command line access
-	- Keyboard for interaction
+* Remote Desktop (VNC). See [Accessing the Edge device remotely through VNC](/guides/edge/usage/#accessing-the-edge-device-remotely-through-vnc).
+	* Shares the desktop of the remote device
+	* Mouse and keyboard for interaction
+* Secure Shell (SSH)
+	* Console for command line access
+	* Keyboard for interaction
+* Terminal (Telnet)
+	* Console for command line access
+	* Keyboard for interaction
 
 For more information about remote access, see [Cloud Remote Access](/guides/users-guide/optional-services/#cloud-remote-access).
 
@@ -62,19 +59,15 @@ You can access the Edge device from the Cumulocity tenant by installing the VNC 
 
 #### Step 1: Installing the VNC components:
 
-1. Browse to the folder */opt/c8y/utilities*. 
+1. Run the script *vnc-setup.sh*.
 
-	` [admin@server ~]$ cd /opt/c8y/utilities`
-
-2. Run the script *vnc-setup.sh*.
-
-	` [admin@server ~]$ sudo ./vnc-setup.sh`
+	` [admin@server ~]$ sudo /opt/c8y/utilities/vnc-setup.sh`
 
 The *vnc-setup.sh* script installs the VNC components. After installing the VNC components, you should configure the VNC server for each user.
 
 #### Step 2: Configuring VNC server for a user
 
-To configure the VNC server, run the *vnc-user-setup.sh* script. Each user should run this script to set up VNC components and be able to connect to the Edge device. The *vnc-user-setup.sh* script enables the users to use VNC functionality and set a VNC password for the current user. 
+To configure the VNC server, run the *vnc-user-setup.sh* script. Each user should run this script to set up VNC components and be able to connect to the Edge device. The *vnc-user-setup.sh* script enables the current user to use VNC functionality and set a VNC password for the current user. 
  
 1. Run the script *vnc-user-setup.sh*.
 
@@ -86,7 +79,7 @@ To configure the VNC server, run the *vnc-user-setup.sh* script. Each user shoul
 
 Record the allocated port number. This port number will be used to connect to the VNC server on your Edge device.
 
-**Info:** You can also get the allocated port number from */opt/c8y/utilities/vnc-display-mapping* file. In this file, you will find the VNC display number allocated for each user. Then the port number would be the sum of 5900 and the VNC display number. For example, admin:1. You must add 5900 to the number associated with the user. In this example, the port number for the user **admin** is 5901.
+**Info:** You can also get the allocated port number from */opt/c8y/utilities/vnc-display-mapping* file. In this file, you will find the VNC display number allocated for each user. For example, admin:1. You must add 5900 to the number associated with the user. In this example, the port number for the user **admin** is 5901.
 
 #### Step 3: Connecting to the Edge device using VNC
 
@@ -98,7 +91,7 @@ To access and connect to the Edge device, you must create a remote access point.
 
 #### Changing the VNC password
 
-You can change the VNC password by running the *vnc-user-setup.sh* script. After changing the password, you must update the password in the remote access endpoint.
+You can change the VNC password for the current user by running the *vnc-user-setup.sh* script. After changing the password, you must update the password in the remote access endpoint.
 
 ### Data exchange using Data Broker
 

@@ -39,7 +39,7 @@ The Cumulocity Cloud Remote Access microservice allows you to remotely access th
 
 The following protocols are supported to connect to the Edge device through remote access from the Cumulocity tenant:
 
-- Remote Desktop (VNC). See [Using VNC server to remotely access the Edge device](/guides/edge/usage/#accessing-the-edge-device-remotely-through-vnc).
+- Remote Desktop (VNC). See [Accessing the Edge device remotely through VNC](/guides/edge/usage/#accessing-the-edge-device-remotely-through-vnc).
 	- Shares the desktop of the remote device
 	- Mouse and keyboard for interaction
 

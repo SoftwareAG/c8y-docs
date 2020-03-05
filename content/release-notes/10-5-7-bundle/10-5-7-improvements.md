@@ -48,10 +48,10 @@ OPC UA 2.0 is now available. The feature stores data into the Cumulocity IoT dat
 The following functionalities are now available:
 
 * Support for multiple OPC UA servers
-<br>![Multiple OPC UA servers](/images/release-notes/opcua1.png)
+<br>![Multiple OPC UA servers](/images/release-notes/opcua2.png)
 
 * Support for browsing and searching of the address space
-<br>![OPC UA browsing](/images/release-notes/opcua2.png)
+<br>![OPC UA browsing](/images/release-notes/opcua1.png)
 * Addressing OPC UA nodes via URN
 * Largely extended support for mapping the OPC UA and Cumulocity IoT information models
 

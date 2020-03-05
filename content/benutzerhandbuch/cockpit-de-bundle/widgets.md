@@ -144,7 +144,7 @@ Das Widget "Bild" ermöglicht es, ein einzelnes Bild anzuzeigen, das Sie aus Ihr
 
 Das Widget "Datenpunktgraph" zeigt einen Datenpunkt (Messwert) in einem Graphen. Die Visualisierung ist identisch mit der im [Daten-Explorer](#data-explorer).
 
-<img src="/images/benutzerhandbuch/cockpit/Cockpit_DataPointsGraphWidget.png" name="Data Point Graph widget" style="width:75%;"/>
+<img src="/images/benutzerhandbuch/cockpit/cockpit-datapointsgraph-widget.png" name="Data Point Graph widget" style="width:75%;"/>
 
 Am einfachsten erstellen Sie ein "Datenpunktgraph"-Widget, in dem Sie zum Daten-Explorer navigieren, **Mehr...** in der oberen Menüleiste klicken und **Als Widget zum Dashboard senden** wählen.
 

@@ -20,7 +20,7 @@ The IMPACT agent in Cumulocity IoT registers itself at the Nokia IMPACT platform
 
 The following illustration provides an overview on the Cumulocity IoT IMPACT integration.
 
-<img src="/images/users-guide/DeviceManagement/ImpactIntegration.png" alt="IMPACT integration" style="max-width: 100%">
+<img src="/images/users-guide/impact/impact-integration.png" alt="IMPACT integration" style="max-width: 100%">
 
 >**Info:** Your subscription needs to include the IMPACT feature. If you do not see the functionality described in this document, please contact the Cumulocity IoT support.
 
@@ -71,7 +71,7 @@ To process data from IMPACT devices, Cumulocity IoT uses device protocols. Throu
 
 Device protocols are accessible through the **Devices types** menu in the Device Management application. For details on the general usage see [Device protocols](/users-guide/device-management#managing-device-types).
 
-![Impact protocols](/images/users-guide/impact/devmgmt-impact-protocols.png)
+![Impact protocols](/images/users-guide/impact/impact-protocols.png)
 
 #### How to add an IMPACT device protocol
 

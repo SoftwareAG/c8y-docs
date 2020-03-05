@@ -26,7 +26,7 @@ layout: redirect
 |customProperties|Object|1|Keeps a list of custom properties|optional|
 |parent|String|1|Name of parent tenant, the creator of this tenant.|Public|
 
-### Current tenant
+### <a name="current-tenant"></a>Current tenant
 
 Content-Type: application/vnd.com.nsn.cumulocity.currentTenant+json
 

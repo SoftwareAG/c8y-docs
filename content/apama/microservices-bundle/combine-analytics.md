@@ -1,10 +1,10 @@
 ---
 weight: 50
-title: Combining streaming analytics with predictive analytics
+title: Combining streaming analytics with machine learning
 layout: redirect
 ---
 
-Apama can process incoming data and then use a predictive model in the Zementis microservice to make decisions on the processed data. We will assume you have already created a model following the [Predictive analytics guide](/predictive-analytics). Each model has a name and you execute the model with a JSON-encoded data string in the query parameters of a GET request to that name. For example, you might execute a simple model with a request like this:
+Apama can process incoming data and then use a Machine Learning model in the Zementis microservice to make decisions on the processed data. We will assume you have already created a model following the [Machine Learning guide](/machine-learning). Each model has a name and you execute the model with a JSON-encoded data string in the query parameters of a GET request to that name. For example, you might execute a simple model with a request like this:
 
 ```http
 GET /service/zementis/apply/modelName?record=%7B%22name%22:%22fred%22,%22age%22:37%7D
@@ -42,12 +42,12 @@ monitor LookForWifiAnomalies
     action onload()
     {
         cumulocity := CumulocityRequestInterface.connectToCumulocity();
-        listenForSignalStrength("idOfDevice", "nameOfZementisModel");
+        listenForSignalStrength("idOfDevice", "nameOfMachineLearningModel");
     }
 }
 ```
 
-You will need to replace the device identifier and Zementis model name for your installation.
+You will need to replace the device identifier and the name of the Machine Learning model for your installation.
 
 ### Looking for events
 
@@ -70,7 +70,7 @@ action listenForSignalStrength(string deviceId, string modelName)
 
 ### Converting measurements to Zementis records
 
-In order to execute the Zementis model we need to convert the Cumulocity IoT request into a record suitable for passing to the Zementis microservice. This will consist of constructing a dictionary corresponding to a JSON object and then encoding it as a string with the JSON EPL plug-in.
+In order to execute the Machine Learning model, we need to convert the Cumulocity IoT request into a record suitable for passing to the Zementis microservice. This will consist of constructing a dictionary corresponding to a JSON object and then encoding it as a string with the JSON EPL plug-in.
 
 ```java
 action convertMeasurementToRecord(Measurement m) returns string

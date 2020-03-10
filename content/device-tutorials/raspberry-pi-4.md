@@ -11,8 +11,6 @@ This tutorial describes how to register a Raspberry Pi 4 Model B device to the C
 
 The [Raspberry Pi](http://en.wikipedia.org/wiki/Raspberry_Pi) is a popular, low-cost mini computer. It is ideally suited for prototyping machine-to-machine solutions through its GPIO pins, USB support and inbuilt WLAN support. Its operating system is [Raspbian](http://www.raspberrypi.org/downloads), which is the default Linux distribution of the Raspberry Pi.
 
-The tutorial assumes that the Raspberry Pi has an active connection to the internet, so that you can connect to the Cumulocity IoT server. You can use the Raspberry Pi's inbuilt WLAN capabilities for this if there is an available WLAN network, otherwise you could consider adding a mobile broadband network connection by use of an add-on component such as a third-party USB dongle.
-
 The tutorial describes how to install a Cumulocity IoT agent with all relevant drivers on the Raspberry Pi to be able to remotely manage the Raspberry Pi and its connected sensors and controls. This allows you to
 
 * Use basic device management functionality.
@@ -23,7 +21,20 @@ The tutorial describes how to install a Cumulocity IoT agent with all relevant d
 
 > **Info:** The agent is provided in open source form as-is without support or warranty. For commercial use, we recommend you to use industrial hardware and/or the Cumulocity IoT C++ SDK.
 
-#### Prerequisites
+### Prerequisites
+
+#### Hardware
+
+During the tutorial you will require the following hardware:
+
+ * Raspberry Pi 4 Model B
+ * Monitor
+ * Display Cable (Micro HDMI cable)
+ * Power supply
+ * Mouse
+ * Keyboard
+
+#### Software
 
 There's a pre-installed OpenJDK Runtime Environment in the Raspbian distribution.  
 
@@ -46,6 +57,10 @@ Serial		: 1000000017b769d5
 ```
 
 Write down the number in the line "Serial". The serial number is the device ID that you will require in a later step when you register the device to the Cumulocity IoT platform. 
+
+#### Internet
+
+The tutorial assumes that the Raspberry Pi has an active connection to the internet, so that you can connect to the Cumulocity IoT server. You can use the Raspberry Pi's inbuilt WLAN capabilities for this if there is an available WLAN network, otherwise you could consider adding a mobile broadband network connection by use of an add-on component such as a third-party USB dongle.
 
 
 ### Setting up and registering the device
@@ -70,7 +85,16 @@ host = https://<YourTenantName>.cumulocity.com
 
 Ensure that you have set up the correct host URL here before proceeding. Here, `<YourTenantName>` is the name of your Cumulocity IoT tenant on the Cumulocity IoT platform.
 
-The file is by default read-only, so you need appropriate privileges to edit it. You can, for example, perform the edit with superuser privileges.
+The file is by default read-only, so you need superuser privileges to edit it. 
+To go into "su" mode, use the following command on a command line console on the Raspberry Pi:
+
+````console
+sudo su -
+````
+
+To do the edit, you can start the "vi" editor in the superuser console and make the changes there. The vi editor is available with the Raspbian delivery.
+
+If you prefer to use another editor, you may have to install it first. After the editor is installed, ensure that you start it from a console with superuser privileges.
 
 When you have updated *cumulocity.properties*, restart the agent using:
 

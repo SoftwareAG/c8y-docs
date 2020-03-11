@@ -22,6 +22,7 @@ layout: redirect
 
 ![Hardware information](/images/reference-guide/hardware.png)
 
+
 #### c8y\_Firmware
 
 *c8y\_Firmware* contains information on a device's firmware. In the inventory, "c8y\_Firmware" represents the currently installed firmware on the device. As part of an operation, "c8y\_Firmware" requests the device to install the indicated firmware. To enable firmware installation through the user interface, add "c8y\_Firmware" to the list of supported operations as described above.

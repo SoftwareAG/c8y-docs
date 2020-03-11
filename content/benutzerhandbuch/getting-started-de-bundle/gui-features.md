@@ -11,7 +11,7 @@ aliases:
 
 Die grundsätzliche Struktur, die in allen Cumulocity-Anwendungen vorhanden ist, umfasst die folgenden Bildschirmelemente:
 
-![Cumulocity application](/images/benutzerhandbuch/overview-screen-elements.png)
+![Cumulocity application](/images/benutzerhandbuch/getting-started-screen-elements.png)
 
 <table>
 <col width="150">
@@ -51,13 +51,13 @@ Die grundsätzliche Struktur, die in allen Cumulocity-Anwendungen vorhanden ist,
 
 Auf kleineren Bildschirmen weicht das Layout geringfügig ab. Der Navigator ist verborgen und kann durch Klicken auf das Pfeilsymbol links oben aufgerufen werden. Nur die aktive Registerkarte wird angezeigt. Zum Umschalten zwischen Registerkarten klicken Sie auf den Pfeil an der Kopfzeile der Registerkarte und wählen Sie eine Registerkarte aus der Liste aus.
 
-<img src="/images/benutzerhandbuch/overview-small-screen.png" alt="Layout on small devices" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/getting-started-small-screen-elements.png" alt="Layout on small devices" style="max-width: 50%">
 
 > **Info:** Die Cumulocity-Anwendungen enthalten Tooltips, die angezeigt werden, wenn Sie mit dem Mauszeiger über ein Bildschirmelement fahren. Auf Geräten mit einem Touch-Screen werden diese Tooltips angezeigt, wenn Sie ein Bildschirmelement längere Zeit berühren.
 
 ### <a name="app-switcher"></a>Application Switcher
 
-Über den Application Switcher können Sie rasch zwischen verschiedenen Anwendungen wechseln. Klicken Sie auf die Schaltfläche **Application Switcher** rechts in der oberen Leiste, um eine Liste der Symbole für die Anwendungen anzuzeigen. 
+Über den Application Switcher können Sie rasch zwischen verschiedenen Anwendungen wechseln. Klicken Sie auf die Schaltfläche **Application Switcher** rechts in der oberen Leiste, um eine Liste der Symbole für die Anwendungen anzuzeigen.
 
 <img src="/images/benutzerhandbuch/overview-application-switcher.png" alt="Application switcher" style="max-width: 100%">
 
@@ -72,7 +72,7 @@ Wenn Sie die SAG Cloud nutzen, werden im Application Switcher an erster Stelle w
 
 #### <a name="searching"></a>Suchen
 
-Das Suchfeld in Cumulocity-Anwendungen ermöglicht eine Volltextsuche über alle Stammdaten. 
+Das Suchfeld in Cumulocity-Anwendungen ermöglicht eine Volltextsuche über alle Stammdaten.
 
 Wenn Sie mehrere Wörter, durch Leerzeichen getrennt, eingeben, werden alle Objekte ausgegeben, die eines dieser Wörter enthalten. Wenn Sie beispielsweise
 
@@ -80,17 +80,17 @@ Wenn Sie mehrere Wörter, durch Leerzeichen getrennt, eingeben, werden alle Obje
 Mein Demo Gerät
 ```
 
-eingeben, werden alle Objekte ausgegeben, die "Mein" oder "Demo" oder "Gerät" enthalten. 
+eingeben, werden alle Objekte ausgegeben, die "Mein" oder "Demo" oder "Gerät" enthalten.
 
 Wenn Sie nach Objekten suchen möchten, die exakt eine bestimmte Phrase enthalten, umschließen Sie diese mit Anführungszeichen:
 
-```text	
+```text
 "Mein Demo Gerät"
 ```
 
 Sie können auch Wörter ausschließen, indem Sie ein Minuszeichen voranstellen, um etwa die Stammdaten nach "Mein" und "Demo", aber ohne "Gerät" zu durchsuchen:
 
-```text	
+```text
 Mein Demo Gerät
 ```
 
@@ -113,7 +113,7 @@ mein demo gerät
 
 Einige Seiten bieten eine Filterfunktionalität, um Objekte auf einer Seite zu filtern.
 
-Anders als bei der Suchfunktionalität müssen beim Filtern nicht notwendigerweise ganze Wörter eingegeben werden. 
+Anders als bei der Suchfunktionalität müssen beim Filtern nicht notwendigerweise ganze Wörter eingegeben werden.
 
 In den meisten Fällen können Sie jeden beliebigen Text in das Textfeld eingeben, oft sogar nur einzelne Buchstaben. Die Eingabe von
 
@@ -133,8 +133,8 @@ Die Liste wird unmittelbar auf die ausgewählten Objekte beschränkt.
 
 ### Echtzeitverhalten des Navigators
 
-Änderungen werden im Navigator nicht in Echtzeit aktualisiert, d. h., neue, entfernte oder umbenannte Geräte oder Gruppen werden nicht sofort aktualisiert. 
+Änderungen werden im Navigator nicht in Echtzeit aktualisiert, d. h., neue, entfernte oder umbenannte Geräte oder Gruppen werden nicht sofort aktualisiert.
 
-Diese Änderungen werden nur im Navigator der Anwendung angezeigt, in der Sie die Änderungen vorgenommen haben. Beispiel: Wenn Sie in der Anwendung Device Management die Zuweisung eines Gerätes zu einer Gruppe aufheben, wird es im Navigator Ihrer aktuellen Anwendung sofort aus der Ansicht entfernt, doch wenn Sie ein weiteres Fenster geöffnet haben, z. B. mit der Anwendung Cockpit, sind die Änderungen darin nicht zu sehen. 
+Diese Änderungen werden nur im Navigator der Anwendung angezeigt, in der Sie die Änderungen vorgenommen haben. Beispiel: Wenn Sie in der Anwendung Device Management die Zuweisung eines Gerätes zu einer Gruppe aufheben, wird es im Navigator Ihrer aktuellen Anwendung sofort aus der Ansicht entfernt, doch wenn Sie ein weiteres Fenster geöffnet haben, z. B. mit der Anwendung Cockpit, sind die Änderungen darin nicht zu sehen.
 
 Die Änderungen werden erst nach einer Aktualisierungs- oder sonstigen Anfrage (z. B. Ausklappen einer Gruppe im Navigator) angezeigt.

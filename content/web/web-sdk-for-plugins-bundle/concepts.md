@@ -14,7 +14,7 @@ Before building an application or plugin, it is important to understand what exa
 
 This is illustrated below:
 
-![Extension points for plugins](/images/concepts-guide/extensionpoints.png)
+![Extension points for plugins](/images/concepts-guide/extension-points.png)
 
 Or, as an example, let us take a look at an extract of the list of plugins the “Cockpit” application uses. It consists of, i.a.
 * Cockpit Home: a plugin, which adds the "Home" menu to the navigator.

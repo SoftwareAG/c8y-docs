@@ -4,9 +4,9 @@ title: Concepts
 layout: redirect
 ---
 
-Before building an application or plugin, it is important to understand what is exactly meant by applications and plugins in Cumulocity IoT. 
+Before building an application or plugin, it is important to understand what is exactly meant by applications and plugins in Cumulocity IoT.
 
-In this context, applications are based on the Cumulocity IoT UI framework and make up the Cumulocity IoT UI. By default, the Cumulocity IoT UI consists of three core applications, namely "Device Management", "Administration" and "Cockpit". 
+In this context, applications are based on the Cumulocity IoT UI framework and make up the Cumulocity IoT UI. By default, the Cumulocity IoT UI consists of three core applications, namely "Device Management", "Administration" and "Cockpit".
 
 In turn, applications consist of plugins. A plugin represents any functionality you would like to add to an application. With a plugin, you can:
 
@@ -19,7 +19,7 @@ In turn, applications consist of plugins. A plugin represents any functionality 
 
 This is illustrated below:
 
-![Extension points for plugins](/images/concepts-guide/extensionpoints.png)
+![Extension points for plugins](/images/web-sdk/extensionpoints.png)
 
 As an example, let us take a look at some plugins being used by the Cockpit application.
 
@@ -31,7 +31,7 @@ As an example, let us take a look at some plugins being used by the Cockpit appl
 
 ### Project structure
 
-Whenever you create a new application or plugin, you have to comply with the following folder structure. Otherwise the application or plugin will not work. 
+Whenever you create a new application or plugin, you have to comply with the following folder structure. Otherwise the application or plugin will not work.
 
 The default folder structure of an application is as follows:
 
@@ -46,9 +46,9 @@ The default folder structure of an application is as follows:
 			...
 ```
 
-Inside the root folder of your application, the [application manifest](#application-manifest) is stored in the *cumulocity.json* file. 
+Inside the root folder of your application, the [application manifest](#application-manifest) is stored in the *cumulocity.json* file.
 
-The folder *plugins* contains one folder per plugin contributed by the application. The plugin folder name together with the application name uniquely identifies the plugin. Inside each plugin folder, the [plugin manifest](#plugin-manifest) is stored in another *cumulocity.json* file. 
+The folder *plugins* contains one folder per plugin contributed by the application. The plugin folder name together with the application name uniquely identifies the plugin. Inside each plugin folder, the [plugin manifest](#plugin-manifest) is stored in another *cumulocity.json* file.
 
 The format of the application manifest and the plugin manifest is described in [Manifests](#manifests).
 
@@ -68,7 +68,7 @@ Create an explicit root folder for your project. The Web SDK assumes that the pa
 
 #### <a name="application-manifest"></a>Application manifest
 
-The application manifest describes where your application is stored and how it is exposed to Cumulocity IoT. 
+The application manifest describes where your application is stored and how it is exposed to Cumulocity IoT.
 
 The following properties are available:
 

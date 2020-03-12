@@ -12,4 +12,4 @@ Any other relevant changes that have been made to the Cumulocity IoT documentati
 
 > **Important:** The **Installation and Operations guides** for the Cumulocity IoT platform are not publicly available. They are provided on the [Software AG Empower Portal](https://documentation.softwareag.com/). Search for "Cumulocity IoT Platform" as product. To view the Installation and Operations guides you need to click the PDF icon for the version of your choice.
 
->![Empower](/images/about/about-empower.png)
+![Empower](/images/about/about-empower.png)

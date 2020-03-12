@@ -33,7 +33,7 @@ Once the device is connected, the device status changes to **Pending acceptance*
 
 ### Accessing the Edge device from the Cumulocity tenant
 
-The Cumulocity Cloud Remote Access microservice allows you to remotely access the Edge device through a web browser. The remote Edge device is represented as a device in the Device Management application of Cumulocity.
+The Cumulocity Cloud Remote Access microservice allows you to remotely access the Edge device through a web browser. The remote Edge VM is represented as a device in the Device Management application of Cumulocity.
 
 #### Supported protocols
 
@@ -53,11 +53,13 @@ For more information about remote access, see [Cloud Remote Access](/guides/user
 
 ### Accessing the Edge device remotely through VNC
 
-You can access the Edge VM from the Cumulocity tenant by installing the VNC components on your Edge VM. The Edge VM must be connected to the internet to install the VNC components. 
+You can access the Edge VM from the Cumulocity tenant by installing the VNC components on your Edge VM. 
 
 **Info:** Ensure that you have registered your Edge device with the Cumulocity tenant. See [Registering the Edge device with the Cumulocity tenant](/guides/edge/usage/#registering-the-edge-device-with-the-cumulocity-tenant).
 
 #### Step 1: Installing the VNC components
+
+**Info:** The Edge VM must be connected to the internet to install the VNC components.
 
 1. Run the script *vnc-setup.sh*.
 
@@ -91,7 +93,7 @@ To access and connect to the Edge device, you must create a remote access point.
 
 The connection to the Edge VM is established and the GUI appears for the Edge VM. Right-click in the screen to open the desktop components **xterm** and **firefox**.
 
-<img src="/guides/images/edge/edge-vnc-gui-screen.png" alt="Edge VNC" style="max-width: 100%">
+<img src="/guides/images/edge/edge-vnc-gui-screen.png" alt="Edge VNC" style="max-width: 75%">
 
 #### Changing the VNC password
 

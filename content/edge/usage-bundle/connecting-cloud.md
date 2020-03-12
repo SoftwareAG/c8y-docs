@@ -49,7 +49,7 @@ The following protocols are supported to connect to the Edge device through remo
 	* Console for command line access
 	* Keyboard for interaction
 
-For more information about remote access, see [Cloud Remote Access](/guides/users-guide/optional-services/#cloud-remote-access).
+For more information about remote access, see [Cloud Remote Access](/guides/users-guide/optional-services/#cloud-remote-access) in the User guide.
 
 ### Accessing the Edge device remotely through VNC
 
@@ -57,7 +57,7 @@ You can access the Edge device from the Cumulocity tenant by installing the VNC 
 
 **Info:** Ensure that you have registered your Edge device with the Cumulocity tenant. See [Registering the Edge device with the Cumulocity tenant](/guides/edge/usage/#registering-the-edge-device-with-the-cumulocity-tenant).
 
-#### Step 1: Installing the VNC components:
+#### Step 1: Installing the VNC components
 
 1. Run the script *vnc-setup.sh*.
 
@@ -79,7 +79,7 @@ To configure the VNC server, run the *vnc-user-setup.sh* script. Each user shoul
 
 Record the allocated port number. This port number will be used to connect to the VNC server on your Edge device.
 
-**Info:** You can also get the allocated port number from */opt/c8y/utilities/vnc-display-mapping* file. In this file, you will find the VNC display number allocated for each user. For example, admin:1. You must add 5900 to the number associated with the user. In this example, the port number for the user **admin** is 5901.
+**Info:** You can also get the allocated port number from the */opt/c8y/utilities/vnc-display-mapping* file. In this file, you will find the VNC display number allocated for each user. For example, admin:1. You must add 5900 to the number associated with the user. In this example, the port number for the user **admin** is 5901.
 
 #### Step 3: Connecting to the Edge device using VNC
 

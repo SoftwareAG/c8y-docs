@@ -53,7 +53,7 @@ For more information about remote access, see [Cloud Remote Access](/guides/user
 
 ### Accessing the Edge device remotely through VNC
 
-You can access the Edge device from the Cumulocity tenant by installing the VNC components on your Edge device.
+You can access the Edge VM from the Cumulocity tenant by installing the VNC components on your Edge VM. The Edge VM must be connected to the internet to install the VNC components. 
 
 **Info:** Ensure that you have registered your Edge device with the Cumulocity tenant. See [Registering the Edge device with the Cumulocity tenant](/guides/edge/usage/#registering-the-edge-device-with-the-cumulocity-tenant).
 
@@ -88,6 +88,10 @@ To access and connect to the Edge device, you must create a remote access point.
 1. In the Cumulocity tenant for your registered Edge device, add a remote access endpoint. See [Adding remote access endpoints](/guides/users-guide/optional-services/#adding-remote-access-endpoints-via-vnc). You must use the same port number that is allocated for you.
 
 2. Connect to the endpoint. See [Connecting to endpoints](/guides/users-guide/optional-services/#connecting-to-endpoints).
+
+The connection to the Edge VM is established and the GUI appears for the Edge VM. Right-click in the screen to open the desktop components **xterm** and **firefox**.
+
+<img src="/guides/images/edge/edge-vnc-gui-screen.png" alt="Edge VNC" style="max-width: 100%">
 
 #### Changing the VNC password
 

@@ -8,17 +8,67 @@ Device credentials and device representation can be provided from CSV file. CSV 
 
 First section is the first line of csv file. This line contains column names (headers):
 
-|Name|Occurs|Description|
-|:---|:---|:----------|
-|ID|1|The external id of a device|
-|CREDENTIALS|1|Password for the device's user|
-|TENANT|0..1|The name of tenant for which registration is executed (allowed only by management tenant)|
-|TYPE|0..1|The type of device representation|
-|NAME|0..1|The name of device representation|
-|ICCID|0..1|The iccid of device (sim card number). If 'iccid' appears in file, import adds a fragment 'c8y_Mobile.iccid'. 'Iccid' value is not mandatory for each row, please see below example of http request|
-|IDTYPE|0..1|The type of external Id. If 'idtype' doesn't appear in file, the default value is used. The default value is 'c8y_Serial'. 'Idtype' value is not mandatory for each row, please see below example of http request|
-|PATH|0..1|The path in the groups hierarchy where device is added. Path contains name of each group separated by '/', i.e: Main group/Subgroup/.../Last subgroup. If group doesn't exists, import creates the group|
-|SHELL|0..1|If this column contains value 1, import adds for device 'Shell' feature (specifically: c8y_SupportedOperations fragment). 'Shell' value is not mandatory for each row, please see below example of http request|
+<table>
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 5%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">ID</td>
+<td align="left">1</td>
+<td align="left">The external id of a device</td>
+</tr>
+<tr>
+<td align="left">CREDENTIALS</td>
+<td align="left">1</td>
+<td align="left">Password for the device’s user</td>
+</tr>
+<tr>
+<td align="left">TENANT</td>
+<td align="left">0..1</td>
+<td align="left">The name of tenant for which registration is executed (allowed only by management tenant)</td>
+</tr>
+<tr>
+<td align="left">TYPE</td>
+<td align="left">0..1</td>
+<td align="left">The type of device representation</td>
+</tr>
+<tr>
+<td align="left">NAME</td>
+<td align="left">0..1</td>
+<td align="left">The name of device representation</td>
+</tr>
+<tr>
+<td align="left">ICCID</td>
+<td align="left">0..1</td>
+<td align="left">The iccid of device (sim card number). If ‘iccid’ appears in file, import adds a fragment ‘c8y_Mobile.iccid’. ‘Iccid’ value is not mandatory for each row, please see below example of http request</td>
+</tr>
+<tr>
+<td align="left">IDTYPE</td>
+<td align="left">0..1</td>
+<td align="left">The type of external Id. If ‘idtype’ doesn’t appear in file, the default value is used. The default value is ‘c8y_Serial’. ‘Idtype’ value is not mandatory for each row, please see below example of http request</td>
+</tr>
+<tr>
+<td align="left">PATH</td>
+<td align="left">0..1</td>
+<td align="left">The path in the groups hierarchy where device is added. Path contains name of each group separated by ‘/', i.e: Main group/Subgroup/…/Last subgroup. If group doesn’t exists, import creates the group</td>
+</tr>
+<tr>
+<td align="left">SHELL</td>
+<td align="left">0..1</td>
+<td align="left">If this column contains value 1, import adds for device ‘Shell’ feature (specifically: c8y_SupportedOperations fragment). ‘Shell’ value is not mandatory for each row, please see below example of http request</td>
+</tr>
+</tbody>
+</table>
 
 Section two is the rest of csv file. Section two contains devices information. Order and quantity of values must be the same like order and quantity of headers.
 
@@ -34,26 +84,102 @@ CSV file can appear in many forms (regarding to optional tenant column and occur
 * when user wants to add shell feature, columns 'type', 'name' and 'shell' must appear in csv file and column 'shell' must contain value 1.
 
 It is possible to define custom external id mappings and custom device properties that are added to newly created devices during registration:
- 
+
 * To add custom external id mapping, place external id type as a last header with 'external-' prefix, e.g. to add external id mapping of type 'c8y_Imei', put in the last column header: 'external-c8y_Imei'. The value of this external id type should be set in corresponding column of the data rows.
 * To add custom property to registered device, place custom property name as a header, e.g. 'myCustomProperty' and the value would be in rows below.
 
 ### BulkNewDeviceRequest [application/vnd.com.nsn.cumulocity.bulkNewDeviceRequest+json]
 
-|Name|Type|Occurs|Description|
-|:---|:---|:---|:----------|
-|numberOfAll|Number|1|Number of lines processed from CSV file, without first line (column headers)|
-|numberOfCreated|Number|1|Number of created device credentials|
-|numberOfFailed|Number|1|Number of failed creation of device credentials|
-|numberOfSuccessful|Number|1|Number of successful creation of device credentials, contains create and update operations|
-|credentialUpdatedList|List|0..n|Array with updated device credentials|
-|credentialUpdatedList.bulkNewDeviceStatus|String|1|Device credentials creation status, possible values: CREATED, FAILED, CREDENTIAL_UPDATED|
-|credentialUpdatedList.deviceId|String|1|Id of device|
-|failedCreationList|List|0..n|Array with updated device credentials|
-|failedCreationList.bulkNewDeviceStatus|String|1|Device credentials creation status, possible values: CREATED, FAILED, CREDENTIAL_UPDATED|
-|failedCreationList.deviceId|String|0..1|Id of device, appears if application can obtain it from file|
-|failedCreationList.failureReason|String|1|Reason of error|
-|failedCreationList.line|String|1|Line with error|
+<table>
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 10%;">
+<col style="width: 5%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">numberOfAll</td>
+<td align="left">Number</td>
+<td align="left">1</td>
+<td align="left">Number of lines processed from CSV file, without first line (column headers)</td>
+</tr>
+<tr>
+<td align="left">numberOfCreated</td>
+<td align="left">Number</td>
+<td align="left">1</td>
+<td align="left">Number of created device credentials</td>
+</tr>
+<tr>
+<td align="left">numberOfFailed</td>
+<td align="left">Number</td>
+<td align="left">1</td>
+<td align="left">Number of failed creation of device credentials</td>
+</tr>
+<tr>
+<td align="left">numberOfSuccessful</td>
+<td align="left">Number</td>
+<td align="left">1</td>
+<td align="left">Number of successful creation of device credentials, contains create and update operations</td>
+</tr>
+<tr>
+<td align="left">credentialUpdatedList</td>
+<td align="left">List</td>
+<td align="left">0..n</td>
+<td align="left">Array with updated device credentials</td>
+</tr>
+<tr>
+<td align="left">credentialUpdatedList.bulkNewDeviceStatus</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Device credentials creation status, possible values: CREATED, FAILED, CREDENTIAL_UPDATED</td>
+</tr>
+<tr>
+<td align="left">credentialUpdatedList.deviceId</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Id of device</td>
+</tr>
+<tr>
+<td align="left">failedCreationList</td>
+<td align="left">List</td>
+<td align="left">0..n</td>
+<td align="left">Array with updated device credentials</td>
+</tr>
+<tr>
+<td align="left">failedCreationList.bulkNewDeviceStatus</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Device credentials creation status, possible values: CREATED, FAILED, CREDENTIAL_UPDATED</td>
+</tr>
+<tr>
+<td align="left">failedCreationList.deviceId</td>
+<td align="left">String</td>
+<td align="left">0..1</td>
+<td align="left">Id of device, appears if application can obtain it from file</td>
+</tr>
+<tr>
+<td align="left">failedCreationList.failureReason</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Reason of error</td>
+</tr>
+<tr>
+<td align="left">failedCreationList.line</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Line with error</td>
+</tr>
+</tbody>
+</table>
 
 ### POST - creates a bullk device credentials request
 

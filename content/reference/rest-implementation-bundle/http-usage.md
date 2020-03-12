@@ -196,15 +196,73 @@ To avoid ambiguity, all times and timestamps must include timezone information. 
 
 Cumulocity IoT APIs are restricted by following data types:
 
-|Type|Description|Size|Possible values|
-|:---|:----------|:---|:--------------|
-|boolean|true or false|1 bit|true, false|
-|int|two's complement integer|32 bit|from -2,147,483,648 to +2,147,483,647|
-|long|two's complement integer|64 bit|from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807|
-|float|IEEE 754 floating point|32 bit|from 1.40129846432481707e-45 to 3.40282346638528860e+38 (positive or negative)|
-|double|IEEE 754 floating point|64 bit|from 4.94065645841246544e-324d to 1.79769313486231570e+308d (positive or negative)|
-|string|represents character strings|-|maximum 2,147,483,647 characters|
-|datetime|date or time or timestamp|-|[ISO 8601](http://www.w3.org/TR/NOTE-datetime) datetime|
+<table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Size</th>
+<th align="left">Possible values</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">boolean</td>
+<td align="left">true or false</td>
+<td align="left">1 bit</td>
+<td align="left">true, false</td>
+</tr>
+
+<tr>
+<td align="left">int</td>
+<td align="left">two’s complement integer</td>
+<td align="left">32 bit</td>
+<td align="left">from -2,147,483,648 to +2,147,483,647</td>
+</tr>
+
+<tr>
+<td align="left">long</td>
+<td align="left">two’s complement integer</td>
+<td align="left">64 bit</td>
+<td align="left">from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td>
+</tr>
+
+<tr>
+<td align="left">float</td>
+<td align="left">IEEE 754 floating point</td>
+<td align="left">32 bit</td>
+<td align="left">from 1.40129846432481707e-45 to 3.40282346638528860e+38 (positive or negative)</td>
+</tr>
+
+<tr>
+<td align="left">double</td>
+<td align="left">IEEE 754 floating point</td>
+<td align="left">64 bit</td>
+<td align="left">from 4.94065645841246544e-324d to 1.79769313486231570e+308d (positive or negative)</td>
+</tr>
+
+<tr>
+<td align="left">string</td>
+<td align="left">represents character strings</td>
+<td align="left">-</td>
+<td align="left">maximum 2,147,483,647 characters</td>
+</tr>
+
+<tr>
+<td align="left">datetime</td>
+<td align="left">date or time or timestamp</td>
+<td align="left">-</td>
+<td align="left"><a href="http://www.w3.org/TR/NOTE-datetime">ISO 8601</a> datetime</td>
+</tr>
+</tbody>
+</table>
 
 ### <a name="error_reporting"></a>Error reporting
 

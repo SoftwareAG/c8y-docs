@@ -149,7 +149,7 @@ In the **Misc** section you may specify the “Button Border-Radius” by provid
 
 In the **Domain name** tab you can activate your own custom domain name.
 
->**Important**: To activate you domain, you need a valid license. Please contact our Sales team at sales@cumulocity.com to install a license for your domain.  
+>**Important**: To activate your domain, you need a valid license. Please contact our Sales team at sales@cumulocity.com to install a license for your domain.  
 
 <img src="/images/users-guide/Administration/admin-domain-name.png" alt="Domain name">
 

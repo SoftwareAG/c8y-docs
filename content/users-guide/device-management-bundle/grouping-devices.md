@@ -151,7 +151,7 @@ Smart groups are groups dynamically constructed based on filtering criteria. The
 
 ![Smart groups filter](/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
 
->**Info**: Smart groups are not shown when using the Cockpit application.
+Note that smart groups are only available in the Device Management application and not visible in the Cockpit application.
 
 Smart groups can be created from the device list. 
 

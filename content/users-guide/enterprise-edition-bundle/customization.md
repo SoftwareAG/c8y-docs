@@ -4,7 +4,7 @@ title: Customizing your platform
 layout: redirect
 ---
 
-Using the Enterprise Tenant of Cumulocity, you can customize your platform according to your wishes and requirements. 
+Using the Enterprise Tenant of Cumulocity, you can customize your platform according to your wishes and requirements.
 
 In the **Settings** menu, you may specify various customization settings.
 
@@ -14,7 +14,7 @@ In the **Settings** menu, you may specify various customization settings.
 
 #### Applications
 
-In the **Applications** section, you can specify the default applications for new tenants as a comma-separated list. 
+In the **Applications** section, you can specify the default applications for new tenants as a comma-separated list.
 
 ![Applications settings](/images/users-guide/Administration/admin-settings-configuration-applications.png)
 
@@ -34,7 +34,7 @@ With the support user feature, support users (i.e. users with specific permissio
 
 In the field **Enable support user**, specify if support user access is enabled for subtenant users. Possible values you can enter here are:
 
-* *true*: Support user access is enabled. If support user access is enabled, support users can log into any subtenant as any user, unless overridden on subtenant level. Subtenant users cannot enable/disable access themselves. 
+* *true*: Support user access is enabled. If support user access is enabled, support users can log into any subtenant as any user, unless overridden on subtenant level. Subtenant users cannot enable/disable access themselves.
 * *false*: Support user access is disabled.If support user access is disabled, support users can log in only to subtenants for which at least one user has explicitly enabled such access.
 * An explicit date in date-time format, until when support user activation should remain enabled. If no date is specified the value is set to "No Limit".
 
@@ -46,9 +46,9 @@ Details on the status of support user requests and support user access for a ten
 
 ### <a name="branding"></a>Branding
 
-With the Branding feature, you can fully customize the look of your tenant to your own preferences. 
+With the Branding feature, you can fully customize the look of your tenant to your own preferences.
 
-In the **Branding** tab, you can configure various parameters like logos, colors  and font types used throughout the platform. 
+In the **Branding** tab, you can configure various parameters like logos, colors  and font types used throughout the platform.
 
 The [parameters](#configuration-parameters) are configured on the left side of the tab while on the right you can immediately see your selections applied to a preview extract.
 
@@ -62,7 +62,7 @@ When you are done or want to store your settings, click **Save** at the bottom o
 
 Saving the settings will not yet apply them to the current tenant and respective subtenants. To do so, click **Apply** in the top menu bar.
 
-Click **Reset** in the top menu bar to reset the branding of the current tenant and its subtenants to the default settings. The custom settings will still be saved but are no longer applied. 
+Click **Reset** in the top menu bar to reset the branding of the current tenant and its subtenants to the default settings. The custom settings will still be saved but are no longer applied.
 
 #### <a name="configuration-parameters"></a>Configuration parameters
 
@@ -70,7 +70,7 @@ In the Configuration section, the following branding parameters can be configure
 
 **General**
 
-Under **General**, you can edit the title which will be used in the browser tab. 
+Under **General**, you can edit the title which will be used in the browser tab.
 
 <img src="/images/users-guide/Administration/admin-branding-general.png" alt="Branding general">
 
@@ -91,7 +91,7 @@ Under **Navigator logo** you can provide the navigator logo and set the navigato
 
 **Type**
 
-In the **Type** section you specify the font settings for your branded version. 
+In the **Type** section you specify the font settings for your branded version.
 
 <img src="/images/users-guide/Administration/admin-branding-type.png" alt="Branding type">
 
@@ -158,8 +158,8 @@ The following parameters can be specified:
 ### <a name="domain-name"></a>Domain name
 
 In the **Domain name** tab you can activate your own custom domain name.
- 
->**Important**: To activate you domain, you need a valid license. Please contact our Sales team at sales@cumulocity.com to install a license for your domain.  
+
+>**Important**: To activate your domain, you need a valid license. Please contact our Sales team at sales@cumulocity.com to install a license for your domain.  
 
 <img src="/images/users-guide/Administration/admin-domain-name.png" alt="Domain name">
 
@@ -208,7 +208,7 @@ When your certificate expires, you must update your certificate with a new one w
 
 #### Deactivating your certificate
 
-If you wish to return to your old domain at Cumulocity, you can simply deactivate you certificate. 
+If you wish to return to your old domain at Cumulocity, you can simply deactivate you certificate.
 
 >**Important**: Use with care. Your customers will not be able to access their subtenants anymore.
 
@@ -220,32 +220,32 @@ In case you cannot reach Cumulocity using your custom domain, we recommend to pe
 
 Execute the following command:
 
-```shell	
+```shell
 host management.<your domain name>
 ```
-	
+
 The following result should be returned:
 
 ```shell
 management.<your domain name> is an alias for <instance domain name>
 <instance domain name> has address <ip address>
 ```
-	
 
-**Check if the API is responding** 
+
+**Check if the API is responding**
 
 Execute the following command:
 
 ```shell
 curl -v -u '<tenant ID>/<your user>:<your password>' --head http://management.<your domain name>/inventory/managedObjects
 ```
-	
+
 The following result should be returned:
 
 ```shell
 ...
 HTTP/1.1 200 OK
-...	
+...
 ```
 
 

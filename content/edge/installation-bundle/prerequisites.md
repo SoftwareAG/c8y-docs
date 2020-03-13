@@ -90,13 +90,17 @@ Depending on the DNS and NTP setup it might be the case that DNS (UDP/53) and NT
 
 ### Hardware requirements
 
-The virtual machine has the following hardware requirements:
+The virtual machine has the following minimum hardware requirements:
 
-* 100 GB of free disk space
-* Intel x86 CPU
-* Recommended: 8 GB RAM, minimum: 4 GB RAM
-* Recommended: 4 logical CPU cores, minimum: 2 logical CPU cores
-* One NIC
+|Hardware|Configuration|
+|:---|:---|
+|Disk space|100 GB
+|CPU|Intel x86
+|Number of CPU cores|2 - without microservice <br>4 - with microservice
+|RAM|6 GB - without microservice <br>8 GB - with microservice: minimum 8 GB
+|Network Interface Controller (NIC)|1
+
+These are the minimum system requirements to enable the microservice hosting feature. If the microservice requires additional resources, you must configure the system requirements accordingly.
 
 >**Info**: This does not cover host OS hardware requirements.
 

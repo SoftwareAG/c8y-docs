@@ -348,3 +348,17 @@ The update tenant password process consists of multiple steps which are executed
 After providing the tenant URL, you have to register your Edge device with the Cumulocity tenant. For more information, see [Registering the Edge device with a Cumulocity tenant](/guides/edge/usage/#registering-the-edge-device-with-the-cumulocity-tenant).
 
 >**Important**: If you have configured the Cumulocity tenant URL during the post installation and then use this option with a blank URL, you will disable the Cumulocity tenant connectivity.
+
+#### Enabling/Disabling microservice hosting feature
+
+**Info:** Ensure that you have fulfilled the minimum system requirements: 4 logical CPU cores and 8 GB RAM. 
+
+1. Run the post-installation script *post_installation.sh*.
+
+2. Select the option **8. Enable microservice hosting feature**.
+
+	The option 8 appears **Disable microservice hosting feature** if the microservice feature is enabled.
+
+3. Confirm to enable the microservice feature.
+
+To disable the microservice feature, run the post installer and select the option 8. For more information about developing and hosting a microservice, see [Microservices SDK](/guides/microservice-sdk/introduction/). 

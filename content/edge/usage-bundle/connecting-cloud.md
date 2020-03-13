@@ -33,9 +33,71 @@ Once the device is connected, the device status changes to **Pending acceptance*
 
 ### Accessing the Edge device from the Cumulocity tenant
 
-The Cumulocity Cloud Remote Access microservice allows you to remotely access the Edge device through a web browser. The remote Edge device is represented as a device in the Device Management application of Cumulocity. For more information about remote access, see [Cloud Remote Access](/guides/users-guide/optional-services/#cloud-remote-access).
+The Cumulocity Cloud Remote Access microservice allows you to remotely access the Edge device through a web browser. The remote Edge VM is represented as a device in the Device Management application of Cumulocity.
 
->**Info**: Currently, only the SSH protocol is supported.
+#### Supported protocols
+
+The following protocols are supported to connect to the Edge device through remote access from the Cumulocity tenant:
+
+* Remote Desktop (VNC). See [Accessing the Edge device remotely through VNC](/guides/edge/usage/#accessing-the-edge-device-remotely-through-vnc).
+	* Shares the desktop of the remote device
+	* Mouse and keyboard for interaction
+* Secure Shell (SSH)
+	* Console for command line access
+	* Keyboard for interaction
+* Terminal (Telnet)
+	* Console for command line access
+	* Keyboard for interaction
+
+For more information about remote access, see [Cloud Remote Access](/guides/users-guide/optional-services/#cloud-remote-access) in the User guide.
+
+### Accessing the Edge device remotely through VNC
+
+You can access the Edge VM from the Cumulocity tenant by installing the VNC components on your Edge VM. 
+
+**Info:** Ensure that you have registered your Edge device with the Cumulocity tenant. See [Registering the Edge device with the Cumulocity tenant](/guides/edge/usage/#registering-the-edge-device-with-the-cumulocity-tenant).
+
+#### Step 1: Installing the VNC components
+
+**Info:** The Edge VM must be connected to the internet to install the VNC components.
+
+1. Run the script *vnc-setup.sh*.
+
+	` [admin@server ~]$ sudo /opt/c8y/utilities/vnc-setup.sh`
+
+The *vnc-setup.sh* script installs the VNC components. After installing the VNC components, you should configure the VNC server for each user.
+
+#### Step 2: Configuring VNC server for a user
+
+To configure the VNC server, run the *vnc-user-setup.sh* script. Each user should run this script to set up VNC components and be able to connect to the Edge device. The *vnc-user-setup.sh* script enables the current user to use VNC functionality and set a VNC password for the current user. 
+ 
+1. Run the script *vnc-user-setup.sh*.
+
+	` [admin@server ~]$ /opt/c8y/utilities/vnc-user-setup.sh`
+
+2. Provide and verify the password.
+
+3. Select **Y** or **N** to enter a view-only password.
+
+Record the allocated port number. This port number will be used to connect to the VNC server on your Edge device.
+
+**Info:** You can also get the allocated port number from the */opt/c8y/utilities/vnc-display-mapping* file. In this file, you will find the VNC display number allocated for each user. For example, admin:1. You must add 5900 to the number associated with the user. In this example, the port number for the user **admin** is 5901.
+
+#### Step 3: Connecting to the Edge device using VNC
+
+To access and connect to the Edge device, you must create a remote access point.
+
+1. In the Cumulocity tenant for your registered Edge device, add a remote access endpoint. See [Adding remote access endpoints](/guides/users-guide/optional-services/#adding-remote-access-endpoints-via-vnc). You must use the same port number that is allocated for you.
+
+2. Connect to the endpoint. See [Connecting to endpoints](/guides/users-guide/optional-services/#connecting-to-endpoints).
+
+The connection to the Edge VM is established and the GUI appears for the Edge VM. Right-click in the screen to open the desktop components **xterm** and **firefox**.
+
+<img src="/guides/images/edge/edge-vnc-gui-screen.png" alt="Edge VNC" style="max-width: 75%">
+
+#### Changing the VNC password
+
+You can change the VNC password for the current user by running the *vnc-user-setup.sh* script. After changing the password, you must update the password in the remote access endpoint.
 
 ### Data exchange using Data Broker
 

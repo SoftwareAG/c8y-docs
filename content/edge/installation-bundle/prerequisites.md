@@ -100,7 +100,7 @@ The virtual machine has the following minimum hardware requirements:
 |RAM|6 GB - without microservice <br>8 GB - with microservice: minimum 8 GB
 |Network Interface Controller (NIC)|1
 
-These are the minimum system requirements to enable the microservice hosting feature. If the microservice requires additional resources, you must configure the system requirements accordingly.
+These are the minimum system requirements to enable the microservice hosting feature. If the microservice requires additional system resources, you must configure the system requirements accordingly.
 
 >**Info**: This does not cover host OS hardware requirements.
 

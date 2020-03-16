@@ -102,5 +102,5 @@ The virtual machine has the following minimum hardware requirements:
 
 These are the minimum system requirements to enable the microservice hosting feature. If the microservice requires additional system resources, you must configure the system requirements accordingly.
 
->**Info**: This does not cover host OS hardware requirements.
+>**Info:** This does not cover host operating system hardware requirements.
 

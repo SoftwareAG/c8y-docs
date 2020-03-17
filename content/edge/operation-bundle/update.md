@@ -4,12 +4,8 @@ title: Upgrading the system
 layout: redirect
 ---
 
->**Info**: If you use **opcua-agent-server** and you are upgrading from an earlier version of Edge to the latest version, you must execute the below mentioned commands in your EDGE VM to backup **opcua-agent-server** data. This has to be performed before following any of the steps described below.<br>Additionally, please request the Cumulocity support for root user credentials if you don’t have it.
+>**Info:** Upgrading OPC UA artifact from older version to the newer version is not supported.
 
-```shell
-mkdir -p /usr/edge/properties/opcua/db
-cp -a /etc/opcua/db/. /usr/edge/properties/opcua/db/
-```
 ### Upgrading the system on VMware ESXi
 
 To upgrade the Edge VM on VMware ESXi:

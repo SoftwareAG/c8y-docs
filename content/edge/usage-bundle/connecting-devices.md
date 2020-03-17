@@ -54,23 +54,18 @@ To connect an OPC/UA device in Edge, follow the steps below.
 Check if the OPC/UA agent is running in Cumulocity IoT Edge (running on port  6670):  
 
 ```shell
-[admin@server ~]$ sudo systemctl status opcua-agent-server
+[admin@server ~]$ sudo service opcua-mgmt-service status
 ```
-
-<img src="/guides/images/edge/edge-device-check-agent.png" name="Check agent" style="width:100%;"/>
 
 If the agent is not running, start it with the following command:
 
 ```shell
-[admin@server ~]$ sudo systemctl start opcua-agent-server
+[admin@server ~]$ sudo service opcua-mgmt-service start
 ```
-
-Check if the platform.url in */etc/opcua/opcua-agent-gateway.properties* is pointing to the correct URL, which is *http://localhost*.
-
 
 #### Registering the device
 
-Next, you need to register a device in the Device Management application with the same device ID as the gateway.identifier in */etc/opcua/opcua-agent-gateway.properties*, e.g. “opcua”.
+Next, you need to register a device in the Device Management application with the name opcua-gateway
 
 <img src="/guides/images/edge/edge-device-registration-example.png" name="Register device"/> 
 
@@ -78,7 +73,7 @@ Follow the description in Device Management > [Connecting devices](/guides/users
 
 In the Device Management application, click **All devices** in the navigator and find the OPCUA device in the device list.
 
-For further information on managing and configuring OPCUA devices, refer to Optional services > [Cloud Fieldbus](/guides/users-guide/optional-services#cloud-fieldbus) in the User guide.
+For further information about managing and configuring OPCUA devices, see [OPC UA](/guides/users-guide/optional-services/#opc-ua) section in the User guide.
 
 
 

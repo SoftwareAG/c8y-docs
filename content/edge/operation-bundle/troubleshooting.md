@@ -15,6 +15,7 @@ We recommend to follow these steps:
 If you still need to contact SAG support, include the output of the diagnostics script. See the [Diagostics](#diagnostics) section on details how to run it. 
  	
 ### <a name="health-check"></a>Health check	
+
 #### Network
 
 Without working network connection the system is not able to work. The following instructions show how to check the network connectivity of the platform. 
@@ -273,7 +274,8 @@ To access the apama-ctrl log files, run the command:
 
 |Component|Files|Location|
 |:---|:---|:---
-|opcua-agent-server|opcua-agent-server-gc.log<br>opcua-agent-server.log<br> opcua-agent-server-2018-04-30.0.log|/var/log/opcua/
+|opcua-mgmt-service|opcua-mgmt-service.log|/var/log/opcua/
+|opcua-device-gateway|opcua-device-gateway.log|/var/log/opcua/
 |Smartrule-agent-server-apama|smartrule-agent-server-apama-gc.log<br> smartrule-agent-server-apama.log<br>smartrule.log|/var/log/smartrule/
 |cumulocity-agent|cumulocity-agent.log|/var/log/cumulocity-agent/
 

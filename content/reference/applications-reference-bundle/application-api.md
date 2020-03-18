@@ -6,14 +6,60 @@ layout: redirect
 
 ### ApplicationAPI [application/vnd.com.nsn.cumulocity.applicationApi+json]
 
-|Name|Type|Occurs|Description|
-|:---|:---|:-----|:----------|
-|self|URL|1|Link to this resource|
-|applicationById|Application/URI-Template|1|A reference to a resource of type Application (placeholder {id})|
-|applications|ApplicationCollection|1|Collection of all applications|
-|applicationsByName|ApplicationCollection URI-Template|1|Read-only collection of all applications with a particular name (placeholder {name})|
-|applicationsByTenant|ApplicationCollection URI-Template|1|Read-only collection of all applications subscribed by a particular tenant (placeholder {tenant})|
-|applicationsByOwner|ApplicationCollection URI-Template|1|Read-only collection of all applications owned by a particular tenant (placeholder {tenant})|
+<div class="table-responsive"><table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">self</td>
+<td align="left">URL</td>
+<td align="left">1</td>
+<td align="left">Link to this resource</td>
+</tr>
+<tr>
+<td align="left">applicationById</td>
+<td align="left">Application/URI-Template</td>
+<td align="left">1</td>
+<td align="left">A reference to a resource of type Application (placeholder {id})</td>
+</tr>
+<tr>
+<td align="left">applications</td>
+<td align="left">ApplicationCollection</td>
+<td align="left">1</td>
+<td align="left">Collection of all applications</td>
+</tr>
+<tr>
+<td align="left">applicationsByName</td>
+<td align="left">ApplicationCollection URI-Template</td>
+<td align="left">1</td>
+<td align="left">Read-only collection of all applications with a particular name (placeholder {name})</td>
+</tr>
+<tr>
+<td align="left">applicationsByTenant</td>
+<td align="left">ApplicationCollection URI-Template</td>
+<td align="left">1</td>
+<td align="left">Read-only collection of all&nbsp;applications subscribed by a particular tenant (placeholder {tenant})</td>
+</tr>
+<tr>
+<td align="left">applicationsByOwner</td>
+<td align="left">ApplicationCollection URI-Template</td>
+<td align="left">1</td>
+<td align="left">Read-only collection of all&nbsp;applications owned by a particular tenant (placeholder {tenant})</td>
+</tr>
+</tbody>
+</table></div>
 
 
 ### GET the Application API resource

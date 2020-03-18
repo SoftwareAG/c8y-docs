@@ -139,8 +139,8 @@ The DELETE method allows for deletion of alarm collections. Acceptable query par
 <table>
 <colgroup>
 <col style="width: 20%;">
-<col style="width: 10%;">
-<col style="width: 70%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
 </colgroup>
 <thead>
 <tr>

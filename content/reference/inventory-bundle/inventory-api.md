@@ -8,9 +8,9 @@ layout: redirect
 
 <table>
 <col style="width:30%">
-<col style="width:22%">
-<col style="width:5%">
-<col style="width:43%">
+<col style="width:25%">
+<col style="width:10%">
+<col style="width:35%">
 <thead>
 <tr>
 <th align="left">Name</th>

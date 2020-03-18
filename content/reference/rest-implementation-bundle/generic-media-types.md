@@ -10,7 +10,7 @@ The error type provides further information on the reason of a failed request.
 
 <table>
 <colgroup>
-<col style="width: 10%;">
+<col style="width: 20%;">
 <col style="width: 10%;">
 <col style="width: 10%;">
 <col style="width: 70%;">
@@ -53,19 +53,86 @@ The error type provides further information on the reason of a failed request.
 
 Error details are provided in the following structure:
 
-|Name|Type|Occurs|Description|
-|:---|:---|:-----|:----------|
-|expectionClass|String|1|Class name of an exception that caused this error.|
-|exceptionMessage|String|1|Exception message content.|
-|expectionStackTrace|String|1|Strack trace of the exception.|
-|-|-|-|Further diagnostic information depending on error type.|
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">expectionClass</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Class name of an exception that caused this error.</td>
+</tr>
+<tr>
+<td align="left">exceptionMessage</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Exception message content.</td>
+</tr>
+<tr>
+<td align="left">expectionStackTrace</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Strack trace of the exception.</td>
+</tr>
+<tr>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">Further diagnostic information depending on error type.</td>
+</tr>
+</tbody>
+</table>
 
 ### PagingStatistics [application/vnd.com.nsn.cumulocity.pagingStatistics+json]
 
 Paging statistics for collection resources are provided in the following format:
 
-|Name|Type|Occurs|Description|
-|:---|:---|:-----|:----------|
-|totalRecords|Integer|1|The approximate total number of records.|
-|pageSize|Integer|1|Maximum number of records contained in this query.|
-|currentPage|Integer|1|The current returned page within the full result set, starting at "1".|
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">totalRecords</td>
+<td align="left">Integer</td>
+<td align="left">1</td>
+<td align="left">The approximate total number of records.</td>
+</tr>
+<tr>
+<td align="left">pageSize</td>
+<td align="left">Integer</td>
+<td align="left">1</td>
+<td align="left">Maximum number of records contained in this query.</td>
+</tr>
+<tr>
+<td align="left">currentPage</td>
+<td align="left">Integer</td>
+<td align="left">1</td>
+<td align="left">The current returned page within the full result set, starting at “1”.</td>
+</tr>
+</tbody>
+</table>

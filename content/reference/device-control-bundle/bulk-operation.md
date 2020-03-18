@@ -23,8 +23,8 @@ Bulk Operation API requires different roles that standard device control API. Th
 colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
-<col style="width: 5%;">
-<col style="width: 35%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
 <col style="width: 20%;">
 </colgroup>
 <thead>

@@ -10,9 +10,9 @@ First section is the first line of csv file. This line contains column names (he
 
 <table>
 <colgroup>
-<col style="width: 15%;">
-<col style="width: 5%;">
-<col style="width: 80%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
 </colgroup>
 <thead>
 <tr>

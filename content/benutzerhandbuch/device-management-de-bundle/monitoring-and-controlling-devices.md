@@ -142,14 +142,44 @@ In jedem Bereich sind die Alarme nach ihrem Auftreten sortiert, wobei der aktuel
 
 In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:
 
-|Info|Beschreibung|
-|:---|:---|
-|Schweregrad|KRITISCH, WICHTIG, WENIGER WICHTIG oder WARNUNG (siehe oben).
-|Anzahl|Wie oft der Alarm von dem Gerät gesendet wurde. Es kann jeweils nur ein Alarm pro Typ für ein Gerät aktiv sein. Wenn ein weiterer Alarm des gleichen Typs auftritt, wird die Zahl um 1 erhöht.
-|Beschreibung|Optionaler Text zur Beschreibung des Alarms.
-|Status|Status des Alarms: Ein Alarm kann Folgendes sein: <br/> **Aktiv**: Wenn der Alarm ausgelöst wurde und keiner bisher den Alarm bearbeitet. <br/>**Bestätigt**: Wenn jemand den Status auf "Bestätigt" gesetzt hat, um anzuzeigen, dass dieser Alarm bereits bearbeitet wird.<br/>**Aufgehoben**: Wenn entweder jemand den Status manuell auf "aufgehoben" gesetzt hat oder wenn das Gerät selbst festgestellt hat, dass das Problem behoben ist.
-|Letztes Auftreten|Zeitstempel für das letzte Auftreten des Alarms (Gerätezeit).
-|Gerät|Name des Geräts. Durch Klicken auf den Namen gelangen Sie zur Detailansicht des Geräts.
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Info</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Schweregrad</td>
+<td align="left">KRITISCH, WICHTIG, WENIGER WICHTIG oder WARNUNG (siehe oben).</td>
+</tr>
+<tr>
+<td align="left">Anzahl</td>
+<td align="left">Wie oft der Alarm von dem Gerät gesendet wurde. Es kann jeweils nur ein Alarm pro Typ für ein Gerät aktiv sein. Wenn ein weiterer Alarm des gleichen Typs auftritt, wird die Zahl um 1 erhöht.</td>
+</tr>
+<tr>
+<td align="left">Beschreibung</td>
+<td align="left">Optionaler Text zur Beschreibung des Alarms.</td>
+</tr>
+<tr>
+<td align="left">Status</td>
+<td align="left">Status des Alarms: Ein Alarm kann Folgendes sein: <br> <strong>Aktiv</strong>: Wenn der Alarm ausgelöst wurde und keiner bisher den Alarm bearbeitet. <br><strong>Bestätigt</strong>: Wenn jemand den Status auf “Bestätigt” gesetzt hat, um anzuzeigen, dass dieser Alarm bereits bearbeitet wird.<br><strong>Aufgehoben</strong>: Wenn entweder jemand den Status manuell auf “aufgehoben” gesetzt hat oder wenn das Gerät selbst festgestellt hat, dass das Problem behoben ist.</td>
+</tr>
+<tr>
+<td align="left">Letztes Auftreten</td>
+<td align="left">Zeitstempel für das letzte Auftreten des Alarms (Gerätezeit).</td>
+</tr>
+<tr>
+<td align="left">Gerät</td>
+<td align="left">Name des Geräts. Durch Klicken auf den Namen gelangen Sie zur Detailansicht des Geräts.</td>
+</tr>
+</tbody>
+</table>
 
 Klicken Sie auf den Pfeil rechts in einem Eintrag, um die Zeile auszuklappen und weitere Details zum Alarm anzuzeigen.
 

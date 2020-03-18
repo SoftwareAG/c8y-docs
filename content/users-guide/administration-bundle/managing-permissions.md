@@ -17,43 +17,115 @@ Moreover, application access can be granted to enable a user to use an applicati
 
 Click **Roles** in the **Account** menu to display a list of configured roles.
 
-In the **Global roles** tab you can find the roles which grant permissions on a general level. There are several default global roles defined, but you can define your own according to your needs. 
+In the **Global roles** tab you can find the roles which grant permissions on a general level. There are several default global roles defined, but you can define your own according to your needs.
 
 <img src="/images/users-guide/Administration/admin-global-roles.png" alt="Context menu">
 
 The roles "admins" and "devices" have a special status:
 
-|Role&nbsp;&nbsp;&nbsp;|Description|
-|:---|:---|
-|admins|All permissions are enabled. The initial administrator, the first user created in a tenant, has this role.
-|devices|Typical permission setup for devices. After registration, a device automatically has this role. Edit this role if your devices require less or more permissions, or assign other roles to your devices.
+<table>
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 85%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Role&nbsp;&nbsp;&nbsp;</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">admins</td>
+<td align="left">All permissions are enabled. The initial administrator, the first user created in a tenant, has this role.</td>
+</tr>
+<tr>
+<td align="left">devices</td>
+<td align="left">Typical permission setup for devices. After registration, a device automatically has this role. Edit this role if your devices require less or more permissions, or assign other roles to your devices.</td>
+</tr>
+</tbody>
+</table>
 
 Furthermore, the following roles are initially configured:
 
-|Role|Description|
-|:---|:---|
-|CEP Manager|Can access all smart rules and event processing rules.
-|Cockpit User|Can access the Cockpit application. In addition, you should add a role providing access to devices.
-|Device management User|Can access the Device Management application. The user will be able to use the simulator and to run bulk operations. In addition, you should add a role providing access to devices.
-|Global Manager|Can read and write all devices.
-|Global Reader|Can read all devices.
-|Global User Manager|Can manage all users.
-|Shared User Manager|Can manage sub-users. The subscription plan needs to include user hierarchies to be able to manage sub-users.
-|Tenant Manager|Can manage tenant-wide settings, such as own applications, data brokerage, data retention, options and tenant statistics.
+<table>
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 85%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Role</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CEP Manager</td>
+<td align="left">Can access all smart rules and event processing rules.</td>
+</tr>
+<tr>
+<td align="left">Cockpit User</td>
+<td align="left">Can access the Cockpit application. In addition, you should add a role providing access to devices.</td>
+</tr>
+<tr>
+<td align="left">Device management User</td>
+<td align="left">Can access the Device Management application. The user will be able to use the simulator and to run bulk operations. In addition, you should add a role providing access to devices.</td>
+</tr>
+<tr>
+<td align="left">Global Manager</td>
+<td align="left">Can read and write all devices.</td>
+</tr>
+<tr>
+<td align="left">Global Reader</td>
+<td align="left">Can read all devices.</td>
+</tr>
+<tr>
+<td align="left">Global User Manager</td>
+<td align="left">Can manage all users.</td>
+</tr>
+<tr>
+<td align="left">Shared User Manager</td>
+<td align="left">Can manage sub-users. The subscription plan needs to include user hierarchies to be able to manage sub-users.</td>
+</tr>
+<tr>
+<td align="left">Tenant Manager</td>
+<td align="left">Can manage tenant-wide settings, such as own applications, data brokerage, data retention, options and tenant statistics.</td>
+</tr>
+</tbody>
+</table>
 
 You may also see the following legacy roles:
 
-|Role|Description|
-|:---|:---|
-|business|Can access all devices and their data but has no management permission in the tenant.
-|readers|Can read all data (including users, in contrast to "Global Readers").
+<table>
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 85%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Role</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">business</td>
+<td align="left">Can access all devices and their data but has no management permission in the tenant.</td>
+</tr>
+<tr>
+<td align="left">readers</td>
+<td align="left">Can read all data (including users, in contrast to “Global Readers”).</td>
+</tr>
+</tbody>
+</table>
 
 
 #### <a name="create-edit-roles"></a>To add a global role
 
-Click **Add Role** in the **Global roles** tab. 
+Click **Add Role** in the **Global roles** tab.
 
-In the **New global role** page you will see a list of permission types on the left and a list of applications to be accessed on the right. 
+In the **New global role** page you will see a list of permission types on the left and a list of applications to be accessed on the right.
 
 The following screenshot shows the settings for the "admins" role.
 
@@ -105,11 +177,11 @@ There may be additional permissions visible depending on the features in your su
 
 #### <a name="attach-global"></a>Assigning global roles
 
-You can assign global roles to users either directly in the user list, or by opening the page for a particular user and adding them there. 
+You can assign global roles to users either directly in the user list, or by opening the page for a particular user and adding them there.
 
 ##### To assign global roles from the user list
 
-1. Click the **Global roles** column of a particular user to open a list of global roles. 
+1. Click the **Global roles** column of a particular user to open a list of global roles.
 1. Select or clear the respective checkboxes.
 1. Click **Apply** to save your settings.
 
@@ -131,7 +203,7 @@ To view the currently configured inventory roles, click **Roles** in the **Accou
 
 <img src="/images/users-guide/Administration/admin-roles-inventory.png" alt="Context menu">
 
-In the **Inventory roles** tab you can manage user permissions for particular groups and/or its children. There are several default inventory roles defined, but you can define your own according to your needs. 
+In the **Inventory roles** tab you can manage user permissions for particular groups and/or its children. There are several default inventory roles defined, but you can define your own according to your needs.
 
 The following default inventory roles are initially available in new tenants:
 
@@ -145,7 +217,7 @@ The following default inventory roles are initially available in new tenants:
 
 #### To add an inventory role
 
-Click **Add Role** in the **Inventory roles** tab. 
+Click **Add Role** in the **Inventory roles** tab.
 
 At the top of the page you can edit the name of the inventory role. Click on the name, edit it and click the green checkmark to save your edits.
 
@@ -167,7 +239,7 @@ Permissions are grouped into the following categories:
 
 Add a permission to the role by clicking the plus icon next to the desired category.
 
-In the **Type** field, specify a type to further restrict the type of data that this permission applies to. 
+In the **Type** field, specify a type to further restrict the type of data that this permission applies to.
 
 For example, assume that your device sends measurements related to device management, such as "c8y&#95;SignalStrength", and actual production measurements. You want a user to only see the device management measurements. In this case, enter "c8y&#95;SignalStrength" as type.
 
@@ -175,7 +247,7 @@ By default, the **Type** field contains an asterisk "*" selecting all types.
 
 > **Info:** For further information on possible types, check your device documentation, the Cumulocity [sensor library](/reference/sensor-library) or the [device management library](/reference/device-management). The type being used here is the so-called "fragment type", not the "type" property. You need to enter all fragment types send in a measurement to make the measurement visible; similar for other types of data.
 
-In the **Permission** field, select a permission level from the dropdown list: 
+In the **Permission** field, select a permission level from the dropdown list:
 
 * READ - to view objects
 * CHANGE - to modify objects (does not include READ permission)
@@ -193,9 +265,9 @@ As another example, assume that you are using tracking devices. You want to allo
 
 ### <a name="attach-inventory"></a>Assigning inventory roles to users
 
-Inventory roles are assigned to a user and a group of devices. 
+Inventory roles are assigned to a user and a group of devices.
 
-To assign inventory roles, click **User** in the **Account** menu, select a user in the user list and switch to its **Inventory roles** tab. 
+To assign inventory roles, click **User** in the **Account** menu, select a user in the user list and switch to its **Inventory roles** tab.
 
 In the **Inventory roles** tab you will see a tree of device groups. To assign an inventory role, click on the arrow right from a group. Select the relevant roles and click **Apply**. For details on the roles hover over the info icon next to it or refer to [Viewing inventory roles](#inventory).
 
@@ -220,9 +292,9 @@ To help troubleshooting permissions, click the **User** button at the right of t
 
 ### <a name="app-access"></a>Granting application access
 
-The **Application Access** tab shows a list of all available applications in your tenant in alphabetical order. 
+The **Application Access** tab shows a list of all available applications in your tenant in alphabetical order.
 
-To assign applications to the user, simply select the respective applications and click **Save**. 
+To assign applications to the user, simply select the respective applications and click **Save**.
 
 For more information on application management, see [Administration > Managing applications](/users-guide/administration#managing-applications).
 

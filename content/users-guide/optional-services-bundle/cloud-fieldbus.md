@@ -299,9 +299,9 @@ To simplify configuration, the browse path is split into two parts in Cloud Fiel
  * From the root to the OPC UA device (configured [above](#connect-opcua)).
  * From the OPC UA device to a node with data of that device.
 
-When you click **Add**, enter the second part of the path into the **** field as shown in the image below. Note that the OPC UA agent currently only supports nodes of type "Variable". The description of the paths should be either provided with your OPC UA server or with your devices.
+When you click **Add**, enter the second part of the path into the **Browse Path** field as shown in the image below. Note that the OPC UA agent currently only supports nodes of type "Variable". The description of the paths should be either provided with your OPC UA server or with your devices.
 
-![Add OPCUA register](/images/users-guide/addregisterOPCUA.png)
+![Add OPCUA register](/images/users-guide/CloudFieldbus/fieldbus-opcua-add-register.png)
 
 #### <a name="configureProfibus"></a>Configuring Profibus data
 

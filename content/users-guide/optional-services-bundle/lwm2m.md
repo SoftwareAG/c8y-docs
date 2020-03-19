@@ -423,7 +423,7 @@ When hovering over the icon, you can see whether there are defined validation ru
 
 Add a new validation rule by clicking on the desired resource and then click **Add validation rule**.
 
-![Add validation rule](/images/users-guide/LWM2M/lwm2m-protocols-addrule.png)
+![Add validation rule](/images/users-guide/lwm2m/lwm2m-protocols-addrule.png)
 
 Validation rules can have the following types:
 

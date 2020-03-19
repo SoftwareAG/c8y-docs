@@ -40,6 +40,8 @@ For example:
 
 8. Import the Edge VM image as described in [Setting up ESXi](/guides/edge/installation/#setting-up-esxi).
 
+9. Run the post-upgrade task to complete the upgrade process. See [Running post-upgrade](/guides/edge/installation/#running-post-upgrade).
+
 ### Upgrading the system on VirtualBox
 
 To upgrade the Edge VM on VirtualBox:

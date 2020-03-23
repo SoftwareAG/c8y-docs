@@ -91,6 +91,8 @@ The table below lists all counters that enhance the Cumulocity IoT tenant statis
 </tbody>
 </table></div>
 
+> **Info:** `alarmsCreatedCount` increases also when a request is made with valid credentials but missing permissions.
+
 See the table below for more information on how the counters above are increased. Additionally, it shows how inbound data transfers are handled for both MQTT and REST:
 
 |Type of transfer|MQTT counter information|REST counter information|

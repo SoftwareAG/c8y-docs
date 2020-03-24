@@ -468,6 +468,8 @@ The monitor script supports only one optional startup parameter:
 
 The diagnostic utility can be customized using a properties file located under "/etc/diagnostic-utility/diagnostic_utility.properties".
 
+>**Important:** The SMTP properties in the table below are only for collecting diagnostics information. For configuring the email server, see [Administration > Changing settings> Configuration settings](/guides/users-guide/administration/#config-platform) in the User guide.
+
 Following are the available keys used in the configuration file:
 
 |<div style="width:300px">Information</div>|Description|

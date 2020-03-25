@@ -4,8 +4,8 @@ layout: redirect
 weight: 25
 ---
 
-When developing a pure Angular you can create an Angular CLI (`ng`-cli) project and add Cumulocity IoT CLI to it.
-This functionality is available for Angular 7 from version 10.4.2.0 and for Angular 8 from version 10.5.9.0.
+When developing a pure Angular you can create an Angular CLI project and add Cumulocity CLI to it.
+This functionality is only available after 1004.2.0.
 
 ### Install Angular CLI
 

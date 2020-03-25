@@ -8,7 +8,7 @@ layout: redirect
 
 It is now possible to configure sms77 as SMS provider in **Settings** > **Customization** in the  Administration application.  [MTM-29160]
 
-For details, see [Administration > Changing settings](user-guide/administration#changing-settings) in the User guide.
+For details, see [Administration > Changing settings](/users-guide/administration#changing-settings) in the User guide.
 
 ![SMS provider settings](/images/release-notes/sms-provider-sms77.png) 
 
@@ -30,5 +30,13 @@ To improve transparency, the display of the timestamp in data point graphs or ta
 * If hourly aggregation is selected, the minute and second indication will no longer be shown.
 * If minutely aggregation is selected, the second indication will no longer be shown.
 
-For details, see [add link] 
-[add image]
+For details, see [Cockpit > Data explorer](/users-guide/cockpit#data-explorer) in the User guide.
+ 
+
+### OPC UA
+
+The subscription parameters have been extended by: 
+
+* "queueSize" - number, queueSize > 0, no max value
+* "dataChangeTrigger" - string, radio-button with possible values: Status, StatusValue, StatusValueTimestamp
+* "discardOldest" - boolean, radio-buttons with possible labels: Discard oldest, Discard newest - where discard newest will just turn discard oldest into false. Discard oldest is the default.

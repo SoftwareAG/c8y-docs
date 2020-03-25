@@ -10,7 +10,7 @@ You can switch between the versions by using the dropdown list at the top right.
 
 ### Documentation sources
 
-The Cumulocity IoT documentation sources are located in a Mercurial repository called "c8y-docs" in Bitbucket. The c8y-docs repository is public which means that no credentials are required to view or copy it. 
+The Cumulocity IoT documentation sources are located in a Git repository called "c8y-docs" in Bitbucket. The c8y-docs repository is public which means that no credentials are required to view or copy it. 
 
 You find the documentation sources for the maintenance release versions in the following branches:
 
@@ -26,7 +26,7 @@ For further details on the architecture of the Cumulocity IoT documentation webs
 
 #### Viewing documentation in HTML format
 
-To view the documentation in HTML format you need to be a bit familiar with working in a version control system like Git or Mercurial.
+To view the documentation in HTML format you need to be a bit familiar with working in a version control system like Git.
 
 First you need to make a copy of the repository (called a "clone") on your local machine either by using a desktop client (for example Sourcetree) or through the command line in a terminal.
 

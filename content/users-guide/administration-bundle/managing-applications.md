@@ -254,6 +254,12 @@ Manager and editor for Apama Event Processing Language (EPL) apps, for immediate
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
+<td style="text-align:left"><a href="/users-guide/optional-services#lora" class="no-ajaxy">Activity</a></td>
+<td style="text-align:left">Interface with LoRa devices through the Actility ThingPark.</td>
+<td style="text-align:left">actility</td>
+<td style="text-align:left">Microservice</td>
+</tr>
+<tr>
 <td style="text-align:left">Microservice hosting</td>
 <td style="text-align:left">Host your own microservices on top of Cumulocity IoT.</td>
 <td style="text-align:left">feature-microservice-hosting</td>
@@ -266,8 +272,14 @@ Manager and editor for Apama Event Processing Language (EPL) apps, for immediate
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
+<td style="text-align:left"><a href="/users-guide/optional-services#opc-ua" class="no-ajaxy">OPC UA</a></td>
+<td style="text-align:left">Communicate with OPC UA servers through an OPC UA device gateway. </td>
+<td style="text-align:left">opcua-mgmt-service</td>
+<td style="text-align:left">Microservice</td>
+</tr>
+<tr>
 <td style="text-align:left"><a href="/users-guide/optional-services#sigfox" class="no-ajaxy">Sigfox</a></td>
-<td style="text-align:left">Interface with Sigfox devices through the Sigfox cloud. Requires the following application: "feature-fieldbus4"</td>
+<td style="text-align:left">Interface with Sigfox devices through the Sigfox cloud.</td>
 <td style="text-align:left">sigfox-agent</td>
 <td style="text-align:left">Microservice</td>
 </tr>

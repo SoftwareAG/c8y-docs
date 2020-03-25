@@ -6,13 +6,61 @@ layout: redirect
 
 ### Group [application/vnd.com.nsn.cumulocity.group+json]
 
-|Name|Type|Occurs|Description|Allowed in PUT/POST request|
-|:---|:---|:-----|:----------|:--------------------------|
-|id|String|1|Uniquely identifies a group|not allowed|
-|self|URI|1|Link to this resource|not allowed|
-|name|String|1|Descriptive name of the group|mandatory|
-|roles|RoleReferenceCollection|1|List of role references|not allowed|
-|devicePermissions|Object|1|List of device permissions|optional|
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+<th align="left">Allowed in PUT/POST request</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">id</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Uniquely identifies a group</td>
+<td align="left">not allowed</td>
+</tr>
+<tr>
+<td align="left">self</td>
+<td align="left">URI</td>
+<td align="left">1</td>
+<td align="left">Link to this resource</td>
+<td align="left">not allowed</td>
+</tr>
+<tr>
+<td align="left">name</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Descriptive name of the group</td>
+<td align="left">mandatory</td>
+</tr>
+<tr>
+<td align="left">roles</td>
+<td align="left">RoleReferenceCollection</td>
+<td align="left">1</td>
+<td align="left">List of role references</td>
+<td align="left">not allowed</td>
+</tr>
+<tr>
+<td align="left">devicePermissions</td>
+<td align="left">Object</td>
+<td align="left">1</td>
+<td align="left">List of device permissions</td>
+<td align="left">optional</td>
+</tr>
+</tbody>
+</table>
 
 ### Show group details
 
@@ -97,7 +145,7 @@ Example request: Delete a group
 Example response:
 
     HTTP/1.1  204 NO CONTENT
-    
+
 When a group is removed, a corresponding audit record is created with type 'User' and activity 'User updated' with the information that the user has been removed from the group.
 
 >**Info:** ADMINS and DEVICES groups can not be deleted.
@@ -132,5 +180,5 @@ Example response:
       "name" : "PlatformAdministrators",
       ...
     }
-    
+
 When a group is updated with changed roles or permissions, a corresponding audit record is created with type 'Group' and activity 'Group updated'.

@@ -457,7 +457,7 @@ Below there is an example of a full device type that configures a custom action:
 There are three data reporting mechanisms which can be applied to read all mapped browse paths:
 
 - None - The gateway will not read values automatically. The mappings will be applied only when manual read operations are performed on mapped nodes.
-- Cyclic Read - The gateway reads values from mapped nodes at specified interval rates in milliseconds. The minimum allowed rate is 50 milliseconds. 
+- Cyclic Read - The gateway reads values from mapped nodes at specified interval rates in milliseconds. The minimum allowed rate is 50 milliseconds.
 - Subscription - The sampling interval defines a time interval individually for each mapped node. This is the rate at which the server checks the data source for changes. If an absolute deadband filter is chosen, the value will contain the absolute change in a data value that will cause a notification to be generated. This parameter applies only to variables with any number data type. If percent deadband value is chosen, the value is defined as the percentage of the EU range. It applies only to analog items with a valid EU range property. This range is multiplied with the deadband value and is then compared to the actual value change in order to determine the need for a data change notification.
 
 ![OPC UA device protocol](/images/users-guide/opcua/opcua-data-reporting.png)

@@ -6,15 +6,66 @@ layout: redirect
 
 ### UserAPI [application/vnd.com.nsn.cumulocity.userApi+json]
 
-|Name|Type|Occurs|Description|
-|:---|:---|:-----|:----------|
-|self|URL|1|Link to this resource|
-|userByName|URI Template/User|1|Reference to a resource of type User. The template contains placeholders {realm} and {userName}.|
-|users|URI Template/UserCollection|1|Collection of all users belonging to a given realm. The template contains a placeholder {realm}.|
-|currentUser|URI Template/User|1|Reference to the resource of the logged in user.|
-|groupByName|URI Template/Group|1|Reference to a resource of type Group. The template contains placeholders {realm} and {groupName}.|
-|groups|URI Template/GroupCollection|1|Collection of all users belonging to a given realm. The template contains a placeholder {realm}.|
-|roles|URI Template/RoleCollection|1|Collection of all roles.|
+<table>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 10%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">self</td>
+<td align="left">URL</td>
+<td align="left">1</td>
+<td align="left">Link to this resource</td>
+</tr>
+<tr>
+<td align="left">userByName</td>
+<td align="left">URI Template/User</td>
+<td align="left">1</td>
+<td align="left">Reference to a resource of type User. The template contains placeholders {realm} and {userName}.</td>
+</tr>
+<tr>
+<td align="left">users</td>
+<td align="left">URI Template/UserCollection</td>
+<td align="left">1</td>
+<td align="left">Collection of all users belonging to a given realm. The template contains a placeholder {realm}.</td>
+</tr>
+<tr>
+<td align="left">currentUser</td>
+<td align="left">URI Template/User</td>
+<td align="left">1</td>
+<td align="left">Reference to the resource of the logged in user.</td>
+</tr>
+<tr>
+<td align="left">groupByName</td>
+<td align="left">URI Template/Group</td>
+<td align="left">1</td>
+<td align="left">Reference to a resource of type Group. The template contains placeholders {realm} and {groupName}.</td>
+</tr>
+<tr>
+<td align="left">groups</td>
+<td align="left">URI Template/GroupCollection</td>
+<td align="left">1</td>
+<td align="left">Collection of all users belonging to a given realm. The template contains a placeholder {realm}.</td>
+</tr>
+<tr>
+<td align="left">roles</td>
+<td align="left">URI Template/RoleCollection</td>
+<td align="left">1</td>
+<td align="left">Collection of all roles.</td>
+</tr>
+</tbody>
+</table>
 
 ### GET the user API resource
 

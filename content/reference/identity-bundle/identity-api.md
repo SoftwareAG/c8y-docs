@@ -6,19 +6,49 @@ layout: redirect
 
 ### Identity [application/vnd.com.nsn.cumulocity.identityApi+json]
 
-|Name|Type|Occurs|Description|
-|:---|:---|:-----|:----------|
-|self|URL|1|Link to this resource.|
-|externalId|ExternalID URI template|1|Single external ID, represented by type of the external ID and the value of the external ID, both as strings (placeholders {type} and {value}).|
-|externalIdsOfGlobalId|ExternalIDCollection URI template|1|Represents a collection of external ids for a specified global id (placeholder {globalId}).|
-
+<table>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 10%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">self</td>
+<td align="left">URL</td>
+<td align="left">1</td>
+<td align="left">Link to this resource.</td>
+</tr>
+<tr>
+<td align="left">externalId</td>
+<td align="left">ExternalID URI template</td>
+<td align="left">1</td>
+<td align="left">Single external ID, represented by type of the external ID and the value of the external ID, both as strings (placeholders {type} and {value}).</td>
+</tr>
+<tr>
+<td align="left">externalIdsOfGlobalId</td>
+<td align="left">ExternalIDCollection URI template</td>
+<td align="left">1</td>
+<td align="left">Represents a collection of external ids for a specified global id (placeholder {globalId}).</td>
+</tr>
+</tbody>
+</table>
 ### GET the Identity API resource
 
 Response body: identityApi
-  
+
 Required role: ROLE\_IDENTITY\_READ
 
-Example request: 
+Example request:
 
 	GET /identity
 	Host: ...

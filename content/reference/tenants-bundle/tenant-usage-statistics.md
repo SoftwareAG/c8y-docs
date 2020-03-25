@@ -38,8 +38,11 @@ Inbound data transfer refers to the total number of inbound requests performed t
 The table below lists all counters that enhance the Cumulocity IoT tenant statistics and measure the inbound data transfers:
 
 <div class="table-responsive"><table>
-<col width="200">
-<col width="80">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 15%;">
+<col style="width: 60%;">
+</colgroup>
 <thead>
 <tr>
 <th style="text-align:left">Name</th>
@@ -90,6 +93,8 @@ The table below lists all counters that enhance the Cumulocity IoT tenant statis
 </tr>
 </tbody>
 </table></div>
+
+> **Info:** `alarmsCreatedCount` increases also when a request is made with valid credentials but missing permissions.
 
 See the table below for more information on how the counters above are increased. Additionally, it shows how inbound data transfers are handled for both MQTT and REST:
 

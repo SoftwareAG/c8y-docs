@@ -5,26 +5,122 @@ layout: redirect
 ---
 ### Alarm [application/vnd.com.nsn.cumulocity.alarm+json]
 
-|Name|Type|Occurs|Description|PUT/POST|
-|:---|:---|:-----|:----------|:-------|
-|id|String|1|Uniquely identifies an alarm.|No|
-|self|URI|1|Link to this resource.|No|
-|creationTime|String|1|Time when alarm was created in the database.|No|
-|type|String|1|Identifies the type of this alarm, e.g., "com\_cumulocity\_events\_TamperEvent".|POST: Mandatory PUT: No|
-|time|String|1|Time of the alarm.|POST: Mandatory PUT: No|
-|text|String|1|Text description of the alarm.|POST: Mandatory PUT: No|
-|source|ManagedObject|1|The ManagedObject that the alarm originated from, as object containing the "id" property.|POST: Mandatory PUT: No|
-|status|String|0..1|The status of the alarm: ACTIVE, ACKNOWLEDGED or CLEARED. If status was not appeared, new alarm will have status ACTIVE. Must be upper-case.|POST: Optional PUT: Optional|
-|severity|String|1|The severity of the alarm: CRITICAL, MAJOR, MINOR or WARNING. Must be upper-case.|POST: Mandatory PUT: Optional|
-|count|Long|1|The number of times this alarm has been sent.|No|
-|firstOccurrenceTime|String|1|The first time that this alarm occurred (i.e., where "count" was 1).|No|
-|history|AuditRecordCollection|1|Legacy. Should not be used.|No|
-|\*|Object|0..n|Additional properties of the event.||
+<table>
+colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+<th align="left">PUT/POST</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">id</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Uniquely identifies an alarm.</td>
+<td align="left">No</td>
+</tr>
+<tr>
+<td align="left">self</td>
+<td align="left">URI</td>
+<td align="left">1</td>
+<td align="left">Link to this resource.</td>
+<td align="left">No</td>
+</tr>
+<tr>
+<td align="left">creationTime</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Time when alarm was created in the database.</td>
+<td align="left">No</td>
+</tr>
+<tr>
+<td align="left">type</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Identifies the type of this alarm, e.g., “com_cumulocity_events_TamperEvent”.</td>
+<td align="left">POST: Mandatory PUT: No</td>
+</tr>
+<tr>
+<td align="left">time</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Time of the alarm.</td>
+<td align="left">POST: Mandatory PUT: No</td>
+</tr>
+<tr>
+<td align="left">text</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Text description of the alarm.</td>
+<td align="left">POST: Mandatory PUT: No</td>
+</tr>
+<tr>
+<td align="left">source</td>
+<td align="left">ManagedObject</td>
+<td align="left">1</td>
+<td align="left">The ManagedObject that the alarm originated from, as object containing the “id” property.</td>
+<td align="left">POST: Mandatory PUT: No</td>
+</tr>
+<tr>
+<td align="left">status</td>
+<td align="left">String</td>
+<td align="left">0..1</td>
+<td align="left">The status of the alarm: ACTIVE, ACKNOWLEDGED or CLEARED. If status was not appeared, new alarm will have status ACTIVE. Must be upper-case.</td>
+<td align="left">POST: Optional PUT: Optional</td>
+</tr>
+<tr>
+<td align="left">severity</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">The severity of the alarm: CRITICAL, MAJOR, MINOR or WARNING. Must be upper-case.</td>
+<td align="left">POST: Mandatory PUT: Optional</td>
+</tr>
+<tr>
+<td align="left">count</td>
+<td align="left">Long</td>
+<td align="left">1</td>
+<td align="left">The number of times this alarm has been sent.</td>
+<td align="left">No</td>
+</tr>
+<tr>
+<td align="left">firstOccurrenceTime</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">The first time that this alarm occurred (i.e., where “count” was 1).</td>
+<td align="left">No</td>
+</tr>
+<tr>
+<td align="left">history</td>
+<td align="left">AuditRecordCollection</td>
+<td align="left">1</td>
+<td align="left">Legacy. Should not be used.</td>
+<td align="left">No</td>
+</tr>
+<tr>
+<td align="left">&#42;</td>
+<td align="left">Object</td>
+<td align="left">0..n</td>
+<td align="left">Additional properties of the event.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 ### GET an Alarm
 
 Response body: Alarm
-  
+
 Required role: ROLE\_ALARM\_READ
 
 Example request:

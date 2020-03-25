@@ -6,26 +6,116 @@ layout: redirect
 
 ### Application [application/vnd.com.nsn.cumulocity.application+json;ver=0.9]
 
-|Field Name|Type|Occurs|Description|PUT/POST|
-|:---------|:---|:-----|:----------|:-------|
-|self|URL|1|Link to this resource|No|
-|id|String|1|Unique identifier for the application|No|
-|name|String|1|Name of application|POST: Mandatory PUT: Optional|
-|key|String|1|Shared secret of application|POST: Mandatory PUT: Optional|
-|type|String|1|Type of application. Possible values are : EXTERNAL, HOSTED, MICROSERVICE|POST: Mandatory PUT: No|
-|availability|String|0..1|Access level for other tenants.  Possible values are : MARKET, PRIVATE (default)|Optional|
-|owner|TenantReference| 1|Reference to the tenant owning this application|No |
-|contextPath|String|0..1|contextPath of the hosted application |POST: Mandatory (when application type is HOSTED) PUT: Optional|
-|resourcesUrl|String|0..1|URL to application base directory hosted on an external server|POST: Mandatory (when application type is HOSTED) PUT: Optional|
-|resourcesUsername|String|0..1|authorization username to access resourcesUrl |Optional|
-|resourcesPassword|String|0..1|authorization password to access resourcesUrl |Optional|
-|externalUrl|String|0..1|URL to the external application|POST: Mandatory (when application type is EXTERNAL) PUT: Optional|
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Field Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+<th align="left">PUT/POST</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">self</td>
+<td align="left">URL</td>
+<td align="left">1</td>
+<td align="left">Link to this resource</td>
+<td align="left">No</td>
+</tr>
+<tr>
+<td align="left">id</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Unique identifier for the application</td>
+<td align="left">No</td>
+</tr>
+<tr>
+<td align="left">name</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Name of application</td>
+<td align="left">POST: Mandatory PUT: Optional</td>
+</tr>
+<tr>
+<td align="left">key</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Shared secret of application</td>
+<td align="left">POST: Mandatory PUT: Optional</td>
+</tr>
+<tr>
+<td align="left">type</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Type of application. Possible values are : EXTERNAL, HOSTED, MICROSERVICE</td>
+<td align="left">POST: Mandatory PUT: No</td>
+</tr>
+<tr>
+<td align="left">availability</td>
+<td align="left">String</td>
+<td align="left">0..1</td>
+<td align="left">Access level for other tenants.&nbsp;&nbsp;Possible values are : MARKET, PRIVATE (default)</td>
+<td align="left">Optional</td>
+</tr>
+<tr>
+<td align="left">owner</td>
+<td align="left">TenantReference</td>
+<td align="left">&nbsp;1</td>
+<td align="left">Reference to the tenant owning this application</td>
+<td align="left">No&nbsp;</td>
+</tr>
+<tr>
+<td align="left">contextPath</td>
+<td align="left">String</td>
+<td align="left">0..1</td>
+<td align="left">contextPath of the hosted application&nbsp;</td>
+<td align="left">POST: Mandatory (when application type is HOSTED) PUT: Optional</td>
+</tr>
+<tr>
+<td align="left">resourcesUrl</td>
+<td align="left">String</td>
+<td align="left">0..1</td>
+<td align="left">URL to application base directory hosted on an external server</td>
+<td align="left">POST: Mandatory (when application type is HOSTED) PUT: Optional</td>
+</tr>
+<tr>
+<td align="left">resourcesUsername</td>
+<td align="left">String</td>
+<td align="left">0..1</td>
+<td align="left">authorization username to access resourcesUrl&nbsp;</td>
+<td align="left">Optional</td>
+</tr>
+<tr>
+<td align="left">resourcesPassword</td>
+<td align="left">String</td>
+<td align="left">0..1</td>
+<td align="left">authorization password to access resourcesUrl&nbsp;</td>
+<td align="left">Optional</td>
+</tr>
+<tr>
+<td align="left">externalUrl</td>
+<td align="left">String</td>
+<td align="left">0..1</td>
+<td align="left">URL to the external application</td>
+<td align="left">POST: Mandatory (when application type is EXTERNAL) PUT: Optional</td>
+</tr>
+</tbody>
+</table>
 
 ### POST - copy an application
 
-A POST request to the "clone" resource creates a new application based on an already existing one. 
+A POST request to the "clone" resource creates a new application based on an already existing one.
 
-The properties are copied to the newly created application. For name, key and context path a "clone" prefix is added in order to be unique. 
+The properties are copied to the newly created application. For name, key and context path a "clone" prefix is added in order to be unique.
 
 If the target application is hosted and has an active version, the new application will have the active version with the same content.
 
@@ -44,7 +134,7 @@ Example response:
     HTTP/1.1 201 Created
     Location: .../application/applications/{{application_id}}
     Content-Type: application/vnd.com.nsn.cumulocity.application+json; charset=UTF-8; ver=0.9
-    
+
     {
         "activeVersionId": "10414",
         "availability": "MARKET",
@@ -113,7 +203,7 @@ Example response:
 ### DELETE an application
 
 Request Body: n/a
- 
+
 Response Body: n/a
 
 Required role: ROLE\_APPLICATION\_MANAGMENT\_ADMIN and owner

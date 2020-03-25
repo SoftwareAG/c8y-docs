@@ -21,7 +21,7 @@ In order to send commands as text messages to devices, the devices must be put i
 		"mode": "SMS"
 	}
 
-For more information, please refer to [Device control via SMS](/reference/device-control#control_via_sms).
+For more information, please refer to [Device control via SMS](/reference/device-control/#device-control-via-sms).
 
 #### c8y\_Command
 
@@ -38,7 +38,7 @@ To communicate the results of a particular command, the device adds a property "
 		"result": "165711141901401"
 	}
 
-Please contact [support](https://support.cumulocity.com) if you would like to publish sample commands for your device type.
+Please contact [support](https://empower.softwareag.com/ContactSupport/) if you would like to publish sample commands for your device type.
 
 #### c8y\_DeviceTypes
 

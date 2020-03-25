@@ -8,9 +8,9 @@ layout: redirect
 
 <table>
 <col style="width:30%">
-<col style="width:21%">
-<col style="width:5%">
-<col style="width:44%">
+<col style="width:25%">
+<col style="width:10%">
+<col style="width:35%">
 <thead>
 <tr>
 <th align="left">Name</th>
@@ -68,7 +68,7 @@ layout: redirect
 ### GET - Representation of the Inventory API resource
 
 **Response body:** application/vnd.com.nsn.cumulocity.inventoryApi+json
-  
+
 **Required role:** ROLE\_INVENTORY\_READ
 
 #### Example request - Get the Inventory API resource
@@ -78,7 +78,7 @@ layout: redirect
 |Authorization|{{auth}}
 |Host|{{hostname}}
 
-```http	
+```http
 200 - OK
 
 GET <<url>>/inventory
@@ -91,9 +91,9 @@ GET <<url>>/inventory
 |Content-Type|application/vnd.com.nsn.cumulocity.inventoryapi+json;ver=...
 
 ```http
-HTTP/1.1 
+HTTP/1.1
 200 - OK
-    
+
 {
     "managedObjectsForFragmentType" : "<<ManagedObjectCollection URL>>?fragmentType={fragmentType}",
     "managedObjectsForType" : "<<ManagedObjectCollection URL>>?type={type}",

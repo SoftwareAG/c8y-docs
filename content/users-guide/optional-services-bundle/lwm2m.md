@@ -175,7 +175,7 @@ The table below reflects the full set of possible fields that can be added:
 </tbody>
 </table>
 
-![CSV example 2.1](/images/users-guide/lwm2mM/lwm2m-psk-example.png)
+![CSV example 2.1](/images/users-guide/lwm2m/lwm2m-psk-example.png)
 
 In this CSV example, the security mode value is “PSK”. With "PSK" enabled, additional mandatory fields must be filled. All fields, available to "PSK", can be observed in the table below:
 

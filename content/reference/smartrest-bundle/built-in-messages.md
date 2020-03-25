@@ -8,32 +8,136 @@ layout: redirect
 
 ### Request messages
 
-Message identifier | Message parameters              | Description
--------------------|-------------------------|------------
-10 | Template message identifier<br>Method<br>Resource identifier<br>Content MIME type<br>Accept MIME type<br>Placeholder<br>Request parameters<br>Template string | Represents a request template. If this message occours in the body, the whole body is treated as a *SmartREST* template and thus, all messages besides `10` and `11` will yield an error.
-11 | Template message identifier<br>Base JSON path<br>Conditional JSON ath<br>Value JSON paths | Represents a response template. If this message occours in the body, the whole body is treated as a *SmartREST* template and thus, all messages besides `10` and `11` will yield an error.
-15 | X-Id | Defines which X-Id to use for the following lines. You must not use the X-Id header when using this line.
-61 | Device MO GId | Poll device credentials during device bootstrapping process. No `X-Id` header must be present and the device bootstrap authorization must be used.
-80 | *None* | Initial handshake that will return a unique bayeux clientId. SmartREST real-time notifications.
-81 | clientId,channel | Subscribe for the given channel. SmartREST real-time notifications.
-82 | clientId,channel | Unsubscribe for the given channel. SmartREST real-time notifications.
-83 | clientId | Establish conntection for receiving the notifications (long-polling). SmartREST real-time notifications.
-84 | clientId | Disconnect the client from the server. SmartREST real-time notifications.
+<table>
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 25%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th>Message&nbsp;identifier</th>
+<th>Message&nbsp;parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>Template&nbsp;message&nbsp;identifier<br>Method<br>Resource&nbsp;identifier<br>Content&nbsp;MIME&nbsp;type<br>Accept&nbsp;MIME&nbsp;type<br>Placeholder<br>Request&nbsp;parameters<br>Template&nbsp;string</td>
+<td>Represents a request template. If this message occours in the body, the whole body is treated as a <em>SmartREST</em> template and thus, all messages besides <code>10</code> and <code>11</code> will yield an error.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Template&nbsp;message&nbsp;identifier<br>Base&nbsp;JSON&nbsp;path<br>Conditional&nbsp;JSON&nbsp;ath<br>Value&nbsp;JSON&nbsp;paths</td>
+<td>Represents a response template. If this message occours in the body, the whole body is treated as a <em>SmartREST</em> template and thus, all messages besides <code>10</code> and <code>11</code> will yield an error.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>X-Id</td>
+<td>Defines which X-Id to use for the following lines. You must not use the X-Id header when using this line.</td>
+</tr>
+<tr>
+<td>61</td>
+<td>Device MO GId</td>
+<td>Poll device credentials during device bootstrapping process. No <code>X-Id</code> header must be present and the device bootstrap authorization must be used.</td>
+</tr>
+<tr>
+<td>80</td>
+<td><em>None</em></td>
+<td>Initial handshake that will return a unique bayeux clientId. SmartREST real-time notifications.</td>
+</tr>
+<tr>
+<td>81</td>
+<td>clientId,channel</td>
+<td>Subscribe for the given channel. SmartREST real-time notifications.</td>
+</tr>
+<tr>
+<td>82</td>
+<td>clientId,channel</td>
+<td>Unsubscribe for the given channel. SmartREST real-time notifications.</td>
+</tr>
+<tr>
+<td>83</td>
+<td>clientId</td>
+<td>Establish conntection for receiving the notifications (long-polling). SmartREST real-time notifications.</td>
+</tr>
+<tr>
+<td>84</td>
+<td>clientId</td>
+<td>Disconnect the client from the server. SmartREST real-time notifications.</td>
+</tr>
+</tbody>
+</table>
 
 ### Response messages
 
-Message identifier | Message parameters              | Description
--------------------|-------------------------|------------
-20 | *SmartREST* Template MO GId | Echo response message. Template was found or has been created and everything is OK.
-40 | *None* | Template not found.
-41 | Line number (optional) | Template creation error.
-42 | Line number | Malformed request line
-43 | Line number | Invalid message identifier.
-45 | Line number | Invalid message arguments.
-50 | Line number<br>*HTTP* response code | Server error. This message occurs when an error happened between the *SmartREST* proxy and the platform.
-70 | Line number<br>Unique device identifier<br>Tenant ID<br>Username<br>Password | Device bootstrap polling response with credentials.
-86 | timeout,interval,reconnect policy | Settings advice for the client using SmartREST real-time notifications.
-87 | amount of lines, X-Id | Indicates which X-Id was used to create the amount of following response lines.
+<table>
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 25%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th>Message&nbsp;identifier</th>
+<th>Message&nbsp;parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20</td>
+<td><em>SmartREST</em>&nbsp;Template&nbsp;MO&nbsp;GId</td>
+<td>Echo response message. Template was found or has been created and everything is OK.</td>
+</tr>
+<tr>
+<td>40</td>
+<td><em>None</em></td>
+<td>Template not found.</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Line&nbsp;number&nbsp;(optional)</td>
+<td>Template creation error.</td>
+</tr>
+<tr>
+<td>42</td>
+<td>Line&nbsp;number</td>
+<td>Malformed request line</td>
+</tr>
+<tr>
+<td>43</td>
+<td>Line&nbsp;number</td>
+<td>Invalid message identifier.</td>
+</tr>
+<tr>
+<td>45</td>
+<td>Line&nbsp;number</td>
+<td>Invalid message arguments.</td>
+</tr>
+<tr>
+<td>50</td>
+<td>Line&nbsp;number<br><em>HTTP</em>&nbsp;response&nbsp;code</td>
+<td>Server error. This message occurs when an error happened between the <em>SmartREST</em> proxy and the platform.</td>
+</tr>
+<tr>
+<td>70</td>
+<td>Line&nbsp;number<br>Unique&nbsp;device&nbsp;identifier<br>Tenant&nbsp;ID<br>Username<br>Password</td>
+<td>Device bootstrap polling response with credentials.</td>
+</tr>
+<tr>
+<td>86</td>
+<td>timeout,interval,reconnect policy</td>
+<td>Settings advice for the client using SmartREST real-time notifications.</td>
+</tr>
+<tr>
+<td>87</td>
+<td>amount of lines, X-Id</td>
+<td>Indicates which X-Id was used to create the amount of following response lines.</td>
+</tr>
+</tbody>
+</table>
 
 #### Error messages
 

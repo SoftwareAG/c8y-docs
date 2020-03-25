@@ -6,17 +6,59 @@ layout: redirect
 
 ### External ID [application/vnd.com.nsn.cumulocity.externalId+json]
 
-|Name|Type|Occurs|Description|PUT/POST|
-|:---|:---|:-----|:----------|:-------|
-|externalId|String|1|The identifier used in the external system that Cumulocity interfaces with.|Mandatory|
-|self|URI|1|Link to this resource.|No|
-|type|String|1|The type of the external identifier as string, e.g., "com\_cumulocity\_model\_idtype\_SerialNumber".|Mandatory|
-|managedObject|ManagedObject|1|The ManagedObject linked to the external ID.|Mandatory|
+<table>
+colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+<th align="left">PUT/POST</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">externalId</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">The identifier used in the external system that Cumulocity interfaces with.</td>
+<td align="left">Mandatory</td>
+</tr>
+<tr>
+<td align="left">self</td>
+<td align="left">URI</td>
+<td align="left">1</td>
+<td align="left">Link to this resource.</td>
+<td align="left">No</td>
+</tr>
+<tr>
+<td align="left">type</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">The type of the external identifier as string, e.g., “com_cumulocity_model_idtype_SerialNumber”.</td>
+<td align="left">Mandatory</td>
+</tr>
+<tr>
+<td align="left">managedObject</td>
+<td align="left">ManagedObject</td>
+<td align="left">1</td>
+<td align="left">The ManagedObject linked to the external ID.</td>
+<td align="left">Mandatory</td>
+</tr>
+</tbody>
+</table>
 
 ### GET an ExternalID
 
 Response body: ExternalId
-  
+
 Required role: ROLE\_IDENTITY\_READ
 
 Example request:
@@ -31,7 +73,7 @@ Example response:
     HTTP/1.1 200 OK
     Content-Type: application/vnd.com.nsn.cumulocity.externalId+json;ver=...
     Content-Length: ...
-     
+
     {
       "externalId" : "42",
       "self" : "<<URL to this ExternalID mapping>>",
@@ -47,7 +89,7 @@ Example response:
 Request Body: N/A.
 
 Response Message Body: N/A.
-  
+
 Required role: ROLE\_IDENTITY\_ADMIN
 
 Example Request: Delete an External ID

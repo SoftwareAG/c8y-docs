@@ -8,20 +8,87 @@ After a Bayeux client has discovered the server's capabilities with a handshake 
 
 ### Request
 
-|Name|Type|Occurs|Description|
-|:---|:---|:-----|:----------|
-|id|Integer|0..1|Id of message, required to match response message|
-|channel|URI|1|Name of channel, required value "/meta/connect".|
-|clientId|String|1|Unique ID of client received during handshake.|
-|connectionType|String|1|Selected connection type.|
-|advice|Object|0..1|Configuration parameters for current connect message.|
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">id</td>
+<td align="left">Integer</td>
+<td align="left">0..1</td>
+<td align="left">Id of message, required to match response message</td>
+</tr>
+<tr>
+<td align="left">channel</td>
+<td align="left">URI</td>
+<td align="left">1</td>
+<td align="left">Name of channel, required value “/meta/connect”.</td>
+</tr>
+<tr>
+<td align="left">clientId</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Unique ID of client received during handshake.</td>
+</tr>
+<tr>
+<td align="left">connectionType</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Selected connection type.</td>
+</tr>
+<tr>
+<td align="left">advice</td>
+<td align="left">Object</td>
+<td align="left">0..1</td>
+<td align="left">Configuration parameters for current connect message.</td>
+</tr>
+</tbody>
+</table>
 
 ### Advice
 
-|Name|Type|Occurs|Description|
-|:---|:---|:-----|:----------|
-|timeout|Integer|0..1|Interval between sending of connect message and response from server. Overrides server default settings for current request-response conversation.|
-|interval|Integer|0..1|Period above which server will close session, if not received next connect message from client. Overrides server default settings for current request-response conversation.|
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">timeout</td>
+<td align="left">Integer</td>
+<td align="left">0..1</td>
+<td align="left">Interval between sending of connect message and response from server. Overrides server default settings for current request-response conversation.</td>
+</tr>
+<tr>
+<td align="left">interval</td>
+<td align="left">Integer</td>
+<td align="left">0..1</td>
+<td align="left">Period above which server will close session, if not received next connect message from client. Overrides server default settings for current request-response conversation.</td>
+</tr>
+</tbody>
+</table>
 
 Example Request :
 

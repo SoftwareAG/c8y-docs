@@ -109,19 +109,77 @@ c8y_Mobile.msisdn
 
 *c8y\_CellInfo* provides detailed information about the closest mobile cell towers. When the functionality is activated, the location of the device is determined based on this fragment, in order to track the device whereabouts when GPS tracking is not available.
 
-|Name|Type|Description|
-|:---|:---|:----------|
-|radioType|String|The radio type of this cell tower. (Optional)|
-|cellTowers|Array|Detailed information about the neighbouring cell towers.|
-|cellTowers.radioType|String|The radio type of this cell tower. Can also be put directly in root JSON element if all cellTowers have same radioType. (Optional)|
-|cellTowers.mobileCountryCode|Number|The Mobile Country Code (MCC).|
-|cellTowers.mobileNetworkCode|Number|The Mobile Noetwork Code (MNC) for GSM, WCDMA and LTE. The SystemID (sid) for CDMA.|
-|cellTowers.locationAreaCode|Number|The Location Area Code (LAC) for GSM, WCDMA and LTE. The Network ID for CDMA.|
-|cellTowers.cellId|Number|The Cell ID (CID) for GSM, WCDMA and LTE. The Basestation ID for CDMA.|
-|cellTowers.timingAdvance|Number|The timing advance value for this cell tower when available. (Optional)|
-|cellTowers.signalStrength|Number|The signal strength for this cell tower in dBm. (Optional)|
-|cellTowers.primaryScramblingCode|Number|The primary scrambling code for WCDMA and physical CellId for LTE. (Optional)|
-|cellTowers.serving|Number|Specify with 0/1 if the cell is serving or not. If not specified, the first cell is assumed to be serving. (Optional)|
+<table>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 15%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">radioType</td>
+<td align="left">String</td>
+<td align="left">The radio type of this cell tower. (Optional)</td>
+</tr>
+<tr>
+<td align="left">cellTowers</td>
+<td align="left">Array</td>
+<td align="left">Detailed information about the neighbouring cell towers.</td>
+</tr>
+<tr>
+<td align="left">cellTowers.radioType</td>
+<td align="left">String</td>
+<td align="left">The radio type of this cell tower. Can also be put directly in root JSON element if all cellTowers have same radioType. (Optional)</td>
+</tr>
+<tr>
+<td align="left">cellTowers.mobileCountryCode</td>
+<td align="left">Number</td>
+<td align="left">The Mobile Country Code (MCC).</td>
+</tr>
+<tr>
+<td align="left">cellTowers.mobileNetworkCode</td>
+<td align="left">Number</td>
+<td align="left">The Mobile Noetwork Code (MNC) for GSM, WCDMA and LTE. The SystemID (sid) for CDMA.</td>
+</tr>
+<tr>
+<td align="left">cellTowers.locationAreaCode</td>
+<td align="left">Number</td>
+<td align="left">The Location Area Code (LAC) for GSM, WCDMA and LTE. The Network ID for CDMA.</td>
+</tr>
+<tr>
+<td align="left">cellTowers.cellId</td>
+<td align="left">Number</td>
+<td align="left">The Cell ID (CID) for GSM, WCDMA and LTE. The Basestation ID for CDMA.</td>
+</tr>
+<tr>
+<td align="left">cellTowers.timingAdvance</td>
+<td align="left">Number</td>
+<td align="left">The timing advance value for this cell tower when available. (Optional)</td>
+</tr>
+<tr>
+<td align="left">cellTowers.signalStrength</td>
+<td align="left">Number</td>
+<td align="left">The signal strength for this cell tower in dBm. (Optional)</td>
+</tr>
+<tr>
+<td align="left">cellTowers.primaryScramblingCode</td>
+<td align="left">Number</td>
+<td align="left">The primary scrambling code for WCDMA and physical CellId for LTE. (Optional)</td>
+</tr>
+<tr>
+<td align="left">cellTowers.serving</td>
+<td align="left">Number</td>
+<td align="left">Specify with 0/1 if the cell is serving or not. If not specified, the first cell is assumed to be serving. (Optional)</td>
+</tr>
+</tbody>
+</table>
 
     "c8y_CellInfo": {
       "radioType": "gsm",

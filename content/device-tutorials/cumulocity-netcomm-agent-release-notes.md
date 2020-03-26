@@ -6,9 +6,9 @@ layout: bundle
 
 ### Release notes for NetComm Agent 1.0.0
 
-This document describes the Cumulocity-Netcomm-Agent package for the [casa systems NTC-220 series](https://support.netcommwireless.com/product/ntc-220-series) router.
+This document describes the Cumulocity-Netcomm-Agent package for the [casa systems NTC-220 series](https://support.netcommwireless.com/products/NTC-220%20Series) router.
 
-> If you have either [NetComm Wireless NTC-6200](https://support.netcommwireless.com/product/ntc-6200) or [NetComm Wireless NTC-140W](https://support.netcommwireless.com/product/ntc-140w), you must get our old Netcomm Agent version 4.2.3 or older. Please contact [support](https://empower.softwareag.com/ContactSupport/) or refer to the other guide to get packages.
+> **Info:** If you have either [NetComm Wireless NTC-6200](https://support.netcommwireless.com/products/NTC-6200%20Series) or [NetComm Wireless NTC-140W](https://support.netcommwireless.com/products/NTC-140W%20Series), you must get our old Netcomm Agent version 4.2.3 or older. Please contact [support](https://empower.softwareag.com/ContactSupport/) or refer to the other guide to get packages.
 
 ### Supported functionality
 
@@ -72,7 +72,7 @@ For information on using the agent, please refer to [Quick Start Guide](/device-
 
 ### History
 
-> **Important:** Cumulocity-Netcomm-Agent is only supported on [casa systems NTC-220 series](https://support.netcommwireless.com/product/ntc-220-series) devices. [NetComm Wireless NTC-6200](https://support.netcommwireless.com/product/ntc-6200) and [NetComm Wireless NTC-140W](https://support.netcommwireless.com/product/ntc-140w) are only supported by another agent.
+> **Important:** Cumulocity-Netcomm-Agent is only supported on [casa systems NTC-220 series](https://support.netcommwireless.com/products/NTC-220%20Series) devices. [NetComm Wireless NTC-6200](https://support.netcommwireless.com/products/NTC-6200%20Series) and [NetComm Wireless NTC-140W](https://support.netcommwireless.com/products/NTC-140W%20Series) are only supported by another agent.
 
 #### 1.0.0
 

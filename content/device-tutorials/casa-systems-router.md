@@ -25,9 +25,9 @@ The following sections demostrates how to use a Casa Systems (NetComm) router wi
 * [VNC](#vnc) remote access.
 * Configure [MQTT](#mqtt).
 
-The following sections assume that the router has the NetComm agent package installed. The agent is compatible with [NTC-220](https://support.netcommwireless.com/product/ntc-220-series).
+The following sections assume that the router has the NetComm agent package installed. The agent is compatible with [NTC-220](https://support.netcommwireless.com/products/NTC-220%20Series).
 
-For [NTC-140W](https://support.netcommwireless.com/product/ntc-140w), and [NTC-6200](https://support.netcommwireless.com/product/ntc-6200), please refer to another document. For more information on a particular feature of the router, please consult the respective manual found in the *Downloads* section of the router’s home page.
+For [NTC-140W](https://support.netcommwireless.com/products/NTC-140W%20Series), and [NTC-6200](https://support.netcommwireless.com/products/NTC-6200%20Series), please refer to another document. For more information on a particular feature of the router, please consult the respective manual found in the *Downloads* section of the router’s home page.
 
 ### <a name="configure"></a> Configuring the router
 
@@ -90,7 +90,7 @@ The installed software and firmware on the router can be remotely managed using 
 
 Software packages need to be in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format and follow the naming convention "**&#60;package&#62;&#95;&#60;version&#62;&#95;&#60;arch&#62;.ipk**”. Version numbers including letters are not supported. All package management methods (install, upgrade, downgrade, removal) are supported through the router’s package manager. If software packages have dependencies, please make sure to install these first.
 
-> **Info:** The package “cumulocity-ntc-agent_&#60;version&#62;\_arm.ipk” represents the NetComm agent. It is prohibited to remove this package from Cumulocity.
+> **Info:** The package **cumulocity-ntc-agent&#95;&#60;version&#62;&#95;arm.ipk** represents the NetComm agent. It is prohibited to remove this package from Cumulocity.
 
 Firmware can be uploaded and installed on the router as well. To successfully upgrade the firmware, make sure that the target firmware includes the agent package. Firmware files need to follow Netcomm’s naming convention (”**&#60;name&#62;\_&#60;version&#62;.cdi**”).
 

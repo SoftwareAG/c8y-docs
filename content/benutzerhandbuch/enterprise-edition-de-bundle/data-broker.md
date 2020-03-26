@@ -167,7 +167,7 @@ Verwenden Sie den Umschalter, um zeitweilig das Weiterleiten von Daten in Ihren 
 
 Navigieren Sie nun zur Device Management- oder Cockpit-Anwendung. Dort finden Sie eine neue "virtuelle Gruppe" mit einem speziellen Symbol (siehe Abbildung unten), die die weitergeleiteten Geräte anzeigt. Diese Gruppe hat denselben Namen wie das Abonnement. Geräte werden auf der Empfängerseite verzögert erstellt, sobald sie, nach Einrichten eines aktiven Abonnements, das erste mal Daten senden.
 
-![Data broker group in cockpit app](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-group-created.PNG)
+![Data broker group in cockpit app](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-group-created.png)
 
 #### So löschen Sie einen Datenkonnektor
 

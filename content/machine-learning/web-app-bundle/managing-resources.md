@@ -19,6 +19,8 @@ Click **Resources** in the navigator, to open the **Resources** page.
 
 ![Resources](/images/zementis/zementis-resources.png)
 
+>**Info**: Note that currently the resource management is applicable for resources associated to PMML models only.
+
 ### Uploading resources
 
 To upload a new resource, click **Add resource**, navigate to the desired resource file and then click **Open**. 

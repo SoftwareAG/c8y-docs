@@ -279,25 +279,6 @@ To access the apama-ctrl log files, run the command:
 |Smartrule-agent-server-apama|smartrule-agent-server-apama-gc.log<br> smartrule-agent-server-apama.log<br>smartrule.log|/var/log/smartrule/
 |cumulocity-agent|cumulocity-agent.log|/var/log/cumulocity-agent/
 
-##### Microservices log file locations
-
-The logs of the Kubernetes components are captured at:
-*/tmp/diagnostic-utility/diagnostic_report_XXXXX/cumulocity/log_archive/kubernetes_logs.zip.*
-
-The kubernetes_logs.zip file contains the logs of all Kubernetes platform components at “kube-system” path in the archive. The components captured are:
-
-* heapster-*XX*
-* kube-apiserver-server
-* kube-controller-manager-server
-* kube-dns-*XX*
-* kube-flannel-ds-*XX*
-* kube-proxy-*XX*
-* kube-scheduler-server
-
->**Info**: The *XX* represents randomly generated alphanumeric sequences in these pod names and would vary in your environment.
-
-The hosted microservices are captured at *cumulocity-single-node* path in the archive. The pre-installed component **kube-registry-persistent-secure-789fb5449d-j2jbx** is already available in the archive. The logs of any additional microservices that are uploaded will also be available at this path.
-
 #### Adjust log level
 
 This section describes how to change the log level for Cumulocity-specific applications on the backend side. It does not explain how to change log settings for standard components like databases or other operating system related services. 
@@ -463,6 +444,24 @@ The monitor script supports only one optional startup parameter:
 
 *  -s or --skipDataCollector: Allows the user to skip the data collection even if one or more monitored components is not working.
 
+#### Microservices log file locations
+
+The logs of the Kubernetes components are captured at:
+*/tmp/diagnostic-utility/diagnostic_report_XXXXX/cumulocity/log_archive/kubernetes_logs.zip.*
+
+The kubernetes_logs.zip file contains the logs of all Kubernetes platform components at “kube-system” path in the archive. The components captured are:
+
+* heapster-*XX*
+* kube-apiserver-server
+* kube-controller-manager-server
+* kube-dns-*XX*
+* kube-flannel-ds-*XX*
+* kube-proxy-*XX*
+* kube-scheduler-server
+
+>**Info**: The *XX* represents randomly generated alphanumeric sequences in these pod names and would vary in your environment.
+
+The hosted microservices are captured at *cumulocity-single-node* path in the archive. The pre-installed component **kube-registry-persistent-secure-789fb5449d-j2jbx** is already available in the archive. The logs of any additional microservices that are uploaded will also be available at this path.
 
 #### Utility configuration file
 
@@ -484,3 +483,4 @@ Following are the available keys used in the configuration file:
 |components.for.configuration.backup|Components for which the configuration backup has to be performed
 |report.directory|Report directory where the diagnostic reports have to be placed
 |{component-name}.log.path|Absolute log path of the components under "component.for.log.backup" which do not use /var/log as the logging directory
+

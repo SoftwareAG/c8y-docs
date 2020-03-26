@@ -4,12 +4,8 @@ title: Upgrading the system
 layout: redirect
 ---
 
->**Info**: If you use **opcua-agent-server** and you are upgrading from an earlier version of Edge to the latest version, you must execute the below mentioned commands in your EDGE VM to backup **opcua-agent-server** data. This has to be performed before following any of the steps described below.<br>Additionally, please request the Cumulocity support for root user credentials if you don’t have it.
+>**Info:** Upgrading OPC UA artifact from older version to the newer version is not supported.
 
-```shell
-mkdir -p /usr/edge/properties/opcua/db
-cp -a /etc/opcua/db/. /usr/edge/properties/opcua/db/
-```
 ### Upgrading the system on VMware ESXi
 
 To upgrade the Edge VM on VMware ESXi:
@@ -44,6 +40,10 @@ For example:
 
 8. Import the Edge VM image as described in [Setting up ESXi](/guides/edge/installation/#setting-up-esxi).
 
+9. Start the Edge VM by clicking **Power on**.
+
+10. Run the post-upgrade task to complete the upgrade process. See [Running post-upgrade](/guides/edge/installation/#running-post-upgrade).
+
 ### Upgrading the system on VirtualBox
 
 To upgrade the Edge VM on VirtualBox:
@@ -68,15 +68,8 @@ sudo shutdown
 7. Right-click on the second controller i.e. SATA controller and select **Add Hard Disk**. In the upcoming window, select **Choose existing disk**. 
 <img src="/guides/images/edge/edge-update-harddisk.jpg" name="Add hard disk" style="width:75%;"/> 
 
-8. In the explorer, navigate to the previously backed-up EDGE folder as per step 2. Select the secondary disk, i.e. disk002.vmdk, and click **OK**.<br>
+8. In the explorer, navigate to the previously backed-up EDGE folder as per step 2. Select the secondary disk, i.e. disk002.vmdk, and click **OK**.
 
-9. Power on the VM by clicking the **Start** button. 
+9. Start the Edge VM by clicking **Start**. 
 
-10. Invoke the post-installer by running the script *post-installation.sh* located in the directory */opt/c8y/utilities*.<br>
-```shell
-sudo ./post_installation.sh
-```
-
-11. Choose the post-upgrade task (option 4). Provide inputs if prompted and complete the post-upgrade task. For details see [Configuration](/guides/edge/installation#configuration).
-
-10. Verify, whether DB and property files are intact and unchanged.
+10. Run the post-upgrade task to complete the upgrade process. See [Running post-upgrade](/guides/edge/installation/#running-post-upgrade).

@@ -15,6 +15,7 @@ We recommend to follow these steps:
 If you still need to contact SAG support, include the output of the diagnostics script. See the [Diagostics](#diagnostics) section on details how to run it. 
  	
 ### <a name="health-check"></a>Health check	
+
 #### Network
 
 Without working network connection the system is not able to work. The following instructions show how to check the network connectivity of the platform. 
@@ -273,28 +274,10 @@ To access the apama-ctrl log files, run the command:
 
 |Component|Files|Location|
 |:---|:---|:---
-|opcua-agent-server|opcua-agent-server-gc.log<br>opcua-agent-server.log<br> opcua-agent-server-2018-04-30.0.log|/var/log/opcua/
+|opcua-mgmt-service|opcua-mgmt-service.log|/var/log/opcua/
+|opcua-device-gateway|opcua-device-gateway.log|/var/log/opcua/
 |Smartrule-agent-server-apama|smartrule-agent-server-apama-gc.log<br> smartrule-agent-server-apama.log<br>smartrule.log|/var/log/smartrule/
 |cumulocity-agent|cumulocity-agent.log|/var/log/cumulocity-agent/
-
-##### Microservices log file locations
-
-The logs of the Kubernetes components are captured at:
-*/tmp/diagnostic-utility/diagnostic_report_XXXXX/cumulocity/log_archive/kubernetes_logs.zip.*
-
-The kubernetes_logs.zip file contains the logs of all Kubernetes platform components at “kube-system” path in the archive. The components captured are:
-
-* heapster-*XX*
-* kube-apiserver-server
-* kube-controller-manager-server
-* kube-dns-*XX*
-* kube-flannel-ds-*XX*
-* kube-proxy-*XX*
-* kube-scheduler-server
-
->**Info**: The *XX* represents randomly generated alphanumeric sequences in these pod names and would vary in your environment.
-
-The hosted microservices are captured at *cumulocity-single-node* path in the archive. The pre-installed component **kube-registry-persistent-secure-789fb5449d-j2jbx** is already available in the archive. The logs of any additional microservices that are uploaded will also be available at this path.
 
 #### Adjust log level
 
@@ -461,10 +444,30 @@ The monitor script supports only one optional startup parameter:
 
 *  -s or --skipDataCollector: Allows the user to skip the data collection even if one or more monitored components is not working.
 
+#### Microservices log file locations
+
+The logs of the Kubernetes components are captured at:
+*/tmp/diagnostic-utility/diagnostic_report_XXXXX/cumulocity/log_archive/kubernetes_logs.zip.*
+
+The kubernetes_logs.zip file contains the logs of all Kubernetes platform components at “kube-system” path in the archive. The components captured are:
+
+* heapster-*XX*
+* kube-apiserver-server
+* kube-controller-manager-server
+* kube-dns-*XX*
+* kube-flannel-ds-*XX*
+* kube-proxy-*XX*
+* kube-scheduler-server
+
+>**Info**: The *XX* represents randomly generated alphanumeric sequences in these pod names and would vary in your environment.
+
+The hosted microservices are captured at *cumulocity-single-node* path in the archive. The pre-installed component **kube-registry-persistent-secure-789fb5449d-j2jbx** is already available in the archive. The logs of any additional microservices that are uploaded will also be available at this path.
 
 #### Utility configuration file
 
 The diagnostic utility can be customized using a properties file located under "/etc/diagnostic-utility/diagnostic_utility.properties".
+
+>**Important:** The SMTP properties in the table below are only for collecting diagnostics information. For configuring the email server, see [Administration > Changing settings> Configuration settings](/guides/users-guide/administration/#config-platform) in the User guide.
 
 Following are the available keys used in the configuration file:
 
@@ -480,3 +483,4 @@ Following are the available keys used in the configuration file:
 |components.for.configuration.backup|Components for which the configuration backup has to be performed
 |report.directory|Report directory where the diagnostic reports have to be placed
 |{component-name}.log.path|Absolute log path of the components under "component.for.log.backup" which do not use /var/log as the logging directory
+

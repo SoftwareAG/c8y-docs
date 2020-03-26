@@ -23,7 +23,7 @@ Features of Cumulocity IoT Edge include:
 * Ready-to-use IoT Cockpit and Device Management applications
 * Native protocol support for MQTT and REST
 * Edge database for historic data storage
-* Cloud Fieldbus with web-based UI to create local Modbus and OPC/UA connections
+* Cloud Fieldbus with web-based UI to create local Modbus and OPC UA connections
 * Easy installation, upgrades and backup/restore
 * Full online support and documentation
 

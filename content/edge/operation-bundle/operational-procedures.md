@@ -14,15 +14,27 @@ On the Edge server, run the following commands as admin user.
 |Stop|[admin@server ~]$ sudo service cumulocity-core-karaf stop
 
 
-### opcua-agent-server
+### opcua-mgmt-service
 
 On the Edge server, run the following commands as admin user.
 
 |Process|Command|
 |:---|:---
-|Start|[admin@server ~]$ sudo systemctl start opcua-agent-server
-|Stop|[admin@server ~]$ sudo systemctl stop opcua-agent-server
-|Restart|[admin@server ~]$ sudo systemctl restart opcua-agent-server 
+|Start|[admin@server ~]$ sudo service opcua-mgmt-service start
+|Stop|[admin@server ~]$ sudo service opcua-mgmt-service stop
+|Restart|[admin@server ~]$ sudo service opcua-mgmt-service restart
+|Status|[admin@server ~]$ sudo service opcua-mgmt-service status
+
+### opcua-device-gateway
+
+On the Edge server, run the following commands as admin user.
+
+|Process|Command|
+|:---|:---
+|Start|[admin@server ~]$ sudo service device-gateway start
+|Stop|[admin@server ~]$ sudo service device-gateway stop
+|Restart|[admin@server ~]$ sudo service device-gateway restart
+|Status|[admin@server ~]$ sudo service device-gateway status 
 
 ### smartrule
 

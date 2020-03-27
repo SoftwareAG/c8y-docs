@@ -31,10 +31,10 @@ On the Edge server, run the following commands as admin user.
 
 |Process|Command|
 |:---|:---
-|Start|[admin@server ~]$ sudo service device-gateway start
-|Stop|[admin@server ~]$ sudo service device-gateway stop
-|Restart|[admin@server ~]$ sudo service device-gateway restart
-|Status|[admin@server ~]$ sudo service device-gateway status 
+|Start|[admin@server ~]$ sudo service opcua-device-gateway start
+|Stop|[admin@server ~]$ sudo service opcua-device-gateway stop
+|Restart|[admin@server ~]$ sudo service opcua-device-gateway restart
+|Status|[admin@server ~]$ sudo service opcua-device-gateway status 
 
 ### smartrule
 

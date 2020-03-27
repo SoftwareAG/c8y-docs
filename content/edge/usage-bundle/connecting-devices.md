@@ -43,7 +43,9 @@ In the Device Management application, click **All devices** in the navigator and
 
 For further information on connecting and managing Modbus devices, refer to Optional services > [Cloud Fieldbus](/guides/users-guide/optional-services#cloud-fieldbus) in the User guide.
 
-### Example: Connecting an OPCUA device    
+### Example: Connecting an OPCUA device
+
+>**Important:** While configuring the OPC UA server, ensure that the server is reachable from the Edge VM. If you are using a hostname, configure DNS accordingly. 
    
 To connect an OPC UA device in Edge, follow the steps below.
 

@@ -63,7 +63,3 @@ The following functionalities are available in Cumulocity IoT Edge and described
 |[Managing own applications](/guides/users-guide/administration#managing-applications)|How to manage and [configure own applications](/guides/users-guide/administration#managing-applications) in your Cumulocity account.
 |[Changing settings](/guides/users-guide/administration#changing-settings)|How to change account settings like [application settings](/guides/users-guide/administration#default-app) or [password policy settings](/guides/users-guide/administration#changing-password-settings) and how to manage the [properties library](/guides/users-guide/administration#properties).
 |[Managing data retention](/guides/users-guide/administration#retention-rules)|How to manage and configure [retention rules](/guides/users-guide/administration#retention-rules) for your data and how to [manage stored files](/guides/users-guide/administration#files) in the file repository.
-
-### Microservices
-
-Microservices are server-side applications which may be used to extend the Cumulocity IoT Edge platform with customer-specific functionality. For more information, see [Microservices SDK](/guides/microservice-sdk/introduction/).

@@ -1,24 +1,22 @@
----
+  ---
 weight: 70
 title: OPC UA
 layout: redirect
---- 
+---
 
-The OPC UA device gateway is a stand-alone Java program that communicates with OPC UA server(s) and the Cumulocity platform. It stores data into the Cumulocity database via REST. Additionally, C8Y commands are executed to perform various operations on the OPC UA servers. 
+The OPC UA device gateway is a stand-alone Java program that communicates with OPC UA server(s) and the Cumulocity platform. It stores data into the Cumulocity database via REST. Additionally, C8Y commands are executed to perform various operations on the OPC UA servers.
 
-The gateway has to be registered as Cumulocity device in a specific tenant and the opcua-device-gateway must run in the users’ environment. 
+The gateway has to be registered as Cumulocity device in a specific tenant and the opcua-device-gateway must run in the users’ environment.
 
 >**Important:** In order to use OPC UA, you must be subscribed to the “opcua-mgmt-service” microservice. If the “opcua-mgmt-service” microservice is not available in your tenant, contact [SAG support](https://empower.softwareag.com/ContactSupport/).
 
-To download the gateway navigate to [Cumulocity resources.](http://resources.cumulocity.com/examples/opcua-device-gateway-1005.7.1.jar)
+To download the gateway navigate to [Cumulocity resources](http://resources.cumulocity.com/examples/opc-ua/).
 
 The gateway requires Java 8 in order to run.
 
-> **Info**: The documentation of the OPCUA Java gateway 1.0 can be found in the Java agent sources in Bitbucket at [https://bitbucket.org/m2m/cumulocity-agents-opc/src/develop/opcua-agent/documentation/](https://bitbucket.org/m2m/cumulocity-agents-opc/src/develop/opcua-agent/documentation/). Note, that this version is deprecated and should only be used for demo purposes. For production usage, use the new OPC UA agent described in this document.  
-
 ### <a name="gateway-register"></a>Gateway configuration and registration
 
-YAML file and spring profiles are used for the configuration of the gateway. A default configuration file is embedded in the gateway JAR file, so you only need to set the properties which are different from the default. For more information on the YAML syntax, see [https://bitbucket.org/asomov/snakeyaml/src/default/](https://bitbucket.org/asomov/snakeyaml/src/default/). 
+YAML file and spring profiles are used for the configuration of the gateway. A default configuration file is embedded in the gateway JAR file, so you only need to set the properties which are different from the default.
 
 > **Important**: When editing the YAML file, make sure to provide valid indentations.
 
@@ -56,12 +54,12 @@ Mac OS
     /opt/opcua/data
 ```
 
-The number of profiles you may have is not limited. To use a specific profile on runtime, the "-Dspring.profiles.active" JVM argument has to be passed when running the gateway JAR file. For example, let’s use the previously created profile. Start a terminal and use the following command: 
+The number of profiles you may have is not limited. To use a specific profile on runtime, the "-Dspring.profiles.active" JVM argument has to be passed when running the gateway JAR file. For example, let’s use the previously created profile. Start a terminal and use the following command:
 
 ```bash
 java -Dspring.profiles.active=default,myTenant -jar opcua-device-gateway-<<version>>.jar
 ```
-The command above will start a gateway with the default profile and it will override the default properties with the properties defined in the “myTenant” profile.
+The command above will start a gateway with the default profile and it will override the default properties with the properties defined in the “myTenant” profile. The list of profiles has to be provided as an ordered, comma-separated list. The default profile always needs to be the first profile in the list.
 
 **Optional**: To specify your own configuration, Spring arguments can be used in your terminal to run the gateway JAR file. Multiple locations have to be comma-separated. The configuration locations should be either YAML files or directories. In case of directories, they must end with “/”. For example:
 
@@ -98,7 +96,7 @@ gateway:
 
 # Credentials for device bootstrap - enter tenant that gateway should register to.
   bootstrap:
-# ID of the tenant to which the device will be registered. 
+# ID of the tenant to which the device will be registered.
     tenantId: management
     username: devicebootstrap
     password: <devicebootstrap user password>
@@ -146,7 +144,7 @@ gateway:
       max: 250
       perHost: 150
 # Monitoring interval - how often in milliseconds gateway sends monitoring data to Cumulocity.     
-  Monitoring:
+  monitoring:
     # This parameter describes how often in milliseconds the gateway sends monitoring data to Cumulocity.
     interval: 10000
 # Time after which the gateway will publish a snapshot of values for the UI to the server.
@@ -175,11 +173,11 @@ Custom logging configuration can be set during startup by passing the "-Dlogging
 
 The gateway can run with either default or custom settings. To run the gateway run one of the commands below:
 
-* Default settings and default logging configuration: 
+* Default settings and default logging configuration:
 
 		java -jar opcua-device-gateway-<<version>>.jar
 
-* Custom settings and default logging configuration: 
+* Custom settings and default logging configuration:
 
 		java -Dspring.profiles.active=default,PROFILE_NAME -jar opcua-device-gateway-<<version>>.jar
 
@@ -187,11 +185,27 @@ The gateway can run with either default or custom settings. To run the gateway r
 
 		java -Dlogging.config=file:PATH_TO_LOGBACK_XML -Dspring.profiles.active=default,PROFILE_NAME -jar opcua-device-gateway-<<version>>.jar
 
-For example, using the profile from the previous section we are going to register the gateway. First, open the terminal and navigate to the location of the gateway.jar file. Next, enter the following command: 
+For example, using the profile from the previous section we are going to register the gateway. First, open the terminal and navigate to the location of the gateway.jar file. Next, enter the following command:
 
 ```
 java -Dspring.profiles.active=default,myTenant -jar opcua-device-gateway-<<version>>.jar
 ```
+
+#### Adjusting gateway memory settings
+
+In certain scenarios it is required to adjust the memory settings of the gateway application. Examples for such scenarios are the integration of servers with very large address spaces or obtaining large amounts of data from servers using high sampling rates.
+
+You can adjust the memory settings of the gateway like with any other Java program. Typically, it is sufficient to increase the initial heap size and the maximum heap size of the gateway process.
+
+* Example: Run the gateway with a minimum heap size of 2 GB and a maximum heap size of 8 GB.
+```
+java -Xms2g -Xmx8g -jar opcua-device-gateway-<<version>>.jar
+```
+
+> **Important** Please adjust the memory settings according to the physical memory available on the gateway host. The maximum heap size must be set in a way that it doesn't consume more RAM than physically available to the gateway. Otherwise, the virtual memory management of the host operating system might start paging, resulting in reduced gateway performance.
+
+###Register the gateway as a Cumulocity device
+
 Navigate to the **Registration** page and click **Register device > General device registration**. Enter the Identifier name (in our example it is “Gateway_Device”) and then click **Next**.
 
 Click **Accept** to complete the registration.
@@ -200,19 +214,19 @@ Click **Accept** to complete the registration.
 
 ### Connecting the gateway to the server
 
-Next, establish a connection between the gateway and the OPC UA server. 
+Next, establish a connection between the gateway and the OPC UA server.
 
 1. In the **OPC UA server** tab of the respective gateway, click **Add server**. <br>
 ![Add new server](/images/users-guide/opcua/opcua-new-server.png)
-2. Use the **Server connection** toggle, to enable or disable the server connection. 
-3. Enter the **Server URL** which is used to establish a connection between the server and the gateway. 
-4. Enter the **Timeout value** in seconds. The timeout value is calculated for each request. If the timeout value is exceeded the request will be unsuccessful. 
-5. Enter the **Status check interval** in seconds. The platform constantly checks whether there is incoming data. If the status check interval value is exceeded an alarm is created. The status check interval value has to be greater than the monitoring value of the gateway. 
+2. Use the **Server connection** toggle, to enable or disable the server connection.
+3. Enter the **Server URL** which is used to establish a connection between the server and the gateway.
+4. Enter the **Timeout value** in seconds. The timeout value is calculated for each request. If the timeout value is exceeded the request will be unsuccessful.
+5. Enter the **Status check interval** in seconds. The platform constantly checks whether there is incoming data. If the status check interval value is exceeded an alarm is created. The status check interval value has to be greater than the monitoring value of the gateway.
 6. Select the **Security mode** and **Security policy** depending on the server configuration. For more info, see the [section below](#security-modes).
 7. Select the desired authentication method. For more info, see the [section below](#authentication).
 8. Click **Save**.
 
-> **Info:** Once a connection is established, the servers will be located in the **Child devices** tab. In there, the servers will contain additional data such as access to the address space. 
+> **Info:** Once a connection is established, the servers will be located in the **Child devices** tab. In there, the servers will contain additional data such as access to the address space.
 
 #### <a name="security-modes"></a> Security modes
 
@@ -232,7 +246,7 @@ The security mode settings tell the gateway how it should secure the connection 
 
 The authentication setting is used to authenticate and authorize the server user. It tells the gateway how to create a user identity and how to send it to the OPC UA server when establishing a connection. The following authentication methods can be selected:
 
-- Anonymous - Anonymous connection will only work when the OPC UA server allows such connections. 
+- Anonymous - Anonymous connection will only work when the OPC UA server allows such connections.
 - Username/Password - With this setting the gateway will connect to the server as a specific user represented by a username and password.
 - Key-based authentication - The gateway will use an existing certificate to authenticate as a specific user. JKS keystore must be uploaded to Cumulocity as a binary with type “application/octet-stream”. This keystore must follow the following rules:
     - It has to be a Java keystore (JKS).
@@ -247,7 +261,7 @@ keytool -genkey -keyalg RSA -alias opcuauser -keystore keystore.jks -storepass p
 ```
 ![terminal](/images/users-guide/opcua/opcua-terminal.png)
 
-The keystore can then be verified by using a tool like KeystoreExplorer. 
+The keystore can then be verified by using a tool like KeystoreExplorer.
 
 ![Keystore explorer](/images/users-guide/opcua/opcua-keystore-explorer1.png)
 
@@ -264,7 +278,7 @@ In this section, only OPC UA specific information related to the tabs in the dev
 
 ![Gateway device details](/images/users-guide/opcua/opcua-device-details.png)
 
-#### Child devices 
+#### Child devices
 
 All server connections are listed as child devices even if the servers are disconnected. To stop a server connection, either delete the server child device or disable/remove the connection from the **OPC UA server** tab.
 
@@ -333,7 +347,7 @@ The **Alarms** tab shows all alarms raised either in the gateway or in the serve
 
 #### Events
 
-The **Events** tab shows all events related to the gateway-server connection. Additionally, you can see when the gateway has started and when it ends. 
+The **Events** tab shows all events related to the gateway-server connection. Additionally, you can see when the gateway has started and when it ends.
 
 ![Gateway events tab](/images/users-guide/opcua/opcua-events.png)
 
@@ -349,7 +363,7 @@ The address space is automatically scanned when a connection between the gateway
 
 #### Adding a new device protocol
 
-1. Click **New device protocol** in the top menu bar and select OPC UA as device protocol type. 
+1. Click **New device protocol** in the top menu bar and select OPC UA as device protocol type.
 2. In the resulting dialog box, enter a name and an optional description for the device protocol.
 3. Optionally, a reference server can be selected. Selecting a reference server allows you to create device types based on the OPC UA model stored on an OPC UA server. This greatly simplifies the mapping process, as device types can be created based on OPC UA browse paths being actually present on the server.
 4. Click **Create**.<br>
@@ -357,17 +371,17 @@ The address space is automatically scanned when a connection between the gateway
 
 	> **Info:** Selecting a reference server will require you to select a reference node.
 
-Once the device protocol is created, various configuration settings such as variables, data reporting and constraints can be applied. Initially, the device protocol will be inactive. When active, the gateway will scan the address space of all servers and will automatically apply the device protocol to all nodes which match the criteria. When the device protocol is configured, click **Save**. 
+Once the device protocol is created, various configuration settings such as variables, data reporting and constraints can be applied. Initially, the device protocol will be inactive. When active, the gateway will scan the address space of all servers and will automatically apply the device protocol to all nodes which match the criteria. When the device protocol is configured, click **Save**.
 
 #### Adding a new variable
 
-1. Click **Add variable** under the **Variables** section. 
-2. Enter the path and the name of the variable. 
-3. Choose either the default or the custom data reporting. The default option uses the data reporting mechanism used in the device protocol. The custom option will let you configure a data reporting mechanism only for the current variable. 
-4. Additionally, different functionalities such as sending measurements, creating alarms, sending events and custom actions for each variable can be selected. 
-5. Click **Save** to save your settings. 
+1. Click **Add variable** under the **Variables** section.
+2. Enter the path and the name of the variable.
+3. Choose either the default or the custom data reporting. The default option uses the data reporting mechanism used in the device protocol. The custom option will let you configure a data reporting mechanism only for the current variable.
+4. Additionally, different functionalities such as sending measurements, creating alarms, sending events and custom actions for each variable can be selected.
+5. Click **Save** to save your settings.
 
-The gateway has a scheduling job and after the variables are saved, the gateway will check whether the variables exist under the subtree of the node. Afterwards, for each node a child device of the server is created. The child devices will contain data based on the configuration of the device protocol. The node child devices will also be listed in the **All devices** page. 
+The gateway has a scheduling job and after the variables are saved, the gateway will check whether the variables exist under the subtree of the node. Afterwards, for each node a child device of the server is created. The child devices will contain data based on the configuration of the device protocol. The node child devices will also be listed in the **All devices** page.
 
 > **Info:** If no reference server was selected during the device protocol creation, the path should be given with a namespace URI representation. In the OPC UA server the index value can be taken from the namespace array. An example namespace URI representation for browse path “5:Counter1” would be: *http://www.prosysopc.com/OPCUA/SimulationNodes:Counter1*. Node id equal to “ns=5;s=Simulation” will have the following namespace representation *'nsu=http://www.prosysopc.com/OPCUA/SimulationNodes;s=Simulation*. In both examples the server’s namespace array, the 5th element has the value of “http://www.prosysopc.com/OPCUA/SimulationNodes”.
 
@@ -377,7 +391,7 @@ The functionalities that can be enabled are the following:
 
 **Send measurement**
 
-Turn on **Send measurement** to specify a measurement. 
+Turn on **Send measurement** to specify a measurement.
 
 Specify the following parameters:
 
@@ -387,10 +401,10 @@ Specify the following parameters:
 
 **Create alarm**
 
-Turn on **Create alarm** if you want to create an alarm out of the resource. 
+Turn on **Create alarm** if you want to create an alarm out of the resource.
 
 Specify the following parameters (all mandatory):
- 
+
 - Severity - one of CRITICAL, MAJOR, MINOR, WARNING
 - Type
 - Status - one of ACTIVE, ACKNOWLEDGED, CLEARED
@@ -398,7 +412,7 @@ Specify the following parameters (all mandatory):
 
 **Send Event**
 
-Turn on Send event to send an event each time you receive a resource value. 
+Turn on Send event to send an event each time you receive a resource value.
 
 Specify the following parameters:
 
@@ -412,7 +426,7 @@ Custom actions are HTTP POST requests which the gateway will send to a defined c
 - ${value} - value of specific node
 - ${serverId} - ID of OPC-UA server
 - ${nodeId} - ID of source node
-- ${deviceId} - ID of source device 
+- ${deviceId} - ID of source device
 
 Below there is an example of a full device type that configures a custom action:
 
@@ -458,9 +472,6 @@ There are three data reporting mechanisms which can be applied to read all mappe
 
 - None - The gateway will not read values automatically. The mappings will be applied only when manual read operations are performed on mapped nodes.
 - Cyclic Read - The gateway reads values from mapped nodes at specified interval rates in milliseconds. The minimum allowed rate is 50 milliseconds.
-
-![OPC UA device protocol](/images/users-guide/opcua/opcua-data-reporting-cyclic-read.png)
-
 - Subscription - The gateway retrieves values by using OPC UA's own subscription mechanism.
 Possible parameters:
   - Sampling interval (required): The sampling interval defines a time interval individually for each mapped node. This is the rate at which the server checks the data source for changes.
@@ -474,6 +485,8 @@ Possible parameters:
     - None: No filter will be applied. This option is selected by default.
     - Absolute: Contains the absolute change in a data value which causes the generation of a notification. This parameter applies only to variables with any number data type.
     - Percent: The value is defined as the percentage of the EU range. It applies only to analog items with a valid EU range property. This range is multiplied with the deadband value and is then compared to the actual value change in order to determine the need for a data change notification.
+
+![OPC UA device protocol](/images/users-guide/opcua/opcua-data-reporting-cyclic-read.png)
 
 ![OPC UA device protocol](/images/users-guide/opcua/opcua-data-reporting-subscription.png)
 
@@ -494,7 +507,7 @@ The following constraints can be applied:
 
 ### Operations
 
-Cumulocity operations is the interface that is used to tell the gateway what to do and how to do it. This section describes all operations that are currently supported by the gateway. 
+Cumulocity operations is the interface that is used to tell the gateway what to do and how to do it. This section describes all operations that are currently supported by the gateway.
 
 #### Scanning the address space
 
@@ -623,7 +636,7 @@ The result may differ depending on the node type.
 	}
 }
 ```
-The index ranges given below are according to the OPC UA specifications and will be transformed to NumericRange. 
+The index ranges given below are according to the OPC UA specifications and will be transformed to NumericRange.
 
 The syntax is as following:
 
@@ -685,7 +698,7 @@ This operation reads history values and applies the mappings except of alarm map
 ```
 
 - tagType - Possible tagType values are “TAG” and “NO_TAG”. "TAG" appends “_Historic” for both the mapping types and for the measurement mappings.
-- processMappings (optional) - by default the value is true. If the value is false then the values will not be processed based on the device type mapping. 
+- processMappings (optional) - by default the value is true. If the value is false then the values will not be processed based on the device type mapping.
 
 #### Historic data binary upload
 
@@ -751,7 +764,7 @@ This operation is similar to the previous one, but instead of writing to the val
 }
 ```
 
-Optionally, it is possible to write a value range when the attribute value is an array. 
+Optionally, it is possible to write a value range when the attribute value is an array.
 
 ```
 {
@@ -771,7 +784,7 @@ Optionally, it is possible to write a value range when the attribute value is an
 
 #### Get method description
 
-This operation reads the description of a method node. 
+This operation reads the description of a method node.
 
 ```
 {
@@ -815,7 +828,7 @@ The result describes a method, it’s parent object, input and output arguments.
 
 #### Get method
 
-This operation calls the method on the OPC UA server. It requires complete input arguments with an additional “value” fragment. 
+This operation calls the method on the OPC UA server. It requires complete input arguments with an additional “value” fragment.
 
 ```
 {
@@ -844,8 +857,8 @@ This operation calls the method on the OPC UA server. It requires complete input
 }
 ```
 
-The result contains all output arguments with values set by the OPC UA server. 
-Power of 5 is 25: 
+The result contains all output arguments with values set by the OPC UA server.
+Power of 5 is 25:
 
 ```
 {
@@ -875,7 +888,7 @@ db:
 
 #### Unknown host exception when running the gateway JAR
 
-This error appears if the provided baseUrl property in the YAML file is incorrect. 
+This error appears if the provided baseUrl property in the YAML file is incorrect.
 
 #### Failed to load property source from location when running the gateway JAR
 

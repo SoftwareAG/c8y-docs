@@ -13,7 +13,7 @@ For your convenience, we provide the hypervisor examples for setting up Cumuloci
 * [Example setup for VirtualBox](/guides/edge/installation#setting-up-virtual-box)
 
 
->**Info**: VirtualBox support is deprecated, so it is not recommended to use it in a production environment.
+>**Info:** VirtualBox support is deprecated, so it is not recommended to use it in a production environment.
 
 
 ### VM login details
@@ -25,7 +25,7 @@ Use the following login credentials for SSH login into the Edge instance:
 * Username: admin
 * Password: manage
 
-**>IMPORTANT:** In the Edge VM, the default keyboard layout is **en_US**. If you are accessing remotely and if your host keyboard layout differs from the EDGE VM, you have to change the keyboard layout of your host machine.
+>**Important:** In the Edge VM, the default keyboard layout is **en_US**. If you are accessing remotely and if your host keyboard layout differs from the EDGE VM, you have to change the keyboard layout of your host machine.
 
 Use the following command to log into Edge server via SSH:
 
@@ -42,7 +42,7 @@ Use the IP address provided during [network configuration](/guides/edge/installa
 |Virtual Box|192.168.56.120
 |Hyper-V|192.168.66.10
 
->**Info**: 
+>**Info:** 
 Root access is not supported in the Edge VM instance. Changes made as root user might cause failure of the described operational procedures. 
 Moreover, the Edge VM is tested and validated with the configuration shipped (i.e. OS version/patch level, other components compatibility etc). Root access would alter Cumulocity IoT Edge to an unknown and not tested configuration and handling support tickets would no longer work. 
 

@@ -110,7 +110,8 @@ The following sections explain the tasks that can be performed using the post-in
 5. [Expand data disk size](/guides/edge/installation/#expanding-the-data-disk-size)
 6. [Update tenant password](/guides/edge/installation/#updating-the-tenant-password)
 7. [Configure Edge Agent](/guides/edge/installation/#configuring-edge-agent)
-8. Exit
+8. [Enabling or Disabling microservice hosting feature](/guides/edge/installation/#enabling-or-disabling-microservice-hosting-feature)
+9. Exit
 
 >**Important**:<br>
 - Option 1 is the first step that you must perform while configuring the Edge server. Also, if you change the network configuration of a Hypervisor, you must configure the network using option 1.<br> 
@@ -349,7 +350,7 @@ After providing the tenant URL, you have to register your Edge device with the C
 
 >**Important**: If you have configured the Cumulocity tenant URL during the post installation and then use this option with a blank URL, you will disable the Cumulocity tenant connectivity.
 
-#### Enabling/Disabling microservice hosting feature
+#### Enabling or Disabling microservice hosting feature
 
 **Info:** Ensure that you have fulfilled the minimum system requirements: 4 logical CPU cores and 8 GB RAM. 
 

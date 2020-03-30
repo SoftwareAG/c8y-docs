@@ -362,10 +362,12 @@ After providing the tenant URL, you have to register your Edge device with the C
 
 3. Confirm to enable the microservice feature.
 
-To disable the microservice feature, run the post installer and select the option 8. For more information about developing and hosting a microservice, see [Microservices SDK](/guides/microservice-sdk/introduction/). Before disabling the microservice feature, you should unsubscribe from all the microservices that have been uploaded. You can also delete the microservice if you are not planning to enable again and subscribe to the same microservice.
-
 When you enable or disable the microservice feature, the Device Simulator microservice also gets enabled or disabled.
 
-After you enable the microservices, before using the microservices ensure that the microservices are active and healthy. For more information about microservices runtime, see [Microservice runtime](/guides/microservice-sdk/concept/#microservice-runtime).
+After you enable the microservices, before using the microservices ensure that the microservices are active and healthy.
+For more information about microservices runtime, see [Microservice runtime](/guides/microservice-sdk/concept/#microservice-runtime).
 
-When disabling the microservices, ensure that you delete and unsubscribe all the custom microservices.
+To disable the microservice feature, run the post installer and select the option 8.
+For more information about developing and hosting a microservice, see [Microservices SDK](/guides/microservice-sdk/introduction/).
+Before disabling the microservice feature, you should unsubscribe from all the microservices that have been uploaded.
+You can also delete the microservice if you are not planning to enable again and subscribe to the same microservice.

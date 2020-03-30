@@ -368,6 +368,6 @@ After you enable the microservices, before using the microservices ensure that t
 For more information about microservices runtime, see [Microservice runtime](/guides/microservice-sdk/concept/#microservice-runtime).
 
 To disable the microservice feature, run the post installer and select the option 8.
-For more information about developing and hosting a microservice, see [Microservices SDK](/guides/microservice-sdk/introduction/).
 Before disabling the microservice feature, you should unsubscribe from all the microservices that have been uploaded.
 You can also delete the microservice if you are not planning to enable again and subscribe to the same microservice.
+For more information about developing and hosting a microservice, see [Microservices SDK](/guides/microservice-sdk/introduction/).

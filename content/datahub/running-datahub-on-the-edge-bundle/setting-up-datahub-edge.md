@@ -14,6 +14,18 @@ Before setting up DataHub Edge, you have to check the following prerequisites:
 | DataHub Edge archive | You have downloaded the archive with all installation artifacts from the [Software AG Empower portal](https://empower.softwareag.com/). |
 | Internet access | Internet access is not required. |
 
+#### Hardware requirements
+
+The hardware requirements for running a bare Cumulocity IoT Edge instance are described in section [Requirements](/edge/installation#prerequisites). When DataHub Edge is additionally running, the hardware requirements of the virtual machine are as follows:
+
+* 100 GB of free disk space plus sufficient free disk space for the data lake contents 
+* Intel x86 CPU
+* Recommended: 12 GB RAM, minimum: 8 GB RAM
+* Recommended: 4 logical CPU cores, minimum: 2 logical CPU cores
+* One NIC
+
+Hardware requirements for the host OS are excluded.
+
 ### Setting up DataHub Edge
 
 Copy the DataHub Edge archive to the Cumulocity IoT Edge.

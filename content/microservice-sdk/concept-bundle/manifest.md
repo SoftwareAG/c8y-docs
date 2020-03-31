@@ -76,6 +76,12 @@ The application manifest provides the required settings to manage microservice i
 <td style="text-align:left">No</td>
 </tr>
 <tr>
+<td style="text-align:left">requestedResources</td>
+<td style="text-align:left">RequestedResources</td>
+<td style="text-align:left">Configuration for minimal required resources.<br>Default values are CPU=0.25, Memory=256MB</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
 <td style="text-align:left">settings</td>
 <td style="text-align:left">Option[ ]</td>
 <td style="text-align:left">Set of tenant options available to define the configuration of a microservice. <br>Default: [ ] (empty list)</td>
@@ -143,6 +149,13 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
 |:---|:---|:----------|:----------|
 |cpu|String |Limit for number of CPUs or CPU time <br>Default CPU: 0.5, min: 0.1<br>Default CPU time: 500m, min: 100m | No
 |memory|String |Limit for microservice memory usage <br>Default: 512M, Min: 10M<br/>Possible units are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki |No
+
+#### RequestedResources
+
+|Name|Type|Description|Required|
+|:---|:---|:----------|:----------|
+|cpu|String |Minimal requirements for number of CPUs or CPU time, should be less or equal than 250m. <br> If the entered value exceeds the default one, a validation error will be displayed and the installation will fail. <br>Default: 250m|No
+|memory|String |Minimal requirements for microservice memory usage, should be less or equal than 256M <br> If the entered value exceeds the default one, a validation error will be displayed and the installation will fail. <br>Default: 256M <br/>Possible postfix values are: E, P, T, G, M, K, Ei, Pi, Ti, Gi, Mi, Ki |No
 
 #### Option
 
@@ -221,6 +234,10 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
     "resources": {
         "cpu": "1",
         "memory": "1G"
+    },
+    "requestedResources":{
+            "cpu": "100m",
+            "memory": "128Mi"
     },
     "requiredRoles": [
         "ROLE_ALARM_READ"

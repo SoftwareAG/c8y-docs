@@ -16,8 +16,6 @@ layout: redirect
 |**DNS entry**|The DNS (Domain Name System) is used to resolve human readable host names like www.cumulocity.com to machine readable IP addresses like 192.198.1.10. <br> If you want to connect to Edge VM within your LAN, the DNS entry has to be added for the domain name (URL under which Cumulocity IoT Edge can be reached) with the IP address of the host.|
 |**Edge cloud remote access**|To connect and manage one (or multiple) Edge devices to your Cumulocity IoT cloud tenant, you need an active Cumulocity IoT standard tenant with the Data Broker and Cloud Remote Access extensions.<br>**Info**: The Edge cloud remote access is an optional feature in Cumulocity IoT Edge.|
 
-
-
 ### Domain name validation for Edge license key generation
 
 To procure the Cumulocity IoT Edge license file, you must provide the right domain name to the Software AG's logistics team for Edge license key generation.
@@ -90,13 +88,17 @@ Depending on the DNS and NTP setup it might be the case that DNS (UDP/53) and NT
 
 ### Hardware requirements
 
-The virtual machine has the following hardware requirements:
+The virtual machine has the following minimum hardware requirements:
 
-* 100 GB of free disk space
-* Intel x86 CPU
-* Recommended: 8 GB RAM, minimum: 4 GB RAM
-* Recommended: 4 logical CPU cores, minimum: 2 logical CPU cores
-* One NIC
+|Hardware|Configuration|
+|:---|:---|
+|Disk space|100 GB
+|CPU|Intel x86
+|Number of CPU cores|2 - without microservice <br>4 - with microservice
+|RAM|6 GB - without microservice <br>8 GB - with microservice
+|Network Interface Controller (NIC)|1
 
->**Info**: This does not cover host OS hardware requirements.
+These are the minimum system requirements to enable the microservice hosting feature. If the microservice requires additional system resources, you must configure the system requirements accordingly in addition to minimum system requirements. For example, if the microservice requires 2 CPU cores and 4 GB of RAM, then the VM must have 6 CPU cores (4 cores for VM + 2 cores for microservice) and 12 GB of RAM (8 GB for VM + 4 GB for microservice).
+
+>**Info:** This does not cover host operating system hardware requirements.
 

@@ -110,7 +110,8 @@ The following sections explain the tasks that can be performed using the post-in
 5. [Expand data disk size](/guides/edge/installation/#expanding-the-data-disk-size)
 6. [Update tenant password](/guides/edge/installation/#updating-the-tenant-password)
 7. [Configure Edge Agent](/guides/edge/installation/#configuring-edge-agent)
-8. Exit
+8. [Enable or Disable microservice hosting feature](/guides/edge/installation/#enabling-or-disabling-microservice-hosting-feature)
+9. Exit
 
 >**Important**:<br>
 - Option 1 is the first step that you must perform while configuring the Edge server. Also, if you change the network configuration of a Hypervisor, you must configure the network using option 1.<br> 
@@ -348,3 +349,25 @@ The update tenant password process consists of multiple steps which are executed
 After providing the tenant URL, you have to register your Edge device with the Cumulocity tenant. For more information, see [Registering the Edge device with a Cumulocity tenant](/guides/edge/usage/#registering-the-edge-device-with-the-cumulocity-tenant).
 
 >**Important**: If you have configured the Cumulocity tenant URL during the post installation and then use this option with a blank URL, you will disable the Cumulocity tenant connectivity.
+
+#### Enabling or Disabling microservice hosting feature
+
+**Info:** Ensure that you have fulfilled the minimum system requirements: 4 logical CPU cores and 8 GB RAM. 
+
+1. Run the post-installation script *post_installation.sh*.
+
+2. Select the option **8. Enable microservice hosting feature**.
+
+	The option 8 appears **Disable microservice hosting feature** if the microservice feature is enabled.
+
+3. Confirm to enable the microservice feature.
+
+When you enable or disable the microservice feature, the Device Simulator microservice also gets enabled or disabled.
+
+After you enable the microservices, before using the microservices ensure that the microservices are active and healthy.
+For more information about microservices runtime, see [Microservice runtime](/guides/microservice-sdk/concept/#microservice-runtime).
+
+To disable the microservice feature, run the post installer and select the option 8.
+Before disabling the microservice feature, you should unsubscribe from all the microservices that have been uploaded.
+You can also delete the microservice if you are not planning to enable again and subscribe to the same microservice.
+For more information about developing and hosting a microservice, see [Microservices SDK](/guides/microservice-sdk/introduction/).

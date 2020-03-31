@@ -7,7 +7,7 @@ aliases:
   - /predictive-analytics/api-reference/#prediction
 ---
 
-Operations on applying model to input data.
+Operations on applying model or model group to input data.
 
 ### GET - Apply Model to Single Record
 
@@ -31,7 +31,7 @@ Apply a model to a single JSON input record.
 ```perl
 200 - OK
 
-curl --request GET "{{url}}/service/zementis/apply/Iris_NN record=%7B%22petal_length%22:%221.4%22,%22petal_width%22:%220.2%22,%22sepal_length%22:%225.1%22,%22sepal_width%22:%223.5%22%7D" \
+curl --request GET "{{url}}/service/zementis/apply/Iris_NN?record=%7B%22petal_length%22:%221.4%22,%22petal_width%22:%220.2%22,%22sepal_length%22:%225.1%22,%22sepal_width%22:%223.5%22%7D" \
   --header "Authorization: {{auth}}"
   ```
   
@@ -58,7 +58,7 @@ curl --request GET "{{url}}/service/zementis/apply/Iris_NN record=%7B%22petal_le
 ```perl
 401 - Unauthorized
 
-curl --request GET "{{url}}/service/zementis/apply/Iris_NN record=%7B%22petal_length%22:%221.4%22,%22petal_width%22:%220.2%22,%22sepal_length%22:%225.1%22,%22sepal_width%22:%223.5%22%7D"
+curl --request GET "{{url}}/service/zementis/apply/Iris_NN?record=%7B%22petal_length%22:%221.4%22,%22petal_width%22:%220.2%22,%22sepal_length%22:%225.1%22,%22sepal_width%22:%223.5%22%7D"
 ```
 
 **Example Response**
@@ -78,7 +78,7 @@ curl --request GET "{{url}}/service/zementis/apply/Iris_NN record=%7B%22petal_le
 ```perl
 404 - Not Found
 
-curl --request GET "{{url}}/service/zementis/apply/dummy record=%7B%22petal_length%22:%221.4%22,%22petal_width%22:%220.2%22,%22sepal_length%22:%225.1%22,%22sepal_width%22:%223.5%22%7D" \
+curl --request GET "{{url}}/service/zementis/apply/dummy?record=%7B%22petal_length%22:%221.4%22,%22petal_width%22:%220.2%22,%22sepal_length%22:%225.1%22,%22sepal_width%22:%223.5%22%7D" \
   --header "Authorization: {{auth}}"
 ```
   
@@ -99,7 +99,7 @@ curl --request GET "{{url}}/service/zementis/apply/dummy record=%7B%22petal_leng
 ```perl
 500 - Internal server Error
 
-curl --request GET "{{url}}/service/zementis/apply/Iris_NN record=%7B" --header "Authorization: {{auth}}"
+curl --request GET "{{url}}/service/zementis/apply/Iris_NN?record=%7B" --header "Authorization: {{auth}}"
 ```
 
 **Example Response**
@@ -141,7 +141,7 @@ Apply a model to a single JSON input record and get the result with details of t
 200 - OK
 
 curl --request GET \
-     "{{url}}/service/zementis/apply/Iris_NN/explain record=%7B%22petal_length%22:%221.4%22,%22petal_width%22:%220.2%22,%22sepal_length%22:%225.1%22,%22sepal_width%22:%223.5%22%7D" \  
+     "{{url}}/service/zementis/apply/Iris_NN/explain?record=%7B%22petal_length%22:%221.4%22,%22petal_width%22:%220.2%22,%22sepal_length%22:%225.1%22,%22sepal_width%22:%223.5%22%7D" \  
      --header "Authorization: {{auth}}"
 ```
 
@@ -277,7 +277,7 @@ The [probability] of [Iris-virginica (STRING)] is [0.0 (DOUBLE)]
 ```
 401 - Unauthorized
 
-curl --request GET "{{url}}/service/zementis/apply/Iris_NN/explain record=%7B%22petal_length%22:%221.4%22,%22petal_width%22:%220.2%22,%22sepal_length%22:%225.1%22,%22sepal_width%22:%223.5%22%7D"
+curl --request GET "{{url}}/service/zementis/apply/Iris_NN/explain?record=%7B%22petal_length%22:%221.4%22,%22petal_width%22:%220.2%22,%22sepal_length%22:%225.1%22,%22sepal_width%22:%223.5%22%7D"
 ```
 
 **Example Response**
@@ -297,7 +297,7 @@ curl --request GET "{{url}}/service/zementis/apply/Iris_NN/explain record=%7B%22
 ```
 404 - Not Found
 
-curl --request GET "{{url}}/service/zementis/apply/dummy/explain record=%7B%22petal_length%22:%221.4%22,%22petal_width%22:%220.2%22,%22sepal_length%22:%225.1%22,%22sepal_width%22:%223.5%22%7D" \
+curl --request GET "{{url}}/service/zementis/apply/dummy/explain?record=%7B%22petal_length%22:%221.4%22,%22petal_width%22:%220.2%22,%22sepal_length%22:%225.1%22,%22sepal_width%22:%223.5%22%7D" \
   --header "Authorization: {{auth}}"
 ```
 
@@ -318,7 +318,7 @@ curl --request GET "{{url}}/service/zementis/apply/dummy/explain record=%7B%22pe
 ```
 500 - Internal server Error
 
-curl --request GET "{{url}}/service/zementis/apply/Iris_NN/explain record=%7B" --header "Authorization: {{auth}}"
+curl --request GET "{{url}}/service/zementis/apply/Iris_NN/explain?record=%7B" --header "Authorization: {{auth}}"
 ```
 
 **Example Response**
@@ -594,5 +594,217 @@ curl --location --request POST "{{url}}/service/zementis/apply/dummy " \
   "errors": [
     "Model 'dummy' not found."
   ]
+}
+```
+
+### POST - Apply Model Group to Multiple Records
+
+```
+{{url}}/service/zementis/pmml/apply-group/{{group_name}}
+```
+
+Apply a PMML model group to multiple records. Note that the size of the uploaded file should not exceed 500 MB. If the operation is successful, the response will always be in 'application/zip' format or 'application/json' otherwise.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Content-Type|required header parameter with two accepted values: application/octet-stream or multipart/form-data
+
+|PARAMS||
+|:---|:---|
+|file (file)|data file in CSV with header format. Only applicable when Content-Type is multipart/form-data
+|group_name (string)|required path variable for the name of the model group to be applied
+|applyToAllModels (boolean)|optional parameter used to specify if the data needs to processed against all the models in the group and not just the primary model (default is false)
+|maxThreads|optional query parameter for specifying the maximum number of concurrent threads (default value is twice the number of processor cores)
+|maxRecordsPerThread|optional query parameter for specifying the maximum number of records processed by a thread in batch (default value is 5000)
+
+**Example Request**
+
+```
+200 - OK
+
+curl --request POST "{{url}}/service/zementis/pmml/apply-group/IrisClassification?applyToAllModels=true" \
+     --header "Authorization: {{auth}}" --header "Content-Type: multipart/form-data" --form "file=@Iris_NN.csv"
+```
+
+**Example Response**
+
+```
+200 - OK 
+
+Zip file
+```
+
+
+**Example Request**
+
+```
+400 - Bad Request
+
+curl --request POST "{{url}}/service/zementis/pmml/apply-group/IrisClassification" \
+  --header "Authorization: {{auth}}" --header "Content-Type: multipart/form-data" --form "file=@Invalid.csv"
+  ```
+  
+**Example Response**
+
+```
+400 - Bad Request
+
+{
+    "errors": [
+        "Invalid CSV File : Double quote character found in value not surrounded by double quotes (line 1, position 15)"
+    ]
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --request POST "{{url}}/service/zementis/pmml/apply-group/IrisClassification" \
+     --header "Content-Type: multipart/form-data" --form "file=@Iris_NN.csv"
+```
+     
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+404 - Not Found
+
+curl --location --request POST "{{url}}/service/zementis/pmml/apply-group/dummy" \
+  --header "Authorization: {{auth}}" \
+  --header "Content-Type: multipart/form-data" \
+  --form "file=@dummy.csv"
+```
+
+**Example Response**
+
+```
+404 - Not Found
+
+{
+    "errors": [
+        "Model group with name 'dummy' does not exists."
+    ]
+}
+```
+
+### POST - Apply Model Group to Multiple Records and Show Details
+
+```
+{{url}}/service/zementis/pmml/apply-group/{{group_name}}/detail
+```
+
+Apply a PMML model group to multiple records and show the details. Details include the computed outputs alongside the expected outputs if the expected outputs are part of the input data. 
+It also includes the information of the input record corresponding to the computed output.
+
+Note that the size of the uploaded file should not exceed 500 MB. If the operation is successful, the response will always be in 'application/zip' format or 'application/json' otherwise.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Content-Type|required header parameter with two accepted values: application/octet-stream or multipart/form-data
+
+|PARAMS||
+|:---|:---|
+|file (file)|data file in CSV with header format. Only applicable when Content-Type is multipart/form-data
+|group_name (string)|required path variable for the name of the model group to be applied
+|applyToAllModels (boolean)|optional parameter used to specify if the data needs to processed against all the models in the group and not just the primary model (default is false)
+|matchScore (boolean)|optional parameter used to specify if score matching should be performed. If score matching is performed, the expected and actual outputs will be compared and a Match column will be added to the outputs (default is false)
+|maxThreads|optional query parameter for specifying the maximum number of concurrent threads (default value is twice the number of processor cores)
+|maxRecordsPerThread|optional query parameter for specifying the maximum number of records processed by a thread in batch (default value is 5000)
+
+**Example Request**
+
+```
+200 - OK
+
+curl --request POST "{{url}}/service/zementis/pmml/apply-group/IrisClassification/detail?applyToAllModels=true&matchScore=true" \
+     --header "Authorization: {{auth}}" --header "Content-Type: multipart/form-data" --form "file=@Iris_NN.csv"
+```
+
+**Example Response**
+
+```
+200 - OK 
+
+Zip file
+```
+
+
+**Example Request**
+
+```
+400 - Bad Request
+
+curl --request POST "{{url}}/service/zementis/pmml/apply-group/IrisClassification/detail" \
+  --header "Authorization: {{auth}}" --header "Content-Type: multipart/form-data" --form "file=@Invalid.csv"
+  ```
+  
+**Example Response**
+
+```
+400 - Bad Request
+
+{
+    "errors": [
+        "Invalid CSV File : Double quote character found in value not surrounded by double quotes (line 1, position 15)"
+    ]
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --request POST "{{url}}/service/zementis/pmml/apply-group/IrisClassification/detail" \
+     --header "Content-Type: multipart/form-data" --form "file=@Iris_NN.csv"
+```
+     
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+404 - Not Found
+
+curl --location --request POST "{{url}}/service/zementis/pmml/apply-group/dummy/detail" \
+  --header "Authorization: {{auth}}" \
+  --header "Content-Type: multipart/form-data" \
+  --form "file=@dummy.csv"
+```
+
+**Example Response**
+
+```
+404 - Not Found
+
+{
+    "errors": [
+        "Model group with name 'dummy' does not exists."
+    ]
 }
 ```

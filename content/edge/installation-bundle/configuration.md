@@ -110,7 +110,7 @@ The following sections explain the tasks that can be performed using the post-in
 5. [Expand data disk size](/guides/edge/installation/#expanding-the-data-disk-size)
 6. [Update tenant password](/guides/edge/installation/#updating-the-tenant-password)
 7. [Configure Edge Agent](/guides/edge/installation/#configuring-edge-agent)
-8. [Enabling or Disabling microservice hosting feature](/guides/edge/installation/#enabling-or-disabling-microservice-hosting-feature)
+8. [Enable or Disable microservice hosting feature](/guides/edge/installation/#enabling-or-disabling-microservice-hosting-feature)
 9. Exit
 
 >**Important**:<br>

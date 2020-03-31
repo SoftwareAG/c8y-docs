@@ -48,7 +48,6 @@ curl --request GET "{{url}}/service/zementis/pmml/groups" --header "Authorizatio
   "groups": [
     {
       "groupName": "AnomalyDetectionModels",
-      "modelFormat": "PMML",
       "models": [
         "IsolationForestV2",
         "IsolationForest",
@@ -59,7 +58,6 @@ curl --request GET "{{url}}/service/zementis/pmml/groups" --header "Authorizatio
     },
     {
       "groupName": "IrisClassification",
-      "modelFormat": "PMML",
       "models": [
         "Iris_NN_V1",
         "Iris_NN_V2"
@@ -123,7 +121,6 @@ curl --request GET "{{url}}/service/zementis/pmml/groups/AnomalyDetectionModels"
 
 {
   "groupName": "AnomalyDetectionModels",
-  "modelFormat": "PMML",
   "models": [
     "IsolationForestV2",
     "IsolationForest",
@@ -169,7 +166,7 @@ curl --request GET "{{url}}/service/zementis/pmml/groups/dummy" --header "Author
 
 {
   "errors": [
-    "Model group with name 'dummy' does not exists."
+    "Model group with name 'dummy' does not exist."
   ]
 }
 ```
@@ -223,44 +220,14 @@ curl --request POST "{{url}}/service/zementis/pmml/groups" --header "Authorizati
 201 - Created
 
 {
-  "next": null,
-  "prev": null,
-  "statistics": {
-    "currentPage": 1,
-    "totalPages": 1,
-    "pageSize": 5
-  },
-  "groups": [
-    {
-      "groupName": "AnomalyDetectionModels",
-      "modelFormat": "PMML",
-      "models": [
-        "IsolationForestV2",
-        "IsolationForest",
-        "IsolationForestV3",
-        "IsolationForestV4"
-      ],
-      "primaryModel": "IsolationForestV4"
-    },
-    {
-      "groupName": "IrisClassification",
-      "modelFormat": "PMML",
-      "models": [
-        "Iris_NN_V1",
-        "Iris_NN_V2"
-      ],
-      "primaryModel": "Iris_NN_V1"
-    },
-    {
-      "groupName": "ActivityDetectionModels",
-      "models": [
-        "ActivityClassifier",
-        "ActivityClassifier_V2"
-      ],
-      "primaryModel": "ActivityClassifier"
-    }
-  ]
+    "groupName": "ActivityDetectionModels",
+    "models": [
+      "ActivityClassifier",
+      "ActivityClassifier_V2"
+    ],
+    "primaryModel": "ActivityClassifier"
 }
+
 ```
 
 **Example Request**
@@ -287,7 +254,7 @@ curl --request POST "{{url}}/service/zementis/pmml/groups" --header "Authorizati
 
 {
     "errors": [
-        "The model 'ActivityClassifier_V2' can not be added in group because it is used in some other group."
+        "The model 'ActivityClassifier_V2' cannot be added to group because it is used in some other group."
     ]
 }
 ```
@@ -389,45 +356,13 @@ curl --request PUT "{{url}}/service/zementis/pmml/groups" --header "Authorizatio
 200 - OK 
 
 {
-  "next": null,
-  "prev": null,
-  "statistics": {
-    "currentPage": 1,
-    "totalPages": 1,
-    "pageSize": 5
-  },
-  "groups": [
-    {
-      "groupName": "AnomalyDetectionModels",
-      "modelFormat": "PMML",
-      "models": [
-        "IsolationForestV2",
-        "IsolationForest",
-        "IsolationForestV3",
-        "IsolationForestV4"
-      ],
-      "primaryModel": "IsolationForestV4"
-    },
-    {
-      "groupName": "IrisClassification",
-      "modelFormat": "PMML",
-      "models": [
-        "Iris_NN_V3",
-        "Iris_NN"
-      ],
-      "primaryModel": "Iris_NN"
-    },
-    {
-      "groupName": "ActivityDetectionModels",
-      "models": [
-        "ActivityClassifier",
-        "ActivityClassifier_V2"
-      ],
-      "primaryModel": "ActivityClassifier"
-    }
-  ]
+    "groupName": "IrisClassification",
+    "models": [
+      "Iris_NN_V3",
+      "Iris_NN"
+    ],
+    "primaryModel": "Iris_NN"
 }
-
 ```
 
 **Example Request**
@@ -474,7 +409,7 @@ curl --request PUT "{{url}}/service/zementis/pmml/groups" --header "Authorizatio
 
 {
     "errors": [
-        "Model group with name 'Dummy' does not exists."
+        "Model group with name 'Dummy' does not exist."
     ]
 }
 ```
@@ -520,7 +455,6 @@ curl --request DELETE "{{url}}/service/zementis/pmml/groups/IrisClassification" 
   "groups": [
     {
       "groupName": "AnomalyDetectionModels",
-      "modelFormat": "PMML",
       "models": [
         "IsolationForestV2",
         "IsolationForest",
@@ -576,7 +510,7 @@ curl --request DELETE "{{url}}/service/zementis/pmml/groups/dummy" --header "Aut
 
 {
     "errors": [
-        "Model group with name 'dummy' does not exists."
+        "Model group with name 'dummy' does not exist."
     ]
 }
 ```

@@ -15,7 +15,7 @@ Operations on AI/Machine Learning models.
 {{url}}/service/zementis/models
 ```
 
-Retrieves the model names of all the available PMML models. Use these model names as identifiers for all operations requiring the {model_name} path variable.
+Retrieves the model names of all the available PMML models. Use these model names as identifiers for all operations requiring the `model_name` path variable.
 
 |HEADERS||
 |:---|:---|
@@ -1288,7 +1288,7 @@ curl --request DELETE "{{url}}/service/zementis/models"
 {{url}}/service/zementis/onnx/models
 ```
 
-Retrieves the model names of all the available ONNX models. Use these model names as identifiers for all operations requiring the {model_name} path variable.
+Retrieves the model names of all the available ONNX models. Use these model names as identifiers for all operations requiring the `model_name` path variable.
 
 >**Info**: An active subscription of Onnx microservice is required to leverage the ONNX APIs.
 
@@ -1498,9 +1498,7 @@ curl --request GET "{{url}}/service/zementis/onnx/models/dummy/source" --header 
 {{url}}/service/zementis/onnx/models
 ```
 
-Upload new ONNX model. 
-
-Note that the size of the uploaded ONNX file must not exceed 500 MB.
+Upload new ONNX model. Note that the size of the uploaded ONNX file must not exceed 500 MB.
 
 |HEADERS||
 |:---|:---|
@@ -1509,7 +1507,7 @@ Note that the size of the uploaded ONNX file must not exceed 500 MB.
 
 |PARAMS||
 |:---|:---|
-|file|required query parameter for ONNX file name, if Content-Type is application/octet-stream<br> or a body parameter for ONNX file, if Content-Type is multipart/form-data
+|file (file)|ONNX file. Only applicable when Content-Type is multipart/form-data.
 
 **Example Request**
 

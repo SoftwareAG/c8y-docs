@@ -603,7 +603,7 @@ curl --location --request POST "{{url}}/service/zementis/apply/dummy " \
 {{url}}/service/zementis/pmml/apply-group/{{group_name}}
 ```
 
-Apply a PMML model group to multiple records. Note that the size of the uploaded file should not exceed 500 MB. If the operation is successful, the response will always be in 'application/zip' format or 'application/json' otherwise.
+Apply a PMML model group to multiple records. Note that the size of the uploaded file should not exceed 500 MB. If the operation is successful, the response will always be in 'application/zip' format whereas in case of errors it will be 'application/json'.
 
 |HEADERS||
 |:---|:---|
@@ -696,7 +696,7 @@ curl --location --request POST "{{url}}/service/zementis/pmml/apply-group/dummy"
 
 {
     "errors": [
-        "Model group with name 'dummy' does not exists."
+        "Model group with name 'dummy' does not exist."
     ]
 }
 ```
@@ -710,7 +710,7 @@ curl --location --request POST "{{url}}/service/zementis/pmml/apply-group/dummy"
 Apply a PMML model group to multiple records and show the details. Details include the computed outputs alongside the expected outputs if the expected outputs are part of the input data. 
 It also includes the information of the input record corresponding to the computed output.
 
-Note that the size of the uploaded file should not exceed 500 MB. If the operation is successful, the response will always be in 'application/zip' format or 'application/json' otherwise.
+Note that the size of the uploaded file should not exceed 500 MB. If the operation is successful, the response will always be in 'application/zip' format whereas in case of errors it will be 'application/json'.
 
 |HEADERS||
 |:---|:---|
@@ -804,7 +804,7 @@ curl --location --request POST "{{url}}/service/zementis/pmml/apply-group/dummy/
 
 {
     "errors": [
-        "Model group with name 'dummy' does not exists."
+        "Model group with name 'dummy' does not exist."
     ]
 }
 ```

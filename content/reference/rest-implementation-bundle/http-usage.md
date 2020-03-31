@@ -180,11 +180,11 @@ Every update request (PUT, POST, DELETE) executes with a so-called *processing m
 </tr>
 <tr>
 <td> Quiescent</td>
-<td> The QUIESCENT processing mode will behave like PERSISTENT processing mode with an exception that no real-time notifications will be sent. Currently, the QUIESCENT processing mode is applicable for measurements and events only.</td>
+<td> The QUIESCENT processing mode behave like the PERSISTENT processing mode with the exception that no real-time notifications will be sent. Currently, the QUIESCENT processing mode is applicable for measurements and events only.</td>
 </tr>
 <tr>
 <td> CEP </td>
-<td> The CEP processing mode will behave like TRANSIENT processing mode with an exception that no real-time notifications will be sent. Currently, the CEP processing mode is applicable for measurements and events only.</td>
+<td> The CEP processing mode behaves like the TRANSIENT processing mode with the exception that no real-time notifications will be sent. Currently, the CEP processing mode is applicable for measurements and events only.</td>
 </tr>
 </tbody>
 </table>

@@ -48,11 +48,11 @@ For example:
 
 To upgrade the Edge VM on VirtualBox:
 
-1. Power off the VM. To do so, access the VM and run the following command in the terminal:<br>
-```shell
-sudo shutdown
-```
+1. Power off the VM. To do so, access the VM and run the following command in the terminal:
 
+```
+[admin@server ~]$ sudo shutdown
+```
 2. Navigate to the VM directory. For VirtualBox it is *[USER-DIRECTORY]\VirtualBox VMs*. Move the entire VM folder (e.g. EDGE-server) to a safe location.
 
 3. In the VirtualBox Manager, right-click on the VM and then click **Remove**. In the upcoming window, select **Remove Only** so that the VM will not be deleted. 

@@ -461,7 +461,7 @@ The kubernetes_logs.zip file contains the logs of all Kubernetes platform compon
 
 >**Info**: The *XX* represents randomly generated alphanumeric sequences in these pod names and would vary in your environment.
 
-The hosted microservices are captured at *cumulocity-single-node* path in the archive. The pre-installed component **kube-registry-persistent-secure-789fb5449d-j2jbx** is already available in the archive. The logs of any additional microservices that are uploaded will also be available at this path.
+The hosted microservices are captured at *cumulocity-single-node* path in the archive. The pre-installed component **kube-registry-persistent-secure-xx-xx** is already available in the archive. The logs of any additional microservices that are uploaded will also be available at this path.
 
 #### Utility configuration file
 

@@ -9,13 +9,13 @@ aliases:
 
 Operations on applying model or model group to input data.
 
-### GET - Apply Model to Single Record
+### GET - Apply PMML Model to Single Record
 
 ``` perl
 {{url}}/service/zementis/apply/{{model_name}}?record={{record}}
 ```
 
-Apply a model to a single JSON input record.
+Apply a PMML model to a single JSON input record.
 
 |HEADERS||
 |:---|:---|
@@ -117,13 +117,13 @@ curl --request GET "{{url}}/service/zementis/apply/Iris_NN?record=%7B" --header 
 }
 ```
 
-### GET - Apply Model to Single Record and Explain Result
+### GET - Apply PMML Model to Single Record and Explain Result
 
 ```
 {{url}}/service/zementis/apply/{{model_name}}/explain?record={{record}}
 ```
 
-Apply a model to a single JSON input record and get the result with details of the performed computation in plain text.
+Apply a PMML model to a single JSON input record and get the result with details of the performed computation in plain text.
 
 |HEADERS||
 |:---|:---|
@@ -336,13 +336,13 @@ curl --request GET "{{url}}/service/zementis/apply/Iris_NN/explain?record=%7B" -
 }
 ```
 
-### POST - Apply Model to Multiple Records
+### POST - Apply PMML Model to Multiple Records
 
 ```
 {{url}}/service/zementis/apply/{{model_name}}
 ```
 
-Apply a model to multiple records. This provides two kinds of operations. Generally, if a predictive model without binary type input is applied, this will be a batch 'apply' operation that streams multiple input records to Zementis microservice. Zementis microservice will automatically detect CSV (Comma Separated Value) or JSON records formatted input and stream results back in the same format unless otherwise specified in the Accept request header parameter with text/csv or application/json values. Compressing input data with ZIP or GZIP will result in the same compression method for the returned output stream. 
+Apply a PMML model to multiple records. This provides two kinds of operations. Generally, if a predictive model without binary type input is applied, this will be a batch 'apply' operation that streams multiple input records to Zementis microservice. Zementis microservice will automatically detect CSV (Comma Separated Value) or JSON records formatted input and stream results back in the same format unless otherwise specified in the Accept request header parameter with text/csv or application/json values. Compressing input data with ZIP or GZIP will result in the same compression method for the returned output stream. 
 
 Note that if the records are specified in a file then the size of the uploaded file should not exceed 500 MB.
 
@@ -597,7 +597,7 @@ curl --location --request POST "{{url}}/service/zementis/apply/dummy " \
 }
 ```
 
-### POST - Apply Model Group to Multiple Records
+### POST - Apply PMML Model Group to Multiple Records
 
 ```
 {{url}}/service/zementis/pmml/apply-group/{{group_name}}
@@ -701,7 +701,7 @@ curl --location --request POST "{{url}}/service/zementis/pmml/apply-group/dummy"
 }
 ```
 
-### POST - Apply Model Group to Multiple Records and Show Details
+### POST - Apply PMML Model Group to Multiple Records and Show Details
 
 ```
 {{url}}/service/zementis/pmml/apply-group/{{group_name}}/detail
@@ -805,6 +805,137 @@ curl --location --request POST "{{url}}/service/zementis/pmml/apply-group/dummy/
 {
     "errors": [
         "Model group with name 'dummy' does not exists."
+    ]
+}
+```
+
+### POST - Apply ONNX Model to Multiple Records
+
+```
+{{url}}/service/zementis/onnx/apply/{{model_name}}
+```
+
+Apply an ONNX model to multiple records. Note that the size of the uploaded file should not exceed 500 MB and the input should be in JSON format.
+For deep learning models dealing with images, the input should be the preprocessed representation of the image and should be supplied as a JSON file.
+
+>**Info**: An active subscription of Onnx microservice is required to leverage this API.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Content-Type|required header parameter with two accepted values: application/octet-stream or multipart/form-data
+
+|PARAMS||
+|:---|:---|
+|file (file)|data file in JSON format.
+|model_name (string)|required path variable for the name of the model to be applied
+
+**Example Request**
+
+```
+200 - OK
+
+curl --request POST "{{url}}/service/zementis/onnx/apply/resnet50" \
+     --header "Authorization: {{auth}}" --header "Content-Type: multipart/form-data" --form "file=@data.json"
+
+data.json
+{"input_1": [[[[110.06099700927734, 87.22100067138672, 62.31999969482422], [109.06099700927734, 86.22100067138672, 61.31999969482422], [111.06099700927734, 88.22100067138672, 63.31999969482422], [109.06099700927734, 86.22100067138672, 61.31999969482422], [109.06099700927734, 86.22100067138672, 61.31999969482422], [110.06099700927734, 87.22100067138672, 62.31999969482422], [110.06099700927734, 87.22100067138672, 62.31999969482422], [110.06099700927734, 87.22100067138672, 62.31999969482422], [110.06099700927734, 87.22100067138672, 62.31999969482422] ....}
+```
+
+**Example Response**
+
+```
+200 - OK 
+
+{
+  "fc1000": [
+    [
+      3.0144642551022116E-6,
+      1.412209087447991E-7,
+      1.0779075410027872E-6,
+      6.253312108128739E-7,
+      1.796032051970542E-6,
+      4.547297066892497E-6,
+      2.2596604765112716E-7,
+      3.472631249223923E-7,
+      2.402981920113234E-7,
+      2.107677937601693E-5,
+      4.451037582953177E-8,
+      3.897369893479663E-8,
+      1.407707230782762E-7,
+      2.591128520634811E-7,
+      5.4826028161869544E-8,
+      2.6079766257680603E-7,
+      9.300482162188928E-8,
+      3.1244994147527905E-7,
+	  .....
+    ]
+  ]
+}
+```
+
+
+**Example Request**
+
+```
+400 - Bad Request
+
+curl --request POST "{{url}}/service/zementis/onnx/apply/resnet50" \
+  --header "Authorization: {{auth}}" --header "Content-Type: multipart/form-data" --form "file=@Invalid.json"
+  ```
+  
+**Example Response**
+
+```
+400 - Bad Request
+
+{
+    "errors": [
+        "Invalid json format."
+    ]
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --request POST "{{url}}/service/zementis/onnx/apply/resnet50" \
+     --header "Content-Type: multipart/form-data" --form "file=@data.json"
+```
+     
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+404 - Not Found
+
+curl --location --request POST "{{url}}/service/zementis/onnx/apply/dummy" \
+  --header "Authorization: {{auth}}" \
+  --header "Content-Type: multipart/form-data" \
+  --form "file=@data.json"
+```
+
+**Example Response**
+
+```
+404 - Not Found
+
+{
+    "errors": [
+        "Model 'dummy' not found."
     ]
 }
 ```

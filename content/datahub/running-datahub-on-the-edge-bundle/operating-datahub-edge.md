@@ -121,3 +121,7 @@ ALTER PDS <deleted_folder_path> REFRESH METADATA FORCE UPDATE
 ```
 
 >**Warning**: Data being deleted from the data lake cannot be recovered anymore.
+
+#### Backup and Restore
+
+DataHub's runtime state as well as the data lake containing offloaded data reside in the Cumulocity IoT Edge server VM. In order to backup and restore DataHub, its runtime state, and its data we recommend you to backup and recover the Cumulocity IoT Edge server VM as described in section [Backup and restore](/edge/operation/#backup-restore).

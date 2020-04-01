@@ -75,7 +75,7 @@ Each application will show the following properties, depending on the applicatio
 </tbody>
 </table>
 
-In case of applications of the type "microservice", you will additionally find information on its version, as well as on its isolation level and billing mode, see [Enterprise Tenant > Managing tenants > Microservice usage](/users-guide/enterprise-tenant/#microservice-usage) for details on these parameters.  
+In case of applications of the type "microservice", you will additionally find information on its version, as well as on its isolation level and billing mode, see [Enterprise Tenant > Managing tenants > Microservice usage](/users-guide/enterprise-edition/#microservice-usage) for details on these parameters.  
 
 
 ### <a name="subscribed-applications"></a>Subscribed applications

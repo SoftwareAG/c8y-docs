@@ -40,3 +40,5 @@ The subscription parameters have been extended by:
 * "queueSize" - number, queueSize > 0, no max value
 * "dataChangeTrigger" - string, radio-button with possible values: Status, StatusValue, StatusValueTimestamp
 * "discardOldest" - boolean, radio-buttons with possible labels: Discard oldest, Discard newest - where discard newest will just turn discard oldest into false. Discard oldest is the default.
+
+For details, see [Optional services > OPC UA](/users-guide/optional-services#opc-ua) in the User guide.  

@@ -223,6 +223,7 @@ In the Standard Tenant you will find the following default applications:
 <td style="text-align:left">actility</td>
 <td style="text-align:left">Microservice</td>
 </tr>
+<tr>
 <td style="text-align:left"><a href="/apama" class="no-ajaxy">Apama EPL Apps</a></td>
 <td style="text-align:left"><b>This application is an optional service in Cumulocity IoT Core but standard in Cumulocity IoT Edge.</b><br>
 Manager and editor for Apama Event Processing Language (EPL) apps, for immediate processing of incoming data.</td>
@@ -259,7 +260,6 @@ Manager and editor for Apama Event Processing Language (EPL) apps, for immediate
 <td style="text-align:left">connectivity-agent-server</td>
 <td style="text-align:left">Microservice</td>
 </tr>
-<tr>
 <td style="text-align:left">Microservice hosting</td>
 <td style="text-align:left">Host your own microservices on top of Cumulocity IoT.</td>
 <td style="text-align:left">feature-microservice-hosting</td>

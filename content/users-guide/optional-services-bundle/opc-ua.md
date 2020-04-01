@@ -204,7 +204,7 @@ java -Xms2g -Xmx8g -jar opcua-device-gateway-<<version>>.jar
 
 > **Important** Please adjust the memory settings according to the physical memory available on the gateway host. The maximum heap size must be set in a way that it doesn't consume more RAM than physically available to the gateway. Otherwise, the virtual memory management of the host operating system might start paging, resulting in reduced gateway performance.
 
-###Register the gateway as a Cumulocity device
+### Register the gateway as a Cumulocity device
 
 Navigate to the **Registration** page and click **Register device > General device registration**. Enter the Identifier name (in our example it is “Gateway_Device”) and then click **Next**.
 

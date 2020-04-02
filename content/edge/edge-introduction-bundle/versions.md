@@ -9,5 +9,5 @@ Cumulocity IoT Edge “April 2020 release” uses the following versions:
 |<div style="width:130px">Edge component</div>|<div style="width:300px">Version</div>|
 |:---|:---|
 |[Cumulocity Core](/guides/concepts)|10.6.0.2|
-|[Apama](/guides/apama)|10.6.0.1|
+|[Apama](/guides/apama)|10.6.0.2|
 

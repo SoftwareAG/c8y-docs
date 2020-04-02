@@ -95,6 +95,8 @@ The connection to the Edge VM is established and the GUI appears for the Edge VM
 
 <img src="/guides/images/edge/edge-vnc-gui-screen.png" alt="Edge VNC" style="max-width: 75%">
 
+**Important:** Do not use the **Send Ctrl+Alt+Delete** button in the VNC interface. If you do so, you will lose the VNC connection and not be able to reconnect until you restart the Edge VM.
+
 #### Changing the VNC password
 
 You can change the VNC password for the current user by running the *vnc-user-setup.sh* script. After changing the password, you must update the password in the remote access endpoint.

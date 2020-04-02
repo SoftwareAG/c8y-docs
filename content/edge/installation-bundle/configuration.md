@@ -17,15 +17,15 @@ The files have the following extensions:
 * SSL Certificate: ".crt" or ".cert" 
 * Apama license file: “.xml”
 
->**Important**: Do not rename the license file received from Cumulocity support. Renaming the license file causes failure of the post-installation process.
+>**Important:** Do not rename the license file received from Cumulocity IoT support. Renaming the license file causes failure of the post-installation process.
 
-### Preparing the Cumulocity post-installer configuration file
+### Preparing the Cumulocity IoT Edge post-installer configuration file
 
 The post-installer configuration file is a key-value based configuration file which acts as input to the post-installation script while configuring the EDGE server.
 
 A template of this configuration file is placed within the EDGE VM under */opt/c8y/utilities/post-installer/* as *config.dat*. In order to use this, you need to update the file with the correct values.
 
->**Important**: This template file is overwritten if the post-installation script is invoked and inputs are entered manually through console.
+>**Important:** This template file is overwritten if the post-installation script is invoked and inputs are entered manually through console.
 Therefore it is advisable to copy this template file to a different location and edit the same.
 
 The following keys are available in the configuration file:
@@ -34,22 +34,22 @@ The following keys are available in the configuration file:
 
 `tenant.admin.password` : Provide a new password for the *tenant admin username*. This password is later used to login to the system using the web browser.
 
->**Info**: The password should be base64-encoded only. For example, if you want the password to be edge@123 then the encoded value ZWRnZUAxMjM= should be used in the configuration file.
+>**Info:** The password should be base64-encoded only. For example, if you want the password to be edge@123 then the encoded value ZWRnZUAxMjM= should be used in the configuration file.
 
->**Important**: The password must have a minimum of 8 and a maximum of 32 characters and it may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
+>**Important:** The password must have a minimum of 8 and a maximum of 32 characters and it may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
 
 `tenant.domain.name` : Provide a fully qualified domain name. For example, "myown.iot.com". Here, you must have the Cumulocity IoT Edge license for the domain name **iot.com** or **myown.iot.com**. <br>The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/guides/edge/installation/#domain-name-validation-for-edge-license-key-generation).
 
->**Important**: Once configured, the domain name cannot be changed. Make sure to use the name finally desired.
+>**Important:** Once configured, the domain name cannot be changed. Make sure to use the name finally desired.
 
 `ssl.certificate` : Provide the absolute path of the SSL certificate file. The file extension should either be “.crt” or “.cert”. For example, /home/admin/myown-iot-com.crt. Make sure that the file path is valid and the file exists in the local machine.
 
->**Info**: The SSL certificate that you provide here must be valid for the domain name that you have provided in the previous step. 
+>**Info:** The SSL certificate that you provide here must be valid for the domain name that you have provided in the previous step. 
 
 `ssl.certificate.key` : Provide the absolute path of the SSL certificate key file. The file extension must be “.key.”. For example, /home/admin/myown-iot-com.key.
 Make sure that the file path is valid and the file exists in the local machine.
 
->**Info**: The SSL key that you provide here must be valid for the domain name that you have provided in the previous step.
+>**Info:** The SSL key that you provide here must be valid for the domain name that you have provided in the previous step.
 
 `c8y.license` : Provide the absolute path of the license file. The file extension must be “.licence”. For example, /home/admin/myown.iot.com.licence.
 Make sure that the file path is valid and the file exists in the local machine.
@@ -68,7 +68,7 @@ The following parameters are required only if you want to update the network par
 
 `dns.server.ip` : Provide the DNS Server IP for your network. For example, 192.168.56.1
 
->**Info**: If the DNS Server IP is unknown, you can enter the previously entered gateway IP here. If any of the network parameters are not available, contact your network administrator.
+>**Info:** If the DNS Server IP is unknown, you can enter the previously entered gateway IP here. If any of the network parameters are not available, contact your network administrator.
 
 ### Configuring the Edge server
 
@@ -113,14 +113,14 @@ The following sections explain the tasks that can be performed using the post-in
 8. [Enable microservice hosting feature](/guides/edge/installation/#enabling-or-disabling-microservice-hosting-feature)
 9. Exit
 
->**Important**:<br>
+>**Important:**<br>
 - Option 1 is the first step that you must perform while configuring the Edge server. Also, if you change the network configuration of a Hypervisor, you must configure the network using option 1.<br> 
 - Option 3, 4 and 6 will only work after you have successfully completed the post-installation setup (Option 2). <br>
 - Option 1 and 4 cannot be invoked from a remote connection like SSH. You will have to run these directly from the terminal within the VM.
 
 #### Configuring the Edge network
 
->**Important**: This task needs to be invoked from within the VM and cannot be invoked through a remote connection.
+>**Important:** This task needs to be invoked from within the VM and cannot be invoked through a remote connection.
 
 1. Run the post-installation script *post_installation.sh*.
 
@@ -150,7 +150,7 @@ You have the choice to  enter the network parameters manually through the consol
 	
 	`* Enter DNS Server IP:`
 	
-	>**Info**: If the DNS Server IP is unknown, you can enter the previously entered gateway IP here. If any of the network parameters are not available, contact your network administrator.
+	>**Info:** If the DNS Server IP is unknown, you can enter the previously entered gateway IP here. If any of the network parameters are not available, contact your network administrator.
 
 ##### File input
  
@@ -184,7 +184,7 @@ You have the choice to enter the post-installation parameters manually through t
 
 	`* Enter tenant admin password:`
 
-	>**Info**: The password must have a minimum of 8 and a maximum of 32 characters and it may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
+	>**Info:** The password must have a minimum of 8 and a maximum of 32 characters and it may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
 
 3. Re-enter the previously entered password to confirm it. 
 
@@ -194,19 +194,19 @@ You have the choice to enter the post-installation parameters manually through t
 
 	`* Enter tenant domain name:` 
 
-	>**Important**: Once configured, the domain name cannot be changed. Make sure to use the name finally desired.
+	>**Important:** Once configured, the domain name cannot be changed. Make sure to use the name finally desired.
 
 5. Provide the absolute path of the SSL certificate file. The file extension should either be ".crt" or ".cert". For example, */home/admin/myown-iot-com.crt*.
 
 	`* Enter domain ({your-domain-name}) SSL certificate file path (*.crt|*.cert):`
 
-	>**Info**: The SSL certificate that you provide here must be valid for the domain name that you have provided in the previous step.
+	>**Info:** The SSL certificate that you provide here must be valid for the domain name that you have provided in the previous step.
 
 6. Provide the absolute path of the SSL certificate key file. The file extension must be ".key.". For example, */home/admin/myown-iot-com.key*.
 	
 	`* Enter domain ({your-domain-name}) SSL certificate key file path (*.key):`
 
-	>**Info**: The SSL key that you provide here must be valid for the domain name that you have provided in the previous step.
+	>**Info:** The SSL key that you provide here must be valid for the domain name that you have provided in the previous step.
 
 7. Provide the absolute path of the license file. The file extension must be ".licence". For example, */home/admin/myown.iot.com.licence*.
 
@@ -216,11 +216,11 @@ You have the choice to enter the post-installation parameters manually through t
 
 	`* Enter Software AG Apama licence file path (optional):`
 
-9. Provide the URL for the Cumulocity tenant (cloud or on-premise) to control your Edge device remotely. For example, "https://&lt;*tenant-domain*&gt;.cumulocity.com".
+9. Provide the URL for the Cumulocity IoT tenant (cloud or on-premise) to control your Edge VM remotely. For example, "https://&lt;*tenant-domain*&gt;.cumulocity.com".
 
 	`* Enter cloud URL (leave blank to disable remote management):` 
 
-	You can also configure the Edge agent with the Cumulocity tenant URL by running the post-installation script and selecting [Configuring Edge Agent](/guides/edge/installation/#configuring-edge-agent).
+	You can also configure the Edge agent with the Cumulocity IoT tenant URL by running the post-installation script and selecting [Configuring Edge Agent](/guides/edge/installation/#configuring-edge-agent).
 		
 Once the input parameters are entered correctly, the parameters will be saved under 
 */opt/c8y/utilities/post-installer/config.dat* for future reference.
@@ -282,9 +282,9 @@ The update process consists of multiple steps which are executed sequentially. A
 
 #### Running post-upgrade
 
->**Important**: This task needs to be invoked from within the VM and cannot be invoked through a remote connection.
+>**Important:** This task needs to be invoked from within the VM and cannot be invoked through a remote connection.
 
->**Info**: During this process, the previously used password in the source will be validated as per Cumulocity's password policy. In case the password is not compliant with the policy, the user will be prompted to enter the tenant password without which the post-upgrade task cannot be completed.
+>**Info:** During this process, the previously used password in the source will be validated as per Cumulocity IoT's password policy. In case the password is not compliant with the policy, the user will be prompted to enter the tenant password without which the post-upgrade task cannot be completed.
 
 1. Run the post-installation script *post_installation.sh*.
 
@@ -324,7 +324,7 @@ The password updated using this option acts as the password for the administrato
 
 	`* Enter new tenant admin password:`
 
->**Info**: The password must have a minimum of 8 and a maximum of 32 characters and it may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
+>**Info:** The password must have a minimum of 8 and a maximum of 32 characters and it may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
 
 4. Re-enter the previously provided password to confirm it.
 
@@ -334,7 +334,7 @@ The password updated using this option acts as the password for the administrato
 
 The update tenant password process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process will halt and a failure message will be displayed on the console.
 
->**Info**: The Cumulocity platform does not allow to use any of the last 10 previously used passwords.
+>**Info:** The Cumulocity IoT platform does not allow to use any of the last 10 previously used passwords.
 
 #### Configuring Edge Agent
 
@@ -342,13 +342,13 @@ The update tenant password process consists of multiple steps which are executed
 
 2. Select the option **7. Configure Edge Agent**.
 
-3. Provide the URL for the Cumulocity tenant (cloud or on-premise). For example, "https://&lt;*tenant-domain*&gt;.cumulocity.com".
+3. Provide the URL for the Cumulocity IoT tenant (cloud or on-premise). For example, "https://&lt;*tenant-domain*&gt;.cumulocity.com".
 
 	`* Enter cloud URL (leave blank to disable remote management):`
 
-After providing the tenant URL, you have to register your Edge device with the Cumulocity tenant. For more information, see [Registering the Edge device with a Cumulocity tenant](/guides/edge/usage/#registering-the-edge-device-with-the-cumulocity-tenant).
+After providing the tenant URL, you have to register your Edge VM with the Cumulocity IoT tenant. For more information, see [Registering the Edge device with a Cumulocity IoT  tenant](/guides/edge/usage/#registering-the-edge-device-with-the-cumulocity-iot-tenant).
 
->**Important**: If you have configured the Cumulocity tenant URL during the post installation and then use this option with a blank URL, you will disable the Cumulocity tenant connectivity.
+>**Important:** If you have configured the Cumulocity IoT tenant URL during the post installation and then use this option with a blank URL, you will disable the Cumulocity IoT tenant connectivity.
 
 #### Enabling or Disabling microservice hosting feature
 

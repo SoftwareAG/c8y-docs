@@ -88,5 +88,5 @@ By default, for VMWare-based installations, the *vmtools* service is responsible
 
 For HyperV, the `chronyd` service is enabled by default for accurate time synchronization.
 
->**Info**: As HyperV relies on the `chronyd` service for time synchronization, do not stop the `chronyd` service. 
+>**Info:** As HyperV relies on the `chronyd` service for time synchronization, do not stop the `chronyd` service. 
 

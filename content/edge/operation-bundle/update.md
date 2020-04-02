@@ -58,7 +58,7 @@ To upgrade the Edge VM on VirtualBox:
 3. In the VirtualBox Manager, right-click on the VM and then click **Remove**. In the upcoming window, select **Remove Only** so that the VM will not be deleted. 
 <img src="/guides/images/edge/edge-update-remove.jpg" name="Remove VM" style="width:75%;"/> 
 
-4. Import the new version of EDGE server. To do so, click **File** and then **Import Appliance** in the VirtualBox Manager. Select the new OVA file (upgraded one supplied by Cumulocity) and click **Open** to import it. 
+4. Import the new version of EDGE server. To do so, click **File** and then **Import Appliance** in the VirtualBox Manager. Select the new OVA file (upgraded one supplied by Cumulocity IoT) and click **Open** to import it. 
 <br>The new Edge version should now be visible in the VirtualBox Manager in powered-off state. 
 
 5. Right-click on the VM and select **Settings**. In the upcoming window, select **Storage**. Two disks should be visible called "disk001.vmdk" and "disk002.vmdk". 

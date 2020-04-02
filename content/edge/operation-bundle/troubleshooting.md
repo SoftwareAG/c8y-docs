@@ -281,7 +281,7 @@ To access the apama-ctrl log files, run the command:
 
 #### Adjust log level
 
-This section describes how to change the log level for Cumulocity-specific applications on the backend side. It does not explain how to change log settings for standard components like databases or other operating system related services. 
+This section describes how to change the log level for Cumulocity IoT specific applications on the backend side. It does not explain how to change log settings for standard components like databases or other operating system related services. 
 
 ##### Changing log level for Karaf
 
@@ -388,20 +388,20 @@ The following software information is available:
 |Running processes|A list of running processes is prepared using the 'ps' command
 |Top result|Captures the output of top command. This report is very informative as it holds information of running processes at argument level and their respective resource consumption.
 
-#### Cumulocity information
+#### Cumulocity IoT information
 
-This section contains information on the running Cumulocity processes, health endpoint check result, Cumulocity logs etc.
+This section contains information on the running Cumulocity IoT processes, health endpoint check result, Cumulocity IoT logs etc.
 
-The following Cumulocity information is collected:
+The following Cumulocity IoT information is collected:
 
 |<div style="width:250px">Information</div>|Description|
 |:---------------------|:---|
-|Health endpoint result|Cumulocity and its microservices provide health endpoints, from which the user can get the system status. 
+|Health endpoint result|Cumulocity IoT and its microservices provide health endpoints, from which the user can get the system status. 
 |Mongo command execution result|MongoDB supports commands execution, which can give the status of the MongoDB server. Currently 'ping', 'dbstats' and 'serverStatus' commands are executed on each of the MongoDB nodes (currently it is management and edge). The MongoDB commands give vital information about the MongoDB server like the db version, process-id, uptime information etc.
 |Mongo top output|The output of mongo top command is captured here
 |Thread dumps|Thread dumps of all the running java processes and mongo processes are captured. For java processes the 'jstack' command is executed to get the thread dumps. For non-java processes like MongoDB, the 'pstack' command is used. Furthermore the 'pstack' command is applied on java processes as well.
-|Log files|Archive of log files from Cumulocity, its microservices and Apama is created. In case of Cumulocity, only the 'live' logs are considered and roll-over log files are discarded.
-|Configuration files|Archive of Cumulocity configuration files from Cumulocity and its microservices is created.
+|Log files|Archive of log files from Cumulocity IoT, its microservices and Apama is created. In case of Cumulocity IoT, only the 'live' logs are considered and roll-over log files are discarded.
+|Configuration files|Archive of Cumulocity IoT configuration files from Cumulocity IoT and its microservices is created.
 |Jstat dumps|Jstat command provides performance statistics for a given JVM. 
 
 Jstat dumps can provide information on the following options:
@@ -459,7 +459,7 @@ The kubernetes_logs.zip file contains the logs of all Kubernetes platform compon
 * kube-proxy-*XX*
 * kube-scheduler-server
 
->**Info**: The *XX* represents randomly generated alphanumeric sequences in these pod names and would vary in your environment.
+>**Info:** The *XX* represents randomly generated alphanumeric sequences in these pod names and would vary in your environment.
 
 The hosted microservices are captured at *cumulocity-single-node* path in the archive. The pre-installed component **kube-registry-persistent-secure-xx-xx** is already available in the archive. The logs of any additional microservices that are uploaded will also be available at this path.
 

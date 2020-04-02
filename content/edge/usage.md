@@ -4,4 +4,4 @@ title: Working with Cumulocity IoT Edge
 layout: bundle
 ---
 
->**Important**: The tenant in the Edge instance is always named as **“edge“**.
+>**Important:** The tenant in the Edge instance is always named as **“edge“**.

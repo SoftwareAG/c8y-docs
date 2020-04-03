@@ -4,7 +4,6 @@ title: Setting up the environment
 layout: redirect
 ---
 
-
 For your convenience, we provide the hypervisor examples for setting up Cumulocity IoT Edge:
 
 * [Example setup for ESXi VMWare](/guides/edge/installation#setting-up-esxi)
@@ -12,9 +11,9 @@ For your convenience, we provide the hypervisor examples for setting up Cumuloci
 * [Example setup for Hyper-V](/guides/edge/installation#setting-up-hyper-v)
 * [Example setup for VirtualBox](/guides/edge/installation#setting-up-virtual-box)
 
+For all hypervisors, we recommend that you use UTC on your host machines.
 
 >**Info:** VirtualBox support is deprecated, so it is not recommended to use it in a production environment.
-
 
 ### VM login details
 

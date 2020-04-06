@@ -11,31 +11,25 @@ The **Predictions** navigation node allows you to do meaningful predictions by s
 
 Clicking **Predictions** in the navigator allows you to choose from two different modes of processing - Batch Processing and Scheduled Processing.
 
-Click on the respective links to score the data using the mode of your choice. 
-
 ![Predictions](/images/zementis/zementis-predictions.png)
 
 ### Batch Processing
 
-Batch Processing allows you to process data records supplied to the model or model group in a file. The records are processed in batches. 
-Batch Processing is applicable for models listed under both PMML and ONNX. For processing data against ONNX models, choose the ONNX tab and PMML otherwise.
+Batch processing allows you to process data records against a model or model group. Batch processing is applicable for both PMML and ONNX models. 
 
-|Model/Group|Supported input data file types
-|:---|:---|
-|PMML model|CSV, JSON, JPEG, PNG
-|PMML model group|CSV only
-|ONNX model|JSON only
+To process data against PMML models, choose the PMML tab. Similarly, to process data against ONNX models, choose the ONNX tab.
 
-Batch Processing is primarily targeted for validating the accuracy of your predictive models by applying it against your input data. Hence, it is expected that you know the predicted outputs beforehand.
-That way it allows you to do score matching on your data too.
+|Model/Group|Supported input data file types|Supported compression for input files
+|:---|:---|:---|
+|PMML model|CSV, JSON, JPEG, PNG|ZIP (for CSV and JSON files)
+|PMML model group|CSV only|ZIP (for CSV files)
+|ONNX model|JSON only|-
 
->**Info**:
-<br>Data processed by a machine learning model is termed as **scores**. Score matching is the technique in which the scores from a model are compared against the expected outputs.
-In score matching, a one-to-one comparison of the exepected outputs to the actual scores is done. This in a way helps in validating if the model before deployment is performing the same after its deployment.
+Batch Processing is primarily targeted for verifying the accuracy of your predictive models by applying it against test data obtained from the model training environment. The goal is to ensure that model development environment and model deployment environment produce the same results. We call this *Score Matching*.
 
 #### Running the batch process
 
-To run the batch process on PMML models/groups, perform the following steps:
+To run the batch process on PMML model/group, perform the following steps:
 
 1. Click **Start** in the **PMML** tab to initiate the batch processing. 
 
@@ -45,27 +39,22 @@ page respectively. Use the **Enable score matching** toggle to enable/disable sc
 Click **Next** to proceed. <br>
 3. Upload the file containing your input data. Drag and drop a file or select it by browsing. <br>
 ![Batch process 2](/images/zementis/zementis-batch-process2.jpeg)
-<br>On uploading a valid file, you will see an uploading message. 
-<br> After the processing has been completed, you will see a corresponding notification.
+On uploading a valid file, you will see an uploading message. 
+After the processing has been completed, you will see a corresponding notification.
 
->**Info**: The size of the uploaded file must not exceed 500 MB.
+>**Note**: The size of the uploaded file must not exceed 500 MB.
 
-For ONNX models too, running the batch process remains the same. However, there is no option to enable score matching. Also, you do not get the option of model grouping yet.
-
-Note that since only JSON files can be supplied to an ONNX model, any image data needs to be pre-processed first and then the pre-processed data needs to be supplied for batch processing.
+The steps involved in running the batch process on ONNX models remains similar to the ones for PMML models. However, there is no option to enable score matching. Also, model groups for ONNX models are not supported yet. The input to the ONNX model must be provided in JSON format.
 
 #### Viewing and downloading the results
-<br>
-
-|Model/Group| View | Download
-|:---|:---|:---|
-|PMML model| Preview maximum 500 processed records in a paginated manner, displaying 10 records per page | Download entire set of processed results and execution trace
-|PMML model group|No preview option | Download ZIP of CSV files containing the entire set of processed results
-|ONNX model| View the entire set of records processed | Download JSON containing the entire set of processed results
 
 In order to view the results, click **Show Results** on the **Batch Processing Completed** notification. 
 
-For PMML models, in the top right of the **Preview** page you find several buttons to perform the following actions:
+For PMML models, the **Preview** page will only preview maximum 500 records in a paginated manner, displaying 10 records per page.
+
+![Show Preview PMML](/images/zementis/zementis-batch-process-results.png)
+
+In the top right of the **Preview**, you find several buttons to perform the following actions:
 
 |Button|Action
 |:---|:---
@@ -79,7 +68,11 @@ Click the cogwheel icon <img src="/images/zementis/zementis-cogwheel-icon.png" a
 
 Click the file icon <img src="/images/zementis/zementis-file-icon.png" alt="File" style="display:inline-block; margin:0"> in front of a row, to download a full execution trace, showing what exactly happened when that record was applied against the model. In this way, you can investigate why the outputs did not match.
 
-For ONNX, there are no options available for filtering or any sort of configuration. The only option available is to download the processed results.
+>**Note**: For PMML model groups, there is no option to view the results. However, there is an option to download the ZIP of CSV files containing the entire set of processed results.
+
+For ONNX models, the **Results** page will show the entire set of records processed in JSON format. There are no options available for filtering or any sort of configuration. The only option available is to download the processed results.
+
+![Show Results ONNX](/images/zementis/zementis-batch-process-results-onnx.png)
 
 ### Scheduled Processing
 
@@ -87,7 +80,7 @@ Scheduled Processing allows you to schedule batch jobs for processing measuremen
 
 The job scheduler can be used to trigger one-time or periodic jobs on data captured from devices. The scheduler allows you to map device data to model inputs by providing a mapping tool. Periodic executions of batch jobs can be useful when aggregate information on model’s predictions is required for a desired time period.
 
->**Info**: Note that currently scheduled processing is applicable for PMML models and model groups only.
+>**Note**: Currently, scheduled processing is only applicable for PMML models and model groups.
 
 #### Scheduling a job
 
@@ -96,7 +89,7 @@ To schedule a new job, perform the following steps:
 1. Click **Create Job** in the **Scheduled Processing** page. 
 2. In the **Job Config** wizard, enter the name and description of the job you want to create. Select a target device or device group from the dropdown list. The list shows maximum 2000 devices or groups but you can search for the device you are interested in.
 Once done, select a target model or model group which will be used for processing the data captured from your selected device or device group. The dropdown list shows all models and groups which you have already added. 
-Use the **Apply across all models** toggle in case if you want the processing to happen on all the models of a model group.<br>
+Use the **Apply across all models** toggle in case if you want the processing to happen on all the models of a model group. When this option is disabled, processing will happen on primary model of the model group.<br>
 ![Scheduled process 1](/images/zementis/zementis-jobconfig-info.png)
 <br>Click **Next** to proceed. 
 3. Each device can have various measurements which are persisted in Cumulocity IoT. In the **Mapping** section, map the device measurements to the corresponding model inputs.<br>
@@ -106,7 +99,7 @@ Use the **Apply across all models** toggle in case if you want the processing to
 ![Scheduled process 3](/images/zementis/zementis-jobconfig-schedule.png)
 <br>Click **Finish** to schedule the job that you just configured.
 
->**Info**:
+>**Note**:
 <br>1. For a periodic frequency, a CRON expression is generated and used by the scheduler.
 <br>2. The data range selected for the schedule must not exceed 24 hours.
 <br>3. For a one-time job, you need to select the date when the job should run. You also need to specify the data range to be used for processing when the job is executed.

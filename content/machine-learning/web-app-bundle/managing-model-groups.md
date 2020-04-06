@@ -7,12 +7,9 @@ aliases:
   - /predictive-analytics/web-app/#managing-model-groups
 ---
 
-In the **Model groups** page you can manage the model groups added by you. Model groups allow you to group models together. 
+The **Model groups** page allows you to perform group management operations for PMML models. PMML models can be grouped together as long as they have the same model signature, i.e. the models are homogenous in terms of model inputs and outputs. 
 
-Primarily, a model group can also be used to represent a specific use case and all the models targeted towards the same use case can be grouped together.
-This group can then be used while data processing.
-
-Note that the models grouped together need to be homogenous in terms of the model inputs and ouputs.
+Although each model group can contain multiple models, each model can only be part of one group. A model group is a logical collection of multiple models aimed for a specific use case. The model group can also contain multiple versions/iterations of the same model.
 
 Model group management functionality includes:
 
@@ -59,6 +56,7 @@ Once a model group is deleted, it will be removed permanently from your list of 
 
 ### Viewing model group properties
 
-To view the properties of a model group, click the info icon on its card. 
+To view the properties of a model group, click the info icon <img src="/images/zementis/zementis-info-icon.png" alt="Info" style="display:inline-block; margin:0"> on its card. 
 
+![Model group properties](/images/zementis/zementis-model-group-details.png)
 Properties include the names of all the models which are part of this group and also the name of the group's primary model.

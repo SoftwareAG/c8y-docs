@@ -18,7 +18,7 @@ monitor MyMonitor {
     // monitor scope:
     Event e;
     action onload() {
-        monitor.subscribe(Measurement.CHANNEL);
+        monitor.subscribe(Measurement.SUBSCRIBE_CHANNEL);
         on all Event():e {}
         on all wait(10.0) {
             log e.toString();
@@ -33,7 +33,7 @@ monitor MyMonitor {
     // monitor scope:
     Event e;
     action onload() {
-      monitor.subscribe(Measurement.CHANNEL);
+      monitor.subscribe(Measurement.SUBSCRIBE_CHANNEL);
       on all Event():e {
             on all wait(10.0) {
                 log e.toString();

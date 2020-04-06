@@ -39,8 +39,8 @@ monitor HourlyAvgMeasurementDeviceContext {
   }
 
   action onload() {
-    // Subscribe to Measurement.CHANNEL to receive all measurements
-    monitor.subscribe(Measurement.CHANNEL);
+    // Subscribe to Measurement.SUBSCRIBE_CHANNEL to receive all measurements
+    monitor.subscribe(Measurement.SUBSCRIBE_CHANNEL);
 
     from m in all Measurement(type="c8y_TemperatureMeasurement") within (3600.0) 
       group by m.source select
@@ -52,7 +52,7 @@ monitor HourlyAvgMeasurementDeviceContext {
                 {
                   "T": MeasurementValue(avgdata.avgValue, avgdata.unit, new dictionary<string,any>)
                 }
-              }, new dictionary<string,any>) to Measurement.CREATE_CHANNEL;
+              }, new dictionary<string,any>) to Measurement.SEND_CHANNEL;
           }
   }
 }

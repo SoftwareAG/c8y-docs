@@ -16,7 +16,7 @@ monitor PerDeviceMeasurementTracker {
 		spawn factory to context("PerDeviceMeasurementTracker", true);
 	}
 	action factory() {
-		monitor.subscribe(Measurement.CHANNEL);
+		monitor.subscribe(Measurement.SUBSCRIBE_CHANNEL);
 		on all unmatched Measurement() as m {
 			spawn perDevice(m);
 		}

@@ -4,6 +4,7 @@ title: Microservice runtime
 layout: redirect
 ---
 
+
 Microservices deployed on the platform have a specific runtime environment and they need to understand certain details about the specific Cumulocity IoT cluster they run in. For example, a microservice needs to know the endpoint address of the Cumulocity IoT REST APIs. This information is provided by environment variables and they are injected by Cumulocity IoT when the container is started.
 
 ### Environment variables

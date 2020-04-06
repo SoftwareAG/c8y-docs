@@ -321,7 +321,7 @@ By providing your credentials you enable platform features that utilize SMS serv
 3. Depending on the selected provider, enter the relevant credentials:
  
 	 * For OpenIT, your OpenIT username and password.
-	 * For sms77, your API key to access sms77 (to be found in your sms77 login under Settings > HTTP Api).
+	 * For sms77, your API key to access sms77 (to be found in your sms77 login under Settings > HTTP API).
 
 4. Click **Save** to save your settings.
 
@@ -331,6 +331,8 @@ By providing your credentials you enable platform features that utilize SMS serv
 Under **Configuration** in the **Settings** menu, you can configure system-wide properties in Cumulocity IoT.
 
 ![Configuration settings](/images/users-guide/Administration/admin-settings-configuration.png)
+
+>**Info:** In some of the following properties you can configure email templates for various purposes. Note that the corresponding emails are send with "text/html" as content type. 
 
 #### Placeholders
 

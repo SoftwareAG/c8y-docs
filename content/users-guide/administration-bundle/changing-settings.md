@@ -194,7 +194,7 @@ Each access token is signed by a signing certificate. Currently there are three 
 
 The integration was successfully verified against Azure AD. The configuration steps are available in [https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code).
 
-While configuring your Azure AD, redirect_uri is your full domain address. For the purpose of this document we assume that it is *http://aad.cumulocity.com*. There are no additional steps on Azure AD required.
+While configuring your Azure AD, redirect_uri is your full domain address. For the purpose of this document we assume that it is `http://aad.cumulocity.com`. There are no additional steps on Azure AD required.
 
 ##### Cumulocity IoT configuration
 
@@ -252,7 +252,7 @@ Under **Access control**, administrators can enable cross-origin resource sharin
 The **Allowed Domain** setting will enable your JavaScript web applications to directly communicate with REST APIs.
 
 * Set it to "*" to allow communication from any host.
-* Set it to "http://my.host.com, http://myother.host.com" to allow applications from http://my.host.com and from http://myother.host.com to communicate with the platform.
+* Set it to `http://my.host.com`, `http://myother.host.com` to allow applications from `http://my.host.com` and from `http://myother.host.com` to communicate with the platform.
 
 For further information, see [http://enable-cors.org](http://enable-cors.org).
 
@@ -336,11 +336,11 @@ Under **Configuration** in the **Settings** menu, you can configure system-wide 
 
 The following placeholders can be found in the **Configuration** page:
 
-- {host} - The value of this placeholder is "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". For example, if "tenantId" is auto-generated, the host will be "h<span>ttps://t12345678.cumulocity.</span>com".
-- {tenant-domain} - This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be "h<span>ttps://myTenant.cumulocity.</span>com".
+- {host} - The value of this placeholder is "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". For example, if "tenantId" is auto-generated, the host will be `https://t12345678.cumulocity.com`.
+- {tenant-domain} - This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be `https://myTenant.cumulocity.com`.
 - {token} - An automatically generated system token for password reset purposes. When a user requests a password reset, a new random token will be generated. This token will be associated only with the particular user and will allow for a single password reset action. The standard way of using this placeholder is along with the {tenant-domain} property as "{tenant-domain}?token={token}".
 
->**Info:** In case of the Enterprise Tenant, the {tenantDomain} placeholders can have different values. An example tenant domain is "https://myTenant.myhost.com".
+>**Info:** In case of the Enterprise Tenant, the {tenantDomain} placeholders can have different values. An example tenant domain is `https://myTenant.myhost.com`.
 
 #### Two-factor authentication
 

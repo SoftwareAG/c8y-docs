@@ -162,7 +162,37 @@ If you use an HTTP client that can only perform GET and POST methods in HTTP, yo
 
 ### <a id="processing-mode"></a> Processing mode
 
-Every update request (PUT, POST, DELETE) executes with a so-called *processing mode*. The default processing mode is *PERSISTENT*, which means that all updates will be send both to the Cumulocity IoT database and to real-time processing. The *TRANSIENT* processing mode will only send updates to real-time processing. As part of real-time processing, the user can decide case by case through scripts whether updates should be stored to the database or not. The *QUIESCENT* processing mode will behave like PERSISTENT processing mode with an exception that no real-time notifications will be sent. Currently, the QUIESCENT processing mode is applicable for measurements and events only. The *CEP* processing mode will behave like TRANSIENT processing mode with an exception that no real-time notifications will be sent. Currently, the CEP processing mode is applicable for measurements and events only.    
+Every update request (PUT, POST, DELETE) executes with a so-called *processing mode*. The processing modes are as follows:
+
+<table style="width: 100%">
+<colgroup>
+   <col style="width: 15%;">
+   <col style="width: 85%;">
+</colgroup>
+
+<thead>
+<th>Processing mode</th>
+<th>Description</th>
+</thead>
+<tbody>
+<tr>
+<td> Persistent (default)</td>
+<td> All updates will be send both to the Cumulocity IoT database and to real-time processing.</td>
+</tr>
+<tr>
+<td> Transient</td>
+<td> Updates will be sent only to real-time processing. As part of real-time processing, the user can decide case by case through scripts whether updates should be stored to the database or not.</td>
+</tr>
+<tr>
+<td> Quiescent</td>
+<td> The QUIESCENT processing mode behave like the PERSISTENT processing mode with the exception that no real-time notifications will be sent. Currently, the QUIESCENT processing mode is applicable for measurements and events only.</td>
+</tr>
+<tr>
+<td> CEP </td>
+<td> The CEP processing mode behaves like the TRANSIENT processing mode with the exception that no real-time notifications will be sent. Currently, the CEP processing mode is applicable for measurements and events only.</td>
+</tr>
+</tbody>
+</table>
 
 To explicitly control the processing mode of an update request, an "X-Cumulocity-Processing-Mode" header can be used with a value of either "PERSISTENT", "TRANSIENT", "QUIESCENT" or "CEP":
 

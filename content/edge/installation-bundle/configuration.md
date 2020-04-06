@@ -152,13 +152,17 @@ You have the choice to  enter the network parameters manually through the consol
 	
 	>**Info:** If the DNS Server IP is unknown, you can enter the previously entered gateway IP here. If any of the network parameters are not available, contact your network administrator.
 
+5. Confirm to continue with the network configuration process.
+
+6. Restart your Edge VM.
+
 ##### File input
  
 Provide the absolute path of the configuration file. The network parameters will be loaded from the file. In case of any incorrect parameters, the utility will fall back to console mode and will prompt the user to enter the parameters as described above.
 
 	`* Enter existing file path containing network parameters:`
 
-Confirm to continue with the network configuration process.
+Confirm to continue with the network configuration process. Restart your Edge VM after the network configuration is successful.
 
 The network configuration process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process will halt and a failure message will be displayed on the console.
 

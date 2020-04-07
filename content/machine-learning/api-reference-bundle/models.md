@@ -9,6 +9,8 @@ aliases:
 
 Operations on AI/Machine Learning models.
 
+>**Note**: An active subscription of Onnx microservice is required to perform operations on ONNX models by leveraging the ONNX APIs.
+
 ### GET - List Available PMML Models
 
 ```
@@ -1289,8 +1291,6 @@ curl --request DELETE "{{url}}/service/zementis/models"
 ```
 
 Retrieves the model names of all the available ONNX models. Use these model names as identifiers for all operations requiring the `model_name` path variable.
-
->**Note**: An active subscription of Onnx microservice is required to leverage the ONNX APIs.
 
 |HEADERS||
 |:---|:---|

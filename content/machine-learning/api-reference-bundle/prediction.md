@@ -342,7 +342,7 @@ curl --request GET "{{url}}/service/zementis/apply/Iris_NN/explain?record=%7B" -
 {{url}}/service/zementis/apply/{{model_name}}
 ```
 
-Apply a PMML model to multiple records. This provides two kinds of operations. Generally, if a predictive model without binary type input is applied, this will be a batch 'apply' operation that streams multiple input records to Zementis microservice. Zementis microservice will automatically detect CSV (Comma Separated Value) or JSON records formatted input and stream results back in the same format unless otherwise specified in the Accept request header parameter with text/csv or application/json values. Compressing input data with ZIP or GZIP will result in the same compression method for the returned output stream. 
+Apply a PMML model to multiple records. This provides two kinds of operations. Generally, if a predictive model without binary type input is applied, this will be a batch 'apply' operation that streams multiple input records to Zementis microservice. Zementis microservice will automatically detect CSV (Comma Separated Value) or JSON records formatted input and stream results back in the same format unless otherwise specified in the Accept request header parameter with text/csv or application/json values. Compressing input data with ZIP will result in the same compression method for the returned output stream. In such a case, compression handling is implicit and the content within the compressed file (i.e. JSON or CSV) is handled via Accept request header parameter. 
 
 Note that if the records are specified in a file then the size of the uploaded file should not exceed 500 MB.
 
@@ -603,7 +603,7 @@ curl --location --request POST "{{url}}/service/zementis/apply/dummy " \
 {{url}}/service/zementis/pmml/apply-group/{{group_name}}
 ```
 
-Apply a PMML model group to multiple records. Note that the size of the uploaded file should not exceed 500 MB. If the operation is successful, the response will always be in 'application/zip' format whereas in case of errors it will be 'application/json'.
+Apply a PMML model group to multiple records. Note that the size of the uploaded file should not exceed 500 MB. If the operation is successful, the response will always be in 'application/zip' format whereas in case of errors it will be 'application/json'. Compressing input data with ZIP will result in the same compression method for the returned output stream.
 
 |HEADERS||
 |:---|:---|
@@ -710,7 +710,7 @@ curl --location --request POST "{{url}}/service/zementis/pmml/apply-group/dummy"
 Apply a PMML model group to multiple records and show the details. Details include the computed outputs alongside the expected outputs if the expected outputs are part of the input data. 
 It also includes the information of the input record corresponding to the computed output.
 
-Note that the size of the uploaded file should not exceed 500 MB. If the operation is successful, the response will always be in 'application/zip' format whereas in case of errors it will be 'application/json'.
+Note that the size of the uploaded file should not exceed 500 MB. If the operation is successful, the response will always be in 'application/zip' format whereas in case of errors it will be 'application/json'. Compressing input data with ZIP will result in the same compression method for the returned output stream.
 
 |HEADERS||
 |:---|:---|
@@ -816,7 +816,8 @@ curl --location --request POST "{{url}}/service/zementis/pmml/apply-group/dummy/
 ```
 
 Apply an ONNX model to multiple records. Note that the size of the uploaded file should not exceed 500 MB and the input should be in JSON format.
-For deep learning models dealing with images, the input should be the preprocessed representation of the image and should be supplied as a JSON file.
+
+ONNX format doesn’t provide a representation for pre-processing steps. For deep learning models like CNN which deal with image data, the necessary pre-processing steps must be applied to the images and the result should be sent in JSON format as an input to the ONNX model.
 
 >**Note**: An active subscription of Onnx microservice is required to leverage this API.
 

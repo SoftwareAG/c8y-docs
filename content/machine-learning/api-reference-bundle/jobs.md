@@ -9,14 +9,17 @@ aliases:
 
 Operations on jobs scheduled for processing device data.
 
+>**Note**: Currently, jobs can be scheduled using PMML models and model groups only.
+
 ### Domain Model
 #### JobConfiguration
 |Name|Type|Description|
 |:-----|:-----|:-----|
 |jobName|String|Name of the job.|
 |jobDescription|String|Description of the job.|
-|associatedGroupOrDeviceId|Number|Id of the device or device group whose measurements will be <br> processed when the job executes.|
-|associatedModel|String|Name of the model which will process the device measurements.|
+|groupOrDeviceId|Number|Id of the device or device group whose measurements will be <br> processed when the job executes.|
+|modelOrGroup|String|Name of the model or model group which will be used to process the device measurements.|
+|applyToAllModels|boolean|Boolean value to specify if the data needs to be processed against all the models <br> in a model group.|
 |modelToDeviceMappings|Map|Map with the model’s inputs as the keys and the measurements as the <br> corresponding values. These mappings ensure which measurement <br> reading maps to which model input.|
 |jobSchedule|JobSchedule|Information about when the job should be scheduled for executions.|
 
@@ -57,8 +60,9 @@ On creation, a `jobId` is automatically assigned to the job and `jobCreationDate
 {
    "jobName": "<jobName>",
    "jobDescription": "<jobDescription>",
-   "associatedGroupOrDeviceId" : <associatedGroupOrDeviceId>,
-   "associatedModel": "<associatedModel>",
+   "groupOrDeviceId" : <groupOrDeviceId>,
+   "modelOrGroup": "<modelOrGroup>",
+   "applyToAllModels": <true | false>,
    "modelToDeviceMappings": {
       "<Model_Input1>": "<measurementType>.<seriesName1>.value",
       "<Model_Input2>": "<measurementType>.<seriesName2>.value",
@@ -83,22 +87,23 @@ On creation, a `jobId` is automatically assigned to the job and `jobCreationDate
 
 curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{auth}}"
 
-{
-   "jobName": "SampleJob",
-   "jobDescription": "SampleDescription",
-   "associatedGroupOrDeviceId" : 123456,
-   "associatedModel": "ActivityRecognitionModel",
-   "modelToDeviceMappings": {
-      "accelerationX": "c8y_Acceleration.c8y_AccelerationX.value",
-      "accelerationY": "c8y_Acceleration.c8y_AccelerationY.value",
-      "accelerationZ": "c8y_Acceleration.c8y_AccelerationZ.value"
-   },
-   "jobSchedule": {
-      "frequency": "periodic",
-      "cronExpression": "10 * * ? * *",
-      "dataFromPreviousNSeconds": 10,
-      "timeZone":"Asia/Kolkata"
-   }
+{ 
+    "jobName": "ActivityDetectionJob",
+    "jobDescription": "Detect activities",
+    "modelOrGroup": "DecisionTreeClassifier",
+    "groupOrDeviceId": 15889549,
+    "applyToAllModels": false,
+    "modelToDeviceMappings": {
+        "accelerationY": "c8y_Acceleration.accelerationY.value",
+        "accelerationX": "c8y_Acceleration.accelerationX.value",
+        "accelerationZ": "c8y_Acceleration.accelerationZ.value"
+    },
+    "jobSchedule": {
+        "frequency": "once",
+        "scheduleAt": "2020-03-18T17:42:00.000Z",
+        "dataFrom": "2020-02-26T10:20:00.000Z",
+        "dataTo": "2020-02-27T10:20:00.000Z"
+    }
 }
 ```
 
@@ -108,26 +113,27 @@ curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{au
 201 - Created
 
 {
-   "jobId": 11058170, 
-   "jobName": "SampleJob",
-   "jobDescription": "SampleDescription",
-   "jobCreationDate": "2019-10-05T08:12:21.340Z",
-   "associatedGroupOrDeviceId" : 123456,
-   "associatedModel": "ActivityRecognitionModel",
-   "modelToDeviceMappings": {
-      "accelerationX": "c8y_Acceleration.c8y_AccelerationX.value",
-      "accelerationY": "c8y_Acceleration.c8y_AccelerationY.value",
-      "accelerationZ": "c8y_Acceleration.c8y_AccelerationZ.value"
-   },
-   "jobSchedule": {
-      "frequency": "periodic",
-      "cronExpression": "10 * * ? * *",
-      "dataFromPreviousNSeconds": 10,
-      "timeZone":"Asia/Kolkata",
-      "scheduleAt": null,
-      "dataFrom": null,
-      "dataTo": null
-   }
+    "jobId": 15898918,
+    "jobName": "ActivityDetectionJob",
+    "jobDescription": "Detect activities",
+    "jobCreationDate": "2020-03-18T17:41:25.901Z",
+    "modelOrGroup": "DecisionTreeClassifier",
+    "applyToAllModels": false,
+    "groupOrDeviceId": 15889549,
+    "modelToDeviceMappings": {
+       "accelerationY": "c8y_Acceleration.accelerationY.value",
+       "accelerationX": "c8y_Acceleration.accelerationX.value",
+       "accelerationZ": "c8y_Acceleration.accelerationZ.value"
+    },
+    "jobSchedule": {
+       "frequency": "once",
+       "cronExpression": "",
+       "timeZone": "Asia/Kolkata",
+       "dataFromPreviousNSeconds": 0,
+       "scheduleAt": "2020-03-18T17:42:00.000Z",
+       "dataFrom": "2020-02-26T10:20:00.000Z",
+       "dataTo": "2020-02-27T10:20:00.000Z"
+    }
 }
 ```
 
@@ -138,22 +144,23 @@ curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{au
 
 curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{auth}}"
 
-{
-   "jobName": "SampleJob",
-   "jobDescription": "SampleDescription",
-   "associatedGroupOrDeviceId" : 123456,
-   "associatedModel": "ActivityRecognitionModel",
-   "modelToDeviceMappings": {
-      "accelerationX": "c8y_Acceleration.c8y_AccelerationX.value",
-      "accelerationY": "c8y_Acceleration.c8y_AccelerationY.value",
-      "accelerationZ": "c8y_Acceleration.c8y_AccelerationZ.value"
-   },
-   "jobSchedule": {
-      "frequency": "Invalid",
-      "cronExpression": "10 * * ? * *",
-      "dataFromPreviousNSeconds": 10,
-      "timeZone":"Asia/Kolkata"
-   }
+{ 
+    "jobName": "ActivityDetectionJob",
+    "jobDescription": "Detect activities",
+    "modelOrGroup": "DecisionTreeClassifier",
+    "groupOrDeviceId": 15889549,
+    "applyToAllModels":false,
+    "modelToDeviceMappings": {
+        "accelerationY": "c8y_Acceleration.accelerationY.value",
+        "accelerationX": "c8y_Acceleration.accelerationX.value",
+        "accelerationZ": "c8y_Acceleration.accelerationZ.value"
+    },
+    "jobSchedule": {
+        "frequency": "invalid",
+        "scheduleAt": "2020-04-18T17:42:00.000Z",
+        "dataFrom": "2020-02-26T10:20:00.000Z",
+        "dataTo": "2020-02-27T10:20:00.000Z"
+    }
 }
 ```
 
@@ -196,22 +203,23 @@ curl --request POST "{{url}}/service/zementis/job"
 
 curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{auth}}"
 
-{
-   "jobName": "SampleJob",
-   "jobDescription": "SampleDescription",
-   "associatedGroupOrDeviceId" : 123456,
-   "associatedModel": "Dummy",
-   "modelToDeviceMappings": {
-      "accelerationX": "c8y_Acceleration.c8y_AccelerationX.value",
-      "accelerationY": "c8y_Acceleration.c8y_AccelerationY.value",
-      "accelerationZ": "c8y_Acceleration.c8y_AccelerationZ.value"
-   },
-   "jobSchedule": {
-      "frequency": "once",
-      "scheduleAt": "2019-10-05T14:14:56.235+05:30",
-      "dataFrom": "2019-10-04T12:01:55.235+05:30",
-      "dataTo": "2019-10-05T12:01:55.235+05:30"
-   }
+{ 
+    "jobName": "ActivityDetectionJob",
+    "jobDescription": "Detect activities",
+    "modelOrGroup": "DecisionTreeClassifier",
+    "groupOrDeviceId": 123456,
+    "applyToAllModels":false,
+    "modelToDeviceMappings": {
+        "accelerationY": "c8y_Acceleration.accelerationY.value",
+        "accelerationX": "c8y_Acceleration.accelerationX.value",
+        "accelerationZ": "c8y_Acceleration.accelerationZ.value"
+    },
+    "jobSchedule": {
+        "frequency": "once",
+        "scheduleAt": "2020-04-18T17:42:00.000Z",
+        "dataFrom": "2020-02-26T10:20:00.000Z",
+        "dataTo": "2020-02-27T10:20:00.000Z"
+    }
 }
 ```
 
@@ -222,7 +230,7 @@ curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{au
 
 {
     "errors": [
-        "Model 'Dummy' not found."
+        "Device or group with id 123456 does not exist or it is invalid"
     ]
 }
 ```
@@ -233,11 +241,17 @@ curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{au
 {{url}}/service/zementis/jobs
 ```
 
-Retrieves all the available jobs. Use the `jobId` of these jobs as identifiers for all operations requiring the {jobId} path variable.
+Retrieves all the available jobs. Use the `jobId` of these jobs as identifiers for all operations requiring the {{jobId}} path variable.
 
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|withTotalPages (boolean)|optional request parameter for displaying total pages; default value is true.
+|currentPage (Number)|optional request parameter for navigating to a particular page; default value is 1.
+|pageSize (Number)|optional request parameter for specifying number of entries to be shown in a single page; default value is 5.
 
 
 **Example Request**
@@ -253,58 +267,72 @@ curl --request GET "{{url}}/service/zementis/jobs" --header "Authorization: {{au
 ```
 200 - OK
 
-[
-    {
-        "jobId": 10979435,
-        "jobName": "Job1",
-        "jobDescription": "DemoJob",
-        "jobCreationDate": "2019-09-30T15:58:20.749Z",
-        "associatedModel": "IsolationForest",
-        "associatedGroupOrDeviceId": 10417743,
+{
+    "next": null,
+    "prev": null,
+    "statistics": {
+      "currentPage": 1,
+      "totalPages": 1,
+      "pageSize": 5
+    },
+    "jobs": [
+      {
+        "jobId": 15898918,
+        "jobName": "ActivityDetectionJob",
+        "jobDescription": "Detect activities",
+        "jobCreationDate": "2020-03-18T17:41:25.901Z",
+        "modelOrGroup": "DecisionTreeClassifier",
+        "applyToAllModels": false,
+        "groupOrDeviceId": 15889549,
         "modelToDeviceMappings": {
             "accelerationY": "c8y_Acceleration.accelerationY.value",
             "accelerationX": "c8y_Acceleration.accelerationX.value",
+            "accelerationZ": "c8y_Acceleration.accelerationZ.value"
+        },
+        "jobSchedule": {
+            "frequency": "once",
+            "cronExpression": "",
+            "timeZone": "Asia/Kolkata",
+            "dataFromPreviousNSeconds": 0,
+            "scheduleAt": "2020-03-18T17:42:00.000Z",
+            "dataFrom": "2020-02-26T10:20:00.000Z",
+            "dataTo": "2020-02-27T10:20:00.000Z"
+        }
+      },
+      {
+        "jobId": 15896925,
+        "jobName": "AnomalyDetectionJob",
+        "jobDescription": "Job involving many versions of Isolation Forest model to detect anomalies in devices",
+        "jobCreationDate": "2020-02-27T14:23:16.557Z",
+        "modelOrGroup": "AnomalyDetectionModels",
+        "applyToAllModels": true,
+        "groupOrDeviceId": 15896385,
+        "modelToDeviceMappings": {
+            "rssi": "c8y_SignalStrengthWifi.rssi.value",
+            "accelerationY": "c8y_Acceleration.accelerationY.value",
+            "accelerationX": "c8y_Acceleration.accelerationX.value",
             "accelerationZ": "c8y_Acceleration.accelerationZ.value",
+            "air_pressure": "c8y_Gyroscope.gyroX.value",
             "gyroX": "c8y_Gyroscope.gyroX.value",
             "gyroY": "c8y_Gyroscope.gyroY.value",
-            "gyroZ": "c8y_Gyroscope.gyroZ.value"
+            "gyroZ": "c8y_Gyroscope.gyroZ.value",
+            "lux": "c8y_Luxometer.lux.value",
+            "compassX": "c8y_Compass.compassX.value",
+            "compassY": "c8y_Compass.compassY.value",
+            "compassZ": "c8y_Compass.compassZ.value"
         },
         "jobSchedule": {
-            "frequency": "periodic",
-            "cronExpression": "0 0 5 1/1 * ? *",
+            "frequency": "once",
+            "cronExpression": "",
             "timeZone": "Asia/Calcutta",
-            "dataFromPreviousNSeconds": 18000,
-            "scheduleAt": null,
-            "dataFrom": null,
-            "dataTo": null
-        },
-        "jobStatus": "Warning",
-        "lastExecutionDuration": "63"
-    },
-    {
-        "jobId": 10852249,
-        "jobName": "Job2",
-        "jobDescription": "DemoJob",
-        "jobCreationDate": "2019-09-30T05:47:33.772Z",
-        "associatedModel": "IsolationForest",
-        "associatedGroupOrDeviceId": 9304033,
-        "modelToDeviceMappings": {
-            "var1": "s7aFlowC.F.value",
-            "var2": "s7aFlowC.F.value"
-        },
-        "jobSchedule": {
-            "frequency": "periodic",
-            "cronExpression": "5 18 11 1/1 * ? *",
-            "timeZone": "Asia/Calcutta",
-            "dataFromPreviousNSeconds": 3456000,
-            "scheduleAt": null,
-            "dataFrom": null,
-            "dataTo": null
-        },
-        "jobStatus": "Failure",
-        "lastExecutionDuration": "728339"
-    }
-]
+            "dataFromPreviousNSeconds": 0,
+            "scheduleAt": "2020-02-27T14:24:00.000Z",
+            "dataFrom": "2020-02-26T12:30:00.000Z",
+            "dataTo": "2020-02-27T12:30:00.000Z"
+        }
+      }
+    ]
+}
 ```
 
 **Example Request**
@@ -336,10 +364,6 @@ curl --request GET "{{url}}/service/zementis/jobs"
 
 Get information about a specific job.
 
-Apart from **JobConfiguration**, the information contains the status of the job. If there is no ongoing execution, then the status is fetched from the job's last execution. 
-
-Note that the unit of `lastExecutionDuration` is milliseconds.
-
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
@@ -354,7 +378,7 @@ Note that the unit of `lastExecutionDuration` is milliseconds.
 ```
 200 - OK
 
-curl --request GET "{{url}}/service/zementis/job/10979435" --header "Authorization: {{auth}}"
+curl --request GET "{{url}}/service/zementis/job/15896925" --header "Authorization: {{auth}}"
 ```
 
 **Example Response**
@@ -363,31 +387,36 @@ curl --request GET "{{url}}/service/zementis/job/10979435" --header "Authorizati
 200 - OK
 
 {
-    "jobId": 10979435,
-    "jobName": "Job1",
-    "jobDescription": "DemoJob",
-    "jobCreationDate": "2019-09-30T15:58:20.749Z",
-    "associatedModel": "IsolationForest",
-    "associatedGroupOrDeviceId": 10417743,
+    "jobId": 15896925,
+    "jobName": "AnomalyDetectionJob",
+    "jobDescription": "Job involving many versions of Isolation Forest model to detect anomalies in devices",
+    "jobCreationDate": "2020-02-27T14:23:16.557Z",
+    "modelOrGroup": "AnomalyDetectionModels",
+    "applyToAllModels": true,
+    "groupOrDeviceId": 15896385,
     "modelToDeviceMappings": {
+        "rssi": "c8y_SignalStrengthWifi.rssi.value",
         "accelerationY": "c8y_Acceleration.accelerationY.value",
         "accelerationX": "c8y_Acceleration.accelerationX.value",
         "accelerationZ": "c8y_Acceleration.accelerationZ.value",
+        "air_pressure": "c8y_Gyroscope.gyroX.value",
         "gyroX": "c8y_Gyroscope.gyroX.value",
         "gyroY": "c8y_Gyroscope.gyroY.value",
-        "gyroZ": "c8y_Gyroscope.gyroZ.value"
+        "gyroZ": "c8y_Gyroscope.gyroZ.value",
+        "lux": "c8y_Luxometer.lux.value",
+        "compassX": "c8y_Compass.compassX.value",
+        "compassY": "c8y_Compass.compassY.value",
+        "compassZ": "c8y_Compass.compassZ.value"
     },
     "jobSchedule": {
-        "frequency": "periodic",
-        "cronExpression": "0 0 5 1/1 * ? *",
+        "frequency": "once",
+        "cronExpression": "",
         "timeZone": "Asia/Calcutta",
-        "dataFromPreviousNSeconds": 18000,
-        "scheduleAt": null,
-        "dataFrom": null,
-        "dataTo": null
-    },
-    "jobStatus": "Warning",
-    "lastExecutionDuration": "63"
+        "dataFromPreviousNSeconds": 0,
+        "scheduleAt": "2020-02-27T14:24:00.000Z",
+        "dataFrom": "2020-02-26T12:30:00.000Z",
+        "dataTo": "2020-02-27T12:30:00.000Z"
+    }
 }
 ```
 
@@ -396,7 +425,7 @@ curl --request GET "{{url}}/service/zementis/job/10979435" --header "Authorizati
 ```
 401 - Unauthorized
 
-curl --request GET "{{url}}/service/zementis/job/10979435"
+curl --request GET "{{url}}/service/zementis/job/15896925"
 ```
 
 **Example Response**
@@ -431,13 +460,15 @@ curl --request GET "{{url}}/service/zementis/job/000000" --header "Authorization
 }
 ```
 
-### GET - Job Execution History
+### GET - Get Job Status
 
 ```
-{{url}}/service/zementis/job/{{jobId}}/history
+{{url}}/service/zementis/job/{{jobId}}/status
 ```
 
-Get execution history of a particular job. Lists all executions of that specific job. Use the `jobExecutionNumber` of these executions as identifiers for all operations requiring the {executionId} path variable.
+Get status and execution duration of a specific job. If there are no ongoing executions, then the job's last execution status and duration will be fetched.
+
+Note that the unit of `jobExecutionDuration` is milliseconds.
 
 |HEADERS||
 |:---|:---|
@@ -453,38 +484,18 @@ Get execution history of a particular job. Lists all executions of that specific
 ```
 200 - OK
 
-curl --request GET "{{url}}/service/zementis/job/10979435/history" --header "Authorization: {{auth}}"
+curl --request GET "{{url}}/service/zementis/job/15896925/status" --header "Authorization: {{auth}}"
 ```
 
 **Example Response**
 
 ```
-200 - OK 
+200 - OK
 
-[
-    {
-        "jobId": 10979435,
-        "jobExecutionNumber": 1,
-        "isExecutionForDeviceGroup": true,
-        "jobExecutionStartTime": "2019-09-23T15:39:15Z",
-        "jobExecutionEndTime": "2019-09-23T15:39:19.051Z",
-        "jobExecutionDuration": "4051",
-        "jobExecutionStatus": "Success",
-        "jobExecutionStatusMessage": []
-    },
-	{
-        "jobId": 10979435,
-        "jobExecutionNumber": 2,
-        "isExecutionForDeviceGroup": true,
-        "jobExecutionStartTime": "2019-09-30T23:30:00.009Z",
-        "jobExecutionEndTime": "2019-09-30T23:30:00.401Z",
-        "jobExecutionDuration": "392",
-        "jobExecutionStatus": "Warning",
-        "jobExecutionStatusMessage": [
-            "The device 107742 was not active or sending any measurements during the time specified for data range"
-        ]
-    }
-]
+{
+    "jobExecutionStatus": "Success",
+    "jobExecutionDuration": "8930"
+}
 ```
 
 **Example Request**
@@ -492,7 +503,103 @@ curl --request GET "{{url}}/service/zementis/job/10979435/history" --header "Aut
 ```
 401 - Unauthorized
 
-curl --request GET "{{url}}/service/zementis/job/10979435/history"
+curl --request GET "{{url}}/service/zementis/job/15896925/status"
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+404 - Not Found
+
+curl --request GET "{{url}}/service/zementis/job/000000/status" --header "Authorization: {{auth}}"
+```
+
+**Example Response**
+
+```
+404 - Not Found
+
+{
+    "errors": [
+        "Zementis job ID '00000' not found."
+    ]
+}
+```
+
+### GET - Job Execution History
+
+```
+{{url}}/service/zementis/job/{{jobId}}/history
+```
+
+Get execution history of a particular job. Lists all executions of that specific job. Use the `jobExecutionNumber` of these executions as identifiers for all operations requiring the {executionId} path variable.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|jobId (string)|required path variable for job id
+|withTotalPages (boolean)|optional request paramter for displaying total pages; default value is false.
+|currentPage (Number)|optional request parameter for navigating to a particular page; default value is 1.
+|pageSize (Number)|optional request parameter for specifying number of entries to be shown in a single page; default value is 5.
+
+
+**Example Request**
+
+```
+200 - OK
+
+curl --request GET "{{url}}/service/zementis/job/15896925/history?withTotalPages=false" --header "Authorization: {{auth}}"
+```
+
+**Example Response**
+
+```
+200 - OK 
+
+{
+    "next": "/service/zementis/job/15896925/history?pageSize=5&currentPage=2",
+    "prev": null,
+    "statistics": {
+        "currentPage": 1,
+        "totalPages": null,
+        "pageSize": 5
+    },
+    "jobExecutions": [
+        {
+            "jobId": 15896925,
+            "jobExecutionNumber": 1,
+            "isExecutionForDeviceGroup": true,
+            "jobExecutionStartTime": "2020-02-27T14:24:00Z",
+            "jobExecutionEndTime": "2020-02-27T14:24:08.930Z",
+            "jobExecutionDuration": "8930",
+            "jobExecutionStatus": "Success",
+            "jobExecutionStatusMessage": []
+        }
+    ]
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --request GET "{{url}}/service/zementis/job/15896925/history"
 ```
 
 **Example Response**
@@ -546,12 +653,13 @@ Note that the unit of `jobExecutionDuration` is milliseconds.
 |jobId (string)|required path variable for job id
 |executionId (string)|required path variable for execution id
 
+
 **Example Request**
 
 ```
 200 - OK
 
-curl --request GET "{{url}}/service/zementis/job/10979435/history/1" --header "Authorization: {{auth}}"
+curl --request GET "{{url}}/service/zementis/job/15896925/history/1" --header "Authorization: {{auth}}"
 ```
 
 **Example Response**
@@ -560,12 +668,12 @@ curl --request GET "{{url}}/service/zementis/job/10979435/history/1" --header "A
 200 - OK
 
 {
-    "jobId": 10979435,
+    "jobId": 15896925,
     "jobExecutionNumber": 1,
     "isExecutionForDeviceGroup": true,
-    "jobExecutionStartTime": "2019-09-23T15:39:15Z",
-    "jobExecutionEndTime": "2019-09-23T15:39:19.051Z",
-    "jobExecutionDuration": "4051",
+    "jobExecutionStartTime": "2020-02-27T14:24:00Z",
+    "jobExecutionEndTime": "2020-02-27T14:24:08.930Z",
+    "jobExecutionDuration": "8930",
     "jobExecutionStatus": "Success",
     "jobExecutionStatusMessage": []
 }
@@ -576,7 +684,7 @@ curl --request GET "{{url}}/service/zementis/job/10979435/history/1" --header "A
 ```
 401 - Unauthorized
 
-curl --request GET "{{url}}/service/zementis/job/10979435/history/1"
+curl --request GET "{{url}}/service/zementis/job/15896925/history/1"
 ```
 
 **Example Response**
@@ -596,7 +704,7 @@ curl --request GET "{{url}}/service/zementis/job/10979435/history/1"
 ```
 404 - Not Found
 
-curl --request GET "{{url}}/service/zementis/job/10979435/history/0" --header "Authorization: {{auth}}"
+curl --request GET "{{url}}/service/zementis/job/15896925/history/0" --header "Authorization: {{auth}}"
 ```
 
 **Example Response**
@@ -627,7 +735,8 @@ Get the results/inferences generated in a single job execution. These inferences
 |:---|:---|
 |jobId (string)|required path variable for job id
 |executionId (string)|required path variable for execution id
-|currentPage (string)|optional parameter for specifying which page to fetch; each page will contain maximum 2000 inferences
+|withTotalPages (boolean)|optional request paramter for displaying total pages; default value is false.
+|currentPage (Number)|optional request parameter for navigating to a particular page; default value is 1.
 
 
 **Example Request**
@@ -635,7 +744,7 @@ Get the results/inferences generated in a single job execution. These inferences
 ```
 200 - OK
 
-curl --request GET "{{url}}/service/zementis/job/10979435/history/1/inferences" --header "Authorization: {{auth}}"
+curl --request GET "{{url}}/service/zementis/job/15896925/history/1/inferences" --header "Authorization: {{auth}}"
 ```
 
 **Example Response**
@@ -644,27 +753,108 @@ curl --request GET "{{url}}/service/zementis/job/10979435/history/1/inferences" 
 200 - OK
 
 {
+    "next": "/service/zementis/job/15896915/history/1/inferences?currentPage=2",
+    "prev": null,
+    "statistics": {
+        "currentPage": 1,
+        "totalPages": null,
+        "numberOfDevices": 2,
+        "numberOfModels": 4
+    },
     "inferenceCollection": [
         {
-            "recordCollection": {
-                "normalizedAnomalyScore": [0.30919784638525916, 0.5981812541231656, 0.36394405330406093, 0.36394405330406093, 0.5981812541231656],
-                "decisionFunction": [-0.30709038523208043, -0.237037401162047, -0.277037401162047, -0.277037401162047, -0.22561825856400746],
-                "rawAnomalyScore": [4.68, 8.968584665454545, 5.52, 5.52, 9.205437462877498],
-                "outlier": [false, true, false, false, true]
-            },
-            "deviceId": 103030
+            "recordCollection": [
+              {
+                 "outputRecords": {
+                    "normalizedAnomalyScore": [0.30919784638525916, 0.5981812541231656, 0.36394405330406093, 0.36394405330406093, 0.5981812541231656, ...],
+                    "decisionFunction": [-0.30709038523208043, -0.237037401162047, -0.277037401162047, -0.277037401162047, -0.22561825856400746, ...],
+                    "rawAnomalyScore": [4.68, 8.968584665454545, 5.52, 5.52, 9.205437462877498, ...],
+                    "outlier": [false, true, false, false, true, ...],
+                    "timestamp_15896925": ["2020-02-27T10:05:23.664Z", "2020-02-27T10:05:23.896Z", "2020-02-27T10:05:24.092Z", "2020-02-27T10:05:24.404Z", "2020-02-27T10:05:24.635Z", ...]
+                 },
+                 "modelName": "IsolationForest"
+              },
+              {
+                 "outputRecords": {
+                    "normalizedAnomalyScore": [0.30919784638525918, 0.5981812541231656, 0.36394405330406093, 0.36394405330406093, 0.5981812541231656, ...],
+                    "decisionFunction": [-0.30709031523208043, -0.237037401162047, -0.277037401162047, -0.277037401162047, -0.22561825856400746, ...],
+                    "rawAnomalyScore": [4.68, 8.962584665454545, 5.52, 5.52, 9.205437462877498, ...],
+                    "outlier": [false, true, false, false, true, ...],
+                    "timestamp_15896925": ["2020-02-27T10:05:23.664Z", "2020-02-27T10:05:23.896Z", "2020-02-27T10:05:24.092Z", "2020-02-27T10:05:24.404Z", "2020-02-27T10:05:24.635Z", ...]
+                 },
+                 "modelName": "IsolationForestV2"
+              },
+              {
+                 "outputRecords": {
+                    "normalizedAnomalyScore": [0.30919784638525816, 0.5981812541231656, 0.36394405330406093, 0.36394405330406093, 0.5981812541231656, ...],
+                    "decisionFunction": [-0.30709038323208043, -0.237037401162047, -0.277037401162047, -0.277037401162047, -0.22561825856400746, ...],
+                    "rawAnomalyScore": [4.68, 8.969584645454545, 5.52, 5.52, 9.205437462877498, ...],
+                    "outlier": [false, true, false, false, true, ...],
+                    "timestamp_15896925": ["2020-02-27T10:05:23.664Z", "2020-02-27T10:05:23.896Z", "2020-02-27T10:05:24.092Z", "2020-02-27T10:05:24.404Z", "2020-02-27T10:05:24.635Z", ...]
+                 },
+                 "modelName": "IsolationForestV3"
+              },
+              {
+                 "outputRecords": {
+                    "normalizedAnomalyScore": [0.30919784638526916, 0.5981812541231656, 0.36394405330406093, 0.36394405330406093, 0.5981812541231656, ...],
+                    "decisionFunction": [-0.30709038523208243, -0.237037401162047, -0.277037401162047, -0.277037401162047, -0.22561825856400746, ...],
+                    "rawAnomalyScore": [4.68, 8.961584665424545, 5.52, 5.52, 9.205437462877498, ...],
+                    "outlier": [false, true, false, false, true, ...],
+                    "timestamp_15896925": ["2020-02-27T10:05:23.664Z", "2020-02-27T10:05:23.896Z", "2020-02-27T10:05:24.092Z", "2020-02-27T10:05:24.404Z", "2020-02-27T10:05:24.635Z", ...]
+                 },
+                 "modelName": "IsolationForestV4"
+              }				
+            ],
+            "deviceId": 103030,
+            "recordSize": 2000
         },
         {
-            "recordCollection": {
-                "normalizedAnomalyScore": [0.30919784638525916, 0.5981812541231656, 0.36394405330406093, 0.36394405330406093, 0.2981812541231656],
-                "decisionFunction": [-0.30709038523208043, -0.237037401162047, -0.277037401162047, -0.277037401162047, -0.29561825856400746],
-                "rawAnomalyScore": [4.68, 8.968584665454545, 5.52, 5.52, 4.29],
-                "outlier": [false, true, false, false, false]
-            },
-            "deviceId": 107742
+            "recordCollection": [
+              {
+                 "outputRecords": {
+                    "normalizedAnomalyScore": [0.30919784638525916, 0.5981812541231656, 0.36394405330406093, 0.36394405330406093, 0.5981812541231656, ...],
+                    "decisionFunction": [-0.30709038523208043, -0.237037401162047, -0.277037401162047, -0.277037401162047, -0.22561825856400746, ...],
+                    "rawAnomalyScore": [4.68, 8.968584665454545, 5.52, 5.52, 9.205437462877498, ...],
+                    "outlier": [false, true, false, false, true, ...],
+                    "timestamp_15896925": ["2020-02-27T10:05:23.664Z", "2020-02-27T10:05:23.896Z", "2020-02-27T10:05:24.092Z", "2020-02-27T10:05:24.404Z", "2020-02-27T10:05:24.635Z", ...]
+                 },
+                 "modelName": "IsolationForest"
+              },
+              {
+                 "outputRecords": {
+                    "normalizedAnomalyScore": [0.30919784638525918, 0.5981812541231656, 0.36394405330406093, 0.36394405330406093, 0.5981812541231656, ...],
+                    "decisionFunction": [-0.30709031523208043, -0.237037401162047, -0.277037401162047, -0.277037401162047, -0.22561825856400746, ...],
+                    "rawAnomalyScore": [4.68, 8.962584665454545, 5.52, 5.52, 9.205437462877498, ...],
+                    "outlier": [false, true, false, false, true, ...],
+                    "timestamp_15896925": ["2020-02-27T10:05:23.664Z", "2020-02-27T10:05:23.896Z", "2020-02-27T10:05:24.092Z", "2020-02-27T10:05:24.404Z", "2020-02-27T10:05:24.635Z", ...]
+                 },
+                 "modelName": "IsolationForestV2"
+              },
+              {
+                 "outputRecords": {
+                    "normalizedAnomalyScore": [0.30919784638525816, 0.5981812541231656, 0.36394405330406093, 0.36394405330406093, 0.5981812541231656, ...],
+                    "decisionFunction": [-0.30709038323208043, -0.237037401162047, -0.277037401162047, -0.277037401162047, -0.22561825856400746, ...],
+                    "rawAnomalyScore": [4.68, 8.969584645454545, 5.52, 5.52, 9.205437462877498, ...],
+                    "outlier": [false, true, false, false, true, ...],
+                    "timestamp_15896925": ["2020-02-27T10:05:23.664Z", "2020-02-27T10:05:23.896Z", "2020-02-27T10:05:24.092Z", "2020-02-27T10:05:24.404Z", "2020-02-27T10:05:24.635Z", ...]
+                 },
+                 "modelName": "IsolationForestV3"
+              },
+              {
+                 "outputRecords": {
+                    "normalizedAnomalyScore": [0.30919784638526916, 0.5981812541231656, 0.36394405330406093, 0.36394405330406093, 0.5981812541231656, ...],
+                    "decisionFunction": [-0.30709038523208243, -0.237037401162047, -0.277037401162047, -0.277037401162047, -0.22561825856400746, ...],
+                    "rawAnomalyScore": [4.68, 8.961584665424545, 5.52, 5.52, 9.205437462877498, ...],
+                    "outlier": [false, true, false, false, true, ...],
+                    "timestamp_15896925": ["2020-02-27T10:05:23.664Z", "2020-02-27T10:05:23.896Z", "2020-02-27T10:05:24.092Z", "2020-02-27T10:05:24.404Z", "2020-02-27T10:05:24.635Z", ...]
+                 },
+                 "modelName": "IsolationForestV4"
+              }				
+            ],
+            "deviceId": 107742,
+            "recordSize": 1500
         }
-    ],
-    "currentPage": 1
+    ]
 }
 ```
 
@@ -673,7 +863,7 @@ curl --request GET "{{url}}/service/zementis/job/10979435/history/1/inferences" 
 ```
 401 - Unauthorized
 
-curl --request GET "{{url}}/service/zementis/job/10979435/history/1/inferences"
+curl --request GET "{{url}}/service/zementis/job/15896925/history/1/inferences"
 ```
 
 **Example Response**
@@ -693,7 +883,7 @@ curl --request GET "{{url}}/service/zementis/job/10979435/history/1/inferences"
 ```
 404 - Not Found
 
-curl --request GET "{{url}}/service/zementis/job/10979435/history/0/inferences" --header "Authorization: {{auth}}"
+curl --request GET "{{url}}/service/zementis/job/15896925/history/0/inferences" --header "Authorization: {{auth}}"
 ```
 
 **Example Response**
@@ -714,7 +904,7 @@ curl --request GET "{{url}}/service/zementis/job/10979435/history/0/inferences" 
 {{url}}/service/zementis/job/{{jobId}}
 ```
 
-Remove the specified job.
+Remove the specified job and list the remaining jobs, if any.
 
 |HEADERS||
 |:---|:---|
@@ -730,7 +920,7 @@ Remove the specified job.
 ```
 200 - OK
 
-curl --request DELETE "{{url}}/service/zementis/job/11058170" --header "Authorization: {{auth}}"
+curl --request DELETE "{{url}}/service/zementis/job/15898918" --header "Authorization: {{auth}}"
 ```
 
 **Example Response**
@@ -738,7 +928,49 @@ curl --request DELETE "{{url}}/service/zementis/job/11058170" --header "Authoriz
 ```
 200 - OK
 
-[]
+{
+    "next": null,
+    "prev": null,
+    "statistics": {
+        "currentPage": 1,
+        "totalPages": 1,
+        "pageSize": 5
+    },
+    "jobs": [
+       {
+           "jobId": 15896925,
+           "jobName": "AnomalyDetectionJob",
+           "jobDescription": "Job involving many versions of Isolation Forest model to detect anomalies in devices",
+           "jobCreationDate": "2020-02-27T14:23:16.557Z",
+           "modelOrGroup": "AnomalyDetectionModels",
+           "applyToAllModels": true,
+           "groupOrDeviceId": 15896385,
+           "modelToDeviceMappings": {
+           	  "rssi": "c8y_SignalStrengthWifi.rssi.value",
+           	  "accelerationY": "c8y_Acceleration.accelerationY.value",
+           	  "accelerationX": "c8y_Acceleration.accelerationX.value",
+           	  "accelerationZ": "c8y_Acceleration.accelerationZ.value",
+           	  "air_pressure": "c8y_Gyroscope.gyroX.value",
+           	  "gyroX": "c8y_Gyroscope.gyroX.value",
+           	  "gyroY": "c8y_Gyroscope.gyroY.value",
+           	  "gyroZ": "c8y_Gyroscope.gyroZ.value",
+           	  "lux": "c8y_Luxometer.lux.value",
+           	  "compassX": "c8y_Compass.compassX.value",
+           	  "compassY": "c8y_Compass.compassY.value",
+           	  "compassZ": "c8y_Compass.compassZ.value"
+           },
+           "jobSchedule": {
+           	  "frequency": "once",
+           	  "cronExpression": "",
+           	  "timeZone": "Asia/Calcutta",
+           	  "dataFromPreviousNSeconds": 0,
+           	  "scheduleAt": "2020-02-27T14:24:00.000Z",
+           	  "dataFrom": "2020-02-26T12:30:00.000Z",
+           	  "dataTo": "2020-02-27T12:30:00.000Z"
+           }
+       }
+    ]
+}
 ```
 
 **Example Request**
@@ -746,7 +978,7 @@ curl --request DELETE "{{url}}/service/zementis/job/11058170" --header "Authoriz
 ```
 401 - Unauthorized
 
-curl --request DELETE "{{url}}/service/zementis/job/11058170"
+curl --request DELETE "{{url}}/service/zementis/job/15896925"
 ```
 
 **Example Response**
@@ -806,7 +1038,16 @@ curl --request DELETE "{{url}}/service/zementis/jobs" --header "Authorization: {
 ```
 200 - OK
 
-[]
+{
+    "next": null,
+    "prev": null,
+    "statistics": {
+        "currentPage": 1,
+        "totalPages": 0,
+        "pageSize": 5
+    },
+    "jobs": []
+}
 ```
 
 **Example Request**

@@ -9,7 +9,7 @@ aliases:
 
 Operations on model groups.
 
->**Info**: Currently, model groups can be used for grouping PMML models only.
+>**Note**: Currently, model groups can be used for grouping PMML models only.
 
 ### GET - List PMML Groups
 

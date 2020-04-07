@@ -818,7 +818,7 @@ curl --location --request POST "{{url}}/service/zementis/pmml/apply-group/dummy/
 Apply an ONNX model to multiple records. Note that the size of the uploaded file should not exceed 500 MB and the input should be in JSON format.
 For deep learning models dealing with images, the input should be the preprocessed representation of the image and should be supplied as a JSON file.
 
->**Info**: An active subscription of Onnx microservice is required to leverage this API.
+>**Note**: An active subscription of Onnx microservice is required to leverage this API.
 
 |HEADERS||
 |:---|:---|

@@ -9,7 +9,7 @@ aliases:
 
 Operations for time series data/model.
 
->**Info**: An active subscription of Nyoka microservice is required to leverage the time series API.
+>**Note**: An active subscription of Nyoka microservice is required to leverage the time series APIs.
 
 ### Domain Model
 #### TimeSeries

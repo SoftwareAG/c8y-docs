@@ -1290,7 +1290,7 @@ curl --request DELETE "{{url}}/service/zementis/models"
 
 Retrieves the model names of all the available ONNX models. Use these model names as identifiers for all operations requiring the `model_name` path variable.
 
->**Info**: An active subscription of Onnx microservice is required to leverage the ONNX APIs.
+>**Note**: An active subscription of Onnx microservice is required to leverage the ONNX APIs.
 
 |HEADERS||
 |:---|:---|

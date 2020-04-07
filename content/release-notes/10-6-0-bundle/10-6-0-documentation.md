@@ -8,7 +8,7 @@ In addition to all enhancements or changes related to the improvements and fixes
 
 ### Device integration tutorials
 
-In addition to the device guides offered in the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/web/#/), we have re-written and added a collection of device integration tutorials which describe in a step-by-step approach how to integrate various demo devices to Cumulocity IoT, see [Device integration tutorials](/device-integration-tutorials).
+In addition to the device guides offered in the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/web/#/), we have re-written and added a collection of device integration tutorials which describe in a step-by-step approach how to integrate various demo devices to Cumulocity IoT, see [Device integration tutorials](/device-tutorials/tutorials-introduction).
 
 ### Machine learning guide
 

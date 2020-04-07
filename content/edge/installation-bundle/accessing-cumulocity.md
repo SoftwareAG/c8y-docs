@@ -43,10 +43,6 @@ Using &#60;domain_name>, Cumulocity IoT Edge can be connected from the host oper
 
 ### Entering Cumulocity IoT
 
-Once the machine is in running state, open a web browser.
-
->**Important:** You must first login as **sysadmin** user (password = sysadmin-pass) and change the password for **sysadmin** user. The **sysadmin** user account is used for unlocking the tenant admin user. To change the password, see [User options and settings](/guides/users-guide/getting-started/#user-settings).
-
 #### Entering Cumulocity IoT via domain name
 
 Enter the following:
@@ -59,7 +55,7 @@ The Cumulocity IoT Login screen appears.
 
 <img src="/guides/images/edge/edge-login-with-domain.png" name="Login screen"/>
 
-In the Login screen, log in with the tenant admin credentials provided during post-installation.
+Next steps: Before you proceed further, you must first log in as **sysadmin** user and change the password. See [Changing the sysadmin password](/guides/edge/installation/#changing-the-sysadmin-password).
 
 #### Entering Cumulocity IoT via IP
 
@@ -68,13 +64,23 @@ Enter the following:
 ```http
 https://<IP_Address_Of_Edge>;
 ```
+Next steps: Before you proceed further, you must first log in as **sysadmin** user and change the password. The **sysadmin** user account is used for unlocking the tenant admin user.
 
-The Cumulocity IoT login screen appears.
+#### Changing the sysadmin password
+
+1. Log in using the following credentials:
+	- Tenant: edge
+	- Username: sysadmin
+	- Password: sysadmin-pass
+
+2. Change the password as described in [User options and settings](/guides/users-guide/getting-started/#user-settings).
+
+3. Log out as **sysadmin** user.
+
+Next steps: Log in with the tenant admin credentials provided during post-installation. In the Login screen, the tenant is always **edge**.
+<br>
 
 <img src="/guides/images/edge/edge-login-with-tenantid.png" name="Login screen"/>
-
-In the Login screen, the tenant is always **edge**. Log in with the tenant admin credentials provided during post-installation.
-<br>
 
 >**Important:** If you have to log in as **edgeadmin** user, log in to the management tenant using the URL *https://&#60;Edge&#95;VM&#95;IP&#95;Address>/apps/administration/index.html*.<br>
 >- Tenant: management<br>

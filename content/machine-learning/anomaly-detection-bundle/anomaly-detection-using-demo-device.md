@@ -7,7 +7,7 @@ aliases:
   - /predictive-analytics/anomaly-detection/#anomaly-detection-using-demo-device
 ---
 
-A fully functional demo can be prepared with the help of a demo device. For this, use the artefacts provided as part of the *AnomalyDetectionDemo.zip* file.
+A fully functional demo can be prepared with the help of a demo device. For this, use the artifacts provided as part of the *AnomalyDetectionDemo.zip* file.
 
 #### Register a demo device in Cumulocity IoT
 

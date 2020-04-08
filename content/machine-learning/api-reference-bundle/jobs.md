@@ -9,7 +9,7 @@ aliases:
 
 Operations on jobs scheduled for processing device data.
 
->**Note**: Currently, jobs can be scheduled using PMML models and model groups only.
+>**Info**: Currently, jobs can be scheduled using PMML models and model groups only.
 
 ### Domain Model
 #### JobConfiguration
@@ -17,7 +17,7 @@ Operations on jobs scheduled for processing device data.
 |:-----|:-----|:-----|
 |jobName|String|Name of the job.|
 |jobDescription|String|Description of the job.|
-|groupOrDeviceId|Number|Id of the device or device group whose measurements will be <br> processed when the job executes.|
+|groupOrDeviceId|Number|ID of the device or device group whose measurements will be <br> processed when the job executes.|
 |modelOrGroup|String|Name of the model or model group which will be used to process the device measurements.|
 |applyToAllModels|boolean|Boolean value to specify if the data needs to be processed against all the models <br> in a model group.|
 |modelToDeviceMappings|Map|Map with the model’s inputs as the keys and the measurements as the <br> corresponding values. These mappings ensure which measurement <br> reading maps to which model input.|
@@ -34,7 +34,7 @@ Operations on jobs scheduled for processing device data.
 |dataFrom|String|Datetime string from the past which should be considered as the starting point <br> for data to be fetched for processing.|'
 |dataTo|String|Datetime string from the past which should be considered as the ending point <br> for data to be fetched for processing.|
 
->**Note**:
+>**Info**:
 <br>1. For *periodic* frequency, `cronExpression`, `dataFromPreviousNSeconds` and `timeZone` fields are mandatory.
 <br>2. For *once* frequency, `scheduleAt`, `dataFrom` and `dataTo` fields are mandatory and should adhere to the ISO-8601 date-time format
 <br> &emsp; i.e. "yyyy-MM-dd'T'HH:mm:ss.SSSXXX", for instance "2019-12-30T22:59:50.235+05:30". 
@@ -370,7 +370,7 @@ Get information about a specific job.
 
 |PARAMS||
 |:---|:---|
-|jobId (string)|required path variable for job id
+|jobId (string)|required path variable for job ID
 
 
 **Example Request**
@@ -476,7 +476,7 @@ Note that the unit of `jobExecutionDuration` is milliseconds.
 
 |PARAMS||
 |:---|:---|
-|jobId (string)|required path variable for job id
+|jobId (string)|required path variable for job ID
 
 
 **Example Request**
@@ -552,7 +552,7 @@ Get execution history of a particular job. Lists all executions of that specific
 
 |PARAMS||
 |:---|:---|
-|jobId (string)|required path variable for job id
+|jobId (string)|required path variable for job ID
 |withTotalPages (boolean)|optional request paramter for displaying total pages; default value is false.
 |currentPage (Number)|optional request parameter for navigating to a particular page; default value is 1.
 |pageSize (Number)|optional request parameter for specifying number of entries to be shown in a single page; default value is 5.
@@ -650,8 +650,8 @@ Note that the unit of `jobExecutionDuration` is milliseconds.
 
 |PARAMS||
 |:---|:---|
-|jobId (string)|required path variable for job id
-|executionId (string)|required path variable for execution id
+|jobId (string)|required path variable for job ID
+|executionId (string)|required path variable for execution ID
 
 
 **Example Request**
@@ -733,8 +733,8 @@ Get the results/inferences generated in a single job execution. These inferences
 
 |PARAMS||
 |:---|:---|
-|jobId (string)|required path variable for job id
-|executionId (string)|required path variable for execution id
+|jobId (string)|required path variable for job ID
+|executionId (string)|required path variable for execution ID
 |withTotalPages (boolean)|optional request paramter for displaying total pages; default value is false.
 |currentPage (Number)|optional request parameter for navigating to a particular page; default value is 1.
 
@@ -912,7 +912,7 @@ Remove the specified job and list the remaining jobs, if any.
 
 |PARAMS||
 |:---|:---|
-|jobId (string)|required path variable for job id
+|jobId (string)|required path variable for job ID
 
 
 **Example Request**

@@ -7,9 +7,9 @@ aliases:
   - /predictive-analytics/web-app/#processing-data
 ---
 
-The **Predictions** navigation node allows you to do meaningful predictions by scoring the data from your devices against your predictive models.
+The **Predictions** menu allows you to do meaningful predictions by scoring the data from your devices against your predictive models.
 
-Clicking **Predictions** in the navigator allows you to choose from two different modes of processing - Batch Processing and Scheduled Processing.
+Clicking **Predictions** in the navigator allows you to choose from two different modes of processing - **Batch Processing** and **Scheduled Processing**.
 
 ![Predictions](/images/zementis/zementis-predictions.png)
 
@@ -17,7 +17,7 @@ Clicking **Predictions** in the navigator allows you to choose from two differen
 
 Batch processing allows you to process data records against a model or model group. Batch processing is applicable for both PMML and ONNX models. 
 
-To process data against PMML models, choose the PMML tab. Similarly, to process data against ONNX models, choose the ONNX tab.
+To process data against PMML models, choose the **PMML** tab. Similarly, to process data against ONNX models, choose the **ONNX** tab.
 
 |Model/Group|Supported input data file types|Supported compression for input files
 |:---|:---|:---|
@@ -31,7 +31,7 @@ Batch Processing is primarily targeted for verifying the accuracy of your predic
 
 To run the batch process on PMML model/group, perform the following steps:
 
-1. Click **Start** in the **PMML** tab to initiate the batch processing. 
+1. Click **Start** in the **PMML** tab to initiate the processing. 
 
 2. In the **Batch Processing** wizard, first choose whether the processing should be applied on a model or a model group. Then select a model/group from the dropdown list. The dropdown list shows all models or groups which you have added either using the **Models** page or the **Model groups** 
 page respectively. Use the **Enable score matching** toggle to enable/disable score matching. Use the **Apply across all models** toggle to choose whether to process the data across all the models in the group or just process the data through the primary model only.
@@ -42,7 +42,7 @@ Click **Next** to proceed. <br>
 On uploading a valid file, you will see an uploading message. 
 After the processing has been completed, you will see a corresponding notification.
 
->**Note**: The size of the uploaded file must not exceed 500 MB.
+>**Info**: The size of the uploaded file must not exceed 500 MB.
 
 The steps involved in running the batch process on ONNX models remains similar to the ones for PMML models. However, there is no option to enable score matching. Also, model groups for ONNX models are not supported yet. The input to the ONNX model must be provided in JSON format.
 
@@ -68,7 +68,7 @@ Click the cogwheel icon <img src="/images/zementis/zementis-cogwheel-icon.png" a
 
 Click the file icon <img src="/images/zementis/zementis-file-icon.png" alt="File" style="display:inline-block; margin:0"> in front of a row, to download a full execution trace, showing what exactly happened when that record was applied against the model. In this way, you can investigate why the outputs did not match.
 
->**Note**: For PMML model groups, there is no option to view the results. However, there is an option to download the ZIP of CSV files containing the entire set of processed results.
+>**Info**: For PMML model groups, there is no option to view the results. However, there is an option to download the ZIP of CSV files containing the entire set of processed results.
 
 For ONNX models, the **Results** page will show the entire set of records processed in JSON format. There are no options available for filtering or any sort of configuration. The only option available is to download the processed results.
 
@@ -80,7 +80,7 @@ Scheduled Processing allows you to schedule batch jobs for processing measuremen
 
 The job scheduler can be used to trigger one-time or periodic jobs on data captured from devices. The scheduler allows you to map device data to model inputs by providing a mapping tool. Periodic executions of batch jobs can be useful when aggregate information on model’s predictions is required for a desired time period.
 
->**Note**: Currently, scheduled processing is only applicable for PMML models and model groups.
+>**Info**: Currently, scheduled processing is only applicable for PMML models and model groups.
 
 #### Scheduling a job
 
@@ -89,7 +89,7 @@ To schedule a new job, perform the following steps:
 1. Click **Create Job** in the **Scheduled Processing** page. 
 2. In the **Job Config** wizard, enter the name and description of the job you want to create. Select a target device or device group from the dropdown list. The list shows maximum 2000 devices or groups but you can search for the device you are interested in.
 Once done, select a target model or model group which will be used for processing the data captured from your selected device or device group. The dropdown list shows all models and groups which you have already added. 
-Use the **Apply across all models** toggle in case if you want the processing to happen on all the models of a model group. When this option is disabled, processing will happen on primary model of the model group.<br>
+Use the **Apply across all models** toggle if you want the processing to happen on all the models of a model group. When this option is disabled, processing will happen on primary model of the model group.<br>
 ![Scheduled process 1](/images/zementis/zementis-jobconfig-info.png)
 <br>Click **Next** to proceed. 
 3. Each device can have various measurements which are persisted in Cumulocity IoT. In the **Mapping** section, map the device measurements to the corresponding model inputs.<br>
@@ -99,7 +99,7 @@ Use the **Apply across all models** toggle in case if you want the processing to
 ![Scheduled process 3](/images/zementis/zementis-jobconfig-schedule.png)
 <br>Click **Finish** to schedule the job that you just configured.
 
->**Note**:
+>**Info**:
 <br>1. For a periodic frequency, a CRON expression is generated and used by the scheduler.
 <br>2. The data range selected for the schedule must not exceed 24 hours.
 <br>3. For a one-time job, you need to select the date when the job should run. You also need to specify the data range to be used for processing when the job is executed.

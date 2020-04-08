@@ -614,7 +614,7 @@ Apply a PMML model group to multiple records. Note that the size of the uploaded
 |:---|:---|
 |file (file)|data file in CSV with header format. Only applicable when Content-Type is multipart/form-data
 |group_name (string)|required path variable for the name of the model group to be applied
-|applyToAllModels (boolean)|optional parameter used to specify if the data needs to processed against all the models in the group and not just the primary model (default is false)
+|applyToAllModels (boolean)|optional parameter used to specify if the data needs to be processed against all the models in the group and not just the primary model (default is false)
 |maxThreads|optional query parameter for specifying the maximum number of concurrent threads (default value is twice the number of processor cores)
 |maxRecordsPerThread|optional query parameter for specifying the maximum number of records processed by a thread in batch (default value is 5000)
 
@@ -721,7 +721,7 @@ Note that the size of the uploaded file should not exceed 500 MB. If the operati
 |:---|:---|
 |file (file)|data file in CSV with header format. Only applicable when Content-Type is multipart/form-data
 |group_name (string)|required path variable for the name of the model group to be applied
-|applyToAllModels (boolean)|optional parameter used to specify if the data needs to processed against all the models in the group and not just the primary model (default is false)
+|applyToAllModels (boolean)|optional parameter used to specify if the data needs to be processed against all the models in the group and not just the primary model (default is false)
 |matchScore (boolean)|optional parameter used to specify if score matching should be performed. If score matching is performed, the expected and actual outputs will be compared and a Match column will be added to the outputs (default is false)
 |maxThreads|optional query parameter for specifying the maximum number of concurrent threads (default value is twice the number of processor cores)
 |maxRecordsPerThread|optional query parameter for specifying the maximum number of records processed by a thread in batch (default value is 5000)
@@ -819,7 +819,7 @@ Apply an ONNX model to multiple records. Note that the size of the uploaded file
 
 ONNX format doesn’t provide a representation for pre-processing steps. For deep learning models like CNN which deal with image data, the necessary pre-processing steps must be applied to the images and the result should be sent in JSON format as an input to the ONNX model.
 
->**Note**: An active subscription of Onnx microservice is required to leverage this API.
+>**Info**: An active subscription of the Onnx microservice is required to leverage this API.
 
 |HEADERS||
 |:---|:---|

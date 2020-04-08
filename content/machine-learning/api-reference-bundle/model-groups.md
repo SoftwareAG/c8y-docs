@@ -9,7 +9,7 @@ aliases:
 
 Operations on model groups.
 
->**Note**: Currently, model groups can be used for grouping PMML models only.
+>**Info**: Currently, model groups can be used for grouping PMML models only.
 
 ### GET - List PMML Groups
 
@@ -314,7 +314,7 @@ curl --request POST "{{url}}/service/zementis/pmml/groups" --header "Authorizati
 {{url}}/service/zementis/pmml/groups
 ```
 
-Update an existing PMML model group by editing the list of models part of it or by editing the group's primary model or both.
+Update an existing PMML model group by editing the list of models which are part of it or by editing the group's primary model or both.
 
 |HEADERS||
 |:---|:---|

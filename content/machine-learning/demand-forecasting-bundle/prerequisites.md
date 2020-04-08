@@ -11,10 +11,10 @@ aliases:
 
 Running the demo scripts requires 
 
-* prior experience with Python, Jupyter Notebook, JSON, REST and understanding of data science processes.
-* familiarity with Cumulocity IoT and its in-built apps.
-* subscription of the Zementis microservice (10.6.0.x.x or higher) and Nyoka microservice (10.6.0.x.x or higher) on the tenant.
-* installation of Jupyter Notebook using Python 3.x environment with the following packages installed:
+* Prior experience with Python, Jupyter Notebook, JSON, REST and understanding of data science processes.
+* Familiarity with Cumulocity IoT and its in-built apps.
+* Subscription of the Zementis microservice (10.6.0.x.x or higher) and Nyoka microservice (10.6.0.x.x or higher) on the tenant.
+* Installation of Jupyter Notebook using Python 3.x environment with the following packages installed:
   - requests
   - jsonpath_ng 
   - pandas 

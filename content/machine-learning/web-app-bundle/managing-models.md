@@ -29,7 +29,7 @@ Then click **Add model**, navigate to the desired file and finally click **Open*
 
 Once your model is successfully uploaded, you will see a corresponding confirmation message. The new model will be added to the models list. 
 
->**Note**:
+>**Info**:
 <br>For uploading PMML models, use the **Apply PMML Cleanser** toggle in the top menu bar to enable/disable the PMML cleanser.
 <br>By default, the toggle is enabled.<br>
 <br>During a PMML upload if the **Apply PMML Cleanser** toggle is enabled, comprehensive semantic checks and corrections will be performed on the provided PMML file.  Disabling it will improve upload time, but this is not recommended. If the PMML file is large, such as Random Forest model, we recommend compressing the file using ZIP/GZIP before uploading. This will reduce the upload time drastically.
@@ -52,9 +52,9 @@ For a model listed under ONNX tab, the download icon in the model card can be us
 
 A model, if not being used for a long time, can be deactivated so that it doesn't occupy space in the memory of the system. 
 
-Click the **Active/Inactive** toggle button in a model´s card to deactivate/activate the model.
+Click the **Active/Inactive** toggle in a model´s card to deactivate/activate the model.
 
->**Note**: This operation is only applicable for PMML models.
+>**Info**: This operation is only applicable for PMML models.
 
 ### Deleting models
 
@@ -72,7 +72,7 @@ Besides the name, description and status of the model, the **Model Details** win
 
 ![Model details](/images/zementis/zementis-model-details.png)
 
->**Note**: 
+>**Info**: 
 <br> 1. By default, the **Inputs** and **Outputs** panels are in collapsed state. Click the labels to expand them.
 <br><br> 2. Memory Metrics provides information about the memory footprint of the model on the server and its related attributes like used memory, free memory and total memory of the application. The same information is represented as a vertical bar chart.
 <br><br> 3. Prediction Metrics provides a scoring result summary for the models. Prediction Metrics of a classification model displays the predicted categories and its respective counts as a pie chart. Prediction Metrics of a regression model

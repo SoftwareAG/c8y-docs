@@ -9,7 +9,7 @@ aliases:
 
 Operation on resources.
 
->**Note**: Currently, resources are associated with PMML models only.
+>**Info**: Currently, resources are associated with PMML models only.
 
 ### GET - List Available Resources
 

@@ -110,7 +110,7 @@ Exposes predefined generic events used by the HTTP client connectivity plug-in.
 * **Automatic onApplicationInitialized**<br>
 This starts all connectivity plug-ins immediately on start up.
 * **HTTP Client > JSON with generic request/response event definitions**<br>Allows EPL applications to make HTTP calls.
-* **Cumulocity IoT > Cumulocity Client**<br>Exposes the Cumulocity client to EPL applications.
+* **Cumulocity IoT > Cumulocity Client**<br>Exposes the Cumulocity IoT client to EPL applications.
 
 The bundles above are the only ones that are permissible in an EPL application, so be careful not to add any other bundles or your application may not work when activated in Cumulocity IoT.
 
@@ -124,7 +124,7 @@ For further information, see [The Cumulocity IoT Transport Connectivity Plug-in]
 
 **Step 5 - Run and test the EPL application**
 
-When running the project locally, you will need to provide your Cumulocity IoT credentials in the project configuration. Configure the credentials in the *CumulocityIoT.properties* file under the Cumulocity client. For example:
+When running the project locally, you will need to provide your Cumulocity IoT credentials in the project configuration. Configure the credentials in the *CumulocityIoT.properties* file under the Cumulocity IoT client. For example:
 
 ```
 CUMULOCITY_USERNAME=user@example.com 

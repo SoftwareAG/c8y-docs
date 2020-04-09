@@ -16,7 +16,7 @@ action onload() {
    spawn worker() to subContext;
 }
 action worker() {
-   monitor.subscribe(Measurement.CHANNEL);
+   monitor.subscribe(Measurement.SUBSCRIBE_CHANNEL);
    on all Measurement() as m {
       ...
    }

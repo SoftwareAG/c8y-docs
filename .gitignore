@@ -8,3 +8,4 @@ resources/
 codekit-config.json
 npm-debug.log
 .vscode/
+static/releases.json

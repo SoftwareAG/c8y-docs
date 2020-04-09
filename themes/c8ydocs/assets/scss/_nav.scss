@@ -17,6 +17,11 @@
   }
 }
 
+
+
+
+
+
 .nav-header{
   padding: 0 20px 1rem;
   img{
@@ -31,22 +36,7 @@
     &.show{
       z-index: 1010;
     }
-    &.version{
-      display: flex;
-      margin-bottom: 8px;
-      align-items: center;
-      justify-content: center;
-      .dropdown-menu{
-        padding-top: 34px;
-      }
-      small{
-        position: relative;
-        z-index: 1010;
-        font-weight: bold;
-        opacity: .5;
-        
-      }
-    }
+    
   }
   .dropdown-toggle{
     border: 2px solid $blue-primary;

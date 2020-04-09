@@ -2,7 +2,7 @@ var main = (function ($) {
   function initializer() {
     
     //Load releases menu
-    var json = $.getJSON({ 'url': "//cumulocity.com/guides/releases.json", 'async': false })
+    var json = $.getJSON({ 'url': "//localhost:1313/guides/releases.json", 'async': false })
       .done(function (json) {
         //json = JSON.parse(json.responseText);
         var urls = json.releases;
@@ -15,19 +15,19 @@ var main = (function ($) {
           var el = urls[index];
           if (loc.href.includes(el.label)) {
             active = true;
-            $('#current-dropdown-version-toggle').text('Release ' + el.label);
+            $('#current-dropdown-version-toggle').text(el.label);
             vmenu.find('.dropdown-menu').append(
-              '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item active">Release ' + el.label + '</a>'
+              '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item active">' + el.label + '</a>'
             );
           } else {
             vmenu.find('.dropdown-menu').append(
-              '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item">Release ' + el.label + '</a>'
+              '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item">' + el.label + '</a>'
             );
           }
         }
         if (!active) {
           vmenu.find('a:first-child').addClass('active');
-          $('#current-dropdown-version-toggle').text(vmenu.find('a:first-child').text());
+          $('#current-dropdown-version-toggle').text('Release '+ vmenu.find('a:first-child').text());
         }
       })
       .fail(function (resp) {

@@ -14,8 +14,8 @@ The following sections demostrates how to use a Casa Systems (NetComm) router wi
 |:---|:---|
 |[Prerequisites](#prerequisites)|Description of the [system requirements](#sys-req) and a list of [supported routers](#support-router)
 |[Setting up and registering the device](#setup)|How to [install the agent](#install-agent) and how to [register the device to the Cumulocity IoT platform](#register-device)
-|[Interacting with Cumulocity IoT](#interaction)|Configuring and using the device
-|[Troubleshooting](#troubleshooting)|Troubleshooting the device
+|[Interacting with Cumulocity IoT](#interaction)|How to [configure network parameters](#network), manage [software and firmware](#manage), monitor [system resources](#system) and monitor [cellular signal strength](#cellular). <br> How to locate the router using [gps](#gps), how to connect external devices using [gpio](#gpio) and how to manage [configuration](#parameters).<br> How to configure individual parameters using the [device shell](#device-shell), report events as [notifications](#notification) and connect to a [cloud fieldbus](#modbus). How to view [logs](#logs) from the device, use [VNC remote access](#vnc) and configure [MQTT](#mqtt)
+|[Troubleshooting](#troubleshooting)|List of known [bugs and limitations](#troubleshooting)
 |[Release history](#release-history)|Release notes for cumulocity-ntc-agent and smartrest-agent
 
 #### Supported functionality
@@ -78,7 +78,7 @@ For [NTC-140W](https://support.netcommwireless.com/products/NTC-140W%20Series), 
 6. Click the **Install** button for the uploaded software which you want to install.
 7. Reboot the NetComm router. If you install via Netcomm-UI, the device will reboot automatically after the installation.
 
-The agent will automatically start after installation and the router can then be [registered with Cumulocity IoT](/device-tutorials/casa-systems-router/#connect). Subsequent upgrades or downgrades can be performed remotely via the agent’s software management feature, or locally via the router’s web portal.
+The agent will automatically start after installation and the router can then be [registered with Cumulocity IoT](#connect). Subsequent upgrades or downgrades can be performed remotely via the agent’s software management feature, or locally via the router’s web portal.
 
 #### Using the agent
 
@@ -92,8 +92,7 @@ The support for Cumulocity IoT can be configured through the router’s web user
 
 ![Web Interface](/images/device-demos/casa-system-router/router-web-interface.png)
 
-Verify that the toggle switch **Agent** is set to **ON** and the URL shown in **Server** points to the Cumulocity IoT instance that you want to connect. For example, use
-* https://mqtt.cumulocity.com/ for connecting to the Cumulocity IoT platform.
+Verify that the toggle switch **Agent** is set to **ON** and the URL shown in **Server** points to the Cumulocity IoT instance that you want to connect. For example, use https://mqtt.cumulocity.com/ for connecting to the Cumulocity IoT platform.
 
 Optionally, you can activate data collecting for the following functionalities:
 
@@ -119,7 +118,7 @@ The web interface also shows the status of the connection to Cumulocity IoT:
 
 ##### <a name="connect"></a> Connecting the router
 
-To register your NetComm router to Cumulocity IoT, you need the router’s serial number as Device ID. The registration process is described in section [Connecting devices](/users-guide/device-management/#connecting-devices) in the User Guide. The serial number is printed on the back side of the router as shown below. Alternatively, it is also available in the router’s web user interface. Navigate to **System**, **Internet of Things** and view the **Device ID** field.
+To register your NetComm router to Cumulocity IoT, you need the router’s serial number as Device ID. For more information on the registration process, see User guide -> [Connecting devices](/users-guide/device-management/#connecting-devices). The serial number is printed on the back side of the router as shown below. Alternatively, it is also available in the router’s web user interface. Navigate to **System**, **Internet of Things** and view the **Device ID** field.
 
 ![Serial Number](/images/device-demos/casa-system-router/router-serial-number.png)
 
@@ -137,7 +136,7 @@ You can view and configure the essential mobile network (**WAN**) and local area
 
 The mobile network (**WAN**) parameters shown in the user interface corresponding to the first profile stored in the router. These parameters can be remotely configured directly or via SMS.
 
-For SMS configuring, the router needs to be configured to accept SMS commands. Consult the router’s manual on the relevant parameters for SMS configuration, or use the router’s web user interface. You also need to have an SMS gateway configured with your account. Contact [support](https://empower.softwareag.com/ContactSupport/) for setting up an SMS gateway. For more information on Device Shell, consult the [User guide](/users-guide/device-management/#shell).
+For SMS configuring, the router needs to be configured to accept SMS commands. Consult the router’s manual on the relevant parameters for SMS configuration, or use the router’s web user interface. You also need to have an SMS gateway configured with your account. Contact [support](https://empower.softwareag.com/ContactSupport/) for setting up an SMS gateway. For more information on Device Shell, see User guide -> [Shell](/users-guide/device-management/#shell).
 
 > **Info:** When you configure a wrong APN settings, the device will lose mobile network connection and can only be managed by limited SMS functionality.
 
@@ -147,7 +146,7 @@ LAN and DHCP parameters can be directly configured from Cumulocity IoT as well.
 
 #### <a name="manage"></a> Managing software and firmware
 
-The installed software and firmware on the router can be remotely managed using the standard software and firmware management feature from Cumulocity IoT, as described in the [Device management user guide](/users-guide/device-management/#software-repo).
+The installed software and firmware on the router can be remotely managed using the standard software and firmware management feature from Cumulocity IoT. For details, see User guide -> [Managing device firmware and software](/users-guide/device-management/#software-repo).
 
 Software packages need to be in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format and follow the naming convention "**&#60;package&#62;&#95;&#60;version&#62;&#95;&#60;arch&#62;.ipk**”. Version numbers including letters are not supported. All package management methods (install, upgrade, downgrade, removal) are supported through the router’s package manager. If software packages have dependencies, make sure to install these first.
 
@@ -262,7 +261,7 @@ Digital outputs can be controlled using the **Relay array** widget, see below in
 
 #### <a name="parameters"></a> Configuration Management
 
-You can retrieve, modify and save user configuration data. To do this, navigate to the [**Configuration**](/users-guide/device-management/#config) tab of the router, click on the **Reload** button in the **Configuration** widget to request configuration data. It will take a few seconds to download. After the configuration data has arrived, you will see a list of parameters and their corresponding values. You can then make changes to the configuration and save them back to the device.
+You can retrieve, modify and save user configuration data. To do this, navigate to Device management -> [Configuration](/users-guide/device-management/#config) tab of the router, click on the **Reload** button in the **Configuration** widget to request configuration data. It will take a few seconds to download. After the configuration data has arrived, you will see a list of parameters and their corresponding values. You can then make changes to the configuration and save them back to the device.
 
 You can also request a configuration snapshot from the device and later apply the configuration snapshot to other devices.
 
@@ -272,7 +271,7 @@ There is also RDB snapshot support, which is a super-set of the configurations. 
 
 #### <a name="device-shell"></a> Device shell
 
-With Device Shell, you can read and write individual configuration parameters from the device, as well as execute diagnostic commands. For more information, refer to the [User guide](/users-guide/device-management/#shell). Consult the Netcomm documentation for valid parameters and diagnostic commands. The general format is:
+With Device Shell, you can read and write individual configuration parameters from the device, as well as execute diagnostic commands. For more information, refer to Device management -> [Shell](/users-guide/device-management/#shell). Consult the Netcomm documentation for valid parameters and diagnostic commands. The general format is:
 
 * “get &#60;parameter&#62;” to read a parameter from the device.
 * “set &#60;parameter&#62;=&#60;value&#62;” to write a parameter to the device.

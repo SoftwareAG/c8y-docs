@@ -164,7 +164,7 @@ Provide the absolute path of the configuration file. The network parameters will
 
 Confirm to continue with the network configuration process. Restart your Edge VM after the network configuration is successful.
 
-The network configuration process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process will halt and a failure message will be displayed on the console.
+The network configuration process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process halts and a failure message appears on the console.
 
 #### Running the post installation process
 
@@ -238,7 +238,7 @@ Provide the absolute path of the configuration file. The installation parameters
 
 Confirm to continue with the post-installation process.
 
-The post-installation process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process will halt and a failure message will be displayed on the console.
+The post-installation process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process halts and a failure message appears on the console.
 
 #### Updating the license and SSL certificates.
 
@@ -282,7 +282,7 @@ Provide the absolute path of the configuration file. The update parameters will 
 
 Confirm to continue with the update process.
 
-The update process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process will halt and a failure message will be displayed on the console.
+The update process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process halts and a failure message appears on the console.
 
 #### Running post-upgrade
 
@@ -296,7 +296,9 @@ The update process consists of multiple steps which are executed sequentially. A
 
 3. Confirm to continue with the post-upgrade process.
 
-The post-upgrade process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process will halt and a failure message will be displayed on the console.
+4. Restart your Edge VM.
+
+The post-upgrade process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process halts and a failure message appears on the console.
 
 If you have configured the network in the ‘source’ version, the new configuration will be performed in the upgrade version when this task is executed.
 
@@ -314,7 +316,7 @@ If you have configured the network in the ‘source’ version, the new configur
 
 6. Confirm to continue with expanding the data disk size.
 
-The disk size expanding process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process will halt and a failure message will be displayed on the console.
+The disk size expanding process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process halts and a failure message appears on the console.
 
 #### Updating the tenant password
 
@@ -336,7 +338,7 @@ The password updated using this option acts as the password for the administrato
 
 5. Confirm to continue with updating the tenant password.
 
-The update tenant password process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process will halt and a failure message will be displayed on the console.
+The update tenant password process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process halts and a failure message appears on the console.
 
 >**Info:** The Cumulocity IoT platform does not allow to use any of the last 10 previously used passwords.
 

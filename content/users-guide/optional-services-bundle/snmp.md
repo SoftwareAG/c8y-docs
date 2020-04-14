@@ -23,7 +23,8 @@ The following image provides a general overview of the SNMP-enabled device integ
 
 The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled device(s) and the Cumulocity IoT platform. It receives SNMP data from the devices, converts the data to Cumulocity IoT-based objects based on the device protocol mapping, persists the data locally, and forwards the data to Cumulocity IoT. The agent has to be registered in Cumulocity IoT before serving the device request.
 
-> **Info:** The Mibparser microservice needs to be subscribed to the tenant before installing the agent. The procedure how to build and deploy the Mibparser microservice is described in [https://bitbucket.org/m2m/c8y-mib-parser/src/develop/](https://bitbucket.org/m2m/c8y-mib-parser/src/develop/).
+> **Info:** The Mibparser microservice needs to be subscribed to the tenant before installing the agent. The procedure how to build and deploy the Mibparser microservice is described in [https://bitbucket.org/m2m/cumulocity-examples/src/develop/snmp/mib-parser/](https://bitbucket.org/m2m/cumulocity-examples/src/develop/snmp/mib-parser/).
+
 
 #### Installation
 

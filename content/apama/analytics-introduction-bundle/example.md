@@ -1,33 +1,33 @@
 ---
-weight: 50
+weight: 40
 title: Example
 layout: redirect
 ---
 
-As an example, we create a statement. The statement listens to one event and creates a different event type whenever the specified filter applies. For instance‚ we want to create an alarm for each temperature measurement that is created.
+This example listens for new measurements using the `MeasurementFragment` API. It filters incoming measurements to find speed values above a given maximum speed and raises an alarm if the limit is breached. 
 
-**Info:** In order to create the statement, first you have to create a \*.mon file in your Apama project.
-
-1. Subscribe to Measurement.CHANNEL.
-2. Listen to the measurement type - filtering on the type having the value "c8y_TemperatureMeasurement".
+1. Subscribe to the `MeasurementFragment.SUBSCRIBE_CHANNEL` channel.
+2. Listen to the measurement fragment and filter on `type`, which is  `c8y_SpeedMeasurement`. Ensure that `valueFragment` has the value  `c8y_speed` and that `valuesSeries` filters on `speedX` only. Also  filter on `value` when it is greater than `SPEED_LIMIT`.
 3. Create the event using the constructor specifying all of the fields.
-4. Send the event to the correct channel - Alarm.CHANNEL.
+4. Send the event to the correct channel - `Alarm.SEND_CHANNEL`.
 
 The resulting \*.mon file can look like this:
 
 ```java
 using com.apama.cumulocity.Alarm;
-using com.apama.cumulocity.Measurement;
-
-monitor ForwardMeasurements {
-	action onload() {
-		monitor.subscribe(Measurement.CHANNEL);
-		on all Measurement(type="c8y_TemperatureMeasurement") as m {
-			send Alarm("", "c8y_TemperatureAlarm", m.source, currentTime,
-						"Temperature measurement was created", "ACTIVE", "CRITICAL", 1,
-						new dictionary<string,any>) to Alarm.CHANNEL;
-		}
-	}
+using com.apama.cumulocity.MeasurementFragment;
+ 
+monitor TriggerAlarmForSpeedBreach {
+    constant float SPEED_LIMIT := 30.0;
+    action onload() {
+        monitor.subscribe(MeasurementFragment.SUBSCRIBE_CHANNEL);
+        // Everytime a measurement fragment with the specific details of the match criteria is triggered then we should raise an alarm
+        on all MeasurementFragment(type="c8y_SpeedMeasurement", valueFragment = "c8y_speed", valueSeries = "speedX", value > SPEED_LIMIT) as mf {
+            send Alarm("", "c8y_SpeedAlarm", mf.source, currentTime,
+                        "Speed limit breached", "ACTIVE", "CRITICAL", 1,
+                        new dictionary<string,any>) to Alarm.SEND_CHANNEL;
+        }
+    }
 }
 ```
 

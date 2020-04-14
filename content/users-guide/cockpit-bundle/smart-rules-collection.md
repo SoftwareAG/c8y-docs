@@ -86,6 +86,8 @@ you can select a single group or a single device (just one, not multiple). To en
 
 When an alarm is created, an email is sent.
 
+>**Info:** Note that the corresponding emails are send with "text/html" as content type. 
+
 **Parameters**
 
 The rule uses the following parameters:
@@ -333,6 +335,8 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 **Functionality**
 
 If a geofence border is crossed, an email is sent.
+
+>**Info:** Note that the corresponding emails are send with "text/html" as content type. 
 
 **Parameters**
 

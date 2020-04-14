@@ -31,6 +31,12 @@ The Cumulocity IoT documentation on this website contains the following informat
 
 <tr>
 <td align="left">User documentation</td>
+<td align="left"><a href="/device-tutorials/tutorials-introduction/">Device integration tutorials</a></td>
+<td align="left">How to integrate various demo devices in your Cumulocity IoT environment.</td> 
+</tr>
+
+<tr>
+<td align="left">User documentation</td>
 <td align="left"><a href="/edge/overview/">Cumulocity IoT Edge</a></td>
 <td align="left">How to install, run and operate Cumulocity IoT Edge, the local version of Cumulocity IoT.</td>
 </tr>

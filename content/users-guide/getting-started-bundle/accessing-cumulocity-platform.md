@@ -46,13 +46,13 @@ This will direct you to the login page of your default application. See [Tenants
 
 ### <a name="login"></a>To log into the Cumulocity IoT platform
 
-On the Login screen, enter your username and password and click **Login** to enter the application.
+On the Login screen, enter your username (case-sensitive) and password and click **Login** to enter the application.
 
 <img src="/images/users-guide/getting-started/getting-started-login.png" alt="Login prompt">
 
 Select the **Remember me** checkbox if you want the browser to remember your credentials, so that you do not have to enter them again when opening the application the next time. This is also convenient if you frequently switch between Cumulocity IoT applications, as the Cumulocity IoT platform will request you to authenticate each time when starting an application. You can make the browser "forget" your credentials by explicitly logging out.
 
-When you log into the Cumulocity IoT platfrom for the first time, you will be taken to the default application (usually the [Cockpit](/users-guide/cockpit) application if not configured differently).
+When you log into the Cumulocity IoT platform for the first time, you will be taken to the default application (usually the [Cockpit](/users-guide/cockpit) application if not configured differently).
 
 ![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
 

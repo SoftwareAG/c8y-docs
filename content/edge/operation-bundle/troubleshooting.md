@@ -281,7 +281,7 @@ To access the apama-ctrl log files, run the command:
 
 ##### DataHub log file locations
 
-See [Log files](/datahub/running-datahub-on-the-edge/#log-files) for an details on DataHub log files.
+See [Log files](/datahub/running-datahub-on-the-edge/#log-files) for details on DataHub log files.
 
 #### Adjust log level
 

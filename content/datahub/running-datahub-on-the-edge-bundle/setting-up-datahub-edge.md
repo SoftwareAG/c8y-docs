@@ -49,13 +49,13 @@ sudo /opt/c8y/utilities/install_signed_package.sh /tmp/datahub-<version>.tar
 It takes a few minutes to complete the installation. After completion you can delete the DataHub Edge archive.
 
 The install script runs the following basic steps:
-* Deploy the DataHub Edge UI as web application to Cumulocity IoT Core.
+* Deploy the DataHub Edge UI as a web application to Cumulocity IoT Core.
 * Start a Docker container with the DataHub Edge backend and the database system for managing the backend state.
 * Start a Docker container with the Dremio master and a ZooKeeper instance.
 * Start a Docker container with the Dremio executor.
 * Configure corresponding roles and permissions in Cumulocity IoT Core.
 
-The Docker containers will be restarted automatically in case the container itself fails or the applications within are no more reachable.
+The Docker containers will be restarted automatically if the container itself fails or the applications within are no longer reachable.
 
 The containers are configured to store their application state on the data disk under **/opt/mongodb**:
 * **/cdh-server/data**: the state of the Dremio master
@@ -63,7 +63,7 @@ The containers are configured to store their application state on the data disk 
 * **/cdh-console/db**: the state of the DataHub Edge backend
 * **/cdh-server/datalake**: the data lake folder
 
->**Warning**: You must not modify the contents of these folders as this may corrupt your installation.
+>**Warning:** You must not modify the contents of these folders as this may corrupt your installation.
 
 ### Accessing DataHub Edge
 
@@ -77,7 +77,7 @@ The different DataHub Edge interfaces can be accessed in the same way as in a cl
 | DataHub REST API | The path of the microservice which hosts the API is *https://<edge_domain_name>/service/datahub*. |
 | Dremio REST API | The Dremio URL to run REST API requests against is either *http://datahub.<edge_domain_name>* or *https://datahub.<edge_domain_name>*, depending on whether TLS/SSL is used or not. |
 
-> **Info**: For JDBC/ODBC you have to configure Cumulocity IoT Edge so that port 31010 can be accessed from the host system. For instructions on port forwarding see section "Setting up port forwarding" under [Setting up the environment](/edge/installation/#setting-up-the-environment).
+> **Info:** For JDBC/ODBC you have to configure Cumulocity IoT Edge so that port 31010 can be accessed from the host system. For instructions on port forwarding see section "Setting up port forwarding" under [Setting up the environment](/edge/installation/#setting-up-the-environment).
 
 ### Defining DataHub permissions and roles
 
@@ -87,4 +87,4 @@ The definition and assignment of permissions and roles is done in the same way a
 
 The setup of the Dremio account and the data lake is done in the same way as in a cloud deployment. See section [Setting up Dremio account and data lake](/datahub/setting-up-datahub/#setting-up-dremio-datalake) for details.
 
-DataHub Edge is configured to use an NAS as data lake. When configuring the NAS use as mount path */datalake*. This path is mounted to */opt/mongodb/cdh-master/datalake*.
+DataHub Edge is configured to use a NAS as data lake. When configuring the NAS use as mount path */datalake*. This path is mounted to */opt/mongodb/cdh-master/datalake*.

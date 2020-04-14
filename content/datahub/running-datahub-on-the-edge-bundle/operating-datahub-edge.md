@@ -4,19 +4,19 @@ title: Operating DataHub Edge
 layout: redirect
 ---
 
-As the cloud variant does, DataHub Edge UI allows you to check system information and view audit logs. See section [Operating DataHub](/datahub/operating-datahub) for details.
+Similar to the cloud variant, DataHub Edge UI allows you to check system information and view audit logs. See section [Operating DataHub](/datahub/operating-datahub) for details.
 
 When managing DataHub Edge, the following standard tasks are additionally relevant.
 
 ### Troubleshooting the system
 
-In case of problems, you should follow these steps:
+In problems occur, you should follow these steps:
 
 - Perform a health check, see the [Health check](#health-check) section.
 - Check the log files, see the [Log files](#log-files) section.
 - Monitor the system processes, see the [Monitoring](#monitoring) section.
 
-If you still need to contact SAG support, include the output of the diagnostics script. See the [Diagnostics](/edge/operation/#diagnostics) section on details how to run it.
+If you still need to contact Software AG support, include the output of the diagnostics script. See the [Diagnostics](/edge/operation/#diagnostics) section for details of how to run it.
 
 #### <a name="health-check"></a>Health check
 
@@ -58,7 +58,7 @@ Log files are stored at */var/log/cdh*.
 | clean_history.log | Log file for cleanup of job history |
 | install.log | Installation log file |
 
-In order to access the logs of the DataHub and Dremio containers, you have to use Docker *logs* command. To follow the logs of cdh-master you have to run:
+In order to access the logs of the DataHub and Dremio containers, you have to use the Docker *logs* command. To follow the logs of cdh-master you have to run:
 
 ```shell	
 docker logs -f cdh-master
@@ -81,9 +81,9 @@ The data disk is used for storing the state of DataHub and Dremio and serves as 
 
 #### Cleanup of Dremio job history
 
-Dremio maintains a history of job details and profiles, which can be inspected in Dremio’s job log, i.e. the “Jobs” page of the Dremio UI. This job history must be cleaned up regularly to free the resources necessary for storing it.
+Dremio maintains a history of job details and profiles, which can be inspected in Dremio’s job log, i.e. the "Jobs" page of the Dremio UI. This job history must be cleaned up regularly to free the resources necessary for storing it.
 
-Cleanup is executed by a preconfigured cron job, running script
+Cleanup is executed by a preconfigured cron job, running the script
 
 ```shell	
 /opt/softwareag/cdh-executor/scripts/clean_history.sh <max_job_days>
@@ -91,7 +91,7 @@ Cleanup is executed by a preconfigured cron job, running script
 
 This uses a Dremio admin command for the actual cleanup, but Dremio must not be running during execution of the admin command. The script will thus stop Dremio, run the Dremio admin command, and restart Dremio, so cleanup execution will cause a short outage of Dremio service. There is one parameter, *max_job_days*, specifying the number of days of job history to keep. By default, cleanup removes all job history except for the last 7 days, and the cron job is scheduled to run early Sunday morning at 2 a.m.
 
-Job history cleanup can be reconfigured using script
+Job history cleanup can be reconfigured using the script
 
 ```shell	
 /opt/softwareag/cdh-executor/scripts/clean_history_configuration.sh <max_job_days> <cron_expression>
@@ -104,7 +104,7 @@ The arguments are:
 | max_job_days | The number of days to keep job history (default: 7) |
 | cron_expression | The cron expression for running the cleanup job (default: '0 2 * * 0', i.e. on Sundays at 2 a.m.) |
 
-Be sure to provide a proper cron expression and pass it to the configuration script in single quotes. The configuration can be verified by
+Be sure to provide a proper cron expression and pass it to the configuration script in single quotes. The configuration can be verified by:
 
 ```shell	
 crontab -l
@@ -112,7 +112,7 @@ crontab -l
 
 #### Cleanup of data lake contents
 
-The data lake contents are not automatically purged as the main purpose of DataHub is to maintain a history of data. However, if disk space is critical and cannot be freed otherwise, parts of the data lake contents need to be deleted.
+The data lake contents are not automatically purged, as the main purpose of DataHub is to maintain a history of data. However, if disk space is critical and cannot be freed otherwise, parts of the data lake contents need to be deleted.
 
 Browse to the data lake folder **/opt/mongodb/cdh-server/datalake**. The data within the data lake is organized hierarchically. Delete the temporal folders you deem adequate to be deleted. After that you need to run the following query in Dremio:
 
@@ -120,8 +120,8 @@ Browse to the data lake folder **/opt/mongodb/cdh-server/datalake**. The data wi
 ALTER PDS <deleted_folder_path> REFRESH METADATA FORCE UPDATE
 ```
 
->**Warning**: Data being deleted from the data lake cannot be recovered anymore.
+>**Warning:** Data being deleted from the data lake cannot be recovered anymore.
 
 #### Backup and Restore
 
-DataHub's runtime state as well as the data lake containing offloaded data reside in the Cumulocity IoT Edge server VM. In order to backup and restore DataHub, its runtime state, and its data we recommend you to backup and recover the Cumulocity IoT Edge server VM as described in section [Backup and restore](/edge/operation/#backup-restore).
+DataHub's runtime state as well as the data lake containing offloaded data reside in the Cumulocity IoT Edge server VM. In order to back up and restore DataHub, its runtime state, and its data we recommend you to back up and recover the Cumulocity IoT Edge server VM as described in section [Backup and restore](/edge/operation/#backup-restore).

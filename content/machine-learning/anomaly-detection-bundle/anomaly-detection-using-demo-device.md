@@ -7,7 +7,7 @@ aliases:
   - /predictive-analytics/anomaly-detection/#anomaly-detection-using-demo-device
 ---
 
-A fully functional demo can be prepared with the help of a demo device. For this, use the artefacts provided as part of the *AnomalyDetectionDemo.zip* file.
+A fully functional demo can be prepared with the help of a demo device. For this, use the artifacts provided as part of the *AnomalyDetectionDemo.zip* file.
 
 #### Register a demo device in Cumulocity IoT
 
@@ -58,8 +58,8 @@ All you need to do is run it as `sh AnomalySimulatorForDemoDevice.sh`.
     end=$((SECONDS+30))
     COUNTER=0
     DIV=2
-    CURRENT_TIME=$(date --iso-8601=seconds)
     while [ $SECONDS -lt $end ]; do
+        CURRENT_TIME=$(date --iso-8601=seconds)
         result=`expr $COUNTER % $DIV`
     	if [ $result == 0 ]
     	then
@@ -69,7 +69,7 @@ All you need to do is run it as `sh AnomalySimulatorForDemoDevice.sh`.
     		echo "##########################################"
     		echo
     		curl --user $c_user:$c_pass -X POST $c_url"/measurement/measurements" -H "accept: application/vnd.com.nsn.cumulocity.measurementCollection+json" -H "Content-Type: application/json" \
-    		--data '{"measurements":[{"time":"'$CURRENT_TIME'","source":{"id":"'$c_device_source'"},"type":"c8ydemoAndroid","c8y_Acceleration":{"accelerationY":{"unit":"G","value": -0.2631993591785431},"accelerationX":{"unit":"G","value":5.769125938415527},"accelerationZ":{"unit":"G","value":8.193016052246094}},"c8y_Gyroscope":{"gyroX":{"unit":"°/s","value":-0.03604104742407799},"gyroY":{"unit":"°/s","value": 0.055571284145116806},"gyroZ":{"unit":"°/s","value":,-0.0010122909443452952}}}]}'
+    		--data '{"measurements":[{"time":"'$CURRENT_TIME'","source":{"id":"'$c_device_source'"},"type":"c8ydemoAndroid","c8y_Acceleration":{"accelerationY":{"unit":"G","value": -0.2631993591785431},"accelerationX":{"unit":"G","value":5.769125938415527},"accelerationZ":{"unit":"G","value":8.193016052246094}},"c8y_Gyroscope":{"gyroX":{"unit":"°/s","value":-0.03604104742407799},"gyroY":{"unit":"°/s","value": 0.055571284145116806},"gyroZ":{"unit":"°/s","value":-0.0010122909443452952}}}]}'
     		sleep 2
     	fi
     	if [ $result -eq 1 ]

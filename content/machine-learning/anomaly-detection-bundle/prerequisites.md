@@ -11,7 +11,7 @@ aliases:
 
 Running the demo scripts requires 
 
-* prior experience with Python, JSON, REST and understanding of data science processes.
-* familiarity with Cumulocity IoT and its in-built apps.
-* subscription of the Zementis microservice (10.5.0.x.x or higher) and the Machine Learning application on the tenant.
-* subscription of the Apama-ctrl microservice and the Apama-epl application on the tenant.
+* Prior experience with Python, JSON, REST and understanding of data science processes.
+* Familiarity with Cumulocity IoT and its in-built apps.
+* Subscription of the Zementis microservice (10.5.0.x.x or higher) and the Machine Learning application on the tenant.
+* Subscription of the Apama-ctrl microservice and the Apama-epl application on the tenant.

@@ -9,13 +9,15 @@ aliases:
 
 Operations on AI/Machine Learning models.
 
-### GET - List Available Models
+>**Info**: An active subscription of the Onnx microservice is required to perform operations on ONNX models by leveraging the ONNX APIs.
+
+### GET - List Available PMML Models
 
 ```
 {{url}}/service/zementis/models
 ```
 
-Retrieves the model names of all the available PMML models. Use these model names as identifiers for all operations requiring the {model_name} path variable.
+Retrieves the model names of all the available PMML models. Use these model names as identifiers for all operations requiring the `model_name` path variable.
 
 |HEADERS||
 |:---|:---|
@@ -65,7 +67,7 @@ curl --request GET "{{url}}/service/zementis/models"
 ```
 
 
-### GET - Get Model Information
+### GET - Get PMML Model Information
 
 ```
 {{url}}/service/zementis/model/{{model_name}}
@@ -187,7 +189,7 @@ curl --request GET "{{url}}/service/zementis/model/dummy" --header "Authorizatio
 }
 ```
 
-### GET - Get Model Source 
+### GET - Get PMML Model Source 
 
 ```
 {{url}}/service/zementis/model/{{model_name}}/source
@@ -498,7 +500,7 @@ curl --request PUT "{{url}}/service/zementis/model/dummy/source" --header "Autho
 }
 ```
 
-### GET - Get Model Serialized Source
+### GET - Get Serialized Source of PMML Model
 
 ```
 {{url}}/service/zementis/model/{{model_name}}/serialized
@@ -570,13 +572,13 @@ curl --request GET "{{url}}/service/zementis/model/dummy/serialized" --header "A
 }
 ```
 
-### GET - Model Metrics Information
+### GET - Model Metrics Information of PMML Model
 
 ```
 {{url}}/service/zementis/model/{{model_name}}/metrics
 ```
 
-Get the memory metrics and prediction metrics of an uploaded model.
+Get the memory metrics and prediction metrics of an uploaded PMML model.
 
 |HEADERS||
 |:---|:---|
@@ -653,7 +655,7 @@ curl --request GET "{{url}}/service/zementis/model/dummy/metrics" --header "Auth
 }
 ```
 
-### POST - Upload New Model
+### POST - Upload New PMML Model
 
 ```
 {{url}}/service/zementis/model
@@ -889,13 +891,13 @@ curl --request POST "{{url}}/service/zementis/model" --header "Authorization: {{
 }
 ```
 
-### PUT - Activate an Existing Model
+### PUT - Activate an Existing PMML Model
 
 ```
 {{url}}/service/zementis/model/{{model_name}}/activate
 ```
 
-Activates the model with name `model_name` if it was inactive. Activating an active model has no effect. After activation, the model is immediately available for handling data processing requests. Note that an active model consumes runtime resources, especially Heap.
+Activates the PMML model with name `model_name` if it was inactive. Activating an active model has no effect. After activation, the model is immediately available for handling data processing requests. Note that an active model consumes runtime resources, especially Heap.
 
 |HEADERS||
 |:---|:---|
@@ -1021,13 +1023,13 @@ curl --request PUT "{{url}}/service/zementis/model/dummy/activate" --header "Aut
 }
 ```
 
-### PUT - Deactivate an Existing Model
+### PUT - Deactivate an Existing PMML Model
 
 ```
 {{url}}/service/zementis/model/{{model_name}}/deactivate
 ```
 
-Deactivates the model with name `model_name` by making it inactive. After deactivation, the model is still available, but it no longer consumes runtime resources, especially Heap. Deactivating an inactive model has no effect.
+Deactivates the PMML model with name `model_name` by making it inactive. After deactivation, the model is still available, but it no longer consumes runtime resources, especially Heap. Deactivating an inactive model has no effect.
 
 |HEADERS||
 |:---|:---|
@@ -1153,13 +1155,13 @@ curl --request PUT "{{url}}/service/zementis/model/dummy/deactivate" --header "A
 }
 ```
 
-### DEL - Remove Model
+### DEL - Remove PMML Model
 
 ```
 {{url}}/service/zementis/model/{{model_name}}
 ```
 
-Remove the specified model and list the remaining models.
+Remove the specified PMML model and list the remaining models.
 
 |HEADERS||
 |:---|:---|
@@ -1232,13 +1234,13 @@ curl --request DELETE "{{url}}/service/zementis/model/dummy" --header "Authoriza
 }
 ```
 
-### DEL - Remove All Models
+### DEL - Remove All PMML Models
 
 ```
 {{url}}/service/zementis/models
 ```
 
-Remove all available models and list the remaining models.
+Remove all available PMML models and list the remaining models.
 
 |HEADERS||
 |:---|:---|
@@ -1268,6 +1270,442 @@ curl --request DELETE "{{url}}/service/zementis/models" --header "Authorization:
 401 - Unauthorized
 
 curl --request DELETE "{{url}}/service/zementis/models"
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+### GET - List Available ONNX Models
+
+```
+{{url}}/service/zementis/onnx/models
+```
+
+Retrieves the model names of all the available ONNX models. Use these model names as identifiers for all operations requiring the `model_name` path variable.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+
+**Example Request**
+
+```
+200 - OK
+
+curl --request GET "{{url}}/service/zementis/onnx/models" --header "Authorization: {{auth}}"
+```
+
+**Example Response**
+
+```
+200 - OK
+
+{
+  "models": [
+    "resnet50",
+    "8635e4b85c51485b93e2d8d9483291f7"
+  ]
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --request GET "{{url}}/service/zementis/onnx/models"
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+
+### GET - Get ONNX Model Information
+
+```
+{{url}}/service/zementis/onnx/models/{{model_name}}
+```
+
+Get model name, model version, onnx version, producer name, producer version and information about inputs and outputs of the ONNX model.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|model_name (string)|required path variable for existing model name
+
+
+**Example Request**
+
+```
+200 - OK
+
+curl --request GET "{{url}}/service/zementis/onnx/models/resnet50" --header "Authorization: {{auth}}"
+```
+
+**Example Response**
+
+```
+200 - OK
+
+{
+  "modelName": "resnet50",
+  "modelVersion": 0,
+  "onnxVersion": 6,
+  "producerName": "keras2onnx",
+  "producerVersion": "1.6.0",
+  "inputs": "name: \"input_1\"\ntype {\n  tensor_type {\n    elem_type: 1\n    shape {\n      dim {\n        dim_param: \"N\"\n      }\n      dim {\n        dim_value: 224\n      }\n      dim {\n        dim_value: 224\n      }\n      dim {\n        dim_value: 3\n      }\n    }\n  }\n}\n",
+  "outputs": "[name: \"fc1000\"\ntype {\n  tensor_type {\n    elem_type: 1\n    shape {\n      dim {\n        dim_param: \"N\"\n      }\n      dim {\n        dim_value: 1000\n      }\n    }\n  }\n}\n]"
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --request GET "{{url}}/service/zementis/onnx/models/resnet50"
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+404 - Not Found
+
+curl --request GET "{{url}}/service/zementis/onnx/models/dummy" --header "Authorization: {{auth}}"
+```
+
+**Example Response**
+
+```
+404 - Not Found
+
+{
+    "errors": [
+        "Model 'dummy' not found."
+    ]
+}
+```
+
+### GET - Get ONNX Model Source
+
+```
+{{url}}/service/zementis/onnx/models/{{model_name}}/source
+```
+
+Get original ONNX file.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|model_name (string)|required path variable for existing model name
+
+**Example Request**
+
+```
+200 - OK
+
+curl --request GET "{{url}}/service/zementis/onnx/models/resnet50/source" --header "Authorization: {{auth}}"
+```
+
+**Example Response**
+
+```
+200 - OK
+
+ONNX file
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --request GET "{{url}}/service/zementis/onnx/models/resnet50/source"
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+404 - Not Found
+
+curl --request GET "{{url}}/service/zementis/onnx/models/dummy/source" --header "Authorization: {{auth}}"
+```
+
+**Example Response**
+
+```
+404 - Not Found
+
+{
+  "errors": [
+    "Model 'dummy' not found."
+  ]
+}
+```
+
+### POST - Upload New ONNX Model
+
+```
+{{url}}/service/zementis/onnx/models
+```
+
+Upload new ONNX model. Note that the size of the uploaded ONNX file must not exceed 500 MB.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Content-Type|required header parameter with two accepted values: application/octet-stream or multipart/form-data
+
+|PARAMS||
+|:---|:---|
+|file (file)|ONNX file. Only applicable when Content-Type is multipart/form-data.
+
+**Example Request**
+
+```
+201 - Created
+
+curl --request POST "{{url}}/service/zementis/onnx/models" --header "Authorization: {{auth}}" --form "file=@iris.onnx"
+```
+
+**Example Response**
+
+```
+201 - Created
+
+{
+  "modelName": "39c9f725699e4c9988ff55b8561db7fe",
+  "modelVersion": 0,
+  "onnxVersion": 6,
+  "producerName": "skl2onnx",
+  "producerVersion": "1.6.0",
+  "inputs": "name: \"float_input\"\ntype {\n  tensor_type {\n    elem_type: 1\n    shape {\n      dim {\n      }\n      dim {\n        dim_value: 4\n      }\n    }\n  }\n}\n",
+  "outputs": "[name: \"output_label\"\ntype {\n  tensor_type {\n    elem_type: 7\n    shape {\n      dim {\n        dim_value: 1\n      }\n    }\n  }\n}\n, name: \"output_probability\"\ntype {\n  sequence_type {\n    elem_type {\n      map_type {\n        key_type: 7\n        value_type {\n          tensor_type {\n            elem_type: 1\n          }\n        }\n      }\n    }\n  }\n}\n]"
+}
+```
+
+**Example Request**
+
+```
+400 - Bad Request
+
+curl --request POST "{{url}}/service/zementis/onnx/models" --header "Authorization: {{auth}}" --form "file=@Invalid.file"
+```
+
+**Example Response**
+
+```
+400 - Bad Request
+
+{
+    "errors": [
+        "Invalid onnx format."
+    ]
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --request POST "{{url}}/service/zementis/onnx/models"
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+409 - Conflict
+
+curl --request POST "{{url}}/service/zementis/onnx/models" --header "Authorization: {{auth}}" --form "file=@resnet50.onnx"
+```
+
+**Example Response**
+
+```
+409 - Conflict
+
+{
+    "errors": [
+        "A model with the name 'resnet50' already exists."
+    ]
+}
+```
+
+### DEL - Remove ONNX Model
+
+```
+{{url}}/service/zementis/onnx/models/{{model_name}}
+```
+
+Remove the specified ONNX model and list the remaining models.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|model_name (string)|required path variable for existing model name
+
+
+**Example Request**
+
+```
+200 - OK
+
+curl --request DELETE "{{url}}/service/zementis/onnx/model/resnet50" --header "Authorization: {{auth}}"
+```
+
+**Example Response**
+
+```
+200 - OK
+
+{
+  "models": [
+     "8635e4b85c51485b93e2d8d9483291f7"
+  ]
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --request DELETE "{{url}}/service/zementis/onnx/models/resnet50"
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+404 - Not Found
+
+curl --request DELETE "{{url}}/service/zementis/onnx/models/dummy" --header "Authorization: {{auth}}"
+```
+
+**Example Response**
+
+```
+404 - Not Found
+
+{
+  "errors": [
+    "Model 'dummy' not found."
+  ]
+}
+```
+
+### DEL - Remove All ONNX Models
+
+```
+{{url}}/service/zementis/onnx/models
+```
+
+Remove all available ONNX models and list the remaining models.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+**Example Request**
+
+```
+200 OK
+
+curl --request DELETE "{{url}}/service/zementis/onnx/models" --header "Authorization: {{auth}}"
+```
+
+**Example Response**
+
+```
+200 - OK
+
+{
+  "models": []
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --request DELETE "{{url}}/service/zementis/onnx/models"
 ```
 
 **Example Response**

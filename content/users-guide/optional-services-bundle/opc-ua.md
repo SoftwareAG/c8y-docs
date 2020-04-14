@@ -18,7 +18,7 @@ The gateway requires Java 8 in order to run.
 
 ### <a name="gateway-register"></a>Gateway configuration and registration
 
-YAML file and spring profiles are used for the configuration of the gateway. A default configuration file is embedded in the gateway JAR file, so you only need to set the properties which are different from the default. For more information on the YAML syntax, see [https://bitbucket.org/asomov/snakeyaml/src/default/](https://bitbucket.org/asomov/snakeyaml/src/default/). 
+YAML file and spring profiles are used for the configuration of the gateway. A default configuration file is embedded in the gateway JAR file, so you only need to set the properties which are different from the default. 
 
 > **Important**: When editing the YAML file, make sure to provide valid indentations.
 

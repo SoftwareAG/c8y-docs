@@ -12,7 +12,7 @@ In addition to the device guides offered in the [Cumulocity IoT Device Partner P
 
 ### Machine learning guide
 
-The former Predictive Analytics application has been rebranded to **[Cumulocity IoT Machine Learning](/machine-learning/)**. Accordingly, the name of the respective guide has been changed.
+The former Predictive Analytics offering has been rebranded to **[Cumulocity IoT Machine Learning](/machine-learning/)**. Accordingly, the name of the respective guide has been changed.
 
 ### Installation and operations guides
 

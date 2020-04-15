@@ -33,6 +33,6 @@ For example, delete *EDGE-server-10.6.0.0-1483-VMware-disk2.vmdk*.
 9. Rename the data disk of the previous version to the latest version.<br>
 For example, rename *EDGE-server-10.5.0.0-584-VMware-disk2.vmdk* to *EDGE-server-10.6.0.0-1483-VMware-disk2.vmdk*.
 
-7. Start the Edge VM by clicking **Power on**.
+10. Start the Edge VM by clicking **Power on**.
 
-10. Run the post-upgrade task to complete the upgrade process. See [Running post-upgrade](/guides/edge/installation/#running-post-upgrade).
+11. Run the post-upgrade task to complete the upgrade process. See [Running post-upgrade](/guides/edge/installation/#running-post-upgrade).

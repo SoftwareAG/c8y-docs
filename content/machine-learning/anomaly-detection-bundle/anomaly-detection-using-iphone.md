@@ -252,7 +252,7 @@ Instead of creating a new monitor file, the attached *DetectAnomalies_iPhone.mon
         }
     
         action listenAndActOnMeasurements(string deviceId, string modelName) {
-            monitor.subscribe(Measurement.CHANNEL);   
+            monitor.subscribe(Measurement.SUBSCRIBE_CHANNEL);   
             on all Measurement(source = deviceId) as m {
     
                 if( m.measurements.hasKey("c8y_Acceleration")){ 
@@ -407,7 +407,7 @@ Instead of creating a new monitor file, the attached *DetectAnomalies_iPhone.mon
                log "Zementis responded with status:" + statusCode.toString() + " result:" +  (outlier).toString();
                if (statusCode = 200 and outlier = true) {
                    send Alarm("", "AnomalyDetectionAlarm", deviceId, currentTime,
-                       "Anomaly detected", "ACTIVE", "CRITICAL", 1, new dictionary<string, any>) to Alarm.CHANNEL;
+                       "Anomaly detected", "ACTIVE", "CRITICAL", 1, new dictionary<string, any>) to Alarm.SEND_CHANNEL;
                    log "Alarm raised";
                }
            }

@@ -303,8 +303,8 @@ Instead of creating a new monitor file, the attached *RecognizeActivities.mon* f
 	    }
 	  
 	    action listenAndActOnMeasurements() {
-	        monitor.subscribe(Measurement.CHANNEL);
-	        monitor.subscribe(FindAlarmResponse.CHANNEL);
+	        monitor.subscribe(Measurement.SUBSCRIBE_CHANNEL);
+	        monitor.subscribe(FindAlarmResponse.SUBSCRIBE_CHANNEL);
 	        
 	        on all Measurement(source = deviceId) as m {        
 	                         
@@ -365,22 +365,22 @@ Instead of creating a new monitor file, the attached *RecognizeActivities.mon* f
 	    
 	    action createNewAlarm(string alarmMessage) {
 	    	send Alarm("", ALARM_TYPE, deviceId, currentTime,
-			           alarmMessage, "ACTIVE", "CRITICAL", 1, new dictionary<string,any>) to Alarm.CHANNEL;
+			           alarmMessage, "ACTIVE", "CRITICAL", 1, new dictionary<string,any>) to Alarm.SEND_CHANNEL;
 			log "Alarm added as - "+alarmMessage;
 	    }
 	    
 	    action clearOldAlarmAndSendNewAlarm(string alarmMessage) {
 		    	integer reqId:= integer.getUnique();
-		        send FindAlarm(reqId, {"source": deviceId, "status": "ACTIVE", "type": ALARM_TYPE}) to FindAlarm.CHANNEL;
+		        send FindAlarm(reqId, {"source": deviceId, "status": "ACTIVE", "type": ALARM_TYPE}) to FindAlarm.SEND_CHANNEL;
 		        //only if old alarm is found, clear it
 		        on FindAlarmResponse(reqId=reqId) as alarmResponse and not FindAlarmResponseAck(reqId=reqId) {
 		            send Alarm(alarmResponse.id, ALARM_TYPE, deviceId, currentTime, alarmResponse.alarm.text,
-		                        "CLEARED", alarmResponse.alarm.severity, 1, new dictionary<string, any>) to Alarm.CHANNEL;
+		                        "CLEARED", alarmResponse.alarm.severity, 1, new dictionary<string, any>) to Alarm.SEND_CHANNEL;
 		            log "Old Alarm cleared: " + alarmResponse.alarm.text;
 		        }
 		        reqId:= integer.getUnique();
 		        // now create a new alarm
-		        send FindAlarm(reqId, {"source": deviceId, "status": "ACTIVE", "type": ALARM_TYPE}) to FindAlarm.CHANNEL;
+		        send FindAlarm(reqId, {"source": deviceId, "status": "ACTIVE", "type": ALARM_TYPE}) to FindAlarm.SEND_CHANNEL;
 		        on FindAlarmResponseAck(reqId=reqId){
 		        	//Now create new alarm
 		            createNewAlarm(alarmMessage); 

@@ -24,11 +24,11 @@ For example, import the 10.6 version of the Edge VM.
 
 6. Go to the disk folder of the Edge VM.
 
-7. Copy the backed up data disk to the disk folder of the Edge VM.<br>
+7. Copy the backed-up data disk to the disk folder of the Edge VM.<br>
 For example, copy the data disk *EDGE-server-10.5.0.0-584-VMware-disk2.vmdk* to the disk folder of the Edge VM.
 
 8. Delete the data disk of the latest version.<br>
-For example, delete *EDGE-server-10.6.0.0-1483-VMware-disk2.vmdk*
+For example, delete *EDGE-server-10.6.0.0-1483-VMware-disk2.vmdk*.
 
 9. Rename the data disk of the previous version to the latest version.<br>
 For example, rename *EDGE-server-10.5.0.0-584-VMware-disk2.vmdk* to *EDGE-server-10.6.0.0-1483-VMware-disk2.vmdk*.

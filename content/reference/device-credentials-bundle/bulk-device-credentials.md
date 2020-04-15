@@ -4,13 +4,13 @@ title: Bulk device credentials
 layout: redirect
 ---
 
-Device credentials and device representation can be provided from CSV file. CSV file must have 2 sections.
+Device credentials and basic device representation can be provided from CSV file. CSV file must have 2 sections.
 
-First section is the first line of csv file. This line contains column names (headers):
+First section is the first line of CSV file. This line contains column names (headers):
 
 |Name|Occurs|Description|
 |:---|:---|:----------|
-|ID|1|The external id of a device|
+|ID|1|The main external id of a device|
 |CREDENTIALS|1|Password for the device's user|
 |TENANT|0..1|The name of tenant for which registration is executed (allowed only by management tenant)|
 |TYPE|0..1|The type of device representation|
@@ -20,23 +20,32 @@ First section is the first line of csv file. This line contains column names (he
 |PATH|0..1|The path in the groups hierarchy where device is added. Path contains name of each group separated by '/', i.e: Main group/Subgroup/.../Last subgroup. If group doesn't exists, import creates the group|
 |SHELL|0..1|If this column contains value 1, import adds for device 'Shell' feature (specifically: c8y_SupportedOperations fragment). 'Shell' value is not mandatory for each row, please see below example of http request|
 
-Section two is the rest of csv file. Section two contains devices information. Order and quantity of values must be the same like order and quantity of headers.
+Section two is the rest of CSV file. Section two contains devices information. Order and quantity of values must be the same as order and quantity of headers.
 
 Separator is automatically obtained from CSV file. Valid separator values are: '\t - tabulation mark', '; - semicolon' and ', - comma'.
 
-CSV file can appear in many forms (regarding to optional tenant column and occurrence of device information):
-* when user is logged as management tenant, then columns: 'id', 'credentials' and 'tenant' are mandatory, and credentials for device will be created for tenant mentioned in 'tenant' column,
-* when user is logged in as 'not management' tenant i.e. sample_tenant, then columns: 'id' and 'credentials' are mandatory (if file contains 'tenant' column, it is ignored and credentials for device will be created for tenant that is logged in),
-* when user wants to add information about device, columns 'type' nad 'name' must appear in csv file,
-* when user wants to add information about sim card number, columns 'type', 'name' and 'iccid' must appear in csv file,
-* when user wants to change the type of external id, columns 'type', 'name' and 'idtype' must appear in csv file,
-* when user wants to add device to group, columns 'type', 'name' and 'path' must appear in csv file,
-* when user wants to add shell feature, columns 'type', 'name' and 'shell' must appear in csv file and column 'shell' must contain value 1.
+> **Info:** Bulk registration creates an elementary representation of the device. Then, the device needs to update it to a full representation with its own status. Device is ready to use only after it's updated to the full representation. Use following links to read more about [Credentials upload](https://www.cumulocity.com/guides/users-guide/device-management/#creds-upload) and [Device integration](https://cumulocity.com/guides/device-sdk/rest/#device-integration).
 
-It is possible to define custom external id mappings and custom device properties that are added to newly created devices during registration:
+CSV file can appear in many forms (regarding to optional tenant column and occurrence of device information):
+
+* When user is logged as management tenant, then columns: 'id', 'credentials' and 'tenant' are mandatory, and credentials for device will be created for tenant mentioned in 'tenant' column.
+* When user is logged in as 'not management' tenant i.e. sample_tenant, then columns: 'id' and 'credentials' are mandatory (if file contains 'tenant' column, it is ignored and credentials for device will be created for tenant that is logged in).
+* When user wants to add information about device, columns 'type' nad 'name' must appear in CSV file.
+* When user wants to add information about sim card number, columns 'type', 'name' and 'iccid' must appear in CSV file.
+* When user wants to change the type of external id, columns 'type', 'name' and 'idtype' must appear in CSV file.
+* When user wants to add device to group, columns 'type', 'name' and 'path' must appear in CSV file.
+* When user wants to add shell feature, columns 'type', 'name' and 'shell' must appear in CSV file and column 'shell' must contain value 1.
+
+It is possible to define custom [External Id](https://cumulocity.com/guides/reference/identity/) mappings and some custom device properties that are added to newly created devices during registration:
  
 * To add custom external id mapping, place external id type as a last header with 'external-' prefix, e.g. to add external id mapping of type 'c8y_Imei', put in the last column header: 'external-c8y_Imei'. The value of this external id type should be set in corresponding column of the data rows.
 * To add custom property to registered device, place custom property name as a header, e.g. 'myCustomProperty' and the value would be in rows below.
+
+Custom device properties mapping have following limitations:
+
+* Braces '{}' used in data rows will be interpreted as strings of "{}". The system will interpret the value as an object when some custom property is added, e.g. put 'com_cumulocity_model_Agent.active' into headers row and 'true' into data row to create an object '"com_cumulocity_model_Agent": {"active": "true"}"'.
+* It is not possible to add array values via bulk registration.
+
 
 ### BulkNewDeviceRequest [application/vnd.com.nsn.cumulocity.bulkNewDeviceRequest+json]
 
@@ -55,7 +64,7 @@ It is possible to define custom external id mappings and custom device propertie
 |failedCreationList.failureReason|String|1|Reason of error|
 |failedCreationList.line|String|1|Line with error|
 
-### POST - creates a bullk device credentials request
+### POST - creates a bulk device credentials request
 
 Request body: multipart/form-data
 

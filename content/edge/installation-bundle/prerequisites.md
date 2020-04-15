@@ -100,5 +100,5 @@ The virtual machine has the following minimum hardware requirements:
 
 These are the minimum system requirements to enable the microservice hosting feature. If the microservice requires additional system resources, you must configure the system requirements accordingly in addition to minimum system requirements. For example, if the microservice requires 2 CPU cores and 4 GB of RAM, then the VM must have 6 CPU cores (4 cores for VM + 2 cores for microservice) and 12 GB of RAM (8 GB for VM + 4 GB for microservice).
 
->**Info:** This does not cover host operating system hardware requirements.
+>**Info:** This does not cover host operating system hardware requirements. The host operating system resource requirements should be sized independently and should be over and above the resource allocated to the virtual machines.
 

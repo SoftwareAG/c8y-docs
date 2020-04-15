@@ -74,7 +74,7 @@ Section two is the rest of CSV file. Section two contains devices information. O
 
 Separator is automatically obtained from CSV file. Valid separator values are: '\t - tabulation mark', '; - semicolon' and ', - comma'.
 
-> **Info:** Bulk registration creates an elementary representation of the device. Then, the device needs to update it to a full representation with its own status. Device is ready to use only after it's updated to the full representation. Use following links to read more about [Credentials upload](https://www.cumulocity.com/guides/users-guide/device-management/#creds-upload) and [Device integration](https://cumulocity.com/guides/device-sdk/rest/#device-integration).
+> **Info:** Bulk registration creates an elementary representation of the device. Then, the device needs to update it to a full representation with its own status. Device is ready to use only after it's updated to the full representation. Use following links to read more about [Credentials upload](/users-guide/device-management/#creds-upload) and [Device integration](/device-sdk/rest/#device-integration).
 
 CSV file can appear in many forms (regarding to optional tenant column and occurrence of device information):
 
@@ -86,12 +86,12 @@ CSV file can appear in many forms (regarding to optional tenant column and occur
 * When user wants to add device to group, columns 'type', 'name' and 'path' must appear in CSV file.
 * When user wants to add shell feature, columns 'type', 'name' and 'shell' must appear in CSV file and column 'shell' must contain value 1.
 
-It is possible to define custom [External Id](https://cumulocity.com/guides/reference/identity/) mappings and some custom device properties that are added to newly created devices during registration:
+It is possible to define custom [External Id](/reference/identity/) mappings and some custom device properties that are added to newly created devices during registration:
  
 * To add custom external id mapping, place external id type as a last header with 'external-' prefix, e.g. to add external id mapping of type 'c8y_Imei', put in the last column header: 'external-c8y_Imei'. The value of this external id type should be set in corresponding column of the data rows.
 * To add custom property to registered device, place custom property name as a header, e.g. 'myCustomProperty' and the value would be in rows below.
 
-Custom device properties mapping have following limitations:
+The custom device properties mapping has following limitations:
 
 * Braces '{}' used in data rows will be interpreted as strings of "{}". The system will interpret the value as an object when some custom property is added, e.g. put 'com_cumulocity_model_Agent.active' into headers row and 'true' into data row to create an object '"com_cumulocity_model_Agent": {"active": "true"}"'.
 * It is not possible to add array values via bulk registration.

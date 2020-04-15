@@ -4,17 +4,47 @@ title: Option
 layout: redirect
 ---
 
-Options are category-key-value tuples, storing tenant configuration. Some categories of options allow creation of new one, other are limited to predefined set of keys. 
+Options are category-key-value tuples, storing tenant configuration. Some categories of options allow creation of new one, other are limited to predefined set of keys.
 
-Any option of any tenant can be defined as "non-editable" by "management" tenant. 
+Any option of any tenant can be defined as "non-editable" by "management" tenant.
 Afterwards, any PUT or DELETE requests made on that option by the owner tenant, will result in 403 error (Unauthorized).
 
 ### Default Options
 
-|Category|Key|Default value|Only predefined|Description|
-|:-------|:--|:------------|:--------------|:----------|
-|access.control|allow.origin|\*|yes|Comma separated list of domains allowed for execution of CORS. Wildcards are allowed (e.g. \*.cumuclocity.com)|
-|alarm.type.mapping|&lt;&lt;alarmType&gt;&gt;||no|Overrides severity and alarm text for the alarm with type "&lt;&lt;alarmType&gt;&gt;". Severity and text are specified as "&lt;&lt;alarmSeverity&gt;&gt;&#124;&lt;&lt;alarmText&gt;&gt;". If either part of the text is empty, the value will not be overridden. If severity is "NONE", the alarm will be suppressed.|
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Category</th>
+<th align="left">Key</th>
+<th align="left">Default value</th>
+<th align="left">Only predefined</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">access.control</td>
+<td align="left">allow.origin</td>
+<td align="left">*</td>
+<td align="left">yes</td>
+<td align="left">Comma separated list of domains allowed for execution of CORS. Wildcards are allowed (e.g. *.cumuclocity.com)</td>
+</tr>
+<tr>
+<td align="left">alarm.type.mapping</td>
+<td align="left">&lt;&lt;alarmType&gt;&gt;</td>
+<td align="left"></td>
+<td align="left">no</td>
+<td align="left">Overrides severity and alarm text for the alarm with type “&lt;&lt;alarmType&gt;&gt;". Severity and text are specified as “&lt;&lt;alarmSeverity&gt;&gt;|&lt;&lt;alarmText&gt;&gt;". If either part of the text is empty, the value will not be overridden. If severity is “NONE”, the alarm will be suppressed.</td>
+</tr>
+</tbody>
+</table>
 
 ### Option [application/vnd.com.nsn.cumulocity.option+json]
 
@@ -40,11 +70,11 @@ In the request now there will be an additional header:
 ### GET a representation of a Option.
 
 Response body: Option
-  
+
 Required role: ROLE\_OPTION\_MANAGEMENT\_READ
  Example Request: Get single option.
 
-     
+
     GET /tenant/options/<<category>>/<<key>>
     Host: ...
     Authorization: Basic ...
@@ -67,11 +97,11 @@ Example Response :
 Request body: Option
 
 Response body: Option
-  
+
 Required role: ROLE\_OPTION\_MANAGEMENT\_ADMIN
  Example Request: Update access.control.allow.origin option.
 
-     
+
     PUT /tenant/options/<<category>>/<<key>>
     Host: ...
     Authorization: Basic ...
@@ -98,11 +128,11 @@ Example Response :
 Request body: Option
 
 Response body: Option
-  
+
 Required role: ROLE\_OPTION\_MANAGEMENT\_ADMIN
  Example Request: Update options in provided category.
 
-     
+
     PUT /tenant/options/<<category>>
     Host: ...
     Authorization: Basic ...
@@ -123,11 +153,11 @@ Example Response :
 ### GET Options from provided category.
 
 Response body: Option
-  
+
 Required role: ROLE\_OPTION\_MANAGEMENT\_READ
  Example Request: Get options from given category.
 
-     
+
     GET /tenant/options/<<category>>
     Host: ...
     Authorization: Basic ...
@@ -150,11 +180,11 @@ Example Response :
 Request body: Option
 
 Response body: Option
-  
+
 Required role: ROLE\_OPTION\_MANAGEMENT\_ADMIN, Required tenant: management
  Example Request: Update access.control.allow.origin option.
 
-     
+
     PUT /tenant/options/<<category>>/<<key>>/editable
     Host: ...
     Authorization: Basic ...

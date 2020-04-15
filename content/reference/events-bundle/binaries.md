@@ -76,7 +76,7 @@ HTTP/1.1
 201 Created
 
 {
-  "self”: “<<url>>/event/binaries/<<eventId>>”,
+  "self”: “<<url>>/event/events/<<eventId>>/binaries”,
   “type”: “<<content-type>>”,
   “source”: <<eventId>>,
   “length”: <<content-lenght>>
@@ -241,7 +241,7 @@ HTTP/1.1
 201 Created
 
 {
-  "self”: “<<url>>/event/binaries/<<eventId>>”,
+  "self”: “<<url>>/event/events/<<eventId>>/binaries”,
   “type”: “<<content-type>>”,
   “source”: <<eventId>>,
   “length”: <<content-lenght>>
@@ -275,7 +275,7 @@ HTTP/1.1
 201 Created
 
 {
-  "self”: “<<url>>/event/binaries/<<eventId>>”,
+  "self”: “<<url>>/event/events/<<eventId>>/binaries”,
   “type”: “<<content-type>>”,
   “source”: <<eventId>>,
   “length”: <<content-lenght>>

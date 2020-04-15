@@ -75,7 +75,7 @@ Each application will show the following properties, depending on the applicatio
 </tbody>
 </table>
 
-In case of applications of the type "microservice", you will additionally find information on its version, as well as on its isolation level and billing mode, see [Enterprise Tenant > Managing tenants > Microservice usage](/users-guide/enterprise-tenant/#microservice-usage) for details on these parameters.  
+In case of applications of the type "microservice", you will additionally find information on its version, as well as on its isolation level and billing mode, see [Enterprise Tenant > Managing tenants > Microservice usage](/users-guide/enterprise-edition/#microservice-usage) for details on these parameters.  
 
 
 ### <a name="subscribed-applications"></a>Subscribed applications
@@ -217,6 +217,13 @@ In the Standard Tenant you will find the following default applications:
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align:left"><a href="/users-guide/optional-services#lora" class="no-ajaxy">Actility</a></td>
+<td style="text-align:left">Interface with LoRa devices through the Actility ThingPark.</td>
+<td style="text-align:left">actility</td>
+<td style="text-align:left">Microservice</td>
+</tr>
+<tr>
 <td style="text-align:left"><a href="/apama" class="no-ajaxy">Apama EPL Apps</a></td>
 <td style="text-align:left"><b>This application is an optional service in Cumulocity IoT Core but standard in Cumulocity IoT Edge.</b><br>
 Manager and editor for Apama Event Processing Language (EPL) apps, for immediate processing of incoming data.</td>
@@ -253,13 +260,6 @@ Manager and editor for Apama Event Processing Language (EPL) apps, for immediate
 <td style="text-align:left">connectivity-agent-server</td>
 <td style="text-align:left">Microservice</td>
 </tr>
-<tr>
-<td style="text-align:left"><a href="/users-guide/optional-services#lora" class="no-ajaxy">Activity</a></td>
-<td style="text-align:left">Interface with LoRa devices through the Actility ThingPark.</td>
-<td style="text-align:left">actility</td>
-<td style="text-align:left">Microservice</td>
-</tr>
-<tr>
 <td style="text-align:left">Microservice hosting</td>
 <td style="text-align:left">Host your own microservices on top of Cumulocity IoT.</td>
 <td style="text-align:left">feature-microservice-hosting</td>

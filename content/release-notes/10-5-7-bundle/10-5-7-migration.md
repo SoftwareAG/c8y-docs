@@ -1,5 +1,5 @@
 ---
-weight: 20
+weight: 11
 title: Migration notes
 layout: redirect
 ---

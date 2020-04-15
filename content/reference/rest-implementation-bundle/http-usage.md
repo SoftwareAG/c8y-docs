@@ -35,7 +35,12 @@ If the token expires and requires renewal, the backend sends a response header:
 
 #### JWT token authentication
 
-Cumulocity IoT supports [JWT token](https://en.wikipedia.org/wiki/JSON_Web_Token) authentication. The HTTP header must include:
+Cumulocity IoT supports [JWT token](https://en.wikipedia.org/wiki/JSON_Web_Token) authentication. 
+
+>**Info:** The JWT token authentication described in this section is deprecated but will continue to be supported until further notice. We recommend to use the O-Auth authentication grant instead (see next section).
+
+
+The HTTP header must include:
 
 	Authorization: Bearer <<Base64 encoded JWT token>>
 
@@ -157,7 +162,37 @@ If you use an HTTP client that can only perform GET and POST methods in HTTP, yo
 
 ### <a id="processing-mode"></a> Processing mode
 
-Every update request (PUT, POST, DELETE) executes with a so-called *processing mode*. The default processing mode is *PERSISTENT*, which means that all updates will be send both to the Cumulocity IoT database and to real-time processing. The *TRANSIENT* processing mode will only send updates to real-time processing. As part of real-time processing, the user can decide case by case through scripts whether updates should be stored to the database or not. The *QUIESCENT* processing mode will behave like PERSISTENT processing mode with an exception that no real-time notifications will be sent. Currently, the QUIESCENT processing mode is applicable for measurements and events only. The *CEP* processing mode will behave like TRANSIENT processing mode with an exception that no real-time notifications will be sent. Currently, the CEP processing mode is applicable for measurements and events only.    
+Every update request (PUT, POST, DELETE) executes with a so-called *processing mode*. The processing modes are as follows:
+
+<table style="width: 100%">
+<colgroup>
+   <col style="width: 15%;">
+   <col style="width: 85%;">
+</colgroup>
+
+<thead>
+<th>Processing mode</th>
+<th>Description</th>
+</thead>
+<tbody>
+<tr>
+<td> Persistent (default)</td>
+<td> All updates will be send both to the Cumulocity IoT database and to real-time processing.</td>
+</tr>
+<tr>
+<td> Transient</td>
+<td> Updates will be sent only to real-time processing. As part of real-time processing, the user can decide case by case through scripts whether updates should be stored to the database or not.</td>
+</tr>
+<tr>
+<td> Quiescent</td>
+<td> The QUIESCENT processing mode behave like the PERSISTENT processing mode with the exception that no real-time notifications will be sent. Currently, the QUIESCENT processing mode is applicable for measurements and events only.</td>
+</tr>
+<tr>
+<td> CEP </td>
+<td> The CEP processing mode behaves like the TRANSIENT processing mode with the exception that no real-time notifications will be sent. Currently, the CEP processing mode is applicable for measurements and events only.</td>
+</tr>
+</tbody>
+</table>
 
 To explicitly control the processing mode of an update request, an "X-Cumulocity-Processing-Mode" header can be used with a value of either "PERSISTENT", "TRANSIENT", "QUIESCENT" or "CEP":
 
@@ -196,15 +231,73 @@ To avoid ambiguity, all times and timestamps must include timezone information. 
 
 Cumulocity IoT APIs are restricted by following data types:
 
-|Type|Description|Size|Possible values|
-|:---|:----------|:---|:--------------|
-|boolean|true or false|1 bit|true, false|
-|int|two's complement integer|32 bit|from -2,147,483,648 to +2,147,483,647|
-|long|two's complement integer|64 bit|from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807|
-|float|IEEE 754 floating point|32 bit|from 1.40129846432481707e-45 to 3.40282346638528860e+38 (positive or negative)|
-|double|IEEE 754 floating point|64 bit|from 4.94065645841246544e-324d to 1.79769313486231570e+308d (positive or negative)|
-|string|represents character strings|-|maximum 2,147,483,647 characters|
-|datetime|date or time or timestamp|-|[ISO 8601](http://www.w3.org/TR/NOTE-datetime) datetime|
+<table>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Description</th>
+<th align="left">Size</th>
+<th align="left">Possible values</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">boolean</td>
+<td align="left">true or false</td>
+<td align="left">1 bit</td>
+<td align="left">true, false</td>
+</tr>
+
+<tr>
+<td align="left">int</td>
+<td align="left">two’s complement integer</td>
+<td align="left">32 bit</td>
+<td align="left">from -2,147,483,648 to +2,147,483,647</td>
+</tr>
+
+<tr>
+<td align="left">long</td>
+<td align="left">two’s complement integer</td>
+<td align="left">64 bit</td>
+<td align="left">from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td>
+</tr>
+
+<tr>
+<td align="left">float</td>
+<td align="left">IEEE 754 floating point</td>
+<td align="left">32 bit</td>
+<td align="left">from 1.40129846432481707e-45 to 3.40282346638528860e+38 (positive or negative)</td>
+</tr>
+
+<tr>
+<td align="left">double</td>
+<td align="left">IEEE 754 floating point</td>
+<td align="left">64 bit</td>
+<td align="left">from 4.94065645841246544e-324d to 1.79769313486231570e+308d (positive or negative)</td>
+</tr>
+
+<tr>
+<td align="left">string</td>
+<td align="left">represents character strings</td>
+<td align="left">-</td>
+<td align="left">maximum 2,147,483,647 characters</td>
+</tr>
+
+<tr>
+<td align="left">datetime</td>
+<td align="left">date or time or timestamp</td>
+<td align="left">-</td>
+<td align="left"><a href="http://www.w3.org/TR/NOTE-datetime">ISO 8601</a> datetime</td>
+</tr>
+</tbody>
+</table>
 
 ### <a name="error_reporting"></a>Error reporting
 

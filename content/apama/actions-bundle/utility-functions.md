@@ -46,7 +46,7 @@ The read-only variable `currentTime` can be used to obtain the current server ti
 Example:
 
 ```java
-send Event("", "c8y_HighTemperatureEvent", measurement.source, currentTime, "High temperature started at "+TimeFormat.format(currentTime, "yyyy.MM.dd G 'at' HH:mm:ss"), new dictionary<string,any>) to Event.CHANNEL;
+send Event("", "c8y_HighTemperatureEvent", measurement.source, currentTime, "High temperature started at "+TimeFormat.format(currentTime, "yyyy.MM.dd G 'at' HH:mm:ss"), new dictionary<string,any>) to Event.SEND_CHANNEL;
 ```
 
 ### inMaintenanceMode
@@ -66,15 +66,15 @@ using com.apama.cumulocity.Util;
 
 monitor ExampleMonitor {
   action onload() {
-    // Subscribe to Measurement.CHANNEL to receive all measurements
-    monitor.subscribe(Measurement.CHANNEL);
-    monitor.subscribe(FindManagedObjectResponse.CHANNEL);
+    // Subscribe to Measurement.SUBSCRIBE_CHANNEL to receive all measurements
+    monitor.subscribe(Measurement.SUBSCRIBE_CHANNEL);
+    monitor.subscribe(FindManagedObjectResponse.SUBSCRIBE_CHANNEL);
     on all Measurement() as m {
       integer reqId := integer.getUnique();
-      send FindManagedObject(reqId, m.source, new dictionary<string,string>) to FindManagedObject.CHANNEL;
+      send FindManagedObject(reqId, m.source, new dictionary<string,string>) to FindManagedObject.SEND_CHANNEL;
       on FindManagedObjectResponse(reqId = reqId, id = m.source) as d and not FindManagedObjectResponseAck(reqId = reqId) {
         if not Util.inMaintenanceMode(d.managedObject) {
-          send Event("", "c8y_Event", m.source, currentTime, "Received measurement from active device", new dictionary<string,any>) to Event.CHANNEL;
+          send Event("", "c8y_Event", m.source, currentTime, "Received measurement from active device", new dictionary<string,any>) to Event.SEND_CHANNEL;
         }
       }
     }

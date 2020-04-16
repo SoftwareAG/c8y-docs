@@ -35,4 +35,4 @@ For example, rename *EDGE-server-10.5.0.0-584-VMware-disk2.vmdk* to *EDGE-server
 
 10. Start the Edge VM by clicking **Power on**.
 
-11. Run the post-upgrade task to complete the upgrade process. See [Running post-upgrade](/guides/edge/installation/#running-post-upgrade).
+11. Run the post-upgrade task to complete the upgrade process. See [Running post-upgrade](/edge/installation/#running-post-upgrade).

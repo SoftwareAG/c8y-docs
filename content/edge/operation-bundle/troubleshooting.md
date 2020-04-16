@@ -227,7 +227,7 @@ Monit can provide a quick status report of all configured services and processes
 
 There might be cases where Monit has stopped monitoring some resources because of timeout on constant failures or dependency issues. 
 
-<img src="/guides/images/edge/edge-monitoring-02.png" name="Status report" style="width:75%;"/> 
+<img src="/images/edge/edge-monitoring-02.png" name="Status report" style="width:75%;"/> 
 
 A specific component, for example, `apama-ctrl_proc`, can be restarted using the following command: 
 
@@ -467,7 +467,7 @@ The hosted microservices are captured at *cumulocity-single-node* path in the ar
 
 The diagnostic utility can be customized using a properties file located under "/etc/diagnostic-utility/diagnostic_utility.properties".
 
->**Important:** The SMTP properties in the table below are only for collecting diagnostics information. For configuring the email server, see [Administration > Changing settings> Configuration settings](/guides/users-guide/administration/#config-platform) in the User guide.
+>**Important:** The SMTP properties in the table below are only for collecting diagnostics information. For configuring the email server, see [Administration > Changing settings> Configuration settings](/users-guide/administration/#config-platform) in the User guide.
 
 Following are the available keys used in the configuration file:
 

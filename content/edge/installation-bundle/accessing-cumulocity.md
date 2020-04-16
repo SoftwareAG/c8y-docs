@@ -24,7 +24,7 @@ On Linux machines, add the following entry to */etc/hosts*:
 <IP address> <domain_name>
 ```
 
-Use the IP address provided during [network configuration](/guides/edge/installation#configuration). For example, the default value for Hyper-V is 192.168.66.10.
+Use the IP address provided during [network configuration](/edge/installation#configuration). For example, the default value for Hyper-V is 192.168.66.10.
 
 On Windows machines,  add the same entry to *C:\Windows\System32\Drivers\etc\hosts*.
 
@@ -38,7 +38,7 @@ If the ping is successful the DNS resolution is working properly.
 
 Using &#60;domain_name>, Cumulocity IoT Edge can be connected from the host operating system (operating system which is hosting the Edge VM instance). If you want to connect Edge VM within your LAN, which is outside of the host operating system, you need to do following:
 
-* Port forwarding must be enabled as mentioned in [Setting up the environment](/guides/edge/installation#setting-up-the-environment).
+* Port forwarding must be enabled as mentioned in [Setting up the environment](/edge/installation#setting-up-the-environment).
 * The DNS entry needs to be added in your LAN’s DNS server/Name server. The DNS entry must have the domain name (provided in post_installation step) and the IP address of the host operating system. Note that this is not the Edge VM IP.
 
 ### Entering Cumulocity IoT
@@ -53,9 +53,9 @@ https://<domain_name>
 
 The Cumulocity IoT Login screen appears.
 
-<img src="/guides/images/edge/edge-login-with-domain.png" name="Login screen"/>
+<img src="/images/edge/edge-login-with-domain.png" name="Login screen"/>
 
-Next steps: Before you proceed further, you must first log in as **sysadmin** user and change the password. See [Changing the sysadmin password](/guides/edge/installation/#changing-the-sysadmin-password).
+Next steps: Before you proceed further, you must first log in as **sysadmin** user and change the password. See [Changing the sysadmin password](/edge/installation/#changing-the-sysadmin-password).
 
 #### Entering Cumulocity IoT via IP
 
@@ -73,20 +73,20 @@ Next steps: Before you proceed further, you must first log in as **sysadmin** us
 	- Username: sysadmin
 	- Password: sysadmin-pass
 
-2. Change the password as described in [User options and settings](/guides/users-guide/getting-started/#user-settings).
+2. Change the password as described in [User options and settings](/users-guide/getting-started/#user-settings).
 
 3. Log out as **sysadmin** user.
 
 Next steps: Log in with the tenant admin credentials provided during post-installation. In the Login screen, the tenant is always **edge**.
 <br>
 
-<img src="/guides/images/edge/edge-login-with-tenantid.png" name="Login screen"/>
+<img src="/images/edge/edge-login-with-tenantid.png" name="Login screen"/>
 
 >**Important:** If you have to log in as **edgeadmin** user, log in to the management tenant using the URL *https://&#60;Edge&#95;VM&#95;IP&#95;Address>/apps/administration/index.html*.<br>
 >- Tenant: management<br>
 >- Username: edgeadmin<br>
 >- Password: Will be the same as the Edge tenant admin password provided during the post-installation process
 
-When you log into Cumulocity IoT for the first time, you will be taken to the [Cockpit](/guides/users-guide/cockpit#overview) application where the **Home screen** initially opens up.
+When you log into Cumulocity IoT for the first time, you will be taken to the [Cockpit](/users-guide/cockpit#overview) application where the **Home screen** initially opens up.
 
 >**Info:** You cannot access the Cockpit and Device Management application as **edgeadmin** user.

@@ -8,7 +8,7 @@ layout: redirect
 
 The Cumulocity IoT tenant allows you to remotely manage your Edge VM by registering the Edge VM in the tenant account. To do so, you must first configure the Cumulocity IoT tenant account in the Edge agent and then register your Edge VM in the tenant account.
 
-To configure the tenant account in your Edge VM, run the post-installation script and select [Configuring Edge Agent](/guides/edge/installation/#configuring-edge-agent). For more information, see [Configuring the Edge server](/guides/edge/installation/#configuring-the-edge-server).
+To configure the tenant account in your Edge VM, run the post-installation script and select [Configuring Edge Agent](/edge/installation/#configuring-edge-agent). For more information, see [Configuring the Edge server](/edge/installation/#configuring-the-edge-server).
 
 The Cumulocity IoT tenant uses the SSH protocol to access the remote Edge VM through a web browser.
 
@@ -21,12 +21,12 @@ Before performing these steps, ensure that you have provided the URL for the Cum
 3. Click **Registration** in the **Devices** menu and then click **Register device**.
 4. Select **General device registration**.
 
-	<img src="/guides/images/users-guide/DeviceManagement/devmgmt-registration-general.png" alt="General device registration" style="max-width: 100%">
+	<img src="/images/users-guide/DeviceManagement/devmgmt-registration-general.png" alt="General device registration" style="max-width: 100%">
 
 5. In the **Device ID** field, enter the Edge device ID. The Edge device ID is available at */usr/edge/properties/edge-agent/device-id* in your Edge VM.
 6. Click **Next**.
 7. Click **Complete** to register your Edge VM.<br>
-After successful registration, the Edge VM appears in the [**Device registration**](/guides/users-guide/device-management/#dev-registration) page with the status **Waiting for connection**.<br>
+After successful registration, the Edge VM appears in the [**Device registration**](/users-guide/device-management/#dev-registration) page with the status **Waiting for connection**.<br>
 Turn on the Edge VM and wait for the connection to be established.
 Once the device is connected, the device status changes to **Pending acceptance**.
 8. Click **Accept** to confirm the connection. The status of the device changes to **Accepted**.
@@ -39,7 +39,7 @@ The Cumulocity IoT Cloud Remote Access microservice allows you to remotely acces
 
 The following protocols are supported to connect to the Edge VM through remote access from the Cumulocity IoT tenant:
 
-* Remote Desktop (VNC). See [Accessing the Edge device remotely through VNC](/guides/edge/usage/#accessing-the-edge-device-remotely-through-vnc).
+* Remote Desktop (VNC). See [Accessing the Edge device remotely through VNC](/edge/usage/#accessing-the-edge-device-remotely-through-vnc).
 	* Shares the desktop of the remote device
 	* Mouse and keyboard for interaction
 * Secure Shell (SSH)
@@ -49,13 +49,13 @@ The following protocols are supported to connect to the Edge VM through remote a
 	* Console for command line access
 	* Keyboard for interaction
 
-For more information about remote access, see [Cloud Remote Access](/guides/users-guide/optional-services/#cloud-remote-access) in the User guide.
+For more information about remote access, see [Cloud Remote Access](/users-guide/optional-services/#cloud-remote-access) in the User guide.
 
 ### Accessing the Edge device remotely through VNC
 
 You can access the Edge VM from the Cumulocity IoT tenant by installing the VNC components on your Edge VM. 
 
-**Info:** Ensure that you have registered your Edge VM with the Cumulocity IoT tenant. See [Registering the Edge device with the Cumulocity IoT tenant](/guides/edge/usage/#registering-the-edge-device-with-the-cumulocity-iot-tenant).
+**Info:** Ensure that you have registered your Edge VM with the Cumulocity IoT tenant. See [Registering the Edge device with the Cumulocity IoT tenant](/edge/usage/#registering-the-edge-device-with-the-cumulocity-iot-tenant).
 
 #### Step 1: Installing the VNC components
 
@@ -87,13 +87,13 @@ Record the allocated port number. This port number will be used to connect to th
 
 To access and connect to the Edge VM, you must create a remote access point.
 
-1. In the Cumulocity IoT tenant for your registered Edge VM, add a remote access endpoint. See [Adding remote access endpoints](/guides/users-guide/optional-services/#adding-remote-access-endpoints-via-vnc). You must use the same port number that is allocated for you.
+1. In the Cumulocity IoT tenant for your registered Edge VM, add a remote access endpoint. See [Adding remote access endpoints](/users-guide/optional-services/#adding-remote-access-endpoints-via-vnc). You must use the same port number that is allocated for you.
 
-2. Connect to the endpoint. See [Connecting to endpoints](/guides/users-guide/optional-services/#connecting-to-endpoints).
+2. Connect to the endpoint. See [Connecting to endpoints](/users-guide/optional-services/#connecting-to-endpoints).
 
 The connection to the Edge VM is established and the GUI appears for the Edge VM. Right-click in the screen to open the desktop components **xterm** and **firefox**.
 
-<img src="/guides/images/edge/edge-vnc-gui-screen.png" alt="Edge VNC" style="max-width: 75%">
+<img src="/images/edge/edge-vnc-gui-screen.png" alt="Edge VNC" style="max-width: 75%">
 
 **Important:** Do not use the **Send Ctrl+Alt+Del** button in the VNC interface. If you do so, you will lose the VNC connection and not be able to reconnect until you restart the Edge VM.
 
@@ -117,10 +117,10 @@ Go to **Data Broker** > **Data connectors** if you would like to send data to th
 
 Go to **Data Broker** > **Data subscriptions** in your tenant account to receive the data from Edge.
 
-<img src="/guides/images/users-guide/data-broker-navigator.png" alt="Data broker menus">
+<img src="/images/users-guide/data-broker-navigator.png" alt="Data broker menus">
 
 In the same way, you can push operations from a Cumulocity IoT tenant account to Cumulocity IoT Edge devices.
  
-For details about sending and receiving data in Cumulocity IoT, see [Enterprise Tenant > Using the Data Broker](/guides/users-guide/enterprise-edition#data-broker).
+For details about sending and receiving data in Cumulocity IoT, see [Enterprise Tenant > Using the Data Broker](/users-guide/enterprise-edition#data-broker).
 
    

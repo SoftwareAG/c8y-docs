@@ -38,7 +38,7 @@ The following keys are available in the configuration file:
 
 >**Important:** The password must have a minimum of 8 and a maximum of 32 characters and it may contain letters, numbers or any of these symbols: `~!@#$%^&*()_|+-=?;:'",.<>{}[]\/
 
-`tenant.domain.name` : Provide a fully qualified domain name. For example, "myown.iot.com". Here, you must have the Cumulocity IoT Edge license for the domain name **iot.com** or **myown.iot.com**. <br>The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/guides/edge/installation/#domain-name-validation-for-edge-license-key-generation).
+`tenant.domain.name` : Provide a fully qualified domain name. For example, "myown.iot.com". Here, you must have the Cumulocity IoT Edge license for the domain name **iot.com** or **myown.iot.com**. <br>The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/edge/installation/#domain-name-validation-for-edge-license-key-generation).
 
 >**Important:** Once configured, the domain name cannot be changed. Make sure to use the name finally desired.
 
@@ -76,7 +76,7 @@ Once Edge VM is started, you need to run the script *post_installation.sh* to co
 
 Post installation should only be run after the platform initialization is successful which can be checked by running below REST API: 
 
-<img src="/guides/images/edge/edge-check-platform.png" name="Check platform initialization"/> 
+<img src="/images/edge/edge-check-platform.png" name="Check platform initialization"/> 
 
 Usually the platform comes up within 2 minutes. 
 
@@ -94,8 +94,8 @@ Usually the platform comes up within 2 minutes.
 
 	` [admin@server ~]$ sudo ./post_installation.sh`
 
-4. Configure the network for your Edge server. See [Configuring the network](/guides/edge/installation/#configuring-the-edge-network).
-5. Perform the post-installation process. See [Running the post installation process](/guides/edge/installation/#running-the-post-installation-process).
+4. Configure the network for your Edge server. See [Configuring the network](/edge/installation/#configuring-the-edge-network).
+5. Perform the post-installation process. See [Running the post installation process](/edge/installation/#running-the-post-installation-process).
 
 The Edge server configuration is complete.
 
@@ -103,14 +103,14 @@ The Edge server configuration is complete.
 
 The following sections explain the tasks that can be performed using the post-installer utility:
 
-1. [Configure network](/guides/edge/installation/#configuring-the-edge-network)
-2. [Run post-installation](/guides/edge/installation/#running-the-post-installation-process)
-3. [Update license and SSL certificates](/guides/edge/installation/#updating-the-license-and-ssl-certificates)
-4. [Run post-upgrade](/guides/edge/installation/#running-post-upgrade)
-5. [Expand data disk size](/guides/edge/installation/#expanding-the-data-disk-size)
-6. [Update tenant password](/guides/edge/installation/#updating-the-tenant-password)
-7. [Configure Edge Agent](/guides/edge/installation/#configuring-edge-agent)
-8. [Enable microservice hosting feature](/guides/edge/installation/#enabling-or-disabling-microservice-hosting-feature)
+1. [Configure network](/edge/installation/#configuring-the-edge-network)
+2. [Run post-installation](/edge/installation/#running-the-post-installation-process)
+3. [Update license and SSL certificates](/edge/installation/#updating-the-license-and-ssl-certificates)
+4. [Run post-upgrade](/edge/installation/#running-post-upgrade)
+5. [Expand data disk size](/edge/installation/#expanding-the-data-disk-size)
+6. [Update tenant password](/edge/installation/#updating-the-tenant-password)
+7. [Configure Edge Agent](/edge/installation/#configuring-edge-agent)
+8. [Enable microservice hosting feature](/edge/installation/#enabling-or-disabling-microservice-hosting-feature)
 9. Exit
 
 >**Important:**<br>
@@ -194,7 +194,7 @@ You have the choice to enter the post-installation parameters manually through t
 
 	`* Re-enter tenant admin password:`
 
-4. Provide a fully qualified domain name. For example, "myown.iot.com". Here, you must have the Cumulocity IoT Edge license for the domain name **iot.com** or **myown.iot.com**.<br>The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/guides/edge/installation/#domain-name-validation-for-edge-license-key-generation).
+4. Provide a fully qualified domain name. For example, "myown.iot.com". Here, you must have the Cumulocity IoT Edge license for the domain name **iot.com** or **myown.iot.com**.<br>The domain name must adhere to all the domain name validation rules as described in [Domain name validation](/edge/installation/#domain-name-validation-for-edge-license-key-generation).
 
 	`* Enter tenant domain name:` 
 
@@ -224,7 +224,7 @@ You have the choice to enter the post-installation parameters manually through t
 
 	`* Enter cloud URL (leave blank to disable remote management):` 
 
-	You can also configure the Edge agent with the Cumulocity IoT tenant URL by running the post-installation script and selecting [Configuring Edge Agent](/guides/edge/installation/#configuring-edge-agent).
+	You can also configure the Edge agent with the Cumulocity IoT tenant URL by running the post-installation script and selecting [Configuring Edge Agent](/edge/installation/#configuring-edge-agent).
 		
 Once the input parameters are entered correctly, the parameters will be saved under 
 */opt/c8y/utilities/post-installer/config.dat* for future reference.
@@ -352,7 +352,7 @@ The update tenant password process consists of multiple steps which are executed
 
 	`* Enter cloud URL (leave blank to disable remote management):`
 
-After providing the tenant URL, you have to register your Edge VM with the Cumulocity IoT tenant. For more information, see [Registering the Edge device with a Cumulocity IoT  tenant](/guides/edge/usage/#registering-the-edge-device-with-the-cumulocity-iot-tenant).
+After providing the tenant URL, you have to register your Edge VM with the Cumulocity IoT tenant. For more information, see [Registering the Edge device with a Cumulocity IoT  tenant](/edge/usage/#registering-the-edge-device-with-the-cumulocity-iot-tenant).
 
 >**Important:** If you have configured the Cumulocity IoT tenant URL during the post installation and then use this option with a blank URL, you will disable the Cumulocity IoT tenant connectivity.
 
@@ -371,9 +371,9 @@ After providing the tenant URL, you have to register your Edge VM with the Cumul
 When you enable or disable the microservice feature, the Device Simulator microservice also gets enabled or disabled.
 
 After you enable the microservices, before using the microservices ensure that the microservices are active and healthy.
-For more information about microservices runtime, see [Microservice runtime](/guides/microservice-sdk/concept/#microservice-runtime).
+For more information about microservices runtime, see [Microservice runtime](/microservice-sdk/concept/#microservice-runtime).
 
 To disable the microservice feature, run the post installer and select the option 8.
 Before disabling the microservice feature, you should unsubscribe from all the microservices that have been uploaded.
 You can also delete the microservice if you are not planning to enable again and subscribe to the same microservice.
-For more information about developing and hosting a microservice, see [Microservices SDK](/guides/microservice-sdk/introduction/).
+For more information about developing and hosting a microservice, see [Microservices SDK](/microservice-sdk/introduction/).

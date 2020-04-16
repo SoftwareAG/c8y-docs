@@ -8,7 +8,7 @@ layout: redirect
 
 The tenant admin user could be locked if incorrect credentials are passed during login into UI, REST API or MQTT. 
 
-<img src="/guides/images/edge/edge-tenant-lock.png" name="Locked user" style="width:50%;"/>
+<img src="/images/edge/edge-tenant-lock.png" name="Locked user" style="width:50%;"/>
 
 To unlock the tenant admin user, perform the following steps:
 
@@ -25,13 +25,13 @@ To configure the "reset password" template and email server settings, perform th
 	* User: edgeadmin 
 	* Password: Will be the same as the Edge tenant admin password provided in the post-installation execution
 <br>
-2. Update the email server details and templates following the instructions in [Administration > Changing settings> Configuration settings](/guides/users-guide/administration/#config-platform) in the User guide.
+2. Update the email server details and templates following the instructions in [Administration > Changing settings> Configuration settings](/users-guide/administration/#config-platform) in the User guide.
 
 ### Increasing the system performance
 
 If the system performance is slow, the memory should be increased. First, increase the memory of the VM. This is done by stopping the VM and increasing its memory.
 
-<img src="/guides/images/edge/edge-vm-increasing-memory.png" name="Increasing memory"/>
+<img src="/images/edge/edge-vm-increasing-memory.png" name="Increasing memory"/>
 
 Increasing the VM memory should be followed by a JVM memory increase. 
 

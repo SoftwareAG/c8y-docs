@@ -11,7 +11,7 @@ To upgrade the Edge VM on VMware ESXi:
 1. Power off the Edge VM from ESXi console.
 
 2. Select the Edge VM and click **Actions** > **Export**.
-<img src="/guides/images/edge/edge-esxi-update-export.png" name="Remove VM" style="width:85%;"/>
+<img src="/images/edge/edge-esxi-update-export.png" name="Remove VM" style="width:85%;"/>
 
 3. Click **OK** to download the files.<br>
 This action downloads the following files:
@@ -36,8 +36,8 @@ For example:
 
 7. If the size of the secondary disk has expanded, you must update the OVF file of the latest version accordingly. In the OVF file, search for the fields **ovf:capacity** and **ovf:capacityAllocationUnits** and update the values as per the values in the exported OVF file.
 
-8. Import the Edge VM image as described in [Setting up ESXi](/guides/edge/installation/#setting-up-esxi).
+8. Import the Edge VM image as described in [Setting up ESXi](/edge/installation/#setting-up-esxi).
 
 9. Start the Edge VM by clicking **Power on**.
 
-10. Run the post-upgrade task to complete the upgrade process. See [Running post-upgrade](/guides/edge/installation/#running-post-upgrade).
+10. Run the post-upgrade task to complete the upgrade process. See [Running post-upgrade](/edge/installation/#running-post-upgrade).

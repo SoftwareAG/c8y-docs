@@ -6,10 +6,10 @@ layout: redirect
 
 For your convenience, we provide the hypervisor examples for setting up Cumulocity IoT Edge:
 
-* [Example setup for ESXi VMWare](/guides/edge/installation#setting-up-esxi)
-* [Example setup for VMWare Workstation Player](/guides/edge/installation#setting-up-vmware)
-* [Example setup for Hyper-V](/guides/edge/installation#setting-up-hyper-v)
-* [Example setup for VirtualBox](/guides/edge/installation#setting-up-virtual-box)
+* [Example setup for ESXi VMWare](/edge/installation#setting-up-esxi)
+* [Example setup for VMWare Workstation Player](/edge/installation#setting-up-vmware)
+* [Example setup for Hyper-V](/edge/installation#setting-up-hyper-v)
+* [Example setup for VirtualBox](/edge/installation#setting-up-virtual-box)
 
 For all hypervisors, we recommend that you use UTC on your host machines.
 
@@ -34,7 +34,7 @@ ssh admin@<IP address>
 $ Password: manage
 ```
 	
-Use the IP address provided during [network configuration](/guides/edge/installation#configuration).
+Use the IP address provided during [network configuration](/edge/installation#configuration).
 
 |Hypervisor|Default IP Address|
 |:---|:---|

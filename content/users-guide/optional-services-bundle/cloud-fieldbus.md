@@ -32,12 +32,17 @@ To connect a Modbus/RTU device:
 4. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Modbus** tab.
 5. Change the communication settings shown in the section **Serial communication** to match the settings on the bus, if needed.
 6. Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency where measurements are sent to Cumulocity IoT.
-7. Click **Save changes** if you made changes. <br> ![Add Modbus device](/images/users-guide/cloud-fieldbus/fieldbus-new-modbus.png)<br>
-8. To start communication between the terminal and the Modbus device, click **Add new device**.
-9. Enter a name for the device and select the type of the device from the drop-down field. To add new device types, see [Configuring Fieldbus device types](#configure) below. Set the Modbus address of the connected device.
-10. Click **Add**. Cumulocity IoT will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.
+7. Click **Save** if you made changes.
+
+**Adding child devices**
+
+1. To start communication between the terminal and the Modbus/RTU device, click **Add RTU device**.
+2. Enter a name for the device and select the device protocol from the drop-down field. To add new device types, see [Configuring Fieldbus device types](#configure) below. Set the Modbus address of the connected device.
+3. Click **Add**. Cumulocity IoT will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.
 
 After completion, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the table to navigate to the device. If you have not yet added Modbus devices to the terminal, you may have to reload your browser window to make the **Child Devices** tab visible.
+
+<br> ![Add Modbus device](/images/users-guide/cloud-fieldbus/fieldbus-new-modbus-rtu.png)<br>
 
 #### Connecting Modbus/TCP devices
 
@@ -48,17 +53,17 @@ To connect a Modbus/TCP device:
 3. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Network** tab. Verify that the LAN settings of the terminal match the settings of the device so that TCP communication can be established.
 4. Switch to the **Modbus** tab.
 5. Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency at which measurements are sent to Cumulocity IoT.
-6. Click **Save changes** if you made changes.
+6. Click **Save** if you made changes.
 
 **Adding child devices**
 
-1. To start communication between the terminal and the Modbus device, click **Add new device**.
-2. Enter a name for the device and select the type of the device from the dropdown field. To add new device types, see [Configuring Fieldbus device types](#configure) below. Set the Modbus address and the IP address of the connected device.
+1. To start communication between the terminal and the Modbus/TCP device, click **Add TCP device**.
+2. Enter a name for the device and select the device protocol from the dropdown field. To add new device types, see [Configuring Fieldbus device types](#configure) below. Set the Modbus address and the IP address of the connected device.
 3. Click **Add**.
 
 Cumulocity IoT will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.
 
-![Add Modbus device](/images/users-guide/cloud-fieldbus/fieldbus-new-tcpmodbus.png)
+![Add Modbus device](/images/users-guide/cloud-fieldbus/fieldbus-new-modbus-tcp.png)
 
 > We assume that all Modbus/TCP communication uses the standard Modbus/TCP port 502. On the NTC-6200, the port to be used can be configured through the variable "service.cumulocity.plugin.lua__modbus.port" using, for example, Device Shell or the local web user interface of the device.
 
@@ -71,27 +76,26 @@ To connect a CAN device:
 3. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **CAN bus** tab.
 4. Change the baud rate setting shown in the section **CAN bus communication** to match the settings on the bus, if needed.
 5. Change the transmit rate according to your requirements. The transmit rate is the frequency where measurements are sent to Cumulocity IoT.
-6. Click **Save changes** if you made changes.
+6. Click **Save** if you made changes.
 
 **Adding child devices**
 
 1. To start communication between the terminal and the CAN device, click **Add CAN device**.
-2. Enter a name for the device and select the type of the device from the dropdown field. To add new device types, see [Configuring Fieldbus device types](#configure) below.
+2. Enter a name for the device and select a device protocol from the dropdown field. To add new device types, see [Configuring Fieldbus device types](#configure) below.
 3. Click **Add**.
 
 Cumulocity IoT will now send a notification to the Fieldbus terminal that a new device is ready to be managed. This may take a few seconds.
 
 After completion, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the table to navigate to the device. If you have not yet added Fieldbus devices to the terminal, you may have to reload your browser window to make the "Child Devices" tab visible.
 
-![Add CAN device](/images/users-guide/cloud-fieldbus/fieldbus-new-candevice.png)
+![Add CAN device](/images/users-guide/cloud-fieldbus/fieldbus-new-can-device.png)
 
 #### <a name="connect-profibus"></a>Connecting Profibus devices
 
 Connecting Profibus differs slightly from the regular Plug & Play approach of Cloud Fieldbus. The gateway device acts as slave on the Profibus so it can easily be integrated into existing infrastructure. This means that Profibus data must be actively sent to the gateway though. Typically this is done by programming a PLC to actively send information to the gateway via it’s configured Profibus slave address.
 
 1. Physically wire the Profibus device to the terminal.
-2. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the "Profibus" tab. <br><br>
-<img src="/images/users-guide/cloud-fieldbus/fieldbus-profibus-settings.png" alt="Profibus settings" style="max-width: 100%"><br><br>
+2. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the "Profibus" tab.
 3. The baud rate is automatically detected by the gateway and is just being displayed here.
 4. Change the transmit rate according to your requirements. The transmit rate is the interval at which measurements are sent to Cumulocity IoT.
 5. Set the slave address of the terminal.
@@ -102,10 +106,10 @@ Connecting Profibus differs slightly from the regular Plug & Play approach of Cl
 
 1. To start communication between the gateway and the Profibus device, click **Add Profibus device**.
 2. Enter a name for the new device.
-3. Select the type of the child device from the drop-down box. To add new device types, see [Configuring Fieldbus device types](#configure) below.
+3. Select the device protocol from the drop-down box. To add new device types, see [Configuring Fieldbus device types](#configure) below.
 4. Click **Add** to confirm and notify the gateway.
 
-<img src="/images/users-guide/cloud-fieldbus/fieldbus-profibus-deviceadd.png" alt="Add device" style="max-width: 100%">
+<img src="/images/users-guide/cloud-fieldbus/fieldbus-new-profibus.png" alt="Add device" style="max-width: 100%">
 
 Now A child device will be created containing the data configured in the selected device type.
 
@@ -138,7 +142,7 @@ If the device type of the Fieldbus device is configured to send alarms, these wi
 
 Similar to alarms, changes in Fieldbus devices can be monitored and logged as events. Each time, the value of the monitored coil or register changes, an event is created. You can see the events in the "Events" tab of the device or use them in widgets. You can inspect the new value of the monitored coil or register by clicking on the event and unfolding the event details.
 
-![Fieldbus events](/images/users-guide/cloud-fieldbus/fieldbus-modbus-events.png)
+![Fieldbus events](/images/users-guide/cloud-fieldbus/fieldbus-modbus-events-log.png)
 
 #### <a name="status"></a>Monitor a device status
 
@@ -194,7 +198,7 @@ When creating SVG files, we recommend you to use [https://boxy-svg.com/](https:/
 
 New Fieldbus device types can be set up in the **Device database** page which you open from the **Device Types** menu in the navigator.
 
-Click **New** in the top menu bar. In the **Device type** field, select the protocol of your device and enter a name for it.
+Click **New** in the top menu bar. In the **Device protocol** field, select the protocol of your device and enter a name for it.
 
 Now you can start adding coils and register definitions to the device type, depending on the selected protocol (see the descriptions below).
 

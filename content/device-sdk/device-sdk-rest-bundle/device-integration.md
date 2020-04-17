@@ -319,7 +319,7 @@ To clean up operations that are still in EXECUTING status, query operations by a
 
 The restart seems to have executed well -- we are back after all. So let's set the operation to SUCCESSFUL.
 
-    PUT /devicecontrol/operations/2480300 HTTP/1.1
+    PUT /devicecontrol/operations/2593101 HTTP/1.1
     Content-Type: application/vnd.com.nsn.cumulocity.operation+json
     {
         "status": "SUCCESSFUL"

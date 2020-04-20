@@ -279,6 +279,10 @@ To access the apama-ctrl log files, run the command:
 |Smartrule-agent-server-apama|smartrule-agent-server-apama-gc.log<br> smartrule-agent-server-apama.log<br>smartrule.log|/var/log/smartrule/
 |cumulocity-agent|cumulocity-agent.log|/var/log/cumulocity-agent/
 
+##### DataHub log file locations
+
+See [Log files](/datahub/running-datahub-on-the-edge/#log-files) for details on DataHub log files.
+
 #### Adjust log level
 
 This section describes how to change the log level for Cumulocity IoT specific applications on the backend side. It does not explain how to change log settings for standard components like databases or other operating system related services. 

@@ -2,8 +2,6 @@
 weight: 60
 title: Administration and configuration
 layout: redirect
-aliases:
-  - /edge/operation/#administration-configuration
 ---
 
 ### Unlocking the tenant admin user
@@ -81,6 +79,14 @@ For microservices, there currently is no specific log rotation configured.
 
 For many use cases, and especially when using APAMA, time synchronization must be available, i.e. the time inside the VM must be synchronized with the time of the host OS and with devices sending data.
 
-Out of the box, for VMWare-based installations, vmtools is responsible for time synchronization with the host OS. For VirtualBox-based installations, VirtualBox guest additions is responsible. 
+`chrony` or `ntp` services can be configured by end users based on their time synchronization needs. These services are by default stopped and disabled in Edge and can be enabled by standard commands. Use the following commands to interact with the `chrony` or `ntp` services:
+ 
+	systemctl start|stop|status|restart ntpd
+	systemctl start|stop|status|restart chronyd
 
-Additionally, chrony or ntp services can be configured by end users based on their time synchronization needs. Refer to the respective documentation for the configuration of these services. These services are by default stopped and disabled in Edge and can be enabled by standard commands.
+By default, for VMWare-based installations, the *vmtools* service is responsible for time synchronization with the host operating system. For VirtualBox-based installations, the *VirtualBox guest additions* service is responsible.
+
+For HyperV, the `chronyd` service is enabled by default for accurate time synchronization.
+
+>**Info:** As HyperV relies on the `chronyd` service for time synchronization, do not stop the `chronyd` service. 
+

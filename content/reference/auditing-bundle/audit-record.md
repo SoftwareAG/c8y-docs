@@ -10,8 +10,8 @@ layout: redirect
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
-<col style="width: 10%;">
-<col style="width: 30%;">
+<col style="width: 6%;">
+<col style="width: 34%;">
 <col style="width: 20%;">
 </colgroup>
 <thead>
@@ -20,7 +20,7 @@ layout: redirect
 <th align="left">Type</th>
 <th align="left">Occurs</th>
 <th align="left">Description</th>
-<th align="left">PUT/POST</th>
+<th align="left">Mandatory for PUT/POST</th>
 </tr>
 </thead>
 <tbody>
@@ -50,56 +50,56 @@ layout: redirect
 <td align="left">String</td>
 <td align="left">1</td>
 <td align="left">Identifies the type of this audit record.</td>
-<td align="left">POST: Mandatory PUT: No</td>
+<td align="left">POST: Yes<br>PUT: No</td>
 </tr>
 <tr>
 <td align="left">time</td>
 <td align="left">String</td>
 <td align="left">1</td>
 <td align="left">Time of the audit record.</td>
-<td align="left">POST: Mandatory PUT: No</td>
+<td align="left">POST: Yes<br>PUT: No</td>
 </tr>
 <tr>
 <td align="left">text</td>
 <td align="left">String</td>
 <td align="left">1</td>
 <td align="left">Text description of the audit record.</td>
-<td align="left">POST: Mandatory PUT: No</td>
+<td align="left">POST: Yes<br>PUT: No</td>
 </tr>
 <tr>
 <td align="left">source</td>
 <td align="left">ManagedObject</td>
 <td align="left">1</td>
 <td align="left">An optional ManagedObject that the audit record originated from, as object containing properties “id” and “self”.</td>
-<td align="left">POST: Mandatory PUT: No</td>
+<td align="left">No</td>
 </tr>
 <tr>
 <td align="left">user</td>
 <td align="left">String</td>
 <td align="left">1</td>
 <td align="left">The user responsible for the audited action.</td>
-<td align="left">Optional</td>
+<td align="left">No</td>
 </tr>
 <tr>
 <td align="left">application</td>
 <td align="left">String</td>
 <td align="left">1</td>
 <td align="left">The application used to carry out the audited action.</td>
-<td align="left">Optional</td>
+<td align="left">No</td>
 </tr>
 <tr>
 <td align="left">activity</td>
 <td align="left">String</td>
 <td align="left">1</td>
 <td align="left">The activity that was carried out.</td>
-<td align="left">POST: Mandatory PUT: Optional</td>
+<td align="left">POST: Yes<br>PUT: No</td>
 </tr>
 <tr>
 <td align="left">severity</td>
 <td align="left">String</td>
 <td align="left">1</td>
 <td align="left">The severity of action: critical, major, minor, warning or information.</td>
-<td align="left">POST: Mandatory PUT: Optional</td>
+<td align="left">No</td>
 </tr>
 <tr>
 <td align="left">changes</td>
@@ -113,13 +113,13 @@ layout: redirect
 <td align="left">Object</td>
 <td align="left">0..n</td>
 <td align="left">Additional properties of the audit record.</td>
-<td align="left">Optional</td>
+<td align="left">No</td>
 </tr>
 </tbody>
 </table>
 
-Please note that the source can contain not only ManagedObject with id and self, but in case of "Operation" type - operation id and in case of Alarm type - alarm Id.
-In such cases the self link in source is not correct, but it is kept there to not break the clients that expected to get ManagedObject in source.
+> **Info:** `source` can contain a ManagedObject with `id` and `self` properties. Also, in case of "Operation" type, it can contain an operation `id`. In case of "Alarm" type, an alarm `id`.
+In both cases, the `self` link in `source` is not correct, but it is kept there to not break the clients that expect to get a ManagedObject in `source`.
 
 ### GET an audit record
 

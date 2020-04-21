@@ -250,7 +250,7 @@ The PUT template for alarms uses the type of the alarm to find the alarm to upda
 # 10,msgId,method,api,response,type,custom1.path,custom1.type,custom1.value
 10,999,PUT,ALARM,,c8y_MyCustomAlarm,status,ALARMSTATUS
 # Usage:
-999,FAILED
+999,CLEARED
 ```
 
 PUT templates for operations use the fragment of the operation to find the operation. It will first check the EXECUTING operations and, if there is no EXECUTING operation, it will check the PENDING operations.

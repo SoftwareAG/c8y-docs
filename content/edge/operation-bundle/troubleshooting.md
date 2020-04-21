@@ -2,8 +2,6 @@
 weight: 30
 title: Troubleshooting the system
 layout: redirect
-aliases:
-  - /edge/operation/#troubleshooting
 ---
 
 In case of any issues we provide a number of options which help you find out what might be the cause and give advice how to fix it. 
@@ -228,7 +226,7 @@ Monit can provide a quick status report of all configured services and processes
 
 There might be cases where Monit has stopped monitoring some resources because of timeout on constant failures or dependency issues. 
 
-<img src="/images/edge/edge-monitoring-02.png" name="Status report" style="width:75%;"/> 
+<img src="/guides/images/edge/edge-monitoring-02.png" name="Status report" style="width:75%;"/> 
 
 A specific component, for example, `apama-ctrl_proc`, can be restarted using the following command: 
 
@@ -279,9 +277,25 @@ To access the apama-ctrl log files, run the command:
 |Smartrule-agent-server-apama|smartrule-agent-server-apama-gc.log<br> smartrule-agent-server-apama.log<br>smartrule.log|/var/log/smartrule/
 |cumulocity-agent|cumulocity-agent.log|/var/log/cumulocity-agent/
 
-##### DataHub log file locations
+##### Microservices log file locations
 
-See [Log files](/datahub/running-datahub-on-the-edge/#log-files) for details on DataHub log files.
+The logs of the Kubernetes components are captured at:
+*/tmp/diagnostic-utility/diagnostic_report_XXXXX/cumulocity/log_archive/kubernetes_logs.zip.*
+
+The kubernetes_logs.zip file contains the logs of all Kubernetes platform components at “kube-system” path in the archive. The components captured are:
+
+* heapster-*xxxxxxxxxx*-*xxxxx*
+* kube-apiserver-server
+* kube-controller-manager-server
+* kube-dns-*xxxxxxxx*-*xxxxx*
+* kube-flannel-ds-*xxxxx*
+* kube-proxy-*xxxxx*
+* kube-scheduler-server
+
+The hosted microservices are captured at *cumulocity-single-node* path in the archive. The pre-installed component **kube-registry-persistent-secure-789fb5449d-j2jbx** is already available in the archive. The logs of any additional microservices that are uploaded will also be available at this path.
+
+>**Info**: The alphanumeric sequences in these pod names are for representational purposes and would vary in your environment.
+
 
 #### Adjust log level
 
@@ -404,7 +418,7 @@ The following Cumulocity information is collected:
 |Mongo command execution result|MongoDB supports commands execution, which can give the status of the MongoDB server. Currently 'ping', 'dbstats' and 'serverStatus' commands are executed on each of the MongoDB nodes (currently it is management and edge). The MongoDB commands give vital information about the MongoDB server like the db version, process-id, uptime information etc.
 |Mongo top output|The output of mongo top command is captured here
 |Thread dumps|Thread dumps of all the running java processes and mongo processes are captured. For java processes the 'jstack' command is executed to get the thread dumps. For non-java processes like MongoDB, the 'pstack' command is used. Furthermore the 'pstack' command is applied on java processes as well.
-|Log files|Archive of log files from Cumulocity, its microservices, Apama, and DataHub (if installed) is created. In case of Cumulocity, only the 'live' logs are considered and roll-over log files are discarded.
+|Log files|Archive of log files from Cumulocity, its microservices and Apama is created. In case of Cumulocity, only the 'live' logs are considered and roll-over log files are discarded.
 |Configuration files|Archive of Cumulocity configuration files from Cumulocity and its microservices is created.
 |Jstat dumps|Jstat command provides performance statistics for a given JVM. 
 

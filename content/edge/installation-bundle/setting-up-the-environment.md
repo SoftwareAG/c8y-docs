@@ -2,17 +2,15 @@
 weight: 20
 title: Setting up the environment
 layout: redirect
-aliases:
-  - /edge/installation/#setting-up-the-environment
 ---
 
 
 For your convenience, we provide the hypervisor examples for setting up Cumulocity IoT Edge:
 
-* [Example setup for ESXi VMWare](/edge/installation#setting-up-esxi)
-* [Example setup for VMWare Workstation Player](/edge/installation#setting-up-vmware)
-* [Example setup for Hyper-V](/edge/installation#setting-up-hyper-v)
-* [Example setup for VirtualBox](/edge/installation#setting-up-virtual-box)
+* [Example setup for ESXi VMWare](/guides/edge/installation#setting-up-esxi)
+* [Example setup for VMWare Workstation Player](/guides/edge/installation#setting-up-vmware)
+* [Example setup for Hyper-V](/guides/edge/installation#setting-up-hyper-v)
+* [Example setup for VirtualBox](/guides/edge/installation#setting-up-virtual-box)
 
 
 >**Info**: VirtualBox support is deprecated, so it is not recommended to use it in a production environment.
@@ -35,7 +33,7 @@ ssh admin@<IP address>
 $ Password: manage
 ```
 	
-Use the IP address provided during [network configuration](/edge/installation#configuration).
+Use the IP address provided during [network configuration](/guides/edge/installation#configuration).
 
 |Hypervisor|Default IP Address|
 |:---|:---|

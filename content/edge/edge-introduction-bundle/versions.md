@@ -2,16 +2,14 @@
 weight: 20
 title: Versions
 layout: redirect
-aliases:
-  - /edge/edge-introduction/#versions
 ---
 
 Cumulocity IoT Edge “October 2019 release” uses the following versions:
 
 |<div style="width:130px">Edge component</div>|<div style="width:300px">Version</div>|
 |:---|:---|
-|[Cumulocity Core](/concepts)|10.5.0|
-|[Apama](/apama)|10.5.0|
+|[Cumulocity Core](/guides/concepts)|10.5.0|
+|[Apama](/guides/apama)|10.5.0|
 
 To learn more about Cumulocity IoT Edge you may also consult the documentation of the above products.
 

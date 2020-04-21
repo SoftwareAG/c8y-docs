@@ -98,8 +98,8 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 * Main brand color.
 * Secondary brand color. The default value is “#07b91A”.
-* Dark brand color. Mostly used for two-color icons. The default value is "#0B385B". 
-* Light brand color. Mostly used for two-color icons. The default value is "#5FAEEC".
+* Dark brand color. Mainly used for two-color icons. The default value is "#0B385B". 
+* Light brand color. Mainly used for two-color icons. The default value is "#5FAEEC".
 * Text color. The default value is “#444”.
 * Link color. The default value is the same as the main brand color.
 * Main background color. The default value for this item is “#FAFAFA”.

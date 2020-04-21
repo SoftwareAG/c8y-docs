@@ -10,7 +10,9 @@ Cumulocity IoT Edge comes with three built-in applications - Device Management, 
 
 Since Cumulocity IoT Edge is based on the same software as the cloud-based Cumulocity IoT Core version, the above applications are the same in both versions, with minor restrictions. 
 
-Below find an overview on the functionalities of these applications in Cumulocity IoT Edge. 
+Below find an overview on the functionalities of these applications in Cumulocity IoT Edge.
+
+[DataHub Edge](/edge/datahub-edge) is an optional component of Cumulocity IoT Edge, which can be used for storage and analytics over historical data.
 
 For general information on functionalities and features of the GUI refer to [GUI functionalities and features](/users-guide/overview#gui-features).
 

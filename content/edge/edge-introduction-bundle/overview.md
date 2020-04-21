@@ -23,7 +23,8 @@ Features of Cumulocity IoT Edge include:
 * Apama streaming analytics engine for real-time local data analysis
 * Ready-to-use IoT Cockpit and Device Management applications
 * Native protocol support for MQTT and REST
-* Edge database for historic data storage
+* Edge database for operational data storage
+* [DataHub Edge](/datahub/running-datahub-on-the-edge/) for historical data storage and analytics (optional component)
 * Easy installation, upgrades and backup/restore
 * Full online support and documentation
 

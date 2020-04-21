@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 10
 title: Troubleshooting the system
 layout: redirect
 ---
@@ -15,6 +15,7 @@ We recommend to follow these steps:
 If you still need to contact SAG support, include the output of the diagnostics script. See the [Diagostics](#diagnostics) section on details how to run it. 
  	
 ### <a name="health-check"></a>Health check	
+
 #### Network
 
 Without working network connection the system is not able to work. The following instructions show how to check the network connectivity of the platform. 
@@ -23,13 +24,13 @@ Without working network connection the system is not able to work. The following
 
 The following commands will show the interface and network settings of the machine:
 
-	$ ip a
+	[admin@server ~]$ ip a
 
 This will list all interfaces and their current configuration. 
 
 Example:
 
-	$ ip a
+	[admin@server ~]$ ip a
 
 	1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -56,11 +57,11 @@ You need to make sure that the node has an external interface (ethX) and the loo
 
 The following command lists the local routing information.
 
-	$ netstat -rn
+	[admin@server ~]$ netstat -rn
 
 Example:
 
-	$ netstat -rn
+	[admin@server ~]$ netstat -rn
 	Kernel IP routing table
 	Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
 	0.0.0.0         10.0.2.2        0.0.0.0         UG        0 0          0 enp0s3
@@ -73,7 +74,7 @@ Make sure you have the destination 0.0.0.0 in the list which then also has the g
 
 Try to reach a well-known address in the internet with the following command:
 
-	$ ping -s 1500 8.8.8.8
+	[admin@server ~]$ ping -s 1500 8.8.8.8
 	PING 8.8.8.8 (8.8.8.8) 1500(1528) bytes of data.
 	64 bytes from 8.8.8.8: icmp_seq=1 ttl=56 time=2.61 ms
 	64 bytes from 8.8.8.8: icmp_seq=2 ttl=56 time=2.80 ms
@@ -189,7 +190,7 @@ The list describes the tenants which on the core node have not been fully initia
 
 Run the following command to check the REST API availability:
 
-	$ curl -u 'edge/<username>:<password>' -v -X GET http://<base_url>/platform
+	[admin@server ~]$ curl -u 'edge/<username>:<password>' -v -X GET http://<base_url>/platform
 	 
 	* About to connect() to <base_url> port 80 (#0)
 	*   Trying 52.29.189.245... connected
@@ -222,23 +223,23 @@ In Edge, Monit is used to monitor processes and take a restart action if any of 
 
 Monit can provide a quick status report of all configured services and processes by running the following command as admin user:
 
-	$ sudo monit summary
+	[admin@server ~]$ sudo monit summary
 
 There might be cases where Monit has stopped monitoring some resources because of timeout on constant failures or dependency issues. 
 
-<img src="/guides/images/edge/edge-monitoring-02.png" name="Status report" style="width:75%;"/> 
+<img src="/images/edge/edge-monitoring-02.png" name="Status report" style="width:75%;"/> 
 
 A specific component, for example, `apama-ctrl_proc`, can be restarted using the following command: 
 
-	$ sudo monit restart apama-ctrl_proc
+	[admin@server ~]$ sudo monit restart apama-ctrl_proc
 
 The Monit status can be checked by running: 
 
-	$ sudo systemctl status monit
+	[admin@server ~]$ sudo systemctl status monit
 
 Monit can be restarted by running: 
 	
-	$ sudo systemctl restart monit
+	[admin@server ~]$ sudo systemctl restart monit
 
 The log file for monit is located in /var/log/monit.log.
 
@@ -260,7 +261,7 @@ The solution stores log files at the following locations for the different nodes
 
 To access the apama-ctrl log files, run the command:
 
-	$ sudo docker logs apama-ctrl-edge
+	[admin@server ~]$ sudo docker logs apama-ctrl-edge
 
 ##### MongoDB log file locations
 
@@ -273,33 +274,18 @@ To access the apama-ctrl log files, run the command:
 
 |Component|Files|Location|
 |:---|:---|:---
-|opcua-agent-server|opcua-agent-server-gc.log<br>opcua-agent-server.log<br> opcua-agent-server-2018-04-30.0.log|/var/log/opcua/
+|opcua-mgmt-service|opcua-mgmt-service.log|/var/log/opcua/
+|opcua-device-gateway|opcua-device-gateway.log|/var/log/opcua/
 |Smartrule-agent-server-apama|smartrule-agent-server-apama-gc.log<br> smartrule-agent-server-apama.log<br>smartrule.log|/var/log/smartrule/
 |cumulocity-agent|cumulocity-agent.log|/var/log/cumulocity-agent/
 
-##### Microservices log file locations
+##### DataHub log file locations
 
-The logs of the Kubernetes components are captured at:
-*/tmp/diagnostic-utility/diagnostic_report_XXXXX/cumulocity/log_archive/kubernetes_logs.zip.*
-
-The kubernetes_logs.zip file contains the logs of all Kubernetes platform components at “kube-system” path in the archive. The components captured are:
-
-* heapster-*xxxxxxxxxx*-*xxxxx*
-* kube-apiserver-server
-* kube-controller-manager-server
-* kube-dns-*xxxxxxxx*-*xxxxx*
-* kube-flannel-ds-*xxxxx*
-* kube-proxy-*xxxxx*
-* kube-scheduler-server
-
-The hosted microservices are captured at *cumulocity-single-node* path in the archive. The pre-installed component **kube-registry-persistent-secure-789fb5449d-j2jbx** is already available in the archive. The logs of any additional microservices that are uploaded will also be available at this path.
-
->**Info**: The alphanumeric sequences in these pod names are for representational purposes and would vary in your environment.
-
+See [Log files](/datahub/running-datahub-on-the-edge/#log-files) for details on DataHub log files.
 
 #### Adjust log level
 
-This section describes how to change the log level for Cumulocity-specific applications on the backend side. It does not explain how to change log settings for standard components like databases or other operating system related services. 
+This section describes how to change the log level for Cumulocity IoT specific applications on the backend side. It does not explain how to change log settings for standard components like databases or other operating system related services. 
 
 ##### Changing log level for Karaf
 
@@ -356,7 +342,7 @@ Change the following entries to adjust the log levels:
 			
 	log4j.logger.com.cumulocity.rest.interceptors=INFO,access
 			
-	og4j.logger.com.cumulocity.rest.mediatypes=INFO
+	log4j.logger.com.cumulocity.rest.mediatypes=INFO
 
 Adjust the log levels by changing the level attribute according to the following values. The levels are inclusive - meaning a given level will also include all “lower” log levels, e.g. when you set the level to WARN you will also get ERROR events.
 
@@ -373,7 +359,7 @@ Save the file. It is re-read by the application every few minutes so you do not 
 
 The diagnostic utility is enabled by default and runs periodically. However, this can also be triggered manually on demand. To execute it manually, follow the steps below. 
 
-	cd opt/c8y/utilities/diagnostic-utility
+	cd /opt/c8y/utilities/diagnostic-utility
 	sudo ./run_data_collector.py
 
 #### Hardware information
@@ -406,20 +392,20 @@ The following software information is available:
 |Running processes|A list of running processes is prepared using the 'ps' command
 |Top result|Captures the output of top command. This report is very informative as it holds information of running processes at argument level and their respective resource consumption.
 
-#### Cumulocity information
+#### Cumulocity IoT information
 
-This section contains information on the running Cumulocity processes, health endpoint check result, Cumulocity logs etc.
+This section contains information on the running Cumulocity IoT processes, health endpoint check result, Cumulocity IoT logs etc.
 
-The following Cumulocity information is collected:
+The following Cumulocity IoT information is collected:
 
 |<div style="width:250px">Information</div>|Description|
 |:---------------------|:---|
-|Health endpoint result|Cumulocity and its microservices provide health endpoints, from which the user can get the system status. 
+|Health endpoint result|Cumulocity IoT and its microservices provide health endpoints, from which the user can get the system status. 
 |Mongo command execution result|MongoDB supports commands execution, which can give the status of the MongoDB server. Currently 'ping', 'dbstats' and 'serverStatus' commands are executed on each of the MongoDB nodes (currently it is management and edge). The MongoDB commands give vital information about the MongoDB server like the db version, process-id, uptime information etc.
 |Mongo top output|The output of mongo top command is captured here
 |Thread dumps|Thread dumps of all the running java processes and mongo processes are captured. For java processes the 'jstack' command is executed to get the thread dumps. For non-java processes like MongoDB, the 'pstack' command is used. Furthermore the 'pstack' command is applied on java processes as well.
-|Log files|Archive of log files from Cumulocity, its microservices and Apama is created. In case of Cumulocity, only the 'live' logs are considered and roll-over log files are discarded.
-|Configuration files|Archive of Cumulocity configuration files from Cumulocity and its microservices is created.
+|Log files|Archive of log files from Cumulocity IoT, its microservices and Apama is created. In case of Cumulocity IoT, only the 'live' logs are considered and roll-over log files are discarded.
+|Configuration files|Archive of Cumulocity IoT configuration files from Cumulocity IoT and its microservices is created.
 |Jstat dumps|Jstat command provides performance statistics for a given JVM. 
 
 Jstat dumps can provide information on the following options:
@@ -462,14 +448,34 @@ The monitor script supports only one optional startup parameter:
 
 *  -s or --skipDataCollector: Allows the user to skip the data collection even if one or more monitored components is not working.
 
+#### Microservices log file locations
+
+The logs of the Kubernetes components are captured at:
+*/tmp/diagnostic-utility/diagnostic_report_XXXXX/cumulocity/log_archive/kubernetes_logs.zip.*
+
+The kubernetes_logs.zip file contains the logs of all Kubernetes platform components at “kube-system” path in the archive. The components captured are:
+
+* heapster-*XX*
+* kube-apiserver-server
+* kube-controller-manager-server
+* kube-dns-*XX*
+* kube-flannel-ds-*XX*
+* kube-proxy-*XX*
+* kube-scheduler-server
+
+>**Info:** The *XX* represents randomly generated alphanumeric sequences in these pod names and would vary in your environment.
+
+The hosted microservices are captured at *cumulocity-single-node* path in the archive. The pre-installed component **kube-registry-persistent-secure-xx-xx** is already available in the archive. The logs of any additional microservices that are uploaded will also be available at this path.
 
 #### Utility configuration file
 
 The diagnostic utility can be customized using a properties file located under "/etc/diagnostic-utility/diagnostic_utility.properties".
 
+>**Important:** The SMTP properties in the table below are only for collecting diagnostics information. For configuring the email server, see [Administration > Changing settings> Configuration settings](/users-guide/administration/#config-platform) in the User guide.
+
 Following are the available keys used in the configuration file:
 
-|<div style="width:250px">Information</div>|Description|
+|<div style="width:300px">Information</div>|Description|
 |:----------------|:---|
 |notify.support.by.email|Allows users to select whether they want to receive the diagnostic report via email
 |support.email|Email ID to be used by the utility while sending support email
@@ -477,8 +483,8 @@ Following are the available keys used in the configuration file:
 |smtp.server.port|SMTP port to be used by the utility while sending support email
 |smtp.username|SMTP username to be used by the utility while sending support email
 |smtp.password|SMTP password to be used by the utility while sending support email
-|log.backup|Components for which log backup has to be done
-|configuration.backup|Components for which configuration backup has to be done
+|components.for.log.backup|Components for which the log backup has to be performed
+|components.for.configuration.backup|Components for which the configuration backup has to be performed
 |report.directory|Report directory where the diagnostic reports have to be placed
-|{component-name}.log.path|Absolute log path of components who do not use /var/log as their logging directory
+|{component-name}.log.path|Absolute log path of the components under "component.for.log.backup" which do not use /var/log as the logging directory
 

@@ -8,7 +8,7 @@ layout: redirect
 
 The tenant admin user could be locked if incorrect credentials are passed during login into UI, REST API or MQTT. 
 
-<img src="/guides/images/edge/edge-tenant-lock.png" name="Locked user" style="width:50%;"/>
+<img src="/images/edge/edge-tenant-lock.png" name="Locked user" style="width:50%;"/>
 
 To unlock the tenant admin user, perform the following steps:
 
@@ -25,13 +25,13 @@ To configure the "reset password" template and email server settings, perform th
 	* User: edgeadmin 
 	* Password: Will be the same as the Edge tenant admin password provided in the post-installation execution
 <br>
-2. Update the email server details and templates following the instructions in [Administration > Changing settings> Configuration settings](/guides/users-guide/administration/#config-platform) in the User guide.
+2. Update the email server details and templates following the instructions in [Administration > Changing settings> Configuration settings](/users-guide/administration/#config-platform) in the User guide.
 
 ### Increasing the system performance
 
 If the system performance is slow, the memory should be increased. First, increase the memory of the VM. This is done by stopping the VM and increasing its memory.
 
-<img src="/guides/images/edge/edge-vm-increasing-memory.png" name="Increasing memory"/>
+<img src="/images/edge/edge-vm-increasing-memory.png" name="Increasing memory"/>
 
 Increasing the VM memory should be followed by a JVM memory increase. 
 
@@ -79,6 +79,14 @@ For microservices, there currently is no specific log rotation configured.
 
 For many use cases, and especially when using APAMA, time synchronization must be available, i.e. the time inside the VM must be synchronized with the time of the host OS and with devices sending data.
 
-Out of the box, for VMWare-based installations, vmtools is responsible for time synchronization with the host OS. For VirtualBox-based installations, VirtualBox guest additions is responsible. 
+`chrony` or `ntp` services can be configured by end users based on their time synchronization needs. These services are by default stopped and disabled in Edge and can be enabled by standard commands. Use the following commands to interact with the `chrony` or `ntp` services:
+ 
+	systemctl start|stop|status|restart ntpd
+	systemctl start|stop|status|restart chronyd
 
-Additionally, chrony or ntp services can be configured by end users based on their time synchronization needs. Refer to the respective documentation for the configuration of these services. These services are by default stopped and disabled in Edge and can be enabled by standard commands.
+By default, for VMWare-based installations, the *vmtools* service is responsible for time synchronization with the host operating system. For VirtualBox-based installations, the *VirtualBox guest additions* service is responsible.
+
+For HyperV, the `chronyd` service is enabled by default for accurate time synchronization.
+
+>**Info:** As HyperV relies on the `chronyd` service for time synchronization, do not stop the `chronyd` service. 
+

@@ -16,15 +16,16 @@ Reasons for using an onsite installation of Cumulocity IoT Edge include:
 
 Features of Cumulocity IoT Edge include:
 
-* Edge Agent, which enables remote monitoring and management of an Edge instance from the Cumulocity tenant.
-* Microservices, which are server-side applications which may be used to extend the Cumulocity platform with customer-specific functionality.
+* Edge Agent, which enables remote monitoring and management of an Edge instance from the Cumulocity IoT tenant.
+* Microservices, which are server-side applications which may be used to extend the Cumulocity IoT platform with customer-specific functionality.
 * Data Broker to send IoT data to the cloud and receive operations from the cloud, with web-based UI to filter data
 * Apama streaming analytics engine for real-time local data analysis
 * Ready-to-use IoT Cockpit and Device Management applications
 * Native protocol support for MQTT and REST
-* Edge database for historic data storage
-* Cloud Fieldbus with web-based UI to create local Modbus and OPC/UA connections
+* Edge database for operational data storage
+* [DataHub Edge](/datahub/running-datahub-on-the-edge/) for historical data storage and analytics (optional component)
+* Cloud Fieldbus with web-based UI to create local Modbus and OPC UA connections
 * Easy installation, upgrades and backup/restore
 * Full online support and documentation
 
-<img src="/guides/images/edge/cumulocity-edge-overview.png" name="Cumulocity Edge overview" style="width:75%;"/>
+<img src="/images/edge/cumulocity-edge-overview.png" name="Cumulocity Edge overview" style="width:75%;"/>

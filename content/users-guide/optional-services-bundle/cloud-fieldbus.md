@@ -4,21 +4,21 @@ title: Cloud Fieldbus
 layout: redirect
 ---
 
-Cloud Fieldbus is a Cumulocity IoT application with the ability to collect data from fieldbus devices and remotely manage them. This section describes how to
+With Cumulocity IoT Cloud Fieldbus you can collect data from fieldbus devices and remotely manage them. This section describes how to
 
 * [Connect](#connect) fieldbus devices.
 * [Manage](#manage) the connected fieldbus devices.
 * [Configure](#configure) the remote management capabilities of particular types of devices and [import and export](#import) them.
 
-It is supported out of the box by the following terminals:
+Cloud Fieldbus is supported out of the box by the following terminals:
 
 * [Pssystec Smartbox-Modbus](https://devicepartnerportal.softwareag.com/web/#/devices/10043) for Modbus/RTU
 * [Pssystec SmartBox DP](https://devicepartnerportal.softwareag.com/web/#/devices/10041) for Profibus
-* [Netcomm Wireless NTC-6200](https://devicepartnerportal.softwareag.com/web/#/devices/10034) for Modbus/TCP and Modbus/RTU
+* [NetComm Wireless NTC-6200](https://devicepartnerportal.softwareag.com/web/#/devices/10034) for Modbus/TCP and Modbus/RTU
 
-> If you want to support Cloud Fieldbus with your terminal, please contact info@cumulocity.com for more information.
+> **Info:** If you want to support Cloud Fieldbus with your terminal, please contact info@cumulocity.com for more information.
 
-### <a name="connect"></a>Connecting Fieldbus devices
+### <a name="connect"></a>Connecting fieldbus devices
 
 For the following instructions, we assume you have a Cloud Fieldbus terminal available and it is registered as a device in your Cumulocity IoT tenant. To register a terminal with Cumulocity IoT, follow the instructions provided with the terminal.
 
@@ -32,15 +32,15 @@ To connect a Modbus/RTU device:
 4. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Modbus** tab.
 5. Change the communication settings shown in the section **Serial communication** to match the settings on the bus, if needed.
 6. Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency where measurements are sent to Cumulocity IoT.
-7. Click **Save** if you made changes.
+7. Click **Save** to save your settings.
 
 **Adding child devices**
 
-1. To start communication between the terminal and the Modbus/RTU device, click **Add RTU device**.
-2. Enter a name for the device and select the device protocol from the drop-down field. To add new device types, see [Configuring Fieldbus device types](#configure) below. Set the Modbus address of the connected device.
+1. To start the communication between the terminal and the Modbus/RTU device, click **Add RTU device**.
+2. Enter a name for the device and select the device protocol from the dropdown field. See [Configuring fieldbus device protocols](#configure) for information on how to add a new device protocol. Set the Modbus address of the connected device.
 3. Click **Add**. Cumulocity IoT will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.
 
-After completion, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the table to navigate to the device. If you have not yet added Modbus devices to the terminal, you may have to reload your browser window to make the **Child Devices** tab visible.
+After completion, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the list to navigate to the device. If you have not yet added Modbus devices to the terminal, you may have to reload your browser window to make the **Child Devices** tab visible.
 
 <br> ![Add Modbus device](/images/users-guide/cloud-fieldbus/fieldbus-new-modbus-rtu.png)<br>
 
@@ -53,49 +53,49 @@ To connect a Modbus/TCP device:
 3. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Network** tab. Verify that the LAN settings of the terminal match the settings of the device so that TCP communication can be established.
 4. Switch to the **Modbus** tab.
 5. Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency at which measurements are sent to Cumulocity IoT.
-6. Click **Save** if you made changes.
+6. Click **Save** to save your settings.
 
 **Adding child devices**
 
-1. To start communication between the terminal and the Modbus/TCP device, click **Add TCP device**.
-2. Enter a name for the device and select the device protocol from the dropdown field. To add new device types, see [Configuring Fieldbus device types](#configure) below. Set the Modbus address and the IP address of the connected device.
+1. To start the communication between the terminal and the Modbus/TCP device, click **Add TCP device**.
+2. Enter a name for the device and select the device protocol from the dropdown field. See [Configuring fieldbus device types](#configure) for information on how to add a new device protocol. Set the Modbus address and the IP address of the connected device.
 3. Click **Add**.
 
 Cumulocity IoT will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.
 
 ![Add Modbus device](/images/users-guide/cloud-fieldbus/fieldbus-new-modbus-tcp.png)
 
-> We assume that all Modbus/TCP communication uses the standard Modbus/TCP port 502. On the NTC-6200, the port to be used can be configured through the variable "service.cumulocity.plugin.lua__modbus.port" using, for example, Device Shell or the local web user interface of the device.
+> **Info:** We assume that all Modbus/TCP communication uses the standard Modbus/TCP port 502. On the NTC-6200, the port to be used can be configured through the variable "service.cumulocity.plugin.lua__modbus.port" via the device shell or the local web user interface of the device.
 
 #### Connecting CAN devices
 
 To connect a CAN device:
 
-1. Physically wire the CAN device through to the terminal.
+1. Physically wire the CAN device to the terminal.
 2. Check the serial communication baud rate of the device according to the instructions provided with the device. These have to match all devices on the bus.
 3. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **CAN bus** tab.
 4. Change the baud rate setting shown in the section **CAN bus communication** to match the settings on the bus, if needed.
 5. Change the transmit rate according to your requirements. The transmit rate is the frequency where measurements are sent to Cumulocity IoT.
-6. Click **Save** if you made changes.
+6. Click **Save** to save your settings.
 
 **Adding child devices**
 
-1. To start communication between the terminal and the CAN device, click **Add CAN device**.
-2. Enter a name for the device and select a device protocol from the dropdown field. To add new device types, see [Configuring Fieldbus device types](#configure) below.
+1. To start the communication between the terminal and the CAN device, click **Add CAN device**.
+2. Enter a name for the device and select a device protocol from the dropdown field. See [Configuring fieldbus device types](#configure) for information on how to add a new device protocol.
 3. Click **Add**.
 
-Cumulocity IoT will now send a notification to the Fieldbus terminal that a new device is ready to be managed. This may take a few seconds.
+Cumulocity IoT will now send a notification to the fieldbus terminal that a new device is ready to be managed. This may take a few seconds.
 
-After completion, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the table to navigate to the device. If you have not yet added Fieldbus devices to the terminal, you may have to reload your browser window to make the "Child Devices" tab visible.
+After completion, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the list to navigate to the device. If you have not yet added fieldbus devices to the terminal, you may have to reload your browser window to make the **Child devices** tab visible.
 
 ![Add CAN device](/images/users-guide/cloud-fieldbus/fieldbus-new-can-device.png)
 
 #### <a name="connect-profibus"></a>Connecting Profibus devices
 
-Connecting Profibus differs slightly from the regular Plug & Play approach of Cloud Fieldbus. The gateway device acts as slave on the Profibus so it can easily be integrated into existing infrastructure. This means that Profibus data must be actively sent to the gateway though. Typically this is done by programming a PLC to actively send information to the gateway via it’s configured Profibus slave address.
+Connecting Profibus differs slightly from the regular plug & play approach of Cloud Fieldbus. The gateway device acts as a slave on the Profibus so it can easily be integrated into an existing infrastructure. This means that Profibus data must be actively sent to the gateway though. Typically, this is done by programming a PLC to actively send information to the gateway via its configured Profibus slave address.
 
 1. Physically wire the Profibus device to the terminal.
-2. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the "Profibus" tab.
+2. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Profibus** tab.
 3. The baud rate is automatically detected by the gateway and is just being displayed here.
 4. Change the transmit rate according to your requirements. The transmit rate is the interval at which measurements are sent to Cumulocity IoT.
 5. Set the slave address of the terminal.
@@ -104,20 +104,22 @@ Connecting Profibus differs slightly from the regular Plug & Play approach of Cl
 
 **Adding child devices**
 
-1. To start communication between the gateway and the Profibus device, click **Add Profibus device**.
+1. To start the communication between the gateway and the Profibus device, click **Add Profibus device**.
 2. Enter a name for the new device.
-3. Select the device protocol from the drop-down box. To add new device types, see [Configuring Fieldbus device types](#configure) below.
+3. Select the device protocol from the dropdown field. See [Configuring fieldbus device types](#configure) for information on how to add a new device protocol.
 4. Click **Add** to confirm and notify the gateway.
 
 <img src="/images/users-guide/cloud-fieldbus/fieldbus-new-profibus.png" alt="Add device" style="max-width: 100%">
 
-Now A child device will be created containing the data configured in the selected device type.
+Now a child device will be created containing the data configured in the selected device protocol.
 
 Cumulocity IoT will notify the gateway to send data for the newly created child device.
 
-### <a name="manage"></a>Managing Fieldbus devices
+### <a name="manage"></a>Managing fieldbus devices
 
-Once connected, you can now manage your device. Switch to the **Child devices** tab of a device to list the connected Fieldbus devices and navigate to a Fieldbus device. Depending on the capabilities of the device and its configuration in Cumulocity IoT, you can:
+Once connected, you can now manage your device. Switch to the **Child devices** tab of a device to list the connected fieldbus devices and navigate to a fieldbus device. 
+
+Depending on the capabilities of the device and its configuration in Cumulocity IoT, you can:
 
 * [Collect measurements](#collect)
 * [Send alarms on coil or register changes](#alarms)
@@ -126,7 +128,7 @@ Once connected, you can now manage your device. Switch to the **Child devices** 
 
 #### <a name="collect"></a>Collecting measurements
 
-If the device type of the Fieldbus device is configured to collect measurements, these will be visible in the **Measurements** tab. They will also be available for usage in the [Data Explorer](/users-guide/cockpit/#data-explorer) and in [Dashboard widgets](/users-guide/cockpit#dashboards).
+If the device protocol of the fieldbus device is configured to collect measurements, these will be visible in the **Measurements** tab. They will also be available for usage in the [Data explorer](/users-guide/cockpit/#data-explorer) and in [dashboard widgets](/users-guide/cockpit#dashboards).
 
 Data is collected according to the interval specified in the "transmit rate" property of the terminal as described above. To optimize the data traffic, data that is exactly the same as collected previously may not be sent again.
 
@@ -134,34 +136,34 @@ Data is collected according to the interval specified in the "transmit rate" pro
 
 #### <a name="alarms"></a>Monitoring alarms
 
-If the device type of the Fieldbus device is configured to send alarms, these will be visible in the **Alarms** tab and usable in widgets. To determine the alarm status, the Fieldbus devices are monitored for changes according to the "polling rate" setting of the terminal. If a particular coil or register is non-zero, an alarm will be raised. If the value goes back to zero, the alarm will be cleared.
+If the device protocol of the fieldbus device is configured to send alarms, these will be visible in the **Alarms** tab and usable in widgets. To determine the alarm status, the fieldbus devices are monitored for changes according to the "polling rate" setting of the terminal. If a particular coil or register is non-zero, an alarm will be raised. If the value goes back to zero, the alarm will be cleared.
 
 ![Fieldbus alarms](/images/users-guide/cloud-fieldbus/fieldbus-modbus-alarms.png)
 
 #### <a name="logging"></a>Logging events
 
-Similar to alarms, changes in Fieldbus devices can be monitored and logged as events. Each time, the value of the monitored coil or register changes, an event is created. You can see the events in the "Events" tab of the device or use them in widgets. You can inspect the new value of the monitored coil or register by clicking on the event and unfolding the event details.
+Similar to alarms, changes in fieldbus devices can be monitored and logged as events. Each time, the value of the monitored coil or register changes, an event is created. You can see the events in the **Event**s tab of the device or use them in widgets. You can inspect the new value of the monitored coil or register by clicking on the event and unfolding the event details.
 
 ![Fieldbus events](/images/users-guide/cloud-fieldbus/fieldbus-modbus-events-log.png)
 
 #### <a name="status"></a>Monitor a device status
 
-The status of devices can be monitored in real time using dashboard widgets in the Cockpit application. Navigate to the Cockpit application, create a dashboard or report, and add widgets as described in the [Cockpit section](/users-guide/cockpit) in the User guide. The Cloud Fieldbus has two new widgets: The "Fieldbus Device" widget and the "SCADA" widget.
+The status of devices can be monitored in realtime using dashboard widgets in the Cockpit application. Navigate to the Cockpit application, create a dashboard or report, and add widgets as described in the [Cockpit section](/users-guide/cockpit) in the User guide. 
 
-#### <a name="fieldbus-device-widget"></a>Monitoring device status using the Fieldbus Device widget
+#### <a name="fieldbus-device-widget"></a>Monitoring device status using the Fieldbus device widget
 
-The Fieldbus Device widget provides you with a tabular display of the status of a device. The status of the device can also be modified through the widget.
+The "Fieldbus device" widget provides you with a tabular display of the status of a device. The status of the device can also be modified through the widget.
 
-To use the Fieldbus Device widget, follow these steps:
+To use the "Fieldbus device" widget, follow these steps:
 
 1. Select a dashboard and click **Add widget** in the top menu bar.
-2. Select the Fieldbus Device Widget and edit the title of the widget.
+2. Select the "Fieldbus device" widget and edit the title of the widget.
 3. Choose the device that should be shown in the widget in the **Target assets or devices** section.
-4. Select the coils and registers that should be shown on the widget.
+4. Select the coils and registers to be shown on the widget.
 
 ![Adding the Fieldbus Device Widget](/images/users-guide/cloud-fieldbus/fieldbus-widget.png)
 
-In the widget, the selected coils and registers are grouped into display categories as configured in the device type. The Fieldbus Device Widget updates automatically as soon as there is new data available. You do not need to click on reload.
+In the widget, the selected coils and registers are grouped into display categories as configured in the device protocol. The "Fieldbus device" widget updates automatically as soon as there is new data available. You do not need to click **Reload**.
 
 ![Use the Fieldbus Device Widget](/images/users-guide/cloud-fieldbus/fieldbus-modbus-status.png)
 
@@ -169,38 +171,41 @@ Registers and coils that can be changed are represented by active widgets. For e
 
 #### <a name="scada"></a>Monitoring status using the SCADA widget
 
-The SCADA widget provides you with a graphic representation of the status of a device.
+The "SCADA" widget provides you with a graphic representation of the status of a device.
 
-To use the SCADA widget, follow these steps:
+To use the "SCADA" widget, follow these steps:
 
 1. Select a dashboard and click **Add widget** in the top menu bar.
-2. Select the SCADA widget and edit the title of the widget.
+2. Select the "SCADA" widget and edit the title of the widget.
 3. Choose the device that should be shown in the widget in the **Target assets or devices** section.
 4. Upload an SVG file with the graphic representation of the device. SVG files are vector graphics that have to be specifically prepared with placeholders for the status information. See [Preparing SVG files for the SCADA widget](#scadasvg) below.
 5. Assign placeholders to devices. Note that multiple devices can be taken as source.
-6. You now need to assign each placeholder to a property of the device. Hover over each placeholder and select **Assign device property** or **Assign fieldbus property**. A dialog box comes up, in which you can choose basic device properties or fieldbus properties (i.e. status coils and registers). Select the desired property and click **Select**.
+6. You now need to assign each placeholder to a property of the device. Hover over each placeholder and select **Assign device property** or **Assign fieldbus property**. In the upcoming dialog box, you can choose basic device properties or fieldbus properties (i.e. status coils and registers). Select the desired property and click **Select**.
 7. After assigning all placeholders, a preview of the widget with the current values of the properties is shown. Click **Save** to place the widget on the dashboard.
 
 ![Adding the SCADA Widget](/images/users-guide/cloud-fieldbus/fieldbus-scada-edit.png)
 
 #### <a name="scadasvg"></a>Preparing SVG files for the SCADA widget
 
-The SCADA widgets inspect uploaded SVG files for placeholders. These placeholders are replaced by actual values from devices. Placeholders have a specific syntax and can be used anywhere in the SVG file. To add a placeholder, enter the name of the placeholder in double curly braces using your design application or a text editor.
+The "SCADA" widgets inspect uploaded SVG files for placeholders. These placeholders are replaced by actual values from devices. Placeholders have a specific syntax and can be used anywhere in the SVG file. To add a placeholder, enter the name of the placeholder in double curly braces using your design application or a text editor.
 
-When creating SVG files, we recommend you to use [https://boxy-svg.com/](https://boxy-svg.com/). It is an easy to use, quality chrome extension.
+When creating SVG files, we recommend to use [https://boxy-svg.com/](https://boxy-svg.com/). It is an easy to use, quality chrome extension.
 
 	<text class="text" xt-anchor="middle" x="100" y="236.982125" width="200" ...>
 		{{batteryValue}}
 	</text>
 
 
-### <a name="configure"></a>Configuring Fieldbus device types
+### <a name="configure"></a>Configuring fieldbus device protocols
 
-New Fieldbus device types can be set up in the **Device database** page which you open from the **Device Types** menu in the navigator.
+New fieldbus device protocols can be created in the **Device protocols** page which you open from the **Device types** menu in the navigator.
 
-Click **New** in the top menu bar. In the **Device protocol** field, select the protocol of your device and enter a name for it.
+1. Click **Add device protocol** in the top menu bar. 
+2. Select the protocol of your device from the list. 
+3. Enter a name for it and an optional description.
+4. Click **Create** to create the protocol.
 
-Now you can start adding coils and register definitions to the device type, depending on the selected protocol (see the descriptions below).
+Now you can start adding coils and register definitions to the device protocol, depending on the selected protocol (see the descriptions below).
 
 ![Device Database](/images/users-guide/cloud-fieldbus/fieldbus-deviceprotocols-modbus.png)
 
@@ -247,14 +252,14 @@ In the **Options** section, select the checkbox **Use server time** to create th
 
 Finally, click **Save** to save your settings.
 
-If you edit a device type that is currently in use, you may need to
+If you edit a device protocol that is currently in use, you may need to
 
-* restart the terminals that use the device type,
-* reconfigure dashboards and widgets that use the device type.
+* restart the terminals that use the device protocol,
+* reconfigure dashboards and widgets that use the device protocol.
 
 #### <a name="configureCAN"></a>Configuring CAN bus data
 
-CAN device types can be configured in a very similar way as Modbus device types. For more information, see [Configuring Modbus data](#configureModbus) above. The differences are:
+CAN device protocol can be configured in a very similar way as Modbus device protocols. For more information, see [Configuring Modbus data](#configureModbus) above. The differences are:
 
 * Holding registers are used to describe the different pieces of data inside CAN messages.
 * Enter the CAN message ID of the specific message the data should be extracted from. Use a hexadecimal number for the message ID.
@@ -264,7 +269,7 @@ CAN device types can be configured in a very similar way as Modbus device types.
 
 #### <a name="configureProfibus"></a>Configuring Profibus data
 
-To configure a Profibus device type, select "Profibus" as device type from the dropdown list and enter a name for it.
+To configure a Profibus device protocol, select "Profibus" as device protocol from the dropdown list and enter a name for it.
 
 In the Register section, click **Add** at the right to add one or more register definitions as described exemplarily for Modbus devices in [Adding a register definition](#addRegister) above.  
 
@@ -272,22 +277,22 @@ In the **Options** section, select the checkbox **Use server time** to create th
 
 Finally, click **Save** to save your settings.
 
-If you edit a device type that is currently in use, you may need to
+If you edit a device protocol that is currently in use, you may need to
 
-* restart the terminals that use the device type,
-* reconfigure dashboards and widgets that use the device type.
+* restart the terminals that use the device protocol,
+* reconfigure dashboards and widgets that use the device protocol.
 
 #### <a name="configure-canopen"></a>Configuring CANopen data
 
-There are two ways to create a new device type. Either manually from scratch via the “New” operation or via import of an EDS file for the corresponding device.
+There are two ways to create a new device protocol. Either manually from scratch via the “New” operation or via import of an EDS file for the corresponding device.
 
-**Manually creating a new device type from scratch**
+**Manually creating a new device protocol from scratch**
 
 Navigate to the **Device database** page and click **New**. The following window will open:
 
-![New device type](/images/users-guide/cloud-fieldbus/fieldbus-new-type.png)
+![New device protocol](/images/users-guide/cloud-fieldbus/fieldbus-new-type.png)
 
-Select “CANopen” as fieldbus type and enter a name for your device type. Specific to CANopen is the **CANopen device type** field which accepts a hex number.
+Select “CANopen” as fieldbus type and enter a name for your device protocol. Specific to CANopen is the **CANopen device type** field which accepts a hex number.
 
 In the **Variables** section, you determine the CANopen variables. Variables inside the “Object Dictionary”(OD) of the CANopen device can be accessed later by adding the variables to the device type definition. Via the **Add** button at the right of the **Variables** section, new variables can be configured.
 
@@ -308,17 +313,17 @@ The following fields can be observed:
 - **Raise alarm:** Create an alarm if a given mask matches with the value of the variable ((value & mask) == mask). Therefore, it is possible to raise alarms on single bits of e.g. an Unsigned8 variable, like the Error-Register.
 - **Raise event:** Create an event, whenever the value of the variable is changed.
 
-After adding variables to the new device type, they are listed in the **Variables** section of the device type. All variables are grouped by the given display category, i.e. variables with same category are grouped together.
+After adding variables to the new device protocol, they are listed in the **Variables** section of the device protocol. All variables are grouped by the given display category, i.e. variables with same category are grouped together.
 
 ![category view](/images/users-guide/cloud-fieldbus/fieldbus-category.png)
 
-After completing your configuration, click **Save** to save your settings. The device type can be used now to add CANopen devices to the platform. The device type can be updated after creation.
+After completing your configuration, click **Save** to save your settings. The device protocol can be used now to add CANopen devices to the platform. The device protocol can be updated after creation.
 
-**Importing a device type**
+**Importing a device protocol**
 
-To import a new device type, see the [Exporting and importing device types](#import) section.
+To import a new device protocol, see the [Exporting and importing device protocols](#import) section.
 
-> After importing the EDS file, all variables defined in the file are listed in the **Variables** section of the device type. The user can then enrich the imported variable configurations by opening the configuration dialog for each variable (e.g. the missing display category can be set or mappings can be defined).
+> After importing the EDS file, all variables defined in the file are listed in the **Variables** section of the device protocol. The user can then enrich the imported variable configurations by opening the configuration dialog for each variable (e.g. the missing display category can be set or mappings can be defined).
 
 **Configuring CANopen device data**
 
@@ -340,14 +345,19 @@ In the **CANopen** section, up to 127 CANopen devices can be added to the gatewa
 
 > The device type and node ID need to match with the real CANopen device, otherwise setting up the communication is not possible or wrong values will be transmitted.
 
-### <a name="import"></a>Exporting and importing device types
+### <a name="import"></a>Exporting and importing device protocols
 
-To manage device types more conveniently, you can export device types to a file once they are edited in the user interface. The file can be re-imported to  set up other Cumulocity IoT accounts easily or to restore the types from a backup. The import functionality also supports importing ready-made device types provided by device manufacturers.
+To manage device protocols more conveniently, you can export them to a file. The file can be re-imported to  set up other Cumulocity IoT accounts easily or to restore the protocols from a backup. The import functionality also supports importing ready-made device protocols provided by device manufacturers.
 
-To export a device type, hover over the device type that you would like to export and click **Export**. Your browser will download a file named "&lt;device type&gt;.json" with the device type definition.
+To export a device protocol, click the menu icon at the right of the respective  row and click **Export**. 
+
+A file with the device protocol definition will be downloaded, named "&lt;device type&gt;.json".
 
 ![Export device type](/images/users-guide/cloud-fieldbus/fieldbus-export.png)
 
-To import a device type, click **Import** in the top menu bar. This will open a dialog that lets you choose between importing a ready-made device type and uploading a previously exported device type. You can change the name of the device type during import using the **New device type name** field.
+1. To import a device protocol, click **Import** in the top menu bar. 
+2. In the resulting dialog box, either select a pre-defined protocol or upload a file with a previously exported device protocol. 
+3. You may enter a new name for the device protocol. 
+4. Click **Import** to import the protocol.
 
 ![Import device type](/images/users-guide/cloud-fieldbus/fieldbus-import.png)

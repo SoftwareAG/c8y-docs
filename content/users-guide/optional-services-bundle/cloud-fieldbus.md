@@ -259,7 +259,7 @@ If you edit a device protocol that is currently in use, you may need to
 
 #### <a name="configureCAN"></a>Configuring CAN bus data
 
-CAN device protocol can be configured in a very similar way as Modbus device protocols. For more information, see [Configuring Modbus data](#configureModbus) above. The differences are:
+CAN device protocols can be configured in a very similar way as Modbus device protocols. For more information, see [Configuring Modbus data](#configureModbus) above. The differences are:
 
 * Holding registers are used to describe the different pieces of data inside CAN messages.
 * Enter the CAN message ID of the specific message the data should be extracted from. Use a hexadecimal number for the message ID.

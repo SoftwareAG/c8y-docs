@@ -52,7 +52,7 @@ Subscribe example:
 511,myDeviceSerial,"execute this\nand this\nand ""this"""
 ```
 
-> **Info:** `\n` does not create new line in the output (e.g. console, UI); to achieve that a new line character (ASCII 0A) needs to be used.
+> **Info:** `\n` does not create a new line in the output (e.g. console, UI); to achieve this, a new line character (ASCII 0A) needs to be used.
 
 ### Device hierarchies
 

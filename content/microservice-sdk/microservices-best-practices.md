@@ -12,30 +12,6 @@ The following list is a collection of best practices you should take into consid
 
 Whenever possible, use the Cumulocity IoT Microservice SDK as it builds a lot of functionality. It is fully open source and can be extended as required.
 
-#### Shared microservices
-
-When building microservices for multiple tenants, try to build them in the shared deployment model. 
-
-
-#### Statefulness
-
-Avoid statefulness wherever possible, rather write data via REST requests or DB to a persistent shared storage. You can actually find statelessness under the requirements in the [General concepts](/microservice-sdk/concept/#requirements). 
-
-
-#### Scaling
-
-There is currently no way to influence load balancer behaviour for scaled microservices. The behaviour is round-robin. Refer to [Microservice manifest](/microservice-sdk/concept/#manifest) for further information on how to configure scaling in the manifest file *cumulocity.json*.
-
-
-#### Resource consumption
-
-Resource consumption should be defined as necessary in the microservice manifest. Resource consumption has an impact on billing. Also consider carefully how many resources you will need in a production scenario per microservice started. 
-
-
-#### Network traffic
-
-It is not recommended to build a small microservice that loads most of the functionality on start.
-
 
 #### Disk I/O
 
@@ -46,9 +22,36 @@ Do not use a local disk, store everything in Cumulocity IoT. You do not have a g
 
 Avoid writing to local disk (it is ephemeral anyway). We do not guarantee for any I/O bandwidth.
 
+
 #### Liveness probes
 
 Liveness probes should also be exposed to Kubernetes, only a health endpoint is not sufficient. Moreover, take special attention to implement liveness probes properly. Kubernetes will restart or undeploy the service if the liveness probe is not reliable. Never ched 3rd parties in the liveness probe - this can prevent the service from working. 
+
+
+#### Network traffic
+
+It is not recommended to build a small microservice that loads most of the functionality on start.
+
+
+#### Resource consumption
+
+Resource consumption should be defined as necessary in the microservice manifest. Resource consumption has an impact on billing. Also consider carefully how many resources you will need in a production scenario per microservice started. 
+
+
+#### Scaling
+
+There is currently no way to influence load balancer behaviour for scaled microservices. The behaviour is round-robin. Refer to [Microservice manifest](/microservice-sdk/concept/#manifest) for further information on how to configure scaling in the manifest file *cumulocity.json*.
+
+
+#### Shared microservices
+
+When building microservices for multiple tenants, try to build them in the shared deployment model. 
+
+
+#### Statefulness
+
+Avoid statefulness wherever possible, rather write data via REST requests or DB to a persistent shared storage. You can actually find statelessness under the requirements in the [General concepts](/microservice-sdk/concept/#requirements). 
+
 
 #### Testing of microservices
 
@@ -56,13 +59,6 @@ Liveness probes should also be exposed to Kubernetes, only a health endpoint is 
 * Use existing development platforms to test your microservices before rolling them out to any production system.
 * You should develop in a local environment before even deploying something in a dev or test cluster. 
 
-#### Monitoring of microservices
 
-* Liveness endpoint
-* Kubernetes health status of the microservices
-* Resource consumption CPU/RAM
-* Access to network (C8Y endpoints, internet) 
-* If you need to log something rely on the SDK.
-* There are also mechanisms for sending alarms to the platform.
 
 

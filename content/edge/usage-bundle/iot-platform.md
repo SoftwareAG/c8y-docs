@@ -10,7 +10,7 @@ Since Cumulocity IoT Edge is based on the same software as the cloud-based Cumul
 
 Below find an overview on the functionalities of these applications in Cumulocity IoT Edge. 
 
-[DataHub Edge](/edge/datahub-edge) is an optional component of Cumulocity IoT Edge, which can be used for storage and analytics over historical data.
+[DataHub Edge](/datahub/running-datahub-on-the-edge/) is an optional component of Cumulocity IoT Edge, which can be used for storage and analytics over historical data.
 
 For general information on functionalities and features of the GUI refer to [GUI functionalities and features](/users-guide/getting-started/#gui-features).
 

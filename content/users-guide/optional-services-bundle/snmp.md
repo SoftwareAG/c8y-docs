@@ -25,6 +25,7 @@ The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled
 
 > **Info:** The Mibparser microservice needs to be subscribed to the tenant before installing the agent. The procedure how to build and deploy the Mibparser microservice is described in [https://bitbucket.org/m2m/cumulocity-examples/src/develop/snmp/mib-parser/](https://bitbucket.org/m2m/cumulocity-examples/src/develop/snmp/mib-parser/).
 
+if you are using one of the Software AG managed public cloud instances, you need to ensure that your tenant is subscribed to the “Mibparser” microservice.
 
 #### Installation
 
@@ -41,7 +42,11 @@ The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled
 
 1. Download the latest SNMP agent RPM:
 
-		wget -nv http://resources.cumulocity.com/examples/snmp/snmp-agent-gateway-<ga-version>.rpm
+		wget -nv http://resources.cumulocity.com/examples/snmp/snmp-agent-gateway-<ga-version>-1.noarch.rpm
+	
+	The `<ga-version>` needs to be provided in the format `1005.7.0`, `1006.0.0`, and so on. A sample command would look like this:
+ 	
+ 		wget -nv http://resources.cumulocity.com/examples/snmp/snmp-agent-gateway-1006.0.0-1.noarch.rpm
 
 2. Verify the signature of the RPM package:
 

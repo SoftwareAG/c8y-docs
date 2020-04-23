@@ -125,16 +125,16 @@ Content-Length: ...
 
 ### Query language
 
-Query language is applied to all managed objects.
-
-##### User can put query via 'query' parameter. Parameters can be:
+Query language is applied to all managed objects. Users can query using the `query` parameter as follows:
 
 * only query to database: ...?query=name eq 'M01'
 * keyword $filter=: ...?query=$filter=name eq  'M01'
 * keyword $orderby=: ...?query=$orderby=id asc
 * keywords $filter= and $orderby=: ...?query=$filter=name eq 'M01' $orderby=id,
 
-This part explains, how an application will handle a query in parameter 'query'.
+Since all of this is happening as part of a URL, all necessary escaping has to be done with URL encoding. Regex features with custom filter queries are not supported.
+
+The following parts explain how an application will handle a query in the parameter `query`.
 
 ##### Supported query operations:
 

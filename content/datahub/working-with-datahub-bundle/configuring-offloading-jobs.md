@@ -255,6 +255,6 @@ is represented as
 | c8y_Temperature.T.unit | c8y_Temperature.T.value |
 | C | 2.0791169082 | 
 
-When defining the offloading configuration for the measurements collection, you have to specify the measurement type. The offloading pipeline only offloads data for the selected measurement type. Then the target table in the data lake consists of homogeneous data from the same type.
+When defining the offloading configuration for the measurements collection, you have to specify the measurement type. The offloading pipeline only offloads data for the selected measurement type. Then the target table in the data lake consists of homogeneous data of the same type. 
 
-<img src="/images/datahub-guide/datahub-offloading-task-to-target-table.png" alt="Offloading task to target table"  style="max-width: 100%">
+The system automatically detects measurement types from the measurements collection and provides them in the **Auto-detected measurement type** dropdown field. Select the measurement type you want to offload from that list. If the type is not listed, select the entry **Type not listed...** and manually define the type in the **Measurement Type** text field. Click **Confirm** to continue with the configuration.

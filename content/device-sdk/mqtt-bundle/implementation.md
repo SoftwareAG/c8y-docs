@@ -52,6 +52,8 @@ Subscribe example:
 511,myDeviceSerial,"execute this\nand this\nand ""this"""
 ```
 
+> **Info:** `\n` does not create a new line in the output (e.g. console, UI); to achieve this, a new line character (ASCII 0A) needs to be used.
+
 ### Device hierarchies
 
 MQTT sessions are linked to a single device, but this device can have a freely configurable device hierarchy below it.

@@ -8,9 +8,9 @@ layout: redirect
 
 This example provides a step-by-step guide to develop a simple microservice in Cumulocity. It uses Cake (C# Make), which is a cross-platform build automation system.
 
-To start building .NET apps, you just need to download and install the [.NET SDK](https://www.microsoft.com/net/download). Follow the instructions on the download page for the last stable release or alternatively you can also try using 2.0.
+To start building .NET apps, you just need to download and install the [.NET SDK](https://www.microsoft.com/net/download). Follow the instructions on the download page for the last stable release or alternatively you can also try using 2.2.
 
-If you use Linux, visit the [MonoDevelop website](http://www.monodevelop.com/) for download packages and more details about our cross-platform IDE. Follow the instructions on the download page for the last stable release or alternatively you can also try using 5.4 or higher version of mono [IDE](http://www.mono-project.com/download/#download-lin). Note, that Mono-devel is required to compile code.
+If you use Linux, visit the [MonoDevelop website](http://www.monodevelop.com/) for download packages and more details about our cross-platform IDE. Follow the instructions on the download page for the last stable release or alternatively you can also try using 6.0 or higher version of mono [IDE](http://www.mono-project.com/download/#download-lin). Note, that Mono-devel is required to compile code.
 
 The initial script was used to create a demo, which makes it easier to create an example microservice project with dependency management and then deploy it on the server. The script attempts to download the package from the sources listed in the project file, and next a reference is added to the appropriate project file. In addition, the script creates the appropriate Dockerfile to take into account the naming of projects. Next it will create a Docker image based on a Dockerfile.
 
@@ -41,10 +41,13 @@ Change the current folder and navigate to the _microservicesdk_ folder.
 cd microservicesdk-win-dev-latest
 ```
 
-Make sure to use the correct SDK version - 2.0.2 or define which .NET Core SDK version is used when you run .NET Core CLI commands.
+Make sure to use the correct SDK version - 2.2.110 or define which .NET Core SDK version is used when you run .NET Core CLI commands.
+
+Open the DockerFile inside microservicesdk-win-dev-latest make sure that it points to the correct docker image of dotnet core. Make sure that the first line of DockerFile is -
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS runtime
 
 ```shell
-dotnet new globaljson --sdk-version 2.0.2
+dotnet new globaljson --sdk-version 2.2.110
 ```
 
 Run the script *create.ps1* to create a sample project, provide the name of the project and the API application.
@@ -415,7 +418,7 @@ _Startup.cs_ responsibilities:
 The Dockerfile created by *create.ps1* contains:
 
 ```
-FROM microsoft/dotnet:2.0-runtime
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS runtime
 WORKDIR /app
 COPY ./publish/Web ./
 ENV SERVER_PORT 4700
@@ -472,6 +475,9 @@ Change the current folder, to navigate to a microservicesdk folder.
 ```shell
 $ cd microservicesdk-latest
 ```
+
+Open the DockerFile inside microservicesdk-win-dev-latest make sure that it points to the correct docker image of dotnet core. Make sure that the first line of DockerFile is -
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS runtime
 
 Run the script *create.sh* to create a sample project, provide the name of the project and the API application.
 

@@ -1,16 +1,9 @@
 ---
-weight: 10
-title: Overview
+weight: 20
+title: Release types
 layout: bundle
 ---
 
-<div class="lead">
-These release notes document all relevant changes that have been implemented in a release since the previous release.<br><br>
-
-<b>Important:</b> These release notes only cover changes implemented in the <b>Cumulocity IoT Core platform</b>. For release information on Cumulocity IoT Edge, Cumulocity IoT Streaming Analytics, Cumulocity IoT Machine Learning and Cumulocity IoT DataHub refer to the respective guides in our documentation. 
-</div>
-
-<br>
 Cumulocity distinguishes between the following release types:
 
 <table>
@@ -46,6 +39,3 @@ Cumulocity distinguishes between the following release types:
 </table>
 
 >**Info:** Each release receives a version label `<SAG>.<major>.<minor>.<maintenance>`. `<SAG>` and `<major>` are incremented for marketing purposes. `<minor>` is incremented with each bi-weekly release (Continuous or GA). `<maintenance>` is "0" for the base release and incremented with each Maintenance release of this release.
-
->**Info:** These release notes cover information on the release related to the current documentation and on its two prior releases. For older release notes refer to older documentation versions.
-

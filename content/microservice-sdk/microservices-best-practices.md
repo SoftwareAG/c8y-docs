@@ -5,27 +5,22 @@ layout: bundle
 
 ---
 
-The following list is a collection of best practices you should take into consideration before you start developing and deploying microservices.
+The following list is a collection of best practices you should take into consideration before you start developing and deploying microservices on top of Cumulocity IoT.
 
 
 #### Cumulocity IoT Microservice SDK
 
-Whenever possible, use the Cumulocity IoT Microservice SDK as it builds a lot of functionality. It is fully open source and can be extended as required.
+Whenever possible, use the Cumulocity IoT Microservice SDK as it builds a lot of functionality. It is fully open source and can be extended as required. See the relevant chapters of this guide for further instructions.
 
 
-#### Disk I/O
+#### Disk I/O and local disk
 
 Do not use a local disk, store everything in Cumulocity IoT. You do not have a guaranteed amount of bandwidth for disk I/O and also not guaranteed capacity.
 
 
-#### Local disk usage
-
-Avoid writing to local disk (it is ephemeral anyway). We do not guarantee for any I/O bandwidth.
-
-
 #### Liveness probes
 
-Liveness probes should also be exposed to Kubernetes, only a health endpoint is not sufficient. Moreover, take special attention to implement liveness probes properly. Kubernetes will restart or undeploy the service if the liveness probe is not reliable. Never ched 3rd parties in the liveness probe - this can prevent the service from working. 
+Liveness probes should be exposed to Kubernetes as well, just a health endpoint is not sufficient. Moreover, take special attention to implement liveness probes properly. Kubernetes will restart or undeploy the service if the liveness probe is not reliable. Never check 3rd parties in the liveness probe - this can prevent the service from working. 
 
 
 #### Network traffic

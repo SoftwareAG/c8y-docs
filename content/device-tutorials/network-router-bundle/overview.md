@@ -3,21 +3,19 @@ title: Overview
 weight: 10
 ---
 
-This tutorial describes how to set up and configure the Casa Systems (NetComm) routers using the Cumulocity IoT agent package.
-
-The following sections demostrate how to use a Casa Systems (NetComm) router with the Cumulocity IoT platform.
+The following sections demonstrate how to use a Casa Systems (NetComm) router with the Cumulocity IoT platform.
 
 |SECTION|CONTENT|
 |:---|:---|
-|[Prerequisites](#prerequisites)|Description of the [system requirements](#sys-req) and a list of [supported routers](#support-router).
+|[Prerequisites](#prerequisites)|Description of the [system requirements](#sys-req) and [supported routers](#support-router).
 |[Setting up and registering the device](#setup)|How to [install](#install-agent) the agent, [configure](#configure) the router and [connect](#connect) the router to your Cumulocity IoT account.
-|[Interacting with Cumulocity IoT](#interaction)|How to use the built in router functionalities with the Cumulocity IoT platform.
+|[Interacting with Cumulocity IoT](#interaction)|How to use the built-in router functionalities with the Cumulocity IoT platform.
 |[Troubleshooting](#troubleshooting)|List of known [bugs and limitations](#troubleshooting).
 |[Release notes](#release-history)|Release notes for the Cumulocity IoT NetComm Agent.
 
 ### Supported functionality
 
-The Cumulocity IoT NetComm agent supports the following functionality:
+The Cumulocity IoT NetComm Agent supports the following functionality:
 
 * Bootstrap and registration of the router in the Cumulocity IoT platform.
 * Reporting of model, serial number, firmware version and installed software.
@@ -40,5 +38,3 @@ The Cumulocity IoT NetComm agent supports the following functionality:
 * View system, ipsec and agent log files.
 * Cloud Remote Access for remotely accessing devices via VNC/Telnet/SSH protocols.
 * MQTT as an alternative communication protocol.
-* CANopen protocol support for managing CANopen devices in a CANopen network.
-* All packages are with the signature.

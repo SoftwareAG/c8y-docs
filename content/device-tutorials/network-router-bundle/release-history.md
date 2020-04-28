@@ -15,10 +15,10 @@ This document describes the Cumulocity IoT NetComm Agent package for the [Casa S
 
 The agent software can be downloaded here: [http://resources.cumulocity.com/ntc/cumulocity-ntc-agent_1.0.0_arm-signed.ipk](http://resources.cumulocity.com/ntc/cumulocity-ntc-agent_1.0.0_arm-signed.ipk).
 
-Changes from another agent for NTC-6200 and NTC-140W:
+Changes from the previous agent for NTC-6200 and NTC-140W:
 
 * Started support for NTC-220 series and stopped support for NTC-6200 and NTC-140W.
-* Merge all software into one package.
+* Merged all software into one package.
 * Fixed Netcomm Web UI to support NTC-220 series.
 * Fixed event notification to adjust the event notification format change on NTC-220 series.
 * Improved the connection stability when the size of message queue is over MQTT maximum payload size (<16KB).

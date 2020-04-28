@@ -9,7 +9,7 @@ You can view and configure the essential mobile network (**WAN**) and local area
 
 The mobile network (**WAN**) parameters shown in the user interface corresponds to the first profile stored in the router. These parameters can be remotely configured directly or via SMS.
 
-For SMS configuration, the router needs to be configured to accept SMS commands. Consult the router’s manual on the relevant parameters for SMS configuration, or use the router’s web user interface. You also need to have an SMS gateway configured with your account. Contact [support](https://empower.softwareag.com/ContactSupport/) for setting up an SMS gateway. For more information on the device shell, see [Device management > Device details](/users-guide/device-management/#device-details) in the User guide.
+For SMS configuration, the router needs to be configured to accept SMS commands. Consult the router’s manual on the relevant parameters for SMS configuration, or use the router’s web user interface. You also need to have an SMS gateway configured with your account. Contact [Software AG Support](https://empower.softwareag.com/ContactSupport/) for setting up an SMS gateway. For more information on the device shell, see [Device Management > Device details](/users-guide/device-management/#device-details) in the User guide.
 
 > **Info:** If you configure the wrong APN settings, the device will lose mobile network connection and can only be managed by limited SMS functionality.
 
@@ -19,7 +19,7 @@ LAN and DHCP parameters can be directly configured from Cumulocity IoT as well.
 
 ### <a name="manage"></a> Managing software and firmware
 
-The installed software and firmware on the router can be remotely managed using the standard software and firmware management feature from Cumulocity IoT. For details, see [Device management > Managing device data](/users-guide/device-management/#managing-device-data) in the User guide.
+The installed software and firmware on the router can be remotely managed using the standard software and firmware management feature from Cumulocity IoT. For details, see [Device Management > Managing device data](/users-guide/device-management/#managing-device-data) in the User guide.
 
 
 Software packages need to be in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format and follow the naming convention *&#60;package&#62;&#95;&#60;version&#62;&#95;&#60;arch&#62;.ipk*. Version numbers including letters are not supported. All package management methods (install, upgrade, downgrade, removal) are supported through the router’s package manager. If software packages have dependencies, make sure to install these first.
@@ -71,7 +71,7 @@ set service.cumulocity.gps.update_interval=<update interval>
 set service.cumulocity.gps.interval=<event interval>
 ```
 
-After you applied the configuration changes, wait a moment for the first GPS data to arrive, then refresh the page. A **Location** and a **Tracking** tab should now appear. See  [Device management > Device details](/users-guide/device-management/#device-details) in the User guide for details on the  [**Location**](/users-guide/device-management#location) and [**Tracking**](/users-guide/device-management#tracking) tab.
+After you applied the configuration changes, wait a moment for the first GPS data to arrive, then refresh the page. A **Location** and a **Tracking** tab should now appear. See  [Device Management > Device details](/users-guide/device-management/#device-details) in the User guide for details on the  [**Location**](/users-guide/device-management#location) and [**Tracking**](/users-guide/device-management#tracking) tab.
 
 ### <a name="gpio"></a> Using GPIO
 
@@ -136,7 +136,7 @@ Digital outputs can be controlled using the "Relay array control" widget, see be
 
 ### <a name="parameters"></a> Configuration management
 
-You can retrieve, modify and save user configuration data. To do this, navigate to the router in  **Device management > All devices** and switch to its [Configuration](/users-guide/device-management/#config) tab and click **Reload** in the **Configuration** section to request configuration data. It will take a few seconds to download. After the configuration data has arrived, you will see a list of parameters and their corresponding values. You can then make changes to the configuration and save them back to the device.
+You can retrieve, modify and save user configuration data. To do this, navigate to the router in  **Device Management > All devices** and switch to its [Configuration](/users-guide/device-management/#config) tab and click **Reload** in the **Configuration** section to request configuration data. It will take a few seconds to download. After the configuration data has arrived, you will see a list of parameters and their corresponding values. You can then make changes to the configuration and save them back to the device.
 
 You can also request a configuration snapshot from the device and later apply the configuration snapshot to other devices.
 
@@ -146,7 +146,7 @@ There is also RDB snapshot support, which is a super-set of the configurations. 
 
 ### <a name="device-shell"></a> Device shell
 
-With the device shell, you can read and write individual configuration parameters from the device, as well as execute diagnostic commands. For more information, refer to [Device management > Device details](/users-guide/device-management/#device-details) in the User guide. Consult the NetComm documentation for valid parameters and diagnostic commands. The general format is:
+With the device shell, you can read and write individual configuration parameters from the device, as well as execute diagnostic commands. For more information, refer to [Device Management > Device details](/users-guide/device-management/#device-details) in the User guide. Consult the NetComm documentation for valid parameters and diagnostic commands. The general format is:
 
 * “get &#60;parameter&#62;” to read a parameter from the device.
 * “set &#60;parameter&#62;=&#60;value&#62;” to write a parameter to the device.
@@ -159,7 +159,7 @@ Click the **Get Predefined** link to access frequently used parameters and comma
 
 ### <a name="notification"></a> Event notifications
 
-The router reports certain system events as notifications, which can be forwarded to the Cumulocity IoT as alarms. The system events help, for example, in troubleshooting mobile network issues. For more information on the different types of events and how to forward them, consult the NetComm documentation (for example, the **Event notification** section in the NTC-220 [User guide](https://support.netcommwireless.com/api/Media/Document/f8d82c69-060e-43d2-9a2a-689f018d207c?Product=NTC-220-User-Guide.pdf)). To forward an event as an alarm, set up a UDP destination sending to Port 1331 on localhost (see the **Destination configuration** section in the NTC-200 [User guide](https://support.netcommwireless.com/api/Media/Document/f8d82c69-060e-43d2-9a2a-689f018d207c?Product=NTC-220-User-Guide.pdf)).
+The router reports certain system events as notifications, which can be forwarded to the Cumulocity IoT platfrom as alarms. The system events help, for example, in troubleshooting mobile network issues. For more information on the different types of events and how to forward them, consult the NetComm documentation (for example, the **Event notification** section in the NTC-220 [User guide](https://support.netcommwireless.com/api/Media/Document/f8d82c69-060e-43d2-9a2a-689f018d207c?Product=NTC-220-User-Guide.pdf)). To forward an event as an alarm, set up a UDP destination sending to Port 1331 on localhost (see the **Destination configuration** section in the NTC-200 [User guide](https://support.netcommwireless.com/api/Media/Document/f8d82c69-060e-43d2-9a2a-689f018d207c?Product=NTC-220-User-Guide.pdf)).
 
 ![Notification](/images/device-demos/casa-system-router/router-alarms.png)
 
@@ -170,29 +170,30 @@ You can connect Modbus-TCP and Modbus-RTU slaves to the router via LAN and seria
 For Modbus-TCP setup:
 
 * Establish LAN connectivity. Use the [**Network**](#network) tab as described above and the corresponding configuration mechanism on the Modbus device to enable IP communication between the router and the Modbus-TCP slaves.
-* Configure the Modbus-TCP port in the Cumulocity IoT menu on NetComm device UI if you are using a different port than the default 502, see [**Configuring the router**](#configure).
+* Configure the Modbus-TCP port in the Cumulocity IoT menu on the NetComm device UI if you are using a different port than the default 502, see [**Configuring the router**](#configure).
 
 For Modbus-RTU setup:
 
 * Connect the router and your Modbus-RTU slaves via a serial cable.
-* Configure serial port mode via  the device shell:
+* Configure the serial port mode via  the device shell:
 
 ```shell
 set serial.iomode.default=<mode>
 ```
 
 where `<mode>` can be rs232, rs422 or rs485. You may need to reboot the device after changing the mode.
+
 * Make sure to turn off all serial port related functionalities on the router, e.g. PADD, Data Stream Manager. Otherwise, the agent will conflict for accessing the serial port.
 
-> **Info:** The default serial port `/dev/ttyO1` is for the Model NTC-220 series. For another model, it might use a different port. For example, the Model NTC-6200 uses `/dev/ttyAPP4` instead. It should work with no further configuration. In case it’s empty or you need to configure a different port, it can be configured in the Cumulocity IoT menu in the web UI of the device, see [Configuring the router](#configure).
+> **Info:** The default serial port `/dev/ttyO1` refers to the Model NTC-220 series. Other models might use different ports. For example, the Model NTC-6200 uses `/dev/ttyAPP4` instead. It should work with no further configuration. In case it’s empty or you need to configure a different port, it can be configured in the Cumulocity IoT menu in the web UI of the device, see [Configuring the router](#configure).
 >
->Some USB to serial adapters have echo mode enabled by default, this can render the Modbus communication stop working completely. If you have one of these adapters, consult the adapter’s manufacturer about how to disable it.
+>Some USB to serial adapters have echo mode enabled by default.This may result in stopping the Modbus communication completely. If you have one of these adapters, consult the adapter’s manufacturer about how to disable it.
 
 Then:
 
-* Subscribe your account to the Cloud Fieldbus feature by contacting [support](https://empower.softwareag.com/ContactSupport/).
-* Configure Modbus communication as described in [Optional services > Cloud fieldbus](/users-guide/optional-services/#cloud-fieldbus) in the User guide.
-* Enable or disable write permission by setting the “Modbus read only” property in the Cumulocity IoT menu in web UI of the device, see [Configuring the router](#configure). Set it to 0 means allow write permission, while 1 means disallow Modbus write permission.
+* Subscribe your account to the Cloud Fieldbus feature by contacting [Software AG Support](https://empower.softwareag.com/ContactSupport/).
+* Configure the Modbus communication as described in [Optional services > Cloud Fieldbus](/users-guide/optional-services/#cloud-fieldbus) in the User guide.
+* Enable or disable write permission by setting the “Modbus read only” property in the Cumulocity IoT menu in the web UI of the device, see [Configuring the router](#configure). Set it to 0 to allow write permission and 1 to disallow Modbus write permission.
 
 ### <a name="logs"></a> Log viewer
 
@@ -202,7 +203,7 @@ For more information about logs, see [Device Management > Device details](/users
 
 ![Logs](/images/device-demos/casa-system-router/router-log.png)
 
-### <a name="vnc"></a> VNC remote access
+### <a name="vnc"></a> VNC, Telnet, SSH remote access
 
 If you have a device which supports VNC, Telnet or SSH remote access, it’s now possible to manage your device via Cumulocity IoT.
 
@@ -212,7 +213,7 @@ As shown in the screenshot, you can add your VNC, Telnet or SSH servers as an en
 
 ### <a name="mqtt"></a> MQTT
 
-The agent supports the MQTT protocol. MQTT is set as a default protocol. However, in case you need to manually configure MQTT enablement, run following command via the [device shell](#device-shell).
+The agent supports the MQTT protocol. MQTT is set as a default protocol. However, in case you need to manually configure MQTT enablement, run the following command via the [device shell](#device-shell).
 
 ```shell
 set service.cumulocity.mqtt.enable = <0|1>
@@ -220,7 +221,7 @@ set service.cumulocity.mqtt.enable = <0|1>
 
 to either disable or enable MQTT communication. The configured server URL remains the same. For example, `http://mqtt.cumulocity.com` if you want to use plain MQTT, or `https://mqtt.cumulocity.com` if you want secure MQTT + TLS.
 
-To configure the MQTT keepalive interval (default is 240 seconds), run following command via the [device shell](#device-shell) to change the keepalive interval.
+To configure the MQTT keepalive interval (default is 240 seconds), run the following command via the [device shell](#device-shell) to change the keepalive interval.
 
 ```shell
 set service.cumulocity.mqtt.keepalive = <seconds>

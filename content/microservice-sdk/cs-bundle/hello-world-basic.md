@@ -225,7 +225,7 @@ The expected result is:
 ["value1","value2"]
 ```
 
-### Runnning the application within the IDE
+### Running the application within the IDE
 
 It is possible to check if the application communicates with the platform by defining relevant environmental variables in *launchSettings.json*. This file sets up the different launch environments that Visual Studio can launch automatically. Here is a snippet of the default *launchSettings.json*.
 

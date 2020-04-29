@@ -11,8 +11,8 @@ For remote configuration of WAN parameters, you need a SIM card with SMS functio
 
 ### <a name="support-router"> NTC-220 series
 
-The following sections assume that the router has the NetComm agent package installed. The agent is compatible with [NTC-220](https://support.netcommwireless.com/products/NTC-220%20Series).
+The following sections assume that the router has the NetComm Agent package installed. The agent is compatible with [NTC-220](https://support.netcommwireless.com/products/NTC-220%20Series).
 
 ### NTC-6200 and NTC-140W series
 
-For [NTC-140W](https://support.netcommwireless.com/products/NTC-140W%20Series), and [NTC-6200](https://support.netcommwireless.com/products/NTC-6200%20Series), refer to the [NetComm section](https://cumulocity.com/guides/10.4.6/devices/netcommwireless/) in the Device Guides of our 10.4.6 documentation. For more information on a particular feature of the router, consult the respective manual in the *Downloads* section of the router’s home page ([NTC-140W](https://support.netcommwireless.com/products/NTC-140W-01), [NTC-6200](https://support.netcommwireless.com/products/NTC-6200-01)).
+For [NTC-140W](https://support.netcommwireless.com/products/NTC-140W%20Series), and [NTC-6200](https://support.netcommwireless.com/products/NTC-6200%20Series), refer to the [NetComm section](https://cumulocity.com/guides/10.4.6/devices/netcommwireless/) in the Devices guide of the Cumulocity IoT 10.4.6 documentation. For more information on a particular feature of the router, consult the respective manual in the *Downloads* section of the router’s home page ([NTC-140W](https://support.netcommwireless.com/products/NTC-140W-01), [NTC-6200](https://support.netcommwireless.com/products/NTC-6200-01)).

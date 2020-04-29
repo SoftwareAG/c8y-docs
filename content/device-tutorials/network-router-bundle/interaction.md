@@ -24,7 +24,7 @@ The installed software and firmware on the router can be remotely managed using 
 
 Software packages need to be in [ipkg](http://en.wikipedia.org/wiki/Ipkg) format and follow the naming convention *&#60;package&#62;&#95;&#60;version&#62;&#95;&#60;arch&#62;.ipk*. Version numbers including letters are not supported. All package management methods (install, upgrade, downgrade, removal) are supported through the router’s package manager. If software packages have dependencies, make sure to install these first.
 
-> **Info:** The package *cumulocity-ntc-agent&#95;&#60;version&#62;&#95;arm.ipk* represents the NetComm agent. It is prohibited to remove this package from Cumulocity IoT.
+> **Info:** The package *cumulocity-ntc-agent&#95;&#60;version&#62;&#95;arm.ipk* represents the NetComm Agent. It is prohibited to remove this package from Cumulocity IoT.
 
 Firmware can be uploaded and installed on the router as well. To successfully upgrade the firmware, make sure that the target firmware includes the agent package. Firmware files need to follow Netcomm’s naming convention (*&#60;name&#62;\_&#60;version&#62;.cdi*).
 
@@ -130,13 +130,13 @@ The inputs are checked every second for changes.
 
 #### Digital output
 
-Digital outputs can be controlled using the "Relay array control" widget, see below in the screenshot. The green icon means “closed (low value)” and the red icon means “opened (high value)”. The numbering of the GPIO pins are the same as listed on the router. For the NTC-220 model, three GPIO pins can be set.
+Digital outputs can be controlled using the "Relay array control" widget, see the screenshot below. The green icon means “closed (low value)” and the red icon means “opened (high value)”. The numbering of the GPIO pins are the same as listed on the router. For the NTC-220 model, three GPIO pins can be set.
 
 ![Relay Array Widget](/images/device-demos/casa-system-router/router-relay-array.png)
 
 ### <a name="parameters"></a> Configuration management
 
-You can retrieve, modify and save user configuration data. To do this, navigate to the router in  **Device Management > All devices** and switch to its [Configuration](/users-guide/device-management/#config) tab and click **Reload** in the **Configuration** section to request configuration data. It will take a few seconds to download. After the configuration data has arrived, you will see a list of parameters and their corresponding values. You can then make changes to the configuration and save them back to the device.
+You can retrieve, modify and save user configuration data. To do this, navigate to the router in  **Device Management > All devices** and switch to its [Configuration](/users-guide/device-management/#config) tab. Click **Reload** in the **Configuration** section to request configuration data. It will take a few seconds to download. After the configuration data has arrived, you will see a list of parameters and their corresponding values. You can then make changes to the configuration and save them back to the device.
 
 You can also request a configuration snapshot from the device and later apply the configuration snapshot to other devices.
 
@@ -159,7 +159,7 @@ Click the **Get Predefined** link to access frequently used parameters and comma
 
 ### <a name="notification"></a> Event notifications
 
-The router reports certain system events as notifications, which can be forwarded to the Cumulocity IoT platfrom as alarms. The system events help, for example, in troubleshooting mobile network issues. For more information on the different types of events and how to forward them, consult the NetComm documentation (for example, the **Event notification** section in the NTC-220 [User guide](https://support.netcommwireless.com/api/Media/Document/f8d82c69-060e-43d2-9a2a-689f018d207c?Product=NTC-220-User-Guide.pdf)). To forward an event as an alarm, set up a UDP destination sending to Port 1331 on localhost (see the **Destination configuration** section in the NTC-200 [User guide](https://support.netcommwireless.com/api/Media/Document/f8d82c69-060e-43d2-9a2a-689f018d207c?Product=NTC-220-User-Guide.pdf)).
+The router reports certain system events as notifications, which can be forwarded to the Cumulocity IoT platfrom as alarms. The system events help, for example, in troubleshooting mobile network issues. For more information on the different types of events and how to forward them, consult the NetComm documentation (for example, the *Event notification* section in the NTC-220 [User guide](https://support.netcommwireless.com/api/Media/Document/f8d82c69-060e-43d2-9a2a-689f018d207c?Product=NTC-220-User-Guide.pdf)). To forward an event as an alarm, set up a UDP destination sending to Port 1331 on localhost (see the *Destination configuration* section in the NTC-200 [User guide](https://support.netcommwireless.com/api/Media/Document/f8d82c69-060e-43d2-9a2a-689f018d207c?Product=NTC-220-User-Guide.pdf)).
 
 ![Notification](/images/device-demos/casa-system-router/router-alarms.png)
 
@@ -170,7 +170,7 @@ You can connect Modbus-TCP and Modbus-RTU slaves to the router via LAN and seria
 For Modbus-TCP setup:
 
 * Establish LAN connectivity. Use the [**Network**](#network) tab as described above and the corresponding configuration mechanism on the Modbus device to enable IP communication between the router and the Modbus-TCP slaves.
-* Configure the Modbus-TCP port in the Cumulocity IoT menu on the NetComm device UI if you are using a different port than the default 502, see [**Configuring the router**](#configure).
+* Configure the Modbus-TCP port in the Cumulocity IoT menu on the NetComm device UI if you are using a different port than the default 502, see [Configuring the router](#configure).
 
 For Modbus-RTU setup:
 
@@ -197,13 +197,13 @@ Then:
 
 ### <a name="logs"></a> Log viewer
 
-You can download and view the logs from the device. Log files can be quite big, you can set filtering criteria to get only what is interesting for you.
+You can download and view the logs from the device. Log files can be quite big, but you can set filtering criteria to get only what is interesting for you.
 
 For more information about logs, see [Device Management > Device details](/users-guide/device-management/#device-details) in the User guide.
 
 ![Logs](/images/device-demos/casa-system-router/router-log.png)
 
-### <a name="vnc"></a> VNC, Telnet, SSH remote access
+### <a name="vnc"></a> Remote access
 
 If you have a device which supports VNC, Telnet or SSH remote access, it’s now possible to manage your device via Cumulocity IoT.
 
@@ -213,13 +213,13 @@ As shown in the screenshot, you can add your VNC, Telnet or SSH servers as an en
 
 ### <a name="mqtt"></a> MQTT
 
-The agent supports the MQTT protocol. MQTT is set as a default protocol. However, in case you need to manually configure MQTT enablement, run the following command via the [device shell](#device-shell).
+The agent supports the MQTT protocol. MQTT is set as a default protocol. However, in case you need to manually configure MQTT enablement, run the following command via the [device shell](#device-shell) to either disable or enable MQTT communication.
 
 ```shell
 set service.cumulocity.mqtt.enable = <0|1>
 ```
 
-to either disable or enable MQTT communication. The configured server URL remains the same. For example, `http://mqtt.cumulocity.com` if you want to use plain MQTT, or `https://mqtt.cumulocity.com` if you want secure MQTT + TLS.
+The configured server URL remains the same. For example, `http://mqtt.cumulocity.com` if you want to use plain MQTT, or `https://mqtt.cumulocity.com` if you want secure MQTT + TLS.
 
 To configure the MQTT keepalive interval (default is 240 seconds), run the following command via the [device shell](#device-shell) to change the keepalive interval.
 

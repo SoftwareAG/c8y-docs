@@ -170,10 +170,10 @@ aliases:
   - /device-tutorials
 ---
 
-This guide contains several device integration tutorials.
+This guide includes device integration tutorials for the following devices:
 
 [Mbed u-blox](/device-tutorials/mbed-ublox), [Raspberry Pi ](/device-tutorials/raspberry-pi-4) and [Tinkerforge](/device-tutorials/tinkerforge) serve as simple demo devices that you can set up for proof-of-concept purposes in your Cumulocity IoT environment. The tutorials show how you can register third-party devices with Cumulocity IoT in just a few minutes, and then interact with the Cumulocity IoT platform. Note that these demo devices should only be used for testing purposes. 
 
-The [Casa Systems (NetComm) router](/device-tutorials/netcomm-router) tutorial describes how to set up and configure a NetComm router - a robust industrial IoT router designed for forwarding data packets between IoT devices within a network - using the Cumulocity IoT NetComm Agent package.
+The [Casa Systems (NetComm) router](/device-tutorials/netcomm-router) is a robust industrial IoT router designed for forwarding data packets between IoT devices within a network. The tutorial describes how to set up and configure a NetComm router using the Cumulocity IoT NetComm Agent package.
 
 For further information on supported devices refer to the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/web/#/), which offers an extensive [collection of devices](https://devicepartnerportal.softwareag.com/web/#/devices) with guaranteed plug-and-play compatibility and full functional support in the Cumulocity IoT platform. You will find descriptions on how to configure and connect each device included there.

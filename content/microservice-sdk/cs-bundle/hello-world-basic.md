@@ -27,7 +27,7 @@ Download the script file to build a "Hello World" application. Manage the versio
 Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
 ```
 
-The latest can be replaced by the version number, e.g. microservicesdk-lin-dev-{X.X.X}.zip.
+The latest can be replaced by the version number, e.g. `microservicesdk-lin-dev-{X.X.X}.zip`.
 
 Once you have downloaded the source, unzip the file.
 
@@ -35,7 +35,7 @@ Once you have downloaded the source, unzip the file.
 Expand-Archive c:\microservicesdk-win-dev-latest.zip -DestinationPath c:\microservicesdk-win-dev-latest
 ```
 
-Change the current folder and navigate to the _microservicesdk_ folder.
+Change the current folder and navigate to the &#95;microservicesdk&#95; folder.
 
 ```shell
 cd microservicesdk-win-dev-latest
@@ -43,11 +43,12 @@ cd microservicesdk-win-dev-latest
 
 Make sure to use the correct SDK version - 2.2.110 or define which .NET Core SDK version is used when you run .NET Core CLI commands.
 
-Open the Dockerfile inside the *microservicesdk-win-dev-latest* folder. Make sure that it points to the correct Docker image of .Net Core.<br>
+Open the Dockerfile inside the *microservicesdk-win-dev-latest* folder. Make sure that it points to the correct Docker image of .Net Core.
+
 The first line of the Dockerfile shall look like:
-```FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS runtime```
 
 ```shell
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS runtime
 dotnet new globaljson --sdk-version 2.2.110
 ```
 
@@ -57,7 +58,7 @@ Run the script *create.ps1* to create a sample project, provide the name of the 
 ./create.ps1
 ```
 
-Execute the bootstrapper script to build the application and an image from a Docker file.
+Execute the bootstrapper script to build the application and an image from a Dockerfile.
 
 ```shell
 ./build.ps1
@@ -220,7 +221,7 @@ curl -H "Authorization: <AUTHORIZATION>" \
 
 The expected result is:
 
-```plaintext
+```shell
 ["value1","value2"]
 ```
 
@@ -312,6 +313,7 @@ appname=sample_application
 ```
 
 **Call the script with the _.ini_ name**
+
 * Loads the credentials and tenant URL from *settings_alternativ.ini*.
 * If *settings_alternative.ini* is not found, an error is shown.
 
@@ -479,7 +481,10 @@ $ cd microservicesdk-latest
 
 Open the Dockerfile inside the *microservicesdk-win-dev-latest* folder. Make sure that it points to the correct Docker image of .Net Core.<br>
 The first line of the Dockerfile shall look like:
-```FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS runtime```
+
+```shell
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS runtime
+```
 
 Run the script *create.sh* to create a sample project, provide the name of the project and the API application.
 
@@ -539,7 +544,7 @@ To show all options, type
 $ ./microservice help
 ```
 
-For further information, refer to [Microservice package and deploy](https://cumulocity.com/reference/microservice-package/)in the Reference guide.
+For further information, refer to [Microservice package and deploy](https://cumulocity.com/reference/microservice-package/) in the Reference guide.
 
 **Deployment**
 

@@ -97,7 +97,7 @@ Then, you need to specify the port and turn on the notification by using the [de
 set service.cumulocity.gpio.<port>.notify=measurement
 ```
 
-&#60;port&#62; is the numbering of the GPIO pin. For NTC-220, <port> can be 1, 2 or 3. The visualized result is then visible in **Measurements**.
+&#60;port&#62; is the numbering of the GPIO pin. For NTC-220, <port> can be 1, 2 or 3. The visualized result is then visible in the **Measurements** tab.
 
 #### Digital input
 You can raise alarms from digital inputs. These can be configured using the router user interface or through the [device shell](#device-shell).

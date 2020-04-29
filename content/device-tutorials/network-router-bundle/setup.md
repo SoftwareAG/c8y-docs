@@ -3,7 +3,6 @@ title: Setting up and registering the device
 weight: 30
 ---
 
-
 ### <a name="install-agent"> To install the agent
 
 1. Download the agent software, including the CA root certificate, Cloud Remote Access software, and our package public key. See the table below.
@@ -12,7 +11,7 @@ weight: 30
 4. Turn **Enable firmware signature check** to OFF.
 
     > **Info:** If you skip this step, no software can be installed later. After installing the agent package, this function will be enabled again automatically.
-  Firmware version 2.0.84.0 does not support the firmware signature. You can ignore this step.
+  In case of firmware version 2.0.84.0 you can ignore this step as this version does not support the firmware signature.
 
 5. Navigate to the **System** menu. Click **System configuration** > **Choose a file** and select the downloaded software. Click **Upload** to upload the software to the router.
 6. Click the **Install** button for the uploaded software which you want to install.
@@ -33,6 +32,20 @@ The agent will automatically start after installation and the router can then be
 |4.0.2|[download]([http://resources.cumulocity.com/ntc/smartrest-agent_4.0.2_arm.ipk)|
 |4.2.3|[download]([http://resources.cumulocity.com/ntc/smartrest-agent_4.2.3_arm.ipk)|
 
+#### NTC-6200 and NTC-140W series CA certificate bundle (optional)
+|Version|Download|
+|:---|:---|
+|20170118|[download]([http://resources.cumulocity.com/ntc/ca-cumulocity_20170118.0_arm.ipk)|
+|20190515|[download]([http://resources.cumulocity.com/ntc/ca-cumulocity_20190515.0_arm.ipk)|
+|20200101|[download]([http://resources.cumulocity.com/ntc/ca-cumulocity_20200101.0_arm.ipk)|
+
+#### NTC-6200 and NTC-140W series Cloud Remote Access software (optional)
+
+|Version|Download|
+|:---|:---|
+|1.0|[download]([http://resources.cumulocity.com/ntc/vncproxy_1.0_arm.ipk)|
+|2.0|[download]([http://resources.cumulocity.com/ntc/vncproxy_2.0_arm.ipk)|
+|2.2|[download]([http://resources.cumulocity.com/ntc/vncproxy_2.2_arm.ipk)|
 
 ### <a name="register-device"> To register the device to Cumulocity IoT
 

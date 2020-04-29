@@ -10,7 +10,7 @@ weight: 30
 3. Navigate to the **System** menu. Click **System configuration** > **Firmware signature**.
 4. Turn **Enable firmware signature check** to OFF.
 
-    > **Info:** If you skip this step, no software can be installed later. After installing the agent package, this function will be enabled again automatically.
+    > **Info:** If you don´t turn the signature check off, the software installation will fail. After you have installed the agent package, the signature check will automatically be turned on again.
   In case of firmware version 2.0.84.0 you can ignore this step as this version does not support the firmware signature.
 
 5. Navigate to the **System** menu. Click **System configuration** > **Choose a file** and select the downloaded software. Click **Upload** to upload the software to the router.

@@ -167,6 +167,7 @@ aliases:
   - /devices/RedLion-StratusConnect-MC-Gateway
   - /devices/smartbox
   - /devices/smartbox-modus
+  - /device-tutorials
 ---
 
 This guide contains several device integration tutorials.

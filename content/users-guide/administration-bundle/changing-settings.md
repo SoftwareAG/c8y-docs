@@ -85,7 +85,7 @@ Before switching to the single sign-on option it is mandatory that:
 * All microservices are build with Microservice Java SDK 9.12.6 but preferably higher.For Microservices custom built, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the Microservice SDK guide.
 * For on premises installation the domain-based tenant resolution is configured properly.
 
-**Info:** In order to use the single sign-on feature for Enterprise Tenants, the enterprise domain must be set up as redirect URI in the basic configurations. If single sign-on providers have whitelists, the enterprise domain should be whitelisted.
+>**Info:** In order to use the single sign-on feature for Enterprise Tenants, the enterprise domain must be set up as redirect URI in the basic configurations. If single sign-on providers have whitelists, the enterprise domain should be whitelisted.
 
 
 #### Configuration settings

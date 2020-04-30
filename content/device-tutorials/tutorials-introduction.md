@@ -167,19 +167,13 @@ aliases:
   - /devices/RedLion-StratusConnect-MC-Gateway
   - /devices/smartbox
   - /devices/smartbox-modus
+  - /device-tutorials
 ---
 
-This guide contains device integration tutorials for simple demo devices that you can set up for proof-of-concept purposes in your Cumulocity IoT environment. 
+This guide includes device integration tutorials for the following devices:
 
-The tutorials show how you can register third-party devices with Cumulocity IoT in just a few minutes, and then view simple dashboards showing the data that Cumulocity IoT is receiving from the third-party devices. 
+[Mbed u-blox](/device-tutorials/mbed-ublox), [Raspberry Pi ](/device-tutorials/raspberry-pi-4) and [Tinkerforge](/device-tutorials/tinkerforge) serve as simple demo devices that you can set up for proof-of-concept purposes in your Cumulocity IoT environment. The tutorials show how you can register third-party devices with Cumulocity IoT in just a few minutes, and then interact with the Cumulocity IoT platform. Note that these demo devices should only be used for testing purposes. 
 
-Additionally, some of the demo devices allow you to send messages from Cumulocity IoT to the third-party devices, thereby showing that a Cumulocity IoT administrator with appropriate permissions can perform administrative tasks on remote devices. 
+The [Casa Systems (NetComm) router](/device-tutorials/netcomm-router) is a robust industrial IoT router designed for forwarding data packets between IoT devices within a network. The tutorial describes how to set up and configure a NetComm router using the Cumulocity IoT NetComm Agent package.
 
-Note that these demo devices should only be used for testing purposes. 
-
-For further information on devices recommended for production usage refer to the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/web/#/), which offers an extensive [collection of devices](https://devicepartnerportal.softwareag.com/web/#/devices) with guaranteed plug-and-play compatibility and full functional support in the Cumulocity IoT platform. You will find descriptions on how to configure and connect each device included there.
-
-<!--* The documentation of the **OPCUA Java gateway** has been added to the Java agent sources in Bitbucket at [https://bitbucket.org/m2m/cumulocity-agents-opc/src/develop/opcua-agent/documentation/](https://bitbucket.org/m2m/cumulocity-agents-opc/src/develop/opcua-agent/documentation/).
-
-Need to add a note to the new OPCUA description
--->
+For further information on supported devices refer to the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/web/#/), which offers an extensive [collection of devices](https://devicepartnerportal.softwareag.com/web/#/devices) with guaranteed plug-and-play compatibility and full functional support in the Cumulocity IoT platform. You will find descriptions on how to configure and connect each device included there.

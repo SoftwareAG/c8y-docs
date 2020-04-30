@@ -21,7 +21,7 @@ The following prerequisites are required to develop plugins and to execute the e
 
 ### <a name="cli-tool"></a>Cumulocity IoT CLI tool
 
-Once all prerequisites are met, you are almost ready to build your own application and plugin. 
+Once all prerequisites are met, you are almost ready to build your own application and plugin.
 
 For the process of developing a plugin (building, theming, translating and deploying your applications and plugins), the npm package "cumulocity-tools" must be installed globally on your machine. To install the npm package, execute the following command on your terminal.
 
@@ -39,7 +39,7 @@ The "--help" option displays all available commands for the CLI tool.
 
 ### <a name="ui-package"></a>Cumulocity IoT UI package
 
-As already described above, applications are always a collection of plugins. We provide a set of plugins you can build on in addition to your own. Prior to this, you must add a *package.jso*n file to the folder you will use for your application. To generate the *package.json* file automatically, simply run:
+As already described above, applications are always a collection of plugins. We provide a set of plugins you can build on in addition to your own. Prior to this, you must add a *package.json* file to the folder you will use for your application. To generate the *package.json* file automatically, simply run:
 
 ```bash
 $ npm init

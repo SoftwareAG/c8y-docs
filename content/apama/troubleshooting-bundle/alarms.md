@@ -39,6 +39,7 @@ The following is a list of the alarms. The information further down below explai
 - [Warning or higher level logging from an EPL file](#apama_ctrl_fatalcritwarn)
 - [An EPL file throws an uncaught exception](#apama_ctrl_error)
 - [Invalid measurement format](#apama_measurementformat_invalid)
+- [Multiple extensions with the same name](#extension_error)
 - [The CEP queue is full](#cep_queue_full) (this alarm is coming from Cumulocity IoT Core, but concerns Apama-ctrl)
 
 Once the cause of an alarm is resolved, you have to acknowledge and clear the alarm in the Cumulocity IoT tenant. Otherwise, you will continue to see the alarm until a further restart of the Apama-ctrl microservice.
@@ -255,7 +256,7 @@ You can diagnose the issue by the monitor name and line number given in the alar
 
 For more details, you can also check the Apama logs if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these uncaught exceptions will terminate the execution of that monitor instance, which will typically mean that your application is not going to function correctly. This might even lead to a correlator crash if not handled properly.
 
-### <a name="apama_measurementformat_invalid"></a>Invalid measurement format
+#### <a name="apama_measurementformat_invalid"></a>Invalid measurement format
 
 This alarm is raised whenever the `measurementFormat` key is set with an invalid value in the tenant option.
 
@@ -264,6 +265,18 @@ This alarm is raised whenever the `measurementFormat` key is set with an invalid
 - Alarm severity: WARNING
 
 Valid `measurementFormat` values for any tenant are `MEASUREMENT_ONLY` and `BOTH`. The default value is `MEASUREMENT_ONLY`.
+
+#### <a name="extension_error"></a>Multiple extensions with the same name
+
+This alarm is raised when the Apama-ctrl microservice tries to activate the deployed extensions during its startup process and there are multiple extensions with the same name.
+
+- Alarm type: `extension_error`
+- Alarm text: Multiple extensions with the same name have been found: &lt;list of all duplicate extension names&gt;
+- Alarm severity: CRITICAL
+
+This disables all extensions that were deployed to Apama-ctrl. In order to use the deployed extensions, the user has to decide which extensions to keep and then delete the duplicate ones.
+
+**Info**: In case of multiple duplicates, this alarm is only listed once.
 
 #### <a name="cep_queue_full"></a>The CEP queue is full
 

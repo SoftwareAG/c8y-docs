@@ -1,14 +1,14 @@
 ---
 weight: 60
-title: SmartREST Real-time Notificationss
+title: SmartREST Real-time Notifications
 layout: redirect
 ---
 
-All available real-time notification endpoints and channels of the Cumulocity platform are also available in a SmartREST syntax. Please have a look at the [Real-time notifications](/reference/real-time-notifications) reference guide to understand the general functionality of the [Bayeux protocol](https://docs.cometd.org/current/reference/#_concepts_bayeux_protocol) and get an overview of our available endpoints and channels fo  real-time notifications.
+All available real-time notification endpoints and channels of the Cumulocity IoT platform are also available in a SmartREST syntax. Please have a look at the [Real-time notifications](/reference/real-time-notifications) reference guide to understand the general functionality of the [Bayeux protocol](https://docs.cometd.org/current/reference/#_concepts_bayeux_protocol) and get an overview of our available endpoints and channels fo  real-time notifications.
 
 ### Using Real-time Notifications with SmartREST
 
-To tell the Cumulocity platform that the real-time notifications should use SmartREST all requests send to the URL must contain the `X-Id` header.
+To tell the Cumulocity IoT platform that the real-time notifications should use SmartREST all requests send to the URL must contain the `X-Id` header.
 
 #### Message identifiers
 
@@ -63,7 +63,7 @@ The response is formed by the response templates registered via SmartREST for th
 
 Keep-Alive:
 
-The Cumulocity platform will send every 10 minutes a space character through an open long-polling connection to detect connection loss. A response for a connect that has been open for a longer time could contain leading space characters in the first line of the response.
+The Cumulocity IoT platform will send every 10 minutes a space character through an open long-polling connection to detect connection loss. A response for a connect that has been open for a longer time could contain leading space characters in the first line of the response.
 
 #### Disconnect
 

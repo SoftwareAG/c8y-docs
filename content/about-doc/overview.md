@@ -4,7 +4,7 @@ title: Documentation overview
 layout: bundle
 ---
 
-The Cumulocity documentation on this website contains the following information:
+The Cumulocity IoT documentation on this website contains the following information:
 
 <table>
 <col width = 150>
@@ -27,6 +27,12 @@ The Cumulocity documentation on this website contains the following information:
 <td align="left">User documentation</td>
 <td align="left"><a href="/users-guide/getting-started/">User guide</a></td>
 <td align="left">Core, in-depth explanation on using the Administration, Cockpit and Device Management applications and various optional Cumulocity IoT services through the GUI.</td>
+</tr>
+
+<tr>
+<td align="left">User documentation</td>
+<td align="left"><a href="/device-tutorials/tutorials-introduction/">Device integration tutorials</a></td>
+<td align="left">How to integrate various demo devices in your Cumulocity IoT environment.</td> 
 </tr>
 
 <tr>
@@ -67,8 +73,8 @@ The Cumulocity documentation on this website contains the following information:
 
 <tr>
 <td align="left">Analytics documentation</td>
-<td align="left"><a href="/predictive-analytics/introduction/">Predictive analytics guide</a></td>
-<td align="left">Detailed information on the predictive analytics capabilities in the Cumulocity IoT platform.</td>
+<td align="left"><a href="/predictive-analytics/introduction/">Machine learning guide</a></td>
+<td align="left">Detailed information on the machine learning capabilities in the Cumulocity IoT platform.</td>
 </tr>
 
 <tr>

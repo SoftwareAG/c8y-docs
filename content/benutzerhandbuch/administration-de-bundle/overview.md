@@ -1,20 +1,18 @@
 ---
-weight: 10
 title: Übersicht
-layout: redirect
+weight: 1
+
 ---
 
-<a name="overview"></a>
-
-Die folgenden Abschnitte beschreiben detailliert alle Funktionalitäten der Anwendung "Administration". Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokuments.
+Die folgenden Abschnitte beschreiben detailliert alle Funktionalitäten der Administration-Anwendung. Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokuments.
 
 |Abschnitt|Inhalt|
 |:---|:---|
 |[Startseite](#home-screen)|Enthält Informationen über [Kapazitätsnutzung und abonnierte Anwendungen](#home-screen).
 |[Verwalten von Benutzern](#managing-users)|Wie [Benutzer](#creating-users) erstellt, bearbeitet, deaktiviert und gelöscht werden.
-|[Verwalten von Berechtigungen](#managing-permissions)|Wie [globale Rollen](#global) und [Stammdatenrollen](#inventory) erstellt und bearbeitet werden, wie diese Benutzern zugewiesen werden und wie man [Zugriff auf Anwendungen](#app-access) erteilt.
-|[Anzeigen von Audit-Logs](#audit-logs)|Enthält Informationen zu [von den Benutzern ausgeführten Kommandos](#audit-logs).
-|[Verwalten eigener Anwendungen](#managing-applications)|Wie [eigene Anwendungen](#managing-applications) in Ihrem Cumulocity-Konto verwaltet und konfiguriert werden.
+|[Verwalten von Berechtigungen](#managing-permissions)|Wie [globale Rollen](#global) und [Stammdatenrollen](#inventory) hinzugefügt und bearbeitet werden, wie diese Benutzern zugewiesen werden und wie man [Zugriff auf Anwendungen](#app-access) erteilt.
+|[Verwalten von Anwendungen](#managing-applications)|Wie in Ihrem Cumulocity IoT-Konto abonnierte Anwendungen verwaltet und wie [eigene Anwendungen verwaltet und konfiguriert](#managing-applications) werden.
 |[Anwenden von Geschäftsregeln](#business-rules)|Wie [Echtzeitregeln](#event-processing) aufgesetzt und Alarme durch [Alarmregeln](#reprio-alarms) repriorisiert werden.
-|[Änderung von Einstellungen](#changing-settings)|Wie Einstellungen, wie etwa [Anwendungseinstellungen](#default-app) oder [Passwort- und TFA-Einstellungen](#changing-password-settings), geändert werden und wie die [Attributsbibliothek](#properties) verwaltet wird.
-|[Verwalten der Datenhaltung](#data-retention)|Wie [Datenhaltungsregeln](#retention-rules) für Ihre Daten konfiguriert und wie Ihre [gespeicherten Daten](#files) in der Dateiablage verwaltet werden.
+|[Verwalten der Datenhaltung](#retention-rules)|Wie [Datenhaltungsregeln](#retention-rules) für Ihre Daten konfiguriert und wie Ihre [gespeicherten Daten](#files) in der Dateiablage verwaltet werden.
+|[Zwei-Faktor-Authentifizierung](#tfa)|Wie die [Zwei-Faktor-Authentifizierung](#tfa) für einen Benutzer aktiviert/deaktiviert wird.
+|[Änderung von Einstellungen](#changing-settings)|Wie Kontoeinstellungen, z. B. [Anwendungseinstellungen](#default-app) oder [Passwort- und TFA-Einstellungen](#authentication), geändert, wie die [Attributsbibliothek](#properties) verwaltet und wie [Single-Sign-On](#single-sign-on) konfiguriert werden.

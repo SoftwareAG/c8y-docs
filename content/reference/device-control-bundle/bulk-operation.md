@@ -19,17 +19,89 @@ Bulk Operation API requires different roles that standard device control API. Th
 
 ### Bulk Operation [application/vnd.com.nsn.cumulocity.bulkOperation+json]
 
-|Name|Type|Occurs|Description|PUT/POST|
-|:---|:---|:-----|:----------|--------|
-|id|String|1|Uniquely identifies an operation.|No|
-|self|URI|1|Link to this resource.|No|
-|groupId|String|1|Identifies the target group on which this operation should be performed.|POST: No PUT: No|
-|failedParentId|String|1|Identifies the failed bulk operation from which failed operations should be rescheduled.|POST: No PUT: No|
-|startDate|String|1|Time when operations should be created.|POST: Mandatory PUT: No|
-|creationRamp|Number|1|Delay between every operation creation.|POST: Mandatory PUT: No|
-|operationPrototype|OperationRepresentation|1|Operation to be executed for every device in a group.|POST: Mandatory PUT: No|
-|status|String|1|Status of Bulk Operation. Possible values: ACTIVE, COMPLETED, DELETED|No|
-|progress|BulkOperationProgressRepresentation|1|Contains information about number of processed operations.|No|
+<table>
+colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+<th>PUT/POST</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">id</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Uniquely identifies an operation.</td>
+<td>No</td>
+</tr>
+<tr>
+<td align="left">self</td>
+<td align="left">URI</td>
+<td align="left">1</td>
+<td align="left">Link to this resource.</td>
+<td>No</td>
+</tr>
+<tr>
+<td align="left">groupId</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Identifies the target group on which this operation should be performed.</td>
+<td>POST: No PUT: No</td>
+</tr>
+<tr>
+<td align="left">failedParentId</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Identifies the failed bulk operation from which failed operations should be rescheduled.</td>
+<td>POST: No PUT: No</td>
+</tr>
+<tr>
+<td align="left">startDate</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Time when operations should be created.</td>
+<td>POST: Mandatory PUT: No</td>
+</tr>
+<tr>
+<td align="left">creationRamp</td>
+<td align="left">Number</td>
+<td align="left">1</td>
+<td align="left">Delay between every operation creation.</td>
+<td>POST: Mandatory PUT: No</td>
+</tr>
+<tr>
+<td align="left">operationPrototype</td>
+<td align="left">OperationRepresentation</td>
+<td align="left">1</td>
+<td align="left">Operation to be executed for every device in a group.</td>
+<td>POST: Mandatory PUT: No</td>
+</tr>
+<tr>
+<td align="left">status</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Status of Bulk Operation. Possible values: ACTIVE, COMPLETED, DELETED</td>
+<td>No</td>
+</tr>
+<tr>
+<td align="left">progress</td>
+<td align="left">BulkOperationProgressRepresentation</td>
+<td align="left">1</td>
+<td align="left">Contains information about number of processed operations.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
 
 ### PUT - Update a Bulk Operation
 

@@ -6,16 +6,16 @@ layout: redirect
 
 Lightweight M2M (LWM2M) is a traffic and resource-optimized protocol to remotely manage IoT devices. The protocol is standardized by the Open Mobile Alliance. For more information, see [http://openmobilealliance.org/iot/lightweight-m2m-lwm2m](http://openmobilealliance.org/iot/lightweight-m2m-lwm2m).
 
-You can connect any device supporting LWM2M to Cumulocity without programming. Instead, you configure how LWM2M devices are mapped to Cumulocity using device protocols.
+You can connect any device supporting LWM2M to Cumulocity IoT without programming. Instead, you configure how LWM2M devices are mapped to Cumulocity IoT using device protocols.
 
-![Device protocols](/images/users-guide/LWM2M/devmgmt-lwm2m-deviceprotocol.png)
+![Device protocols](/images/users-guide/lwm2m/lwm2m-deviceprotocol.png)
 
 
 ### <a name="register"></a>Registering LWM2M devices
 
 To connect LWM2M devices, you need to upload a CSV file with registration data. This data is required to enable LWM2M communication. The CSV holds all information for factory bootstrap and client-initiated bootstrap. In the factory bootstrap mode, the LWM2M client has been configured with the necessary bootstrap information prior to the deployment of the device. The client initiated bootstrap mode requires a LWM2M bootstrap-server account pre-loaded in the LWM2M client. Below, you can see two CSV examples:
 
-![CSV example 1](/images/users-guide/LWM2M/csv1.png)
+![CSV example 1](/images/users-guide/lwm2m/lwm2m-csv1.png)
 
 In the first CSV example you can see the following fields:
 
@@ -63,11 +63,11 @@ In the first CSV example you can see the following fields:
 </tr>
 <tr>
 <td style="text-align:left">lwm2m server url</td>
-<td style="text-align:left">The URL the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the Cumulocity service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap server port is "5683" and the LWM2M port is "5783". Note, that these values can be different for other services.</td>
+<td style="text-align:left">The URL the server is using for bootstrap. The LWM2M bootstrap server is used to provision the LWM2M client with the information required to contact the LWM2M servers. If you are using the Cumulocity IoT service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap server port is "5683" and the LWM2M port is "5783". Note, that these values can be different for other services.</td>
 </tr>
 <tr>
 <td style="text-align:left">securityMode</td>
-<td style="text-align:left">In this example the value of the security mode is “NO_SEC” which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. Currently Cumulocity supports only “NO_SEC” and “PSK”. With “PSK”, the client and server have a common secret symmetric cryptography. In the next example you will see how the CSV file should look when the security mode value is “NO_SEC”.</td>
+<td style="text-align:left">In this example the value of the security mode is “NO_SEC” which means that there is no security. It is highly recommended to always protect the LWM2M protocol. However, there are scenarios in which the LWM2M protocol is deployed in environments where the lower layer security mechanisms are provided. Currently Cumulocity IoT supports only “NO_SEC” and “PSK”. With “PSK”, the client and server have a common secret symmetric cryptography. In the next example you will see how the CSV file should look when the security mode value is “NO_SEC”.</td>
 </tr>
 </tbody>
 </table>
@@ -97,7 +97,7 @@ The table below reflects the full set of possible fields that can be added:
 <tr>
 <td style="text-align: left">lwm2m server url</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The URL of the LWM2M server to be sent to the devices during bootstrap. If you are using the Cumulocity service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap server port is "5683" and the LWM2M port is "5783". Note, that these values can be different for other services.</td>
+<td style="text-align: left">The URL of the LWM2M server to be sent to the devices during bootstrap. If you are using the Cumulocity IoT service the hostname of the LWM2M server is "lwm2m.cumulocity.com". The bootstrap server port is "5683" and the LWM2M port is "5783". Note, that these values can be different for other services.</td>
 <td style="text-align: left">Yes, for LWM2M bootstrap</td>
 </tr>
 <tr>
@@ -115,7 +115,7 @@ The table below reflects the full set of possible fields that can be added:
 <tr>
 <td style="text-align: left">generateBootstrapServerConfig</td>
 <td style="text-align: left">Boolean</td>
-<td style="text-align: left">Toggles if Cumulocity generates a server config for the LWM2M bootstrap server and writes that back during bootstrap. Default is false.</td>
+<td style="text-align: left">Toggles if Cumulocity IoT generates a server config for the LWM2M bootstrap server and writes that back during bootstrap. Default is false.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
@@ -157,7 +157,7 @@ The table below reflects the full set of possible fields that can be added:
 <tr style="height: 26px;">
 <td style="text-align: left">bindingMode</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The LWM2M binding mode to be reported to the device. Supported are &ldquo;UQ&rdquo; (default, queuing) and &ldquo;U&rdquo; (unqueued). Note, that Cumulocity will always queue operations.</td>
+<td style="text-align: left">The LWM2M binding mode to be reported to the device. Supported are &ldquo;UQ&rdquo; (default, queuing) and &ldquo;U&rdquo; (unqueued). Note, that Cumulocity IoT will always queue operations.</td>
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
@@ -175,7 +175,7 @@ The table below reflects the full set of possible fields that can be added:
 </tbody>
 </table>
 
-![CSV example 2.1](/images/users-guide/LWM2M/lwm2m-psk-example.png)
+![CSV example 2.1](/images/users-guide/lwm2m/lwm2m-psk-example.png)
 
 In this CSV example, the security mode value is “PSK”. With "PSK" enabled, additional mandatory fields must be filled. All fields, available to "PSK", can be observed in the table below:
 
@@ -232,7 +232,7 @@ After creation, the bootstrap parameters can be viewed and changed in the **LWM2
 
 ### <a name="device_protocols"></a>LWM2M device protocols
 
-To process data from LWM2M devices, Cumulocity uses device protocols.
+To process data from LWM2M devices, Cumulocity IoT uses device protocols.
 Device protocols are accessible through the **Devices Types** menu in the Device Management application. For details on the general usage, see [Device Management > Managing device types](/users-guide/device-management/#managing-device-types).
 
 #### <a name="creating_device_protocols"></a>Creating LWM2M device protocols
@@ -245,20 +245,20 @@ To add a new LWM2M device protocol follow these steps:
 2. Click **Add device protocol** in the top menu bar.
 3. In the upcoming dialog select **LWM2M** as device protocol type. <br><br>
 
-![Add new protocol](/images/users-guide/LWM2M/devmgmt-lwm2m-newprotocol.png)
+![Add new protocol](/images/users-guide/lwm2m/lwm2m-newprotocol.png)
 
 4. Next, upload an appropriate DDF or XML file. DDF or XML files describe the data provided by your device. They are typically provided by the manufacturer or by standards bodies such as IPSO. There are also 3 "special" device protocols (DDF files) for standard OMA objects: 6 (location tracking), 5 (firmware update) and 3 (device information). If these files are not uploaded, then neither location tracking nor firmware updates will work. By default, the LWM2M agent adds mappings to these objects and knows how to "handle" their information without any additional configuration. The XML schema used by LWM2M can be found here. <br>
 If the DDF files for the default mappings are uploaded in the management tenant, all subscribed user tenants will inherit this behavior. <br><br>
 
-![Upload DDF file](/images/users-guide/LWM2M/devmgmt-lwm2m-uploadDDF.png)
+![Upload DDF file](/images/users-guide/lwm2m/lwm2m-uploadDDF.png)
 
 5. In the next dialog, you can see the name and description of the protocol. Click **Continue** to create the new device protocol. <br><br>
 
-![Upload DDF file](/images/users-guide/LWM2M/devmgmt-lwm2m-uploadprotocol.png)
+![Upload DDF file](/images/users-guide/lwm2m/lwm2m-uploadprotocol.png)
 
 The device protocol will open in a new page.
 
-![Example protocol](/images/users-guide/LWM2M/devmgmt-lwm2m-protocol-example.png)
+![Example protocol](/images/users-guide/lwm2m/lwm2m-protocol-example.png)
 
 In the device protocol page, you will see the description at the top left and the ID, the creation date and date of the last update at the top right.
 
@@ -268,13 +268,13 @@ Below, a list of resources configured for the device will be listed (which is em
 
 Example: In the following screenshot you can see an example device protocol. This object should be used with a temperature sensor to report a temperature measurement. It also provides resources for minimum/maximum measured values and the minimum/maximum range that can be measured by the temperature sensor. An example measurement unit is “degrees Celsius”.
 
-![Example protocol2](/images/users-guide/LWM2M/devmgmt-lwm2m-temperature-example.png)
+![Example protocol2](/images/users-guide/lwm2m/lwm2m-temperature-example.png)
 
 #### <a name="resources"></a>Adding additional functionalities to a resource
 
 The functionalities that you may enable are the following:
 
-![Resource functionalities](/images/users-guide/LWM2M/devmgmt-lwm2m-functionalities.png)
+![Resource functionalities](/images/users-guide/lwm2m/lwm2m-functionalities.png)
 
 **Send measurement**
 
@@ -302,11 +302,11 @@ Turn on **Send event** to send an event each time you receive a resource value. 
 
 **Custom Actions**
 
-Turn on **Custom Actions** to map LWM2M data into Cumulocity using custom data processing actions. For specialized integration use cases, it is required to perform customized data processing on LWM2M data. One example are LWM2M resources of the OPAQUE data type that contain proprietary, binary data, CBOR, XML or alike.
+Turn on **Custom Actions** to map LWM2M data into Cumulocity IoT using custom data processing actions. For specialized integration use cases, it is required to perform customized data processing on LWM2M data. One example are LWM2M resources of the OPAQUE data type that contain proprietary, binary data, CBOR, XML or alike.
 
-![Custom actions](/images/users-guide/LWM2M/devmgmt-lwm2m-customactions.png)
+![Custom actions](/images/users-guide/lwm2m/lwm2m-customactions.png)
 
-Cumulocity LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary Cumulocity microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We are providing an according example how to write such a decoder microservice in our public [Bitbucket repository](https://bitbucket.org/m2m/cumulocity-examples/src/develop/). 
+Cumulocity IoT LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary Cumulocity IoT microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We are providing an according example how to write such a decoder microservice in our public [Bitbucket repository](https://bitbucket.org/m2m/cumulocity-examples/src/develop/).
 
 **Auto observe**
 
@@ -314,7 +314,7 @@ If **Auto-Observe** is turned on for a resource, the LWM2M server observes a spe
 
 > **Info**: At least one functionality must be set to enable "Auto observe".
 
-![Resource](/images/users-guide/LWM2M/devmgmt-lwm2m-autoobserve.png)
+![Resource](/images/users-guide/lwm2m/lwm2m-autoobserve.png)
 
 ### LWM2M device details
 
@@ -324,41 +324,41 @@ If **Auto-Observe** is turned on for a resource, the LWM2M server observes a spe
 
 In the **Objects** tab of a LWM2M device, you can view all objects, resources and instances of the device. Additionally, you can create new operations, see all currently pending operations and view the history of all previous operations.
 
-![Objects view](/images/users-guide/LWM2M/devmgmt-lwm2m-objects.png)
+![Objects view](/images/users-guide/lwm2m/lwm2m-objects.png)
 
-**Info**: In order to see resources in the **Objects** tab, the resources first have to be added in the **Device Protocols** page.
+> **Info**: In order to see resources in the **Objects** tab, the resources first have to be added in the **Device Protocols** page.
 
 The following operations may be available in each instance:
 
 - Read Object: Reads all instances for the selected object and lists all available resources for each instance.
 <br><br>
-![Read Objects](/images/users-guide/LWM2M/devmgmt-lwm2m-devices-readobject.png)
+![Read Objects](/images/users-guide/lwm2m/lwm2m-devices-readobject.png)
 <br><br>
 - Read Instance: Reads the current instance of the given object and lists all available resources.
 <br><br>
-![Read Instance](/images/users-guide/LWM2M/devmgmt-lwm2m-devices-readinstance.png)
+![Read Instance](/images/users-guide/lwm2m/lwm2m-devices-readinstance.png)
 <br><br>
 - Create Instance: Creates a new instance for the selected object.
 - Delete Instance: Deletes the selected instance.
 
-**Info:**  Some instances do not have all of the listed operations.
+> **Info:**  Some instances do not have all of the listed operations.
 
 Some object cards show additional operations which can be performed. These operations become available after reading the object/instance, for example, device **Update**. In order to perform the operation, click **Execute**.
 
-![Execute operation](/images/users-guide/LWM2M/devmgmt-lwm2m-devices-execute.png)
+![Execute operation](/images/users-guide/lwm2m/lwm2m-devices-execute.png)
 
 More information can be acquired for each resource by hovering over the tooltip icon.
 
-![Tooltip](/images/users-guide/LWM2M/devmgmt-lwm2m-devices-tooltip.png)
+![Tooltip](/images/users-guide/lwm2m/lwm2m-devices-tooltip.png)
 
 Additional information on recent operations can be viewed by clicking the operations button located on the right side of an instance card. The button is only visible if any operation has been performed. The number of unread operations can be seen on the top right of the button. In the example below there is only one.
 
-![Recent operations](/images/users-guide/LWM2M/devmgmt-lwm2m-devices-operations.png)
-![Recent operations 2](/images/users-guide/LWM2M/devmgmt-lwm2m-devices-operations2.png)
+![Recent operations](/images/users-guide/lwm2m/lwm2m-devices-operations.png)
+![Recent operations 2](/images/users-guide/lwm2m/lwm2m-devices-operations2.png)
 
 To view the history of all operations, simply click **View history**. Note, that you will be redirected to the **Control** tab.
 
-![View History control tab](/images/users-guide/LWM2M/devmgmt-lwm2m-devices-control.png)
+![View History control tab](/images/users-guide/lwm2m/lwm2m-devices-control.png)
 
 **Audit Configuration**
 
@@ -366,19 +366,19 @@ In the **Audit configuration** page you can audit the current device by comparin
 
 Click **Audit configuration** in the right of the top menu bar to navigate to the **Audit configuration** page.
 
-![Audit configuration](/images/users-guide/LWM2M/devmgmt-lwm2m-devices-audit.png)
+![Audit configuration](/images/users-guide/lwm2m/lwm2m-devices-audit.png)
 
 To sync properties, select the desired reference device from the dropdown list. Check the properties that you wish to sync and click **Sync selected properties**.
 
 > **Info**: The numbers in the green circles represent the number of properties in the instance which have the same value in both devices. Respectively, the numbers in the red circles represent the number of properties which have different values compared to the values of the referenced device. If an instance is expanded, you can select only specific properties which can be synced.
 
-![Sync properties](/images/users-guide/LWM2M/devmgmt-lwm2m-devices-sync.png)
+![Sync properties](/images/users-guide/lwm2m/lwm2m-devices-sync.png)
 
 #### <a name="lwm2m-bootstrap"></a> LWM2M bootstrap parameters
 
 In the **LWM2M bootstrap parameters** tab, bootstrap parameters of the current device can be viewed and changed. To modify a parameter, enter the desired value in a field of your choice and click **Save.**
 
-![Bootstrap customization](/images/users-guide/LWM2M/devmgmt-lwm2m-devices-bootstrap.png)
+![Bootstrap customization](/images/users-guide/lwm2m/lwm2m-devices-bootstrap.png)
 
 > **Important:** Currently only the "NO_SEC" and "PSK" security modes are supported.
 
@@ -417,13 +417,13 @@ Validation rules are used to verify that the data a user enters in a resource me
 
 Validation rules can only be added to resources which have “write” permissions. Resources which can have validation rules are marked by the following icon:
 
-![Validation rule icon](/images/users-guide/LWM2M/devmgmt-lwm2m-protocols-rules.png)
+![Validation rule icon](/images/users-guide/lwm2m/lwm2m-protocols-rules.png)
 
 When hovering over the icon, you can see whether there are defined validation rules.
 
 Add a new validation rule by clicking on the desired resource and then click **Add validation rule**.
 
-![Add validation rule](/images/users-guide/LWM2M/devmgmt-lwm2m-protocols-addrule.png)
+![Add validation rule](/images/users-guide/lwm2m/lwm2m-protocols-addrule.png)
 
 Validation rules can have the following types:
 
@@ -442,11 +442,11 @@ After selecting a type, the following rules can be chosen:
 - Greater or equals than
 - Lower or equals than
 
-**Info:** Not all rules are available to each type.
+> **Info:** Not all rules are available to each type.
 
 To delete a rule, simply click on the delete icon:
 
-![Remove lwm2m rule](/images/users-guide/LWM2M/devmgmt-lwm2m-protocols-removerule.png)
+![Remove lwm2m rule](/images/users-guide/lwm2m/lwm2m-protocols-removerule.png)
 
 Click **Save** to save your settings.
 

@@ -119,7 +119,7 @@ layout: redirect
 
 A managed object reference in the "child" and "parents" collections contains only `id`, `name` and `self` properties.
 
-Not every GET response contains "parents" collections. It is required to pass `withParents=true` query param to have "parents" included. If you query the managed object `withParent=true` it will return a flat list of all parents and grandparents of the given object.
+Not every GET response contains "parents" collections. You need a global role with READ "Inventory" permission to query the managed object "parents". Pass `withParents=true` query param to have "parents" included. If you query the managed object `withParents=true` it will return a flat list of all parents and grandparents of the given object.
 
 > **Info:** If you query `childDevices`, only the children of the given device are returned without any grandchildren. 
 
@@ -185,7 +185,7 @@ HTTP/1.1
 
 **Request body:** ManagedObject
 
-**Response body:** ManagedObjectÂ (when accept header is not provided, empty response body is returned)
+**Response body:** ManagedObjectÊ(when accept header is not provided, empty response body is returned)
 
 **Required role:** ROLE\_INVENTORY\_ADMIN or ROLE\_INVENTORY\_CREATE
 
@@ -322,7 +322,7 @@ HTTP/1.1
 
 **Request body:** ManagedObject
 
-**Response body:** ManagedObjectÂ (when the accept header is not provided, an empty response body is returned)
+**Response body:** ManagedObjectÊ(when the accept header is not provided, an empty response body is returned)
 
 **Required role:** ROLE\_INVENTORY\_ADMIN or owner
 

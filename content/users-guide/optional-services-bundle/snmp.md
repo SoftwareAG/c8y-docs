@@ -5,25 +5,30 @@ layout: redirect
 ---
 ### Overview
 
-Simple Network Management protocol (SNMP) is an application layer protocol, used widely in network management for monitoring network devices. 
+Simple Network Management protocol (SNMP) is an application layer protocol, used widely in network management for monitoring network devices.
 
 There are two components that help SNMP-enabled devices to connect to the Cumulocity IoT platform:
 
 1. The **Mibparser microservice** helps in converting a Managed Information Base (MIB) file to a JSON representation which is then used to create a device protocol.
-2. The **Cumulocity SNMP agent** is a device-side agent that helps SNMP-enabled devices to connect to the Cumulocity IoT platform and translates messages from a SNMP-specific format to a Cumulocity model before forwarding them to the Cumulocity.
+2. The **SNMP agent** is a device-side agent that helps SNMP-enabled devices to connect to the Cumulocity IoT platform and translates messages from a SNMP-specific format to a Cumulocity IoT model before forwarding them to the Cumulocity IoT platform.
 
-The following image provides a general overview of the SNMP-enabled device integration with Cumulocity:
+The following image provides a general overview of the SNMP-enabled device integration with Cumulocity IoT:
 
-![Cumulocity SNMP Integration](/images/users-guide/snmp/snmp-cumulocity-integration.png)
+![Cumulocity IoT SNMP Integration](/images/users-guide/snmp/snmp-cumulocity-integration.png)
 
 
 ### SNMP agent
 
 #### Introduction
 
-The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled device(s) and the Cumulocity IoT platform. It receives SNMP data from the devices, converts the data to Cumulocity-based objects based on the device protocol mapping, persists the data locally, and forwards the data to Cumulocity. The agent has to be registered in Cumulocity before serving the device request.
+The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled device(s) and the Cumulocity IoT platform. It receives SNMP data from the devices, converts the data to Cumulocity IoT-based objects based on the device protocol mapping, persists the data locally, and forwards the data to Cumulocity IoT. The agent has to be registered in Cumulocity IoT before serving the device request.
 
-> **Info:** The Mibparser microservice needs to be subscribed to the tenant before installing the agent. The procedure how to build and deploy the Mibparser microservice is described in [https://bitbucket.org/m2m/c8y-mib-parser/src/develop/](https://bitbucket.org/m2m/c8y-mib-parser/src/develop/).
+>**Info:** If you are using one of the Software AG managed public cloud instances, you need to ensure that your tenant is subscribed to the Mibparser microservice.
+
+>To add the Mibparser microservice to the Cumulocity IoT platform,
+
+>* download the file *snmp-mib-parser-&lt;ga-version&gt;.zip* (for example *snmp-mib-parser-1005.7.0.zip*) from [http://resources.cumulocity.com/examples/snmp/](http://resources.cumulocity.com/examples/snmp/). 
+* Upload this ZIP file as a microservice into the platform. Refer to [Managing Applications](/users-guide/managing-applications) in the User guide for details on how to upload microservices into Cumulocity IoT.
 
 #### Installation
 
@@ -33,21 +38,25 @@ The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled
 | ------------- |:-------------|
 | Java version  | Java Runtime Environment 8 or newer version.|
 | Heap memory   | The agent Java application can run on as little as 200MB of heap space. <br>However, based on the number of devices and the load, this needs to be adjusted.   |
-| Disk space    | The Cumulocity representation of the SNMP message will be persisted before forwarding to the platform. <br>Based on the load, sufficient disk space should be available to store the objects.     |
+| Disk space    | The Cumulocity IoT representation of the SNMP message will be persisted before forwarding to the platform. <br>Based on the load, sufficient disk space should be available to store the objects.     |
 | Hardware and OS    | Linux environment, can run on laptops or industrial PCs.     |
 
 ##### To install the agent
 
 1. Download the latest SNMP agent RPM:
+
+		wget -nv http://resources.cumulocity.com/examples/snmp/snmp-agent-gateway-<ga-version>-1.noarch.rpm
 	
-		wget -nv http://resources.cumulocity.com/examples/snmp/snmp-agent-gateway-<ga-version>.rpm
+	The `<ga-version>` needs to be provided in the format `1005.7.0`, `1006.0.0`, and so on. A sample command would look like this:
+ 	
+ 		wget -nv http://resources.cumulocity.com/examples/snmp/snmp-agent-gateway-1006.0.0-1.noarch.rpm
 
 2. Verify the signature of the RPM package:
-	
+
 		rpm --checksig snmp-agent-gateway-<ga-version>.rpm
 
 3. Install the SNMP agent RPM package:
-	
+
 		sudo rpm -ivh snmp-agent-gateway-<ga-version>.rpm
 
 4. Check the installed RPM package:
@@ -56,14 +65,14 @@ The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled
 
 5. Configure the agent:
    * Create a .snmp folder in the user home directory:
-   	
+
    			mkdir -p $HOME/.snmp
 
    * Copy the snmp properties file into the .snmp folder:
-   
+
    				cp /etc/snmp-agent-gateway/snmp-agent-gateway.properties $HOME/.snmp
-  
-   * Change the properties according to the Cumulocity environment (e.g. gateway.identifier, Cumulocity bootstrap details, SNMP Community target).
+
+   * Change the properties according to the Cumulocity IoT environment (e.g. gateway.identifier, Cumulocity IoT bootstrap details, SNMP Community target).
 
 6. Start the service:
 
@@ -93,7 +102,7 @@ The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled
 		systemctl stop snmp-agent-gateway
 
 4. Upgrade the SNMP agent RPM package:
-	
+
 		rpm -Uvh snmp-agent-gateway-<new-ga-version>.rpm
 
 5. Start the service:
@@ -101,7 +110,7 @@ The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled
 		systemctl start snmp-agent-gateway
 
 6. Check if the service started properly by checking the status:
-	
+
 		systemctl status snmp-agent-gateway
 
 7. Make sure that the agent process is running without any issues. To do so, check the agent log file:
@@ -124,15 +133,15 @@ The SNMP agent has undergone a major revamp in-terms of persistence storage mech
 		rpm -e <snmp-package-name>
 
 6. Delete the contents inside *$HOME/.snmp/* and */etc/snmp* folder (if present).
-7. Delete the snmp-agent device in Cumulocity which was registered as part of the installation and all its child SNMP devices. This can be done from the user interface or by using REST endpoints.
+7. Delete the snmp-agent device in Cumulocity IoT which was registered as part of the installation and all its child SNMP devices. This can be done from the user interface or by using REST endpoints.
 8. Follow the installation procedure described above, to install/move to GA version.
 
-> **Info:**: Cumulocity SNMP device protocol/s can be retained (unless there are no changes in the SNMP device configuration).
+> **Info:** SNMP device protocol/s can be retained (unless there are no changes in the SNMP device configuration).
 
 
 ### Registering the agent
 
-Before any SNMP device can connect to the Cumulocity IoT platform, first the SNMP agent needs to be registered in the platform. 
+Before any SNMP device can connect to the Cumulocity IoT platform, first the SNMP agent needs to be registered in the platform.
 
 #### To register the agent from the UI
 
@@ -191,7 +200,7 @@ On successful import, the newly added device protocol will be listed in the devi
 	POST /service/mibparser/mib/uploadzip
 	Authorization: Basic ...
 	Content-Type: multipart/form-data; boundary=----WebKitFormBoundary8WCDTr2uRkbroQ11
-	
+
 	------WebKitFormBoundary8WCDTr2uRkbroQ11
 	Content-Disposition: form-data; name="file"; filename="APPN-TRAP-MIB_02.zip"
 	Content-Type: application/zip
@@ -202,7 +211,7 @@ On successful import, the newly added device protocol will be listed in the devi
 	POST /inventory/managedObjects
 	Authorization: Basic ...
 	Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json;
-	{ 
+	{
 		"name": "snmp-device-protocol",
 		"fieldbusType": "snmp",
 		"type": "c8y_ModbusDeviceType",
@@ -233,7 +242,7 @@ Device protocols can also be created manually. To do so, you need to know the OI
 
 ### Creating device protocol mapping
 
-The device protocol mapping helps the agent to know how to deal with incoming data from the SNMP-enabled devices. It basically allows users to configure an OID with a corresponding Cumulocity object such as an alarm, event or measurement. This information is later used by the agent to convert incoming data (say TRAP) to corresponding Cumulocity object/s that are defined in the mapping.
+The device protocol mapping helps the agent to know how to deal with incoming data from the SNMP-enabled devices. It basically allows users to configure an OID with a corresponding Cumulocity IoT object such as an alarm, event or measurement. This information is later used by the agent to convert incoming data (say TRAP) to corresponding Cumulocity IoT object/s that are defined in the mapping.
 
 #### To create mapping from the UI
 
@@ -241,20 +250,20 @@ The device protocol mapping helps the agent to know how to deal with incoming da
 2. Open the desired device protocol (e.g. snmp-device-protocol). It shows a list of components representing the OIDs.
 
 	![Device protocol details](/images/users-guide/snmp/snmp-device-protocol-detail.png)
- 
+
 3. Click the menu icon at the right of the component and click **Edit** to configure the mapping for the component.
-4. Under **Functionalities**, switch the toggle button to turn on the mapping for the required Cumulocity model (**Send measurement**, **Raise alarm** and/or **Send event**). Fill in the values for the respective fields and click **Save**.
-  
+4. Under **Functionalities**, switch the toggle button to turn on the mapping for the required Cumulocity IoT model (**Send measurement**, **Raise alarm** and/or **Send event**). Fill in the values for the respective fields and click **Save**.
+
 	![Edit components details](/images/users-guide/snmp/snmp-device-protocol-mapping.png)
 
-5. Click **Save** in the **Device protocol** page to finally save the changes. 
+5. Click **Save** in the **Device protocol** page to finally save the changes.
 
 #### To create mapping via REST API
 
 	PUT /inventory/managedObjects/{{device.protocol.id}}
 	Authorization: Basic ...
 	Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json
-	{ 
+	{
 	   "id":"18849",
 	   "name":"snmp-device-protocol",
 	   "owner":"snmp-test",
@@ -265,7 +274,7 @@ The device protocol mapping helps the agent to know how to deal with incoming da
 	   "c8y_Coils": [],
 	   "c8y_Global": {},
 	   "c8y_IsDeviceType": {},
-	   "c8y_Registers": [ 
+	   "c8y_Registers": [
 		{
 			"id": "22555518094562443"
 			"name": "CPU",
@@ -282,7 +291,7 @@ The device protocol mapping helps the agent to know how to deal with incoming da
 			"category": "cpu",
 			"description": "CPU",
 			"oid": "1.3.6.1.2.1.34.4.0.2",
-			"measurementMapping": { 
+			"measurementMapping": {
 				"type": "c8y_CPU",
 				"series": "T",
 				"sendMeasurementTemplate": 301
@@ -291,7 +300,7 @@ The device protocol mapping helps the agent to know how to deal with incoming da
 	   ]
 	}
 
-### Adding SNMP devices 
+### Adding SNMP devices
 
 SNMP-enabled devices can be added manually or through the autodiscovery method.
 
@@ -387,7 +396,7 @@ The following REST call schedules autodiscovery for the given interval:
 </tr>
 <tr>
 <td align="left">Device type</td>
-<td align="left">Select the device protocol relevant for the device being added. The device protocol contains the OID and the mapping of the OID to the Cumulocity model such as alarm/event/measurement.</td>
+<td align="left">Select the device protocol relevant for the device being added. The device protocol contains the OID and the mapping of the OID to the Cumulocity IoT's model such as alarm/event/measurement.</td>
 </tr>
 <tr>
 <td align="left">IP address</td>
@@ -399,7 +408,7 @@ The following REST call schedules autodiscovery for the given interval:
 </tr>
 <tr>
 <td align="left">SNMP version</td>
-<td align="left">Select one of the 3 SNMP versions (v1, v2c and v3) supported by the Cumulocity SNMP agent:<br>For v1 and v2c, the community target is configurable at the agent side (snmp-agent-gateway.properties).<br>For v3, various additional parameters have to be provided under <strong>Device authentication details</strong>:<br>- <strong>User name</strong>: Provide a valid user name for the device which will be used to authenticate the TRAPs coming from the device. <br>- <strong>Engine ID</strong>: The engine ID must be unique for each device and cannot be edited once saved. The length of the engine ID must have of a minimum of 5 and a maximum of 32 characters.<br>- <strong>Security Level</strong>: There are three types of security levels supported by SNMP v3 (NOAUTH_NOPRIV, AUTH_NOPRIV, AUTH_PRIV). Depending on the security level selected, you need to provide authentication and/or privacy details.</td>
+<td align="left">Select one of the 3 SNMP versions (v1, v2c and v3) supported by the SNMP agent:<br>For v1 and v2c, the community target is configurable at the agent side (snmp-agent-gateway.properties).<br>For v3, various additional parameters have to be provided under <strong>Device authentication details</strong>:<br>- <strong>User name</strong>: Provide a valid user name for the device which will be used to authenticate the TRAPs coming from the device. <br>- <strong>Engine ID</strong>: The engine ID must be unique for each device and cannot be edited once saved. The length of the engine ID must have of a minimum of 5 and a maximum of 32 characters.<br>- <strong>Security Level</strong>: There are three types of security levels supported by SNMP v3 (NOAUTH_NOPRIV, AUTH_NOPRIV, AUTH_PRIV). Depending on the security level selected, you need to provide authentication and/or privacy details.</td>
 </tr>
 </tbody>
 </table>
@@ -417,11 +426,11 @@ For a SNMP device with SNMP v1 or v2c
 	POST /inventory/managedObjects
 	Authorization: Basic ...
 	Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json
-	{ 
+	{
 	   "name":"snmp-device-0",
 	   "type":"snmp-device-protocol",
 	   "owner":"{{tenant.user}}"
-	   "c8y_SNMPDevice":{ 
+	   "c8y_SNMPDevice":{
 		  "ipAddress":"192.168.0.1",
 		  "port":"161",
 		  "version":0,              // 0 for v1, 1 for v2c and 3 for v3
@@ -432,12 +441,12 @@ For a SNMP device with SNMP v1 or v2c
 
 After posting the above request you will get a response similar to the one below. Note down the SNMP device ID (snmp.device.id).
 
-	{ 
+	{
 	   "id": "18955",
 	   "owner": "{{tenant.user}}",
 	   "name": "snmp-device-0",
 	   "type": "snmp-device-protocol",
-	   "c8y_SNMPDevice": { 
+	   "c8y_SNMPDevice": {
 			"port": "161",
 			"auth": {},
 			"ipAddress": "127.0.0.1",
@@ -480,7 +489,7 @@ Security level and protocols can have the following values:
     “securityLevel”: 1 //NOAUTH_NOPRIV
     “securityLevel”: 2 //AUTH_NOPRIV
     “securityLevel”: 3 //AUTH_PRIV
-   
+
 **authProtocol**
 
     “authProtocol”: 1 // MD5
@@ -488,7 +497,7 @@ Security level and protocols can have the following values:
 
 **privProtocol**
 
-    “privProtocol”: 1 // DES	
+    “privProtocol”: 1 // DES
     “privProtocol”: 2 // AES128
     “privProtocol”: 3 // AES192
     “privProtocol”: 4 // AES256
@@ -530,11 +539,11 @@ To delete the SNMP device, use the following REST API:
 
 ### TRAP processing
 
-A TRAP is an urgent message sent from the SNMP device to the agent. The SNMP device must send the TRAPs to the agent at the port number defined in `snmp.trapListener.port` in the agent configuration file (default port number is 6671). For this, the SNMP device needs to be configured with the agent connectivity details. 
+A TRAP is an urgent message sent from the SNMP device to the agent. The SNMP device must send the TRAPs to the agent at the port number defined in `snmp.trapListener.port` in the agent configuration file (default port number is 6671). For this, the SNMP device needs to be configured with the agent connectivity details.
 
 For SNMP v1 and v2c, the community target has to be the same in the agent and in the SNMP device. At the agent side, this is configured in *snmp-agent-gateway.properties* and this should match with the SNMP device. In case of SNMP v3, the authentication and privacy details need to be configured before the SNMP device can send the TRAP to agent.
 
-A TRAP contains a PDU object which is configured with an OID and a value. If this OID is configured with a mapping in the device protocol assigned to the SNMP device in the platform, corresponding Cumulocity object/s such as alarm/event/measurement will be created in the platform based on the configured mapping.
+A TRAP contains a PDU object which is configured with an OID and a value. If this OID is configured with a mapping in the device protocol assigned to the SNMP device in the platform, corresponding Cumulocity IoT object/s such as alarm/event/measurement will be created in the platform based on the configured mapping.
 
 > **Info:**: If a TRAP is received by the agent from a device which is not registered, the agent raises a major alarm that a TRAP has been received from an unknown device, showing its IP address. The alarm can be viewed in the **Alarms** tab of the agent device.
 
@@ -551,13 +560,13 @@ The SNMP agent provides the capability to poll for SNMP device data by the OID. 
 <br>
 ![SNMP Device polling](/images/users-guide/snmp/snmp-polling.png)  
 
-The data received via polling is mapped to the Cumulocity model based on the mapping defined. As the OIDs contain measurement mapping, the measurements can be viewed in the **Measurements** tab of the SNMP device.
+The data received via polling is mapped to the Cumulocity IoT model based on the mapping defined. As the OIDs contain measurement mapping, the measurements can be viewed in the **Measurements** tab of the SNMP device.
 
 ![SNMP device measurement graph](/images/users-guide/snmp/snmp-measurement-graph.png)  
 
 #### To enable polling via REST API
 
-The following REST call schedules the polling with a given time period: 
+The following REST call schedules the polling with a given time period:
 
 	PUT /inventory/managedObjects/{{agent.device.id}}
 	Authorization: Basic ...
@@ -634,7 +643,7 @@ vi /usr/lib/snmp-agent-gateway/start
 Edit the following startup file and change the heap memory settings (-Xms128m -Xmx384m) to the desired value. Restart the service for the changes to take effect.
 
 ```
-/usr/lib/snmp-agent-gateway/start 
+/usr/lib/snmp-agent-gateway/start
 ```
 
 ##### How can I change the default agent configurations?
@@ -642,9 +651,9 @@ Edit the following startup file and change the heap memory settings (-Xms128m -X
 In the installation procedure, many of the agent configurations are defaulted to some value. These default values are set based on testing, common usage assumptions and ease of installation. However, you can change the default value to a value suitable for your environment and usage. To do so, uncomment the property and change the value of the property in `$HOME/.snmp/snmp-agent-gateway.properties`.
 On saving the changes, restart the agent service for the changes to take effect.
 
-##### Which Cumulocity services does the agent use?
+##### Which Cumulocity IoT services does the agent use?
 
-The agent makes use of c8y core APIs (most notably inventory, identity, device control, alarm/measurement/event) of the platform. 
+The agent makes use of c8y core APIs (most notably inventory, identity, device control, alarm/measurement/event) of the platform.
 
 ##### What are the ports used by the agent?
 

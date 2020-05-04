@@ -6,19 +6,91 @@ layout: redirect
 
 ### Operation [application/vnd.com.nsn.cumulocity.operation+json]
 
-|Name|Type|Occurs|Description|PUT/POST|
-|:---|:---|:-----|:----------|--------|
-|id|String|1|Uniquely identifies an operation.|No|
-|self|URI|1|Link to this resource.|No|
-|creationTime|String|1|Time when the operation was created in the database.|No|
-|deviceID|String|1|Identifies the target device on which this operation should be performed.|POST: Mandatory PUT: No|
-|deviceExternalIDs|ExternalIDCollection|0..n|External IDs of the target device, see the [Identity](/reference/identity) interface.|No|
-|bulkOperationId|String|1|Reference to bulkOperationId, if this operation was scheduled from Bulk Operation|No|
-|status|String|1|Operation status, can be one of SUCCESSFUL, FAILED, EXECUTING or PENDING.|POST: No PUT: Mandatory|
-|failureReason|String|0..1|Reason for the failure.|No|
-|\*|Object|1..n|Additional properties describing the operation which will be performed on the device.|POST: Optional PUT: Optional|
+<table>
+colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+<th>PUT/POST Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">id</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Uniquely identifies an operation.</td>
+<td>No</td>
+</tr>
+<tr>
+<td align="left">self</td>
+<td align="left">URI</td>
+<td align="left">1</td>
+<td align="left">Link to this resource.</td>
+<td>No</td>
+</tr>
+<tr>
+<td align="left">creationTime</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Time when the operation was created in the database.</td>
+<td>No</td>
+</tr>
+<tr>
+<td align="left">deviceID</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Identifies the target device on which this operation should be performed.</td>
+<td>POST: Mandatory<br>PUT: No</td>
+</tr>
+<tr>
+<td align="left">deviceExternalIDs</td>
+<td align="left">ExternalIDCollection</td>
+<td align="left">0..n</td>
+<td align="left">External IDs of the target device, see the <a href="../../reference/identity">Identity</a> interface.</td>
+<td>No</td>
+</tr>
+<tr>
+<td align="left">bulkOperationId</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Reference to bulkOperationId, if this operation was scheduled from Bulk Operation</td>
+<td>No</td>
+</tr>
+<tr>
+<td align="left">status</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Operation status, can be one of SUCCESSFUL, FAILED, EXECUTING or PENDING.</td>
+<td>POST: No<br>PUT: Mandatory</td>
+</tr>
+<tr>
+<td align="left">failureReason</td>
+<td align="left">String</td>
+<td align="left">0..1</td>
+<td align="left">Reason for the failure.</td>
+<td>No</td>
+</tr>
+<tr>
+<td align="left">&#42;</td>
+<td align="left">Object</td>
+<td align="left">1..n</td>
+<td align="left">Additional properties describing the operation which will be performed on the device.</td>
+<td>POST: Optional PUT: Optional</td>
+</tr>
+</tbody>
+</table>
 
-> **Note**: failureReason is optional only when the PUT status is "failed".
+> **Note:** You must set the `failureReason` message only when `status` is FAILED during a PUT operation.
 
 An "ExternalID" embedded in the "deviceExternalIDs" collection contains the properties "type" and "externalId".
 

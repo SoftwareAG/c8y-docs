@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Introduction to Cumulocity
+title: Introduction to Cumulocity IoT
 layout: bundle
 aliases:
   - /concepts-guide/introduction-to-cumulocity
@@ -10,4 +10,4 @@ aliases:
   - /konzepte/introduction
 ---
 
-Cumulocity gives you very fast visibility and control over your remote assets, be these houses, cars, machines or any other assets that you need to manage. 
+Cumulocity IoT gives you very fast visibility and control over your remote assets, be these houses, cars, machines or any other assets that you want to manage.

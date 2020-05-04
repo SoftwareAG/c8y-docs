@@ -4,25 +4,25 @@ title: Customizing your platform
 layout: redirect
 ---
 
-Using the Enterprise Tenant of Cumulocity, you can customize your platform according to your wishes and requirements. 
+Using the Enterprise Tenant of Cumulocity IoT, you can customize your platform according to your wishes and requirements.
 
 In the **Settings** menu, you may specify various customization settings.
 
 ### <a name="configuration"></a>Configuration
 
->**Info**: For information on the general settings in the **Customization** tab, see [Changing Settings > Configuration settings](/users-guide/administration/#config-platform) in the Administration section. Here, only the features will be explained which are exclusively available for Enterprise Tenants.
+>**Info:** For information on the general settings in the **Customization** tab, see [Changing Settings > Configuration settings](/users-guide/administration/#config-platform) in the Administration section. Here, only the features will be explained which are exclusively available for Enterprise Tenants.
 
 #### Applications
 
-In the **Applications** section, you can specify the default applications for new tenants as a comma-separated list. 
+In the **Applications** section, you can specify the default applications for new tenants as a comma-separated list.
 
-![Applications settings](/images/users-guide/Administration/admin-settings-configuration-applications.png)
+![Applications settings](/images/users-guide/enterprise-tenant/et-settings-configuration-applications.png)
 
 #### Passwords
 
 In the **Passwords** section, you can specify password settings like default strength, length or validity for the users in your tenant.
 
-![Passwords settings](/images/users-guide/Administration/admin-settings-configuration-passwords.png)
+![Passwords settings](/images/users-guide/enterprise-tenant/et-settings-configuration-passwords.png)
 
 #### Support user
 
@@ -30,11 +30,11 @@ In the **Support user** section, you configure the parameters for the support us
 
 With the support user feature, support users (i.e. users with specific permissions in the management tenant) can access subtenant users in case of any issues. Refer to [Support user access](/users-guide/enterprise-edition#users-in-other-tenants) for more information.
 
-<img src="/images/users-guide/Administration/admin-settings-configuration-support-user.png" alt="Support user configuration">
+<img src="/images/users-guide/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
 
 In the field **Activate support user**, specify if support user access is enabled for subtenant users. Possible values you can enter here are:
 
-* *true*: Support user access is activated. If support user access is activated, support users can log into any subtenant as any user, unless overridden on subtenant level. Subtenant users cannot disable access themselves. 
+* *true*: Support user access is activated. If support user access is activated, support users can log into any subtenant as any user, unless overridden on subtenant level. Subtenant users cannot disable access themselves.
 * *false*: Support user access is deactivated. If support user access is deactivated, support users can log in only to subtenants for which at least one user has explicitly enabled such access.
 * An explicit date in date-time format, until when support user activation should remain enabled. If no date is specified the value is set to "No Limit".
 
@@ -46,23 +46,23 @@ Details on the status of support requests and support user access for a tenant c
 
 ### <a name="branding"></a>Branding
 
-With the Branding feature, you can fully customize the look of your tenant to your own preferences. 
+With the Branding feature, you can fully customize the look of your tenant to your own preferences.
 
-In the **Branding** tab, you can configure various parameters like logos, colors  and font types used throughout the platform. 
+In the **Branding** tab, you can configure various parameters like logos, colors  and font types used throughout the platform.
 
 The [parameters](#configuration-parameters) are configured on the left side of the tab while on the right you can immediately see your selections applied to a preview extract.
 
-<img src="/images/users-guide/Administration/admin-branding.png" alt="Branding tab">
+<img src="/images/users-guide/enterprise-tenant/et-branding.png" alt="Branding tab">
 
 For a more detailed preview of your settings, click **Open preview** in the top menu bar to check the look and feel of your branding settings in the overall platform. You may interact and even switch applications in the preview. Every change that you make in the **Branding** tab will immediately be applied to the **Preview** page.
 
-<img src="/images/users-guide/Administration/admin-branding-preview.png" alt="Branding tab">
+<img src="/images/users-guide/enterprise-tenant/et-branding-preview.png" alt="Branding tab">
 
 When you are done or want to store your settings, click **Save** at the bottom of the **Configuration** section to save your branding settings to your tenant.
 
 Saving the settings will not yet apply them to the current tenant and respective subtenants. To do so, click **Apply** in the top menu bar.
 
-Click **Reset** in the top menu bar to reset the branding of the current tenant and its subtenants to the default settings. The custom settings will still be saved but are no longer applied. 
+Click **Reset** in the top menu bar to reset the branding of the current tenant and its subtenants to the default settings. The custom settings will still be saved but are no longer applied.
 
 #### <a name="configuration-parameters"></a>Configuration parameters
 
@@ -70,9 +70,7 @@ In the Configuration section, the following branding parameters can be configure
 
 **General**
 
-Under **General**, you can edit the title which will be used in the browser tab. 
-
-<img src="/images/users-guide/Administration/admin-branding-general.png" alt="Branding general">
+Under **General**, you can edit the title which will be used in the browser tab.
 
 **Main logo**
 
@@ -86,14 +84,9 @@ Under **Main logo**, specify the following items:
 
 Under **Navigator logo** you can provide the navigator logo and set the navigator logo height located on top of the navigator panel.
 
-<img src="/images/users-guide/Administration/admin-branding-navigator-logo.png" alt="Branding general">
-
-
 **Type**
 
-In the **Type** section you specify the font settings for your branded version. 
-
-<img src="/images/users-guide/Administration/admin-branding-type.png" alt="Branding type">
+In the **Type** section you specify the font settings for your branded version.
 
 You can choose your base and headings font, and select an option for the navigator font (either same as base or same as headings font). You may also add a link to existing remote fonts to be used.
 
@@ -101,14 +94,12 @@ You can choose your base and headings font, and select an option for the navigat
 
 In the **Colors** section you specify the colors to be used in your branding version.
 
-<img src="/images/users-guide/Administration/admin-branding-color.png" alt="Branding color">
-
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
 * Main brand color.
 * Secondary brand color. The default value is “#07b91A”.
-* Dark brand color.
-* Light brand color.
+* Dark brand color. Mainly used for two-color icons. The default value is "#0B385B". 
+* Light brand color. Mainly used for two-color icons. The default value is "#5FAEEC".
 * Text color. The default value is “#444”.
 * Link color. The default value is the same as the main brand color.
 * Main background color. The default value for this item is “#FAFAFA”.
@@ -116,8 +107,6 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 **Top bar**
 
 In the **Top bar** section you specify the parameters for the top bar.
-
-<img src="/images/users-guide/Administration/admin-branding-topbar.png" alt="Branding topbar">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -128,8 +117,6 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 **Navigator**
 
 In the **Navigator** section you specify the parameters for the navigator.
-
-<img src="/images/users-guide/Administration/admin-branding-navigator.png" alt="Branding navigator">
 
 The following parameters can be specified by providing a hex, rgb or rgba value:
 
@@ -145,15 +132,25 @@ The following parameters can be specified by providing a hex, rgb or rgba value:
 
 In the **Misc** section you may specify the “Button Border-Radius” by providing a value in pixel (px).
 
+**Cookie banner**
+
+In the **Cookie banner** section you specify the settings for the banner with the cookie usage information. The banner is shown for all users of the current tenant and subtenants until a user clicks **Agree and proceed**.
+
+The following parameters can be specified:
+
+* Title. Cookie banner title.
+* Text. Cookie banner text with a general statement on the cookie usage and the use cases for it.
+* Link to privacy policy. A link to the page with the privacy policy.
+
 ### <a name="domain-name"></a>Domain name
 
 In the **Domain name** tab you can activate your own custom domain name.
- 
->**Important**: To activate you domain, you need a valid license. Please contact our Sales team at sales@cumulocity.com to install a license for your domain.  
 
-<img src="/images/users-guide/Administration/admin-domain-name.png" alt="Domain name">
+>**Important:** To activate your domain, you need a valid license. Please contact our Sales team at sales@cumulocity.com to install a license for your domain.  
 
->**Info**: The custom domain name functionality is only available for cumulocity.com or Private Edition installations which don't use a custom load balancer.
+<img src="/images/users-guide/enterprise-tenant/et-domain-name.png" alt="Domain name">
+
+>**Info:** The custom domain name functionality is only available for cumulocity.com or Private Edition installations which don't use a custom load balancer.
 
 First you have to upload the appropriate certificate by clicking **Upload Certificate**. Make sure that
 
@@ -161,7 +158,7 @@ First you have to upload the appropriate certificate by clicking **Upload Certif
 * the certificate is not password protected,
 * you are using a wildcard certificate to enable creation of subtenants.
 
-**Info**: If your certificate is not in a valid PKCS#12 format but you have PEM files for certificate, private key and authorization chain then you can generate a valid PKCS#12 file using the following command:
+> **Info:** If your certificate is not in a valid PKCS#12 format but you have PEM files for certificate, private key and authorization chain then you can generate a valid PKCS#12 file using the following command:
 
 ```shell
 openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -certfile chain.pe
@@ -175,12 +172,12 @@ Before activating the custom domain name, make sure that
 * you have added a wildcard CNAME record (starting with `*.`) to your DNS server of the following format:<br>
  Domain name = "&ast;.&lt;your domain name>", e.g. "*.iot.mycompany.com" <br>
  Type = CNAME <br>
- Target = the domain of the platform you want to point to, e.g. if you use "https://demos.cumulocity.com" to access your tenant, use "demos.cumulocity.com" as target.<br>
+ Target = the domain of the platform you want to point to, e.g. if you use `https://demos.cumulocity.com` to access your tenant, use "demos.cumulocity.com" as target.<br>
 Make sure to remove all A entries for the wildcard domain. For example, if you already have an A entry for "xxx.iot.mycompany.com", you cannot create tenants with the URL "xxx".
 
 After successful activation you will be redirected to your Enterprise Tenant at the new domain. You will also receive an email with information about the activation.
 
->**Info**: After the activation is completed you will no longer be able to access your tenant with the cumulocity domain name. Instead, use your custom domain name.
+>**Info:** After the activation is completed you will no longer be able to access your tenant with the Cumulocity IoT domain name. Instead, use your custom domain name.
 
 
 #### Updating your certificate
@@ -193,51 +190,51 @@ When your certificate expires, you must update your certificate with a new one w
 * the certificate has exactly the same common name (domain name) as the currently active certificate,
 * you have added a CNAME record to your DNS server. For details on the CNAME record see above.
 
->**Info**: Keep in mind that after replacing the certificate it may take some minutes until the new certificate has been delivered to the users/browsers.
+>**Info:** Keep in mind that after replacing the certificate it may take some minutes until the new certificate has been delivered to the users/browsers.
 
 
 #### Deactivating your certificate
 
-If you wish to return to your old domain at Cumulocity, you can simply deactivate you certificate. 
+If you wish to return to your old domain at Cumulocity IoT, you can simply deactivate you certificate.
 
->**Important**: Use with care. Your customers will not be able to access their subtenants anymore.
+>**Important:** Use with care. Your customers will not be able to access their subtenants anymore.
 
 #### Troubleshooting
 
-In case you cannot reach Cumulocity using your custom domain, we recommend to perform the following checks to verify your DNS setup.
+In case you cannot reach Cumulocity IoT using your custom domain, we recommend to perform the following checks to verify your DNS setup.
 
 **Check if the DNS entry is correct**
 
 Execute the following command:
 
-```shell	
+```shell
 host management.<your domain name>
 ```
-	
+
 The following result should be returned:
 
 ```shell
 management.<your domain name> is an alias for <instance domain name>
 <instance domain name> has address <ip address>
 ```
-	
 
-**Check if the API is responding** 
+
+**Check if the API is responding**
 
 Execute the following command:
 
 ```shell
 curl -v -u '<tenant ID>/<your user>:<your password>' --head http://management.<your domain name>/inventory/managedObjects
 ```
-	
+
 The following result should be returned:
 
 ```shell
 ...
 HTTP/1.1 200 OK
-...	
+...
 ```
 
 
->**Info**: Keep in mind that after changing the DNS entry it might take up to 24 hours until the new entry has been propagated.
+>**Info:** Keep in mind that after changing the DNS entry it might take up to 24 hours until the new entry has been propagated.
 >

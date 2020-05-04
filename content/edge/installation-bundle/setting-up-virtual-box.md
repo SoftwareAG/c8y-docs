@@ -8,9 +8,9 @@ layout: redirect
 
 Download the VirtualBox package for your operating system from [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads) and install it.
 
->**Important**: VirtualBox support is deprecated, therefore we do not recommended to use it in a production environment.
+>**Important:** VirtualBox support is deprecated, therefore we do not recommended to use it in a production environment.
 
->**Info**: Depending on the operating system and VirtualBox version you are using, the following steps and the screenshots might slightly differ. The sample screenshots shared below were created using Virtual Box 5.2.8.
+>**Info:** Depending on the operating system and VirtualBox version you are using, the following steps and the screenshots might slightly differ. The sample screenshots shared below were created using Virtual Box 5.2.8.
 
 1. In the VirtualBox, click **Tools** > **Network** in the top left.<br>
 <img src="/images/edge/edge-vb-01.png" name="Configure network" style="width:75%;"/>
@@ -50,7 +50,7 @@ Once the machine has been imported it will show up in the Manager application.
 
 Start the virtual machine by clicking **Start** on the top left.
 
-**Info**: The machine description can be found on the **Description** tab (right-click on **Machine** > **Settings** > **General** > **Description**).
+**Info:** The machine description can be found on the **Description** tab (right-click on **Machine** > **Settings** > **General** > **Description**).
 
 #### Troubleshooting
 

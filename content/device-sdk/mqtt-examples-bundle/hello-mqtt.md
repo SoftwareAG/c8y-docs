@@ -4,13 +4,13 @@ title: Hello MQTT
 layout: redirect
 ---
 
-In this tutorial, you will learn how to use MQTT with Cumulocity using pre-defined messages (called "static templates").
+In this tutorial, you will learn how to use MQTT with Cumulocity IoT using pre-defined messages (called "static templates").
 
 ### Prerequisites
 
 In order to follow this tutorial, check the following prerequisites:
 
-* You have a valid tenant, a user and a password in order to access Cumulocity.
+* You have a valid tenant, a user and a password in order to access Cumulocity IoT.
 * You have installed [MQTTBox](https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbkaf) or a similar MQTT tool.
 
 > **Info**: The screenshots in the tutorial use MQTTBox. Other tools may look slightly different.
@@ -22,11 +22,11 @@ In order to follow this tutorial, check the following prerequisites:
 
 To configure the MQTT connection, you need to pass the following connection parameters (see the screenshot below).
 
-*   MQTT Client Name – Give your client a name to identify it, e.g. Cumulocity MQTT.
-*   MQTT Client Id – You can use the "Generate a random ID" button (most tools will offer such a button) or provide one yourself. This ID will be linked to your device in Cumulocity. To reconnect to the same device, use the same ID.
+*   MQTT Client Name – Give your client a name to identify it, e.g. Cumulocity IoT MQTT.
+*   MQTT Client Id – You can use the "Generate a random ID" button (most tools will offer such a button) or provide one yourself. This ID will be linked to your device in Cumulocity IoT. To reconnect to the same device, use the same ID.
 *   Protocol – Select the protocol to be used, e.g. mqtt/tcp.
 *   Host – Provide in the URL your tenant domain, e.g. _mytenant.cumulocity.com/mqtt_.
-*   Username – In this case, the username is formed as &lt;tenantID>/&lt;service-user>. You can use the same credentials you use to log into the Cumulocity platform. As seen in the example below, for the tenant ID "t76543210" and service user "manga" the username is "t76543210/manga".
+*   Username – In this case, the username is formed as &lt;tenantID>/&lt;service-user>. You can use the same credentials you use to log into the Cumulocity IoT platform. As seen in the example below, for the tenant ID "t76543210" and service user "manga" the username is "t76543210/manga".
 *   Password: The password of the service user.
 
 ![Example MQTTBox Configuration](/images/mqtt/mqttBoxConfig.png)
@@ -37,11 +37,11 @@ Other configurations like "clean session" are not important for this example. Yo
 
 ![MQTTBox Established Connection](/images/mqtt/mqttBoxSuccess.png)
 
-If there is a blue button on the top bar with a label **Not Connected**, verify your configuration (especially username and password). If the button is green, you successfully established an MQTT connection to Cumulocity.
+If there is a blue button on the top bar with a label **Not Connected**, verify your configuration (especially username and password). If the button is green, you successfully established an MQTT connection to Cumulocity IoT.
 
 #### Sending data
 
-All MQTT publish messages in this tutorial will be sent to the topic <kbd>s/us</kbd>. This is the topic used for Cumulocity's pre-provided static templates.
+All MQTT publish messages in this tutorial will be sent to the topic <kbd>s/us</kbd>. This is the topic used for Cumulocity IoT's pre-provided static templates.
 
 ![MQTTBox Publish Message](/images/mqtt/mqttBoxPublish.png)
 
@@ -81,7 +81,7 @@ There are a couple of measurements that can be created directly by using a stati
 
 The temperature and battery measurement just take the value and time as parameters. For the signal strength, you can pass two values (RSSI and BER).
 
-Passing timestamps in the Cumulocity MQTT implementation is always optional. If you don't pass them along, the server will automatically create a timestamp with the current server time.
+Passing timestamps in the Cumulocity IoT MQTT implementation is always optional. If you don't pass them along, the server will automatically create a timestamp with the current server time.
 
 We will make use of this feature in this example. Also, if you don't set the last parameters, you do not need to enter the remaining commas.
 
@@ -127,7 +127,7 @@ Now we will clear the critical alarm again. To achieve this, we use the template
 
 The critical alarm should be cleared afterwards.
 
-Note that you did not have to handle any alarm IDs with the MQTT implementation. Cumulocity will take over this part so that the device communication can be as easy as possible.
+Note that you did not have to handle any alarm IDs with the MQTT implementation. Cumulocity IoT will take over this part so that the device communication can be as easy as possible.
 
 ##### Creating events
 

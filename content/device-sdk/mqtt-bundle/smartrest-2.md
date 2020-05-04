@@ -6,7 +6,7 @@ layout: redirect
 
 ### Overview
 
-This section describes the SmartREST 2.0 payload format that can be used with the Cumulocity MQTT implementation.
+This section describes the SmartREST 2.0 payload format that can be used with the Cumulocity IoT MQTT implementation.
 
 SmartREST 2.0 was designed to make use of the MQTT protocol, so it may reduce the payload even more than the SmartREST 1.0 via HTTP.
 
@@ -119,7 +119,7 @@ A request template contains the following basic fields:
 |:-------|:-------|:-------|:-------|:-------|
 |messageId|String| &nbsp;|Y|Unique ID to reference the template within the collection|
 |method|String|GET<br>PUT<br>POST|Y|Whether to get, update or create data|
-|api|String|INVENTORY<br>MEASUREMENT<br>ALARM<br>EVENT<br>OPERATION|Y|Cumulocity API to be used|
+|api|String|INVENTORY<br>MEASUREMENT<br>ALARM<br>EVENT<br>OPERATION|Y|Cumulocity IoT API to be used|
 |response|Boolean|true<br>false|N|Whether the request should trigger response templates. For GET templates by default true otherwise by default false|
 |mandatoryValues|List&lt;String&gt;| &nbsp;|Y|Values for the mandatory fields on the API. The values depend on the API and method the template uses|
 |customValues|List&lt;CustomValue&gt;| &nbsp;|N|Custom values that should be added to the object|
@@ -156,12 +156,12 @@ With SmartREST 2.0 you have the option to either get an object from inventory by
 
 |Field|Data type|Possible values|Mandatory|Description|
 |:-------|:-------|:-------|:-------|:-------|
-|byId|Boolean|true<br>false|Y|Whether the GET should be executed by Cumulocity ID (=true) or externalId (=false)|
+|byId|Boolean|true<br>false|Y|Whether the GET should be executed by Cumulocity IoT ID (=true) or externalId (=false)|
 |externalIdType|String| &nbsp;|N|Sets a fixed externalIdType if the template calls by externalId|
 
 This enables you to query inventory in three different ways:
 
-**By Cumulocity ID**
+**By Cumulocity IoT ID**
 
 ```bash
 # Creation:
@@ -250,7 +250,7 @@ The PUT template for alarms uses the type of the alarm to find the alarm to upda
 # 10,msgId,method,api,response,type,custom1.path,custom1.type,custom1.value
 10,999,PUT,ALARM,,c8y_MyCustomAlarm,status,ALARMSTATUS
 # Usage:
-999,FAILED
+999,CLEARED
 ```
 
 PUT templates for operations use the fragment of the operation to find the operation. It will first check the EXECUTING operations and, if there is no EXECUTING operation, it will check the PENDING operations.

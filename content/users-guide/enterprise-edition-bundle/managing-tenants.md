@@ -6,9 +6,9 @@ layout: redirect
 
 Using the Enterprise Tenant of Cumulocity IoT, you can make use of the tenants functionality which allows you to create and a manage subtenants.
 
-> **Important**: There is a major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants.
+> **Important:** There is a major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants.
 
->**Info**: If you would like to use this feature, please contact sales@cumulocity.com.
+>**Info:** If you would like to use this feature, please contact sales@cumulocity.com.
 
 To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [Creating and editing global roles](/users-guide/administration#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 
@@ -34,7 +34,7 @@ In the management tenant, you will also find information on the parent tenant, i
 ### <a name="creating-tenants"></a>To create a subtenant
 
 1. Click **Create tenant** at the right of the top menu bar.
-<br>![Create subtenant](/images/users-guide/Administration/admin-subtenant-create.png)<br>
+<br>![Create subtenant](/images/users-guide/enterprise-tenant/et-subtenant-create.png)<br>
 2. Provide the following properties:
 
 	<table>
@@ -72,7 +72,7 @@ In the management tenant, you will also find information on the parent tenant, i
 </tr>
 <tr>
 <td style="text-align:left">Send password reset link as email</td>
-<td style="text-align:left">Selected by default. If you deselect this option, you need to provide a password and confirm the password (see <a href="/users-guide/overview#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the Cumulocity platform</a> for more information on password strength).</td>
+<td style="text-align:left">Selected by default. If you deselect this option, you need to provide a password and confirm the password (see <a href="/users-guide/getting-started/#login" class="no-ajaxy">Getting Started &gt; Accessing and logging into the Cumulocity IoT platform</a> for more information on password strength).</td>
 </tr>
 <tr>
 <td style="text-align:left">Tenant policy</td>
@@ -87,15 +87,11 @@ When the subtenant is created, it gets an auto-generated ID, which cannot be cha
 
 From the management tenant, you can enable other tenants to create subtenants. To do so, check **Allow creation of subtenants** in the tenant editor.
 
-![Create subtenant](/images/users-guide/Administration/admin-subtenant-allow.png)
-
 ### To view or edit subtenant properties
 
 Click on the desired subtenant or click the menu icon at the right of the subtenant entry and then click **Edit**.
 
 In the **Properties** tab, all fields are editable except of the ID and the administrator's username. For details on the fields, refer to [Creating sub-tenants](#creating-tenants).
-
-![Sub-tenants](/images/users-guide/Administration/admin-subtenant-properties.png)
 
 To change the tenant password, click **Change password**, enter the new password in the upcoming fields and click **Save**.
 
@@ -103,13 +99,13 @@ To change the tenant password, click **Change password**, enter the new password
 
 In the management tenant, you will moreover find information here on the support user requests/access for the subtenants.
 
-<img src="/images/users-guide/Administration/admin-support-user-properties.png" alt="Support user access information" style="max-width: 100%">
+<img src="/images/users-guide/enterprise-tenant/et-support-user-properties.png" alt="Support user access information" style="max-width: 100%">
 
 The following information is displayed here:
 
 |Field|Description
 |:--------|:-----
-|Status|May be either *Enabled* or *Disabled*. <br>*Enabled* indicates that: <br> - support user access has been activated on platform level (see [Customizing your platform](/users-guide/enterprise-edition#configuration)), <br> - one or more subtenant users have activated support user access. <br>*Disabled* indicates that: <br> - support user access has been deactivated on platform level, <br> - support user access has been activated on platform level but deactivated for the subtenant, <br> - no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).
+|Status|May be either *Enabled* or *Disabled*. <br>*Enabled* indicates that: <br> - support user access has been activated on platform level (see [Configuration](/users-guide/enterprise-edition#configuration)), <br> - one or more subtenant users have activated support user access. <br>*Disabled* indicates that: <br> - support user access has been deactivated on platform level, <br> - support user access has been activated on platform level but deactivated for the subtenant, <br> - no subtenant user has currently any active support user access (i.e. as each support user request has either expired or has actively been deactivated).
 |Active requests count|The number of requests currently active in the subtenant. Only displayed if support user access is not enabled globally on platform level. Shown as a number in a small red dot.
 |Expiry date|Specifies the date on which support user access for the tenant will expire. If no date has been specified, the expiry date is set to "No limit".
 
@@ -120,29 +116,29 @@ Suspending a tenant blocks any access to this tenant, regardless whether the acc
 
 If a tenant is suspended, the tenant’s data remains in the database and can be made available later by clicking **Activate**.
 
->**Important**: Suspended tenants for all Cumulocity IoT Public Cloud instances will be automatically deleted after 30 days.
+>**Important:** Suspended tenants for all Cumulocity IoT Public Cloud instances will be automatically deleted after 30 days.
 >
-> **Info**: If data broker connectors are configured for a tenant, suspending this tenant results in suspending all its data broker connectors as well. 
+> **Info:** If data broker connectors are configured for a tenant, suspending this tenant results in suspending all its data broker connectors as well.
 
 
 #### To suspend a subtenant
 
 1. Click the menu icon at the right of the respective subtenant entry and then click **Suspend**.
 
-	![Suspend tenant](/images/users-guide/Administration/admin-subtenant-suspend.png)
+	![Suspend tenant](/images/users-guide/enterprise-tenant/et-subtenant-suspend.png)
 
 2. In the resulting dialog box confirm the suspension by clicking **OK** and entering your password.
 
 As part of suspending the tenant, an email is sent to the tenant administrator if an email address is configured for that administrator.
 
->**Info**: If you are a service provider, you can suppress this email.
+>**Info:** If you are a service provider, you can suppress this email.
 
 
 ### Deleting subtenants
 
->**Important**: Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the management tenant. You cannot delete tenants from any tenant but the management tenant. 
+>**Important:** Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the management tenant. You cannot delete tenants from any tenant but the management tenant.
 >
->Administrators in Enterprise Tenants are only allowed to suspend active subtenants, but not to delete them. 
+>Administrators in Enterprise Tenants are only allowed to suspend active subtenants, but not to delete them.
 
 #### To delete a subtenant
 
@@ -151,9 +147,9 @@ Click the menu icon at the right of the respective subtenant entry and then clic
 
 ### <a name="subscribe"></a>Applications
 
-In the **Applications** tab you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity applications.
+In the **Applications** tab you can view all subscribed applications, subscribe tenants to applications or remove the applications from the tenant. By default, tenants will be subscribed to the standard Cumulocity IoT applications.
 
-<img src="/images/users-guide/Administration/admin-subtenant-applications.png" alt="Subscribe tenant" style="max-width: 100%">
+<img src="/images/users-guide/enterprise-tenant/et-subtenant-applications.png" alt="Subscribe tenant" style="max-width: 100%">
 
 #### To subscribe an application
 
@@ -165,9 +161,9 @@ Hover over the applications under **Subscribed applications** on the left and cl
 
 #### Monitoring microservices
 
-For all applications hosted as microservices by Cumulocity the status of the microservice is indicated next to its name by symbols:
+For all applications hosted as microservices by Cumulocity IoT the status of the microservice is indicated next to its name by symbols:
 
-<img src="/images/users-guide/Administration/admin-applications-status.png" alt="Application details">
+<img src="/images/users-guide/enterprise-tenant/et-applications-status.png" alt="Application details">
 
 The microservice may be in one of the following states:
 
@@ -177,7 +173,7 @@ The microservice may be in one of the following states:
 
 You may view details on their status by expanding the respective entry.
 
-<img src="/images/users-guide/Administration/admin-application-details.png" alt="Application details">
+<img src="/images/users-guide/enterprise-tenant/et-application-details.png" alt="Application details">
 
 The following information is provided:
 
@@ -192,15 +188,15 @@ Further details are provided on the **Status** tab of the respective application
 
 ### <a name="tenants-custom-properties"></a>Custom properties
 
-The **Custom properties** tab allows you to view and edit values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/users-guide/administration#properties). Such properties are also displayed as columns in the [Usage Statistics](#usage-stats) page.
+The **Custom properties** tab allows you to view and edit values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/users-guide/administration#properties). Such properties are also displayed as columns in the [Usage statistics](#usage-stats) page.
 
-![Custom properties](/images/users-guide/Administration/admin-subtenant-custom-properties.png)
+![Custom properties](/images/users-guide/enterprise-tenant/et-subtenant-custom-properties.png)
 
 #### Limiting subtenant device number
 
-Platform administrators can limit the count of concurrently registered root devices or simply all devices (including children devices) via the custom property "Limit number of devices". 
+Platform administrators can limit the count of concurrently registered root devices or simply all devices (including children devices) via the custom property "Limit number of devices".
 
-They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the **[Usage statistics](<a name="usage-stats"></a>)** page.
+They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the **[Usage statistics](#usage-stats)** page.
 
 #### Limiting subtenant request rate
 
@@ -211,6 +207,11 @@ Platform administrators can limit the request rate of each subtenant via the fol
 * Limit stream queue - Limit of MQTT request queue for tenant
 * Limit stream requests - Limit of MQTT requests for tenant per second
 
+It is also possible to customize the buffer size for the CEP queue and the data broker queue for a particular tenant. This can be done from the management tenant by using the following subtenant custom fragments:
+
+ - cep.queue.limit
+ - data-broker.queue.limit
+
 When there is no limit on tenant and system level, the limit feature is considered as disabled and the tenant gains unlimited access. To switch off request rate limiting after it was enabled, set the value to "-1".
 
 
@@ -218,49 +219,136 @@ When there is no limit on tenant and system level, the limit feature is consider
 
 The **Usage statistics** page provides statistical information on each subtenant.
 
-![Subtenant statistics](/images/users-guide/Administration/admin-subtenants-usage-statistics.png)
+![Subtenant statistics](/images/users-guide/enterprise-tenant/et-subtenants-usage-statistics.png)
 
 The following information is provided for each subtenant (not completely visible in the screenshot above due to space restrictions):
 
-|Field|Description|
-|:---|:---|
-|ID|ID of the subtenant
-|API requests|Total number of API requests, including requests from  devices and applications
-|Device API requests|ID of the subtenant
-|Storage (MB)|Amount of data stored in your account
-|Peak storage (MB)|Peak value of storage
-|Root devices|Number of root devices, excluding child devices
-|Peak root devices|Peak number of root devices, excluding child devices
-|Devices|Total number of devices connected to the subtenant, including child devices
-|Peak devices|Peak number of devices, including child devices
-|Endpoint devices|ID of the subtenant
-|ID|Leaf machines, without gateways and edges
-|Subscribed applications|Number of applications that the subtenant is subscribed to
-|Creation time|Date and time of the creation of the subtenant
-|Alarms created|Number of alarms created
-|Alarms updated|Number of updates on alarms
-|Inventories created|Number of managed objects created
-|Inventories updated|Number of updates on managed objects
-|Events created|Number of events created
-|Events updated|Number of updates on events
-|Measurements created|Number of measurements created
-|Total inbound transfer|Sum of all inbound transfers (alarms created, alarms updated, events created, events updated, inventories created, inventories updated, measurements created)
-|CPU (M)|Microservice CPU usage, specified in CPU milliseconds, see [Microservice usage](#microservice-usage) for details
-|Memory (MB)|Microservice memory usage, see [Microservice usage](#microservice-usage) for details
-|Parent tenant|Name of the parent tenant (available only for management tenant)
-|External reference|This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number
+<table>
+<thead>
+<colgroup>
+   <col style="width: 20%;">
+   <col style="width: 80%;">
+</colgroup>
+<tr>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">ID</td>
+<td align="left">ID of the subtenant</td>
+</tr>
+<tr>
+<td align="left">API requests</td>
+<td align="left">Total number of API requests, including requests from  devices and applications</td>
+</tr>
+<tr>
+<td align="left">Device API requests</td>
+<td align="left">ID of the subtenant</td>
+</tr>
+<tr>
+<td align="left">Storage (MB)</td>
+<td align="left">Amount of data stored in your account</td>
+</tr>
+<tr>
+<td align="left">Peak storage (MB)</td>
+<td align="left">Peak value of storage</td>
+</tr>
+<tr>
+<td align="left">Root devices</td>
+<td align="left">Number of root devices, excluding child devices</td>
+</tr>
+<tr>
+<td align="left">Peak root devices</td>
+<td align="left">Peak number of root devices, excluding child devices</td>
+</tr>
+<tr>
+<td align="left">Devices</td>
+<td align="left">Total number of devices connected to the subtenant, including child devices</td>
+</tr>
+<tr>
+<td align="left">Peak devices</td>
+<td align="left">Peak number of devices, including child devices</td>
+</tr>
+<tr>
+<td align="left">Endpoint devices</td>
+<td align="left">ID of the subtenant</td>
+</tr>
+<tr>
+<td align="left">ID</td>
+<td align="left">Leaf machines, without gateways and edges</td>
+</tr>
+<tr>
+<td align="left">Subscribed applications</td>
+<td align="left">Number of applications that the subtenant is subscribed to</td>
+</tr>
+<tr>
+<td align="left">Creation time</td>
+<td align="left">Date and time of the creation of the subtenant</td>
+</tr>
+<tr>
+<td align="left">Alarms created</td>
+<td align="left">Number of alarms created</td>
+</tr>
+<tr>
+<td align="left">Alarms updated</td>
+<td align="left">Number of updates on alarms</td>
+</tr>
+<tr>
+<td align="left">Inventories created</td>
+<td align="left">Number of managed objects created</td>
+</tr>
+<tr>
+<td align="left">Inventories updated</td>
+<td align="left">Number of updates on managed objects</td>
+</tr>
+<tr>
+<td align="left">Events created</td>
+<td align="left">Number of events created</td>
+</tr>
+<tr>
+<td align="left">Events updated</td>
+<td align="left">Number of updates on events</td>
+</tr>
+<tr>
+<td align="left">Measurements created</td>
+<td align="left">Number of measurements created</td>
+</tr>
+<tr>
+<td align="left">Total inbound transfer</td>
+<td align="left">Sum of all inbound transfers (alarms created, alarms updated, events created, events updated, inventories created, inventories updated, measurements created)</td>
+</tr>
+<tr>
+<td align="left">CPU (M)</td>
+<td align="left">Microservice CPU usage, specified in CPU milliseconds, see <a href="#microservice-usage">Microservice usage</a> for details</td>
+</tr>
+<tr>
+<td align="left">Memory (MB)</td>
+<td align="left">Microservice memory usage, see <a href="#microservice-usage">Microservice usage</a> for details</td>
+</tr>
+<tr>
+<td align="left">Parent tenant</td>
+<td align="left">Name of the parent tenant (available only for management tenant)</td>
+</tr>
+<tr>
+<td align="left">External reference</td>
+<td align="left">This field is for individual usage, for example, you can add a link to the CRM system here or an internal customer number</td>
+</tr>
+</tbody>
+</table>
 
 Moreover custom properties are displayed, if configured.
 
 Custom properties may be defined in the [Properties Library](/users-guide/administration#properties) and then set their values in the [Custom properties](#tenants-custom-properties) tab of the tenant.
 
-You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Getting Started > Features and Functionalities > Filtering](/users-guide/overview#filtering).
+You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Getting Started > UI functionalities and features> Filtering](/users-guide/getting-started/#filtering).
 
 #### To export the usage statistics table
 
-1. Click Export CSV at the right of the top menu bar to export the current view of the statistics table to a CSV file. 
+1. Click Export CSV at the right of the top menu bar to export the current view of the statistics table to a CSV file.
 2. In the resulting dialog box you can customize the CSV output by specifying a field separator, decimal separator and charset.
-<br> <img src="/images/users-guide/Administration/admin-subtenant-statistics-export.png"></img> <br>
+<br> <img src="/images/users-guide/enterprise-tenant/et-subtenant-statistics-export.png"></img> <br>
 3. Click **Download** to start the export.
 
 The CSV file will be downloaded to your file system.
@@ -273,13 +361,13 @@ The microservice usage feature gathers information on the resource usage per sub
 
 ##### Billing modes
 
-Cumulocity offers two billing modes:
+Cumulocity IoT offers two billing modes:
 
 * **Subscription-based billing**: Charges a constant price when a tenant is subscribed to a microservice while resource usage is assigned to the owner.
 
 * **Resource-based billing**: Exposes the number of resources used by a microservice to calculate billing.
 
-The billing modes are specified per microservice in the [microservice manifest](/reference/microservice-manifest) and are set in the field "billingMode".
+The billing modes are specified per microservice in the [microservice manifest](/microservice-sdk/concept/#manifest) and are set in the field "billingMode".
 
 RESOURCES: Sets the billing mode to resources-based. This is the default mode and will be applied to all microservices that are not explicitly switched to subscription-based billing mode.
 
@@ -337,13 +425,13 @@ For billing purposes, in addition to CPU usage and memory usage the cause for th
 
 The information on the microservice usage is presented in the **Usage Statistics** page.
 
-![Tenant statistics](/images/users-guide/Administration/admin-subtenants-usage-statistics-microservice.png)
+![Tenant statistics](/images/users-guide/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
 
 For more details, refer to [Tenants > Tenant usage statistics](/reference/tenants/#tenant-usage-statistics) in the Reference guide. Note that details are available only for daily usage. For a summary query only the sum of all issued requests is returned.
 
 ##### Scaling
 
-Auto-scaling monitors your microservices and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. It is easy to configure the microservice scaling by setting the property `scale` in the [Microservice manifest](https://cumulocity.com/reference/microservice-manifest/).
+Auto-scaling monitors your microservices and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. It is easy to configure the microservice scaling by setting the property `scale` in the [Microservice manifest](/microservice-sdk/concept/#manifest).
 
 For instance, when you have a microservice with scale policy set to AUTO and the CPU usage points that it is needed to start a new microservice instance for three hours, the billing logs: (24/24 + 3/24) * consumed resources.
 
@@ -352,33 +440,33 @@ For instance, when you have a microservice with scale policy set to AUTO and the
 
 Note that an audit record is created for every change of the number of instances.
 
-![Audit logs](/images/users-guide/Administration/admin-audit-logs-microscaling.png)
+![Audit logs](/images/users-guide/enterprise-tenant/et-audit-logs-microscaling.png)
 
-For more information, refer to [Auditing](https://cumulocity.com/reference/auditing) in the Reference guide.
+For more information, refer to [Auditing](/reference/auditing/) in the Reference guide.
 
 
 ### <a name="tenant-policies"></a> Tenant policies
 
 A tenant policy is a set of tenant options and retention rules. Tenant options and retention rules may be specified during tenant creation.
 
-<img src="/images/users-guide/Administration/admin-tenant-policy-assign.png" alt="Assign tenant policy">
+<img src="/images/users-guide/enterprise-tenant/et-tenant-policy-assign.png" alt="Assign tenant policy">
 
 Creating a tenant policy with a specific set of options and rules saves time when creating multiple tenants with the same settings.
 
->**Info**: The options and rules are copied into the tenant. Editing the policy has no effect on tenants that have already been created.
+>**Info:** The options and rules are copied into the tenant. Editing the policy has no effect on tenants that have already been created.
 
 #### To view tenant policies
 
 Click **Tenant policies** in the **Tenants** menu to view all available tenant policies.
 
-<img src="/images/users-guide/Administration/admin-tenant-policies.png" alt="Tenant policies">
+<img src="/images/users-guide/enterprise-tenant/et-tenant-policies.png" alt="Tenant policies">
 
 For each tenant policy, the name, an optional description and the number of options and retention rules is provided, either in a list or a grid.
 
 #### To create a tenant policy
 
 1. Click **Add tenant policy** in the top menu bar.
-<br>![Add new policy](/images/users-guide/Administration/admin-tenant-policy-add.png)<br>
+<br>![Add new policy](/images/users-guide/enterprise-tenant/et-tenant-policy-add.png)<br>
 2. In the resulting dialog box, enter a name and an optional description.
 3. Add at least one retention rule. For details on creating retention rules, see [Administration > Managing data retention > Retention rules](/users-guide/administration#retention-rules).
 4. Optionally, add a tenant option.
@@ -389,8 +477,6 @@ The tenant policy will be added to the tenant policies list.
 #### To edit a tenant policy
 
 Click the respective policy entry or click the menu icon at the right of the policy entry and then click **Edit**.
-
-![Policy context menu](/images/users-guide/Administration/admin-tenant-policy-contextmenu.png)
 
 In the resulting dialog box, make your edits and click **Save** to save your settings.
 

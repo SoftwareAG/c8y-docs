@@ -4,7 +4,7 @@ title: Unsubscribe
 layout: redirect
 ---
 
-To stop receiving notifications from a channel, send a message to "/meta/unsubscribe" supplying the proper channel name in the same format as used during subscription.
+To stop receiving notifications from a channel, send a message to <kbd>/meta/unsubscribe</kbd> supplying the proper channel name in the same format as used during subscription.
 
 ### Request
 
@@ -17,18 +17,20 @@ To stop receiving notifications from a channel, send a message to "/meta/unsubsc
 
 Example Request:
 
-    POST /cep/realtime
-    Host: ...
-    Authorization: Basic ...
-    Content-Length: ...
-    Content-Type: application/json
-    [
-      {
-        "channel": "/meta/unsubscribe",
-        "clientId": "Un1q31d3nt1f13r",
-        "subscription": "/alarms/<Device ID>"
-      }
-    ]
+```http
+POST /cep/realtime
+Host: ...
+Authorization: Basic ...
+Content-Length: ...
+Content-Type: application/json
+[
+  {
+    "channel": "/meta/unsubscribe",
+    "clientId": "Un1q31d3nt1f13r",
+    "subscription": "/alarms/<Device ID>"
+  }
+]
+```
 
 ### Response
 
@@ -43,14 +45,16 @@ Example Request:
 
 Example response:
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    [
-      {
-        "channel": "/meta/unsubscribe",
-        "clientId": "Un1q31d3nt1f13r",
-        "subscription": "/alarms/<Device ID>",
-        "successful": true,
-        "error": ""
-      }
-    ]
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+[
+  {
+    "channel": "/meta/unsubscribe",
+    "clientId": "Un1q31d3nt1f13r",
+    "subscription": "/alarms/<Device ID>",
+    "successful": true,
+    "error": ""
+  }
+]
+```

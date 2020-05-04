@@ -6,7 +6,7 @@ layout: redirect
 
 <a name="widget"></a>
 
-The Cockpit application includes preset widget types. Each widget type provides different parameters to configure and different data to be displayed. 
+The Cockpit application includes preset widget types. Each widget type provides different parameters to configure and different data to be displayed.
 
 The following section describes, in alphabetical order, each available widget type and its configuration properties.
 
@@ -46,7 +46,7 @@ For details on applications, refer to [Administration > Managing Applications](/
 
 ### Asset notes
 
-The "Asset notes" widget displays messages provided by the administrative user to all owners of the current widget. 
+The "Asset notes" widget displays messages provided by the administrative user to all owners of the current widget.
 
 ![Asset notes widget](/images/users-guide/cockpit/cockpit-widget-asset-notes.png)
 
@@ -80,7 +80,7 @@ The "Asset table" widget shows details of all child devices in a table. This is 
 |:---|:---|
 |Title|Widget title. By default, the widget type is simply used as title.
 |Target assets or devices|Select for which object all child devices should be shown. This is typically a group object.
-|Properties|Select properties or actions of an object to visualize them as columns in the table. 
+|Properties|Select properties or actions of an object to visualize them as columns in the table.
 
 **Example**
 
@@ -93,14 +93,14 @@ The resulting table is visualized as follows:
 
 #### To add properties
 
-Click **+Add Properties** and select one or more properties to be added. 
+Click **+Add Properties** and select one or more properties to be added.
 
-**Info**: The property "Active alarm status" shows active alarms as icons in the table. If you select this property, you also need to configure the renderer "Active Alarm Status" in the list of columns.
+> **Info:** The property "Active alarm status" shows active alarms as icons in the table. If you select this property, you also need to configure the renderer "Active Alarm Status" in the list of columns.
 
 #### To add actions
 
-1. Click **+Add Action**. 
-1. Select **Toggle maintenance mode** to add the predefined action to toggle the maintenance mode. 
+1. Click **+Add Action**.
+1. Select **Toggle maintenance mode** to add the predefined action to toggle the maintenance mode.
 1. Select **Create operation** to create a button that will execute a shell command. In the resulting dialog box you can then enter the label for the button and the shell command to be executed.
 
 ![Reboot device button configuration](/images/users-guide/cockpit/cockpit-widget-asset-table-buttonconfig.png)
@@ -118,13 +118,13 @@ To remove a property or an action, hover over the respective row and click **Del
 
 ### Data point graph
 
-The "Data point graph" widget shows a data point (measurement) in a graph. The visualization is the same as in the [data explorer](#visualize).
+The "Data point graph" widget shows a data point (measurement) in a graph. The visualization is the same as in the [data explorer](/users-guide/cockpit/#data-explorer).
 
-<img src="/images/users-guide/cockpit/Cockpit_DataPointsGraphWidget.png" name="Data Point Graph widget" style="width:75%;"/>
+<img src="/images/users-guide/cockpit/cockpit-datapointsgraph-widget.png" name="Data Point Graph widget" style="width:75%;"/>
 
 The easiest way to create a "Data point graph" widget is to navigate to the data explorer, click the **More...** button in the top menu bar and select **Send as widget to dashboard**.
 
-Refer to [Visualizing data using the data explorer](#visualize) for further details on the parameters to be configured.
+Refer to [Visualizing data using the data explorer](/users-guide/cockpit/#data-explorer) for further details on the parameters to be configured.
 
 ### Data point list
 
@@ -132,11 +132,32 @@ The "Data point list" widget shows data points (measurements), one in each row, 
 
 **Parameters to configure**
 
-|Field|Description|
-|:---|:---|
-|Title|Widget title. By default, the widget type is simply used as title.
-|Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Data explorer > Adding data points](#add-data-points).
-|Column visibility|Select which columns should be visible: <br>**Label**: Label of the data point. See [Visualizing data using the data explorer](#visualize) for details. <br>**Target**: Target value. Can be configured in the [data explorer](#visualize) or [Data Point Library](#library).<br>Current: Current value. <br>**Diff**: Absolute difference between current value and target value. <br>**Diff %**: Percentage of difference between current value and target value. <br>**Asset**: Name of the device or group of the data point. 
+<table>
+<thead>
+<colgroup>
+   <col style="width: 20%;">
+   <col style="width: 80%;">
+</colgroup>
+<tr>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Title</td>
+<td align="left">Widget title. By default, the widget type is simply used as title.</td>
+</tr>
+<tr>
+<td align="left">Data point</td>
+<td align="left">Shows a list of available data points. You must enable at least one data point. Click <strong>Add data point</strong> to add a data point to the list. For details on how to add data points see <a href="#add-data-points">Data explorer &gt; Adding data points</a>.</td>
+</tr>
+<tr>
+<td align="left">Column visibility</td>
+<td align="left">Select which columns should be visible: <br><strong>Label</strong>: Label of the data point. See <a href="../../users-guide/cockpit/#data-explorer">Visualizing data using the data explorer</a> for details. <br><strong>Target</strong>: Target value. Can be configured in the <a href="../../users-guide/cockpit/#data-explorer">data explorer</a> or <a href="../../users-guide/cockpit/#data-point-library">Data Point Library</a>.<br>Current: Current value. <br><strong>Diff</strong>: Absolute difference between current value and target value. <br><strong>Diff %</strong>: Percentage of difference between current value and target value. <br><strong>Asset</strong>: Name of the device or group of the data point.</td>
+</tr>
+</tbody>
+</table>
 
 ### Data point table
 
@@ -146,15 +167,15 @@ The "Data point table" widget displays data based on selected data points, time 
 
 Out of range values, based on configured yellow and red ranges, are highlighted in the table.
 
-![Data point table](/images/users-guide/datapointtable.png)
+![Data point table](/images/users-guide/cockpit/cockpit-datapointtable.png)
 
 ### Event list
 
-The "Event list" widget lets you monitor events for a selected device. 
+The "Event list" widget lets you monitor events for a selected device.
 
 ![Event list widget](/images/users-guide/cockpit/cockpit-widget-event-list.png)
 
-Additionally, a specific date range can be set and the events can be monitored in realtime. 
+Additionally, a specific date range can be set and the events can be monitored in realtime.
 
 ### Fieldbus device
 
@@ -174,7 +195,7 @@ The "Image" widget lets you display a single image to be selected from your file
 
 ### Info Gauge
 
-The "Info gauge" widget visualizes one data point in form of a radial gauge and multiple data points as labels. 
+The "Info gauge" widget visualizes one data point in form of a radial gauge and multiple data points as labels.
 
 ![Info gauge widget](/images/users-guide/cockpit/cockpit-widget-info-gauge.png)
 
@@ -230,11 +251,11 @@ You must enable at least one data point to create the "Linear gauge" widget.
 
 ### Map
 
-The "Map" widget shows the location of a device or all devices of a group. 
+The "Map" widget shows the location of a device or all devices of a group.
 
 ![Info gauge widget](/images/users-guide/cockpit/cockpit-widget-map.png)
 
-You can drag the map and move its content, and you can zoom in and out by using the **Plus** and **Minus** buttons. 
+You can drag the map and move its content, and you can zoom in and out by using the **Plus** and **Minus** buttons.
 
 The icons representing the devices are color-coded. The color used follows these rules:
 
@@ -254,7 +275,7 @@ Click a device icon, to open popup with the following information:
 
 Target assets or devices: Select which devices are shown on the map. If a group is selected, all devices in that group (but not in any subgroups) are visible.
 
->**Info**: If none of the target device(s) has a known location, then the widget shows a world map without icons.
+>**Info:** If none of the target device(s) has a known location, then the widget shows a world map without icons.
 
 ### Message sending
 
@@ -266,12 +287,32 @@ The "Pie chart" widget displays data points (measurements) with current values i
 
 **Parameters to configure**
 
-|Field|Description|
-|:---|:---|
-|Title|Widget title. By default, the widget type is simply used as title.
-|Pie chart options|Select from the options to show tooltips, percentages, legends in the pie chart. 
-|Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Data explorer > Adding data points](#add-data-points).
-
+<table>
+<thead>
+<colgroup>
+   <col style="width: 20%;">
+   <col style="width: 80%;">
+</colgroup>
+<tr>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Title</td>
+<td align="left">Widget title. By default, the widget type is simply used as title.</td>
+</tr>
+<tr>
+<td align="left">Pie chart options</td>
+<td align="left">Select from the options to show tooltips, percentages, legends in the pie chart.</td>
+</tr>
+<tr>
+<td align="left">Data point</td>
+<td align="left">Shows a list of available data points. You must enable at least one data point. Click <strong>Add data point</strong> to add a data point to the list. For details on how to add data points see <a href="#add-data-points">Data explorer &gt; Adding data points</a>.</td>
+</tr>
+</tbody>
+</table>
 
 ### Quick links
 
@@ -281,7 +322,7 @@ The "Quick links" widget displays several quick links to relevant operations. Th
 
 ### Radial Gauge
 
-The "Radial gauge" widget visualizes data points in form of a radial gauge. 
+The "Radial gauge" widget visualizes data points in form of a radial gauge.
 
 ![Radial gauge widget](/images/users-guide/cockpit/cockpit-widget-radial-gauge.png)
 
@@ -336,10 +377,28 @@ The "Silo" widget displays data points (measurements) with current values in a s
 
 **Parameters to configure**
 
-|Field|Description|
-|:---|:---|
-|Title|Widget title. By default, the widget type is simply used as title.
-|Data point|Shows a list of available data points. You must enable at least one data point. Click **Add data point** to add a data point to the list. For details on how to add data points see [Data explorer > Adding data points](#add-data-points).
+<table>
+<thead>
+<colgroup>
+   <col style="width: 20%;">
+   <col style="width: 80%;">
+</colgroup>
+<tr>
+<th align="left">Field</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Title</td>
+<td align="left">Widget title. By default, the widget type is simply used as title.</td>
+</tr>
+<tr>
+<td align="left">Data point</td>
+<td align="left">Shows a list of available data points. You must enable at least one data point. Click <strong>Add data point</strong> to add a data point to the list. For details on how to add data points see <a href="#add-data-points">Data explorer &gt; Adding data points</a>.</td>
+</tr>
+</tbody>
+</table>
 
 ### Traffic light
 
@@ -352,18 +411,3 @@ The "Traffic light" widget visualizes the states of a device as traffic light.
 |Title|Widget title. By default, the widget type is simply used as title.
 |Target assets or devices|Select group or device to be displayed.
 |States mapping|Select a property for each light. The value of the property has to be one of the following to have the respective light on: true, 1, any non-empty string, any non-null number.
-
-### Twitter News
-
-The "Twitter news" widget displays tweets from Twitter's embedded timeline widget.
-
-<img src="/images/users-guide/cockpit/Cockpit_TwitterNewsWidget.png" name="Twitter news widget" style="width:50%;"/>
-
-**Parameters to configure**
-
-|Field|Description|
-|:---|:---|
-|Title|Widget title. By default, the widget type is simply used as title.
-|Twitter's username|User name for the Twitter account being displayed.
-|Twitter's widget ID|ID for the Twitter widget. You can obtain the ID from widgets settings.
-|Options|Select if you want to display a header, footer, borders or transparency.

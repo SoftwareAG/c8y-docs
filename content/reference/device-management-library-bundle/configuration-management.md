@@ -4,7 +4,7 @@ title: Configuration management
 layout: redirect
 ---
 
-In this section, fragments related to configuration management are listed. 
+In this section, fragments related to configuration management are listed.
 
 The following fragments can be observed:
 
@@ -40,12 +40,12 @@ Here is an example of a managed object representing a configuration snapshot:
     "url" : "https://yourtenant.cumulocity.com/inventory/binaries/binaryId"
 
 An operation example of applying a configuration from a snapshot:
-         
+
     "deviceId":"678101855",
     "id":"680189603",
     "c8y_DownloadConfigFile":{
       "c8y_ConfigurationDump":{
-        "id":"651201036" 
+        "id":"651201036"
       },
       "url":"https://yourtenant.cumulocity.com/inventory/binaries/651201031"
     },
@@ -53,13 +53,13 @@ An operation example of applying a configuration from a snapshot:
 
 #### c8y\_UploadConfigFile
 
-*c8y_UploadConfigFile* is an operation that permits to upload configuration files as binaries. It is used when the device is uploading a configuration file. Binary API is used in order to attach the managed object to the binary file. 
+*c8y_UploadConfigFile* is an operation that permits to upload configuration files as binaries. It is used when the device is uploading a configuration file. Binary API is used in order to attach the managed object to the binary file.
 
       "c8y_UploadConfigFile":{}
 
 #### c8y\_DownloadConfigFile
 
-*c8y_DownloadConfigFile* is an operation that permits to download configuration files as binaries. The binary file is attached to the managed object using binary API. 
+*c8y_DownloadConfigFile* is an operation that permits to download configuration files as binaries. The binary file is attached to the managed object using binary API.
 
 An operation example of downloading a configuration file:
 
@@ -67,7 +67,7 @@ An operation example of downloading a configuration file:
         "url":"<download url>"
     }
 
-> **Info:** The "c8y_DownloadConfigFile" operation delivers a "c8y_ConfigurationDump" object. This object must be configured on the Cumulocity device in order to make the UI display the snapshot information. 
+> **Info:** The "c8y_DownloadConfigFile" operation delivers a "c8y_ConfigurationDump" object. This object must be configured on the Cumulocity IoT device in order to make the UI display the snapshot information.
 
 #### c8y\_SendConfiguration
 

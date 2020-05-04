@@ -9,13 +9,13 @@ Using Apama within the Cumulocity IoT environment necessarily has some restricti
 There are a number of ways that assets may be deployed to Apama within Cumulocity IoT and the restrictions vary according to those mechanisms:
 
 * Apama EPL Apps - the simplest mechanism to deploy Apama assets into a fully managed Apama correlator, see [Basic functionality > Deploying applications](/apama/analytics-introduction/#deploying-apps).
-* Custom microservice – where more complex Apama projects can be built using the Cumulocity Microservice SDK, see [Developing applications > Cumulocity microservices](/concepts/applications#microservices) in the *Concepts guide*.
+* Custom microservice – where more complex Apama projects can be built using Cumulocity IoT's Microservice SDK, see [Developing applications > Cumulocity IoT microservices](/concepts/applications#microservices) in the *Concepts guide*.
 
 When designing an Apama solution to be deployed within any form of Cumulocity IoT environment, consider the following points.
 
 ### General Apama limitations when using Apama EPL Apps or a custom microservice
 
-* For scalability, a correlator may move between hosts and therefore does not have access to a persistent file system. It is a standard Cumulocity IoT constraint that all microservices (either provided by the platform, or custom) must be stateless – see [Developing applications > Cumulocity microservices](/concepts/applications#microservices) in the *Concepts guide*.
+* For scalability, a correlator may move between hosts and therefore does not have access to a persistent file system. It is a standard Cumulocity IoT constraint that all microservices (either provided by the platform, or custom) must be stateless – see [Developing applications > Cumulocity IoT microservices](/concepts/applications#microservices) in the *Concepts guide*.
 
 	The Apama features affected by this include:
 
@@ -32,7 +32,7 @@ When designing an Apama solution to be deployed within any form of Cumulocity Io
 	* 	Distributed memory stores.
 	* 	Connections between correlators.
 
-* For security and implementing user access control, Cumulocity IoT does not make the correlator port available to external processes – see [Developing applications > Cumulocity microservices](/concepts/applications#microservices) in the *Concepts guide*.
+* For security and implementing user access control, Cumulocity IoT does not make the correlator port available to external processes – see [Developing applications > Cumulocity IoT microservices](/concepts/applications#microservices) in the *Concepts guide*.
 
 	The following capabilities require access to the correlator port and hence are not compatible with this access control:
 

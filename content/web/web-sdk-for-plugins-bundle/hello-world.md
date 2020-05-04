@@ -40,7 +40,7 @@ After these steps you should have the following folder structure:
 
 ### Configure the application manifest
 
-Second, we have to fill out the application manifest (the "cumulocity.json" file inside our root folder) with information about our Cumulocity application, such as its name, key, URL and dependencies. For this example, we have to specify the following properties:
+Second, we have to fill out the application manifest (the "cumulocity.json" file inside our root folder) with information about our Cumulocity IoT application, such as its name, key, URL and dependencies. For this example, we have to specify the following properties:
 
 ```json
 	{
@@ -56,13 +56,13 @@ Second, we have to fill out the application manifest (the "cumulocity.json" file
 	}
 ```
 
-With the project structure so far, we can already test our application. By adding the "c8yBranding" plugin from the Cumulocity UI package to our imports, our application will not be completely empty when we try to access it. As the name already indicates, the plugin adds the Cumulocity's branding to our application. Before we can test an application locally, we have to create it on our tenant first.
+With the project structure so far, we can already test our application. By adding the "c8yBranding" plugin from the Cumulocity IoT UI package to our imports, our application will not be completely empty when we try to access it. As the name already indicates, the plugin adds the Cumulocity IoT's branding to our application. Before we can test an application locally, we have to create it on our tenant first.
 
 For more details on other properties of the manifest, see "[Manifests](#manifests)".
 
 ### <a name="create-application"></a>Create the application in your tenant
 
-After successfully logging in into a Cumulocity UI application, the application key is fetched automatically. Thus, to develop an application we need to make sure that the application is created in our tenant. To create the application in our tenant we simply deploy it using ```c8y deploy:app <appContextPath>```.
+After successfully logging in into a Cumulocity IoT UI application, the application key is fetched automatically. Thus, to develop an application we need to make sure that the application is created in our tenant. To create the application in our tenant we simply deploy it using ```c8y deploy:app <appContextPath>```.
 
 ```bash
 $ c8y deploy:app myapplication

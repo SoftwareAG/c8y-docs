@@ -4,7 +4,7 @@ title: Working with simulators
 layout: redirect
 ---
 
-With the Cumulocity simulator all aspects of IoT devices can be simulated, as
+With the Cumulocity IoT simulator all aspects of IoT devices can be simulated, as
 
 * setting up a simulated device or a network of simulated devices
 * specifying the operations which a device can process
@@ -19,9 +19,9 @@ With the simulator you can create artificial devices that have the same level of
 
 A simulator uses a playlist to simulate messages that the device sends to the Cumulocity IoT platform. A playlist is a series of instructions that the simulator executes one after the other. When the last instruction is reached, the simulator starts again with the first one.
 
-An instruction can either send a message (measurements, alarms, events and inventory) or wait for a specified time (sleep). 
+An instruction can either send a message (measurements, alarms, events and inventory) or wait for a specified time (sleep).
 
-A message is defined by choosing a message template (like sending a temperature) and providing the values for this template (e.g. 23.0 degrees). Many predefined message templates are provided, e.g. for creating a measurement, sending an event, creating and cancelling an alarm. These templates are based on MQTT static templates. Additionally, custom message templates can be defined using the [SmartREST template editor](#smartrest-templates). 
+A message is defined by choosing a message template (like sending a temperature) and providing the values for this template (e.g. 23.0 degrees). Many predefined message templates are provided, e.g. for creating a measurement, sending an event, creating and cancelling an alarm. These templates are based on MQTT static templates. Additionally, custom message templates can be defined using the [SmartREST template editor](#smartrest-templates).
 
 ### To view simulators
 
@@ -29,13 +29,13 @@ Click **Simulators** in the **Devices** menu in the navigator to open the **Simu
 
 <img src="/images/users-guide/DeviceManagement/devmgmt-simulator.png" alt="Simulator page">
 
-All simulators which you can access will be listed here. 
+All simulators which you can access will be listed here.
 
 ### To create a simulator
 
-1. Click **New Simulator** at the right of the top menu bar. 
+1. Click **New Simulator** at the right of the top menu bar.
 2. In the resulting dialog box, select a simulator type from the dropdown list in the **Presets** field. Select "Empty simulator" to create a simulator from scratch or select one of the sample simulators.
-3. Enter a name for the simulator. 
+3. Enter a name for the simulator.
 4. Select the number of instances for this simulator (up to ten).
 5. Click **Create**.
 
@@ -67,7 +67,7 @@ The simulator will be removed from the list.
 
 ### Instructions
 
-For each simulator, you can create instructions specifying what the simulator is supposed to do. Instructions are single tasks added to a playlist through which the simulator will work. 
+For each simulator, you can create instructions specifying what the simulator is supposed to do. Instructions are single tasks added to a playlist through which the simulator will work.
 
 Instructions can be viewed and edited on the **Instructions** tab of the simulator.
 
@@ -75,16 +75,15 @@ Instructions can be viewed and edited on the **Instructions** tab of the simulat
 
 **Examples**
 
-The simulator presets already contain sample instructions. For example, the "Temperature measurement" preset contains instructions for the steps "Create measurement" and "Sleep", see image above. 
+The simulator presets already contain sample instructions. For example, the "Temperature measurement" preset contains instructions for the steps "Create measurement" and "Sleep", see image above.
 
 The panel on the right changes according to the type of instruction selected on the left.
 
 ![Fragment](/images/users-guide/DeviceManagement/devmgmt-simulator-fragment.png)
 
-The measurement instruction refers to a fragment. Fragments are used to identify capabilities of a managed object. Find more details about fragments in  
-[Sensor Library](/reference/sensor-library/) in the Reference guide. 
+The measurement instruction refers to a fragment. Fragments are used to identify capabilities of a managed object. Find more details about fragments in [Sensor Library](/reference/sensor-library/) in the Reference guide.
 
-The "Sleep" instruction requires one value for its duration in seconds. 
+The "Sleep" instruction requires one value for its duration in seconds.
 
 ![Sleep](/images/users-guide/DeviceManagement/devmgmt-simulator-sleep.png)
 
@@ -129,6 +128,6 @@ The custom operation will be added to the operation list.
 
 ### Alarms (simulator)
 
-The **Alarm** tab of a simulator displays alarms related to the simulator itself, not related to the simulated device, i.e. if the simulator itself does not work correctly. See [Working with alarms](#alarms) for information on alarms. 
+The **Alarm** tab of a simulator displays alarms related to the simulator itself, not related to the simulated device, i.e. if the simulator itself does not work correctly. See [Working with alarms](/users-guide/device-management/#alarm-monitoring) for information on alarms.
 
 ![Alarms](/images/users-guide/DeviceManagement/devmgmt-simulator-alarm.png)

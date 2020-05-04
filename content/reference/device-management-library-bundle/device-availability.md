@@ -10,18 +10,22 @@ Devices can be monitored for availability by adding a "c8y\_RequiredAvailability
 
     "c8y_RequiredAvailability": { "responseInterval": <<time in minutes>> }
 
-Devices that have not sent any message in the response interval are considered unavailable. Response interval can have value between -32768 and 32767 and any values out of range will be shrink to range borders. Such devices are marked as unavailable (see below) and an unavailability alarm is raised. Devices with a response interval of zero minutes are considered to be under maintenance. No alarm is raised while a device is under maintenance. Devices that do not contain "c8y\_RequiredAvailability" are not monitored.
+Devices that have not sent any message in the response interval are considered unavailable. The response interval can have a value between -32768 and 32767 and any values out of range will be shrink to the range borders. Such devices are marked as unavailable (see below) and an unavailability alarm is raised. 
+
+Devices with `responseInterval` <= 0 are considered to be under maintenance. No alarm is raised while a device is under maintenance. 
+
+Devices that do not contain "c8y\_RequiredAvailability" are not monitored.
 
 #### c8y\_Availability
 
-The availability information computed by Cumulocity is stored in fragments: "c8y\_Availability" and "c8y\_Connection" of the device.
+The availability information computed by Cumulocity IoT is stored in fragments: "c8y\_Availability" and "c8y\_Connection" of the device.
 
     "c8y_Availability": { "lastMessage": "2013-05-21...", "status": "AVAILABLE" },
     "c8y_Connection": {"status":"CONNECTED"}
 
 |Name|Type|Description|
 |:---|:---|:----------|
-|lastMessage|Date|The time when the device sent the last message to Cumulocity.|
+|lastMessage|Date|The time when the device sent the last message to Cumulocity IoT.|
 |status|String|The current status, one of AVAILABLE, MAINTENANCE, UNAVAILABLE.|
 
 The following messages update the last message timestamp of a device:

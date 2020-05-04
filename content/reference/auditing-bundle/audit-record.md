@@ -6,29 +6,125 @@ layout: redirect
 
 ### AuditRecord [application/vnd.com.nsn.cumulocity.auditRecord+json]
 
-|Name|Type|Occurs|Description|PUT/POST|
-|:---|:---|:-----|:----------|:-------|
-|id|String|1|Uniquely identifies this audit record.|No|
-|self|URI|1|Link to this resource.|No|
-|creationTime|String|1|Time when audit record was created in the database.|No|
-|type|String|1|Identifies the type of this audit record.|POST: Mandatory PUT: No|
-|time|String|1|Time of the audit record.|POST: Mandatory PUT: No|
-|text|String|1|Text description of the audit record.|POST: Mandatory PUT: No|
-|source|ManagedObject|1|An optional ManagedObject that the audit record originated from, as object containing properties "id" and "self".|POST: Mandatory PUT: No|
-|user|String|1|The user responsible for the audited action.|Optional|
-|application|String|1|The application used to carry out the audited action.|Optional|
-|activity|String|1|The activity that was carried out.|POST: Mandatory PUT: Optional|
-|severity|String|1|The severity of action: critical, major, minor, warning or information.|POST: Mandatory PUT: Optional|
-|changes|Set|0..1|An optional collection of objects describing the changes that were carried out.|No|
-|\*|Object|0..n|Additional properties of the audit record.|Optional|
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 6%;">
+<col style="width: 34%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+<th align="left">Mandatory for PUT/POST</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">id</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Uniquely identifies this audit record.</td>
+<td align="left">No</td>
+</tr>
+<tr>
+<td align="left">self</td>
+<td align="left">URI</td>
+<td align="left">1</td>
+<td align="left">Link to this resource.</td>
+<td align="left">No</td>
+</tr>
+<tr>
+<td align="left">creationTime</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Time when audit record was created in the database.</td>
+<td align="left">No</td>
+</tr>
+<tr>
+<td align="left">type</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Identifies the type of this audit record.</td>
+<td align="left">POST: Yes<br>PUT: No</td>
+</tr>
+<tr>
+<td align="left">time</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Time of the audit record.</td>
+<td align="left">POST: Yes<br>PUT: No</td>
+</tr>
+<tr>
+<td align="left">text</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Text description of the audit record.</td>
+<td align="left">POST: Yes<br>PUT: No</td>
+</tr>
+<tr>
+<td align="left">source</td>
+<td align="left">ManagedObject</td>
+<td align="left">1</td>
+<td align="left">An optional ManagedObject that the audit record originated from, as object containing properties “id” and “self”.</td>
+<td align="left">No</td>
+</tr>
+<tr>
+<td align="left">user</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">The user responsible for the audited action.</td>
+<td align="left">No</td>
+</tr>
+<tr>
+<td align="left">application</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">The application used to carry out the audited action.</td>
+<td align="left">No</td>
+</tr>
+<tr>
+<td align="left">activity</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">The activity that was carried out.</td>
+<td align="left">POST: Yes<br>PUT: No</td>
+</tr>
+<tr>
+<td align="left">severity</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">The severity of action: critical, major, minor, warning or information.</td>
+<td align="left">No</td>
+</tr>
+<tr>
+<td align="left">changes</td>
+<td align="left">Set</td>
+<td align="left">0..1</td>
+<td align="left">An optional collection of objects describing the changes that were carried out.</td>
+<td align="left">No</td>
+</tr>
+<tr>
+<td align="left">*</td>
+<td align="left">Object</td>
+<td align="left">0..n</td>
+<td align="left">Additional properties of the audit record.</td>
+<td align="left">No</td>
+</tr>
+</tbody>
+</table>
 
-Please note that the source can contain not only ManagedObject with id and self, but in case of "Operation" type - operation id and in case of Alarm type - alarm Id.
-In such cases the self link in source is not correct, but it is kept there to not break the clients that expected to get ManagedObject in source. 
+> **Info:** `source` can contain a ManagedObject with `id` and `self` properties. Also, in case of "Operation" type, it can contain an operation `id`. In case of "Alarm" type, an alarm `id`.
+In both cases, the `self` link in `source` is not correct, but it is kept there to not break the clients that expect to get a ManagedObject in `source`.
 
 ### GET an audit record
 
 Response body: AuditRecord
-  
+
 Required role: ROLE\_AUDIT\_READ
 
 Example request: Get a specific audit record
@@ -43,7 +139,7 @@ Example response:
     HTTP/1.1 200 OK
     Content-Type: application/vnd.com.nsn.cumulocity.auditRecord+json;ver=...
     Content-Length: ...
-     
+
     {
       "id" : "123",
       "self" : "<<AuditRecord URL>>",

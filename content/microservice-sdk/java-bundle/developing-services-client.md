@@ -4,7 +4,7 @@ layout: redirect
 title: Services platform and SMS API
 ---
 
-This section describes the Cumulocity SMS API and shows how to access it using the Cumulocity Java Client. You will also learn how to send and receive SMS messages via the Java Client API.
+This section describes the Cumulocity IoT SMS API and shows how to access it using the Cumulocity IoT Java Client. You will also learn how to send and receive SMS messages via the Java Client API.
 
 ### Using the services platform
 

@@ -10,7 +10,7 @@ layout: redirect
 
   <p><b>For further information on using Apama's Event Processing Language in Cumulocity refer to the <a href="/apama/introduction">Streaming analytics guide</a>.</b></p>
   
-For details on migration, refer to <a href="//apama/overview-analytics/#migrate-from-esper">Migrating from CEL (Esper) to Apama</a> in the Streaming analytics guide.
+For details on migration, refer to <a href="/apama/overview-analytics/#migrate-from-esper">Migrating from CEL (Esper) to Apama</a> in the Streaming analytics guide.
 
 </div>
 

@@ -6,27 +6,147 @@ layout: redirect
 
 ### Tenant [application/vnd.com.nsn.cumulocity.tenant+json]
 
-|Name|Type|Occurs|Description|Visibility|
-|:---|:---|:-----|:----------|:---------|
-|self|URI|0..1|Link to this resource.|Public|
-|id|String: max length="32"|1|Unique identifier of the tenant |Public|
-|status|String|1|Status of the tenant, possible values [ACTIVE, SUSPENDED].|Private|
-|adminName|String: max length = "50"|1|Administrator user name. Whitespaces, slashes, +$: characters not allowed|Private|
-|adminEmail|String|1|Administrator Email|Private|
-|allowCreateTenants|boolean|1|Can this tenant create its own tenants.|Private|
-|storageLimitPerDevice|number|1|Storage quota per device the user has.|Private|
-|adminPassword|String|1|Administrator Password|Private|
-|sendPasswordResetEmail|boolean|1|Enable password reset|Private|
-|domain|String: max length = "256"|1|URL of tenants domain.|Public|
-|company|String: max length = "256"|1|Tenants company name.|Public|
-|contactName|String: max length = "30"|1|Contact person name.|Public|
-|contactPhone|String: max length= "20"|1|Contact person phone number.|Public|
-|applications|ApplicationReferenceCollection|1|Collection of tenant subscribed, applications.|Private|
-|ownedApplications|ApplicationReferenceCollection|1|Collection of tenant owned, applications.|Public - only applications with availability MARKET|,
-|customProperties|Object|1|Keeps a list of custom properties|optional|
-|parent|String|1|Name of parent tenant, the creator of this tenant.|Public|
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+<th align="left">Visibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">self</td>
+<td align="left">URI</td>
+<td align="left">0..1</td>
+<td align="left">Link to this resource.</td>
+<td align="left">Public</td>
+</tr>
+<tr>
+<td align="left">id</td>
+<td align="left">String: max length="32”</td>
+<td align="left">1</td>
+<td align="left">Unique identifier of the tenant</td>
+<td align="left">Public</td>
+</tr>
+<tr>
+<td align="left">status</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Status of the tenant, possible values [ACTIVE, SUSPENDED].</td>
+<td align="left">Private</td>
+</tr>
+<tr>
+<td align="left">adminName</td>
+<td align="left">String: max length = “50”</td>
+<td align="left">1</td>
+<td align="left">Administrator user name. Whitespaces, slashes, +$: characters not allowed</td>
+<td align="left">Private</td>
+</tr>
+<tr>
+<td align="left">adminEmail</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Administrator Email</td>
+<td align="left">Private</td>
+</tr>
+<tr>
+<td align="left">allowCreateTenants</td>
+<td align="left">boolean</td>
+<td align="left">1</td>
+<td align="left">Can this tenant create its own tenants.</td>
+<td align="left">Private</td>
+</tr>
+<tr>
+<td align="left">storageLimitPerDevice</td>
+<td align="left">number</td>
+<td align="left">1</td>
+<td align="left">Storage quota per device the user has.</td>
+<td align="left">Private</td>
+</tr>
+<tr>
+<td align="left">adminPassword</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Administrator Password</td>
+<td align="left">Private</td>
+</tr>
+<tr>
+<td align="left">sendPasswordResetEmail</td>
+<td align="left">boolean</td>
+<td align="left">1</td>
+<td align="left">Enable password reset</td>
+<td align="left">Private</td>
+</tr>
+<tr>
+<td align="left">domain</td>
+<td align="left">String: max length = “256”</td>
+<td align="left">1</td>
+<td align="left">URL of tenants domain.</td>
+<td align="left">Public</td>
+</tr>
+<tr>
+<td align="left">company</td>
+<td align="left">String: max length = “256”</td>
+<td align="left">1</td>
+<td align="left">Tenants company name.</td>
+<td align="left">Public</td>
+</tr>
+<tr>
+<td align="left">contactName</td>
+<td align="left">String: max length = “30”</td>
+<td align="left">1</td>
+<td align="left">Contact person name.</td>
+<td align="left">Public</td>
+</tr>
+<tr>
+<td align="left">contactPhone</td>
+<td align="left">String: max length= “20”</td>
+<td align="left">1</td>
+<td align="left">Contact person phone number.</td>
+<td align="left">Public</td>
+</tr>
+<tr>
+<td align="left">applications</td>
+<td align="left">ApplicationReferenceCollection</td>
+<td align="left">1</td>
+<td align="left">Collection of tenant subscribed, applications.</td>
+<td align="left">Private</td>
+</tr>
+<tr>
+<td align="left">ownedApplications</td>
+<td align="left">ApplicationReferenceCollection</td>
+<td align="left">1</td>
+<td align="left">Collection of tenant owned, applications.</td>
+<td align="left">Public - only applications with availability MARKET</td>
+</tr>
+<tr>
+<td align="left">customProperties</td>
+<td align="left">Object</td>
+<td align="left">1</td>
+<td align="left">Keeps a list of custom properties</td>
+<td align="left">optional</td>
+</tr>
+<tr>
+<td align="left">parent</td>
+<td align="left">String</td>
+<td align="left">1</td>
+<td align="left">Name of parent tenant, the creator of this tenant.</td>
+<td align="left">Public</td>
+</tr>
+</tbody>
+</table>
 
-### Current tenant
+### <a name="current-tenant"></a>Current tenant
 
 Content-Type: application/vnd.com.nsn.cumulocity.currentTenant+json
 
@@ -188,9 +308,9 @@ Note that updating adminPass and adminEmail updates these settings in the admin 
 
 ### DELETE a representation of a Tenant.
 
->**Important**: Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the management tenant. You cannot delete tenants from any tenant but the management tenant. 
+>**Important**: Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the management tenant. You cannot delete tenants from any tenant but the management tenant.
 >
->Administrators in Enterprise Tenants are only allowed to suspend active subtenants, but not to delete them. 
+>Administrators in Enterprise Tenants are only allowed to suspend active subtenants, but not to delete them.
 
 Request body: N/A
 

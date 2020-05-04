@@ -14,7 +14,6 @@ aliases:
   - /users-guide/zapier
   - /users-guide/data-broker
   - /users-guide/IMPACT
-  - /users-guide/opc-ua
   - /devices/netcomm/cloud-fieldbus
   - /devices/sigfox
   - /benutzerhandbuch/cloud-fieldbus-deutsch
@@ -22,4 +21,4 @@ aliases:
   - /benutzerhandbuch/saas-integration-deutsch
   - /benutzerhandbuch/android-cloud-remote-access-deutsch
 ---
-In addition to the standard and built-in applications that come with Cumulocity, various additional applications are provided which you may subscribe to, i.e. integrated agents for several device types.
+In addition to the standard and built-in applications that come with Cumulocity IoT, various additional applications are provided which you may subscribe to, i.e. integrated agents for several device types.

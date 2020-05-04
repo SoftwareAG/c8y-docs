@@ -26,24 +26,26 @@ The following sections demonstrate how to use a Casa Systems (NetComm) router wi
 
 The Cumulocity IoT NetComm Agent supports the following Industrial IoT functionality to remotely monitor and control industrial assets:
 
-* Modbus-RTU and Modbus-TCP support as a [Cloud Fieldbus](#modbus) feature.
+* Modbus-RTU and Modbus-TCP support using [Cloud Fieldbus](#modbus).
 * [Cloud Remote Access](#remote-access) for remotely accessing assets via VNC/Telnet/SSH protocols.
-* [GPIO](#gpio) pins control.
+* Remote [GPIO](#gpio) reading and conrolling.
 
 For details refer to [Remote monitoring and control of industrial assets](#monitoring-and-control).
 
 Moreover, the Cumulocity IoT NetComm Agent offers a large variety of device management features:
 
-* Reporting of model, serial number, firmware version and installed software.
 * Configuring WAN, LAN and DHCP [networks](#network).
-*  Installing/uninstalling [software and firmware](#software-and-firmware) remotely.
-* Reporting [system resources](#system-resources) as measurements.
-* Reporting [cellular signal strength](#cellular) as measurements.
+*  Updating [software and firmware](#software-and-firmware) remotely.
+* Collecting metrics like [system resources](#system-resources) and [cellular signal strength](#cellular) as measurements.
 * Updating and tracking [GPS](#gps) locations.
+<<<<<<< HEAD
 * Getting and applying router’s [configuration snapshot](#snapshot) backup.
+=======
+* Getting and applying router’s [configuration snapshots](#snapshots).
+>>>>>>> afdef12... minor wording changes after Stefans email
 * Sending router’s [event notifications](#notification) as alarms.
 * Remotely executing commands via the [device shell](#device-shell) interface.
-* Viewing system, ipsec and agent [log files](#logs).
+* Retrieving system, ipsec and agent [log files](#logs).
 
 For details refer to [Managing devices](#managing-devices). 
 

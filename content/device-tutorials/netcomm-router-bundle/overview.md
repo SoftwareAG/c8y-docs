@@ -28,7 +28,7 @@ The Cumulocity IoT NetComm Agent supports the following Industrial IoT functiona
 
 * Modbus-RTU and Modbus-TCP support using [Cloud Fieldbus](#modbus).
 * [Cloud Remote Access](#remote-access) for remotely accessing assets via VNC/Telnet/SSH protocols.
-* Remote [GPIO](#gpio) reading and conrolling.
+* Remote [GPIO](#gpio) reading and controlling.
 
 For details refer to [Remote monitoring and control of industrial assets](#monitoring-and-control).
 

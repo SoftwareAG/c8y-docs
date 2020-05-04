@@ -9,7 +9,9 @@ You can view and configure the essential mobile network (**WAN**) and local area
 
 The mobile network (**WAN**) parameters shown in the user interface corresponds to the first profile stored in the router. These parameters can be remotely configured directly or via SMS.
 
-For SMS configuration, the router needs to be configured to accept SMS commands. Consult the router’s manual on the relevant parameters for SMS configuration, or use the router’s web user interface. You also need to have an SMS gateway configured with your account. Contact [Software AG Support](https://empower.softwareag.com/ContactSupport/) for setting up an SMS gateway. For more information on the device shell, see [Device Management > Device details](/users-guide/device-management/#device-details) in the User guide.
+For SMS configuration, the router needs to be configured to accept SMS commands. Consult the router’s manual on the relevant parameters for SMS configuration, or use the router’s web user interface. Moreover, a Connectivity management platform must be configured inside your tenant. Refer to [Optional services > Connectivity](/users-guide/optional-services/#connectivity) in the User guide for details. 
+
+For more information on the **Network** tab, see [Device Management > Device details > Network](/users-guide/device-management/#network) in the User guide.
 
 > **Info:** If you configure the wrong APN settings, the device will lose mobile network connection and can only be managed by limited SMS functionality.
 
@@ -17,7 +19,7 @@ For SMS configuration, the router needs to be configured to accept SMS commands.
 
 LAN and DHCP parameters can be directly configured from Cumulocity IoT as well.
 
-### <a name="**software-and-firmware**"></a> Managing software and firmware
+### <a name="software-and-firmware"></a> Managing software and firmware
 
 The installed software and firmware on the router can be remotely managed using the standard software and firmware management feature from Cumulocity IoT. For details, see [Device Management > Managing device data](/users-guide/device-management/#managing-device-data) in the User guide.
 
@@ -39,7 +41,7 @@ You can record statistics of the router’s system resources usage for troublesh
 * Used and total memory in MB.
 * Uplink and downlink traffic over all interfaces in KB/sec.
 
-By default, the collection of resource statistics is disabled. It can be enabled by setting a non-zero collecting interval in the **System resources measurements** entry of the [router user interface](#configure) or using the [device shell](#device-shell).
+By default, the collection of resource statistics is disabled. It can be enabled by setting a non-zero collecting interval in the **System resources measurements** entry of the [web user interface of the router](#configure) or using the [device shell](#device-shell).
 
 ```shell
 set service.cumulocity.system_resources.interval=<interval>
@@ -51,7 +53,7 @@ Collected data can be accessed in the **Measurements** tab or in a dashboard.
 
 You can also record statistics of the router’s cellular signal strength.
 
-By default, the collection of signal strength statistics is disabled. They can be enabled by setting a non-zero collecting interval in the **Connection signal measurements** entry of the [router user interface](#configure) or using the [device shell](#device-shell).
+By default, the collection of signal strength statistics is disabled. They can be enabled by setting a non-zero collecting interval in the **Connection signal measurements** entry of the [web user interface of the router](#configure) or using the [device shell](#device-shell).
 
 ```shell
 set service.cumulocity.signal.interval=<interval>
@@ -74,7 +76,7 @@ After you applied the configuration changes, wait a moment for the first GPS dat
 
 ### <a name="snapshots"></a> Managing configuration snapshots
 
-You can retrieve, modify and save user configuration data. To do this, navigate to the router in  **Device Management > All devices** and switch to its [Configuration](/users-guide/device-management/#config) tab. Click **Reload** in the **Configuration** section to request configuration data. It will take a few seconds to download. After the configuration data has arrived, you will see a list of parameters and their corresponding values. You can then make changes to the configuration and save them back to the device.
+You can retrieve, modify and save user configuration data. To do this, navigate to the router in  **Device Management > All devices** and switch to its [**Configuration**](/users-guide/device-management/#config) tab. Click **Reload** in the **Configuration** section to request configuration data. It will take a few seconds to download. After the configuration data has arrived, you will see a list of parameters and their corresponding values. You can then make changes to the configuration and save them back to the device.
 
 You can also request a configuration snapshot from the device and later apply the configuration snapshot to other devices.
 
@@ -84,7 +86,7 @@ There is also RDB snapshot support, which is a super-set of the configurations. 
 
 ### <a name="device-shell"></a> Using the device shell
 
-With the device shell, you can read and write individual configuration parameters from the device, as well as execute diagnostic commands. For more information, refer to [Device Management > Device details](/users-guide/device-management/#device-details) in the User guide. Consult the NetComm documentation for valid parameters and diagnostic commands. The general format is:
+With the device shell, you can read and write individual configuration parameters from the device, as well as execute diagnostic commands. For more information, refer to [Device Management > Device details > Device shell](/users-guide/device-management/#shell) in the User guide. Consult the NetComm documentation for valid parameters and diagnostic commands. The general format is:
 
 * “get &#60;parameter&#62;” to read a parameter from the device.
 * “set &#60;parameter&#62;=&#60;value&#62;” to write a parameter to the device.
@@ -99,7 +101,7 @@ Click the **Get Predefined** link to access frequently used parameters and comma
 
 You can download and view the logs from the device. Log files can be quite big, but you can set filtering criteria to get only what is interesting for you.
 
-For more information about logs, see [Device Management > Device details](/users-guide/device-management/#device-details) in the User guide.
+For more information about logs, see [Device Management > Device details > Logs](/users-guide/device-management/#logs) in the User guide.
 
 ![Logs](/images/device-demos/casa-system-router/router-log.png)
 

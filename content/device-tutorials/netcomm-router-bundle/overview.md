@@ -1,7 +1,13 @@
 ---
-title: Overview
+title: Introduction
 weight: 10
 ---
+
+This tutorial describes how to set up and configure the Casa Systems (NetComm) routers of the [NTC-220](https://support.netcommwireless.com/products/NTC-220%20Series) series using the Cumulocity IoT NetComm Agent package.
+
+>**Info:** For [NTC-140W](https://support.netcommwireless.com/products/NTC-140W%20Series), and [NTC-6200](https://support.netcommwireless.com/products/NTC-6200%20Series), refer to the [NetComm section](https://cumulocity.com/guides/10.4.6/devices/netcommwireless/) in the Devices guide of the Cumulocity IoT 10.4.6 documentation. 
+
+### Overview
 
 The following sections demonstrate how to use a Casa Systems (NetComm) router with the Cumulocity IoT platform.
 
@@ -9,32 +15,34 @@ The following sections demonstrate how to use a Casa Systems (NetComm) router wi
 |:---|:---|
 |[Prerequisites](#prerequisites)|Description of the [system requirements](#sys-req) and [supported routers](#support-router).
 |[Setting up and registering the device](#setup)|How to [install](#install-agent) the agent, [configure](#configure) the router and [connect](#connect) the router to your Cumulocity IoT account.
-|[Interacting with Cumulocity IoT](#interaction)|How to use the built-in router functionalities with the Cumulocity IoT platform.
-|[Troubleshooting](#troubleshooting)|List of known [bugs and limitations](#troubleshooting).
+|[Remote monitoring and control of industrial assets](#monitoring-and-control)|How to use [Cloud Fieldbus](#modbus), [Cloud Remote Access](#remote-access) and the [GPIO](#gpio) pins control feature to remotely monitor and control industrial assets.
+|[Managing devices](#device-management)|Description of the supported device management functionalities.
+|[Troubleshooting](#troubleshooting)|List of known bugs and limitations.
 |[Release notes](#release-history)|Release notes for the Cumulocity IoT NetComm Agent.
 
 ### Supported functionality
 
-The Cumulocity IoT NetComm Agent supports the following functionality:
+The Cumulocity IoT NetComm Agent supports the following Industrial IoT functionality to remotely monitor and control industrial assets:
 
-* Bootstrap and registration of the router in the Cumulocity IoT platform.
+* Modbus-RTU and Modbus-TCP support as a [Cloud Fieldbus](#modbus) feature.
+* [Cloud Remote Access](#remote-access) for remotely accessing assets via VNC/Telnet/SSH protocols.
+* [GPIO](#gpio) pins control.
+
+For details refer to [Remote monitoring and control of industrial assets](#monitoring-and-control).
+
+Moreover, the Cumulocity IoT NetComm Agent offers a large variety of device management features:
+
 * Reporting of model, serial number, firmware version and installed software.
-* WAN, LAN and DHCP configuration.
-* Remote software and firmware installation and upgrading as service through the ipkg package manager.
-* System resource monitoring.
-* Cellular signal strength monitoring.
-* GPS-based location reporting.
-* Reporting GPIO pin readings (analog input) as measurements.
-* Raising and clearing alarms based on whether a GPIO pin (digital input) is open or closed in a circuit, including debouncing.
-* Remote controlling of GPIO pins (digital output) from the Cumulocity IoT platform.
-* Editing the router configuration.
-* Managing router configuration snapshots.
-* Remotely executing commands via device shell interface.
-* Sending event notifications as alarms.
-* Modbus-RTU and Modbus-TCP support for remotely managing Modbus devices from Cumulocity IoT.
-* Lua plug-in API for rapid development of IoT applications.
-* Configuring and displaying agent settings on the router’s web user interface.
-* Get and set device configuration.
-* View system, ipsec and agent log files.
-* Cloud Remote Access for remotely accessing devices via VNC/Telnet/SSH protocols.
-* MQTT as an alternative communication protocol.
+* Configuring WAN, LAN and DHCP [networks](#network).
+*  Installing/uninstalling [software and firmware](#software-and-firmware) remotely.
+* Reporting [system resources](#system-resources) as measurements.
+* Reporting [cellular signal strength](#cellular) as measurements.
+* Updating and tracking [GPS](#gps) locations.
+* Getting and applying router’s [configuration snapshot](#snapshot) backup.
+* Sending router’s [event notifications](#notification) as alarms.
+* Remotely executing commands via the [device shell](#device-shell) interface.
+* Viewing system, ipsec and agent [log files](#logs).
+
+For details refer to [Managing devices](#managing-devices). 
+
+

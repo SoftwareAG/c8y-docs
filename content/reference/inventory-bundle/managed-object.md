@@ -401,6 +401,6 @@ HTTP/1.1
 
 If the managed object is a device or a group and the optional query parameter "cascade=true" is used, all child devices and child assets will be deleted recursively. By default, the delete operation is propagated to the subgroups only if the deleted object is a group.
 
-If you want to delete the full hierarchy regardless of managed object type, use query parameter "forceCascade=true". When both "cascade" and "forceCascade" are provided the last one takes precedence.
+If you want to delete the full hierarchy regardless of managed object type, use query parameter "forceCascade=true". When both "cascade" and "forceCascade" are provided the second one takes precedence.
 
 > **Info**: Inventory DELETE requests are not synchronous. The response could be returned before the delete request has been completed.

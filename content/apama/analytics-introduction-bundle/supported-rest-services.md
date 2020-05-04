@@ -66,7 +66,7 @@ Example value for response code 200:
   "eplfiles":[
     {
       "description":"",
-      "eplPackageName": "eplfiles.Simple", 
+      "eplPackageName": "eplfiles.Ordinal1", 
       "errors":[
  
       ],
@@ -109,7 +109,7 @@ Example value for response code 200:
     {
       "contents":"monitor M0 { action onload() { on wait(1.0) { log \"Hello\" at INFO; }}}",
       "description":"",
-      "eplPackageName": "eplfiles.Simple", 
+      "eplPackageName": "eplfiles.Ordinal1", 
       "errors":[
       ],
       "id":"39615",
@@ -149,7 +149,7 @@ Example value for response code 200:
 {
       "contents":"monitor M0 { action onload() { on wait(1.0) { log \"Hello\" at INFO; }}}",
       "description":"",
-      "eplPackageName": "eplfiles.Simple", 
+      "eplPackageName": "eplfiles.Ordinal1", 
       "errors":[
       ],
       "id":"39615",
@@ -198,7 +198,7 @@ Example for response code 201 when successfully created:
 ```
 {
   "description":"",
-  "eplPackageName": "eplfiles.Simple", 
+  "eplPackageName": "eplfiles.Ordinal1", 
   "errors":[
  
   ],
@@ -216,7 +216,7 @@ Example for response code 201 when created with warnings or errors:
 ```
 {
   "description":"",
-  "eplPackageName": "eplfiles.Simple", 
+  "eplPackageName": "eplfiles.Ordinal1", 
   "errors":[
     {
       "line":5,
@@ -274,7 +274,7 @@ Example value for response code 200 when successfully updated with no errors:
 ```
 {
   "description":"",
-  "eplPackageName": "eplfiles.Simple", 
+  "eplPackageName": "eplfiles.Ordinal1", 
   "errors":[
  
   ],
@@ -292,7 +292,7 @@ Example value for response code 200 when updated with errors or warnings:
 ```
 {
   "description":"",
-  "eplPackageName": "eplfiles.Simple", 
+  "eplPackageName": "eplfiles.Ordinal1", 
   "errors":[
     {
       "line":5,

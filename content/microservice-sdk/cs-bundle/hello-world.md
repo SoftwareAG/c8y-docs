@@ -74,7 +74,7 @@ The microservice must be deployed  to verify calls from Cumulocity IoT.
 To run a microservice which uses Cumulocity IoT API locally you need the following:
 
 *   URL address of the Cumulocity IoT host of your tenant
-*   Authorization header = "Basic <Base64(<username>:<password>)>"
+*   Authorization header = "Basic &lt;Base64(&lt;username>:&lt;password>)>"
 *   Tenant - tenant ID
 
 You may also install the cURL utility. There are several ways to install it on Windows:

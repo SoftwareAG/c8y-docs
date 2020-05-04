@@ -26,7 +26,7 @@ For new projects, you shall use a new bundle of [building scripts](https://bitbu
 
 ### <a name="general-prerequisites"></a> Development prerequisites
 
-To use the C# client libraries for development, you need to install .NET Core SDK for your development platform (i.e. Windows or Linux) at least Version 2 of the [.NET Core SDK](https://dotnet.microsoft.com/download). Note that .NET Core Runtime and .NET Core SDK are different things.
+To use the C# client libraries for development, you need to install .NET Core SDK for your development platform such as Windows or Linux (version 2.2 of the [.NET Core SDK](https://www.microsoft.com/net/download/windows)). Note that .NET Core Runtime and .NET Core SDK are different things.
 
 Use the following command to verify the version of your .NET Core SDK:
 
@@ -34,7 +34,7 @@ Use the following command to verify the version of your .NET Core SDK:
 $ dotnet --info
 ```
 
-The output must show a version later than "2.0.0" to implement the basic examples.
+The output must show a version number later than "2.2.0" to implement the basic examples.
 
 You also need a local Docker installation. Review the information at [Docker for Windows: What to know before you install](https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install) and install [Docker For Windows](https://docs.docker.com/docker-for-windows/install/). For Linux systems, follow the general installation on the [Get Started with Docker](https://www.docker.com/get-started) webpage.
 
@@ -48,21 +48,23 @@ Depending on what you want to do, you need either the .NET Core SDK or the .NET 
 #### Windows system requirements
 
 *   Powershell (at least Version 6 or Core)
-*   .NET Core SDK (at least Version 2.0)
-*   Docker for Windows (at least Version  17.06)
+*   .NET Core SDK (at least Version 2.2)
+*   Docker for Windows (at least Version 17.06)
 
 #### Linux system requirements
 
-*   .NET Core SDK (at least Version 2.0)
-*   Docker (at least Version  17.06)
-*   Mono (at least Version  5.4.0)
+*   .NET Core SDK (at least Version 2.2)
+*   Docker (at least Version 17.06)
+*   Mono (at least Version 6.0.0)
 
 ### Runtime prerequisites
 
 The most important requirement is an installation of [Docker 17.06](https://docs.docker.com/release-notes/docker-ce/) or later.
 
-The recommended image for production is `microsoft/dotnet:<version>-runtime` as it contains the .NET Core (runtime and libraries) and it is optimized for running .NET Core applications.
+The recommended image for production is `mcr.microsoft.com/dotnet/core/aspnet:<version> AS runtime` as it contains the .NET Core (runtime and libraries) and it is optimized for running .NET Core applications.
 
-> **Important:** Cumulocity IoT supports only Linux containers. Nevertheless, for development – should you wish to do so – it is possible to use Windows containers.
+> **Important**: Cumulocity IoT supports only Linux containers. Nevertheless, for development – should you wish to do so – it is possible to use Windows containers.
 
-The SDK is based on the package `Cumulocity.SDK.Microservices` and it has a dependency on `Cumulocity.AspNetCore.Authentication.Basic` which is a package wrapper around the [Basic Authentication for Microsoft ASP.NET Core Security](https://github.com/bruno-garcia/Bazinga.AspNetCore.Authentication.Basic) which ensures adding basic authentication to Asp.Net Core.
+The SDK is based on the package `Cumulocity.SDK.Microservices` and it has a dependency on:
+
+* Cumulocity.AspNetCore.Authentication.Basic - a package wrapper around the [Basic Authentication for Microsoft ASP.NET Core Security](https://github.com/bruno-garcia/Bazinga.AspNetCore.Authentication.Basic) which ensures adding basic authentication to Asp.Net Core.

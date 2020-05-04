@@ -28,7 +28,7 @@ The Cumulocity IoT NetComm Agent supports the following Industrial IoT functiona
 
 * Modbus-RTU and Modbus-TCP support using [Cloud Fieldbus](#modbus).
 * [Cloud Remote Access](#remote-access) for remotely accessing assets via VNC/Telnet/SSH protocols.
-* Remote [GPIO](#gpio) reading and conrolling.
+* Remote [GPIO](#gpio) reading and controlling.
 
 For details refer to [Remote monitoring and control of industrial assets](#monitoring-and-control).
 
@@ -38,11 +38,7 @@ Moreover, the Cumulocity IoT NetComm Agent offers a large variety of device mana
 *  Updating [software and firmware](#software-and-firmware) remotely.
 * Collecting metrics like [system resources](#system-resources) and [cellular signal strength](#cellular) as measurements.
 * Updating and tracking [GPS](#gps) locations.
-<<<<<<< HEAD
-* Getting and applying router’s [configuration snapshot](#snapshot) backup.
-=======
 * Getting and applying router’s [configuration snapshots](#snapshots).
->>>>>>> afdef12... minor wording changes after Stefans email
 * Sending router’s [event notifications](#notification) as alarms.
 * Remotely executing commands via the [device shell](#device-shell) interface.
 * Retrieving system, ipsec and agent [log files](#logs).

@@ -181,7 +181,7 @@ Endpoint: `/service/cep/eplfiles`
 
 Note the following:
 
-- To avoid a clash with other files, the `name` is used for the package of the file (rather than a user-provided package). It must be valid to use as an EPL identifier which consists of letters and numbers only. The name must be unique across all EPL files. 
+- To avoid a clash with other files, the `name` is used for the package of the file (rather than a user-provided package). Non-alphanumeric characters in the name are converted to Hex encoding so that the name can be used as a valid EPL identifier. The name must be unique across all EPL files. 
 - Make sure to provide safely escaped `contents`.
 - `description` is optional and can be empty.
 

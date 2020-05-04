@@ -33,15 +33,16 @@ Any other response codes that can be expected from a specific request are given 
 
 The following common fields are available with the responses, depending on the operation:
 
-| Field       | Description                                                  |
-| ----------- | ------------------------------------------------------------ |
-| contents    | The full contents of the EPL file.                           |
-| description | A description of the file.                                   |
-| errors      | A list of all compilation errors in the file, if any, with line numbers and text. |
-| id          | A unique identifier of the file.                             |
-| name        | The name provided for this bit of EPL.                       |
-| state       | Whether the EPL is injected into the correlator and running. This can either be `active` or `inactive`. |
-| warnings    | A list of all compilation warnings in the file, if any, with line numbers and text. |
+| Field          | Description                                                  |
+| -------------- | ------------------------------------------------------------ |
+| contents       | The full contents of the EPL file.                           |
+| description    | A description of the file.                                   |
+| eplPackageName | The package name of the EPL file. If the EPL file name contains special characters (including spaces), these characters are converted to Hex encoding to avoid injection errors. |
+| errors         | A list of all compilation errors in the file, if any, with line numbers and text. |
+| id             | A unique identifier of the file.                             |
+| name           | The name provided for this bit of EPL.                       |
+| state          | Whether the EPL is injected into the correlator and running. This can either be `active` or `inactive`. |
+| warnings       | A list of all compilation warnings in the file, if any, with line numbers and text. |
 
 ### GET - Retrieve all available EPL files
 
@@ -65,6 +66,7 @@ Example value for response code 200:
   "eplfiles":[
     {
       "description":"",
+      "eplPackageName": "eplfiles.Simple", 
       "errors":[
  
       ],
@@ -107,6 +109,7 @@ Example value for response code 200:
     {
       "contents":"monitor M0 { action onload() { on wait(1.0) { log \"Hello\" at INFO; }}}",
       "description":"",
+      "eplPackageName": "eplfiles.Simple", 
       "errors":[
       ],
       "id":"39615",
@@ -146,6 +149,7 @@ Example value for response code 200:
 {
       "contents":"monitor M0 { action onload() { on wait(1.0) { log \"Hello\" at INFO; }}}",
       "description":"",
+      "eplPackageName": "eplfiles.Simple", 
       "errors":[
       ],
       "id":"39615",
@@ -194,6 +198,7 @@ Example for response code 201 when successfully created:
 ```
 {
   "description":"",
+  "eplPackageName": "eplfiles.Simple", 
   "errors":[
  
   ],
@@ -211,6 +216,7 @@ Example for response code 201 when created with warnings or errors:
 ```
 {
   "description":"",
+  "eplPackageName": "eplfiles.Simple", 
   "errors":[
     {
       "line":5,
@@ -268,6 +274,7 @@ Example value for response code 200 when successfully updated with no errors:
 ```
 {
   "description":"",
+  "eplPackageName": "eplfiles.Simple", 
   "errors":[
  
   ],
@@ -285,6 +292,7 @@ Example value for response code 200 when updated with errors or warnings:
 ```
 {
   "description":"",
+  "eplPackageName": "eplfiles.Simple", 
   "errors":[
     {
       "line":5,

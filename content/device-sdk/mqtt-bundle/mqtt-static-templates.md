@@ -722,26 +722,13 @@ Change the communication mode.
 523,DeviceSerial,SMS
 ```
 
-### Updating operations
-
-When using the template to set an operation to state SUCCESSFUL, it supports sending additional parameters to trigger additional calls on the server.
-The table below shows the operations supporting this feature and what will be done with the parameters.
-
-|Fragment|Parameters|Action triggered|
-|:-------|:-------|:-------|
-|c8y_Command|result|Result will be added to operation|
-|c8y_RelayArray|relay states|Device object will be updated with the states|
-|c8y_CommunicationMode|no parameter needed|Device object will be updated with the mode|
-|c8y_LogfileRequest|file url|File url will be added to operation|
-|c8y_DownloadConfigFile|(optional) timestamp|Device object will be updated with the ID of the configuration dump and the timestamp (or server time)|
-
 ##### Download configuration file with type (524)
 
 Download a configuration file from the url with type.
 
 |Position|Parameter|
 |:-------|:-------|
-|1|url|
+|1|URL|
 |2|configuration type|
 
 **Example**
@@ -758,7 +745,7 @@ Install the firmware from the patch.
 |:-------|:-------|
 |1|firmware patch|
 |2|firmware version|
-|3|url|
+|3|URL|
 |4|dependency|
 
 **Example**
@@ -773,7 +760,7 @@ Configuration is uploaded from Cumulocity IoT to the device with type.
 
 Position|Parameter|
 |:-------|:-------|
-|1|url|
+|1|URL|
 |1|configuration type|
 
 **Example**
@@ -788,20 +775,23 @@ Set the device profiles
 
 |Position|Parameter|
 |:-------|:-------|
-|1...| 5 values of firmware|
-|1.1|firmware name|
-|1.2|firmware version|
-|1.3|firmware url|
-|1.4|firmware isPatch|
-|1.5|firmware dependency|
-|2...|List of 4 values per software|
-|2.1|software name|
-|2.2|software version|
-|2.3|software url|
-|2.4|software action|
-|3...|List of 2 values per configuration|
-|3.1|configuration url|
-|3.2|configuration type|
+|1...| 6 values of firmware|
+|1.1|firmware marker|
+|1.2|firmware name|
+|1.3|firmware version|
+|1.4|firmware URL|
+|1.5|firmware isPatch|
+|1.6|firmware dependency|
+|2...|List of 5 values per software|
+|2.1|software marker|
+|2.2|software name|
+|2.3|software version|
+|2.4|software URL|
+|2.5|software action|
+|3...|List of 3 values per configuration|
+|3.1|configuration marker|
+|3.2|configuration URL|
+|3.3|configuration type|
 
 **Example**
 
@@ -818,7 +808,7 @@ Update the software installed on the device.
 |1...|List of 4 values per software|
 |1.1|name|
 |1.2|version|
-|1.3|url|
+|1.3|URL|
 |1.4|action|
 
 **Example**
@@ -826,3 +816,16 @@ Update the software installed on the device.
 ```text
 528,DeviceSerial,softwareA,1.0,url1,action1,softwareB,2.0,url2,action2
 ```
+
+### Updating operations
+
+When using the template to set an operation to state SUCCESSFUL, it supports sending additional parameters to trigger additional calls on the server.
+The table below shows the operations supporting this feature and what will be done with the parameters.
+
+|Fragment|Parameters|Action triggered|
+|:-------|:-------|:-------|
+|c8y_Command|result|Result will be added to operation|
+|c8y_RelayArray|relay states|Device object will be updated with the states|
+|c8y_CommunicationMode|no parameter needed|Device object will be updated with the mode|
+|c8y_LogfileRequest|file url|File url will be added to operation|
+|c8y_DownloadConfigFile|(optional) timestamp|Device object will be updated with the ID of the configuration dump and the timestamp (or server time)|

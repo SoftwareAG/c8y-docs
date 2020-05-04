@@ -38,11 +38,11 @@ Moreover, the Cumulocity IoT NetComm Agent offers a large variety of device mana
 * Reporting [system resources](#system-resources) as measurements.
 * Reporting [cellular signal strength](#cellular) as measurements.
 * Updating and tracking [GPS](#gps) locations.
-* Getting and applying router’s [configuration snapshot](#snapshot) backup.
+* Getting and applying router’s [configuration snapshot](#snapshots) backup.
 * Sending router’s [event notifications](#notification) as alarms.
 * Remotely executing commands via the [device shell](#device-shell) interface.
 * Viewing system, ipsec and agent [log files](#logs).
 
-For details refer to [Managing devices](#managing-devices). 
+For details refer to [Managing devices](#device-management). 
 
 

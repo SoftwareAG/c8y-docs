@@ -17,7 +17,7 @@ For SMS configuration, the router needs to be configured to accept SMS commands.
 
 LAN and DHCP parameters can be directly configured from Cumulocity IoT as well.
 
-### <a name="**software-and-firmware**"></a> Managing software and firmware
+### <a name="software-and-firmware"></a> Managing software and firmware
 
 The installed software and firmware on the router can be remotely managed using the standard software and firmware management feature from Cumulocity IoT. For details, see [Device Management > Managing device data](/users-guide/device-management/#managing-device-data) in the User guide.
 
@@ -39,7 +39,7 @@ You can record statistics of the router’s system resources usage for troublesh
 * Used and total memory in MB.
 * Uplink and downlink traffic over all interfaces in KB/sec.
 
-By default, the collection of resource statistics is disabled. It can be enabled by setting a non-zero collecting interval in the **System resources measurements** entry of the [router user interface](#configure) or using the [device shell](#device-shell).
+By default, the collection of resource statistics is disabled. It can be enabled by setting a non-zero collecting interval in the **System resources measurements** entry of the [web UI of the router](#configure) or using the [device shell](#device-shell).
 
 ```shell
 set service.cumulocity.system_resources.interval=<interval>
@@ -51,7 +51,7 @@ Collected data can be accessed in the **Measurements** tab or in a dashboard.
 
 You can also record statistics of the router’s cellular signal strength.
 
-By default, the collection of signal strength statistics is disabled. They can be enabled by setting a non-zero collecting interval in the **Connection signal measurements** entry of the [router user interface](#configure) or using the [device shell](#device-shell).
+By default, the collection of signal strength statistics is disabled. They can be enabled by setting a non-zero collecting interval in the **Connection signal measurements** entry of the [web UI of the router](#configure) or using the [device shell](#device-shell).
 
 ```shell
 set service.cumulocity.signal.interval=<interval>
@@ -74,7 +74,7 @@ After you applied the configuration changes, wait a moment for the first GPS dat
 
 ### <a name="snapshots"></a> Managing configuration snapshots
 
-You can retrieve, modify and save user configuration data. To do this, navigate to the router in  **Device Management > All devices** and switch to its [Configuration](/users-guide/device-management/#config) tab. Click **Reload** in the **Configuration** section to request configuration data. It will take a few seconds to download. After the configuration data has arrived, you will see a list of parameters and their corresponding values. You can then make changes to the configuration and save them back to the device.
+You can retrieve, modify and save user configuration data. To do this, navigate to the router in  **Device Management > All devices** and switch to its [**Configuration**](/users-guide/device-management/#config) tab. Click **Reload** in the **Configuration** section to request configuration data. It will take a few seconds to download. After the configuration data has arrived, you will see a list of parameters and their corresponding values. You can then make changes to the configuration and save them back to the device.
 
 You can also request a configuration snapshot from the device and later apply the configuration snapshot to other devices.
 

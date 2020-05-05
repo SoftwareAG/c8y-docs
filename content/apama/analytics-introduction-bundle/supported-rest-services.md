@@ -168,7 +168,7 @@ Endpoint: `/service/cep/eplfiles`
 
 `POST /service/cep/eplfiles`
 
-#### Example response
+The following is an example of a request body:
 
 ```
 {
@@ -249,7 +249,7 @@ Endpoint: `/service/cep/eplfiles/{id}`
 
 `PUT /service/cep/eplfiles/{id}`
 
-#### Example response
+The following is an example of a request body:
 
 ```
 {

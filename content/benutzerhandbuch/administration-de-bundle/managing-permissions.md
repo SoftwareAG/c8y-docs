@@ -1,7 +1,7 @@
 ---
 weight: 13
 title: Verwalten von Berechtigungen
-
+layout: redirect
 ---
 
 Berechtigungen legen fest, welche Funktionen ein Benutzer in Cumulocity IoT-Anwendungen ausführen darf. Um das Verwalten von Berechtigungen zu vereinfachen, sind diese in sogenannte Rollen eingeteilt. Jedem Benutzer kann eine Reihe von Rollen zugewiesen werden, deren Berechtigungen addiert werden.
@@ -13,32 +13,35 @@ Die folgenden Rollen können zugewiesen werden:
 
 Darüber hinaus kann der Zugriff auf Anwendungen erteilt werden.
 
+
 ### <a name="global"></a>Globale Rollen
 
 Klicken Sie **Rollen** im Menü **Konto**, um die Liste der konfigurierten Rollen anzuzeigen.
 
-In der Registerkarte **Globale Rollen** finden Sie die Rollen, die allgemeine Berechtigungen erteilen. Es gibt verschiedene globale Standardrollen, aber Sie können auch eigene nach Ihren Bedürfnissen erstellen.
+<img src="/images/users-guide/Administration/admin-global-roles.png" alt="Context menu">
 
-<img src="/images/benutzerhandbuch/Administration/admin-global-roles.png" alt="Context menu">
+In der Registerkarte **Globale Rollen** finden Sie die Rollen, die allgemeine Berechtigungen erteilen. Es gibt verschiedene vordefinierte globale Rollen, aber Sie können auch eigene nach Ihren Bedürfnissen erstellen.
+
+> **Info:** Die vordefinierten Rollen sind nicht vollständig konfiguriert. Sie können als Muster betrachtet werden, die für einen bestimmten Zweck vorkonfiguriert sind. Sie können sie als Ausgangspunkt verwenden und dann weiter an Ihre Bedürfnisse anpassen.
+
+> Achten Sie beim Anlegen eines neuen Benutzers darauf, dass die globalen Rollen, die sie diesem zuweisen, alle Berechtigungen umfassen, die speziell für ihn relevant sind. Wenn ein Benutzer z. B. nur die Rolle "Cockpit-Benutzer" hat (siehe unten), kann er auf nichts anderes als die Cockpit-Anwendung zugreifen.  
 
 Die Rollen "admins" und "devices" haben einen Sonderstatus:
 
 <table>
-<col style="width: 15%;">
-<col style="width: 85%;">
+<col style="width: 20%;">
+<col style="width: 80%;">
 <thead>
 <tr>
 <th align="left">Rolle&nbsp;&nbsp;&nbsp;</th>
 <th align="left">Beschreibung</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">admins</td>
 <td align="left">Alle Berechtigungen sind aktiviert. Der ursprüngliche Administrator, d.h. der erste in diesem Mandanten erstellte Benutzer, hat diese Rolle.</td>
 </tr>
-
 <tr>
 <td align="left">devices</td>
 <td align="left">Typische Berechtigungskonfiguration für Geräte. Nach der Registrierung weist ein Gerät automatisch diese Rolle auf. Bearbeiten Sie diese Rolle, wenn Ihre Geräte weniger oder mehr Berechtigungen erfordern, oder weisen Sie Ihren Geräten andere Rollen zu.</td>
@@ -46,7 +49,7 @@ Die Rollen "admins" und "devices" haben einen Sonderstatus:
 </tbody>
 </table>
 
-Darüber hinaus sind anfänglich folgende Rollen konfiguriert:
+Darüber hinaus werden anfänglich die folgenden vorkonfigurierten Rollen bereitgestellt:
 
 <table>
 <col style="width: 20%;">
@@ -57,43 +60,35 @@ Darüber hinaus sind anfänglich folgende Rollen konfiguriert:
 <th align="left">Beschreibung</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">Regelmanager</td>
 <td align="left">Hat Zugriff auf alle Smart Rules und Echtzeitregeln.</td>
 </tr>
-
 <tr>
 <td align="left">Cockpit-Benutzer</td>
 <td align="left">Hat Zugriff auf die Anwendung Cockpit. Zusätzlich sollten Sie eine Rolle hinzufügen, die Geräten Zugriff gewährt.</td>
 </tr>
-
 <tr>
 <td align="left">Device Management-Benutzer</td>
 <td align="left">Hat Zugriff auf die Anwendung Device Management. Der Benutzer kann damit den Simulator nutzen und Stapelkommandos ausführen. Zusätzlich sollten Sie eine Rolle hinzufügen, die Geräten Zugriff gewährt.</td>
 </tr>
-
 <tr>
 <td align="left">Globaler Manager</td>
 <td align="left">Hat Lese- und Schreibzugriff auf alle Geräte.</td>
 </tr>
-
 <tr>
 <td align="left">Globaler Leser</td>
 <td align="left">Hat Lesezugriff auf alle Geräte.</td>
 </tr>
-
 <tr>
 <td align="left">Globaler Benutzermanager</td>
 <td align="left">Kann alle Benutzer verwalten.</td>
 </tr>
-
 <tr>
 <td align="left">Geteilter Benutzermanager</td>
 <td align="left">Kann untergeordnete Benutzer verwalten. Um untergeordnete Benutzer verwalten zu können, muss der Abonnementplan Benutzerhierarchien einschließen.</td>
 </tr>
-
 <tr>
 <td align="left">Mandantenmanager</td>
 <td align="left">Kann mandantenweite Einstellungen verwalten, z. B. eigene Anwendungen, Datenvermittlung, Datenhaltung, Optionen und Mandantenstatistiken.</td>
@@ -117,7 +112,7 @@ Auf der Seite **Neue globale Rolle** sehen Sie links eine Liste mit Berechtigung
 
 Der folgende Screenshot zeigt die Einstellungen für die Rolle "admins".
 
-![Admin example](/images/benutzerhandbuch/Administration/admin-global-role-admin.png)
+![Admin example](/images/users-guide/Administration/admin-global-role-admin.png)
 
 **Berechtigungsebenen**
 
@@ -189,7 +184,7 @@ Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
 
 <tr>
 <td align="left">Globale Smart Rules</td>
-<td align="left">Konfigurieren von globalen Smart Rules</td>
+<td align="left">Konfigurieren von globalen Smart Rules.</td>
 </tr>
 
 <tr>
@@ -263,7 +258,7 @@ Sie können Benutzern globale Rollen entweder direkt in der Benutzerliste oder a
 1. Aktivieren oder deaktivieren Sie die entsprechenden Checkboxen.
 1. Klicken Sie **Anwenden**, um Ihre Einstellungen zu speichern.
 
-![Apply global role](/images/benutzerhandbuch/Administration/admin-global-roles-apply-1.png)
+![Apply global role](/images/users-guide/Administration/admin-global-roles-apply-1.png)
 
 ##### So weisen Sie globale Rollen aus der Benutzerseite zu
 
@@ -271,7 +266,7 @@ Klicken Sie auf die Zeile des jeweiligen Benutzers in der Benutzerliste.
 Aktivieren oder deaktivieren Sie auf der Benutzerseite rechts die Checkboxen für die entsprechenden globalen Rollen.
 Klicken Sie **Speichern**, um Ihre Einstellungen zu speichern.
 
-![Attach global role](/images/benutzerhandbuch/Administration/admin-global-roles-apply-2.png)
+![Attach global role](/images/users-guide/Administration/admin-global-roles-apply-2.png)
 
 ### <a name="inventory"></a>Stammdatenrollen
 
@@ -279,7 +274,7 @@ Stammdatenrollen enthalten Berechtigungen, die Sie Gerätegruppen zuweisen könn
 
 Um die konfigurierten Stammdatenrollen anzuzeigen, wählen Sie **Rollen** im Menu **Konto** und wechseln Sie zur Registerkarte **Stammdatenrollen**.
 
-<img src="/images/benutzerhandbuch/Administration/admin-roles-inventory.png" alt="Context menu">
+<img src="/images/users-guide/Administration/admin-roles-inventory.png" alt="Context menu">
 
 In der Registerkarte **Stammdatenrollen** können Sie Berechtigungen für bestimmte Gruppen und/oder deren Kinder verwalten. Es gibt verschiedene voreingestellte Stammdatenrollen, aber Sie können auch eigene Rollen nach Ihren Bedürfnissen erstellen.
 
@@ -299,7 +294,7 @@ Klicken Sie **Rolle hinzufügen** in der Registerkarte **Stammdatenrollen**.
 
 Oben auf der Seite können Sie einen Namen für die Stammdatenrolle vergeben. Klicken Sie in das Feld, geben Sie einen Namen ein und klicken Sie auf das grüne Häkchen zum Speichern Ihrer Eingabe.
 
-![Role details](/images/benutzerhandbuch/Administration/admin-inventory-role-edit.png)
+![Role details](/images/users-guide/Administration/admin-inventory-role-edit.png)
 
 Die Berechtigungen sind in die folgenden Kategorien eingeteilt:
 
@@ -313,7 +308,7 @@ Die Berechtigungen sind in die folgenden Kategorien eingeteilt:
 |Gerätesteuerung|Berechtigungen für die Fernsteuerung von Geräten.
 |Voller Zugriff|Vollständiger Zugriff auf die verbundenen Geräte, hauptsächlich zur Vereinfachung der Konfiguration.
 
-> **Info:** Service Provider sehen eine weitere Berechtigung "Support" in Ihrem Management-Mandanten. Diese Berechtigung ermöglicht es Benutzern des Service Providers, den Benutzern ihrer Kunden Support zu geben, siehe [Support für Benutzer in anderen Mandanten](/benutzerhandbuch/enterprise-edition-de#users-in-other-tenants).
+> **Info:** Service Provider sehen eine weitere Berechtigung "Support" in Ihrem Management-Mandanten. Diese Berechtigung ermöglicht es Benutzern des Service Providers, den Benutzern ihrer Kunden Support zu geben, siehe [Support für Benutzer in anderen Mandanten](/users-guide/enterprise-edition#users-in-other-tenants).
 
 Fügen Sie einer Rolle eine Berechtigung hinzu, indem Sie das Plus-Symbol neben der gewünschten Kategorie klicken.
 
@@ -335,7 +330,7 @@ Wählen Sie im Feld **Berechtigung** eine Berechtigungsebene aus der Auswahllist
 
 Nehmen wir als weiteres Beispiel an, dass Sie Tracking-Geräte verwenden. Sie möchten, dass Ihr Benutzer alle Geräte sehen, aber nichts ändern kann. Außerdem soll der Benutzer in der Lage sein, die Wege von Geräten auf einer Karte zu verfolgen. Wege werden über ein Ereignis mit dem Fragmenttypen "c8y&#95;Position" aufgezeichnet (siehe [Sensor Library](/reference/sensor-library)). Erteilen Sie dem Benutzer eine READ-Berechtigung auf Stammdaten und auf Ereignisse mit dem Typen "c8y&#95;Position", wie in der Abbildung unten dargestellt.
 
-<img src="/images/benutzerhandbuch/Administration/admin-inventory-role-example.png" alt="Permission example">
+<img src="/images/users-guide/Administration/admin-inventory-role-example.png" alt="Permission example">
 
 ### <a name="attach-inventory"></a>Zuweisen von Stammdatenrollen zu Benutzern
 
@@ -345,7 +340,7 @@ Klicken Sie **Benutzer** im Menü **Konto**, wählen Sie einen Benutzer aus der 
 
 In der Registerkarte **Stammdatenrollen** sehen Sie einen Baum mit Gerätegruppen. Klicken Sie auf den Pfeil rechts von einer Gruppe, um eine Stammdatenrollen zuzuweisen. Wählen Sie die gewünschten Rollen und klicken Sie **Anwenden**. Weitere Informationen zu den Rollen erhalten Sie, wenn Sie den Mauszeiger über das Info-Symbol bewegen, oder unter [Anzeigen von Stammdatenrollen](#inventory).
 
-> **Wichtig**: Wenn ein Benutzer bereits eine globale Rolle hat, die Stammdatenberechtigungen umfasst, kann der Benutzer alle Geräte sehen oder ändern, unabhängig von den hier zugewiesenen Stammdatenrollen.
+> **Wichtig:** Wenn ein Benutzer bereits eine globale Rolle hat, die Stammdatenberechtigungen umfasst, kann der Benutzer alle Geräte sehen oder ändern, unabhängig von den hier zugewiesenen Stammdatenrollen.
 
 Stammdatenrollen werden von Gruppen an alle ihre direkten und indirekten Untergruppen sowie die Geräte in der Gruppe vererbt. Wenn Sie etwa eine Rolle mit Leseberechtigung für Alarme für eine Gerätegruppe wählen, kann der Benutzer alle Alarme für alle Geräte in dieser Gruppe sowie in ihren Untergruppen sehen.
 
@@ -353,7 +348,7 @@ Wenn ein Benutzer Stammdatenzugriff für eine Gerätegruppe hat, hat er auch Zug
 
 Sie können auch Stammdatenrollen eines anderen Benutzers kopieren. Klicken Sie **Stammdatenrollen eines anderen Benutzers kopieren**, um Rollen zu kopieren. Wählen Sie im folgenden Fenster einen Benutzer aus und klicken Sie **Kopieren**. Oben können Sie auswählen, ob Sie die Rollen mit den vorhandenen Rollen zusammenführen möchten (Standardeinstellung), oder ob Sie die vorhandenen Rollen ersetzen möchten. Das Kopieren von Rollen erleichtert das Verwalten von Berechtigungen für viele Benutzer, da Sie einen Referenzbenutzer erstellen können, um von dort die Rollen zu kopieren.
 
-<img src="/images/benutzerhandbuch/Administration/admin-inventory-role-copy.png" alt="Copy roles">
+<img src="/images/users-guide/Administration/admin-inventory-role-copy.png" alt="Copy roles">
 
 
 ### Fehlerbehebung bei Berechtigungen
@@ -368,8 +363,8 @@ Die Registerkarte **Anwendungen** zeigt eine Liste aller verfügbaren Anwendunge
 
 Um dem Benutzer Anwendungen zuzuweisen, wählen Sie einfach die entsprechenden Anwendungen aus und klicken **Speichern**.
 
-Weitere Informationen zur Anwendungsverwaltung finden Sie unter [Verwalten von Anwendungen](/benutzerhandbuch/administration-de#managing-applications).
+Weitere Informationen zur Anwendungsverwaltung finden Sie unter [Verwalten von Anwendungen](/users-guide/administration#managing-applications).
 
-![Application access](/images/benutzerhandbuch/Administration/admin-application-access.png)
+![Application access](/images/users-guide/Administration/admin-application-access.png)
 
 > **Info:** Wenn ein Benutzer die globale Berechtigung hat, alle Anwendungen einzusehen, wird eine entsprechende Information angezeigt.

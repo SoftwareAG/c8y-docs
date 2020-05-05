@@ -6,7 +6,7 @@ layout: redirect
 
 Sie können Geräte beliebig nach Ihren Bedürfnissen gruppieren. Ein Gerät kann sich in mehreren Gruppen befinden und Gruppen selbst können wiederum Teil von mehreren anderen Gruppen sein.
 
-Cumulocity IoT unterscheidet zwischen Top-Level-Gruppen und untergeordneten Gruppen: 
+Cumulocity IoT unterscheidet zwischen Top-Level-Gruppen und untergeordneten Gruppen:
 
 **Top-Level-Gruppen** werden im Menü **Gruppen** des Navigators auf oberster Ebene angezeigt. <br>**Untergeordnete Gruppen** dienen zur weiteren Unterteilung von Top-Level-Gruppen.
 
@@ -14,13 +14,13 @@ Cumulocity IoT unterscheidet zwischen Top-Level-Gruppen und untergeordneten Grup
 
 Um eine Liste aller Gruppen in Ihrem Konto anzuzeigen, klicken Sie **Gruppen** im Navigator.
 
-![Groups list](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups.png)
+![Groups list](/images/users-guide/DeviceManagement/devmgmt-groups.png)
 
 Für jede Gruppe wird der Name und die Anzahl der Kinder angezeigt.
 
 Klicken Sie auf eine Gruppe, um Details dieser Gruppe anzuzeigen.
 
-![Group info](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-info.png)
+![Group info](/images/users-guide/DeviceManagement/devmgmt-groups-info.png)
 
 **Registerkarte Info**
 
@@ -57,7 +57,7 @@ In der Registerkarte **Info** werden folgende Informationen angezeigt:
 
 In der Registerkarte **Kind-Assets** werden alle Geräte angezeigt, die der Gruppe zugewiesen wurden. Für jedes Kind-Asset wird der Name und im Fall einer Gruppe die Anzahl der Kinder angezeigt.
 
-![Sub-assets](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-subassets.png)
+![Sub-assets](/images/users-guide/DeviceManagement/devmgmt-groups-subassets.png)
 
 Siehe auch [So fügen Sie eine Gruppe hinzu](#add-group) und [So weisen Sie einer Gruppe ein Gerät zu](#assigning-devices).
 
@@ -82,13 +82,13 @@ Die neue Gruppe wird der Gruppenliste hinzugefügt.
 
 Auf der Seite **Gruppen** können Sie auch eine neue Gruppe erstellen, in dem Sie in der oberen Menüleiste auf **Gruppe hinzufügen** klicken. Geben Sie im darauf folgenden Dialog einen Namen für die Gruppe an und klicken Sie **Gruppe hinzufügen**.
 
-![Add empty group](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-add.png)
+![Add empty group](/images/users-guide/DeviceManagement/devmgmt-groups-add.png)
 
 ### So bearbeiten Sie eine Gruppe
 
 1. Wählen Sie im Navigator eine Gruppe aus.
 2. Klicken Sie **Bearbeiten** in der Registerkarte **Info**. Sie können den Namen der Gruppe bearbeiten sowie Benutzerberechtigungen für die Gruppe zuweisen.
-Weitere Informationen zu den Berechtigungen finden Sie unter [Verwalten von Berechtigungen](/benutzerhandbuch/administration-de#managing-permissions) im Bereich *Administration*.
+Weitere Informationen zu den Berechtigungen finden Sie unter [Verwalten von Berechtigungen](/users-guide/administration#managing-permissions) im Abschnitt "Administration".
 
 ### So löschen Sie eine Gruppe
 
@@ -113,7 +113,7 @@ Darüber hinaus können Sie Geräte auch durch folgende Schritte zuweisen:
 
 Die Geräte werden der ausgewählten Gruppe zugewiesen.
 
-![Assign devices](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-assign.png)
+![Assign devices](/images/users-guide/DeviceManagement/devmgmt-groups-assign.png)
 
 
 **Aus der Geräteperspektive**
@@ -126,10 +126,10 @@ Das Geräte wird der ausgewählten Gruppe zugewiesen.
 
 Wenn Sie nach einer Gruppe anhand eines Namens suchen, der noch nicht existiert, wird die Schaltfläche **Neu** angezeigt, so dass Sie von hier aus eine neue Gruppe mit diesem Namen erstellen und ihr das Gerät zuweisen können.
 
->**Info**: Zum Erstellen einer neuen Gruppe muss der Benutzer über folgende Berechtigungen verfügen:
+>**Info:** Zum Erstellen einer neuen Gruppe muss der Benutzer über folgende Berechtigungen verfügen:
 ROLE&#95;INVENTORY\_CREATE und ROLE&#95;INVENTORY\_ADMIN.
 
-<img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-group-assignment-new.png" alt="new group">
+<img src="/images/users-guide/DeviceManagement/devmgmt-group-assignment-new.png" alt="new group">
 
 
 #### So heben Sie die Zuweisung eines Geräts auf
@@ -170,9 +170,9 @@ Durch Ziehen und Ablegen können Sie Gruppen, Untergruppen und Geräte auf einfa
 
 Dynamische Gruppen werden basierend auf Filterkriterien erstellt. Dieser Gruppentyp kann beispielsweise eingesetzt werden, um Bulk-Upgrades von Geräten eines bestimmten Typs auf eine neue Software- oder Firmware-Version durchzuführen.
 
-![Smart groups filter](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
+![Smart groups filter](/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
 
-Wie jede andere Gruppe sind auch dynamische Gruppen in der Anwendung Cockpit verfügbar.
+Beachten Sie, dass dynamische Gruppen nur in der Device Management-Anwendung verfügbar und in der Cockpit-Anwendung nicht sichtbar sind.
 
 Dynamische Gruppen werden in der Geräteliste erstellt.
 
@@ -183,11 +183,11 @@ Dynamische Gruppen werden in der Geräteliste erstellt.
 3. Klicken Sie **Dynamische Gruppe erstellen** rechts in der oberen Menüleiste.
 4. Geben Sie einen Namen für die Gruppe ein und klicken Sie **Erstellen**.
 
-![Create smart groups](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-smartgroups-create.png)
+![Create smart groups](/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-create.png)
 
 Die neue Gruppe erscheint als Top-Level-Gruppe im Menü **Gruppe** im Navigator. Dynamische Gruppen werden durch ein kleines Zahnrad im Ordnersymbol gekennzeichnet.
 
-![Smart groups icon](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-smartgroups-icon.png)
+![Smart groups icon](/images/users-guide/DeviceManagement/devmgmt-groups-smartgroups-icon.png)
 
 In der Registerkarte **Kind-Assets** können Sie Ihre Auswahl anpassen und die Filtereinstellungen ändern.
 
@@ -195,6 +195,6 @@ In der Registerkarte **Kind-Assets** können Sie Ihre Auswahl anpassen und die F
 
 Um eine dynamische Gruppe zu löschen, klicken Sie auf das Menüsymbol und anschließend auf **Löschen**.
 
-![Delete smart groups](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-delete.png)
+![Delete smart groups](/images/users-guide/DeviceManagement/devmgmt-groups-delete.png)
 
-**Wichtig**: Das Löschen einer dynamischen Gruppe ist irreversibel.
+> **Wichtig:** Das Löschen einer dynamischen Gruppe ist irreversibel.

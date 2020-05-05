@@ -185,7 +185,7 @@ HTTP/1.1
 
 **Request body:** ManagedObject
 
-**Response body:** ManagedObject�(when accept header is not provided, empty response body is returned)
+**Response body:** ManagedObject (when the `Accept` header is not provided, an empty response body is returned)
 
 **Required role:** ROLE\_INVENTORY\_ADMIN or ROLE\_INVENTORY\_CREATE
 
@@ -322,7 +322,7 @@ HTTP/1.1
 
 **Request body:** ManagedObject
 
-**Response body:** ManagedObject�(when the accept header is not provided, an empty response body is returned)
+**Response body:** ManagedObject (when the `Accept` header is not provided, an empty response body is returned)
 
 **Required role:** ROLE\_INVENTORY\_ADMIN or owner
 
@@ -399,8 +399,8 @@ HTTP/1.1
 
 ```
 
-If the managed object is a device or a group and the optional query parameter "cascade=true" is used, all child devices and child assets will be deleted recursively. By default, the delete operation is propagated to the subgroups only if the deleted object is a group.
+If the managed object is a device or a group and the optional query parameter `cascade=true` is used, all child devices and child assets will be deleted recursively. By default, the delete operation is propagated to the subgroups only if the deleted object is a group.
 
-If you want to delete the full hierarchy regardless of managed object type, use query parameter "forceCascade=true". When both "cascade" and "forceCascade" are provided the second one takes precedence.
+If you want to delete the full hierarchy regardless of the managed object type, use the query parameter `forceCascade=true`. When both `cascade` and `forceCascade` are provided the second one takes precedence.
 
 > **Info**: Inventory DELETE requests are not synchronous. The response could be returned before the delete request has been completed.

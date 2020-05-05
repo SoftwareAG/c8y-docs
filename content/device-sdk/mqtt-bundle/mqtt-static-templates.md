@@ -743,7 +743,7 @@ Install the firmware from the patch.
 
 |Position|Parameter|
 |:-------|:-------|
-|1|firmware patch|
+|1|firmware name|
 |2|firmware version|
 |3|URL|
 |4|dependency|
@@ -751,7 +751,7 @@ Install the firmware from the patch.
 **Example**
 
 ```text
-525,DeviceSerial,firmwarePatch,1.0,http://www.my.url,dependency
+525,DeviceSerial,firmwareName,1.0,http://www.my.url,dependency
 ```
 
 ##### Upload configuration file with type (526)
@@ -760,13 +760,12 @@ Configuration is uploaded from Cumulocity IoT to the device with type.
 
 Position|Parameter|
 |:-------|:-------|
-|1|URL|
 |1|configuration type|
 
 **Example**
 
 ```text
-526,DeviceSerial,http://www.my.url,type
+526,DeviceSerial,type
 ```
 
 ##### Set device profiles (527)
@@ -796,7 +795,7 @@ Set the device profiles
 **Example**
 
 ```text
-527,DeviceSerial,$FW,firmwareName,1.0,http://www.my.url,true,$SW,softwareA,1.0,http://www.my.url1,action1,softwareB,2.0,http://www.my.url2,action2,$CONF,http://www.my.url1,type1,http://www.my.url2,type2
+527,DeviceSerial,$FW,firmwareName,1.0,http://www.my.url,true,dependency,$SW,softwareA,1.0,http://www.my.url1,action1,softwareB,2.0,http://www.my.url2,action2,$CONF,http://www.my.url1,type1,http://www.my.url2,type2
 ```
 
 ##### Update Software (528)

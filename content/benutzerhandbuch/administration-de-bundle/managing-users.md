@@ -22,7 +22,7 @@ Für Benutzer, die über einen externen Autorisierungsserver angelegt werden, ha
 * globale Rollen → konfigurierbar über SSO-Rechtezuordnung
 * Anwendungszugriff → konfigurierbar über SSO-Rechtezuordnung
 
-Außerdem ist das Zurücksetzen des Passworts in Cumulocity für Benutzer deaktiviert, die über einen externen Autorisierungsserver angelegt wurden.
+Außerdem ist das Zurücksetzen des Passworts in Cumulocity IoT für Benutzer deaktiviert, die über einen externen Autorisierungsserver angelegt wurden.
 
 
 ### Anzeigen von Benutzern
@@ -105,7 +105,7 @@ Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie 
 
 3. Wählen Sie die Anmeldeoptionen für den Benutzer aus.
 
-	Wenn Sie **Benutzer muss sein Passwort beim nächsten Anmelden zurücksetzen** auswählen, müssen Sie ein Passwort angeben, dass der Benutzer beim nächsten Anmelden zurücksetzen muss. Geben Sie ein Passwort ein und bestätigen Sie es. Während der Passworteingabe wird die Stärke des Passworts angezeigt. Weitere Informationen zur Passwortstärke finden Sie unter [So melden Sie sich an der Cumulocity-Plattform an](/users-guide/getting-started/#login).  
+	Wenn Sie **Benutzer muss sein Passwort beim nächsten Anmelden zurücksetzen** auswählen, müssen Sie ein Passwort angeben, dass der Benutzer beim nächsten Anmelden zurücksetzen muss. Geben Sie ein Passwort ein und bestätigen Sie es. Während der Passworteingabe wird die Stärke des Passworts angezeigt. Weitere Informationen zur Passwortstärke finden Sie unter [So melden Sie sich an der Cumulocity IoT-Plattform an](/users-guide/getting-started/#login).  
 Wenn Sie **Link für das Zurücksetzen des Passworts per E-Mail senden** auswählen, erhält der Benutzer eine E-Mail mit dem Link zum Setzen des Passworts. Die E-Mail wird zu der oben konfigurierten Adresse gesendet.
 
 4. Wählen Sie auf der rechten Seite die globalen Rollen für den Benutzer. Informationen zu den globalen Rollen finden Sie unter [Verwalten von Berechtigungen](/users-guide/administration#managing-permissions).

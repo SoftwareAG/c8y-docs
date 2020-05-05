@@ -775,23 +775,23 @@ Set the device profiles
 
 |Position|Parameter|
 |:-------|:-------|
-|1...| 6 values of firmware|
-|1.1|firmware marker|
-|1.2|firmware name|
-|1.3|firmware version|
-|1.4|firmware URL|
-|1.5|firmware isPatch|
-|1.6|firmware dependency|
-|2...|List of 5 values per software|
-|2.1|software marker|
-|2.2|software name|
-|2.3|software version|
-|2.4|software URL|
-|2.5|software action|
-|3...|List of 3 values per configuration|
-|3.1|configuration marker|
-|3.2|configuration URL|
-|3.3|configuration type|
+|1|firmware marker|
+|1...| 5 values of firmware|
+|1.1|firmware name|
+|1.2|firmware version|
+|1.3|firmware URL|
+|1.4|firmware isPatch|
+|1.5|firmware dependency|
+|2|software marker|
+|2...|List of 4 values per software|
+|2.1|software name|
+|2.2|software version|
+|2.3|software URL|
+|2.4|software action|
+|3|configuration marker|
+|3...|List of 2 values per configuration|
+|3.1|configuration URL|
+|3.2|configuration type|
 
 **Example**
 

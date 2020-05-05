@@ -37,7 +37,7 @@ The following common fields are available with the responses, depending on the o
 | -------------- | ------------------------------------------------------------ |
 | contents       | The full contents of the EPL file.                           |
 | description    | A description of the file.                                   |
-| eplPackageName | The package name of the EPL file. If the EPL file name contains special characters (including spaces), these characters are converted to Hex encoding to avoid injection errors. |
+| eplPackageName | The package name of the EPL file. If the name contains special characters (including spaces), these characters are escaped to make them valid EPL identifiers and avoid injection errors. |
 | errors         | A list of all compilation errors in the file, if any, with line numbers and text. |
 | id             | A unique identifier of the file.                             |
 | name           | The name provided for this bit of EPL.                       |
@@ -181,7 +181,7 @@ The following is an example of a request body:
 
 Note the following:
 
-- To avoid a clash with other files, the `name` is used for the package of the file (rather than a user-provided package). Non-alphanumeric characters in the name are converted to Hex encoding so that the name can be used as a valid EPL identifier. The name must be unique across all EPL files. 
+- The `name` is used for the package of the file (thus the EPL file must not contain a `package` statement) and must be unique across all EPL files. The name is prefixed and certain characters are escaped. The actual package name used is returned in the `eplPackageName` field for convenience (you can search for this in the microservice log file to find log statements).
 - Make sure to provide safely escaped `contents`.
 - `description` is optional and can be empty.
 

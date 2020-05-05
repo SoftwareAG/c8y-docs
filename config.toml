@@ -46,7 +46,7 @@ relativeURLs = true
   guidesRedirect = "https://cumulocity.com/guides/10.4.6/about-doc/intro-documentation/"
 
   # Your favicon path, default is "/favicon.png"
-  favicon = "/favicon.ico"
+  favicon = "https://cumulocity.com/favicon.ico"
 
 # Customize
   [params.footer]

@@ -31,7 +31,7 @@ Der Verbindungsstatus wird durch Pfeile in der Spalte **Status** in der Gerätel
 
 **Sendeverbindungen**
 
-Die oberen Pfeile symbolisieren die Sendeverbindungen (Verkehr vom Gerät zu Cumulocity IoT). Der Status der Sendeverbindungen kann einer der folgenden sein:
+Der obere Pfeil symbolisieren die Sendeverbindungen (Verkehr vom Gerät zu Cumulocity IoT). Der Status der Sendeverbindungen kann einer der folgenden sein:
 
 * Grüner Pfeil - online (Daten wurden im erwarteten Intervall gesendet)
 * Roter Pfeil - offline (Daten wurden nicht im erwarteten Intervall gesendet)

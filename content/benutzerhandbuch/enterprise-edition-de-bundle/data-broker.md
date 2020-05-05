@@ -103,7 +103,7 @@ Verwenden Sie den Umschalter, um das Weiterleiten von Daten an den Zielmandanten
 
 >Die Option **Alle Objekte** ist weiterhin in der Benutzeroberfläche vorhanden, um Rückwärtskompatibilität mit älteren Versionen sicherzustellen. Wir planen, diese Option künftig nicht mehr zu unterstützen, und empfehlen dringend, sie nicht zu verwenden.
 
->Wird sie gewählt, synchronisiert Cumulocity IoT alle Arten von System- und benutzerdefinierten Daten und könnte Objekte im Zielmandanten außer Kraft setzen oder remote erstellen. Solche Objekte können Referenzen zu anderen Objekten sowie Konfigurationsinformationen enthalten. Es liegt in der Verantwortung des Benutzers, die Konsistenz solcher Informationen in den übertragenen Objekten in der Zielumgebung sicherzustellen.
+>Wird sie gewählt, synchronisiert Cumulocity IoT alle Arten von Objekten, sowohl System- als auch benutzerdefinierte Objekte, und könnte Objekte im Zielmandanten überschreiben oder ohne Kontext erstellen. Solche Objekte können Referenzen zu anderen Objekten sowie Konfigurationsinformationen enthalten. Es liegt in der Verantwortung des Benutzers, die Konsistenz solcher Informationen in den übertragenen Objekten in der Zielumgebung sicherzustellen.
 
 >Dies betrifft Elemente wie SmartREST-Templates, Geräteprotokolle, Smart-Rule-Konfigurationen und Dashboards.
 

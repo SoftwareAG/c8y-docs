@@ -24,7 +24,7 @@ In der Registerkarte **Globale Rollen** finden Sie die Rollen, die allgemeine Be
 
 > **Info:** Die vordefinierten Rollen sind nicht vollständig konfiguriert. Sie können als Muster betrachtet werden, die für einen bestimmten Zweck vorkonfiguriert sind. Sie können sie als Ausgangspunkt verwenden und dann weiter an Ihre Bedürfnisse anpassen.
 
-> Achten Sie beim Anlegen eines neuen Benutzers darauf, dass die globalen Rollen, die sie diesem zuweisen, alle Berechtigungen umfassen, die speziell für ihn relevant sind. Wenn ein Benutzer z. B. nur die Rolle "Cockpit-Benutzer" hat (siehe unten), kann er auf nichts anderes als die Cockpit-Anwendung zugreifen.  
+> Achten Sie beim Anlegen eines neuen Benutzers darauf, dass die globalen Rollen, die sie diesem zuweisen, alle Berechtigungen umfassen, die speziell für diesen Benutzer relevant sind. Wenn ein Benutzer z. B. nur die Rolle "Cockpit-Benutzer" hat (siehe unten), kann er auf nichts anderes als die Cockpit-Anwendung zugreifen.  
 
 Die Rollen "admins" und "devices" haben einen Sonderstatus:
 
@@ -244,9 +244,9 @@ Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
 </tbody>
 </table>
 
-Möglicherweise werden weitere Berechtigungen angezeigt, abhängig von den Funktionen in Ihrem Abonnementplan. Diese werden in Verbindung mit den jeweiligen Funktionen beschrieben.
+Möglicherweise werden weitere Berechtigungen angezeigt, abhängig von den Funktionalitäten in Ihrem Abonnementplan. Diese werden in Verbindung mit den jeweiligen Funktionalitäten beschrieben.
 
-> **Wichtig:** Werden neue Funktionen mit neuen Berechtigungen zu Cumulocity IoT hinzugefügt, so werden diese nicht automatisch zu bestehenden Rollen hinzugefügt. Sollten Sie feststellen, dass Sie eine kürzlich angekündigte Funktion nicht verwenden können, überprüfen Sie zunächst Ihre Berechtigungen.
+> **Wichtig:** Werden neue Funktionalitäten mit neuen Berechtigungen zu Cumulocity IoT hinzugefügt, so werden diese nicht automatisch zu bestehenden Rollen hinzugefügt. Sollten Sie feststellen, dass Sie eine kürzlich angekündigte Funktionalität nicht verwenden können, überprüfen Sie zunächst Ihre Berechtigungen.
 
 #### <a name="attach-global"></a>Zuweisen von globalen Rollen
 

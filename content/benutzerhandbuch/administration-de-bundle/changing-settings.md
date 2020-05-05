@@ -9,7 +9,7 @@ Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen de
 - [Authentifizierungseinstellungen](#authentication) und [Single-Sign-On](#single-sign-on) konfigurieren.
 - [Anwendungseinstellungen](#default-app) ändern.
 - Die [Attributsbibliothek](#properties) verwalten.
-- Systemweite Einstellungen für die [Enterprise Edition](#config-platform) in Cumulocity IoT konfigurieren.
+- Systemweite Einstellungen in Cumulocity IoT konfigurieren.
 - [Zugangsdaten für den SMS-Anbieter](#openIT-credentials) bereitstellen.
 - [Konnektivitätseinstellungen](#connectivity) verwalten.
 
@@ -140,7 +140,7 @@ Jedes Mal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens ve
 }
 ```
 
-Dem Benutzer werden die globale Rolle "business" und die Standardanwendung "application cockpit" zugewiesen. 
+Dem Benutzer werden die globale Rolle "business" und die Standardanwendung "Cockpit" zugewiesen. 
 
 Klicken Sie **Rechtezuordnung hinzufügen**, um weitere Berechtigungen zu vergeben. Eine Rechtezuordnungsanweisung kann mehrere Überprüfungen enthalten, wie im Beispiel unten. Klicken Sie **und**, um eine Regel zu einer vorhandenen Anweisung hinzuzufügen. Klicken Sie das Minus-Symbol, um eine Regel zu entfernen. 
 
@@ -321,7 +321,7 @@ Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattfo
 3. Geben Sie je nach gewähltem Anbieter die entsprechenden Zugangsdaten ein:
  
 	 * Für OpenIT: Ihren OpenIT-Benutzernamen und Ihr Passwort.
-	 * Für sms77: Ihren API-Schlüssel für den Zugriff auf sms77 (zu finden in Ihrem sms77-Login unter "Einstellungen" > "HTTP Api").
+	 * Für sms77: Ihren API-Schlüssel für den Zugriff auf sms77 (zu finden in Ihrem sms77-Login unter Einstellungen > HTTP API).
 
 4. Klicken Sie **Speichern**, um Ihre Einstellungen zu speichern.
 

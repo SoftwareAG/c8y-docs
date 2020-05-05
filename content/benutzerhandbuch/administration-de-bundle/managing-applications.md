@@ -261,7 +261,7 @@ Manager und Editor für Apama Event Processing Language (EPL) Apps zur sofortige
 <td style="text-align:left">Microservice</td>
 </tr>
 <td style="text-align:left">Microservice hosting</td>
-<td style="text-align:left">Hosten Sie Ihre eigenen Microservices zusätzlich zu Cumulocity IoT.</td>
+<td style="text-align:left">Hosten Sie Ihre eigenen Microservices in Cumulocity IoT.</td>
 <td style="text-align:left">feature-microservice-hosting</td>
 <td style="text-align:left">Funktion</td>
 </tr>
@@ -509,7 +509,7 @@ Wenn im ausgewählten Zeitintervall keine Logdaten verfügbar sind, wird eine en
 
 <img src="/images/users-guide/Administration/admin-microservice-no-logs.png" alt="Microservice log">
 
-> **Info:** Es gibt keine Möglichkeit, die Logdaten der zuvor ausgeführten Instanzen anzuzeigen. Allerdings wird in jeder Instanz ein Docker-Container ausgeführt, und wenn nur dieser (nicht die gesamte Instanz) neu gestartet wurde, sollte es möglich sein, die Logdaten des aktuell aktiven sowie des kürzlich beendeten Docker-Containers anzuzeigen.
+> **Info:** Es gibt keine Möglichkeit, die Logdaten der zuvor ausgeführten Instanzen anzuzeigen. Allerdings wird in jeder Instanz ein Docker-Container ausgeführt, und wenn nur dieser (nicht die gesamte Instanz) neu gestartet wurde, sollten die Logdaten des aktuell aktiven sowie des kürzlich beendeten Docker-Containers angezeigt werden.
 
 >Logdaten werden aus dem Docker-Container immer mittels der beiden Quellen `stdout` und `stderr` geladen und es gibt keine Möglichkeit, nach der Quelle zu unterscheiden bzw. zu filtern.
 

@@ -184,6 +184,7 @@ After successful activation you will be redirected to your Enterprise Tenant at 
 
 >**Info:** After the activation is completed you will no longer be able to access your tenant with the Cumulocity IoT domain name. Instead, use your custom domain name.
 
+
 #### Updating your certificate
 
 When your certificate expires, you must update your certificate with a new one with an extended validation period. When updating a certificate, you need to make sure that

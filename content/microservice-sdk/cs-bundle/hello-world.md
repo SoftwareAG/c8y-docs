@@ -434,7 +434,7 @@ It also defines what goes on in the environment inside a container:
 * Sets the environment variable, in this case SERVER_PORT
 * Specifies what executable to run when the container starts
 
-**Platform API**
+#### Platform API
 
 It is possible to use the C# REST SDK as an extension.  A developer can use it to perform basic operations against the platform. For hosted deployment, most of the properties are provided by the platform.
 
@@ -452,7 +452,7 @@ The API provides the following services:
 
 For further information, refer to the [Device SDK guide](https://cumulocity.com/guides/device-sdk/).
 
-**C# MQTT SDK**
+#### C# MQTT SDK
 
 It is possible to use the C# MQTT SDK as a nuget-package. A developer can use it to perform basic operations against the platform. For further information, refer to [MQTT examples](https://cumulocity.com/guides/device-sdk/mqtt-examples) in the Device SDK guide.
 

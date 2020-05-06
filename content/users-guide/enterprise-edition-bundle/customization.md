@@ -189,7 +189,7 @@ After successful activation you will be redirected to your Enterprise Tenant at 
 
 When your certificate expires, you must update your certificate with a new one with an extended validation period. When updating a certificate, you need to make sure that
 
-* the certificate is valid, as when you uploaded it in the first time
+* the certificate is valid, like when being uploaded for the first time
 * the certificate is currently valid (validFrom in the past and validTo in the future),
 * the certificate has exactly the same common name (domain name) as the currently active certificate
 

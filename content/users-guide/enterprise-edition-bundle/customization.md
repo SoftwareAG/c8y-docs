@@ -156,12 +156,12 @@ First you have to upload the appropriate certificate by clicking **Upload Certif
 
 * the certificate is currently valid (validFrom in the past and validTo in the future),
 * the certificate is in a valid PKCS#12 format, containing the full authorization chain,
-* every single certificate in the chain must be in X509 format,
-* the private key must not password protected,
+* every single certificate in the chain is in X509 format,
+* the private key is not password protected,
 * you are using a wildcard certificate to enable creation of subtenants,
-* the common name (CN) in the subject of the primary certificate (the first one in the chain) must hold the value of your wildcard domain name, e.g. "CN=*.iot.mycompany.com".
+* the common name (CN) in the subject of the primary certificate (the first one in the chain) holds the value of your wildcard domain name, e.g. "CN=*.iot.mycompany.com".
 
-Cumulocity supports single chain certificate that signed by root CA as well as full chain certificate which contains one or more intermediate certificates.
+Cumulocity supports a single chain certificate that is signed by the root CA as well as a full chain certificate which contains one or more intermediate certificates.
 
 > **Info:** If your certificate is not in a valid PKCS#12 format but you have PEM files for certificate, private key and authorization chain then you can generate a valid PKCS#12 file using the following command:
 

@@ -161,6 +161,8 @@ First you have to upload the appropriate certificate by clicking **Upload Certif
 * you are using a wildcard certificate to enable creation of subtenants,
 * the common name (CN) in the subject of the primary certificate (the first one in the chain) must hold the value of your wildcard domain name, e.g. "CN=*.iot.mycompany.com".
 
+Cumulocity supports single chain certificate that signed by root CA as well as full chain certificate which contains one or more intermediate certificates.
+
 > **Info:** If your certificate is not in a valid PKCS#12 format but you have PEM files for certificate, private key and authorization chain then you can generate a valid PKCS#12 file using the following command:
 
 ```shell
@@ -181,7 +183,6 @@ Make sure to remove all A entries for the wildcard domain. For example, if you a
 After successful activation you will be redirected to your Enterprise Tenant at the new domain. You will also receive an email with information about the activation. Please note that your management tenant domain name is static, for example, if your wildcard domain is "*.iot.mycompany.com" then your management tenant domain will be: "management.iot.mycompany.com".
 
 >**Info:** After the activation is completed you will no longer be able to access your tenant with the Cumulocity IoT domain name. Instead, use your custom domain name.
- 
 
 #### Updating your certificate
 

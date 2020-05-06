@@ -10,9 +10,7 @@ In addition to all enhancements or changes related to the improvements and fixes
 
 In addition to the device guides offered in the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/web/#/), we have re-written and added a collection of device integration tutorials which describe in a step-by-step approach how to integrate various demo devices to Cumulocity IoT, see [Device integration tutorials](/device-tutorials/tutorials-introduction).
 
-### Machine learning guide
-
-The former Predictive Analytics offering has been rebranded to **[Cumulocity IoT Machine Learning](/machine-learning/)**. Accordingly, the name of the respective guide has been changed.
+Moreover, documentation on how to set up and configure a Casa Systems (NetComm) router using the new [Cumulocity IoT NetComm Agent](/device-tutorials/netcomm-routerhugo server) package has been added here.
 
 ### Installation and operations guides
 
@@ -24,3 +22,10 @@ The Installation and operation guides for Cumulocity IoT Core now include all re
 
 Note, that access to these documents on the Empower Portal requires credentials.
 
+### Machine learning guide
+
+The former Predictive Analytics offering has been rebranded to **[Cumulocity IoT Machine Learning](/machine-learning/)**. Accordingly, the name of the respective guide has been changed.
+
+### Microservice SDK guide
+
+A new [Best Practices collection](/microservice-sdk/microservices-best-practices/) has been added to the Microservice SDK guide, providing recommendations to be considered before developing and deploying microservices on top of Cumulocity IoT. 

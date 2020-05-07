@@ -38,7 +38,7 @@ Example Response :
         "application":{"self":"<<Application URL>>", "id":...}
     }
 
->**Note:** A POST request for adding a microservice application to the tenant’s applications is not synchronous with the 
+>**Info:** A POST request for adding a microservice application to the tenant’s applications is not synchronous with the 
 creation of assets on the container cluster. An attempt to invoke the microservice immediately after the creation 
 of the subscription might result in an error because the name of the service is yet not known in the cluster. 
 

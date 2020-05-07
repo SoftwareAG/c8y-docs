@@ -10,7 +10,7 @@ Klicken Sie **Geräteprotokolle** im Menü **Gerätetypen** des Navigators.
 
 Die Seite **Geräteprotokolle** zeigt eine Liste aller in Ihrem Konto verfügbaren Geräteprotokolle an.
 
-![Device protocols](/images/users-guide/DeviceManagement/devmgmt-device-protocols.png)
+![Device protocols](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-protocols.png)
 
 Die Geräteprotokoll-Liste zeigt die folgenden Informationen an:
 
@@ -21,11 +21,11 @@ Die Geräteprotokoll-Liste zeigt die folgenden Informationen an:
 ### So fügen Sie ein Geräteprotokoll hinzu
 
 1. Klicken Sie **Geräteprotokoll hinzufügen** in der oberen Menüleiste.
- <br>![Add device protocol](/images/users-guide/DeviceManagement/devmgmt-device-protocol-add.png)
+ <br>![Add device protocol](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-protocol-add.png)
 2. Wählen Sie einen der verfügbaren Geräteprotokolltypen aus der Liste.
 3. Geben Sie im darauf folgenden Dialog einen Namen und eine optionale Beschreibung für das Geräteprotokoll ein und klicken Sie **Erstellen**.
 4. Geben Sie die Konfiguration für das Geräteprotokoll ein. Die Konfiguration des Geräteprotokolls hängt vom Protokolltypen ab. <br>
-Weitere Informationen zum Konfigurieren von Geräteprotokollen finden Sie in der Beschreibung des jeweiligen Gerätetyps, den Sie hinzufügen möchten, siehe [Optionale Services](/users-guide/optional-services).
+Weitere Informationen zum Konfigurieren von Geräteprotokollen finden Sie in der Beschreibung des jeweiligen Gerätetyps, den Sie hinzufügen möchten, siehe [Optionale Services](/benutzerhandbuch/optional-services).
 5. Klicken Sie **Speichern**.
 
 Das Geräteprotokoll wird der Gerätedatenbank hinzugefügt.
@@ -35,7 +35,7 @@ Das Geräteprotokoll wird der Gerätedatenbank hinzugefügt.
 Um ein Geräteprotokoll aus einem bestehenden Protokoll hinzuzufügen, gehen Sie folgendermaßen vor:
 
 1. Klicken Sie **Importieren** in der oberen Menüleiste.
- <br>![Import device protocol](/images/users-guide/DeviceManagement/devmgmt-device-protocol-import.png)
+ <br>![Import device protocol](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-protocol-import.png)
 2. Wählen Sie das zu importierende Geräteprotokoll entweder aus einer Liste der vordefinierten Protokolle aus oder laden Sie es aus einer Datei, indem Sie zu dieser navigieren.
 3. Geben Sie einen Namen für das neue Protokoll ein und klicken Sie **Speichern**.
 
@@ -45,7 +45,7 @@ Das Geräteprotokoll wird der Gerätedatenbank hinzugefügt.
 
 Zum Bearbeiten eines Geräteprotokolls klicken Sie einfach auf das Protokoll oder auf das Menüsymbol rechts neben der jeweiligen Zeile und anschließend auf **Bearbeiten**.
 
-Weitere Informationen zu den Feldern finden Sie in der Beschreibung des jeweiligen Gerätetyps, siehe [Optionale Services](/users-guide/optional-services).
+Weitere Informationen zu den Feldern finden Sie in der Beschreibung des jeweiligen Gerätetyps, siehe [Optionale Services](/benutzerhandbuch/optional-services).
 
 ### So löschen Sie ein Geräteprotokoll
 

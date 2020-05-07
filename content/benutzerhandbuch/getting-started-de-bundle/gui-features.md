@@ -3,7 +3,7 @@ weight: 40
 title: Eigenschaften und Funktionen der Benutzeroberfläche
 layout: default
 aliases:
-  - /users-guide/overview/#gui-features
+  - /benutzerhandbuch/getting-started-de/#gui-features
 ---
 
 
@@ -12,7 +12,7 @@ aliases:
 
 Die grundsätzliche Struktur, die in allen Cumulocity IoT-Anwendungen vorhanden ist, umfasst die folgenden Bildschirmelemente:
 
-![Cumulocity IoT application](/images/users-guide/getting-started/getting-started-screen-elements.png)
+![Cumulocity IoT application](/images/benutzerhandbuch/getting-started/getting-started-screen-elements.png)
 
 <table>
 <col width="150">
@@ -52,7 +52,7 @@ Die grundsätzliche Struktur, die in allen Cumulocity IoT-Anwendungen vorhanden 
 
 Auf kleineren Bildschirmen weicht das Layout geringfügig ab. Der Navigator ist verborgen und kann durch Klicken auf das Pfeilsymbol links oben aufgerufen werden. Nur die aktive Registerkarte wird angezeigt. Zum Umschalten zwischen Registerkarten klicken Sie auf den Pfeil an der Kopfzeile der Registerkarte und wählen Sie eine Registerkarte aus der Liste aus.
 
-<img src="/images/users-guide/getting-started/getting-started-small-screen-elements.png" alt="Layout on small devices" style="max-width: 50%">
+<img src="/images/benutzerhandbuch/getting-started/getting-started-small-screen-elements.png" alt="Layout on small devices" style="max-width: 50%">
 
 > **Info:** Die Cumulocity IoT-Anwendungen enthalten Tooltips, die angezeigt werden, wenn Sie mit dem Mauszeiger über ein Bildschirmelement fahren. Auf Geräten mit einem Touch-Screen werden diese Tooltips angezeigt, wenn Sie ein Bildschirmelement längere Zeit berühren.
 
@@ -60,13 +60,13 @@ Auf kleineren Bildschirmen weicht das Layout geringfügig ab. Der Navigator ist 
 
 Über den Application Switcher können Sie rasch zwischen verschiedenen Anwendungen wechseln. Klicken Sie auf die Schaltfläche **Application Switcher** rechts in der oberen Leiste, um eine Liste der Symbole für die Anwendungen anzuzeigen.
 
-<img src="/images/users-guide/getting-started/getting-started-application-switcher.png" alt="Application switcher" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/getting-started/getting-started-application-switcher.png" alt="Application switcher" style="max-width: 100%">
 
-Der Application Switcher zeigt alle Cumulocity IoT-Anwendungen an, auf die Sie momentan Zugriff haben. Dies können integrierte oder benutzerdefinierte abonnierte Anwendungen sowie [eigene Anwendungen](/users-guide/administration#own-applications) sein. Klicken Sie einfach auf das Symbol für die gewünschte Anwendung, um sie als aktive Anwendung zu öffnen.
+Der Application Switcher zeigt alle Cumulocity IoT-Anwendungen an, auf die Sie momentan Zugriff haben. Dies können integrierte oder benutzerdefinierte abonnierte Anwendungen sowie [eigene Anwendungen](/benutzerhandbuch/administration-de#own-applications) sein. Klicken Sie einfach auf das Symbol für die gewünschte Anwendung, um sie als aktive Anwendung zu öffnen.
 
 Wenn Sie die SAG Cloud nutzen, werden im Application Switcher an erster Stelle weitere SAG Cloud-Anwendungen, gefolgt von Cumulocity IoT-Anwendungen, angezeigt:
 
-<img src="/images/users-guide/getting-started/getting-started-app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/getting-started/getting-started-app-switcher-sag-cloud.png" alt="Application switcher 2-level" style="max-width: 100%">
 
 
 ### <a name="searching-and-filtering"></a>Such- und Filterfunktionalität

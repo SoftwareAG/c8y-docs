@@ -8,7 +8,7 @@ Klicken Sie **Alle Geräte** im Menü **Geräte** des Navigators, um alle mit Ih
 
 Eine detaillierte Geräteliste wird angezeigt.
 
-![Device list](/images/users-guide/DeviceManagement/devmgmt-devices-alldevices.png)
+![Device list](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-alldevices.png)
 
 ### <a name="device-list"></a>Geräteinformationen
 
@@ -73,7 +73,7 @@ Die Spalten der Geräteliste können nach Bedarf angepasst werden.
 #### So blenden Sie Spalten ein/aus
 
 1. Klicken Sie **Spalten konfigurieren** in der oberen Menüleiste.
-2. Aktivieren/deaktivieren Sie im darauf folgenden Dialog die Checkboxen für die gewünschten/unerwünschten Spalten. <br>![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-configure-columns.png)
+2. Aktivieren/deaktivieren Sie im darauf folgenden Dialog die Checkboxen für die gewünschten/unerwünschten Spalten. <br>![Configure columns](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-list-configure-columns.png)
 <br>
 3. Klicken Sie **Speichern**.
 
@@ -84,12 +84,12 @@ Die Geräteliste wird entsprechend angepasst und zeigt nur die gewählten Spalte
 Darüber hinaus können Sie benutzerdefinierte Spalten hinzufügen, in denen zusätzliche Geräteattribute angezeigt werden.
 
 1. Klicken Sie im Dialog **Spalten konfigurieren** auf **Eigene Spalte hinzufügen**.<br>
-![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
+![Configure columns](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
 2. Geben Sie im Feld **Kopfzeile** eine Kopfzeile für die neue benutzerdefinierte Spalte ein.  
 3. Geben Sie im Feld **Fragmentpfad** das anzuzeigende Attribut des Geräts ein. Verschachtelte Attribute sind zulässig. Für verschachtelte Attribute können jedoch nur Cumulocity IoT-Standardfragmente wie `c8y_Mobile.mcc` ausgewählt werden.
 4. Wählen Sie einen **Filtermodus** für die neue Spalte aus. <br>
 Wenn Sie **Fragment entspricht Wert** wählen, wird nur dann ein Wert angezeigt, wenn er den Kriterien entspricht, die Sie in einem weiteren Dialog festgelegt haben.<br>
-![Specify values](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)
+![Specify values](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-list-custom-column.png)
 <br>Im Fall von **Fragment existiert** wird nach vorhandenen Fragmenten gefiltert, also danach, ob das Attribut vorhanden ist oder nicht.    
 5. Klicken Sie **Hinzufügen**.
 
@@ -119,7 +119,7 @@ Unser Beispiel zeigt eine Suche nach "Ublox C027".
 
 Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche](/users-guide/getting-started#gui-features).
 
-![Search for devices](/images/users-guide/DeviceManagement/devmgmt-search.png)
+![Search for devices](/images/benutzerhandbuch/DeviceManagement/devmgmt-search.png)
 
 ### <a name="filtering-devices"></a>So filtern Sie Geräte
 
@@ -127,7 +127,7 @@ Die Geräteliste bietet eine Filterfunktion, um Geräte in der Liste nach bestim
 
 Die Filterfunktion steht für jede Spalte zur Verfügung. Klicken Sie auf das Filtersymbol neben dem Namen der Spalte, nach der Sie filtern möchten.
 
-![Device filtering](/images/users-guide/DeviceManagement/devmgmt-devices-filter.png)
+![Device filtering](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-filter.png)
 
 Legen Sie im Dialog **Filteroptionen** Ihre Filteroptionen fest.
 

@@ -15,7 +15,7 @@ Supportbenutzerzugriff kann auf verschiedenen Ebenen aktiviert werden.
 
 **Plattform-Ebene**
 
-Der Management-Mandant kann den Supportbenutzerzugriff für alle Untermandanten auf Plattform-Ebene aktivieren. Dies erfolgt auf der Seite **Konfiguration**, siehe [Anpassen der Plattform](/users-guide/enterprise-edition#customization).
+Der Management-Mandant kann den Supportbenutzerzugriff für alle Untermandanten auf Plattform-Ebene aktivieren. Dies erfolgt auf der Seite **Konfiguration**, siehe [Anpassen der Plattform](/benutzerhandbuch/enterprise-tenant#customization).
 
 Wenn Supportbenutzerzugriff aktiviert ist, können sich Supportbenutzer bei jedem Untermandanten als beliebiger Benutzer anmelden, sofern dies nicht auf Untermandanten-Ebene außer Kraft gesetzt ist. Untermandanten-Benutzer können den Zugriff nicht selbst deaktivieren. Wenn Supportbenutzerzugriff deaktiviert ist, können sich Supportbenutzer nur bei Untermandanten anmelden, für die mindestens ein Benutzer diesen Zugriff explizit ermöglicht hat, siehe folgende Beschreibung.
 
@@ -29,11 +29,11 @@ Nachdem ein Benutzer den Supportzugriff aktiviert hat, ändert sich der Menüpun
 
 > **Info:** Wenn ein Benutzer mit Mandanten-Admin-Berechtigungen die Supportanfrage deaktiviert, werden *alle* Supportanfragen für den Mandanten deaktiviert.
 
-Die Dauer der aktiven Supportanfrage ist auf Plattform-Ebene konfigurierbar (der Standardwert ist 24 Stunden), siehe [Anpassen der Plattform](/users-guide/enterprise-edition#customization).
+Die Dauer der aktiven Supportanfrage ist auf Plattform-Ebene konfigurierbar (der Standardwert ist 24 Stunden), siehe [Anpassen der Plattform](/benutzerhandbuch/enterprise-tenant#customization).
 
 Jede neue Supportanfrage verlängert die Supportdauer um die angegebene Anzahl von Stunden. Nachdem die letzte Supportanfrage in einem Untermandanten abgelaufen ist oder vom Benutzer aktiv deaktiviert wurde, wird der Supportbenutzerzugriff für den Untermandanten sofort deaktiviert (sofern er nicht global aktiviert ist).
 
-Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [Verwalten von Mandanten](/users-guide/enterprise-edition#managing-tenants).
+Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [Verwalten von Mandanten](/benutzerhandbuch/enterprise-tenant#managing-tenants).
 
 ### Konfigurieren von Supportbenutzern
 
@@ -48,7 +48,7 @@ Es gibt zwei verschiedene Einstellungen für Supportbenutzer in Cumulocity IoT:
 
 Damit ein Benutzer des Management-Mandanten für Benutzer in anderen Mandanten Support leisten kann, müssen Sie dem Benutzer entweder die globale Rolle "Support" oder die Stammdatenrolle "Support" (jeweils LESEN und AKTUALISIEREN) zuweisen.
 
-Mit der Stammdatenrolle "Support" können Sie einzelnen Benutzern selektiv Support zuweisen. Erstellen Sie eine Gruppe der Mandanten, die der Benutzer unterstützen soll, und weisen Sie dann die Stammdatenrolle dem Benutzer und der Gruppe zu, wie unter [Administration > Verwalten von Berechtigungen > Zuweisen von Stammdatenrollen](/users-guide/administration#attach-inventory) beschrieben.
+Mit der Stammdatenrolle "Support" können Sie einzelnen Benutzern selektiv Support zuweisen. Erstellen Sie eine Gruppe der Mandanten, die der Benutzer unterstützen soll, und weisen Sie dann die Stammdatenrolle dem Benutzer und der Gruppe zu, wie unter [Administration > Verwalten von Berechtigungen > Zuweisen von Stammdatenrollen](/benutzerhandbuch/administration-de#attach-inventory) beschrieben.
 
 **Vom Benutzer erteilte Berechtigung**
 

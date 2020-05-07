@@ -1,4 +1,4 @@
-﻿---
+---
 weight: 10
 title: Verwalten von Mandanten
 layout: redirect
@@ -10,7 +10,7 @@ layout: redirect
 
 >**Info:** Wenn Sie diese Funktion verwenden möchten, wenden Sie sich bitte an sales@cumulocity.com.
 
-Um die Mandantenfunktionalität nutzen zu können, muss Ihr Benutzer über die entsprechenden Berechtigungen verfügen. Informationen zum Bearbeiten von Berechtigungen finden sie unter [Erstellen und Bearbeiten von Rollen](/users-guide/administration#create-edit-roles) im Abschnitt Verwalten von Berechtigungen. Da es sich bei der Bearbeitung von Mandanten um ein sensibles Verfahren handelt, sind die entsprechenden Berechtigungen granularer:
+Um die Mandantenfunktionalität nutzen zu können, muss Ihr Benutzer über die entsprechenden Berechtigungen verfügen. Informationen zum Bearbeiten von Berechtigungen finden sie unter [Erstellen und Bearbeiten von Rollen](/benutzerhandbuch/administration-de#create-edit-roles) im Abschnitt Verwalten von Berechtigungen. Da es sich bei der Bearbeitung von Mandanten um ein sensibles Verfahren handelt, sind die entsprechenden Berechtigungen granularer:
 
 - LESEN: Durchsuchen und Ansehen von Mandanten.
 - ERSTELLEN: Erstellen neuer Mandanten.
@@ -34,7 +34,7 @@ Im Management-Mandanten finden Sie zudem Informationen über den übergeordneten
 ### <a name="creating-tenants"></a>So erstellen Sie einen Untermandanten
 
 1. Klicken Sie **Mandanten anlegen** rechts in der oberen Menüleiste.
-<br>![Create subtenant](/images/users-guide/enterprise-tenant/et-subtenant-create.png)<br>
+<br>![Create subtenant](/images/benutzerhandbuch/enterprise-tenant/et-subtenant-create.png)<br>
 2. Geben Sie die folgenden Attribute an:
 
 	<table>
@@ -72,7 +72,7 @@ Im Management-Mandanten finden Sie zudem Informationen über den übergeordneten
 </tr>
 <tr>
 <td style="text-align:left">Link zum Zurücksetzen des Passworts als E-Mail senden</td>
-<td style="text-align:left">Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie ein Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter <a href="/users-guide/getting-started/#login" class="no-ajaxy">Erste Schritte &gt; Aufrufen und Anmelden an der Cumulocity IoT-Plattform</a>.</td>
+<td style="text-align:left">Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie ein Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter <a href="/benutzerhandbuch/getting-started-de/#login" class="no-ajaxy">Erste Schritte &gt; Aufrufen und Anmelden an der Cumulocity IoT-Plattform</a>.</td>
 </tr>
 <tr>
 <td style="text-align:left">Mandantenregel</td>
@@ -99,13 +99,13 @@ Um das Mandantenpasswort zu ändern, klicken Sie **Passwort ändern**, geben Sie
 
 Im Management-Mandanten finden Sie hier außerdem Informationen zu Supportbenutzeranfragen/-zugriff für die Untermandanten.
 
-<img src="/images/users-guide/enterprise-tenant/et-support-user-properties.png" alt="Support user access information" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-support-user-properties.png" alt="Support user access information" style="max-width: 100%">
 
 Hier werden die folgenden Informationen angezeigt:
 
 |Feld|Beschreibung
 |:--------|:-----
-|Status|Kann entweder *Eingeschaltet* oder *Ausgeschaltet* sein. <br>*Eingeschaltet* bedeutet: <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene aktiviert (siehe [Konfiguration](/users-guide/enterprise-edition#configuration)), <br> - ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert. <br>*Ausgeschaltet* bedeutet: <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene deaktiviert, <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene aktiviert, aber für den Untermandanten deaktiviert, <br> - kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h., jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).
+|Status|Kann entweder *Eingeschaltet* oder *Ausgeschaltet* sein. <br>*Eingeschaltet* bedeutet: <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene aktiviert (siehe [Konfiguration](/benutzerhandbuch/enterprise-tenant#configuration)), <br> - ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert. <br>*Ausgeschaltet* bedeutet: <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene deaktiviert, <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene aktiviert, aber für den Untermandanten deaktiviert, <br> - kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h., jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).
 |Anzahl aktiver Anfragen|Anzahl der aktuell aktiven Anfragen im Untermandanten. Wird nur angezeigt, wenn Supportbenutzerzugriff nicht global auf Plattform-Ebene aktiviert ist. Wird als Zahl in einem kleinen roten Punkt angezeigt.
 |Ablaufdatum|Legt das Datum fest, an dem der Supportbenutzerzugriff für den Mandanten abläuft. Wenn kein Datum festgelegt wurde, wird das Ablaufdatum auf "Unbegrenzt" gesetzt.
 
@@ -125,7 +125,7 @@ Ist ein Mandant gesperrt, bleiben die Daten des Mandanten in der Datenbank und k
 
 1. Klicken Sie auf das Menüsymbol rechts im jeweiligen Untermandanten-Eintrag und anschließend auf **Sperren**.
 
-	![Suspend tenant](/images/users-guide/enterprise-tenant/et-subtenant-suspend.png)
+	![Suspend tenant](/images/benutzerhandbuch/enterprise-tenant/et-subtenant-suspend.png)
 
 2. Bestätigen Sie im darauf folgenden Dialog das Sperren, indem Sie **OK** klicken und Ihr Passwort eingeben.
 
@@ -149,7 +149,7 @@ Klicken Sie auf das Menüsymbol rechts im jeweiligen Untermandanten-Eintrag und 
 
 In der Registerkarte **Anwendungen** können Sie alle für einen Mandanten abonnierten Anwendungen ansehen sowie Anwendungen für einen Mandanten abonnieren oder entfernen. Standardmäßig werden für einen Mandanten die Standardanwendungen von Cumulocity IoT abonniert.
 
-<img src="/images/users-guide/enterprise-tenant/et-subtenant-applications.png" alt="Subscribe tenant" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-subtenant-applications.png" alt="Subscribe tenant" style="max-width: 100%">
 
 #### So abonnieren Sie eine Anwendung
 
@@ -163,7 +163,7 @@ Bewegen Sie den Mauszeiger über die Anwendungen unter **Abonnierte Anwendungen*
 
 Für alle Anwendungen, die als Microservices von Cumulocity IoT gehostet werden, wird neben dem Namen der Microservice-Status als Symbol angezeigt:
 
-<img src="/images/users-guide/enterprise-tenant/et-applications-status.png" alt="Application details">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-applications-status.png" alt="Application details">
 
 Der Microservice kann sich in einem der folgenden Status befinden:
 
@@ -173,7 +173,7 @@ Der Microservice kann sich in einem der folgenden Status befinden:
 
 Details zum Status können durch Ausklappen des jeweiligen Eintrags angezeigt werden.
 
-<img src="/images/users-guide/enterprise-tenant/et-application-details.png" alt="Application details">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-application-details.png" alt="Application details">
 
 Folgende Informationen werden angezeigt:
 
@@ -183,14 +183,14 @@ Folgende Informationen werden angezeigt:
 * Name: Name der Microservice-Instanz
 * Neustarts: Anzahl der Neustarts von Microservice-Instanzen
 
-Weitere Details finden Sie in der Registerkarte **Status** der entsprechenden Anwendung, siehe [Administration > Verwalten von Anwendungen](/users-guide/administration#managing-applications).
+Weitere Details finden Sie in der Registerkarte **Status** der entsprechenden Anwendung, siehe [Administration > Verwalten von Anwendungen](/benutzerhandbuch/administration-de#managing-applications).
 
 
 ### <a name="tenants-custom-properties"></a>Benutzerdefinierte Attribute
 
-Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Bearbeiten von Werten von benutzerdefinierten Attributen, sowohl von vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/users-guide/administration#properties) definiert sind. Solche Attribute werden auch als Spalten auf der Seite [Nutzungsstatistiken](#usage-stats) angezeigt.
+Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Bearbeiten von Werten von benutzerdefinierten Attributen, sowohl von vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/benutzerhandbuch/administration-de#properties) definiert sind. Solche Attribute werden auch als Spalten auf der Seite [Nutzungsstatistiken](#usage-stats) angezeigt.
 
-![Custom properties](/images/users-guide/enterprise-tenant/et-subtenant-custom-properties.png)
+![Custom properties](/images/benutzerhandbuch/enterprise-tenant/et-subtenant-custom-properties.png)
 
 #### Begrenzen der Geräteanzahl für Untermandanten
 
@@ -219,7 +219,7 @@ Wenn keine Begrenzung auf Mandanten- und Systemebene vorliegt, wird die Begrenzu
 
 Die Seite **Nutzungsstatistiken** zeigt statistische Informationen für jeden Untermandanten an.
 
-![Subtenant statistics](/images/users-guide/enterprise-tenant/et-subtenants-usage-statistics.png)
+![Subtenant statistics](/images/benutzerhandbuch/enterprise-tenant/et-subtenants-usage-statistics.png)
 
 Die folgenden Informationen werden für jeden Untermandanten bereitgestellt (im Screenshot oben aus Platzgründen nicht vollständig zu sehen):
 
@@ -340,7 +340,7 @@ Die folgenden Informationen werden für jeden Untermandanten bereitgestellt (im 
 
 Außerdem werden benutzerdefinierte Attribute angezeigt, falls vorhanden.
 
-Benutzerdefinierte Attribute können in der [Attributsbibliothek](/users-guide/administration#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte [Benutzerdefinierte Attribute](#tenants-custom-properties) des Mandanten eingestellt werden.
+Benutzerdefinierte Attribute können in der [Attributsbibliothek](/benutzerhandbuch/administration-de#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte [Benutzerdefinierte Attribute](#tenants-custom-properties) des Mandanten eingestellt werden.
 
 Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum filtern, indem Sie einen Start- und einen Endzeitpunkt in der oberen Menüleiste eingeben und **Filter** klicken. Sie können außerdem die Liste nach jeder Spalte filtern und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Siehe auch [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/users-guide/getting-started/#filtering).
 
@@ -348,7 +348,7 @@ Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum fil
 
 1. Klicken Sie CSV-Export rechts oben in der Menüleiste, um die aktuelle Ansicht der Statistikentabelle als CSV-Datei zu exportieren.
 2. Im darauf folgenden Dialog können Sie die CSV-Ausgabe individuell anpassen, indem Sie ein Feldtrennzeichen, ein Dezimaltrennzeichen und einen Zeichensatz festlegen.
-<br> <img src="/images/users-guide/enterprise-tenant/et-subtenant-statistics-export.png"></img> <br>
+<br> <img src="/images/benutzerhandbuch/enterprise-tenant/et-subtenant-statistics-export.png"></img> <br>
 3. Klicken Sie **Herunterladen**, um den Export zu starten.
 
 Die CSV-Datei wird in Ihr Dateisystem heruntergeladen.
@@ -425,7 +425,7 @@ Für Abrechnungszwecke wird zusätzlich zur CPU- und Speichernutzung die Ursache
 
 Die Informationen über die Microservice-Nutzung werden auf der Seite **Nutzungsstatistiken** aufgeführt.
 
-![Tenant statistics](/images/users-guide/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
+![Tenant statistics](/images/benutzerhandbuch/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
 
 Weitere Informationen finden Sie unter [Tenants > Tenant usage statistics](/reference/tenants/#tenant-usage-statistics) im Reference Guide. Beachten Sie, dass Detailinformationen nur bezüglich der täglichen Nutzung verfügbar sind. Bei einer zusammenfassenden Anfrage wird nur die Summe aller ausgegebenen Anfragen zurückgegeben.
 
@@ -440,7 +440,7 @@ Wenn Sie beispielsweise einen Microservice haben, dessen Skalierungsregel auf AU
 
 Beachten Sie, dass für jede Änderung der Anzahl der Instanzen ein Auditeintrag vorgenommen wird.
 
-![Audit logs](/images/users-guide/enterprise-tenant/et-audit-logs-microscaling.png)
+![Audit logs](/images/benutzerhandbuch/enterprise-tenant/et-audit-logs-microscaling.png)
 
 Weitere Informationen finden Sie unter [Auditing](/reference/auditing/) im Reference Guide.
 
@@ -449,7 +449,7 @@ Weitere Informationen finden Sie unter [Auditing](/reference/auditing/) im Refer
 
 Eine Mandantenregel ist eine Menge von Mandantenoptionen und Datenhaltungsregeln. Mandantenoptionen und Datenhaltungsregeln können während der Erstellung eines Mandanten konfiguriert werden.
 
-<img src="/images/users-guide/enterprise-tenant/et-tenant-policy-assign.png" alt="Assign tenant policy">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-tenant-policy-assign.png" alt="Assign tenant policy">
 
 Das Erstellen einer Mandantenregel mit bestimmten Optionen und Regeln spart Zeit bei der Erstellung verschiedener Mandanten mit den gleichen Einstellungen.
 
@@ -459,16 +459,16 @@ Das Erstellen einer Mandantenregel mit bestimmten Optionen und Regeln spart Zeit
 
 Klicken Sie **Mandantenregeln** im Menü **Mandanten**, um alle verfügbaren Mandantenregeln anzuzeigen.
 
-<img src="/images/users-guide/enterprise-tenant/et-tenant-policies.png" alt="Tenant policies">
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-tenant-policies.png" alt="Tenant policies">
 
 Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anzahl der Optionen und Datenerhaltungsregeln angezeigt, wahlweise in Listen- oder Gitteransicht.
 
 #### So erstellen Sie eine Mandantenregel
 
 1. Klicken Sie **Mandantenregel hinzufügen** in der oberen Menüleiste.
-<br>![Add new policy](/images/users-guide/enterprise-tenant/et-tenant-policy-add.png)<br>
+<br>![Add new policy](/images/benutzerhandbuch/enterprise-tenant/et-tenant-policy-add.png)<br>
 2. Geben Sie im darauf folgenden Dialog einen Namen und eine optionale Beschreibung ein.
-3. Geben Sie mindestens eine Datenerhaltungsregel ein. Weitere Informationen zur Erstellung von Datenerhaltungsregeln finden Sie unter [Administration > Verwalten der Datenhaltung > Datenerhaltungsregeln](/users-guide/administration#retention-rules).
+3. Geben Sie mindestens eine Datenerhaltungsregel ein. Weitere Informationen zur Erstellung von Datenerhaltungsregeln finden Sie unter [Administration > Verwalten der Datenhaltung > Datenerhaltungsregeln](/benutzerhandbuch/administration-de#retention-rules).
 4. Geben Sie optional eine Mandantenoption ein.
 5. Klicken Sie **Speichern**.
 

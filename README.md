@@ -7,7 +7,7 @@
 ## Development environment
 
 - Clone the repository
-- [Install Hugo](https://gohugo.io/getting-started/installing/)
+- Install hugo by using snap `snap install hugo --channel=extended`
 - Open a terminal window on project directory and type `hugo server`
 
 ## Structure

@@ -78,16 +78,14 @@ This feature is enabled since Cumulocity IoT version 9.12. For correct behavior 
 
 Before switching to the single sign-on option it is mandatory that:
 
-* the authorization server you use supports OAuth2 authorization code grant.
-* the access token is issued as JWT and you know what goes into the token content.
-* the JWT must consist of a unique user identifier, "iss" (issuer), "aud" (audience) and "exp" (expiration time) fields.
-* the Cumulocity IoT platform is in version 9.12 but preferably higher.
-* all microservices are build with Microservice Java SDK 9.12.6 but preferably higher.
+* The authorization server you use supports OAuth2 authorization code grant.
+* The access token is issued as JWT and you know what goes into the token content.
+* The JWT must consist of a unique user identifier, "iss" (issuer), "aud" (audience) and "exp" (expiration time) fields.
+* The Cumulocity IoT platform is in version 9.12 but preferably higher.
+* All microservices are build with Microservice Java SDK 9.12.6 but preferably higher.For Microservices custom built, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the Microservice SDK guide.
+* For on premises installation the domain-based tenant resolution is configured properly.
 
-
-For Microservices custom built, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the Microservice SDK guide.
-
-For on premises installation the domain-based tenant resolution is configured properly.
+>**Info:** In order to use the single sign-on feature for Enterprise Tenants, the enterprise domain must be set up as redirect URI in the basic configurations. If single sign-on providers have whitelists, the enterprise domain should be whitelisted.
 
 
 #### Configuration settings

@@ -161,7 +161,7 @@ First you have to upload the appropriate certificate by clicking **Upload Certif
 * you are using a wildcard certificate to enable creation of subtenants,
 * the common name (CN) in the subject of the primary certificate (the first one in the chain) holds the value of your wildcard domain name, e.g. "CN=*.iot.mycompany.com".
 
-Cumulocity supports a single chain certificate that is signed by the root CA as well as a full chain certificate which contains one or more intermediate certificates.
+Cumulocity IoT supports a single chain certificate that is signed by the root CA, as well as a full chain certificate which contains one or more intermediate certificates.
 
 > **Info:** If your certificate is not in a valid PKCS#12 format but you have PEM files for certificate, private key and authorization chain then you can generate a valid PKCS#12 file using the following command:
 
@@ -189,9 +189,9 @@ After successful activation you will be redirected to your Enterprise Tenant at 
 
 When your certificate expires, you must update your certificate with a new one with an extended validation period. When updating a certificate, you need to make sure that
 
-* the certificate is valid, like when being uploaded for the first time
+* the certificate is valid, like when being uploaded for the first time,
 * the certificate is currently valid (validFrom in the past and validTo in the future),
-* the certificate has exactly the same common name (domain name) as the currently active certificate
+* the certificate has exactly the same common name (domain name) as the currently active certificate.
 
 >**Info:** Keep in mind that after replacing the certificate it may take some minutes until the new certificate has been delivered to the users/browsers.
 

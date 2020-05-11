@@ -117,7 +117,7 @@ Go to **Data Broker** > **Data connectors** if you would like to send data to th
 
 Go to **Data Broker** > **Data subscriptions** in your tenant account to receive the data from Edge.
 
-<img src="/images/users-guide/data-broker-navigator.png" alt="Data broker menus">
+<img src="/images/users-guide/enterprise-tenant/et-data-broker-navigator.png" alt="Data broker menus">
 
 In the same way, you can push operations from a Cumulocity IoT tenant account to Cumulocity IoT Edge devices.
  

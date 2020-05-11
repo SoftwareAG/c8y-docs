@@ -108,7 +108,17 @@ My Demo Device
 my demo device
 ```
 
->**Info:** Other than with filtering, using wildcards in a search is not supported.
+**Info:** Other than with filtering, using wildcards in a search is not supported.
+
+>**Important:** In certain cases the search function only searches through items shown on a page. This means that if an item is not listed on the respective page, it will not be found in the search. You need to load all results first to search through all items. This behavior applies to the following pages:
+
+>* Device protocols 
+* Firmware repository
+* Software repository
+* Configuration repository
+* Tenants
+* File repository
+
 
 #### <a name="filtering"></a>Filtering
 
@@ -131,6 +141,7 @@ cl*
 ```
 
 The list will be reduced to the selected objects accordingly.
+
 
 ### Real-time behavior of the navigator
 

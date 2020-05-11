@@ -16,6 +16,7 @@ Option collection  |  Enables creating new options and viewing existing ones <b
 Option  |  Represents an individual option that can be viewed and modified <br>Accessible by url <kbd>/tenant/options/&lt;optionCategory>/&lt;optionKey></kbd>
 Usage statistics  |  Returns information on the request load and database usage of tenants
 Current tenant  |  Represents user data for the current logged service user
+Trusted certificates  |  Represents certificates which the tenant trusts <br>Accessible by url <kbd>/tenant/tenants/&lt;tenantId>/trusted-certificates</kbd>
 
 > **Important**: For all PUT/POST requests, the "Accept" header shall be provided, otherwise an empty response body will be returned.
 

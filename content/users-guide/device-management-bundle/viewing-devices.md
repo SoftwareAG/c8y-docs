@@ -88,7 +88,7 @@ Moreover, you can add custom columns to show additional device properties.
 2. In the **Header** field, enter a header for the new custom column.  
 3. In the **Fragment path** field, enter the property of the device to be shown. Nested properties will be accepted. However, for nested properties its only possible to select Cumulocity IoT standard fragments like `c8y_Mobile.mcc`.
 4. Select the **Filtering mode** for the new column. <br>
-If you select **Fragment equals value**, filtering will be done by applying the criteria a user may specify in the dialog box which shows up when you click the column filter icon.<br>
+If you select **Fragment equals value**, filtering will be done by applying the criteria a user may specify in the dialog box which shows up when clicking the column filter icon.<br>
 ![Specify values](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)
 <br>In case of **Fragment exists**, filtering will be done by existence, i.e. filtering is done based on whether the property exists or not.    
 5. Click **Add**.

@@ -180,7 +180,7 @@ Before activating the custom domain name, make sure that
  Target = the domain of the platform you want to point to, e.g. if you use `https://demos.cumulocity.com` to access your tenant, use "demos.cumulocity.com" as target.<br>
 Make sure to remove all A entries for the wildcard domain. For example, if you already have an A entry for "xxx.iot.mycompany.com", you cannot create tenants with the URL "xxx".
 
-After successful activation you will be redirected to your Enterprise Tenant at the new domain. You will also receive an email with information about the activation. Please note that your management tenant domain name is static, for example, if your wildcard domain is "*.iot.mycompany.com" then your management tenant domain will be: "management.iot.mycompany.com".
+After successful activation you will be redirected to your Enterprise Tenant at the new domain. You will also receive an email with information about the activation. Note that your management tenant domain name is static, for example, if your wildcard domain is "*.iot.mycompany.com" then your management tenant domain will be "management.iot.mycompany.com".
 
 >**Info:** After the activation is completed you will no longer be able to access your tenant with the Cumulocity IoT domain name. Instead, use your custom domain name.
 

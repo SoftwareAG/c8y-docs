@@ -5,6 +5,38 @@ layout: redirect
 ---
 
 ### Overview
+Devices can authenticate against the Cumulocity IoT platform using X.509 client certificates.
+ 
+Cumulocity expects devices to connect using SSL on port 1884.
+
+Each tenant individually defines whom it trusts by installing the base CA certificate. 
+
+#### General requirements for connection with certificates
+
+* The CA certificate can also be a self-signed certificate.
+* Certificate used by device must be a full chain, including uploaded CA certificate.
+* Device need to trust cumulocity certificate.
+* Uploaded certificate have to be version 3.
+* Uploaded certificate need to have: BasicConstraints:[CA:true] set.
+* Device have to be registered or uploaded certificate need to have flag autoRegistrationEnabled. (more below)
+* Certificates used by devices must be signed by either uploaded CA certificate or by chain of certificates signed by uploaded CA certificates.
+* Certificate used by device must be a full chain, including uploaded CA certificate.
+
+### Device register
+
+Cumulocity supports two ways to register device which will be able to connect using certificates :
+
+* **Auto registration**
+
+User for device will be created during the first MQTT call, if at least one uploaded certificate  have _autoRegistrationEnabled_ set on true.
+* **Bulk registration**
+
+User for device can be created via standard bulk registration.
+ 
+The csv file used in registration is required to have additional column **AUTH_TYPE** with value: "CERTIFICATES" and column **CREDENTIALS**  can not be present.
+
+For further information on the file format and accepted CSV variants, also refer to
+[Bulk device credentials](/reference/device-credentials/#bulk-device-credentials) in the Reference guide.
 
 ### JWT Token retrieval
 

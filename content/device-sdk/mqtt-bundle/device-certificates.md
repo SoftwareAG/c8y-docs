@@ -11,6 +11,9 @@ Cumulocity expects devices to connect using SSL on port 1884.
 
 Each tenant individually defines whom it trusts by installing the base CA certificate. 
 
+Devices connecting to the platform with certificates do not need to provides tenant, user or password.
+This information will be obtained from the certificates.
+
 #### General requirements for connection with certificates
 
 * The CA certificate can also be a self-signed certificate.
@@ -31,12 +34,10 @@ Cumulocity supports two ways to register device which will be able to connect us
 User for device will be created during the first MQTT call, if at least one uploaded certificate  have _autoRegistrationEnabled_ set on true.
 * **Bulk registration**
 
-User for device can be created via standard bulk registration.
+User for device can be also created via standard bulk registration in Device Management.
  
-The csv file used in registration is required to have additional column **AUTH_TYPE** with value: "CERTIFICATES" and column **CREDENTIALS**  can not be present.
+The csv file used in bulk registration should meet the requirements described in [Bulk device credentials](/reference/device-credentials/#bulk-device-credentials) in the Reference guide and also there is required to csv file have additional column **AUTH_TYPE** with value: "CERTIFICATES" and column **CREDENTIALS**  should not be present or should have empty value.
 
-For further information on the file format and accepted CSV variants, also refer to
-[Bulk device credentials](/reference/device-credentials/#bulk-device-credentials) in the Reference guide.
 
 ### JWT Token retrieval
 

@@ -35,15 +35,17 @@ using com.apama.json.JSONPlugin;
 using com.apama.cumulocity.CumulocityRequestInterface;
 using com.softwareag.connectivity.httpclient.Request;
 using com.softwareag.connectivity.httpclient.Response;
- 
-monitor LookForWifiAnomalies
+using com.apama.cumulocity.Alarm;
+using com.apama.cumulocity.Measurement;
+
+monitor LookForWifiAnomalies 
 {
     CumulocityRequestInterface cumulocity;
     action onload()
-    {
-        cumulocity := CumulocityRequestInterface.connectToCumulocity();
-        listenForSignalStrength("idOfDevice", "nameOfMachineLearningModel");
-    }
+   {
+           cumulocity := CumulocityRequestInterface.connectToCumulocity();
+           listenForSignalStrength("idOfDevice", "nameOfMachineLearningModel");
+   }
 }
 ```
 

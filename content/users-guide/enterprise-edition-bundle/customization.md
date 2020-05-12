@@ -154,14 +154,19 @@ In the **Domain name** tab you can activate your own custom domain name.
 
 First you have to upload the appropriate certificate by clicking **Upload Certificate**. Make sure that
 
-* the certificate is in a valid PKCS#12 format, containing a full authorization chain
-* the certificate is not password protected,
-* you are using a wildcard certificate to enable creation of subtenants.
+* the certificate is currently valid (validFrom in the past and validTo in the future),
+* the certificate is in a valid PKCS#12 format, containing the full authorization chain,
+* every single certificate in the chain is in X509 format,
+* the private key is not password protected,
+* you are using a wildcard certificate to enable creation of subtenants,
+* the common name (CN) in the subject of the primary certificate (the first one in the chain) holds the value of your wildcard domain name, e.g. "CN=*.iot.mycompany.com".
+
+Cumulocity IoT supports a single chain certificate that is signed by the root CA, as well as a full chain certificate which contains one or more intermediate certificates.
 
 > **Info:** If your certificate is not in a valid PKCS#12 format but you have PEM files for certificate, private key and authorization chain then you can generate a valid PKCS#12 file using the following command:
 
 ```shell
-openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -certfile chain.pe
+openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -certfile chain.pem
 ```
 
 Before activating the custom domain name, make sure that
@@ -175,7 +180,7 @@ Before activating the custom domain name, make sure that
  Target = the domain of the platform you want to point to, e.g. if you use `https://demos.cumulocity.com` to access your tenant, use "demos.cumulocity.com" as target.<br>
 Make sure to remove all A entries for the wildcard domain. For example, if you already have an A entry for "xxx.iot.mycompany.com", you cannot create tenants with the URL "xxx".
 
-After successful activation you will be redirected to your Enterprise Tenant at the new domain. You will also receive an email with information about the activation.
+After successful activation you will be redirected to your Enterprise Tenant at the new domain. You will also receive an email with information about the activation. Note that your management tenant domain name is static, for example, if your wildcard domain is "*.iot.mycompany.com" then your management tenant domain will be "management.iot.mycompany.com".
 
 >**Info:** After the activation is completed you will no longer be able to access your tenant with the Cumulocity IoT domain name. Instead, use your custom domain name.
 
@@ -184,11 +189,9 @@ After successful activation you will be redirected to your Enterprise Tenant at 
 
 When your certificate expires, you must update your certificate with a new one with an extended validation period. When updating a certificate, you need to make sure that
 
-* the certificate is in a valid PKCS#12 format,
-* the certificate is not password protected,
+* the certificate is valid, like when being uploaded for the first time,
 * the certificate is currently valid (validFrom in the past and validTo in the future),
-* the certificate has exactly the same common name (domain name) as the currently active certificate,
-* you have added a CNAME record to your DNS server. For details on the CNAME record see above.
+* the certificate has exactly the same common name (domain name) as the currently active certificate.
 
 >**Info:** Keep in mind that after replacing the certificate it may take some minutes until the new certificate has been delivered to the users/browsers.
 

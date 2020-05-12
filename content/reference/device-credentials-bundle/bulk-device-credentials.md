@@ -29,8 +29,13 @@ First section is the first line of CSV file. This line contains column names (he
 </tr>
 <tr>
 <td align="left">CREDENTIALS</td>
-<td align="left">1</td>
-<td align="left">Password for the device’s user</td>
+<td align="left">0..1</td>
+<td align="left">Password for the device’s user. If device use certificates, can be skipped.</td>
+</tr>
+<tr>
+<td align="left">AUTH_TYPE</td>
+<td align="left">0..1</td>
+<td align="left">Required auth type for device's user. If device use credential, can be skipped or fill with 'BASIC'. Devices that use certificates must set a 'CERTIFICATES'. The default value is BASIC. </td>
 </tr>
 <tr>
 <td align="left">TENANT</td>
@@ -85,6 +90,8 @@ CSV file can appear in many forms (regarding to optional tenant column and occur
 * When user wants to change the type of external id, columns 'type', 'name' and 'idtype' must appear in CSV file.
 * When user wants to add device to group, columns 'type', 'name' and 'path' must appear in CSV file.
 * When user wants to add shell feature, columns 'type', 'name' and 'shell' must appear in CSV file and column 'shell' must contain value 1.
+* When 'auth_type' column is provided with BASIC, 'credentials' column must appear in CSV file.
+* When 'auth_type' column is provided with CERTIFICATES, 'credentials' column can not appear in CSV file or must be empty.
 
 It is possible to define custom [External Id](/reference/identity/) mappings and some custom device properties that are added to newly created devices during registration:
  

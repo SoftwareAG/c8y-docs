@@ -30,12 +30,12 @@ First section is the first line of CSV file. This line contains column names (he
 <tr>
 <td align="left">CREDENTIALS</td>
 <td align="left">0..1</td>
-<td align="left">Password for the device’s user. If device use certificates, can be skipped.</td>
+<td align="left">Password for the device’s user. If the device use certificates, can be skipped.</td>
 </tr>
 <tr>
 <td align="left">AUTH_TYPE</td>
 <td align="left">0..1</td>
-<td align="left">Required auth type for device's user. If device use credential, can be skipped or fill with 'BASIC'. Devices that use certificates must set a 'CERTIFICATES'. The default value is BASIC. </td>
+<td align="left">Required auth type for device's user. If the device uses credentials, can be skipped or filled with 'BASIC'. Devices that use certificates must set 'CERTIFICATES'. The default value is BASIC. </td>
 </tr>
 <tr>
 <td align="left">TENANT</td>

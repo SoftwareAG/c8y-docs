@@ -7,46 +7,45 @@ layout: redirect
 ### Overview
 Devices can authenticate against the Cumulocity IoT platform using X.509 client certificates.
  
-Cumulocity expects devices to connect using SSL on port 1884.
+Cumulocity IoT expects devices to connect using SSL on port 1884.
 
 Each tenant individually defines whom it trusts by installing the base CA certificate. 
 
-Devices connecting to the platform with certificates do not need to provides tenant, user or password.
+Devices connecting to the platform with certificates do not need to provide tenant, user or password.
 This information will be obtained from the certificates.
 
-#### General requirements for connection with certificates
+#### General requirements for connecting devices with certificates
 
 * The CA certificate can also be a self-signed certificate.
-* Certificate used by device must be a full chain, including uploaded CA certificate.
-* Device need to trust cumulocity certificate.
-* Uploaded certificate have to be version 3.
-* Uploaded certificate need to have: BasicConstraints:[CA:true] set.
-* Device have to be registered or uploaded certificate need to have flag autoRegistrationEnabled. (more below)
+* Certificate used by devices must be a full chain, including the uploaded CA certificate.
+* The device needs to trust the Cumulocity IoT certificate.
+* Uploaded certificates have to be version 3.
+* Uploaded certificates need to have set: BasicConstraints:[CA:true].
+* Devices have to be registered or uploaded certificates need to have the flag autoRegistrationEnabled (see below for details).
 * Certificates used by devices must be signed by either uploaded CA certificate or by chain of certificates signed by uploaded CA certificates.
-* Certificate used by device must be a full chain, including uploaded CA certificate.
 
-### Device register
+### Registering devices using certificates
 
-Cumulocity supports two ways to register device which will be able to connect using certificates :
+Cumulocity supports two ways to register devices which will be able to connect using certificates:
 
 * **Auto registration**
 
-User for device will be created during the first MQTT call, if at least one uploaded certificate  have _autoRegistrationEnabled_ set on true.
+The user for the device will be created during the first MQTT call, if at least one uploaded certificate has _autoRegistrationEnabled_ set to true.
 * **Bulk registration**
 
-User for device can be also created via standard bulk registration in Device Management.
+The user for the device can also be created via the standard bulk registration in Device Management.
  
-The csv file used in bulk registration should meet the requirements described in [Bulk device credentials](/reference/device-credentials/#bulk-device-credentials) in the Reference guide and also there is required to csv file have additional column **AUTH_TYPE** with value: "CERTIFICATES" and column **CREDENTIALS**  should not be present or should have empty value.
+The CSV file used in bulk registration should meet the requirements described in [Bulk device credentials](/reference/device-credentials/#bulk-device-credentials) in the Reference guide. Moreover it is required that the CSV file has an additional column **AUTH_TYPE** with value: "CERTIFICATES" and that the column **CREDENTIALS** is either not present or has an empty value.
 
 
 ### JWT Token retrieval
 
-Device which is connected by certificates can receive a token which can be used later for authenticate http requests. Note [JWT token authentication](/reference/rest-implementation/#http-usage) must be enabled to receive token.
+A device which is connected by certificates can receive a token which can later be used to authenticate HTTP requests. Note that [JWT token authentication](/reference/rest-implementation/#http-usage) must be enabled to receive a token.
 
 
-* Firstly device subscribe to the topic  <kbd>s/dat</kbd>.
-* Then device publish empty message on the topic  <kbd>s/uat</kbd>.
-* After a while token will be published on subscribed  <kbd>s/dat</kbd> topic in format :
+* First the device subscribes to the topic <kbd>s/dat</kbd>.
+* Then the device publishes an empty message on the topic <kbd>s/uat</kbd>.
+* After a while a token will be published on the subscribed <kbd>s/dat</kbd> topic in format:
 
 	    71,<<Base64 encoded JWT token>>
 	    

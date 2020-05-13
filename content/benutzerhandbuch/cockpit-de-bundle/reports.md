@@ -12,7 +12,7 @@ Bei Dashboard-Berichten handelt es sich um globale Dashboard-Seiten, unabhängig
 
 Erweitern Sie das Menü **Berichte** im Navigator, um alle verfügbaren Berichte anzuzeigen.
 
-![Reports menu](/images/benutzerhandbuch/cockpit-de/cockpit-reports-navigator.png)
+![Reports menu](/images/benutzerhandbuch/cockpit/cockpit-reports-navigator.png)
 
 Klicken Sie im Navigator auf einen Bericht, um ihn zu öffnen.
 
@@ -51,13 +51,13 @@ Um alle Exporte anzuzeigen, klicken Sie **Exportieren** im Menü **Berichte**.
 
 Die Seite **Exportieren** listet alle Exporte mit Namen und Zeitintervall auf.
 
-![Exports](/images/benutzerhandbuch/cockpit-de/cockpit-exports.png)
+![Exports](/images/benutzerhandbuch/cockpit/cockpit-exports.png)
 
 
 #### <a name="add-export"></a>So fügen Sie einen Export hinzu
 
 1. Klicken Sie **Export hinzufügen** in der oberen Menüleiste.<br>
-	![Create export](/images/benutzerhandbuch/cockpit-de/cockpit-export-create.png)
+	![Create export](/images/benutzerhandbuch/cockpit/cockpit-export-create.png)
 
 2. Geben Sie einen Namen für den Bericht ein und wählen Sie das Dateiformat (CSV oder XLSX) für die Berichtausgabe.
 
@@ -95,7 +95,7 @@ Klicken Sie **Hinzufügen**, um ein leeres Feld hinzuzufügen. Klicken Sie **Spa
 
 Klicken Sie **Vordefiniertes Attribut hinzufügen**, um ein vordefiniertes Attribut hinzuzufügen. Markieren Sie die gewünschten Attribute in der angezeigten Liste und klicken Sie **Auswählen**. Verwenden Sie das Suchfeld, um die Liste nach bestimmten Eigenschaften zu filtern.
 
-![Select properties](/images/benutzerhandbuch/cockpit-de/cockpit-export-properties.png)
+![Select properties](/images/benutzerhandbuch/cockpit/cockpit-export-properties.png)
 
 Wenn Sie mindestens ein Feld haben, dass als eigenes Attribut definiert wurde und nicht aus der Liste der vordefinierten Attribute stammt, dann muss für ein Objekt mindestens dieses Attribut gesetzt sein, damit die entsprechenden Werte im Export erscheinen.
 
@@ -110,11 +110,11 @@ Wenn Sie Messwerte aktiviert haben, sehen Sie die zusätzliche Option **Datenpun
 
 Um einen Export in eine CSV- oder XLSX-Datei für einen bestimmten Zeitpunkt zu planen, klicken Sie auf das Menüsymbol am Ende der Zeile und anschließend auf **Export planen**.
 
-![Export context menu](/images/benutzerhandbuch/cockpit-de/cockpit-export-menu.png)
+![Export context menu](/images/benutzerhandbuch/cockpit/cockpit-export-menu.png)
 
 Im darauf folgenden Dialog können Sie die Smart Rule "Bei Timer-Ablauf Export per E-Mail senden" entsprechend einrichten.
 
-![Schedule export](/images/benutzerhandbuch/cockpit-de/cockpit-export-on-timer-rule.png)
+![Schedule export](/images/benutzerhandbuch/cockpit/cockpit-export-on-timer-rule.png)
 
 **1 - Name der Regel**
 
@@ -144,7 +144,7 @@ Klicken Sie **Erstellen**, um die benutzerdefinierte Smart Rule "Bei Timer-Ablau
 
 Die Smart Rule wird zu den Exportdetails hinzugefügt.
 
-![Smart Rule](/images/benutzerhandbuch/cockpit-de/cockpit-export-schedule.png)
+![Smart Rule](/images/benutzerhandbuch/cockpit/cockpit-export-schedule.png)
 
 
 #### So exportieren Sie Daten

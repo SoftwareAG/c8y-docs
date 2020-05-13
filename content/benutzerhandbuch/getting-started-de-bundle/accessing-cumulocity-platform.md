@@ -54,7 +54,7 @@ Aktivieren Sie die Checkbox **Passwort merken**, damit der Browser sich Ihre Zug
 
 Wenn Sie sich das erste Mal bei der Cumulocity IoT-Plattform anmelden, werden Sie zur Standardanwendung (falls nicht anders konfiguriert, ist dies die [Cockpit](/benutzerhandbuch/cockpit-de)-Anwendung) weitergeleitet.
 
-![image alt text](/images/benutzerhandbuch/cockpit-de/cockpit-home-screen.png)
+![image alt text](/images/benutzerhandbuch/cockpit/cockpit-home-screen.png)
 
 Um sich explizit abzumelden, klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie im Kontextmenü **Abmelden**.
 

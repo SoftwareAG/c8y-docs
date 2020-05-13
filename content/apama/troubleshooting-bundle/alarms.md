@@ -40,6 +40,7 @@ The following is a list of the alarms. The information further down below explai
 - [An EPL file throws an uncaught exception](#apama_ctrl_error)
 - [Invalid measurement format](#apama_measurementformat_invalid)
 - [Multiple extensions with the same name](#extension_error)
+- [The correlator queue is full](#application_queue_full)
 - [The CEP queue is full](#cep_queue_full) (this alarm is coming from Cumulocity IoT Core, but concerns Apama-ctrl)
 
 Once the cause of an alarm is resolved, you have to acknowledge and clear the alarm in the Cumulocity IoT tenant. Otherwise, you will continue to see the alarm until a further restart of the Apama-ctrl microservice.
@@ -277,6 +278,20 @@ This alarm is raised when the Apama-ctrl microservice tries to activate the depl
 This disables all extensions that were deployed to Apama-ctrl. In order to use the deployed extensions, the user has to decide which extensions to keep and then delete the duplicate ones.
 
 **Info:** In case of multiple duplicates, this alarm is only listed once.
+
+#### <a name="application_queue_full"></a>The correlator queue is full
+
+This alarm is raised whenever the correlator queue is full, including both input queue and output queue.
+
+- Alarm type: `application_queue_full`
+- Alarm text: InputQueueSize: &lt;size of input queue&gt;, OutputQueueSize: &lt;size of output queue&gt;, SlowestReceiver: &lt;name of the slowest receiver&gt;, SlowestReceiverQueueSize: &lt;size of slowest receiver's queue&gt;, MostBackedUpQueue: &lt;name of context with maximum pending events&gt;
+- Alarm severity: CRITICAL
+
+The correlator's input and output queues are periodically monitored to check for building up of events. If the pending queue size grows above the normal threshold (20,000 for the input queue and 10,000 for the output queue), an alarm is raised. The alarm text contains a snapshot of the correlator status at the time of raising the alarm. A correlator with a full input or output queue can cause a serious performance degradation.
+
+The correlator queue size is based on the number of events, not raw bytes.
+
+Check the alarm text to get an indication of which queue is blocking. This also contains information about the slowest receiver and the most backed-up context.
 
 #### <a name="cep_queue_full"></a>The CEP queue is full
 

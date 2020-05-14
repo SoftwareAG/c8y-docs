@@ -16,7 +16,9 @@ Cloud Fieldbus is supported out of the box by the following terminals:
 * [Pssystec SMARTbox DP](https://devicepartnerportal.softwareag.com/web/devices/10041) for Profibus
 * [NetComm Wireless NTC-6200](https://devicepartnerportal.softwareag.com/web/devices/10034) for Modbus/TCP and Modbus/RTU
 
-> **Info:** To support Cloud Fieldbus with your terminal, please contact info@cumulocity.com for more information.
+For further information on supported devices refer to the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/web/#/) which offers an extensive [collection of devices](https://devicepartnerportal.softwareag.com/web/#/devices) with guaranteed plug-and-play compatibility and full functional support in the Cumulocity IoT platform. 
+
+> **Info:** To support Cloud Fieldbus with your terminal, please contact the [Software AG Support](https://empower.softwareag.com/ContactSupport/).
 
 ### <a name="connect"></a>Connecting fieldbus devices
 
@@ -34,6 +36,8 @@ To connect a Modbus/RTU device, follow these steps:
 6. Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency where measurements are sent to Cumulocity IoT.
 7. Click **Save** to save your settings.
 
+![Add Modbus device](/images/users-guide/cloud-fieldbus/fieldbus-new-modbus-rtu.png)
+
 **To add child devices**
 
 1. To start the communication between the terminal and the Modbus/RTU device, click **Add RTU device**.
@@ -41,8 +45,6 @@ To connect a Modbus/RTU device, follow these steps:
 3. Click **Add**. Cumulocity IoT will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.
 
 After completion, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the list to navigate to the device. If you have not yet added Modbus devices to the terminal, you may have to reload your browser window to make the **Child Devices** tab visible.
-
-![Add Modbus device](/images/users-guide/cloud-fieldbus/fieldbus-new-modbus-rtu.png)
 
 #### Connecting Modbus/TCP devices
 
@@ -55,6 +57,8 @@ To connect a Modbus/TCP device, follow these steps:
 5. Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency at which measurements are sent to Cumulocity IoT.
 6. Click **Save** to save your settings.
 
+![Add Modbus device](/images/users-guide/cloud-fieldbus/fieldbus-new-modbus-tcp.png)
+
 **To add child devices**
 
 1. To start the communication between the terminal and the Modbus/TCP device, click **Add TCP device**.
@@ -62,8 +66,6 @@ To connect a Modbus/TCP device, follow these steps:
 3. Click **Add**.
 
 Cumulocity IoT will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.
-
-![Add Modbus device](/images/users-guide/cloud-fieldbus/fieldbus-new-modbus-tcp.png)
 
 > **Info:** It is assumed that all Modbus/TCP communication uses the standard Modbus/TCP port 502. On the NTC-6200, the port to be used can be configured through the variable "service.cumulocity.plugin.lua__modbus.port" via the device shell or the local web user interface of the device.
 
@@ -78,6 +80,8 @@ To connect a CAN device, follow these steps:
 5. Change the transmit rate according to your requirements. The transmit rate is the frequency where measurements are sent to Cumulocity IoT.
 6. Click **Save** to save your settings.
 
+![Add CAN device](/images/users-guide/cloud-fieldbus/fieldbus-new-can-device.png)
+
 **To add child devices**
 
 1. To start the communication between the terminal and the CAN device, click **Add CAN device**.
@@ -87,8 +91,6 @@ To connect a CAN device, follow these steps:
 Cumulocity IoT will now send a notification to the fieldbus terminal that a new device is ready to be managed. This may take a few seconds.
 
 After completion, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the list to navigate to the device. If you have not yet added fieldbus devices to the terminal, you may have to reload your browser window to make the **Child devices** tab visible.
-
-![Add CAN device](/images/users-guide/cloud-fieldbus/fieldbus-new-can-device.png)
 
 #### <a name="connect-profibus"></a>Connecting Profibus devices
 
@@ -104,14 +106,14 @@ To connect a Profibus device, follow these steps:
 6. Configure your Profibus Master device to communicate to that slave address. To do so, refer to the gateway manual (e.g. [SmartBox DP](https://devicepartnerportal.softwareag.com/web/#/devices/10041)).
 7. Click **Save** to update the gateway with the new settings.
 
+<img src="/images/users-guide/cloud-fieldbus/fieldbus-new-profibus.png" alt="Add device" style="max-width: 100%">
+
 **To add child devices**
 
 1. To start the communication between the gateway and the Profibus device, click **Add Profibus device**.
 2. Enter a name for the new device.
 3. Select the device protocol from the dropdown field. See [Configuring fieldbus device types](#configure) for information on how to add a new device protocol.
 4. Click **Add** to confirm and notify the gateway.
-
-<img src="/images/users-guide/cloud-fieldbus/fieldbus-new-profibus.png" alt="Add device" style="max-width: 100%">
 
 Now a child device will be created containing the data configured in the selected device protocol.
 
@@ -189,13 +191,54 @@ To use the "SCADA" widget, follow these steps:
 
 #### <a name="scadasvg"></a>Preparing SVG files for the SCADA widget
 
-The "SCADA" widgets inspect uploaded SVG files for placeholders. These placeholders are replaced by actual values from devices. Placeholders have a specific syntax and can be used anywhere in the SVG file. To add a placeholder, enter the name of the placeholder in double curly braces using your design application or a text editor.
+The SCADA widget accepts SVG files which use AngularJS directives, for example `ng-if`, `ng-show`, `ng-style`, `ng-repeat`, `ng-click`, for dynamic data presentation. Data from devices (like latest measurements and other properties) are provided via placeholders. There are also predefined helper functions which can be used. 
 
-When creating SVG files, it is recommended to use [https://boxy-svg.com/](https://boxy-svg.com/). It is an easy to use, quality chrome extension.
+For creating SVG files, it is recommended to use [https://boxy-svg.com/](https://boxy-svg.com/). It is an easy to use, quality Chrome extension.
 
-	<text class="text" xt-anchor="middle" x="100" y="236.982125" width="200" ...>
-		{{batteryValue}}
-	</text>
+##### Placeholders
+
+For a placeholder to be recognized by the SCADA widget, it must occur at least once in double curly braces with no other expression, for example `{{placeholderName}}` (in a comment, attribute's value, or element's content - see example). Once annotated, the placeholder can be used within other expressions, for example `{{placeholderName * 3.1415}}`, `ng-class="{ active: placeholderName > 100 }"` or `ng-if="placeholderName === 'VALUE'"`.
+
+##### Predefined functions
+
+The following predefined functions are available for use in expressions:
+
+- `goToGroupDetails(groupId)` – takes the group ID and redirects the user to the group details view, e.g. `<... ng-click="goToGroupDetails(groupId)">`,
+- `goToDeviceDetails(deviceId)` – takes the device ID and redirects the user to the device details view, e.g. `<... ng-click="goToDeviceDetails(deviceId)">`,
+- `getActiveAlarmsStatusClass(alarmsStatus)` – takes the alarm status object and returns a CSS class that can be used for styling: `none`, `warning`, `minor`, `major`, `critical`, e.g. `<... ng-class="getActiveAlarmsStatusClass(alarmsStatus)">`.
+
+##### Example
+
+	svg
+	<?xml version="1.0" encoding="utf-8"?>
+	<svg width="600px" height="600px" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+	  <!-- Annotate placeholders in comments: -->
+	  <!-- {{batteryValue}} -->
+	  <!-- {{alarmsStatus}} -->
+	  
+	  <style>
+	    .critical {
+	      fill: red;
+	    }
+	  </style>
+	  
+	  <!-- or in an attribute: -->
+	  <text data-placeholder="{{batteryValue}}"
+	    class="text"
+	    x="50"
+	    y="200"
+	    width="200">
+	    <!-- pass placeholder's value to a predefined function to get alarms status CSS class: -->
+	    <tspan ng-class="getActiveAlarmsStatusClass(alarmsStatus)" style="font-size: 45pt;">
+	      <!-- or in an element's content: -->
+	      {{batteryValue}}
+	      
+	      <!-- a placeholder can be also a part of expression, e.g.: -->
+	      {{batteryValue * 100}} %
+	    </tspan>
+	  </text>
+	</svg>
+
 
 
 ### <a name="configure"></a>Configuring fieldbus device protocols
@@ -207,9 +250,13 @@ New fieldbus device protocols can be created in the **Device protocols** page wh
 3. Enter a name for it and an optional description.
 4. Click **Create** to create the protocol.
 
-Now you can start adding coils and register definitions to the device protocol, depending on the selected protocol (see the detailed descriptions for each protocol type below).
+![Add device protocol](/images/users-guide/cloud-fieldbus/fieldbus-add-device-protocol.png)
 
-![Device protocols](/images/users-guide/cloud-fieldbus/fieldbus-deviceprotocols-modbus.png)
+The device protocol will be added to the device protocol list.
+
+![Device protocol list](/images/users-guide/cloud-fieldbus/fieldbus-deviceprotocols-modbus.png)
+
+Next, you can configure the device protocol, following the descriptions for the respective protocol type below.
 
 If you edit a device protocol that is currently in use, you may need to
 
@@ -225,7 +272,7 @@ Click **Add Coil** in the **Coils (discrete output)** section, to add a coil def
 1. Enter the name of the coil as being displayed in the user interface.
 2. Optionally, enter the display category to structure your data in widgets.
 3. In the **Value selection** section, enter the number of the coil in the Modbus device.
-4. In the **Functionalities** section, you may select the following funtions:
+4. In the **Functionalities** section, you may select the following actions:
 	* **Show status** - To show the current value in the UI, e.g. in the "Fieldbus device" widget. In this case, you can enter the text that the UI should show for unset and set coils.
 	* **Update status** - To enable to update the current value from the UI, e.g. in the "Fieldbus device" widget. 
 	* **Raise alarm** - To raise an alarm when the coil is set in the device. In this case, you can specify the type of the alarm that is raised, its text and its severity. Note that there can only be one alarm active of a particular type for a particular device.
@@ -243,26 +290,29 @@ The same settings can be specified for discrete inputs. However, it is not possi
 
 Click **Add holding register** under **Holding registers** or **Add input register** under **Input registers** to add a register definition. 
 
+1. In the **General** section, specify a name for the register and a display category to structure your data in widgets.
+2. In the **Value selection** section, enter the number of the register in the Modbus device. You can indicate a subset of bits to be used from a register by providing a start bit and a number of bits. This allows you to split a physical Modbus register into a set of "logical registers".
+3. In the **Normalization** section, specify how the raw value should be transformed before storing it in the platform. To scale the integer value read from the Modbus device, you can enter a **Multiplier**, a **Divisor** and a number of decimal places in the **Right Shift** field. The register value is first multiplied by the multiplier, then divided by the divisor and then shifted by the number of decimal places. Note, that the terminal may use integer arithmetic to calculate values sent to Cumulocity IoT. For example, if you use a divisor of one and one decimal place, a value of 231 read from the terminal will be sent as 23.1 to Cumulocity IoT. If you use a divisor of ten and no decimal places, the terminal may send 23 to Cumulocity IoT (depending on its implementation). In the **Unit** field, indicate the unit of the data, for example, "C" for temperature values.
+4. In the Options section, select the following options:
 
-1. Enter the name of the register being displayed in the user interface.
-2. Optionally, enter the display category to structure your data in widgets.
-3. Enter the number of the register in the Modbus device. You can indicate a subset of bits to be used from a register by providing a start bit and a number of bits. This allows you to split a physical Modbus register into a set of "logical registers".
-4. To scale the integer value read from the Modbus device, you can enter a multiplier, a divisor and a number of decimal places. The register value is first multiplied by the "multiplier", then divided by the "divisor" and then shifted by the number of decimal places. Note, that the terminal may use integer arithmetic to calculate values sent to Cumulocity IoT. For example, if you use a divisor of one and one decimal place, a value of 231 read from the terminal will be sent as 23.1 to Cumulocity IoT. If you use a divisor of ten and no decimal places, the terminal may send 23 to Cumulocity IoT (depending on its implementation).
-5. Indicate the unit of the data, for example, "C" for temperature values.
-6. Select the **Signed** checkbox if the register value should be interpreted as signed number.
-7. Select the **Enumeration type** checkbox if the register value should be interpreted as enumeration of discrete values. If **Enumeration type** is selected, you can click **Add value** to add mappings from a discrete value to a text to be shown for this value in the widget. Click **Remove value** to remove the mapping.
-8. Select the **Show status** checkbox if you want to show the current value of the register in the UI, e.g. in the "Fieldbus device" widget.
-9. Select the **Update status** checkbox if you want to be able to edit the register from the UI, e.g. the "Fieldbus device" widget. If **Update status** is selected, two additional fields **Minimum** and **Maximum** appear. Using these fields, you can constrain numerical values entered in the widget.
-10. Select the **Send measurement** checkbox if you want the values of the register to be regularly collected according to the transmit interval (see [above](#connect)). In this case, add a measurement type and a series to be used. For each measurement type, a chart is created in the **Measurements** tab. For each series, a graph is created in the chart. The unit is used for labelling the measurement in the chart and in the "Fieldbus device" widget.
-11. Select the **Raise alarm** checkbox if an alarm should be raised when the register is not zero in the device measurement. In this case, you can specify the type of the alarm raised, its text and its severity. Note, that there can only be one alarm active of a particular type for a particular device.
-12. Select the **Send event** checkbox if an event should be generated each time the value of the register changes. If **Send event** is selected, you can specify the type of event and the text in the event.
-13. Click **Save** to save your settings.
+	* **Signed** - If the register value should be interpreted as signed number.
+	* **Enumeration type** - If the register value should be interpreted as 	enumeration of discrete values. If **Enumeration type** is selected, you can 	click **Add value** to add mappings from a discrete value to a text to be 	shown for this value in the widget. Click **Remove value** to remove the 	mapping.
+	* **Little endian** - If the register value should be interpreted in little-endian format based on 8-bit values.
+
+5. In the **Functionalities** section, you may select the following actions:
+	* **Show status** - To show the current value in the UI, e.g. in the "Fieldbus device" widget. 
+	* **Update status** - To enable to update the current value from the UI, e.g. in the "Fieldbus device" widget. If **Update status** is selected, two additional fields **Minimum** and **Maximum** appear. Using these fields, you can constrain numerical values entered in the widget.
+	* **Send measurement** - To collect the values of the register regularly according to the transmit interval (see [above](#connect)). In this case, add a measurement type and a series to be used. For each measurement type, a chart is created in the **Measurements** tab. For each series, a graph is created in the chart. The unit is used for labelling the measurement in the chart and in the "Fieldbus device" widget.
+	* **Raise alarm** - To raise an alarm when the register is not zero in the device measurement. In this case, you can specify the type of the alarm raised, its text and its severity. Note, that there can only be one alarm active of a particular type for a particular device.
+	* **Send event** - To send an event each time the value of the register changes. If selected, you may specify the type of event and the text in the event.
+
+6. Click **Save** to save the register.
 
 ![Add register](/images/users-guide/cloud-fieldbus/fieldbus-deviceprotocols-newregister.png)
 
 In the **Options** section, select the checkbox **Use server time** to create the time stamps for data on the server instead of on the terminal. If you need to support buffering of data on the terminal, leave this checkbox clear.
 
-Finally, click **Save** to save your settings.
+Finally, click **Save** to save the device protocol.
 
 #### <a name="configureCAN"></a>Configuring CAN bus device protocols
  
@@ -272,17 +322,13 @@ CAN bus device protocols can be configured in a very similar way as Modbus devic
 * Enter the CAN message ID of the specific message the data should be extracted from. Use a hexadecimal number for the message ID.
 * Conversion of values is extended by an offset parameter. This will be added or substracted from the register value, depending on its sign. The offset calculation is done after applying multiplier and divisor, and before performing decimal shifting.
 
-![Add CAN register](/images/users-guide/cloud-fieldbus/fieldbus-deviceprotocols-newregistercan.png)
-
 #### <a name="configureProfibus"></a>Configuring Profibus device protocols
 
 Profibus device protocols can be configured in the following way:
 
-In the **Registers** section, click **Add register** to add one or more register definitions as described exemplarily for Modbus devices in [To add a register definition](#addRegister) above.  
-
-In the **Options** section, select the checkbox **Use server time** to create the time stamps for data on the server instead of on the terminal. If you need to support buffering of data on the terminal, leave this checkbox clear.
-
-Finally, click **Save** to save your settings.
+1. In the **Registers** section, click **Add register** to add one or more register definitions as described exemplarily for Modbus devices in [To add a register definition](#addRegister) above.  
+1. In the **Options** section, select the checkbox **Use server time** to create the time stamps for data on the server instead of on the terminal. If you need to support buffering of data on the terminal, leave this checkbox clear.
+1. Finally, click **Save** to save your settings.
 
 
 #### <a name="configure-canopen"></a>Configuring CANopen device protocols
@@ -297,32 +343,32 @@ Click **Add variable** to configure a new variable.
 
 ![New variable](/images/users-guide/cloud-fieldbus/fieldbus-new-variable.png)
 
-In the **General** section, specify a name for the variable and a display category. Display categories are used to group variables into sections in the visualization.
+##### To configure a variable
 
-In the **Value selection** section, specify from where the value should be extracted:
+1. In the **General** section, specify a name for the variable and a display category. Display categories are used to group variables into sections in the visualization. 
+2. In the **Value selection** section, specify from where the value should be extracted:
 
-* **Index** - Index of the variable in the OD of the device.
-* **Sub-index** - Sub-index of the variable in the OD of the device.
-* **Data type** - Type of the variable (e.g. boolean, unsigned).
-* **Access type** - Access type, e.g. read-only, write-only.
+	* **Index** - Index of the variable in the OD of the device.
+	* **Sub-index** - Sub-index of the variable in the OD of the device.
+	* **Data type** - Type of the variable (e.g. boolean, unsigned).
+	* **Access type** - Access type, e.g. read-only, write-only.
 
-Depending on the selected access type, the following functionalities may be specified:
+3. Depending on the selected access type, the following functionalities may be specified:
 
-* **Show status** - To enable to show the current value in the UI, e.g. in the "Fieldbus device" widget.
-* **Update status** - To enable to update the current value from the UI, e.g. in the "Fieldbus device" widget. If selected, two additional fields **Minimum** and **Maximum** are displayed. Using these fields, you can constrain numerical values entered in the widget.
-* **Send measurement** - To create a measurement whenever the value is changed. If selected, you may specify a **Measurement type** and **Measurement series**.  
-* **Raise alarm** - To raise an alarm if a given mask matches with the value of the variable ((value & mask) == mask). Additionally, you may specify the type of the alarm raised, its text and its severity.
-* **Send event** - To send an event each time the value of the register changes. If selected, you may specify the type of event and the text in the event.
+	* **Show status** - To enable to show the current value in the UI, e.g. in the "Fieldbus device" widget.
+	* **Update status** - To enable to update the current value from the UI, e.g. in the "Fieldbus device" widget. If selected, two additional fields **Minimum** and **Maximum** are displayed. Using these fields, you can constrain numerical values entered in the widget.
+	* **Send measurement** - To create a measurement whenever the value is changed. If selected, you may specify a **Measurement type** and **Measurement series**.  
+	* **Raise alarm** - To raise an alarm if a given mask matches with the value of the variable ((value & mask) == mask). Additionally, you may specify the type of the alarm raised, its text and its severity.
+	* **Send event** - To send an event each time the value of the register changes. If selected, you may specify the type of event and the text in the event.
 
-In the **Normalization** section, specify a unit to define how the raw value should be transformed before storing it in the platform.
-
-Click **Save**. 
+4. In the **Normalization** section, specify a unit to define how the raw value should be transformed before storing it in the platform.
+5. Click **Save** to save the variable. 
 
 The variable will be listed in the **Variables** section of the device protocol. All variables are grouped by the given display category, i.e. variables with the same category are grouped together.
 
 ![category view](/images/users-guide/cloud-fieldbus/fieldbus-category.png)
 
-After completing your configuration, click **Save** to save he device protocol configuration. 
+After completing your configuration, click **Save** to save the device protocol configuration. 
 
 ##### Importing a CANopen device protocol
 

@@ -11,7 +11,7 @@ Cumulocity IoT expects devices to connect using SSL on port 1884.
 
 Each tenant individually defines whom it trusts by uploading the base CA certificate. 
 
-Devices connecting to the platform with certificates do not need to provide tenant, user or password.
+Devices connecting to the platform with certificates do not need to provide tenant id, username and password.
 Authentication information will be obtained from the certificates.
 
 #### General requirements for connecting devices with certificates

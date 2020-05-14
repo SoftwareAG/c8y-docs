@@ -6,7 +6,7 @@ layout: redirect
 
 With Cumulocity IoT Cloud Fieldbus you can collect data from fieldbus devices and remotely manage them. This section describes how to
 
-* [Connect](#connect) fieldbus devices.
+* [Connect](#connect) fieldbus devices to Cumulocity IoT.
 * [Manage](#manage) the connected fieldbus devices.
 * [Configure](#configure) the remote management capabilities of particular types of devices and [import and export](#import) them.
 
@@ -24,17 +24,17 @@ For the following instructions, it is assumed that you have a Cloud Fieldbus ter
 
 #### Connecting Modbus/RTU devices
 
-To connect a Modbus/RTU device:
+To connect a Modbus/RTU device, follow these steps:
 
 1. Physically wire the Modbus/RTU device through RS-485 or RS-232 to the terminal.
 2. Assign the device a unique Modbus address according to the instructions provided with the Modbus device (e.g. by setting a jumper on the device).
 3. Check the serial communication settings of the device according to the instructions provided with the Modbus device (i.e. baud rates and communication protocol). These have to match with all devices on the bus.
 4. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Modbus** tab.
-5. Change the communication settings shown in the section **Serial communication** to match the settings on the bus, if needed.
+5. Change the communication settings shown in the **Serial communication** section to match the settings on the bus, if needed.
 6. Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency where measurements are sent to Cumulocity IoT.
-7. Click **Save** to save your changes.
+7. Click **Save** to save your settings.
 
-**Adding child devices**
+**To add child devices**
 
 1. To start the communication between the terminal and the Modbus/RTU device, click **Add RTU device**.
 2. Enter a name for the device and select the device protocol from the dropdown field. See [Configuring fieldbus device protocols](#configure) for information on how to add a new device protocol. Set the Modbus address of the connected device.
@@ -42,11 +42,11 @@ To connect a Modbus/RTU device:
 
 After completion, a new child device has been added to the terminal and can now be managed. You can click on the name of the device in the list to navigate to the device. If you have not yet added Modbus devices to the terminal, you may have to reload your browser window to make the **Child Devices** tab visible.
 
-<br> ![Add Modbus device](/images/users-guide/cloud-fieldbus/fieldbus-new-modbus-rtu.png)<br>
+![Add Modbus device](/images/users-guide/cloud-fieldbus/fieldbus-new-modbus-rtu.png)
 
 #### Connecting Modbus/TCP devices
 
-To connect a Modbus/TCP device:
+To connect a Modbus/TCP device, follow these steps:
 
 1. Make sure that the Modbus/TCP device is connected to the terminal, i.e. directly through an Ethernet cable or through a switch. If you are using a Modbus gateway, configure the gateway in a way it can communicate with the Modbus devices behind the gateway.
 2. Check the network settings of the device using the instructions provided with the device.
@@ -55,7 +55,7 @@ To connect a Modbus/TCP device:
 5. Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency at which measurements are sent to Cumulocity IoT.
 6. Click **Save** to save your settings.
 
-**Adding child devices**
+**To add child devices**
 
 1. To start the communication between the terminal and the Modbus/TCP device, click **Add TCP device**.
 2. Enter a name for the device and select the device protocol from the dropdown field. See [Configuring fieldbus device types](#configure) for information on how to add a new device protocol. Set the Modbus address and the IP address of the connected device.
@@ -69,7 +69,7 @@ Cumulocity IoT will now send a notification to the Modbus terminal that a new de
 
 #### Connecting CAN devices
 
-To connect a CAN device:
+To connect a CAN device, follow these steps:
 
 1. Physically wire the CAN device to the terminal.
 2. Check the serial communication baud rate of the device according to the instructions provided with the device. These have to match all devices on the bus.
@@ -78,7 +78,7 @@ To connect a CAN device:
 5. Change the transmit rate according to your requirements. The transmit rate is the frequency where measurements are sent to Cumulocity IoT.
 6. Click **Save** to save your settings.
 
-**Adding child devices**
+**To add child devices**
 
 1. To start the communication between the terminal and the CAN device, click **Add CAN device**.
 2. Enter a name for the device and select a device protocol from the dropdown field. See [Configuring fieldbus device types](#configure) for information on how to add a new device protocol.
@@ -92,7 +92,9 @@ After completion, a new child device has been added to the terminal and can now 
 
 #### <a name="connect-profibus"></a>Connecting Profibus devices
 
-Connecting Profibus differs slightly from the regular plug & play approach of Cloud Fieldbus. The gateway device acts as a slave on the Profibus so it can easily be integrated into an existing infrastructure. This means that Profibus data must be actively sent to the gateway though. Typically, this is done by programming a PLC to actively send information to the gateway via its configured Profibus slave address.
+Connecting Profibus devices slightly differs from the regular plug & play approach of Cloud Fieldbus. The gateway device acts as a slave on the Profibus so it can easily be integrated into an existing infrastructure. This means that Profibus data must be actively sent to the gateway though. Typically, this is done by programming a PLC to actively send information to the gateway via its configured Profibus slave address.
+
+To connect a Profibus device, follow these steps:
 
 1. Physically wire the Profibus device to the terminal.
 2. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Profibus** tab.
@@ -102,7 +104,7 @@ Connecting Profibus differs slightly from the regular plug & play approach of Cl
 6. Configure your Profibus Master device to communicate to that slave address. To do so, refer to the gateway manual (e.g. [SmartBox DP](https://devicepartnerportal.softwareag.com/web/#/devices/10041)).
 7. Click **Save** to update the gateway with the new settings.
 
-**Adding child devices**
+**To add child devices**
 
 1. To start the communication between the gateway and the Profibus device, click **Add Profibus device**.
 2. Enter a name for the new device.
@@ -130,7 +132,7 @@ Depending on the capabilities of the device and its configuration in Cumulocity 
 
 If the device protocol of the fieldbus device is configured to collect measurements, these will be visible in the **Measurements** tab. They will also be available for usage in the [Data explorer](/users-guide/cockpit/#data-explorer) and in [dashboard widgets](/users-guide/cockpit#dashboards).
 
-Data is collected according to the interval specified in the "transmit rate" property of the terminal as described above. To optimize the data traffic, data that is exactly the same as collected previously may not be sent again.
+Data is collected according to the interval specified in the "transmit rate" property of the terminal as described above. To optimize the data traffic, data which is exactly the same as collected previously may not be sent again.
 
 ![Fieldbus measurements](/images/users-guide/cloud-fieldbus/fieldbus-modbus-measurements.png)
 
@@ -146,11 +148,11 @@ Similar to alarms, changes in fieldbus devices can be monitored and logged as ev
 
 ![Fieldbus events](/images/users-guide/cloud-fieldbus/fieldbus-modbus-events-log.png)
 
-#### <a name="monitoring-status"></a>Monitor a device status
+#### <a name="monitoring-status"></a>Monitoring the device status
 
 The status of devices can be monitored in realtime using dashboard widgets in the Cockpit application. Navigate to the Cockpit application, create a dashboard or report, and add widgets as described in the [Cockpit section](/users-guide/cockpit) in the User guide.
 
-#### <a name="fieldbus-device-widget"></a>Monitoring device status using the Fieldbus device widget
+#### <a name="fieldbus-device-widget"></a>Monitoring the device status using the Fieldbus device widget
 
 The "Fieldbus device" widget provides you with a tabular display of the status of a device. The status of the device can also be modified through the widget.
 
@@ -169,7 +171,7 @@ In the widget, the selected coils and registers are grouped into display categor
 
 Registers and coils that can be changed are represented by active widgets. For example, in the screenshot above, the "Master switch" coil and the "Mode" register are editable. If you click a switch, an operation to change the corresponding coil or register is sent to the terminal. Similar, if you change a value and click **Set**, an operation is created. The terminal will then carry out the configuration change on the device, as requested through the operation. While the operation is being processed, a progress indicator is shown.
 
-#### <a name="scada"></a>Monitoring status using the SCADA widget
+#### <a name="scada"></a>Monitoring the device status using the SCADA widget
 
 The "SCADA" widget provides you with a graphic representation of the status of a device.
 
@@ -205,32 +207,42 @@ New fieldbus device protocols can be created in the **Device protocols** page wh
 3. Enter a name for it and an optional description.
 4. Click **Create** to create the protocol.
 
-Now you can start adding coils and register definitions to the device protocol, depending on the selected protocol (see the descriptions below).
+Now you can start adding coils and register definitions to the device protocol, depending on the selected protocol (see the detailed descriptions for each protocol type below).
 
-![Device Database](/images/users-guide/cloud-fieldbus/fieldbus-deviceprotocols-modbus.png)
+![Device protocols](/images/users-guide/cloud-fieldbus/fieldbus-deviceprotocols-modbus.png)
 
-#### <a name="configureModbus"></a>Configuring Modbus data
+If you edit a device protocol that is currently in use, you may need to
 
-##### <a name="addCoil"></a>Adding a coil definition
+* restart the terminals that use the device protocol,
+* reconfigure dashboards and widgets that use the device protocol.
 
-Click **Add Coil** in the **Coils (discrete output)** section, to add a coil definition. This will open a dialog to specify the coil. Enter the following information:
+#### <a name="configureModbus"></a>Configuring Modbus device protocols
+
+##### <a name="addCoil"></a>To add a coil definition (discrete outputs)
+
+Click **Add Coil** in the **Coils (discrete output)** section, to add a coil definition. 
 
 1. Enter the name of the coil as being displayed in the user interface.
 2. Optionally, enter the display category to structure your data in widgets.
-3. Enter the number of the coil in the Modbus device.
-4. Select the **Show status** checkbox if you want to show the coil's current value in the Fieldbus Device Widget. In this case, you can enter the text that the Fieldbus Device Widget should show for unset and set coils.
-5. Select the **Update status** checkbox if you want to be able to edit the coil from the Fieldbus Device Widget.
-1. Select the **Raise alarm** checkbox if an alarm should be raised when the coil is set in the device. In this case, you can specify the type of the alarm that is raised, its text and its severity. Note that there can only be one alarm active of a particular type for a particular device.
-1. Select the **Send event** checkbox if an event should be generated each time the value of the coil changes. If **Send event** is selected, you can specify the type of event and the text in the event.
-1. Click **Save** to finish editing the coil.
+3. In the **Value selection** section, enter the number of the coil in the Modbus device.
+4. In the **Functionalities** section, you may select the following funtions:
+	* **Show status** - To show the current value in the UI, e.g. in the "Fieldbus device" widget. In this case, you can enter the text that the UI should show for unset and set coils.
+	* **Update status** - To enable to update the current value from the UI, e.g. in the "Fieldbus device" widget. 
+	* **Raise alarm** - To raise an alarm when the coil is set in the device. In this case, you can specify the type of the alarm that is raised, its text and its severity. Note that there can only be one alarm active of a particular type for a particular device.
+	* **Send event** - To send an event each time the value changes. If selected, you may specify the type of event and the text in the event.
+
+5. Click **Save** to save your configuration.
 
 ![Add coil](/images/users-guide/cloud-fieldbus/fieldbus-deviceprotocols-newcoil.png)
 
-The same functions are available for discrete inputs. However, it is not possible to update the status of a discrete input.
+##### <a name="addCoil"></a>To add a discrete inputs definition
 
-##### <a name="addRegister"></a>Adding a register definition
+The same settings can be specified for discrete inputs. However, it is not possible to update the status of a discrete input.
 
-Click **Add Holding Register** in **Holding registers** section, to add a register definition. This opens a dialog to enter the details of the register definition:
+##### <a name="addRegister"></a>To add a register definition
+
+Click **Add holding register** under **Holding registers** or **Add input register** under **Input registers** to add a register definition. 
+
 
 1. Enter the name of the register being displayed in the user interface.
 2. Optionally, enter the display category to structure your data in widgets.
@@ -239,9 +251,9 @@ Click **Add Holding Register** in **Holding registers** section, to add a regist
 5. Indicate the unit of the data, for example, "C" for temperature values.
 6. Select the **Signed** checkbox if the register value should be interpreted as signed number.
 7. Select the **Enumeration type** checkbox if the register value should be interpreted as enumeration of discrete values. If **Enumeration type** is selected, you can click **Add value** to add mappings from a discrete value to a text to be shown for this value in the widget. Click **Remove value** to remove the mapping.
-8. Select the **Show status** checkbox if you want to show the current value of the register in the Fieldbus Device Widget.
-9. Select the **Update status** checkbox if you want to be able to edit the register from the Fieldbus Device Widget. If **Update status** is selected, two additional fields **Minimum** and **Maximum** appear. Using these fields, you can constrain numerical values entered in the widget.
-10. Select the **Send measurement** checkbox if you want the values of the register to be regularly collected according to the transmit interval (see [above](#connect)). In this case, add a measurement type and a series to be used. For each measurement type, a chart is created in the **Measurements** tab. For each series, a graph is created in the chart. The unit is used for labelling the measurement in the chart and in the Fieldbus Device Widget.
+8. Select the **Show status** checkbox if you want to show the current value of the register in the UI, e.g. in the "Fieldbus device" widget.
+9. Select the **Update status** checkbox if you want to be able to edit the register from the UI, e.g. the "Fieldbus device" widget. If **Update status** is selected, two additional fields **Minimum** and **Maximum** appear. Using these fields, you can constrain numerical values entered in the widget.
+10. Select the **Send measurement** checkbox if you want the values of the register to be regularly collected according to the transmit interval (see [above](#connect)). In this case, add a measurement type and a series to be used. For each measurement type, a chart is created in the **Measurements** tab. For each series, a graph is created in the chart. The unit is used for labelling the measurement in the chart and in the "Fieldbus device" widget.
 11. Select the **Raise alarm** checkbox if an alarm should be raised when the register is not zero in the device measurement. In this case, you can specify the type of the alarm raised, its text and its severity. Note, that there can only be one alarm active of a particular type for a particular device.
 12. Select the **Send event** checkbox if an event should be generated each time the value of the register changes. If **Send event** is selected, you can specify the type of event and the text in the event.
 13. Click **Save** to save your settings.
@@ -252,14 +264,9 @@ In the **Options** section, select the checkbox **Use server time** to create th
 
 Finally, click **Save** to save your settings.
 
-If you edit a device protocol that is currently in use, you may need to
-
-* restart the terminals that use the device protocol,
-* reconfigure dashboards and widgets that use the device protocol.
-
-#### <a name="configureCAN"></a>Configuring CAN bus data
-
-CAN device protocols can be configured in a very similar way as Modbus device protocols. For more information, see [Configuring Modbus data](#configureModbus) above. The differences are:
+#### <a name="configureCAN"></a>Configuring CAN bus device protocols
+ 
+CAN bus device protocols can be configured in a very similar way as Modbus device protocols. For more information, see [Configuring Modbus data](#configureModbus) above. The differences are:
 
 * Holding registers are used to describe the different pieces of data inside CAN messages.
 * Enter the CAN message ID of the specific message the data should be extracted from. Use a hexadecimal number for the message ID.
@@ -267,63 +274,65 @@ CAN device protocols can be configured in a very similar way as Modbus device pr
 
 ![Add CAN register](/images/users-guide/cloud-fieldbus/fieldbus-deviceprotocols-newregistercan.png)
 
-#### <a name="configureProfibus"></a>Configuring Profibus data
+#### <a name="configureProfibus"></a>Configuring Profibus device protocols
 
-To configure a Profibus device protocol, select "Profibus" as device protocol from the dropdown list and enter a name for it.
+Profibus device protocols can be configured in the following way:
 
-In the **Registers** section, click **Add register** to add one or more register definitions as described exemplarily for Modbus devices in [Adding a register definition](#addRegister) above.  
+In the **Registers** section, click **Add register** to add one or more register definitions as described exemplarily for Modbus devices in [To add a register definition](#addRegister) above.  
 
 In the **Options** section, select the checkbox **Use server time** to create the time stamps for data on the server instead of on the terminal. If you need to support buffering of data on the terminal, leave this checkbox clear.
 
 Finally, click **Save** to save your settings.
 
-If you edit a device protocol that is currently in use, you may need to
 
-* restart the terminals that use the device protocol,
-* reconfigure dashboards and widgets that use the device protocol.
+#### <a name="configure-canopen"></a>Configuring CANopen device protocols
 
-#### <a name="configure-canopen"></a>Configuring CANopen data
+CANopen device protocols can be configured in the following way:
 
-There are two ways to create a new device protocol. Either manually from scratch via the “New” operation or via import of an EDS file for the corresponding device.
+In the **CANopen device type** field, specify the device type as a hex number.
 
-**Manually creating a new device protocol from scratch**
+In the **Variables** section, you determine the CANopen variables. Variables inside the “Object Dictionary”(OD) of the CANopen device can later be accessed by adding the variables to the device type definition. 
 
-Navigate to the **Device protocol** page and click **Add device protocol**, then click on **CANopen** and enter a name for the device protocol. Then click on **Create**.
-
-Select the created CANopen device protocol to make changes. Specific to CANopen is the **CANopen device type** field which accepts a hex number.
-
-In the **Variables** section, you determine the CANopen variables. Variables inside the “Object Dictionary”(OD) of the CANopen device can be accessed later by adding the variables to the device type definition. Via the **Add variable** button in the **Variables** section, new variables can be configured.
+Click **Add variable** to configure a new variable.
 
 ![New variable](/images/users-guide/cloud-fieldbus/fieldbus-new-variable.png)
 
-The following fields can be observed:
+In the **General** section, specify a name for the variable and a display category. Display categories are used to group variables into sections in the visualization.
 
-- **Name:** The name of the variable.
-- **Display category:** This field is used to group variables into sections in the visualization.
-- **Index:** Index of the variable in the OD of the device.
-- **Sub-index:** Sub-Index of the variable in the OD of the device.
-- **Data type:** The type of the variable (e.g. boolean, unsigned).
-- **Access type:** E.g. read only, write only, etc.
-- **Unit:** Logical unit of the variable.
-- **Show status:** Defines how the variable is shown in the inventory.
-- **Update status:** Defines how the variable is updated in Cumulocity IoT.
-- **Send measurement:** Create a measurement when the value of the variable is changed.
-- **Raise alarm:** Create an alarm if a given mask matches with the value of the variable ((value & mask) == mask). Therefore, it is possible to raise alarms on single bits of e.g. an Unsigned8 variable, like the Error-Register.
-- **Send event:** Create an event, whenever the value of the variable is changed.
+In the **Value selection** section, specify from where the value should be extracted:
 
-After adding variables to the new device protocol, they are listed in the **Variables** section of the device protocol. All variables are grouped by the given display category, i.e. variables with same category are grouped together.
+* **Index** - Index of the variable in the OD of the device.
+* **Sub-index** - Sub-index of the variable in the OD of the device.
+* **Data type** - Type of the variable (e.g. boolean, unsigned).
+* **Access type** - Access type, e.g. read-only, write-only.
+
+Depending on the selected access type, the following functionalities may be specified:
+
+* **Show status** - To enable to show the current value in the UI, e.g. in the "Fieldbus device" widget.
+* **Update status** - To enable to update the current value from the UI, e.g. in the "Fieldbus device" widget. If selected, two additional fields **Minimum** and **Maximum** are displayed. Using these fields, you can constrain numerical values entered in the widget.
+* **Send measurement** - To create a measurement whenever the value is changed. If selected, you may specify a **Measurement type** and **Measurement series**.  
+* **Raise alarm** - To raise an alarm if a given mask matches with the value of the variable ((value & mask) == mask). Additionally, you may specify the type of the alarm raised, its text and its severity.
+* **Send event** - To send an event each time the value of the register changes. If selected, you may specify the type of event and the text in the event.
+
+In the **Normalization** section, specify a unit to define how the raw value should be transformed before storing it in the platform.
+
+Click **Save**. 
+
+The variable will be listed in the **Variables** section of the device protocol. All variables are grouped by the given display category, i.e. variables with the same category are grouped together.
 
 ![category view](/images/users-guide/cloud-fieldbus/fieldbus-category.png)
 
-After completing your configuration, click **Save** to save your settings. The device protocol can be used now to add CANopen devices to the platform. The device protocol can be updated after creation.
+After completing your configuration, click **Save** to save he device protocol configuration. 
 
-**Importing a device protocol**
+##### Importing a CANopen device protocol
 
-To import a new device protocol, see the [Exporting and importing device protocols](#import) section.
+See [Exporting and importing device protocols](#import) for general information on how to import a device protocol.
 
-> After importing the EDS file, all variables defined in the file are listed in the **Variables** section of the device protocol. The user can then enrich the imported variable configurations by opening the configuration dialog for each variable (e.g. the missing display category can be set or mappings can be defined).
+After importing the EDS file, all variables defined in the file are listed in the **Variables** section of the CANopen device protocol. 
 
-**Configuring CANopen device data**
+The user can then enrich the imported variable configurations manually, for example by adding the missing display category.
+
+##### Configuring CANopen device data
 
 To configure CANopen device data navigate to the desired device and switch to the **CANopen** tab.
 
@@ -331,13 +340,11 @@ In the **CANopen communication** section, the following parameters can be config
 
 - **Baud rate:** This field must match with the used baud rate in the CANopen network.
 - **Polling rate:** The rate at which the agent sends requests to the CANopen devices.
-to determine changes in variables.
-- **Transmit rate:** The transfer rate, i.e. the rate at which the terminal sends regular
-measurements to Cumulocity IoT.
+- **Transmit rate:** The transfer rate, i.e. the rate at which the terminal sends regular measurements to Cumulocity IoT.
 
-In the **CANopen** section, up to 127 CANopen devices can be added to the gateway as child devices by giving the following parameters:
+In the **CANopen** section, up to 127 CANopen devices can be added to the gateway as child devices by providing the following parameters:
 
-- **Name:** The name of the device used for visualization.
+- **Name:** The name of the device shown in the UI.
 - **Device type:** The device type of the CANopen device. The user can select from a list of all CANopen device types which are stored in the device database.
 - **Node ID:** The CANopen node ID of the device. It is used for addressing the device inside the CANopen network.
 

@@ -56,9 +56,9 @@ Example Response :
         "pageSize": 5
     }
 
-### POST certificate to tenant's trusted certificates.
+### POST a certificate to tenant's trusted certificates.
 
-Example Request: Adds certificate to tenant's trusted certificates.
+Example Request: Adds certificate to the tenant's trusted certificates.
 
 Required role: ROLE\_TENANT\_ADMIN
 
@@ -80,7 +80,7 @@ Example Response :
     {
         "notAfter": "2040-02-13T13:13:00.000Z",
         "serialNumber": "<<serial Number>>",
-        "subject": "<<certificate subjcet>>",
+        "subject": "<<certificate subject>>",
         "algorithmName": "SHA256withRSA",
         "version": 3,
         "notBefore": "2020-02-18T13:13:00.000Z",
@@ -93,4 +93,4 @@ Example Response :
         "status": "ENABLED"
     }
 
-Note: status field can only contain ENABLED or DISABLED value.
+**Info:** The possible `status` values are ENABLED or DISABLED.

@@ -6,29 +6,29 @@ layout: redirect
 
 ### TrustedCertificates
 
-|Name|Type|Occurs|Description|
-|:---|:---|:-----|:----------|
-|notAfter|DateTime|1|Date after which a certificate is no longer valid.|
-|serialNumber|positive number|1|Certificate unique serial number.|
-|subject|String|1|DName of the client to which the certificate belongs.|
-|algorithmName|String|1|Algorithms used to sign certificate.|
-|version|String|1|Version of the encoded certificate.|
-|notBefore|DateTime|1|Date before which a certificate is no valid.|
-|issuer|String|1|Entity who has signed and issued the certificate.|
-|fingerprint|String|1|Unique identifier of the certificate.|
-|name|String|1|Unique certificate name.|
-|autoRegistrationEnabled|boolean|1|Flag for auto registration process.|
-|certInPemFormat|String|1|Certificate representation in PEM format.|
-|status|String|1|Certificate status.|
-|self|URI|1|Link to this resource.|
+|Name|Type|Description|Mandatory for PUT/POST|
+|:---|:---|:----------|:---------------------|
+|notAfter|DateTime |Date after which a certificate is no longer valid.|No|
+|serialNumber|positive number |Certificate unique serial number.|No|
+|subject|String |DName of the client to which the certificate belongs.|No|
+|algorithmName|String |Algorithms used to sign the certificate.|No|
+|version|String |Version of the encoded certificate.|No|
+|notBefore|DateTime |Date before which a certificate is no valid.|No|
+|issuer|String |Entity who has signed and issued the certificate.|No|
+|fingerprint|String |Unique identifier of the certificate.|No 
+|name|String |Unique certificate name.|No 
+|autoRegistrationEnabled|boolean |Flag for auto registration process.|No
+|certInPemFormat|String |Certificate representation in PEM format.|POST: Yes <br>PUT: No
+|status|String |Certificate status.|POST: Yes <br>PUT: No
+|self|URI |Link to this resource.|No 
 
-### GET certificate from tenant's trusted certificates.    
+### GET a certificate from tenant's trusted certificates.    
 
 Response body: application/json
 
 Required role: ROLE\_TENANT\_ADMIN
 
-Example Request: Get certificate from tenant's trusted certificates by fingerprint.
+Example Request: Get a certificate from the tenant's trusted certificates by fingerprint.
 
     GET /tenant/tenants/<<tenantId>>/trusted-certificates/<<certificate fingerprint>>
     Host: ...
@@ -55,13 +55,13 @@ Example Response :
         "status": "ENABLED"
     }
 
-### DELETE certificate from tenant's trusted certificates.
+### DELETE a certificate from the tenant's trusted certificates.
 
 Response body: application/json
   
 Required role: ROLE\_TENANT\_ADMIN
 
-Example Request: Delete certificate by fingerprint.
+Example Request: Delete a certificate by fingerprint.
 
      
     DELETE /tenant/tenants/<<tenantId>>/trusted-certificates/<<certificate fingerprint>>
@@ -116,4 +116,4 @@ Example Response :
         "status": "DISABLED"
     }
 
-Note: status field can only contain ENABLED or DISABLED value.
+**Info:** The possible `status` values are ENABLED or DISABLED.

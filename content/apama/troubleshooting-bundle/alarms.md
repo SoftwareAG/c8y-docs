@@ -103,7 +103,7 @@ You can view the license information using the diagnostics information as descri
 This alarm is raised whenever the Apama-ctrl microservice switches to Safe mode.
 
 - Alarm type: `apama_safe_mode`
-- Alarm text: Apama has exited unexpectedly. As a precaution, user-provided EPL and Analytics Builder models that might have caused this have been disabled, refer audit log for more details. Please check any recent alarms, or contact support or your administrator.
+- Alarm text: Apama has exited unexpectedly. As a precaution, user-provided EPL, Analytics Builder models and extensions that might have caused this have been disabled. Refer to the audit log for more details. Please check any recent alarms, or contact support or your administrator.
 - Alarm severity: CRITICAL
 
 Safe mode is a state where Apama-ctrl deactivates all Apama Analytics Builder models, extensions in Apama Analytics Builder, and EPL applications. Apama-ctrl raises an alarm and adds audit log entries with details on all deactivated models, extensions and EPL applications. This is triggered when the correlator encounters a crash that may occur because of several reasons, such as running out of memory, uncaught exceptions in activated EPL files, license expiry, etc. To prevent an infinite loop of Apama-ctrl restarts followed by a correlator crash (mostly likely due to a problem with activated EPL files), the microservice checks on every restart if it has restarted in the last 20 minutes. If yes, the microservice considers the restart as a crash and enables Safe mode for Apama-ctrl. Otherwise, it treats the restart as a normal restart. 

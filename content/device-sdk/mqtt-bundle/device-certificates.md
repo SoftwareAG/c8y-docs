@@ -9,10 +9,10 @@ Devices can authenticate against the Cumulocity IoT platform using X.509 client 
  
 Cumulocity IoT expects devices to connect using SSL on port 1884.
 
-Each tenant individually defines whom it trusts by installing the base CA certificate. 
+Each tenant individually defines whom it trusts by uploading the base CA certificate. 
 
 Devices connecting to the platform with certificates do not need to provide tenant, user or password.
-This information will be obtained from the certificates.
+Authentication information will be obtained from the certificates.
 
 #### General requirements for connecting devices with certificates
 
@@ -20,7 +20,7 @@ This information will be obtained from the certificates.
 * Certificate used by devices must be a full chain, including the uploaded CA certificate.
 * The device needs to trust the Cumulocity IoT certificate.
 * Uploaded certificates have to be version 3.
-* Uploaded certificates need to have set: BasicConstraints:[CA:true].
+* Uploaded certificates have to have set: BasicConstraints:[CA:true].
 * Devices have to be registered or uploaded certificates need to have the flag autoRegistrationEnabled (see below for details).
 * Certificates used by devices must be signed by either uploaded CA certificate or by chain of certificates signed by uploaded CA certificates.
 

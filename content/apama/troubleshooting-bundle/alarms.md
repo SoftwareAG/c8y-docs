@@ -291,7 +291,7 @@ The correlator's input and output queues are periodically monitored to check for
 
 The correlator queue size is based on the number of events, not raw bytes.
 
-Check the alarm text to get an indication of which queue is blocking. This also contains information about the slowest receiver and the most backed-up context.
+Check the alarm text to get an indication of which queue is blocking. This also contains information about the slowest receiver and the most backed-up context. To diagnose the cause, see the information given in [The CEP queue is full](#cep_queue_full). A problem is likely to trigger the "correlator queue is full" alarm followed by the "CEP queue is full" alarm.
 
 #### <a name="cep_queue_full"></a>The CEP queue is full
 
@@ -306,7 +306,7 @@ If the CEP queue is full, older events are removed to handle new incoming events
 
 The CEP queue size is based on the number of CEP events, not raw bytes.
 
-To diagnose the cause, you can try the following. It may be that the Apama-ctrl microservice is running slow because of time-consuming rules in the script, or the microservice is deprived of resources, or code is not optimized, etc. Check the input and output queues either from the microservice logs or from the diagnostics overview ZIP file under */correlator/status.json*. 
+To diagnose the cause, you can try the following. It may be that the Apama-ctrl microservice is running slow because of time-consuming rules in the script, or the microservice is deprived of resources, or code is not optimized, etc. Check the input and output queues from the "correlator queue is full" alarm (or from the microservice logs or from the diagnostics overview ZIP file under */correlator/status.json*). 
 
 - If both input and output queues are full, this suggests a slow receiver, possibly EPL sending too many requests (or too expensive a request) to Cumulocity IoT.
 - Else, if only the input queue is full, EPL is probably running in a tight loop. Try analyzing the *cpuProfile.csv* output in the diagnostic overview ZIP file, especially the monitor name and CPU time. The data collected in the profiler may also help in identifying other possible bottlenecks. For details, refer to [Using the CPU profiler](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2Fta-DepAndManApaApp_using_the_cpu_profiler.html) in the Apama documentation. 

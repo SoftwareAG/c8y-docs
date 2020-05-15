@@ -9,7 +9,7 @@ Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen de
 - [Authentifizierungseinstellungen](#authentication) und [Single-Sign-On](#single-sign-on) konfigurieren.
 - [Anwendungseinstellungen](#default-app) ändern.
 - Die [Attributsbibliothek](#properties) verwalten.
-- Systemweite Einstellungen in Cumulocity IoT konfigurieren.
+- Systemweite Einstellungen in Cumulocity IoT [konfigurieren](#config-platform).
 - [Zugangsdaten für den SMS-Anbieter](#openIT-credentials) bereitstellen.
 - [Konnektivitätseinstellungen](#connectivity) verwalten.
 
@@ -39,7 +39,7 @@ Im Feld **Passwortgültigkeit begrenzen für** können Sie die Gültigkeit von B
 
 >**Info:** Passwortbeschränkung und das Erzwingen starker Passörter sind möglicherweise nicht editierbar, falls vom Plattformadministrator so konfiguriert.
 
-Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Nur starke (grüne) Passwörter zulassen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Aufrufen und Anmelden an der Cumulocity IoT-Plattform](/users-guide/getting-started/#login) beschrieben.
+Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Nur starke (grüne) Passwörter zulassen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Aufrufen und Anmelden an der Cumulocity IoT-Plattform](/benutzerhandbuch/getting-started-de/#login) beschrieben.
 
 Starke (grüne) Passwörter müssen "M" Zeichen haben. Die Verwendung bereits früher genutzter Passwörter wird standardmäßig eingeschränkt. Das System merkt sich die letzten "N" von einem Benutzer bereitgestellten Passwörter und erlaubt nicht, diese zu verwenden. Der Standardwert für "N" ist 10.
 
@@ -63,7 +63,7 @@ Sie können eine der folgenden Optionen wählen:
 	 - **TOTP-Zwei-Faktor-Authentifizierung für alle Benutzer erzwingen**: Wenn diese Option aktiviert ist, werden alle Benutzer beim Anmelden zum Einrichten Ihrer TFA gezwungen. Andernfalls kann jeder einzelne Benutzer entscheiden, ob die Aktivierung erfolgen soll oder nicht.
    - **Token-Gültigkeit begrenzen für**: Dauer jeder Sitzung in Minuten.  Nach Ablauf der Sitzung muss sich der Benutzer erneut authentifizieren.
 
-	> **Info:** Diese Strategie ist nur zusammen mit "OAuth Internal" verfügbar. 
+	> **Info:** Diese Strategie ist nur zusammen mit "OAuth Internal" verfügbar.
 
 Klicken Sie **TFA-Einstellungen speichern**, um Ihre Einstellungen zu speichern.
 
@@ -140,9 +140,9 @@ Jedes Mal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens ve
 }
 ```
 
-Dem Benutzer werden die globale Rolle "business" und die Standardanwendung "Cockpit" zugewiesen. 
+Dem Benutzer werden die globale Rolle "business" und die Standardanwendung "Cockpit" zugewiesen.
 
-Klicken Sie **Rechtezuordnung hinzufügen**, um weitere Berechtigungen zu vergeben. Eine Rechtezuordnungsanweisung kann mehrere Überprüfungen enthalten, wie im Beispiel unten. Klicken Sie **und**, um eine Regel zu einer vorhandenen Anweisung hinzuzufügen. Klicken Sie das Minus-Symbol, um eine Regel zu entfernen. 
+Klicken Sie **Rechtezuordnung hinzufügen**, um weitere Berechtigungen zu vergeben. Eine Rechtezuordnungsanweisung kann mehrere Überprüfungen enthalten, wie im Beispiel unten. Klicken Sie **und**, um eine Regel zu einer vorhandenen Anweisung hinzuzufügen. Klicken Sie das Minus-Symbol, um eine Regel zu entfernen.
 
 Von jeder passenden Rechtezuordnung werden dem Benutzer neue Rollen hinzugefügt. Wenn eine Rechtezuordnungsanweisung die Rolle "admin" und eine andere die Rolle "business" zuweist und beide die definierten Bedingungen erfüllen, erhält der Benutzer Zugriff auf die globalen Rollen “business" und "admin".
 
@@ -315,11 +315,11 @@ Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattfo
 1. Klicken Sie **SMS-Anbieter** im Menü **Einstellungen**.
 
 	![Select SMS provider](/images/benutzerhandbuch/Administration/admin-settings-sms-provider.png)
- 
-2. Wählen Sie auf der Seite **SMS-Anbieter** entweder [OpenIt](https://sms.openit.de/main.php) oder [sms77](https://www.sms77.io/en/) als SMS-Anbieter. 
+
+2. Wählen Sie auf der Seite **SMS-Anbieter** entweder [OpenIt](https://sms.openit.de/main.php) oder [sms77](https://www.sms77.io/en/) als SMS-Anbieter.
 
 3. Geben Sie je nach gewähltem Anbieter die entsprechenden Zugangsdaten ein:
- 
+
 	 * Für OpenIT: Ihren OpenIT-Benutzernamen und Ihr Passwort.
 	 * Für sms77: Ihren API-Schlüssel für den Zugriff auf sms77 (zu finden in Ihrem sms77-Login unter Einstellungen > HTTP API).
 
@@ -332,7 +332,7 @@ Unter **Konfiguration** im Menü **Einstellungen** können Sie in Cumulocity IoT
 
 ![Configuration settings](/images/benutzerhandbuch/Administration/admin-settings-configuration.png)
 
->**Info:** Bei einigen der folgenden Attribute können Sie E-Mail-Templates für verschiedene Zwecke konfigurieren. Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden. 
+>**Info:** Bei einigen der folgenden Attribute können Sie E-Mail-Templates für verschiedene Zwecke konfigurieren. Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden.
 
 #### Platzhalter
 

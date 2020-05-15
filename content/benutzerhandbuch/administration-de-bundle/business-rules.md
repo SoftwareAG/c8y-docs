@@ -4,7 +4,7 @@ title: Anwenden von Geschäftsregeln
 
 ---
 
-### Echtzeitverarbeitung
+### <a name="event-processing"> Echtzeitverarbeitung
 
 Mittels Echtzeitverarbeitung können Geschäftsregeln definiert werden, die von Cumulocity IoT automatisch in Echtzeit ausgeführt werden, sobald neue Daten eingehen oder bestehende Daten geändert werden. Die Logik wird in sogenannten Modulen implementiert, die aus einer Menge von CEP-Anweisungen bestehen.
 

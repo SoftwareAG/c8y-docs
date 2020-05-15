@@ -53,7 +53,7 @@ Push-Verbindung bedeutet Verbindung von Cumulocity IoT zu /device/control/notifi
 
 >**Info:** Die Verbindungsüberwachung erfolgt nicht in Echtzeit. Dies bedeutet, dass sich der angezeigte Verbindungsstatus nach dem Ausschalten eines Geräts nicht sofort ändert. Je nach verwendetem Protokoll für die Push-Verbindungsüberwachung kann dies einige Minuten dauern.
 
-<a name="maintenance-mode"></a> **Maintenance mode**
+<a name="maintenance-mode"></a> **Wartungsmodus**
 
 Außerdem kann sich ein Gerät im Wartungsmodus befinden. Dies wird durch ein Werkzeug-Symbol in der Spalte **Status** gekennzeichnet. Dieser spezielle Verbindungsstatus zeigt an, dass das Gerät gerade gewartet wird und nicht überwacht werden kann. Während ein Gerät gewartet wird, werden keine Alarme für dieses Gerät ausgelöst.
 
@@ -91,7 +91,7 @@ Ist ein Gerät offline, nimmt Cumulocity IoT standardmäßig an,
 * dass das Gerät während des Verbindungsabbruchs weiterhin in Betrieb bleibt, wenn dies zuvor der Fall war.
 * dass das Gerät während des Verbindungsabbruchs weiterhin nicht in Betrieb ist, wenn dies zuvor der Fall war.
 
-Es gibt möglicherweise Ausnahmen zu dieser Regel. Wenn Ihr Verkaufsautomat beispielsweise nur mit bargeldloser Bezahlung funktioniert, bedeutet ein Verbindungsabbruch, dass der Automat nichts mehr verkaufen kann und damit nicht mehr betriebsbereit ist. In diesem Fall müssen Nichtverfügbarkeits-Alarme in der ["Administration"-Anwendung](/benutzerhandbuch/administration-de#reprio-alarms) eingestellt werden, die den Schweregrad KRITISCH statt des Schweregrads WICHTIG haben.
+Es gibt möglicherweise Ausnahmen zu dieser Regel. Wenn Ihr Verkaufsautomat beispielsweise nur mit bargeldloser Bezahlung funktioniert, bedeutet ein Verbindungsabbruch, dass der Automat nichts mehr verkaufen kann und damit nicht mehr betriebsbereit ist. In diesem Fall müssen Nichtverfügbarkeits-Alarme in der [Administration-Anwendung](/benutzerhandbuch/administration-de#reprio-alarms) eingestellt werden, die den Schweregrad KRITISCH statt des Schweregrads WICHTIG haben.
 
 Cumulocity IoT zeigt die Serviceverfügbarkeit für einzelne Geräte sowie für alle Geräte an.
 
@@ -184,7 +184,7 @@ In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:
 
 Klicken Sie auf den Pfeil rechts in einem Eintrag, um die Zeile auszuklappen und weitere Details zum Alarm anzuzeigen.
 
-* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information wird verwendet, um die Priorität von Alarmen zu konfigurieren, siehe [Administration“ > Priorisieren von Alarmen](/benutzerhandbuch/administration-de#reprio-alarms).
+* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information wird verwendet, um die Priorität von Alarmen zu konfigurieren, siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration-de#reprio-alarms).
 * **Änderungsprotokoll**: Gibt die Serverzeit an, zu der der Alarm erstellt wurde. Diese kann von der Gerätezeit abweichen.
 
 #### So ändern Sie den Status eines Alarms
@@ -300,11 +300,35 @@ Standardmäßig werden die Ereignisse in Echtzeit angezeigt, sobald sie vom Ger�
 
 Für jedes Ereignis werden die folgenden Informationen bereitgestellt:
 
-|Info|Beschreibung|
-|:---|:---|
-|Zeitstempel|Zeitstempel, wann das Ereignis ausgeführt wurde.
-|Name|Name des Ereignisses.
-|Gerät|Name des Geräts, das das Ereignis sendet. Durch Klicken auf den Namen gelangen Sie zur Detailansicht des Geräts.
+
+<table>
+
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+
+<thead>
+<tr>
+<th align="left">Info</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Zeitstempel</td>
+<td align="left">Zeitstempel, wann das Ereignis ausgeführt wurde.</td>
+</tr>
+<tr>
+<td align="left">Name</td>
+<td align="left">Name des Ereignisses.</td>
+</tr>
+<tr>
+<td align="left">Gerät</td>
+<td align="left">Name des Geräts, das das Ereignis sendet. Durch Klicken auf den Namen gelangen Sie zur Detailansicht des Geräts.</td>
+</tr>
+</tbody>
+</table>
 
 In der Ereignisliste wird der letzte Eintrag ganz oben angezeigt.
 

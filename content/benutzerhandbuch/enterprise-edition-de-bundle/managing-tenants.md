@@ -38,48 +38,48 @@ Im Management-Mandanten finden Sie zudem Informationen über den übergeordneten
 2. Geben Sie die folgenden Attribute an:
 
 	<table>
-<col width = 150>
-<thead>
-<tr>
-<th style="text-align:left">Feld</th>
-<th style="text-align:left">Beschreibung</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Domain/ URL</td>
-<td style="text-align:left">Geben Sie eine Subdomain ihrer Wahl ein, beispielsweise "acme". Die URL des Mandanten lautet dann "acme.cumulocity.com" auf cumulocity.com. Sie können nur eine Subdomain-Ebene verwenden. Sie können zum Beispiel nur "acme.cumulocity.com"auf cumulocity.com verwenden. Sie können aber nicht "mycustomer.acme.cumulocity.com" wählen. Dies wird vom TLS-Standard nicht unterstützt. <br> Die Mandanten-Domain kann Kleinbuchstaben, Ziffern oder Bindestriche enthalten. Sie muss mit einem Buchstaben beginnen; Bindestriche sind nur in der Mitte zulässig; die Mindestlänge beträgt 2 Zeichen. Beachten Sie, dass die Verwendung von Unterstrichen zwar veraltet, aber aus Gründen der Rückwärtskompatibilität noch möglich ist.  </td>
-</tr>
-<tr>
-<td style="text-align:left">Name</td>
-<td style="text-align:left">Name des Mandanten, z. B. Name des Unternehmens.</td>
-</tr>
-<tr>
-<td style="text-align:left">E-Mail des Administrators</td>
-<td style="text-align:left">Sie müssen eine gültige E-Mail-Adresse angeben, damit Benutzer ihr Passwort ändern können.</td>
-</tr>
-<tr>
-<td style="text-align:left">Benutzername des Administrators</td>
-<td style="text-align:left">Benutzername des Administrators dieses Mandanten.</td>
-</tr>
-<tr>
-<td style="text-align:left">Kontaktname</td>
-<td style="text-align:left">Optionaler Name des Ansprechpartners.</td>
-</tr>
-<tr>
-<td style="text-align:left">Telefonnummer</td>
-<td style="text-align:left">Optionale Telefonnummer des Ansprechpartner.</td>
-</tr>
-<tr>
-<td style="text-align:left">Link zum Zurücksetzen des Passworts als E-Mail senden</td>
-<td style="text-align:left">Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie ein Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter <a href="/benutzerhandbuch/getting-started-de/#login" class="no-ajaxy">Erste Schritte &gt; Aufrufen und Anmelden an der Cumulocity IoT-Plattform</a>.</td>
-</tr>
-<tr>
-<td style="text-align:left">Mandantenregel</td>
-<td style="text-align:left">Sie können eine Mandantenregel aus der Dropdown-Liste auswählen, die auf den Mandanten angewendet werden soll.</td>
-</tr>
-</tbody>
-</table>
+	<col width = 150>
+	<thead>
+	<tr>
+	<th style="text-align:left">Feld</th>
+	<th style="text-align:left">Beschreibung</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<td style="text-align:left">Domain/ URL</td>
+	<td style="text-align:left">Geben Sie eine Subdomain ihrer Wahl ein, beispielsweise "acme". Die URL des Mandanten lautet dann "acme.cumulocity.com" auf cumulocity.com. Sie können nur eine Subdomain-Ebene verwenden. Sie können zum Beispiel nur "acme.cumulocity.com"auf cumulocity.com verwenden. Sie können aber nicht "mycustomer.acme.cumulocity.com" wählen. Dies wird vom TLS-Standard nicht unterstützt. <br> Die Mandanten-Domain kann Kleinbuchstaben, Ziffern oder Bindestriche enthalten. Sie muss mit einem Buchstaben beginnen; Bindestriche sind nur in der Mitte zulässig; die Mindestlänge beträgt 2 Zeichen. Beachten Sie, dass die Verwendung von Unterstrichen zwar veraltet, aber aus Gründen der Rückwärtskompatibilität noch möglich ist.  </td>
+	</tr>
+	<tr>
+	<td style="text-align:left">Name</td>
+	<td style="text-align:left">Name des Mandanten, z. B. Name des Unternehmens.</td>
+	</tr>
+	<tr>
+	<td style="text-align:left">E-Mail des Administrators</td>
+	<td style="text-align:left">Sie müssen eine gültige E-Mail-Adresse angeben, damit Benutzer ihr Passwort ändern können.</td>
+	</tr>
+	<tr>
+	<td style="text-align:left">Benutzername des Administrators</td>
+	<td style="text-align:left">Benutzername des Administrators dieses Mandanten.</td>
+	</tr>
+	<tr>
+	<td style="text-align:left">Kontaktname</td>
+	<td style="text-align:left">Optionaler Name des Ansprechpartners.</td>
+	</tr>
+	<tr>
+	<td style="text-align:left">Telefonnummer</td>
+	<td style="text-align:left">Optionale Telefonnummer des Ansprechpartner.</td>
+	</tr>
+	<tr>
+	<td style="text-align:left">Link zum Zurücksetzen des Passworts als E-Mail senden</td>
+	<td style="text-align:left">Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie ein Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter <a href="/benutzerhandbuch/getting-started-de/#login" class="no-ajaxy">Erste Schritte &gt; Aufrufen und Anmelden an der Cumulocity IoT-Plattform</a>.</td>
+	</tr>
+	<tr>
+	<td style="text-align:left">Mandantenregel</td>
+	<td style="text-align:left">Sie können eine Mandantenregel aus der Dropdown-Liste auswählen, die auf den Mandanten angewendet werden soll.</td>
+	</tr>
+	</tbody>
+	</table>
 
 3. Klicken Sie **Speichern**, um Ihre Eingaben zu speichern.
 
@@ -105,7 +105,7 @@ Hier werden die folgenden Informationen angezeigt:
 
 |Feld|Beschreibung
 |:--------|:-----
-|Status|Kann entweder *Eingeschaltet* oder *Ausgeschaltet* sein. <br>*Eingeschaltet* bedeutet: <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene aktiviert (siehe [Konfiguration](/benutzerhandbuch/enterprise-tenant#configuration)), <br> - ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert. <br>*Ausgeschaltet* bedeutet: <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene deaktiviert, <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene aktiviert, aber für den Untermandanten deaktiviert, <br> - kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h., jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).
+|Status|Kann entweder *Eingeschaltet* oder *Ausgeschaltet* sein. <br>*Eingeschaltet* bedeutet: <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene aktiviert (siehe [Konfiguration](/benutzerhandbuch/enterprise-edition-de#configuration)), <br> - ein oder mehrere Untermandanten-Benutzer haben Supportbenutzerzugriff aktiviert. <br>*Ausgeschaltet* bedeutet: <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene deaktiviert, <br> - Supportbenutzerzugriff wurde auf Plattform-Ebene aktiviert, aber für den Untermandanten deaktiviert, <br> - kein Untermandanten-Benutzer hat derzeit einen aktiven Supportbenutzerzugriff (d. h., jede Supportbenutzeranfrage ist entweder abgelaufen oder wurde deaktiviert).
 |Anzahl aktiver Anfragen|Anzahl der aktuell aktiven Anfragen im Untermandanten. Wird nur angezeigt, wenn Supportbenutzerzugriff nicht global auf Plattform-Ebene aktiviert ist. Wird als Zahl in einem kleinen roten Punkt angezeigt.
 |Ablaufdatum|Legt das Datum fest, an dem der Supportbenutzerzugriff für den Mandanten abläuft. Wenn kein Datum festgelegt wurde, wird das Ablaufdatum auf "Unbegrenzt" gesetzt.
 

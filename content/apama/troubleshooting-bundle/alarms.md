@@ -40,6 +40,7 @@ The following is a list of the alarms. The information further down below explai
 - [An EPL file throws an uncaught exception](#apama_ctrl_error)
 - [Invalid measurement format](#apama_measurementformat_invalid)
 - [Multiple extensions with the same name](#extension_error)
+- [The correlator queue is full](#application_queue_full)
 - [The CEP queue is full](#cep_queue_full) (this alarm is coming from Cumulocity IoT Core, but concerns Apama-ctrl)
 
 Once the cause of an alarm is resolved, you have to acknowledge and clear the alarm in the Cumulocity IoT tenant. Otherwise, you will continue to see the alarm until a further restart of the Apama-ctrl microservice.
@@ -278,6 +279,20 @@ This disables all extensions that were deployed to Apama-ctrl. In order to use t
 
 **Info:** In case of multiple duplicates, this alarm is only listed once.
 
+#### <a name="application_queue_full"></a>The correlator queue is full
+
+This alarm is raised whenever the correlator queue is full, including both input queue and output queue.
+
+- Alarm type: `application_queue_full`
+- Alarm text: InputQueueSize: &lt;size of input queue&gt;, OutputQueueSize: &lt;size of output queue&gt;, SlowestReceiver: &lt;name of the slowest receiver&gt;, SlowestReceiverQueueSize: &lt;size of slowest receiver's queue&gt;, MostBackedUpQueue: &lt;name of context with maximum pending events&gt;
+- Alarm severity: CRITICAL
+
+The correlator's input and output queues are periodically monitored to check for building up of events. If the pending queue size grows above the normal threshold (20,000 for the input queue and 10,000 for the output queue), an alarm is raised. The alarm text contains a snapshot of the correlator status at the time of raising the alarm. A correlator with a full input or output queue can cause a serious performance degradation.
+
+The correlator queue size is based on the number of events, not raw bytes.
+
+Check the alarm text to get an indication of which queue is blocking. This also contains information about the slowest receiver and the most backed-up context. To diagnose the cause, see the information given in [The CEP queue is full](#cep_queue_full). A problem is likely to trigger the "correlator queue is full" alarm followed by the "CEP queue is full" alarm.
+
 #### <a name="cep_queue_full"></a>The CEP queue is full
 
 This alarm is raised whenever the CEP queue for the respective tenant is full.
@@ -291,7 +306,7 @@ If the CEP queue is full, older events are removed to handle new incoming events
 
 The CEP queue size is based on the number of CEP events, not raw bytes.
 
-To diagnose the cause, you can try the following. It may be that the Apama-ctrl microservice is running slow because of time-consuming rules in the script, or the microservice is deprived of resources, or code is not optimized, etc. Check the input and output queues either from the microservice logs or from the diagnostics overview ZIP file under */correlator/status.json*. 
+To diagnose the cause, you can try the following. It may be that the Apama-ctrl microservice is running slow because of time-consuming rules in the script, or the microservice is deprived of resources, or code is not optimized, etc. Check the input and output queues from the "correlator queue is full" alarm (or from the microservice logs or from the diagnostics overview ZIP file under */correlator/status.json*). 
 
 - If both input and output queues are full, this suggests a slow receiver, possibly EPL sending too many requests (or too expensive a request) to Cumulocity IoT.
 - Else, if only the input queue is full, EPL is probably running in a tight loop. Try analyzing the *cpuProfile.csv* output in the diagnostic overview ZIP file, especially the monitor name and CPU time. The data collected in the profiler may also help in identifying other possible bottlenecks. For details, refer to [Using the CPU profiler](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2Fta-DepAndManApaApp_using_the_cpu_profiler.html) in the Apama documentation. 

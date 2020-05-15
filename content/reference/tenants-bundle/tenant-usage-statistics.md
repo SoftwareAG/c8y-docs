@@ -17,18 +17,18 @@ layout: redirect
 |storageSize|Number|1|Database storage in use by the tenant, in bytes. Latest value for a queried period.|
 |subscribedApplications|List|1|Names of tenant subscribed applications. Latest value for a queried period.|
 
-"requestCount" - following requests are not included into the counter:
-* internal SmartREST requests used to resolve template
+"requestCount" - the following requests are not included in the counter:
+* internal SmartREST requests used to resolve templates
 * internal SLA monitoring requests
 * calls to any "/health" endpoint
-* device bootstrap process request - "/devicecontrol/deviceCredentials"
-* microservice SDK internal calls for application and his subscriptions - "/currentApplication"
+* device bootstrap process requests - "/devicecontrol/deviceCredentials"
+* Microservice SDK internal calls for applications and subscriptions - "/currentApplication"
 
- "deviceRequestCount" - beside of the exceptions already listed for "requestCount" following requests are not included into the counter:
+ "deviceRequestCount" - beside of the exceptions already listed for "requestCount" the following requests are not included in the counter:
  * requests to /user, /tenant and /application API's
  * application related requests (with "X-Cumulocity-Application-Key" header)
 
-Please note:
+Note:
  * "requestCount" and "deviceRequestCount" are updated every 5 minutes.
  * "deviceCount", "deviceEndpointCount", "deviceWithChildrenCount", "storageSize" and "subscribedApplications" are updated only three times a day starting at 8:57, 16:57 and 23:57.
  * "storageSize" is affected by your retention rules. It is also affected by the regularly running database optimization functions running in Cumulocity IoT. If the size decreases, it does not necessarily mean that data was deleted.
@@ -101,7 +101,7 @@ The table below lists all counters that enhance the Cumulocity IoT tenant statis
 </tbody>
 </table></div>
 
-> **Info:** All counters increases also when the request is invalid, for example wrong payload or missing permissions.
+> **Info:** All counters increase also when the request is invalid, for example wrong payload or missing permissions.
 
 See the table below for more information on how the counters above are increased. Additionally, it shows how inbound data transfers are handled for both MQTT and REST:
 

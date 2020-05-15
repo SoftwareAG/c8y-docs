@@ -38,6 +38,7 @@ The following is a list of the alarms. The information further down below explai
 - [High memory usage](#apama_highmemoryusage)
 - [Warning or higher level logging from an EPL file](#apama_ctrl_fatalcritwarn)
 - [An EPL file throws an uncaught exception](#apama_ctrl_error)
+- [An EPL file blocks the correlator context for too long](#apama_ctrl_warn)
 - [Invalid measurement format](#apama_measurementformat_invalid)
 - [Multiple extensions with the same name](#extension_error)
 - [The correlator queue is full](#application_queue_full)
@@ -257,6 +258,36 @@ You can diagnose the issue by the monitor name and line number given in the alar
 
 For more details, you can also check the Apama logs if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these uncaught exceptions will terminate the execution of that monitor instance, which will typically mean that your application is not going to function correctly. This might even lead to a correlator crash if not handled properly.
 
+#### <a name="apama_ctrl_warn"></a>An EPL file blocks the correlator context for too long
+
+If an EPL application has an infinite loop, it may block the correlator context for too long, not letting any other applications run in the same context or, even worse, cause excessive memory pressure (as the correlator is unable to perform any garbage collection cycles) leading to the application running out of memory. The Apama-ctrl microservice identifies such scenarios (the correlator logs warning messages if an application is blocking a context for too long) and raises alarms, so that the user can identify and fix the problem. 
+
+For example, the following monitor blocks the correlator main context:
+
+```java
+event MyEvent {
+}
+ 
+monitor Sample{
+    action onload() {
+        while true {
+            // do something
+            send MyEvent() to "foo";
+        }
+    }
+}
+```
+
+Apama-ctrl generates the following alarm for the above example:
+
+- Alarm type: `APAMA_CTRL_WARN_<HASHCODE>`
+- Alarm text: &lt;EPLAppName&gt;.&lt;monitorName&gt; - context '&lt;contextName&gt;' has been processing a single event for a long time.
+- Alarm severity: WARNING
+
+You can diagnose the issue by the monitor name and context name given in the alarm. 
+
+For more details, you can also check the Apama logs if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these scenarios may lead to the microservice and correlator running out of memory.
+
 #### <a name="apama_measurementformat_invalid"></a>Invalid measurement format
 
 This alarm is raised whenever the `measurementFormat` key is set with an invalid value in the tenant option.
@@ -284,7 +315,7 @@ This disables all extensions that were deployed to Apama-ctrl. In order to use t
 This alarm is raised whenever the correlator queue is full, including both input queue and output queue.
 
 - Alarm type: `application_queue_full`
-- Alarm text: InputQueueSize: &lt;size of input queue&gt;, OutputQueueSize: &lt;size of output queue&gt;, SlowestReceiver: &lt;name of the slowest receiver&gt;, SlowestReceiverQueueSize: &lt;size of slowest receiver's queue&gt;, MostBackedUpQueue: &lt;name of context with maximum pending events&gt;
+- Alarm text: InputQueueSize: &lt;size of input queue&gt;, OutputQueueSize: &lt;size of output queue&gt;, SlowestReceiver: &lt;name of the slowest receiver&gt;, SlowestReceiverQueueSize: &lt;size of slowest receiver's queue&gt;, SlowestContext: &lt;name of context with maximum pending events&gt;, SlowestContextQueueSize: &lt;size of slowest context's queue&gt;
 - Alarm severity: CRITICAL
 
 The correlator's input and output queues are periodically monitored to check for building up of events. If the pending queue size grows above the normal threshold (20,000 for the input queue and 10,000 for the output queue), an alarm is raised. The alarm text contains a snapshot of the correlator status at the time of raising the alarm. A correlator with a full input or output queue can cause a serious performance degradation.

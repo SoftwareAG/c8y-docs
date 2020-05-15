@@ -42,7 +42,7 @@ Im Feld **Gültigkeitsdauer** können Sie optional die Supportdauer angeben, d. 
 
 Ablaufdatum und -uhrzeit werden anhand der im Feld **Gültigkeitsdauer** angegebenen Dauer aktualisiert. Beispiel: Wenn das aktuelle Ablaufdatum 01/09/2018 15:00 lautet und die Dauer von 24 Stunden beibehalten wurde, aktualisiert der aktivierende Supportbenutzer das Ablaufdatum auf 01/10/2018 15:00.
 
-Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [Verwalten von Mandanten](/benutzerhandbuch/enterprise-tenant#managing-tenants).
+Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [Verwalten von Mandanten](/benutzerhandbuch/enterprise-edition-de#managing-tenants).
 
 ### <a name="branding"></a>Branding
 

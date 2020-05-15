@@ -22,7 +22,7 @@ Cumulocity IoT umfasst die drei folgenden Standardanwendungen:
 <tr>
 <td style="text-align:center"><i class="c8y-icon c8y-icon-administration c8y-icon-duocolor" style="font-size: 36px;"></i></td>
 <td style="text-align:left"><a href="/benutzerhandbuch/administration-de" class="no-ajaxy">Administration</a></td>
-<td style="text-align:left">Die Administration-Anwendung ermöglicht es Administratoren, ihre Benutzer, Rollen, Mandanten, Anwendungen und Regeln zu verwalten sowie eine Reihe von Einstellungen für ihr Konto zu konfigurieren. </td>
+<td style="text-align:left">Die "Administration"-Anwendung ermöglicht es Administratoren, ihre Benutzer, Rollen, Mandanten, Anwendungen und Regeln zu verwalten sowie eine Reihe von Einstellungen für ihr Konto zu konfigurieren. </td>
 </tr>
 <tr>
 <td style="text-align:center"><i class="c8y-icon c8y-icon-cockpit c8y-icon-duocolor" style="font-size: 36px;"></i></td>

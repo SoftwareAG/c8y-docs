@@ -4,7 +4,7 @@ title: Smart Rules
 layout: redirect
 ---
 
-Cumulocity IoT enthält eine Regel-Engine, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Diese Regeln werden in einer Skriptsprache erstellt und in der [Administration-Anwendung](/benutzerhandbuch/administration-de) verwaltet.
+Cumulocity IoT enthält eine Regel-Engine, um Daten in Echtzeit zu analysieren und Aktionen basierend auf Daten auszuführen. Diese Regeln werden in einer Skriptsprache erstellt und in der ["Administration"-Anwendung](/benutzerhandbuch/administration-de) verwaltet.
 
 Zum einfachen Erstellen von Regeln enthält die Cockpit-Anwendung einen "Smart Rule Builder". Mit dem Smart Rule Builder können Regeln aus Templates erstellt werden.
 

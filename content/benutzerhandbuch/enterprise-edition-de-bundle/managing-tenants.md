@@ -342,7 +342,7 @@ Außerdem werden benutzerdefinierte Attribute angezeigt, falls vorhanden.
 
 Benutzerdefinierte Attribute können in der [Attributsbibliothek](/benutzerhandbuch/administration-de#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte [Benutzerdefinierte Attribute](#tenants-custom-properties) des Mandanten eingestellt werden.
 
-Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum filtern, indem Sie einen Start- und einen Endzeitpunkt in der oberen Menüleiste eingeben und **Filter** klicken. Sie können außerdem die Liste nach jeder Spalte filtern und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Siehe auch [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/users-guide/getting-started/#filtering).
+Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum filtern, indem Sie einen Start- und einen Endzeitpunkt in der oberen Menüleiste eingeben und **Filter** klicken. Sie können außerdem die Liste nach jeder Spalte filtern und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Siehe auch [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/benutzerhandbuch/getting-started-de/#filtering).
 
 #### So exportieren Sie die Nutzungsstatistik-Tabelle
 

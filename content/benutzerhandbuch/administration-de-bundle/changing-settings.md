@@ -417,7 +417,8 @@ Derzeit können folgende Anbietereinstellungen festgelegt werden:
 - [Sigfox](/users-guide/optional-services#sigfox)
 - [SIM](/users-guide/optional-services#connectivity)
 
-![Provider settings](/images/benutzerhandbuch/Administration/admin-settings-connectivity-sim.png)
+![Provider settings](/images/benutzerhandbuch/Administration/admin-settings-connectivity-lora.png)
+
 
 #### So können Sie Zugangsdaten bereitstellen oder ersetzen
 

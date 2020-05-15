@@ -66,36 +66,36 @@ Verwenden Sie den Umschalter, um das Weiterleiten von Daten an den Zielmandanten
 4. Jeder Datenfilter enthält die folgenden Informationen:
 
 	<table>
-<col width = 150>
-<thead>
-<tr>
-<th style="text-align:left">Feld</th>
-<th style="text-align:left">Beschreibung</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Gruppe oder Gerät</td>
-<td style="text-align:left">Die Gruppe oder das Gerät, die/das weitergeleitet wird. Wird hier eine Gruppe ausgewählt, werden alle Untergruppen und Untergeräte ebenfalls weitergeleitet. <b>Siehe nachstehende Warnung zur Verwendung von "Alle Objekte".</b> </td>
-</tr>
-<tr>
-<td style="text-align:left">API</td>
-<td style="text-align:left">Der Datentyp, der weitergeleitet wird (Alarme, Ereignisse, Messwerte, Objekte) oder empfangen wird (Kommandos).</td>
-</tr>
-<tr>
-<td style="text-align:left">Zu filternde Fragmente</td>
-<td style="text-align:left">Fragmente, die in einem Gerät vorhanden sein müssen, damit dieses weitergeleitet wird.</td>
-</tr>
-<tr>
-<td style="text-align:left">Zu kopierende Fragmente</td>
-<td style="text-align:left">Fragmente, die zum Ziel kopiert werden. Wenn hier nichts angegeben wird, werden nur die Standardattribute wie Objekte, Alarme, Ereignisse und Messwerte weitergeleitet (siehe unten). Wählen Sie **Alle Fragmente kopieren**, um das gesamte Objekt weiterzuleiten.</td>
-</tr>
-<tr>
-<td style="text-align:left">Type-Filter</td>
-<td style="text-align:left">Weitergeleitete Daten müssen diesen Wert in ihrem "Type"-Attribut haben.</td>
-</tr>
-</tbody>
-</table>
+	<col width = 150>
+	<thead>
+	<tr>
+	<th style="text-align:left">Feld</th>
+	<th style="text-align:left">Beschreibung</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<td style="text-align:left">Gruppe oder Gerät</td>
+	<td style="text-align:left">Die Gruppe oder das Gerät, die/das weitergeleitet wird. Wird hier eine Gruppe ausgewählt, werden alle Untergruppen und Untergeräte ebenfalls weitergeleitet. <b>Siehe nachstehende Warnung zur Verwendung von "Alle Objekte".</b> </td>
+	</tr>
+	<tr>
+	<td style="text-align:left">API</td>
+	<td style="text-align:left">Der Datentyp, der weitergeleitet wird (Alarme, Ereignisse, Messwerte, Objekte) oder empfangen wird (Kommandos).</td>
+	</tr>
+	<tr>
+	<td style="text-align:left">Zu filternde Fragmente</td>
+	<td style="text-align:left">Fragmente, die in einem Gerät vorhanden sein müssen, damit dieses weitergeleitet wird.</td>
+	</tr>
+	<tr>
+	<td style="text-align:left">Zu kopierende Fragmente</td>
+	<td style="text-align:left">Fragmente, die zum Ziel kopiert werden. Wenn hier nichts angegeben wird, werden nur die Standardattribute wie Objekte, Alarme, Ereignisse und Messwerte weitergeleitet (siehe unten). Wählen Sie **Alle Fragmente kopieren**, um das gesamte Objekt weiterzuleiten.</td>
+	</tr>
+	<tr>
+	<td style="text-align:left">Type-Filter</td>
+	<td style="text-align:left">Weitergeleitete Daten müssen diesen Wert in ihrem "Type"-Attribut haben.</td>
+	</tr>
+	</tbody>
+	</table>
 
 5. Klicken Sie **Speichern**, um die Konfiguration zu speichern.
 

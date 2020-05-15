@@ -73,7 +73,7 @@ If you are using SAG Cloud, the application switcher also shows other SAG Cloud 
 
 #### <a name="searching"></a>Full text search
 
-The Cumulocity IoT search field at the right of the top bar in the UI provides a full-text search.
+Cumulocity IoT provides a full text search, available through the search field at the right of the top bar in the UI.
 
 ![Search field](/images/users-guide/getting-started/getting-started-search-button.png)
 

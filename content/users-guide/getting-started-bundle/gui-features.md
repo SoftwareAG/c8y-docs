@@ -71,9 +71,15 @@ If you are using SAG Cloud, the application switcher also shows other SAG Cloud 
 
 ### <a name="searching-and-filtering"></a>Search and filter functionality
 
-#### <a name="searching"></a>Searching
+#### <a name="searching"></a>Full text search
 
-The Cumulocity IoT search field provides a full-text search of the whole inventory.
+Cumulocity IoT provides a full text search, available through the search field at the right of the top bar in the UI.
+
+![Search field](/images/users-guide/getting-started/getting-started-search-button.png)
+
+The search result includes groups, devices and child devices. On entering a search term into the textbox, Cumulocity IoT returns all devices containing this term in any property (name, model, any fragment).
+
+The search functionality is based on the [MongoDB full text search](https://docs.mongodb.com/manual/text-search/).
 
 Entering multiple words separated by a blank returns all objects that match any of the words. For example, entering
 
@@ -95,12 +101,6 @@ You can also exclude words by putting a hyphen before the word to search the inv
 My Demo -Device
 ```
 
-Note, that using "-" inside a string works as a delimiter searching for all parts of the search string:
-
-```text
-My-Demo-Device
-```
-
 Case is ignored. The following search texts return the same result:
 
 ```text
@@ -108,15 +108,19 @@ My Demo Device
 my demo device
 ```
 
->**Info:** Other than with filtering, using wildcards in a search is not supported.
+**Info:** Other than with filtering, using wildcards in a search is not supported.
+
+For details on the MongoDB full text search, see [https://docs.mongodb.com/manual/text-search/](https://docs.mongodb.com/manual/text-search/).
 
 #### <a name="filtering"></a>Filtering
 
 Some pages offer a filtering functionality to filter objects in a list.
 
+![Filter field](/images/users-guide/getting-started/getting-started-filtering.png)
+
 As opposed to the search functionality, on entering filtering criteria you must not necessarily enter complete words.
 
-In many cases you can just enter any arbitrary text into a text field, even just single characters. Entering
+In many cases you can just enter any arbitrary text into the text field, even just 2-3 characters. Entering
 
 ```text
 cl
@@ -130,7 +134,18 @@ In other cases you may enter * as wildcard character to return all objects start
 cl*
 ```
 
-The list will be reduced to the selected objects accordingly.
+The list will immediately be reduced to the selected objects.
+
+>**Important:** On certain pages, the filter mechanism only searches through items shown on a page. This means that if an item is not listed on the respective page, it will not appear in the results. You need to load all results first to search through all items. This behavior applies to the following pages:
+
+>* Device protocols 
+* Firmware repository
+* Software repository
+* Configuration repository
+* Tenants
+* File repository
+
+For details on the filtering mechanism in the devices list refer to [Device Management > Viewing devices > To filter devices](/users-guide/device-management#filtering-devices).
 
 ### Real-time behavior of the navigator
 

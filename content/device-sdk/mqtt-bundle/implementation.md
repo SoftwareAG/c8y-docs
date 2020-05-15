@@ -8,7 +8,7 @@ This section will list the implementation details for the MQTT protocol. The Cum
 
 ### Connecting via MQTT
 
-Cumulocity IoT supports MQTT both via TCP and WebSockets. As URL you use _mqtt.cumulocity.com_.
+Cumulocity IoT supports MQTT both via TCP and WebSockets. As URL you can use your tenant domain (e.g. _mytenant.cumulocity.com/mqtt_) or the domain of the instance in the format mqtt.&lt;instance_domain> (e.g. _mqtt.cumulocity.com_).
 
 Available ports:
 

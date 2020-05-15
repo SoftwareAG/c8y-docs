@@ -15,6 +15,7 @@ Cloud Fieldbus is supported out of the box by the following terminals:
 * [Pssystec SMARTbox Mini](https://devicepartnerportal.softwareag.com/web/devices/10043) for Modbus/RTU
 * [Pssystec SMARTbox DP](https://devicepartnerportal.softwareag.com/web/devices/10041) for Profibus
 * [NetComm Wireless NTC-6200](https://devicepartnerportal.softwareag.com/web/devices/10034) for Modbus/TCP and Modbus/RTU
+* [Casa Systems (NetComm) NTC-220 series](/device-tutorials/netcomm-router/) for Modbus/TCP and Modbus/RTU
 
 For further information on supported devices refer to the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/web/#/) which offers an extensive [collection of devices](https://devicepartnerportal.softwareag.com/web/#/devices) with guaranteed plug-and-play compatibility and full functional support in the Cumulocity IoT platform. 
 
@@ -33,10 +34,10 @@ To connect a Modbus/RTU device, follow these steps:
 3. Check the serial communication settings of the device according to the instructions provided with the Modbus device (i.e. baud rates and communication protocol). These have to match with all devices on the bus.
 4. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Modbus** tab.
 5. Change the communication settings shown in the **Serial communication** section to match the settings on the bus, if needed.
-6. Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency where measurements are sent to Cumulocity IoT.
+6. Change the transmit rate and the polling rate according to your requirements. The transmit rate is the frequency where measurements are sent to Cumulocity IoT. The polling rate is the frequency at which the Modbus devices are polled for changes. 
 7. Click **Save** to save your settings.
 
-![Add Modbus device](/images/users-guide/cloud-fieldbus/fieldbus-new-modbus-rtu.png)
+![Add Modbus device](/images/users-guide/cloud-fieldbus/fieldbus-modbus-rtu.png)
 
 **To add child devices**
 
@@ -54,10 +55,10 @@ To connect a Modbus/TCP device, follow these steps:
 2. Check the network settings of the device using the instructions provided with the device.
 3. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Network** tab. Verify that the LAN settings of the terminal match the settings of the device so that TCP communication can be established.
 4. Switch to the **Modbus** tab.
-5. Change the transmit rate and the polling rate according to your requirements. The polling rate is the frequency at which the Modbus devices are polled for changes. The transmit rate is the frequency at which measurements are sent to Cumulocity IoT.
+5. Change the transmit rate and the polling rate according to your requirements. The transmit rate is the frequency at which measurements are sent to Cumulocity IoT. The polling rate is the frequency at which the Modbus devices are polled for changes. 
 6. Click **Save** to save your settings.
 
-![Add Modbus device](/images/users-guide/cloud-fieldbus/fieldbus-new-modbus-tcp.png)
+![Add Modbus device](/images/users-guide/cloud-fieldbus/fieldbus-modbus-tcp.png)
 
 **To add child devices**
 
@@ -67,7 +68,7 @@ To connect a Modbus/TCP device, follow these steps:
 
 Cumulocity IoT will now send a notification to the Modbus terminal that a new device is ready to be managed. This may take a few seconds.
 
-> **Info:** It is assumed that all Modbus/TCP communication uses the standard Modbus/TCP port 502. On the NTC-6200, the port to be used can be configured through the variable "service.cumulocity.plugin.lua__modbus.port" via the device shell or the local web user interface of the device.
+> **Info:** It is assumed that all Modbus/TCP communication uses the standard Modbus/TCP port 502. On the NTC-6200 and NTC 220 series, the port to be used can be configured through the variable "service.cumulocity.modbus.port" via the device shell or the local web user interface of the device.
 
 #### Connecting CAN devices
 
@@ -171,7 +172,7 @@ In the widget, the selected coils and registers are grouped into display categor
 
 ![Use the Fieldbus Device Widget](/images/users-guide/cloud-fieldbus/fieldbus-modbus-status.png)
 
-Registers and coils that can be changed are represented by active widgets. For example, in the screenshot above, the "Master switch" coil and the "Mode" register are editable. If you click a switch, an operation to change the corresponding coil or register is sent to the terminal. Similar, if you change a value and click **Set**, an operation is created. The terminal will then carry out the configuration change on the device, as requested through the operation. While the operation is being processed, a progress indicator is shown.
+Registers and coils that can be changed are represented by active widgets. If you click a switch, an operation to change the corresponding coil or register is sent to the terminal. Similar, if you change a value and click **Set**, an operation is created. The terminal will then carry out the configuration change on the device, as requested through the operation. While the operation is being processed, a progress indicator is shown.
 
 #### <a name="scada"></a>Monitoring the device status using the SCADA widget
 

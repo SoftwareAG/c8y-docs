@@ -315,7 +315,7 @@ This disables all extensions that were deployed to Apama-ctrl. In order to use t
 This alarm is raised whenever the correlator queue is full, including both input queue and output queue.
 
 - Alarm type: `application_queue_full`
-- Alarm text: InputQueueSize: &lt;size of input queue&gt;, OutputQueueSize: &lt;size of output queue&gt;, SlowestReceiver: &lt;name of the slowest receiver&gt;, SlowestReceiverQueueSize: &lt;size of slowest receiver's queue&gt;, MostBackedUpQueue: &lt;name of context with maximum pending events&gt;
+- Alarm text: InputQueueSize: &lt;size of input queue&gt;, OutputQueueSize: &lt;size of output queue&gt;, SlowestReceiver: &lt;name of the slowest receiver&gt;, SlowestReceiverQueueSize: &lt;size of slowest receiver's queue&gt;, SlowestContext: &lt;name of context with maximum pending events&gt;, SlowestContextQueueSize: &lt;size of slowest context's queue&gt;
 - Alarm severity: CRITICAL
 
 The correlator's input and output queues are periodically monitored to check for building up of events. If the pending queue size grows above the normal threshold (20,000 for the input queue and 10,000 for the output queue), an alarm is raised. The alarm text contains a snapshot of the correlator status at the time of raising the alarm. A correlator with a full input or output queue can cause a serious performance degradation.

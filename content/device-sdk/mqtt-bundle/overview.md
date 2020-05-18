@@ -33,4 +33,4 @@ The MQTT section is structured as follows:
 
 This section does not describe the basics of MQTT communication. If you are unfamiliar with MQTT, we recommend consulting one of the numerous introductions in the Internet. Some references can be found on the [MQTT web site](http://mqtt.org/documentation).
 
-> **Info**: For all MQTT connections to our platform, the maximum accepted payload size is 16184 bytes (16KiB), which includes both message header and body. The header size varies, but its minimum is 2 bytes.
+> **Info**: For all MQTT connections to the platform, the maximum accepted payload size is 16184 bytes (16KiB), which includes both message header and body. The header size varies, but its minimum is 2 bytes.

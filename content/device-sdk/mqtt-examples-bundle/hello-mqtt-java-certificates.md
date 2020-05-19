@@ -24,7 +24,7 @@ $ ./00createRootSelfSignedCertificate.sh
 ```shell
 $ ./01createSignedCertificate.sh
 ```  
-3. Move certificates to keystore  
+3. Move certificates to keystore    
 ```shell
 $ ./02moveCertificatesToKeystore.sh
 ```  
@@ -89,6 +89,7 @@ Next change the configuration in MQTT client. Copy *chain-with-private-key-iot-d
             return mqttClient;
         }
 ```  
- Now the device can publish and subscribe as a standard device.
-   
+ Now the device can publish and subscribe as a standard device.  
+ Please note before first connect no other actions are required, such as creating a user.  
+ User will be created during [auto registration](#TODO) process.
 **Info:** Do not need to set a password, user or tenant for the MQTT client connecting using certificates. Cumulocity IoT will recognize tenant and user by the provided certificate.

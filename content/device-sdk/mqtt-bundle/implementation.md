@@ -14,9 +14,21 @@ Available ports:
 
 | &nbsp; | TCP | WebSockets |
 |:-----|:----|:----|
-|SSL   |8883 |443|
-|no SSL|1883 |80|
+| one-way SSL | 8883 | 443 |
+| no SSL | 1883 | 80 |
+| experimental two-way SSL | 1884* | - |
 
+* Port 1884 has to be enabled to activate communication via ssl. To do that, add the rule to Chef:
+
+"MQTTClientCert" => {
+        "enabled" => true,
+        "enableTransparentSSLPort" => false
+    }
+    
+enabled - opens port 1884 and let devices authorize via certificate
+enableTransparentSSLPort - redirect whole communication from 1883 port to 1884 (recommended as false, since handling
+client authorization via username and password is not implemented there yet), so right now it will enforce using certificates
+by devices also on 1883 port (which is highly not recommended).
 
 > **Info**: To use WebSockets you need to connect to the path <kbd>/mqtt</kbd> and follow the [MQTT standard](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718127) for WebSocket communication.
 
@@ -70,7 +82,11 @@ Every operation received will contain the template ID followed by the ID of the 
 
 #### MQTT authentication
 
-MQTT supports setting a username and a password. To connect to Cumulocity IoT, the MQTT username needs to include both tenantID and username in the format "tenantID/username".
+MQTT supports authentication via username and password or via device certificates. 
+
+To connect to Cumulocity IoT via username and password, the MQTT username needs to include both tenantID and username in the format "tenantID/username".
+
+To connect to Cumulocity IoT via certificates, devices have to contain whole chain of certificates leading to trusted root certificate. Also they have to contain server certificate in their truststore.
 
 #### MQTT ClientId
 
@@ -95,6 +111,8 @@ d:mySerialNumber:myDefaultTemplate
 ```
 
 The uniqueness of the MQTT ClientId is determined only by the deviceIdentifier. Therefore from the above examples only one client can be connected at the same time.
+
+During ssl connection with certificates, the deviceIdentifier has to match the Common Name of the certificate it is using (first certificate in the chain, which is provided by that device).
 
 #### MQTT Quality of Service
 

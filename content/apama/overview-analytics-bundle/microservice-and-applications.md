@@ -22,3 +22,5 @@ If your tenant is subscribed to the Apama Starter microservice (instead of other
 - Apama EPL Apps is not available in the application switcher.
 
 Contact Software AG Support to discuss adding more capabilities.
+
+> **Info:** If you have an on-premises installation of Cumulocity IoT (instead of using the cloud), you have the possibility to subscribe to the Apama-ctrl-smartrules microservice which is optimized for low RAM usage. It allows you to reduce your hosting costs for Apama when only smart rules are required. The Apama-ctrl-smartrules microservice allows unlimited use of smart rules. Other Apama capabilities (Apama EPL Apps and Apama Analytics Builder), however, are not supported. You can download the Apama-ctrl-smartrules microservice from Empower. See the <which one ?? install or ops ?? guide> in Empower for more information.

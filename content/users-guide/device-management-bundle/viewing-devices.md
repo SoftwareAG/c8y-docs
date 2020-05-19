@@ -111,13 +111,11 @@ The device will be permanently deleted from the platform.
 
 Cumulocity IoT includes a full-text search for devices.
 
-Click the **Search** button at the top right and enter a search term into the textbox. Cumulocity IoT returns all devices containing this term in any property (name, model, any fragment...)
-
-Our example shows a search for "Ublox C027".
-
-> **Info:** Unlike filtering, the use of wildcards in a search is not supported.
+Click the **Search** button at the top right and enter a search term into the textbox. 
 
 For details on the search functionality, refer to [Getting Started > UI functionalities and features](/users-guide/getting-started#gui-features).
+
+Our example shows a search for "Ublox C027".
 
 ![Search for devices](/images/users-guide/DeviceManagement/devmgmt-search.png)
 

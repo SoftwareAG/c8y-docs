@@ -20,12 +20,12 @@ Do not use a local disk, store everything in Cumulocity IoT. You do not have a g
 
 #### Liveness probes
 
-Liveness probes should be exposed to Kubernetes as well, just a health endpoint is not sufficient. Moreover, take special attention to implement liveness probes properly. Kubernetes will restart or undeploy the service if the liveness probe is not reliable. Never check 3rd parties in the liveness probe - this can prevent the service from working. 
+Liveness probes should be exposed to Kubernetes as well, only having a health endpoint is not sufficient. Moreover, take special attention on implementing liveness probes properly. Kubernetes will restart or undeploy the service if the liveness probe is not reliable. Never check 3rd parties in the liveness probe - this can prevent the service from working. 
 
 
 #### Network traffic
 
-It is not recommended to build a small microservice that loads most of the functionality on start.
+It is not recommended to build a microservice that loads most of the functionality as well as external content on start.
 
 
 #### Resource consumption

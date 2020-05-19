@@ -8,15 +8,15 @@ The tenant interface consists of the following parts:
 
 Resource  |  Description
 ------|-------------
-Tenant collection |  Retrieves tenants <br>Accessible by url <kbd>/tenant/tenants</kbd>
-Tenant  |  Represents an individual tenant that can be viewed <br>Accessible by url <kbd>/tenant/tenants/&lt;tenantId></kbd>
-Application reference collection  |  Retrieves applications <br>Accessible by url <kbd>/tenant/tenants/&lt;tenantId>/applications</kbd>
-Application reference  |  Represents an individual application reference that can be viewed <br>Accessible by url <kbd>/tenant/tenants/&lt;tenantId>/applications/&lt;applicationId></kbd>
-Option collection  |  Enables creating new options and viewing existing ones <br>Accessible by url <kbd>/tenant/options</kbd>
-Option  |  Represents an individual option that can be viewed and modified <br>Accessible by url <kbd>/tenant/options/&lt;optionCategory>/&lt;optionKey></kbd>
+Tenant collection |  Retrieves tenants <br>Accessible by URL <kbd>/tenant/tenants</kbd>
+Tenant  |  Represents an individual tenant that can be viewed <br>Accessible by URL <kbd>/tenant/tenants/&lt;tenantId></kbd>
+Application reference collection  |  Retrieves applications <br>Accessible by URL <kbd>/tenant/tenants/&lt;tenantId>/applications</kbd>
+Application reference  |  Represents an individual application reference that can be viewed <br>Accessible by URL <kbd>/tenant/tenants/&lt;tenantId>/applications/&lt;applicationId></kbd>
+Option collection  |  Enables creating new options and viewing existing ones <br>Accessible by URL <kbd>/tenant/options</kbd>
+Option  |  Represents an individual option that can be viewed and modified <br>Accessible by URL <kbd>/tenant/options/&lt;optionCategory>/&lt;optionKey></kbd>
 Usage statistics  |  Returns information on the request load and database usage of tenants
 Current tenant  |  Represents user data for the current logged service user
-Trusted certificates  |  Represents certificates which the tenant trusts <br>Accessible by url <kbd>/tenant/tenants/&lt;tenantId>/trusted-certificates</kbd>
+Trusted certificates  |  Represents certificates which the tenant trusts <br>Accessible by URL <kbd>/tenant/tenants/&lt;tenantId>/trusted-certificates</kbd>
 
 > **Important**: For all PUT/POST requests, the "Accept" header shall be provided, otherwise an empty response body will be returned.
 

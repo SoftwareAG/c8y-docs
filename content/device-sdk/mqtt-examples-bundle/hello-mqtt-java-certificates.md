@@ -1,40 +1,40 @@
 ---
 weight: 40
-title: Hello MQTT Java with Certificates
+title: Hello MQTT Java with certificates
 layout: redirect
 ---
 
 In this tutorial, you will learn how to use the Java MQTT client with Cumulocity IoT using X509 certificates for authentication. 
 
-You can find a sample Java MQTT client using x509 certificates and all necessary scripts used in this guide in the [cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/mqtt-client)
+You can find a sample Java MQTT client using x509 certificates and all necessary scripts used in this tutorial in the Bitbucket repository [cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/mqtt-client).
 ### Prerequisites  
 
 In order to follow this tutorial, check the following prerequisites:
 
-* You have correctly configured java client based on [Hello MQTT Java](#hello-mqtt-java)
+* You have correctly configured the Java client based on [Hello MQTT Java](#hello-mqtt-java).
 * You have a valid tenant, a user and a password in order to access Cumulocity IoT.
 
-If you do not have valid certificate, for testing purposes you can generate self signed certificate.  
-The scripts are in the Bitbucket repository [cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/mqtt-client/scripts)  
-1. Create root self signed certificate
+If you do not have a valid certificate, for testing purposes you can generate self signed certificate.  
+The scripts are in the Bitbucket repository [cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/mqtt-client/scripts).  
+1. Create root self signed certificate:  
 ```shell
 $ ./00createRootSelfSignedCertificate.sh
 ```  
-2. Create and sign certificate
+2. Create and sign certificate:  
 ```shell
 $ ./01createSignedCertificate.sh
 ```  
-3. Move certificates to keystore    
+3. Move certificates to keystore:    
 ```shell
 $ ./02moveCertificatesToKeystore.sh
 ```  
-4. Import the trusted certificate into keystore
+4. Import the trusted certificate into keystore:  
 ```shell
 $ keytool -importcert -file c8y-mqtt-server.cer -keystore chain-with-private-key-iot-device-0001.jks -alias "Alias"
 ```  
-In the first step you have to upload root certificates to your tenant. You can do it via [device-management](#TODO) or via [rest](#TODO).  
+In the first step you have to upload root certificates to your tenant. You can do it via [device-management](#TODO) or via [REST](#TODO).  
 For example:  
-Copy from file: *chain-iot-device-0001.pem* certificate and send it to the platform via rest.  
+Copy the certificate from file: *chain-iot-device-0001.pem* and send it to the platform via REST.    
  
    POST /tenant/tenants/<<tenantId>>/trusted-certificates
 
@@ -57,7 +57,7 @@ Copy from file: *chain-iot-device-0001.pem* certificate and send it to the platf
     }
     
 
-Next change the configuration in MQTT client. Copy *chain-with-private-key-iot-device-0001.jks* into resource folder and set configuration as in the example below. 
+Next, change the configuration in the MQTT client. Copy the file *chain-with-private-key-iot-device-0001.jks* into the resource folder and set the configuration as in the example below. 
 
 ```java
         //Configuration
@@ -90,6 +90,6 @@ Next change the configuration in MQTT client. Copy *chain-with-private-key-iot-d
         }
 ```  
  Now the device can publish and subscribe as a standard device.  
- Please note before first connect no other actions are required, such as creating a user.  
- User will be created during [auto registration](#TODO) process.
-**Info:** Do not need to set a password, user or tenant for the MQTT client connecting using certificates. Cumulocity IoT will recognize tenant and user by the provided certificate.
+ Note that before the first connect no other actions are required, such as creating a user.  
+ The user will be created during the [auto registration](#TODO) process.  
+>**Info:** You do not need to set a password, user or tenant for the MQTT client connecting using certificates. Cumulocity IoT will recognize the tenant and the user by the provided certificate.

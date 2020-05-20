@@ -36,7 +36,7 @@ Die Regel verwendet die folgenden Parameter:
        <col style="width: 70%;">
     </colgroup><thead>
 <tr>
-<th align="left">Step</th>
+<th align="left">Schritt</th>
 <th align="left">Feld</th>
 <th align="left">Beschreibung</th>
 </tr>
@@ -60,10 +60,15 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">4</td>
 <td align="left">Ziel-Assets oder -geräte</td>
-<td align="left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+<td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
+Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+</td>
 </tr>
 </tbody>
 </table>
+
+Sie können eine einzelne Gruppe oder ein einzelnes Gerät auswählen (nicht mehrere). Um die dynamische Gruppe in anderen Assets oder Geräten zu aktivieren, müssen Sie zu dem jeweiligen Asset bzw. Gerät navigieren und die dynamische Gruppe dort aktivieren. Anschließend können Sie alle Ziel-Assets oder -geräte in einer Liste namens "Aktiv für Ziel-Asset oder Geräte" in den Smart Rules-Details sehen.
 
 **Fehlerbehebung**
 
@@ -81,6 +86,8 @@ Die Regel verwendet die folgenden Parameter:
 
 Wenn ein Alarm erzeugt wird, wird eine E-Mail gesendet.
 
+>**Info:** Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden. 
+
 **Parameter**
 
 Die Regel verwendet die folgenden Parameter:
@@ -95,7 +102,7 @@ Die Regel verwendet die folgenden Parameter:
        <col style="width: 70%;">
     </colgroup><thead>
 <tr>
-<th align="left">Step</th>
+<th align="left">Schritt</th>
 <th align="left">Feld</th>
 <th align="left">Beschreibung</th>
 </tr>
@@ -119,7 +126,10 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">4</td>
 <td align="left">Ziel-Assets oder -geräte</td>
-<td align="left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+<td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
+Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+</td>
 </tr>
 </tbody>
 </table>
@@ -152,7 +162,7 @@ Die Regel verwendet die folgenden Parameter:
        <col style="width: 70%;">
     </colgroup><thead>
 <tr>
-<th align="left">Step</th>
+<th align="left">Schritt</th>
 <th align="left">Feld</th>
 <th align="left">Beschreibung</th>
 </tr>
@@ -176,7 +186,10 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">4</td>
 <td align="left">Ziel-Assets oder -geräte</td>
-<td align="left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+<td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
+Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+</td>
 </tr>
 </tbody>
 </table>
@@ -211,7 +224,7 @@ Die Regel verwendet die folgenden Parameter:
        <col style="width: 70%;">
     </colgroup><thead>
 <tr>
-<th align="left">Step</th>
+<th align="left">Schritt</th>
 <th align="left">Feld</th>
 <th align="left">Beschreibung</th>
 </tr>
@@ -235,7 +248,10 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">4</td>
 <td align="left">Ziel-Assets oder -geräte</td>
-<td align="left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+<td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
+Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+</td>
 </tr>
 </tbody>
 </table>
@@ -272,7 +288,7 @@ Die Regel verwendet die folgenden Parameter:
        <col style="width: 70%;">
     </colgroup><thead>
 <tr>
-<th align="left">Step</th>
+<th align="left">Schritt</th>
 <th align="left">Feld</th>
 <th align="left">Beschreibung</th>
 </tr>
@@ -296,12 +312,15 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">4</td>
 <td align="left">Ziel-Assets oder -geräte</td>
-<td align="left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+<td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
+Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+</td>
 </tr>
 </tbody>
 </table>
 
-> **Info**: Damit ein Alarm ausgelöst wird, muss das Gerät mindestens einmal nach Erstellen der Regel innerhalb des Geofence-Bereichs gewesen sein.
+> **Info:** Damit ein Alarm ausgelöst wird, muss das Gerät mindestens einmal nach Erstellen der Regel innerhalb des Geofence-Bereichs gewesen sein.
 
 **Fehlerbehebung**
 
@@ -317,6 +336,8 @@ Die Regel verwendet die folgenden Parameter:
 
 Wenn ein Geofence-Bereich überschritten wird, wird eine E-Mail gesendet.
 
+>**Info:** Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden. 
+
 **Parameter**
 
 Die Regel verwendet die folgenden Parameter:
@@ -331,7 +352,7 @@ Die Regel verwendet die folgenden Parameter:
        <col style="width: 70%;">
     </colgroup><thead>
 <tr>
-<th align="left">Step</th>
+<th align="left">Schritt</th>
 <th align="left">Feld</th>
 <th align="left">Beschreibung</th>
 </tr>
@@ -355,12 +376,15 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">4</td>
 <td align="left">Ziel-Assets oder -geräte</td>
-<td align="left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+<td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
+Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+</td>
 </tr>
 </tbody>
 </table>
 
-> **Info**: Damit die Regel ausgeführt wird, muss das Gerät mindestens einmal nach Erstellen der Regel innerhalb des Geofence-Bereichs gewesen sein.
+> **Info:** Damit die Regel ausgeführt wird, muss das Gerät mindestens einmal nach Erstellen der Regel innerhalb des Geofence-Bereichs gewesen sein.
 
 **Fehlerbehebung**
 
@@ -389,7 +413,7 @@ Die Regel verwendet die folgenden Parameter:
        <col style="width: 70%;">
     </colgroup><thead>
 <tr>
-<th align="left">Step</th>
+<th align="left">Schritt</th>
 <th align="left">Feld</th>
 <th align="left">Beschreibung</th>
 </tr>
@@ -413,7 +437,10 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">4</td>
 <td align="left">Ziel-Assets oder -geräte</td>
-<td align="left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+<td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
+Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+</td>
 </tr>
 </tbody>
 </table>
@@ -426,7 +453,7 @@ Die Regel verwendet die letzten beiden Messungen in einem bestimmten Zeitraum, b
 
 Die Regel wurde so konfiguriert, dass alle 20 Minuten eine Berechnung stattfindet. Die folgenden Messdaten gehen ein:
 100 kg at 11:59 and 200 kg at 12:14.
-Um 12:20h wird die Regel ausgelöst und es werden die letzten beiden Messungen zugrunde gelegt. Es wird die Wert- und Zeit-Differenz berechnet. Der Verbrauchsmesswert von 12:20h beträgt also 400 kg/h.
+Um 12:20 Uhr wird die Regel ausgelöst und es werden die letzten beiden Messungen zugrunde gelegt. Es wird die Wert- und Zeit-Differenz berechnet. Der Verbrauchsmesswert von 12:20 Uhr beträgt also 400 kg/h.
 Wenn keine weiteren Messdaten im letzten Intervall erzeugt wurden, wird ein Messwert mit dem Wert 0 erstellt.
 
 ### Bei fehlenden Messdaten Alarm erzeugen
@@ -449,7 +476,7 @@ Die Regel verwendet die folgenden Parameter:
        <col style="width: 70%;">
     </colgroup><thead>
 <tr>
-<th align="left">Step</th>
+<th align="left">Schritt</th>
 <th align="left">Feld</th>
 <th align="left">Beschreibung</th>
 </tr>
@@ -463,7 +490,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">2</td>
 <td align="left">Verwendeter Messwert</td>
-<td align="left"><strong>Typ</strong>: Typ des Messwerts. Der eingehende Messwert muss den gleichen Typen haben. Wenn eine Regel im Daten-Explorer erstellt wird, ist der Typ bereits angegeben. <br> <strong>Zeitintervall</strong>: Intervall, in welchem Verbrauchswerte berechnet werden.</td>
+<td align="left"><strong>Typ</strong>: Typ des Messwerts. Der eingehende Messwert muss den gleichen Typen haben. Wenn eine Regel im Daten-Explorer erstellt wird, ist der Typ bereits angegeben.<br> <strong>Zeitintervall</strong>: Intervall, in welchem Verbrauchswerte berechnet werden.</td>
 </tr>
 <tr>
 <td align="left">3</td>
@@ -473,7 +500,10 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">4</td>
 <td align="left">Ziel-Assets oder -geräte</td>
-<td align="left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+<td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
+Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+</td>
 </tr>
 </tbody>
 </table>
@@ -523,9 +553,12 @@ Die Regel verwendet die folgenden Parameter:
 <td style="text-align:left">Das Kommando, das gesendet wird. Das Kommando wird als JSON-Beschreibung bereitgestellt. Unter dem "Kommando"-Feld können einige Standardkommandos ausgewählt werden. Um ein Standardkommando zu verwenden, wählen sie das entsprechende Kommando und klicken Sie die Pfeil-Schaltfläche auf der rechten Seite. Die JSON-Beschreibung des ausgewählten Kommandos wird eingefügt.</td>
 </tr>
 <tr>
-<td style="text-align:left">4</td>
-<td style="text-align:left">Ziel-Assets oder -geräte</td>
-<td style="text-align:left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+<td align="left">4</td>
+<td align="left">Ziel-Assets oder -geräte</td>
+<td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
+Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+</td>
 </tr>
 </tbody>
 </table>
@@ -568,7 +601,7 @@ Die Regel verwendet die folgenden Parameter:
        <col style="width: 70%;">
     </colgroup><thead>
 <tr>
-<th align="left">Step</th>
+<th align="left">Schritt</th>
 <th align="left">Feld</th>
 <th align="left">Beschreibung</th>
 </tr>
@@ -592,7 +625,10 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">4</td>
 <td align="left">Ziel-Assets oder -geräte</td>
-<td align="left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+<td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
+Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+</td>
 </tr>
 </tbody>
 </table>
@@ -661,7 +697,7 @@ Die Regel verwendet die folgenden Parameter:
        <col style="width: 70%;">
     </colgroup><thead>
 <tr>
-<th align="left">Step</th>
+<th align="left">Schritt</th>
 <th align="left">Feld</th>
 <th align="left">Beschreibung</th>
 </tr>
@@ -685,7 +721,10 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">4</td>
 <td align="left">Ziel-Assets oder -geräte</td>
-<td align="left">Gruppen oder Geräte, auf die die Regel angewendet werden soll.</td>
+<td align="left">Wählen Sie eine Gruppe oder ein Gerät, auf die/das die Regel angewendet werden soll. Um die Smart Rule in anderen Assets oder Geräten anzuwenden, navigieren Sie zu den jeweiligen Objekten und aktivieren Sie dort die Smart Rule. In den Smart Rules-Details wird eine Liste namens "Aktiv für Ziel-Asset oder Geräte" angezeigt. <br>
+Wenn Sie dieses Feld leer lassen, wird die Smart Rule auf jede Gruppe und jedes Gerät angewendet. Sie können dann die Smart Rule für spezifische Assets oder Geräte deaktivieren. In diesem Fall wird in den Smart Rules-Details eine Liste namens "Inaktiv für Ziel-Assets oder Geräte" angezeigt. <br>
+Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie unter <a href="#toggle-rules" class="no-ajaxy">So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät</a>.
+</td>
 </tr>
 </tbody>
 </table>

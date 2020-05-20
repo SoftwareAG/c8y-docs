@@ -4,20 +4,75 @@ title: Ändern von Einstellungen
 layout: redirect
 ---
 
-Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen des Kontos ändern oder verwalten, wie
+Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen des Kontos verwalten:
 
-- [Single Sign-On](#single-sign-on) konfigurieren.
+- [Authentifizierungseinstellungen](#authentication) und [Single-Sign-On](#single-sign-on) konfigurieren.
 - [Anwendungseinstellungen](#default-app) ändern.
-- [Authentifizierungseinstellungen](#authentication) ändern.
-- die [Attributsbibliothek](#properties) verwalten.
-- Einstellungen für die Enterprise Edition konfigurieren, siehe [Enterprise Edition](#config-platform).
+- Die [Attributsbibliothek](#properties) verwalten.
+- Systemweite Einstellungen in Cumulocity IoT [konfigurieren](#config-platform).
+- [Zugangsdaten für den SMS-Anbieter](#openIT-credentials) bereitstellen.
 - [Konnektivitätseinstellungen](#connectivity) verwalten.
 
-### <a name="single-sign-on"></a>Konfigurieren von Single-Sign-On
+
+
+### <a name="authentication"></a>Ändern von Authentifizierungseinstellungen
+
+Klicken Sie **Authentifizierung** im Menü **Einstellungen**, wenn Sie die Anmelde- oder TFA-Einstellungen ändern möchten.
+
+![Password settings](/images/benutzerhandbuch/Administration/admin-settings-authentication.png)
+
+>**Info:** Wenn das Menü nicht sichtbar ist, stellen Sie sicher, dass der Benutzer eine der folgenden Rollen hat: `ROLE_TENANT_ADMIN` oder `ROLE_TENANT_MANAGEMENT_ADMIN`.
+
+
+#### Anmeldeeinstellungen
+
+Unter **Bevorzugter Login-Modus** sind zwei Modi verfügbar:
+
+* "OAuth Internal" - Dies ist die empfohlene Option, da sie mehr Sicherheit bietet.
+* "Basic Auth" - Diese Option sollte nur aus bestimmten Kompatibilitätsgründen gewählt werden.
+
+Dieser Anmeldemodus wird von den Anwendungen der Plattform als Standardmethode zum Authentifizieren von Benutzern verwendet. Die Geräteauthentifizierung bleibt unverändert.
+
+>**Info:** Wenn "OAuth Internal" erzwungen wird, kann "Basic Auth" nicht mehr zum Anmelden bei Anwendungen verwendet werden. Ältere Anwendungen zeigen die Anmeldung möglicherweise nicht korrekt an und müssen aktualisiert werden.
+
+Im Feld **Passwortgültigkeit begrenzen für** können Sie die Gültigkeit von Benutzerpasswörtern beschränken, indem Sie die Anzahl der Tage eingeben, nach der Benutzer ihre Passwörter ändern müssen. Wenn Sie keine Passwortänderung erzwingen möchten, verwenden Sie "0" für die uneingeschränkte Gültigkeit von Passwörtern (Standardwert).
+
+>**Info:** Passwortbeschränkung und das Erzwingen starker Passörter sind möglicherweise nicht editierbar, falls vom Plattformadministrator so konfiguriert.
+
+Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Nur starke (grüne) Passwörter zulassen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Aufrufen und Anmelden an der Cumulocity IoT-Plattform](/benutzerhandbuch/getting-started-de/#login) beschrieben.
+
+Starke (grüne) Passwörter müssen "M" Zeichen haben. Die Verwendung bereits früher genutzter Passwörter wird standardmäßig eingeschränkt. Das System merkt sich die letzten "N" von einem Benutzer bereitgestellten Passwörter und erlaubt nicht, diese zu verwenden. Der Standardwert für "N" ist 10.
+
+>**Info:** "M" und "N" können vom Plattform-Administrator konfiguriert werden.
+
+Klicken Sie **Speichern**, um Ihre Einstellungen anzuwenden.
+
+#### TFA-Einstellungen
+
+Aktivieren Sie die Checkbox **Zwei-Faktor-Authentifizierung zulassen**, wenn TFA bei Ihrem Mandanten zulässig sein soll (nur für Administratoren möglich).
+
+Sie können eine der folgenden Optionen wählen:
+
+* **SMS-basiert**: unterstützt die folgenden Einstellungen:
+	- **Token-Gültigkeit begrenzen für**: Dauer jeder Sitzung in Minuten. Wenn die Sitzung abgelaufen ist oder ein Benutzer sich abmeldet, muss der Benutzer einen neuen Bestätigungscode eingeben.
+   - **Bestätigungscode-Gültigkeit begrenzen für**: Hier können Sie die Dauer jedes per SMS zugesandten Bestätigungscodes festlegen. Wenn die Sitzung abgelaufen ist, muss der Benutzer einen neuen Bestätigungscode eingeben.
+
+	> **Info:** Für den Mandanten muss ein SMS-Gateway-Microservice konfiguriert werden. Es versteht sich von selbst, dass nur Benutzer, denen eine gültige Telefonnummer zugewiesen ist, diese Funktionalität nutzen können.
+
+* **Google Authenticator** (zeitabhängiges Einmal-Passwort = TOTP) zur Unterstützung der folgenden Einstellungen:
+	 - **TOTP-Zwei-Faktor-Authentifizierung für alle Benutzer erzwingen**: Wenn diese Option aktiviert ist, werden alle Benutzer beim Anmelden zum Einrichten Ihrer TFA gezwungen. Andernfalls kann jeder einzelne Benutzer entscheiden, ob die Aktivierung erfolgen soll oder nicht.
+   - **Token-Gültigkeit begrenzen für**: Dauer jeder Sitzung in Minuten.  Nach Ablauf der Sitzung muss sich der Benutzer erneut authentifizieren.
+
+	> **Info:** Diese Strategie ist nur zusammen mit "OAuth Internal" verfügbar.
+
+Klicken Sie **TFA-Einstellungen speichern**, um Ihre Einstellungen zu speichern.
+
+
+### <a name="single-sign-on"></a>Konfigurieren von Single Sign-On
 
 Cumulocity IoT bietet Single-Sign-On-Funktionalität, die es dem Anwender ermöglicht, sich mit einem einzigen 3rd-Party-Autorisierungsserver über ein OAuth2-Protokoll, beispielsweise Azure Active Directory, anzumelden. Aktuell wird die Vergabe von Autorisierungscodes nur mit Access Tokens im JWT-Format unterstützt.
 
-**Info**: Die Single-Sign-On-Funktionalität verwendet Cookies-Technologien. Sie kann nur genutzt werden, wenn Cookies in den Einstellungen Ihres Browsers zugelassen sind.
+> **Info:** Die Single-Sign-On-Funktionalität verwendet Cookies-Technologien. Sie kann nur genutzt werden, wenn Cookies in den Einstellungen Ihres Browsers zugelassen sind.
 
 Die Single-Sign-On-Funktionalität wurde mit der Cumulocity IoT-Version 9.12 aktiviert. Microservices müssen mit dem Microservice SDK der Version 9.12 oder höher erstellt sein, um korrektes Funktionieren zu gewährleisten.
 
@@ -51,7 +106,7 @@ Da das OAuth-Protokoll auf der Ausführung von HTTP-Anfragen und -Redirects basi
 
 Der erste Teil der **Single-Sign-On**-Seite besteht aus der Anfragekonfiguration. Hier werden die Anfrage-Adresse, Anfrageparameter, Kopfzeile sowie Body von Token- und Refresh-Anfragen konfiguriert. Die Autorisierungsmethode wird von POST-Anfragen als GET-, Token- und Refresh-Anfrage ausgeführt.
 
-Eine Abmeldeanfrage kann optional festgelegt werden. Sie führt ein [Front Channel Single Logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html) aus. Wenn diese Option konfiguriert ist, wird der Benutzer nach dem Abmelden aus Cumulocity IoT zur festgelegten Abmelde-URL des Autorisierungsservers weitergeleitet.
+Eine Abmeldeanfrage kann optional festgelegt werden. Sie führt ein [Front-Channel Single Logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html) aus. Wenn diese Option konfiguriert ist, wird der Benutzer nach dem Abmelden aus Cumulocity IoT zur festgelegten Abmelde-URL des Autorisierungsservers weitergeleitet.
 
 ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-logout-custom.png)
 
@@ -71,7 +126,7 @@ Der Bereich **Grundeinstellungen** der **Single-Sign-On**-Seite besteht aus den 
 |Gruppe|Gruppe, der der Benutzer beim ersten Anmelden zugeordnet wird (ab Version 9.20 ersetzt durch dynamische Rechtezuordnung, siehe unten)
 |Anwendungen|Anwendungen, die dem Benutzer beim ersten Anmelden zugewiesen werden (ab Version 9.20 ersetzt durch dynamische Rechtezuordnung, siehe unten)
 
-Jedesmal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens verifiziert und dient als Basis für den Benutzerzugang zur Cumulocity IoT-Plattform. Der folgende Abschnitt beschreibt die Zuordnung zwischen JWT-Claims und dem Zugang zur Plattform.
+Jedes Mal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens verifiziert und dient als Basis für den Benutzerzugang zur Cumulocity IoT-Plattform. Der folgende Abschnitt beschreibt die Zuordnung zwischen JWT-Claims und dem Zugang zur Plattform.
 
  ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-7.png)
 
@@ -85,7 +140,11 @@ Jedesmal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens ver
 }
 ```
 
-Dem Benutzer werden die globalen Rollen "business" und "application cockpit" zugewiesen. Klicken Sie **Rechtezuordnung hinzufügen**, um weitere Berechtigungen zu vergeben. Klicken Sie das Minus-Symbol, um eine Regel zu entfernen. Eine Anweisung kann mehrere Überprüfungen enthalten, wie im Beispiel unten. Klicken Sie **und**, um eine Überprüfung zu einer vorhandenen Anweisung hinzuzufügen.
+Dem Benutzer werden die globale Rolle "business" und die Standardanwendung "Cockpit" zugewiesen.
+
+Klicken Sie **Rechtezuordnung hinzufügen**, um weitere Berechtigungen zu vergeben. Eine Rechtezuordnungsanweisung kann mehrere Überprüfungen enthalten, wie im Beispiel unten. Klicken Sie **und**, um eine Regel zu einer vorhandenen Anweisung hinzuzufügen. Klicken Sie das Minus-Symbol, um eine Regel zu entfernen.
+
+Von jeder passenden Rechtezuordnung werden dem Benutzer neue Rollen hinzugefügt. Wenn eine Rechtezuordnungsanweisung die Rolle "admin" und eine andere die Rolle "business" zuweist und beide die definierten Bedingungen erfüllen, erhält der Benutzer Zugriff auf die globalen Rollen “business" und "admin".
 
 Mit "=" als Operator können Sie Platzhalter im Feld **Wert** verwenden. Der unterstützte Platzhalter ist das Sternsymbol (\*), das null oder mehr Zeichen entspricht. Wenn Sie beispielsweise "cur\*" eingeben, entspricht dies den Zeichenketten "cur", "curiosity", "cursor" und allen anderen, die mit “cur” beginnen. "f\*n" entspricht den Zeichenketten "fn", "fission", "falcon" und allen anderen, die mit "f" beginnen und mit "n" enden.
 
@@ -135,7 +194,7 @@ Jedes Access Token wird durch ein Signing-Zertifikat signiert. Aktuell gibt es d
 
 Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code).
 
-Während der Konfiguration der Azure AD entspricht die Redirect-URI Ihrer vollständigen Domain-Adresse. In diesem Dokument verwenden wir beispielhaft *http://aad.cumulocity.com*. In Azure AD sind keine weitere Schritte erforderlich.
+Während der Konfiguration der Azure AD entspricht die Redirect-URI Ihrer vollständigen Domain-Adresse. In diesem Dokument verwenden wir beispielhaft `http://aad.cumulocity.com`. In Azure AD sind keine weitere Schritte erforderlich.
 
 ##### Cumulocity IoT-Konfiguration
 
@@ -186,68 +245,16 @@ Klicken Sie **Anwendung**, um Anwendungseinstellungen zu bearbeiten.
 
 Unter **Standardanwendung** können Sie eine Standardanwendung für alle Benutzer Ihres Mandanten festlegen.
 
->**Info**: Alle Benutzer müssen Zugriff auf diese Anwendung haben.
+>**Info:** Alle Benutzer müssen Zugriff auf diese Anwendung haben.
 
 Unter **Zugriffskontrolle** können Administratoren CORS (Cross-Origin Resource Sharing) über die Cumulocity IoT-API aktivieren.
 
 Die Einstellung **Zulässige Domain** ermöglicht es Ihren JavaScript-Webanwendungen, direkt mit REST APIs zu kommunizieren.
 
 * Geben Sie ein Sternsymbol "*" ein, um die Kommunikation mit allen Hosts zu erlauben.
-* Geben Sie "http://my.host.com, http://myother.host.com" ein, um Anwendungen aus http://my.host.com und http://myother.host.com die Kommunikation mit der Plattform zu erlauben.
+* Geben Sie `http://my.host.com`, `http://myother.host.com` ein, um Anwendungen aus `http://my.host.com` und `http://myother.host.com` die Kommunikation mit der Plattform zu erlauben.
 
 Weitere Information erhalten Sie unter [http://enable-cors.org](http://enable-cors.org).
-
-### <a name="authentication"></a>Ändern von Authentifizierungseinstellungen
-
-Klicken Sie **Authentifizierung** im Menü **Einstellungen**, wenn Sie die Anmelde- oder TFA-Einstellungen ändern möchten.
-
-![Password settings](/images/benutzerhandbuch/Administration/admin-settings-authentication.png)
-
->**Info**: Wenn das Menü nicht sichtbar ist, stellen Sie sicher, dass der Benutzer eine der folgenden Rollen hat: `ROLE_TENANT_ADMIN` oder `ROLE_TENANT_MANAGEMENT_ADMIN`.
-
-
-#### Anmeldeeinstellungen
-
-Unter **Bevorzugter Login-Modus** sind zwei Modi verfügbar:
-
-* "OAuth Internal" - Dies ist die empfohlene Option, da sie mehr Sicherheit bietet.
-* "Basic Auth" - Diese Option sollte nur aus bestimmten Kompatibilitätsgründen gewählt werden.
-
-Dieser Anmeldemodus wird von den Anwendungen der Plattform als Standardmethode zum Authentifizieren von Benutzern verwendet. Die Geräteauthentifizierung bleibt unverändert.
-
->**Info**: Wenn "OAuth Internal" erzwungen wird, kann "Basic Auth" nicht mehr zum Anmelden bei Anwendungen verwendet werden. Ältere Anwendungen zeigen die Anmeldung möglicherweise nicht korrekt an und müssen aktualisiert werden.
-
-Im Feld **Passwortgültigkeit begrenzen für** können Sie die Gültigkeit von Benutzerpasswörtern beschränken, indem Sie die Anzahl der Tage eingeben, nach der Benutzer ihre Passwörter ändern müssen. Wenn Sie keine Passwortänderung erzwingen möchten, verwenden Sie "0" für die uneingeschränkte Gültigkeit von Passwörtern (Standardwert).
-
->**Info**: Passwortbeschränkung und das Erzwingen starker Passörter sind möglicherweise nicht editierbar, falls vom Plattformadministrator so konfiguriert.
-
-Standardmäßig können Benutzer jedes Passwort verwenden, das 8 Zeichen oder mehr enthält. Wenn Sie **Nur starke (grüne) Passwörter zulassen** auswählen, müssen die Benutzer starke Passwörter verwenden, wie unter [Erste Schritte > Aufrufen und Anmelden an der Cumulocity IoT-Plattform](/benutzerhandbuch/getting-started-de#login) beschrieben.
-
-Starke (grüne) Passwörter müssen "M" Zeichen haben. Die Verwendung bereits früher genutzter Passwörter wird standardmäßig eingeschränkt. Das System merkt sich die letzten "N" von einem Benutzer bereitgestellten Passwörter und erlaubt nicht, diese zu verwenden. Der Standardwert für "N" ist 10.
-
->**Info**: "M" und "N" können vom Plattform-Administrator konfiguriert werden.
-
-Klicken Sie **Speichern**, um Ihre Einstellungen anzuwenden.
-
-#### TFA-Einstellungen
-
-Aktivieren Sie die Checkbox **Zwei-Faktor-Authentifizierung zulassen**, wenn TFA bei Ihrem Mandanten zulässig sein soll (nur für Administratoren möglich).
-
-Sie können eine der folgenden Optionen wählen:
-
-* **SMS-basiert**: unterstützt die folgenden Einstellungen:
-	- **Token-Gültigkeit begrenzen für**: Dauer jeder Sitzung in Minuten. Wenn die Sitzung abgelaufen ist, muss der Benutzer einen neuen Bestätigungscode eingeben.
-   - **Bestätigungscode-Gültigkeit begrenzen für**: Hier können Sie die Dauer jedes per SMS zugesandten Bestätigungscodes festlegen. Wenn die Sitzung abgelaufen ist, muss der Benutzer einen neuen Bestätigungscode eingeben.
-
-	> **Info** Für den Mandanten muss ein SMS-Gateway-Microservice konfiguriert werden. Es versteht sich von selbst, dass nur Benutzer, denen eine gültige Telefonnummer zugewiesen ist, diese Funktionalität nutzen können.
-
-* **Google Authenticator** (zeitabhängiges Einmal-Passwort = TOTP) zur Unterstützung der folgenden Einstellungen:
-	 - **TOTP-Zwei-Faktor-Authentifizierung für alle Benutzer erzwingen**: Wenn diese Option aktiviert ist, werden alle Benutzer beim Anmelden zum Einrichten Ihrer TFA gezwungen. Andernfalls kann jeder einzelne Benutzer entscheiden, ob die Aktivierung erfolgen soll oder nicht.
-   - **Token-Gültigkeit begrenzen für**: Dauer jeder Sitzung in Minuten.  Nach Ablauf der Sitzung muss sich der Benutzer erneut authentifizieren.
-
-	> **Info** Diese Strategie ist nur zusammen mit "OAuth Internal" verfügbar. Anfänglich wird diese Funktion nur für einige Mandanten zur Verfügung gestellt und ist deshalb möglicherweise nicht in der Benutzeroberfläche zu sehen. Falls dies auf Sie zutrifft und Sie keine Version über 1005.0.0 verwenden, wenden Sie sich bitte an den Support.
-
-Klicken Sie **TFA-Einstellungen speichern**, um Ihre Einstellungen zu speichern.
 
 ### <a name="properties"></a>Verwalten der Attributsbibliothek
 
@@ -261,7 +268,7 @@ Mit benutzerdefinierten Attributen können Sie das Datenmodell der in Cumulocity
 - Eigene Mandantenattribute sind bei der Erstellung von Mandanten verfügbar. Die eigenen Attribute können unter Untermandanten in der Registerkarte Benutzerdefinierte Attribute bearbeitet werden. Außerdem können diese Attribute in den Nutzungsstatistiken eingesehen und exportiert werden.
 - Benutzerdefinierte Alarm- und Ereignisattribute können Ihren Berichten als eigene Felder hinzugefügt werden und sind in der Seite **Exporte** in der Cockpit-Anwendung verfügbar.
 
->**Info**: Benutzerdefinierte Attribute sind für alle authentifizierten Benutzer des Mandanten sichtbar, unabhängig von ihrer Stammdatenrollen-Berechtigung.
+>**Info:** Benutzerdefinierte Attribute sind für alle authentifizierten Benutzer des Mandanten sichtbar, unabhängig von ihrer Stammdatenrollen-Berechtigung.
 
 #### <a name="add-property"></a>So fügen Sie ein benutzerdefiniertes Attribut hinzu
 
@@ -297,31 +304,45 @@ Mit benutzerdefinierten Attributen können Sie das Datenmodell der in Cumulocity
 1. Klicken Sie auf den Namen eines Attributs in der Liste, um dieses zu öffnen.
 2. Klicken Sie **Entfernen**, um das Attribut zu löschen.
 
-### <a name="openIT-credentials"></a>Eingeben von OpenIT-Zugangsdaten
+### <a name="openIT-credentials"></a>Bereitstellen von Zugangsdaten für den SMS-Anbieter
 
-Um OpenIT-Zugangsdaten einzugeben, klicken Sie **OpenIT-Zugangsdaten** im Menü **Einstellungen**.
+SMS werden für verschiedene Funktionen der Plattform verwendet wie [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration-de#tfa) und Benachrichtigungen etwa bei Alarmen.
 
-![Enter OpenIT credentials](/images/benutzerhandbuch/Administration/admin-settings-openit.png)
+Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattform-Funktionen, die SMS-Dienste verwenden.
 
-Durch die Eingabe von OPenIT-Zugangsdaten erlauben Sie der Plattform, SMS-Dienste zu verwenden, die von [OpenIt](https://sms.openit.de/main.php) bereitgestellt werden.
+#### So geben Sie die Zugangsdaten für den SMS-Anbieter ein
 
-SMS werden für verschiedene Funktionen in den Anwendungen verwendet wie [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration-de#tfa) und Benachrichtigungen etwa bei Alarmen.
+1. Klicken Sie **SMS-Anbieter** im Menü **Einstellungen**.
+
+	![Select SMS provider](/images/benutzerhandbuch/Administration/admin-settings-sms-provider.png)
+
+2. Wählen Sie auf der Seite **SMS-Anbieter** entweder [OpenIt](https://sms.openit.de/main.php) oder [sms77](https://www.sms77.io/en/) als SMS-Anbieter.
+
+3. Geben Sie je nach gewähltem Anbieter die entsprechenden Zugangsdaten ein:
+
+	 * Für OpenIT: Ihren OpenIT-Benutzernamen und Ihr Passwort.
+	 * Für sms77: Ihren API-Schlüssel für den Zugriff auf sms77 (zu finden in Ihrem sms77-Login unter Einstellungen > HTTP API).
+
+4. Klicken Sie **Speichern**, um Ihre Einstellungen zu speichern.
+
 
 ### <a name="config-platform"></a>Konfigurationseinstellungen
 
-Unter **Konfiguration** im Menü **Einstellungen** können Sie systemweite Attribute konfigurieren.
+Unter **Konfiguration** im Menü **Einstellungen** können Sie in Cumulocity IoT systemweite Attribute konfigurieren.
 
 ![Configuration settings](/images/benutzerhandbuch/Administration/admin-settings-configuration.png)
+
+>**Info:** Bei einigen der folgenden Attribute können Sie E-Mail-Templates für verschiedene Zwecke konfigurieren. Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden.
 
 #### Platzhalter
 
 Die folgenden Platzhalter sind auf der Seite **Konfiguration** zu finden:
 
-- {host} - Der Wert dieses Platzhalters ist "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". Beispiel: Wenn "tenantId" automatisch generiert wird, ist der Host "h<span>ttps://t12345678.cumulocity.</span>com“.
-- {tenant-domain} - Dies ist der Standort, an dem der Mandant aufgerufen werden kann. Entspricht "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". {tenant-domain} kann beispielsweise "h<span>ttps://myTenant.cumulocity.</span>com“ sein.
+- {host} - Der Wert dieses Platzhalters ist "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". Beispiel: Wenn "tenantId" automatisch generiert wird, ist der Host `https://t12345678.cumulocity.com`.
+- {tenant-domain} - Dies ist der Standort, an dem der Mandant aufgerufen werden kann. Entspricht "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". Beispiel: {tenant-domain} kann `https://myTenant.cumulocity.com` sein.
 - {token} - Ein automatisch generiertes System-Token zum Zurücksetzen des Passworts. Wenn ein Benutzer das Zurücksetzen des Passworts anfordert, wird ein neues zufallsgeneriertes Token erstellt. Dieses Token ist nur mit dem jeweiligen Benutzer verknüpft und ermöglicht nur ein einmaliges Zurücksetzen des Passworts. Dieser Platzhalter wird standardmäßig in Verbindung mit dem Attribut {tenant-domain} verwendet: "{tenant-domain}?token={token}".
 
->**Info**: Beim Enterprise Tenant können die {tenantDomain}-Platzhalter verschiedene Werte annehmen. Ein Beispiel für eine Mandanten-Domain (tenant-domain) wäre "https://myTenant.myhost.com".
+>**Info:** Beim Enterprise Tenant können die {tenantDomain}-Platzhalter verschiedene Werte annehmen. Ein Beispiel für eine Mandanten-Domain (tenant-domain) wäre `https://myTenant.myhost.com`.
 
 #### Zwei-Faktor-Authentifizierung
 
@@ -396,7 +417,8 @@ Derzeit können folgende Anbietereinstellungen festgelegt werden:
 - [Sigfox](/users-guide/optional-services#sigfox)
 - [SIM](/users-guide/optional-services#connectivity)
 
-![Provider settings](/images/benutzerhandbuch/Administration/admin-settings-connectivity-sim.png)
+![Provider settings](/images/benutzerhandbuch/Administration/admin-settings-connectivity.png)
+
 
 #### So können Sie Zugangsdaten bereitstellen oder ersetzen
 

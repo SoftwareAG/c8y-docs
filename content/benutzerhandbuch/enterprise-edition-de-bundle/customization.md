@@ -10,7 +10,7 @@ Im Menü **Einstellungen** können Sie verschiedene Anpassungseinstellungen vorn
 
 ### <a name="configuration"></a>Konfiguration
 
->**Info**: Informationen zu den Einstellungen in der Registerkarte **Konfiguration** finden Sie in [Ändern von Einstellungen > Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#config-platform) unter Administration. Hier werden nur die Funktionen erläutert, die ausschließlich für Enterprise Tenants verfügbar sind.
+>**Info:** Informationen zu den Einstellungen in der Registerkarte **Konfiguration** finden Sie in [Ändern von Einstellungen > Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#config-platform) unter Administration. Hier werden nur die Funktionen erläutert, die ausschließlich für Enterprise Tenants verfügbar sind.
 
 #### Anwendungen
 
@@ -132,15 +132,25 @@ Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
 
 Im Bereich **Sonstiges** können Sie den Rand-Radius für Schaltflächen durch Angabe eines Werts in Pixel (px) festlegen.
 
+**Cookie-Banner**
+
+Im Abschnitt **Cookie-Banner** legen Sie die Einstellungen für das Banner mit den Cookie-Nutzungsinformationen fest. Das Banner wird für alle Benutzer des aktuellen Mandanten und der Untermandanten angezeigt, bis ein Benutzer **Akzeptieren und fortfahren** klickt.
+
+Folgende Parameter können festgelegt werden:
+
+* Titel. Cookie-Banner-Titel.
+* Text. Cookie-Banner-Text mit allgemeiner Anweisung zur Cookie-Nutzung und den zugehörigen Anwendungsfällen.
+* Link zur Datenschutzerklärung. Ein Link zu der Seite mit der Datenschutzerklärung.
+
 ### <a name="domain-name"></a>Domain-Name
 
 In der Registerkarte **Domain-Name** können Sie Ihren eigenen Domain-Namen festlegen.
 
->**Wichtig**: Sie benötigen eine gültige Lizenz, um Ihre Domain zu aktivieren. Bitte kontaktieren Sie unser Sales-Team unter sales@cumulocity.com, um eine Lizenz für Ihre Domain zu installieren.  
+>**Wichtig:** Sie benötigen eine gültige Lizenz, um Ihre Domain zu aktivieren. Bitte kontaktieren Sie unser Sales-Team unter sales@cumulocity.com, um eine Lizenz für Ihre Domain zu installieren.  
 
 <img src="/images/benutzerhandbuch/enterprise-tenant/et-domain-name.png" alt="Domain name">
 
->**Info**: Die Funktionalität "Benutzerdefinierter Domain-Name" ist nur für cumulocity.com- oder Private Edition-Installationen verfügbar, bei denen kein benutzerdefinierter Load Balancer verwendet wird.
+>**Info:** Die Funktionalität "Benutzerdefinierter Domain-Name" ist nur für cumulocity.com- oder Private Edition-Installationen verfügbar, bei denen kein benutzerdefinierter Load Balancer verwendet wird.
 
 Zunächst müssen Sie ein entsprechendes Zertifikat hochladen, in dem Sie **Zertifikat hochladen** klicken. Stellen Sie sicher, dass
 
@@ -148,7 +158,7 @@ Zunächst müssen Sie ein entsprechendes Zertifikat hochladen, in dem Sie **Zert
 * das Zertifikat nicht passwortgeschützt ist,
 * Sie ein Wildcard-Zertifikat verwenden, um die Erstellung von Untermandanten zu ermöglichen.
 
-**Info**: Wenn Ihr Zertifikat nicht in einem gültigen PKCS#12-Format vorliegt aber Sie PEM-Dateien für Zertifikat, privaten Schlüssel und Autorisierungskette haben, können Sie mit dem folgenden Kommando eine gültige PKCS#12-Datei generieren:
+> **Info:** Wenn Ihr Zertifikat nicht in einem gültigen PKCS#12-Format vorliegt aber Sie PEM-Dateien für Zertifikat, privaten Schlüssel und Autorisierungskette haben, können Sie mit dem folgenden Kommando eine gültige PKCS#12-Datei generieren:
 
 ```shell
 openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -certfile chain.pe
@@ -167,7 +177,7 @@ Vergewissern Sie sich, dass Sie alle A-Einträge für die Wildcard-Domain entfer
 
 Nach erfolgreicher Aktivierung werden Sie zu Ihrem Enterprise Tenant unter der neuen Domain umgeleitet. Sie erhalten eine Email mit Informationen über die Aktivierung.
 
->**Info**: Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht mehr mit der Cumulocity IoT-Domain zugreifen. Verwenden Sie anstatt dessen Ihren eigenen Domain-Namen.
+>**Info:** Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht mehr mit der Cumulocity IoT-Domain zugreifen. Verwenden Sie anstatt dessen Ihren eigenen Domain-Namen.
 
 
 #### Aktualisieren des Zertifikats
@@ -180,14 +190,14 @@ Wenn Ihr Zertifikat abläuft, müssen Sie es durch ein neues Zertifikat mit eine
 * das Zertifikat exakt denselben Domain-Namen wie das aktuell aktive Zertifikat hat.
 * Sie einen CNAME-Eintrag zu Ihrem DNS-Server hinzugefügt haben. Details zum CNAME-Eintrag finden Sie weiter oben.
 
->**Info**: Berücksichtigen Sie, dass es nach dem Ersetzen des Zertifikats einige Minuten dauern kann, bis das neue Zertifikat den Benutzern/Browsern bereitgestellt wird.
+>**Info:** Berücksichtigen Sie, dass es nach dem Ersetzen des Zertifikats einige Minuten dauern kann, bis das neue Zertifikat den Benutzern/Browsern bereitgestellt wird.
 
 
 #### Deaktivieren eines Zertifikats
 
 Wenn Sie zu Ihrer alten Domain auf Cumulocity IoT zurückkehren möchten, können Sie Ihr Zertifikat ganz einfach wieder deaktivieren.
 
->**Wichtig**: Verwenden Sie diese Funktion mit Vorsicht. Ihre Kunden werden nicht mehr in der Lage sein, auf Ihre Untermandanten zuzugreifen.
+>**Wichtig:** Verwenden Sie diese Funktion mit Vorsicht. Ihre Kunden werden nicht mehr in der Lage sein, auf Ihre Untermandanten zuzugreifen.
 
 #### Troubleshooting
 
@@ -226,5 +236,5 @@ HTTP/1.1 200 OK
 ```
 
 
->**Info**: Berücksichtigen Sie, dass es nach dem Ändern des DNS-Eintrags bis zu 24 Stunden dauern kann, bis der neue Eintrag propagiert wurde.
+>**Info:** Berücksichtigen Sie, dass es nach dem Ändern des DNS-Eintrags bis zu 24 Stunden dauern kann, bis der neue Eintrag propagiert wurde.
 >

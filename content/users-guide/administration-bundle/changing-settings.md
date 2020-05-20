@@ -415,7 +415,7 @@ The following provider settings may currently be specified:
 - [Sigfox](/users-guide/optional-services#sigfox)
 - [SIM](/users-guide/optional-services#connectivity)
 
-![Provider settings](/images/users-guide/Administration/admin-settings-connectivity-sim.png)
+![Provider settings](/images/users-guide/Administration/admin-settings-connectivity.png)
 
 #### To provide or replace credentials
 

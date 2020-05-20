@@ -35,7 +35,7 @@ Resource consumption should be defined as necessary in the [microservice manifes
 
 #### Scaling
 
-There is currently no way to influence load balancer behaviour for scaled microservices (for details on scaling see [General aspects > Isolation and scaling](/microservice-sdk/concept/#isolation-levels). The behaviour is round-robin. Refer to [Microservice manifest](/microservice-sdk/concept/#manifest) for further information on how to configure scaling in the manifest file *cumulocity.json*.
+There is currently no way to influence load balancer behaviour for scaled microservices (for details on scaling see [General aspects > Isolation and scaling](/microservice-sdk/concept/#isolation-levels)). The behaviour is round-robin. Refer to [Microservice manifest](/microservice-sdk/concept/#manifest) for further information on how to configure scaling in the manifest file *cumulocity.json*.
 
 
 #### Shared microservices

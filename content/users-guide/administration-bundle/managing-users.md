@@ -55,8 +55,8 @@ Initially, the **User** page only shows the top-level users. To see all users in
 	<table>
 <thead>
 <colgroup>
-   <col style="width: 20%;">
-   <col style="width: 80%;">
+<col style="width: 20%;">
+<col style="width: 80%;">
 </colgroup>
 <tr>
 <th align="left">Field</th>

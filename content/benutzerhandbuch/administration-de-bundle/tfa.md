@@ -23,7 +23,7 @@ Wenn Sie einen Benutzer hinzufügen und TFA aktiviert ist, muss eine Telefonnumm
 
 ![Enable TFA](/images/benutzerhandbuch/Administration/admin-user-enable-tfa.png)
 
->**Info**: Dieser Prozess kann nur über die Administrationsoberfläche ausgeführt werden und ist unter **Benutzereinstellungen** nicht verfügbar.
+>**Info:** Dieser Prozess kann nur über die Administrationsoberfläche ausgeführt werden und ist unter **Benutzereinstellungen** nicht verfügbar.
 
 
 ### TOTP (Google Authenticator)

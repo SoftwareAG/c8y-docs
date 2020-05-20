@@ -23,4 +23,4 @@ If your tenant is subscribed to the Apama Starter microservice (instead of other
 
 Contact Software AG Support to discuss adding more capabilities.
 
-> **Info:** If your tenant is subscribed to the Apama-ctrl-smartrules microservice, Apama EPL Apps and Apama Analytics Builder are not available. 
+> **Info:** If your tenant is subscribed to the Apama Smart Rules-only microservice (also called Apama-ctrl-smartrules), Apama EPL Apps and Apama Analytics Builder are not available. 

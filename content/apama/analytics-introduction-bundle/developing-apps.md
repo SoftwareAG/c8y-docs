@@ -17,7 +17,7 @@ Apama EPL Apps provides an interface for interactively editing new or existing E
 
 Any user on the tenant wishing to use Apama EPL Apps will need to be a **CEP Manager**. See [Managing permissions](/users-guide/administration/#managing-permissions) in the *User guide*.
 
-> **Info**: To be able to develop applications with Apama EPL Apps and/or to import them from Software AG Designer into Cumulocity IoT, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Apama EPL Apps web application provided in Cumulocity IoT. If you have Apama Starter or Apama-ctrl-smartrules, Apama EPL Apps is not available in the application switcher. If you want to have this capability, contact Software AG support. 
+> **Info**: To be able to develop applications with Apama EPL Apps and/or to import them from Software AG Designer into Cumulocity IoT, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Apama EPL Apps web application provided in Cumulocity IoT. If you have Apama Starter or Apama Smart Rules-only, Apama EPL Apps is not available in the application switcher. If you want to have this capability, contact Software AG support. 
 
 **Step 1 - Invoke Apama EPL Apps**
 

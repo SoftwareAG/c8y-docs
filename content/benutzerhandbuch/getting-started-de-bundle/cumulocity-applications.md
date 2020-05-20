@@ -3,7 +3,7 @@ weight: 30
 title: Cumulocity IoT-Anwendungen
 layout: redirect
 aliases:
-  - /benutzerhandbuch/getting-started-de/#cumulocity-applications
+  - /benutzerhandbuch/overview/#cumulocity-applications
 ---
 
 Cumulocity IoT umfasst die drei folgenden Standardanwendungen:

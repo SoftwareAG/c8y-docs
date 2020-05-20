@@ -6,7 +6,7 @@ aliases:
   - /benutzerhandbuch/getting-started-de/#accessing-cumulocity-platform
 ---
 
-Auf die Cumulocity IoT-Plattform können Sie über einen Webbrowser zugreifen. 
+Auf die Cumulocity IoT-Plattform können Sie über einen Webbrowser zugreifen.
 
 ### Unterstützte Browser
 
@@ -19,7 +19,7 @@ Unsere Produkte wurden mit den folgenden Webbrowsern getestet:
 
 >**Info:** Cumulocity IoT ist voll funktionsfähig auf Internet Explorer 11. Allerdings ist das Layout möglicherweise nicht immer einwandfrei.
 
-Sie können Cumulocity auch auf gängigen Smartphones und Tablets nutzen. Unsere Produkte wurden mit den folgenden mobilen Webbrowsern getestet:
+Sie können Cumulocity IoT auch auf gängigen Smartphones und Tablets nutzen. Unsere Produkte wurden mit den folgenden mobilen Webbrowsern getestet:
 
 * Chrome auf Android (neueste Version) auf Galaxy Smartphones und Tablets
 * Safari auf iOS (neueste Version) auf Apple iPhone und iPad
@@ -52,7 +52,7 @@ Geben Sie auf der Anmeldeseite Ihren Benutzernamen (Unterscheidung zwischen Gro�
 
 Aktivieren Sie die Checkbox **Passwort merken**, damit der Browser sich Ihre Zugangsdaten merkt, so dass Sie diese nicht wieder bereitstellen müssen, wenn Sie die Anwendung das nächste mal öffnen. Dies ist außerdem praktisch, wenn Sie häufig zwischen Anwendungen wechseln, da die Cumulocity IoT-Plattform Sie sonst bei jedem Wechsel auffordert, sich zu authentifizieren. Melden Sie sich explizit ab, damit der Browser Ihre Zugangsdaten "vergisst".
 
-Wenn Sie sich das erste Mal bei der Cumulocity IoT-Plattform anmelden, werden Sie zur Standardanwendung (falls nicht anders konfiguriert, ist dies die [Cockpit](/benutzerhandbuch/cockpit-de)-Anwendung) weitergeleitet.
+Wenn Sie sich das erste Mal an der Cumulocity IoT-Plattform anmelden, werden Sie zur Standardanwendung (falls nicht anders konfiguriert, ist dies die [Cockpit](/benutzerhandbuch/cockpit-de)-Anwendung) weitergeleitet.
 
 ![image alt text](/images/benutzerhandbuch/cockpit/cockpit-home-screen.png)
 

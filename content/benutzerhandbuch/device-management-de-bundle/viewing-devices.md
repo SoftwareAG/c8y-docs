@@ -28,7 +28,7 @@ Die Liste enthält eine Zeile für jedes Gerät mit den folgenden Informationen,
 <tbody>
 <tr>
 <td style="text-align:left">Status</td>
-<td style="text-align:left">Symbol für den Verbindungsstatus. Weitere Informationen finden Sie unter <a href="#connection-monitoring" class="no-ajaxy">Überwachen von Verbindungen</a> in "Überwachen und Steuern von Geräten".</td>
+<td style="text-align:left">Symbol für den Verbindungsstatus. Weitere Informationen finden Sie unter <a href="#connection-monitoring" class="no-ajaxy">Verbindungsüberwachung</a>.</td>
 </tr>
 <tr>
 <td style="text-align:left">Name</td>

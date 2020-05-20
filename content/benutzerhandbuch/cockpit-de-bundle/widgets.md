@@ -179,7 +179,7 @@ Das Widget "Datenpunktliste" zeigt Datenpunkte (Messwerte) in einer Liste, einen
 </tr>
 <tr>
 <td align="left">Sichtbare Tabellenspalten</td>
-<td align="left">Spalten, die angezeigt werden: <br><strong>Beschriftung</strong>: Beschriftung des Datenpunkts. Details finden Sie unter <a href="../../benutzerhandbuch/cockpit-de/#data-explorer">Visualisieren von Daten im Daten-Explorer</a>. <br><strong>Ziel</strong>: Zielwert. Kann im <a href="../../benutzerhandbuch/cockpit-de/#data-explorer">Daten-Explorer</a> oder in der <a href="../../benutzerhandbuch/cockpit-de/#data-point-library">Datenpunktbibliothek</a> konfiguriert werden.<br>Aktuel: Aktueller Wert. <br><strong>Differenz</strong>: Absolute Differenz zwischen aktuellem Wert und Zielwert. <br><strong>Differenz %</strong>: Prozentwert der Differenz zwischen aktuellem Wert und Zielwert. <br><strong>Asset</strong>: Name des Geräts oder der Gruppe des Datenpunkts.</td>
+<td align="left">Spalten, die angezeigt werden: <br><strong>Beschriftung</strong>: Beschriftung des Datenpunkts. Details finden Sie unter <a href="../../benutzerhandbuch/cockpit-de/#data-explorer">Visualisieren von Daten im Daten-Explorer</a>. <br><strong>Ziel</strong>: Zielwert. Kann im <a href="../../benutzerhandbuch/cockpit-de/#data-explorer">Daten-Explorer</a> oder in der <a href="../../benutzerhandbuch/cockpit-de/#data-point-library">Datenpunktbibliothek</a> konfiguriert werden.<br>Aktuell: Aktueller Wert. <br><strong>Differenz</strong>: Absolute Differenz zwischen aktuellem Wert und Zielwert. <br><strong>Differenz %</strong>: Prozentwert der Differenz zwischen aktuellem Wert und Zielwert. <br><strong>Asset</strong>: Name des Geräts oder der Gruppe des Datenpunkts.</td>
 </tr>
 </tbody>
 </table>

@@ -205,7 +205,7 @@ Beispiel:
 
 ### <a name="alarms"></a>Alarme
 
-Die Registerkarte **Alarme** enthält Informationen zu den Alarmen für ein Gerät. Weitere Informationen finden Sie unter [Arbeiten mit Alarmen](#alarm-monitoring).
+Die Registerkarte **Alarme** enthält Informationen zu den Alarmen für ein Gerät. Weitere Informationen finden Sie unter [Verwenden von Alarmen](#alarm-monitoring).
 
 ### <a name="config"></a> Konfiguration
 

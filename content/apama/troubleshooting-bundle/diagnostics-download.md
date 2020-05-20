@@ -10,8 +10,6 @@ It may be useful to capture this diagnostics information when experiencing probl
 
 You can see a version number in the EPL application manager and in the model manager. It is shown next to the above links.
 
-> **Info:**  If you have Apama Smart Rules-only (also called Apama-ctrl-smartrules), Apama EPL Apps and Apama Analytics Builder are not available, and the functionality described in this topic does not apply. 
-
 Basic diagnostics information is provided in a ZIP file named *diagnostic-overview&lt;timestamp&gt;.zip* and includes the following information (this should be typically a few Megabytes, and be generated in about 5 seconds):
 
 - The microservice log file contents, if available, including a record of the correlator's startup logging and the last hour or maximum of 20,000 lines of logging.

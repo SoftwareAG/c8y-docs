@@ -14,17 +14,17 @@ In order to follow this tutorial, check the following prerequisites:
 * You have correctly configured the Java client based on [Hello MQTT Java](#hello-mqtt-java).
 * You have a valid tenant, a user and a password in order to access Cumulocity IoT.
 
-If you do not have a valid certificate, for testing purposes you can generate self signed certificate.  
+If you do not have a valid certificate, for testing purposes you can generate a certificate using the instructions below.   
 The scripts are in the Bitbucket repository [cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/mqtt-client/scripts).  
-1. Create root self signed certificate:  
+1. Create a root self signed certificate:  
 ```shell
 $ ./00createRootSelfSignedCertificate.sh
 ```  
-2. Create and sign certificate:  
+2. Create and sign the certificate:  
 ```shell
 $ ./01createSignedCertificate.sh
 ```  
-3. Move certificates to keystore:    
+3. Move the certificates to keystore:    
 ```shell
 $ ./02moveCertificatesToKeystore.sh
 ```  
@@ -32,8 +32,9 @@ $ ./02moveCertificatesToKeystore.sh
 ```shell
 $ keytool -importcert -file c8y-mqtt-server.cer -keystore chain-with-private-key-iot-device-0001.jks -alias "Alias"
 ```  
-In the first step you have to upload root certificates to your tenant. You can do it via [device-management](#TODO) or via [REST](#TODO).  
-For example:  
+In the first step you have to upload the root certificates to your tenant. You can do it via [device-management](/users-guide/device-management/#managing-trusted-certificates) or via [REST](/reference/tenants/#trusted-certificates-collection).  
+
+**Example:**  
 Copy the certificate from file: *chain-iot-device-0001.pem* and send it to the platform via REST.    
  
    POST /tenant/tenants/<<tenantId>>/trusted-certificates
@@ -45,15 +46,10 @@ Copy the certificate from file: *chain-iot-device-0001.pem* and send it to the p
     Content-Type: application/json
 
     {
-
     	"status" :  "ENABLED",
-
     	"name" : "sampleName",
-
     	"autoRegistrationEnabled" : "true",
-
     	"certInPemFormat" : "<<certificate in pem format>>"
-
     }
     
 
@@ -68,7 +64,7 @@ Next, change the configuration in the MQTT client. Copy the file *chain-with-pri
         private static final String TRUSTSTORE_PASSWORD = "changeit";
         private static final String TRUSTSTORE_FORMAT = "jks";
         private static final String CLIENT_ID = "iotdevice0001";
-        private static final String BROKER_URL = "<<ssl Url for platform>>";
+        private static final String BROKER_URL = "<<SSL URL for platform>>";
         
         private MqttClient connect() throws MqttException {
             MqttClient mqttClient = new MqttClient(BROKER_URL, "d:" + CLIENT_ID, new MemoryPersistence());

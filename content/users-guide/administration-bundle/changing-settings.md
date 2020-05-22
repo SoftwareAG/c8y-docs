@@ -185,6 +185,10 @@ Each access token is signed by a signing certificate. Currently there are three 
 3. By providing the public key of a certificate manually to Cumulocity IoT. A certificate definition requires an algorithm information, public key value and validity period.
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-5.png)
+ 
+ 
+ >**Info:** Cumulocity IoT support only certificates with RSA key, either as a (*n*,*e*) parameters pair or *x5c* certificate chain. Other key types (eg. Elliptic-curves ) are not supported.
+
 
 #### Integration with Azure AD
 

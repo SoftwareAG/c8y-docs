@@ -18,14 +18,14 @@ Available ports:
 | no SSL | 1883 | 80 |
 | experimental two-way SSL | 1884* | - |
 
-* Port 1884 has to be enabled to activate communication via ssl. To do that, add the rule to Chef:
+* Port 1884 has to be enabled to activate communication via SSL. To do that, add the rule to Chef:
 
 "MQTTClientCert" => {
         "enabled" => true,
         "enableTransparentSSLPort" => false
     }
     
-enabled - opens port 1884 and let devices authorize via certificate
+enabled - open port 1884 and let devices authorize via certificate with TCP (It is not available witb WebSockets right now).
 enableTransparentSSLPort - redirect whole communication from 1883 port to 1884 (recommended as false, since handling
 client authorization via username and password is not implemented there yet), so right now it will enforce using certificates
 by devices also on 1883 port (which is highly not recommended).
@@ -112,7 +112,7 @@ d:mySerialNumber:myDefaultTemplate
 
 The uniqueness of the MQTT ClientId is determined only by the deviceIdentifier. Therefore from the above examples only one client can be connected at the same time.
 
-During ssl connection with certificates, the deviceIdentifier has to match the Common Name of the certificate it is using (first certificate in the chain, which is provided by that device).
+During SSL connection with certificates, the deviceIdentifier has to match the Common Name of the certificate it is using (first certificate in the chain, which is provided by that device).
 
 #### MQTT Quality of Service
 

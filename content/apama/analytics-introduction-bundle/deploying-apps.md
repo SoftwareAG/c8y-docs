@@ -1,28 +1,28 @@
 ---
 weight: 20
-title: Deploying applications
+title: Deploying apps
 layout: redirect
 ---
 
-There are two distinct approaches to deploy Apama applications to Cumulocity IoT:
+There are two distinct approaches to deploy Apama apps to Cumulocity IoT:
 
-* You can [develop or import a single \*.mon file with Apama EPL Apps](#single-mon-file). This is the simplest mechanism for deploying an Apama application.
+* You can [develop or import a single \*.mon file with Apama EPL Apps](#single-mon-file). This is the simplest mechanism for deploying an Apama app.
 * Or you can [build a custom microservice](#deploying-as-microservice). In this case, more complex Apama projects can be built using the Cumulocity IoT Microservice SDK. This needs to be developed in Software AG Designer and then uploaded into Cumulocity IoT.
 
-> **Info:** In Apama EPL Apps, the term "activate" is used for deploying an application.
+> **Info:** In Apama EPL Apps, the term "activate" is used for deploying an app.
 
 
-### <a name="single-mon-file"></a>Deploying Apama applications as single \*.mon files with Apama EPL Apps
+### <a name="single-mon-file"></a>Deploying Apama apps as single \*.mon files with Apama EPL Apps
 
 >**Info**: To be able to deploy single \*.mon files with Apama EPL Apps, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Apama EPL Apps web application provided in Cumulocity IoT. If you have Apama Starter or Apama Smart Rules-only, Apama EPL Apps is not available in the application switcher. If you want to have this capability, contact Software AG support.
 
-When an Apama EPL application is activated in Cumulocity IoT, each \*.mon file is assigned a unique package name. This prevents conflicts when multiple modules are activated. For this reason, you should not specify a `package` statement in the \*.mon files. If you need to share events between different parts of your application, then write the event definitions and monitors that use it in a single \*.mon file.
+When an Apama EPL app (that is, a \*.mon file) is activated in Cumulocity IoT, the \*.mon file is assigned a unique package name. This prevents conflicts when multiple modules are activated. For this reason, you should not specify a `package` statement in a \*.mon file. If you need to share events between different parts of your application, then write the event definitions and monitors that use it in a single \*.mon file.
 
-There is a restricted set of utilities and base events available for your EPL application. At the time of writing, these include the **Time Format** and **HTTP Client > JSON with generic request/response event definitions** bundles. 
+There is a restricted set of utilities and base events available for your EPL app. At the time of writing, these include the **Time Format** and **HTTP Client > JSON with generic request/response event definitions** bundles. 
 
-When any EPL application signals a runtime error, this will be raised as an alarm. Runtime errors include uncaught exceptions, as well as any explicit logging of warnings and errors that your EPL application chooses to do. Health issues that relate to the Apama runtime in general will also be raised as alarms.
+When any EPL app signals a runtime error, this will be raised as an alarm. Runtime errors include uncaught exceptions, as well as any explicit logging of warnings and errors that your EPL app chooses to do. Health issues that relate to the Apama runtime in general will also be raised as alarms.
 
-For more detailed diagnostics of the Apama runtime and any active EPL applications, you can look at the logs for the Apama-ctrl microservice. See [Managing applications](/users-guide/administration/#managing-applications) in the *User guide* for more information on log files. However, some familiarity with Apama is necessary to get the most out of an Apama log file.
+For more detailed diagnostics of the Apama runtime and any active EPL apps, you can look at the logs for the Apama-ctrl microservice. See [Managing applications](/users-guide/administration/#managing-applications) in the *User guide* for more information on log files. However, some familiarity with Apama is necessary to get the most out of an Apama log file.
 
 ### <a name="deploying-as-microservice"></a>Deploying Apama applications as microservices
 
@@ -62,7 +62,7 @@ Specific permissions are required by the microservice to start up and work prope
 
 #### To deploy an Apama application as a microservice
 
-1. Develop your Cumulocity IoT application in Software AG Designer in the usual way. 
+1. Develop your application in Software AG Designer in the usual way. 
    
 2. You can use Apama's Docker support to turn the entire project into a microservice. In the **Project Explorer** view, right-click the project and select **Apama > Add Docker Support**, which will add a Dockerfile to the root of your project directory. 
 

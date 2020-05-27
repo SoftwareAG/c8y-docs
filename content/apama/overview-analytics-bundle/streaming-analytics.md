@@ -23,6 +23,6 @@ Typical real-time analytics use cases include:
 * Notifications: Send me an email if there is a power outage in one of my machines.
 * Compression: Store location updates of all cars only once every five minutes (but still send real-time data for the car that I am looking at to the user interface).
 
-The following sections describe the basics for understanding how Apama EPL works and how you can create your own analytics or other server-side business logic and automation. You can do this using EPL apps, Apama Analytics Builder models and smart rules.
+The following sections describe how you can create your own analytics or other server-side business logic and automation. You can do this using EPL apps, Apama Analytics Builder models and smart rules.
 
 >**Info**: This documentation assumes basic familiarity with Apama application development. Refer to the [Apama documentation](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/) for further details.

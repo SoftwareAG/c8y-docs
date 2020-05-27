@@ -678,7 +678,7 @@ The current configuration is uploaded from Cumulocity IoT to the device.
 
 ##### Download configuration file (521)
 
-Download a configuration file from the url.
+Download a configuration file from the URL.
 
 |Position|Parameter|
 |:-------|:-------|
@@ -724,7 +724,7 @@ Change the communication mode.
 
 ##### Download configuration file with type (524)
 
-Download a configuration file from the url with type.
+Download a configuration file from the URL with type.
 
 |Position|Parameter|
 |:-------|:-------|

@@ -53,7 +53,7 @@ Copy the certificate from file: *chain-iot-device-0001.pem* and send it to the p
     }
     
 
-Next, change the configuration in the MQTT client. Copy the file *chain-with-private-key-iot-device-0001.jks* into the resource folder and set the configuration as in the example below. 
+Next, change the configuration in the MQTT client. Copy the file *chain-with-private-key-iot-device-0001.jks* into the resource folder and set the configuration. Note that the script employed (Step 3.) to generate the x.509 certificate uses the password `changeit`. If you changed the value in the script, also do it for `KEYSTORE_PASSWORD` and `TRUSTSTORE_PASSWORD` in the following example. 
 
 ```java
         //Configuration

@@ -4,15 +4,15 @@ title: Deploying apps
 layout: redirect
 ---
 
-There are two distinct approaches to deploy Apama apps to Cumulocity IoT:
+There are two distinct approaches to deploy EPL apps to Cumulocity IoT:
 
-* You can [develop or import a single \*.mon file with Apama EPL Apps](#single-mon-file). This is the simplest mechanism for deploying an Apama app.
+* You can [develop or import a single \*.mon file with Apama EPL Apps](#single-mon-file). This is the simplest mechanism for deploying an EPL app.
 * Or you can [build a custom microservice](#deploying-as-microservice). In this case, more complex Apama projects can be built using the Cumulocity IoT Microservice SDK. This needs to be developed in Software AG Designer and then uploaded into Cumulocity IoT.
 
 > **Info:** In Apama EPL Apps, the term "activate" is used for deploying an app.
 
 
-### <a name="single-mon-file"></a>Deploying Apama apps as single \*.mon files with Apama EPL Apps
+### <a name="single-mon-file"></a>Deploying EPL apps as single \*.mon files with Apama EPL Apps
 
 >**Info**: To be able to deploy single \*.mon files with Apama EPL Apps, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Apama EPL Apps web application provided in Cumulocity IoT. If you have Apama Starter or Apama Smart Rules-only, Apama EPL Apps is not available in the application switcher. If you want to have this capability, contact Software AG support.
 

@@ -70,4 +70,4 @@ When designing an Apama solution to be deployed within any form of Cumulocity Io
 	* It is not possible to use Apama queries.
 	* You can only use the bundles listed in [Developing apps with Software AG Designer](/apama/analytics-introduction/#sag-designer). 
 
-All of these restrictions are implemented to ensure the smooth and secure operation of Apama apps within Cumulocity IoT.
+All of these restrictions are implemented to ensure the smooth and secure operation of EPL apps within Cumulocity IoT.

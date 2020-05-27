@@ -4,7 +4,7 @@ title: Developing apps
 layout: redirect
 ---
 
-An Apama EPL app is a monitor (*.mon) file. You can develop EPL apps in two different ways:
+An EPL app is a monitor (*.mon) file. You can develop EPL apps in two different ways:
 
 * You can use [Apama EPL Apps](#apama-epl-apps) which is available from Cumulocity IoT's application switcher and develop your EPL apps within Cumulocity IoT.
 * Or you can install Apama on your local machine and then develop your EPL apps (as monitor files) in [Software AG Designer](#sag-designer), that is, in a separate environment.

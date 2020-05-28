@@ -42,6 +42,7 @@ The following is a list of the alarms. The information further down below explai
 - [An EPL file blocks the correlator context for too long](#apama_ctrl_warn)
 - [Invalid measurement format](#apama_measurementformat_invalid)
 - [Multiple extensions with the same name](#extension_error)
+- [Connection to correlator lost](#lost_correlator_connection)
 - [The correlator queue is full](#application_queue_full)
 - [The CEP queue is full](#cep_queue_full) (this alarm is coming from Cumulocity IoT Core, but concerns Apama-ctrl)
 
@@ -310,6 +311,15 @@ This alarm is raised when the Apama-ctrl microservice tries to activate the depl
 This disables all extensions that were deployed to Apama-ctrl. In order to use the deployed extensions, the user has to decide which extensions to keep and then delete the duplicate ones.
 
 **Info:** In case of multiple duplicates, this alarm is only listed once.
+
+#### <a name="lost_correlator_connection"></a>Connection to correlator lost
+
+This alarm is raised in certain cases when the connection between the Apama-ctrl microservice and the correlator is lost. This should not happen, but can be triggered by high load situations.
+
+- Alarm type: `lost_correlator_connection`
+- Alarm text: Unable to ping correlator:  &lt;message&gt;, apama-ctrl will restart.
+
+Apama-ctrl will automatically restart. Report this to Software AG Support if this is happening frequently.
 
 #### <a name="application_queue_full"></a>The correlator queue is full
 

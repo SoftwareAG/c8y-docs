@@ -109,7 +109,7 @@ This alarm is raised whenever the Apama-ctrl microservice switches to Safe mode.
 - Alarm text: Apama has exited unexpectedly. As a precaution, user-provided EPL, Analytics Builder models and extensions that might have caused this have been disabled. Refer to the audit log for more details. Please check any recent alarms, or contact support or your administrator.
 - Alarm severity: CRITICAL
 
-Safe mode is a state where Apama-ctrl deactivates all Apama Analytics Builder models, extensions in Apama Analytics Builder, and EPL applications. Apama-ctrl raises an alarm and adds audit log entries with details on all deactivated models, extensions and EPL applications. This is triggered when the correlator encounters a crash that may occur because of several reasons, such as running out of memory, uncaught exceptions in activated EPL files, license expiry, etc. To prevent an infinite loop of Apama-ctrl restarts followed by a correlator crash (mostly likely due to a problem with activated EPL files), the microservice checks on every restart if it has restarted in the last 20 minutes. If yes, the microservice considers the restart as a crash and enables Safe mode for Apama-ctrl. Otherwise, it treats the restart as a normal restart. 
+Safe mode is a state where Apama-ctrl deactivates all Apama Analytics Builder models, extensions in Apama Analytics Builder, and EPL apps. Apama-ctrl raises an alarm and adds audit log entries with details on all deactivated models, extensions and EPL apps. This is triggered when the correlator encounters a crash that may occur because of several reasons, such as running out of memory, uncaught exceptions in activated EPL files, license expiry, etc. To prevent an infinite loop of Apama-ctrl restarts followed by a correlator crash (mostly likely due to a problem with activated EPL files), the microservice checks on every restart if it has restarted in the last 20 minutes. If yes, the microservice considers the restart as a crash and enables Safe mode for Apama-ctrl. Otherwise, it treats the restart as a normal restart. 
 
 If any user is manually stopping or restarting the microservice within 20 minutes, even though it is not a crash, the microservice treats this as a crash and enables Safe mode, even if everything is otherwise fine.
 
@@ -121,16 +121,16 @@ To diagnose the cause of a correlator crash, you can try the following:
 
 - Check the Apama EPL Apps memory profiler, by making a REST request to */service/cep/diagnostics/eplMemoryProfiler* (available as of Apama EPL Apps 10.5.7) for any memory leaks.
 
-    Note that you have to re-activate the EPL applications that were active before as the Apama-ctrl microservice loses information about the previous microservice instance when it restarts due to Safe mode. To replicate the previous scenario, run the EPL applications and process some events to trigger a leak and then use the memory profiler to check for any memory leaks.
+    Note that you have to re-activate the EPL apps that were active before as the Apama-ctrl microservice loses information about the previous microservice instance when it restarts due to Safe mode. To replicate the previous scenario, run the EPL apps and process some events to trigger a leak and then use the memory profiler to check for any memory leaks.
 
 - Check the microservice logs for any exceptions by downloading the diagnostics overview ZIP file as described in [Downloading diagnostics and logs](#diagnostics-download). In the downloaded ZIP file, you can find the logs under */diagnostics/*.
   
-    As mentioned in the above point, re-activate the EPL applications and Analytics Builder models that were active before and then check the logs.
+    As mentioned in the above point, re-activate the EPL apps and Analytics Builder models that were active before and then check the logs.
   
 - Also check for license expiry.
 - Check the audit logs.
 
-In Safe mode, all previously active Apama Analytics Builder models and Apama EPL applications are deactivated and must be manually re-activated.
+In Safe mode, all previously active Apama Analytics Builder models and Apama EPL apps are deactivated and must be manually re-activated.
 
 #### <a name="apama_ctrl_starter"></a>Deactivating models in Apama Starter
 
@@ -166,7 +166,7 @@ Third variant:
 - Alarm text: Apama is using 90% of available memory (&lt;totalMemory&gt;). Your apps will be in danger of crashing. Have created 5 diagnostics snapshots, not creating any more, refer to past alarms.
 - Alarm severity: WARNING
 
-Running Apama EPL Apps (and to a lesser extent, smart rules and Analytics Builder) consumes memory, the amount will depend a lot on the nature of the application running. The memory usage should be approximately constant for a given set of applications, but it is possible to create a "memory leak", particularly in an EPL file or a custom block. The Apama-ctrl microservice monitors memory and raises an alarm with WARNING severity if the 90% memory limit is reached along with the diagnostics overview ZIP file and saves it to the files repository (as mentioned in the alarm text). 
+Running Apama EPL Apps (and to a lesser extent, smart rules and Analytics Builder) consumes memory, the amount will depend a lot on the nature of the app running. The memory usage should be approximately constant for a given set of apps, but it is possible to create a "memory leak", particularly in an EPL file or a custom block. The Apama-ctrl microservice monitors memory and raises an alarm with WARNING severity if the 90% memory limit is reached along with the diagnostics overview ZIP file and saves it to the files repository (as mentioned in the alarm text). 
 
 Apama-ctrl generates the diagnostics overview ZIP files with the following conditions:
 
@@ -174,7 +174,7 @@ Apama-ctrl generates the diagnostics overview ZIP files with the following condi
 - A maximum of 5 diagnostics overview ZIP files from its start time until it stops.
 - Overall, it can generate a maximum of 20 ZIP files per Cumulocity IoT tenant, beyond which it keeps deleting the oldest ZIP files during its startup process.
 
-To diagnose high-memory-consuming models and EPL applications, you can try the following (it could be listener leaks, excessive state being stored or spawned monitors leaking, etc.):
+To diagnose high-memory-consuming models and EPL apps, you can try the following (it could be listener leaks, excessive state being stored or spawned monitors leaking, etc.):
 
 - Download the automatically generated diagnostics overview ZIP file (refer to the alarm text for its location) and look at *correlator/inspect.json* and *correlator/status.json* for the number of listeners (this number may be large in the case of a listener leak). Note that this is only an overview and excludes the EPL memory profile output.
 
@@ -257,11 +257,11 @@ Apama-ctrl generates the following alarm for the above example:
 
 You can diagnose the issue by the monitor name and line number given in the alarm. 
 
-For more details, you can also check the Apama logs if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these uncaught exceptions will terminate the execution of that monitor instance, which will typically mean that your application is not going to function correctly. This might even lead to a correlator crash if not handled properly.
+For more details, you can also check the Apama logs if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these uncaught exceptions will terminate the execution of that monitor instance, which will typically mean that your app is not going to function correctly. This might even lead to a correlator crash if not handled properly.
 
 #### <a name="apama_ctrl_warn"></a>An EPL file blocks the correlator context for too long
 
-If an EPL application has an infinite loop, it may block the correlator context for too long, not letting any other applications run in the same context or, even worse, cause excessive memory pressure (as the correlator is unable to perform any garbage collection cycles) leading to the application running out of memory. The Apama-ctrl microservice identifies such scenarios (the correlator logs warning messages if an application is blocking a context for too long) and raises alarms, so that the user can identify and fix the problem. 
+If an EPL app has an infinite loop, it may block the correlator context for too long, not letting any other apps run in the same context or, even worse, cause excessive memory pressure (as the correlator is unable to perform any garbage collection cycles) leading to the app running out of memory. The Apama-ctrl microservice identifies such scenarios (the correlator logs warning messages if an app is blocking a context for too long) and raises alarms, so that the user can identify and fix the problem. 
 
 For example, the following monitor blocks the correlator main context:
 

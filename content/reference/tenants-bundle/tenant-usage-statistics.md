@@ -21,7 +21,7 @@ layout: redirect
 * internal SmartREST requests used to resolve templates
 * internal SLA monitoring requests
 * calls to any "/health" endpoint
-* device bootstrap process requests - "/devicecontrol/deviceCredentials"
+* device bootstrap process requests related to configuring and retrieving device credentials
 * Microservice SDK internal calls for applications and subscriptions - "/currentApplication"
 
  "deviceRequestCount" - beside of the exceptions already listed for "requestCount" the following requests are not included in the counter:
@@ -34,9 +34,21 @@ Note:
  * "storageSize" is affected by your retention rules. It is also affected by the regularly running database optimization functions running in Cumulocity IoT. If the size decreases, it does not necessarily mean that data was deleted.
  * Days are counted according to server timezone.
 
-Request counting in SmartREST and MQTT:
-- SmartREST: each row in SmartREST request is transformed into a separate HTTP request. For example, if one SmartREST request contains 10 rows, then 10 separate calls are executed, meaning that request count is increased by 10.
-- MQTT: each row/line counts as a separate request. Creating custom template counts as a single request.
+REST specific counting details:
+* All counters increase also when the request is invalid, for example wrong payload or missing permissions.
+* Bulk measurements creation and bulk alarm status update are counted as a single "requestCount"/"deviceRequestCount" and multiple inbound data transfer count.
+
+SmartREST 1.0 specific counting details:
+* Invalid SmartREST requests are not counted, for example when template doesn't exist.
+* New template registration is treated as two separate request - create new inventory object which increases "requestCount", "deviceRequestCount" and "inventoriesCreatedCount". There is also a second request which binds the template with X-ID, this increases "requestCount" and "deviceRequestCount".
+* Each row in SmartREST request is transformed into a separate HTTP request. For example, if one SmartREST request contains 10 rows, then 10 separate calls are executed, meaning that both "requestCount" and "deviceRequestCount" are increased by 10.
+
+MQTT specific counting details:
+* Invalid request are counted, for example when sending message with wrong template id.
+* Device creation request is not counted.
+* Each row/line counts as a separate request.
+* Creating custom template counts as a single request, no matter how many rows are send in the request.
+* There is a one special SmartREST 2.0 template (402 Create location update event with device update) which is treated differently. Because it is doing two things in one call (create new location event and update location in device) "requestCount" and "deviceRequestCount" are increased once but inbound data transfer counters are increased by two (one for event creation and one for inventory update). 
 
 ### Total inbound data transfer
 
@@ -100,8 +112,6 @@ The table below lists all counters that enhance the Cumulocity IoT tenant statis
 </tr>
 </tbody>
 </table></div>
-
-> **Info:** All counters increase also when the request is invalid, for example wrong payload or missing permissions.
 
 See the table below for more information on how the counters above are increased. Additionally, it shows how inbound data transfers are handled for both MQTT and REST:
 

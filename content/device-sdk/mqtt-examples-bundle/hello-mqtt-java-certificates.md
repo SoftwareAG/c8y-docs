@@ -41,7 +41,7 @@ To develop a "Hello, world!" MQTT client for Cumulocity IoT with certificates, y
 
 Copy the certificate from the file *chain-iot-device-0001.pem* and upload it to the platform employing a POST request:
 
-**Endpoint:**  <kbd>/tenant/tenants/<<tenantId>>/trusted-certificates</kbd> <br/>
+**Endpoint:**  <kbd>/tenant/tenants/{tenantId}/trusted-certificates</kbd> <br/>
 **Authorization:** Basic <br/>
 **Content-Type:** application/json <br/>
 **Request body:**

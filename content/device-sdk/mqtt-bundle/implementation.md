@@ -8,7 +8,7 @@ This section will list the implementation details for the MQTT protocol. The Cum
 
 ### Connecting via MQTT
 
-Cumulocity IoT supports MQTT both via TCP and WebSockets. As URL you use _mqtt.cumulocity.com_.
+Cumulocity IoT supports MQTT both via TCP and WebSockets. As URL you can use your tenant domain (e.g. _mytenant.cumulocity.com/mqtt_) or the domain of the instance in the format mqtt.&lt;instance_domain> (e.g. _mqtt.cumulocity.com_).
 
 Available ports:
 
@@ -36,7 +36,7 @@ by devices also on 1883 port (which is highly not recommended).
 
 The Cumulocity IoT MQTT implementation uses SmartREST as a payload. SmartREST is a CSV-like message protocol that uses templates on the server side to create data in Cumulocity IoT.
 
-> **Info:** For all MQTT connections to the platform, the maximum accepted payload size is 16384 bytes, which includes both message header and body. The header size varies, but its minimum is 2 bytes.
+> **Info:** For all MQTT connections to the platform, the maximum accepted payload size is 16184 bytes, which includes both message header and body. The header size varies, but its minimum is 2 bytes.
 
 #### SmartREST basics
 

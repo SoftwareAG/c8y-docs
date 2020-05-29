@@ -1,91 +1,101 @@
 ---
-weight: 40
+weight: 45
 title: Hello MQTT Java with certificates
 layout: redirect
 ---
 
-In this tutorial, you will learn how to use the Java MQTT client with Cumulocity IoT using X509 certificates for authentication. 
+In this tutorial, you will learn how to use the Java MQTT client with Cumulocity IoT using X.509 certificates for authentication.
 
-You can find a sample Java MQTT client using x509 certificates and all necessary scripts used in this tutorial in the Bitbucket repository [cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/mqtt-client).
+In the [cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/mqtt-client) Bitbucket repository, you can find a sample Java MQTT client using X.509 certificates and all necessary scripts used in this tutorial.
+
 ### Prerequisites  
 
 In order to follow this tutorial, check the following prerequisites:
 
-* You have correctly configured the Java client based on [Hello MQTT Java](#hello-mqtt-java).
-* You have a valid tenant, a user and a password in order to access Cumulocity IoT.
+*   You have correctly configured the Java client based on the [Hello MQTT Java](#hello-mqtt-java) tutorial.
+*   You have a valid tenant, a user and a password in order to access Cumulocity IoT.
+*   You have a valid certificate. If you don't have it, follow the instructions below to generate one.
 
-If you do not have a valid certificate, for testing purposes you can generate a certificate using the instructions below.   
-The scripts are in the Bitbucket repository [cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/mqtt-client/scripts).  
-1. Create a root self signed certificate:  
-```shell
-$ ./00createRootSelfSignedCertificate.sh
-```  
-2. Create and sign the certificate:  
-```shell
-$ ./01createSignedCertificate.sh
-```  
-3. Move the certificates to keystore:    
-```shell
-$ ./02moveCertificatesToKeystore.sh
-```  
-4. Import the trusted certificate into keystore:  
+#### Generating a valid certificate
+
+If you don't have a valid certificate, you can generate one, for testing purposes, following the instructions below.
+
+1.  Download the scripts from the [cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/mqtt-client/scripts) repository.
+2.  Create a root self signed certificate (execute the script *00createRootSelfSignedCertificate.sh*) and upload it to your tenant. You can do it via [device-management](/users-guide/device-management/#managing-trusted-certificates) or via [REST](/reference/tenants/#trusted-certificates-collection).
+3.  Create and sign the certificate (execute the script *01createSignedCertificate.sh*).
+4.  Move the certificates to keystore (execute the script *02moveCertificatesToKeystore.sh*).
+5.  Finally, import the trusted certificate into keystore running the following command:
+
 ```shell
 $ keytool -importcert -file c8y-mqtt-server.cer -keystore chain-with-private-key-iot-device-0001.jks -alias "Alias"
-```  
-In the first step you have to upload the root certificates to your tenant. You can do it via [device-management](/users-guide/device-management/#managing-trusted-certificates) or via [REST](/reference/tenants/#trusted-certificates-collection).  
+```
 
-**Example:**  
-Copy the certificate from file: *chain-iot-device-0001.pem* and send it to the platform via REST.    
- 
-   POST /tenant/tenants/<<tenantId>>/trusted-certificates
+### Developing the "Hello, MQTT world!" client with certificates  
 
-    Host: ...
+To develop a "Hello, world!" MQTT client for Cumulocity IoT with certificates, you need to
 
-    Authorization: Basic ...
+*  copy the certificate and upload it to the platform,
+*  change the configuration in the MQTT client.
 
-    Content-Type: application/json
+#### Copy and upload the certificate
 
-    {
-    	"status" :  "ENABLED",
-    	"name" : "sampleName",
-    	"autoRegistrationEnabled" : "true",
-    	"certInPemFormat" : "<<certificate in pem format>>"
-    }
-    
+Copy the certificate from the file *chain-iot-device-0001.pem* and upload it to the platform employing a POST request:
 
-Next, change the configuration in the MQTT client. Copy the file *chain-with-private-key-iot-device-0001.jks* into the resource folder and set the configuration. Note that the script employed (Step 3.) to generate the x.509 certificate uses the password `changeit`. If you changed the value in the script, also do it for `KEYSTORE_PASSWORD` and `TRUSTSTORE_PASSWORD` in the following example. 
+**Endpoint:**  <kbd>/tenant/tenants/<<tenantId>>/trusted-certificates</kbd> <br/>
+**Authorization:** Basic <br/>
+**Content-Type:** application/json <br/>
+**Request body:**
+
+```json
+{
+    "status" :  "ENABLED",
+    "name" : "sampleName",
+    "autoRegistrationEnabled" : "true",
+    "certInPemFormat" : "<<certificate in pem format>>"
+}
+```
+
+#### Change the configuration
+
+To change the configuration in the MQTT client, copy the file *chain-with-private-key-iot-device-0001.jks* into the resource folder and set the configuration. Note that the script employed (Step 4.) uses the password `changeit`. If you changed the value in the script, also do it for `KEYSTORE_PASSWORD` and `TRUSTSTORE_PASSWORD` in the following example.
 
 ```java
-        //Configuration
-        private static final String KEYSTORE_NAME = "chain-with-private-key-iot-device-0001.jks";
-        private static final String KEYSTORE_PASSWORD = "changeit";
-        private static final String KEYSTORE_FORMAT = "jks";
-        private static final String TRUSTSTORE_NAME = "chain-with-private-key-iot-device-0001.jks";
-        private static final String TRUSTSTORE_PASSWORD = "changeit";
-        private static final String TRUSTSTORE_FORMAT = "jks";
-        private static final String CLIENT_ID = "iotdevice0001";
-        private static final String BROKER_URL = "<<SSL URL for platform>>";
-        
-        private MqttClient connect() throws MqttException {
-            MqttClient mqttClient = new MqttClient(BROKER_URL, "d:" + CLIENT_ID, new MemoryPersistence());
-            MqttConnectOptions options = new MqttConnectOptions();
-            options.setCleanSession(true);
-            Properties sslProperties = new Properties();
-            sslProperties.put(SSLSocketFactoryFactory.KEYSTORE, getClass().getClassLoader().getResource(KEYSTORE_NAME).getPath());
-            sslProperties.put(SSLSocketFactoryFactory.KEYSTOREPWD, KEYSTORE_PASSWORD);
-            sslProperties.put(SSLSocketFactoryFactory.KEYSTORETYPE, KEYSTORE_FORMAT);
-            sslProperties.put(SSLSocketFactoryFactory.TRUSTSTORE, getClass().getClassLoader().getResource(TRUSTSTORE_NAME).getPath());
-            sslProperties.put(SSLSocketFactoryFactory.TRUSTSTOREPWD, TRUSTSTORE_PASSWORD);
-            sslProperties.put(SSLSocketFactoryFactory.TRUSTSTORETYPE, TRUSTSTORE_FORMAT);
-            sslProperties.put(SSLSocketFactoryFactory.CLIENTAUTH, true);
-            options.setSSLProperties(sslProperties);
-            mqttClient.setCallback(this);
-            System.out.println("Connecting to broker " + BROKER_URL);
-            mqttClient.connect(options);
-            return mqttClient;
-        }
+// Configuration
+private static final String KEYSTORE_NAME = "chain-with-private-key-iot-device-0001.jks";
+private static final String KEYSTORE_PASSWORD = "changeit";
+private static final String KEYSTORE_FORMAT = "jks";
+
+private static final String TRUSTSTORE_NAME = "chain-with-private-key-iot-device-0001.jks";
+private static final String TRUSTSTORE_PASSWORD = "changeit";
+private static final String TRUSTSTORE_FORMAT = "jks";
+
+private static final String CLIENT_ID = "iotdevice0001";
+private static final String BROKER_URL = "<<SSL URL of the platform>>";
+
+private MqttClient connect() throws MqttException {
+    MqttClient mqttClient = new MqttClient(BROKER_URL, "d:" + CLIENT_ID, new MemoryPersistence());
+    MqttConnectOptions options = new MqttConnectOptions();
+
+    options.setCleanSession(true);
+
+    Properties sslProperties = new Properties();
+    sslProperties.put(SSLSocketFactoryFactory.KEYSTORE, getClass().getClassLoader().getResource(KEYSTORE_NAME).getPath());
+    sslProperties.put(SSLSocketFactoryFactory.KEYSTOREPWD, KEYSTORE_PASSWORD);
+    sslProperties.put(SSLSocketFactoryFactory.KEYSTORETYPE, KEYSTORE_FORMAT);
+    sslProperties.put(SSLSocketFactoryFactory.TRUSTSTORE, getClass().getClassLoader().getResource(TRUSTSTORE_NAME).getPath());
+    sslProperties.put(SSLSocketFactoryFactory.TRUSTSTOREPWD, TRUSTSTORE_PASSWORD);
+    sslProperties.put(SSLSocketFactoryFactory.TRUSTSTORETYPE, TRUSTSTORE_FORMAT);
+    sslProperties.put(SSLSocketFactoryFactory.CLIENTAUTH, true);
+
+    options.setSSLProperties(sslProperties);
+    mqttClient.setCallback(this);
+    System.out.println("Connecting to the broker at " + BROKER_URL);
+    mqttClient.connect(options);
+
+    return mqttClient;
+}
 ```  
- Now the device can publish and subscribe as a standard device.  
- Note that before the first connect no other actions are required, such as creating a user.  
- The user will be created during the [auto registration](#TODO) process.  
->**Info:** You do not need to set a password, user or tenant for the MQTT client connecting using certificates. Cumulocity IoT will recognize the tenant and the user by the provided certificate.
+
+The device can now publish and subscribe as a standard device. Note that before the first connect no other actions are required, e.g. creating a user. The user is created during the [auto registration](#TODO) process.
+
+> **Info:** You do not need to set a password, user or tenant for the MQTT client connecting using certificates. Cumulocity IoT will recognize the tenant and the user by the provided certificate.

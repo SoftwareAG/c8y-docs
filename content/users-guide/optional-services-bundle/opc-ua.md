@@ -87,7 +87,7 @@ C8Y:
 gateway:
 # Gateway version - this is filled automatically during the build process - do not change this property
   version: ${project.version}
-# The following two properties will be set to the name of the computer that is running the gateway unless it's overridden manually
+# The following two properties will be set to the name of the user that is running the gateway unless it's overridden manually
   identifier: mygateway
   name: mygateway
   db:

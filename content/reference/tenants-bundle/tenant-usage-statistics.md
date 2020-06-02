@@ -18,6 +18,7 @@ layout: redirect
 |subscribedApplications|List|1|Names of tenant subscribed applications. Latest value for a queried period.|
 
 "requestCount" - the following requests are not included in the counter:
+
 * internal SmartREST requests used to resolve templates
 * internal SLA monitoring requests
 * calls to any "/health" endpoint
@@ -25,30 +26,35 @@ layout: redirect
 * Microservice SDK internal calls for applications and subscriptions - "/currentApplication"
 
  "deviceRequestCount" - beside of the exceptions already listed for "requestCount" the following requests are not included in the counter:
+ 
  * requests to /user, /tenant and /application API's
  * application related requests (with "X-Cumulocity-Application-Key" header)
 
 Note:
+
  * "requestCount" and "deviceRequestCount" are updated every 5 minutes.
  * "deviceCount", "deviceEndpointCount", "deviceWithChildrenCount", "storageSize" and "subscribedApplications" are updated only three times a day starting at 8:57, 16:57 and 23:57.
  * "storageSize" is affected by your retention rules. It is also affected by the regularly running database optimization functions running in Cumulocity IoT. If the size decreases, it does not necessarily mean that data was deleted.
  * Days are counted according to server timezone.
 
 REST specific counting details:
+
 * All counters increase also when the request is invalid, for example wrong payload or missing permissions.
 * Bulk measurements creation and bulk alarm status update are counted as a single "requestCount"/"deviceRequestCount" and multiple inbound data transfer count.
 
 SmartREST 1.0 specific counting details:
-* Invalid SmartREST requests are not counted, for example when template doesn't exist.
-* New template registration is treated as two separate request - create new inventory object which increases "requestCount", "deviceRequestCount" and "inventoriesCreatedCount". There is also a second request which binds the template with X-ID, this increases "requestCount" and "deviceRequestCount".
-* Each row in SmartREST request is transformed into a separate HTTP request. For example, if one SmartREST request contains 10 rows, then 10 separate calls are executed, meaning that both "requestCount" and "deviceRequestCount" are increased by 10.
+
+* Invalid SmartREST requests are not counted, for example when the template doesn't exist.
+* A new template registration is treated as two separate requests. Create a new inventory object which increases "requestCount", "deviceRequestCount" and "inventoriesCreatedCount". There is also a second request which binds the template with X-ID, this increases "requestCount" and "deviceRequestCount".
+* Each row in a SmartREST request is transformed into a separate HTTP request. For example, if one SmartREST request contains 10 rows, then 10 separate calls are executed, meaning that both "requestCount" and "deviceRequestCount" are increased by 10.
 
 MQTT specific counting details:
-* Invalid request are counted, for example when sending message with wrong template id.
+
+* Invalid requests are counted, for example when sending a message with a wrong template ID.
 * Device creation request is not counted.
 * Each row/line counts as a separate request.
 * Creating custom template counts as a single request, no matter how many rows are send in the request.
-* There is a one special SmartREST 2.0 template (402 Create location update event with device update) which is treated differently. Because it is doing two things in one call (create new location event and update location in device) "requestCount" and "deviceRequestCount" are increased once but inbound data transfer counters are increased by two (one for event creation and one for inventory update). 
+* There is one special SmartREST 2.0 template (402 Create location update event with device update) which is treated differently. Because it is doing two things in one call (create new location event and update location in device) "requestCount" and "deviceRequestCount" are increased once but inbound data transfer counters are increased by two (one for event creation and one for inventory update). 
 
 ### Total inbound data transfer
 

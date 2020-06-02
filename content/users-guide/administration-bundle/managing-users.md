@@ -24,6 +24,8 @@ For users created via an external authorization server, updating the following s
 
 Moreover, password reset in Cumulocity IoT is disabled for users created through an external authentication server.
 
+> **Info:** Users which are using single sign-on cannot change the password of users which are managed by the platform.
+
 
 ### Viewing users
 

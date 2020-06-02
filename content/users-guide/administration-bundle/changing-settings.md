@@ -187,7 +187,7 @@ Each access token is signed by a signing certificate. Currently there are three 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-5.png)
  
  
- >**Info:** Cumulocity IoT support only certificates with RSA key, either as a (*n*,*e*) parameters pair or *x5c* certificate chain. Other key types (eg. Elliptic-curves ) are not supported.
+ >**Info:** Cumulocity IoT support only certificates with RSA key, either as a ("n", "e") parameters pair or "x5c" certificate chain. Other key types (e.g. Elliptic-curves ) are not supported.
 
 
 #### Integration with Azure AD

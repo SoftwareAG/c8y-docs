@@ -6,7 +6,9 @@ layout: redirect
 
 ### Overview
 
-Devices can authenticate against the Cumulocity IoT platform using X.509 client certificates.
+Devices can authenticate against the Cumulocity IoT platform using X.509 client certificates.  
+
+Device can communicate using the MQTT interface of the platform, but MQTT over Websocket is not supported.  
  
 Cumulocity IoT expects devices to connect using SSL on port 1884.
 

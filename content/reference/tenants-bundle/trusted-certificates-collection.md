@@ -1,5 +1,5 @@
 ---
-weight: 20
+weight: 110
 title: Trusted certificates collection
 layout: redirect
 ---
@@ -9,25 +9,25 @@ layout: redirect
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |self|URI|1|Link to this resource.|
-|certificates|TrustedCertificate|0..n|List of tenant's trusted certificates, see TrustedCertificate.|
+|certificates|TrustedCertificate|0..n|List of tenant's trusted certificates, see TrustedCertificates.|
 |statistics|PagingStatistics|1|Information about paging statistics.|
 |prev|URI|0..1|Link to a potential previous page of tenants.|
 |next|URI|0..1|Link to a potential next page of tenants.|
 
-### GET a representation of a TrustedCertificates Collection.
+### GET a representation of a trusted certificates collection
 
 Response body: application/json
 
 Required role: ROLE\_TENANT\_ADMIN
 
-Example Request: Get trusted certificates collection for tenant.
+Example request: Get a trusted certificates collection for a tenant
 
     GET /tenant/tenants/<<tenantId>>/trusted-certificates
     Host: ...
     Authorization: Basic ...
     Accept: application/json
 
-Example Response :
+Example response:
 
     {
     "next" : "...",
@@ -56,9 +56,9 @@ Example Response :
         "pageSize": 5
     }
 
-### POST a certificate to tenant's trusted certificates.
+### POST a certificate to a tenant's trusted certificates
 
-Example Request: Adds certificate to the tenant's trusted certificates.
+Example request: Add a certificate to the tenant's trusted certificates
 
 Required role: ROLE\_TENANT\_ADMIN
 
@@ -73,7 +73,7 @@ Required role: ROLE\_TENANT\_ADMIN
     	"certInPemFormat" : "<<certificate in pem format>>"
     }
 
-Example Response :
+Example response:
 
     HTTP/1.1 200 OK
     Content-Type: application/json
@@ -93,4 +93,4 @@ Example Response :
         "status": "ENABLED"
     }
 
-**Info:** The possible `status` values are ENABLED or DISABLED.
+>**Info:** The possible `status` values are ENABLED or DISABLED.

@@ -6,7 +6,7 @@ layout: redirect
 
 In this tutorial, you will learn how to use the Java MQTT client with Cumulocity IoT using X.509 certificates for authentication.
 
-In the [cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/mqtt-client) Bitbucket repository, you can find a sample Java MQTT client using X.509 certificates and all necessary scripts used in this tutorial.
+In the Bitbucket repository [cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/mqtt-client), you can find a sample Java MQTT client using X.509 certificates and all necessary scripts used in this tutorial.
 
 ### Prerequisites  
 
@@ -14,14 +14,14 @@ In order to follow this tutorial, check the following prerequisites:
 
 *   You have correctly configured the Java client based on the [Hello MQTT Java](#hello-mqtt-java) tutorial.
 *   You have a valid tenant, a user and a password in order to access Cumulocity IoT.
-*   You have a valid certificate. If you don't have it, follow the instructions below to generate one.
+*   You have a valid certificate. If you don't have it, follow the instructions in the next section to generate one.
 
-#### Generating a valid certificate
+#### To generate a valid certificate
 
 If you don't have a valid certificate, you can generate one, for testing purposes, following the instructions below.
 
 1.  Download the scripts from the [cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/mqtt-client/scripts) repository.
-2.  Create a root self signed certificate (execute the script *00createRootSelfSignedCertificate.sh*) and upload it to your tenant. You can do it via [device-management](/users-guide/device-management/#managing-trusted-certificates) or via [REST](/reference/tenants/#trusted-certificates-collection).
+2.  Create a root self-signed certificate (execute the script *00createRootSelfSignedCertificate.sh*) and upload it to your tenant. You can do it via [Device Management in the UI](/users-guide/device-management/#managing-trusted-certificates) or via [REST](/reference/tenants/#trusted-certificates-collection).
 3.  Create and sign the certificate (execute the script *01createSignedCertificate.sh*).
 4.  Move the certificates to keystore (execute the script *02moveCertificatesToKeystore.sh*).
 5.  Finally, import the trusted certificate into keystore running the following command:
@@ -37,7 +37,7 @@ To develop a "Hello, world!" MQTT client for Cumulocity IoT with certificates, y
 *  copy the certificate and upload it to the platform,
 *  change the configuration in the MQTT client.
 
-#### Copy and upload the certificate
+#### To copy and upload the certificate
 
 Copy the certificate from the file *chain-iot-device-0001.pem* and upload it to the platform employing a POST request:
 
@@ -55,7 +55,7 @@ Copy the certificate from the file *chain-iot-device-0001.pem* and upload it to 
 }
 ```
 
-#### Change the configuration
+#### To change the configuration
 
 To change the configuration in the MQTT client, copy the file *chain-with-private-key-iot-device-0001.jks* into the resource folder and set the configuration. Note that the script employed (Step 4.) uses the password `changeit`. If you changed the value in the script, also do it for `KEYSTORE_PASSWORD` and `TRUSTSTORE_PASSWORD` in the following example.
 

@@ -1,6 +1,6 @@
 ---
-weight: 20
-title: Trusted certificate
+weight: 100
+title: Trusted certificates
 layout: redirect
 ---
 
@@ -9,33 +9,33 @@ layout: redirect
 |Name|Type|Description|Mandatory for PUT/POST|
 |:---|:---|:----------|:---------------------|
 |notAfter|DateTime |Date after which a certificate is no longer valid.|No|
-|serialNumber|positive number |Certificate unique serial number.|No|
-|subject|String |DName of the client to which the certificate belongs.|No|
+|serialNumber|Positive number |Certificate unique serial number.|No|
+|subject|String |Name of the client to which the certificate belongs.|No|
 |algorithmName|String |Algorithms used to sign the certificate.|No|
 |version|String |Version of the encoded certificate.|No|
-|notBefore|DateTime |Date before which a certificate is no valid.|No|
+|notBefore|DateTime |Date before which a certificate is not valid.|No|
 |issuer|String |Entity who has signed and issued the certificate.|No|
 |fingerprint|String |Unique identifier of the certificate.|No 
 |name|String |Unique certificate name.|No 
-|autoRegistrationEnabled|boolean |Flag for auto registration process.|No
+|autoRegistrationEnabled|Boolean |Flag for auto registration process.|No
 |certInPemFormat|String |Certificate representation in PEM format.|POST: Yes <br>PUT: No
 |status|String |Certificate status.|POST: Yes <br>PUT: No
 |self|URI |Link to this resource.|No 
 
-### GET a certificate from tenant's trusted certificates.    
+### GET a certificate from tenant's trusted certificates    
 
 Response body: application/json
 
 Required role: ROLE\_TENANT\_ADMIN
 
-Example Request: Get a certificate from the tenant's trusted certificates by fingerprint.
+Example request: Get a certificate from the tenant's trusted certificates by fingerprint
 
     GET /tenant/tenants/<<tenantId>>/trusted-certificates/<<certificate fingerprint>>
     Host: ...
     Authorization: Basic ...
     Accept: application/json
 
-Example Response :
+Example response:
     
     HTTP/1.1 200 OK
     Content-Type: application/json
@@ -55,25 +55,25 @@ Example Response :
         "status": "ENABLED"
     }
 
-### DELETE a certificate from the tenant's trusted certificates.
+### DELETE a certificate from the tenant's trusted certificates
 
 Response body: application/json
   
 Required role: ROLE\_TENANT\_ADMIN
 
-Example Request: Delete a certificate by fingerprint.
+Example request: Delete a certificate by fingerprint
 
      
     DELETE /tenant/tenants/<<tenantId>>/trusted-certificates/<<certificate fingerprint>>
     Host: ...
     Authorization: Basic ...
 
-Example Response :
+Example response:
 
     HTTP/1.1  204 NO CONTENT
 
 
-### PUT - Update an existing certificate.
+### PUT - Update an existing certificate
 
 Request body: certificate
 
@@ -81,7 +81,7 @@ Response body: application/json
 
 Required role: ROLE\_TENANT\_ADMIN
 
-Example Request :
+Example request:
 
     PUT /tenant/tenants/<<tenantId>>/trusted-certificates/<<certificate fingerprint>>
     Host: ...
@@ -96,7 +96,7 @@ Example Request :
        "autoRegistrationEnabled" : true
     }
 
-Example Response :
+Example response:
 
     HTTP/1.1 200 OK
     Content-Type: application/json
@@ -116,4 +116,4 @@ Example Response :
         "status": "DISABLED"
     }
 
-**Info:** The possible `status` values are ENABLED or DISABLED.
+>**Info:** The possible `status` values are ENABLED or DISABLED.

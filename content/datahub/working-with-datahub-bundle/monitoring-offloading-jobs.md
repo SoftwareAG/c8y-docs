@@ -19,11 +19,11 @@ In the navigator, select **Offloading** under **Status** to get an overview of t
 | Component | Description |
 | ---         | --- |
 | Status icon | The status of the execution, which is either running, successful, or error
-| Execution type icon | The type of execution, which is either scheduled (calendar icon) or manual (spot icon)
+| Execution mode icon | The type of execution, which is either *scheduled* (calendar icon) or *manual* (spot icon)
 | Job name | The name of the pipeline job
 | Execution time | The point in time the execution was started
 | Runtime (s) | The runtime of the execution in seconds
-| Next execution time | The point in time for which the next execution is scheduled
+| Next execution time | The point in time for which the next execution is scheduled; for a manual execution it is empty
 | \# Records | The number of records which have been offloaded during this execution, indicated as number in a blue circle
 
 Click **Reload** to refresh the status being shown.
@@ -43,11 +43,11 @@ The list shows the execution history, with each execution consisting of the foll
 | Component | Description |
 | ---         | --- |
 | Status icon | The status of the execution, which is either running, successful, or error
-| Execution type icon | The type of execution, which is either scheduled (calendar icon) or manual (spot icon)
+| Execution mode icon | The type of execution, which is either *scheduled* (calendar icon) or *manual* (spot icon)
 | Job name | The name of the pipeline
 | Execution time | The point in time the execution was started
 | Runtime (s) | The runtime of the execution in seconds
-| Next execution time | The point in time for which the next execution is scheduled
+| Next execution time | The point in time for which the next execution is scheduled, provided offloading is activated; for a manual execution it is empty 
 | \# Records | The number of records which have been offloaded during this execution, indicated as number in a blue circle
 
 The system is configured to keep a limited history of the last job executions. 
@@ -71,10 +71,11 @@ Select a job overview in the history per offloading job or in the status of all 
 | Component | Description |
 | ---         | --- |
 | Runtime (s) | The runtime of the execution in seconds
+| Execution mode | The mode of the execution, which is either *manual* or *scheduled*
 | Execution time | The point in time the execution was started
 | Scheduled execution time | The point in time for which the execution was scheduled
-| Previous execution time | The point in time the previous execution was started
-| Next execution time | The point in time for which the next execution is scheduled
+| Previous execution time | The point in time the previous execution was started; for a manual execution it is empty
+| Next execution time | The point in time for which the next execution is scheduled, provided offloading is activated; for a manual execution it is empty
 
 **Results**
 

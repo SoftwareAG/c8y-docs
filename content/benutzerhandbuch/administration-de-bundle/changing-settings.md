@@ -135,7 +135,7 @@ Jedes Access Token wird durch ein Signing-Zertifikat signiert. Aktuell gibt es d
 
 Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code).
 
-Während der Konfiguration der Azure AD entspricht die Redirect-URI Ihrer vollständigen Domain-Adresse. In diesem Dokument verwenden wir beispielhaft *http://aad.cumulocity.com*. In Azure AD sind keine weitere Schritte erforderlich.
+Während der Konfiguration der Azure AD entspricht die Redirect-URI Ihrer vollständigen Domain-Adresse. In diesem Dokument verwenden wir beispielhaft `http://documentation.cumulocity.com/tenant/oauth`. In Azure AD sind keine weitere Schritte erforderlich.
 
 ##### Cumulocity IoT-Konfiguration
 

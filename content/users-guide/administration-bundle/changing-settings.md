@@ -83,9 +83,9 @@ Each time a user logs in, the content of the access token is verified and is a b
 }
 ```
 
-The user will be granted access to the global role "business" and the default application "cockpit". 
+The user will be granted access to the global role "business" and the default application "cockpit".
 
-New rules can be added by clicking **Add access mapping** at the bottom. An access mapping statement can consist of multiple checks like in the image below. Yo can add a rule to an existing statement by clicking **and**. Click the Minus button to remove a rule. 
+New rules can be added by clicking **Add access mapping** at the bottom. An access mapping statement can consist of multiple checks like in the image below. Yo can add a rule to an existing statement by clicking **and**. Click the Minus button to remove a rule.
 
 New roles are added to the user from every matching access mapping. If one access mapping statement assigns the role "admin" and a second one assigns the role "business" and both meet the defined conditions, then the user will be granted access to the global roles “business" and "admin"."
 
@@ -137,13 +137,14 @@ Each access token is signed by a signing certificate. Currently there are three 
 
 The integration was successfully verified against Azure AD. The configuration steps are available in [https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code).
 
-While configuring your Azure AD, redirect_uri is your full domain address. For the purpose of this document we assume that it is *http://aad.cumulocity.com*. There are no additional steps on Azure AD required.
+While configuring your Azure AD, redirect_uri is your full domain address. For the purpose of this document we assume that it is `http://documentation.cumulocity.com/tenant/oauth`. There are no additional steps on Azure AD required.
 
 ##### Cumulocity IoT configuration
 
 When the "Azure AD" template is selected the configuration panel will look similar to the following:
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-aad-basic.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-aad-basic-1.png)
 
 |Field|Description|
 |:---|:---|
@@ -247,7 +248,7 @@ You may choose one of the following options:
 	 - **Enforce TOTP two-factor authentication on all users**: When enabled it will force all users to setup their TFA on login. Otherwise each individual user can choose to activate it or not.
    - **Limit token validity for**: lifetime of each session in minutes.  When the session expires the user has to re-authenticate.
 
-	> **Info:** This strategy is only available together with 'OAuth Internal'. 
+	> **Info:** This strategy is only available together with 'OAuth Internal'.
 
 Click **Save TFA settings** to apply your settings.
 

@@ -142,6 +142,7 @@ Während der Konfiguration der Azure AD entspricht die Redirect-URI Ihrer vollst
 Wenn die Vorlage "Azure AD" ausgewählt ist, sehen die Grundeinstellungen in etwa folgendermaßen aus:
 
  ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-aad-basic.png)
+ ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-aad-basic-1.png)
 
 |Feld|Beschreibung|
 |:---|:---|

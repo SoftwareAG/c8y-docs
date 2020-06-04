@@ -48,7 +48,7 @@ Before adding a new trusted certificate, make sure that it:
 	|Field|Description|
 |:---|:---|
 |Certificate name|User-provided name for the certificate. This name is not used by Cumulocity IoT and can serve as a description of the certificate.|
-|Certificate|Certificate in PEM format.|
+|Certificate|File containing a certificate in PEM format.|
 |Auto registration| If selected, new devices which use a certificate signed by the authority owning this trusted certificate will automatically be registered.|
 |Enabled/Disabled| When disabled, devices which use a certificate signed by the authority owning this certificate, will not be able to connect.|
 

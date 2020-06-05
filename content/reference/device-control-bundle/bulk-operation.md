@@ -76,7 +76,7 @@ colgroup>
 <td align="left">creationRamp</td>
 <td align="left">Number</td>
 <td align="left">1</td>
-<td align="left">Delay between every operation creation.</td>
+<td align="left">Delay between every operation creation in seconds.</td>
 <td>POST: Mandatory PUT: No</td>
 </tr>
 <tr>

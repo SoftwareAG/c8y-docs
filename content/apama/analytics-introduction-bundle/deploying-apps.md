@@ -59,6 +59,7 @@ Specific permissions are required by the microservice to start up and work prope
 - ROLE_IDENTITY_READ
 - ROLE_OPTION_MANAGEMENT_READ
 - ROLE_BULK_OPERATION_READ
+- ROLE_SMS_ADMIN
 
 #### To deploy an Apama application as a microservice
 

@@ -438,7 +438,7 @@ Template creation:
 Client publishes:
 
 ```text
-99,12345
+999,12345
 ```
 
 Client receives:

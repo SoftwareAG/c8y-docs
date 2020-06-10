@@ -3,6 +3,10 @@ title: Troubleshooting
 weight: 50
 ---
 
+### Local logs
+
+You can check the agent log file stored locally in your router when you face to some issues.</br> The log file is located in `/etc/ntcagent/ntcagent.log` by default.<br> Also, you can increase the **Log level** in the web [user interface](#configure) of the router. The configured log level is from 1 (min - error) to 8 (max - debug).
+
 ### Known limitations and bugs
 
 * The time on the router and on the server may not be fully in sync, hence you may see updates (e.g. alarms, events) that occur in the future. This is also the reason why it may take a while until the **Location** and the **Measurement** tab appear for new devices.

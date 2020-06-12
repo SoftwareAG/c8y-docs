@@ -18,25 +18,32 @@ layout: redirect
 |subscribedApplications|List|1|Names of tenant subscribed applications. Latest value for a queried period.|
 
 "requestCount" - the following requests are not included in the counter:
+
 * internal SmartREST requests used to resolve templates
 * internal SLA monitoring requests
 * calls to any "/health" endpoint
 * device bootstrap process requests - "/devicecontrol/deviceCredentials"
 * Microservice SDK internal calls for applications and subscriptions - "/currentApplication"
 
- "deviceRequestCount" - beside of the exceptions already listed for "requestCount" the following requests are not included in the counter:
+"deviceRequestCount" - beside of the exceptions already listed for "requestCount" the following requests are not included in the counter:
+
  * requests to /user, /tenant and /application API's
  * application related requests (with "X-Cumulocity-Application-Key" header)
 
 Note:
+
  * "requestCount" and "deviceRequestCount" are updated every 5 minutes.
  * "deviceCount", "deviceEndpointCount", "deviceWithChildrenCount", "storageSize" and "subscribedApplications" are updated only three times a day starting at 8:57, 16:57 and 23:57.
  * "storageSize" is affected by your retention rules. It is also affected by the regularly running database optimization functions running in Cumulocity IoT. If the size decreases, it does not necessarily mean that data was deleted.
  * Days are counted according to server timezone.
 
 Request counting in SmartREST and MQTT:
+
 - SmartREST: each row in SmartREST request is transformed into a separate HTTP request. For example, if one SmartREST request contains 10 rows, then 10 separate calls are executed, meaning that request count is increased by 10.
 - MQTT: each row/line counts as a separate request. Creating custom template counts as a single request.
+
+> **Important:** If your servers are not running in UTC (Coordinated Universal Time), any date passed without timezone will be handled as UTC, regardless of the server local timezone. This might lead to a shift of dates included in the results.
+
 
 ### Total inbound data transfer
 

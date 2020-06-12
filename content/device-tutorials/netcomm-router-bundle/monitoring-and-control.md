@@ -18,7 +18,7 @@ Consult the documentation of your router for more information about its specific
 To regularly poll the input voltage of a GPIO pin and send it to the Cumulocity IoT platform, set [**GPIO analog measurements**](#configure) to a non-zero value. Alternatively, use the [device shell](#device-shell).
 
 ```shell
-set service.cumulocity.gpio.interval=<interval>
+set service.cumulocity.gpio.interval=<seconds>
 ```
 
 Then, you need to specify the port and turn on the notification by using the [device shell](#device-shell).
@@ -34,7 +34,7 @@ You can raise alarms from digital inputs. These can be configured using the rout
 
 ```shell
 set service.cumulocity.gpio.<port>.notify=alarm
-set service.cumulocity.gpio.<port>.debounce.interval=<SECONDS>
+set service.cumulocity.gpio.<port>.debounce.interval=<seconds>
 set service.cumulocity.gpio.<port>.alarm.text=<ALARM_TEXT>
 set service.cumulocity.gpio.<port>.alarm.severity=<severity>
 ```
@@ -98,11 +98,10 @@ Then:
 
 ### <a name="remote-access"></a> Cloud Remote Access
 
-If your device supports VNC, Telnet or SSH remote access, you can remotely manage it via Cumulocity IoT. 
+If your device supports VNC, Telnet or SSH remote access, you can remotely manage it via Cumulocity IoT.
 
 As shown in the screenshot, you can add your VNC, Telnet or SSH servers as an endpoint with appropriate IP and port in the **Remote Access** tab of a particular device in the Device Management application. If you click **Connect**, the display content of your remote server will be shown in a new browser window.
 
 ![Remote Access](/images/device-demos/casa-system-router/router-remote-access.png)
 
 For details on the remote access functionality, refer to [Cloud Remote Access](/users-guide/optional-services#cloud-remote-access).
-

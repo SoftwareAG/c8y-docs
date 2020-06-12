@@ -41,7 +41,7 @@ The application manifest provides the required settings to manage microservice i
 <tr>
 <td style="text-align:left">version</td>
 <td style="text-align:left">String</td>
-<td style="text-align:left">Application version. Must be a correct <a href="https://semver.org" target="_blank">SemVer</a> value but the "+" sign is disallowed._</td>
+<td style="text-align:left">Application version. Must be a correct <a href="https://semver.org" target="_blank">SemVer</a> value but the "+" sign is disallowed.</td>
 <td style="text-align:left">Yes</td>
 </tr>
 <tr>

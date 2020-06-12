@@ -25,13 +25,8 @@ layout: redirect
 * device bootstrap process requests related to configuring and retrieving device credentials
 * Microservice SDK internal calls for applications and subscriptions - "/currentApplication"
 
-<<<<<<< HEAD
 "deviceRequestCount" - beside of the exceptions already listed for "requestCount" the following requests are not included in the counter:
 
-=======
- "deviceRequestCount" - beside of the exceptions already listed for "requestCount" the following requests are not included in the counter:
- 
->>>>>>> develop
  * requests to /user, /tenant and /application API's
  * application related requests (with "X-Cumulocity-Application-Key" header)
 
@@ -42,12 +37,11 @@ Note:
  * "storageSize" is affected by your retention rules. It is also affected by the regularly running database optimization functions running in Cumulocity IoT. If the size decreases, it does not necessarily mean that data was deleted.
  * Days are counted according to server timezone.
 
-<<<<<<< HEAD
 Request counting in SmartREST and MQTT:
 
 - SmartREST: each row in SmartREST request is transformed into a separate HTTP request. For example, if one SmartREST request contains 10 rows, then 10 separate calls are executed, meaning that request count is increased by 10.
 - MQTT: each row/line counts as a separate request. Creating custom template counts as a single request.
-=======
+
 REST specific counting details:
 
 * All counters increase also when the request is invalid, for example wrong payload or missing permissions.
@@ -66,7 +60,6 @@ MQTT specific counting details:
 * Each row/line counts as a separate request.
 * Creating custom template counts as a single request, no matter how many rows are send in the request.
 * There is one special SmartREST 2.0 template (402 Create location update event with device update) which is treated differently. Because it is doing two things in one call (create new location event and update location in device) "requestCount" and "deviceRequestCount" are increased once but inbound data transfer counters are increased by two (one for event creation and one for inventory update). 
->>>>>>> develop
 
 > **Important:** If your servers are not running in UTC (Coordinated Universal Time), any date passed without timezone will be handled as UTC, regardless of the server local timezone. This might lead to a shift of dates included in the results.
 

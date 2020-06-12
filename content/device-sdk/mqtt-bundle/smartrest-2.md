@@ -134,7 +134,7 @@ It can set fixed values in the template that will then be replaced by the server
 We create a template to create a measurement like this (measurements have two mandatory values: type and time)
 
 ```bash
-# 10,msgId,api,method,response,type,time,custom1.path,custom1.type,custom1.value
+# 10,msgId,method,api,response,type,time,custom1.path,custom1.type,custom1.value
 10,999,POST,MEASUREMENT,,c8y_MyMeasurment,,c8y_MyMeasurement.M.value,NUMBER,
 ```
 

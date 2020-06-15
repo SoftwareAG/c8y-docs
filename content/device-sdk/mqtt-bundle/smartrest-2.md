@@ -134,8 +134,8 @@ It can set fixed values in the template that will then be replaced by the server
 We create a template to create a measurement like this (measurements have two mandatory values: type and time)
 
 ```bash
-# 10,msgId,api,method,response,type,time,custom1.path,custom1.type,custom1.value
-10,999,POST,MEASUREMENT,,c8y_MyMeasurment,,c8y_MyMeasurement.M.value,NUMBER,
+# 10,msgId,method,api,response,type,time,custom1.path,custom1.type,custom1.value
+10,999,POST,MEASUREMENT,,c8y_MyMeasurement,,c8y_MyMeasurement.M.value,NUMBER,
 ```
 
 This template defines one additional custom property for the measurement. It leaves two fields empty in the template declaration (time and the custom property), so to use the template the client needs to send these two values:

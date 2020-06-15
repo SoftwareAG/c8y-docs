@@ -100,7 +100,7 @@ In the `<properties>` element specified above, add a child element `<c8y.version
 
 #### Add repositories and dependencies
 
-Your _pom.xml_ file needs to have repository and plugin elements to point to the Cumulocity IoT Maven repository which stores the client libraries.
+Your _pom.xml_ file needs to have `<repository>` and `<pluginRepository>` elements to point to the Cumulocity IoT Maven repository which stores the client libraries.
 
 ```xml
 <repositories>

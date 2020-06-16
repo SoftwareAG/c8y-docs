@@ -227,8 +227,6 @@ Data exchanged with Cumulocity IoT in HTTP requests and responses is encoded in 
 
 To avoid ambiguity, all times and timestamps must include timezone information. Please take into account that the plus character "+" must be encoded as "%2B".
 
-**Important:** If your servers are not running in UTC (Coordinated Universal Time), any date passed without timezone will be handled as UTC, regardless of the server local timezone. This might lead to a difference regarding the date/time range included in the results.
-
 ### Cumulocity IoT API data types
 
 Cumulocity IoT APIs are restricted by following data types:

@@ -93,3 +93,5 @@ Example formats:
     dateTo=2019-04-20T08:30:00.000Z
 
 Parameters are optional. Values provided with those parameters are inclusive.
+
+**Important:** If your servers are not running in UTC (Coordinated Universal Time), any date passed without timezone will be handled as UTC, regardless of the server local timezone. This might lead to a difference regarding the date/time range included in the results.

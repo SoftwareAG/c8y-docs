@@ -110,15 +110,13 @@ This alarm is raised whenever the Apama-ctrl microservice switches to Safe mode.
 - Alarm text: Apama has exited unexpectedly. As a precaution, user-provided EPL, Analytics Builder models and extensions that might have caused this have been disabled. Refer to the audit log for more details. Please check any recent alarms, or contact support or your administrator.
 - Alarm severity: CRITICAL
 
-Safe mode is a state where Apama-ctrl deactivates all Apama Analytics Builder models, extensions in Apama Analytics Builder, and EPL apps. Apama-ctrl raises an alarm and adds audit log entries with details on all deactivated models, extensions and EPL apps. This is triggered when the correlator encounters a crash that may occur because of several reasons, such as running out of memory, uncaught exceptions in activated EPL files, license expiry, etc. To prevent an infinite loop of Apama-ctrl restarts followed by a correlator crash (mostly likely due to a problem with activated EPL files), the microservice checks on every restart if it has restarted in the last 20 minutes. If yes, the microservice considers the restart as a crash and enables Safe mode for Apama-ctrl. Otherwise, it treats the restart as a normal restart. 
+Safe mode is a state where Apama-ctrl deactivates all Apama Analytics Builder models, extensions in Apama Analytics Builder, and EPL apps. Apama-ctrl raises an alarm and adds audit log entries with details on all deactivated models, extensions and EPL apps. This is triggered when the correlator encounters a crash that may occur because of several reasons, such as running out of memory. To prevent an infinite loop of Apama-ctrl restarts followed by a correlator crash (mostly likely due to a problem with activated EPL files), the microservice checks on every restart if it has restarted in the last 20 minutes. If yes, the microservice considers the restart as a crash and enables Safe mode for Apama-ctrl. Otherwise, it treats the restart as a normal restart. 
 
 If any user is manually stopping or restarting the microservice within 20 minutes, even though it is not a crash, the microservice treats this as a crash and enables Safe mode, even if everything is otherwise fine.
 
 You can check the mode of the microservice (either Normal or Safe mode) by making a REST request to *service/cep/diagnostics/apamaCtrlStatus* (available as of Apama EPL Apps 10.5.7 and Apama Analytics Builder 10.5.7), which contains a `safe_mode` flag in its response.
 
 To diagnose the cause of a correlator crash, you can try the following:
-
-- Check recent alarms for any uncaught exceptions or logged exceptions thrown by EPL files.
 
 - Check the Apama EPL Apps memory profiler, by making a REST request to */service/cep/diagnostics/eplMemoryProfiler* (available as of Apama EPL Apps 10.5.7) for any memory leaks.
 

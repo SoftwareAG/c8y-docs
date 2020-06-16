@@ -39,8 +39,8 @@ Note:
 
 Request counting in SmartREST and MQTT:
 
-- SmartREST: each row in SmartREST request is transformed into a separate HTTP request. For example, if one SmartREST request contains 10 rows, then 10 separate calls are executed, meaning that request count is increased by 10.
-- MQTT: each row/line counts as a separate request. Creating custom template counts as a single request.
+- SmartREST: <br>Each row in a SmartREST request is transformed into a separate HTTP request. For example, if one SmartREST request contains 10 rows, then 10 separate calls are executed, meaning that request count is increased by 10.
+- MQTT: <br>Each row/line counts as a separate request. Creating custom template counts as a single request.
 
 REST specific counting details:
 

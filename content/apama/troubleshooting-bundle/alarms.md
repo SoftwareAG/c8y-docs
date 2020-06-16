@@ -112,7 +112,7 @@ This alarm is raised whenever the Apama-ctrl microservice switches to Safe mode.
 
 In the case of unexpected restarts, Apama-ctrl assumes that they may have been caused by user error. For example, an EPL app that consumes more memory than is available, or an extension containing bugs. To avoid an infinite restart loop caused by these errors, Safe mode is activated, resulting in all user-provided content being disabled.
 
-The microservice checks on every restart if it has restarted in the last 20 minutes. If yes, the microservice considers the restart as unexpected and enables Safe mode. Otherwise, it treats the restart as a normal restart. Safe mode can be erroneously triggered by the user manually unsubscribing and resubscribing the microservice too quickly, or by problems in the hosting infrastructure that cause frequenty restarts.
+The microservice checks on every restart if it has restarted in the last 20 minutes. If yes, the microservice considers the restart as unexpected and enables Safe mode. Otherwise, it treats the restart as a normal restart. Safe mode can be erroneously triggered by the user manually unsubscribing and resubscribing the microservice too quickly, or by problems in the hosting infrastructure that cause frequent restarts.
 
 You can check the mode of the microservice (either Normal or Safe mode) by making a REST request to *service/cep/diagnostics/apamaCtrlStatus* (available as of Apama EPL Apps 10.5.7 and Apama Analytics Builder 10.5.7), which contains a `safe_mode` flag in its response.
 

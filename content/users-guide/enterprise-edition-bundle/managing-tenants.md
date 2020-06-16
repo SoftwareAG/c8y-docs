@@ -344,7 +344,7 @@ Custom properties may be defined in the [Properties Library](/users-guide/admini
 
 You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Getting Started > UI functionalities and features > Filtering](/users-guide/getting-started/#filtering).
 
-> **Important:** If your servers are not running in UTC (Coordinated Universal Time), any date passed without timezone will be handled as UTC, regardless of the server local timezone. This might lead to a shift of dates included in the results.
+> **Important:** The date/time range used here might differ from your server time due to different time zones. 
 
 #### To export the usage statistics table
 

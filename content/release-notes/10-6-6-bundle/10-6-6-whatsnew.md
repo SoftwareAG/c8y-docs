@@ -4,6 +4,19 @@ title: What´s new
 layout: redirect
 ---
 
+
+Cockpit	The welcome widget has been modified. The new welcome widget comes in two versions, which show different messages and quick links, based on the tenant type of the user (regular or trial tenant).	MTM-30226
+
+New smartphone app and wizard
+
+Cockpit	A new wizard is available to connect a smartphone to the platform. In the welcome widget of the Cockpit application a new quick-link card is shown: Connect smartphone. The new process is aligned with the new version of the "Cumulocity IoT Sensor App" and will not work with the old application that might be already installed on your smartphone.	MTM-30234
+
+UI	Russian is now available as a standard language.	MTM-31746
+
+Sigfox	Sigfox device registration form: Hex string validation added to ID and PAC input fields.	MTM-30217
+Sigfox	On device registration, only active contracts with free slots will now be shown.	MTM-30220
+Sigfox	If a device type is generated and its name exceeds 100 characters it will be truncated to fit the 100 characters name length limit on the Sigfox platform.	MTM-29827
+
 ### Administration
 
 [MTM-29160] It is now possible to configure sms77 as SMS provider in **Settings** > **Customization** in the  Administration application.  

@@ -20,7 +20,7 @@ The `Configure` method is used to specify how the application responds to HTTP r
 The `UseAuthentication` method adds a single authentication middleware component which is responsible for automatic authentication and the handling of remote authentication requests. It replaces all of the individual middleware components with a single, common middleware component. Since ASP.NET Security does not include Basic Authentication middleware, we must add custom Basic Authentication middleware.
 
 ```cs
-public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 {
 	app.UseAuthentication();
 	app.UseBasicAuthentication();
@@ -198,7 +198,7 @@ public class HomeController : Controller
 
 ### Program class
 
-In ASP.NET Core 2.0, the Program class is used to setup the `IWebHost`. This is the entry point to our application. The main method creates a host, builds and then runs it. The host then listens for HTTP requests.
+In ASP.NET Core 3.1, the Program class is used to setup the `IWebHost`. This is the entry point to our application. The main method creates a host, builds and then runs it. The host then listens for HTTP requests.
 
 There are multiple ways to configure the application.
 
@@ -251,7 +251,7 @@ public class Startup
         services.AddMvc();
     }
 
-    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
       app.UseMvcWithDefaultRoute();
 		}
@@ -331,7 +331,7 @@ public class Startup
 		});
 
 		//MVC
-		services.AddMvc().AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+		services.AddControllers(options => options.EnableEndpointRouting = false);
 		//services.Replace(ServiceDescriptor.Singleton(typeof(ILogger<>), typeof(TimedLogger<>)));
 	}
 	public virtual void ConfigureServicesLayer(IServiceCollection services)
@@ -340,7 +340,7 @@ public class Startup
 		services.AddSingleton<IApplicationService, ApplicationService>();
 	}
 
-	public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+	public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
 	{
 		app.UseAuthentication();
 		app.UseBasicAuthentication();
@@ -466,7 +466,7 @@ public class Startup
         ...
     }
 
-    public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
     {
         ...
         app.UseMvcWithDefaultRoute();

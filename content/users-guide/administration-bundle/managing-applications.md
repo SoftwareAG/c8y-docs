@@ -406,6 +406,17 @@ If you remove an application that overwrites a subscribed application, the curre
 It is not possible to remove subscribed applications. This can only be done by the owner of the subscribed application.
 
 
+#### To refresh a single application
+
+Users can refresh a single application whan a hosted application is not correctly deployed.
+
+Simply click **Reactivate** at the top right corner of the **Archives** tab.
+
+<img src="/images/users-guide/Administration/admin-reactivate.png" alt="Refresh application">  
+
+Reactivate requests back at the reference application by removing files from the application directory and unpacking a new package host application.
+
+
 #### Uploading archives
 
 Multiple archive file versions can be stored in Cumulocity IoT when they were created by uploading either a ZIP file or a MON file. Each version is called an archive. You can upload different versions at the same time and switch between these versions.

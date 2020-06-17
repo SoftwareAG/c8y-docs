@@ -51,9 +51,9 @@ Check if you are using the correct target platform. Go to the **Target Platform*
 
 ##### The microservice application does not compile. I get "Access Restriction" messages
 
-This error may be caused because of a missing package import. Navigate to the **Dependencies** tab of the project manifest file and check if the package of the type that contains the method giving the access restriction�is present in the Import-Package section.
+This error may be caused because of a missing package import. Navigate to the **Dependencies** tab of the project manifest file and check if the package of the type that contains the method giving the access restriction is present in the Import-Package section.
 
-You can find the package�by opening the declaration of the method (right-click and select **Open Declaration** from the context menu).
+You can find the package by opening the declaration of the method (right-click and select **Open Declaration** from the context menu).
 
 ##### When starting an application I get "address already in use" messages
 
@@ -77,3 +77,43 @@ This means that the process 12985 is using the 8080 port and it can be killed if
 ##### When trying to build an application I get a "BeanCreationException: Error creating bean with name methodSecurityInterceptor" error
 
 This is caused mainly by versions incompatibility between the SDK and Spring Boot specified in your _pom.xml_ file. If you want to use a recent version of the SDK, e.g. 10.4.0, the version of Spring Boot must be 1.5.17 or later.
+
+##### Missing Docker permissions in Linux
+
+When you install a microservice application via `mvn`, you might get this error:
+
+``` shell
+[ERROR] Failed to execute goal com.nsn.cumulocity.clients-java:microservice-package-maven-plugin:1004.6.12:package (package) on project hello-microservice-java: Execution package of goal com.nsn.cumulocity.clients-java:microservice-package-maven-plugin:1004.6.12:package failed: org.apache.maven.plugin.MojoExecutionException: Exception caught: java.util.concurrent.ExecutionException: com.spotify.docker.client.shaded.javax.ws.rs.ProcessingException: java.io.IOException: Permission denied -> [Help 1]
+```
+
+This is a problem with Docker in Linux OS.
+You can verify that your user is lacking permissions for Docker by running:
+
+``` shell
+$ docker ps
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/json: dial unix /var/run/docker.sock: connect: permission denied
+```
+
+In order to fix this, do the following:
+
+1. Create the Docker group.
+
+   ``` shell
+   $ sudo groupadd docker
+   ```
+
+2. Add your user to the Docker group.
+
+   ``` shell
+   $ sudo usermod -aG docker $your_user_name
+   ```
+
+3. Log out and log back in, so that your group membership is updated. Alternatively, run
+
+   ``` shell
+   $ newgrp docker
+   ```
+
+4. Try running a Docker command again.
+
+Also refer to [Docker Engine > Installation per distro > Optional post-Installation steps](https://docs.docker.com/engine/install/linux-postinstall/) in the Docker documentation.

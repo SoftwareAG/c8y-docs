@@ -28,8 +28,7 @@ For experimental two-way SSL the port 1884 has to be enabled. To do that, add th
 ```
 
 *   `enabled` - Open the port 1884 and let devices authorize using a certificate with TCP (it is not available with WebSockets right now).
-*   `enableTransparentSSLPort` - Redirect the whole communication (ports) from 1883 to 1884 (use `false` since handling client authorization via username and password is not implemented yet), so right now it will enforce using certificates
-by devices also on 1883 port (which is highly not recommended).
+*   `enableTransparentSSLPort` - Redirect the whole communication (ports) from 1883 to 1884 (use `false` since handling client authorization via username and password is not implemented yet), so right now it will enforce using certificates by devices also on 1883 port (which is highly not recommended).
 
 > **Info**: To use WebSockets you need to connect to the path <kbd>/mqtt</kbd> and follow the [MQTT standard](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718127) for WebSocket communication.
 
@@ -85,7 +84,7 @@ Every operation received will contain the template ID followed by the ID of the 
 
 The communication with Cumulocity IoT employing MQTT supports authentication in two ways:
 
-*   Username and password. The MQTT username needs to include the tenantID and username in the format &lt;tenantID/username>.
+*   Username and password. The MQTT username needs to include the tenant ID and username in the format &lt;tenantID/username>.
 *   Device certificates. The devices have to contain the whole chain of certificates leading to the trusted root certificate. Also, they have to contain the server certificate in their truststore.
 
 #### MQTT ClientId

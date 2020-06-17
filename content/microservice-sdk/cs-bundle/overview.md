@@ -20,9 +20,12 @@ If you face any issue or need technical support, please use the [Cumulocity IoT 
 
 #### Upgrading the SDK
 
-To migrate your current version (e.g. 9.20.0) to a new one of the SDK, update all dependencies to the latest version, e.g. 1004.12.0, and update the project to .Net SDK 2.2.
+The latest supported SDK is based on .NET Core 3.1 and **Visual Studio 2019** is required for supporting it.
+To migrate your current version (e.g. 9.20.0 or 1004.12.0) to a new one of the SDK, update all dependencies to the latest version, e.g. 1006.6.0, and update the project to .Net SDK 3.1. The developer who is upgrading the an existing project to the latest version of SDK (1006.6.0) must follow offical [microsoft guidlines](https://docs.microsoft.com/en-us/aspnet/core/migration/22-to-30?view=aspnetcore-3.1&tabs=visual-studio) about the code changes to be done for upgrading.
 
-For new projects, you shall use a new bundle of [building scripts](https://bitbucket.org/m2m/cumulocity-clients-cs/src/develop/Examples/BuildingScripts/v2.2/), and it is recommended to use [Cumulocity.SDK.Microservices v1004.12.0](https://www.nuget.org/packages/Cumulocity.SDK.Microservices/1004.12.0) based on .Net Core 2.2.
+
+
+For new projects, you shall use a new bundle of [building scripts](https://bitbucket.org/m2m/cumulocity-clients-cs/src/develop/Examples/BuildingScripts/v3.1/), and it is recommended to use [Cumulocity.SDK.Microservices v1006.6.0](https://www.nuget.org/packages/Cumulocity.SDK.Microservices/1006.6.0) based on .Net Core 3.1.
 
 ### <a name="general-prerequisites"></a> Development prerequisites
 

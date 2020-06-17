@@ -2,15 +2,13 @@
 weight: 70
 title: Example setup for VMware Workstation Player
 layout: redirect
-aliases:
-  - /edge/installation/#setting-up-vmware
 ---
 
 ### Setting up for VMware
 
 To set up a VM in VMware Workstation Player, follow the steps below.
 
-**Info**: The following steps show a reference example. Refer to the VMware documentation for the exact setup. The final configuration also depends on the end user setup.
+**Info:** The following steps show a reference example. Refer to the VMware documentation for the exact setup. The final configuration also depends on the end user setup.
 
 1. In VMWare, navigate to **Player** > **File** > **Open** to import the Edge VM. <br>
 <img src="/images/edge/edge-vmware-01.png" name="Setting up VMware" />

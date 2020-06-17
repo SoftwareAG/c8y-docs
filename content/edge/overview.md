@@ -12,7 +12,7 @@ The following documentation is available for Cumulocity IoT Edge:
 |[Setting up Cumulocity IoT Edge](/edge/installation)|How to install the system on a virtual machine, including [setting up the environment for Cumulocity IoT Edge](/edge/installation#setting-up-the-environment) and [configuring the Edge server](/edge/installation#configuration). 
 |[Working with Cumulocity IoT Edge](/edge/usage)|How to [use the IoT platform](/edge/usage#iot-platform), how to [connect a modbus device](/edge/usage#connecting-devices) using Cloud Fieldbus and how to [connect Edge to the cloud](/edge/usage#connecting-cloud) using the data broker. 
 |[Operating Cumulocity IoT Edge](/edge/operation)|How to operate the system, including [troubleshooting](/edge/operation#troubleshooting), [upgrading the system](/edge/operation#update), [backup and restore](/edge/operation#backup-restore), and various [administrative tasks](/edge/operation#administration).
-|[Release notes for Cumulocity IoT Edge](/edge/release-notes)|Providing information on improvements and enhancements within each release.
+|[Release notes for Cumulocity IoT Edge](/edge/edge-release-notes)|Providing information on improvements and enhancements within each release.
 
 
 #### Conventions in this document

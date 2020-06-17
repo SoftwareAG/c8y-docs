@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: What´s New
+title: What´s new
 layout: redirect
 ---
 

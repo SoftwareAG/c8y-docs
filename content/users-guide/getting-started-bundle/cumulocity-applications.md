@@ -40,7 +40,11 @@ Per default, Cumulocity IoT comes with the following three standard applications
 
 Apart from these standard applications that initially come with Cumulocity IoT, various additional applications are provided, offering a wide variety of functionalities. The availability of this applications depends on the Tenant you are using and the applications your organization is subscribed to.
 
+<<<<<<< HEAD
 Find a detailed list of all applications available with Cumulocity IoT in  [Administration > Managing applications](/users-guide/administration/#managing-applications) in the User guide.
+=======
+Find a detailed list of all applications available with Cumulocity IoT in  [Administration > Managing applications](/users-guide/administration/#managing-applications).
+>>>>>>> improvement/bugherd
 
 On top of this, the Cumulocity IoT platform provides broad functionality to add your own applications to be used in your Cumulocity IOT account, see [Administration > Managing applications](/users-guide/administration#managing-applications) for details.
 

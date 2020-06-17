@@ -4,6 +4,7 @@ title: Microservice runtime
 layout: redirect
 ---
 
+
 Microservices deployed on the platform have a specific runtime environment and they need to understand certain details about the specific Cumulocity IoT cluster they run in. For example, a microservice needs to know the endpoint address of the Cumulocity IoT REST APIs. This information is provided by environment variables and they are injected by Cumulocity IoT when the container is started.
 
 ### Environment variables
@@ -13,6 +14,7 @@ The following environment variables are available for microservices:
 Name  | Details  
 ------|--------
 APPLICATION_NAME  |  The name of the microservice application
+APPLICATION_KEY  |  The key of the microservice application
 SERVER_PORT       |  Default open port (80)
 MICROSERVICE_SUBSCRIPTION_ENABLED  |  Default value: true
 C8Y_BASEURL  |  Platform address (contains port number)

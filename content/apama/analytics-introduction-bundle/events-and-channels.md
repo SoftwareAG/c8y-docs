@@ -14,7 +14,7 @@ Look at the [data model](https://documentation.softwareag.com/onlinehelp/Rohan/A
 
 ### Sending events to a channel
 
-Sending an event is done by constructing the event, either with `new <type>` followed by assignments to the fields, or with a constructor specifying all of the fields. The `send` statement is then used to send the event to Cumulocity IoT. The `send` statement requires a channel - this is typically the `CHANNEL` constant (the exceptions being `CREATE_CHANNEL` for Measurement and `UPDATE_CHANNEL` for ManagedObject) on the event type.
+Sending an event is done by constructing the event, either with `new <type>` followed by assignments to the fields, or with a constructor specifying all of the fields. The `send` statement is then used to send the event to Cumulocity IoT. The `send` statement requires a channel - this is the `SEND_CHANNEL` constant on the event type.
 
 ### Listening to events
 
@@ -24,21 +24,38 @@ Listen for events using the `on` statement, followed by the event type that you 
 
 By default, a listener will fire once; to make it repeat for all events, use the `all` keyword before the event type.
 
+### Filters
+
+Adding filters can be done by specifying one or more fields between the parentheses for a listener. Only top-level fields can be filtered for. Use `if` statements for more complex filtering, or for filtering on sub-properties of events (for example, in dictionaries).
+
 ### Standard event types and channels
 
 For the standard Cumulocity IoT events, there are constants that contain the channels for sending and receiving events, for example:
 
 ```java
-monitor.subscribe(Measurement.CHANNEL);
-send msmnt to Measurement.CREATE_CHANNEL;
+monitor.subscribe(Measurement.SUBSCRIBE_CHANNEL);
+send msmnt to Measurement.SEND_CHANNEL;
 ```
 
 
-| Event         | Channel for sending          | Channel for receiving |
-| ------------- | ---------------------------- | --------------------- |
-| Operation     | Operation.CHANNEL            | Measurement.CHANNEL   |
-| Measurement   | Measurement.CREATE_CHANNEL   | Measurement.CHANNEL   |
-| Event         | Event.CHANNEL                | Measurement.CHANNEL   |
-| Alarm         | Alarm.CHANNEL                | Measurement.CHANNEL   |
-| ManagedObject | ManagedObject.UPDATE_CHANNEL | ManagedObject.CHANNEL |
+| Event               | Channel for sending              | Channel for receiving                 |
+| ------------------- | -------------------------------- | ------------------------------------- |
+| Operation           | Operation.SEND_CHANNEL           | Operation.SUBSCRIBE_CHANNEL           |
+| Measurement         | Measurement.SEND_CHANNEL         | Measurement.SUBSCRIBE_CHANNEL         |
+| Event               | Event.SEND_CHANNEL               | Event.SUBSCRIBE_CHANNEL               |
+| Alarm               | Alarm.SEND_CHANNEL               | Alarm.SUBSCRIBE_CHANNEL               |
+| ManagedObject       | ManagedObject.SEND_CHANNEL       | ManagedObject.SUBSCRIBE_CHANNEL       |
+| MeasurementFragment | MeasurementFragment.SEND_CHANNEL | MeasurementFragment.SUBSCRIBE_CHANNEL |
 
+### Measurement fragments
+
+The Apama mapping codec can turn measurements into measurement fragments, if required. You can configure how this is handled.
+
+By setting the tenant option `apama.measurementFormat` to `BOTH`, or starting the Apama correlator with the property `CUMULOCITY_MEASUREMENT_FORMAT` set to `BOTH` , you can generate listeners in EPL that will match on the contents of `MeasurementFragment` events rather than `Measurement` events. For example:
+
+```
+on all MeasurementFragment(type="c8y_SpeedMeasurement", valueFragment = "c8y_speed", valueSeries = "speedX", value > SPEED_LIMIT) as mf {
+}
+```
+
+See [Measurement fragments](/apama/advanced/#measurement-fragments) for more information.

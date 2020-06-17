@@ -33,15 +33,16 @@ Any other response codes that can be expected from a specific request are given 
 
 The following common fields are available with the responses, depending on the operation:
 
-| Field       | Description                                                  |
-| ----------- | ------------------------------------------------------------ |
-| contents    | The full contents of the EPL file.                           |
-| description | A description of the file.                                   |
-| errors      | A list of all compilation errors in the file, if any, with line numbers and text. |
-| id          | A unique identifier of the file.                             |
-| name        | The name provided for this bit of EPL.                       |
-| state       | Whether the EPL is injected into the correlator and running. This can either be `active` or `inactive`. |
-| warnings    | A list of all compilation warnings in the file, if any, with line numbers and text. |
+| Field          | Description                                                  |
+| -------------- | ------------------------------------------------------------ |
+| contents       | The full contents of the EPL file.                           |
+| description    | A description of the file.                                   |
+| eplPackageName | The package name of the EPL file. If the name contains special characters (including spaces), these characters are escaped to make them valid EPL identifiers and avoid injection errors. |
+| errors         | A list of all compilation errors in the file, if any, with line numbers and text. |
+| id             | A unique identifier of the file.                             |
+| name           | The name provided for this bit of EPL.                       |
+| state          | Whether the EPL is injected into the correlator and running. This can either be `active` or `inactive`. |
+| warnings       | A list of all compilation warnings in the file, if any, with line numbers and text. |
 
 ### GET - Retrieve all available EPL files
 
@@ -65,6 +66,7 @@ Example value for response code 200:
   "eplfiles":[
     {
       "description":"",
+      "eplPackageName": "eplfiles.Ordinal1", 
       "errors":[
  
       ],
@@ -107,6 +109,7 @@ Example value for response code 200:
     {
       "contents":"monitor M0 { action onload() { on wait(1.0) { log \"Hello\" at INFO; }}}",
       "description":"",
+      "eplPackageName": "eplfiles.Ordinal1", 
       "errors":[
       ],
       "id":"39615",
@@ -146,6 +149,7 @@ Example value for response code 200:
 {
       "contents":"monitor M0 { action onload() { on wait(1.0) { log \"Hello\" at INFO; }}}",
       "description":"",
+      "eplPackageName": "eplfiles.Ordinal1", 
       "errors":[
       ],
       "id":"39615",
@@ -164,7 +168,7 @@ Endpoint: `/service/cep/eplfiles`
 
 `POST /service/cep/eplfiles`
 
-#### Example response
+The following is an example of a request body:
 
 ```
 {
@@ -177,7 +181,7 @@ Endpoint: `/service/cep/eplfiles`
 
 Note the following:
 
-- To avoid a clash with other files, the `name` is used for the package of the file (rather than a user-provided package). It must be valid to use as an EPL identifier which consists of letters and numbers only. The name must be unique across all EPL files. 
+- The `name` is used for the package of the file (thus the EPL file must not contain a `package` statement) and must be unique across all EPL files. The name is prefixed and certain characters are escaped. The actual package name used is returned in the `eplPackageName` field for convenience (you can search for this in the microservice log file to find log statements).
 - Make sure to provide safely escaped `contents`.
 - `description` is optional and can be empty.
 
@@ -194,6 +198,7 @@ Example for response code 201 when successfully created:
 ```
 {
   "description":"",
+  "eplPackageName": "eplfiles.Ordinal1", 
   "errors":[
  
   ],
@@ -211,6 +216,7 @@ Example for response code 201 when created with warnings or errors:
 ```
 {
   "description":"",
+  "eplPackageName": "eplfiles.Ordinal1", 
   "errors":[
     {
       "line":5,
@@ -243,7 +249,7 @@ Endpoint: `/service/cep/eplfiles/{id}`
 
 `PUT /service/cep/eplfiles/{id}`
 
-#### Example response
+The following is an example of a request body:
 
 ```
 {
@@ -268,6 +274,7 @@ Example value for response code 200 when successfully updated with no errors:
 ```
 {
   "description":"",
+  "eplPackageName": "eplfiles.Ordinal1", 
   "errors":[
  
   ],
@@ -285,6 +292,7 @@ Example value for response code 200 when updated with errors or warnings:
 ```
 {
   "description":"",
+  "eplPackageName": "eplfiles.Ordinal1", 
   "errors":[
     {
       "line":5,

@@ -31,7 +31,7 @@ Der Verbindungsstatus wird durch Pfeile in der Spalte **Status** in der Gerätel
 
 **Sendeverbindungen**
 
-Die oberen Pfeile symbolisieren die Sendeverbindungen (Verkehr vom Gerät zu Cumulocity IoT). Der Status der Sendeverbindungen kann einer der folgenden sein:
+Der obere Pfeil symbolisieren die Sendeverbindungen (Verkehr vom Gerät zu Cumulocity IoT). Der Status der Sendeverbindungen kann einer der folgenden sein:
 
 * Grüner Pfeil - online (Daten wurden im erwarteten Intervall gesendet)
 * Roter Pfeil - offline (Daten wurden nicht im erwarteten Intervall gesendet)
@@ -51,7 +51,7 @@ Der untere Pfeil symbolisiert die Push-Verbindungen (von Cumulocity IoT zum Ger�
 
 Push-Verbindung bedeutet Verbindung von Cumulocity IoT zu /device/control/notifications API, **nicht** zu /device/control/realtime API.
 
->**Info**: Die Verbindungsüberwachung erfolgt nicht in Echtzeit. Dies bedeutet, dass sich der angezeigte Verbindungsstatus nach dem Ausschalten eines Geräts nicht sofort ändert. Je nach verwendetem Protokoll für die Push-Verbindungsüberwachung kann dies einige Minuten dauern.
+>**Info:** Die Verbindungsüberwachung erfolgt nicht in Echtzeit. Dies bedeutet, dass sich der angezeigte Verbindungsstatus nach dem Ausschalten eines Geräts nicht sofort ändert. Je nach verwendetem Protokoll für die Push-Verbindungsüberwachung kann dies einige Minuten dauern.
 
 <a name="maintenance-mode"></a> **Wartungsmodus**
 
@@ -68,7 +68,7 @@ Navigieren Sie zur Registerkarte **Info** eines bestimmten Geräts, um dessen Ve
 
 Unter dem Status für die Sende- und Push-Verbindungen wird der Zeitpunkt der letzten Kommunikation angezeigt.
 
-> **Info**: "Letzte Kommunikation" und "Letzte Aktualisierung" sind zwei vollkommen verschiedene Zeitstempel. "Letzte Kommunikation" zeigt an, wann ein Gerät das letzte mal Daten gesendet hat. "Letzte Aktualisierung" zeigt an, wann der Stammdateneintrag des Geräts das letzte mal aktualisiert wurde. Diese Aktualisierung kann durch das Gerät selbst, über die Web-Benutzerschnittstelle oder durch eine andere Anwendung erfolgt sein.
+> **Info:** "Letzte Kommunikation" und "Letzte Aktualisierung" sind zwei vollkommen verschiedene Zeitstempel. "Letzte Kommunikation" zeigt an, wann ein Gerät das letzte mal Daten gesendet hat. "Letzte Aktualisierung" zeigt an, wann der Stammdateneintrag des Geräts das letzte mal aktualisiert wurde. Diese Aktualisierung kann durch das Gerät selbst, über die Web-Benutzerschnittstelle oder durch eine andere Anwendung erfolgt sein.
 
 Im Feld **Erwartetes Sendeintervall** können Sie ein Intervall angeben. Dieser Parameter legt fest, wie häufig Sie erwarten, von dem Gerät zu hören. Wenn Sie dieses Intervall etwa auf 60 setzen, erwarten Sie, dass das Gerät mindestens einmal pro Stunde mit Cumulocity IoT kommuniziert. Das Intervall wird entweder vom Gerät selbst festgelegt, basierend auf den Kenntnissen des Geräts darüber, wie oft es versuchen wird, Daten zu senden, oder es wird manuell von Ihnen festgelegt.
 
@@ -105,7 +105,7 @@ Klicken Sie **Serviceüberwachung** im Menü **Geräte** des Navigators, um den 
 
 ![Service monitoring](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-servicemonitoring.png)
 
-Die Seite **Serviceüberwachung** zeigt die prozentuale Verfügbarkeit aller Geräte während des letzten Tags, der letzten Woche und des letzten Monats an.
+Die Seite **Serviceüberwachung** zeigt die prozentuale Verfügbarkeit aller Geräte während der letzten 24 Stunden, der letzten 7 Tage und der letzten 30 Tage an.
 
 
 ### <a name="alarm-monitoring"></a>Verwenden von Alarmen
@@ -114,7 +114,7 @@ Geräte können Alarme auslösen, um anzuzeigen, dass ein Problem besteht, das e
 
 #### So zeigen Sie Alarme an
 
-Cumulocity IoT zeigt Alarme für einzelne Geräte sowie für alle Geräte an.
+Cumulocity IoT zeigt Alarme für einzelne Geräte sowie für alle Geräte an:
 
 * Um die Alarme für alle Geräte zu überprüfen, klicken Sie **Alarme** im Menü **Übersichten** des Navigators.
 * Um die Alarme eines bestimmten Geräts zu überprüfen, wechseln Sie zur Registerkarte **Alarm** in den Details dieses Geräts.
@@ -169,7 +169,7 @@ In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:
 </tr>
 <tr>
 <td align="left">Status</td>
-<td align="left">Status des Alarms: Ein Alarm kann Folgendes sein: <br> <strong>Aktiv</strong>: Wenn der Alarm ausgelöst wurde und keiner bisher den Alarm bearbeitet. <br><strong>Bestätigt</strong>: Wenn jemand den Status auf “Bestätigt” gesetzt hat, um anzuzeigen, dass dieser Alarm bereits bearbeitet wird.<br><strong>Aufgehoben</strong>: Wenn entweder jemand den Status manuell auf “aufgehoben” gesetzt hat oder wenn das Gerät selbst festgestellt hat, dass das Problem behoben ist.</td>
+<td align="left">Status des Alarms: Ein Alarm kann Folgendes sein: <br> <strong>Aktiv</strong>: Wenn der Alarm ausgelöst wurde und keiner bisher den Alarm bearbeitet. <br><strong>Bestätigt</strong>: Wenn jemand den Status auf "Bestätigt" gesetzt hat, um anzuzeigen, dass dieser Alarm bereits bearbeitet wird.<br><strong>Aufgehoben</strong>: Wenn entweder jemand den Status manuell auf "aufgehoben" gesetzt hat oder wenn das Gerät selbst festgestellt hat, dass das Problem behoben ist.</td>
 </tr>
 <tr>
 <td align="left">Letztes Auftreten</td>
@@ -181,9 +181,10 @@ In jeder Zeile werden die folgenden Informationen für einen Alarm angezeigt:
 </tr>
 </tbody>
 </table>
+
 Klicken Sie auf den Pfeil rechts in einem Eintrag, um die Zeile auszuklappen und weitere Details zum Alarm anzuzeigen.
 
-* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information wird verwendet, um die Priorität von Alarmen zu konfigurieren, siehe [Anwenden von Geschäftsregeln > Priorisieren von Alarmen](/benutzerhandbuch/administration-de#reprio-alarms) im Abschnitt Administration.
+* **Status**: Enthält weitere Informationen zum Alarmstatus und zeigt den Alarmtypen an. Die Typ-Information wird verwendet, um die Priorität von Alarmen zu konfigurieren, siehe [Administration > Priorisieren von Alarmen](/benutzerhandbuch/administration-de#reprio-alarms).
 * **Änderungsprotokoll**: Gibt die Serverzeit an, zu der der Alarm erstellt wurde. Diese kann von der Gerätezeit abweichen.
 
 #### So ändern Sie den Status eines Alarms
@@ -240,13 +241,13 @@ Durch Klicken der Status-Schaltflächen oben auf der Seite werden die entspreche
 
 Klicken Sie **Echtzeit** rechts in der oberen Menüleiste, um die vom Gerät empfangenen Kommandos in Echtzeit anzuzeigen.
 
->**Info**: Kommandos werden in absteigender Zeitfolge aufgelistet. Kommandos werden streng nach dieser Reihenfolge ausgeführt.
+>**Info:** Kommandos werden in absteigender Zeitfolge aufgelistet. Kommandos werden streng nach dieser Reihenfolge ausgeführt.
 
 #### So erstellen Sie Kommandos und führen Sie aus
 
 Kommandos für ein bestimmtes Gerät werden in der Registerkarte **Shell** des Geräts ausgeführt, siehe [Gerätedetails > Shell](/benutzerhandbuch/device-management-de#shell).
 
->**Wichtig**: Wenn Sie Cumulocity IoT zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Fernkommandos den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
+>**Wichtig:** Wenn Sie Cumulocity IoT zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Fernkommandos den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
 
 ##### <a name="bulk-operations"></a>So führen Sie Stapelkommandos aus
 
@@ -299,11 +300,35 @@ Standardmäßig werden die Ereignisse in Echtzeit angezeigt, sobald sie vom Ger�
 
 Für jedes Ereignis werden die folgenden Informationen bereitgestellt:
 
-|Info|Beschreibung|
-|:---|:---|
-|Zeitstempel|Zeitstempel, wann das Ereignis ausgeführt wurde.
-|Name|Name des Ereignisses.
-|Gerät|Name des Geräts, das das Ereignis sendet. Durch Klicken auf den Namen gelangen Sie zur Detailansicht des Geräts.
+
+<table>
+
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+
+<thead>
+<tr>
+<th align="left">Info</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Zeitstempel</td>
+<td align="left">Zeitstempel, wann das Ereignis ausgeführt wurde.</td>
+</tr>
+<tr>
+<td align="left">Name</td>
+<td align="left">Name des Ereignisses.</td>
+</tr>
+<tr>
+<td align="left">Gerät</td>
+<td align="left">Name des Geräts, das das Ereignis sendet. Durch Klicken auf den Namen gelangen Sie zur Detailansicht des Geräts.</td>
+</tr>
+</tbody>
+</table>
 
 In der Ereignisliste wird der letzte Eintrag ganz oben angezeigt.
 
@@ -311,4 +336,4 @@ Durch Klicken einer Zeile wird diese aufgeklappt und weitere Details zum Ereigni
 
 Da Geräte möglicherweise große Datenmengen senden, können Sie die angezeigten Daten nach Datum filtern.
 
-Wählen Sie in den Feldern in der oberen Menüleiste ein Startdatum und ein Enddatum und klicken Sie **Filtern**, um den Filter anzuwenden. Klicken Sie **Aufheben**, um den Filter wieder zurückzusetzen.
+Wählen Sie in den Feldern in der oberen Menüleiste ein Startdatum und ein Enddatum und klicken Sie **Anwenden**, um den Filter anzuwenden. Klicken Sie **Aufheben**, um den Filter wieder zurückzusetzen.

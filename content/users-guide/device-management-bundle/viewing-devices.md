@@ -85,10 +85,10 @@ Moreover, you can add custom columns to show additional device properties.
 
 1. In the **Configure columns** dialog box, click **Add custom column**.<br>
 ![Configure columns](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)<br>
-2. In the **Header** field, Enter a header for the new custom column.  
+2. In the **Header** field, enter a header for the new custom column.  
 3. In the **Fragment path** field, enter the property of the device to be shown. Nested properties will be accepted. However, for nested properties its only possible to select Cumulocity IoT standard fragments like `c8y_Mobile.mcc`.
 4. Select the **Filtering mode** for the new column. <br>
-If you select **Fragment equals value**, a value will only be shown if it matches the criteria specified by you in an additional dialog box.<br>
+If you select **Fragment equals value**, filtering will be done by applying the criteria a user may specify in the dialog box which shows up when clicking the column filter icon.<br>
 ![Specify values](/images/users-guide/DeviceManagement/devmgmt-device-list-custom-column.png)
 <br>In case of **Fragment exists**, filtering will be done by existence, i.e. filtering is done based on whether the property exists or not.    
 5. Click **Add**.
@@ -111,13 +111,11 @@ The device will be permanently deleted from the platform.
 
 Cumulocity IoT includes a full-text search for devices.
 
-Click the **Search** button at the top right and enter a search term into the textbox. Cumulocity IoT returns all devices containing this term in any property (name, model, any fragment...)
-
-Our example shows a search for "Ublox C027".
-
-> **Info:** Unlike filtering, the use of wildcards in a search is not supported.
+Click the **Search** button at the top right and enter a search term into the textbox. 
 
 For details on the search functionality, refer to [Getting Started > UI functionalities and features](/users-guide/getting-started#gui-features).
+
+Our example shows a search for "Ublox C027".
 
 ![Search for devices](/images/users-guide/DeviceManagement/devmgmt-search.png)
 

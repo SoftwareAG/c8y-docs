@@ -12,7 +12,7 @@ To check whether TFA is enabled for a certain user, go to the **Users** page and
 
 ### SMS
 
-When adding a user and TFA is enabled, a phone number needs to be provided. When users without a phone number try to login using TFA, they will be prompted for their mobile number. Without a valid mobile number a login is impossible.
+When adding a user and TFA is enabled, a mobile phone number must be specified. Without a valid phone number a login is impossible.
 
 
 #### How to enable a specific user

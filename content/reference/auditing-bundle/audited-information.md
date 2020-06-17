@@ -1,6 +1,6 @@
 ---
 weight: 10
-title: Audited informations
+title: Audited information
 layout: redirect
 ---
 

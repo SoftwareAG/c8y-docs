@@ -1,5 +1,5 @@
 ---
-title: Managing devices 
+title: Managing devices
 weight: 45
 ---
 
@@ -9,7 +9,7 @@ You can view and configure the essential mobile network (**WAN**) and local area
 
 The mobile network (**WAN**) parameters shown in the user interface corresponds to the first profile stored in the router. These parameters can be remotely configured directly or via SMS.
 
-For SMS configuration, the router needs to be configured to accept SMS commands. Consult the router’s manual on the relevant parameters for SMS configuration, or use the router’s web user interface. Moreover, a Connectivity management platform must be configured inside your tenant. Refer to [Optional services > Connectivity](/users-guide/optional-services/#connectivity) in the User guide for details. 
+For SMS configuration, the router needs to be configured to accept SMS commands. Consult the router’s manual on the relevant parameters for SMS configuration, or use the router’s web user interface. Moreover, a Connectivity management platform must be configured inside your tenant. Refer to [Optional services > Connectivity](/users-guide/optional-services/#connectivity) in the User guide for details.
 
 For more information on the **Network** tab, see [Device Management > Device details > Network](/users-guide/device-management/#network) in the User guide.
 
@@ -44,7 +44,7 @@ You can record statistics of the router’s system resources usage for troublesh
 By default, the collection of resource statistics is disabled. It can be enabled by setting a non-zero collecting interval in the **System resources measurements** entry of the [web user interface of the router](#configure) or using the [device shell](#device-shell).
 
 ```shell
-set service.cumulocity.system_resources.interval=<interval>
+set service.cumulocity.system_resources.interval=<seconds>
 ```
 
 Collected data can be accessed in the **Measurements** tab or in a dashboard.
@@ -56,7 +56,7 @@ You can also record statistics of the router’s cellular signal strength.
 By default, the collection of signal strength statistics is disabled. They can be enabled by setting a non-zero collecting interval in the **Connection signal measurements** entry of the [web user interface of the router](#configure) or using the [device shell](#device-shell).
 
 ```shell
-set service.cumulocity.signal.interval=<interval>
+set service.cumulocity.signal.interval=<seconds>
 ```
 
 Collected data can be accessed in the **Measurements** tab or in a dashboard.
@@ -68,8 +68,8 @@ To locate or trace the router, connect a GPS antenna to the router and enable it
 Similarly, you can set these parameters from the [device shell](#device-shell).
 
 ```shell
-set service.cumulocity.gps.update_interval=<update interval>
-set service.cumulocity.gps.interval=<event interval>
+set service.cumulocity.gps.update_interval=<seconds>
+set service.cumulocity.gps.interval=<seconds>
 ```
 
 After you applied the configuration changes, wait a moment for the first GPS data to arrive, then refresh the page. A **Location** and a **Tracking** tab should now appear. See  [Device Management > Device details](/users-guide/device-management/#device-details) in the User guide for details on the  [**Location**](/users-guide/device-management#location) and [**Tracking**](/users-guide/device-management#tracking) tab.

@@ -24,6 +24,7 @@ The MQTT section is structured as follows:
 
 * [MQTT implementation](/device-sdk/mqtt#implementation) gives a detailed reference of protocol-level aspects in the Cumulocity IoT implementation of MQTT.
 * [Device integration](/device-sdk/mqtt#device-integration) walks you through the process of interfacing devices with Cumulocity IoT through MQTT.
+* [Device certificates](/device-sdk/mqtt#device-certificates) describes how devices can connect via MQTT with certificates.
 * [SmartREST 1.0](/device-sdk/mqtt#smartrest-1) defines the SmartREST 1.0 payload format for MQTT for easy portability of existing SmartREST devices.
 * [SmartREST 2.0](/device-sdk/mqtt#smartrest-2) defines the SmartREST 2.0 payload format for MQTT with improvements in usability and traffic usage.
 * [MQTT static templates](/device-sdk/mqtt#static-templates) provides a reference of pre-defined payload formats that you can use straight away.
@@ -33,4 +34,4 @@ The MQTT section is structured as follows:
 
 This section does not describe the basics of MQTT communication. If you are unfamiliar with MQTT, we recommend consulting one of the numerous introductions in the Internet. Some references can be found on the [MQTT web site](http://mqtt.org/documentation).
 
-> **Info**: For all MQTT connections to our platform, the maximum accepted payload size is 16384 bytes (16KiB), which includes both message header and body. The header size varies, but its minimum is 2 bytes.
+> **Info**: For all MQTT connections to the platform, the maximum accepted payload size is 16184 bytes (16KiB), which includes both message header and body. The header size varies, but its minimum is 2 bytes.

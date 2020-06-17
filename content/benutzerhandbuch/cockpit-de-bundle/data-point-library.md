@@ -4,9 +4,9 @@ title: Datenpunktbibliothek
 layout: redirect
 ---
 
-Die Datenpunktbibliothek enthält eine Sammlung von Datenpunkten mit Standardwerten für Datenpunktattribute. 
+Die Datenpunktbibliothek enthält eine Sammlung von Datenpunkten mit Standardwerten für Datenpunktattribute.
 
-Datenpunktattribute ähneln den Absatzformaten in Textverarbeitungsanwendungen. Sie möchten nicht jeden Absatz einzeln formatieren. Stattdessen möchten Sie einen Satz von Standardformaten definieren und diese auf Ihre Absätze in Ihrem Dokument anwenden. 
+Datenpunktattribute ähneln den Absatzformaten in Textverarbeitungsanwendungen. Sie möchten nicht jeden Absatz einzeln formatieren. Stattdessen möchten Sie einen Satz von Standardformaten definieren und diese auf Ihre Absätze in Ihrem Dokument anwenden.
 
 Die Datenpunktbibliothek bietet die gleiche Funktionalität für Datenpunkte. Sie bietet eine Reihe von standardisierten Datenpunkt-Templates, die problemlos auf Ihre Datenpunkte von verschiedenen Geräten angewendet werden können.
 
@@ -27,7 +27,7 @@ Es wird eine Liste der verfügbaren Datenpunkte angezeigt. Jeder Datenpunkt enth
 
 ### So fügen Sie der Bibliothek einen Datenpunkt hinzu
 
-1. Klicken Sie **Datenpunkt hinzufügen** in der oberen Menüleiste. 
+1. Klicken Sie **Datenpunkt hinzufügen** in der oberen Menüleiste.
 2. Geben Sie die folgenden Informationen ein:
 
 	|Feld|Beschreibung|
@@ -42,7 +42,7 @@ Es wird eine Liste der verfügbaren Datenpunkte angezeigt. Jeder Datenpunkt enth
 |Maximum|Minimaler Wert, der auf der Y-Achse angezeigt wird
 |Gelber Bereich|Min./Max.-Werte für den gelben Bereich (WENIGER WICHTIGE Alarme)
 |Roter Bereich|Min./Max.-Werte für den roten Bereich (KRITISCHE Alarme)
- 
+
 3. Klicken Sie **Speichern**, um den Datenpunkt zur Bibliothek hinzuzufügen.
 
 ### So bearbeiten Sie einen Datenpunkt

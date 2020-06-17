@@ -29,7 +29,7 @@ For new projects, you shall use a new bundle of [building scripts](https://bitbu
 
 ### <a name="general-prerequisites"></a> Development prerequisites
 
-To use the C# client libraries for development, you need to install .NET Core SDK for your development platform such as Windows or Linux (version 2.2 of the [.NET Core SDK](https://www.microsoft.com/net/download/windows)). Note that .NET Core Runtime and .NET Core SDK are different things.
+To use the C# client libraries for development, you need to install .NET Core SDK for your development platform such as Windows or Linux (version 3.1 of the [.NET Core SDK](https://www.microsoft.com/net/download/windows)). Note that .NET Core Runtime and .NET Core SDK are different things.
 
 Use the following command to verify the version of your .NET Core SDK:
 
@@ -37,7 +37,7 @@ Use the following command to verify the version of your .NET Core SDK:
 $ dotnet --info
 ```
 
-The output must show a version number later than "2.2.0" to implement the basic examples.
+The output must show a version number later than "3.1.0" to implement the basic examples.
 
 You also need a local Docker installation. Review the information at [Docker for Windows: What to know before you install](https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install) and install [Docker For Windows](https://docs.docker.com/docker-for-windows/install/). For Linux systems, follow the general installation on the [Get Started with Docker](https://www.docker.com/get-started) webpage.
 
@@ -51,14 +51,14 @@ Depending on what you want to do, you need either the .NET Core SDK or the .NET 
 #### Windows system requirements
 
 *   Powershell (at least Version 6 or Core)
-*   .NET Core SDK (at least Version 2.2)
+*   .NET Core SDK (at least Version 3.1)
 *   Docker for Windows (at least Version 17.06)
 
 #### Linux system requirements
 
 *   .NET Core SDK (at least Version 2.2)
 *   Docker (at least Version 17.06)
-*   Mono (at least Version 6.0.0)
+*   Mono (at least Version 6.8.0)
 
 ### Runtime prerequisites
 

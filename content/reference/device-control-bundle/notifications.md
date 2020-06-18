@@ -33,7 +33,7 @@ The subscription channel needs to contain the managed object ID of the device or
 
     /operations/<<deviceId>>
 
-The response will additionally to the operation object contain a "realtimeAction" to identify which action resulted in the given object (CREATE, UPDATE or DELETE). In case of a deletion the data will only contain the id of the deleted operation.
+The response will additionally to the operation object contain a "realtimeAction" to identify which action resulted in the given object (CREATE, UPDATE or DELETE). In case of a deletion the data will only contain the ID of the deleted operation.
 
 Example Response:
 

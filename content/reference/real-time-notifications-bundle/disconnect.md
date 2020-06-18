@@ -10,7 +10,7 @@ To stop receiving notifications from all channels and close the conversation, se
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|id|Integer|0..1|Id of message, required to match response message|
+|id|Integer|0..1|ID of message, required to match response message.|
 |channel|URI|1|Name of channel, required value "/meta/disconnect".|
 |clientId|String|1|Unique ID of client received during handshake.|
 
@@ -34,7 +34,7 @@ Content-Type: application/json
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|id|Integer|0..1|Id of message passed in request message|
+|id|Integer|0..1|ID of message passed in request message.|
 |channel|URI|1|Name of channel, required value "/meta/disconnect".|
 |successful|Boolean|1|Result of disconnect operation.|
 |clientId|String|1|Unique ID of client received during handshake.|

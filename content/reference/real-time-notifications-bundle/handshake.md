@@ -30,7 +30,7 @@ When using websockets, a property 'ext' containing an authentication object must
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|id|Integer|1|Id of message, required to match response message�|
+|id|Integer|1|ID of message, required to match response message.|
 |channel|URI|1|Name of channel, required value "/meta/handshake".|
 |ext|Object|1|Authentication object passed to handshake. (only over websockets)|
 |version|String|1|Bayeux protocol version used by client.|
@@ -80,7 +80,7 @@ Example request:
 <td align="left">id</td>
 <td align="left">Integer</td>
 <td align="left">1</td>
-<td align="left">Id of message passed in request message</td>
+<td align="left">ID of message passed in request message.</td>
 </tr>
 <tr>
 <td align="left">channel</td>

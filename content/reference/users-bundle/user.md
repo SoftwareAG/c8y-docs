@@ -28,93 +28,93 @@ A "User" resource type contains the following fields:
 <tbody>
 <tr>
 <td align="left">id</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Uniquely identifies a user</td>
+<td align="left">Uniquely identifies a user.</td>
 <td align="left">not allowed</td>
 </tr>
 <tr>
 <td align="left">self</td>
-<td align="left">URI</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Link to this resource</td>
+<td align="left">A URI linking to this resource.</td>
 <td align="left">not allowed</td>
 </tr>
 <tr>
 <td align="left">userName</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">User name, unique for a given domain. Max: 1000 characters. Whitespaces, slashes, +$: characters not allowed</td>
+<td align="left">User name, unique for a given domain. Max: 1000 characters. Whitespaces, slashes, +$: characters not allowed.</td>
 <td align="left">POST: mandatory PUT: not allowed</td>
 </tr>
 <tr>
 <td align="left">password</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">User password. Min: 6, max: 32 characters. Only Latin1 chars allowed</td>
+<td align="left">User password. Min: 6, max: 32 characters. Only Latin1 chars allowed.</td>
 <td align="left">POST: mandatory PUT: optional</td>
 </tr>
 <tr>
 <td align="left">firstName</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">User first name</td>
+<td align="left">User first name.</td>
 <td align="left">optional</td>
 </tr>
 <tr>
 <td align="left">lastName</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">User last name</td>
+<td align="left">User last name.</td>
 <td align="left">optional</td>
 </tr>
 <tr>
 <td align="left">phone</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">User phone number. Format: “+[country code][number]", has to be a valid MSISDN</td>
 <td align="left">optional</td>
 </tr>
 <tr>
 <td align="left">email</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">User email address</td>
+<td align="left">User email address.</td>
 <td align="left">optional</td>
 </tr>
 <tr>
 <td align="left">enabled</td>
 <td align="left">boolean</td>
 <td align="left">1</td>
-<td align="left">User activation status (true/false)</td>
+<td align="left">User activation status (true/false).</td>
 <td align="left">optional</td>
 </tr>
 <tr>
 <td align="left">customProperties</td>
 <td align="left">Object</td>
 <td align="left">1</td>
-<td align="left">Keeps a list of custom properties</td>
+<td align="left">Keeps a list of custom properties.</td>
 <td align="left">optional</td>
 </tr>
 <tr>
 <td align="left">groups</td>
-<td align="left">GroupReferenceCollection</td>
+<td align="left">Array</td>
 <td align="left">1</td>
-<td align="left">List of group references</td>
+<td align="left">List of group references.</td>
 <td align="left">not allowed</td>
 </tr>
 <tr>
 <td align="left">roles</td>
-<td align="left">RoleReferenceCollection</td>
+<td align="left">Array</td>
 <td align="left">1</td>
-<td align="left">List of role references</td>
+<td align="left">List of role references.</td>
 <td align="left">not allowed</td>
 </tr>
 <tr>
 <td align="left">devicePermissions</td>
-<td align="left">Object</td>
+<td align="left">Array</td>
 <td align="left">1</td>
-<td align="left">List of device permissions</td>
+<td align="left">List of device permissions.</td>
 <td align="left">optional</td>
 </tr>
 </tbody>
@@ -146,79 +146,79 @@ A "currentUser" resource type contains the following fields:
 <tbody>
 <tr>
 <td align="left">id</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Uniquely identifies a user</td>
+<td align="left">Uniquely identifies a user.</td>
 <td align="left">not allowed</td>
 </tr>
 <tr>
 <td align="left">self</td>
-<td align="left">URI</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Link to this resource</td>
+<td align="left">A URI linking to this resource.</td>
 <td align="left">not allowed</td>
 </tr>
 <tr>
 <td align="left">userName</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">User name, unique for a given domain. Max: 1000 characters</td>
 <td align="left">POST: mandatory PUT: not allowed</td>
 </tr>
 <tr>
 <td align="left">password</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">User password. Min: 6, max: 32 characters. Only Latin1 chars allowed</td>
+<td align="left">User password. Min: 6, max: 32 characters. Only Latin1 chars allowed.</td>
 <td align="left">POST: mandatory PUT: optional</td>
 </tr>
 <tr>
 <td align="left">firstName</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">User first name</td>
+<td align="left">User first name.</td>
 <td align="left">optional</td>
 </tr>
 <tr>
 <td align="left">lastName</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">User last name</td>
+<td align="left">User last name.</td>
 <td align="left">optional</td>
 </tr>
 <tr>
 <td align="left">phone</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">User phone number. Format: “+[country code][number]", has to be a valid MSISDN</td>
 <td align="left">optional</td>
 </tr>
 <tr>
 <td align="left">email</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">User email address</td>
+<td align="left">User email address.</td>
 <td align="left">optional</td>
 </tr>
 <tr>
 <td align="left">enabled</td>
 <td align="left">boolean</td>
 <td align="left">1</td>
-<td align="left">User activation status (true/false)</td>
+<td align="left">User activation status (true/false).</td>
 <td align="left">optional</td>
 </tr>
 <tr>
 <td align="left">devicePermissions</td>
-<td align="left">Object</td>
+<td align="left">Array</td>
 <td align="left">1</td>
-<td align="left">List of device permissions</td>
+<td align="left">List of device permissions.</td>
 <td align="left">optional</td>
 </tr>
 <tr>
 <td align="left">effectiveRoles</td>
-<td align="left">Role</td>
+<td align="left">Array</td>
 <td align="left">0..n</td>
-<td align="left">List of all roles assigned to a current user (explicitly or implicitly via associated groups)</td>
+<td align="left">List of all roles assigned to a current user (explicitly or implicitly via associated groups).</td>
 <td align="left">not allowed</td>
 </tr>
 </tbody>

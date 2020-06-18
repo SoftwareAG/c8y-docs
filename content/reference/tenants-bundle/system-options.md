@@ -34,7 +34,7 @@ Example Response :
       ],
     }
 
-It is also poss	ible to query a single system option passing in url path category and id:
+It is also poss	ible to query a single system option by passing `category` and `id` in the URL path:
 
 Response body: Option
 

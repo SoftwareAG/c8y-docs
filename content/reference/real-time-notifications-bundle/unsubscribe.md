@@ -10,7 +10,7 @@ To stop receiving notifications from a channel, send a message to <kbd>/meta/uns
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|id|Integer|1|Id of message, required to match response message|
+|id|Integer|1|ID of message, required to match response message.|
 |channel|URI|1|Name of channel, required value "/meta/unsubscribe".|
 |clientId|String|1|Unique client ID received during handshake.|
 |subscription|String|1|Name of channel.|
@@ -36,7 +36,7 @@ Content-Type: application/json
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|id|Integer|1|Id of message passed in request message|
+|id|Integer|1|ID of message passed in request message.|
 |channel|URI|1|Name of channel, required value "/meta/unsubscribe".|
 |clientId|String|1|Unique ID of client.|
 |subscription|String|1|Name of subscribed channel.|

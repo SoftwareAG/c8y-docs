@@ -10,9 +10,9 @@ layout: redirect
 
 |Name|Type|Description|
 |:---|:---|:----------|
-|model|String|A text identifier of the device's hardware model.|
-|revision|String|A text identifier of the hardware revision.|
-|serialNumber|String|The hardware serial number of the device.|
+|model|string|A text identifier of the device's hardware model.|
+|revision|string|A text identifier of the hardware revision.|
+|serialNumber|string|The hardware serial number of the device.|
 
     "c8y_Hardware": {
       "model": "BCM2708",
@@ -29,9 +29,9 @@ layout: redirect
 
 |Name|Type|Description|
 |:---|:---|:----------|
-|name|String|Name of the firmware.|
-|version|String|A version identifier of the hardware.|
-|url|URI|A location to download the firmware from.|
+|name|string|Name of the firmware.|
+|version|string|A version identifier of the hardware.|
+|url|string|A URI linking to the location to download the firmware from.|
 
     "c8y_Firmware": {
       "name": "raspberrypi-bootloader",
@@ -49,9 +49,9 @@ In the example above, the device is requested to install firmware version "1.201
 
 |Name|Type|Description|
 |:---|:---|:----------|
-|name|String|Name of the software.|
-|version|String|A version identifier of the software.|
-|url|URI|A location to download the software from.|
+|name|string|Name of the software.|
+|version|string|A version identifier of the software.|
+|url|string|A URI linking to the location to download the software from.|
 
 
 In the inventory, "c8y\_SoftwareList" represents the currently installed software components on the device.
@@ -81,9 +81,9 @@ To enable software installation through the user interface, add "c8y\_SoftwareLi
 
 |Name|Type|Description|
 |:---|:---|:----------|
-|imei|String|The equipment identifier (IMEI) of the modem in the device.|
-|cellId|String|The identifier of the cell in the mobile network that the device is currently connected with.|
-|iccid|String|The identifier of the SIM card that is currently in the device (often printed on the card).|
+|imei|string|The equipment identifier (IMEI) of the modem in the device.|
+|cellId|string|The identifier of the cell in the mobile network that the device is currently connected with.|
+|iccid|string|The identifier of the SIM card that is currently in the device (often printed on the card).|
 
     "c8y_Mobile": {
       "imei": "358901048995390",
@@ -125,7 +125,7 @@ c8y_Mobile.msisdn
 <tbody>
 <tr>
 <td align="left">radioType</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">The radio type of this cell tower. (Optional)</td>
 </tr>
 <tr>
@@ -135,7 +135,7 @@ c8y_Mobile.msisdn
 </tr>
 <tr>
 <td align="left">cellTowers.radioType</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">The radio type of this cell tower. Can also be put directly in root JSON element if all cellTowers have same radioType. (Optional)</td>
 </tr>
 <tr>

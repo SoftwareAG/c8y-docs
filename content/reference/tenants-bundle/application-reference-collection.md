@@ -8,11 +8,11 @@ layout: redirect
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource.|
-|references|ApplicationReference|0..n|List of Options, see below.|
+|self|string|1|A URI linking to this resource.|
+|references|Array|0..n|List of Options, see below.|
 |statistics|PagingStatistics|1|Information about paging statistics.|
-|prev|URI|0..1|Link to a potential previous page of options.|
-|next|URI|0..1|Link to a potential next page of options.|
+|prev|string|0..1|A URI linking to a potential previous page of options.|
+|next|string|0..1|A URI linking to a potential next page of options.|
 
 ### POST application to tenant applications
 
@@ -38,19 +38,19 @@ Example Response :
         "application":{"self":"<<Application URL>>", "id":...}
     }
 
->**Info:** A POST request for adding a microservice application to the tenant’s applications is not synchronous with the 
-creation of assets on the container cluster. An attempt to invoke the microservice immediately after the creation 
-of the subscription might result in an error because the name of the service is yet not known in the cluster. 
+>**Info:** A POST request for adding a microservice application to the tenant’s applications is not synchronous with the
+creation of assets on the container cluster. An attempt to invoke the microservice immediately after the creation
+of the subscription might result in an error because the name of the service is yet not known in the cluster.
 
 ### GET a representation of a ApplicationReferenceCollection.
 
 Response body: ApplicationReferenceCollection
-  
+
 Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 
 Example Request: Get Application reference collection.
 
-     
+
     GET /tenant/tenants/<<tenantId>>/applications
     Host: ...
     Authorization: Basic ...

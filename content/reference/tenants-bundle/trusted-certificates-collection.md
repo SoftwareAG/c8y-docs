@@ -8,11 +8,11 @@ layout: redirect
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource.|
-|certificates|TrustedCertificate|0..n|List of tenant's trusted certificates, see [TrustedCertificates](/reference/tenants/#trusted-certificates).|
+|self|string|1|A URI linking to this resource.|
+|certificates|Array|0..n|List of tenant's trusted certificates, see [TrustedCertificates](/reference/tenants/#trusted-certificates).|
 |statistics|PagingStatistics|1|Information about paging statistics.|
-|prev|URI|0..1|Link to a potential previous page of tenants.|
-|next|URI|0..1|Link to a potential next page of tenants.|
+|prev|string|0..1|A URI linking to a potential previous page of tenants.|
+|next|string|0..1|A URI linking to a potential next page of tenants.|
 
 ### GET a representation of a trusted certificates collection
 

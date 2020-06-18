@@ -9,11 +9,11 @@ layout: redirect
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource.|
-|auditRecords|AuditRecord|0..n|List of audit records, see below.|
+|self|string|1|A URI linking to this resource.|
+|auditRecords|Array|0..n|List of audit records, see below.|
 |statistics|PagingStatistics|1|Information about paging statistics.|
-|prev|URI|0..1|Link to a potential previous page of audit records.|
-|next|URI|0..1|Link to a potential next page of audit records.|
+|prev|string|0..1|A URI linking to a potential previous page of audit records.|
+|next|string|0..1|A URI linking to a potential next page of audit records.|
 
 The "source" object of an audit record contains the properties "id" and "self".
 

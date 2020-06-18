@@ -8,21 +8,21 @@ layout: redirect
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource.|
-|options|Option|0..n|List of Options, see below.|
+|self|string|1|A URI linking to this resource.|
+|options|Array|0..n|List of Options, see below.|
 |statistics|PagingStatistics|1|Information about paging statistics.|
-|prev|URI|0..1|Link to a potential previous page of options.|
-|next|URI|0..1|Link to a potential next page of options.|
+|prev|string|0..1|A URI linking to a potential previous page of options.|
+|next|string|0..1|A URI linking to a potential next page of options.|
 
 ### GET a representation of a OptionCollection.
 
 Response body: OptionCollection
-  
+
 Required role: ROLE\_OPTION\_MANAGEMENT\_READ
 
 Example Request: Get options.
 
-     
+
     GET /tenant/options
     Host: ...
     Authorization: Basic ...
@@ -58,12 +58,12 @@ Example Response :
 Request body: Option
 
 Response body: Option
-  
+
 Required role: ROLE\_OPTION\_MANAGEMENT\_ADMIN
 
 Example Request: Post option.
 
-     
+
     POST /tenant/options
     Host: ...
     Authorization: Basic ...

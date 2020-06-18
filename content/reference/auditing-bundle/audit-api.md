@@ -24,9 +24,9 @@ layout: redirect
 <tbody>
 <tr>
 <td align="left">self</td>
-<td align="left">URL</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Link to this resource.</td>
+<td align="left">A URL linking to this resource.</td>
 </tr>
 <tr>
 <td align="left">auditRecords</td>

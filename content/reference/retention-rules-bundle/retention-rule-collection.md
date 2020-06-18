@@ -8,22 +8,22 @@ layout: redirect
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource.|
-|retentionRules|RetentionRule|0..n|List of Retention rule, see below.|
+|self|string|1|A URI linking to this resource.|
+|retentionRules|Array|0..n|List of Retention rule, see below.|
 |statistics|PagingStatistics|1|Information about paging statistics.|
-|prev|URI|0..1|Link to a potential previous page of tenants.|
-|next|URI|0..1|Link to a potential next page of tenants.|
+|prev|string|0..1|A URI linking to a potential previous page of tenants.|
+|next|string|0..1|A URI linking to a potential next page of tenants.|
 
 
 ### GET a representation of a RetentionRuleCollection.
 
 Response body: RetentionRuleCollection
-  
+
 Required role: ROLE\_RETENTION\_RULE\_READ
 
 Example Request: Get retentionRules as sample\_tenant.
 
-     
+
     GET ...
     Host: ...
     Authorization: Basic ...
@@ -80,8 +80,8 @@ Example Response :
     ],
     "self": "<<URL of current page>>"
     }
-    
-    
+
+
 ### POST - Create a new RetentionRule
 
 Request body: RetentionRule
@@ -91,13 +91,13 @@ Response body: RetentionRule
 Required role: ROLE\_RETENTION\_RULE\_ADMIN
 
 Example request (full POST):
-	
+
 	POST ...
 	Host: ...
 	Authorization: Basic ...
 	Content-Length: ...
 	Content-Type: application/vnd.com.nsn.cumulocity.retentionRule+json;ver...
-	
+
 	{
         "dataType":"ALARM",
         "fragmentType":"fragmentType",
@@ -105,14 +105,14 @@ Example request (full POST):
         "source":"source",
         "maximumAge":"12"
     }
-	
+
 Example Response (full POST):
 
 	HTTP/1.1 201 Created
 	Content-Type: application/vnd.com.nsn.cumulocity.retentionRule+json;ver=...
 	Content-Length: ...
 	Location: <<URL of new retentionRule>>
-	
+
 	{
 	    "id" : "<<ID of new retetionRule>>",
 		"self" : "<<URL of new retetionRule>>",
@@ -123,15 +123,15 @@ Example Response (full POST):
         "maximumAge":"12",
         "editable":"true"
     }
-	
+
 Example request (partial POST):
-	
+
 	POST ...
 	Host: ...
 	Authorization: Basic ...
 	Content-Length: ...
 	Content-Type: application/vnd.com.nsn.cumulocity.retentionRule+json;ver...
-	
+
 	{
         "dataType":"ALARM",
         "maximumAge":"12"
@@ -143,7 +143,7 @@ Example Response (partial POST):
 	Content-Type: application/vnd.com.nsn.cumulocity.retentionRule+json;ver=...
 	Content-Length: ...
 	Location: <<URL of new retentionRule>>
-	
+
 	{
 	    "id" : "<<ID of new retetionRule>>",
 		"self" : "<<URL of new retetionRule>>",
@@ -154,6 +154,3 @@ Example Response (partial POST):
         "maximumAge":"12",
         "editable":"true"
     }
-
-
-

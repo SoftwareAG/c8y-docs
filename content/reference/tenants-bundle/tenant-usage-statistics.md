@@ -8,14 +8,14 @@ layout: redirect
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|day|String|1|Date of statistics.|
-|deviceCount|Number|1|Number of devices in the tenant (c8y\_IsDevice). Latest value for a queried period.|
-|deviceEndpointCount|Number|1|Number of devices which do not have child devices (leaf devices). Latest value for a queried period.|
-|deviceRequestCount|Number|1|Number of requests that were issued only by devices against the tenant. Sum of all issued requests during the queried period.|
-|deviceWithChildrenCount|Number|1|Number of devices with all children. Latest value for a queried period.|
-|requestCount|Number|1|Number of requests that were issued against the tenant. Sum of all issued requests during the queried period.|
-|storageSize|Number|1|Database storage in use by the tenant, in bytes. Latest value for a queried period.|
-|subscribedApplications|List|1|Names of tenant subscribed applications. Latest value for a queried period.|
+|day|string|1|Date of statistics.|
+|deviceCount|int|1|Number of devices in the tenant (c8y\_IsDevice). Latest value for a queried period.|
+|deviceEndpointCount|int|1|Number of devices which do not have child devices (leaf devices). Latest value for a queried period.|
+|deviceRequestCount|int|1|Number of requests that were issued only by devices against the tenant. Sum of all issued requests during the queried period.|
+|deviceWithChildrenCount|int|1|Number of devices with all children. Latest value for a queried period.|
+|requestCount|int|1|Number of requests that were issued against the tenant. Sum of all issued requests during the queried period.|
+|storageSize|int|1|Database storage in use by the tenant, in bytes. Latest value for a queried period.|
+|subscribedApplications|Array|1|Names of tenant subscribed applications. Latest value for a queried period.|
 
 "requestCount" - the following requests are not included in the counter:
 
@@ -26,7 +26,7 @@ layout: redirect
 * Microservice SDK internal calls for applications and subscriptions - "/currentApplication"
 
  "deviceRequestCount" - beside of the exceptions already listed for "requestCount" the following requests are not included in the counter:
- 
+
  * requests to /user, /tenant and /application API's
  * application related requests (with "X-Cumulocity-Application-Key" header)
 
@@ -54,7 +54,7 @@ MQTT specific counting details:
 * Device creation request is not counted.
 * Each row/line counts as a separate request.
 * Creating custom template counts as a single request, no matter how many rows are send in the request.
-* There is one special SmartREST 2.0 template (402 Create location update event with device update) which is treated differently. Because it is doing two things in one call (create new location event and update location in device) "requestCount" and "deviceRequestCount" are increased once but inbound data transfer counters are increased by two (one for event creation and one for inventory update). 
+* There is one special SmartREST 2.0 template (402 Create location update event with device update) which is treated differently. Because it is doing two things in one call (create new location event and update location in device) "requestCount" and "deviceRequestCount" are increased once but inbound data transfer counters are increased by two (one for event creation and one for inventory update).
 
 ### Total inbound data transfer
 
@@ -78,42 +78,42 @@ The table below lists all counters that enhance the Cumulocity IoT tenant statis
 <tbody>
 <tr>
 <td style="text-align:left">measurementsCreatedCount</td>
-<td style="text-align:left">Number</td>
+<td style="text-align:left">int</td>
 <td style="text-align:left">The number of measurements created. Note: The bulk creation of measurements is handled in a way that each measurement is counted individually.</td>
 </tr>
 <tr>
 <td style="text-align:left">alarmsCreatedCount</td>
-<td style="text-align:left">Number</td>
+<td style="text-align:left">int</td>
 <td style="text-align:left">The number of alarms created.</td>
 </tr>
 <tr>
 <td style="text-align:left">alarmsUpdatedCount</td>
-<td style="text-align:left">Number</td>
+<td style="text-align:left">int</td>
 <td style="text-align:left">The number of updates on alarms.</td>
 </tr>
 <tr>
 <td style="text-align:left">eventsCreatedCount</td>
-<td style="text-align:left">Number</td>
+<td style="text-align:left">int</td>
 <td style="text-align:left">The number of events created.</td>
 </tr>
 <tr>
 <td style="text-align:left">eventsUpdatedCount</td>
-<td style="text-align:left">Number</td>
+<td style="text-align:left">int</td>
 <td style="text-align:left">The number of updates on events.</td>
 </tr>
 <tr>
 <td style="text-align:left">inventoriesCreatedCount</td>
-<td style="text-align:left">Number</td>
+<td style="text-align:left">int</td>
 <td style="text-align:left">The number of managed objects created.</td>
 </tr>
 <tr>
 <td style="text-align:left">inventoriesUpdatedCount</td>
-<td style="text-align:left">Number</td>
+<td style="text-align:left">int</td>
 <td style="text-align:left">The number of updates to managed objects.</td>
 </tr>
 <tr>
 <td style="text-align:left">totalResourceCreateAndUpdateCount</td>
-<td style="text-align:left">Number</td>
+<td style="text-align:left">int</td>
 <td style="text-align:left">The sum of values above (all inbound transfers).</td>
 </tr>
 </tbody>
@@ -143,11 +143,11 @@ See the table below for more information on how the counters above are increased
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource.|
-|usageStatistics|UsageStatistics|0..n|List of usage statistics, see above.|
+|self|string|1|A URI linking to this resource.|
+|usageStatistics|Array|0..n|List of usage statistics, see above.|
 |statistics|PagingStatistics|1|Information about paging statistics.|
-|prev|URI|0..1|Link to a potential previous page of tenants.|
-|next|URI|0..1|Link to a potential next page of tenants.|
+|prev|string|0..1|A URI linking to a potential previous page of tenants.|
+|next|string|0..1|A URI linking to a potential next page of tenants.|
 
 ### GET a representation of a TenantUsageStatisticsCollection
 

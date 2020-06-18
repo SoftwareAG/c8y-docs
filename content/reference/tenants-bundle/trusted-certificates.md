@@ -8,19 +8,19 @@ layout: redirect
 
 |Name|Type|Description|Mandatory for PUT/POST|
 |:---|:---|:----------|:---------------------|
-|notAfter|DateTime |Date after which a certificate is no longer valid.|No|
+|notAfter|datetime|Date after which a certificate is no longer valid.|No|
 |serialNumber|Positive number |Certificate unique serial number.|No|
-|subject|String |Name of the client to which the certificate belongs.|No|
-|algorithmName|String |Algorithms used to sign the certificate.|No|
-|version|String |Version of the encoded certificate.|No|
-|notBefore|DateTime |Date before which a certificate is not valid.|No|
-|issuer|String |Entity who has signed and issued the certificate.|No|
-|fingerprint|String |Unique identifier of the certificate.|No 
-|name|String |Unique certificate name.|No 
-|autoRegistrationEnabled|Boolean |Flag for auto registration process.|No
-|certInPemFormat|String |Certificate representation in PEM format.|POST: Yes <br>PUT: No
-|status|String |Certificate status.|POST: Yes <br>PUT: No
-|self|URI |Link to this resource.|No 
+|subject|string|Name of the client to which the certificate belongs.|No|
+|algorithmName|string|Algorithms used to sign the certificate.|No|
+|version|string|Version of the encoded certificate.|No|
+|notBefore|datetime|Date before which a certificate is not valid.|No|
+|issuer|string|Entity who has signed and issued the certificate.|No|
+|fingerprint|string|Unique identifier of the certificate.|No
+|name|string|Unique certificate name.|No
+|autoRegistrationEnabled|boolean|Flag for auto registration process.|No
+|certInPemFormat|string|Certificate representation in PEM format.|POST: Yes <br>PUT: No
+|status|string|Certificate status.|POST: Yes <br>PUT: No
+|self|string|A URI linking to this resource.|No 
 
 ### GET a certificate from tenant's trusted certificates    
 
@@ -36,7 +36,7 @@ Example request: Get a certificate from the tenant's trusted certificates by fin
     Accept: application/json
 
 Example response:
-    
+
     HTTP/1.1 200 OK
     Content-Type: application/json
     {
@@ -58,12 +58,12 @@ Example response:
 ### DELETE a certificate from the tenant's trusted certificates
 
 Response body: application/json
-  
+
 Required role: ROLE\_TENANT\_ADMIN
 
 Example request: Delete a certificate by fingerprint
 
-     
+
     DELETE /tenant/tenants/<<tenantId>>/trusted-certificates/<<certificate fingerprint>>
     Host: ...
     Authorization: Basic ...

@@ -80,13 +80,13 @@ This is caused mainly by versions incompatibility between the SDK and Spring Boo
 
 ##### Missing Docker permissions in Linux
 
-When you install a microservice application via `mvn`, you might get this error:
+When you build a microservice application via `mvn`, you might get this error:
 
-``` shell
+```shell
 [ERROR] Failed to execute goal com.nsn.cumulocity.clients-java:microservice-package-maven-plugin:1004.6.12:package (package) on project hello-microservice-java: Execution package of goal com.nsn.cumulocity.clients-java:microservice-package-maven-plugin:1004.6.12:package failed: org.apache.maven.plugin.MojoExecutionException: Exception caught: java.util.concurrent.ExecutionException: com.spotify.docker.client.shaded.javax.ws.rs.ProcessingException: java.io.IOException: Permission denied -> [Help 1]
 ```
 
-This is a problem with Docker in Linux OS.
+This is an issue with Docker in Linux OS.
 You can verify that your user is lacking permissions for Docker by running:
 
 ``` shell
@@ -116,4 +116,4 @@ In order to fix this, do the following:
 
 4. Try running a Docker command again.
 
-Also refer to [Docker Engine > Installation per distro > Optional post-Installation steps](https://docs.docker.com/engine/install/linux-postinstall/) in the Docker documentation.
+Also refer to [Docker Engine > Installation per distro > Optional post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/) in the Docker documentation.

@@ -13,23 +13,23 @@ The subscription channel needs to contain the managed object ID of the device or
 
     /alarms/<<deviceId>>
 
-The response will additionally to the alarm object contain a "realtimeAction" to identify which action resulted in the given object (CREATE, UPDATE or DELETE). In case of a deletion the data will only contain the id of the deleted alarm.
+The response will additionally to the alarm object contain a "realtimeAction" to identify which action resulted in the given object (CREATE, UPDATE or DELETE). In case of a deletion the data will only contain the ID of the deleted alarm.
 
 Example Response:
 
-    HTTP/1.1 200 OK 
+    HTTP/1.1 200 OK
     Content-Type: application/json
     [
       {
-        "channel": "/alarms/12345", 
-        "successful": true, 
-        "error": "", 
+        "channel": "/alarms/12345",
+        "successful": true,
+        "error": "",
         "data": [{
           "realtimeAction": "UPDATE",
           "data": {
             "id": "1",
             "self": "...",
-            "source": { 
+            "source": {
               "12345"
             },
             "type": "c8y_UnavailabilityAlarm",
@@ -39,8 +39,8 @@ Example Response:
             "firstOccurrence": true,
             "count": 1
           }
-        }], 
-        "clientId": "Un1q31d3nt1f13r" 
+        }],
+        "clientId": "Un1q31d3nt1f13r"
       }
     ]
 

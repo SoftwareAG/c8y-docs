@@ -8,11 +8,11 @@ layout: redirect
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource|
-|groups|GroupReference|0..n|List of group references|
-|statistics|PagingStatistics|1|Information about the paging statistics|
-|prev|URI|0..1|Link to a possible previous page with additional group references|
-|next|URI|0..1|Link to a possible next page with additional group references|
+|self|string|1|A URI linking to this resource.|
+|groups|Array|0..n|List of group references.|
+|statistics|PagingStatistics|1|Information about the paging statistics.|
+|prev|string|0..1|A URI linking to a possible previous page with additional group references.|
+|next|string|0..1|A URI linking to a possible next page with additional group references.|
 
 ### Get all groups of a user
 

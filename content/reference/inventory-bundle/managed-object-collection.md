@@ -8,11 +8,11 @@ layout: redirect
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource.|
+|self|string|1|A URI linking to this resource.|
 |managedObjects|ManagedObject|0..n|List of managed objects, see below.|
 |statistics|PagingStatistics|1|Information about paging statistics.|
-|prev|URI|0..1|Link to a potential previous page of managed objects.|
-|next|URI|0..1|Link to a potential next page of managed objects.|
+|prev|string|0..1|A URI linking to a potential previous page of managed objects.|
+|next|string|0..1|A URI linking to a potential next page of managed objects.|
 
 ### GET - Representation of a ManagedObjectCollection
 
@@ -160,8 +160,8 @@ The following parts explain how an application will handle a query in the parame
     * string must be surrounded by single quotes
     * string can contain wildcard '*' and this wildcard matches from 0 to N characters
     * matching is case-sensitive
-* number
-* date; example: creationTime.date gt '2015-10-24T09:00:53.351+01:00' (+ must be url encoded)
+* number values
+* datetime; example: creationTime.date gt '2015-10-24T09:00:53.351+01:00' (+ must be url encoded)
 
 ##### Supported query properties:
 

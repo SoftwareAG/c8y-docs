@@ -26,21 +26,21 @@ colgroup>
 <tbody>
 <tr>
 <td align="left">externalId</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">The identifier used in the external system that Cumulocity interfaces with.</td>
 <td align="left">Mandatory</td>
 </tr>
 <tr>
 <td align="left">self</td>
-<td align="left">URI</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Link to this resource.</td>
+<td align="left">A URI linking to this resource.</td>
 <td align="left">No</td>
 </tr>
 <tr>
 <td align="left">type</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">The type of the external identifier as string, e.g., “com_cumulocity_model_idtype_SerialNumber”.</td>
 <td align="left">Mandatory</td>

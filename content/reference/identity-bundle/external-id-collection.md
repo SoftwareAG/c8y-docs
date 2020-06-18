@@ -10,17 +10,17 @@ As returned by "externalIdsOfGlobalId".
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource.|
+|self|string|1|A URI linking to this resource.|
 |externalIds|ExternalId|0..n|List of external IDs, see below.|
-|prev|URI|0..1|Link to a potential previous page of external IDs.|
-|next|URI|0..1|Link to a potential next page of external IDs.|
+|prev|string|0..1|A URI linking to a potential previous page of external IDs.|
+|next|string|0..1|A URI linking to a potential next page of external IDs.|
 
 External IDs contained in the collection contain the properties "self", "externalId", "type" and reference to the managed object.
 
 ### GET an ExternalIdCollection
 
 Response body: ExternalIdCollection
-  
+
 Required role: ROLE\_IDENTITY\_READ
 
 Example response:
@@ -61,7 +61,7 @@ Example Request:
     Accept: application/vnd.com.nsn.cumulocity.externalId+json;ver=...
     Content-Type: application/vnd.com.nsn.cumulocity.externalId+json;ver=...
     Content-Length: ...
-     
+
     {
       "externalId" : "42",
       "type" : "theregate"
@@ -73,7 +73,7 @@ Example Response:
     Content-Type: application/vnd.com.nsn.cumulocity.externalId+json;ver=...
     Content-Length: ...
     Location: <<URL of new ExternalId mapping>>
-     
+
     {
       "self" : "<<URL of new ExternalId mapping>>",
       "externalId" : "42",

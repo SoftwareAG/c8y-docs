@@ -8,16 +8,16 @@ layout: redirect
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource|
-|users|User|0..n|List of users|
-|statistics|PagingStatistics|1|Information about the paging statistics|
-|prev|URI|0..1|Link to a possible previous page with additional users|
-|next|URI|0..1|Link to a possible next page with additional users|
+|self|string|1|A URI linking to this resource.|
+|users|Array|0..n|List of users.|
+|statistics|PagingStatistics|1|Information about the paging statistics.|
+|prev|string|0..1|A URI linking to a possible previous page with additional users.|
+|next|string|0..1|A URI linking to a possible next page with additional users.|
 
 ### GET a representation of a user collection
 
 Response body: userCollection
- 
+
 Example request: Retrieve information about a user collection
 
     GET /user/<<tenant>>/users
@@ -67,23 +67,23 @@ Example response:
        "prev" : "[URL to previous page]",
        "next" : "[URL to next page]"
     }
-    
+
 Users in the response are sorted by username in ascending order.    
-    
+
 #### Search parameters for User Collection      
 
 Users can be filtered by following parameters:
 
 - username - prefix or full username
-- groups - numeric group identifiers separated by commas; result will contain only users which belong to at least one of specified groups 
+- groups - numeric group identifiers separated by commas; result will contain only users which belong to at least one of specified groups
 - owner - exact username
 - onlyDevices - boolean flag. If set to "true", result will contain only users created during bootstrap process (starting with "device\_").
- If flag is absent (or false) the result will not contain "device\_" users. 
+ If flag is absent (or false) the result will not contain "device\_" users.
 
-Additional flag "withSubusersCount" - if set to "true", then each of returned users will contain additional field "subusersCount" - 
+Additional flag "withSubusersCount" - if set to "true", then each of returned users will contain additional field "subusersCount" -
 number of direct subusers (users with corresponding "owner").
- 
-Example request: retrieve users, where username starts with "js", and every user belongs to one of the groups 2, 3 or 4, and the owner is "admin", and is not a device user. 
+
+Example request: retrieve users, where username starts with "js", and every user belongs to one of the groups 2, 3 or 4, and the owner is "admin", and is not a device user.
 
     GET /user/<<tenant>>/users?username=js&groups=2,3,4&owner=admin&withSubusersCount=true
     Host: [hostname]

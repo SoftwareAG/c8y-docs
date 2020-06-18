@@ -7,12 +7,12 @@ layout: redirect
 
 |Name|Type|Occurs|Description|PUT/POST|
 |:---|:---|:-----|:----------|:-------|
-|id|String|1|Uniquely identifies an event.|No|
-|self|URI|1|Link to this resource.|No|
-|creationTime|String|1|Time when event was created in the database.|No|
-|type|String|1|Identifies the type of this event.|POST: Mandatory PUT: No|
-|time|String|1|Time of the event.|POST: Mandatory PUT: No|
-|text|String|1|Text description of the event.|POST: Mandatory PUT: Optional|
+|id|string|1|Uniquely identifies an event.|No|
+|self|string|1|A URI linking to this resource.|No|
+|creationTime|datetime|1|Time when event was created in the database.|No|
+|type|string|1|Identifies the type of this event.|POST: Mandatory PUT: No|
+|time|string|1|Time of the event.|POST: Mandatory PUT: No|
+|text|string|1|Text description of the event.|POST: Mandatory PUT: Optional|
 |source|ManagedObject|1|The ManagedObject that the event originated from, as object containing properties "id", "self", "name", and "type".|POST: Mandatory PUT: No|
 |\*|Object|0..n|Additional properties of the event.|POST: Optional <br> PUT: Optional|
 
@@ -40,7 +40,7 @@ GET <<url>>/event/events/<<eventID>>
 |Content-Type|application/vnd.com.nsn.cumulocity.event+json;ver=...
 
 ```http
-HTTP/1.1 
+HTTP/1.1
 200 OK
 
 {
@@ -51,7 +51,7 @@ HTTP/1.1
   "type" : "com_cumulocity_model_DoorSensorEvent",
   "text" : "Door sensor was triggered.",
   "source" : {
- 	"id":"12345", 
+ 	"id":"12345",
 	"self ": "..."
   }
 }
@@ -70,7 +70,7 @@ Required role: ROLE\_EVENT\_ADMIN or owner of source object.
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
-|Host|{{hostname}} 
+|Host|{{hostname}}
 
 ```http
 DELETE <<url>>/event/events/<<eventID>>

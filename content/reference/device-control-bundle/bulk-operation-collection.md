@@ -8,11 +8,11 @@ layout: redirect
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URL|1|Link to this resource.|
+|self|string|1|A URL linking to this resource.|
 |bulkOperations|Operations|0..n|List of bulk operations, see below.|
 |statistics|PagingStatistics|1|Information about paging statistics.|
-|prev|URI|0..1|Link to a potential previous page of bulk operations.|
-|next|URI|0..1|Link to a potential next page of bulk operations.|
+|prev|string|0..1|A URI linking to a potential previous page of bulk operations.|
+|next|string|0..1|A URI linking to a potential next page of bulk operations.|
 
 ### POST - Create a Bulk Operation
 

@@ -35,7 +35,7 @@ layout: redirect
 <td align="left">id</td>
 <td align="left">Long</td>
 <td align="left">1</td>
-<td align="left">RetentionRulle id.</td>
+<td align="left">RetentionRule ID.</td>
 <td align="left">Public</td>
 </tr>
 <tr>

@@ -23,9 +23,9 @@ layout: redirect
 <tbody>
 <tr>
 <td align="left">self</td>
-<td align="left">URL</td>
+<td align="left">stringL</td>
 <td align="left">1</td>
-<td align="left">Link to this resource.</td>
+<td align="left">A URL linking to this resource.</td>
 </tr>
 
 <tr>
@@ -53,7 +53,7 @@ layout: redirect
 <td align="left">managedObjectsForListOfIds</td>
 <td align="left">ManagedObjectCollection URI-Template</td>
 <td align="left">1</td>
-<td align="left">Read-only collection of managed objects fetched for a given list of ids (placeholder {ids}),for example “?ids=41,43,68”.</td>
+<td align="left">Read-only collection of managed objects fetched for a given list of IDs (placeholder {ids}),for example “?ids=41,43,68”.</td>
 </tr>
 
 <tr>

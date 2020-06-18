@@ -89,7 +89,7 @@ When you build a microservice application via `mvn`, you might get this error:
 This is an issue with Docker in Linux OS.
 You can verify that your user is lacking permissions for Docker by running:
 
-``` shell
+```shell
 $ docker ps
 Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/json: dial unix /var/run/docker.sock: connect: permission denied
 ```
@@ -98,19 +98,19 @@ In order to fix this, do the following:
 
 1. Create the Docker group.
 
-   ``` shell
+   ```shell
    $ sudo groupadd docker
    ```
 
 2. Add your user to the Docker group.
 
-   ``` shell
+   ```shell
    $ sudo usermod -aG docker $your_user_name
    ```
 
 3. Log out and log back in, so that your group membership is updated. Alternatively, run
 
-   ``` shell
+   ```shell
    $ newgrp docker
    ```
 

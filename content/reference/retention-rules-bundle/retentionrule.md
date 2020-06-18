@@ -26,49 +26,49 @@ layout: redirect
 <tbody>
 <tr>
 <td align="left">self</td>
-<td align="left">URI</td>
+<td align="left">string</td>
 <td align="left">0..1</td>
-<td align="left">Link to this resource.</td>
+<td align="left">A URI linking to this resource.</td>
 <td align="left">Public</td>
 </tr>
 <tr>
 <td align="left">id</td>
-<td align="left">Long</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">RetentionRule ID.</td>
 <td align="left">Public</td>
 </tr>
 <tr>
 <td align="left">dataType</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">0..1</td>
-<td align="left">RetentionRule will be applied to this type of documents, possible values [ALARM, AUDIT, EVENT, MEASUREMENT, OPERATION, &#42;].</td>
+<td align="left">RetentionRule will be applied to this type of documents. Possible values: ALARM, AUDIT, EVENT, MEASUREMENT, OPERATION, *</td>
 <td align="left">Public</td>
 </tr>
 <tr>
 <td align="left">fragmentType</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">0..1</td>
 <td align="left">RetentionRule will be applied to documents with fragmentType.</td>
 <td align="left">Public</td>
 </tr>
 <tr>
 <td align="left">type</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">0..1</td>
 <td align="left">RetentionRule will be applied to documents with type.</td>
 <td align="left">Public</td>
 </tr>
 <tr>
 <td align="left">source</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">0..1</td>
 <td align="left">RetentionRule will be applied to documnets with source.</td>
 <td align="left">Public</td>
 </tr>
 <tr>
 <td align="left">maximumAge</td>
-<td align="left">Long</td>
+<td align="left">long</td>
 <td align="left">1</td>
 <td align="left">Maximum age of document in days.</td>
 <td align="left">Public</td>

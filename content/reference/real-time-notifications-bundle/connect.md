@@ -26,25 +26,25 @@ After a Bayeux client has discovered the server's capabilities with a handshake 
 <tbody>
 <tr>
 <td align="left">id</td>
-<td align="left">Integer</td>
+<td align="left">string</td>
 <td align="left">0..1</td>
 <td align="left">ID of message, required to match response message.</td>
 </tr>
 <tr>
 <td align="left">channel</td>
-<td align="left">URI</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Name of channel, required value “/meta/connect”.</td>
 </tr>
 <tr>
 <td align="left">clientId</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Unique ID of client received during handshake.</td>
 </tr>
 <tr>
 <td align="left">connectionType</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Selected connection type.</td>
 </tr>
@@ -77,13 +77,13 @@ After a Bayeux client has discovered the server's capabilities with a handshake 
 <tbody>
 <tr>
 <td align="left">timeout</td>
-<td align="left">Integer</td>
+<td align="left">int</td>
 <td align="left">0..1</td>
 <td align="left">Interval between sending of connect message and response from server. Overrides server default settings for current request-response conversation.</td>
 </tr>
 <tr>
 <td align="left">interval</td>
-<td align="left">Integer</td>
+<td align="left">int</td>
 <td align="left">0..1</td>
 <td align="left">Period above which server will close session, if not received next connect message from client. Overrides server default settings for current request-response conversation.</td>
 </tr>
@@ -112,12 +112,12 @@ Content-Type: application/json
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|id|Integer|0..1|ID of message passed in request message.|
-|channel|URI|1|Name of channel.|
-|clientId|String|1|Unique ID of client.|
-|successful|Boolean|1|Result of connect.|
+|id|string|0..1|ID of message passed in request message.|
+|channel|string|1|Name of channel.|
+|clientId|string|1|Unique ID of client.|
+|successful|boolean|1|Result of connect.|
 |data|Array|1|List of notifications from channel.|
-|error|String|0..1|Connect failure reason.|
+|error|string|0..1|Connect failure reason.|
 
 Example response:
 

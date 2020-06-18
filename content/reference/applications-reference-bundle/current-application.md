@@ -4,19 +4,19 @@ title: Current application
 layout: redirect
 ---
 
-### GET current application 
+### GET current application
 
 Response body: Application
 
 Required authentication with bootstrap user
 
 Example request:
-    
+
     GET /application/currentApplication
     Host: ...
     Authorization: Basic .....
     Accept: application/vnd.com.nsn.cumulocity.application+json;ver=...
-    
+
 
 Example response:
 
@@ -39,14 +39,14 @@ Example response:
       "externalUrl":"http://external.host.com/application"
     }
 
-### PUT - update current application 
+### PUT - update current application
 
 Response body: Application
 
 Required authentication with bootstrap user
 
 Example request:
-    
+
     PUT /application/currentApplication
     Host: ...
     Authorization: Basic ...
@@ -93,18 +93,18 @@ ApplicationSubscriptionCollection[application/vnd.com.nsn.cumulocity.application
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource|
-|users|ApplicationUser|0..n|List of subscribed users, see below|
+|self|string|1|A URI linking to this resource|
+|users|Array|0..n|List of subscribed users, see below|
 |statistics|PagingStatistics|1|Information about paging statistics|
-|prev|URI|0..1|Link to a potential previous page of applications|
-|next|URI|0..1|Link to a potential next page of applications|
+|prev|string|0..1|A URI linking to a potential previous page of applications|
+|next|string|0..1|A URI linking to a potential next page of applications|
 
 ### ApplicationUser
 |Field Name|Type|Occurs|Description|
 |:---------|:---|:-----|:----------|
-|tenant|String|1|Subscription tenant
-|name|String|1|Username
-|password|String|1|Password
+|tenant|string|1|Subscription tenant.|
+|name|string|1|Username.|
+|password|string|1|Password.|
 
 
 ### GET current application subscriptions
@@ -114,7 +114,7 @@ Response body: ApplicationSubscriptionCollection
 Required authentication with bootstrap user
 
 Example request:
-    
+
     GET /application/currentApplication/subscriptions
     Host: ...
     Authorization: Basic ....

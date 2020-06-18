@@ -25,42 +25,42 @@ layout: redirect
 <tbody>
 <tr>
 <td align="left">id</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Uniquely identifies an alarm.</td>
 <td align="left">No</td>
 </tr>
 <tr>
 <td align="left">self</td>
-<td align="left">URI</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Link to this resource.</td>
+<td align="left">A URI linking to this resource.</td>
 <td align="left">No</td>
 </tr>
 <tr>
 <td align="left">creationTime</td>
-<td align="left">String</td>
+<td align="left">datetime</td>
 <td align="left">1</td>
 <td align="left">Time when alarm was created in the database.</td>
 <td align="left">No</td>
 </tr>
 <tr>
 <td align="left">type</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Identifies the type of this alarm, e.g., “com_cumulocity_events_TamperEvent”.</td>
 <td align="left">POST: Mandatory<br> PUT: No</td>
 </tr>
 <tr>
 <td align="left">time</td>
-<td align="left">String</td>
+<td align="left">datetime</td>
 <td align="left">1</td>
 <td align="left">Time of the alarm.</td>
 <td align="left">POST: Mandatory<br> PUT: No</td>
 </tr>
 <tr>
 <td align="left">text</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Text description of the alarm.</td>
 <td align="left">POST: Mandatory<br> PUT: No</td>
@@ -74,28 +74,28 @@ layout: redirect
 </tr>
 <tr>
 <td align="left">status</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">0..1</td>
 <td align="left">The status of the alarm: ACTIVE, ACKNOWLEDGED or CLEARED. If status was not appeared, new alarm will have status ACTIVE. Must be upper-case.</td>
 <td align="left">POST: Optional<br> PUT: Optional</td>
 </tr>
 <tr>
 <td align="left">severity</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">The severity of the alarm: CRITICAL, MAJOR, MINOR or WARNING. Must be upper-case.</td>
 <td align="left">POST: Mandatory<br> PUT: Optional</td>
 </tr>
 <tr>
 <td align="left">count</td>
-<td align="left">Long</td>
+<td align="left">long</td>
 <td align="left">1</td>
 <td align="left">The number of times this alarm has been sent.</td>
 <td align="left">No</td>
 </tr>
 <tr>
 <td align="left">firstOccurrenceTime</td>
-<td align="left">String</td>
+<td align="left">datetime</td>
 <td align="left">1</td>
 <td align="left">The first time that this alarm occurred (i.e., where “count” was 1).</td>
 <td align="left">No</td>
@@ -159,7 +159,7 @@ Only text, status, severity and custom properties can be modified. Non-modifiabl
 
 Request body: Alarm
 
-Response body: Alarm�
+Response body: Alarm
 
 Required : ROLE\_ALARM\_ADMIN or owner of source object
 

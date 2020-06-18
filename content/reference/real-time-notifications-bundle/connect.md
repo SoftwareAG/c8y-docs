@@ -28,7 +28,7 @@ After a Bayeux client has discovered the server's capabilities with a handshake 
 <td align="left">id</td>
 <td align="left">Integer</td>
 <td align="left">0..1</td>
-<td align="left">Id of message, required to match response message</td>
+<td align="left">ID of message, required to match response message.</td>
 </tr>
 <tr>
 <td align="left">channel</td>
@@ -112,7 +112,7 @@ Content-Type: application/json
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|id|Integer|0..1|Id of message passed in request message|
+|id|Integer|0..1|ID of message passed in request message.|
 |channel|URI|1|Name of channel.|
 |clientId|String|1|Unique ID of client.|
 |successful|Boolean|1|Result of connect.|

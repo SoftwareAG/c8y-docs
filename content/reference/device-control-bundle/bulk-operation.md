@@ -9,7 +9,7 @@ When Bulk Operation is created, it has ACTIVE status. When all operations are cr
 
 When you create a Bulk Operation, you can run it in two modes:
 - when groupId is passed, it works standard way, i.e. takes devices from group and schedules operations on them
-- when failedParentId is passed, it takes the already processed bulk operation by that id, and schedules operation on devices for which previous operations failed
+- when failedParentId is passed, it takes the already processed bulk operation by that ID, and schedules operation on devices for which previous operations failed
 
 Hints and tips:
 - it is forbidden to pass both: groupId and failedParentId,
@@ -39,42 +39,42 @@ colgroup>
 <tbody>
 <tr>
 <td align="left">id</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Uniquely identifies an operation.</td>
 <td>No</td>
 </tr>
 <tr>
 <td align="left">self</td>
-<td align="left">URI</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Link to this resource.</td>
+<td align="left">A URI linking to this resource.</td>
 <td>No</td>
 </tr>
 <tr>
 <td align="left">groupId</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Identifies the target group on which this operation should be performed.</td>
 <td>POST: No PUT: No</td>
 </tr>
 <tr>
 <td align="left">failedParentId</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Identifies the failed bulk operation from which failed operations should be rescheduled.</td>
 <td>POST: No PUT: No</td>
 </tr>
 <tr>
 <td align="left">startDate</td>
-<td align="left">String</td>
+<td align="left">datetime</td>
 <td align="left">1</td>
 <td align="left">Time when operations should be created.</td>
 <td>POST: Mandatory PUT: No</td>
 </tr>
 <tr>
 <td align="left">creationRamp</td>
-<td align="left">Number</td>
+<td align="left">Any number</td>
 <td align="left">1</td>
 <td align="left">Delay between every operation creation in seconds.</td>
 <td>POST: Mandatory PUT: No</td>
@@ -88,7 +88,7 @@ colgroup>
 </tr>
 <tr>
 <td align="left">status</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Status of Bulk Operation. Possible values: ACTIVE, COMPLETED, DELETED</td>
 <td>No</td>

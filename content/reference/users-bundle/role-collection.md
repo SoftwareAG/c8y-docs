@@ -8,8 +8,8 @@ layout: redirect
 
 |Field Name|Type|Occurs|Description|
 |:---------|:---|:-----|:----------|
-|self|URI|1|Link to this resource|
-|roles|Role|0..n|List of roles|
-|statistics|PagingStatistics|1|Information about the paging statistics|
-|prev|URI|0..1|Link to a possible previous page with additional roles|
-|next|URI|0..1|Link to a possible next page with additional roles|
+|self|string|1|A URI linking to this resource.|
+|roles|Array|0..n|List of roles.|
+|statistics|PagingStatistics|1|Information about the paging statistics.|
+|prev|string|0..1|Link to a possible previous page with additional roles.|
+|next|string|0..1|Link to a possible next page with additional roles.|

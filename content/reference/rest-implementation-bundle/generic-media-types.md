@@ -26,19 +26,19 @@ The error type provides further information on the reason of a failed request.
 <tbody>
 <tr>
 <td align="left">error</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Error type formatted as “&lt;&lt;resource type&gt;&gt;/&lt;&lt;error name&gt;&gt;". For example, an object not found in the inventory is reported as “inventory/notFound”.</td>
 </tr>
 <tr>
 <td align="left">message</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Short text description of the error</td>
 </tr>
 <tr>
 <td align="left">info</td>
-<td align="left">URL</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">URL to an error description on the Internet.</td>
 </tr>
@@ -71,19 +71,19 @@ Error details are provided in the following structure:
 <tbody>
 <tr>
 <td align="left">expectionClass</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Class name of an exception that caused this error.</td>
 </tr>
 <tr>
 <td align="left">exceptionMessage</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Exception message content.</td>
 </tr>
 <tr>
 <td align="left">expectionStackTrace</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Strack trace of the exception.</td>
 </tr>
@@ -118,19 +118,19 @@ Paging statistics for collection resources are provided in the following format:
 <tbody>
 <tr>
 <td align="left">totalRecords</td>
-<td align="left">Integer</td>
+<td align="left">int</td>
 <td align="left">1</td>
 <td align="left">The approximate total number of records.</td>
 </tr>
 <tr>
 <td align="left">pageSize</td>
-<td align="left">Integer</td>
+<td align="left">int</td>
 <td align="left">1</td>
 <td align="left">Maximum number of records contained in this query.</td>
 </tr>
 <tr>
 <td align="left">currentPage</td>
-<td align="left">Integer</td>
+<td align="left">int</td>
 <td align="left">1</td>
 <td align="left">The current returned page within the full result set, starting at “1”.</td>
 </tr>

@@ -94,7 +94,7 @@ The CSV file can have in many forms, depending on the optional tenant column and
 * When the "auth_type" column is provided with CERTIFICATES, the "credentials" column can not appear in the CSV file or must be empty.
 
 It is possible to define custom [external ID](/reference/identity/) mappings and some custom device properties which are added to newly created devices during registration:
- 
+
 * To add a custom external ID mapping, enter the external ID type as the header of the last column with the prefix "external-", e.g. to add an external ID mapping of type "c8y&#95;Imei", enter "external-c8y&#95;Imei" in the last column header. The value of this external ID type should be set in the corresponding column of the data rows.
 * To add a custom property to a registered device, enter the custom property name as a header, e.g. "myCustomProperty", and the value would be in the rows below.
 
@@ -124,75 +124,75 @@ The custom device properties mapping has the following limitations:
 <tbody>
 <tr>
 <td align="left">numberOfAll</td>
-<td align="left">Number</td>
+<td align="left">int</td>
 <td align="left">1</td>
-<td align="left">Number of lines processed from the CSV file, without the first line (column headers)</td>
+<td align="left">Number of lines processed from the CSV file, without the first line (column headers).</td>
 </tr>
 <tr>
 <td align="left">numberOfCreated</td>
-<td align="left">Number</td>
+<td align="left">int</td>
 <td align="left">1</td>
-<td align="left">Number of created device credentials</td>
+<td align="left">Number of created device credentials.</td>
 </tr>
 <tr>
 <td align="left">numberOfFailed</td>
-<td align="left">Number</td>
+<td align="left">int</td>
 <td align="left">1</td>
-<td align="left">Number of failed creations of device credentials</td>
+<td align="left">Number of failed creations of device credentials.</td>
 </tr>
 <tr>
 <td align="left">numberOfSuccessful</td>
-<td align="left">Number</td>
+<td align="left">int</td>
 <td align="left">1</td>
-<td align="left">Number of successful creations of device credentials, contains create and update operations</td>
+<td align="left">Number of successful creations of device credentials, contains create and update operations.</td>
 </tr>
 <tr>
 <td align="left">credentialUpdatedList</td>
-<td align="left">List</td>
+<td align="left">Array</td>
 <td align="left">0..n</td>
-<td align="left">Array with updated device credentials</td>
+<td align="left">Array with updated device credentials.</td>
 </tr>
 <tr>
 <td align="left">credentialUpdatedList.bulkNewDeviceStatus</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Device credentials creation status, possible values: CREATED, FAILED, CREDENTIAL_UPDATED</td>
+<td align="left">Device credentials creation status. Possible values: CREATED, FAILED, CREDENTIAL_UPDATED</td>
 </tr>
 <tr>
 <td align="left">credentialUpdatedList.deviceId</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">ID of the device</td>
+<td align="left">ID of the device.</td>
 </tr>
 <tr>
 <td align="left">failedCreationList</td>
-<td align="left">List</td>
+<td align="left">Array</td>
 <td align="left">0..n</td>
-<td align="left">Array with updated device credentials</td>
+<td align="left">Array with updated device credentials.</td>
 </tr>
 <tr>
 <td align="left">failedCreationList.bulkNewDeviceStatus</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Device credentials creation status, possible values: CREATED, FAILED, CREDENTIAL_UPDATED</td>
+<td align="left">Device credentials creation status. Possible values: CREATED, FAILED, CREDENTIAL_UPDATED</td>
 </tr>
 <tr>
 <td align="left">failedCreationList.deviceId</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">0..1</td>
-<td align="left">ID of the device, appears if the application can obtain it from the file</td>
+<td align="left">ID of the device, appears if the application can obtain it from the file.</td>
 </tr>
 <tr>
 <td align="left">failedCreationList.failureReason</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Reason of error</td>
+<td align="left">Reason of error.</td>
 </tr>
 <tr>
 <td align="left">failedCreationList.line</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Line with error</td>
+<td align="left">Line with error.</td>
 </tr>
 </tbody>
 </table>

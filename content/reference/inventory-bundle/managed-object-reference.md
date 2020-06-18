@@ -8,7 +8,7 @@ layout: redirect
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource.|
+|self|string|1|A URI linking to this resource.|
 |managedObject|ManagedObject|1|The ManagedObject being referenced.|
 
 ### GET - Managed object reference
@@ -37,7 +37,7 @@ GET <<url>>/inventory/managedObjects/<<deviceId>>/<<references>>/<<referenceId>>
 |Content-Type|application/vnd.com.nsn.cumulocity.managedObjectReference+json;ver=...
 
 ```http
-HTTP/1.1 
+HTTP/1.1
 200 - OK
 
 {

@@ -20,13 +20,16 @@ If you face any issue or need technical support, please use the [Cumulocity IoT 
 
 #### Upgrading the SDK
 
-To migrate your current version (e.g. 9.20.0) to a new one of the SDK, update all dependencies to the latest version, e.g. 1004.12.0, and update the project to .Net SDK 2.2.
+The latest supported SDK is based on .NET Core 3.1 and **Visual Studio 2019** is required for supporting it.
+To migrate your current version (e.g. 9.20.0 or 1004.12.0) to a new one of the SDK, update all dependencies to the latest version, e.g. 1006.6.0, and update the project to .Net SDK 3.1. The developer who is upgrading the an existing project to the latest version of SDK (1006.6.0) must follow offical [microsoft guidlines](https://docs.microsoft.com/en-us/aspnet/core/migration/22-to-30?view=aspnetcore-3.1&tabs=visual-studio) about the code changes to be done for upgrading.
 
-For new projects, you shall use a new bundle of [building scripts](https://bitbucket.org/m2m/cumulocity-clients-cs/src/develop/Examples/BuildingScripts/v2.2/), and it is recommended to use [Cumulocity.SDK.Microservices v1004.12.0](https://www.nuget.org/packages/Cumulocity.SDK.Microservices/1004.12.0) based on .Net Core 2.2.
+
+
+For new projects, you shall use a new bundle of [building scripts](https://bitbucket.org/m2m/cumulocity-clients-cs/src/develop/Examples/BuildingScripts/v3.1/), and it is recommended to use [Cumulocity.SDK.Microservices v1006.6.0](https://www.nuget.org/packages/Cumulocity.SDK.Microservices/1006.6.0) based on .Net Core 3.1.
 
 ### <a name="general-prerequisites"></a> Development prerequisites
 
-To use the C# client libraries for development, you need to install .NET Core SDK for your development platform such as Windows or Linux (version 2.2 of the [.NET Core SDK](https://www.microsoft.com/net/download/windows)). Note that .NET Core Runtime and .NET Core SDK are different things.
+To use the C# client libraries for development, you need to install .NET Core SDK for your development platform such as Windows or Linux (version 3.1 of the [.NET Core SDK](https://www.microsoft.com/net/download/windows)). Note that .NET Core Runtime and .NET Core SDK are different things.
 
 Use the following command to verify the version of your .NET Core SDK:
 
@@ -34,7 +37,7 @@ Use the following command to verify the version of your .NET Core SDK:
 $ dotnet --info
 ```
 
-The output must show a version number later than "2.2.0" to implement the basic examples.
+The output must show a version number later than "3.1.0" to implement the basic examples.
 
 You also need a local Docker installation. Review the information at [Docker for Windows: What to know before you install](https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install) and install [Docker For Windows](https://docs.docker.com/docker-for-windows/install/). For Linux systems, follow the general installation on the [Get Started with Docker](https://www.docker.com/get-started) webpage.
 
@@ -48,14 +51,14 @@ Depending on what you want to do, you need either the .NET Core SDK or the .NET 
 #### Windows system requirements
 
 *   Powershell (at least Version 6 or Core)
-*   .NET Core SDK (at least Version 2.2)
+*   .NET Core SDK (at least Version 3.1)
 *   Docker for Windows (at least Version 17.06)
 
 #### Linux system requirements
 
 *   .NET Core SDK (at least Version 2.2)
 *   Docker (at least Version 17.06)
-*   Mono (at least Version 6.0.0)
+*   Mono (at least Version 6.8.0)
 
 ### Runtime prerequisites
 

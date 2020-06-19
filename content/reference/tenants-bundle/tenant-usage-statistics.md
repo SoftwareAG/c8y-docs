@@ -25,8 +25,8 @@ layout: redirect
 * device bootstrap process requests related to configuring and retrieving device credentials
 * Microservice SDK internal calls for applications and subscriptions - "/currentApplication"
 
- "deviceRequestCount" - beside of the exceptions already listed for "requestCount" the following requests are not included in the counter:
- 
+"deviceRequestCount" - in addition to the exceptions already listed for "requestCount" the following requests are not included in the counter:
+
  * requests to /user, /tenant and /application API's
  * application related requests (with "X-Cumulocity-Application-Key" header)
 
@@ -36,6 +36,11 @@ Note:
  * "deviceCount", "deviceEndpointCount", "deviceWithChildrenCount", "storageSize" and "subscribedApplications" are updated only three times a day starting at 8:57, 16:57 and 23:57.
  * "storageSize" is affected by your retention rules. It is also affected by the regularly running database optimization functions running in Cumulocity IoT. If the size decreases, it does not necessarily mean that data was deleted.
  * Days are counted according to server timezone.
+
+Request counting in SmartREST and MQTT:
+
+- SmartREST: <br>Each row in a SmartREST request is transformed into a separate HTTP request. For example, if one SmartREST request contains 10 rows, then 10 separate calls are executed, meaning that request count is increased by 10.
+- MQTT: <br>Each row/line counts as a separate request. Creating custom template counts as a single request.
 
 REST specific counting details:
 

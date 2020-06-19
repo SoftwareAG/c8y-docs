@@ -406,16 +406,6 @@ If you remove an application that overwrites a subscribed application, the curre
 It is not possible to remove subscribed applications. This can only be done by the owner of the subscribed application.
 
 
-#### To refresh a single application
-
-Users can refresh a single application whan a hosted application is not correctly deployed.
-
-Simply click **Reactivate** at the top right corner of the **Archives** tab.
-
-<img src="/images/users-guide/Administration/admin-reactivate.png" alt="Refresh application">  
-
-Reactivate requests back at the reference application by removing files from the application directory and unpacking a new package host application.
-
 
 #### Uploading archives
 
@@ -444,6 +434,18 @@ Users can restore previous versions of an application from an archive.
 4. Click **Remove** to remove the version from the archive.
 
 <img src="/images/users-guide/Administration/admin-application-set-as-archive.png" alt="Application set as archive">
+
+##### To reactivate a single application
+
+If a hosted application is not deployed correctly, users may reactivate it.
+
+1. Open the application by clicking on it.
+2. Switch to the **Archives** tab.
+3. Click **Reactivate** at the top right corner of the **Archives** tab.
+
+<img src="/images/users-guide/Administration/admin-reactivate.png" alt="Refresh application">  
+
+The selected application will be reactivated by removing the respective files from the application directory and unpacking the host application package again.
 
 ### Monitoring microservices
 

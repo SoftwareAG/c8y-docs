@@ -290,7 +290,7 @@ Content-Type: application/json
   	       "message": "<message text>"
         },
         "receiptRequest": {
-  	       "notifyUrl": "<notify url>,
+  	       "notifyUrl": "<notify url>",
   	        "callbackData": "<callback data>"
         },
         "senderName": "<sender name>"

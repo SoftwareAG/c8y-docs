@@ -8,15 +8,27 @@ This section will list the implementation details for the MQTT protocol. The Cum
 
 ### Connecting via MQTT
 
-Cumulocity IoT supports MQTT both via TCP and WebSockets. As URL you use _mqtt.cumulocity.com_.
+Cumulocity IoT supports MQTT both via TCP and WebSockets. As URL you can use your tenant domain (e.g. _mytenant.cumulocity.com/mqtt_) or the domain of the instance in the format mqtt.&lt;instance_domain> (e.g. _mqtt.cumulocity.com_).
 
 Available ports:
 
 | &nbsp; | TCP | WebSockets |
 |:-----|:----|:----|
-|SSL   |8883 |443|
-|no SSL|1883 |80|
+| one-way SSL | 8883 | 443 |
+| no SSL | 1883 | 80 |
+| experimental two-way SSL | 1884 | - |
 
+For experimental two-way SSL the port 1884 has to be enabled. To do that, add the following rule to Chef:
+
+```
+"MQTTClientCert" => {
+    "enabled" => true,
+    "enableTransparentSSLPort" => false
+}
+```
+
+*   `enabled` - Open the port 1884 and let devices authorize using a certificate with TCP (it is not available with WebSockets right now).
+*   `enableTransparentSSLPort` - Redirect the whole communication (ports) from 1883 to 1884 (use `false` since handling client authorization via username and password is not implemented yet), so right now it will enforce using certificates by devices also on 1883 port (which is highly not recommended).
 
 > **Info**: To use WebSockets you need to connect to the path <kbd>/mqtt</kbd> and follow the [MQTT standard](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718127) for WebSocket communication.
 
@@ -24,7 +36,7 @@ Available ports:
 
 The Cumulocity IoT MQTT implementation uses SmartREST as a payload. SmartREST is a CSV-like message protocol that uses templates on the server side to create data in Cumulocity IoT.
 
-> **Info:** For all MQTT connections to the platform, the maximum accepted payload size is 16384 bytes, which includes both message header and body. The header size varies, but its minimum is 2 bytes.
+> **Info:** For all MQTT connections to the platform, the maximum accepted payload size is 16184 bytes, which includes both message header and body. The header size varies, but its minimum is 2 bytes.
 
 #### SmartREST basics
 
@@ -70,7 +82,10 @@ Every operation received will contain the template ID followed by the ID of the 
 
 #### MQTT authentication
 
-MQTT supports setting a username and a password. To connect to Cumulocity IoT, the MQTT username needs to include both tenantID and username in the format "tenantID/username".
+The communication with Cumulocity IoT employing MQTT supports authentication in two ways:
+
+*   Username and password. The MQTT username needs to include the tenant ID and username in the format &lt;tenantID/username>.
+*   Device certificates. The devices have to contain the whole chain of certificates leading to the trusted root certificate. Also, they have to contain the server certificate in their truststore.
 
 #### MQTT ClientId
 
@@ -95,6 +110,8 @@ d:mySerialNumber:myDefaultTemplate
 ```
 
 The uniqueness of the MQTT ClientId is determined only by the deviceIdentifier. Therefore from the above examples only one client can be connected at the same time.
+
+During a SSL connection with certificates, the `deviceIdentifier` has to match the Common Name of the used certificate (first certificate in the chain, which is provided by the device).
 
 #### MQTT Quality of Service
 

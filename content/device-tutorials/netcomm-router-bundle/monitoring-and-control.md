@@ -18,7 +18,7 @@ Consult the documentation of your router for more information about its specific
 To regularly poll the input voltage of a GPIO pin and send it to the Cumulocity IoT platform, set [**GPIO analog measurements**](#configure) to a non-zero value. Alternatively, use the [device shell](#device-shell).
 
 ```shell
-set service.cumulocity.gpio.interval=<SECONDS>
+set service.cumulocity.gpio.interval=<seconds>
 ```
 
 Then, you need to specify the port and turn on the notification by using the [device shell](#device-shell).
@@ -34,7 +34,7 @@ You can raise alarms from digital inputs. These can be configured using the rout
 
 ```shell
 set service.cumulocity.gpio.<port>.notify=alarm
-set service.cumulocity.gpio.<port>.debounce.interval=<SECONDS>
+set service.cumulocity.gpio.<port>.debounce.interval=<seconds>
 set service.cumulocity.gpio.<port>.alarm.text=<ALARM_TEXT>
 set service.cumulocity.gpio.<port>.alarm.severity=<severity>
 ```

@@ -25,7 +25,7 @@ layout: redirect
 * device bootstrap process requests related to configuring and retrieving device credentials
 * Microservice SDK internal calls for applications and subscriptions - "/currentApplication"
 
-"deviceRequestCount" - beside of the exceptions already listed for "requestCount" the following requests are not included in the counter:
+"deviceRequestCount" - in addition to the exceptions already listed for "requestCount" the following requests are not included in the counter:
 
  * requests to /user, /tenant and /application API's
  * application related requests (with "X-Cumulocity-Application-Key" header)

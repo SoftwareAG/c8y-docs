@@ -5,81 +5,55 @@ layout: redirect
 ---
 
 
-Cockpit	The welcome widget has been modified. The new welcome widget comes in two versions, which show different messages and quick links, based on the tenant type of the user (regular or trial tenant).	MTM-30226
+### Device Management
 
-New smartphone app and wizard
+#### Device certificates
 
-Cockpit	A new wizard is available to connect a smartphone to the platform. In the welcome widget of the Cockpit application a new quick-link card is shown: Connect smartphone. The new process is aligned with the new version of the "Cumulocity IoT Sensor App" and will not work with the old application that might be already installed on your smartphone.	MTM-30234
+[MTM-27299] Cumulocity IoT allows devices to connect via MQTT protocol using a X.509 client certificate for authentication. Each tenant individually defines whom it trusts by uploading the base CA certificate.
 
-UI	Russian is now available as a standard language.	MTM-31746
+Cumulocity IoT supports two ways to register devices which will be able to connect using certificates, auto registration or bulk registration.
 
-Sigfox	Sigfox device registration form: Hex string validation added to ID and PAC input fields.	MTM-30217
-Sigfox	On device registration, only active contracts with free slots will now be shown.	MTM-30220
-Sigfox	If a device type is generated and its name exceeds 100 characters it will be truncated to fit the 100 characters name length limit on the Sigfox platform.	MTM-29827
+A device which is connected by certificates can receive a token which can later be used to authenticate HTTP requests. 
 
-### Administration
+For details, how to manage trusted certificates through the UI, see [Device Management > Managing device data > Managing trusted certificates](/users-guide/device-management#trusted-certificates) in the User guide.
 
-[MTM-29160] It is now possible to configure sms77 as SMS provider in **Settings** > **Customization** in the  Administration application.  
+![Device credentials](/images/users-guide/device-management/devmgmt-device-credentials.png)
 
-For details, see [Administration > Changing settings](/users-guide/administration#changing-settings) in the User guide.
-
-![SMS provider settings](/images/release-notes/sms-provider-sms77.png) 
+For information on connecting devices using certificates refer to [Device integration using MQTT > Device certificates](device-sdk/mqtt#device-certificates) in the Device SDK guide. 
 
 
-### Enterprise Tenant
+### Cockpit	
 
-[MTM-29923] A cookie banner has been added to the Cumulocity IoT platform. The login page will now contain information about cookies and their purpose.
+[MTM-30226] The welcome widget has been modified. The new welcome widget comes in two versions, which show different messages and quick links, based on the tenant type of the user (regular or trial tenant).
 
-The cookie banner can be configured via the application options or via UI from the Branding page in the Administration application. 
+![Welcome widget](/images/release-notes/welcome-widget.png)
 
-For details, see [Enterprise Tenant > Customization](/users-guide/enterprise-edition#customization) in the User guide.
+For details, see [Cockpit > Overview](/users-guide/cockpit#overview) in the User guide.
 
 
-### Cockpit
+### New smartphone app and wizard
 
-[MTM-29400] To improve transparency, the display of the timestamp in data point graphs or tables when aggregation is activated has been modified: 
+[MTM-30234] A new wizard is available to connect a smartphone to the platform. In the welcome widget of the Cockpit application a new quick-link card **Connect smartphone** is shown. 
 
-* If daily aggregation is selected, the time indication will no longer be shown.
-* If hourly aggregation is selected, the minute and second indication will no longer be shown.
-* If minutely aggregation is selected, the second indication will no longer be shown.
 
-For details, see [Cockpit > Data explorer](/users-guide/cockpit#data-explorer) in the User guide.
- 
+### Device integration: Cumulocity IoT NetComm Agent
 
-### OPC UA
+A new Cumulocity IoT NetComm agent is available which 
 
-The following improvements have been implemented in the OPC UA gateway since 10.5.7.
+### Sigfox
 
-For details, see [Optional services > OPC UA](/users-guide/optional-services#opc-ua) in the User guide.  
+The following improvements have been implemented in the Sigfox agent since 10.6.0.
 
-#### Extended subscription parameters 
+For details, see [Optional services > Sigfox](/users-guide/optional-services#sigfox) in the User guide.  
 
-[MTM-29065] The subscription parameters have been extended by: 
+* [MTM-30217] Sigfox device registration form: Hex string validation has been added to the ID and PAC input fields.
+* [MTM-30220] On device registration, only active contracts with free slots will now be shown.
+* [MTM-29827] If a device type is generated and its name exceeds 100 characters it will be truncated to fit the 100 characters name length limit on the Sigfox platform.	
 
-* "queueSize" - number, queueSize > 0, no max value
-* "dataChangeTrigger" - string, radio-button with possible values: Status, StatusValue, StatusValueTimestamp
-* "discardOldest" - boolean, radio-buttons with possible labels: Discard oldest, Discard newest - where discard newest will just turn discard oldest into false. Discard oldest is the default.
+### UI
 
-#### Easier analysis of issues during the auto-apply procedure 
+[MTM-31746] Russian is now available as a standard language.	
 
-[MTM-29837] The following improvements have been added:
 
-* "c8y&#95;ua&#95;DeviceTypeApplied" event is triggered when a device type is applied to a node server.<br>
-* "c8y&#95;ua&#95;DeviceTypeUnapplied" event is triggered when a device type is removed from a node server.<br>
-* "c8y&#95;ua_command&#95;GetDeviceTypeApplicationState" operation has been added to query the state of device type applications on servers.<br>
-* "c8y&#95;ua_command&#95;TestDeviceTypeMatching" operation has been added to tell if a node (root node) matches and will be applied to a device type or not.
 
-#### Notification buffer size configuration 
-
-[MTM-30338] Notification buffer size is configured in OPC UA client which defines how many monitored item values should be buffered to receive subscription notification data from OPC UA server. Default is 100. Setting this too low could cause buffer overflow error on the client. Setting this too high wastes memory of the client. In order to decide what is a good number, following configurations should be taken into account:
-
-* Subscription reporting rate (aka publish interval)
-* Sampling rate of monitored items
- 
-Basically, the more data you got in one notification package from the server, the higher number should be set.
-
-#### Performance improvements 
-
-* [MTM-29868] Performance has been improved when using read/write operations. 
-* [MTM-30343] Enhanced performance for measurements when there is a lot of data. 
 

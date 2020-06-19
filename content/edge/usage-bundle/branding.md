@@ -12,7 +12,7 @@ To access the branding feature:
 	- Username: management/sysadmin
 	- Password: Use the sysadmin password.
 
-2. Switch to the **Administration** application using **Application Switcher** **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
+2. Switch to the **Administration** application using the application switcher at the right of the top bar **<img class="Default" src="/images/icons/switcher-icon.png" alt="icon" style="display: inline; float: none">**.
 
 3. Go to **Settings** > **Enterprise Tenant**.
 

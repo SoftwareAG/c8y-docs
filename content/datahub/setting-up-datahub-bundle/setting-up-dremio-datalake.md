@@ -22,7 +22,7 @@ If your tenant id is `t12345`, then `t12345/user` is a valid name. The system wo
 The password of the Dremio account has to have at least eight characters, including at least one character and one number.
 
 #### Data Lake
-Depending on the configuration of your microservice, you can either choose among different data lake providers or the data lake provider is already preset. For each data lake provider, you have to specify corresponding settings to define the data lake to be used. Once the configuration of the data lake is completed, it cannot be changed afterwards.
+Depending on the configuration of the environment, the data lake provider is either fixed or you can choose among different providers. For each data lake provider, you have to specify corresponding settings to define the data lake to be used. Once the configuration of the data lake is completed, it cannot be changed afterwards.
 
 The following types of data lakes are currently supported:
 

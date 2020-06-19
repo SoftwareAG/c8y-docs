@@ -17,6 +17,5 @@ aliases:
   - /mqtt/static-templates
   - /mqtt/smartrest-1
   - /mqtt/smartrest-2
-  - /mqtt/device-certificates
   - /mqtt/introduction
 ---

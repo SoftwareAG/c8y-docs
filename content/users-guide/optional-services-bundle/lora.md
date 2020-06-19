@@ -130,7 +130,7 @@ Under **Value selection**, define from where the value should be extracted. In o
 
 In this example the "Channel 1 Type" information starts in byte 2 (i.e. start bit = "16") and is 1 byte long (i.e. number of bits = "8").
 
-<img src="/images/users-guide/actility/payload-example3.png" alt="Example payload: value selection" style="max-width: 100%">
+<img src="/images/users-guide/actility/lora-payload-example3.png" alt="Example payload: value selection" style="max-width: 100%">
 
 ![LoRa bits](/images/users-guide/actility/devmgmt-devicetypes-protocols-lorabits.png)
 

@@ -41,12 +41,12 @@ Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokument
 <td align="left">Überwachen Sie Probleme Ihrer Geräte mit Hilfe von Schweregraden und Prozessen. Da die Verwendung von Alarmen in der Cockpit-Anwendung exakt so funktioniert wie in der Device Management-Anwendung finden Sie weitere Informationen in <a href="../../benutzerhandbuch/device-management-de/#alarm-monitoring">Verwenden von Alarmen</a> unter Device Management.</td>
 </tr>
 <tr>
-<td align="left"><a href="#reports">Verwalten von Berichten</a></td>
+<td align="left"><a href="#reports">Verwalten von Berichten und Exporten</a></td>
 <td align="left">Bearbeiten Sie <a href="#reports">Berichte</a> auf Basis von Dashboard-Layouts, erstellen Sie <a href="#export">Berichte zum Exportieren von Daten</a> in das CSV- oder Excel-Format und <a href="#schedule-export">terminieren Sie den Export</a>.</td>
 </tr>
 <tr>
 <td align="left"><a href="#data-point-library">Datenpunktbibliothek</a></td>
-<td align="left">Verwalten Sie Standardeinstellungen ("Profile") Ihrer Geräte und wenden Sie diese mit Hilfe der <a href="#data-point-library">Datenpunktbibliothek</a> automatisch an.</td>
+<td align="left">Verwalten Sie Standardeinstellungen (“Profile”) Ihrer Geräte und wenden Sie diese mit Hilfe der <a href="#data-point-library">Datenpunktbibliothek</a> automatisch an.</td>
 </tr>
 <tr>
 <td align="left"><a href="#smart-rules">Verwenden von Smart Rules</a></td>

@@ -4,7 +4,7 @@ title: Anzeigen von Audit-Logs
 
 ---
 
-Audit-Logs zeigen die von Benutzern ausgeführten Kommandos.
+Audit-Logs zeigen die von Benutzern ausgeführten Kommandos. 
 
 Um die Audit-Logs-Liste anzuzeigen, klicken Sie **Audit Logs** im Menü **Konto**. Für jeden Logeintrag werden die folgenden Informationen bereitgestellt:
 
@@ -47,7 +47,7 @@ Es werden nur die letzten 100 Logeinträge angezeigt. Klicken Sie **Mehr laden**
 
 ![Audit logs](/images/benutzerhandbuch/Administration/admin-audit-logs.png)
 
->**Info:** Die Audit-Logs-Liste wird nicht automatisch aktualisiert, wenn eine Echtzeitaktualisierung von Kommandos erfolgt ist. Klicken Sie **Neu laden** rechts oben in der Menüleiste, um die Liste der Kommandos zu aktualisieren.
+>**Info**: Die Audit-Logs-Liste wird nicht automatisch aktualisiert, wenn eine Echtzeitaktualisierung von Kommandos erfolgt ist. Klicken Sie **Neu laden** rechts oben in der Menüleiste, um die Liste der Kommandos zu aktualisieren.
 
 ### Filtern von Logeinträgen
 

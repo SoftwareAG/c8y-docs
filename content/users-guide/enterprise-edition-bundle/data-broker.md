@@ -151,11 +151,11 @@ Click the menu icon at the right of a data connector entry and then click **Dele
 
 #### To view alarms for a data connector
 
-Open a data connector and switch to the **Alarms** tab to display current alarms for the data connector. 
+Open a data connector and switch to the **Alarms** tab to display current alarms for the data connector.
 
-For details on data broker alarms, see [Troubleshooting](#data-broker-troubleshooting) below.
+![Warnings tab](/images/users-guide/enterprise-tenant/et-data-broker-connector-warnings.png)
 
-For details on alarms in general, see [Device Management > Monitoring and controlling devices > Working with alarms](/users-guide/device-management/#alarm-monitoring).
+For details on alarms, see [Device Management > Monitoring and controlling devices > Working with alarms](/users-guide/device-management/#alarm-monitoring).
 
 
 ### <a name="data-broker-subscriptions"></a> Data subscriptions
@@ -187,14 +187,8 @@ Click the menu icon and then click **Delete** to stop data forwarding and delete
 
 ### <a name="data-broker-troubleshooting"></a> Troubleshooting
 
-If the data broker is not able to connect to a destination tenant, a CRITICAL alarm is raised, showing the connector which is affected.
+On the source tenant, data broker queues data that cannot be forwarded immediately to the destination tenant. The amount of data that can be queued is limited. If Cumulocity IoT cannot queue any further data, the oldest queued data is dropped. In this case, an alarm is raised in the tenant.
 
-#### Queue overflow
+**"Data broker processing is currently overloaded and may stop processing your events. Please contact support."**
 
-On the source tenant, data broker queues data that cannot be forwarded immediately to the destination tenant. The amount of data that can be queued is limited. If Cumulocity IoT cannot queue any further data, the oldest queued data is dropped. In this case, a MAJOR alarm is raised in the tenant, showing the connector which is affected.
-
-![Data broker alarms](/images/users-guide/enterprise-tenant/et-data-broker-alarm.png)
-
-Similarly, an alarm is raised when the input queue is overflown.
- 
 To reduce the number of alarms, alarms are not triggered more often than once per minute.

@@ -29,7 +29,7 @@ Assume that location updates from cars should be monitored every second while th
 
 		action onload() {
 
-			monitor.subscribe(Measurement.SUBSCRIBE_CHANNEL);
+			monitor.subscribe(Measurement.CHANNEL);
 			on all Event() as e {
 				if e.params.hasKey("c8y_LocationUpdate") {
 					latestUpdates[e.source] := e;
@@ -39,7 +39,7 @@ Assume that location updates from cars should be monitored every second while th
 			on all wait(60.0) {
 				Event e;
 				for e in latestUpdates.values() {
-					send e to Event.SEND_CHANNEL;
+					send e to Event.CHANNEL;
 				}
 				latestUpdates.clear();
 			}
@@ -61,14 +61,14 @@ Another option is to output only every 60th update.
 		dictionary<string, UpdateAndCount> latestUpdates;
 
 		action onload() {
-			monitor.subscribe(Measurement.SUBSCRIBE_CHANNEL);
+			monitor.subscribe(Measurement.CHANNEL);
 			on all Event() as e {
 				if e.params.hasKey("c8y_LocationUpdate") {
 					UpdateAndCount updateCount := latestUpdates.getOrAddDefault(e.source);
 					updateCount.latest := e;
 					updateCount.count := updateCount.count + 1;
 					if updateCount.count = 60 {
-						send e to Event.SEND_CHANNEL;
+						send e to Event.CHANNEL;
 						latestUpdates.remove(e.source);
 					}
 				}

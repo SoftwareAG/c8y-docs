@@ -36,76 +36,74 @@ Es wird eine Benutzerliste angezeigt, die für jeden Benutzer die folgenden Info
 * Den Benutzernamen, der für den Zugang zum Mandanten verwendet wird
 * Name und E-Mail-Adresse des Benutzers, falls angegeben
 * Die globalen Rollen, die für den Benutzer vergeben wurden
-* Die [Stärke](/benutzerhandbuch/getting-started-de/#login) des Passworts, das für den Benutzer gesetzt ist
+* Die [Stärke](/benutzerhandbuch/getting-started-de#login) des Passworts, das für den Benutzer gesetzt ist
 
-Zum Filtern der Liste können Sie das Suchfeld links in der oberen Menüleiste verwenden. Weitere Informationen zur Suchfunktionalität finden Sie unter [Suchen](/benutzerhandbuch/getting-started-de/#searching) im Abschnitt *Erste Schritte*.
+Zum Filtern der Liste können Sie das Suchfeld links in der oberen Menüleiste verwenden. Weitere Informationen zur Suchfunktionalität finden Sie unter [Suchen](/benutzerhandbuch/getting-started-de#searching) im Abschnitt *Erste Schritte*.
 
 Darüber hinaus können Sie nach globalen Rollen filtern. Wählen Sie die gewünschten Rollen aus der Auswahlliste, und klicken Sie **Anwenden**, um die angezeigten Benutzer auf solche mit den ausgewählten Rollen zu beschränken.
 
-Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie **Alle ausklappen** rechts in der oberen Leiste, um alle Benutzer in Ihrem Konto auf einmal anzuzeigen. Dadurch werden alle Hauptbenutzereinträge ausgeklappt, so dass auch die Unterbenutzer angezeigt werden. Klicken Sie **Alle einklappen**, um wieder nur die Hauptbenutzer anzuzeigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter [Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-edition-de/#user-hierarchies).
+Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie **Alle ausklappen** rechts in der oberen Leiste, um alle Benutzer in Ihrem Konto auf einmal anzuzeigen. Dadurch werden alle Hauptbenutzereinträge ausgeklappt, so dass auch die Unterbenutzer angezeigt werden. Klicken Sie **Alle einklappen**, um wieder nur die Hauptbenutzer anzuzeigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter [Verwalten von Benutzerhierarchien](/benutzerhandbuch/enterprise-edition-de#user-hierarchies).
 
 ### <a name="creating-users"></a>So fügen Sie einen Benutzer hinzu
 
 1. Klicken Sie **Benutzer hinzufügen** rechts in der oberen Menüleiste.  
 
-	>**Info:** Wenn Single-Sign-On für Ihren Mandanten aktiviert ist, werden Sie durch eine Meldung daran erinnert, dass Sie im Begriffe sind, einen lokalen Benutzer anzulegen, der sich nicht per Single-Sign-On anmelden kann. Legen Sie stattdessen in **My Cloud** neue Benutzer an, die über die Single-Sign-On-Funktion aktiviert werden können. My Cloud kann über den Application Switcher in der oberen rechten Ecke aufgerufen werden.
+	>**Info**: Wenn Single-Sign-On für Ihren Mandanten aktiviert ist, werden Sie durch eine Meldung daran erinnert, dass Sie im Begriffe sind, einen lokalen Benutzer anzulegen, der sich nicht per Single-Sign-On anmelden kann. Legen Sie stattdessen in **My Cloud** neue Benutzer an, die über die Single-Sign-On-Funktion aktiviert werden können. My Cloud kann über den Application Switcher in der oberen rechten Ecke aufgerufen werden.
 
 2. Geben Sie links im Fenster **Neuer Benutzer** folgende Informationen ein, um den Benutzer zu identifizieren:
 
 	<table>
-	<thead>
-	<colgroup>
+<thead>
+<colgroup>
    <col style="width: 20%;">
    <col style="width: 80%;">
-	 </colgroup>
-	 <tr>
-	 <th align="left">Feld</th>
-	 <th align="left">Beschreibung</th>
-	 </tr>
-	 </thead>
-	 <tbody>
-	 <tr>
-	 <td align="left">Benutzername</td>
-	 <td align="left">Benutzername, um den Benutzer am System zu identifizieren. Beachten Sie, dass dieser Name nicht mehr geändert werden kann, wenn er einmal gespeichert wurde. Diese Eingabe ist obligatorisch.</td>
-	</tr>
-	<tr>
-	<td align="left">Login alias</td>
-	<td align="left">Zusätzlich zum Benutzernamen kann optional ein Login-Alias vergeben werden, der für die Anmeldung verwendet werden kann. Anders als der Benutzername kann der Alias bei Bedarf geändert werden.</td>
-	</tr>
-	<tr>
-	<td align="left">Aktiv</td>
-	<td align="left">Hier können Sie das Benutzerkonto aktivieren/ deaktivieren. Wenn das Benutzerkonto deaktiviert ist, kann der Benutzer sich nicht anmelden.</td>
-	</tr>
-	<tr>
-	<td align="left">E-Mail</td>
-	<td align="left">Eine gültige E-Mail-Adresse. Diese ist erforderlich, um dem Benutzer zu ermöglichen, sein Passwort zurückzusetzen. Diese Eingabe ist obligatorisch.</td>
-	</tr>
-	<tr>
-	<td align="left">Vorname</td>
-	<td align="left">Vorname des Benutzers. Wenn der Benutzer angemeldet ist, erscheint dieser Name rechts in der oberen Leiste auf der Schaltfläche <strong>Benutzer</strong>.</td>
-	</tr>
-	<tr>
-	<td align="left">Nachname</td>
-	<td align="left">Nachname des Benutzers.</td>
-	</tr>
-	<tr>
-	<td align="left">Telefon</td>
-	<td align="left">Eine gültige Telefonnummer. Die Telefonnummer ist erforderlich, wenn für den Benutzer die Verwendung von Zwei-Faktor-Authentifizierung konfiguriert ist.</td>
-	</tr>
-	<tr>
-	<td align="left">Eigentümer</td>
-	<td align="left">Ein anderer Benutzer, der diesen Benutzer "besitzt" (verwaltet). Wählen Sie einen Benutzer aus der Auswahlliste und klicken Sie <strong>Fertig</strong> zum Bestätigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter <a href="../../benutzerhandbuch/enterprise-edition-de#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
-	</tr>
-	<tr>
-	<td align="left">Delegiert von</td>
-	<td align="left">Kann aktiviert werden, um Benutzerhierarchien und Berechtigungen an einen Benutzer zu delegieren. Weitere Informationen zum Delegieren finden Sie unter <a href="../../benutzerhandbuch/enterprise-edition-de#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
-	</tr>
-	</tbody>
-	</table>
-
+</colgroup>
+<tr>
+<th align="left">Feld</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Benutzername</td>
+<td align="left">Benutzername, um den Benutzer am System zu identifizieren. Beachten Sie, dass dieser Name nicht mehr geändert werden kann, wenn er einmal gespeichert wurde. Diese Eingabe ist obligatorisch.</td>
+</tr>
+<tr>
+<td align="left">Login alias</td>
+<td align="left">Zusätzlich zum Benutzernamen kann optional ein Login-Alias vergeben werden, der für die Anmeldung verwendet werden kann. Anders als der Benutzername kann der Alias bei Bedarf geändert werden.</td>
+<tr>
+<td align="left">Aktiv</td>
+<td align="left">Hier können Sie das Benutzerkonto aktivieren/ deaktivieren. Wenn das Benutzerkonto deaktiviert ist, kann der Benutzer sich nicht anmelden.</td>
+</tr>
+<tr>
+<td align="left">E-Mail</td>
+<td align="left">Eine gültige E-Mail-Adresse. Diese ist erforderlich, um dem Benutzer zu ermöglichen, sein Passwort zurückzusetzen. Diese Eingabe ist obligatorisch.</td>
+</tr>
+<tr>
+<td align="left">Vorname</td>
+<td align="left">Vorname des Benutzers. Wenn der Benutzer angemeldet ist, erscheint dieser Name rechts in der oberen Leiste auf der Schaltfläche <strong>Benutzer</strong>.</td>
+</tr>
+<tr>
+<td align="left">Nachname</td>
+<td align="left">Nachname des Benutzers.</td>
+</tr>
+<tr>
+<td align="left">Telefon</td>
+<td align="left">Eine gültige Telefonnummer. Die Telefonnummer ist erforderlich, wenn für den Benutzer die Verwendung von Zwei-Faktor-Authentifizierung konfiguriert ist.</td>
+</tr>
+<tr>
+<td align="left">Eigentümer</td>
+<td align="left">Ein anderer Benutzer, der diesen Benutzer “besitzt” (verwaltet). Wählen Sie einen Benutzer aus der Auswahlliste und klicken Sie <strong>Fertig</strong> zum Bestätigen. Detaillierte Informationen zu Benutzerhierarchien finden Sie unter <a href="../../benutzerhandbuch/enterprise-edition-de#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
+</tr>
+<tr>
+<td align="left">Delegiert von</td>
+<td align="left">Kann aktiviert werden, um Benutzerhierarchien und Berechtigungen an einen Benutzer zu delegieren. Weitere Informationen zum Delegieren finden Sie unter <a href="../../benutzerhandbuch/enterprise-edition-de#user-hierarchies">Verwalten von Benutzerhierarchien</a>.</td>
+</tr>
+</tbody>
+</table>
 3. Wählen Sie die Anmeldeoptionen für den Benutzer aus.
 
-	Wenn Sie **Benutzer muss sein Passwort beim nächsten Anmelden zurücksetzen** auswählen, müssen Sie ein Passwort angeben, dass der Benutzer beim nächsten Anmelden zurücksetzen muss. Geben Sie ein Passwort ein und bestätigen Sie es. Während der Passworteingabe wird die Stärke des Passworts angezeigt. Weitere Informationen zur Passwortstärke finden Sie unter [So melden Sie sich an der Cumulocity IoT-Plattform an](/benutzerhandbuch/getting-started-de/#login).  
+	Wenn Sie **Benutzer muss sein Passwort beim nächsten Anmelden zurücksetzen** auswählen, müssen Sie ein Passwort angeben, dass der Benutzer beim nächsten Anmelden zurücksetzen muss. Geben Sie ein Passwort ein und bestätigen Sie es. Während der Passworteingabe wird die Stärke des Passworts angezeigt. Weitere Informationen zur Passwortstärke finden Sie unter [Anmelden an der Cumulocity IoT-Plattform](/benutzerhandbuch/getting-started-de/#login).  
 Wenn Sie **Link für das Zurücksetzen des Passworts per E-Mail senden** auswählen, erhält der Benutzer eine E-Mail mit dem Link zum Setzen des Passworts. Die E-Mail wird zu der oben konfigurierten Adresse gesendet.
 
 4. Wählen Sie auf der rechten Seite die globalen Rollen für den Benutzer. Informationen zu den globalen Rollen finden Sie unter [Verwalten von Berechtigungen](/benutzerhandbuch/administration-de#managing-permissions).

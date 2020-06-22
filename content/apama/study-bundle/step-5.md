@@ -11,7 +11,7 @@ if firstPos.distance <= firstPos.maxDistance and
 	secondPos.distance > secondPos.maxDistance {
 	send Alarm("", "c8y_GeofenceAlarm", firstPos.source, currentTime,
 					"Device moved out of circular geofence", "ACTIVE",
-					"MAJOR", 1, new dictionary<string,any>) to Alarm.SEND_CHANNEL;
+					"MAJOR", 1, new dictionary<string,any>) to Alarm.CHANNEL;
 }
 ```
 

@@ -1,7 +1,7 @@
 ---
 weight: 13
 title: Verwalten von Berechtigungen
-layout: redirect
+
 ---
 
 Berechtigungen legen fest, welche Funktionen ein Benutzer in Cumulocity IoT-Anwendungen ausführen darf. Um das Verwalten von Berechtigungen zu vereinfachen, sind diese in sogenannte Rollen eingeteilt. Jedem Benutzer kann eine Reihe von Rollen zugewiesen werden, deren Berechtigungen addiert werden.
@@ -13,35 +13,32 @@ Die folgenden Rollen können zugewiesen werden:
 
 Darüber hinaus kann der Zugriff auf Anwendungen erteilt werden.
 
-
 ### <a name="global"></a>Globale Rollen
 
 Klicken Sie **Rollen** im Menü **Konto**, um die Liste der konfigurierten Rollen anzuzeigen.
 
+In der Registerkarte **Globale Rollen** finden Sie die Rollen, die allgemeine Berechtigungen erteilen. Es gibt verschiedene globale Standardrollen, aber Sie können auch eigene nach Ihren Bedürfnissen erstellen.
+
 <img src="/images/benutzerhandbuch/Administration/admin-global-roles.png" alt="Context menu">
-
-In der Registerkarte **Globale Rollen** finden Sie die Rollen, die allgemeine Berechtigungen erteilen. Es gibt verschiedene vordefinierte globale Rollen, aber Sie können auch eigene nach Ihren Bedürfnissen erstellen.
-
-> **Info:** Die vordefinierten Rollen sind nicht vollständig konfiguriert. Sie können als Muster betrachtet werden, die für einen bestimmten Zweck vorkonfiguriert sind. Sie können sie als Ausgangspunkt verwenden und dann weiter an Ihre Bedürfnisse anpassen.
-
-> Achten Sie beim Anlegen eines neuen Benutzers darauf, dass die globalen Rollen, die sie diesem zuweisen, alle Berechtigungen umfassen, die speziell für diesen Benutzer relevant sind. Wenn ein Benutzer z. B. nur die Rolle "Cockpit-Benutzer" hat (siehe unten), kann er auf nichts anderes als die Cockpit-Anwendung zugreifen.  
 
 Die Rollen "admins" und "devices" haben einen Sonderstatus:
 
 <table>
-<col style="width: 20%;">
-<col style="width: 80%;">
+<col style="width: 15%;">
+<col style="width: 85%;">
 <thead>
 <tr>
 <th align="left">Rolle&nbsp;&nbsp;&nbsp;</th>
 <th align="left">Beschreibung</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td align="left">admins</td>
 <td align="left">Alle Berechtigungen sind aktiviert. Der ursprüngliche Administrator, d.h. der erste in diesem Mandanten erstellte Benutzer, hat diese Rolle.</td>
 </tr>
+
 <tr>
 <td align="left">devices</td>
 <td align="left">Typische Berechtigungskonfiguration für Geräte. Nach der Registrierung weist ein Gerät automatisch diese Rolle auf. Bearbeiten Sie diese Rolle, wenn Ihre Geräte weniger oder mehr Berechtigungen erfordern, oder weisen Sie Ihren Geräten andere Rollen zu.</td>
@@ -49,7 +46,7 @@ Die Rollen "admins" und "devices" haben einen Sonderstatus:
 </tbody>
 </table>
 
-Darüber hinaus werden anfänglich die folgenden vorkonfigurierten Rollen bereitgestellt:
+Darüber hinaus sind anfänglich folgende Rollen konfiguriert:
 
 <table>
 <col style="width: 20%;">
@@ -60,35 +57,43 @@ Darüber hinaus werden anfänglich die folgenden vorkonfigurierten Rollen bereit
 <th align="left">Beschreibung</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td align="left">Regelmanager</td>
 <td align="left">Hat Zugriff auf alle Smart Rules und Echtzeitregeln.</td>
 </tr>
+
 <tr>
 <td align="left">Cockpit-Benutzer</td>
 <td align="left">Hat Zugriff auf die Anwendung Cockpit. Zusätzlich sollten Sie eine Rolle hinzufügen, die Geräten Zugriff gewährt.</td>
 </tr>
+
 <tr>
 <td align="left">Device Management-Benutzer</td>
 <td align="left">Hat Zugriff auf die Anwendung Device Management. Der Benutzer kann damit den Simulator nutzen und Stapelkommandos ausführen. Zusätzlich sollten Sie eine Rolle hinzufügen, die Geräten Zugriff gewährt.</td>
 </tr>
+
 <tr>
 <td align="left">Globaler Manager</td>
 <td align="left">Hat Lese- und Schreibzugriff auf alle Geräte.</td>
 </tr>
+
 <tr>
 <td align="left">Globaler Leser</td>
 <td align="left">Hat Lesezugriff auf alle Geräte.</td>
 </tr>
+
 <tr>
 <td align="left">Globaler Benutzermanager</td>
 <td align="left">Kann alle Benutzer verwalten.</td>
 </tr>
+
 <tr>
 <td align="left">Geteilter Benutzermanager</td>
 <td align="left">Kann untergeordnete Benutzer verwalten. Um untergeordnete Benutzer verwalten zu können, muss der Abonnementplan Benutzerhierarchien einschließen.</td>
 </tr>
+
 <tr>
 <td align="left">Mandantenmanager</td>
 <td align="left">Kann mandantenweite Einstellungen verwalten, z. B. eigene Anwendungen, Datenvermittlung, Datenhaltung, Optionen und Mandantenstatistiken.</td>
@@ -184,7 +189,7 @@ Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
 
 <tr>
 <td align="left">Globale Smart Rules</td>
-<td align="left">Konfigurieren von globalen Smart Rules.</td>
+<td align="left">Konfigurieren von globalen Smart Rules</td>
 </tr>
 
 <tr>
@@ -244,9 +249,9 @@ Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
 </tbody>
 </table>
 
-Möglicherweise werden weitere Berechtigungen angezeigt, abhängig von den Funktionalitäten in Ihrem Abonnementplan. Diese werden in Verbindung mit den jeweiligen Funktionalitäten beschrieben.
+Möglicherweise werden weitere Berechtigungen angezeigt, abhängig von den Funktionen in Ihrem Abonnementplan. Diese werden in Verbindung mit den jeweiligen Funktionen beschrieben.
 
-> **Wichtig:** Werden neue Funktionalitäten mit neuen Berechtigungen zu Cumulocity IoT hinzugefügt, so werden diese nicht automatisch zu bestehenden Rollen hinzugefügt. Sollten Sie feststellen, dass Sie eine kürzlich angekündigte Funktionalität nicht verwenden können, überprüfen Sie zunächst Ihre Berechtigungen.
+> **Wichtig:** Werden neue Funktionen mit neuen Berechtigungen zu Cumulocity IoT hinzugefügt, so werden diese nicht automatisch zu bestehenden Rollen hinzugefügt. Sollten Sie feststellen, dass Sie eine kürzlich angekündigte Funktion nicht verwenden können, überprüfen Sie zunächst Ihre Berechtigungen.
 
 #### <a name="attach-global"></a>Zuweisen von globalen Rollen
 
@@ -340,7 +345,7 @@ Klicken Sie **Benutzer** im Menü **Konto**, wählen Sie einen Benutzer aus der 
 
 In der Registerkarte **Stammdatenrollen** sehen Sie einen Baum mit Gerätegruppen. Klicken Sie auf den Pfeil rechts von einer Gruppe, um eine Stammdatenrollen zuzuweisen. Wählen Sie die gewünschten Rollen und klicken Sie **Anwenden**. Weitere Informationen zu den Rollen erhalten Sie, wenn Sie den Mauszeiger über das Info-Symbol bewegen, oder unter [Anzeigen von Stammdatenrollen](#inventory).
 
-> **Wichtig:** Wenn ein Benutzer bereits eine globale Rolle hat, die Stammdatenberechtigungen umfasst, kann der Benutzer alle Geräte sehen oder ändern, unabhängig von den hier zugewiesenen Stammdatenrollen.
+> **Wichtig**: Wenn ein Benutzer bereits eine globale Rolle hat, die Stammdatenberechtigungen umfasst, kann der Benutzer alle Geräte sehen oder ändern, unabhängig von den hier zugewiesenen Stammdatenrollen.
 
 Stammdatenrollen werden von Gruppen an alle ihre direkten und indirekten Untergruppen sowie die Geräte in der Gruppe vererbt. Wenn Sie etwa eine Rolle mit Leseberechtigung für Alarme für eine Gerätegruppe wählen, kann der Benutzer alle Alarme für alle Geräte in dieser Gruppe sowie in ihren Untergruppen sehen.
 

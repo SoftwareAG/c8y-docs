@@ -225,34 +225,6 @@ Set the required interval for availability monitoring. It will only set the valu
 117,60
 ```
 
-##### Set supported logs (118)
-
-Set the supported logs of the device.
-
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1...|List of supported logs| NO|
-
-**Example**
-
-```text
-118,ntcagent,dmesg,logread
-```
-
-##### Set supported configurations (119)
-
-Set the supported configurations of the device.
-
-|Position|Parameter|Mandatory|
-|:-------|:-------|:-------|
-|1...|List of supported configurations| NO|
-
-**Example**
-
-```text
-119,modbus,system
-```
-
 #### Measurement templates (2xx)
 
 ##### Create custom measurement (200)

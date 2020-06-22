@@ -6,7 +6,7 @@ layout: redirect
 
 Sie können Geräte beliebig nach Ihren Bedürfnissen gruppieren. Ein Gerät kann sich in mehreren Gruppen befinden und Gruppen selbst können wiederum Teil von mehreren anderen Gruppen sein.
 
-Cumulocity IoT unterscheidet zwischen Top-Level-Gruppen und untergeordneten Gruppen:
+Cumulocity IoT unterscheidet zwischen Top-Level-Gruppen und untergeordneten Gruppen: 
 
 **Top-Level-Gruppen** werden im Menü **Gruppen** des Navigators auf oberster Ebene angezeigt. <br>**Untergeordnete Gruppen** dienen zur weiteren Unterteilung von Top-Level-Gruppen.
 
@@ -88,7 +88,7 @@ Auf der Seite **Gruppen** können Sie auch eine neue Gruppe erstellen, in dem Si
 
 1. Wählen Sie im Navigator eine Gruppe aus.
 2. Klicken Sie **Bearbeiten** in der Registerkarte **Info**. Sie können den Namen der Gruppe bearbeiten sowie Benutzerberechtigungen für die Gruppe zuweisen.
-Weitere Informationen zu den Berechtigungen finden Sie unter [Verwalten von Berechtigungen](/benutzerhandbuch/administration-de#managing-permissions) im Abschnitt "Administration".
+Weitere Informationen zu den Berechtigungen finden Sie unter [Verwalten von Berechtigungen](/benutzerhandbuch/administration-de#managing-permissions) im Bereich *Administration*.
 
 ### So löschen Sie eine Gruppe
 
@@ -126,7 +126,7 @@ Das Geräte wird der ausgewählten Gruppe zugewiesen.
 
 Wenn Sie nach einer Gruppe anhand eines Namens suchen, der noch nicht existiert, wird die Schaltfläche **Neu** angezeigt, so dass Sie von hier aus eine neue Gruppe mit diesem Namen erstellen und ihr das Gerät zuweisen können.
 
->**Info:** Zum Erstellen einer neuen Gruppe muss der Benutzer über folgende Berechtigungen verfügen:
+>**Info**: Zum Erstellen einer neuen Gruppe muss der Benutzer über folgende Berechtigungen verfügen:
 ROLE&#95;INVENTORY\_CREATE und ROLE&#95;INVENTORY\_ADMIN.
 
 <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-group-assignment-new.png" alt="new group">
@@ -172,7 +172,7 @@ Dynamische Gruppen werden basierend auf Filterkriterien erstellt. Dieser Gruppen
 
 ![Smart groups filter](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-smartgroups-filter.png)
 
-Beachten Sie, dass dynamische Gruppen nur in der Device Management-Anwendung verfügbar und in der Cockpit-Anwendung nicht sichtbar sind.
+Wie jede andere Gruppe sind auch dynamische Gruppen in der Anwendung Cockpit verfügbar.
 
 Dynamische Gruppen werden in der Geräteliste erstellt.
 
@@ -197,4 +197,4 @@ Um eine dynamische Gruppe zu löschen, klicken Sie auf das Menüsymbol und ansch
 
 ![Delete smart groups](/images/benutzerhandbuch/DeviceManagement/devmgmt-groups-delete.png)
 
-> **Wichtig:** Das Löschen einer dynamischen Gruppe ist irreversibel.
+**Wichtig**: Das Löschen einer dynamischen Gruppe ist irreversibel.

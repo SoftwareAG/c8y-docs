@@ -8,7 +8,7 @@ layout: redirect
 
 Mit dem Firmware-Repository und dem Software-Repository bietet Cumulocity IoT die Möglichkeit, Referenz-Firmware bzw. -Software für Geräte zu verwalten.
 
-> **Info:** Die folgenden Beschreibungen beziehen sich auf Firmware, gelten aber analog auch für Geräte-Software.
+> **Info**: Die folgenden Beschreibungen beziehen sich auf Firmware, gelten aber analog auch für Geräte-Software.
 
 Klicken Sie **Firmware Repository** im Menü **Verwaltung** des Navigators.
 
@@ -130,11 +130,11 @@ Der geladene Snapshot wird im **Konfigurations-Repository** im Menü **Verwaltun
 3. Navigieren Sie zu dem anderen Gerät und wechseln Sie zur Registerkarte **Konfiguration**.
 4. Wählen Sie unter **Konfigurationssnapshot** die neue Konfiguration aus der Auswahlliste und klicken Sie **Snapshot an Gerät senden**.
 
->**Info:** Wenn Sie einen Konfigurationssnapshot von einem Gerät auf ein anderes anwenden, enthält die Konfiguration möglicherweise gerätespezifische Daten.
+>**Info**: Wenn Sie einen Konfigurationssnapshot von einem Gerät auf ein anderes anwenden, enthält die Konfiguration möglicherweise gerätespezifische Daten.
 
 ### <a name="credentials"></a>Verwalten von Gerätezugangsdaten
 
-Die Registerkarte **Gerätezugangsdaten** listet alle Zugangsdaten auf, die für Ihre verbundenen Geräte erstellt wurden. Jedes Gerät, das [registriert](#dev-registration) wurde, wird hier mit der Namenskonvention "device_&lt;id&gt;" angezeigt.
+Die Registerkarte **Gerätezugangsdaten** listet alle Zugangsdaten auf, die für Ihre verbundenen Geräte erstellt wurden. Jedes Gerät, das [registriert](#connecting-devices) wurde, wird hier mit der Namenskonvention "device_&lt;id&gt;" angezeigt.
 
 ![Device credentials](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-credentials.png)
 
@@ -171,4 +171,4 @@ Klicken Sie auf das Menüsymbol rechts neben dem Gerätezugangsdaten-Eintrag und
 
 Die Gerätezugangsdaten werden dauerhaft gelöscht.
 
-Das Löschen von Gerätezugangsdaten kann erforderlich sein, wenn Sie ein Gerät auf die Werkseinstellungen zurückgesetzt haben. In diesem Fall verliert das Gerät häufig seine zugewiesenen Zugangsdaten. Löschen Sie diese und fahren Sie mit dem normalen [Registrierungsprozess](#dev-registration) fort, um das Gerät erneut zu registrieren.
+Das Löschen von Gerätezugangsdaten kann erforderlich sein, wenn Sie ein Gerät auf die Werkseinstellungen zurückgesetzt haben. In diesem Fall verliert das Gerät häufig seine zugewiesenen Zugangsdaten. Löschen Sie diese und fahren Sie mit dem normalen [Registrierungsprozess](#connecting-devices) fort, um das Gerät erneut zu registrieren.

@@ -217,13 +217,6 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left"><a href="/users-guide/optional-services#lora" class="no-ajaxy">Actility</a></td>
-<td style="text-align:left">Schaffen Sie eine Schnittstelle zu LoRa-Geräten über Actility ThingPark.</td>
-<td style="text-align:left">actility</td>
-<td style="text-align:left">Microservice</td>
-</tr>
-<tr>
 <td style="text-align:left"><a href="/apama" class="no-ajaxy">Apama EPL Apps</a></td>
 <td style="text-align:left"><b>Diese Anwendung ist ein optionaler Service in Cumulocity IoT Core, aber ein Standardservice in Cumulocity IoT Edge.</b><br>
 Manager und Editor für Apama Event Processing Language (EPL) Apps zur sofortigen Verarbeitung eingehender Daten.</td>
@@ -260,8 +253,9 @@ Manager und Editor für Apama Event Processing Language (EPL) Apps zur sofortige
 <td style="text-align:left">connectivity-agent-server</td>
 <td style="text-align:left">Microservice</td>
 </tr>
+<tr>
 <td style="text-align:left">Microservice hosting</td>
-<td style="text-align:left">Hosten Sie Ihre eigenen Microservices in Cumulocity IoT.</td>
+<td style="text-align:left">Hosten Sie Ihre eigenen Microservices zusätzlich zu Cumulocity IoT.</td>
 <td style="text-align:left">feature-microservice-hosting</td>
 <td style="text-align:left">Funktion</td>
 </tr>
@@ -272,14 +266,8 @@ Manager und Editor für Apama Event Processing Language (EPL) Apps zur sofortige
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/optional-services#opc-ua" class="no-ajaxy">OPCUA</a></td>
-<td style="text-align:left">Kommunizieren Sie mit OPC UA-Servern über ein OPC UA-Geräte-Gateway. </td>
-<td style="text-align:left">opcua-mgmt-service</td>
-<td style="text-align:left">Microservice</td>
-</tr>
-<tr>
 <td style="text-align:left"><a href="/users-guide/optional-services#sigfox" class="no-ajaxy">Sigfox</a></td>
-<td style="text-align:left">Schaffen Sie eine Schnittstelle zu Sigfox-Geräten über die Sigfox-Cloud.</td>
+<td style="text-align:left">Schaffen Sie eine Schnittstelle zu Sigfox-Geräten über die Sigfox-Cloud. Erfordert die folgende Anwendung: "feature-fieldbus4“</td>
 <td style="text-align:left">sigfox-agent</td>
 <td style="text-align:left">Microservice</td>
 </tr>
@@ -348,7 +336,7 @@ Die Anwendung wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wurde.
 
 Der Microservice wird erstellt, sobald die ZIP-Datei erfolgreich hochgeladen wurde.
 
->**Wichtig:** Um Microservices zur Plattform hinzuzufügen, muss die ZIP-Datei die Manifest-Datei und das Docker Image für den Microservice enthalten. Zur Vorbereitung und Bereitstellung des Microservice-Pakets lesen Sie den Abschnitt [Packing](/microservice-sdk/concept/#packing) unter **General aspects** im Microservice SDK Guide.
+>**Wichtig**: Um Microservices zur Plattform hinzuzufügen, muss die ZIP-Datei die Manifest-Datei und das Docker Image für den Microservice enthalten. Zur Vorbereitung und Bereitstellung des Microservice-Pakets lesen Sie den Abschnitt [Packing](/microservice-sdk/concept/#packing) unter **General aspects** im Microservice SDK Guide.
 
 
 ##### <a name="external-application"></a>So verweisen Sie auf eine externe Anwendung
@@ -385,7 +373,7 @@ Das Duplizieren einer Anwendung ist erforderlich, wenn Sie eine abonnierte Anwen
 
 Weitere Informationen zu den Feldern finden Sie auch unter [Anwendungsattribute](#application-properties).
 
-> **Info:** Wenn Sie möchten, dass Ihre "eigene Anwendung" eine abonnierte Standardanwendung überschreibt, setzen Sie den Pfad der "eigenen Anwendung" auf den Pfad der ursprünglich abonnierten Anwendung.
+> **Info**: Wenn Sie möchten, dass Ihre "eigene Anwendung" eine abonnierte Standardanwendung überschreibt, setzen Sie den Pfad der "eigenen Anwendung" auf den Pfad der ursprünglich abonnierten Anwendung.
 
 
 #### <a name="editing-and-removing"></a>So bearbeiten Sie eine eigene Anwendung
@@ -397,7 +385,7 @@ In der Registerkarte **Attribute** können einige Felder bearbeitet werden, abh�
 >**Wichtig:** Ändern Sie niemals Namen der Systemanwendungen (z. B. "Device Management", "Cockpit"). Andernfalls schlägt die Mandanteninitialisierung fehl.
 
 
-#### So löschen Sie eine eigene Anwendung
+#### So entfernen Sie eine eigene Anwendung
 
 Klicken Sie auf das Menüsymbol rechts neben einem Eintrag und anschließend auf **Löschen**.
 
@@ -421,7 +409,7 @@ Es können mehrere Anwendungsversionen in Cumulocity IoT gespeichert werden, ind
 
 Das aktive Archiv (durch ein Cloud-Symbol gekennzeichnet) ist die Version der Anwendung, die aktuell den Benutzern Ihres Kontos zur Verfügung steht. Diese Version kann nicht gelöscht werden.
 
-> **Info:** Die Registerkarte **Archiv** steht für abonnierte Anwendungen nicht zur Verfügung, da nur der Eigentümer der Anwendung ältere Versionen wiederherstellen kann.
+> **Info**: Die Registerkarte **Archiv** steht für abonnierte Anwendungen nicht zur Verfügung, da nur der Eigentümer der Anwendung ältere Versionen wiederherstellen kann.
 
 ##### So stellen Sie eine ältere Anwendungsversion wieder her
 
@@ -482,11 +470,11 @@ Um Logdaten anzuzeigen, öffnen Sie die Registerkarte **Logdaten** des jeweilige
 
 Links oben auf der Seite können Sie die Microservice-Instanz auswählen, für die Sie Logdaten anzeigen möchten.
 
-> **Info:** Falls Ihr Microservice in zwei Instanzen aufgeteilt wurde, können Sie zwar zwischen diesen wechseln, es ist jedoch nicht möglich, die Logdaten beider Instanzen gleichzeitig anzuzeigen.
+> **Info**: Falls Ihr Microservice in zwei Instanzen aufgeteilt wurde, können Sie zwar zwischen diesen wechseln, es ist jedoch nicht möglich, die Logdaten beider Instanzen gleichzeitig anzuzeigen.
 
 Neben der Instanz-Auswahlliste können Sie das Zeitintervall wählen, in dem die Logeinträge angezeigt werden sollen, indem Sie ein Datum im Kalender auswählen und eine Uhrzeit eingeben.
 
-> **Info:** Die hier eingegebene Uhrzeit kann sich aufgrund unterschiedlicher Zeitzonen von der Uhrzeit des Servers unterscheiden.
+> **Info**: Die hier eingegebene Uhrzeit kann sich aufgrund unterschiedlicher Zeitzonen von der Uhrzeit des Servers unterscheiden.
 
 Rechts oben stehen weitere Funktionalitäten zur Verfügung:
 
@@ -509,7 +497,7 @@ Wenn im ausgewählten Zeitintervall keine Logdaten verfügbar sind, wird eine en
 
 <img src="/images/benutzerhandbuch/Administration/admin-microservice-no-logs.png" alt="Microservice log">
 
-> **Info:** Es gibt keine Möglichkeit, die Logdaten der zuvor ausgeführten Instanzen anzuzeigen. Allerdings wird in jeder Instanz ein Docker-Container ausgeführt, und wenn nur dieser (nicht die gesamte Instanz) neu gestartet wurde, sollten die Logdaten des aktuell aktiven sowie des kürzlich beendeten Docker-Containers angezeigt werden.
+> **Info**: Es gibt keine Möglichkeit, die Logdaten der zuvor ausgeführten Instanzen anzuzeigen, allerdings wird in jeder Instanz ein Docker-Container ausgeführt, und wenn nur dieser (nicht die gesamte Instanz) neu gestartet wurde, sollte es möglich sein, die Logdaten des aktuell aktiven sowie des kürzlich beendeten Docker-Containers anzuzeigen.
 
 >Logdaten werden aus dem Docker-Container immer mittels der beiden Quellen `stdout` und `stderr` geladen und es gibt keine Möglichkeit, nach der Quelle zu unterscheiden bzw. zu filtern.
 

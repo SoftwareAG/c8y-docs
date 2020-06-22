@@ -10,14 +10,13 @@ Durch Klicken auf die Schaltfläche **Benutzer** rechts oben wird ein Menü geö
 
 <img src="/images/benutzerhandbuch/getting-started/getting-started-user-account-menu.png" alt="User account menu"  style="max-width: 60%">
 
-
 Das Menü **Benutzer** enthält folgende Elemente:
 
 <table>
 <col width = 150>
 <thead>
 <tr>
-<th style="text-align:left">Menüelement</th>
+<th style="text-align:center">Menüelement</th>
 <th style="text-align:left">Beschreibung</th>
 </tr>
 </thead>
@@ -61,13 +60,15 @@ Einige Kontoeinstellungen können vom Benutzer geändert werden.
 
 <img src="/images/benutzerhandbuch/getting-started/getting-started-user-settings.png" alt="User settings"  style="max-width: 100%">
 
+
 Die Sprache der Benutzeroberfläche wird nach folgenden Kriterien, in der aufgeführten Reihenfolge, ermittelt:
 
 *  Die in den Cumulocity IoT-Benutzereinstellungen ausgewählte Sprache.
-*  Die Sprache, die in den Browser-Einstellungen konfiguriert ist.
+*  Die in den Browser-Einstellungen ausgewählte Sprache.
 * 	Die Sprache des Betriebssystems.
 
 Die Standardsprache ist Englisch.
+
 
 
 ### <a name="change-password"></a>So ändern Sie Ihr Passwort

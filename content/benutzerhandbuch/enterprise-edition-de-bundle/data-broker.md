@@ -16,7 +16,7 @@ Navigieren Sie zur Seite **Datenkonnektor** im Menü **Data Broker**, wenn Sie a
 
 <img src="/images/benutzerhandbuch/enterprise-tenant/et-data-broker-navigator.png" alt="Data broker menus" >
 
->**Wichtig:** Geräte, die über Data Broker weitergeleitet werden, werden wie normale Geräte im Zielmandanten abgerechnet.
+>**Wichtig**: Geräte, die über Data Broker weitergeleitet werden, werden wie normale Geräte im Zielmandanten abgerechnet.
 
 Beachten Sie folgende Einschränkungen im Zusammenhang mit Data Broker:
 
@@ -30,7 +30,7 @@ Beachten Sie folgende Einschränkungen im Zusammenhang mit Data Broker:
 
 Ein Datenkonnektor beschreibt die Daten, die Sie zu einem Zielmandanten senden möchten sowie die URL dieses Mandanten.
 
-<a name="data-broker-connectors-list"></a> **Anzeigen von Datenkonnektoren**
+<a name="data-broker-connectors-list"></a> **Viewing data connectors**
 
 Klicken Sie im Navigator auf **Datenkonnektor**, um eine Liste mit allen aktuell definierten Datenkonnektoren mit ihrem jeweiligen Status anzuzeigen.
 
@@ -45,7 +45,7 @@ Für jeden Datenkonnektor wird die folgenden Information bereitgestellt:
 
 Verwenden Sie den Umschalter, um das Weiterleiten von Daten an den Zielmandanten zu aktivieren bzw. deaktivieren. Werden Daten weitergeleitet, steht der Umschalter auf "Aktiv". Werden keine Daten weitergeleitet, steht der Umschalter auf "Gesperrt" oder "Ausstehend". "Gesperrt" bedeutet, dass Sie das Weiterleiten deaktiviert haben. "Ausstehend" bedeutet, dass der Zielmandant das Weiterleiten deaktiviert hat.
 
-> **Info:** Wenn der Ursprungsmandant gesperrt wurde, sind auch alle seine Data Broker-Konnektoren gesperrt.
+> **Info**: Wenn der Ursprungsmandant gesperrt wurde, sind auch alle seine Data Broker-Konnektoren gesperrt.
 
 #### <a name="data-broker-connector-edit"></a>So fügen Sie einen Datenkonnektor hinzu
 
@@ -66,36 +66,36 @@ Verwenden Sie den Umschalter, um das Weiterleiten von Daten an den Zielmandanten
 4. Jeder Datenfilter enthält die folgenden Informationen:
 
 	<table>
-	<col width = 150>
-	<thead>
-	<tr>
-	<th style="text-align:left">Feld</th>
-	<th style="text-align:left">Beschreibung</th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-	<td style="text-align:left">Gruppe oder Gerät</td>
-	<td style="text-align:left">Die Gruppe oder das Gerät, die/das weitergeleitet wird. Wird hier eine Gruppe ausgewählt, werden alle Untergruppen und Untergeräte ebenfalls weitergeleitet. <b>Siehe nachstehende Warnung zur Verwendung von "Alle Objekte".</b> </td>
-	</tr>
-	<tr>
-	<td style="text-align:left">API</td>
-	<td style="text-align:left">Der Datentyp, der weitergeleitet wird (Alarme, Ereignisse, Messwerte, Objekte) oder empfangen wird (Kommandos).</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Zu filternde Fragmente</td>
-	<td style="text-align:left">Fragmente, die in einem Gerät vorhanden sein müssen, damit dieses weitergeleitet wird.</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Zu kopierende Fragmente</td>
-	<td style="text-align:left">Fragmente, die zum Ziel kopiert werden. Wenn hier nichts angegeben wird, werden nur die Standardattribute wie Objekte, Alarme, Ereignisse und Messwerte weitergeleitet (siehe unten). Wählen Sie **Alle Fragmente kopieren**, um das gesamte Objekt weiterzuleiten.</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Type-Filter</td>
-	<td style="text-align:left">Weitergeleitete Daten müssen diesen Wert in ihrem "Type"-Attribut haben.</td>
-	</tr>
-	</tbody>
-	</table>
+<col width = 150>
+<thead>
+<tr>
+<th style="text-align:left">Feld</th>
+<th style="text-align:left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Gruppe oder Gerät</td>
+<td style="text-align:left">Die Gruppe oder das Gerät, die/das weitergeleitet wird. Wird hier eine Gruppe ausgewählt, werden alle Untergruppen und Untergeräte ebenfalls weitergeleitet. <b>Siehe nachstehende Warnung zur Verwendung von "Alle Objekte".</b> </td>
+</tr>
+<tr>
+<td style="text-align:left">API</td>
+<td style="text-align:left">Der Datentyp, der weitergeleitet wird (Alarme, Ereignisse, Messwerte, Objekte) oder empfangen wird (Kommandos).</td>
+</tr>
+<tr>
+<td style="text-align:left">Zu filternde Fragmente</td>
+<td style="text-align:left">Fragmente, die in einem Gerät vorhanden sein müssen, damit dieses weitergeleitet wird.</td>
+</tr>
+<tr>
+<td style="text-align:left">Zu kopierende Fragmente</td>
+<td style="text-align:left">Fragmente, die zum Ziel kopiert werden. Wenn hier nichts angegeben wird, werden nur die Standardattribute wie Objekte, Alarme, Ereignisse und Messwerte weitergeleitet (siehe unten). Wählen Sie **Alle Fragmente kopieren**, um das gesamte Objekt weiterzuleiten.</td>
+</tr>
+<tr>
+<td style="text-align:left">Type-Filter</td>
+<td style="text-align:left">Weitergeleitete Daten müssen diesen Wert in ihrem "Type"-Attribut haben.</td>
+</tr>
+</tbody>
+</table>
 
 5. Klicken Sie **Speichern**, um die Konfiguration zu speichern.
 
@@ -103,7 +103,7 @@ Verwenden Sie den Umschalter, um das Weiterleiten von Daten an den Zielmandanten
 
 >Die Option **Alle Objekte** ist weiterhin in der Benutzeroberfläche vorhanden, um Rückwärtskompatibilität mit älteren Versionen sicherzustellen. Wir planen, diese Option künftig nicht mehr zu unterstützen, und empfehlen dringend, sie nicht zu verwenden.
 
->Wird sie gewählt, synchronisiert Cumulocity IoT alle Arten von Objekten, sowohl System- als auch benutzerdefinierte Objekte, und könnte Objekte im Zielmandanten überschreiben oder ohne Kontext erstellen. Solche Objekte können Referenzen zu anderen Objekten sowie Konfigurationsinformationen enthalten. Es liegt in der Verantwortung des Benutzers, die Konsistenz solcher Informationen in den übertragenen Objekten in der Zielumgebung sicherzustellen.
+>Wird sie gewählt, synchronisiert Cumulocity IoT alle Arten von System- und benutzerdefinierten Daten und könnte Objekte im Zielmandanten außer Kraft setzen oder remote erstellen. Solche Objekte können Referenzen zu anderen Objekten sowie Konfigurationsinformationen enthalten. Es liegt in der Verantwortung des Benutzers, die Konsistenz solcher Informationen in den übertragenen Objekten in der Zielumgebung sicherzustellen.
 
 >Dies betrifft Elemente wie SmartREST-Templates, Geräteprotokolle, Smart-Rule-Konfigurationen und Dashboards.
 
@@ -155,7 +155,7 @@ Klicken Sie auf das Menüsymbol rechts neben einem Datenkonnektor-Eintrag und an
 
 ![Warnings tab](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-connector-warnings.png)
 
-Weitere Informationen zu Alarmen finden Sie unter [Device Management > Überwachen und Steuern von Geräten > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring).
+Weitere Informationen zu Alarmen finden Sie unter [Überwachen und Steuern von Geräten > Verwenden von Alarmen](/benutzerhandbuch/device-management/#alarm-monitoring) im Abschnitt *Device Management*.
 
 
 ### <a name="data-broker-subscriptions"></a> Datenabonnements
@@ -179,7 +179,8 @@ Verwenden Sie den Umschalter, um zeitweilig das Weiterleiten von Daten in Ihren 
 
 Navigieren Sie nun zur Device Management- oder Cockpit-Anwendung. Dort finden Sie eine neue "virtuelle Gruppe" mit einem speziellen Symbol (siehe Abbildung unten), die die weitergeleiteten Geräte anzeigt. Diese Gruppe hat denselben Namen wie das Abonnement. Geräte werden auf der Empfängerseite verzögert erstellt, sobald sie, nach Einrichten eines aktiven Abonnements, das erste mal Daten senden.
 
-![Data broker group in cockpit app](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-group-created.png)
+<img src="/images/benutzerhandbuch/enterprise-tenant/et-data-broker-group-created.png" alt="Data subscriptions">
+
 
 #### So löschen Sie einen Datenkonnektor
 

@@ -1,7 +1,9 @@
 ---
 weight: 30
-title: Cumulocity IoT Edge versus other Cumulocity IoT deployments
+title: Cumulocity IoT Edge versus other Cumulocity deployments
 layout: redirect
+aliases:
+  - /edge/edge-introduction/#edge-vs-core
 ---
 
 Cumulocity IoT Edge uses the same software as Cumulocity IoT Core. 
@@ -10,7 +12,7 @@ However, while the base software is the same, there are differences regarding th
  
 The following differences apply:
 
-|<div style="width:250px">AREA</div>|CUMULOCITY IOT EDGE|CUMULOCITY IOT CORE
+|AREA|CUMULOCITY IOT EDGE|CUMULOCITY IOT CORE
 |:---|:---|:--
 |Multi-tenancy|No; single tenant|Yes
 |Cluster|No; single server|Yes
@@ -26,4 +28,4 @@ The following differences apply:
 
 **Footnote**: * The underlying infrastructure including the virtualization is not part of the product. For further details on high availability or fault tolerance options, refer to the relevant information provided by third parties (e.g.[vSphere Availability](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.avail.doc/GUID-63F459B7-8884-4818-8872-C9753B2E0215.html)).
 
-In addition to Cumulocity IoT Edge, we provide a light-weight approach to implement Edge functionality: the Cumulocity IoT agent and Device SDK. These can be installed on less powerful devices like embedded devices. 
+In addition to Cumulocity IoT Edge, we provide a light-weight approach to implement Edge functionality: the Cumulocity agent and Device SDK. These can be installed on less powerful devices like embedded devices. 

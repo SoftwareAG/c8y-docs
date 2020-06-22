@@ -2,6 +2,7 @@
 weight: 50
 title: Supportbenutzerzugriff
 layout: redirect
+slug: support-user-access
 ---
 
 Mit der Funktion "Supportbenutzerzugriff" können sich Supportbenutzer, d. h. Benutzer des Management-Mandanten mit spezifischen Berechtigungen, bei Konten von Benutzern anderer Untermandanten anmelden, um bei Problemen Hilfe zu leisten.
@@ -21,7 +22,7 @@ Wenn Supportbenutzerzugriff aktiviert ist, können sich Supportbenutzer bei jede
 
 **Untermandanten-/Benutzerebene**
 
-Wenn Supportbenutzerzugriff auf der Plattform-Ebene deaktiviert ist, kann er immer noch durch einen Untermandanten-Benutzer aktiviert werden. Dies erfolgt durch Klicken auf **Support aktivieren** im Menü **Benutzer**, siehe [Erste Schritte > Benutzeroptionen und -einstellungen](/benutzerhandbuch/getting-started-de/#user-settings).
+Wenn Supportbenutzerzugriff auf der Plattform-Ebene deaktiviert ist, kann er immer noch durch einen Untermandanten-Benutzer aktiviert werden. Dies erfolgt durch Klicken auf **Support aktivieren** im Menü **Benutzer**, siehe [Erste Schritte > Benutzeroptionen und -einstellungen](/benutzerhandbuch/getting-started-de#user-settings).
 
 Der Supportzugriff ist dann nicht auf den Benutzer beschränkt, der ihn aktiviert hat, sondern gilt für alle Benutzer des Untermandanten. Dies ist notwendig, um Probleme mit Rollen/Rechten nachvollziehen zu können.
 
@@ -37,7 +38,7 @@ Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Man
 
 ### Konfigurieren von Supportbenutzern
 
-Es gibt zwei verschiedene Einstellungen für Supportbenutzer in Cumulocity IoT:
+Es gibt zwei verschiedene Einstellungen für Supportbenutzer in Cumulocity IoT: 
 
 - Ein Service Provider konfiguriert bestimmte Berechtigungen für Benutzer des Management-Mandanten, die diesen ermöglichen, Support zu leisten.
 - Benutzer eines Mandanten fragen Support an und erteilen so Benutzern des Management-Mandanten Zugriff.
@@ -52,7 +53,7 @@ Mit der Stammdatenrolle "Support" können Sie einzelnen Benutzern selektiv Suppo
 
 **Vom Benutzer erteilte Berechtigung**
 
-Benutzer können Support anfragen und einem Benutzer des Management-Mandanten erlauben, sich an ihrem Konto anzumelden. Klicken Sie hierzu auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie im Kontextmenü **Supportbenutzer aktivieren**. Weitere Informationen finden Sie unter [Erste Schritte > Benutzeroptionen und -einstellungen](/benutzerhandbuch/getting-started-de/#user-settings).
+Benutzer können Support anfragen und einem Benutzer des Management-Mandanten erlauben, sich an ihrem Konto anzumelden. Klicken Sie hierzu auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie im Kontextmenü **Supportbenutzer aktivieren**. Weitere Informationen finden Sie unter [Erste Schritte > Benutzeroptionen und -einstellungen](/benutzerhandbuch/getting-started-de#user-settings).
 
 
 ### So melden Sie sich als Supportbenutzer an

@@ -28,14 +28,14 @@ monitor MonitorDevicesForCircularGeofence {
 	}
 
 	action onload {
-		monitor.subscribe(Measurement.SUBSCRIBE_CHANNEL);
-		monitor.subscribe(FindManagedObjectResponse.SUBSCRIBE_CHANNEL);
-		monitor.subscribe(FindAlarmResponse.SUBSCRIBE_CHANNEL);
+		monitor.subscribe(Measurement.CHANNEL);
+		monitor.subscribe(FindManagedObjectResponse.CHANNEL);
+		monitor.subscribe(FindAlarmResponse.CHANNEL);
 		on all Event() as e {
 			if e.params.hasKey("c8y_Position") {
 				// we have an event
 				integer reqId := integer.getUnique();
-				send FindManagedObject(reqId, e.source, new dictionary<string,string>) to FindManagedObject.SEND_CHANNEL;
+				send FindManagedObject(reqId, e.source, new dictionary<string,string>) to FindManagedObject.CHANNEL;
 				on FindManagedObjectResponse(reqId = reqId) as resp
 				and not FindManagedObjectResponseAck(reqId) {
 				ManagedObject dev := resp.managedObject;
@@ -66,19 +66,19 @@ monitor MonitorDevicesForCircularGeofence {
 					secondPos.distance > secondPos.maxDistance {
 					send Alarm("", "c8y_GeofenceAlarm", firstPos.source, currentTime,
 							"Device moved out of circular geofence", "ACTIVE",
-							"MAJOR", 1, new dictionary<string,any>) to Alarm.SEND_CHANNEL;
+							"MAJOR", 1, new dictionary<string,any>) to Alarm.CHANNEL;
 				}
 
 				if firstPos.distance > firstPos.maxDistance and
 					secondPos.distance <= secondPos.maxDistance {
 					integer reqId:= integer.getUnique();
 					send FindAlarm(reqId, {"source": firstPos.source, 
-						"status": "ACTIVE", "type": "c8y_GeofenceAlarm"}) to FindAlarm.SEND_CHANNEL;
+						"status": "ACTIVE", "type": "c8y_GeofenceAlarm"}) to FindAlarm.CHANNEL;
 					on FindAlarmResponse(reqId=reqId) as alarmResponse
 					and not FindAlarmResponseAck(reqId=reqId) {
 						send Alarm(alarmResponse.id, "c8y_GeofenceAlarm",
 								firstPos.source, currentTime, "Device moved back into circular geofence",
-								"CLEARED", alarmResponse.alarm.severity, 1, new dictionary<string, any>) to Alarm.SEND_CHANNEL;
+								"CLEARED", alarmResponse.alarm.severity, 1, new dictionary<string, any>) to Alarm.CHANNEL;
 					}
 				}
 			}

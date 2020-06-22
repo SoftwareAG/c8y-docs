@@ -60,13 +60,6 @@ You may aggregate the data being displayed to get an efficient overview over lar
 
 By default, aggregation is set to "None". This value may be changed in the **Aggregation** field in the top menu bar. Available values are "Minutely", "Hourly" or "Daily", depending on the selected time range.
 
-When aggregation is activated, the timestamp which is displayed in data point graphs or data point tables changes slightly as follows to improve transparency:
-
-* If no aggregation is selected the date, hour, minute and second are shown:<br> 27 Jan 2020 17:26:55
-* If minutely aggregation is selected, the second indication will not be shown:<br> 27 Jan 2020 17:27-17:28
-* If hourly aggregation is selected, the minute and second indication will not be shown:<br> 27 Jan 2020 05:00-06:00
-* If daily aggregation is selected, only the day will be shown:<br> 27 Jan 2020-28 Jan 2020.
-
 
 **Realtime updating**
 

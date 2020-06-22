@@ -4,69 +4,14 @@ title: Changing settings
 layout: redirect
 ---
 
-From the **Settings** menu, administrators can manage various settings for the account:
+From the **Settings** menu, administrators can modify or manage various settings for the account as
 
-- Configure [authentication settings](#authentication) and [single sign-on](#single-sign-on).
-- Change the [application settings](#default-app).
-- Manage the [properties library](#properties).
-- Configure system-wide [configuration properties](#config-platform) in Cumulocity IoT.
-- Provide [SMS provider credentials](#openIT-credentials).
-- Manage the [connectivity settings](#connectivity).
-
-
-
-### <a name="authentication"></a>Changing authentication settings
-
-Click **Authentication** in the **Settings** menu if you want to view or change the Login or TFA settings.
-
-![Password settings](/images/users-guide/Administration/admin-settings-authentication.png)
-
->**Info:** If the menu is not visible, confirm the user has one of the following roles: `ROLE_TENANT_ADMIN` or `ROLE_TENANT_MANAGEMENT_ADMIN`.
-
-
-#### Login settings
-
-There are two **Preferred login modes** available:
-
-* "OAuth Internal" which is the recommended option as it provides better security.
-* "Basic Auth" which should be chosen only for specific compatibility reasons.
-
-This login mode will be used by the platform's applications as the default method to authenticate users. Device authentication stays unchanged.
-
->**Info:** If OAuth Internal is enforced, Basic Auth cannot be used to login to applications anymore. Older applications might fail to display the login correctly and need to be updated.
-
-In the field **Limit password validity for**, you can limit the validity of user passwords by specifying the number of days after which users have to change their passwords. If you do not want to force your users to change passwords, use "0" for unlimited validity of passwords (default value).
-
->**Info:** The password validity limit and the enforcing of strong passwords may not be editable, if configured by the platform administrator.
-
-By default, users can use any password with eight characters or more. If you select **Enforce that all password are "strong" (green)**, your users must provide strong passwords as described in [Getting Started > Accessing and logging into the Cumulocity IoT platform](/users-guide/getting-started/#login).
-
-Strong (green) passwords must have "M" characters. By default, the system restricts the use of passwords already used in the past. The last "N" passwords provided by a user are remembered by the system and the system does not allow to use them. The default value for "N" is 10.
-
->**Info:** "M" and "N" can be configured by the platform administrator.
-
-Click **Save** to apply the settings.
-
-#### TFA settings
-
-Select the checkbox **Allow two-factor authentication** if you want to allow TFA in your tenant (only possible for administrators).
-
-You may choose one of the following options:
-
-* **SMS-based**, supporting the following settings:
-	- **Limit token validity for**: Lifetime of each session in minutes. When the session expires or a user logs out, the user has to enter a new verification code.
-   - **Limit verification code validity for**: Here you can set the lifetime of each verification code sent via SMS. When the verification code expires, in order to login the user has to request a new verification code.
-
-	> **Info:** An SMS gateway microservice must be configured for the tenant. Naturally only users with a valid phone number associated can use this functionality.
-
-* **Google Authenticator** (Time-based One-Time Password = TOTP), supporting the following settings:
-	 - **Enforce TOTP two-factor authentication on all users**: When enabled it will force all users to setup their TFA on login. Otherwise each individual user can choose to activate it or not.
-   - **Limit token validity for**: lifetime of each session in minutes.  When the session expires the user has to re-authenticate.
-
-	> **Info:** This strategy is only available together with 'OAuth Internal'.
-
-Click **Save TFA settings** to apply your settings.
-
+- configure [single sign-on](#single-sign-on).
+- change the [application settings](#default-app).
+- change the [authentication settings](#authentication).
+- manage the [properties library](#properties).
+- configure system-wide [configuration properties](#config-platform) in Cumulocity IoT.
+- manage the [connectivity settings](#connectivity).
 
 ### <a name="single-sign-on"></a>Configuring single sign-on
 
@@ -251,11 +196,10 @@ Under **Access control**, administrators can enable cross-origin resource sharin
 The **Allowed Domain** setting will enable your JavaScript web applications to directly communicate with REST APIs.
 
 * Set it to "*" to allow communication from any host.
-* Set it to `http://my.host.com`, `http://myother.host.com` to allow applications from `http://my.host.com` and from `http://myother.host.com` to communicate with the platform.
+* Set it to "http://my.host.com, http://myother.host.com" to allow applications from http://my.host.com and from http://myother.host.com to communicate with the platform.
 
 For further information, see [http://enable-cors.org](http://enable-cors.org).
 
-<<<<<<< HEAD
 ### <a name="authentication"></a>Changing authentication settings
 
 Click **Authentication** in the **Settings** menu if you want to view or change the Login or TFA settings.
@@ -308,8 +252,6 @@ You may choose one of the following options:
 
 Click **Save TFA settings** to apply your settings.
 
-=======
->>>>>>> improvement/bugherd
 ### <a name="properties"></a>Managing the properties library
 
 Click **Properties library** in the **Settings** menu, to add custom properties to inventory objects, alarms, events and tenants.
@@ -358,27 +300,15 @@ With custom properties, you can extend the data model of Cumulocity IoT built-in
 1. Click on the name of a property in the list to open it.
 2. Click **Remove** to delete the property.
 
-### <a name="openIT-credentials"></a>Providing SMS provider credentials
+### <a name="openIT-credentials"></a>Entering OpenIT credentials
 
-SMS are used throughout the platform for various features like [two-factor authentication](/users-guide/administration#tfa) and user notifications, i.e. on alarms.
+To enter OpenIT credentials, click **OpenIT credentials** in the **Settings** menu.
 
-By providing your credentials you enable platform features that utilize SMS services.
+![Enter OpenIT credentials](/images/users-guide/Administration/admin-settings-openit.png)
 
-#### To enter SMS provider credentials
+By providing OPenIT credentials you enable the platform to utilize SMS services provided by [OpenIt](https://sms.openit.de/main.php).
 
-1. Click **SMS provider** in the **Settings** menu.
-
-	![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
-
-2. In the **SMS provider** page, select either [OpenIt](https://sms.openit.de/main.php) or [sms77](https://www.sms77.io/en/) as SMS provider.
-
-3. Depending on the selected provider, enter the relevant credentials:
-
-	 * For OpenIT, your OpenIT username and password.
-	 * For sms77, your API key to access sms77 (to be found in your sms77 login under Settings > HTTP API).
-
-4. Click **Save** to save your settings.
-
+SMS are used throughout the application for various features like [two-factors authentication](/users-guide/administration#tfa) and user notifications, i.e. on alarms.
 
 ### <a name="config-platform"></a>Configuration settings
 
@@ -386,17 +316,15 @@ Under **Configuration** in the **Settings** menu, you can configure system-wide 
 
 ![Configuration settings](/images/users-guide/Administration/admin-settings-configuration.png)
 
->**Info:** In some of the following properties you can configure email templates for various purposes. Note that the corresponding emails are send with "text/html" as content type.
-
 #### Placeholders
 
 The following placeholders can be found in the **Configuration** page:
 
-- {host} - The value of this placeholder is "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". For example, if "tenantId" is auto-generated, the host will be `https://t12345678.cumulocity.com`.
-- {tenant-domain} - This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be `https://myTenant.cumulocity.com`.
+- {host} - The value of this placeholder is "https://" + "&lt;&lt;tenantId&gt;&gt;" + "&lt;&lt;base-domain&gt;&gt;". For example, if "tenantId" is auto-generated, the host will be "h<span>ttps://t12345678.cumulocity.</span>com".
+- {tenant-domain} - This is the location in which a tenant can be accessed. It is equal to "https://" + "&lt;&lt;tenantDomainName&gt;&gt;". For example, {tenant-domain} can be "h<span>ttps://myTenant.cumulocity.</span>com".
 - {token} - An automatically generated system token for password reset purposes. When a user requests a password reset, a new random token will be generated. This token will be associated only with the particular user and will allow for a single password reset action. The standard way of using this placeholder is along with the {tenant-domain} property as "{tenant-domain}?token={token}".
 
->**Info:** In case of the Enterprise Tenant, the {tenantDomain} placeholders can have different values. An example tenant domain is `https://myTenant.myhost.com`.
+>**Info:** In case of the Enterprise Tenant, the {tenantDomain} placeholders can have different values. An example tenant domain is "https://myTenant.myhost.com".
 
 #### Two-factor authentication
 
@@ -471,7 +399,7 @@ The following provider settings may currently be specified:
 - [Sigfox](/users-guide/optional-services#sigfox)
 - [SIM](/users-guide/optional-services#connectivity)
 
-![Provider settings](/images/users-guide/Administration/admin-settings-connectivity.png)
+![Provider settings](/images/users-guide/Administration/admin-settings-connectivity-sim.png)
 
 #### To provide or replace credentials
 

@@ -6,7 +6,7 @@ layout: redirect
 ### Alarm [application/vnd.com.nsn.cumulocity.alarm+json]
 
 <table>
-<colgroup>
+colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
 <col style="width: 10%;">
@@ -49,42 +49,42 @@ layout: redirect
 <td align="left">String</td>
 <td align="left">1</td>
 <td align="left">Identifies the type of this alarm, e.g., “com_cumulocity_events_TamperEvent”.</td>
-<td align="left">POST: Mandatory<br> PUT: No</td>
+<td align="left">POST: Mandatory PUT: No</td>
 </tr>
 <tr>
 <td align="left">time</td>
 <td align="left">String</td>
 <td align="left">1</td>
 <td align="left">Time of the alarm.</td>
-<td align="left">POST: Mandatory<br> PUT: No</td>
+<td align="left">POST: Mandatory PUT: No</td>
 </tr>
 <tr>
 <td align="left">text</td>
 <td align="left">String</td>
 <td align="left">1</td>
 <td align="left">Text description of the alarm.</td>
-<td align="left">POST: Mandatory<br> PUT: No</td>
+<td align="left">POST: Mandatory PUT: No</td>
 </tr>
 <tr>
 <td align="left">source</td>
 <td align="left">ManagedObject</td>
 <td align="left">1</td>
 <td align="left">The ManagedObject that the alarm originated from, as object containing the “id” property.</td>
-<td align="left">POST: Mandatory<br> PUT: No</td>
+<td align="left">POST: Mandatory PUT: No</td>
 </tr>
 <tr>
 <td align="left">status</td>
 <td align="left">String</td>
 <td align="left">0..1</td>
 <td align="left">The status of the alarm: ACTIVE, ACKNOWLEDGED or CLEARED. If status was not appeared, new alarm will have status ACTIVE. Must be upper-case.</td>
-<td align="left">POST: Optional<br> PUT: Optional</td>
+<td align="left">POST: Optional PUT: Optional</td>
 </tr>
 <tr>
 <td align="left">severity</td>
 <td align="left">String</td>
 <td align="left">1</td>
 <td align="left">The severity of the alarm: CRITICAL, MAJOR, MINOR or WARNING. Must be upper-case.</td>
-<td align="left">POST: Mandatory<br> PUT: Optional</td>
+<td align="left">POST: Mandatory PUT: Optional</td>
 </tr>
 <tr>
 <td align="left">count</td>

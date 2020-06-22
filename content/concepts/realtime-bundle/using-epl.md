@@ -22,7 +22,7 @@ As an example, the following statement listens for new temperature sensor readin
 			alarm.text     := "Temperature too high";
 			alarm.status   := "ACTIVE";
 			alarm.severity := "CRITICAL";
-			send alarm to Alarm.SEND_CHANNEL;
+			send alarm to Alarm.CHANNEL;
 		}
 	}
 
@@ -78,7 +78,7 @@ To create a new alarm or operation, create an instance of the relevant event typ
 
 	on all Measurement(type="c8y_TemperatureMeasurement") as m {
 		if m.measurements.getOrDefault("c8y_TemperatureMeasurement").getOrDefault("T").value > 100.0 {
-			send Alarm("","c8y_TemperatureAlert",m.source,currentTime,"Temperature too high","ACTIVE","CRITICAL",1,new dictionary<string,any>) to Alarm.SEND_CHANNEL;
+			send Alarm("","c8y_TemperatureAlert",m.source,currentTime,"Temperature too high","ACTIVE","CRITICAL",1,new dictionary<string,any>) to Alarm.CHANNEL;
 		}
 	}
 
@@ -90,7 +90,7 @@ Remote control with EPL is done by sending an operation event. Remote operations
 
 	on all Measurement(type="c8y_TemperatureMeasurement") as m {
 		if m.measurements.getOrDefault("c8y_TemperatureMeasurement").getOrDefault("T").value > 100.0 {
-			send Operation("",m.source,"PENDING",{"c8y_Relay":<any>{"relayState":"CLOSED"}}) to Operation.SEND_CHANNEL;
+			send Operation("",m.source,"PENDING",{"c8y_Relay":<any>{"relayState":"CLOSED"}}) to Operation.CHANNEL;
 		}
 	}
 
@@ -117,18 +117,18 @@ It may be required to query information from the Cumulocity IoT database as part
 
 		action onload() {
 
-			monitor.subscribe(Measurement.SUBSCRIBE_CHANNEL);
+			monitor.subscribe(Measurement.CHANNEL);
 
 			on all Event() as e {
-				monitor.subscribe(FindManagedObjectResponse.SUBSCRIBE_CHANNEL);
+				monitor.subscribe(FindManagedObjectResponse.CHANNEL);
 				integer reqId := integer.getUnique();
 				on all FindManagedObjectResponse(reqId=reqId) as mor and not FindManagedObjectResponseAck(reqId=reqId) {
 					route SalesReport(e, mor.managedObject);
 				}
 				on FindManagedObjectResponseAck(reqId=reqId) {
-					monitor.unsubscribe(FindManagedObjectResponse.SUBSCRIBE_CHANNEL);
+					monitor.unsubscribe(FindManagedObjectResponse.CHANNEL);
 				}
-				send FindManagedObject(reqId,"",{"childAssetId":e.source}) to FindManagedObject.SEND_CHANNEL;
+				send FindManagedObject(reqId,"",{"childAssetId":e.source}) to FindManagedObject.CHANNEL;
 			}
 
 			from sr in all SalesReport() within 3600.0 every 3600.0
@@ -139,7 +139,7 @@ It may be required to query information from the Cumulocity IoT database as part
 						"total_cust_trx":{
 							"total":MeasurementValue(sales.count.toFloat(), "COUNT", new dictionary<string,any>)
 						}
-					}, {"customer_id":<any> sales.customerId}) to Measurement.SEND_CHANNEL;
+					}, {"customer_id":<any> sales.customerId}) to Measurement.CREATE_CHANNEL;
 			}
 		}
 	}

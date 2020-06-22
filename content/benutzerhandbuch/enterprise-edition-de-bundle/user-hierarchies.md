@@ -6,7 +6,7 @@ layout: redirect
 
 Mit Benutzerhierarchien können Sie verschiedene Organisationen in Cumulocity IoT getrennt verwalten, die dennoch dieselbe Datenbank teilen. Diese Organisationen können eingeschränkten Zugriff auf eine Untermenge der geteilten Daten haben und ihre eigenen untergeordneten Benutzer verwalten.
 
-> **Info:** Um diese Funktion verwenden zu können, muss Ihr Mandant die folgende Anwendung abonniert haben: "feature-user-hierarchy".
+> **Info**: Um diese Funktion verwenden zu können, muss Ihr Mandant die folgende Anwendung abonniert haben: "feature-user-hierarchy".
 
 ### Anzeigen von Benutzerhierarchien
 
@@ -38,7 +38,7 @@ Ein Benutzer A hat die Rolle "business". Benutzer A wird zum Besitzer eines neue
 
 ### <a name="delegate"></a>Delegieren von Benutzerhierarchien
 
-In Cumulocity IoT können Sie Benutzerhierarchien und Berechtigungen auf andere Benutzer übertragen. Der Benutzer, dem die Berechtigungen übertragen werden, hat die gleichen Benutzerverwaltungsrechte wie der Benutzer, der die Übertragung aktiviert hat.
+In Cumulocity IoT können Sie Benutzerhierarchien und Berechtigungen auf andere Benutzer übertragen. Der Benutzer, dem die Berechtigungen übertragen werden, hat die gleichen Benutzerverwaltungsrechte wie der Benutzer, der die Übertragung aktiviert hat. 
 
 Sie können Berechtigungen auch temporär übertragen, wenn Sie etwa zeitweilig nicht verfügbar sind.
 

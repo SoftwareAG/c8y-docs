@@ -43,7 +43,7 @@ The *Device SDK for C#* documentation has been moved from the [Device SDK guide]
 
 ### Analytics guide
 
-The Analytics guide has been renamed to Streaming Analytics guide (as opposed to  Predictive analytics guide).
+The Analytics guide has been renamed to Streaming analytics guide (as opposed to  Predictive analytics guide).
 
 ### DataHub guide
 

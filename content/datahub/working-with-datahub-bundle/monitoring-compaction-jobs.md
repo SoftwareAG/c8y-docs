@@ -24,7 +24,7 @@ In the navigator, select **Compaction** under **Status** to get an overview of t
 | Runtime (s) | The runtime of the execution in seconds
 | Next execution time | The point in time for which the next execution is scheduled
 
-Click **Reload** to refresh the status being shown.
+Click **Reload** in the action bar to refresh the status being shown.
 
 You can filter the entries by their task name or their status by using the filter controls in the action bar.
 
@@ -47,8 +47,6 @@ The list shows the execution history with each execution consisting of the follo
 | Next execution time | The point in time for which the next execution is scheduled
 
 The system is configured to keep a limited history of the last compaction jobs. 
-
-Click **Reload** to refresh the list.
 
 You can filter the entries by their status by using the filter control at the top.
 

@@ -43,7 +43,7 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 </tr>
 <tr>
 <td align="left"><a href="#alarms">Alarme</a></td>
-<td align="left">Enthält Informationen zu den Alarmen des Geräts. Siehe auch <a href="#alarm-monitoring">Verwenden von Alarmen</a>. Für jedes Gerät vorhanden.</td>
+<td align="left">Enthält Informationen zu den Alarmen des Geräts. Siehe auch <a href="#alarm-monitoring">Arbeiten mit Alarmen</a>. Für jedes Gerät vorhanden.</td>
 </tr>
 <tr>
 <td align="left"><a href="#config">Konfiguration</a></td>
@@ -92,7 +92,7 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 </tbody>
 </table>
 
->**Info:** Mögliche weitere spezielle Registerkarten, die nicht hier aufgeführt sind, werden in dem entsprechenden Kontext an anderer Stelle in der Cumulocity IoT-Dokumentation beschrieben. Nutzen Sie die Suchfunktion, um zu den betreffenden Abschnitten zu gelangen. Die Registerkarte **Modbus** beispielsweise ist in der Modbus-Beschreibung unter [Optionale Services > Cloud Fieldbus](/users-guide/optional-services#cloud-fieldbus) zu finden.
+>**Info**: Mögliche weitere spezielle Registerkarten, die nicht hier aufgeführt sind, werden in dem entsprechenden Kontext an anderer Stelle in der Cumulocity IoT-Dokumentation beschrieben. Nutzen Sie die Suchfunktion, um zu den betreffenden Abschnitten zu gelangen. Die Registerkarte **Modbus** beispielsweise ist in der Modbus-Beschreibung unter [Optionale Services > Cloud Fieldbus](/users-guide/optional-services/#cloud-fieldbus) zu finden.
 
 Unter dem Namen wird eine Liste von Breadcrumbs angezeigt. Ist das Gerät Teil einer Asset-Hierarchie (z. B. einer Gruppe), können Sie mit Hilfe der Breadcrumbs einfach in der Hierarchie nach oben navigieren. Da Geräte zu mehreren Hierarchien gehören können, werden möglicherweise mehrere Breadcrumb-Zeilen angezeigt.
 
@@ -111,8 +111,10 @@ Die Registerkarte **Info** fasst die Geräteinformationen, die aus Managementsic
 Die Information wird auf den folgenden Karten bereitgestellt:
 
 <table>
-<col width = 20%>
-<col width = 80%>
+<colgroup>
+   <col style="width: 20%;">
+   <col style="width: 80%;">
+</colgroup><thead>
 <thead>
 <tr>
 <th style="text-align:left">Karte</th>
@@ -305,17 +307,17 @@ Die Loginformationen des Geräts werden abgefragt.
 
 ![Logs tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-logs.png)
 
->Das Abfragen der Logdaten aus einem Gerät kann einige Zeit in Anspruch nehmen.
+>Das Abfragen einer Logdatei aus einem Gerät kann einige Zeit in Anspruch nehmen.
 
-Sobald die Logdaten vom Gerät auf die Cumulocity IoT-Plattform übertragen wurden, werden Sie in der Registerkarte **Logdaten** gelistet. Die Zeile in der Liste zeigt das jeweils angeforderte Zeitintervall.
+Sobald die Loginformationen vom Gerät auf die Cumulocity IoT-Plattform übertragen wurden, werden Sie in der Registerkarte **Logdateien** gelistet. Die Zeile in der Liste zeigt das jeweils angeforderte Zeitintervall.
 
 Klicken Sie auf den Eintrag in der Liste, um die gesamten Loginformationen anzuzeigen.
 
-#### So laden Sie Logdaten herunter
+#### So laden Sie eine Logdatei herunter
 
 Bewegen Sie den Mauszeiger über eine Zeile und klicken Sie auf das Herunterladen-Symbol, um den Logauszug in Ihr Dateisystem herunterzuladen.
 
-#### So löschen Sie Logdaten
+#### So löschen Sie eine Logdatei
 
 Bewegen Sie den Mauszeiger über eine Zeile und klicken Sie auf das Löschen-Symbol, um die Loginformationen zu löschen.
 
@@ -333,7 +335,7 @@ In der Kommandozeile kann beliebiger Kommandotext eingegeben werden. Klicken Sie
 
 ![Device shell](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-shell.png)
 
->**Wichtig:** Wenn Sie Cumulocity IoT zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Fernkommandos den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
+>**Wichtig**: Wenn Sie Cumulocity IoT zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Fernkommandos den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
 
 Klicken Sie **Historie ansehen** rechts in der oberen Menüleiste, um zur Registerkarte **Steuerung** zu wechseln, in der eine Liste der zuvor ausgeführten Kommandos angezeigt wird. Weitere Informationen finden Sie unter [Überwachen und Steuern von Geräten > Verwenden von Kommandos](#operation-monitoring).
 
@@ -354,9 +356,9 @@ In der Auswahlliste oben rechts können Sie ein Zeitintervall auswählen (oder e
 
 Neben der Karte werden die einzelnen Einträge mit Zeitangabe aufgelistet ("Standortaktualisierungsereignisse"). Wenn Sie auf einen Eintrag klicken, zeigt ein "Pin" auf der Karte den Standort zu diesem Zeitpunkt an.
 
-Abhängig vom Gerätetypen und der Integration in Cumulocity IoT können Sie geräteseitiges Geofencing und Bewegungserfassung konfigurieren.
+Abhängig vom Gerätetypen und der Integration in Cumulocity IoT, können Sie geräteseitiges Geofencing und Bewegungserfassung konfigurieren.
 
->**Info:** Wenn diese Funktion aktiviert und das Gerät kompatibel ist, kann die Zellen-ID-Information genutzt werden, um die Position des Geräts zu bestimmen. Aktuell werden die Services von [Combain](https://combain.com/) und [Google](https://developers.google.com/maps/documentation/geolocation/intro) unterstützt. Der Benutzer kann die Ortungen basierend auf beiden Datentypen ansehen oder nach GPS-basierten Daten oder Zellen-ID-basierten Daten filtern.
+>**Info**: Wenn diese Funktion aktiviert und das Gerät kompatibel ist, kann die Zellen-ID-Information genutzt werden, um die Position des Geräts zu bestimmen. Aktuell werden die Services von [Combain](https://combain.com/) und [Google](https://developers.google.com/maps/documentation/geolocation/intro) unterstützt. Der Benutzer kann die Ortungen basierend auf beiden Datentypen ansehen oder nach GPS-basierten Daten oder Zellen-ID-basierten Daten filtern.
 
 ### <a name="identity"></a>Identifikator
 

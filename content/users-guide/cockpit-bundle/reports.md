@@ -128,7 +128,7 @@ Define the frequency for sending the export, i.e. every hour, day, week, month o
 
 **3 - Send email:**
 
-Complete the email information. 
+Complete the email information.
 
 In the **Send to** field, provide the email address of the recipient. This field is mandatory. Optionally, you can provide email addresses for recipients of copies (CC) or blind copies (BCC). Use comma as separator to enter multiple recipients.
 
@@ -137,8 +137,6 @@ Optionally, add the email address of the sender for reply.
 Specify the subject of the email. This field is pre-filled, but may be modified.
 
 Enter the actual email message. Available placeholders are {host}, {binaryId}. The default value is "File with exported data can be downloaded from {host}/inventory/binaries/{binaryId}".
-
->**Info:** Note that the corresponding emails are send with "text/html" as content type.
 
 Click **Create** to create the customized Smart Rule "On timer send export via email".
 

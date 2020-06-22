@@ -15,11 +15,7 @@ var main = (function ($) {
           var el = urls[index];
           if (loc.href.includes(el.label)) {
             active = true;
-<<<<<<< HEAD
             $('#current-dropdown-version-toggle').text('Release '+ el.label);
-=======
-            $('#current-dropdown-version-toggle').text(el.label);
->>>>>>> improvement/bugherd
             vmenu.find('.dropdown-menu').append(
               '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item active">' + el.label + '</a>'
             );

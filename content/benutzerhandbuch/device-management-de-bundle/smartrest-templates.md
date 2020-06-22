@@ -37,8 +37,7 @@ SmartREST-Templates können auf zweierlei Weise hinzugefügt werden:
 
 1. Klicken Sie **Neues Template** rechts in der oberen Menüleiste.
 2. Geben Sie im darauf folgenden Dialog einen Namen und eine eindeutige ID für das Template ein (beide Eingaben sind erforderlich).
-3. Klicken Sie **Weiter**, um Nachrichten oder Antworten hinzuzufügen.
-
+4. Klicken Sie **Weiter**, um Nachrichten oder Antworten hinzuzufügen.
 
 #### So fügen Sie eine Nachricht hinzu
 

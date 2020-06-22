@@ -26,7 +26,7 @@ In the navigator, select **Offloading** under **Status** to get an overview of t
 | Next execution time | The point in time for which the next execution is scheduled
 | \# Records | The number of records which have been offloaded during this execution, indicated as number in a blue circle
 
-Click **Reload** to refresh the status being shown.
+Click **Reload** in the action bar to refresh the status being shown.
 
 You can filter the entries by their task name or their status by using the filter controls in the action bar.
 
@@ -51,8 +51,6 @@ The list shows the execution history, with each execution consisting of the foll
 | \# Records | The number of records which have been offloaded during this execution, indicated as number in a blue circle
 
 The system is configured to keep a limited history of the last job executions. 
-
-Click **Reload** to refresh the list.
 
 You can filter the entries by their status by using the filter control at the top.
 

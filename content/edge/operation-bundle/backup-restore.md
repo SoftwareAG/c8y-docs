@@ -2,6 +2,8 @@
 weight: 50
 title: Backup and restore
 layout: redirect
+aliases:
+  - /edge/operation/#backup-restore
 ---
 
 ### Backup
@@ -17,7 +19,7 @@ To create a backup, follow the steps below.
 2. Enter the location and name as desired and click **Export**.<br><br>
 <img src="/images/edge/edge-backup1.jpg" name="Backup Edge" style="width:75%;"/> 
 
->**Info:** You may append the current date to the image name (e.g. EDGE-server-12-06-2018.ova) so as to have a track of the backups. 
+>**Info**: You may append the current date to the image name (e.g. EDGE-server-12-06-2018.ova) so as to have a track of the backups. 
 
 ### Restore
 

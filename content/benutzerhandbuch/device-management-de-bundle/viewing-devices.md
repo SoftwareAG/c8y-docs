@@ -10,16 +10,13 @@ Eine detaillierte Geräteliste wird angezeigt.
 
 ![Device list](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-alldevices.png)
 
-### <a name="device-list"></a>Geräteinformationen
+### Geräteinformationen
 
 Die Liste enthält eine Zeile für jedes Gerät mit den folgenden Informationen, dargestellt in Spalten:
 
 <table>
 <thead>
-<colgroup>
-   <col style="width: 20%;">
-   <col style="width: 80%;">
-   </colgroup><thead>
+<Column width = 150>
 <tr>
 <th style="text-align:left">Spalte</th>
 <th style="text-align:left">Beschreibung</th>
@@ -28,7 +25,7 @@ Die Liste enthält eine Zeile für jedes Gerät mit den folgenden Informationen,
 <tbody>
 <tr>
 <td style="text-align:left">Status</td>
-<td style="text-align:left">Symbol für den Verbindungsstatus. Weitere Informationen finden Sie unter <a href="#connection-monitoring" class="no-ajaxy">Verbindungsüberwachung</a>.</td>
+<td style="text-align:left">Symbol für den Verbindungsstatus. Weitere Informationen finden Sie unter <a href="#connection-monitoring" class="no-ajaxy">Überwachen und Steuern von Geräten > Überwachen von Verbindungen</a>.</td>
 </tr>
 <tr>
 <td style="text-align:left">Name</td>
@@ -64,6 +61,7 @@ Die Liste enthält eine Zeile für jedes Gerät mit den folgenden Informationen,
 </tr>
 </tbody>
 </table>
+
 Die Geräteliste zeigt bis zu 100 Einträge an. Wenn die Geräteliste mehr als 100 Geräte enthält, klicken Sie **Mehr laden** am Ende der Liste, um weitere Einträge anzuzeigen.
 
 ### Konfigurieren von Spalten
@@ -90,12 +88,12 @@ Darüber hinaus können Sie benutzerdefinierte Spalten hinzufügen, in denen zus
 4. Wählen Sie einen **Filtermodus** für die neue Spalte aus. <br>
 Wenn Sie **Fragment entspricht Wert** wählen, wird nur dann ein Wert angezeigt, wenn er den Kriterien entspricht, die Sie in einem weiteren Dialog festgelegt haben.<br>
 ![Specify values](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-list-custom-column.png)
-<br>Im Fall von **Fragment existiert** wird nach vorhandenen Fragmenten gefiltert, also danach, ob das Attribut vorhanden ist oder nicht.    
+<br>In case of **Fragment exists**, filtering will be done by existence, i.e. filtering is done based on whether the property exists or not.    
 5. Klicken Sie **Hinzufügen**.
 
 Die neue Spalte wird hinzugefügt und in der Geräteliste angezeigt.
 
-> **Info:** Während Standardspalten lediglich nach Bedarf ein- oder ausgeblendet werden können, lassen sich benutzerdefinierte Spalten auch dauerhaft löschen.
+> **Info**: Während Standardspalten lediglich nach Bedarf ein- oder ausgeblendet werden können, lassen sich benutzerdefinierte Spalten auch dauerhaft löschen.
 
 #### So löschen Sie ein Gerät aus der Liste
 
@@ -115,10 +113,9 @@ Klicken Sie auf das Lupensymbol rechts oben und geben Sie einen Suchbegriff in d
 
 Unser Beispiel zeigt eine Suche nach "Ublox C027".
 
-> **Info:** Im Gegensatz zur Filterfunktion, ist die Verwendung von Platzhaltern in einer Suche nicht möglich.
+> **Info**: Im Gegensatz zur Filterfunktion, ist die Verwendung von Platzhaltern in einer Suche nicht möglich.
 
 Weitere Informationen zur Suchfunktionalität finden Sie unter [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche](/benutzerhandbuch/getting-started-de#gui-features).
-
 
 ![Search for devices](/images/benutzerhandbuch/DeviceManagement/devmgmt-search.png)
 
@@ -148,4 +145,4 @@ Die Geräteliste zeigt nun nur noch die Geräte an, auf die die Filterbedingunge
 
 Klicken Sie **Filter zurücksetzen** links in der oberen Menüleiste, wenn Sie alle Filter zurücksetzen und wieder alle Geräte anzeigen möchten.
 
->**Info:** Wenn Sie die Liste anhand eines Textfelds, z.B. **Gerätename**, in aufsteigender oder absteigender Reihenfolge sortieren lassen, beachten Sie, dass die daraus resultierende alphabetische Sortierung auf ASCII/UTF basiert: A < B < ... < Z < ... < a < b ... < z. Namen, die mit Kleinbuchstaben beginnen, werden unter allen Namen mit Großbuchstaben aufgelistet bzw. umgekehrt.
+>**Info**: Wenn Sie die Liste anhand eines Textfelds, z.B. **Gerätename**, in aufsteigender oder absteigender Reihenfolge sortieren lassen, beachten Sie, dass die daraus resultierende alphabetische Sortierung auf ASCII/UTF basiert: A < B < ... < Z < ... < a < b ... < z. Namen, die mit Kleinbuchstaben beginnen, werden unter allen Namen mit Großbuchstaben aufgelistet bzw. umgekehrt.

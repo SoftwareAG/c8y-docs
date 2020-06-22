@@ -62,7 +62,7 @@ For details, see the [How-to recipes](/web/how-to/) in the Web SDK guide.
 
 The application in the app switcher which was previously called “Apama-epl” is now called “Apama EPL Apps”.
 
-The sample applications that were previously accessible from [Miscellaneous sample applications](/apama/examples/#misc-applications) in the Streaming Analytics guide are now available directly from the Apama EPL Apps application. 
+The sample applications that were previously accessible from [Miscellaneous sample applications](/apama/examples/#misc-applications) in the Streaming analytics guide are now available directly from the Apama EPL Apps application. 
 
 
 ### Apama Analytics Builder

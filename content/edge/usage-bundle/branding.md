@@ -8,7 +8,7 @@ In Cumulocity IoT Edge, you can customize the appearance of your tenant to your 
 
 To access the branding feature:
 
-1. Log in to the **management** tenant as **sysadmin** user.
+1. Log in to the **management** tenant as **sysadmin** user using the domain name.
 	- Username: management/sysadmin
 	- Password: Use the sysadmin password.
 

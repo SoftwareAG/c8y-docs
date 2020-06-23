@@ -9,7 +9,7 @@ The following image shows the relevant aspects of devices and assets in the Inte
 
 ![model](/images/concepts-guide/model.png)
 
-* The **inventory** stores all master data related to devices, their configuration and their connections. It also contains all related assets (like vehicles, machines, buildings) and their structure.
+* The **inventory** stores all primary data related to devices, their configuration and their connections. It also contains all related assets (like vehicles, machines, buildings) and their structure.
 
 * **Measurements** contain numerical data produced by sensors (like temperature readings) or calculated data based on information from devices (service availability of a device).
 

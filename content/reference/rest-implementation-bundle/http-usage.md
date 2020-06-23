@@ -296,14 +296,14 @@ Cumulocity IoT APIs are restricted by following data types:
 <td align="left">object</td>
 <td align="left">A structure of key and value pairs</td>
 <td align="left">-</td>
-<td align="left">JSON objects, refer to [w3schools > JS JSON > JSON Objects](https://www.w3schools.com/js/js_json_objects.asp)</td>
+<td align="left">JSON objects, refer to <a href="https://www.w3schools.com/js/js_json_objects.asp">w3schools > JS JSON > JSON Objects</a></td>
 </tr>
 
 <tr>
 <td align="left">array</td>
 <td align="left">A list of values that have the same type</td>
 <td align="left">-</td>
-<td align="left">JSON arrays, refer to [w3schools > JS JSON > JSON Arrays](https://www.w3schools.com/js/js_json_arrays.asp).</td>
+<td align="left">JSON arrays, refer to <a href="https://www.w3schools.com/js/js_json_arrays.asp">w3schools > JS JSON > JSON Arrays</a></td>
 </tr>
 </tbody>
 </table>

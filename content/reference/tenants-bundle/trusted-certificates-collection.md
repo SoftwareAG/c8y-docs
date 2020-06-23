@@ -9,7 +9,7 @@ layout: redirect
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |self|string|1|A URI linking to this resource.|
-|certificates|Array|0..n|List of tenant's trusted certificates, see [TrustedCertificates](/reference/tenants/#trusted-certificates).|
+|certificates|array|0..n|List of tenant's trusted certificates, see [TrustedCertificates](/reference/tenants/#trusted-certificates).|
 |statistics|PagingStatistics|1|Information about paging statistics.|
 |prev|string|0..1|A URI linking to a potential previous page of tenants.|
 |next|string|0..1|A URI linking to a potential next page of tenants.|

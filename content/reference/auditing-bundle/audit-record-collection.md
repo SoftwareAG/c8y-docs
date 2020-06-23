@@ -10,7 +10,7 @@ layout: redirect
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |self|string|1|A URI linking to this resource.|
-|auditRecords|Array|0..n|List of audit records, see below.|
+|auditRecords|array|0..n|List of audit records, see below.|
 |statistics|PagingStatistics|1|Information about paging statistics.|
 |prev|string|0..1|A URI linking to a potential previous page of audit records.|
 |next|string|0..1|A URI linking to a potential next page of audit records.|

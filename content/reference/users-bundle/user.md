@@ -98,21 +98,21 @@ A "User" resource type contains the following fields:
 </tr>
 <tr>
 <td align="left">groups</td>
-<td align="left">Array</td>
+<td align="left">array</td>
 <td align="left">1</td>
 <td align="left">List of group references.</td>
 <td align="left">not allowed</td>
 </tr>
 <tr>
 <td align="left">roles</td>
-<td align="left">Array</td>
+<td align="left">array</td>
 <td align="left">1</td>
 <td align="left">List of role references.</td>
 <td align="left">not allowed</td>
 </tr>
 <tr>
 <td align="left">devicePermissions</td>
-<td align="left">Array</td>
+<td align="left">object</td>
 <td align="left">1</td>
 <td align="left">List of device permissions.</td>
 <td align="left">optional</td>
@@ -209,14 +209,14 @@ A "currentUser" resource type contains the following fields:
 </tr>
 <tr>
 <td align="left">devicePermissions</td>
-<td align="left">Array</td>
+<td align="left">object</td>
 <td align="left">1</td>
 <td align="left">List of device permissions.</td>
 <td align="left">optional</td>
 </tr>
 <tr>
 <td align="left">effectiveRoles</td>
-<td align="left">Array</td>
+<td align="left">array</td>
 <td align="left">0..n</td>
 <td align="left">List of all roles assigned to a current user (explicitly or implicitly via associated groups).</td>
 <td align="left">not allowed</td>

@@ -31,11 +31,11 @@ When using websockets, a property 'ext' containing an authentication object must
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |id|string|1|ID of message, required to match response message.|
-|channel|string|1|Name of channel, required value "/meta/handshake".|
+|channel|string|1|The channel name as a URI, required value: "/meta/handshake".|
 |ext|Object|1|Authentication object passed to handshake (only over websockets).|
 |version|string|1|Bayeux protocol version used by client.|
 |minimumVersion|string|0..1|Minimum server-side Bayeux protocol version required by client.|
-|supportedConnectionTypes|Array|1|List of connection types supported by client.|
+|supportedConnectionTypes|array|1|List of connection types supported by client.|
 
 Example request:
 
@@ -86,7 +86,7 @@ Example request:
 <td align="left">channel</td>
 <td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Name of channel, required value “/meta/handshake”.</td>
+<td align="left">The channel name as a URI, required value: “/meta/handshake”.</td>
 </tr>
 <tr>
 <td align="left">version</td>
@@ -102,7 +102,7 @@ Example request:
 </tr>
 <tr>
 <td align="left">supportedConnectionTypes</td>
-<td align="left">Array</td>
+<td align="left">array</td>
 <td align="left">0..1</td>
 <td align="left">Connection types supported by both client and server (i.e., intersection between client and server options).</td>
 </tr>

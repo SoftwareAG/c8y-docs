@@ -67,7 +67,7 @@ layout: redirect
 
 <tr>
 <td align="left">*</td>
-<td align="left">Array</td>
+<td align="left">array</td>
 <td align="left">0..n</td>
 <td align="left">List of measurement fragments.</td>
 <td align="left">Optional</td>

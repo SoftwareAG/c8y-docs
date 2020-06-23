@@ -130,7 +130,7 @@ c8y_Mobile.msisdn
 </tr>
 <tr>
 <td align="left">cellTowers</td>
-<td align="left">Array</td>
+<td align="left">array</td>
 <td align="left">Detailed information about the neighbouring cell towers.</td>
 </tr>
 <tr>

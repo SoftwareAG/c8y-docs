@@ -35,7 +35,7 @@ If the token expires and requires renewal, the backend sends a response header:
 
 #### JWT token authentication
 
-Cumulocity IoT supports [JWT token](https://en.wikipedia.org/wiki/JSON_Web_Token) authentication. 
+Cumulocity IoT supports [JWT token](https://en.wikipedia.org/wiki/JSON_Web_Token) authentication.
 
 >**Info:** The JWT token authentication described in this section is deprecated but will continue to be supported until further notice. We recommend to use the O-Auth authentication grant instead (see next section).
 
@@ -295,6 +295,20 @@ Cumulocity IoT APIs are restricted by following data types:
 <td align="left">date or time or timestamp</td>
 <td align="left">-</td>
 <td align="left"><a href="http://www.w3.org/TR/NOTE-datetime">ISO 8601</a> datetime</td>
+</tr>
+
+<tr>
+<td align="left">object</td>
+<td align="left">A structure of key and value pairs</td>
+<td align="left">-</td>
+<td align="left">JSON objects, refer to [w3schools > JS JSON > JSON Objects](https://www.w3schools.com/js/js_json_objects.asp)</td>
+</tr>
+
+<tr>
+<td align="left">array</td>
+<td align="left">A list of values that have the same type</td>
+<td align="left">-</td>
+<td align="left">JSON arrays, refer to [w3schools > JS JSON > JSON Arrays](https://www.w3schools.com/js/js_json_arrays.asp).</td>
 </tr>
 </tbody>
 </table>

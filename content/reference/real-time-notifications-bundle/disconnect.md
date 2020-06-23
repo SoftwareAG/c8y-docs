@@ -11,7 +11,7 @@ To stop receiving notifications from all channels and close the conversation, se
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |id|string|0..1|ID of message, required to match response message.|
-|channel|string|1|Name of channel, required value "/meta/disconnect".|
+|channel|string|1|The channel name as a URI, required value: "/meta/disconnect".|
 |clientId|string|1|Unique ID of client received during handshake.|
 
 Example response :
@@ -35,7 +35,7 @@ Content-Type: application/json
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |id|string|0..1|ID of message passed in request message.|
-|channel|string|1|Name of channel, required value "/meta/disconnect".|
+|channel|string|1|The channel name as a URI, required value: "/meta/disconnect".|
 |successful|boolean|1|Result of disconnect operation.|
 |clientId|string|1|Unique ID of client received during handshake.|
 |error|string|0..1|Disconnect failure reason.|

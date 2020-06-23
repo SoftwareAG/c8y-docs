@@ -148,7 +148,7 @@ The custom device properties mapping has the following limitations:
 </tr>
 <tr>
 <td align="left">credentialUpdatedList</td>
-<td align="left">Array</td>
+<td align="left">array</td>
 <td align="left">0..n</td>
 <td align="left">Array with updated device credentials.</td>
 </tr>
@@ -166,7 +166,7 @@ The custom device properties mapping has the following limitations:
 </tr>
 <tr>
 <td align="left">failedCreationList</td>
-<td align="left">Array</td>
+<td align="left">array</td>
 <td align="left">0..n</td>
 <td align="left">Array with updated device credentials.</td>
 </tr>

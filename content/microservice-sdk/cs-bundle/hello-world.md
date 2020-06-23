@@ -20,7 +20,7 @@ The application created in this way uses the ASP.NET Web API framework to create
 In Windows systems, Powershell is installed by default. Download the script file to build a "Hello world" application. Manage the version of scripts and replace latest to the right version number.
 
 ```shell
-C:\c8y> Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
+Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
 ```
 
 The latest can be replaced by the version number, e.g. `microservicesdk-lin-dev-{X.X.X}.zip`.
@@ -28,20 +28,22 @@ The latest can be replaced by the version number, e.g. `microservicesdk-lin-dev-
 Once you have downloaded the source, unzip the file.
 
 ```shell
-C:\c8y> Expand-Archive c:\microservicesdk-win-dev-latest.zip -DestinationPath c:\microservicesdk-win-dev-latest
+Expand-Archive c:\microservicesdk-win-dev-latest.zip -DestinationPath c:\microservicesdk-win-dev-latest
 ```
 
 Change the current folder and navigate to the _microservicesdk-win-dev-latest_ folder.
 
 ```shell
-C:\c8y> cd microservicesdk-win-dev-latest
+cd microservicesdk-win-dev-latest
 ```
-On your terminal see the output of  -
+
+Verify the version of your .Net tools.
 
 ```shell
-$ dotnet --version
+dotnet --version
 ```
-Make sure to use the correct SDK version - 3.1.200 or define which .NET Core SDK version is used when you run .NET Core CLI commands as observered in the above terminal output.
+
+Make sure to use the correct SDK version - 3.1.200 or define which .NET Core SDK version is used when you run .NET Core CLI commands as seen in the terminal output above.
 
 ```shell
 dotnet new globaljson --sdk-version 3.1.200
@@ -50,13 +52,13 @@ dotnet new globaljson --sdk-version 3.1.200
 Run the script *create.ps1* to create a sample project, provide the name of the project and the API application.
 
 ```shell
-C:\c8y> ./create.ps1
+./create.ps1
 ```
 
 Execute the bootstrapper script to build the application and an image from a Dockerfile.
 
 ```shell
-C:\c8y> .\build.ps1
+./build.ps1
 ```
 
 After a successful build you will be provided with a ZIP file in the target directory. The ZIP can be deployed to the Cumulocity IoT platform as described in the Deployment section.
@@ -82,7 +84,7 @@ You may also install the cURL utility. There are several ways to install it on W
 Assuming that Chocolatey is installed:
 
 ```shell
-C:\c8y> choco install curl
+choco install curl
 ```
 
 **Step 1 - Create the application**
@@ -108,7 +110,7 @@ BODY:
 Example:
 
 ```shell
-C:\c8y> curl -X POST -s \
+curl -X POST -s \
 -d '{"name":"hello-microservice-1","type":"MICROSERVICE","key":"hello-microservice-1-key"}' \
 -H "Authorization: <AUTHORIZATION>" \
 -H "Content-Type: application/vnd.com.nsn.cumulocity.application+json" \
@@ -170,7 +172,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.user+json
 The image is already added to the local Docker repository during the build. List all the Docker repository images available:
 
 ```shell
-C:\c8y> docker images
+docker images
 
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 api                 latest              a8298ed10cd9        16 hours ago        258MB
@@ -179,7 +181,7 @@ api                 latest              a8298ed10cd9        16 hours ago        
 After you find the image in the list, run the Docker container for the microservice by providing the baseurl and the bootstrap user credentials:
 
 ```bash
-C:\c8y> docker run -e C8Y_BASEURL=<URL> -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_TENANT> -e C8Y_BOOTSTRAP_USER=<BOOTSTRAP_USERNAME> -e C8Y_BOOTSTRAP_PASSWORD=<BOOTSTRAP_USER_PASSWORD> -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t <DOCKER_REPOSITORY_IMAGE>:<TAG>
+docker run -e C8Y_BASEURL=<URL> -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_TENANT> -e C8Y_BOOTSTRAP_USER=<BOOTSTRAP_USERNAME> -e C8Y_BOOTSTRAP_PASSWORD=<BOOTSTRAP_USER_PASSWORD> -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t <DOCKER_REPOSITORY_IMAGE>:<TAG>
 ```
 
 **Step 4 - Subscribe to the microservice**
@@ -199,7 +201,7 @@ BODY:
 Example:
 
 ```shell
-C:\c8y> curl -X POST -d '{"application":{"id": "<APPLICATION_ID>"}}'  \
+curl -X POST -d '{"application":{"id": "<APPLICATION_ID>"}}'  \
 -H "Authorization: <AUTHORIZATION>" \
 -H "Content-type: application/json" \
  "<URL>/tenant/tenants/<TENANT_ID>/applications"
@@ -210,7 +212,7 @@ C:\c8y> curl -X POST -d '{"application":{"id": "<APPLICATION_ID>"}}'  \
 Now you can verify if your application is running by executing
 
 ```shell
-C:\c8y> curl -H "Authorization: <AUTHORIZATION>" \
+curl -H "Authorization: <AUTHORIZATION>" \
   <URL>/service/hello/api/values
 ```
 
@@ -275,7 +277,7 @@ To show all the functions are available, type
 ./microservice.ps1 --help
 ```
 
-For further information refer to [Microservice package and deploy](https://cumulocity.com/guides/reference/microservice-package/) in the Reference guide.
+For further information refer to [General aspects > Microservice utility tool](/microservice-sdk/concept/#ms-utility-tool) in this guide.
 
 **Deployment**
 
@@ -304,7 +306,7 @@ appname=sample_application
 * If *settings.ini* is not found, an error is shown.
 
 ```shell
-C:\c8y> ./deploy.ps1
+./deploy.ps1
 ```
 
 **Call the script with the _.ini_ name**
@@ -319,11 +321,11 @@ C:\c8y> ./deploy.ps1
 * Merge the given arguments and ini configuration. Parameters from the file are overwritten by explicitly defined parameters.
 
 ```shell
-C:\c8y> ./deploy.ps1 -an hello-world -f settings_alternative.ini
+./deploy.ps1 -an hello-world -f settings_alternative.ini
 ```
 
 ```shell
-C:\c8y> ./deploy.ps1 -s <siteurl> -u <username> -p <password>  -an hello-world -f settings.ini
+./deploy.ps1 -s <siteurl> -u <username> -p <password>  -an hello-world -f settings.ini
 ```
 
 ### Improving the microservice
@@ -334,7 +336,7 @@ The application starts executing from the entry point `public static void Main()
 namespace api
 {
 	using System.Net;
-  using Microsoft.AspNetCore;
+    using Microsoft.AspNetCore;
 
 	public class Program
   {
@@ -535,7 +537,7 @@ To show all options, type
 $ ./microservice help
 ```
 
-For further information, refer to [Packing](https://cumulocity.com/guides/microservice-sdk/concept/#packing)in the Microservice SDK guide.
+For further information, refer to [General aspects > Packing](https://cumulocity.com/guides/microservice-sdk/concept/#packing) in this guide.
 
 **Deployment**
 

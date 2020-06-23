@@ -9,7 +9,7 @@ This section describes how to develop and deploy microservices on top of Cumuloc
 *   [Prerequisites](#general-prerequisites) – Development and runtime requirements you need to develop and run C# microservices.
 *   [Hello world tutorial](#hello-world) – Step-by-step instructions to develop and deploy your first C# microservice.
 *   [Developing microservices](#developing-microservices) - Information about this SDK and detailed C# API reference.
-*   [Authentication](#sso-oauth) – Information about authentication employing OAuth tokens.
+<!-- *   [Authentication](#sso-oauth) – Information about authentication employing OAuth tokens. -->
 *   [Troubleshooting](#troubleshooting) – Some identified common problems and their solutions.
 
 To develop a microservice using the SDK for C#, the starting point is our [Hello world tutorial](#hello-world).

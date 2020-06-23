@@ -8,14 +8,14 @@ layout: redirect
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|day|string|1|Date of statistics.|
+|day|datetime|1|Date of statistics.|
 |deviceCount|int|1|Number of devices in the tenant (c8y\_IsDevice). Latest value for a queried period.|
 |deviceEndpointCount|int|1|Number of devices which do not have child devices (leaf devices). Latest value for a queried period.|
 |deviceRequestCount|int|1|Number of requests that were issued only by devices against the tenant. Sum of all issued requests during the queried period.|
 |deviceWithChildrenCount|int|1|Number of devices with all children. Latest value for a queried period.|
 |requestCount|int|1|Number of requests that were issued against the tenant. Sum of all issued requests during the queried period.|
 |storageSize|int|1|Database storage in use by the tenant, in bytes. Latest value for a queried period.|
-|subscribedApplications|Array|1|Names of tenant subscribed applications. Latest value for a queried period.|
+|subscribedApplications|array|1|Names of tenant subscribed applications. Latest value for a queried period.|
 
 "requestCount" and "deviceRequestCount" contains the sum of all issued requests during the querying period. "deviceCount" and "storageSize" contain the last reported value during the querying period. Please note:
 
@@ -120,7 +120,7 @@ See the table below for more information on how the counters above are increased
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |self|string|1|A URI linking to this resource.|
-|usageStatistics|Array|0..n|List of usage statistics, see above.|
+|usageStatistics|array|0..n|List of usage statistics, see above.|
 |statistics|PagingStatistics|1|Information about paging statistics.|
 |prev|string|0..1|A URI linking to a potential previous page of tenants.|
 |next|string|0..1|A URI linking to a potential next page of tenants.|

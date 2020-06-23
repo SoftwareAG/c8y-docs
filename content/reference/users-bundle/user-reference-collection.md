@@ -9,8 +9,8 @@ layout: redirect
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |self|string|1|A URI linking to this resource.|
-|references|UserReference|0..n|List of user references.|
-|statistics|PagingStatistics|1|Information about the paging statistics.|
+|references|array|0..n|List of user references.|
+|statistics|object|1|Information about the paging statistics.|
 |prev|string|0..1|A URI linking to a possible previous page with additional user references.|
 |next|string|0..1|A URI linking to a possible next page with additional user references.|
 

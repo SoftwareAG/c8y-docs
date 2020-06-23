@@ -42,7 +42,7 @@ layout: redirect
 <td align="left">status</td>
 <td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Status of the tenant. Possible values [ACTIVE, SUSPENDED]</td>
+<td align="left">Status of the tenant. Possible values: ACTIVE, SUSPENDED</td>
 <td align="left">Private</td>
 </tr>
 <tr>

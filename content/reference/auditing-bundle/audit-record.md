@@ -103,7 +103,7 @@ layout: redirect
 </tr>
 <tr>
 <td align="left">changes</td>
-<td align="left">Array</td>
+<td align="left">array</td>
 <td align="left">0..1</td>
 <td align="left">An optional collection of objects describing the changes that were carried out.</td>
 <td align="left">No</td>

@@ -94,7 +94,7 @@ ApplicationSubscriptionCollection[application/vnd.com.nsn.cumulocity.application
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |self|string|1|A URI linking to this resource|
-|users|Array|0..n|List of subscribed users, see below|
+|users|array|0..n|List of subscribed users, see below|
 |statistics|PagingStatistics|1|Information about paging statistics|
 |prev|string|0..1|A URI linking to a potential previous page of applications|
 |next|string|0..1|A URI linking to a potential next page of applications|

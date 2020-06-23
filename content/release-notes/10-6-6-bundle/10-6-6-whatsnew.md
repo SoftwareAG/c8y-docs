@@ -38,11 +38,11 @@ to be added
 
 The following improvements have been implemented in the data broker since 10.6.0.
 
-[MTM-30779] The internal processing on the "source" side has been improved. The Data Broker can now send measurements in bulks, separately for each connector. Data broker in-memory queues should overflow less frequently, because events not matching any connector are discarded faster.
+[MTM-30779] The internal processing has been improved. The data broker can now send measurements in bulk, separately for each connector. This allows non-matching events to be discarded quickly, relieving pressure on the in-memory queues which in turn means they will overflow less frequently. 
 
 [MTM-30913] The exception handling has been improved. When a connector is suspended data broker will immediately stop forwarding.
 
-[MTM-30910] To improve performance, events are now also being forwarded during device synchronization (ACTIVATING state).
+[MTM-30910] To improve performance, events are now also forwarded during device synchronization (ACTIVATING state).
 
 [MTM-32280] The following changes have been implemented for alarms on queue overflow:
 

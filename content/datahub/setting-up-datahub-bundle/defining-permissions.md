@@ -6,7 +6,7 @@ layout: redirect
 
 Dedicated permissions define what a user is allowed to do in DataHub. To ease assigning permissions to users, permissions are grouped in roles. During deployment of the DataHub applications the corresponding permissions as well as roles are created. If a role with the same name already exists, no new role will be created. The same holds for permissions.
 
-If you miss DataHub permissions, you will get a corresponding warning after login.  
+If you omit DataHub permissions, you will get a corresponding warning after login.  
 
 ### DataHub roles and permissions
 

@@ -6,8 +6,11 @@ layout: redirect
 
 The following table lists the tenants and users available in Cumulocity IoT Edge:
 
-|<div style="width:150px">Tenant</div>|<div style="width:150px">Users</div>|Description|
-|:---|:---|:---|
-|edge|Tenant admin user|The **edge** tenant is the default tenant.<br>The tenant admin user is created during the post-installation process.|
-|management|edgeadmin|The management tenant is used to enable other tenants, create subtenants, delete tenants and so on. For more information about the management tenant, see [Enterprise Tenant > Managing tenants](/users-guide/enterprise-edition/) in the User guide.<br><br>If you have to log in as **edgeadmin** user, log in to the management tenant using the URL *https://&#60;Edge&#95;VM&#95;IP&#95;Address>/apps/administration/index.html*.<br><br> - Tenant: management<br>- Username: edgeadmin<br>- Password: Will be the same as the Edge tenant admin password provided during the post-installation process<br><br>**Info:** You cannot access the Cockpit and Device Management application as **edgeadmin** user.|
-|management|sysadmin|The default support user for each tenant. For example, the **sysadmin** user account is used for branding and unlocking the tenant admin user.|
+<div style="width:100px">Credentials</div>
+
+|<div style="width:100px">Tenant</div>|<div style="width:100px">User</div>|<div style="width:150px">Credentials</div>|Description
+|:---|:---|:---|:---
+|edge|Tenant admin user|Username: An arbitrary name provided during the post-installation process.<br>Password: The password provided during the post-installation process.<br>|The **edge** tenant is the default tenant. The tenant admin user is created during the post-installation process.<br><br>
+|edge|sysadmin|Username: sysadmin<br>Password: sysadmin-pass|The default support user for each tenant. The sysadmin user account in edge tenant is used for unlocking the tenant admin user.
+|management|edgeadmin|If you have to log in as **edgeadmin** user, log in to the management tenant using the URL *https://&#60;Edge&#95;VM&#95;IP&#95;Address>/apps/administration/index.html*.<br><br> - Tenant: management<br>- Username: edgeadmin<br>- Password: Will be the same as the Edge tenant admin password provided during the post-installation process|The management tenant is used to configure branding, user management and other platform settings. CHM: tenant management is not supported in edge. For more information about the management tenant, see [Enterprise Tenant > Managing tenants](/users-guide/enterprise-edition/) in the User guide.<br><br>The edgeadmin user account in the management tenant is used for configuring password policies, email server and template configurations.<br><br>**Info:** You cannot access the Cockpit and Device Management application as **edgeadmin** user.
+|management|sysadmin|Username: sysadmin<br>Password: sysadmin-pass|The sysadmin user account in the management tenant is used for branding and unlocking the tenant admin user.

@@ -4,7 +4,9 @@ title: Branding
 layout: redirect
 ---
 
-In Cumulocity IoT Edge, you can customize the appearance of your tenant to your own preferences.
+In Cumulocity IoT Edge, you can customize the appearance of your tenant to your own preferences. 
+
+>**Info:** Use the domain name to access the Cumulocity IoT Edge platform to properly apply the branding and see the effects after branding.
 
 To access the branding feature:
 

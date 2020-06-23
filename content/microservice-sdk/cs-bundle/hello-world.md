@@ -418,7 +418,7 @@ _Startup.cs_ responsibilities:
 The _Dockerfile_ file created by *create.ps1* contains:
 
 ```
-FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS runtime
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
 WORKDIR /app
 COPY ./publish/Web ./
 ENV SERVER_PORT 4700

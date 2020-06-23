@@ -56,7 +56,7 @@ Depending on what you want to do, you need either the .NET Core SDK or the .NET 
 
 #### Linux system requirements
 
-*   .NET Core SDK (at least Version 2.2)
+*   .NET Core SDK (at least Version 3.1)
 *   Docker (at least Version 17.06)
 *   Mono (at least Version 6.8.0)
 

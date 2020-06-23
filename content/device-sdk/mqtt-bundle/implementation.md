@@ -152,3 +152,11 @@ In MQTT, the "last will" is a message that is specified at connection time and t
 To support developers during development, it is possible to subscribe to the topic <kbd>s/e</kbd>. On this topic the device can retrieve debug and error messages that occur during a publish from the device.
 
 >**Info**: This topic is purely designed to support the development of clients. It is not recommended to always subscribe to this channel as the messages are verbose and can significantly increase the data usage. Also, you should not use this topic to trigger actions of the device based on what you receive on the topic. It is not a response channel.
+
+### Reloading server's certificate
+
+There is a possibility to change server's certificate, which is sent to the devices. To do that, customer should contact the DevOps team, which can add the new certificate to server's keystore and reload it.
+
+Certificates exchange occurs during device connection, so all already connected devices will not be disconnected during reloading. Only after they disconnect on their own and try to connect later, then they will have to contain that new server's certificate in their truststore.
+ 
+>**Info**: This functionality is designed to renewing or changing the server's certificate, when it is going to expire.

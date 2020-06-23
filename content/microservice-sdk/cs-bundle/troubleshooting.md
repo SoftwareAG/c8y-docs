@@ -6,18 +6,10 @@ title: Troubleshooting
 
 Some common problems and their solutions have been identified and documented below.
 
-##### problem description 01
+##### After deploying my microservice, requests to any endpoint return an error message “Microservice not available Connection refused”
 
-Cause and solution ...
+After uploading the microservice, the internal deployment and container run may take a couple of minutes. Once completed, the error message will disappear.
 
-##### problem description 02
+##### I get a message error saying "The current .NET SDK does not support targeting .NET Core 3.1."
 
-Cause and solution ...
-
-##### problem description 03
-
-Cause and solution ...
-
-##### problem description 04
-
-Cause and solution ...
+This error will appear if you try running the SDK on Visual Studio 2017 or lower. The current version of the Cumulocity IoT Microservices SDK (1006.6.0) is compatible with .NET Core 3.1 and Visual Studio 2019, and it is a prerequisite for developing applications.

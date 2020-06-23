@@ -9,7 +9,7 @@ This section describes how to develop and deploy microservices on top of Cumuloc
 *   [Prerequisites](#general-prerequisites) – Development and runtime requirements you need to develop and run C# microservices.
 *   [Hello world tutorial](#hello-world) – Step-by-step instructions to develop and deploy your first C# microservice.
 *   [Developing microservices](#developing-microservices) - Information about this SDK and detailed C# API reference.
-*   [Authentication](#sso-oauth) – Information about authentication employing OAuth tokens.
+<!-- *   [Authentication](#sso-oauth) – Information about authentication employing OAuth tokens. -->
 *   [Troubleshooting](#troubleshooting) – Some identified common problems and their solutions.
 
 To develop a microservice using the SDK for C#, the starting point is our [Hello world tutorial](#hello-world).
@@ -56,7 +56,7 @@ Depending on what you want to do, you need either the .NET Core SDK or the .NET 
 
 #### Linux system requirements
 
-*   .NET Core SDK (at least Version 2.2)
+*   .NET Core SDK (at least Version 3.1)
 *   Docker (at least Version 17.06)
 *   Mono (at least Version 6.8.0)
 

@@ -149,7 +149,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Microservice subscription
 
-The following section refers to the user management as described under [General aspects](/guides/microservice-sdk/concept) of microservices in Cumulocity IoT.
+The following section refers to the user management as described under [General aspects](/microservice-sdk/concept) of microservices in Cumulocity IoT.
 
 This SDK has a task `CurrentApplicationSubscriptionsTask` which only fetches a list of all subscriptions. The `CurrentApplicationSubscriptionsTask` is the `IScheduledTask` implementation which runs every hour:
 
@@ -483,6 +483,6 @@ The Cake script called _build.cake_ has has the predefined tasks. These tasks re
 *	Clean - Cleans the specified directory, deletes files.
 *	Build – Restores the dependencies and tools of projects and the task builds all projects, but before that it does the cleaning task.
 *	Publish – The task compiles the application, reads through its dependencies specified in the project file, and publishes the resulting set of files to a directory. The result will be placed in the output folder
-*	Docker-Build - Will save an image and an application manifest to _images/multi/image.zip_. Inside the root folder of your application, the so-called "application manifest" is stored in a file named _cumulocity.json_. The zip archive contains _image.tar_ and _cumulocity.json_.
-*	Single-DockerImage - Will save an image and an application manifest  to _images/single/image.zip_. Inside the root folder of your application, the so-called "application manifest" is stored in a file named _cumulocity.json_. The zip archive contains _image.tar_ and _cumulocity.json_.
+*	Docker-Build - Will save an image and an application manifest to _images/multi/image.zip_. Inside the root folder of your application, the so-called "application manifest" is stored in a file named _cumulocity.json_. The ZIP archive contains _image.tar_ and _cumulocity.json_.
+*	Single-DockerImage - Will save an image and an application manifest  to _images/single/image.zip_. Inside the root folder of your application, the so-called "application manifest" is stored in a file named _cumulocity.json_. The ZIP archive contains _image.tar_ and _cumulocity.json_.
 *	Docker-Run - Creates a new container using default settings.

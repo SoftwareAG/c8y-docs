@@ -9,7 +9,7 @@ layout: redirect
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |self|string|1|A URI linking to this resource.|
-|groups|Array|0..n|List of group references.|
+|groups|array|0..n|List of group references.|
 |statistics|PagingStatistics|1|Information about the paging statistics.|
 |prev|string|0..1|A URI linking to a possible previous page with additional group references.|
 |next|string|0..1|A URI linking to a possible next page with additional group references.|

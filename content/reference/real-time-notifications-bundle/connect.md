@@ -34,7 +34,7 @@ After a Bayeux client has discovered the server's capabilities with a handshake 
 <td align="left">channel</td>
 <td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Name of channel, required value “/meta/connect”.</td>
+<td align="left">The channel name as a URI, required value: “/meta/connect”.</td>
 </tr>
 <tr>
 <td align="left">clientId</td>
@@ -113,10 +113,10 @@ Content-Type: application/json
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
 |id|string|0..1|ID of message passed in request message.|
-|channel|string|1|Name of channel.|
+|channel|string|1|The channel name as a URI.|
 |clientId|string|1|Unique ID of client.|
 |successful|boolean|1|Result of connect.|
-|data|Array|1|List of notifications from channel.|
+|data|array|1|List of notifications from channel.|
 |error|string|0..1|Connect failure reason.|
 
 Example response:

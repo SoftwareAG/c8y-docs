@@ -47,14 +47,14 @@ layout: redirect
 </tr>
 <tr>
 <td align="left">roles</td>
-<td align="left">Array</td>
+<td align="left">array</td>
 <td align="left">1</td>
 <td align="left">List of role references.</td>
 <td align="left">not allowed</td>
 </tr>
 <tr>
 <td align="left">devicePermissions</td>
-<td align="left">Array</td>
+<td align="left">object</td>
 <td align="left">1</td>
 <td align="left">List of device permissions.</td>
 <td align="left">optional</td>

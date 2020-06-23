@@ -14,6 +14,7 @@ The following environment variables are available for microservices:
 Name  | Details  
 ------|--------
 APPLICATION_NAME  |  The name of the microservice application
+APPLICATION_KEY  |  The key of the microservice application
 SERVER_PORT       |  Default open port (80)
 MICROSERVICE_SUBSCRIPTION_ENABLED  |  Default value: true
 C8Y_BASEURL  |  Platform address (contains port number)

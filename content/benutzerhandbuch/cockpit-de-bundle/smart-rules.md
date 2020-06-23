@@ -19,10 +19,10 @@ Smart Rules werden parametrisiert. Es gibt zwei Quellen für Parameter:
 Smart Rules werden angezeigt
 
 * in der Registerkarte **Info** eines Geräts oder einer Gruppe. <br><br>
-![Smart Rules info tab](/images/benutzerhandbuch/cockpit/cockpit-smart-rules-info-tab.png)
+![Smart rules info tab](/images/benutzerhandbuch/cockpit/cockpit-smart-rules-info-tab.png)
 
 * auf der Seite **Smart Rules** im Menü **Konfiguration**. <br><br>
-![Smart Rules info tab](/images/benutzerhandbuch/cockpit/cockpit-smart-rules-list.png)
+![Smart rules info tab](/images/benutzerhandbuch/cockpit/cockpit-smart-rules-list.png)
 
 Es gibt zwei Arten von Smart Rules:
 
@@ -47,15 +47,13 @@ Smart Rules können entweder auf der Seite **Global Smart Rules** im Menü **Kon
 2. Wählen Sie ein Smart Rule-Template aus. Die Liste der Smart Rules kann je nach Installation variieren.
 3. Verwenden Sie im darauf folgenden Dialog den Umschalter, um einzustellen, ob die Regel aktiviert oder deaktiviert ist.
 4. Konfigurieren Sie die Regelparameter. Die Parameter variieren von Regel zu Regel. Details zu den jeweiligen Parametern finden Sie unter [Smart Rule-Sammlung](#smart-rules-collection).
-6. Klicken Sie **Erstellen** um die Smart Rule zu erstellen.
+6. Klicken Sie **Erstellen**, um die Smart Rule zu erstellen.
 
 Wenn die Regel aktiviert und nicht nur für bestimmte Geräte angelegt wurde, ist die Regel nun für alle Geräte und Gruppen aktiv. Im nächsten Abschnitt erfahren Sie, wie Sie eine Smart Rule für bestimmte Objekte deaktivieren.
 
-Um Irritationen vorzubeugen, werden deaktivierte Smart Rules nicht in Gruppenmenüs oder Gerätemenüs angezeigt.
-
 Smart Rules können mehrfach instanziiert werden.
 
-### So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät
+### <a name="toggle-rules"></a>So deaktivieren oder aktivieren Sie eine Smart Rule für eine Gruppe oder ein Gerät
 
 Smart Rules können für einzelne Objekte (Geräte oder Gruppen) eingeschaltet (aktiviert) oder abgeschaltet (deaktiviert) werden. Wenn beispielsweise ein Gerät zu viele Schwellwertalarme erzeugt, können Sie die Regel für dieses einzelne Objekt deaktivieren. Die Regel bleibt für alle anderen Objekte aktiv.
 
@@ -82,7 +80,7 @@ Klicken Sie auf das Menüsymbol rechts neben einem Eintrag und anschließend auf
 
 ### So beheben Sie Fehler in einer Smart Rule
 
-Um die Fehlersuche zu vereinfachen gibt es einen direkten Link von einer Smart Rule zum entsprechenden Echtzeitverarbeitungsmodul.
+Um die Fehlersuche zu vereinfachen, gibt es einen direkten Link von einer Smart Rule zum entsprechenden Echtzeitverarbeitungsmodul.
 
 Klicken Sie auf das Menüsymbol rechts neben einem Eintrag und anschließend auf **Quelltext ansehen**, um diesen Link zu verwenden.
 
@@ -99,7 +97,7 @@ Führen Sie folgende Schritte aus, um eine Schwellwertregel zu definieren:
 6. Geben Sie den minimalen und den maximalen Wert für den roten Bereich ein. Wenn der Messwert den roten Bereich betritt oder verlässt, wird ein KRITISCHER Alarm erzeugt bzw. gelöscht. Weitere Informationen finden Sie in der Beschreibung der Regel "Bei Messbereichsüberschreitung Alarm erzeugen" in der [Smart Rules-Sammlung](/benutzerhandbuch/cockpit-de#smart-rules-collection).
 7. Unter **Alarm erzeugen** können Sie optional den Alarmtyp und Alarmtext definieren.
 8. Unter **Ziel-Assets oder -geräte** können Sie die Objekte auswählen, auf die diese Regel angewendet werden soll.
-9. Klicken Sie **Erstellen** um die Smart Rule zu erstellen.
+9. Klicken Sie **Erstellen**, um die Smart Rule zu erstellen.
 
 Die Regel wird automatisch aktiviert und Alarme werden angezeigt, wenn diese ausgelöst werden.
 

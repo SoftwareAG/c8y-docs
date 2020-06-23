@@ -22,7 +22,9 @@ For users created via an external authorization server, updating the following s
 * global roles → configurable via SSO access mapping
 * application access → configurable via SSO access mapping
 
-Moreover, password reset in Cumulocity is disabled for users created through an external authentication server.
+Moreover, password reset in Cumulocity IoT is disabled for users created through an external authentication server.
+
+> **Info:** Users which are using single sign-on cannot change the password of users which are managed by the platform.
 
 
 ### Viewing users
@@ -55,8 +57,8 @@ Initially, the **User** page only shows the top-level users. To see all users in
 	<table>
 <thead>
 <colgroup>
-   <col style="width: 20%;">
-   <col style="width: 80%;">
+<col style="width: 20%;">
+<col style="width: 80%;">
 </colgroup>
 <tr>
 <th align="left">Field</th>
@@ -104,17 +106,16 @@ Initially, the **User** page only shows the top-level users. To see all users in
 </table>
 
 3. Select the login options for the user.
-
-	If you select **User must reset the password on next login**, you need to provide a password which the user needs to reset on the next login. Enter a password and confirm it. While entering the password, the strength of the password will be shown. See [To log into the Cumulocity platform](/users-guide/getting-started/#login) for further information on password strength.  
-If you select **Send password reset link as email**, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above.
+	* 	**Two-factor authentication (SMS)**: If selected, the user will receive a verification code via SMS which is required to complete the authentication. The SMS will be sent to the phone number configured above. For details refer to [Two-factor authentication](/users-guide/administration/#tfa). 
+	* **User must reset password on next login**: If selected, you need to provide a password which the user must reset on the next login. Enter a password and confirm it. While entering the password, the strength of the password will be checked. See [To log into the Cumulocity IoT platform](/users-guide/getting-started/#login) for further information on password strength.  
+	* **Send password reset link as email**: If selected, the user will receive an email message with a link to set a password. The email will be sent to the email address configured above.
 
 4. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing Permissions](/users-guide/administration#managing-permissions).
 5. Click **Save** to save your settings.
 
 The new user will be added to the user list.
 
-<!--what does that mean -->
-> **Info:** By default, manually created users always have the "Own_User_Management" permissions set to active.
+> **Info:** By default, manually created users always have the "Own&#95;User&#95;Management" permissions set to active.
 
 ### To edit a user
 

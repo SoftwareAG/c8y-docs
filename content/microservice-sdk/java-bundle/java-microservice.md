@@ -73,6 +73,22 @@ You need to specify the version of the Cumulocity IoT's microservice library to 
 
 ![Upload microservice](/images/microservices-sdk/ms-backend-version.png)
 
+Alternatively, you can use an API call to retrieve the backend version:
+
+`GET {{url}}/tenant/system/options/system/version`
+
+The response looks like this:
+
+``` json
+{
+    "category": "system",
+    "value": "1004.6.12",
+    "key": "version"
+}
+```
+
+See also [Tenants > System options](/reference/tenants/#system-options) in the Reference guide.
+
 In the `<properties>` element specified above, add a child element `<c8y.version>` with the backend version of your tenant. Also add a `<microservice.name>` child element to name your microservice application.
 
 ```xml
@@ -84,7 +100,7 @@ In the `<properties>` element specified above, add a child element `<c8y.version
 
 #### Add repositories and dependencies
 
-Your _pom.xml_ file needs to have repository and plugin elements to point to the Cumulocity IoT Maven repository which stores the client libraries.
+Your _pom.xml_ file needs to have `<repository>` and `<pluginRepository>` elements to point to the Cumulocity IoT Maven repository which stores the client libraries.
 
 ```xml
 <repositories>

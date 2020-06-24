@@ -9,7 +9,7 @@ layout: redirect
 |Name|Type|Description|Mandatory for PUT/POST|
 |:---|:---|:----------|:---------------------|
 |notAfter|datetime|Date after which a certificate is no longer valid.|No|
-|serialNumber|int|Certificate unique serial number.|No|
+|serialNumber|long|Certificate unique serial number.|No|
 |subject|string|Name of the client to which the certificate belongs.|No|
 |algorithmName|string|Algorithms used to sign the certificate.|No|
 |version|string|Version of the encoded certificate.|No|

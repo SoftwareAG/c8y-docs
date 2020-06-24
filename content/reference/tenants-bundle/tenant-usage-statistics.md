@@ -150,7 +150,7 @@ See the table below for more information on how the counters above are increased
 |:---|:---|:-----|:----------|
 |self|string|1|A URI linking to this resource.|
 |usageStatistics|array|0..n|List of usage statistics, see above.|
-|statistics|PagingStatistics|1|Information about paging statistics.|
+|statistics|object|1|Information about paging statistics.|
 |prev|string|0..1|A URI linking to a potential previous page of tenants.|
 |next|string|0..1|A URI linking to a potential next page of tenants.|
 

@@ -120,6 +120,7 @@ Usually you use Content Projection within a route and Multi Provider if the cont
    * `HOOK_BREADCRUMB`: Can be used to show breadcrumbs in the header bar.
    * `HOOK_SEARCH`: Allows to define the search to be shown or not.
    * `HOOK_ONCE_ROUTE`: Allows to define a route. Use this if you want to use a context route, e.g. add a new tab to the device details view. For all other routes you should use the default Angular router.
+   * `HOOK_COMPONENTS`: Allows to define a dynamic component to display any kind of component dynamically by referencing its id. To use the component you can use the `c8y-dynamic-component`. The most common use case is registration of dashboard widgets.
 
 #### Services
 

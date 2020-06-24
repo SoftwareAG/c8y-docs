@@ -17,7 +17,7 @@ Cloud Fieldbus is supported out of the box by the following terminals:
 * [NetComm Wireless NTC-6200](https://devicepartnerportal.softwareag.com/devices/netcomm-now-casa-systems-ntc-6200/10034) for Modbus/TCP and Modbus/RTU
 * [Casa Systems (NetComm) NTC-220 series](/device-tutorials/netcomm-router/) for Modbus/TCP and Modbus/RTU
 
-For further information on supported devices refer to the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/) which offers an extensive [collection of devices]https://devicepartnerportal.softwareag.com/devices) with guaranteed plug-and-play compatibility and full functional support in the Cumulocity IoT platform.
+For further information on supported devices refer to the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/) which offers an extensive [collection of devices](https://devicepartnerportal.softwareag.com/devices) with guaranteed plug-and-play compatibility and full functional support in the Cumulocity IoT platform.
 
 > **Info:** To support Cloud Fieldbus with your terminal, please contact the [Software AG Support](https://empower.softwareag.com/ContactSupport/).
 

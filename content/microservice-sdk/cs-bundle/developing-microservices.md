@@ -163,7 +163,7 @@ services.AddScheduler((sender, args) =>
 });
 ```
 
-It should get all subscriptions and make it available for any other part of my application to work with.
+It should get all subscriptions and make it available for any other part of your application to work with.
 
 As you can see, the `AddScheduler` takes a delegate that handles unobserved exceptions. In our scheduler code, `TaskFactory.StartNew()` is used to run the task’s code. If there is an unhandled exception, you won’t see this exception. Therefore, you may want to do some logging. This is normally done by setting `TaskScheduler.UnobservedTaskException`, that is global for this case so added our own to specifically catch scheduled tasks unhandled exceptions.
 
@@ -373,7 +373,7 @@ public class Program
 }
 ```
 
-The process works like this: each microservice exposes the endpoint <kbd>/health</kbd>. This endpoint is created by the library ASP.NET Core middleware. When this endpoint is invoked, it runs all the health checks that are configured in the `AddHealthChecks` method in the `Startup` class.
+Each microservice exposes the endpoint <kbd>/health</kbd>. This endpoint is created by the library ASP.NET Core middleware. When this endpoint is invoked, it runs all the health checks that are configured in the `AddHealthChecks` method in the `Startup` class.
 
 The `UseHealthChecks` method expects a port or a path. That port or path is the endpoint to use to check the health state of the service. For instance, the catalog microservice uses the path <kbd>/health</kbd>.
 

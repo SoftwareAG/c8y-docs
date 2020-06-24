@@ -9,7 +9,7 @@ layout: redirect
 |Name|Type|Description|Mandatory for PUT/POST|
 |:---|:---|:----------|:---------------------|
 |notAfter|datetime|Date after which a certificate is no longer valid.|No|
-|serialNumber|Positive number |Certificate unique serial number.|No|
+|serialNumber|int|Certificate unique serial number.|No|
 |subject|string|Name of the client to which the certificate belongs.|No|
 |algorithmName|string|Algorithms used to sign the certificate.|No|
 |version|string|Version of the encoded certificate.|No|
@@ -20,7 +20,7 @@ layout: redirect
 |autoRegistrationEnabled|boolean|Flag for auto registration process.|No
 |certInPemFormat|string|Certificate representation in PEM format.|POST: Yes <br>PUT: No
 |status|string|Certificate status.|POST: Yes <br>PUT: No
-|self|string|A URI linking to this resource.|No 
+|self|string|A URI linking to this resource.|No
 
 ### GET a certificate from tenant's trusted certificates    
 

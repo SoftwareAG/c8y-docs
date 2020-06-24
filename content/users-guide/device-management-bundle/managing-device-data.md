@@ -81,37 +81,42 @@ Cumulocity IoT allows to retrieve configuration data and store and manage it in 
 
 Configuration snapshots help you, for example, to apply the same configuration to multiple devices as described below.
 
-Click **Configuration repository** in the the **Management** menu in the navigator. In the **Configuration repository** page, all available configurations are listed. Each entry shows the configuration name, the device from which it has been uploaded and the upload timestamp.
+Click **Configuration repository** in the the **Management** menu in the navigator. In the **Configuration repository** page, all available configurations are listed. Each entry shows the configuration name, the description of the configuration, the device type and the configuration type.
 
 ![Configuration Repository](/images/users-guide/DeviceManagement/devmgmt-management-configrepo.png)
 
-Click a configuration in the list to open it. You may modify the settings here and apply them by clicking **Save**. Refer to the section below for details on the fields.
+The configurations in the list can be edited by clicking on the external menu located at the far right.
 
 ![Configuration Repository](/images/users-guide/DeviceManagement/devmgmt-management-configrepoedit.png)
+
+When ready, click **Update configuration**.
 
 #### To add a configuration snapshot from a file
 
 1. Click **Add configuration snapshot** at the right of the top menu bar.
-2. In the resulting dialog box, enter a unique name and an optional description for the configuration.
+2. In the resulting dialog box, enter a unique name.
 3. In the **Device type** field, enter a device type. The device type can be found in the **Info** tab of the target device.
-4. Specify the configuration snapshot file by either uploading it from the file system, specifying a URL from where the configuration snapshot can be obtained or choosing a file.
-5. Click **Add configuration snapshot**.
+4. Optionally enter a description for the Configuration.
+5. Enter the configuration type e.g. ssh.
+5. Specify the configuration snapshot file by either uploading it from the file system, specifying a URL from where the configuration snapshot can be obtained or choosing a file.
+6. Click **Add configuration**.
 
-The snapshot will be added to the configuration repository.
+The configuration will be added to the configuration repository.
 
 ![Configuration Snapshot Repository](/images/users-guide/DeviceManagement/devmgmt-management-configrepo-addsnapshot.png)
 
 
-#### To retrieve a current snapshot from a device
+#### To get a snapshot from a device
 
-In addition to adding configurations from a file you can also add configurations by retrieving them from a device.
+In addition to adding configurations from a file you can also add configurations by getting them from a device.
 
-In order to retrieve a current configuration snapshot from a device, follow these steps:
+In order to save a configuration snapshot from a device, follow these steps:
 
 1. Navigate to the desired device in **Devices** > **All devices** and open its **Configuration** tab.
-2. Under **Configuration snapshot**, click **Get new snapshot from device** at the top right.
+2. Under the **Device-Supported Configurations** section, select the desired configuration and click 
+**Get snapshot from device**.
 
-The retrieved snapshot can be found in the **Configuration repository**, under  **Management** menu in the navigator.
+Once retrieved, in the Preview section, the snapshot can be saved or downloaded. The saved snapshot can be found in the **Configuration repository**, under the **Management** menu in the navigator.
 
 ![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
 

@@ -119,11 +119,7 @@ The custom device properties mapping has following limitations:
 <td align="left">numberOfAll</td>
 <td align="left">int</td>
 <td align="left">1</td>
-<<<<<<< HEAD
-<td align="left">Number of lines processed from CSV file, without first line (column headers)</td>
-=======
 <td align="left">Number of lines processed from the CSV file, without the first line (column headers).</td>
->>>>>>> 5de3b2eb... fixed occurences of 'id', fixed first half of tables
 </tr>
 <tr>
 <td align="left">numberOfCreated</td>
@@ -135,21 +131,13 @@ The custom device properties mapping has following limitations:
 <td align="left">numberOfFailed</td>
 <td align="left">int</td>
 <td align="left">1</td>
-<<<<<<< HEAD
-<td align="left">Number of failed creation of device credentials</td>
-=======
 <td align="left">Number of failed creations of device credentials.</td>
->>>>>>> 5de3b2eb... fixed occurences of 'id', fixed first half of tables
 </tr>
 <tr>
 <td align="left">numberOfSuccessful</td>
 <td align="left">int</td>
 <td align="left">1</td>
-<<<<<<< HEAD
-<td align="left">Number of successful creation of device credentials, contains create and update operations</td>
-=======
 <td align="left">Number of successful creations of device credentials, contains create and update operations.</td>
->>>>>>> 5de3b2eb... fixed occurences of 'id', fixed first half of tables
 </tr>
 <tr>
 <td align="left">credentialUpdatedList</td>
@@ -167,11 +155,7 @@ The custom device properties mapping has following limitations:
 <td align="left">credentialUpdatedList.deviceId</td>
 <td align="left">string</td>
 <td align="left">1</td>
-<<<<<<< HEAD
-<td align="left">Id of device</td>
-=======
 <td align="left">ID of the device.</td>
->>>>>>> 5de3b2eb... fixed occurences of 'id', fixed first half of tables
 </tr>
 <tr>
 <td align="left">failedCreationList</td>
@@ -189,11 +173,7 @@ The custom device properties mapping has following limitations:
 <td align="left">failedCreationList.deviceId</td>
 <td align="left">string</td>
 <td align="left">0..1</td>
-<<<<<<< HEAD
-<td align="left">Id of device, appears if application can obtain it from file</td>
-=======
 <td align="left">ID of the device, appears if the application can obtain it from the file.</td>
->>>>>>> 5de3b2eb... fixed occurences of 'id', fixed first half of tables
 </tr>
 <tr>
 <td align="left">failedCreationList.failureReason</td>

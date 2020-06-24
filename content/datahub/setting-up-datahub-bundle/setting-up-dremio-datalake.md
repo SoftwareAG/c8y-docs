@@ -22,7 +22,7 @@ If your tenant id is `t12345`, then `t12345/user` is a valid name. The system wo
 The password of the Dremio account has to have at least eight characters, including at least one character and one number.
 
 #### Data Lake
-The type of data lake to be used is preconfigured for the DataHub microservice; the type cannot be changed afterwards. Depending on the data lake type, you have to specify different settings.
+Depending on the configuration of the environment, the data lake provider is either fixed or you can choose among different providers. For each data lake provider, you have to specify corresponding settings to define the data lake to be used. Once the configuration of the data lake is completed, it cannot be changed afterwards.
 
 The following types of data lakes are currently supported:
 
@@ -64,6 +64,7 @@ For **Azure Data Lake Storage Gen1**, **Azure Storage**, and **Amazon S3** data 
 
 #### Saving settings
 Once all settings are defined, click **Save** in the action bar to the right. During the save process, the following steps are automatically conducted:
+
 * A Dremio account is created, with the account having standard Dremio user privileges, not admin privileges.
 * A data lake source in Dremio is created using the provided data lake settings.
 * A source in Dremio is created which connects to the Cumulocity IoT database.

@@ -49,6 +49,7 @@ sudo /opt/c8y/utilities/install_signed_package.sh /tmp/datahub-<version>.tar
 It takes a few minutes to complete the installation. After completion you can delete the DataHub Edge archive.
 
 The install script runs the following basic steps:
+
 * Deploy the DataHub Edge UI as a web application to Cumulocity IoT Core.
 * Start a Docker container with the DataHub Edge backend and the database system for managing the backend state.
 * Start a Docker container with the Dremio master and a ZooKeeper instance.
@@ -58,6 +59,7 @@ The install script runs the following basic steps:
 The Docker containers will be restarted automatically if the container itself fails or the applications within are no longer reachable.
 
 The containers are configured to store their application state on the data disk under **/opt/mongodb**:
+
 * **/cdh-server/data**: the state of the Dremio master
 * **/cdh-executor/data**: the state of the Dremio executor
 * **/cdh-console/db**: the state of the DataHub Edge backend

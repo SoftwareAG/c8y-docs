@@ -48,6 +48,7 @@ The **Offloading task name** is an identifier for the offloading pipeline. Even 
 <a id="basic-functionality-additional-settings"></a>
 The **Target source name** denotes the folder name in the data lake. In Dremio a table is created with the same name, pointing to this data lake folder. This table is used when querying the corresponding data lake folder.
 The target source name must follow these syntax rules:
+
 * It needs to start with an alphanumeric character (letters and numbers).
 * It may contain alphanumeric characters, underscores (_) and dashes (-).
 * Each underscore or dash must be preceded by an alphanumeric character.
@@ -59,7 +60,7 @@ In the **Additional result columns** field, you can provide a comma-separated li
 
 In the **Additional filter predicate** field, you can specify an additional filter for filtering the data before it is inserted into the data lake. Per default all entries in the collection are inserted; you can use the predicate to filter out entries you do not want to persist in the data lake. For example, you can filter out outliers or invalid values. The filter predicate is specified in SQL syntax, e.g., for the alarms collection the filter might be `status='ACTIVE' AND severity='WARNING'`. Filtering on custom fields is also possible, e.g. `myCustomField2 >= 2020` for a numeric field.
 
-When working with additional result columns and filter predicates, you may want to inspect what the actual data that will be offloaded looks like. For that purpose, click the button **Check & preview**, which is at the bottom of the configuration form. First, the configuration is validated. If the validation fails, you will get an error description. If validation is successful, a sample of the resulting data is returned. Note that no data is permanently persisted to the data lake in this preview step. In addition to the query preview, you also get the schedule with which the offloading pipeline will be executed once it is started.
+When working with additional result columns and filter predicates, you may want to inspect what the actual data that will be offloaded looks like. For that purpose, click the button **Check & preview**, which is at the bottom of the configuration form. First, the configuration is validated. If the validation fails, you will get an error description. For example, if you specify a non-existing *UnknownColumn* as an additional result column, you get an error message like *Column 'UnknownColumn' not found in any table*. If validation is successful, a sample of the resulting data is returned. The header row of the sample data incorporates the column name as well as the column type. Note that no data is permanently persisted to the data lake in this preview step. In addition to the query preview, you also get the schedule with which the offloading pipeline will be executed once it is started.
 
 Once you have defined all pipeline settings, click **Save** to save the pipeline. Otherwise click **Cancel** to cancel the pipeline creation.
 
@@ -101,6 +102,8 @@ Once you have defined an offloading configuration and saved it, you can start th
 ##### Starting periodic offloading
 
 Click **Active** to start the periodic execution of the offloading pipeline. The scheduler component of DataHub will then periodically trigger the pipeline.
+
+The initial offload denotes the first execution of an offloading pipeline. While subsequent executions only offload data increments, the initial offload moves all data from the Cumulocity IoT database to the data lake. Thus, the initial offload may need to deal with vast amounts of data. For that reason, the initial offload does not process one big data set, but instead partitions the data into batches and processes the batches. If the initial offload fails, e.g. due to a data lake outage, the next offload checks which batches were already completed and continues with those not yet completed.
 
 If the same pipeline has already been started and stopped in the past, a new start of the pipeline does not offload the complete collection, but only data that has been added after the last execution. 
 

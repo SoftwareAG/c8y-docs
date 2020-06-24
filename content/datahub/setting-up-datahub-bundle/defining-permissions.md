@@ -6,6 +6,8 @@ layout: redirect
 
 Dedicated permissions define what a user is allowed to do in DataHub. To ease assigning permissions to users, permissions are grouped in roles. During deployment of the DataHub applications the corresponding permissions as well as roles are created. If a role with the same name already exists, no new role will be created. The same holds for permissions.
 
+If you omit DataHub permissions, you will get a corresponding warning after login.  
+
 ### DataHub roles and permissions
 
 #### DataHub administrator
@@ -30,6 +32,7 @@ The configurator manages offloading pipelines, e.g., defining and starting a pip
 
 #### DataHub user
 The user runs queries against the data in the data lake. For details see section [Querying offloaded Cumulocity IoT data](/datahub/working-with-datahub#querying-offloaded). To run queries the following approaches can be used:
+
 * Dremio UI: The Dremio account defined in section [Setting up Dremio account and data lake](/datahub/setting-up-datahub#setting-up-dremio-datalake) is used for logging into the UI.
 * Dremio API: The Dremio account defined in section [Setting up Dremio account and data lake](/datahub/setting-up-datahub#setting-up-dremio-datalake) is used for authenticating the requests against the Dremio REST API.
 * DataHub proxy API: The Cumulocity IoT user needs the role **DATAHUB_READER** in order to run queries using the proxy API.

@@ -14,16 +14,18 @@ Response body: loginOptions
 
 Required role: ROLE\_TENANT\_MANAGEMENT\_READ
 
-Example Request: Get loginOptions.
+Example Request: Get loginOptions
 
-
+```
     GET <<tenantUrl>>/tenant/loginOptions
     Host: ...
     Authorization: Basic ...
     Accept: application/vnd.com.nsn.cumulocity.loginoptioncollection+json;charset=UTF-8;ver=...
+```
 
-Example Response :
+Example Response:
 
+```
     HTTP/1.1 200 OK
     Content-Type: application/vnd.com.nsn.cumulocity.loginoptioncollection+json;charset=UTF-8;ver=...
     Content-Length: ...
@@ -43,3 +45,4 @@ Example Response :
 	        }
 	    ]
 	}
+```

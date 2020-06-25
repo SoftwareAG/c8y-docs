@@ -26,28 +26,28 @@ colgroup>
 <tbody>
 <tr>
 <td align="left">id</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Uniquely identifies an operation.</td>
 <td>No</td>
 </tr>
 <tr>
 <td align="left">self</td>
-<td align="left">URI</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Link to this resource.</td>
+<td align="left">A URI linking to this resource.</td>
 <td>No</td>
 </tr>
 <tr>
 <td align="left">creationTime</td>
-<td align="left">String</td>
+<td align="left">datetime</td>
 <td align="left">1</td>
 <td align="left">Time when the operation was created in the database.</td>
 <td>No</td>
 </tr>
 <tr>
 <td align="left">deviceID</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Identifies the target device on which this operation should be performed.</td>
 <td>POST: Mandatory<br>PUT: No</td>
@@ -61,21 +61,21 @@ colgroup>
 </tr>
 <tr>
 <td align="left">bulkOperationId</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Reference to bulkOperationId, if this operation was scheduled from Bulk Operation</td>
 <td>No</td>
 </tr>
 <tr>
 <td align="left">status</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Operation status, can be one of SUCCESSFUL, FAILED, EXECUTING or PENDING.</td>
 <td>POST: No<br>PUT: Mandatory</td>
 </tr>
 <tr>
 <td align="left">failureReason</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">0..1</td>
 <td align="left">Reason for the failure.</td>
 <td>No</td>

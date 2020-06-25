@@ -8,11 +8,11 @@ layout: redirect
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource.|
+|self|string|1|A URI linking to this resource.|
 |references|ManagedObjectReference|0..n|List of managed object references, see below.|
 |statistics|PagingStatistics|1|Information about paging statistics.|
-|prev|URI|0..1|Link to a potential previous page of managed objects.|
-|next|URI|0..1|Link to a potential next page of managed objects.|
+|prev|string|0..1|A URI linking to a potential previous page of managed objects.|
+|next|string|0..1|A URI linking to a potential next page of managed objects.|
 
 ### GET - Managed object reference collection
 
@@ -40,7 +40,7 @@ GET <<url>>/inventory/managedObjects/<<deviceId>>/<<references>>
 |Content-Type|application/vnd.com.nsn.cumulocity.managedobjectreferencecollection+json;ver=...
 
 ```http
-HTTP/1.1 
+HTTP/1.1
 200 - OK
 
 {
@@ -107,7 +107,7 @@ POST <<url>>/inventory/managedObjects/<<deviceId>>/<<references>>
 |Content-Type|application/vnd.com.nsn.cumulocity.managedObjectReference+json;ver=...
 
 ```http
-HTTP/1.1 
+HTTP/1.1
 201 - Created
 
 {

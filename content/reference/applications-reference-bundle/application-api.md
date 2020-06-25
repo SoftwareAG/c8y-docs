@@ -24,39 +24,39 @@ layout: redirect
 <tbody>
 <tr>
 <td align="left">self</td>
-<td align="left">URL</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Link to this resource</td>
+<td align="left">A URL linking to this resource.</td>
 </tr>
 <tr>
 <td align="left">applicationById</td>
 <td align="left">Application/URI-Template</td>
 <td align="left">1</td>
-<td align="left">A reference to a resource of type Application (placeholder {id})</td>
+<td align="left">A reference to a resource of type Application (placeholder {id}).</td>
 </tr>
 <tr>
 <td align="left">applications</td>
 <td align="left">ApplicationCollection</td>
 <td align="left">1</td>
-<td align="left">Collection of all applications</td>
+<td align="left">Collection of all applications.</td>
 </tr>
 <tr>
 <td align="left">applicationsByName</td>
 <td align="left">ApplicationCollection URI-Template</td>
 <td align="left">1</td>
-<td align="left">Read-only collection of all applications with a particular name (placeholder {name})</td>
+<td align="left">Read-only collection of all applications with a particular name (placeholder {name}).</td>
 </tr>
 <tr>
 <td align="left">applicationsByTenant</td>
 <td align="left">ApplicationCollection URI-Template</td>
 <td align="left">1</td>
-<td align="left">Read-only collection of all&nbsp;applications subscribed by a particular tenant (placeholder {tenant})</td>
+<td align="left">Read-only collection of all&nbsp;applications subscribed by a particular tenant (placeholder {tenant}).</td>
 </tr>
 <tr>
 <td align="left">applicationsByOwner</td>
 <td align="left">ApplicationCollection URI-Template</td>
 <td align="left">1</td>
-<td align="left">Read-only collection of all&nbsp;applications owned by a particular tenant (placeholder {tenant})</td>
+<td align="left">Read-only collection of all&nbsp;applications owned by a particular tenant (placeholder {tenant}).</td>
 </tr>
 </tbody>
 </table></div>

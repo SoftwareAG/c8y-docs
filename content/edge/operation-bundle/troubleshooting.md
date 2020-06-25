@@ -488,5 +488,5 @@ Following are the available keys used in the configuration file:
 |report.directory|Report directory where the diagnostic reports have to be placed
 |{component-name}.log.path|Absolute log path of the components under "component.for.log.backup" which do not use /var/log as the logging directory
 |containers.to.monitor|Containers for which log backup is required. The container names are separated by a comma. These log files are retrieved using `docker logs`.
-|services.to.monitor|Services for which log backup is required. The service names are separated buy a comma. These log files are retrieved using `journalctl`.
+|services.to.monitor|Services for which log backup is required. The service names are separated by a comma. These log files are retrieved using `journalctl`.
 

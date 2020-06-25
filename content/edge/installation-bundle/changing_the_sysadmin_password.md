@@ -8,7 +8,7 @@ layout: redirect
 	- Username: <*tenant*>/sysadmin
 	- Password: sysadmin-pass
 
-	Here, <*tenant*> refers to **edge** or **management**.  
+	Here, <*tenant*> refers to **edge** or **management**  
 
 2. Change the password as described in [User options and settings](/users-guide/getting-started/#user-settings).
 

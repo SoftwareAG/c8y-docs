@@ -26,86 +26,86 @@ layout: redirect
 <tbody>
 <tr>
 <td align="left">self</td>
-<td align="left">URL</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Link to this resource</td>
+<td align="left">A URL linking to this resource.</td>
 <td align="left">No</td>
 </tr>
 <tr>
 <td align="left">id</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Unique identifier for the application</td>
+<td align="left">Unique identifier for the application.</td>
 <td align="left">No</td>
 </tr>
 <tr>
 <td align="left">name</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Name of application</td>
-<td align="left">POST: Mandatory PUT: Optional</td>
+<td align="left">Name of application.</td>
+<td align="left">POST: Mandatory, PUT: Optional</td>
 </tr>
 <tr>
 <td align="left">key</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Shared secret of application</td>
-<td align="left">POST: Mandatory PUT: Optional</td>
+<td align="left">Shared secret of application.</td>
+<td align="left">POST: Mandatory, PUT: Optional</td>
 </tr>
 <tr>
 <td align="left">type</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Type of application. Possible values are : EXTERNAL, HOSTED, MICROSERVICE</td>
+<td align="left">Type of application. Possible values are: EXTERNAL, HOSTED, MICROSERVICE</td>
 <td align="left">POST: Mandatory PUT: No</td>
 </tr>
 <tr>
 <td align="left">availability</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">0..1</td>
-<td align="left">Access level for other tenants.&nbsp;&nbsp;Possible values are : MARKET, PRIVATE (default)</td>
+<td align="left">Access level for other tenants. Possible values are: MARKET, PRIVATE (default)</td>
 <td align="left">Optional</td>
 </tr>
 <tr>
 <td align="left">owner</td>
 <td align="left">TenantReference</td>
 <td align="left">&nbsp;1</td>
-<td align="left">Reference to the tenant owning this application</td>
+<td align="left">Reference to the tenant owning this application.</td>
 <td align="left">No&nbsp;</td>
 </tr>
 <tr>
 <td align="left">contextPath</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">0..1</td>
-<td align="left">contextPath of the hosted application&nbsp;</td>
-<td align="left">POST: Mandatory (when application type is HOSTED) PUT: Optional</td>
+<td align="left">contextPath of the hosted application.</td>
+<td align="left">POST: Mandatory (when application type is HOSTED), PUT: Optional</td>
 </tr>
 <tr>
 <td align="left">resourcesUrl</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">0..1</td>
-<td align="left">URL to application base directory hosted on an external server</td>
+<td align="left">URL to application base directory hosted on an external server.</td>
 <td align="left">POST: Mandatory (when application type is HOSTED) PUT: Optional</td>
 </tr>
 <tr>
 <td align="left">resourcesUsername</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">0..1</td>
-<td align="left">authorization username to access resourcesUrl&nbsp;</td>
+<td align="left">Authorization username to access resourcesUrl.</td>
 <td align="left">Optional</td>
 </tr>
 <tr>
 <td align="left">resourcesPassword</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">0..1</td>
-<td align="left">authorization password to access resourcesUrl&nbsp;</td>
+<td align="left">Authorization password to access resourcesUrl.</td>
 <td align="left">Optional</td>
 </tr>
 <tr>
 <td align="left">externalUrl</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">0..1</td>
-<td align="left">URL to the external application</td>
+<td align="left">URL to the external application.</td>
 <td align="left">POST: Mandatory (when application type is EXTERNAL) PUT: Optional</td>
 </tr>
 </tbody>

@@ -8,11 +8,11 @@ layout: redirect
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource|
+|self|string|1|A URI linking to this resource.|
 |groups|Group|0..n|List of groups|
-|statistics|PagingStatistics|1|Information about the paging statistics|
-|prev|URI|0..1|Link to a possible previous page with additional groups|
-|next|URI|0..1|Link to a possible next page with additional groups|
+|statistics|PagingStatistics|1|Information about the paging statistics.|
+|prev|string|0..1|A URI linking to a possible previous page with additional groups.|
+|next|string|0..1|A URI linking to a possible next page with additional groups.|
 
 ### Audit log
 

@@ -27,7 +27,7 @@ layout: redirect
 <tbody>
 <tr>
 <td align="left">id</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Uniquely identifies a measurement.</td>
 <td align="left">No</td>
@@ -35,15 +35,15 @@ layout: redirect
 
 <tr>
 <td align="left">self</td>
-<td align="left">URI</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Link to this resource.</td>
+<td align="left">A URI linking to this resource.</td>
 <td align="left">No</td>
 </tr>
 
 <tr>
 <td align="left">time</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Time of the measurement.</td>
 <td align="left">Mandatory</td>
@@ -51,7 +51,7 @@ layout: redirect
 
 <tr>
 <td align="left">type</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">The most specific type of this entire measurement.</td>
 <td align="left">Mandatory</td>
@@ -67,7 +67,7 @@ layout: redirect
 
 <tr>
 <td align="left">*</td>
-<td align="left">*</td>
+<td align="left">array</td>
 <td align="left">0..n</td>
 <td align="left">List of measurement fragments.</td>
 <td align="left">Optional</td>
@@ -98,7 +98,7 @@ Each measurement fragment is an object containing the actual measurements as pro
 <tbody>
 <tr>
 <td align="left">value</td>
-<td align="left">Number</td>
+<td align="left">Any number</td>
 <td align="left">1</td>
 <td align="left">The value of the individual measurement. The maximum precision for floating point numbers is 64-bit IEEE 754. For integers it’s a 64-bit two’s complement integer.</td>
 <td align="left">Mandatory</td>
@@ -106,7 +106,7 @@ Each measurement fragment is an object containing the actual measurements as pro
 
 <tr>
 <td align="left">unit</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">The unit of the measurement, such as “Wh” or “C”.</td>
 <td align="left">Optional</td>
@@ -137,7 +137,7 @@ GET <<url>>/measurement/measurements/<<measurementId>>
 |Content-Type|application/vnd.com.nsn.cumulocity.measurement+json;ver=...
 
 ```http
-HTTP/1.1 
+HTTP/1.1
 200 OK
 
 {
@@ -178,6 +178,6 @@ DELETE <<url>>/measurement/measurements/<<measurementID>>
 #### Example Response
 
 ```http
-HTTP/1.1 
+HTTP/1.1
 204 NO CONTENT
 ```

@@ -24,28 +24,28 @@ layout: redirect
 <tbody>
 <tr>
 <td style="text-align:left">id</td>
-<td style="text-align:left">String</td>
+<td style="text-align:left">string</td>
 <td style="text-align:left">1</td>
 <td style="text-align:left">Unique identifier of the object, automatically allocated when the object is created (see above).</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
 <td style="text-align:left">self</td>
-<td style="text-align:left">URL</td>
+<td style="text-align:left">string</td>
 <td style="text-align:left">1</td>
-<td style="text-align:left">Link to this resource.</td>
+<td style="text-align:left">A URL linking to this resource.</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>
 <td style="text-align:left">type</td>
-<td style="text-align:left">String</td>
+<td style="text-align:left">string</td>
 <td style="text-align:left">0..1</td>
 <td style="text-align:left">The most specific type of the managed object as fully qualified Java-style type name, dots replaced by underscores.</td>
 <td style="text-align:left">Optional</td>
 </tr>
 <tr>
 <td style="text-align:left">name</td>
-<td style="text-align:left">String</td>
+<td style="text-align:left">string</td>
 <td style="text-align:left">0..1</td>
 <td style="text-align:left">Human-readable name that is used for representing the object in user interfaces.</td>
 <td style="text-align:left">Optional</td>
@@ -59,14 +59,14 @@ layout: redirect
 </tr>
 <tr>
 <td style="text-align:left">creationDate</td>
-<td style="text-align:left">TimeStamp</td>
+<td style="text-align:left">datetime</td>
 <td style="text-align:left">1</td>
 <td style="text-align:left">The time when the object has been created.</td>
 <td style="text-align:left">POST only</td>
 </tr>
 <tr>
 <td style="text-align:left">lastUpdated</td>
-<td style="text-align:left">TimeStamp</td>
+<td style="text-align:left">datetime</td>
 <td style="text-align:left">1</td>
 <td style="text-align:left">The time when the object was last updated.</td>
 <td style="text-align:left">No</td>
@@ -108,7 +108,7 @@ layout: redirect
 </tr>
 <tr>
 <td style="text-align:left">statusChangeDate</td>
-<td style="text-align:left">ManagedObjectReferenceCollection</td>
+<td style="text-align:left">datetime</td>
 <td style="text-align:left">0..1</td>
 <td style="text-align:left">The property is updated when the tenant status is modified. The value cannot be modified, it can only be viewed. </td>
 <td style="text-align:left">No</td>
@@ -121,7 +121,7 @@ A managed object reference in the "child" and "parents" collections contains onl
 
 Not every GET response contains "parents" collections. You need a global role with READ "Inventory" permission to query the managed object "parents". Pass `withParents=true` query param to have "parents" included. If you query the managed object `withParents=true` it will return a flat list of all parents and grandparents of the given object.
 
-> **Info:** If you query `childDevices`, only the children of the given device are returned without any grandchildren. 
+> **Info:** If you query `childDevices`, only the children of the given device are returned without any grandchildren.
 
 ### GET - Representation of a managed object
 
@@ -150,7 +150,7 @@ Accept: application/vnd.com.nsn.cumulocity.managedObject+json;=ver...
 |Content-Type|application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
 
 ```
-HTTP/1.1 
+HTTP/1.1
 200 - OK
 
 {
@@ -198,10 +198,10 @@ HTTP/1.1
 |Content-Type|application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
 |Accept|application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
 
-```http 
+```http
 
     POST <<url>>/inventory/managedObjects
-   
+
     {
       "name" : "A brand new switch",
       "com_cumulocity_model_BinarySwitch" : { "state": "OFF" }
@@ -276,7 +276,7 @@ HTTP/1.1
 
 ```http
 "c8y_SpeedMeasurement": {
-   "Speed": { 
+   "Speed": {
       "value": 1234,
       "unit": "km/h"
    }
@@ -308,14 +308,14 @@ GET <<url>>/inventory/managedObjects/<<deviceId>>/supportedSeries
 |Content-Type|application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
 
 ```
-HTTP/1.1 
+HTTP/1.1
 200 - OK
 
 {
     {"c8y_SupportedSeries":["c8y_TemperatureMeasurement.T","c8y_SpeedMeasurement.speed","c8y_SignalStrength.rssi"]}
 }
 ```
-    
+
 **Important:** In order to have fragment names included in the supported series list, the fragment has to have a specific structure. See the explanation above regarding supported measurements.
 
 ### PUT - Update a managed object
@@ -338,7 +338,7 @@ HTTP/1.1
 200 - OK
 
 PUT <<url>>/inventory/managedObjects/<<deviceId>>
-{ 
+{
    "name" : "Life, the Universe and the REST"
 }
 
@@ -394,7 +394,7 @@ DELETE <<url>>/inventory/managedObjects/<<deviceId>>
 #### Example response
 
 ```http
-HTTP/1.1 
+HTTP/1.1
 204 - NO CONTENT
 
 ```

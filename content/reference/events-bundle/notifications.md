@@ -13,7 +13,7 @@ The subscription channel needs to contain the managed object ID of the device or
 
     /events/<<deviceId>>
 
-The response will additionally to the event object contain a "realtimeAction" to identify which action resulted in the given object (CREATE, UPDATE or DELETE). In case of a deletion the data will only contain the id of the deleted event.
+The response will additionally to the event object contain a "realtimeAction" to identify which action resulted in the given object (CREATE, UPDATE or DELETE). In case of a deletion the data will only contain the ID of the deleted event.
 
 **Required role:** ROLE\_EVENT\_READ
 
@@ -47,4 +47,3 @@ HTTP/1.1
   }
 ]
 ```
-

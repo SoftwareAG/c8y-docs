@@ -8,8 +8,8 @@ layout: redirect
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|id|String|1|Uniquely identifies a role|
-|name|String|1|Descriptive name of the role, following role naming pattern|
+|id|string|1|Uniquely identifies a role.|
+|name|string|1|Descriptive name of the role, following role naming pattern.|
 
 ### Get all available roles
 
@@ -85,7 +85,7 @@ Example response:
         "name" : "ROLE_USER_MANAGEMENT_ADMIN"
       }
     }
-    
+
 When a role is assigned to a user, a corresponding audit record is created with type 'User' and activity 'User updated'.
 
 ### Assign role to group

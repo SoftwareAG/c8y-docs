@@ -477,8 +477,8 @@ Following are the available keys used in the configuration file:
 
 |<div style="width:300px">Information</div>|Description|
 |:----------------|:---|
-|notify.support.by.email|Allows users to select whether they want to receive the diagnostic report via email
-|support.email|Email ID to be used by the utility while sending support email
+|email.notification|Allows users to select whether they want to receive the diagnostic report via email
+|recipient.email|Email ID to be used by the utility while sending support email
 |smtp.server.host|SMTP host for sending support email
 |smtp.server.port|SMTP port to be used by the utility while sending support email
 |smtp.username|SMTP username to be used by the utility while sending support email
@@ -487,4 +487,6 @@ Following are the available keys used in the configuration file:
 |components.for.configuration.backup|Components for which the configuration backup has to be performed
 |report.directory|Report directory where the diagnostic reports have to be placed
 |{component-name}.log.path|Absolute log path of the components under "component.for.log.backup" which do not use /var/log as the logging directory
+|containers.to.monitor|Containers for which log backup is required. The container names are separated by a comma. These log files are retrieved using `docker logs`.
+|services.to.monitor|Services for which log backup is required. The service names are separated buy a comma. These log files are retrieved using `journalctl`.
 

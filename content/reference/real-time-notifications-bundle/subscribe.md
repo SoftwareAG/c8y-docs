@@ -12,10 +12,10 @@ The format of channels names is different according to the REST API in which the
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|id|Integer|1|Id of message, required to match response message|
-|channel|String|1|Name of channel, required value "/meta/subscribe"|
-|clientId|String|1|Unique ID of client received during handshake.|
-|subscription|String|1|Name of channel to subscribe to.|
+|id|string|1|ID of message, required to match response message.|
+|channel|string|1|The channel name as a URI, required value: "/meta/subscribe"|
+|clientId|string|1|Unique ID of client received during handshake.|
+|subscription|string|1|Name of channel to subscribe to.|
 
 Example Request:
 ```http
@@ -37,12 +37,12 @@ Content-Type: application/json
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|id|Integer|1|Id of message passed in request message|
-|channel|URI|1|Name of channel, required value "/meta/subscribe".|
-|clientId|String|1|Unique ID of client.|
-|subscription|String|1|Name of channel.|
-|successful|Boolean|1|Result of subscription.|
-|error|String|0..1|Subscription failure reason.|
+|id|string|1|ID of message passed in request message.|
+|channel|string|1|The channel name as a URI, required value: "/meta/subscribe".|
+|clientId|string|1|Unique ID of client.|
+|subscription|string|1|Name of channel.|
+|successful|boolean|1|Result of subscription.|
+|error|string|0..1|Subscription failure reason.|
 
 Example response:
 

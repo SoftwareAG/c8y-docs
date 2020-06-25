@@ -50,10 +50,10 @@ Afterwards, any PUT or DELETE requests made on that option by the owner tenant, 
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|0..1|Link to this resource.|
-|category|String|1|Category of option|
-|key|String|1|Key of option|
-|value|String|1|Value of option|
+|self|string|0..1|A URI linking to this resource.|
+|category|string|1|Category of option.|
+|key|string|1|Key of option.|
+|value|string|1|Value of option.|
 
 **Info:** Adding "credentials." prefix to the key will make the value of the option to be encrypted. Additionally, when the option is being sent to the microservice, the "credentials." prefix is removed and the value is decrypted. For example:
 

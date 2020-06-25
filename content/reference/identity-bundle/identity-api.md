@@ -24,9 +24,9 @@ layout: redirect
 <tbody>
 <tr>
 <td align="left">self</td>
-<td align="left">URL</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Link to this resource.</td>
+<td align="left">A URL linking to this resource.</td>
 </tr>
 <tr>
 <td align="left">externalId</td>
@@ -38,7 +38,7 @@ layout: redirect
 <td align="left">externalIdsOfGlobalId</td>
 <td align="left">ExternalIDCollection URI template</td>
 <td align="left">1</td>
-<td align="left">Represents a collection of external ids for a specified global id (placeholder {globalId}).</td>
+<td align="left">Represents a collection of external IDs for a specified global ID (placeholder {globalId}).</td>
 </tr>
 </tbody>
 </table>

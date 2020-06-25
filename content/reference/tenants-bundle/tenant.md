@@ -26,37 +26,37 @@ layout: redirect
 <tbody>
 <tr>
 <td align="left">self</td>
-<td align="left">URI</td>
+<td align="left">string</td>
 <td align="left">0..1</td>
-<td align="left">Link to this resource.</td>
+<td align="left">A URI linking to this resource.</td>
 <td align="left">Public</td>
 </tr>
 <tr>
 <td align="left">id</td>
-<td align="left">String: max length="32”</td>
+<td align="left">string: max length="32”</td>
 <td align="left">1</td>
-<td align="left">Unique identifier of the tenant</td>
+<td align="left">Unique identifier of the tenant.</td>
 <td align="left">Public</td>
 </tr>
 <tr>
 <td align="left">status</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Status of the tenant, possible values [ACTIVE, SUSPENDED].</td>
+<td align="left">Status of the tenant. Possible values: ACTIVE, SUSPENDED</td>
 <td align="left">Private</td>
 </tr>
 <tr>
 <td align="left">adminName</td>
-<td align="left">String: max length = “50”</td>
+<td align="left">string: max length = “50”</td>
 <td align="left">1</td>
-<td align="left">Administrator user name. Whitespaces, slashes, +$: characters not allowed</td>
+<td align="left">Administrator user name. Whitespaces, slashes, +$: characters not allowed.</td>
 <td align="left">Private</td>
 </tr>
 <tr>
 <td align="left">adminEmail</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Administrator Email</td>
+<td align="left">Administrator Email.</td>
 <td align="left">Private</td>
 </tr>
 <tr>
@@ -68,49 +68,49 @@ layout: redirect
 </tr>
 <tr>
 <td align="left">storageLimitPerDevice</td>
-<td align="left">number</td>
+<td align="left">int</td>
 <td align="left">1</td>
 <td align="left">Storage quota per device the user has.</td>
 <td align="left">Private</td>
 </tr>
 <tr>
 <td align="left">adminPassword</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Administrator Password</td>
+<td align="left">Administrator Password.</td>
 <td align="left">Private</td>
 </tr>
 <tr>
 <td align="left">sendPasswordResetEmail</td>
 <td align="left">boolean</td>
 <td align="left">1</td>
-<td align="left">Enable password reset</td>
+<td align="left">Enable password reset.</td>
 <td align="left">Private</td>
 </tr>
 <tr>
 <td align="left">domain</td>
-<td align="left">String: max length = “256”</td>
+<td align="left">string: max length = “256”</td>
 <td align="left">1</td>
 <td align="left">URL of tenants domain.</td>
 <td align="left">Public</td>
 </tr>
 <tr>
 <td align="left">company</td>
-<td align="left">String: max length = “256”</td>
+<td align="left">string: max length = “256”</td>
 <td align="left">1</td>
 <td align="left">Tenants company name.</td>
 <td align="left">Public</td>
 </tr>
 <tr>
 <td align="left">contactName</td>
-<td align="left">String: max length = “30”</td>
+<td align="left">string: max length = “30”</td>
 <td align="left">1</td>
 <td align="left">Contact person name.</td>
 <td align="left">Public</td>
 </tr>
 <tr>
 <td align="left">contactPhone</td>
-<td align="left">String: max length= “20”</td>
+<td align="left">string: max length= “20”</td>
 <td align="left">1</td>
 <td align="left">Contact person phone number.</td>
 <td align="left">Public</td>
@@ -133,12 +133,12 @@ layout: redirect
 <td align="left">customProperties</td>
 <td align="left">Object</td>
 <td align="left">1</td>
-<td align="left">Keeps a list of custom properties</td>
+<td align="left">Keeps a list of custom properties.</td>
 <td align="left">optional</td>
 </tr>
 <tr>
 <td align="left">parent</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Name of parent tenant, the creator of this tenant.</td>
 <td align="left">Public</td>
@@ -152,9 +152,9 @@ Content-Type: application/vnd.com.nsn.cumulocity.currentTenant+json
 
 |Field Name|Type|Occurs|Description|
 |:---------|:---|:-----|:----------|
-|name|String|1|Tenant|
-|domainName|String|1|Domain name|
-|allowCreateTenants|Boolean|1|Flag indicating if a tenant can create subtenants|
+|name|string|1|Tenant.|
+|domainName|string|1|Domain name.|
+|allowCreateTenants|boolean|1|Flag indicating if a tenant can create subtenants.|
 
 #### GET the current tenant details
 

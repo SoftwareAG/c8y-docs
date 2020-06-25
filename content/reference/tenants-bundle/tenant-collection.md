@@ -8,11 +8,11 @@ layout: redirect
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource.|
-|tenants|Tenant|0..n|List of tenants, see below.|
+|self|string|1|A URI linking to this resource.|
+|tenants|array|0..n|List of tenants, see below.|
 |statistics|PagingStatistics|1|Information about paging statistics.|
-|prev|URI|0..1|Link to a potential previous page of tenants.|
-|next|URI|0..1|Link to a potential next page of tenants.|
+|prev|string|0..1|A URI linking to a potential previous page of tenants.|
+|next|string|0..1|A URI linking to a potential next page of tenants.|
 
 ### GET a representation of a Tenant Collection.
 

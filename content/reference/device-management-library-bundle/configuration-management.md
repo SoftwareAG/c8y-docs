@@ -37,7 +37,8 @@ Here is an example of a managed object representing a configuration snapshot:
     "name" : "Device Name",
     "type" : "c8y_ConfigurationDump",
     "description" : "Upload by 165711155000082 at 05/04/16 08:14:07",
-    "url" : "https://yourtenant.cumulocity.com/inventory/binaries/binaryId"
+    "url" : "https://yourtenant.cumulocity.com/inventory/binaries/binaryId",
+	"configurationType": "app1"
 
 An operation example of applying a configuration from a snapshot:
 

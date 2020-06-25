@@ -30,6 +30,7 @@ There are two **Preferred login modes** available:
 
 * "OAuth Internal" which is the recommended option as it provides better security.
 * "Basic Auth" which should be chosen only for specific compatibility reasons.
+* "Redirect to SSO" which can be selected only if SSO is configured. If selected, it will remove both basic auth and oauth internal from the login strategies.
 
 This login mode will be used by the platform's applications as the default method to authenticate users. Device authentication stays unchanged.
 

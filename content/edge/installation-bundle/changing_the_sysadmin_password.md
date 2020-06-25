@@ -4,10 +4,11 @@ title: Changing the sysadmin password
 layout: redirect
 ---
 
-1. Log in using the following credentials:
-	- Tenant: edge
-	- Username: sysadmin
+1. Log in using the following credentials:<br>
+	- Username: <*tenant*>/sysadmin
 	- Password: sysadmin-pass
+
+	Here, <*tenant*> refers to **edge** or **management**.  
 
 2. Change the password as described in [User options and settings](/users-guide/getting-started/#user-settings).
 
@@ -18,4 +19,4 @@ Next steps: Log in with the tenant admin credentials provided during post-instal
 
 <img src="/images/edge/edge-login-with-tenantid.png" name="Login screen"/>
 
-When you log into Cumulocity IoT for the first time, you will be taken to the [Cockpit](/users-guide/cockpit#overview) application where the **Home screen** initially opens up.
+When you log into Cumulocity IoT Edge for the first time, you will be taken to the [Cockpit](/users-guide/cockpit#overview) application where the **Home screen** initially opens up.

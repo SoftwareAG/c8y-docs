@@ -75,15 +75,15 @@ Cumulocity IoT provides single sign-on functionality, that allows a user to logi
 
 > **Info:** This feature is built on top of cookies technology. To be able to use it, you must have cookies enabled in the settings of your browser.
 
-This feature is enabled since Cumulocity IoT version 9.12. For correct behavior any microservice needs to use the microservice SDK with version 9.12 or later.
+This feature is enabled since Cumulocity IoT version 10.4.6. For correct behavior any microservice needs to use the microservice SDK with version 10.4.6 or later.
 
 Before switching to the single sign-on option it is mandatory that:
 
 * The authorization server you use supports OAuth2 authorization code grant.
 * The access token is issued as JWT and you know what goes into the token content.
 * The JWT must consist of a unique user identifier, "iss" (issuer), "aud" (audience) and "exp" (expiration time) fields.
-* The Cumulocity IoT platform is in version 9.12 but preferably higher.
-* All microservices are build with Microservice Java SDK 9.12.6 but preferably higher.For Microservices custom built, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the Microservice SDK guide.
+* The Cumulocity IoT platform is in version 10.4.6 but preferably higher.
+* All microservices are build with Microservice Java SDK 10.4.6 but preferably higher.For Microservices custom built, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the Microservice SDK guide.
 * For on premises installation the domain-based tenant resolution is configured properly.
 
 >**Info:** In order to use the single sign-on feature for Enterprise Tenants, the enterprise domain must be set up as redirect URI in the basic configurations. If single sign-on providers have a list of allowed domains, the enterprise domain should be added to that list.
@@ -186,6 +186,10 @@ Each access token is signed by a signing certificate. Currently there are three 
 3. By providing the public key of a certificate manually to Cumulocity IoT. A certificate definition requires an algorithm information, public key value and validity period.
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-5.png)
+ 
+4. By specifying the JWKS (JSON Web Key Set) address.
+ 
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
 
 #### Integration with Azure AD
 

@@ -8,11 +8,11 @@ layout: redirect
 
 |Field Name|Type|Occurs|Description|
 |:---------|:---|:-----|:----------|
-|self|string|1|A URI linking to this resource|
-|roles|array|0..n|List of roles|
-|statistics|object|1|Information about the paging statistics|
-|prev|string|0..1|A URI linking to a possible previous page with additional roles|
-|next|string|0..1|A URI linking to a possible next page with additional roles|
+|self|string|1|A URI linking to this resource.|
+|roles|array|0..n|List of roles.|
+|statistics|object|1|Information about the paging statistics.|
+|prev|string|0..1|A URI linking to a possible previous page with additional roles.|
+|next|string|0..1|A URI linking to a possible next page with additional roles.|
 
 ### Get all available inventory roles
 

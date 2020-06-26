@@ -8,11 +8,11 @@ layout: redirect
 
 |Name|Type|Occurs|Description|Mandatory for POST/PUT|
 |:---|:---|:-----|:----------|:----------:|
-|id|string|1|Uniquely identifies an inventory role|No/Yes|
-|name|string|1|Descriptive name of the inventory role|Yes/No|
-|description|string|1|Details of the capabilities of the role|No|
-|self|string|1|A URI linking to this resource|No|
-|permissions|array|0..n|List of permissions that can be attached to group of devices|No|
+|id|string|1|Uniquely identifies an inventory role.|No/Yes|
+|name|string|1|Descriptive name of the inventory role.|Yes/No|
+|description|string|1|Details of the capabilities of the role.|No|
+|self|string|1|A URI linking to this resource.|No|
+|permissions|array|0..n|List of permissions that can be attached to group of devices.|No|
 
 ### Retrieve an inventory role
 

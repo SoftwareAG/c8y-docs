@@ -44,7 +44,7 @@ The HTTP header must include:
 
 	Authorization: Bearer <<Base64 encoded JWT token>>
 
-The JWT token must be signed using RSA signature with SHA-256 (RS256). The minimal RSA key size is 512 bit although minimal recommended key length is 2048 bits. You can generate an example key [here](http://travistidwell.com/jsencrypt/demo/).
+The JWT token must be signed using RSA signature with SHA-256 (RS256). The minimal RSA key size is 512 bit although minimum recommended key length is 2048 bits. You can generate an example key here: [http://travistidwell.com/jsencrypt/demo/](http://travistidwell.com/jsencrypt/demo/).
 
 You must upload your public key to the [tenant options](/reference/tenants) to the "token.publicKey" category.
 

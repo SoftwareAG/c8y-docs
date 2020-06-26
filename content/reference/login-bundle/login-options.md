@@ -8,16 +8,16 @@ layout: redirect
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URL|1|Link to this resource|
+|self|string|1|A URL linking to this resource|
 |loginOptions|LoginOption|0..n|Collection of all login options|
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URL|1|Link to this resource|
-|type|String|1|Text containing type, one of "basic" or "oauth2"|
-|buttonName|String|0..1|Text that appears on the Login button|
-|grantType|String|0..1|Text describing oauth2 flow used, for now AUTHORIZATION_CODE only|
-|initRequest|String|0..1|Address to initiate oauth login process|
+|self|string|1|A URL linking to this resource|
+|type|string|1|Text containing type, one of "basic" or "oauth2"|
+|buttonName|string|0..1|Text that appears on the Login button|
+|grantType|string|0..1|Text describing oauth2 flow used, for now AUTHORIZATION_CODE only|
+|initRequest|string|0..1|Address to initiate oauth login process|
 
 ### GET a representation of the login options
 

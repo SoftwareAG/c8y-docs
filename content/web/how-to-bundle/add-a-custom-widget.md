@@ -12,7 +12,7 @@ A typical dashboard looks like this, showing various widgets:
 
 ![A dashboard](/images/users-guide/cockpit/cockpit-dashboard-widgets.png)
 
-This recipe will show how to archive a custom widget to a dashboard with the `COMPONENT_HOOK`.
+This recipe will show how to archive a custom widget to a dashboard with the `HOOK_COMPONENTS`.
 
 ### 1. Initialize the example app
 
@@ -79,7 +79,7 @@ Here again, you just need to add a `config` object which you can fill with any s
 
 ### 3. Add the widget to your application
 
-To add the widget you have to use the `COMPONENT_HOOK` and define the created components as `entryComponent`. 
+To add the widget you have to use the `HOOK_COMPONENTS` and define the created components as `entryComponent`. 
 
 To do so, add the following to your `app.module.ts`:
 
@@ -90,7 +90,7 @@ import { RouterModule } from '@angular/router';
 import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
 
 // --- 8< changed part ----
-import { CoreModule, HOOK_COMPONENT } from '@c8y/ngx-components';
+import { CoreModule, HOOK_COMPONENTS } from '@c8y/ngx-components';
 // --- >8 ----
 
 import { UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
@@ -117,15 +117,17 @@ import { WidgetConfigDemo } from './demo-widget-config.component';
   declarations: [WidgetDemo, WidgetConfigDemo],      // 1.
   entryComponents: [WidgetDemo, WidgetConfigDemo],
   providers: [{
-    provide: HOOK_COMPONENT,                         // 2.
+    provide: HOOK_COMPONENTS,                         // 2.
     multi: true,
-    useValue: {
-      id: 'acme.text.widget',                        // 3. 
-      label: 'Text widget',
-      description: 'Can display a text',
-      component: WidgetDemo,                         // 4.
-      configComponent: WidgetConfigDemo,
-    }
+    useValue: [
+      {
+        id: 'acme.text.widget',                        // 3. 
+        label: 'Text widget',
+        description: 'Can display a text',
+        component: WidgetDemo,                         // 4.
+        configComponent: WidgetConfigDemo,
+      }
+    ]
   }],
   // --- >8 ----
 
@@ -141,7 +143,7 @@ export class AppModule extends HybridAppModule {
 Explanation of the above numbers:
 
 1. Define the components as entry components and declare them to make them accessible by this module.
-2. Add a multi-provider hook with the `HOOK_COMPONENT`. This hook is collected by the application and adds the widget based on the values you provide.
+2. Add a multi-provider hook with the `HOOK_COMPONENTS`. This hook is collected by the application and adds the widget based on the values you provide.
 3. The ID needs to be unique as it identifies the data stored in the inventory. The label and description is shown as the title and in the widget dropdown.
 4. These part tells the hook to associate the previously defined components to the widget.
 

@@ -8,11 +8,11 @@ layout: redirect
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource|
-|references|UserReference|0..n|List of user references|
-|statistics|PagingStatistics|1|Information about the paging statistics|
-|prev|URI|0..1|Link to a possible previous page with additional user references|
-|next|URI|0..1|Link to a possible next page with additional user references|
+|self|string|1|A URI linking to this resource.|
+|references|array|0..n|List of user references.|
+|statistics|object|1|Information about the paging statistics.|
+|prev|string|0..1|A URI linking to a possible previous page with additional user references.|
+|next|string|0..1|A URI linking to a possible next page with additional user references.|
 
 ### Add user to a group
 
@@ -61,17 +61,17 @@ Example response:
             "self": "[URL to the User resource]",
             "userName": "jsmith"
         }}
-        
+
 When a user is added to a group, a corresponding audit record is created with type 'User' and activity 'User updated'.
 
 ### Remove user from a group
 
 Request body: n/a
 
-Response body: n/a 
+Response body: n/a
 
 Example request: Delete a UserReference
- 			 
+
      DELETE /user/<<tenant>>/groups/<<groupId>>/users/<<yourUserName>>
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx

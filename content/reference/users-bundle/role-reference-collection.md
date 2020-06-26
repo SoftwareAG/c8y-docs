@@ -8,11 +8,11 @@ layout: redirect
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource|
-|references|RoleReference|0..n|List of role references|
-|statistics|PagingStatistics|1|Information about the paging statistics|
-|prev|URI|0..1|Link to a possible previous page with additional role references|
-|next|URI|0..1|Link to a possible next page with additional role references|
+|self|string|1|A URI linking to this resource.|
+|references|array|0..n|List of role references.|
+|statistics|PagingStatistics|1|Information about the paging statistics.|
+|prev|string|0..1|A URI linking to a possible previous page with additional role references.|
+|next|string|0..1|A URI linking to a possible next page with additional role references.|
 
 ### Get all roles of a user
 

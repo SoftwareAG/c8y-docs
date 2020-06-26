@@ -26,37 +26,37 @@ layout: redirect
 <tbody>
 <tr>
 <td align="left">id</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Uniquely identifies a group</td>
+<td align="left">Uniquely identifies a group.</td>
 <td align="left">not allowed</td>
 </tr>
 <tr>
 <td align="left">self</td>
-<td align="left">URI</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Link to this resource</td>
+<td align="left">A URI linking to this resource.</td>
 <td align="left">not allowed</td>
 </tr>
 <tr>
 <td align="left">name</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Descriptive name of the group</td>
+<td align="left">Descriptive name of the group.</td>
 <td align="left">mandatory</td>
 </tr>
 <tr>
 <td align="left">roles</td>
-<td align="left">RoleReferenceCollection</td>
+<td align="left">array</td>
 <td align="left">1</td>
-<td align="left">List of role references</td>
+<td align="left">List of role references.</td>
 <td align="left">not allowed</td>
 </tr>
 <tr>
 <td align="left">devicePermissions</td>
-<td align="left">Object</td>
+<td align="left">object</td>
 <td align="left">1</td>
-<td align="left">List of device permissions</td>
+<td align="left">List of device permissions.</td>
 <td align="left">optional</td>
 </tr>
 </tbody>

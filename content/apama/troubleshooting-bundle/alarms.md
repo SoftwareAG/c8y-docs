@@ -260,7 +260,7 @@ For more details, you can also check the Apama logs if the tenant has the "micro
 
 #### <a name="apama_ctrl_warn"></a>An EPL file blocks the correlator context for too long
 
-If an EPL app has an infinite loop, it may block the correlator context for too long, not letting any other apps run in the same context or, even worse, cause excessive memory pressure (as the correlator is unable to perform any garbage collection cycles) leading to the app running out of memory. The Apama-ctrl microservice identifies such scenarios (the correlator logs warning messages if an app is blocking a context for too long) and raises alarms, so that the user can identify and fix the problem. 
+If an EPL app has an infinite loop, it may block the correlator context for too long, not letting any other apps run in the same context or, even worse, causes excessive memory usage (as the correlator is unable to perform any garbage collection cycles) leading to the app running out of memory. The Apama-ctrl microservice identifies such scenarios (the correlator logs warning messages if an app is blocking a context for too long) and raises alarms, so that the user can identify and fix the problem. 
 
 For example, the following monitor blocks the correlator main context:
 
@@ -321,7 +321,7 @@ Apama-ctrl will automatically restart. Report this to Software AG Support if thi
 
 #### <a name="application_queue_full"></a>The correlator queue is full
 
-This alarm is raised whenever the correlator queue is full, including both input queue and output queue.
+This alarm is raised whenever the correlator queue is full, including both input and output queues.
 
 - Alarm type: `application_queue_full`
 - Alarm text: InputQueueSize: &lt;size of input queue&gt;, OutputQueueSize: &lt;size of output queue&gt;, SlowestReceiver: &lt;name of the slowest receiver&gt;, SlowestReceiverQueueSize: &lt;size of slowest receiver's queue&gt;, SlowestContext: &lt;name of context with maximum pending events&gt;, SlowestContextQueueSize: &lt;size of slowest context's queue&gt;

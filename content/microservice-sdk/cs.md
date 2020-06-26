@@ -8,5 +8,3 @@ aliases:
   - /cs/developing-microservice
   - /cs/hello-world-basic
 ---
-
-This section describes how to develop and deploy microservices on top of Cumulocity using the Microservice SDK for C#.

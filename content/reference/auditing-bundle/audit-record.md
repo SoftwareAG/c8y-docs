@@ -26,35 +26,35 @@ layout: redirect
 <tbody>
 <tr>
 <td align="left">id</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Uniquely identifies this audit record.</td>
 <td align="left">No</td>
 </tr>
 <tr>
 <td align="left">self</td>
-<td align="left">URI</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Link to this resource.</td>
+<td align="left">A URI linking to this resource.</td>
 <td align="left">No</td>
 </tr>
 <tr>
 <td align="left">creationTime</td>
-<td align="left">String</td>
+<td align="left">datetime</td>
 <td align="left">1</td>
 <td align="left">Time when audit record was created in the database.</td>
 <td align="left">No</td>
 </tr>
 <tr>
 <td align="left">type</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">Identifies the type of this audit record.</td>
 <td align="left">POST: Yes<br>PUT: No</td>
 </tr>
 <tr>
 <td align="left">time</td>
-<td align="left">String</td>
+<td align="left">datetime</td>
 <td align="left">1</td>
 <td align="left">Time of the audit record.</td>
 <td align="left">POST: Yes<br>PUT: No</td>
@@ -75,35 +75,35 @@ layout: redirect
 </tr>
 <tr>
 <td align="left">user</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">The user responsible for the audited action.</td>
 <td align="left">No</td>
 </tr>
 <tr>
 <td align="left">application</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">The application used to carry out the audited action.</td>
 <td align="left">No</td>
 </tr>
 <tr>
 <td align="left">activity</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">The activity that was carried out.</td>
 <td align="left">POST: Yes<br>PUT: No</td>
 </tr>
 <tr>
 <td align="left">severity</td>
-<td align="left">String</td>
+<td align="left">string</td>
 <td align="left">1</td>
 <td align="left">The severity of action: critical, major, minor, warning or information.</td>
 <td align="left">No</td>
 </tr>
 <tr>
 <td align="left">changes</td>
-<td align="left">Set</td>
+<td align="left">array</td>
 <td align="left">0..1</td>
 <td align="left">An optional collection of objects describing the changes that were carried out.</td>
 <td align="left">No</td>

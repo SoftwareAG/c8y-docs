@@ -22,10 +22,10 @@ When you have established a connection to Dremio, you can run SQL queries agains
 * Amazon S3: YourTenantIdDataLake.`Bucket`.YourAccountName.TargetTable with `Bucket` denoting the bucket within your Amazon S3 account
 * Others: YourTenantIdDataLake.YourAccountName.TargetTable
 
-For example, if your tenantId is `t47110815` and you have defined an offloading configuration to write the alarms collection to the target table `JohnsAlarms` in an Azure Storage account containing a file system named Dremio, then an example query would be:
+For example, if your tenantId is `t47110815` and you have defined an offloading configuration to write the alarms collection to the target table `JohnsAlarms` in an Azure Storage account containing a file system named `Dremio`, then an example query would be:
 
 ```
-SELECT * FROM t47110815DataLake.Dremio.my-cdh-tenant~JohnSmith.JohnsAlarms;
+SELECT * FROM t47110815DataLake.Dremio.t47110815.JohnsAlarms;
 ```
 You can easily look up the paths to the tables in Dremio's UI. Click on your data lake under "Sources" on the left, then navigate to the table in the right canvas. When you hover over the table name, a small "copy" icon with the tool tip "Copy Path" will appear right of the table name. Clicking on it will copy the table name into your clipboard.
 
@@ -52,6 +52,8 @@ Note that the API might change any time and Software AG does not provide any gua
 The DataHub server also can handle REST requests for Dremio query processing. The DataHub server acts as a proxy for these requests and forwards them to Dremio for evaluation. This API might change any time.
 
 In contrast to directly calling the Dremio REST API, in this case authentication is done against DataHub; thus, you need to provide Cumulocity IoT credentials instead of Dremio credentials. You need the corresponding Cumulocity IoT permission to use this API. See section [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for further details on the required permission.
+
+ You will find an example request by clicking the **REST API** icon in the **Quick links** section of the **Home** page.
 
 #### Request URLs
 

@@ -24,9 +24,9 @@ layout: redirect
 <tbody>
 <tr>
 <td align="left">self</td>
-<td align="left">URL</td>
+<td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Link to this resource.</td>
+<td align="left">A URL linking to this resource.</td>
 </tr>
 
 <tr>
@@ -155,7 +155,7 @@ layout: redirect
 |:---|:---|
 |Authorization|{{auth}}
 |Host|{{hostname}}
-    
+
 ```http
 200 - OK
 
@@ -169,7 +169,7 @@ GET <<url>>/event
 |Content-Type|application/vnd.com.nsn.cumulocity.eventApi+json;ver=...
 
 ```http
-HTTP/1.1 
+HTTP/1.1
 200 - OK
 
 {

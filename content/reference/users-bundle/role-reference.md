@@ -8,5 +8,5 @@ layout: redirect
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|self|URI|1|Link to this resource|
-|role|Role|1|A role resource being referenced|
+|self|string|1|A URI linking to this resource.|
+|role|Role|1|A role resource being referenced.|

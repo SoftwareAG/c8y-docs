@@ -34,7 +34,11 @@ For experimental two-way SSL the port 1884 has to be enabled. To do that, add th
 
 ### SmartREST payload
 
-The Cumulocity IoT MQTT implementation uses SmartREST as a payload. SmartREST is a CSV-like message protocol that uses templates on the server side to create data in Cumulocity IoT.
+The Cumulocity IoT MQTT implementation uses SmartREST as a payload.
+SmartREST is a CSV-like message protocol that uses templates on the server side to create data in Cumulocity IoT.
+It incorporates the highly expressive strength of the REST API but replaces JSON with comma-separated values (CSV) to avoid the complexity of JSON parsing for embedded devices.
+Additionally, the simple and compact syntax of CSV renders it highly efficient for IoT communication via mobile networks.
+It can save up to 80% of mobile traffic compared to other HTTP APIs.
 
 > **Info:** For all MQTT connections to the platform, the maximum accepted payload size is 16184 bytes, which includes both message header and body. The header size varies, but its minimum is 2 bytes.
 

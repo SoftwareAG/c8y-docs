@@ -10,11 +10,11 @@ Device credentials can be enquired by devices that do not have credentials for a
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|id|String|1|Device identifier, e.g. IMEI|
-|tenantId|String|1|Tenant id for authentication|
-|username|String|1|New username|
-|password|String|1|New password|
-|self|URL|1|Link to this resource.|
+|id|string|1|Device identifier, e.g. IMEI|
+|tenantId|string|1|Tenant id for authentication|
+|username|string|1|New username|
+|password|string|1|New password|
+|self|string|1|A URL linking to this resource.|
 
 ### POST - creates a device credentials request
 

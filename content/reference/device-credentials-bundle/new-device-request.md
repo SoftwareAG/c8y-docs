@@ -8,9 +8,9 @@ layout: redirect
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|id|String|1|Device identifier. Max: 1000 characters. E.g. IMEI|
-|status|String|1|Status of registration, one of: WAITING\_FOR\_CONNECTION, PENDING\_ACCEPTANCE, ACCEPTED|
-|self|URL|1|Link to this resource.|
+|id|string|1|Device identifier. Max: 1000 characters. E.g. IMEI|
+|status|string|1|Status of registration, one of: WAITING\_FOR\_CONNECTION, PENDING\_ACCEPTANCE, ACCEPTED|
+|self|string|1|A URL linking to this resource.|
 
 ### GET - returns a new device request
 

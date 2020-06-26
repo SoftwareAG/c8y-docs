@@ -12,12 +12,12 @@ With Cumulocity IoT Cloud Fieldbus you can collect data from fieldbus devices an
 
 Cloud Fieldbus is supported out of the box by the following terminals:
 
-* [Pssystec SMARTbox Mini](https://devicepartnerportal.softwareag.com/web/devices/10043) for Modbus/RTU
-* [Pssystec SMARTbox DP](https://devicepartnerportal.softwareag.com/web/devices/10041) for Profibus
-* [NetComm Wireless NTC-6200](https://devicepartnerportal.softwareag.com/web/devices/10034) for Modbus/TCP and Modbus/RTU
+* [Pssystec SMARTbox Mini](https://devicepartnerportal.softwareag.com/devices/pssystec-gmbh-smartbox-mini/10043) for Modbus/RTU
+* [Pssystec SMARTbox DP](https://devicepartnerportal.softwareag.com/devices/pssystec-gmbh-smartbox-dp/10041) for Profibus
+* [NetComm Wireless NTC-6200](https://devicepartnerportal.softwareag.com/devices/netcomm-now-casa-systems-ntc-6200/10034) for Modbus/TCP and Modbus/RTU
 * [Casa Systems (NetComm) NTC-220 series](/device-tutorials/netcomm-router/) for Modbus/TCP and Modbus/RTU
 
-For further information on supported devices refer to the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/web/#/) which offers an extensive [collection of devices](https://devicepartnerportal.softwareag.com/web/#/devices) with guaranteed plug-and-play compatibility and full functional support in the Cumulocity IoT platform.
+For further information on supported devices refer to the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/) which offers an extensive [collection of devices](https://devicepartnerportal.softwareag.com/devices) with guaranteed plug-and-play compatibility and full functional support in the Cumulocity IoT platform.
 
 > **Info:** To support Cloud Fieldbus with your terminal, please contact the [Software AG Support](https://empower.softwareag.com/ContactSupport/).
 
@@ -104,7 +104,7 @@ To connect a Profibus device, follow these steps:
 3. The baud rate is automatically detected by the gateway and is just being displayed here.
 4. Change the transmit rate according to your requirements. The transmit rate is the interval at which measurements are sent to Cumulocity IoT.
 5. Set the slave address of the terminal.
-6. Configure your Profibus Master device to communicate to that slave address. To do so, refer to the gateway manual (e.g. [SmartBox DP](https://devicepartnerportal.softwareag.com/web/#/devices/10041)).
+6. Configure your Profibus Master device to communicate to that slave address. To do so, refer to the gateway manual (e.g. [SmartBox DP](https://devicepartnerportal.softwareag.com/devices/pssystec-gmbh-smartbox-dp/10041)).
 7. Click **Save** to update the gateway with the new settings.
 
 <img src="/images/users-guide/cloud-fieldbus/fieldbus-new-profibus.png" alt="Add device" style="max-width: 100%">

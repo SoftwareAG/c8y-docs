@@ -153,10 +153,10 @@ To support developers during development, it is possible to subscribe to the top
 
 >**Info**: This topic is purely designed to support the development of clients. It is not recommended to always subscribe to this channel as the messages are verbose and can significantly increase the data usage. Also, you should not use this topic to trigger actions of the device based on what you receive on the topic. It is not a response channel.
 
-### Reloading server's certificate
+### Reloading the server certificate
 
-There is a possibility to change server's certificate, which is sent to the devices. To do that, customer should contact the DevOps team, which can add the new certificate to server's keystore and reload it.
+You can change the server certificate, which is sent to the devices. To do so, customers should contact Software AG Support (https://empower.softwareag.com/ContactSupport/), who can add a new certificate to the server's keystore and reload it.
 
-Certificates exchange occurs during device connection, so all already connected devices will not be disconnected during reloading. Only after they disconnect on their own and try to connect later, then they will have to contain that new server's certificate in their truststore.
+Certificates exchange between the server and the device occurs during device connection, so all already connected devices will not be disconnected during reloading. Only after they disconnect on their own and try to connect later, then it is required that they contain the new server certificate in their truststore.
  
->**Info**: This functionality is designed to renewing or changing the server's certificate, when it is going to expire.
+>**Info**: This functionality is designed renew or change the server certificate, when it is going to expire.

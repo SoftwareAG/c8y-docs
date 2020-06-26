@@ -57,7 +57,7 @@ The first message sent will create our device. Although the static templates sup
 
 Afterwards, you will find this device in the Device Management application as a new device. If you switch to the **Identity** tab of the device you will notice that there was an identity created automatically to link the device to the MQTT ClientId.
 
-Besides the name and the type, the device does not have more information, so primary data needs to be added.
+Besides the name and the type, the device does not have more information, so master data needs to be added.
 
 You can use multiple static templates per publishing separated by a line break (one template per row). This feature is used to set the hardware and the required interval for the device in a single published message.
 
@@ -74,7 +74,7 @@ After a reload of the **Info** page of your device in the Device Management appl
 
 ##### Creating measurements
 
-Now the device has some primary data and we can start sending some measurements.
+Now the device has some master data and we can start sending some measurements.
 There are a couple of measurements that can be created directly by using a static template:
 
 * 210: Signal strength measurement

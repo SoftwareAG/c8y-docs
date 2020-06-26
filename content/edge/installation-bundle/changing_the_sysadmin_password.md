@@ -5,10 +5,10 @@ layout: redirect
 ---
 
 1. Log in using the following credentials:<br>
-	- Username: <*tenant*>/sysadmin
+	- Username: &#60;tenant&#62;/sysadmin
 	- Password: sysadmin-pass
 
-	Here, <*tenant*> refers to **edge** or **management**.  
+	Here, &#60;tenant&#62; refers to **edge** or **management**.  
 
 2. Change the password as described in [User options and settings](/users-guide/getting-started/#user-settings).
 

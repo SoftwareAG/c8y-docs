@@ -79,13 +79,13 @@ The object will be deleted from the list.
 
 Cumulocity IoT allows to retrieve configuration data and store and manage it in a configuration repository. The configuration data contains the parameters and the initial settings of your device.
 
-Configuration snapshots help you, for example, to apply the same configuration to multiple devices as described below.
+Configuration snapshots help you, for example, to apply the same configuration to multiple devices as described below. There are two different binary based configurations. Configuration snapshots and configuration snapshots which support multiple configuration types.
 
-Click **Configuration repository** in the the **Management** menu in the navigator. In the **Configuration repository** page, all available configurations are listed. Each entry shows the configuration name, the description of the configuration, the device type and the configuration type.
+Click **Configuration repository** in the the **Management** menu in the navigator. In the **Configuration repository** page, all available configuration snapshots are listed. Each entry shows the configuration name, the description of the configuration, the device type and the configuration type. 
 
 ![Configuration Repository](/images/users-guide/DeviceManagement/devmgmt-management-configrepo.png)
 
-#### To add a configuration snapshot
+#### To add a configuration snapshot 
 
 1. Click **Add configuration snapshot** at the right of the top menu bar.
 2. In the resulting dialog box, enter a unique name.
@@ -101,30 +101,55 @@ The configuration will be added to the configuration repository.
 
 #### To edit a configuration snapshot
 
-The configurations in the **Configuration repository** page can be edited by clicking on the external menu located at the far right.
+To edit the configuration snapshots, just click on the menu icon located at the right of the row and then click **Edit**.
 
 ![Configuration Repository](/images/users-guide/DeviceManagement/devmgmt-management-configrepoedit.png)
 
 When ready, click **Update configuration**.
 
-#### To get a snapshot from a device
+#### To delete a configuration snapshot
+
+To delete configuration snapshots, click on the menu icon at the right of the row and then click **Delete**.
+
+The configuration snapshot will be deleted from the configuration snapshot repository.
+
+#### To retrieve a current snapshot from a device
 
 In addition to adding configurations from a file you can also add configurations by retrieving them from a device.
 
-In order to save a configuration snapshot from a device, follow these steps:
+In order to retrieve a current configuration snapshot from a device, follow these steps:
 
 1. Navigate to the desired device in **Devices** > **All devices** and open its **Configuration** tab.
-2. Under **Device-Supported Configurations**, select the desired configuration and click 
+2. Under **Configuration snapshot**, click **Get new snapshot from device** at the top right.
+
+The retrieved snapshot can be found in the **Configuration repository**, under  **Management** menu in the navigator.
+
+![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-old-getnewsnapshot.png)
+
+#### To retrieve a snapshot from a device which supports multiple configuration types
+
+Follow the following steps in order to retrieve a snapshot from a device which supports multiple configuration types:
+
+1. Navigate to the desired device in **Devices** > **All devices** and open its **Configuration** tab.
+2. Under **Device-supported configurations**, select the desired configuration and click 
 **Get snapshot from device** at the right.
 
 Once retrieved, you can save or download the snapshot in the Preview section. The snapshot will be added to the **Configuration repository**, accessible from the **Management** menu in the navigator.
 
 ![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
 
-> Clicking “Get snapshot from device”, creates a new operation. If the operation is in status PENDING
+> Clicking **Get snapshot from device**, creates a new operation. If the operation is in status PENDING
 or EXECUTING, it is not possible to trigger another configuration request for the configuration type. Navigate to the **Control** tab of a device to cancel the operation or view the history of operation changes.
 
 #### To apply a configuration snapshot to a device
+
+1. Navigate to the desired device and open its **Configuration** tab.
+2. Under **Configuration snapshot**, select a configuration from the dropdown field.
+3. Click **Put new snapshot to device** to apply the selected snapshot to the device.
+
+![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
+
+#### To apply a configuration snapshot to a device which supports multiple configuration types.
 
 1. Navigate to the desired device and open its **Configuration** tab.
 2. Under **Available Supported Configurations**, select a configuration file.

@@ -49,7 +49,7 @@ Since there will be no widgets on the dashboard yet, you will see an **Add Widge
 
 	<img src="/images/users-guide/cockpit/cockpit-widget-add.png" name="Add widget">
 
-3. Next, the widget can be configured under **Configuration**. According to the widget type selected, various parameters may be specified. For details on each widget type refer to [Widgets collection](#widgets).
+3. Next, configure the widget. According to the widget type selected, various parameters may be specified under **Configuration**. For details on each widget type refer to [Widgets collection](#widgets).
  
 4. In the **Appearence** tab, you can customize the content and header style for the widget individually, in the same way as specifying the layout of the [dashboard](#creating-dashboards).
 

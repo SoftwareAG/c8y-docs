@@ -1,4 +1,4 @@
----
+Connectivity---
 weight: 65
 title: LightweightM2M
 layout: redirect
@@ -6,7 +6,17 @@ layout: redirect
 
 Lightweight M2M (LWM2M) is a traffic and resource-optimized protocol to remotely manage IoT devices. The protocol is standardized by the Open Mobile Alliance. For more information, see [http://openmobilealliance.org/iot/lightweight-m2m-lwm2m](http://openmobilealliance.org/iot/lightweight-m2m-lwm2m).
 
-You can connect any device supporting LWM2M to Cumulocity IoT without programming. Instead, you configure how LWM2M devices are mapped to Cumulocity IoT using device protocols.
+> **Info** You can connect any device supporting LWM2M 1.0 to Cumulocity IoT without programming. We expect the device and its capabilities (e.g. Firmware Update) to be compliant to the LWM2M specification.  The device must support the UDP binding of the LWM2M standard.
+
+Our LWM2M solution allows any LWM2M Object to be easily interfaced with the platform. For the sake of convenience , we provide out-of-the-box integration for the following LWM2M objects:
+
+- Device (/3)
+- Connectivity Monitoring (/4)
+- Firmware Update (/5)
+- Location (/6)
+
+To make use of these integrations, please upload the corresponding DDF XML to your tenant.
+For arbitrary protocols, you can configure how LWM2M devices are mapped to Cumulocity IoT using device protocols.
 
 ![Device protocols](/images/users-guide/lwm2m/lwm2m-deviceprotocol.png)
 
@@ -39,7 +49,7 @@ In the first CSV example you can see the following fields:
 </tr>
 <tr>
 <td style="text-align:left">CREDENTIALS</td>
-<td style="text-align:left">The content of this field is not used by LWM2M.</td>
+<td style="text-align:left">The content of this field is not used by the LWM2M feature. However, this field is still mandatory. For LWM2M-only devices, it is okay to use "dummy" credentials here. </td>
 </tr>
 <tr>
 <td style="text-align:left">NAME</td>
@@ -91,7 +101,7 @@ The table below reflects the full set of possible fields that can be added:
 <tr>
 <td style="text-align: left">endpoint id</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The name of the LWM2M endpoint.</td>
+<td style="text-align: left">The name of the LWM2M client endpoint.</td>
 <td style="text-align: left">Yes</td>
 </tr>
 <tr>

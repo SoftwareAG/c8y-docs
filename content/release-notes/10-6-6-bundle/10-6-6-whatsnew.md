@@ -7,6 +7,14 @@ layout: redirect
 
 ### Cockpit
 
+
+#### New dashboard functionality
+
+The dashboard functionality has been improved. 
+
+
+
+
 #### New welcome widget	
 
 [MTM-30226] The welcome widget has been modified. The new welcome widget comes in two versions, which show different messages and quick links, based on the tenant type of the user (regular or trial tenant).
@@ -14,11 +22,6 @@ layout: redirect
 ![Welcome widget](/images/release-notes/welcome-widget.png)
 
 See also [Cockpit > Overview](/users-guide/cockpit#overview) in the User guide.
-
-#### New dashboard functionality
-
-to be added
-
 
 #### New smartphone wizard
 

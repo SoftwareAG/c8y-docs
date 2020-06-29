@@ -95,7 +95,7 @@ Click **Configuration repository** in the the **Management** menu in the navigat
 6. Specify the configuration snapshot file by either uploading it from the file system, specifying a URL from where the configuration snapshot can be obtained or choosing a file.
 7. Click **Add configuration**.
 
-The configuration will be added to the configuration repository.
+The configuration snapshot will be added to the configuration repository.
 
 ![Configuration Snapshot Repository](/images/users-guide/DeviceManagement/devmgmt-management-configrepo-addsnapshot.png)
 

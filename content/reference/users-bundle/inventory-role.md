@@ -16,7 +16,7 @@ layout: redirect
 
 ### Retrieve an inventory role
 
-Required role: ROLE_USER_MANAGEMENT_READ
+Required role: ROLE_USER_MANAGEMENT_READ or ROLE_USER_MANAGEMENT_CREATE and the user has inventory role assigned
 
 Response body: InventoryRole
 

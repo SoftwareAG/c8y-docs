@@ -16,7 +16,7 @@ layout: redirect
 
 ### Get all available inventory roles
 
-Required role: ROLE_USER_MANAGEMENT_READ
+Required role: ROLE_USER_MANAGEMENT_READ or ROLE_USER_MANAGEMENT_CREATE
 
 Response body: InventoryRoleCollection
 

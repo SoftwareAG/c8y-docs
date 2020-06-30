@@ -115,9 +115,9 @@ To delete configuration snapshots, click on the menu icon at the right of the ro
 
 The configuration snapshot will be deleted from the configuration snapshot repository.
 
-#### To retrieve a current snapshot from a device
+#### To retrieve and apply a configuration snapshot
 
-In addition to adding configurations from a file you can also add configurations by retrieving them from a device.
+In this section you can see how to retrieve and apply a configuration snapshot to devices which do not support multiple configuration types.
 
 In order to retrieve a current configuration snapshot from a device, follow these steps:
 
@@ -128,7 +128,17 @@ The retrieved snapshot can be found in the **Configuration repository**, under *
 
 ![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-old-getnewsnapshot.png)
 
-#### To retrieve a snapshot from a device which supports multiple configuration types
+To apply a configuration snapshot to a device:
+
+1. Navigate to the desired device and open its **Configuration** tab.
+2. Under **Configuration snapshot**, select a configuration from the dropdown field.
+3. Click **Put new snapshot to device** to apply the selected snapshot to the device.
+
+![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
+
+#### To retrieve and apply snapshot to a device which supports multiple configuration types
+
+In this section you can see how to retrieve and apply a configuration snapshot to devices which support multiple configuration types.
 
 Follow the following steps in order to retrieve a snapshot from a device which supports multiple configuration types:
 
@@ -141,17 +151,9 @@ Once retrieved, you can save or download the snapshot in the **Preview** section
 ![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
 
 > Clicking **Get snapshot from device**, creates a new operation. If the operation is in status PENDING
-or EXECUTING, it is not possible to trigger another configuration request for the configuration type. Navigate to the **Control** tab of a device to cancel the operation or view the history of operation changes.
+or EXECUTING, it is not possible to trigger another configuration request for the configuration type. Navigate to the **Control** tab of a device to cancel the operation or view the history of operation changes.mt-devices-config-putsnapshot.png)
 
-#### To apply a configuration snapshot to a device
-
-1. Navigate to the desired device and open its **Configuration** tab.
-2. Under **Configuration snapshot**, select a configuration from the dropdown field.
-3. Click **Put new snapshot to device** to apply the selected snapshot to the device.
-
-![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
-
-#### To apply a configuration snapshot to a device which supports multiple configuration types
+To apply a configuration snapshot to a device which supports multiple configuration types:
 
 1. Navigate to the desired device and open its **Configuration** tab.
 2. Under **Available supported configurations**, select a configuration file.
@@ -160,17 +162,6 @@ or EXECUTING, it is not possible to trigger another configuration request for th
 ![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
 
 > **Info:** Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered bases on device type. Only configuration files with a matching device type or without a device type defined are shown in the UI.
-
-#### To apply a configuration snapshot from one device to another
-
-1. Navigate to the device which has your desired configuration and open the **Configuration** tab.
-2. Under **Device-supported configurations**, select the desired configuration and click **Get snapshot from device** at the top right. Afterwards, in the Preview section, click **Save to repository.**
-3. Navigate to the other device and open its **Configuration** tab.
-4. Under **Available supported configurations**, select the new configuration file and click **Put snapshot to device**.
-
->**Info:** When you apply a configuration snapshot from one device to another, the configuration may contain data which is device-specific.
->
-> **Info:** Under the **Available supported configurations** section, only configuration files with matching Configuration type property or no Configuration type defined are displayed. Also, configuration files are filtered bases on Device type. Only configuration files with matching Device type or no Device type are shown in the UI.
 
 ### <a name="credentials"></a>Managing device credentials
 

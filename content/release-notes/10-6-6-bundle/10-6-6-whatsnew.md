@@ -59,7 +59,7 @@ The following improvements have been implemented in the data broker since 10.6.0
 
 ### Web SDK - Migration of dashboards
 
-The dashboards for groups and devices are now fully migrated to Angular. 
+[MTM-28531] The dashboards for groups and devices are now fully migrated to Angular. 
 
 There is no further migration of AngularJS widgets required. Backward compatibility is maintained by still allowing to show AngularJS widgets and using the same data structure for storing.
 
@@ -71,3 +71,4 @@ In this context, the view of the dashboard the widget editors has been updated t
 
 
 
+MTM-28531

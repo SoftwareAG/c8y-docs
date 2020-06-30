@@ -4,40 +4,41 @@ title: Device statistics
 layout: redirect
 ---
 
-Device statistics are collected for each inventory object with at least one Measurement, Event or Alarm. There is no additional checks if the inventory object is marked as device using *c8y_IsDevice* fragment. Simply when the first Measurement, Event or Alarm is created for a specific inventory object Cumulocity is always considering this as a device and starts counting.
+Device statistics are collected for each inventory object with at least one measurement, event or alarm. There are no additional checks if the inventory object is marked as device using *c8y_IsDevice* fragment. Simply when the first measurement, event or alarm is created for a specific inventory object Cumulocity IoT is always considering this as a device and starts counting.
 
 Device statistics are counted with daily and monthy rate. 
 
 Only requests with *Persistent* and *Quiescent* processing modes are considered when counting device statistics.
 
-Following requests are counted:
+The following requests are counted:
 
 * alarm creation and update
 * event creation and update
 * measurement creation
-* bulk measurement creation are counted as a multiple requests
-* bulk alarm status update are counted as multiple requests
+* bulk measurement creation is counted as multiple requests
+* bulk alarm status update is counted as multiple requests
 * MQTT and SmartREST requests with multiple rows are counted as multiple requests
 
-Frequently Asked Questions:
+Frequently asked questions:
 
-* Does the operations on device firmware are counted?
+* Are operations on device firmware counted?
 **No**, device configuration and firmware update operates on inventory objects, thus they are not counted.
-* Does the requests done by the UI applications, for example when browsing device details are counted?
+* Are requests done by the UI applications, for example when browsing device details, counted?
 **No**, viewing device details performs only GET requests which are not counted.
 * Is the clear alarm operation done from the UI counted?
-**Yes**, clear alarm operation is performing in fact alarm update operation thus it will be counted as device request.
+**Yes**, a clear alarm operation in fact performs an alarm update operation and it will be counted as device request.
 * Is there any operation performed on the device which is counted?
-**Yes**, retrieving device logs operation requires from the device to create an event and attach binary with logs to it. Those are two separate requests and both are counted.
-* When I have a device with children does the requests are counted always to the root device or separately for each child? Separately for each child. 
+**Yes**, retrieving device logs requires from the device to create an event and attach a binary with logs to it. Those are two separate requests and both are counted.
+* When I have a device with children are the requests counted always to the root device or separately for each child?
+Separately for each child. 
  
 
 ### DeviceStatistics
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|deviceId|long|1|Device id.|
-|count|long|1|Sum of Measurement, Event and Alarms created and updated for a given device.|
+|deviceId|long|1|Device ID.|
+|count|long|1|Sum of measurement, event and alarms created and updated for a given device.|
 
 ### DeviceStatisticsCollectionRepresentation [application/json]
 
@@ -52,7 +53,7 @@ Frequently Asked Questions:
 
 |      Path param        |  Type  | Description |
 |:-----------------------|:-------|:------------|
-| tenantId               | String | Tenant id for which device statistics should be loaded. |
+| tenantId               | String | Tenant ID for which device statistics should be loaded. |
 | date                   | String | Date in form of YYYY-MM-dd of queried month (day value is ignored). |
 
 |      Query param       |  Type  |
@@ -69,7 +70,7 @@ Example Request: Get statistics of management tenant for June 2020.
     Host: ...
     Authorization: Basic ...
 
-Example Response :
+Example Response:
 
     HTTP/1.1 200 OK
     Content-Type: application/json
@@ -101,7 +102,7 @@ Example Response :
 
 |      Path param        |  Type  | Description |
 |:-----------------------|:-------|:------------|
-| tenantId               | String | Tenant id for which device statistics should be loaded. |
+| tenantId               | String | Tenant ID for which device statistics should be loaded. |
 | date                   | String | Date in form of YYYY-MM-dd of queried day. |
 
 |      Query param       |  Type  |
@@ -118,7 +119,7 @@ Example Request: Get statistics of management tenant for 28th of June 2020.
     Host: ...
     Authorization: Basic ...
 
-Example Response :
+Example Response:
 
     HTTP/1.1 200 OK
     Content-Type: application/json

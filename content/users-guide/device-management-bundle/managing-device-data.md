@@ -79,7 +79,7 @@ The object will be deleted from the list.
 
 Cumulocity IoT allows to retrieve configuration data and store and manage it in a configuration repository. The configuration data contains the parameters and the initial settings of your device.
 
-Configuration snapshots help you, for example, to apply the same configuration to multiple devices as described below. There are two different binary based configurations. Configuration snapshots and configuration snapshots which support multiple configuration types.
+Configuration snapshots help you, for example, to apply the same configuration to multiple devices as described below. There are two different binary-based configurations. Configuration snapshots and configuration snapshots which support multiple configuration types.
 
 Click **Configuration repository** in the the **Management** menu in the navigator. In the **Configuration repository** page, all available configuration snapshots are listed. Each entry shows the configuration name, the description of the configuration, the device type and the configuration type. 
 
@@ -101,11 +101,11 @@ The configuration snapshot will be added to the configuration repository.
 
 #### To edit a configuration snapshot
 
-To edit the configuration snapshots, just click on the menu icon located at the right of the row and then click **Edit**.
+To edit a configuration snapshots, click on the menu icon at the right of the row and then click **Edit**.
 
 ![Configuration Repository](/images/users-guide/DeviceManagement/devmgmt-management-configrepoedit.png)
 
-When ready, click **Update configuration**.
+Click **Update configuration** to save your changes.
 
 #### To delete a configuration snapshot
 
@@ -122,7 +122,7 @@ In order to retrieve a current configuration snapshot from a device, follow thes
 1. Navigate to the desired device in **Devices** > **All devices** and open its **Configuration** tab.
 2. Under **Configuration snapshot**, click **Get new snapshot from device** at the top right.
 
-The retrieved snapshot can be found in the **Configuration repository**, under  **Management** menu in the navigator.
+The retrieved snapshot can be found in the **Configuration repository**, under **Management** menu in the navigator.
 
 ![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-old-getnewsnapshot.png)
 
@@ -134,7 +134,7 @@ Follow the following steps in order to retrieve a snapshot from a device which s
 2. Under **Device-supported configurations**, select the desired configuration and click 
 **Get snapshot from device** at the right.
 
-Once retrieved, you can save or download the snapshot in the Preview section. The snapshot will be added to the **Configuration repository**, accessible from the **Management** menu in the navigator.
+Once retrieved, you can save or download the snapshot in the **Preview** section. The snapshot will be added to the **Configuration repository**, accessible from the **Management** menu in the navigator.
 
 ![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
 
@@ -149,15 +149,15 @@ or EXECUTING, it is not possible to trigger another configuration request for th
 
 ![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
 
-#### To apply a configuration snapshot to a device which supports multiple configuration types.
+#### To apply a configuration snapshot to a device which supports multiple configuration types
 
 1. Navigate to the desired device and open its **Configuration** tab.
-2. Under **Available Supported Configurations**, select a configuration file.
+2. Under **Available supported configurations**, select a configuration file.
 3. Click **Send configuration to device** at the right to apply the selected snapshot to the device.
 
 ![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
 
-> **Info:** Under **Available Supported Configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered bases on device type. Only configuration files with a matching device type or without a device type defined are shown in the UI.
+> **Info:** Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered bases on device type. Only configuration files with a matching device type or without a device type defined are shown in the UI.
 
 #### To apply a configuration snapshot from one device to another
 

@@ -4,16 +4,18 @@ title: What´s new
 layout: redirect
 ---
 
-
 ### Cockpit
 
 
-#### New dashboard functionality
+#### New dashboard and widget editors
 
-The dashboard functionality has been improved. 
+The view of the dashboard and widgets editors has been improved:
 
+![Welcome widget](/images/release-notes/widget-editor.png)
 
+The new look & feel offers a clearer overview and clarity of the functionality. See also [Cockpit > Dashboards](/users-guide/cockpit#dashboards) in the User guide. 
 
+This change is related to the dashboard migration, see below. 
 
 #### New welcome widget	
 
@@ -27,11 +29,8 @@ See also [Cockpit > Overview](/users-guide/cockpit#overview) in the User guide.
 
 [MTM-30234] A new wizard is available to connect a smartphone to the platform. You can access it through a new quick link in the welcome widget of the Cockpit application.
 
-add screenshot
+![Smartphone wizard](/images/release-notes/smartphone-wizard.png)
 
-### New version of Cumulocity IoT Sensor App
-
-to be added
 
 ### Device integration: Cumulocity IoT NetComm Agent
 
@@ -58,6 +57,17 @@ The following improvements have been implemented in the data broker since 10.6.0
 
 [MTM-31746] Russian is now available as a standard language.	
 
+### Web SDK - Migration of dashboards
+
+The dashboards for groups and devices are now fully migrated to Angular. 
+
+There is no further migration of AngularJS widgets required. Backward compatibility is maintained by still allowing to show AngularJS widgets and using the same data structure for storing.
+
+For details on creating new widgets based on Angular, see [How-to recipes > Add a custom widget to a dashboard](/web/how-to/#add-a-custom-widget) in the Web SDK guide.
+
+The new components can be used to display dashboards on any page with or without the context and widget concept of the group and device dashboards. A demo on how to do that has been added to the tutorial application.  
+
+In this context, the view of the dashboard the widget editors has been updated to improve the user experience, see above. Moreover, a new preview is provided which can also be added to an AngularJS widget by using the `previewImage` property in the widget definition.
 
 
 

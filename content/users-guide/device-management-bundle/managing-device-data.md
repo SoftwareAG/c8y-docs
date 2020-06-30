@@ -85,7 +85,7 @@ Click **Configuration repository** in the the **Management** menu in the navigat
 
 ![Configuration Repository](/images/users-guide/DeviceManagement/devmgmt-management-configrepo.png)
 
-#### To add a configuration snapshot 
+#### <a name="add-snapshot"></a> To add a configuration snapshot 
 
 1. Click **Add configuration snapshot** at the right of the top menu bar.
 2. In the resulting dialog box, enter a unique name.
@@ -102,6 +102,8 @@ The configuration snapshot will be added to the configuration repository.
 #### To edit a configuration snapshot
 
 To edit a configuration snapshots, click on the menu icon at the right of the row and then click **Edit**.
+
+For details on the fields, see [To add a configuration snapshot](/users-guide/device-management#add-snapshot).
 
 ![Configuration Repository](/images/users-guide/DeviceManagement/devmgmt-management-configrepoedit.png)
 

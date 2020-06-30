@@ -4,7 +4,7 @@ title: Documentation changes
 layout: redirect
 ---
 
-In addition to all enhancements or changes related to the improvements and fixes of the 10.5.7 release, the following improvements or modifications have been made in the area of documentation.
+In addition to all enhancements or changes related to the improvements and fixes of the 10.6.0 release, the following improvements or modifications have been made in the area of documentation.
 
 ### Device integration tutorials
 

@@ -80,7 +80,7 @@ Example:
 class: com.cumulocity.model.event.Event
 
 |Parameter|Data type|Description|
-|:--|:----------|:-------------|:----------|
+|:--|:----------|:-------------|
 |id|[ID](/event-language/data-model#id)|The ID of the Event|
 |creationTime|Date|The time when the Event was created in the database|
 |type|String|The type of the Event|
@@ -105,7 +105,7 @@ Example:
 class: com.cumulocity.model.measurement.Measurement
 
 |Parameter|Data type|Description|
-|:--|:----------|:-------------|:----------|
+|:--|:----------|:-------------|
 |id|[ID](/event-language/data-model#id)|The ID of the Measurement|
 |type|String|The type of the Measurement|
 |time|Date|The time when the Measurement was created (as sent by device)|
@@ -126,7 +126,7 @@ Example:
 class: com.cumulocity.model.operation.Operation
 
 |Parameter|Data type|Description|
-|:--|:----------|:-------------|:----------|
+|:--|:----------|:-------------|
 |id|[ID](/event-language/data-model#id)|The ID of the Operation|
 |creationTime|Date|The time when the Operation was created in the database|
 |status|[OperationStatus](/event-language/data-model#operationstatus)|The current status of the Operation|
@@ -146,7 +146,7 @@ Example:
 class: com.cumulocity.model.event.Alarm
 
 |Parameter|Data type|Description|
-|:--|:----------|:-------------|:----------|
+|:--|:----------|:-------------|
 |id|[ID](/event-language/data-model#id)|The ID of the Alarm|
 |creationTime|Date|The time when the Alarm was created in the database|
 |type|String|The type of the Alarm|
@@ -174,7 +174,7 @@ Example:
 ### Response received
 
 |Parameter|Data type|Description|
-|:--|:----------|:-------------|:----------|
+|:--|:----------|:-------------|
 |status|Integer|Http response status|
 |body|String|Http response body|
 |creationTime|Date|The time when the response was created|

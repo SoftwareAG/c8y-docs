@@ -48,7 +48,7 @@ For simpler access you can receive the payload directly in the data type of the 
 class: com.cumulocity.model.ManagedObject
 
 |Parameter|Data type|Description|
-|:--|:----------|:-------------|:----------|
+|:--|:----------|:-------------|
 |id|[ID](/event-language/data-model#id)|ID of the ManagedObject|
 |type|String|The type of the ManagedObject|
 |name|String|The name of the ManagedObject|
@@ -170,7 +170,7 @@ Example:
       event.alarm.time,
       event.alarm.source
     from AlarmCreated event;
-    
+
 ### Response received
 
 |Parameter|Data type|Description|
@@ -188,4 +188,3 @@ Example:
       event.creationTime,
       getString(event.source, 'id.value') as source
     from ResponseReceived event;   
-

@@ -1,5 +1,5 @@
 ---
-weight: 21
+weight: 15
 title: Documentation changes
 layout: redirect
 ---

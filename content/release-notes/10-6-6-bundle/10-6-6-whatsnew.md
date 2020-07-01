@@ -34,8 +34,15 @@ See also [Cockpit > Overview](/users-guide/cockpit#overview) in the User guide.
 
 ### Device integration: Cumulocity IoT NetComm Agent
 
-to be added
+[31982] A new open-source reference agent for the Casa Systems (NetComm) routers of the NTC-220 series has been released. The Cumulocity IoT NetComm Agent supports a wide range of the Cumulocity IoT platform capabilities, for example:
 
+* Configuring WAN, LAN and DHCP networks.
+* Updating software and firmware remotely.
+* Collecting metrics like system resources and cellular signal strength as measurements.
+* Updating and tracking GPS locations.
+
+For details, refer to the [Casa Systems (NetComm) router](/device-tutorials/netcomm-router/) in the Device integration tutorials. 
+ 
 ### Data broker
 
 The following improvements have been implemented in the data broker since 10.6.0.
@@ -65,7 +72,7 @@ There is no further migration of AngularJS widgets required. Backward compatibil
 
 For details on creating new widgets based on Angular, see [How-to recipes > Add a custom widget to a dashboard](/web/how-to/#add-a-custom-widget) in the Web SDK guide.
 
-The new components can be used to display dashboards on any page with or without the context and widget concept of the group and device dashboards. A demo on how to do that has been added to the tutorial application.  
+The new components can be used to display dashboards on any page with or without the context and widget concept of the group and device dashboards. A demo has been added to the tutorial application. See [Angular > Overview](/web/angular/#overview) in the Web SDK guide for information on the tutorial application.  
 
 In this context, the view of the dashboard the widget editors has been updated to improve the user experience, see above. Moreover, a new preview is provided which can also be added to an AngularJS widget by using the `previewImage` property in the widget definition.
 

@@ -6,8 +6,6 @@ layout: redirect
 
 The following table lists the tenants and users available in Cumulocity IoT Edge:
 
-<div style="width:100px">Credentials</div>
-
 |<div style="width:100px">Tenant</div>|<div style="width:100px">User</div>|<div style="width:150px">Credentials</div>|Description
 |:---|:---|:---|:---
 |edge|Tenant admin user|Username: The username provided during the post-installation process.<br>Password: The password provided during the post-installation process.<br>|The **edge** tenant is the default tenant. The tenant admin user is created during the post-installation process.<br><br>

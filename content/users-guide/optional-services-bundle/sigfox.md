@@ -14,7 +14,7 @@ Cumulocity IoT can interface with Sigfox devices through the Sigfox Cloud. You c
 
 The following illustration grants you a quick overview of the Cumulocity IoT Sigfox integration:
 
-![Cumulocity IoT Sigfox integration](/images/users-guide/sigfox/sigfox-cumulocity-integration.png)
+![Cumulocity IoT Sigfox integration](/images/users-guide/sigfox/cumulocity-sigfox-integration.png)
 
 The following sections describe how to:
 
@@ -126,9 +126,9 @@ Click **Add value** to create the value configuration.
 
 In the following window, configure the relevant values as shown in this example.
 
-![LoRa protocol add new value](/images/users-guide/actility/lora-protocols-newvalue.png)
+![LoRa protocol add new value](/images/users-guide/actility/devmgmt-devicetypes-protocols-loranewvalue.png)
 
-![LoRa protocol add new value](/images/users-guide/actility/lora-protocols-newvalue2.png)
+![LoRa protocol add new value](/images/users-guide/actility/devmgmt-devicetypes-protocols-loranewvalue2.png)
 
 The value configuration maps the value in the payload of a message type to the Cumulocity IoT data.
 
@@ -138,7 +138,7 @@ In this sample payload structure the message ID is "1".
 
 <img src="/images/users-guide/actility/lora-payload-example2.png" alt="Example payload: message type source" style="max-width: 100%">
 
-![LoRa bits](/images/users-guide/actility/lora-protocols-loraid.png)
+![LoRa bits](/images/users-guide/actility/devmgmt-devicetypes-protocols-loraid.png)
 
 Under **General**, specify a name for the value and the category under which it will be displayed in the values list.  
 
@@ -148,7 +148,7 @@ In this example, the "Channel 1 Type" information starts in byte 2 (i.e. start b
 
 <img src="/images/users-guide/actility/lora-payload-example3.png" alt="Example payload: value selection" style="max-width: 100%">
 
-![LoRa bits](/images/users-guide/actility/lora-protocols-lorabits.png)
+![LoRa bits](/images/users-guide/actility/devmgmt-devicetypes-protocols-lorabits.png)
 
 The hexadecimal value is converted to a decimal number and afterwards a "value normalization" is applied.
 
@@ -184,9 +184,9 @@ Click **Save** to create the device protocol.
 
 The following images show an example for a message which sends a measurement when the battery level value changes.
 
-![Battery level changes example](/images/users-guide/actility/lora-protocols-battery.png)
+![Battery level changes example](/images/users-guide/actility/devmgmt-devicetypes-protocols-battery.png)
 
-![Battery level changes example](/images/users-guide/actility/lora-protocols-battery2.png)
+![Battery level changes example](/images/users-guide/actility/devmgmt-devicetypes-protocols-battery2.png)
 
 
 **<a name="nested-structure-example"></a>Example with nested structure**
@@ -201,7 +201,7 @@ The message ID should be the same for all the values. Enter the rest of the para
 
 This will be the result:
 
-![Value configuration in detail: nested structure](/images/users-guide/actility/lora-protocols-gpsexample.png)
+![Value configuration in detail: nested structure](/images/users-guide/actility/devmgmt-devicetypes-protocols-gpsexample.png)
 
 ### <a name="register-device-sigfox"></a>Registering Sigfox devices
 

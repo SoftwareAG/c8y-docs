@@ -125,58 +125,61 @@ Content-Length: ...
 
 ### Query language
 
-Query language is applied to all managed objects. Users can query using the `query` parameter as follows:
+Query expressions are matched against all managed objects.
+You can use the following `query` parameters:
 
-* only query to database: ...?query=name eq 'M01'
-* keyword $filter=: ...?query=$filter=name eq  'M01'
-* keyword $orderby=: ...?query=$orderby=id asc
-* keywords $filter= and $orderby=: ...?query=$filter=name eq 'M01' $orderby=id,
+* Only query the database: `...?query=name eq 'M01'`
+* Keyword `$filter=`: `...?query=$filter=name eq  'M01'`
+* Keyword `$orderby=`: `...?query=$orderby=id asc`
+* Keywords `$filter=` and `$orderby=`: `...?query=$filter=name eq 'M01' $orderby=id`
 
-Since all of this is happening as part of a URL, all necessary escaping has to be done with URL encoding. Regex features with custom filter queries are not supported.
+Query expressions extend the URL.
+The [OData syntax rules for URLs](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html#sec_URLSyntax) apply.
+Regex features with custom filter queries are not supported.
 
-The following parts explain how an application will handle a query in the parameter `query`.
+The following sections explain how an application will handle a query in the parameter `query`.
 
 ##### Supported query operations:
 
-* eq(equal): City eq 'Redmond'
-* gt(greater than): Price gt 20
-* ge(greater than or equal): Price ge 10
-* lt(less than): Price lt 20
-* le(less than or equal): Price le 100
-* and(logical and): Price le 200 and Price gt 3.5
-* or(logical or): Price le 3.5 or Price gt 200
+* `eq` (equal): `City eq 'Redmond'`
+* `gt` (greater than): `Price gt 20`
+* `ge` (greater than or equal): `Price ge 10`
+* `lt` (less than): `Price lt 20`
+* `le` (less than or equal): `Price le 100`
+* `and` (logical and): `Price le 200 and Price gt 3.5`
+* `or` (logical or): `Price le 3.5 or Price gt 200`
 
 ##### Supported query functions:
 
-* has: has(c8y&#95;IsDevice) - match objects with custom property c8y_IsDevice
+* `has`: `has(c8y_IsDevice)` - match objects with custom property `c8y_IsDevice`
 
-	* 	Supports only custom fragments.   
-	*   Standard properties are not supported, i.e. id, type, name, self, lastUpdated, owner, creationTime, supportedMeasurements, childAssets, childDevices, childAdditions, externalIds   
-* bygroupid(12) - match objects from group with ID equals 12
+	* 	Only supports custom fragments.   
+	*   Standard properties are not supported, i.e. none of: `id`, `type`, `name`, `self`, `lastUpdated`, `owner`, `creationTime`, `supportedMeasurements`, `childAssets`, `childDevices`, `childAdditions`, `externalIds`   
+* `bygroupid(12)` - match objects from group with ID `12`
 
 ##### Supported query values:
 
-* string; examples: name eq 'Dev002', name eq 'Dev*', name eq '*001', name eq '*'
-    * string must be surrounded by single quotes
-    * string can contain wildcard '*' and this wildcard matches from 0 to N characters
-    * matching is case-sensitive
-* number values
-* datetime; example: creationTime.date gt '2015-10-24T09:00:53.351+01:00' (+ must be url encoded)
+* String; examples: `name eq 'Dev002'`, `name eq 'Dev*'`, `name eq '*001'`, `name eq '*'`
+    * The string must be surrounded by single quotes
+    * The string can contain the wildcard `*` and it matches 0 to N characters
+    * Matching is case-sensitive
+* Number values
+* `datetime`; example: `creationTime.date gt '2015-10-24T09:00:53.351+01:00'` (this must be OData encoded)
 
 ##### Supported query properties:
 
-* simple: name
-* nested: c8y_Availability.status
-* array: c8y_Availability.statuses = [1, 2, 3]
+* Simple: `name`
+* Nested: `c8y_Availability.status`
+* Array: `c8y_Availability.statuses = [1, 2, 3]`
 
 ##### Grouping query operators:
 
-* ( ) Precedence grouping: (p1 eq 1) and (p2 eq 5 or p2 eq 6)
+* `( )` Precedence grouping: `(p1 eq 1) and (p2 eq 5 or p2 eq 6)`
 
 ##### Supported sort operations:
 
-* desc; example: $orderby=name desc
-* asc; example: $orderby=name, $orderby=name asc
+* `desc`; example: `$orderby=name desc`
+* `asc`; example: `$orderby=name, $orderby=name asc`
 
 > **Important:** If you query `/inventory/managedObjects?type=c8y_Firmware&query=$filter=(name+eq+'Controller 1')` the `type` queryParam is ignored.<br>Instead `url/inventory/managedObjects?query=$filter=(type+eq+c8y_Firmware+and+name+eq+'Controller 1')` has to be queried.
 

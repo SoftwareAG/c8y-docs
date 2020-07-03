@@ -194,7 +194,7 @@ To register a LoRa device, navigate to the Device Management application and cli
 
 In the upcoming window, click **Custom device registration** and select **LoRa**:
 
-![Register devices](/images/users-guide/sigfox/sigfox-registration.png)
+![Register devices](/images/users-guide/actility/lora-selection.png)
 
 Cumulocity IoT fully supports the LoRa device provisioning with Over-the-Air Activation (OTAA) which is the preferred and most secure way to connect with the LoRa network.
 If Activation by Personalization (ABP) is required to be used, refer to the [LoRa device registration with ABP](#device-registration-with-abp-activation) section.

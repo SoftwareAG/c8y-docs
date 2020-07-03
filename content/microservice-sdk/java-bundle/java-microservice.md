@@ -336,7 +336,7 @@ POST <URL>/application/applications
 HEADERS:
   "Authorization": "<AUTHORIZATION>"
   "Content-Type": "application/vnd.com.nsn.cumulocity.application+json"
-  "Accept: application/vnd.com.nsn.cumulocity.application+json"
+  "Accept": "application/vnd.com.nsn.cumulocity.application+json"
 
 BODY:
 {
@@ -403,6 +403,16 @@ HEADERS:
 
 > **Info**: Besides the cURL command, you can also employ a graphical interface such as Postman.
 
+The response looks like this:
+
+```json
+{
+    "password": "<BOOTSTRAP_USER_PASSWORD>",
+    "name": "<BOOTSTRA_USER_NAME>",
+    "tenant": "<BOOTSTRAP_USER_TENANT>"
+}
+```
+
 #### Run the Docker container
 
 The Docker image was built and added to the local Docker repository during the [Maven build](#build-the-microservice-application). You can list all the Docker images available with the following command:
@@ -411,11 +421,25 @@ The Docker image was built and added to the local Docker repository during the [
 $ docker images
 ```
 
-Get your IMAGE ID and TAG from the list. While not strictly a means of identifying a container, you can specify a version of an image (TAG) you would like to run the container with. Run the Docker container for the microservice also providing the URL of your tenant and the bootstrap user credentials. Do not forget to expose the port 80 to a port on your host system, e.g. 8082.
+It yields an output similar to this:
 
 ```shell
-$ docker run -p 8082:80 -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_TENANT> -e C8Y_BOOTSTRAP_USER=<BOOTSTRAP_USERNAME> -e C8Y_BOOTSTRAP_PASSWORD=<BOOTSTRAP_USER_PASSWORD> -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t -e C8Y_BASEURL=<URL> <IMAGE_ID>
+REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
+hello-microservice-java   1.0.0-SNAPSHOT      3e5e7aeea7bc        52 minutes ago      143MB
 ```
+
+
+Get your IMAGE ID and TAG from the list. While not strictly a means of identifying a container, you can specify a version of an image (TAG) you would like to run the container with. Run the Docker container for the microservice:
+
+```shell
+$ docker run -p 8082:80 -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_USER_TENANT> \
+  -e C8Y_BOOTSTRAP_USER=<BOOTSTRAP_USER_NAME> \
+  -e C8Y_BOOTSTRAP_PASSWORD=<BOOTSTRAP_USER_PASSWORD> \
+  -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT \
+  -i -t -e C8Y_BASEURL=<URL> <IMAGE_ID>
+```
+
+with `https://<TENANT>.cumulocity.com` as `<URL>`. `-p 8082:80` will expose your port 80 to a port on your host system, e.g. 8082.
 
 If your Docker image has run successfully, you shall see the output on the console similar to the one below.
 

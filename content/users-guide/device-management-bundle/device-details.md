@@ -211,13 +211,11 @@ The **Alarms** tab provides information on the alarms of a device. See [Working 
 
 The **Configuration** tab allows you to configure the parameters and initial settings of your device. Depending on the device, possible configurations are:
  - Text-based configurations
- - Configuration snapshots
- - Configuration snapshots with multiple configuration types
+ - Binary-based configuration snapshots
 
-For more details on configuration snapshots, see 
-[Managing device data > Configuration snapshots](#configuration-repository).
+For more details on binary-based configuration snapshots management, see [Managing device data > Configuration snapshots](#configuration-repository).
 
-#### To add or edit a text-based configuration
+#### To add or edit a text-based configuration snapshot
 
 1. In the **Configuration** tab, you can manually add or edit the device configuration in the text field.
 2. Click **Save** to save your edits.

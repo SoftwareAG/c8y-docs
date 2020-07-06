@@ -75,7 +75,3 @@ For details on creating new widgets based on Angular, see [How-to recipes > Add 
 The new components can be used to display dashboards on any page with or without the context and widget concept of the group and device dashboards. A demo has been added to the tutorial application. See [Angular > Overview](/web/angular/#overview) in the Web SDK guide for information on the tutorial application.  
 
 In this context, the view of the dashboard the widget editors has been updated to improve the user experience, see above. Moreover, a new preview is provided which can also be added to an AngularJS widget by using the `previewImage` property in the widget definition.
-
-
-
-MTM-28531

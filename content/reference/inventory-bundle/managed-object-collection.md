@@ -160,9 +160,9 @@ The following sections explain how an application will handle a query in the par
 ##### Supported query values:
 
 * String; examples: `name eq 'Dev002'`, `name eq 'Dev*'`, `name eq '*001'`, `name eq '*'`
-    * The string must be surrounded by single quotes
-    * The string can contain the wildcard `*` and it matches 0 to N characters
-    * Matching is case-sensitive
+    * The string must be surrounded by single quotes.
+    * The string can contain the wildcard `*` and it matches 0 to N characters.
+    * Matching is case-sensitive.
 * Number values
 * `datetime`; example: `creationTime.date gt '2015-10-24T09:00:53.351+01:00'` (this must be OData encoded)
 

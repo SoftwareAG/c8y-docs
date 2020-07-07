@@ -1,16 +1,18 @@
 ---
 weight: 30
-title: Java microservice
+title: IP-tracker microservice
 layout: redirect
+aliases:
+  - /microservice-sdk/http/#microservice-java
 ---
 
-> **Important**: Review the [Hello world tutorial](/microservice-sdk/java/#java-microservice) presented in **Microservice SDK for Java** and follow the setup steps there before continuing with this example as the basic configuration steps are not explained here.
+> **Important**: Visit our [Hello world!](/microservice-sdk/java/#java-microservice) tutorial and follow the setup steps there before starting the IP-tracker microservice tutorial. The basic configuration steps are not explained here.
 
 ### Developing the IP-tracker microservice
 
 This microservice application creates a warning alarm message (for demonstration purposes) and it exposes endpoints to:
 
-- Verify if the microservice is up and running.
+- Verify that the microservice is up and running.
 - Pass a parameter to the platform and return a formatted string.
 - Get some of the environment variables and the microservice service settings.
 - Track a user's approximate location and store it in the platform.
@@ -20,7 +22,9 @@ It also uses the Cumulocity IoT UI to display the tracked locations on a map.
 
 #### Update the Project Object Model
 
-Assuming that you have the base code of the "Hello world" example presented in [Microservice SDK for Java](/microservice-sdk/java/), edit your *pom.xml* file changing the artifactId and name of your microservice to `iptracker-microservice`, and add a child element to the `<properties>` to specify the Java version you want to use. Your *pom.xml* file should contain a snippet similar to:
+Assuming that you have the base code presented in our [Hello world!](/microservice-sdk/java/#java-microservice) tutorial, edit your *pom.xml* file changing the `artifactId` and `microservice.name` of your microservice to `iptracker-microservice`.
+Also add a child element `<java.version>` to the `<properties>` element to specify the Java version you want to use.
+Your *pom.xml* file should contain a snippet similar to:
 
 ```xml
 <name>iptracker-microservice</name>
@@ -54,7 +58,7 @@ In your _cumulocity.json_ file:
 1. Add the required roles to be able to create events and alarms.
 2. Add the readiness and liveness probes.
 3. Add two keys for the microservice settings: `"ipstack.key"` and `"tracker.id"`.
-4. Set the isolation level to PER_TENANT, which means that there will be a separate instance for each tenant. For more details see the Settings section in [General aspects > Microservice manifest](/microservice-sdk/concept/#manifest).
+4. Set the isolation level to `"PER_TENANT"`. This means that there will be a separate instance for each tenant. For more details see the Settings section in [General aspects > Microservice manifest](/microservice-sdk/concept/#manifest).
 
 Your manifest file should look similar to this:
 
@@ -103,11 +107,13 @@ Your manifest file should look similar to this:
 
 ### Creating a managed object
 
-An alarm must be associated to a source and it requires an ID. Hence, you need to [create a managed object](https://cumulocity.com/reference/inventory/#managed-object-collection) to be your source and use its ID in your microservice application. The same managed object will track the locations when the microservice gets accessed on a particular endpoint.
+An alarm must be associated with a source and it requires an ID.
+Hence, you need to [create a managed object](https://cumulocity.com/reference/inventory/#managed-object-collection) to be your source and use its ID in your microservice application.
+The same managed object will track the locations when the microservice gets accessed on a particular endpoint.
 
 First, get your current location (latitude, longitude) using a free service, e.g. [My Current Location](https://mycurrentlocation.net).
 
-Create a managed object as a device named "Microservice tracker" employing a POST request as follows:
+Create a managed object as a device named "Microservice tracker" via POST request as follows:
 
 ```http
 POST <URL>/inventory/managedObjects
@@ -128,7 +134,8 @@ BODY:
   }
 ```
 
-You will get the ID of your managed object in the response. Assign this ID in your _cumulocity.json_ file to the `"tracker.id"` key.
+You will get the ID of your managed object in the response.
+Assign this ID to the `"tracker.id"` key in your _cumulocity.json_ file.
 
 On the Cumulocity IoT platform, navigate to **Devices** > **All devices** in the Device Management application to verify that your device has been created and its location is displayed on the map.
 
@@ -136,9 +143,11 @@ On the Cumulocity IoT platform, navigate to **Devices** > **All devices** in the
 
 ### Getting the client's location
 
-The microservice will get the approximate location based on the client's IP. To achieve this, it uses the free service [ipstack](https://ipstack.com) and you have to [get a free API key](https://ipstack.com/product). Once you have it, assign it in your _cumulocity.json_ file to the `"ipstack.key"` key.
+The microservice will get the approximate location based on the client's IP.
+To achieve this, it uses the free service [ipstack](https://ipstack.com) and you have to [get a free API key](https://ipstack.com/product).
+Once you have it, assign it to the `"ipstack.key"` key in your _cumulocity.json_ file.
 
-The GET request to the ipstack API using your key will return a location object. Therefore, you need to create a new file named _Location.java_ in the same directory of your _App.java_ with the following content:
+A GET request to the ipstack API using your key will return a location object. Therefore, you need to create a new file named _Location.java_ in the same directory of your _App.java_ with the following content:
 
 ```java
 package c8y.example;
@@ -391,7 +400,8 @@ public class App {
 
 ### Building and deploying the application
 
-Use the command `mvn clean install` and follow the same steps of the [Hello world tutorial](/microservice-sdk/java/#java-microservice) to deploy your microservice. You may also employ the cURL command to deploy the microservice.
+Use the command `mvn clean install` and follow the same steps of the [Hello world tutorial](/microservice-sdk/java/#java-microservice) to deploy your microservice.
+You may also employ the cURL command to deploy the microservice.
 
 ```shell
 $ curl -F "data=@target/iptracker-microservice-1.0.0-SNAPSHOT.zip" \
@@ -401,7 +411,9 @@ $ curl -F "data=@target/iptracker-microservice-1.0.0-SNAPSHOT.zip" \
 
 ### Testing the application
 
-You can test any endpoint of your application using the command line or a web browser. For example, a GET request on <kbd>location/track</kbd> will obtain the client's IP from the request header and use the `createLocationUpdateEvent` method to get the approximate location. A response will be similar to:
+You can test any endpoint of your application using the command line or a web browser.
+For example, a GET request to `<kbd>location/track</kbd>` will obtain the client's IP from the request header and use the `createLocationUpdateEvent` method to get the approximate location.
+The response will be similar to:
 
 ```http
 {
@@ -419,22 +431,30 @@ You can test any endpoint of your application using the command line or a web br
 }
 ```
 
-Using the endpoint <kbd>location/locations</kbd> will return by default five stored events. You can use the `max` parameter to specify a higher number.
+Using the endpoint `<kbd>location/locations</kbd>` will return five stored events by default.
+You can use the `max` parameter to specify a higher number.
 
-In the Device Management application, navigate to **Devices** > **All devices** and locate your microservice tracker. Under **Tracking** you will see a map with the tracked locations. It is also possible to develop your own web application and customize a map widget. Refer to the [Web SDK for Angular](https://cumulocity.com/web/angular/#apps) for more details.
+In the Device Management application, navigate to **Devices** > **All devices** and locate your microservice tracker.
+Under **Tracking** you will see a map with the tracked locations.
+You can also develop your own web application and customize a map widget.
+Refer to the [Web SDK for Angular](https://cumulocity.com/web/angular/#apps) for more details.
 
 ![Microservice tracking](/images/microservices-sdk/ms-tracking-map.png)
 
 #### Run the Docker container
 
-The Docker image was built and added to the local Docker repository during the [Maven build](#build-the-microservice-application). In a similar way as the Hello world tutorial, you can [run the Docker container](/microservice-sdk/java/#run-the-docker-container) locally. Note that in this case the isolation was changed to PER_TENANT. You can also use your Docker image name and tag to run it as follows:
+The Docker image is built and added to the local Docker repository during the [Maven build](#build-the-microservice-application).
+As you have learned in our Hello world! tutorial, you can [run the Docker container](/microservice-sdk/java/#run-the-docker-container) locally.
+Note that in this case the isolation was changed to `PER_TENANT`.
+You can also use your Docker image name and tag to run it as follows:
 
 ```shell
-$ docker run -p 8082:80 -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_TENANT> -e C8Y_BOOTSTRAP_USER=<BOOTSTRAP_USERNAME> -e C8Y_BOOTSTRAP_PASSWORD=<BOOTSTRAP_USER_PASSWORD> -e C8Y_MICROSERVICE_ISOLATION=PER_TENANT -i -t -e C8Y_BASEURL=<URL> iptracker-microservice:latest
+$ docker run -p 8082:80 -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_USER_TENANT> -e C8Y_BOOTSTRAP_USER=<BOOTSTRAP_USER_NAME> -e C8Y_BOOTSTRAP_PASSWORD=<BOOTSTRAP_USER_PASSWORD> -e C8Y_MICROSERVICE_ISOLATION=PER_TENANT -i -t -e C8Y_BASEURL=<URL> iptracker-microservice:latest
 ```
 
-If your Docker image has run successfully, you can test the microservice on any web browser. For instance, using <http://localhost:8082/location/locations> will return all the tracked locations.
+If your Docker image has run successfully, you can test the microservice on any web browser.
+For instance, using <http://localhost:8082/location/locations> will return all the tracked locations.
 
 ### Source code
 
-The code of this [iptracker-microservice](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/iptracker-microservice/) can be found in our Bitbucket M2M repositories.
+The code of our [iptracker-microservice](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/iptracker-microservice/) can be found in our Bitbucket M2M repositories.

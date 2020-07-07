@@ -10,14 +10,7 @@ With Cumulocity IoT Cloud Fieldbus you can collect data from fieldbus devices an
 * [Manage](#manage) the connected fieldbus devices.
 * [Configure](#configure) the remote management capabilities of particular types of devices and [import and export](#import) them.
 
-Cloud Fieldbus is supported out of the box by the following terminals:
-
-* [Pssystec SMARTbox Mini](https://devicepartnerportal.softwareag.com/devices/pssystec-gmbh-smartbox-mini/10043) for Modbus/RTU
-* [Pssystec SMARTbox DP](https://devicepartnerportal.softwareag.com/devices/pssystec-gmbh-smartbox-dp/10041) for Profibus
-* [NetComm Wireless NTC-6200](https://devicepartnerportal.softwareag.com/devices/netcomm-now-casa-systems-ntc-6200/10034) for Modbus/TCP and Modbus/RTU
-* [Casa Systems (NetComm) NTC-220 series](/device-tutorials/netcomm-router/) for Modbus/TCP and Modbus/RTU
-
-For further information on supported devices refer to the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/) which offers an extensive [collection of devices](https://devicepartnerportal.softwareag.com/devices) with guaranteed plug-and-play compatibility and full functional support in the Cumulocity IoT platform.
+Cloud Fieldbus is supported out of the box by several devices. For information on supported devices, refer to the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/) which allows to filter for [all devices which offer full functional support with Cloud Fieldbus](https://devicepartnerportal.softwareag.com/devices?additionalFeature=Cloud%20Fieldbus).
 
 > **Info:** To support Cloud Fieldbus with your terminal, please contact the [Software AG Support](https://empower.softwareag.com/ContactSupport/).
 

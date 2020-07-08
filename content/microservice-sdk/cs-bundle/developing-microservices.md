@@ -4,12 +4,7 @@ title: Developing microservices
 layout: redirect
 ---
 
-The SDK is based on ASP.NET Core, a cross-platform, high-performance, open-source framework for building modern, cloud-based, Internet-connected applications. ASP.NET Core apps use a Startup class, which is named Startup by convention. The Startup class
-
-* must include a Configure method to create the app's request processing pipeline, and
-* can optionally include a ConfigureServices method to configure the app's services.
-
-This document describes microservice SDK features, services, configuration files, logging and Cake (C# Make).
+The SDK is based on ASP.NET Core, a cross-platform, high-performance, open-source framework for building modern, cloud-based, Internet-connected applications. ASP.NET Core apps use a Startup class, which is named Startup by convention. The Startup class must include a `Configure` method to create the app's request processing pipeline, and can optionally include a `ConfigureServices` method to configure the app's services.
 
 There are two possible deployment types on the platform:
 
@@ -18,7 +13,6 @@ There are two possible deployment types on the platform:
 
 For development and testing purposes, you can deploy a microservice on a local Docker container. The process is described below.
 
-
 ### Microservice security
 
 The `Configure` method is used to specify how the application responds to HTTP requests. The request pipeline is configured by adding middleware components to an `IApplicationBuilder` instance.
@@ -26,7 +20,7 @@ The `Configure` method is used to specify how the application responds to HTTP r
 The `UseAuthentication` method adds a single authentication middleware component which is responsible for automatic authentication and the handling of remote authentication requests. It replaces all of the individual middleware components with a single, common middleware component. Since ASP.NET Security does not include Basic Authentication middleware, we must add custom Basic Authentication middleware.
 
 ```cs
-public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 {
 	app.UseAuthentication();
 	app.UseBasicAuthentication();
@@ -44,7 +38,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Platform
 
-The root interface for connecting to Cumulocity from C# is called "Platform". It provides access to all other interfaces of the platform, such as the inventory. In its simplest form, it is instantiated as follows.
+The root interface for connecting to Cumulocity IoT from C# is called `Platform`. It provides access to all other interfaces of the platform, such as the inventory. In its simplest form, it is instantiated as follows.
 
 To enable service providers to run microservices together with the platform, it is required to execute the registration procedure. During this process each microservice receives a dedicated bootstrap user to ensure that the microservice can be identified by the platform and can only access allowed resources.
 
@@ -58,7 +52,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-where Configuration represents a set of key/value application configuration properties.
+The `Configuration` object represents a set of key/value application configuration properties.
 
 ```cs
 public IConfiguration Configuration { get; }
@@ -69,13 +63,13 @@ public Startup(IConfiguration configuration)
 }
 ```
 
-In this way microservices should receive very basic configuration. Besides the properties related to the isolation level, the microservices will receive the following variables:
+In this way microservices receive very basic configuration. Besides the properties related to the isolation level, the microservices will receive the following variables:
 
 Variable      | Description
 --------------|----------------------
 C8Y_BASEURL | URL which points to the core platform
 C8Y_BASEURL_MQTT | URL which points to the core platform with MQTT protocol
-SERVER_PORT | Port on which the microservice should run
+SERVER_PORT | Port on which the microservice runs
 C8Y_MICROSERVICE_ISOLATION | Isolation level
 C8Y_TENANT | Application user tenant (available only for PER_TENANT isolation)
 C8Y_USER | Application user name (available only for PER_TENANT isolation)
@@ -83,7 +77,6 @@ C8Y_PASSWORD | Application user password (available only for PER_TENANT isolatio
 C8Y_BOOTSTRAP_TENANT | Bootstrap user to get platform subscriptions
 C8Y_BOOTSTRAP_USERNAME | Bootstrap user to get platform subscriptions
 C8Y_BOOTSTRAP_PASSWORD | Bootstrap user to get platform subscriptions
-
 
 ### Role-based authorization
 
@@ -156,7 +149,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Microservice subscription
 
-The following section refers to the user management as described under [General aspects](/microservice-sdk/concept) of microservices in Cumulocity.
+The following section refers to the user management as described under [General aspects](/microservice-sdk/concept) of microservices in Cumulocity IoT.
 
 This SDK has a task `CurrentApplicationSubscriptionsTask` which only fetches a list of all subscriptions. The `CurrentApplicationSubscriptionsTask` is the `IScheduledTask` implementation which runs every hour:
 
@@ -170,7 +163,7 @@ services.AddScheduler((sender, args) =>
 });
 ```
 
-It should get all subscriptions and make it available for any other part of my application to work with.
+It should get all subscriptions and make it available for any other part of your application to work with.
 
 As you can see, the `AddScheduler` takes a delegate that handles unobserved exceptions. In our scheduler code, `TaskFactory.StartNew()` is used to run the task’s code. If there is an unhandled exception, you won’t see this exception. Therefore, you may want to do some logging. This is normally done by setting `TaskScheduler.UnobservedTaskException`, that is global for this case so added our own to specifically catch scheduled tasks unhandled exceptions.
 
@@ -205,7 +198,7 @@ public class HomeController : Controller
 
 ### Program class
 
-In ASP.NET Core 2.0, the Program class is used to setup the `IWebHost`. This is the entry point to our application. The main method creates a host, builds and then runs it. The host then listens for HTTP requests.
+In ASP.NET Core 3.1, the Program class is used to setup the `IWebHost`. This is the entry point to our application. The main method creates a host, builds and then runs it. The host then listens for HTTP requests.
 
 There are multiple ways to configure the application.
 
@@ -258,7 +251,7 @@ public class Startup
         services.AddMvc();
     }
 
-    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
       app.UseMvcWithDefaultRoute();
 		}
@@ -338,7 +331,7 @@ public class Startup
 		});
 
 		//MVC
-		services.AddMvc().AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+		services.AddControllers(options => options.EnableEndpointRouting = false);
 		//services.Replace(ServiceDescriptor.Singleton(typeof(ILogger<>), typeof(TimedLogger<>)));
 	}
 	public virtual void ConfigureServicesLayer(IServiceCollection services)
@@ -347,7 +340,7 @@ public class Startup
 		services.AddSingleton<IApplicationService, ApplicationService>();
 	}
 
-	public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+	public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
 	{
 		app.UseAuthentication();
 		app.UseBasicAuthentication();
@@ -380,7 +373,7 @@ public class Program
 }
 ```
 
-The process works like this: each microservice exposes the endpoint e.g. <kbd>/health</kbd>. This endpoint is created by the library ASP.NET Core middleware. When this endpoint is invoked, it runs all the health checks that are configured in the `AddHealthChecks` method in the `Startup` class.
+Each microservice exposes the endpoint <kbd>/health</kbd>. This endpoint is created by the library ASP.NET Core middleware. When this endpoint is invoked, it runs all the health checks that are configured in the `AddHealthChecks` method in the `Startup` class.
 
 The `UseHealthChecks` method expects a port or a path. That port or path is the endpoint to use to check the health state of the service. For instance, the catalog microservice uses the path <kbd>/health</kbd>.
 
@@ -426,7 +419,7 @@ public class CheckCDriveHasMoreThan1GbFreeHealthCheck : IHealthCheck
 }
 ```
 
-Then in your ConfigureServices method, register the custom health check with adequate the lifetime of the service that makes sense for the health check and then add it to the `AddHealthChecks` registration that has been done before.
+Then in your `ConfigureServices` method, register the custom health check with adequate the lifetime of the service that makes sense for the health check and then add it to the `AddHealthChecks` registration that has been done before.
 
 ```cs
 public void ConfigureServices(IServiceCollection services)
@@ -456,7 +449,6 @@ public class Startup
 
     public IConfiguration Configuration { get; }
 
-
     public void ConfigureServices(IServiceCollection services)
     {
         ...
@@ -474,7 +466,7 @@ public class Startup
         ...
     }
 
-    public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
     {
         ...
         app.UseMvcWithDefaultRoute();
@@ -486,11 +478,11 @@ public class Startup
 
 Cake is a cross platform build automation system, and it is built on top of Roslyn and the Mono Compiler which uses C# as the scripting language to do things like compiling code, copy files/folders, running unit tests, compress files and build NuGet packages.
 
-The cake script called _build.cake_ has has the predefined tasks. These tasks represent a unit of work in Cake, and you use them to perform specific work in a specific order.
+The Cake script called _build.cake_ has has the predefined tasks. These tasks represent a unit of work in Cake, and you use them to perform specific work in a specific order.
 
 *	Clean - Cleans the specified directory, deletes files.
 *	Build – Restores the dependencies and tools of projects and the task builds all projects, but before that it does the cleaning task.
 *	Publish – The task compiles the application, reads through its dependencies specified in the project file, and publishes the resulting set of files to a directory. The result will be placed in the output folder
-*	Docker-Build - Will save an image and an application manifest to _images/multi/image.zip_. Inside the root folder of your application, the so-called "application manifest" is stored in a file named _cumulocity.json_. The zip archive contains _image.tar_ and _cumulocity.json_.
-*	Single-DockerImage - Will save an image and an application manifest  to _images/single/image.zip_. Inside the root folder of your application, the so-called "application manifest" is stored in a file named _cumulocity.json_. The zip archive contains _image.tar_ and _cumulocity.json_.
+*	Docker-Build - Will save an image and an application manifest to _images/multi/image.zip_. Inside the root folder of your application, the so-called "application manifest" is stored in a file named _cumulocity.json_. The ZIP archive contains _image.tar_ and _cumulocity.json_.
+*	Single-DockerImage - Will save an image and an application manifest  to _images/single/image.zip_. Inside the root folder of your application, the so-called "application manifest" is stored in a file named _cumulocity.json_. The ZIP archive contains _image.tar_ and _cumulocity.json_.
 *	Docker-Run - Creates a new container using default settings.

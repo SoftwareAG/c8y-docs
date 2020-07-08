@@ -68,7 +68,7 @@ Migrating from custom rules written in CEL to Apama EPL requires rewriting and r
 
 2. Make available a new tenant on which Apama has been enabled.
 
-3. Manually convert all CEP custom rules from the existing tenant into equivalent Apama EPL applications on the new tenant.
+3. Manually convert all CEP custom rules from the existing tenant into equivalent Apama EPL apps on the new tenant.
 
 4. Manually recreate all smart rules from the existing tenant on the new tenant.
 

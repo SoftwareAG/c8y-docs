@@ -342,7 +342,9 @@ Moreover custom properties are displayed, if configured.
 
 Custom properties may be defined in the [Properties Library](/users-guide/administration#properties) and then set their values in the [Custom properties](#tenants-custom-properties) tab of the tenant.
 
-You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Getting Started > UI functionalities and features> Filtering](/users-guide/getting-started/#filtering).
+You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Getting Started > UI functionalities and features > Filtering](/users-guide/getting-started/#filtering).
+
+> **Important:** The date/time range used here might differ from your server time due to different time zones. 
 
 #### To export the usage statistics table
 

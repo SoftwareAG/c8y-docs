@@ -6,7 +6,17 @@ layout: redirect
 
 Lightweight M2M (LWM2M) is a traffic and resource-optimized protocol to remotely manage IoT devices. The protocol is standardized by the Open Mobile Alliance. For more information, see [http://openmobilealliance.org/iot/lightweight-m2m-lwm2m](http://openmobilealliance.org/iot/lightweight-m2m-lwm2m).
 
-You can connect any device supporting LWM2M to Cumulocity IoT without programming. Instead, you configure how LWM2M devices are mapped to Cumulocity IoT using device protocols.
+> **Info:** You can connect any device supporting LWM2M 1.0 to Cumulocity IoT without programming. We expect the device and its capabilities (e.g. firmware update) to be compliant to the LWM2M specification. The device must support the UDP binding of the LWM2M standard.
+
+Our LWM2M solution allows any LWM2M object to be easily interfaced with the platform. For the sake of convenience, we provide out-of-the-box integration for the following LWM2M objects:
+
+- Device (/3)
+- Connectivity monitoring (/4)
+- Firmware update (/5)
+- Location (/6)
+
+To make use of these integrations, upload the corresponding DDF XML to your tenant.
+For arbitrary protocols, you can configure how LWM2M devices are mapped to Cumulocity IoT using [device protocols](#configure).
 
 ![Device protocols](/images/users-guide/lwm2m/lwm2m-deviceprotocol.png)
 
@@ -39,7 +49,7 @@ In the first CSV example you can see the following fields:
 </tr>
 <tr>
 <td style="text-align:left">CREDENTIALS</td>
-<td style="text-align:left">The content of this field is not used by LWM2M.</td>
+<td style="text-align:left">The content of this field is not used by the LWM2M feature. However, this field is still mandatory. For LWM2M-only devices, it is okay to use "dummy" credentials here. </td>
 </tr>
 <tr>
 <td style="text-align:left">NAME</td>
@@ -91,7 +101,7 @@ The table below reflects the full set of possible fields that can be added:
 <tr>
 <td style="text-align: left">endpoint id</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">The name of the LWM2M endpoint.</td>
+<td style="text-align: left">The name of the LWM2M client endpoint.</td>
 <td style="text-align: left">Yes</td>
 </tr>
 <tr>
@@ -401,15 +411,15 @@ In the next table you will see all available commands and a brief description of
 
 |Command|Description|
 |:------|:----------|
-|read /<objectID>/<instanceID>/<resourceID>|Reads a resource path|
-|observe /<objectID>/<instanceID>/<resourceID>|Enables the observe functionality|
-|execute /<objectID>/<instanceID>/<resourceID>|Executes a resource on the device|
-|cancelobservation /<objectID>/<instanceID>/<resourceID>|Cancels the observation functionality from the desired resource|
-|delete /<objectID>/<instanceID>[/<resourceID>]|Deletes a given object/instance/resource|
-|discover /<objectID>/<instanceID>/<resourceID>|Shows all resources of the given object|
-|create /<objectID> [JSON]|Creates a new object. The JSON argument is optional|
-|writeattr /<objectID>/<instanceID>/<resourceID> {pmin=<sec>}{&pmax=<sec>}{&greater=<num>}{&less=<num>}{&step=<num>}{&cancel}|Writes additional attributes to the object. Typically used for conditional observes|
-|fwupdate /<Firmware name>/<firmware version>/<firmware_ur>/l|Updates the firmware of the agent|
+|read /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;|Reads a resource path|
+|observe /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;|Enables the observe functionality|
+|execute /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;|Executes a resource on the device|
+|cancelobservation /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;|Cancels the observation functionality from the desired resource|
+|delete /&lt;objectID&gt;/&lt;instanceID&gt;[/&lt;resourceID&gt;]|Deletes a given object/instance/resource|
+|discover /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;|Shows all resources of the given object|
+|create /&lt;objectID&gt; [JSON]|Creates a new object. The JSON argument is optional|
+|writeattr /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; {pmin=&lt;sec&gt;}{&pmax=&lt;sec&gt;}{&greater=&lt;num&gt;}{&less=&lt;num&gt;}{&step=&lt;num&gt;}{&cancel}|Writes additional attributes to the object. Typically used for conditional observes|
+|fwupdate /&lt;Firmware name&gt;/&lt;firmware version&gt;/&lt;firmware_ur&gt;/l|Updates the firmware of the agent|
 
 ### <a name="validation_rules"></a> Adding validation rules to resources
 

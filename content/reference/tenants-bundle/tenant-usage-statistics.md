@@ -17,19 +17,49 @@ layout: redirect
 |storageSize|int|1|Database storage in use by the tenant, in bytes. Latest value for a queried period.|
 |subscribedApplications|array|1|Names of tenant subscribed applications. Latest value for a queried period.|
 
-"requestCount" and "deviceRequestCount" contains the sum of all issued requests during the querying period. "deviceCount" and "storageSize" contain the last reported value during the querying period. Please note:
+"requestCount" - the following requests are not included in the counter:
+
+* internal SmartREST requests used to resolve templates
+* internal SLA monitoring requests
+* calls to any "/health" endpoint
+* device bootstrap process requests related to configuring and retrieving device credentials
+* Microservice SDK internal calls for applications and subscriptions - "/currentApplication"
+
+"deviceRequestCount" - in addition to the exceptions already listed for "requestCount" the following requests are not included in the counter:
+
+ * requests to /user, /tenant and /application API's
+ * application related requests (with "X-Cumulocity-Application-Key" header)
+
+Note:
 
  * "requestCount" and "deviceRequestCount" are updated every 5 minutes.
- * "deviceCount", "deviceEndpointCount", "deviceWithChildrenCount", "storageSize" and "subscribedApplications" are updated daily starting at 23:57.
+ * "deviceCount", "deviceEndpointCount", "deviceWithChildrenCount", "storageSize" and "subscribedApplications" are updated only three times a day starting at 8:57, 16:57 and 23:57.
  * "storageSize" is affected by your retention rules. It is also affected by the regularly running database optimization functions running in Cumulocity IoT. If the size decreases, it does not necessarily mean that data was deleted.
  * Days are counted according to server timezone.
 
-"deviceRequestCount" - device requests are recognized as requests that do not contain "X-Cumulocity-Application-Key" header.
-In addition, requests to /user, /tenant and /application API's are never counted as "deviceRequestCount".
-
 Request counting in SmartREST and MQTT:
-- SmartREST: each row in SmartREST request is transformed into a separate HTTP request. For example, if one SmartREST request contains 10 rows, then 10 separate calls are executed, meaning that request count is increased by 10.
-- MQTT: each row/line counts as a separate request. Creating custom template counts as a single request.
+
+- SmartREST: <br>Each row in a SmartREST request is transformed into a separate HTTP request. For example, if one SmartREST request contains 10 rows, then 10 separate calls are executed, meaning that request count is increased by 10.
+- MQTT: <br>Each row/line counts as a separate request. Creating custom template counts as a single request.
+
+REST specific counting details:
+
+* All counters increase also when the request is invalid, for example wrong payload or missing permissions.
+* Bulk measurements creation and bulk alarm status update are counted as a single "requestCount"/"deviceRequestCount" and multiple inbound data transfer count.
+
+SmartREST 1.0 specific counting details:
+
+* Invalid SmartREST requests are not counted, for example when the template doesn't exist.
+* A new template registration is treated as two separate requests. Create a new inventory object which increases "requestCount", "deviceRequestCount" and "inventoriesCreatedCount". There is also a second request which binds the template with X-ID, this increases "requestCount" and "deviceRequestCount".
+* Each row in a SmartREST request is transformed into a separate HTTP request. For example, if one SmartREST request contains 10 rows, then 10 separate calls are executed, meaning that both "requestCount" and "deviceRequestCount" are increased by 10.
+
+MQTT specific counting details:
+
+* Invalid requests are counted, for example when sending a message with a wrong template ID.
+* Device creation request is not counted.
+* Each row/line counts as a separate request.
+* Creating custom template counts as a single request, no matter how many rows are send in the request.
+* There is one special SmartREST 2.0 template (402 Create location update event with device update) which is treated differently. Because it is doing two things in one call (create new location event and update location in device) "requestCount" and "deviceRequestCount" are increased once but inbound data transfer counters are increased by two (one for event creation and one for inventory update).
 
 ### Total inbound data transfer
 
@@ -94,8 +124,6 @@ The table below lists all counters that enhance the Cumulocity IoT tenant statis
 </tbody>
 </table></div>
 
-> **Info:** `alarmsCreatedCount` increases also when a request is made with valid credentials but missing permissions.
-
 See the table below for more information on how the counters above are increased. Additionally, it shows how inbound data transfers are handled for both MQTT and REST:
 
 |Type of transfer|MQTT counter information|REST counter information|
@@ -114,6 +142,7 @@ See the table below for more information on how the counters above are increased
 |Update of one **managed object** (e.g. status change)|One managed object update is counted.|One managed object update is counted.|
 |Update of **multiple managed objects** in one request|Each managed object update in a single MQTT request will be counted.|Not supported by C8Y (REST does not support updating multiple managed objects in one call).|
 |Creation/update of **multiple alarms/measurements/events/inventories** mixed in a single call.|Each MQTT line is processed separately. If it is a creation/update of an event/alarm/measurement/inventory, the corresponding counter is increased by one.|Not supported by the REST API.|
+|Assign/unassign of **child devices and child assets** in one request|One managed object update is counted.|One managed object update is counted.|
 
 ### TenantUsageStatisticsCollection [application/vnd.com.nsn.cumulocity.tenantUsageStatisticsCollection+json]
 

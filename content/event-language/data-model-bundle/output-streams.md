@@ -18,13 +18,13 @@ Creating your own ID will only work on ManagedObjects.
 ### ManagedObjects
 
 |Available outputs|
-|:-|
+|:--|
 |CreateManagedObject|
 |UpdateManagedObject|
 |DeleteManagedObject|
 
 |Parameter|Data type|Description|Mandatory|
-|:--|:----------|:-------------|:----------|
+|:---|:----------|:-------------|:----------|
 |id|[ID](/event-language/data-model#id) or String|ID of the ManagedObject|UPDATE and DELETE|
 |type|String|The type of the ManagedObject|No|
 |name|String|The name of the ManagedObject|No|
@@ -178,4 +178,3 @@ Example:
       "12345" as id,
       CumulocityAlarmStatuses.ACKNOWLEDGED as status
     from EventCreated event;
-

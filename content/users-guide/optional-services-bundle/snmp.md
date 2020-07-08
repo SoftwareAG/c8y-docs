@@ -29,7 +29,7 @@ The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled
 
 >To add the Mibparser microservice to the Cumulocity IoT platform,
 
->* download the file *snmp-mib-parser-&lt;ga-version&gt;.zip* (for example *snmp-mib-parser-1005.7.0.zip*) from [http://resources.cumulocity.com/examples/snmp/](http://resources.cumulocity.com/examples/snmp/). 
+>* download the file *snmp-mib-parser-&lt;ga-version&gt;.zip* (for example *snmp-mib-parser-1005.7.0.zip*) from [http://resources.cumulocity.com/examples/snmp/](http://resources.cumulocity.com/examples/snmp/).
 * Upload this ZIP file as a microservice into the platform. Refer to [Managing Applications](/users-guide/managing-applications) in the User guide for details on how to upload microservices into Cumulocity IoT.
 
 #### Installation
@@ -48,9 +48,9 @@ The SNMP agent is a stand-alone Java program that communicates with SNMP-enabled
 1. Download the latest SNMP agent RPM:
 
 		wget -nv http://resources.cumulocity.com/examples/snmp/snmp-agent-gateway-<ga-version>-1.noarch.rpm
-	
+
 	The `<ga-version>` needs to be provided in the format `1005.7.0`, `1006.0.0`, and so on. A sample command would look like this:
- 	
+
  		wget -nv http://resources.cumulocity.com/examples/snmp/snmp-agent-gateway-1006.0.0-1.noarch.rpm
 
 2. Verify the signature of the RPM package:

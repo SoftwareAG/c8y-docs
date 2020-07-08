@@ -4,6 +4,8 @@ title: Restarting services
 layout: redirect
 ---
 
+>**Important:** If the processes are monitored by **monit**, the processes restart after you run the *stop* command.
+
 ### Karaf processes
 
 On the Edge server, run the following commands as admin user.

@@ -112,7 +112,7 @@ In the **Source** field, select the way the message type is encoded:
 
 In the following sample payload structure, the first byte indicates the message type source (as highlighted).
 
-<img src="/images/users-guide/actility/lora-payload-example1.png" alt="Example payload: message type source" style="max-width: 100%">
+<img src="/images/users-guide/sigfox/sigfox-payload-example1.png" alt="Example payload: message type source" style="max-width: 100%">
 
 In the user interface, you can enter this type of message type source information as follows: In the **Start bit** field, indicate where the message type information starts in the payload.  In the **Number of bits** field, indicate how long this information is. For example, start bit = "0" and number of bits = "8".
 
@@ -126,9 +126,9 @@ Click **Add value** to create the value configuration.
 
 In the following window, configure the relevant values as shown in this example.
 
-![LoRa protocol add new value](/images/users-guide/actility/lora-protocols-newvalue.png)
+![LoRa protocol add new value](/images/users-guide/sigfox/sigfox-protocols-newvalue.png)
 
-![LoRa protocol add new value](/images/users-guide/actility/lora-protocols-newvalue2.png)
+![LoRa protocol add new value](/images/users-guide/sigfox/sigfox-protocols-newvalue2.png)
 
 The value configuration maps the value in the payload of a message type to the Cumulocity IoT data.
 
@@ -136,9 +136,9 @@ Under **Message type**, configure the **Message ID** according to your device me
 
 In this sample payload structure the message ID is "1".
 
-<img src="/images/users-guide/actility/lora-payload-example2.png" alt="Example payload: message type source" style="max-width: 100%">
+<img src="/images/users-guide/sigfox/sigfox-payload-example2.png" alt="Example payload: message type source" style="max-width: 100%">
 
-![LoRa bits](/images/users-guide/actility/lora-protocols-loraid.png)
+![LoRa bits](/images/users-guide/sigfox/sigfox-protocols-sigfoxid.png)
 
 Under **General**, specify a name for the value and the category under which it will be displayed in the values list.  
 
@@ -146,9 +146,9 @@ Under **Value selection**, specify from where the value should be extracted. In 
 
 In this example, the "Channel 1 Type" information starts in byte 2 (i.e. start bit = "16") and is 1 byte long (i.e. number of bits = "8").
 
-<img src="/images/users-guide/actility/lora-payload-example3.png" alt="Example payload: value selection" style="max-width: 100%">
+<img src="/images/users-guide/sigfox/sigfox-payload-example3.png" alt="Example payload: value selection" style="max-width: 100%">
 
-![LoRa bits](/images/users-guide/actility/lora-protocols-lorabits.png)
+![LoRa bits](/images/users-guide/sigfox/sigfox-protocols-sigfoxbits.png)
 
 The hexadecimal value is converted to a decimal number and afterwards a "value normalization" is applied.
 
@@ -184,9 +184,9 @@ Click **Save** to create the device protocol.
 
 The following images show an example for a message which sends a measurement when the battery level value changes.
 
-![Battery level changes example](/images/users-guide/actility/lora-protocols-battery.png)
+![Battery level changes example](/images/users-guide/sigfox/sigfox-protocols-battery.png)
 
-![Battery level changes example](/images/users-guide/actility/lora-protocols-battery2.png)
+![Battery level changes example](/images/users-guide/sigfox/sigfox-protocols-battery2.png)
 
 
 **<a name="nested-structure-example"></a>Example with nested structure**
@@ -195,13 +195,13 @@ The following images show an example of a nested structure for a device protocol
 
 The message ID should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the **Managed object fragment** field and create a new value for each: longitude and latitude.
 
-![Value creation: Longitude-nested](/images/users-guide/actility/lora-protocols-lng.png)
+![Value creation: Longitude-nested](/images/users-guide/sigfox/sigfox-protocols-lng.png)
 
-![Value creation: Latitude-nested](/images/users-guide/actility/lora-protocols-lat.png)
+![Value creation: Latitude-nested](/images/users-guide/sigfox/sigfox-protocols-lat.png)
 
 This will be the result:
 
-![Value configuration in detail: nested structure](/images/users-guide/actility/lora-protocols-gpsexample.png)
+![Value configuration in detail: nested structure](/images/users-guide/sigfox/sigfox-protocols-gpsexample.png)
 
 ### <a name="register-device-sigfox"></a>Registering Sigfox devices
 

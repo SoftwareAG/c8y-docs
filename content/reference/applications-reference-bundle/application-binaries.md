@@ -6,16 +6,20 @@ layout: redirect
 
 ### POST - upload application binary
 
-For the applications of type "microservice" and "web application" to be available for Cumulocity IoT platform users, a binary zip file must be uploaded.
+Required role: ROLE_APPLICATION_MANAGEMENT_ADMIN
 
-     POST /application/applications/{APPLICATION_ID}/binaries
-     Host: ...
-     Authorization: Basic …
-     Content-Type: multipart/form-data
+For the applications of type "microservice" and "web application" to be available for Cumulocity IoT platform users, a binary ZIP file must be uploaded.
 
-For the microservice application, the zip file must consist of:
+```
+POST /application/applications/<APPLICATION_ID>/binaries
+Host: ...
+Authorization: Basic <AUTHORIZATION>
+Content-Type: multipart/form-data
+```
 
-* cumulocity.json - file describing the deployment
-* image.tar - executable Docker image
+For a microservice application, the ZIP file must consist of:
 
-For the web application, the zip file must include index.html in the root directory.
+*  cumulocity.json - file describing the deployment
+*  image.tar - executable Docker image
+
+For a web application, the ZIP file must include a *index.html* file in the root directory.

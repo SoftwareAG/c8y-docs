@@ -9,7 +9,7 @@ layout: redirect
 class: com.cumulocity.model.ID
 
 |Parameter|Data type|Description|
-|:--|:----------|:-------------|:----------|
+|:--|:----------|:-------------|
 |value|String|The actual ID value|
 |type|String|The type of the ID|
 |name|String|The name of the device (only if the ID refers to a device like in measurement.source)|

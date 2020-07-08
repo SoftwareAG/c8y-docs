@@ -1,27 +1,23 @@
 ---
 weight: 20
-title: Hello, world!
 layout: redirect
+title: Hello world tutorial
 ---
 
-### Overview
+This example provides a step-by-step guide to develop a simple microservice in Cumulocity IoT. It uses Cake (C# Make), which is a cross-platform build automation system.
 
-This example provides a step-by-step guide to develop a simple microservice in Cumulocity. It uses Cake (C# Make), which is a cross-platform build automation system.
+To start building .NET apps, you just need to download and install the [.NET SDK](https://www.microsoft.com/net/download). Follow the instructions on the download page for the last stable release or alternatively you can also try using 3.1.
 
-To start building .NET apps, you just need to download and install the [.NET SDK](https://www.microsoft.com/net/download). Follow the instructions on the download page for the last stable release or alternatively you can also try using 2.2.
-
-If you use Linux, visit the [MonoDevelop website](http://www.monodevelop.com/) for download packages and more details about our cross-platform IDE. Follow the instructions on the download page for the last stable release or alternatively you can also try using 6.0 or higher version of mono [IDE](http://www.mono-project.com/download/#download-lin). Note, that Mono-devel is required to compile code.
+If you use Linux, visit the [MonoDevelop website](http://www.monodevelop.com/) for download packages and more details about our cross-platform IDE. Follow the instructions on the download page for the last stable release or alternatively you can also try using 6.8 or higher version of mono [IDE](http://www.mono-project.com/download/#download-lin). Note, that Mono-devel is required to compile code.
 
 The initial script was used to create a demo, which makes it easier to create an example microservice project with dependency management and then deploy it on the server. The script attempts to download the package from the sources listed in the project file, and next a reference is added to the appropriate project file. In addition, the script creates the appropriate Dockerfile to take into account the naming of projects. Next it will create a Docker image based on a Dockerfile.
 
 The application created in this way uses the ASP.NET Web API framework to create a web API. The API runs on an isolated web server called Kestrel and as a foreground job, which makes it work really well with Docker.
 
 
-### Building and deploying Hello World on Windows
+### Building and deploying on Windows
 
-Building and deploying the "Hello, World" microservice on Windows is similar to the way it is done for Linux. For Windows, Powershell is installed by default and that is why we use it. For Linux, Powershell Core can be considered as an alternative.
-
-Download the script file to build a "Hello World" application. Manage the version of scripts and replace latest to the right version number.
+In Windows systems, Powershell is installed by default. Download the script file to build a "Hello world" application. Manage the version of scripts and replace latest to the right version number.
 
 ```shell
 Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
@@ -35,16 +31,22 @@ Once you have downloaded the source, unzip the file.
 Expand-Archive c:\microservicesdk-win-dev-latest.zip -DestinationPath c:\microservicesdk-win-dev-latest
 ```
 
-Change the current folder and navigate to the &#95;microservicesdk&#95; folder.
+Change the current folder and navigate to the _microservicesdk-win-dev-latest_ folder.
 
 ```shell
 cd microservicesdk-win-dev-latest
 ```
 
-Make sure to use the correct SDK version - 2.2.110 or define which .NET Core SDK version is used when you run .NET Core CLI commands.
+Verify the version of your .Net tools.
 
 ```shell
-dotnet new globaljson --sdk-version 2.2.110
+dotnet --version
+```
+
+Make sure to use the correct SDK version - 3.1.200 or define which .NET Core SDK version is used when you run .NET Core CLI commands as seen in the terminal output above.
+
+```shell
+dotnet new globaljson --sdk-version 3.1.200
 ```
 
 Open the Dockerfile inside the *microservicesdk-win-dev-latest* folder. Make sure that it points to the correct Docker image of .Net Core.
@@ -67,25 +69,25 @@ Execute the bootstrapper script to build the application and an image from a Doc
 ./build.ps1
 ```
 
-After a successful build you will be provided with a ZIP file in the target directory. The ZIP can be deployed to the Cumulocity platform as described in the Deployment section.
+After a successful build you will be provided with a ZIP file in the target directory. The ZIP can be deployed to the Cumulocity IoT platform as described in the Deployment section.
 
 ### <a name="run-locally"></a> Running the microservice locally
 
-In order to test the microservice calls to Cumulocity, you can run the Docker container locally.
+In order to test the microservice calls to Cumulocity IoT, you can run the Docker container locally.
 
-The microservice must be deployed  to verify calls from Cumulocity.
+The microservice must be deployed  to verify calls from Cumulocity IoT.
 
-To run a microservice which uses Cumulocity API locally you need the following:
+To run a microservice which uses Cumulocity IoT API locally you need the following:
 
-* URL address of the Cumulocity host of your tenant
-* Authorization header = "Basic <Base64(<username>:<password>)>"
-* Tenant - tenant ID
+*   URL address of the Cumulocity IoT host of your tenant
+*   Authorization header = "Basic &lt;Base64(&lt;username>:&lt;password>)>"
+*   Tenant - tenant ID
 
 You may also install the cURL utility. There are several ways to install it on Windows:
 
-* Install it using Chocolatey.
-* Install it with a one-click installer.
-* Using official cURL binaries.
+*   Install it using Chocolatey.
+*   Install it with a one-click installer.
+*   Using official cURL binaries.
 
 Assuming that Chocolatey is installed:
 
@@ -93,7 +95,7 @@ Assuming that Chocolatey is installed:
 choco install curl
 ```
 
-**Step 1 - Create application**
+**Step 1 - Create the application**
 
 If the application does not exist, create a new application on a platform:
 
@@ -173,12 +175,12 @@ Content-Type: application/vnd.com.nsn.cumulocity.user+json
 }
 ```
 
-**Step 3 - Run microservice locally**
+**Step 3 - Run the microservice locally**
 
 The image is already added to the local Docker repository during the build. List all the Docker repository images available:
 
 ```shell
-$ docker images
+docker images
 
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 api                 latest              a8298ed10cd9        16 hours ago        258MB
@@ -187,10 +189,10 @@ api                 latest              a8298ed10cd9        16 hours ago        
 After you find the image in the list, run the Docker container for the microservice by providing the baseurl and the bootstrap user credentials:
 
 ```bash
-$ docker run -e C8Y_BASEURL=<URL> -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_TENANT> -e C8Y_BOOTSTRAP_USER=<BOOTSTRAP_USERNAME> -e C8Y_BOOTSTRAP_PASSWORD=<BOOTSTRAP_USER_PASSWORD> -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t <DOCKER_REPOSITORY_IMAGE>:<TAG>
+docker run -e C8Y_BASEURL=<URL> -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_TENANT> -e C8Y_BOOTSTRAP_USER=<BOOTSTRAP_USERNAME> -e C8Y_BOOTSTRAP_PASSWORD=<BOOTSTRAP_USER_PASSWORD> -e C8Y_MICROSERVICE_ISOLATION=MULTI_TENANT -i -t <DOCKER_REPOSITORY_IMAGE>:<TAG>
 ```
 
-**Step 4 - Subscribe to microservice**
+**Step 4 - Subscribe to the microservice**
 
 ```http
 POST <URL>/tenant/tenants/<TENANT_ID>/applications
@@ -213,7 +215,7 @@ curl -X POST -d '{"application":{"id": "<APPLICATION_ID>"}}'  \
  "<URL>/tenant/tenants/<TENANT_ID>/applications"
 ```
 
-**Step 5 - Verify if microservice is running**
+**Step 5 - Verify if the microservice is running**
 
 Now you can verify if your application is running by executing
 
@@ -271,7 +273,7 @@ It is possible to check if the application communicates with the platform by def
 
 ### Microservice package and deploy
 
-Cumulocity provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running Docker and can be found in the ZIP file *microservicesdk-win-dev-latest.zip*. Use the following command to download it.
+Cumulocity IoT provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running Docker and can be found in the ZIP file *microservicesdk-win-dev-latest.zip*. Use the following command to download it.
 
 ```shell
 Invoke-WebRequest  http://resources.cumulocity.com/cssdk/releases/microservicesdk-win-dev-latest.zip -OutFile microservicesdk-win-dev-latest.zip
@@ -283,7 +285,7 @@ To show all the functions are available, type
 ./microservice.ps1 --help
 ```
 
-For further information refer to [Microservice package and deploy](https://cumulocity.com/reference/microservice-package/) in the Reference guide.
+For further information refer to [General aspects > Microservice utility tool](/microservice-sdk/concept/#ms-utility-tool) in this guide.
 
 **Deployment**
 
@@ -291,14 +293,14 @@ In addition, there is a *deploy.ps1* script that uses credentials stored locally
 
 To deploy a microservice application on the platform, you need the following:
 
-* URL address of the Cumulocity host of your tenant
+* URL address of the Cumulocity IoT host of your tenant
 * Username and password to log in with
 * An application created on the platform
 * ZIP build from previous steps for deployment
 
 Configure the _settings.ini_ file as follows:
 
-```properties
+```
 [deploy]
 username=<tenant>/<user>
 password=<password>
@@ -342,6 +344,8 @@ The application starts executing from the entry point `public static void Main()
 namespace api
 {
 	using System.Net;
+    using Microsoft.AspNetCore;
+
 	public class Program
   {
         public static void Main(string[] args)
@@ -402,11 +406,11 @@ public class Startup
         services.AddPlatform(Configuration);
         services.AddSingleton<IApplicationService, ApplicationService>();
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-        services.AddMvc().AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+        services.AddControllers(options => options.EnableEndpointRouting = false);
 
     }
 
-    public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
     {
         app.UseAuthentication();
         app.UseBasicAuthentication();
@@ -421,24 +425,24 @@ _Startup.cs_ responsibilities:
 * Setup dependency injection in ConfigureServices
 * Setup the middleware pipeline in Configure
 
-The Dockerfile created by *create.ps1* contains:
+The _Dockerfile_ file created by *create.ps1* contains:
 
 ```
-FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS runtime
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
 WORKDIR /app
 COPY ./publish/Web ./
 ENV SERVER_PORT 4700
 ENTRYPOINT ["dotnet", "api.dll"]
 ```
 
-The Dockerfile defines what goes on in the environment inside a container:
+It also defines what goes on in the environment inside a container:
 
 * Sets the working directory
 * Copies all from an application directory to the working directory
 * Sets the environment variable, in this case SERVER_PORT
 * Specifies what executable to run when the container starts
 
-**Platform API**
+#### Platform API
 
 It is possible to use the C# REST SDK as an extension.  A developer can use it to perform basic operations against the platform. For hosted deployment, most of the properties are provided by the platform.
 
@@ -454,11 +458,12 @@ The API provides the following services:
 * ManagedObject - InventoryApi
 * Measurement - MeasurementApi
 
-For further information, refer to the [Device SDK guide](/device-sdk/).
+For further information, refer to the [Device SDK guide](https://cumulocity.com/guides/device-sdk/).
 
-**C# MQTT SDK**
+#### C# MQTT SDK
 
-It is possible to use the C# MQTT SDK as a nuget-package. A developer can use it to perform basic operations against the platform. For further information, refer to [MQTT examples](https://cumulocity.com/device-sdk/mqtt-examples) in the Device SDK guide.
+It is possible to use the C# MQTT SDK as a nuget-package. A developer can use it to perform basic operations against the platform. For further information, refer to [MQTT examples](https://cumulocity.com/guides/device-sdk/mqtt-examples) in the Device SDK guide.
+
 
 ### Building and deploying on Linux
 
@@ -533,7 +538,7 @@ In order to deploy the application, run the deploy script. You must provide the 
 
 #### Microservice package and deploy
 
-Cumulocity provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running Docker and can be found in [cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/scripts/microservice):
+Cumulocity IoT provides you with an utility tool for easy microservice packaging, deployment and subscription. The script requires running Docker and can be found in [cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/microservices/scripts/microservice):
 
 Next, add execution permissions
 
@@ -547,7 +552,7 @@ To show all options, type
 $ ./microservice help
 ```
 
-For further information, refer to [Microservice package and deploy](https://cumulocity.com/reference/microservice-package/) in the Reference guide.
+For further information, refer to [General aspects > Packing](https://cumulocity.com/guides/microservice-sdk/concept/#packing) in this guide.
 
 **Deployment**
 
@@ -555,7 +560,7 @@ In addition, there is a *deploy.ps1* script that uses credentials stored locally
 
 To deploy a microservice application on an environment you need the following:
 
-* URL address of the Cumulocity host of your tenant
+* URL address of the Cumulocity IoT host of your tenant
 * username and password to log in with
 * application name created on the platform
 * ZIP build from previous steps for deployment

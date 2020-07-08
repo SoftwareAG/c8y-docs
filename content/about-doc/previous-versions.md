@@ -14,11 +14,11 @@ The Cumulocity IoT documentation sources are located in a Git repository called 
 
 You find the documentation sources for the maintenance release versions in the following branches:
 
-Release 10.5.0: [https://bitbucket.org/m2m/c8y-docs/branch/release/r10.5.0-GA](https://bitbucket.org/m2m/c8y-docs/branch/release/r10.5.0-GA)
-
 Release 10.5.7: [https://bitbucket.org/m2m/c8y-docs/branch/release/r10.5.7](https://bitbucket.org/m2m/c8y-docs/branch/release/r10.5.7)
 
 Release 10.6.0: [https://bitbucket.org/m2m/c8y-docs/branch/release/r10.6.0](https://bitbucket.org/m2m/c8y-docs/branch/release/r10.6.0)
+
+Release 10.6.6: [https://bitbucket.org/m2m/c8y-docs/branch/release/r10.6.6](https://bitbucket.org/m2m/c8y-docs/branch/release/r10.6.6)
 
 You may also find the sources of older versions here in corresponding branches.
 

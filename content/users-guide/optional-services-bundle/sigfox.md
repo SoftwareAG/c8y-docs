@@ -126,9 +126,9 @@ Click **Add value** to create the value configuration.
 
 In the following window, configure the relevant values as shown in this example.
 
-![LoRa protocol add new value](/images/users-guide/sigfox/sigfox-protocols-newvalue.png)
+![Sigfox protocol add new value](/images/users-guide/sigfox/sigfox-protocols-newvalue.png)
 
-![LoRa protocol add new value](/images/users-guide/sigfox/sigfox-protocols-newvalue2.png)
+![Sigfox protocol add new value](/images/users-guide/sigfox/sigfox-protocols-newvalue2.png)
 
 The value configuration maps the value in the payload of a message type to the Cumulocity IoT data.
 
@@ -138,7 +138,7 @@ In this sample payload structure the message ID is "1".
 
 <img src="/images/users-guide/sigfox/sigfox-payload-example2.png" alt="Example payload: message type source" style="max-width: 100%">
 
-![LoRa bits](/images/users-guide/sigfox/sigfox-protocols-sigfoxid.png)
+![Sigfox bits](/images/users-guide/sigfox/sigfox-protocols-sigfoxid.png)
 
 Under **General**, specify a name for the value and the category under which it will be displayed in the values list.  
 
@@ -148,7 +148,7 @@ In this example, the "Channel 1 Type" information starts in byte 2 (i.e. start b
 
 <img src="/images/users-guide/sigfox/sigfox-payload-example3.png" alt="Example payload: value selection" style="max-width: 100%">
 
-![LoRa bits](/images/users-guide/sigfox/sigfox-protocols-sigfoxbits.png)
+![Sigfox bits](/images/users-guide/sigfox/sigfox-protocols-sigfoxbits.png)
 
 The hexadecimal value is converted to a decimal number and afterwards a "value normalization" is applied.
 

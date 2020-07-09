@@ -195,7 +195,7 @@ The following images show an example of a nested structure for a device protocol
 
 The message ID should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the **Managed object fragment** field and create a new value for each: longitude and latitude.
 
-![Value creation: Longitude-nested](/images/users-guide/sigfox/sigfoc-protocols-lng.png)
+![Value creation: Longitude-nested](/images/users-guide/sigfox/sigfox-protocols-lng.png)
 
 ![Value creation: Latitude-nested](/images/users-guide/sigfox/sigfox-protocols-lat.png)
 

@@ -14,7 +14,6 @@ A new version of the NetComm router device integration documentation has been ad
 
 In addition to the Installation & Operations guides already provided for previous versions, the following new guides are now available through the [Software AG Empower Portal](https://documentation.softwareag.com/):
 
-* **Connectivity** - Installation & operations guide
 * **DataHub** - Installation & operations guide
 * **OPC UA** - Installation & operations guide
 * **Sigfox** microservice - Installation & operations guide

@@ -65,7 +65,7 @@ If you want to learn more about general aspects of the Cumulocity IoT platform a
 
 The Home screen of the Cockpit application is a dashboard which shows data for the general tenant.
 
-![image alt text](/images/users-guide/cockpit/cockpit-home-screen.png)
+![Home dashboard](/images/users-guide/cockpit/cockpit-home-screen.png)
 
 The data shown on the Home dashboard is shared by all users of the tenant. By default, the Home dashboard includes a welcome message, the active critical alarms, recent alarms and a map of all objects.
 

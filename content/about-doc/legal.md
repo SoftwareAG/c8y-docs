@@ -6,7 +6,7 @@ layout: bundle
 
 ### Copyright
 
-This content applies to Cumulocity IoT 10.5.7 and to all subsequent releases.
+This content applies to Cumulocity IoT 10.6.6 and to all subsequent releases.
 
 Specifications contained herein are subject to change and these changes will be reported in subsequent release notes or new editions.
 

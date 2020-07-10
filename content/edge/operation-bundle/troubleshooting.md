@@ -4,21 +4,21 @@ title: Troubleshooting the system
 layout: redirect
 ---
 
-In case of any issues we provide a number of options which help you find out what might be the cause and give advice how to fix it. 
+In case of any issues we provide a number of options which help you find out what might be the cause and give advice how to fix it.
 
-We recommend to follow these steps:
+We recommend you to follow these steps:
 
 * Perform a health check, see the [Health check](#health-check) section.
 * Monitor the system processes, see the [Monitoring](#monitoring) section.
 * Check the log files, see the [Log files](#log-files) section.
 
-If you still need to contact SAG support, include the output of the diagnostics script. See the [Diagostics](#diagnostics) section on details how to run it. 
- 	
-### <a name="health-check"></a>Health check	
+If you still need to contact SAG support, include the output of the diagnostics script. See the [Diagostics](#diagnostics) section on details how to run it.
+
+### <a name="health-check"></a>Health check
 
 #### Network
 
-Without working network connection the system is not able to work. The following instructions show how to check the network connectivity of the platform. 
+Without working network connection the system is not able to work. The following instructions show how to check the network connectivity of the platform.
 
 ##### Check network interface of the node
 
@@ -26,7 +26,7 @@ The following commands will show the interface and network settings of the machi
 
 	[admin@server ~]$ ip a
 
-This will list all interfaces and their current configuration. 
+This will list all interfaces and their current configuration.
 
 Example:
 
@@ -36,21 +36,21 @@ Example:
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
        valid_lft forever preferred_lft forever
-    inet6 ::1/128 scope host 
+    inet6 ::1/128 scope host
        valid_lft forever preferred_lft forever
-       
+
 	2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
     link/ether 08:00:27:88:e7:de brd ff:ff:ff:ff:ff:ff
     inet 10.0.2.15/24 brd 10.0.2.255 scope global noprefixroute dynamic enp0s3
        valid_lft 85338sec preferred_lft 85338sec
-    inet6 fe80::a00:27ff:fe88:e7de/64 scope link noprefixroute 
+    inet6 fe80::a00:27ff:fe88:e7de/64 scope link noprefixroute
        valid_lft forever preferred_lft forever
-       
+
 	3: enp0s8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
     link/ether 08:00:27:81:fe:9d brd ff:ff:ff:ff:ff:ff
     inet 192.168.56.120/24 brd 192.168.56.255 scope global noprefixroute enp0s8
        valid_lft forever preferred_lft forever
-    inet6 fe80::5b3a:bc65:40b5:f9ea/64 scope link noprefixroute 
+    inet6 fe80::5b3a:bc65:40b5:f9ea/64 scope link noprefixroute
        valid_lft forever preferred_lft forever
 
 You need to make sure that the node has an external interface (ethX) and the loopback interface configured (lo). The loopback interface needs to have the fixed IP 127.0.0.1 with subnet mask 255.0.0.0 and the IP address of the external interface must reside in the correct subnet with the correct subnet mask (in this examples 255.255.252.0).
@@ -82,18 +82,18 @@ Try to reach a well-known address in the internet with the following command:
 	64 bytes from 8.8.8.8: icmp_seq=4 ttl=56 time=2.75 ms
 	64 bytes from 8.8.8.8: icmp_seq=5 ttl=56 time=2.79 ms
 
-As when checking the internal reachability you need to make sure that you can see replies from the address you tried to reach. Use Ctrl-C to end the ping command. 
+As when checking the internal reachability you need to make sure that you can see replies from the address you tried to reach. Use Ctrl-C to end the ping command.
 
 #### Processing
 
 This section lists the required services and processes on the Edge server.
 
-##### Check platform status	
+##### Check platform status
 
 You can check the status of the platform by running the following command:
 
 	curl -v http://localhost:8181/tenant/health
-	
+
 	* About to connect() to localhost port 8181 (#0)
 	*   Trying ::1...
 	* Connected to localhost (::1) port 8181 (#0)
@@ -108,7 +108,7 @@ You can check the status of the platform by running the following command:
 	< Transfer-Encoding: chunked
 	< Server: Jetty(8.1.19.v20160209)
 	<
-	* Connection #0 to host localhost left intact 
+	* Connection #0 to host localhost left intact
 	{
 		"status": "UP",
 		"services": {
@@ -124,9 +124,9 @@ You can check the status of the platform by running the following command:
 			"status": "UP"
 		}
 	}
-	
 
-The ‘status:”UP”’ shows that all services are running. 
+
+The ‘status:”UP”’ shows that all services are running.
 
 If something went wrong, the endpoint should respond a different error code then 200 OK. The response should contain something like:
 
@@ -135,13 +135,13 @@ If something went wrong, the endpoint should respond a different error code then
 	   "status":"DOWN",
 	   "services":{
 	      "details":{
-	
+
 	      },
 	      "status":"UP"
 	   },
 	   "mongodb":{
 	      "details":{
-	
+
 	      },
 	      "status":"UP"
 	   },
@@ -170,7 +170,7 @@ The response contains checks for the most important components:
 * mongo - status of connection to mongo database
 * tenant - tenant initialization status
 
-The list describes the tenants which on the core node have not been fully initialized and the initialization status they are in. 
+The list describes the tenants which on the core node have not been fully initialized and the initialization status they are in.
 
 |Status|Description|
 |:---|:---
@@ -191,7 +191,7 @@ The list describes the tenants which on the core node have not been fully initia
 Run the following command to check the REST API availability:
 
 	[admin@server ~]$ curl -u 'edge/<username>:<password>' -v -X GET http://<base_url>/platform
-	 
+
 	* About to connect() to <base_url> port 80 (#0)
 	*   Trying 52.29.189.245... connected
 	* Connected to <base_url> (52.29.189.245) port 80 (#0)
@@ -201,23 +201,23 @@ Run the following command to check the REST API availability:
 	> User-Agent: curl/7.19.7 (x86_64-redhat-linux-gnu) libcurl/7.19.7 NSS/3.21 Basic ECC zlib/1.2.3 libidn/1.18 libssh2/1.4.2
 	> Host: <base_url>
 	> Accept: */*
-	> 
+	>
 	< HTTP/1.1 200 OK
 	< Server: nginx
 	< Date: Tue, 23 Aug 2016 15:39:29 GMT
 	< Content-Type: application/vnd.com.nsn.cumulocity.platformApi+json; charset=UTF-8; ver=0.9
 	< Transfer-Encoding: chunked
 	< Connection: keep-alive
-	< 
+	<
 	{"alarm":{"alarms":{"alarms":null,"self":"http://management.<base_url>/alarm/alarms"},"alarmsForSource":"http://management.<base_url>/alarm/alarms?source={source}","alarmsForSourceAndStatus":"http://management.<base_url>/alarm/alarms?source={source}&status={status}","alarmsForSourceAndStatusAndTime":"http://management.<base_url>/alarm/alarms?source={source}&status={status}&dateFrom={dateFrom}&dateTo={dateTo}","alarmsForSourceAndTime":"http://management.<base_url>/alarm/alarms?source={source}&dateFrom={dateFrom}&dateTo={dateTo}","alarmsForStatus":"http://management.<base_url>/alarm/alarms?status={status}","alarmsForStatusAndTime":"http://management.<base_url>/alarm/alarms?status={status}&dateFrom={dateFrom}&dateTo={dateTo}","alarmsForTime":"http://management.<base_url>/alarm/alarms?dateFrom={dateFrom}&dateTo={dateTo}","self":"http://management.<base_url>/alarm"},…}
 
 This example shows the correct response of the platform. The username and password need to have full read access to the management tenant. The &#60;base_url> needs to be given to connect to the correct platform and the management tenant must not be blocked from outside.  
 
 ### <a name="monitoring"></a>Monitoring
 
-Monit is a small open-source utility for managing and monitoring Unix systems. It conducts automatic maintenance and repair and can execute meaningful causal actions in error situations. 
+Monit is a small open-source utility for managing and monitoring Unix systems. It conducts automatic maintenance and repair and can execute meaningful causal actions in error situations.
 
-In Edge, Monit is used to monitor processes and take a restart action if any of them is down/inactive. The usual Monit interval (cycle) is 30 seconds. 
+In Edge, Monit is used to monitor processes and take a restart action if any of them is down/inactive. The usual Monit interval (cycle) is 30 seconds.
 
 #### Using Monit
 
@@ -225,20 +225,20 @@ Monit can provide a quick status report of all configured services and processes
 
 	[admin@server ~]$ sudo monit summary
 
-There might be cases where Monit has stopped monitoring some resources because of timeout on constant failures or dependency issues. 
+There might be cases where Monit has stopped monitoring some resources because of timeout on constant failures or dependency issues.
 
-<img src="/images/edge/edge-monitoring-02.png" name="Status report" style="width:75%;"/> 
+<img src="/images/edge/edge-monitoring-02.png" name="Status report" style="width:75%;"/>
 
-A specific component, for example, `apama-ctrl_proc`, can be restarted using the following command: 
+A specific component, for example, `apama-ctrl_proc`, can be restarted using the following command:
 
 	[admin@server ~]$ sudo monit restart apama-ctrl_proc
 
-The Monit status can be checked by running: 
+The Monit status can be checked by running:
 
 	[admin@server ~]$ sudo systemctl status monit
 
-Monit can be restarted by running: 
-	
+Monit can be restarted by running:
+
 	[admin@server ~]$ sudo systemctl restart monit
 
 The log file for monit is located in /var/log/monit.log.
@@ -247,7 +247,7 @@ The log file for monit is located in /var/log/monit.log.
 
 #### Log level locations
 
-The solution stores log files at the following locations for the different nodes. 
+The solution stores log files at the following locations for the different nodes.
 
 ##### Core node log file locations
 
@@ -285,7 +285,7 @@ See [Log files](/datahub/running-datahub-on-the-edge/#log-files) for details on 
 
 #### Adjust log level
 
-This section describes how to change the log level for Cumulocity IoT specific applications on the backend side. It does not explain how to change log settings for standard components like databases or other operating system related services. 
+This section describes how to change the log level for Cumulocity IoT specific applications on the backend side. It does not explain how to change log settings for standard components like databases or other operating system related services.
 
 ##### Changing log level for Karaf
 
@@ -298,7 +298,7 @@ The file has the following structure:
 	# Root logger
 	log4j.rootLogger=INFO,out,osgi:*
 	log4j.throwableRenderer=org.apache.log4j.OsgiThrowableRenderer
-	
+
 	# Error appender
 	log4j.appender.out=org.apache.log4j.rolling.RollingFileAppender
 	log4j.appender.out.rollingPolicy=org.apache.log4j.rolling.FixedWindowRollingPolicy
@@ -334,14 +334,14 @@ The file has the following structure:
 	# * INFO - just error message (default)
 	# * DEGUB - full stack trace
 	log4j.logger.com.cumulocity.rest.mediatypes=INFO
-	
+
 
 Change the following entries to adjust the log levels:
 
 	log4j.rootLogger=INFO,out,osgi:*
-			
+
 	log4j.logger.com.cumulocity.rest.interceptors=INFO,access
-			
+
 	log4j.logger.com.cumulocity.rest.mediatypes=INFO
 
 Adjust the log levels by changing the level attribute according to the following values. The levels are inclusive - meaning a given level will also include all “lower” log levels, e.g. when you set the level to WARN you will also get ERROR events.
@@ -357,7 +357,7 @@ Save the file. It is re-read by the application every few minutes so you do not 
 
 ### <a name="diagnostics"></a>Diagnostics
 
-The diagnostic utility is enabled by default and runs periodically. However, this can also be triggered manually on demand. To execute it manually, follow the steps below. 
+The diagnostic utility is enabled by default and runs periodically. However, this can also be triggered manually on demand. To execute it manually, follow the steps below.
 
 	cd /opt/c8y/utilities/diagnostic-utility
 	sudo ./run_data_collector.py
@@ -371,10 +371,10 @@ The following hardware information is available:
 |<div style="width:250px">Information</div>|Description|
 |:----------------|:---|
 |CPU|Reads and gathers CPU information from "/proc/cpuinfo"
-|Memory|Reads and gathers memory information from "/proc/meminfo" 
+|Memory|Reads and gathers memory information from "/proc/meminfo"
 |Detailed system summary|Data is captured using the 'lswh' command. Data includes multiple components like network, display adapter, bridge, IDE etc. This command is executed as sudo to capture all available details.
 |Short system summary|Data is captured using the 'lswh' command, here the data is in precise format. This command is executed as sudo to capture all available details.
-|PCI|Data related to installed PCI devices is captured using the 'lspci' command 
+|PCI|Data related to installed PCI devices is captured using the 'lspci' command
 |Storage|Data is an aggregation of the output of the commands 'df' and 'lsblk'
 
 
@@ -400,13 +400,13 @@ The following Cumulocity IoT information is collected:
 
 |<div style="width:250px">Information</div>|Description|
 |:---------------------|:---|
-|Health endpoint result|Cumulocity IoT and its microservices provide health endpoints, from which the user can get the system status. 
+|Health endpoint result|Cumulocity IoT and its microservices provide health endpoints, from which the user can get the system status.
 |Mongo command execution result|MongoDB supports commands execution, which can give the status of the MongoDB server. Currently 'ping', 'dbstats' and 'serverStatus' commands are executed on each of the MongoDB nodes (currently it is management and edge). The MongoDB commands give vital information about the MongoDB server like the db version, process-id, uptime information etc.
 |Mongo top output|The output of mongo top command is captured here
 |Thread dumps|Thread dumps of all the running java processes and mongo processes are captured. For java processes the 'jstack' command is executed to get the thread dumps. For non-java processes like MongoDB, the 'pstack' command is used. Furthermore the 'pstack' command is applied on java processes as well.
 |Log files|Archive of log files from Cumulocity IoT, its microservices and Apama is created. In case of Cumulocity IoT, only the 'live' logs are considered and roll-over log files are discarded.
 |Configuration files|Archive of Cumulocity IoT configuration files from Cumulocity IoT and its microservices is created.
-|Jstat dumps|Jstat command provides performance statistics for a given JVM. 
+|Jstat dumps|Jstat command provides performance statistics for a given JVM.
 
 Jstat dumps can provide information on the following options:
 
@@ -422,7 +422,7 @@ Jstat dumps can provide information on the following options:
 * gcpermcapacity - Statistics of the sizes of the permanent generations
 * gcutil – Summary of garbage collection statistics
 * printcompilations –  HotSpot compilation method statistics
-	
+
 As per the current implementation, the 5 statistics counts are collected at an interval of 50ms. To improve performance, this task is executed via threads.
 
 
@@ -489,4 +489,3 @@ Following are the available keys used in the configuration file:
 |{component-name}.log.path|Absolute log path of the components under "component.for.log.backup" which do not use /var/log as the logging directory
 |containers.to.monitor|Containers for which log backup is required. The container names are separated by a comma. These log files are retrieved using `docker logs`.
 |services.to.monitor|Services for which log backup is required. The service names are separated by a comma. These log files are retrieved using `journalctl`.
-

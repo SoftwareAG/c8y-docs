@@ -70,7 +70,7 @@ Subscribe example:
 
 MQTT sessions are linked to a single device, but this device can have a freely configurable device hierarchy below it.
 
-All children require a unique ID defined when creating the device. We recommend using a combination of the unique ID of the root device and a unique ID within the hierarchy.
+All children require a unique ID defined when creating the device. We recommend you to use a combination of the unique ID of the root device and a unique ID within the hierarchy.
 
 To create data for a child instead of the root device, the unique ID of the child is added as another section in the topic (e.g. <kbd>s/us/myChildDeviceIdentifier</kbd>).
 
@@ -134,7 +134,7 @@ For subscriptions to the operation or error topics, we will deliver all messages
 
 MQTT clients can set the clean session flag to "0" (false). This will ensure that in case the client disconnects, your subscription will still work and when you reconnect the client will receive the missed messages.
 
->**Info:** Cumulocity IoT requires clean session to be set to "1" (true). Currently we cannot guarantee that disabling clean session will work reliably, hence we recommend to always enable clean session.
+>**Info:** Cumulocity IoT requires clean session to be set to "1" (true). Currently we cannot guarantee that disabling clean session will work reliably, hence we recommend you to always enable clean session.
 
 #### MQTT retained flag
 
@@ -158,5 +158,5 @@ To support developers during development, it is possible to subscribe to the top
 You can change the server certificate, which is sent to the devices. To do so, customers should contact Software AG Support (https://empower.softwareag.com/ContactSupport/), who can add a new certificate to the server's keystore and reload it.
 
 Certificates exchange between the server and the device occurs during device connection, so all already connected devices will not be disconnected during reloading. Only after they disconnect on their own and try to connect later, then it is required that they contain the new server certificate in their truststore.
- 
+
 >**Info:** This functionality is designed to renew or change the server certificate, when it is going to expire.

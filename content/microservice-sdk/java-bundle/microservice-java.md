@@ -6,7 +6,7 @@ aliases:
   - /microservice-sdk/http/#microservice-java
 ---
 
-> **Important**: Visit our [Hello world!](/microservice-sdk/java/#java-microservice) tutorial and follow the setup steps there before starting the IP-tracker microservice tutorial. The basic configuration steps are not explained here.
+> **Important**: Visit our [Hello world tutorial](/microservice-sdk/java/#java-microservice) and follow the setup steps there before starting the IP-tracker microservice tutorial. The basic configuration steps are not explained here.
 
 ### Developing the IP-tracker microservice
 
@@ -22,7 +22,7 @@ It also uses the Cumulocity IoT UI to display the tracked locations on a map.
 
 #### Update the Project Object Model
 
-Assuming that you have the base code presented in our [Hello world!](/microservice-sdk/java/#java-microservice) tutorial, edit your *pom.xml* file changing the `artifactId` and `microservice.name` of your microservice to `iptracker-microservice`.
+Assuming that you have the base code presented in our [Hello world tutorial](/microservice-sdk/java/#java-microservice), edit your *pom.xml* file changing the `artifactId` and `microservice.name` of your microservice to `iptracker-microservice`.
 Also add a child element `<java.version>` to the `<properties>` element to specify the Java version you want to use.
 Your *pom.xml* file should contain a snippet similar to:
 
@@ -412,7 +412,7 @@ $ curl -F "data=@target/iptracker-microservice-1.0.0-SNAPSHOT.zip" \
 ### Testing the application
 
 You can test any endpoint of your application using the command line or a web browser.
-For example, a GET request to `<kbd>location/track</kbd>` will obtain the client's IP from the request header and use the `createLocationUpdateEvent` method to get the approximate location.
+For example, a GET request to <kbd>location/track</kbd> will obtain the client's IP from the request header and use the `createLocationUpdateEvent` method to get the approximate location.
 The response will be similar to:
 
 ```http
@@ -431,7 +431,7 @@ The response will be similar to:
 }
 ```
 
-Using the endpoint `<kbd>location/locations</kbd>` will return five stored events by default.
+Using the endpoint <kbd>location/locations</kbd> will return five stored events by default.
 You can use the `max` parameter to specify a higher number.
 
 In the Device Management application, navigate to **Devices** > **All devices** and locate your microservice tracker.
@@ -444,7 +444,7 @@ Refer to the [Web SDK for Angular](https://cumulocity.com/web/angular/#apps) for
 #### Run the Docker container
 
 The Docker image is built and added to the local Docker repository during the [Maven build](#build-the-microservice-application).
-As you have learned in our Hello world! tutorial, you can [run the Docker container](/microservice-sdk/java/#run-the-docker-container) locally.
+As you have learned in our [Hello world tutorial](/microservice-sdk/java/#java-microservice), you can [run the Docker container](/microservice-sdk/java/#run-the-docker-container) locally.
 Note that in this case the isolation was changed to `PER_TENANT`.
 You can also use your Docker image name and tag to run it as follows:
 

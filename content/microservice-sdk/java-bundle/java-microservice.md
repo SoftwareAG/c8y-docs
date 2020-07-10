@@ -1,7 +1,7 @@
 ---
 weight: 30
 layout: redirect
-title: Hello, world!
+title: Hello world tutorial
 ---
 
 Here you will learn how to create your first microservice that can be deployed on the [Cumulocity IoT platform](https://cumulocity.com) using the Microservice SDK for Java.

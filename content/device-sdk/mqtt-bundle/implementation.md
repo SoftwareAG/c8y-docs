@@ -89,9 +89,9 @@ The communication with Cumulocity IoT employing MQTT supports authentication in 
 
 #### MQTT ClientId
 
-The MQTT ClientId is a field to uniquely identify each connected client. The Cumulocity IoT implementation also uses the ClientId to link the client directly to a device. Therefore the following format should be used for the ClientId:
+The MQTT ClientId is a field to uniquely identify each connected client. The Cumulocity IoT implementation also uses the ClientId to link the client directly to a device. Therefore, the following format should be used for the ClientId:
 
-"connectionType:deviceIdentifier:defaultTemplateIdentifier"
+`connectionType:deviceIdentifier:defaultTemplateIdentifier`
 
 |Field|Mandatory|Description|
 |:-------|:--------|:--------|
@@ -99,9 +99,11 @@ The MQTT ClientId is a field to uniquely identify each connected client. The Cum
 |deviceIdentifier|YES|A unique identifier for your device, e.g. IMEI, Serial number|
 |defaultTemplateIdentifier|NO|Check the SmartREST section for more information about template identifiers|
 
-For the simplest version of a client, the MQTT clientId can just be the deviceIdentfier. It will automatically be interpreted as device connection.
+For the simplest version of a client, the MQTT clientId can just be the `deviceIdentfier`. It will automatically be interpreted as device connection.
 
-Example ClientIds:
+> **Important:** The colon character has a special meaning in Cumulocity IoT. Hence, it must not be used in the `deviceIdentifier`.
+
+Examples of ClientIds:
 
 ```text
 mySerialNumber
@@ -109,7 +111,7 @@ d:mySerialNumber
 d:mySerialNumber:myDefaultTemplate
 ```
 
-The uniqueness of the MQTT ClientId is determined only by the deviceIdentifier. Therefore from the above examples only one client can be connected at the same time.
+The uniqueness of the MQTT ClientId is determined only by the `deviceIdentifier`. Therefore, from the above examples only one client can be connected at the same time.
 
 During a SSL connection with certificates, the `deviceIdentifier` has to match the Common Name of the used certificate (first certificate in the chain, which is provided by the device).
 
@@ -151,4 +153,12 @@ In MQTT, the "last will" is a message that is specified at connection time and t
 
 To support developers during development, it is possible to subscribe to the topic <kbd>s/e</kbd>. On this topic the device can retrieve debug and error messages that occur during a publish from the device.
 
->**Info**: This topic is purely designed to support the development of clients. It is not recommended to always subscribe to this channel as the messages are verbose and can significantly increase the data usage. Also, you should not use this topic to trigger actions of the device based on what you receive on the topic. It is not a response channel.
+>**Info:** This topic is purely designed to support the development of clients. It is not recommended to always subscribe to this channel as the messages are verbose and can significantly increase the data usage. Also, you should not use this topic to trigger actions of the device based on what you receive on the topic. It is not a response channel.
+
+### Reloading the server certificate
+
+You can change the server certificate, which is sent to the devices. To do so, customers should contact Software AG Support (https://empower.softwareag.com/ContactSupport/), who can add a new certificate to the server's keystore and reload it.
+
+Certificates exchange between the server and the device occurs during device connection, so all already connected devices will not be disconnected during reloading. Only after they disconnect on their own and try to connect later, then it is required that they contain the new server certificate in their truststore.
+
+>**Info:** This functionality is designed to renew or change the server certificate, when it is going to expire.

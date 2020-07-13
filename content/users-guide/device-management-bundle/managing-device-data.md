@@ -97,11 +97,9 @@ Click **Configuration repository** in the the **Management** menu in the navigat
 
 The configuration snapshot will be added to the configuration repository.
 
-![Configuration Snapshot Repository](/images/users-guide/DeviceManagement/devmgmt-management-configrepo-addsnapshot.png)
-
 #### To edit a configuration snapshot
 
-To edit a configuration snapshots, click on the menu icon at the right of the row and then click **Edit**.
+To edit a configuration snapshot, click on the menu icon at the right of the row and then click **Edit**.
 
 For details on the fields, see [To add a configuration snapshot](/users-guide/device-management#add-snapshot).
 
@@ -111,13 +109,13 @@ Click **Update configuration** to save your changes.
 
 #### To delete a configuration snapshot
 
-To delete configuration snapshots, click on the menu icon at the right of the row and then click **Delete**.
+To delete a configuration snapshot, click on the menu icon at the right of the row and then click **Delete**.
 
 The configuration snapshot will be deleted from the configuration snapshot repository.
 
 #### To retrieve and apply a configuration snapshot
 
-Follow these steps to retrieve and apply a configuration snapshot to devices which do not support multiple configuration types:
+>**Info:** The following steps apply to devices which do not support single configuration types. For information on devices that support multiple configuration types, see the section below.
 
 1. Navigate to the desired device in **Devices** > **All devices** and open its **Configuration** tab.
 2. Under **Configuration snapshot**, click **Get new snapshot from device** at the top right.
@@ -136,8 +134,6 @@ To apply a configuration snapshot to a device:
 
 #### To retrieve and apply a configuration snapshot to a device which supports multiple configuration types
 
-Follow these steps to retrieve and apply a configuration snapshot to devices which support multiple configuration types:
-
 1. Navigate to the desired device in **Devices** > **All devices** and open its **Configuration** tab.
 2. Under **Device-supported configurations**, select the desired configuration type and click 
 **Get snapshot from device** at the right.
@@ -146,19 +142,19 @@ Once retrieved, you can save or download the snapshot in the **Preview** section
 
 ![Retrieve Configuration Snapshot](/images/users-guide/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
 
-> Clicking **Get snapshot from device**, creates a new operation. If the operation is in status PENDING
+> **Info:** Clicking **Get snapshot from device** creates a new operation. If the operation is in status PENDING
 or EXECUTING, it is not possible to trigger another configuration request for the configuration type. Navigate to the **Control** tab of a device to cancel the operation or view the history of operation changes.
 
 To apply a configuration snapshot to a device which supports multiple configuration types:
 
 1. Navigate to the desired device and open its **Configuration** tab.
-2. Under **Device-supported configurations**, select the desired configuration type
+2. Under **Device-supported configurations**, select the desired configuration type.
 3. Under **Available supported configurations**, select a configuration file.
 4. Click **Send configuration to device** at the right to apply the selected snapshot to the device.
 
 ![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
 
-> **Info:** Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered bases on device type. Only configuration files with a matching device type or without a device type defined are shown in the UI.
+> **Info:** Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered based on the device type. Only configuration files with a matching device type or without a device type defined are shown in the UI.
 
 ### <a name="credentials"></a>Managing device credentials
 

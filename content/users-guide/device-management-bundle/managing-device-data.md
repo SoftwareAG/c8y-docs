@@ -154,7 +154,7 @@ To apply a configuration snapshot to a device which supports multiple configurat
 
 ![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
 
-> **Info:** Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered based on the device type. Only configuration files with a matching device type or without a device type defined are shown in the UI.
+> **Info:** Under **Available supported configurations**, only configuration files with a matching configuration type property or without a configuration type defined are displayed. Also, configuration files are filtered based on the device type.
 
 ### <a name="credentials"></a>Managing device credentials
 

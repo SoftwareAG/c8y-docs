@@ -117,9 +117,7 @@ The configuration snapshot will be deleted from the configuration snapshot repos
 
 #### To retrieve and apply a configuration snapshot
 
-In this section you can see how to retrieve and apply a configuration snapshot to devices which do not support multiple configuration types.
-
-In order to retrieve a current configuration snapshot from a device, follow these steps:
+Follow these steps to retrieve and apply a configuration snapshot to devices which do not support multiple configuration types:
 
 1. Navigate to the desired device in **Devices** > **All devices** and open its **Configuration** tab.
 2. Under **Configuration snapshot**, click **Get new snapshot from device** at the top right.
@@ -138,7 +136,7 @@ To apply a configuration snapshot to a device:
 
 #### To retrieve and apply a configuration snapshot to a device which supports multiple configuration types
 
-In this section you can see how to retrieve and apply a configuration snapshot to devices which support multiple configuration types:
+Follow these steps to retrieve and apply a configuration snapshot to devices which support multiple configuration types:
 
 1. Navigate to the desired device in **Devices** > **All devices** and open its **Configuration** tab.
 2. Under **Device-supported configurations**, select the desired configuration type and click 

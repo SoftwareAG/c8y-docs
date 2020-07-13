@@ -213,7 +213,7 @@ The **Configuration** tab allows you to configure the parameters and initial set
  - Text-based configurations
  - Binary-based configuration snapshots
 
-For more details on binary-based configuration snapshots management, see [Managing device data > Configuration snapshots](#configuration-repository).
+For more details on managing binary-based configuration snapshots, see [Managing device data > Configuration snapshots](#configuration-repository).
 
 #### To add or edit a text-based configuration snapshot
 

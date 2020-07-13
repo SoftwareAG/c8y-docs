@@ -73,9 +73,7 @@ You need to specify the version of the Cumulocity IoT's microservice library to 
 
 ![Upload microservice](/images/microservices-sdk/ms-backend-version.png)
 
-Alternatively, you can use an API call to retrieve the backend version:
-
-`GET {{url}}/tenant/system/options/system/version`
+Alternatively, you can retrieve the backend version with a GET request to <kbd><URL>/tenant/system/options/system/version</kbd>.
 
 The response looks like this:
 
@@ -408,7 +406,7 @@ The response looks like this:
 ```json
 {
     "password": "<BOOTSTRAP_USER_PASSWORD>",
-    "name": "<BOOTSTRA_USER_NAME>",
+    "name": "<BOOTSTRAP_USER_NAME>",
     "tenant": "<BOOTSTRAP_USER_TENANT>"
 }
 ```
@@ -439,7 +437,7 @@ $ docker run -p 8082:80 -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_USER_TENANT> \
   -i -t -e C8Y_BASEURL=<URL> <IMAGE_ID>
 ```
 
-with `https://<TENANT>.cumulocity.com` as `<URL>`. `-p 8082:80` will expose your port 80 to a port on your host system, e.g. 8082.
+`-p 8082:80` will expose your port 80 to a port on your host system, e.g. 8082.
 
 If your Docker image has run successfully, you shall see the output on the console similar to the one below.
 

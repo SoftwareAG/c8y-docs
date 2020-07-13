@@ -9,8 +9,8 @@ Microservices are server-side applications which may be used to extend the Cumul
 
 If you want to jump right in, check out our Hello world tutorials for [Java](/microservice-sdk/java#java-microservice) and [C#](/microservice-sdk/cs#hello-world-basic).
 
-Would you rather code in Python or Javascript?
-We do not yet have an SDK for these, but you can check out our examples for developing microservices in [Python](/microservice-sdk/http#hello-microservice-python) and [Node.js](/microservice-sdk/http#microservice-nodejs).
+Would you rather code in Python or JavaScript?
+We do not have an SDK for these, but you can check out our examples for developing microservices in [Python](/microservice-sdk/http#hello-microservice-python) and [Node.js](/microservice-sdk/http#microservice-nodejs).
 
 For detailed information, see:
 

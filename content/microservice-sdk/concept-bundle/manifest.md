@@ -140,7 +140,7 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
 |Name|Type|Description|Required|
 |:---|:---|:----------|:----------|
 |name|String |Company name of the provider|Yes
-|domain|String |Website of the provider |No
+|domain|String |Website of the provider |Yes
 |support|Email|Email of the support person|No
 
 #### Resources

@@ -41,7 +41,7 @@ Example:
 |deviceId|String|The ID of the device generating the sms. A log event will be created for the device|no|
 
 It is possible to have more than one phone number in the parameter receiver. Therefore create a string that contains all phone numbers separated by commas e.g. "+49123456789,+49987654321".
-Although it is technically not required by Cumulocity to have the country code we recommend using it because the sms gateway might require it. You can use the notation like e.g. "0049" or "+49" (for Germany).
+Although it is technically not required by Cumulocity to have the country code we recommend you to use it because the sms gateway might require it. You can use the notation like e.g. "0049" or "+49" (for Germany).
 
 _Note:_
 
@@ -96,7 +96,7 @@ This stream enables the possibility to send HTTP requests from Cumulocity to ext
 Example:
 
     insert into SendRequest
-    select 
+    select
       'post' as method,
       'http://some.external.service.com' as url,
       'application/json' as contentType,
@@ -125,5 +125,3 @@ Example:
         'receiver@example.com' as receiver
     from
         pattern [every timer:at(5, *, *, *, *)]
-
-

@@ -15,4 +15,4 @@ For details, refer to the section *Installing Streaming Analytics (Apama)* in th
 
 ### JWT token authentication
 
-The JWT token authentication using the “token.publicKey” tenant option is deprecated but will continue to be supported until further notice. We recommend to use the O-Auth authentication grant instead.
+The JWT token authentication using the “token.publicKey” tenant option is deprecated but will continue to be supported until further notice. We recommend you to use the O-Auth authentication grant instead.

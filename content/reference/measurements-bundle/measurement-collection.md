@@ -138,7 +138,7 @@ Because of this use case, dots must not be used in neither measurement fragment 
 |Host|{{hostname}}
 
 ```http
- GET <<url>>/measurement/measurements/series?series=c8y_AccelerationMeasurement.acceleration&dateFrom=<<startDate>>&dateTo=<<endDate>>
+GET <<url>>/measurement/measurements/series?series=c8y_AccelerationMeasurement.acceleration&source=<<sourdeID>>&dateFrom=<<startDate>>&dateTo=<<endDate>>
 ```
 #### Example response
 

@@ -52,7 +52,7 @@ Cumulocity offers a wide range of functionality for interfacing IoT devices and 
 
 This Device SDK guide provides detailed information on device integration using [MQTT](/device-sdk/mqtt), [REST](/device-sdk/rest) and [C++](/device-sdk/cpp).
 
-For interfacing devices with Cumulocity, we recommend to use MQTT and [SmartREST](/reference/smartrest/), which can be very efficiently implemented using available MQTT client libraries such as [Eclipse Paho](https://www.eclipse.org/paho/).
+For interfacing devices with Cumulocity, we recommend you to use MQTT and [SmartREST](/reference/smartrest/), which can be very efficiently implemented using available MQTT client libraries such as [Eclipse Paho](https://www.eclipse.org/paho/).
 
 An up-to-date open source reference implementation of a Cumulocity agent for embedded Linux systems with many device management features can be found at [https://bitbucket.org/m2m/cumulocity-agents-linux](https://bitbucket.org/m2m/cumulocity-agents-linux). Note that the reference implementation currently uses SmartREST 1 with the choice to switch between HTTP and MQTT as transport protocol.
 

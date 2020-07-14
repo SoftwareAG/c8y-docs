@@ -17,7 +17,7 @@ Model management functionality includes:
 * Deleting models
 * Viewing model properties and KPIs
 
-Click **Models** in the navigator, to open the **Models** page. 
+Click **Models** in the navigator, to open the **Models** page.
 
 ![Models manager](/images/zementis/zementis-models.png)
 
@@ -25,18 +25,18 @@ Click **Models** in the navigator, to open the **Models** page.
 
 To upload a new model, first click on the tab (PMML or ONNX) corresponding to the model format you want to upload.
 
-Then click **Add model**, navigate to the desired file and finally click **Open**. 
+Then click **Add model**, navigate to the desired file and finally click **Open**.
 
-Once your model is successfully uploaded, you will see a corresponding confirmation message. The new model will be added to the models list. 
+Once your model is successfully uploaded, you will see a corresponding confirmation message. The new model will be added to the models list.
 
 >**Info**:
 <br>For uploading PMML models, use the **Apply PMML Cleanser** toggle in the top menu bar to enable/disable the PMML cleanser.
 <br>By default, the toggle is enabled.<br>
-<br>During a PMML upload if the **Apply PMML Cleanser** toggle is enabled, comprehensive semantic checks and corrections will be performed on the provided PMML file.  Disabling it will improve upload time, but this is not recommended. If the PMML file is large, such as Random Forest model, we recommend compressing the file using ZIP/GZIP before uploading. This will reduce the upload time drastically.
+<br>During a PMML upload if the **Apply PMML Cleanser** toggle is enabled, comprehensive semantic checks and corrections will be performed on the provided PMML file.  Disabling it will improve upload time, but this is not recommended. If the PMML file is large, such as Random Forest model, we recommend you to compress the file with ZIP/GZIP before uploading. This will reduce the upload time drastically.
 
 ### Downloading models
 
-A model listed under the PMML tab can be downloaded in various formats for future use. 
+A model listed under the PMML tab can be downloaded in various formats for future use.
 
 For each format a clickable icon is provided in the model cards.
 
@@ -50,7 +50,7 @@ For a model listed under ONNX tab, the download icon in the model card can be us
 
 ### Activating or deactivating models
 
-A model, if not being used for a long time, can be deactivated so that it doesn't occupy space in the memory of the system. 
+A model, if not being used for a long time, can be deactivated so that it doesn't occupy space in the memory of the system.
 
 Click the **Active/Inactive** toggle in a model´s card to deactivate/activate the model.
 
@@ -60,7 +60,7 @@ Click the **Active/Inactive** toggle in a model´s card to deactivate/activate t
 
 To delete a model, click the delete icon on its card and confirm the deletion.  
 
-Once a model is deleted, it will be removed permanently from your list of models. 
+Once a model is deleted, it will be removed permanently from your list of models.
 
 ### Viewing model properties and KPIs
 
@@ -72,14 +72,14 @@ Besides the name, description and status of the model, the **Model Details** win
 
 ![Model details](/images/zementis/zementis-model-details.png)
 
->**Info**: 
+>**Info**:
 <br> 1. By default, the **Inputs** and **Outputs** panels are in collapsed state. Click the labels to expand them.
 <br><br> 2. Memory Metrics provides information about the memory footprint of the model on the server and its related attributes like used memory, free memory and total memory of the application. The same information is represented as a vertical bar chart.
 <br><br> 3. Prediction Metrics provides a scoring result summary for the models. Prediction Metrics of a classification model displays the predicted categories and its respective counts as a pie chart. Prediction Metrics of a regression model
 displays the Five Point Summary of predicted values i.e., Minimum, FirstQuartile, Median, ThirdQuartile and Maximum values as a box plot. Initially, the Prediction Metrics of any model is empty and it will be displayed only if scoring is applied on the model. Prediction Metrics of a model will be reset when the model is deleted or deactivated. Also the Prediction Metrics information that shows up is always the cumulative result with the past scoring of the model.
 Currently, the Prediction Metrics feature is supported only for classification and regression models.
 
-An ONNX model has many important properties such as model inputs and outputs, along with model version, ONNX version, producer name and producer version. 
+An ONNX model has many important properties such as model inputs and outputs, along with model version, ONNX version, producer name and producer version.
 Click the info icon <img src="/images/zementis/zementis-info-icon.png" alt="Info" style="display:inline-block; margin:0"> to view the properties of an ONNX model. The ONNX model properties are represented in JSON format.
 
 ![Model details](/images/zementis/zementis-model-details-onnx.png)

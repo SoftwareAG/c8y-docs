@@ -197,7 +197,7 @@ After we added the plugin folder to our application, we can start implementing t
 
 ### Implement the plugin's initialization function
 
-Even though the scope of this example is very small, we recommend to use a modular approach. For this reason, create a file "hello.module.js" for the module, a file "hello.config.js" for the config and a file "hello.controller.js" for the controller inside the "myplugin" folder.
+Even though the scope of this example is very small, we recommend you to use a modular approach. For this reason, create a file "hello.module.js" for the module, a file "hello.config.js" for the config and a file "hello.controller.js" for the controller inside the "myplugin" folder.
 
 Inside the "hello.module.js" file, we initialize the module for our plugin:
 

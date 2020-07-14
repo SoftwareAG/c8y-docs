@@ -4,7 +4,61 @@ title: Microservice manifest
 layout: redirect
 ---
 
-The application manifest provides the required settings to manage microservice instances and the application deployment in the Cumulocity IoT platform. The definition is provided within the _cumulocity.json_ file in the binary uploaded to the Cumulocity IoT platform.
+The application manifest provides the required settings to manage microservice instances and the application deployment in the Cumulocity IoT platform.
+The definition is provided within the _cumulocity.json_ file in the binary uploaded to the Cumulocity IoT platform.
+
+Here is an example manifest:
+
+```json
+{
+    "apiVersion": "v1",
+    "name": "my-microservice",
+    "version": "1.0.0",
+    "provider": {
+        "name": "New Company Ltd.",
+        "domain": "http://new-company.com",
+        "support": "support@new-company.com"
+    },
+    "isolation": "MULTI_TENANT",
+    "scale": "AUTO",
+    "resources": {
+        "cpu": "1",
+        "memory": "1G"
+    },
+    "requestedResources":{
+            "cpu": "100m",
+            "memory": "128Mi"
+    },
+    "requiredRoles": [
+        "ROLE_ALARM_READ"
+    ],
+    "livenessProbe": {
+        "httpGet": {
+            "path": "/health"
+        },
+        "initialDelaySeconds": 60,
+        "periodSeconds": 10
+    },
+    "readinessProbe": {
+        "httpGet": {
+            "path": "/health",
+            "port": 80
+
+        },
+        "initialDelaySeconds": 20,
+        "periodSeconds": 10
+    },
+    "settingsCategory": "my-ms",
+    "settings": [
+        {
+            "key": "tracker-id",
+            "defaultValue": "1234"
+        }
+    ]
+}
+```
+
+See below for detailed information about available settings.
 
 ### Settings
 
@@ -215,55 +269,3 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
 |:---|:---|:----------|:----------|
 |type | String | Type ID of the extension | Yes
 |* | any | Configuration parameters | No
-
-
-##### Example Manifest
-
-```json
-{
-    "apiVersion": "v1",
-    "name": "my-microservice",
-    "version": "1.0.0",
-    "provider": {
-        "name": "New Company Ltd.",
-        "domain": "http://new-company.com",
-        "support": "support@new-company.com"
-    },
-    "isolation": "MULTI_TENANT",
-    "scale": "AUTO",
-    "resources": {
-        "cpu": "1",
-        "memory": "1G"
-    },
-    "requestedResources":{
-            "cpu": "100m",
-            "memory": "128Mi"
-    },
-    "requiredRoles": [
-        "ROLE_ALARM_READ"
-    ],
-    "livenessProbe": {
-        "httpGet": {
-            "path": "/health"
-        },
-        "initialDelaySeconds": 60,
-        "periodSeconds": 10
-    },
-    "readinessProbe": {
-        "httpGet": {
-            "path": "/health",
-            "port": 80
-
-        },
-        "initialDelaySeconds": 20,
-        "periodSeconds": 10
-    },
-    "settingsCategory": "my-ms",
-    "settings": [
-        {
-            "key": "tracker-id",
-            "defaultValue": "1234"
-        }
-    ]
-}
-```

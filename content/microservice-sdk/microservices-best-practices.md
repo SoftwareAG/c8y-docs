@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 80
 title: Best practices
 layout: bundle
 
@@ -20,7 +20,7 @@ Do not use a local disk, store everything in Cumulocity IoT. You do not have a g
 
 #### Liveness probes
 
-Liveness probes should be exposed to Kubernetes as well, only having a health endpoint is not sufficient. Moreover, take special attention on implementing liveness probes properly. Kubernetes will restart or undeploy the service if the liveness probe is not reliable. Never check 3rd parties in the liveness probe - this can prevent the service from working. 
+Liveness probes should be exposed to Kubernetes as well, only having a health endpoint is not sufficient. Moreover, take special attention on implementing liveness probes properly. Kubernetes will restart or undeploy the service if the liveness probe is not reliable. Never check 3rd parties in the liveness probe - this can prevent the service from working.
 
 
 #### Network traffic
@@ -30,7 +30,7 @@ It is not recommended to build a microservice that loads most of the functionali
 
 #### Resource consumption
 
-Resource consumption should be defined as necessary in the [microservice manifest](/microservice-sdk/concept/#manifest). Resource consumption has an impact on billing. Also consider carefully how many resources you will need in a production scenario per microservice started. 
+Resource consumption should be defined as necessary in the [microservice manifest](/microservice-sdk/concept/#manifest). Resource consumption has an impact on billing. Also consider carefully how many resources you will need in a production scenario per microservice started.
 
 
 #### Scaling
@@ -40,19 +40,16 @@ There is currently no way to influence load balancer behaviour for scaled micros
 
 #### Shared microservices
 
-When building microservices for multiple tenants, try to build them in the multi-tenant isolation level, see [General aspects > Isolation and scaling](/microservice-sdk/concept/#isolation-levels). 
+When building microservices for multiple tenants, try to build them in the multi-tenant isolation level, see [General aspects > Isolation and scaling](/microservice-sdk/concept/#isolation-levels).
 
 
 #### Statefulness
 
-Avoid statefulness wherever possible, rather write data via REST requests or DB to a persistent shared storage. You can actually find statelessness as one of the requirements listed under [General concepts > Requirements and interactions](/microservice-sdk/concept/#requirements). 
+Avoid statefulness wherever possible, rather write data via REST requests or DB to a persistent shared storage. You can actually find statelessness as one of the requirements listed under [General concepts > Requirements and interactions](/microservice-sdk/concept/#requirements).
 
 
 #### Testing of microservices
 
 * Do not develop or test on a production platform.
-* You should develop in a local environment before even deploying something in a development or test cluster. 
+* You should develop in a local environment before even deploying something in a development or test cluster.
 * Use existing development platforms to test your microservices before rolling them out to any production system.
-
-
-

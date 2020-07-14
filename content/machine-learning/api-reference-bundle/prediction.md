@@ -7,7 +7,7 @@ aliases:
   - /predictive-analytics/api-reference/#prediction
 ---
 
-Operations on applying model or model group to input data.
+Operations on applying model, model group, pipeline to input data.
 
 ### GET - Apply PMML Model to Single Record
 
@@ -937,6 +937,113 @@ curl --location --request POST "{{url}}/service/zementis/onnx/apply/dummy" \
 {
     "errors": [
         "Model 'dummy' not found."
+    ]
+}
+```
+
+### POST - Apply ONNX Pipeline to Input Data
+
+```
+{{url}}/service/zementis/onnx/apply-pipeline/{{pipeline_name}}
+```
+
+Apply an ONNX pipeline to input data. Note that the size of the uploaded file should not exceed 500 MB.
+
+ONNX format doesn’t provide a representation for pre-processing steps. For deep learning models like CNN which deal with image data, the necessary pre-processing steps must be applied to the images and the result should be sent in JSON format as an input to the ONNX model. In pipeline, the input data can be of any format as long as the pre-processing script of the pipeline can process it. However, if there in no pre-processing step in the pipeline then the input data has to be in JSON format.
+
+>**Info**: An active subscription of the Onnx microservice is required to leverage this API.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Content-Type|required header parameter with two accepted values: application/octet-stream or multipart/form-data
+
+|PARAMS||
+|:---|:---|
+|file (file)|data file.
+|pipeline_name (string)|required path variable for the name of the pipeline to be applied
+
+**Example Request**
+
+```
+200 - OK
+
+curl --request POST "{{url}}/service/zementis/onnx/apply-pipeline/DetectFabricOrientation" \
+     --header "Authorization: {{auth}}" --header "Content-Type: multipart/form-data" --form "file=@data.jpeg"
+
+```
+
+**Example Response**
+
+```
+200 - OK 
+
+{
+    "fabricFace": "front",
+    "probability": "88.22"
+}
+```
+
+
+**Example Request**
+
+```
+400 - Bad Request
+
+curl --request POST "{{url}}/service/zementis/onnx/apply-pipeline/DetectFabricOrientation" \
+  --header "Authorization: {{auth}}" --header "Content-Type: multipart/form-data" --form "file=@"
+  ```
+  
+**Example Response**
+
+```
+400 - Bad Request
+
+{
+    "errors": [
+        "Empty input stream."
+    ]
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --request POST "{{url}}/service/zementis/onnx/apply-pipeline/DetectFabricOrientation" \
+     --header "Content-Type: multipart/form-data" --form "file=@data.jpeg"
+```
+     
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+404 - Not Found
+
+curl --request POST "{{url}}/service/zementis/onnx/apply-pipeline/dummy" \
+  --header "Authorization: {{auth}}" --header "Content-Type: multipart/form-data" --form "file=@data.jpeg"
+```
+
+**Example Response**
+
+```
+404 - Not Found
+
+{
+    "errors": [
+        "Pipeline 'dummy' not found."
     ]
 }
 ```

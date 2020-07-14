@@ -4,7 +4,7 @@ layout: redirect
 title: Developing microservices
 ---
 
-It is described below the different microservice SDK features, including annotations, services, configuration files, logging and the Maven build plugin.
+See below for the different microservice SDK features, including annotations, services, configuration files, logging and the Maven build plugin.
 
 There are two possible deployment types on the platform:
 

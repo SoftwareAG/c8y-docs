@@ -6,6 +6,8 @@ layout: redirect
 
 In Apama EPL, interactions with the rest of the Cumulocity IoT ecosystem are done via events. A number of event definitions is provided for accessing Cumulocity IoT data.
 
+> **Info:** Apama and Cumulocity IoT use different "event" concepts. Apama events are used for all  interactions with Cumulocity IoT, such as listening for and creating device measurements, alarms and (Cumulocity IoT) events. For more information on Apama events, see the built-in `event` type in the [API Reference for EPL (ApamaDoc)](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/ApamaDoc/index.html?event.html), which is part of the Apama documentation. For more information on Cumulocity IoT events, see [Events](/reference/events/) in the *Reference Guide*. 
+
 ### Predefined event types
 
 There are some predefined event types to interact with several Cumulocity IoT APIs. Events are sent to Apama applications automatically when a new measurement, alarm or event is created. For interacting with the Cumulocity IoT backend, you can create an event and send it to the relevant channel. Cumulocity IoT will automatically execute either the database query or create the API calls necessary for sending mails, SMS, or similar.

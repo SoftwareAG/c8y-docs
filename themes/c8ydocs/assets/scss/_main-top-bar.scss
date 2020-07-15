@@ -1,35 +1,35 @@
 // versions dropdown
 
-.dropdown.version{
+.dropdown.version {
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
-  left:0;
+  left: 0;
   top: 10px;
-  transition: left .35s $ease;
+  transition: left 0.35s $ease;
   z-index: 2000;
   letter-spacing: 0.05em;
   font-size: 11px;
   text-decoration: none;
   text-transform: uppercase;
   padding: 0.6rem 0 0 6rem;
- 
-  &.show{
+
+  &.show {
     z-index: 2000;
-    .dropdown-toggle.version{
+    .dropdown-toggle.version {
       background-color: transparent;
       color: #333;
       box-shadow: none;
     }
   }
-  @media(min-width: $grid-breakpoint){
+  @media (min-width: $grid-breakpoint) {
     left: $main-nav-width;
     margin-left: 4px;
     padding: 0.9rem 0 0 2.5rem;
   }
-  
-  .dropdown-toggle.version{
+
+  .dropdown-toggle.version {
     display: flex;
     align-items: center;
     padding: 6px 12px;
@@ -41,77 +41,75 @@
     color: white;
     border-radius: 12px;
     box-shadow: 0 0 0 3px #f8f8f8;
-    .caret{
+    -webkit-appearance: none;
+    .caret {
       margin-left: 6px;
     }
   }
-  .dropdown-menu{
+  .dropdown-menu {
     padding-top: 34px;
     padding-bottom: 0;
-    top: -35px!important;
+    top: -35px !important;
     z-index: 10;
   }
-  small{
+  small {
     position: relative;
     z-index: 1010;
     font-weight: bold;
-    opacity: .5;
-    
+    opacity: 0.5;
   }
 }
 
-
-.main-top-bar{
+.main-top-bar {
   position: fixed;
   z-index: 10;
-  left:0;
-  transition: left .35s $ease;
-  @media(min-width: $grid-breakpoint){
+  left: 0;
+  transition: left 0.35s $ease;
+  @media (min-width: $grid-breakpoint) {
     left: $main-nav-width;
   }
-  right:0;
-  top:0;
+  right: 0;
+  top: 0;
   padding-top: 1rem;
   padding-left: 10rem;
-  >.d-flex{
+  > .d-flex {
     align-items: center;
     max-width: 1168px;
   }
 
-  .nav{
+  .nav {
     padding: 0;
     margin: 0;
     list-style: none;
-    a{
+    a {
       color: #ccd2d6;
       letter-spacing: 0.05em;
       font-size: 11px;
       text-decoration: none;
       text-transform: uppercase;
       padding: 6px 6px;
-      &:hover{
+      &:hover {
         color: $blue-primary;
       }
     }
-    &.nav-left{
-      @media(max-width: $grid-breakpoint){
+    &.nav-left {
+      @media (max-width: $grid-breakpoint) {
         margin-left: 30px;
       }
     }
-    .open &{
+    .open & {
       display: none;
     }
   }
 
-  .nav-right{
+  .nav-right {
     width: 170px;
-    @media(min-width: $screen-sm-min){
+    @media (min-width: $screen-sm-min) {
       width: 260px;
-      margin-left: auto!important;
+      margin-left: auto !important;
     }
-    @media(min-width: $grid-breakpoint){
+    @media (min-width: $grid-breakpoint) {
       margin-right: 150px;
     }
   }
-
 }

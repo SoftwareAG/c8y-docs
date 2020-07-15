@@ -130,7 +130,7 @@ To apply a configuration snapshot to a device:
 2. Under **Configuration snapshot**, select a configuration from the dropdown field.
 3. Click **Put new snapshot to device** to apply the selected snapshot to the device.
 
-![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot.png)
+![Apply new snapshot to a device](/images/users-guide/DeviceManagement/devmgmt-devices-config-putsnapshot-old.png)
 
 #### To retrieve and apply a configuration snapshot to a device which supports multiple configuration types
 

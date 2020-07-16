@@ -7,9 +7,9 @@ aliases:
   - /predictive-analytics/api-reference/#prediction
 ---
 
-Operations on applying model or model group to input data.
+Operations on applying model, model group, pipeline to input data.
 
-### GET - Apply PMML Model to Single Record
+### GET - Apply PMML model to single record
 
 ``` perl
 {{url}}/service/zementis/apply/{{model_name}}?record={{record}}
@@ -117,7 +117,7 @@ curl --request GET "{{url}}/service/zementis/apply/Iris_NN?record=%7B" --header 
 }
 ```
 
-### GET - Apply PMML Model to Single Record and Explain Result
+### GET - Apply PMML model to single record and explain result
 
 ```
 {{url}}/service/zementis/apply/{{model_name}}/explain?record={{record}}
@@ -336,7 +336,7 @@ curl --request GET "{{url}}/service/zementis/apply/Iris_NN/explain?record=%7B" -
 }
 ```
 
-### POST - Apply PMML Model to Multiple Records
+### POST - Apply PMML model to multiple records
 
 ```
 {{url}}/service/zementis/apply/{{model_name}}
@@ -597,7 +597,7 @@ curl --location --request POST "{{url}}/service/zementis/apply/dummy " \
 }
 ```
 
-### POST - Apply PMML Model Group to Multiple Records
+### POST - Apply PMML model group to multiple records
 
 ```
 {{url}}/service/zementis/pmml/apply-group/{{group_name}}
@@ -701,7 +701,7 @@ curl --location --request POST "{{url}}/service/zementis/pmml/apply-group/dummy"
 }
 ```
 
-### POST - Apply PMML Model Group to Multiple Records and Show Details
+### POST - Apply PMML model group to multiple records and show details
 
 ```
 {{url}}/service/zementis/pmml/apply-group/{{group_name}}/detail
@@ -809,7 +809,7 @@ curl --location --request POST "{{url}}/service/zementis/pmml/apply-group/dummy/
 }
 ```
 
-### POST - Apply ONNX Model to Multiple Records
+### POST - Apply ONNX model to multiple records
 
 ```
 {{url}}/service/zementis/onnx/apply/{{model_name}}
@@ -817,9 +817,9 @@ curl --location --request POST "{{url}}/service/zementis/pmml/apply-group/dummy/
 
 Apply an ONNX model to multiple records. Note that the size of the uploaded file should not exceed 500 MB and the input should be in JSON format.
 
-ONNX format doesn’t provide a representation for pre-processing steps. For deep learning models like CNN which deal with image data, the necessary pre-processing steps must be applied to the images and the result should be sent in JSON format as an input to the ONNX model.
+The ONNX format doesn’t provide a representation for pre-processing steps. For deep learning models like CNN which deal with image data, the necessary pre-processing steps must be applied to the images and the result should be sent in JSON format as an input to the ONNX model.
 
->**Info**: An active subscription of the Onnx microservice is required to leverage this API.
+>**Info:** An active subscription of the Onnx microservice is required to leverage this API.
 
 |HEADERS||
 |:---|:---|
@@ -937,6 +937,113 @@ curl --location --request POST "{{url}}/service/zementis/onnx/apply/dummy" \
 {
     "errors": [
         "Model 'dummy' not found."
+    ]
+}
+```
+
+### POST - Apply ONNX pipeline to input data
+
+```
+{{url}}/service/zementis/onnx/apply-pipeline/{{pipeline_name}}
+```
+
+Apply an ONNX pipeline to input data. Note that the size of the uploaded file should not exceed 500 MB.
+
+The ONNX format doesn’t provide a representation for pre-processing steps. For deep learning models like CNN which deal with image data, the necessary pre-processing steps must be applied to the images and the result should be sent in JSON format as an input to the ONNX model. In pipeline, the input data can be of any format as long as the pre-processing script of the pipeline can process it. However, if there is no pre-processing step in the pipeline then the input data has to be in JSON format.
+
+>**Info:** An active subscription of the Onnx microservice is required to leverage this API.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Content-Type|required header parameter with two accepted values: application/octet-stream or multipart/form-data
+
+|PARAMS||
+|:---|:---|
+|file (file)|data file
+|pipeline_name (string)|required path variable for the name of the pipeline to be applied
+
+**Example Request**
+
+```
+200 - OK
+
+curl --request POST "{{url}}/service/zementis/onnx/apply-pipeline/DetectFabricOrientation" \
+     --header "Authorization: {{auth}}" --header "Content-Type: multipart/form-data" --form "file=@data.jpeg"
+
+```
+
+**Example Response**
+
+```
+200 - OK 
+
+{
+    "fabricFace": "front",
+    "probability": "88.22"
+}
+```
+
+
+**Example Request**
+
+```
+400 - Bad Request
+
+curl --request POST "{{url}}/service/zementis/onnx/apply-pipeline/DetectFabricOrientation" \
+  --header "Authorization: {{auth}}" --header "Content-Type: multipart/form-data" --form "file=@"
+  ```
+  
+**Example Response**
+
+```
+400 - Bad Request
+
+{
+    "errors": [
+        "Empty input stream."
+    ]
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --request POST "{{url}}/service/zementis/onnx/apply-pipeline/DetectFabricOrientation" \
+     --header "Content-Type: multipart/form-data" --form "file=@data.jpeg"
+```
+     
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+404 - Not Found
+
+curl --request POST "{{url}}/service/zementis/onnx/apply-pipeline/dummy" \
+  --header "Authorization: {{auth}}" --header "Content-Type: multipart/form-data" --form "file=@data.jpeg"
+```
+
+**Example Response**
+
+```
+404 - Not Found
+
+{
+    "errors": [
+        "Pipeline 'dummy' not found."
     ]
 }
 ```

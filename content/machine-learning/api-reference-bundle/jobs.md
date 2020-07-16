@@ -9,9 +9,9 @@ aliases:
 
 Operations on jobs scheduled for processing device data.
 
->**Info**: Currently, jobs can be scheduled using PMML models and model groups only.
+>**Info:** Currently, jobs can be scheduled using PMML models and model groups only.
 
-### Domain Model
+### Domain model
 #### JobConfiguration
 |Name|Type|Description|
 |:-----|:-----|:-----|
@@ -34,13 +34,13 @@ Operations on jobs scheduled for processing device data.
 |dataFrom|String|Datetime string from the past which should be considered as the starting point <br> for data to be fetched for processing.|'
 |dataTo|String|Datetime string from the past which should be considered as the ending point <br> for data to be fetched for processing.|
 
->**Info**:
+>**Info:**
 <br>1. For *periodic* frequency, `cronExpression`, `dataFromPreviousNSeconds` and `timeZone` fields are mandatory.
 <br>2. For *once* frequency, `scheduleAt`, `dataFrom` and `dataTo` fields are mandatory and should adhere to the ISO-8601 date-time format
 <br> &emsp; i.e. "yyyy-MM-dd'T'HH:mm:ss.SSSXXX", for instance "2019-12-30T22:59:50.235+05:30". 
 <br> &emsp; The difference between `dataFrom` and `dateTo` must not exceed 24 hours.
 
-### POST - Create New Job
+### POST - Create new job
 
 ```
 {{url}}/service/zementis/job
@@ -235,7 +235,7 @@ curl --request POST "{{url}}/service/zementis/job" --header "Authorization: {{au
 }
 ```
 
-### GET - List Available Jobs
+### GET - List available jobs
 
 ```
 {{url}}/service/zementis/jobs
@@ -356,7 +356,7 @@ curl --request GET "{{url}}/service/zementis/jobs"
 ```
 
 
-### GET - Get Job Information
+### GET - Get job information
 
 ```
 {{url}}/service/zementis/job/{{jobId}}
@@ -460,7 +460,7 @@ curl --request GET "{{url}}/service/zementis/job/000000" --header "Authorization
 }
 ```
 
-### GET - Get Job Status
+### GET - Get job status
 
 ```
 {{url}}/service/zementis/job/{{jobId}}/status
@@ -538,7 +538,7 @@ curl --request GET "{{url}}/service/zementis/job/000000/status" --header "Author
 }
 ```
 
-### GET - Job Execution History
+### GET - Job execution history
 
 ```
 {{url}}/service/zementis/job/{{jobId}}/history
@@ -634,7 +634,7 @@ curl --request PUT "{{url}}/service/zementis/job/00000/history" --header "Author
 }
 ```
 
-### GET - Job Execution Detail
+### GET - Job execution detail
 
 ```
 {{url}}/service/zementis/job/{{jobId}}/history/{{executionId}}
@@ -719,7 +719,7 @@ curl --request GET "{{url}}/service/zementis/job/15896925/history/0" --header "A
 }
 ```
 
-### GET - Job Execution Results
+### GET - Job execution results
 
 ```
 {{url}}/service/zementis/job/{{jobId}}/history/{{executionId}}/inferences
@@ -898,7 +898,7 @@ curl --request GET "{{url}}/service/zementis/job/15896925/history/0/inferences" 
 }
 ```
 
-### DEL - Remove Job
+### DEL - Remove job
 
 ```
 {{url}}/service/zementis/job/{{jobId}}
@@ -1013,7 +1013,7 @@ curl --request DELETE "{{url}}/service/zementis/job/00000" --header "Authorizati
 }
 ```
 
-### DEL - Remove All Jobs
+### DEL - Remove all jobs
 
 ```
 {{url}}/service/zementis/jobs

@@ -34,7 +34,7 @@ GET <<url>>/inventory/managedObjects/<<deviceId>>/<<references>>/<<referenceId>>
 
 |HEADERS||
 |:---|:---|
-|Content-Type|application/vnd.com.nsn.cumulocity.managedObjectReference+json;ver=...
+|Content-Type|application/vnd.com.nsn.cumulocity.managedobjectreference+json;ver=...
 
 ```http
 HTTP/1.1

@@ -39,8 +39,8 @@ After that, actions related to that device can be performed by referencing the d
 To create a new device in the inventory of Cumulocity IoT the following REST request is needed:
 
     POST /inventory/managedObjects HTTP/1.1
-    Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json; charset=UTF-8; ver=0.9
-    Accept: application/vnd.com.nsn.cumulocity.managedObject+json; charset=UTF-8; ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json; charset=UTF-8; ver=0.9
+    Accept: application/vnd.com.nsn.cumulocity.managedobject+json; charset=UTF-8; ver=0.9
     Authorization: Basic <<Base64 encoded credentials <tenant ID>/<username>:<password> >>
     ...
     {
@@ -51,8 +51,8 @@ To create a new device in the inventory of Cumulocity IoT the following REST req
 This call can be done by executing the following curl statement:
 
     curl -v -u <username>:<password> \
-       -H 'Accept: application/vnd.com.nsn.cumulocity.managedObject+json; charset=UTF-8; ver=0.9' \
-       -H 'Content-type: application/vnd.com.nsn.cumulocity.managedObject+json; charset=UTF-8; ver=0.9' \
+       -H 'Accept: application/vnd.com.nsn.cumulocity.managedobject+json; charset=UTF-8; ver=0.9' \
+       -H 'Content-type: application/vnd.com.nsn.cumulocity.managedobject+json; charset=UTF-8; ver=0.9' \
        -X POST \
        -d '{"c8y_IsDevice":{},"name":"HelloWorldDevice"}' \
        http://<tenant-name>.cumulocity.com/inventory/managedObjects
@@ -64,7 +64,7 @@ The same credentials used to access the Cumulocity IoT Web GUI can be used to ex
 You will receive a response like that:
 
     HTTP/1.1 201 Created
-    Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json; charset=UTF-8; ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json; charset=UTF-8; ver=0.9
     Authorization: Basic <<Base64 encoded credentials <tenant ID>/<username>:<password> >>
     ...
     {

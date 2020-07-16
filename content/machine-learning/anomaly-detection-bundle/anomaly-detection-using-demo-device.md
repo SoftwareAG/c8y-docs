@@ -15,7 +15,7 @@ Instead of registering a real phone for anomaly detection use case, a demo devic
 
 We have added a script *DemoDeviceCreator.sh* which registers a demo device in Cumulocity IoT. Run the script using the following command:
 
-	sh DemoDeviceCreator.sh 
+	sh DemoDeviceCreator.sh
 
 Use this script to add a device named "DemoDevice" to Cumulocity IoT.
 
@@ -68,7 +68,7 @@ All you need to do is run it as `sh AnomalySimulatorForDemoDevice.sh`.
     		echo "#  Simulating Non-Anamolous Measurement  #"
     		echo "##########################################"
     		echo
-    		curl --user $c_user:$c_pass -X POST $c_url"/measurement/measurements" -H "accept: application/vnd.com.nsn.cumulocity.measurementCollection+json" -H "Content-Type: application/json" \
+    		curl --user $c_user:$c_pass -X POST $c_url"/measurement/measurements" -H "accept: application/vnd.com.nsn.cumulocity.measurementcollection+json" -H "Content-Type: application/json" \
     		--data '{"measurements":[{"time":"'$CURRENT_TIME'","source":{"id":"'$c_device_source'"},"type":"c8ydemoAndroid","c8y_Acceleration":{"accelerationY":{"unit":"G","value": -0.2631993591785431},"accelerationX":{"unit":"G","value":5.769125938415527},"accelerationZ":{"unit":"G","value":8.193016052246094}},"c8y_Gyroscope":{"gyroX":{"unit":"°/s","value":-0.03604104742407799},"gyroY":{"unit":"°/s","value": 0.055571284145116806},"gyroZ":{"unit":"°/s","value":-0.0010122909443452952}}}]}'
     		sleep 2
     	fi
@@ -79,7 +79,7 @@ All you need to do is run it as `sh AnomalySimulatorForDemoDevice.sh`.
     		echo "#    Simulating Anamolous Measurement    #"
     		echo "##########################################"
     		echo
-    		curl --user $c_user:$c_pass -X POST $c_url"/measurement/measurements" -H "accept: application/vnd.com.nsn.cumulocity.measurementCollection+json" -H "Content-Type: application/json" \
+    		curl --user $c_user:$c_pass -X POST $c_url"/measurement/measurements" -H "accept: application/vnd.com.nsn.cumulocity.measurementcollection+json" -H "Content-Type: application/json" \
     		--data '{"measurements":[{"time":"'$CURRENT_TIME'","source":{"id":"'$c_device_source'"},"type":"c8ydemoAndroid","c8y_Acceleration":{"accelerationY":{"unit":"G","value":-27.943368911743164},"accelerationX":{"unit":"G","value":-26.63686370849609},"accelerationZ":{"unit":"G","value":7.422532558441162}},"c8y_Gyroscope":{"gyroX":{"unit":"°/s","value":-13.211706161499025},"gyroY":{"unit":"°/s","value":7.483762264251709},"gyroZ":{"unit":"°/s","value":-11.959641456604006}}}]}'
     		sleep 2
     	fi

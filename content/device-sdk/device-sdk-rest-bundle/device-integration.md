@@ -48,7 +48,7 @@ The process works as follows:
 From a device perspective, this request for credentials is a single REST request:
 
     POST /devicecontrol/deviceCredentials
-    Content-Type: application/vnd.com.nsn.cumulocity.deviceCredentials+json;ver=...
+    Content-Type: application/vnd.com.nsn.cumulocity.devicecredentials+json;ver=...
     Authorization: Basic <<Base64 encoded bootstrap credentials>>
     {
       "id" : "0000000017b769d5"
@@ -57,7 +57,7 @@ From a device perspective, this request for credentials is a single REST request
 The device issues this request repeatedly. While the user has not yet registered and accepted the device in the tenant UI, the request returns "404 Not Found." After the device has been accepted in the tenant UI, the following response is returned:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.deviceCredentials+json;ver=...
+    Content-Type: application/vnd.com.nsn.cumulocity.devicecredentials+json;ver=...
     Content-Length: ...
     {
       "id" : "0000000017b769d5",
@@ -91,7 +91,7 @@ To check if a device is already registered, use a GET request on the identity AP
     GET /identity/externalIds/c8y_Serial/raspi-0000000017b769d5 HTTP/1.1
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.externalId+json; charset=UTF-8; ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.externalid+json; charset=UTF-8; ver=0.9
     ...
     {
         "externalId": "raspi-0000000017b769d5",
@@ -128,8 +128,8 @@ If Step 1 above indicated that no managed object representing the device exists,
 To create a managed object, issue a POST request on the managed objects collection in the Inventory API. The following example creates a Raspberry Pi using the Linux agent:
 
     POST /inventory/managedObjects HTTP/1.1
-    Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json
-    Accept: application/vnd.com.nsn.cumulocity.managedObject+json
+    Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json
+    Accept: application/vnd.com.nsn.cumulocity.managedobject+json
     ...
     {
         "name": "RaspPi BCM2708 0000000017b769d5",
@@ -162,7 +162,7 @@ To create a managed object, issue a POST request on the managed objects collecti
     }
 
     HTTP/1.1 201 Created
-    Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json;charset=UTF-8;ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json;charset=UTF-8;ver=0.9
     ...
     {
         "id": "2480300",
@@ -209,8 +209,8 @@ After the new device has been created, it can now be associated with its built-i
 Continuing the above example, we would associate the newly created device "2480300" with its hardware serial number:
 
     POST /identity/globalIds/2480300/externalIds HTTP/1.1
-    Content-Type: application/vnd.com.nsn.cumulocity.externalId+json
-    Accept: application/vnd.com.nsn.cumulocity.externalId+json
+    Content-Type: application/vnd.com.nsn.cumulocity.externalid+json
+    Accept: application/vnd.com.nsn.cumulocity.externalid+json
     ...
     {
         "type" : "c8y_Serial",
@@ -218,7 +218,7 @@ Continuing the above example, we would associate the newly created device "24803
     }
 
     HTTP/1.1 201 Created
-    Content-Type: application/vnd.com.nsn.cumulocity.externalId+json;charset=UTF-8;ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.externalid+json;charset=UTF-8;ver=0.9
     ...
     {
         "externalId": "raspi-0000000017b769d5",
@@ -238,7 +238,7 @@ If Step 1 above returned that the device was previously registered already, we n
 For example, the hardware information of a device will usually not change, but the software installation may change. So it may make sense to bring the software information in the inventory up to the latest state after a reboot of the device:
 
     PUT /inventory/managedObjects/2480300 HTTP/1.1
-    Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json
+    Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json
     ...
     {
         "c8y_Software": {
@@ -259,7 +259,7 @@ Depending on the complexity of the sensor network, devices may have child device
 For example, assume a child device with the URL "https://.../inventory/managedObjects/2543801" has already been created. To link this device with its parent, issue:
 
     POST /inventory/managedObjects/2480300/childDevices HTTP/1.1
-    Content-Type: application/vnd.com.nsn.cumulocity.managedObjectReference+json
+    Content-Type: application/vnd.com.nsn.cumulocity.managedobjectReference+json
     {
     "managedObject" : { "self" : "https://.../inventory/managedObjects/2543801" }
     }
@@ -295,7 +295,7 @@ To clean up operations that are still in EXECUTING status, query operations by a
     GET /devicecontrol/operations?agentId=2480300&status=EXECUTING HTTP/1.1
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.operationCollection+json;; charset=UTF-8; ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.operationcollection+json;; charset=UTF-8; ver=0.9
     ...
     {
         "next": "https://.../devicecontrol/operations?agentId=2480300&status=EXECUTING",

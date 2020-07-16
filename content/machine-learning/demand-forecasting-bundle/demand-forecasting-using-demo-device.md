@@ -7,12 +7,12 @@ aliases:
   - /predictive-analytics/demand-forecasting/#demand-forecasting-using-demo-device
 ---
 
-A fully functional demand forecasting demo can be prepared with the help of a demo device. 
+A fully functional demand forecasting demo can be prepared with the help of a demo device.
 For this, use the artifacts provided as part of the *DemandForecastingDemo.zip* file.
 
 #### Register a demo device in Cumulocity IoT
 
-Instead of registering an actual device for the water demand forecasting use case, a demo device can be registered. This device can be used as a replica of an actual device connected to the reservoir tank. 
+Instead of registering an actual device for the water demand forecasting use case, a demo device can be registered. This device can be used as a replica of an actual device connected to the reservoir tank.
 
 We have added a script *DemoDeviceCreator.sh* which registers a demo device in Cumulocity IoT.
 
@@ -34,7 +34,7 @@ We have added a script *DemoDeviceCreator.sh* which registers a demo device in C
 
 Run the script using the following command:
 
-	bash DemoDeviceCreator.sh 
+	bash DemoDeviceCreator.sh
 
 Upon successful execution, a device named *DemandForecastDemoDevice* is registered in Cumulocity IoT. Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, update the `c_device_source` of the *CONFIG.INI* file with the device ID of this demo device.
 
@@ -51,7 +51,7 @@ Use *simulate_data.sh* for simulating the measurements for the demo device.
     c_user=$(awk -F "=" '/c_user/ {print $2}' ./CONFIG.INI)
     c_pass=$(awk -F "=" '/c_pass/ {print $2}' ./CONFIG.INI)
     c_device_source=$(awk -F "=" '/c_device_source/ {print $2}' ./CONFIG.INI)
- 
+
     tail -n +2 "$input" | while IFS=',' read -r f1 f2
     do
         dt=$f1
@@ -60,14 +60,14 @@ Use *simulate_data.sh* for simulating the measurements for the demo device.
         tm=${date:11}
         dtt=${date:0:10}
         strdt="${dtt}T${tm}"
-        curl --user $c_user:$c_pass -X POST $c_url"/measurement/measurements" -H "accept: application/vnd.com.nsn.cumulocity.measurementCollection+json" -H "Content-Type: application/json" --data '{"measurements":[{"time": "'$strdt'","source": {"id": "'$c_device_source'"},"type": "c8y_Flow","c8y_Flow": {"F": {"unit": "psi","value": '$val'}}}]}'
+        curl --user $c_user:$c_pass -X POST $c_url"/measurement/measurements" -H "accept: application/vnd.com.nsn.cumulocity.measurementcollection+json" -H "Content-Type: application/json" --data '{"measurements":[{"time": "'$strdt'","source": {"id": "'$c_device_source'"},"type": "c8y_Flow","c8y_Flow": {"F": {"unit": "psi","value": '$val'}}}]}'
     done
 
-Using this simulator, *c8y_Flow* measurements are sent to Cumulocity IoT on behalf of the demo device. The measurements are simulated for the time period *2019-12-01* to *2019-12-08* and for every two hours (i.e. 12 observations per day). We use this data to generate a time series model and forecast the next day's *c8y_Flow* values. Keep in mind that forecast intervals will match the observation intervals. 
+Using this simulator, *c8y_Flow* measurements are sent to Cumulocity IoT on behalf of the demo device. The measurements are simulated for the time period *2019-12-01* to *2019-12-08* and for every two hours (i.e. 12 observations per day). We use this data to generate a time series model and forecast the next day's *c8y_Flow* values. Keep in mind that forecast intervals will match the observation intervals.
 
 Run the simulator script using the following command:
 
-	bash simulate_data.sh 
+	bash simulate_data.sh
 
 #### Generate forecasts based on the simulated data
 

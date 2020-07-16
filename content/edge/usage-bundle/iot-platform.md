@@ -49,7 +49,7 @@ The following functionalities are available in Cumulocity IoT Edge and described
 |[Managing reports](/users-guide/cockpit#reports)|Handle [reports](/users-guide/cockpit#reports) based on dashboard layouts, create [reports for exporting data](/users-guide/cockpit#reporting) in CSV or excel format and [schedule the export](/users-guide/cockpit#schedule-export). 
 |[Using the Data Point Library](/users-guide/cockpit#data-point-library)|Manage default settings ("profiles") of your devices and apply them automatically using the [Data Point Library](/users-guide/cockpit#data-point-library).
 |[Working with Smart Rules](/users-guide/cockpit#smart-rules)|[Create and manage business rules](/users-guide/cockpit#create-rules) to work on incoming data in realtime and to perform actions based on this data.
-|[Smart Rules collection](/users-guide/cockpit#smart-rules-collection)|Use pre-defined [global Smart Rules](/users-guide/cockpit#smart-rules-collection) to configure rules for geofencing, thresholds or alarm escalation and notifications (SMS/email/voice). Describes each SmartRule and its configurable parameters in detail.
+|[Smart Rules collection](/users-guide/cockpit#smart-rules-collection)|Use pre-defined [global Smart Rules](/users-guide/cockpit#smart-rules-collection) to configure rules for geofencing, thresholds or alarm escalation and notifications (SMS/email). Describes each smart rule and its configurable parameters in detail.
 
 ### Administration
 

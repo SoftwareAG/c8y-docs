@@ -54,7 +54,7 @@ For your convenience find an overview on the content of this document below.
 </tr>
 <tr>
 <td align="left"><a href="#smart-rules-collection">Smart Rules collection</a></td>
-<td align="left">Use pre-defined <a href="#smart-rules-collection">global smart rules</a> to configure rules for geofencing, thresholds or alarm escalation and notifications (SMS/email/voice). Describes each SmartRule and its configurable parameters in detail.</td>
+<td align="left">Use pre-defined <a href="#smart-rules-collection">global smart rules</a> to configure rules for geofencing, thresholds or alarm escalation and notifications (SMS/email). Describes each smart rule and its configurable parameters in detail.</td>
 </tr>
 </tbody>
 </table>

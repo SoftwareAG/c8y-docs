@@ -9,7 +9,7 @@ aliases:
 
 The **Predictions** menu allows you to do meaningful predictions by scoring the data from your devices against your predictive models.
 
-Clicking **Predictions** in the navigator allows you to choose from two different modes of processing - **Batch Processing** and **Scheduled Processing**.
+Clicking **Predictions** in the navigator allows you to choose from two different modes of processing: **Batch Processing** and **Scheduled Processing**.
 
 ![Predictions](/images/zementis/zementis-predictions.png)
 
@@ -26,11 +26,9 @@ To process data against PMML models/groups, choose the **PMML** tab. Similarly, 
 |ONNX model|JSON only|-
 |ONNX pipeline| Any |-
 
-Batch Processing is primarily targeted for verifying the accuracy of your predictive models by applying it against test data obtained from the model training environment. The goal is to ensure that model development environment and model deployment environment produce the same results. We call this *Score Matching*.
-
 #### Running the batch process
 
-To run the batch process on PMML model/group, perform the following steps:
+For PMML models, batch Processing can be used for verifying the accuracy of your predictive models by applying it against test data obtained from the model training environment. The goal is to ensure that model development environment and model deployment environment produce the same results. We call this *Score Matching*. To run the batch process on PMML model/group, perform the following steps:
 
 1. Click **Start** in the **PMML** tab to initiate the processing. 
 
@@ -69,7 +67,7 @@ Click the cogwheel icon <img src="/images/zementis/zementis-cogwheel-icon.png" a
 
 Click the file icon <img src="/images/zementis/zementis-file-icon.png" alt="File" style="display:inline-block; margin:0"> in front of a row, to download a full execution trace, showing what exactly happened when that record was applied against the model. In this way, you can investigate why the outputs did not match.
 
-For ONNX models, the **Results** page will show the entire set of records processed in JSON format. However, for ONNX pipelines, the **Results** page may not show any content if the postprocessing script associated with the pipeline does not return any data. There are no options available for filtering or any sort of configuration for ONNX models/pipelines. The only option available is to download the processed results.
+For ONNX models, the **Results** page will show the entire set of records processed in JSON format. However, for ONNX pipelines, the **Results** page may not show any content if the post-processing script associated with the pipeline does not return any data. There are no options available for filtering or any sort of configuration for ONNX models/pipelines. The only option available is to download the processed results.
 
 ![Show Results ONNX](/images/zementis/zementis-batch-process-results-onnx.png)
 

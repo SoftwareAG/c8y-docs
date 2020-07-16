@@ -7,7 +7,7 @@ aliases:
   - /predictive-analytics/web-app/#managing-resources
 ---
 
-In the **Resources** page you manage the resources, i.e. the custom functions and look-up tables for PMML models or the python preprocessing/postprocessing scripts for creating ONNX pipelines.
+In the **Resources** page you manage the resources, i.e. the custom functions and look-up tables for PMML models or the python pre-processing/post-processing scripts for creating ONNX pipelines.
 
 Resource management functionality includes:
 

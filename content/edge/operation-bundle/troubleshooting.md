@@ -205,7 +205,7 @@ Run the following command to check the REST API availability:
 	< HTTP/1.1 200 OK
 	< Server: nginx
 	< Date: Tue, 23 Aug 2016 15:39:29 GMT
-	< Content-Type: application/vnd.com.nsn.cumulocity.platformapi+json; charset=UTF-8; ver=0.9
+	< Content-Type: application/vnd.com.nsn.cumulocity.platformApi+json; charset=UTF-8; ver=0.9
 	< Transfer-Encoding: chunked
 	< Connection: keep-alive
 	<

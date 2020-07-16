@@ -8335,14 +8335,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{url}}/service/onnx/zementis/resources/{{file_name}}",
+									"raw": "{{url}}/service/zementis/onnx/resources/{{file_name}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"service",
-										"onnx",
 										"zementis",
+										"onnx",
 										"resources",
 										"{{file_name}}"
 									]

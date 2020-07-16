@@ -31,7 +31,7 @@ Once your resource is successfully uploaded, you will see a corresponding confir
 
 To download the source file of a resource, click the download icon in its card.
 
-Typically the source will either be a jar file or an Excel sheet for PMML resource and python file for ONNX resource.
+Typically the source will either be a JAR file or an Excel sheet for PMML resource and python file for ONNX resource.
 
 ### Deleting resources
 

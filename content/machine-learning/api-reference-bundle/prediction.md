@@ -817,9 +817,9 @@ curl --location --request POST "{{url}}/service/zementis/pmml/apply-group/dummy/
 
 Apply an ONNX model to multiple records. Note that the size of the uploaded file should not exceed 500 MB and the input should be in JSON format.
 
-ONNX format doesn’t provide a representation for pre-processing steps. For deep learning models like CNN which deal with image data, the necessary pre-processing steps must be applied to the images and the result should be sent in JSON format as an input to the ONNX model.
+The ONNX format doesn’t provide a representation for pre-processing steps. For deep learning models like CNN which deal with image data, the necessary pre-processing steps must be applied to the images and the result should be sent in JSON format as an input to the ONNX model.
 
->**Info**: An active subscription of the Onnx microservice is required to leverage this API.
+>**Info:** An active subscription of the Onnx microservice is required to leverage this API.
 
 |HEADERS||
 |:---|:---|
@@ -949,9 +949,9 @@ curl --location --request POST "{{url}}/service/zementis/onnx/apply/dummy" \
 
 Apply an ONNX pipeline to input data. Note that the size of the uploaded file should not exceed 500 MB.
 
-ONNX format doesn’t provide a representation for pre-processing steps. For deep learning models like CNN which deal with image data, the necessary pre-processing steps must be applied to the images and the result should be sent in JSON format as an input to the ONNX model. In pipeline, the input data can be of any format as long as the pre-processing script of the pipeline can process it. However, if there in no pre-processing step in the pipeline then the input data has to be in JSON format.
+The ONNX format doesn’t provide a representation for pre-processing steps. For deep learning models like CNN which deal with image data, the necessary pre-processing steps must be applied to the images and the result should be sent in JSON format as an input to the ONNX model. In pipeline, the input data can be of any format as long as the pre-processing script of the pipeline can process it. However, if there is no pre-processing step in the pipeline then the input data has to be in JSON format.
 
->**Info**: An active subscription of the Onnx microservice is required to leverage this API.
+>**Info:** An active subscription of the Onnx microservice is required to leverage this API.
 
 |HEADERS||
 |:---|:---|
@@ -960,7 +960,7 @@ ONNX format doesn’t provide a representation for pre-processing steps. For dee
 
 |PARAMS||
 |:---|:---|
-|file (file)|data file.
+|file (file)|data file
 |pipeline_name (string)|required path variable for the name of the pipeline to be applied
 
 **Example Request**

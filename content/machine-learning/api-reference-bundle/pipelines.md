@@ -10,7 +10,7 @@ aliases:
 
 Operations on pipelines.
 
->**Info**: Currently, only ONNX pipelines are supported. An active subscription of the Onnx microservice is required to leverage these pipeline APIs.
+>**Info:** Currently, only ONNX pipelines are supported. An active subscription of the Onnx microservice is required to leverage these pipeline APIs.
 
 ### GET - List ONNX Pipelines
 

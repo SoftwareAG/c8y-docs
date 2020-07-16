@@ -9,9 +9,9 @@ aliases:
 
 Operation on resources. 
 
->**Info**:
-<br>1. For PMML, the resources are typically jar files or excel sheets containing custom functions and look up tables respectively.
-<br>2. For ONNX, the resources are typically python files containing some preprocessing or postprocessing logic which can be embedded into a pipeline.
+>**Info:**
+<br>1. For PMML, the resources are typically JAR files or excel sheets containing custom functions and look up tables respectively.
+<br>2. For ONNX, the resources are typically python files containing some pre-processing or post-processing logic which can be embedded into a pipeline.
 
 ### GET - List Available PMML Resources
 
@@ -239,7 +239,7 @@ curl --request GET "{{url}}/service/zementis/resource/dummy/source" --header "Au
 {{url}}/service/zementis/resource
 ```
 
-Upload a new resource file associated with a PMML model. The file name in 'file' body parameter will be used to identify this resource. Note that the size of the uploaded resource file must not exceed 500 MB.
+Upload a new resource file associated with a PMML model. The file name in the 'file' body parameter will be used to identify this resource. Note that the size of the uploaded resource file must not exceed 500 MB.
 
 |HEADERS||
 |:---|:---|
@@ -615,7 +615,7 @@ curl --request GET "{{url}}/service/zementis/onnx/resources/dummy" --header "Aut
 {{url}}/service/zementis/onnx/resources
 ```
 
-Upload a new resource file containing a preprocessing or postprocessing script. The file name in 'file' body parameter will be used to identify this resource. Note that the size of the uploaded resource file must not exceed 500 MB.
+Upload a new resource file containing a pre-processing or post-processing script. The file name in the 'file' body parameter will be used to identify this resource. Note that the size of the uploaded resource file must not exceed 500 MB.
 
 |HEADERS||
 |:---|:---|

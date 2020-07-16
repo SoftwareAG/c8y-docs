@@ -9,7 +9,7 @@ aliases:
 
 Operations on AI/Machine Learning models.
 
->**Info**: An active subscription of the Onnx microservice is required to perform operations on ONNX models by leveraging the ONNX APIs.
+>**Info:** An active subscription of the Onnx microservice is required to perform operations on ONNX models by leveraging the ONNX APIs.
 
 ### GET - List available PMML models
 

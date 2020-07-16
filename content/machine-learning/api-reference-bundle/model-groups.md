@@ -9,9 +9,9 @@ aliases:
 
 Operations on model groups.
 
->**Info**: Currently, model groups can be used for grouping PMML models only.
+>**Info:** Currently, model groups can be used for grouping PMML models only.
 
-### GET - List PMML Groups
+### GET - List PMML groups
 
 ```
 {{url}}/service/zementis/pmml/groups
@@ -89,7 +89,7 @@ curl --request GET "{{url}}/service/zementis/pmml/groups"
 ```
 
 
-### GET - Get PMML Group Information
+### GET - Get PMML group information
 
 ```
 {{url}}/service/zementis/pmml/groups/{{group_name}}
@@ -171,7 +171,7 @@ curl --request GET "{{url}}/service/zementis/pmml/groups/dummy" --header "Author
 }
 ```
 
-### POST - Create PMML Group
+### POST - Create PMML group
 
 ```
 {{url}}/service/zementis/pmml/groups
@@ -308,7 +308,7 @@ curl --request POST "{{url}}/service/zementis/pmml/groups" --header "Authorizati
 }
 ```
 
-### PUT - Update PMML Group
+### PUT - Update PMML group
 
 ```
 {{url}}/service/zementis/pmml/groups
@@ -414,7 +414,7 @@ curl --request PUT "{{url}}/service/zementis/pmml/groups" --header "Authorizatio
 }
 ```
 
-### DEL - Remove PMML Group
+### DEL - Remove PMML group
 
 ```
 {{url}}/service/zementis/pmml/groups/{{group_name}}
@@ -515,7 +515,7 @@ curl --request DELETE "{{url}}/service/zementis/pmml/groups/dummy" --header "Aut
 }
 ```
 
-### DEL - Remove PMML Groups
+### DEL - Remove PMML groups
 
 ```
 {{url}}/service/zementis/pmml/groups

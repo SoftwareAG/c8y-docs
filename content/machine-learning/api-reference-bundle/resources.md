@@ -7,17 +7,19 @@ aliases:
   - /predictive-analytics/api-reference/#resources
 ---
 
-Operation on resources.
+Operation on resources. 
 
->**Info**: Currently, resources are associated with PMML models only.
+>**Info:**
+<br>1. For PMML, the resources are typically JAR files or excel sheets containing custom functions and look up tables respectively.
+<br>2. For ONNX, the resources are typically python files containing some pre-processing or post-processing logic which can be embedded into a pipeline.
 
-### GET - List Available Resources
+### GET - List available PMML resources
 
 ```
 {{url}}/service/zementis/resources
 ```
 
-This operation retrieves information on all available resource files. Use file names as identifiers for all operations requiring a file_name path variable.
+This operation retrieves information on all available resource files associated with PMML models. Use file names as identifiers for all operations requiring a file_name path variable.
 
 |HEADERS||
 |:---|:---|
@@ -79,13 +81,13 @@ curl --request GET "{{url}}/service/zementis/resources"
 }
 ```
 
-### GET - Get Resource Information
+### GET - Get PMML resource information
 
 ```
 {{url}}/service/zementis/resource/{{file_name}}
 ```
 
-Get information on the specified resource file.
+Get information on the specified PMML resource file.
 
 |HEADERS||
 |:---|:---|
@@ -158,13 +160,13 @@ curl --request GET "{{url}}/service/zementis/resource/dummy" --header "Authoriza
 }
 ```
 
-### GET - Get Resource File
+### GET - Get PMML resource file
 
 ```
 {{url}}/service/zementis/resource/{{file_name}}/source
 ```
 
-Download a resource file.
+Download a PMML resource file.
 
 |HEADERS||
 |:---|:---|
@@ -231,13 +233,13 @@ curl --request GET "{{url}}/service/zementis/resource/dummy/source" --header "Au
 }
 ```
 
-### POST - Upload New Resource File
+### POST - Upload new PMML resource file
 
 ```
 {{url}}/service/zementis/resource
 ```
 
-Upload a new resource file. The file name in 'file' body parameter will be used to identify this resource. Note that the size of the uploaded resource file must not exceed 500 MB.
+Upload a new resource file associated with a PMML model. The file name in the 'file' body parameter will be used to identify this resource. Note that the size of the uploaded resource file must not exceed 500 MB.
 
 |HEADERS||
 |:---|:---|
@@ -332,13 +334,13 @@ curl --request POST "{{url}}/service/zementis/resource" --header "Authorization:
 }
 ```
 
-### DEL - Remove Resource File 
+### DEL - Remove PMML resource file 
  
 ```
 {{url}}/service/zementis/resource/{{file_name}}
 ```
 
-Remove the specified resource file and list all remaining resources.
+Remove the specified resource file and list all remaining PMML resources.
 
 |HEADERS||
 |:---|:---|
@@ -416,13 +418,13 @@ curl --request DELETE "{{url}}/service/zementis/resource/dummy" --header "Author
 }
 ```
 
-### DEL - Remove All Resource Files
+### DEL - Remove all PMML resource files
 
 ```
 {{url}}/service/zementis/resources
 ```
 
-Remove all available resources and list the remaining resources.
+Remove all available PMML resources and list the remaining ones, if any.
 
 |HEADERS||
 |:---|:---|
@@ -464,5 +466,416 @@ curl --request DELETE "{{url}}/service/zementis/resources"
     "error": "general/internalError",
     "message": "Not authorized!",
     "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+### GET - List available ONNX resources
+
+```
+{{url}}/service/zementis/onnx/resources
+```
+
+This operation retrieves information on all available resource files associated with ONNX pipelines. Use file names as identifiers for all operations requiring a file_name path variable.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+
+**Example Request**
+
+```
+200 - OK
+
+curl --request GET "{{url}}/service/zementis/onnx/resources" --header "Authorization: {{auth}}"
+```
+
+**Example Response**
+
+```
+200 - OK
+
+{
+    "resources": [
+        "PreprocessFabricImage.py",
+        "ClassifyFabricFace.py",
+        "StorePredictionsAsMeasurement.py"
+    ]
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --request GET "{{url}}/service/zementis/onnx/resources"
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+### GET - Get ONNX resource
+
+```
+{{url}}/service/zementis/onnx/resources/{{file_name}}
+```
+
+Get contents of the specified ONNX resource file.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|file_name (string)|required path variable for an existing resource file name
+
+**Example Request**
+
+```
+200 - OK
+
+curl --request GET "{{url}}/service/zementis/onnx/resources/PreprocessFabricImage.py" --header "Authorization: {{auth}}"
+```
+
+**Example Response**
+
+```
+200 - OK
+
+def process(content):
+    import numpy as np
+    from PIL import Image
+    import io
+    im = Image.open(io.BytesIO(content))
+    im = im.resize((224,224))
+    x = np.array(im,dtype=np.float32)
+    x = x[..., ::-1]
+    mean = [103.939, 116.779, 123.68]
+    x[..., 0] -= mean[0]
+    x[..., 1] -= mean[1]
+    x[..., 2] -= mean[2]
+    x = np.expand_dims(x,0)
+    return {"input_1":x}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --request GET "{{url}}/service/zementis/onnx/resources/PreprocessFabricImage.py"
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+404 - Not Found
+
+curl --request GET "{{url}}/service/zementis/onnx/resources/dummy" --header "Authorization: {{auth}}"
+```
+
+**Example Response**
+
+```
+404 - Not Found
+
+{    
+	"errors": [
+        "Resource file 'dummy' not found."
+    ]
+}
+```
+
+### POST - Upload new ONNX resource file
+
+```
+{{url}}/service/zementis/onnx/resources
+```
+
+Upload a new resource file containing a pre-processing or post-processing script. The file name in the 'file' body parameter will be used to identify this resource. Note that the size of the uploaded resource file must not exceed 500 MB.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Content-Type|required header parameter with two accepted values: application/octet-stream or multipart/form-data
+
+|PARAMS||
+|:---|:---|
+|file|required query parameter for resource file name, if Content-Type is application/octet-stream, <br>or a body parameter for resource file, if Content-Type is multipart/form-data
+
+
+**Example Request**
+
+```
+201 - Created
+
+curl --request POST "{{url}}/service/zementis/onnx/resources" --header "Authorization: {{auth}}" --form "file=@PreprocessData.py"
+```
+
+**Example Response**
+
+```
+201 - Created
+
+{
+    "resources": [
+        "PreprocessData.py",
+        "PreprocessFabricImage.py",
+        "ClassifyFabricFace.py",
+        "StorePredictionsAsMeasurement.py"
+    ]
+}
+```
+
+**Example Request**
+
+```
+400 - Bad Request
+
+curl --request POST "{{url}}/service/zementis/onnx/resources" --header "Authorization: {{auth}}" --form "file=@Invalid.txt"
+```
+
+**Example Response**
+
+```
+400 - Bad Request
+
+{
+    "errors": [
+        "Invalid python format."
+    ]
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --request POST "{{url}}/service/zementis/onnx/resources" --form "file=@PreprocessData.py"
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+409 - Conflict
+
+curl --request POST "{{url}}/service/zementis/onnx/resources" --header "Authorization: {{auth}}" --form "file=@PreprocessData.py"
+```
+
+**Example Response**
+
+```
+409 - Conflict
+
+{
+  "errors": [
+    "A resource file with the name 'PreprocessData.py' already exists."
+  ]
+}
+```
+
+### DEL - Remove ONNX resource file 
+ 
+```
+{{url}}/service/zementis/onnx/resources/{{file_name}}
+```
+
+Remove the specified resource file and list all remaining ONNX resources.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|file_name (string)|required path variable for an existing resource file name
+
+
+**Example Request**
+
+```
+200 - OK
+
+curl --request DELETE "{{url}}/service/zementis/onnx/resources/PreprocessData.py" --header "Authorization: {{auth}}"
+```
+
+**Example Response**
+
+```
+200 - OK
+
+{
+    "resources": [
+        "PreprocessFabricImage.py",
+        "ClassifyFabricFace.py",
+        "StorePredictionsAsMeasurement.py"
+    ]
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --request DELETE "{{url}}/service/zementis/onnx/resources/PreprocessData.py"
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+404 - Not Found
+
+curl --request DELETE "{{url}}/service/zementis/onnx/resources/dummy" --header "Authorization: {{auth}}"
+```
+
+**Example Response**
+
+```
+404 - Not Found
+
+{
+  "errors": [
+    "Resource file 'dummy' not found"
+  ]
+}
+```
+
+**Example Request**
+
+```
+500 - Internal Server Error
+
+curl --request DELETE "{{url}}/service/zementis/onnx/resources/PreprocessFabricImage.py" --header "Authorization: {{auth}}"
+```
+
+**Example Response**
+
+```
+500 - Internal Server Error
+
+{
+    "errors": [
+        "The resource [PreprocessFabricImage.py] is required by the Pipeline(s) [['ClassifyFabricFace']]. Please delete these pipeline(s) before deleting the resource [PreprocessFabricImage.py]."
+    ]
+}
+```
+
+### DEL - Remove all ONNX resource files
+
+```
+{{url}}/service/zementis/onnx/resources
+```
+
+Remove all available ONNX resources and list the remaining ones, if any.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+
+**Example Request**
+
+```
+200 - OK
+
+curl --request DELETE "{{url}}/service/zementis/onnx/resources" --header "Authorization: {{auth}}"
+```
+
+**Example Response**
+
+```
+200 - OK
+
+{
+  "resources": []
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --request DELETE "{{url}}/service/zementis/onnx/resources"
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+500 - Internal Server Error
+
+curl --request DELETE "{{url}}/service/zementis/onnx/resources" --header "Authorization: {{auth}}"
+```
+
+**Example Response**
+
+```
+500 - Internal Server Error
+
+{
+    "errors": [
+        "The resource [PreprocessFabricImage.py] is required by the Pipeline(s) [['ClassifyFabricFace']]. Please delete these pipeline(s) before deleting the resource [PreprocessFabricImage.py]."
+    ]
 }
 ```

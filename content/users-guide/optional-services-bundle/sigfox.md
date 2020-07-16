@@ -120,9 +120,7 @@ In the user interface, you can enter this type of message type source informatio
 
 ##### Configuring values
 
-Click **Add value** to create the value configuration.
-
-![Sigfox protocol add value](/images/users-guide/sigfox/sigfox-addvalue.png)
+In the **Values** section, click **Add value** to create the value configuration.
 
 In the following window, configure the relevant values as shown in this example.
 

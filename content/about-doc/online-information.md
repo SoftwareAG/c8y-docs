@@ -34,5 +34,5 @@ If you have any questions, you can find a local or toll-free number for your cou
 
 ### Cumulocity IoT status page
 
-For Cumulocity IoT Cloud shared environment, information on known issues and the next upgrade can be found and subscribed to at: [http://status.cumulocity.com/](http://status.cumulocity.com/).
+For Cumulocity IoT Cloud shared environments, information on known issues and the next upgrade can be found and subscribed to at: [http://status.cumulocity.com/](http://status.cumulocity.com/).
 

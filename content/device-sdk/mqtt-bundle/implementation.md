@@ -34,7 +34,11 @@ For experimental two-way SSL the port 1884 has to be enabled. To do that, add th
 
 ### SmartREST payload
 
-The Cumulocity IoT MQTT implementation uses SmartREST as a payload. SmartREST is a CSV-like message protocol that uses templates on the server side to create data in Cumulocity IoT.
+The Cumulocity IoT MQTT implementation uses SmartREST as a payload.
+SmartREST is a CSV-like message protocol that uses templates on the server side to create data in Cumulocity IoT.
+It incorporates the highly expressive strength of the REST API but replaces JSON with comma-separated values (CSV) to avoid the complexity of JSON parsing for embedded devices.
+Additionally, the simple and compact syntax of CSV renders it highly efficient for IoT communication via mobile networks.
+It can save up to 80% of mobile traffic compared to other HTTP APIs.
 
 > **Info:** For all MQTT connections to the platform, the maximum accepted payload size is 16184 bytes, which includes both message header and body. The header size varies, but its minimum is 2 bytes.
 
@@ -70,7 +74,7 @@ Subscribe example:
 
 MQTT sessions are linked to a single device, but this device can have a freely configurable device hierarchy below it.
 
-All children require a unique ID defined when creating the device. We recommend using a combination of the unique ID of the root device and a unique ID within the hierarchy.
+All children require a unique ID defined when creating the device. We recommend you to use a combination of the unique ID of the root device and a unique ID within the hierarchy.
 
 To create data for a child instead of the root device, the unique ID of the child is added as another section in the topic (e.g. <kbd>s/us/myChildDeviceIdentifier</kbd>).
 
@@ -89,9 +93,9 @@ The communication with Cumulocity IoT employing MQTT supports authentication in 
 
 #### MQTT ClientId
 
-The MQTT ClientId is a field to uniquely identify each connected client. The Cumulocity IoT implementation also uses the ClientId to link the client directly to a device. Therefore the following format should be used for the ClientId:
+The MQTT ClientId is a field to uniquely identify each connected client. The Cumulocity IoT implementation also uses the ClientId to link the client directly to a device. Therefore, the following format should be used for the ClientId:
 
-"connectionType:deviceIdentifier:defaultTemplateIdentifier"
+`connectionType:deviceIdentifier:defaultTemplateIdentifier`
 
 |Field|Mandatory|Description|
 |:-------|:--------|:--------|
@@ -99,9 +103,11 @@ The MQTT ClientId is a field to uniquely identify each connected client. The Cum
 |deviceIdentifier|YES|A unique identifier for your device, e.g. IMEI, Serial number|
 |defaultTemplateIdentifier|NO|Check the SmartREST section for more information about template identifiers|
 
-For the simplest version of a client, the MQTT clientId can just be the deviceIdentfier. It will automatically be interpreted as device connection.
+For the simplest version of a client, the MQTT clientId can just be the `deviceIdentfier`. It will automatically be interpreted as device connection.
 
-Example ClientIds:
+> **Important:** The colon character has a special meaning in Cumulocity IoT. Hence, it must not be used in the `deviceIdentifier`.
+
+Examples of ClientIds:
 
 ```text
 mySerialNumber
@@ -109,7 +115,7 @@ d:mySerialNumber
 d:mySerialNumber:myDefaultTemplate
 ```
 
-The uniqueness of the MQTT ClientId is determined only by the deviceIdentifier. Therefore from the above examples only one client can be connected at the same time.
+The uniqueness of the MQTT ClientId is determined only by the `deviceIdentifier`. Therefore, from the above examples only one client can be connected at the same time.
 
 During a SSL connection with certificates, the `deviceIdentifier` has to match the Common Name of the used certificate (first certificate in the chain, which is provided by the device).
 
@@ -134,7 +140,7 @@ For subscriptions to the operation or error topics, we will deliver all messages
 
 MQTT clients can set the clean session flag to "0" (false). This will ensure that in case the client disconnects, your subscription will still work and when you reconnect the client will receive the missed messages.
 
->**Info:** Cumulocity IoT requires clean session to be set to "1" (true). Currently we cannot guarantee that disabling clean session will work reliably, hence we recommend to always enable clean session.
+>**Info:** Cumulocity IoT requires clean session to be set to "1" (true). Currently we cannot guarantee that disabling clean session will work reliably, hence we recommend you to always enable clean session.
 
 #### MQTT retained flag
 
@@ -158,5 +164,5 @@ To support developers during development, it is possible to subscribe to the top
 You can change the server certificate, which is sent to the devices. To do so, customers should contact Software AG Support (https://empower.softwareag.com/ContactSupport/), who can add a new certificate to the server's keystore and reload it.
 
 Certificates exchange between the server and the device occurs during device connection, so all already connected devices will not be disconnected during reloading. Only after they disconnect on their own and try to connect later, then it is required that they contain the new server certificate in their truststore.
- 
+
 >**Info:** This functionality is designed to renew or change the server certificate, when it is going to expire.

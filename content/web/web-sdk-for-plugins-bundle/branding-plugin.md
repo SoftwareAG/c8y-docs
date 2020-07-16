@@ -8,7 +8,7 @@ layout: redirect
 
 In this document you will get an overview on how to develop a plugin that changes the branding of an application.
 
-Before you start working on the branding plugin, we recommend to take a look at the [introduction](/web/web-sdk-for-plugins#overview) which deals with the basic concepts of applications and plugins as well as an "Hello world!" style demo plugin.
+Before you start working on the branding plugin, we recommend you to take a look at the [introduction](/web/web-sdk-for-plugins#overview) which deals with the basic concepts of applications and plugins as well as an "Hello world!" style demo plugin.
 
 You can find this and all the other plugins described in the documentation inside the repository [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
 

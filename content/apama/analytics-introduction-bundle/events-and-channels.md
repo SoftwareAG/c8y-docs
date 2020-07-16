@@ -49,13 +49,13 @@ send msmnt to Measurement.SEND_CHANNEL;
 
 ### Measurement fragments
 
-The Apama mapping codec can turn measurements into measurement fragments, if required. You can configure how this is handled.
+`Measurement` and `MeasurementFragment` events are always published. 
 
-By setting the tenant option `apama.measurementFormat` to `BOTH`, or starting the Apama correlator with the property `CUMULOCITY_MEASUREMENT_FORMAT` set to `BOTH` , you can generate listeners in EPL that will match on the contents of `MeasurementFragment` events rather than `Measurement` events. For example:
+You can generate listeners in EPL that will match on the contents of `MeasurementFragment` events rather than `Measurement` events. For example:
 
 ```
 on all MeasurementFragment(type="c8y_SpeedMeasurement", valueFragment = "c8y_speed", valueSeries = "speedX", value > SPEED_LIMIT) as mf {
 }
 ```
 
-See [Measurement fragments](/apama/advanced/#measurement-fragments) for more information.
+See also [Measurement fragments](/apama/advanced/#measurement-fragments).

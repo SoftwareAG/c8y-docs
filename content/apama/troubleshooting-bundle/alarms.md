@@ -40,7 +40,6 @@ The following is a list of the alarms. The information further down below explai
 - [Warning or higher level logging from an EPL file](#apama_ctrl_fatalcritwarn)
 - [An EPL file throws an uncaught exception](#apama_ctrl_error)
 - [An EPL file blocks the correlator context for too long](#apama_ctrl_warn)
-- [Invalid measurement format](#apama_measurementformat_invalid)
 - [Multiple extensions with the same name](#extension_error)
 - [Connection to correlator lost](#lost_correlator_connection)
 - [The correlator queue is full](#application_queue_full)
@@ -287,16 +286,6 @@ Apama-ctrl generates the following alarm for the above example:
 You can diagnose the issue by the monitor name and context name given in the alarm. 
 
 For more details, you can also check the Apama logs if the tenant has the "microservice hosting" feature enabled. Alarms of this type should be fixed as a priority as these scenarios may lead to the microservice and correlator running out of memory.
-
-#### <a name="apama_measurementformat_invalid"></a>Invalid measurement format
-
-This alarm is raised whenever the `measurementFormat` key is set with an invalid value in the tenant option.
-
-- Alarm type: `apama_measurementformat_invalid`
-- Alarm text: The measurementFormat tenant option is set to an invalid value "&lt;value&gt;". Setting it to MEASUREMENT_ONLY.
-- Alarm severity: WARNING
-
-Valid `measurementFormat` values for any tenant are `MEASUREMENT_ONLY` and `BOTH`. The default value is `MEASUREMENT_ONLY`.
 
 #### <a name="extension_error"></a>Multiple extensions with the same name
 

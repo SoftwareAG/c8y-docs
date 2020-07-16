@@ -9,7 +9,7 @@ aliases:
 
 Operations on applying model, model group, pipeline to input data.
 
-### GET - Apply PMML Model to Single Record
+### GET - Apply PMML model to single record
 
 ``` perl
 {{url}}/service/zementis/apply/{{model_name}}?record={{record}}
@@ -117,7 +117,7 @@ curl --request GET "{{url}}/service/zementis/apply/Iris_NN?record=%7B" --header 
 }
 ```
 
-### GET - Apply PMML Model to Single Record and Explain Result
+### GET - Apply PMML model to single record and explain result
 
 ```
 {{url}}/service/zementis/apply/{{model_name}}/explain?record={{record}}
@@ -336,7 +336,7 @@ curl --request GET "{{url}}/service/zementis/apply/Iris_NN/explain?record=%7B" -
 }
 ```
 
-### POST - Apply PMML Model to Multiple Records
+### POST - Apply PMML model to multiple records
 
 ```
 {{url}}/service/zementis/apply/{{model_name}}
@@ -597,7 +597,7 @@ curl --location --request POST "{{url}}/service/zementis/apply/dummy " \
 }
 ```
 
-### POST - Apply PMML Model Group to Multiple Records
+### POST - Apply PMML model group to multiple records
 
 ```
 {{url}}/service/zementis/pmml/apply-group/{{group_name}}
@@ -701,7 +701,7 @@ curl --location --request POST "{{url}}/service/zementis/pmml/apply-group/dummy"
 }
 ```
 
-### POST - Apply PMML Model Group to Multiple Records and Show Details
+### POST - Apply PMML model group to multiple records and show details
 
 ```
 {{url}}/service/zementis/pmml/apply-group/{{group_name}}/detail
@@ -809,7 +809,7 @@ curl --location --request POST "{{url}}/service/zementis/pmml/apply-group/dummy/
 }
 ```
 
-### POST - Apply ONNX Model to Multiple Records
+### POST - Apply ONNX model to multiple records
 
 ```
 {{url}}/service/zementis/onnx/apply/{{model_name}}
@@ -941,7 +941,7 @@ curl --location --request POST "{{url}}/service/zementis/onnx/apply/dummy" \
 }
 ```
 
-### POST - Apply ONNX Pipeline to Input Data
+### POST - Apply ONNX pipeline to input data
 
 ```
 {{url}}/service/zementis/onnx/apply-pipeline/{{pipeline_name}}

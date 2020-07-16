@@ -13,7 +13,7 @@ Operation on resources.
 <br>1. For PMML, the resources are typically JAR files or excel sheets containing custom functions and look up tables respectively.
 <br>2. For ONNX, the resources are typically python files containing some pre-processing or post-processing logic which can be embedded into a pipeline.
 
-### GET - List Available PMML Resources
+### GET - List available PMML resources
 
 ```
 {{url}}/service/zementis/resources
@@ -81,7 +81,7 @@ curl --request GET "{{url}}/service/zementis/resources"
 }
 ```
 
-### GET - Get PMML Resource Information
+### GET - Get PMML resource information
 
 ```
 {{url}}/service/zementis/resource/{{file_name}}
@@ -160,7 +160,7 @@ curl --request GET "{{url}}/service/zementis/resource/dummy" --header "Authoriza
 }
 ```
 
-### GET - Get PMML Resource File
+### GET - Get PMML resource file
 
 ```
 {{url}}/service/zementis/resource/{{file_name}}/source
@@ -233,7 +233,7 @@ curl --request GET "{{url}}/service/zementis/resource/dummy/source" --header "Au
 }
 ```
 
-### POST - Upload New PMML Resource File
+### POST - Upload new PMML resource file
 
 ```
 {{url}}/service/zementis/resource
@@ -334,7 +334,7 @@ curl --request POST "{{url}}/service/zementis/resource" --header "Authorization:
 }
 ```
 
-### DEL - Remove PMML Resource File 
+### DEL - Remove PMML resource file 
  
 ```
 {{url}}/service/zementis/resource/{{file_name}}
@@ -418,7 +418,7 @@ curl --request DELETE "{{url}}/service/zementis/resource/dummy" --header "Author
 }
 ```
 
-### DEL - Remove All PMML Resource Files
+### DEL - Remove all PMML resource files
 
 ```
 {{url}}/service/zementis/resources
@@ -469,7 +469,7 @@ curl --request DELETE "{{url}}/service/zementis/resources"
 }
 ```
 
-### GET - List Available ONNX Resources
+### GET - List available ONNX resources
 
 ```
 {{url}}/service/zementis/onnx/resources
@@ -524,7 +524,7 @@ curl --request GET "{{url}}/service/zementis/onnx/resources"
 }
 ```
 
-### GET - Get ONNX Resource
+### GET - Get ONNX resource
 
 ```
 {{url}}/service/zementis/onnx/resources/{{file_name}}
@@ -609,7 +609,7 @@ curl --request GET "{{url}}/service/zementis/onnx/resources/dummy" --header "Aut
 }
 ```
 
-### POST - Upload New ONNX Resource File
+### POST - Upload new ONNX resource file
 
 ```
 {{url}}/service/zementis/onnx/resources
@@ -710,7 +710,7 @@ curl --request POST "{{url}}/service/zementis/onnx/resources" --header "Authoriz
 }
 ```
 
-### DEL - Remove ONNX Resource File 
+### DEL - Remove ONNX resource file 
  
 ```
 {{url}}/service/zementis/onnx/resources/{{file_name}}
@@ -809,7 +809,7 @@ curl --request DELETE "{{url}}/service/zementis/onnx/resources/PreprocessFabricI
 }
 ```
 
-### DEL - Remove All ONNX Resource Files
+### DEL - Remove all ONNX resource files
 
 ```
 {{url}}/service/zementis/onnx/resources

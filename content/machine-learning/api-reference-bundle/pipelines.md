@@ -12,7 +12,7 @@ Operations on pipelines.
 
 >**Info:** Currently, only ONNX pipelines are supported. An active subscription of the Onnx microservice is required to leverage these pipeline APIs.
 
-### GET - List ONNX Pipelines
+### GET - List ONNX pipelines
 
 ```
 {{url}}/service/zementis/onnx/pipelines
@@ -77,7 +77,7 @@ curl --request GET "{{url}}/service/zementis/onnx/pipelines"
 ```
 
 
-### GET - Get ONNX Pipeline Information
+### GET - Get ONNX pipeline information
 
 ```
 {{url}}/service/zementis/onnx/pipelines/{{pipeline_name}}
@@ -155,7 +155,7 @@ curl --request GET "{{url}}/service/zementis/onnx/pipelines/dummy" --header "Aut
 }
 ```
 
-### POST - Create ONNX Pipeline
+### POST - Create ONNX pipeline
 
 ```
 {{url}}/service/zementis/onnx/pipelines
@@ -300,7 +300,7 @@ curl --request POST "{{url}}/service/zementis/onnx/pipelines" --header "Authoriz
 }
 ```
 
-### DEL - Remove ONNX Pipeline
+### DEL - Remove ONNX pipeline
 
 ```
 {{url}}/service/zementis/onnx/pipelines/{{pipeline_name}}
@@ -388,7 +388,7 @@ curl --request DELETE "{{url}}/service/zementis/onnx/pipelines/dummy" --header "
 }
 ```
 
-### DEL - Remove ONNX Pipelines
+### DEL - Remove ONNX pipelines
 
 ```
 {{url}}/service/zementis/onnx/pipelines

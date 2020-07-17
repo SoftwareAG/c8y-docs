@@ -49,14 +49,6 @@ Make sure to use the correct SDK version - 3.1.200 or define which .NET Core SDK
 dotnet new globaljson --sdk-version 3.1.200
 ```
 
-Open the Dockerfile inside the *microservicesdk-win-dev-latest* folder. Make sure that it points to the correct Docker image of .Net Core.
-
-The first line of the Dockerfile shall look like:
-
-```shell
-FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS runtime
-```
-
 Run the script *create.ps1* to create a sample project, provide the name of the project and the API application.
 
 ```shell
@@ -485,13 +477,6 @@ Change the current folder, to navigate to a microservicesdk folder.
 
 ```shell
 $ cd microservicesdk-latest
-```
-
-Open the Dockerfile inside the *microservicesdk-win-dev-latest* folder. Make sure that it points to the correct Docker image of .Net Core.<br>
-The first line of the Dockerfile shall look like:
-
-```shell
-FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS runtime
 ```
 
 Run the script *create.sh* to create a sample project, provide the name of the project and the API application.

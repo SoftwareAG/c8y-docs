@@ -9,27 +9,26 @@ aliases:
 
 The **Predictions** menu allows you to do meaningful predictions by scoring the data from your devices against your predictive models.
 
-Clicking **Predictions** in the navigator allows you to choose from two different modes of processing - **Batch Processing** and **Scheduled Processing**.
+Clicking **Predictions** in the navigator allows you to choose from two different modes of processing: **Batch Processing** and **Scheduled Processing**.
 
 ![Predictions](/images/zementis/zementis-predictions.png)
 
 ### Batch Processing
 
-Batch processing allows you to process data records against a model or model group. Batch processing is applicable for both PMML and ONNX models. 
+Batch processing allows you to process data records against a model, model group or pipeline. Batch processing is applicable for both PMML and ONNX models. 
 
-To process data against PMML models, choose the **PMML** tab. Similarly, to process data against ONNX models, choose the **ONNX** tab.
+To process data against PMML models/groups, choose the **PMML** tab. Similarly, to process data against ONNX models/pipelines, choose the **ONNX** tab.
 
-|Model/Group|Supported input data file types|Supported compression for input files
+|Model/Group/Pipeline|Supported input data file types|Supported compression for input files
 |:---|:---|:---|
 |PMML model|CSV, JSON, JPEG, PNG|ZIP (for CSV and JSON files)
 |PMML model group|CSV only|ZIP (for CSV files)
 |ONNX model|JSON only|-
-
-Batch Processing is primarily targeted for verifying the accuracy of your predictive models by applying it against test data obtained from the model training environment. The goal is to ensure that model development environment and model deployment environment produce the same results. We call this *Score Matching*.
+|ONNX pipeline| Any |-
 
 #### Running the batch process
 
-To run the batch process on PMML model/group, perform the following steps:
+For PMML models, batch processing can be used for verifying the accuracy of your predictive models by applying it against test data obtained from the model training environment. The goal is to ensure that model development environment and model deployment environment produce the same results. We call this *Score Matching*. To run the batch process on PMML model/group, perform the following steps:
 
 1. Click **Start** in the **PMML** tab to initiate the processing. 
 
@@ -42,15 +41,15 @@ Click **Next** to proceed. <br>
 On uploading a valid file, you will see an uploading message. 
 After the processing has been completed, you will see a corresponding notification.
 
->**Info**: The size of the uploaded file must not exceed 500 MB.
+>**Info:** The size of the uploaded file must not exceed 500 MB.
 
-The steps involved in running the batch process on ONNX models remains similar to the ones for PMML models. However, there is no option to enable score matching. Also, model groups for ONNX models are not supported yet. The input to the ONNX model must be provided in JSON format.
+The steps involved in running the batch process on ONNX models/pipelines remain similar to the ones for PMML models. However, there is no option to enable score matching. Also, model groups for ONNX models are not supported yet.
 
 #### Viewing and downloading the results
 
 In order to view the results, click **Show Results** on the **Batch Processing Completed** notification. 
 
-For PMML models, the **Preview** page will only preview maximum 500 records in a paginated manner, displaying 10 records per page.
+For PMML models/groups, the **Preview** page will only preview maximum 500 records in a paginated manner, displaying 10 records per page.
 
 ![Show Preview PMML](/images/zementis/zementis-batch-process-results.png)
 
@@ -68,11 +67,10 @@ Click the cogwheel icon <img src="/images/zementis/zementis-cogwheel-icon.png" a
 
 Click the file icon <img src="/images/zementis/zementis-file-icon.png" alt="File" style="display:inline-block; margin:0"> in front of a row, to download a full execution trace, showing what exactly happened when that record was applied against the model. In this way, you can investigate why the outputs did not match.
 
->**Info**: For PMML model groups, there is no option to view the results. However, there is an option to download the ZIP of CSV files containing the entire set of processed results.
-
-For ONNX models, the **Results** page will show the entire set of records processed in JSON format. There are no options available for filtering or any sort of configuration. The only option available is to download the processed results.
+For ONNX models, the **Results** page will show the entire set of records processed in JSON format. However, for ONNX pipelines, the **Results** page may not show any content if the post-processing script associated with the pipeline does not return any data. There are no options available for filtering or any sort of configuration for ONNX models/pipelines. The only option available is to download the processed results.
 
 ![Show Results ONNX](/images/zementis/zementis-batch-process-results-onnx.png)
+
 
 ### Scheduled Processing
 
@@ -80,7 +78,7 @@ Scheduled Processing allows you to schedule batch jobs for processing measuremen
 
 The job scheduler can be used to trigger one-time or periodic jobs on data captured from devices. The scheduler allows you to map device data to model inputs by providing a mapping tool. Periodic executions of batch jobs can be useful when aggregate information on model’s predictions is required for a desired time period.
 
->**Info**: Currently, scheduled processing is only applicable for PMML models and model groups.
+>**Info:** Currently, scheduled processing is only applicable for PMML models and model groups.
 
 #### Scheduling a job
 
@@ -99,7 +97,7 @@ Use the **Apply across all models** toggle if you want the processing to happen 
 ![Scheduled process 3](/images/zementis/zementis-jobconfig-schedule.png)
 <br>Click **Finish** to schedule the job that you just configured.
 
->**Info**:
+>**Info:**
 <br>1. For a periodic frequency, a CRON expression is generated and used by the scheduler.
 <br>2. The data range selected for the schedule must not exceed 24 hours.
 <br>3. For a one-time job, you need to select the date when the job should run. You also need to specify the data range to be used for processing when the job is executed.

@@ -54,7 +54,7 @@ Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokument
 </tr>
 <tr>
 <td align="left"><a href="#smart-rules-collection">Smart Rules-Sammlung</a></td>
-<td align="left">Verwenden Sie <a href="#smart-rules-collection">globale Smart Rules</a>, um Regeln zu konfigurieren, etwa für Geofencing, Alarmeskalation oder Benachrichtigungen (SMS/E-Mail/Sprache). Beschreibt detailliert jede Smart Rule und ihre konfigurierbaren Parameter.</td>
+<td align="left">Verwenden Sie <a href="#smart-rules-collection">globale Smart Rules</a>, um Regeln zu konfigurieren, etwa für Geofencing, Alarmeskalation oder Benachrichtigungen (SMS/E-Mail). Beschreibt detailliert jede Smart Rule und ihre konfigurierbaren Parameter.</td>
 </tr>
 </tbody>
 </table>

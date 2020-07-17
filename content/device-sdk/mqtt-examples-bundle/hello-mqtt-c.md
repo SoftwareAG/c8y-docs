@@ -106,7 +106,7 @@ What does the code in `main` do?
 
 -   Configure an MQTT connection.
 -   Register a ``on_message`` callback function which will print incoming messages.
--   Connect with Cumulocity IoT via an MQTT protocol.
+-   Connect with Cumulocity IoT via MQTT protocol.
 -   Create a new device with ``C MQTT`` name and ``c8y_MQTTDevice`` type.
 -   Update the device hardware information by putting a ``"S123456789"`` serial, a ``"MQTT test model"`` model and a ``"Rev0.1"`` revision.
 -   Subscribe to the static operation templates for the device - this will result in an ``on_message`` method call every time a new operation is created.

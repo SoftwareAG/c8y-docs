@@ -4,7 +4,7 @@ title: Brief background
 layout: bundle
 ---
 
-As the web ecosystem evolves, as a platform we evolve with it - while assuring to keep upgrade paths as smooth as possible and keep extensions working properly with very little changes.
+As the web ecosystem evolves, we as a platform evolve with it - while assuring to keep upgrade paths as smooth as possible and keep extensions working properly with very little changes.
 
 This process involves migration effort, so we believe that providing some background information on how the stack and the build process has evolved over time will help developers to better understand why some parts work the way you see today and why migration effort is needed.
 
@@ -46,7 +46,7 @@ The loading of the modules was entirely dynamic. We served a very basic index.ht
   <script src="/apps/devicemanagement/pluginZ/main.js"></script>
 ```
 
-As the information about which plugins where imported in each application was completely controlled by a REST API, every application could be easily edited from the UI: it was possible to move functionality around, adding or removing plugins from each application. This just meant updating the list of imports of each application.
+As the information about which plugins were imported in each application was completely controlled by a REST API, every application could be easily edited from the UI: it was possible to move functionality around, adding or removing plugins from each application. This just meant updating the list of imports of each application.
 
 With this structure we could easily find the URL from the definitions ```<app>/<plugin>```. This influence is still visible today in many of the plugin names.
 
@@ -84,7 +84,7 @@ Although plugins are not just data any longer, we still allow to change the appl
 
 The new approach focuses on enabling the complete stack of modern web development and removing as much specificity from the process as possible. To allow that, we decided to update the existing angular.js framework to the next generation simply called Angular. To still enable the use of legacy browsers and allow the import from third party library's via npm we need to bundle the modules. As bundler we choose to use webpack, as it play's nicely with Angular.
 
-One major change is that so far modules (or plugins) where always represented during development and after build, so they could easily be composed by adding or removing a script. As we are now bundling everything, the modules can only be put together during development so applications can no longer be edited from the UI for now, but at the same time developers win the possibility to use the standardized ES2016 module architecture. That simplifies the development process because it follows standard approaches and doesn't need any kind of complex module architecture. At this point, plugins are truely just modules. We will keep the name around to refer to sub-packages that contain some kind of isolated functionality.
+One major change is that so far modules (or plugins) where always represented during development and after build, so they could easily be composed by adding or removing a script. As we are now bundling everything, the modules can only be put together during development so applications can no longer be edited from the UI for now, but at the same time developers win the possibility to use the standardized ES2016 module architecture. That simplifies the development process because it follows standard approaches and doesn't need any kind of complex module architecture. At this point, plugins are truly just modules. We will keep the name around to refer to sub-packages that contain some kind of isolated functionality.
 
 This was the clear opportunity to modularize the stack. While the focus is still on Angular we provide tools to avoid framework lock-in. This results in multiple packages published to npm which can be used standalone. For example, a developer could use the API abstraction layer implemented in the @c8y/client to develop a React application. The stack is no longer exclusively bound to Angular.
 
@@ -165,7 +165,7 @@ The following table shows which versions support which tooling:
 The table can be understood as follows:
 
  * The old tooling called "cumulocity-node-tools" only supports AngularJS builds until version 9.25.x
- * The new tooling called "@c8y/cli" can be used to build AngularJS applications until 9.25.x 
+ * The new tooling called "@c8y/cli" can be used to build AngularJS applications until 9.25.x
  * Angular-only applications (= applications that are not extending our default applications: Cockpit, Device Management and Administration) can be built since 9.16.x as beta (yellow). The beta ended at 9.25.x.
  * Hybrid applications are applications that run with Angular and AngularJS at the same time and enable the use of existing AngularJS plugins in a modern Angular application.
 
@@ -222,8 +222,3 @@ Although the modification to the application is read from the target file, the d
 As an alternative to target files developers should now use [applications options](/web/angular#applications-options).
 
 There is no alternative to mutating the list of imported plugins. The recommended approach is to explicitly import the required modules.
-
-
-
-
-

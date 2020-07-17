@@ -5,7 +5,7 @@ weight: 10
 
 This tutorial describes how to set up and configure the Casa Systems (NetComm) routers of the [NTC-220](https://support.netcommwireless.com/products/NTC-220%20Series) series using the Cumulocity IoT NetComm Agent package.
 
->**Info:** For [NTC-140W](https://support.netcommwireless.com/products/NTC-140W%20Series), and [NTC-6200](https://support.netcommwireless.com/products/NTC-6200%20Series), refer to the [NetComm section](https://cumulocity.com/guides/10.4.6/devices/netcommwireless/) in the Devices guide of the Cumulocity IoT 10.4.6 documentation. 
+>**Info:** For [NTC-140W](https://support.netcommwireless.com/products/NTC-140W%20Series), and [NTC-6200](https://support.netcommwireless.com/products/NTC-6200%20Series), refer to the [NetComm section](https://cumulocity.com/guides/10.4.6/devices/netcommwireless/) in the Devices guide of the Cumulocity IoT 10.4.6 documentation.
 
 >**Info:** The developer documentation is available at [https://bitbucket.org/m2m/cumulocity-agents-netcomm/src/master/doc/devguide.md](https://bitbucket.org/m2m/cumulocity-agents-netcomm/src/master/doc/devguide.md).
 
@@ -43,6 +43,4 @@ Moreover, the Cumulocity IoT NetComm Agent offers a large variety of device mana
 * Remotely executing commands via the [device shell](#device-shell) interface.
 * Retrieving system, ipsec and agent [log files](#logs).
 
-For details refer to [Managing devices](#device-management). 
-
-
+For details refer to [Managing devices](#device-management).

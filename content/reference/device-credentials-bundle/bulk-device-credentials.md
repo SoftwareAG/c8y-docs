@@ -86,10 +86,10 @@ CSV file can appear in many forms (regarding to optional tenant column and occur
 * When user wants to add device to group, columns 'type', 'name' and 'path' must appear in CSV file.
 * When user wants to add shell feature, columns 'type', 'name' and 'shell' must appear in CSV file and column 'shell' must contain value 1.
 
-It is possible to define custom [External ID](/reference/identity/) mappings and some custom device properties that are added to newly created devices during registration:
+It is possible to define custom [external ID](/reference/identity/) mappings and some custom device properties which are added to newly created devices during registration:
 
-* To add custom external ID mapping, place external ID type as a last header with 'external-' prefix, e.g. to add external ID mapping of type 'c8y_Imei', put in the last column header: 'external-c8y_Imei'. The value of this external ID type should be set in corresponding column of the data rows.
-* To add custom property to registered device, place custom property name as a header, e.g. 'myCustomProperty' and the value would be in rows below.
+* To add a custom external ID mapping, enter the external ID type as the header of the last column with the prefix "external-", e.g. to add an external ID mapping of type 'c8y_Imei', enter 'external-c8y_Imei' in the last column header. The value of this external ID type should be set in the corresponding column of the data rows.
+* To add a custom property to a registered device, enter the custom property name as a header, e.g. "myCustomProperty", and the value would be in the rows below.
 
 The custom device properties mapping has following limitations:
 

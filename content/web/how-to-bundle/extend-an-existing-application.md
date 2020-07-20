@@ -6,7 +6,7 @@ weight: 0
 
  **Version:** 10.4.11.0 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
-It is a common use case to extend one of our existing apps like Cockpit or Device management. 
+It is a common use case to extend one of our existing apps like Cockpit or Device management.
 
 This recipe explains step by step, how you can extend the Cockpit app with a custom route and hook this route into the navigator. Before starting with the step-by-step description we will provide some background on what we call a hybrid application and what the [@c8y/apps](/web/angular/#apps) npm package contains.
 
@@ -15,12 +15,12 @@ This recipe explains step by step, how you can extend the Cockpit app with a cus
 The default applications consist of three application which are shipped with our platform by default. As these applications are a result of several years of development, the code is mainly based on angularjs. As we now use Angular for all of our build-in applications, we needed to find a solution to serve both frameworks. The `@c8y/cli` allows scaffolding a default app which allows exactly this. It uses the Angular upgrade functionality, to serve an Angular and angularjs app at the same time. This enables us to develop new features in Angular while every angularjs plugin should be easily integrable. This is what we call the **hybrid** mode.
 
 The hybrid mode, however, comes with some limitations we will cover later in this recipe. Due to these limitations, we decided to provide a **pure** Angular empty starter application which comes without the possibility to integrate angularjs plugins. That pure version of the app comes in two flavors:
- 
+
  - [Angular CLI](/web/angular/#angularcli): When using the Angular CLI you benefit from the whole Angular ecosystem so that you can re-use many of the tools of the Angular CLI (e.g. testing).
  - [@c8y/cli](/web/angular/#cli): Is our pre-caved way that integrates well with our tooling but most likely will not allow special cases.
 
- So in total, there are three possibilities to start with the Web SDK: Extending an existing hybrid app, building a pure Angular app with Angular CLI or building it with @c8y/cli. Which one to choose heavily depends on the application you want to build. E.g. if you want an application that just follows the look&feel of the platform but want to use special dependencies for certain scenarios (e.g. Material-Framework), you are best with the pure Angular CLI solution. 
- 
+ So in total, there are three possibilities to start with the Web SDK: Extending an existing hybrid app, building a pure Angular app with Angular CLI or building it with @c8y/cli. Which one to choose heavily depends on the application you want to build. E.g. if you want an application that just follows the look&feel of the platform but want to use special dependencies for certain scenarios (e.g. Material-Framework), you are best with the pure Angular CLI solution.
+
 Most likely  you just want to extend a hybrid app, which we will cover in this recipe. But first, we must show the limitations of that approach to understanding better, why concepts are designed the way they are.
 
 ### Hybrid mode limitations
@@ -46,7 +46,7 @@ c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0
 Next, you need to install all dependencies. Switch to the new folder and run `npm install`.
 
 > **Tip:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the app you want to scaffold, e.g.:
-> 
+>
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0` will scaffold an app with the version `10.4.11.0`
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an app with the latest official release. Same as if used without the `-a` flag
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an app with the latest beta release.
@@ -61,7 +61,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-hello',
   template: `
-  <c8y-title>Hello</c8y-title> 
+  <c8y-title>Hello</c8y-title>
   World
   `,
 })
@@ -70,7 +70,7 @@ export class HelloComponent {
 }
 ```
 
-This is a very basic component. Only the template uses a special feature called "content projection" to show a title. Content projection is an Angular concept to display content in other places then they are defined. Which components support content projection is described in the [@c8y/ngx-components](http://localhost:1313/web/angular/#ngx-components) documentation.
+This is a very basic component. Only the template uses a special feature called "content projection" to show a title. Content projection is an Angular concept to display content in other places then they are defined. Which components support content projection is described in the [@c8y/ngx-components](/web/angular/#ngx-components) documentation.
 
 We can now bind this custom component to a route by changing the `app.module.ts` the following way:
 
@@ -137,7 +137,7 @@ import { CoreModule, RouterModule, HOOK_NAVIGATOR_NODES, NavigatorNode } from '@
 // --- >8 ----
 import { UpgradeModule, HybridAppModule, UPGRADE_ROUTES } from '@c8y/ngx-components/upgrade';
 import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
-import { HelloComponent } from './hello.component'; 
+import { HelloComponent } from './hello.component';
 
 @NgModule({
   declarations: [HelloComponent],                      

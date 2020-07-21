@@ -163,7 +163,7 @@ After successful registration, the agent device will be added to the device list
 
 	POST /devicecontrol/newDeviceRequests
 	Authorization: Basic ...
-	Content-Type: application/vnd.com.nsn.cumulocity.newDeviceRequest+json
+	Content-Type: application/vnd.com.nsn.cumulocity.newdevicerequest+json
     {
         "id": "snmp-agent" // should be the same as "gateway.identifier" value from the snmp-agent-gateway.properties file.
     }
@@ -172,7 +172,7 @@ After successful registration, the agent device will be added to the device list
 
 	PUT /devicecontrol/newDeviceRequests/snmp-test
 	Authorization: Basic ...
-	Content-Type: application/vnd.com.nsn.cumulocity.newDeviceRequest+json
+	Content-Type: application/vnd.com.nsn.cumulocity.newdevicerequest+json
     {
         "status": "ACCEPTED"
     }
@@ -264,7 +264,7 @@ The device protocol mapping helps the agent to know how to deal with incoming da
 
 	PUT /inventory/managedObjects/{{device.protocol.id}}
 	Authorization: Basic ...
-	Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json
+	Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json
 	{
 	   "id":"18849",
 	   "name":"snmp-device-protocol",
@@ -360,7 +360,7 @@ The following REST call schedules autodiscovery for the given interval:
 
 	PUT /inventory/managedObjects/{{agent.device.id}}
 	Authorization: Basic ...
-	Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json
+	Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json
     {
         "id": "{{agent.device.id}}",
         "c8y_SNMPGateway": {
@@ -427,7 +427,7 @@ For a SNMP device with SNMP v1 or v2c
 
 	POST /inventory/managedObjects
 	Authorization: Basic ...
-	Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json
+	Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json
 	{
 	   "name":"snmp-device-0",
 	   "type":"snmp-device-protocol",
@@ -462,7 +462,7 @@ For SNMP v3, additional authentication and privacy details have to be provided:
 
 	POST /inventory/managedObjects
 	Authorization: Basic ...
-	Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json
+	Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json
     {
     	"name": "snmp-device-3",
     	"type": "snmp-device-protocol",
@@ -508,7 +508,7 @@ Security level and protocols can have the following values:
 
 	POST /inventory/managedObjects/{{agent.device.id}}/childDevices
 	Authorization: Basic ...
-	Content-Type: application/vnd.com.nsn.cumulocity.managedObjectReference+json
+	Content-Type: application/vnd.com.nsn.cumulocity.managedobjectreference+json
     {
 		"managedObject": {
 			"id": "{{snmp.device.id}}"
@@ -519,7 +519,7 @@ To update the SNMP device details, use the following REST API:
 
 	PUT /inventory/managedObjects/{{snmp.device.id}}
 	Authorization: Basic ...
-	Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json
+	Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json
     {
         "name": "snmp-device-1",
         "type": "snmp-device-protocol",
@@ -572,7 +572,7 @@ The following REST call schedules the polling with a given time period:
 
 	PUT /inventory/managedObjects/{{agent.device.id}}
 	Authorization: Basic ...
-	Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json
+	Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json
     {
         "id": "{{agent.device.id}}",
         "c8y_SNMPGateway": {

@@ -14,7 +14,7 @@ layout: redirect
 ### GET the CepApi resource
 
 Response body: CepApi
-  
+
 Required role: ROLE\_CEP\_MANAGEMENT\_READ
 
 Example request: Retrieve the CepApi resource collection
@@ -26,7 +26,7 @@ Example request: Retrieve the CepApi resource collection
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.cepApi+json;ver=...
+    Content-Type: application/vnd.com.nsn.cumulocity.cepapi+json;ver=...
     Content-Length: ...
     {
        "self":"<<CepAPI URL>>",

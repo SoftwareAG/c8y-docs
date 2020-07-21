@@ -23,11 +23,11 @@ Example request: Retrieve information about all groups of a user
     GET /user/<<tenant>>/users/<<userName>>/groups
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
-     Accept: application/vnd.com.nsn.cumulocity.groupReferenceCollection+json;ver=0.9
+     Accept: application/vnd.com.nsn.cumulocity.groupreferencecollection+json;ver=0.9
 
 Example response:
 
-    Content-Type: application/vnd.com.nsn.cumulocity.groupReferenceCollection+json;ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.groupreferencecollection+json;ver=0.9
     Content-Length: nnn
 
     {

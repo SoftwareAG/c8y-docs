@@ -102,8 +102,8 @@ The first request executed by the browser is:
 
     POST /tenant/loginOptions
     Host: ...
-    Content-Type: application/vnd.com.nsn.cumulocity.loginOptionCollection+json;ver=...
-    Accept: application/vnd.com.nsn.cumulocity.loginOptionCollection+json;ver=...
+    Content-Type: application/vnd.com.nsn.cumulocity.loginoptioncollection+json;ver=...
+    Accept: application/vnd.com.nsn.cumulocity.loginoptioncollection+json;ver=...
 
 Response:
 
@@ -216,6 +216,8 @@ Each media type contains a parameter "ver" indicating the version of the type. A
 Media types are used in HTTP "Content-Type" and "Accept" headers. If you specify an "Accept" header in a POST or PUT request, the response will contain the newly created or updated object. If you do not specify the header, the response body will be empty.
 
 If a media type without "ver" parameter is given, the oldest available version will be returned by the server. If the accept header contains the same media type in multiple versions the server will return a representation in the latest supported version.
+
+Note that media type values should be treated as case insensitive.
 
 ### Date format
 

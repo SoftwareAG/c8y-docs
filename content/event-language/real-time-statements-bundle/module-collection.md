@@ -17,7 +17,7 @@ layout: redirect
 ### GET a module collection
 
 Response body: ModuleCollection
-  
+
 Required role: ROLE\_CEP\_MANAGEMENT\_READ
 
 Example request: Get collection of all modules
@@ -29,7 +29,7 @@ Example request: Get collection of all modules
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.cepModuleCollection+json;ver=...
+    Content-Type: application/vnd.com.nsn.cumulocity.cepmodulecollection+json;ver=...
     Content-Length: ...
     {
        "id":"1",
@@ -74,7 +74,7 @@ Annotation @Name can be skipped - in this case cumulocity platform will assign d
 Example response:
 
     HTTP/1.1 201 Created
-    Content-Type: application/vnd.com.nsn.cumulocity.cepModule+json;ver=...
+    Content-Type: application/vnd.com.nsn.cumulocity.cepmodule+json;ver=...
     {
        "id":"3",
        "lastModified":"2013-06-27T15:37:51.091+02:00",

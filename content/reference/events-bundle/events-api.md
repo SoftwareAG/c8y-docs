@@ -166,7 +166,7 @@ GET <<url>>/event
 
 |HEADERS||
 |:---|:---|
-|Content-Type|application/vnd.com.nsn.cumulocity.eventApi+json;ver=...
+|Content-Type|application/vnd.com.nsn.cumulocity.eventapi+json;ver=...
 
 ```http
 HTTP/1.1

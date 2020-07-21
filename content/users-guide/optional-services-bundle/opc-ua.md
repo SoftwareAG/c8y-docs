@@ -43,11 +43,8 @@ gateway:
 
 #### Configuration profile location on the filesystem
 
-The configuration profile can either be stored in the *same directory as
-the JAR file* or in a *default configuration directory*.
-
-Depending on the operating system, the following default configuration
-directories can be used:
+The configuration profile can either be stored in the *same directory as the JAR file* or in a *default configuration directory*.
+Depending on the operating system, the following default configuration directories can be used:
 
 ```
 Windows OS

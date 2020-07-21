@@ -26,7 +26,7 @@ Example request: Create a new UserReference
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Content-Length: nnn
-     Content-Type: application/vnd.com.nsn.cumulocity.userReference+json;ver=0.9
+     Content-Type: application/vnd.com.nsn.cumulocity.userreference+json;ver=0.9
 
     {
       "user" : {
@@ -37,7 +37,7 @@ Example request: Create a new UserReference
 Example response:
 
     HTTP/1.1 201 Created
-     Content-Type: application/vnd.com.nsn.cumulocity.userReference+json;ver=0.9
+     Content-Type: application/vnd.com.nsn.cumulocity.userreference+json;ver=0.9
      Content-Length: nnn
      Location: [location]
 
@@ -91,11 +91,11 @@ Example request: Retrieve information about all users of a group
     GET /user/management/groups/<<groupId>>
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
-     Accept: application/vnd.com.nsn.cumulocity.userReferenceCollection+json;ver=0.9
+     Accept: application/vnd.com.nsn.cumulocity.userreferencecollection+json;ver=0.9
 
 Example response:
 
-    Content-Type: application/vnd.com.nsn.cumulocity.userReferenceCollection+json;ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.userreferencecollection+json;ver=0.9
     Content-Length: nnn
 
     {

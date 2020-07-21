@@ -119,8 +119,8 @@ Create a managed object as a device named "Microservice tracker" via POST reques
 POST <URL>/inventory/managedObjects
 
 HEADERS:
-  Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json; charset=UTF-8; ver=0.9
-  Accept: application/vnd.com.nsn.cumulocity.managedObject+json; charset=UTF-8; ver=0.9
+  Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json; charset=UTF-8; ver=0.9
+  Accept: application/vnd.com.nsn.cumulocity.managedobject+json; charset=UTF-8; ver=0.9
   Authorization: <AUTHORIZATION>
 
 BODY:

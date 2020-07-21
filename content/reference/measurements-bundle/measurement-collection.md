@@ -34,7 +34,7 @@ layout: redirect
 
 |HEADERS||
 |:---|:---|
-|Content-Type|application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
+|Content-Type|application/vnd.com.nsn.cumulocity.measurementcollection+json;ver=...
 
 ```http
 HTTP/1.1
@@ -254,8 +254,8 @@ Note that for correct visualization of measurement series on UI graphs, property
 |:---|:---|
 |Authorization|{{auth}}
 |Host|{{hostname}}
-|Content-Type|application/vnd.com.nsn.cumulocity.measurementCollection+json
-|Accept|application/vnd.com.nsn.cumulocity.measurementCollection+json
+|Content-Type|application/vnd.com.nsn.cumulocity.measurementcollection+json
+|Accept|application/vnd.com.nsn.cumulocity.measurementcollection+json
 
 ```http
 POST <<url>>/measurement/measurements
@@ -291,7 +291,7 @@ POST <<url>>/measurement/measurements
 
 HEADERS||
 |:---|:---|
-|Content-Type|application/vnd.com.nsn.cumulocity.measurementCollection+json;ver=...
+|Content-Type|application/vnd.com.nsn.cumulocity.measurementcollection+json;ver=...
 
 ```http
 HTTP/1.1 

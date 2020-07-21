@@ -23,12 +23,12 @@ Example request: Retrieve information about a role reference collection
     GET /user/<<tenant>>/users/<<userName>>/roles
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
-     Accept: application/vnd.com.nsn.cumulocity.roleReferenceCollection+json;ver=0.9
+     Accept: application/vnd.com.nsn.cumulocity.rolereferencecollection+json;ver=0.9
 
 Example response:
 
     HTTP/1.1 200 OK
-     Content-Type: application/vnd.com.nsn.cumulocity.roleReferenceCollection+json;ver=0.9
+     Content-Type: application/vnd.com.nsn.cumulocity.rolereferencecollection+json;ver=0.9
      Content-Length: nnn
     {
        "self":"[URL to this resource]",
@@ -68,12 +68,12 @@ Example request: Retrieve information about a role reference cCollection
     GET /user/<<tenant>>/groups/<<groupId>>/roles
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
-     Accept: application/vnd.com.nsn.cumulocity.roleReferenceCollection+json;ver=0.9
+     Accept: application/vnd.com.nsn.cumulocity.rolereferencecollection+json;ver=0.9
 
 Example response:
 
     HTTP/1.1 200 OK
-     Content-Type: application/vnd.com.nsn.cumulocity.roleReferenceCollection+json;ver=0.9
+     Content-Type: application/vnd.com.nsn.cumulocity.rolereferencecollection+json;ver=0.9
      Content-Length: nnn
 
     {

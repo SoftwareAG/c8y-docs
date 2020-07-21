@@ -76,12 +76,12 @@ Example request: Retrieve information about user API resource
     GET /user
     Host: [hostname]
     Authorization: Basic xxxxxxxxxxxxxxxxxxx
-    Accept: application/vnd.com.nsn.cumulocity.userApi+json;ver=0.9
+    Accept: application/vnd.com.nsn.cumulocity.userapi+json;ver=0.9
 
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.userApi+json;ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.userapi+json;ver=0.9
     Content-Length: nnn
     {
          "self" : "<<UserAPI URL>>",

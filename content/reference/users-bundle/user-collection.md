@@ -23,12 +23,12 @@ Example request: Retrieve information about a user collection
     GET /user/<<tenant>>/users
     Host: [hostname]
     Authorization: Basic xxxxxxxxxxxxxxxxxxx
-    Accept: application/vnd.com.nsn.cumulocity.userCollection+json;ver=0.9
+    Accept: application/vnd.com.nsn.cumulocity.usercollection+json;ver=0.9
 
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.userCollection+json;ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.usercollection+json;ver=0.9
     Content-Length: nnn
     {
        "self":"[URL to this resource]",
@@ -88,7 +88,7 @@ Example request: retrieve users, where username starts with "js", and every user
     GET /user/<<tenant>>/users?username=js&groups=2,3,4&owner=admin&withSubusersCount=true
     Host: [hostname]
     Authorization: Basic xxxxxxxxxxxxxxxxxxx
-    Accept: application/vnd.com.nsn.cumulocity.userCollection+json;ver=0.9
+    Accept: application/vnd.com.nsn.cumulocity.usercollection+json;ver=0.9
 
 
 ### POST - create a new user within the collection

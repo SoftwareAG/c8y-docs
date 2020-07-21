@@ -189,7 +189,7 @@ POST /tenant/tenants/<TENANT>/applications
 Host: ...
 Authorization: Basic ...
 Content-Length: ...
-Content-Type: application/vnd.com.nsn.cumulocity.applicationReference+json
+Content-Type: application/vnd.com.nsn.cumulocity.applicationreference+json
 Accept: application/vnd.com.nsn.cumulocity.tenant+json
 {
     "application": {
@@ -234,7 +234,7 @@ Response:
 
 ```http
 HTTP/1.1 200 OK
-Content-Type: application/vnd.com.nsn.cumulocity.applicationUserCollection+json
+Content-Type: application/vnd.com.nsn.cumulocity.applicationusercollection+json
 {
     "users": [{
         "tenant": "...",
@@ -284,8 +284,8 @@ Assets are stored in the inventory along with the devices, but they often have t
 
 ```http
 POST /inventory/managedObjects
-Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json
-Accept: application/vnd.com.nsn.cumulocity.managedObject+json
+Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json
+Accept: application/vnd.com.nsn.cumulocity.managedobject+json
 Authorization: Basic ...
 {
     "name": "Building 043",
@@ -297,7 +297,7 @@ Response:
 
 ```http
 HTTP/1.1 201 Created
-Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json;charset=UTF-8;ver=0.9
+Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json;charset=UTF-8;ver=0.9
 ...
 {
     "owner": "admin",
@@ -331,7 +331,7 @@ For example, assuming that we have also created a room, and that room's "self" p
 
 ```http
 POST /inventory/managedObjects/2549800/childAssets HTTP/1.1
-Content-Type: application/vnd.com.nsn.cumulocity.managedObjectReference+json
+Content-Type: application/vnd.com.nsn.cumulocity.managedobjectreference+json
 {
     "managedObject" : {
         "self" : "http://.../inventory/managedObjects/2549700"
@@ -349,7 +349,7 @@ Response:
 
 ```http
 HTTP/1.1 200 OK
-Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json; charset=UTF-8; ver=0.9
+Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json; charset=UTF-8; ver=0.9
 ...
 {
     "owner": "admin",
@@ -378,7 +378,7 @@ Just like you link assets to other child assets, you can also link assets to dev
 
 ```http
 POST /inventory/managedObjects/2549700/childDevices
-Content-Type: application/vnd.com.nsn.cumulocity.managedObjectReference+json
+Content-Type: application/vnd.com.nsn.cumulocity.managedobjectreference+json
 {
     "managedObject" : {
         "self" : "https://.../inventory/managedObjects/2480500"
@@ -405,7 +405,7 @@ Response:
 
 ```http
 HTTP/1.1 200 OK
-Content-Type: application/vnd.com.nsn.cumulocity.managedObjectCollection+json; charset=UTF-8; ver=0.9
+Content-Type: application/vnd.com.nsn.cumulocity.managedobjectcollection+json; charset=UTF-8; ver=0.9
 ...
 {
     "managedObjects": [{
@@ -452,7 +452,7 @@ Response:
 
 ```http
 HTTP/1.1 200 OK
-Content-Type: application/vnd.com.nsn.cumulocity.measurementCollection+json; charset=UTF-8; ver=0.9
+Content-Type: application/vnd.com.nsn.cumulocity.measurementcollection+json; charset=UTF-8; ver=0.9
 ...
 {
     "measurements": [{

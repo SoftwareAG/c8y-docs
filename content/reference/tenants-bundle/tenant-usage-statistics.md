@@ -146,7 +146,7 @@ Example Request: Get statistics of current tenant starting Aug 1st, 2014, until 
 Example Response :
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.tenantUsageStatisticsCollection+json; charset=UTF-8; ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.tenantusagestatisticscollection+json; charset=UTF-8; ver=0.9
     Content-Length: ...
     {
         "statistics": {
@@ -261,7 +261,7 @@ Example Request: Get summary of requests and database usage from the start of th
 Example Response :
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.tenantUsageStatisticsSummary+json; charset=UTF-8; ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.tenantusagestatisticssummary+json; charset=UTF-8; ver=0.9
     Content-Length: ...
 
     {

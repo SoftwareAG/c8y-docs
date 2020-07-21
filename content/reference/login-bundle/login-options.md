@@ -21,7 +21,7 @@ layout: redirect
 
 ### GET a representation of the login options
 
-Response body: application/vnd.com.nsn.cumulocity.loginOptionCollection+json
+Response body: application/vnd.com.nsn.cumulocity.loginoptioncollection+json
 Required role: no authorization required
 
 Example request: Get the login options resource
@@ -32,7 +32,7 @@ Example request: Get the login options resource
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.inventoryApi+json;ver=...
+    Content-Type: application/vnd.com.nsn.cumulocity.inventoryapi+json;ver=...
     Content-Length: ...
     {
         "loginOptions": [

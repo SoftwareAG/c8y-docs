@@ -29,7 +29,7 @@ Example request:
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.applicationCollection+json;ver=...
+    Content-Type: application/vnd.com.nsn.cumulocity.applicationcollection+json;ver=...
     {
         "self" : "...",
         "next" : "...",
@@ -118,7 +118,7 @@ Example request:
 Example response:
 
     HTTP/1.1 201 Created
-    Content-Type: application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
+    Content-Type: application/vnd.com.nsn.cumulocity.managedobject+json;ver=...
     Location: <<URL of new managed object>>
 
     {

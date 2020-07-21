@@ -259,7 +259,7 @@ Depending on the complexity of the sensor network, devices may have child device
 For example, assume a child device with the URL "https://.../inventory/managedObjects/2543801" has already been created. To link this device with its parent, issue:
 
     POST /inventory/managedObjects/2480300/childDevices HTTP/1.1
-    Content-Type: application/vnd.com.nsn.cumulocity.managedObjectReference+json
+    Content-Type: application/vnd.com.nsn.cumulocity.managedobjectreference+json
     {
     "managedObject" : { "self" : "https://.../inventory/managedObjects/2543801" }
     }

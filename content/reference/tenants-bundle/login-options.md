@@ -6,7 +6,7 @@ layout: redirect
 
 The following endpoint shows which login options are configured for a tenant. 
 
-> If Oauth external is the only login option shown in the response, the user will be automatically redirected to the SSO login screen.
+> **Info:** If OAuth external is the only login option shown in the response, the user will be automatically redirected to the SSO login screen.
 
 ### GET login options of a tenant.
 

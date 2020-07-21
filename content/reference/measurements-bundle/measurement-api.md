@@ -207,7 +207,7 @@ layout: redirect
 
 ### GET - Measurement API resource
 
-**Response body:** application/vnd.com.nsn.cumulocity.measurementApi+json
+**Response body:** application/vnd.com.nsn.cumulocity.measurementapi+json
 
 **Require role:** ROLE\_MEASUREMENT\_READ
 
@@ -227,7 +227,7 @@ GET <<url>>/measurement
 
 |HEADERS||
 |:---|:---|
-|Content-Type|application/vnd.com.nsn.cumulocity.measurementApi+json;ver=...
+|Content-Type|application/vnd.com.nsn.cumulocity.measurementapi+json;ver=...
 
 ```http
 HTTP/1.1

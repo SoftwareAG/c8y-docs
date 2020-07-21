@@ -24,7 +24,7 @@ Example request: Retrieve information about a role collection
 Example response:
 
     HTTP/1.1 200 OK
-     Content-Type: application/vnd.com.nsn.cumulocity.roleCollection+json;ver=0.9
+     Content-Type: application/vnd.com.nsn.cumulocity.rolecollection+json;ver=0.9
      Content-Length: nnn
 
     {
@@ -62,7 +62,7 @@ Example request: Create a new RoleReference
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Content-Length: nnn
-     Content-Type: application/vnd.com.nsn.cumulocity.roleReference+json;ver=0.9
+     Content-Type: application/vnd.com.nsn.cumulocity.rolereference+json;ver=0.9
 
     {
       "role" : {
@@ -73,7 +73,7 @@ Example request: Create a new RoleReference
 Example response:
 
     HTTP/1.1 201 Created
-     Content-Type: application/vnd.com.nsn.cumulocity.roleReference+json;ver=0.9
+     Content-Type: application/vnd.com.nsn.cumulocity.rolereference+json;ver=0.9
      Content-Length: nnn
      Location: [URL to this resource]
 
@@ -100,7 +100,7 @@ Example request: Create a new RoleReference
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
      Content-Length: nnn
-     Content-Type: application/vnd.com.nsn.cumulocity.roleReference+json;ver=0.9
+     Content-Type: application/vnd.com.nsn.cumulocity.rolereference+json;ver=0.9
 
     {
       "role" : {
@@ -111,7 +111,7 @@ Example request: Create a new RoleReference
 Example response:
 
     HTTP/1.1 201 Created
-     Content-Type: application/vnd.com.nsn.cumulocity.roleReference+json;ver=0.9
+     Content-Type: application/vnd.com.nsn.cumulocity.rolereference+json;ver=0.9
      Content-Length: nnn
      Location: [URL to this resource]
 

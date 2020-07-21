@@ -22,12 +22,12 @@ To discover the URIs to the various interfaces of Cumulocity IoT, a "root" inter
 
 ### GET the Platform resource
 
-Response body: application/vnd.com.nsn.cumulocity.platformApi+json
+Response body: application/vnd.com.nsn.cumulocity.platformapi+json
 
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.platformApi+json;...
+    Content-Type: application/vnd.com.nsn.cumulocity.platformapi+json;...
     Content-Length: ...
 
     {

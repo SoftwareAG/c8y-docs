@@ -148,7 +148,7 @@ layout: redirect
 
 ### <a name="current-tenant"></a>Current tenant
 
-Content-Type: application/vnd.com.nsn.cumulocity.currentTenant+json
+Content-Type: application/vnd.com.nsn.cumulocity.currenttenant+json
 
 |Field Name|Type|Occurs|Description|
 |:---------|:---|:-----|:----------|
@@ -168,7 +168,7 @@ ResponseBody: CurrentTenant
 GET /tenant/currentTenant
 Host: [hostname]
 Authorization: Basic xxxxxxxxxxxxxxxxxxx
-Content-Type: application/vnd.com.nsn.cumulocity.currentTenant+json;;ver=...
+Content-Type: application/vnd.com.nsn.cumulocity.currenttenant+json;;ver=...
 ```
 
 Example response:

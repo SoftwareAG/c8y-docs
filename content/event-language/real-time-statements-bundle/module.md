@@ -17,13 +17,13 @@ layout: redirect
 ### GET Module
 
 Response body: Module
-  
+
 Required role: ROLE\_CEP\_MANAGEMENT\_READ
 
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.cepModule+json;ver=...
+    Content-Type: application/vnd.com.nsn.cumulocity.cepmodule+json;ver=...
     Content-Length: ...
     {
        "id":"1",
@@ -36,7 +36,7 @@ Example response:
 ### GET Module file with statements
 
 Response body: text/plain
-  
+
 Required role: ROLE\_CEP\_MANAGEMENT\_READ
 
 Example response:
@@ -62,7 +62,7 @@ Example Request:
     PUT /cep/modules/<<moduleId>>
     Host: ...
     Authorization: Basic ...
-    Content-Type: application/vnd.com.nsn.cumulocity.cepModule+json;ver=...
+    Content-Type: application/vnd.com.nsn.cumulocity.cepmodule+json;ver=...
     {
       "name" : "the_module",
       "status" : "DEPLOYED"
@@ -71,7 +71,7 @@ Example Request:
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.cepModule+json;ver=...
+    Content-Type: application/vnd.com.nsn.cumulocity.cepmodule+json;ver=...
 
 ### Update module file - Modify a Module with statements
 
@@ -95,7 +95,7 @@ Example file:
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.cepModule+json;ver=...
+    Content-Type: application/vnd.com.nsn.cumulocity.cepmodule+json;ver=...
     {
        "id":"3",
        "lastModified":"2013-06-27T15:37:51.091+02:00",

@@ -41,7 +41,13 @@ gateway:
 
 > **Info:** Windows OS is used for the example.
 
-Depending on your OS, the file must be saved to one of the following directories:
+#### Configuration profile location on the filesystem
+
+The configuration profile can either be stored in the *same directory as
+the JAR file* or in a *default configuration directory*.
+
+Depending on the operating system, the following default configuration
+directories can be used:
 
 ```
 Windows OS
@@ -57,7 +63,7 @@ Mac OS
 The number of profiles you may have is not limited. To use a specific profile on runtime, the "-Dspring.profiles.active" JVM argument has to be passed when running the gateway JAR file. For example, let’s use the previously created profile. Start a terminal and use the following command:
 
 ```bash
-java -Dspring.profiles.active=default,myTenant -jar opcua-device-gateway-<<version>>.jar
+java -jar opcua-device-gateway-<<version>>.jar --spring.profiles.active=default,myTenant
 ```
 The command above will start a gateway with the default profile and it will override the default properties with the properties defined in the “myTenant” profile. The list of profiles has to be provided as an ordered, comma-separated list. The default profile always needs to be the first profile in the list.
 
@@ -67,8 +73,7 @@ The command above will start a gateway with the default profile and it will over
 java -jar opcua-device-gateway-<<version>>.jar --spring.config.location=file:<<location>>/.opcua/conf/application-myTenant.yaml,file:<<location>>/.opcua/conf/
 ```
 
-If both arguments "--spring.config.location" and "-Dspring.profiles.active" are provided, the configuration locations should be directories instead of files. Otherwise, the profile-specific variants will not be considered.
-
+If both arguments "--spring.config.location" and "--spring.profiles.active" are provided, the configuration locations should be directories instead of files. Otherwise, the profile-specific variants will not be considered.
 
 #### Additional customizations
 

@@ -253,6 +253,23 @@ Set the supported configurations of the device.
 119,modbus,system
 ```
 
+##### Set currently installed configuration (120)
+
+Set currently installed configuration of the device.
+
+|Position|Parameter|Mandatory|Default|
+|:-------|:-------|:-------|:-------|
+|1|Configuration type| YES| &nbsp;|
+|2|Configuration file download URL| YES| &nbsp;|
+|3|File name| NO|Configuration type|
+|4|Date and time when the configuration was applied| NO|Current date and time|
+
+**Example**
+
+```text
+120,myType,http://www.my.url,config.bin,2020-07-22T17:03:14.000+02:00
+```
+
 #### Measurement templates (2xx)
 
 ##### Create custom measurement (200)

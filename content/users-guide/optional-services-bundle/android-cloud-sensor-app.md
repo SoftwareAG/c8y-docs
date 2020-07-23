@@ -1,5 +1,5 @@
 ---
-weight: 10
+weight: 11
 title: Cumulocity IoT Sensor App
 layout: redirect
 ---

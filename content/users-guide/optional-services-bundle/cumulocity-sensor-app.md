@@ -1,12 +1,12 @@
 ---
 weight: 10
-title: Cumulocity IoT Sensor App 1.0
+title: Cumulocity IoT Sensor App
 layout: redirect
 ---
 
 ### Overview
 
-The **Cumulocity IoT Sensor App** is a free smartphone application available for iOS and Android handsets.
+The **Cumulocity IoT Sensor App** is a free smartphone application available for iOS and Android smartphones and the successor of the **Cloud Sensor App**.
 It is designed to collect measurements from your phone and nearby Bluetooth device sensors and send them to the Cumulocity IoT Platform.
 It is the easiest way to get data into Cumulocity IoT, and has a very simple registration workflow to get you up and running quickly.
 It is ideal to use during Cumulocity IoT free trial available via Software AG Cloud and therefore an aid for learning the platform.
@@ -25,7 +25,7 @@ Supported smartphone sensors include:
 *   GPS location 
 *   Microphone and voice
 
-> **Info:** The application only supports sensors supported by your handset's hardware and is available using official APIs. Depending on platform support, additional sensors may be added in future releases.
+> **Info:** The application only supports sensors supported by your phone's hardware and is available using official APIs. Depending on platform support, additional sensors may be added in future releases.
 
 The latest list of supported Bluetooth devices can be found inside the application.
 A button to take you to this page can be found when scanning for new devices.
@@ -44,13 +44,9 @@ Additional devices will be supported and made available within the application.
 
 To get started with the Cumulocity IoT Sensor application, download it from the the Apple App Store, or Google Play Store as appropriate.
 The application is compatible with Android devices running Android 5.0 or higher, and iOS devices running iOS 11.0 or higher.
-Using these links from your smartphone will take you to the application's install page:
+Using these links from your smartphone will take you to the application's install page: [iOS](http://onelink.to/g39r8w) and [Android](https://play.google.com/store/apps/details?id=com.softwareag.cumulocity.iotcloudsensor).
 
-[![iOS](/images/users-guide/csa2/csa2-apple-store-button.jpg)](http://onelink.to/g39r8w)
-
-[![Android](/images/users-guide/csa2/csa2-google-playstore-button.jpg)](https://play.google.com/store/apps/details?id=com.softwareag.cumulocity.iotcloudsensor)
-
-It is also possible to open the Apple App Store or Google Play Store application directly on your smartphone and search for "Cumulocity IoT Sensor App".
+It is also possible to open the Apple App Store or Google Play Store application directly on your phone and search for "Cumulocity IoT Sensor App".
 
 To send measurements to Cumulocity, you need a Cumulocity account.
 If you don't already have one, you can create a free trial account at [https://softwareag.cloud](https://softwareag.cloud).
@@ -75,10 +71,10 @@ Earlier versions of Cumulocity IoT should follow the steps in [Manual registrati
 
     ![](/images/users-guide/csa2/csa2-connect-smartphone-wizard-step3.png)
 
-3.  From your smartphone, launch the app and tap **Connect** in the top right corner of the screen. 
+3.  From your phone, launch the app and tap **Connect** in the top right corner of the screen. 
 4.  Grant access to your camera if the app asks you for permission.
-5.  Scan the QR code shown on your PC's web browser. If you can't scan the QR code, tap **Manual Registration** on your handset and fill in the details on the right side of the wizard screen.
-6.  Back on your handset, tap **Done**. Sensor measurements will be sent to the server. They can be viewed in the device's dashboard.
+5.  Scan the QR code shown on your PC's web browser. If you can't scan the QR code, tap **Manual Registration** on your phone and fill in the details on the right side of the wizard screen.
+6.  Back on your phone, tap **Done**. Sensor measurements will be sent to the server. They can be viewed in the device's dashboard.
 
 Using the **Connect Smartphone** Wizard for device registration, your phone will be automatically registered by Cumulocity IoT and is assigned to the "Phones" group. Tap **Done** on your phone to return to the main screen.
 
@@ -94,17 +90,17 @@ Using the **Connect Smartphone** Wizard for device registration, your phone will
 
 3. Back in your web browser, click **Register Device** and then **General Device Registration**. Choose a meaningful and unique device ID for your phone and a group to assign your device to. Click **Next** and then **Complete**. The server will notice the pending registration and wait for your phone to show up.
 
-4. On your smartphone, fill in your tenant (e.g. "companytenant01"), select your instance (e.g. "cumulocity.com"), and enter your chosen device ID. If your instance is not available in the list, you can enter it manually after clicking **Add other instance**. Click **Connect** and your device will contact the server and ask to be accepted.
+4. On your phone, fill in your tenant (e.g. "companytenant01"), select your instance (e.g. "cumulocity.com"), and enter your chosen device ID. If your instance is not available in the list, you can enter it manually after clicking **Add other instance**. Click **Connect** and your device will contact the server and ask to be accepted.
 
     ![](/images/users-guide/csa2/csa2-manual-registration-smartphone.png) 
 
 5.  Back on your web browser, your device's card will now change to have the options to accept or reject the connection. Accept the connection. Your device will then be registered with the server and assigned to the chosen group.
 
-6.  Back on your handset, tap **Done**. Sensor measurements will be sent to the server. They can be viewed in the device's dashboard.
+6.  Back on your phone, tap **Done**. Sensor measurements will be sent to the server. They can be viewed in the device's dashboard.
 
 > **Info:** If you cannot manage to accept the device request within the required time, a small dialog window will notify you of this. Choose **Retry** to continue with the registration process. You can retry and take as much time as you need.
 
-For further information about registering a device on the platform manually, refer to [Connecting devices](https://iwiki.eur.ad.sag/users-guide/device-management/#connecting-devices) in the Device Management section.
+For further information about registering a device on the platform manually, refer to [Connecting devices](https://cumulocity.com/guides/users-guide/device-management/#connecting-devices) in the Device Management section.
 
 If you want to disconnect from Cumulocity IoT, tap **Disconnect** in the top right corner of the screen and approve the confirmation dialog.
 After that you can connect to the same or any other Cumulocity IoT instance or tenant.
@@ -113,7 +109,7 @@ After that you can connect to the same or any other Cumulocity IoT instance or t
 
 Measurements from your smartphone and connected Bluetooth sensors will be sent to Cumulocity IoT automatically when you're connected.
 _This happens automatically as soon the device is connected or started and as long as the app is in foreground._
-All measurements of the smartphone sensors will be displayed automatically in the device dashboard in Cumulocity IoT.
+All measurements of the phone sensors will be displayed automatically in the device dashboard in Cumulocity IoT.
 
 ![](/images/users-guide/csa2/csa2-device-dashboard.jpg)
 
@@ -123,7 +119,7 @@ If your phone has a gyroscope sensor, a 3D rotation widget will depict the curre
 The application will send sensor data to Cumulocity IoT at regular intervals.
 By default, this will be every 2 seconds.
 This interval can be configured from the app itself for the accelerometer, location, and other sensors.
-Tap the 3 vertical dots on a sensor's card, then **Edit** or scroll down to reveal additional settings.
+Tap the 3 vertical dots on a sensor's card, then **Edit** or drag the page up from the bottom to reveal additional settings.
 
 Every time a measurement is sent to Cumulocity IoT the Pulse indicator in front of the device name will animate.
 
@@ -163,8 +159,6 @@ New devices will be added to the list as the phone discovers them.
 ![](/images/users-guide/csa2/csa2-available-bluetooth-devices.png)
 
 > **Info:** If there are no supported devices in range, there is an option to see a list of all currently supported device types.
-![](/images/users-guide/csa2/csa2-supported-devices.png)
-
 
 Ensure that the device you wish to connect to is switched on and in pairing mode.
 For most devices, this will happen automatically when they are switched on and not paired with any other device.
@@ -196,16 +190,16 @@ Tapping **Edit**, or swiping upwards, will reveal further settings that allow yo
 
 The **Cumulocity IoT Sensor App** can receive real-time control commands from Cumulocity IoT.
 
-You can create a dashboard for your smartphone device as described in [Creating a dashboard](https://iwiki.eur.ad.sag/users-guide/cockpit#creating-dashboards) in the Cockpit section.
+You can create a dashboard for your smartphone device as described in [Creating a dashboard](https://cumulocity.com/guides/users-guide/cockpit/#dashboards) in the Cockpit section.
 
-To add the new widgets to the dashboard, see [Widgets collection](https://iwiki.eur.ad.sag/users-guide/cockpit/#widgets).
+To add the new widgets to the dashboard, see [Widgets collection](https://cumulocity.com/guides/users-guide/cockpit/#widgets).
 
-The Messaging widget can be used to send simple text notifications to a smartphone.
-Simply enter the required text into the widget and click **send**. The message will appear as a pop-up alert on the device.
+The Messaging widget can be used to send simple text notifications to a phone.
+Simply enter the required text into the widget and click **Send**. The message will appear as a pop-up alert on the device.
 
 ![](/images/users-guide/csa2/csa2-messaging-and-vibration-widget.jpg)
 
 The Vibration widget can be used to activate and deactivate the vibration motor on the device.
-When the vibration switch is activated, the handset will continuously vibrate until it is switched off again.
+When the vibration switch is activated, the phone will continuously vibrate until it is switched off again.
 
-> **Info:** The smartphone must remain connected to Cumulocity IoT to receive these commands. From the device's own dashboard, online devices will be shown with a green map-marker. You can also determine if the device is connected using the Device Management section. The "All Devices" page will show online devices with two green arrows, and the individual device info pages contain a Device Status widget.
+> **Info:** The phone must remain connected to Cumulocity IoT to receive these commands. From the device's own dashboard, online devices will be shown with a green map-marker. You can also determine if the device is connected using the Device Management section. The "All Devices" page will show online devices with two green arrows, and the individual device info pages contain a Device Status widget.

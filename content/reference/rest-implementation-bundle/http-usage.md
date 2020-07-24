@@ -37,14 +37,14 @@ If the token expires and requires renewal, the backend sends a response header:
 
 Cumulocity IoT supports [JWT token](https://en.wikipedia.org/wiki/JSON_Web_Token) authentication.
 
->**Info:** The JWT token authentication described in this section is deprecated and might be not supported in future releases. We recommend to use the O-Auth authentication grant instead (see next section).
+>**Info:** The JWT token authentication described in this section is deprecated and might be not supported in future releases. We recommend you to use the OAuth authentication grant instead (see next section).
 
 
 The HTTP header must include:
 
 	Authorization: Bearer <<Base64 encoded JWT token>>
 
-The JWT token must be signed using RSA signature with SHA-256 (RS256). The minimal RSA key size is 512 bit although minimum recommended key length is 2048 bits. You can generate an example key here: [http://travistidwell.com/jsencrypt/demo/](http://travistidwell.com/jsencrypt/demo/).
+The JWT token must be signed using RSA signature with SHA-256 (RS256). The minimal RSA key size is 512 bits, although the minimum recommended key length is 2048 bits. You can generate an example key using this [Online RSA Key Generator](http://travistidwell.com/jsencrypt/demo/).
 
 You must upload your public key to the [tenant options](/reference/tenants) to the "token.publicKey" category.
 

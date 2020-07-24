@@ -25,8 +25,8 @@ Required role: ROLE\_BULK\_OPERATION\_ADMIN
 Example Request:
 
     POST /devicecontrol/bulkoperations
-    Content-Type: application/vnd.com.nsn.cumulocity.bulkOperation+json
-    Accept: application/vnd.com.nsn.cumulocity.bulkOperation+json
+    Content-Type: application/vnd.com.nsn.cumulocity.bulkoperation+json
+    Accept: application/vnd.com.nsn.cumulocity.bulkoperation+json
     Authorization: Basic ...
     {
      "operationPrototype":{
@@ -42,7 +42,7 @@ Example response:
 
     HTTP/1.1 201 Created
     Location: <<URL of new operation>>
-    Content-Type: application/vnd.com.nsn.cumulocity.bulkOperation+json
+    Content-Type: application/vnd.com.nsn.cumulocity.bulkoperation+json
 
     {
      "id":2,
@@ -72,13 +72,13 @@ Required role: ROLE\_BULK\_OPERATION\_READ
 Example Request: Get all bulk operations.
 
     GET /devicecontrol/bulkoperations
-    Accept: application/vnd.com.nsn.cumulocity.bulkOperationCollection+json
+    Accept: application/vnd.com.nsn.cumulocity.bulkoperationcollection+json
     Authorization: Basic ...
 
 Example Response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.bulkOperationCollection+json
+    Content-Type: application/vnd.com.nsn.cumulocity.bulkoperationcollection+json
     Content-Length: ...
     {
       "self" : "<<This BulkOperationCollection URL>>",

@@ -88,7 +88,7 @@ HTTP/1.1
 |:---|:---|
 |Authorization|{{auth}}
 |Host|{{hostname}}
-|Content-Type|application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
+|Content-Type|application/vnd.com.nsn.cumulocity.managedobject+json;ver=...
 
 ```http
 
@@ -104,7 +104,7 @@ POST <<url>>/inventory/managedObjects/<<deviceId>>/<<references>>
 
 |HEADERS||
 |:---|:---|
-|Content-Type|application/vnd.com.nsn.cumulocity.managedObjectReference+json;ver=...
+|Content-Type|application/vnd.com.nsn.cumulocity.managedobjectreference+json;ver=...
 
 ```http
 HTTP/1.1

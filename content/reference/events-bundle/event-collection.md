@@ -38,7 +38,7 @@ GET <<url>>/event/events
 
 |HEADERS||
 |:---|:---|
-|Content-Type|application/vnd.com.nsn.cumulocity.eventCollection+json;ver=...
+|Content-Type|application/vnd.com.nsn.cumulocity.eventcollection+json;ver=...
 
 ```http
 HTTP/1.1

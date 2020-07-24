@@ -29,14 +29,14 @@ layout: redirect
 
 ```http
 GET <<url>>/inventory/managedObjects
-Accept: application/vnd.com.nsn.cumulocity.managedObjectCollection+json;ver=...
+Accept: application/vnd.com.nsn.cumulocity.managedobjectcollection+json;ver=...
 ```
 
 #### Example response
 
 |HEADERS||
 |:---|:---|
-|Content-Type|application/vnd.com.nsn.cumulocity.managedObjectCollection+json;ver=...
+|Content-Type|application/vnd.com.nsn.cumulocity.managedobjectcollection+json;ver=...
 
 ```http
 HTTP/1.1
@@ -83,7 +83,7 @@ HTTP/1.1
 200 - OK
 
 GET <<url>>/inventory/managedObjects?query=<<query language statement>>
-Accept: application/vnd.com.nsn.cumulocity.managedObjectCollection+json;ver=...
+Accept: application/vnd.com.nsn.cumulocity.managedobjectcollection+json;ver=...
 
 ```
 
@@ -91,12 +91,12 @@ Accept: application/vnd.com.nsn.cumulocity.managedObjectCollection+json;ver=...
 
 |HEADERS||
 |:---|:---|
-|Content-Type|application/vnd.com.nsn.cumulocity.managedObjectCollection+json;ver=..
+|Content-Type|application/vnd.com.nsn.cumulocity.managedobjectcollection+json;ver=..
 
 ```http
 HTTP/1.1
 200 OK
-Content-Type: application/vnd.com.nsn.cumulocity.managedObjectCollection+json;ver=...
+Content-Type: application/vnd.com.nsn.cumulocity.managedobjectcollection+json;ver=...
 Content-Length: ...
 {
   "self" : "<<Collection URL>>",

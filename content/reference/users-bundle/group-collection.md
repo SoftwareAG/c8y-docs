@@ -27,12 +27,12 @@ Example request: Retrieve information about a group collection
     GET /user/management/groups/
      Host: [hostname]
      Authorization: Basic xxxxxxxxxxxxxxxxxxx
-     Accept: application/vnd.com.nsn.cumulocity.groupCollection+json;ver=0.9
+     Accept: application/vnd.com.nsn.cumulocity.groupcollection+json;ver=0.9
 
 Example response:
 
     HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.groupCollection+json;ver=0.9
+    Content-Type: application/vnd.com.nsn.cumulocity.groupcollection+json;ver=0.9
     Content-Length: nnn
 
     {

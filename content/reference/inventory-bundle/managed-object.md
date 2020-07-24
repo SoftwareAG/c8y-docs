@@ -140,14 +140,14 @@ Not every GET response contains "parents" collections. You need a global role wi
 200 - OK
 
 GET <<url>>/inventory/managedObjects/<<deviceId>>
-Accept: application/vnd.com.nsn.cumulocity.managedObject+json;=ver...
+Accept: application/vnd.com.nsn.cumulocity.managedobject+json;=ver...
 ```
 
 #### Example response
 
 |HEADERS||
 |:---|:---|
-|Content-Type|application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
+|Content-Type|application/vnd.com.nsn.cumulocity.managedobject+json;ver=...
 
 ```
 HTTP/1.1
@@ -195,8 +195,8 @@ HTTP/1.1
 |:---|:---|
 |Authorization|{{auth}}
 |Host|{{hostname}}
-|Content-Type|application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
-|Accept|application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
+|Content-Type|application/vnd.com.nsn.cumulocity.managedobject+json;ver=...
+|Accept|application/vnd.com.nsn.cumulocity.managedobject+json;ver=...
 
 ```http
 
@@ -212,7 +212,7 @@ HTTP/1.1
 
 |HEADERS||
 |:---|:---|
-|Content-Type|application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
+|Content-Type|application/vnd.com.nsn.cumulocity.managedobject+json;ver=...
 
 ```http
 HTTP/1.1
@@ -250,7 +250,7 @@ GET <<url>>/inventory/managedObjects/<<deviceId>>/supportedMeasurements
 
 |HEADERS||
 |:---|:---|
-|Content-Type|application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
+|Content-Type|application/vnd.com.nsn.cumulocity.managedobject+json;ver=...
 
 ```http
 HTTP/1.1
@@ -305,7 +305,7 @@ GET <<url>>/inventory/managedObjects/<<deviceId>>/supportedSeries
 
 |HEADERS||
 |:---|:---|
-|Content-Type|application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
+|Content-Type|application/vnd.com.nsn.cumulocity.managedobject+json;ver=...
 
 ```
 HTTP/1.1
@@ -331,8 +331,8 @@ HTTP/1.1
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
-|Accept|application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
-|Content-Type|application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
+|Accept|application/vnd.com.nsn.cumulocity.managedobject+json;ver=...
+|Content-Type|application/vnd.com.nsn.cumulocity.managedobject+json;ver=...
 
 ```http
 200 - OK
@@ -348,7 +348,7 @@ PUT <<url>>/inventory/managedObjects/<<deviceId>>
 
 |HEADERS||
 |:---|:---|
-|Content-Type|application/vnd.com.nsn.cumulocity.managedObject+json;ver=...
+|Content-Type|application/vnd.com.nsn.cumulocity.managedobject+json;ver=...
 
 ```http
 HTTP/1.1

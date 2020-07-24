@@ -2,9 +2,6 @@
 weight: 10
 title: Cumulocity IoT Sensor App
 layout: redirect
-aliases:
-  - /users-guide/optional-services
-  - /users-guide/optional-services/#android-cloud-sensor-app
 ---
 
 ### Overview

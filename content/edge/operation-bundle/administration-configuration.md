@@ -82,8 +82,8 @@ For many use cases, and especially when using APAMA, time synchronization must b
 
 `chrony` or `ntp` services can be configured by end users based on their time synchronization needs. These services are by default stopped and disabled in Edge and can be enabled by standard commands. Use the following commands to interact with the `chrony` or `ntp` services:
  
-	systemctl start|stop|status|restart ntpd
-	systemctl start|stop|status|restart chronyd
+	sudo systemctl start|stop|status|restart ntpd
+	sudo systemctl start|stop|status|restart chronyd
 
 By default, for VMWare-based installations, the *vmtools* service is responsible for time synchronization with the host operating system. For VirtualBox-based installations, the *VirtualBox guest additions* service is responsible.
 

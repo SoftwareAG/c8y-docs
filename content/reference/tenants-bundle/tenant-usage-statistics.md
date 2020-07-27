@@ -145,25 +145,27 @@ See the table below for more information on how the counters above are increased
 |Assign/unassign of **child devices and child assets** in one request|One managed object update is counted.|One managed object update is counted.|
 
 
-### MicroserviceBillingMetrics
+### MicroserviceUsageStatistics
 
 The microservice usage statistics gathers information on the resource usage for tenants for each subscribed application which are collected on a daily base. 
-Information about the microservice usage are stored by the "resources" tag.
 
-* CPU usage, specified in CPU milliseconds (1000m = 1 CPU)
-* Memory usage, specified in MB
+The microservice usage's information is stored in the `resources` object.
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|
-|cpu|number|1| Total number of cpu usage for tenant microservices, specified in CPU milliseconds (1000m = 1 CPU)|
+|cpu|long|1| Total number of cpu usage for tenant microservices, specified in CPU milliseconds (1000m = 1 CPU)|
 |memory|long|1|Total number of memory usage for tenant microservices, specified in MB|
-|usedBy|collection|1..n|Collection of resources usage for each microservice|
+|usedBy|array|1..n|Collection of resources usage for each microservice|
 |usedBy.name|string|1|Microservice name|
-|usedBy.cpu|long|1|Number of cpu usage for single microservice|
-|usedBy.memory|long|1|Number of memory usage for single microservice|
-|usedBy.cause|string|1|The reason to calculating statistics for the selected microservice|
+|usedBy.cpu|long|1|Number of CPU usage for a single microservice|
+|usedBy.memory|long|1|Number of memory usage for a single microservice|
+|usedBy.cause|string|1|The reason for calculating statistics of the selected microservice|
 
-Example Request: Get statistics of current tenant starting July 1st, 2020, until today.
+Response body: TenantUsageStatisticsCollection
+
+Required role: ROLE\_TENANT\_STATISTICS\_READ
+
+Example Request: Get statistics of the current tenant starting on July 1st.
 
     GET /tenant/statistics?dateFrom=2020-07-01
     Host: ...

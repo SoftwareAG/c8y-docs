@@ -144,6 +144,102 @@ See the table below for more information on how the counters above are increased
 |Creation/update of **multiple alarms/measurements/events/inventories** mixed in a single call.|Each MQTT line is processed separately. If it is a creation/update of an event/alarm/measurement/inventory, the corresponding counter is increased by one.|Not supported by the REST API.|
 |Assign/unassign of **child devices and child assets** in one request|One managed object update is counted.|One managed object update is counted.|
 
+
+### MicroserviceBillingMetrics
+
+The microservice usage statistics gathers information on the resource usage for tenants for each subscribed application which are collected on a daily base. 
+Information about the microservice usage are stored by the "resources" tag.
+
+* CPU usage, specified in CPU milliseconds (1000m = 1 CPU)
+* Memory usage, specified in MB
+
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|cpu|number|1| Total number of cpu usage for tenant microservices, specified in CPU milliseconds (1000m = 1 CPU)|
+|memory|long|1|Total number of memory usage for tenant microservices, specified in MB|
+|usedBy|collection|1..n|Collection of resources usage for each microservice|
+|usedBy.name|string|1|Microservice name|
+|usedBy.cpu|long|1|Number of cpu usage for single microservice|
+|usedBy.memory|long|1|Number of memory usage for single microservice|
+|usedBy.cause|string|1|The reason to calculating statistics for the selected microservice|
+
+Example Request: Get statistics of current tenant starting July 1st, 2020, until today.
+
+    GET /tenant/statistics?dateFrom=2020-07-01
+    Host: ...
+    Authorization: Basic ...
+
+Example Response :
+
+     HTTP/1.1 200 OK
+     Content-Type: application/vnd.com.nsn.cumulocity.tenantusagestatisticscollection+json; charset=UTF-8; ver=0.9
+     Content-Length: ...
+     {
+         "usageStatistics": [
+                {
+                    "requestCount": 297180,
+                    "deviceEndpointCount": 2,
+                    "deviceCount": 2,
+                    "resources": {
+                        "cpu": 12006,
+                        "usedBy": [
+                            {
+                                "name": "cep",
+                                "cpu": 6003,
+                                "cause": "Owner",
+                                "memory": 30079
+                            },
+                            {
+                                "name": "device-simulator",
+                                "cpu": 2001,
+                                "cause": "Owner",
+                                "memory": 1073
+                            },
+                            {
+                                "name": "smartrule",
+                                "cpu": 2001,
+                                "cause": "Owner",
+                                "memory": 1074
+                            },
+                            {
+                                "name": "sms-gateway",
+                                "cpu": 2001,
+                                "cause": "Owner",
+                                "memory": 1073
+                            }
+                        ],
+                        "memory": 33299
+                    },
+                    "deviceRequestCount": 70540,
+                    "deviceWithChildrenCount": 2,
+                    "eventsCreatedCount": 0,
+                    "subscribedApplications": [
+                        "devicemanagement",
+                        "administration",
+                        "feature-microservice-hosting",
+                        "device-simulator",
+                        "sms-gateway",
+                        "smartrule",
+                        "feature-cep-custom-rules",
+                        "cep",
+                        "cockpit"
+                    ],
+                    "alarmsCreatedCount": 0,
+                    "inventoriesUpdatedCount": 5,
+                    "alarmsUpdatedCount": 0,
+                    "eventsUpdatedCount": 0,
+                    "inventoriesCreatedCount": 0,
+                    "storageSize": 91601985,
+                    "measurementsCreatedCount": 0,
+                    "self": "...",
+                    "totalResourceCreateAndUpdateCount": 5,
+                    "day": "2020-07-01T00:00:00.000Z"
+                }
+                ...
+         ]
+     }            
+
+
 ### TenantUsageStatisticsCollection [application/vnd.com.nsn.cumulocity.tenantUsageStatisticsCollection+json]
 
 |Name|Type|Occurs|Description|

@@ -29,7 +29,9 @@ git add .
 git commit -m "init commit"
 ```
 
-Now your code is committed to an local git repository stored in the `.git` folder. Next this guide will show how to update the Web SDK. If you don't want to use git anymore after the update, you can simply erase the `.git` folder.
+Now your code is committed to a local git repository stored in the `.git` folder.
+Next this guide will show you how to update the Web SDK.
+If you don't want to use git anymore after the update, you can simply erase the `.git` folder.
 
 ### Updating
 

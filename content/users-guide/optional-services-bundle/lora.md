@@ -110,8 +110,10 @@ Click **Add value** to create the value configuration.
 
 In the upcoming window, configure the relevant values as shown in this example.
 
+**New value window part 1**
 ![LoRa protocol add new value](/images/users-guide/actility/lora-protocols-newvalue.png)
 
+**New value window part 2**
 ![LoRa protocol add new value](/images/users-guide/actility/lora-protocols-newvalue2.png)
 
 The value configuration maps the value in the payload of a message type to the Cumulocity IoT data.

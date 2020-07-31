@@ -146,7 +146,7 @@ For detailed information on how to decode the payload, refer to the documentatio
 
 > **Info:** "Little endian" support to decode the payload has been added.
 
-Under Options, select on of the following options, if required:
+Under Options, select one of the following options, if required:
 
 * **Signed** - if the value is a signed number
 * **Packed decimal** - if the value is BCD encoded

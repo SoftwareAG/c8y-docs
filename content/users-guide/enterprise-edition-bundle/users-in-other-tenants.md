@@ -70,10 +70,10 @@ To log in as support user from the management tenant, use a login of the form:
 
 Suppose you get a support call from a user "John" in the tenant *testtenant.cumulocity.com* (which has the ID *t07007007*). The user cannot run certain functionality, and you suspect that it is a permission issue. Your username in the management tenant is "Jill" and you are permitted to carry out support for *testtenant.cumulocity.com*. In this case, you can log in with the following command to reproduce what John is seeing:
 
-	<t07007007>/Jill$John
+	t07007007/Jill$John
 
 
-In some environments, especially in test environments, you can simply open the destination tenants URL (e.g. *testtenant.cumulocity.com*) and log into the tenant using 
+In some environments, especially in test environments, you can simply open the destination tenants URL (e.g. *testtenant.cumulocity.com*) and log into the tenant using
 
 	<support user>$<user>
 

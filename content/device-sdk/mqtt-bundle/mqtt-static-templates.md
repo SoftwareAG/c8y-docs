@@ -46,7 +46,7 @@ The following templates can be used to publish data on the topics <kbd>s/us</kbd
 
 Create a new device for the serial number in the inventory if not yet existing. An externalId for the device with type **c8y_Serial** and the device identifier of the MQTT clientId as value will be created.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|device name|NO|MQTT Device &lt;serialNumber&gt;|
 |2|device type|NO|c8y_MQTTDevice|
@@ -61,7 +61,7 @@ Create a new device for the serial number in the inventory if not yet existing. 
 
 Create a new child device for the current device. The newly created object will be added as child device. Additionally, an externaId for the child will be created with type **c8y_Serial** and the value a combination of the serial of the root device and the unique child ID.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|unique child ID|YES| &nbsp; |
 |2|device name|NO|MQTT Device &lt;serialNumber&gt;|
@@ -257,7 +257,7 @@ Set the supported configurations of the device.
 
 Set currently installed configuration of the device.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|Configuration type| YES| &nbsp;|
 |2|Configuration file download URL| YES| &nbsp;|
@@ -276,7 +276,7 @@ Set currently installed configuration of the device.
 
 Create a measurement with a given fragment and series.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|fragment|YES| &nbsp;|
 |2|series|YES| &nbsp;|
@@ -294,7 +294,7 @@ Create a measurement with a given fragment and series.
 
 Create a measurement of type **c8y_SignalStrength**.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|rssi value|YES, if 2 not set| &nbsp;|
 |2|ber value|YES, if 1 not set| &nbsp;|
@@ -310,7 +310,7 @@ Create a measurement of type **c8y_SignalStrength**.
 
 Create a measurement of type **c8y_TemperatureMeasurement**.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|temperature value|YES| &nbsp;|
 |2|time|NO|Current server time|
@@ -325,7 +325,7 @@ Create a measurement of type **c8y_TemperatureMeasurement**.
 
 Create a measurement of type **c8y_Battery**.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|battery value|YES| &nbsp;|
 |2|time|NO|Current server time|
@@ -342,7 +342,7 @@ Create a measurement of type **c8y_Battery**.
 
 Create a CRITICAL alarm.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|type|YES| &nbsp;|
 |2|text|NO|Alarm of type **alarmType** raised|
@@ -358,7 +358,7 @@ Create a CRITICAL alarm.
 
 Create a MAJOR alarm.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|type|YES| &nbsp;|
 |2|text|NO|Alarm of type **alarmType** raised|
@@ -374,7 +374,7 @@ Create a MAJOR alarm.
 
 Create a MINOR alarm.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|type|YES| &nbsp;|
 |2|text|NO|Alarm of type **alarmType** raised|
@@ -390,7 +390,7 @@ Create a MINOR alarm.
 
 Create a WARNING alarm.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|type|YES| &nbsp;|
 |2|text|NO|Alarm of type **alarmType** raised|
@@ -452,7 +452,7 @@ Remove one or more fragments from an alarm of a specific type.
 
 Create an event of given type and text.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|type|YES|&nbsp;|
 |2|text|YES|&nbsp;|
@@ -468,7 +468,7 @@ Create an event of given type and text.
 
 Create typical location update event containing **c8y_Position**.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|latitude|NO|&nbsp;|
 |2|longitude|NO|&nbsp;|
@@ -486,7 +486,7 @@ Create typical location update event containing **c8y_Position**.
 
 Create typical location update event containing **c8y_Position**. Additionally the device will be updated with the same **c8y_Position** fragment.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|latitude|NO|&nbsp;|
 |2|longitude|NO|&nbsp;|

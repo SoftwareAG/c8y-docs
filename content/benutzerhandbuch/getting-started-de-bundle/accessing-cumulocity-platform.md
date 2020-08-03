@@ -12,7 +12,7 @@ Auf die Cumulocity IoT-Plattform können Sie über einen Webbrowser zugreifen.
 
 Unsere Produkte wurden mit den folgenden Webbrowsern getestet:
 
-* Edge Browser
+* Edge Browser (neueste Version)
 * Internet Explorer (neueste Version)
 * Firefox (neueste Version)    
 * Chrome (neueste Version)

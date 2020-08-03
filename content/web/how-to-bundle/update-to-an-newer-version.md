@@ -10,14 +10,14 @@ A UI build with an earlier version of the Web SDK is locked to the current versi
 A platform update doesn't update the UI version, however a UI running against a newer backend always keeps working as all APIs are backwards compatible.
 That's why an update makes mostly sense if a newer feature of the UI or the Web SDK needs to be used.
 Therefore, a new application needs to be built and deployed to the platform.
-This guide will describe best practices to do so.
+This recipe will describe best practices to do so.
 
 ### Preparation
 
 We recommend you to use a Source Control System to backup the data and to get better diffing of the code.
 If you are not using an SCM yet, see below for an introduction on how to use [git](https://git-scm.com) to store your changes.
-If you are already using an SCM or you don't want to use any, you can jump to the next chapter.
-If you decide not to use an SCM, please backup your application before running the update).
+If you are already using an SCM or you don't want to use any, you can jump to the next section.
+If you decide not to use an SCM, backup your application before running the update.
 
 Ensure that you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed on your system.
 Then open a terminal and run the following commands:
@@ -30,7 +30,7 @@ git commit -m "init commit"
 ```
 
 Now your code is committed to a local git repository stored in the `.git` folder.
-Next this guide will show you how to update the Web SDK.
+Next this recipe will show you how to update the Web SDK.
 If you don't want to use git anymore after the update, you can simply erase the `.git` folder.
 
 ### Updating
@@ -87,7 +87,6 @@ If everything worked as expected, you can now deploy your application by running
 
 ### Conclusion
 
-The update process is sometimes a bit tricky.
-Especially if you have many changes in the `app.module.ts`.
+The update process is sometimes a bit tricky, especially if you have many changes in the `app.module.ts`.
 However, with git and Visual Studio Code the visual diffing may help you to accomplish this task.
 Also, it is a good practice to put your own Angular customizations into a module and only to make changes to the `app.module.ts` when it is absolutely necessary.

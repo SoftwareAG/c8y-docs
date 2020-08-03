@@ -723,7 +723,7 @@ The current configuration is uploaded from Cumulocity IoT to the device.
 
 ##### Download configuration file (521)
 
-Download a configuration file from the url.
+Download a configuration file from the URL.
 
 |Position|Parameter|
 |:-------|:-------|
@@ -765,6 +765,100 @@ Change the communication mode.
 
 ```text
 523,DeviceSerial,SMS
+```
+
+##### Download configuration file with type (524)
+
+Download a configuration file from the URL with type.
+
+|Position|Parameter|
+|:-------|:-------|
+|1|URL|
+|2|configuration type|
+
+**Example**
+
+```text
+524,DeviceSerial,http://www.my.url,type
+```
+
+##### Firmware from patch (525)
+
+Install the firmware from the patch.
+
+|Position|Parameter|
+|:-------|:-------|
+|1|firmware name|
+|2|firmware version|
+|3|URL|
+|4|dependency|
+
+**Example**
+
+```text
+525,DeviceSerial,firmwareName,1.0,http://www.my.url,dependency
+```
+
+##### Upload configuration file with type (526)
+
+Configuration is uploaded from Cumulocity IoT to the device with type.
+
+Position|Parameter|
+|:-------|:-------|
+|1|configuration type|
+
+**Example**
+
+```text
+526,DeviceSerial,type
+```
+
+##### Set device profiles (527)
+
+Set the device profiles
+
+|Position|Parameter|
+|:-------|:-------|
+|1|firmware marker|
+|1...| 5 values of firmware|
+|1.1|firmware name|
+|1.2|firmware version|
+|1.3|firmware URL|
+|1.4|firmware isPatch|
+|1.5|firmware dependency|
+|2|software marker|
+|2...|List of 4 values per software|
+|2.1|software name|
+|2.2|software version|
+|2.3|software URL|
+|2.4|software action|
+|3|configuration marker|
+|3...|List of 2 values per configuration|
+|3.1|configuration URL|
+|3.2|configuration type|
+
+**Example**
+
+```text
+527,DeviceSerial,$FW,firmwareName,1.0,http://www.my.url,true,dependency,$SW,softwareA,1.0,http://www.my.url1,action1,softwareB,2.0,http://www.my.url2,action2,$CONF,http://www.my.url1,type1,http://www.my.url2,type2
+```
+
+##### Update Software (528)
+
+Update the software installed on the device.
+
+|Position|Parameter|
+|:-------|:-------|
+|1...|List of 4 values per software|
+|1.1|name|
+|1.2|version|
+|1.3|URL|
+|1.4|action|
+
+**Example**
+
+```text
+528,DeviceSerial,softwareA,1.0,url1,action1,softwareB,2.0,url2,action2
 ```
 
 ### Updating operations

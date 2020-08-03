@@ -10,7 +10,7 @@ A UI build with an earlier version of the Web SDK is locked to the current versi
 A platform update doesn't update the UI version, however a UI running against a newer backend always keeps working as all APIs are backwards compatible.
 That's why an update makes mostly sense if a newer feature of the UI or the Web SDK needs to be used.
 Therefore, a new application needs to be built and deployed to the platform.
-This recipe will describe best practices to do so.
+This recipe describes best practices to do so.
 
 ### Preparation
 
@@ -30,7 +30,7 @@ git commit -m "init commit"
 ```
 
 Now your code is committed to a local git repository stored in the `.git` folder.
-Next this recipe will show you how to update the Web SDK.
+Next this recipe explains you how to update the Web SDK.
 If you don't want to use git anymore after the update, you can simply erase the `.git` folder.
 
 ### Updating

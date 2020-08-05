@@ -29,6 +29,7 @@ var main = (function ($) {
           var ind = 0;
           for (var i = 0; i < urls.length; i++) {
             var el = urls[i];
+            console.log(el.url)
             if (el.url == "https://cumulocity.com/guides/") {
               ind = i;
               break;

@@ -15,6 +15,7 @@ var main = (function ($) {
           var el = urls[index];
           if (loc.href.includes(el.label)) {
             active = true;
+            $('#current-dropdown-version-toggle').text('Release '+ el.label);
             vmenu.find('.dropdown-menu').append(
               '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item active">' + el.label + '</a>'
             );
@@ -35,7 +36,7 @@ var main = (function ($) {
           }
           nthChild = vmenu.find('.dropdown-menu').children().eq(ind);
           nthChild.addClass('active');
-          $('#current-dropdown-version-toggle').text('Releasy '+ nthChild.text());
+          $('#current-dropdown-version-toggle').text('Release '+ nthChild.text());
         }
       })
       .fail(function (resp) {

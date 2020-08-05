@@ -1,5 +1,5 @@
 ---
-title: Handbuch
+title: User guide (German version)
 bundle: benutzerhandbuch
 icon: "c8y-icon c8y-icon-user"
 type: root

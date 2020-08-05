@@ -36,7 +36,7 @@ var main = (function ($) {
             }
           }
           nth = 'a:nth-child(' + (ind + 1) + ')';
-          nthChild = vmenu.find('a:nth-child(' + ind + ')');
+          nthChild = vmenu.find('.dropdown-menu').find('a:nth-child(' + ind + ')');
           console.log(nth, nthChild);
           nthChild.addClass('active');
           $('#current-dropdown-version-toggle').text('Release '+ nthChild.text());

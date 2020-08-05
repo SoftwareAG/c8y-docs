@@ -240,9 +240,9 @@ In this CSV example, the security mode value is “PSK”. With "PSK" enabled, a
 
 After creation, the bootstrap parameters can be viewed and changed in the **LWM2M bootstrap parameters** tab in the **Device details** page, see [LWM2M bootstrap parameters](#lwm2m-bootstrap).
 
-#### <a name="duplicate-registeration-alarm"></a>Created alarm for the duplicated LWM2M devices
+#### <a name="duplicate-registeration-alarm"></a>Duplicate LWM2M devices
 
-If a LWM2M device is registered with the same endpoint ID in multiple tenants, the device will be binded only to the tenant in which the device was first registered and the devices in the other tenants will be considered as duplicates. As notification, a major alarm is created stating that the device with this endpoint already exists.
+If a LWM2M device is registered with the same endpoint ID in multiple tenants, the device will be binded only to the tenant in which the device was first registered and the devices in the other tenants will be considered as duplicates. As notification, a MAJOR alarm is created stating that the device with this endpoint already exists.
 
 ![Alarm for duplicated device with endpoint](/images/users-guide/lwm2m/lwm2m-alarm-for-duplicated-device-with-endpoint.png)
 

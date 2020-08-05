@@ -35,8 +35,11 @@ var main = (function ($) {
               break;
             }
           }
-          vmenu.find('a:nth-child(' + ind + ')').addClass('active');
-          $('#current-dropdown-version-toggle').text('Release '+ vmenu.find('a:nth-child(' + ind + ')').text());
+          nth = 'a:nth-child(' + ind + ')';
+          nthChild = vmenu.find('a:nth-child(' + ind + ')');
+          console.log(nth, nthChild);
+          nthChild.addClass('active');
+          $('#current-dropdown-version-toggle').text('Release '+ nthChild.text());
         }
       })
       .fail(function (resp) {

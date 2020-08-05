@@ -15,12 +15,10 @@ var main = (function ($) {
           var el = urls[index];
           if (loc.href.includes(el.label)) {
             active = true;
-            $('#current-dropdown-version-toggle').text('ReleaseA '+ el.label);
             vmenu.find('.dropdown-menu').append(
               '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item active">' + el.label + '</a>'
             );
           } else {
-            $('#current-dropdown-version-toggle').text('ReleaseB '+ el.label);
             vmenu.find('.dropdown-menu').append(
               '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item">' + el.label + '</a>'
             );

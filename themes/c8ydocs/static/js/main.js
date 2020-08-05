@@ -20,6 +20,7 @@ var main = (function ($) {
               '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item active">' + el.label + '</a>'
             );
           } else {
+            $('#current-dropdown-version-toggle').text('Release '+ el.label);
             vmenu.find('.dropdown-menu').append(
               '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item">' + el.label + '</a>'
             );
@@ -35,11 +36,11 @@ var main = (function ($) {
               break;
             }
           }
-          nth = 'a:nth-child(' + (ind + 1) + ')';
+          nth = 'a:nth-child(' + (ind) + ')';
           nthChild = vmenu.find('.dropdown-menu').find('a:nth-child(' + ind + ')');
-          console.log(nth, nthChild);
+          console.log(ind, nth, nthChild);
           nthChild.addClass('active');
-          $('#current-dropdown-version-toggle').text('Release '+ nthChild.text());
+          $('#current-dropdown-version-toggle').text('Released '+ nthChild.text());
         }
       })
       .fail(function (resp) {

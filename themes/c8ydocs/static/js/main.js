@@ -34,8 +34,9 @@ var main = (function ($) {
               break;
             }
           }
-          vmenu.find('a:nth-child(' + ind + ')').addClass('active');
-          $('#current-dropdown-version-toggle').text('Release '+ vmenu.find('a:nth-child(' + ind + ')').text());
+          nthChild = vmenu.find('.dropdown-menu').children().eq(ind);
+          nthChild.addClass('active');
+          $('#current-dropdown-version-toggle').text('Release '+ nthChild.text());
         }
       })
       .fail(function (resp) {

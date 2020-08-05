@@ -35,7 +35,7 @@ var main = (function ($) {
               break;
             }
           }
-          nth = 'a:nth-child(' + ind + ')';
+          nth = 'a:nth-child(' + (ind + 1) + ')';
           nthChild = vmenu.find('a:nth-child(' + ind + ')');
           console.log(nth, nthChild);
           nthChild.addClass('active');

@@ -213,13 +213,13 @@ Now you can verify if your application is running by executing
 
 ```shell
 curl -H "Authorization: <AUTHORIZATION>" \
-  <URL>/service/hello/api/values
+  <URL>/service/hello/weatherforecast
 ```
 
-The expected result is:
+The expected result is like:
 
 ```shell
-["value1","value2"]
+[{"date":"2020-07-14T10:39:06.3395082+00:00","temperatureC":27,"temperatureF":80,"summary":"Hot"},{"date":"2020-07-15T10:39:06.3408548+00:00","temperatureC":40,"temperatureF":103,"summary":"Cool"},{"date":"2020-07-16T10:39:06.3408577+00:00","temperatureC":18,"temperatureF":64,"summary":"Balmy"},{"date":"2020-07-17T10:39:06.3408579+00:00","temperatureC":11,"temperatureF":51,"summary":"Freezing"},{"date":"2020-07-18T10:39:06.3408581+00:00","temperatureC":20,"temperatureF":67,"summary":"Chilly"}]
 ```
 
 ### Running the application within the IDE
@@ -515,7 +515,7 @@ $ docker run -p 8999:4700 <imagename>:latest
 Check the status of the application that is running inside the Docker container.
 
 ```shell
-$ curl http://localhost:8999/api/values
+$ curl http://localhost:8999/weatherforecast
 ```
 
 In order to deploy the application, run the deploy script. You must provide the correct URL and credentials in this script.

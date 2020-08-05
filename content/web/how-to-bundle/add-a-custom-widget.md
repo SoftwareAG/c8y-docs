@@ -1,7 +1,7 @@
 ---
 title: Add a custom widget to a dashboard
 layout: redirect
-weight: 10
+weight: 20
 ---
 
  **Version:** 10.4.11.0 | **Packages:** @c8y/cli and @c8y/ngx-components

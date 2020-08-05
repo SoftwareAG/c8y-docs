@@ -124,8 +124,10 @@ In the **Values** section, click **Add value** to create the value configuration
 
 In the following window, configure the relevant values as shown in this example.
 
+**New value window part 1**
 ![Sigfox protocol add new value](/images/users-guide/sigfox/sigfox-protocols-newvalue.png)
 
+**New value window part 2**
 ![Sigfox protocol add new value](/images/users-guide/sigfox/sigfox-protocols-newvalue2.png)
 
 The value configuration maps the value in the payload of a message type to the Cumulocity IoT data.
@@ -182,8 +184,10 @@ Click **Save** to create the device protocol.
 
 The following images show an example for a message which sends a measurement when the battery level value changes.
 
+**New value window part 1**
 ![Battery level changes example](/images/users-guide/sigfox/sigfox-protocols-battery.png)
 
+**New value window part 2**
 ![Battery level changes example](/images/users-guide/sigfox/sigfox-protocols-battery2.png)
 
 

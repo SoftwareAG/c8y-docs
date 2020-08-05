@@ -1,6 +1,6 @@
 var main = (function ($) {
   function initializer() {
-    
+
     //Load releases menu
     var json = $.getJSON({ 'url': "//cumulocity.com/guides/releases.json", 'async': false })
       .done(function (json) {
@@ -26,8 +26,17 @@ var main = (function ($) {
           }
         }
         if (!active) {
-          vmenu.find('a:first-child').addClass('active');
-          $('#current-dropdown-version-toggle').text('Release '+ vmenu.find('a:first-child').text());
+          var ind = 0;
+          for (var i = 0; i < urls.length; i++) {
+            var el = urls[i];
+            if (el.url == "https://cumulocity.com/guides/") {
+              ind = i;
+              break;
+            }
+          }
+          nthChild = vmenu.find('.dropdown-menu').children().eq(ind);
+          nthChild.addClass('active');
+          $('#current-dropdown-version-toggle').text('Release '+ nthChild.text());
         }
       })
       .fail(function (resp) {
@@ -43,7 +52,7 @@ var main = (function ($) {
     $('.sidebar-toggle').click(function(){
       $('body').toggleClass('open');
     });
-    
+
     $('.cover').click(function(){
       $('body').removeClass('open');
     });
@@ -97,7 +106,7 @@ var main = (function ($) {
         $this.data('text', $this.text().toLowerCase());
         $this.data('$l', $this.parent());
       });
-      
+
       $('#filter-devices').on('keyup input', function(k){
         var $str = $(this).val().toLowerCase();
         //$str.length ? $titles.hide() : $titles.show();
@@ -111,7 +120,7 @@ var main = (function ($) {
         })
       });
     }
-      
+
   }
   return {
     init: initializer

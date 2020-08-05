@@ -10,9 +10,9 @@ Devices can be monitored for availability by adding a "c8y\_RequiredAvailability
 
     "c8y_RequiredAvailability": { "responseInterval": <<time in minutes>> }
 
-Devices that have not sent any message in the response interval are considered unavailable. The response interval can have a value between -32768 and 32767 and any values out of range will be shrink to the range borders. Such devices are marked as unavailable (see below) and an unavailability alarm is raised. 
+Devices that have not sent any message in the response interval are considered unavailable. The response interval can have a value between -32768 and 32767 and any values out of range will be shrink to the range borders. Such devices are marked as unavailable (see below) and an unavailability alarm is raised.
 
-Devices with `responseInterval` <= 0 are considered to be under maintenance. No alarm is raised while a device is under maintenance. 
+Devices with `responseInterval` <= 0 are considered to be under maintenance. No alarm is raised while a device is under maintenance.
 
 Devices that do not contain "c8y\_RequiredAvailability" are not monitored.
 
@@ -33,14 +33,14 @@ The following messages update the last message timestamp of a device:
 -   Create an event, measurement or alarm (for given device as source)
 -   Update the device itself (with given id) sending empty PUT request or request with id only, ie. {} or {"id":...}
 
-A monitored device has one of following statuses:
+A monitored device has one of following statuses for c8y_Connection:
 
 |Name|Description|
 |:---|:----------|
 |CONNECTED|A device push connection is established.|
 |AVAILABLE|The device is not connected through device push, but a message was sent within the required response interval.|
 |MAINTENANCE|"responseInterval" is set to 0; the device is under maintenance.|
-|UNAVAILABLE|"responseInterval" is larger than 0 and the device is neither AVAILABLE nor CONNECTED.|
+|DISCONNECTED|"responseInterval" is larger than 0 and the device is neither AVAILABLE nor CONNECTED.|
 
 #### c8y\_UnavailabilityAlarm
 

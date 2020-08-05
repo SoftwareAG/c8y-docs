@@ -15,12 +15,12 @@ var main = (function ($) {
           var el = urls[index];
           if (loc.href.includes(el.label)) {
             active = true;
-            $('#current-dropdown-version-toggle').text('Release '+ el.label);
+            $('#current-dropdown-version-toggle').text('Release A '+ el.label);
             vmenu.find('.dropdown-menu').append(
               '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item active">' + el.label + '</a>'
             );
           } else {
-            $('#current-dropdown-version-toggle').text('Release '+ el.label);
+            $('#current-dropdown-version-toggle').text('Release B '+ el.label);
             vmenu.find('.dropdown-menu').append(
               '<a href="' + el.url + '/about-doc/intro-documentation/" class="dropdown-menu-item">' + el.label + '</a>'
             );
@@ -36,9 +36,7 @@ var main = (function ($) {
               break;
             }
           }
-          nth = 'a:nth-child(' + (ind + 1) + ')';
           nthChild = vmenu.find('.dropdown-menu').children().eq(ind);
-          console.log(ind, nth, nthChild);
           nthChild.addClass('active');
           $('#current-dropdown-version-toggle').text('Release '+ nthChild.text());
         }

@@ -35,7 +35,7 @@ var main = (function ($) {
           }
           nthChild = vmenu.find('.dropdown-menu').children().eq(ind);
           nthChild.addClass('active');
-          $('#current-dropdown-version-toggle').text('Release '+ nthChild.text());
+          $('#current-dropdown-version-toggle').text('Releasy '+ nthChild.text());
         }
       })
       .fail(function (resp) {

@@ -4,11 +4,11 @@ title: Overview
 layout: bundle
 ---
 
-<div class="lead">
-These release notes document all relevant changes that have been implemented in a release since the previous release.<br><br>
+These release notes document all relevant changes that have been implemented in a release since the previous release.
 
-<b>Important:</b> These release notes only cover changes implemented in the <b>Cumulocity IoT Core platform</b>. For release information on Cumulocity IoT Edge, Cumulocity IoT Streaming Analytics, Cumulocity IoT Machine Learning and Cumulocity IoT DataHub refer to the respective guides in our documentation. 
-</div>
+><b>Important:</b> These release notes only cover changes implemented in the <b>Cumulocity IoT Core platform</b>. For release information on Cumulocity IoT Edge, Cumulocity IoT Streaming Analytics, Cumulocity IoT Machine Learning and Cumulocity IoT DataHub refer to the respective guides in our documentation. 
+
+>**Info:** These release notes cover information on the release related to the current documentation and on its two prior releases. For older release notes refer to older documentation versions.
 
 <br>
 Cumulocity distinguishes between the following release types:
@@ -45,7 +45,6 @@ Cumulocity distinguishes between the following release types:
 </tbody>
 </table>
 
->**Info:** Each release receives a version label `<SAG>.<major>.<minor>.<maintenance>`. `<SAG>` and `<major>` are incremented for marketing purposes. `<minor>` is incremented with each bi-weekly release (Continuous or GA). `<maintenance>` is "0" for the base release and incremented with each Maintenance release of this release.
+>**Info:** Each release receives a version label &lt;SAG&gt;.&lt;major&gt;.&lt;minor&gt;.&lt;maintenance&gt;. &lt;SAG&gt; and &lt;major&gt; are incremented for marketing purposes. &lt;minor&gt; is incremented with each bi-weekly release (Incremental or GA). &lt;maintenance&gt; is "0" for the base release and incremented with each Maintenance Release of this release.
 
->**Info:** These release notes cover information on the release related to the current documentation and on its two prior releases. For older release notes refer to older documentation versions.
-
+>**Important:** Since Incremental Releases are preview versions, release notes for Incremental Releases might refer to features which are not publicly available yet and which might also not be publicly available with the next GA Release.

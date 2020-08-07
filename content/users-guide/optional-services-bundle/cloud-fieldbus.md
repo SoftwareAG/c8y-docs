@@ -185,7 +185,11 @@ To use the "SCADA" widget, follow these steps:
 
 #### <a name="scadasvg"></a>Preparing SVG files for the SCADA widget
 
-The SCADA widget accepts SVG files which use AngularJS directives, for example `ng-if`, `ng-show`, `ng-style`, `ng-repeat`, `ng-click`, for dynamic data presentation. Data from devices (like latest measurements and other properties) are provided via placeholders. There are also predefined helper functions which can be used.
+The SCADA widget accepts SVG files which use AngularJS directives, for example `ng-if`, `ng-show`, `ng-style`, `ng-repeat`, `ng-click`, for dynamic data presentation. 
+
+Moreover, JavaScript event attributes (like onclick, onmouseover) can be used in SVG files uploaded to SCADA widgets.
+
+Data from devices (like latest measurements and other properties) are provided via placeholders. There are also predefined helper functions which can be used.
 
 For creating SVG files, it is recommended to use [https://boxy-svg.com/](https://boxy-svg.com/). It is an easy to use, quality Chrome extension.
 

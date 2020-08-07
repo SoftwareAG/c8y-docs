@@ -716,7 +716,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Create alarm</td>
-<td align="left"><strong>Type</strong>: Type of alarm being raised. <br><strong>Text</strong>: Alarm message.</td>
+<td align="left"><strong>Type</strong>: Type of alarm being raised. <br> It is strongly recommended to use different types of alarms for each smart rule. If the same alarm type is used across multiple smart rules, smart rules may interfere when trying to update the same alarm type, which might lead to unexpected behavior.<br><strong>Text</strong>: Alarm message.</td>
 </tr>
 <tr>
 <td align="left">4</td>

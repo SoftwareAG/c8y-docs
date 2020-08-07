@@ -181,7 +181,7 @@ The following sections explain how an application will handle a query in the par
 * `desc`; example: `$orderby=name desc`
 * `asc`; example: `$orderby=name, $orderby=name asc`
 
-> **Important:** If you query `/inventory/managedObjects?type=c8y_Firmware&query=$filter=(name+eq+'Controller 1')` the `type` queryParam is ignored.<br>Instead `url/inventory/managedObjects?query=$filter=(type+eq+c8y_Firmware+and+name+eq+'Controller 1')` has to be queried.
+> **Important:** If you query `/inventory/managedObjects?type=c8y_Firmware&query=$filter=(name+eq+'Controller 1')`, the query parameter `type` is ignored. Instead, `/inventory/managedObjects?query=$filter=(type+eq+c8y_Firmware+and+name+eq+'Controller 1')` has to be queried.
 
 #### Example data
 

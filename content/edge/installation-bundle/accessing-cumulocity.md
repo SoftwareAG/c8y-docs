@@ -6,7 +6,7 @@ layout: redirect
 
 ### Configuring the access via domain name
 
-The Cumulocity IoT platform is accessible with the domain name provided as part of the post installation script. 
+The Cumulocity IoT platform is accessible with the domain name provided as part of the post installation script.
 
 There are two ways to configure the accessibility with domain names:
 
@@ -26,9 +26,9 @@ On Linux machines, add the following entry to */etc/hosts*:
 
 Use the IP address provided during [network configuration](/edge/installation#configuration). For example, the default value for Hyper-V is 192.168.66.10.
 
-On Windows machines,  add the same entry to *C:\Windows\System32\Drivers\etc\hosts*.
+On Windows machines,  add the same entry to *C:\Windows\System32\drivers\etc\hosts*.
 
-Ping the &#60;domain_name> to verify it. 
+Ping the &#60;domain_name> to verify it.
 
 ```shell
 [admin@server ~]$ ping <domain_name>

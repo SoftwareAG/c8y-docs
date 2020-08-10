@@ -12,7 +12,6 @@ layout: redirect
 <col style="width: 20%;">
 <col style="width: 10%;">
 <col style="width: 30%;">
-<col style="width: 20%;">
 </colgroup>
 <thead>
 <tr>
@@ -20,7 +19,6 @@ layout: redirect
 <th align="left">Type</th>
 <th align="left">Occurs</th>
 <th align="left">Description</th>
-<th align="left">Visibility</th>
 </tr>
 </thead>
 <tbody>
@@ -29,56 +27,48 @@ layout: redirect
 <td align="left">string</td>
 <td align="left">0..1</td>
 <td align="left">A URI linking to this resource.</td>
-<td align="left">Public</td>
 </tr>
 <tr>
 <td align="left">id</td>
 <td align="left">string</td>
 <td align="left">1</td>
 <td align="left">RetentionRule ID.</td>
-<td align="left">Public</td>
 </tr>
 <tr>
 <td align="left">dataType</td>
 <td align="left">string</td>
 <td align="left">0..1</td>
 <td align="left">RetentionRule will be applied to this type of documents. Possible values: ALARM, AUDIT, EVENT, MEASUREMENT, OPERATION, *</td>
-<td align="left">Public</td>
 </tr>
 <tr>
 <td align="left">fragmentType</td>
 <td align="left">string</td>
 <td align="left">0..1</td>
 <td align="left">RetentionRule will be applied to documents with fragmentType.</td>
-<td align="left">Public</td>
 </tr>
 <tr>
 <td align="left">type</td>
 <td align="left">string</td>
 <td align="left">0..1</td>
 <td align="left">RetentionRule will be applied to documents with type.</td>
-<td align="left">Public</td>
 </tr>
 <tr>
 <td align="left">source</td>
 <td align="left">string</td>
 <td align="left">0..1</td>
-<td align="left">RetentionRule will be applied to documnets with source.</td>
-<td align="left">Public</td>
+<td align="left">RetentionRule will be applied to documents with source.</td>
 </tr>
 <tr>
 <td align="left">maximumAge</td>
 <td align="left">long</td>
 <td align="left">1</td>
 <td align="left">Maximum age of document in days.</td>
-<td align="left">Public</td>
 </tr>
 <tr>
 <td align="left">editable</td>
 <td align="left">boolean</td>
 <td align="left">1</td>
 <td align="left">Whether the rule is editable. Can be updated only by management tenant.</td>
-<td align="left">Public</td>
 </tr>
 </tbody>
 </table>
@@ -105,9 +95,9 @@ Example Response :
     {
         "dataType": "EVENT",
         "fragmentType": "*",
-        "id" : "<<ID of new retetionRule>>",
+        "id" : "<<ID of new retentionRule>>",
         "maximumAge": 12,
-        "self" : "<<URL of new retetionRule>>",
+        "self" : "<<URL of new retentionRule>>",
         "source": "source",
         "type": "*",
         "editable":"true"
@@ -143,9 +133,9 @@ Example Response :
     {
         "dataType": "EVENT",
         "fragmentType": "fragmentTypeUpdated",
-        "id" : "<<ID of new retetionRule>>",
+        "id" : "<<ID of new retentionRule>>",
         "maximumAge": 12,
-        "self" : "<<URL of new retetionRule>>",
+        "self" : "<<URL of new retentionRule>>",
         "source": "source",
         "type": "*",
         "editable":"true"

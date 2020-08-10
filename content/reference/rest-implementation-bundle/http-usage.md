@@ -37,7 +37,7 @@ If the token expires and requires renewal, the backend sends a response header:
 
 Cumulocity IoT supports [JWT token](https://en.wikipedia.org/wiki/JSON_Web_Token) authentication.
 
->**Info:** The JWT token authentication described in this section is deprecated and might be not supported in future releases. We recommend you to use the OAuth authentication grant instead (see next section).
+>**Info:** The JWT token authentication described in this section is deprecated and might not be supported in future releases. We recommend you to use the OAuth authentication grant instead (see next section).
 
 
 The HTTP header must include:

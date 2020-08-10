@@ -75,6 +75,21 @@ Where:
   * `NOW` parameters will never yield an error. No request parameter is required.
 * `<TEMPLATE>` is the actual template string which gets sent as payload to the platform after the placeholders have been replaced with the parameter values.
 
+Here is set of example requests:
+
+```
+10,100,POST,/alarm/alarms,application/vnd.com.nsn.cumulocity.alarm+json,application/vnd.com.nsn.cumulocity.alarm+json,&&,UNSIGNED NOW,"{""source"":{""id"":""&&""},""type"":""c8y_MyAlarmFromSmartREST"",""text"":""This alarm was created by using SmartREST"",""severity"":""MAJOR"",""status"":""ACTIVE"",""time"":""&&""}"
+10,200,POST,/measurement/measurements,application/vnd.com.nsn.cumulocity.measurement+json,application/vnd.com.nsn.cumulocity.measurement+json,&&,UNSIGNED UNSIGNED NOW UNSIGNED,"{""c8y_SmartMeasurement"":{""temp1"":{""value"":&&,""unit"":""C""},""temp2"":{""value"":&&,""unit"":""F""}},""time"":""&&"",""source"":{""id"":""&&""},""type"":""c8y_SmartMeasurement""}"
+10,300,PUT,/inventory/managedObjects/&&,application/vnd.com.nsn.cumulocity.managedObject+json,,&&,,"{""c8y_Hardware"":{""model"":""&&"",""revision"":""&&""}}"
+10,301,PUT,/alarm/alarms/&&,application/vnd.com.nsn.cumulocity.alarm+json,,&&,,"{""status"":""CLEARED""}"
+10,302,PUT,/devicecontrol/operations/&&,application/vnd.com.nsn.cumulocity.operation+json,,&&,,"{""status"":""SUCCESSFUL""}"
+10,600,GET,/identity/externalIds/c8y_Serial/&&,,,&&,,
+10,601,GET,/devicecontrol/operations?deviceId=##&status=PENDING,,,##,,
+10,602,GET,/inventory/managedObjects/&&,,,&&,,
+```
+
+The example requests are also included in our [postman collection](/microservice-sdk/rest/#using-postman) under SmartREST > Register Request Templates.
+
 ##### Example
 
 Create a device:

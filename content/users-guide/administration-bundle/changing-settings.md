@@ -190,6 +190,10 @@ Each access token is signed by a signing certificate. Currently there are three 
 4. By specifying the JWKS (JSON Web Key Set) address.
  
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
+ 
+ 
+ >**Info:** Cumulocity IoT only supports certificates with RSA key, either as a ("n", "e") parameters pair or "x5c" certificate chain. Other key types (e.g. Elliptic-curves) are not supported.
+
 
 #### Integration with Azure AD
 

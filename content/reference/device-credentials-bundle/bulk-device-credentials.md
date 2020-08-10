@@ -4,7 +4,7 @@ title: Bulk device credentials
 layout: redirect
 ---
 
-Device credentials and basic device representation can be provided from CSV file. CSV file must have 2 sections.
+Device credentials and basic device representation can be provided within a CSV file which must be UTF-8 or ANSI encoded. The CSV file must have 2 sections.
 
 First section is the first line of CSV file. This line contains column names (headers):
 

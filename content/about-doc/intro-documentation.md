@@ -4,9 +4,11 @@ title: Introduction
 layout: bundle
 ---
 
-This documentation describes the **10.6.0 release (April 2020)** of the Cumulocity IoT platform.
+This documentation is a **preview of the documentation for the 10.7.0 release (October 2020)** of the Cumulocity IoT platform.
 
-This documentation covers all new features and functionality introduced with release 10.6.0 (see the [Release notes](/release-notes#10.6.0) for details). 
+It includes descriptions for new features which are supposed to be introduced with the Incremental Releases 10.6.7 to 10.6.12 or with the GA Release 10.7.0. The documentation **is still in beta state and not meant to be complete**. Moreover, it describes features which might not be publicly available yet and might also not be publicly available with the next GA Release (the respective description will then be removed accordingly).
+
+See the [Release notes](/release-notes/overview/) for more details on new features.
 
 Any other relevant changes that have been made to the Cumulocity IoT documentation since the previous version will be mentioned in the release notes as well.  
 

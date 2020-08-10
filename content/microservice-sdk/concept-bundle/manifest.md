@@ -218,7 +218,6 @@ The snapshot postfix means that the image build is a snapshot of your applicatio
 |key|String |Key of the option|Yes
 |defaultValue|String|Default value|Yes
 |editable|Boolean|Defines if the option can be changed by a subscribed tenant on runtime <br>Default: false |No
-|valueSchema|Schema|Defines schema of value and follows the JSON schema defined here <br>Default: {type: string} | No
 
 #### Probe
 

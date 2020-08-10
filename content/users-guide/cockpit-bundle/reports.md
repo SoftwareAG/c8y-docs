@@ -108,7 +108,7 @@ In case of measurements enabled, you can also choose **Add from data point**. Fo
 
 #### <a name="schedule-export"></a>To schedule an export
 
-To schedule the export to a CSV or XLSX file to any point in time, open the respective export and click **Add schedule**. 
+To schedule an export to a CSV or XLSX file to any point in time, open the respective export and click **Add schedule**. 
 
 ![Export details](/images/users-guide/cockpit/cockpit-export-add-schedule.png)
 
@@ -142,9 +142,9 @@ The export schedule will be added to the export details.
 
 ##### Migration of scheduled exports 
 
-With version 10.6.2, a new reporting agent has been implemented to allow scheduled reports with Apama Streaming Analytics. The export schedules functionality based on smart rules is deprecated. 
+With version 10.6.2, a new reporting agent has been implemented to allow scheduled reports with Apama Streaming Analytics. The export schedules functionality based on smart rules has been deprecated. 
 
-Previously existing configurations of schedulers may automatically be migrated to the new agent.
+Previously existing configurations of schedulers may automatically be migrated to the new agent on opening the respective report.
 
 ![Export schedule migration message1](/images/users-guide/cockpit/cockpit-export-migrate1.png)
 

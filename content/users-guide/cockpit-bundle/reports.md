@@ -148,6 +148,10 @@ Previously existing configurations of schedulers may automatically be migrated t
 
 ![Export schedule migration message1](/images/users-guide/cockpit/cockpit-export-migrate1.png)
 
+From version 10.6.8, the migration of scheduled exports based on smart rules is automatically executed while displaying a message informing the user about the process. 
+
+![Export schedule migration message2](/images/users-guide/cockpit/cockpit-export-migrate2.png)
+
 #### To export data
 
 To export data to a CSV or XLSX file, select the checkbox in front of the respective row in the list and at the left of the top menu bar click **Export**.

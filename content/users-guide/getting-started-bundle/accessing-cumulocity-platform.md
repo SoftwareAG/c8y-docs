@@ -12,12 +12,12 @@ You access the Cumulocity IoT platform via a web browser.
 
 Our products have been tested with the following desktop web browsers:
 
-* Edge Browser (latest version)
-* Internet Explorer (latest version)
+* Edge Browser (latest Chromium-based version)
 * Firefox (latest version)    
 * Chrome (latest version)
+* Internet Explorer (latest version)
 
->**Info:** Cumulocity IoT is fully functional on Internet Explorer 11. However, layouts may not be perfect in all cases.
+>**Info:** Cumulocity IoT is fully functional on Internet Explorer 11. However, layouts may not be perfect in all cases and performance is worse than in other browsers.
 
 You may also use recent smartphone and tablet web browsers. We have tested our products with the following mobile web browsers:
 
@@ -28,7 +28,7 @@ You may also use recent smartphone and tablet web browsers. We have tested our p
 >
 * The usage may be constrained by the memory and the processing power available on the devices. For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
 * Using the private mode on browsers may not work.
-* [Apama Analytics Builder](/apama/overview-analytics/#analytics-builder) (an optional component) does not support mobile/ touch devices.
+* [Apama EPL Apps](/apama/overview-analytics/#apama-epl-apps) and [Apama Analytics Builder](/apama/overview-analytics/#analytics-builder) do not support mobile/ touch devices.
 
 ### URL
 
@@ -87,3 +87,4 @@ Using such an URL, you can:
 *   Send emails (manually or automatically, using the real-time event engine) which include a link to devices or sensor data.
 *   Use the backward and forward navigation of your browser.
 *   Write own web applications which link directly to information contained in a Cumulocity IoT application.
+chromium-based 

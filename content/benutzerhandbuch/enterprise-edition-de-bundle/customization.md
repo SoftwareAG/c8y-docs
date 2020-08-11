@@ -10,27 +10,27 @@ Im Menü **Einstellungen** können Sie verschiedene Anpassungseinstellungen vorn
 
 ### <a name="configuration"></a>Konfiguration
 
->**Info:** Informationen zu den Einstellungen in der Registerkarte **Konfiguration** finden Sie in [Ändern von Einstellungen > Konfigurationseinstellungen](/benutzerhandbuch/administration-de/#config-platform) unter Administration. Hier werden nur die Funktionen erläutert, die ausschließlich für Enterprise Tenants verfügbar sind.
+>**Info:** Informationen zu den Einstellungen in der Registerkarte **Konfiguration** finden Sie in [Ändern von Einstellungen > Konfigurationseinstellungen](/users-guide/administration/#config-platform) unter Administration. Hier werden nur die Funktionen erläutert, die ausschließlich für Enterprise Tenants verfügbar sind.
 
 #### Anwendungen
 
 Im Bereich **Anwendungen** können Sie die Standardanwendungen für neue Mandanten als kommagetrennte Liste festlegen.
 
-![Applications settings](/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-applications.png)
+![Applications settings](/images/users-guide/enterprise-tenant/et-settings-configuration-applications.png)
 
 #### Passwörter
 
 Im Bereich **Passwörter** können Sie Passworteinstellungen wie Standardstärke, Länge oder Gültigkeit für die Benutzer in Ihrem Mandanten festlegen.
 
-![Passwords settings](/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-passwords.png)
+![Passwords settings](/images/users-guide/enterprise-tenant/et-settings-configuration-passwords.png)
 
 #### Supportbenutzer
 
 Im Bereich **Supportbenutzer** konfigurieren Sie die Parameter für die Aktivierung eines Supportbenutzers für Untermandanten-Benutzer.
 
-Mit Hilfe dieser Funktion können Supportbenutzer (d. h. Benutzer mit spezifischen Berechtigungen im Management-Mandanten) bei etwaigen Problemen auf Benutzer von Untermandanten zugreifen. Weitere Informationen finden Sie unter [Supportbenutzerzugriff](/benutzerhandbuch/enterprise-edition-de#users-in-other-tenants).
+Mit Hilfe dieser Funktion können Supportbenutzer (d. h. Benutzer mit spezifischen Berechtigungen im Management-Mandanten) bei etwaigen Problemen auf Benutzer von Untermandanten zugreifen. Weitere Informationen finden Sie unter [Supportbenutzerzugriff](/users-guide/enterprise-edition#users-in-other-tenants).
 
-<img src="/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
+<img src="/images/users-guide/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
 
 Legen Sie im Feld **Supportbenutzer aktivieren** fest, ob der Supportbenutzerzugriff für Untermandanten-Benutzer aktiviert sein soll. Hier sind folgende Werte möglich:
 
@@ -42,7 +42,7 @@ Im Feld **Gültigkeitsdauer** können Sie optional die Supportdauer angeben, d. 
 
 Ablaufdatum und -uhrzeit werden anhand der im Feld **Gültigkeitsdauer** angegebenen Dauer aktualisiert. Beispiel: Wenn das aktuelle Ablaufdatum 01/09/2018 15:00 lautet und die Dauer von 24 Stunden beibehalten wurde, aktualisiert der aktivierende Supportbenutzer das Ablaufdatum auf 01/10/2018 15:00.
 
-Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [Verwalten von Mandanten](/benutzerhandbuch/enterprise-edition-de#managing-tenants).
+Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [Verwalten von Mandanten](/users-guide/enterprise-edition#managing-tenants).
 
 ### <a name="branding"></a>Branding
 
@@ -52,11 +52,11 @@ In der Registerkarte **Branding** können Sie verschiedene Parameter wie Logos, 
 
 Die [Parameter](#configuration-parameters) werden auf der linken Seite der Registerkarte konfiguriert, während Sie auf der rechten Seite in einer Vorschau sehen können, wie sich Ihre Auswahl auswirkt.
 
-<img src="/images/benutzerhandbuch/enterprise-tenant/et-branding.png" alt="Branding tab">
+<img src="/images/users-guide/enterprise-tenant/et-branding.png" alt="Branding tab">
 
 Für eine detailliertere Vorschau Ihrer Einstellungen klicken Sie in der oberen Menüleiste auf **Vorschau anzeigen**, um das Erscheinungsbild Ihrer Branding-Einstellungen in der gesamten Plattform zu überprüfen. In der Vorschau können Sie interagieren und sogar zwischen verschiedenen Anwendungen wechseln. Jede Änderung, die Sie in der Registerkarte **Branding** vornehmen, wird sofort auf die Seite **Vorschau** angewendet.
 
-<img src="/images/benutzerhandbuch/enterprise-tenant/et-branding-preview.png" alt="Branding tab">
+<img src="/images/users-guide/enterprise-tenant/et-branding-preview.png" alt="Branding tab">
 
 Wenn Sie fertig sind oder Ihre Einstellungen speichern möchten, klicken Sie am unteren Rand des Bereichs **Konfiguration** auf **Speichern**, um Ihre Branding-Einstellungen in Ihrem Mandanten zu speichern.
 
@@ -98,8 +98,8 @@ Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
 
 * Haupt-Branding-Farbe.
 * Neben-Branding-Farbe. Der Standardwert ist “#07b91A”.
-* Dunkle Branding-Farbe.
-* Helle Branding-Farbe.
+* Dunkle Branding-Farbe. Wird hauptsächlich für zweifarbige Symbole verwendet. Der Standardwert ist "#0B385B". 
+* Helle Branding-Farbe. Wird hauptsächlich für zweifarbige Symbole verwendet. Der Standardwert ist "#5FAEEC".
 * Textfarbe. Der Standardwert ist “#444”.
 * Link-Farbe. Der Standardwert ist die Haupt-Branding-Farbe.
 * Haupt-Hintergrundfarbe. Der Standardwert für diese Element ist “#FAFAFA”.
@@ -148,20 +148,25 @@ In der Registerkarte **Domain-Name** können Sie Ihren eigenen Domain-Namen fest
 
 >**Wichtig:** Sie benötigen eine gültige Lizenz, um Ihre Domain zu aktivieren. Bitte kontaktieren Sie unser Sales-Team unter sales@cumulocity.com, um eine Lizenz für Ihre Domain zu installieren.  
 
-<img src="/images/benutzerhandbuch/enterprise-tenant/et-domain-name.png" alt="Domain name">
+<img src="/images/users-guide/enterprise-tenant/et-domain-name.png" alt="Domain name">
 
 >**Info:** Die Funktionalität "Benutzerdefinierter Domain-Name" ist nur für cumulocity.com- oder Private Edition-Installationen verfügbar, bei denen kein benutzerdefinierter Load Balancer verwendet wird.
 
 Zunächst müssen Sie ein entsprechendes Zertifikat hochladen, in dem Sie **Zertifikat hochladen** klicken. Stellen Sie sicher, dass
 
-* das Zertifikat in einem gültigen PKCS#12-Format vorliegt und eine vollständige Autorisierungskette enthält,
-* das Zertifikat nicht passwortgeschützt ist,
-* Sie ein Wildcard-Zertifikat verwenden, um die Erstellung von Untermandanten zu ermöglichen.
+* das Zertifikat aktuell gültig ist (validFrom in der Vergangenheit und validTo in der Zukunft),
+* das Zertifikat in einem gültigen PKCS#12-Format vorliegt und die vollständige Autorisierungskette enthält,
+* jedes einzelne Zertifikat in der Kette im X509-Format vorliegt,
+* der private Schlüssel nicht passwortgeschützt ist,
+* Sie ein Wildcard-Zertifikat verwenden, um die Erstellung von Untermandanten zu ermöglichen,
+* der Common Name (CN) im Betreff des primären Zertifikats (erstes in der Kette) den Wert Ihres Wildcard-Domain-Namens enthält, z. B. "CN=*.iot.mycompany.com".
+
+Cumulocity IoT unterstützt ein Einzelkettenzertifikat, das durch die Stammzertifizierungsstelle signiert ist, sowie ein Vollkettenzertifikat, das ein oder mehrere Zwischenzertifikate enthält.
 
 > **Info:** Wenn Ihr Zertifikat nicht in einem gültigen PKCS#12-Format vorliegt aber Sie PEM-Dateien für Zertifikat, privaten Schlüssel und Autorisierungskette haben, können Sie mit dem folgenden Kommando eine gültige PKCS#12-Datei generieren:
 
 ```shell
-openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -certfile chain.pe
+openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -certfile chain.pem
 ```
 
 Bevor Sie den eigenen Domain-Namen aktivieren, stellen Sie sicher, dass
@@ -175,7 +180,7 @@ Bevor Sie den eigenen Domain-Namen aktivieren, stellen Sie sicher, dass
  Ziel = Domain der Plattform, auf die Sie verweisen wollen. Wenn Sie z. B. `https://demos.cumulocity.com` verwenden, um auf Ihren Mandanten zuzugreifen, verwenden Sie "demos.cumulocity.com" als Ziel.<br>
 Vergewissern Sie sich, dass Sie alle A-Einträge für die Wildcard-Domain entfernt haben. Wenn Sie bereits einen Eintrag A für "xxx.iot.mycompany.com" haben, können Sie keine Mandanten mit der URL "xxx" anlegen.
 
-Nach erfolgreicher Aktivierung werden Sie zu Ihrem Enterprise Tenant unter der neuen Domain umgeleitet. Sie erhalten eine Email mit Informationen über die Aktivierung.
+Nach erfolgreicher Aktivierung werden Sie zu Ihrem Enterprise Tenant unter der neuen Domain umgeleitet. Sie erhalten eine Email mit Informationen über die Aktivierung. Beachten Sie, dass der Domain-Name Ihres Management-Mandanten statisch ist. Beispiel: Wenn Ihre Wildcard-Domain "*.iot.mycompany.com" lautet, so lautet die Domain Ihres Management-Mandanten "management.iot.mycompany.com".
 
 >**Info:** Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht mehr mit der Cumulocity IoT-Domain zugreifen. Verwenden Sie anstatt dessen Ihren eigenen Domain-Namen.
 
@@ -184,11 +189,9 @@ Nach erfolgreicher Aktivierung werden Sie zu Ihrem Enterprise Tenant unter der n
 
 Wenn Ihr Zertifikat abläuft, müssen Sie es durch ein neues Zertifikat mit einer längeren Gültigkeitsdauer aktualisieren. Wenn Sie das Zertifikat aktualisieren, stellen Sie sicher, dass
 
-* das Zertifikat ein gültiges PKCS#12-Format hat,
-* das Zertifikat nicht passwortgeschützt ist,
+* das Zertifikat gültig ist (entsprechend der Gültigkeit beim initialen Hochladen),
 * das Zertifikat aktuell gültig ist (validFrom in der Vergangenheit und validTo in der Zukunft),
 * das Zertifikat exakt denselben Domain-Namen wie das aktuell aktive Zertifikat hat.
-* Sie einen CNAME-Eintrag zu Ihrem DNS-Server hinzugefügt haben. Details zum CNAME-Eintrag finden Sie weiter oben.
 
 >**Info:** Berücksichtigen Sie, dass es nach dem Ersetzen des Zertifikats einige Minuten dauern kann, bis das neue Zertifikat den Benutzern/Browsern bereitgestellt wird.
 

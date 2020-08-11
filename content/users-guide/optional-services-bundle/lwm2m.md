@@ -478,15 +478,19 @@ The screenshot above provides an example for the use of validation rule groups: 
 Complex rulesets are based on Boolean Disjunctive Normal Form, which allows arbitrary complex rules to be defined.
 
 #### Device lifecycle events
-LWM2M agent creates events of device lifecycle in cumulocity.  
+
+The LWM2M agent creates events of device lifecycle in Cumulocity IoT.  
 Following are the specific event types for device bootstrap and registration process. 
-The lwm2m agent creates the events with the specific event type during the device bootstrap and registration process. 
+The LWM2M agent creates the events with the specific event type during the device bootstrap and registration process. 
  
 - ##### Bootstrap event types:
+
     - c8y_LWM2MDeviceBootstrapStart
     - c8y_LWM2MDeviceBootstrapEnd
     - c8y_LWM2MDeviceBootstrapFailure
+    
 - ##### Registration event types
+
     - c8y_LWM2MDeviceRegistration
     - c8y_LWM2MDeviceDeRegistration
     - c8y_LWM2MDeviceRegistrationUpdate

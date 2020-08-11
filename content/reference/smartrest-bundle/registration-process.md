@@ -88,7 +88,9 @@ Here is set of example requests:
 10,602,GET,/inventory/managedObjects/&&,,,&&,,
 ```
 
-The example requests are also included in our [postman collection](/microservice-sdk/rest/#using-postman) under SmartREST > Register Request Templates.
+The example requests are also included in our Postman collection.
+See [Using the REST interface > Overview > Using Postman](/microservice-sdk/rest/#using-postman) in the Microservice SDK guide to learn how to import the collection into Postman.
+In the Postman collection, the set of requests is located in **SmartREST > Register Request Templates**.
 
 ##### Example
 

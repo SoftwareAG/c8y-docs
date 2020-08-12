@@ -4,6 +4,123 @@ title: Managing device data
 layout: redirect
 ---
 
+### <a name="software-repo"></a> Managing device firmware
+
+In the firmware repository, Cumulocity IoT offers to collect reference firmware for devices.
+
+In Cumulocity IoT a firmware is any kind of installable of which kind only one exists on the device. Therefore, you can only apply one firmware for any given device. 
+
+#### Viewing firmware 
+
+Click **Firmware repository** in the **Management** menu in the navigator.
+
+The available firmware objects will be displayed, presented as a list.
+
+![Firmware List](/images/users-guide/DeviceManagement/devmgmt-firmware-list.png)
+
+When clicking on an entry, the details for this firmware are displayed along with all available versions and patches. 
+
+![Firmware details](/images/users-guide/DeviceManagement/devmgmt-firmware-details.png)
+
+At the top, the firmware name, an optional description and the device type filter are shown. If a filter is set, the firmware will show up for installation only for devices of that type. If no filter is set, it will be available for all devices. 
+
+The list of versions and patches show the version name, an optional description, the the name of the file containing the firmware. Moreover, the list indicates if a firmware version has patches, which can be viewed by expanding the version entry. 
+
+#### Adding firmwares, firmware versions, or firmware patches
+ 
+##### To add a new firmware
+
+1. In the **Firmware repository** page, click **Add firmware** at the right of the top menu bar. 
+2. In the resulting dialog box, enter a name for the firmware, a description and its version (all required).
+3. Specify the file for the firmware by either uploading it from the file system or specifying a URL from where the firmware can be downloaded.
+4. Click **Save**.
+
+![Add firmware](/images/users-guide/DeviceManagement/devmgmt-firmware-add.png)
+
+The firmware object will be added to the firmware list.
+
+##### To add a new firmware version
+
+1. In the **Firmware repository** page, click **Add firmware** at the right of the top menu bar. 
+2. In the resulting dialog box, select the firmware, for which you want to add a new version, from the dropdown list in the **Name** field. 
+3. Enter a version.
+3. Specify the file for the firmware by either uploading it from the file system or specifying a URL from where the firmware can be downloaded.
+4. Click **Save**.
+
+If you click **Add firmware** from within the details of a specific firmware, the dialog box looks slightly different as the firmware is already selected. 
+
+![Add firmware version](/images/users-guide/DeviceManagement/devmgmt-firmware-add-version.png)
+
+The firmware version will be added to the firmware details. Moreover, the firmware list indicates that a version is available for the specific firmware. 
+
+![Version label](/images/users-guide/DeviceManagement/devmgmt-firmware-version-label.png)
+
+##### To add a new firmware patch
+
+1. In the **Firmware repository** page, click **Add firmware patch** at the right of the top menu bar. 
+2. In the resulting dialog box, select the firmware, for which you want to add a patch, from the dropdown list in the **Name** field. 
+3. in the **Version** field, select the version, for which you want to add a patch, from the dropdown list.  
+3. In the **Patch** field, enter a patch.
+3. Specify the file for the firmware by either uploading it from the file system or specifying a URL from where the firmware can be downloaded.
+4. Click **Save**.
+
+As with adding versions, if you click **Add firmware patch** from within the details of a specific firmware, the dialog box looks slightly different as the firmware is already selected. 
+
+The firmware patch will be added to the version details within the firmware details.
+
+![Versions and patches](/images/users-guide/DeviceManagement/devmgmt-firmware-versions-and-patches.png)
+
+#### To edit a firmware
+
+1. Click the menu icon at the right of a specific firmware entry and in the context menu click **Edit**.
+2. Update the name, description or device type filter by clicking the pencil icon next to it. Make the desired changes and click **Save**. 
+
+The firmware will be updated.
+
+#### To download a firmware
+
+<No longer possible?>
+
+#### Deleting firmwares, firmware versions, or firmware patches 
+
+##### To delete a firmware
+
+Click the menu icon at the top right of a firmware entry and in the context menu click **Delete**.
+
+The object will be deleted from the list.
+
+##### To delete a firmware version
+
+In the details of a specific firmware, hover over the version entry you want to delete and click the delete icon. The firmware version will be deleted from the firmware details.
+
+
+##### To delete a firmware patch
+
+In the version details of a specific firmware, hover over the patch entry you want to delete and click the delete icon. The firmware will be deleted from the version details.
+
+
+
+
+
+
+#### To install firmware on a device
+
+1. Click **All devices** in the **Devices** menu in the navigator and select a device from the device list.
+2. Open the **Software** tab for the device and click **Install firmware**, see also the description of the **Software** tab in [Device details](/users-guide/device-management#software).
+
+>**Info:** To store other types of binaries in Cumulocity IoT, switch to the [Administration application](/users-guide/administration#files).
+
+#### To install firmware on multiple devices
+
+Cumulocity IoT offers the option to execute firmware or software updates for multiple devices at once. To do so, follow these steps:
+
+1. Execute the software update in a single device to test that the new version really works.
+2. Navigate to operation and select **Execute for the whole group**.
+3. Fill in the fields to schedule the bulk operation and click **Create**.
+
+The operation status can be viewed in the **Bulk operations** tab of the selected group, see [Bulk operations](#bulk-operations).
+
+
 ### <a name="software-repo"></a> Managing device firmware and software
 
 In the firmware and in the software repository, Cumulocity IoT offers to collect reference firmware and software for devices respectively.

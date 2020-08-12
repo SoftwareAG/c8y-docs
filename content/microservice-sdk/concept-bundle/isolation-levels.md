@@ -11,6 +11,7 @@ The following isolation levels are available for microservices:
 
 See [Microservice manifest > Settings](#settings) for the `isolation` setting.
 
-If scaling is enabled, the microservice will be horizontally auto-scaled in case of high CPU usage. Auto-scaling monitors the microservices to make sure that they are operating at the desired performance levels, and it will automatically scale up your cluster as soon as you need it and scale it back down when you don’t.
+In case the `scale` setting is set to NONE, the platform guarantees that there is maximum one instance of the service per isolation level. If scaling is enabled (set to AUTO), the microservice will be horizontally auto-scaled (creating more instances of the microservice) in case of high CPU usage.
+Auto-scaling monitors the microservices to make sure that they are operating at the desired performance levels, and it will automatically scale up your cluster as soon as you need it and scale it back down when you don’t.
 
 See [Microservice manifest > Settings](#manifest) for the `scale` setting.

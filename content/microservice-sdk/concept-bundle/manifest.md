@@ -120,7 +120,7 @@ See below for detailed information about available settings.
 <tr>
 <td style="text-align:left">scale</td>
 <td style="text-align:left">Enum</td>
-<td style="text-align:left">Values: AUTO, NONE<br>Default: NONE <br><br>Enables scaling policy. In case of NONE, the platform guarantees that there is maximally one instance of the service per isolation level.</td>
+<td style="text-align:left">Values: AUTO, NONE<br>Default: NONE <br><br>Enables scaling policy. See <a href="#isolation-levels">Isolation and scaling</a> for more details.</td>
 <td style="text-align:left">No</td>
 </tr>
 <tr>

@@ -476,3 +476,21 @@ In order to enable more complex conditions,  multiple validation rules can be de
 The screenshot above provides an example for the use of validation rule groups: User input is valid if the given string does not match “test” (equals not). It is also valid if it ends with “asd” and it matches the contents of the LWM2M resource /3/0/15.
 
 Complex rulesets are based on Boolean Disjunctive Normal Form, which allows arbitrary complex rules to be defined.
+
+#### Device lifecycle events
+
+The LWM2M agent creates events of device lifecycle in Cumulocity IoT.  
+Following are the specific event types for device bootstrap and registration process. 
+The LWM2M agent creates the events with the specific event type during the device bootstrap and registration process. 
+ 
+- Bootstrap event types:
+
+    - c8y_LWM2MDeviceBootstrapStart
+    - c8y_LWM2MDeviceBootstrapEnd
+    - c8y_LWM2MDeviceBootstrapFailure
+    
+- Registration event types:
+
+    - c8y_LWM2MDeviceRegistration
+    - c8y_LWM2MDeviceDeRegistration
+    - c8y_LWM2MDeviceRegistrationUpdate

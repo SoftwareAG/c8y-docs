@@ -75,7 +75,7 @@ Where:
   * `NOW` parameters will never yield an error. No request parameter is required.
 * `<TEMPLATE>` is the actual template string which gets sent as payload to the platform after the placeholders have been replaced with the parameter values.
 
-Here is set of example requests:
+Here is a set of example requests:
 
 ```
 10,100,POST,/alarm/alarms,application/vnd.com.nsn.cumulocity.alarm+json,application/vnd.com.nsn.cumulocity.alarm+json,&&,UNSIGNED NOW,"{""source"":{""id"":""&&""},""type"":""c8y_MyAlarmFromSmartREST"",""text"":""This alarm was created by using SmartREST"",""severity"":""MAJOR"",""status"":""ACTIVE"",""time"":""&&""}"

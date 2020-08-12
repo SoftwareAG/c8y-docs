@@ -56,7 +56,7 @@
 
 
   p>img{
-    margin-bottom: 40px;
+    margin-bottom: 40px; 
   }
 
 
@@ -111,7 +111,7 @@
   margin: -20px -20px 40px;
   padding: 20px;
   background-image: linear-gradient(to right, #1c8ce3 0, #5faeec 100%);
-
+  
   @media(min-width: $screen-sm-min) {
     margin: -40px -40px 40px;
     padding: 40px;
@@ -155,7 +155,7 @@
 
 
 .main-content .page-section{
-
+  
   >h2 {
     display: flex;
     padding-top: 50px;
@@ -165,7 +165,7 @@
     font-weight: 200;
     //letter-spacing: -0.03em;
     color: $blue-35;
-
+  
     >small {
       align-self: center;
       order: 8;
@@ -218,7 +218,7 @@
 }
 
 table:not(.gsc-search-box):not(.gstl_50){
-
+  
   tr > td{
     word-break: break-word;
   }

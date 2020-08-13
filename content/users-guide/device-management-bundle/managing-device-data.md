@@ -18,13 +18,15 @@ The available firmware objects will be displayed, presented as a list.
 
 ![Firmware List](/images/users-guide/DeviceManagement/devmgmt-firmware-list.png)
 
+Each entry shows the firmware name, the device type (if set) and a label indicating if and how many versions a firmware has.
+
 When clicking on an entry, the details for this firmware are displayed along with all available versions and patches. 
 
 ![Firmware details](/images/users-guide/DeviceManagement/devmgmt-firmware-details.png)
 
-At the top, the firmware name, an optional description and the device type filter are shown. If a filter is set, the firmware will show up for installation only for devices of that type. If no filter is set, it will be available for all devices. 
+At the top, the firmware name, a description and optional device type filter(s) are shown. If a filter is set, the firmware will show up for installation only for devices of that type. If no filter is set, it will be available for all devices. 
 
-The list of versions and patches show the version name, an optional description, the the name of the file containing the firmware. Moreover, the list indicates if a firmware version has patches, which can be viewed by expanding the version entry. 
+The list of versions and patches shows the version name, an optional description, and the name of the file containing the firmware. Moreover, the list indicates if a firmware version has patches, which can be viewed by expanding the version entry. 
 
 #### Adding firmwares, firmware versions, or firmware patches
  
@@ -89,18 +91,9 @@ Click the menu icon at the top right of a firmware entry and in the context menu
 
 The object will be deleted from the list.
 
-##### To delete a firmware version
+##### To delete a firmware version or patch
 
-In the details of a specific firmware, hover over the version entry you want to delete and click the delete icon. The firmware version will be deleted from the firmware details.
-
-
-##### To delete a firmware patch
-
-In the version details of a specific firmware, hover over the patch entry you want to delete and click the delete icon. The firmware will be deleted from the version details.
-
-
-
-
+In the details of a specific firmware, hover over the version or patch entry you want to delete and click the delete icon. The firmware version or patch will be deleted from the firmware details.
 
 
 #### To install firmware on a device
@@ -121,52 +114,88 @@ Cumulocity IoT offers the option to execute firmware or software updates for mul
 The operation status can be viewed in the **Bulk operations** tab of the selected group, see [Bulk operations](#bulk-operations).
 
 
-### <a name="software-repo"></a> Managing device firmware and software
+### <a name="software-repo"></a> Managing device software
 
-In the firmware and in the software repository, Cumulocity IoT offers to collect reference firmware and software for devices respectively.
+In the software repository, Cumulocity IoT offers to collect reference software for devices.
 
-> **Info:** The descriptions below refer to firmware but also apply to device software.
+#### Viewing software 
 
-Click **Firmware repository** in the **Management** menu in the navigator.
+Click **Software repository** in the **Management** menu in the navigator.
 
-The available firmware objects will be displayed, presented as cards in a grid.
+The available software objects will be displayed, presented as a list.
 
-![Firmware List](/images/users-guide/DeviceManagement/devmgmt-management-firmwarerepo.png)
+![Software list](/images/users-guide/DeviceManagement/devmgmt-software-repository.png)
 
-Click **Details** on a specific object to "turn around" its card and display details.
+Each entry shows the software name, the device type (if set) and a label indicating if and how many versions a software has.
 
-![Firmware details](/images/users-guide/DeviceManagement/devmgmt-firmware-details.png)
+When clicking on an entry, the details for this software are displayed along with all available versions. 
 
-In addition to the object name and version, you will here find the name of the file containing the firmware.
+![Software details](/images/users-guide/DeviceManagement/devmgmt-software-details.png)
 
-Moreover, several action buttons are provided which are explained below.
+At the top, the software name, a description and optional device type filter(s) are shown. If a filter is set, the software will show up for installation only for devices of that type. If no filter is set, it will be available for all devices. 
 
+The list of versions shows the version name, an optional description, and the name of the file containing the software. 
 
-#### To add a firmware object
+#### Adding software and software versions
+ 
+##### To add a new sofware
 
-1. In the **Firmware repository** page, click **Add firmware** at the right of the top menu bar. <br><br>![Add firmware](/images/users-guide/DeviceManagement/devmgmt-firmware-add.png)
-2. In the resulting dialog box, enter a name for the firmware and its version.
-3. Specify the file for the firmware by either uploading it from the file system, specifying a URL from where the firmware can be obtained or choosing a file previously added in the [Administration application](/users-guide/administration#files).
+1. In the **Software repository** page, click **Add software** at the right of the top menu bar. 
+2. In the resulting dialog box, enter a name for the software, a description and its version (all required).
+3. Specify the file for the software by either uploading it from the file system or specifying a URL from where the software can be downloaded.
 4. Click **Save**.
 
-The firmware object will be added to the firmware list.
+![Add software](/images/users-guide/DeviceManagement/devmgmt-software-add.png)
 
-Similarly, you can add a new software object to the Software repository.
+The software object will be added to the software list.
 
-#### To update a firmware/software object
+##### To add a new software version
 
-1. Click **Details** on a specific object to "turn around" its card and display details.
-3. Update the name or description, or specify a new file for the firmware by either uploading it from the file system or choosing a file.
+1. In the **Software repository** page, click **Add software** at the right of the top menu bar. 
+2. In the resulting dialog box, select the software, for which you want to add a new version, from the dropdown list in the **Name** field. 
+3. Enter a version.
+3. Specify the file for the software by either uploading it from the file system or specifying a URL from where the software can be downloaded.
 4. Click **Save**.
 
-The object will be updated.
+If you click **Add software** from within the details of a specific software, the dialog box looks slightly different as the software is already selected. 
 
-#### To download a firmware/software object
+![Add software version](/images/users-guide/DeviceManagement/devmgmt-software-add-version.png)
 
-1. Click **Details** on a specific object to "turn around" its card and display details.
-2. Click the download icon.
+The software version will be added to the software details. Moreover, the software list indicates that a version is available for the specific software. 
 
-The object will be downloaded to your file system.
+![Version label](/images/users-guide/DeviceManagement/devmgmt-software-version-label.png)
+
+#### To edit a software
+
+1. Click the menu icon at the right of a specific software entry and in the context menu click **Edit**.
+2. Update the name, description or device type filter by clicking the pencil icon next to it. Make the desired changes and click **Save**. 
+
+The software will be updated.
+
+#### To download a firmware
+
+<No longer possible?>
+
+#### Deleting softwares or software versions
+
+##### To delete a software
+
+Click the menu icon at the top right of a software entry and in the context menu click **Delete**.
+
+The object will be deleted from the list.
+
+##### To delete a software version
+
+In the details of a specific software, hover over the version entry you want to delete and click the delete icon. The software version will be deleted from the software details.
+
+
+
+
+
+
+
+#### To download a software object
+
 
 #### To install firmware/software on a device
 
@@ -185,11 +214,7 @@ Cumulocity IoT offers the option to execute firmware or software updates for mul
 
 The operation status can be viewed in the **Bulk operations** tab of the selected group, see [Bulk operations](#bulk-operations).
 
-#### To delete a firmware/software object
 
-Click the menu icon at the top right of a firmware/software card and click **Delete firmware** (or **Delete software**).
-
-The object will be deleted from the list.
 
 
 ### <a name="configuration-repository"></a>Configuration repository

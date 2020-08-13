@@ -26,7 +26,7 @@ The following sections describe how to:
 * [ThingPark Api availability monitoring](#thingpark-monitoring) in Cumulocity IoT
 * [Troubleshooting](#lora-troubleshooting) for warning messages
 
-> Note that your subscription needs to include this feature. If you do not see the functionality described in this document, please contact support.
+> Note that your subscription needs to include this feature. If you do not see the functionality described in this document, please [contact support](/about-doc/contacting-support).
 
 ### <a name="configure-credentials"></a>Configuring ThingPark account credentials and application EUI
 

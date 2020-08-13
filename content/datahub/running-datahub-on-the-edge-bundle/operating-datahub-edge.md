@@ -16,7 +16,7 @@ In problems occur, you should follow these steps:
 - Check the log files, see the [Log files](#log-files) section.
 - Monitor the system processes, see the [Monitoring](#monitoring) section.
 
-If you still need to contact Software AG support, include the output of the diagnostics script. See the [Diagnostics](/edge/operation/#diagnostics) section for details of how to run it.
+If you still need to contact [support](/about-doc/contacting-support), include the output of the diagnostics script. See the [Diagnostics](/edge/operation/#diagnostics) section for details of how to run it.
 
 #### <a name="health-check"></a>Health check
 

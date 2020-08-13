@@ -307,7 +307,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Create alarm</td>
-<td align="left">Reason for triggering the alarm: “On entering”, “On leaving” (the default), “On entering and leaving”.<br>Type of alarm being raised. <br> Severity of alarm being raised. <br>Alarm text.</td>
+<td align="left"><b>Trigger:</b> Reason for triggering the alarm: “On entering”, “On leaving” (the default), “On entering and leaving”.<br><b>Type:</b> Type of alarm being raised. It is strongly recommended to use different types of alarms for each smart rule. If the same alarm type is used across multiple smart rules, smart rules may interfere when trying to update the same alarm type, which might lead to unexpected behavior.<br> <b>Severity:</b> Severity of alarm being raised. <br><b>Text:</b> Alarm message.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -495,7 +495,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Create alarm</td>
-<td align="left">Type of alarm being raised. <br> Severity of alarm being raised. <br>Alarm text.</td>
+<td align="left"><b>Type:</b> Type of alarm being raised. It is strongly recommended to use different types of alarms for each smart rule. If the same alarm type is used across multiple smart rules, smart rules may interfere when trying to update the same alarm type, which might lead to unexpected behavior.<br> <b>Severity: </b>Severity of alarm being raised. <br><b>Text: </b>Alarm message.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -620,7 +620,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Create alarm</td>
-<td align="left"><strong>Type</strong>: Type of alarm being raised. <br><strong>Text</strong>: Alarm message.</td>
+<td align="left"><b>Type:</b> Type of alarm being raised. It is strongly recommended to use different types of alarms for each smart rule. If the same alarm type is used across multiple smart rules, smart rules may interfere when trying to update the same alarm type, which might lead to unexpected behavior.<br> <b>Text: </b>Alarm message.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -716,7 +716,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">3</td>
 <td align="left">Create alarm</td>
-<td align="left"><strong>Type</strong>: Type of alarm being raised. <br><strong>Text</strong>: Alarm message.</td>
+<td align="left"><strong>Type:</strong> Type of alarm being raised. It is strongly recommended to use different types of alarms for each smart rule. If the same alarm type is used across multiple smart rules, smart rules may interfere when trying to update the same alarm type, which might lead to unexpected behavior.<br><strong>Text:</strong> Alarm message.</td>
 </tr>
 <tr>
 <td align="left">4</td>

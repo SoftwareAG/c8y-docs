@@ -238,6 +238,44 @@ In this CSV example, the security mode value is “PSK”. With "PSK" enabled, a
 
 > **Info**: Firmware updates are also supported. For more information, see [Device Management > Managing device data](/users-guide/device-management/#software-repo) in the User guide.
 
+The following table explains several optional parameters related to firmware update which help in tuning the Firmware Over The Air (FOTA) parameters on a device level.
+<table>
+<col style="width:20%">
+<col style="width:10%">
+<col style="width:55%">
+<thead>
+<tr>
+<th style="text-align: left">Field</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left">fwUpdateDeliveryMethod</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Explains the firmware update delivery method. 
+Can be either "PUSH" or "PULL" or "BOTH".</td>
+</tr>
+<tr>
+<td style="text-align: left">fwUpdateSupportedDeviceProtocol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Indicates the device protocol to be used for the firmware update. Can be either "COAP" or "COAPS" or "HTTP" or "HTTPS".</td>
+</tr>
+<tr>
+<td style="text-align: left">fwUpdateResetMechanism</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Indicates the mechanism used to reset the firmware update state machine. 
+Can be either "PACKAGE" or "PACKAGE_URI". And as per the given option, the LWM2M agent either writes an empty string to package URI resource or sets the package resource to NULL (‘\0’)</td>
+</tr>
+<tr>
+<td style="text-align: left">fwUpdateURL</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Indicates the firmware update URL from where the LWM2M device can download the firmware package.</td>
+</tr>  
+</tbody>
+</table>
+
 After creation, the bootstrap parameters can be viewed and changed in the **LWM2M bootstrap parameters** tab in the **Device details** page, see [LWM2M bootstrap parameters](#lwm2m-bootstrap).
 
 #### <a name="duplicate-registeration-alarm"></a>Duplicate LWM2M devices

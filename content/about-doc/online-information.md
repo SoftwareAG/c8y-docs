@@ -15,7 +15,7 @@ On this community, you can:
 * Link to external websites that discuss open standards and web technology.
 
 
-### Software AG Empower Product Support Website
+### Software AG Empower product support website
 
 You can find product information on the [Software AG Empower Product Support](https://empower.softwareag.com) website.
 

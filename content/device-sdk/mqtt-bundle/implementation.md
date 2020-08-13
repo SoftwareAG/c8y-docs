@@ -161,7 +161,7 @@ To support developers during development, it is possible to subscribe to the top
 
 ### Reloading the server certificate
 
-You can change the server certificate, which is sent to the devices. To do so, customers should contact Software AG Support (https://empower.softwareag.com/ContactSupport/), who can add a new certificate to the server's keystore and reload it.
+You can change the server certificate, which is sent to the devices. To do so, please [contact support](/about-doc/contacting-support), who can add a new certificate to the server's keystore and reload it.
 
 Certificates exchange between the server and the device occurs during device connection, so all already connected devices will not be disconnected during reloading. Only after they disconnect on their own and try to connect later, then it is required that they contain the new server certificate in their truststore.
 

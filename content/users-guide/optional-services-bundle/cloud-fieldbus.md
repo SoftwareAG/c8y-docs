@@ -12,7 +12,7 @@ With Cumulocity IoT Cloud Fieldbus you can collect data from fieldbus devices an
 
 Cloud Fieldbus is supported out of the box by several devices. For information on supported devices, refer to the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/) which allows to filter for [all devices which offer full functional support with Cloud Fieldbus](https://devicepartnerportal.softwareag.com/devices?additionalFeature=Cloud%20Fieldbus).
 
-> **Info:** To support Cloud Fieldbus with your terminal, please contact the [Software AG Support](https://empower.softwareag.com/ContactSupport/).
+> **Info:** To support Cloud Fieldbus with your terminal, please [contact support](/about-doc/contacting-support).
 
 ### <a name="connect"></a>Connecting fieldbus devices
 
@@ -185,7 +185,11 @@ To use the "SCADA" widget, follow these steps:
 
 #### <a name="scadasvg"></a>Preparing SVG files for the SCADA widget
 
-The SCADA widget accepts SVG files which use AngularJS directives, for example `ng-if`, `ng-show`, `ng-style`, `ng-repeat`, `ng-click`, for dynamic data presentation. Data from devices (like latest measurements and other properties) are provided via placeholders. There are also predefined helper functions which can be used.
+The SCADA widget accepts SVG files which use AngularJS directives, for example `ng-if`, `ng-show`, `ng-style`, `ng-repeat`, `ng-click`, for dynamic data presentation. 
+
+Moreover, JavaScript event attributes (like onclick, onmouseover) can be used in SVG files uploaded to SCADA widgets.
+
+Data from devices (like latest measurements and other properties) are provided via placeholders. There are also predefined helper functions which can be used.
 
 For creating SVG files, it is recommended to use [https://boxy-svg.com/](https://boxy-svg.com/). It is an easy to use, quality Chrome extension.
 

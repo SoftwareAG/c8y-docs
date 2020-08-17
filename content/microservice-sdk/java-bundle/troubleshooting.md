@@ -30,7 +30,7 @@ Use the following argument to run Java:
 
 If you use Eclipse/OSGi, open the **Run Configurations...** dialog in the **Run** menu. Double-click **OSGi Framework**, then open the **Arguments** tab on the right side. In the **VM arguments** text box, add the above parameter.
 
-Since Java comes with its own set of trusted root certificates, you might still get the error message "java.security.cert.CertificateException: Certificate Not Trusted". In this case, make sure that the GoDaddy Certificate Authority (CACert) is available for your Java environment using the following command:
+Since the Java SDK comes with its own set of trusted root certificates, you might still get the error message "java.security.cert.CertificateException: Certificate Not Trusted". In this case, make sure that the GoDaddy Certificate Authority (CACert) is available for your Java environment using the following command:
 
 ```shell
 $ keytool -import -v -trustcacerts -alias root -file gd_bundle.crt -keystore $JAVA_HOME/lib/security/cacerts

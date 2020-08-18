@@ -104,6 +104,8 @@ $ ./microservice pack --name hello-world
 
 It will create a ZIP file named _hello-world.zip_ and an intermediate _image.tar_ which is an exported Docker image.
 
+> **Important**: When naming your microservice application use only lower-case letters, digits and dashes. The maximum length for the name is 23 characters.
+
 ### Deploying
 
 A microservice becomes available once it has been successfully deployed on the Cumulocity IoT platform. This is done by uploading a ZIP file with the microservice packed as specified above. A user cannot directly push an image to the Docker registry.

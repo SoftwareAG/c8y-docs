@@ -37,7 +37,7 @@ If platform is configured to support two-way SSL and your devices have configure
 * platform's trust store cannot be empty (at least one trusted certificate has to be uploaded to the platform),
 * platform's property "auth.device-certificates.tls.return-accepted-issuers" has to be set to true,
 * device's mqtt client has to be configured to not send certificates if it does not find his root certificate in accepted issuers list returned by the server during handshake. In most cases it happens automatically. However, it is known that it is not working with java 11 mqtt client (but it works fine with java in version 8). 
-* if all above cases are met and device connection is still rejected, due to certificates validation, then probably some other tenant uploaded certificate with the same Common Name as one of those sent by your device. In such case device will always try to authorize itself with certificates and it requires turn sending certificates off in device's software.  
+* if all above cases are met and device connection is still rejected, due to certificates validation, then probably some other tenant uploaded certificate with the same Common Name as one of those sent by your device. In such case device will always try to authorize itself with certificates and it requires turning off sending certificates in device's software.  
 
 ### SmartREST payload
 

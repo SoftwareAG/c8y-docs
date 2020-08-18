@@ -88,13 +88,13 @@ In Safe mode, all previously active Apama Analytics Builder models and Apama EPL
 
 #### <a name="apama_ctrl_starter"></a>Deactivating models in Apama Starter
 
-This alarm is raised when Apama-ctrl switches from the licensed microservice to Apama Starter with more than 3 active models.
+This alarm is raised when Apama-ctrl switches from the fully capable microservice to Apama Starter with more than 3 active models.
 
 - Alarm type: `apama_ctrl_starter`
 - Alarm text: The following models were de-activated as Apama Starter is restricted to 3 active models: (&lt;models&gt;).
 - Alarm severity: MINOR
 
-In Apama Starter, a user can have a maximum of 3 active models. For example, a user is working with the licensed Apama-ctrl microservice and has 5 active models, and then switches to Apama Starter. Since Apama Starter does not allow more than 3 active models, it deactivates all the active models (5) and raises an alarm to notify the user.
+In Apama Starter, a user can have a maximum of 3 active models. For example, a user is working with the fully capable Apama-ctrl microservice and has 5 active models, and then switches to Apama Starter. Since Apama Starter does not allow more than 3 active models, it deactivates all the active models (5) and raises an alarm to notify the user.
 
 #### <a name="apama_highmemoryusage"></a>High memory usage
 

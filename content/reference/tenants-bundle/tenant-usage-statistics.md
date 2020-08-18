@@ -56,10 +56,10 @@ SmartREST 1.0 specific counting details:
 MQTT specific counting details:
 
 * Invalid requests are counted, for example when sending a message with a wrong template ID.
-* Device creation request is not counted.
+* Device creation request and automatic device creation are counted.
 * Each row/line counts as a separate request.
 * Creating custom template counts as a single request, no matter how many rows are send in the request.
-* There is one special SmartREST 2.0 template (402 Create location update event with device update) which is treated differently. Because it is doing two things in one call (create new location event and update location in device) "requestCount" and "deviceRequestCount" are increased once but inbound data transfer counters are increased by two (one for event creation and one for inventory update).
+* There is one special SmartREST 2.0 template (402 Create location update event with device update) which is doing two things in one call, i.e. create a new location event and update the location of the device. It is counted as two separate requests.
 
 ### Total inbound data transfer
 

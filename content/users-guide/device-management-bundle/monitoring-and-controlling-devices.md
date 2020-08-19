@@ -210,9 +210,18 @@ You can view operations at the level of individual devices and across all device
 * To view the operations for all devices, click **Device control** in the **Overview** menu in the navigator.
 * To view the operations of a particular device, switch to the **Control** tab in the details of this device.
 
-![Device Control](/images/users-guide/DeviceManagement/devmgmt-devicecontrol.png)
+![Device Control @TODO new screenshot with tabs](/images/users-guide/DeviceManagement/devmgmt-devicecontrol.png)
 
-Operations can be in one of the following four states:
+There are two types of operations in **Device control**:
+
+* **Single Operations** execute on a single device
+* **Bulk Operations** comprise of the same single operation executed on a set of devices
+
+#### To view single operations
+
+Click the **Single Operations** tab.
+
+Single operations can be in one of the following four states:
 
 |State|Description|
 |:---|:--|
@@ -231,17 +240,65 @@ In each row, the following information for an operation is provided:
 
 Clicking a row expands it and displays further details on the operation.
 
-* **Details**: Providing information on the operation name and status. In case of status = FAILED the reason for the failure is provided.
+* **Details**: Providing information on the operation name and status. In case of status = FAILED the reason for the failure is provided. In case the single operation is part of a [bulk operation](#to-view-bulk-operations), you can see the bulk operation details.
 * **History of Changes**: Providing information on the past changes of the operation.
 
-![Operation Details](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-history.png)
+![Single Operation Details @TODO new screenshot with better icon](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-history.png)
 
 
-By clicking one of the state buttons at the top, the corresponding operations will be hidden. Click it again to show the operations again.
+To filter the list of single operations by state, click one of the state buttons at the top.
+Click **All** to clear the filter.
 
 Click **Realtime** at the right of the top menu bar to see operations coming in from the devices in realtime.
 
->**Info:** Operations are listed in descending time order. Operations are executed strictly according to this order.
+>**Info:** Single operations are listed in descending time order. Operations are executed strictly according to this order.
+
+#### To view bulk operations
+
+Click the **Bulk Operations** tab.
+
+Bulk operations have an operation type and a state.
+
+Bulk operations can have one of the following operation types:
+
+| Operation type          | Description |
+| :---------------------- | :---------- |
+| Configuration update    | The bulk operation updates the configuration of the selected devices. |
+| Firmware update         | The bulk operation updates the firmware on the selected devices. |
+| Software update         | The bulk operation updates the software on the selected devices. |
+| Apply device profile    | The bulk operation applies a device profile on the selected devices. |
+
+Bulk operations can be in one of the following states:
+
+| State                   | Description |
+| :---------------------- | :---------- |
+| SCHEDULED               | The bulk operation has been created and is on hold until the scheduled time. |
+| EXECUTING               | The bulk operation is being executed. |
+| CANCELLED               | The bulk operation was created but cancelled before the scheduled time. |
+| COMPLETED WITH FAILURES | The bulk operation completed it failed for some devices. |
+| COMPLETED SUCCESSFULLY  | The bulk operation has been successfully executed on all devices. |
+
+Bulk operations that are currently executing or that completed will show a progress bar.
+
+Clicking the arrow button at the right in a row expands the row and displays further details on the bulk operation.
+
+* **Details**: Providing information on the start date, delay, status and result of the bulk operation. The result lists the number of successful, failed and pending operations.
+* **Operation**: Providing information on the operation in the form of a JSON object.
+* **Operations**: Only present for executing or completed bulk operations. Providing information on the status and the device of single operations entailed in the bulk operation. Can be filtered by status.
+
+![Bulk Operation Details @TODO new screenshot with bulk operation details](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-history.png)
+
+To filter the list of bulk operations by operation type, click the dropdown list at the top and select a set of operation types, then **Apply**.
+Click it again, then **All** and **Apply** to clear the filter.
+
+To filter the list of bulk operations by state, click one of the state buttons at the top.
+Click **All** to clear the filter.
+
+To clear both filters, click **Reset filters** at the bottom of the list.
+
+Click **Realtime** at the right of the top menu bar to see operations coming in from the devices in realtime.
+
+>**Info:** Bulk operations are listed in descending time order. Operations are executed strictly according to this order.
 
 #### To create and execute operations
 
@@ -249,24 +306,30 @@ Operations for a specific device are created and executed in the **Shell** tab o
 
 >**Important:** When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
 
-##### <a name="bulk-operations"></a>To execute bulk operations
+#### <a name="bulk-operations"></a>To create a bulk operation
 
-For easier handling of devices, Cumulocity IoT offers bulk operations. With bulk operations you can at once execute operations for each device within one group.
+There are three ways of creating a bulk operation:
 
-To execute bulk operations for a group, follow these steps:
+1. @TODO
 
-1. Select a device and open the **Control** tab.
-2. Create an operation.
-3. Hover over the operation you want to execute.
-4. Click the menu icon and then click **Execute for whole group**.
+2. @TODO
 
-The operation will be executed for all devices in the group.
+3. @TODO
 
-![Execute bulk operations](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk.png)
+    To execute bulk operations for a group, follow these steps:
 
-In order to view the status and progress of your operations, simply select the desired group and click the **Bulk operations** tab.
+    1. Select a device and open the **Control** tab.
+    2. Create an operation.
+    3. Hover over the operation you want to execute.
+    4. Click the menu icon and then click **Execute for whole group**.
 
-![Bulk operations tab](/images/users-guide/DeviceManagement/devmgmt-bulkoperations.png)
+    The operation will be executed for all devices in the group.
+
+    ![Execute bulk operations](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk.png)
+
+    In order to view the status and progress of your operations, simply select the desired group and click the **Bulk operations** tab.
+
+    ![Bulk operations tab](/images/users-guide/DeviceManagement/devmgmt-bulkoperations.png)
 
 ##### <a name="bulk-operations"></a>To edit bulk operations
 
@@ -282,6 +345,10 @@ The changes will be applied to the bulk operation accordingly.
 ##### <a name="bulk-operations"></a>To delete bulk operations
 
 Hover over the bulk operation you want to delete, click the menu icon, and then click **Cancel operation**.
+
+#### To retry failed operations
+
+@TODO
 
 ### <a name="events-all"></a>Troubleshooting devices
 

@@ -125,7 +125,7 @@ For details about sending and receiving data in Cumulocity IoT, see [Enterprise 
 
 ## Disk space monitoring
 
-In your Cumulocity ToT tenant account, you can monitor the disk space metrics of your Edge VM. The disk space metrics include:
+In your Cumulocity IoT tenant account, you can monitor the disk space metrics of your Edge VM. The disk space metrics include:
 
 * Total disk space
 * Free disk space

@@ -123,4 +123,15 @@ In the same way, you can push operations from a Cumulocity IoT tenant account to
  
 For details about sending and receiving data in Cumulocity IoT, see [Enterprise Tenant > Using the Data Broker](/users-guide/enterprise-edition#data-broker).
 
-   
+## Disk space monitoring
+
+In your Cumulocity ToT tenant account, you can monitor the disk space metrics of your Edge VM. The disk space metrics include:
+
+* Total disk space
+* Free disk space
+* Used disk space
+* Percentage of used disk space
+
+You can create a dashboard and add widgets in the Cockpit application of your tenant account to monitor the metrics. For more information about creating dashboards, see [Dashboards](/users-guide/cockpit/#dashboards) in the User guide.
+
+Also, you can define smart rules to create alerts or raise alarms for the metrics. For example, when the free disk space is less than 5 GB, create an alert. For more information about smart rules, see [Smart rules](/users-guide/cockpit/#smart-rules) in the User guide.  

@@ -125,13 +125,23 @@ For details about sending and receiving data in Cumulocity IoT, see [Enterprise 
 
 ## Disk space monitoring
 
-In your Cumulocity IoT tenant account, you can monitor the disk space metrics of your Edge VM. The disk space metrics include:
+In your Cumulocity IoT tenant, you can monitor the disk space metrics of your Edge VM. The disk space metrics include:
 
 * Total disk space
 * Free disk space
 * Used disk space
 * Percentage of used disk space
 
-You can create a dashboard and add widgets in the Cockpit application of your tenant account to monitor the metrics. For more information about creating dashboards, see [Dashboards](/users-guide/cockpit/#dashboards) in the User guide.
+The disk space metrics are sent as a measurement for both installation disk and data disk, every 10 minutes. The measurements are sent in gigabytes rounded to two decimal places. The percentage is rounded to one decimal place. The data points for these measurements are:
+
+* *c8y_InstallationDisk*
+* *c8y_DataDisk* 
+
+If Cumulocity IoT Edge is unable to read the metrics from the installation disk or the data disk, an alarm is sent to Cumulocity IoT tenant. The alarms have a minor severity and the data points for the alarms are:
+
+* *c8y_FileSystemMeasurementErrorInstallationDisk*
+* *c8y_FileSystemMeasurementErrorDataDisk*. 
+
+To monitor the metrics in your Cumulocity IoT tenant, you can create a dashboard and add widgets in the Cockpit application of your tenant. For more information about creating dashboards, see [Dashboards](/users-guide/cockpit/#dashboards) in the User guide.
 
 Also, you can define smart rules to create alerts or raise alarms for the metrics. For example, when the free disk space is less than 5 GB, create an alert. For more information about smart rules, see [Smart rules](/users-guide/cockpit/#smart-rules) in the User guide.  

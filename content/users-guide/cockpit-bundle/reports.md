@@ -152,6 +152,8 @@ From version 10.6.8, the migration of scheduled exports based on smart rules is 
 
 ![Export schedule migration message2](/images/users-guide/cockpit/cockpit-export-migrate2.png)
 
+**Info:** To use the new export schedule functionality and for the migration to work, the report-agent microservice needs to be subscribed which is the case per default.
+
 #### To export data
 
 To export data to a CSV or XLSX file, select the checkbox in front of the respective row in the list and at the left of the top menu bar click **Export**.

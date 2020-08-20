@@ -210,8 +210,6 @@ You can view operations at the level of individual devices and across all device
 * To view the operations for all devices, click **Device control** in the **Overview** menu in the navigator.
 * To view the operations of a particular device, switch to the **Control** tab in the details of this device.
 
-![Device Control @TODO new screenshot with tabs](/images/users-guide/DeviceManagement/devmgmt-devicecontrol.png)
-
 There are two types of operations in **Device control**:
 
 * **Single Operations** execute on a single device
@@ -221,29 +219,31 @@ There are two types of operations in **Device control**:
 
 Click the **Single Operations** tab.
 
-Single operations can be in one of the following four states:
+![Single operations list](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-single-operations-list.png)
 
-|State|Description|
-|:---|:--|
-|PENDING|The operation has just been created and is waiting for the device to pick it up.
-|EXECUTING|The operation has been picked up by the device and is being executed.
-|SUCCESSFUL|The operation has been successfully executed by the device.
-|FAILED|The operation could not be executed by the device.
+Single operations can have one of the following four statuses:
+
+| Status     | Description |
+| :-----     | :---------- |
+| PENDING    | The operation has just been created and is waiting for the device to pick it up. |
+| EXECUTING  | The operation has been picked up by the device and is being executed. |
+| SUCCESSFUL | The operation has been successfully executed by the device. |
+| FAILED     | The operation could not be executed by the device. |
 
 In each row, the following information for an operation is provided:
 
-|Info|Description|
-|:---|:---|
-|Status|One of PENDING, EXECUTING, SUCCESSFUL, FAILED (see above).
-|Name|Name of the operation.
-|Device|The name of the device. Clicking the name leads you to the detailed view of the device.
+| Info   | Description |
+| :----- | :---------- |
+| Status | One of PENDING, EXECUTING, SUCCESSFUL, FAILED (see above). |
+| Name   | Name of the operation. |
+| Device | The name of the device. Clicking the name leads you to the detailed view of the device. |
 
 Clicking a row expands it and displays further details on the operation.
 
 * **Details**: Providing information on the operation name and status. In case of status = FAILED the reason for the failure is provided. In case the single operation is part of a [bulk operation](#to-view-bulk-operations), you can see the bulk operation details.
 * **History of Changes**: Providing information on the past changes of the operation.
 
-![Single Operation Details @TODO new screenshot with better icon](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-history.png)
+![Single operation details](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-single-operation-details.png)
 
 
 To filter the list of single operations by state, click one of the state buttons at the top.
@@ -257,7 +257,9 @@ Click **Realtime** at the right of the top menu bar to see operations coming in 
 
 Click the **Bulk Operations** tab.
 
-Bulk operations have an operation type and a state.
+![Bulk operations list](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operations-list.png)
+
+Bulk operations have an operation type and a status.
 
 Bulk operations can have one of the following operation types:
 
@@ -268,9 +270,9 @@ Bulk operations can have one of the following operation types:
 | Software update         | The bulk operation updates the software on the selected devices. |
 | Apply device profile    | The bulk operation applies a device profile on the selected devices. |
 
-Bulk operations can be in one of the following states:
+Bulk operations can have one of the following statuses:
 
-| State                   | Description |
+| Status                   | Description |
 | :---------------------- | :---------- |
 | SCHEDULED               | The bulk operation has been created and is on hold until the scheduled time. |
 | EXECUTING               | The bulk operation is being executed. |
@@ -278,7 +280,17 @@ Bulk operations can be in one of the following states:
 | COMPLETED WITH FAILURES | The bulk operation completed it failed for some devices. |
 | COMPLETED SUCCESSFULLY  | The bulk operation has been successfully executed on all devices. |
 
-Bulk operations that are currently executing or that completed will show a progress bar.
+
+
+In each row, the following information for a bulk operation is provided:
+
+| Info   | Description |
+| :----- | :---------- |
+| Status | One of SCHEDULED, EXECUTING, CANCELLED, COMPLETED WITH FAILURES, COMPLETED SUCCESSFULLY (see above). |
+| Name   | Name of the operation. |
+| Progress bar | Only for executing and completed bulk operations. Shows the operation's progress in percent. |
+| Start and finish dates | Only for executing and completed bulk operations. For executing bulk operations, the finish date is an approximation based on the bulk operation settings. |
+| Refresh button | Only for executing bulk operations. Updates the progress bar. |
 
 Clicking the arrow button at the right in a row expands the row and displays further details on the bulk operation.
 
@@ -286,7 +298,7 @@ Clicking the arrow button at the right in a row expands the row and displays fur
 * **Operation**: Providing information on the operation in the form of a JSON object.
 * **Operations**: Only present for executing or completed bulk operations. Providing information on the status and the device of single operations entailed in the bulk operation. Can be filtered by status.
 
-![Bulk Operation Details @TODO new screenshot with bulk operation details](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-history.png)
+![Bulk operation details](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details.png)
 
 To filter the list of bulk operations by operation type, click the dropdown list at the top and select a set of operation types, then **Apply**.
 Click it again, then **All** and **Apply** to clear the filter.
@@ -310,11 +322,11 @@ Operations for a specific device are created and executed in the **Shell** tab o
 
 There are three ways of creating a bulk operation:
 
-1. @TODO
+1. @TODO Wizard
 
-2. @TODO
+2. @TODO Schedule as bulk operation (single operation)
 
-3. @TODO
+3. @TODO Probably can be documented in 2. as well
 
     To execute bulk operations for a group, follow these steps:
 
@@ -348,7 +360,7 @@ Hover over the bulk operation you want to delete, click the menu icon, and then 
 
 #### To retry failed operations
 
-@TODO
+@TODO Retry all failed vs retry single
 
 ### <a name="events-all"></a>Troubleshooting devices
 

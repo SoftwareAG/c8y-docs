@@ -148,10 +148,6 @@ Previously existing configurations of schedulers may automatically be migrated t
 
 ![Export schedule migration message1](/images/users-guide/cockpit/cockpit-export-migrate1.png)
 
-From version 10.6.8, the migration of scheduled exports based on smart rules is automatically executed. As soon as a report is opened, all rules are migrated for the respective report, while displaying a message informing the user about the process. 
-
-![Export schedule migration message2](/images/users-guide/cockpit/cockpit-export-migrate2.png)
-
 **Info:** To use the new export schedule feature and for the migration to work, the report-agent microservice needs to be subscribed. New tenants will be subscribed to it automatically. Existing tenants should make sure that they are subscribed to it.
 
 #### To export data

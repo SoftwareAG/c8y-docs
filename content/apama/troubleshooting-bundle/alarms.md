@@ -26,7 +26,7 @@ Alarms are created by user applications in the Cumulocity IoT tenant (for exampl
 
 ### Alarms created by the Apama-ctrl microservice
 
-Apama-ctrl can create alarms to notify users in scenarios such as the correlator running out of memory, uncaught exceptions in activated EPL files, etc. Once you see an alarm in the Cumulocity IoT tenant, you should diagnose it and resolve it depending on the severity level of the raised alarm. Each alarm has details such as title, text, type, date, and count (represents the number of times the alarm has been raised). 
+Apama-ctrl can create alarms to notify users in scenarios such as the correlator running out of memory, uncaught exceptions in activated EPL files, and so on. Once you see an alarm in the Cumulocity IoT tenant, you should diagnose it and resolve it depending on the severity level of the raised alarm. Each alarm has details such as title, text, type, date, and count (represents the number of times the alarm has been raised). 
 
 The following is a list of the alarms. The information further down below explains when these alarms will occur, their consequences, and how to resolve them. 
 
@@ -128,7 +128,7 @@ Apama-ctrl generates the diagnostics overview ZIP files with the following condi
 - A maximum of 5 diagnostics overview ZIP files from its start time until it stops.
 - Overall, it can generate a maximum of 20 ZIP files per Cumulocity IoT tenant, beyond which it keeps deleting the oldest ZIP files during its startup process.
 
-To diagnose high-memory-consuming models and EPL apps, you can try the following (it could be listener leaks, excessive state being stored or spawned monitors leaking, etc.):
+To diagnose high-memory-consuming models and EPL apps, you can try the following (it could be listener leaks, excessive state being stored or spawned monitors leaking, and so on):
 
 - Download the automatically generated diagnostics overview ZIP file (refer to the alarm text for its location) and look at *correlator/inspect.json* and *correlator/status.json* for the number of listeners (this number may be large in the case of a listener leak). Note that this is only an overview and excludes the EPL memory profile output.
 
@@ -291,7 +291,7 @@ If the CEP queue is full, older events are removed to handle new incoming events
 
 The CEP queue size is based on the number of CEP events, not raw bytes.
 
-To diagnose the cause, you can try the following. It may be that the Apama-ctrl microservice is running slow because of time-consuming rules in the script, or the microservice is deprived of resources, or code is not optimized, etc. Check the input and output queues from the "correlator queue is full" alarm (or from the microservice logs or from the diagnostics overview ZIP file under */correlator/status.json*). 
+To diagnose the cause, you can try the following. It may be that the Apama-ctrl microservice is running slow because of time-consuming rules in the script, or the microservice is deprived of resources, or code is not optimized, and so on. Check the input and output queues from the "correlator queue is full" alarm (or from the microservice logs or from the diagnostics overview ZIP file under */correlator/status.json*). 
 
 - If both input and output queues are full, this suggests a slow receiver, possibly EPL sending too many requests (or too expensive a request) to Cumulocity IoT.
 - Else, if only the input queue is full, EPL is probably running in a tight loop. Try analyzing the *cpuProfile.csv* output in the diagnostic overview ZIP file, especially the monitor name and CPU time. The data collected in the profiler may also help in identifying other possible bottlenecks. For details, refer to [Using the CPU profiler](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2Fta-DepAndManApaApp_using_the_cpu_profiler.html) in the Apama documentation. 

@@ -142,7 +142,7 @@ The export schedule will be added to the export details.
 
 ##### Migration of scheduled exports 
 
-With version 10.6.2, a new reporting agent has been implemented to allow scheduled reports with Apama Streaming Analytics. The export schedules functionality based on smart rules has been deprecated. 
+With version 10.6.2, a new reporting agent has been implemented to allow scheduled reports with [Apama Streaming Analytics](/apama/overview-analytics/). The export schedules functionality based on smart rules has been deprecated. 
 
 Previously existing configurations of schedulers may automatically be migrated to the new agent by opening the respective report and confirm to migrate the included export schedules.
 

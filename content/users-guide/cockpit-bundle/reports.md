@@ -140,6 +140,8 @@ Click **Create** to create the new export schedule.
 
 The export schedule will be added to the export details.
 
+![Scheduled exports list](/images/users-guide/cockpit/cockpit-export-schedule-list.png)
+
 ##### Migration of scheduled exports 
 
 With version 10.6.2, a new reporting agent has been implemented to allow scheduled reports with [Apama Streaming Analytics](/apama/overview-analytics/). The export schedules functionality based on smart rules has been deprecated. 

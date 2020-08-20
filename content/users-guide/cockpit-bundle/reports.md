@@ -150,7 +150,7 @@ On opening a report, all scheduled exports based on smart rules are automaticall
 
 ![Export schedule migration message2](/images/users-guide/cockpit/cockpit-export-migrate2.png)
 
->**Important**: You need to open each report manually, to migrate the export schedules for the respective report. 
+>**Important**: You need to open each report manually, to migrate the export schedules included in the report. 
 
 > **Info:** To use the new export schedule feature and for the migration to work, the report-agent microservice needs to be subscribed. New tenants will be subscribed to it automatically. Existing tenants should make sure that they are subscribed to it.
 

@@ -146,11 +146,11 @@ The export schedule will be added to the export details.
 
 With version 10.6.2, a new reporting agent has been implemented to allow scheduled reports with [Apama Streaming Analytics](/apama/overview-analytics/). The export schedules functionality based on smart rules has been deprecated. 
 
-Previously existing configurations of schedulers may automatically be migrated to the new agent by opening the respective report and confirm to migrate the included export schedules.
+Previously existing configurations of schedulers may be migrated to the new agent by opening the respective report and confirm to migrate the included export schedules.
 
 ![Export schedule migration message1](/images/users-guide/cockpit/cockpit-export-migrate1.png)
 
-**Info:** To use the new export schedule feature and for the migration to work, the report-agent microservice needs to be subscribed. New tenants will be subscribed to it automatically. Existing tenants should make sure that they are subscribed to it.
+> **Info:** To use the new export schedule feature and for the migration to work, the report-agent microservice needs to be subscribed. New tenants will be subscribed to it automatically. Existing tenants should make sure that they are subscribed to it.
 
 #### To export data
 

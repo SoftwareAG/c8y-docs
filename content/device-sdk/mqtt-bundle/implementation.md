@@ -17,7 +17,7 @@ Available ports:
 | SSL | 8883 | 443 |
 | no SSL | 1883 | 80 |
 
-Port 8883 supports two types of SSL: two-way SSL using certificates for client authorization and one-way SSL using username and password for client authorization. 
+Port 8883 supports two types of SSL: two-way SSL using certificates for client authorization and one-way SSL using username and password for client authorization.
 To turn on two-way SSL support, add the following rule to Chef:
 
 ```
@@ -37,7 +37,7 @@ If the platform is configured to support two-way SSL, your devices have a config
 * The platform's trust store cannot be empty. At least one trusted certificate has to be uploaded to the platform.
 * The platform's property "auth.device-certificates.tls.return-accepted-issuers" has to be set to true.
 * The device's mqtt client has to be configured to not send certificates if it does not find its root certificate in the accepted issuers list returned by the server during handshake. In most cases this happens automatically. It is known that it’s not working with the mqtt client and Java 11. However, it works with Java 8.
-* If all of the cases above are met and the device connection is still rejected due to certificates validation, then probably some other tenant uploaded a certificate with the same 'Common Name' as one of those sent by your device. In this case device will always try to authorize itself with certificates.  
+* If all of the cases above are met and the device connection is still rejected due to certificates validation, then probably some other tenant uploaded a certificate with the same 'Common Name' as one of those sent by your device. In this case the device will always try to authorize itself with certificates.  
 
 ### SmartREST payload
 

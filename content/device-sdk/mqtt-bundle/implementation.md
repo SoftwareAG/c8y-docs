@@ -17,7 +17,7 @@ Available ports:
 | SSL | 8883 | 443 |
 | no SSL | 1883 | 80 |
 
-Port 8883 supports two types of SSL: two-way SSL using certificates for client's authorization and one-way SSL using username and password for client's authorization. 
+Port 8883 supports two types of SSL: two-way SSL using certificates for client authorization and one-way SSL using username and password for client authorization. 
 To turn on two-way SSL support, add the following rule to Chef:
 
 ```
@@ -32,12 +32,12 @@ To turn on two-way SSL support, add the following rule to Chef:
 
 #### Specific cases:
 
-1. Device sends correct username and password, but incorrect certificate in the same time:
-If platform is configured to support two-way SSL and your devices have configured keystore with certificates which are not valid for some reason (certificate expired, or the root certificate is not uploaded to the platform) and you want to use basic authorization, then it is highly recommended to turn off sending certificates during connection in the device's software. If it's not possible, then you must remember about few things to make such connection work:
-* platform's trust store cannot be empty (at least one trusted certificate has to be uploaded to the platform),
-* platform's property "auth.device-certificates.tls.return-accepted-issuers" has to be set to true,
-* device's mqtt client has to be configured to not send certificates if it does not find his root certificate in accepted issuers list returned by the server during handshake. In most cases it happens automatically. However, it is known that it is not working with java 11 mqtt client (but it works fine with java in version 8). 
-* if all above cases are met and device connection is still rejected, due to certificates validation, then probably some other tenant uploaded certificate with the same Common Name as one of those sent by your device. In such case device will always try to authorize itself with certificates and it requires turning off sending certificates in device's software.  
+##### A device sends correct username and password, but incorrect certificate at the same time:
+If the platform is configured to support two-way SSL, your devices have a configured keystore with invalid certificates and you want to use basic authorization, we recommend you to turn off sending certificates during connection. Certificates may be invalid because they expired or the root certificate is not uploaded to the platform. Turn off certificate sending in the device’s software. If that is not possible, make sure of the following to make the connection work:
+* The platform's trust store cannot be empty. At least one trusted certificate has to be uploaded to the platform.
+* The platform's property "auth.device-certificates.tls.return-accepted-issuers" has to be set to true.
+* The device's mqtt client has to be configured to not send certificates if it does not find its root certificate in the accepted issuers list returned by the server during handshake. In most cases this happens automatically. It is known that it’s not working with the mqtt client and Java 11. However, it works with Java 8.
+* If all of the cases above are met and the device connection is still rejected due to certificates validation, then probably some other tenant uploaded a certificate with the same 'Common Name' as one of those sent by your device. In this case device will always try to authorize itself with certificates.  
 
 ### SmartREST payload
 

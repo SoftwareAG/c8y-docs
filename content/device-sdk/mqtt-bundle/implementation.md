@@ -82,10 +82,7 @@ Every operation received will contain the template ID followed by the ID of the 
 
 #### MQTT authentication
 
-The communication with Cumulocity IoT employing MQTT supports authentication in two ways:
-
-*   Username and password. The MQTT username needs to include the tenant ID and username in the format &lt;tenantID/username>.
-*   Device certificates. The devices have to contain the whole chain of certificates leading to the trusted root certificate. Also, they have to contain the server certificate in their truststore.
+MQTT supports setting a username and a password. To connect to Cumulocity IoT, the MQTT username needs to include both tenant ID and username in the format &lt;tenantID/username>.
 
 #### MQTT ClientId
 

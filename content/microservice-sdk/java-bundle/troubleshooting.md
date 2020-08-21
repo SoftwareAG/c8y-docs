@@ -8,13 +8,19 @@ Some common problems and their solutions have been identified and documented bel
 
 ##### SSL or certificate errors
 
-You can use both HTTP and HTTPS from the Java client libraries. To use HTTPS, you may need to import the Cumulocity IoT production certificate into your Java Runtime Environment. [Download](/cumulocity.com.cert "cumulocity.com certificate") the certificate and import it using the following command:
+You can use both HTTP and HTTPS from the Java client libraries. To use HTTPS, you may need to import the Cumulocity IoT production certificate into your Java Runtime Environment. Download the certificate with the following command:
+
+```shell
+$ echo | openssl s_client -servername *.cumulocity.com -connect *.cumulocity.com:443 |sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > cumulocity.com.crt
+```
+
+Import the certificate using the following command:
 
 ```shell
 $ $JAVA_HOME/bin/keytool -import -alias cumulocity -file cumulocity.com.crt -storepass changeit
 ```
 
-Answer "yes" to the question "Trust this certificate? [no]:".
+Confirm that you trust this certificate.
 
 Use the following argument to run Java:
 
@@ -24,14 +30,13 @@ Use the following argument to run Java:
 
 If you use Eclipse/OSGi, open the **Run Configurations...** dialog in the **Run** menu. Double-click **OSGi Framework**, then open the **Arguments** tab on the right side. In the **VM arguments** text box, add the above parameter.
 
-Since Java ships with its own set of trusted root certificates, you might still get the error message "java.security.cert.CertificateException: Certificate Not Trusted". In this case, make sure that the Go Daddy Certificate Authority (CACert) is available for your JAVA environment using the following command:
+Since the Java SDK comes with its own set of trusted root certificates, you might still get the error message "java.security.cert.CertificateException: Certificate Not Trusted". In this case, make sure that the GoDaddy Certificate Authority (CACert) is available for your Java environment using the following command:
 
 ```shell
 $ keytool -import -v -trustcacerts -alias root -file gd_bundle.crt -keystore $JAVA_HOME/lib/security/cacerts
 ```
 
-*gd\_bundle.crt* can be downloaded directly from the [GoDaddy repository](https://certs.godaddy.com/anonymous/repository.pki).
-
+The *gd\_bundle.crt* certificate can be downloaded directly from the [GoDaddy repository](https://certs.godaddy.com/anonymous/repository.pki).
 
 ##### When I install the SDK, Eclipse complains about compatibility problems
 

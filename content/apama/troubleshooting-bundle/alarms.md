@@ -270,7 +270,7 @@ To diagnose the cause, download the diagnostics overview ZIP file as described i
 This alarm is raised in certain cases when the connection between the Apama-ctrl microservice and the correlator is lost. This should not happen, but can be triggered by high load situations.
 
 - Alarm type: `lost_correlator_connection`
-- Alarm text: Unable to ping correlator:  &lt;message&gt;, apama-ctrl will restart.
+- Alarm text: Unable to ping correlator:  &lt;message&gt;, Apama-ctrl will restart.
 
 Apama-ctrl will automatically restart. Report this to Software AG Support if this is happening frequently.
 

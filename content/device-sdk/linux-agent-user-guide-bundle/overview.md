@@ -17,9 +17,9 @@ SECTION  | CONTENT
 
 ### Supported functionality
 #### Remote monitoring and control of industrial assets
-- Modbus-TCP and Modbus-RTU
-- CANopen (using SocketCAN interface / requiring commercial library)
-- Cloud Remote Access for remotely accessing assets via VNC/Telnet/SSH protocols
+- Modbus-TCP and Modbus-RTU.
+- CANopen (using SocketCAN interface / requiring commercial library).
+- Cloud Remote Access for remotely accessing assets via VNC/Telnet/SSH protocols.
 
 #### Managing devices
 - Periodically reporting memory usage and system load to Cumulocity IoT.

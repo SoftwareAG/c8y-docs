@@ -1,7 +1,7 @@
 ---
 title: Lua plugin tutorial - Software management
 layout: redirect
-weight: 40
+weight: 50
 ---
 
 As the last example, let's write a script to support software management. The detail for our software

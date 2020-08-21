@@ -60,7 +60,7 @@ To support the feature, you need to build the **Cumulocity Cloud Remote Access S
 ```shell
 make vnc
 ```
-Now you have an execution file `vncproxy` in _cumulocity-agents-linux/bin_.
+Now you have an execution file *vncproxy* in *cumulocity-agents-linux/bin*.
 
 The Cumulocity Cloud Remote Access service needs no further configuration. It communicates with the Linux Agent via a local socket.
 
@@ -107,7 +107,7 @@ To build the Cumulocity CANopen Service, move to the repository root directory a
 cd canopen
 make
 ```
-Then `c8y_canopend` execution file is created in _cumulocity-agents-linux/bin_.
+Then *c8y_canopend* execution file is created in _cumulocity-agents-linux/bin_.
 
 The Cumulocity CANopen service communicates with the Linux Agent via UDP port 9677. It gets all configuration, including SocketCAN interface, baud rate etc. automatically from the Linux Agent, so you just need to adjust all the CANopen settings in the Linux Agent configuration file (_cumulocity-agent.conf_ file) later in the section [Configuring the agent](#configuring-agent).
 

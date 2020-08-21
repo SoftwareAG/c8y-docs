@@ -1,7 +1,7 @@
 ---
 title: Lua plugin tutorial - Restart device
 layout: redirect
-weight: 30
+weight: 40
 ---
 Besides sending requests, e.g., measurements to **Cumulocity IoT**, the other important function is to handle coming messages from Cumulocity IoT; either responses from `GET` queries or real-time operations.
 Here we prepared two examples. The one shows only how to handle the `c8y_Restart` operation in Lua script. It is simplified version of [ex-06-lua](/device-sdk/cpp/#use) example of **Cumulocity C++ SDK**. The second example shows more practical implementation including keeping the operation ID after rebooting.

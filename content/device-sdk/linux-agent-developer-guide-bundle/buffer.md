@@ -1,7 +1,7 @@
 ---
 title: File-backed or memory-backed buffering
 layout: redirect
-weight: 50
+weight: 60
 ---
 
 Cumulocity C++ SDK offers two message buffering methods in case of connection lost. To switch it, you just need to change the arguments to be parsed to `SrReporter()`. Linux Agent chooses memory-backed buffering by default.

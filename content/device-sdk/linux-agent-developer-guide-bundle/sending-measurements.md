@@ -1,7 +1,7 @@
 ---
 title: Lua plugin tutorial - Sending measurements
 layout: redirect
-weight: 20
+weight: 30
 ---
 
 Let's try sending CPU measurements to **Cumulocity IoT**. In this section, you will learn how to use the pre-defined timer function, to read parameters defined in _cumulocity-agent.conf_ file, and to send measurements with existing SmartREST1.0 template.

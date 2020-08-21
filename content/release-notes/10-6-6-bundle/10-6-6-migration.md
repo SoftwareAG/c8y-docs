@@ -6,7 +6,7 @@ layout: redirect
 
 ### Announcements
 
-#### Deprecation of CEL (Esper)
+#### End of support for CEL (Esper)
 
 This is a reminder (see also [Migration notes for release 10.5.0](https://cumulocity.com/guides/10.5.0/release-notes/10-5-0/#10-5-0-migration)), that Software AG will terminate support for using CEL (Esper) in Cumulocity IoT on 31 Dec 2020 following its deprecation in 2018.
 

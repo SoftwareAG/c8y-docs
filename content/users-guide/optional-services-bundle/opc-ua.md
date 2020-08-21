@@ -874,136 +874,138 @@ Power of 5 is 25:
 }
 ```
 
-#### Test a Device type against a node on an OPC UA Server
+#### Testing a device type against a node on an OPC UA server
 
-This operation allows for testing a device type against a specific node on an OPC UA server. The operations result provides diagnostic information if the device type could be applied:
+This operation allows for testing a device type against a specific node on an OPC UA server. The operation result provides diagnostic information if the device type could be applied:
 
-```
+```json
 {
-  "deviceId" : ""<server-device-Id>"",
-  "c8y_ua_command_TestDeviceTypeMatching": {
-    "deviceTypeId": "<device-type-id>"",
-    "rootNodeId" : "<node-id>"
-  },
-  "description":"Dry Run Device Type"
+   "deviceId":"<server-device-Id>",
+   "c8y_ua_command_TestDeviceTypeMatching":{
+      "deviceTypeId":"<device-type-id>",
+      "rootNodeId":"<node-id>"
+   },
+   "description":"Test Device Type"
 }
 ```
 
-If the device type can be applied to the given node, the operation results confirms this:
+If the device type can be applied to the given node, the operation result confirms this:
 
-```
-        {
-            "creationTime": "2020-08-20T12:28:57.973Z",
-            "deviceId": "12789",
-            "deviceName": "Test Server",
-            "id": "15478",
-            "status": "SUCCESSFUL",
-            "c8y_ua_command_TestDeviceTypeMatching": {
-                "deviceTypeId": "14989",
-                "rootNodeId": "nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic2"
-            },
-            "c8y_Command": {
-                "result": "{\n  \"matches\": true\n}",
-            },
-            "description": "Dry Run Device Type"
-        }
+```json
+{
+   "creationTime":"2020-08-20T12:28:57.973Z",
+   "deviceId":"12789",
+   "deviceName":"Test Server",
+   "id":"15478",
+   "status":"SUCCESSFUL",
+   "c8y_ua_command_TestDeviceTypeMatching":{
+      "deviceTypeId":"14989",
+      "rootNodeId":"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic2"
+   },
+   "c8y_Command":{
+      "result":"{\n  \"matches\": true\n}"
+   },
+   "description":"Test Device Type"
+}
 ```
 
 Otherwise, the operation result provides an explanation why the device type could not be matched to the given root node:
 
-```
+```json
 {
-    "creationTime": "2020-08-20T12:34:01.524Z",
-            "deviceId": "12789",
-            "deviceName": "Milo Reloaded",
-            "id": "15688",
-            "status": "SUCCESSFUL",
-            "c8y_ua_command_TestDeviceTypeMatching": {
-                "deviceTypeId": "14989",
-                "rootNodeId": "nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic9"
-            },
-            "c8y_Command": {
-                "result": "{\n  \"matches\": false,\n  \"reason\": \"Does not match browse path regex constraint, constraints: (.*Dynamic[1-3]), actual: [[http://opcfoundation.org/UA/:Root, http://opcfoundation.org/UA/:Objects, urn:cumulocity:opcua:test:server:Dynamic Playground, urn:cumulocity:opcua:test:server:Dynamic9]]\"\n}",
-                "syntax": null,
-                "text": null
-            },
-            "description": "Dry Run Device Type"
-        }
-```
-
-#### Analyze the set of nodes to which a device type can be applied (dry run)
-
-As explained earlier, the Cumulocity OPC UA Gateway performs an auto-discovery to determine the set of nodes that match a certain device type. The following operation performs an auto-discovery for the given deviceType on the server, without actually applying the device type to any node ("dry run"):
-
-```
-{
-        "deviceId": "<server-device-Id>",
-        "c8y_ua_command_DryRunDeviceTypeMatching": {
-          "deviceTypeId": "<device-type-id>"
-        },
-        "description":"Dry Run Device Type"
+   "creationTime":"2020-08-20T12:34:01.524Z",
+   "deviceId":"12789",
+   "deviceName":"Milo Reloaded",
+   "id":"15688",
+   "status":"SUCCESSFUL",
+   "c8y_ua_command_TestDeviceTypeMatching":{
+      "deviceTypeId":"14989",
+      "rootNodeId":"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic9"
+   },
+   "c8y_Command":{
+      "result":"{\n  \"matches\": false,\n  \"reason\": \"Does not match browse path regex constraint, constraints: (.*Dynamic[1-3]), actual: [[http://opcfoundation.org/UA/:Root, http://opcfoundation.org/UA/:Objects, urn:cumulocity:opcua:test:server:Dynamic Playground, urn:cumulocity:opcua:test:server:Dynamic9]]\"\n}",
+      "syntax":null,
+      "text":null
+   },
+   "description":"Test Device Type"
 }
 ```
 
-The device type id is the ID of the managed object containing the device type.
+#### Analyzing the set of nodes to which a device type can be applied (dry run)
+
+As explained earlier, the Cumulocity IoT OPC UA gateway performs an auto-discovery to determine the set of nodes that match a certain device type. The following operation performs an auto-discovery for the given device type on the server, without actually applying the device type to any node ("dry run"):
+
+```json
+{
+   "deviceId":"<server-device-Id>",
+   "c8y_ua_command_TestDeviceTypeMatching":{
+      "deviceTypeId":"<device-type-id>",
+      "rootNodeId":"<node-id>"
+   },
+   "description":"Test Device Type"
+}
+
+```
+
+The deviceTypeId is the ID of the managed object containing the device type.
 
 The result of the operation contains the set of nodes that match the device type. In addition to that, the fragment *matchednodes* is added to the operation. It contains a JSON representation of the matched nodes.
 
-```
+```json
 {
-            "creationTime": "2020-08-20T12:22:07.947Z",
-            "deviceId": "12789",
-            "deviceName": "Test Server",
-            "id": "15187",
-            "status": "SUCCESSFUL",
-            "c8y_Command": {
-                "result": "Device Type is currently disabled.\nDevice type would be applied to the following nodes \n[\n  {\n    \"nodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic2\",\n    \"deviceTypeId\": \"14989\",\n    \"mappedTargetNodes\": [\n      {\n        \"browsePath\": [\n          \"urn:cumulocity:opcua:test:server:Double\"\n        ],\n        \"targetNodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double2\"\n      }\n    ],\n    \"attrs\": {}\n  },\n  {\n    \"nodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic1\",\n    \"deviceTypeId\": \"14989\",\n    \"mappedTargetNodes\": [\n      {\n        \"browsePath\": [\n          \"urn:cumulocity:opcua:test:server:Double\"\n        ],\n        \"targetNodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double1\"\n      }\n    ],\n    \"attrs\": {}\n  },\n  {\n    \"nodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic3\",\n    \"deviceTypeId\": \"14989\",\n    \"mappedTargetNodes\": [\n      {\n        \"browsePath\": [\n          \"urn:cumulocity:opcua:test:server:Double\"\n        ],\n        \"targetNodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double3\"\n      }\n    ],\n    \"attrs\": {}\n  }\n]",
-                "matchedNodes": [
-                    {
-                        "mappedTargetNodes": [
-                            {
-                                "targetNodeId": "nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double2",
-                                "browsePath": [
-                                    "urn:cumulocity:opcua:test:server:Double"
-                                ]
-                            }
-                        ],
-                        "deviceTypeId": "14989",
-                        "nodeId": "nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic2"
-                    },
-                    {
-                        "mappedTargetNodes": [
-                            {
-                                "targetNodeId": "nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double1",
-                                "browsePath": [
-                                    "urn:cumulocity:opcua:test:server:Double"
-                                ]
-                            }
-                        ],
-                        "deviceTypeId": "14989",
-                        "nodeId": "nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic1"
-                    },
-                    {
-                        "mappedTargetNodes": [
-                            {
-                                "targetNodeId": "nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double3",
-                                "browsePath": [
-                                    "urn:cumulocity:opcua:test:server:Double"
-                                ]
-                            }
-                        ],
-                        "deviceTypeId": "14989",
-                        "nodeId": "nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic3"
-                    }
-                ],
-                "syntax": null,
-                "text": null
-            },
-            "description": "Dry Run Device Type",
-            "c8y_ua_command_DryRunDeviceTypeMatching": {
-                "deviceTypeId": "14989"
-            }
-        }
+   "creationTime":"2020-08-20T12:22:07.947Z",
+   "deviceId":"12789",
+   "deviceName":"Test Server",
+   "id":"15187",
+   "status":"SUCCESSFUL",
+   "c8y_Command":{
+      "result":"Device Type is currently disabled.\nDevice type would be applied to the following nodes \n[\n  {\n    \"nodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic2\",\n    \"deviceTypeId\": \"14989\",\n    \"mappedTargetNodes\": [\n      {\n        \"browsePath\": [\n          \"urn:cumulocity:opcua:test:server:Double\"\n        ],\n        \"targetNodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double2\"\n      }\n    ],\n    \"attrs\": {}\n  },\n  {\n    \"nodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic1\",\n    \"deviceTypeId\": \"14989\",\n    \"mappedTargetNodes\": [\n      {\n        \"browsePath\": [\n          \"urn:cumulocity:opcua:test:server:Double\"\n        ],\n        \"targetNodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double1\"\n      }\n    ],\n    \"attrs\": {}\n  },\n  {\n    \"nodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic3\",\n    \"deviceTypeId\": \"14989\",\n    \"mappedTargetNodes\": [\n      {\n        \"browsePath\": [\n          \"urn:cumulocity:opcua:test:server:Double\"\n        ],\n        \"targetNodeId\": \"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double3\"\n      }\n    ],\n    \"attrs\": {}\n  }\n]",
+      "matchedNodes":[
+         {
+            "mappedTargetNodes":[
+               {
+                  "targetNodeId":"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double2",
+                  "browsePath":[
+                     "urn:cumulocity:opcua:test:server:Double"
+                  ]
+               }
+            ],
+            "deviceTypeId":"14989",
+            "nodeId":"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic2"
+         },
+         {
+            "mappedTargetNodes":[
+               {
+                  "targetNodeId":"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double1",
+                  "browsePath":[
+                     "urn:cumulocity:opcua:test:server:Double"
+                  ]
+               }
+            ],
+            "deviceTypeId":"14989",
+            "nodeId":"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic1"
+         },
+         {
+            "mappedTargetNodes":[
+               {
+                  "targetNodeId":"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic/Double3",
+                  "browsePath":[
+                     "urn:cumulocity:opcua:test:server:Double"
+                  ]
+               }
+            ],
+            "deviceTypeId":"14989",
+            "nodeId":"nsu=urn:cumulocity:opcua:test:server;s=HelloWorld/Dynamic3"
+         }
+      ],
+      "syntax":null,
+      "text":null
+   },
+   "description":"Dry Run Device Type",
+   "c8y_ua_command_DryRunDeviceTypeMatching":{
+      "deviceTypeId":"14989"
+   }
+}
 ```
 
 

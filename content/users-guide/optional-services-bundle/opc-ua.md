@@ -942,7 +942,7 @@ As explained earlier, the Cumulocity IoT OPC UA gateway performs an auto-discove
       "deviceTypeId":"<device-type-id>",
       "rootNodeId":"<node-id>"
    },
-   "description":"Test Device Type"
+   "description":"Dry Run Device Type"
 }
 
 ```

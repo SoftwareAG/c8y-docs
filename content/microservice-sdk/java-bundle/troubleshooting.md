@@ -20,7 +20,7 @@ Import the certificate using the following command:
 $ $JAVA_HOME/bin/keytool -import -alias cumulocity -file cumulocity.com.crt -storepass changeit
 ```
 
-Answer "yes" to the question "Trust this certificate?".
+Confirm that you trust this certificate.
 
 Use the following argument to run Java:
 

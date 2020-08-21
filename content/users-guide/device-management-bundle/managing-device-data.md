@@ -8,7 +8,7 @@ layout: redirect
 
 In the firmware repository, Cumulocity IoT offers to collect reference firmware for devices.
 
-In Cumulocity IoT a firmware is any kind of installable of which kind only one exists on the device. Therefore, you can only apply one firmware for any given device. 
+As opposed to software, you can only apply one firmware for any given device. 
 
 #### Viewing firmware 
 
@@ -18,7 +18,7 @@ The available firmware objects will be displayed, presented as a list.
 
 ![Firmware List](/images/users-guide/DeviceManagement/devmgmt-firmware-list.png)
 
-Each entry shows the firmware name, the device type (if set) and a label indicating if and how many versions a firmware has.
+Each entry shows the firmware name, the device type (if set) and a label indicating if and how many versions are available for a particular firmware.
 
 When clicking on an entry, the details for this firmware are displayed along with all available versions and patches. 
 
@@ -30,32 +30,23 @@ The list of versions and patches shows the version name, an optional description
 
 #### Adding firmwares, firmware versions, or firmware patches
  
-##### To add a new firmware
+##### To add a new firmware or firmware version
 
 1. In the **Firmware repository** page, click **Add firmware** at the right of the top menu bar. 
-2. In the resulting dialog box, enter a name for the firmware, a description and its version (all required).
+2. In the resulting dialog box, 
+	* to add a new firmware, enter a name for the firmware, a description and its version (all required).
+	* to add a new version, select the firmware for which you want to add a new version from the dropdown list in the **Name** field and enter a version.
 3. Specify the file for the firmware by either uploading it from the file system or specifying a URL from where the firmware can be downloaded.
 4. Click **Save**.
 
 ![Add firmware](/images/users-guide/DeviceManagement/devmgmt-firmware-add.png)
 
-The firmware object will be added to the firmware list.
-
-##### To add a new firmware version
-
-1. In the **Firmware repository** page, click **Add firmware** at the right of the top menu bar. 
-2. In the resulting dialog box, select the firmware, for which you want to add a new version, from the dropdown list in the **Name** field. 
-3. Enter a version.
-3. Specify the file for the firmware by either uploading it from the file system or specifying a URL from where the firmware can be downloaded.
-4. Click **Save**.
+The firmware object will be added to the firmware list or the firmware version will be added to the firmware details and the version label will be updated accordingly. 
 
 If you click **Add firmware** from within the details of a specific firmware, the dialog box looks slightly different as the firmware is already selected. 
 
 ![Add firmware version](/images/users-guide/DeviceManagement/devmgmt-firmware-add-version.png)
 
-The firmware version will be added to the firmware details. Moreover, the firmware list indicates that a version is available for the specific firmware. 
-
-![Version label](/images/users-guide/DeviceManagement/devmgmt-firmware-version-label.png)
 
 ##### To add a new firmware patch
 
@@ -77,11 +68,7 @@ The firmware patch will be added to the version details within the firmware deta
 1. Click the menu icon at the right of a specific firmware entry and in the context menu click **Edit**.
 2. Update the name, description or device type filter by clicking the pencil icon next to it. Make the desired changes and click **Save**. 
 
-The firmware will be updated.
-
-#### To download a firmware
-
-<No longer possible?>
+The firmware will be updated accordingly.
 
 #### Deleting firmwares, firmware versions, or firmware patches 
 
@@ -89,34 +76,44 @@ The firmware will be updated.
 
 Click the menu icon at the top right of a firmware entry and in the context menu click **Delete**.
 
-The object will be deleted from the list.
+The object will be deleted from the firmware repository.
 
 ##### To delete a firmware version or patch
 
 In the details of a specific firmware, hover over the version or patch entry you want to delete and click the delete icon. The firmware version or patch will be deleted from the firmware details.
 
 
-#### To install firmware on a device
+#### Managing firmware on a device
 
-1. Click **All devices** in the **Devices** menu in the navigator and select a device from the device list.
-2. Open the **Software** tab for the device and click **Install firmware**, see also the description of the **Software** tab in [Device details](/users-guide/device-management#software).
+In the **Firmware** tab of a device you can manage the installed firmware for the device.
 
->**Info:** To store other types of binaries in Cumulocity IoT, switch to the [Administration application](/users-guide/administration#files).
+Click **All devices** in the **Devices** menu in the navigator, select the desired device from the device list and open its **Firmware** tab. 
 
-#### To install firmware on multiple devices
+![Firmware tab](/images/users-guide/DeviceManagement/devmgmt-firmware-tab.png)
 
-Cumulocity IoT offers the option to execute firmware or software updates for multiple devices at once. To do so, follow these steps:
+#### To install/replace firmware on a device
 
-1. Execute the software update in a single device to test that the new version really works.
-2. Navigate to operation and select **Execute for the whole group**.
-3. Fill in the fields to schedule the bulk operation and click **Create**.
+1. In the **Firmware** tab, click **Install firmware** (or **Replace firmware** if there is already firmware installed on the device).
+3. Select a firmware and the desired version from the list, which contains all firmware available in the firmware repository.
+4. Click **Install**.
+
+![Install firmware](/images/users-guide/DeviceManagement/devmgmt-firmware-install.png)
+
+The firmware will be installed on the device.
+
+#### To install/update firmware on multiple devices
+
+Cumulocity IoT offers the option to execute firmware updates for multiple devices at once. 
+
+1. Execute the firmware operation (install or replace) on a single device to test that the new version works.
+2. Navigate to the operation in the **Control** tab and in the context menu select **Schedule as bulk operation**. 
+3. Fill in the fields to schedule the bulk operation and click **Create**. For details on bulk operations, see [Monitoring and controlling devices](/users-guide/device-management/#monitoring-and-controlling-devices).
 
 The operation status can be viewed in the **Bulk operations** tab of the selected group, see [Bulk operations](#bulk-operations).
 
-
 ### <a name="software-repo"></a> Managing device software
 
-In the software repository, Cumulocity IoT offers to collect reference software for devices.
+In the software repository, Cumulocity IoT offers to collect reference software for devices. As opposed to firmware, multiple software can be installed on a device.
 
 #### Viewing software 
 
@@ -126,7 +123,7 @@ The available software objects will be displayed, presented as a list.
 
 ![Software list](/images/users-guide/DeviceManagement/devmgmt-software-repository.png)
 
-Each entry shows the software name, the device type (if set) and a label indicating if and how many versions a software has.
+Each entry shows the software name, the device type (if set) and a label indicating if and how many versions are available for a particular software.
 
 When clicking on an entry, the details for this software are displayed along with all available versions. 
 
@@ -138,43 +135,31 @@ The list of versions shows the version name, an optional description, and the na
 
 #### Adding software and software versions
  
-##### To add a new sofware
+##### To add a new software or software version
 
 1. In the **Software repository** page, click **Add software** at the right of the top menu bar. 
-2. In the resulting dialog box, enter a name for the software, a description and its version (all required).
+2. In the resulting dialog box, 
+	* to add a new software, enter a name for the software, a description and its version (all required).
+	* to add a new version, select the software for which you want to add a new version from the dropdown list in the **Name** field and enter a version.
 3. Specify the file for the software by either uploading it from the file system or specifying a URL from where the software can be downloaded.
 4. Click **Save**.
 
 ![Add software](/images/users-guide/DeviceManagement/devmgmt-software-add.png)
 
-The software object will be added to the software list.
-
-##### To add a new software version
-
-1. In the **Software repository** page, click **Add software** at the right of the top menu bar. 
-2. In the resulting dialog box, select the software, for which you want to add a new version, from the dropdown list in the **Name** field. 
-3. Enter a version.
-3. Specify the file for the software by either uploading it from the file system or specifying a URL from where the software can be downloaded.
-4. Click **Save**.
+The software object will be added to the software list or the software version will be added to the software details and the version label will be updated accordingly.
 
 If you click **Add software** from within the details of a specific software, the dialog box looks slightly different as the software is already selected. 
 
 ![Add software version](/images/users-guide/DeviceManagement/devmgmt-software-add-version.png)
 
-The software version will be added to the software details. Moreover, the software list indicates that a version is available for the specific software. 
-
-![Version label](/images/users-guide/DeviceManagement/devmgmt-software-version-label.png)
 
 #### To edit a software
 
 1. Click the menu icon at the right of a specific software entry and in the context menu click **Edit**.
 2. Update the name, description or device type filter by clicking the pencil icon next to it. Make the desired changes and click **Save**. 
 
-The software will be updated.
+The software will be updated accordingly.
 
-#### To download a firmware
-
-<No longer possible?>
 
 #### Deleting softwares or software versions
 
@@ -182,40 +167,57 @@ The software will be updated.
 
 Click the menu icon at the top right of a software entry and in the context menu click **Delete**.
 
-The object will be deleted from the list.
+The object will be deleted from the software repository.
 
 ##### To delete a software version
 
 In the details of a specific software, hover over the version entry you want to delete and click the delete icon. The software version will be deleted from the software details.
 
 
+#### Managing software on a device
 
+In the **Software** tab of a device you can manage the software for the particular device.
 
+Click **All devices** in the **Devices** menu in the navigator, select the desired device from the device list and open its **Software** tab. 
 
+The **Software** tab shows a list of all available software installed on the device.
 
+![Software tab](/images/users-guide/DeviceManagement/devmgmt-software-tab.png)
 
-#### To download a software object
+Additionally, it shows the operation status for the last operation (successful or failed). Clicking on the operation will take you to the **Control** tab where you can see further details on the operation, see also [Device details > Control](/users-guide/device-management/#control).  
 
+##### To install software on a device
 
-#### To install firmware/software on a device
+2. In the **Software** tab, click **Install software**.
+3. Select a software and the desired version from the list, which contains all software available in the software repository.
+4. Click **Install**.
 
-1. Click **All devices** in the **Devices** menu in the navigator and select a device from the device list.
-2. Open the **Software** tab for the device and click **Install firmware**, see also the description of the **Software** tab in [Device details](/users-guide/device-management#software).
+![Install software](/images/users-guide/DeviceManagement/devmgmt-software-install.png)
 
->**Info:** To store other types of binaries in Cumulocity IoT, switch to the [Administration application](/users-guide/administration#files).
+The software will be installed on the device.
 
-#### To install firmware/software on multiple devices
+##### To update software on a device
 
-Cumulocity IoT offers the option to execute firmware or software updates for multiple devices at once. To do so, follow these steps:
+Hover over the software entry which you want to update and click **Update**.
+Select a version from the list and click **Update** again.
 
-1. Execute the software update in a single device to test that the new version really works.
-2. Navigate to operation and select **Execute for the whole group**.
-3. Fill in the fields to schedule the bulk operation and click **Create**.
+![Update software](/images/users-guide/DeviceManagement/devmgmt-software-update.png)
+
+The software will be updated with the selected version.
+
+##### To delete software from a device
+
+Hover over the software entry which you want to delete and click the delete icon.
+
+##### To install software on multiple devices
+
+Cumulocity IoT offers the option to execute software updates for multiple devices at once. 
+
+1. Execute the software operation (install or update) on a single device to test that the new version works.
+2. Navigate to the operation in the **Control** tab and in the context menu select **Schedule as bulk operation**. 
+3. Fill in the fields to schedule the bulk operation and click **Create**. For details on bulk operations, see [Monitoring and controlling devices](/users-guide/device-management/#monitoring-and-controlling-devices).
 
 The operation status can be viewed in the **Bulk operations** tab of the selected group, see [Bulk operations](#bulk-operations).
-
-
-
 
 ### <a name="configuration-repository"></a>Configuration repository
 

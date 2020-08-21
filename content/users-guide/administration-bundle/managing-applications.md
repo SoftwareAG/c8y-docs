@@ -151,6 +151,12 @@ In the Standard Tenant you will find the following default applications:
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
+<td style="text-align:left"><a href="/users-guide/cockpit#reports" class="no-ajaxy">Report agent</a></td>
+<td style="text-align:left">Allows to schedule data exports from within the Cockpit application.</td>
+<td style="text-align:left">report-agent</td>
+<td style="text-align:left">Microservice</td>
+</tr>
+<tr>
 <td style="text-align:left"><a href="/users-guide/cockpit#smart-rules" class="no-ajaxy">Smart Rules</a></td>
 <td style="text-align:left">Use the Smart Rule engine and create <a href="/users-guide/cockpit#smart-rules" class="no-ajaxy">Smart Rules</a> to perform actions based on realtime data. Requires one of the following applications: "Cep", "Apama"</td>
 <td style="text-align:left">smartrule</td>

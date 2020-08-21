@@ -38,6 +38,7 @@ The following is a list of the alarms. The information further down below explai
 - [An EPL file throws an uncaught exception](#apama_ctrl_error)
 - [An EPL file blocks the correlator context for too long](#apama_ctrl_warn)
 - [Multiple extensions with the same name](#extension_error)
+- [Smart rule restore failed](#smartrule_restore_failed)
 - [Connection to correlator lost](#lost_correlator_connection)
 - [The correlator queue is full](#application_queue_full)
 - [The CEP queue is full](#cep_queue_full) (this alarm is coming from Cumulocity IoT Core, but concerns Apama-ctrl)
@@ -63,12 +64,12 @@ Once you see this alarm, you can be sure that your change is effective.
 This alarm is raised whenever the Apama-ctrl microservice switches to Safe mode.
 
 - Alarm type: `apama_safe_mode`
-- Alarm text: Apama has exited unexpectedly. As a precaution, user-provided EPL, Analytics Builder models and extensions that might have caused this have been disabled. Refer to the audit log for more details. Please check any recent alarms, or contact support or your administrator.
+- Alarm text: Apama has exited unexpectedly more than once. As a precaution, user-provided EPL, Analytics Builder models and extensions that might have caused this have been disabled. Refer to the audit log for more details. Please check any recent alarms, or contact support or your administrator.
 - Alarm severity: CRITICAL
 
 In the case of unexpected restarts, Apama-ctrl assumes that they may have been caused by user error. For example, an EPL app that consumes more memory than is available, or an extension containing bugs. To avoid an infinite restart loop caused by these errors, Safe mode is activated, resulting in all user-provided content being disabled.
 
-The microservice checks on every restart if it has restarted in the last 20 minutes. If so, the microservice considers the restart as unexpected and enables Safe mode. Otherwise, it treats the restart as a normal restart. Safe mode can be erroneously triggered by the user manually unsubscribing and resubscribing the microservice too quickly, or by problems in the hosting infrastructure that cause frequent restarts.
+The microservice checks on every restart the number of times the microservice has been restarted in the last 20 minutes and triggers Safe mode if the count is greater than 2. In this case, the microservice considers the restart as unexpected and enables Safe mode. Otherwise, it treats the restart as a normal restart. Safe mode can be erroneously triggered by the user manually unsubscribing and resubscribing the microservice too quickly, or by problems in the hosting infrastructure that cause frequent restarts.
 
 You can check the mode of the microservice (either Normal or Safe mode) by making a REST request to *service/cep/diagnostics/apamaCtrlStatus* (available as of Apama EPL Apps 10.5.7 and Apama Analytics Builder 10.5.7), which contains a `safe_mode` flag in its response.
 
@@ -254,6 +255,15 @@ This alarm is raised when the Apama-ctrl microservice tries to activate the depl
 This disables all extensions that were deployed to Apama-ctrl. In order to use the deployed extensions, the user has to decide which extensions to keep and then delete the duplicate ones.
 
 **Info:** In case of multiple duplicates, this alarm is only listed once.
+
+#### <a name="smartrule_restore_failed"></a>Smart rule restore failed
+
+This alarm is raised if a corrupt smart rule is present in the inventory and the correlator therefore fails to recover it correctly during startup.
+
+- Alarm type: `smartrule_restore_failed`
+- Alarm text: Smart rule restore failed. Contact support.
+
+To diagnose the cause, download the diagnostics overview ZIP file as described in [Downloading diagnostics and logs](#diagnostics-download). Or, if that fails, log on as an administrator and look at the result of a GET request to */service/smartrule/smartrules*. Review the smart rules JSON and look for invalid smart rule configurations. Such smart rules may need to be deleted or corrected.
 
 #### <a name="lost_correlator_connection"></a>Connection to correlator lost
 

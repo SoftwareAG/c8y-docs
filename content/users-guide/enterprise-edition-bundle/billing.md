@@ -1,6 +1,6 @@
 ---
 weight: 110
-title: Microservice Billing
+title: Billing
 layout: redirect
 ---
 

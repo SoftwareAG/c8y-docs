@@ -212,8 +212,8 @@ You can view operations at the level of individual devices and across all device
 
 There are two types of operations in **Device control**, each represented by a tab:
 
-* **Single operations** execute on a single device, see [To view single operations](#to-view-single-operations)
-* **Bulk operations** comprise of the same single operation executed on a set of devices, see [To view bulk operations](#to-view-bulk-operations)
+* **Single operations** execute on a single device, see [To view single operations](#to-view-single-operations).
+* **Bulk operations** comprise of the same single operation executed on a set of devices, see [To view bulk operations](#to-view-bulk-operations).
 
 #### To view single operations
 
@@ -254,11 +254,11 @@ Click **Reload** to update the list once manually.
 
 >**Info:** Single operations are listed in descending time order. Operations are executed strictly according to this order.
 
-#### To create and execute single operations
+#### To add and execute a single operation
 
 Operations for a specific device are created and executed in the **Shell** tab of the device, see [Device details > Shell](/users-guide/device-management#shell).
 
-When you create a [bulk operation](#to-create-bulk-operations), the single operations entailed in the bulk operation will also be added to the list of single operations.
+When you create a [bulk operation](#to-add-a-bulk-operation), the single operations entailed in the bulk operation is also added to the list of single operations.
 
 >**Important:** When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
 
@@ -269,7 +269,7 @@ You can cancel particular pending single operations or all pending single operat
 To cancel a particular pending single operation, hover over the pending single operation, then click the menu icon and select **Cancel operation**.
 
 To cancel all pending operations at once, click **More...** at the right of the top menu bar and select **Cancel all pending operations**.
-Alternatitvely, filter the list of single operations to show only single operations with status PENDING, then click **Cancel all** at the right of the top menu bar.
+Alternatively, filter the list of single operations to show only single operations with status PENDING, then click **Cancel all** at the right of the top menu bar.
 
 #### To view bulk operations
 
@@ -330,14 +330,14 @@ Click **Realtime** at the right of the top menu bar to see operations coming in 
 
 >![Old bulk operations](/images/users-guide/DeviceManagement/devmgmt-bulkoperations.png)
 
-#### <a name="bulk-operations"></a>To create bulk operations
+#### <a name="bulk-operations"></a>To add a bulk operation
 
 There are two ways of creating a bulk operation:
 
-* Use the [bulk operation wizard](#to-create-a-bulk-operation-with-the-wizard)
+* Use the [bulk operation wizard](#to-add-a-bulk-operation-using-the-wizard)
 * [Schedule a single operation as bulk operation](#to-schedule-a-single-operation-as-bulk-operation)
 
-##### To create a bulk operation with the wizard
+##### To add a a bulk operation using the wizard
 
 Follow these steps:
 
@@ -346,23 +346,31 @@ Follow these steps:
     ![Select a bulk operation type](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-type.png)
 3. The resulting wizard has four steps. The first two steps differ depending on the operation type:
   * **Configuration update**
-      1. Select a configuration from the list. The list can be filtered by configuration type or by configuration name. Click **Next**.
-      2. Check the preview of the selected configuration. Click **Next**.
+      * Select a configuration from the list. The list can be filtered by configuration type or by configuration name. Click **Next**.
+      * Check the preview of the selected configuration. Click **Next**.
   * **Firmware update**
-      1. Select a firmware from the list. The list can be filtered by firmware name. Click **Next**.
-      2. Expand a version and select a patch. Click **Next**.
+      * Select a firmware from the list. The list can be filtered by firmware name. Click **Next**.
+      * Expand a version and select a patch. Click **Next**.
   * **Software update**
-      1. Expand a software from the list and select a version, then also choose to install/update or remove the software from the dropdown list. The list of available software can be filtered by device type or by software name. Click **Next**.
-      2. Confirm the selection and click **Next**.
+      * Expand a software from the list and select a version, then also choose to install/update or remove the software from the dropdown list. The list of available software can be filtered by device type or by software name. Click **Next**.
+      * Confirm the selection and click **Next**.
   * **Apply device profile**
-      1. Select a device profile from the list. The list can be filtered by device type or by profile name. Click **Next**.
-      2. Confirm the selection and click **Next**.
+      * Select a device profile from the list. The list can be filtered by device type or by profile name. Click **Next**.
+      * Confirm the selection and click **Next**.
 4. Select target devices by applying filters to the paginated list of all devices. You can filter by status, name, type, model, group, registration date and alarms. You may apply multiple filters. To apply a filter, click the column header, make your filter option choices in the context menu and click **Apply**. You can clear all filters by clicking **Clear filters** above the list. For the operation types "configuration update", "software update" and "apply device profile", the list is already filtered by the according device type. Click **Next**.
     ![Bulk operation wizard, step 3](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step3.png)
 5. Select a start date and a delay. The delay may either be in seconds or milliseconds and is the time spent between each single operation of the bulk operation. Click **Schedule bulk operation** to create the bulk operation.
     ![Bulk operation wizard, step 4](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step4.png)
 
-##### <a name="bulk-operations"></a>To edit the schedule of bulk operations
+##### To schedule a single operation as bulk operation
+
+You can schedule a single operation as a bulk operation either from the **Single operations** tab or from a **Control** tab of a particular device.
+Follow these steps:
+
+1. Hover over the single operation you want to schedule as a bulk operation, click the menu icon and then click **Schedule as bulk operation**.
+2. The resulting wizard is similar to the new bulk operation wizard described in [To add a bulk operation using the wizard](#to-add-a-bulk-operation-using-the-wizard). However, there are just two steps because the operation type is inferred from the operation that is scheduled as a bulk operation. See the description of the [full wizard](#to-add-a-bulk-operation-using-the-wizard) and follow it.
+
+#### <a name="bulk-operations"></a>To edit the schedule of bulk operations
 
 You may only edit the schedule of bulk operations with status = SCHEDULED.
 
@@ -374,19 +382,11 @@ The changes will be applied to the bulk operation accordingly.
 
 ![Reschedule bulk operations](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operations-reschedule.png)
 
-##### <a name="bulk-operations"></a>To cancel bulk operations
+#### <a name="bulk-operations"></a>To cancel bulk operations
 
 You may only cancel bulk operations with status = SCHEDULED.
 
 Hover over the bulk operation you want to cancel, click the menu icon, and then click **Cancel bulk operation**.
-
-#### To schedule a single operation as bulk operation
-
-You can schedule a single operation as a bulk operation either from the **Single operations** tab or from a **Control** tab of a particular device.
-Follow these steps:
-
-1. Hover over the single operation you want to schedule as a bulk operation, click the menu icon and then click **Schedule as bulk operation**.
-2. The resulting wizard is similar to the wizard in [To create a bulk operation with the wizard](#to-create-a-bulk-operation-with-the-wizard). However, there are just two steps because the operation type is inferred from the operation that is scheduled as a bulk operation. See the description of the [full wizard](#to-create-a-bulk-operation-with-the-wizard) and follow it.
 
 #### To retry failed operations
 

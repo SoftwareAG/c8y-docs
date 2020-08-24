@@ -69,7 +69,7 @@ This alarm is raised whenever the Apama-ctrl microservice switches to Safe mode.
 
 In the case of unexpected restarts, Apama-ctrl assumes that they may have been caused by user error. For example, an EPL app that consumes more memory than is available, or an extension containing bugs. To avoid an infinite restart loop caused by these errors, Safe mode is activated, resulting in all user-provided content being disabled.
 
-The microservice checks on every restart the number of times the microservice has been restarted in the last 20 minutes and triggers Safe mode if the count is greater than 2. In this case, the microservice considers the restart as unexpected and enables Safe mode. Otherwise, it treats the restart as a normal restart. Safe mode can be erroneously triggered by the user manually unsubscribing and resubscribing the microservice too quickly, or by problems in the hosting infrastructure that cause frequent restarts.
+On every restart, the microservice checks the number of restarts that happened in the last 20 minutes. If the number is greater than 2, it enables Safe mode. Otherwise, it treats the restart as a normal restart. Safe mode can be erroneously triggered by a user manually unsubscribing and resubscribing the microservice too quickly, or by problems in the hosting infrastructure that cause frequent restarts. The restart count is reset once Safe mode is enabled or if the restart happens after more than 20 minutes since the previous restart.
 
 You can check the mode of the microservice (either Normal or Safe mode) by making a REST request to *service/cep/diagnostics/apamaCtrlStatus* (available as of Apama EPL Apps 10.5.7 and Apama Analytics Builder 10.5.7), which contains a `safe_mode` flag in its response.
 
@@ -271,6 +271,7 @@ This alarm is raised in certain cases when the connection between the Apama-ctrl
 
 - Alarm type: `lost_correlator_connection`
 - Alarm text: Unable to ping correlator:  &lt;message&gt;, Apama-ctrl will restart.
+- Alarm severity: MAJOR
 
 Apama-ctrl will automatically restart. Report this to Software AG Support if this is happening frequently.
 

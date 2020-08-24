@@ -256,6 +256,12 @@ Click **Reload** to update the list once manually.
 
 >**Info:** Single operations are listed in descending time order. Operations are executed strictly according to this order.
 
+#### To create and execute single operations
+
+Operations for a specific device are created and executed in the **Shell** tab of the device, see [Device details > Shell](/users-guide/device-management#shell).
+
+>**Important:** When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
+
 #### To view bulk operations
 
 See the list of bulk operations in the **Bulk operations** tab.
@@ -315,18 +321,12 @@ Click **Realtime** at the right of the top menu bar to see operations coming in 
 
 >![Old bulk operations](/images/users-guide/DeviceManagement/devmgmt-bulkoperations.png)
 
-#### To create and execute single operations
-
-Operations for a specific device are created and executed in the **Shell** tab of the device, see [Device details > Shell](/users-guide/device-management#shell).
-
->**Important:** When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
-
 #### <a name="bulk-operations"></a>To create bulk operations
 
 There are two ways of creating a bulk operation:
 
-* Use the bulk operation wizard
-* Schedule a single operation as bulk operation
+* Use the [bulk operation wizard](#to-create-a-bulk-operation-with-the-wizard)
+* [Schedule a single operation as bulk operation](#to-schedule-a-single-operation-as-bulk-operation)
 
 ##### To create a bulk operation with the wizard
 
@@ -353,14 +353,6 @@ Follow these steps:
 5. Select a start date and a delay. The delay may either be in seconds or milliseconds and is the time spent between each single operation of the bulk operation. Click **Schedule bulk operation** to create the bulk operation.
     ![Bulk operation wizard, step 4](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step4.png)
 
-##### To schedule a single operation as bulk operation
-
-You can schedule a single operation as a bulk operation either from the **Single operations** tab or from a **Control** tab of a particular device.
-Follow these steps:
-
-1. Hover over the single operation you want to schedule as a bulk operation, click the menu icon and then click **Schedule as bulk operation**.
-2. The resulting wizard is similar to the wizard in [To create a bulk operation with the wizard](#to-create-a-bulk-operation-with-the-wizard). However, there are just two steps because the operation type is inferred from the operation that is scheduled as a bulk operation. See the description of the [full wizard](#to-create-a-bulk-operation-with-the-wizard) and follow it.
-
 ##### <a name="bulk-operations"></a>To edit the schedule of bulk operations
 
 You may only edit the schedule of bulk operations with status = SCHEDULED.
@@ -378,6 +370,14 @@ The changes will be applied to the bulk operation accordingly.
 You may only cancel bulk operations with status = SCHEDULED.
 
 Hover over the bulk operation you want to cancel, click the menu icon, and then click **Cancel bulk operation**.
+
+##### To schedule a single operation as bulk operation
+
+You can schedule a single operation as a bulk operation either from the **Single operations** tab or from a **Control** tab of a particular device.
+Follow these steps:
+
+1. Hover over the single operation you want to schedule as a bulk operation, click the menu icon and then click **Schedule as bulk operation**.
+2. The resulting wizard is similar to the wizard in [To create a bulk operation with the wizard](#to-create-a-bulk-operation-with-the-wizard). However, there are just two steps because the operation type is inferred from the operation that is scheduled as a bulk operation. See the description of the [full wizard](#to-create-a-bulk-operation-with-the-wizard) and follow it.
 
 #### To retry failed operations
 

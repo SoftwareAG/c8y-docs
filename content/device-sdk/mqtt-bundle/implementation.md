@@ -14,23 +14,30 @@ Available ports:
 
 | &nbsp; | TCP | WebSockets |
 |:-----|:----|:----|
-| one-way SSL | 8883 | 443 |
+| SSL | 8883 | 443 |
 | no SSL | 1883 | 80 |
-| experimental two-way SSL | 1884 | - |
 
-For experimental two-way SSL the port 1884 has to be enabled. To do that, add the following rule to Chef:
+Port 8883 supports two types of SSL: two-way SSL using certificates for client authorization and one-way SSL using username and password for client authorization.
+To turn on two-way SSL support, add the following rule to Chef:
 
 ```
 "MQTTClientCert" => {
     "enabled" => true,
-    "enableTransparentSSLPort" => false
 }
 ```
 
-*   `enabled` - Open the port 1884 and let devices authorize using a certificate with TCP (it is not available with WebSockets right now).
-*   `enableTransparentSSLPort` - Redirect the whole communication (ports) from 1883 to 1884 (use `false` since handling client authorization via username and password is not implemented yet), so right now it will enforce using certificates by devices also on 1883 port (which is highly not recommended).
+*   `enabled` - Enables two-way SSL on the port 8883 and let devices authorize using a certificate with TCP (it is not available with WebSockets right now).
 
 > **Info**: To use WebSockets you need to connect to the path <kbd>/mqtt</kbd> and follow the [MQTT standard](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718127) for WebSocket communication.
+
+#### Specific cases:
+
+##### A device sends correct username and password, but incorrect certificate at the same time:
+If the platform is configured to support two-way SSL, your devices have a configured keystore with invalid certificates and you want to use basic authorization, we recommend you to turn off sending certificates during connection. Certificates may be invalid because they expired or the root certificate is not uploaded to the platform. Turn off certificate sending in the device’s software. If that is not possible, make sure of the following to make the connection work:
+* The platform's trust store cannot be empty. At least one trusted certificate has to be uploaded to the platform.
+* The platform's property "auth.device-certificates.tls.return-accepted-issuers" has to be set to true.
+* The device's mqtt client has to be configured to not send certificates if it does not find its root certificate in the accepted issuers list returned by the server during handshake. In most cases this happens automatically. It is known that it’s not working with the mqtt client and Java 11. However, it works with Java 8.
+* If all of the cases above are met and the device connection is still rejected due to certificates validation, then probably some other tenant uploaded a certificate with the same 'Common Name' as one of those sent by your device. In this case the device will always try to authorize itself with certificates.  
 
 ### SmartREST payload
 

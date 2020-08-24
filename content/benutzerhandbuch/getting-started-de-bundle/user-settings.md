@@ -39,10 +39,6 @@ Das Menü **Benutzer** enthält folgende Elemente:
 <td style="text-align:left">Erlaubt Supportbenutzern den Zugriff auf Ihr Konto. Diese Option ist nur verfügbar, wenn der Supportbenutzerzugriff im Management-Mandanten nicht global für Untermandanten-Benutzer festgelegt ist, weitere Informationen siehe <a href="/benutzerhandbuch/enterprise-edition-de#users-in-other-tenants" class="no-ajaxy">Support für Benutzer in anderen Mandanten</a>. Nachdem der Supportbenutzerzugriff aktiviert wurde, wird das Menüelement durch <strong>Support deaktivieren</strong> ersetzt. Wenn sich Ihre Supportanfrage erledigt hat, doch die Dauer für den Supportbenutzerzugriff noch nicht abgelaufen ist (standardmäßig 24 Stunden), können Sie eine Supportbenutzeranfrage hier aktiv deaktivieren.</td>
 </tr>
 <tr>
-<td style="text-align:left">Supportanfrage stellen</td>
-<td style="text-align:left">Öffnet die URL, die als Supportseite bereitgestellt wurde. Wenn keine benutzerdefinierte URL bereitgestellt wurde, wird die Seite der Software AG TechCommunity geöffnet.</td>
-</tr>
-<tr>
 <td style="text-align:left">Versionen</td>
 <td style="text-align:left">Zeigt Informationen zu der von Ihnen verwendeten Cumulocity IoT-Version an, zum Beispiel 10.5.7, für Backend und Benutzeroberfläche. Zeigt außerdem die ID Ihres Mandanten an, die bei einer Supportanfrage erforderlich sein kann. Klicken Sie auf das Kopieren-Symbol neben der Mandanten-ID, um diese in die Zwischenablage zu kopieren.</td>
 </tr>

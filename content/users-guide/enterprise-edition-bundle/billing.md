@@ -10,8 +10,8 @@ The Cumulocity IoT platform collects a lot of different usage statistics data wh
 
 Based on the contract, there are two pricing models for billing:
 
-* Tenant usage pricing model - relies on tenant usage statistics
-* Device pricing model - relies mostly on device statistics and microservice resource usage
+* Tenant usage pricing model - based on tenant usage statistics
+* Device pricing model - based mostly on device statistics and microservice resource usage
 
 The table below presents which values are used in each model for billing purposes:
 

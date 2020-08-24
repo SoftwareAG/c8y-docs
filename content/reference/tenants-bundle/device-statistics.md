@@ -33,7 +33,7 @@ Frequently asked questions:
 Separately for each child. 
  
 
-### DeviceStatistics
+### <a name="device-statistics"></a>DeviceStatistics
 
 |Name|Type|Occurs|Description|
 |:---|:---|:-----|:----------|

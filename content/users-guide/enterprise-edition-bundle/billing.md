@@ -1,18 +1,21 @@
 ---
 weight: 110
-title: Billing
+title: Microservice Billing
 layout: redirect
 ---
 
-### Used statistics
+### Usage statistics
 
-Platform collects a lot of different usage statistics which are then used to bill the customers. Based on the contract there are two ways how bills are created:
-* tenant usage pricing model - relies on tenant usage statistics
-* device pricing model - relies mostly on device statistics and microservice resource usage
+The Cumulocity IoT platform collects a lot of different usage statistics data which is used for billing customers. 
 
-Below table presents what values are used when creating a bill for customer in both cases:
+Based on the contract, there are two pricing models for billing:
 
-|Source|Name|Used in tenant usage pricing model|Used in device pricing model|
+* Tenant usage pricing model - relies on tenant usage statistics
+* Device pricing model - relies mostly on device statistics and microservice resource usage
+
+The table below presents which values are used in each model for billing purposes:
+
+|Source|Name|Tenant usage pricing model|Device pricing model|
 |:-----|:---|:----------------------------|:-----------------------------------|
 |[TenantUsageStatistics](#usage-stats)|ID|x|x|
 |[TenantUsageStatistics](#usage-stats)|Name|x|x|

@@ -66,9 +66,18 @@ Migrating from custom rules written in CEL to Apama EPL requires rewriting and r
 
 1. Lock down the CEP custom rules on the existing tenant to prevent change.
 2. Make available a new tenant on which Apama has been enabled.
-3. Manually convert all CEP custom rules from the existing tenant into equivalent Apama EPL apps on the new tenant.
-4. Manually recreate all smart rules from the existing tenant on the new tenant, if the custom rules depend on the output of smart rules.
-5. Test the behavior of the new custom rules, checking for memory leaks and performance as well as correctness. 
-6. When all rules have been developed and tested, move your production tenant from CEP to Apama. Any unmodified smart rules will migrate automatically. Delete any smart rules where the CEL version had been modified and a new Apama custom rule implements those changes. Deploy your newly developed Apama rules in the production tenant.
+3. Manually convert all old custom rules from the existing tenant into equivalent Apama EPL apps on the new tenant. Refer to the rest of this guide, in particular [Best practices and guidelines](/apama/best-practices/). This includes smart rules where the CEL has been modified.
+4. Test the behavior of the new EPL apps by sending, for example, measurements or events into the new tenant and verifying that the new EPL apps respond appropriately.
+5. When all rules have been developed and tested, move your production tenant from CEP to Apama. 
+   * Any unmodified smart rules will migrate automatically. 
+   * Delete any smart rules where the CEL version had been modified and a new EPL app has been implemented. 
+   * Deploy your newly developed EPL apps in the production tenant.
 
 You can also choose to work with Software AG Professional Services to help ensure the migration is as smooth as possible. Software AG Professional Services can help migrate CEL code into Apama EPL code and they can also provide training on using Apama in Cumulocity IoT.
+
+### Handling scheduled exports
+
+Scheduled exports must be migrated to the report-agent microservice. This can be performed by opening a report in the Cockpit application. See also [Exporting data](/users-guide/cockpit/#export) in the *User guide*.
+
+
+>**Info:** To use the new export schedule feature and for the migration to work, the report-agent microservice needs to be subscribed. New tenants will be subscribed to it automatically. Existing tenants should make sure that they are subscribed to it.

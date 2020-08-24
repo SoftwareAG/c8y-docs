@@ -210,12 +210,10 @@ You can view operations at the level of individual devices and across all device
 * To view the operations for all devices, click **Device control** in the **Overview** menu in the navigator.
 * To view the operations of a particular device, switch to the **Control** tab in the details of this device.
 
-There are two types of operations in **Device control**:
+There are two types of operations in **Device control**, each represented by a tab:
 
-* **Single operations** execute on a single device
-* **Bulk operations** comprise of the same single operation executed on a set of devices
-
-Both types of operations are represented by a tab.
+* **Single operations** execute on a single device, see [To view single operations](#to-view-single-operations)
+* **Bulk operations** comprise of the same single operation executed on a set of devices, see [To view bulk operations](#to-view-bulk-operations)
 
 #### To view single operations
 
@@ -260,7 +258,18 @@ Click **Reload** to update the list once manually.
 
 Operations for a specific device are created and executed in the **Shell** tab of the device, see [Device details > Shell](/users-guide/device-management#shell).
 
+When you create a [bulk operation](#to-create-bulk-operations), the single operations entailed in the bulk operation will also be added to the list of single operations.
+
 >**Important:** When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
+
+#### To cancel pending single operations
+
+You can cancel particular pending single operations or all pending single operations at once.
+
+To cancel a particular pending single operation, hover over the pending single operation, then click the menu icon and select **Cancel operation**.
+
+To cancel all pending operations at once, click **More...** at the right of the top menu bar and select **Cancel all pending operations**.
+Alternatitvely, filter the list of single operations to show only single operations with status PENDING, then click **Cancel all** at the right of the top menu bar.
 
 #### To view bulk operations
 
@@ -371,7 +380,7 @@ You may only cancel bulk operations with status = SCHEDULED.
 
 Hover over the bulk operation you want to cancel, click the menu icon, and then click **Cancel bulk operation**.
 
-##### To schedule a single operation as bulk operation
+#### To schedule a single operation as bulk operation
 
 You can schedule a single operation as a bulk operation either from the **Single operations** tab or from a **Control** tab of a particular device.
 Follow these steps:
@@ -388,6 +397,12 @@ To retry a single operation, hover over the operation and click **Retry operatio
 This will create a new single operation.
 
 For a bulk operation that completed with failures, you may also hover over the operation, click the menu icon, and then click **Retry failed operations**.
+
+#### To create a smart rule from a single operation
+
+Hover over the single operation that you want to create a smart rule for, click the menu icon and select **Create smart rule**.
+
+See [Cockpit > Smart rules > To create a smart rule](/users-guide/cockpit/#create-rules) for further steps.
 
 ### <a name="events-all"></a>Troubleshooting devices
 

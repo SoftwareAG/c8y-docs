@@ -212,12 +212,14 @@ You can view operations at the level of individual devices and across all device
 
 There are two types of operations in **Device control**:
 
-* **Single Operations** execute on a single device
-* **Bulk Operations** comprise of the same single operation executed on a set of devices
+* **Single operations** execute on a single device
+* **Bulk operations** comprise of the same single operation executed on a set of devices
+
+Both types of operations are represented by a tab.
 
 #### To view single operations
 
-Click the **Single Operations** tab.
+See the list of single operations in the **Single operations** tab.
 
 ![Single operations list](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-single-operations-list.png)
 
@@ -246,16 +248,17 @@ Clicking a row expands it and displays further details on the operation.
 ![Single operation details](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-single-operation-details.png)
 
 
-To filter the list of single operations by state, click one of the state buttons at the top.
+To filter the list of single operations by state, click one of the state buttons in the top menu bar.
 Click **All** to clear the filter.
 
 Click **Realtime** at the right of the top menu bar to see operations coming in from the devices in realtime.
+Click **Reload** to update the list once manually.
 
 >**Info:** Single operations are listed in descending time order. Operations are executed strictly according to this order.
 
 #### To view bulk operations
 
-Click the **Bulk Operations** tab.
+See the list of bulk operations in the **Bulk operations** tab.
 
 ![Bulk operations list](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operations-list.png)
 
@@ -276,15 +279,15 @@ Bulk operations can have one of the following statuses:
 | :---------------------- | :---------- |
 | SCHEDULED               | The bulk operation has been created and is on hold until the scheduled time. |
 | EXECUTING               | The bulk operation is being executed. |
-| CANCELLED               | The bulk operation was created but cancelled before the scheduled time. |
-| COMPLETED WITH FAILURES | The bulk operation completed it failed for some devices. |
+| CANCELED               | The bulk operation was created but canceled before the scheduled time. |
+| COMPLETED WITH FAILURES | The bulk operation completed with failures for some devices. |
 | COMPLETED SUCCESSFULLY  | The bulk operation has been successfully executed on all devices. |
 
 In each row, the following information for a bulk operation is provided:
 
 | Info   | Description |
 | :----- | :---------- |
-| Status | One of SCHEDULED, EXECUTING, CANCELLED, COMPLETED WITH FAILURES, COMPLETED SUCCESSFULLY (see above). |
+| Status | One of SCHEDULED, EXECUTING, CANCELED, COMPLETED WITH FAILURES, COMPLETED SUCCESSFULLY (see above). |
 | Name   | Name of the operation. |
 | Progress bar | Only for executing and completed bulk operations. Shows the operation's progress in percent. |
 | Start and finish dates | Only for executing and completed bulk operations. For executing bulk operations, the finish date is an approximation based on the bulk operation settings. |
@@ -298,17 +301,17 @@ Clicking the arrow button at the right in a row expands the row and displays fur
 
 ![Bulk operation details](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details.png)
 
-To filter the list of bulk operations by operation type, click the dropdown list at the top and select a set of operation types, then **Apply**.
-Click it again, then **All** and **Apply** to clear the filter.
+To filter the list of bulk operations by operation type, click the dropdown list in the top menu bar and select a set of operation types, then click **Apply**.
+To clear the filter, select **All** in the dropdown list and click **Apply** again.
 
-To filter the list of bulk operations by status, click one of the status buttons at the top.
+To filter the list of bulk operations by status, click one of the status buttons in the top menu bar.
 Click **All** to clear the filter.
 
-To clear both filters, click **Reset filters** at the bottom of the list.
+To clear both filters, click **Reset filters** at the bottom of the list (only visible if filters are applied).
 
 Click **Realtime** at the right of the top menu bar to see operations coming in from the devices in realtime.
 
->**Note:** Bulk operations created prior to release 10.7.0 are dependent on a group and may still be viewed. To do so, select the desired group and click the **Bulk operations** tab.
+>**Info:** Bulk operations created prior to release 10.7.0 are dependent on a group and may still be viewed. To do so, select the desired group and click the **Bulk operations** tab.
 
 >![Old bulk operations](/images/users-guide/DeviceManagement/devmgmt-bulkoperations.png)
 
@@ -329,7 +332,7 @@ There are two ways of creating a bulk operation:
 
 Follow these steps:
 
-1. In the **Bulk Operations** tab, click **New bulk operation**.
+1. In the **Bulk operations** tab, click **New bulk operation** at the right of the top menu bar.
 2. In the resulting dialog, select an operation type.
     ![Select a bulk operation type](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-type.png)
 3. The resulting wizard has four steps. The first two steps differ depending on the operation type:
@@ -347,17 +350,16 @@ Follow these steps:
       2. Confirm the selection and click **Next**.
 4. Select target devices by applying filters to the paginated list of all devices. You can filter by status, name, type, model, group, registration date and alarms. You may apply multiple filters. To apply a filter, click the column header, make your filter option choices in the context menu and click **Apply**. You can clear all filters by clicking **Clear filters** above the list. For the operation types "configuration update", "software update" and "apply device profile", the list is already filtered by the according device type. Click **Next**.
     ![Bulk operation wizard, step 3](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step3.png)
-5. Pick a start date and a delay. The delay may either be in seconds or milliseconds and is the time spent between each single operation of the bulk operation. Click **Schedule bulk operation** to create the bulk operation.
+5. Select a start date and a delay. The delay may either be in seconds or milliseconds and is the time spent between each single operation of the bulk operation. Click **Schedule bulk operation** to create the bulk operation.
     ![Bulk operation wizard, step 4](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step4.png)
 
 ##### To schedule a single operation as bulk operation
 
-You can schedule a single operation as a bulk operation either from the **Single operations** tab or from a device **Control** tab.
+You can schedule a single operation as a bulk operation either from the **Single operations** tab or from a **Control** tab of a particular device.
 Follow these steps:
 
-1. Hover over the bulk operation you want to schedule as a bulk operation, click the menu icon and then click **Schedule as bulk operation**.
-2. The resulting wizard is similar to the wizard in [To create a bulk operation with the wizard](#to-create-a-bulk-operation-with-the-wizard). However, there are just two steps because the operation type is inferred from the operation that is scheduled as a bulk operation.
-3. See the description of the [full wizard](#to-create-a-bulk-operation-with-the-wizard) for a description of the last two steps.
+1. Hover over the single operation you want to schedule as a bulk operation, click the menu icon and then click **Schedule as bulk operation**.
+2. The resulting wizard is similar to the wizard in [To create a bulk operation with the wizard](#to-create-a-bulk-operation-with-the-wizard). However, there are just two steps because the operation type is inferred from the operation that is scheduled as a bulk operation. See the description of the [full wizard](#to-create-a-bulk-operation-with-the-wizard) and follow it.
 
 ##### <a name="bulk-operations"></a>To edit the schedule of bulk operations
 

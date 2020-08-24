@@ -17,6 +17,8 @@ npm install -g @c8y/cli
 c8ycli [options] [command]
 ```
 
+> **Info:** The commands must be executed from the root path of the project.
+
 ### Options
 
 ```

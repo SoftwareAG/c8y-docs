@@ -1,10 +1,27 @@
 ---
 weight: 60
-title: Managing device data
+title: Managing device data (contains beta changes)
 layout: redirect
 ---
 
-### <a name="software-repo"></a> Managing device firmware
+### Overview
+
+In the Device Management application, various features are provided supporting you in efficiently managing your devices:
+
+|Feature|Description|
+|:---|:---|
+|[Managing device firmware](#firmware-repo)|Allows you to retrieve and manage firmware, firmware versions and patches in the firmware repository and to install or update it on one or multiple devices.
+|[Managing device software](#software-repo)|Allows you to retrieve and manage software and software versions in the software repository and to install or update it on one or multiple devices.
+|[Managing configurations](#configuration-repository)|Allows you to retrieve configuration data and store and manage it in a configuration repository as configuration snapshot. 
+|[Device credentials](#)|to be added
+|[Device profiles](#)|to be added
+
+
+All features are accessible through the **Management** menu in the navigator:
+
+![Management menu](/images/users-guide/DeviceManagement/devmgmt-management-menu.png)
+
+### <a name="firmware-repo"></a> Managing device firmware
 
 In the firmware repository, Cumulocity IoT offers to collect reference firmware for devices.
 
@@ -16,7 +33,7 @@ Click **Firmware repository** in the **Management** menu in the navigator.
 
 The available firmware objects will be displayed, presented as a list.
 
-![Firmware List](/images/users-guide/DeviceManagement/devmgmt-firmware-list.png)
+![Firmware list](/images/users-guide/DeviceManagement/devmgmt-firmware-list.png)
 
 Each entry shows the firmware name, the device type (if set) and a label indicating if and how many versions are available for a particular firmware.
 
@@ -219,7 +236,7 @@ Cumulocity IoT offers the option to execute software updates for multiple device
 
 The operation status can be viewed in the **Bulk operations** tab of the selected group, see [Bulk operations](#bulk-operations).
 
-### <a name="configuration-repository"></a>Configuration repository
+### <a name="configuration-repository"></a>Managing configurations
 
 Cumulocity IoT allows to retrieve configuration data and store and manage it in a configuration repository. The configuration data contains the parameters and the initial settings of your device.
 

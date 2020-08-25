@@ -203,8 +203,6 @@ It is also possible to change the status of all alarms to "clear" at once. Click
 
 Operations are used to remotely control devices.
 
-#### To view operations
-
 You can view operations at the level of individual devices and across all devices:
 
 * To view the operations for all devices, click **Device control** in the **Overview** menu in the navigator.
@@ -258,7 +256,7 @@ Click **Reload** to update the list once manually.
 
 Operations for a specific device are created and executed in the **Shell** tab of the device, see [Device details > Shell](/users-guide/device-management#shell).
 
-When you create a [bulk operation](#to-add-a-bulk-operation), the single operations entailed in the bulk operation is also added to the list of single operations.
+When you create a [bulk operation](#to-add-a-bulk-operation), the single operations entailed in the bulk operation are also added to the list of single operations.
 
 >**Important:** When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
 
@@ -266,10 +264,16 @@ When you create a [bulk operation](#to-add-a-bulk-operation), the single operati
 
 You can cancel particular pending single operations or all pending single operations at once.
 
-To cancel a particular pending single operation, hover over the pending single operation, then click the menu icon and select **Cancel operation**.
+To cancel a particular pending single operation, click the menu icon at the right of the respective single operation entry and select **Cancel operation**.
 
 To cancel all pending operations at once, click **More...** at the right of the top menu bar and select **Cancel all pending operations**.
 Alternatively, filter the list of single operations to show only single operations with status PENDING, then click **Cancel all** at the right of the top menu bar.
+
+#### To create a smart rule from a single operation
+
+Click the menu icon at the right of the single operation that you want to create a smart rule for, and select **Create smart rule**.
+
+See [Cockpit > Smart rules > To create a smart rule](/users-guide/cockpit/#create-rules) for further steps.
 
 #### To view bulk operations
 
@@ -367,14 +371,14 @@ Follow these steps:
 You can schedule a single operation as a bulk operation either from the **Single operations** tab or from a **Control** tab of a particular device.
 Follow these steps:
 
-1. Hover over the single operation you want to schedule as a bulk operation, click the menu icon and then click **Schedule as bulk operation**.
+1. Click the menu icon at the right of the single operation that you want to schedule as a bulk operation and then click **Schedule as bulk operation**.
 2. The resulting wizard is similar to the new bulk operation wizard described in [To add a bulk operation using the wizard](#to-add-a-bulk-operation-using-the-wizard). However, there are just two steps because the operation type is inferred from the operation that is scheduled as a bulk operation. See the description of the [full wizard](#to-add-a-bulk-operation-using-the-wizard) and follow it.
 
 #### <a name="bulk-operations"></a>To edit the schedule of bulk operations
 
 You may only edit the schedule of bulk operations with status = SCHEDULED.
 
-1. Hover over the bulk operation you want to edit, click the menu icon and then click **Edit schedule**.
+1. Click the menu icon to the right of the bulk operation that you want to edit, and then click **Edit schedule**.
 3. In the resulting dialog box you may change the **Start date** and **Delay** values.
 5. Click **Reschedule** to apply your changes.
 
@@ -386,7 +390,7 @@ The changes will be applied to the bulk operation accordingly.
 
 You may only cancel bulk operations with status = SCHEDULED.
 
-Hover over the bulk operation you want to cancel, click the menu icon, and then click **Cancel bulk operation**.
+Click the menu icon to the right of the bulk operation that you want to cancel, then click **Cancel bulk operation**.
 
 #### To retry failed operations
 
@@ -396,13 +400,7 @@ To do so, expand the desired bulk operation, then click **Retry failed operation
 To retry a single operation, hover over the operation and click **Retry operation**.
 This will create a new single operation.
 
-For a bulk operation that completed with failures, you may also hover over the operation, click the menu icon, and then click **Retry failed operations**.
-
-#### To create a smart rule from a single operation
-
-Hover over the single operation that you want to create a smart rule for, click the menu icon and select **Create smart rule**.
-
-See [Cockpit > Smart rules > To create a smart rule](/users-guide/cockpit/#create-rules) for further steps.
+For a bulk operation that completed with failures, you may also click the menu icon to the right of the  operation, then click **Retry failed operations**.
 
 ### <a name="events-all"></a>Troubleshooting devices
 

@@ -61,6 +61,11 @@ MQTT specific counting details:
 * Creating custom template counts as a single request, no matter how many rows are send in the request.
 * There is one special SmartREST 2.0 template (402 Create location update event with device update) which is doing two things in one call, i.e. create a new location event and update the location of the device. It is counted as two separate requests.
 
+JSON via MQTT specific counting details:
+
+* Invalid requests are counted, for example when message payload is invalid.
+* Bulk creation requests are counted as a single "requestCount"/"deviceRequestCount" and multiple inbound data transfer count.
+
 ### Total inbound data transfer
 
 Inbound data transfer refers to the total number of inbound requests performed to transfer data into the Cumulocity IoT platform. This includes sensor readings, alarms, events, commands and alike that are transferred between devices and the Cumulocity IoT platform using the REST and/or MQTT interfaces. Such an inbound request could also originate from a custom microservice, website or any other client.

@@ -6,15 +6,15 @@ layout: redirect
 
 ### Overview
 
-In the Device Management application, various features are provided supporting you in efficiently managing your devices:
+The Device Management application provides various features that support you in efficiently managing your devices:
 
 |Feature|Description|
 |:---|:---|
-|[Managing device firmware](#firmware-repo)|Allows you to retrieve and manage firmware, firmware versions and patches in the firmware repository and to install or update it on one or multiple devices.
-|[Managing device software](#software-repo)|Allows you to retrieve and manage software and software versions in the software repository and to install or update it on one or multiple devices.
+|[Managing device firmware](#firmware-repo)|Allows you to retrieve and manage firmware, firmware versions and patches in the firmware repository and to install or update them on one or multiple devices.
+|[Managing device software](#software-repo)|Allows you to retrieve and manage software and software versions in the software repository and to install or update them on one or multiple devices.
 |[Managing configurations](#configuration-repository)|Allows you to retrieve configuration data and store and manage it in a configuration repository as configuration snapshot. 
-|[Device credentials](#)|to be added
-|[Device profiles](#)|to be added
+|[Device credentials](#credentials)|Allows you to manage all credentials that have been generated for your connected devices.
+|[Device profiles](#)|<to be added>
 
 
 All features are accessible through the **Management** menu in the navigator:
@@ -25,13 +25,13 @@ All features are accessible through the **Management** menu in the navigator:
 
 In the firmware repository, Cumulocity IoT offers to collect reference firmware for devices.
 
-As opposed to software, you can only apply one firmware for any given device. 
+As opposed to software, you can only apply one firmware to a given device. 
 
 #### Viewing firmware 
 
 Click **Firmware repository** in the **Management** menu in the navigator.
 
-The available firmware objects will be displayed, presented as a list.
+The available firmware objects will be displayed as a list.
 
 ![Firmware list](/images/users-guide/DeviceManagement/devmgmt-firmware-list.png)
 
@@ -53,7 +53,7 @@ The list of versions and patches shows the version name, an optional description
 2. In the resulting dialog box, 
 	* to add a new firmware, enter a name for the firmware, a description and its version (all required).
 	* to add a new version, select the firmware for which you want to add a new version from the dropdown list in the **Name** field and enter a version.
-3. Specify the file for the firmware by either uploading it from the file system or specifying a URL from where the firmware can be downloaded.
+3. Either upload a file from the file system or specify a URL from where the firmware can be downloaded.
 4. Click **Save**.
 
 ![Add firmware](/images/users-guide/DeviceManagement/devmgmt-firmware-add.png)
@@ -71,7 +71,7 @@ If you click **Add firmware** from within the details of a specific firmware, th
 2. In the resulting dialog box, select the firmware, for which you want to add a patch, from the dropdown list in the **Name** field. 
 3. in the **Version** field, select the version, for which you want to add a patch, from the dropdown list.  
 3. In the **Patch** field, enter a patch.
-3. Specify the file for the firmware by either uploading it from the file system or specifying a URL from where the firmware can be downloaded.
+3. Either upload a file from the file system or specify a URL from where the firmware can be downloaded.
 4. Click **Save**.
 
 As with adding versions, if you click **Add firmware patch** from within the details of a specific firmware, the dialog box looks slightly different as the firmware is already selected. 
@@ -108,7 +108,7 @@ Click **All devices** in the **Devices** menu in the navigator, select the desir
 
 ![Firmware tab](/images/users-guide/DeviceManagement/devmgmt-firmware-tab.png)
 
-#### To install/replace firmware on a device
+##### To install/replace firmware on a device
 
 1. In the **Firmware** tab, click **Install firmware** (or **Replace firmware** if there is already firmware installed on the device).
 3. Select a firmware and the desired version from the list, which contains all firmware available in the firmware repository.
@@ -118,7 +118,7 @@ Click **All devices** in the **Devices** menu in the navigator, select the desir
 
 The firmware will be installed on the device.
 
-#### To install/update firmware on multiple devices
+##### To install/update firmware on multiple devices
 
 Cumulocity IoT offers the option to execute firmware updates for multiple devices at once. 
 
@@ -136,7 +136,7 @@ In the software repository, Cumulocity IoT offers to collect reference software 
 
 Click **Software repository** in the **Management** menu in the navigator.
 
-The available software objects will be displayed, presented as a list.
+The available software objects will be displayed as a list.
 
 ![Software list](/images/users-guide/DeviceManagement/devmgmt-software-repository.png)
 
@@ -149,16 +149,14 @@ When clicking on an entry, the details for this software are displayed along wit
 At the top, the software name, a description and optional device type filter(s) are shown. If a filter is set, the software will show up for installation only for devices of that type. If no filter is set, it will be available for all devices. 
 
 The list of versions shows the version name, an optional description, and the name of the file containing the software. 
-
-#### Adding software and software versions
  
-##### To add a new software or software version
+#### To add a new software or software version
 
 1. In the **Software repository** page, click **Add software** at the right of the top menu bar. 
 2. In the resulting dialog box, 
 	* to add a new software, enter a name for the software, a description and its version (all required).
 	* to add a new version, select the software for which you want to add a new version from the dropdown list in the **Name** field and enter a version.
-3. Specify the file for the software by either uploading it from the file system or specifying a URL from where the software can be downloaded.
+3. Either upload a file from the file system or specify a URL from where the firmware can be downloaded.
 4. Click **Save**.
 
 ![Add software](/images/users-guide/DeviceManagement/devmgmt-software-add.png)

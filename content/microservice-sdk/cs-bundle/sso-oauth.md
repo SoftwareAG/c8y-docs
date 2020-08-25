@@ -6,7 +6,7 @@ title: Authentication
 
 The C# SDK also supports OAuth tokens. Authentication with OAuth is based on cookies technology, so the token has to be read from the request cookie header. Refer to [General aspects > Security](/microservice-sdk/concept/#security) for more details.
 
-You can find a [microservice example](https://bitbucket.org/m2m/cumulocity-clients-cs/src/develop/Examples/MicroserviceSDK/MicroserviceExample/DemoOAuth/) in our repositories to learn how to use OAuth tokens. The microservice configures REST endpoints (GET, PUT, POST, DELETE) using basic and OAuth authentication schemes, but it does not add any business logic as it is just for demonstration. The configuration is done by runtime and adds the authentication. Finally, a web port is created and startS listening on the specified port in the launch settings JSON.
+You can find a [microservice example](https://bitbucket.org/m2m/cumulocity-clients-cs/src/develop/Examples/MicroserviceSDK/MicroserviceExample/DemoOAuth/) in our bitbucket repositories to learn how to use OAuth tokens. The microservice configures REST endpoints (GET, PUT, POST, DELETE) using basic and OAuth authentication schemes, but it does not add any business logic as it is just for demonstration. The configuration is done by runtime and adds the authentication. Finally, a web port is created and starts listening on the specified port in the launch settings JSON.
 
 Note that when a request authenticated with OAuth arrives to the microservice, it must be verified using an token saved in the authorization cookie and with the X-XSRF-TOKEN header. A request in user scope with OAuth must pass the cookie and header to the platform.
 
@@ -29,9 +29,9 @@ public static IServiceCollection AddCumulocityAuthenticationAll(this IServiceCol
     return services;
 }
 ```
-Moreover, you need to register the authentication middleware. You can register the authentication middleware by calling UseAuthentication() in your `Configure` method of *Startup.cs* file. Following is the code for register the authentication middleware. 
+Moreover, you need to register the authentication middleware. You can register the authentication middleware by calling UseAuthentication() in your `Configure` method in the *Startup.cs* file. Following is the code for registering the authentication middleware. 
 
-NOTE - Don't use `AddBasicAuthentication` if you want oAuth based authentication for your microservice.
+> ***Info*** - Don't use `AddBasicAuthentication` if you want OAuth-based authentication for your microservice.
 
 ```cs
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -69,5 +69,5 @@ curl 'http://<URL>/api/values' \
   -H 'Cookie: authorization=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOm51bGwsImlzcyI6Im9hdXRoLWp3a3MubGF0ZXN0LnN0YWdlLmM4eS5pbyIsImF1ZCI6Im9hdXRoLWp3a3MubGF0ZXN0LnN0YWdlLmM4eS5pbyIsInN1YiI6ImRvbWluaWthIiwidGNpIjoiMjY0NjBjNGItZWJmNy00OGRlLWE1ZmMtYzkxZGJhZWM3MWFlIiwiaWF0IjoxNTk3ODk4OTcyLCJuYmYiOjAsImV4cCI6MTU5NzkwMjU3MiwidGZhIjpmYWxzZSwidGVuIjoidDU5MDA4IiwieHNyZlRva2VuIjoiQ0hNa1BJdGVIbVRpaWhvY3BQd1oifQ.laooVzd3jS2Vj9Pj86To1M1ONl7_m7bPX0cGH8dYnUltDu5jxwNjpaCy7L8Hei59VYB7euGO7qn0LeqNZGt9Nw; XSRF-TOKEN=CHMkPIteHmTiihocpPwZ' \
   --compressed
 ```
-You can get the headers from ***Network*** tab and replace them in the example above to hit the endpoint which returns 200 OK response code.
+You can get the headers from the **Network** tab and replace them in the example above to hit the endpoint which returns 200 OK response code.
 

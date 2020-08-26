@@ -161,7 +161,7 @@ Update the configuration properties of the device.
 Example
 
 ```text
-113,"val1=1\nval2=2"
+113,"val1=1\nval2=2"
 ```
 
 ##### Set supported operations (114)
@@ -461,7 +461,7 @@ Create an event of given type and text.
 **Example**
 
 ```text
-400,c8y_MyEvent,"Something was triggered"
+400,c8y_MyEvent,"Something was triggered"
 ```
 
 ##### Create location update event (401)
@@ -633,7 +633,7 @@ Set the configuration being sent in the operation.
 **Example**
 
 ```text
-513,DeviceSerial,"val1=1\nval2=2"
+513,DeviceSerial,"val1=1\nval2=2"
 ```
 
 ##### Firmware (515)

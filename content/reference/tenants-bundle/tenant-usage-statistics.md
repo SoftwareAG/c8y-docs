@@ -144,7 +144,7 @@ See the table below for more information on how the counters above are increased
 |Creation/update of **multiple alarms/measurements/events/inventories** mixed in a single call.|Each MQTT line is processed separately. If it is a creation/update of an event/alarm/measurement/inventory, the corresponding counter is increased by one.|Not supported by the REST API.|
 |Assign/unassign of **child devices and child assets** in one request|One managed object update is counted.|One managed object update is counted.|
 
-### Time zone handling
+### Timezone handling
 
 >**Important:** Cumulocity IoT platform servers by default work at UTC timezone. The platform supports other time zones, which can be selected by the service provider at installation time.
  

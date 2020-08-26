@@ -1,14 +1,16 @@
   ---
+
 weight: 70
 title: OPC UA
 layout: redirect
+
 ---
 
 The OPC UA device gateway is a stand-alone Java program that communicates with OPC UA server(s) and the Cumulocity IoT platform. It stores data into the Cumulocity IoT database via REST. Additionally, C8Y commands are executed to perform various operations on the OPC UA servers.
 
 The gateway has to be registered as Cumulocity IoT device in a specific tenant and the opcua-device-gateway must run in the users’ environment.
 
->**Important:** In order to use OPC UA, you must be subscribed to the “opcua-mgmt-service” microservice. If the “opcua-mgmt-service” microservice is not available in your tenant, please [contact support](/about-doc/contacting-support).
+> **Important:** In order to use OPC UA, you must be subscribed to the “opcua-mgmt-service” microservice. If the “opcua-mgmt-service” microservice is not available in your tenant, please [contact support](/about-doc/contacting-support).
 
 To download the gateway navigate to [Cumulocity resources](http://resources.cumulocity.com/examples/opc-ua/).
 
@@ -62,6 +64,7 @@ The number of profiles you may have is not limited. To use a specific profile on
 ```bash
 java -jar opcua-device-gateway-<<version>>.jar --spring.profiles.active=default,myTenant
 ```
+
 The command above will start a gateway with the default profile and it will override the default properties with the properties defined in the “myTenant” profile. The list of profiles has to be provided as an ordered, comma-separated list. The default profile always needs to be the first profile in the list.
 
 **Optional**: To specify your own configuration, Spring arguments can be used in your terminal to run the gateway JAR file. Multiple locations have to be comma-separated. The configuration locations should be either YAML files or directories. In case of directories, they must end with “/”. For example:
@@ -176,16 +179,16 @@ Custom logging configuration can be set during startup by passing the "-Dlogging
 The gateway can run with either default or custom settings. To run the gateway run one of the commands below:
 
 * Default settings and default logging configuration:
-
-		java -jar opcua-device-gateway-<<version>>.jar
+  
+        java -jar opcua-device-gateway-<<version>>.jar
 
 * Custom settings and default logging configuration:
-
-		java -Dspring.profiles.active=default,PROFILE_NAME -jar opcua-device-gateway-<<version>>.jar
+  
+        java -Dspring.profiles.active=default,PROFILE_NAME -jar opcua-device-gateway-<<version>>.jar
 
 * Custom settings and custom logging configuration:
-
-		java -Dlogging.config=file:PATH_TO_LOGBACK_XML -Dspring.profiles.active=default,PROFILE_NAME -jar opcua-device-gateway-<<version>>.jar
+  
+        java -Dlogging.config=file:PATH_TO_LOGBACK_XML -Dspring.profiles.active=default,PROFILE_NAME -jar opcua-device-gateway-<<version>>.jar
 
 For example, using the profile from the previous section we are going to register the gateway. First, open the terminal and navigate to the location of the gateway.jar file. Next, enter the following command:
 
@@ -200,9 +203,10 @@ In certain scenarios it is required to adjust the memory settings of the gateway
 You can adjust the memory settings of the gateway like with any other Java program. Typically, it is sufficient to increase the initial heap size and the maximum heap size of the gateway process.
 
 * Example: Run the gateway with a minimum heap size of 2 GB and a maximum heap size of 8 GB.
-```
-java -Xms2g -Xmx8g -jar opcua-device-gateway-<<version>>.jar
-```
+  
+  ```
+  java -Xms2g -Xmx8g -jar opcua-device-gateway-<<version>>.jar
+  ```
 
 > **Important** Please adjust the memory settings according to the physical memory available on the gateway host. The maximum heap size must be set in a way that it doesn't consume more RAM than physically available to the gateway. Otherwise, the virtual memory management of the host operating system might start paging, resulting in reduced gateway performance.
 
@@ -219,7 +223,7 @@ Click **Accept** to complete the registration.
 Next, establish a connection between the gateway and the OPC UA server.
 
 1. In the **OPC UA server** tab of the respective gateway, click **Add server**. <br>
-![Add new server](/images/users-guide/opcua/opcua-new-server.png)
+   ![Add new server](/images/users-guide/opcua/opcua-new-server.png)
 2. Use the **Server connection** toggle, to enable or disable the server connection.
 3. Enter the **Server URL** which is used to establish a connection between the server and the gateway.
 4. Enter the **Timeout value** in seconds. The timeout value is calculated for each request. If the timeout value is exceeded the request will be unsuccessful.
@@ -251,22 +255,22 @@ The authentication setting is used to authenticate and authorize the server user
 - Anonymous - Anonymous connection will only work when the OPC UA server allows such connections.
 - Username/Password - With this setting the gateway will connect to the server as a specific user represented by a username and password.
 - Key-based authentication - The gateway will use an existing certificate to authenticate as a specific user. JKS keystore must be uploaded to Cumulocity IoT as a binary with type “application/octet-stream”. This keystore must follow the following rules:
-    - It has to be a Java keystore (JKS).
-    - The keystore itself has to be password-protected.
-    - The keystore has to contain user certificate with  “opcuauser” alias.
-    - The user certificate has to be password-protected.
+  - It has to be a Java keystore (JKS).
+  - The keystore itself has to be password-protected.
+  - The keystore has to contain user certificate with  “opcuauser” alias.
+  - The user certificate has to be password-protected.
 
 The keystore can be create via the following Java keytool command:
 
 ```bash
 keytool -genkey -keyalg RSA -alias opcuauser -keystore keystore.jks -storepass passw0rd_a -validity 3600 -keysize 2048
 ```
+
 ![terminal](/images/users-guide/opcua/opcua-terminal.png)
 
 The keystore can then be verified by using a tool like KeystoreExplorer.
 
 ![Keystore explorer](/images/users-guide/opcua/opcua-keystore-explorer1.png)
-
 
 ![Keystore explorer2](/images/users-guide/opcua/opcua-keystore-explorer2.png)
 
@@ -366,12 +370,15 @@ The address space is automatically scanned when a connection between the gateway
 #### Adding a new device protocol
 
 1. Click **New device protocol** in the top menu bar and select OPC UA as device protocol type.
-2. In the resulting dialog box, enter a name and an optional description for the device protocol.
-3. Optionally, a reference server can be selected. Selecting a reference server allows you to create device protocols based on the OPC UA model stored on an OPC UA server. This greatly simplifies the mapping process, as device protocols can be created based on OPC UA browse paths being actually present on the server.
-4. Click **Create**.<br>
-![Add new device protocol](/images/users-guide/opcua/opcua-add-protocol.png)
 
-	> **Info:** Selecting a reference server will require you to select a reference node.
+2. In the resulting dialog box, enter a name and an optional description for the device protocol.
+
+3. Optionally, a reference server can be selected. Selecting a reference server allows you to create device protocols based on the OPC UA model stored on an OPC UA server. This greatly simplifies the mapping process, as device protocols can be created based on OPC UA browse paths being actually present on the server.
+
+4. Click **Create**.<br>
+   ![Add new device protocol](/images/users-guide/opcua/opcua-add-protocol.png)
+   
+   > **Info:** Selecting a reference server will require you to select a reference node.
 
 Once the device protocol is created, various configuration settings such as variables, data reporting and constraints can be applied. Initially, the device protocol will be inactive. When active, the gateway will scan the address space of all servers and will automatically apply the device protocol to all nodes which match the criteria. When the device protocol is configured, click **Save**.
 
@@ -419,7 +426,28 @@ Turn on Send event to send an event each time you receive a resource value.
 Specify the following parameters:
 
 - Enter the type of the event. For example, “com_cumulocity_model_DoorSensorEvent”.
-- Enter the text which will be sent. For example, “Door sensor was triggered”.
+- Enter the text which will be sent. For example, “Door sensor was triggered”. You can also get the resource value poplulated to the event text by defining the value placeholder:
+  
+  ```
+  This is the event value: ${value}
+  ```
+
+The value will be also populated as a fragment of the created event, under a fixed fragment name as the following:
+
+```json
+{
+    "type": "com_cumulocity_model_DoorSensorEvent",
+    "text": "Door sensor was triggered",
+    "c8y_ua_DataValue": {
+        "serverTimestamp": 132403410091850000,
+        "sourceTimestamp": 132403410091850000,
+        "value": {
+            "value": 381632714
+        },
+        "statusCode": 0
+    }
+}
+```
 
 **Custom Actions**
 
@@ -474,9 +502,9 @@ There are three data reporting mechanisms which can be applied to read all mappe
 
 - None - The gateway will not read values automatically. The mappings will be applied only when manual read operations are performed on mapped nodes.
 - Cyclic Read - The gateway reads values from mapped nodes at specified interval rates in milliseconds. The minimum allowed rate is 50 milliseconds.
-![OPC UA device protocol](/images/users-guide/opcua/opcua-data-reporting-cyclic-read.png)
+  ![OPC UA device protocol](/images/users-guide/opcua/opcua-data-reporting-cyclic-read.png)
 - Subscription - The gateway retrieves values by using OPC UA's own subscription mechanism.
-Possible parameters:
+  Possible parameters:
   - Sampling interval (required): The sampling interval defines a time interval individually for each mapped node. This is the rate at which the server checks the data source for changes.
   - Queue size: The size of the queue where it holds the samples before reporting. If you wish to record samples at a faster rate than reporting interval, you will also need to reserve a longer queue size, to be able to keep all the samples in the server. The reporting interval is defined for the gateway and the value is configurable with the yaml file.
     - Discard: Select whether to discard the oldest or newest item if the samples are exceeding the queue size.
@@ -491,7 +519,7 @@ Possible parameters:
 
 ![OPC UA device protocol](/images/users-guide/opcua/opcua-data-reporting-subscription.png)
 
->**Important:** Very low interval rates (e.g. 50 ms) for cyclic read and subscription types will result in huge amounts of data being created.
+> **Important:** Very low interval rates (e.g. 50 ms) for cyclic read and subscription types will result in huge amounts of data being created.
 
 #### Applying constraints
 
@@ -517,13 +545,13 @@ This operation triggers importing address space for a specific OPC-UA server. Th
 ```
 POST /devicecontrol/operations/
 
-	{
-	"deviceId": "<server-device-Id>",
-	"c8y_ua_command_ScanAddressSpace": {
-	        “skipSync”: false
-	    },
-	"description": "Import address space from root node"
-	}
+    {
+    "deviceId": "<server-device-Id>",
+    "c8y_ua_command_ScanAddressSpace": {
+            “skipSync”: false
+        },
+    "description": "Import address space from root node"
+    }
 ```
 
 The twinned address space information is persisted in the Cumulocity IoT inventory. It is internally used to support address space browsing and to define device protocols. Hence this operation is always triggered if a new server is added to the platform.
@@ -539,14 +567,14 @@ This operation reads the value attribute of specific node or list of nodes.
 ```
 POST /devicecontrol/operations/
 
-	{
-	  "deviceId" : "<server-device-Id>",
-	  "c8y_ua_command_ReadValue": {
-		"nodes": ["NODE_ID"],
-	     “timestampsToReturn”: “Neither”   
-	  },
-	  "description":"read value"
-	}
+    {
+      "deviceId" : "<server-device-Id>",
+      "c8y_ua_command_ReadValue": {
+        "nodes": ["NODE_ID"],
+         “timestampsToReturn”: “Neither”   
+      },
+      "description":"read value"
+    }
 ```
 
 Other possible values for `timestampsToReturn`: “Source”, “Server” or “Both”.
@@ -555,18 +583,18 @@ The result of this operation will contain output in the following format:
 
 ```
 {
-	"results": {
-		"ns=2;s=MyLevel": {
-			"13": {
-				"value": {
-					"value": 77.0
-				},
-				"statusCode": 0,
-				"sourcePicoseconds": 0,
-				"serverPicoseconds": 0
-			}
-		}
-	}
+    "results": {
+        "ns=2;s=MyLevel": {
+            "13": {
+                "value": {
+                    "value": 77.0
+                },
+                "statusCode": 0,
+                "sourcePicoseconds": 0,
+                "serverPicoseconds": 0
+            }
+        }
+    }
 }
 ```
 
@@ -576,11 +604,11 @@ This operation returns all attributes of specific node.
 
 ```
 {
-	"deviceId": "<server-device-Id>",
-	"c8y_ua_command_ReadNodeAttributes": {
-		"node": "ns=2;s=MyEnumObject"
-	},
-	"description": "Read node attributes"
+    "deviceId": "<server-device-Id>",
+    "c8y_ua_command_ReadNodeAttributes": {
+        "node": "ns=2;s=MyEnumObject"
+    },
+    "description": "Read node attributes"
 }
 ```
 
@@ -588,18 +616,18 @@ The result may differ depending on the node type.
 
 ```
 {
-	"Value": {
-		"value": 1
-	},
-	"DataType": "ns=2;s=MyEnumType",
-	"ValueRank": -1,
-	"AccessLevel": 3,
-	"UserAccessLevel": 3,
-	"MinimumSamplingInterval": -1.0,
-	"Historizing": false,
-	"DisplayName": "MyEnumObject",
-	"WriteMask": 0,
-	"UserWriteMask": 0
+    "Value": {
+        "value": 1
+    },
+    "DataType": "ns=2;s=MyEnumType",
+    "ValueRank": -1,
+    "AccessLevel": 3,
+    "UserAccessLevel": 3,
+    "MinimumSamplingInterval": -1.0,
+    "Historizing": false,
+    "DisplayName": "MyEnumObject",
+    "WriteMask": 0,
+    "UserWriteMask": 0
 }
 ```
 
@@ -611,32 +639,34 @@ This operation supports to read one or more attributes of one or more nodes. Thi
 {
     "deviceId": "<server-device-Id>",
     "c8y_ua_command_ReadAttribute": {
-   	  "nodes": ["ns=3;s=FloatArray"],
-   	  "attribute":"13"
+         "nodes": ["ns=3;s=FloatArray"],
+         "attribute":"13"
     }
     "description": "Read attribute from ns=3;s=FloatArray",
 }
 ```
 
 The result may differ depending on the node type.
+
 ```
 {
-	"results": {
-		"ns=3;s=FloatArray": {
-			"13": {
-				"value": {
-					"value": [1.0, 2.0, 3.0, 4.0, 5.0]
-				},
-				"statusCode": 0,
-				"sourceTimestamp": 1566572540173,
-				"sourcePicoseconds": 0,
-				"serverTimestamp": 1566573849897,
-				"serverPicoseconds": 0
-			}
-		}
-	}
+    "results": {
+        "ns=3;s=FloatArray": {
+            "13": {
+                "value": {
+                    "value": [1.0, 2.0, 3.0, 4.0, 5.0]
+                },
+                "statusCode": 0,
+                "sourceTimestamp": 1566572540173,
+                "sourcePicoseconds": 0,
+                "serverTimestamp": 1566573849897,
+                "serverPicoseconds": 0
+            }
+        }
+    }
 }
 ```
+
 The index ranges given below are according to the OPC UA specifications and will be transformed to NumericRange.
 
 The syntax is as following:
@@ -646,15 +676,14 @@ The syntax is as following:
     <dimension>: <index> [':' <index>]
 ```
 
-
 ```
 {
     "description": "Read attribute from ns=3;s=FloatArray",
     "deviceId": "<server-device-Id>",
     "c8y_ua_command_ReadAttribute": {
-   	  "nodes": ["ns=3;s=FloatArray"],
-   	  "attribute":"13",
-   	  "ranges":"0:1"
+         "nodes": ["ns=3;s=FloatArray"],
+         "attribute":"13",
+         "ranges":"0:1"
     }
 }
 ```
@@ -664,18 +693,18 @@ The result may differ depending on the node type.
 ```
 {
     "results": {
-   	 "ns=3;s=FloatArray": {
-   		 "13": {
-   			 "value": {
-   				 "value": [1.0, 2.0]
-   			 },
-   			 "statusCode": 0,
-   			 "sourceTimestamp": 1566572540173,
-   			 "sourcePicoseconds": 0,
-   			 "serverTimestamp": 1566574513935,
-   			 "serverPicoseconds": 0
-   		 }
-   	 }
+        "ns=3;s=FloatArray": {
+            "13": {
+                "value": {
+                    "value": [1.0, 2.0]
+                },
+                "statusCode": 0,
+                "sourceTimestamp": 1566572540173,
+                "sourcePicoseconds": 0,
+                "serverTimestamp": 1566574513935,
+                "serverPicoseconds": 0
+            }
+        }
     }
 }
 ```
@@ -688,11 +717,11 @@ This operation reads history values and applies the mappings except of alarm map
 {
     "deviceId": "<server-device-Id>",    
     "c8y_ua_command_HistoricReadOperation": {
-   	 "nodeId": "ns=2;s=MyLevel",
+        "nodeId": "ns=2;s=MyLevel",
        "processMappings": true,
-   	 "dateFrom": "2019-06-13T10:43:00+02:00",
-   	 "dateTo": "2019-06-13T10:52:00+02:00",
-   	 "tagType": "TAG"
+        "dateFrom": "2019-06-13T10:43:00+02:00",
+        "dateTo": "2019-06-13T10:52:00+02:00",
+        "tagType": "TAG"
     },
     "description": "Historic read"
 }
@@ -709,11 +738,11 @@ his operation reads historic values and only saves those values to a file which 
 {
     "deviceId": "<server-device-Id>",
     "c8y_ua_command_HistoricDataUploadOperation": {
-   	 "nodeId": "ns=2;s=MyLevel",
-   	 "dateFrom": "2019-01-03T09:53:00+02:00",
-   	 "dateTo": "2019-06-13T18:53:00+02:00",
-   	 "chunkSize": 1,
-   	 "compress": true
+        "nodeId": "ns=2;s=MyLevel",
+        "dateFrom": "2019-01-03T09:53:00+02:00",
+        "dateTo": "2019-06-13T18:53:00+02:00",
+        "chunkSize": 1,
+        "compress": true
     },
     "description": "Upload history data"
 }
@@ -727,18 +756,18 @@ This operation writes values to the node/nodes.
 
 ```
 {
-	"deviceId": "<server-device-Id>",
-	"c8y_ua_command_WriteValue": {
-		"values": {
-			"ns=3;s=LocalizedText": {
-				"value": "This is a localized text"
-			},
-			"ns=3;s=Double": {
-				"value": "3.14159"
-			}
-		}
-	},
-	"description": "Write values to different nodes"
+    "deviceId": "<server-device-Id>",
+    "c8y_ua_command_WriteValue": {
+        "values": {
+            "ns=3;s=LocalizedText": {
+                "value": "This is a localized text"
+            },
+            "ns=3;s=Double": {
+                "value": "3.14159"
+            }
+        }
+    },
+    "description": "Write values to different nodes"
 }
 ```
 
@@ -748,20 +777,20 @@ This operation is similar to the previous one, but instead of writing to the val
 
 ```
 {
-	"deviceId": "<server-device-Id>",
-	"c8y_ua_command_WriteAttribute": {
-		"values": {
-			"ns=3;s=LocalizedText": {
-				"attribute": "13",
-				"value": "This is a localized text"
-			},
-			"ns=3;s=Double": {
-				"attribute": "13",
-				"value": "3.14159"
-			}
-		}
-	},
-	"description": "Write attributes’ values to different attributes of different nodes"
+    "deviceId": "<server-device-Id>",
+    "c8y_ua_command_WriteAttribute": {
+        "values": {
+            "ns=3;s=LocalizedText": {
+                "attribute": "13",
+                "value": "This is a localized text"
+            },
+            "ns=3;s=Double": {
+                "attribute": "13",
+                "value": "3.14159"
+            }
+        }
+    },
+    "description": "Write attributes’ values to different attributes of different nodes"
 }
 ```
 
@@ -769,17 +798,17 @@ Optionally, it is possible to write a value range when the attribute value is an
 
 ```
 {
-	"deviceId": "<server-device-Id>",
-	"c8y_ua_command_WriteAttribute": {
-		"values": {
-			"ns=3;s=FloatArray": {
-				"attribute": "13",
-				"ranges": "0:1",
-				"value": "2.0,4.0"
-			}
-		}
-	},
-	"description": "Write attribute value to array attribute"
+    "deviceId": "<server-device-Id>",
+    "c8y_ua_command_WriteAttribute": {
+        "values": {
+            "ns=3;s=FloatArray": {
+                "attribute": "13",
+                "ranges": "0:1",
+                "value": "2.0,4.0"
+            }
+        }
+    },
+    "description": "Write attribute value to array attribute"
 }
 ```
 
@@ -789,11 +818,11 @@ This operation reads the description of a method node.
 
 ```
 {
-	"deviceId": "<server-device-Id>",
-	"c8y_ua_command_GetMethodDescriptionOperation": {
-		"nodeId": "ns=2;s=MyMethod"
-	},
-	"description": "get method description"
+    "deviceId": "<server-device-Id>",
+    "c8y_ua_command_GetMethodDescriptionOperation": {
+        "nodeId": "ns=2;s=MyMethod"
+    },
+    "description": "get method description"
 }
 ```
 
@@ -801,29 +830,29 @@ The result describes a method, it’s parent object, input and output arguments.
 
 ```
 {
-	"nodeId": "ns=2;s=MyMethod",
-	"name": "MyMethod",
-	"parentNodeId": "ns=2;s=MyDevice",
-	"parentName": "MyDevice",
-	"inputArguments": [{
-			"name": "Operation",
-			"description": "The operation to perform on parameter: valid functions are sin, cos, tan, pow",
-			"dataType": "String",
-			"dataTypeId": "i=12"
-		},
-		{
-			"name": "Parameter",
-			"description": "The parameter for operation",
-			"dataType": "Double",
-			"dataTypeId": "i=11"
-		}
-	],
-	"outputArguments": [{
-		"name": "Result",
-		"description": "The result of 'operation(parameter)'",
-		"dataType": "Double",
-		"dataTypeId": "i=11"
-	}]
+    "nodeId": "ns=2;s=MyMethod",
+    "name": "MyMethod",
+    "parentNodeId": "ns=2;s=MyDevice",
+    "parentName": "MyDevice",
+    "inputArguments": [{
+            "name": "Operation",
+            "description": "The operation to perform on parameter: valid functions are sin, cos, tan, pow",
+            "dataType": "String",
+            "dataTypeId": "i=12"
+        },
+        {
+            "name": "Parameter",
+            "description": "The parameter for operation",
+            "dataType": "Double",
+            "dataTypeId": "i=11"
+        }
+    ],
+    "outputArguments": [{
+        "name": "Result",
+        "description": "The result of 'operation(parameter)'",
+        "dataType": "Double",
+        "dataTypeId": "i=11"
+    }]
 }
 ```
 
@@ -833,28 +862,28 @@ This operation calls the method on the OPC UA server. It requires complete input
 
 ```
 {
-	"deviceId": "<server-device-Id>",
-	"c8y_ua_command_CallMethodOperation": {
-		"request": {
-			"nodeId": "ns=2;s=MyMethod",
-			"arguments": [{
-					"name": "Operation",
-					"description": "The operation to perform on parameter: valid functions are sin, cos, tan, pow",
-					"dataType": "String",
-					"dataTypeId": "i=12",
-					"value": "pow"
-				},
-				{
-					"name": "Parameter",
-					"description": "The parameter for operation",
-					"dataType": "Double",
-					"dataTypeId": "i=11",
-					"value": "5"
-				}
-			]
-		}
-	},
-	"description": "call method"
+    "deviceId": "<server-device-Id>",
+    "c8y_ua_command_CallMethodOperation": {
+        "request": {
+            "nodeId": "ns=2;s=MyMethod",
+            "arguments": [{
+                    "name": "Operation",
+                    "description": "The operation to perform on parameter: valid functions are sin, cos, tan, pow",
+                    "dataType": "String",
+                    "dataTypeId": "i=12",
+                    "value": "pow"
+                },
+                {
+                    "name": "Parameter",
+                    "description": "The parameter for operation",
+                    "dataType": "Double",
+                    "dataTypeId": "i=11",
+                    "value": "5"
+                }
+            ]
+        }
+    },
+    "description": "call method"
 }
 ```
 
@@ -863,14 +892,14 @@ Power of 5 is 25:
 
 ```
 {
-	"statusCode": 0,
-	"result": [{
-		"name": "Result",
-		"description": "The result of 'operation(parameter)'",
-		"dataType": "Double",
-		"dataTypeId": "i=11",
-		"value": "25.0"
-	}]
+    "statusCode": 0,
+    "result": [{
+        "name": "Result",
+        "description": "The result of 'operation(parameter)'",
+        "dataType": "Double",
+        "dataTypeId": "i=11",
+        "value": "25.0"
+    }]
 }
 ```
 
@@ -943,7 +972,6 @@ As explained earlier, the Cumulocity IoT OPC UA gateway performs an auto-discove
    },
    "description":"Dry Run Device Type"
 }
-
 ```
 
 The `deviceTypeId` is the ID of the managed object containing the device protocol.
@@ -1006,7 +1034,6 @@ The result of the operation contains the set of nodes that match the device prot
    }
 }
 ```
-
 
 ### Troubleshooting
 

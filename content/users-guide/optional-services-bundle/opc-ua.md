@@ -536,7 +536,7 @@ Cumulocity IoT operations is the interface that is used to tell the gateway what
 This operation triggers importing address space for a specific OPC-UA server. The server’s ID is passed as a device ID. The gateway will scan the entire address space of the server and persist a twinned representation of the address space in the Cumulocity IoT platform.
 
 ```
-# POST /devicecontrol/operations/
+POST /devicecontrol/operations/
 
 {
     "deviceId": "<server-device-Id>",

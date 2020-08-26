@@ -3,16 +3,19 @@ title: Lua plugin tutorial - Restart device
 layout: redirect
 weight: 40
 ---
-Besides sending requests, e.g., measurements to **Cumulocity IoT**, the other important function is to handle coming messages from Cumulocity IoT; either responses from `GET` queries or real-time operations.
-Here we prepared two examples. The one shows only how to handle the `c8y_Restart` operation in Lua script. It is simplified version of [ex-06-lua](/device-sdk/cpp/#use) example of **Cumulocity C++ SDK**. The second example shows more practical implementation including keeping the operation ID after rebooting.
+
+Besides sending requests, e.g., measurements to the Cumulocity IoT platform, another important function is handling incoming messages from Cumulocity IoT; either responses from `GET` queries or real-time operations.  
+Here two examples are presented. The first example shows only how to handle the `c8y_Restart` operation in Lua. It is a simplified version of the [ex-06-lua](/device-sdk/cpp/#use) example in the **Cumulocity IoT C++ SDK**. The second example shows a more practical implementation including saving the operation ID after rebooting.
 
 
 ### <a name="restart"></a>Restart device example - simple
-First, this example sends the operation status `EXECUTING` when it receives `c8y_Restart` operation. Then, it logs "Executing restart.." in the log file, and sends 'SUCCESSFUL' as the operation status update to the server.
+
+First, this example sends the operation status `EXECUTING` when it receives the `c8y_Restart` operation. Then, it logs "Executing restart.." in the log file, and sends 'SUCCESSFUL' as the operation status update to the server.
 
 In the beginning, the agent needs to send `c8y_Restart` as `c8y_SupportedOperations` to notify this agent can handle restart operation.
 
-Edit _src/demoagent.cc_. to add `Q(c8y_Restart)` like this.
+Edit the _src/demoagent.cc_ file like this to add `Q(c8y_Restart)`.
+
 ```cpp
 const char *ops = ",\"" Q2(c8y_Command) Q(c8y_ModbusDevice) Q(c8y_SetRegister)
         Q(c8y_ModbusConfiguration) Q(c8y_SerialConfiguration) Q(c8y_SetCoil)
@@ -21,9 +24,10 @@ const char *ops = ",\"" Q2(c8y_Command) Q(c8y_ModbusDevice) Q(c8y_SetRegister)
         Q(c8y_CANopenConfiguration) Q(c8y_Restart)"\"";
 ```
 
-Then recompile your agent. Now your agent is ready for sending `c8y_Restart` operation when the agent starts up.
+Then recompile your agent. Now your agent is ready for sending the `c8y_Restart` operation when the agent starts up.
 
-Next, create _restart-simple.lua_ file under _/lua_ directory with the following code, or copy the existing example code by
+Next, create a _restart-simple.lua_ file under the _/lua_ directory or copy the existing example code
+
 ```shell
 cp lua/example/restart-simple.lua lua/
 ```
@@ -46,33 +50,41 @@ end
 ```
 
 `c8y:addMsgHandler(MsgID, callback)` registers a message callback for the message ID. In this example, the message ID is 804, which is:
+
 ```plain
 11,804,,$.c8y_Restart,$.id,$.deviceId
 ```
-`11` means it is a response template. `804` is a message ID. The blank field is base JSON path. `$.c8y_Restart` is conditional JSON path, which is necessary for this example to identify the operation. `$.id` receives the operation ID and `$.deviceId` holds the Device ID. To know details for SmartREST response template, refer to [Reference guide > SmartREST > Template](/reference/smartrest/#templates).
+
+`11` means it is a response template. `804` is the message ID. The blank field is a base JSON path. `$.c8y_Restart` is a conditional JSON path, which is necessary for this example to identify the operation. `$.id` receives the operation ID and `$.deviceId` holds the Device ID. For more details on the SmartREST response template, refer to [Reference guide > SmartREST > Template](/reference/smartrest/#templates).
 
 When the agent receives the message ID, this message handler triggers to invoke `restart()`. `r` is the recursive variable. So, `r:value(2)` points the received operation ID.
 
 The operation status needs to transit `PENDING`->`EXECUTING`->`SUCCESSFUL`/`FAILED`. The agent needs to update the operation status to `EXECUTING` first. This is what
+
 ```lua
 c8y:send('303,' .. r:value(2) .. ',EXECUTING', 1)
 ```
+
 is doing. In practice, the agent needs to execute reboot afterwards, but since this is a simple example, replace it by logging debug message "Executing restart..". This message will be buffered when the connection gets lost as the message priority is marked `1`.
 
-After finishing the execution, the agent needs to inform that it is done successfully with the following code.
+After finishing the execution, the agent needs to inform the that it is done successfully using the following code.
+
 ```lua
 c8y:send('303,' .. r:value(2) .. ',SUCCESSFUL', 1)
 ```
 
 In case of failure, you can also mark `FAILED` with failure reason by using message template 304.
+
 ```
 c8y:send('304,' .. r:value(2) .. ',Write your failure reason')
 ```
 
-Now time to try it out. Before you run the agent again, do not forget to add `restart-simple` to `lua.plugins=` in your _cumulocity-agent.conf_ file.
+Now, your time to try it out. Before you run the agent again, do not forget to add `restart-simple` to `lua.plugins=` in your _cumulocity-agent.conf_ file.
+
 ```shell
 lua.plugins=hello,cpumeasurments,restart-simple
 ```
+
 Deploy _restart-simple.lua_ like [Hello world example](./#hello-world-example). Then run your agent.
 
 Now go to your Cumulocity IoT tenant, execute a restart operation as shown in the image below. Afterwards, you should see the message printed in the log file and the operation status set to SUCCESSFUL in your control tab.
@@ -80,9 +92,10 @@ Now go to your Cumulocity IoT tenant, execute a restart operation as shown in th
 
 
 ### Restart device example - practical
-The first example doesn't execute the real rebooting command. For practical usage, you need to take it into account how to keep the operation ID before/after rebooting a device.
 
-Here is the easiest example to overcome this point.
+The first example does not execute the real rebooting command. For practical usage, you need to take into account how to keep the operation ID before/after rebooting a device.
+
+Here is the easiest example to overcome this problem.
 
 ```lua
 -- restart.lua: lua/example/restart.lua
@@ -122,6 +135,6 @@ function init()
 end
 ```
 
-It stores the operation ID in a local file before triggering `reboot` command. After the reboot, the agent sends `SUCCESSFUL` with the stored operation ID to the server.
+It stores the operation ID in a local file before triggering the `reboot` command. After the reboot, the agent sends `SUCCESSFUL` with the stored operation ID to the server.
 
-`os.execute()` is a Lua command, which is equivalent to the C function system. It passes commands to be executed by an operating system shell. So, `os.execute('reboot')` calls Linux reboot command. You can adjust it suitable for your system.
+`os.execute()` is a Lua command, which is equivalent to the C `system()` function. It passes commands to be executed by an operating system shell. So, `os.execute('reboot')` calls Linux reboot command. You can suitable adjust it for your system.

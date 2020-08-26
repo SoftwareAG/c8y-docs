@@ -4,26 +4,26 @@ layout: redirect
 weight: 50
 ---
 
-As the last example, let's write a script to support software management. The detail for our software
-management feature, please refer to [Device Management > Managing device data](/users-guide/device-management/#managing-device-data).
+For the last example, let's write a script to support software management. For details on our software management feature, refer to [Device Management > Managing device data](/users-guide/device-management/#managing-device-data).
 
 ### Software management example
-This section introduces a Lua plugin that handles `c8y_SoftwareList` operation.
-Sending the installed package list to **Cumulocity IoT** and triggering to install/remove packages from there.
+
+This section introduces a Lua plugin that handles `c8y_SoftwareList` operation. Sending the installed package list to the Cumulocity IoT platfrom and triggering to install/remove packages from there.
 This example assumes the device supports **Debian** packages.
 
 First, the agent needs to send `c8y_SoftwareList` as `c8y_SupportedOperations` as we did in the restart example section.
-Edit _src/demoagent.cc_. and add `Q(c8y_SoftwareList)`. Then recompile your agent.
-Now your agent is ready for sending `c8y_SoftwareList` operation when the agent starts up.
+Edit _src/demoagent.cc_ and add `Q(c8y_SoftwareList)`. Then recompile your agent.
+Now your agent is ready to send `c8y_SoftwareList` operation when the agent starts up.
 
-Create _software.lua_ file under _/lua_ directory by copying the existing example code.
+Create a _software.lua_ file under the _/lua_ directory or by copying the existing example code.
+
 ```shell
 cp lua/example/software.lua lua/
 ```
 
 Let's take a look at the example code step by step.
 
-In the beginning, you can find `apt` commands to install/remove/list Debian packages. If your device supports different package controlling system, please modify this part.
+In the beginning, you can find the `apt` commands to install/remove/list Debian packages. If your device supports different package controlling system, modify this part.
 
 ```lua
 -- Linux commands
@@ -35,7 +35,7 @@ local cmd_remove = 'apt remove -y'
 local file_ext = '.deb'
 ```
 
-Next, go into init() function.
+Next, go into the init() function.
 
 ```lua
 function init()
@@ -48,7 +48,7 @@ function init()
 end
 ```
 
-Before receiving any operation, it sends only installed software list with message template `319`. You can find `c8y_SoftwareList` format from [our documentation](/reference/device-management/#device-information).
+Before receiving any operation, it sends only installed software list with message template `319`. You can find `c8y_SoftwareList` format from the [Device information guide](/reference/device-management/#device-information).
 
 `pkg_list()` returns a table. If your package control system is not `apt`, you also need to change how to extract software names and versions from the command you defined.
 
@@ -66,30 +66,33 @@ local function pkg_list()
 end
 ```
 
-If you create any `c8y_SoftwareList` operation from UI, the agent will receive the list of software packages which are supposed to be installed at last. In other words, the agent also receives unchanged packages information with the message template `814`. The `aggregate` function sums up all received packages information into a table.
+If you create any `c8y_SoftwareList` operation from the UI, the agent will receive the list of software packages which are supposed to be installed. In other words, the agent also receives unchanged packages information with the message template `814`. The `aggregate` function sums up all received packages information into a table.
 ![restarted-device](/images/device-sdk/software-install.png)
 
-After the aggregation finishes, the `perform` function is called. All this function does are:
-- Update the operation status to EXECUTING
-- Validate package names
-- Create a list for software packages to be installed
-- Create a list for software packages to be removed
-- Download software packages from the server (inventory/binaries)
-- Remove software packages by the pre-defined command
-- Install software packages by the pre-defined command
-- If any of the above failed, update the operation status to FAILED with the reason
-- Update the operation status to SUCCESSFUL
-- Send the updated package list to the server
+After the aggregation finishes, the `perform` function is called. The function:
 
-Let's try it out. Before you run the agent again, do not forget to add `software` to `lua.plugins=` in your _cumulocity-agent.conf_ file.
+- Updates the operation status to EXECUTING
+- Validates package names
+- Creates a list for software packages to be installed
+- Creates a list for software packages to be removed
+- Downloads software packages from the server (inventory/binaries)
+- Removes software packages by the pre-defined command
+- Installs software packages by the pre-defined command
+- Updates with reason the operation status to FAILED if any of the above tasks failed,
+- Updates the operation status to SUCCESSFUL
+- Sends the updated package list to the server
+
+Before you run the agent again, do not forget to add `software` to `lua.plugins=` in your _cumulocity-agent.conf_ file.
+
 ```shell
 lua.plugins=hello,cpumeasurments,restart,software
 ```
-Deploy _software.lua_ like [Hello world example](./#hello-world-example). Then run your agent.
+
+Deploy _software.lua_ like the [Hello world](./#hello-world-example) example. Then run your agent.
 
 Now go to your Cumulocity IoT tenant, create a software operation. You'll see the operation is managed by this script.
 
-> **Note:** MQTT connection has a [payload limit](/device-sdk/mqtt/#implementation).
+> **Info:** MQTT connection has a [payload limit](/device-sdk/mqtt/#implementation).
 If the result of `cmd_list` (e.g. `apt list --installed`) is huge, the agent might fail to send its package list.
 It is recommended to drop uninteresting packages from the sending list or pick up only interesting packages.
 For example, if you want to manage only `lua` and `modbus` packages, you can define `cmd_list` to `apt list --installed | grep -e lua -e modbus`.

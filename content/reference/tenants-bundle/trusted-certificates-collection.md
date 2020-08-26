@@ -1,6 +1,6 @@
 ---
 weight: 110
-title: Trusted certificates collection
+title: Trusted certificates collection (beta)
 layout: redirect
 ---
 

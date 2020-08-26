@@ -419,7 +419,28 @@ Turn on Send event to send an event each time you receive a resource value.
 Specify the following parameters:
 
 - Enter the type of the event. For example, “com_cumulocity_model_DoorSensorEvent”.
-- Enter the text which will be sent. For example, “Door sensor was triggered”.
+- Enter the text which will be sent. For example, “Door sensor was triggered”. You can also get the resource value populated to the event text by defining the value placeholder:
+                                                                               
+```
+This is the event value: ${value}
+```
+
+The value will be also populated as a fragment of the created event, under a static fragment name as the following:
+
+```json
+{
+ "type": "com_cumulocity_model_DoorSensorEvent",
+ "text": "Door sensor was triggered",
+    "c8y_ua_DataValue": {
+     "serverTimestamp": 132403410091850000,
+     "sourceTimestamp": 132403410091850000,
+     "value": {
+         "value": 381632714
+     },
+     "statusCode": 0
+ }
+}
+```
 
 **Custom Actions**
 

@@ -145,53 +145,60 @@ See the table below for more information on how the counters above are increased
 |Assign/unassign of **child devices and child assets** in one request|One managed object update is counted.|One managed object update is counted.|
 
 ### Time zone handling
->**Cumulocity platform servers by default are working at UTC timezone**
->Whatever cumulocity platform has support for other time zones, so it can be choose by service provider at installation time.
 
+>**Important:** Cumulocity IoT platform servers by default work at UTC timezone. The platform supports other time zones, which can be selected by the service provider at installation time.
+ 
+The tenant usage statistics are collected on a daily base according to the beginning of day (BOD) and the end of day (EOD), which are defined by the service side timezone. 
+As a result, if the local time zone of a user is different from the server timezone, an operation triggered by the user may be assigned to a different day according to the server time.
 
-The tenant usage statistics are collected at daily base according to the beginning of day (BOD) and the end of day (EOD), which are defined by service side timezone.
-It means that if user has different local time zone then server it may result that operation which was triggered by user maybe be assigned to different day according to server time.
+#### Examples
 
-Exmaples :
+##### Example 1: Request counting
 
-* Request counting
+||Device|Server|
+|:---|:----|:-----|
+|Time zone| CEST +2h |UTC|
+|Send measurement time | 26.08.2020T01:30:00+02:00| 25.08.2020T23:30Z|
 
-  ||Device| Server|
-  |:-|:----|:-----|
-  |Time zone| CEST +2h |UTC|
-  |Send measurement time | 26.08.2020T01:30:00+02:00| 25.08.2020T23:30Z|
+ **Result:** 
+The request will be billed to the day 25.08.2020 as this is the server time of the request handing.
 
-  **Result:** Request will be billed to day 25.08.2020 as that's the server time of request handing.
+##### Example 2: Request counting 2
 
-  ||Device| Server|
-  |:-|:----|:-----|
-  |Time zone| UTC |UTC|
-  |Send measurement time | 26.08.2020T01:30:00Z| 26.08.2020T01:30:00Z|
+||Device| Server|
+|:---|:----|:-----|
+|Time zone| UTC |UTC|
+|Send measurement time | 26.08.2020T01:30:00Z| 26.08.2020T01:30:00Z|
 
-  **Result:** Request will be billed to day 26.08.2020 as server time is same as device time.
+**Result:** The request will be billed to the day 26.08.2020 as the server time is the same as the device time.
 
-* Microservice resource billing
+##### Example 1: Microservice resource billing
 
-  ||User| Server|
-  |:-|:----|:-----|
-  |Time zone| CEST +2h |UTC|
-  |Subscribe time | 26.08.2020T12:00:00+02:00| 26.08.2020T10:00Z|
-  |Unsubscribe time | 26.08.2020T12:00:00+02:00| 26.08.2020T10:00Z|
+||User| Server|
+|:---|:----|:-----|
+|Time zone| CEST +2h |UTC|
+|Subscribe time | 26.08.2020T12:00:00+02:00| 26.08.2020T10:00Z|
+|Unsubscribe time | 26.08.2020T12:00:00+02:00| 26.08.2020T10:00Z|
 
-  **Result:** Request will be billed to day 25.08.2020 as that's the server time of request handing.
+**Result:** The request will be billed to the day 25.08.2020 as this is the server time of the request handing.
 
-  ||User| Server|
-  |:-|:----|:-----|
-  |Time zone| CEST +2h |UTC|
-  |Send measurement time | 26.08.2020T12:00:00+02:00| 26.08.2020T10:00Z|
+##### Example 2: Microservice resource billing
 
-  **Result:** Request will be billed to day 25.08.2020 as that's the server time of request handing.
-  ||Device| Server|
-  |:-|:----|:-----|
-  |Time zone| UTC |UTC|
-  |Send measurement time | 26.08.2020T01:30:00Z| 26.08.2020T01:30:00Z|
+||User| Server|
+|:---|:----|:-----|
+|Time zone| CEST +2h |UTC|
+|Send measurement time | 26.08.2020T12:00:00+02:00| 26.08.2020T10:00Z|
 
-  **Result:** Request will be billed to day 26.08.2020 as server time is same as device time.
+**Result:** The request will be billed to the day 25.08.2020 as this is the server time of the request handing.
+
+##### Example 3: Microservice resource billing
+ 
+||Device| Server|
+|:---|:----|:-----|
+|Time zone| UTC |UTC|
+|Send measurement time | 26.08.2020T01:30:00Z| 26.08.2020T01:30:00Z|
+
+  **Result:** The request will be billed to the day 26.08.2020 as the server time is the same as the device time.
 
 
 ### Daily routine
@@ -468,3 +475,4 @@ Example Response :
             "testadmin"
         ]
     }
+

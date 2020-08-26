@@ -344,7 +344,7 @@ Custom properties may be defined in the [Properties Library](/users-guide/admini
 
 You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Getting Started > UI functionalities and features > Filtering](/users-guide/getting-started/#filtering).
 
-> **Important:** The date/time range used here might differ from your server time due to different time zones. 
+> **Important:** The date/time range used here might differ from your server time due to different time zones.
 
 #### To export the usage statistics table
 
@@ -386,7 +386,7 @@ In case of resources-based billing, charging depends on the isolation level:
 * Per-tenant - the subscriber tenant is charged for used resources
 * Multi-tenant - the owner of the microservice is charged for used resources
 
-In case of multi-tenant isolation level, the parent tenant as the owner of a microservice (e.g. the management tenant of an Enterprise Tenant or service provider) is charged for both subscribed applications (subscription-based billing) and used resources (resource-based billing) of the subtenants.
+In case of multi-tenant isolation level, the owner of a microservice (e.g. the management tenant of an Enterprise Tenant or service provider) is charged for used resources of the subtenants. The subtenants should be charged based on the subscription according to agreement between microservice owner and subscribed tenant. 
 
 ##### Resources usage assignment for billing mode and isolation level
 

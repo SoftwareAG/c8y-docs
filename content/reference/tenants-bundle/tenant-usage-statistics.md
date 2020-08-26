@@ -144,10 +144,74 @@ See the table below for more information on how the counters above are increased
 |Creation/update of **multiple alarms/measurements/events/inventories** mixed in a single call.|Each MQTT line is processed separately. If it is a creation/update of an event/alarm/measurement/inventory, the corresponding counter is increased by one.|Not supported by the REST API.|
 |Assign/unassign of **child devices and child assets** in one request|One managed object update is counted.|One managed object update is counted.|
 
+### Time zone handling
+>**Cumulocity platform servers by default are working at UTC timezone**
+>Whatever cumulocity platform has support for other time zones, so it can be choose by service provider at installation time.
+
+
+The tenant usage statistics are collected at daily base according to the beginning of day (BOD) and the end of day (EOD), which are defined by service side timezone.
+It means that if user has different local time zone then server it may result that operation which was triggered by user maybe be assigned to different day according to server time.
+
+Exmaples :
+
+* Request counting
+
+  ||Device| Server|
+  |:-|:----|:-----|
+  |Time zone| CEST +2h |UTC|
+  |Send measurement time | 26.08.2020T01:30:00+02:00| 25.08.2020T23:30Z|
+
+  **Result:** Request will be billed to day 25.08.2020 as that's the server time of request handing.
+
+  ||Device| Server|
+  |:-|:----|:-----|
+  |Time zone| UTC |UTC|
+  |Send measurement time | 26.08.2020T01:30:00Z| 26.08.2020T01:30:00Z|
+
+  **Result:** Request will be billed to day 26.08.2020 as server time is same as device time.
+
+* Microservice resource billing
+
+  ||User| Server|
+  |:-|:----|:-----|
+  |Time zone| CEST +2h |UTC|
+  |Subscribe time | 26.08.2020T12:00:00+02:00| 26.08.2020T10:00Z|
+  |Unsubscribe time | 26.08.2020T12:00:00+02:00| 26.08.2020T10:00Z|
+
+  **Result:** Request will be billed to day 25.08.2020 as that's the server time of request handing.
+
+  ||User| Server|
+  |:-|:----|:-----|
+  |Time zone| CEST +2h |UTC|
+  |Send measurement time | 26.08.2020T12:00:00+02:00| 26.08.2020T10:00Z|
+
+  **Result:** Request will be billed to day 25.08.2020 as that's the server time of request handing.
+  ||Device| Server|
+  |:-|:----|:-----|
+  |Time zone| UTC |UTC|
+  |Send measurement time | 26.08.2020T01:30:00Z| 26.08.2020T01:30:00Z|
+
+  **Result:** Request will be billed to day 26.08.2020 as server time is same as device time.
+
+
+### Daily routine
+
+
+|Operation|Refreshed|
+|:--------|:--------|
+|Request count flush| Every 5 minutes|
+|Used storage | 9, 17 and EOD |
+|Device count | 9, 17 and EOD|
+|Subscribed applications | 9, 17 and EOD|
+|Microservice resources | 9, 17 and EOD|
+
+### Lifecycle
+
+
 
 ### MicroserviceUsageStatistics
 
-The microservice usage statistics gathers information on the resource usage for tenants for each subscribed application which are collected on a daily base. 
+The microservice usage statistics gathers information on the resource usage for tenants for each subscribed application which are collected on a daily base.
 
 The microservice usage's information is stored in the `resources` object.
 

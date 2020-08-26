@@ -30,12 +30,12 @@ The first section is the first line of the CSV file. This line contains the colu
 <tr>
 <td align="left">CREDENTIALS</td>
 <td align="left">0..1</td>
-<td align="left">Password for the device’s user. If the device uses certificates, this it not required.</td>
+<td align="left">Password for the device’s user. If the device uses certificates, this is not required.</td>
 </tr>
 <tr>
 <td align="left">AUTH_TYPE</td>
 <td align="left">0..1</td>
-<td align="left">Required auth type for the device's user. If the device uses credentials, this can be skipped or filled with 'BASIC'. Devices that use certificates must set 'CERTIFICATES'. The default value is BASIC. </td>
+<td align="left">Required authentication type for the device's user. If the device uses credentials, this can be skipped or filled with "BASIC". Devices that use certificates must set "CERTIFICATES". The default value is "BASIC". </td>
 </tr>
 <tr>
 <td align="left">TENANT</td>
@@ -55,27 +55,27 @@ The first section is the first line of the CSV file. This line contains the colu
 <tr>
 <td align="left">ICCID</td>
 <td align="left">0..1</td>
-<td align="left">The ICCID of the device (sim card number). If ‘iccid’ appears in the file, the import adds a fragment ‘c8y_Mobile.iccid’. The ‘iccid’ value is not mandatory for each row, see the example of an HTTP request below.</td>
+<td align="left">The ICCID of the device (SIM card number). If "iccid" appears in the file, the import adds a fragment "c8y_Mobile.iccid". The "iccid" value is not mandatory for each row. See the example of an HTTP request below.</td>
 </tr>
 <tr>
 <td align="left">IDTYPE</td>
 <td align="left">0..1</td>
-<td align="left">The type of external ID. If ‘idtype’ doesn’t appear in the file, the default value is used. The default value is ‘c8y_Serial’. The ‘idtype’ value is not mandatory for each row, see the example of an HTTP request below.</td>
+<td align="left">The type of external ID. If "idtype" doesn’t appear in the file, the default value is used. The default value is "c8y_Serial". The "idtype" value is not mandatory for each row. See the example of an HTTP request below.</td>
 </tr>
 <tr>
 <td align="left">PATH</td>
 <td align="left">0..1</td>
-<td align="left">The path in the groups hierarchy where the device is added. The path contains the name of each group separated by ‘/’, i.e: "main group/subgroup/…/last subgroup". If the group doesn’t exist, the import creates the group.</td>
+<td align="left">The path in the groups hierarchy where the device is added. The path contains the name of each group separated by '/', e.g. "main group/subgroup/…/last subgroup". If the group doesn’t exist, the import creates the group.</td>
 </tr>
 <tr>
 <td align="left">SHELL</td>
 <td align="left">0..1</td>
-<td align="left">If this column contains the value "1", the import adds the ‘Shell’ feature for the device (specifically: c8y_SupportedOperations fragment). Th ‘shell’ value is not mandatory for each row, see the example of an HTTP request below.</td>
+<td align="left">If this column contains the value "1", the import adds the Shell feature for the device (specifically: "c8y_SupportedOperations" fragment). The "shell" value is not mandatory for each row. See the example of an HTTP request below.</td>
 </tr>
 </tbody>
 </table>
 
-Section two is the remaining part of the CSV file. Section two contains the device information. The order and quantity of values must be the same as the order and quantity of headers.
+Section two is the remaining part of the CSV file and it contains the device information. The order and quantity of values must be the same as the order and quantity of headers.
 
 The separator is automatically obtained from the CSV file. Valid separator values are tabulation mark "\t", semicolon ";" and comma ",".
 

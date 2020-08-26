@@ -16,9 +16,9 @@ In order to follow this tutorial, check the following prerequisites:
 *   You have a valid tenant, a user and a password in order to access Cumulocity IoT.
 *   You have a valid certificate. If you don't have it, follow the instructions in the next section to generate one.
 
-#### To generate a valid certificate
+#### Generate a valid certificate
 
-If you don't have a valid certificate, you can generate one, for testing purposes, following the instructions below.
+If you don't have a valid certificate, you can generate one for testing purposes, following the instructions below.
 
 1.  Download the scripts from the [cumulocity-examples](https://bitbucket.org/m2m/cumulocity-examples/src/develop/mqtt-client/scripts) repository.
 2.  Create a root self-signed certificate (execute the script *00createRootSelfSignedCertificate.sh*) and upload it to your tenant. You can do it via [Device Management in the UI](/users-guide/device-management/#managing-trusted-certificates) or via [REST](/reference/tenants/#trusted-certificates-collection).
@@ -37,7 +37,7 @@ To develop a "Hello, world!" MQTT client for Cumulocity IoT with certificates, y
 *  copy the certificate and upload it to the platform,
 *  change the configuration in the MQTT client.
 
-#### To copy and upload the certificate
+#### Copy and upload the certificate
 
 Copy the certificate from the file *chain-iot-device-0001.pem* and upload it to the platform employing a POST request:
 
@@ -55,7 +55,7 @@ Copy the certificate from the file *chain-iot-device-0001.pem* and upload it to 
 }
 ```
 
-#### To change the configuration
+#### Change the configuration
 
 To change the configuration in the MQTT client, copy the file *chain-with-private-key-iot-device-0001.jks* into the resource folder and set the configuration. Note that the script employed (Step 4.) uses the password `changeit`. If you changed the value in the script, also do it for `KEYSTORE_PASSWORD` and `TRUSTSTORE_PASSWORD` in the following example.
 
@@ -70,7 +70,7 @@ private static final String TRUSTSTORE_PASSWORD = "changeit";
 private static final String TRUSTSTORE_FORMAT = "jks";
 
 private static final String CLIENT_ID = "iotdevice0001";
-private static final String BROKER_URL = "<<SSL URL of the platform>>";
+private static final String BROKER_URL = "<SSL URL of the platform>";
 
 private MqttClient connect() throws MqttException {
     MqttClient mqttClient = new MqttClient(BROKER_URL, "d:" + CLIENT_ID, new MemoryPersistence());

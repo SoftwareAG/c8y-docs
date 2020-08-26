@@ -81,11 +81,11 @@ Cumulocity IoT allows to retrieve configuration data and store and manage it in 
 
 Configuration snapshots help you, for example, to apply the same configuration to multiple devices as described below.
 
-Click **Configuration repository** in the the **Management** menu in the navigator. In the **Configuration repository** page, all available configuration snapshots are listed. Each entry shows the configuration name, the description of the configuration, the device type and the configuration type. 
+Click **Configuration repository** in the the **Management** menu in the navigator. In the **Configuration repository** page, all available configuration snapshots are listed. Each entry shows the configuration name, the description of the configuration, the device type and the configuration type.
 
 ![Configuration Repository](/images/users-guide/DeviceManagement/devmgmt-management-configrepo.png)
 
-#### <a name="add-snapshot"></a> To add a configuration snapshot 
+#### <a name="add-snapshot"></a> To add a configuration snapshot
 
 1. Click **Add configuration snapshot** at the right of the top menu bar.
 2. In the resulting dialog box, enter a unique name.
@@ -135,7 +135,7 @@ To apply a configuration snapshot to a device:
 #### To retrieve and apply a configuration snapshot to a device which supports multiple configuration types
 
 1. Navigate to the desired device in **Devices** > **All devices** and open its **Configuration** tab.
-2. Under **Device-supported configurations**, select the desired configuration type and click 
+2. Under **Device-supported configurations**, select the desired configuration type and click
 **Get snapshot from device** at the right.
 
 Once retrieved, you can save or download the snapshot in the **Preview** section. The snapshot will be added to the **Configuration repository**, accessible from the **Management** menu in the navigator.
@@ -199,7 +199,7 @@ Deleting device credentials might be required if you have carried out a factory 
 
 ### <a name="trusted-certificates"></a> Managing trusted certificates
 
-Cumulocity IoT allows devices to connect via MQTT protocol using a X509 certificate for authentication. To do so, a certificate must be trusted by Cumulocity IoT. A certificate is trusted when it is added to the trusted certificates and is in activated state.
+Cumulocity IoT allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be trusted by Cumulocity IoT. A certificate is trusted when it is added to the trusted certificates and is in activated state.
 
 >**Info:** This section describes how to manage trusted certificates. For information on connecting devices using certificates refer to [Device integration using MQTT > Device certificates](/device-sdk/mqtt#device-certificates) in the Device SDK guide.
 
@@ -209,51 +209,51 @@ All certificates owned by the tenant will be displayed.
 
 ![Trusted certificates List](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-list.png)
 
-The icon at the left of each entry indicates if the certificate is active (green), or inactive (red). At any given time a tenant can have any number of active or inactive certificates.
+The icon on the left of each entry indicates if the certificate is active (green) or inactive (red). At any given time a tenant can have any number of active or inactive certificates.
 
-Expand a certificate by clicking the arrow icon at the right to view more details.
+Expand a certificate by clicking the arrow icon on the right to view more details.
 
 ![Trusted certificates Entry](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-entry.png)
 
-The information in the table on the right side is extracted from the provided certificate. The content is read-only and cannot be changed. 
+The information in the table on the right side is extracted from the provided certificate. The content is read-only and cannot be changed.
 
 ![Trusted certificate details](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-details.png)
 
 
 #### To add a certificate
 
-Before adding a new trusted certificate, make sure that it:
+Before adding a new trusted certificate, make sure that:
 
-* Is a X509 certificate in PEM format.
-* Is in version 3.
-* Contains `BasicConstraints:[CA:true]`.
-* Has not already been uploaded to Cumulocity IoT.
-* Is still valid (not expired).
+* It s a X.509 certificate in PEM format.
+* It is in version 3.
+* It contains `BasicConstraints:[CA:true]`.
+* It has not already been uploaded to Cumulocity IoT.
+* It is still valid (not expired).
 
 To add a certificate perform these steps:
 
-1. Click **Add trusted certificate** at the right of the top menu bar. 
+1. Click **Add trusted certificate** on the right of the top menu bar.
 
 	![Trusted certificate details](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-new.png)
- 
+
 2. In the resulting dialog box, provide the following information:
 
-	|Field|Description|
+|Field|Description|
 |:---|:---|
 |Certificate name|User-provided name for the certificate. This name is not used by Cumulocity IoT and can serve as a description of the certificate.|
 |Certificate|File containing the certificate in PEM format. Add the file by dropping it into this field or browsing for it on your computer.|
 |Auto registration| If selected, new devices which use a certificate signed by the authority owning this trusted certificate will automatically be registered.|
 |Enabled/ Disabled| When disabled, devices which use a certificate signed by the authority owning this certificate, will not be able to connect.|
 
-3. Click **Add Certificate** to validate and save the certificate. 
+3. Click **Add Certificate** to validate and save the certificate.
 
 >**Info:** For performance reasons, you shouldn't add the certificates of each device you want to connect, but only add the root certificate or one of the intermediate certificates from the chain which has been used to sign certificates used by devices.
 
 #### To edit a trusted certificate
 
-In the detail view of a certificate you may change the parameters on the left, i.e. the certificate name, and the settings for the auto registration and enabled/disabled option. 
+In the detail view of a certificate you may change the parameters on the left, i.e. the certificate name, and the settings for the auto registration and enabled/disabled option.
 
-For details on the fields see the description on adding certificates above.
+For details on the fields, see the description on adding certificates above.
 
 #### To delete a trusted certificate
 
@@ -261,4 +261,4 @@ To permanently delete a certificate from the trusted certificates list, click th
 
 ![Trusted certificates delete](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-delete.png)
 
-The certificate will be permanently deleted. 
+The certificate will be permanently deleted.

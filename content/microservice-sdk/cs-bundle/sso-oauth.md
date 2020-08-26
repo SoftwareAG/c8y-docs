@@ -6,9 +6,9 @@ title: Authentication
 
 The C# SDK also supports OAuth tokens. Authentication with OAuth is based on cookies technology, so the token has to be read from the request cookie header. Refer to [General aspects > Security](/microservice-sdk/concept/#security) for more details.
 
-You can find a [microservice example](https://bitbucket.org/m2m/cumulocity-clients-cs/src/develop/Examples/MicroserviceSDK/MicroserviceExample/DemoOAuth/) in our bitbucket repositories to learn how to use OAuth tokens. The microservice configures REST endpoints (GET, PUT, POST, DELETE) using basic and OAuth authentication schemes, but it does not add any business logic as it is just for demonstration. The configuration is done by runtime and adds the authentication. Finally, a web port is created and starts listening on the specified port in the launch settings JSON.
+You can find a [microservice example](https://bitbucket.org/m2m/cumulocity-clients-cs/src/develop/Examples/MicroserviceSDK/MicroserviceExample/DemoOAuth/) in our Bitbucket repository to learn how to use OAuth tokens. The microservice configures REST endpoints (GET, PUT, POST, DELETE) using basic and OAuth authentication schemes, but it does not add any business logic as it is just for demonstration. The configuration is done by runtime and adds the authentication. Finally, a web port is created and starts listening on the specified port in the *Properties/launchSettings.json* file.
 
-Note that when a request authenticated with OAuth arrives to the microservice, it must be verified using an token saved in the authorization cookie and with the X-XSRF-TOKEN header. A request in user scope with OAuth must pass the cookie and header to the platform.
+Note that when a request authenticated with OAuth arrives to the microservice, it must be verified using a token saved in the authorization cookie and with the X-XSRF-TOKEN header. A request in user scope with OAuth must pass the cookie and header to the platform.
 
 The `UseAuthentication` method adds a single authentication middleware component which is responsible for automatic authentication and the handling of remote authentication requests.
 
@@ -29,9 +29,8 @@ public static IServiceCollection AddCumulocityAuthenticationAll(this IServiceCol
     return services;
 }
 ```
-Moreover, you need to register the authentication middleware. You can register the authentication middleware by calling UseAuthentication() in your `Configure` method in the *Startup.cs* file. Following is the code for registering the authentication middleware. 
 
-> ***Info*** - Don't use `AddBasicAuthentication` if you want OAuth-based authentication for your microservice.
+Moreover, you need to register the authentication middleware. To do so, call the `UseAuthentication` method within the `Configure` method in the *Startup.cs* file as shown below:
 
 ```cs
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -40,6 +39,8 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     app.UseMvcWithDefaultRoute();
 }
 ```
+
+> **Important:** Do not use the `AddBasicAuthentication` method if you want OAuth-based authentication for your microservice.
 
 To use multiple authentication schemes, the Controllers class must be decorated as follows:
 
@@ -61,7 +62,7 @@ Refer to [Authorize with a specific scheme in ASP.NET Core](https://docs.microso
 
 ### Testing the microservice with OAuth tokens
 
-Third-party tools such as Postman can be used to test your REST API. You need the `Cookie` and `XSRF-token` headers which must be captured from the platform (e.g. by watching network requests in the browser). Note that the token expires within few a minutes as configured by administrator and to test this feature you need to make sure you test the feature before token expiry. The cURL equivalent of testing the [microservice example](https://bitbucket.org/m2m/cumulocity-clients-cs/src/develop/Examples/MicroserviceSDK/MicroserviceExample/DemoOAuth/ is a follows -
+Third-party tools such as Postman can be used to test your REST API. You need the cookie and X-XSRF-TOKEN headers which must be captured from the platform (e.g. by watching network requests in the browser).Note that the token expires within few minutes as configured by the administrator. Make sure you test this feature before the token expiries. The cURL equivalent to test the [microservice example](https://bitbucket.org/m2m/cumulocity-clients-cs/src/develop/Examples/MicroserviceSDK/MicroserviceExample/DemoOAuth/) is as follows:
 
 ```
 curl 'http://<URL>/api/values' \
@@ -69,5 +70,6 @@ curl 'http://<URL>/api/values' \
   -H 'Cookie: authorization=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOm51bGwsImlzcyI6Im9hdXRoLWp3a3MubGF0ZXN0LnN0YWdlLmM4eS5pbyIsImF1ZCI6Im9hdXRoLWp3a3MubGF0ZXN0LnN0YWdlLmM4eS5pbyIsInN1YiI6ImRvbWluaWthIiwidGNpIjoiMjY0NjBjNGItZWJmNy00OGRlLWE1ZmMtYzkxZGJhZWM3MWFlIiwiaWF0IjoxNTk3ODk4OTcyLCJuYmYiOjAsImV4cCI6MTU5NzkwMjU3MiwidGZhIjpmYWxzZSwidGVuIjoidDU5MDA4IiwieHNyZlRva2VuIjoiQ0hNa1BJdGVIbVRpaWhvY3BQd1oifQ.laooVzd3jS2Vj9Pj86To1M1ONl7_m7bPX0cGH8dYnUltDu5jxwNjpaCy7L8Hei59VYB7euGO7qn0LeqNZGt9Nw; XSRF-TOKEN=CHMkPIteHmTiihocpPwZ' \
   --compressed
 ```
+
 You can get the headers from the **Network** tab and replace them in the example above to hit the endpoint which returns 200 OK response code.
 

@@ -163,7 +163,7 @@ As a result, if the local time zone of a user is different from the server timez
  **Result:** 
 The request will be billed to the day 25.08.2020 as this is the server time of the request handing.
 
-##### Example 2: Request counting 2
+##### Example 2: Request counting
 
 ||Device| Server|
 |:---|:----|:-----|

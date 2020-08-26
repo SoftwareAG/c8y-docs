@@ -421,7 +421,7 @@ Specify the following parameters:
 - Enter the type of the event. For example, “com_cumulocity_model_DoorSensorEvent”.
 - Enter the text which will be sent. For example, “Door sensor was triggered”. You can also get the resource value populated to the event text by defining the value placeholder:
                                                                                
-```
+```plain
 This is the event value: ${value}
 ```
 

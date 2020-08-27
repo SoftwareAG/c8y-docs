@@ -425,7 +425,7 @@ Specify the following parameters:
 Door sensor was triggered, event value: ${value}
 ```
 
-The value will be also populated as a fragment of the created event, under a static fragment name as the following:
+The value will also be populated as a fragment of the created event, under a static fragment name as the following:
 
 ```json
 {

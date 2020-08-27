@@ -422,7 +422,7 @@ Specify the following parameters:
 - Enter the text which will be sent. For example, “Door sensor was triggered”. You can also get the resource value populated to the event text by defining the value placeholder:
                                                                                
 ```plain
-This is the event value: ${value}
+Door sensor was triggered, event value: ${value}
 ```
 
 The value will be also populated as a fragment of the created event, under a static fragment name as the following:

@@ -211,11 +211,11 @@ All certificates owned by the tenant will be displayed.
 
 The icon on the left of each entry indicates if the certificate is active (green) or inactive (red). At any given time a tenant can have any number of active or inactive certificates.
 
-Expand a certificate by clicking the arrow icon on the right to view more details.
+Expand a certificate by clicking the arrow icon at the right to view more details.
 
 ![Trusted certificates Entry](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-entry.png)
 
-The information in the table on the right side is extracted from the provided certificate. The content is read-only and cannot be changed.
+The information in the table at the right side is extracted from the provided certificate. The content is read-only and cannot be changed.
 
 ![Trusted certificate details](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-details.png)
 
@@ -232,7 +232,7 @@ Before adding a new trusted certificate, make sure that:
 
 To add a certificate perform these steps:
 
-1. Click **Add trusted certificate** on the right of the top menu bar.
+1. Click **Add trusted certificate** at the right of the top menu bar.
 
 	![Trusted certificate details](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-new.png)
 

@@ -16,7 +16,7 @@ In order to follow this tutorial, check the following prerequisites:
 *   You have a valid tenant, a user and a password in order to access Cumulocity IoT.
 *   You have a valid certificate. If you don't have it, follow the instructions in the next section to generate one.
 
-#### Generate a valid certificate
+#### To generate a valid certificate
 
 If you don't have a valid certificate, you can generate one for testing purposes, following the instructions below.
 
@@ -37,7 +37,7 @@ To develop a "Hello, world!" MQTT client for Cumulocity IoT with certificates, y
 *  copy the certificate and upload it to the platform,
 *  change the configuration in the MQTT client.
 
-#### Copy and upload the certificate
+#### To copy and upload the certificate
 
 Copy the certificate from the file *chain-iot-device-0001.pem* and upload it to the platform employing a POST request:
 
@@ -55,7 +55,7 @@ Copy the certificate from the file *chain-iot-device-0001.pem* and upload it to 
 }
 ```
 
-#### Change the configuration
+### To change the configuration
 
 To change the configuration in the MQTT client, copy the file *chain-with-private-key-iot-device-0001.jks* into the resource folder and set the configuration. Note that the script employed (Step 4.) uses the password `changeit`. If you changed the value in the script, also do it for `KEYSTORE_PASSWORD` and `TRUSTSTORE_PASSWORD` in the following example.
 

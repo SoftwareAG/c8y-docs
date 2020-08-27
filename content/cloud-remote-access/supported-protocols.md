@@ -1,6 +1,6 @@
 ---
 title: Supported protocols and gateways
-weight: 30
+weight: 20
 layout: bundle
 ---
 

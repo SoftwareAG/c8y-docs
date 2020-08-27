@@ -6,9 +6,7 @@ weight: 1
 
 The following sections will walk you through all functionalities of the Administration application in detail. For your convenience find an overview on the content of this document below.
 
-|SECTION|CONTENT|
-|:---|:---|
-|[Home Screen](#home-screen)|Providing information on your [capacity usage and subscribed applications](#home-screen).
+Data typee
 |[Managing Users](#managing-users)|How to [create users](#creating-users), edit, disable or delete them.
 |[Managing Permissions](#managing-permissions)|How to add and edit [global roles](#global) and [inventory roles](#inventory), how to assign them to users, and how to [grant application access](#app-access).
 |[Managing applications](#managing-applications)|How to manage subscribed applications and how to [manage and configure own applications](#managing-applications) in your Cumulocity IoT account.

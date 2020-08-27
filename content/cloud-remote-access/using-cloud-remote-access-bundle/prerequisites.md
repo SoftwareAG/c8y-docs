@@ -4,7 +4,7 @@ weight: 10
 layout: bundle
 ---
 
-To use Cloud Remote Access, you need:
+To use Cloud Remote Access, you need
 
 * a Cloud Remote Access compatible gateway connected to your Cumulocity IoT account.
 * a remote device with a VNC, SSH or Telnet server that is connected to the gateway and reachable from the gateway.

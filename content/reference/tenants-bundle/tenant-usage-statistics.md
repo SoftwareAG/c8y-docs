@@ -148,7 +148,7 @@ See the table below for more information on how the counters above are increased
 
 >**Important:** Cumulocity IoT platform servers by default work at UTC timezone. The platform supports other time zones, which can be selected by the service provider at installation time.
 
-The tenant usage statistics are collected on a daily base according to the beginning of day (`BOD`) and the end of day (`EOD`), which are defined by the service side timezone. 
+The tenant usage statistics are collected on a daily base according to the beginning of day (`BOD`) and the end of day (`EOD`), which are defined by the service side timezone.
 As a result, if the local time zone of a user is different from the server timezone, an operation triggered by the user may be assigned to a different day according to the server time.
 
 #### Examples
@@ -158,9 +158,9 @@ As a result, if the local time zone of a user is different from the server timez
   ||Device| Server|
   |:-|:----|:-----|
   |Time zone| CEST +2h |UTC|
-  |Send measurement time | 26.08.2020T01:30:00+02:00| 25.08.2020T23:30Z|
+  |Send measurement time | 26.08.2020T01:30:00+02:00| 25.08.2020T23:30:00Z|
 
-  **Result:** 
+  **Result:**
 The request will be billed to the day 25.08.2020 as this is the server time of the request handing.
 
 ##### Example 2: Request counting
@@ -187,7 +187,7 @@ The request will be billed to the day 25.08.2020 as this is the server time of t
   |:-|:----|:-----|
   |Time zone| KI +14h (Kiribati Islands)|UTC|
   |Subscribe time | 26.08.2020T12:00:00+14:00| 25.08.2020T22:00:00Z|
-  |Unsubscribe time | 26.08.2020T20:00:00+14:00| 26.08.2020T06:00Z|
+  |Unsubscribe time | 26.08.2020T20:00:00+14:00| 26.08.2020T06:00:00Z|
 
   **Result:** Form user perspective microservice was subscribed for 8h at 26.08.2020 but at server time it was 2h before EOD at 25.08.2020 and 6h after BOD at 26.08.2020.
 
@@ -197,7 +197,7 @@ The request will be billed to the day 25.08.2020 as this is the server time of t
   |:-|:----|:-----|
   |Time zone| CEST| AS -11h (American Samoa)|
   |Subscribe time | 26.08.2020T12:30:00+2:00| 25.08.2020T23:30:00Z|
-  |Unsubscribe time | 26.08.2020T13:00:00+2:00| 25.08.2020T24:00Z|
+  |Unsubscribe time | 26.08.2020T13:00:00+2:00| 25.08.2020T24:00:00Z|
 
   **Result:** As in this case we have big time shift between server and user all resources will be billed to day 25.08.2020 according to server time.
 
@@ -489,4 +489,3 @@ Example Response :
             "testadmin"
         ]
     }
-

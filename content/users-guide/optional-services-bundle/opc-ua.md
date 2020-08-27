@@ -419,7 +419,28 @@ Turn on Send event to send an event each time you receive a resource value.
 Specify the following parameters:
 
 - Enter the type of the event. For example, “com_cumulocity_model_DoorSensorEvent”.
-- Enter the text which will be sent. For example, “Door sensor was triggered”.
+- Enter the text which will be sent. For example, “Door sensor was triggered”. You can also get the resource value populated to the event text by defining the value placeholder:
+                                                                               
+```plain
+Door sensor was triggered, event value: ${value}
+```
+
+The value will also be populated as a fragment of the created event, under a static fragment name as the following:
+
+```json
+{
+ "type": "com_cumulocity_model_DoorSensorEvent",
+ "text": "Door sensor was triggered",
+ "c8y_ua_DataValue": {
+     "serverTimestamp": 132403410091850000,
+     "sourceTimestamp": 132403410091850000,
+     "value": {
+         "value": 381632714
+     },
+     "statusCode": 0
+ }
+}
+```
 
 **Custom Actions**
 
@@ -432,7 +453,7 @@ Custom actions are HTTP POST requests which the gateway will send to a defined c
 
 Below there is an example of a full device protocol that configures a custom action:
 
-```
+```json
 {
    "name": "My device protocol for HttpPost",
    "referencedServerId": "{serverId}",
@@ -517,13 +538,13 @@ This operation triggers importing address space for a specific OPC-UA server. Th
 ```
 POST /devicecontrol/operations/
 
-	{
-	"deviceId": "<server-device-Id>",
-	"c8y_ua_command_ScanAddressSpace": {
-	        “skipSync”: false
-	    },
-	"description": "Import address space from root node"
-	}
+{
+    "deviceId": "<server-device-Id>",
+    "c8y_ua_command_ScanAddressSpace": {
+            “skipSync”: false
+        },
+    "description": "Import address space from root node"
+}
 ```
 
 The twinned address space information is persisted in the Cumulocity IoT inventory. It is internally used to support address space browsing and to define device protocols. Hence this operation is always triggered if a new server is added to the platform.
@@ -539,21 +560,21 @@ This operation reads the value attribute of specific node or list of nodes.
 ```
 POST /devicecontrol/operations/
 
-	{
-	  "deviceId" : "<server-device-Id>",
-	  "c8y_ua_command_ReadValue": {
-		"nodes": ["NODE_ID"],
-	     “timestampsToReturn”: “Neither”   
-	  },
-	  "description":"read value"
-	}
+{
+    "deviceId" : "<server-device-Id>",
+    "c8y_ua_command_ReadValue": {
+    "nodes": ["NODE_ID"],
+     “timestampsToReturn”: “Neither”   
+    },
+    "description":"read value"
+}
 ```
 
 Other possible values for `timestampsToReturn`: “Source”, “Server” or “Both”.
 
 The result of this operation will contain output in the following format:
 
-```
+```json
 {
 	"results": {
 		"ns=2;s=MyLevel": {
@@ -574,7 +595,7 @@ The result of this operation will contain output in the following format:
 
 This operation returns all attributes of specific node.
 
-```
+```json
 {
 	"deviceId": "<server-device-Id>",
 	"c8y_ua_command_ReadNodeAttributes": {
@@ -586,7 +607,7 @@ This operation returns all attributes of specific node.
 
 The result may differ depending on the node type.
 
-```
+```json
 {
 	"Value": {
 		"value": 1
@@ -607,7 +628,7 @@ The result may differ depending on the node type.
 
 This operation supports to read one or more attributes of one or more nodes. This includes support of the range parameter to read a single element or a range of elements when the attribute value is an array.
 
-```
+```json
 {
     "deviceId": "<server-device-Id>",
     "c8y_ua_command_ReadAttribute": {
@@ -619,7 +640,7 @@ This operation supports to read one or more attributes of one or more nodes. Thi
 ```
 
 The result may differ depending on the node type.
-```
+```json
 {
 	"results": {
 		"ns=3;s=FloatArray": {
@@ -647,7 +668,7 @@ The syntax is as following:
 ```
 
 
-```
+```json
 {
     "description": "Read attribute from ns=3;s=FloatArray",
     "deviceId": "<server-device-Id>",
@@ -661,7 +682,7 @@ The syntax is as following:
 
 The result may differ depending on the node type.
 
-```
+```json
 {
     "results": {
    	 "ns=3;s=FloatArray": {
@@ -684,7 +705,7 @@ The result may differ depending on the node type.
 
 This operation reads history values and applies the mappings except of alarm mappings.
 
-```
+```json
 {
     "deviceId": "<server-device-Id>",    
     "c8y_ua_command_HistoricReadOperation": {
@@ -705,7 +726,7 @@ This operation reads history values and applies the mappings except of alarm map
 
 his operation reads historic values and only saves those values to a file which can be retrieved using the binary API.
 
-```
+```json
 {
     "deviceId": "<server-device-Id>",
     "c8y_ua_command_HistoricDataUploadOperation": {
@@ -725,7 +746,7 @@ The binary file representations, which can be queried using binary API, are crea
 
 This operation writes values to the node/nodes.
 
-```
+```json
 {
 	"deviceId": "<server-device-Id>",
 	"c8y_ua_command_WriteValue": {
@@ -746,7 +767,7 @@ This operation writes values to the node/nodes.
 
 This operation is similar to the previous one, but instead of writing to the value attribute, this operation writes attributes’ values to any writable attributes. The following example writes two different attributes to two different nodes.
 
-```
+```json
 {
 	"deviceId": "<server-device-Id>",
 	"c8y_ua_command_WriteAttribute": {
@@ -767,7 +788,7 @@ This operation is similar to the previous one, but instead of writing to the val
 
 Optionally, it is possible to write a value range when the attribute value is an array.
 
-```
+```json
 {
 	"deviceId": "<server-device-Id>",
 	"c8y_ua_command_WriteAttribute": {
@@ -787,7 +808,7 @@ Optionally, it is possible to write a value range when the attribute value is an
 
 This operation reads the description of a method node.
 
-```
+```json
 {
 	"deviceId": "<server-device-Id>",
 	"c8y_ua_command_GetMethodDescriptionOperation": {
@@ -799,7 +820,7 @@ This operation reads the description of a method node.
 
 The result describes a method, it’s parent object, input and output arguments.
 
-```
+```json
 {
 	"nodeId": "ns=2;s=MyMethod",
 	"name": "MyMethod",
@@ -831,7 +852,7 @@ The result describes a method, it’s parent object, input and output arguments.
 
 This operation calls the method on the OPC UA server. It requires complete input arguments with an additional “value” fragment.
 
-```
+```json
 {
 	"deviceId": "<server-device-Id>",
 	"c8y_ua_command_CallMethodOperation": {
@@ -861,7 +882,7 @@ This operation calls the method on the OPC UA server. It requires complete input
 The result contains all output arguments with values set by the OPC UA server.
 Power of 5 is 25:
 
-```
+```json
 {
 	"statusCode": 0,
 	"result": [{

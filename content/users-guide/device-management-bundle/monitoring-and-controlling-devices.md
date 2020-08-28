@@ -283,7 +283,7 @@ See the list of bulk operations in the **Bulk operations** tab.
 
 Bulk operations have an operation type and state.
 
-Bulk operations can have one of the following operation types:
+You can add bulk operations of the following operation types with the [bulk operation wizard](#to-add-a-bulk-operation-using-the-wizard):
 
 | Operation type          | Description |
 | :---------------------- | :---------- |
@@ -291,6 +291,8 @@ Bulk operations can have one of the following operation types:
 | Firmware update         | The bulk operation updates the firmware on the selected devices. |
 | Software update         | The bulk operation updates the software on the selected devices. |
 | Apply device profile    | The bulk operation applies a device profile on the selected devices. |
+
+Bulk operations can have other operation types as well, for example when you [schedule a single operation as bulk operation](#to-schedule-a-single-operation-as-bulk-operation) and the single operation has a different operation type.
 
 Bulk operations can have one of the following states:
 
@@ -327,8 +329,6 @@ To filter the list of bulk operations by state, click one of the state buttons i
 Click **All** to clear the filter.
 
 To clear both filters, click **Reset filters** at the bottom of the list (only visible if filters are applied).
-
-Click **Realtime** at the right of the top menu bar to see operations coming in from the devices in realtime.
 
 >**Info:** Bulk operations created prior to release 10.7.0 are dependent on a group and may still be viewed. To do so, select the desired group and click the **Bulk operations** tab.
 
@@ -388,7 +388,9 @@ The changes will be applied to the bulk operation accordingly.
 
 #### <a name="bulk-operations"></a>To cancel bulk operations
 
-You may only cancel bulk operations with state = SCHEDULED.
+You may only cancel bulk operations with state = SCHEDULED or EXECUTING.
+If it is executing, you may only cancel the operation until all of its single operations are created.
+This way, you can cancel the creation of the remaining single operations.
 
 Click the menu icon to the right of the bulk operation that you want to cancel, then click **Cancel bulk operation**.
 

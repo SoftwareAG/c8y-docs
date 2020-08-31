@@ -534,11 +534,13 @@ The following constraints can be applied:
 
 ![OPC UA device protocol](/images/users-guide/opcua/opcua-auto-constraints.png)
 
-### REST API
+### REST APIs
 
-While Cumulocity IoT User Interface for OPC UA provides an easy and visual way to configure and build your OPC UA solution, the OPC UA management *microservice* gives you the possibility to do it in an advanced level.
+While Cumulocity IoT User Interface for OPC UA provides an easy and visual way to configure and build your OPC UA solution, the OPC UA management *microservice* gives you the possibility to do it via RESTful web service.
 
-#### Connect a new OPC UA server to the gateway
+#### OPC UA Server Resources
+
+##### Connect a new OPC UA server to the gateway
 
 Endpoint: `POST /service/opcua-mgmt-service/gateways/{gatewayId}/servers`
 
@@ -546,16 +548,263 @@ Payload:
 
 ```json
 {
-	"name": "My Server",
-	"config": {
-		"securityMode": "NONE",
-		"serverUrl": "opc.tcp://127.0.0.1:53530/OPCUA/SimulationServer",
-		"autoScanAddressSpace": true
-	}
+    "name": "My Server",
+    "config": {
+        "securityMode": "NONE",
+        "serverUrl": "opc.tcp://127.0.0.1:53530/OPCUA/SimulationServer",
+        "autoScanAddressSpace": true
+    }
 }
 ```
 
+| Config field           | Description                                                                                                                                                                                                                                            |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **securityMode**       | String enum, mandatory. Security mode for connection to OPC UA server. Possible values: `NONE, BASIC128RSA15_SIGN, BASIC128RSA15_SIGN_ENCRYPT, BASIC256_SIGN, BASIC256_SIGN, BASIC256_SIGN_ENCRYPT, BASIC256SHA256_SIGN, BASIC256SHA256_SIGN_ENCRYPT`. |
+| **serverUrl**          | String, mandatory. OPC UA server URL.                                                                                                                                                                                                                  |
+| autoScanAddressSpace   | Boolean. Whether the gateway should scan the address space automatically in the first time it connects. Default is true.                                                                                                                               |
+| rescanCron             | String. Regular expression that defines how the address space rescanning should be scheduled. If this is not set, no auto-rescan will be triggered.                                                                                                    |
+| autoReconnect          | Boolean. Whether the gateway should try to reconnect to the OPC UA server once the connection drop is detected. Default is true.                                                                                                                       |
+| timeout                | Integer. Define the default communication timeout that is used for each synchronous service call. This value is set to each service request and the OPC UA gateway will wait for the response message for that long.                                   |
+| statusCheckInterval    | Integer. Define the status check interval, that is, how often the server status is read. Default is 3 (seconds).                                                                                                                                       |
+| maxResponseMessageSize | Integer. Define the maximum size, in bytes, for the body of any response message from the server. Default is 50 MB (50.000.000). To make it unlimited, set this to 0.                                                                                  |
+| targetConnectionState  | String enum. Possibe values: `enabled/disabled`. Whether the connection the the target OPC UA server is enabled.                                                                                                                                       |
 
+##### Get all servers of a gateway device
+
+Method: `GET /service/opcua-mgmt-service/gateways/{gatewayId}/servers`
+
+Sample response:
+
+```json
+[
+    {
+        "id": "25197",
+        "gatewayId": "800",
+        "name": "My OPC UA server",
+        "requiredInterval": 1,
+        "config": {
+            "securityMode": "NONE",
+            "serverUrl": "opc.tcp://127.0.0.1:12686/CumulocityOPCUAServer",
+            "userIdentityMode": "Anonymous",
+            "timeout": 30,
+            "autoReconnect": true,
+            "statusCheckInterval": 40,
+            "targetConnectionState": "enabled"
+        },
+        "namespaceTable": [
+            "http://opcfoundation.org/UA/",
+            "urn:cumulocity:opcua:test:server:ee8ff646-cc83-4a1f-ad29-97356c496ef0",
+            "urn:cumulocity:opcua:test:server"
+        ],
+        "c8y_Availability": {
+            "lastMessage": "2020-08-27T12:43:22.585+0000",
+            "status": "UNAVAILABLE"
+        },
+        "c8y_Connection": {
+            "status": "DISCONNECTED"
+        },
+        "c8y_RequiredAvailability": {
+            "responseInterval": 1
+        }
+    }
+]
+```
+
+##### Delete and disconnect an OPC UA server
+
+Endpoint: `DELETE /service/opcua-mgmt-service/servers/{serverId}`
+
+Response: `204 No content`
+
+#### Address space resources
+
+##### Get an address space node by ID
+
+Endpoint: `GET /service/opcua-mgmt-service/servers/{serverId}/address-spaces/get`
+
+Parameters:
+
+| Param    | Param Type    | Description                                                                                  |
+| -------- | ------------- | -------------------------------------------------------------------------------------------- |
+| serverId | Path variable | Integrer, mandatory. OPC UA server managed object ID.                                        |
+| nodeId   | Query param   | Mandatory. Node ID of the node to get.                                                       |
+| withUri  | Query param   | Boolean, default is false. Whether the result should use address space uri instead of index. |
+
+**Example:**
+
+Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/get?nodeId=i%3D84`
+
+```json
+{
+    "nodeId": "i=84",
+    "nodeClass": 1,
+    "nodeClassName": "Object",
+    "browseName": "0:Root",
+    "browsePath": null,
+    "displayName": "Root",
+    "description": "The root of the server address space.",
+    "references": [
+        {
+            "referenceId": "i=35",
+            "targetId": "i=87",
+            "referenceLabel": "Organizes",
+            "targetLabel": "Views",
+            "targetBrowseName": "Views",
+            "inverse": false,
+            "hierarchical": true
+        },
+        {
+            "referenceId": "i=40",
+            "targetId": "i=61",
+            "referenceLabel": "HasTypeDefinition",
+            "targetLabel": "FolderType",
+            "targetBrowseName": "FolderType",
+            "inverse": false,
+            "hierarchical": false
+        }
+    ],
+    "attributes": {
+        "eventNotifier": 0
+    },
+    "absolutePaths": [
+        [
+            "0:Root"
+        ]
+    ],
+    "ancestorNodeIds": [
+        []
+    ]
+}
+```
+
+##### Get children of a given node
+
+Endpoint: `GET /serice/opcua-mgmt-service/servers/{serverId}/address-spaces/children`
+
+Parameters:
+
+| Param    | Param Type    | Description                                                                                  |
+| -------- | ------------- | -------------------------------------------------------------------------------------------- |
+| serverId | Path variable | Integrer, mandatory. OPC UA server managed object ID.                                        |
+| nodeId   | Query param   | Mandatory. Node ID of the node to get.                                                       |
+| withUri  | Query param   | Boolean, default is false. Whether the result should use address space uri instead of index. |
+
+**Example:**
+
+Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/children?nodeId=i%3D84`
+
+```json
+[
+    {
+        "nodeId": "i=86",
+        "nodeClass": 1,
+        "nodeClassName": "Object",
+        "browseName": "0:Types",
+        "browsePath": null,
+        "displayName": "Types",
+        "description": "The browse entry point when looking for types in the server address space.",
+        "references": [
+            {
+                "referenceId": "i=40",
+                "targetId": "i=61",
+                "referenceLabel": "HasTypeDefinition",
+                "targetLabel": "FolderType",
+                "targetBrowseName": "FolderType",
+                "inverse": false,
+                "hierarchical": false
+            },
+            {
+                "referenceId": "i=35",
+                "targetId": "i=86",
+                "referenceLabel": "OrganizedBy",
+                "targetLabel": "Types",
+                "targetBrowseName": "Types",
+                "inverse": true,
+                "hierarchical": true
+            }
+        ],
+        "attributes": {
+            "eventNotifier": 0
+        },
+        "absolutePaths": [
+            [
+                "0:Root",
+                "0:Types"
+            ]
+        ],
+        "ancestorNodeIds": [
+            [
+                "i=84"
+            ]
+        ]
+    }
+]
+```
+
+##### Browse a node
+
+Endpoint: `GET /serice/opcua-mgmt-service/servers/{serverId}/address-spaces/browse`
+
+Parameters:
+
+| Param      | Param Type    | Description                                                                                                                                                                                                                                                                          |
+| ---------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| serverId   | Path variable | Integrer, mandatory. OPC UA server managed object ID.                                                                                                                                                                                                                                |
+| nodeId     | Query param   | Node ID of the node to browse from. Default is root node (i=84).                                                                                                                                                                                                                     |
+| browsePath | Query param   | Mandatory. Browse path to browse from the give node. Browse path can be a single param or an array to represent a path from the given node to the target node. To specify the browsePath as an array, repeat the browsePath query. Example: `.../browse?browsePath=L1&browsePath=L2` |
+| withUri    | Query param   | Boolean, default is false. Whether the result should use address space uri instead of index.                                                                                                                                                                                         |
+
+**Example:**
+
+Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/browse?nodeId=i%3D84&browsePath=Objects`
+
+```json
+[
+    {
+        "nodeId": "i=85",
+        "nodeClass": 1,
+        "nodeClassName": "Object",
+        "browseName": "0:Objects",
+        "browsePath": null,
+        "displayName": "Objects",
+        "description": "The browse entry point when looking for objects in the server address space.",
+        "references": [
+            {
+                "referenceId": "i=35",
+                "targetId": "i=2253",
+                "referenceLabel": "Organizes",
+                "targetLabel": "Server",
+                "targetBrowseName": "Server",
+                "inverse": false,
+                "hierarchical": true
+            },
+            {
+                "referenceId": "i=35",
+                "targetId": "ns=2;s=Cumulocity",
+                "referenceLabel": "Organizes",
+                "targetLabel": "Cumulocity",
+                "targetBrowseName": "2:Cumulocity",
+                "inverse": false,
+                "hierarchical": true
+            }
+        ],
+        "attributes": {
+            "eventNotifier": 0
+        },
+        "absolutePaths": [
+            [
+                "0:Root",
+                "0:Objects"
+            ]
+        ],
+        "ancestorNodeIds": [
+            [
+                "i=84"
+            ]
+        ]
+    }
+]
+```
 
 ### Operations
 

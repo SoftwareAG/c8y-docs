@@ -152,7 +152,7 @@ See the table below for more information on how the counters above are increased
 
 ### MicroserviceUsageStatistics
 
-The microservice usage statistics gathers information on the resource usage for tenants for each subscribed application which are collected on a daily base. 
+The microservice usage statistics gathers information on the resource usage for tenants for each subscribed application which are collected on a daily base.
 
 The microservice usage's information is stored in the `resources` object.
 

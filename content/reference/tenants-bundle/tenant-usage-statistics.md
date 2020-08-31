@@ -221,26 +221,26 @@ Usage statistics consists from values that are progressive like request count an
   * Active - Common state when tenant can interact with platform. In that state all billing values are stored and updated.
   * Suspended - Suspended tenant is not billed for requests count and microservice resources, the only value that is still counted is storage size. Microservice resource usage is billed as "used" means that when tenant is switched to Suspended state all microservices are stopped so there is no resources to bill.
   * Deleted - That's the point of no return tenant is not billed for any resources but there is no way of restoring the data.
-* Microservice - Any extension deployed to platform as microservice is billed in for pay as "used" form and billing starts according to begin of usage. After subscribing microservice that results in new container creating each can be in following states ( State is resolved based on liveness and readiness probes defined in [microservice manifest](/microservice-sdk/concept/#manifest)):  
-  * Scheduled - Microservices was scheduled to be started but docker container was not yet created and resources are not allocated. In this state microservice is not yet billed.
-  * Not ready - Container is not ready yet to handle incomming traffic. In that case microservice resources are billed.
-  * Ready -   Container is ready to handle incomming traffic, so reasources are counted.
+* Microservice - Any extension deployed to platform as microservice is billed in for pay as "used" form and billing starts according to begin of usage. After subscribing the application by tenant we trigger a process of application startup which will go thru few high level phases:  
+  * Scheduled - Microservices was scheduled to be started but docker container is not running yet. In this state microservice is not yet billed.
+  * Not ready - Container is not ready yet to handle incomming traffic but resources are already allocated so billing is started.
+  * Ready -   Container is ready to handle incomming traffic. ( Ready is resolved based on liveness and readiness probes defined in [microservice manifest](/microservice-sdk/concept/#manifest). If probes are not defined then microservice is immediately ready)
 
-  Tenant that is billed for resources can view the point in time when microservices billing was started by viewing [the audit logs](users-guide/administration/#audit-logs).
+  Tenant that is billed for resources can view the point in time when microservices billing was changed by viewing [the audit logs](users-guide/administration/#audit-logs). The audit log entries like `Scaling application '...' from X to Y instances` contains the information about the changes of instances and resources consumed by microservice.
 
   <img src="/images/users-guide/enterprise-tenant/ee-ms-billing-audit-logs.png" name="Microservice audit logs"/>
 
   That information is assigned to tenant based on isolation level. In case of multi-tenant microservice is owner of microserivce. In case of per-tenant is the subscribed tenant.
-  Tenant should be also able to see that in application details view with same rules ( according to isolation level).
-  At events tab you can see events that are pointing the full microservice lifecycle like :
-  * `Pod "apama-ctrl-starter-scope-..." created.` - this means that new microservice instance was scheduled for tenant
-  * `Container created.` - Container created but not started yet. Means that resource allocation was succeed but application is not running yet. We don't start the billing yet.
-  * `Container started.` - Container started. Since that point the billing starts
+
+  Tenant should be also able to see full application lifecyle in application details.
+  At events tab you can see events section that is showing very low level stages of application startup, some of the most important are :
+  * `Pod "apama-ctrl-starter-scope-..." created.` - It means that new microservice instance was scheduled to be started for tenant ( maps to state Scheduled ).
+  * `Container created.` - Container created but not started yet. Means that resource allocation was succeed but application is not running yet ( State scheduled ).
+  * `Container started.` - Container is started but not ready yet to handle incomming traffic. Since that point the billing starts as application is running and resources are really used. ( State Not ready )
+
+  Note: In event section there is no event when microservice have reached Ready state as that happens according to Readiness probe.
 
   <img src="/images/users-guide/enterprise-tenant/ee-ms-billing-events.png" name="Microservice details - Events"/>
-
-
-
 
 
 

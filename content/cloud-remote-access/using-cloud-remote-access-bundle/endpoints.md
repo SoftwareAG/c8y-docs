@@ -19,8 +19,8 @@ The "endpoint" is the IP address and port of the VNC, SSH or Telnet server runni
 
 #### To add a remote access endpoint via VNC
 
-1. Enter the host (IP address or host name) and the port of the server.
-2. Select a sign-in method. If you select "Password only", provide the password  for the VNC server.
+1. Enter the host (IP address or hostname) and the port of the server.
+2. Select a sign-in method. If you select "Password only", provide the password for the VNC server.
 3. Click **Save** to add the endpoint.
 
 ![Remote access endpoint](/images/cra/cra-endpoint-vnc.png)
@@ -29,7 +29,7 @@ Once the connection is established, a new browser tab will open displaying the f
 
 #### To add a remote access endpoint via Telnet
 
-1. Enter the host (IP address or host name) and the port of the server.
+1. Enter the host (IP address or hostname) and the port of the server.
 2. Click **Save** to add the endpoint.
 ![Remote access Telnet endpoint](/images/cra/cra-endpoint-telnet.png)
 
@@ -38,7 +38,7 @@ Once the connection is established, a new browser tab will open displaying the f
 
 #### To add a remote access endpoint via SSH
 
-1. Enter the host (IP address or host name) and the port of the server.
+1. Enter the host (IP address or hostname) and the port of the server.
 2. Select a sign-in method.<br>
 	
 	Username and password: If this method is selected, it is mandatory to enter a username and password.

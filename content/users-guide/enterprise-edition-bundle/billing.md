@@ -238,7 +238,7 @@ For more information, refer to [Auditing](/reference/auditing/) in the Reference
 
 ### Timezone handling
 
->**Important:** Cumulocity IoT platform servers by default work at UTC timezone. Other time zones are also supported by the platform and can be selected by the service provider at installation time. Thus, the general functionality is also guaranteed for non-UTC server time zones.
+>**Important:** Cumulocity IoT platform servers by default work at UTC timezone. Other time zones are also supported by the platform and can be selected by the service provider at installation time. Thus, the general metering functionality is also guaranteed for non-UTC server time zones.
 
 The tenant usage statistics are collected on a daily base according to the beginning of day (`BOD`) and the end of day (`EOD`), which are defined by the server timezone. As a result, if the local time zone of a user is different from the server timezone, an operation triggered by the user may be assigned to a different day according to the server time.
 

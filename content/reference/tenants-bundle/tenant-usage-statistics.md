@@ -223,14 +223,13 @@ Usage statistics consists from values that are progressive like request count an
   * Deleted - That's the point of no return tenant is not billed for any resources but there is no way of restoring the data.
 * Microservice - Any extension deployed to platform as microservice is billed in for pay as "used" form and billing starts according to begin of usage. After subscribing the application by tenant we trigger a process of application startup which will go thru few high level phases:  
   * Scheduled - Microservices was scheduled to be started but docker container is not running yet. In this state microservice is not yet billed.
-  * Not ready - Container is not ready yet to handle incomming traffic but resources are already allocated so billing is started.
+  * Not ready - Container is not ready yet to handle incomming traffic but application is already running so billing is started.
   * Ready -   Container is ready to handle incomming traffic. ( Ready is resolved based on liveness and readiness probes defined in [microservice manifest](/microservice-sdk/concept/#manifest). If probes are not defined then microservice is immediately ready)
 
   Tenant that is billed for resources can view the point in time when microservices billing was changed by viewing [the audit logs](users-guide/administration/#audit-logs). The audit log entries like `Scaling application '...' from X to Y instances` contains the information about the changes of instances and resources consumed by microservice.
 
   <img src="/images/users-guide/enterprise-tenant/ee-ms-billing-audit-logs.png" name="Microservice audit logs"/>
 
-  That information is assigned to tenant based on isolation level. In case of multi-tenant microservice is owner of microserivce. In case of per-tenant is the subscribed tenant.
 
   Tenant should be also able to see full application lifecyle in application details.
   At events tab you can see events section that is showing very low level stages of application startup, some of the most important are :
@@ -242,7 +241,7 @@ Usage statistics consists from values that are progressive like request count an
 
   <img src="/images/users-guide/enterprise-tenant/ee-ms-billing-events.png" name="Microservice details - Events"/>
 
-
+  Audit logs and events are stored at tenant space according to isolation level. For multi-tenant isolated microservice is tenant that is owner of microserivce and in case of per-tenant is the subscribed tenant.
 
 ### MicroserviceUsageStatistics
 

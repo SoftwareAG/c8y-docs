@@ -49,6 +49,6 @@ The following limitations apply to Cloud Remote Access for Telnet:
 For Cloud Remote Access for SSH, the same limitations as for Telnet apply (see above). Moreover, the following additional limitations are known:
 
 * International characters are not supported yet.
-* Only a limited number of control characters is working. For example, interrupt (CTRL+C) is not working yet.
+* Only a limited number of control characters is working. 
 * Mouse movements are not supported.
-* Only the SSHv2 protocol is supported.
+* SSH version 1 is not supported.

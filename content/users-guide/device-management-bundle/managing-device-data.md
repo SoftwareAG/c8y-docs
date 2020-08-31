@@ -118,7 +118,9 @@ Click **All devices** in the **Devices** menu in the navigator, select the desir
 
 ![Install firmware](/images/users-guide/DeviceManagement/devmgmt-firmware-install.png)
 
-The install operation will be created to be executed by the device. The firmware installation is completed as soon as the device has executed the operation.
+The install operation to be executed by the device will be created. The firmware installation is completed as soon as the device has executed the operation.
+
+The operation details are shown in the **Control** tab of the device.
 
 ##### To install/update firmware on multiple devices
 
@@ -128,7 +130,11 @@ Cumulocity IoT offers the option to execute firmware updates for multiple device
 2. Navigate to the operation in the **Control** tab and in the context menu select **Schedule as bulk operation**. 
 3. Fill in the fields to schedule the bulk operation and click **Create**. For details on bulk operations, see [Monitoring and controlling devices](/users-guide/device-management/#monitoring-and-controlling-devices).
 
-The operation status can be viewed in the **Bulk operations** tab of the selected group, see [Bulk operations](#bulk-operations).
+The status of the bulk operation is shown in the **Bulk operations** tab under **Device control**. 
+
+Moreover, the operation details are shown in the **Control** tab of the selected devices. 
+
+>**Info:** Bulk operations that have been created with a version earlier then 10.7.0 can be viewed in the **Bulk operations** tab of the selected group, see also [Bulk operations](#bulk-operations).
 
 ### <a name="software-repo"></a> Managing device software
 
@@ -213,7 +219,9 @@ Additionally, it shows the operation status for the last operation (successful o
 
 ![Install software](/images/users-guide/DeviceManagement/devmgmt-software-install.png)
 
-The software will be installed on the device.
+The install operation to be executed by the device will be created. The software installation is completed as soon as the device has executed the operation.
+
+The operation details are shown in the **Control** tab of the device. The status of the last operation is also shown on the **Software** tab. 
 
 ##### To update software on a device
 
@@ -236,7 +244,12 @@ Cumulocity IoT offers the option to execute software updates for multiple device
 2. Navigate to the operation in the **Control** tab and in the context menu select **Schedule as bulk operation**. 
 3. Fill in the fields to schedule the bulk operation and click **Create**. For details on bulk operations, see [Monitoring and controlling devices](/users-guide/device-management/#monitoring-and-controlling-devices).
 
-The operation status can be viewed in the **Bulk operations** tab of the selected group, see [Bulk operations](#bulk-operations).
+The status and details of the bulk operation are shown in the **Bulk operations** tab under **Device control**. 
+
+Moreover, the operation details are shown in the **Control** tab of the selected devices. 
+
+>**Info:** Bulk operations that have been created with a version earlier then 10.7.0 can be viewed in the **Bulk operations** tab of the selected group, see also [Bulk operations](#bulk-operations).
+
 
 ### <a name="configuration-repository"></a>Managing configurations
 

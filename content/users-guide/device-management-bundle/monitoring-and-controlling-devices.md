@@ -254,9 +254,11 @@ Click **Reload** to update the list once manually.
 
 #### To add and execute a single operation
 
-Operations for a specific device are created and executed in the **Shell** tab of the device, see [Device details > Shell](/users-guide/device-management#shell).
+Single operations can be created either from bulk operations or via the different types of operations that the device supports: [managing firmware](/users-guide/device-management/#managing-firmware-on-a-device), [software](/users-guide/device-management/#managing-software-on-a-device), [configurations](/users-guide/device-management/#to-retrieve-and-apply-a-configuration-snapshot-to-a-device-which-supports-multiple-configuration-types) etc. 
 
 When you create a [bulk operation](#to-add-a-bulk-operation), the single operations entailed in the bulk operation are also added to the list of single operations.
+
+Operations for a specific device can also be created and executed in the **Shell** tab of the device, see [Device details > Shell](/users-guide/device-management#shell).
 
 >**Important:** When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
 

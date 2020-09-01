@@ -199,7 +199,7 @@ The "Info gauge" widget visualizes one data point in form of a radial gauge and 
 
 ![Info gauge widget](/images/users-guide/cockpit/cockpit-widget-info-gauge.png)
 
-You can select one data point for the gauge, and multiple data points shown with labels on the left side.
+You can select one data point for the gauge, and multiple data points shown with labels at the left side.
 
 ![Info gauge widget data point gauge](/images/users-guide/cockpit/cockpit-widget-data-gauge.png)
 

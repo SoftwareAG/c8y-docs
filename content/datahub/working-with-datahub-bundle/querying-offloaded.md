@@ -27,7 +27,7 @@ For example, if your tenantId is `t47110815` and you have defined an offloading 
 ```
 SELECT * FROM t47110815DataLake.Dremio.t47110815.JohnsAlarms;
 ```
-You can easily look up the paths to the tables in Dremio's UI. Click on your data lake under "Sources" on the left, then navigate to the table in the right canvas. When you hover over the table name, a small "copy" icon with the tool tip "Copy Path" will appear right of the table name. Clicking on it will copy the table name into your clipboard.
+You can easily look up the paths to the tables in Dremio's UI. Click on your data lake under "Sources" at the left, then navigate to the table in the right canvas. When you hover over the table name, a small "copy" icon with the tool tip "Copy Path" will appear right of the table name. Clicking on it will copy the table name into your clipboard.
 
 > **Info:** The offloading pipeline has to be executed at least once with corresponding data being offloaded before you can run a query.
 

@@ -33,7 +33,7 @@ Once the connection is established, a new browser tab will open displaying the f
 2. Click **Save** to add the endpoint.
 ![Remote access Telnet endpoint](/images/cra/cra-endpoint-telnet.png)
 
->**Important:** Be aware, that Telnet is considered to be an insecure protocol lacking built-in security measures. For network communication in a production environment we highly recommend to use the SSH protocol instead.
+>**Important:** Telnet is considered to be an insecure protocol lacking built-in security measures. For network communication in a production environment we highly recommend you to use the SSH protocol instead.
 
 
 #### To add a remote access endpoint via SSH
@@ -49,7 +49,7 @@ Once the connection is established, a new browser tab will open displaying the f
 
 	![SSH public/private keys sign in](/images/cra/cra-endpoint-ssh-publicprivatekeys.png)
 
-	> **Info:** The public key needs to be installed on the remote device as authorized_key.
+	> **Info:** The public key needs to be installed on the remote device as authorized key.
 
 	Optionally, you can also add a host key to ensure connection to the correct device. This key can also be uploaded from a file.
 	

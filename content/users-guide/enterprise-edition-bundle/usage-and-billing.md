@@ -195,7 +195,7 @@ The following values are collected on a daily base for each tenant:
 
 Microservice resources are counted based at limits defined in the microservice manifest per day. At the end of each day, the information about resource usage is collected into the tenant statistics. It is also considered that a microservice might not be subscribed for a whole day.
 
-**Example**: If a tenant was subscribed to a microservice for 12h and the microservice has 2 CPU and 2 GB of memory it should be counted as 1000 CPU milliseconds and 1024 MB of memory.
+**Example**: If a tenant was subscribed to a microservice for 12h and the microservice has 4 CPU and 4 GB of memory it should be counted as 2000 CPU milliseconds and 2048 MB of memory.
 
 For billing purposes, in addition to CPU usage and memory usage the cause for the billing is collected (e.g. owner, subscription for tenant):
 
@@ -263,12 +263,12 @@ The request will be billed to the day 25.08.2020 as this is the server time of t
 |Time zone| UTC |UTC|
 |Send measurement time | 26.08.2020T01:30:00Z| 26.08.2020T01:30:00Z|
 
-**Result:** 
+**Result:**
 
 The request will be billed to the day 26.08.2020 as the server time is the same as the device time.
 <br><br>
 
-##### Microservice resource billing - Example 1 
+##### Microservice resource billing - Example 1
 
 ||User| Server|
 |:---|:----|:-----|
@@ -276,7 +276,7 @@ The request will be billed to the day 26.08.2020 as the server time is the same 
 |Subscribe time | 26.08.2020T12:00:00+02:00| 26.08.2020T10:00:00Z|
 |Unsubscribe time | 27.08.2020T12:00:00+02:00| 27.08.2020T10:00:00Z|
 
-**Result:** 
+**Result:**
 
 The resources will be assigned mainly to the day 26.08.2020 as according to the UTC time zone the microservice was active for 14 hours that day and for 10 hours the next day. This might be a bit different from what a user expects as from his perspective the microservice was active for 12 hours each day.
 <br><br>
@@ -289,12 +289,12 @@ The resources will be assigned mainly to the day 26.08.2020 as according to the 
 |Subscribe time | 26.08.2020T12:00:00+14:00| 25.08.2020T22:00:00Z|
 |Unsubscribe time | 26.08.2020T20:00:00+14:00| 26.08.2020T06:00:00Z|
 
-**Result:** 
+**Result:**
 
 From the user perspective the microservice was subscribed for 8 hours at 26.08.2020 but at server time it was 2 hours before EOD of 25.08.2020 and 6 hours after BOD at 26.08.2020.
 <br><br>
 
-##### Microservice resource billing - Example 3 
+##### Microservice resource billing - Example 3
 
 ||User| Server|
 |:---|:----|:-----|
@@ -302,7 +302,7 @@ From the user perspective the microservice was subscribed for 8 hours at 26.08.2
 |Subscribe time | 26.08.2020T12:30:00+2:00| 25.08.2020T23:30:00Z|
 |Unsubscribe time | 26.08.2020T13:00:00+2:00| 25.08.2020T24:00:00Z|
 
-**Result:** 
+**Result:**
 
 In this case we have a big time shift between the server and the user time. All resources will be billed to the day 25.08.2020 according to the server time.
 
@@ -329,28 +329,27 @@ A Cumulocity IoT platform tenant can have several states:
   * Suspended - Suspended tenants are not billed for request count and microservice resources, the only value that is still counted is storage size. The microservice resource usage is billed as "used", i.e. when the tenant is switched to suspended state all microservices are stopped so there are no resources to bill.
   * Deleted - This is the point of no return. The tenant is not billed for any resources but there is no way of restoring the data also.
 
-  
+
 **Microservice**
 
-Any extension deployed to the platform as a microservice is billed for pay as "used" and the billing starts according to the begin of usage. After the tenant is subscribed to the application a process of application startup is triggered which will go through several high level phases:
-  
+Any extension deployed to the platform as a microservice is billed as "used" and the billing starts according to the begin of usage. After the application is subscribed to the tenant a process of application startup is triggered which will go through several high level phases:
+
   * Scheduled - The microservice has been scheduled to be started but the Docker container is not running yet. In this state the microservice is not yet billed.
-  * Not ready - The container is not ready yet to handle incoming traffic but the application is already running so billing is started.
-  * Ready - The container is ready to handle incoming traffic. "Ready" is resolved based on liveness and readiness probes defined in the [microservice manifest](/microservice-sdk/concept/#manifest). If probes are not defined then the microservice is immediately ready.
+  * Not ready - The microservice container is not ready yet to handle incoming traffic but the application is already running so billing is started.
+  * Ready - The microservice container is ready to handle incoming traffic. "Ready" is resolved based on liveness and readiness probes defined in the [microservice manifest](/microservice-sdk/concept/#manifest). If probes are not defined then the microservice is immediately ready.
 
 A tenant that is billed for resources can view the point in time when the microservices billing has been changed in [the audit logs](users-guide/administration/#audit-logs). The audit log entries, for example "Scaling application '...' from X to Y instances" contain the information about the changes of instances and resources consumed by the microservice.
 
   <img src="/images/users-guide/enterprise-tenant/ee-ms-billing-audit-logs.png" name="Microservice audit logs"/>
 
-Tenants should also be able to see the full application lifecyle in the application details. In the **Events** tab, you can see an events section that is showing very low level stages of the application startup. Some of the most important are:
+Tenants should also be able to see the full application lifecyle in the application details. In the **Status** tab, you can see an **Events** section that is showing very low level stages of the application startup. Some of the most important are:
 
   * `Pod "apama-ctrl-starter-scope-..." created.` - A new microservice instance has been scheduled to be started for the tenant (maps to the state "Scheduled").
-  * `Container created.` - The container has been created but not started yet. This means that the resource allocation has been successful but the application is not running yet (state "Scheduled").
-  * `Container started.` - The container is started but not ready yet to handle incoming traffic. At that point the billing starts, as the application is running and the resources are really used (state "Not ready").
+  * `Container created.` - The microservice container has been created but not started yet. This means that the resource allocation has been successful but the application is not running yet (state "Scheduled").
+  * `Container started.` - The microservice container is started but not ready yet to handle incoming traffic. At that point the billing starts, as the application is running and the resources are used (state "Not ready").
 
->**Info:** There is no event in the event section when the microservice has reached the state "Ready" as this happens according to the readiness probe.
+>**Info:** There is no event in the **Events** section when the microservice has reached the state "Ready" as this happens according to the readiness probe.
 
   <img src="/images/users-guide/enterprise-tenant/ee-ms-billing-events.png" name="Microservice details - Events"/>
 
-Audit logs and events are stored at tenant space according to the isolation level. For multi-tenant isolated microservices this is the tenant that is the owner of the microservice and in case of per-tenant it is the subscribed tenant.
-
+Audit logs and events are stored at tenant space according to the isolation level. For multi-tenant isolated microservices this is the tenant that is the owner of the microservice and in case of per-tenant isolation level it is the subscribed tenant.

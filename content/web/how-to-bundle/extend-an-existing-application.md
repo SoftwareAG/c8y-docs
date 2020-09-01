@@ -117,7 +117,7 @@ export class AppModule extends HybridAppModule {
 }
 ```
 
-The changes here are straight forward: First, we import the component (1.). Then we add it to the declarations (2.). Last we need to bind it to a path, in this case, `hello` (3.). When you now spin up the application with the `c8ycli server` command and navigate to the URL by adding the right hash to the URL (`http://localhost:9000/apps/cockpit/#/hello`) you should already see that custom component. In the next step, we will hook that component in the navigator on the left.
+The changes here are straight forward: First, we import the component (1.). Then we add it to the declarations (2.). Last we need to bind it to a path, in this case, `hello` (3.). When you now spin up the application with the `c8ycli server` command and navigate to the URL by adding the right hash to the URL (`http://localhost:9000/apps/cockpit/#/hello`) you should already see that custom component. In the next step, we will hook that component in the navigator at the left.
 
 ### 3. Hooking a navigator node
 

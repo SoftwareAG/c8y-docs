@@ -550,7 +550,7 @@ The rule uses the following parameters:
 <tr>
 <td style="text-align:left">3</td>
 <td style="text-align:left">Execute operation</td>
-<td style="text-align:left">The operation that will be sent. The operation is provided as JSON description. Some standard operations can be selected below the <strong>Operation</strong> field. To use a standard operation, select one, and press the arrow button on the right. This will insert the JSON of the selected operation.</td>
+<td style="text-align:left">The operation that will be sent. The operation is provided as JSON description. Some standard operations can be selected below the <strong>Operation</strong> field. To use a standard operation, select one, and press the arrow button at the right. This will insert the JSON of the selected operation.</td>
 </tr>
 <tr>
 <td align="left">4</td>

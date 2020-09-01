@@ -14,7 +14,7 @@ The data explorer is available for all assets or just for a particular asset.
 
 * Navigate to a particular asset and switch to the **Data explorer** tab to visualize all data points of this particular asset and its sub-assets.
 
-In the data explorer, you see a list of available data points on the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [*Adding data points*](#add-data-points).
+In the data explorer, you see a list of available data points at the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [*Adding data points*](#add-data-points).
 
 On the left, in the main card, you see its visualization.
 

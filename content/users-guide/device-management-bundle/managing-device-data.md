@@ -14,7 +14,8 @@ The Device Management application provides various features that support you in 
 |[Managing device software](#software-repo)|Allows you to retrieve and manage software and software versions in the software repository and to install or update them.
 |[Managing configurations](#configuration-repository)|Allows you to retrieve configuration data and store and manage it in a configuration repository as configuration snapshot. 
 |[Device credentials](#credentials)|Allows you to manage all credentials that have been generated for your connected devices.
-|[Device profiles](#)|<to be added>
+|[Trusted certificates](##managing-trusted-certificates)|<to be added>
+|[Device profiles](#device-profiles)|<to be added>
 
 
 All features are accessible through the **Management** menu in the navigator:

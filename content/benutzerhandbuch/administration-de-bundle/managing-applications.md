@@ -249,7 +249,7 @@ Manager und Editor für Apama Event Processing Language (EPL) Apps zur sofortige
 <td style="text-align:left">Funktion</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/optional-services/#cloud-remote-access" class="no-ajaxy">Cloud Remote Access</a></td>
+<td style="text-align:left"><a href="/cloud-remote-access/cra-general-aspects" class="no-ajaxy">Cloud Remote Access</a></td>
 <td style="text-align:left">Implementiert Virtual Network Computing (VNC) für den Fernzugriff auf Bedienfelder und andere Geräte über einen Webbrowser.</td>
 <td style="text-align:left">cloud-remote-access</td>
 <td style="text-align:left">Microservice</td>

@@ -6,6 +6,13 @@ layout: redirect
 
 ---
 
+OPC Unified Architecture (OPC UA) is a standard pushed by the OPC Foundation for industry automation. The goal of OPC UA is to enable the communication between industrial devices. OPC UA is designed to work across technology boundaries (“cross platform”). There are 2 components designed to accomplish this integration:
+
+- OPC UA device gateway
+- OPC UA management service
+
+![Integration Overview](/images/users-guide/opcua/opcua-integration-overview.png)
+
 The OPC UA device gateway is a stand-alone Java program that communicates with OPC UA server(s) and the Cumulocity IoT platform. It stores data into the Cumulocity IoT database via REST. Additionally, C8Y commands are executed to perform various operations on the OPC UA servers.
 
 The gateway has to be registered as Cumulocity IoT device in a specific tenant and the opcua-device-gateway must run in the users’ environment.
@@ -59,7 +66,7 @@ Mac OS
     /opt/opcua/data
 ```
 
-The number of profiles you may have is not limited. To use a specific profile on runtime, the "-Dspring.profiles.active" JVM argument has to be passed when running the gateway JAR file. For example, let’s use the previously created profile. Start a terminal and use the following command:
+The number of profiles you may have is not limited. To use a specific profile on runtime, the "--spring.profiles.active" JVM argument has to be passed when running the gateway JAR file. For example, let’s use the previously created profile. Start a terminal and use the following command:
 
 ```bash
 java -jar opcua-device-gateway-<<version>>.jar --spring.profiles.active=default,myTenant
@@ -86,94 +93,233 @@ The following properties can be manually configured in the YAML file:
 name: opcua-device-gateway
 # Platform location and configuration
 C8Y:
+  # This is the base URL pointing to the Cumulocity IoT platform. This always must be customized in an application profile.
   baseUrl: http://localhost
+  # This is an internal setting of the Cumulocity IoT SDK. It is set to true, because we typically
+  # want to configure the Cumulocity IoT IoT SDK to always use the baseURL provided during initialization.
+  # Otherwise, the gateway would use the host name from the self links taken from the core API responses.
+  # This is helpful in deployment scenarios where the Cumulocity IoT IoT instance is
+  # reachable only with an IP address.
   forceInitialHost: true
 
+#
+# Gateway-specific settings
+#
 gateway:
-# Gateway version - this is filled automatically during the build process - do not change this property
+  # The version of the gateway - this is filled automatically during the build process - do not change this property
   version: ${project.version}
-# The following two properties will be set to the name of the user that is running the gateway unless it's overridden manually
+  # The following two properties will be set to the name of the user that is running the gateway unless it's overridden manually
   identifier: mygateway
   name: mygateway
+  # The gateway uses a local database to store platform credentials and a local cache. This setting tells
+  # where local data is stored.
   db:
-# The gateway uses the local database to store platform credentials and local cache. This parameter shows the location in which the local data should be stored.
     baseDir: ${user.home}/.opcua/data
 
-# Credentials for device bootstrap - enter tenant that gateway should register to.
+  # These settings control the device bootstrap process of the gateway
   bootstrap:
-# ID of the tenant to which the device will be registered.
+    # Tenant ID to be used for device bootstrap
     tenantId: management
+    # Credentials for the device bootstrap user
     username: devicebootstrap
     password: <devicebootstrap user password>
-# On start, the gateway will wait <delay> milliseconds before connecting to the platform and searching for a      device.
+    # When the gateway starts, it waits <delay> milliseconds before connecting to the platform and searching for
+    # the device.
     delay: 5000
-# If true then gateway will drop stored device credentials and fetch them from platform
+    # If set to true, the gateway will drop any stored device credentials and fetch new ones from the platform.
     force: false
 
-# Scheduled tasks and thread pools configuration. Unless required, modifying these properties is not recommended.
+  # Scheduled tasks and thread pools configuration
+  # Only change the settings here if really necessary. Wrong scheduler configurations can
+  # disturb the gateway's operation.
   scheduler:
+    # Threadpool specific settings
     threadpool:
-      size: 10
+      # This setting corresponds to the size of the threadpool used for periodic tasks.
+      size: 15
+  # These settings control the threadpool of our internal task executor, which is used for generic background
+  # execution and asynchronous tasks.
   executor:
     threadpool:
-      coreSize: 5
-      maxSize: 20
-# mappings execution thread pool configuration. Unless required, modifying these properties is not recommended.
+      coreSize: 30
+      maxSize: 60
+  # The following settings control the settings of our device type mappings execution.
   mappingExecution:
+    # This section contains all settings related to external, custom-action execution.
     http:
+      # Connection Request timeout (ms)
       connectionRequestTimeout: 3000
+      # Connection Timeout (ms)
       connectionTimeout: 3000
+      # Socket timeout (ms)
       socketTimeout: 5000
+      # Maximum number of connections via HTTP route
+      maxPerRoute: 50
+      # Maximum total size of the HTTP connection pool used for external, custom actions.
+      maxTotal: 100
+      # The inactivityLeaseTimeout setting defines a period, after which persistent connections to
+      # the HTTP server must be reevaluated. See PoolingHttpClientConnectionManager for more information
+      inactivityLeaseTimeout: 50000 #ms
+      # Aggregate number of alarms if something goes wrong with the execution of external custom actions
+      failureAlarmAggregate: true
+      # How often is the alarm aggregation for failed external calls invoked?
+      failureAlarmFixedDelay: 15 # seconds
+
+    # The OPC UA gateway regularly fetches all device types ("mappings") from the server. The refreshInterval
+    # configures how often this happens.
     refreshInterval: 60000
+
+    # Threadpool configuration for the mapping execution
+    # Each value arriving in the gateway will be handled by one or more action handlers defined in the device type. Each handler will be executed in one single thread.
+    # Hence, this threadpool must be large enough to cope with the parallel processing needs of values
+    # received from the OPC UA server.
     threadpool:
       size: 200
+
+  # Mapping-specific settings
+  mappings:
+    # In OPC UA, alarm severity is specified by an integer range between 0 and 1000. The alarmSeverityMap
+    # allows to configure how OPC UA severity is mapped into Cumulocity IoT severity levels.
+    alarmSeverityMap:
+      1001: CRITICAL
+      801: CRITICAL
+      601: MAJOR
+      401: MINOR
+      1: WARNING
+
+  # Cyclic-Reader specific settings
   cyclicRead:
+    # Our cyclic readers use a dedicated threadpool to perform periodic read tasks.
     threadpool:
+      # Allows the size of the threadpool for cyclic reads to be configured
       size: 30
+
+  # OPC UA subscription settings: These settings allow global OPC UA configuration parameters
+  # for subscription-based data reporting
   subscription:
+    # The reporting rate corresponds to the publishing rate for monitored items.
     reportingRate: 100
+    # The maxKeepAliveCount specifies the maximum number of OPC UA reporting intervals with no data that
+    # can be skipped before the OPC UA server sends an empty response to the gateway, informing about
+    # a yet active, but idle OPC UA subscription.
     maxKeepAliveCount: 200
-# Should be at least 3 times greater than maxKeepAliveCount
+    # The lifeTimeCount specifies the maximum number of reporting intervals without a value being sent.
+    # After the lifetime count has exceeded, the subscription is terminated.
+    # Must be 3 times greater than maxKeepAliveCount
     lifetimeCount: 600
-# Repositories thread pool configuration. Unless required, modifying these properties is not recommended.
+    notificationBufferSize: 500
 
+  # Internal Repository Configurations
   repositories:
+    # Interval in milliseconds describing how often the repositories are flushed to the platform
     flushInterval: 10000
+    # Threadpool size for the event queue flushing
     eventsThreadpool: 30
+    # Threadpool size for the alarm queue flushing
     alarmsThreadpool: 30
+    # Threadpool for the measurement queue flushing
     measurementsThreadpool: 60
-# Platform connection configuration. Unless required, modifying these properties is not recommended.
 
+    # Maximum Capacity. If a repository grows over this size, the OPC UA communication will be shut off!
+    maximumCapacity: 250000
+
+    # ReEnable Threshold. If OPC UA communication has been disabled due to exceeding maximum capacity, this threshold
+    # controls when OPC UA communication is enabled again
+    reenableThresholdSize:  10
+
+  # The settings below describe platform-specific connection parameters.
   platform:
+    # Connection pool configuration
     connectionPool:
+      # Overall maximum size of the connection pool
       max: 250
+      # Max connections used for a single host
       perHost: 150
-# Monitoring interval - how often in milliseconds gateway sends monitoring data to Cumulocity IoT.     
+
+  # Gateway self-monitoring configuration
+
+  # First, the gateway internally measures different metrics and populates them to the platform.
+  # Second, the gateway actively checks if a server connection is active and working by regularly
+  # browsing the root node of an OPC UA server.
   monitoring:
-    # This parameter describes how often in milliseconds the gateway sends monitoring data to Cumulocity IoT.
+    # The interval below in ms configures the frequency of this monitoring task.
     interval: 10000
-# Time after which the gateway will publish a snapshot of values for the UI to the server.
+    # The interval below in ms configures how often we investigate the thread executor queue sizes to prevent overflow
+    checkQueueSizes: 10000
+
+  # The OPC UA gateway persists all latest values of an OPC UA server in a dedicated managed object,
+  # the so-called value map. These value maps are locally kept on the device for a certain time
+  # before being pushed to the platform, allowing for local aggregation of all last-seen values.
   valueMap:
+    # The lifetime of a local value map in seconds
     lifeTime: 30
 
-# How often (in milliseconds) gateway checks for changes in configured servers.
+  # How often (in milliseconds) does the gateway check for changes in configured servers.
+  # This setting controls how long it takes for the gateway to discover an added or a removed server
   childrenAddedOrRemoveCheck:
-    interval: 30000
+    interval: 15000
 
-# Interval in milliseconds after which the gateway will read pending operations from the platform.
+  # How often (in milliseconds and if enabled) gateway should read pending operations from the platform.
   shortPolling:
     enabled: true
     fixedDelay: 15000
 
-# Time in days for which the certificate is valid.
+  # Time in days for which the certificate is valid.
   applicationIdentity:
     validityTime: 3650
+
+  # Timeout scanning address space in minutes
+  scanAddressSpace:
+    timeout: 1440
+    retries: 5
 ```
 
 #### Logging
 
-Custom logging configuration can be set during startup by passing the "-Dlogging.config" jvm argument. For more info on how to set up custom logging settings, refer to the “Logback” documentation.
+Custom logging configuration can be set during startup by passing the "--logging.config" jvm argument. For more info on how to set up custom logging settings, refer to the “Logback” documentation.
+Sample logging config file may look like this:
 
+```bash
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+
+       <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+       <appender name="FILE"
+                         class="ch.qos.logback.core.rolling.RollingFileAppender">
+               <file>/${user.home}/.opcua/log/device-gateway.log</file>
+               <encoder>
+                       <pattern>${FILE_LOG_PATTERN}</pattern>
+               </encoder>
+
+               <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                       <!-- rollover daily -->
+                       <fileNamePattern>/${user.home}/.opcua/log/device-agent-%d{yyyy-MM-dd}.%i.log
+                       </fileNamePattern>
+                       <timeBasedFileNamingAndTriggeringPolicy
+                                       class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                               <maxFileSize>50MB</maxFileSize>
+                       </timeBasedFileNamingAndTriggeringPolicy>
+                       <maxHistory>5</maxHistory>
+               </rollingPolicy>
+       </appender>
+
+       <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+               <encoder>
+                       <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+                       <charset>utf8</charset>
+               </encoder>
+       </appender>
+
+       <logger name="com.cumulocity.opcua.client.gateway" level="INFO" />
+       <logger name="com.cumulocity" level="INFO" />
+       <logger name="c8y" level="INFO" />
+
+       <root level="INFO">
+               <appender-ref ref="FILE" />
+               <appender-ref ref="STDOUT" />
+       </root>
+</configuration>
+```
 ### Running the Gateway
 
 The gateway can run with either default or custom settings. To run the gateway run one of the commands below:
@@ -184,16 +330,16 @@ The gateway can run with either default or custom settings. To run the gateway r
 
 * Custom settings and default logging configuration:
   
-        java -Dspring.profiles.active=default,PROFILE_NAME -jar opcua-device-gateway-<<version>>.jar
+        java --spring.profiles.active=default,PROFILE_NAME -jar opcua-device-gateway-<<version>>.jar
 
 * Custom settings and custom logging configuration:
   
-        java -Dlogging.config=file:PATH_TO_LOGBACK_XML -Dspring.profiles.active=default,PROFILE_NAME -jar opcua-device-gateway-<<version>>.jar
+        java --logging.config=file:PATH_TO_LOGBACK_XML --spring.profiles.active=default,PROFILE_NAME -jar opcua-device-gateway-<<version>>.jar
 
 For example, using the profile from the previous section we are going to register the gateway. First, open the terminal and navigate to the location of the gateway.jar file. Next, enter the following command:
 
 ```
-java -Dspring.profiles.active=default,myTenant -jar opcua-device-gateway-<<version>>.jar
+java --spring.profiles.active=default,myTenant -jar opcua-device-gateway-<<version>>.jar
 ```
 
 #### Adjusting gateway memory settings
@@ -217,6 +363,14 @@ Navigate to the **Registration** page and click **Register device > General devi
 Click **Accept** to complete the registration.
 
 ![Device Registration](/images/users-guide/opcua/opcua-device-registration.png)
+
+### Gateway device details
+
+After registration is completed, the gateway device will be created by the opcua-device-gateway.
+
+In this section, only OPC UA specific information related to the tabs in the device details page will be explained. For more info on all tabs, see [Device Management > Device Details](/users-guide/device-management/#device-details) in the User guide.
+
+![Gateway device details](/images/users-guide/opcua/opcua-device-details.png)
 
 ### Connecting the gateway to the server
 
@@ -278,21 +432,23 @@ The keystore can then be uploaded as binary in Cumulocity IoT and it can be used
 
 ![Opcua Keystore](/images/users-guide/opcua/opcua-keystore.png)
 
-### Gateway device details
-
-In this section, only OPC UA specific information related to the tabs in the device details page will be explained. For more info on all tabs, see [Device Management > Device Details](/users-guide/device-management/#device-details) in the User guide.
-
-![Gateway device details](/images/users-guide/opcua/opcua-device-details.png)
-
 #### Child devices
 
 All server connections are listed as child devices even if the servers are disconnected. To stop a server connection, either delete the server child device or disable/remove the connection from the **OPC UA server** tab.
 
 ![Gateway child devices](/images/users-guide/opcua/opcua-server-child-device.png)
 
-#### Measurements
+#### Address space
 
-The Measurements tab provides visualization of data in the form of charts. In total the gateway contains the following six charts:
+When you navigate to the child device of the gateway, the **Address space** tab shows the attributes and references of the address space node of the servers. The filter searches through the whole hierarchy to find “nodeId”, “browserName” or “displayName” of an attribute. In case of multiple “ancestorNodeIds”, you can click on the desired node to be redirected.
+
+The address space is automatically scanned when a connection between the gateway and the server is established. The duration of the scan depends on the size of the address space. The address space information is stored locally once it is scanned and then used by this applying process. If the address space information is not yet available, e.g. the address space has not been scanned, another scan will be triggered without synchronizing data into Cumulocity IoT. Performing another address space operation will update the address space information.
+
+![Gateway events tab](/images/users-guide/opcua/opcua-address.png)
+
+#### Monitoring Measurements
+
+On the gateway device, the Measurements tab provides visualization of data in the form of charts. In total the gateway contains the following six charts:
 
 <table>
 <colgroup>
@@ -341,9 +497,9 @@ The Measurements tab provides visualization of data in the form of charts. In to
 
 ![Gateway measurements tab](/images/users-guide/opcua/opcua-gateway-memory.png)
 
-#### Alarms
+#### Monitoring Alarms
 
-The **Alarms** tab shows all alarms raised either in the gateway or in the servers. In total there are three alarms which can be raised:
+On the gateway device, the **Alarms** tab shows all alarms raised either in the gateway or in the servers. In total there are three alarms which can be raised:
 
 - Connection loss - If the gateway fails to connect to the OPC UA server a critical alarm is raised.
 - Gateway crash -  If the gateway crashes or is abruptly shut down a major alarm is raised.
@@ -351,25 +507,17 @@ The **Alarms** tab shows all alarms raised either in the gateway or in the serve
 
 ![Gateway alarms tab](/images/users-guide/opcua/opcua-alarms.png)
 
-#### Events
+#### Monitoring Events
 
-The **Events** tab shows all events related to the gateway-server connection. Additionally, you can see when the gateway has started and when it ends.
+On the gateway device, the **Events** tab shows all events related to the gateway-server connection. Additionally, you can see when the gateway has started and when it ends.
 
 ![Gateway events tab](/images/users-guide/opcua/opcua-events.png)
-
-#### Address space
-
-The **Address space** tab shows the attributes and references of the address space node of the servers. The filter searches through the whole hierarchy to find “nodeId”, “browserName” or “displayName” of an attribute. In case of multiple “ancestorNodeIds”, you can click on the desired node to be redirected.
-
-The address space is automatically scanned when a connection between the gateway and the server is established. The duration of the scan depends on the size of the address space. The address space information is stored locally once it is scanned and then used by this applying process. If the address space information is not yet available, e.g. the address space has not been scanned, another scan will be triggered without synchronizing data into Cumulocity IoT. Performing another address space operation will update the address space information.
-
-![Gateway events tab](/images/users-guide/opcua/opcua-address.png)
 
 ### Device protocols
 
 #### Adding a new device protocol
 
-1. Click **New device protocol** in the top menu bar and select OPC UA as device protocol type.
+1. In the Device protocols page, click **New device protocol** in the top menu bar and select OPC UA as device protocol type.
 
 2. In the resulting dialog box, enter a name and an optional description for the device protocol.
 
@@ -512,6 +660,7 @@ There are three data reporting mechanisms which can be applied to read all mappe
     - Status: Triggers notification if node's status has changed.
     - Status/Value: Triggers notification if node's status or value has changed.
     - Status/Value/Timestamp: Triggers notification if node's status, value or timestamp has changed.
+
   - Deadband filter: Deadband filter makes notified data values to be filtered.
     - None: No filter will be applied. This option is selected by default.
     - Absolute: Contains the absolute change in a data value which causes the generation of a notification. This parameter applies only to variables with any number data type.
@@ -981,6 +1130,25 @@ The result may differ depending on the node type.
 }
 ```
 
+#### Read Complex
+
+This operation reads many attributes from many nodes at single call.
+
+```json
+{
+  "deviceId" : "<server-device-Id>",
+  "c8y_ua_command_ReadComplex": {
+       "nodeAttrs": {
+         "ns=2;s=MyEnumObject": {
+           "13":"",
+           "11":""
+         }
+       }
+  },
+  "description":"Read Complex"
+}
+```
+
 #### Historic read
 
 This operation reads history values and applies the mappings except of alarm mappings.
@@ -1128,7 +1296,7 @@ The result describes a method, it’s parent object, input and output arguments.
 }
 ```
 
-#### Get method
+#### Call method
 
 This operation calls the method on the OPC UA server. It requires complete input arguments with an additional “value” fragment.
 

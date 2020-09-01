@@ -104,4 +104,4 @@ As shown in the screenshot, you can add your VNC, Telnet or SSH servers as an en
 
 ![Remote Access](/images/device-demos/casa-system-router/router-remote-access.png)
 
-For details on the remote access functionality, refer to [Cloud Remote Access](/users-guide/optional-services#cloud-remote-access).
+For details on the remote access functionality, refer to [Cloud Remote Access](/cloud-remote-access/cra-general-aspects).

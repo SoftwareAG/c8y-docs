@@ -1,12 +1,12 @@
 ---
 weight: 40
-title: Bulk device credentials
+title: Bulk device credentials (contains beta changes)
 layout: redirect
 ---
 
-Device credentials and basic device representation can be provided within a CSV file which must be UTF-8 or ANSI encoded. The CSV file must have 2 sections.
+The device credentials and the basic device representation can be provided from a CSV file which must be UTF-8 or ANSI encoded. The CSV file must have 2 sections.
 
-First section is the first line of CSV file. This line contains column names (headers):
+The first section is the first line of the CSV file. This line contains the column names (headers):
 
 <table>
 <colgroup>
@@ -25,75 +25,82 @@ First section is the first line of CSV file. This line contains column names (he
 <tr>
 <td align="left">ID</td>
 <td align="left">1</td>
-<td align="left">The external id of a device</td>
+<td align="left">External ID of the device.</td>
 </tr>
 <tr>
 <td align="left">CREDENTIALS</td>
-<td align="left">1</td>
-<td align="left">Password for the device’s user</td>
+<td align="left">0..1</td>
+<td align="left">Password for the device’s user. If the device uses certificates, this is not required.</td>
+</tr>
+<tr>
+<td align="left">AUTH_TYPE</td>
+<td align="left">0..1</td>
+<td align="left">Required authentication type for the device's user. If the device uses credentials, this can be skipped or filled with "BASIC". Devices that use certificates must set "CERTIFICATES". The default value is "BASIC". </td>
 </tr>
 <tr>
 <td align="left">TENANT</td>
 <td align="left">0..1</td>
-<td align="left">The name of tenant for which registration is executed (allowed only by management tenant)</td>
+<td align="left">The name of the tenant for which registration is executed (allowed only by the management tenant).</td>
 </tr>
 <tr>
 <td align="left">TYPE</td>
 <td align="left">0..1</td>
-<td align="left">The type of device representation</td>
+<td align="left">The type of the device representation.</td>
 </tr>
 <tr>
 <td align="left">NAME</td>
 <td align="left">0..1</td>
-<td align="left">The name of device representation</td>
+<td align="left">The name of the device representation.</td>
 </tr>
 <tr>
 <td align="left">ICCID</td>
 <td align="left">0..1</td>
-<td align="left">The iccid of device (sim card number). If ‘iccid’ appears in file, import adds a fragment ‘c8y_Mobile.iccid’. ‘Iccid’ value is not mandatory for each row, please see below example of http request</td>
+<td align="left">The ICCID of the device (SIM card number). If "iccid" appears in the file, the import adds a fragment "c8y_Mobile.iccid". The "iccid" value is not mandatory for each row. See the example of an HTTP request below.</td>
 </tr>
 <tr>
 <td align="left">IDTYPE</td>
 <td align="left">0..1</td>
-<td align="left">The type of external Id. If ‘idtype’ doesn’t appear in file, the default value is used. The default value is ‘c8y_Serial’. ‘Idtype’ value is not mandatory for each row, please see below example of http request</td>
+<td align="left">The type of external ID. If "idtype" doesn’t appear in the file, the default value is used. The default value is "c8y_Serial". The "idtype" value is not mandatory for each row. See the example of an HTTP request below.</td>
 </tr>
 <tr>
 <td align="left">PATH</td>
 <td align="left">0..1</td>
-<td align="left">The path in the groups hierarchy where device is added. Path contains name of each group separated by ‘/', i.e: Main group/Subgroup/…/Last subgroup. If group doesn’t exists, import creates the group</td>
+<td align="left">The path in the groups hierarchy where the device is added. The path contains the name of each group separated by '/', e.g. "main group/subgroup/…/last subgroup". If the group doesn’t exist, the import creates the group.</td>
 </tr>
 <tr>
 <td align="left">SHELL</td>
 <td align="left">0..1</td>
-<td align="left">If this column contains value 1, import adds for device ‘Shell’ feature (specifically: c8y_SupportedOperations fragment). ‘Shell’ value is not mandatory for each row, please see below example of http request</td>
+<td align="left">If this column contains the value "1", the import adds the Shell feature for the device (specifically: "c8y_SupportedOperations" fragment). The "shell" value is not mandatory for each row. See the example of an HTTP request below.</td>
 </tr>
 </tbody>
 </table>
 
-Section two is the rest of CSV file. Section two contains devices information. Order and quantity of values must be the same as order and quantity of headers.
+Section two is the remaining part of the CSV file and it contains the device information. The order and quantity of values must be the same as the order and quantity of headers.
 
-Separator is automatically obtained from CSV file. Valid separator values are: '\t - tabulation mark', '; - semicolon' and ', - comma'.
+The separator is automatically obtained from the CSV file. Valid separator values are tabulation mark "\t", semicolon ";" and comma ",".
 
-> **Info:** Bulk registration creates an elementary representation of the device. Then, the device needs to update it to a full representation with its own status. Device is ready to use only after it's updated to the full representation. Use following links to read more about [Credentials upload](/users-guide/device-management/#creds-upload) and [Device integration](/device-sdk/rest/#device-integration).
+> **Info:** Bulk registration creates an elementary representation of the device. Then, the device needs to update it to a full representation with its own status. The device is ready to use only after it is updated to the full representation. For more information on credentials upload refer to [Device Management > Connecting devices > To bulk-register devices](/users-guide/device-management/#creds-upload) in the User guide. For more information on device integration refer to [Device integration using REST > Device integration](/device-sdk/rest/#device-integration) in the Device SDK guide.
 
-CSV file can appear in many forms (regarding to optional tenant column and occurrence of device information):
+The CSV file can have in many forms, depending on the optional tenant column and device information:
 
-* When user is logged as management tenant, then columns: 'id', 'credentials' and 'tenant' are mandatory, and credentials for device will be created for tenant mentioned in 'tenant' column.
-* When user is logged in as 'not management' tenant i.e. sample_tenant, then columns: 'id' and 'credentials' are mandatory (if file contains 'tenant' column, it is ignored and credentials for device will be created for tenant that is logged in).
-* When user wants to add information about device, columns 'type' nad 'name' must appear in CSV file.
-* When user wants to add information about sim card number, columns 'type', 'name' and 'iccid' must appear in CSV file.
-* When user wants to change the type of external id, columns 'type', 'name' and 'idtype' must appear in CSV file.
-* When user wants to add device to group, columns 'type', 'name' and 'path' must appear in CSV file.
-* When user wants to add shell feature, columns 'type', 'name' and 'shell' must appear in CSV file and column 'shell' must contain value 1.
+* When the user is logged in as management tenant, then the columns: "id", "credentials" and "tenant" are mandatory, and the credentials for the device will be created for the tenant mentioned in  the "tenant" column.
+* When the user is logged in as a non-management tenant i.e. sample_tenant, then the columns "id" and "credentials" are mandatory (if the file contains a "tenant" column, it is ignored and the credentials for the device will be created for the tenant that is logged in).
+* When the user wants to add information about the device, the columns "type" and "name" must appear in the CSV file.
+* When the user wants to add information about the sim card number, the columns "type", "name" and "iccid" must appear in the CSV file.
+* When the user wants to change the type of the external ID, the columns "'type", "name" and "idtype" must appear in the CSV file.
+* When the user wants to add the device to a group, then the columns "type", "name" and "path" must appear in the CSV file.
+* When the user wants to add the shell feature, the columns "type", "name" and "shell" must appear in the CSV file and the "shell" column must contain the value "1".
+* When the "auth_type" column is provided with BASIC, the "credentials" column must appear in the CSV file.
+* When the "auth_type" column is provided with CERTIFICATES, the "credentials" column can not appear in the CSV file or must be empty.
 
-It is possible to define custom [External ID](/reference/identity/) mappings and some custom device properties that are added to newly created devices during registration:
+It is possible to define custom [external ID](/reference/identity/) mappings and some custom device properties which are added to newly created devices during registration:
 
-* To add custom external ID mapping, place external ID type as a last header with 'external-' prefix, e.g. to add external ID mapping of type 'c8y_Imei', put in the last column header: 'external-c8y_Imei'. The value of this external ID type should be set in corresponding column of the data rows.
-* To add custom property to registered device, place custom property name as a header, e.g. 'myCustomProperty' and the value would be in rows below.
+* To add a custom external ID mapping, enter the external ID type as the header of the last column with the prefix 'external-', e.g. to add an external ID mapping of type 'c8y_Imei', enter 'external-c8y_Imei' in the last column header. The value of this external ID type should be set in the corresponding column of the data rows.
+* To add a custom property to a registered device, enter the custom property name as a header, e.g. 'myCustomProperty', and the value would be in the rows below.
 
-The custom device properties mapping has following limitations:
+The custom device properties mapping has the following limitations:
 
-* Braces '{}' used in data rows will be interpreted as strings of "{}". The system will interpret the value as an object when some custom property is added, e.g. put 'com_cumulocity_model_Agent.active' into headers row and 'true' into data row to create an object '"com_cumulocity_model_Agent": {"active": "true"}"'.
+* Braces '{}' used in data rows will be interpreted as strings of "{}". The system will interpret the value as an object when some custom property is added, e.g. put "com&#95;cumulocity&#95;model&#95;Agent.active" into the headers row and "true" into the data row to create an object '"com&#95;cumulocity&#95;model&#95;Agent": {"active": "true"}"'.
 * It is not possible to add array values via bulk registration.
 
 

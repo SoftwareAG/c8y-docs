@@ -153,11 +153,11 @@ In the **Applications** tab you can view all subscribed applications, subscribe 
 
 #### To subscribe an application
 
-Hover over the applications under **Available applications** on the right and click **Subscribe** on the desired application.
+Hover over the applications under **Available applications** at the right and click **Subscribe** on the desired application.
 
 #### To unsubscribe an application
 
-Hover over the applications under **Subscribed applications** on the left and click **Unsubscribe**.
+Hover over the applications under **Subscribed applications** at the left and click **Unsubscribe**.
 
 #### Monitoring microservices
 

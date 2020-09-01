@@ -74,7 +74,7 @@ For earlier versions of Cumulocity IoT, follow the steps in [Manual registration
 
 3.  From your smartphone, launch the app and tap **Connect** in the top right corner of the screen. 
 4.  Grant access to your camera if the app asks you for permission.
-5.  Scan the QR code shown on your PC's web browser. If you can't scan the QR code, tap **Manual Registration** on your smartphone and fill in the details on the right side of the wizard screen.
+5.  Scan the QR code shown on your PC's web browser. If you can't scan the QR code, tap **Manual Registration** on your smartphone and fill in the details at the right side of the wizard screen.
 6.  Back on your smartphone, tap **Done**. Sensor measurements are sent to the server. They can be viewed in the device's dashboard.
 
 When using the **Connect Smartphone** wizard for device registration, your smartphone is automatically registered by Cumulocity IoT and assigned to the "Phones" group. Tap **Done** on your smartphone to return to the main screen.

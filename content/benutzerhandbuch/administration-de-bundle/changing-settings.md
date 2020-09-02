@@ -9,7 +9,7 @@ Im Menü **Einstellungen** können Administratoren verschiedene Einstellungen de
 - [Authentifizierungseinstellungen](#authentication) und [Single-Sign-On](#single-sign-on) konfigurieren.
 - [Anwendungseinstellungen](#default-app) ändern.
 - Die [Attributsbibliothek](#properties) verwalten.
-- Systemweite Einstellungen in Cumulocity IoT [konfigurieren](#config-platform).
+- Systemweite [Einstellungen](#config-platform) in Cumulocity IoT konfigurieren.
 - [Zugangsdaten für den SMS-Anbieter](#openIT-credentials) bereitstellen.
 - [Konnektivitätseinstellungen](#connectivity) verwalten.
 
@@ -82,12 +82,10 @@ Bevor Sie zur Single-Sign-On-Option wechseln, stellen Sie sicher, dass:
 * das Access Token als JWT ausgegeben wird und Sie wissen, was der Token Content enthalten muss.
 * das JWT aus einer einzigartigen Benutzeridentifikation (unique user identifier) sowie aus den Feldern "iss" (issuer), "aud" (audience) und "exp" (expiration time) besteht.
 * Cumulocity IoT-Plattform Version 9.12 oder vorzugsweise höher verwendet wird.
-* alle Microservices mit dem Microservice Java SDK 9.12.6, oder vorzugsweise höher, erstellt wurden.
+* alle Microservices mit dem Microservice Java SDK 9.12.6, oder vorzugsweise höher, erstellt wurden. Informationen zu benutzerspezifischen Microservices finden Sie unter [General aspects > Security](/microservice-sdk/concept/#security) im Microservice SDK Guide.
+* Bei lokalen Installationen ist die Domain-basierte Mandantenabbildung bereits korrekt konfiguriert.
 
-
-Informationen zu benutzerspezifischen Microservices finden Sie unter [General aspects > Security](/microservice-sdk/concept/#security) im Microservice SDK Guide.
-
-Bei lokalen Installationen ist die Domain-basierte Mandantenabbildung bereits korrekt konfiguriert.
+>**Info:** Um die Single-Sign-On-Funktion für Enterprise Tenants nutzen zu können, muss die Enterprise-Domain in den Grundeinstellungen als Redirect-URI festgelegt sein. Sofern bei Single-Sign-On-Anbietern eine Liste der zulässigen Domains besteht, sollte die Enterprise-Domain dieser Liste hinzugefügt werden.
 
 
 #### Konfigurationseinstellungen
@@ -140,7 +138,7 @@ Jedes Mal, wenn ein Benutzer sich anmeldet, wird der Inhalt des Access Tokens ve
 }
 ```
 
-Dem Benutzer werden die globale Rolle "business" und die Standardanwendung "Cockpit" zugewiesen.
+Dem Benutzer werden die globale Rolle "business" und die Standardanwendung "cockpit" zugewiesen.
 
 Klicken Sie **Rechtezuordnung hinzufügen**, um weitere Berechtigungen zu vergeben. Eine Rechtezuordnungsanweisung kann mehrere Überprüfungen enthalten, wie im Beispiel unten. Klicken Sie **und**, um eine Regel zu einer vorhandenen Anweisung hinzuzufügen. Klicken Sie das Minus-Symbol, um eine Regel zu entfernen.
 
@@ -322,7 +320,7 @@ Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattfo
 3. Geben Sie je nach gewähltem Anbieter die entsprechenden Zugangsdaten ein:
 
 	 * Für OpenIT: Ihren OpenIT-Benutzernamen und Ihr Passwort.
-	 * Für sms77: Ihren API-Schlüssel für den Zugriff auf sms77 (zu finden in Ihrem sms77-Login unter Einstellungen > HTTP API).
+	 * Für sms77: Ihren API-Schlüssel für den Zugriff auf sms77 (zu finden in Ihrem sms77-Login unter "Einstellungen" > "HTTP API").
 
 4. Klicken Sie **Speichern**, um Ihre Einstellungen zu speichern.
 
@@ -405,7 +403,7 @@ Oben können Sie auswählen, ob Sie die E-Mail zum Administrator des gesperrten 
 
 Klicken Sie **Konfiguration speichern**, um Ihre Eingaben zu speichern.
 
-Für Enterprise Tenants stehen zusätzliche Funktionen zur Verfügung, siehe [Enterprise Tenant > Anpassen der Plattform](/benutzerhandbuch/enterprise-edition-de#customization).
+Für Enterprise Tenants stehen zusätzliche Funktionen zur Verfügung, siehe [Enterprise Tenant > Anpassen der Plattform](/users-guide/enterprise-edition#customization).
 
 ### <a name="connectivity"></a>Verwalten der Konnektivitätseinstellungen
 
@@ -419,7 +417,6 @@ Derzeit können folgende Anbietereinstellungen festgelegt werden:
 - [SIM](/users-guide/optional-services#connectivity)
 
 ![Provider settings](/images/benutzerhandbuch/Administration/admin-settings-connectivity.png)
-
 
 #### So können Sie Zugangsdaten bereitstellen oder ersetzen
 

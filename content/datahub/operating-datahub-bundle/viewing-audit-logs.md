@@ -1,19 +1,49 @@
 ---
-weight: 20
+weight: 30
 title: Viewing audit logs
 layout: redirect
 ---
 
-Audit logs show the operations that users have carried out.
+Auditing shows in the query log the queries being executed and in the system log the operations that users have carried out.
 
-In the navigator, select **Auditing** to view the audit log list. For each log entry, the following information is provided:
+### Query log
+
+In the navigator, select **Auditing** and then **Query log** to view the query log.
+
+> **Info:** The DataHub feature for storing query profiles needs to be enabled. The profiles are deleted after a retention period, why for older months profiles may no more be available.
+
+In the action bar you can choose between offloading and ad-hoc queries, define a text filter on the offloading task/ad-hoc query string, and select a time period. Click **Apply** to get the logs with the respective settings. Use the pagination controls at the bottom of the page to navigate through the result list.
+
+For each offloading query, the following information is provided:
 
 | Column name | Description
 | ---         |  ---
-| User | The user that has carried out the operation.
-| Event | The type of operation.
-| Details | Details of the operation and, if available, further information in an expandable box.
+| Offloading task | The task name of the offloading pipeline, complemented by a status icon showing success or failure of the pipeline execution
+| Runtime (s) | The runtime of the execution in seconds
+| Data scanned (MB) | The amount of data the offloading query has read from the Operational Store of Cumulocity IoT
+| Data billed (MB) | The amount of data being billed; each offloading query is billed with at minimum 10 MB
+| Details | The internal task ID in an expendable box
 
-The audit log shows the last 10 logs. In the action bar, you can change that number by setting a new limit and refreshing the audit log.
+For each ad-hoc query, the following information is provided:
 
-Additionally you can filter the entries by text or status by using the filter controls in the action bar.
+| Column name | Description
+| ---         |  ---
+| Query | The SQL query, complemented by a status icon showing success or failure of the query execution
+| Runtime (s) | The runtime of the execution in seconds
+| Data scanned (MB) | The amount of data the ad-hoc query has read from the data lake
+| Data billed (MB) | The amount of data being billed; each ad-hoc query is billed with at minimum 10 MB
+| Details | The link to the the internal Dremio job in an expendable box
+
+### System log
+
+In the navigator, select **Auditing** and then **System log** to view the system log. 
+
+The audit log shows the last 10 logs. In the action bar, you can change that number by setting a new limit and refreshing the audit log. Additionally you can filter the entries by text or status by using the filter controls in the action bar.
+
+For each log entry, the following information is provided:
+
+| Column name | Description
+| ---         |  ---
+| User | The user that has carried out the operation
+| Event | The type of operation
+| Details | The details of the operation and, if available, further information in an expandable box

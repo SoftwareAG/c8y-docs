@@ -3,7 +3,7 @@ weight: 40
 title: Eigenschaften und Funktionen der Benutzeroberfläche
 layout: default
 aliases:
-  - /benutzerhandbuch/overview/#gui-features
+  - /users-guide/overview/#gui-features
 ---
 
 
@@ -71,9 +71,15 @@ Wenn Sie die SAG Cloud nutzen, werden im Application Switcher an erster Stelle w
 
 ### <a name="searching-and-filtering"></a>Such- und Filterfunktionalität
 
-#### <a name="searching"></a>Suchen
+#### <a name="searching"></a>Volltextsuche
 
-Das Suchfeld in Cumulocity IoT-Anwendungen ermöglicht eine Volltextsuche über alle Stammdaten.
+Cumulocity IoT bietet eine Volltextsuche, die über das Suchfeld rechts in der oberen Leiste der Benutzeroberfläche verfügbar ist.
+
+![Search field](/images/benutzerhandbuch/getting-started/getting-started-search-button.png)
+
+Das Suchergebnis umfasst Gruppen, Geräte und Kindgeräte. Bei Eingabe eines Suchbegriffs in das Textfeld gibt Cumulocity IoT alle Geräte zurück, die diesen Begriff in einem Attribut enthalten (Name, Modell, Fragmente).
+
+Die Suchfunktion basiert auf der [MongoDB-Volltextsuche](https://docs.mongodb.com/manual/text-search/).
 
 Wenn Sie mehrere Wörter, durch Leerzeichen getrennt, eingeben, werden alle Objekte ausgegeben, die eines dieser Wörter enthalten. Wenn Sie beispielsweise
 
@@ -95,12 +101,6 @@ Sie können auch Wörter ausschließen, indem Sie ein Minuszeichen voranstellen,
 Mein Demo Gerät
 ```
 
-Beachten Sie, dass ein "-" innerhalb einer Zeichenkette als Trennzeichen fungiert, mit dem nach allen Teilen der Suchzeichenfolge gesucht wird:
-
-```text
-Mein-Demo-Gerät
-```
-
 Groß-/Kleinschreibung wird ignoriert. Die folgenden Suchbegriffe führen zum gleichen Ergebnis:
 
 ```text
@@ -108,15 +108,19 @@ Mein Demo Gerät
 mein demo gerät
 ```
 
->**Info:** Anders als bei der Filterfunktionalität wird das Verwenden von Platzhaltern bei der Suche nicht unterstützt.
+**Info:** Anders als bei der Filterfunktionalität wird das Verwenden von Platzhaltern bei der Suche nicht unterstützt.
+
+Weitere Informationen zur MongoDB-Volltextsuche finden Sie unter [https://docs.mongodb.com/manual/text-search/](https://docs.mongodb.com/manual/text-search/).
 
 #### <a name="filtering"></a>Filtern
 
 Einige Seiten bieten eine Filterfunktionalität, um Objekte auf einer Seite zu filtern.
 
+![Filter field](/images/benutzerhandbuch/getting-started/getting-started-filtering.png)
+
 Anders als bei der Suchfunktionalität müssen beim Filtern nicht notwendigerweise ganze Wörter eingegeben werden.
 
-In den meisten Fällen können Sie jeden beliebigen Text in das Textfeld eingeben, oft sogar nur einzelne Buchstaben. Die Eingabe von
+In den meisten Fällen können Sie jeden beliebigen Text in das Textfeld eingeben, oft sogar nur 2-3 Zeichen. Die Eingabe von
 
 ```text
 cl
@@ -130,7 +134,17 @@ Sie können auch das Sternsymbol * als Platzhalter verwenden, um etwa nur alle O
 cl*
 ```
 
-Die Liste wird unmittelbar auf die ausgewählten Objekte beschränkt.
+Die Liste wird sofort auf die ausgewählten Objekte beschränkt.
+
+>**Wichtig:** Auf bestimmten Seiten durchsucht die Filterfunktion nur die auf der Seite angezeigten Elemente. Wenn also ein Element auf der betreffenden Seite nicht vorkommt, erscheint es auch nicht in den Ergebnissen. Sie müssen zuerst alle Ergebnisse laden, um alle Elemente durchsuchen zu können. Dieses Verhalten gilt für folgende Seiten:
+>* Geräteprotokolle
+>* Firmware-Repository
+>* Software-Repository
+>* Konfigurations-Repository
+>* Mandanten
+>* Dateiablage
+
+Weitere Informationen zur Filterfunktion in der Geräteliste finden Sie unter [Device Management > Anzeigen von Geräten > So filtern Sie Geräte](/benutzerhandbuch/device-management-de#filtering-devices).
 
 ### Echtzeitverhalten des Navigators
 

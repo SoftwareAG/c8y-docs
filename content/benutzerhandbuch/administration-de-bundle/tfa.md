@@ -12,7 +12,7 @@ Ob TFA für einen bestimmten Benutzer aktiviert ist, können Sie überprüfen, i
 
 ### SMS
 
-Wenn Sie einen Benutzer hinzufügen und TFA aktiviert ist, muss eine Telefonnummer angegeben werden. Wenn Benutzer ohne Telefonnummer versuchen, sich über TFA anzumelden, werden Sie zur Angabe Ihrer Mobiltelefonnummer aufgefordert. Ohne gültige Mobiltelefonnummer ist eine Anmeldung nicht möglich.
+Wenn Sie einen Benutzer hinzufügen und TFA aktiviert ist, muss eine Mobiltelefonnummer angegeben werden. Ohne gültige Telefonnummer ist eine Anmeldung nicht möglich.
 
 
 #### So aktivieren Sie einen bestimmten Benutzer

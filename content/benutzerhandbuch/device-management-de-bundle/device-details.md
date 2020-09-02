@@ -305,7 +305,7 @@ Die Loginformationen des Geräts werden abgefragt.
 
 ![Logs tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-logs.png)
 
->Das Abfragen der Logdaten aus einem Gerät kann einige Zeit in Anspruch nehmen.
+>Das Abfragen der Logdaten von einem Gerät kann einige Zeit in Anspruch nehmen.
 
 Sobald die Logdaten vom Gerät auf die Cumulocity IoT-Plattform übertragen wurden, werden Sie in der Registerkarte **Logdaten** gelistet. Die Zeile in der Liste zeigt das jeweils angeforderte Zeitintervall.
 

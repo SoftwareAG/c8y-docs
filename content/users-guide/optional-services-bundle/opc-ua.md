@@ -586,6 +586,12 @@ Data structure for *ServerConnectionConfig*
 | statusCheckInterval    | integer | false     | Integer. Define the status check interval, that is, how often the server status is read. Default is 3 (seconds).                                                                                                                                       |
 | maxResponseMessageSize | long    | false     | Integer. Define the maximum size, in bytes, for the body of any response message from the server. Default is 50 MB (50.000.000). To make it unlimited, set this to 0.                                                                                  |
 | targetConnectionState  | string  | false     | String enum. Possibe values: `enabled/disabled`. Whether the connection the the target OPC UA server is enabled.                                                                                                                                       |
+| userIdentityMode       | string  | false     | User identity, can be: `Anonymous, UserName, Certificate,    IssuedToken`. Default is `Anonymous`.                                                                                                                                                     |
+| userName               | string  | false     | Authentication username when user identity mode is `UserName`                                                                                                                                                                                          |
+| userPassword           | string  | false     | Authentication password when user identity mode is `UserName`                                                                                                                                                                                          |
+| keystoreBinaryId       | string  | false     | When the user identity mode is `Certificate`, this is the binary object ID of the uploaded keystore.                                                                                                                                                   |
+| keystorePass           | string  | false     | When the user identity mode is `Certificate`, this is the password of the uploaded keystore.                                                                                                                                                           |
+| certificatePass        | string  | false     | When the user identity mode is `Certificate`, this is the password of the private key embedded in the keystore.                                                                                                                                        |
 
 
 
@@ -854,7 +860,121 @@ These resources provide the APIs for manipulating device types.
 
 Endpoint: `POST /service/opcua-mgmt-service/device-types`
 
-Payload data structure explained:
+
+
+Sample payloads:
+
+- Measurement mappings using subscription
+  
+  ```json
+  {
+      "name": "My device type",
+      "enabled": true,
+      "mappings": [
+          {
+          	"browsePath": [
+                  "2:Dynamic",
+                  "2:Double"
+              ],
+              "measurementCreation": {
+                  "unit": "T",
+                  "type": "MyMeasurementType",
+                  "fragmentName": 'MyMeasurement',
+                  "series": "MySeries"
+              }
+          }
+      ],
+      "subscriptionType": {
+          "type": "Subscription",
+          "subscriptionParameters": {
+              "samplingRate": 5000
+          }
+      }
+  }
+  ```
+* Event mappings using cyclic read
+  
+  ```json
+  {
+      "name": "My device type",
+      "enabled": true,
+      "mappings": [
+          {
+          	"browsePath": [
+                  "2:Dynamic",
+                  "2:Integer"
+              ],
+              "eventCreation": {
+                  "type": "MyEventType",
+                  "text": "My event with value ${value}"
+              }
+          }
+      ],
+      "subscriptionType": {
+          "type": "Cyclicread",
+          "rate": 5000
+      }
+  }
+  ```
+
+* Alarm mappings using subscription
+  
+  ```json
+  {
+      "name": "My device type",
+      "enabled": true,
+      "mappings": [
+          {
+          	"browsePath": [
+                  "2:Dynamic",
+                  "2:Boolean"
+              ],
+              "alarmCreation": {
+                  "type": "MyAlarm",
+                  "severity": 'MAJOR',
+                  "text": "Heads up, the level is high!"
+              }
+          }
+      ],
+      "subscriptionType": {
+          "type": "Subscription",
+          "subscriptionParameters": {
+              "samplingRate": 5000
+          }
+      }
+  }
+  ```
+
+* UA events mappings into alarm and event
+  
+  ```json
+  {
+      "name": "My device type",
+      "enabled": true,
+      "uaEventMappings": [
+          {
+              "browsePath": [
+                  "Server"
+              ],
+              "eventTypeId": "i=2041",
+              "attributes": [
+                  "Message",
+                  "Severity"
+              ],
+              "alarmCreation": {
+                  "text": "ALARM! message: ${0}",
+                  "severity": "MAJOR",
+                  "status": "ACTIVE",
+                  "type": "c8y_myEvent_alarm_${1}"
+              }
+          }
+      ]
+  }
+  ```
+
+
+
+Full Payload data structure explained:
 
 | Field                     | Type                      | Madatory | Description                                                                                                                                                                                                                                                                                                                 |
 | ------------------------- | ------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1032,6 +1152,14 @@ Data structure for *MatchingNode*
 | ----------------- | ------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | nodeId            | string        | yes       | The node ID to match against.                                                                                                                                     |
 | valueMatchesOneOf | array<string> | no        | A collection of possible values of the node, in string representation. If this is omited, the gateway only checks for the existence of the node by given node ID. |
+
+##### 
+
+##### Updating a device type
+
+Endpoint: `PUT /service/opcua-mgmt-service/device-types/{deviceTypeId}`
+
+Payload: The payload of updating a device type is exactly the same as the payload of creating it. Please note that partial update is not supported. All information must be provided in the update request and will override completely the existing device type.
 
 
 

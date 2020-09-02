@@ -11,7 +11,7 @@ This section deals with the basic data science steps of creating an anomaly dete
 
 #### Register an iPhone in Cumulocity IoT
 
-Registering an iPhone in Cumulocity IoT involves installing the Cloud Sensor App on your iPhone and using it for completing the registration. Follow the steps described in [Optional services > Cumulocity IoT Sensor App](/users-guide/optional-services#android-cloud-sensor-app) in the User guide.
+Registering an iPhone in Cumulocity IoT involves installing the Cloud Sensor App on your iPhone and using it for completing the registration. Follow the steps described in [User guide > Cumulocity IoT Sensor App](/users-guide/cumulocity-sensor-app) in the User guide.
 
 Once registered, try to get the device ID by looking up your device on the **All Devices** page of your tenant's Device Management application. Now, update the `c_device_source` of the *CONFIG.INI* file with the device ID of your registered iPhone.
 
@@ -19,7 +19,7 @@ Once registered, try to get the device ID by looking up your device on the **All
 
 Required: No. The training data is provided. See next section.
 
-In contrast to supervised classification models, no labeled training data is required for anomaly detection models. The training happens with the regular data, and any unseen behavior will later be detected as anomalous. The data can be collected by carrying around the registered device over a few days without any anomalous behavior. All data can then be accessed via the Cumulocity IoT REST interface and be transformed into the training data format. 
+In contrast to supervised classification models, no labeled training data is required for anomaly detection models. The training happens with the regular data, and any unseen behavior will later be detected as anomalous. The data can be collected by carrying around the registered device over a few days without any anomalous behavior. All data can then be accessed via the Cumulocity IoT REST interface and be transformed into the training data format.
 
 Note that for demo purposes the data is fetched via REST and directly transformed into the training data set. More complex pre-processing might require the use of an offline data store. The format of the JSON data might have changed in the meantime, or some sensors might not be available for some phone types, so check the exact format by viewing a current sample.
 
@@ -79,11 +79,11 @@ The following code block contains the data format of the JSON schema that was as
 Data collection can be done by using the below shown and attached script *createTrainingDataForiPhone.py*. This Python script connects to the Cumulocity IoT REST measurements endpoint, pulls the data and writes it to a CSV file.
 
 	createTrainingDataForiPhone.py
-    import requests, json 
+    import requests, json
     import configparser
     import csv
     import os
-    
+
     def add2Data(acc_data, gyro_data, writer):
         acc_X = acc_data['accelerationX']['value']
         acc_Y = acc_data['accelerationY']['value']
@@ -92,64 +92,64 @@ Data collection can be done by using the below shown and attached script *create
         gyro_Y = gyro_data['gyroY']['value']
         gyro_Z = gyro_data['gyroZ']['value']
         writer.writerow([acc_X,acc_Y,acc_Z,gyro_X,gyro_Y,gyro_Z])
-    
+
     config = configparser.ConfigParser()
     config.read('CONFIG.INI')
-    
+
     DATE_FROM="2019-09-06T23:00:00.000+05:30"
     DATE_TO="2019-09-07T08:00:00.000+05:30"
-    
+
     c_measurements_endpoint="/measurement/measurements/"
     c_params={"source":config.get("cumulocity", "c_device_source"),"pageSize":"2000",
              "dateFrom":DATE_FROM, "dateTo":DATE_TO,
              "fragmentType":"c8y_Acceleration"}
-    
+
     c_auth=config.get("cumulocity", "c_user"),config.get("cumulocity", "c_pass")
     r=requests.get(config.get("cumulocity","c_url")+c_measurements_endpoint,params=c_params, auth=c_auth)
     print("Start collecting data from: "+r.url)
     print("Status code: "+str(r.status_code))
-    
+
     DIR_DATA="data/"
     TRAIN_DATA_FILE=DIR_DATA+"dataset_training_iphone.csv"
-    
+
     json_doc_acc=r.json()
-    
+
     if not os.path.exists(DIR_DATA):
         os.makedirs(DIR_DATA)
-    
+
     with open(TRAIN_DATA_FILE, mode='w', newline='') as training_file:
         writer = csv.writer(training_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         writer.writerow(["accelerationX","accelerationY","accelerationZ","gyroX","gyroY","gyroZ"])
         first_arr=json_doc_acc['measurements']
-    
+
         c_params.update({'fragmentType':'c8y_Gyroscope'})
         r=requests.get(config.get("cumulocity","c_url")+c_measurements_endpoint,params=c_params, auth=c_auth)
         json_doc_gyro = r.json()
-    
+
         print("Page 1.\tCollecting data at: " +first_arr[0]['time'])
-    
+
         for data in first_arr:
             gyro = list(filter(lambda rec: rec['time']==data['time'], json_doc_gyro['measurements']))
             # For some timestamps, acceleration measurements are there but not gyroscope; skipping records with those timestamps
             if len(gyro)>0:
                 add2Data(data['c8y_Acceleration'], gyro[0]['c8y_Gyroscope'], writer)
-    
+
         for i in range(5):
-            r=requests.get(json_doc_acc['next'], auth=c_auth) 
+            r=requests.get(json_doc_acc['next'], auth=c_auth)
             next_doc_acc=r.json()
             measure_arr=next_doc_acc['measurements']
             if not measure_arr:
                 print("Last page reached.")
                 break
-    
-            r=requests.get(json_doc_gyro['next'], auth=c_auth) 
+
+            r=requests.get(json_doc_gyro['next'], auth=c_auth)
             next_doc_gyro=r.json()
             if not next_doc_gyro['measurements']:
                 print("Last page reached.")
                 break
-    
+
             print("Page "+ str(i+2)+".\tCollecting data at: "+ measure_arr[0]['time'])
-    
+
             for data in measure_arr:
                 gyro = list(filter(lambda rec: rec['time']==data['time'], next_doc_gyro['measurements']))
                 # For some timestamps, acceleration measurements are there but not gyroscope; skipping records with those timestamps
@@ -157,8 +157,8 @@ Data collection can be done by using the below shown and attached script *create
                     add2Data(data['c8y_Acceleration'], gyro[0]['c8y_Gyroscope'], writer)
             json_doc_acc = next_doc_acc
             json_doc_gyro = next_doc_gyro
-    
-    print("Training data written to " + TRAIN_DATA_FILE)	
+
+    print("Training data written to " + TRAIN_DATA_FILE)
 
 The training data set we collected is packaged as *dataset_training_iphone.zip* under the data sub-folder of the attached *AnomalyDetectionDemo.zip*.
 
@@ -182,37 +182,37 @@ You could try out the data you collected yourself as described in the data colle
     from nyoka import skl_to_pmml
     import warnings
     warnings.filterwarnings('ignore')
-    
+
     # training data file
     DIR_DATA="data/"
     TRAIN_DATA_FILE=DIR_DATA+"dataset_training_iphone.csv"
-    
+
     DIR_MODEL="model/"
     PMML_FILE_NAME = DIR_MODEL+"iforest_model_iphone.pmml"
-    
+
     if not os.path.exists(DIR_MODEL):
         os.makedirs(DIR_MODEL)
-    
+
     # load the data into an array
     with open(TRAIN_DATA_FILE, newline='') as csvfile:
         data = list(csv.reader(csvfile))
-    
+
     # instantiate the isolation forest object
     iforest = IsolationForest(n_estimators=40, max_samples=3000, contamination=0, random_state=np.random.RandomState(42))
     # only use part of the data for quicker results
     iforest.fit(data[1:])
-    
+
     # prepare pipeline for PMML conversion
     model_type="iforest"
     print("Start converting the model into PMML...")
     pipeline = Pipeline([
         (model_type, iforest)
     ])
-    
+
     pipeline.fit(data[1:])
     features = ["accelerationY","accelerationX","accelerationZ","gyroX","gyroY","gyroZ"]
     skl_to_pmml(pipeline, features, "",PMML_FILE_NAME)
-    
+
     print("Model with name "+PMML_FILE_NAME+" converted into PMML")
 
 #### Upload the model to Cumulocity IoT
@@ -240,48 +240,48 @@ Instead of creating a new monitor file, the attached *DetectAnomalies_iPhone.mon
     using com.softwareag.connectivity.httpclient.Request;
     using com.softwareag.connectivity.httpclient.Response;
     using com.apama.json.JSONPlugin;
-    
+
     monitor DetectAnomalies_iPhone {
-    
+
         CumulocityRequestInterface cumulocity;
-        
+
         action onload() {
             cumulocity := CumulocityRequestInterface.connectToCumulocity();
             // Replace yourDeviceId with the value of your device id
             listenAndActOnMeasurements("yourDeviceId", "IsolationForests");
         }
-    
+
         action listenAndActOnMeasurements(string deviceId, string modelName) {
             monitor.subscribe(Measurement.SUBSCRIBE_CHANNEL);   
             on all Measurement(source = deviceId) as m {
-    
-                if( m.measurements.hasKey("c8y_Acceleration")){ 
+
+                if( m.measurements.hasKey("c8y_Acceleration")){
     			log "Received Measurement c8y_Acceleration from C8Y" + m.toString();
-                	
+
                 dictionary <string, any> lastMeasurement := {};
             		lastMeasurement["accelerationX"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationX").value;
             		lastMeasurement["accelerationY"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationY").value;
             		lastMeasurement["accelerationZ"] := m.measurements.getOrDefault("c8y_Acceleration").getOrDefault("accelerationZ").value;
-                    
+
                     listener l := on all Measurement(source = deviceId) as n {
                     	if n.measurements.hasKey("c8y_Gyroscope"){
                     		lastMeasurement["gyroX"] := n.measurements.getOrDefault("c8y_Gyroscope").getOrDefault("gyroX").value;
                     		lastMeasurement["gyroY"] := n.measurements.getOrDefault("c8y_Gyroscope").getOrDefault("gyroY").value;
                     		lastMeasurement["gyroZ"] := n.measurements.getOrDefault("c8y_Gyroscope").getOrDefault("gyroZ").value;
                          string record := JSONPlugin.toJSON(lastMeasurement);
-                            
+
         	               log "Sending record to zementis - " + record;
         	               Request zementisRequest := cumulocity.createRequest("GET", "/service/zementis/apply/" + modelName, any());
         	               zementisRequest.setQueryParameter("record", record);
         	               zementisRequest.execute(ZementisHandler(deviceId).requestHandler);
-        	               log "EPL execution completed."; 
+        	               log "EPL execution completed.";
         	               l.quit();
                     	}
                     }
                 }
-            } 
+            }
         }
-    
+
         /** Cumulocity Request Interface.
         *
         * This is for making generic REST requests to other
@@ -291,7 +291,7 @@ Instead of creating a new monitor file, the attached *DetectAnomalies_iPhone.mon
        {
           /** @private */
           HttpTransport transport;
-    
+
           /**
           * Allows configuration of a HTTPTransport with
           * Cumulocity-specific configuration details.
@@ -308,14 +308,14 @@ Instead of creating a new monitor file, the attached *DetectAnomalies_iPhone.mon
              string password := "";
              boolean https := true;
              string tlsFile := "";
-    
+
              dictionary<string, string> config := {};
              dictionary<string, string> envp := Component.getInfo("envp");
-    
-    
+
+
              if envp.hasKey("C8Y_BASEURL") and envp["C8Y_BASEURL"] != "" { // Running internal
                 baseUrl := envp["C8Y_BASEURL"];
-    
+
                 user := envp["C8Y_TENANT"] + "/" + envp["C8Y_USER"];
                 password :=envp["C8Y_PASSWORD"];
              }
@@ -337,11 +337,11 @@ Instead of creating a new monitor file, the attached *DetectAnomalies_iPhone.mon
                    }
                 }       
              }
-    
+
              if baseUrl.find("/") < 0 {
                 baseUrl := baseUrl + "/";
              }
-    
+
              // Check if the baseUrl starts with either http or https
              if baseUrl.length()>=7 and baseUrl.substring(0,7).toLower() = "http://"{
                 https := false;
@@ -352,7 +352,7 @@ Instead of creating a new monitor file, the attached *DetectAnomalies_iPhone.mon
                 baseUrl := baseUrl.substring(8, baseUrl.length());
              }
              // Otherwise assume HTTPS and that the URL does not have such a prefix as http or https
-    
+
              basePath := baseUrl.replace("[^/]*(/.*)?", "$1");
              host := baseUrl.replace("(?:(.*):|(.*)/|(.*)).*", "$1$2$3");
              port := baseUrl.replace("[^:]*:([0-9]*).*", "$1").toInteger();
@@ -364,25 +364,25 @@ Instead of creating a new monitor file, the attached *DetectAnomalies_iPhone.mon
                    port := 80;
                 }
              }
-    
+
              config := {
                 HttpTransport.CONFIG_USERNAME:user,
                 HttpTransport.CONFIG_PASSWORD:password,
                 HttpTransport.CONFIG_AUTH_TYPE:"HTTP_BASIC",
                 HttpTransport.CONFIG_BASE_PATH:basePath
              };
-    
+
              if https = true{
                 config.add(HttpTransport.CONFIG_TLS,"true");
                 config.add(HttpTransport.CONFIG_TLS_CERT_AUTH_FILE,tlsFile);
                 config.add(HttpTransport.CONFIG_TLS_ACCEPT_UNRECOGNIZED_CERTS,"true");
              }
-    
-    
+
+
              //log config.toString() at DEBUG;
              return CumulocityRequestInterface(HttpTransport.getOrCreateWithConfigurations(host, port, config));
           }
-    
+
           /**
           * Allows creation of a request on a transport that
           * has been configured for a Cumulocity connection.
@@ -392,11 +392,11 @@ Instead of creating a new monitor file, the attached *DetectAnomalies_iPhone.mon
           * @param payload A dictionary of elements to be included in the request.
           */
           action createRequest(string method, string path, any payload) returns Request
-          { 
+          {
              return transport.createRequest(method, path, payload, new HttpOptions);
           }
        }
-    
+
        event ZementisHandler
        {
            string deviceId;
@@ -412,7 +412,7 @@ Instead of creating a new monitor file, the attached *DetectAnomalies_iPhone.mon
                }
            }
        }
-    
+
     }
 
 #### Trigger an anomaly alert

@@ -2,6 +2,9 @@
 weight: 10
 title: Overview
 layout: redirect
+aliases:
+  - /users-guide/android-cloud-sensor-app
+  - /users-guide/optional-services/#cumulocity-sensor-app
 ---
 
 The Cumulocity IoT Sensor App is a free smartphone application available for iOS and Android smartphones. It is the successor of the previous Cloud Sensor App.

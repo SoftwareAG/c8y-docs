@@ -62,7 +62,7 @@ The following smart rules are stateless:
 
 ### Migrating from CEL when also using custom rules
 
-Migrating from custom rules written in CEL to Apama EPL requires rewriting and retesting the custom rules. If any of the CEL generated from smart rules has been modified, you will need to convert that to a custom Apama rule as well, and delete the smart rule when migrating. As with any scripting or programming, you should thoroughly test significant changes before deploying into a production environment. Thus, the recommended approach is to create a separate tenant for hosting Apama rules as they are developed, and replicate any input data required in that tenant. The CEP rules can continue to run in your production tenant while you develop the new Apama rules. To do this, follow these steps:
+Migrating from custom rules written in CEL to Apama EPL requires rewriting and retesting the custom rules. If any of the CEL generated from smart rules has been modified, you will need to convert that to an Apama EPL app as well, and delete the smart rule when migrating. As with any scripting or programming, you should thoroughly test significant changes before deploying into a production environment. Thus, the recommended approach is to create a separate tenant for hosting Apama EPL apps as they are developed, and replicate any input data required in that tenant. The CEP rules can continue to run in your production tenant while you develop the new Apama EPL apps. To do this, follow these steps:
 
 1. Lock down the CEP custom rules on the existing tenant to prevent change.
 2. Make available a new tenant on which Apama has been enabled.

@@ -4,7 +4,11 @@ title: Setting up Dremio account and data lake
 layout: redirect
 ---
 
-The setup of DataHub requires the administrator to choose a Dremio account name, and provide credentials to the data lake. In the navigator, select **Settings** to define those settings.
+The setup of DataHub requires you to choose a Dremio account name, and provide credentials to the data lake. In the navigator, select **Settings** to define those settings.
+
+>**Info**: You need administration permissions to define the settings. See section [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
+
+The settings whose meaning may not be obvious are equipped with a help icon. Click on the icon to get more information.
 
 ### Defining new settings
 
@@ -33,8 +37,10 @@ The following types of data lakes are currently supported:
 |Data Lake Store resource name|The name of the instance created in Azure Data Lake|
 |Application ID|The ID of the registered application under Azure Active Directory|
 |OAuth 2.0 token endpoint|The OAuth 2.0 authentication endpoint for registered applications|
-|Root path|The root path in the data lake under which the offloaded data will be stored|
+|Root path|The root path in the data lake under which the offloaded data will be stored; default is /; setting a sub-folder allows you to hide other data in the container from DataHub|
 |Access key value|The password for the registered application|
+
+>**Info** Using *Azure Data Lake Storage Gen1* as data lake is deprecated. When planning to use Microsoft data lake capabilities, use the successor *Azure Storage* instead.
 
 **Azure Storage** is a set of cloud storage services offered by Microsoft. DataHub supports Azure Data Lake Storage Gen2, which is part of these services. The following settings need to be defined for this data lake:
 
@@ -42,7 +48,7 @@ The following types of data lakes are currently supported:
 |:---|:---|
 |Azure Storage account name|The name of the Azure storage account|
 |Azure Storage container|The name of the storage container; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
-|Root path|The root path in the data lake under which the offloaded data will be stored|
+|Root path|The root path in the data lake under which the offloaded data will be stored; default is /; setting a sub-folder allows you to hide other data in the container from DataHub|
 |Azure Storage shared access key|The access key used for authentication|
 
 **Amazon S3** is an object storage service offered by Amazon Web Services. The following settings need to be defined for this data lake:
@@ -52,22 +58,34 @@ The following types of data lakes are currently supported:
 |AWS access key|The access key|
 |Access secret|The access secret|
 |Bucket name|The name of the S3 bucket; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
-|Root path in bucket|The root path within the S3 bucket|
+|Root path in bucket|The root path within the S3 bucket; default is /; setting a sub-folder allows you to hide other data in the bucket from DataHub|
 
-**NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for on-premise installations. The following settings need to be defined for this data lake:
+**NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for edge installations. The following settings need to be defined for this data lake:
 
 |Settings|Description|
 |:---|:---|
-|Mount path|The mount path of the NAS|
+|Mount path|The mount path refers to a path in the local Linux file system on both the coordinator and executor containers. By default, the file system of Cumulocity IoT Edge is mounted into /datalake inside the containers. To use some other folder, you must map the folder into both containers, e.g. to /datalake inside the containers.|
 
-For **Azure Data Lake Storage Gen1**, **Azure Storage**, and **Amazon S3** data lakes, you can also define additional connection properties. Click **Add property** and define an additional property consisting of a key/value pair.
+**HDFS** is the Hadoop Distributed File System, which is a distributed, scalable file system designed for running on commodity hardware. The following settings need to be defined for this data lake:
+
+|Settings|Description|
+|:---|:---|
+|Namenode host|The host name of the HDFS NameNode|
+|Namenode port|The port of the HDFS NameNode|
+|Root path|The root path within the HDFS filesystem for storing offloaded data; default is /; setting a sub-folder allows you to hide other data in the filesystem from DataHub|
+|Short-circuit local reads|If enabled, Dremio can directly open the HDFS block files; default is disabled|
+|Enable impersonation|If disabled, all requests against HDFS will be made using the user *dremio*; if enabled, the name of the user logged into Dremio will be used to access HDFS; prerequisite is that the user has rwx-permissions for the given root path|
+|Allow VDS-based access delegation|If enabled, data used in virtual datasets (VDS) will be requested from HDFS using the username of the owner of the VDS; if disabled, the name of the user logged into Dremio is used|
+|Impersonation user delegation|Defines whether an impersonated username is either *As is*, *Lowercase*, or *Uppercase*|
+
+For **Azure Data Lake Storage Gen1**, **Azure Storage**, **Amazon S3**, and **HDFS** data lakes, you can also define additional connection properties. Click **Add property** and define an additional property consisting of a key/value pair.
 
 #### Saving settings
 Once all settings are defined, click **Save** in the action bar to the right. During the save process, the following steps are automatically conducted:
 
 * A Dremio account is created, with the account having standard Dremio user privileges, not admin privileges.
 * A data lake source in Dremio is created using the provided data lake settings.
-* A source in Dremio is created which connects to the Cumulocity IoT database.
+* A source in Dremio is created which connects to the Operational Store of Cumulocity IoT.
 * A space in Dremio is created which you can use to organize your custom Dremio entities, e.g. views.
 
 ### Editing settings

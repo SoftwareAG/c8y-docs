@@ -25,7 +25,7 @@ The following diagram illustrates the high-level concepts.
 
 <img src="/images/datahub-guide/datahub-highlevel-concept.png" alt="DataHub high level concept"  style="max-width: 100%">
 
-The central component of Cumulocity IoT DataHub is Dremio, a distributed SQL engine that is used for the two purposes mentioned above. It offers an SQL API which can be accessed via JDBC, ODBC, and REST. Dremio enables the creation of Extract-Transform-Load (ETL) pipelines that:
+The central component of Cumulocity IoT DataHub is [Dremio](https://www.dremio.com), a distributed SQL engine that is used for the two purposes mentioned above. It offers an SQL API which can be accessed via JDBC, ODBC, and REST. Dremio enables the creation of Extract-Transform-Load (ETL) pipelines that:
 
 * Periodically extract data from the Operational Store of Cumulocity IoT.
 * Transform the data into a relational format.
@@ -39,9 +39,9 @@ The table below summarizes the main terms used throughout this documentation.
 | ---  | ---         |
 | Cumulocity IoT DataHub | Cumulocity IoT application for offloading data from the Operational Store of Cumulocity IoT to a data lake and querying the data lake contents
 | DataHub | Scheduler component for triggering periodic offloading and UI component for defining, managing, and monitoring offloading pipelines
-| Cumulocity IoT Operational Store | internal datastore of Cumulocity IoT where all data (alarms, events, inventory, measurements, ...) is stored
+| Cumulocity IoT Operational Store | Internal datastore of Cumulocity IoT where all data (alarms, events, inventory, measurements, ...) is stored
 | Dremio | Internal SQL engine for extracting data from the Cumulocity IoT Operational Store and writing to and reading from the data lake
-| Data lake | Storage container for offloaded data either on the basis of ADLS/Azure Storage (Azure) or S3 (Amazon). 
+| Data lake | Storage container for offloaded data either on the basis of ADLS/Azure Storage (Azure), S3 (Amazon), or HDFS. 
 > **Info:** Google Cloud Storage (GCS) is currently not supported.
 
 ### Design of offloading pipeline

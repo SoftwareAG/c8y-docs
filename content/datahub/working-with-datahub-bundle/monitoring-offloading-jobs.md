@@ -8,13 +8,13 @@ Once you have configured and started your offloading pipelines, they regularly o
 
 You can either examine the corresponding latest execution for all configured pipelines or examine the execution history for a specific pipeline.
 
->**Info**: You need administration or configuration permissions to monitor the offloading jobs. See section [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
+>**Info**: You need administration or management permissions to monitor the offloading jobs. See section [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 
 ### Status of all offloading jobs
 
 <a id="status-of-all-offloading-jobs"></a>
 
-In the navigator, select **Offloading** under **Status** to get an overview of the latest status of all pipelines. The list shows the corresponding last execution for all pipelines. Each execution consists of the following details:
+In the navigator, select **Status** and then **Offloading** to get an overview of the latest status of all pipelines. The list shows the corresponding last execution for all pipelines. Each execution consists of the following details:
 
 | Component | Description |
 | ---         | --- |
@@ -81,7 +81,7 @@ Select a job overview in the history per offloading job or in the status of all 
 
 | Component | Description |
 | ---         | --- |
-| \# Records | The number of records which have been offloaded during this execution
+| Records | The number of records which have been offloaded during this execution
 
 **Job details**
 
@@ -91,8 +91,8 @@ Select a job overview in the history per offloading job or in the status of all 
 | Job id | The internal ID of the job
 | Job execution id | The Dremio ID of this execution
 | Source collection | The name of the Cumulocity IoT source collection
-| Target source name | The folder name in the data lake
-| Target folder | The path to the target source in the data lake
+| Target dataset | The folder name in the data lake
+| Target folder | The path to the target table in the data lake
 | Dir0 | The name of the folder to which the pipeline has offloaded the data
 | Last watermark | The last watermark which indicates the data in the Cumulocity IoT collection that has already been processed
 

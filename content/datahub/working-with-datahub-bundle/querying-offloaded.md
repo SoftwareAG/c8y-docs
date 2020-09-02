@@ -57,12 +57,13 @@ In contrast to directly calling the Dremio REST API, in this case authentication
 
 #### Request URLs
 
-The URL paths of proxied requests consist of: 
+The URL paths of proxied requests consist of:
+
 * the path of the microservice, which you will find in its application properties (see also section [Managing applications](/users-guide/administration#managing-applications))
 * the corresponding Dremio REST API path, prefixed by "/dremio".
 
 >**Info:** For the system eu-latest.cumulocity.com and tenant `datahub-demo`, the base URL would be
-https://datahub-demo.eu-latest.cumulocity.com/service/datahub/
+https://datahub-demo.eu-latest.cumulocity.com/service/datahub/.
 
 Dremio's SQL and JOB APIs are supported. Headers and request body are as specified in the corresponding Dremio REST API documentation.
 
@@ -110,11 +111,11 @@ Cancel a query job given the job ID:
 
 This example submits a Dremio SQL query to fetch the five most recent alarms which already were offloaded, waits for the query to complete, and fetches the result. 
 
-The SQL query, assuming tenant name "my-cdh-tenant~Smith" and "Dremio" as name of your file system in Azure Storage, is:
+Assuming tenantId t47110815 and Dremio as name of your file system in Azure Storage, the SQL query is:
 
 ```sql
 SELECT creationTime, severity, text
-FROM SmithDataLake.Dremio.my-cdh-tenant~Smith.alarms
+FROM t47110815DataLake.Dremio.t47110815.JohnsAlarms
 ORDER BY creationTime DESC
 LIMIT 5
 ```
@@ -126,7 +127,7 @@ POST /dremio/api/v3/sql HTTP/1.1
 Host: my-cdh-tenant.cumulocity.com:9090
 Content-Type: application/json
 {
-    "sql": "SELECT creationTime, severity, text\nFROM SmithDataLake.Dremio.my-cdh-tenant~Smith.alarms\nORDER BY creationTime DESC\nLIMIT 5"
+    "sql": "SELECT creationTime, severity, text\nFROM t47110815DataLake.Dremio.t47110815.JohnsAlarms\nORDER BY creationTime DESC\nLIMIT 5"
 }
 ```
 

@@ -3,7 +3,7 @@ weight: 30
 title: Cumulocity IoT-Anwendungen
 layout: redirect
 aliases:
-  - /benutzerhandbuch/overview/#cumulocity-applications
+  - /users-guide/overview/#cumulocity-applications
 ---
 
 Cumulocity IoT umfasst die drei folgenden Standardanwendungen:
@@ -40,7 +40,7 @@ Cumulocity IoT umfasst die drei folgenden Standardanwendungen:
 
 Neben diesen in Cumulocity IoT enthaltenen Standardwendungen gibt es zahlreiche weitere Anwendungen, die sie abonnieren können, wie etwa integrierte Agenten für verschiedene Gerätetypen. Die Verfügbarkeit dieser Anwendungen hängt davon ab, welchen Mandanten Sie verwenden und welche Anwendungen Ihr Unternehmen abonniert hat.
 
-Eine ausführliche Liste aller mit der Cumulocity IoT-Plattform verfügbaren Anwendungen finden Sie unter [Administration > Verwalten von Anwendungen](/benutzerhandbuch/administration-de#managing-applications).
+Eine ausführliche Liste aller mit Cumulocity IoT verfügbaren Anwendungen finden Sie unter [Administration > Verwalten von Anwendungen](/benutzerhandbuch/administration-de/#managing-applications).
 
 Darüber hinaus bietet die Cumulocity IoT-Plattform vielfältige Funktionalitäten zur Nutzung Ihrer eigenen Anwendungen über Ihr Cumulocity IoT-Konto, siehe Details unter [Administration > Verwalten von Anwendungen](/benutzerhandbuch/administration-de#managing-applications).
 

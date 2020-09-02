@@ -8,6 +8,7 @@ layout: redirect
 
 ### Request messages
 
+
 Message identifier | Message parameters              | Description
 -------------------|-------------------------|------------
 10 | Template message identifier<br>Method<br>Resource identifier<br>Content MIME type<br>Accept MIME type<br>Placeholder<br>Request parameters<br>Template string | Represents a request template. If this message occours in the body, the whole body is treated as a *SmartREST* template and thus, all messages besides `10` and `11` will yield an error.
@@ -17,7 +18,7 @@ Message identifier | Message parameters              | Description
 80 | *None* | Initial handshake that will return a unique bayeux clientId. SmartREST real-time notifications.
 81 | clientId,channel | Subscribe for the given channel. SmartREST real-time notifications.
 82 | clientId,channel | Unsubscribe for the given channel. SmartREST real-time notifications.
-83 | clientId | Establish conntection for receiving the notifications (long-polling). SmartREST real-time notifications.
+83 | clientId | Establish connection for receiving the notifications (long-polling). SmartREST real-time notifications.
 84 | clientId | Disconnect the client from the server. SmartREST real-time notifications.
 
 ### Response messages
@@ -38,7 +39,7 @@ Message identifier | Message parameters              | Description
 #### Error messages
 
 Message identifier | Error message
--------------------|-------------------------|------------
+-------------------|-------------------------
 41 | Cannot create templates for already existing template object
 41 | Duplicate message identifiers are not allowed
 41 | Bad request template definition

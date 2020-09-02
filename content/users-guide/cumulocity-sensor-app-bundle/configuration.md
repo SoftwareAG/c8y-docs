@@ -7,7 +7,7 @@ layout: redirect
 
 If you want to make changes to the settings of the smartphone or a connected Bluetooth device, simply tap the 3 dots at the top right of the card for this device. Various options will be displayed at bottom of the screen. For Bluetooth devices, the options **Disconnect**, **Disable** and **Edit** are available. The smartphone itself only has the **Disable** and **Edit** options. 
 
-![](/images/users-guide/csa2/csa2-device-options.png)
+![Device configuration](/images/users-guide/csa/csa-device-options.png)
 
 Tapping **Disconnect** removes a Bluetooth device from your smartphone entirely.
 

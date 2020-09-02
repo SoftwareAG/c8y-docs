@@ -11,7 +11,7 @@ To connect a device, click the plus button at the bottom right of the screen.
 If Bluetooth is enabled and all required permissions are granted, your smartphone starts scanning for any new supported Bluetooth devices in the area that are not already paired.
 New devices will be added to the list as the smartphone discovers them.
 
-![](/images/users-guide/csa2/csa2-available-bluetooth-devices.png)
+![Bluetooth connection](/images/users-guide/csa/csa-available-bluetooth-devices.png)
 
 > **Info:** If there are no supported devices in range, there is an option to see a list of all currently supported device types.
 

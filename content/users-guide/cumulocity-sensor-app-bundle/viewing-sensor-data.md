@@ -11,7 +11,7 @@ Swipe left and right to inspect them.
 
 Some sensors are only available if the permission is granted (e.g. microphone) and the sensor is enabled (e.g. location). Tap **Allow** in the first sensor card to grant these permissions or enable the sensors.
 
-![](/images/users-guide/csa2/csa2-application-main-page.png)
+![Sensor data](/images/users-guide/csa/csa-application-main-page.png)
 
 Some supported Bluetooth devices provide more than one sensor.
 In these cases, the card for this device also reacts to left and right swipes, changing the sensor that is displayed.

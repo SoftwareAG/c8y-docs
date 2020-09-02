@@ -13,11 +13,11 @@ For earlier versions of Cumulocity IoT, follow the steps in [Manual registration
 
 1.  On a desktop or laptop computer, open a web browser and log in to your Cumulocity IoT tenant. From the Cockpit application, click **Connect Smartphone** in the right drawer or in the Welcome widget.
 
-    ![](/images/users-guide/csa2/csa2-connect-smartphone-right-drawer.jpg)
+    ![Cockpit application](/images/users-guide/csa/csa-connect-smartphone-right-drawer.jpg)
 
 2.  Follow the instructions in the wizard to step 3, ensuring that the app is installed on the smartphone.
 
-    ![](/images/users-guide/csa2/csa2-connect-smartphone-wizard-step3.png)
+    ![QR code](/images/users-guide/csa/csa-connect-smartphone-wizard-step3.png)
 
 3.  From your smartphone, launch the app and tap **Connect** in the top right corner of the screen. 
 4.  Grant access to your camera if the app asks you for permission.
@@ -32,7 +32,7 @@ When using the **Connect Smartphone** wizard for device registration, your smart
 
 1.  On a desktop or laptop computer, open a web browser and log in to your Cumulocity IoT tenant. In the Device Management application, choose **Devices > Registration** from the navigator.
 
-    ![](/images/users-guide/csa2/csa2-device-registration.jpg)
+    ![Manual registration](/images/users-guide/csa/csa-device-registration.jpg)
 
 2.  From your smartphone, launch the app and tap **Connect** at the top right of the screen. When the camera opens, tap **Manual Registration**.
 
@@ -40,7 +40,7 @@ When using the **Connect Smartphone** wizard for device registration, your smart
 
 4. On your smartphone, fill in your tenant (e.g. "companytenant01"), select your instance (e.g. "cumulocity.com"), and enter your chosen device ID. If your instance is not available in the list, you can enter it manually after clicking **Add other instance**. Click **Connect** and your device will contact the server and ask to be accepted.
 
-    ![](/images/users-guide/csa2/csa2-manual-registration-smartphone.png) 
+    ![Manual registration](/images/users-guide/csa/csa-manual-registration-smartphone.png) 
 
 5.  Back on your web browser, your device's card now shows the options to accept or reject the connection. Accept the connection. Your device will be registered with the server and assigned to the chosen group.
 

@@ -7,7 +7,7 @@ layout: redirect
 
 Measurements from your smartphone and connected Bluetooth sensors are sent to Cumulocity IoT automatically as soon as the device is connected or started and as long as the app is in foreground. All measurements of the smartphone sensors are displayed automatically in the device dashboard in Cumulocity IoT.
 
-![](/images/users-guide/csa2/csa2-device-dashboard.jpg)
+![Device dashboard](/images/users-guide/csa/csa-device-dashboard.jpg)
 
 Various widgets may be used to display the data points. If your smartphone has a gyroscope sensor, a 3D rotation widget depicts the current sensor data for your smartphone's orientation.
 

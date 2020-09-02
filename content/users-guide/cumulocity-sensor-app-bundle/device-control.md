@@ -1,6 +1,6 @@
 ---
 weight: 80
-title: Device control
+title: Controlling devices
 layout: redirect
 ---
 
@@ -14,6 +14,6 @@ The "Message sending" widget can be used to send simple text notifications to a 
 
 The "Vibration" widget can be used to activate and deactivate the vibration motor on the device. When the vibration switch is activated, the smartphone continuously vibrates until it is switched off again.
 
-![](/images/users-guide/csa2/csa2-messaging-and-vibration-widget.jpg)
+![Device widget](/images/users-guide/csa/csa-messaging-and-vibration-widget.jpg)
 
 > **Info:** The smartphone must remain connected to Cumulocity IoT to receive these commands. On the device's own dashboard, online devices are shown with a green map-marker. You can also determine if the device is connected in the Device Management application. On the **All Devices** page two green arrows indicate that a device is online. Moreover, the individual device info pages contain a "Device status" widget.

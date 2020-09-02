@@ -6,12 +6,12 @@ layout: redirect
 
 ---
 
-OPC Unified Architecture (OPC UA) is a standard pushed by the OPC Foundation for industry automation. The goal of OPC UA is to enable the communication between industrial devices. OPC UA is designed to work across technology boundaries (“cross platform”). There are 2 components designed to accomplish this integration:
+OPC Unified Architecture (OPC UA) is a standard pushed by the OPC Foundation for industry automation. The goal of OPC UA is to enable the communication between industrial devices. OPC UA is designed to work across technology boundaries (cross-platform). There are two components designed to accomplish this integration:
 
 - OPC UA device gateway
 - OPC UA management service
 
-![Integration Overview](/images/users-guide/opcua/opcua-integration-overview.png)
+![Integration overview](/images/users-guide/opcua/opcua-integration-overview.png)
 
 The OPC UA device gateway is a stand-alone Java program that communicates with OPC UA server(s) and the Cumulocity IoT platform. It stores data into the Cumulocity IoT database via REST. Additionally, C8Y commands are executed to perform various operations on the OPC UA servers.
 
@@ -35,7 +35,7 @@ To run the gateway locally, the default settings should be overridden in a custo
 
 For example, to connect to a tenant, first a profile named *application-myTenant.yaml* will be created. The following properties will be added to the file:
 
-```bash
+```yaml
 C8Y:
     baseUrl: https://<<yourTenant>>.cumulocity.com
 gateway:
@@ -68,7 +68,7 @@ Mac OS
 
 The number of profiles you may have is not limited. To use a specific profile on runtime, the "--spring.profiles.active" JVM argument has to be passed when running the gateway JAR file. For example, let’s use the previously created profile. Start a terminal and use the following command:
 
-```bash
+```shell
 java -jar opcua-device-gateway-<<version>>.jar --spring.profiles.active=default,myTenant
 ```
 
@@ -76,7 +76,7 @@ The command above will start a gateway with the default profile and it will over
 
 **Optional**: To specify your own configuration, Spring arguments can be used in your terminal to run the gateway JAR file. Multiple locations have to be comma-separated. The configuration locations should be either YAML files or directories. In case of directories, they must end with “/”. For example:
 
-```bash
+```shell
 java -jar opcua-device-gateway-<<version>>.jar --spring.config.location=file:<<location>>/.opcua/conf/application-myTenant.yaml,file:<<location>>/.opcua/conf/
 ```
 
@@ -88,7 +88,7 @@ If both arguments "--spring.config.location" and "--spring.profiles.active" are 
 
 The following properties can be manually configured in the YAML file:
 
-```bash
+```yaml
 # Name of the application - this should not change
 name: opcua-device-gateway
 # Platform location and configuration
@@ -96,9 +96,9 @@ C8Y:
   # This is the base URL pointing to the Cumulocity IoT platform. This always must be customized in an application profile.
   baseUrl: http://localhost
   # This is an internal setting of the Cumulocity IoT SDK. It is set to true, because we typically
-  # want to configure the Cumulocity IoT IoT SDK to always use the baseURL provided during initialization.
-  # Otherwise, the gateway would use the host name from the self links taken from the core API responses.
-  # This is helpful in deployment scenarios where the Cumulocity IoT IoT instance is
+  # want to configure the Cumulocity IoT SDK to always use the baseURL provided during initialization.
+  # Otherwise, the gateway would use the links in the `self` fragment of the core API responses as the host name.
+  # This is helpful in deployment scenarios where the Cumulocity IoT instance is
   # reachable only with an IP address.
   forceInitialHost: true
 
@@ -147,11 +147,11 @@ gateway:
   mappingExecution:
     # This section contains all settings related to external, custom-action execution.
     http:
-      # Connection Request timeout (ms)
+      # Connection request timeout (milliseconds)
       connectionRequestTimeout: 3000
-      # Connection Timeout (ms)
+      # Connection timeout (milliseconds)
       connectionTimeout: 3000
-      # Socket timeout (ms)
+      # Socket timeout (milliseconds)
       socketTimeout: 5000
       # Maximum number of connections via HTTP route
       maxPerRoute: 50
@@ -209,7 +209,7 @@ gateway:
     lifetimeCount: 600
     notificationBufferSize: 500
 
-  # Internal Repository Configurations
+  # Internal repository configurations
   repositories:
     # Interval in milliseconds describing how often the repositories are flushed to the platform
     flushInterval: 10000
@@ -220,10 +220,10 @@ gateway:
     # Threadpool for the measurement queue flushing
     measurementsThreadpool: 60
 
-    # Maximum Capacity. If a repository grows over this size, the OPC UA communication will be shut off!
+    # Maximum capacity. If a repository grows over this size, the OPC UA communication will be shut off!
     maximumCapacity: 250000
 
-    # ReEnable Threshold. If OPC UA communication has been disabled due to exceeding maximum capacity, this threshold
+    # Re-enable threshold. If OPC UA communication has been disabled due to exceeding maximum capacity, this threshold
     # controls when OPC UA communication is enabled again
     reenableThresholdSize:  10
 
@@ -242,9 +242,9 @@ gateway:
   # Second, the gateway actively checks if a server connection is active and working by regularly
   # browsing the root node of an OPC UA server.
   monitoring:
-    # The interval below in ms configures the frequency of this monitoring task.
+    # The interval below in milliseconds configures the frequency of this monitoring task.
     interval: 10000
-    # The interval below in ms configures how often we investigate the thread executor queue sizes to prevent overflow
+    # The interval below in milliseconds configures how often we investigate the thread executor queue sizes to prevent overflow
     checkQueueSizes: 10000
 
   # The OPC UA gateway persists all latest values of an OPC UA server in a dedicated managed object,
@@ -259,7 +259,7 @@ gateway:
   childrenAddedOrRemoveCheck:
     interval: 15000
 
-  # How often (in milliseconds and if enabled) gateway should read pending operations from the platform.
+  # How often (in milliseconds and if enabled) the gateway reads pending operations from the platform.
   shortPolling:
     enabled: true
     fixedDelay: 15000
@@ -276,10 +276,10 @@ gateway:
 
 #### Logging
 
-Custom logging configuration can be set during startup by passing the "--logging.config" jvm argument. For more info on how to set up custom logging settings, refer to the “Logback” documentation.
+Custom logging configuration can be set during startup by passing the "--logging.config" jvm argument. For more info on how to set up custom logging settings, refer to the [“Logback” documentation](http://logback.qos.ch/manual/configuration.html).
 Sample logging config file may look like this:
 
-```bash
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="30 seconds">
 
@@ -338,7 +338,7 @@ The gateway can run with either default or custom settings. To run the gateway r
 
 For example, using the profile from the previous section we are going to register the gateway. First, open the terminal and navigate to the location of the gateway.jar file. Next, enter the following command:
 
-```
+```shell
 java --spring.profiles.active=default,myTenant -jar opcua-device-gateway-<<version>>.jar
 ```
 
@@ -350,7 +350,7 @@ You can adjust the memory settings of the gateway like with any other Java progr
 
 * Example: Run the gateway with a minimum heap size of 2 GB and a maximum heap size of 8 GB.
   
-  ```
+  ```shell
   java -Xms2g -Xmx8g -jar opcua-device-gateway-<<version>>.jar
   ```
 
@@ -446,9 +446,9 @@ The address space is automatically scanned when a connection between the gateway
 
 ![Gateway events tab](/images/users-guide/opcua/opcua-address.png)
 
-#### Monitoring Measurements
+#### Monitoring measurements
 
-On the gateway device, the Measurements tab provides visualization of data in the form of charts. In total the gateway contains the following six charts:
+On the gateway device, the **Measurements** tab provides visualization of data in the form of charts. In total the gateway contains the following six charts:
 
 <table>
 <colgroup>
@@ -497,7 +497,7 @@ On the gateway device, the Measurements tab provides visualization of data in th
 
 ![Gateway measurements tab](/images/users-guide/opcua/opcua-gateway-memory.png)
 
-#### Monitoring Alarms
+#### Monitoring alarms
 
 On the gateway device, the **Alarms** tab shows all alarms raised either in the gateway or in the servers. In total there are three alarms which can be raised:
 
@@ -507,7 +507,7 @@ On the gateway device, the **Alarms** tab shows all alarms raised either in the 
 
 ![Gateway alarms tab](/images/users-guide/opcua/opcua-alarms.png)
 
-#### Monitoring Events
+#### Monitoring events
 
 On the gateway device, the **Events** tab shows all events related to the gateway-server connection. Additionally, you can see when the gateway has started and when it ends.
 
@@ -660,7 +660,6 @@ There are three data reporting mechanisms which can be applied to read all mappe
     - Status: Triggers notification if node's status has changed.
     - Status/Value: Triggers notification if node's status or value has changed.
     - Status/Value/Timestamp: Triggers notification if node's status, value or timestamp has changed.
-
   - Deadband filter: Deadband filter makes notified data values to be filtered.
     - None: No filter will be applied. This option is selected by default.
     - Absolute: Contains the absolute change in a data value which causes the generation of a notification. This parameter applies only to variables with any number data type.
@@ -1130,7 +1129,7 @@ The result may differ depending on the node type.
 }
 ```
 
-#### Read Complex
+#### Read complex
 
 This operation reads many attributes from many nodes at single call.
 
@@ -1145,7 +1144,7 @@ This operation reads many attributes from many nodes at single call.
          }
        }
   },
-  "description":"Read Complex"
+  "description":"Read complex"
 }
 ```
 

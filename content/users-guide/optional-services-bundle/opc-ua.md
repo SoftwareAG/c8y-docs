@@ -1163,6 +1163,14 @@ Payload: The payload of updating a device type is exactly the same as the payloa
 
 
 
+##### Deleting a device type
+
+Endpoint: `DELETE /service/opcua-mgmt-service/device-types/{deviceTypeId}`
+
+Success response: `204 No Content`
+
+
+
 ### Operations
 
 Cumulocity IoT operations is the interface that is used to tell the gateway what to do and how to do it. This section describes all operations that are currently supported by the gateway.

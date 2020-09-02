@@ -48,7 +48,7 @@ function init()
 end
 ```
 
-Before receiving any operation, it sends only installed software list with message template `319`. You can find `c8y_SoftwareList` format from the [Device information guide](/reference/device-management/#device-information).
+Before receiving any operation, it sends a list of installed software with message template `319`. You can find the `c8y_SoftwareList` format in the [Device information guide](/reference/device-management/#device-information).
 
 `pkg_list()` returns a table. If your package control system is not `apt`, you also need to change how to extract software names and versions from the command you defined.
 
@@ -71,15 +71,15 @@ If you create any `c8y_SoftwareList` operation from the UI, the agent will recei
 
 After the aggregation finishes, the `perform` function is called. The function:
 
-- Updates the operation status to EXECUTING
+- Updates the operation state to EXECUTING
 - Validates package names
 - Creates a list for software packages to be installed
 - Creates a list for software packages to be removed
 - Downloads software packages from the server (inventory/binaries)
 - Removes software packages by the pre-defined command
 - Installs software packages by the pre-defined command
-- Updates with reason the operation status to FAILED if any of the above tasks failed,
-- Updates the operation status to SUCCESSFUL
+- Updates with reason the operation state to FAILED if any of the above tasks failed,
+- Updates the operation state to SUCCESSFUL
 - Sends the updated package list to the server
 
 Before you run the agent again, do not forget to add `software` to `lua.plugins=` in your _cumulocity-agent.conf_ file.

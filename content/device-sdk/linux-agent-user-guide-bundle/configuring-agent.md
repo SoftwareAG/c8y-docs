@@ -12,7 +12,7 @@ The agent by default connects to the cumulocity.com instance. In case you’re u
 URL supports two protocol schemas. To use the HTTP version, set the URL to format `https://example.com`. To use the MQTT version, set the URL to format `mqtts://example.com`.
 
 |Parameters|Example values|
-|--|--|
+|---|---|
 |server|`server=https://mqtt.cumulocity.com`<br>or<br>`server=mqtts://mqtt.cumulocity.com`|
 
 ### Log settings
@@ -25,7 +25,7 @@ URL supports two protocol schemas. To use the HTTP version, set the URL to forma
   The maximum log file size before the log rotates, in KB.
 
 |Parameters|Example values|  
-|--|--|
+|---|---|
 |log.path|`log.path=/var/log/cumulocity-agent.log`|
 |log.level|`log.level=debug`|  
 |log.quota|`log.quota=8192`|
@@ -47,7 +47,7 @@ The Modbus plugin implements the Cloud Fieldbus Modbus protocol.
 The CANopen plugin implements the Cloud Fieldbus CANopen protocol.
 
 |Parameters|Example values|
-|--|--|
+|---|---|
 |lua.plugins|`lua.plugins=system,logview,shell,canopen`|
 
 ### Agent measurements
@@ -55,7 +55,7 @@ The CANopen plugin implements the Cloud Fieldbus CANopen protocol.
 It defines the interval for sending memory and CPU usage measurements, in seconds. It requires the **system** plugin.
 
 |Parameters|Example values|
-|--|--|
+|---|---|
 |system.mem.interval|`system.mem.interval=300`|
 |system.cpu.interval|`system.cpu.interval=300`|
 
@@ -70,11 +70,11 @@ The polling rate for querying Modbus slave for data [in seconds]
 It controls the ability to write data to slaves. `1` is read-only, `0` is writable.
 
 |Parameters|Example values|  
-|--|--|
+|---|---|
 |modbus.pollingrate|`modbus.pollingrate=30`|
 |modbus.readonly|`modbus.readonly=0`|  
 
-> **Info:** The Modbus parameters are recommended to be changed via the Modbus Cloud Fieldbus UI.
+> **Info:** We recommend that you change the Modbus parameters via the Modbus Cloud Fieldbus UI.
 
 
 #### Modbus-TCP Configuration
@@ -83,7 +83,7 @@ It controls the ability to write data to slaves. `1` is read-only, `0` is writab
   The TCP port is used for Modbus-TCP. The default setting is 502.
 
 |Parameters|Example values|
-|--|--|
+|---|---|
 |modbus.tcp.port|`modbus.tcp.port=502`|
 
 #### Modbus-RTU Configuration
@@ -100,7 +100,7 @@ The parity. `N`, `E` or `O`.
 The stopbits. `1` or `2`.
 
 |Parameters|Example values|  
-|--|--|
+|---|---|
 |modbus.serial.port|`modbus.serial.port=/dev/ttyACM0`|
 |modbus.serial.baud|`modbus.serial.baud=19200`|
 |modbus.serial.databits|`modbus.serial.databits=8`|  
@@ -118,19 +118,19 @@ The polling Rate for querying CANopen node for data [in seconds]
 The baud rate of the CAN line [in kbit/s]
 
 |Parameters|Example values|  
-|--|--|
+|---|---|
 |canopen.transmitRate|`canopen.transmitRate=5`|
 |canopen.pollingRate|`canopen.pollingRate=5`|
 |canopen.baud|`canopen.baud=125`|
 
->**Info:** These CANopen parameters are recommended to be changed via the CANopen Cloud Fieldbus UI.
+>**Info:** We recommend that you change these CANopen parameters via the CANopen Cloud Fieldbus UI.
 
 #### CANopen port
 
 The default settings are to use `can0` interface, in case you need to configure a different CAN interface, for example, `can1`, edit this parameter.
 
 |Parameters|Example values|
-|--|--|
+|---|---|
 |canopen.port|`canopen.port=can1`|
 
 #### CANopen interface type
@@ -144,6 +144,6 @@ This is the type when your CAN device is supported by the socketCAN driver and a
 This is the type when your CAN device is recognized as a serial interface by the Linux kernel, for example, `/dev/ttyACM0`. In this case, you also need to inform the agent the serial port your device is mounted as `canopen.serial=/dev/ttyACM0` or `canopen.serial=/dev/ttyUSB0`
 
 |Parameters|Example values|
-|--|--|
+|---|---|
 |canopen.type|`canopen.type=can`|
 |canopen.serial|`canopen.serial=/dev/ttyUSB0`|

@@ -8,7 +8,7 @@ In this section, you will learn how to extend your code in the Linux Agent as a 
 
 
 |SECTION|CONTENT|
-|--|--|
+|---|---|
 |[Lua plugin tutorial - Hello world](#hello-world)|How to debug messages|
 |[Lua plugin tutorial - Sending measurements](#sending-measurements)|How to get values from a configuration file, how to use a timer function and how to send values to the Cumulocity IoT platform with a SmartREST1.0 template|
 |[Lua plugin tutorial - Restart device](#restart)|How to get real-time notifications and handle operations|

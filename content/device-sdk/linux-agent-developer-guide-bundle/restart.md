@@ -5,12 +5,12 @@ weight: 40
 ---
 
 Besides sending requests, e.g., measurements to the Cumulocity IoT platform, another important function is handling incoming messages from Cumulocity IoT; either responses from `GET` queries or real-time operations.  
-Here two examples are presented. The first example shows only how to handle the `c8y_Restart` operation in Lua. It is a simplified version of the [ex-06-lua](/device-sdk/cpp/#use) example in the **Cumulocity IoT C++ SDK**. The second example shows a more practical implementation including saving the operation ID after rebooting.
+Here two examples are presented. The first example shows only how to handle the `c8y_Restart` operation in Lua. It is a simplified version of the [ex-06-lua](/device-sdk/cpp/#use) example in the Cumulocity IoT C++ SDK. The second example shows a more practical implementation including saving the operation ID after rebooting.
 
 
 ### <a name="restart"></a>Restart device example - simple
 
-First, this example sends the operation status `EXECUTING` when it receives the `c8y_Restart` operation. Then, it logs "Executing restart.." in the log file, and sends 'SUCCESSFUL' as the operation status update to the server.
+First, this example sends the operation status `EXECUTING` when it receives the `c8y_Restart` operation. Then, it logs "Executing restart.." in the log file, and sends `SUCCESSFUL` as the operation status update to the server.
 
 In the beginning, the agent needs to send `c8y_Restart` as `c8y_SupportedOperations` to notify this agent can handle restart operation.
 
@@ -59,7 +59,7 @@ end
 
 When the agent receives the message ID, this message handler triggers to invoke `restart()`. `r` is the recursive variable. So, `r:value(2)` points the received operation ID.
 
-The operation status needs to transit `PENDING`->`EXECUTING`->`SUCCESSFUL`/`FAILED`. The agent needs to update the operation status to `EXECUTING` first. This is what
+The operation status needs to transit `PENDING`->`EXECUTING`->`SUCCESSFUL`/`FAILED`. The agent needs to update the operation state to `EXECUTING` first. This is what
 
 ```lua
 c8y:send('303,' .. r:value(2) .. ',EXECUTING', 1)
@@ -87,7 +87,7 @@ lua.plugins=hello,cpumeasurments,restart-simple
 
 Deploy _restart-simple.lua_ like [Hello world example](./#hello-world-example). Then run your agent.
 
-Now go to your Cumulocity IoT tenant, execute a restart operation as shown in the image below. Afterwards, you should see the message printed in the log file and the operation status set to SUCCESSFUL in your control tab.
+Now go to your Cumulocity IoT tenant, execute a restart operation as shown in the image below. Afterwards, you should see the message printed in the log file and the operation state set to SUCCESSFUL in your control tab.
 ![restarted-device](/images/device-sdk/restarted-device.png)
 
 
@@ -137,4 +137,4 @@ end
 
 It stores the operation ID in a local file before triggering the `reboot` command. After the reboot, the agent sends `SUCCESSFUL` with the stored operation ID to the server.
 
-`os.execute()` is a Lua command, which is equivalent to the C `system()` function. It passes commands to be executed by an operating system shell. So, `os.execute('reboot')` calls Linux reboot command. You can suitable adjust it for your system.
+`os.execute()` is a Lua command, which is equivalent to the C `system()` function. It passes commands to be executed by an operating system shell. So, `os.execute('reboot')` calls Linux reboot command. You can adjust it for your system.

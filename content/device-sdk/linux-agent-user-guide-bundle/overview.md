@@ -8,7 +8,7 @@ The Cumulocity IoT Linux agent is a generic device agent for connecting Linux-po
 ### Contents
 
 |SECTION|CONTENT|
-|--|--|
+|---|---|
 |[Overview](#overview)|Overview|  
 |[Prerequisites](#prerequisites)|Prerequisites|
 |[Building and installing the agent](#building-installing-agent)|How to build and how to install the agent (incl. Modbus, CANopen)|

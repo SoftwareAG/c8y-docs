@@ -80,7 +80,7 @@ The Cumulocity IoT Cloud Remote Access service needs no further configuration. I
 
 ### <a name = building-the-agent-with-modbus-support> Building the agent with Modbus support </a>
 
-Modbus support is disabled by default. In between step 4 and step 5 of [Building the basic agent](#basic-agent), you need to do one additional step. The Modbus feature requires the libmodbus library, so that make sure you have libdmobus installed before building with Modbus support.
+Modbus support is disabled by default. In between step 4 and step 5 of [Building the basic agent](#basic-agent), you need to do one additional step. The Modbus feature requires the libmodbus library, so make sure you have libdmobus installed before building with Modbus support.
 
 After step 4 of [Building the basic agent](#basic-agent), edit your _Makefile_ file and set `PLUGIN_MODBUS` to `1`. By default, this variable is set `0` (disabled).
 

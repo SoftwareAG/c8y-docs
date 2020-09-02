@@ -4,7 +4,7 @@ layout: redirect
 weight: 30
 ---
 
-Let's try sending CPU measurements to **Cumulocity IoT**. In this section, you will learn how to use the pre-defined timer function, to read parameters defined in _cumulocity-agent.conf_ file and to send measurements using an existing SmartREST1.0 template.
+Let's try sending CPU measurements to Cumulocity IoT. In this section, you will learn how to use the pre-defined timer function, to read parameters defined in _cumulocity-agent.conf_ file and to send measurements using an existing SmartREST1.0 template.
 
 ### Sending measurements example
 

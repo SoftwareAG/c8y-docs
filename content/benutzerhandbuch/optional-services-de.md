@@ -12,7 +12,7 @@ Die folgenden Services sind aktuell verfügbar:
 |Service|Beschreibung|
 |:---|:---|
 |[Cloud Fieldbus](/users-guide/optional-services/#cloud-fieldbus)|Ermöglicht es, Daten von Fieldbus-Geräten zu empfangen und diese fernzusteuern.
-|[Cloud Sensor App](/users-guide/optional-services/#android-cloud-sensor-app)|Verbindet Android Smartphones, iOS Smartphones oder TI Sensor Tags mit Cumulocity, um Messwerte von diesen Geräten zu verarbeiten oder diese fernzusteuern.
+|[Cumulocity-IoT Sensor App](/users-guide/cumulocity-sensor-app)|Verbindet Android Smartphones, iOS Smartphones oder TI Sensor Tags mit Cumulocity, um Messwerte von diesen Geräten zu verarbeiten oder diese fernzusteuern.
 |[Cloud Remote Access](/cloud-remote-access/cra-general-aspects)|Implementiert Virtual Network Computing (VNC), um über einen Web-Browser auf Steuerelemente und andere Geräte zuzugreifen.
 |[Connectivity](/users-guide/optional-services/#connectivity)|Stellt Basisinformationen zu mobilen Geräten und weitere Details zur Konnektivität bereit.
 |[IMPACT](/users-guide/optional-services/#nokia-impact)|Ermöglicht die Integration von Nokia IMPACT in die Cumulocity-Plattform, um Daten von heterogenen Geräten zu verarbeiten.

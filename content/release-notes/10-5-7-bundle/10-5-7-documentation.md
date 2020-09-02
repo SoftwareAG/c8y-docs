@@ -12,7 +12,7 @@ Starting with Cumulocity IoT release 10.5.7, the documentation website now offer
 
 ### User guide: Optional services
 
-The Cumulocity IoT Sensor App documentation has been updated and improved, see [Optional services > Cumulocity IoT Sensor App](/users-guide/optional-services/#android-cloud-sensor-app) in the User guide.
+The Cumulocity IoT Sensor App documentation has been updated and improved, see [User guide > Cumulocity IoT Sensor App](/users-guide/cumulocity-sensor-app) in the User guide.
 
 The webMethods.io Integration documentation has been enhanced, see [Optional services > webMethods.io Integration](/users-guide/optional-services/#webMethods) in the User guide.
 

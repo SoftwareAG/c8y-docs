@@ -54,7 +54,7 @@ on all at(*, *, *, *, *) {} // trigger every minute
 
 on all at(*/10, *, *, *, *) {} // trigger every 10 minutes
 on all at(0, 1, *, *, [1,3,5]) {} // trigger at 1am every monday, wednesday and friday
-on all at(0, */2, (1:7), *, *) {} // trigger every 2 hours on every day in the first week of every month
+on all at(0, */2, 1:7, *, *) {} // trigger every 2 hours on every day in the first week of every month
 ```
 You can also combine timer patterns with other patterns. For example, you can check if there was an event within a certain time after another event:
 

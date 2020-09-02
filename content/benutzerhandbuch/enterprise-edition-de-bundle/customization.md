@@ -28,7 +28,7 @@ Im Bereich **Passwörter** können Sie Passworteinstellungen wie Standardstärke
 
 Im Bereich **Supportbenutzer** konfigurieren Sie die Parameter für die Aktivierung eines Supportbenutzers für Untermandanten-Benutzer.
 
-Mit Hilfe dieser Funktion können Supportbenutzer (d. h. Benutzer mit spezifischen Berechtigungen im Management-Mandanten) bei etwaigen Problemen auf Benutzer von Untermandanten zugreifen. Weitere Informationen finden Sie unter [Supportbenutzerzugriff](/users-guide/enterprise-edition#users-in-other-tenants).
+Mit Hilfe dieser Funktion können Supportbenutzer (d. h. Benutzer mit spezifischen Berechtigungen im Management-Mandanten) bei etwaigen Problemen auf Benutzer von Untermandanten zugreifen. Weitere Informationen finden Sie unter [Supportbenutzerzugriff](/benutzerhandbuch/enterprise-edition-de#users-in-other-tenants).
 
 <img src="/images/benutzerhandbuch/enterprise-tenant/et-settings-configuration-support-user.png" alt="Support user configuration">
 
@@ -42,7 +42,7 @@ Im Feld **Gültigkeitsdauer** können Sie optional die Supportdauer angeben, d. 
 
 Ablaufdatum und -uhrzeit werden anhand der im Feld **Gültigkeitsdauer** angegebenen Dauer aktualisiert. Beispiel: Wenn das aktuelle Ablaufdatum 01/09/2018 15:00 lautet und die Dauer von 24 Stunden beibehalten wurde, aktualisiert der aktivierende Supportbenutzer das Ablaufdatum auf 01/10/2018 15:00.
 
-Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [Verwalten von Mandanten](/users-guide/enterprise-edition#managing-tenants).
+Details zum Status von Supportanfragen und Supportbenutzerzugriff für einen Mandanten finden Sie in der Registerkarte **Attribute** des Mandanten, siehe [Verwalten von Mandanten](/benutzerhandbuch/enterprise-edition-de#managing-tenants).
 
 ### <a name="branding"></a>Branding
 
@@ -98,7 +98,7 @@ Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
 
 * Haupt-Branding-Farbe.
 * Neben-Branding-Farbe. Der Standardwert ist “#07b91A”.
-* Dunkle Branding-Farbe. Wird hauptsächlich für zweifarbige Symbole verwendet. Der Standardwert ist "#0B385B". 
+* Dunkle Branding-Farbe. Wird hauptsächlich für zweifarbige Symbole verwendet. Der Standardwert ist "#0B385B".
 * Helle Branding-Farbe. Wird hauptsächlich für zweifarbige Symbole verwendet. Der Standardwert ist "#5FAEEC".
 * Textfarbe. Der Standardwert ist “#444”.
 * Link-Farbe. Der Standardwert ist die Haupt-Branding-Farbe.

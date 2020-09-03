@@ -98,8 +98,8 @@ Die folgenden Parameter können definiert werden (Werte in hex, rgb oder rgba):
 
 * Haupt-Branding-Farbe.
 * Neben-Branding-Farbe. Der Standardwert ist “#07b91A”.
-* Dunkle Branding-Farbe.
-* Helle Branding-Farbe.
+* Dunkle Branding-Farbe. Wird hauptsächlich für zweifarbige Symbole verwendet. Der Standardwert ist "#0B385B".
+* Helle Branding-Farbe. Wird hauptsächlich für zweifarbige Symbole verwendet. Der Standardwert ist "#5FAEEC".
 * Textfarbe. Der Standardwert ist “#444”.
 * Link-Farbe. Der Standardwert ist die Haupt-Branding-Farbe.
 * Haupt-Hintergrundfarbe. Der Standardwert für diese Element ist “#FAFAFA”.
@@ -154,14 +154,19 @@ In der Registerkarte **Domain-Name** können Sie Ihren eigenen Domain-Namen fest
 
 Zunächst müssen Sie ein entsprechendes Zertifikat hochladen, in dem Sie **Zertifikat hochladen** klicken. Stellen Sie sicher, dass
 
-* das Zertifikat in einem gültigen PKCS#12-Format vorliegt und eine vollständige Autorisierungskette enthält,
-* das Zertifikat nicht passwortgeschützt ist,
-* Sie ein Wildcard-Zertifikat verwenden, um die Erstellung von Untermandanten zu ermöglichen.
+* das Zertifikat aktuell gültig ist (validFrom in der Vergangenheit und validTo in der Zukunft),
+* das Zertifikat in einem gültigen PKCS#12-Format vorliegt und die vollständige Autorisierungskette enthält,
+* jedes einzelne Zertifikat in der Kette im X509-Format vorliegt,
+* der private Schlüssel nicht passwortgeschützt ist,
+* Sie ein Wildcard-Zertifikat verwenden, um die Erstellung von Untermandanten zu ermöglichen,
+* der Common Name (CN) im Betreff des primären Zertifikats (erstes in der Kette) den Wert Ihres Wildcard-Domain-Namens enthält, z. B. "CN=*.iot.mycompany.com".
+
+Cumulocity IoT unterstützt ein Einzelkettenzertifikat, das durch die Stammzertifizierungsstelle signiert ist, sowie ein Vollkettenzertifikat, das ein oder mehrere Zwischenzertifikate enthält.
 
 > **Info:** Wenn Ihr Zertifikat nicht in einem gültigen PKCS#12-Format vorliegt aber Sie PEM-Dateien für Zertifikat, privaten Schlüssel und Autorisierungskette haben, können Sie mit dem folgenden Kommando eine gültige PKCS#12-Datei generieren:
 
 ```shell
-openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -certfile chain.pe
+openssl pkcs12 -export -out out_keystore.p12 -inkey privkey.pem -in cert.pem -certfile chain.pem
 ```
 
 Bevor Sie den eigenen Domain-Namen aktivieren, stellen Sie sicher, dass
@@ -175,7 +180,7 @@ Bevor Sie den eigenen Domain-Namen aktivieren, stellen Sie sicher, dass
  Ziel = Domain der Plattform, auf die Sie verweisen wollen. Wenn Sie z. B. `https://demos.cumulocity.com` verwenden, um auf Ihren Mandanten zuzugreifen, verwenden Sie "demos.cumulocity.com" als Ziel.<br>
 Vergewissern Sie sich, dass Sie alle A-Einträge für die Wildcard-Domain entfernt haben. Wenn Sie bereits einen Eintrag A für "xxx.iot.mycompany.com" haben, können Sie keine Mandanten mit der URL "xxx" anlegen.
 
-Nach erfolgreicher Aktivierung werden Sie zu Ihrem Enterprise Tenant unter der neuen Domain umgeleitet. Sie erhalten eine Email mit Informationen über die Aktivierung.
+Nach erfolgreicher Aktivierung werden Sie zu Ihrem Enterprise Tenant unter der neuen Domain umgeleitet. Sie erhalten eine Email mit Informationen über die Aktivierung. Beachten Sie, dass der Domain-Name Ihres Management-Mandanten statisch ist. Beispiel: Wenn Ihre Wildcard-Domain "*.iot.mycompany.com" lautet, so lautet die Domain Ihres Management-Mandanten "management.iot.mycompany.com".
 
 >**Info:** Sobald die Aktivierung abgeschlossen ist, können Sie auf Ihren Mandanten nicht mehr mit der Cumulocity IoT-Domain zugreifen. Verwenden Sie anstatt dessen Ihren eigenen Domain-Namen.
 
@@ -184,11 +189,9 @@ Nach erfolgreicher Aktivierung werden Sie zu Ihrem Enterprise Tenant unter der n
 
 Wenn Ihr Zertifikat abläuft, müssen Sie es durch ein neues Zertifikat mit einer längeren Gültigkeitsdauer aktualisieren. Wenn Sie das Zertifikat aktualisieren, stellen Sie sicher, dass
 
-* das Zertifikat ein gültiges PKCS#12-Format hat,
-* das Zertifikat nicht passwortgeschützt ist,
+* das Zertifikat gültig ist (entsprechend der Gültigkeit beim initialen Hochladen),
 * das Zertifikat aktuell gültig ist (validFrom in der Vergangenheit und validTo in der Zukunft),
 * das Zertifikat exakt denselben Domain-Namen wie das aktuell aktive Zertifikat hat.
-* Sie einen CNAME-Eintrag zu Ihrem DNS-Server hinzugefügt haben. Details zum CNAME-Eintrag finden Sie weiter oben.
 
 >**Info:** Berücksichtigen Sie, dass es nach dem Ersetzen des Zertifikats einige Minuten dauern kann, bis das neue Zertifikat den Benutzern/Browsern bereitgestellt wird.
 

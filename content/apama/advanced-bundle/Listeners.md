@@ -4,7 +4,7 @@ title: Listeners
 layout: redirect
 ---
 
-Triggering a statement by an arriving event is not the only possibility. The following sections cover other ways to combine listeners. Refer to [Defining Event Listeners](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_defining_event_listeners.html) in the Apama documentation for full details.
+Triggering a statement by an arriving event is not the only possibility. The following sections cover other ways to combine listeners. Refer to [Defining Event Listeners](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fco-DevApaAppInEpl_defining_event_listeners.html) in the Apama documentation for full details.
 
 ### Filters
 
@@ -52,9 +52,9 @@ Or you can have a listener fire at certain times of the day, with similar functi
 
 on all at(*, *, *, *, *) {} // trigger every minute
 
-on at(*/10, *, *, *, *) {} // trigger every 10 minutes
-on at(0, 1, *, *, [1,3,5]) {} // trigger at 1am every monday, wednesday and friday
-on at(0, */2, (1-7), *, *) {} // trigger every 2 hours on every day in the first week of every month
+on all at(*/10, *, *, *, *) {} // trigger every 10 minutes
+on all at(0, 1, *, *, [1,3,5]) {} // trigger at 1am every monday, wednesday and friday
+on all at(0, */2, 1:7, *, *) {} // trigger every 2 hours on every day in the first week of every month
 ```
 You can also combine timer patterns with other patterns. For example, you can check if there was an event within a certain time after another event:
 
@@ -94,4 +94,4 @@ from m in all Measurement(type="c8y_TemperatureMeasurement") retain 20 every 20 
 from m in all Measurement(type="c8y_TemperatureMeasurement") retain 20 every 20 select avg(m.measurements["c8y_TemperatureMeasurement"]["T"].value) as avgValue { }
 ```
 
-See the Apama documentation for [built-in aggregate functions](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2Fre-ApaEplRef_built_in_aggregate_functions.html).
+See the Apama documentation for [built-in aggregate functions](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fre-ApaEplRef_built_in_aggregate_functions.html).

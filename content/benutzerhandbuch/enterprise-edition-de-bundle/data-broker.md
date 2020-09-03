@@ -30,7 +30,7 @@ Beachten Sie folgende Einschränkungen im Zusammenhang mit Data Broker:
 
 Ein Datenkonnektor beschreibt die Daten, die Sie zu einem Zielmandanten senden möchten sowie die URL dieses Mandanten.
 
-<a name="data-broker-connectors-list"></a> **Anzeigen von Datenkonnektoren**
+<a name="data-broker-connectors-list"></a> **Viewing data connectors**
 
 Klicken Sie im Navigator auf **Datenkonnektor**, um eine Liste mit allen aktuell definierten Datenkonnektoren mit ihrem jeweiligen Status anzuzeigen.
 
@@ -66,47 +66,47 @@ Verwenden Sie den Umschalter, um das Weiterleiten von Daten an den Zielmandanten
 4. Jeder Datenfilter enthält die folgenden Informationen:
 
 	<table>
-	<col width = 150>
-	<thead>
-	<tr>
-	<th style="text-align:left">Feld</th>
-	<th style="text-align:left">Beschreibung</th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-	<td style="text-align:left">Gruppe oder Gerät</td>
-	<td style="text-align:left">Die Gruppe oder das Gerät, die/das weitergeleitet wird. Wird hier eine Gruppe ausgewählt, werden alle Untergruppen und Untergeräte ebenfalls weitergeleitet. <b>Siehe nachstehende Warnung zur Verwendung von "Alle Objekte".</b> </td>
-	</tr>
-	<tr>
-	<td style="text-align:left">API</td>
-	<td style="text-align:left">Der Datentyp, der weitergeleitet wird (Alarme, Ereignisse, Messwerte, Objekte) oder empfangen wird (Kommandos).</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Zu filternde Fragmente</td>
-	<td style="text-align:left">Fragmente, die in einem Gerät vorhanden sein müssen, damit dieses weitergeleitet wird.</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Zu kopierende Fragmente</td>
-	<td style="text-align:left">Fragmente, die zum Ziel kopiert werden. Wenn hier nichts angegeben wird, werden nur die Standardattribute wie Objekte, Alarme, Ereignisse und Messwerte weitergeleitet (siehe unten). Wählen Sie **Alle Fragmente kopieren**, um das gesamte Objekt weiterzuleiten.</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Type-Filter</td>
-	<td style="text-align:left">Weitergeleitete Daten müssen diesen Wert in ihrem "Type"-Attribut haben.</td>
-	</tr>
-	</tbody>
-	</table>
+<col width = 150>
+<thead>
+<tr>
+<th style="text-align:left">Feld</th>
+<th style="text-align:left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Gruppe oder Gerät</td>
+<td style="text-align:left">Die Gruppe oder das Gerät, die/das weitergeleitet wird. Wird hier eine Gruppe ausgewählt, werden alle Untergruppen und Untergeräte ebenfalls weitergeleitet. <b>Siehe nachstehende Warnung zur Verwendung von "Alle Objekte".</b> </td>
+</tr>
+<tr>
+<td style="text-align:left">API</td>
+<td style="text-align:left">Der Datentyp, der weitergeleitet wird (Alarme, Ereignisse, Messwerte, Objekte) oder empfangen wird (Kommandos).</td>
+</tr>
+<tr>
+<td style="text-align:left">Zu filternde Fragmente</td>
+<td style="text-align:left">Fragmente, die in einem Gerät vorhanden sein müssen, damit dieses weitergeleitet wird.</td>
+</tr>
+<tr>
+<td style="text-align:left">Zu kopierende Fragmente</td>
+<td style="text-align:left">Fragmente, die zum Ziel kopiert werden. Wenn hier nichts angegeben wird, werden nur die Standardattribute wie Objekte, Alarme, Ereignisse und Messwerte weitergeleitet (siehe unten). Wählen Sie **Alle Fragmente kopieren**, um das gesamte Objekt weiterzuleiten.</td>
+</tr>
+<tr>
+<td style="text-align:left">Type-Filter</td>
+<td style="text-align:left">Weitergeleitete Daten müssen diesen Wert in ihrem "Type"-Attribut haben.</td>
+</tr>
+</tbody>
+</table>
 
 5. Klicken Sie **Speichern**, um die Konfiguration zu speichern.
 
 >**Warnung zur Verwendung von "Alle Objekte"**
-
+>
 >Die Option **Alle Objekte** ist weiterhin in der Benutzeroberfläche vorhanden, um Rückwärtskompatibilität mit älteren Versionen sicherzustellen. Wir planen, diese Option künftig nicht mehr zu unterstützen, und empfehlen dringend, sie nicht zu verwenden.
-
+>
 >Wird sie gewählt, synchronisiert Cumulocity IoT alle Arten von Objekten, sowohl System- als auch benutzerdefinierte Objekte, und könnte Objekte im Zielmandanten überschreiben oder ohne Kontext erstellen. Solche Objekte können Referenzen zu anderen Objekten sowie Konfigurationsinformationen enthalten. Es liegt in der Verantwortung des Benutzers, die Konsistenz solcher Informationen in den übertragenen Objekten in der Zielumgebung sicherzustellen.
-
+>
 >Dies betrifft Elemente wie SmartREST-Templates, Geräteprotokolle, Smart-Rule-Konfigurationen und Dashboards.
-
+>
 >Wenn Sie zum Beispiel auf dem Ursprungsmandanten eine Smart Rule erstellen und alle Objekte synchronisieren, erstellt Data Broker ein Smart-Rule-Objekt auf dem Zielmandanten. Die Regel selbst wird nicht kopiert, da eine synchronisierte Smart Rule dieselbe Aktion auf demselben Gerät für dieselbe Konfiguration ausführen würde. Dadurch würden bei einem Alarm doppelte E-Mails für die jeweiligen Empfänger erstellt werden.
 
 
@@ -153,9 +153,9 @@ Klicken Sie auf das Menüsymbol rechts neben einem Datenkonnektor-Eintrag und an
 
 Öffnen Sie einen Datenkonnektor und wechseln Sie zur Registerkarte **Alarme**, um aktuelle Alarme für den Datenkonnektor anzuzeigen.
 
-![Warnings tab](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-connector-warnings.png)
+Weitere Informationen zu Data Broker-Alarmen finden Sie unter [Troubleshooting](#data-broker-troubleshooting) weiter unten.
 
-Weitere Informationen zu Alarmen finden Sie unter [Device Management > Überwachen und Steuern von Geräten > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring).
+Weitere Informationen zu Alarmen im Allgemeinen finden Sie unter [Device Management > Überwachen und Steuern von Geräten > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring).
 
 
 ### <a name="data-broker-subscriptions"></a> Datenabonnements
@@ -187,8 +187,14 @@ Klicken Sie auf das Menüsymbol und anschließend auf **Löschen**, um die Daten
 
 ### <a name="data-broker-troubleshooting"></a> Troubleshooting
 
-Im Ursprungsmandanten reiht Data Broker die Daten, die nicht sofort an den Zielmandanten weitergeleitet werden können, in eine Wartschlange ein. Die Datenmenge, die in die Warteschlange eingereiht werden kann, ist begrenzt. Kann Cumulocity IoT keine weiteren Daten in die Warteschlange einreihen, werden die ältesten Daten aus der Warteschlange entfernt. In diesem Fall wird im Mandanten ein Alarm ausgegeben.
+Wenn der Data Broker die Verbindung zu einem Zielmandanten nicht herstellen kann, wird ein KRITISCHER Alarm ausgelöst und dabei der betroffene Konnektor angezeigt.
 
-**"Data Broker-Verarbeitung ist aktuell überlastet und beendet möglicherweise das Weiterleiten von Daten. Bitte kontaktieren Sie unseren Support."**
+#### Überlauf der Warteschlange
+
+Im Ursprungsmandanten reiht Data Broker die Daten, die nicht sofort an den Zielmandanten weitergeleitet werden können, in eine Wartschlange ein. Die Datenmenge, die in die Warteschlange eingereiht werden kann, ist begrenzt. Kann Cumulocity IoT keine weiteren Daten in die Warteschlange einreihen, werden die ältesten Daten aus der Warteschlange entfernt. In diesem Fall wird im Mandanten ein WICHTIGER Alarm ausgelöst und dabei der betroffene Konnektor angezeigt.
+
+![Data broker alarms](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-alarm.png)
+
+Ebenso wird bei einem Überlauf der Eingangswarteschlange ein Alarm ausgelöst.
 
 Um die Anzahl der Alarme zu reduzieren, werden Alarme höchstens einmal pro Minute ausgelöst.

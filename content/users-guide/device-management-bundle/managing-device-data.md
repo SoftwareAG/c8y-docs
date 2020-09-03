@@ -1,6 +1,6 @@
 ---
 weight: 60
-title: Managing device data
+title: Managing device data (contains beta changes)
 layout: redirect
 ---
 
@@ -81,11 +81,11 @@ Cumulocity IoT allows to retrieve configuration data and store and manage it in 
 
 Configuration snapshots help you, for example, to apply the same configuration to multiple devices as described below.
 
-Click **Configuration repository** in the the **Management** menu in the navigator. In the **Configuration repository** page, all available configuration snapshots are listed. Each entry shows the configuration name, the description of the configuration, the device type and the configuration type. 
+Click **Configuration repository** in the the **Management** menu in the navigator. In the **Configuration repository** page, all available configuration snapshots are listed. Each entry shows the configuration name, the description of the configuration, the device type and the configuration type.
 
 ![Configuration Repository](/images/users-guide/DeviceManagement/devmgmt-management-configrepo.png)
 
-#### <a name="add-snapshot"></a> To add a configuration snapshot 
+#### <a name="add-snapshot"></a> To add a configuration snapshot
 
 1. Click **Add configuration snapshot** at the right of the top menu bar.
 2. In the resulting dialog box, enter a unique name.
@@ -135,7 +135,7 @@ To apply a configuration snapshot to a device:
 #### To retrieve and apply a configuration snapshot to a device which supports multiple configuration types
 
 1. Navigate to the desired device in **Devices** > **All devices** and open its **Configuration** tab.
-2. Under **Device-supported configurations**, select the desired configuration type and click 
+2. Under **Device-supported configurations**, select the desired configuration type and click
 **Get snapshot from device** at the right.
 
 Once retrieved, you can save or download the snapshot in the **Preview** section. The snapshot will be added to the **Configuration repository**, accessible from the **Management** menu in the navigator.
@@ -245,7 +245,7 @@ To update a device profile click the menu icon at the right of the respective de
 
 You may edit the name and the device types by clicking the pencil icon next to the respective fields. Make the desired changes and click **Save** to save your edits.
 
-Moreover, you can delete firmware, software or configuration items or add new ones. 
+Moreover, you can delete firmware, software or configuration items or add new ones.
 
 To delete an item, hover over it and click the delete icon.
 
@@ -256,19 +256,19 @@ Note that in case of firmware, only one item is allowed in a profile at a time.
 
 #### To duplicate device profiles
 
-To duplicate a device profile, click the menu icon at the right of the respective device profile entry and then click **Duplicate**. 
+To duplicate a device profile, click the menu icon at the right of the respective device profile entry and then click **Duplicate**.
 
 Duplicating a profile creates another instance of the profile with the same content. Per default, the original profile name is extended with "Copy of". You may give the profile a more appropriate name by clicking the pencil icon next to the name field and editing it.
 
 #### To delete device profiles
 
-To delete a device profile, click the menu icon at the right of the respective device profile entry and then click **Delete**. 
+To delete a device profile, click the menu icon at the right of the respective device profile entry and then click **Delete**.
 
 > **Info:** Deleting a profile deletes the entry from the device profile repository. It has no affect towards the devices that currently use the profile.
 
 #### To apply device profiles to devices
 
-Device profiles can be applied to devices by operations, more precisely through bulk operations. 
+Device profiles can be applied to devices by operations, more precisely through bulk operations.
 
 Click **Device control** in the **Overview** menu to navigate to the **Device control** page. In the **Device control** page, a new bulk operation can be created to apply a device profile.
 
@@ -276,7 +276,7 @@ In the **Bulk operations** tab, click **New bulk operation** at the right of the
 
 Follow the steps described in [Monitoring and controlling devices > Working with operations > To add a bulk operation](/users-guide/device-management/#bulk-operations) to schedule a bulk operation which applies a device profile.
 
-The devices will install the firmware, software and configurations items of the profile and report back the status of the operation. After successfully applying the profile, the device objects in the platform are updated accordingly with the information of the currently applied profile. 
+The devices will install the firmware, software and configurations items of the profile and report back the status of the operation. After successfully applying the profile, the device objects in the platform are updated accordingly with the information of the currently applied profile.
 
 If the operation fails, an error message is returned providing details on which step the operation failed.
 
@@ -290,4 +290,70 @@ In the devices list, it is possible to filter for devices based on their applied
 
 ![Device profile filter](/images/users-guide/DeviceManagement/devmgmt-device-profile-filter.png)
 
-When creating bulk operations, it is also possible to use filters, and by this create bulk operations only for those devices where a profile has not been applied yet. 
+When creating bulk operations, it is also possible to use filters, and by this create bulk operations only for those devices where a profile has not been applied yet.
+
+### <a name="trusted-certificates"></a> Managing trusted certificates
+
+Cumulocity IoT allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be trusted by Cumulocity IoT. A certificate is trusted when it is added to the trusted certificates and is in activated state.
+
+>**Info:** This section describes how to manage trusted certificates. For information on connecting devices using certificates refer to [Device integration using MQTT > Device certificates](/device-sdk/mqtt#device-certificates) in the Device SDK guide.
+
+Click **Trusted certificates** in the **Management** menu in the navigator.
+
+All certificates owned by the tenant will be displayed.
+
+![Trusted certificates List](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-list.png)
+
+The icon on the left of each entry indicates if the certificate is active (green) or inactive (red). At any given time a tenant can have any number of active or inactive certificates.
+
+Expand a certificate by clicking the arrow icon at the right to view more details.
+
+![Trusted certificates Entry](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-entry.png)
+
+The information in the table at the right side is extracted from the provided certificate. The content is read-only and cannot be changed.
+
+![Trusted certificate details](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-details.png)
+
+
+#### To add a certificate
+
+Before adding a new trusted certificate, make sure that:
+
+* It s a X.509 certificate in PEM format.
+* It is in version 3.
+* It contains `BasicConstraints:[CA:true]`.
+* It has not already been uploaded to Cumulocity IoT.
+* It is still valid (not expired).
+
+To add a certificate perform these steps:
+
+1. Click **Add trusted certificate** at the right of the top menu bar.
+
+	![Trusted certificate details](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-new.png)
+
+2. In the resulting dialog box, provide the following information:
+
+|Field|Description|
+|:---|:---|
+|Certificate name|User-provided name for the certificate. This name is not used by Cumulocity IoT and can serve as a description of the certificate.|
+|Certificate|File containing the certificate in PEM format. Add the file by dropping it into this field or browsing for it on your computer.|
+|Auto registration| If selected, new devices which use a certificate signed by the authority owning this trusted certificate will automatically be registered.|
+|Enabled/ Disabled| When disabled, devices which use a certificate signed by the authority owning this certificate, will not be able to connect.|
+
+3. Click **Add Certificate** to validate and save the certificate.
+
+>**Info:** For performance reasons, you shouldn't add the certificates of each device you want to connect, but only add the root certificate or one of the intermediate certificates from the chain which has been used to sign certificates used by devices.
+
+#### To edit a trusted certificate
+
+In the detail view of a certificate you may change the parameters on the left, i.e. the certificate name, and the settings for the auto registration and enabled/disabled option.
+
+For details on the fields, see the description on adding certificates above.
+
+#### To delete a trusted certificate
+
+To permanently delete a certificate from the trusted certificates list, click the menu icon at the right of the respective entry and in the context menu click **Delete**.
+
+![Trusted certificates delete](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-delete.png)
+
+The certificate will be permanently deleted.

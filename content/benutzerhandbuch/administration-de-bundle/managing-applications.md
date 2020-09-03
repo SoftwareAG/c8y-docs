@@ -249,7 +249,7 @@ Manager und Editor für Apama Event Processing Language (EPL) Apps zur sofortige
 <td style="text-align:left">Funktion</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/optional-services/#cloud-remote-access" class="no-ajaxy">Cloud Remote Access</a></td>
+<td style="text-align:left"><a href="/cloud-remote-access/cra-general-aspects" class="no-ajaxy">Cloud Remote Access</a></td>
 <td style="text-align:left">Implementiert Virtual Network Computing (VNC) für den Fernzugriff auf Bedienfelder und andere Geräte über einen Webbrowser.</td>
 <td style="text-align:left">cloud-remote-access</td>
 <td style="text-align:left">Microservice</td>
@@ -406,6 +406,7 @@ Wenn Sie eine Anwendung löschen, die eine abonnierte Anwendung überschreibt, w
 Abonnierte Anwendungen können nicht gelöscht werden. Dies kann nur durch den Eigentümer der Anwendung erfolgen.
 
 
+
 #### Hochladen von Archiven
 
 Es können mehrere Anwendungsversionen in Cumulocity IoT gespeichert werden, indem sie als ZIP- oder MON-Dateien hochgeladen werden. Jede Version wird als Archiv bezeichnet. Es können verschiedene Versionen gleichzeitig hochgeladen werden und Sie können zwischen den Versionen wechseln.
@@ -433,6 +434,18 @@ Benutzer können ältere Versionen einer Anwendung aus einem Archiv wiederherste
 4. Klicken Sie **Entfernen** um eine Version aus dem Archiv zu löschen.
 
 <img src="/images/benutzerhandbuch/Administration/admin-application-set-as-archive.png" alt="Application set as archive">
+
+##### So aktivieren Sie eine einzelne Anwendung erneut
+
+Wurde eine gehostete Anwendung nicht korrekt gestartet, kann der Benutzer sie erneut aktivieren.
+
+1. Klicken Sie zum Öffnen auf die gewünschte Anwendung.
+2. Wechseln Sie zur Registerkarte **Archiv**.
+3. Klicken Sie **Erneut aktivieren** in der oberen rechten Ecke der Registerkarte **Archivdateien**.
+
+<img src="/images/benutzerhandbuch/Administration/admin-reactivate.png" alt="Refresh application">  
+
+Die gewählte Anwendung wird erneut aktiviert, indem die entsprechenden Dateien aus dem Anwendungsverzeichnis entfernt werden und das gehostete Anwendungspaket erneut entpackt wird.
 
 ### Überwachen von Microservices
 

@@ -3,7 +3,7 @@ weight: 20
 title: Aufrufen und Anmelden an der Cumulocity IoT-Plattform
 layout: redirect
 aliases:
-  - /benutzerhandbuch/getting-started-de/#accessing-cumulocity-platform
+  - /users-guide/overview/#accessing-cumulocity-platform
 ---
 
 Auf die Cumulocity IoT-Plattform können Sie über einen Webbrowser zugreifen.

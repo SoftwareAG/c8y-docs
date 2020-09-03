@@ -405,7 +405,7 @@ More information can be acquired for each resource by hovering over the tooltip 
 
 ![Tooltip](/images/users-guide/lwm2m/lwm2m-devices-tooltip.png)
 
-Additional information on recent operations can be viewed by clicking the operations button located on the right side of an instance card. The button is only visible if any operation has been performed. The number of unread operations can be seen on the top right of the button. In the example below there is only one.
+Additional information on recent operations can be viewed by clicking the operations button located at the right side of an instance card. The button is only visible if any operation has been performed. The number of unread operations can be seen on the top right of the button. In the example below there is only one.
 
 ![Recent operations](/images/users-guide/lwm2m/lwm2m-devices-operations.png)
 ![Recent operations 2](/images/users-guide/lwm2m/lwm2m-devices-operations2.png)

@@ -38,6 +38,7 @@ The following is a list of the alarms. The information further down below explai
 - [An EPL file throws an uncaught exception](#apama_ctrl_error)
 - [An EPL file blocks the correlator context for too long](#apama_ctrl_warn)
 - [Multiple extensions with the same name](#extension_error)
+- [Smart rule configuration failed](#smartrule_configuration_error)
 - [Smart rule restore failed](#smartrule_restore_failed)
 - [Connection to correlator lost](#lost_correlator_connection)
 - [The correlator queue is full](#application_queue_full)
@@ -256,21 +257,34 @@ This disables all extensions that were deployed to Apama-ctrl. In order to use t
 
 **Info:** In case of multiple duplicates, this alarm is only listed once.
 
+#### <a name="smartrule_configuration_error"></a>Smart rule configuration failed
+
+This alarm is raised if a smart rule contains an invalid configuration.
+
+- Alarm type: `smartrule_configuration_error`
+- Alarm text: &lt;Smart rule identifier&gt;: Smart rule create/edit failed. One or more fields are invalid, please check smart rule configuration.
+- Alarm severity: MAJOR
+
+To diagnose the cause, download the diagnostics overview ZIP file as described in [Downloading diagnostics and logs](#diagnostics-download). Or, if that fails, log on as an administrator and look at the result of a GET request to */service/smartrule/smartrules?withPrivateRules=true*. Review the smart rules JSON and look for invalid smart rule configurations. Such smart rules need to be corrected.
+
+The Apama microservice log contains more details on the reason for the smart rule configuration failure. For example, it is invalid to configure an "On measurement threshold create alarm" smart rule with a data point that does not exist.
+
 #### <a name="smartrule_restore_failed"></a>Smart rule restore failed
 
 This alarm is raised if a corrupt smart rule is present in the inventory and the correlator therefore fails to recover it correctly during startup.
 
 - Alarm type: `smartrule_restore_failed`
 - Alarm text: Smart rule restore failed. Contact support.
+- Alarm severity: MAJOR
 
-To diagnose the cause, download the diagnostics overview ZIP file as described in [Downloading diagnostics and logs](#diagnostics-download). Or, if that fails, log on as an administrator and look at the result of a GET request to */service/smartrule/smartrules*. Review the smart rules JSON and look for invalid smart rule configurations. Such smart rules may need to be deleted or corrected.
+To diagnose the cause, download the diagnostics overview ZIP file as described in [Downloading diagnostics and logs](#diagnostics-download). Or, if that fails, log on as an administrator and look at the result of a GET request to */service/smartrule/smartrules?withPrivateRules=true*. Review the smart rules JSON and look for invalid smart rule configurations. Such smart rules may need to be deleted or corrected.
 
 #### <a name="lost_correlator_connection"></a>Connection to correlator lost
 
 This alarm is raised in certain cases when the connection between the Apama-ctrl microservice and the correlator is lost. This should not happen, but can be triggered by high load situations.
 
 - Alarm type: `lost_correlator_connection`
-- Alarm text: Unable to ping correlator:  &lt;message&gt;, Apama-ctrl will restart.
+- Alarm text: Unable to ping correlator: &lt;message&gt;, Apama-ctrl will restart.
 - Alarm severity: MAJOR
 
 Apama-ctrl will automatically restart. Report this to [Software AG Support](/about-doc/contacting-support) if this is happening frequently.
@@ -305,5 +319,5 @@ The CEP queue size is based on the number of CEP events, not raw bytes.
 To diagnose the cause, you can try the following. It may be that the Apama-ctrl microservice is running slow because of time-consuming rules in the script, or the microservice is deprived of resources, or code is not optimized, and so on. Check the input and output queues from the "correlator queue is full" alarm (or from the microservice logs or from the diagnostics overview ZIP file under */correlator/status.json*). 
 
 - If both input and output queues are full, this suggests a slow receiver, possibly EPL sending too many requests (or too expensive a request) to Cumulocity IoT.
-- Else, if only the input queue is full, EPL is probably running in a tight loop. Try analyzing the *cpuProfile.csv* output in the diagnostic overview ZIP file, especially the monitor name and CPU time. The data collected in the profiler may also help in identifying other possible bottlenecks. For details, refer to [Using the CPU profiler](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2Fta-DepAndManApaApp_using_the_cpu_profiler.html) in the Apama documentation. 
+- Else, if only the input queue is full, EPL is probably running in a tight loop. Try analyzing the *cpuProfile.csv* output in the diagnostic overview ZIP file, especially the monitor name and CPU time. The data collected in the profiler may also help in identifying other possible bottlenecks. For details, refer to [Using the CPU profiler](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fta-DepAndManApaApp_using_the_cpu_profiler.html) in the Apama documentation. 
 - Else, the cause may be some issue with connectivity or in Cumulocity IoT Core.

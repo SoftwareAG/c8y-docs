@@ -108,7 +108,7 @@ You may also see the following legacy roles:
 
 Click **Add Role** in the **Global roles** tab.
 
-In the **New global role** page you will see a list of permission types on the left and a list of applications to be accessed on the right.
+In the **New global role** page you will see a list of permission types at the left and a list of applications to be accessed at the right.
 
 The following screenshot shows the settings for the "admins" role.
 

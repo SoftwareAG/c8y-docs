@@ -538,6 +538,8 @@ The following constraints can be applied:
 
 While Cumulocity IoT user interface for OPC UA provides an easy and visual way to configure and build your OPC UA solution, the OPC UA management *microservice* gives you the possibility to do it via RESTful web service.
 
+The full API definitions can be found at: `/service/opcua-mgmt-service/swagger-ui.html`.
+
 #### OPC UA server resources
 
 ##### Connect a new OPC UA server to the gateway
@@ -565,7 +567,7 @@ Payload data structure explained:
 | -------------------- | ------------------------ | --------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | **id**               | string                   | yes/no    | String. Id of the OPC UA server in case of updating an existing server. When connecting a new server, this must not be provided. |
 | **name**             | string                   | yes       | Server managed object name.                                                                                                      |
-| **requiredInterval** | integer                  | no        | How frequently the server is expected to send data to the Cumulocity platform.                                                   |
+| **requiredInterval** | integer                  | no        | How frequently the server is expected to send data to the Cumulocity IoT platform.                                               |
 | **config**           | *ServerConnectionConfig* | yes       | Connection configuration to the OPC UA server.                                                                                   |
 
 Data structure for *ServerConnectionConfig*
@@ -581,12 +583,12 @@ Data structure for *ServerConnectionConfig*
 | statusCheckInterval    | integer | no        | Integer. Define the status check interval, that is, how often the server status is read. Default is 3 (seconds).                                                                                                                                       |
 | maxResponseMessageSize | long    | no        | Integer. Define the maximum size, in bytes, for the body of any response message from the server. Default is 50 MB (50.000.000). To make it unlimited, set this to 0.                                                                                  |
 | targetConnectionState  | string  | no        | String enum. Possibe values: `enabled/disabled`. Whether the connection the the target OPC UA server is enabled.                                                                                                                                       |
-| userIdentityMode       | string  | no        | User identity, can be: `Anonymous, UserName, Certificate,    IssuedToken`. Default is `Anonymous`.                                                                                                                                                     |
-| userName               | string  | yes/no    | Authentication username when user identity mode is `UserName`                                                                                                                                                                                          |
-| userPassword           | string  | yes/no    | Authentication password when user identity mode is `UserName`                                                                                                                                                                                          |
-| keystoreBinaryId       | string  | yes/no    | When the user identity mode is `Certificate`, this is the binary object ID of the uploaded keystore.                                                                                                                                                   |
-| keystorePass           | string  | no        | When the user identity mode is `Certificate`, this is the password of the uploaded keystore.                                                                                                                                                           |
-| certificatePass        | string  | no        | When the user identity mode is `Certificate`, this is the password of the private key embedded in the keystore.                                                                                                                                        |
+| userIdentityMode       | string  | no        | User identity. Possible values: `Anonymous, UserName, Certificate, IssuedToken`. Default is `Anonymous`.                                                                                                                                               |
+| userName               | string  | yes/no    | Authentication username when user identity mode is `UserName`.                                                                                                                                                                                         |
+| userPassword           | string  | yes/no    | Authentication password when user identity mode is `UserName`.                                                                                                                                                                                         |
+| keystoreBinaryId       | string  | yes/no    | If the user identity mode is `Certificate`, this is the binary object ID of the uploaded keystore.                                                                                                                                                     |
+| keystorePass           | string  | no        | If the user identity mode is `Certificate`, this is the password of the uploaded keystore.                                                                                                                                                             |
+| certificatePass        | string  | no        | If the user identity mode is `Certificate`, this is the password of the private key embedded in the keystore.                                                                                                                                          |
 
 ##### Get all servers of a gateway device
 
@@ -639,7 +641,7 @@ Sample response:
 
 Endpoint: `DELETE /service/opcua-mgmt-service/servers/{serverId}`
 
-Description: Delete the OPC UA server managed object. Once the server deletion is detected by the gateway, the connection to the OPC UA server will be terminated. The gateway will also try to delete all address space nodes created in Cumulocity platform that connected to the deleted server.
+Description: Delete the OPC UA server managed object. Once the server deletion is detected by the gateway, the connection to the OPC UA server will be terminated. The gateway will also try to delete all address space nodes created in the Cumulocity platform that connected to the deleted server.
 
 Parameters:
 
@@ -661,9 +663,9 @@ Parameters:
 
 | Param    | Param Type    | Description                                                                                  |
 | -------- | ------------- | -------------------------------------------------------------------------------------------- |
-| serverId | Path variable | Integrer, mandatory. OPC UA server managed object ID.                                        |
+| serverId | Path variable | Integer, mandatory. OPC UA server managed object ID.                                         |
 | nodeId   | Query param   | Mandatory. Node ID of the node to get.                                                       |
-| withUri  | Query param   | Boolean, default is false. Whether the result should use address space uri instead of index. |
+| withUri  | Query param   | Boolean, default is false. Whether the result should use address space URI instead of index. |
 
 **Example:**
 
@@ -716,15 +718,15 @@ Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/get?nodeId=
 
 Endpoint: `GET /serice/opcua-mgmt-service/servers/{serverId}/address-spaces/children`
 
-Description: Get all child nodes of the given node specified by the node ID in the server address space. Node ID must be properly URL encoded.
+Description: Get all child nodes of the given node specified by the node ID in the server address space. The node ID must be properly URL encoded.
 
 Parameters:
 
 | Param    | Param Type    | Description                                                                                  |
 | -------- | ------------- | -------------------------------------------------------------------------------------------- |
-| serverId | Path variable | Integrer, mandatory. OPC UA server managed object ID.                                        |
+| serverId | Path variable | Integer, mandatory. OPC UA server managed object ID.                                         |
 | nodeId   | Query param   | Mandatory. Node ID of the node to get.                                                       |
-| withUri  | Query param   | Boolean, default is false. Whether the result should use address space uri instead of index. |
+| withUri  | Query param   | Boolean, default is false. Whether the result should use address space URI instead of index. |
 
 **Example:**
 
@@ -786,12 +788,12 @@ Description: Browse a node from a base node following the given browse path. Thi
 
 Parameters:
 
-| Param      | Param Type    | Description                                                                                                                                                                                                                                                                          |
-| ---------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| serverId   | Path variable | Integrer, mandatory. OPC UA server managed object ID.                                                                                                                                                                                                                                |
-| nodeId     | Query param   | Node ID of the node to browse from. Default is root node (i=84).                                                                                                                                                                                                                     |
-| browsePath | Query param   | Mandatory. Browse path to browse from the give node. Browse path can be a single param or an array to represent a path from the given node to the target node. To specify the browsePath as an array, repeat the browsePath query. Example: `.../browse?browsePath=L1&browsePath=L2` |
-| withUri    | Query param   | Boolean, default is false. Whether the result should use address space uri instead of index.                                                                                                                                                                                         |
+| Param      | Param Type    | Description                                                                                                                                                                                                                                                                           |
+| ---------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| serverId   | Path variable | Integer, mandatory. OPC UA server managed object ID.                                                                                                                                                                                                                                  |
+| nodeId     | Query param   | Node ID of the node to browse from. Default is root node (i=84).                                                                                                                                                                                                                      |
+| browsePath | Query param   | Mandatory. Browse path to browse from the give node. Browse path can be a single param or an array to represent a path from the given node to the target node. To specify the browsePath as an array, repeat the browsePath query. Example: `.../browse?browsePath=L1&browsePath=L2`. |
+| withUri    | Query param   | Boolean, default is false. Whether the result should use address space URI instead of index.                                                                                                                                                                                          |
 
 **Example:**
 
@@ -963,20 +965,20 @@ Sample payloads:
   }
   ```
 
-Full Payload data structure explained:
+Full payload data structure explained:
 
-| Field                     | Type                      | Madatory | Description                                                                                                                                                                                                                                                                                                                 |
-| ------------------------- | ------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name                      | string                    | yes      | Device type name                                                                                                                                                                                                                                                                                                            |
-| enabled                   | boolean                   | no       | Whether the device type is enabled and should be applied to the connected servers or not. Default is false.                                                                                                                                                                                                                 |
-| description               | string                    | no       |                                                                                                                                                                                                                                                                                                                             |
-| mappings                  | array<*Mapping*>          | no       | Define the mappings from OPC UA data into Cumulocity measurements, events and alarms.                                                                                                                                                                                                                                       |
-| uaMappings                | array<*UAMapping*>        | no       | Define the mappings from OPC UA alarms and events into Cumulocity alarms and events.                                                                                                                                                                                                                                        |
-| referencedNam-espaceTable | array<string>             | no       | Reference namespace table if known. This is then used to convert the browse paths with namespace index into namespace URL. This is to make sure that the mappings are still the same even when the namespace index gets changed.                                                                                            |
-| subscriptionType          | *SubscriptionType*        | no       | Define the mechanism how to collect data from the OPC UA servers. There are two mechanism can be used: Cyclic read and subscription. This is not mandatory however if the device type is enabled and no subscription type is specified, the device will not be applied to any node.                                         |
-| processingMode            | string                    | no       | Define the Cumulocity processing mode for incoming data. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default is PERSISTENT.                                                                                                                                                                                     |
-| overiddenSub-scriptions   | *Overridden-Subscription* | no       | While the subscriptionType defines how data can be collected from the OPC UA server, this option allows you to override the mechanism for particular browse paths. For example you can have subscription applied globally with sampling rate of 1000ms but you can apply sampling rate of 500ms for particular browse path. |
-| applyConstraints          | *ApplyConstraint*         | no       | Limit the places in the address space where the device type should be applied.                                                                                                                                                                                                                                              |
+| Field                     | Type                      | Madatory | Description                                                                                                                                                                                                                                                                                                                      |
+| ------------------------- | ------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name                      | string                    | yes      | Device type name.                                                                                                                                                                                                                                                                                                                |
+| enabled                   | boolean                   | no       | Whether the device type is enabled and should be applied to the connected servers or not. Default is false.                                                                                                                                                                                                                      |
+| description               | string                    | no       |                                                                                                                                                                                                                                                                                                                                  |
+| mappings                  | array<*Mapping*>          | no       | Define the mappings from OPC UA data into Cumulocity measurements, events and alarms.                                                                                                                                                                                                                                            |
+| uaMappings                | array<*UAMapping*>        | no       | Define the mappings from OPC UA alarms and events into Cumulocity alarms and events.                                                                                                                                                                                                                                             |
+| referencedNam-espaceTable | array<string>             | no       | Reference namespace table if known. This is then used to convert the browse paths with namespace index into namespace URL. This is to make sure that the mappings are still the same even when the namespace index gets changed.                                                                                                 |
+| subscriptionType          | *SubscriptionType*        | no       | Define the mechanism how to collect data from the OPC UA servers. There are two mechanisms that can be used: Cyclic read and subscription. This is not mandatory however if the device type is enabled and no subscription type is specified, the device will not be applied to any node.                                        |
+| processingMode            | string                    | no       | Define the Cumulocity processing mode for incoming data. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default is PERSISTENT.                                                                                                                                                                                          |
+| overiddenSub-scriptions   | *Overridden-Subscription* | no       | While the subscriptionType defines how data can be collected from the OPC UA server, this option allows you to override the mechanism for particular browse paths. For example you can have a subscription applied globally with a sampling rate of 1000ms but you can apply sampling rate of 500ms for particular browse paths. |
+| applyConstraints          | *ApplyConstraint*         | no       | Limit the places in the address space where the device type should be applied.                                                                                                                                                                                                                                                   |
 
 Data structure for *Mapping*
 
@@ -1003,7 +1005,7 @@ Data structure for *SubscriptionType*
 
 | Field                   | Type                     | Mandatory | Description                                                                                                                                                 |
 | ----------------------- | ------------------------ | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type                    | string                   | yes       | Subscription type. Possible values: Subscription, CyclicRead, None                                                                                          |
+| type                    | string                   | yes       | Subscription type. Possible values: Subscription, CyclicRead, None.                                                                                         |
 | subscription-Parameters | *Subscription-Parameter* | yes/no    | In case the subscription type is *Subscription*, this is required. This defines the OPC UA subscription configuration, e.g. sampling rate, queue size, etc. |
 | cyclicReadP-arameters   | *CyclicReadP-arameter*   | yes/no    | In case the subscription type is *CyclicRead*, this is required. This defines the cyclic read configuation, e.g. rate, etc.                                 |
 
@@ -1011,7 +1013,7 @@ Data structure for *OverriddenSubscription*
 
 | Field            | Type               | Mandatory | Description                                                 |
 | ---------------- | ------------------ | --------- | ----------------------------------------------------------- |
-| browsePath       | array<string>      | yes       | The browse path                                             |
+| browsePath       | array<string>      | yes       | The browse path.                                            |
 | subscriptionType | *SubscriptionType* | yes       | The custom subscription type that overrides the global one. |
 
 Data structure for *ApplyConstraints*
@@ -1021,7 +1023,7 @@ Data structure for *ApplyConstraints*
 | matchesServerIds         | array<string>      | no        | Limit the servers by server managed object ID where the device type should be applied. |
 | serverObject-HasFragment | string             | no        | Limit the servers by their custom fragment where the device type should be applied.    |
 | matchesNodeIds           | array<string>      | no        | Limit the nodes in the server address space where the device type should be applied.   |
-| browsePathM-atchesRegex  | string             | no        | Regular expression of the browse paths where the device type should be applied         |
+| browsePathM-atchesRegex  | string             | no        | Regular expression of the browse paths where the device type should be applied.        |
 | serverHasNod-eWithValues | *ServerNodeValues* | no        | Limit the servers which have particular nodes with given values.                       |
 
 Data structure for *MeasurementCreation*
@@ -1029,9 +1031,9 @@ Data structure for *MeasurementCreation*
 | Field                     | Type          | Mandatory | Description                                                                                                                                   |
 | ------------------------- | ------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | type                      | string        | yes       | Measurement type.                                                                                                                             |
-| series                    | string        | no        | Measurement series. If this is omited, it will be automatically generated by the gateway.                                                     |
+| series                    | string        | no        | Measurement series. If this is omitted, it will be automatically generated by the gateway.                                                    |
 | unit                      | string        | yes       | Measurement unit.                                                                                                                             |
-| fragmentName              | string        | no        | Measurement fragment name. If this is omited, it will be automatically generated by the gateway.                                              |
+| fragmentName              | string        | no        | Measurement fragment name. If this is omitted, it will be automatically generated by the gateway.                                             |
 | staticFragments           | array<string> | no        | Static fragments that should be populated to the measurement.                                                                                 |
 | overriddenP-rocessingMode | string        | no        | Custom processing mode applied to the measurement to be created. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default: PERSISTENT. |
 
@@ -1039,7 +1041,7 @@ Data structure for *EventCreation*
 
 | Field                     | Type          | Mandatory | Description                                                                                                                             |
 | ------------------------- | ------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| type                      | string        | yes       | Event type                                                                                                                              |
+| type                      | string        | yes       | Event type.                                                                                                                             |
 | text                      | string        | yes       | Event text. This event text can be parameterized by the value of the subscribed node by using the placeholder: `${value}`.              |
 | staticFragments           | array<string> | no        | Static fragments that should be populated to the measurement.                                                                           |
 | overriddenP-rocessingMode | string        | no        | Custom processing mode applied to the event to be created. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default: PERSISTENT. |
@@ -1050,17 +1052,17 @@ Data structure for *AlarmCreation*
 | ------------------------- | ------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | type                      | string        | yes       | Alarm type.                                                                                                                             |
 | text                      | string        | yes       | Alarm text.                                                                                                                             |
-| severity                  | string        | yes       | Alarm severity. Possible value: WARNING, MINOR, MAJOR, CRITICAL.                                                                        |
+| severity                  | string        | yes       | Alarm severity. Possible values: WARNING, MINOR, MAJOR, CRITICAL.                                                                       |
 | staticFragments           | array<string> | no        | Static fragments that should be populated to the alarm.                                                                                 |
 | overriddenP-rocessingMode | string        | no        | Custom processing mode applied to the alarm to be created. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default: PERSISTENT. |
 
 Data structure for *HttpPostAction*
 
-| Field        | Type                | Mandatory | Description                                                                                                                                                                                                                                                                                                              |
-| ------------ | ------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| endpoint     | string              | yes       | Endpoint of the HTTP POST request.                                                                                                                                                                                                                                                                                       |
-| headers      | map<string, string> | no        | HTTP headers of the HTTP request.                                                                                                                                                                                                                                                                                        |
-| bodyTemplate | string              | yes       | Template of the request body. This can be parameterized by the following placeholders:<br/>`${value}`: Data value of the OPC UA node. <br/>`${serverId}`: OPC UA server managed object ID.<br/>`${nodeId}`: ID of the node where the data coming from.<br/>`${deviceId}`: Managed object ID of the source manage object. |
+| Field        | Type                | Mandatory | Description                                                                                                                                                                                                                                                                                                                 |
+| ------------ | ------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| endpoint     | string              | yes       | Endpoint of the HTTP POST request.                                                                                                                                                                                                                                                                                          |
+| headers      | map<string, string> | no        | HTTP headers of the HTTP request.                                                                                                                                                                                                                                                                                           |
+| bodyTemplate | string              | yes       | Template of the request body. This can be parameterized by the following placeholders:<br/>`${value}`: Data value of the OPC UA node. <br/>`${serverId}`: OPC UA server managed object ID.<br/>`${nodeId}`: ID of the node where the data is coming from.<br/>`${deviceId}`: Managed object ID of the source manage object. |
 
 Data structure for *UAEventCreation*
 
@@ -1085,12 +1087,12 @@ Data structure for *SubscriptionParameter*
 | Field             | Type    | Mandatory | Description                                                                                                                                                                                       |
 | ----------------- | ------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | samplingRate      | integer | yes       | Subscription sampling rate in milliseconds. Minimum allowed value is 50.                                                                                                                          |
-| deadbandType      | string  | no        | Either Percent or Absolute.                                                                                                                                                                       |
-| deadbandValue     | double  | no        | When the *deadbandType* is *Percent*, this ranges from 0 to 100. When the *deadbandType* is *Absolute*, this can be any double value.                                                             |
+| deadbandType      | string  | no        | Possible values: Percent, Absolute.                                                                                                                                                               |
+| deadbandValue     | double  | no        | If the *deadbandType* is *Percent*, this ranges from 0 to 100. If the *deadbandType* is *Absolute*, this can be any double value.                                                                 |
 | queueSize         | integer | no        | Subscription queue size.                                                                                                                                                                          |
 | dataChangeTrigger | string  | no        | Default value is StatusValue. Possible values: Status, StatusValue, StatusValueTimestamp.                                                                                                         |
 | discardOldest     | boolean | no        | Default is true. When this is true and the reported data is exceeding the queue size, the oldest elements in the queue will be discarded. If this is false, the newer elements will be discarded. |
-| ranges            | string  | no        | When the subcribed node is array type, you can providing the ranges to specify the data range you want to get from. For example: *"0:3"* to get elements from index 0 to 3 from the array.        |
+| ranges            | string  | no        | When the subcribed node is array type, you can provide the data range you want to get. For example: *"0:3"* to get elements from index 0 to 3 from the array.                                     |
 
 Data structure for *CyclicParameter*
 
@@ -1102,15 +1104,15 @@ Data structure for *ServerNodeValues*
 
 | Field      | Type                | Mandatory | Description                                                          |
 | ---------- | ------------------- | --------- | -------------------------------------------------------------------- |
-| matchAll   | array<MatchingNode> | no        | A collection of conditions and they must be matched all.             |
+| matchAll   | array<MatchingNode> | no        | A collection of conditions and they must all be matched.             |
 | matchOneOf | array<MatchingNode> | no        | A collection of conditions and at least one of them must be matched. |
 
 Data structure for *MatchingNode*
 
-| Field             | Type          | Mandatory | Description                                                                                                                                                       |
-| ----------------- | ------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| nodeId            | string        | yes       | The node ID to match against.                                                                                                                                     |
-| valueMatchesOneOf | array<string> | no        | A collection of possible values of the node, in string representation. If this is omited, the gateway only checks for the existence of the node by given node ID. |
+| Field             | Type          | Mandatory | Description                                                                                                                                                        |
+| ----------------- | ------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| nodeId            | string        | yes       | The node ID to match against.                                                                                                                                      |
+| valueMatchesOneOf | array<string> | no        | A collection of possible values of the node, in string representation. If this is omitted, the gateway only checks for the existence of the node by given node ID. |
 
 ##### 
 
@@ -1118,7 +1120,7 @@ Data structure for *MatchingNode*
 
 Endpoint: `PUT /service/opcua-mgmt-service/device-types/{deviceTypeId}`
 
-Payload: The payload of updating a device type is exactly the same as the payload of creating it. Please note that partial update is not supported. All information must be provided in the update request and will override completely the existing device type.
+Payload: The payload of updating a device type is exactly the same as the payload of creating it. Please note that partial update is not supported. All information must be provided in the update request and will completely override the existing device type.
 
 ##### Deleting a device type
 

@@ -185,6 +185,17 @@ Each access token is signed by a signing certificate. Currently there are three 
 3. By providing the public key of a certificate manually to Cumulocity IoT. A certificate definition requires an algorithm information, public key value and validity period.
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-5.png)
+<<<<<<< HEAD
+=======
+
+4. By specifying the JWKS (JSON Web Key Set) address.
+
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
+
+
+ >**Info:** Cumulocity IoT only supports certificates with RSA key, either as a ("n", "e") parameters pair or "x5c" certificate chain. Other key types (e.g. Elliptic-curves) are not supported.
+
+>>>>>>> 55f5435ec... Disabled OpenIT link
 
 #### Integration with Azure AD
 
@@ -315,7 +326,7 @@ By providing your credentials you enable platform features that utilize SMS serv
 
 	![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
 
-2. In the **SMS provider** page, select either [OpenIt](https://sms.openit.de/main.php) or [sms77](https://www.sms77.io/en/) as SMS provider.
+2. In the **SMS provider** page, select either OpenIT or [sms77](https://www.sms77.io/en/) as SMS provider.
 
 3. Depending on the selected provider, enter the relevant credentials:
 
@@ -323,6 +334,8 @@ By providing your credentials you enable platform features that utilize SMS serv
 	 * For sms77, your API key to access sms77 (to be found in your sms77 login under Settings > HTTP API).
 
 4. Click **Save** to save your settings.
+
+>**Info:** OpenIT does not serve new customers anymore and is in the process of shutting down their SMS provider business.
 
 
 ### <a name="config-platform"></a>Configuration settings

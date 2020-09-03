@@ -548,9 +548,6 @@ Description: Connect a new OPC UA server to the gateway or update the existing s
 
 Payload: 
 
-
-
-
 ```json
 {
     "name": "My Server",
@@ -568,32 +565,28 @@ Payload data structure explained:
 | -------------------- | ------------------------ | --------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | **id**               | string                   | yes/no    | String. Id of the OPC UA server in case of updating an existing server. When connecting a new server, this must not be provided. |
 | **name**             | string                   | yes       | Server managed object name.                                                                                                      |
-| **requiredInterval** | integer                  | no        | How frequently the server is expected to send data into Cumulocity platform.                                                     |
+| **requiredInterval** | integer                  | no        | How frequently the server is expected to send data to the Cumulocity platform.                                                   |
 | **config**           | *ServerConnectionConfig* | yes       | Connection configuration to the OPC UA server.                                                                                   |
-
-
 
 Data structure for *ServerConnectionConfig*
 
 | Field                  | Type    | Mandatory | Description                                                                                                                                                                                                                                            |
 | ---------------------- | ------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **securityMode**       | string  | true      | String enum, mandatory. Security mode for connection to OPC UA server. Possible values: `NONE, BASIC128RSA15_SIGN, BASIC128RSA15_SIGN_ENCRYPT, BASIC256_SIGN, BASIC256_SIGN, BASIC256_SIGN_ENCRYPT, BASIC256SHA256_SIGN, BASIC256SHA256_SIGN_ENCRYPT`. |
-| **serverUrl**          | string  | true      | String, mandatory. OPC UA server URL.                                                                                                                                                                                                                  |
-| autoScanAddressSpace   | boolean | false     | Boolean. Whether the gateway should scan the address space automatically in the first time it connects. Default is true.                                                                                                                               |
-| rescanCron             | string  | false     | String. Regular expression that defines how the address space rescanning should be scheduled. If this is not set, no auto-rescan will be triggered.                                                                                                    |
-| autoReconnect          | boolean | false     | Boolean. Whether the gateway should try to reconnect to the OPC UA server once the connection drop is detected. Default is true.                                                                                                                       |
-| timeout                | integer | false     | Integer. Define the default communication timeout that is used for each synchronous service call. This value is set to each service request and the OPC UA gateway will wait for the response message for that long.                                   |
-| statusCheckInterval    | integer | false     | Integer. Define the status check interval, that is, how often the server status is read. Default is 3 (seconds).                                                                                                                                       |
-| maxResponseMessageSize | long    | false     | Integer. Define the maximum size, in bytes, for the body of any response message from the server. Default is 50 MB (50.000.000). To make it unlimited, set this to 0.                                                                                  |
-| targetConnectionState  | string  | false     | String enum. Possibe values: `enabled/disabled`. Whether the connection the the target OPC UA server is enabled.                                                                                                                                       |
-| userIdentityMode       | string  | false     | User identity, can be: `Anonymous, UserName, Certificate,    IssuedToken`. Default is `Anonymous`.                                                                                                                                                     |
-| userName               | string  | false     | Authentication username when user identity mode is `UserName`                                                                                                                                                                                          |
-| userPassword           | string  | false     | Authentication password when user identity mode is `UserName`                                                                                                                                                                                          |
-| keystoreBinaryId       | string  | false     | When the user identity mode is `Certificate`, this is the binary object ID of the uploaded keystore.                                                                                                                                                   |
-| keystorePass           | string  | false     | When the user identity mode is `Certificate`, this is the password of the uploaded keystore.                                                                                                                                                           |
-| certificatePass        | string  | false     | When the user identity mode is `Certificate`, this is the password of the private key embedded in the keystore.                                                                                                                                        |
-
-
+| **securityMode**       | string  | yes       | String enum, mandatory. Security mode for connection to OPC UA server. Possible values: `NONE, BASIC128RSA15_SIGN, BASIC128RSA15_SIGN_ENCRYPT, BASIC256_SIGN, BASIC256_SIGN, BASIC256_SIGN_ENCRYPT, BASIC256SHA256_SIGN, BASIC256SHA256_SIGN_ENCRYPT`. |
+| **serverUrl**          | string  | yes       | String, mandatory. OPC UA server URL.                                                                                                                                                                                                                  |
+| autoScanAddressSpace   | boolean | no        | Boolean. Whether the gateway should scan the address space automatically the first time it connects. Default is true.                                                                                                                                  |
+| rescanCron             | string  | no        | String. Regular expression that defines how the address space rescanning should be scheduled. If this is not set, no auto-rescan will be triggered.                                                                                                    |
+| autoReconnect          | boolean | no        | Boolean. Whether the gateway should try to reconnect to the OPC UA server once the connection drop is detected. Default is true.                                                                                                                       |
+| timeout                | integer | no        | Integer. Define the default communication timeout that is used for each synchronous service call. This value is set to each service request and the OPC UA gateway will wait for the response message for that long.                                   |
+| statusCheckInterval    | integer | no        | Integer. Define the status check interval, that is, how often the server status is read. Default is 3 (seconds).                                                                                                                                       |
+| maxResponseMessageSize | long    | no        | Integer. Define the maximum size, in bytes, for the body of any response message from the server. Default is 50 MB (50.000.000). To make it unlimited, set this to 0.                                                                                  |
+| targetConnectionState  | string  | no        | String enum. Possibe values: `enabled/disabled`. Whether the connection the the target OPC UA server is enabled.                                                                                                                                       |
+| userIdentityMode       | string  | no        | User identity, can be: `Anonymous, UserName, Certificate,    IssuedToken`. Default is `Anonymous`.                                                                                                                                                     |
+| userName               | string  | yes/no    | Authentication username when user identity mode is `UserName`                                                                                                                                                                                          |
+| userPassword           | string  | yes/no    | Authentication password when user identity mode is `UserName`                                                                                                                                                                                          |
+| keystoreBinaryId       | string  | yes/no    | When the user identity mode is `Certificate`, this is the binary object ID of the uploaded keystore.                                                                                                                                                   |
+| keystorePass           | string  | no        | When the user identity mode is `Certificate`, this is the password of the uploaded keystore.                                                                                                                                                           |
+| certificatePass        | string  | no        | When the user identity mode is `Certificate`, this is the password of the private key embedded in the keystore.                                                                                                                                        |
 
 ##### Get all servers of a gateway device
 
@@ -860,8 +853,6 @@ These resources provide the APIs for manipulating device types.
 
 Endpoint: `POST /service/opcua-mgmt-service/device-types`
 
-
-
 Sample payloads:
 
 - Measurement mappings using subscription
@@ -872,7 +863,7 @@ Sample payloads:
       "enabled": true,
       "mappings": [
           {
-          	"browsePath": [
+              "browsePath": [
                   "2:Dynamic",
                   "2:Double"
               ],
@@ -900,7 +891,7 @@ Sample payloads:
       "enabled": true,
       "mappings": [
           {
-          	"browsePath": [
+              "browsePath": [
                   "2:Dynamic",
                   "2:Integer"
               ],
@@ -925,7 +916,7 @@ Sample payloads:
       "enabled": true,
       "mappings": [
           {
-          	"browsePath": [
+              "browsePath": [
                   "2:Dynamic",
                   "2:Boolean"
               ],
@@ -972,8 +963,6 @@ Sample payloads:
   }
   ```
 
-
-
 Full Payload data structure explained:
 
 | Field                     | Type                      | Madatory | Description                                                                                                                                                                                                                                                                                                                 |
@@ -989,8 +978,6 @@ Full Payload data structure explained:
 | overiddenSub-scriptions   | *Overridden-Subscription* | no       | While the subscriptionType defines how data can be collected from the OPC UA server, this option allows you to override the mechanism for particular browse paths. For example you can have subscription applied globally with sampling rate of 1000ms but you can apply sampling rate of 500ms for particular browse path. |
 | applyConstraints          | *ApplyConstraint*         | no       | Limit the places in the address space where the device type should be applied.                                                                                                                                                                                                                                              |
 
-
-
 Data structure for *Mapping*
 
 | Field               | Type                  | Mandatory | Description                                                     |
@@ -1002,8 +989,6 @@ Data structure for *Mapping*
 | alarmCreation       | *AlarmCreation*       | no        | Mappings for alarm.                                             |
 | customAction        | *HttpPostAction*      | no        | Mappings for custom action. Only HTTP POST is supported so far. |
 
-
-
 Data structure for *UAMapping*
 
 | Field         | Type              | Mandatory | Description                  |
@@ -1014,8 +999,6 @@ Data structure for *UAMapping*
 | eventCreation | *UAEventCreation* | no        | Mappings for event.          |
 | alarmCreation | *UAAlarmCreation* | no        | Mappings for alarm.          |
 
-
-
 Data structure for *SubscriptionType*
 
 | Field                   | Type                     | Mandatory | Description                                                                                                                                                 |
@@ -1024,16 +1007,12 @@ Data structure for *SubscriptionType*
 | subscription-Parameters | *Subscription-Parameter* | yes/no    | In case the subscription type is *Subscription*, this is required. This defines the OPC UA subscription configuration, e.g. sampling rate, queue size, etc. |
 | cyclicReadP-arameters   | *CyclicReadP-arameter*   | yes/no    | In case the subscription type is *CyclicRead*, this is required. This defines the cyclic read configuation, e.g. rate, etc.                                 |
 
-
-
 Data structure for *OverriddenSubscription*
 
 | Field            | Type               | Mandatory | Description                                                 |
 | ---------------- | ------------------ | --------- | ----------------------------------------------------------- |
 | browsePath       | array<string>      | yes       | The browse path                                             |
 | subscriptionType | *SubscriptionType* | yes       | The custom subscription type that overrides the global one. |
-
-
 
 Data structure for *ApplyConstraints*
 
@@ -1044,8 +1023,6 @@ Data structure for *ApplyConstraints*
 | matchesNodeIds           | array<string>      | no        | Limit the nodes in the server address space where the device type should be applied.   |
 | browsePathM-atchesRegex  | string             | no        | Regular expression of the browse paths where the device type should be applied         |
 | serverHasNod-eWithValues | *ServerNodeValues* | no        | Limit the servers which have particular nodes with given values.                       |
-
-
 
 Data structure for *MeasurementCreation*
 
@@ -1058,8 +1035,6 @@ Data structure for *MeasurementCreation*
 | staticFragments           | array<string> | no        | Static fragments that should be populated to the measurement.                                                                                 |
 | overriddenP-rocessingMode | string        | no        | Custom processing mode applied to the measurement to be created. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default: PERSISTENT. |
 
-
-
 Data structure for *EventCreation*
 
 | Field                     | Type          | Mandatory | Description                                                                                                                             |
@@ -1068,8 +1043,6 @@ Data structure for *EventCreation*
 | text                      | string        | yes       | Event text. This event text can be parameterized by the value of the subscribed node by using the placeholder: `${value}`.              |
 | staticFragments           | array<string> | no        | Static fragments that should be populated to the measurement.                                                                           |
 | overriddenP-rocessingMode | string        | no        | Custom processing mode applied to the event to be created. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default: PERSISTENT. |
-
-
 
 Data structure for *AlarmCreation*
 
@@ -1081,8 +1054,6 @@ Data structure for *AlarmCreation*
 | staticFragments           | array<string> | no        | Static fragments that should be populated to the alarm.                                                                                 |
 | overriddenP-rocessingMode | string        | no        | Custom processing mode applied to the alarm to be created. Possible values: PERSISTENT, TRANSIENT, QUIESCENT, CEP. Default: PERSISTENT. |
 
-
-
 Data structure for *HttpPostAction*
 
 | Field        | Type                | Mandatory | Description                                                                                                                                                                                                                                                                                                              |
@@ -1090,8 +1061,6 @@ Data structure for *HttpPostAction*
 | endpoint     | string              | yes       | Endpoint of the HTTP POST request.                                                                                                                                                                                                                                                                                       |
 | headers      | map<string, string> | no        | HTTP headers of the HTTP request.                                                                                                                                                                                                                                                                                        |
 | bodyTemplate | string              | yes       | Template of the request body. This can be parameterized by the following placeholders:<br/>`${value}`: Data value of the OPC UA node. <br/>`${serverId}`: OPC UA server managed object ID.<br/>`${nodeId}`: ID of the node where the data coming from.<br/>`${deviceId}`: Managed object ID of the source manage object. |
-
-
 
 Data structure for *UAEventCreation*
 
@@ -1102,8 +1071,6 @@ This has exactly the same fields as *EventCreation*, however the *text* and *typ
 | text  | string | yes       | Event text. This event text can be parameterized by the data value of selected attributes. Put `${i}` to parameterize it by the data value of attribute at index `i`. The index starts from 0. For example, `${0}` to take the first attribute, `${1}` to select second attribute, etc. |
 | type  | string | yes       | Event type. This event type can be parameterized by the data value of selected attributes. Put `${i}` to parameterize it by the data value of attribute at index `i`. The index starts from 0. For example, `${0}` to take the first attribute, `${1}` to select second attribute, etc. |
 
-
-
 Data structure for *UAAlarmCreation*
 
 This has all the fields as *AlarmCreation* does, however the *text* and *type* field can be parameterized with different parameters.
@@ -1112,8 +1079,6 @@ This has all the fields as *AlarmCreation* does, however the *text* and *type* f
 | ----- | ------ | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | text  | string | yes       | Alarm text. This alarm text can be parameterized by the data value of selected attributes. Put `${i}` to parameterize it by the data value of attribute at index `i`. The index starts from 0. For example, `${0}` to take the first attribute, `${1}` to select second attribute, etc. |
 | type  | string | yes       | Alarm type. This alarm type can be parameterized by the data value of selected attributes. Put `${i}` to parameterize it by the data value of attribute at index `i`. The index starts from 0. For example, `${0}` to take the first attribute, `${1}` to select second attribute, etc. |
-
-
 
 Data structure for *SubscriptionParameter*
 
@@ -1127,15 +1092,11 @@ Data structure for *SubscriptionParameter*
 | discardOldest     | boolean | no        | Default is true. When this is true and the reported data is exceeding the queue size, the oldest elements in the queue will be discarded. If this is false, the newer elements will be discarded. |
 | ranges            | string  | no        | When the subcribed node is array type, you can providing the ranges to specify the data range you want to get from. For example: *"0:3"* to get elements from index 0 to 3 from the array.        |
 
-
-
 Data structure for *CyclicParameter*
 
 | Field | Type    | Mandatory | Description                                                    |
 | ----- | ------- | --------- | -------------------------------------------------------------- |
 | rate  | integer | yes       | Cyclic read rate in milliseconds. Minimum allowed value is 50. |
-
-
 
 Data structure for *ServerNodeValues*
 
@@ -1143,8 +1104,6 @@ Data structure for *ServerNodeValues*
 | ---------- | ------------------- | --------- | -------------------------------------------------------------------- |
 | matchAll   | array<MatchingNode> | no        | A collection of conditions and they must be matched all.             |
 | matchOneOf | array<MatchingNode> | no        | A collection of conditions and at least one of them must be matched. |
-
-
 
 Data structure for *MatchingNode*
 
@@ -1161,15 +1120,11 @@ Endpoint: `PUT /service/opcua-mgmt-service/device-types/{deviceTypeId}`
 
 Payload: The payload of updating a device type is exactly the same as the payload of creating it. Please note that partial update is not supported. All information must be provided in the update request and will override completely the existing device type.
 
-
-
 ##### Deleting a device type
 
 Endpoint: `DELETE /service/opcua-mgmt-service/device-types/{deviceTypeId}`
 
 Success response: `204 No Content`
-
-
 
 ### Operations
 

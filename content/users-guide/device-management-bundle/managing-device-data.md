@@ -44,7 +44,7 @@ When clicking on an entry, the details for this firmware are displayed along wit
 
 At the top, the firmware name, a description and optional device type filter(s) are shown. If a filter is set, the firmware will show up for installation only for devices of that type. If no filter is set, it will be available for all devices. 
 
-The list of versions and patches shows the version name and the name of the firmware binary. Moreover, the list indicates if a firmware version has patches, which can be viewed by expanding the version entry. 
+The list of versions and patches shows the version name and the name of the firmware binary. Moreover, the list indicates if a firmware version has patches, which can be viewed by expanding the version entry. The versions and patches are ordered by their creation time (descending).
 
 #### Adding firmwares, firmware versions, or firmware patches
  
@@ -53,7 +53,7 @@ The list of versions and patches shows the version name and the name of the firm
 1. In the **Firmware repository** page, click **Add firmware** at the right of the top menu bar. 
 2. In the resulting dialog box, 
 	* to add a new firmware, enter a name for the firmware (and confirm it by clicking **Create new** in the upcoming window), add a description and its version (all required).
-	* to add a new version, select the firmware for which you want to add a new version from the dropdown list in the **Name** field and enter a version.
+	* to add a new version, select the firmware for which you want to add a new version from the dropdown list in the **Firmware** field and enter a version.
 3. Either upload a binary from the file system or specify a URL from where the firmware can be downloaded.
 4. Click **Save**.
 
@@ -69,9 +69,9 @@ If you click **Add firmware** from within the details of a specific firmware, th
 ##### To add a new firmware patch
 
 1. In the **Firmware repository** page, click **Add firmware patch** at the right of the top menu bar. 
-2. In the resulting dialog box, select the firmware, for which you want to add a patch, from the dropdown list in the **Name** field. 
-3. in the **Version** field, select the version, for which you want to add a patch, from the dropdown list.  
-3. In the **Patch** field, enter a patch.
+2. In the resulting dialog box, select the firmware, for which you want to add a patch, from the dropdown list in the **Firmware** field. 
+3. in the **Version** field, select the version, for which you want to add a patch.  
+3. In the **Patch** field, enter a name for the patch.
 3. Either upload a binary from the file system or specify a URL from where the firmware can be downloaded.
 4. Click **Save**.
 
@@ -92,7 +92,7 @@ The firmware will be updated accordingly.
 
 ##### To delete a firmware
 
-Click the menu icon at the top right of a firmware entry and in the context menu click **Delete**.
+Click the menu icon at the right of a specific firmware entry and in the context menu click **Delete**.
 
 The object will be deleted from the firmware repository.
 
@@ -109,7 +109,12 @@ In the **Firmware** tab of a device you can manage the installed firmware for th
 
 Click **All devices** in the **Devices** menu in the navigator, select the desired device from the device list and open its **Firmware** tab. 
 
+The **Firmware** tab shows the current firmware installed on the device.
+
 ![Firmware tab](/images/users-guide/DeviceManagement/devmgmt-firmware-tab.png)
+
+Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, CURRENTLY EXECUTING, FAILED). Clicking on the operation will take you to the **Control** tab where you can see further details on the operation, see also [Device details > Control](/users-guide/device-management/#control).  
+
 
 ##### To install/replace firmware on a device
 
@@ -121,7 +126,7 @@ Click **All devices** in the **Devices** menu in the navigator, select the desir
 
 The install operation to be executed by the device will be created. The firmware installation is completed as soon as the device has executed the operation.
 
-The operation details are shown in the **Control** tab of the device.
+The operation details are shown in the **Control** tab of the device. The status of the last operation is also shown on the **Firmware** tab. 
 
 ##### To install/update firmware on multiple devices
 
@@ -158,13 +163,14 @@ When clicking on an entry, the details for this software are displayed along wit
 At the top, the software name, a description and optional device type filter(s) are shown. If a filter is set, the software will show up for installation only for devices of that type. If no filter is set, it will be available for all devices. 
 
 The list of versions shows the version name and the name of the software binary. 
+The versions are ordered by their creation time (descending).
  
 #### To add a new software or software version
 
 1. In the **Software repository** page, click **Add software** at the right of the top menu bar. 
 2. In the resulting dialog box, 
 	* to add a new software, enter a name for the software (and confirm it by clicking **Create new** in the upcoming window), a description and its version (all required).
-	* to add a new version, select the software for which you want to add a new version from the dropdown list in the **Name** field and enter a version.
+	* to add a new version, select the software for which you want to add a new version from the dropdown list in the **Software** field and enter a version.
 3. Either upload a binary from the file system or specify a URL from where the firmware can be downloaded.
 4. Click **Save**.
 
@@ -189,7 +195,7 @@ The software will be updated accordingly.
 
 ##### To delete a software
 
-Click the menu icon at the top right of a software entry and in the context menu click **Delete**.
+Click the menu icon at the right of a specific software entry and in the context menu click **Delete**.
 
 The software and all its versions will be deleted from the software repository.
 
@@ -202,7 +208,7 @@ In the details of a specific software, hover over the version entry you want to 
 
 In the **Software** tab of a device you can manage the software for the particular device.
 
->**Info:** The **Software** tab shows up for a device if the device supports c8y_Software operations.
+>**Info:** The **Software** tab shows up for a device if the device supports one of the following operations: c8y&#95;SoftwareUpdate, c8y&#95;SoftwareList, c8y&#95;Software (the last two are legacy ones but still supported).
 
 Click **All devices** in the **Devices** menu in the navigator, select the desired device from the device list and open its **Software** tab. 
 
@@ -210,19 +216,22 @@ The **Software** tab shows a list of all available software installed on the dev
 
 ![Software tab](/images/users-guide/DeviceManagement/devmgmt-software-tab.png)
 
-Additionally, it shows the operation status for the last operation (successful or failed). Clicking on the operation will take you to the **Control** tab where you can see further details on the operation, see also [Device details > Control](/users-guide/device-management/#control).  
+Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, CURRENTLY EXECUTING, FAILED). Clicking on the operation will take you to the **Control** tab where you can see further details on the operation, see also [Device details > Control](/users-guide/device-management/#control).  
 
 ##### To install software on a device
 
-2. In the **Software** tab, click **Install software**.
-3. Select a software and the desired version from the list, which contains all software for the particular device type available in the software repository.
+1. In the **Software** tab, click **Install software**.<br><br>	 ![Install software](/images/users-guide/DeviceManagement/devmgmt-software-install.png)
+2. Select one or multiple software items by selecting the respective version from the list, which contains all software for the particular device type available in the software repository.
 4. Click **Install**.
-
-![Install software](/images/users-guide/DeviceManagement/devmgmt-software-install.png)
+5. In the **Software changes** panel at the right, review your planned changes and confirm the software update operation by clicking **Apply changes**.<br><br>
+	![Apply changes](/images/users-guide/DeviceManagement/devmgmt-software-changes.png)
 
 The install operation to be executed by the device will be created. The software installation is completed as soon as the device has executed the operation.
 
 The operation details are shown in the **Control** tab of the device. The status of the last operation is also shown on the **Software** tab. 
+
+![Installed software](/images/users-guide/DeviceManagement/devmgmt-software-installed.png)
+
 
 ##### To update software on a device
 

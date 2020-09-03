@@ -75,7 +75,7 @@ Click the menu icon at the top right of a firmware/software card and click **Del
 The object will be deleted from the list.
 
 
-### <a name="configuration-repository"></a>Configuration repository
+### <a name="configuration-repository"></a>Managing configuration snapshots
 
 Cumulocity IoT allows to retrieve configuration data and store and manage it in a configuration repository. The configuration data contains the parameters and the initial settings of your device.
 
@@ -199,13 +199,13 @@ Deleting device credentials might be required if you have carried out a factory 
 
 ### <a name="device-profiles"></a>Managing device profiles
 
-Device profiles consist of a set of firmware version, software packages and configuration files which can be deployed on a device. Based on device profiles, users can deploy specific definitions on devices by using bulk operations.
+Device profiles consist of a set of firmware version, software packages and configuration files which can be deployed on a device. Based on device profiles, users can deploy a specific target configuration on devices by using bulk operations.
 
-*Device profiles describe a list of basic, mandatory software packages, to be applied for initial setup of devices after they come out of the factory and are taken into production. After the initial setup of the device, platform users can still use bulk operations (or single operations) to install new versions of software/firmware or additional software/configurations – beyond the initial versions applied by the profile. 
-*
 #### To view device profiles
 
-Click **Device profiles** in the **Management** menu in the navigator to to access the **Device profiles** page, which lists all available device profiles.
+Click **Device profiles** in the **Management** menu in the navigator to access the **Device profiles** page, which lists all available device profiles.
+
+![Device profiles list](/images/users-guide/DeviceManagement/devmgmt-device-profile-list.png)
 
 Each device profile entry shows the profile name and the selected device type(s), if any.
 
@@ -213,11 +213,9 @@ Click a device profile name to view its details.
 
 In the **Name and device type** section, the name of the profile and optionally selected device types are shown.
 
-In the **Firmware** section, a firmware and its version is shown.
+In the sections below, the firmware version, software packages and configuration files for this particular device profile are listed.
 
-In the **Software** section, one or multiple softwares and their versions is shown.
-
-In the **Configuration** section,
+![Device profile details](/images/users-guide/DeviceManagement/devmgmt-device-profile-details.png)
 
 #### To add a device profile
 
@@ -229,11 +227,17 @@ In the **Add device profile** window, provide a name for the profile and optiona
 
 In the device profile details, you can add firmware versions, software packages and configuration files.
 
-Click **Add firmware** to add a firmware version to the profile. Select a firmware and a version from the list and click **Save** to add the selection to the profile. If a device type has been defined for the profile, only those firmware versions can be selected that match the device type.
+Click **Add firmware** to add a firmware version to the profile. Select a firmware and a version from the list and click **Save** to add the selection to the profile. If a device type has been defined for the profile, only those firmware versions can be selected that match the device type. Only one firmware version can be added to a profile.
 
-Click **Add software** to add a software package to the profile. Select a software and a software version from the list and click **Save** to add the selection to the profile. As opposed to firmware, you can add more than one software package to a profile. If a device type has been defined for the profile, only those firmware versions can be selected that match the device type.
+For details on firmware, see [Managing device firmware](#firmware-repo).
 
-Click **Add configuration** to add a configuration file to the profile. Select a configuration file from the list and click **Save** to add the selection to the profile. You can add more than one configuration file to a profile.
+Click **Add software** to add a software package to the profile. Select a software and a software version from the list and click **Save** to add the selection to the profile. If a device type has been defined for the profile, only those firmware versions can be selected that match the device type. You can add multiple software packages to a profile.
+
+For details on software, see [Managing device software](#software-repo).
+
+Click **Add configuration** to add a configuration file to the profile. Select a configuration file from the list and click **Save** to add the selection to the profile. You can add multiple configuration files to a profile.
+
+For details on configuration snapshots, see [Managing configuration snapshots](#configuration-repository).
 
 #### To update device profiles
 
@@ -252,36 +256,38 @@ Note that in case of firmware, only one item is allowed in a profile at a time.
 
 #### To duplicate device profiles
 
-To duplicate a device profile click the menu icon at the right of the respective device profile entry and then click **Duplicate**. 
+To duplicate a device profile, click the menu icon at the right of the respective device profile entry and then click **Duplicate**. 
 
-Duplicating a profile creates another instance of the profile with the same content. You may give the profile a more appropriate name by clicking the pencil icon next to the name field and editing it.
+Duplicating a profile creates another instance of the profile with the same content. Per default, the original profile name is extended with "Copy of". You may give the profile a more appropriate name by clicking the pencil icon next to the name field and editing it.
 
 #### To delete device profiles
 
-To delete a device profile click the menu icon at the right of the respective device profile entry and then click **Delete**. 
+To delete a device profile, click the menu icon at the right of the respective device profile entry and then click **Delete**. 
 
 > **Info:** Deleting a profile deletes the entry from the device profile repository. It has no affect towards the devices that currently use the profile.
 
-#### To apply a device profile to one or more devices
+#### To apply device profiles to devices
 
-Device profiles can be applied to devices by operations. 
+Device profiles can be applied to devices by operations, more precisely through bulk operations. 
 
 Click **Device control** in the **Overview** menu to navigate to the **Device control** page. In the **Device control** page, a new bulk operation can be created to apply a device profile.
 
-In the **Bulk operations** tab, click **New bulk operation** at the right of the top menu bar and in the resulting dialog, select **Apply device profile**.
+In the **Bulk operations** tab, click **New bulk operation** at the right of the top menu bar and in the resulting dialog select **Apply device profile**.
 
 Follow the steps described in [Monitoring and controlling devices > Working with operations > To add a bulk operation](/users-guide/device-management/#bulk-operations) to schedule a bulk operation which applies a device profile.
 
+The devices will install the firmware, software and configurations items of the profile and report back the status of the operation. After successfully applying the profile, the device objects in the platform are updated accordingly with the information of the currently applied profile. 
 
+If the operation fails, an error message is returned providing details on which step the operation failed.
 
-The execution of a Device Profile (applying a Device Profile to a device) is an operation with the same fragment (c8y_DeviceProfile) as also shown in the data model for the repository entry.
+In the **Device profile** tab of a particular device, you can see the details of the currently installed profile.
 
-The device takes care of applying firmware, software and configurations part of the profile and reports back the status of the operation. Additionally, the device updates the device object after successfully applying a profile with the information of the currently applied profile. In case of the operation failing this will not happen.
+![Currently installed profile](/images/users-guide/DeviceManagement/devmgmt-device-profile-tab.png)
 
-Since we have only one operation to apply a profile, this approach also provides visibility if a profile has been completely applied for a given device. Via the failureReason the device can report back on which step it failed in case it couldn’t apply the profile.
+You may also select and apply another profile from here.
 
-Rolling out an update for all devices that already use the profile would be running a bulk operation where the filter selects all devices with this profile.  
+In the devices list, it is possible to filter for devices based on their applied profile name and whether the profile has been successfully applied in the past.
 
-Device profiles can be assigned to devices using Bulk Operations
+![Device profile filter](/images/users-guide/DeviceManagement/devmgmt-device-profile-filter.png)
 
-Devices can be filtered by applied device profile
+When creating bulk operations, it is also possible to use filters, and by this create bulk operations only for those devices where a profile has not been applied yet. 

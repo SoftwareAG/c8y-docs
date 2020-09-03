@@ -536,9 +536,9 @@ The following constraints can be applied:
 
 ### REST APIs
 
-While Cumulocity IoT User Interface for OPC UA provides an easy and visual way to configure and build your OPC UA solution, the OPC UA management *microservice* gives you the possibility to do it via RESTful web service.
+While Cumulocity IoT user interface for OPC UA provides an easy and visual way to configure and build your OPC UA solution, the OPC UA management *microservice* gives you the possibility to do it via RESTful web service.
 
-#### OPC UA Server Resources
+#### OPC UA server resources
 
 ##### Connect a new OPC UA server to the gateway
 

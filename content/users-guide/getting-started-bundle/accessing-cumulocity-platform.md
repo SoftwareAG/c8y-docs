@@ -12,12 +12,12 @@ You access the Cumulocity IoT platform via a web browser.
 
 Our products have been tested with the following desktop web browsers:
 
-* Edge Browser (latest Chromium-based version)
+* Microsoft Edge (latest Chromium-based version)
 * Firefox (latest version)    
 * Chrome (latest version)
 * Internet Explorer (latest version)
 
->**Info:** Cumulocity IoT is fully functional on Internet Explorer 11. However, layouts may not be perfect in all cases and performance is worse than in other browsers.
+>**Info:** Though Cumulocity IoT is functional on Internet Explorer 11, Internet Explorer 11 is lacking many features and does not provide you with a state-of-the-art user experience. Therefore Cumulocity IoT 10.7 will be the last release that supports the Internet Explorer 11 browser.
 
 You may also use recent smartphone and tablet web browsers. We have tested our products with the following mobile web browsers:
 

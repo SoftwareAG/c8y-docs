@@ -93,7 +93,7 @@ The following properties can be manually configured in the YAML file:
 name: opcua-device-gateway
 # Platform location and configuration
 C8Y:
-  # This is the base URL pointing to the Cumulocity IoT platform. This always must be customized in an application profile.
+  # This is the base URL pointing to the Cumulocity IoT platform. This must always be customized in an application profile.
   baseUrl: http://localhost
   # This is an internal setting of the Cumulocity IoT SDK. It is set to true, because we typically
   # want to configure the Cumulocity IoT SDK to always use the baseURL provided during initialization.
@@ -143,7 +143,7 @@ gateway:
     threadpool:
       coreSize: 30
       maxSize: 60
-  # The following settings control the settings of our device type mappings execution.
+  # The following settings control the settings of the device type mappings execution.
   mappingExecution:
     # This section contains all settings related to external, custom-action execution.
     http:
@@ -189,7 +189,7 @@ gateway:
 
   # Cyclic-Reader specific settings
   cyclicRead:
-    # Our cyclic readers use a dedicated threadpool to perform periodic read tasks.
+    # The cyclic readers use a dedicated threadpool to perform periodic read tasks.
     threadpool:
       # Allows the size of the threadpool for cyclic reads to be configured
       size: 30
@@ -277,7 +277,7 @@ gateway:
 #### Logging
 
 Custom logging configuration can be set during startup by passing the "--logging.config" jvm argument. For more info on how to set up custom logging settings, refer to the [“Logback” documentation](http://logback.qos.ch/manual/configuration.html).
-Sample logging config file may look like this:
+A sample logging config file may look like this:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -366,7 +366,7 @@ Click **Accept** to complete the registration.
 
 ### Gateway device details
 
-After registration is completed, the gateway device will be created by the opcua-device-gateway.
+After the registration is completed, the gateway device will be created by the opcua-device-gateway.
 
 In this section, only OPC UA specific information related to the tabs in the device details page will be explained. For more info on all tabs, see [Device Management > Device Details](/users-guide/device-management/#device-details) in the User guide.
 

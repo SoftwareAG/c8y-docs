@@ -199,7 +199,7 @@ Deleting device credentials might be required if you have carried out a factory 
 
 ### <a name="device-profiles"></a>Managing device profiles
 
-Device profiles consist of a set of firmware version, software packages and configuration files which can be deployed on a device. Based on device profiles, users can deploy a specific target configuration on devices by using bulk operations.
+Device profiles represent a combination of a firmware version, one or multiple software packages and one or multiple configuration files which can be deployed on a device. Based on device profiles, users can deploy a specific target configuration on devices by using bulk operations.
 
 #### To view device profiles
 
@@ -211,9 +211,9 @@ Each device profile entry shows the profile name and the selected device type(s)
 
 Click a device profile name to view its details.
 
-In the **Name and device type** section, the name of the profile and optionally selected device types are shown.
+The **Name and device type** section shows the name of the profile and optionally selected device types.
 
-In the sections below, the firmware version, software packages and configuration files for this particular device profile are listed.
+The sections below list the firmware version, software packages and configuration files for this particular device profile.
 
 ![Device profile details](/images/users-guide/DeviceManagement/devmgmt-device-profile-details.png)
 
@@ -231,7 +231,7 @@ Click **Add firmware** to add a firmware version to the profile. Select a firmwa
 
 For details on firmware, see [Managing device firmware](#firmware-repo).
 
-Click **Add software** to add a software package to the profile. Select a software and a software version from the list and click **Save** to add the selection to the profile. If a device type has been defined for the profile, only those firmware versions can be selected that match the device type. You can add multiple software packages to a profile.
+Click **Add software** to add a software package to the profile. Select a software and a software version from the list and click **Save** to add the selection to the profile. If a device type has been defined for the profile, only those software versions can be selected that match the device type. You can add multiple software packages to a profile.
 
 For details on software, see [Managing device software](#software-repo).
 
@@ -268,7 +268,7 @@ To delete a device profile, click the menu icon at the right of the respective d
 
 #### To apply device profiles to devices
 
-Device profiles can be applied to devices by operations, more precisely through bulk operations.
+Device profiles can be applied to devices through operations, more precisely through bulk operations.
 
 Click **Device control** in the **Overview** menu to navigate to the **Device control** page. In the **Device control** page, a new bulk operation can be created to apply a device profile.
 
@@ -276,7 +276,7 @@ In the **Bulk operations** tab, click **New bulk operation** at the right of the
 
 Follow the steps described in [Monitoring and controlling devices > Working with operations > To add a bulk operation](/users-guide/device-management/#bulk-operations) to schedule a bulk operation which applies a device profile.
 
-The devices will install the firmware, software and configurations items of the profile and report back the status of the operation. After successfully applying the profile, the device objects in the platform are updated accordingly with the information of the currently applied profile.
+The devices will install the firmware, software and configurations items of the profile and report back the status of the operation. After successfully applying the profile, the device objects in the platform are updated accordingly with the new profile information.
 
 If the operation fails, an error message is returned providing details on which step the operation failed.
 
@@ -286,7 +286,7 @@ In the **Device profile** tab of a particular device, you can see the details of
 
 You may also select and apply another profile from here.
 
-In the devices list, it is possible to filter for devices based on their applied profile name and whether the profile has been successfully applied in the past.
+In the devices list, it is possible to filter for devices based on their applied profile name and whether the profile has been applied in the past.
 
 ![Device profile filter](/images/users-guide/DeviceManagement/devmgmt-device-profile-filter.png)
 

@@ -335,7 +335,7 @@ By providing your credentials you enable platform features that utilize SMS serv
 
 4. Click **Save** to save your settings.
 
->**Info:** OpenIT does not serve new customers anymore and is in the process of shutting down their SMS provider business.
+>**Info:** OpenIT does not serve new customers anymore and is in the process of shutting down their SMS provider business. We therefore recommend you to select sms77 as SMS provider.
 
 
 ### <a name="config-platform"></a>Configuration settings

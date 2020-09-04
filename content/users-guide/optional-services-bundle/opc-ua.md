@@ -61,7 +61,7 @@ Mac OS
 
 The number of profiles you may have is not limited. To use a specific profile on runtime, the "-Dspring.profiles.active" JVM argument has to be passed when running the gateway JAR file. For example, let’s use the previously created profile. Start a terminal and use the following command:
 
-```bash
+```shell
 java -jar opcua-device-gateway-<<version>>.jar --spring.profiles.active=default,myTenant
 ```
 
@@ -69,7 +69,7 @@ The command above will start a gateway with the default profile and it will over
 
 **Optional**: To specify your own configuration, Spring arguments can be used in your terminal to run the gateway JAR file. Multiple locations have to be comma-separated. The configuration locations should be either YAML files or directories. In case of directories, they must end with “/”. For example:
 
-```bash
+```she
 java -jar opcua-device-gateway-<<version>>.jar --spring.config.location=file:<<location>>/.opcua/conf/application-myTenant.yaml,file:<<location>>/.opcua/conf/
 ```
 

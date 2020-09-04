@@ -208,7 +208,7 @@ In the details of a specific software, hover over the version entry you want to 
 
 In the **Software** tab of a device you can manage the software for the particular device.
 
->**Info:** The **Software** tab shows up for a device if the device supports one of the following operations: c8y&#95;SoftwareUpdate, c8y&#95;SoftwareList, c8y&#95;Software (the last two are legacy ones but still supported).
+>**Info:** The **Software** tab shows up for a device if the device supports one of the following operations: c8y&#95;SoftwareUpdate, c8y&#95;SoftwareList, c8y&#95;Software.
 
 Click **All devices** in the **Devices** menu in the navigator, select the desired device from the device list and open its **Software** tab. 
 
@@ -216,7 +216,7 @@ The **Software** tab shows a list of all available software installed on the dev
 
 ![Software tab](/images/users-guide/DeviceManagement/devmgmt-software-tab.png)
 
-Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, CURRENTLY EXECUTING, FAILED). Clicking on the operation will take you to the **Control** tab where you can see further details on the operation, see also [Device details > Control](/users-guide/device-management/#control).  
+Additionally, it shows the operation status for the last operation (one of SUCCESSFUL, PENDING, EXECUTING, FAILED). Clicking on the operation will take you to the **Control** tab where you can see further details on the operation, see also [Device details > Control](/users-guide/device-management/#control).  
 
 ##### To install software on a device
 

@@ -69,7 +69,7 @@ The command above will start a gateway with the default profile and it will over
 
 **Optional**: To specify your own configuration, Spring arguments can be used in your terminal to run the gateway JAR file. Multiple locations have to be comma-separated. The configuration locations should be either YAML files or directories. In case of directories, they must end with “/”. For example:
 
-```she
+```shell
 java -jar opcua-device-gateway-<<version>>.jar --spring.config.location=file:<<location>>/.opcua/conf/application-myTenant.yaml,file:<<location>>/.opcua/conf/
 ```
 
@@ -268,7 +268,7 @@ The authentication setting is used to authenticate and authorize the server user
 
 The keystore can be create via the following Java keytool command:
 
-```bash
+```shell
 keytool -genkey -keyalg RSA -alias opcuauser -keystore keystore.jks -storepass passw0rd_a -validity 3600 -keysize 2048
 ```
 

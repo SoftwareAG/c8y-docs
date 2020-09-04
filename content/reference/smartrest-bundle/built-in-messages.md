@@ -60,7 +60,7 @@ layout: redirect
 <tr>
 <td>83</td>
 <td>clientId</td>
-<td>Establish conntection for receiving the notifications (long-polling). SmartREST real-time notifications.</td>
+<td>Establish connection for receiving the notifications (long-polling). SmartREST real-time notifications.</td>
 </tr>
 <tr>
 <td>84</td>

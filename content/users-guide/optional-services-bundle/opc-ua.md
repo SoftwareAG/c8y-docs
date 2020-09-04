@@ -276,7 +276,7 @@ gateway:
 
 #### Logging
 
-Custom logging configuration can be set during startup by passing the "--logging.config" jvm argument. For more info on how to set up custom logging settings, refer to the [“Logback” documentation](http://logback.qos.ch/manual/configuration.html).
+Custom logging configuration can be set during startup by passing the "--logging.config" JVM argument. For more info on how to set up custom logging settings, refer to the [“Logback” documentation](http://logback.qos.ch/manual/configuration.html).
 A sample logging config file may look like this:
 
 ```xml
@@ -339,7 +339,7 @@ The gateway can run with either default or custom settings. To run the gateway r
 * Custom settings and custom logging configuration:
   
   ```shell
-    java --logging.config=file:PATH_TO_LOGBACK_XML -Dspring.profiles.active=default,PROFILE_NAME -jar opcua-device-gateway-<<version>>.jar
+    java --logging.config=file:PATH_TO_LOGBACK_XML --spring.profiles.active=default,PROFILE_NAME -jar opcua-device-gateway-<<version>>.jar
   ```
 
 For example, using the profile from the previous section we are going to register the gateway. First, open the terminal and navigate to the location of the gateway.jar file. Next, enter the following command:

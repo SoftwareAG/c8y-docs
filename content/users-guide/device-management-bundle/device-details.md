@@ -47,7 +47,7 @@ The following tabs are the most common ones, each described in detail in a separ
 </tr>
 <tr>
 <td align="left"><a href="#config">Configuration</a></td>
-<td align="left">Allows manual configuration of device parameters and settings entered in a text format. See also <a href="#configuration-repository">Configuration repository</a> for binary configuration.</td>
+<td align="left">Allows manual configuration of device parameters and settings entered in a text format. See also <a href="#configuration-repository">Managing configurations</a> for binary configuration.</td>
 </tr>
 <tr>
 <td align="left"><a href="#control">Control</a></td>
@@ -213,7 +213,7 @@ The **Configuration** tab allows you to configure the parameters and initial set
  - Text-based configurations
  - Binary-based configuration snapshots
 
-For more details on managing binary-based configuration snapshots, see [Managing device data > Configuration snapshots](#configuration-repository).
+For more details on managing binary-based configuration snapshots, see [Managing device data > Managing configurations](#configuration-repository).
 
 #### To add or edit a text-based configuration snapshot
 

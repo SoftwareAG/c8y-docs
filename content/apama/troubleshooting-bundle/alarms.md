@@ -38,6 +38,7 @@ The following is a list of the alarms. The information further down below explai
 - [An EPL file throws an uncaught exception](#apama_ctrl_error)
 - [An EPL file blocks the correlator context for too long](#apama_ctrl_warn)
 - [Multiple extensions with the same name](#extension_error)
+- [Smart rule configuration failed](#smartrule_configuration_error)
 - [Smart rule restore failed](#smartrule_restore_failed)
 - [Connection to correlator lost](#lost_correlator_connection)
 - [The correlator queue is full](#application_queue_full)
@@ -256,21 +257,34 @@ This disables all extensions that were deployed to Apama-ctrl. In order to use t
 
 **Info:** In case of multiple duplicates, this alarm is only listed once.
 
+#### <a name="smartrule_configuration_error"></a>Smart rule configuration failed
+
+This alarm is raised if a smart rule contains an invalid configuration.
+
+- Alarm type: `smartrule_configuration_error`
+- Alarm text: &lt;Smart rule identifier&gt;: Smart rule create/edit failed. One or more fields are invalid, please check smart rule configuration.
+- Alarm severity: MAJOR
+
+To diagnose the cause, download the diagnostics overview ZIP file as described in [Downloading diagnostics and logs](#diagnostics-download). Or, if that fails, log on as an administrator and look at the result of a GET request to */service/smartrule/smartrules?withPrivateRules=true*. Review the smart rules JSON and look for invalid smart rule configurations. Such smart rules need to be corrected.
+
+The Apama microservice log contains more details on the reason for the smart rule configuration failure. For example, it is invalid to configure an "On measurement threshold create alarm" smart rule with a data point that does not exist.
+
 #### <a name="smartrule_restore_failed"></a>Smart rule restore failed
 
 This alarm is raised if a corrupt smart rule is present in the inventory and the correlator therefore fails to recover it correctly during startup.
 
 - Alarm type: `smartrule_restore_failed`
 - Alarm text: Smart rule restore failed. Contact support.
+- Alarm severity: MAJOR
 
-To diagnose the cause, download the diagnostics overview ZIP file as described in [Downloading diagnostics and logs](#diagnostics-download). Or, if that fails, log on as an administrator and look at the result of a GET request to */service/smartrule/smartrules*. Review the smart rules JSON and look for invalid smart rule configurations. Such smart rules may need to be deleted or corrected.
+To diagnose the cause, download the diagnostics overview ZIP file as described in [Downloading diagnostics and logs](#diagnostics-download). Or, if that fails, log on as an administrator and look at the result of a GET request to */service/smartrule/smartrules?withPrivateRules=true*. Review the smart rules JSON and look for invalid smart rule configurations. Such smart rules may need to be deleted or corrected.
 
 #### <a name="lost_correlator_connection"></a>Connection to correlator lost
 
 This alarm is raised in certain cases when the connection between the Apama-ctrl microservice and the correlator is lost. This should not happen, but can be triggered by high load situations.
 
 - Alarm type: `lost_correlator_connection`
-- Alarm text: Unable to ping correlator:  &lt;message&gt;, Apama-ctrl will restart.
+- Alarm text: Unable to ping correlator: &lt;message&gt;, Apama-ctrl will restart.
 - Alarm severity: MAJOR
 
 Apama-ctrl will automatically restart. Report this to [Software AG Support](/about-doc/contacting-support) if this is happening frequently.

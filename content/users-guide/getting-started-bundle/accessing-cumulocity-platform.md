@@ -13,7 +13,7 @@ You access the Cumulocity IoT platform via a web browser.
 Supported browsers in this version are:
 
 * Microsoft Edge (latest Chromium-based version)
-* Mozilla Firefox Extended Support Release 78 [1]
+* Mozilla Firefox (latest Extended Support Release [1])
 * Google Chrome [2]
 * Internet Explorer 11 [3]
 

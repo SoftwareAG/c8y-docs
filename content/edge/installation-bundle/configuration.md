@@ -6,7 +6,7 @@ layout: redirect
 
 ### Preparation
 
-Copy the Edge license, SSL key, SSL certificate and Apama license (if obtained) into the Edge VM. Use WINSCP, SCP, FTP or any other file transfer tool to transfer the files from your host OS to Edge VM (Linux OS).
+Copy the Edge license, SSL key, and SSL certificate into the Edge VM. Use WINSCP, SCP, FTP or any other file transfer tool to transfer the files from your host OS to Edge VM (Linux OS).
 
 You can copy the files to the Edge VM folder */home/admin*. 
 
@@ -14,8 +14,7 @@ The files have the following extensions:
 
 * Cumulocity IoT Edge license file: ".licence"
 * SSL Key file: ".key"
-* SSL Certificate: ".crt" or ".cert" 
-* Apama license file: “.xml”
+* SSL Certificate: ".crt" or ".cert"
 
 >**Important:** Do not rename the license file received from Cumulocity IoT support. Renaming the license file causes failure of the post-installation process.
 
@@ -53,10 +52,6 @@ Make sure that the file path is valid and the file exists in the local machine.
 
 `c8y.license` : Provide the absolute path of the license file. The file extension must be “.licence”. For example, /home/admin/myown.iot.com.licence.
 Make sure that the file path is valid and the file exists in the local machine.
-
-`apama.license` : Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml". For example, */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional license file, in case you do not want to use it you should  leave this field empty.
-If the file path is specfied, make sure that the file path is valid and the file exists in the local machine.
-
 
 The following parameters are required only if you want to update the network parameters in the EDGE VM. You may skip these parameters if network is already configured or it is not applicable in your case.
 
@@ -216,11 +211,7 @@ You have the choice to enter the post-installation parameters manually through t
 
 	`* Enter domain ({your-domain-name}) Cumulocity licence file path (*.licence):`
 	
-8. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml". For example, */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional license file, you can press [Enter] to continue without providing license.
-
-	`* Enter Software AG Apama licence file path (optional):`
-
-9. Provide the URL for the Cumulocity IoT tenant (cloud or on-premise) to control your Edge VM remotely. For example, "https://&lt;*tenant-domain*&gt;.cumulocity.com".
+8. Provide the URL for the Cumulocity IoT tenant (cloud or on-premise) to control your Edge VM remotely. For example, "https://&lt;*tenant-domain*&gt;.cumulocity.com".
 
 	`* Enter cloud URL (leave blank to disable remote management):` 
 
@@ -266,10 +257,6 @@ You have the choice to enter the update parameters manually through the console 
 
 	`* Enter domain ({previously-entered-domain-name}) Cumulocity licence file path (*.licence):`
 	
-4. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*.<br> <br>This is an optional license file, you can press [Enter] to continue without providing license.
-
-	`* Enter Software AG Apama licence file path (optional):`
-
 Once the input parameters are entered correctly, the parameters will be saved under 
 */opt/c8y/utilities/post-installer/config.dat* for future reference.
 You can use this file for providing the input parameters to the post-installer.

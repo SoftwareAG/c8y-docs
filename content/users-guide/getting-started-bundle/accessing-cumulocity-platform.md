@@ -21,7 +21,7 @@ Supported browsers in this version are:
 
 [2] The Google Chrome support is based on Google Chrome Version 84. Due to frequent version upgrades of Google Chrome, compatibility of Cumulocity IoT with future versions of Google Chrome cannot be fully guaranteed. Possible incompatibilities will be removed during the regular maintenance process of Cumulocity IoT.
 
->**Important:** [3] Though Cumulocity IoT is functional on Internet Explorer 11, Internet Explorer 11 is lacking many features and does not provide you with a state-of-the-art user experience. Therefore Cumulocity IoT 10.7 will be the last release that supports the Internet Explorer 11 browser.
+>**Important:** [3] Though Cumulocity IoT is functional on Internet Explorer 11, it does not allow us to provide you with a state-of-the-art user experience. As a result, Cumulocity IoT 10.7 will be the last release that supports this browser. With upcoming releases we will continue to support the latest version of the Microsoft Edge browser as the successor to the Internet Explorer. 
 
 You may also use recent smartphone and tablet web browsers. We have tested our products with the following mobile web browsers:
 

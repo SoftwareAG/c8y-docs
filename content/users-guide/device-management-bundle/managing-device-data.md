@@ -10,13 +10,12 @@ The Device Management application provides various features that support you in 
 
 |Feature|Description|
 |:---|:---|
-|[Managing device firmware](#firmware-repo)|Allows you to retrieve and manage firmware, firmware versions and patches in the firmware repository and to install or update them.
-|[Managing device software](#software-repo)|Allows you to retrieve and manage software and software versions in the software repository and to install or update them.
-|[Managing configurations](#configuration-repository)|Allows you to retrieve configuration data and store and manage it in a configuration repository as configuration snapshot.
-|[Device credentials](#credentials)|Allows you to manage all credentials that have been generated for your connected devices.
-|[Trusted certificates](##managing-trusted-certificates)|<to be added>
-|[Device profiles](#device-profiles)|<to be added>
-
+|[Managing device firmware](#firmware-repo)|How to retrieve and manage firmware, firmware versions and patches in the firmware repository and how to install or update them on devices.
+|[Managing device software](#software-repo)|How to retrieve and manage software and software versions in the software repository and how to install or update them on devices.
+|[Managing configurations](#configuration-repository)|How to retrieve configuration data and store and manage it in a configuration repository as configuration snapshot.
+|[Device credentials](#credentials)|How to manage all credentials generated for your connected devices.
+|[Device profiles](#device-profiles)|How to manage device profiles - a set of firmware, software, and configuration - and apply them to devices.
+|[Trusted certificates](##managing-trusted-certificates)|How to manage trusted certificates.
 
 All features are accessible through the **Management** menu in the navigator:
 
@@ -450,31 +449,46 @@ To delete a device profile, click the menu icon at the right of the respective d
 
 > **Info:** Deleting a profile deletes the entry from the device profile repository. It has no affect towards the devices that currently use the profile.
 
-#### To apply device profiles to devices
+### Applying device profiles to devices
 
-Device profiles can be applied to devices through operations, more precisely through bulk operations.
+Device profiles can be assigned to
 
-Click **Device control** in the **Overview** menu to navigate to the **Device control** page. In the **Device control** page, a new bulk operation can be created to apply a device profile.
+* [individual devices](#to-apply-profiles-to-single-devices)
+* [multiple devices through bulk operations](#to-apply-profiles-to-multiple-devices) 
 
-In the **Bulk operations** tab, click **New bulk operation** at the right of the top menu bar and in the resulting dialog select **Apply device profile**.
-
-Follow the steps described in [Monitoring and controlling devices > Working with operations > To add a bulk operation](/users-guide/device-management/#bulk-operations) to schedule a bulk operation which applies a device profile.
-
-The devices will install the firmware, software and configurations items of the profile and report back the status of the operation. After successfully applying the profile, the device objects in the platform are updated accordingly with the new profile information.
-
-If the operation fails, an error message is returned providing details on which step the operation failed.
-
-In the **Device profile** tab of a particular device, you can see the details of the currently installed profile.
+The **Device profile** tab of a particular device shows the details of the currently installed profile on a device.
 
 ![Currently installed profile](/images/users-guide/DeviceManagement/devmgmt-device-profile-tab.png)
 
-You may also select and apply another profile from here.
+>**Info:** The **Device profile** tab shows up for a device if the device supports c8y_DeviceProfile operations.
 
-In the devices list, it is possible to filter for devices based on their applied profile name and whether the profile has been applied in the past.
+Moreover, you can filter for devices in the devices list based on their applied profile name and whether the profile has been applied in the past.
 
 ![Device profile filter](/images/users-guide/DeviceManagement/devmgmt-device-profile-filter.png)
 
-When creating bulk operations, it is also possible to use filters, and by this create bulk operations only for those devices where a profile has not been applied yet.
+
+#### <a name="to-apply-profiles-to-single-devices"></a>To apply device profiles to a single device
+
+Device profiles can be applied to individual devices in the **Device Profile** tab of the particular device. 
+
+1. In the **Device profile** tab, select a device profile from the dropdown list. Only profiles that match the device type (if specified) or have no device type specified are displayed.
+
+	![Assign device profile](/images/users-guide/DeviceManagement/devmgmt-device-profile-assign.png)
+ 
+2. Click **Assign device profile** to start the update operation.
+
+#### <a name="to-apply-profiles-to-multiple-devices"></a>To apply device profiles to multiple devices
+
+Device profiles can be applied to multiple devices by using bulk operations.
+
+1. Click **Device control** in the **Overview** menu to navigate to the **Device control** page. In the **Device control** page, a new bulk operation can be created to apply a device profile.
+2. In the **Bulk operations** tab, click **New bulk operation** at the right of the top menu bar and in the resulting dialog select **Apply device profile**. 
+3. Follow the steps described in [Monitoring and controlling devices > Working with operations > To add a bulk operation](/users-guide/device-management/#bulk-operations) to schedule a bulk operation which applies a device profile.
+
+The devices will install the firmware, software and configurations items of the profile and report back the status of the operation. After applying the profile, the device objects in the platform are updated accordingly with the new profile information.
+
+>**Info:** When creating bulk operations, it is possible to use filters, and by this create bulk operations only for those devices where a profile has not been applied yet.
+
 
 ### <a name="trusted-certificates"></a> Managing trusted certificates
 

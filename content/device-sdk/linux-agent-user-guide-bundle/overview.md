@@ -5,24 +5,13 @@ weight: 10
 ---
 The Cumulocity IoT Linux agent is a generic device agent for connecting Linux-powered devices to Cumulocity IoT. It runs on all major Linux distributions (Ubuntu, Debian, Raspbian, CentOS, etc.).
 
-### Contents
-
-|SECTION|CONTENT|
-|---|---|
-|[Overview](#overview)|Overview|  
-|[Prerequisites](#prerequisites)|Prerequisites|
-|[Building and installing the agent](#building-installing-agent)|How to build and how to install the agent (incl. Modbus, CANopen)|
-|[Starting the agent](#starting-agent)|How to start the agent process|
-|[Configuring the agent](#configuring-agent)|How to configure the agent parameters|
-|[Building packages](#packages)|How to build the agent packages in RPM, Debian, and Snappy format|  
-
 ### Supported functionality
 
 #### Remote monitoring and control of industrial assets
 
 - Modbus-TCP and Modbus-RTU
 - CANopen (using SocketCAN interface / requiring commercial library)
-- Cloud Remote Access for remotely accessing assets via VNC/Telnet/SSH protocols
+- [Cloud Remote Access](/users-guide/optional-services/#cloud-remote-access) for remotely accessing assets via VNC/Telnet/SSH protocols
 
 #### Managing devices
 

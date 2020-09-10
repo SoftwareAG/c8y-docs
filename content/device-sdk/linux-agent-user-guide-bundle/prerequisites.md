@@ -12,10 +12,10 @@ weight: 20
   - libcurl (>=7.57.0)<br><br>
 - Optional packages
   - systemd (for auto-start of the agent on boot)
-  - libmodbus (>= 3.1.2), only for the use of Modbus
+  - libmodbus (>= 3.0.8), only for the use of Modbus
   - lua-socket (>=3.0), only for the use of CANopen
 
-The packages can be installed with the following commands in the terminal window on Ubuntu 18.04.
+The packages can be installed with the following commands in the terminal window on Ubuntu 18.04:
 
 ```shell
 # compiler
@@ -28,7 +28,8 @@ sudo apt install libmodbus-dev lua-socket
 sudo apt install lua-socket
 ```
 
-The following steps have been tested for Ubuntu 18.04, but should work with other distributions as well.  
+> **Info:** The following steps have been tested for Ubuntu 18.04, but should work with other distributions as well.
+
 Make sure that the following libraries (-dev version) are installed.
 
 - libcurl >= 7.57.0
@@ -58,9 +59,8 @@ sudo apt install liblua5.3-dev
 ### Building the Cumulocity IoT C++ SDK
 
 The agent software requires the [**Cumulocity IoT C++ SDK**](https://bitbucket.org/m2m/cumulocity-sdk-c/src/master/).  
-Before starting to build the software, you need to build the Cumulocity IoT C++ SDK.
-
-1. Launch Git client and clone the SDK repository to a directory of your choice. For example:
+So you need to build the Cumulocity IoT C++ SDK first, before starting to build the software.
+1. Launch a Git client and clone the SDK repository to a directory of your choice. For example:
 
     ```shell
     cd ~/<my_working_directory>
@@ -103,6 +103,8 @@ Before starting to build the software, you need to build the Cumulocity IoT C++ 
     LDLIBS:=$(shell pkg-config --libs libcurl lua5.3)
     ```
 
+    > **Info:**  This step is required for the Ubuntu 18.04 LTS and Raspbian distributions. However, this step must be skipped for the CentOS 7 distribution. If you use other operating systems, run `pkg-config --cflags lua` and `pkg-config --libs lua` and confirm that no errors are returned.
+
     If you don't know which liblua version has already been installed on your device,
     you can also find the version which you need to add to your _init.mk_ by:
 
@@ -110,7 +112,7 @@ Before starting to build the software, you need to build the Cumulocity IoT C++ 
     ldconfig -p | grep lua
     ```
 
-    It will return a name like "liblua**5.3**.so.0", so you can know that lua5.3 should be added.
+    It will return a name like "liblua**5.3**.so.0", so you can assume that lua5.3 should be added.
 
 5. To build the SDK in debug mode, run:
 

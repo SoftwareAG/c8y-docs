@@ -16,7 +16,7 @@ After building the agent, run:
 sudo make rpm args='-r 1.1' # replace 1.1 with required rpm release number
 ```
 
-You might need to edit the _cumulocity-agents-linux/pkg/rpm/build_rpm.sh_ file to adjust package dependencies.
+You might need to edit the *cumulocity-agents-linux/pkg/rpm/build_rpm.sh* file to adjust package dependencies.
 
 ### Debian
 
@@ -45,4 +45,4 @@ sudo snap install <agent.snap> --devmode
 
 The agent starts automatically after installation, also at every time the machine boots.
 
-> **Info:** packaging requires `snapcraft >= 2.10` because lower versions do not support the confinement property, which is required for packaging the agent as a snap.
+> **Info:** Packaging requires version 2.10 of snapcraft or higher because lower versions do not support the confinement property, which is required for packaging the agent as a snap.

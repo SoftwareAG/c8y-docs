@@ -9,7 +9,7 @@ The Linux Agent repository includes the _cumulocity-agent.conf_ file. When you i
 ### Server URL
 
 The agent by default connects to the cumulocity.com instance. In case you’re using a different instance, you can change the server URL.
-URL supports two protocol schemas. To use the HTTP version, set the URL to format `https://example.com`. To use the MQTT version, set the URL to format `mqtts://example.com`.
+The URL supports two protocol schemas. To use the HTTP version, set the URL to format `https://example.com`. To use the MQTT version, set the URL to format `mqtts://example.com`.
 
 |Parameters|Example values|
 |---|---|
@@ -17,12 +17,34 @@ URL supports two protocol schemas. To use the HTTP version, set the URL to forma
 
 ### Log settings
 
-- **log.path**
-  The file location for storing the agent’s logs.
-- **log.level**
-  Filter for lowest severity level to be enabled for logging. Available log severities are `debug`, `info`, `notice`, `warning`, `error`, and `critical`.
-- **log.quota**
-  The maximum log file size before the log rotates, in KB.
+<table>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Explanations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>log.path</td>
+<td>The file location for storing the agent’s logs</td>
+</tr>
+<tr>
+<td>log.level</td>
+<td>Filter for lowest severity level to be enabled for logging. Available log severities are <code>debug</code>, <code>info</code>, <code>notice</code>, <code>warning</code>, <code>error</code>, and <code>critical</code></td>
+</tr>
+<tr>
+<td>log.quota</td>
+<td>The maximum log file size before the log rotates, in KB</td>
+</tr>
+</tbody>
+</table>
+
+
 
 |Parameters|Example values|  
 |---|---|
@@ -33,18 +55,19 @@ URL supports two protocol schemas. To use the HTTP version, set the URL to forma
 ### Plugins
 
 Each feature is implemented as a Lua plugin. You can enable it by appending it to the `lua.plugins` parameter.
+
 - **system**
-The system plugin enables the agent to periodically report CPU and memory usage.  
+The system plugin enables the agent to periodically report CPU and memory usage
 - **logview**
-The logview plugin allows you to remotely view the device and agent logs from Cumulocity IoT.
+The logview plugin allows you to remotely view the device and agent logs from Cumulocity IoT
 - **shell**
-The shell plugin allows you to change all these parameters in the configuration file remotely from the Device Shell functionality from Cumulocity IoT.
+The shell plugin allows you to change all these parameters in the configuration file remotely from the device shell functionality from Cumulocity IoT
 - **version**
-The version plugin reports the agent version to Cumulocity IoT.
+The version plugin reports the agent version to Cumulocity IoT
 - **modbus**
-The Modbus plugin implements the Cloud Fieldbus Modbus protocol.
+The Modbus plugin implements the Cloud Fieldbus Modbus protocol
 - **canopen**
-The CANopen plugin implements the Cloud Fieldbus CANopen protocol.
+The CANopen plugin implements the Cloud Fieldbus CANopen protocol</td>
 
 |Parameters|Example values|
 |---|---|
@@ -52,7 +75,7 @@ The CANopen plugin implements the Cloud Fieldbus CANopen protocol.
 
 ### Agent measurements
 
-It defines the interval for sending memory and CPU usage measurements, in seconds. It requires the **system** plugin.
+It defines the interval for sending memory and CPU usage measurements, in seconds. To activate the system configuration requires the **system** plugin.
 
 |Parameters|Example values|
 |---|---|
@@ -61,7 +84,7 @@ It defines the interval for sending memory and CPU usage measurements, in second
 
 ### Modbus configuration
 
-There are several Modbus parameters you can change via the configuration file. It requires the **modbus** plugin.
+There are several Modbus parameters you can change via the configuration file. To activate the Modbus configuration requires the **modbus** plugin.
 - **modbus.transmitrate**
 The transmit rate for reporting measurements to Cumulocity IoT [in seconds]
 - **modbus.pollingrate**
@@ -74,10 +97,10 @@ It controls the ability to write data to slaves. `1` is read-only, `0` is writab
 |modbus.pollingrate|`modbus.pollingrate=30`|
 |modbus.readonly|`modbus.readonly=0`|  
 
-> **Info:** We recommend that you change the Modbus parameters via the Modbus Cloud Fieldbus UI.
+> **Info:** We recommend you to change the Modbus parameters via the Modbus Cloud Fieldbus UI.
 
 
-#### Modbus-TCP Configuration
+#### Modbus-TCP configuration
 
 - **modbus.tcp.port**
   The TCP port is used for Modbus-TCP. The default setting is 502.
@@ -86,18 +109,43 @@ It controls the ability to write data to slaves. `1` is read-only, `0` is writab
 |---|---|
 |modbus.tcp.port|`modbus.tcp.port=502`|
 
-#### Modbus-RTU Configuration
+#### Modbus-RTU configuration
 
-- **modbus.serial.port**
-This is the type when your Modbus device is recognized as a serial interface by the Linux kernel, for example, `/dev/ttyACM0`. In this case, you also need to inform the agent the serial port your device is mounted as `modbus.serial.port=/dev/ttyACM0` or `modbus.serial.port=/dev/ttyUSB0`
-- **modbus.serial.baud**
-The baud rate of the Modbus line, in kbit/s
-- **modbus.serial.databits**
-The data bits for Modbus-RTU
-- **modbus.serial.parity**
-The parity. `N`, `E` or `O`.
-- **modbus.serial.stopbits**
-The stopbits. `1` or `2`.
+<table>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Explanations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>modbus.serial.port</td>
+<td>This is the type when your Modbus device is recognized as a serial interface by the Linux kernel, for example, <code>/dev/ttyACM0</code>. In this case, you also need to inform the agent the serial port your device is mounted as <code>modbus.serial.port=/dev/ttyACM0</code> or <code>modbus.serial.port=/dev/ttyUSB0</code></td>
+</tr>
+<tr>
+<td>modbus.serial.baud</td>
+<td>The baud rate of the Modbus line, in kbit/s</td>
+</tr>
+<tr>
+<td>modbus.serial.databits</td>
+<td>The data bits for Modbus-RTU</td>
+</tr>
+<tr>
+<td>modbus.serial.parity</td>
+<td>The parity. <code>N</code>, <code>E</code> or <code>O</code></td>
+</tr>
+<tr>
+<td>modbus.serial.stopbits</td>
+<td>The stopbits. <code>1</code> or <code>2</code></td>
+</tr>
+</tbody>
+</table>
+
 
 |Parameters|Example values|  
 |---|---|

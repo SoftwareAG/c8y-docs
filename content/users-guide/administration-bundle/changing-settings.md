@@ -174,28 +174,18 @@ When a user logs in with an access token, the username can be derived from a JWT
 
 Each access token is signed by a signing certificate. Currently there are three options to configure the signing certificates.
 
-1. By specifying the Azure AD certificate discovery address.
+* By specifying the Azure AD certificate discovery address.
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-4.png)
+	![OAuth configuration](/images/users-guide/Administration/admin-sso-4.png)
 
-2. By specifying the ADFS manifest address (for ADFS 3.0).
+* By specifying the ADFS manifest address (for ADFS 3.0).
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
+	![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
 
-3. By providing the public key of a certificate manually to Cumulocity IoT. A certificate definition requires an algorithm information, public key value and validity period.
+* By providing the public key of a certificate manually to Cumulocity IoT. A certificate definition requires an algorithm information, public key value and validity period.
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-5.png)
-<<<<<<< HEAD
-=======
-
-4. By specifying the JWKS (JSON Web Key Set) address.
-
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
-
-
- >**Info:** Cumulocity IoT only supports certificates with RSA key, either as a ("n", "e") parameters pair or "x5c" certificate chain. Other key types (e.g. Elliptic-curves) are not supported.
-
->>>>>>> 55f5435ec... Disabled OpenIT link
+	![OAuth configuration](/images/users-guide/Administration/admin-sso-5.png)
+	
 
 #### Integration with Azure AD
 

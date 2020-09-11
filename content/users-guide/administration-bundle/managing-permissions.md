@@ -214,7 +214,7 @@ The following permission categories are available by default:
 
 <tr>
 <td align="left">Schedule reports</td>
-<td align="left">Schedule sending of exports.</td>
+<td align="left">Manage the schedule of report exporting.</td>
 </tr>
 
 <tr>

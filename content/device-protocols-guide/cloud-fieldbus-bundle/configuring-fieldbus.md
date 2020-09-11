@@ -21,7 +21,6 @@ The device protocol will be added to the device protocol list.
 Next, you can configure the device protocol, following the descriptions for the respective protocol type below.
 
 If you edit a device protocol that is currently in use, you may need to
-
 * restart the terminals that use the device protocol,
 * reconfigure dashboards and widgets that use the device protocol.
 
@@ -39,7 +38,6 @@ Click **Add Coil** in the **Coils (discrete output)** section, to add a coil def
 	* **Update status** - To enable to update the current value from the UI, e.g. in the "Fieldbus device" widget.
 	* **Raise alarm** - To raise an alarm when the coil is set in the device. In this case, you can specify the type of the alarm that is raised, its text and its severity. Note that there can only be one alarm active of a particular type for a particular device.
 	* **Send event** - To send an event each time the value changes. If selected, you may specify the type of event and the text in the event.
-
 5. Click **Save** to save your configuration.
 
 ![Add coil](/images/device-protocols-guide/cloud-fieldbus/fieldbus-deviceprotocols-newcoil.png)
@@ -56,18 +54,15 @@ Click **Add holding register** under **Holding registers** or **Add input regist
 2. In the **Value selection** section, enter the number of the register in the Modbus device. If the Modbus device used implements the standard Modbus specification, the number of the register is 1. You can indicate a subset of bits to be used from a register by providing a start bit and a number of bits. This allows you to split a physical Modbus register into a set of "logical registers".
 3. In the **Normalization** section, specify how the raw value should be transformed before storing it in the platform. To scale the integer value read from the Modbus device, you can enter a **Multiplier**, a **Divisor** and a number of decimal places in the **Right Shift** field. The register value is first multiplied by the multiplier, then divided by the divisor and then shifted by the number of decimal places. Note, that the terminal may use integer arithmetic to calculate values sent to Cumulocity IoT. For example, if you use a divisor of one and one decimal place, a value of 231 read from the terminal will be sent as 23.1 to Cumulocity IoT. If you use a divisor of ten and no decimal places, the terminal may send 23 to Cumulocity IoT (depending on its implementation). In the **Unit** field, indicate the unit of the data, for example, "C" for temperature values.
 4. In the Options section, select the following options:
-
 	* **Signed** - If the register value should be interpreted as signed number.
 	* **Enumeration type** - If the register value should be interpreted as 	enumeration of discrete values. If **Enumeration type** is selected, you can 	click **Add value** to add mappings from a discrete value to a text to be 	shown for this value in the widget. Click **Remove value** to remove the 	mapping.
 	* **Little endian** - If the register value should be interpreted in little-endian format based on 8-bit values.
-
 5. In the **Functionalities** section, you may select the following actions:
 	* **Show status** - To show the current value in the UI, e.g. in the "Fieldbus device" widget.
 	* **Update status** - To enable to update the current value from the UI, e.g. in the "Fieldbus device" widget. If **Update status** is selected, two additional fields **Minimum** and **Maximum** appear. Using these fields, you can constrain numerical values entered in the widget.
 	* **Send measurement** - To collect the values of the register regularly according to the transmit interval (see [above](#connect)). In this case, add a measurement type and a series to be used. For each measurement type, a chart is created in the **Measurements** tab. For each series, a graph is created in the chart. The unit is used for labelling the measurement in the chart and in the "Fieldbus device" widget.
 	* **Raise alarm** - To raise an alarm when the register is not zero in the device measurement. In this case, you can specify the type of the alarm raised, its text and its severity. Note, that there can only be one alarm active of a particular type for a particular device.
 	* **Send event** - To send an event each time the value of the register changes. If selected, you may specify the type of event and the text in the event.
-
 6. Click **Save** to save the register.
 
 ![Add register](/images/device-protocols-guide/cloud-fieldbus/fieldbus-deviceprotocols-newregister.png)
@@ -78,7 +73,7 @@ Finally, click **Save** to save the device protocol.
 
 ### <a name="configureCAN"></a>Configuring CAN bus device protocols
 
-CAN bus device protocols can be configured in a very similar way as Modbus device protocols. For more information, see [Configuring Modbus data](#configureModbus) above. The differences are:
+CAN bus device protocols can be configured in a very similar way as Modbus device protocols. For more information, see [Configuring Modbus device protocols](#configureModbus) above. The differences are:
 
 * Holding registers are used to describe the different pieces of data inside CAN messages.
 * Enter the CAN message ID of the specific message the data should be extracted from. Use a hexadecimal number for the message ID.
@@ -109,13 +104,11 @@ Click **Add variable** to configure a new variable.
 
 1. In the **General** section, specify a name for the variable and a display category. Display categories are used to group variables into sections in the visualization.
 2. In the **Value selection** section, specify from where the value should be extracted:
-
 	* **Index** - Index of the variable in the OD of the device.
 	* **Sub-index** - Sub-index of the variable in the OD of the device.
 	* **Data type** - Type of the variable (e.g. boolean, unsigned).
 	* **Access type** - Access type, e.g. read-only, write-only.
 3. Depending on the selected access type, the following functionalities may be specified:
-
 	* **Show status** - To enable to show the current value in the UI, e.g. in the "Fieldbus device" widget.
 	* **Update status** - To enable to update the current value from the UI, e.g. in the "Fieldbus device" widget. If selected, two additional fields **Minimum** and **Maximum** are displayed. Using these fields, you can constrain numerical values entered in the widget.
 	* **Send measurement** - To create a measurement whenever the value is changed. If selected, you may specify a **Measurement type** and **Measurement series**.

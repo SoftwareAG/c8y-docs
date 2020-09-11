@@ -1,4 +1,4 @@
-  ---
+---
 weight: 70
 title: OPC UA
 layout: redirect
@@ -420,7 +420,7 @@ Specify the following parameters:
 
 - Enter the type of the event. For example, “com_cumulocity_model_DoorSensorEvent”.
 - Enter the text which will be sent. For example, “Door sensor was triggered”. You can also get the resource value populated to the event text by defining the value placeholder:
-                                                                               
+
 ```plain
 Door sensor was triggered, event value: ${value}
 ```

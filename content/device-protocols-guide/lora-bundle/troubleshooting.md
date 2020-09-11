@@ -11,7 +11,7 @@ layout: redirect
 This warning message shows up if a provided profile ID, username or password is invalid.
 
 <img src="/images/device-protocols-guide/lora-actility/lora-connectivity-invalid-credentials.png" alt="Account credentials" style="max-width: 100%">
-
+<br>
 To resolve this, provide correct credentials and try again.
 
 ### <a name="lora-device-registration-troubleshooting"></a> Device registration
@@ -20,7 +20,7 @@ To resolve this, provide correct credentials and try again.
 
 This warning message shows up when there already exists a provisioned device in ThingPark with the same device EUI used for device registration and the validation comparing those devices based on application EUI (for OTAA activation) and device profile has failed.
 
-<img src="/images/device-protocols-guide/lora-actility/lora-registration-forbidden-device.png" alt="Device registration failure for comparison validation" style="max-width: 100%">
+<img src="/images/device-protocols-guide/lora-actility/lora-registration-forbidden-device.png" alt="Device registration failure for comparison validation" style="max-width: 100%"><br>
 
 To resolve this, provide the correct application EUI from [Connectivity](#configure-credentials) application and device profile and try again.
 

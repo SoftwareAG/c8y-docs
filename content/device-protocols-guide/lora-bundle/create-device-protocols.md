@@ -115,8 +115,10 @@ After clicking **Save**, your device protocol is created with the values you def
 
 The following image shows an example for a message which sends a measurement when the battery level changes.
 
+**New value window part 1**
 ![Battery level changes example](/images/device-protocols-guide/lora-actility/lora-protocols-battery.png)
 
+**New value window part 2**
 ![Battery level changes example](/images/device-protocols-guide/lora-actility/lora-protocols-battery2.png)
 
 #### <a name="nested-structure-example"></a>Example with nested structure
@@ -125,7 +127,11 @@ The following image shows an example of a nested structure for a device protocol
 
 The message ID should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the **Managed object fragment** field and create a new value for each: longitude and latitude.
 
+**New value window for Longitude**
+
 ![Value creation: Longitude-nested](/images/device-protocols-guide/lora-actility/lora-protocols-lng.png)
+
+**New value window for Latitude**
 
 ![Value creation: Latitude-nested](/images/device-protocols-guide/lora-actility/lora-protocols-lat.png)
 

@@ -21,7 +21,7 @@ To connect a Modbus/RTU device, follow these steps:
 
 ![Add Modbus device](/images/device-protocols-guide/cloud-fieldbus/fieldbus-modbus-rtu.png)
 
-**To add child devices**
+#### To add child devices
 
 1. To start the communication between the terminal and the Modbus/RTU device, click **Add RTU device**.
 2. Enter a name for the device and select the device protocol from the dropdown field. See [Configuring fieldbus device protocols](#configuring-fieldbus) for information on how to add a new device protocol. Set the Modbus address of the connected device.
@@ -42,7 +42,7 @@ To connect a Modbus/TCP device, follow these steps:
 
 ![Add Modbus device](/images/device-protocols-guide/cloud-fieldbus/fieldbus-modbus-tcp.png)
 
-**To add child devices**
+#### To add child devices
 
 1. To start the communication between the terminal and the Modbus/TCP device, click **Add TCP device**.
 2. Enter a name for the device and select the device protocol from the dropdown field. See [Configuring fieldbus device types](#configuring-fieldbus) for information on how to add a new device protocol. Set the Modbus address and the IP address of the connected device.
@@ -65,7 +65,7 @@ To connect a CAN device, follow these steps:
 
 ![Add CAN device](/images/device-protocols-guide/cloud-fieldbus/fieldbus-new-can-device.png)
 
-**To add child devices**
+#### To add child devices
 
 1. To start the communication between the terminal and the CAN device, click **Add CAN device**.
 2. Enter a name for the device and select a device protocol from the dropdown field. See [Configuring fieldbus device types](#configuring-fieldbus) for information on how to add a new device protocol.
@@ -90,8 +90,9 @@ To connect a Profibus device, follow these steps:
 7. Click **Save** to update the gateway with the new settings.
 
 <img src="/images/device-protocols-guide/cloud-fieldbus/fieldbus-new-profibus.png" alt="Add device" style="max-width: 100%">
+<br>
 
-**To add child devices**
+#### To add child devices
 
 1. To start the communication between the gateway and the Profibus device, click **Add Profibus device**.
 2. Enter a name for the new device.

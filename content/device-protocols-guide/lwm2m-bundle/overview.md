@@ -16,6 +16,6 @@ Our LWM2M solution allows any LWM2M object to be easily interfaced with the plat
 - Location (/6)
 
 To make use of these integrations, upload the corresponding DDF XML to your tenant.
-For arbitrary protocols, you can configure how LWM2M devices are mapped to Cumulocity IoT using [device protocols](/device-protocol-guide/cloud-fieldbus/#configuring-fieldbus).
+For arbitrary protocols, you can configure how LWM2M devices are mapped to Cumulocity IoT using [device protocols](/device-protocols-guide/cloud-fieldbus/#configuring-fieldbus).
 
 ![Device protocols](/images/device-protocols-guide/lwm2m/lwm2m-deviceprotocol.png)

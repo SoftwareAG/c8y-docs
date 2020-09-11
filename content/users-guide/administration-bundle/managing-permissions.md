@@ -213,6 +213,11 @@ The following permission categories are available by default:
 </tr>
 
 <tr>
+<td align="left">Schedule reports</td>
+<td align="left">Manage the schedule of report exporting.</td>
+</tr>
+
+<tr>
 <td align="left">Simulator</td>
 <td align="left">Configure simulated devices.</td>
 </tr>

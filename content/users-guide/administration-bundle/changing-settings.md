@@ -174,17 +174,18 @@ When a user logs in with an access token, the username can be derived from a JWT
 
 Each access token is signed by a signing certificate. Currently there are three options to configure the signing certificates.
 
-1. By specifying the Azure AD certificate discovery address.
+* By specifying the Azure AD certificate discovery address.
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-4.png)
+	![OAuth configuration](/images/users-guide/Administration/admin-sso-4.png)
 
-2. By specifying the ADFS manifest address (for ADFS 3.0).
+* By specifying the ADFS manifest address (for ADFS 3.0).
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
+	![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
 
-3. By providing the public key of a certificate manually to Cumulocity IoT. A certificate definition requires an algorithm information, public key value and validity period.
+* By providing the public key of a certificate manually to Cumulocity IoT. A certificate definition requires an algorithm information, public key value and validity period.
 
- ![OAuth configuration](/images/users-guide/Administration/admin-sso-5.png)
+	![OAuth configuration](/images/users-guide/Administration/admin-sso-5.png)
+	
 
 #### Integration with Azure AD
 
@@ -315,7 +316,7 @@ By providing your credentials you enable platform features that utilize SMS serv
 
 	![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
 
-2. In the **SMS provider** page, select either [OpenIt](https://sms.openit.de/main.php) or [sms77](https://www.sms77.io/en/) as SMS provider.
+2. In the **SMS provider** page, select either OpenIT or [sms77](https://www.sms77.io/en/) as SMS provider.
 
 3. Depending on the selected provider, enter the relevant credentials:
 
@@ -323,6 +324,8 @@ By providing your credentials you enable platform features that utilize SMS serv
 	 * For sms77, your API key to access sms77 (to be found in your sms77 login under Settings > HTTP API).
 
 4. Click **Save** to save your settings.
+
+>**Info:** OpenIT does not serve new customers anymore and is in the process of shutting down their SMS provider business. We therefore recommend you to select sms77 as SMS provider.
 
 
 ### <a name="config-platform"></a>Configuration settings

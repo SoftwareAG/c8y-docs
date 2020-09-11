@@ -155,7 +155,7 @@ public AlarmRepresentation addHelloAlarm (){
 
 The properties file used by the hosted deployment must be located in *src/main/resources/application.properties*.
 
-The following properties are used by the microservice:
+The following properties are used by a microservice:
 
 #### General properties
 

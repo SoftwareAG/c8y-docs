@@ -1,7 +1,10 @@
 ---
-weight: 30
-title: Functions
+weight: 120
+title: "API reference: Real-time statements"
 layout: bundle
+aliases:
+  - /reference-guide/real-time-statements.html
+  - /reference/real-time-statements
 ---
 
 <div style="padding: 24px ; border: 2px solid #1776BF; border-radius: 4px; margin-bottom: 24px; background-color: #f6fafe ">
@@ -14,6 +17,4 @@ layout: bundle
 
 </div>
 
-With the Cumulocity Event Language it is possible to utilize functions. This section will cover the already built-in functions ready to use.
-
-For guidance on how to write your own functions please check [Creating own functions](/event-language/advanced#creating-own-functions).
+>**Info**: This section has formerly been part of the [Reference guide](/reference/) but moved here as it only applies to the deprecated Esper CEP engine.

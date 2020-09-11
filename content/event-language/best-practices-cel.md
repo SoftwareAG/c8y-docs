@@ -1,7 +1,9 @@
 ---
-weight: 30
-title: Functions
+weight: 40
+title: Best practises and troubleshooting
 layout: bundle
+aliases:
+  - /event-language/best-practises
 ---
 
 <div style="padding: 24px ; border: 2px solid #1776BF; border-radius: 4px; margin-bottom: 24px; background-color: #f6fafe ">
@@ -13,7 +15,3 @@ layout: bundle
 <p style="font-size:16px">For details on migration, refer to <a href="/apama/overview-analytics/#migrate-from-esper">Migrating from CEL (Esper) to Apama</a> in the Streaming analytics guide.</p>
 
 </div>
-
-With the Cumulocity Event Language it is possible to utilize functions. This section will cover the already built-in functions ready to use.
-
-For guidance on how to write your own functions please check [Creating own functions](/event-language/advanced#creating-own-functions).

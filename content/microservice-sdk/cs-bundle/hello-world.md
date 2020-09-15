@@ -218,8 +218,27 @@ curl -H "Authorization: <AUTHORIZATION>" \
 
 The expected result is like:
 
-```shell
-[{"date":"2020-07-14T10:39:06.3395082+00:00","temperatureC":27,"temperatureF":80,"summary":"Hot"},{"date":"2020-07-15T10:39:06.3408548+00:00","temperatureC":40,"temperatureF":103,"summary":"Cool"},{"date":"2020-07-16T10:39:06.3408577+00:00","temperatureC":18,"temperatureF":64,"summary":"Balmy"},{"date":"2020-07-17T10:39:06.3408579+00:00","temperatureC":11,"temperatureF":51,"summary":"Freezing"},{"date":"2020-07-18T10:39:06.3408581+00:00","temperatureC":20,"temperatureF":67,"summary":"Chilly"}]
+```json
+[
+  {
+    "date": "2020-07-14T10:39:06.3395082+00:00",
+    "temperatureC": 27,
+    "temperatureF": 80,
+    "summary": "Hot"
+  },
+  {
+    "date": "2020-07-15T10:39:06.3408548+00:00",
+    "temperatureC": 40,
+    "temperatureF": 103,
+    "summary": "Cool"
+  },
+  {
+    "date": "2020-07-16T10:39:06.3408577+00:00",
+    "temperatureC": 18,
+    "temperatureF": 64,
+    "summary": "Balmy"
+  }
+]
 ```
 
 ### Running the application within the IDE

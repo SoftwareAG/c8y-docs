@@ -178,13 +178,13 @@ The following properties are used by a microservice:
 
 | Property                         | Description                                                    | Default value |
 | -------------------------------- | -------------------------------------------------------------- | ------------- |
-| C8Y.httpClient.httpReadTimeout   | Http read timeout in milliseconds.                             | 180000        |
-| C8Y.httpClient.pool.enabled      | Http connection pooling enabled.                               | true          |
+| C8Y.httpClient.httpReadTimeout   | HTTP read timeout in milliseconds.                             | 180000        |
+| C8Y.httpClient.pool.enabled      | HTTP connection pooling enabled.                               | true          |
 | C8Y.httpClient.pool.perHost      | Max connections per host if the connection pooling is enabled. | 50            |
 | C8Y.httpClient.pool.max          | Max total connections if the connection pooling is enabled.    | 100           |
 | C8Y.httpClient.pool.awaitTimeout | Connection manager timeout in milliseconds.                    | 10000         |
 
-*Note:* No changes should be made unless the request/connection timeouts or http client related exceptions are being experienced for the requests to the microservice where the network environment is fully understood.
+*Info:* No changes should be made unless the request/connection timeouts or HTTP client related exceptions are being experienced for the requests to the microservice where the network environment is fully understood.
 
 ### Microservice settings
 

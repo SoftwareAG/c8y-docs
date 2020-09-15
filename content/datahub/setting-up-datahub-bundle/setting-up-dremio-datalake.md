@@ -30,18 +30,6 @@ Depending on the configuration of the environment, the data lake provider is eit
 
 The following types of data lakes are currently supported:
 
-**Azure Data Lake Storage Gen1** is a repository for big data analytic workloads offered by Microsoft. The following settings need to be defined for this data lake:
-
-|Settings|Description|
-|:---|:---|
-|Data Lake Store resource name|The name of the instance created in Azure Data Lake|
-|Application ID|The ID of the registered application under Azure Active Directory|
-|OAuth 2.0 token endpoint|The OAuth 2.0 authentication endpoint for registered applications|
-|Root path|The root path in the data lake under which the offloaded data will be stored; default is /; setting a sub-folder allows you to hide other data in the container from DataHub|
-|Access key value|The password for the registered application|
-
->**Info** Using *Azure Data Lake Storage Gen1* as data lake is deprecated. When planning to use Microsoft data lake capabilities, use the successor *Azure Storage* instead.
-
 **Azure Storage** is a set of cloud storage services offered by Microsoft. DataHub supports Azure Data Lake Storage Gen2, which is part of these services. The following settings need to be defined for this data lake:
 
 |Settings|Description|
@@ -60,7 +48,7 @@ The following types of data lakes are currently supported:
 |Bucket name|The name of the S3 bucket; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
 |Root path in bucket|The root path within the S3 bucket; default is /; setting a sub-folder allows you to hide other data in the bucket from DataHub|
 
-**NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for edge installations. The following settings need to be defined for this data lake:
+**NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for Edge installations. The following settings need to be defined for this data lake:
 
 |Settings|Description|
 |:---|:---|
@@ -78,7 +66,7 @@ The following types of data lakes are currently supported:
 |Allow VDS-based access delegation|If enabled, data used in virtual datasets (VDS) will be requested from HDFS using the username of the owner of the VDS; if disabled, the name of the user logged into Dremio is used|
 |Impersonation user delegation|Defines whether an impersonated username is either *As is*, *Lowercase*, or *Uppercase*|
 
-For **Azure Data Lake Storage Gen1**, **Azure Storage**, **Amazon S3**, and **HDFS** data lakes, you can also define additional connection properties. Click **Add property** and define an additional property consisting of a key/value pair.
+For **Azure Storage**, **Amazon S3**, and **HDFS** data lakes, you can also define additional connection properties. Click **Add property** and define an additional property consisting of a key/value pair.
 
 #### Saving settings
 Once all settings are defined, click **Save** in the action bar to the right. During the save process, the following steps are automatically conducted:
@@ -89,7 +77,7 @@ Once all settings are defined, click **Save** in the action bar to the right. Du
 * A space in Dremio is created which you can use to organize your custom Dremio entities, e.g. views.
 
 ### Editing settings
-Editing the settings is not supported. You have to delete the old settings and define new settings. 
+Editing the settings is not supported. You have to delete the existing settings and define new settings. 
 
 ### Deleting settings
 Click **Delete** in the action bar to delete the settings. During deletion, all Dremio artifacts which were created when saving the settings are deleted. All offloading pipelines and their histories are deleted; active pipelines are deleted after completing the current offloading. The data lake and its contents are *not* deleted. 

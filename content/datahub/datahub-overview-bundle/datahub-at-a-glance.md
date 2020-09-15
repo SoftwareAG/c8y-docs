@@ -41,7 +41,7 @@ The table below summarizes the main terms used throughout this documentation.
 | DataHub | Scheduler component for triggering periodic offloading and UI component for defining, managing, and monitoring offloading pipelines
 | Cumulocity IoT Operational Store | Internal datastore of Cumulocity IoT where all data (alarms, events, inventory, measurements, ...) is stored
 | Dremio | Internal SQL engine for extracting data from the Cumulocity IoT Operational Store and writing to and reading from the data lake
-| Data lake | Storage container for offloaded data either on the basis of ADLS/Azure Storage (Azure), S3 (Amazon), or HDFS. 
+| Data lake | Storage container for offloaded data either on the basis of ADLS Gen2/Azure Storage (Azure), S3 (Amazon), or HDFS. 
 > **Info:** Google Cloud Storage (GCS) is currently not supported.
 
 ### Design of offloading pipeline

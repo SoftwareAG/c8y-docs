@@ -14,5 +14,5 @@ For your convenience, here is an overview of the contents of this document:
 | [Setting up DataHub](/datahub/setting-up-datahub) | Set up DataHub and its components |
 | [Working with DataHub](/datahub/working-with-datahub) | Manage offloading pipelines and query the offloaded results |
 | [Operating DataHub](/datahub/operating-datahub) | Run administrative tasks |
-| [Running DataHub on the Edge](/datahub/running-datahub-on-the-edge) | Run the edge edition of DataHub |
+| [Running DataHub on the Edge](/datahub/running-datahub-on-the-edge) | Run the Edge edition of DataHub |
 | [Release notes](/datahub/datahub-release-notes) | Get news about the latest DataHub releases |

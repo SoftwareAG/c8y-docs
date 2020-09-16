@@ -84,7 +84,7 @@ See below for detailed information about available settings.
 <td style="text-align:left">name</td>
 <td style="text-align:left">String</td>
 <td style="text-align:left">Application name</td>
-<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
 </tr>
 <tr>
 <td style="text-align:left">contextPath</td>
@@ -151,7 +151,7 @@ See below for detailed information about available settings.
 <td style="text-align:left">requiredRoles</td>
 <td style="text-align:left">String[ ]</td>
 <td style="text-align:left">List of permissions required by a microservice to work.</td>
-<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
 </tr>
 <tr>
 <td style="text-align:left">roles</td>

@@ -46,7 +46,7 @@ Then both files will be copied to the destination.
 
 Finally, run your agent. You will see that the debug messages are recorded with timestamps in your log file. By default, the path to log file is _/var/log/cumulocity-agent.log_.
 
-```shell
+```txt
 Jun 16 12:57:05 DEBUG: Hello world!
 Jun 16 12:57:05 INFO: Info message
 Jun 16 12:57:05 NOTICE: Notice message

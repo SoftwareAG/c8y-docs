@@ -75,7 +75,7 @@ The CANopen plugin implements the Cloud Fieldbus CANopen protocol</td>
 
 ### Agent measurements
 
-It defines the interval for sending memory and CPU usage measurements, in seconds. To activate the system configuration requires the **system** plugin.
+It defines the interval for sending memory and CPU usage measurements, in seconds. The **system** plugin is required to activate the system configuration
 
 |Parameters|Example values|
 |---|---|
@@ -84,7 +84,7 @@ It defines the interval for sending memory and CPU usage measurements, in second
 
 ### Modbus configuration
 
-There are several Modbus parameters you can change via the configuration file. To activate the Modbus configuration requires the **modbus** plugin.
+There are several Modbus parameters you can change via the configuration file. The **modbus** plugin is required to activate the Modbus configuration
 - **modbus.transmitrate**
 The transmit rate for reporting measurements to Cumulocity IoT [in seconds]
 - **modbus.pollingrate**

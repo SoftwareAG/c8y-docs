@@ -34,7 +34,7 @@ This section explains how to build the Cumulocity IoT Linux Agent without Modbus
     cp -rP $C8Y_LIB_PATH/lib $C8Y_LIB_PATH/bin .
     ```
 
-4. Customize your _Makefile_ and correct the libraries names. If you installed the liblua5.3-dev library, modify **lua** to **lua5.3** in the `CPPFLAGS` and `LDLIBS` lines.
+4. Customize your _Makefile_ and correct the libraries names. If you installed the liblua5.3-dev library, modify **lua** to **lua5.3** twice (in the `CPPFLAGS` and `LDLIBS` lines).
 
 
     ```shell

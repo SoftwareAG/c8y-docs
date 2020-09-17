@@ -24,8 +24,6 @@ Use the following login credentials for SSH login into the Edge instance:
 * Username: admin
 * Password: manage
 
->**Important:** Changing the hostname of the Edge VM is not supported.
-
 In the Edge VM, the default keyboard layout is **en_US**. If your keyboard is other than **en_US**, the characters that you type might not match the keys on the keyboard. This might affect your Edge VM password when setting the password or logging in to Edge VM directly through the VM console.
 
 Use the following command to log into Edge server via SSH:

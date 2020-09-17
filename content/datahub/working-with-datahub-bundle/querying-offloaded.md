@@ -49,24 +49,23 @@ Note that the API might change any time and Software AG does not provide any gua
 
 ### Connecting via DataHub REST API
 
-The DataHub server also can handle REST requests for Dremio query processing. The DataHub server acts as a proxy for these requests and forwards them to Dremio for evaluation. This API might change any time.
+The DataHub server also can handle REST requests for Dremio query processing. The DataHub server acts as a proxy for these requests and forwards them to Dremio for evaluation.
 
-In contrast to directly calling the Dremio REST API, in this case authentication is done against DataHub; thus, you need to provide Cumulocity IoT credentials instead of Dremio credentials. You need the corresponding Cumulocity IoT permission to use this API. See section [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for further details on the required permission.
+In contrast to directly calling the Dremio REST API, in this case authentication is done against Cumulocity (i.e., using the Cumulocity DataHub user); thus, you need to provide Cumulocity IoT credentials instead of Dremio credentials. You need the corresponding Cumulocity IoT permission to use this API. See section [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for further details on the required permission.
 
  You will find an example request by clicking the **REST API** icon in the **Quick links** section of the **Home** page.
 
 #### Request URLs
 
-The URL paths of proxied requests consist of: 
+The URL paths of proxied requests consist of:
+
 * the path of the microservice, which you will find in its application properties (see also section [Managing applications](/users-guide/administration#managing-applications))
 * the corresponding Dremio REST API path, prefixed by "/dremio".
 
->**Info:** For the system eu-latest.cumulocity.com and tenant `datahub-demo`, the base URL would be
-https://datahub-demo.eu-latest.cumulocity.com/service/datahub/
+>**Info:** For the system eu-latest.cumulocity.com and tenant domain name `datahub-demo`, the base URL would be
+https://datahub-demo.eu-latest.cumulocity.com/service/datahub/.
 
-Dremio's SQL and JOB APIs are supported. Headers and request body are as specified in the corresponding Dremio REST API documentation.
-
-Note that you must not provide the authorization header for Dremio when using DataHub REST API. Instead you have to provide the authorization header for DataHub. 
+Dremio's SQL and JOB APIs are supported. Note that you must not provide the authorization header for Dremio when using DataHub REST API. Instead you have to provide the authorization header for DataHub. 
 
 The following APIs are available, followed by an example showing their usage. Each enlisted query functionality comprises:
 
@@ -110,11 +109,11 @@ Cancel a query job given the job ID:
 
 This example submits a Dremio SQL query to fetch the five most recent alarms which already were offloaded, waits for the query to complete, and fetches the result. 
 
-The SQL query, assuming tenant name "my-cdh-tenant~Smith" and "Dremio" as name of your file system in Azure Storage, is:
+Assuming tenantId `t47110815`, `Dremio` as name of your file system in Azure Storage, and the table name `JohnsAlarms`, the SQL query is:
 
 ```sql
 SELECT creationTime, severity, text
-FROM SmithDataLake.Dremio.my-cdh-tenant~Smith.alarms
+FROM t47110815DataLake.Dremio.t47110815.JohnsAlarms
 ORDER BY creationTime DESC
 LIMIT 5
 ```
@@ -123,10 +122,10 @@ This request submits the query, with the URL specific to your organization:
 
 ```console
 POST /dremio/api/v3/sql HTTP/1.1
-Host: my-cdh-tenant.cumulocity.com:9090
+Host: datahub-demo.eu-latest.cumulocity.com
 Content-Type: application/json
 {
-    "sql": "SELECT creationTime, severity, text\nFROM SmithDataLake.Dremio.my-cdh-tenant~Smith.alarms\nORDER BY creationTime DESC\nLIMIT 5"
+    "sql": "SELECT creationTime, severity, text\nFROM t47110815DataLake.Dremio.t47110815.JohnsAlarms\nORDER BY creationTime DESC\nLIMIT 5"
 }
 ```
 
@@ -142,7 +141,7 @@ The following request checks for job completion:
 
 ```console
 GET /dremio/api/v3/job/22feee74-875a-561c-5508-04114bdda000 HTTP/1.1
-Host: my-cdh-tenant.cumulocity.com:9090
+Host:  datahub-demo.eu-latest.cumulocity.com
 ```
 
 The response shows the job status:
@@ -167,7 +166,7 @@ A job state of RUNNING is returned while the query is still being executed, and 
 
 ```console
 GET /dremio/api/v3/job/22feee74-875a-561c-5508-04114bdda000/results HTTP/1.1
-Host: my-cdh-tenant.cumulocity.com:9090
+Host:  datahub-demo.eu-latest.cumulocity.com
 ```
 
 The response might look as follows:
@@ -175,33 +174,35 @@ The response might look as follows:
 ```json
 {
     "rowCount": 5,
-    "schema": [
-        
+    "schema": 
+    [
+        {
             "name": "creationTime",
             "type": {
                 "name": "TIMESTAMP"
-            
+            }
         },
-        
+        {   
             "name": "severity",
             "type": {
-                "name": "VARCHAR"
-            
+                "name": "VARCHAR"  
+            }
         },
-        
+        {
             "name": "text",
             "type": {
                 "name": "VARCHAR"
-            
-        
+            }
+        }
     ],
-    "rows": [
-        
+    "rows": 
+    [
+        {   
             "creationTime": "2019-06-07 13:58:38.197",
             "severity": "MINOR",
             "text": "Something unfortunate went wrong (1)."
-        
-    
+        }
+    ]
 } 
 ```
 

@@ -6,11 +6,11 @@ layout: redirect
 
 Before setting up DataHub, the following prerequisites need to be checked:
 
-You need the connection settings and credentials for a cloud data lake service. During offloading, the data will be written into a folder named after the tenant name to this data lake.
+You need the connection settings and credentials for a cloud data lake service. During offloading, the data will be written into a data lake folder named after the tenant name.
 
 >**Info**: Instructions on how to configure the data lake so that it is accessible via Dremio are available in the [Dremio data source documentation](https://docs.dremio.com/data-sources/). Note that you must not create the data lake source artefact in Dremio yourself; this is done by DataHub.
 
-The DataHub microservice and web application must be available as applications on your tenant. The web application provides the user interface to configure DataHub and to manage offloading pipelines, while the microservice provides the actual backend implementation for this functionality. The web application and the microservice are both named **DataHub**. Both applications are deployed either as:
+The DataHub microservice and web application must be available as applications on your tenant. The web application provides the user interface to configure DataHub and to manage offloading pipelines, while the microservice provides the actual backend implementation for this functionality. The web application and the microservice are named **DataHub** and **Datahub** respectively. Both applications are deployed either as:
 
 * Subscribed application: the applications were subscribed to the tenant by the management or super tenant
 * Own application: the applications were added to the tenant

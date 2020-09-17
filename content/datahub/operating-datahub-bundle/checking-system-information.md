@@ -4,7 +4,9 @@ title: Checking system information
 layout: redirect
 ---
 
-In the navigator, select **Administration** to get information about the system configuration and its status.
+>**Info**: You need administration permissions to access system information. See section [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
+
+In the navigator, select **Administration** and then **System status** to get information about the system configuration and its status.
 
 Under **Microservice** you will find the status of the microservice, which is either marked as green or red. This status reflects whether the microservice can be accessed from the web application. If the microservice is accessible, its current version is shown. If not, check the status of the microservice and its logs as described in section [Managing applications](/users-guide/administration#managing-applications).
 

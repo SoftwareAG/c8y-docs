@@ -147,9 +147,15 @@ You have the choice to  enter the network parameters manually through the consol
 	
 	>**Info:** If the DNS Server IP is unknown, you can enter the previously entered gateway IP here. If any of the network parameters are not available, contact your network administrator.
 
-5. Confirm to continue with the network configuration process.
+5. Provide the default Docker bridge network CIDR. For example, `172.18.0.1/16`
 
-6. Restart your Edge VM.
+	`* Enter Default Docker Bridge Network CIDR (Current value: 172.17.0.1/16. Leave blank to retain the same):`
+
+	>**Info:** Update the default Docker bridge network CIDR only if the IP address of the Edge VM is in the same network range as the Docker network. 
+
+6. Confirm to continue with the network configuration process.
+
+7. Restart your Edge VM.
 
 ##### File input
  

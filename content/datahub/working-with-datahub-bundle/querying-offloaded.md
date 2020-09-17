@@ -109,7 +109,7 @@ Cancel a query job given the job ID:
 
 This example submits a Dremio SQL query to fetch the five most recent alarms which already were offloaded, waits for the query to complete, and fetches the result. 
 
-Assuming tenantId `t47110815`, `Dremio` as name of your file system in Azure Storage, and the table name is `JohnsAlarms` the SQL query is:
+Assuming tenantId `t47110815`, `Dremio` as name of your file system in Azure Storage, and the table name `JohnsAlarms`, the SQL query is:
 
 ```sql
 SELECT creationTime, severity, text

@@ -97,7 +97,7 @@ Click **Show offloading history** to examine the execution history of a pipeline
 
 #### Importing/exporting offloading configurations
 
-The import/export functionality allows you to copy offloading configurations from one DataHub instance to another one. Import/export solely includes the configuration of a pipeline; it does neither include the runtime status of a pipeline nor already exported data.
+The import/export functionality allows you to copy offloading configurations from one DataHub instance to another one. Import/export solely includes the configuration of a pipeline; it includes neither the runtime status of a pipeline nor already exported data.
 
 ##### Export of offloading configurations
 
@@ -109,7 +109,7 @@ The action bar provides the **Export** button, which exports all offloading conf
 
 The action bar provides the **Import** button, which imports offloading configurations from a file with previously exported configurations.
 
-Click **Import** to open the import dialog. Either drop the file in the import canvas or click into the canvas to browse your computer to select the import file. Once the file is selected, a table with all configurations in the file is shown. For each entry, the table lists the task name, the description, and the internal id of the original configuration. The *IMPORT* checkbox defines whether the configuration is imported or not. Duplicate entries cannot be imported and therefore the checkbox is not shown. An entry to import is a duplicate if an already existing configuration has the same target table or the same internal id.
+Click **Import** to open the import dialog. Either drop the file in the import canvas or click into the canvas to browse your computer to select the import file. Once the file is selected, a table with all configurations in the file is shown. For each entry, the table lists the task name, the description, and the internal ID of the original configuration. The *IMPORT* checkbox defines whether the configuration is imported or not. Duplicate entries cannot be imported and therefore the checkbox is not shown. An entry to import is a duplicate if an already existing configuration has the same target table or the same internal id.
 
 To import the selected configurations, click the **Import** button. Click **Cancel** to cancel the import process.
 

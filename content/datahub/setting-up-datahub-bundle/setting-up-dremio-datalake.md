@@ -36,7 +36,7 @@ The following types of data lakes are currently supported:
 |:---|:---|
 |Azure Storage account name|The name of the Azure storage account|
 |Azure Storage container|The name of the storage container; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
-|Root path|The root path in the data lake under which the offloaded data will be stored; default is /; setting a sub-folder allows you to hide other data in the container from DataHub|
+|Root path|The root path in the data lake under which the offloaded data will be stored; default root path is /; setting a sub-folder allows you to hide other data in the container from DataHub|
 |Azure Storage shared access key|The access key used for authentication|
 
 **Amazon S3** is an object storage service offered by Amazon Web Services. The following settings need to be defined for this data lake:
@@ -46,7 +46,7 @@ The following types of data lakes are currently supported:
 |AWS access key|The access key|
 |Access secret|The access secret|
 |Bucket name|The name of the S3 bucket; it must be between 1 and 63 characters long and may contain alphanumeric characters (letters and numbers) as well as dashes (-)|
-|Root path in bucket|The root path within the S3 bucket; default is /; setting a sub-folder allows you to hide other data in the bucket from DataHub|
+|Root path in bucket|The root path within the S3 bucket; default root path is /; setting a sub-folder allows you to hide other data in the bucket from DataHub|
 
 **NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for Edge installations. The following settings need to be defined for this data lake:
 
@@ -60,7 +60,7 @@ The following types of data lakes are currently supported:
 |:---|:---|
 |Namenode host|The host name of the HDFS NameNode|
 |Namenode port|The port of the HDFS NameNode|
-|Root path|The root path within the HDFS filesystem for storing offloaded data; default is /; setting a sub-folder allows you to hide other data in the filesystem from DataHub|
+|Root path|The root path within the HDFS filesystem for storing offloaded data; default root path is /; setting a sub-folder allows you to hide other data in the filesystem from DataHub|
 |Short-circuit local reads|If enabled, Dremio can directly open the HDFS block files; default is disabled|
 |Enable impersonation|If disabled, all requests against HDFS will be made using the user *dremio*; if enabled, the name of the user logged into Dremio will be used to access HDFS; prerequisite is that the user has rwx-permissions for the given root path|
 |Allow VDS-based access delegation|If enabled, data used in virtual datasets (VDS) will be requested from HDFS using the username of the owner of the VDS; if disabled, the name of the user logged into Dremio is used|

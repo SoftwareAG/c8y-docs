@@ -16,4 +16,4 @@ The three top panels show overall summary statistics as well as statistics separ
 
 The table below the summary statistics shows the details on a per-day basis for the selected month. For each day, the volume offloaded and the volume queried are shown as well as their sum, which constitutes the daily volume. In addition the percentage of the monthly volume is shown, i.e., how much did the daily volume contribute to the overall monthly volume. The date of each entry links to the [Query log](/datahub/operating-datahub/#viewing-audit-logs), which lists all queries for the respective day.
 
->**Info** The statistics are refreshed once per hour. Therefore, the statistics for the current month may not include latest data. The statistics are deleted after a retention period, why for older months statistics may no more be available.
+>**Info** The statistics are refreshed once per hour. Therefore, the statistics for the current month may not include the latest data. The statistics are deleted after a retention period, so for older months statistics may no longer be available.

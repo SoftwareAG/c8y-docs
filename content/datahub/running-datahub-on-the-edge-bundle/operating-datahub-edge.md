@@ -78,7 +78,7 @@ The data disk is used for storing the state of DataHub and Dremio and serves as 
 
 Dremio maintains a history of job details and profiles, which can be inspected in Dremio’s job log, i.e. the "Jobs" page of the Dremio UI. This job history must be cleaned up regularly to free the resources necessary for storing it.
 
-Dremio is configured to perform the cleanup of job results automatically without downtime. Default value for the maximum age of stored job results is seven days. For changing that value, a Dremio administrator has to modify the support property *jobs.max.age_in_days*. The changes become effective within 24 hours or after restarting Dremio.
+Dremio is configured to perform the cleanup of job results automatically without downtime. Default value for the maximum age of stored job results is seven days. To change that value, a Dremio administrator has to modify the support property *jobs.max.age_in_days*. The changes become effective within 24 hours or after restarting Dremio.
 
 #### Cleanup of data lake contents
 

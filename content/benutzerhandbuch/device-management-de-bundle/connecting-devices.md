@@ -34,7 +34,7 @@ Um Geräte zu registrieren, können Sie eine der folgenden Optionen wählen:
 * **[Bulk-Geräteregistrierungg](#creds-upload)** - zum Registrieren größerer Gerätemengen in einem Schritt
 
 Sofern Sie die erforderlichen Anwendungen abonniert haben, wird Ihnen eine dritte Option angezeigt:
-**Benutzerdefinierte Geräteregistrierung** - zum Registrieren von Geräten spezifischer Typen, z. B. LoRa oder Sigfox, siehe die Dokumentation zu diesen Services unter [Optionale Services](/benutzerhandbuch/optional-services).
+**Benutzerdefinierte Geräteregistrierung** - zum Registrieren von Geräten spezifischer Typen, z. B. LoRa oder Sigfox, siehe die Dokumentation zu diesen Services unter [Device protocol guide](/device-protocols-guide/overview).
 
 <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
 

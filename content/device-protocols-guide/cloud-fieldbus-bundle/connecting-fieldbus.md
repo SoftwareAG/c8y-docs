@@ -11,7 +11,7 @@ For the following instructions, it is assumed that you have a Cloud Fieldbus ter
 
 To connect a Modbus/RTU device, follow these steps:
 
-1. Physically wire the Modbus/RTU device through RS-485 or RS-232 to the terminal.
+1. Physically connect the Modbus/RTU device through a RS-485 or RS-232 cable to the terminal.
 2. Assign the device a unique Modbus address according to the instructions provided with the Modbus device (e.g. by setting a jumper on the device).
 3. Check the serial communication settings of the device according to the instructions provided with the Modbus device (i.e. baud rates and communication protocol). These have to match with all devices on the bus.
 4. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Modbus** tab.
@@ -56,7 +56,7 @@ Cumulocity IoT will now send a notification to the Modbus terminal that a new de
 
 To connect a CAN device, follow these steps:
 
-1. Physically wire the CAN device to the terminal.
+1. Physically connect the CAN device to the terminal.
 2. Check the serial communication baud rate of the device according to the instructions provided with the device. These have to match all devices on the bus.
 3. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **CAN Bus** tab.
 4. Change the baud rate setting shown in the section **CAN Bus communication** to match the settings on the bus, if needed.
@@ -77,13 +77,13 @@ After completion, a new child device has been added to the terminal and can now 
 
 ### <a name="connect-profibus"></a>Connecting Profibus devices
 
-Connecting Profibus devices slightly differs from the regular plug & play approach of Cloud Fieldbus. The gateway device acts as a slave on the Profibus so it can easily be integrated into an existing infrastructure. This means that Profibus data must be actively sent to the gateway though. Typically, this is done by programming a PLC to actively send information to the gateway via its configured Profibus slave address.
+Connecting Profibus devices slightly differs from the regular plug & play approach of other Cloud Fieldbus protocols. The gateway device acts as a slave on the Profibus so it can easily be integrated into an existing infrastructure. This means that Profibus data must be actively sent to the gateway though. Typically, this is done by programming a PLC to actively send information to the gateway via its configured Profibus slave address.
 
 To connect a Profibus device, follow these steps:
 
 1. Physically wire the Profibus device to the terminal.
 2. In the Device Management application, click **All devices** in the **Devices** menu in the navigator. In the device list, select the terminal and switch to the **Profibus** tab.
-3. The baud rate is automatically detected by the gateway and is just being displayed here.
+3. The baud rate is automatically detected by the gateway and it is displayed here.
 4. Change the transmit rate according to your requirements. The transmit rate is the interval at which measurements are sent to Cumulocity IoT.
 5. Set the slave address of the terminal.
 6. Configure your Profibus Master device to communicate to that slave address. To do so, refer to the gateway manual (e.g. [SmartBox DP](https://devicepartnerportal.softwareag.com/devices/pssystec-gmbh-smartbox-dp/10041)).

@@ -87,15 +87,15 @@ For detailed information on how to decode the payload, refer to the documentatio
 
 Under Options, select on of the following options, if required:
 
-* **Signed** - if the value is a signed number
-* **Packed decimal** - if the value is BCD encoded
+* **Signed** - if the value is a signed number.
+* **Packed decimal** - if the value is BCD encoded.
 
 Under **Functionalities**, specify how this device protocol should behave:
 
-- **Send measurement**: creates a measurement with the decoded value
-- **Raise alarm**: creates an alarm if the value is not equal to zero
-- **Send event**: creates an event with the decoded value
-- **Update managed object**: updates a fragment in a managed object with the decoded value
+- **Send measurement**: creates a measurement with the decoded value.
+- **Raise alarm**: creates an alarm if the value is not equal to zero.
+- **Send event**: creates an event with the decoded value.
+- **Update managed object**: updates a fragment in a managed object with the decoded value.
 
 You can also have a nested structure with several values within a measurement, event or managed object fragment. In case of a measurement, all the properties of the same type will be merged to create a nested structure. In case of an event or a managed object all the properties with the same fragment are merged to create a nested structure. (Also refer to the [example](#nested-structure-example) of a nested structure for a "Position" device protocol below.)
 
@@ -122,7 +122,11 @@ The following images show an example of a nested structure for a device protocol
 
 The message ID should be the same for all the values. Enter the rest of the parameters according to the instructions above. Enter "c8y_Position" in the **Managed object fragment** field and create a new value for each: longitude and latitude.
 
+**New value window, Longitude**
+
 ![Value creation: Longitude-nested](/images/device-protocols-guide/sigfox/sigfox-protocols-lng.png)
+
+**New value window, Latitude**
 
 ![Value creation: Latitude-nested](/images/device-protocols-guide/sigfox/sigfox-protocols-lat.png)
 

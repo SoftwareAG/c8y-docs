@@ -29,8 +29,8 @@ The following description is primarily based on Jasper, but the same configurati
 
 The following sections describe:
 
-* How to [set up your Jasper Control Center account](#link-account) (examplarily)
-* How to configure the [connectivity](#configuration) to the SIM provider in your Cumulocity IoT tenant
-* How to [link SIMs](#linking-sims) and mobile devices
-* Which information is shown in the [Connectivity tab](#connectivity-tab)
-* How to [manage connectivity](#checking-connectivity) from Device Management
+* How to [set up your Jasper Control Center account](#link-account) (examplarily).
+* How to configure the [connectivity](#configuration) to the SIM provider in your Cumulocity IoT tenant.
+* How to [link SIMs](#linking-sims) and mobile devices.
+* Which information is shown in the [Connectivity tab](#connectivity-tab).
+* How to [manage connectivity](#checking-connectivity) from Device Management.

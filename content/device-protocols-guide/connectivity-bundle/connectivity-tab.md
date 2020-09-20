@@ -28,11 +28,10 @@ At the bottom you will find usage information for the current month, i.e. from t
 
 The **SMS** section shows the text messages sent to the device and received from the device, including information on
 
-* when the message was sent or received
-* where it was sent from and where it was sent to
-* the delivery status of the message:
- * For messages to the device: "Pending", if it was not yet received by the device, or "Delivered", if it was received by the device.
- * For messages from the device: "Received", if it was received by the SIM provider, or "Cancelled", if it was not yet received by the SIM provider.
+* When the message was sent or received.
+* The delivery status of the message:
+  * For messages to the device: "Pending", if it was not yet received by the device, or "Delivered", if it was received by the device.
+  * For messages from the device: "Received", if it was received by the SIM provider, or "Cancelled", if it was not yet received by the SIM provider.
 * What the direction of the message is: MT ("Mobile terminated"), if it went to the device, or MO ("Mobile originated") if it came from the device.
 
 Provided you have ADMIN permission for Connectivity, you can also send text messages to the device by entering the text and clicking **Send SMS**.

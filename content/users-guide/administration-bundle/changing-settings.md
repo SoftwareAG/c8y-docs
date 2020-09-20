@@ -186,12 +186,12 @@ Each access token is signed by a signing certificate. Currently there are three 
 3. By providing the public key of a certificate manually to Cumulocity IoT. A certificate definition requires an algorithm information, public key value and validity period.
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-5.png)
- 
+
 4. By specifying the JWKS (JSON Web Key Set) address.
- 
+
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
- 
- 
+
+
  >**Info:** Cumulocity IoT only supports certificates with RSA key, either as a ("n", "e") parameters pair or "x5c" certificate chain. Other key types (e.g. Elliptic-curves) are not supported.
 
 
@@ -420,10 +420,10 @@ In the **Connectivity** page, you can manage credentials for different providers
 
 The following provider settings may currently be specified:
 
-- [Impact](/users-guide/optional-services#nokia-impact)
-- [LoRa](/users-guide/optional-services#lora)
-- [Sigfox](/users-guide/optional-services#sigfox)
-- [SIM](/users-guide/optional-services#connectivity)
+- [Impact](/device-protocols-guide/nokia-impact)
+- [LoRa](/device-protocols-guide/lora)
+- [Sigfox](/device-protocols-guide/sigfox)
+- [SIM](/device-protocols-guide/connectivity)
 
 ![Provider settings](/images/users-guide/Administration/admin-settings-connectivity.png)
 
@@ -434,4 +434,4 @@ The following provider settings may currently be specified:
 3. Enter the credentials of your provider platform. Depending on the provider, these credentials will be either the credentials of your account in the provider platform or the credentials with which you can register in the Cumulocity IoT connectivity page, will be displayed in your account in the provider platform.
 4. Finally, click **Save** to save your settings.
 
-Depending on the provider you have selected, there may be additional fields, which will be explained in the respective agent documentation, see [Optional services](/users-guide/optional-services).
+Depending on the provider you have selected, there may be additional fields, which will be explained in the respective agent documentation, see [Device protocol guide](/device-protocols-guide/overview/).

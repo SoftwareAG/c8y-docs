@@ -9,7 +9,7 @@ You can view and configure the essential mobile network (**WAN**) and local area
 
 The mobile network (**WAN**) parameters shown in the user interface corresponds to the first profile stored in the router. These parameters can be remotely configured directly or via SMS.
 
-For SMS configuration, the router needs to be configured to accept SMS commands. Consult the router’s manual on the relevant parameters for SMS configuration, or use the router’s web user interface. Moreover, a Connectivity management platform must be configured inside your tenant. Refer to [Optional services > Connectivity](/users-guide/optional-services/#connectivity) in the User guide for details.
+For SMS configuration, the router needs to be configured to accept SMS commands. Consult the router’s manual on the relevant parameters for SMS configuration, or use the router’s web user interface. Moreover, a Connectivity management platform must be configured inside your tenant. Refer to [Device protocol guide > Connectivity](/device-protocols-guide/connectivity) in the User guide for details.
 
 For more information on the **Network** tab, see [Device Management > Device details > Network](/users-guide/device-management/#network) in the User guide.
 

@@ -18,7 +18,7 @@ To add a new IMPACT device protocol follow these steps:
 1. In the Device Management application, navigate to the **Device protocol** page, accessible from the **Device types** menu in the navigator.
 2. Click **Add device protocol** in the top menu bar.
 3. In the upcoming window select **IMPACT** as device protocol type.<br><br>
-![New Impact protocol](/images/device-protocols-guide/sigfox/sigfox-newprotocol.png)
+![New Impact protocol](/images/device-protocols-guide/impact/impact-newprotocol.png)
 4. In the next dialog, enter a unique ID, a name and an optional description for the device protocol.<br><br>
 ![New Impact protocol2](/images/device-protocols-guide/impact/impact-newprotocol-idname.png)
 5. Click **Create** to create the new device protocol.

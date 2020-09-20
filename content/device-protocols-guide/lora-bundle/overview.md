@@ -18,12 +18,12 @@ The following illustration gives an overview of the Cumulocity IoT LoRa Actility
 
 The following sections describe how to:
 
-* [Configure your ThingPark account credentials](#configure-credentials) in Cumulocity IoT
+* [Configure your ThingPark account credentials](#configure-credentials) in Cumulocity IoT.
 * [Create device protocols](#create-device-protocols) for all devices.
-* [Register devices](#register-device) and visualize Actility payload using Cumulocity IoT
-* [Deprovision a device](#deprovision-device) in ThingPark
-* [Send operations](#configurable-port) to a device
-* [ThingPark Api availability monitoring](#thingpark-monitoring) in Cumulocity IoT
-* [Troubleshooting](#troubleshooting) for warning messages
+* [Register devices](#register-device) and visualize Actility payload using Cumulocity IoT.
+* [Deprovision a device](#deprovision-device) in ThingPark.
+* [Send operations](#configurable-port) to a device.
+* [ThingPark Api availability monitoring](#thingpark-monitoring) in Cumulocity IoT.
+* [Troubleshooting](#troubleshooting) for warning messages.
 
 > Note that your subscription needs to include this feature. If you do not see the functionality described in this document, please [contact support](/about-doc/contacting-support).

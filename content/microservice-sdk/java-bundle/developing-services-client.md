@@ -45,7 +45,7 @@ Note that receiving messages and receiving specific messages are not supported f
 
 #### Jasper Control Center
 
-Refer to [Optional services > Connectivity](/users-guide/optional-services#connectivity) in the User guide for information about how to set these credentials.
+Refer to [Device protocol guide > Connectivity](/device-protocols-guide/connectivity) in the User guide for information about how to set these credentials.
 
 #### Ericsson
 

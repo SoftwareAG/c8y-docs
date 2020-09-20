@@ -6,13 +6,16 @@ layout: redirect
 
 ### Adding a new device protocol
 
-1. Click **New device protocol** in the top menu bar and select OPC UA as device protocol type.
-2. In the resulting dialog box, enter a name and an optional description for the device protocol.
-3. Optionally, a reference server can be selected. Selecting a reference server allows you to create device protocols based on the OPC UA model stored on an OPC UA server. This greatly simplifies the mapping process, as device protocols can be created based on OPC UA browse paths being actually present on the server.
-4. Click **Create**.<br>
-![Add new device protocol](/images/device-protocols-guide/opcua/opcua-add-protocol.png)
+1. In the Device protocols page, click **New device protocol** in the top menu bar and select OPC UA as device protocol type.
 
-	> **Info:** Selecting a reference server will require you to select a reference node.
+2. In the resulting dialog box, enter a name and an optional description for the device protocol.
+
+3. Optionally, a reference server can be selected. Selecting a reference server allows you to create device protocols based on the OPC UA model stored on an OPC UA server. This greatly simplifies the mapping process, as device protocols can be created based on OPC UA browse paths being actually present on the server.
+
+4. Click **Create**.<br>
+   ![Add new device protocol](/images/device-protocols-guide/opcua/opcua-add-protocol.png)
+
+   > **Info:** Selecting a reference server will require you to select a reference node.
 
 Once the device protocol is created, various configuration settings such as variables, data reporting and constraints can be applied. Initially, the device protocol will be inactive. When active, the gateway will scan the address space of all servers and will automatically apply the device protocol to all nodes which match the criteria. When the device protocol is configured, click **Save**.
 
@@ -32,7 +35,7 @@ The gateway has a scheduling job and after the variables are saved, the gateway 
 
 The functionalities that can be enabled are the following:
 
-#### Send measurement
+**Send measurement**
 
 Turn on **Send measurement** to specify a measurement.
 
@@ -42,7 +45,7 @@ Specify the following parameters:
 - Series are any fragments in measurements that contain a “value” property. For example, “c8y_AccelerationMeasurement.acceleration”.
 - The **Unit** field specifies the unit of the given measurement, for example, “m/s” for velocity.
 
-#### Create alarm
+**Create alarm**
 
 Turn on **Create alarm** if you want to create an alarm out of the resource.
 
@@ -53,7 +56,7 @@ Specify the following parameters (all mandatory):
 - Status - one of ACTIVE, ACKNOWLEDGED, CLEARED
 - Text
 
-#### Send Event
+**Send Event**
 
 Turn on Send event to send an event each time you receive a resource value.
 
@@ -83,7 +86,7 @@ The value will also be populated as a fragment of the created event, under a sta
 }
 ```
 
-#### Custom Actions
+**Custom Actions**
 
 Custom actions are HTTP POST requests which the gateway will send to a defined custom URL. You can define custom headers and body template with the following placeholders available:
 

@@ -8,9 +8,9 @@ There are three data reporting mechanisms which can be applied to read all mappe
 
 - None - The gateway will not read values automatically. The mappings will be applied only when manual read operations are performed on mapped nodes.
 - Cyclic Read - The gateway reads values from mapped nodes at specified interval rates in milliseconds. The minimum allowed rate is 50 milliseconds.
-![OPC UA device protocol](/images/device-protocols-guide/opcua/opcua-data-reporting-cyclic-read.png)
+  ![OPC UA device protocol](/images/device-protocols-guide/opcua/opcua-data-reporting-cyclic-read.png)
 - Subscription - The gateway retrieves values by using OPC UA's own subscription mechanism.
-Possible parameters:
+  Possible parameters:
   - Sampling interval (required): The sampling interval defines a time interval individually for each mapped node. This is the rate at which the server checks the data source for changes.
   - Queue size: The size of the queue where it holds the samples before reporting. If you wish to record samples at a faster rate than reporting interval, you will also need to reserve a longer queue size, to be able to keep all the samples in the server. The reporting interval is defined for the gateway and the value is configurable with the yaml file.
     - Discard: Select whether to discard the oldest or newest item if the samples are exceeding the queue size.
@@ -25,7 +25,7 @@ Possible parameters:
 
 ![OPC UA device protocol](/images/device-protocols-guide/opcua/opcua-data-reporting-subscription.png)
 
->**Important:** Very low interval rates (e.g. 50 ms) for cyclic read and subscription types will result in huge amounts of data being created.
+> **Important:** Very low interval rates (e.g. 50 ms) for cyclic read and subscription types will result in huge amounts of data being created.
 
 ### Applying constraints
 

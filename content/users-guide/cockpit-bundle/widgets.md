@@ -181,7 +181,7 @@ Additionally, a specific date range can be set and the events can be monitored i
 
 The "Fieldbus device" widget lets you see the status of a modbus device and operate it.
 
-For details on the "Fieldbus device" widget, refer to [Optional Services > Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/users-guide/optional-services#fieldbus-device-widget).
+For details on the "Fieldbus device" widget, refer to [Device protocol guide > Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/device-protocols-guide/cloud-fieldbus/#fieldbus-device-widget).
 
 ### Help and service
 
@@ -365,7 +365,7 @@ In the "Rotation" widget you can rotate the object by dragging and moving it aro
 
 The "SCADA" widget provides a graphic representation of the status of a device.
 
-For details on the "SCADA" widget, refer to [Optional Services > Cloud Fieldbus > Monitoring status using the SCADA widget](/users-guide/optional-services/#scada).
+For details on the "SCADA" widget, refer to [Device protocol guide > Cloud Fieldbus > Monitoring status using the SCADA widget](/device-protocols-guide/cloud-fieldbus/#scada).
 
 > **Info:** All SVG files are sanitized in order to remove malicious code.
 

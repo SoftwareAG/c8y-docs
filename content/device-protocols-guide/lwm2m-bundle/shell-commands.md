@@ -7,13 +7,39 @@ layout: redirect
 
 In the **Shell** tab of a device, LWM2M shell commands can be performed. Each command has a different functionality. Find all available placeholders (e.g. “objectID”, “instanceID”) and commands with their respective descriptions below:
 
-|Placeholder|Description|
-|:----------|:----------|
-|objectID|The ID of the object.|
-|instanceID|The ID of the instance. Some objects can have multiple instances. For example, “3300” is a temperature sensor object. Each device can have up to 10 sensors. In this case the instance ID would be 3300/1...10 depending on the sensor that you would like to focus.|
-|resourceID|The ID of the desired resource. The resources describe the characteristics of each object. All instances of a given object have the same resources, but the value of the resources may be different.|
-|Firmware version|The current version of the firmware.|
-|Firmware url|The URL from which the new version of the firmware will be downloaded.|
+<table>
+<col style="width:30%">
+<col style="width:70%">
+<thead>
+<tr>
+<th align="left">Placeholder</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">objectID</td>
+<td align="left">The ID of the object.</td>
+</tr>
+<tr>
+<td align="left">instanceID</td>
+<td align="left">The ID of the instance. Some objects can have multiple instances. For example, “3300” is a temperature sensor object. Each device can have up to 10 sensors. In this case the instance ID would be 3300/1…10 depending on the sensor that you would like to focus.</td>
+</tr>
+<tr>
+<td align="left">resourceID</td>
+<td align="left">The ID of the desired resource. The resources describe the characteristics of each object. All instances of a given object have the same resources, but the value of the resources may be different.</td>
+</tr>
+<tr>
+<td align="left">Firmware version</td>
+<td align="left">The current version of the firmware.</td>
+</tr>
+<tr>
+<td align="left">Firmware url</td>
+<td align="left">The URL from which the new version of the firmware will be downloaded.</td>
+</tr>
+</tbody>
+</table>
+
 
 In the next table you will see all available commands and a brief description of their functionality.
 

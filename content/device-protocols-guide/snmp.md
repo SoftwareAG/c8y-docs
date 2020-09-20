@@ -1,5 +1,5 @@
 ---
-weight: 60
+weight: 90
 title: SNMP
 layout: bundle
 aliases:

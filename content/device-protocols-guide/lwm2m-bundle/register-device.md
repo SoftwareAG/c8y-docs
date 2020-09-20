@@ -12,8 +12,8 @@ To connect LWM2M devices, you need to upload a CSV file with registration data. 
 In the first CSV example you can see the following fields:
 
 <table>
-<col style="width:19%">
-<col style="width:81%">
+<col style="width:20%">
+<col style="width:80%">
 <thead>
 <tr>
 <th style="text-align:left">Field</th>
@@ -67,9 +67,9 @@ In the first CSV example you can see the following fields:
 The table below reflects the full set of possible fields that can be added:
 
 <table>
-<col style="width:20%">
+<col style="width:25%">
 <col style="width:10%">
-<col style="width:55%">
+<col style="width:50%">
 <col style="width:15%">
 <thead>
 <tr>
@@ -172,9 +172,9 @@ The table below reflects the full set of possible fields that can be added:
 In this CSV example, the security mode value is “PSK”. With "PSK" enabled, additional mandatory fields must be filled. All fields, available to "PSK", can be observed in the table below:
 
 <table>
-<col style="width:20%">
+<col style="width:25%">
 <col style="width:10%">
-<col style="width:55%">
+<col style="width:50%">
 <col style="width:15%">
 <thead>
 <tr>
@@ -222,9 +222,9 @@ In this CSV example, the security mode value is “PSK”. With "PSK" enabled, a
 
 The following table explains several optional parameters related to firmware update which help in tuning the Firmware Over The Air (FOTA) parameters on a device level.
 <table>
-<col style="width:20%">
+<col style="width:30%">
 <col style="width:10%">
-<col style="width:55%">
+<col style="width:60%">
 <thead>
 <tr>
 <th style="text-align: left">Field</th>

@@ -1,5 +1,5 @@
 ---
-weight: 110
+weight: 120
 title: Troubleshooting
 layout: redirect
 ---

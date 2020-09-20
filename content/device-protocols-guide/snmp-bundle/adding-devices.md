@@ -80,40 +80,40 @@ The following REST call schedules autodiscovery for the given interval:
 2. In the devices list, click on the SNMP agent device and open the **SNMP** tab of the device.<br><br>![SNMP tab](/images/device-protocols-guide/snmp/snmp-snmp-tab.png)<br>
 3. In the **SNMP devices** section, click **Add SNMP device**.
 4. Provide the SNMP device details:
-<table>
+	<table>
 	<colgroup>
        <col style="width: 15%;">
        <col style="width: 85%;">
     </colgroup>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Name</td>
-<td align="left">Provide a meaningful name to identify the device.</td>
-</tr>
-<tr>
-<td align="left">Device type</td>
-<td align="left">Select the device protocol relevant for the device being added. The device protocol contains the OID and the mapping of the OID to the Cumulocity IoT's model such as alarm/event/measurement.</td>
-</tr>
-<tr>
-<td align="left">IP address</td>
-<td align="left">IP address of the device.</td>
-</tr>
-<tr>
-<td align="left">Port</td>
-<td align="left">Port to be used during device polling.</td>
-</tr>
-<tr>
-<td align="left">SNMP version</td>
-<td align="left">Select one of the 3 SNMP versions (v1, v2c and v3) supported by the SNMP agent:<br>For v1 and v2c, the community target is configurable at the agent side (snmp-agent-gateway.properties).<br>For v3, various additional parameters have to be provided under <strong>Device authentication details</strong>:<br>- <strong>User name</strong>: Provide a valid user name for the device which will be used to authenticate the TRAPs coming from the device. <br>- <strong>Engine ID</strong>: The engine ID must be unique for each device and cannot be edited once saved. The length of the engine ID must have of a minimum of 5 and a maximum of 32 characters.<br>- <strong>Security Level</strong>: There are three types of security levels supported by SNMP v3 (NOAUTH_NOPRIV, AUTH_NOPRIV, AUTH_PRIV). Depending on the security level selected, you need to provide authentication and/or privacy details.</td>
-</tr>
-</tbody>
-</table>
+	<thead>
+	<tr>
+	<th align="left">Field</th>
+	<th align="left">Description</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<td align="left">Name</td>
+	<td align="left">Provide a meaningful name to identify the device.</td>
+	</tr>
+	<tr>
+	<td align="left">Device type</td>
+	<td align="left">Select the device protocol relevant for the device being added. The device protocol contains the OID and the mapping of the OID to the Cumulocity IoT's model such as alarm/event/measurement.</td>
+	</tr>
+	<tr>
+	<td align="left">IP address</td>
+	<td align="left">IP address of the device.</td>
+	</tr>
+	<tr>
+	<td align="left">Port</td>
+	<td align="left">Port to be used during device polling.</td>
+	</tr>
+	<tr>
+	<td align="left">SNMP version</td>
+	<td align="left">Select one of the 3 SNMP versions (v1, v2c and v3) supported by the SNMP agent:<br>For v1 and v2c, the community target is configurable at the agent side (snmp-agent-gateway.properties).<br>For v3, various additional parameters have to be provided under <strong>Device authentication details</strong>:<br>- <strong>User name</strong>: Provide a valid user name for the device which will be used to authenticate the TRAPs coming from the device. <br>- <strong>Engine ID</strong>: The engine ID must be unique for each device and cannot be edited once saved. The length of the engine ID must have of a minimum of 5 and a maximum of 32 characters.<br>- <strong>Security Level</strong>: There are three types of security levels supported by SNMP v3 (NOAUTH_NOPRIV, AUTH_NOPRIV, AUTH_PRIV). Depending on the security level selected, you need to provide authentication and/or privacy details.</td>
+	</tr>
+	</tbody>
+	</table>
 5. Click **Add** to add the device.
 
 The SNMP device will be listed in the devices list and in the **Child devices** tab.

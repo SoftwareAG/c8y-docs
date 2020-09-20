@@ -60,13 +60,10 @@ Following are the specific event types for device bootstrap and registration pro
 The LWM2M agent creates the events with the specific event type during the device bootstrap and registration process.
 
 - Bootstrap event types:
-
-    - c8y_LWM2MDeviceBootstrapStart
-    - c8y_LWM2MDeviceBootstrapEnd
-    - c8y_LWM2MDeviceBootstrapFailure
-
+    - c8y_LWM2MDeviceBootstrapStart.
+    - c8y_LWM2MDeviceBootstrapEnd.
+    - c8y_LWM2MDeviceBootstrapFailure.
 - Registration event types:
-
-    - c8y_LWM2MDeviceRegistration
-    - c8y_LWM2MDeviceDeRegistration
-    - c8y_LWM2MDeviceRegistrationUpdate
+    - c8y_LWM2MDeviceRegistration.
+    - c8y_LWM2MDeviceDeRegistration.
+    - c8y_LWM2MDeviceRegistrationUpdate.

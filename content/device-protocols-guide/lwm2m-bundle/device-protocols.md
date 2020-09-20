@@ -48,31 +48,31 @@ The functionalities that you may enable are the following:
 
 ![Resource functionalities](/images/device-protocols-guide/lwm2m/lwm2m-functionalities.png)
 
-**Send measurement**
+#### Send measurement
 
 Turn on **Send measurement** to specify a measurement.
 
 - Enter the type of the measurement. For example, “c8y_AccelerationMeasurement”.
-- Series are any fragments in measurements that contain a “value” property. For example, in the series field you can enter: “c8y_AccelerationMeasurement.acceleration”
+- Series are any fragments in measurements that contain a “value” property. For example, in the series field you can enter: “c8y_AccelerationMeasurement.acceleration”.
 - The “Unit” field specifies the unit of the given measurement. For example, “m/s” for velocity.
 
-**Create alarm**
+#### Create alarm
 
 Turn on **Create alarm** if you want to create an alarm out of the resource. Specify the following parameters (all mandatory):
 
-- Severity - one of CRITICAL, MAJOR, MINOR, WARNING
-- Type
-- Status - one of ACTIVE, ACKNOWLEDGED, CLEARED
-- Text
+- Severity - one of CRITICAL, MAJOR, MINOR, WARNING.
+- Type.
+- Status - one of ACTIVE, ACKNOWLEDGED, CLEARED.
+- Text.
 
-**Send Event**
+#### Send Event
 
 Turn on **Send event** to send an event each time you receive a resource value. Specify the following parameters:
 
 - Enter the type of the event. For example, "com_cumulocity_model_DoorSensorEvent".
 - Enter the text which will be sent. For example, "Door sensor was triggered".
 
-**Custom Actions**
+#### Custom Actions
 
 Turn on **Custom Actions** to map LWM2M data into Cumulocity IoT using custom data processing actions. For specialized integration use cases, it is required to perform customized data processing on LWM2M data. One example are LWM2M resources of the OPAQUE data type that contain proprietary, binary data, CBOR, XML or alike.
 
@@ -80,7 +80,7 @@ Turn on **Custom Actions** to map LWM2M data into Cumulocity IoT using custom da
 
 Cumulocity IoT LWM2M allows the set of custom actions to be extended using decoder microservices. A decoder microservice is an ordinary Cumulocity IoT microservice that implements a simple decoder interface. The LWM2M agent calls this microservice for decoding data in a customer-specific way. We are providing an according example how to write such a decoder microservice in our public [Bitbucket repository](https://bitbucket.org/m2m/cumulocity-examples/src/develop/).
 
-**Auto observe**
+#### Auto observe
 
 If **Auto-Observe** is turned on for a resource, the LWM2M server observes a specific resource for changes.
 

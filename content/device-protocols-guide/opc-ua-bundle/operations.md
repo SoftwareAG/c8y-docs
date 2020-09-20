@@ -1,5 +1,5 @@
 ---
-weight: 100
+weight: 110
 title: Operations
 layout: redirect
 ---
@@ -52,18 +52,18 @@ The result of this operation will contain output in the following format:
 
 ```json
 {
-	"results": {
-		"ns=2;s=MyLevel": {
-			"13": {
-				"value": {
-					"value": 77.0
-				},
-				"statusCode": 0,
-				"sourcePicoseconds": 0,
-				"serverPicoseconds": 0
-			}
-		}
-	}
+    "results": {
+        "ns=2;s=MyLevel": {
+            "13": {
+                "value": {
+                    "value": 77.0
+                },
+                "statusCode": 0,
+                "sourcePicoseconds": 0,
+                "serverPicoseconds": 0
+            }
+        }
+    }
 }
 ```
 
@@ -73,11 +73,11 @@ This operation returns all attributes of specific node.
 
 ```json
 {
-	"deviceId": "<server-device-Id>",
-	"c8y_ua_command_ReadNodeAttributes": {
-		"node": "ns=2;s=MyEnumObject"
-	},
-	"description": "Read node attributes"
+    "deviceId": "<server-device-Id>",
+    "c8y_ua_command_ReadNodeAttributes": {
+        "node": "ns=2;s=MyEnumObject"
+    },
+    "description": "Read node attributes"
 }
 ```
 
@@ -85,18 +85,18 @@ The result may differ depending on the node type.
 
 ```json
 {
-	"Value": {
-		"value": 1
-	},
-	"DataType": "ns=2;s=MyEnumType",
-	"ValueRank": -1,
-	"AccessLevel": 3,
-	"UserAccessLevel": 3,
-	"MinimumSamplingInterval": -1.0,
-	"Historizing": false,
-	"DisplayName": "MyEnumObject",
-	"WriteMask": 0,
-	"UserWriteMask": 0
+    "Value": {
+        "value": 1
+    },
+    "DataType": "ns=2;s=MyEnumType",
+    "ValueRank": -1,
+    "AccessLevel": 3,
+    "UserAccessLevel": 3,
+    "MinimumSamplingInterval": -1.0,
+    "Historizing": false,
+    "DisplayName": "MyEnumObject",
+    "WriteMask": 0,
+    "UserWriteMask": 0
 }
 ```
 
@@ -108,32 +108,34 @@ This operation supports to read one or more attributes of one or more nodes. Thi
 {
     "deviceId": "<server-device-Id>",
     "c8y_ua_command_ReadAttribute": {
-   	  "nodes": ["ns=3;s=FloatArray"],
-   	  "attribute":"13"
+         "nodes": ["ns=3;s=FloatArray"],
+         "attribute":"13"
     }
     "description": "Read attribute from ns=3;s=FloatArray",
 }
 ```
 
 The result may differ depending on the node type.
+
 ```json
 {
-	"results": {
-		"ns=3;s=FloatArray": {
-			"13": {
-				"value": {
-					"value": [1.0, 2.0, 3.0, 4.0, 5.0]
-				},
-				"statusCode": 0,
-				"sourceTimestamp": 1566572540173,
-				"sourcePicoseconds": 0,
-				"serverTimestamp": 1566573849897,
-				"serverPicoseconds": 0
-			}
-		}
-	}
+    "results": {
+        "ns=3;s=FloatArray": {
+            "13": {
+                "value": {
+                    "value": [1.0, 2.0, 3.0, 4.0, 5.0]
+                },
+                "statusCode": 0,
+                "sourceTimestamp": 1566572540173,
+                "sourcePicoseconds": 0,
+                "serverTimestamp": 1566573849897,
+                "serverPicoseconds": 0
+            }
+        }
+    }
 }
 ```
+
 The index ranges given below are according to the OPC UA specifications and will be transformed to NumericRange.
 
 The syntax is as following:
@@ -143,15 +145,14 @@ The syntax is as following:
     <dimension>: <index> [':' <index>]
 ```
 
-
 ```json
 {
     "description": "Read attribute from ns=3;s=FloatArray",
     "deviceId": "<server-device-Id>",
     "c8y_ua_command_ReadAttribute": {
-   	  "nodes": ["ns=3;s=FloatArray"],
-   	  "attribute":"13",
-   	  "ranges":"0:1"
+         "nodes": ["ns=3;s=FloatArray"],
+         "attribute":"13",
+         "ranges":"0:1"
     }
 }
 ```
@@ -161,19 +162,38 @@ The result may differ depending on the node type.
 ```json
 {
     "results": {
-   	 "ns=3;s=FloatArray": {
-   		 "13": {
-   			 "value": {
-   				 "value": [1.0, 2.0]
-   			 },
-   			 "statusCode": 0,
-   			 "sourceTimestamp": 1566572540173,
-   			 "sourcePicoseconds": 0,
-   			 "serverTimestamp": 1566574513935,
-   			 "serverPicoseconds": 0
-   		 }
-   	 }
+        "ns=3;s=FloatArray": {
+            "13": {
+                "value": {
+                    "value": [1.0, 2.0]
+                },
+                "statusCode": 0,
+                "sourceTimestamp": 1566572540173,
+                "sourcePicoseconds": 0,
+                "serverTimestamp": 1566574513935,
+                "serverPicoseconds": 0
+            }
+        }
     }
+}
+```
+
+### Read complex
+
+This operation reads many attributes from many nodes at single call.
+
+```json
+{
+  "deviceId" : "<server-device-Id>",
+  "c8y_ua_command_ReadComplex": {
+       "nodeAttrs": {
+         "ns=2;s=MyEnumObject": {
+           "13":"",
+           "11":""
+         }
+       }
+  },
+  "description":"Read complex"
 }
 ```
 
@@ -185,11 +205,11 @@ This operation reads history values and applies the mappings except of alarm map
 {
     "deviceId": "<server-device-Id>",
     "c8y_ua_command_HistoricReadOperation": {
-   	 "nodeId": "ns=2;s=MyLevel",
+        "nodeId": "ns=2;s=MyLevel",
        "processMappings": true,
-   	 "dateFrom": "2019-06-13T10:43:00+02:00",
-   	 "dateTo": "2019-06-13T10:52:00+02:00",
-   	 "tagType": "TAG"
+        "dateFrom": "2019-06-13T10:43:00+02:00",
+        "dateTo": "2019-06-13T10:52:00+02:00",
+        "tagType": "TAG"
     },
     "description": "Historic read"
 }
@@ -200,17 +220,17 @@ This operation reads history values and applies the mappings except of alarm map
 
 ### Historic data binary upload
 
-his operation reads historic values and only saves those values to a file which can be retrieved using the binary API.
+This operation reads historic values and only saves those values to a file which can be retrieved using the binary API.
 
 ```json
 {
     "deviceId": "<server-device-Id>",
     "c8y_ua_command_HistoricDataUploadOperation": {
-   	 "nodeId": "ns=2;s=MyLevel",
-   	 "dateFrom": "2019-01-03T09:53:00+02:00",
-   	 "dateTo": "2019-06-13T18:53:00+02:00",
-   	 "chunkSize": 1,
-   	 "compress": true
+        "nodeId": "ns=2;s=MyLevel",
+        "dateFrom": "2019-01-03T09:53:00+02:00",
+        "dateTo": "2019-06-13T18:53:00+02:00",
+        "chunkSize": 1,
+        "compress": true
     },
     "description": "Upload history data"
 }
@@ -224,18 +244,18 @@ This operation writes values to the node/nodes.
 
 ```json
 {
-	"deviceId": "<server-device-Id>",
-	"c8y_ua_command_WriteValue": {
-		"values": {
-			"ns=3;s=LocalizedText": {
-				"value": "This is a localized text"
-			},
-			"ns=3;s=Double": {
-				"value": "3.14159"
-			}
-		}
-	},
-	"description": "Write values to different nodes"
+    "deviceId": "<server-device-Id>",
+    "c8y_ua_command_WriteValue": {
+        "values": {
+            "ns=3;s=LocalizedText": {
+                "value": "This is a localized text"
+            },
+            "ns=3;s=Double": {
+                "value": "3.14159"
+            }
+        }
+    },
+    "description": "Write values to different nodes"
 }
 ```
 
@@ -245,20 +265,20 @@ This operation is similar to the previous one, but instead of writing to the val
 
 ```json
 {
-	"deviceId": "<server-device-Id>",
-	"c8y_ua_command_WriteAttribute": {
-		"values": {
-			"ns=3;s=LocalizedText": {
-				"attribute": "13",
-				"value": "This is a localized text"
-			},
-			"ns=3;s=Double": {
-				"attribute": "13",
-				"value": "3.14159"
-			}
-		}
-	},
-	"description": "Write attributes’ values to different attributes of different nodes"
+    "deviceId": "<server-device-Id>",
+    "c8y_ua_command_WriteAttribute": {
+        "values": {
+            "ns=3;s=LocalizedText": {
+                "attribute": "13",
+                "value": "This is a localized text"
+            },
+            "ns=3;s=Double": {
+                "attribute": "13",
+                "value": "3.14159"
+            }
+        }
+    },
+    "description": "Write attributes’ values to different attributes of different nodes"
 }
 ```
 
@@ -266,17 +286,17 @@ Optionally, it is possible to write a value range when the attribute value is an
 
 ```json
 {
-	"deviceId": "<server-device-Id>",
-	"c8y_ua_command_WriteAttribute": {
-		"values": {
-			"ns=3;s=FloatArray": {
-				"attribute": "13",
-				"ranges": "0:1",
-				"value": "2.0,4.0"
-			}
-		}
-	},
-	"description": "Write attribute value to array attribute"
+    "deviceId": "<server-device-Id>",
+    "c8y_ua_command_WriteAttribute": {
+        "values": {
+            "ns=3;s=FloatArray": {
+                "attribute": "13",
+                "ranges": "0:1",
+                "value": "2.0,4.0"
+            }
+        }
+    },
+    "description": "Write attribute value to array attribute"
 }
 ```
 
@@ -286,11 +306,11 @@ This operation reads the description of a method node.
 
 ```json
 {
-	"deviceId": "<server-device-Id>",
-	"c8y_ua_command_GetMethodDescriptionOperation": {
-		"nodeId": "ns=2;s=MyMethod"
-	},
-	"description": "get method description"
+    "deviceId": "<server-device-Id>",
+    "c8y_ua_command_GetMethodDescriptionOperation": {
+        "nodeId": "ns=2;s=MyMethod"
+    },
+    "description": "get method description"
 }
 ```
 
@@ -298,60 +318,60 @@ The result describes a method, it’s parent object, input and output arguments.
 
 ```json
 {
-	"nodeId": "ns=2;s=MyMethod",
-	"name": "MyMethod",
-	"parentNodeId": "ns=2;s=MyDevice",
-	"parentName": "MyDevice",
-	"inputArguments": [{
-			"name": "Operation",
-			"description": "The operation to perform on parameter: valid functions are sin, cos, tan, pow",
-			"dataType": "String",
-			"dataTypeId": "i=12"
-		},
-		{
-			"name": "Parameter",
-			"description": "The parameter for operation",
-			"dataType": "Double",
-			"dataTypeId": "i=11"
-		}
-	],
-	"outputArguments": [{
-		"name": "Result",
-		"description": "The result of 'operation(parameter)'",
-		"dataType": "Double",
-		"dataTypeId": "i=11"
-	}]
+    "nodeId": "ns=2;s=MyMethod",
+    "name": "MyMethod",
+    "parentNodeId": "ns=2;s=MyDevice",
+    "parentName": "MyDevice",
+    "inputArguments": [{
+            "name": "Operation",
+            "description": "The operation to perform on parameter: valid functions are sin, cos, tan, pow",
+            "dataType": "String",
+            "dataTypeId": "i=12"
+        },
+        {
+            "name": "Parameter",
+            "description": "The parameter for operation",
+            "dataType": "Double",
+            "dataTypeId": "i=11"
+        }
+    ],
+    "outputArguments": [{
+        "name": "Result",
+        "description": "The result of 'operation(parameter)'",
+        "dataType": "Double",
+        "dataTypeId": "i=11"
+    }]
 }
 ```
 
-### Get method
+### Call method
 
 This operation calls the method on the OPC UA server. It requires complete input arguments with an additional “value” fragment.
 
 ```json
 {
-	"deviceId": "<server-device-Id>",
-	"c8y_ua_command_CallMethodOperation": {
-		"request": {
-			"nodeId": "ns=2;s=MyMethod",
-			"arguments": [{
-					"name": "Operation",
-					"description": "The operation to perform on parameter: valid functions are sin, cos, tan, pow",
-					"dataType": "String",
-					"dataTypeId": "i=12",
-					"value": "pow"
-				},
-				{
-					"name": "Parameter",
-					"description": "The parameter for operation",
-					"dataType": "Double",
-					"dataTypeId": "i=11",
-					"value": "5"
-				}
-			]
-		}
-	},
-	"description": "call method"
+    "deviceId": "<server-device-Id>",
+    "c8y_ua_command_CallMethodOperation": {
+        "request": {
+            "nodeId": "ns=2;s=MyMethod",
+            "arguments": [{
+                    "name": "Operation",
+                    "description": "The operation to perform on parameter: valid functions are sin, cos, tan, pow",
+                    "dataType": "String",
+                    "dataTypeId": "i=12",
+                    "value": "pow"
+                },
+                {
+                    "name": "Parameter",
+                    "description": "The parameter for operation",
+                    "dataType": "Double",
+                    "dataTypeId": "i=11",
+                    "value": "5"
+                }
+            ]
+        }
+    },
+    "description": "call method"
 }
 ```
 
@@ -360,14 +380,14 @@ Power of 5 is 25:
 
 ```json
 {
-	"statusCode": 0,
-	"result": [{
-		"name": "Result",
-		"description": "The result of 'operation(parameter)'",
-		"dataType": "Double",
-		"dataTypeId": "i=11",
-		"value": "25.0"
-	}]
+    "statusCode": 0,
+    "result": [{
+        "name": "Result",
+        "description": "The result of 'operation(parameter)'",
+        "dataType": "Double",
+        "dataTypeId": "i=11",
+        "value": "25.0"
+    }]
 }
 ```
 

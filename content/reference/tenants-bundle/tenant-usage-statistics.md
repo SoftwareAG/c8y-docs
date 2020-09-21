@@ -65,6 +65,7 @@ JSON via MQTT specific counting details:
 
 * Invalid requests are counted, for example when the message payload is invalid.
 * Bulk creation requests are counted as a single "requestCount"/"deviceRequestCount" and multiple inbound data transfer count.
+* Bulk creation requests with a wrong payload are not counted for inbound data transfer count.
 
 ### Total inbound data transfer
 

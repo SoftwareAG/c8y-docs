@@ -4,6 +4,11 @@ title: Managed object collection
 layout: redirect
 ---
 
+> **Important:** Things to note when querying managed objects without the ROLE\_INVENTORY\_READ role:
+>
+> * The response contains managed objects which are in hierarchy, or a direct access to them was configured via [Administration > Managing permissions > Assigning inventory roles to users](/users-guide/administration#attach-inventory).
+> * Checking hierarchy for each resource is a performance expensive operation. Hence, the maximum deep level was limited to 5. This means that a user which has a complex hierarchy with more than 5 nested groups/device assets, **may not receive all data** when querying managed objects without the ROLE\_INVENTORY\_READ role.
+
 ### ManagedObjectCollectionAPI [application/vnd.com.nsn.cumulocity.managedObjectCollection+json]
 
 |Name|Type|Occurs|Description|
@@ -16,9 +21,7 @@ layout: redirect
 
 ### GET - Representation of a ManagedObjectCollection
 
-**Response body:** ManagedObjectCollection  
-
-**Required role:** ROLE\_INVENTORY\_READ
+**Response body:** ManagedObjectCollection
 
 #### Example request - Get managed objects of a particular type
 
@@ -70,8 +73,6 @@ HTTP/1.1
 ### GET - Representation of a ManagedObjectCollection by query
 
 **Response body:** ManagedObjectCollection
-
-**Required role:** ROLE\_INVENTORY\_READ
 
 #### Example request - Get managed objects found by query
 

@@ -102,7 +102,7 @@ The following sections explain the tasks that can be performed using the post-in
 2. [Run post-installation](/edge/installation/#running-the-post-installation-process)
 3. [Update license and SSL certificates](/edge/installation/#updating-the-license-and-ssl-certificates)
 4. [Run post-upgrade](/edge/installation/#running-post-upgrade)
-5. [Expand data disk size](/edge/installation/#expanding-the-data-disk-size)
+5. [Expand disk size](/edge/installation/#expanding-the-disk-size)
 6. [Update tenant password](/edge/installation/#updating-the-tenant-password)
 7. [Configure Edge Agent](/edge/installation/#configuring-edge-agent)
 8. [Enable microservice hosting feature](/edge/installation/#enabling-or-disabling-microservice-hosting-feature)
@@ -295,21 +295,23 @@ The post-upgrade process consists of multiple steps which are executed sequentia
 
 If you have configured the network in the ‘source’ version, the new configuration will be performed in the upgrade version when this task is executed.
 
-#### Expanding the data disk size
+#### Expanding the disk size
+
+You can expand the disk size of installation disk and data disk at the same time.
 
 1. Shutdown the VM.
 
-2. Edit the data disk size in the hypervisor. See the hypervisor specific documentation for increasing the disk size.  
+2. Edit the disk size in the hypervisor. See the hypervisor specific documentation for increasing the disk size.  
 
 3. Start the VM.
 
 4. Run the *post_installation.sh* script.
 
-5. Select the option **5. Expand data disk size**.
+5. Select the option **5. Expand disk size**.
 
-6. Confirm to continue with expanding the data disk size.
+6. Confirm to continue with expanding the disk size.
 
-The disk size expanding process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process halts and a failure message appears on the console.
+The disk size expansion process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process halts and a failure message appears on the console.
 
 #### Updating the tenant password
 

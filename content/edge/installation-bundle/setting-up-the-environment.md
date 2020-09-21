@@ -39,7 +39,7 @@ $ Password: manage
 The **admin** user can change the hostname of the Edge VM using the command:
 
 ```shell
-[admin@server ~]$ hostnamectl set-hostname <hostname>
+[admin@server ~]$ sudo hostnamectl set-hostname <hostname>
 ```
 The default hostname of the Edge VM is **server**.
 

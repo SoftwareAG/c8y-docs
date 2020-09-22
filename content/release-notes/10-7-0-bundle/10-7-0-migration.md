@@ -47,5 +47,4 @@ For details, see the [ngx-bootstrap release notes](https://github.com/valor-soft
 
 #### Deprecation of breadcrumbs
 
-As announced in the [Migration notes for release 10.5.7](/release-notes/10-5-7/#10-5-7-migration), the breadcrumb functionality for groups and devices is now configurable and breadcrumbs on devices and groups are turned off by default.
-
+As announced in the [Migration notes for release 10.5.7](/release-notes/10-5-7/#10-5-7-migration), the breadcrumb functionality for groups and devices has been changed to improve performance. Breadcrumbs on devices and groups have been made configurable and are turned off by default. 

@@ -8,7 +8,7 @@ Device statistics are collected for each inventory object with at least one meas
 
 Device statistics are counted with daily and monthy rate. 
 
-Only requests with *Persistent* and *Quiescent* processing modes are considered when counting device statistics.
+All requests are considered when counting device statistics, no matter what processing mode is used.
 
 The following requests are counted:
 

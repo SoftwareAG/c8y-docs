@@ -13,8 +13,6 @@ For your convenience, we provide the hypervisor examples for setting up Cumuloci
 
 For all hypervisors, we recommend you to use UTC on your host machines.
 
->**Info:** VirtualBox support is deprecated, so it is not recommended to use it in a production environment.
-
 ### VM login details
 
 SSH login into Cumulocity IoT Edge is allowed through the “admin” user. All operational activities described in this guide need to be carried out through the admin user.
@@ -42,13 +40,6 @@ The **admin** user can change the hostname of the Edge VM using the command:
 [admin@server ~]$ sudo hostnamectl set-hostname <hostname>
 ```
 The default hostname of the Edge VM is **server**.
-
-Use the IP address provided during [network configuration](/edge/installation#configuration).
-
-|Hypervisor|Default IP Address|
-|:---|:---|
-|Virtual Box|192.168.56.120
-|Hyper-V|192.168.66.10
 
 >**Info:**
 Root access is not supported in the Edge VM instance. Changes made as root user might cause failure of the described operational procedures.

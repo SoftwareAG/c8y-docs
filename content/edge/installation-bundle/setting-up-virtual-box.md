@@ -1,8 +1,16 @@
 ---
 weight: 90
-title: Example setup for VirtualBox
+title: Experimental example set up on VirtualBox
 layout: redirect
 ---
+
+### Installation requirements
+
+* Virtualbox version 5.2.8, to be downloaded from https://www.virtualbox.org.
+	
+	>**Info:** Support for VirtualBox is deprecated and it is not recommended to be used in a production environment. The Virtualbox version 5.2.8 can be used only for testing.
+
+* Download the Edge VM image (OVA file). 
 
 ### Setting up VirtualBox
 
@@ -76,9 +84,9 @@ Follow the steps below, to setup port forwarding.
 3. In the **Port Forwarding Rules** window, click the plus icon. Add the following details for HTTP:<br>
 **Name**: HTTP <br>
 **Protocol**: TCP<br>
-**Host IP**: The Operating System IP address on which Edge VM is running. <br>
+**Host IP**: The operating system IP address on which the Edge VM is running. <br>
 **Host port**: 80 <br>
-**Guest IP**: The Edge VM IP address which is always 192.168.56.120.<br>
+**Guest IP**: The Edge VM IP address is always 192.168.56.120.<br>
 **Guest port**: 80<br><br>
 <img src="/images/edge/edge-port-forwarding3.png" name="Port forwarding Step 3" style="width:75%;"/>
 
@@ -87,3 +95,41 @@ Once all port details have been added, it should look similar to the following s
 <img src="/images/edge/edge-port-forwarding4.png" name="Port forwarding result" style="width:75%;"/>
  
 5. Click **OK** in the **Port Forwarding Rules** window and then in the **Settings** window to complete port forwarding on Edge VM.
+
+### Upgrading on VirtualBox
+
+>**Info:** Upgrading OPC UA artifact from an older version to the newer version is not supported.
+
+To upgrade the Edge VM on VirtualBox:
+
+1. Power off the VM. To do so, access the VM and run the following command in the terminal:
+
+```
+[admin@server ~]$ sudo shutdown
+```
+2. Navigate to the VM directory. For VirtualBox it is *[USER-DIRECTORY]\VirtualBox VMs*. Move the entire VM folder (e.g. EDGE-server) to a safe location.
+
+3. In the VirtualBox Manager, right-click on the VM and then click **Remove**. In the upcoming window, select **Remove Only** so that the VM will not be deleted. 
+<img src="/images/edge/edge-update-remove.jpg" name="Remove VM" style="width:75%;"/> 
+
+4. Import the new version of EDGE server. To do so, click **File** and then **Import Appliance** in the VirtualBox Manager. Select the new OVA file (upgraded one supplied by Cumulocity IoT) and click **Open** to import it. 
+<br>The new Edge version should now be visible in the VirtualBox Manager in powered-off state. 
+
+5. Right-click the VM and select **Settings**. In the upcoming window, select **Storage**. Two disks should be visible called *disk001.vmdk* and *disk002.vmdk*. 
+
+6. Right-click the second disk i.e. *disk002.vmdk*, and select **Remove attachment**. 
+
+7. Right-click the second controller i.e. SATA controller and select **Add Hard Disk**. In the upcoming window, select **Choose existing disk**. 
+<img src="/images/edge/edge-update-harddisk.jpg" name="Add hard disk" style="width:75%;"/> 
+
+8. In the explorer, navigate to the previously backed-up EDGE folder as per step 2. Select the secondary disk, i.e. *disk002.vmdk*, and click **OK**.
+
+9. Start the Edge VM by clicking **Start**. 
+
+10. Run the post-upgrade task to complete the upgrade process. See [Running post-upgrade](/edge/installation/#running-post-upgrade).
+
+### Converting VMDK file to OVA file format
+
+1. Download and install the VMWare Open Virtualization Format Tool (ovftool) on the host machine.
+
+2.  

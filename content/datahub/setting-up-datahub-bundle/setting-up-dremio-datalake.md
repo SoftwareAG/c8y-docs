@@ -6,7 +6,7 @@ layout: redirect
 
 The setup of DataHub requires you to choose a Dremio account name, and provide credentials to the data lake. In the navigator, select **Settings** to define those settings.
 
->**Info**: You need administration permissions to define the settings. See section [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
+>**Info:** You need administration permissions to define the settings. See the section on [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 
 The settings whose meaning may not be obvious are equipped with a help icon. Click on the icon to get more information.
 

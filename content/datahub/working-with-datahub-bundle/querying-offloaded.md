@@ -51,7 +51,7 @@ Note that the API might change any time and Software AG does not provide any gua
 
 The DataHub server also can handle REST requests for Dremio query processing. The DataHub server acts as a proxy for these requests and forwards them to Dremio for evaluation.
 
-In contrast to directly calling the Dremio REST API, in this case authentication is done against Cumulocity (i.e., using the Cumulocity DataHub user); thus, you need to provide Cumulocity IoT credentials instead of Dremio credentials. You need the corresponding Cumulocity IoT permission to use this API. See section [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for further details on the required permission.
+In contrast to directly calling the Dremio REST API, in this case authentication is done against Cumulocity IoT (i.e., using the Cumulocity IoT DataHub user); thus, you need to provide Cumulocity IoT credentials instead of Dremio credentials. You need the corresponding Cumulocity IoT permission to use this API. See the section on [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for further details on the required permission.
 
  You will find an example request by clicking the **REST API** icon in the **Quick links** section of the **Home** page.
 

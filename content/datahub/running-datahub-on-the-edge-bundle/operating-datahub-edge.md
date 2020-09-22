@@ -4,7 +4,7 @@ title: Operating DataHub Edge
 layout: redirect
 ---
 
-Similar to the cloud variant, DataHub Edge UI allows you to check system information and view audit logs. See section [Operating DataHub](/datahub/operating-datahub) for details.
+Similar to the cloud variant, DataHub Edge UI allows you to check system information and view audit logs. See the section on [Operating DataHub](/datahub/operating-datahub) for details.
 
 When managing DataHub Edge, the following standard tasks are additionally relevant.
 
@@ -12,11 +12,11 @@ When managing DataHub Edge, the following standard tasks are additionally releva
 
 If problems occur, you should follow these steps:
 
-- Perform a health check, see the [Health check](#health-check) section
-- Check the log files, see the [Log files](#log-files) section
-- Monitor the system processes, see the [Monitoring](#monitoring) section
+- Perform a health check, see the section on [Health check](#health-check)
+- Check the log files, see the section on [Log files](#log-files)
+- Monitor the system processes, see the section on [Monitoring](#monitoring)
 
-If you still need to contact [support](/about-doc/contacting-support), include the output of the diagnostics script. See the [Diagnostics](/edge/operation/#diagnostics) section for details of how to run it.
+If you still need to contact [support](/about-doc/contacting-support), include the output of the diagnostics script. See the section on [Diagnostics](/edge/operation/#diagnostics) for details of how to run it.
 
 #### <a name="health-check"></a>Health check
 
@@ -68,7 +68,7 @@ docker logs -f cdh-executor
 The containers are configured to rotate log files with rotation settings of two days and a maximum file size of 10 MB. 
 
 #### <a name="monitoring"></a>Monitoring
-Cumulocity IoT Edge uses *Monit* for management and monitoring of relevant processes. See section [Monitoring](/edge/operation/#monitoring) for details. The DataHub Edge processes, namely the DataHub backend and the Dremio nodes, are also monitored by Monit.
+Cumulocity IoT Edge uses *Monit* for management and monitoring of relevant processes. See the section on [Monitoring](/edge/operation/#monitoring) for details. The DataHub Edge processes, namely the DataHub backend and the Dremio nodes, are also monitored by Monit.
 
 ### Data disk management and monitoring
 
@@ -78,7 +78,7 @@ The data disk is used for storing the state of DataHub and Dremio and serves as 
 
 Dremio maintains a history of job details and profiles, which can be inspected in Dremio’s job log, i.e. the "Jobs" page of the Dremio UI. This job history must be cleaned up regularly to free the resources necessary for storing it.
 
-Dremio is configured to perform the cleanup of job results automatically without downtime. Default value for the maximum age of stored job results is seven days. To change that value, a Dremio administrator has to modify the support property *jobs.max.age_in_days*. The changes become effective within 24 hours or after restarting Dremio.
+Dremio is configured to perform the cleanup of job results automatically without downtime. The default value for the maximum age of stored job results is seven days. To change that value, a Dremio administrator has to modify the support property *jobs.max.age_in_days*. The changes become effective within 24 hours or after restarting Dremio.
 
 #### Cleanup of data lake contents
 

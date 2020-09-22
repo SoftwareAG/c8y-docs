@@ -101,7 +101,7 @@ The import/export functionality allows you to copy offloading configurations fro
 
 ##### Export of offloading configurations
 
-The action bar provides the **Export** button, which exports all offloading configurations. The button is disabled if no offloading configurations are defined. If you click the **Export** button, all offloading configurations are exported into a file. The file is located in the local download folder used by your browser.
+The action bar provides **Export**, which exports all offloading configurations. The button is disabled if no offloading configurations are defined. If you click the **Export** button, all offloading configurations are exported into a file. The file is located in the local download folder used by your browser.
 
 >**Warning:** You must not modify the contents of the export file as this might corrupt the import step.
 
@@ -109,9 +109,9 @@ The action bar provides the **Export** button, which exports all offloading conf
 
 The action bar provides the **Import** button, which imports offloading configurations from a file with previously exported configurations.
 
-Click **Import** to open the import dialog. Either drop the file in the import canvas or click into the canvas to browse your computer to select the import file. Once the file is selected, a table with all configurations in the file is shown. For each entry, the table lists the task name, the description, and the internal ID of the original configuration. The *IMPORT* checkbox defines whether the configuration is imported or not. Duplicate entries cannot be imported and therefore the checkbox is not shown. An entry to import is a duplicate if an already existing configuration has the same target table or the same internal id.
+Click **Import** to open the import dialog. Either drop the file in the import canvas or click into the canvas to browse your computer to select the import file. Once the file is selected, a table with all configurations in the file is shown. For each entry, the table lists the task name, the description, and the internal ID of the original configuration. The **IMPORT** checkbox defines whether the configuration is imported or not. Duplicate entries cannot be imported and therefore the checkbox is not shown. An entry to import is a duplicate if an already existing configuration has the same target table or the same internal ID.
 
-To import the selected configurations, click the **Import** button. Click **Cancel** to cancel the import process.
+To import the selected configurations, click **Import**. Click **Cancel** to cancel the import process.
 
 To change the import file, click the delete icon next to the file name and select a new file to import the configurations from. 
 

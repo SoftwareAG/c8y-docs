@@ -4,9 +4,9 @@ title: Monitoring compaction jobs
 layout: redirect
 ---
 
-During offloading, data from the Cumulocity IoT database is written into files in the data lake. In order to ensure a compact physical layout of those files, DataHub automatically runs periodic compaction jobs in the background. For each offloading pipeline, a corresponding compaction job is set up and scheduled.
+During offloading, data from the Operational Store of Cumulocity IoT is written into files in the data lake. In order to ensure a compact physical layout of those files, DataHub automatically runs periodic compaction jobs in the background. For each offloading pipeline, a corresponding compaction job is set up and scheduled.
 
-You can examine the corresponding latest compaction job for all offloading pipelines or examine the compaction job history for a specific pipeline.
+You can examine the latest compaction job for all offloading pipelines or examine the compaction job history for a specific pipeline.
 
 >**Info**: You need administration permissions to access the compaction job histories. See section [Defining DataHub permissions and roles](/datahub/setting-up-datahub#defining-permissions) for details.
 
@@ -18,7 +18,7 @@ In the navigator, select **Compaction** under **Status** to get an overview of t
 
 | Component | Description |
 | ---         | --- |
-| Status icon | The status of the execution, which is either running, error, or failed
+| Status icon | The status of the execution, which is either running, successful, or failed
 | Job name | The name of the pipeline the compaction job is associated with
 | Execution time | The point in time the execution was started
 | Runtime (s) | The runtime of the execution in seconds
@@ -40,7 +40,7 @@ The list shows the execution history with each execution consisting of the follo
 
 | Component | Description |
 | ---         | --- |
-| Status icon | The status of the execution, which is either running, error, or failed
+| Status icon | The status of the execution, which is either running, successful, or failed
 | Job name | The name of the pipeline the compaction job is associated with
 | Execution time | The point in time the execution was started
 | Runtime (s) | The runtime of the execution in seconds
@@ -76,8 +76,8 @@ Select a compaction job overview in the compaction history per offloading job or
 | Job name | The name of the pipeline
 | Job ID | The internal ID of the job
 | Job execution ID | The Dremio ID of this execution
-| Target source name | The folder name in the data lake
-| Target folder | The path to the target source in the data lake
+| Target table name | The folder name in the data lake
+| Target folder | The path to the target table in the data lake
 | Daily run | Indicates whether the job is executed daily
 | Monthly run | Indicates whether the job is executed monthly
 

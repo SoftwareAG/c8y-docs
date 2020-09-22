@@ -106,7 +106,7 @@ It is possible to fetch aggregated results by passing additional param: aggregat
 |Host|{{hostname}}
 
 ```http
- GET <<url>>/measurement/measurements/series?source=<<sourdeID>>&dateFrom=<<startDate>>&dateTo=<<endDate>>
+ GET <<url>>/measurement/measurements/series?source=<<sourceID>>&dateFrom=<<startDate>>&dateTo=<<endDate>>
 ```
 #### Example response
 
@@ -138,7 +138,7 @@ Because of this use case, dots must not be used in neither measurement fragment 
 |Host|{{hostname}}
 
 ```http
-GET <<url>>/measurement/measurements/series?series=c8y_AccelerationMeasurement.acceleration&source=<<sourdeID>>&dateFrom=<<startDate>>&dateTo=<<endDate>>
+GET <<url>>/measurement/measurements/series?series=c8y_AccelerationMeasurement.acceleration&source=<<sourceID>>&dateFrom=<<startDate>>&dateTo=<<endDate>>
 ```
 #### Example response
 

@@ -49,6 +49,21 @@ Hover over the rule you want to delete and click the delete icon at the right.
 
 <img src="/images/users-guide/Administration/admin-retention-rules-delete.png" alt="Delete retention rule">
 
+>**Info:** All retention rules are executed sequentially and independently of each other. So if we have two retention rules -- one more specific with greater maximum age that defines subset of the documents that are defined by more common rule with lower maximum age, then effectively it will work like we have a single, more common rule.
+>
+>For example given two following rules:
+>   
+><img src="images/users-guide/Administration/admin-retention-rules-commspec1.png" alt="Retention rules"/>
+> 
+>All measurements with the type `c8y_Temperature`, older than 30 days will be removed, including those where source equals `12345`.
+>             
+>On the other hand when we have the following retention rules defined:
+>
+><img src="/images/users-guide/Administration/admin-retention-rules-commspec2.png" alt="Retention rules"/>
+> 
+>The retention process will be removing the measurements with the type `c8y_Temperature` and older than 30 days, all other measurements will be removed when older than 60 days.
+
+>**Info:** The source parameter is the id of the device. When it is defined, the retention process only removes the documents directly related to the device represented by the source, not its children or groups it belongs to.
 
 ### <a name="files"></a>Managing files in the file repository
 

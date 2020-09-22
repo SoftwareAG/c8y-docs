@@ -77,7 +77,7 @@ Alternatively, you can retrieve the backend version with a GET request to <kbd><
 
 The response looks like this:
 
-``` json
+```json
 {
     "category": "system",
     "value": "1004.6.12",
@@ -421,7 +421,7 @@ $ docker images
 
 It yields an output similar to this:
 
-```shell
+```plain
 REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
 hello-microservice-java   1.0.0-SNAPSHOT      3e5e7aeea7bc        52 minutes ago      143MB
 ```
@@ -441,7 +441,7 @@ $ docker run -p 8082:80 -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_USER_TENANT> \
 
 If your Docker image has run successfully, you shall see the output on the console similar to the one below.
 
-```shell
+```plain
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
 ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \

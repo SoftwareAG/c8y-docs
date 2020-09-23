@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 35
 title: "Use Case: Demand Forecasting"
 layout: bundle
 

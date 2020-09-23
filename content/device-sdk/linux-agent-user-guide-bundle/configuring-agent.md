@@ -4,98 +4,92 @@ layout: redirect
 weight: 50
 ---
 
-The Linux Agent repository includes the _cumulocity-agent.conf_ file. When you install the agent, the configuration file is deployed to _/usr/share/cumulocity-agent/cumulocity-agent.conf_ by default. The agent reads this configuration file at the startup. You can manually edit this file to adjust different parameters to suit your needs.  
+The Linux Agent repository includes the _cumulocity-agent.conf_ file. When you install the agent, the configuration file is deployed to _/usr/share/cumulocity-agent/cumulocity-agent.conf_ by default. The agent reads this configuration file at startup. You can manually edit this file to adjust different parameters to suit your needs.  
 
 ### Server URL
 
 The agent by default connects to the cumulocity.com instance. In case you’re using a different instance, you can change the server URL.
-The URL supports two protocol schemas. To use the HTTP version, set the URL to format `https://example.com`. To use the MQTT version, set the URL to format `mqtts://example.com`.
+The URL supports two protocol schemas. To use the HTTP version, set the URL to the format *https://example.com*. To use the MQTT version, set the URL to the format *mqtts://example.com*.
 
-|Parameters|Example values|
+|Parameter|Example value|
 |---|---|
-|server|`server=https://mqtt.cumulocity.com`<br>or<br>`server=mqtts://mqtt.cumulocity.com`|
+|server|server=https://mqtt.cumulocity.com<br>or<br>server=mqtts://mqtt.cumulocity.com|
 
 ### Log settings
 
 <table>
 <colgroup>
 <col style="width: 25%;">
-<col style="width: 75%;">
+<col style="width: 50%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
-<th>Parameters</th>
-<th>Explanations</th>
+<th>Parameter</th>
+<th>Description</th>
+<th>Example value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>log.path</td>
 <td>The file location for storing the agent’s logs</td>
+<td>log.path=/var/log/cumulocity-agent.log</td>
 </tr>
 <tr>
 <td>log.level</td>
-<td>Filter for lowest severity level to be enabled for logging. Available log severities are <code>debug</code>, <code>info</code>, <code>notice</code>, <code>warning</code>, <code>error</code>, and <code>critical</code></td>
+<td>Filter for lowest severity level to be enabled for logging. Available log severities are debug, info, notice, warning, error, and critical</td>
+<td>log.level=debug</td>
 </tr>
 <tr>
 <td>log.quota</td>
 <td>The maximum log file size before the log rotates, in KB</td>
+<td>log.quota=8192</td>
 </tr>
 </tbody>
 </table>
 
-
-
-|Parameters|Example values|  
-|---|---|
-|log.path|`log.path=/var/log/cumulocity-agent.log`|
-|log.level|`log.level=debug`|  
-|log.quota|`log.quota=8192`|
-
 ### Plugins
 
-Each feature is implemented as a Lua plugin. You can enable it by appending it to the `lua.plugins` parameter.
+Each feature is implemented as a Lua plugin. 
 
-- **system**
-The system plugin enables the agent to periodically report CPU and memory usage
-- **logview**
-The logview plugin allows you to remotely view the device and agent logs from Cumulocity IoT
-- **shell**
-The shell plugin allows you to change all these parameters in the configuration file remotely from the device shell functionality from Cumulocity IoT
-- **version**
-The version plugin reports the agent version to Cumulocity IoT
-- **modbus**
-The Modbus plugin implements the Cloud Fieldbus Modbus protocol
-- **canopen**
-The CANopen plugin implements the Cloud Fieldbus CANopen protocol</td>
+|Plugin|Description|
+|---|---|
+|system|Enables the agent to periodically report CPU and memory usage|
+|logview|Allows you to remotely view the device and agent logs from Cumulocity IoT|
+|shell|Allows you to change all these parameters in the configuration file remotely from the device shell functionality from Cumulocity IoT|
+|version|Reports the agent version to Cumulocity IoT|
+|modbus|Implements the Cloud Fieldbus Modbus protocol|
+|canopen|Implements the Cloud Fieldbus CANopen protocol|
 
-|Parameters|Example values|
+You can enable it by appending it to the `lua.plugins` parameter.
+
+|Parameter|Example value|
 |---|---|
 |lua.plugins|`lua.plugins=system,logview,shell,canopen`|
 
+
 ### Agent measurements
 
-It defines the interval for sending memory and CPU usage measurements, in seconds. The **system** plugin is required to activate the system configuration
+It defines the interval for sending memory and CPU usage measurements, in seconds. The system plugin is required to activate the system configuration.
 
-|Parameters|Example values|
+|Parameter|Example value|
 |---|---|
-|system.mem.interval|`system.mem.interval=300`|
-|system.cpu.interval|`system.cpu.interval=300`|
+|system.mem.interval|system.mem.interval=300|
+|system.cpu.interval|system.cpu.interval=300|
 
 ### Modbus configuration
 
-There are several Modbus parameters you can change via the configuration file. The **modbus** plugin is required to activate the Modbus configuration
-- **modbus.transmitrate**
-The transmit rate for reporting measurements to Cumulocity IoT [in seconds]
-- **modbus.pollingrate**
-The polling rate for querying Modbus slave for data [in seconds]
-- **modbus.readonly**
-It controls the ability to write data to slaves. `1` is read-only, `0` is writable.
+You can change various Modbus parameters via the configuration file. The **modbus** plugin is required to activate the Modbus configuration.
 
-|Parameters|Example values|  
+- **modbus.transmitrate** - the transmit rate for reporting measurements to Cumulocity IoT [in seconds]
+- **modbus.pollingrate** - the polling rate for querying the Modbus slave for data [in seconds]
+- **modbus.readonly** - controls the ability to write data to slaves. `1` is read-only, `0` is writable.
+
+|Parameter|Example value|  
 |---|---|
-|modbus.pollingrate|`modbus.pollingrate=30`|
-|modbus.readonly|`modbus.readonly=0`|  
+|modbus.pollingrate|modbus.pollingrate=30|
+|modbus.readonly|modbus.readonly=0|  
 
 > **Info:** We recommend you to change the Modbus parameters via the Modbus Cloud Fieldbus UI.
 
@@ -105,9 +99,9 @@ It controls the ability to write data to slaves. `1` is read-only, `0` is writab
 - **modbus.tcp.port**
   The TCP port is used for Modbus-TCP. The default setting is 502.
 
-|Parameters|Example values|
+|Parameter|Example value|
 |---|---|
-|modbus.tcp.port|`modbus.tcp.port=502`|
+|modbus.tcp.port|modbus.tcp.port=502|
 
 #### Modbus-RTU configuration
 
@@ -175,11 +169,11 @@ The baud rate of the CAN line [in kbit/s]
 
 #### CANopen port
 
-The default settings are to use `can0` interface, in case you need to configure a different CAN interface, for example, `can1`, edit this parameter.
+The default setting is to use the `can0` interface. If you need to configure a different CAN interface, for example, `can1`, edit this parameter.
 
 |Parameters|Example values|
 |---|---|
-|canopen.port|`canopen.port=can1`|
+|canopen.port|canopen.port=can1|
 
 #### CANopen interface type
 
@@ -191,7 +185,7 @@ This is the type when your CAN device is supported by the socketCAN driver and a
 - **canopen.type=slcan**
 This is the type when your CAN device is recognized as a serial interface by the Linux kernel, for example, `/dev/ttyACM0`. In this case, you also need to inform the agent the serial port your device is mounted as `canopen.serial=/dev/ttyACM0` or `canopen.serial=/dev/ttyUSB0`
 
-|Parameters|Example values|
+|Parameter|Example value|
 |---|---|
 |canopen.type|`canopen.type=can`|
 |canopen.serial|`canopen.serial=/dev/ttyUSB0`|

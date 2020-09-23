@@ -44,6 +44,7 @@ The following templates can be used to publish data on the topics <kbd>s/us</kbd
 + [100,createdDeviceName,deviceType](#100)
 + [101,createdChildId,childName,childType](#101)
 + [105 (Get children, reply: 106,child1,child2,…)](#105)
++ [107,fragmenttoBeUninstalled1,fragment2,...](#107)
 + [110,serialNumber,hardwareModel,revision](#110)
 + [111,IMEI,ICCID,IMSI,MCC,MNC,LAC,cellId](#111)
 + [112,latitude,longitude,altitude,accuracy](#112)
@@ -52,27 +53,32 @@ The following templates can be used to publish data on the topics <kbd>s/us</kbd
 + [115,currentFirmwareName,version,url](#115)
 + [116,currentSoftwareName1,version1,url1,name2,…](#116)
 + [117,requiredInterval](#117)
++ [118,supportedLog1,log2,...](#118)
++ [119,supportedConfiguration1,config2,...](#119)
++ [120,configType,url,filename[,time]](#120)
 
-**[Measurement templates](#measurements)**
+**[Measurement templates](#measurement-templates)**
 + [200,fragment,series,value,unit[,time]](#200)
 + [210,rssi,ber[,time]](#210)
 + [211,temperature[,time]](#211)
 + [212,battery[,time]](#212)
 
-**[Alarm templates](#alarms)**
+**[Alarm templates](#alarm-templates)**
 + [301,criticalAlarmType[,text][,time]](#301)
 + [302,majorAlarmType[,text][,time]](#302)
 + [303,minorAlarmType[,text][,time]](#303)
 + [304,warningAlarmType[,text][,time]](#304)
 + [305,alarmType,newSeverity](#305)
 + [306,alarmTypeToBeCleared](#306)
++ [307,alarmType,fragmentToBeRemoved1,fragment2,...](#307)
 
-**[Event templates](#events)**
+**[Event templates](#event-templates)**
 + [400,eventType,text[,time]](#400)
 + [401,latitude,longitude,altitude,accuracy[,time]](#401)
 + [402,latitude,longitude,altitude,accuracy[,time] (incl. inv. update)](#402)
++ [407,eventType,fragmentToBeRemoved1,fragment2,...](#407)
 
-**[Operation templates](#operation)**
+**[Operation templates](#operation-templates)**
 + [500 (get pending)](#500)
 + [501,typeToSetToExecuting](#501)
 + [502,typeToSetToFailed,fialureReason](#502)
@@ -308,7 +314,7 @@ Set currently installed configuration of the device.
 120,myType,http://www.my.url,config.bin,2020-07-22T17:03:14.000+02:00
 ```
 
-#### <a name="measurements">Measurement templates (2xx)</a>
+#### <a name="measurement-templates">Measurement templates (2xx)</a>
 
 ##### <a name="200">Create custom measurement (200)</a>
 
@@ -374,7 +380,7 @@ Create a measurement of type **c8y_Battery**.
 212,95,2016-06-22T17:03:14.000+02:00
 ```
 
-#### <a name="alarms">Alarm templates (3xx)</a>
+#### <a name="alarm-templates">Alarm templates (3xx)</a>
 
 ##### <a name="301">Create CRITICAL alarm (301)</a>
 
@@ -484,7 +490,7 @@ Remove one or more fragments from an alarm of a specific type.
 307,c8y_TemperatureAlarm,c8y_Position,c8y_Configuration
 ```
 
-#### <a name="events">Event templates (4xx)</a>
+#### <a name="event-templates">Event templates (4xx)</a>
 
 ##### <a name="400">Create basic event (400)</a>
 
@@ -553,7 +559,7 @@ Remove one or more fragments from an event of a specific type.
 407,c8y_MyEvent,c8y_Position,c8y_Configuration
 ```
 
-#### <a name="operation">Operation templates (5xx)</a>
+#### <a name="operation-templates">Operation templates (5xx)</a>
 
 ##### <a name="500">Get PENDING operations (500)</a>
 
@@ -616,6 +622,10 @@ It enables the device to send additional parameters that trigger additional step
 
 The client can receive the following templates when subscribing to <kbd>s/ds</kbd>.
 
+**[Inventory template](#subscribe-inventory)**
+
++ [106,child1,child2,…](#106)
+
 **[Operations template](#subscribe-operations)**
 
 + [510,serial (restart)](#510)
@@ -630,10 +640,15 @@ The client can receive the following templates when subscribing to <kbd>s/ds</kb
 + [521,serial,url (download configuration)](#521)
 + [522,serial,logFileToBeSend,start,stop,searchText,maxLines](#522)
 + [523,serial,communicationMode (SMS/IP)](#523)
++ [524,serial,url,configType](#524)
++ [525,serial,currentFirmwareName,version,url,dependency](#525)
++ [526,serial,configType](#526)
++ [527,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,url,action,configurationMarker,url,type](#527)
++ [528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...](#528)
 
 #### Inventory templates (1xx)
 
-##### Get children of device (106)
+##### <a name="106">Get children of device (106)</a>
 
 List all children of the device.
 
@@ -675,7 +690,7 @@ Run the command being sent in the operation.
 511,DeviceSerial,execute this
 ```
 
-##### <a name="503">Configuration (513)</a>
+##### <a name="513">Configuration (513)</a>
 
 Set the configuration being sent in the operation.
 

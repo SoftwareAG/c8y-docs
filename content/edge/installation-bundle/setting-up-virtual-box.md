@@ -4,21 +4,67 @@ title: Experimental example set up on VirtualBox
 layout: redirect
 ---
 
-### Installation requirements
+Cumulocity IoT Edge does not officially support VirtualBox. If you want to convert a VMWare image (OVF file) to VirtualBox image (OVA file), and run Cumulocity IoT Edge on it for experimental or trial purposes, you can follow the example below.
 
-* Virtualbox version 5.2.8, to be downloaded from https://www.virtualbox.org.
-	
-	>**Info:** Support for VirtualBox is deprecated and it is not recommended to be used in a production environment. The Virtualbox version 5.2.8 can be used only for testing.
+### Converting VMWare OVF file to VirtualBox OVA file
 
-* Download the Edge VM image (OVA file). 
+1. Download and install the VMWare Open Virtualization Format Tool (OVF Tool) on the host machine.
 
-### Setting up VirtualBox
+2. Go to the location of the OVF file.
 
-Download the VirtualBox package for your operating system from [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads) and install it.
+3. Run the following command to convert the OVF file to OVA file:
 
->**Important:** VirtualBox support is deprecated, therefore we do not recommended to use it in a production environment.
+	`ovftool.exe source_ovf_file target_ova_file`
 
->**Info:** Depending on the operating system and VirtualBox version you are using, the following steps and the screenshots might slightly differ. The sample screenshots shared below were created using Virtual Box 5.2.8.
+	For example:
+
+	`ovftool.exe EDGE-server-10.7.0.0-2059-VMware.ovf EDGE-server-10.7.0.0-2059-VBox.ova`
+
+	<img src="/images/edge/edge-ovftool-command.png" name="OVF tool command" style="width:75%;"/>
+
+4. Import the converted VirtualBox image (OVA file) in VirtualBox Manager.
+
+5. Create a host-only network adapter for the virtual machine. See [Creating a host-only network interface](/edge/installation/#creating-a-host-only-network-adapter).
+
+6. Click **Settings** > **Network** > **Adapter 2**.
+
+7. Select **Enable Network Adapter**.
+
+8. Select **Host-only Adapter** from the **Attached to:** dropdown list.
+
+9. Select the host-only network adapter that you created before, from the **Name** dropdown list.
+
+	<img src="/images/edge/edge-host-only-adapter.png" name="OVF tool command" style="width:75%;"/>
+
+10. Start the Edge VM and log in as **root** user. See [Starting the virtual machine](/edge/installation/#starting-the-virtual-machine).
+
+11. Configure and activate the network adapter.
+    
+    - Start the *NetworkManager* service.
+	 
+		`[root@server ~]# systemctl start NetworkManager`
+
+	- Update the name of the newly added connection.
+		 
+		`[root@server ~]# nmcli connection modify “Wired connection 2” connection.id “enp0s8"`
+
+	- Activate the connection.
+
+		`[root@server ~]# nmcli connection up enp0s8`
+
+		This command provides an error **Error: Connection activation failed: IP configuration could not be reserved (no available address, timeout, etc.)**. You can ignore this error.
+
+12. Restart the Edge VM.
+
+13. Log in as **admin** user.
+
+14. Configure the Edge VM network using the post-installer. See [Configuring the Edge network](/edge/installation/#configuring-the-edge-network).
+
+15. Run the post installation process. [Running the post installation process](/edge/installation/#running-the-post-installation-process).
+
+### Creating a host-only network adapter
+
+>**Info:** Depending on the operating system and VirtualBox version you are using, the following steps and the screenshots might differ. The sample screenshots shared below were created using VirtualBox 5.2.8.
 
 1. In the VirtualBox, click **Tools** > **Network** in the top left.<br>
 <img src="/images/edge/edge-vb-01.png" name="Configure network" style="width:75%;"/>
@@ -50,11 +96,7 @@ The VirtualBox now is installed and the network is set.
 
 In the VirtualBox, the virtual machine is imported via **File** > **Import Appliance** > Select .ova file. 
 
-Alternatively, you can double-click on the provided .ova file. The machine will automatically be added to the VirtualBox VM Manager. 
-
-The machine has predefined settings for disk, CPU and memory.
-
-Once the machine has been imported it will show up in the Manager application.
+The machine will automatically be added to the VirtualBox VM Manager. The machine has predefined settings for disk, CPU and memory.
 
 Start the virtual machine by clicking **Start** on the top left.
 
@@ -128,34 +170,4 @@ To upgrade the Edge VM on VirtualBox:
 
 10. Run the post-upgrade task to complete the upgrade process. See [Running post-upgrade](/edge/installation/#running-post-upgrade).
 
-### Converting VMWare OVF file to VirtualBox OVA file
-
-1. Download and install the VMWare Open Virtualization Format Tool (OVF Tool) on the host machine.
-
-2. Go to the location of the OVF file and open the command prompt.
-
-3. Run the following command to convert the OVF file to OVA file:
-
-	`ovftool.exe source_ovf_file target_ova_file`
-
-	For example:
-
-	`ovftool.exe EDGE-server-10.7.0.0-2059-VMware.ovf EDGE-server-10.7.0.0-2059-VBox.ova`
-
-	<img src="/images/edge/edge-ovftool-command.png" name="OVF tool command" style="width:75%;"/>
-
-4. Import the converted VirtualBox image (OVA file) in VirtualBox Manager.
-
-5. Click **Settings** > **Network** > **Adapter 2**.
-
-6. Select **Enable Network Adapter**.
-
-7. Select **Host-only Adapter** from the **Attached to:** dropdown list.
-
-8. Select the host-only adapter that you had created before from the **Name** dropdown list.
-
-	<img src="/images/edge/edge-host-only-adapter.png" name="OVF tool command" style="width:75%;"/>
-
-9. Start the Edge VM and log in as **root** user.
-
-10. Configure and activate the new network adapter
+		

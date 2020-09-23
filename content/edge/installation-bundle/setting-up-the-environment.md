@@ -9,7 +9,6 @@ For your convenience, we provide the hypervisor examples for setting up Cumuloci
 * [Example setup for ESXi VMWare](/edge/installation#setting-up-esxi)
 * [Example setup for VMWare Workstation Player](/edge/installation#setting-up-vmware)
 * [Example setup for Hyper-V](/edge/installation#setting-up-hyper-v)
-* [Example setup for VirtualBox](/edge/installation#setting-up-virtual-box)
 
 For all hypervisors, we recommend you to use UTC on your host machines.
 

@@ -42,7 +42,7 @@ sudo make uninstall
 sudo make install
 ```
 
-Then both files will be copied to the destination.
+Then copy both files to the destination.
 
 Finally, run your agent. You will see that the debug messages are recorded with timestamps in your log file. By default, the path to log file is _/var/log/cumulocity-agent.log_.
 

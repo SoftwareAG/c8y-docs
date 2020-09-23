@@ -42,11 +42,11 @@ function sendCPU()
 end
 ```
 
-`cdb:get(key) -> value` returns the value of the corresponding key set in your _cumulocity-agent.conf_. It is very useful if you want to have custom configurable variables. In the lua script, `cdb:get('example.cpu.interval')` returns `10` as configured above.
+`cdb:get(key) -> value` returns the value of the corresponding key set in your _cumulocity-agent.conf_. It is very useful if you want to have custom configurable variables. In the Lua script, `cdb:get('example.cpu.interval')` returns `10` as configured above.
 
 `c8y:addTimer(interval, callback) -> timer` needs two arguments. The first argument is the interval of your timer in milliseconds. The second argument is a function to a callback. It returns a timer object.
 
-`timer:start()` starts the timer object. In this example, `cpuTimer:start()`. To know more functions timer object can do, check your _cumulocity-sdk-c/src/master/doc/lua.html_ file.
+`timer:start()` starts the timer object. In this example, `cpuTimer:start()`. To learn more about the functions of the timer object, check your _cumulocity-sdk-c/src/master/doc/lua.html_ file.
 
 The function `sendCPU()` is called every 10 seconds. It creates a CPU usage measurement value (set to 20%) and sends it to the Cumulocity IoT platform.
 
@@ -56,7 +56,7 @@ The function `sendCPU()` is called every 10 seconds. It creates a CPU usage meas
 10,326,POST,/measurement/measurements,application/json,,%%,DATE UNSIGNED NUMBER,"{""time"":""%%"",""source"":{""id"":""%%""},""type"":""c8y_CPUMeasurement"",""c8y_CPUMeasurement"":{""Workload"":{""value"":%%,""unit"":""%""}}}"
 ```
 
-`c8y.ID` returns your device ID. Thus, the content of the sending request is actually `326,<device ID>,20`. To know more about SmartREST1.0, refer to the [Reference guide > SmartREST](/reference/smartrest/) section. The second argument of `c8y:send()` is optional so it is omitted in this example. The detail of `c8y:send()` is documented in your _cumulocity-sdk-c/src/master/doc/lua.html_ file.
+`c8y.ID` returns your device ID. Thus, the content of the sending request is actually `326,<device ID>,20`. To learn more about SmartREST1.0, refer to the [Reference guide > SmartREST](/reference/smartrest/) section. The second argument of `c8y:send()` is optional so it is omitted in this example. The detail of `c8y:send()` is documented in your _cumulocity-sdk-c/src/master/doc/lua.html_ file.
 
 Before you run the agent again, do not forget to add `cpumesurements` to `lua.plugins=` in your _cumulocity-agent.conf_ file.
 

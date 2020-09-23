@@ -5,12 +5,12 @@ weight: 40
 ---
 
 Besides sending requests, e.g., measurements to the Cumulocity IoT platform, another important function is handling incoming messages from Cumulocity IoT; either responses from `GET` queries or real-time operations.  
-Here two examples are presented. The first example shows only how to handle the `c8y_Restart` operation in Lua. It is a simplified version of the [ex-06-lua](/device-sdk/cpp/#use) example in the Cumulocity IoT C++ SDK. The second example shows a more practical implementation including saving the operation ID after rebooting.
+Here, two examples are presented. The first example only shows you how to handle the `c8y_Restart` operation in Lua. It is a simplified version of the [ex-06-lua](/device-sdk/cpp/#use) example in the Cumulocity IoT C++ SDK. The second example shows you a more practical implementation including saving the operation ID after rebooting.
 
 
 ### <a name="restart"></a>Restart device example - simple
 
-First, this example sends the operation status `EXECUTING` when it receives the `c8y_Restart` operation. Then, it logs "Executing restart.." in the log file, and sends `SUCCESSFUL` as the operation status update to the server.
+First, this example sends the operation state `EXECUTING` when it receives the `c8y_Restart` operation. Then, it logs "Executing restart.." in the log file, and sends `SUCCESSFUL` as the operation state update to the server.
 
 In the beginning, the agent needs to send `c8y_Restart` as `c8y_SupportedOperations` to notify this agent can handle restart operation.
 
@@ -24,7 +24,7 @@ const char *ops = ",\"" Q2(c8y_Command) Q(c8y_ModbusDevice) Q(c8y_SetRegister)
         Q(c8y_CANopenConfiguration) Q(c8y_Restart)"\"";
 ```
 
-Then recompile your agent. Now your agent is ready for sending the `c8y_Restart` operation when the agent starts up.
+Then recompile your agent. Now your agent will send the `c8y_Restart` operation when it starts up.
 
 Next, create a _restart-simple.lua_ file under the _/lua_ directory or copy the existing example code
 
@@ -55,11 +55,11 @@ end
 11,804,,$.c8y_Restart,$.id,$.deviceId
 ```
 
-`11` means it is a response template. `804` is the message ID. The blank field is a base JSON path. `$.c8y_Restart` is a conditional JSON path, which is necessary for this example to identify the operation. `$.id` receives the operation ID and `$.deviceId` holds the Device ID. For more details on the SmartREST response template, refer to [Reference guide > SmartREST > Template](/reference/smartrest/#templates).
+`11` means it is a response template. `804` is the message ID. The blank field is a base JSON path. `$.c8y_Restart` is a conditional JSON path, which is necessary for this example to identify the operation. `$.id` receives the operation ID and `$.deviceId` holds the device ID. For more details on the SmartREST response template, refer to [Reference guide > SmartREST > Template](/reference/smartrest/#templates).
 
 When the agent receives the message ID, this message handler triggers to invoke `restart()`. `r` is the recursive variable. So, `r:value(2)` points the received operation ID.
 
-The operation status needs to transit `PENDING`->`EXECUTING`->`SUCCESSFUL`/`FAILED`. The agent needs to update the operation state to `EXECUTING` first. This is what
+The operation state needs to transit `PENDING`->`EXECUTING`->`SUCCESSFUL`/`FAILED`. The agent needs to update the operation state to `EXECUTING` first. This is what
 
 ```lua
 c8y:send('303,' .. r:value(2) .. ',EXECUTING', 1)
@@ -67,7 +67,7 @@ c8y:send('303,' .. r:value(2) .. ',EXECUTING', 1)
 
 is doing. In practice, the agent needs to execute reboot afterwards, but since this is a simple example, replace it by logging debug message "Executing restart..". This message will be buffered when the connection gets lost as the message priority is marked `1`.
 
-After finishing the execution, the agent needs to inform the that it is done successfully using the following code.
+After finishing the execution, the agent needs to inform that it is done using the following code.
 
 ```lua
 c8y:send('303,' .. r:value(2) .. ',SUCCESSFUL', 1)
@@ -79,7 +79,7 @@ In case of failure, you can also mark `FAILED` with failure reason by using mess
 c8y:send('304,' .. r:value(2) .. ',Write your failure reason')
 ```
 
-Now, your time to try it out. Before you run the agent again, do not forget to add `restart-simple` to `lua.plugins=` in your _cumulocity-agent.conf_ file.
+Now, it is your time to try it out. Before you run the agent again, do not forget to add `restart-simple` to `lua.plugins=` in your _cumulocity-agent.conf_ file.
 
 ```shell
 lua.plugins=hello,cpumeasurments,restart-simple

@@ -8,12 +8,12 @@ For the last example, let's write a script to support software management. For d
 
 ### Software management example
 
-This section introduces a Lua plugin that handles `c8y_SoftwareList` operation. Sending the installed package list to the Cumulocity IoT platfrom and triggering to install/remove packages from there.
-This example assumes the device supports **Debian** packages.
+This section introduces a Lua plugin that handles `c8y_SoftwareList` operation, sending the installed package list to the Cumulocity IoT platfrom and triggering the installation or removal of packages from there.
+This example assumes that the device supports **Debian** packages.
 
 First, the agent needs to send `c8y_SoftwareList` as `c8y_SupportedOperations` as we did in the restart example section.
 Edit _src/demoagent.cc_ and add `Q(c8y_SoftwareList)`. Then recompile your agent.
-Now your agent is ready to send `c8y_SoftwareList` operation when the agent starts up.
+Now your agent will send a `c8y_SoftwareList` operation when it starts up.
 
 Create a _software.lua_ file under the _/lua_ directory or by copying the existing example code.
 
@@ -23,7 +23,7 @@ cp lua/example/software.lua lua/
 
 Let's take a look at the example code step by step.
 
-In the beginning, you can find the `apt` commands to install/remove/list Debian packages. If your device supports different package controlling system, modify this part.
+In the beginning, you can find the `apt` commands to install/remove/list Debian packages. If your device supports a different package controlling system, modify this part.
 
 ```lua
 -- Linux commands
@@ -66,7 +66,7 @@ local function pkg_list()
 end
 ```
 
-If you create any `c8y_SoftwareList` operation from the UI, the agent will receive the list of software packages which are supposed to be installed. In other words, the agent also receives unchanged packages information with the message template `814`. The `aggregate` function sums up all received packages information into a table.
+If you create any `c8y_SoftwareList` operation from the UI, the agent will receive the list of software packages which are supposed to be installed. In other words, the agent also receives information about unchanged packages with the message template `814`. The `aggregate` function sums up information about all received packages in a table.
 ![restarted-device](/images/device-sdk/software-install.png)
 
 After the aggregation finishes, the `perform` function is called. The function:
@@ -78,7 +78,7 @@ After the aggregation finishes, the `perform` function is called. The function:
 - Downloads software packages from the server (inventory/binaries)
 - Removes software packages by the pre-defined command
 - Installs software packages by the pre-defined command
-- Updates with reason the operation state to FAILED if any of the above tasks failed,
+- Updates the operation state to FAILED (with a reason) if any of the above tasks failed
 - Updates the operation state to SUCCESSFUL
 - Sends the updated package list to the server
 

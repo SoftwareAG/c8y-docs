@@ -128,8 +128,34 @@ To upgrade the Edge VM on VirtualBox:
 
 10. Run the post-upgrade task to complete the upgrade process. See [Running post-upgrade](/edge/installation/#running-post-upgrade).
 
-### Converting VMDK file to OVA file format
+### Converting VMWare OVF file to VirtualBox OVA file
 
-1. Download and install the VMWare Open Virtualization Format Tool (ovftool) on the host machine.
+1. Download and install the VMWare Open Virtualization Format Tool (OVF Tool) on the host machine.
 
-2.  
+2. Go to the location of the OVF file and open the command prompt.
+
+3. Run the following command to convert the OVF file to OVA file:
+
+	`ovftool.exe source_ovf_file target_ova_file`
+
+	For example:
+
+	`ovftool.exe EDGE-server-10.7.0.0-2059-VMware.ovf EDGE-server-10.7.0.0-2059-VBox.ova`
+
+	<img src="/images/edge/edge-ovftool-command.png" name="OVF tool command" style="width:75%;"/>
+
+4. Import the converted VirtualBox image (OVA file) in VirtualBox Manager.
+
+5. Click **Settings** > **Network** > **Adapter 2**.
+
+6. Select **Enable Network Adapter**.
+
+7. Select **Host-only Adapter** from the **Attached to:** dropdown list.
+
+8. Select the host-only adapter that you had created before from the **Name** dropdown list.
+
+	<img src="/images/edge/edge-host-only-adapter.png" name="OVF tool command" style="width:75%;"/>
+
+9. Start the Edge VM and log in as **root** user.
+
+10. Configure and activate the new network adapter

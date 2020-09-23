@@ -4,11 +4,11 @@ layout: redirect
 weight: 30
 ---
 
-Before starting anything, make sure that you have compiled the Cumulocity IoT C++ SDK.
+Before getting started, make sure that you have compiled the Cumulocity IoT C++ SDK.
 
-If you would like to use the **Cloud Remote Access** feature, refer to [Building the Cumulocity IoT Cloud Remote Access service](#building-the-cumulocity-cloud-remote-access-service).  
-If you would like to use the **Modbus** support, make sure that you have installed the libmodbus and LuaSocket packages. Details on how to enable Modbus support are described in [Building the agent with a Modbus support](#building-the-agent-with-modbus-support).  
-For **CANopen** support, check if you have the CANopen library and SocketCAN connector commercially licensed by [port industrial automation GmbH](https://www.port.de/en/products/canopen/software.html) and the LuaSocket package installed. For details, refer to  [Building the Cumulocity IoT CANopen service](#building-the-cumulocity-canopen-service).
+* For using the **Cloud Remote Access** feature, refer to [Building the Cumulocity IoT Cloud Remote Access service](#building-the-cumulocity-cloud-remote-access-service).  
+* For using the **Modbus** support, make sure that you have the libmodbus and LuaSocket packages installed. Details on how to enable Modbus support are described in [Building the agent with a Modbus support](#building-the-agent-with-modbus-support).  
+* For **CANopen** support, check if you have the CANopen library and SocketCAN connector commercially licensed by [port industrial automation GmbH](https://www.port.de/en/products/canopen/software.html) and the LuaSocket package installed. For details, refer to  [Building the Cumulocity IoT CANopen service](#building-the-cumulocity-canopen-service).
 
 ### <a name = basic-agent>Building the basic agent</a>
 
@@ -34,7 +34,7 @@ This section explains how to build the Cumulocity IoT Linux Agent without Modbus
     cp -rP $C8Y_LIB_PATH/lib $C8Y_LIB_PATH/bin .
     ```
 
-4. Customize your _Makefile_ and correct the libraries names. If you installed the liblua5.3-dev library, modify **lua** to **lua5.3** twice (in the `CPPFLAGS` and `LDLIBS` lines).
+4. Customize your _Makefile_ and correct the libraries names. If you installed the liblua5.3-dev library, modify **lua** to **lua5.3** twice (in the `CPPFLAGS` and `LDLIBS` lines)
 
 
     ```shell
@@ -66,7 +66,7 @@ This section explains how to build the Cumulocity IoT Linux Agent without Modbus
 
 ### <a name = building-the-cumulocity-cloud-remote-access-service>Building the Cumulocity IoT Cloud Remote Access service </a>
 
-The Linux agent supports the Cloud Remote Access feature. If your device supports VNC, Telnet, or SSH remote access, you can remotely manage it via Cumulocity IoT. For details on the remote access functionality, refer to [Cloud Remote Access](/users-guide/optional-services#cloud-remote-access).
+The Linux Agent supports the Cloud Remote Access feature. If your device supports VNC, Telnet, or SSH remote access, you can remotely manage it via Cumulocity IoT. For details on the remote access functionality, refer to [Cloud Remote Access](/users-guide/optional-services#cloud-remote-access).
 
 To support the feature, you need to build the **Cumulocity IoT Cloud Remote Access service** aside from building the agent. To build it, run:
 
@@ -80,7 +80,7 @@ The Cumulocity IoT Cloud Remote Access service needs no further configuration. I
 
 ### <a name = building-the-agent-with-modbus-support> Building the agent with Modbus support </a>
 
-Modbus support is disabled by default. In between step 4 and step 5 of [Building the basic agent](#basic-agent), you need to do one additional step to enable it. The Modbus feature requires the libmodbus library, so make sure you have libdmobus installed before building with Modbus support.
+Modbus support is disabled by default. In between step 4 and step 5 of [Building the basic agent](#basic-agent), you need to do one additional step to enable it. The Modbus feature requires the libmodbus library, so make sure you have libdmobus installed before building the agent with Modbus support.
 
 After step 4 of [Building the basic agent](#basic-agent), edit your _Makefile_ file and set `PLUGIN_MODBUS` to `1` (enabled). By default, this variable is set `0` (disabled).
 
@@ -92,11 +92,11 @@ After you finished this step, continue with step 5 of [Building the basic agent]
 
 ### <a name= building-the-cumulocity-canopen-service> Building the Cumulocity IoT CANopen service </a>
 
-CANopen support is also disabled by default. After you finish all steps of [Building the basic agent](#basic-agent), you need to do a couple of additional steps.
+CANopen support is disabled by default. After you have finished all steps described in [Building the basic agent](#basic-agent), you need to do a couple of additional steps.
 
-CANopen support is composed of two parts. One is a Lua plugin, which is included in the agent repository by default. However, to get actual CANopen support, you would also need to build the Cumulocity IoT CANopen service, which is a C program based on the CANopen library and SocketCAN connector from [port industrial automation GmbH](https://www.port.de/en/products/canopen/software.html).
+CANopen support is composed of two parts. One is a Lua plugin, which is included in the agent repository by default. However, to get actual CANopen support, you also need to build the Cumulocity IoT CANopen service, which is a C program based on the CANopen library and SocketCAN connector from port industrial automation GmbH.
 
-The CANopen library and SocketCAN connector are commercially licensed by [port industrial automation GmbH](https://www.port.de/en/products/canopen/software.html), and are not included in this repository. You need to get the CANopen library and the SocketCAN connector from [port industrial automation GmbH](https://www.port.de/en/products/canopen/software.html) if you want to build the Cumulocity IoT CANopen Service.
+The CANopen library and SocketCAN connector are commercially licensed by [port industrial automation GmbH](https://www.port.de/en/products/canopen/software.html), and are not included in this repository. You need to get the CANopen library and the SocketCAN connector from [port industrial automation GmbH](https://www.port.de/en/products/canopen/software.html) if you want to build the Cumulocity IoT CANopen service.
 
 Assume you have the CANopen library and SocketCAN connector available, you need to create a directory _ext/port_ in the repository and extract the ZIP files there. After the extraction, your _ext/port_ directory should have the following structure:
 
@@ -134,8 +134,8 @@ The Cumulocity IoT CANopen service communicates with the Linux Agent via UDP por
 > **Info:** Before installing the agent, you need to configure the agent parameters in the _cumulocity-agent.conf_ file. For details, refer to [Configuring the agent](#configuring-agent).
 
 
-You can install and uninstall the agent using the same commands regardless of whether your agent supports Modbus, CANopen or none of them, .
-After you build the agent, enter your _cumulocity-agents-linux_ directory and run:
+You can install and uninstall the agent using the same commands regardless of whether your agent supports Modbus, CANopen or none of them.
+After you have built the agent, enter your _cumulocity-agents-linux_ directory and run:
 
 ```shell
 sudo make install
@@ -145,10 +145,10 @@ The agent's binary files, the configuration file (_cumulocity-agent.conf_), the 
 
 ### Uninstalling the agent
 
-In your _cuumulocity-agents-linux_ directory, run:
+In your _cumulocity-agents-linux_ directory, run:
 
 ```shell
 sudo make uninstall
 ```
 
-The agent binary files, the configuration file(_cumulocity-agent.conf_), the SmartREST template file(_srtemplate.txt_), the systemd service file, and the C++ SDK shared library files are now removed from your device.
+The agent binary files, the configuration file (_cumulocity-agent.conf_), the SmartREST template file (_srtemplate.txt_), the systemd service file, and the C++ SDK shared library files are now removed from your device.

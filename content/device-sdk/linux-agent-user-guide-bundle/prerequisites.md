@@ -12,8 +12,8 @@ weight: 20
   - libcurl (>=7.57.0)<br><br>
 - Optional packages
   - systemd (for auto-start of the agent on boot)
-  - libmodbus (>= 3.0.8), only for the use of Modbus
-  - lua-socket (>=3.0), only for the use of CANopen
+  - libmodbus (>= 3.0.8), for the use of Modbus only
+  - lua-socket (>=3.0), for the use of CANopen only
 
 The packages can be installed with the following commands in the terminal window on Ubuntu 18.04:
 
@@ -35,7 +35,7 @@ Make sure that the following libraries (-dev version) are installed.
 - libcurl >= 7.57.0
 - lua >= 5.1
 
-Confirm that the libraries are installed by using the `apt` command (should be something like libcurl4-gnutls-dev or liblua5.3-dev).
+Confirm that the libraries are installed by using the `apt` command (should show something like libcurl4-gnutls-dev or liblua5.3-dev).
 
 ```shell
 apt list --installed | grep libcurl
@@ -58,8 +58,9 @@ sudo apt install liblua5.3-dev
 
 ### Building the Cumulocity IoT C++ SDK
 
-The agent software requires the [**Cumulocity IoT C++ SDK**](https://bitbucket.org/m2m/cumulocity-sdk-c/src/master/).  
-So you need to build the Cumulocity IoT C++ SDK first, before starting to build the software.
+The agent software requires the [Cumulocity IoT C++ SDK](https://bitbucket.org/m2m/cumulocity-sdk-c/src/master/), so you need to build the Cumulocity IoT C++ SDK first, before starting to build the software.
+
+
 1. Launch a Git client and clone the SDK repository to a directory of your choice. For example:
 
     ```shell
@@ -106,7 +107,7 @@ So you need to build the Cumulocity IoT C++ SDK first, before starting to build 
     > **Info:**  This step is required for the Ubuntu 18.04 LTS and Raspbian distributions. However, this step must be skipped for the CentOS 7 distribution. If you use other operating systems, run `pkg-config --cflags lua` and `pkg-config --libs lua` and confirm that no errors are returned.
 
     If you don't know which liblua version has already been installed on your device,
-    you can also find the version which you need to add to your _init.mk_ by:
+###     you can find the version which you need to add to your _init.mk_ by:
 
     ```shell
     ldconfig -p | grep lua

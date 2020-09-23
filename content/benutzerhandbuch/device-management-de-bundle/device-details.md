@@ -92,7 +92,7 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 </tbody>
 </table>
 
->**Info:** Mögliche weitere spezielle Registerkarten, die nicht hier aufgeführt sind, werden in dem entsprechenden Kontext an anderer Stelle in der Cumulocity IoT-Dokumentation beschrieben. Nutzen Sie die Suchfunktion, um zu den betreffenden Abschnitten zu gelangen. Die Registerkarte **Modbus** beispielsweise ist in der Modbus-Beschreibung unter [Device protocol guide > Cloud Fieldbus](/device-protocols-guide/cloud-fieldbus) zu finden.
+>**Info:** Mögliche weitere spezielle Registerkarten, die nicht hier aufgeführt sind, werden in dem entsprechenden Kontext an anderer Stelle in der Cumulocity IoT-Dokumentation beschrieben. Nutzen Sie die Suchfunktion, um zu den betreffenden Abschnitten zu gelangen. Die Registerkarte **Modbus** beispielsweise ist in der Modbus-Beschreibung unter [Device protocol guide > Cloud Fieldbus](/device-protocols/cloud-fieldbus) zu finden.
 
 Unter dem Namen wird eine Liste von Breadcrumbs angezeigt. Ist das Gerät Teil einer Asset-Hierarchie (z. B. einer Gruppe), können Sie mit Hilfe der Breadcrumbs einfach in der Hierarchie nach oben navigieren. Da Geräte zu mehreren Hierarchien gehören können, werden möglicherweise mehrere Breadcrumb-Zeilen angezeigt.
 

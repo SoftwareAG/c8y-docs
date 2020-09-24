@@ -6,7 +6,7 @@ layout: redirect
 
 If enabled, DataHub tracks usage statistics on the amount of data being processed. These statistics are collected for the offloading queries and track the amount of data these queries read from the Operational Store of Cumulocity IoT. The statistics are also collected for the ad-hoc queries and track the amount of data these queries read from the data lake. The usage statistics can be utilized for a volume-based charging. They can also be utilized to pinpoint resource-intensive queries in terms of network load.
 
->**Info**: The tracking of usage statistics is supported for the DataHub cloud edition. It is not supported for the DataHub Edge edition.
+>**Info:** The tracking of usage statistics is supported for the DataHub Cloud edition. It is not supported for the DataHub Edge edition.
 
 In the navigator, select **Administration** and then **Usage statistics** to view the usage statistics.
 
@@ -16,4 +16,4 @@ The three top panels show overall summary statistics as well as statistics separ
 
 The table below the summary statistics shows the details on a per-day basis for the selected month. For each day, the volume offloaded and the volume queried are shown as well as their sum, which constitutes the daily volume. In addition the percentage of the monthly volume is shown, i.e., how much did the daily volume contribute to the overall monthly volume. The date of each entry links to the [Query log](/datahub/operating-datahub/#viewing-audit-logs), which lists all queries for the respective day.
 
->**Info** The statistics are refreshed once per hour. Therefore, the statistics for the current month may not include the latest data. The statistics are deleted after a retention period, so for older months statistics may no longer be available.
+>**Info:** The statistics are refreshed once per hour. Therefore, the statistics for the current month may not include the latest data. The statistics are deleted after a retention period, so for older months statistics may no longer be available.

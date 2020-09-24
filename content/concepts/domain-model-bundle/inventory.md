@@ -5,18 +5,18 @@ layout: redirect
 ---
 
 
-### Managed objects 
+### Managed objects
 
 The inventory stores devices and other assets relevant to your IoT solution. We refer to them as *managed objects*.
 
-Managed objects can be "smart objects" such as smart electricity meters, home automation gateways and GPS devices. They can be assets you would like to monitor, such as rooms in which sensors are installed, or cars containing GPS devices. 
+Managed objects can be "smart objects" such as smart electricity meters, home automation gateways and GPS devices. They can be assets you would like to monitor, such as rooms in which sensors are installed, or cars containing GPS devices.
 
 The following JSON code shows a small example of a managed object in the inventory, in this case a simple switch.
 
 <pre><code class="json">{
 	"id": "47635",
 	"type": "ge_45609",
-	"c8y_Relay" : 
+	"c8y_Relay" :
 	{
 		"relayState" : "OPEN"
 	},
@@ -33,7 +33,7 @@ An example for another asset stored in the inventory could be a room in which a 
 		"references" : [
 			{ "managedObject": { "id": "47635", ... },
 			...
-			} 
+			}
 		]
 	},
 	"resortenergymgmt_RoomProperty": {
@@ -76,9 +76,11 @@ The approach also enables developing generic application components. For example
 
 #### Naming conventions of fragments
 
-Fragments use a naming convention to avoid conflicts between different parties supplying fragment information, similar to Java or other programming languages. 
+Fragments use a naming convention to avoid conflicts between different parties supplying fragment information, similar to Java or other programming languages.
 
 In the example above, "c8y_Position" is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". Together they form a set of standard fragments. Fragment definitions can be found in the [Sensor library](/reference/sensor-library) and in the [Device management library](/reference/device-management) in the Reference guide.
+
+> **Important:** Names used for fragments must not contain whitespaces nor the special characters `. , * [ ] ( ) @ $`.
 
 Note that Cumulocity IoT follows a document-oriented approach for storing data. All characteristics of an object can be inferred from the document with the object data itself. There is no explicit separate metadata model that needs to be configured and managed. However, applications can add own metadata and store values in the inventory additionally. For example, a vending application can maintain metadata about slot configurations of the diverse vending machine types in the inventory.
 
@@ -102,17 +104,17 @@ More information can be found in [Identity](/reference/identity) in the Referenc
 
 The inventory model supports two default hierarchies of objects: A communication hierarchy ("childDevices") and an asset hierarchy ("childAssets").
 
-The communication hierarchy tracks how devices are linked to the M2M platform from a communication point of view. A typical communication hierarchy is shown in the picture below: Agents connect the sensor network to Cumulocity IoT. They often communicate through gateway devices or modems with the sensor network. The gateways, in reverse, connect to devices in the sensor network, which contain sensors and controls. 
+The communication hierarchy tracks how devices are linked to the M2M platform from a communication point of view. A typical communication hierarchy is shown in the picture below: Agents connect the sensor network to Cumulocity IoT. They often communicate through gateway devices or modems with the sensor network. The gateways, in reverse, connect to devices in the sensor network, which contain sensors and controls.
 
 ![Example communication hierarchy](/images/concepts-guide/commshierarchy.png)
 
-The asset hierarchy structures the assets that are remotely supervised and controlled through the M2M devices. 
+The asset hierarchy structures the assets that are remotely supervised and controlled through the M2M devices.
 
 An example asset hierarchy for building management could be buildings containing rooms. Buildings would be associated with gateways connecting the building to Cumulocity IoT, while rooms would be associated with sensors and controls. This example hierarchy is shown in the picture below.
 
 ![Example asset hierarchy](/images/concepts-guide/assethierarchy.png)
 
-#### Child objects in hierarchies 
+#### Child objects in hierarchies
 
 The two hierarchies above are explicitly supported by the [inventory interface](/reference/inventory) and client libraries, that provide methods for adding and removing children in hierarchies. The hierarchies themselves are constructed by client applications. The communication hierarchy is constructed by agents, the asset hierarchy is added by applications on top.
 
@@ -120,7 +122,7 @@ Note that the object hierarchies do not necessarily need to form a tree, the sam
 
 ### Object lifecycle
 
-The previously described identification and hierarchy mechanisms form a very flexible device lifecycle approach that can be adapted to most business processes. Initially, when a device is powered on for the first time, it is neither connected to the system nor linked to an asset. Linking a device to an agent in the communication hierarchy (possibly indirectly through a gateway) signals that the device is connected. Only connected devices can be remotely controlled. Linking a device to an asset using the asset hierarchy can be used to signal that the device has been physically installed. 
+The previously described identification and hierarchy mechanisms form a very flexible device lifecycle approach that can be adapted to most business processes. Initially, when a device is powered on for the first time, it is neither connected to the system nor linked to an asset. Linking a device to an agent in the communication hierarchy (possibly indirectly through a gateway) signals that the device is connected. Only connected devices can be remotely controlled. Linking a device to an asset using the asset hierarchy can be used to signal that the device has been physically installed.
 
 Disconnecting and uninstalling a device does not necessarily indicate that the device was discarded or deactivated and should be deleted from the system. It can indicate instead that the device was returned to the warehouse and will be installed elsewhere later on. It depends on the particular business process whether data for the device should be kept or not. Physically deleting a device from the inventory implies that all data collected for that device is lost -- this is probably desired only when completely cleaning up old data. To keep data for a device that has been discarded, identifier mappings can be removed from the identity service. Should a new device be installed in the same place as the old device, a new "global" identifier will be generated.
 
@@ -129,4 +131,3 @@ Addressing the device lifecycle properly is important when designing agents. An 
 ### Further information
 
 More detailed information for working with the inventory can be found in [Inventory](/reference/inventory) in the Reference guide.
-

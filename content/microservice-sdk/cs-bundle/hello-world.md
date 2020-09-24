@@ -218,8 +218,27 @@ curl -H "Authorization: <AUTHORIZATION>" \
 
 The expected result is like:
 
-```shell
-[{"date":"2020-07-14T10:39:06.3395082+00:00","temperatureC":27,"temperatureF":80,"summary":"Hot"},{"date":"2020-07-15T10:39:06.3408548+00:00","temperatureC":40,"temperatureF":103,"summary":"Cool"},{"date":"2020-07-16T10:39:06.3408577+00:00","temperatureC":18,"temperatureF":64,"summary":"Balmy"},{"date":"2020-07-17T10:39:06.3408579+00:00","temperatureC":11,"temperatureF":51,"summary":"Freezing"},{"date":"2020-07-18T10:39:06.3408581+00:00","temperatureC":20,"temperatureF":67,"summary":"Chilly"}]
+```json
+[
+  {
+    "date": "2020-07-14T10:39:06.3395082+00:00",
+    "temperatureC": 27,
+    "temperatureF": 80,
+    "summary": "Hot"
+  },
+  {
+    "date": "2020-07-15T10:39:06.3408548+00:00",
+    "temperatureC": 40,
+    "temperatureF": 103,
+    "summary": "Cool"
+  },
+  {
+    "date": "2020-07-16T10:39:06.3408577+00:00",
+    "temperatureC": 18,
+    "temperatureF": 64,
+    "summary": "Balmy"
+  }
+]
 ```
 
 ### Running the application within the IDE
@@ -419,7 +438,7 @@ _Startup.cs_ responsibilities:
 
 The _Dockerfile_ file created by *create.ps1* contains:
 
-```
+```docker
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
 WORKDIR /app
 COPY ./publish/Web ./
@@ -582,3 +601,7 @@ $ ./deploy.sh -f settings.ini
 ```shell
 $ ./deploy.sh -s <URL> -u <username> -p <password> -an hello-world -f settings.ini
 ```
+
+### Improving the microservice
+
+Now that you have done your first steps, check out the section [Developing microservices](#developing-microservices) to find out what else can be implemented. Review also the [extended example](https://bitbucket.org/m2m/cumulocity-clients-cs/src/develop/Examples/MicroserviceSDK/Hello-World-Extension-Microservice/) in the Bitbucket repository to learn more features of the microservice SDK and REST API.

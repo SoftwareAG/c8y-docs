@@ -4,7 +4,7 @@ title: Experimental example set up on VirtualBox
 layout: redirect
 ---
 
-Cumulocity IoT Edge does not officially support VirtualBox. If you want to convert a VMWare image (OVF file) to VirtualBox image (OVA file), and run Cumulocity IoT Edge on it for experimental or trial purposes, you can follow the example below.
+Cumulocity IoT Edge does not officially support VirtualBox. If you want to convert a VMWare image (OVF file) to VirtualBox image (OVA file), and run Cumulocity IoT Edge on VirtualBox for experimental or trial purposes, you can follow the example below.
 
 ### Converting VMWare OVF file to VirtualBox OVA file
 
@@ -26,7 +26,7 @@ Cumulocity IoT Edge does not officially support VirtualBox. If you want to conve
 
 5. Create a host-only network adapter for the virtual machine. See [Creating a host-only network interface](/edge/installation/#creating-a-host-only-network-adapter).
 
-6. Click **Settings** > **Network** > **Adapter 2**.
+6. Select the network adapter for the VirtualBox image. Click **Settings** > **Network** > **Adapter 2**.
 
 7. Select **Enable Network Adapter**.
 
@@ -60,7 +60,7 @@ Cumulocity IoT Edge does not officially support VirtualBox. If you want to conve
 
 14. Configure the Edge VM network using the post-installer. See [Configuring the Edge network](/edge/installation/#configuring-the-edge-network).
 
-15. Run the post installation process. [Running the post installation process](/edge/installation/#running-the-post-installation-process).
+15. Run the post installation process. See [Running the post installation process](/edge/installation/#running-the-post-installation-process).
 
 ### Creating a host-only network adapter
 
@@ -94,33 +94,20 @@ The VirtualBox now is installed and the network is set.
 
 ### Starting the virtual machine
 
-In the VirtualBox, the virtual machine is imported via **File** > **Import Appliance** > Select .ova file. 
+In the VirtualBox Manager, import the virtual machine. Click **File** > **Import Appliance** > Select the OVA file. 
 
-The machine will automatically be added to the VirtualBox VM Manager. The machine has predefined settings for disk, CPU and memory.
+The machine will automatically be added to the VirtualBox Manager. The machine has predefined settings for disk, CPU and memory.
 
-Start the virtual machine by clicking **Start** on the top left.
-
-**Info:** The machine description can be found on the **Description** tab (right-click on **Machine** > **Settings** > **General** > **Description**).
-
-#### Troubleshooting
-
-In case of the following error, proceed as described below. 
-
-![Error](/images/edge/edge-vb-error.png)
-
-Click **Change network setting** and select the VirtualBox Host-Only Ethernet Adapter which has been configured in Step 8 above. 
-
-The VirtualBox metadata files for VM appliance keep the "VirtualBox Host-Only Ethernet Adapter" name based on the host OS. If this adapter name differs with what is bundled in Cumulocity IoT Edge, it has to be manually selected.
-
+Click **Start** to start the virtual machine.
 
 ### <a name="port-forwarding"></a>Setting up port forwarding
 
-Follow the steps below, to setup port forwarding.
+To setup port forwarding, follow the steps below:
 
-1. In the Virtual Box, click **Machine Tools** in the top right.<br>
+1. In the VirtualBox Manager, click **Machine Tools**.<br>
 <img src="/images/edge/edge-port-forwarding1.png" name="Port forwarding Step 1" style="width:75%;"/>
 
-2. Click **Settings** in the top left. Under settings, click **Network**, open the network you previously created and then click **Port forwarding**.<br>
+2. Click **Settings** > **Network**. Open the network you previously created and then click **Port forwarding**.<br>
 <img src="/images/edge/edge-port-forwarding2.png" name="Port forwarding Step 2" style="width:75%;"/>
 
 3. In the **Port Forwarding Rules** window, click the plus icon. Add the following details for HTTP:<br>
@@ -136,37 +123,33 @@ Follow the steps below, to setup port forwarding.
 Once all port details have been added, it should look similar to the following screenshot:<br>
 <img src="/images/edge/edge-port-forwarding4.png" name="Port forwarding result" style="width:75%;"/>
  
-5. Click **OK** in the **Port Forwarding Rules** window and then in the **Settings** window to complete port forwarding on Edge VM.
+5. Click **OK** in the **Port Forwarding Rules** window.
+
+6. Click **OK** in the **Settings** window to complete port forwarding on Edge VM.
 
 ### Upgrading on VirtualBox
 
 >**Info:** Upgrading OPC UA artifact from an older version to the newer version is not supported.
 
-To upgrade the Edge VM on VirtualBox:
+1. Power off the VM. Right-click the respective VM (e.g. EDGE-server) and click **Close** > **Power off**.
 
-1. Power off the VM. To do so, access the VM and run the following command in the terminal:
-
-```
-[admin@server ~]$ sudo shutdown
-```
 2. Navigate to the VM directory. For VirtualBox it is *[USER-DIRECTORY]\VirtualBox VMs*. Move the entire VM folder (e.g. EDGE-server) to a safe location.
 
-3. In the VirtualBox Manager, right-click on the VM and then click **Remove**. In the upcoming window, select **Remove Only** so that the VM will not be deleted. 
+3. Right-click the VM and click **Remove**. Select **Remove Only**, so that the VM will not be deleted. 
 <img src="/images/edge/edge-update-remove.jpg" name="Remove VM" style="width:75%;"/> 
 
-4. Import the new version of EDGE server. To do so, click **File** and then **Import Appliance** in the VirtualBox Manager. Select the new OVA file (upgraded one supplied by Cumulocity IoT) and click **Open** to import it. 
-<br>The new Edge version should now be visible in the VirtualBox Manager in powered-off state. 
+4. Import the new version of EDGE server. Click **File** > **Import Appliance** in the VirtualBox Manager. Select the new OVA file (upgraded one supplied by Cumulocity IoT) and click **Open** to import it. 
 
-5. Right-click the VM and select **Settings**. In the upcoming window, select **Storage**. Two disks should be visible called *disk001.vmdk* and *disk002.vmdk*. 
+5. Right-click the VM and select **Settings**> **Storage**. Two disks should be visible called *disk001.vmdk* and *disk002.vmdk*. 
 
-6. Right-click the second disk i.e. *disk002.vmdk*, and select **Remove attachment**. 
+6. Right-click the second disk, that is *disk002.vmdk*, and select **Remove attachment**. 
 
-7. Right-click the second controller i.e. SATA controller and select **Add Hard Disk**. In the upcoming window, select **Choose existing disk**. 
+7. Right-click the second controller, that is SATA controller and select **Add Hard Disk**. Select **Choose existing disk**. 
 <img src="/images/edge/edge-update-harddisk.jpg" name="Add hard disk" style="width:75%;"/> 
 
-8. In the explorer, navigate to the previously backed-up EDGE folder as per step 2. Select the secondary disk, i.e. *disk002.vmdk*, and click **OK**.
+8. Navigate to the previously backed-up EDGE folder as per step 2. Select the secondary disk, that is *disk002.vmdk*, and click **OK**.
 
-9. Start the Edge VM by clicking **Start**. 
+9. Click **Start** to start the Edge VM. 
 
 10. Run the post-upgrade task to complete the upgrade process. See [Running post-upgrade](/edge/installation/#running-post-upgrade).
 
@@ -176,26 +159,24 @@ To upgrade the Edge VM on VirtualBox:
 
 To back up the data: 
 
-1. To power off the VM, right-click on the respective VM (e.g. EDGE-server) in the VirtualBox Manager and click **Close** > **Power off**.<br><br>
+1. Power off the VM. Right-click the respective VM (e.g. EDGE-server) and click **Close** > **Power off**.<br><br>
 <img src="/images/edge/edge-poweroff.jpg" name="Poweroff Edge" style="width:75%;"/> 
 <br>
-1. Click **File** at the top right and then **Export Appliance**.<br><br>
+2. Click **File** > **Export Appliance**.<br><br>
 <img src="/images/edge/edge-backup2.jpg" name="Backup Edge" style="width:75%;"/>  
 <br>
-2. Enter the location and name as desired and click **Export**.<br><br>
+3. Enter the location and name and click **Export**.<br><br>
 <img src="/images/edge/edge-backup1.jpg" name="Backup Edge" style="width:75%;"/> 
-
->**Info:** You may append the current date to the image name (e.g. EDGE-server-12-06-2018.ova) so as to have a track of the backups. 
 
 #### Restore
 
 To restore the data:
 
-1. In the VirtualBox Manager, click **File** at the top right and then **Import Appliance**.<br><br>
+1. Click **File** > **Import Appliance**.<br><br>
 <img src="/images/edge/edge-restore1.jpg" name="Restore Edge" style="width:75%;"/> 
 <br> 
-2. In the upcoming window, browse for the OVA image and select it. <br><br>
+2. Browse for the OVA image and select the image. <br><br>
 <br>
-3. Power on the VM by clicking on the **Start** button. 
+3. Click **Start** to power on the VM. 
 
 		

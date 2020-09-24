@@ -8,7 +8,7 @@ layout: redirect
 
 Various features of the Device Management application have been significantly extended.
 
-#### [MTM-30315] Enhanced device configuration management
+#### [MTM-30315] ENHANCED device configuration management
 
 The configuration functionality has been enhanced: 
 
@@ -23,7 +23,7 @@ The configuration functionality has been enhanced:
 For details, see [Device Management > Managing device data > Managing configurations](/users-guide/device-management#managing-device-data) in the User guide.
 
 
-#### [MTM-30314] Enhanced firmware and software update functionality
+#### [MTM-30314] ENHANCED firmware and software update functionality
 	
 The firmware and software update functionality has been enhanced: 
 
@@ -38,7 +38,7 @@ The firmware and software update functionality has been enhanced:
 
 For details, see [Device Management > Managing device data > Managing device firmware](/users-guide/device-management#managing-device-data) in the User guide.
 
-#### [MTM-30319] NEW device profiles
+#### [MTM-30319] NEW FEATURE - Device profiles
 	
 Device profiles represent a combination of a firmware version, one or multiple software packages and one or multiple configuration files which can be deployed on a device. 
 
@@ -49,7 +49,7 @@ Based on device profiles, you can assign a specific target configuration to sing
 For details, see [Device Management > Managing device data > Managing device profiles](/users-guide/device-management#managing-device-data) in the User guide.
 
 
-#### [MTM-27299] NEW trusted certificates
+#### [MTM-27299] NEW FEATURE - Trusted certificates
 	
 Authentication with X.509 client certificates is supported using the MQTT protocol
 
@@ -63,7 +63,7 @@ For details, see [Device Management > Managing device data > Managing trusted ce
 
 ### Cockpit
 
-#### [MTM-30318] Enhanced bulk operations functionality
+#### [MTM-30318] ENHANCED bulk operations functionality
 	
 Device profiles represent a combination of a firmware version, one or multiple software packages and one or multiple configuration files which can be deployed on a device. 
 

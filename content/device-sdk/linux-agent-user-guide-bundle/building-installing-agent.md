@@ -116,8 +116,6 @@ drwxr-xr-x 1 tiens tiens  206 Nov 27 16:45 shar_inc
 drwxr-xr-x 1 tiens tiens  106 Nov 27 16:45 shar_src
 ```
 
-#### Building the Cumulocity IoT CANopen service
-
 To build the Cumulocity IoT CANopen service, move to the repository root directory and run:
 
 ```shell

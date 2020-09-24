@@ -106,8 +106,7 @@ The agent software requires the [Cumulocity IoT C++ SDK](https://bitbucket.org/m
 
     > **Info:**  This step is required for the Ubuntu 18.04 LTS and Raspbian distributions. However, this step must be skipped for the CentOS 7 distribution. If you use other operating systems, run `pkg-config --cflags lua` and `pkg-config --libs lua` and confirm that no errors are returned.
 
-    If you don't know which liblua version has already been installed on your device,
-###     you can find the version which you need to add to your _init.mk_ by:
+    If you don't know which liblua version has already been installed on your device, you can find the version which you need to add to your _init.mk_ by:
 
     ```shell
     ldconfig -p | grep lua

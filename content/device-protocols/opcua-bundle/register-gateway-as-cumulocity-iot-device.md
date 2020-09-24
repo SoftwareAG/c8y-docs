@@ -1,6 +1,6 @@
 ---
 weight: 40
-title: Register the gateway as a Cumulocity IoT device
+title: Registering the gateway as a Cumulocity IoT device
 layout: redirect
 ---
 

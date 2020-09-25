@@ -58,7 +58,7 @@ The function `sendCPU()` is called every 10 seconds. It creates a CPU usage meas
 
 `c8y.ID` returns your device ID. Thus, the content of the sending request is actually `326,<device ID>,20`. To learn more about SmartREST1.0, refer to the [Reference guide > SmartREST](/reference/smartrest/) section. The second argument of `c8y:send()` is optional so it is omitted in this example. The detail of `c8y:send()` is documented in your _cumulocity-sdk-c/src/master/doc/lua.html_ file.
 
-Before you run the agent again, do not forget to add `cpumesurements` to `lua.plugins=` in your _cumulocity-agent.conf_ file.
+Before you run the agent again, change `lua.plugins` in your _cumulocity-agent.conf_ file:
 
 ```shell
 lua.plugins=hello,cpumeasurments

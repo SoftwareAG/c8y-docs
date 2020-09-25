@@ -82,7 +82,7 @@ After the aggregation finishes, the `perform` function is called. The function:
 - Updates the operation state to SUCCESSFUL
 - Sends the updated package list to the server
 
-Before you run the agent again, do not forget to add `software` to `lua.plugins=` in your _cumulocity-agent.conf_ file.
+Before you run the agent again, change `lua.plugins` in your _cumulocity-agent.conf_ file:
 
 ```shell
 lua.plugins=hello,cpumeasurments,restart,software

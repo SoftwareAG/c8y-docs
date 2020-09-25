@@ -26,6 +26,6 @@ rpt = new SrReporter(server + port, agent.deviceID(), agent.XID(),
         agent.egress, agent.ingress, 10000, "/path/to/file.cache");
 ```
 
-So, you just need to add two new arguments when constructing the `SrRepoter` object.
-- `10000`: Capacity of the request buffer
-- `/path/to/file.cache`: The file path for file-backed buffering
+You just need to add two new arguments when constructing the `SrRepoter` object:
+- 10000: Capacity of the request buffer
+- _/path/to/file.cache_: The file path for file-backed buffering

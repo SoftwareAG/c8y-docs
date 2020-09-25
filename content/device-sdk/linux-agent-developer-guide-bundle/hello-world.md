@@ -27,9 +27,9 @@ function init()  -- init() works like main function in C/C++
 end
 ```
 
-The agent supports `Debug`, `Info`, `Notice`, `Error`, and `Critical` as a log level.
+The agent supports the following log levels: "Debug", "Info", "Notice", "Error" and "Critical".
 
-Then, add `hello` to `lua.plugins=` in your _cumulocity-agent.conf_ file.
+Change `lua.plugins` in your _cumulocity-agent.conf_ file:.
 
 ```shell
 lua.plugins=hello

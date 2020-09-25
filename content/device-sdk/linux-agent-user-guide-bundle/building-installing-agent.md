@@ -1,5 +1,5 @@
 ---
-title: Building and installing the Cumulocity IoT Linux Agent
+title: Building and installing the Cumulocity IoT Linux agent
 layout: redirect
 weight: 30
 ---
@@ -12,9 +12,9 @@ Before getting started, make sure that you have compiled the Cumulocity IoT C++ 
 
 ### <a name = basic-agent>Building the basic agent</a>
 
-This section explains how to build the Cumulocity IoT Linux Agent without Modbus support.
+This section explains how to build the Cumulocity IoT Linux agent without Modbus support.
 
-1. Copy the Cumulocity IoT Linux Agent repository to a directory of your choice.
+1. Copy the Cumulocity IoT Linux agent repository to a directory of your choice.
 
     ```shell
     cd ~/<my_working_directory>
@@ -66,7 +66,7 @@ This section explains how to build the Cumulocity IoT Linux Agent without Modbus
 
 ### <a name = building-the-cumulocity-cloud-remote-access-service>Building the Cumulocity IoT Cloud Remote Access service </a>
 
-The Linux Agent supports the Cloud Remote Access feature. If your device supports VNC, Telnet, or SSH remote access, you can remotely manage it via Cumulocity IoT. For details on the remote access functionality, refer to [Cloud Remote Access](/users-guide/optional-services#cloud-remote-access).
+The Cumulocity IoT Linux agent supports the Cloud Remote Access feature. If your device supports VNC, Telnet, or SSH remote access, you can remotely manage it via Cumulocity IoT. For details on the remote access functionality, refer to [Cloud Remote Access](/users-guide/optional-services#cloud-remote-access).
 
 To support the feature, you need to build the **Cumulocity IoT Cloud Remote Access service** aside from building the agent. To build it, run:
 
@@ -76,7 +76,7 @@ make vnc
 
 Now you have an execution file *vncproxy* in *cumulocity-agents-linux/bin*.
 
-The Cumulocity IoT Cloud Remote Access service needs no further configuration. It communicates with the Linux Agent via a local socket.
+The Cumulocity IoT Cloud Remote Access service needs no further configuration. It communicates with the Cumulocity IoT Linux agent via a local socket.
 
 ### <a name = building-the-agent-with-modbus-support> Building the agent with Modbus support </a>
 
@@ -125,7 +125,7 @@ make
 
 Then the *c8y_canopend* execution file is created in _cumulocity-agents-linux/bin_.
 
-The Cumulocity IoT CANopen service communicates with the Linux Agent via UDP port 9677. It gets all configuration, including SocketCAN interface, baud rate etc. automatically from the Linux Agent, so you just need to adjust all the CANopen settings in the Linux Agent configuration file (_cumulocity-agent.conf_) as described in the section [Configuring the agent](#configuring-agent).
+The Cumulocity IoT CANopen service communicates with the Cumulocity IoT Linux agent via UDP port 9677. It gets all configuration, including SocketCAN interface, baud rate etc. automatically from the Cumulocity IoT Linux agent, so you just need to adjust all the CANopen settings in the Cumulocity IoT Linux agent configuration file (_cumulocity-agent.conf_) as described in the section [Configuring the agent](#configuring-agent).
 
 ### <a name=installing-the-agent> Installing the agent</a>
 

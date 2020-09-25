@@ -35,7 +35,7 @@ Then, add `hello` to `lua.plugins=` in your _cumulocity-agent.conf_ file.
 lua.plugins=hello
 ```
 
-Lua is a scripting language so that you don't need to recompile your agent. Just copy your _hello.lua_ file to _/usr/share/cumulocity-agent/lua_ and the modified _cumulocity-agent.conf_ file to _/usr/share/cumulocity-agent_ to make them reachable by the agent. Or, simply run:
+Lua is a scripting language so that you don't need to recompile the agent. Just copy your _hello.lua_ file to _/usr/share/cumulocity-agent/lua_ and the modified _cumulocity-agent.conf_ file to _/usr/share/cumulocity-agent_ to make them reachable by the agent. Or, simply run:
 
 ```shell
 sudo make uninstall
@@ -44,7 +44,7 @@ sudo make install
 
 Then copy both files to the destination.
 
-Finally, run your agent. You will see that the debug messages are recorded with timestamps in your log file. By default, the path to log file is _/var/log/cumulocity-agent.log_.
+Finally, run the agent. You will see that the debug messages are recorded with timestamps in your log file. By default, the path to log file is _/var/log/cumulocity-agent.log_.
 
 ```txt
 Jun 16 12:57:05 DEBUG: Hello world!
@@ -54,4 +54,4 @@ Jun 16 12:57:05 ERROR: Error message
 Jun 16 12:57:05 CRITICAL: Critical message
 ```
 
-> **Info:** Once you started the agent and changed some parameters from the Cumulocity IoT tenant (i.e. Measurement sending interval), your agent loads the configurations from _/var/lib/cumulocity-agent/cumulocity-agent.conf_. In this case, run `sudo make uninstall` to remove the file before copying the modified _cumulocity-agent.conf_ file.
+> **Info:** Once you started the agent and changed some parameters from the Cumulocity IoT tenant (i.e. Measurement sending interval), the agent loads the configurations from _/var/lib/cumulocity-agent/cumulocity-agent.conf_. In this case, run `sudo make uninstall` to remove the file before copying the modified _cumulocity-agent.conf_ file.

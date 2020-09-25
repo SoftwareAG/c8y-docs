@@ -4,7 +4,7 @@ layout: redirect
 weight: 10
 ---
 
-In this section, you will learn how to extend your code in the Linux Agent as a Lua plugin. There is also a [C++ Device integration tutorial](/device-sdk/cpp/#use) explaining how to integrate your device with the **Cumulocity IoT C++ SDK**. You can also find a simple Lua example there.
+In this section, you will learn how to extend your code in the Cumulocity IoT Linux agent as a Lua plugin. There is also a [C++ Device integration tutorial](/device-sdk/cpp/#use) explaining how to integrate your device with the **Cumulocity IoT C++ SDK**. You can also find a simple Lua example there.
 
 
 |SECTION|CONTENT|

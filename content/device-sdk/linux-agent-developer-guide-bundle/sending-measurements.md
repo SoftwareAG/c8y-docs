@@ -64,5 +64,5 @@ Before you run the agent again, do not forget to add `cpumesurements` to `lua.pl
 lua.plugins=hello,cpumeasurments
 ```
 
-Deploy _cpumeasurements.lua_ like the [Hello world](./#hello-world-example) example. Then run your agent. You can check your device in the **Device Management** application. The CPU Measurement (20%) will be reported periodically.
+Deploy _cpumeasurements.lua_ like the [Hello world](./#hello-world-example) example. Then run the agent. You can check your device in the **Device Management** application. The CPU Measurement (20%) will be reported periodically.
 ![cpumeasurments](/images/device-sdk/cpumeasurements.png)

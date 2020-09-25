@@ -12,8 +12,8 @@ This section introduces a Lua plugin that handles `c8y_SoftwareList` operation, 
 This example assumes that the device supports **Debian** packages.
 
 First, the agent needs to send `c8y_SoftwareList` as `c8y_SupportedOperations` as we did in the restart example section.
-Edit _src/demoagent.cc_ and add `Q(c8y_SoftwareList)`. Then recompile your agent.
-Now your agent will send a `c8y_SoftwareList` operation when it starts up.
+Edit _src/demoagent.cc_ and add `Q(c8y_SoftwareList)`. Then recompile the agent.
+Now the agent will send a `c8y_SoftwareList` operation when it starts up.
 
 Create a _software.lua_ file under the _/lua_ directory or by copying the existing example code.
 
@@ -88,7 +88,7 @@ Before you run the agent again, do not forget to add `software` to `lua.plugins=
 lua.plugins=hello,cpumeasurments,restart,software
 ```
 
-Deploy _software.lua_ like the [Hello world](./#hello-world-example) example. Then run your agent.
+Deploy _software.lua_ like the [Hello world](./#hello-world-example) example. Then run the agent.
 
 Now go to your Cumulocity IoT tenant, create a software operation. You'll see the operation is managed by this script.
 

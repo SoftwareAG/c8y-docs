@@ -3,7 +3,7 @@ title: Overview
 layout: redirect
 weight: 10
 ---
-The Cumulocity IoT Linux Agent is a generic device agent for connecting Linux-powered devices to Cumulocity IoT. It runs on all major Linux distributions like Ubuntu, Debian, Raspbian, and CentOS.
+The Cumulocity IoT Linux agent is a generic device agent for connecting Linux-powered devices to Cumulocity IoT. It runs on all major Linux distributions like Ubuntu, Debian, Raspbian, and CentOS.
 
 ### Supported functionality
 

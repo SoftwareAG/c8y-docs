@@ -8,17 +8,19 @@ Cumulocity IoT Edge does not officially support VirtualBox. If you want to conve
 
 ### Converting VMWare OVF file to VirtualBox OVA file
 
-1. Download and install the VMWare Open Virtualization Format Tool (OVF Tool) on the host machine.
+1. Download and install the VMWare Open Virtualization Format Tool (OVF Tool) on the host machine from the VMWare website.
 
 2. Go to the location of the OVF file.
 
 3. Run the following command to convert the OVF file to OVA file:
 
-	`ovftool.exe source_ovf_file target_ova_file`
+	`"C:\Program Files (x86)\VMware\VMware Player\OVFTool\ovftool.exe" <source_ovf_file> <target_ova_file>`
 
 	For example:
 
-	`ovftool.exe EDGE-server-10.7.0.0-2059-VMware.ovf EDGE-server-10.7.0.0-2059-VBox.ova`
+	`"C:\Program Files (x86)\VMware\VMware Player\OVFTool\ovftool.exe" EDGE-10.7.0-2059-VMware.ovf EDGE-10.7.0-2059-VBox.ova`
+
+	A sample screenshot:
 
 	<img src="/images/edge/edge-ovftool-command.png" name="OVF tool command" style="width:75%;"/>
 

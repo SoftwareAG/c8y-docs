@@ -1,7 +1,7 @@
 ---
 title: AutoML
 layout: redirect
-weight: 10
+weight: 20
 
 
 aliases:

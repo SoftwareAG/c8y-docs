@@ -1,7 +1,7 @@
 ---
 title: DataHub
 layout: redirect
-weight: 20
+weight: 40
 
 aliases:
   - /predictive-analytics/api-reference/#models

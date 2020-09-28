@@ -1,7 +1,7 @@
 ---
 title: Cumulocity Data Pull
 layout: redirect
-weight: 10
+weight: 30
 
 
 aliases:

@@ -1,7 +1,7 @@
 ---
 title: Training WorkFlow
 layout: redirect
-weight: 30
+weight: 50
 
 aliases:
   - /predictive-analytics/api-reference/#models

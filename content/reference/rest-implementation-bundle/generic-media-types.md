@@ -117,10 +117,10 @@ Paging statistics for collection resources are provided in the following format:
 </thead>
 <tbody>
 <tr>
-<td align="left">totalRecords</td>
+<td align="left">totalPages</td>
 <td align="left">int</td>
 <td align="left">1</td>
-<td align="left">The approximate total number of records.</td>
+<td align="left">The total number of paginated results (pages).</td>
 </tr>
 <tr>
 <td align="left">pageSize</td>
@@ -136,3 +136,5 @@ Paging statistics for collection resources are provided in the following format:
 </tr>
 </tbody>
 </table>
+
+> **Info:** The `totalPages` property is not returned by default in the response. To include it, add the query parameter `withTotalPages=true`.

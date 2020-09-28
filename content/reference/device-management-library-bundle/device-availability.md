@@ -41,7 +41,7 @@ A monitored device has one of the following statuses for c8y_Connection:
 |MAINTENANCE|"responseInterval" is set to 0; the device is under maintenance.|
 |DISCONNECTED|"responseInterval" is larger than 0 and the device is neither AVAILABLE nor CONNECTED.|
 
->**Note:** If a device is not connected via device push, but a message was sent within the required response interval, c8y_Availability can still have the status AVAILABLE, even if c8y_Connection does not have the status CONNECTED.
+>**Info:** If a device is not connected via device push, but a message was sent within the required response interval, c8y_Availability can still have the status AVAILABLE, even if c8y_Connection does not have the status CONNECTED.
 
 #### c8y\_UnavailabilityAlarm
 

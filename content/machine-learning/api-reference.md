@@ -1,6 +1,6 @@
 ---
 weight: 30
-title: Zementis Microservice Reference
+title: Zementis Microservice API
 layout: bundle
 
 aliases:

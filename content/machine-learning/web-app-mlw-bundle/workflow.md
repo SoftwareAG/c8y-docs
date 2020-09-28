@@ -1,5 +1,5 @@
 ---
-title: WORKFLOW
+title: Workflow
 layout: redirect
 weight: 70
 

@@ -1,5 +1,5 @@
 ---
-title: JUPYTER INTEGRATION
+title: Jupyter Integration
 layout: redirect
 weight: 50
 

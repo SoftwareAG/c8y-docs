@@ -1,5 +1,5 @@
 ---
-title: NEURAL NETWORK DESIGNER
+title: Neural Network Designer
 layout: redirect
 weight: 40
 

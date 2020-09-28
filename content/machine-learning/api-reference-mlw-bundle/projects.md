@@ -2,7 +2,6 @@
 title: Projects
 layout: redirect
 weight: 10
----
 
 aliases:
   - /predictive-analytics/api-reference/#models

@@ -1,5 +1,5 @@
 ---
-title: SCHEDULER
+title: Scheduler
 layout: redirect
 weight: 60
 

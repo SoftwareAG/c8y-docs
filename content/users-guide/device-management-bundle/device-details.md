@@ -227,7 +227,7 @@ For more details on managing binary-based configuration snapshots, see [Managing
 
 ![Text-based configuration](/images/users-guide/DeviceManagement/devmgmt-devices-textconfig.png)
 
-> **Info:** The configuration tab includes two additional sub tabs if a device supports both text-based and binary-based configurations.
+> **Info:** If a device supports both text-based and binary-based configuration the **Configuration** tab shows a sub-tab for each configuration type.
 
 ### <a name="control"></a>Control
 

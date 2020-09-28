@@ -30,15 +30,15 @@ You might need to edit the _cumulocity-agents-linux/pkg/debian/DEBIAN/control_ f
 
 To include the Modbus feature, add your libmodbus library to the `Depends:` field of the *cumulocity-agents-linux/pkg/debian/DEBIAN/control* file.
 
-To include the Cloud Remote Access feature, use *cumulocity-agents-linux/pkg/debian/DEBIAN-remoteaccess/* file instead of the default *cumulocity-agents-linux/pkg/debian/DEBIAN/* file. In addition, modify the `debian:` field of your *Makefile* with the following steps.
+To include the Cloud Remote Access feature, use *cumulocity-agents-linux/pkg/debian/DEBIAN-remoteaccess/* instead of the default *cumulocity-agents-linux/pkg/debian/DEBIAN/*. In addition, modify the `debian:` field of your *Makefile* with the following steps.
 
-1. Add `$(BIN_DIR)/$(VNC_BIN)` to the line when copying the binaries to a staging directory. The line will look like:
+1. Add `$(BIN_DIR)/$(VNC_BIN)` to the line in which you copy the binaries to a staging directory. The line will look like:
 
   ```shell
   @cp $(BIN_DIR)/$(BIN) $(BIN_DIR)/srwatchdogd $(BIN_DIR)/$(VNC_BIN) $(STAGE_DIR)/$@$(PREFIX)/bin
   ```
 
-2. Add the following line after the line above when copying _utils/cumulocity-agent.service_.
+2. Add the following line after the line in which you copy _utils/cumulocity-agent.service_.
 
   ```shell
   @sed 's#$$PREFIX#$(PREFIX)#g' utils/cumulocity-remoteaccess.service > $(STAGE_DIR)/$@/lib/systemd/system/cumulocity-remoteaccess.service
@@ -65,7 +65,7 @@ The agent starts automatically after installation and every time the machine boo
 
 To include the Modbus feature, add your libmodbus library to the `Depends:` field of *cumulocity-agents-linux/pkg/snapcraft.yaml*.
 
-To include the CANopen feature, first build the CANopen service. After that, overwrite the content of *cumulocity-agents-linux/pkg/snapcraft_canopen.yaml* to the default *cumulocity-agents-linux/pkg/snapcraft.yaml*. In addition, modify the `snap:` field of your _Makefile_. Add `$(BIN_DIR)/c8y_canopend` to line when copying binaries to a staging directory. The line will look like:
+To include the CANopen feature, first build the CANopen service. After that, overwrite the content of *cumulocity-agents-linux/pkg/snapcraft_canopen.yaml* to the default *cumulocity-agents-linux/pkg/snapcraft.yaml*. In addition, modify the `snap:` field of your _Makefile_. Add `$(BIN_DIR)/c8y_canopend` to the line in which you copy the binaries to a staging directory. The line will look like:
 
 ```shell
 @cp $(BIN_DIR)/$(BIN) $(BIN_DIR)/srwatchdogd $(BIN_DIR)/c8y_canopend $(STAGE_DIR)/$@/bin
@@ -80,7 +80,7 @@ package.cpath = package.cpath .. ';/snap/cumulocity-agent/current/usr/lib/x86_64
 
 If you built the agent with Lua 5.3, you have to change `5.2` to `5.3`.
 
-To include the Cloud Remote Access feature, first build the Cloud Remote Access service. After that, overwrite the content of *cumulocity-agents-linux/pkg/snapcraft_remoteaccess.yaml* to the default *cumulocity-agents-linux/pkg/snapcraft.yaml*. In addition, modify the `snap:` field of your _Makefile_. Add a `$(BIN_DIR)/$(VNC_BIN)` to line where copying binaries to a staging directory. The line will look like:
+To include the Cloud Remote Access feature, first build the Cloud Remote Access service. After that, overwrite the content of *cumulocity-agents-linux/pkg/snapcraft_remoteaccess.yaml* to the default *cumulocity-agents-linux/pkg/snapcraft.yaml*. In addition, modify the `snap:` field of your _Makefile_. Add a `$(BIN_DIR)/$(VNC_BIN)` to the line in which you copy the binaries to a staging directory. The line will look like:
 
 ```shell
 @cp $(BIN_DIR)/$(BIN) $(BIN_DIR)/srwatchdogd $(BIN_DIR)/$(VNC_BIN) $(STAGE_DIR)/$@/bin

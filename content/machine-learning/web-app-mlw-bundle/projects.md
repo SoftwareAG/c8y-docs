@@ -15,6 +15,7 @@ Projects functionality includes:
 * Add resources to the project - drag and drop, upload single or multiple files
 * Commit Versions
 
+***Add New Project***
 ![pojects manager](/images/zementis/mlw-app-add-project.png)
 
 ***Resources***
@@ -26,3 +27,14 @@ Projects functionality includes:
 ***Upload Complete***
 ![Upload Resources](/images/zementis/mlw-app-upload-complete.png)
 
+***Commit Version selection***
+![Upload Resources](/images/zementis/mlw-app-project-commit.png)
+
+***File Selection For Version***
+![Upload Resources](/images/zementis/mlw-app-project-commit-select.png)
+
+***Version Commited***
+![Upload Resources](/images/zementis/mlw-app-project-commited.png)
+
+***Version Information***
+![Upload Resources](/images/zementis/mlw-app-project-version.png)

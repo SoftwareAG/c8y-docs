@@ -1,7 +1,7 @@
 ---
 title: Projects
 layout: redirect
-weight: 10
+weight: 70
 
 
 aliases:

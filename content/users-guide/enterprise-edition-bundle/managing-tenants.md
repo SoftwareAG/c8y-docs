@@ -244,7 +244,7 @@ For each tenant policy, the name, an optional description and the number of opti
 
 The tenant policy will be added to the tenant policies list.
 
->**Important:** When defining the retention rules and options there is a checkbox which when checked (by default unchecked) will allow subtenants to modify definitions of these rules or options. Please be especially careful when left as uneditable -- after creating the subtenant to edit those rules and options in the subtenant the only way is to run the update from `management` tenant. 
+>**Important:** When defining the retention rules and options you can select a checkbox to allow subtenants to modify definitions of these rules or options. By default, this checkbox is not activated. Be aware that if you do not select this checkbox after creating the subtenant you need to run an update from the management tenant in order to edit those rules and options.
 
 #### To edit a tenant policy
 

@@ -66,7 +66,9 @@ In the **Export** page you will find a list displaying all exports with their na
 
 In the **Filter** section, you can select filters to request object- or time-specific data.
 
-To filter for a particular object, enter a name or property value into the search field and click the search icon. All matching devices or groups will be displayed below the **Value** field. Click a device to select it (highlighted in green).
+To filter for a particular object, enter a name or property value into the search field and click the search icon. All matching devices or groups will be displayed below the **Value** field. Click an object to select it (highlighted in green).
+
+>**Info:** If you select a group, only data from devices which are direct children from the group will be included. Reports do not include data from devices in subgroups (non-direct children).
 
 The **Time range** filter can filter data for a specific time range. Select a time range from the dropdown field. This may be one of "Last year", "Last month", "Last week" or select "Custom" and enter a custom from/to range in the additional fields.
 

@@ -1,5 +1,5 @@
 ---
-title: Projects
+title: MLE Integration
 layout: redirect
 weight: 70
 

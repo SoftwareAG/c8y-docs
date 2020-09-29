@@ -1,5 +1,5 @@
 ---
 weight: 70
-title: Linux agent developer guide
+title: Linux Agent Developer guide
 layout: bundle
 ---

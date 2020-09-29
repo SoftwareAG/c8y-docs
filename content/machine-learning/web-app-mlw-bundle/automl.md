@@ -27,5 +27,11 @@ Build your Machine Learning models with ease with the built-in Automated ML tool
 ***Pre Processing steps: training started***
 ![Pre Processing steps](/images/zementis/mlw-app-automl-start.png)
 
-***Pre Processing steps: training completed***
+***AutoML: training completed***
 ![Pre Processing steps](/images/zementis/mlw-app-automl-complete.png)
+
+***AutoML: hyper parameters***
+![Pre Processing steps](/images/zementis/mlw-app-automl-hyper.png)
+
+***AutoML: model created***
+![Pre Processing steps](/images/zementis/mlw-app-automl-model.png)

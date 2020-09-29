@@ -64,6 +64,25 @@ curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/resour
     ]
 }
 ```
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --request GET "{{url}}/resources/deploy?type=PMML"
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
 
 ### GET - List of deployed ONNX models
 
@@ -115,6 +134,25 @@ curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/resour
             "type": "ONNX"
         }
     ]
+}
+```
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --request GET "{{url}}/resources/deploy?type=ONNX"
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
 
@@ -218,7 +256,7 @@ curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw//reso
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy
 ```
 
-Deploys the model PMML to MLE.
+Deploys the PMML model to MLE.
 
 |HEADERS||
 |:---|:---|
@@ -307,13 +345,54 @@ curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/proje
 }
 ```
 
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy'
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+409 - Error
+
+curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
+--header 'Authorization: {{auth}}'
+
+```
+**Example Response**
+
+```
+409 - Error
+
+{
+    "message": "A model with the name 'deployModel' already exists.",
+    "errorCode": 409,
+    "exception": "invalid/error"
+}
+```
+
 ### POST - Deploy model to MLE (ONNX)
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy
 ```
 
-Deploys the model ONNX to MLE.
+Deploys the ONNX model to MLE.
 
 |HEADERS||
 |:---|:---|
@@ -352,13 +431,53 @@ curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/proje
 }
 ```
 
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy'
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+409 - Error
+
+curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
+--header 'Authorization: {{auth}}'
+```
+**Example Response**
+
+```
+409 - Error
+
+{
+    "message": "Model 'admsNNN' not found.",
+    "errorCode": 404,
+    "exception": "invalid/error"
+}
+```
+
 ### POST - Deploy model to MLE (PIPELINE)
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy
 ```
 
-Deploys the model PIPELINE to MLE.
+Deploys the PIPELINE to MLE.
 
 |HEADERS||
 |:---|:---|
@@ -371,7 +490,7 @@ Deploys the model PIPELINE to MLE.
 200 - OK
 
 curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
---header 'Authorization: {{auth}}' \
+--header 'Authorization: {{auth}}'
 ```
 
 **Example Response**
@@ -442,7 +561,7 @@ curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/proje
 409 - Error
 
 curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0'
+--header 'Authorization: {{auth}}'
 ```
 **Example Response**
 
@@ -450,9 +569,9 @@ curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/proje
 409 - Error
 
 {
-    "message": "A model with the name 'deployModel' already exists.",
+    "message": "A pipeline with the same name already exists.",
     "errorCode": 409,
-    "exception": "invalid/error"
+    "exception": "Duplicate Name"
 }
 ```
 
@@ -551,6 +670,45 @@ curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/pro
     "mleID": "deployModel"
 }
 ```
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy'
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+404 - Error
+
+curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
+--header 'Authorization: {{auth}}'
+```
+**Example Response**
+
+```
+404 - Error
+
+{
+    "message": "Model 'deployModel' not found.",
+    "errorCode": 404,
+    "exception": "invalid/error"
+}
+```
 
 ### DELETE - Remove model from MLE (ONNX)
 
@@ -594,6 +752,64 @@ curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/pro
     "category": "Model",
     "deployed": false,
     "mleID": "admsNNN"
+}
+```
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy'
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+404 - Error
+
+curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
+--header 'Authorization: {{auth}}'
+```
+**Example Response**
+
+```
+404 - Error
+
+{
+    "message": "Model 'admsNNN' not found.",
+    "errorCode": 404,
+    "exception": "invalid/error"
+}
+```
+**Example Request**
+
+```
+500 - Error
+
+curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
+--header 'Authorization: {{auth}}'
+```
+**Example Response**
+
+```
+500 - Error
+
+{
+    "message": "The model 'admsNNN' is required by the Pipeline(s) ['PPP']. Please delete these pipeline(s) before deleting the model 'admsNNN'.",
+    "errorCode": 500,
+    "exception": "invalid/error"
 }
 ```
 
@@ -687,7 +903,7 @@ curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/pro
 404 - Error
 
 curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0'
+--header 'Authorization: {{auth}}'
 ```
 **Example Response**
 
@@ -695,18 +911,12 @@ curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/pro
 404 - Error
 
 {
-    "message": "Model 'deployModel' not found.",
+    "message": "Pipeline 'PPP' not found.",
     "errorCode": 404,
     "exception": "invalid/error"
 }
 ```
 
-<!-- ''' -->
-<!-- title: Resources -->
-<!-- layout: redirect -->
-<!-- weight: 10 -->
-
-Operations on resources within Projects.
 
 
 ### GET - Predict using the deployed PMML models

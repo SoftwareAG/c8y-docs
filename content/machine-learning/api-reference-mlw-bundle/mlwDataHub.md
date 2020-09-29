@@ -34,10 +34,7 @@ Pulls the data with the given query from Cumulocity IoT DataHub.
 200 - OK
 
 curl --request POST "{{url}}/service/mlw-cdh/projects/{{projectID}}/resources/importFromDatahub/data" \
-      --header "Authorization: {{auth}}" -F "sql=select sensor1.sensor1.value \
-            as Sensor1,sensor2.sensor2.value \
-            as Sensor2,sensor3.sensor3.value \
-            as Sensor3,sensor4.sensor4.value as Sensor4 \
+      --header "Authorization: {{auth}}" -F "sql=select * from \
             from t71836DataLake.c8y-dremio.t71836.measurements_Sensor1 \
             where MONTH=9 \
             LIMIT 800;" -F "fileName=cdhData"
@@ -88,6 +85,30 @@ curl --request GET "{{url}}/service/mlw-cdh/projects/{{projectID}}/resources/imp
     "error": "general/internalError",
     "message": "Not authorized!",
     "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+409 - Error
+
+curl --request POST "{{url}}/service/mlw-cdh/projects/{{projectID}}/resources/importFromDatahub/data" \
+      --header "Authorization: {{auth}}" -F "sql=select * from \
+            from t71836DataLake.c8y-dremio.t71836.measurements_Sensor1 \
+            where MONTH=9 \
+            LIMIT 800;" -F "fileName=cdhData"
+```
+
+**Example Response**
+
+```
+409 - Error
+
+{
+    "message": "File name already exists. Please provide another name",
+    "errorCode": 409,
+    "exception": "Duplicate name"
 }
 ```
 

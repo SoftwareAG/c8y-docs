@@ -4,12 +4,12 @@ layout: redirect
 weight: 40
 
 aliases:
-  - /predictive-analytics/api-reference/#models
+  - /machine-learning/api-reference-mlw-bundle/#mlwDataHub
 ---
 
-Operations on MLW Projects.
+Data pull from Cumulocity IoT DataHub.
 
->**Info:** An active subscription of the Onnx microservice is required to perform operations on ONNX models by leveraging the ONNX APIs.
+>**Info:** An active subscription of the MLW microservice is required to perform operations.
 
 ### POST - Pull Data from Cumulocity IoT DataHub
 
@@ -33,8 +33,8 @@ Pulls the data with the given query from Cumulocity IoT DataHub.
 ```
 200 - OK
 
-curl --request POST "{{url}}/service/mlw-cdh/projects/{{projectID}}/resources/importFromDatahub/data" --header \
-            "Authorization: {{auth}}" -F "sql=select sensor1.sensor1.value \
+curl --request POST "{{url}}/service/mlw-cdh/projects/{{projectID}}/resources/importFromDatahub/data" \
+      --header "Authorization: {{auth}}" -F "sql=select sensor1.sensor1.value \
             as Sensor1,sensor2.sensor2.value \
             as Sensor2,sensor3.sensor3.value \
             as Sensor3,sensor4.sensor4.value as Sensor4 \

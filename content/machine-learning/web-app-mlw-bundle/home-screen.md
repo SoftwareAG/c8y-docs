@@ -11,6 +11,10 @@ In Cumulocity IoT, you access the Machine Learning Workbench application through
 
 Clicking **Machine Learning Workbench** in the app switcher will open the Machine Learning application showing the  **Home screen** of the application.
 
+**App Switcher**
+![App Switcher screen](/images/zementis/mlw-app-home-select.png)
+
+**HomePage**
 ![Home screen](/images/zementis/mlw-app-home-screen.png)
 
 The **Home screen** provides:

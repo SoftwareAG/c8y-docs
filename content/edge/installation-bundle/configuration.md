@@ -129,7 +129,7 @@ You have the choice to  enter the network parameters manually through the consol
 
 ##### Console input
 
-1. Provide the new IP address for the ethernet interface. For example, 192.168.56.120
+1. Provide the new IP address for the ethernet interface. For example, 192.168.66.10
 
 	`* Enter new IP address for ethernet interface:`
 	
@@ -137,11 +137,11 @@ You have the choice to  enter the network parameters manually through the consol
 	
 	`* Enter netmask:`
 
-3. Provide the gateway IP for your network. For example, 192.168.56.1
+3. Provide the gateway IP for your network. For example, 192.168.66.1
 	
 	`* Enter gateway IP:`
 
-4. Provide the DNS Server IP for your network. For example, 192.168.56.1
+4. Provide the DNS Server IP for your network. For example, 192.168.66.1
 	
 	`* Enter DNS Server IP:`
 	

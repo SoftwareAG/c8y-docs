@@ -15,7 +15,7 @@ Neural Network Training.
 ### POST - Start the training process of the Neural Network 
 
 ```
-{{url}}/service/mlw/projects/1596533622_Project/resources/15965336340029_Resource/trainNN
+{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/trainNN
 ```
 
 Train a neural network model using architecture file.
@@ -30,7 +30,7 @@ Train a neural network model using architecture file.
 ```
 200 - OK
 
-curl --location --request POST 'http://localhost:8999/projects/1596533622_Project/resources/1596533634_0029_Resource/trainNN' \
+curl --location --request POST 'http://localhost:8999/projects/{{projectID}}/resources/{{resourceID}}/trainNN' \
 --header 'Authorization: Basic <token>' \
 --header 'Content-Type: text/plain' \
 --data-raw '{"batchSize":15,"epoch":100,"stepPerEpoch":10,"learningRate":0.001,"loss":"categorical_crossentropy","metrics":["accuracy","f1"],"optimizer":"adam","testSize":0.3,"scriptOutput":"NA","recurrence":"ONE_TIME","cronExpression":"","modelName":"modelName","dataID":"1601289034_0614_Resource","codeID":"1601282978_0253_Resource","problemType":"classification"}'
@@ -131,7 +131,7 @@ curl --location --request POST 'http://localhost:8999/projects/1596533622_Projec
 ```
 401 - Unauthorized
 
-curl --location --request POST 'http://localhost:8999/projects/1596533622_Project/resources/1596533634_0029_Resource/trainNN' \
+curl --location --request POST 'http://localhost:8999/projects/{{projectID}}/resources/{{resourceID}}/trainNN' \
 --header 'Content-Type: text/plain' \
 --data-raw '{"batchSize":15,"epoch":100,"stepPerEpoch":10,"learningRate":0.001,"loss":"categorical_crossentropy","metrics":["accuracy","f1"],"optimizer":"adam","testSize":0.3,"scriptOutput":"NA","recurrence":"ONE_TIME","cronExpression":"","modelName":"someName","dataID":"1601289034_0614_Resource","codeID":"1601282978_0253_Resource","problemType":"classification"}'
 ```
@@ -153,7 +153,7 @@ curl --location --request POST 'http://localhost:8999/projects/1596533622_Projec
 ```
 400 Bad Request
 
-curl --location --request POST 'http://localhost:8999/projects/1596533622_Project/resources/1596533634_0029_Resource/trainNN' \
+curl --location --request POST 'http://localhost:8999/projects/{{projectID}}/resources/{{resourceID}}/trainNN' \
 --header 'Authorization: Basic <token>' \
 --header 'Content-Type: text/plain' \
 --data-raw '{"batchSize":15,"epoch":100,"stepPerEpoch":10,"learningRate":0.001,"loss":"categorical_crossentropy","metrics":["accuracy","f1"],"optimizer":"Adam","testSize":0.3,"scriptOutput":"NA","recurrence":"ONE_TIME","cronExpression":"","modelName":"someName","dataID":"1600786268_0337_Resource"}'

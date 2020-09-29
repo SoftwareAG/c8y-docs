@@ -23,12 +23,21 @@ Trains the WorkFlow using the already created AutoML Model, pre-processing scrip
 |:---|:---|
 |Authorization|{{auth}}
 
+|PARAMS||
+|:---|:---|
+|taskName (string)|required task name to start the training
+|cronExpression (string)|required cron expression
+|recurrence (string)|required recurrence of ONE_TIME or REPEAT
+
 **Example Request**
 
 ```
 200 - OK
 
-curl --request POST "{{url}}/service/mlw-cdh/projects/{{projectID}}/resources/{{resourcesID}}/workflow" --header "Authorization: {{auth}}" 
+curl --request POST "{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourcesID}}/workflow" \
+     --header "Authorization: {{auth}}" \
+     --header "Content-Type: application/json" \
+     --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"workFlowTrain"}'
 ```
 
 **Example Response**
@@ -98,7 +107,10 @@ curl --request POST "{{url}}/service/mlw-cdh/projects/{{projectID}}/resources/{{
 ```
 401 - Unauthorized
 
-curl --request GET "{{url}}/service/mlw-cdh/projects/{{projectID}}/resources/{{resourcesID}}/workflow"
+curl --request POST "{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourcesID}}/workflow" \
+     --header "Authorization: {{auth}}" \
+     --header "Content-Type: application/json" \
+     --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"workFlowTrain"}'
 ```
 
 **Example Response**
@@ -110,6 +122,29 @@ curl --request GET "{{url}}/service/mlw-cdh/projects/{{projectID}}/resources/{{r
     "error": "general/internalError",
     "message": "Not authorized!",
     "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+409 - Error
+
+curl --request POST "{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourcesID}}/workflow" \
+     --header "Authorization: {{auth}}" \
+     --header "Content-Type: application/json" \
+     --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"workFlowTrain"}'
+```
+
+**Example Response**
+
+```
+409 - Error
+
+{
+    "message": "Task name already exists. Please provide another name",
+    "errorCode": 409,
+    "exception": "Duplicate name"
 }
 ```
 

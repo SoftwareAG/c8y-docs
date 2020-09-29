@@ -4,12 +4,12 @@ layout: redirect
 weight: 50
 
 aliases:
-  - /predictive-analytics/api-reference/#models
+  - /machine-learning/api-reference-mlw-bundle/#workFlow
 ---
 
-Operations on MLW Projects.
+Training WorkFlow in MLW.
 
->**Info:** An active subscription of the Onnx microservice is required to perform operations on ONNX models by leveraging the ONNX APIs.
+>**Info:** An active subscription of the MLW microservice is required to perform operations.
 
 ### POST - Retrain Machine Learning models using the Training WorkFlow
 

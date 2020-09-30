@@ -35,7 +35,7 @@ To get the content of the Jupyter Notebook file and also create a Jupyter Sessio
 ```
 200 - OK
 
-curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/jnb-content' \
+curl --location --request GET '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/jnb-content' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -87,7 +87,7 @@ curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/projec
 ```
 401 - Unauthorized
 
-curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/jnb-content' 
+curl --location --request GET '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/jnb-content' 
 
 ```
 
@@ -129,7 +129,7 @@ To update the contents of the Jupyter Notebook file
 ```
 200 - OK
 
-curl --location --request PUT 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/jnb-content' \
+curl --location --request PUT '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/jnb-content' \
 --header 'Authorization: {{auth}} \
 --header 'Content-Type: text/plain' \
 --data-raw '{"content": {"cells": [{"cell_type": "code", "execution_count": 1, "metadata": {}, "outputs": [], "source": ["asdasfas"]}], "metadata": {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"}, "language_info": {"codemirror_mode": {"name": "ipython", "version": 3}, "file_extension": ".py", "mimetype": "text/x-python", "name": "python", "nbconvert_exporter": "python", "pygments_lexer": "ipython3", "version": "3.6.9"}}, "nbformat": 4, "nbformat_minor": 4},
@@ -161,7 +161,7 @@ curl --location --request PUT 'https://mlw.basic.stage.c8y.io/service/mlw/projec
 ```
 401 - Unauthorized
 
-curl --location --request PUT 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/jnb-content' \
+curl --location --request PUT '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/jnb-content' \
 --header 'Content-Type: text/plain' \
 --data-raw '{"content": {"cells": [{"cell_type": "code", "execution_count": 1, "metadata": {}, "outputs": [], "source": ["asdasfas"]}], "metadata": {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"}, "language_info": {"codemirror_mode": {"name": "ipython", "version": 3}, "file_extension": ".py", "mimetype": "text/x-python", "name": "python", "nbconvert_exporter": "python", "pygments_lexer": "ipython3", "version": "3.6.9"}}, "nbformat": 4, "nbformat_minor": 4},
 "format": "json",
@@ -186,7 +186,7 @@ curl --location --request PUT 'https://mlw.basic.stage.c8y.io/service/mlw/projec
 ```
 400 - Error
 
-curl --location --request PUT 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/jnb-content' \
+curl --location --request PUT '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/jnb-content' \
 --header 'Authorization: {{auth}}' \
 --header 'Content-Type: text/plain' \
 --data-raw '{"content": {"cells": [{"cell_type": "code", "execution_count": 1, "metadata": {}, "outputs": [], "source": ["asdasfas"]}], "metadata": {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"}, "language_info": {"codemirror_mode": {"name": "ipython", "version": 3}, "file_extension": ".py", "mimetype": "text/x-python", "name": "python", "nbconvert_exporter": "python", "pygments_lexer": "ipython3", "version": "3.6.9"}}, "nbformat": 4, "nbformat_minor": 4},
@@ -224,7 +224,7 @@ To get the list of created Jupyter Sessions
 ```
 200 - OK
 
-curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw-cdh/jnb-sessions' \
+curl --location --request GET '{{url}}/service/mlw-cdh/jnb-sessions' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -284,7 +284,7 @@ curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw-cdh/jn
 ```
 401 - Unauthorized
 
-curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/jnb-content' 
+curl --location --request GET '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/jnb-content' 
 
 ```
 

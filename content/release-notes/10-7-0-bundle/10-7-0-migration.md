@@ -45,6 +45,17 @@ For details, see the [ngx-bootstrap release notes](https://github.com/valor-soft
 
 ### Implemented measures
 
+#### Removal of DELETE method for audit logs
+
+As announced in the [Migration notes for release 10.5.0](https://cumulocity.com/guides/10.5.0/release-notes/10-5-0/#10-5-0-migration), deletion of audit log entries by administrators is no longer permitted. This method is deprecated and has been removed. All DELETE requests to the audit API will return the error "405 Method not allowed".
+
+Note that retention rules still apply to audit logs and will delete audit log records older than the specified retention time, see also [Auditing > Audit record collection](/reference/auditing/#audit-record-collection) in the Reference guide. 
+
 #### Deprecation of breadcrumbs
 
 [MTM-29924] Other than announced in the [Migration notes for release 10.5.7](/release-notes/10-5-7/#10-5-7-migration), the breadcrumb functionality for groups and devices has not been removed entirely. To improve performance breadcrumbs on devices and groups have been made configurable instead and are turned off by default. They can be turned on by setting the `breadcrumbs` application option, see http://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html#breadcrumbs. 
+
+
+
+
+

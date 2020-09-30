@@ -31,7 +31,7 @@ Retrieves the list of projects available in MLW.
 200 - OK
 
 curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/projects' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0'
+--header 'Authorization: Basic <token>'
 ```
 
 **Example Response**
@@ -101,7 +101,7 @@ Creates a new project with given project name and desciption.
 200 - OK
 
 curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0' \
+--header 'Authorization: Basic <token>' \
 --header 'Content-Type: text/plain' \
 --data-raw '{"name":"ExampleProject","description":"A dummy project"}'
 ```
@@ -161,7 +161,7 @@ curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/proje
 409 - Error
 
 curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0' \
+--header 'Authorization: Basic <token>' \
 --header 'Content-Type: text/plain' \
 --data-raw '{"name":"ExampleProject","description":"A dummy project"}'
 ```
@@ -1188,7 +1188,7 @@ To upload the resource files to use in the project, files like csv, txt, json.
 200 - OK
 
 curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/1601283001_Project/resources' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0' \
+--header 'Authorization: Basic <token>' \
 --form 'file=@/C:/Users/swsh/Desktop/ZMOD0203/MLW_07092020/zementis-mlw/mlw-core/ResourceFIles/TestFiles/iris Dataset.csv'
 ```
 
@@ -1574,7 +1574,7 @@ To create new resource files to use in the project, files like neural network de
 200 - OK (pending)
 
 curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/1601283001_Project/resources/createnew' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0' \
+--header 'Authorization: Basic <token>' \
 --header 'Content-Type: application/json' \
 --data-raw '{"type":"wf","name":"SampleWF1","modelID":"1601285748_0318_Resource","preProcessingID":"1601419709_0877_Resource","dataID":"1601283851_0844_Resource"}'
 ```
@@ -1885,7 +1885,7 @@ To create new resource files to use in the project, files like neural network de
 200 - OK (pending)
 
 curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/1601283001_Project/resources/createnew' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0' \
+--header 'Authorization: Basic <token>' \
 --header 'Content-Type: application/json' \
 --data-raw '{"type":"ipynb","name":"sampleNotebook1","modelID":null,"preProcessingID":null,"dataID":null}'
 ```
@@ -2213,7 +2213,7 @@ To create new resource files to use in the project, files like neural network de
 200 - OK (pending)
 
 curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/1601283001_Project/resources/createnew' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0' \
+--header 'Authorization: Basic <token>' \
 --header 'Content-Type: application/json' \
 --data-raw '{"type":"architecture","name":"sampleNNDesigner1","modelID":null,"preProcessingID":null,"dataID":null}'
 ```
@@ -2555,7 +2555,7 @@ To create new resource files to use in the project, files like neural network de
 200 - OK 
 
 curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/1600159589_Project/resources/createnew' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0' \
+--header 'Authorization: Basic <token>' \
 --header 'Content-Type: application/json' \
 --data-raw '{"type":"pipeline","name":"samplePipeline","modelID":"1600160427_0551_Resource","preProcessingID":"1600766226_0198_Resource","postProcessingID":"1600766226_0198_Resource"}'
 
@@ -3228,7 +3228,7 @@ To get the details of the a resource file
 200 - OK
 
 curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/projects/1601283001_Project/resources/1601283851_0844_Resource' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0' \
+--header 'Authorization: Basic <token>' \
 --form 'file=@/C:/Users/swsh/Desktop/ZMOD0203/MLW_07092020/zementis-mlw/mlw-core/ResourceFIles/TestFiles/iris Dataset.csv'
 ```
 
@@ -3319,7 +3319,7 @@ To get the content of the a Code file
 200 - OK
 
 curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/projects/1601283001_Project/resources/1601419709_0877_Resource/preview' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0'
+--header 'Authorization: Basic <token>'
 ```
 
 **Example Response**
@@ -3376,7 +3376,7 @@ To get the content of the a Data file
 200 - OK
 
 curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/projects/1601283001_Project/resources/1601283851_0844_Resource/preview' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0'
+--header 'Authorization: Basic <token>'
 ```
 
 **Example Response**
@@ -3587,7 +3587,7 @@ To get the content of the a Data file
 200 - OK
 
 curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/projects/1601283001_Project/resources/1601420557_0857_Resource/jnb-content' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0'
+--header 'Authorization: Basic <token>'
 ```
 
 **Example Response**
@@ -3679,7 +3679,7 @@ To get the content of the a Data file
 200 - OK
 
 curl --location --request PUT 'https://mlw.basic.stage.c8y.io/service/mlw/projects/1601283001_Project/resources/1601422676_0095_Resource/save' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0' \
+--header 'Authorization: Basic <token>' \
 --header 'Content-Type: text/plain' \
 --data-raw '{"content":"def hello():\r\n    return '\''Hello'\''"}'
 ```
@@ -3954,7 +3954,7 @@ To get the details of the a resource file
 200 - OK
 
 curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/projects/1601283001_Project/resources/1601283851_0844_Resource/download' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0'
+--header 'Authorization: Basic <token>'
 ```
 
 **Example Response**

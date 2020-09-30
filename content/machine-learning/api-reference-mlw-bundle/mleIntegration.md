@@ -235,7 +235,7 @@ curl --request GET "{{url}}/resources/deploy?type=PIPELINE"
 404 - Error
 
 curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw//resources/deploy?type=H5' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0'
+--header 'Authorization: Basic <token>'
 ```
 
 **Example Response**
@@ -1573,7 +1573,7 @@ curl --request GET "{{url}}/projects/{{projectID}}/resources/{{resourceID}}/pred
 404 - Error
 
 curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/predict/{{modelID}}?type=H5' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0'
+--header 'Authorization: Basic <token>'
 ```
 
 **Example Response**

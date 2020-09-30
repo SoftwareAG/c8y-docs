@@ -31,7 +31,7 @@ Retrieves the list of projects available in MLW.
 200 - OK
 
 curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/projects/1601283001_Project/resources/1601283851_0844_Resource/automl' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0'
+--header 'Authorization: Basic <token>'
 ```
 
 **Example Response**
@@ -199,7 +199,7 @@ Creates a new project with given project name and desciption.
 200 - OK
 
 curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/1601283001_Project/resources/1601283851_0844_Resource/automl' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0' \
+--header 'Authorization: Basic <token>' \
 --header 'Content-Type: application/json' \
 --data-raw '{"data_details": {"data": [{"position": 1,
     "variable": "col1","dtype": "float64","missing_val": 0,"changedataType": "Continuous",
@@ -382,3 +382,312 @@ curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/proje
 ```
 
 
+
+### GET - Start the Anomaly process by passing the data to the engine and get the initial information to start AutoML process.
+
+```
+{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/automl
+```
+
+Retrieves the list of projects available in MLW.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+
+**Example Request**
+
+```
+200 - OK
+
+curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/projects/1601283001_Project/resources/1601423136_0703_Resource/automl' \
+--header 'Authorization: Basic <token>'
+```
+
+**Example Response**
+
+```
+200 - OK
+
+{
+    "data_details": {
+        "data": [
+            {
+                "position": 1,
+                "variable": "time",
+                "dtype": "object",
+                "missing_val": 0,
+                "changedataType": "Categorical",
+                "imputation_method": "None",
+                "data_transformation_step": "None",
+                "use_for_model": true
+            },
+            {
+                "position": 2,
+                "variable": "Sensor1_sensor4",
+                "dtype": "float64",
+                "missing_val": 0,
+                "changedataType": "Continuous",
+                "imputation_method": "None",
+                "data_transformation_step": "None",
+                "use_for_model": true
+            },
+            {
+                "position": 3,
+                "variable": "Sensor1_sensor2",
+                "dtype": "float64",
+                "missing_val": 0,
+                "changedataType": "Continuous",
+                "imputation_method": "None",
+                "data_transformation_step": "None",
+                "use_for_model": true
+            },
+            {
+                "position": 4,
+                "variable": "Sensor1_sensor3",
+                "dtype": "float64",
+                "missing_val": 0,
+                "changedataType": "Continuous",
+                "imputation_method": "None",
+                "data_transformation_step": "None",
+                "use_for_model": true
+            },
+            {
+                "position": 5,
+                "variable": "Sensor1_sensor1",
+                "dtype": "float64",
+                "missing_val": 0,
+                "changedataType": "Continuous",
+                "imputation_method": "None",
+                "data_transformation_step": "None",
+                "use_for_model": true
+            }
+        ],
+        "options": {
+            "changedataTypes": [
+                "None",
+                "Continuous",
+                "Categorical"
+            ],
+            "imputation_methods": [
+                "None",
+                "Mean",
+                "Median",
+                "Mode"
+            ],
+            "data_transformation_steps": [
+                "None",
+                "One Hot Encoding",
+                "Label Encoding",
+                "Normalize",
+                "Scaling Standard",
+                "Scaling Min Max",
+                "Scaling Max Absolute"
+            ],
+            "algorithmTypes": {
+                "Regression": [
+                    "GradientBoostingRegressor",
+                    "DecisionTreeRegressor",
+                    "LinearSVR",
+                    "RandomForestRegressor",
+                    "XGBRegressor",
+                    "KNeighborsRegressor",
+                    "LinearRegression",
+                    "LGBMRegressor"
+                ],
+                "Classification": [
+                    "DecisionTreeClassifier",
+                    "RandomForestClassifier",
+                    "GradientBoostingClassifier",
+                    "KNeighborsClassifier",
+                    "LinearSVC",
+                    "LogisticRegression",
+                    "XGBClassifier",
+                    "LGBMClassifier"
+                ],
+                "Anomaly": [
+                    "IsolationForest",
+                    "OneClassSVM"
+                ]
+            }
+        },
+        "idforData": "1601423242_autoML"
+    }
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/projects/1601283001_Project/resources/1601423136_0703_Resource/automl' \
+
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
+}
+```
+
+### POST - Start the training process of the Anomaly Detection Model 
+
+```
+{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/anomaly
+```
+
+Creates a new project with given project name and desciption.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|data |Filled form values
+|idforData |required description of the project
+|target_variable|column name which is target
+|problem_type|Classification/Regression
+
+|HYPER- PARAMS||
+|:---|:---|
+|algorithm| Selected Algorithms
+|generation| integer
+|population_size| integer
+|model_name| name
+|scoring| select one of the option
+
+**Example Request**
+
+```
+200 - OK
+
+curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/1601283001_Project/resources/1601423136_0703_Resource/anomaly' \
+--header 'Authorization: Basic <token>' \
+--header 'Content-Type: application/json' \
+--data-raw '{"data_details":{"data":[{"position":1,"variable":"time","dtype":"object","missing_val":0,"changedataType":"Categorical","imputation_method":"None","data_transformation_step":"None","use_for_model":false},{"position":2,"variable":"Sensor1_sensor4","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":3,"variable":"Sensor1_sensor2","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":4,"variable":"Sensor1_sensor3","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":5,"variable":"Sensor1_sensor1","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true}],"problem_type":"Classification","idforData":"1601423566_autoML","newPMMLFileName":"anomalyModel","parameters":{"generation":10,"population_size":25,"model_name":"anomalyModel","algorithm":"IsolationForest"}}}'
+```
+
+**Example Response**
+
+```
+200 - OK
+
+{
+    "id": "1601423370_Tasks",
+    "name": "anomalyModel",
+    "createdAt": "Tue Sep 29 23:49:30 2020",
+    "type": "ANOMALY",
+    "cronExpression": "",
+    "status": "Not Scheduled",
+    "individualTasks": [
+        {
+            "pID": "1901",
+            "status": "RUNNING",
+            "message": "Final pipeline trained",
+            "problem_type": "Anomaly",
+            "id": "1601423341_autoML",
+            "tasksID": "1601423370_Tasks",
+            "shape": [
+                658,
+                5
+            ],
+            "taskName": "anomalyModel",
+            "type": "ANOMALY",
+            "executedAt": "Tue Sep 29 23:49:30 2020",
+            "listOfModelAccuracy": [],
+            "projectID": "1601283001_Project",
+            "dataFrameFileName": "./MLW/1601283001_Project/Model/anomalyModel_df.pkl"
+        },
+        {
+            "pID": "1902",
+            "status": "RUNNING",
+            "message": "In Progress",
+            "problem_type": "Anomaly",
+            "id": "1601423566_autoML",
+            "tasksID": "1601423370_Tasks",
+            "shape": [
+                658,
+                5
+            ],
+            "taskName": "anomalyModel",
+            "type": "ANOMALY",
+            "executedAt": "Tue Sep 29 23:54:29 2020",
+            "listOfModelAccuracy": [],
+            "projectID": "1601283001_Project"
+        }
+    ],
+    "projectID": "1601283001_Project",
+    "projectName": "ExampleProject",
+    "properties": [
+        {
+            "key": "problem_type",
+            "label": "Problem Type",
+            "value": "Anomaly"
+        },
+        {
+            "key": "dataSize",
+            "label": "Data Size",
+            "value": [
+                658,
+                5
+            ]
+        },
+        {
+            "key": "model_name",
+            "label": "Model Name",
+            "value": "anomalyModel"
+        },
+        {
+            "key": "alogrithm",
+            "label": "Algorithms Size",
+            "value": "IsolationForest"
+        },
+        {
+            "key": "population_size",
+            "label": "Population Size",
+            "value": 25
+        },
+        {
+            "key": "generation",
+            "label": "Generation",
+            "value": 10
+        }
+    ],
+    "recurrence": "ONE_TIME",
+    "startDate": "",
+    "startTimeH": "",
+    "startTimeM": "",
+    "sortTime": 1601423669
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/1601283001_Project/resources/1601423136_0703_Resource/anomaly' \
+--header 'Content-Type: application/json' \
+--data-raw '{"data_details":{"data":[{"position":1,"variable":"time","dtype":"object","missing_val":0,"changedataType":"Categorical","imputation_method":"None","data_transformation_step":"None","use_for_model":false},{"position":2,"variable":"Sensor1_sensor4","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":3,"variable":"Sensor1_sensor2","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":4,"variable":"Sensor1_sensor3","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true},{"position":5,"variable":"Sensor1_sensor1","dtype":"float64","missing_val":0,"changedataType":"Continuous","imputation_method":"None","data_transformation_step":"None","use_for_model":true}],"problem_type":"Classification","idforData":"1601423566_autoML","newPMMLFileName":"anomalyModel","parameters":{"generation":10,"population_size":25,"model_name":"anomalyModel","algorithm":"IsolationForest"}}}'
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```

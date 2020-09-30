@@ -31,7 +31,7 @@ Get the list of devices in the C8Y inventory.
 200 - OK
 
 curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/listDevices' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0'
+--header 'Authorization: Basic <token>'
 ```
 
 **Example Response**
@@ -170,7 +170,7 @@ Get the list of measurement from the C8Y inventory
 200 - OK
 
 curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/listDevices/446' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0'
+--header 'Authorization: Basic <token>'
 ```
 
 **Example Response**
@@ -240,7 +240,7 @@ Creates a new project with given project name and desciption.
 200 - OK
 
 curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/1601283001_Project/resources/importFromCumulocity/data' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0' \
+--header 'Authorization: Basic <token>' \
 --header 'Content-Type: application/json' \
 --data-raw '{"fileName":"sensorData2","dateFrom":"2020-07-03T06:00:00.000Z","timeFromH":11,"timeFromM":30,"dateTo":"2020-09-28T07:00:10.509Z","timeToH":12,"timeToM":30,"source":"446","series":["sensor4","sensor2","sensor3","sensor1"]}'
 ```
@@ -333,5 +333,3 @@ curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/proje
     "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
-
-

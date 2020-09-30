@@ -235,7 +235,7 @@ curl --request GET "{{url}}/resources/deploy?type=PIPELINE"
 404 - Error
 
 curl --location --request POST '{{url}}/service/mlw//resources/deploy?type=H5' \
---header 'Authorization: Basic <token>'
+--header 'Authorization: {{auth}}'
 ```
 
 **Example Response**
@@ -1609,7 +1609,7 @@ curl --request GET "{{url}}/projects/{{projectID}}/resources/{{resourceID}}/pred
 404 - Error
 
 curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/predict/{{modelID}}?type=H5' \
---header 'Authorization: Basic <token>'
+--header 'Authorization: {{auth}}'
 ```
 
 **Example Response**

@@ -31,7 +31,7 @@ Train a neural network model using architecture file.
 200 - OK
 
 curl --location --request POST '{{url}}/projects/{{projectID}}/resources/{{resourceID}}/trainNN' \
---header 'Authorization: Basic <token>' \
+--header 'Authorization: {{auth}}' \
 --header 'Content-Type: text/plain' \
 --data-raw '{"batchSize":15,"epoch":100,"stepPerEpoch":10,"learningRate":0.001,"loss":"categorical_crossentropy","metrics":["accuracy","f1"],"optimizer":"adam","testSize":0.3,"scriptOutput":"NA","recurrence":"ONE_TIME","cronExpression":"","modelName":"modelName","dataID":"1601289034_0614_Resource","codeID":"1601282978_0253_Resource","problemType":"classification"}'
 
@@ -154,7 +154,7 @@ curl --location --request POST '{{url}}/projects/{{projectID}}/resources/{{resou
 400 Bad Request
 
 curl --location --request POST '{{url}}/projects/{{projectID}}/resources/{{resourceID}}/trainNN' \
---header 'Authorization: Basic <token>' \
+--header 'Authorization: {{auth}}' \
 --header 'Content-Type: text/plain' \
 --data-raw '{"batchSize":15,"epoch":100,"stepPerEpoch":10,"learningRate":0.001,"loss":"categorical_crossentropy","metrics":["accuracy","f1"],"optimizer":"Adam","testSize":0.3,"scriptOutput":"NA","recurrence":"ONE_TIME","cronExpression":"","modelName":"someName","dataID":"1600786268_0337_Resource"}'
 ```

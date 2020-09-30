@@ -25,6 +25,8 @@ After the error code "40" has been removed the error will look like this:
 
 	86,,,0,handshake
 
+No change is required for devices integrated via our Device SDK and agents. However, be aware of this change, in case you have designed your own device integration.
+
 
 #### ngx-boostrap upgrade to 5.6.1
 
@@ -53,7 +55,7 @@ Note that retention rules still apply to audit logs and will delete audit log re
 
 #### Deprecation of breadcrumbs
 
-[MTM-29924] Other than announced in the [Migration notes for release 10.5.7](/release-notes/10-5-7/#10-5-7-migration), the breadcrumb functionality for groups and devices has not been removed entirely. To improve performance breadcrumbs on devices and groups have been made configurable instead and are turned off by default. They can be turned on by setting the `breadcrumbs` application option, see http://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html#breadcrumbs. 
+[MTM-29924] As announced in the [Migration notes for release 10.5.7](/release-notes/10-5-7/#10-5-7-migration), the breadcrumbs for groups and devices are now turned off by default to improve performance. If required, they can still be turned on by setting the `breadcrumbs` application option, see http://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html#breadcrumbs. 
 
 
 

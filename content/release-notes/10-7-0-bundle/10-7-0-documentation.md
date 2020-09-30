@@ -10,13 +10,13 @@ In addition to new feature descriptions and chances related to the new features,
 
 Documentation has been added to the *Device SDK guide* for the Cumulocity IoT Linux Agent.
 
-The [Linux Agent user guide](/device-sdk/linux-agent-user-guide) describes prerequisites, how to build the agent, basic configurations, how to start the agent process, and how to build packages from an end user perspective. 
+The [Linux Agent User guide](/device-sdk/linux-agent-user-guide) describes prerequisites, how to build the agent, basic configurations, how to start the agent process, and how to build packages from an end user perspective. 
 
-The [Linux Agent developer guide](/device-sdk/linux-agent-developer-guide) contains various Lua plugin examples (Hello world, sending measurements, restart your machine, and more) for developers. 
+The [Linux Agent Developer guide](/device-sdk/linux-agent-developer-guide) contains various Lua plugin examples (Hello world, sending measurements, restart your machine, and more) for developers. 
 
-### NEW Device protocols guide
+### NEW Protocol integration guide
 
-The documentation for various device integration protocols has been moved into a separate file to provide a clearer structure and easier navigation.
+The documentation for various device integration protocols has been moved into a separate guide to provide a clearer structure and easier navigation.
 
 <add screenshot and link>
 
@@ -29,9 +29,11 @@ As a result, the Cloud Remote Access documentation, which formerly could be foun
 ![Cloud Remote Access guide](/images/release-notes/clous-remote-access-guide.png)
 
 
-### User guide > Enterprise Tenant- ENHANCED documentation on micorservice billing
+### User guide > Enterprise Tenant- ENHANCED documentation on microservice billing
 
+The documentation on metering and billing of microservices has been extended to improve the transparency of the functionality. 
 
+Additional information is provided on the general process, i.e. when and how the metering and the billing starts/suspends/stops. Moreover, some typical scenarios, for example for different time zones, are explained in detail. See [Enterprise Tenant > Usage statistics and billing](/users-guide/enterprise-edition/#usage-and-billing) in the *User guide*.
 
 
 ### Installation and operations guides
@@ -39,7 +41,7 @@ As a result, the Cloud Remote Access documentation, which formerly could be foun
 In addition to the Installation & Operations guides already provided for previous versions, the following new guides are now available through the [Software AG Empower Portal](https://documentation.softwareag.com/):
 
 * **Cloud Remote Access** - Installation & operations guide
-* ** ** - Installation & operations guide
+* **Connectivity** - Installation & operations guide
 * **LoRa Actility** - Installation & operations guide
 * **SNMP** microservice - Installation & operations guide
 

@@ -35,7 +35,7 @@ The firmware and software update functionality has been enhanced:
 
 	![Software management](/images/users-guide/DeviceManagement/devmgmt-software-tab.png)
 
-For details, see [Device Management > Managing device data > Managing device firmware](/users-guide/device-management#managing-device-data) in the User guide.
+For details, see [Device Management > Managing device data > Managing device data](/users-guide/device-management#managing-device-data) in the User guide.
 
 #### [MTM-30318] ENHANCED bulk operations functionality
 	

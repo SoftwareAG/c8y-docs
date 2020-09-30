@@ -25,12 +25,16 @@ Use the intuitive drag and drop Neural Network designer to build your Deep Neura
 
 
 ***Neural network add layers (drag and drop)***
-![New NN Selector](/images/zementis/mlw-app-nn-dense.png)
+![NN Layers](/images/zementis/mlw-app-nn-dense.png)
 
 
 ***Neural network training parameters***
-![New NN Selector](/images/zementis/mlw-app-nn-train.png)
+![NN training parameter](/images/zementis/mlw-app-nn-train.png)
 
 
 ***Neural network training***
-![New NN Selector](/images/zementis/mlw-app-nn-complete.png)
+![NN training](/images/zementis/mlw-app-nn-complete.png)
+
+
+***Neural network onnx***
+![NN output](/images/zementis/mlw-app-nn-onnx.png)

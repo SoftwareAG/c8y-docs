@@ -9,7 +9,7 @@ The Cumulocity IoT Linux agent repository includes the _cumulocity-agent.conf_ f
 ### Server URL
 
 The agent by default connects to the cumulocity.com instance. In case you’re using a different instance, you can change the server URL.
-The URL supports two protocol schemas. To use the HTTP version, set the URL to the format *https://example.com*. To use the MQTT version, set the URL to the format *mqtts://example.com*.
+The URL supports two protocol schemas. To use the HTTP version, set the URL to the format *https&#58;//example.com*. To use the MQTT version, set the URL to the format *mqtts://example.com*.
 
 |Parameter|Example value|
 |---|---|
@@ -101,7 +101,7 @@ You can enable it by appending it to the *lua.plugins* parameter.
 
 ### Agent measurements
 
-It defines the interval for sending memory and CPU usage measurements, in seconds. The system plugin is required to activate the system configuration.
+These parameters define the interval for sending memory and CPU usage measurements, in seconds. The system plugin is required to activate the system configuration.
 
 |Parameter|Example value|
 |---|---|
@@ -110,11 +110,11 @@ It defines the interval for sending memory and CPU usage measurements, in second
 
 ### Modbus configuration
 
-You can change various Modbus parameters via the configuration file. The **modbus** plugin is required to activate the Modbus configuration.
+You can change various Modbus parameters in the configuration file. The **modbus** plugin is required to activate the Modbus configuration.
 
 |Parameter|Description|Example value|  
 |---|---|---|
-|modbus.transmitrate|the transmit rate for reporting measurements to Cumulocity IoT [in seconds]||
+|modbus.transmitrate|The transmit rate for reporting measurements to Cumulocity IoT [in seconds]||
 |modbus.pollingrate|The polling rate for querying the Modbus slave for data [in seconds]|modbus.pollingrate=30|
 |modbus.readonly|Controls the ability to write data to slaves. 1 is read-only, 0 is writable|modbus.readonly=0|  
 
@@ -145,7 +145,7 @@ You can change various Modbus parameters via the configuration file. The **modbu
 <tbody>
 <tr>
 <td>modbus.serial.port</td>
-<td>This is the type when your Modbus device is recognized as a serial interface by the Linux kernel, for example, /dev/ttyACM0. In this case, you also need to inform the agent the serial port your device is mounted as modbus.serial.port=/dev/ttyACM0 or modbus.serial.port=/dev/ttyUSB0</td>
+<td>This is the type when your Modbus device is recognized as a serial interface by the Linux kernel, for example, /dev/ttyACM0. In this case, you also need to inform the agent about the serial port your device is mounted as: modbus.serial.port=/dev/ttyACM0 or modbus.serial.port=/dev/ttyUSB0</td>
 <td>modbus.serial.port=/dev/ttyACM0</td>
 </tr>
 <tr>
@@ -174,19 +174,19 @@ You can change various Modbus parameters via the configuration file. The **modbu
 
 ### CANopen configuration
 
-There are several CANopen parameters you can change via the configuration file.
+You can change various CANopen parameters in the configuration file.
 
 |Parameters|Description|Example values|  
 |---|---|---|
-|canopen.transmitRate|The transmit Rate for measurement reporting [in seconds]|canopen.transmitRate=5|
-|canopen.pollingRate|The polling Rate for querying CANopen node for data [in seconds]|canopen.pollingRate=5|
+|canopen.transmitRate|The transmit rate for measurement reporting [in seconds]|canopen.transmitRate=5|
+|canopen.pollingRate|The polling rate for querying CANopen node for data [in seconds]|canopen.pollingRate=5|
 |canopen.baud|The baud rate of the CAN line [in kbit/s]|canopen.baud=125|
 
->**Info:** We recommend that you change these CANopen parameters via the CANopen Cloud Fieldbus UI.
+>**Info:** We recommend you to change these CANopen parameters via the CANopen Cloud Fieldbus UI.
 
 #### CANopen port
 
-The default setting is to use the can0 interface. If you need to configure a different CAN interface, for example, can1, edit this parameter.
+The default setting is the can0 interface. If you need to configure a different CAN interface, for example, can1, edit this parameter.
 
 |Parameters|Example values|
 |---|---|
@@ -213,22 +213,17 @@ The agent supports three different CAN interface types:
 <tr>
 <td>canopen.type</td>
 <td>canopen.type=can</td>
-<td>This is the type when your CAN device is supported by the socketCAN driver and automatically appears as a network CAN interface</td>
+<td>This is the type when your CAN device is supported by the socketCAN driver and automatically appears as a network CAN interface.</td>
 </tr>
 <tr>
 <td>canopen.type</td>
 <td>canopen.type=vcan</td>
-<td>This is the default type. This type uses the virtual CAN interface from the Linux kernel, which is mostly for testing and demo purposes</td>
+<td>This is the default type. It uses the virtual CAN interface from the Linux kernel, which is mainly for testing and demo purposes.</td>
 </tr>
 <tr>
 <td>canopen.type</td>
 <td>canopen.type=slcan</td>
-<td>This is the type when your CAN device is recognized as a serial interface by the Linux kernel, for example, /dev/ttyACM0. In this case, you also need to inform the agent the serial port your device is mounted as canopen.serial=/dev/ttyACM0 or canopen.serial=/dev/ttyUSB0</td>
-</tr>
-<tr>
-<td>canopen.serial</td>
-<td>canopen.serial=/dev/ttyUSB0</td>
-<td></td>
+<td>This is the type when your CAN device is recognized as a serial interface by the Linux kernel, for example, /dev/ttyACM0. In this case, you also need to inform the agent about the serial port your device is mounted as: canopen.serial=/dev/ttyACM0 or canopen.serial=/dev/ttyUSB0</td>
 </tr>
 </tbody>
 </table>

@@ -25,6 +25,8 @@ Trains the WorkFlow using the already created AutoML Model, pre-processing scrip
 
 |PARAMS||
 |:---|:---|
+|projectID (string)|{{project ID}}
+|resourceID (string)|{{resource ID}}
 |taskName (string)|required task name to start the training
 |cronExpression (string)|required cron expression
 |recurrence (string)|required recurrence of ONE_TIME or REPEAT
@@ -108,7 +110,6 @@ curl --request POST "{{url}}/service/mlw/projects/{{projectID}}/resources/{{reso
 401 - Unauthorized
 
 curl --request POST "{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourcesID}}/workflow" \
-     --header "Authorization: {{auth}}" \
      --header "Content-Type: application/json" \
      --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"workFlowTrain"}'
 ```

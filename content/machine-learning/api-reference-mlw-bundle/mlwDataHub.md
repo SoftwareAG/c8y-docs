@@ -25,6 +25,7 @@ Pulls the data with the given query from Cumulocity IoT DataHub.
 
 |PARAMS||
 |:---|:---|
+|projectID (string)|{{project ID}}
 |sql (string)|required SQL query to pull the data
 |fileName (string)|required file name to store the pulled data
 
@@ -33,11 +34,10 @@ Pulls the data with the given query from Cumulocity IoT DataHub.
 ```
 200 - OK
 
-curl --request POST "{{url}}/service/mlw-cdh/projects/{{projectID}}/resources/importFromDatahub/data" \
-      --header "Authorization: {{auth}}" -F "sql=select * from \
-            from t71836DataLake.c8y-dremio.t71836.measurements_Sensor1 \
-            where MONTH=9 \
-            LIMIT 800;" -F "fileName=cdhData"
+curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw-cdh/projects/{{projectID}}/resources/importFromDatahub/data' \
+--header 'Authorization: {{auth}}' \
+--header 'Content-Type: application/json' \
+--data-raw '{"sql":"select * from t23897369DataLake.\"c8y-dremio\".t23897369.alarms","fileName":"cdhData"}'
 ```
 
 **Example Response**
@@ -73,7 +73,9 @@ curl --request POST "{{url}}/service/mlw-cdh/projects/{{projectID}}/resources/im
 ```
 401 - Unauthorized
 
-curl --request GET "{{url}}/service/mlw-cdh/projects/{{projectID}}/resources/importFromDatahub/data"
+curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw-cdh/projects/{{projectID}}/resources/importFromDatahub/data' \
+--header 'Content-Type: application/json' \
+--data-raw '{"sql":"select * from t23897369DataLake.\"c8y-dremio\".t23897369.alarms","fileName":"cdhData"}'
 ```
 
 **Example Response**
@@ -93,11 +95,10 @@ curl --request GET "{{url}}/service/mlw-cdh/projects/{{projectID}}/resources/imp
 ```
 409 - Error
 
-curl --request POST "{{url}}/service/mlw-cdh/projects/{{projectID}}/resources/importFromDatahub/data" \
-      --header "Authorization: {{auth}}" -F "sql=select * from \
-            from t71836DataLake.c8y-dremio.t71836.measurements_Sensor1 \
-            where MONTH=9 \
-            LIMIT 800;" -F "fileName=cdhData"
+curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw-cdh/projects/{{projectID}}/resources/importFromDatahub/data' \
+--header 'Authorization: {{auth}}' \
+--header 'Content-Type: application/json' \
+--data-raw '{"sql":"select * from t23897369DataLake.\"c8y-dremio\".t23897369.alarms","fileName":"cdhData"}'
 ```
 
 **Example Response**

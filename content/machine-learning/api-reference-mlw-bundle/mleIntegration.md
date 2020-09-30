@@ -262,6 +262,10 @@ Deploys the PMML model to MLE.
 |:---|:---|
 |Authorization|{{auth}}
 
+|PARAMS||
+|:---|:---|
+|projectID (string)|{{project ID}}
+|resourceID (string)|{{resource ID}}
 
 **Example Request**
 
@@ -398,6 +402,10 @@ Deploys the ONNX model to MLE.
 |:---|:---|
 |Authorization|{{auth}}
 
+|PARAMS||
+|:---|:---|
+|projectID (string)|{{project ID}}
+|resourceID (string)|{{resource ID}}
 
 **Example Request**
 
@@ -483,6 +491,10 @@ Deploys the PIPELINE to MLE.
 |:---|:---|
 |Authorization|{{auth}}
 
+|PARAMS||
+|:---|:---|
+|projectID (string)|{{project ID}}
+|resourceID (string)|{{resource ID}}
 
 **Example Request**
 
@@ -588,6 +600,10 @@ Removes the PMML model from MLE.
 |:---|:---|
 |Authorization|{{auth}}
 
+|PARAMS||
+|:---|:---|
+|projectID (string)|{{project ID}}
+|resourceID (string)|{{resource ID}}
 
 **Example Request**
 
@@ -722,6 +738,10 @@ Removes the ONNX model from MLE.
 |:---|:---|
 |Authorization|{{auth}}
 
+|PARAMS||
+|:---|:---|
+|projectID (string)|{{project ID}}
+|resourceID (string)|{{resource ID}}
 
 **Example Request**
 
@@ -825,6 +845,10 @@ Removes the PIPELINE from MLE.
 |:---|:---|
 |Authorization|{{auth}}
 
+|PARAMS||
+|:---|:---|
+|projectID (string)|{{project ID}}
+|resourceID (string)|{{resource ID}}
 
 **Example Request**
 
@@ -931,6 +955,10 @@ Predicts from the list of deployed PMML models in MLE.
 |:---|:---|
 |Authorization|{{auth}}
 
+|PARAMS||
+|:---|:---|
+|projectID (string)|{{project ID}}
+|resourceID (string)|{{resource ID}}
 
 **Example Request**
 
@@ -1142,6 +1170,10 @@ Predicts from the list of deployed ONNX models in MLE.
 |:---|:---|
 |Authorization|{{auth}}
 
+|PARAMS||
+|:---|:---|
+|projectID (string)|{{project ID}}
+|resourceID (string)|{{resource ID}}
 
 **Example Request**
 
@@ -1353,6 +1385,10 @@ Predicts from the list of deployed PIPELINE models in MLE.
 |:---|:---|
 |Authorization|{{auth}}
 
+|PARAMS||
+|:---|:---|
+|projectID (string)|{{project ID}}
+|resourceID (string)|{{resource ID}}
 
 **Example Request**
 

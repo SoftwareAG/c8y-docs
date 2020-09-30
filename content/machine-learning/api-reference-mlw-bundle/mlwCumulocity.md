@@ -333,5 +333,3 @@ curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/proje
     "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
-
-

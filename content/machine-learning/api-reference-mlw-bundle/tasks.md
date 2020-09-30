@@ -1,7 +1,7 @@
 ---
 title: Tasks
 layout: redirect
-weight: 60
+weight: 10
 
 
 aliases:
@@ -116,7 +116,7 @@ curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/tasks'
 ### GET - Get the detail of a parent task
 
 ```
-{{url}}/service/mlw/listDevices/{{tasksID}}
+{{url}}/service/mlw/tasks/{{parenttaskID}}
 ```
 
 Get the list of measurement from the C8Y inventory
@@ -124,6 +124,11 @@ Get the list of measurement from the C8Y inventory
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|parenttaskID|{{parenttaskID}}
+
 
 
 **Example Request**
@@ -228,19 +233,242 @@ curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/tasks/
 }
 ```
 
-
-### GET - We will the data from the inventory for the selected device ID 
+### DELETE - Delete an individual task within parent task 
 
 ```
-{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity
+{{url}}/service/mlw/tasks/{{parenttaskID}}
 ```
 
-Creates a new project with given project name and desciption.
+Deletes or stops the running individual task running under a parent task
 
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
 
+|PARAMS||
+|:---|:---|
+|parenttaskID|{{parenttaskID}}
+
+**Example Request**
+
+```
+200 - OK
+
+curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/tasks/1601287609_Tasks' \
+--header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0'
+```
+
+**Example Response**
+
+```
+200 - OK
+{
+    "data": {
+        "1600941378514": {
+            "id": "1600941378514",
+            "name": "cast",
+            "createdAt": "Thu Sep 24 09:56:18 2020",
+            "sortTime": 1600941378,
+            "type": "NN",
+            "individualTasks": {
+                "1600941378153": {
+                    "status": "COMPLETED",
+                    "type": "NN",
+                    "projectID": "1600784593_Project",
+                    "log": {
+                        "ARCH_READ": {
+                            "timestamp": "2020-09-24 09:56:18.299939",
+                            "type": "INFO",
+                            "message": "File read successful.",
+                            "error": ""
+                        },
+                        "ARCH_CREATE_LAYER": {
+                            "timestamp": "2020-09-24 09:56:18.301050",
+                            "type": "INFO",
+                            "message": "layers are ordered.",
+                            "error": ""
+                        },
+                        "DATA_INIT": {
+                            "timestamp": "2020-09-24 09:56:19.628340",
+                            "type": "INFO",
+                            "message": "train and validation folder exist.",
+                            "error": ""
+                        },
+                        "DATA_PROCESS": {
+                            "timestamp": "2020-09-24 09:56:19.947158",
+                            "type": "INFO",
+                            "message": "Data processing complete",
+                            "error": ""
+                        },
+                        "COMPILE": {
+                            "timestamp": "2020-09-24 09:56:19.948185",
+                            "type": "INFO",
+                            "message": "Model compilation successful",
+                            "error": ""
+                        },
+                        "TRAIN": {
+                            "timestamp": "2020-09-24 11:03:40.438399",
+                            "type": "INFO",
+                            "message": "Model training complete",
+                            "error": ""
+                        },
+                        "SAVE": {
+                            "timestamp": "2020-09-24 11:03:41.259142",
+                            "type": "INFO",
+                            "message": "Model saved successfully. --> cast_1600941378.onnx",
+                            "error": ""
+                        }
+                    },
+                    "properties": [],
+                    "message": "Model Saved to Model Section",
+                    "history": [
+                        {
+                            "epoch": 1,
+                            "acc": 0.6681777238845825,
+                            "loss": 0.9347285657499664,
+                            "lr": 9.999999747378752e-05,
+                            "val_acc": 0.7475177049636841,
+                            "val_loss": 0.5210347923826664
+                        },
+                        {
+                            "epoch": 2,
+                            "acc": 0.7357207536697388,
+                            "loss": 0.5306199711164019,
+                            "lr": 9.999999747378752e-05,
+                            "val_acc": 0.8241134881973267,
+                            "val_loss": 0.4010832756757736
+                        },
+                        {
+                            "epoch": 3,
+                            "acc": 0.8236627578735352,
+                            "loss": 0.3880086645267816,
+                            "lr": 9.999999747378752e-05,
+                            "val_acc": 0.8794326186180115,
+                            "val_loss": 0.2899192896612147
+                        },
+                        {
+                            "epoch": 4,
+                            "acc": 0.8703535795211792,
+                            "loss": 0.3042577663546298,
+                            "lr": 9.999999747378752e-05,
+                            "val_acc": 0.9290780425071716,
+                            "val_loss": 0.20286435729011576
+                        },
+                        {
+                            "epoch": 5,
+                            "acc": 0.9023874402046204,
+                            "loss": 0.2476639048612642,
+                            "lr": 9.999999747378752e-05,
+                            "val_acc": 0.9517730474472046,
+                            "val_loss": 0.16410305897923225
+                        }
+                    ],
+                    "tasksID": "1600941378514",
+                    "taskName": "cast",
+                    "id": "1600941378153",
+                    "executedAt": "Thu Sep 24 09:56:18 2020",
+                    "pID": "68",
+                    "fileName": "./MLW/1600784593_Project/Model/cast_1600941378.onnx",
+                    "completedAt": "Thu Sep 24 11:03:41 2020",
+                    "fileSaved": true
+                }
+            },
+            "projectID": "1600784593_Project",
+            "projectName": "blah project",
+            "startDate": "2020-09-24",
+            "startTimeH": "09",
+            "startTimeM": "56",
+            "properties": [
+                {
+                    "key": "problemType",
+                    "label": "Problem Type",
+                    "value": "classification"
+                },
+                {
+                    "key": "optimizer",
+                    "label": "Optimizer",
+                    "value": "adam"
+                },
+                {
+                    "key": "learningRate",
+                    "label": "Learning Rate",
+                    "value": 0.0001
+                },
+                {
+                    "key": "loss",
+                    "label": "Loss",
+                    "value": "categorical_crossentropy"
+                },
+                {
+                    "key": "metrics",
+                    "label": "Metrics",
+                    "value": [
+                        "accuracy"
+                    ]
+                },
+                {
+                    "key": "epoch",
+                    "label": "Epoch",
+                    "value": 5
+                },
+                {
+                    "key": "testSize",
+                    "label": "Test Size",
+                    "value": 0.3
+                },
+                {
+                    "key": "batchSize",
+                    "label": "Batch Size",
+                    "value": 15
+                }
+            ],
+            "cronExpression": "",
+            "status": "NOT SCHEDULED",
+            "recurrence": "ONE_TIME"
+        },
+        
+    }
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/tasks/1601287609_Tasks' 
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+
+
+### GET - Get the details of the individual task within parent task 
+
+```
+{{url}}/service/mlw/tasks/{{parenttaskID}}/task/{{taskID}}
+```
+
+This provides the complete detail of the individual task running under a parent task
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|taskID|{{taskID}}
+|parenttaskID|{{parenttaskID}}
 
 **Example Request**
 
@@ -279,7 +507,7 @@ curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/tasks/
 ```
 401 - Unauthorized
 
-curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity' 
+curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity'
 ```
 
 **Example Response**
@@ -295,3 +523,107 @@ curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/tasks/
 ```
 
 
+
+### DELETE - Delete an individual task within parent task 
+
+```
+{{url}}/service/mlw/tasks/{{parenttaskID}}/task/{{taskID}}
+```
+
+Deletes or stops the running individual task running under a parent task
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|taskID|{{taskID}}
+|parenttaskID|{{parenttaskID}}
+
+**Example Request**
+
+```
+200 - OK
+
+curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity' \
+--header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0'
+```
+
+**Example Response**
+
+```
+200 - OK
+{
+    "data": [
+        {
+            "id": "1601287609_Tasks",
+            "name": "sensorData2",
+            "createdAt": "Mon Sep 28 10:06:49 2020",
+            "type": "C8YDATA",
+            "cronExpression": "",
+            "status": "Not Scheduled",
+            "individualTasks": [],
+            "projectID": "1601283001_Project",
+            "projectName": "ExampleProject",
+            "properties": [
+                {
+                    "key": "deviceID",
+                    "label": "Device ID",
+                    "value": "446"
+                },
+                {
+                    "key": "dateFrom",
+                    "label": "Date From",
+                    "value": "2020-07-03T06:00:00.000Z"
+                },
+                {
+                    "key": "dateTo",
+                    "label": "Date To",
+                    "value": "2020-09-28T07:00:10.509Z"
+                },
+                {
+                    "key": "columnNames",
+                    "label": "Measurements",
+                    "value": [
+                        "sensor4",
+                        "sensor2",
+                        "sensor3",
+                        "sensor1"
+                    ]
+                },
+                {
+                    "key": "aggregationType",
+                    "label": "Aggregation Type",
+                    "value": "None"
+                }
+            ],
+            "recurrence": "ONE_TIME",
+            "startDate": "",
+            "startTimeH": "",
+            "startTimeM": "",
+            "sortTime": 1601287609
+        }
+    ]
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity'
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```

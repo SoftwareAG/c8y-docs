@@ -31,7 +31,7 @@ Get the list of devices in the C8Y inventory.
 200 - OK
 
 curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/tasks' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0'
+--header 'Authorization: Basic <token>'
 ```
 
 **Example Response**
@@ -137,7 +137,7 @@ Get the list of measurement from the C8Y inventory
 200 - OK
 
 curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/tasks/1601287609_Tasks' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0'
+--header 'Authorization: Basic <token>'
 ```
 
 **Example Response**
@@ -255,7 +255,7 @@ Deletes or stops the running individual task running under a parent task
 200 - OK
 
 curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/tasks/1601287609_Tasks' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0'
+--header 'Authorization: Basic <token>'
 ```
 
 **Example Response**
@@ -476,7 +476,7 @@ This provides the complete detail of the individual task running under a parent 
 200 - OK
 
 curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0'
+--header 'Authorization: Basic <token>'
 ```
 
 **Example Response**
@@ -547,7 +547,7 @@ Deletes or stops the running individual task running under a parent task
 200 - OK
 
 curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity' \
---header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0'
+--header 'Authorization: Basic <token>'
 ```
 
 **Example Response**

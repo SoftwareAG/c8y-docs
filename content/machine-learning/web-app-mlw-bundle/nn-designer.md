@@ -9,3 +9,32 @@ aliases:
 
 
 Use the intuitive drag and drop Neural Network designer to build your Deep Neural Network architecture and train your models.
+
+
+***Add new resource***
+![New NN Selector](/images/zementis/mlw-app-nn-selectnew.png)
+
+
+
+***Add name to the new resource***
+![New NN Name](/images/zementis/mlw-app-nn-name.png)
+
+
+***Neural network editor***
+![New NN Selector](/images/zementis/mlw-app-nn-edit.png)
+
+
+***Neural network add layers (drag and drop)***
+![NN Layers](/images/zementis/mlw-app-nn-dense.png)
+
+
+***Neural network training parameters***
+![NN training parameter](/images/zementis/mlw-app-nn-train.png)
+
+
+***Neural network training***
+![NN training](/images/zementis/mlw-app-nn-complete.png)
+
+
+***Neural network onnx***
+![NN output](/images/zementis/mlw-app-nn-onnx.png)

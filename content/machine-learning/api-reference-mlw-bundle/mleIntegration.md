@@ -30,7 +30,7 @@ Retrieves the list of PMML models deployed to MLE.
 ```
 200 - OK
 
-curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/resources/deploy?type=PMML' \
+curl --location --request GET '{{url}}/service/mlw/resources/deploy?type=PMML' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -102,7 +102,7 @@ Retrieves the list of ONNX models deployed to MLE.
 ```
 200 - OK
 
-curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/resources/deploy?type=ONNX' \
+curl --location --request GET '{{url}}/service/mlw/resources/deploy?type=ONNX' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -174,7 +174,7 @@ Retrieves the list of PIPELINES deployed to MLE.
 ```
 200 - OK
 
-curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/resources/deploy?type=PIPELINE' \
+curl --location --request GET '{{url}}/service/mlw/resources/deploy?type=PIPELINE' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -234,8 +234,8 @@ curl --request GET "{{url}}/resources/deploy?type=PIPELINE"
 ```
 404 - Error
 
-curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw//resources/deploy?type=H5' \
---header 'Authorization: Basic <token>'
+curl --location --request POST '{{url}}/service/mlw//resources/deploy?type=H5' \
+--header 'Authorization: {{auth}}'
 ```
 
 **Example Response**
@@ -268,7 +268,7 @@ Deploys the PMML model to MLE.
 ```
 200 - OK
 
-curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
+curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
 --header 'Authorization: {{auth}}' \
 ```
 
@@ -350,7 +350,7 @@ curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/proje
 ```
 401 - Unauthorized
 
-curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy'
+curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy'
 ```
 
 **Example Response**
@@ -370,7 +370,7 @@ curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/proje
 ```
 409 - Error
 
-curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
+curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
 --header 'Authorization: {{auth}}'
 
 ```
@@ -404,7 +404,7 @@ Deploys the ONNX model to MLE.
 ```
 200 - OK
 
-curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
+curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
 --header 'Authorization: {{auth}}' \
 ```
 
@@ -436,7 +436,7 @@ curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/proje
 ```
 401 - Unauthorized
 
-curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy'
+curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy'
 ```
 
 **Example Response**
@@ -456,7 +456,7 @@ curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/proje
 ```
 409 - Error
 
-curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
+curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
 --header 'Authorization: {{auth}}'
 ```
 **Example Response**
@@ -489,7 +489,7 @@ Deploys the PIPELINE to MLE.
 ```
 200 - OK
 
-curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
+curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -540,7 +540,7 @@ curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/proje
 ```
 401 - Unauthorized
 
-curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy'
+curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy'
 ```
 
 **Example Response**
@@ -560,7 +560,7 @@ curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/proje
 ```
 409 - Error
 
-curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
+curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
 --header 'Authorization: {{auth}}'
 ```
 **Example Response**
@@ -594,7 +594,7 @@ Removes the PMML model from MLE.
 ```
 200 - OK
 
-curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
 --header 'Authorization: {{auth}}' \
 ```
 
@@ -675,7 +675,7 @@ curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/pro
 ```
 401 - Unauthorized
 
-curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy'
+curl --location --request DELETE '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy'
 ```
 
 **Example Response**
@@ -695,7 +695,7 @@ curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/pro
 ```
 404 - Error
 
-curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
 --header 'Authorization: {{auth}}'
 ```
 **Example Response**
@@ -728,7 +728,7 @@ Removes the ONNX model from MLE.
 ```
 200 - OK
 
-curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
 --header 'Authorization: {{auth}}' \
 ```
 
@@ -759,7 +759,7 @@ curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/pro
 ```
 401 - Unauthorized
 
-curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy'
+curl --location --request DELETE '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy'
 ```
 
 **Example Response**
@@ -779,7 +779,7 @@ curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/pro
 ```
 404 - Error
 
-curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
 --header 'Authorization: {{auth}}'
 ```
 **Example Response**
@@ -798,7 +798,7 @@ curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/pro
 ```
 500 - Error
 
-curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
 --header 'Authorization: {{auth}}'
 ```
 **Example Response**
@@ -831,7 +831,7 @@ Removes the PIPELINE from MLE.
 ```
 200 - OK
 
-curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
 --header 'Authorization: {{auth}}' \
 ```
 
@@ -882,7 +882,7 @@ curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/pro
 ```
 401 - Unauthorized
 
-curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy'
+curl --location --request DELETE '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy'
 ```
 
 **Example Response**
@@ -902,7 +902,7 @@ curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/pro
 ```
 404 - Error
 
-curl --location --request DELETE 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
+curl --location --request DELETE '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/deploy' \
 --header 'Authorization: {{auth}}'
 ```
 **Example Response**
@@ -937,7 +937,7 @@ Predicts from the list of deployed PMML models in MLE.
 ```
 200 - OK
 
-curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/predict/{{modelID}}?type=PMML' \
+curl --location --request GET '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/predict/{{modelID}}?type=PMML' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -1148,7 +1148,7 @@ Predicts from the list of deployed ONNX models in MLE.
 ```
 200 - OK
 
-curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/predict/{{modelID}}?type=ONNX' \
+curl --location --request GET '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/predict/{{modelID}}?type=ONNX' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -1359,7 +1359,7 @@ Predicts from the list of deployed PIPELINE models in MLE.
 ```
 200 - OK
 
-curl --location --request GET 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/predict/{{modelID}}?type=PIPELINE' \
+curl --location --request GET '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/predict/{{modelID}}?type=PIPELINE' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -1572,8 +1572,8 @@ curl --request GET "{{url}}/projects/{{projectID}}/resources/{{resourceID}}/pred
 ```
 404 - Error
 
-curl --location --request POST 'https://mlw.basic.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/predict/{{modelID}}?type=H5' \
---header 'Authorization: Basic <token>'
+curl --location --request POST '{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/predict/{{modelID}}?type=H5' \
+--header 'Authorization: {{auth}}'
 ```
 
 **Example Response**

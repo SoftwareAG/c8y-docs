@@ -31,7 +31,7 @@ Execute a python script
 200 - OK
 
 curl --location --request POST 'https://mlw.latest.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/execute' \
---header 'Authorization: Basic <token>' \
+--header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"script1"}'
 
@@ -102,7 +102,7 @@ curl --location --request POST 'https://mlw.latest.stage.c8y.io/service/mlw/proj
 400 Bad Request
 
 curl --location --request POST 'https://mlw.latest.stage.c8y.io/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/execute' \
---header 'Authorization: Basic <token>' \
+--header 'Authorization: {{auth}}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"recurrence":"ONE_TIME","cronExpression":""}'
 ```

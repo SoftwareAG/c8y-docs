@@ -91,7 +91,7 @@ The virtual machine has the following minimum hardware requirements:
 
 |Hardware|Configuration|
 |:---|:---|
-|Disk space|130 GB
+|Disk space|115 GB
 |CPU|Intel x86
 |Number of CPU cores|2 - without microservice <br>4 - with microservice
 |RAM|6 GB - without microservice <br>8 GB - with microservice

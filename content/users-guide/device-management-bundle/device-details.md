@@ -92,7 +92,7 @@ The following tabs are the most common ones, each described in detail in a separ
 </tbody>
 </table>
 
->**Info:** Several individual tabs, which you do not find listed here, may be described in a different context in another section of the Cumulocity IoT documentation. Use the Search function to switch to the relevant sections. A detailed description on the **Modbus** tab, for example, can be found in [Optional services > Cloud fieldbus](/users-guide/optional-services#cloud-fieldbus).
+>**Info:** Several individual tabs, which you do not find listed here, may be described in a different context in another section of the Cumulocity IoT documentation. Use the Search function to switch to the relevant sections. A detailed description on the **Modbus** tab, for example, can be found in [Cloud fieldbus](/protocol-integration/cloud-fieldbus) in the *Protocol integration guide*.
 
 Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be part of multiple hierarchies, several rows of breadcrumbs may be shown.
 

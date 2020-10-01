@@ -25,7 +25,7 @@ If you still need to contact Software AG support, include the output of the diag
 You can check the status of the backend in the Administration page of the DataHub UI. Alternatively you can query the *isalive* endpoint, which should produce an output similar to:
 
 ```shell	
-curl --user admin:<your_password> https://<edge_domain_name>/service/datahub/isalive
+curl --user admin:<your_password> https://edge_domain_name/service/datahub/isalive
 
 {
   "timestamp" : 1582204706844,
@@ -44,7 +44,7 @@ If the backend cannot be reached, you will get an error response.
 You can check the status of Dremio using the *server_status* endpoint:
 
 ```shell	
-curl http://datahub.<edge_domain_name>/apiv2/server_status
+curl http://datahub.edge_domain_name/apiv2/server_status
 "OK"
 ```
 Dremio is running if *OK* is returned. No response will be returned if it is not running or inaccessible.

@@ -36,7 +36,7 @@ Trains the WorkFlow using the already created AutoML Model, pre-processing scrip
 ```
 200 - OK
 
-curl --request POST "{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourcesID}}/workflow" \
+curl --request POST "{{url}}/service/mlw/projects/1601355085_Project/resources/160128911974_WorkFlow/workflow" \
      --header "Authorization: {{auth}}" \
      --header "Content-Type: application/json" \
      --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"workFlowTrain"}'
@@ -109,7 +109,7 @@ curl --request POST "{{url}}/service/mlw/projects/{{projectID}}/resources/{{reso
 ```
 401 - Unauthorized
 
-curl --request POST "{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourcesID}}/workflow" \
+curl --request POST "{{url}}/service/mlw/projects/1601355085_Project/resources/160128911974_WorkFlow/workflow" \
      --header "Content-Type: application/json" \
      --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"workFlowTrain"}'
 ```
@@ -131,7 +131,7 @@ curl --request POST "{{url}}/service/mlw/projects/{{projectID}}/resources/{{reso
 ```
 409 - Error
 
-curl --request POST "{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourcesID}}/workflow" \
+curl --request POST "{{url}}/service/mlw/projects/1601355085_Project/resources/160128911974_WorkFlow/workflow" \
      --header "Authorization: {{auth}}" \
      --header "Content-Type: application/json" \
      --data-raw '{"recurrence":"ONE_TIME","cronExpression":"","taskName":"workFlowTrain"}'

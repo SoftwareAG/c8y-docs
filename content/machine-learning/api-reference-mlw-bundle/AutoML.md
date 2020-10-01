@@ -12,13 +12,13 @@ Operations on MLW Projects.
 
 >**Info:** An active subscription of the MLW microservice is required to perform operations.
 
-### GET - Start the AutoML process by passing the data to the engine and get the initial information to start AutoML process.
+### GET - Start the AutoML process.
 
 ```
-{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/automl
+{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/automl 
 ```
 
-Retrieves the list of projects available in MLW.
+Start the AutoML process by passing the data to the engine and get the initial information to start AutoML process.
 
 |HEADERS||
 |:---|:---|
@@ -172,7 +172,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/automl
 ```
 
-Creates a new project with given project name and desciption.
+Train an AutoML model by using pre-processing options for variables and using the hyper-parameter given by the user in the form.
 
 |HEADERS||
 |:---|:---|
@@ -383,13 +383,13 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 
 
 
-### GET - Start the Anomaly process by passing the data to the engine and get the initial information to start AutoML process.
+### GET - Start the Anomaly model training process.
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/automl
 ```
 
-Retrieves the list of projects available in MLW.
+Start the Anomaly model training process by passing the data to the engine and get the initial information to start the training.
 
 |HEADERS||
 |:---|:---|
@@ -544,7 +544,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/anomaly
 ```
 
-Creates a new project with given project name and desciption.
+Train an Anomaly model by using pre-processing options for variables and using the model options given by the user in the form.
 
 |HEADERS||
 |:---|:---|
@@ -554,16 +554,12 @@ Creates a new project with given project name and desciption.
 |:---|:---|
 |data |Filled form values
 |idforData |required description of the project
-|target_variable|column name which is target
-|problem_type|Classification/Regression
+
 
 |HYPER- PARAMS||
 |:---|:---|
 |algorithm| Selected Algorithms
-|generation| integer
-|population_size| integer
-|model_name| name
-|scoring| select one of the option
+
 
 **Example Request**
 

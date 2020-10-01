@@ -213,10 +213,10 @@ curl --location --request GET '{{url}}/service/mlw/listDevices/446' \
 ### POST - Download the data from the inventory for the selected device ID 
 
 ```
-{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/automl
+{{url}}/service/mlw/projects/{{projectID}}/resources/importFromCumulocity/data
 ```
 
-Creates a new project with given project name and desciption.
+Downloads the data in the Data Section from Cumulocity inventory wih given aggregation, it is a long running process
 
 |HEADERS||
 |:---|:---|
@@ -224,15 +224,15 @@ Creates a new project with given project name and desciption.
 
 |PARAMS||
 |:---|:---|
-|fileName |Filled form values
-|dateFrom |required description of the project
-|timeFromH|column name which is target
-|timeFromM|
-|dateTo|
-|timeToH|
-|timeToM|
-|source|
-|series|
+|fileName |Name of the file
+|dateFrom |Date from
+|timeFromH|Time from (hour)
+|timeFromM|Time from (minute)
+|dateTo| Date to 
+|timeToH|Time to (hour)
+|timeToM|Time to (minute)
+|source| Device ID
+|series| list of measurement names
 
 **Example Request**
 

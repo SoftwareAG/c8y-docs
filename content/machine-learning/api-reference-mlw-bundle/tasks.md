@@ -18,7 +18,7 @@ Operations on MLW Projects.
 {{url}}/service/mlw/tasks
 ```
 
-Get the list of devices in the C8Y inventory.
+Get the list of tasks running or completed in the system.
 
 |HEADERS||
 |:---|:---|
@@ -119,7 +119,7 @@ curl --location --request GET '{{url}}/service/mlw/tasks'
 {{url}}/service/mlw/tasks/{{parenttaskID}}
 ```
 
-Get the list of measurement from the C8Y inventory
+Get the details of the parent task running or completed.
 
 |HEADERS||
 |:---|:---|
@@ -233,13 +233,185 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks'
 }
 ```
 
+### GET - Get the details of the individual task within parent task 
+
+```
+{{url}}/service/mlw/tasks/{{parenttaskID}}/task/{{taskID}}
+```
+
+This provides the complete detail of the individual task running under a parent task
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|taskID|{{taskID}}
+|parenttaskID|{{parenttaskID}}
+
+**Example Request**
+
+```
+200 - OK
+
+curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity' \
+--header 'Authorization: {{auth}}'
+```
+
+**Example Response**
+
+```
+200 - OK
+
+{
+    "id": "1601287609_0411_Cumulocity",
+    "tasksID": "1601287609_Tasks",
+    "taskName": "sensorData2",
+    "type": "C8YDATA",
+    "executedAt": "Mon Sep 28 10:06:49 2020",
+    "deviceID": "446",
+    "projectID": "1601283001_Project",
+    "fileName": "./MLW/1601283001_Project/Data/sensorData2.csv",
+    "pID": "987",
+    "status": "COMPLETED",
+    "dateFrom": "2020-07-03T06:00:00.000Z",
+    "dateTo": "2020-09-28T07:00:10.509Z",
+    "message": "Data Saved to Data Section",
+    "fileSaved": true
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity'
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
 ### DELETE - Delete an individual task within parent task 
+
+```
+{{url}}/service/mlw/tasks/{{parenttaskID}}/task/{{taskID}}
+```
+
+Deletes and stops the running individual task running under a parent task
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|taskID|{{taskID}}
+|parenttaskID|{{parenttaskID}}
+
+**Example Request**
+
+```
+200 - OK
+
+curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity' \
+--header 'Authorization: {{auth}}'
+```
+
+**Example Response**
+
+```
+200 - OK
+{
+    "data": [
+        {
+            "id": "1601287609_Tasks",
+            "name": "sensorData2",
+            "createdAt": "Mon Sep 28 10:06:49 2020",
+            "type": "C8YDATA",
+            "cronExpression": "",
+            "status": "Not Scheduled",
+            "individualTasks": [],
+            "projectID": "1601283001_Project",
+            "projectName": "ExampleProject",
+            "properties": [
+                {
+                    "key": "deviceID",
+                    "label": "Device ID",
+                    "value": "446"
+                },
+                {
+                    "key": "dateFrom",
+                    "label": "Date From",
+                    "value": "2020-07-03T06:00:00.000Z"
+                },
+                {
+                    "key": "dateTo",
+                    "label": "Date To",
+                    "value": "2020-09-28T07:00:10.509Z"
+                },
+                {
+                    "key": "columnNames",
+                    "label": "Measurements",
+                    "value": [
+                        "sensor4",
+                        "sensor2",
+                        "sensor3",
+                        "sensor1"
+                    ]
+                },
+                {
+                    "key": "aggregationType",
+                    "label": "Aggregation Type",
+                    "value": "None"
+                }
+            ],
+            "recurrence": "ONE_TIME",
+            "startDate": "",
+            "startTimeH": "",
+            "startTimeM": "",
+            "sortTime": 1601287609
+        }
+    ]
+}
+```
+
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity'
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+### DELETE - Delete a parent task 
 
 ```
 {{url}}/service/mlw/tasks/{{parenttaskID}}
 ```
 
-Deletes or stops the running individual task running under a parent task
+Delete and stop the running all the individual task running under a parent task and delete the parent task.
 
 |HEADERS||
 |:---|:---|
@@ -437,183 +609,6 @@ curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks' \
 401 - Unauthorized
 
 curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks' 
-```
-
-**Example Response**
-
-```
-401 - Unauthorized
-
-{
-    "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
-}
-```
-
-
-
-### GET - Get the details of the individual task within parent task 
-
-```
-{{url}}/service/mlw/tasks/{{parenttaskID}}/task/{{taskID}}
-```
-
-This provides the complete detail of the individual task running under a parent task
-
-|HEADERS||
-|:---|:---|
-|Authorization|{{auth}}
-
-|PARAMS||
-|:---|:---|
-|taskID|{{taskID}}
-|parenttaskID|{{parenttaskID}}
-
-**Example Request**
-
-```
-200 - OK
-
-curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity' \
---header 'Authorization: {{auth}}'
-```
-
-**Example Response**
-
-```
-200 - OK
-
-{
-    "id": "1601287609_0411_Cumulocity",
-    "tasksID": "1601287609_Tasks",
-    "taskName": "sensorData2",
-    "type": "C8YDATA",
-    "executedAt": "Mon Sep 28 10:06:49 2020",
-    "deviceID": "446",
-    "projectID": "1601283001_Project",
-    "fileName": "./MLW/1601283001_Project/Data/sensorData2.csv",
-    "pID": "987",
-    "status": "COMPLETED",
-    "dateFrom": "2020-07-03T06:00:00.000Z",
-    "dateTo": "2020-09-28T07:00:10.509Z",
-    "message": "Data Saved to Data Section",
-    "fileSaved": true
-}
-```
-
-**Example Request**
-
-```
-401 - Unauthorized
-
-curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity'
-```
-
-**Example Response**
-
-```
-401 - Unauthorized
-
-{
-    "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
-}
-```
-
-
-
-### DELETE - Delete an individual task within parent task 
-
-```
-{{url}}/service/mlw/tasks/{{parenttaskID}}/task/{{taskID}}
-```
-
-Deletes or stops the running individual task running under a parent task
-
-|HEADERS||
-|:---|:---|
-|Authorization|{{auth}}
-
-|PARAMS||
-|:---|:---|
-|taskID|{{taskID}}
-|parenttaskID|{{parenttaskID}}
-
-**Example Request**
-
-```
-200 - OK
-
-curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity' \
---header 'Authorization: {{auth}}'
-```
-
-**Example Response**
-
-```
-200 - OK
-{
-    "data": [
-        {
-            "id": "1601287609_Tasks",
-            "name": "sensorData2",
-            "createdAt": "Mon Sep 28 10:06:49 2020",
-            "type": "C8YDATA",
-            "cronExpression": "",
-            "status": "Not Scheduled",
-            "individualTasks": [],
-            "projectID": "1601283001_Project",
-            "projectName": "ExampleProject",
-            "properties": [
-                {
-                    "key": "deviceID",
-                    "label": "Device ID",
-                    "value": "446"
-                },
-                {
-                    "key": "dateFrom",
-                    "label": "Date From",
-                    "value": "2020-07-03T06:00:00.000Z"
-                },
-                {
-                    "key": "dateTo",
-                    "label": "Date To",
-                    "value": "2020-09-28T07:00:10.509Z"
-                },
-                {
-                    "key": "columnNames",
-                    "label": "Measurements",
-                    "value": [
-                        "sensor4",
-                        "sensor2",
-                        "sensor3",
-                        "sensor1"
-                    ]
-                },
-                {
-                    "key": "aggregationType",
-                    "label": "Aggregation Type",
-                    "value": "None"
-                }
-            ],
-            "recurrence": "ONE_TIME",
-            "startDate": "",
-            "startTimeH": "",
-            "startTimeM": "",
-            "sortTime": 1601287609
-        }
-    ]
-}
-```
-
-**Example Request**
-
-```
-401 - Unauthorized
-
-curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1601287609_0411_Cumulocity'
 ```
 
 **Example Response**

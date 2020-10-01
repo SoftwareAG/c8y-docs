@@ -30,7 +30,7 @@ Retrieves the list of projects available in MLW.
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects' \
+curl --location --request GET '{{url}}/service/mlw/projects'
 --header 'Authorization: {{auth}}'
 ```
 
@@ -191,7 +191,7 @@ Commit the resources of project for version control.
 
 |PARAMS||
 |:---|:---|
-|listOfResources (list)|List of resources
+|listOfResources (list)|List of resource IDs
 
 
 **Example Request**
@@ -199,7 +199,10 @@ Commit the resources of project for version control.
 ```
 200 - OK
 
-curl --request POST "{{url}}/service/mlw/projects" --header "Authorization: {{auth}}" -F "listOfResources=EI0BD2UFTH" -F ""
+curl --location --request POST '{{url}}/service/mlw/projects/1600753202_Project/commit' \
+--header 'Authorization: {{auth}}
+--header 'Content-Type: application/json' \
+--data-raw '{"listOfResources":["1601506946_0758_Resource","1600753264_0658_Resource","1600753348_0604_Resource","1600753265_0780_Resource","1601507104_0819_Resource"]}'
 ```
 
 **Example Response**
@@ -207,22 +210,54 @@ curl --request POST "{{url}}/service/mlw/projects" --header "Authorization: {{au
 ```
 200 - OK
 
-{'id': '1600932615_Project',
- 'name': 'EI0BD2UFTH',
- 'description': 'A dummy project',
- 'createdAt': 'Thu Sep 24 07:30:15 2020',
- 'properties': [],
- 'isModified': True,
- 'isFreeze': False,
- 'selectedVersion': '',
- 'versions': [],
- 'resourcesCount': {'data': 0,
-  'model': 0,
-  'code': 0,
-  'workflow': 0,
-  'pipeline': 0,
-  'nn-designer': 0,
-  'totalCount': 0}}
+{
+    "id": "1601506976_Tasks",
+    "name": "commitProject",
+    "createdAt": "Wed Sep 30 23:02:56 2020",
+    "type": "COMMIT",
+    "cronExpression": "",
+    "status": "Not Scheduled",
+    "individualTasks": [
+        {
+            "id": "1601506976_0914_Commit",
+            "pID": "68",
+            "status": "COMPLETED",
+            "message": "Version saved in Inventory",
+            "tasksID": "1601506976_Tasks",
+            "taskName": "commitProject",
+            "type": "COMMIT",
+            "executedAt": "Wed Sep 30 23:02:56 2020",
+            "projectID": "1600753202_Project",
+            "versionNumber": "v2"
+        },
+        {
+            "id": "1601507162_0344_Commit",
+            "pID": "69",
+            "status": "RUNNING",
+            "message": "In Progress",
+            "tasksID": "1601506976_Tasks",
+            "taskName": "commitProject",
+            "type": "COMMIT",
+            "executedAt": "Wed Sep 30 23:06:02 2020",
+            "projectID": "1600753202_Project",
+            "versionNumber": "v3"
+        }
+    ],
+    "projectID": "1600753202_Project",
+    "projectName": "commitProject",
+    "properties": [
+        {
+            "key": "verison",
+            "label": "Version",
+            "value": "v3"
+        }
+    ],
+    "recurrence": "ONE_TIME",
+    "startDate": "",
+    "startTimeH": "",
+    "startTimeM": "",
+    "sortTime": 1601507162
+}
 ```
 
 **Example Request**
@@ -230,7 +265,9 @@ curl --request POST "{{url}}/service/mlw/projects" --header "Authorization: {{au
 ```
 401 - Unauthorized
 
-curl --request GET "{{url}}/service/mlw/projects"
+curl --location --request POST '{{url}}/service/mlw/projects/1600753202_Project/commit' \
+--header 'Content-Type: application/json' \
+--data-raw '{"listOfResources":["1601506946_0758_Resource","1600753264_0658_Resource","1600753348_0604_Resource","1600753265_0780_Resource","1601507104_0819_Resource"]}'
 ```
 
 **Example Response**
@@ -285,7 +322,10 @@ Updates the exiting project name and description with given new project name and
 ```
 201 - OK
 
-curl --request PUT "{{url}}/service/mlw/projects/1600932615_Project" --header "Authorization: {{auth}}" -F "name=Newname" -F "description=A dummy project"
+curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/' \
+--header 'Authorization: {{auth}}' \
+--header 'Content-Type: application/json' \
+--data-raw '{"name":"ProjectNameChanged","description":"A dummy project New"}'
 ```
 
 **Example Response**
@@ -293,29 +333,36 @@ curl --request PUT "{{url}}/service/mlw/projects/1600932615_Project" --header "A
 ```
 201 - OK
 
-{'id': '1600932615_Project',
- 'name': 'Newname',
- 'description': 'description',
- 'createdAt': 'Thu Sep 24 07:30:15 2020',
- 'properties': [],
- 'isModified': True,
- 'isFreeze': False,
- 'selectedVersion': '',
- 'versions': [],
- 'resourcesCount': {'data': 0,
-  'model': 0,
-  'code': 0,
-  'workflow': 0,
-  'pipeline': 0,
-  'nn-designer': 0,
-  'totalCount': 0}}
+{
+    "id": "1601507741_Project",
+    "name": "ProjectNameChanged",
+    "description": "A dummy project New",
+    "createdAt": "Wed Sep 30 23:15:41 2020",
+    "properties": [],
+    "isModified": true,
+    "isFreeze": false,
+    "selectedVersion": "",
+    "versions": [],
+    "resourcesCount": {
+        "data": 0,
+        "model": 0,
+        "code": 0,
+        "workflow": 0,
+        "pipeline": 0,
+        "nn-designer": 0,
+        "totalCount": 0
+    }
+}
 ```
 **Example Request**
 
 ```
 409 - OK
 
-curl --request PUT "{{url}}/service/mlw/projects/1600932615_Project" --header "Authorization: {{auth}}" -F "name=ExistingName" -F "description=A dummy project"
+curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/' \
+--header 'Authorization: {{auth}}' \
+--header 'Content-Type: application/json' \
+--data-raw '{"name":"ProjectNameChanged","description":"A dummy project New"}'
 ```
 
 **Example Response**
@@ -332,7 +379,9 @@ curl --request PUT "{{url}}/service/mlw/projects/1600932615_Project" --header "A
 ```
 401 - Unauthorized
 
-curl --request PUT "{{url}}/service/mlw/projects/1600932615_Project" --header "Authorization: {{auth}}" -F "name=Newname" -F "description=A dummy project"
+curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/' \
+--header 'Content-Type: application/json' \
+--data-raw '{"name":"ProjectNameChanged","description":"A dummy project New"}'
 ```
 
 **Example Response**
@@ -353,7 +402,7 @@ curl --request PUT "{{url}}/service/mlw/projects/1600932615_Project" --header "A
 {{url}}/service/mlw/projects/{{projectID}}
 ```
 
-Deletes the exiting project.
+Delete the existing project.
 
 |HEADERS||
 |:---|:---|
@@ -361,14 +410,16 @@ Deletes the exiting project.
 
 |PARAMS||
 |:---|:---|
-|projectID (string)| project ID of the project for which the name needs to be changed
+|projectID (string)| project ID of the project 
 
 **Example Request**
 
 ```
 200 - OK
 
-curl --request DELETE "{{url}}/service/mlw/projects/1600932615_Project" --header "Authorization: {{auth}}" 
+curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Project' \
+--header 'Authorization: Basic YWRtaW46VGVzdGluZ0AxMjM0' \
+--header 'Content-Type: application/json' \
 ```
 
 **Example Response**
@@ -376,22 +427,40 @@ curl --request DELETE "{{url}}/service/mlw/projects/1600932615_Project" --header
 ```
 200 - OK
 
-{'data': [{'id': '1600926359_Project',
-   'name': 'Casting defect',
-   'description': 'Casting defect use-case',
-   'createdAt': 'Thu Sep 24 05:45:59 2020',
-   'properties': [],
-   'isModified': True,
-   'isFreeze': False,
-   'selectedVersion': '',
-   'versions': [],
-   'resourcesCount': {'data': 3,
-    'model': 0,
-    'code': 2,
-    'workflow': 0,
-    'pipeline': 0,
-    'nn-designer': 1,
-    'totalCount': 6}}]}
+{
+    "data": [
+        {
+            "type": "MLWData",
+            "lastUpdated": "2020-09-22T11:18:29.399Z",
+            "name": "Vinay",
+            "createdAt": "Tue Sep 15 08:46:29 2020",
+            "selectedVersion": "v2",
+            "description": "Vinay project",
+            "resourcesCount": {
+                "data": 0,
+                "model": 9,
+                "code": 2,
+                "workflow": 4,
+                "pipeline": 1,
+                "nn-designer": 1,
+                "totalCount": 17
+            },
+            "projectID": "1600159589_Project",
+            "properties": [],
+            "versionNumber": "v2",
+            "1600159589_Project": {},
+            "id": "1600159589_Project",
+            "isModified": false,
+            "isFreeze": false,
+            "versions": [
+                "v0",
+                "v1",
+                "v2"
+            ]
+        },
+        
+    ]
+}
 ```
 
 **Example Request**
@@ -399,8 +468,10 @@ curl --request DELETE "{{url}}/service/mlw/projects/1600932615_Project" --header
 ```
 401 - Unauthorized
 
-curl --request PUT "{{url}}/service/mlw/projects/1600932615_Project" --header "Authorization: {{auth}}"
+curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Project' \
+--header 'Content-Type: application/json' \
 ```
+
 
 **Example Response**
 
@@ -413,14 +484,6 @@ curl --request PUT "{{url}}/service/mlw/projects/1600932615_Project" --header "A
     "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
-
-
-<!-- ''' -->
-<!-- title: Resources -->
-<!-- layout: redirect -->
-<!-- weight: 10 -->
-
-Operations on resources within Projects.
 
 
 ### GET - List of available resources in a project
@@ -441,7 +504,8 @@ Retrieves the list of files available in the project. It contains info related t
 ```
 200 - OK
 
-curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources" --header "Authorization: {{auth}}"
+curl --location --request GET '{{url}}/mlw/projects/1600750565_Project/resources' \
+--header 'Authorization: {{auth}}'
 ```
 
 **Example Response**
@@ -451,10 +515,10 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources" -
 
 {'type': 'MLWData',
  'lastUpdated': '2020-09-22T06:50:59.574Z',
- 'name': 'SodaDemo',
+ 'name': 'sampleDemo',
  'createdAt': 'Tue Sep 22 04:56:05 2020',
  'selectedVersion': 'v2',
- 'description': 'Soda Bottles NN IC Demo',
+ 'description': 'sample Bottles NN IC Demo',
  'resources': {'data': [{'id': '1600829327_0380_Resource',
     'name': 'P.Zero.jpg',
     'description': '',
@@ -497,13 +561,13 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources" -
     'extension': '.jpg',
     'category': 'Data'},
    {'id': '1600750617_0744_Resource',
-    'name': 'soda.zip',
+    'name': 'sample.zip',
     'description': '',
     'createdAt': 'Thu Sep 24 09:05:25 2020',
     'properties': [],
     'editedAt': '',
     'type': 'ZIP',
-    'url': './MLW/1600750565_Project/Data/soda.zip',
+    'url': './MLW/1600750565_Project/Data/sample.zip',
     'size': 22655457,
     'mimeType': 'application/zip',
     'extension': '.zip',
@@ -589,71 +653,71 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources" -
     'extension': '.json',
     'category': 'Data'}],
   'model': [{'id': '1600751811_0233_Resource',
-    'name': 'SodaNewDemo_1600751365.onnx',
+    'name': 'sampleNewDemo_1600751365.onnx',
     'description': '',
     'createdAt': 'Thu Sep 24 09:05:25 2020',
     'properties': [],
     'editedAt': '',
     'type': 'ONNX',
-    'url': './MLW/1600750565_Project/Model/SodaNewDemo_1600751365.onnx',
+    'url': './MLW/1600750565_Project/Model/sampleNewDemo_1600751365.onnx',
     'size': 8296336,
     'mimeType': 'application/ONNX',
     'extension': '.onnx',
     'category': 'Model',
     'deployed': True},
    {'id': '1600754440_0307_Resource',
-    'name': 'sodaBottleModel_1600753902.onnx',
+    'name': 'sampleBottleModel_1600753902.onnx',
     'description': '',
     'createdAt': 'Thu Sep 24 09:05:25 2020',
     'properties': [],
     'editedAt': '',
     'type': 'ONNX',
-    'url': './MLW/1600750565_Project/Model/sodaBottleModel_1600753902.onnx',
+    'url': './MLW/1600750565_Project/Model/sampleBottleModel_1600753902.onnx',
     'size': 8296340,
     'mimeType': 'application/ONNX',
     'extension': '.onnx',
     'category': 'Model',
     'deployed': True}],
   'code': [{'id': '1600752121_0420_Resource',
-    'name': 'SodaPost.py',
+    'name': 'samplePost.py',
     'description': '',
     'createdAt': 'Thu Sep 24 09:05:24 2020',
     'properties': [],
     'editedAt': '',
     'type': 'PY',
-    'url': './MLW/1600750565_Project/Code/SodaPost.py',
+    'url': './MLW/1600750565_Project/Code/samplePost.py',
     'size': 260,
     'mimeType': 'text/x-python',
     'extension': '.py',
     'category': 'Code'},
    {'id': '1600751640_0643_Resource',
-    'name': 'sodaPre.py',
+    'name': 'samplePre.py',
     'description': '',
     'createdAt': 'Thu Sep 24 09:05:24 2020',
     'properties': [],
     'editedAt': '',
     'type': 'PY',
-    'url': './MLW/1600750565_Project/Code/sodaPre.py',
+    'url': './MLW/1600750565_Project/Code/samplePre.py',
     'size': 278,
     'mimeType': 'text/x-python',
     'extension': '.py',
     'category': 'Code'}],
   'pipeline': [{'id': '1600828801_0334_Resource',
-    'name': 'sodaPipeline.pipeline',
+    'name': 'samplePipeline.pipeline',
     'description': '',
     'createdAt': 'Thu Sep 24 09:05:24 2020',
     'properties': [{'label': 'ONNX Model',
-      'value': 'sodaBottleModel_1600753902.onnx',
+      'value': 'sampleBottleModel_1600753902.onnx',
       'key': 'modelID'},
      {'label': 'Pre-Processing Script',
-      'value': 'sodaPre.py',
+      'value': 'samplePre.py',
       'key': 'preProcessingID'},
      {'label': 'Post-Processing Script',
-      'value': 'SodaPost.py',
+      'value': 'samplePost.py',
       'key': 'postProcessingID'}],
     'editedAt': '',
     'type': 'PIPELINE',
-    'url': './MLW/1600750565_Project/Pipeline/sodaPipeline.pipeline',
+    'url': './MLW/1600750565_Project/Pipeline/samplePipeline.pipeline',
     'size': 134,
     'mimeType': 'application/PIPELINE',
     'extension': '.pipeline',
@@ -661,13 +725,13 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources" -
     'deployed': False}],
   'workflow': [],
   'nn-designer': [{'id': '1600750594_0269_Resource',
-    'name': 'soda.architecture',
+    'name': 'sample.architecture',
     'description': '',
     'createdAt': 'Thu Sep 24 09:05:24 2020',
     'properties': [],
     'editedAt': '',
     'type': 'ARCHITECTURE',
-    'url': './MLW/1600750565_Project/NN-Designer/soda.architecture',
+    'url': './MLW/1600750565_Project/NN-Designer/sample.architecture',
     'size': 17176,
     'mimeType': 'application/ARCHITECTURE',
     'extension': '.architecture',
@@ -694,7 +758,7 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources" -
 {{url}}/service/mlw/projects/{{projectID}}/resources
 ```
 
-Scans the project structure to list any un reported file in the system, which would have been generated by code execution or through notebook execution.
+Scans the project structure to list any un-reported file in the system, which would have been generated by code execution or through notebook execution.
 
 |HEADERS||
 |:---|:---|
@@ -707,7 +771,8 @@ Scans the project structure to list any un reported file in the system, which wo
 ```
 200 - OK
 
-curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources" --header "Authorization: {{auth}}" -F "refresh = True"
+curl --location --request GET '{{url}}/service/mlw/projects/1600750565_Project/resources?refresh=true' \
+--header 'Authorization: {{auth}}' 
 ```
 
 **Example Response**
@@ -717,10 +782,10 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources" -
 
 {'type': 'MLWData',
  'lastUpdated': '2020-09-22T06:50:59.574Z',
- 'name': 'SodaDemo',
+ 'name': 'sampleDemo',
  'createdAt': 'Tue Sep 22 04:56:05 2020',
  'selectedVersion': 'v2',
- 'description': 'Soda Bottles NN IC Demo',
+ 'description': 'sample Bottles NN IC Demo',
  'resources': {'data': [{'id': '1600829327_0380_Resource',
     'name': 'P.Zero.jpg',
     'description': '',
@@ -763,13 +828,13 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources" -
     'extension': '.jpg',
     'category': 'Data'},
    {'id': '1600750617_0744_Resource',
-    'name': 'soda.zip',
+    'name': 'sample.zip',
     'description': '',
     'createdAt': 'Thu Sep 24 09:05:25 2020',
     'properties': [],
     'editedAt': '',
     'type': 'ZIP',
-    'url': './MLW/1600750565_Project/Data/soda.zip',
+    'url': './MLW/1600750565_Project/Data/sample.zip',
     'size': 22655457,
     'mimeType': 'application/zip',
     'extension': '.zip',
@@ -855,71 +920,71 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources" -
     'extension': '.json',
     'category': 'Data'}],
   'model': [{'id': '1600751811_0233_Resource',
-    'name': 'SodaNewDemo_1600751365.onnx',
+    'name': 'sampleNewDemo_1600751365.onnx',
     'description': '',
     'createdAt': 'Thu Sep 24 09:05:25 2020',
     'properties': [],
     'editedAt': '',
     'type': 'ONNX',
-    'url': './MLW/1600750565_Project/Model/SodaNewDemo_1600751365.onnx',
+    'url': './MLW/1600750565_Project/Model/sampleNewDemo_1600751365.onnx',
     'size': 8296336,
     'mimeType': 'application/ONNX',
     'extension': '.onnx',
     'category': 'Model',
     'deployed': True},
    {'id': '1600754440_0307_Resource',
-    'name': 'sodaBottleModel_1600753902.onnx',
+    'name': 'sampleBottleModel_1600753902.onnx',
     'description': '',
     'createdAt': 'Thu Sep 24 09:05:25 2020',
     'properties': [],
     'editedAt': '',
     'type': 'ONNX',
-    'url': './MLW/1600750565_Project/Model/sodaBottleModel_1600753902.onnx',
+    'url': './MLW/1600750565_Project/Model/sampleBottleModel_1600753902.onnx',
     'size': 8296340,
     'mimeType': 'application/ONNX',
     'extension': '.onnx',
     'category': 'Model',
     'deployed': True}],
   'code': [{'id': '1600752121_0420_Resource',
-    'name': 'SodaPost.py',
+    'name': 'samplePost.py',
     'description': '',
     'createdAt': 'Thu Sep 24 09:05:24 2020',
     'properties': [],
     'editedAt': '',
     'type': 'PY',
-    'url': './MLW/1600750565_Project/Code/SodaPost.py',
+    'url': './MLW/1600750565_Project/Code/samplePost.py',
     'size': 260,
     'mimeType': 'text/x-python',
     'extension': '.py',
     'category': 'Code'},
    {'id': '1600751640_0643_Resource',
-    'name': 'sodaPre.py',
+    'name': 'samplePre.py',
     'description': '',
     'createdAt': 'Thu Sep 24 09:05:24 2020',
     'properties': [],
     'editedAt': '',
     'type': 'PY',
-    'url': './MLW/1600750565_Project/Code/sodaPre.py',
+    'url': './MLW/1600750565_Project/Code/samplePre.py',
     'size': 278,
     'mimeType': 'text/x-python',
     'extension': '.py',
     'category': 'Code'}],
   'pipeline': [{'id': '1600828801_0334_Resource',
-    'name': 'sodaPipeline.pipeline',
+    'name': 'samplePipeline.pipeline',
     'description': '',
     'createdAt': 'Thu Sep 24 09:05:24 2020',
     'properties': [{'label': 'ONNX Model',
-      'value': 'sodaBottleModel_1600753902.onnx',
+      'value': 'sampleBottleModel_1600753902.onnx',
       'key': 'modelID'},
      {'label': 'Pre-Processing Script',
-      'value': 'sodaPre.py',
+      'value': 'samplePre.py',
       'key': 'preProcessingID'},
      {'label': 'Post-Processing Script',
-      'value': 'SodaPost.py',
+      'value': 'samplePost.py',
       'key': 'postProcessingID'}],
     'editedAt': '',
     'type': 'PIPELINE',
-    'url': './MLW/1600750565_Project/Pipeline/sodaPipeline.pipeline',
+    'url': './MLW/1600750565_Project/Pipeline/samplePipeline.pipeline',
     'size': 134,
     'mimeType': 'application/PIPELINE',
     'extension': '.pipeline',
@@ -927,13 +992,13 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources" -
     'deployed': False}],
   'workflow': [],
   'nn-designer': [{'id': '1600750594_0269_Resource',
-    'name': 'soda.architecture',
+    'name': 'sample.architecture',
     'description': '',
     'createdAt': 'Thu Sep 24 09:05:24 2020',
     'properties': [],
     'editedAt': '',
     'type': 'ARCHITECTURE',
-    'url': './MLW/1600750565_Project/NN-Designer/soda.architecture',
+    'url': './MLW/1600750565_Project/NN-Designer/sample.architecture',
     'size': 17176,
     'mimeType': 'application/ARCHITECTURE',
     'extension': '.architecture',
@@ -967,6 +1032,9 @@ Scans the project structure to list any un reported file in the system, which wo
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
 |versionNumber|{{versionNumber}}
 
 
@@ -975,7 +1043,8 @@ Scans the project structure to list any un reported file in the system, which wo
 ```
 200 - OK
 
-curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources" --header "Authorization: {{auth}}" -F "versionNumber = v0"
+curl --location --request GET '{{url}}/service/mlw/projects/1600750565_Project/resources?versionNumber=v0' \
+--header '{{auth}}' 
 ```
 
 **Example Response**
@@ -985,10 +1054,10 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources" -
 
 {'type': 'MLWData',
  'lastUpdated': '2020-09-22T06:50:59.574Z',
- 'name': 'SodaDemo',
+ 'name': 'sampleDemo',
  'createdAt': 'Tue Sep 22 04:56:05 2020',
  'selectedVersion': 'v0',
- 'description': 'Soda Bottles NN IC Demo',
+ 'description': 'sample Bottles NN IC Demo',
  'resources': {'data': [{'id': '1600753567_0365_Resource',
     'name': 'MD.Orig.jpg',
     'description': '',
@@ -1031,13 +1100,13 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources" -
     'extension': '.json',
     'category': 'Data'},
    {'id': '1600750617_0744_Resource',
-    'name': 'soda.zip',
+    'name': 'sample.zip',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
     'properties': [],
     'editedAt': '',
     'type': 'ZIP',
-    'url': './MLW/1600750565_Project/Data/soda.zip',
+    'url': './MLW/1600750565_Project/Data/sample.zip',
     'size': 22655457,
     'mimeType': 'application/zip',
     'extension': '.zip',
@@ -1060,58 +1129,58 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources" -
     'extension': '.json',
     'category': 'Data'}],
   'model': [{'id': '1600751811_0233_Resource',
-    'name': 'SodaNewDemo_1600751365.onnx',
+    'name': 'sampleNewDemo_1600751365.onnx',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
     'properties': [],
     'editedAt': '',
     'type': 'ONNX',
-    'url': './MLW/1600750565_Project/Model/SodaNewDemo_1600751365.onnx',
+    'url': './MLW/1600750565_Project/Model/sampleNewDemo_1600751365.onnx',
     'size': 8296336,
     'mimeType': 'application/ONNX',
     'extension': '.onnx',
     'category': 'Model',
     'deployed': True}],
   'code': [{'id': '1600752121_0420_Resource',
-    'name': 'SodaPost.py',
+    'name': 'samplePost.py',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
     'properties': [],
     'editedAt': '',
     'type': 'PY',
-    'url': './MLW/1600750565_Project/Code/SodaPost.py',
+    'url': './MLW/1600750565_Project/Code/samplePost.py',
     'size': 260,
     'mimeType': 'text/x-python',
     'extension': '.py',
     'category': 'Code'},
    {'id': '1600751640_0643_Resource',
-    'name': 'sodaPre.py',
+    'name': 'samplePre.py',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
     'properties': [],
     'editedAt': '',
     'type': 'PY',
-    'url': './MLW/1600750565_Project/Code/sodaPre.py',
+    'url': './MLW/1600750565_Project/Code/samplePre.py',
     'size': 278,
     'mimeType': 'text/x-python',
     'extension': '.py',
     'category': 'Code'}],
   'pipeline': [{'id': '1600753248_0497_Resource',
-    'name': 'sodaPipe.pipeline',
+    'name': 'samplePipe.pipeline',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
     'properties': [{'label': 'ONNX Model',
-      'value': 'SodaNewDemo_1600751365.onnx',
+      'value': 'sampleNewDemo_1600751365.onnx',
       'key': 'modelID'},
      {'label': 'Pre-Processing Script',
-      'value': 'sodaPre.py',
+      'value': 'samplePre.py',
       'key': 'preProcessingID'},
      {'label': 'Post-Processing Script',
-      'value': 'SodaPost.py',
+      'value': 'samplePost.py',
       'key': 'postProcessingID'}],
     'editedAt': '',
     'type': 'PIPELINE',
-    'url': './MLW/1600750565_Project/Pipeline/sodaPipe.pipeline',
+    'url': './MLW/1600750565_Project/Pipeline/samplePipe.pipeline',
     'size': 134,
     'mimeType': 'application/PIPELINE',
     'extension': '.pipeline',
@@ -1119,13 +1188,13 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources" -
     'deployed': True}],
   'workflow': [],
   'nn-designer': [{'id': '1600750594_0269_Resource',
-    'name': 'soda.architecture',
+    'name': 'sample.architecture',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
     'properties': [],
     'editedAt': '',
     'type': 'ARCHITECTURE',
-    'url': './MLW/1600750565_Project/NN-Designer/soda.architecture',
+    'url': './MLW/1600750565_Project/NN-Designer/sample.architecture',
     'size': 17176,
     'mimeType': 'application/ARCHITECTURE',
     'extension': '.architecture',
@@ -1152,7 +1221,7 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources" -
 ```
 401 - Unauthorized
 
-curl --request GET "{{url}}/service/mlw/projects"
+curl --location --request GET '{{url}}/service/mlw/projects/1600750565_Project/resources?versionNumber=v0' 
 ```
 
 **Example Response**
@@ -1189,7 +1258,7 @@ To upload the resource files to use in the project, files like csv, txt, json.
 
 curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/resources' \
 --header 'Authorization: {{auth}}' \
---form 'file=@/C:/Users/swsh/Desktop/ZMOD0203/MLW_07092020/zementis-mlw/mlw-core/ResourceFIles/TestFiles/iris Dataset.csv'
+--form 'file=@/../../iris Dataset.csv'
 ```
 
 **Example Response**
@@ -1269,7 +1338,9 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 ```
 409 - Not Supported
 
-curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources" --header "Authorization: {{auth}}" -F "file = ../DT.pmml"
+curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/resources' \
+--header '{{auth}}' \
+--form 'file=@/../../LogisticR.pmml'
 ```
 
 **Example Response**
@@ -1287,7 +1358,8 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources" -
 ```
 401 - Unauthorized
 
-curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources" -F "file = ../admissions.csv"
+curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/resources' \
+--form 'file=@/../../iris Dataset.csv'
 ```
 
 **Example Response**
@@ -1309,13 +1381,13 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources" -
 {{url}}/service/mlw/projects/{{projectID}}/resources/createnew
 ```
 
-To create new resource files to use in the project, files like neural network designer, workflow, jupyter notebook, pipeline, python script files
+To create new resource files (Python script) to use in the project.
 
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
 |name|{{name of the file}}
-|type|{{wf|py|ipynb|architecture|pipeline}}
+|type|{{py}}
 
 
 **Example Request**
@@ -1323,7 +1395,10 @@ To create new resource files to use in the project, files like neural network de
 ```
 200 - OK (pending)
 
-curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources/createnew" --header "Authorization: {{auth}}" -F "type = py" -F "name='sampleWF"
+curl --location --request POST "{{url}}/service/mlw/projects/1600750565_Project/resources/createnew" \
+--header 'Authorization: {{auth}}' \
+--header 'Content-Type: application/json' \
+--data-raw '{"type":"py","name":"sampleWF"}'
 ```
 
 **Example Response**
@@ -1333,10 +1408,10 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources/cr
 
 {'type': 'MLWData',
  'lastUpdated': '2020-09-22T06:50:59.574Z',
- 'name': 'SodaDemo',
+ 'name': 'sampleDemo',
  'createdAt': 'Tue Sep 22 04:56:05 2020',
  'selectedVersion': 'v0',
- 'description': 'Soda Bottles NN IC Demo',
+ 'description': 'sample Bottles NN IC Demo',
  'resources': {'data': [{'id': '1600753567_0365_Resource',
     'name': 'MD.Orig.jpg',
     'description': '',
@@ -1379,13 +1454,13 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources/cr
     'extension': '.json',
     'category': 'Data'},
    {'id': '1600750617_0744_Resource',
-    'name': 'soda.zip',
+    'name': 'sample.zip',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
     'properties': [],
     'editedAt': '',
     'type': 'ZIP',
-    'url': './MLW/1600750565_Project/Data/soda.zip',
+    'url': './MLW/1600750565_Project/Data/sample.zip',
     'size': 22655457,
     'mimeType': 'application/zip',
     'extension': '.zip',
@@ -1426,58 +1501,58 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources/cr
     'extension': '.csv',
     'category': 'Data'}],
   'model': [{'id': '1600751811_0233_Resource',
-    'name': 'SodaNewDemo_1600751365.onnx',
+    'name': 'sampleNewDemo_1600751365.onnx',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
     'properties': [],
     'editedAt': '',
     'type': 'ONNX',
-    'url': './MLW/1600750565_Project/Model/SodaNewDemo_1600751365.onnx',
+    'url': './MLW/1600750565_Project/Model/sampleNewDemo_1600751365.onnx',
     'size': 8296336,
     'mimeType': 'application/ONNX',
     'extension': '.onnx',
     'category': 'Model',
     'deployed': True}],
   'code': [{'id': '1600752121_0420_Resource',
-    'name': 'SodaPost.py',
+    'name': 'samplePost.py',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
     'properties': [],
     'editedAt': '',
     'type': 'PY',
-    'url': './MLW/1600750565_Project/Code/SodaPost.py',
+    'url': './MLW/1600750565_Project/Code/samplePost.py',
     'size': 260,
     'mimeType': 'text/x-python',
     'extension': '.py',
     'category': 'Code'},
    {'id': '1600751640_0643_Resource',
-    'name': 'sodaPre.py',
+    'name': 'samplePre.py',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
     'properties': [],
     'editedAt': '',
     'type': 'PY',
-    'url': './MLW/1600750565_Project/Code/sodaPre.py',
+    'url': './MLW/1600750565_Project/Code/samplePre.py',
     'size': 278,
     'mimeType': 'text/x-python',
     'extension': '.py',
     'category': 'Code'}],
   'pipeline': [{'id': '1600753248_0497_Resource',
-    'name': 'sodaPipe.pipeline',
+    'name': 'samplePipe.pipeline',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
     'properties': [{'label': 'ONNX Model',
-      'value': 'SodaNewDemo_1600751365.onnx',
+      'value': 'sampleNewDemo_1600751365.onnx',
       'key': 'modelID'},
      {'label': 'Pre-Processing Script',
-      'value': 'sodaPre.py',
+      'value': 'samplePre.py',
       'key': 'preProcessingID'},
      {'label': 'Post-Processing Script',
-      'value': 'SodaPost.py',
+      'value': 'samplePost.py',
       'key': 'postProcessingID'}],
     'editedAt': '',
     'type': 'PIPELINE',
-    'url': './MLW/1600750565_Project/Pipeline/sodaPipe.pipeline',
+    'url': './MLW/1600750565_Project/Pipeline/samplePipe.pipeline',
     'size': 134,
     'mimeType': 'application/PIPELINE',
     'extension': '.pipeline',
@@ -1485,13 +1560,13 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources/cr
     'deployed': True}],
   'workflow': [],
   'nn-designer': [{'id': '1600750594_0269_Resource',
-    'name': 'soda.architecture',
+    'name': 'sample.architecture',
     'description': '',
     'createdAt': 'Fri Sep 25 09:49:29 2020',
     'properties': [],
     'editedAt': '',
     'type': 'ARCHITECTURE',
-    'url': './MLW/1600750565_Project/NN-Designer/soda.architecture',
+    'url': './MLW/1600750565_Project/NN-Designer/sample.architecture',
     'size': 17176,
     'mimeType': 'application/ARCHITECTURE',
     'extension': '.architecture',
@@ -1513,31 +1588,15 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources/cr
  'versions': ['v0', 'v1', 'v2']}
 
 ```
-**Example Request**
-
-```
-409 - Not Supported
-
-curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources/createnew" --header "Authorization: {{auth}}" -F "type = py" -F "name='sampleWF"
-```
-
-
-**Example Response**
-
-```
-409 - Unauthorized
-
-{'message': 'Either Data or the Pre-Processing should be selected',
- 'errorCode': 409,
- 'exception': 'Missing parameters'}
-```
 
 **Example Request**
 
 ```
 401 - Unauthorized
 
-curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources/createnew"  -F "type = py" -F "name='sampleWF"
+curl --location --request POST "{{url}}/service/mlw/projects/1600750565_Project/resources/createnew" \
+--header 'Content-Type: application/json' \
+--data-raw '{"type":"py","name":"sampleWF"}'
 ```
 
 **Example Response**
@@ -1557,11 +1616,14 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources/cr
 {{url}}/service/mlw/projects/{{projectID}}/resources/createnew
 ```
 
-To create new resource files to use in the project, files like neural network designer, workflow, jupyter notebook, pipeline, python script files
+To create new resource files (Workflow file) to use in the project.
 
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
 |type|{{type}}
 |name|{{name of file}}
 |modelID|{{modelID}}
@@ -1873,16 +1935,16 @@ To create new resource files to use in the project, files like neural network de
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
 |type|{{type}}
 |name|{{name of file}}
-|modelID|{{modelID}}
-|preProcessingID|{{preProcessingID}}
-|dataID|{{dataID}}
 
 **Example Request**
 
 ```
-200 - OK (pending)
+200 - OK 
 
 curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/resources/createnew' \
 --header 'Authorization: {{auth}}' \
@@ -2196,16 +2258,17 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 {{url}}/service/mlw/projects/{{projectID}}/resources/createnew
 ```
 
-To create new resource files to use in the project, files like neural network designer, workflow, jupyter notebook, pipeline, python script files
+To create new resource files (Architecture fiel for NN Designer) to use in the project.
 
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
 |type|{{type}}
 |name|{{name of file}}
-|modelID|{{modelID}}
-|preProcessingID|{{preProcessingID}}
-|dataID|{{dataID}}
+
 
 **Example Request**
 
@@ -2538,16 +2601,19 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 {{url}}/service/mlw/projects/{{projectID}}/resources/createnew
 ```
 
-To create new resource files to use in the project, files like neural network designer, workflow, jupyter notebook, pipeline, python script files
+To create new resource files (Pipeline file) to use in the project.
 
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
 |type|{{type}}
 |name|{{name of file}}
 |modelID|{{modelID}}
 |preProcessingID|{{preProcessingID}}
-|dataID|{{dataID}}
+|postProcessingID|{{postProcessingID}}
 
 **Example Request**
 
@@ -3204,7 +3270,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1600159589_Project/
     "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
-### GET - Get the details of the resource file from the Project
+### GET - Get the details of the resource file 
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}
@@ -3228,8 +3294,7 @@ To get the details of the a resource file
 200 - OK
 
 curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/resources/1601283851_0844_Resource' \
---header 'Authorization: {{auth}}' \
---form 'file=@/C:/Users/swsh/Desktop/ZMOD0203/MLW_07092020/zementis-mlw/mlw-core/ResourceFIles/TestFiles/iris Dataset.csv'
+--header 'Authorization: {{auth}}' 
 ```
 
 **Example Response**
@@ -3352,7 +3417,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 }
 ```
 
-### GET - Preview the Data Code
+### GET - Preview the Data file
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/preview
@@ -3563,7 +3628,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
     "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
-### GET - Preview the Notebook Code
+### GET - Preview the Notebook file
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/jnb-content
@@ -3657,7 +3722,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 ### GET - Add content to the file and save
 
 ```
-{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/jnb-content
+{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/save
 ```
 
 To get the content of the a Data file
@@ -3764,10 +3829,10 @@ curl --request DELETE "{{url}}/service/mlw/projects/1600750565_Project/resources
 
 {'type': 'MLWData',
  'lastUpdated': '2020-09-22T06:50:59.574Z',
- 'name': 'SodaDemo',
+ 'name': 'sampleDemo',
  'createdAt': 'Tue Sep 22 04:56:05 2020',
  'selectedVersion': 'v0',
- 'description': 'Soda Bottles NN IC Demo',
+ 'description': 'sample Bottles NN IC Demo',
  'resources': {'data': [{'id': '1600753567_0365_Resource',
     'name': 'MD.Orig.jpg',
     'description': '',
@@ -3810,70 +3875,70 @@ curl --request DELETE "{{url}}/service/mlw/projects/1600750565_Project/resources
     'extension': '.json',
     'category': 'Data'},
    {'id': '1600750617_0744_Resource',
-    'name': 'soda.zip',
+    'name': 'sample.zip',
     'description': '',
     'createdAt': 'Mon Sep 28 03:03:55 2020',
     'properties': [],
     'editedAt': '',
     'type': 'ZIP',
-    'url': './MLW/1600750565_Project/Data/soda.zip',
+    'url': './MLW/1600750565_Project/Data/sample.zip',
     'size': 22655457,
     'mimeType': 'application/zip',
     'extension': '.zip',
     'category': 'Data'}],
   'model': [{'id': '1600751811_0233_Resource',
-    'name': 'SodaNewDemo_1600751365.onnx',
+    'name': 'sampleNewDemo_1600751365.onnx',
     'description': '',
     'createdAt': 'Mon Sep 28 03:03:55 2020',
     'properties': [],
     'editedAt': '',
     'type': 'ONNX',
-    'url': './MLW/1600750565_Project/Model/SodaNewDemo_1600751365.onnx',
+    'url': './MLW/1600750565_Project/Model/sampleNewDemo_1600751365.onnx',
     'size': 8296336,
     'mimeType': 'application/ONNX',
     'extension': '.onnx',
     'category': 'Model',
     'deployed': True}],
   'code': [{'id': '1600752121_0420_Resource',
-    'name': 'SodaPost.py',
+    'name': 'samplePost.py',
     'description': '',
     'createdAt': 'Mon Sep 28 03:03:54 2020',
     'properties': [],
     'editedAt': '',
     'type': 'PY',
-    'url': './MLW/1600750565_Project/Code/SodaPost.py',
+    'url': './MLW/1600750565_Project/Code/samplePost.py',
     'size': 260,
     'mimeType': 'text/x-python',
     'extension': '.py',
     'category': 'Code'},
    {'id': '1600751640_0643_Resource',
-    'name': 'sodaPre.py',
+    'name': 'samplePre.py',
     'description': '',
     'createdAt': 'Mon Sep 28 03:03:54 2020',
     'properties': [],
     'editedAt': '',
     'type': 'PY',
-    'url': './MLW/1600750565_Project/Code/sodaPre.py',
+    'url': './MLW/1600750565_Project/Code/samplePre.py',
     'size': 278,
     'mimeType': 'text/x-python',
     'extension': '.py',
     'category': 'Code'}],
   'pipeline': [{'id': '1600753248_0497_Resource',
-    'name': 'sodaPipe.pipeline',
+    'name': 'samplePipe.pipeline',
     'description': '',
     'createdAt': 'Mon Sep 28 03:03:54 2020',
     'properties': [{'label': 'ONNX Model',
-      'value': 'SodaNewDemo_1600751365.onnx',
+      'value': 'sampleNewDemo_1600751365.onnx',
       'key': 'modelID'},
      {'label': 'Pre-Processing Script',
-      'value': 'sodaPre.py',
+      'value': 'samplePre.py',
       'key': 'preProcessingID'},
      {'label': 'Post-Processing Script',
-      'value': 'SodaPost.py',
+      'value': 'samplePost.py',
       'key': 'postProcessingID'}],
     'editedAt': '',
     'type': 'PIPELINE',
-    'url': './MLW/1600750565_Project/Pipeline/sodaPipe.pipeline',
+    'url': './MLW/1600750565_Project/Pipeline/samplePipe.pipeline',
     'size': 134,
     'mimeType': 'application/PIPELINE',
     'extension': '.pipeline',
@@ -3881,13 +3946,13 @@ curl --request DELETE "{{url}}/service/mlw/projects/1600750565_Project/resources
     'deployed': True}],
   'workflow': [],
   'nn-designer': [{'id': '1600750594_0269_Resource',
-    'name': 'soda.architecture',
+    'name': 'sample.architecture',
     'description': '',
     'createdAt': 'Mon Sep 28 03:03:54 2020',
     'properties': [],
     'editedAt': '',
     'type': 'ARCHITECTURE',
-    'url': './MLW/1600750565_Project/NN-Designer/soda.architecture',
+    'url': './MLW/1600750565_Project/NN-Designer/sample.architecture',
     'size': 17176,
     'mimeType': 'application/ARCHITECTURE',
     'extension': '.architecture',

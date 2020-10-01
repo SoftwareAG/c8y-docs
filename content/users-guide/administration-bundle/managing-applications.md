@@ -224,7 +224,7 @@ In the Standard Tenant you will find the following default applications:
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="/users-guide/optional-services#lora" class="no-ajaxy">Actility</a></td>
+<td style="text-align:left"><a href="/device-protocols/lora-actility" class="no-ajaxy">Actility</a></td>
 <td style="text-align:left">Interface with LoRa devices through the Actility ThingPark.</td>
 <td style="text-align:left">actility</td>
 <td style="text-align:left">Microservice</td>
@@ -249,7 +249,7 @@ Manager and editor for Apama Event Processing Language (EPL) apps, for immediate
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/optional-services/#cloud-fieldbus" class="no-ajaxy">Cloud Fieldbus</a></td>
+<td style="text-align:left"><a href="/device-protocols/cloud-fieldbus" class="no-ajaxy">Cloud Fieldbus</a></td>
 <td style="text-align:left">Collect data from fieldbus devices and remotely manage them in Cumulocity IoT.</td>
 <td style="text-align:left">feature-fieldbus4</td>
 <td style="text-align:left">Feature</td>
@@ -261,7 +261,7 @@ Manager and editor for Apama Event Processing Language (EPL) apps, for immediate
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/optional-services/#connectivity" class="no-ajaxy">Connectivity</a></td>
+<td style="text-align:left"><a href="/device-protocols/connectivity" class="no-ajaxy">Connectivity</a></td>
 <td style="text-align:left">Interface with mobile devices through various SIM providers like Jasper, Ericsson and Comarch.</td>
 <td style="text-align:left">connectivity-agent-server</td>
 <td style="text-align:left">Microservice</td>
@@ -272,19 +272,19 @@ Manager and editor for Apama Event Processing Language (EPL) apps, for immediate
 <td style="text-align:left">Feature</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/optional-services#nokia-impact" class="no-ajaxy">Nokia IMPACT agent</a></td>
+<td style="text-align:left"><a href="/device-protocols/impact" class="no-ajaxy">Nokia IMPACT agent</a></td>
 <td style="text-align:left">Interface with heterogeneous devices through the Nokia IMPACT Data Collector.</td>
 <td style="text-align:left">impact</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/optional-services#opc-ua" class="no-ajaxy">OPC UA</a></td>
+<td style="text-align:left"><a href="/device-protocols/opcua" class="no-ajaxy">OPC UA</a></td>
 <td style="text-align:left">Communicate with OPC UA servers through an OPC UA device gateway. </td>
 <td style="text-align:left">opcua-mgmt-service</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/optional-services#sigfox" class="no-ajaxy">Sigfox</a></td>
+<td style="text-align:left"><a href="/device-protocols/sigfox" class="no-ajaxy">Sigfox</a></td>
 <td style="text-align:left">Interface with Sigfox devices through the Sigfox cloud.</td>
 <td style="text-align:left">sigfox-agent</td>
 <td style="text-align:left">Microservice</td>

@@ -4,5 +4,5 @@ bundle: device-sdk
 icon: "c8y-icon c8y-icon-tools"
 type: root
 layout: root
-weight: 80
+weight: 65
 ---

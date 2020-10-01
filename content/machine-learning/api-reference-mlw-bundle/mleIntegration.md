@@ -15,7 +15,7 @@ Operations on Models.
 ### GET - List of deployed PMML models
 
 ```
-{{url}}/resources/deploy?type=PMML
+{{url}}/service/mlw/resources/deploy?type=PMML
 ```
 
 Retrieves the list of PMML models deployed to MLE.
@@ -69,7 +69,7 @@ curl --location --request GET '{{url}}/service/mlw/resources/deploy?type=PMML' \
 ```
 401 - Unauthorized
 
-curl --request GET "{{url}}/resources/deploy?type=PMML"
+curl --request GET "{{url}}/service/mlw/resources/deploy?type=PMML"
 ```
 
 **Example Response**
@@ -87,7 +87,7 @@ curl --request GET "{{url}}/resources/deploy?type=PMML"
 ### GET - List of deployed ONNX models
 
 ```
-{{url}}/resources/deploy?type=ONNX
+{{url}}/service/mlw/resources/deploy?type=ONNX
 ```
 
 Retrieves the list of ONNX models deployed to MLE.
@@ -141,7 +141,7 @@ curl --location --request GET '{{url}}/service/mlw/resources/deploy?type=ONNX' \
 ```
 401 - Unauthorized
 
-curl --request GET "{{url}}/resources/deploy?type=ONNX"
+curl --request GET "{{url}}/service/mlw/resources/deploy?type=ONNX"
 ```
 
 **Example Response**
@@ -159,7 +159,7 @@ curl --request GET "{{url}}/resources/deploy?type=ONNX"
 ### GET - List of deployed PIPELINES
 
 ```
-{{url}}/resources/deploy?type=PIPELINE
+{{url}}/service/mlw/resources/deploy?type=PIPELINE
 ```
 
 Retrieves the list of PIPELINES deployed to MLE.
@@ -214,7 +214,7 @@ curl --location --request GET '{{url}}/service/mlw/resources/deploy?type=PIPELIN
 ```
 401 - Unauthorized
 
-curl --request GET "{{url}}/resources/deploy?type=PIPELINE"
+curl --request GET "{{url}}/service/mlw/resources/deploy?type=PIPELINE"
 ```
 
 **Example Response**
@@ -389,6 +389,46 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
     "exception": "invalid/error"
 }
 ```
+**Example Request**
+
+```
+400 - Error
+
+curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355166_0193_Resource/deploy' \
+--header 'Authorization: {{auth}}'
+
+```
+**Example Response**
+
+```
+400 - Error
+
+{
+    "message": "Invalid XML format.",
+    "errorCode": 400,
+    "exception": "invalid/error"
+}
+```
+**Example Request**
+
+```
+404 - Error
+
+curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355165_0193_Resource/deploy' \
+--header 'Authorization: {{auth}}'
+
+```
+**Example Response**
+
+```
+404 - Error
+
+{
+    "message": "'errors'",
+    "errorCode": 404,
+    "exception": "Not Found"
+}
+```
 
 ### POST - Deploy model to MLE (ONNX)
 
@@ -474,6 +514,47 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
 
 {
     "message": "A model with the name 'admsNNN' already exists.",
+    "errorCode": 404,
+    "exception": "invalid/error"
+}
+```
+
+**Example Request**
+
+```
+400 - Error
+
+curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/resources/1601357306_0916_Resource/deploy' \
+--header 'Authorization: {{auth}}'
+
+```
+**Example Response**
+
+```
+400 - Error
+
+{
+    "message": "Invalid onnx format.",
+    "errorCode": 400,
+    "exception": "invalid/error"
+}
+```
+**Example Request**
+
+```
+404 - Error
+
+curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355165_0193_Resource/deploy' \
+--header 'Authorization: {{auth}}'
+
+```
+**Example Response**
+
+```
+404 - Error
+
+{
+    "message": "Onnx microservice is unsubscribed. Subscribe to Onnx microservice.",
     "errorCode": 404,
     "exception": "invalid/error"
 }
@@ -586,7 +667,6 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
     "exception": "Duplicate Name"
 }
 ```
-
 
 ### DELETE - Remove model from MLE (PMML) 
 
@@ -725,6 +805,26 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Projec
     "exception": "invalid/error"
 }
 ```
+**Example Request**
+
+```
+404 - Error
+
+curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Project/resources/1601355165_0193_Resource/deploy' \
+--header 'Authorization: {{auth}}'
+
+```
+**Example Response**
+
+```
+404 - Error
+
+{
+    "message": "'errors'",
+    "errorCode": 404,
+    "exception": "Not Found"
+}
+```
 
 ### DELETE - Remove model from MLE (ONNX)
 
@@ -829,6 +929,26 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Projec
 {
     "message": "The model 'admsNNN' is required by the Pipeline(s) ['PPP']. Please delete these pipeline(s) before deleting the model 'admsNNN'.",
     "errorCode": 500,
+    "exception": "invalid/error"
+}
+```
+**Example Request**
+
+```
+404 - Error
+
+curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Project/resources/1601357305_0916_Resource/deploy' \
+--header 'Authorization: {{auth}}'
+
+```
+**Example Response**
+
+```
+404 - Error
+
+{
+    "message": "Onnx microservice is unsubscribed. Subscribe to Onnx microservice.",
+    "errorCode": 404,
     "exception": "invalid/error"
 }
 ```
@@ -946,7 +1066,7 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Projec
 ### GET - Predict using the deployed PMML models
 
 ```
-{{url}}/projects/{{projectID}}/resources/{{resourceID}}/predict/{{modelID}}?type=PMML
+{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/predict/{{modelID}}?type=PMML
 ```
 
 Predicts from the list of deployed PMML models in MLE.
@@ -1157,11 +1277,31 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
     }
 }
 ```
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/resources/1601359513_0301_Resource/predict/deployModel?type=PMML'
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
 
 ### GET - Predict using the deployed ONNX models
 
 ```
-{{url}}/projects/{{projectID}}/resources/{{resourceID}}/predict/{{modelID}}?type=ONNX
+{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/predict/{{modelID}}?type=ONNX
 ```
 
 Predicts from the list of deployed ONNX models in MLE.
@@ -1180,7 +1320,7 @@ Predicts from the list of deployed ONNX models in MLE.
 ```
 200 - OK
 
-curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/resources/1601359513_0301_Resource/predict/admsNNN_1601357289?type=ONNX' \
+curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/resources/1601359513_0301_Resource/predict/admsNNN?type=ONNX' \
 --header 'Authorization: {{auth}}'
 ```
 
@@ -1373,10 +1513,52 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 }
 ```
 
+**Example Request**
+
+```
+401 - Unauthorized
+
+curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/resources/1601359513_0301_Resource/predict/admsNNN?type=ONNX'
+```
+
+**Example Response**
+
+```
+401 - Unauthorized
+
+{
+    "error": "general/internalError",
+    "message": "Not authorized!",
+    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+404 - Error
+
+curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/resources/1601359513_0301_Resource/predict/admsNNN?type=ONNX' \
+--header 'Authorization: {{auth}}'
+
+```
+**Example Response**
+
+```
+404 - Error
+
+{
+    "message": "Onnx microservice is unsubscribed. Subscribe to Onnx microservice.",
+    "errorCode": 404,
+    "exception": "invalid/error"
+}
+```
+
+
 ### GET - Predict using the deployed PIPELINES
 
 ```
-{{url}}/projects/{{projectID}}/resources/{{resourceID}}/predict/PPP?type=PIPELINE
+{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/predict/PPP?type=PIPELINE
 ```
 
 Predicts from the list of deployed PIPELINE models in MLE.
@@ -1588,7 +1770,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 ```
 401 - Unauthorized
 
-curl --request GET "{{url}}/projects/1601355085_Project/resources/1601359513_0301_Resource/predict/PPP?type=PIPELINE"
+curl --request GET "{{url}}/service/mlw/projects/1601355085_Project/resources/1601359513_0301_Resource/predict/PPP?type=PIPELINE"
 ```
 
 **Example Response**

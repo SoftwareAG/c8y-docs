@@ -14,7 +14,7 @@ Training WorkFlow in MLW.
 ### POST - Retrain Machine Learning models using the Training WorkFlow
 
 ```
-{{url}}/service/mlw-cdh/projects/{{projectID}}/resources/{{resourcesID}}/workflow
+{{url}}/service/mlw/projects/{{projectID}}/resources/{{resourcesID}}/workflow
 ```
 
 Trains the WorkFlow using the already created AutoML Model, pre-processing script and the dataset.

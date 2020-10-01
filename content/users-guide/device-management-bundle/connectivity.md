@@ -1,8 +1,11 @@
 ---
-weight: 31
+weight: 100
 title: Connectivity
 layout: redirect
+aliases:
+  -/users-guide/optional-services/#connectivity
 ---
+
 The Connectivity agent, which works from within the Cumulocity IoT Device Management application, provides basic information on mobile devices and additional connectivity details.
 
 Cumulocity IoT integrates with the SIM connectivity management platform Jasper. For the SIM connectivity management platforms Comarch and Ericsson, Cumulocity IoT provides an experimental implementation. For more details, please contact our support team.

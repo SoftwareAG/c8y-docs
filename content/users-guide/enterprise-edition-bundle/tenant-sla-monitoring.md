@@ -1,7 +1,9 @@
 ---
-weight: 80
+weight: 120
 title: Tenant SLA Monitoring
 layout: redirect
+aliases:
+  -/users-guide/optional-services/#tenant-sla-monitoring
 ---
 
 ## Overview

@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Documentation overview
+title: Content overview
 layout: bundle
 ---
 
@@ -26,7 +26,19 @@ The Cumulocity IoT documentation on this website contains the following informat
 <tr>
 <td align="left">User documentation</td>
 <td align="left"><a href="/users-guide/getting-started/">User guide</a></td>
-<td align="left">Core, in-depth explanation on using the Administration, Cockpit and Device Management applications and various optional Cumulocity IoT services through the GUI.</td>
+<td align="left">Core, in-depth explanation on using the Administration, Cockpit and Device Management applications and various additional Cumulocity IoT services through the UI.</td>
+</tr>
+
+<tr>
+<td align="left">User documentation</td>
+<td align="left"><a href="/protocol-integration/overview">Protocol integration guide</a></td>
+<td align="left">Detailed description on how to integrate devices using supported device protocols.</td>
+</tr>
+
+<tr>
+<td align="left">User documentation</td>
+<td align="left"><a href="/edge/overview/">Cumulocity IoT Edge</a></td>
+<td align="left">How to install, run and operate Cumulocity IoT Edge, the local version of Cumulocity IoT.</td>
 </tr>
 
 <tr>
@@ -37,8 +49,8 @@ The Cumulocity IoT documentation on this website contains the following informat
 
 <tr>
 <td align="left">User documentation</td>
-<td align="left"><a href="/edge/overview/">Cumulocity IoT Edge</a></td>
-<td align="left">How to install, run and operate Cumulocity IoT Edge, the local version of Cumulocity IoT.</td>
+<td align="left"><a href="/cloud-remote-access/cra-general-aspects/">Cloud Remote Access</a></td>
+<td align="left">How to remotely access operating panels and other devices via a web browser using the Cloud Remote Access feature.</td> 
 </tr>
 
 <tr>

@@ -234,7 +234,7 @@ curl --request GET "{{url}}/service/mlw/resources/deploy?type=PIPELINE"
 ```
 404 - Error
 
-curl --location --request POST '{{url}}/service/mlw//resources/deploy?type=H5' \
+curl --location --request POST '{{url}}/service/mlw/resources/deploy?type=H5' \
 --header 'Authorization: {{auth}}'
 ```
 

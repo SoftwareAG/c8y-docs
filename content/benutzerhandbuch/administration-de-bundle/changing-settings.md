@@ -411,10 +411,10 @@ Auf der Seite **Connectivity** können Sie Zugangsdaten für verschiedene Anbiet
 
 Derzeit können folgende Anbietereinstellungen festgelegt werden:
 
-- [Impact](/device-protocols/impact)
-- [LoRa](/device-protocols/lora-actility)
-- [Sigfox](/device-protocols/sigfox)
-- [SIM](/device-protocols/connectivity)
+- [Impact](/protocol-integration/impact)
+- [LoRa](/protocol-integration/lora-actility)
+- [Sigfox](/protocol-integration/sigfox)
+- [SIM](/protocol-integration/connectivity)
 
 ![Provider settings](/images/benutzerhandbuch/Administration/admin-settings-connectivity.png)
 
@@ -425,4 +425,4 @@ Derzeit können folgende Anbietereinstellungen festgelegt werden:
 3. Geben Sie die Zugangsdaten Ihrer Anbieterplattform ein. Je nach Anbieter handelt es sich hierbei entweder um Zugangsdaten für Ihr Konto auf der Anbieterplattform oder um die Zugangsdaten, mit denen Sie sich auf der Cumulocity IoT-Konnektivitätsseite registrieren können. Diese werden in Ihrem Konto in der Anbieter-Plattform angezeigt.
 4. Klicken Sie abschließend auf **Speichern**, um Ihre Einstellungen zu speichern.
 
-Je nach gewähltem Anbieter können zusätzliche Felder vorhanden sein, die in der Dokumentation des entsprechenden Agents erläutert werden, siehe [Device protocols guide](/device-protocols/overview/).
+Je nach gewähltem Anbieter können zusätzliche Felder vorhanden sein, die in der Dokumentation des entsprechenden Agents erläutert werden, siehe [Protocol integration guide](/protocol-integration/overview/).

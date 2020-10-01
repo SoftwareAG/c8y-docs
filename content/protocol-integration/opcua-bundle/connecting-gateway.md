@@ -13,7 +13,7 @@ Next, establish a connection between the gateway and the OPC UA server.
 4. Enter the **Timeout value** in seconds. The timeout value is calculated for each request. If the timeout value is exceeded the request will be unsuccessful.
 5. Enter the **Status check interval** in seconds. The platform constantly checks whether there is incoming data. If the status check interval value is exceeded an alarm is created. The status check interval value has to be greater than the monitoring value of the gateway.
 6. Select the **Security mode** and **Security policy** depending on the server configuration. For more info, see [Security modes](#security-modes).
-7. Select the desired authentication method. For more info, see [Authentication](/device-protocols/opcua/#authentication).
+7. Select the desired authentication method. For more info, see [Authentication](/protocol-integration/opcua/#authentication).
 8. Click **Save**.
 
 > **Info:** Once a connection is established, the servers will be located in the **Child devices** tab. In there, the servers will contain additional data such as access to the address space.

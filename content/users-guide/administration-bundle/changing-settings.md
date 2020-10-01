@@ -420,10 +420,10 @@ In the **Connectivity** page, you can manage credentials for different providers
 
 The following provider settings may currently be specified:
 
-- [Impact](/device-protocols/impact)
-- [LoRa](/device-protocols/lora-actility)
-- [Sigfox](/device-protocols/sigfox)
-- [SIM](/device-protocols/connectivity)
+- [Impact](/protocol-integration/impact)
+- [LoRa](/protocol-integration/lora-actility)
+- [Sigfox](/protocol-integration/sigfox)
+- [SIM](/protocol-integration/connectivity)
 
 ![Provider settings](/images/users-guide/Administration/admin-settings-connectivity.png)
 
@@ -434,4 +434,4 @@ The following provider settings may currently be specified:
 3. Enter the credentials of your provider platform. Depending on the provider, these credentials will be either the credentials of your account in the provider platform or the credentials with which you can register in the Cumulocity IoT connectivity page, will be displayed in your account in the provider platform.
 4. Finally, click **Save** to save your settings.
 
-Depending on the provider you have selected, there may be additional fields, which will be explained in the respective agent documentation, see [Device protocol guide](/device-protocols/overview/).
+Depending on the provider you have selected, there may be additional fields, which will be explained in the respective agent documentation, see [Protocol integration guide](/protocol-integration/overview/).

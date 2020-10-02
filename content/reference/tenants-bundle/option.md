@@ -229,7 +229,7 @@ Required tenant: management
     Content-Type: application/vnd.com.nsn.cumulocity.option+json;ver=...
     Content-Length: ...
     {
-        "self": "https://<<TENANT_DOMAIN>>/tenant/options/access.control/access.control",
+        "self": "https://<<TENANT_DOMAIN>>/tenant/options/access.control/allow.origin",
         "category": "access.control",
         "key": "allow.origin"
     }

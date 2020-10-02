@@ -8,7 +8,7 @@ In addition to new feature descriptions and chances related to the new features,
 
 ### Device SDK guide - NEW Linux agent documentation
 
-Documentation has been added to the *Device SDK guide* for the Cumulocity IoT Linux Agent.
+[MTM-34081] Documentation has been added to the *Device SDK guide* for the Cumulocity IoT Linux Agent.
 
 The [Linux Agent User guide](/device-sdk/linux-agent-user-guide) describes prerequisites, how to build the agent, basic configurations, how to start the agent process, and how to build packages from an end user perspective. 
 
@@ -16,7 +16,7 @@ The [Linux Agent Developer guide](/device-sdk/linux-agent-developer-guide) conta
 
 ### NEW Protocol integration guide
 
-The documentation for various device integration protocols has been moved into a separate guide to provide a clearer structure and easier navigation.
+[MTM-29779] The documentation for various device integration protocols has been moved into a separate guide to provide a clearer structure and easier navigation.
 
 <add screenshot and link>
 
@@ -31,7 +31,7 @@ As a result, the Cloud Remote Access documentation, which formerly could be foun
 
 ### User guide > Enterprise Tenant- ENHANCED documentation on microservice billing
 
-The documentation on metering and billing of microservices has been extended to improve the transparency of the functionality. 
+[MTM-33651] The documentation on metering and billing of microservices has been extended to improve the transparency of the functionality. 
 
 Additional information is provided on the general process, i.e. when and how the metering and the billing starts/suspends/stops. Moreover, some typical scenarios, for example for different time zones, are explained in detail. See [Enterprise Tenant > Usage statistics and billing](/users-guide/enterprise-edition/#usage-and-billing) in the *User guide*.
 

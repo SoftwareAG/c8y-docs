@@ -16,9 +16,9 @@ The [Linux Agent Developer guide](/device-sdk/linux-agent-developer-guide) conta
 
 ### NEW Protocol integration guide
 
-[MTM-29779] The documentation for various device integration protocols has been moved into a separate guide to provide a clearer structure and easier navigation.
+[MTM-29779] The documentation for the device integration protocols (like LWM2M, Sigfox and OPC UA) has been moved into a separate guide called *[Protocol integration guide](/protocol-integration/overview)* to provide a clearer structure and easier navigation.
 
-<add screenshot and link>
+![Protocol integration guide](/images/release-notes/new-protocol-integration-guide.png)
 
 ### Cloud Remote Access - NEW API documentation
 
@@ -26,7 +26,7 @@ Information on the Cloud Remote Access API has been added to the Cloud Remote Ac
 
 As a result, the Cloud Remote Access documentation, which formerly could be found in the *Optional services* section of the *User guide*, has been moved into a separate [Cloud Remote Access guide](/cloud-remote-access/cra-general-aspects/), providing a clearer structure and easier navigation.
 
-![Cloud Remote Access guide](/images/release-notes/clous-remote-access-guide.png)
+![Cloud Remote Access guide](/images/release-notes/cloud-remote-access-guide.png)
 
 
 ### User guide > Enterprise Tenant- ENHANCED documentation on microservice billing

@@ -16,7 +16,7 @@ Projects functionality includes:
 * Commit Versions
 
 ***Add New Project***
-![pojects manager](/images/zementis/mlw-app-add-project.png)
+![projects manager](/images/zementis/mlw-app-add-project.png)
 
 ***Resources***
 ![Resources](/images/zementis/mlw-app-project-home.png)

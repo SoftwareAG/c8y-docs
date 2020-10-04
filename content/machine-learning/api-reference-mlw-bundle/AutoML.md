@@ -24,6 +24,10 @@ Start the AutoML process by passing the data to the engine and get the initial i
 |:---|:---|
 |Authorization|{{auth}}
 
+|PARAMS||
+|:---|:---|
+|projectID (string)|{{project ID}}
+|resourceID (string)|{{resource ID}}
 
 **Example Request**
 
@@ -180,6 +184,8 @@ Train an AutoML model by using pre-processing options for variables and using th
 
 |PARAMS||
 |:---|:---|
+|projectID (string)|{{project ID}}
+|resourceID (string)|{{resource ID}}
 |data |Filled form values
 |idforData |required description of the project
 |target_variable|column name which is target
@@ -395,6 +401,10 @@ Start the Anomaly model training process by passing the data to the engine and g
 |:---|:---|
 |Authorization|{{auth}}
 
+|PARAMS||
+|:---|:---|
+|projectID (string)|{{project ID}}
+|resourceID (string)|{{resource ID}}
 
 **Example Request**
 
@@ -552,6 +562,8 @@ Train an Anomaly model by using pre-processing options for variables and using t
 
 |PARAMS||
 |:---|:---|
+|projectID (string)|{{project ID}}
+|resourceID (string)|{{resource ID}}
 |data |Filled form values
 |idforData |required description of the project
 

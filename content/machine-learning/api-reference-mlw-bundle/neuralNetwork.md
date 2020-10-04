@@ -24,6 +24,10 @@ Train a neural network model using architecture file.
 |:---|:---|
 |Authorization|{{auth}}
 
+|PARAMS||
+|:---|:---|
+|projectID (string)|{{project ID}}
+|resourceID (string)|{{resource ID}}
 
 **Example Request**
 

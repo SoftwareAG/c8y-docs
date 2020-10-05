@@ -1,6 +1,6 @@
 ---
 weight: 20
-title: Documentation overview
+title: Content overview
 layout: bundle
 ---
 

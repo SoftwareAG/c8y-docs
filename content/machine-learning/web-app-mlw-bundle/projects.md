@@ -26,11 +26,12 @@ To create a new project, click on **+Add Project** button and fill the form with
 In **Machine Learning Workbench**, the resources are categorized into 6 different categories.
 
 * Data
-  * CSV
-  * JSON
-  * PNG
-  * JPG
-  * JPEG
+  * csv
+  * json
+  * zip
+  * png
+  * jpg
+  * jpeg
 * Code
   * py
   * ipynb

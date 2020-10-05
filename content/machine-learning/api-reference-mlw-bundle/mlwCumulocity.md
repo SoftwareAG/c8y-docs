@@ -163,6 +163,9 @@ Get the list of measurement from the C8Y inventory
 |:---|:---|
 |Authorization|{{auth}}
 
+|PARAMS||
+|:---|:---|
+|deviceID (string)| device id of the registered device
 
 **Example Request**
 

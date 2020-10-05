@@ -24,6 +24,10 @@ Execute a python script
 |:---|:---|
 |Authorization|{{auth}}
 
+|PARAMS||
+|:---|:---|
+|projectID (string)|{{project ID}}
+|resourceID (string)|{{resource ID}}
 
 **Example Request**
 

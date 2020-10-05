@@ -1370,13 +1370,22 @@ curl --request GET "{{url}}/service/zementis/onnx/models/resnet50" --header "Aut
 200 - OK
 
 {
-  "modelName": "resnet50",
-  "modelVersion": 0,
-  "onnxVersion": 6,
-  "producerName": "keras2onnx",
-  "producerVersion": "1.6.0",
-  "inputs": "name: \"input_1\"\ntype {\n  tensor_type {\n    elem_type: 1\n    shape {\n      dim {\n        dim_param: \"N\"\n      }\n      dim {\n        dim_value: 224\n      }\n      dim {\n        dim_value: 224\n      }\n      dim {\n        dim_value: 3\n      }\n    }\n  }\n}\n",
-  "outputs": "[name: \"fc1000\"\ntype {\n  tensor_type {\n    elem_type: 1\n    shape {\n      dim {\n        dim_param: \"N\"\n      }\n      dim {\n        dim_value: 1000\n      }\n    }\n  }\n}\n]"
+  "modelName" : "resnet50",
+  "modelVersion" : 0,
+  "onnxVersion" : 6,
+  "opsetVersions" : "ai.onnx v11",
+  "producerName" : "keras2onnx",
+  "producerVersion" : "1.6.0",
+  "inputs" : [ {
+    "name" : "input_3",
+    "shape" : [ "N", 224, 224, 3 ],
+    "type" : "tensor(float)"
+  } ],
+  "outputs" : [ {
+    "name" : "fc1000",
+    "shape" : [ "N", 1000 ],
+    "type" : "tensor(float)"
+  } ]
 }
 ```
 
@@ -1523,13 +1532,26 @@ curl --request POST "{{url}}/service/zementis/onnx/models" --header "Authorizati
 201 - Created
 
 {
-  "modelName": "39c9f725699e4c9988ff55b8561db7fe",
-  "modelVersion": 0,
-  "onnxVersion": 6,
-  "producerName": "skl2onnx",
-  "producerVersion": "1.6.0",
-  "inputs": "name: \"float_input\"\ntype {\n  tensor_type {\n    elem_type: 1\n    shape {\n      dim {\n      }\n      dim {\n        dim_value: 4\n      }\n    }\n  }\n}\n",
-  "outputs": "[name: \"output_label\"\ntype {\n  tensor_type {\n    elem_type: 7\n    shape {\n      dim {\n        dim_value: 1\n      }\n    }\n  }\n}\n, name: \"output_probability\"\ntype {\n  sequence_type {\n    elem_type {\n      map_type {\n        key_type: 7\n        value_type {\n          tensor_type {\n            elem_type: 1\n          }\n        }\n      }\n    }\n  }\n}\n]"
+  "modelName" : "39c9f725699e4c9988ff55b8561db7fe",
+  "modelVersion" : 0,
+  "onnxVersion" : 6,
+  "opsetVersions" : "ai.onnx v9, ai.onnx.ml v1",
+  "producerName" : "skl2onnx",
+  "producerVersion" : "1.6.0",
+  "inputs" : [ {
+    "name" : "float_input",
+    "shape" : [ null, 4 ],
+    "type" : "tensor(float)"
+  } ],
+  "outputs" : [ {
+    "name" : "output_label",
+    "shape" : [ 1 ],
+    "type" : "tensor(int64)"
+  }, {
+    "name" : "output_probability",
+    "shape" : [ ],
+    "type" : "seq(map(int64,tensor(float)))"
+  } ]
 }
 ```
 

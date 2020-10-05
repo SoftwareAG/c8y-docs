@@ -1,6 +1,6 @@
 ---
 weight: 75
-title: Port forwarding on VMware platform
+title: Port forwarding on a VMware platform
 layout: redirect
 ---
 
@@ -17,7 +17,7 @@ To perform port forwarding on a VMware platform, follow the steps below.
 3. Click **Add** to add the port forwarding rules. Enter the details for the incoming port in the **Map Incoming Port** window and click **OK**.
 <img src="/images/edge/edge-vmware-port-forwarding-03.png" name="NAT Settings"/>
 
-	>**Info:** Ensure that the **Virtual machine IP address** is same as the IP address that you have configured for the Edge VM.
+	>**Info:** Ensure that the **Virtual machine IP address** is the same as the IP address that you have configured for the Edge VM.
 
 	You can add port forwarding rules for HTTP, HTTPS, MQTT, MQTT over SSL protocols and so on.
 

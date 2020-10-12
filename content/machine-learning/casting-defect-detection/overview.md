@@ -20,5 +20,5 @@ For the purpose of showcasing this use case, we followed these steps:
 * Method 2: Use MLW's integrated Jupyter Notebook to train your model your Transfer-Learning.
 * Use the transformed ONNX model, pre-processing and post-processing scripts to build an Inference Pipeline and with a single click, Deploy the same to production (Cumulocity IoT Machine Learning).
 	* The pre-processing script tranforms the data to a valid format which the ONNX model accepts.
-	* The post-processing script creates a defect detection alarm if the model predicts the input image to be a casting defect.
+	* The post-processing script assigns a proper class to the predicted probabilities.
 * Make inferences using the model in production.

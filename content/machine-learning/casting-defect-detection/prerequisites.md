@@ -7,7 +7,10 @@ aliases:
   - /predictive-analytics/casting-defect-detection/#prerequisites
 ---
 
-[Download the CastingDefectDetectionDemo.zip](/files/zementis/CastingDefectDetectionDemo.zip) file which contains demo Python scripts (pre-processing and post-processing scripts) and a Jupyter Notebook.
+[Download the CastingDefectDetectionDemo.zip](/files/zementis/CastingDefectDetectionDemo.zip) file which contains the following:
+* Pre-Processing and Post-Processing Python scripts ('castingPreProcessing.py' and 'castingPostProcessing.py')
+* Test images ('testDefectImage.PNG' and 'testOkImage.PNG') 
+* Jupyter Notebook ('castingDefectDetectionDemo.ipynb')
 
 Running the demo scripts requires 
 

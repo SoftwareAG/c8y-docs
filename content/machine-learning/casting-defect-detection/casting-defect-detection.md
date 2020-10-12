@@ -7,7 +7,7 @@ aliases:
   - /predictive-analytics/casting-defect-detection/
 ---
 
-This section deals with the basic data science steps of creating a casting defect detection model with the open-source Kaggle Dataset. Follow the sections below for downloading data, building a Neural Network architecture, transfer learning using Mobilenet, training the model, deploying them to production and using the model to detect defects in the casts. 
+This section deals with the basic data science steps of creating a casting defect detection model with the open-source Kaggle Dataset. Follow the sections below for downloading data, building a Neural Network architecture, transfer learning with Mobilenet, training the model, deploying them to production and using the model to detect defects in the casts. 
 
 
 #### Data collection from Kaggle
@@ -36,7 +36,7 @@ Note: Change the name of 'test' folder to 'validation' and create a zip of these
 
 Login to MLW and using the 'upload' option, upload the created zip folder. This might take a few minutes depending on your internet bandwidth.
 
-After the data is uploaded sucessfully, navigate to 'Data' section of the MLW and click on the zip folder. We should be able to see the meta data of the uploaded dataset.
+After the data is uploaded sucessfully, navigate to 'Data' section of the MLW and click on the zip folder. We should be able to see the metadata of the uploaded dataset.
 
 
 #### Training the Model
@@ -49,7 +49,7 @@ Add Resource -> Add New Resource -> Resource Type (NN Designer) -> Resource Name
 
 This will create a new architecture file named 'castingModelDesigner.architecture' under 'NN Designer' folder.
 
-* Click on the 'castingModelDesigner.architecture' file and click 'Edit' button to open an interface/editor to build your own Deep Neural Network Architecture by dragging and dropping various set of layers from the avialable left hand menu
+* Click on the 'castingModelDesigner.architecture' file and click 'Edit' button to open an interface/editor to build your own Deep Neural Network Architecture by dragging and dropping various set of layers from the avialable left-hand menu
 
 * Build a Deep Neural Network architecture using the below example:
 
@@ -63,11 +63,11 @@ After the training is complete, the task status would be set to 'COMPLETED'
 
 * Check the ONNX model with the name 'castingDefectModel.onnx' saved in the 'Models' section 
 
-### Method 2: Tranfer Learning using Mobilenet for training using a Jupyter Notebook
+### Method 2: Tranfer Learning with Mobilenet for training using a Jupyter Notebook
 
 * The 'CastingDefectDetectionDemo.zip' file contains a Jupyter Notebook file named 'castingDefectDetectionDemo.ipynb'. Please use the MLW's upload functionality to upload the Notebook file. 
 
-* Navigate to 'Code' section of the MLW and click on the 'castingDefectDetectionDemo.ipynb' file to view the meta data of the file. 
+* Navigate to 'Code' section of the MLW and click on the 'castingDefectDetectionDemo.ipynb' file to view the metadata of the file. 
 
 * Click on 'Edit' button to open the Jupyter Notebook and execute all the cells in sequence.
 
@@ -109,9 +109,9 @@ The Inference Pipeline uses a pre-processing script, a model (.onnx file) and a 
 
 Create an Inference Pipeline by:
 
-Add Resource -> Add New Resource -> Resource Type (Pipeline) -> Resource Name (ex. castingPipeline) -> Model ('castingDefectModel.onnx' or 'castingDefectModelViaJNB.onnx') -> Pre-processing Script ('castingPreProcessing.py') -> Post-processing Script ('castingPostProcessing.py' ) -> Submit
+Add Resource -> Add New Resource -> Resource Type (Pipeline) -> Resource Name (ex. castingPipeline) -> Model ('castingDefectModel.onnx' or 'castingDefectModelViaJNB.onnx') -> Pre-processing Script ('castingPreProcessing.py') -> Post-processing Script ('castingPostProcessing.py') -> Submit
 
-This will create a new pipeline file named 'castingPipeline.pipeline' under 'Inference Pipeline' folder. We should be able to see the meta data of the pipeline file.
+This will create a new pipeline file named 'castingPipeline.pipeline' under 'Inference Pipeline' folder. We should be able to see the metadata of the pipeline file.
 
 Deploy the created pipeline by hitting on 'Deploy' button which successfully deploys the Inference Pipeline to the production. 
 

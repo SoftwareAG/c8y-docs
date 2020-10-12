@@ -14,6 +14,8 @@ This section deals with the basic data science steps of creating a casting defec
 
 Download the Open-Source Kaggle Dataset from [here](https://www.kaggle.com/ravirajsinh45/real-life-industrial-dataset-of-casting-product).
 
+[image]
+
 Note: We get two folders when you unzip the downloaded dataset. Please use the 'casting_data' folder and delete 'casting_512x512' folder.
 
 All the images are the top view of the submersible pump impeller.
@@ -31,12 +33,17 @@ test:- def_front have 453 and ok_front have 262 images
 
 Note: Change the name of 'test' folder to 'validation' and create a zip of these two folders (i.e. zip contaning train and validation folders). 
 
+[image]
 
 #### Upload the Data to MLW
 
 Login to MLW and using the 'upload' option, upload the created zip folder. This might take a few minutes depending on your internet bandwidth.
 
+[image]
+
 After the data is uploaded sucessfully, navigate to 'Data' section of the MLW and click on the zip folder. We should be able to see the metadata of the uploaded dataset.
+
+[image]
 
 
 #### Training the Model
@@ -47,33 +54,57 @@ After the data is uploaded sucessfully, navigate to 'Data' section of the MLW an
 
 Add Resource -> Add New Resource -> Resource Type (NN Designer) -> Resource Name (ex. castingModelDesigner) -> Submit
 
+[image]
+
 This will create a new architecture file named 'castingModelDesigner.architecture' under 'NN Designer' folder.
+
+[image]
 
 * Click on the 'castingModelDesigner.architecture' file and click 'Edit' button to open an interface/editor to build your own Deep Neural Network Architecture by dragging and dropping various set of layers from the avialable left-hand menu
 
 * Build a Deep Neural Network architecture using the below example:
 
+[GIF]
+
 * Save the architecture file
+
+[image]
 
 * Train the Deep Neural Network Model by setting the Training Parameters as below:
 
+[image]
+
 * Monitor the Model building progress using the 'Tasks' section with the name 'castingDefectModel'. The training time is generally 30-50 minutes for 10 epochs for this particular dataset. The task status initially would be 'Training Started' and gets changed to 'In Progress'
+
+[image]
 
 After the training is complete, the task status would be set to 'COMPLETED'
 
+[image]
+
 * Check the ONNX model with the name 'castingDefectModel.onnx' saved in the 'Models' section 
+
+[image]
 
 ### Method 2: Tranfer Learning with Mobilenet for training using a Jupyter Notebook
 
 * The 'CastingDefectDetectionDemo.zip' file contains a Jupyter Notebook file named 'castingDefectDetectionDemo.ipynb'. Please use the MLW's upload functionality to upload the Notebook file. 
 
+[image]
+
 * Navigate to 'Code' section of the MLW and click on the 'castingDefectDetectionDemo.ipynb' file to view the metadata of the file. 
 
+[image]
+
 * Click on 'Edit' button to open the Jupyter Notebook and execute all the cells in sequence.
+
+[image]
 
 When all the cells are successfully executed, a model named 'castingDefectModelViaJNB.onnx' is saved to 'Models' section.
 
 * Check the ONNX model with the name 'castingDefectModelViaJNB.onnx' saved in the 'Models' section 
+
+[image]
 
 
 #### Model Deployment using Inference Pipeline
@@ -81,6 +112,8 @@ When all the cells are successfully executed, a model named 'castingDefectModelV
 Now that the model is successfully trained (by any of the above two training methodologies) and available for serving in the form of ONNX file, it's time to create an Inference Pipeline for deploying the model to production. 
 
 The 'CastingDefectDetectionDemo.zip' file contains 'castingPreProcessing.py' and 'castingPostProcessing.py' Python scripts. Please use the MLW's upload functionality to upload these Python files.
+
+[image]
 
 The Inference Pipeline uses a pre-processing script, a model (.onnx file) and a post-processing script.
 
@@ -111,9 +144,15 @@ Create an Inference Pipeline by:
 
 Add Resource -> Add New Resource -> Resource Type (Pipeline) -> Resource Name (ex. castingPipeline) -> Model ('castingDefectModel.onnx' or 'castingDefectModelViaJNB.onnx') -> Pre-processing Script ('castingPreProcessing.py') -> Post-processing Script ('castingPostProcessing.py') -> Submit
 
+[image]
+
 This will create a new pipeline file named 'castingPipeline.pipeline' under 'Inference Pipeline' folder. We should be able to see the metadata of the pipeline file.
 
+[image]
+
 Deploy the created pipeline by hitting on 'Deploy' button which successfully deploys the Inference Pipeline to the production. 
+
+[image]
 
 
 #### Predictions using the Deployed Pipeline
@@ -122,7 +161,12 @@ Now that the Inference Pipeline is successfully deployed to production and avail
 
 The 'CastingDefectDetectionDemo.zip' file contains 'testDefectImage.PNG' and 'testOkImage.PNG' test images. Please use the MLW's upload functionality to upload these test image files.
 
+[image]
+
 Navigate to 'Data' section and click on the test image ('testDefectImage.PNG') -> Click on 'Predict Data' -> PIPELINE -> castingPipeline -> Submit
+
+[image]
 
 The predictions file would be stored in the 'Data' section with the name 'testDefectImage_timeStamp.json'. Click on the predictions JSON file and hit 'Edit' button to view the predictions.
 
+[image]

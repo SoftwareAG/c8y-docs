@@ -1,5 +1,5 @@
 ---
-weight: 60
+weight: 63
 title: "Use Case: Casting Defect Detection"
 layout: bundle
 

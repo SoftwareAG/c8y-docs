@@ -42,7 +42,8 @@ In addition to the Installation & Operations guides already provided for previou
 
 * **Cloud Remote Access** - Installation & operations guide
 * **Connectivity** - Installation & operations guide
-* **LoRa Actility** - Installation & operations guide
+* **Actility microservice** - Installation & operations guide
+* **SNMP microservice** - Installation & operations guide
 
 Note, that access to these documents on the Empower Portal requires credentials.
 

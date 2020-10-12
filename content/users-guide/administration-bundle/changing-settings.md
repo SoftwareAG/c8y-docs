@@ -423,7 +423,7 @@ In the **Connectivity** page, you can manage credentials for different providers
 The following provider settings may currently be specified:
 
 - [Impact](/protocol-integration/impact)
-- [LoRa](/protocol-integration/lora-actility)
+- [Actility LoRa](/protocol-integration/lora-actility)
 - [Sigfox](/protocol-integration/sigfox)
 - [SIM](/protocol-integration/connectivity)
 

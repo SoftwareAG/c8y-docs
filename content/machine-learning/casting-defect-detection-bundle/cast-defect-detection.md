@@ -119,26 +119,28 @@ The Inference Pipeline uses a pre-processing script, a model (.onnx file) and a 
 
 * The pre-processing script is used to pre-process an incoming test data (image) to convert it into 250*250 size. The pre-processing script ('castingPreProcessing.py') looks like below:
 
-    import numpy as np
-    from PIL import Image
-    import io
-    def process(content):
-        im = Image.open(io.BytesIO(content))
-        im = im.resize((250,250))
-        x = np.array(im,dtype=np.float32)
-        x /= 127.5
-        x -= 1.
-        x = np.expand_dims(x,0)
-        return {"Conv2D_input":x}
+  castingPreProcessing.py
+  import numpy as np
+  from PIL import Image
+  import io
+  def process(content):
+      im = Image.open(io.BytesIO(content))
+      im = im.resize((250,250))
+      x = np.array(im,dtype=np.float32)
+      x /= 127.5
+      x -= 1.
+      x = np.expand_dims(x,0)
+      return {"Conv2D_input":x}
 
 * The post-processing script is used to assign proper classes to the predicted probabilities from the ONNX model. The post-processing script ('castingPostProcessing.py') looks like below:
 
-    def process(content):
-        import numpy as np
-        classes = ["defective","ok"]
-        index = np.argmax(content[0])
-        cla = classes[index]
-        return {"Dense":content[0].tolist(),"PredictedClass":cla}
+  castingPostProcessing.py
+  def process(content):
+      import numpy as np
+      classes = ["defective","ok"]
+      index = np.argmax(content[0])
+      cla = classes[index]
+      return {"Dense":content[0].tolist(),"PredictedClass":cla}
 
 Create an Inference Pipeline by:
 

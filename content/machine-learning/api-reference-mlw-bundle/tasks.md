@@ -8,7 +8,7 @@ aliases:
   - /machine-learning/api-reference-mlw/#tasks
 ---
 
-Operations on MLW Projects.
+Operations on MLW Tasks.
 
 >**Info:** An active subscription of the MLW microservice is required to perform operations.
 
@@ -113,7 +113,7 @@ curl --location --request GET '{{url}}/service/mlw/tasks'
 }
 ```
 
-### GET - Get the detail of a parent task
+### GET - Get the details of a parent task
 
 ```
 {{url}}/service/mlw/tasks/{{parenttaskID}}
@@ -233,7 +233,7 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks'
 }
 ```
 
-### GET - Get the details of the individual task within parent task 
+### GET - Get the details of the individual task within a parent task 
 
 ```
 {{url}}/service/mlw/tasks/{{parenttaskID}}/task/{{taskID}}
@@ -302,7 +302,7 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1
 }
 ```
 
-### DELETE - Delete an individual task within parent task 
+### DELETE - Delete an individual task within the parent task 
 
 ```
 {{url}}/service/mlw/tasks/{{parenttaskID}}/task/{{taskID}}

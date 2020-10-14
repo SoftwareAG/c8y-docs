@@ -8,7 +8,7 @@ aliases:
   - /machine-learning/api-reference-mlw/#autoML
 ---
 
-Operations on MLW Projects.
+Operations on MLW Data Connectors - Data pull from Cumulocity
 
 >**Info:** An active subscription of the MLW microservice is required to perform operations.
 

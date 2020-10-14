@@ -7,9 +7,9 @@ aliases:
   - /machine-learning/api-reference-mlw-bundle/#mlwDataHub
 ---
 
-Data pull from Cumulocity IoT DataHub.
+Operations on MLW Data Connectors - Data pull from Cumulocity IoT DataHub.
 
->**Info:** An active subscription of the MLW microservice is required to perform operations.
+>**Info:** An active subscription of the MLW microservice (mlw-cdh) is required to perform operations.
 
 ### POST - Pull Data from Cumulocity IoT DataHub
 

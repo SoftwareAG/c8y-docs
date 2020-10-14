@@ -33,30 +33,30 @@ Click on the **Build** button to proceed.
 
 ***Pre Processing steps: add training parameters***
 
-Select the training parameters and click submit. this will create a new task in the **Tasks** section.
+Select the training parameters and click on **Submit**. This will create a new task in the **Tasks** section.
 
 ![Pre Processing steps](/images/zementis/mlw-app-automl-trainparam.png)
 
 
-***Pre Processing steps: training started***
+***AutoML: Training Started***
 
-See the status of the task.
+Check the status of the task.
 
 ![Pre Processing steps](/images/zementis/mlw-app-automl-start.png)
 
-***AutoML: training completed***
+***AutoML: Training Completed***
 
-See the accuracy of different algorithms trained on that data and also see the best accuracy.
+Check the accuracy of different algorithms trained on that data and also check the best accuracy.
 
 ![Pre Processing steps](/images/zementis/mlw-app-automl-complete.png)
 
-***AutoML: hyper parameters***
+***AutoML: Hyper Parameters***
 
-See the tuned hyperparameters.
+Check the tuned hyperparameters.
 
 ![Pre Processing steps](/images/zementis/mlw-app-automl-hyper.png)
 
-***AutoML: model created***
+***AutoML: Model Created***
 
 After completion of training, the trained model will be saved under the **Model** section of the respective **Project** in .pmml format.
 

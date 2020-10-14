@@ -39,7 +39,7 @@ This will open the Architecture in the editor and the user can drag and drop lay
 
 ***Neural network add layers (drag and drop)***
 
-Drag and drop the layers and set the layer properties. and connect the layers.
+Drag and drop the layers and set the layer properties. Connect all the layers.
 
 Click on the **Save** button to save the architecture.
 
@@ -50,19 +50,19 @@ Click on the **Train** button to train a model on the architecture.
 
 ***Neural network training parameters***
 
-Select the **Data**, **Pre Processing Script**, **Problem Type** and fill other information in the form and submit. this will start the training.
+Select the **Data**, **Problem Type**, and non-mandatory **Pre Processing Script** and fill the other information in the form and hit **Submit**. This will start the training process.
 
 ![NN training parameter](/images/zementis/mlw-app-nn-train.png)
 
 
-***Neural network training***
+***Neural Network Training***
 
 See the progress of the training in the **Tasks** section under the respective task name.
 
 ![NN training](/images/zementis/mlw-app-nn-complete.png)
 
 
-***Neural network onnx***
+***Neural Network onnx***
 
 After completion of training, the trained model will be saved under the **Model** section of the respective **Project** in .onnx format.
 

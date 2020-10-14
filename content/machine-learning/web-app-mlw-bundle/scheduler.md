@@ -10,6 +10,9 @@ aliases:
 Use the job scheduler to schedule your Python scripts (ex. To pull data from different data sources at a frequent interval of time). Schedule the retraining of your Machine Learning/Deep Learning models to any immediate/future dates.
 
  ***Add new resource***
+
+ Click on **Add New Resource** to create a new Python file.
+
 ![Add New Resource](/images/zementis/mlw-app-resource-add-new.png)
 
 
@@ -24,7 +27,7 @@ This will create a new Python file with extension **.py** under the **Code** sec
 
 ***Schedule the Python script***
 
-Edit the Python file and write some python script in it. and click on the **Execute** Button and select **Recurrence** as **REPEAT** and fill other information. 
+Edit the Python file and write any python code. Click on the **Execute** Button and select **Recurrence** as **REPEAT** and fill other information. 
 
 This will Schedule the Script execution for every selected interval.
 

@@ -15,7 +15,7 @@ Click on **Add New Resource** to create a new Notebook file.
 
 ![Add New Resource](/images/zementis/mlw-app-resource-add-new.png)
 
-To proceed you will require a trained model like one created above through Automated ML.
+**Note**: To proceed, you will require a trained model like one created above through Automated ML.
 
 ***Add Workflow***
 
@@ -26,29 +26,29 @@ This will create a new Workflow file with extension **.wf** under **Training Wor
 ![Add Workflow](/images/zementis/mlw-app-resource-add-workflow.png)
 
 
-***Workflow information***
+***Workflow Information***
 
 This will show information about the workflow file. 
 
 ![Workflow information](/images/zementis/mlw-app-resource-workflow.png)
 
 
-***Workflow training***
+***Workflow Training***
 
 Click on the **Train** button to train a workflow.
 
 ![Workflow training](/images/zementis/mlw-app-resource-workflow-train.png)
 
 
-***Workflow training parameters***
+***Workflow Training Parameters***
 
-Fill the information in the form and submit. this will create a new task in the **Tasks** section.
+Fill the information in the form and hit **Submit**. This will create a new task in the **Tasks** section.
 
 ![Workflow training](/images/zementis/mlw-app-resource-workflow-training-params.png)
 
 
-***Workflow tasks***
+***Workflow Tasks***
 
-See the status of the workflow task in **Tasks** section under the respective task.
+See the status of the workflow task in **Tasks** section under the respective task name.
 
 ![Workflow tasks](/images/zementis/mlw-app-task-workflow.png)

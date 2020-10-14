@@ -11,9 +11,9 @@ MLW provides a project structure where all the Data, Model, Code are wrapped und
 
 Projects functionality includes:
 
-* Create a new project
-* Add resources to the project - drag and drop, upload single or multiple files
-* Commit Versions
+* Creating a new project
+* Adding resources to the project - drag and drop, upload single or multiple files
+* Committing a project - Version Management
 
 ***Add New Project***
 
@@ -67,7 +67,7 @@ Users can commit a project with its resources for versioning.
 
 ***File Selection For Version***
 
-User can select the files that needs to be committed to version. and leftover files will be ignored from that particular version.
+User can select all/subset of the files that needs to be committed to a version.
 
 ![Upload Resources](/images/zementis/mlw-app-project-commit-select.png)
 

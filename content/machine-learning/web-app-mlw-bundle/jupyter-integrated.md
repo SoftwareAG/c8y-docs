@@ -36,8 +36,10 @@ This will open the Notebook in the editor and the user can write and execute pyt
 
 
 ***Notebook layout***
+
 ![Notebook layout](/images/zementis/mlw-app-nb-layout.png)
 
 
 ***Notebook execution***
+
 ![Notebook execution](/images/zementis/mlw-app-nb-execution.png)

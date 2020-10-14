@@ -7,7 +7,7 @@ aliases:
   - /predictive-analytics/web-app-mlw/#datapull
 ---
 
-MLW provides a connector to various Data Sources such as Cumulocity, DataHub from where the data could be downloaded and start to train the Machine Learning models.
+MLW provides a connector to the various Data Sources such as Cumulocity, DataHub etc. from where the data could be downloaded and Machine Learning model building process could be started.
 
 ***Cumulocity Data pull***
 
@@ -41,7 +41,7 @@ You can view the data pull progress in the **Tasks** section of the MLW
 
 ***Cumulocity Data pull Complete***
 
-Once the task has reached COMPLETED status, the data would be stored in the **Data** section of the MLW
+Once the task has reached **COMPLETED** status, the data would be stored in the **Data** section of the MLW
 
 ![Cumulocity Complete](/images/zementis/mlw-app-datapull-complete.png)
 
@@ -63,7 +63,7 @@ Input the query and hit on **Submit** button
 ![DataHub Query](/images/zementis/mlw-app-dh-query.png)
 
 
-***DataHub name***
+***Resource name***
 
 Provide the **Resource Name** with which you want to save the pulled data and hit on **Submit** button
 
@@ -79,7 +79,7 @@ You can view the data pull progress in the **Tasks** section of the MLW
 
 ***DataHub saved data***
 
-Once the task has reached COMPLETED status, the data would be stored in the **Data** section of the MLW
+Once the task has reached **COMPLETED** status, the data would be stored in the **Data** section of the MLW
 
 ![Cumulocity Data pull](/images/zementis/mlw-app-dh-data.png)
 

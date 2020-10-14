@@ -643,10 +643,10 @@ For each incoming measurement value, the rule performs the following steps:
 
 * The data of the red and yellow range is collected from either:
 
-- the Data Point Library (control parameter),
-- the source object (the measurement). If found, ranges from the source object's data point overwrite are merged. 
+- the Data Point Library (control parameter).
+- the source object (the measurement). If found, ranges from the source object's data point override are merged. 
 
-If no red/yellow ranges are defined, no alarms are generated. 
+If no red/yellow ranges are defined in the merged parameters, no alarms are generated. 
 
 > **Info:** Range values defined in the source object have a higher priority than those defined in the Data Point Library. You can also just overwrite a single value (e.g. yellow range max) by setting it in the source object. The other values will then be taken from the Data Point Library.
 
@@ -678,7 +678,7 @@ The severity of alarm is determined as follows:
 
 * If the measurement value moves into red range, then the severity is CRITICAL.
 
-* If the measurement value moves into GREEN range, the alarm is cleared.
+* If the measurement value moves into GREEN range, no alarm is created.
 
 > **Info:** This rule is similar to the rule "On measurement threshold create alarm". However, in this rule here the red threshold value is provided explicitly. The threshold rule "On measurement threshold create alarm" extracts the thresholds values from the device or Data Point Library.
 

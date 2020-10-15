@@ -61,3 +61,14 @@ Check the tuned hyperparameters.
 After completion of training, the trained model will be saved under the **Model** section of the respective **Project** in .pmml format.
 
 ![Pre Processing steps](/images/zementis/mlw-app-automl-model.png)
+
+***Automated ML Deploy***
+Once the model is generated the model from Model section can be deployed to MLE for predictions.
+
+![Deploy To MLE](/images/zementis/mlw-app-automl-deploy-1.png)
+
+
+![Select Deploy To MLE](/images/zementis/mlw-app-automl-deploy-2.png)
+
+
+![Deployed To MLE](/images/zementis/mlw-app-automl-deploy-3.png)

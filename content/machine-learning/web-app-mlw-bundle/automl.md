@@ -72,3 +72,16 @@ Once the model is generated the model from Model section can be deployed to MLE 
 
 
 ![Deployed To MLE](/images/zementis/mlw-app-automl-deploy-3.png)
+
+
+![Prediction MLE](/images/zementis/mlw-app-automl-deploy-4.png)
+
+
+![Select Format MLE](/images/zementis/mlw-app-automl-deploy-5.png)
+
+
+![Select Model for Prediction](/images/zementis/mlw-app-automl-deploy-6.png)
+
+![Preview or Download Prediction](/images/zementis/mlw-app-automl-deploy-7.png)
+
+![Preview Prediction](/images/zementis/mlw-app-automl-deploy-8.png)

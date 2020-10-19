@@ -577,7 +577,7 @@ The severity of alarm is determined as follows:
 
 The rule uses the following parameter from the device object or data point library:
 
-* Data Point Library red/yellow range: red range when the system should create CRITICAL alarms and similarly yellow range when the system should create MINOR alarms. The data point should at least have either red or yellow range.
+* Data Point Library red/yellow range: Red range when the system should create CRITICAL alarms and yellow range when the system should create MINOR alarms. Note that the data point should have at least one of red or yellow range configured.
 
 * Object red range: Range when the system should create CRITICAL alarms. These values can be edited in the data explorer for each data point.
 
@@ -635,11 +635,11 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 For each incoming measurement value, the rule performs the following steps:
 
-* Check, if the smart rule has a valid data point. If not, an alarm with MAJOR severity is sent from the rule engine (CEP) informing that the rule has an invalid configuration.
+* Check if the smart rule has a valid data point. If not, an alarm with MAJOR severity is sent from the rule engine (CEP) informing that the rule has an invalid configuration.
 
-* Check, if the rule is activated for the source object.
+* Check if the rule is activated for the source object.
 
-* Check, if the measurement includes data for the fragment and series (configured data point's parameter).
+* Check if the measurement includes data for the fragment and series (configured data point's parameter).
 
 * The data of the red and yellow range is collected from either:
 

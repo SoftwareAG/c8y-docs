@@ -567,23 +567,21 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 **Functionality**
 
-When the measurement value enters or leaves the RED/YELLOW range, an alarm is created or respectively cleared.
+When the measurement value enters or leaves the red/yellow range, an alarm is created or respectively cleared.
 
 The severity of alarm is determined as follows:
 
-* If the measurement value moves into RED range, then the severity is CRITICAL.
+* If the measurement value moves into the red range, then an alarm of CRITICAL severity is created. If it moves out of the red range, the CRITICAL alarm is cleared.
 
-* If the measurement value moves into YELLOW range, then the severity is MINOR.
-
-* If the measurement value moves into GREEN range, the alarm is cleared.
+* If the measurement value moves into the yellow range, then an alarm of MINOR severity is created. If it moves out of the yellow range, the MINOR alarm is cleared.
 
 The rule uses the following parameter from the device object or data point library:
+
+* Data Point Library red/yellow range: Red range when the system should create CRITICAL alarms and yellow range when the system should create MINOR alarms. Note that the data point should have at least one of red or yellow range configured.
 
 * Object red range: Range when the system should create CRITICAL alarms. These values can be edited in the data explorer for each data point.
 
 * Object yellow range: Range when the system should create MINOR alarms. These values can be edited in the data explorer for each data point.
-
-* Data Point Library red/yellow range: When there is no red/yellow range stored in the respective object, then the Data Point Library is searched for the configured data point entry and the related red/yellow range is used.
 
 Using this mechanism, you can configure global threshold ranges in the Data Point Library. These global values can then be overridden for specific objects on a case-by-case basis.
 
@@ -637,25 +635,26 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 For each incoming measurement value, the rule performs the following steps:
 
-* Check, if the measurement includes data for the fragment and series (rule parameter).
+* Check if the smart rule has a valid data point. If not, an alarm with MAJOR severity is sent from the rule engine (CEP) informing that the rule has an invalid configuration.
 
-* Check, if the rule is activated for the source object.
+* Check if the rule is activated for the source object.
+
+* Check if the measurement includes data for the fragment and series (configured data point's parameter).
 
 * The data of the red and yellow range is collected from either:
 
-- the source object (the measurement),
-
 - the Data Point Library (control parameter).
+- the source object (the measurement). If found, ranges from the source object's data point override are merged. 
 
-If no red/yellow ranges are defined, no alarms are generated.
+If no red/yellow ranges are defined in the merged parameters, no alarms are generated. 
 
 > **Info:** Range values defined in the source object have a higher priority than those defined in the Data Point Library. You can also just overwrite a single value (e.g. yellow range max) by setting it in the source object. The other values will then be taken from the Data Point Library.
 
-* Incoming value inside the yellow range: <br>If there is an active alarm of given type for the object, set severity to MINOR. Otherwise create new MINOR alarm with given parameters.
+* Incoming value inside the red range: <br> If there is no active alarm of CRITICAL severity of given type for the object, create a CRITICAL alarm, else do nothing.
 
-* Incoming value inside the red range: <br> If there is an active alarm of given type for the object, set severity to CRITICAL. Otherwise, create new CRITICAL alarm with given parameters.
+* Incoming value inside the yellow range: <br>If there is no active alarm of MINOR severity of given type for the object, create a MINOR alarm, else do nothing.
 
-* Measurement outside of yellow and red range: <br>If there is an active alarm of given type for the object, clear the alarm.
+* Measurement outside of yellow and red range: <br>If there is an active alarm of given type for the object, clear the CRITICAL and/or MINOR alarm.
 
 **Troubleshooting**
 
@@ -673,15 +672,15 @@ If no red/yellow ranges are defined, no alarms are generated.
 
 **Functionality**
 
-When the measurement value enters or leaves the RED range, a CRITICAL alarm is generated or cleared.
+When the measurement value enters or leaves the red range, a CRITICAL alarm is generated or cleared.
 
 The severity of alarm is determined as follows:
 
-* If the measurement value moves into RED range, then the severity is CRITICAL.
+* If the measurement value moves into red range, then the severity is CRITICAL.
 
-* If the measurement value moves into GREEN range, the alarm is cleared.
+* If the measurement value moves into GREEN range, no alarm is created.
 
-> **Info:** This rule is similar to the rule "On measurement threshold create alarm". However, in this rule here the RED threshold value is provided explicitly. The threshold rule "On measurement threshold create alarm" extracts the thresholds values from the device or Data Point Library.
+> **Info:** This rule is similar to the rule "On measurement threshold create alarm". However, in this rule here the red threshold value is provided explicitly. The threshold rule "On measurement threshold create alarm" extracts the thresholds values from the device or Data Point Library.
 
 **Parameters**
 

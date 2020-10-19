@@ -30,7 +30,8 @@ Operations for time series data/model.
 ### POST – Generate time series model using time series data
 
 ```
-{{url}}/service/zementis/timeseries
+{{url}}/service/zementis/timeseries (deprecated)
+{{url}}/service/zementis/train/timeseries
 ```
 
 Upload the time series data to generate a model. This is an asynchronous call which returns a status URL that can be used to check the status of model creation.
@@ -62,7 +63,7 @@ Upload the time series data to generate a model. This is an asynchronous call wh
 ```
 200 - OK
 
-curl --request POST “{{url}}/service/zementis/timeseries” --header “Authorization: {{auth}}” \
+curl --request POST “{{url}}/service/zementis/train/timeseries” --header “Authorization: {{auth}}” \
 	--header “Content-Type: application/json”
 
 {
@@ -98,8 +99,8 @@ curl --request POST “{{url}}/service/zementis/timeseries” --header “Author
 200 - OK 
 
 {
-	“modelName”: “TimeSeries_11-12-2019_11-03-33”,
-	“statusUrl”: "/service/zementis/timeseries/TimeSeries_11-12-2019_11-03-33/status"
+	“modelName”: “Timeseries_19-10-2020_14-23-00_jJgQK”,
+	“statusUrl”: "/service/zementis/timeseries/Timeseries_19-10-2020_14-23-00_jJgQK/status"
 }
 ```
 
@@ -109,7 +110,7 @@ curl --request POST “{{url}}/service/zementis/timeseries” --header “Author
 ```
 400 - Bad Request
 
-curl --request POST “{{url}}/service/zementis/timeseries” --header “Authorization: {{auth}}” \
+curl --request POST “{{url}}/service/zementis/train/timeseries” --header “Authorization: {{auth}}” \
 	--header “Content-Type: application/json”
 
 {
@@ -146,7 +147,7 @@ curl --request POST “{{url}}/service/zementis/timeseries” --header “Author
 
 {
     "errors": [
-        "Invalid start date. Provide start date in yyyy-MM-dd'T'HH:mm:ss.SSSXXX format"
+        "'startDate' should be specified in yyyy-MM-dd'T'HH:mm:ss.SSSXXX format."
     ]
 }
 ```
@@ -156,7 +157,7 @@ curl --request POST “{{url}}/service/zementis/timeseries” --header “Author
 ```
 401 - Unauthorized
 
-curl --request POST “{{url}}/service/zementis/timeseries” --header “Content-Type: application/json”
+curl --request POST “{{url}}/service/zementis/train/timeseries” --header “Content-Type: application/json”
 ```
      
 **Example Response**
@@ -176,7 +177,7 @@ curl --request POST “{{url}}/service/zementis/timeseries” --header “Conten
 ```
 500 - Internal Server Error
 
-curl --request POST “{{url}}/service/zementis/timeseries” --header “Authorization: {{auth}}” \
+curl --request POST “{{url}}/service/zementis/train/timeseries” --header “Authorization: {{auth}}” \
 	--header “Content-Type: application/json”
 
 {
@@ -213,7 +214,7 @@ curl --request POST “{{url}}/service/zementis/timeseries” --header “Author
 
 {
     "errors": [
-        "Nyoka microservice is unsubscribed. Subscribe to Nyoka microservice to upload timeseries model."
+        "Nyoka microservice is unsubscribed. Subscribe to Nyoka microservice."
     ]
 }
 ```
@@ -222,7 +223,9 @@ curl --request POST “{{url}}/service/zementis/timeseries” --header “Author
 ### GET – Get status of generated time series model
 
 ```
-{{url}}/service/zementis/timeseries
+{{url}}/service/zementis/timeseries/{{model_name}}/status (deprecated)
+{{url}}/service/zementis/train/timeseries/{{model_name}}/status
+
 ```
 
 Get the status of the generation of a specific time series model. The status can either be IN_PROGRESS, SUCCESS or FAILURE.<br>
@@ -242,7 +245,7 @@ If the status is FAILURE, the `errorMessage` attribute in the response holds the
 ```
 200 - OK 
 
-curl --request GET “{{url}}/service/zementis/timeseries/TimeSeries_11-12-2019_11-03-33/status” --header “Authorization: {{auth}}”
+curl --request GET “{{url}}/service/zementis/train/timeseries/Timeseries_19-10-2020_14-23-00_jJgQK/status” --header “Authorization: {{auth}}”
 ```
 
 **Example Response**
@@ -251,8 +254,7 @@ curl --request GET “{{url}}/service/zementis/timeseries/TimeSeries_11-12-2019_
 200 - OK
 
 {
-    "status": "IN_PROGRESS",
-    "errorMessage": "null"
+    "status": "SUCCESS"
 }
 ```
 
@@ -261,7 +263,7 @@ curl --request GET “{{url}}/service/zementis/timeseries/TimeSeries_11-12-2019_
 ```
 401 – Unauthorized
 
-curl --request GET “{{url}}/service/zementis/timeseries/TimeSeries_11-12-2019_11-03-33/status” 
+curl --request GET “{{url}}/service/zementis/train/timeseries/Timeseries_19-10-2020_14-23-00_jJgQK/status” 
 ```
 
 **Example Response**
@@ -301,7 +303,7 @@ curl --request GET “{{url}}/service/zementis/timeseries/dummy/status” --head
 ```
 500 – Internal Server Error
 
-curl --request GET “{{url}}/service/zementis/timeseries/TimeSeries_11-11-2019_11-22-33/status” --header “Authorization: {{auth}}”
+curl --request GET “{{url}}/service/zementis/timeseries/Timeseries_19-10-2020_14-23-00_jJgQK/status” --header “Authorization: {{auth}}”
 ```
 
 **Example Response**
@@ -311,7 +313,115 @@ curl --request GET “{{url}}/service/zementis/timeseries/TimeSeries_11-11-2019_
 
 {
     "errors": [
-        "Model generation failed, try again"
+        "Nyoka microservice is unsubscribed. Subscribe to Nyoka microservice."
+    ]
+}
+```
+
+
+### GET – Get PMML source of the generated time series model
+
+```
+{{url}}/service/zementis/train/timeseries/{{model_name}}/pmml
+```
+
+Get the PMML file of the generated time series model.
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|model_name (string)|required path variable for time series model name
+
+
+**Example Request**
+
+```
+200 - OK 
+
+curl --request GET “{{url}}/service/zementis/train/timeseries/Timeseries_19-10-2020_14-23-00_jJgQK/pmml” --header “Authorization: {{auth}}”
+```
+
+**Example Response**
+
+```
+200 - OK
+
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_4" version="4.4">
+    <Header copyright="Copyright (c) 2018 Software AG" description="State Space Model">
+        <Application name="Nyoka" version="4.2.0"/>
+        <Timestamp>2020-10-19 14:38:07.412179</Timestamp>
+    </Header>
+    <DataDictionary numberOfFields="2">
+        <DataField name="value_0" optype="continuous" dataType="double"/>
+        <DataField name="h" optype="continuous" dataType="integer"/>
+    </DataDictionary>
+    <TimeSeriesModel modelName="Timeseries_19-10-2020_14-23-00_jJgQK" functionName="timeSeries" bestFit="StateSpaceModel">...
+...
+...
+...
+</PMML>
+```
+
+**Example Request**
+
+```
+401 – Unauthorized
+
+curl --request GET “{{url}}/service/zementis/train/timeseries/Timeseries_19-10-2020_14-23-00_jJgQK/pmml” 
+```
+
+**Example Response**
+
+```
+401 - Unauthorised
+
+{
+    "error": "general/internalError",
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/reference/rest-implementation/#error_reporting"
+}
+```
+
+**Example Request**
+
+```
+404 – Not Found
+
+curl --request GET “{{url}}/service/zementis/train/timeseries/dummy/pmml” --header “Authorization: {{auth}}”
+```
+
+**Example Response**
+
+```
+404 – Not Found
+
+{
+    "errors": [
+        "Model 'dummy' not found."
+    ]
+}
+```
+
+**Example Request**
+
+```
+500 – Internal Server Error
+
+curl --request GET “{{url}}/service/zementis/train/timeseries/Timeseries_19-10-2020_14-23-00_jJgQK/pmml” --header “Authorization: {{auth}}”
+```
+
+**Example Response**
+
+```
+500 – Internal Server Error
+
+{
+    "errors": [
+        "Nyoka microservice is unsubscribed. Subscribe to Nyoka microservice."
     ]
 }
 ```

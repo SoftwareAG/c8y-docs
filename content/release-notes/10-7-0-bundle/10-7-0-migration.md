@@ -28,7 +28,7 @@ After the error code "40" has been removed the error will look like this:
 No change is required for devices integrated via our Device SDK and agents. However, be aware of this change, in case you have designed your own device integration.
 
 
-#### ngx-boostrap upgrade to 5.6.1
+#### ngx-bootstrap upgrade to 5.6.1
 
 To fix various layout issues around tooltips and scrollbars, the ngx-bootstrap library will be upgraded to version 5.6.1. The change applies the first time to the 10.7.1 Incremental Release and to the 10.8 GA Release in January 2021. 
 

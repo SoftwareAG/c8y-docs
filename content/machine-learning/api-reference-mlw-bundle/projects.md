@@ -3768,7 +3768,250 @@ curl --location --request GET '{{url}}/service/mlw/projects/1600784593_Project/r
 200 - OK
 
 {
-    
+  "content": {
+    "class": "GraphLinksModel",
+    "linkKeyProperty": "key",
+    "linkFromPortIdProperty": "fromPort",
+    "linkToPortIdProperty": "toPort",
+    "modelData": {
+      "prop": "value"
+    },
+    "nodeDataArray": [
+      {
+        "color": "white",
+        "itemType": "LAYER",
+        "layerType": "Dense",
+        "trainable": true,
+        "name": "Dense",
+        "properties": [
+          {
+            "dataType": "string",
+            "hint": "Activation function for the dense layer",
+            "id": "activation",
+            "label": "Activation Function",
+            "options": [
+              "linear",
+              "tanh",
+              "relu",
+              "sigmoid",
+              "softmax"
+            ],
+            "value": "relu"
+          },
+          {
+            "dataType": "integer",
+            "hint": "Neurons for fully connected layer",
+            "id": "units",
+            "label": "Units",
+            "options": [],
+            "value": "10"
+          },
+          {
+            "dataType": "array",
+            "hint": "only required if dragged first",
+            "id": "inputDimension",
+            "label": "Input Dimension",
+            "options": [],
+            "value": "none,2"
+          }
+        ],
+        "text": "Dense",
+        "key": "Dense",
+        "loc": "600 90"
+      },
+      {
+        "color": "white",
+        "itemType": "LAYER",
+        "layerType": "Dense",
+        "trainable": true,
+        "name": "Dense",
+        "properties": [
+          {
+            "dataType": "string",
+            "hint": "Activation function for the dense layer",
+            "id": "activation",
+            "label": "Activation Function",
+            "options": [
+              "linear",
+              "tanh",
+              "relu",
+              "sigmoid",
+              "softmax"
+            ],
+            "value": "relu"
+          },
+          {
+            "dataType": "integer",
+            "hint": "Neurons for fully connected layer",
+            "id": "units",
+            "label": "Units",
+            "options": [],
+            "value": "1000"
+          },
+          {
+            "dataType": "array",
+            "hint": "only required if dragged first",
+            "id": "inputDimension",
+            "label": "Input Dimension",
+            "options": [],
+            "value": ""
+          }
+        ],
+        "text": "Dense",
+        "key": "Dense2",
+        "loc": "600 170"
+      },
+      {
+        "color": "white",
+        "itemType": "LAYER",
+        "layerType": "Dense",
+        "trainable": true,
+        "name": "Dense",
+        "properties": [
+          {
+            "dataType": "string",
+            "hint": "Activation function for the dense layer",
+            "id": "activation",
+            "label": "Activation Function",
+            "options": [
+              "linear",
+              "tanh",
+              "relu",
+              "sigmoid",
+              "softmax"
+            ],
+            "value": "relu"
+          },
+          {
+            "dataType": "integer",
+            "hint": "Neurons for fully connected layer",
+            "id": "units",
+            "label": "Units",
+            "options": [],
+            "value": "2000"
+          },
+          {
+            "dataType": "array",
+            "hint": "only required if dragged first",
+            "id": "inputDimension",
+            "label": "Input Dimension",
+            "options": [],
+            "value": ""
+          }
+        ],
+        "text": "Dense",
+        "key": "Dense3",
+        "loc": "600 250"
+      },
+      {
+        "color": "white",
+        "itemType": "LAYER",
+        "layerType": "Dense",
+        "trainable": true,
+        "name": "Dense",
+        "properties": [
+          {
+            "dataType": "string",
+            "hint": "Activation function for the dense layer",
+            "id": "activation",
+            "label": "Activation Function",
+            "options": [
+              "linear",
+              "tanh",
+              "relu",
+              "sigmoid",
+              "softmax"
+            ],
+            "value": "sigmoid"
+          },
+          {
+            "dataType": "integer",
+            "hint": "Neurons for fully connected layer",
+            "id": "units",
+            "label": "Units",
+            "options": [],
+            "value": "1"
+          },
+          {
+            "dataType": "array",
+            "hint": "only required if dragged first",
+            "id": "inputDimension",
+            "label": "Input Dimension",
+            "options": [],
+            "value": ""
+          }
+        ],
+        "text": "Dense",
+        "key": "Dense4",
+        "loc": "600 330"
+      }
+    ],
+    "linkDataArray": [
+      {
+        "from": "Dense",
+        "to": "Dense2",
+        "fromPort": "b",
+        "toPort": "t",
+        "key": -1,
+        "points": [
+          600,
+          109.69914805335318,
+          600,
+          119.69914805335318,
+          600,
+          130,
+          600,
+          130,
+          600,
+          140.30085194664682,
+          600,
+          150.30085194664682
+        ]
+      },
+      {
+        "from": "Dense2",
+        "to": "Dense3",
+        "fromPort": "b",
+        "toPort": "t",
+        "key": -2,
+        "points": [
+          600,
+          189.69914805335318,
+          600,
+          199.69914805335318,
+          600,
+          210,
+          600,
+          210,
+          600,
+          220.30085194664684,
+          600,
+          230.30085194664684
+        ]
+      },
+      {
+        "from": "Dense3",
+        "to": "Dense4",
+        "fromPort": "b",
+        "toPort": "t",
+        "key": -3,
+        "points": [
+          600,
+          269.6991480533532,
+          600,
+          279.6991480533532,
+          600,
+          290,
+          600,
+          290,
+          600,
+          300.3008519466468,
+          600,
+          310.3008519466468
+        ]
+      }
+    ]
+  }
 }
 
 ```

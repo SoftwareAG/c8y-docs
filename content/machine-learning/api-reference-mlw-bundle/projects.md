@@ -3738,6 +3738,40 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
     "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
 }
 ```
+### GET - Preview the Architecture file
+```
+{{url}}/service/mlw/projects/1600784593_Project/resources/1603290789_0699_Resource/preview
+```
+To get the content of the a Data file
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+
+|PARAMS||
+|:---|:---|
+|projectID (string)|{{project ID}}
+|resourceID (string)|{{resource ID}}
+
+**Example Request**
+
+```
+200 - OK
+
+curl --location --request GET '{{url}}/service/mlw/projects/1600784593_Project/resources/1603290789_0699_Resource/preview' \
+--header 'Authorization: {{auth}}'
+```
+
+**Example Response**
+
+```
+200 - OK
+
+{
+    
+}
+
+```
 
 ### GET - Add content to the file and save
 

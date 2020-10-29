@@ -186,7 +186,7 @@ Data structure for *ServerConnectionConfig*
 <td>cyclicReadBulkSize</td>
 <td>integer</td>
 <td>no</td>
-<td>For cyclic reads, this defines how many nodes can be read at once from the OPC UA server. This is applicable only for nodes resulting from the application with the same device type, matching root node and sharing the same reading parameters (rate and max age). Default is 1000 as defined in the application yaml file.</td>
+<td>For cyclic reads, this defines how many nodes can be read at once from the OPC UA server. This is applicable only for nodes resulting from the application with the same device type, matching root node and sharing the same reading parameters (rate and max age). Default is 1000 as defined in the application YAML file.</td>
 </tr>
 </tbody>
 </table>                                                                                                                                         |

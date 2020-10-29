@@ -172,6 +172,8 @@ gateway:
     threadpool:
       # Allows the size of the threadpool for cyclic reads to be configured
       size: 30
+    # How many nodes that can be read at once for the cyclic read of the same device protocol, server, root node and the same parameters (rate, max-age).
+    defaultBulkSize: 1000
 
   # OPC UA subscription settings: These settings allow global OPC UA configuration parameters
   # for subscription-based data reporting

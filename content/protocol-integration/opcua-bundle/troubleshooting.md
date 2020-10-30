@@ -30,3 +30,7 @@ The following error appears if the indentation of the properties in the YAML fil
 ![Address in use](/images/device-protocols/opcua/opcua-address-in-use.png)
 
 If this error appears, a Java process is running in the background. To fix this issue, the process must be stopped/killed.
+
+### Self diagnosis of the issue
+
+Users can put ```<root level="DEBUG">``` in the custom logging xml and send back the file to support. 

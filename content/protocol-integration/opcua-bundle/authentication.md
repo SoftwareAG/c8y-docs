@@ -310,7 +310,7 @@ The following is the full list of monitoring alarms created by the gateway:
 <td align="left">Connection dropped on server: {serverId}</td>
 <td align="left">c8y_ua_ConnectionDropped</td>
 <td align="left">CRITICAL</td>
-<td align="left">This alarm will be clear by the gateway when the connection is restored</td>
+<td align="left">This alarm will be cleared by the gateway when the connection is restored</td>
 </tr>
 </tbody>
 </table>

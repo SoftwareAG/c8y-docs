@@ -52,24 +52,22 @@ Click **Alarm mapping** in the **Business Rules** menu to see a list of all alar
 
 <img src="/images/users-guide/Administration/admin-alarm-mapping.png" alt="Alarm mapping">
 
-For each alarm mapping, the alarm severity and the name of the mapping is shown.
+For each alarm mapping, the alarm severity, the alarm type and a new description (optional) is shown.
 
 #### <a name="add-alarm-mapping"></a> To add alarm mapping
 
 1. Click **Add alarm mapping** in the top menu bar.
 2. Enter the alarm type to be modified.
-3. Optionally, enter a new text for the alarm. If you do not enter any text, the original text in the alarm will be kept.
+3. In the **New description** field, optionally enter a new description for the alarm. If you leave this field empty, the original text from the alarm will be kept.
 4. Select the desired new severity, or select "Drop" to not show the alarm at all.
 5. Click **Save** to save your settings.
 
 #### To edit an alarm mapping
 
-Simply expand an alarm mapping to edit it. See above for details on the fields.
+Expand an alarm mapping to edit it. You may modify the description and the alarm severity. The alarm type is not editable. 
 
 <img src="/images/users-guide/Administration/admin-alarm-mapping-edit.png" alt="Edit alarm mapping">
 
 #### To delete an alarm mapping
 
 To delete an alarm mapping, hover over it and click the delete icon.
-
-<img src="/images/users-guide/Administration/admin-alarm-mapping-delete.png" alt="Delete alarm mapping">

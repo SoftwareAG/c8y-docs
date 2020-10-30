@@ -23,7 +23,7 @@ In the first CSV example you can see the following fields:
 <tbody>
 <tr>
 <td style="text-align:left">ID</td>
-<td style="text-align:left">Unique ID of the device. For example, the ID could be an IMEI, serial number, etc.</td>
+<td style="text-align:left">Unique ID of the device. For example, the ID could be an IMEI, serial number, etc. The ID field has to be unique as it uniquely identifies a LWM2M device.</td>
 </tr>
 <tr>
 <td style="text-align:left">IDTYPE</td>
@@ -31,7 +31,7 @@ In the first CSV example you can see the following fields:
 </tr>
 <tr>
 <td style="text-align:left">CREDENTIALS</td>
-<td style="text-align:left">The content of this field is not used by the LWM2M feature. However, this field is still mandatory. For LWM2M-only devices, it is okay to use "dummy" credentials here. </td>
+<td style="text-align:left">The content of this field is not used by the LWM2M feature. However, this field is still mandatory. For LWM2M-only devices, it is okay to use "dummy" credentials here. Here is why. Bulk registration is a generalized feature in the Cumulocity platform. So normally to access Cumulocity IoT devices a password(the value of the “Credentials” field in the CSV file) is needed by the Inventory. However, LWM2M agent has it's own ways of authenticating the devices and hence the "Credentials" field is not used bt the LWM2M agent but is used by the Platform as a mandatory parameter.</td>
 </tr>
 <tr>
 <td style="text-align:left">NAME</td>
@@ -63,6 +63,8 @@ In the first CSV example you can see the following fields:
 </tr>
 </tbody>
 </table>
+
+> **Info**: Here is a troubleshooting information. The Cumulocity platform stores the credentials for a device owner associated with a particular device. Hence, while deleting a device if the device owner is not deleted and if the same CSV is used again for bulk registration, then the platform no more considers it as a unique credential and throws an error. To resolve this either use a new Credential or a new ID for the device. The other way to resolve this is to delete the credentials from the Device credentials options under Management.
 
 The table below reflects the full set of possible fields that can be added:
 

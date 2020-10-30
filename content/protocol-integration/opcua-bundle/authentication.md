@@ -97,6 +97,156 @@ On the gateway device, the **Measurements** tab provides visualization of data i
 
 ![Gateway measurements tab](/images/device-protocols/opcua/opcua-gateway-memory.png)
 
+#### Monitoring measurement details
+The following is the full list of monitoring measurements created by the gateway:
+<table>
+<colgroup>
+<col span="1" style="width: 10%;">
+<col span="1" style="width: 10%;">
+<col span="1" style="width: 10%;">
+<col span="1" style="width: 5%;">
+<col span="1" style="width: 65%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Charts</th>
+<th align="left">Measurement type</th>
+<th align="left">Measurement series</th>
+<th align="left">Measurement unit</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Connected servers</td>
+<td align="left">c8y_connectedServers</td>
+<td align="left">connected servers</td>
+<td align="left">num</td>
+<td align="left">Number of connected server</td>
+</tr>
+<tr>
+<td align="left">Connected servers</td>
+<td align="left">c8y_connectedServers</td>
+<td align="left">disconnected servers</td>
+<td align="left">num</td>
+<td align="left">Number of disconnected server</td>
+</tr>
+<tr>
+<td align="left">Gateway active threads</td>
+<td align="left">c8y_gatewayActiveThreads</td>
+<td align="left">event_flush</td>
+<td align="left">threads</td>
+<td align="left">Number of active threads for event flushing</td>
+</tr>
+<tr>
+<td align="left">Gateway active threads</td>
+<td align="left">c8y_gatewayActiveThreads</td>
+<td align="left">alarm_flush</td>
+<td align="left">threads</td>
+<td align="left">Number of active threads for alarm flushing</td>
+</tr>
+<tr>
+<td align="left">Gateway active threads</td>
+<td align="left">c8y_gatewayActiveThreads</td>
+<td align="left">measurement_flush</td>
+<td align="left">threads</td>
+<td align="left">Number of active threads for measurement flushing</td>
+</tr>
+<tr>
+<td align="left">Gateway active threads</td>
+<td align="left">c8y_gatewayActiveThreads</td>
+<td align="left">event_flush_queued</td>
+<td align="left">threads</td>
+<td align="left">Number of queued threads for event flushing</td>
+</tr>
+<tr>
+<td align="left">Gateway active threads</td>
+<td align="left">c8y_gatewayActiveThreads</td>
+<td align="left">alarm_flush_queued</td>
+<td align="left">threads</td>
+<td align="left">Number of queued threads for alarm flushing</td>
+</tr>
+<tr>
+<td align="left">Gateway active threads</td>
+<td align="left">c8y_gatewayActiveThreads</td>
+<td align="left">measurement_flush_queued</td>
+<td align="left">threads</td>
+<td align="left">Number of queued threads for measurement flushing</td>
+</tr>
+<tr>
+<td align="left">Gateway cyclic reads</td>
+<td align="left">c8y_gatewayCyclicReads</td>
+<td align="left">scheduled_reads</td>
+<td align="left">scheduled</td>
+<td align="left">How many cyclic reads have been scheduled</td>
+</tr>
+<tr>
+<td align="left">Gateway cyclic reads</td>
+<td align="left">c8y_gatewayCyclicReads</td>
+<td align="left">active_reads</td>
+<td align="left">threads</td>
+<td align="left">How many active cyclic reads</td>
+</tr>
+<tr>
+<td align="left">Gateway cyclic reads</td>
+<td align="left">c8y_gatewayCyclicReads</td>
+<td align="left">avg_interval</td>
+<td align="left">ms</td>
+<td align="left">What is the average cyclic read rate overall</td>
+</tr>
+<tr>
+<td align="left">Gateway memory	</td>
+<td align="left">c8y_gatewayMemory</td>
+<td align="left">max</td>
+<td align="left">MB</td>
+<td align="left">Gateway JVM max memory</td>
+</tr>
+<tr>
+<td align="left">Gateway memory	</td>
+<td align="left">c8y_gatewayMemory</td>
+<td align="left">allocated</td>
+<td align="left">MB</td>
+<td align="left">Gateway JVM total allocated memory</td>
+</tr>
+<tr>
+<td align="left">Gateway memory</td>
+<td align="left">c8y_gatewayMemory</td>
+<td align="left">free</td>
+<td align="left">MB</td>
+<td align="left">Gateway JVM free memory</td>
+</tr>
+<tr>
+<td align="left">Gateway repository queues</td>
+<td align="left">c8y_gatewayRepositoryQueues</td>
+<td align="left">measurement_queue</td>
+<td align="left">measurements</td>
+<td align="left">Number of measurements are currently in the queue</td>
+</tr>
+<tr>
+<td align="left">Gateway repository queues</td>
+<td align="left">c8y_gatewayRepositoryQueues</td>
+<td align="left">event_queue</td>
+<td align="left">events</td>
+<td align="left">Number of events are currently in the queue</td>
+</tr>
+<tr>
+<td align="left">Gateway repository queues</td>
+<td align="left">c8y_gatewayRepositoryQueues</td>
+<td align="left">alarm_queue</td>
+<td align="left">alarms</td>
+<td align="left">Number of alarms are currently in the queue</td>
+</tr>
+<tr>
+<td align="left">Server response time</td>
+<td align="left">c8y_serverResponseTime</td>
+<td align="left">response_time</td>
+<td align="left">ms</td>
+<td align="left">OPC UA server response time</td>
+</tr>
+</tbody>
+</table>
+
 ### Monitoring alarms
 
 On the gateway device, the **Alarms** tab shows all alarms raised either in the gateway or in the servers. In total there are three alarms which can be raised:
@@ -106,6 +256,64 @@ On the gateway device, the **Alarms** tab shows all alarms raised either in the 
 - No data arrived within interval - If the status interval check value in the OPC UA server configuration is exceeded a major alarm is raised.
 
 ![Gateway alarms tab](/images/device-protocols/opcua/opcua-alarms.png)
+
+#### Monitoring alarm details
+The following is the full list of monitoring alarms created by the gateway:
+<table>
+<colgroup>
+<col span="1" style="width: 40%;">
+<col span="1" style="width: 25%;">
+<col span="1" style="width: 5%;">
+<col span="1" style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Text</th>
+<th align="left">Alarm type</th>
+<th align="left">Severity</th>
+<th align="left">Note</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">EventRepository is constantly growing! Possible memory overflow which will result in gateway crash!</td>
+<td align="left">c8y_ua_GatewayQueueGrowth_EventRepository</td>
+<td align="left">CRITICAL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">AlarmRepository is constantly growing! Possible memory overflow which will result in gateway crash!</td>
+<td align="left">c8y_ua_GatewayQueueGrowth_AlarmRepository</td>
+<td align="left">CRITICAL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">MeasurementRepository is constantly growing! Possible memory overflow which will result in gateway crash!</td>
+<td align="left">c8y_ua_GatewayQueueGrowth_MeasurementRepository</td>
+<td align="left">CRITICAL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Gateway crashed on last run! Please check the log files and memory dumps to see what caused this.</td>
+<td align="left">c8y_ua_GatewayCrash</td>
+<td align="left">MAJOR</td>
+<td align="left">This alarm is raised also when the gateway process was killed brutally</td>
+</tr>
+<tr>
+<td align="left">Failed to connect to server [{serverId}], reason: {reason}</td>
+<td align="left">c8y_ua_ServerConnectionFailed</td>
+<td align="left">CRITICAL</td>
+<td align="left">This alarm will be cleared by the gateway when the connection to the server successfully</td>
+</tr>
+<tr>
+<td align="left">Connection dropped on server: {serverId}</td>
+<td align="left">c8y_ua_ConnectionDropped</td>
+<td align="left">CRITICAL</td>
+<td align="left">This alarm will be clear by the gateway when the connection is restored</td>
+</tr>
+</tbody>
+</table>
 
 ### Monitoring events
 

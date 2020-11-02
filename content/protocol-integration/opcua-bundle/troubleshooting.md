@@ -31,6 +31,8 @@ The following error appears if the indentation of the properties in the YAML fil
 
 If this error appears, a Java process is running in the background. To fix this issue, the process must be stopped/killed.
 
-### Self diagnosis of the issue
+### Changing log levels for troubleshooting
 
-Users can put ```<root level="DEBUG">``` in the custom logging xml and send back the file to support. 
+Users can add ```<root level="DEBUG">``` to the custom logging xml and send the file to product [support](https://cumulocity.com/guides/10.7.0-beta/about-doc/contacting-support/).
+
+For additional information about log levels, please refer to the "Logback" [architecture](http://logback.qos.ch/manual/architecture.html) documentation.

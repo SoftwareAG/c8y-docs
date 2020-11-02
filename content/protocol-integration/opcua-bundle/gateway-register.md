@@ -189,7 +189,6 @@ gateway:
     # The notificationBufferSize defines how many monitored item values should be buffered to receive
     # subscription notification data from OPC UA server. The Subscription reporting rate (publish interval)
     # and sampling rate of the monitor items should be taken into account to choose a suitable buffer size.
-    # GA release 10.6.0
     notificationBufferSize: 500
 
   # Internal repository configurations

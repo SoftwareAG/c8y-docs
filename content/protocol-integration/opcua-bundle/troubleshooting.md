@@ -33,6 +33,17 @@ If this error appears, a Java process is running in the background. To fix this 
 
 ### Changing log levels for troubleshooting
 
-Users can add ```<root level="DEBUG">``` to the custom logging xml and send the file to product [support](https://cumulocity.com/guides/10.7.0-beta/about-doc/contacting-support/).
+For troubleshooting, it is recommended to enable ```DEBUG``` logging level for sub-packages and root if required, and send the log file to product [support](https://cumulocity.com/guides/10.7.0-beta/about-doc/contacting-support/).
 
-For additional information about log levels, please refer to the "Logback" [architecture](http://logback.qos.ch/manual/architecture.html) documentation.
+For example:
+```
+    <logger name="com.cumulocity.opcua.client.gateway" level="DEBUG"/>
+    <logger name="com.cumulocity" level="DEBUG"/>
+    <logger name="c8y" level="DEBUG"/>
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+    </root>
+```
+
+For additional information about log levels, please refer to the "Logback" [architecture](http://logback.qos.ch/manual/architecture.html#effectiveLevel) documentation.

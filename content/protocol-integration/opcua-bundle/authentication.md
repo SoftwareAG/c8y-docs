@@ -123,14 +123,14 @@ The following is the full list of monitoring measurements created by the gateway
 <td align="left">c8y_connectedServers</td>
 <td align="left">connected servers</td>
 <td align="left">num</td>
-<td align="left">Number of connected server</td>
+<td align="left">Number of connected servers</td>
 </tr>
 <tr>
 <td align="left">Connected servers</td>
 <td align="left">c8y_connectedServers</td>
 <td align="left">disconnected servers</td>
 <td align="left">num</td>
-<td align="left">Number of disconnected server</td>
+<td align="left">Number of disconnected servers</td>
 </tr>
 <tr>
 <td align="left">Gateway active threads</td>
@@ -179,21 +179,21 @@ The following is the full list of monitoring measurements created by the gateway
 <td align="left">c8y_gatewayCyclicReads</td>
 <td align="left">scheduled_reads</td>
 <td align="left">scheduled</td>
-<td align="left">How many cyclic reads have been scheduled</td>
+<td align="left">Number of cyclic reads that have been scheduled</td>
 </tr>
 <tr>
 <td align="left">Gateway cyclic reads</td>
 <td align="left">c8y_gatewayCyclicReads</td>
 <td align="left">active_reads</td>
 <td align="left">threads</td>
-<td align="left">How many active cyclic reads</td>
+<td align="left">Number of active cyclic reads</td>
 </tr>
 <tr>
 <td align="left">Gateway cyclic reads</td>
 <td align="left">c8y_gatewayCyclicReads</td>
 <td align="left">avg_interval</td>
 <td align="left">ms</td>
-<td align="left">What is the average cyclic read rate overall</td>
+<td align="left">Average cyclic read rate overall</td>
 </tr>
 <tr>
 <td align="left">Gateway memory	</td>
@@ -221,21 +221,21 @@ The following is the full list of monitoring measurements created by the gateway
 <td align="left">c8y_gatewayRepositoryQueues</td>
 <td align="left">measurement_queue</td>
 <td align="left">measurements</td>
-<td align="left">Number of measurements are currently in the queue</td>
+<td align="left">Number of measurements currently in the queue</td>
 </tr>
 <tr>
 <td align="left">Gateway repository queues</td>
 <td align="left">c8y_gatewayRepositoryQueues</td>
 <td align="left">event_queue</td>
 <td align="left">events</td>
-<td align="left">Number of events are currently in the queue</td>
+<td align="left">Number of events currently in the queue</td>
 </tr>
 <tr>
 <td align="left">Gateway repository queues</td>
 <td align="left">c8y_gatewayRepositoryQueues</td>
 <td align="left">alarm_queue</td>
 <td align="left">alarms</td>
-<td align="left">Number of alarms are currently in the queue</td>
+<td align="left">Number of alarms currently in the queue</td>
 </tr>
 <tr>
 <td align="left">Server response time</td>
@@ -298,19 +298,19 @@ The following is the full list of monitoring alarms created by the gateway:
 <td align="left">Gateway crashed on last run! Please check the log files and memory dumps to see what caused this.</td>
 <td align="left">c8y_ua_GatewayCrash</td>
 <td align="left">MAJOR</td>
-<td align="left">This alarm is raised also when the gateway process was killed brutally</td>
+<td align="left">This alarm is also raised when the gateway process was killed brutally</td>
 </tr>
 <tr>
 <td align="left">Failed to connect to server [{serverId}], reason: {reason}</td>
 <td align="left">c8y_ua_ServerConnectionFailed</td>
 <td align="left">CRITICAL</td>
-<td align="left">This alarm will be cleared by the gateway when the connection to the server successfully</td>
+<td align="left">This alarm will be cleared by the gateway when the connection to the server has been established successfully</td>
 </tr>
 <tr>
 <td align="left">Connection dropped on server: {serverId}</td>
 <td align="left">c8y_ua_ConnectionDropped</td>
 <td align="left">CRITICAL</td>
-<td align="left">This alarm will be cleared by the gateway when the connection is restored</td>
+<td align="left">This alarm will be cleared by the gateway when the connection has been restored</td>
 </tr>
 </tbody>
 </table>

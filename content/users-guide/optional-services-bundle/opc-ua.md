@@ -132,7 +132,7 @@ gateway:
     lifetimeCount: 600
 # The notificationBufferSize defines how many monitored item values should be buffered to receive
 # subscription notification data from the OPC UA server. The subscription reporting rate (publish interval)
-# and sampling rate of the monitor items should be taken into account to choose a suitable buffer size.
+# and the volume of sampling data should be taken into account to choose a suitable buffer size.
     notificationBufferSize: 500
 # Repositories thread pool configuration. Unless required, modifying these properties is not recommended.
 

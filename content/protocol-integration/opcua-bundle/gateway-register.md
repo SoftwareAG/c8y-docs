@@ -95,7 +95,9 @@ gateway:
   db:
     baseDir: ${user.home}/.opcua/data
 
-  # These settings control the device bootstrap process of the gateway
+  # These settings control the device bootstrap process of the gateway.
+  # In general the default settings should be sufficient, and should not be changed.
+  # Please contact support in case the credentials are different.
   bootstrap:
     # Tenant ID to be used for device bootstrap
     tenantId: management

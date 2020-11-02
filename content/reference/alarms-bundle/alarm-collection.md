@@ -214,7 +214,7 @@ Example response:
 
     HTTP/1.1  204 NO CONTENT
 
-> **Important**: Note that it is possible to call this endpoint without providing any parameter - it will result in deleting all alarms and it is not recommended.
+> **Important**: Note that it is possible to call this endpoint without providing any parameter - it will result in deleting all alarms and it is not recommended. Also note that DELETE requests are not synchronous. The response could be returned before the delete request has been completed.
 
 ### PUT - bulk update of alarm collection
 

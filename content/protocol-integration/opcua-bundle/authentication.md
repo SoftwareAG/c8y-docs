@@ -320,3 +320,49 @@ The following is the full list of monitoring alarms created by the gateway:
 On the gateway device, the **Events** tab shows all events related to the gateway-server connection. Additionally, you can see when the gateway has started and when it ends.
 
 ![Gateway events tab](/images/device-protocols/opcua/opcua-events.png)
+
+#### Monitoring event details
+The following is the full list of monitoring events created by the gateway:
+<table>
+<colgroup>
+<col span="1" style="width: 40%;">
+<col span="1" style="width: 10%;">
+<col span="1" style="width: 10%;">
+<col span="1" style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Text</th>
+<th align="left">Event type</th>
+<th align="left">Event source</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Gateway [{gateway identifier}, {gateway name}] started</td>
+<td align="left">c8y_ua_GatewayStarted</td>
+<td align="left">The gateway managed object</td>
+<td align="left">This event is created when the gateway has been started and authenticated with the Cumulocity IoT platform</td>
+</tr>
+<tr>
+<td align="left">Connection established to server: {server ID}</td>
+<td align="left">c8y_ua_ConnectionEstablished</td>
+<td align="left">The server managed object</td>
+<td align="left">This event is created when the server connection is established - either first time or a reconnection</td>
+</tr>
+<tr>
+<td align="left">Server {server ID} connected</td>
+<td align="left">c8y_ua_ServerConnected</td>
+<td align="left">The server managed object</td>
+<td align="left">This event is created when server is connected successfully by the Connection Manager. This event is not created if it is a reconnection. This event is normally followed by an event of type c8y_ua_ConnectionEstablished</td>
+</tr>
+<tr>
+<td align="left">Server disconnected: {server ID}</td>
+<td align="left">c8y_ua_ServerDisconnected</td>
+<td align="left">The server managed object</td>
+<td align="left">This event is created when the server is disconnected proactively by the Connection Manager</td>
+</tr>
+</tbody>
+</table>

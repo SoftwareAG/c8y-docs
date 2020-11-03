@@ -151,27 +151,3 @@ When a device protocol has been applied to or unapplied from a node, a monitorin
 - Event source: The server managed object
 
 ![OPC UA device protocol unapplied](/images/device-protocols/opcua/opcua-device-protocol-unapplied.png)
-
-### Get the current application state of a device type
-In order to know what is the current state of a device type application, use the following operation:
-
-**POST /devicecontrol/operations**
-```json
-{
-	"description": "Query device type application state",
-	"deviceId": "{server ID}",
-	"c8y_ua_command_QueryDeviceTypeApplicationState": {
-		"deviceTypeId": "{device protocol ID}",
-		"matchingRootNodes": ["{root node ID #1}", "root node ID #2"]
-	}
-}
-```
-The result will be populated into the operation result as a map of nodes telling whether the device type has been applied to that node or not. Please note that *matchingRootNodes* is optional. When *matchingRootNodes* is not provided, the application state of all matching nodes will be returned.
-
-Sample result when the device type has been applied to node #1 but not node #2:
-```json
-{
-    "{root node ID #1}": true,
-    "{root node ID #2}": false
-}
-```

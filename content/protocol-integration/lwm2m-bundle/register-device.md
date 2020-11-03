@@ -64,7 +64,7 @@ In the first CSV example you can see the following fields:
 </tbody>
 </table>
 
-> **Info**: The Cumulocity IoT platform stores the credentials for a device owner associated with a particular device. Hence, if you delete a device while the device owner is not deleted and the same CSV is used again for bulk registration, then the platform no longer considers it as a unique credential and throws an error. To resolve this either use new Credentials or a new ID for the device. The other way to resolve this is to delete the credentials from the device credentials options under management.
+> **Info:** The Cumulocity IoT platform stores the credentials for a device owner associated with a particular device. Hence, if you delete a device while the device owner is not deleted and the same CSV is used again for bulk registration, then the platform no longer considers it as a unique credential and throws an error. To resolve this either use new credentials or a new ID for the device. The other way to resolve this is to delete the credentials from the device credentials options under management.
 
 The table below reflects the full set of possible fields that can be added:
 

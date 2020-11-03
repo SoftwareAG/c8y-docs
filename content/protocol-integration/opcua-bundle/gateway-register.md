@@ -96,8 +96,9 @@ gateway:
     baseDir: ${user.home}/.opcua/data
 
   # These settings control the device bootstrap process of the gateway.
-  # In general the default settings should be sufficient, and should not be changed.
-  # Please contact support in case the credentials are different.
+  # In general, the default settings are sufficient, and should not be changed.
+  # Contact product support (https://cumulocity.com/guides/<latest-release>/about-doc/contacting-support/)
+  # in case the bootstrap credentials are different.
   bootstrap:
     # Tenant ID to be used for device bootstrap
     tenantId: management

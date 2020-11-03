@@ -298,7 +298,7 @@ The following is the full list of monitoring alarms created by the gateway:
 <td align="left">Gateway crashed on last run! Please check the log files and memory dumps to see what caused this.</td>
 <td align="left">c8y_ua_GatewayCrash</td>
 <td align="left">MAJOR</td>
-<td align="left">This alarm is also raised when the gateway process was killed brutally</td>
+<td align="left">This alarm is also raised when the gateway process was not terminated gracefully.</td>
 </tr>
 <tr>
 <td align="left">Failed to connect to server [{serverId}], reason: {reason}</td>

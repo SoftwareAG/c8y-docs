@@ -31,11 +31,12 @@ The following error appears if the indentation of the properties in the YAML fil
 
 If this error appears, a Java process is running in the background. To fix this issue, the process must be stopped/killed.
 
-### Changing log levels for troubleshooting
+### Changing the log level for troubleshooting
 
-For troubleshooting, it is recommended to enable ```DEBUG``` logging level for sub-packages and root if required, and send the log file to product [support](https://cumulocity.com/guides/10.7.0-beta/about-doc/contacting-support/).
+For troubleshooting purposes, we recommend you to enable the DEBUG log level for sub-packages and root if required, and send the log file to [product support](/about-doc/contacting-support).
 
 For example:
+
 ```
     <logger name="com.cumulocity.opcua.client.gateway" level="DEBUG"/>
     <logger name="com.cumulocity" level="DEBUG"/>
@@ -46,4 +47,4 @@ For example:
     </root>
 ```
 
-For additional information about log levels, please refer to the "Logback" [architecture](http://logback.qos.ch/manual/architecture.html#effectiveLevel) documentation.
+For additional information about log levels, refer to the [Logback architecture documentation](http://logback.qos.ch/manual/architecture.html#effectiveLevel).

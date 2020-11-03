@@ -182,6 +182,12 @@ Data structure for *ServerConnectionConfig*
 <td>no</td>
 <td>If the user identity mode is <code>Certificate</code>, this is the password of the private key embedded in the keystore.</td>
 </tr>
+<tr>
+<td>cyclicReadBulkSize</td>
+<td>integer</td>
+<td>no</td>
+<td>For cyclic reads, this defines how many nodes can be read at once from the OPC UA server. This is applicable only for nodes resulting from the application with the same device type, matching root node and sharing the same reading parameters (rate and max age). Default is 1000 as defined in the application YAML file.</td>
+</tr>
 </tbody>
 </table>                                                                                                                                         |
 
@@ -585,7 +591,7 @@ Sample payloads:
               "measurementCreation": {
                   "unit": "T",
                   "type": "MyMeasurementType",
-                  "fragmentName": 'MyMeasurement',
+                  "fragmentName": "MyMeasurement",
                   "series": "MySeries"
               }
           }
@@ -637,7 +643,7 @@ Sample payloads:
               ],
               "alarmCreation": {
                   "type": "MyAlarm",
-                  "severity": 'MAJOR',
+                  "severity": "MAJOR",
                   "text": "Heads up, the level is high!"
               }
           }

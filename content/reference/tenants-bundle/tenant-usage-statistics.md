@@ -100,7 +100,7 @@ Note:
  * "requestCount" and "deviceRequestCount" are updated every 5 minutes.
  * "deviceCount", "deviceEndpointCount", "deviceWithChildrenCount", "storageSize" and "subscribedApplications" are updated only three times a day starting at 8:57, 16:57 and 23:57.
  * "storageSize" is affected by your retention rules. It is also affected by the regularly running database optimization functions running in Cumulocity IoT. If the size decreases, it does not necessarily mean that data was deleted.
- * Days are counted according to server timezone so please be aware the tenant usage statistics displaying/filtering may not work correctly when the client is not in the same timezone as the server. However, it is possible to send a request with a time range (`dateFrom` and `dateTo`) in zoned format (e.g. `2020-10-26T03:00:00%2B01:00`).
+ * Days are counted according to server timezone so be aware the tenant usage statistics displaying/filtering may not work correctly when the client is not in the same timezone as the server. However, it is possible to send a request with a time range (`dateFrom` and `dateTo`) in zoned format (e.g. `2020-10-26T03:00:00%2B01:00`).
 
 Request counting in SmartREST and MQTT:
 

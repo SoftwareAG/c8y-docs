@@ -23,7 +23,7 @@ In the first CSV example you can see the following fields:
 <tbody>
 <tr>
 <td style="text-align:left">ID</td>
-<td style="text-align:left">Unique ID of the device. For example, the ID could be an IMEI, serial number, etc.</td>
+<td style="text-align:left">Unique ID of the device. For example, the ID could be an IMEI, serial number, etc. The ID field has to be unique as it uniquely identifies a LWM2M device.</td>
 </tr>
 <tr>
 <td style="text-align:left">IDTYPE</td>
@@ -31,7 +31,7 @@ In the first CSV example you can see the following fields:
 </tr>
 <tr>
 <td style="text-align:left">CREDENTIALS</td>
-<td style="text-align:left">The content of this field is not used by the LWM2M feature. However, this field is still mandatory. For LWM2M-only devices, it is okay to use "dummy" credentials here. </td>
+<td style="text-align:left">The content of this field is not used by the LWM2M feature. However, this field is still mandatory. For LWM2M-only devices, it is okay to use "dummy" credentials here because bulk registration is a generalized feature in the Cumulocity IoT platform. Accessing Cumulocity IoT devices usually requires a password (the value of the “Credentials” field in the CSV file) by the inventory. However, the LWM2M agent has its own way of authenticating devices and hence the "Credentials" field is not used by the LWM2M agent but is used by the platform as a mandatory parameter.</td>
 </tr>
 <tr>
 <td style="text-align:left">NAME</td>
@@ -63,6 +63,8 @@ In the first CSV example you can see the following fields:
 </tr>
 </tbody>
 </table>
+
+> **Info:** The Cumulocity IoT platform stores the credentials for a device owner associated with a particular device. Hence, if you delete a device while the device owner is not deleted and the same CSV is used again for bulk registration, then the platform no longer considers it as a unique credential and throws an error. To resolve this either use new credentials or a new ID for the device. The other way to resolve this is to delete the credentials from the device credentials options under management.
 
 The table below reflects the full set of possible fields that can be added:
 

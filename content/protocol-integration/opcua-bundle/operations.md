@@ -533,7 +533,7 @@ In order to know what is the current state of a device type application, use the
 	"deviceId": "{server ID}",
 	"c8y_ua_command_QueryDeviceTypeApplicationState": {
 		"deviceTypeId": "{device protocol ID}",
-		"matchingRootNodes": ["{root node ID #1}", "root node ID #2"]
+		"matchingRootNodes": ["{root node ID #1}", "{root node ID #2}"]
 	}
 }
 ```

@@ -132,3 +132,22 @@ Below there is an example of a full device protocol that configures a custom act
    ]
 }
 ```
+### Monitoring events for device protocol application
+When a device protocol has been applied to or un-applied from a node, a monitoring event is generated as the following:
+
+#### Device type has been applied
+- Event type: *c8y_ua_DeviceTypeApplied*
+- Event text: *Device type: {device type ID} is applied to root node: {root node ID} of server: {server ID}*
+- Event source: The server managed object
+
+![OPC UA device protocol applied](/images/device-protocols/opcua/opcua-device-protocol-applied.png)
+
+#### Device type has been un-applied
+- Event type: *c8y_ua_DeviceTypeUnapplied*
+- Event text: 
+    * If the device type has been un-applied from all nodes on the server: *Device type: {device type ID} is un-applied from all nodes of server: {server ID}*
+    * If the device type has been un-applied from a specific node on the server: *Device type: {device type ID} is un-applied from root node: {root node ID} of server: {server ID}*
+    * If all device types have been un-applied for the server: *All device types are un-applied for server: {server ID}* 
+- Event source: The server managed object
+
+![OPC UA device protocol un-applied](/images/device-protocols/opcua/opcua-device-protocol-unapplied.png)

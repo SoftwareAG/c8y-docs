@@ -57,32 +57,22 @@ Users can allow support, i.e. a management tenant user logging in as them. To do
 
 ### To log in as support user
 
-To log in as support user from the management tenant, use a login of the form:
+To log in as support user from the management tenant, you must provide the following information in the Login screen:
 
-	<tenant id>/<support user>$<user>
+* Tenant ID:  The ID of the tenant of the user to be supported. The tenant ID is shown in the user dropdown menu in the UI. In some environments, especially in test environments, you can open the destination tenant´s URL (e.g. *testtenant.cumulocity.com*) and log into the tenant without the tenant ID.
+* Support user: The username of the management tenant user that executes the support.
+* User: The username of the user to be supported.
 
+"Support user" and "user" are entered into the **Username** field in the following notation:
 
-* `tenant id` is the tenant ID of the user to be supported. The tenant ID is shown in the user dropdown menu in the UI.
-* `support user` is the username of the management tenant user that executes the support.
-* `user` is the username of the supported user.
+&#60;support user>&#36;&#60;user>
 
 **Example**
 
-Suppose you get a support call from a user "John" in the tenant *testtenant.cumulocity.com* (which has the ID *t07007007*). The user cannot run certain functionality, and you suspect that it is a permission issue. Your username in the management tenant is "Jill" and you are permitted to carry out support for *testtenant.cumulocity.com*. In this case, you can log in with the following command to reproduce what John is seeing:
+Suppose you get a support call from a user "John" in the tenant *testtenant.cumulocity.com* (which has the tenant ID *t07007007*). Your username in the management tenant is "Jill" and you are permitted to carry out support for *testtenant.cumulocity.com*. In this case, you can log in with the following credentials to reproduce what John is seeing:
 
-	t07007007/Jill$John
+![Support user access login](/images/users-guide/enterprise-tenant/et-support-user-access.png)
 
-
-In some environments, especially in test environments, you can simply open the destination tenants URL (e.g. *testtenant.cumulocity.com*) and log into the tenant using
-
-	<support user>$<user>
-
-Alternatively, use
-
-```
-<support user>$
-```
-
-to access the tenant with one of the administrative users.
+Alternatively, enter "&#60;support user>&#36;" into the **Username** field to access the tenant with one of the administrative users.
 
 Audit logs are created for each support user access and for the actions that support users perform. In the column "Who?" the author's name will be shown in the form of "support_user$user".

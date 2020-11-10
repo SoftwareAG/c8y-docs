@@ -112,7 +112,7 @@ export class ApplicationOptions {
   companyName?: string; // Company name used to prompt the user about support staff
   guideHrefTemplate?: string; // The full URL for documentation, by default it's ${docsBaseUrl}${partialUrl}
   docsBaseUrl?: string; // The base URL for documentation
-  contentSecurityPolicy?: string; // CSP string added to the index.html
+  contentSecurityPolicy?: string; // CSP string applied to the index.html by replacing default value
   imports?: string[]; // legacy plugin imports
   cookieBanner?: { // Cookie Banner configuration
     cookieBannerTitle?: string;
@@ -121,3 +121,9 @@ export class ApplicationOptions {
   };
 }
 ```
+
+> **Tip:** contentSecurityPolicy for current application can be checked in following places
+> 
+> - when you do `c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0` you can find `contentSecurityPolicy` value in package.json under path: `c8y.application.contentSecurityPolicy` if it has been defined.
+> - when you inspect the page, you can look for `<meta http-equiv="Content-Security-Policy" content="...">` within `<head>` tag. Active value enclosed within `content` attribute. 
+> - if you build custom application based on standard one, make sure you append your CSP value to the default one.

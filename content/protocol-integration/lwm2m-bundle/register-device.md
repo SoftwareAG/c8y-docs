@@ -257,6 +257,10 @@ Can be either "PACKAGE" or "PACKAGE_URI". And as per the given option, the LWM2M
 <td style="text-align: left">String</td>
 <td style="text-align: left">Indicates the firmware update URL from where the LWM2M device can download the firmware package.</td>
 </tr>
+<tr>
+<td style="text-align: left">firmwareDeliveryEncoding</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Indicates the encoding format used while pushing the firmware binary during the LWM2M firmware update. The encoding format can be either "OPAQUE" or "TLV" or "JSON" or "TEXT". The default value is "OPAQUE"</tr>
 </tbody>
 </table>
 

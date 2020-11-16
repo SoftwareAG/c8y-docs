@@ -1,6 +1,6 @@
 ---
 weight: 50
-title: LoRa Actility
+title: Actility LoRa
 layout: bundle
 aliases:
   - /users-guide/optional-services/#lora

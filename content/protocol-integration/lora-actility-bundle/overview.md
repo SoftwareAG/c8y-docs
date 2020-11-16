@@ -12,9 +12,9 @@ Cumulocity IoT can interface with LoRa devices through Actility's ThingPark Wire
 * Send downstream data to the device using Cumulocity IoT operations.
 * Make use of existing Cumulocity IoT features with LoRa devices, for example: connectivity monitoring, device management, data visualization with dashboards, real-time analytics and more.
 
-The following illustration gives an overview of the Cumulocity IoT LoRa Actility integration.
+The following illustration gives an overview of the Cumulocity IoT Actility LoRa integration.
 
-![Cumulocity IoT LoRa Actility integration](/images/device-protocols/lora-actility/lora-cumulocity-integration.png)
+![Cumulocity IoT Actility LoRa integration](/images/device-protocols/lora-actility/lora-cumulocity-integration.png)
 
 The following sections describe how to:
 

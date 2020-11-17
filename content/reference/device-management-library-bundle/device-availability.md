@@ -26,7 +26,7 @@ The availability information computed by Cumulocity IoT is stored in fragments: 
 |Name|Type|Description|
 |:---|:---|:----------|
 |lastMessage|Date|The time when the device sent the last message to Cumulocity IoT.|
-|status|String|The current status, one of AVAILABLE, MAINTENANCE, UNAVAILABLE.|
+|status|String|The current status, one of AVAILABLE, MAINTENANCE, DISCONNECTED.|
 
 The following messages update the last message timestamp of a device:
 

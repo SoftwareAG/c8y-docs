@@ -151,3 +151,18 @@ When a device protocol has been applied to or un-applied from a node, a monitori
 - Event source: The server managed object
 
 ![OPC UA device protocol un-applied](/images/device-protocols/opcua/opcua-device-protocol-unapplied.png)
+
+#### Custom action fails to retrieve data
+
+If a custom action fails while retrieving data from an endpoint for whatever reason we enabled a way to save these and retry later.  
+It can be configured in the application yaml file, and the queues will be stored in the event repository.  
+There are a lot of possible parameters, here the explanation where and how to set up.  
+
+In the section mappingExecution -> http -> failureHandling
+- enabled[boolean] -> activate or deactivate with boolean expression, default true
+- flushQueueDelay[seconds] -> time to wait before a queue will be cleared automatically, default 60
+- reScheduleDelay[seconds] -> time before reschedule of the stored queues will start, should be not a multiple value of flushQueueDelay and of course bigger, default 150
+- reScheduleElements[number] -> number of queues loaded for retry at the same time, default 100
+- failedCustomActionQueueSize[number] -> size of maximum elements in one queue, if limit is reached the queue will be saved, default 100
+- maxRetries[number] -> number of retries for failed queues, if maximum is reached the queue will be saved as permanently failed and never retried again, default 5
+- pendingMaxAge[seconds] -> queues with a timestamp older than this will also not retried regardless of whether the retry status is, default 86400 

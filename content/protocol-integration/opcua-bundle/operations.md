@@ -217,7 +217,7 @@ This operation reads history values and applies the mappings except of alarm map
 ```
 
 - tagType - Possible tagType values are “TAG” and “NO_TAG”. "TAG" appends “_Historic” for both the mapping types and for the measurement mappings.
-- processMappings (optional) - by default the value is true. If the value is false then the values will not be processed based on the device protocol mapping.
+- processMappings (optional) - By default the value is true. If the value is false then the values will not be processed based on the device protocol mapping.
 - batchSize (optional): Batch size for each history read call to the OPC UA server. Default is 200.
 
 ### Historic data binary upload

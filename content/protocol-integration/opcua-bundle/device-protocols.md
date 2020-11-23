@@ -156,23 +156,23 @@ When a device protocol has been applied to or un-applied from a node, a monitori
 
 If a custom action fails a retry mechanism will be processed.  
 This is configured in the application YAML file, and the queues will be stored in the event repository.  
-Queues are collections of failed custom actions, including the complete http request of this custom action. Each entry of the queue is one failed custom action, and the collection has a defined size called _failedCustomActionQueueSize_ and a _maxRetries_.  
-A background scheduler task will retry each queue by the size of _maxRetries_, if _maxRetries_ is reached the queue will be stored as a permanently failed queue in the event repository. All elements of the queue will be retried, so the count of the elements in the queue will be decreasing with each successful retried custom action. These queues are also timing out defined by _pendingMaxAge_ to reduce the load of the scheduler task.
+Queues are collections of failed custom actions, including the complete HTTP request of this custom action. Each entry of the queue is one failed custom action. The collection has a defined size in _failedCustomActionQueueSize_ and a maximum number of retries in _maxRetries_.  
+A background scheduler task will retry each queue up to the number of _maxRetries_, if _maxRetries_ is reached the queue will be stored as a permanently failed queue in the event repository. All elements of the queue will be retried, so the count of the elements in the queue will be decreasing with each successful retried custom action. These queues are also timing out defined by _pendingMaxAge_ to reduce the load of the scheduler task.
 
 The following parameters can be set:  
 
 In the section _mappingExecution_ - _http_ - _failureHandling_  
 
-- _enabled_[boolean] - activate or deactivate the fail over for custom actions, default true
+- _enabled_[boolean] - activate or deactivate the fail over for custom actions, default is true
 
-- _flushQueueDelay_[seconds] - time to wait before a queue will be cleared automatically, default 60
+- _flushQueueDelay_[seconds] - time to wait before a queue will be cleared automatically, default is 60
 
-- _reScheduleDelay_[seconds] - time before reschedule of the stored queues will start, should be higher than _flushQueueDelay_ and not a multiple value of _flushQueueDelay_, default 150
+- _reScheduleDelay_[seconds] - time before reschedule of the stored queues will start, should be higher than _flushQueueDelay_ and not a multiple value of _flushQueueDelay_, default is 150
 
-- _reScheduleElements_[number] - number of queues loaded for retry at the same time, default 100
+- _reScheduleElements_[number] - number of queues loaded for retry at the same time, default is 100
 
-- _failedCustomActionQueueSize_[number] - size of maximum elements in one queue; if limit is reached the queue will be saved, default 100
+- _failedCustomActionQueueSize_[number] - size of maximum elements in one queue; if the limit is reached the queue will be saved, default is 100
 
-- _maxRetries_[number] - number of retries for failed queues; if the maximum is reached the queue will be saved as permanently failed and never retried again, default 5
+- _maxRetries_[number] - number of retries for failed queues; if the maximum is reached the queue will be saved as permanently failed and never retried again, default is 5
 
-- _pendingMaxAge_[seconds] - queues with a timestamp older than this will not be retried regardless of the retry status, default 86400 
+- _pendingMaxAge_[seconds] - queues with a timestamp older than this will not be retried regardless of the retry status, default is 86400 

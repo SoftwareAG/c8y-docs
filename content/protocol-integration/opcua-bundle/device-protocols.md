@@ -154,12 +154,10 @@ When a device protocol has been applied to or un-applied from a node, a monitori
 
 #### Custom action fails to retrieve data
 
-If a custom action fails we included a simple retry mechanism.  
+If a custom action fails a retry mechanism will be processed.  
 This is configured in the application YAML file, and the queues will be stored in the event repository.  
 Queues are collections of failed custom actions, including the complete http request of this custom action. Each entry of the queue is one failed custom action, and the collection has a defined size called _failedCustomActionQueueSize_ and a _maxRetries_.  
 A background scheduler task will retry each queue by the size of _maxRetries_, if _maxRetries_ is reached the queue will be stored as a permanently failed queue in the event repository. All elements of the queue will be retried, so the count of the elements in the queue will be decreasing with each successful retried custom action. These queues are also timing out defined by _pendingMaxAge_ to reduce the load of the scheduler task.
-
-There are a lot of possible parameters, here the explanation where and how to set up.  
 
 The following parameters can be set:  
 

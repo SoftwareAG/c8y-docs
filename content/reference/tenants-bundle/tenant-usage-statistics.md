@@ -6,16 +6,81 @@ layout: redirect
 
 ### UsageStatistics
 
-|Name|Type|Occurs|Description|
-|:---|:---|:-----|:----------|
-|day|datetime|1|Date of statistics.|
-|deviceCount|int|1|Number of devices in the tenant (c8y\_IsDevice). Latest value for a queried period.|
-|deviceEndpointCount|int|1|Number of devices which do not have child devices (leaf devices). Latest value for a queried period.|
-|deviceRequestCount|int|1|Number of requests that were issued only by devices against the tenant. Sum of all issued requests during the queried period.|
-|deviceWithChildrenCount|int|1|Number of devices with all children. Latest value for a queried period.|
-|requestCount|int|1|Number of requests that were issued against the tenant. Sum of all issued requests during the queried period.|
-|storageSize|int|1|Database storage in use by the tenant, in bytes. Latest value for a queried period.|
-|subscribedApplications|array|1|Names of tenant subscribed applications. Latest value for a queried period.|
+<table>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 15%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Occurs</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">day</td>
+<td align="left">datetime</td>
+<td align="left">1</td>
+<td align="left">Date of statistics.</td>
+</tr>
+
+<tr>
+<td align="left">deviceCount</td>
+<td align="left">int</td>
+<td align="left">1</td>
+<td align="left">Number of devices in the tenant (c8y_IsDevice). Latest value for a queried period.</td>
+</tr>
+
+<tr>
+<td align="left">deviceEndpointCount</td>
+<td align="left">int</td>
+<td align="left">1</td>
+<td align="left">Number of devices which do not have child devices (leaf devices). Latest value for a queried period.</td>
+</tr>
+
+<tr>
+<td align="left">deviceRequestCount</td>
+<td align="left">int</td>
+<td align="left">1</td>
+<td align="left">Number of requests that were issued only by devices against the tenant. Sum of all issued requests during the queried period.</td>
+</tr>
+
+<tr>
+<td align="left">deviceWithChildrenCount</td>
+<td align="left">int</td>
+<td align="left">1</td>
+<td align="left">Number of devices with all children. Latest value for a queried period.</td>
+</tr>
+
+<tr>
+<td align="left">requestCount</td>
+<td align="left">int</td>
+<td align="left">1</td>
+<td align="left">Number of requests that were issued against the tenant. Sum of all issued requests during the queried period.</td>
+</tr>
+
+<tr>
+<td align="left">storageSize</td>
+<td align="left">int</td>
+<td align="left">1</td>
+<td align="left">Database storage in use by the tenant, in bytes. Latest value for a queried period.</td>
+</tr>
+
+<tr>
+<td align="left">subscribedApplications</td>
+<td align="left">array</td>
+<td align="left">1</td>
+<td align="left">Names of tenant subscribed applications. Latest value for a queried period.</td>
+</tr>
+</tbody>
+</table>
+
 
 "requestCount" - the following requests are not included in the counter:
 
@@ -35,7 +100,7 @@ Note:
  * "requestCount" and "deviceRequestCount" are updated every 5 minutes.
  * "deviceCount", "deviceEndpointCount", "deviceWithChildrenCount", "storageSize" and "subscribedApplications" are updated only three times a day starting at 8:57, 16:57 and 23:57.
  * "storageSize" is affected by your retention rules. It is also affected by the regularly running database optimization functions running in Cumulocity IoT. If the size decreases, it does not necessarily mean that data was deleted.
- * Days are counted according to server timezone.
+ * Days are counted according to server timezone, so be aware that the tenant usage statistics displaying/filtering may not work correctly when the client is not in the same timezone as the server. However, it is possible to send a request with a time range (`dateFrom` and `dateTo`) in zoned format (e.g. `2020-10-26T03:00:00%2B01:00`).
 
 Request counting in SmartREST and MQTT:
 
@@ -65,6 +130,7 @@ JSON via MQTT specific counting details:
 
 * Invalid requests are counted, for example when the message payload is invalid.
 * Bulk creation requests are counted as a single "requestCount"/"deviceRequestCount" and multiple inbound data transfer count.
+* Bulk creation requests with a wrong payload are not counted for inbound data transfer count.
 
 ### Total inbound data transfer
 

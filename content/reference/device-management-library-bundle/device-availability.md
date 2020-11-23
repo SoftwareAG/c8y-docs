@@ -10,7 +10,7 @@ Devices can be monitored for availability by adding a "c8y\_RequiredAvailability
 
     "c8y_RequiredAvailability": { "responseInterval": <<time in minutes>> }
 
-Devices that have not sent any message in the response interval are considered unavailable. The response interval can have a value between -32768 and 32767 and any values out of range will be shrink to the range borders. Such devices are marked as unavailable (see below) and an unavailability alarm is raised.
+Devices that have not sent any message in the response interval plus a 180 seconds delay are considered unavailable. The response interval can have a value between -32768 and 32767 and any values out of range will be shrink to the range borders. Such devices are marked as unavailable (see below) and an unavailability alarm is raised.
 
 Devices with `responseInterval` <= 0 are considered to be under maintenance. No alarm is raised while a device is under maintenance.
 
@@ -26,7 +26,7 @@ The availability information computed by Cumulocity IoT is stored in fragments: 
 |Name|Type|Description|
 |:---|:---|:----------|
 |lastMessage|Date|The time when the device sent the last message to Cumulocity IoT.|
-|status|String|The current status, one of AVAILABLE, MAINTENANCE, UNAVAILABLE.|
+|status|String|The current status, one of AVAILABLE, MAINTENANCE, DISCONNECTED.|
 
 The following messages update the last message timestamp of a device:
 
@@ -38,9 +38,10 @@ A monitored device has one of the following statuses for c8y_Connection:
 |Name|Description|
 |:---|:----------|
 |CONNECTED|A device push connection is established.|
-|AVAILABLE|The device is not connected through device push, but a message was sent within the required response interval.|
 |MAINTENANCE|"responseInterval" is set to 0; the device is under maintenance.|
 |DISCONNECTED|"responseInterval" is larger than 0 and the device is neither AVAILABLE nor CONNECTED.|
+
+>**Info:** If a device is not connected via device push, but a message was sent within the required response interval, c8y_Availability can still have the status AVAILABLE, even if c8y_Connection does not have the status CONNECTED.
 
 #### c8y\_UnavailabilityAlarm
 

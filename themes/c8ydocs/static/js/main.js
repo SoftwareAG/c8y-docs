@@ -121,6 +121,8 @@ var main = (function ($) {
       });
     }
 
+    // Fix for code highlight
+    $(".highlight pre code").addClass("hljs");
   }
   return {
     init: initializer

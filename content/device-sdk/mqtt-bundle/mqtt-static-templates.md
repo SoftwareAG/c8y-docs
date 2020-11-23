@@ -314,6 +314,21 @@ Set currently installed configuration of the device.
 120,myType,http://www.my.url,config.bin,2020-07-22T17:03:14.000+02:00
 ```
 
+##### Set device profile that is being applied (121)
+
+Set device profile that is being applied to the device.
+
+|Position|Parameter|Mandatory|Default value|
+|:-------|:-------|:-------|:-------|
+|1|Profile executed| YES| &nbsp;|
+|2|Profile ID| NO|Profile ID from the oldest EXECUTING device profile operation|
+
+**Example**
+
+```text
+121,true,8473
+```
+
 #### <a name="measurement-templates">Measurement templates (2xx)</a>
 
 ##### <a name="200">Create custom measurement (200)</a>

@@ -16,17 +16,10 @@ For details on migration, refer to [Migrating from CEL (Esper) to Apama](/apama/
 
 #### Removal of OPC UA legacy integration
 
-With Cumulocity IoT 10.7, the OPC UA legacy integration will be removed from the product. With Cumulocity IoT 10.5.7 a new version of our OPC UA integration was introduced supporting many advanced features. If you are still using the legacy OPC UA integration, we ask you to upgrade to the latest version. For more information, refer to [Optional services > OPC UA](/users-guide/optional-services/#opc-ua) in the User guide. 
-
+With Cumulocity IoT 10.7, the OPC UA legacy integration will be removed from the product. With Cumulocity IoT 10.5.7 a new version of our OPC UA integration was introduced supporting many advanced features. If you are still using the legacy OPC UA integration, we ask you to upgrade to the latest version. For more information, refer to [OPC UA](/protocol-integration/opcua) in the *Protocol integration guide*. 
 
 
 ### Implemented measures
-
-#### Removal of DELETE method for audit logs
-
-As announced in the [Migration notes for release 10.5.0](https://cumulocity.com/guides/10.5.0/release-notes/10-5-0/#10-5-0-migration), deletion of audit log entries by administrators is no longer permitted. This method is deprecated and has been removed. All DELETE requests to the audit API will return the error "405 Method not allowed".
-
-Note that retention rules still apply to audit logs and will delete audit log records older than the specified retention time, see also [Auditing > Audit record collection](/reference/auditing/#audit-record-collection) in the Reference guide. 
 
 #### End of Java 7 support for the Microservice SDK
 

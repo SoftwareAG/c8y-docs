@@ -92,7 +92,7 @@ The following tabs are the most common ones, each described in detail in a separ
 </tbody>
 </table>
 
->**Info:** Several individual tabs, which you do not find listed here, may be described in a different context in another section of the Cumulocity IoT documentation. Use the Search function to switch to the relevant sections. A detailed description on the **Modbus** tab, for example, can be found in [Optional services > Cloud fieldbus](/users-guide/optional-services#cloud-fieldbus).
+>**Info:** Several individual tabs, which you do not find listed here, may be described in a different context in another section of the Cumulocity IoT documentation. Use the Search function to switch to the relevant sections. A detailed description on the **Modbus** tab, for example, can be found in [Cloud fieldbus](/protocol-integration/cloud-fieldbus) in the *Protocol integration guide*.
 
 Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be part of multiple hierarchies, several rows of breadcrumbs may be shown.
 
@@ -215,10 +215,19 @@ The **Configuration** tab allows you to configure the parameters and initial set
 
 For more details on managing binary-based configuration snapshots, see [Managing device data > Managing configurations](#configuration-repository).
 
+#### To request the current text-based configuration snapshot
+
+1. Navigate to the **Configuration** tab.
+2. Click **Get snapshot from device**.
+
 #### To add or edit a text-based configuration snapshot
 
 1. In the **Configuration** tab, you can manually add or edit the device configuration in the text field.
-2. Click **Save** to save your edits.
+2. Click **Save configuration to device** to save your edits.
+
+![Text-based configuration](/images/users-guide/DeviceManagement/devmgmt-devices-textconfig.png)
+
+> **Info:** If a device supports both text-based and binary-based configuration the **Configuration** tab shows a sub-tab for each configuration type.
 
 ### <a name="control"></a>Control
 

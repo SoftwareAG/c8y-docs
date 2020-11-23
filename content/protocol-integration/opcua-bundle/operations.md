@@ -209,14 +209,16 @@ This operation reads history values and applies the mappings except of alarm map
        "processMappings": true,
         "dateFrom": "2019-06-13T10:43:00+02:00",
         "dateTo": "2019-06-13T10:52:00+02:00",
-        "tagType": "TAG"
+        "tagType": "TAG",
+        "batchSize": 500
     },
     "description": "Historic read"
 }
 ```
 
 - tagType - Possible tagType values are “TAG” and “NO_TAG”. "TAG" appends “_Historic” for both the mapping types and for the measurement mappings.
-- processMappings (optional) - by default the value is true. If the value is false then the values will not be processed based on the device protocol mapping.
+- processMappings (optional) - By default the value is true. If the value is false then the values will not be processed based on the device protocol mapping.
+- batchSize (optional): Batch size for each history read call to the OPC UA server. Default is 200.
 
 ### Historic data binary upload
 
@@ -230,13 +232,14 @@ This operation reads historic values and only saves those values to a file which
         "dateFrom": "2019-01-03T09:53:00+02:00",
         "dateTo": "2019-06-13T18:53:00+02:00",
         "chunkSize": 1,
-        "compress": true
+        "compress": true,
+        "batchSize": 150000
     },
     "description": "Upload history data"
 }
 ```
-
 The binary file representations, which can be queried using binary API, are created with the type “c8y_ua_HistoricData” and an operationId with the value of the operation with which it has been generated.
+- batchSize (optional): Batch size for each history read call to the OPC UA server. Default is 100000.
 
 ### Write value
 

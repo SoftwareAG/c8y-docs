@@ -70,13 +70,14 @@ The UI is available in the following languages:
 |:---|:---|
 |English (default)|en|
 |Brazilian Portuguese|pt_BR|
+|Chinese|zh_CN|
 |French|fr|
 |German|de|
 |Japanese|ja_JP|
 |Korean|ko|
 |Polish|pl|
+|Russian|ru|
 |Spanish|es|
-|Chinese|zh_CN|
 
 
 #### <a name="change-password"></a>To change your password

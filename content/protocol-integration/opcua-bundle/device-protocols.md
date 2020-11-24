@@ -152,7 +152,7 @@ When a device protocol has been applied to or un-applied from a node, a monitori
 
 ![OPC UA device protocol un-applied](/images/device-protocols/opcua/opcua-device-protocol-unapplied.png)
 
-#### Custom action fails to retrieve data
+#### Custom action retry mechanism on external server failure
 
 If a custom action fails, a retry mechanism will be processed.  
 This is configured in the application YAML file, and the queues will be stored in the event repository.  

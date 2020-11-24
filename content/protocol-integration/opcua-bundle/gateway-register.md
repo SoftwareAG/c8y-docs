@@ -146,6 +146,21 @@ gateway:
       failureAlarmAggregate: true
       # How often is the alarm aggregation for failed external calls invoked?
       failureAlarmFixedDelay: 15 # seconds
+      failureHandling:
+        # activate custom action rescheduled
+        enabled: true
+        # Time in seconds queue will be flushed to event repository
+        flushQueueDelay: 60
+        # Time in seconds reschedule will start
+        reScheduleDelay: 150
+        # Count of elements per page within one retry
+        reScheduleElements: 100
+        # Maximum size of the queue before automatic be flushed to event repository
+        failedCustomActionQueueSize: 100
+        # Number of retries failed custom action will resend again
+        maxRetries: 5
+        # oldest age of events to get from event repository
+        pendingMaxAge: 86400
 
     # The OPC UA gateway regularly fetches all device types ("mappings") from the server. The refreshInterval
     # configures how often this happens.

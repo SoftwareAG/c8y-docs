@@ -78,6 +78,8 @@ To edit an endpoint, click the menu icon at the right of the respective entry an
 
 To delete an endpoint, click the menu icon at the right of the respective entry and select **Remove** from the context menu.
 
+>**Info:** An active connection will not be terminated automatically after the endpoint was deleted.
+
 #### <a name="connecting-to-endpoints"></a>To connect to an endpoint
 
 To connect to configured endpoints, choose an endpoint in the **Remote access** tab and click **Connect**.

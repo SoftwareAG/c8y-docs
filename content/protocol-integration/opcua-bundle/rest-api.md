@@ -849,8 +849,9 @@ Full payload data structure explained:
 <td>attributes</td>
 <td>array</td>
 <td>yes</td>
-<td>Selectable event attributes. The NodeId of the event source
-is automatically added by the OPC UA device gateway.</td>
+<td>Selectable event attributes. The nodeId of the event source
+is added by default as the last selected attribute by
+the OPC UA device gateway.</td>
 </tr>
 <tr>
 <td>eventCreation</td>

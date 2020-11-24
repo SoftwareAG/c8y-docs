@@ -873,6 +873,7 @@ the OPC UA device gateway.</td>
 </tr>
 </tbody>
 </table>
+
 **Data structure for *SubscriptionType***
 
 <table>

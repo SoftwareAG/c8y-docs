@@ -12,6 +12,71 @@ To use the templates listed below, you need to publish the messages to the topic
 
 You need to subscribe to the topic <kbd>s/ds</kbd> to receive operations with the static templates.
 
+#### Quick reference
+
+Click the commands below to see more information on the respective template.
+If a parameter is in square brackets, it is optional.
+
+<table>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td>
+
+**[Inventory templates](#inventory-templates)**
++ [100,createdDeviceName,deviceType](#100)
++ [101,createdChildId,childName,childType](#101)
++ [105 (Get children, reply: 106,child1,child2,…)](#105)
++ [107,fragmenttoBeUninstalled1,fragment2,...](#107)
++ [110,serialNumber,hardwareModel,revision](#110)
++ [111,IMEI,ICCID,IMSI,MCC,MNC,LAC,cellId](#111)
++ [112,latitude,longitude,altitude,accuracy](#112)
++ [113,"configProp1=val1\nprop2=val2\n…"](#113)
++ [114,supportedOperation1,operation2,…](#114)
++ [115,currentFirmwareName,version,url](#115)
++ [116,currentSoftwareName1,version1,url1,name2,…](#116)
++ [117,requiredInterval](#117)
++ [118,supportedLog1,log2,...](#118)
++ [119,supportedConfiguration1,config2,...](#119)
++ [120,configType,url,filename[,time]](#120)
+
+**[Measurement templates](#measurement-templates)**
++ [200,fragment,series,value[,unit,time]](#200)
++ [210,rssi,ber[,time]](#210)
++ [211,temperature[,time]](#211)
++ [212,battery[,time]](#212)
+
+</td>
+<td>
+
+**[Alarm templates](#alarm-templates)**
++ [301,criticalAlarmType[,text][,time]](#301)
++ [302,majorAlarmType[,text][,time]](#302)
++ [303,minorAlarmType[,text][,time]](#303)
++ [304,warningAlarmType[,text][,time]](#304)
++ [305,alarmType,newSeverity](#305)
++ [306,alarmTypeToBeCleared](#306)
++ [307,alarmType,fragmentToBeRemoved1,fragment2,...](#307)
+
+**[Event templates](#event-templates)**
++ [400,eventType,text[,time]](#400)
++ [401,latitude,longitude,altitude,accuracy[,time]](#401)
++ [402,latitude,longitude,altitude,accuracy[,time] (incl. inv. update)](#402)
++ [407,eventType,fragmentToBeRemoved1,fragment2,...](#407)
+
+**[Operation templates](#operation-templates)**
++ [500 (get pending)](#500)
++ [501,typeToSetToExecuting](#501)
++ [502,typeToSetToFailed,fialureReason](#502)
++ [503,typeToSetToSuccessful,parameters](#503)
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ### Automatic device creation
 
@@ -39,50 +104,6 @@ Tailing commas is not required. The two lines below result in the same message.
 ### Publish templates
 
 The following templates can be used to publish data on the topics <kbd>s/us</kbd> as well as <kbd>t/us</kbd>. Refer to [SmartRest > Processing mode](/reference/smartrest#processing-mode) in the Reference guide for more information about the <kbd>t/</kbd> topic for transient data processing.
-
-**[Inventory templates](#inventory-templates)**
-+ [100,createdDeviceName,deviceType](#100)
-+ [101,createdChildId,childName,childType](#101)
-+ [105 (Get children, reply: 106,child1,child2,…)](#105)
-+ [107,fragmenttoBeUninstalled1,fragment2,...](#107)
-+ [110,serialNumber,hardwareModel,revision](#110)
-+ [111,IMEI,ICCID,IMSI,MCC,MNC,LAC,cellId](#111)
-+ [112,latitude,longitude,altitude,accuracy](#112)
-+ [113,"configProp1=val1\nprop2=val2\n…"](#113)
-+ [114,supportedOperation1,operation2,…](#114)
-+ [115,currentFirmwareName,version,url](#115)
-+ [116,currentSoftwareName1,version1,url1,name2,…](#116)
-+ [117,requiredInterval](#117)
-+ [118,supportedLog1,log2,...](#118)
-+ [119,supportedConfiguration1,config2,...](#119)
-+ [120,configType,url,filename[,time]](#120)
-
-**[Measurement templates](#measurement-templates)**
-+ [200,fragment,series,value[,unit,time]](#200)
-+ [210,rssi,ber[,time]](#210)
-+ [211,temperature[,time]](#211)
-+ [212,battery[,time]](#212)
-
-**[Alarm templates](#alarm-templates)**
-+ [301,criticalAlarmType[,text][,time]](#301)
-+ [302,majorAlarmType[,text][,time]](#302)
-+ [303,minorAlarmType[,text][,time]](#303)
-+ [304,warningAlarmType[,text][,time]](#304)
-+ [305,alarmType,newSeverity](#305)
-+ [306,alarmTypeToBeCleared](#306)
-+ [307,alarmType,fragmentToBeRemoved1,fragment2,...](#307)
-
-**[Event templates](#event-templates)**
-+ [400,eventType,text[,time]](#400)
-+ [401,latitude,longitude,altitude,accuracy[,time]](#401)
-+ [402,latitude,longitude,altitude,accuracy[,time] (incl. inv. update)](#402)
-+ [407,eventType,fragmentToBeRemoved1,fragment2,...](#407)
-
-**[Operation templates](#operation-templates)**
-+ [500 (get pending)](#500)
-+ [501,typeToSetToExecuting](#501)
-+ [502,typeToSetToFailed,fialureReason](#502)
-+ [503,typeToSetToSuccessful,parameters](#503)
 
 #### <a name="inventory-templates">Inventory templates (1xx)</a>
 

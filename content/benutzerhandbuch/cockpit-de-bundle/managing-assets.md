@@ -68,7 +68,7 @@ In der Asset-Hierarchie unterscheidet Cumulocity IoT zwischen Top-Level-Gruppen 
 
 Im Navigator werden Top-Level-Gruppen im Menü **Gruppen** auf oberster Ebene angezeigt. Kind-Assets werden unterhalb ihrer Top-Level-Gruppe angezeigt. Zudem werden Kind-Assets in der Registerkarte **Kind-Assets** der jeweiligen Gruppe angezeigt.
 
-<img src="/images/benutzerhandbuch/cockpit/cockpit-sub-assets.png" name="Sub-assets"/>
+<img src="/images/benutzerhandbuch/cockpit/cockpit-sub-assets.png" name="Subassets"/>
 
 Wenn Sie ein Objekt im Navigator auswählen, werden auf der rechten Seite entsprechende Informationen zum ausgewählten Objekt angezeigt.
 

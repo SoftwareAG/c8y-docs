@@ -76,7 +76,7 @@ Use the toggle to enable and disable data forwarding to the destination tenant. 
 <tbody>
 <tr>
 <td style="text-align:left">Group or device</td>
-<td style="text-align:left">The group or device that is forwarded. If you select a group here all subgroups and sub-devices of this group will be forwarded. <b>See the warning below on the usage of All objects.</b> </td>
+<td style="text-align:left">The group or device that is forwarded. If you select a group here all subgroups and subdevices of this group will be forwarded. <b>See the warning below on the usage of All objects.</b> </td>
 </tr>
 <tr>
 <td style="text-align:left">API</td>

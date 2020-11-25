@@ -75,7 +75,7 @@ Cumulocity IoT provides numerous online API examples. If you want to make use of
 
 Import the APIs as a [JSON file](/files/rest/Cumulocity_API.postman_collection.json).
 
-Now, click the **Collections** tab on the top left of Postman. You should see a folder _Cumulocity API_ with the examples. Open that folder and the sub-folder _Alarms_, then click **Get collection of alarms**. This shows an example on how to get alarms from Cumulocity IoT.
+Now, click the **Collections** tab on the top left of Postman. You should see a folder _Cumulocity API_ with the examples. Open that folder and the subfolder _Alarms_, then click **Get collection of alarms**. This shows an example on how to get alarms from Cumulocity IoT.
 
 Note that the example contains placeholders, in this case a placeholder _{{url}}_ in <kbd>{{url}}/alarm/alarms</kbd>. You need to tell Postman how to fill these placeholders and by this, how to connect to your Cumulocity IoT account. To do so, create an [environment](https://www.getpostman.com/docs/environments) and configure the placeholders.
 

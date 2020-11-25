@@ -141,7 +141,7 @@ Data collection can be done by using the below shown and attached script *create
     print("Training data written to " + TRAIN_DATA_FILE)
 
 
-The training data set we collected is packaged as *training_data.zip* under the data sub-folder of the attached *AnomalyDetectionDemo.zip*.
+The training data set we collected is packaged as *training_data.zip* under the data subfolder of the attached *AnomalyDetectionDemo.zip*.
 
 #### Train the PMML model
 
@@ -149,7 +149,7 @@ For this demo, the anomaly detection machine learning algorithm "Isolation Fores
 
 The logic arguments goes: isolating anomaly observations is easier as only a few conditions are needed to separate those cases from the normal observations. On the other hand, isolating normal observations require more conditions. Therefore, an anomaly score can be calculated as the number of conditions required to separate a given observation. - [Anomaly Detection Using Isolation Forests](https://blog.easysol.net/using-isolation-forests-anamoly-detection/)
 
-The attached Python script *createModel.py* creates an Isolation Forest Model in PMML format using the previously created training data. If no training data was created with the *createTraningData.py* script, sample training data can be found under the data sub-folder of the attached ZIP file. It is then used for training the Isolation Forest model with the help of the scikit-learn framework ([https://scikit-learn.org](https://scikit-learn.org)). To obtain a robust and meaningful model, further cleaning of the training data and validating the best model parameters is required. This is not in the scope of this demo and presumes knowledge of data science best practices. After the model is created in scikit-learn format, it is converted into PMML format with the Nyoka library. Make sure to install Nyoka as detailed here: [https://github.com/nyoka-pmml/nyoka](https://github.com/nyoka-pmml/nyoka).
+The attached Python script *createModel.py* creates an Isolation Forest Model in PMML format using the previously created training data. If no training data was created with the *createTraningData.py* script, sample training data can be found under the data subfolder of the attached ZIP file. It is then used for training the Isolation Forest model with the help of the scikit-learn framework ([https://scikit-learn.org](https://scikit-learn.org)). To obtain a robust and meaningful model, further cleaning of the training data and validating the best model parameters is required. This is not in the scope of this demo and presumes knowledge of data science best practices. After the model is created in scikit-learn format, it is converted into PMML format with the Nyoka library. Make sure to install Nyoka as detailed here: [https://github.com/nyoka-pmml/nyoka](https://github.com/nyoka-pmml/nyoka).
 
 You could try out the data you collected yourself as described in the data collection section. Alternatively, you can unzip the attached *data/training_data.zip* file which contains the sample training data and use it for training your model. Note that the model trained with the attached data set might not work very well when you try to classify your own data. The reason is that the expected behavior of the training data and the data captured with your device would differ too much and any occurrence will be classified as anomalous.
 

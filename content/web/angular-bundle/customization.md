@@ -34,7 +34,7 @@ ui-assets
 
 ### Branding options
 
-Edit the file *public-options/options.json* and change the sub-properties of `brandingCssVars`. These properties will be converted into [CSS custom properties](#css-custom-properties) at runtime.
+Edit the file *public-options/options.json* and change the subproperties of `brandingCssVars`. These properties will be converted into [CSS custom properties](#css-custom-properties) at runtime.
 
 Note that the properties `brand-logo-img` and `navigator-platform-logo` are both URLs. Therefore the corresponding files must be placed inside the folder *ui-assets*.
 
@@ -104,6 +104,6 @@ Inside the folder `ui-customization` that contains both `public-options`and `ui-
 c8ycli deploy public-options ui-assets
 ```
 
-Fill in your tenant/instance information and the applications will be deployed and will be visible to that specific tenant and its subtenants. 
+Fill in your tenant/instance information and the applications will be deployed and will be visible to that specific tenant and its subtenants.
 
 >**Info**: For performance reasons the options are cached. Therefore the application must be refreshed twice to make the changes visible.

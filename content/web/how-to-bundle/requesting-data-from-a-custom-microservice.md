@@ -46,7 +46,7 @@ In the next section, we will show how you can easily use that concept in an Angu
 
 ### Basic: Interaction between @c8y/client and an Angular application
 
-`@c8y/ngx-components` is an Angular component that allows to spin up an application. It is used in our basic apps like Cockpit, Administration and Device Management to display for example the login screen. When you spin up a new Angular-based application the `@c8y/client` and the `@c8y/ngx-components` are always included. Moreover the ngx-components have a sub-package which is called `@c8y/ngx-components/api` which exports a `DataModule`. That module already imports all common endpoint services, so that you can just use the standard dependency injection of Angular to access data.
+`@c8y/ngx-components` is an Angular component that allows to spin up an application. It is used in our basic apps like Cockpit, Administration and Device Management to display for example the login screen. When you spin up a new Angular-based application the `@c8y/client` and the `@c8y/ngx-components` are always included. Moreover the ngx-components have a subpackage which is called `@c8y/ngx-components/api` which exports a `DataModule`. That module already imports all common endpoint services, so that you can just use the standard dependency injection of Angular to access data.
 
 The example above in a Angular application would look like this:
 

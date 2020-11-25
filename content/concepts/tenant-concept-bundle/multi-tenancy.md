@@ -1,0 +1,23 @@
+---
+weight: 20
+title: Multi-tenancy
+layout: redirect
+---
+
+With the Enterprise Tenant, Cumulocity IoT supports full multi-tenancy. All data related to a tenant is stored in a dedicated database. This includes user data, inventory, events, measurements, operations and alarms.
+
+The Enterprise Tenant can create subtenants that will then again function like Standard Tenants in the platform and have their own tenant management. 
+
+The following list shows some of the main advantages of the multi-tenancy approach:
+
+* **User and permission management**
+<br>Each tenant has full admin access to their user and permission management and can create own roles.
+* **Application management**
+<br>Each tenant can manage their applications separately and extend the platform by adding applications.
+* **Usage statistics and billing**
+<br>Having separate tenants allows for cloud-based business models, which typically charge per API call and storage.
+
+You can find a detailed comparison between the role-based access control in a single tenant and the multi-tenant approach from the perspective of a platform provider in [RBAC versus multi-tenancy approach](/concepts/tenants-concept/#comparison).  
+ 
+ 
+ 

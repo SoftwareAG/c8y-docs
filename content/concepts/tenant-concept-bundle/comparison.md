@@ -1,6 +1,6 @@
 ---
 weight: 100
-title: Two approaches: RBAC versus multi-tenancy
+title: RBAC versus multi-tenancy approach
 layout: redirect
 ---
 

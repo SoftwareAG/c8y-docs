@@ -58,7 +58,7 @@ The following templates can be used to publish data on the topics <kbd>s/us</kbd
 + [120,configType,url,filename[,time]](#120)
 
 **[Measurement templates](#measurement-templates)**
-+ [200,fragment,series,value,unit[,time]](#200)
++ [200,fragment,series,value[,unit,time]](#200)
 + [210,rssi,ber[,time]](#210)
 + [211,temperature[,time]](#211)
 + [212,battery[,time]](#212)

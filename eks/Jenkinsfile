@@ -1,0 +1,41 @@
+properties([
+  buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')),
+  disableConcurrentBuilds()
+])
+
+podTemplate(workspaceVolume: dynamicPVC(requestsSize: "10Gi"),
+  containers: [
+    containerTemplate(name:'hugo', image:'registry.stage.c8y.io/ci/c8y-ubuntu-hugo-deploy:latest', ttyEnabled:true,command: 'cat',
+      imagePullSecrets: ['registry_stage'],
+      envVars:[
+        containerEnvVar(key:'YUM_SRV', value: 'yum.cumulocity.com'),
+        containerEnvVar(key:'YUM_USR', value: 'hudson'),
+        containerEnvVar(key:'YUM_DEST_DIR', value: '/var/www/staticpage-guides/guides/'),
+      ]
+    )
+  ]
+)
+{
+node(POD_LABEL) {
+  def HUGO_PARAMS = ""
+    stage('Build') {
+      container('hugo') {
+        sh "hugo ${HUGO_PARAMS}"
+      }
+    }
+    stage('Deploy') {
+      container('hugo') {
+        sshagent(['hudson-ssh-resources']) {
+          sh '''bash --login
+          python /docsRepoScanner.py ./
+          pwd
+          ls
+          cp output.json ./public/releases.json
+          echo "Disabled 'rsync -avh ./public/* ${YUM_USR}@${YUM_SRV}:${YUM_DEST_DIR} --delete'"
+          '''
+          // sh "rsync -avh ./public/* ${env.YUM_USR}@${env.YUM_SRV}:${YUM_DEST_DIR} --delete"
+        }
+      }
+    }
+ }
+}

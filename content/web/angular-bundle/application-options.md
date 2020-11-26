@@ -122,8 +122,9 @@ export class ApplicationOptions {
 }
 ```
 
-> **Tip:** `contentSecurityPolicy` for the current application can be checked in the following places
+> **Tip:** `contentSecurityPolicy` for the current application can be checked in the following places:
 > 
-> - when you do `c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0` you can find the value of `contentSecurityPolicy` in package.json under the path: `c8y.application.contentSecurityPolicy` if it has been defined.
-> - when you inspect the page, you can look for `<meta http-equiv="Content-Security-Policy" content="...">` in the `<head>` tag. The active value is enclosed in the `content` attribute. 
-> - if you build custom application based on the standard application, make sure you append your CSP value to the default one.
+> - When you do `c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0` you can find the value of `contentSecurityPolicy` in package.json under the path: `c8y.application.contentSecurityPolicy` if it has been defined.
+> - When you inspect the page, you can look for `<meta http-equiv="Content-Security-Policy" content="...">` in the `<head>` tag. The active value is enclosed in the `content` attribute. 
+
+> **Tip:** If you build a custom application based on the standard application, make sure you append your CSP value to the default one;

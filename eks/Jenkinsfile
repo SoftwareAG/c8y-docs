@@ -4,9 +4,9 @@ properties([
 ])
 
 podTemplate(workspaceVolume: dynamicPVC(requestsSize: "10Gi"),
+  imagePullSecrets: ['ci-registry-pull'],
   containers: [
     containerTemplate(name:'hugo', image:'registry.stage.c8y.io/ci/c8y-ubuntu-hugo-deploy:latest', ttyEnabled:true,command: 'cat',
-      imagePullSecrets: ['registry_stage'],
       envVars:[
         containerEnvVar(key:'YUM_SRV', value: 'yum.cumulocity.com'),
         containerEnvVar(key:'YUM_USR', value: 'hudson'),

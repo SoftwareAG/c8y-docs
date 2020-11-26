@@ -818,13 +818,55 @@ Full payload data structure explained:
 
 **Data structure for *UAMapping***
 
-| Field         | Type              | Mandatory | Description                  |
-| ------------- | ----------------- | --------- | ---------------------------- |
-| browsePath    | array<string>     | yes       | The browse path.             |
-| eventTypeId   | string            | yes       | The event type ID.           |
-| attributes    | array<string>     | yes       | Selectable event attributes. |
-| eventCreation | *UAEventCreation* | no        | Mappings for event.          |
-| alarmCreation | *UAAlarmCreation* | no        | Mappings for alarm.          |
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</thead>
+<tbody>
+<tr>
+<td>browsePath</td>
+<td>array<string></string></td>
+<td>yes</td>
+<td>The browse path.</td>
+</tr>
+<tr>
+<td>eventTypeId</td>
+<td>string</td>
+<td>yes</td>
+<td>The event type ID.</td>
+</tr>
+<tr>
+<td>attributes</td>
+<td>array</td>
+<td>yes</td>
+<td>Selectable event attributes. The nodeId of the event source
+is added by default as the last selected attribute by
+the OPC UA device gateway.</td>
+</tr>
+<tr>
+<td>eventCreation</td>
+<td><em>UAEventCreation</em></td>
+<td>no</td>
+<td>Mappings for event.</td>
+</tr>
+<tr>
+<td>alarmCreation</td>
+<td><em>AlarmCreation</em></td>
+<td>no</td>
+<td>Mappings for alarm.</td>
+</tr>
+</tbody>
+</table>
 
 **Data structure for *SubscriptionType***
 

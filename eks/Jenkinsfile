@@ -3,7 +3,7 @@ properties([
   disableConcurrentBuilds()
 ])
 
-podTemplate(workspaceVolume: dynamicPVC(requestsSize: "10Gi"),
+podTemplate(
   imagePullSecrets: ['ci-registry-pull'],
   containers: [
     containerTemplate(name:'hugo', image:'registry.stage.c8y.io/ci/c8y-ubuntu-hugo-deploy:latest', ttyEnabled:true,command: 'cat',
@@ -20,7 +20,8 @@ node(POD_LABEL) {
   def HUGO_PARAMS = ""
     stage('Build') {
       container('hugo') {
-        sh "hugo ${HUGO_PARAMS}"
+
+        sh "echo "Starting hugo with params ${HUGO_PARAMS}hugo ${HUGO_PARAMS}"
       }
     }
     stage('Deploy') {

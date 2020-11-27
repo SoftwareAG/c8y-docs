@@ -26,6 +26,7 @@ node(POD_LABEL) {
       container('hugo') {
 
         sh '''echo \"Starting hugo with params ${HUGO_PARAMS}\"
+         ls
          hugo ${HUGO_PARAMS}'''
       }
     }

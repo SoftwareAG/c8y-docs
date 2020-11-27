@@ -25,7 +25,8 @@ node(POD_LABEL) {
     stage('Build') {
       container('hugo') {
 
-        sh "echo "Starting hugo with params ${HUGO_PARAMS}hugo ${HUGO_PARAMS}"
+        sh '''echo \"Starting hugo with params ${HUGO_PARAMS}\"
+         hugo ${HUGO_PARAMS}'''
       }
     }
     stage('Deploy') {

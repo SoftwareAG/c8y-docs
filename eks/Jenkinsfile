@@ -22,27 +22,35 @@ podTemplate(
 {
 node(POD_LABEL) {
   def HUGO_PARAMS = ""
-    stage('Build') {
-      container('hugo') {
+  stage('Checkout') {
+    container('docker') {
+    checkout([
+      $class: 'GitSCM', branches: [[name: 'carbon-eks']],
+      extensions: [[$class: 'CleanCheckout']],
+      userRemoteConfigs: [[url: 'git@bitbucket.org:m2m/c8y-docs.git',credentialsId:'jenkins-master']] ])
+    }
+  }
+  stage('Build') {
+    container('hugo') {
 
-        sh '''echo \"Starting hugo with params ${HUGO_PARAMS}\"
-         ls
-         hugo ${HUGO_PARAMS}'''
+      sh '''echo \"Starting hugo with params ${HUGO_PARAMS}\"
+        ls
+        hugo ${HUGO_PARAMS}'''
+    }
+  }
+  stage('Deploy') {
+    container('hugo') {
+      sshagent(['hudson-ssh-resources']) {
+        sh '''bash --login
+        python /docsRepoScanner.py ./
+        pwd
+        ls
+        cp output.json ./public/releases.json
+        echo "Disabled 'rsync -avh ./public/* ${YUM_USR}@${YUM_SRV}:${YUM_DEST_DIR} --delete'"
+        '''
+        // sh "rsync -avh ./public/* ${env.YUM_USR}@${env.YUM_SRV}:${YUM_DEST_DIR} --delete"
       }
     }
-    stage('Deploy') {
-      container('hugo') {
-        sshagent(['hudson-ssh-resources']) {
-          sh '''bash --login
-          python /docsRepoScanner.py ./
-          pwd
-          ls
-          cp output.json ./public/releases.json
-          echo "Disabled 'rsync -avh ./public/* ${YUM_USR}@${YUM_SRV}:${YUM_DEST_DIR} --delete'"
-          '''
-          // sh "rsync -avh ./public/* ${env.YUM_USR}@${env.YUM_SRV}:${YUM_DEST_DIR} --delete"
-        }
-      }
-    }
+  }
  }
 }

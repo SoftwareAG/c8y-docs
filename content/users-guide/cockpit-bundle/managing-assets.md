@@ -76,7 +76,7 @@ When selecting an object in the asset hierarchy, details on the selected object 
 
 If you add a gateway device, the child devices are not shown. To show child devices, you must add them to the related asset. Details related to the child hierarchy are visible and editable in the Device Management application.
 
-To navigate further in the asset hierarchy, use the navigator or select an object in the **SubAsset** tab. To navigate up in the asset hierarchy, use the breadcrumb entry below the name of the asset.
+To navigate further in the asset hierarchy, use the navigator or select an object in the **Subasset** tab. To navigate up in the asset hierarchy, use the breadcrumb entry below the name of the asset.
 
 ### Asset details
 

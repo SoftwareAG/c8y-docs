@@ -25,7 +25,7 @@ node(POD_LABEL) {
   stage('Checkout') {
     container('docker') {
     checkout([
-      $class: 'GitSCM', branches: [[name: 'carbon-eks']],
+      $class: 'GitSCM', branches: [[name: 'carbon_migration']],
       extensions: [[$class: 'CleanCheckout']],
       userRemoteConfigs: [[url: 'git@bitbucket.org:m2m/c8y-docs.git',credentialsId:'jenkins-master']] ])
     }

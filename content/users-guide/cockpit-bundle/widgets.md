@@ -126,6 +126,11 @@ The easiest way to create a "Data point graph" widget is to navigate to the data
 
 Refer to [Visualizing data using the data explorer](/users-guide/cockpit/#data-explorer) for further details on the parameters to be configured.
 
+At the top right of the data point graph, an **Auto scroll** slider determines the display behavior:
+
+* Auto-scroll on - When a new measurement arrives, the widget automatically scrolls to the top so that you can see the latest value.
+* Auto-scroll off - When a new measurement arrives, the display does not change and the table still shows the same snippet of data.
+ 
 ### Data point list
 
 The "Data point list" widget shows data points (measurements), one in each row, with current values and data point properties.

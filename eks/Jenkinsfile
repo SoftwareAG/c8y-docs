@@ -13,7 +13,11 @@ podTemplate(
         containerEnvVar(key:'YUM_DEST_DIR', value: '/var/www/staticpage-guides/guides/'),
       ]
     )
-  ]
+  ],yaml: """
+          spec:
+            securityContext:
+              fsGroup: 1000
+        """
 )
 {
 node(POD_LABEL) {

@@ -239,6 +239,10 @@ The following information is provided for each subtenant (not completely visible
 <td align="left">ID</td>
 <td align="left">ID of the subtenant</td>
 </tr>
+<td align="left">Name</td>
+<td align="left">Name of the subtenant</td>
+</tr>
+<tr>
 <tr>
 <td align="left">API requests</td>
 <td align="left">Total number of API requests, including requests from  devices and applications</td>

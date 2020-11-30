@@ -48,7 +48,7 @@ To view the history of all operations, simply click **View history**. Note, that
 
 If enabled, the agent will periodically look for starved operations of a tenant and fail them automatically.
 Starved operations are device operations which have been in EXECUTING state and have not been updated for a long time.
-Platform administrators can configure how long such operations stay alive (as described in the *LWM2M agent installation & operations guide*).
+Platform administrators can configure how long such operations stay alive (described in the *LWM2M agent installation & operations guide*).
 
 #### Audit Configuration
 

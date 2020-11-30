@@ -18,7 +18,7 @@ Devices that do not contain "c8y\_RequiredAvailability" are not monitored.
 
 #### c8y\_Availability
 
-The availability information computed by Cumulocity IoT is stored in fragments: "c8y\_Availability" and "c8y\_Connection" of the device.
+The availability information computed by Cumulocity IoT is stored in the fragments "c8y\_Availability" and "c8y\_Connection" of the device.
 
     "c8y_Availability": { "lastMessage": "2013-05-21...", "status": "AVAILABLE" },
     "c8y_Connection": {"status":"CONNECTED"}
@@ -26,7 +26,7 @@ The availability information computed by Cumulocity IoT is stored in fragments: 
 |Name|Type|Description|
 |:---|:---|:----------|
 |lastMessage|Date|The time when the device sent the last message to Cumulocity IoT.|
-|status|String|The current status, one of AVAILABLE, MAINTENANCE, DISCONNECTED.|
+|status|String|The current status, one of AVAILABLE, UNAVAILABLE, MAINTENANCE.|
 
 The following messages update the last message timestamp of a device:
 

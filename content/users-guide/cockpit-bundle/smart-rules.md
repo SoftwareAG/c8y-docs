@@ -45,7 +45,7 @@ Smart rules can both be created in the **Global smart rules** page, accessible f
 
 1. Click **Add smart rule** in the top menu bar. <br>
 2. Select a smart rule template from the list. Note that this list might differ based on your installation.
-3. In the resulting dialog box, use the toggle to select if the rule will be enabled or disabled, see [To enable/disable a smart rule](#toggle-rules).
+3. In the resulting dialog box, use the toggle to select if the rule will be enabled or disabled, see [To enable/disable a smart rule](#toggle-rules) for details.
 4. Next, configure the rule parameters. The parameters differ from rule to rule, for details see individual rule descriptions in [Smart rules collection](#smart-rules-collection).
 6. Click **Create** to create the smart rule.
 
@@ -79,7 +79,7 @@ Click the menu icon at the right of an entry and then click **Inspect** to use t
 
 If a rule is set to **Enabled** in the **Global smart rules** page, it is "turned on" (i.e. its underlying module gets deployed) globally so that the rule is available for devices and groups. If it is set to **Disabled** in the **Global smart rules** page it is "turned off" (module not deployed).
 
-In addition to globally enabling/disabling a smart rule in the **Global smart rules** page, a smart rule can be activated (switched on) or deactivated (switched off) for a single object (group or device) in the **Info** tab of the particular object. 
+In addition to globally enabling/disabling a smart rule in the **Global smart rules** page, a smart rule can be activated or deactivated for a single object (group or device) in the **Info** tab of the particular object. 
 
 Navigate to the **Info** tab of the group or device and deactivate/activate the respective rule for a specific device using the **Enable/Disable** toggle.
 
@@ -87,7 +87,7 @@ Navigate to the **Info** tab of the group or device and deactivate/activate the 
 
 If activated the rule will process events for these groups and devices. 
 
->**Info:** An rule which is activated for a particular object only works if the rule is also globally enabled, which is configured in the **Global smart rules** page, see [To create a smart rule](#create-rules).  
+>**Info:** A rule which is activated for a particular object only works if the rule is also globally enabled in the **Global smart rules** page, see [To create a smart rule](#create-rules).  
 
 An example use case for deactivating a smart rule for a single device could be that a particular device is generating too many threshold alarms. The rule can be deactivated for this device only, but still be active for all other objects.
 

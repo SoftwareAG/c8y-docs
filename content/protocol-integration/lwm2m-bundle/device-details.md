@@ -50,16 +50,6 @@ If enabled, the agent will periodically look for starved operations of a tenant 
 Starved operations are device operations which have been in EXECUTING state and have not been updated for long time.
 Users can configure the time period such operations can stay alive.
 
-```properties
-# Interval in milliseconds describing how often starved operations are failed.
-# Default value 86400000 ms (1 day)
-C8Y.lwm2m.failStarvedOperation.fixedDelay=86400000
-# Enable/Disable automatic failing of lwm2m starved operations.
-C8Y.lwm2m.failStarvedOperation.enable=true
-# EXECUTING operations older than this maximum time period will be automatically failed.
-C8Y.lwm2m.operationMaxAgeHours=48
-```
-
 #### Audit Configuration
 
 In the **Audit configuration** page you can audit the current device by comparing it to a selected reference device. It is also possible to sync properties to the values of the referenced device.

@@ -44,11 +44,21 @@ Additional information on recent operations can be viewed by clicking the operat
 
 To view the history of all operations, simply click **View history**. Note, that you will be redirected to the **Control** tab.
 
-The agent will if enabled, periodically look for starved operations of a tenant and fail them automatically.
-Starved operations are operations which have been in EXECUTING state for a long amount of time and long not been updated.
-There are configurations which allow users to define the amount of time such operations are allowed to stay alive. 
-
 ![View History control tab](/images/device-protocols/lwm2m/lwm2m-devices-control.png)
+
+If enabled, the agent will periodically look for starved operations of a tenant and fail them automatically.
+Starved operations are device operations which have been in EXECUTING state and have not been updated for long time.
+Users can configure the time period such operations can stay alive.
+
+```properties
+# Interval in milliseconds describing how often starved operations are failed.
+# Default value 86400000 ms (1 day)
+C8Y.lwm2m.failStarvedOperation.fixedDelay=86400000
+# Enable/Disable automatic failing of lwm2m starved operations.
+C8Y.lwm2m.failStarvedOperation.enable=true
+# EXECUTING operations older than this maximum time period will be automatically failed.
+C8Y.lwm2m.operationMaxAgeHours=48
+```
 
 #### Audit Configuration
 

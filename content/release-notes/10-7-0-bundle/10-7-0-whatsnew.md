@@ -88,7 +88,7 @@ For details, see [Cumulocity IoT Sensor App](/users-guide/cumulocity-sensor-app/
 
 Various changes have been implemented to improve the UI performance significantly. These include:
 
-* [MTM-32456] Administration: On the <b>Inventory roles</b> tab in the user details, the groups tree is now loaded progressively. Only the root groups are loaded. The user can click each group to expand the sub groups, or click <b>Expand all groups</b> to expand every sub group in sequence.
+* [MTM-32456] Administration: On the <b>Inventory roles</b> tab in the user details, the groups tree is now loaded progressively. Only the root groups are loaded. The user can click each group to expand the subgroups, or click <b>Expand all groups</b> to expand every subgroup in sequence.
 * [MTM-32437] Cockpit & Device Management: The "withChildren:false" parameter has been added to several calls to inventory.
 * [MTM-32441] Cockpit & Device Management: In the subassets view of group details, the objects are now fetched from inventory using the childAssets endpoint instead of advanced querying (in-group).
 * [MTM-32870] Cockpit & Device Management: Improved the performance of the navigator groups items by changing how the inventory API is called to fetch managed objects.

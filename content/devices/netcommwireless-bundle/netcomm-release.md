@@ -53,9 +53,9 @@ The agent was tested on an NTC-6200 device with firmware version 2.0.36.10. For 
 
 ## Installing the agent
 
-* Download the agent software: http://resources.cumulocity.com/ntc/smartrest-agent_4.2.3_arm.ipk.
-* Download the CA certificate bundle: http://resources.cumulocity.com/ntc/ca-cumulocity_20190515.0_arm.ipk.
-* Download the VNC proxy if you want to use VNC remote access: http://resources.cumulocity.com/ntc/vncproxy_2.0_arm.ipk.
+* Download the agent software: http://resources.cumulocity.com/ntc/smartrest-agent_4.2.6_arm.ipk.
+* Download the CA certificate bundle: http://resources.cumulocity.com/ntc/ca-cumulocity_20200722.0_arm.ipk.
+* Download the VNC proxy if you want to use VNC remote access: http://resources.cumulocity.com/ntc/vncproxy_2.2_arm.ipk.
 * Log in to the web user interface of the NTC-6200.
 * Navigate to the "System" menu. Click on "System configuration", "Choose a file" and select the downloaded software. Click "Upload" to upload the software to the router.
 * Click the "Install" button for the uploaded software which you want to install.
@@ -70,6 +70,27 @@ The agent will automatically start after installation and the router can then be
 For information on using the agent, please visit the [NetComm Agent User's Guide](/images/devices/netcommwireless).
 
 ## History
+
+### 4.2.6
+[Agent Software](http://resources.cumulocity.com/ntc/smartrest-agent_4.2.6_arm.ipk),
+[CA certificate bundle](http://resources.cumulocity.com/ntc/ca-cumulocity_20200722.0_arm.ipk),
+[VNC Proxy](http://resources.cumulocity.com/ntc/vncproxy_2.2_arm.ipk). Changes:
+
+* Improved the connection stability when the size of message queue is over MQTT maximum payload size (<16KB).
+* Fixed to load the reporter buffer capacity always from RDB.
+* Changed that configuration is always sent via HTTP to avoid the violation of MQTT maximum payload size.
+* Fixed the issue the agent updates its position with different intervals from the configured ones.
+* Fixed the Modbus plugin issue in which the agent continues to send measurements after slaves get unavailable.
+* Added a new validation for LAN IP, subnet mask, DHCP range. In addition, DHCP range can change automatically accordingly to IP address.
+* Added a monitor timer on network changes made by router UI.
+* Added "NTP synchronisation failed" mode.
+  * If a user configured a non-existing NTP server, the agent used to be stuck in a loop and never connected to c8y.
+  * With this fix, the agent has a 5 minutes timeout to check the NTP server. If timeout happens, the agent creates a CRITICAL alarm "NTP synchronisation failed. Update your NTP server configuration and restart the agent". In this case, the agent provides very limited device management functionalities from c8y: only restart operations and change configurations by either text-based configuration or snapshot.
+  * Once NTP server is configured correctly, the agent will clear the alarm and give users full-functionalities of device management.
+* Fixed websocket frame initialization issue and improved the stability of Cloud Remote Access via SSH.
+* Fixed error handling for logging wrong error messages when the connection was closed in Cloud Remote Access.
+* Updated CA certificate bundle to 20200722 version.
+
 
 ### 4.2.3
 [Agent Software](http://resources.cumulocity.com/ntc/smartrest-agent_4.2.3_arm.ipk),
@@ -88,7 +109,7 @@ For information on using the agent, please visit the [NetComm Agent User's Guide
 [CA certificate bundle](http://resources.cumulocity.com/ntc/ca-cumulocity_20170118.0_arm.ipk),
 [VNC Proxy](http://resources.cumulocity.com/ntc/vncproxy_1.0_arm.ipk). Changes:
 
-* Agent is started/stopped directly after activating/deactivating it in Netcomm-WebUI 
+* Agent is started/stopped directly after activating/deactivating it in Netcomm-WebUI
 * Agent is not started after device boot, when it was deactivated in Netcomm-WebUI
 * Created ntcagent folder is removed, when the Agent is completly de-installed
 * Temporary created files are deleted after usage
@@ -98,7 +119,7 @@ For information on using the agent, please visit the [NetComm Agent User's Guide
 [CA certificate bundle](http://resources.cumulocity.com/ntc/ca-cumulocity_20170118.0_arm.ipk),
 [VNC Proxy](http://resources.cumulocity.com/ntc/vncproxy_1.0_arm.ipk). Changes:
 
-* Agent waits after device boot for NTP synchronization before proceeding. 
+* Agent waits after device boot for NTP synchronization before proceeding.
 * Supports now timer intervals smaller than 200 ms.
 
 ### 4.0.0

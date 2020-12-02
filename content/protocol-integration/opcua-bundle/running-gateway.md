@@ -43,3 +43,22 @@ You can adjust the memory settings of the gateway like with any other Java progr
   ```
 
 > **Important** Please adjust the memory settings according to the physical memory available on the gateway host. The maximum heap size must be set in a way that it doesn't consume more RAM than physically available to the gateway. Otherwise, the virtual memory management of the host operating system might start paging, resulting in reduced gateway performance.
+
+### Performance tuning for large setups
+
+If you're running your setup with a large number of connected device and gateways the scan of these nodes could take a long time and may be fail with the default settings.  
+It is recommended to improve the setting in the configuration YAML file like this:  
+
+in _gateway_ settings  
+
+_scheduler_-_threadpool_
+* size: set to 300  
+
+_executor_-_threadpool_  
+* coreSize: set to 600  
+* maxSize: set to 1200
+
+_cyclicRead_-_threadpool_
+*size: set to 3000
+
+In general, it is a good behaviour to increase the number of available threads. The number of threads is corresponding to your available memory, more memory means more threads. 

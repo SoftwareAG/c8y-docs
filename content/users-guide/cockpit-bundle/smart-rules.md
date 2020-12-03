@@ -79,7 +79,7 @@ Click the menu icon at the right of an entry and then click **Inspect** to use t
 
 If a rule is set to **Enabled** in the **Global smart rules** page, it is "turned on" (i.e. its underlying module gets deployed) globally so that the rule is available for devices and groups. If it is set to **Disabled** in the **Global smart rules** page it is "turned off" (module not deployed).
 
-In addition to globally enabling/disabling a smart rule in the **Global smart rules** page, a smart rule can be activated or deactivated for a single object (group or device) in the **Info** tab of the particular object. 
+In addition to globally enabling/disabling a smart rule in the **Global smart rules** page, a smart rule can be deactivated (or activated) for a single object (group or device) in the **Info** tab of the particular object. 
 
 Navigate to the **Info** tab of the group or device and deactivate/activate the respective rule for a specific device using the **Enable/Disable** toggle.
 

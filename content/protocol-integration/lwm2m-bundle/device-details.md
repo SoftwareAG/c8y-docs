@@ -46,6 +46,10 @@ To view the history of all operations, simply click **View history**. Note, that
 
 ![View History control tab](/images/device-protocols/lwm2m/lwm2m-devices-control.png)
 
+If enabled, the agent will periodically look for starved operations of a tenant and fail them automatically.
+Starved operations are device operations which have been in EXECUTING state and have not been updated for a long time.
+Platform administrators can configure how long such operations stay alive (described in the *LWM2M agent installation & operations guide*).
+
 #### Audit Configuration
 
 In the **Audit configuration** page you can audit the current device by comparing it to a selected reference device. It is also possible to sync properties to the values of the referenced device.

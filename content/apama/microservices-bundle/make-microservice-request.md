@@ -1,4 +1,4 @@
-﻿---
+---
 weight: 40
 title: Making microservice requests
 layout: redirect

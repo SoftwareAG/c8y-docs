@@ -1,4 +1,4 @@
-﻿---
+---
 weight: 20
 title: Creating an EPL application
 layout: redirect

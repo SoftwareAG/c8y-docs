@@ -1,4 +1,4 @@
-﻿---
+---
 weight: 50
 title: Combining streaming analytics with predictive analytics
 layout: redirect

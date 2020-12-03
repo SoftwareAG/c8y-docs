@@ -1,4 +1,4 @@
-﻿---
+---
 weight: 60
 title: Other microservices
 layout: redirect

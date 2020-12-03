@@ -63,7 +63,7 @@ Example:
 
 The "key" is an identifier of the public key, which will be referenced in the JWT token header, and the "value" is the public key in PEM format.
 
-Now you can generate the JWT token and sign it with th ematching private key. For example you can do it [here](https://jwt.io/#debugger-io).
+Now you can generate the JWT token and sign it with the matching private key. For example you can do it [here](https://jwt.io/#debugger-io).
 
 Token format:
 

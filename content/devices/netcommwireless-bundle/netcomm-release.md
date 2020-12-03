@@ -72,21 +72,21 @@ For information on using the agent, please visit the [NetComm Agent User's Guide
 ## History
 
 ### 4.2.6
-[Agent Software](http://resources.cumulocity.com/ntc/smartrest-agent_4.2.6_arm.ipk),
+[Agent software](http://resources.cumulocity.com/ntc/smartrest-agent_4.2.6_arm.ipk),
 [CA certificate bundle](http://resources.cumulocity.com/ntc/ca-cumulocity_20200722.0_arm.ipk),
 [VNC Proxy](http://resources.cumulocity.com/ntc/vncproxy_2.2_arm.ipk). Changes:
 
-* Improved the connection stability when the size of message queue is over MQTT maximum payload size (<16KB).
+* Improved the connection stability when the size of the message queue exceeds the MQTT maximum payload size (<16KB).
 * Fixed to load the reporter buffer capacity always from RDB.
 * Changed that configuration is always sent via HTTP to avoid the violation of MQTT maximum payload size.
-* Fixed the issue the agent updates its position with different intervals from the configured ones.
+* Fixed the issue that the agent updates its position with different intervals from the configured ones.
 * Fixed the Modbus plugin issue in which the agent continues to send measurements after slaves get unavailable.
-* Added a new validation for LAN IP, subnet mask, DHCP range. In addition, DHCP range can change automatically accordingly to IP address.
-* Added a monitor timer on network changes made by router UI.
+* Added a new validation for LAN IP, subnet mask, DHCP range. In addition, DHCP range can change automatically accordingly to the IP address.
+* Added a monitor timer on network changes made by the router UI.
 * Added "NTP synchronisation failed" mode.
   * If a user configured a non-existing NTP server, the agent used to be stuck in a loop and never connected to c8y.
-  * With this fix, the agent has a 5 minutes timeout to check the NTP server. If timeout happens, the agent creates a CRITICAL alarm "NTP synchronisation failed. Update your NTP server configuration and restart the agent". In this case, the agent provides very limited device management functionalities from c8y: only restart operations and change configurations by either text-based configuration or snapshot.
-  * Once NTP server is configured correctly, the agent will clear the alarm and give users full-functionalities of device management.
+  * With this fix, the agent has a 5 minutes timeout to check the NTP server. If a timeout happens, the agent creates a CRITICAL alarm "NTP synchronisation failed. Update your NTP server configuration and restart the agent". In this case, the agent provides very limited device management functionalities from c8y: only restart operations and change configurations by either text-based configuration or snapshot.
+  * Once the NTP server is configured correctly, the agent will clear the alarm and give users full functionalities of device management.
 * Fixed websocket frame initialization issue and improved the stability of Cloud Remote Access via SSH.
 * Fixed error handling for logging wrong error messages when the connection was closed in Cloud Remote Access.
 * Updated CA certificate bundle to 20200722 version.

@@ -16,7 +16,7 @@ Every measurement fragment which contains the "unit" property will be transforme
 |km (kilometer)|mi (mile)|
 |cm (centimeter)|in (inch)|
 |°C (degree Celsius)|°F (degree Fahrenheit)|
-|"K (Kelvin)|°R (degree Rankine)|
+|K (Kelvin)|°R (degree Rankine)|
 |g (gram)|oz (ounce)|
 |kg (kilogram)|lb (pound)|
 
@@ -54,7 +54,7 @@ GET <<url>>/measurement/measurements?valueFragmentType=c8y_Temperature&valueFrag
 |:---|:---|
 |Content-Type|application/vnd.com.nsn.cumulocity.measurementcollection+json;ver=...
 ```http
-HTTP/1.1 
+HTTP/1.1
 200 OK
 ...
 {

@@ -55,13 +55,13 @@ A device which is connected by certificates can receive a token which can later 
 X.509 is a standard defining public key certificates, which are commonly used in the SSL protocol to provide secure connection and data transfer. After the initial release of the X.509, it was modified two times which resulted in version 3 being up-to-date since 1995.
 
 The general purpose of the certificate is to bind an identity to the pair of keys, for which the public key is commonly known as a part of the certificate and the private key should be known only to the certificate owner. Such pair of keys should be created with asymmetric-key algorithm, which is considered safe nowdays. The example of such algorithm is RSA with at least 2048 bits key size, because the size of 1024 bits or lower is no longer considered safe. Then private key can be used in the two ways:
-* To prove that the message was sent by the certificate owner - The owner encrypts some message and send it. Then the receiver can decrypt it with the sender public key which is commonly known. If the decrypted message is the one he was awaiting, then he can be sure that it was sent by the certificate owner.
-* To read a message intended only for the certificate owner - If someone encrypts the message with receiver public key, then only the owner of the private key would be able to decrypt it. No third party who somehow intercepted the message will be able to read it.
+* To prove that the message was sent by the certificate owner - The owner encrypts some message with his private key and sends it. Then the receiver can decrypt it with the sender's public key which is commonly known. If the decrypted message matches his expectation, then he can be sure that it was sent by the certificate owner.
+* To read a message intended only for the certificate owner - If someone encrypts the message with receiver public key, then only the owner of the private key would be able to decrypt it. No third party, which somehow intercepted the message, will be able to read it.
 
-Every certificate can be self-signed or can be signed by another certificate. To tell if the certificate is self-signed you can look at the "Issuer Name" and "Subject Name" fields of the certificate. If they are the same then it means that it is self-signed certificate, otherwise the certificate claims to be signed by the issuer. To verify if the issuer really signed the certificate, you have to check the "Signature" field of the certificate. That signature after decryption with issuer public key, should match the data of the signed certificate. Signing one certificate by another provides the information, that if the issuer's certificate is trusted then the signed certificate also should be. For example if the platform trusts the customer certificate and that customer has 20 devices with individual certificates, then he does not have to upload each one of them. If these devices certificates are signed by the customer certificate, then the platform should trust them too. The chain of the certificates can differ in length, so if the platform trusts certificate A and certificate B is signed by A, and certificate C is signed by B, then certificate C will also be trusted. However, there are a few things to keep in mind:
-* The device always has to send the whole chain of the certificates, starting with the one belonging to the device, until it reaches the CA certificate directly trusted by the platform. Without it the platform would not be able to verify signatures of every certificate.
+Every certificate can be self-signed or can be signed by another certificate. To tell if the certificate is self-signed you can look at the "Issuer Name" and "Subject Name" fields of the certificate. If they are the same then it means that it is self-signed certificate, otherwise the certificate claims to be signed by the issuer. To verify if the issuer really signed the certificate, you have to check the "Signature" field of the certificate. That signature after decryption with issuer's public key, should match the data of the signed certificate. Signing one certificate by another provides the information, that if the issuer's certificate is trusted then the signed certificate also should be. For example if the platform trusts the customer certificate and that customer has 20 devices with individual certificates, then he does not have to upload each one of them. If these devices certificates are signed by the customer certificate, then the platform should trust them too. In such situation every device should send during the connection not only his own certificate, but the whole chain of the certificates, which will reach the certificate that is trusted by the platform. Providing the chain of the certificates will let the platform verify the signatures of every certificate in the chain to make sure that the device certificate is signed directly or indirectly by the trusted certificate. The chain of the certificates can differ in length, so if the platform trusts certificate A and certificate B is signed by A, and certificate C is signed by B, then certificate C will also be trusted. However, there are a few things to keep in mind:
+* The device always has to send the whole chain of the certificates, starting with the one belonging to the device, until it reaches the CA certificate trusted by the platform. Without it the platform would not be able to verify signatures of every certificate.
 * Every certificate which is used to sign another certificate has to contain the extension "CA:TRUE".
-* Chain of the certificates length can be restricted by the certificate extension "Path Length". That extension says how many other CA certificates can be maximally placed in the chain, between the device certificate and the one with that extension. For example the valid chain of the certificates with minimal values of path length would look like: A (CA:TRUE, Path Length: 2) -> B (CA:TRUE, Path Length: 1) -> C (CA:TRUE, Path Length: 0) -> D (device with CA:FALSE).
+* Chain of the certificates length can be restricted by the certificate extension "pathlen". That extension says how many other CA certificates can be maximally placed in the chain, between the device certificate and the one with that extension. For example the valid chain of the certificates with minimal values of path length would look like: A (CA:TRUE, pathlen: 2) -> B (CA:TRUE, pathlen: 1) -> C (CA:TRUE, pathlen: 0) -> D (device with CA:FALSE).
 
 The structure of the X.509 Certificate in version 3 looks like:
 * Version (The version number of the x.509 certificate),
@@ -69,121 +69,124 @@ The structure of the X.509 Certificate in version 3 looks like:
 * Issuer (The distinguished name of the issuer),
 * Not Before (Date since the certificate is valid),
 * Not After (Date since the certificate is expired),
-* Subject (Distinguished name of the validated entity to which the certificate is issued),
+* Subject (Distinguished name of the certificate's owner),
 * Public Key Algorithm (Algorithm used to generate the public key),
 * Subject Public Key (Public key value),
 * Certificate Signature Algorithm (Algorithm used to generate the certificate signature),
-* Certificate Signature (Certificate signature generated by encrypting certificate data with the issuer private key),
+* Certificate Signature (Certificate signature generated by encrypting certificate data with the issuer's private key),
 * Extensions (optional - are responsible for providing many different information, for example if the certificate is CA, what means that it can be used to sign another certificate. Added in version 3 of the X.509),
 * Issuer Unique Identifier (optional - can be present in the certificate to handle the possibility of reuse of issuer names),
 * Subject Unique Identifier (optional - can be present in the certificate to handle the possibility of reuse of subject names).
 
-To show how the authentication with X.509 certificates work, there is an example of the simplified mutual SSL handshake: 
+To show how the authentication with X.509 certificates works, there is an example of the simplified mutual SSL handshake: 
 
 ![Simplified mutual SSL handshake](/images/mqtt/sslMutualSimplified.png)
 
-Server knows that the client is the owner of the certificate it sent, after server decrypts the encrypted copy of the message with the client's public key. Client knows that the server is the owner of the certificate it sent, if server uses correct session key, because that means that server decrypted it with its private key. In basic authentication with username and password, the password has to be sent to authenticate the user. When certificates are used, the private key is never sent, what makes the use of the certificates much more secure than the basic authentication with username and password.
+Server knows that the client is the owner of the certificate it sent, after server decrypts the encrypted copy of the message using the client's public key. Client knows that the server is the owner of the certificate it sent, if server uses correct session key, because that means that server decrypted it with its private key. In basic authentication with username and password, the password has to be sent to authenticate the user. When certificates are used, the private key is never sent, what makes the use of the certificates much more secure than the basic authentication with username and password.
 
-There are 2 important terms connected to x.509 certificates, which should be known to everyone who wants to start working with them: keystore and truststore. 
-* Keystore is a file, which devices uses to authenticate himself in mutual ssl. That means that keystore contains chain of the certificates used by the device and the private key of the device. 
+There are 3 important terms connected to x.509 certificates, which should be known to everyone who wants to start working with them: 
+* Keystore is a file, which device uses to authenticate itself in the mutual SSL handshake. That means that keystore contains chain of the certificates used by the device and the private key of the device. 
 * Truststore is also a file, but it contains all trusted certificates. That means that the server or the device would only establish the connection with something, what is using the certificate from their truststore. When the chain of the certificates is used, then it is enough if one of the certificates from the chain is trusted to establish the connection. 
+* Certificate Authority (CA) in the simplest sense, a CA is an entity that signs certificates.
 
-Both, keystore and truststore can be stored in the same file, but for security reason it is recommended to keep them separately since truststore contains public data and keystore contains the private key, which should not be known by anyone else. The most popular format for these files is PKCS12, which is the universal format for every programming language. However, for the platforms or devices which are using Java, it is common to use JKS format, which is the Java-specific one.
+Both, keystore and truststore can be stored in the same file, but for security reason it is recommended to keep them separately, since truststore contains public data and keystore contains the private key, which should be known only to the owner. The most popular formats for these files are: 
+* PKCS12 (Public Key Cryptography Standards, version 12), which can be generated using OpenSSL toolkit.
+* JKS (Java KeyStore), which can be generated with the Java Keytool.
 
 ### Generating and signing certificates
 
-To generate we will use OpenSSL toolkit. If you do not have it already installed, then you can download if from the website: https://www.openssl.org/source/
+To generate certificates we will use the OpenSSL toolkit. If you do not have it already installed, then you can download if from the website: https://www.openssl.org/source/
 
 #### Create self-signed CA certificate:
-1. Create a directory for the root certificate and signing configuration, for example: `mkdir /home/kczu/Desktop/caCertificate`
+1. Create a directory for the root certificate and the signing configuration, for example: `mkdir /home/kczu/Desktop/caCertificate`
 2. Go into created directory and create configuration file for your CA certificate: `touch caConfig.cnf`
-3. Create in that directory database file for keeping history of certificates signed by CA: `touch database.txt`
+3. Create in that directory database file for keeping history of certificates signed by the CA: `touch database.txt`
 4. Create a serial file with initial serial number, which will be used to identify signed certificates. After assigning this serial to the signed certificate, the value in this file will be automatically incremented: `echo 1000 > serial`
 5. Create subdirectories for signed certificates and certificate revocation list: `mkdir deviceCertificates crl`
-6. Fulfill configuration file. This is the example configuration, which can be used after changing directories to these, used on your platform:
-    
-    
-    [ ca ]
-    default_ca = CA_default
+6. Fulfill configuration file. This is the example configuration, which can be used after changing the directory `dir` to your own:
 
-    [ CA_default ]
-    # Directory and file locations.
-    dir               = /home/kczu/Desktop/caCertificate
-    certs             = $dir # directory where ca certificate will be stored.
-    crl_dir           = $dir/crl # directory to certificate revocation list.
-    new_certs_dir     = $dir/deviceCertificates # directory where certificates signed by ca certificate will be stored.
-    database          = $dir/database.txt # database file, where certificates operation history will be stored.
-    serial            = $dir/serial # directory to the file, which stores next value that will be assigned to signed certificate.
+```text
+[ ca ]
+default_ca = CA_default
+[ CA_default ]
+# Directory and file locations.
+dir               = /home/kczu/Desktop/caCertificate
+certs             = $dir # directory where CA certificate will be stored.
+crl_dir           = $dir/crl # directory where certificate revocation list will be stored.
+new_certs_dir     = $dir/deviceCertificates # directory where certificates signed by CA certificate will be stored.
+database          = $dir/database.txt # database file, where the history of the certificates signing operations will be stored.
+serial            = $dir/serial # directory to the file, which stores next value that will be assigned to signed certificate.
 
-    # The root key and root certificate for signing other certificates.
-    private_key       = $dir/caKey.pem # ca private key which will be used for signing certificates.
-    certificate       = $dir/caCert.pem # ca certificate, which will be the issuer of signed certificate.
+# The CA key and CA certificate for signing other certificates.
+private_key       = $dir/caKey.pem # CA private key which will be used for signing certificates.
+certificate       = $dir/caCert.pem # CA certificate, which will be the issuer of signed certificate.
 
-    default_md        = sha256 # hash function
-    default_days      = 375 # default number of days since the date of generation, till the certiface is valid.
-    preserve          = no # if set to 'no' then it will determine the same order of the distinguished name in every signed certificate.
-    policy            = signing_policy # the name of the tag in this file, which specifies fields of the certificate, which has to be fulfilled or even match the CA certificate value to be signed.
-    
-    # For certificate revocation lists.
-    crl               = $crl_dir/caCrl.pem # ca certificate revocation list
-    crlnumber         = $crl_dir/crlnumber # serial, but for the certificate revocations
-    crl_extensions    = crl_ext # default extensions to crl, which can be stored under this specified tag in this config in the same way as x509_extensions.
-    default_crl_days  = 30 # default number of days since the date of generation, till the revocation list is up-to date. After that date it should be updated to see, if there are new entries on the list. 
-    
-    [ req ]
-    default_bits        = 4096 # default key size in bits.
-    distinguished_name  = req_distinguished_name # the name of the tag in this file, which specifies certificates fields description, during certificate creation and eventually set some default values.
-    string_mask         = utf8only # permitted string type mask.
-    default_md          = sha256 # hash function.
-    x509_extensions     = v3_ca # the name of the tag in this file, which specifies certificates extensions, which will be add to the created certificate by default.
-    
-    # descriptions and default values of the created certificate fields.
-    [ req_distinguished_name ]
-    countryName                     = Country Name (2 letter code)
-    stateOrProvinceName             = State or Province Name
-    localityName                    = Locality Name
-    organizationName                = Organization Name
-    organizationalUnitName          = Organizational Unit Name
-    commonName                      = Common Name
-    emailAddress                    = Email Address
-    
-    # default value for each field can be set by adding extra line with field name and postfix "_default". For example: countryName_default = PL. If you add this line here, then leaving country name empty during certificate creation will result in value 'PL' automatically fulfilled. If the default value was specified there, but during certificate creation you do not want to fulfill value of this field, even with default value then you should put "." as the value. It will leave the field value empty even with the specified default.
-    
-    # default extensions for ca certificate.
-    [ v3_ca ]
-    subjectKeyIdentifier = hash # subject key value will be calculated using hash funtion. It's the recommended setting by PKIX.
-    authorityKeyIdentifier = keyid:always,issuer # subject key identifier will be copied from parent certificate. It's the recommended setting by PKIX.
-    basicConstraints = critical, CA:true, pathlen:50 # says if it it the ca certificate so it can be used to sign different certificates. Also specified maximum path length between this certificate and the device certificate in the chain of certificates during authentication. Path length is set to just show how to do it. If you do not want to specify max path length, you can keep only the "basicConstraints = critical, CA:true" part.
-    keyUsage = digitalSignature, cRLSign, keyCertSign # specifies permitted key usages.
+default_md        = sha256 # hash function
+default_days      = 375 # default number of days, which the certificate will be valid since the date of generation.
+preserve          = no # if set to 'no' then it will determine the same order of the distinguished name in every signed certificate.
+policy            = signing_policy # the name of the tag in this file, which specifies fields of the certificate, which have to be fulfilled or even match the CA certificate values to be signed.
 
-    # default extensions for signed certificate. This tag is not used directly anywhere in this file, but will be used from the command line to create signed certificate with "-extensions v3_signed".
-    [ v3_signed ]
-    subjectKeyIdentifier = hash
-    authorityKeyIdentifier = keyid,issuer
-    basicConstraints = critical, CA:false
-    keyUsage = nonRepudiation, digitalSignature, keyEncipherment
-    
-    # default extensions for certificate revocation list
-    [ crl_ext ]
-    authorityKeyIdentifier=keyid:always
-    
-    # policy of certificates signing. It specifies, which certificate fields has to be fulfilled during certificate creation. There are three possible values here:
-    # "optional" - field value can be empty
-    # "supplied" - field value must be fulfilled
-    # "match" - signed certificate field value must match the ca certificate value to be created
-    [ signing_policy ]
-    countryName             = optional
-    stateOrProvinceName     = optional
-    organizationName        = optional
-    organizationalUnitName  = optional
-    commonName              = supplied # every certificate should have fulfilled, unique common name, so that value should not be changed.
-    emailAddress            = optional
+# For certificate revocation lists.
+crl               = $crl_dir/caCrl.pem # CA certificate revocation list
+crlnumber         = $crl_dir/crlnumber # serial, but for the certificate revocation list
+crl_extensions    = crl_ext # the name of the tag in this file, which specifies certificates revocation list extensions, which will be added to the certificate revocation by default.
+default_crl_days  = 30 # default number of days, which the certificate revocation list will be valid since the date of generation. After that date it should be updated to see, if there are new entries on the list. 
+
+[ req ]
+default_bits        = 4096 # default key size in bits.
+distinguished_name  = req_distinguished_name # the name of the tag in this file, which specifies certificates fields description during certificate creation and eventually set some default values.
+string_mask         = utf8only # permitted string type mask.
+default_md          = sha256 # hash function.
+x509_extensions     = v3_ca # the name of the tag in this file, which specifies certificates extensions, which will be added to the created certificate by default.
+
+# descriptions and default values of the created certificate fields.
+[ req_distinguished_name ]
+countryName                     = Country Name (2 letter code)
+stateOrProvinceName             = State or Province Name
+localityName                    = Locality Name
+organizationName                = Organization Name
+organizationalUnitName          = Organizational Unit Name
+commonName                      = Common Name
+emailAddress                    = Email Address
+
+# default value for each field can be set by adding extra line with field name and postfix "_default". For example: countryName_default = PL. If you add this line here, then leaving country name empty during certificate creation will result in value 'PL' automatically fulfilled. If the default value was specified there, but during certificate creation you do not want to fulfill the value of this field, even with the default value then you should put "." as the value. It will leave the value empty and will not fulfill it with the default.
+
+# default extensions for the CA certificate.
+[ v3_ca ]
+subjectKeyIdentifier = hash # subject key value will be calculated using hash funtion. It's the recommended setting by PKIX.
+authorityKeyIdentifier = keyid:always,issuer # subject key identifier will be copied from parent certificate. It's the recommended setting by PKIX.
+basicConstraints = critical, CA:true, pathlen:10 # critical specifies that the extension is important and has to be read by the platform. CA says if it is the CA certificate so it can be used to sign different certificates. Pathlen specifies maximum path length between this certificate and the device certificate in the chain of certificates during authentication. Path length is set to just show how to do it. If you do not want to specify max path length, you can keep only the "basicConstraints = critical, CA:true" part there.
+keyUsage = digitalSignature, cRLSign, keyCertSign # specifies permitted key usages.
+
+# default extensions for the device certificate. This tag is not used directly anywhere in this file, but will be used from the command line to create signed certificate with "-extensions v3_signed" parameter.
+[ v3_signed ]
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid,issuer
+basicConstraints = critical, CA:false
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+
+# default extensions for certificate revocation list
+[ crl_ext ]
+authorityKeyIdentifier=keyid:always
+
+# policy of certificates signing. It specifies, which certificate fields has to be fulfilled during certificate creation. There are three possible values here:
+# "optional" - field value can be empty
+# "supplied" - field value must be fulfilled
+# "match" - signed certificate field value must match the CA certificate value to be created
+[ signing_policy ]
+countryName             = optional
+stateOrProvinceName     = optional
+organizationName        = optional
+organizationalUnitName  = optional
+commonName              = supplied # every certificate should have unique common name, so that value should not be changed.
+emailAddress            = optional
+```
 7. Create private key with aes256 encryption and the length of at least 2048 bits. You will be also asked to set the password for the key during its creation: `openssl genrsa -aes256 -out caKey.pem 4096`
 8. Create self-signed certificate using specifications from configuration file. The days parameter says how long this certificate will be valid since the generation, so set it as you prefer: `openssl req -config caConfig.cnf -key caKey.pem -new -x509 -days 7300 -sha256 -extensions v3_ca -out caCert.pem`
 9. You can print created certificate with command: `openssl x509 -noout -text -in caCert.pem`
 
 #### Creating intermediate certificate
-The intermediate certenertificateificate is signed by the CA certificate, but will be also used to sign device certificates. This step is optional. If you are fine with signing all the devices certificates with one common ca certificate, then you can skip this step. However, if you need some certificates between CA certificate and the device certificate then it is the way to go:
+The intermediate certificate is signed by the CA certificate, but will be also used to sign device certificates. This step is optional. If you are fine with signing all the devices certificates with one common CA certificate, then you can skip this step. However, if you need some certificates between CA certificate and the device certificate then it is the way to go:
 1. Create new directory for intermediate certificate inside caCertificate path: `mkdir intermediateCertificate`
 2. Go into created directory and create configuration file for your intermediate certificate: `touch intermediateConfig.cnf`
 3. Create in that directory database file for keeping history of certificates signed by intermediate: `touch database.txt`
@@ -192,40 +195,39 @@ The intermediate certenertificateificate is signed by the CA certificate, but wi
 6. Fulfill configuration file as in the CA configuration, but remember to change the general directory ("dir") to your intermediateCertificate folder. Also don't forget to change private_key, certificate and crl names from current with "ca" prefix to "intermediate" prefix (for example: caKey.pem -> intermediateKey.pem), because files with this prefix will be generated in the next steps.
 7. Generate private key for intermediate certificate: `openssl genrsa -aes256 -out intermediateKey.pem 4096`
 8. Generate certificate signing request: `openssl req -config intermediateConfig.cnf -new -sha256 -key intermediateKey.pem -out intermediateCsr.pem`
-9. Go into caCertificate directory, which has to sign this intermediate and generate certificate: `openssl ca -config caConfig.cnf -extensions v3_ca -days 3650 -notext -md sha256 -in intermediateCertificate/intermediateCsr.pem -out intermediateCertificate/intermediateCert.pem`
+9. Go into caCertificate directory, which has to sign this intermediate and generate signed intermediate certificate. You have to use the CA configuration here, because private key specified in the configuration file, will be used to sign the certificate: `openssl ca -config caConfig.cnf -extensions v3_ca -days 3650 -notext -md sha256 -in intermediateCertificate/intermediateCsr.pem -out intermediateCertificate/intermediateCert.pem`
 10. Verify if generated certificate is correctly signed by ca: `openssl verify -CAfile caCert.pem intermediateCertificate/intermediateCert.pem`   
 
 #### Creating device certificate signed by CA or intermediate:
 1. Go into directory of your caCertificate or intermediateCertificate depending on which one is to sign the device certificate.
-2. Generate private key for new certificate: `openssl genrsa -aes256 -out deviceCertificates/deviceKey.pem 4096`
-3. Generate certificate signing request (change "caConfig.cnf" to "intermediateConfig.cnf" if you are in the intermediateCertificate directory): `openssl req -config caConfig.cnf -new -sha256 -key deviceCertificates/deviceKey.pem -out deviceCertificates/deviceCsr.pem`
-4. Generate certificate signed by the ca or intermediate (change "caConfig.cnf" to "intermediateConfig.cnf" if you are in the intermediateCertificate directory): `openssl ca -config caConfig.cnf -extensions v3_signed -days 365 -notext -md sha256 -in deviceCertificates/deviceCsr.pem -out deviceCertificates/deviceCert.pem`
-5. verify if generated certificate is correctly signed by CA or intermediate (change "caCert.pem" to "intermediateCert.pem" if you are in the intermediateCertificate directory): `openssl verify -partial_chain -CAfile caCert.pem deviceCertificates/deviceCert.pem`    
+2. Generate the private key for the new certificate: `openssl genrsa -aes256 -out deviceCertificates/deviceKey.pem 4096`
+3. Generate the certificate signing request (change "caConfig.cnf" to "intermediateConfig.cnf" if you are in the intermediateCertificate directory): `openssl req -config caConfig.cnf -new -sha256 -key deviceCertificates/deviceKey.pem -out deviceCertificates/deviceCsr.pem`
+4. Generate the certificate signed by the CA or intermediate (change "caConfig.cnf" to "intermediateConfig.cnf" if you are in the intermediateCertificate directory): `openssl ca -config caConfig.cnf -extensions v3_signed -days 365 -notext -md sha256 -in deviceCertificates/deviceCsr.pem -out deviceCertificates/deviceCert.pem`
+5. Verify if generated certificate is correctly signed by CA or intermediate (change "caCert.pem" to "intermediateCert.pem" if you are in the intermediateCertificate directory): `openssl verify -partial_chain -CAfile caCert.pem deviceCertificates/deviceCert.pem`    
       
 #### Creating chain of the certificates:
-Go into your caCertificate directory. If you created the CA certificate, which was used to sign the intermediate certificate and then the intermediate certificate was used to sign the device certificate, then you create your chain with command: `cat intermediateCertificate/deviceCertificates/deviceCert.pem intermediateCertificate/intermediateCert.pem caCert.pem > intermediateCertificate/deviceCertificates/deviceCertChain.pem`
-If you are not using the intermediate certificate then the command is: `cat deviceCertificates/deviceCert.pem caCert.pem > deviceCertificates/deviceCertChain.pem`
-If you are using multiple intermediate certificates between CA certificate and the device certificate, then remember that you have to keep the correct order during chain creation (Every certificate has to be followed by the certificate, which it is signed by).
+Go into your caCertificate directory. 
+* If you created the CA certificate, which was used to sign the intermediate certificate and then the intermediate certificate was used to sign the device certificate, then you create your chain with command: `cat intermediateCertificate/deviceCertificates/deviceCert.pem intermediateCertificate/intermediateCert.pem caCert.pem > intermediateCertificate/deviceCertificates/deviceCertChain.pem`
+* If you are not using the intermediate certificate then the command is: `cat deviceCertificates/deviceCert.pem caCert.pem > deviceCertificates/deviceCertChain.pem`
+* If you are using multiple intermediate certificates between CA certificate and the device certificate, then remember that you have to keep the correct order during the chain creation (Every certificate has to be followed by the certificate, which it is signed by).
 
 #### Creating keystore and truststore:
-1. Go into your deviceCertificates directory with the device private key and the generated chain of the certificates. If you are using intermediate certificate between CA certificate and the device certificate then it will be caCertificate/intermediateCertificate/deviceCertificates path, otherwise it will be caCertificate/deviceCertificates. Create keystore using generated chain of the certificates and the private key of the device: `openssl pkcs12 -export -name devicekeyentry -inkey deviceKey.pem -in deviceCertChain.pem -out deviceKeystore.pkcs12`
-2. If you want to convert your keystore to JKS format then you would need the Keytool which is downloaded together with every Java Development Kit: `keytool -importkeystore -srckeystore deviceKeystore.pkcs12 -srcstoretype PKCS12 -destkeystore deviceKeystore.jks -deststoretype JKS`
-
-3a. Now you can create a truststore, which will contain the server certificate. It has to be created with Java Keytool (openssl does not support creating truststore, so if you don't want to use Java keytool then you will have to keep every trusted certificate in separated pem file):
+1. Go into your deviceCertificates directory with the device's private key and the generated chain of the certificates. If you are using intermediate certificate between CA certificate and the device certificate then it will be `caCertificate/intermediateCertificate/deviceCertificates` path, otherwise it will be `caCertificate/deviceCertificates`. Create keystore using generated chain of the certificates and the private key of the device: `openssl pkcs12 -export -name devicekeyentry -inkey deviceKey.pem -in deviceCertChain.pem -out deviceKeystore.pkcs12`
+2. If you want to convert your keystore to JKS format then you would need the Java Keytool which is normally downloaded together with Java Development Kit: `keytool -importkeystore -srckeystore deviceKeystore.pkcs12 -srcstoretype PKCS12 -destkeystore deviceKeystore.jks -deststoretype JKS`
+3. Now you can create a truststore, which will contain the server certificate. It has to be created with Java Keytool (openssl does not support creating truststore, so if you don't want to use Java keytool then you will have to keep every trusted certificate in separated pem file):
 * In PKCS12 format: `keytool -importcert -noprompt -keystore deviceTruststore.pkcs12 -alias servercertificate -file serverCertificate.pem`
 * In JKS format: `keytool -import -file caCert.pem -alias servercertificate -keystore deviceTruststore.jks`
-
-3b. Or add trusted certificates to your created keystore and store everything in the one file, which is not the recommended solution:
+4. Optionally you can instead of creating a new file for the truststore, add trusted certificates to your created keystore and store everything in the one file, which is not the recommended solution:
 * If your keystore is in the PKCS12 format: `keytool -importcert -noprompt -keystore deviceKeystore.pkcs12 -alias servercertificate -file serverCertificate.pem`
 * If your keystore is in the JKS format: `keytool -import -file trustedCertificate.pem -alias servercertificate -keystore deviceKeystore.jks`
-4. You can check the content of your keystore (or truststore) with command: `keytool -list -v -keystore deviceKeystore.jks`
+5. You can check the content of your keystore (or truststore) with command: `keytool -list -v -keystore deviceKeystore.jks`
 
 ### How to test created certificates with MQTT.fx client
 1. Generate keystore as described in the "Generating and signing certificates" chapter if you didn't do it yet.
 2. Get server certificate in pem format: `openssl s_client -showcerts -connect <cumulocity url>:<mqtt mutual ssl port (currently 1884, but that can be changed in the future)> | openssl x509 -outform PEM > serverCertificate.pem`
 for example the full line to execute with filled url and port in my local environment looks like: `openssl s_client -showcerts -connect cumulocity.default.svc.cluster.local:1884 | openssl x509 -outform PEM > serverCertificate.pem`
 3. Create new truststore with the server certificate: `keytool -import -file serverCertificate.pem -alias servercertificate -keystore deviceTruststore.jks`
-4. Upload your CA (or intermediate) certificate to the platform, which can be done in two ways:
+4. Upload your CA (or intermediate) certificate to the platform. That operation will add your uploaded certificate to the server's truststore. It can be done in two ways:
 * Via UI:
 1) You have to open devicemanagement application, then navigate to management/trusted certificates tab.
 2) Drop your caCert.pem (or intermediateCert.pem).
@@ -240,8 +242,8 @@ After completing all the steps excluding adding the certificate, the form should
 * Via REST:
 1) Display your CA (or intermediate) certificate, which you want to upload into cumulocity platform and copy its PEM value, which starts with -----BEGIN CERTIFICATE----- and ends with -----END CERTIFICATE----- (including these lines). Remove new line symbols '\n' if they were added automatically at the end of each line: `openssl x509 -in caCert.pem -text`
 2) Send it in the POST request to the platform.
-    
-    
+
+```text    
     Required role: ROLE\_TENANT\_ADMIN
 
     POST /tenant/tenants/<<tenantId>>/trusted-certificates
@@ -254,7 +256,7 @@ After completing all the steps excluding adding the certificate, the form should
     	"autoRegistrationEnabled" : "true",
     	"certInPemFormat" : "<<your copied certificate PEM value>>"
     }
-
+```
 5. Download and install the newest MQTT.fx client from: http://www.jensd.de/apps/mqttfx/
 6. In MQTT.fx click one of the top buttons named "Extras" and then "Edit Connection Profiles"
 7. Insert cumulocity url in the "Broker address" line.
@@ -276,6 +278,7 @@ After completing all the steps excluding adding the certificate, the form should
 23. Choose the edited profile and click connect. 
 24. You should be succesfully connected and buttons "Disconnect", "Publish", "Subscribe" should be now active. That means that your connection with the certificates work correctly.
 
+The connection settings should look like:
 ![MQTT.fx configuration](/images/mqtt/mqttFxConfig.png)
 
 ### Cumulocity MQTT Example Client 
@@ -288,9 +291,9 @@ This example client uses the implementation of Eclipse Paho, which is described 
         <version>${paho.version}</version>
     </dependency>
 Then the instance of the MQTT client can be created with a single line:
-MqttClient mqttClient = new MqttClient(BROKER_URL, "d:" + CLIENT_ID, new MemoryPersistence());
+`MqttClient mqttClient = new MqttClient(BROKER_URL, "d:" + CLIENT_ID, new MemoryPersistence());`
 The BROKER_URL should contain protocol, url and port, which client will connect to. For example to connect the client to my local instance, I would fill it with the value: "ssl://cumulocity.default.svc.cluster.local:1884". The CLIENT_ID value has to match the value of the Common Name of the device certificate that will be used. The "d:" prefix is used in cumulocity for device connections and it should not be removed or changed.
-Now the only thing that needs to be configured to establish the SSL connection is to fill the paths in the code fragment:
+Now the only thing that needs to be configured to establish the SSL connection is to fill paths in the code fragment:
     
     sslProperties.put(SSLSocketFactoryFactory.KEYSTORE, getClass().getClassLoader().getResource(KEYSTORE_NAME).getPath());
     sslProperties.put(SSLSocketFactoryFactory.KEYSTOREPWD, KEYSTORE_PASSWORD);

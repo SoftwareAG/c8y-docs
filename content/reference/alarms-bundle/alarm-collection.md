@@ -149,9 +149,9 @@ Example response:
 <td align="left">When set to <code>true</code>, the returned result will contain the total number of pages in the statistics object. Default value is <code>false</code>.</td>
 </tr>
 <tr>
-<td align="left">sort</td>
+<td align="left">query</td>
 <td align="left">string</td>
-<td align="left">Allows to define the order of the returned alarms. Multiple parameters are allowed, for example sorting by <code>type</code> ascending and then by <code>time</code> descending: <code>sort=type,asc&sort=time,desc</code>.</td>
+<td align="left">Use query language to filter and/or sort the results. Properties and supported operations are the same as for <a href="/reference/inventory/#managed-object-collection">managed objects</a> with two exceptions: The functions <code>has</code> and <code>bygroupid</code> are not supported.</td>
 </tr>
 </tbody>
 </table>

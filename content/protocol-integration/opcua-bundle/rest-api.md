@@ -188,6 +188,12 @@ Data structure for *ServerConnectionConfig*
 <td>no</td>
 <td>For cyclic reads, this defines how many nodes can be read at once from the OPC UA server. This is applicable only for nodes resulting from the application with the same device type, matching root node and sharing the same reading parameters (rate and max age). Default is 1000 as defined in the application YAML file.</td>
 </tr>
+<tr>
+<td>alarmSeverityMappings</td>
+<td>map&lt;string, string&gt;</td>
+<td>no</td>
+<td>Alarm severity mappings from the OPC UA event severity to the Cumulocity IoT alarm severity. This is applicable only for UAAlarmCreation. The key of this map is the lower bound value of the OPC UA event severity in the range. The value of this map is the expected severity of the alarm being created. For example, to map the OPC UA severity of the range 200-400 to a <em>MINOR</em>&nbsp;Cumulocity IoT alarm, put this entry to the map: <code>"200": "MINOR"</code>.<br>If this is given, it will override the alarm severity mappings that are specified in the configuration YAML file.<br>Note that, if the&nbsp;<em>severity</em>&nbsp;field for alarm mapping is provided, this <em>alarmSeverityMappings</em>&nbsp;will have no effect.<br><em><strong>Example</strong></em>:&nbsp;<code>"201": "WARNING",</br>"401": "MINOR",</br>"601": "MAJOR",</br>"801": "CRITICAL"</br></code>.</td>
+</tr>
 </tbody>
 </table>                                                                                                                                         |
 
@@ -824,13 +830,55 @@ Full payload data structure explained:
 
 **Data structure for *UAMapping***
 
-| Field         | Type              | Mandatory | Description                  |
-| ------------- | ----------------- | --------- | ---------------------------- |
-| browsePath    | array<string>     | yes       | The browse path.             |
-| eventTypeId   | string            | yes       | The event type ID.           |
-| attributes    | array<string>     | yes       | Selectable event attributes. |
-| eventCreation | *UAEventCreation* | no        | Mappings for event.          |
-| alarmCreation | *UAAlarmCreation* | no        | Mappings for alarm.          |
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</thead>
+<tbody>
+<tr>
+<td>browsePath</td>
+<td>array<string></string></td>
+<td>yes</td>
+<td>The browse path.</td>
+</tr>
+<tr>
+<td>eventTypeId</td>
+<td>string</td>
+<td>yes</td>
+<td>The event type ID.</td>
+</tr>
+<tr>
+<td>attributes</td>
+<td>array</td>
+<td>yes</td>
+<td>Selectable event attributes. The nodeId of the event source
+is added by default as the last selected attribute by
+the OPC UA device gateway.</td>
+</tr>
+<tr>
+<td>eventCreation</td>
+<td><em>UAEventCreation</em></td>
+<td>no</td>
+<td>Mappings for event.</td>
+</tr>
+<tr>
+<td>alarmCreation</td>
+<td><em>AlarmCreation</em></td>
+<td>no</td>
+<td>Mappings for alarm.</td>
+</tr>
+</tbody>
+</table>
 
 **Data structure for *SubscriptionType***
 
@@ -1215,10 +1263,10 @@ This has all the fields as *AlarmCreation* does, however the *text* and *type* f
 <td>Alarm type. This alarm type can be parameterized by the data value of selected attributes. Put <code>${i}</code> to parameterize it by the data value of attribute at index <code>i</code>. The index starts from 0. For example, <code>${0}</code> to take the first attribute, <code>${1}</code> to select second attribute, etc.</td>
 </tr>
 <tr>
-<td>severityMappings</td>
-<td>map&lt;string, string&gt;</td>
+<td>severity</td>
+<td>string</td>
 <td>no</td>
-<td>Alarm severity mappings from the OPC UA event severity to the Cumulocity IoT alarm severity. The key of this map is the lower bound value of the OPC UA event severity in the range. The value of this map is the expected severity of the alarm being created. For example, to map the OPC UA severity of the range 200-400 to a <em>MINOR</em>&nbsp;Cumulocity IoT alarm, put this entry to the map: <code>"200": "MINOR"</code>.<br>If this is given, it will override the alarm severity mappings that are specified in the configuration YAML file for this particular alarm and the field <em>severity</em>&nbsp;of this alarm mapping becomes optional.<br>Note that, if the&nbsp;<em>severity</em>&nbsp;field for this alarm mapping is provided, this <em>severityMappings</em>&nbsp;will have no effect.<br><em><strong>Example</strong></em>:&nbsp;<code>"201": "WARNING",</br>"401": "MINOR",</br>"601": "MAJOR",</br>"801": "CRITICAL"</br></code>.</td>
+<td>For UAAlarmCreation, the severity is optional. If this is not provided, the severity of the alarm will be mapped using the severity mappings specified in the default gateway configuration YAML file or in the server configuration.</td>
 </tr>
 </tbody>
 </table>

@@ -72,6 +72,90 @@ Example response:
       }
     }
 
+#### Acceptable query parameters are:
+
+<table>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">status</td>
+<td align="left">string</td>
+<td align="left">Comma-separated alarm statuses, for example ACTIVE,CLEARED.</td>
+</tr>
+<tr>
+<td align="left">source</td>
+<td align="left">string</td>
+<td align="left">Source device ID.</td>
+</tr>
+<tr>
+<td align="left">withSourceAssets</td>
+<td align="left">boolean</td>
+<td align="left">When set to <code>true</code> the alarms for the related source assets will be returned. When this parameter is provided <code>source</code> must also be defined.</td>
+</tr>
+<tr>
+<td align="left">withSourceDevices</td>
+<td align="left">boolean</td>
+<td align="left">When set to <code>true</code> also alarms for related source devices will be returned. When this parameter is provided <code>source</code> must also be defined.</td>
+</tr>
+<tr>
+<td align="left">resolved</td>
+<td align="left">boolean</td>
+<td align="left">When set to <code>true</code> only resolved alarms will be returned (the one with status CLEARED), <code>false</code> means alarms with status ACTIVE or ACKNOWLEDGED.</td>
+</tr>
+<tr>
+<td align="left">severity</td>
+<td align="left">string</td>
+<td align="left">Comma-separated alarm severities, for example MINOR,MAJOR.</td>
+</tr>
+<tr>
+<td align="left">dateFrom</td>
+<td align="left">datetime</td>
+<td align="left">Start date or date and time of alarm occurrence.</td>
+</tr>
+<tr>
+<td align="left">dateTo</td>
+<td align="left">datetime</td>
+<td align="left">End date or date and time of alarm occurrence.</td>
+</tr>
+<tr>
+<td align="left">type</td>
+<td align="left">string</td>
+<td align="left">Comma-separated alarm types, for example <code>c8y_BatteryWarning,c8y_TemperatureWarning</code>.</td>
+</tr>
+<tr>
+<td align="left">pageSize</td>
+<td align="left">number</td>
+<td align="left">Indicates how many alarms shall be returned. Default value is 5.</td>
+</tr>
+<tr>
+<td align="left">currentPage</td>
+<td align="left">number</td>
+<td align="left">The current page of the paginated results. Default value is 1.</td>
+</tr>
+<tr>
+<td align="left">withTotalPages</td>
+<td align="left">boolean</td>
+<td align="left">When set to <code>true</code>, the returned result will contain the total number of pages in the statistics object. Default value is <code>false</code>.</td>
+</tr>
+<tr>
+<td align="left">query</td>
+<td align="left">string</td>
+<td align="left">Use query language to filter and/or sort the results. Properties and supported operations are the same as for <a href="/reference/inventory/#managed-object-collection">managed objects</a> with two exceptions: The functions <code>has</code> and <code>bygroupid</code> are not supported.</td>
+</tr>
+</tbody>
+</table>
+
 ### POST - Create a new Alarm
 
 Request body: Alarm

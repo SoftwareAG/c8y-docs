@@ -1,6 +1,6 @@
 ---
 weight: 60
-title: Multi-tenancy
+title: Tenant hierarchy
 layout: bundle
 ---
 

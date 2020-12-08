@@ -289,10 +289,10 @@ Go into your caCertificate directory.
         5. Insert some custom name.
         6. Click **Add certificate**.
 
-    <br/>
-    After completing all the steps excluding adding the certificate, the form should look like this:
+      <br/>
+      After completing all the steps excluding adding the certificate, the form should look like this:
 
-    ![MQTT.fx configuration](/images/mqtt/mqttTrustedCertificateAddition.png)
+      ![MQTT.fx configuration](/images/mqtt/mqttTrustedCertificateAddition.png)
 
     * Via REST:
 

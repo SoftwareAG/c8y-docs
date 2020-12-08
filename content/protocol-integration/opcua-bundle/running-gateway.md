@@ -46,7 +46,7 @@ You can adjust the memory settings of the gateway like with any other Java progr
 
 ### Performance tuning for large setups
 
-If you're running your setup with a large number of connected device and gateways the scan of these nodes could take a long time and may fail with the default settings.  
+If you're running your setup with a large number of connected devices and gateways the scan of these nodes can take a long time and may fail with the default settings.  
 We recommend you to use the following settings in the configuration YAML file:  
 
 ```yaml
@@ -64,6 +64,6 @@ gateway:
   cyclicRead:
     threadpool:
       size: 3000
-``
+```
 
 In general, a larger number of threads will increase your performance. To increase the number of threads, add more memory.

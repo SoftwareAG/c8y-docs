@@ -46,19 +46,24 @@ You can adjust the memory settings of the gateway like with any other Java progr
 
 ### Performance tuning for large setups
 
-If you're running your setup with a large number of connected device and gateways the scan of these nodes could take a long time and may be fail with the default settings.  
-It is recommended to improve the setting in the configuration YAML file like this:  
+If you're running your setup with a large number of connected device and gateways the scan of these nodes could take a long time and may fail with the default settings.  
+We recommend you to use the following settings in the configuration YAML file:  
 
-in _gateway_ settings  
+```yaml
+gateway:  
 
-_scheduler_-_threadpool_
-* size: set to 300  
+  scheduler:
+    threadpool:
+      size: 300  
 
-_executor_-_threadpool_  
-* coreSize: set to 600  
-* maxSize: set to 1200
+  executor:
+    threadpool:  
+      coreSize: 600  
+      maxSize: 1200
 
-_cyclicRead_-_threadpool_
-*size: set to 3000
+  cyclicRead:
+    threadpool:
+      size: 3000
+``
 
-In general, it is a good behaviour to increase the number of available threads. The number of threads is corresponding to your available memory, more memory means more threads. 
+In general, a larger number of threads will increase your performance. To increase the number of threads, add more memory.

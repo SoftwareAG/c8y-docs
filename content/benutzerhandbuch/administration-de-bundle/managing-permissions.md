@@ -18,7 +18,7 @@ Darüber hinaus kann der Zugriff auf Anwendungen erteilt werden.
 
 Klicken Sie **Rollen** im Menü **Konto**, um die Liste der konfigurierten Rollen anzuzeigen.
 
-<img src="/images/benutzerhandbuch/Administration/admin-global-roles.png" alt="Context menu">
+<img src="/images/users-guide/Administration/admin-global-roles.png" alt="Context menu">
 
 In der Registerkarte **Globale Rollen** finden Sie die Rollen, die allgemeine Berechtigungen erteilen. Es gibt verschiedene vordefinierte globale Rollen, aber Sie können auch eigene nach Ihren Bedürfnissen erstellen.
 
@@ -112,7 +112,7 @@ Auf der Seite **Neue globale Rolle** sehen Sie links eine Liste mit Berechtigung
 
 Der folgende Screenshot zeigt die Einstellungen für die Rolle "admins".
 
-![Admin example](/images/benutzerhandbuch/Administration/admin-global-role-admin.png)
+![Admin example](/images/users-guide/Administration/admin-global-role-admin.png)
 
 **Berechtigungsebenen**
 
@@ -213,6 +213,11 @@ Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
 </tr>
 
 <tr>
+<td align="left">Planen von Berichten</td>
+<td align="left">Verwalten von Berichts-Exportplänen</td>
+</tr>
+
+<tr>
 <td align="left">Simulator</td>
 <td align="left">Konfigurieren von simulierten Geräten.</td>
 </tr>
@@ -246,7 +251,7 @@ Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
 
 Möglicherweise werden weitere Berechtigungen angezeigt, abhängig von den Funktionalitäten in Ihrem Abonnementplan. Diese werden in Verbindung mit den jeweiligen Funktionalitäten beschrieben.
 
-> **Wichtig:** Werden neue Funktionalitäten mit neuen Berechtigungen zu Cumulocity IoT hinzugefügt, so werden diese nicht automatisch zu bestehenden Rollen hinzugefügt. Sollten Sie feststellen, dass Sie eine kürzlich angekündigte Funktionalität nicht verwenden können, überprüfen Sie zunächst Ihre Berechtigungen.
+> **Wichtig:** Werden neue Funktionen mit neuen Berechtigungen zu Cumulocity IoT hinzugefügt, so werden diese nicht automatisch zu bestehenden Rollen hinzugefügt. Sollten Sie feststellen, dass Sie eine kürzlich angekündigte Funktionalität nicht verwenden können, überprüfen Sie zunächst Ihre Berechtigungen.
 
 #### <a name="attach-global"></a>Zuweisen von globalen Rollen
 
@@ -258,7 +263,7 @@ Sie können Benutzern globale Rollen entweder direkt in der Benutzerliste oder a
 1. Aktivieren oder deaktivieren Sie die entsprechenden Checkboxen.
 1. Klicken Sie **Anwenden**, um Ihre Einstellungen zu speichern.
 
-![Apply global role](/images/benutzerhandbuch/Administration/admin-global-roles-apply-1.png)
+![Apply global role](/images/users-guide/Administration/admin-global-roles-apply-1.png)
 
 ##### So weisen Sie globale Rollen aus der Benutzerseite zu
 
@@ -266,7 +271,7 @@ Klicken Sie auf die Zeile des jeweiligen Benutzers in der Benutzerliste.
 Aktivieren oder deaktivieren Sie auf der Benutzerseite rechts die Checkboxen für die entsprechenden globalen Rollen.
 Klicken Sie **Speichern**, um Ihre Einstellungen zu speichern.
 
-![Attach global role](/images/benutzerhandbuch/Administration/admin-global-roles-apply-2.png)
+![Attach global role](/images/users-guide/Administration/admin-global-roles-apply-2.png)
 
 ### <a name="inventory"></a>Stammdatenrollen
 
@@ -274,7 +279,7 @@ Stammdatenrollen enthalten Berechtigungen, die Sie Gerätegruppen zuweisen könn
 
 Um die konfigurierten Stammdatenrollen anzuzeigen, wählen Sie **Rollen** im Menu **Konto** und wechseln Sie zur Registerkarte **Stammdatenrollen**.
 
-<img src="/images/benutzerhandbuch/Administration/admin-roles-inventory.png" alt="Context menu">
+<img src="/images/users-guide/Administration/admin-roles-inventory.png" alt="Context menu">
 
 In der Registerkarte **Stammdatenrollen** können Sie Berechtigungen für bestimmte Gruppen und/oder deren Kinder verwalten. Es gibt verschiedene voreingestellte Stammdatenrollen, aber Sie können auch eigene Rollen nach Ihren Bedürfnissen erstellen.
 
@@ -294,13 +299,13 @@ Klicken Sie **Rolle hinzufügen** in der Registerkarte **Stammdatenrollen**.
 
 Oben auf der Seite können Sie einen Namen für die Stammdatenrolle vergeben. Klicken Sie in das Feld, geben Sie einen Namen ein und klicken Sie auf das grüne Häkchen zum Speichern Ihrer Eingabe.
 
-![Role details](/images/benutzerhandbuch/Administration/admin-inventory-role-edit.png)
+![Role details](/images/users-guide/Administration/admin-inventory-role-edit.png)
 
 Die Berechtigungen sind in die folgenden Kategorien eingeteilt:
 
 |Kategorie|Beschreibung|
 |:---|:---|
-|Alarme|Berechtigungen für das Arbeiten mit Alarmen von Geräten.
+|Alarme|Berechtigungen für das Verwenden von Alarmen von Geräten.
 |Audits|Berechtigungen für Audit-Logs.
 |Ereignisse|Berechtigungen für das Arbeiten mit Ereignissen von Geräten.
 |Stammdaten|Berechtigungen für das Anzeigen und Bearbeiten von Geräten.
@@ -308,7 +313,7 @@ Die Berechtigungen sind in die folgenden Kategorien eingeteilt:
 |Gerätesteuerung|Berechtigungen für die Fernsteuerung von Geräten.
 |Voller Zugriff|Vollständiger Zugriff auf die verbundenen Geräte, hauptsächlich zur Vereinfachung der Konfiguration.
 
-> **Info:** Service Provider sehen eine weitere Berechtigung "Support" in Ihrem Management-Mandanten. Diese Berechtigung ermöglicht es Benutzern des Service Providers, den Benutzern ihrer Kunden Support zu geben, siehe [Support für Benutzer in anderen Mandanten](/benutzerhandbuch/enterprise-edition-de#users-in-other-tenants).
+> **Info:** Service Provider sehen eine weitere Berechtigung "Support" in Ihrem Management-Mandanten. Diese Berechtigung ermöglicht es Benutzern des Service Providers, den Benutzern ihrer Kunden Support zu geben, siehe [Support für Benutzer in anderen Mandanten](/users-guide/enterprise-edition#users-in-other-tenants).
 
 Fügen Sie einer Rolle eine Berechtigung hinzu, indem Sie das Plus-Symbol neben der gewünschten Kategorie klicken.
 
@@ -324,13 +329,13 @@ Wählen Sie im Feld **Berechtigung** eine Berechtigungsebene aus der Auswahllist
 
 * LESEN - zum Anzeigen von Objekten
 * ÄNDERN - zum Ändern von Objekten (schließt nicht die LESEN-Berechtigung ein)
-* ALLE - zum Lesen UND Ändern von Objekten
+* ALL - zum Lesen UND Ändern von Objekten
 
 >**Wichtig:** Wenn Sie eine Berechtigung hinzufügen, erscheint möglicherweise ein kleines Ausrufungszeichen. Das Ausrufungszeichen weist darauf hin, dass die soeben hinzugefügte Rollen keine Auswirkung hat, da eine andere, "höhere" Berechtigung, die für den Benutzer gesetzt wurde, diese Berechtigung bereits umfasst. Überprüfen Sie in diesem Fall, ob Sie vollständigen Zugriff gewährt haben oder ob es im gleichen Abschnitt eine andere Berechtigung mit "*" als Typen und "Alle" als Berechtigung gibt.
 
 Nehmen wir als weiteres Beispiel an, dass Sie Tracking-Geräte verwenden. Sie möchten, dass Ihr Benutzer alle Geräte sehen, aber nichts ändern kann. Außerdem soll der Benutzer in der Lage sein, die Wege von Geräten auf einer Karte zu verfolgen. Wege werden über ein Ereignis mit dem Fragmenttypen "c8y&#95;Position" aufgezeichnet (siehe [Sensor Library](/reference/sensor-library)). Erteilen Sie dem Benutzer eine LESEN-Berechtigung auf Stammdaten und auf Ereignisse mit dem Typen "c8y&#95;Position", wie in der Abbildung unten dargestellt.
 
-<img src="/images/benutzerhandbuch/Administration/admin-inventory-role-example.png" alt="Permission example">
+<img src="/images/users-guide/Administration/admin-inventory-role-example.png" alt="Permission example">
 
 ### <a name="attach-inventory"></a>Zuweisen von Stammdatenrollen zu Benutzern
 
@@ -348,14 +353,14 @@ Wenn ein Benutzer Stammdatenzugriff für eine Gerätegruppe hat, hat er auch Zug
 
 Sie können auch Stammdatenrollen eines anderen Benutzers kopieren. Klicken Sie **Stammdatenrollen eines anderen Benutzers kopieren**, um Rollen zu kopieren. Wählen Sie im folgenden Fenster einen Benutzer aus und klicken Sie **Kopieren**. Oben können Sie auswählen, ob Sie die Rollen mit den vorhandenen Rollen zusammenführen möchten (Standardeinstellung), oder ob Sie die vorhandenen Rollen ersetzen möchten. Das Kopieren von Rollen erleichtert das Verwalten von Berechtigungen für viele Benutzer, da Sie einen Referenzbenutzer erstellen können, um von dort die Rollen zu kopieren.
 
-<img src="/images/benutzerhandbuch/Administration/admin-inventory-role-copy.png" alt="Copy roles">
+<img src="/images/users-guide/Administration/admin-inventory-role-copy.png" alt="Copy roles">
 
 
 ### Fehlerbehebung bei Berechtigungen
 
 Wenn Sie Aktionen durchführen möchten für die Sie keine ausreichende Berechtigung haben, erhalten Sie eine Fehlermeldung.
 
-Klicken Sie für Hilfe bei der Fehlersuche auf die Schaltfläche **Benutzer** in der rechten oberen Leiste. Wählen Sie aus dem Kontextmenü **Verweigerte Anfragen**. Im darauf folgenden Fenster finden Sie Details zu den verweigerten Anfragen. Ein Administrator oder der Support kann Ihnen helfen, die Berechtigungsprobleme zu beheben.
+Klicken Sie für Hilfe bei der Fehlersuche auf die Schaltfläche **Benutzer** in der rechten oberen Leiste. Wählen Sie aus dem Kontextmenü **Verweigerte Anfragen**. Im darauf folgenden Fenster finden Sie Details zu den verweigerten Anfragen. Ein Administrator oder der [Support](/about-doc/contacting-support) kann Ihnen helfen, die Berechtigungsprobleme zu beheben.
 
 ### <a name="app-access"></a>Gewähren von Anwendungszugriff
 
@@ -363,8 +368,8 @@ Die Registerkarte **Anwendungen** zeigt eine Liste aller verfügbaren Anwendunge
 
 Um dem Benutzer Anwendungen zuzuweisen, wählen Sie einfach die entsprechenden Anwendungen aus und klicken **Speichern**.
 
-Weitere Informationen zur Anwendungsverwaltung finden Sie unter [Verwalten von Anwendungen](/benutzerhandbuch/administration-de#managing-applications).
+Weitere Informationen zur Anwendungsverwaltung finden Sie unter [Verwalten von Anwendungen](/users-guide/administration#managing-applications).
 
-![Application access](/images/benutzerhandbuch/Administration/admin-application-access.png)
+![Application access](/images/users-guide/Administration/admin-application-access.png)
 
 > **Info:** Wenn ein Benutzer die globale Berechtigung hat, alle Anwendungen einzusehen, wird eine entsprechende Information angezeigt.

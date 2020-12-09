@@ -14,7 +14,7 @@ Mit der Funktion Data Broker können Daten gezielt mit anderen Mandanten geteilt
 
 Navigieren Sie zur Seite **Datenkonnektor** im Menü **Data Broker**, wenn Sie anderen Mandanten Daten senden möchten. Navigieren Sie zur Seite **Datenabonnements**, wenn Sie von anderen Mandanten Daten erhalten möchten.
 
-<img src="/images/benutzerhandbuch/enterprise-tenant/et-data-broker-navigator.png" alt="Data broker menus" >
+<img src="/images/users-guide/enterprise-tenant/et-data-broker-navigator.png" alt="Data broker menus" >
 
 >**Wichtig:** Geräte, die über Data Broker weitergeleitet werden, werden wie normale Geräte im Zielmandanten abgerechnet.
 
@@ -34,7 +34,7 @@ Ein Datenkonnektor beschreibt die Daten, die Sie zu einem Zielmandanten senden m
 
 Klicken Sie im Navigator auf **Datenkonnektor**, um eine Liste mit allen aktuell definierten Datenkonnektoren mit ihrem jeweiligen Status anzuzeigen.
 
-![Data broker connectors list](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-connector-list.png)
+![Data broker connectors list](/images/users-guide/enterprise-tenant/et-data-broker-connector-list.png)
 
 Für jeden Datenkonnektor wird die folgenden Information bereitgestellt:
 
@@ -61,7 +61,7 @@ Verwenden Sie den Umschalter, um das Weiterleiten von Daten an den Zielmandanten
 
 3. Klicken Sie **Filter hinzufügen**, um einen neuen Filter zu konfigurieren.
 
-	![Data broker configure filter](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-connector-filter.png)
+	![Data broker configure filter](/images/users-guide/enterprise-tenant/et-data-broker-connector-filter.png)
 
 4. Jeder Datenfilter enthält die folgenden Informationen:
 
@@ -100,13 +100,13 @@ Verwenden Sie den Umschalter, um das Weiterleiten von Daten an den Zielmandanten
 5. Klicken Sie **Speichern**, um die Konfiguration zu speichern.
 
 >**Warnung zur Verwendung von "Alle Objekte"**
->
+
 >Die Option **Alle Objekte** ist weiterhin in der Benutzeroberfläche vorhanden, um Rückwärtskompatibilität mit älteren Versionen sicherzustellen. Wir planen, diese Option künftig nicht mehr zu unterstützen, und empfehlen dringend, sie nicht zu verwenden.
->
+
 >Wird sie gewählt, synchronisiert Cumulocity IoT alle Arten von Objekten, sowohl System- als auch benutzerdefinierte Objekte, und könnte Objekte im Zielmandanten überschreiben oder ohne Kontext erstellen. Solche Objekte können Referenzen zu anderen Objekten sowie Konfigurationsinformationen enthalten. Es liegt in der Verantwortung des Benutzers, die Konsistenz solcher Informationen in den übertragenen Objekten in der Zielumgebung sicherzustellen.
->
+
 >Dies betrifft Elemente wie SmartREST-Templates, Geräteprotokolle, Smart-Rule-Konfigurationen und Dashboards.
->
+
 >Wenn Sie zum Beispiel auf dem Ursprungsmandanten eine Smart Rule erstellen und alle Objekte synchronisieren, erstellt Data Broker ein Smart-Rule-Objekt auf dem Zielmandanten. Die Regel selbst wird nicht kopiert, da eine synchronisierte Smart Rule dieselbe Aktion auf demselben Gerät für dieselbe Konfiguration ausführen würde. Dadurch würden bei einem Alarm doppelte E-Mails für die jeweiligen Empfänger erstellt werden.
 
 
@@ -130,7 +130,7 @@ Die Kopfzeile eines Datenfilters fasst die Konfiguration in einer Zeile zusammen
 
 Nach dem Speichern der Konfiguration wird ein Sicherheitscode unter der Konfiguration angezeigt. Dieser Sicherheitscode verhindert unbeabsichtigtes Weiterleiten von Daten. Sie müssen diesen Sicherheitscode getrennt einem Benutzer mit Administrationsrechten für den Zielmandanten mitteilen. Durch Klicken auf das Kopieren-Symbol neben dem Sicherheitscode können Sie diesen in Ihre Zwischenablage kopieren.
 
-![Security code](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-connector-security-code.png)
+![Security code](/images/users-guide/enterprise-tenant/et-data-broker-connector-security-code.png)
 
 
 #### So bearbeiten Sie einen Datenkonnektor
@@ -151,11 +151,11 @@ Klicken Sie auf das Menüsymbol rechts neben einem Datenkonnektor-Eintrag und an
 
 #### So zeigen Sie Alarme für einen Datenkonnektor an
 
-Öffnen Sie einen Datenkonnektor und wechseln Sie zur Registerkarte **Alarme**, um aktuelle Alarme für den Datenkonnektor anzuzeigen.
+Öffnen Sie einen Datenkonnektor und wechseln Sie zur Registerkarte **Alarme**, um aktuelle Alarme für den Datenkonnektor anzuzeigen. 
 
 Weitere Informationen zu Data Broker-Alarmen finden Sie unter [Troubleshooting](#data-broker-troubleshooting) weiter unten.
 
-Weitere Informationen zu Alarmen im Allgemeinen finden Sie unter [Device Management > Überwachen und Steuern von Geräten > Verwenden von Alarmen](/benutzerhandbuch/device-management-de/#alarm-monitoring).
+Weitere Informationen zu Alarmen im Allgemeinen finden Sie unter [Device Management > Überwachen und Steuern von Geräten > Verwenden von Alarmen](/users-guide/device-management/#alarm-monitoring).
 
 
 ### <a name="data-broker-subscriptions"></a> Datenabonnements
@@ -164,7 +164,7 @@ Auf der Seite **Datenabonnements** können Sie bestehende Datenabonnements verwa
 
 Klicken Sie **Datenabonnements**, um eine Liste mit allen aktuell zu Ihrem Mandanten weitergeleiteten Daten anzuzeigen.
 
-<img src="/images/benutzerhandbuch/enterprise-tenant/et-subscriptions.png" alt="Data subscriptions">
+<img src="/images/users-guide/enterprise-tenant/et-subscriptions.png" alt="Data subscriptions">
 
 Für jedes Abonnement wird der Name, der Zielmandant und der Status (aktiviert oder deaktiviert) auf einer Karte bereitgestellt.
 
@@ -179,7 +179,7 @@ Verwenden Sie den Umschalter, um zeitweilig das Weiterleiten von Daten in Ihren 
 
 Navigieren Sie nun zur Device Management- oder Cockpit-Anwendung. Dort finden Sie eine neue "virtuelle Gruppe" mit einem speziellen Symbol (siehe Abbildung unten), die die weitergeleiteten Geräte anzeigt. Diese Gruppe hat denselben Namen wie das Abonnement. Geräte werden auf der Empfängerseite verzögert erstellt, sobald sie, nach Einrichten eines aktiven Abonnements, das erste mal Daten senden.
 
-![Data broker group in cockpit app](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-group-created.png)
+![Data broker group in cockpit app](/images/users-guide/enterprise-tenant/et-data-broker-group-created.png)
 
 #### So löschen Sie einen Datenkonnektor
 
@@ -193,8 +193,8 @@ Wenn der Data Broker die Verbindung zu einem Zielmandanten nicht herstellen kann
 
 Im Ursprungsmandanten reiht Data Broker die Daten, die nicht sofort an den Zielmandanten weitergeleitet werden können, in eine Wartschlange ein. Die Datenmenge, die in die Warteschlange eingereiht werden kann, ist begrenzt. Kann Cumulocity IoT keine weiteren Daten in die Warteschlange einreihen, werden die ältesten Daten aus der Warteschlange entfernt. In diesem Fall wird im Mandanten ein WICHTIGER Alarm ausgelöst und dabei der betroffene Konnektor angezeigt.
 
-![Data broker alarms](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-alarm.png)
+![Data broker alarms](/images/users-guide/enterprise-tenant/et-data-broker-alarm.png)
 
 Ebenso wird bei einem Überlauf der Eingangswarteschlange ein Alarm ausgelöst.
-
+ 
 Um die Anzahl der Alarme zu reduzieren, werden Alarme höchstens einmal pro Minute ausgelöst.

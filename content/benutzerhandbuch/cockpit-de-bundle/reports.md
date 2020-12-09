@@ -12,7 +12,7 @@ Bei Dashboard-Berichten handelt es sich um globale Dashboard-Seiten, unabhängig
 
 Erweitern Sie das Menü **Berichte** im Navigator, um alle verfügbaren Berichte anzuzeigen.
 
-![Reports menu](/images/benutzerhandbuch/cockpit/cockpit-reports-navigator.png)
+![Reports menu](/images/users-guide/cockpit/cockpit-reports-navigator.png)
 
 Klicken Sie im Navigator auf einen Bericht, um ihn zu öffnen.
 
@@ -51,13 +51,13 @@ Um alle Exporte anzuzeigen, klicken Sie **Exportieren** im Menü **Berichte**.
 
 Die Seite **Exportieren** listet alle Exporte mit Namen und Zeitintervall auf.
 
-![Exports](/images/benutzerhandbuch/cockpit/cockpit-exports.png)
+![Exports](/images/users-guide/cockpit/cockpit-exports.png)
 
 
 #### <a name="add-export"></a>So fügen Sie einen Export hinzu
 
 1. Klicken Sie **Export hinzufügen** in der oberen Menüleiste.<br>
-	![Create export](/images/benutzerhandbuch/cockpit/cockpit-export-create.png)
+	![Create export](/images/users-guide/cockpit/cockpit-export-create.png)
 
 2. Geben Sie einen Namen für den Bericht ein und wählen Sie das Dateiformat (CSV oder XLSX) für die Berichtausgabe.
 
@@ -66,7 +66,9 @@ Die Seite **Exportieren** listet alle Exporte mit Namen und Zeitintervall auf.
 
 Im Bereich **Filter** können Sie Filter setzen, um Daten für bestimmte Objekte oder Zeiträume anzufragen.
 
-Um nach bestimmten Objekten zu filtern, geben Sie einen Objektnamen oder einen Attributwert in das Suchfeld ein und klicken Sie auf das Lupensymbol. Alle passenden Geräte oder Gruppen werden unter dem **Wert**-Feld angezeigt. Wählen Sie ein Gerät durch Klicken aus (grün hervorgehoben).
+Um nach bestimmten Objekten zu filtern, geben Sie einen Objektnamen oder einen Attributwert in das Suchfeld ein und klicken Sie auf das Lupensymbol. Alle passenden Geräte oder Gruppen werden unter dem **Wert**-Feld angezeigt. Wählen Sie ein Objekt durch Klicken aus (grün hervorgehoben).
+
+>**Info:** Wenn Sie eine Gruppe wählen, werden die Daten der direkten Kindgeräte einbezogen. Der Export enthält jedoch nicht die Daten der Geräte, die sich in Untergruppen befinden (indirekte Kinder).
 
 Der Filter **Zeitintervall** filtert Daten nach einem bestimmten Zeitintervall. Wählen Sie ein Zeitintervall aus der Auswahlliste. Mögliche Intervalle sind "Letztes Jahr", "Letzter Monat", "Letzte Woche" oder wählen Sie "Benutzerdefiniert" und geben Sie Von/Bis-Werte in die entsprechenden Felder ein, um ein individuelles Intervall zu definieren.
 
@@ -95,7 +97,7 @@ Klicken Sie **Hinzufügen**, um ein leeres Feld hinzuzufügen. Klicken Sie **Spa
 
 Klicken Sie **Vordefiniertes Attribut hinzufügen**, um ein vordefiniertes Attribut hinzuzufügen. Markieren Sie die gewünschten Attribute in der angezeigten Liste und klicken Sie **Auswählen**. Verwenden Sie das Suchfeld, um die Liste nach bestimmten Eigenschaften zu filtern.
 
-![Select properties](/images/benutzerhandbuch/cockpit/cockpit-export-properties.png)
+![Select properties](/images/users-guide/cockpit/cockpit-export-properties.png)
 
 Wenn Sie mindestens ein Feld haben, dass als eigenes Attribut definiert wurde und nicht aus der Liste der vordefinierten Attribute stammt, dann muss für ein Objekt mindestens dieses Attribut gesetzt sein, damit die entsprechenden Werte im Export erscheinen.
 
@@ -108,25 +110,21 @@ Wenn Sie Messwerte aktiviert haben, sehen Sie die zusätzliche Option **Datenpun
 
 #### <a name="schedule-export"></a>So planen Sie einen Export
 
-Um einen Export in eine CSV- oder XLSX-Datei für einen bestimmten Zeitpunkt zu planen, klicken Sie auf das Menüsymbol am Ende der Zeile und anschließend auf **Export planen**.
+Um einen Export in eine CSV- oder XLSX-Datei für einen bestimmten Zeitpunkt zu planen, öffnen Sie den entsprechenden Export und klicken Sie auf **Zeitplan hinzufügen**. 
 
-![Export context menu](/images/benutzerhandbuch/cockpit/cockpit-export-menu.png)
+![Export details](/images/users-guide/cockpit/cockpit-export-add-schedule.png)
 
-Im darauf folgenden Dialog können Sie die Smart Rule "Bei Timer-Ablauf Export per E-Mail senden" entsprechend einrichten.
+Geben Sie im nächsten Dialog die folgenden Informationen ein, um den geplanten Export per E-Mail zu erhalten.
 
-![Schedule export](/images/benutzerhandbuch/cockpit/cockpit-export-on-timer-rule.png)
+![Schedule export](/images/users-guide/cockpit/cockpit-export-new-schedule.png)
 
-**1 - Name der Regel**
+**1 - Häufigkeit**
 
-Der Name der Regel ist mit dem Namen des Exports vorausgefüllt, kann aber geändert werden.
-
-**2 - Daten & Häufigkeit**
-
-Bestimmen Sie die Frequenz für das Senden des Exports, z. B. stündlich, täglich, wöchentlich oder monatlich. Je nach ausgewählter Frequenz können Sie weitere Optionen für den Zeitpunkt angeben. Haben Sie etwa "Monat" gewählt, können Sie den Tag des Monats und die Uhrzeit festlegen.
+Wählen Sie die Frequenz für das Senden des Exports aus der Auswahliste, z. B. stündlich, täglich, wöchentlich, monatlich oder jährlich. Je nach ausgewählter Frequenz können Sie weitere Optionen für den Zeitpunkt angeben. Haben Sie etwa "Monat" gewählt, können Sie den Tag des Monats und die Uhrzeit festlegen.
 
 >**Info:** Intervalle müssen in koordinierter Weltzeit (UTC) angegeben werden.
 
-**3 - E-Mail senden:**
+**2 - E-Mail senden:**
 
 Vervollständigen Sie die E-Mail-Informationen. 
 
@@ -140,12 +138,23 @@ Geben Sie die eigentliche E-Mail-Nachricht ein. Verfügbare Platzhalter sind {ho
 
 >**Info:** Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden.
 
-Klicken Sie **Erstellen**, um die benutzerdefinierte Smart Rule "Bei Timer-Ablauf Export per E-Mail senden“ zu erstellen.
+Klicken Sie auf **Erstellen**, um den neuen Exportplan zu erstellen.
 
-Die Smart Rule wird zu den Exportdetails hinzugefügt.
+Der Exportplan wird zu den Exportdetails hinzugefügt.
 
-![Smart Rule](/images/benutzerhandbuch/cockpit/cockpit-export-schedule.png)
+![Scheduled exports list](/images/users-guide/cockpit/cockpit-export-schedule-list.png)
 
+##### Migration geplanter Exports 
+
+In der Version 10.6.2 wurde ein neuer Report Agent implementiert, um geplante Berichte in [Apama Streaming Analytics](/apama/overview-analytics/) zuzulassen. Die Exportplan-Funktionalität auf Grundlage von Smart Rules wurde eingestellt. 
+
+Beim Öffnen eines Berichts werden alle auf Smart Rules basierenden geplanten Exports automatisch zu dem neuen Report Agent migriert und der Benutzer wird per Nachricht über den Vorgang informiert. 
+
+![Export schedule migration message2](/images/users-guide/cockpit/cockpit-export-migrate2.png)
+
+>**Wichtig**: Sie müssen jeden einzelnen Bericht manuell öffnen, um die im Bericht enthaltenen Exportpläne zu migrieren. 
+
+> **Info:** Damit die neue Exportplan-Funktion genutzt und die Migration durchgeführt werden kann, muss der Microservice "report-agent" abonniert sein. Neue Mandanten haben diesen automatisch abonniert. Bei vorhandenen Mandanten muss sichergestellt sein, dass sie den Microservice abonniert haben.
 
 #### So exportieren Sie Daten
 

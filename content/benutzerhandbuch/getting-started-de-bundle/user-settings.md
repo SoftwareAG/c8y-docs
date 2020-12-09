@@ -3,13 +3,12 @@ weight: 50
 title: Benutzeroptionen und -einstellungen
 layout: redirect
 aliases:
-  - /benutzerhandbuch/overview/#user-settings
+  - /users-guide/overview/#user-settings
 ---
 
 Durch Klicken auf die Schaltfläche **Benutzer** rechts oben wird ein Menü geöffnet, das Zugriff auf verschiedene Aktionen oder Informationen ermöglicht.
 
-<img src="/images/benutzerhandbuch/getting-started/getting-started-user-account-menu.png" alt="User account menu"  style="max-width: 60%">
-
+<img src="/images/users-guide/getting-started/getting-started-user-account-menu.png" alt="User account menu"  style="max-width: 60%">
 
 Das Menü **Benutzer** enthält folgende Elemente:
 
@@ -35,12 +34,12 @@ Das Menü **Benutzer** enthält folgende Elemente:
 <td style="text-align:left">Meldet Sie aus Ihrem Cumulocity IoT-Konto ab. </td>
 </tr>
 <tr>
-<td style="text-align:left">Support aktivieren (deaktivieren)</td>
-<td style="text-align:left">Erlaubt Supportbenutzern den Zugriff auf Ihr Konto. Diese Option ist nur verfügbar, wenn der Supportbenutzerzugriff im Management-Mandanten nicht global für Untermandanten-Benutzer festgelegt ist, weitere Informationen siehe <a href="/benutzerhandbuch/enterprise-edition-de#users-in-other-tenants" class="no-ajaxy">Support für Benutzer in anderen Mandanten</a>. Nachdem der Supportbenutzerzugriff aktiviert wurde, wird das Menüelement durch <strong>Support deaktivieren</strong> ersetzt. Wenn sich Ihre Supportanfrage erledigt hat, doch die Dauer für den Supportbenutzerzugriff noch nicht abgelaufen ist (standardmäßig 24 Stunden), können Sie eine Supportbenutzeranfrage hier aktiv deaktivieren.</td>
+<td style="text-align:left">Support aktivieren</td>
+<td style="text-align:left">Erlaubt Supportbenutzern den Zugriff auf Ihr Konto. Diese Option ist nur verfügbar, wenn der Supportbenutzerzugriff im Management-Mandanten nicht global für Untermandanten-Benutzer festgelegt ist, weitere Informationen siehe <a href="/users-guide/enterprise-edition#users-in-other-tenants" class="no-ajaxy">Support für Benutzer in anderen Mandanten</a>. Nachdem der Supportbenutzerzugriff aktiviert wurde, wird das Menüelement durch <strong>Support deaktivieren</strong> ersetzt. Wenn sich Ihre Supportanfrage erledigt hat, doch die Dauer für den Supportbenutzerzugriff noch nicht abgelaufen ist (standardmäßig 24 Stunden), können Sie eine Supportbenutzeranfrage hier aktiv deaktivieren.</td>
 </tr>
 <tr>
 <td style="text-align:left">Versionen</td>
-<td style="text-align:left">Zeigt Informationen zu der von Ihnen verwendeten Cumulocity IoT-Version an, zum Beispiel 10.5.7, für Backend und Benutzeroberfläche. Zeigt außerdem die ID Ihres Mandanten an, die bei einer Supportanfrage erforderlich sein kann. Klicken Sie auf das Kopieren-Symbol neben der Mandanten-ID, um diese in die Zwischenablage zu kopieren.</td>
+<td style="text-align:left">Zeigt Informationen zu der von Ihnen verwendeten Cumulocity IoT-Version an, zum Beispiel 10.5.8, für Backend und Benutzeroberfläche. Zeigt außerdem die ID Ihres Mandanten an, die bei einer Supportanfrage erforderlich sein kann. Klicken Sie auf das Kopieren-Symbol neben der Mandanten-ID, um diese in die Zwischenablage zu kopieren.</td>
 </tr>
 </tbody>
 </table>
@@ -51,11 +50,11 @@ Einige Kontoeinstellungen können vom Benutzer geändert werden.
 
 1. Klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und anschließend auf **Benutzereinstellungen**.  
 2. Nehmen Sie im Dialog **Benutzer bearbeiten** die gewünschten Änderungen vor.
-3. Zum Ändern der Sprache wählen Sie eine Sprache aus der Auswahlliste des Feldes **Sprache**.
-4. Klicken Sie **Passwort ändern**, um Ihr aktuelles Passwort zu ändern, siehe unten.
+3. Zum Ändern der Sprache wählen Sie eine [Sprache](#languages) aus der Auswahlliste des Feldes **Sprache**.
+4. Klicken Sie  **Passwort ändern**, um Ihr aktuelles Passwort zu ändern. Weitere Informationen finden Sie unter [So ändern Sie Ihr Passwort](#change-password).
 5. Klicken Sie **Speichern**, um Ihre Eingaben zu speichern.
 
-<img src="/images/benutzerhandbuch/getting-started/getting-started-user-settings.png" alt="User settings"  style="max-width: 100%">
+<img src="/images/users-guide/getting-started/getting-started-user-settings.png" alt="User settings"  style="max-width: 100%">
 
 Die Sprache der Benutzeroberfläche wird nach folgenden Kriterien, in der aufgeführten Reihenfolge, ermittelt:
 
@@ -63,10 +62,24 @@ Die Sprache der Benutzeroberfläche wird nach folgenden Kriterien, in der aufgef
 *  Die Sprache, die in den Browser-Einstellungen konfiguriert ist.
 * 	Die Sprache des Betriebssystems.
 
-Die Standardsprache ist Englisch.
+#### <a name="languages"></a>Verfügbare Sprachen
+
+Die Benutzeroberfläche ist in folgenden Sprachen verfügbar: 
+
+|Sprache|Sprachcode|
+|:---|:---|
+|Englisch (Standard)|de|
+|Brasilianisches Portugiesisch|pt_BR|
+|Französisch|fr|
+|Deutsch|de|
+|Japanisch|ja_JP|
+|Koreanisch|ko|
+|Polnisch|pl|
+|Spanisch|es|
+|Chinesisch|zh_CN|
 
 
-### <a name="change-password"></a>So ändern Sie Ihr Passwort
+#### <a name="change-password"></a>So ändern Sie Ihr Passwort
 
 1. Klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und anschließend auf **Benutzereinstellungen**.
 2. Klicken Sie im Dialog **Benutzer bearbeiten** auf **Passwort ändern**.
@@ -75,7 +88,7 @@ Die Standardsprache ist Englisch.
 
 Stellen Sie sicher, dass Sie ein starkes Passwort gewählt haben. Um Sie dabei zu unterstützen, wird während der Passwortänderung ein Passwortstärke-Indikator angezeigt.
 
-<img src="/images/benutzerhandbuch/getting-started/getting-started-password-strength.png" alt="Reset password" style="max-width: 100%">
+<img src="/images/users-guide/getting-started/getting-started-password-strength.png" alt="Reset password" style="max-width: 100%">
 
 Standardmäßig muss das Passwort 8 Zeichen enthalten. Ein starkes Passwort muss mindestens 3 der folgenden Zeichentypen enthalten: Großbuchstaben, Kleinbuchstaben, Zahlen und Symbole.
 

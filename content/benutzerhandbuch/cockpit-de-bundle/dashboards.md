@@ -6,7 +6,7 @@ layout: redirect
 
 Dashboards ermöglichen eine individuelle Visualisierung Ihrer Daten anhand verschiedener Widgets. Widgets können Karten, Bilder, Graphen, Tabellen und andere grafische Darstellungen von Daten anzeigen.
 
-Cumulocity IoT bietet eine Reihe voreingestellter Widgets (Details finden Sie im Abschnitt [Widgets-Sammlung](#widgets)). Sie können auch eigene Widgets entwickeln und Ihrem Cumulocity IoT-Konto hinzufügen. Weitere Informationen finden Sie im [Web SDK Guide](/web/).
+Cumulocity IoT bietet eine Reihe voreingestellter Widgets (Details finden Sie im Abschnitt [Widgets-Sammlung](#widgets)). Sie können auch eigene Widgets entwickeln und Ihrem Cumulocity IoT-Konto hinzufügen. Weitere Informationen finden Sie im [Web SDK guide](/web/).
 
 ### <a name="creating-dashboards"></a>So erstellen Sie ein Dashboard
 
@@ -14,60 +14,66 @@ Wählen Sie im Navigator das Objekt (Gruppe oder Gerät) aus, für welches Sie e
 
 Klicken Sie auf die **Plus**-Schaltfläche in der oberen Leiste und wählen Sie im Menü **Dashboard hinzufügen**.
 
-<img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-menu.png" name="New dashboard"/>
-
 Der Dashboard-Editor wird geöffnet.
 
-<img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-create.png" name="Create dashboard"/>
+<img src="/images/users-guide/cockpit/cockpit-dashboard-add.png" name="Add dashboard"/>
 
-Geben Sie im Abschnitt **Dashboard-Info** des Dashboard-Editors folgende Informationen ein:
+Geben Sie im Abschnitt **Registerkarte** des Dashboard-Editors folgende Informationen ein:
 
-* Einen Namen für das Dashboard, der auch im Navigator angezeigt wird.
+*  ein Symbol, das neben dem Dashboard-Namen im Navigator erscheint.
+*  einen Namen für das Dashboard, der auch im Navigator angezeigt wird.
 * Die Position des Dashboards im Navigator. "10000" erscheint an oberster und "-10000" an unterster Position.
-* Ein Symbol, das neben dem Dashboard im Navigator erscheint.
 
-Im Abschnitt **Dashboard-Layout** können Sie ein Design für das Dashboard wählen ("Hell", "Dunkel", "Transparent" oder "Branding") und einen Standardstil für die Kopfzeile der Widgets ("Standard", "Rand", "Overlay", oder "Verborgen"). Außerdem können Sie die Einstellung für den Rand der Widgets festlegen (Standwert ist 15 px).
+Wenn Sie **Dashboard auf alle Geräte des Typs anwenden <Gerätetyp>** aktivieren, wird das Dashboard mit allen Geräten dieses Typs geteilt.
 
-Zusätzlich können Sie die Option **Widget-Titel wenn möglich übersetzen** aktivieren. Damit wird der Widget-Titel bei jedem Wechsel der Sprache übersetzt.
+Im Abschnitt **Layout** können Sie ein Design für das Dashboard wählen ("Hell", "Dunkel", "Transparent" oder "Branding") und einen Standardstil für die Kopfzeile der Widgets ("Standard", "Rand", "Overlay", oder "Verborgen"). Außerdem können Sie die Einstellung für den Rand der Widgets festlegen (Standwert ist 15 px).
+
+Wenn Sie die Option **Widget-Titel wenn möglich übersetzen** aktivieren, wird der Widget-Titel bei jeder Änderung der Sprache übersetzt.
 
 > **Info:** Die Widget-Titel werden nur übersetzt, wenn eine gültige Übersetzung verfügbar ist.
 
-Eine Vorschau der ausgewählten Layout-Einstellungen wird unmittelbar auf der rechten Seite angezeigt, um Ihre Einstellungen zu visualisieren.
+Im Abschnitt **Vorschau** wird sofort eine Vorschau der ausgewählten Layout-Einstellungen angezeigt, um Ihre Einstellungen zu visualisieren.
 
 Klicken Sie **Speichern** um das Dashboard zu erstellen und zu öffnen.
 
 Da noch keine Widgets im Dashboard vorhanden sind, wird nur die Schaltfläche **Widget hinzufügen** angezeigt.
 
-<img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-empty.png" name="Empty dashboard"/>
+<img src="/images/users-guide/cockpit/cockpit-dashboard-empty.png" name="Empty dashboard"/>
 
 
-### <a name="adding-widgets"></a>Hinzufügen eines Widgets zu einem Dashboard
+### <a name="adding-widgets"></a>So fügen Sie ein Widget zu einem Dashboard hinzu
 
-Um einem Dashboard ein Widget hinzuzufügen, klicken Sie auf die Schaltfläche **Widget hinzufügen** (im Falle eines leeren Dashboards) oder auf **Widget hinzufügen** in der oberen Menüleiste.
+1. Klicken Sie auf die Schaltfläche **Widget hinzufügen** (im Falle eines leeren Dashboards) oder auf **Widget hinzufügen** in der oberen Menüleiste.
 
-Wählen Sie im folgenden Fenster einen Widget-Typen aus der Auswahlliste. Abhängig vom ausgewählten Typen werden weitere Felder zur Bearbeitung eingeblendet. Details zu allen Widget-Typen finden Sie unter [Widgets-Sammlung](#widgets).
+2. Wählen Sie im Dialog **Widget hinzufügen** einen Widget-Typ. 
 
-Klicken Sie **Benutzerdefinierter Widgetstil**, um den Stil für den Inhalt und die Kopfzeile des Widgets individuell anzupassen. Dies erfolgt in gleicher Weise wie das Festlegen des generellen Layouts des [Dashboard-Editors](#creating-dashboards).
+	<img src="/images/users-guide/cockpit/cockpit-widget-add.png" name="Add widget">
 
-Klicken Sie **Speichern**, um das Widget zum Dashboard hinzuzufügen.
+3. Konfigurieren Sie als Nächstes das Widget. Je nach gewähltem Widget-Typ können unter **Konfiguration** verschiedene Parameter festgelegt werden. Nähere Informationen zu den einzelnen Widget-Typen finden Sie unter [Widgets-Sammlung](#widgets).
+ 
+4. Auf der Registerkarte **Design** können Sie den Stil für den Inhalt und die Kopfzeile des Widgets individuell anpassen. Dies erfolgt in gleicher Weise wie das Festlegen des [Dashboard](#creating-dashboards)-Layouts.
+
+	<img src="/images/users-guide/cockpit/cockpit-widget-appearance.png" name="Add widget">
+
+5. Klicken Sie **Speichern**, um das Widget zum Dashboard hinzuzufügen.
 
 ### Ändern von Widgets in einem Dashboard
 
 Sie können die Anordnung von Widgets in einem Dashboard ändern. Durch Ziehen mit dem Mauszeiger können Sie ein Widget im Dashboard bewegen und an einer anderen Position ablegen.
 
-<img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-widgets.png" name="Arrange widgets"/>
+<img src="/images/users-guide/cockpit/cockpit-dashboard-widgets.png" name="Arrange widgets"/>
 
 Durch Ziehen der Pfeile in der unteren rechten Ecke des Widgets können Sie seine Größe verändern.
 
 Klicken Sie auf das Zahnrad-Symbol in der oberen rechten Ecke eines Widgets und wählen Sie im Kontextmenü **Bearbeiten**, um die Eigenschaften eines Widgets zu bearbeiten.
 
-<img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-widget-menu.png" name="Edit widget"/>
+<img src="/images/users-guide/cockpit/cockpit-dashboard-widget-menu.png" name="Edit widget"/>
 
 Klicken Sie auf das Zahnrad-Symbol in der oberen rechten Ecke eines Widgets und wählen Sie im Kontextmenü **Löschen**, um ein Widget aus einem Dashboard zu entfernen.
 
 Sie können Dashboards nur bearbeiten, wenn diese entsperrt sind. Verwenden Sie den Umschalter mit dem Schloss-Symbol in der oberen Menüleiste, um ein Widget zu sperren bzw. entsperren.
 
-<img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-lock.png" name="Lock dashboard"/>
+<img src="/images/users-guide/cockpit/cockpit-dashboard-lock.png" name="Lock dashboard"/>
 
 >**Info:** Auf Touch-Geräten wie Smartphones oder Tablets werden einige Funktionen nicht unterstützt.
 
@@ -80,34 +86,34 @@ Wählen Sie dazu die Option **Dashboard auf alle Geräte des Typs [TYP] anwenden
 
 Im Editor wird eine entsprechende Nachricht angezeigt.
 
-<img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-share.png" name="Shared dashboard"/>
+<img src="/images/users-guide/cockpit/cockpit-dashboard-share.png" name="Shared dashboard"/>
 
 An diesem Dashboard vorgenommene Änderungen werden automatisch auf alle Dashboard-Instanzen angewendet.
 
 > **Info:** Sie können nur für das Gerät selbst Widgets und Daten zum Dashboard hinzufügen. Es ist nicht möglich, Daten von Kindgeräten hinzuzufügen, da die Struktur dieser Geräte von Gerät zu Gerät unterschiedlich sein kann.
 
 
-### Bearbeiten von Dashboard-Attributen
+### So bearbeiten Sie ein Dashboard
 
 Klicken Sie **Bearbeiten** in der oberen Menüleiste, um ein Dashboard zu bearbeiten.
 
-<img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-edit.png" name="Edit dashboard"/>
+<img src="/images/users-guide/cockpit/cockpit-dashboard-edit.png" name="Edit dashboard"/>
 
-Der Dashboard-Editor wird angezeigt. Detaillierte Informationen zu den einzelnen Feldern finden Sie unter [Erstellen von Dashboards](#creating-dashboards).
+Der Dashboard-Editor wird angezeigt. Detaillierte Informationen zu den einzelnen Feldern finden Sie unter [So erstellen Sie ein Dashboard](#creating-dashboards).
 
 
-### Kopieren von Dashboards
+### So kopieren Sie ein Dashboard von einem Objekt in ein anderes
 
-Klicken Sie **Mehr...** in der oberen Menüleiste und wählen Sie im Kontextmenü **Dashboard kopieren**, um ein Dashboard aus einem Objekt in ein anderes zu kopieren.
+1. Klicken Sie **Mehr...** in der oberen Menüleiste und wählen Sie im Kontextmenü **Dashboard kopieren**.
+ 
+	<img src="/images/users-guide/cockpit/cockpit-dashboard-copy.png" name="Copy dashboard"/>
 
-<img src="/images/benutzerhandbuch/cockpit/cockpit-dashboard-copy.png" name="Copy dashboard"/>
-
-Navigieren Sie zu dem Objekt, in welches Sie das Dashboard kopieren möchten und wählen Sie im Kontextmenü **Dashboard [NAME] einfügen**, um das Dashboard einzufügen.
+2. Navigieren Sie zu dem Objekt, in welches Sie das Dashboard kopieren möchten und wählen Sie im Kontextmenü **Dashboard [NAME] einfügen**, um das Dashboard einzufügen.
 
 Eine alternative Methode zum Kopieren eines Dashboards ist das
-Konzept "Dashboard pro Typ".  Mit dem Konzept "Dashboard pro Typ" teilen Sie das Dashboard eines Objekts mit **allen** Objekten desselben Typs.
+Konzept "Dashboard pro Typ".  Mit dem Konzept "Dashboard pro Typ" teilen Sie das Dashboard eines Objekts mit **allen** Objekten desselben Typs, siehe [Teilen von Dashboards](sharing-dashboards).
 
 
-### Löschen eines Dashboards
+### So löschen Sie ein Dashboard
 
 Klicken Sie **Mehr...** in der oberen Menüleiste und wählen Sie im Kontextmenü **Dashboard löschen**, um ein Dashboard aus einem Objekt zu löschen.

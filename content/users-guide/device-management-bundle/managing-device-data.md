@@ -170,7 +170,7 @@ The versions are ordered by their creation time (descending).
 2. In the resulting dialog box,
 	* to add a new software, enter a name for the software (and confirm it by clicking **Create new** in the upcoming window), a description and its version (all required).
 	* to add a new version, select the software for which you want to add a new version from the dropdown list in the **Software** field and enter a version.
-3. Either upload a binary from the file system or specify a URL from where the firmware can be downloaded.
+3. Either upload a binary from the file system or specify a URL from where the software can be downloaded.
 4. Click **Save**.
 
 ![Add software](/images/users-guide/DeviceManagement/devmgmt-software-add.png)

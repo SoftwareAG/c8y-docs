@@ -73,13 +73,14 @@ After decryption with the issuer's public key, the signature should match the da
 Signing a certificate by another means that if the issuer's certificate is trusted then the signed certificate also can be trusted.
 For example if a platform trusts the customer certificate and that customer has 20 devices with individual certificates, then he does not have to upload each one of them.
 If these devices certificates are signed by the customer certificate, then the platform should trust them too.
-In this case, every device should send not only its own certificate, but the whole chain of certificates while connected.
-This makes sure that the device will always send at least one certificate that is trusted by the platform:
-Providing the chain of certificates will let the platform verify the signatures of every certificate in the chain to make sure that the device certificate is signed directly or indirectly by the trusted certificate.
+In this case, every device should send not only its own certificate, but the whole chain of certificates (so-called chain of trust) during the SSL handshake.
+The chain of certificates starts with the one belonging to the device, through all used intermediate certificates until it reaches the CA certificate trusted by the platform.
+Usually the chain of certificates does not have to contain the trusted CA certificate, so it can end with the certificate signed directly by the CA.
+However, in the Cumulocity IoT platform providing also the trusted CA certificate in the chain of certificates is required.
+Providing the chain of certificates let the platform verify the signatures of every certificate in the chain to make sure that the device certificate is signed directly or indirectly by the trusted certificate.
 The chain of the certificates can differ in length, so if the platform trusts certificate A and certificate B is signed by A, and certificate C is signed by B, then certificate C will also be trusted.
 However, there are a few things to keep in mind:
 
-* The device always has to send the whole chain of certificates, starting with the one belonging to the device, until it reaches the CA certificate trusted by the platform. Without it the platform would not be able to verify signatures of every certificate.
 * Every certificate which is used to sign another certificate has to contain the extension "CA:TRUE".
 * The lengths of the chain of certificates can be restricted by the certificate extension "pathlen". This extension limits the amount of other CA certificates that can be placed in the chain between the device certificate and the one with that extension. For example the valid chain of the certificates with minimal values of path length would look like: A (CA:TRUE, pathlen: 2) -> B (CA:TRUE, pathlen: 1) -> C (CA:TRUE, pathlen: 0) -> D (device with CA:FALSE).
 
@@ -105,7 +106,7 @@ To show how the authentication with X.509 certificates works, there is an exampl
 
 A server knows that the client is the owner of the certificate it sent, after the server has decrypted the encrypted copy of the message using the client's public key.
 The client knows that the server is the owner of the certificate it sent, if server uses the correct session key, because that means that the server decrypted it with its private key.
-In basic authentication with username and password, the password has to be sent to authenticate the user.
+In basic authentication with username and password, the password has to be sent over the network to authenticate the user.
 When certificates are used, the private key is never sent, which makes the use of the certificates much more secure than the basic authentication with username and password.
 
 There are 3 important terms related to X.509 certificates, which everyone should know who wants to start working with them:
@@ -127,19 +128,19 @@ To generate certificates we will use the OpenSSL toolkit. If you do not have it 
 
 #### Creating a self-signed CA certificate
 
-1. Create a directory for the root certificate and the signing configuration, for example: `mkdir /home/kczu/Desktop/caCertificate`
+1. Create a directory for the root certificate and the signing configuration, for example: `mkdir /home/user/Desktop/caCertificate`
 2. Go to the created directory and create configuration file for your CA certificate: `touch caConfig.cnf`
 3. Create a database file for keeping the history of certificates signed by the CA: `touch database.txt`
 4. Create a serial file with initial serial number, which will be used to identify signed certificates. After assigning this serial to the signed certificate, the value in this file will be automatically incremented: `echo 1000 > serial`
 5. Create subdirectories for signed certificates and the certificate revocation list: `mkdir deviceCertificates crl`
-6. Fulfill the configuration file. This is the example configuration, which can be used after changing the directory `dir` to your own:
+6. Fulfill the configuration file. This is the example configuration, which can be used for tests after changing the directory `dir` to your own. If you want to use it in the production environment then please consult it first with some security specialist:
 
 ```text
 [ ca ]
 default_ca = CA_default
 [ CA_default ]
 # Directory and file locations.
-dir               = /home/kczu/Desktop/caCertificate
+dir               = /home/user/Desktop/caCertificate
 certs             = $dir # directory where the CA certificate will be stored.
 crl_dir           = $dir/crl # directory where the certificate revocation list will be stored.
 new_certs_dir     = $dir/deviceCertificates # directory where certificates signed by CA certificate will be stored.
@@ -219,7 +220,8 @@ emailAddress            = optional
 The intermediate certificate is signed by the CA certificate, but will also be used to sign device certificates.
 This step is optional.
 If you are fine with signing all the device certificates with one common CA certificate, then you can skip this step.
-However, if you need some certificates between CA certificate and the device certificate then it is the way to go:
+However, if you need some certificates between CA certificate and the device certificate then it is the way to go.
+Keep in mind that in the Cumulocity IoT cloud maximum length of the chain of certificates is currently restricted to 2, so you cannot use any intermediate certificate between your CA certificate and device certificate there:
 
 1. Create a new directory for intermediate certificates inside the caCertificate path: `mkdir intermediateCertificate`
 2. Go to this directory and create a configuration file for your intermediate certificate: `touch intermediateConfig.cnf`
@@ -265,11 +267,11 @@ Go into your caCertificate directory.
 1. Generate keystore as described in [Generating and signing certificates](#generating-and-signing-certificates) if you didn't do it yet.
 2. Get server certificate in pem format:
     ```shell
-    openssl s_client -showcerts -connect <cumulocity url>:<mqtt mutual ssl port (currently 1884, but that can be changed in the future)> | openssl x509 -outform PEM > serverCertificate.pem
+    openssl s_client -showcerts -connect <cumulocity url>:<mqtt mutual ssl port (currently 8883, but that can be changed in the future)> | openssl x509 -outform PEM > serverCertificate.pem
     ```
-    For example the full line to execute with filled url and port in my local environment looks like:
+    For example the full line to execute with filled url and port for my test tenant looks like:
     ```shell
-    openssl s_client -showcerts -connect cumulocity.default.svc.cluster.local:1884 | openssl x509 -outform PEM > serverCertificate.pem
+    openssl s_client -showcerts -connect mytenant.emea.cumulocity.com:8883 | openssl x509 -outform PEM > serverCertificate.pem
     ```
 
 3. Create new truststore with the server certificate:
@@ -282,7 +284,7 @@ Go into your caCertificate directory.
 
     * Via UI:
 
-        1. You have to open the device danagement application, then navigate to the Management tab and select trusted certificates.
+        1. You have to open the device management application, then navigate to the Management tab and select trusted certificates.
         2. Drop your caCert.pem (or intermediateCert.pem).
         3. Check the auto-registration field.
         4. Click on the certificate status to set it to "Enabled".
@@ -356,8 +358,7 @@ Then the instance of the MQTT client can be created with a single line:
 
     MqttClient mqttClient = new MqttClient(BROKER_URL, "d:" + CLIENT_ID, new MemoryPersistence());
 
-The BROKER_URL should contain protocol, url and port, which the client will connect to.
-For example, to connect the client to my local instance, I would fill it with the value: "ssl://cumulocity.default.svc.cluster.local:1884".
+The BROKER_URL should contain protocol, url and port, which the client will connect to, for example: `ssl://mytenant.emea.cumulocity.com:8883`.
 The CLIENT_ID value has to match the value of the Common Name of the device certificate that will be used.
 The "d:" prefix is used in Cumulocity IoT for device connections and it should not be removed or changed.
 Now the only thing that needs to be configured to establish the SSL connection is to fill paths in the code fragment:

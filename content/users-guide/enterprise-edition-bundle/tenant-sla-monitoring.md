@@ -79,4 +79,4 @@ The Tenant SLA Monitoring service will create alarms in case of the following sc
 
 These alarms are used to calculate the availability of the system in percentage, shown as measurements (see above).
 
-To view recent alarms, switch to the “Alarms” tabs of the management tenant´s source.
+To view recent alarms, switch to the **Alarms** tabs of the management tenant´s source.

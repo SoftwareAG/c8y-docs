@@ -223,7 +223,7 @@ For more details on managing binary-based configuration snapshots, see [Managing
 #### To add or edit a text-based configuration snapshot
 
 1. In the **Configuration** tab, you can manually add or edit the device configuration in the text field.
-2. Click **Save configuration to device** to save your edits.
+2. Click **Send configuration to device** to save your edits.
 
 ![Text-based configuration](/images/users-guide/DeviceManagement/devmgmt-devices-textconfig.png)
 

@@ -27,8 +27,8 @@ The agent will automatically start and the router can then be [registered with C
 |1.0.0|[download](http://resources.cumulocity.com/ntc/cumulocity-ntc-agent_1.0.0_arm-signed.ipk)|10.6.0|
 |1.0.2|[download](http://resources.cumulocity.com/ntc/cumulocity-ntc-agent_1.0.2_arm-signed.ipk)|10.6.0|
 |1.0.3|[download](http://resources.cumulocity.com/ntc/cumulocity-ntc-agent_1.0.3_arm-signed.ipk)|10.6.0|
-|1.1.0|[download](http://resources.cumulocity.com/ntc/cumulocity-ntc-agent_1.1.0_arm-signed.ipk)|10.6.6, 10.7.0|
-|1.1.1|[download](http://resources.cumulocity.com/ntc/cumulocity-ntc-agent_1.1.1_arm-signed.ipk)|10.6.6, 10.7.0|
+|1.1.0|[download](http://resources.cumulocity.com/ntc/cumulocity-ntc-agent_1.1.0_arm-signed.ipk)|10.6.6 and higher|
+|1.1.1|[download](http://resources.cumulocity.com/ntc/cumulocity-ntc-agent_1.1.1_arm-signed.ipk)|10.6.6 and higher|
 
 
 ### <a name="register-device"></a> Registering the router as a device to Cumulocity IoT

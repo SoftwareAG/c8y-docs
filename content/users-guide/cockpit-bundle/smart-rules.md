@@ -93,7 +93,7 @@ An example use case for deactivating a smart rule for a single object could be t
 
 >**Important:** A rule which is activated for a particular object only works if the rule is also globally enabled.  
 
-For group objects, you can separately select the children to which the rule should apply. 
+For group objects, you can separately select the children to which the rule should apply via the dropdown box. 
 
 <img src="/images/users-guide/cockpit/cockpit-smartrule-children.png" name="Smart rule select children" /> 
 

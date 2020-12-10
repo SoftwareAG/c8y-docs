@@ -18,11 +18,11 @@ Smart rules are parameterized. There are two sources for parameters:
 
 Smart rules can be seen
 
-* in the **Info** tab of a device or group. <br><br>
-![Smart rules info tab](/images/users-guide/cockpit/cockpit-smart-rules-info-tab.png)
-
 * in the **Smart rules** page accessible from the **Configuration** menu. <br><br>
-![Smart rules info tab](/images/users-guide/cockpit/cockpit-smart-rules-list.png)
+![Global smart rules](/images/users-guide/cockpit/cockpit-smart-rules-list.png)
+
+* in the **Info** tab of a device or group. <br><br>
+![Smart rules info tab](/images/users-guide/cockpit/cockpit-smartrule-info-tab.png)
 
 There are two different kinds of smart rules:
 
@@ -77,17 +77,19 @@ Click the menu icon at the right of an entry and then click **Inspect** to use t
 
 ### <a name="toggle-rules"></a> To enable/disable a smart rule
 
-If a rule is set to **Enabled** in the **Global smart rules** page, it is "turned on" (i.e. its underlying module gets deployed) globally so that the rule is available for devices and groups. If it is set to **Disabled** in the **Global smart rules** page it is "turned off" (module not deployed).
+If a smart rule is set to **Enabled** in the edit dialog (accessible from the **Global smart rules** page and the **Info** tab of a particular device/group), it is globally "turned on" (i.e. its underlying module gets deployed) so that the rule is available for devices and groups. 
 
-In addition to globally enabling/disabling a smart rule in the **Global smart rules** page, a smart rule can be deactivated (or activated) for a single object (group or device) in the **Info** tab of the particular object. 
+<img src="/images/users-guide/cockpit/cockpit-smartrule-enabled-toggle.png" name="Smart rule edit dialog" /> 
 
-Navigate to the **Info** tab of the group or device and deactivate/activate the respective rule for a specific device using the **Enable/Disable** toggle.
+If it is set to **Disabled** it is "turned off" (i.e. its underlying module is not deployed).
 
-<img src="/images/users-guide/cockpit/cockpit-smart-rules-enable.png" name="Smart rule in Info tab" />
+In addition to globally enabling/disabling a smart rule, a smart rule can be activated/deactivated for particular objects (groups or devices). If activated, which is the default setting, the rule will process events for these groups and devices. 
 
-If activated the rule will process events for these groups and devices. 
+To deactivate a rule, navigate to the **Info** tab of the particular group or device and set the **Active/Inactive** toggle to **Inactive** (or vice versa). 
 
->**Info:** A rule which is activated for a particular object only works if the rule is also globally enabled in the **Global smart rules** page, see [To create a smart rule](#create-rules).  
+<img src="/images/users-guide/cockpit/cockpit-smartrule-active-toggle.png" name="Smart rule in Info tab" /> 
+
+>**Important:** A rule which is activated for a particular object only works if the rule is also globally enabled.  
 
 An example use case for deactivating a smart rule for a single device could be that a particular device is generating too many threshold alarms. The rule can be deactivated for this device only, but still be active for all other objects.
 

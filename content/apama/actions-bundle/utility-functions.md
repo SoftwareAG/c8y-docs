@@ -41,13 +41,22 @@ Note that a cast operation will throw if the object is of a different type.
 
 ### currentTime and the TimeFormatter
 
-The read-only variable `currentTime` can be used to obtain the current server time. Apama deals with time using seconds since the Unix Epoc (1 Jan 1970 UTC). You can easily transform it to a human-readable form using the `TimeFormat` object.
+The read-only variable `currentTime` can be used to obtain the current server time. Apama deals with time using seconds since the Unix Epoch (1 Jan 1970 UTC). You can easily transform it to a human-readable form using the `TimeFormat` object. 
+The `TimeFormat` object can be used for formatting dates and times, and also for parsing them.
 
 Example:
 
 ```java
-send Event("", "c8y_HighTemperatureEvent", measurement.source, currentTime, "High temperature started at "+TimeFormat.format(currentTime, "yyyy.MM.dd G 'at' HH:mm:ss"), new dictionary<string,any>) to Event.SEND_CHANNEL;
+using com.apama.correlator.timeformat.TimeFormat;
+
+monitor Example {
+    action onload {
+        log TimeFormat.format(currentTime, "yyyy.MM.dd 'at' HH:mm:ss") at INFO;
+    }
+}
 ```
+
+For more information on `TimeFormat` and its functions, see [Using the TimeFormat Event Library](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fre-DevApaAppInEpl_using_the_time_format_plug_in.html) in the Apama documentation and the API Reference for EPL (ApamaDoc).
 
 ### inMaintenanceMode
 

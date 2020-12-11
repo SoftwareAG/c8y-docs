@@ -11,6 +11,7 @@ During the [device registration](#register-device), you can associate this devic
 If a device protocol has been changed after being associated to a device, the reflection of the change can take up to 10 minutes because of the refresh mechanism of the Actility Server Side Agent.
 
 > **Info:** Device protocol mapping only supports decoding for fixed byte positions based on the message type.
+The maximum number of bits for the device type is 32 bits (4 bytes).
 
 In order to create a device protocol, navigate to the Device Management application and select **Device protocols** in the **Device types** menu in the navigator. You can either import an existing device protocol or create a new one.
 

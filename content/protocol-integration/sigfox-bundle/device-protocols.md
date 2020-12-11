@@ -13,6 +13,7 @@ If a device protocol has been changed after being associated to a device, the re
 
 > **Info:** Device protocol mapping only supports decoding for fixed byte positions based on the message type.
 The maximum number of bits for the device type is 32 bits (4 bytes).
+The length for the device payload parts, which is set in the **Number of bits** field, can be maximum 32 bits (4 bytes).
 
 To create device protocols, select **Device protocols** in the **Device types** menu in the navigator of the Device Management application. You can either import an existing device protocol or create a new one.
 
@@ -68,7 +69,7 @@ In this sample payload structure the message ID is "1".
 
 Under **General**, specify a name for the value and the category under which it will be displayed in the values list.
 
-Under **Value selection**, specify from where the value should be extracted. In the **Start bit** field, indicate where the value information starts and in the **Number of bits** field, indicate the length of the information.
+Under **Value selection**, specify from where the value should be extracted. In the **Start bit** field, indicate where the value information starts and in the **Number of bits** field, indicate the length of the information. The maximum value for the number of bits is 32 bits (4 bytes).
 
 In this example, the "Channel 1 Type" information starts in byte 2 (i.e. start bit = "16") and is 1 byte long (i.e. number of bits = "8").
 

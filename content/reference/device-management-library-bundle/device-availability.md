@@ -16,7 +16,7 @@ Devices with `responseInterval` <= 0 are considered to be under maintenance. No 
 
 Devices that do not contain "c8y\_RequiredAvailability" are not monitored.
 
-#### c8y\_Availability
+#### c8y\_Availability and c8y\_Connection
 
 The availability information computed by Cumulocity IoT is stored in the fragments "c8y\_Availability" and "c8y\_Connection" of the device.
 

@@ -265,7 +265,7 @@ The icons representing the devices are color-coded. The color used follows these
 * Blue = At least one WARNING
 * Green = No alarm
 
-Click a device icon, to open popup with the following information:
+Click a device icon, to open a popup with the following information:
 
 * The device name. When clicked, the application navigates to the device.
 * The date at which the device last reported its location, if available.

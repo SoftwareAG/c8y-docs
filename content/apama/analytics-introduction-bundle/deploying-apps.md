@@ -61,6 +61,8 @@ The following permissions are required by the microservice in order to start up 
 - ROLE_BULK_OPERATION_READ
 - ROLE_SMS_ADMIN
 
+> **Info:** The above is the minimum list of permissions that a custom Apama microservice needs. If you are developing a custom microservice, you may add more permissions to the microservice manifest. 
+
 #### To deploy an Apama application as a microservice
 
 1. Develop your application in Software AG Designer in the usual way. 

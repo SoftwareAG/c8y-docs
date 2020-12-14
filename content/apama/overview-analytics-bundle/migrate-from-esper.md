@@ -74,6 +74,8 @@ Migrating from custom rules written in CEL to Apama EPL requires rewriting and r
 
 5. Manually recreate any scheduled exports from the existing tenant on the new tenant.
 
+   > **Info:** The "scheduled exports" feature separate from CEP (Esper) requires Cumulocity IoT 10.6 or later.
+
 6. Test the behavior of the new custom rules, checking for memory leaks and performance as well as correctness. 
 
 7. Remove the existing tenant after all CEP custom rules, Smart Rules and scheduled exports have been moved to or recreated on the new tenant.

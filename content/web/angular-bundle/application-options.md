@@ -56,7 +56,7 @@ https://<instance domain>/apps/cockpit?dynamicOptionsUrl=/apps/my-options/option
 
 ### Options
 
-Follow the [ApplicationOptions.html](http://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html) for a list of the built-in options. As in the end this is just a plain old javascript object this list can be easily extended  with any property a developer might want to include in his applications or extensions.
+Refer to [ApplicationOptions](http://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html) documentation for a list of the standard supported options. These options can easily be extended with any custom property a developer might want to include in their application or extensions just by adding it in the static, dynamic or URL way as described above.
 
 > **Tip:** `contentSecurityPolicy` for the current application can be checked in the following places:
 > 

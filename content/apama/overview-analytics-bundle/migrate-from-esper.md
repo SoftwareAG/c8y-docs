@@ -10,6 +10,9 @@ To migrate from CEL (Esper) to Apama in Cumulocity, follow these guidelines:
 3. Manually convert all CEP custom rules from the existing tenant into equivalent Apama EPL applications on the new tenant.
 4. Manually recreate all Smart Rules from the existing tenant on the new tenant.
 5. Manually recreate any scheduled exports from the existing tenant on the new tenant.
+
+   > **Info:** The "scheduled exports" feature separate from CEP (Esper) requires Cumulocity IoT 10.6 or later.
+   
 6. Remove the existing tenant after all CEP custom rules, Smart Rules and scheduled exports have been moved to or recreated on the new tenant.
 
 You can also choose to work with Software AG Professional Services to help ensure the migration is as smooth as possible. Software AG Professional Services can help migrate CEL code into Apama EPL code and they can also provide training on using Apama in Cumulocity.

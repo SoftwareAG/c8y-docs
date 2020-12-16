@@ -8,7 +8,7 @@ layout: redirect
 
 Die Seite **Nutzungsstatistiken** zeigt statistische Informationen für jeden Untermandanten an.
 
-![Subtenant statistics](/images/users-guide/enterprise-tenant/et-subtenants-usage-statistics.png)
+![Subtenant statistics](/images/benutzerhandbuch/enterprise-tenant/et-subtenants-usage-statistics.png)
 
 Die folgenden Informationen werden für jeden Untermandanten bereitgestellt (im Screenshot oben aus Platzgründen nicht vollständig zu sehen):
 
@@ -129,13 +129,13 @@ Die folgenden Informationen werden für jeden Untermandanten bereitgestellt (im 
 
 Außerdem werden benutzerdefinierte Attribute angezeigt, falls vorhanden.
 
-Benutzerdefinierte Attribute können in der [Attributsbibliothek](/users-guide/administration#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte [Benutzerdefinierte Attribute](#tenants-custom-properties) des Mandanten eingestellt werden.
+Benutzerdefinierte Attribute können in der [Attributsbibliothek](/benutzerhandbuch/administration-de#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte [Benutzerdefinierte Attribute](#tenants-custom-properties) des Mandanten eingestellt werden.
 
 Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum filtern, indem Sie einen Start- und einen Endzeitpunkt in der oberen Menüleiste eingeben und **Filter** klicken. Die Seite **Nutzungsstatistiken** zeigt die Zahlen für alle Untermandanten in diesem Zeitraum an.
 
 >**Info:** Wenn ein Mandant nach dem gewählten Zeitraum erstellt wurde, wird er angezeigt, aber die Zahlen stehen auf "0". 
 
-Sie können außerdem die Liste nach jeder Spalte filtern und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Siehe auch [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/users-guide/getting-started/#filtering).
+Sie können außerdem die Liste nach jeder Spalte filtern und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Siehe auch [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/benutzerhandbuch/getting-started-de/#filtering).
 
 > **Wichtig:** Der hier verwendete Datums-/Uhrzeitbereich kann sich aufgrund unterschiedlicher Zeitzonen von der Uhrzeit Ihres Servers unterscheiden.
 
@@ -143,7 +143,7 @@ Sie können außerdem die Liste nach jeder Spalte filtern und sortieren, indem S
 
 1. Klicken Sie CSV-Export rechts oben in der Menüleiste, um die aktuelle Ansicht der Statistikentabelle als CSV-Datei zu exportieren.
 2. Im darauf folgenden Dialog können Sie die CSV-Ausgabe individuell anpassen, indem Sie ein Feldtrennzeichen, ein Dezimaltrennzeichen und einen Zeichensatz festlegen.
-<br> <img src="/images/users-guide/enterprise-tenant/et-subtenant-statistics-export.png"></img> <br>
+<br> <img src="/images/benutzerhandbuch/enterprise-tenant/et-subtenant-statistics-export.png"></img> <br>
 3. Klicken Sie **Herunterladen**, um den Export zu starten.
 
 Die CSV-Datei wird in Ihr Dateisystem heruntergeladen.
@@ -220,7 +220,7 @@ Für Abrechnungszwecke wird zusätzlich zur CPU- und Speichernutzung die Ursache
 
 Die Informationen über die Microservice-Nutzung werden auf der Seite **Nutzungsstatistiken** aufgeführt.
 
-![Tenant statistics](/images/users-guide/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
+![Tenant statistics](/images/benutzerhandbuch/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
 
 Weitere Informationen finden Sie unter [Tenants > Tenant usage statistics](/reference/tenants/#tenant-usage-statistics) im Reference Guide. Beachten Sie, dass Detailinformationen nur bezüglich der täglichen Nutzung verfügbar sind. Bei einer zusammenfassenden Anfrage wird nur die Summe aller ausgegebenen Anfragen zurückgegeben.
 
@@ -235,7 +235,7 @@ Wenn Sie beispielsweise einen Microservice haben, dessen Skalierungsregel auf AU
 
 Beachten Sie, dass für jede Änderung der Anzahl der Instanzen ein Auditeintrag vorgenommen wird.
 
-![Audit logs](/images/users-guide/enterprise-tenant/et-audit-logs-microscaling.png)
+![Audit logs](/images/benutzerhandbuch/enterprise-tenant/et-audit-logs-microscaling.png)
 
 Weitere Informationen finden Sie unter [Auditing](/reference/auditing/) im Reference Guide.
 
@@ -344,7 +344,7 @@ Sämtliche Erweiterungen, die auf der Plattform als Microservice bereitgestellt 
 
 Ein Mandant, bei dem Ressourcen in Rechnung gestellt werden, kann den Zeitpunkt anzeigen, zu dem die Abrechnung in den [Audit-Logs](users-guide/administration/#audit-logs) geändert wurde. Die Audit-Log-Einträge, z.B. " Anwendung '...' wird von X auf Y Instanzen skaliert", enthalten Informationen über Änderungen von Instanzen und Ressourcen, die vom Microservice verbraucht werden.
 
-  <img src="/images/users-guide/enterprise-tenant/ee-ms-billing-audit-logs.png" name="Microservice audit logs"/>
+  <img src="/images/benutzerhandbuch/enterprise-tenant/ee-ms-billing-audit-logs.png" name="Microservice audit logs"/>
 
 Mandanten sollten auch in der Lage sein, den vollständigen Lebenszyklus einer Anwendung in den Anwendungsdetails anzuzeigen. Auf der Registerkarte **Status** werden im Abschnitt **Ereignisse** sehr niedrigstufige Phasen des Anwendungsstarts angezeigt. Einige der wichtigsten sind:
 
@@ -354,7 +354,7 @@ Mandanten sollten auch in der Lage sein, den vollständigen Lebenszyklus einer A
 
 >**Info:** Im Abschnitt **Ereignisse** wird kein Ereignis angezeigt, wenn der Microservice den Status "Bereit" erreicht hat, da dies entsprechend der Readiness-Probe geschieht.
 
-  <img src="/images/users-guide/enterprise-tenant/ee-ms-billing-events.png" name="Microservice details - Events"/>
+  <img src="/images/benutzerhandbuch/enterprise-tenant/ee-ms-billing-events.png" name="Microservice details - Events"/>
 
 Audit-Logs und Ereignisse werden entsprechend der Isolationsstufe im Mandantenbereich gespeichert. Bei Microservices mit Isolation mehrerer Mandanten handelt es sich dabei um den Mandanten, der der Eigentümer des Microservice ist, und bei Isolation nach Mandant um den abonnierten Mandanten.
 

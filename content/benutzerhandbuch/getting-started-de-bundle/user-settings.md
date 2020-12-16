@@ -8,7 +8,7 @@ aliases:
 
 Durch Klicken auf die Schaltfläche **Benutzer** rechts oben wird ein Menü geöffnet, das Zugriff auf verschiedene Aktionen oder Informationen ermöglicht.
 
-<img src="/images/users-guide/getting-started/getting-started-user-account-menu.png" alt="User account menu"  style="max-width: 60%">
+<img src="/images/benutzerhandbuch/getting-started-de/getting-started-user-account-menu.png" alt="User account menu"  style="max-width: 60%">
 
 Das Menü **Benutzer** enthält folgende Elemente:
 
@@ -54,7 +54,7 @@ Einige Kontoeinstellungen können vom Benutzer geändert werden.
 4. Klicken Sie  **Passwort ändern**, um Ihr aktuelles Passwort zu ändern. Weitere Informationen finden Sie unter [So ändern Sie Ihr Passwort](#change-password).
 5. Klicken Sie **Speichern**, um Ihre Eingaben zu speichern.
 
-<img src="/images/users-guide/getting-started/getting-started-user-settings.png" alt="User settings"  style="max-width: 100%">
+<img src="/images/benutzerhandbuch/getting-started-de/getting-started-user-settings.png" alt="User settings"  style="max-width: 100%">
 
 Die Sprache der Benutzeroberfläche wird nach folgenden Kriterien, in der aufgeführten Reihenfolge, ermittelt:
 
@@ -88,7 +88,7 @@ Die Benutzeroberfläche ist in folgenden Sprachen verfügbar:
 
 Stellen Sie sicher, dass Sie ein starkes Passwort gewählt haben. Um Sie dabei zu unterstützen, wird während der Passwortänderung ein Passwortstärke-Indikator angezeigt.
 
-<img src="/images/users-guide/getting-started/getting-started-password-strength.png" alt="Reset password" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/getting-started-de/getting-started-password-strength.png" alt="Reset password" style="max-width: 100%">
 
 Standardmäßig muss das Passwort 8 Zeichen enthalten. Ein starkes Passwort muss mindestens 3 der folgenden Zeichentypen enthalten: Großbuchstaben, Kleinbuchstaben, Zahlen und Symbole.
 

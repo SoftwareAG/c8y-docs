@@ -31,16 +31,16 @@ Außerdem ist das Zurücksetzen des Passworts in Cumulocity IoT für Benutzer de
 
 Klicken Sie **Benutzer** im Menü **Konto**, um eine Liste aller Benutzer in Ihrem Mandanten anzuzeigen.
 
-![Expanded view](/images/users-guide/Administration/admin-users-list.png)
+![Expanded view](/images/benutzerhandbuch/Administration/admin-users-list.png)
 
 Es wird eine Benutzerliste angezeigt, die für jeden Benutzer die folgenden Informationen bereitstellt:
 
 * Den Benutzernamen, der für den Zugang zum Mandanten verwendet wird
 * Name und E-Mail-Adresse des Benutzers, falls angegeben
 * Die globalen Rollen, die für den Benutzer vergeben wurden
-* Die [Stärke](/users-guide/getting-started/#login) des Passworts, das für den Benutzer gesetzt ist
+* Die [Stärke](/benutzerhandbuch/getting-started-de/#login) des Passworts, das für den Benutzer gesetzt ist
 
-Zum Filtern der Liste können Sie das Suchfeld links in der oberen Menüleiste verwenden. Weitere Informationen zur Suchfunktionalität finden Sie unter [Suchen](/users-guide/getting-started/#searching) im Abschnitt *Erste Schritte*.
+Zum Filtern der Liste können Sie das Suchfeld links in der oberen Menüleiste verwenden. Weitere Informationen zur Suchfunktionalität finden Sie unter [Suchen](/benutzerhandbuch/getting-started-de/#searching) im Abschnitt *Erste Schritte*.
 
 Darüber hinaus können Sie nach globalen Rollen filtern. Wählen Sie die gewünschten Rollen aus der Auswahlliste, und klicken Sie **Anwenden**, um die angezeigten Benutzer auf solche mit den ausgewählten Rollen zu beschränken.
 
@@ -106,11 +106,11 @@ Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie 
 </table>
 
 3. Wählen Sie die Anmeldeoptionen für den Benutzer aus.
-	* 	**Zwei-Faktor-Authentifizierung (SMS)**: Wenn ausgewählt, erhält der Benutzer per SMS einen Bestätigungscode, der zum Abschließen der Authentifizierung erforderlich ist. Die SMS wird an die oben konfigurierte Telefonnummer gesendet. Weitere Informationen finden Sie unter [Zwei-Faktor-Authentifizierung](/users-guide/administration/#tfa). 
-	* **Benutzer muss sein Passwort beim nächsten Anmelden zurücksetzen**: Wenn ausgewählt, müssen Sie ein Passwort angeben, das der Benutzer beim nächsten Anmelden zurücksetzen muss. Geben Sie ein Passwort ein und bestätigen Sie es. Während der Passworteingabe wird die Stärke des Passworts geprüft. Weitere Informationen zur Passwortstärke finden Sie unter [So melden Sie sich an der Cumulocity IoT-Plattform an](/users-guide/getting-started/#login).  
+	* 	**Zwei-Faktor-Authentifizierung (SMS)**: Wenn ausgewählt, erhält der Benutzer per SMS einen Bestätigungscode, der zum Abschließen der Authentifizierung erforderlich ist. Die SMS wird an die oben konfigurierte Telefonnummer gesendet. Weitere Informationen finden Sie unter [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration-de/#tfa). 
+	* **Benutzer muss sein Passwort beim nächsten Anmelden zurücksetzen**: Wenn ausgewählt, müssen Sie ein Passwort angeben, das der Benutzer beim nächsten Anmelden zurücksetzen muss. Geben Sie ein Passwort ein und bestätigen Sie es. Während der Passworteingabe wird die Stärke des Passworts geprüft. Weitere Informationen zur Passwortstärke finden Sie unter [So melden Sie sich an der Cumulocity IoT-Plattform an](/benutzerhandbuch/getting-started-de/#login).  
 	* **Link für das Zurücksetzen des Passworts per E-Mail senden**: Wenn ausgewählt, erhält der Benutzer eine E-Mail mit einem Link zum Setzen des Passworts. Die E-Mail wird zu der oben konfigurierten Adresse gesendet.
 
-4. Wählen Sie auf der rechten Seite die globalen Rollen für den Benutzer. Informationen zu den globalen Rollen finden Sie unter [Verwalten von Berechtigungen](/users-guide/administration#managing-permissions).
+4. Wählen Sie auf der rechten Seite die globalen Rollen für den Benutzer. Informationen zu den globalen Rollen finden Sie unter [Verwalten von Berechtigungen](/benutzerhandbuch/administration-de#managing-permissions).
 5. Klicken Sie **Speichern**, um Ihre Einstellungen zu speichern.
 
 Der neue Benutzer wird der Benutzerliste hinzugefügt.

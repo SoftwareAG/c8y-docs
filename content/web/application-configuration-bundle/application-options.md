@@ -1,7 +1,7 @@
 ---
 title: Applications options
 layout: redirect
-weight: 15
+weight: 10
 ---
 
 Each UI application can be customized with a set of defined options.

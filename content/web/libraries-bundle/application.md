@@ -1,8 +1,9 @@
 ---
-title: Applications
+title: Application Library
 layout: redirect
-weight: 60
+weight: 30
 ---
+
 
 The application package (`@c8y/apps`) provides example applications for the Web SDK.
 

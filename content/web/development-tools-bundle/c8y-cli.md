@@ -1,7 +1,7 @@
 ---
-title: Developer command line tool
+title: C8Y Command Line Tool
 layout: redirect
-weight: 20
+weight: 10
 ---
 
 To support you with bootstrapping, running and deploying applications we have build a Command Line Interface. The tool is the successor of the `cumulocity-node-tools`. To avoid conflicts, it listens to the new command `c8ycli` instead of `c8y`. You can install it via npm:
@@ -46,7 +46,7 @@ $ c8ycli new cockpit cockpit
 ```
 
 > **Tip:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the app you want to scaffold, e.g.:
-> 
+>
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0` will scaffold an app with the version `10.4.11.0`
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an app with the latest official release. Same as if used without the `-a` flag
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an app with the latest beta release.
@@ -70,5 +70,3 @@ Webpack options can be defined with ```--env.<option>=<value>```. These will be 
     --env.mode="production"
     --env.hmr
 ```
-
-

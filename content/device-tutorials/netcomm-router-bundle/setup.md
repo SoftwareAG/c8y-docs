@@ -22,9 +22,13 @@ The agent will automatically start and the router can then be [registered with C
 
 #### NTC-200 series agent software
 
-|Version|Download|
-|:---|:---|
-|1.0.0|[download](http://resources.cumulocity.com/ntc/cumulocity-ntc-agent_1.0.0_arm-signed.ipk)|
+|Version|Download|GA release version|
+|:---|:---|:---|
+|1.0.0|[download](http://resources.cumulocity.com/ntc/cumulocity-ntc-agent_1.0.0_arm-signed.ipk)|10.6.0|
+|1.0.2|[download](http://resources.cumulocity.com/ntc/cumulocity-ntc-agent_1.0.2_arm-signed.ipk)|10.6.0|
+|1.0.3|[download](http://resources.cumulocity.com/ntc/cumulocity-ntc-agent_1.0.3_arm-signed.ipk)|10.6.0|
+|1.1.0|[download](http://resources.cumulocity.com/ntc/cumulocity-ntc-agent_1.1.0_arm-signed.ipk)|10.6.6 and higher|
+|1.1.1|[download](http://resources.cumulocity.com/ntc/cumulocity-ntc-agent_1.1.1_arm-signed.ipk)|10.6.6 and higher|
 
 
 ### <a name="register-device"></a> Registering the router as a device to Cumulocity IoT
@@ -67,7 +71,7 @@ To register your NetComm router to Cumulocity IoT, you need the router’s seria
 
 ![Serial Number](/images/device-demos/casa-system-router/router-serial-number.png)
 
-You can find detailed information on the registration process in the User guide. Follow the description on how to connect a device manually in [Device Management > Connecting devices](/users-guide/device-management/#device-registration-manually). 
+You can find detailed information on the registration process in the User guide. Follow the description on how to connect a device manually in [Device Management > Connecting devices](/users-guide/device-management/#device-registration-manually).
 
 After clicking the **Accept** button on the Cumulocity IoT platform, navigate to **All devices**. The router should appear here after registration. The default name of a router is "&#60;model&#62; (S/N &#60;serial number&#62;)", where &#60;model&#62; is the device model name. For example, the above router would appear as “NTC-221 (S/N 191611192800580)”.
 

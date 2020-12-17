@@ -12,13 +12,13 @@ To easily create rules, the Cockpit application includes a smart rules builder w
 
 Smart rules are parameterized. There are two sources for parameters:
 
-**Rule Parameters** are provided by the user when creating a smart rule from a template. Examples are email addresses and alarm texts.
+**Rule parameters** are provided by the user when creating a smart rule from a template. Examples are email addresses and alarm texts.
 
-**Object Parameters** are stored in the group or device. These parameters can be edited after the smart rule has been created. An example includes min and max values for thresholds.
+**Object parameters** are stored in the group or device. These parameters can be edited after the smart rule has been created. An example includes min and max values for thresholds.
 
 Smart rules can be seen
 
-* in the **Smart rules** page accessible from the **Configuration** menu. <br><br>
+* in the **Global smart rules** page accessible from the **Configuration** menu. <br><br>
 ![Global smart rules](/images/users-guide/cockpit/cockpit-smart-rules-list.png)
 
 * in the **Info** tab of a device or group. <br><br>
@@ -26,12 +26,12 @@ Smart rules can be seen
 
 There are two different kinds of smart rules:
 
+- **Global**: These smart rules are created in a global context (**Smart rules** page, alarms, data explorer, etc.). They are only visible to users with the relevant permissions.
 - **Local**: Smart rules created in either a group or a device. They are visible to everyone with access to the group/device.
-- **Global**: These smart rules are created in a global context (**Smart rules** page, alarms, data explorer, etc...). They are only visible to users with the relevant permissions.
 
-In the **Smart rules** page, only the global smart rules are shown.
+In the **Global smart rules** page, only the global smart rules are shown.
 
-In a local context (group or device) and without the relevant permissions, only the local smart rules are shown. If the user has the relevant permissions, both local and global smart rules are shown.		
+In a local context (group or device), and without the relevant permissions, only the local smart rules are shown. If the user has the relevant permissions, both local and global smart rules are shown.		
 The permissions required in order to see the global smart rules are:
 
 - Smartrule = READ permission
@@ -41,13 +41,15 @@ The permissions required in order to see the global smart rules are:
 
 ### <a name="create-rules"></a>To create a smart rule
 
-Smart rules can both be created in the **Global smart rules** page, accessible from the **Configuration** menu in the navigator, or from the **Info** tab of any group or a device.
+Smart rules can both be created in the **Global smart rules** page (global smart rules), accessible from the **Configuration** menu in the navigator, or in the **Info** tab of any group or a device (local smart rules).
 
 1. Click **Add smart rule** in the top menu bar. <br>
 2. Select a smart rule template from the list. Note that this list might differ based on your installation.
 3. In the resulting dialog box, use the toggle to select if the rule will be enabled or disabled, see [To enable/disable a smart rule](#toggle-rules) for details.
-4. Next, configure the rule parameters. The parameters differ from rule to rule, for details see individual rule descriptions in [Smart rules collection](#smart-rules-collection).
+4. Next, configure the rule parameters. The parameters differ from rule to rule, for details see the individual rule descriptions in [Smart rules collection](#smart-rules-collection).
 6. Click **Create** to create the smart rule.
+
+>**Info:** When you create a smart rule in the **Global smart rules** page, it will be active for all assets by default, unless you select target asset(s) in step 4 of the dialog box, see also [To enable/disable a smart rule](#toggle-rules). 
 
 Smart rules can be instantiated multiple times.
 
@@ -83,9 +85,11 @@ If a smart rule is set to **Enabled** in the edit dialog (accessible from the **
 
 If it is set to **Disabled** it is "turned off" (i.e. its underlying module is not deployed).
 
-In addition to globally enabling/disabling a smart rule, a smart rule can be in **active** or **inactive** state for particular objects (groups or devices). If **active**, which is the default setting, the rule will process events for these groups and devices. 
+In addition to globally enabling/disabling a smart rule, a smart rule can be in **active** or **inactive** state for particular objects (groups or devices). If **active**, the rule will process events for these groups and devices. 
 
-To explicitly deactivate a rule, navigate to the **Info** tab of the particular group or device and set the **Active/Inactive** toggle to **Inactive** (and vice versa).  
+> **Info:** On creating a smart rule in the **Global smart rules** page, it will be active by default for all assets, unless you explicitly select target asset(s). If specific target assets are selected, it will be deactivated for all other assets. A local smart rule created in the **Info** page of a particular group or device is automatically activated for the respective target asset (and its children).
+
+To explicitly activate or deactivate a rule, navigate to the **Info** tab of the particular group or device and set the **Active/Inactive** toggle to **Active** or **Inactive** respectively.  
 
 <img src="/images/users-guide/cockpit/cockpit-smartrule-active-toggle.png" name="Smart rule in Info tab" /> 
 

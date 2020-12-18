@@ -12,31 +12,41 @@ To easily create rules, the Cockpit application includes a smart rules builder w
 
 Smart rules are parameterized. There are two sources for parameters:
 
-**Rule parameters** are provided by the user when creating a smart rule from a template. Examples are email addresses and alarm texts.
+* **Rule parameters** are provided by the user when creating a smart rule from a template. Examples are email addresses and alarm texts.
+* **Object parameters** are stored in the group or device. These parameters can be edited after the smart rule has been created. An example includes min and max values for thresholds.
 
-**Object parameters** are stored in the group or device. These parameters can be edited after the smart rule has been created. An example includes min and max values for thresholds.
+There are two different types of smart rules:
 
-Smart rules can be seen
+* **Global smart rules**
 
-* in the **Global smart rules** page accessible from the **Configuration** menu. <br><br>
-![Global smart rules](/images/users-guide/cockpit/cockpit-smart-rules-list.png)
+	Global smart rules are created in a global context (**Smart rules** page, alarms, data explorer, etc.). 
 
-* in the **Info** tab of a device or group. <br><br>
-![Smart rules info tab](/images/users-guide/cockpit/cockpit-smartrule-info-tab.png)
+	They are only visible to users with the relevant permissions. The permissions required in order to see the global smart rules are:
 
-There are two different kinds of smart rules:
+	* Smartrule = READ permission
+	* Smartrule = ADMIN permission
+	* CEP management = ADMIN permission
+<br>
+<br>
+* **Local smart rules**
 
-- **Global**: These smart rules are created in a global context (**Smart rules** page, alarms, data explorer, etc.). They are only visible to users with the relevant permissions.
-- **Local**: Smart rules created in either a group or a device. They are visible to everyone with access to the group/device.
+	Local smart rules are created in either a group or a device. They are visible to everyone with access to the group/device.
 
-In the **Global smart rules** page, only the global smart rules are shown.
 
-In a local context (group or device), and without the relevant permissions, only the local smart rules are shown. If the user has the relevant permissions, both local and global smart rules are shown.		
-The permissions required in order to see the global smart rules are:
+Smart rules can be seen in two places:
 
-- Smartrule = READ permission
-- Smartrule = ADMIN permission
-- CEP management = ADMIN permission
+* In the **Global smart rules** page accessible from the **Configuration** menu. 
+
+	![Global smart rules](/images/users-guide/cockpit/cockpit-smart-rules-list.png)
+	
+	In the **Global smart rules** page, only the global smart rules are shown.
+ 
+* In the **Info** tab of a device or group. 
+
+	![Smart rules info tab](/images/users-guide/cockpit/cockpit-smartrule-info-tab.png)
+
+	In a local context (group or device) the local smart rules are shown. For users with the relevant permissions, both local and global smart rules are shown.		
+
 
 
 ### <a name="create-rules"></a>To create a smart rule

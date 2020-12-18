@@ -70,19 +70,19 @@ To tell if the certificate is self-signed you can look at the "Issuer Name" and 
 If they are the same then it means that it is a self-signed certificate, otherwise the certificate claims to be signed by the issuer.
 To verify if the issuer really signed the certificate, you have to check the "Signature" field of the certificate.
 After decryption with the issuer's public key, the signature should match the data of the signed certificate.
-Signing a certificate by another means that if the issuer's certificate is trusted then the signed certificate also can be trusted.
+Signing a certificate by another, means that if the issuer's certificate is trusted then the signed certificate also can be trusted.
 For example if a platform trusts the customer certificate and that customer has 20 devices with individual certificates, then he does not have to upload each one of them.
 If these devices certificates are signed by the customer certificate, then the platform should trust them too.
 In this case, every device should send not only its own certificate, but the whole chain of certificates (so-called chain of trust) during the SSL handshake.
 The chain of certificates starts with the one belonging to the device, through all used intermediate certificates until it reaches the CA certificate trusted by the platform.
 Usually the chain of certificates does not have to contain the trusted CA certificate, so it can end with the certificate signed directly by the CA.
-However, in the Cumulocity IoT platform providing also the trusted CA certificate in the chain of certificates is required.
-Providing the chain of certificates let the platform verify the signatures of every certificate in the chain to make sure that the device certificate is signed directly or indirectly by the trusted certificate.
+However, in the Cumulocity IoT platform it is also required to provide the trusted CA certificate in the chain of certificates.
+Providing the chain of certificates lets the platform verify the signatures of every certificate in the chain to make sure that the device certificate is signed directly or indirectly by the trusted certificate.
 The chain of the certificates can differ in length, so if the platform trusts certificate A and certificate B is signed by A, and certificate C is signed by B, then certificate C will also be trusted.
 However, there are a few things to keep in mind:
 
 * Every certificate which is used to sign another certificate has to contain the extension "CA:TRUE".
-* The lengths of the chain of certificates can be restricted by the certificate extension "pathlen". This extension limits the amount of other CA certificates that can be placed in the chain between the device certificate and the one with that extension. For example the valid chain of the certificates with minimal values of path length would look like: A (CA:TRUE, pathlen: 2) -> B (CA:TRUE, pathlen: 1) -> C (CA:TRUE, pathlen: 0) -> D (device with CA:FALSE).
+* The lengths of the chain of certificates can be restricted by the certificate extension "pathlen". This extension limits the amount of other CA certificates that can be placed in the chain between the device certificate and the one with that extension. For example the valid chain of the certificates with minimal values of path length would look like this: "A (CA:TRUE, pathlen: 2) -> B (CA:TRUE, pathlen: 1) -> C (CA:TRUE, pathlen: 0) -> D (device with CA:FALSE)"".
 
 The structure of an X.509 certificate in version 3 looks like this:
 
@@ -105,7 +105,7 @@ To show how the authentication with X.509 certificates works, there is an exampl
 ![Simplified mutual SSL handshake](/images/mqtt/sslMutualSimplified.png)
 
 A server knows that the client is the owner of the certificate it sent, after the server has decrypted the encrypted copy of the message using the client's public key.
-The client knows that the server is the owner of the certificate it sent, if server uses the correct session key, because that means that the server decrypted it with its private key.
+The client knows that the server is the owner of the certificate it sent, if the server uses the correct session key, because that means that the server decrypted it with its private key.
 In basic authentication with username and password, the password has to be sent over the network to authenticate the user.
 When certificates are used, the private key is never sent, which makes the use of the certificates much more secure than the basic authentication with username and password.
 
@@ -113,7 +113,7 @@ There are 3 important terms related to X.509 certificates, which everyone should
 
 * Keystore is a file which a device uses to authenticate itself in the mutual SSL handshake. That means that keystore contains the chain of the certificates used by the device and the private key of the device.
 * Truststore is a file which contains all trusted certificates. A server or device would only establish a connection with something that is using a certificate from their truststore. When the chain of certificates is used, only one of the certificates in the chain must be trusted to establish the connection.
-* Certificate Authority (CA) in the simplest sense, a CA is an entity that signs certificates.
+* Certificate Authority (CA) in the simplest sense, is an entity that signs certificates.
 
 Both keystore and truststore can be stored in the same file, but for security reasons we recommended you to keep them separately.
 The truststore contains public data and the keystore contains the private key, which only to the owner should know.
@@ -129,11 +129,11 @@ To generate certificates we will use the OpenSSL toolkit. If you do not have it 
 #### Creating a self-signed CA certificate
 
 1. Create a directory for the root certificate and the signing configuration, for example: `mkdir /home/user/Desktop/caCertificate`
-2. Go to the created directory and create configuration file for your CA certificate: `touch caConfig.cnf`
+2. Go to the created directory and create a configuration file for your CA certificate: `touch caConfig.cnf`
 3. Create a database file for keeping the history of certificates signed by the CA: `touch database.txt`
 4. Create a serial file with initial serial number, which will be used to identify signed certificates. After assigning this serial to the signed certificate, the value in this file will be automatically incremented: `echo 1000 > serial`
 5. Create subdirectories for signed certificates and the certificate revocation list: `mkdir deviceCertificates crl`
-6. Fulfill the configuration file. This is the example configuration, which can be used for tests after changing the directory `dir` to your own. If you want to use it in the production environment then please consult it first with some security specialist:
+6. Fill in the configuration file. This is the example configuration, which can be used for tests after changing the directory `dir` to your own. If you want to use it in the production environment then please consult it first with some security specialist:
 
 ```text
 [ ca ]
@@ -154,7 +154,7 @@ certificate       = $dir/caCert.pem # CA certificate, which will be the issuer o
 default_md        = sha256 # hash function
 default_days      = 375 # default number of days for which the certificate will be valid since the date of its generation.
 preserve          = no # if set to 'no' then it will determine the same order of the distinguished name in every signed certificate.
-policy            = signing_policy # the name of the tag in this file that specifies the fields of the certificate. The fields have to be fulfilled or even match the CA certificate values to be signed.
+policy            = signing_policy # the name of the tag in this file that specifies the fields of the certificate. The fields have to be filled in or even match the CA certificate values to be signed.
 
 # For certificate revocation lists.
 crl               = $crl_dir/caCrl.pem # CA certificate revocation list
@@ -179,7 +179,7 @@ organizationalUnitName          = Organizational Unit Name
 commonName                      = Common Name
 emailAddress                    = Email Address
 
-# A default value for each field can be set by adding an extra line with field name and postfix "_default". For example: countryName_default = PL. If you add this line here, then leaving country name empty during certificate creation will result in the value 'PL' being used. If the default value was specified there, but during certificate creation you do not want to use this value, then instead use "." as the value. It will leave the value empty and not use the default.
+# A default value for each field can be set by adding an extra line with field name and postfix "_default". For example: "countryName_default = PL". If you add this line here, then leaving country name empty during certificate creation will result in the value "PL" being used. If the default value was specified there, but during certificate creation you do not want to use this value, then instead use "." as the value. It will leave the value empty and not use the default.
 
 # default extensions for the CA certificate.
 [ v3_ca ]
@@ -199,9 +199,9 @@ keyUsage = nonRepudiation, digitalSignature, keyEncipherment
 [ crl_ext ]
 authorityKeyIdentifier=keyid:always
 
-# Policy of certificates signing. It specifies which certificate fields have to be fulfilled during certificate creation. There are three possible values here:
+# Policy of certificates signing. It specifies which certificate fields have to be filled in during certificate creation. There are three possible values here:
 # "optional" - field value can be empty
-# "supplied" - field value must be fulfilled
+# "supplied" - field value must be filled in
 # "match" - signed certificate field value must match the CA certificate value to be created
 [ signing_policy ]
 countryName             = optional
@@ -211,30 +211,30 @@ organizationalUnitName  = optional
 commonName              = supplied # every certificate should have a unique common name, so this value should not be changed.
 emailAddress            = optional
 ```
-7. Create a private key with aes256 encryption and the length of at least 2048 bits. You will also be asked to set the password for the key during its creation: `openssl genrsa -aes256 -out caKey.pem 4096`
-8. Create a self-signed certificate using specifications from configuration file. The days parameter says how long this certificate will be valid since the generation, so set it as you prefer: `openssl req -config caConfig.cnf -key caKey.pem -new -x509 -days 7300 -sha256 -extensions v3_ca -out caCert.pem`
-9. You can print the created certificate with command: `openssl x509 -noout -text -in caCert.pem`
+7. Create a private key with aes256 encryption and a length of at least 2048 bits. You will also be asked to set the password for the key during its creation: `openssl genrsa -aes256 -out caKey.pem 4096`
+8. Create a self-signed certificate using specifications from the configuration file. The "days" parameter says how long this certificate will be valid since the generation, so set it as you prefer: `openssl req -config caConfig.cnf -key caKey.pem -new -x509 -days 7300 -sha256 -extensions v3_ca -out caCert.pem`
+9. You can print the created certificate with the command: `openssl x509 -noout -text -in caCert.pem`
 
-#### Creating intermediate certificate
+#### Creating an intermediate certificate
 
 The intermediate certificate is signed by the CA certificate, but will also be used to sign device certificates.
 This step is optional.
 If you are fine with signing all the device certificates with one common CA certificate, then you can skip this step.
-However, if you need some certificates between CA certificate and the device certificate then it is the way to go.
-Keep in mind that in the Cumulocity IoT cloud maximum length of the chain of certificates is currently restricted to 2, so you cannot use any intermediate certificate between your CA certificate and device certificate there:
+However, if you need some certificates between the CA certificate and the device certificate then it is the way to go.
+Keep in mind that in the Cumulocity IoT cloud the maximum length of the chain of certificates is currently restricted to 2, so you cannot use any intermediate certificate between your CA certificate and the device certificate there:
 
 1. Create a new directory for intermediate certificates inside the caCertificate path: `mkdir intermediateCertificate`
 2. Go to this directory and create a configuration file for your intermediate certificate: `touch intermediateConfig.cnf`
 3. Create a database file for keeping the history of certificates signed by the intermediate certificate: `touch database.txt`
 4. Create a serial file with initial serial number, which will be used to identify signed certificates: `echo 1000 > serial`
-5. Create subdirectories for signed certificates and the certificate revocation list: `mkdir deviceCertificates crl`
-6. Fulfill the configuration file as in the CA configuration, but remember to change the general directory ("dir") to your intermediateCertificate folder. Also don't forget to change private_key, certificate and crl names from current with "ca" prefix to "intermediate" prefix (for example: caKey.pem -> intermediateKey.pem), because files with this prefix will be generated in the next steps.
+5. Create subdirectories for the signed certificates and the certificate revocation list: `mkdir deviceCertificates crl`
+6. Fill in the configuration file as in the CA configuration, but remember to change the general directory ("dir") to your intermediateCertificate folder. Also don't forget to change private_key, certificate and crl names from current with "ca" prefix to "intermediate" prefix (for example: caKey.pem -> intermediateKey.pem), because files with this prefix will be generated in the next steps.
 7. Generate a private key for the intermediate certificate: `openssl genrsa -aes256 -out intermediateKey.pem 4096`
 8. Generate a certificate signing request: `openssl req -config intermediateConfig.cnf -new -sha256 -key intermediateKey.pem -out intermediateCsr.pem`
 9. Go to the caCertificate directory and generate a signed intermediate certificate. You have to use the CA configuration here, because the private key specified in the configuration file will be used to sign the certificate: `openssl ca -config caConfig.cnf -extensions v3_ca -days 3650 -notext -md sha256 -in intermediateCertificate/intermediateCsr.pem -out intermediateCertificate/intermediateCert.pem`
 10. Verify if the generated certificate is correctly signed by CA: `openssl verify -CAfile caCert.pem intermediateCertificate/intermediateCert.pem`   
 
-#### Creating device certificate signed by CA or intermediate
+#### Creating a device certificate signed by CA or intermediate
 
 1. Go to the directory of your caCertificate or intermediateCertificate depending on which one is used to sign the device certificate.
 2. Generate the private key for the new certificate: `openssl genrsa -aes256 -out deviceCertificates/deviceKey.pem 4096`
@@ -254,27 +254,23 @@ Go into your caCertificate directory.
 
 1. Go into your deviceCertificates directory with the device's private key and the generated chain of certificates. If you are using an intermediate certificate between the CA certificate and the device certificate then it will be the `caCertificate/intermediateCertificate/deviceCertificates` path, otherwise it will be `caCertificate/deviceCertificates`. Create keystore using the generated chain of certificates and the private key of the device: `openssl pkcs12 -export -name devicekeyentry -inkey deviceKey.pem -in deviceCertChain.pem -out deviceKeystore.pkcs12`
 2. If you want to convert your keystore to JKS format then you would need the Java Keytool which is usually downloaded together with Java Development Kit: `keytool -importkeystore -srckeystore deviceKeystore.pkcs12 -srcstoretype PKCS12 -destkeystore deviceKeystore.jks -deststoretype JKS`
-3. Now you can create a truststore, which will contain the server certificate. It has to be created with Java Keytool (openssl does not support creating truststore, so if you don't want to use Java keytool then you will have to keep every trusted certificate in separated pem file):
+3. Now you can create a truststore, which will contain the server certificate. It has to be created with Java Keytool (openssl does not support creating truststore, so if you don't want to use Java keytool then you will have to keep every trusted certificate in a separate pem file):
     * In PKCS12 format: `keytool -importcert -noprompt -keystore deviceTruststore.pkcs12 -alias servercertificate -file serverCertificate.pem`
     * In JKS format: `keytool -import -file caCert.pem -alias servercertificate -keystore deviceTruststore.jks`
-4. Optionally you can instead of creating a new file for the truststore, add trusted certificates to your created keystore and store everything in the one file, which is not the recommended solution:
+4. Optionally, instead of creating a new file for the truststore, you can add the trusted certificates to your created keystore and store everything in one file, which is not the recommended solution:
     * If your keystore is in the PKCS12 format: `keytool -importcert -noprompt -keystore deviceKeystore.pkcs12 -alias servercertificate -file serverCertificate.pem`
     * If your keystore is in the JKS format: `keytool -import -file trustedCertificate.pem -alias servercertificate -keystore deviceKeystore.jks`
-5. You can check the content of your keystore (or truststore) with command: `keytool -list -v -keystore deviceKeystore.jks`
+5. You can check the content of your keystore (or truststore) with the command: `keytool -list -v -keystore deviceKeystore.jks`
 
 ### How to test created certificates with MQTT.fx client
 
-1. Generate keystore as described in [Generating and signing certificates](#generating-and-signing-certificates) if you didn't do it yet.
-2. Get server certificate in pem format:
+1. Generate a keystore as described in [Generating and signing certificates](#generating-and-signing-certificates) if you didn't do it yet.
+2. Get the server certificate in pem format:
     ```shell
     openssl s_client -showcerts -connect <cumulocity url>:<mqtt mutual ssl port (currently 8883, but that can be changed in the future)> | openssl x509 -outform PEM > serverCertificate.pem
     ```
-    For example the full line to execute with filled url and port for my test tenant looks like:
-    ```shell
-    openssl s_client -showcerts -connect mytenant.emea.cumulocity.com:8883 | openssl x509 -outform PEM > serverCertificate.pem
-    ```
 
-3. Create new truststore with the server certificate:
+3. Create a new truststore with the server certificate:
 
     ```shell
     keytool -import -file serverCertificate.pem -alias servercertificate -keystore deviceTruststore.jks
@@ -284,7 +280,7 @@ Go into your caCertificate directory.
 
     * Via UI:
 
-        1. You have to open the device management application, then navigate to the Management tab and select trusted certificates.
+        1. You have to open the device management application, then navigate to the **Management** tab and select **Trusted certificates**.
         2. Drop your caCert.pem (or intermediateCert.pem).
         3. Check the auto-registration field.
         4. Click on the certificate status to set it to "Enabled".
@@ -292,14 +288,14 @@ Go into your caCertificate directory.
         6. Click **Add certificate**.
 
       <br/>
-      After completing all the steps excluding adding the certificate, the form should look like this:
+      After completing all the steps except adding the certificate, the form should look like this:
 
       ![MQTT.fx configuration](/images/mqtt/mqttTrustedCertificateAddition.png)
 
     * Via REST:
 
         1. Display your CA (or intermediate) certificate, which you want to upload to the Cumulocity IoT platform and copy its PEM value, which starts with "-----BEGIN CERTIFICATE-----" and ends with "-----END CERTIFICATE-----" (including the hyphens). Remove new line symbols (`\n`) if they were added automatically at the end of each line: `openssl x509 -in caCert.pem -text`
-        2. Send it in the POST request to the platform.
+        2. Send it to the platform via POST request:
 
         ```text    
             Required role: ROLE_TENANT_ADMIN
@@ -318,7 +314,7 @@ Go into your caCertificate directory.
 5. Download and install the newest MQTT.fx client from: http://www.jensd.de/apps/mqttfx/
 6. In MQTT.fx click **Extras** at the top and then **Edit Connection Profiles**
 7. Insert the Cumulocity URL in the "Broker address" line.
-8. Insert SSL port in the "Broker port" line.
+8. Insert the SSL port in the "Broker port" line.
 9. In the "Client ID" field, insert the common name of your device certificate.
 10. Select SSL/TLS as the authentication type.
 11. Click **Enable SSL/TLS**.
@@ -334,7 +330,7 @@ Go into your caCertificate directory.
 21. The "PEM formatted" field should be checked.
 22. Save and close the settings.
 23. Select the edited profile and click connect.
-24. You should be succesfully connected and the buttons "Disconnect", "Publish" and "Subscribe" should be now active. This means that your connection with the certificates work correctly.
+24. You should be succesfully connected and the buttons "Disconnect", "Publish" and "Subscribe" should be active now. This means that your connection with the certificates work correctly.
 
 The connection settings should look like this:
 
@@ -342,10 +338,10 @@ The connection settings should look like this:
 
 ### Cumulocity MQTT Example Client
 
-The code of our example MQTT client implemented in Java, which connects to the platform using x.509 certficiates, is available there: https://bitbucket.org/m2m/cumulocity-examples/src/develop/mqtt-client/.
+The code of our example MQTT client implemented in Java, which connects to the platform using x.509 certficiates, is available here: https://bitbucket.org/m2m/cumulocity-examples/src/develop/mqtt-client/.
 This example client uses the implementation of Eclipse Paho, which is described in detail on their website: https://www.eclipse.org/paho/index.php?page=documentation.php.
 
-Here is an example that shows how to easily add the needed dependency in Maven to use Eclipse Paho client:
+Here is an example that shows how to add the needed dependency in Maven to use Eclipse Paho client:
 
     <dependency>
         <groupId>org.eclipse.paho</groupId>
@@ -358,7 +354,7 @@ Then the instance of the MQTT client can be created with a single line:
 
     MqttClient mqttClient = new MqttClient(BROKER_URL, "d:" + CLIENT_ID, new MemoryPersistence());
 
-The BROKER_URL should contain protocol, url and port, which the client will connect to, for example: `ssl://mytenant.emea.cumulocity.com:8883`.
+The BROKER_URL should contain protocol, url and port, which the client will connect to, like this: `<cumulocity url>:8883`.
 The CLIENT_ID value has to match the value of the Common Name of the device certificate that will be used.
 The "d:" prefix is used in Cumulocity IoT for device connections and it should not be removed or changed.
 Now the only thing that needs to be configured to establish the SSL connection is to fill paths in the code fragment:
@@ -377,12 +373,12 @@ Now the only thing that needs to be configured to establish the SSL connection i
 * TRUSTSTORE_PASSWORD is the password to access the truststore.
 * TRUSTSTORE_FORMAT should be "JKS" or "PKCS12" depending on the file format. The path is provided by TRUSTSTORE.
 
-After fulfilling this data, the example client will use the provided data to connect to the specified platform using certificates.
+After filling in this data, the example client will use the provided data to connect to the specified platform using certificates.
 The example also shows how to create the callback for the connection.
 First thing is to create the class which implements the interface `MqttCallbackExtended`.
 Then such a class can be created and an instance of it can be provided to the MQTT client: `mqttClient.setCallback(this);`.
 
-In general MQTT Eclipse Paho Client uses Java Secure Socket Extension, which is the part of the Java Development Kit, to provide secure connections via SSL.
+In general, the MQTT Eclipse Paho Client uses the Java Secure Socket Extension, which is part of the Java Development Kit, to provide secure connections via SSL.
 JSSE provides the Java implementation of the SSL and TLS protocol, which can be configured by developers using its classes.
 The documentation of the Java Secure Socket Extension shows how the SSL connection is established and provides some examples of customizing the implementation.
 The full document is available on the [official Oracle website](https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/JSSERefGuide.html).

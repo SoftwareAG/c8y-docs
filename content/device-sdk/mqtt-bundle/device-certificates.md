@@ -17,11 +17,10 @@ Devices connecting to the platform with certificates do not need to provide the 
 #### General requirements for connecting devices with certificates
 
 * The CA certificate may also be a self-signed certificate.
-* Certificates used by devices must be a full chain, including the uploaded CA certificate.
-* The device needs to trust the Cumulocity IoT certificate.
-* Uploaded certificates have to be version 3.
+* Certificates used by devices must contain the full certificate chain, including the uploaded CA certificate.
+* The device needs to trust the Cumulocity IoT server certificate.
+* Certificates must be uploaded as X.509 version 3 certificates.
 * Uploaded certificates have to have set `BasicConstraints:[CA:true]`.
-* Devices have to be registered or the uploaded certificates need to have the flag _autoRegistrationEnabled_ (see below for details).
 * Certificates used by devices must be signed either by uploaded CA certificates or by a chain of certificates signed by uploaded CA certificates.
 
 ### Registering devices using certificates
@@ -37,6 +36,10 @@ The user for the device will be created during the first MQTT call, if at least 
 The user for the device can also be created via the standard bulk registration in Device Management.
 
 The CSV file used in bulk registration should meet the requirements described in [Bulk device credentials](/reference/device-credentials/#bulk-device-credentials) in the *Reference guide*. Moreover, it is required that the CSV file has an additional column "AUTH_TYPE" with value "CERTIFICATES", and that the column "CREDENTIALS" is either not present or has an empty value.
+
+**Single registration**
+
+Single registration is not supported for devices which are going to use certificates for authentication.
 
 ### JWT Token retrieval
 
@@ -354,7 +357,7 @@ Then the instance of the MQTT client can be created with a single line:
 
     MqttClient mqttClient = new MqttClient(BROKER_URL, "d:" + CLIENT_ID, new MemoryPersistence());
 
-The BROKER_URL should contain protocol, url and port, which the client will connect to, like this: `<cumulocity url>:8883`.
+The BROKER_URL should contain protocol, url and port, which the client will connect to, like this: `ssl://<cumulocity url>:8883`.
 The CLIENT_ID value has to match the value of the Common Name of the device certificate that will be used.
 The "d:" prefix is used in Cumulocity IoT for device connections and it should not be removed or changed.
 Now the only thing that needs to be configured to establish the SSL connection is to fill paths in the code fragment:

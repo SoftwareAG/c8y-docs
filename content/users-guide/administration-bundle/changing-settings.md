@@ -425,7 +425,7 @@ The following provider settings may currently be specified:
 - [Impact](/protocol-integration/impact)
 - [Actility LoRa](/protocol-integration/lora-actility)
 - [Sigfox](/protocol-integration/sigfox)
-- [SIM](/protocol-integration/connectivity)
+- [SIM](/users-guide/device-management/#connectivity)
 
 ![Provider settings](/images/users-guide/Administration/admin-settings-connectivity.png)
 

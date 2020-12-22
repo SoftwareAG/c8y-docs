@@ -76,7 +76,7 @@ you can select a single group or a single device (just one, not multiple). To en
 
 * Check if the device is in [maintenance](/users-guide/device-management#maintenance-mode) mode. In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Alarm mapping](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 >**Important:** There is a limit of 160 characters as a total count. If you use variables and after applying the variables the text counts more than 160 characters the SMS will not be sent.
 
@@ -86,7 +86,7 @@ you can select a single group or a single device (just one, not multiple). To en
 
 When an alarm is created, an email is sent.
 
->**Info:** Note that the corresponding emails are send with "text/html" as content type. 
+>**Info:** Note that the corresponding emails are send with "text/html" as content type.
 
 **Parameters**
 
@@ -138,7 +138,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 * Check if the device is in [maintenance](/users-guide/device-management#maintenance-mode) mode. In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Alarm mapping](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 * Check your spam folder.
 
@@ -201,7 +201,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 * Check if the device is in [maintenance](/users-guide/device-management#maintenance-mode) mode. In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Alarm mapping](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 
 ### On alarm duration increase severity
@@ -328,7 +328,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 * Check if the device is in [maintenance](/users-guide/device-management#maintenance-mode) mode. No new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Alarm mapping](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 ### On geofence send e-mail
 
@@ -336,7 +336,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 If a geofence border is crossed, an email is sent.
 
->**Info:** Note that the corresponding emails are send with "text/html" as content type. 
+>**Info:** Note that the corresponding emails are send with "text/html" as content type.
 
 **Parameters**
 
@@ -644,9 +644,9 @@ For each incoming measurement value, the rule performs the following steps:
 * The data of the red and yellow range is collected from either:
 
 - the Data Point Library (control parameter).
-- the source object (the measurement). If found, ranges from the source object's data point override are merged. 
+- the source object (the measurement). If found, ranges from the source object's data point override are merged.
 
-If no red/yellow ranges are defined in the merged parameters, no alarms are generated. 
+If no red/yellow ranges are defined in the merged parameters, no alarms are generated.
 
 > **Info:** Range values defined in the source object have a higher priority than those defined in the Data Point Library. You can also just overwrite a single value (e.g. yellow range max) by setting it in the source object. The other values will then be taken from the Data Point Library.
 
@@ -662,7 +662,7 @@ If no red/yellow ranges are defined in the merged parameters, no alarms are gene
 
 * Check if the device is in [maintenance](/users-guide/device-management#maintenance-mode) mode. In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Alarm mapping](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 * Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 
@@ -734,7 +734,7 @@ For details on activating/deactivating a smart rule, see <a href="#toggle-rules"
 
 * Check if the device is in [maintenance](/users-guide/device-management#maintenance-mode) mode. In this case no new alarm will be created because of suppression policy.
 
-* If you have configured an alarm mapping rule (see [Administration > Reprioritizing alarms](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
+* If you have configured an alarm mapping rule (see [Administration > Alarm mapping](/users-guide/administration#reprio-alarms)) which changes the alarm severity, the alarm may have different severity than expected.
 
 * Check if an alarm was already cleared by the next scheduled measurements with resulting value in a green range.
 

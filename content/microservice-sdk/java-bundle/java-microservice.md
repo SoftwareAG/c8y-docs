@@ -190,7 +190,7 @@ Your microservice application has to be packed as a Docker image in a ZIP file i
 </build>   
 ```
 
-#### Create a Java application
+#### <a name="java-example"></a>Create a Java application
 
 Edit the _App.java_ file located in the folder */src/main/java/c8y/example* with the following content:
 
@@ -468,4 +468,4 @@ You may also use the name parameter, e.g. <http://localhost:8082/hello?name=Neo>
 
 ### Improving the microservice
 
-Now that you have done your first steps, check out the section [Developing microservices](/microservice-sdk/java#developing-microservice) to find out what else can be implemented. Review also the [Java example](/microservice-sdk/http) in this guide to learn using more features of the microservice SDK and REST API by employing third-party services.
+Now that you have done your first steps, check out the section [Developing microservices](/microservice-sdk/java#developing-microservice) to find out what else can be implemented. Review also the [Java example](/microservice-sdk/java/#java-example) in this guide to learn using more features of the microservice SDK and REST API by employing third-party services.

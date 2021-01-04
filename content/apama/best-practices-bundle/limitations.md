@@ -26,11 +26,11 @@ When designing an Apama solution to be deployed within any form of Cumulocity Io
 
 	The Apama features affected by this include:
 
-	* 	Apama Database Connector (ADBC).
-	* 	Correlator-integrated support for the Java Message Service (JMS).
-	* 	Software AG Digital Event Services.
-	* 	Distributed memory stores.
-	* 	Connections between correlators.
+	* Apama Database Connector (ADBC).
+	* Correlator-integrated support for the Java Message Service (JMS).
+	* Software AG Digital Event Services.
+	* Distributed memory stores.
+	* Connections between correlators.
 
 * For security and implementing user access control, Cumulocity IoT does not make the correlator port available to external processes – see [Developing applications > Cumulocity microservices](/concepts/applications#microservices) in the *Concepts guide*.
 

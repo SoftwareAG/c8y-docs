@@ -43,7 +43,7 @@ Before starting developing your C++ agents for Cumulocity IoT, you need to build
 </tbody>
 </table>
 
-> **Info**: There are several libcurl packages against different TLS libraries. You can choose one whatever you prefer.
+> **Info:** There are several libcurl packages against different TLS libraries. You can choose the one you prefer.
 
 ### Compiling the library
 

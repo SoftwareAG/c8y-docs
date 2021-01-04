@@ -8,7 +8,7 @@ The Cumulocity IoT Linux agent repository includes the _cumulocity-agent.conf_ f
 
 ### Device ID
 
-A unique device ID is required to register your device. You can specify it using an "id" key. Otherwise, the agent will use a device's serial number recorded in the following paths to determine the device ID.
+A unique device ID is required to register your device. You can specify it using an "id" key. If not specified, the agent will use the device's serial number recorded in the following paths to determine the device ID.
 
 - /sys/devices/virtual/dmi/id/product_serial
 - /proc/cpuinfo

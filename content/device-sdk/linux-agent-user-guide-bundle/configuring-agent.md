@@ -6,6 +6,21 @@ weight: 50
 
 The Cumulocity IoT Linux agent repository includes the _cumulocity-agent.conf_ file. When you install the agent, the configuration file is deployed to _/usr/share/cumulocity-agent/cumulocity-agent.conf_ by default. The agent reads this configuration file at startup. You can manually edit this file to adjust different parameters to suit your needs.  
 
+### Device ID
+
+A unique device ID is required to register your device. You can specify it using an "id" key. Otherwise, the agent will use a device's serial number recorded in the following paths to determine the device ID.
+
+- /sys/devices/virtual/dmi/id/product_serial
+- /proc/cpuinfo
+- /sys/devices/virtual/dmi/id/product_uuid
+- /sys/hypervisor/uuid
+- /var/lib/dbus/machine-id
+- /etc/machine-id
+
+|Parameter|Example value|
+|---|---|
+|id|id=myagent|
+
 ### Server URL
 
 The agent by default connects to the cumulocity.com instance. In case you’re using a different instance, you can change the server URL.

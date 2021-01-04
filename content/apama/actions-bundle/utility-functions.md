@@ -6,7 +6,7 @@ layout: redirect
 
 ### Access fragments
 
-You can access fragments via the `params` dictionary of most events. The `AnyExtractor` object can be constructed to help you extract data from any objects containing multiple sub-fragments and access:
+You can access fragments via the `params` dictionary of most events. The `AnyExtractor` object can be constructed to help you extract data from any objects containing multiple subfragments and access:
 
 * action getInteger(string path) returns integer
 

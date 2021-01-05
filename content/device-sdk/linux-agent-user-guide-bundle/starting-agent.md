@@ -1,7 +1,7 @@
 ---
 title: Starting the agent process and other services
 layout: redirect
-weight: 40
+weight: 50
 ---
 
 * To start the Cumulocity IoT Linux Agent with or without Modbus support, you need to follow the steps in [Starting the agent process](#starting-the-agent-process).

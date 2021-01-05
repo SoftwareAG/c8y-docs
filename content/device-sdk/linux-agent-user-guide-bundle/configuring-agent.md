@@ -1,7 +1,7 @@
 ---
 title: "Configuring the agent"
 layout: redirect
-weight: 50
+weight: 40
 ---
 
 The Cumulocity IoT Linux agent repository includes the _cumulocity-agent.conf_ file. When you install the agent, the configuration file is deployed to _/usr/share/cumulocity-agent/cumulocity-agent.conf_ by default. The agent reads this configuration file at startup. You can manually edit this file to adjust different parameters to suit your needs.  

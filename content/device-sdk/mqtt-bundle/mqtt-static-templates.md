@@ -26,52 +26,53 @@ If a parameter is in square brackets, it is optional.
 <tr>
 <td>
 
-**[Inventory templates](#inventory-templates)**
-+ [100,createdDeviceName,deviceType](#100)
-+ [101,createdChildId,childName,childType](#101)
-+ [105 (Get children, reply: 106,child1,child2,…)](#105)
-+ [107,fragmenttoBeUninstalled1,fragment2,...](#107)
-+ [110,serialNumber,hardwareModel,revision](#110)
-+ [111,IMEI,ICCID,IMSI,MCC,MNC,LAC,cellId](#111)
-+ [112,latitude,longitude,altitude,accuracy](#112)
-+ [113,"configProp1=val1\nprop2=val2\n…"](#113)
-+ [114,supportedOperation1,operation2,…](#114)
-+ [115,currentFirmwareName,version,url](#115)
-+ [116,currentSoftwareName1,version1,url1,name2,…](#116)
-+ [117,requiredInterval](#117)
-+ [118,supportedLog1,log2,...](#118)
-+ [119,supportedConfiguration1,config2,...](#119)
-+ [120,configType,url,filename[,time]](#120)
+<strong><a href="#inventory-templates">Inventory templates</a></strong>
+<a href="#100">100,createdDeviceName,deviceType</a>
+<a href="#101">101,createdChildId,childName,childType</a>
+<a href="#105">105 (Get children, reply: 106,child1,child2,…)</a>
+<a href="#107">107,fragmenttoBeUninstalled1,fragment2,...</a>
+<a href="#110">110,serialNumber,hardwareModel,revision</a>
+<a href="#111">111,IMEI,ICCID,IMSI,MCC,MNC,LAC,cellId</a>
+<a href="#112">112,latitude,longitude,altitude,accuracy</a>
+<a href="#113">113,&quot;configProp1=val1\nprop2=val2\n…&quot;</a>
+<a href="#114">114,supportedOperation1,operation2,…</a>
+<a href="#115">115,currentFirmwareName,version,url</a>
+<a href="#116">116,currentSoftwareName1,version1,url1,name2,…</a>
+<a href="#117">117,requiredInterval</a>
+<a href="#118">118,supportedLog1,log2,...</a>
+<a href="#119">119,supportedConfiguration1,config2,...</a>
+<a href="#120">120,configType,url,filename[,time]</a>
 
-**[Measurement templates](#measurement-templates)**
-+ [200,fragment,series,value[,unit,time]](#200)
-+ [210,rssi,ber[,time]](#210)
-+ [211,temperature[,time]](#211)
-+ [212,battery[,time]](#212)
+<strong><a href="#measurement-templates">Measurement templates</a></strong>
+<a href="#200">200,fragment,series,value[,unit,time]</a>
+<a href="#210">210,rssi,ber[,time]</a>
+<a href="#211">211,temperature[,time]</a>
+<a href="#212">212,battery[,time]</a>
 
 </td>
 <td>
 
-**[Alarm templates](#alarm-templates)**
-+ [301,criticalAlarmType[,text][,time]](#301)
-+ [302,majorAlarmType[,text][,time]](#302)
-+ [303,minorAlarmType[,text][,time]](#303)
-+ [304,warningAlarmType[,text][,time]](#304)
-+ [305,alarmType,newSeverity](#305)
-+ [306,alarmTypeToBeCleared](#306)
-+ [307,alarmType,fragmentToBeRemoved1,fragment2,...](#307)
+<strong><a href="#alarm-templates">Alarm templates</a></strong>
++ <a href="#301">301,criticalAlarmType[,text][,time]</a>
++ <a href="#302">302,majorAlarmType[,text][,time]</a>
++ <a href="#303">303,minorAlarmType[,text][,time]</a>
++ <a href="#304">304,warningAlarmType[,text][,time]</a>
++ <a href="#305">305,alarmType,newSeverity</a>
++ <a href="#306">306,alarmTypeToBeCleared</a>
++ <a href="#307">307,alarmType,fragmentToBeRemoved1,fragment2,...</a>
 
-**[Event templates](#event-templates)**
-+ [400,eventType,text[,time]](#400)
-+ [401,latitude,longitude,altitude,accuracy[,time]](#401)
-+ [402,latitude,longitude,altitude,accuracy[,time] (incl. inv. update)](#402)
-+ [407,eventType,fragmentToBeRemoved1,fragment2,...](#407)
+<strong><a href="#event-templates">Event templates</a></strong>
++ <a href="#400">400,eventType,text[,time]</a>
++ <a href="#401">401,latitude,longitude,altitude,accuracy[,time]</a>
++ <a href="#402">402,latitude,longitude,altitude,accuracy[,time] (incl. inv. update)</a>
++ <a href="#407">407,eventType,fragmentToBeRemoved1,fragment2,...</a>
 
-**[Operation templates](#operation-templates)**
-+ [500 (get pending)](#500)
-+ [501,typeToSetToExecuting](#501)
-+ [502,typeToSetToFailed,fialureReason](#502)
-+ [503,typeToSetToSuccessful,parameters](#503)
+<strong><a href="#operation-templates">Operation templates</a></strong>
++ <a href="#500">500 (get pending)</a>
++ <a href="#501">501,typeToSetToExecuting</a>
++ <a href="#502">502,typeToSetToFailed,fialureReason</a>
++ <a href="#503">503,typeToSetToSuccessful,parameters</a>
++ <a href="#530">530,serial,hostname,port,connectionKey</a>
 
 </td>
 </tr>
@@ -681,6 +682,7 @@ The client can receive the following templates when subscribing to <kbd>s/ds</kb
 + [526,serial,configType](#526)
 + [527,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,url,action,configurationMarker,url,type](#527)
 + [528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...](#528)
++ [530,serial,hostname,port,connectionKey](#530)
 
 #### Inventory templates (1xx)
 
@@ -963,6 +965,22 @@ Update the software installed on the device.
 
 ```text
 528,DeviceSerial,softwareA,1.0,url1,action1,softwareB,2.0,url2,action2
+```
+
+##### <a name="530">Cloud Remote Access Connect (530)</a>
+
+Establish tunneling by Remote Access device agent.
+
+|Position|Parameter|
+|:-------|:-------|
+|1|hostname|
+|2|port|
+|3|connection key|
+
+**Example**
+
+```text
+530,DeviceSerial,10.0.0.67,22,eb5e9d13-1caa-486b-bdda-130ca0d87df8
 ```
 
 ### Updating operations

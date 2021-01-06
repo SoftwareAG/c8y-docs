@@ -118,36 +118,6 @@ curl --request POST “{{url}}/service/zementis/train/clustering” --header “
 }
 ```
 
-**Example Request**
-
-```
-500 - Internal Server Error
-
-curl --request POST “{{url}}/service/zementis/train/clustering” --header “Authorization: {{auth}}” \
-	--header “Content-Type: application/json”
-
-{
-     "data": [
-        "MAC000002": [ 1.945, 1.112, 0.6609999999999999, 0.23600000000000002, 0.20800000000000002, ... ],
-        "MAC000003": [ 6.760999900000001, 6.884000099999999, 7.241000200000001, 6.3209999, 5.157000099999999, ... ], 
-        "MAC000004": [ 0.0, 0.175, 0.0, 0.0, 0.191, ... ], 
-        ...
-    ]
-}
-```
-
-**Example Response**
-
-```
-500 - Internal Server Error
-
-{
-    "errors": [
-        "Nyoka microservice is unsubscribed. Subscribe to Nyoka microservice."
-    ]
-}
-```
-
 
 ### GET – Get status of generation of the clustering model
 
@@ -221,26 +191,6 @@ curl --request GET “{{url}}/service/zementis/train/clustering/dummy/status” 
 {
     "errors": [
         "Model 'dummy' not found."
-    ]
-}
-```
-
-**Example Request**
-
-```
-500 – Internal Server Error
-
-curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj/status” --header “Authorization: {{auth}}”
-```
-
-**Example Response**
-
-```
-500 – Internal Server Error
-
-{
-    "errors": [
-        "Nyoka microservice is unsubscribed. Subscribe to Nyoka microservice."
     ]
 }
 ```
@@ -336,25 +286,6 @@ curl --request GET “{{url}}/service/zementis/train/clustering/dummy/pmml” --
 }
 ```
 
-**Example Request**
-
-```
-500 – Internal Server Error
-
-curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj/pmml” --header “Authorization: {{auth}}”
-```
-
-**Example Response**
-
-```
-500 – Internal Server Error
-
-{
-    "errors": [
-        "Nyoka microservice is unsubscribed. Subscribe to Nyoka microservice."
-    ]
-}
-```
 
 ### GET – Get cluster information
 
@@ -445,26 +376,6 @@ curl --request GET “{{url}}/service/zementis/train/clustering/dummy” --heade
 {
     "errors": [
         "Model 'dummy' not found."
-    ]
-}
-```
-
-**Example Request**
-
-```
-500 – Internal Server Error
-
-curl --request GET “{{url}}/service/zementis/train/clustering/Clustering_19-10-2020_11-06-01_umGoj” --header “Authorization: {{auth}}”
-```
-
-**Example Response**
-
-```
-500 – Internal Server Error
-
-{
-    "errors": [
-        "Nyoka microservice is unsubscribed. Subscribe to Nyoka microservice."
     ]
 }
 ```

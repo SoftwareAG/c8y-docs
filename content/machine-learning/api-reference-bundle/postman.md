@@ -17,5 +17,5 @@ If you are doing a fresh setup of Postman for using the Zementis microservice co
 
 Import the APIs as a [JSON file](/files/zementis/ZementisMicroserviceAPI.postman_collection.json).
 
-Alternatively click: [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/95626dd91fdb7f1cc00b)
+Alternatively click: [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/cc6e24a0d7ee7b8d99da)
  After importing, you will see a new collection "Zementis Microservice API" in the **Collections** tab in Postman.

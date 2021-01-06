@@ -72,6 +72,7 @@ If a parameter is in square brackets, it is optional.
 + <a href="#501">501,typeToSetToExecuting</a>
 + <a href="#502">502,typeToSetToFailed,fialureReason</a>
 + <a href="#503">503,typeToSetToSuccessful,parameters</a>
++ <a href="#530">530,serial,hostname,port,connectionKey</a>
 
 </td>
 </tr>
@@ -681,6 +682,7 @@ The client can receive the following templates when subscribing to <kbd>s/ds</kb
 + [526,serial,configType](#526)
 + [527,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,url,action,configurationMarker,url,type](#527)
 + [528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...](#528)
++ [530,serial,hostname,port,connectionKey](#530)
 
 #### Inventory templates (1xx)
 
@@ -963,6 +965,22 @@ Update the software installed on the device.
 
 ```text
 528,DeviceSerial,softwareA,1.0,url1,action1,softwareB,2.0,url2,action2
+```
+
+##### <a name="530">Cloud Remote Access Connect (530)</a>
+
+Establish tunneling by Remote Access device agent.
+
+|Position|Parameter|
+|:-------|:-------|
+|1|hostname|
+|2|port|
+|3|connection key|
+
+**Example**
+
+```text
+530,DeviceSerial,10.0.0.67,22,eb5e9d13-1caa-486b-bdda-130ca0d87df8
 ```
 
 ### Updating operations

@@ -220,7 +220,7 @@ curl --request POST “{{url}}/service/zementis/train/timeseries” --header “
 ```
 
 
-### GET – Get status of generated time series model
+### GET – Get status of generattion of time series model
 
 ```
 {{url}}/service/zementis/timeseries/{{model_name}}/status (deprecated)

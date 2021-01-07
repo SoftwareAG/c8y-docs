@@ -575,7 +575,7 @@ The severity of alarm is determined as follows:
 
 * If the measurement value moves into the yellow range, then an alarm of MINOR severity is created. If it moves out of the yellow range, the MINOR alarm is cleared.
 
-The rule uses the following parameter from the device object or data point library:
+The rule uses the following parameter from the device object or Data Point Library:
 
 * Data Point Library red/yellow range: Red range when the system should create CRITICAL alarms and yellow range when the system should create MINOR alarms. Note that the data point should have at least one of red or yellow range configured.
 
@@ -613,7 +613,7 @@ The rule uses the following parameters:
 <tr>
 <td align="left">2</td>
 <td align="left">On threshold</td>
-<td align="left"><strong>Fragment/Series</strong>: Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> <strong>Data Point Library entry</strong>: Name of the entry in the Data Point Library. This is used to find the default values for red and yellow ranges in case they are not configured for an individual object.</td>
+<td align="left"><strong>Fragment/Series</strong>: Name of the measurement fragment and series. The incoming measurement must have exactly the same fragment name as configured. When creating a rule from the data explorer, these fields are already filled in. <br> <strong>Data Point Library entry</strong>: Name of the entry in the Data Point Library. This is used to find the default values for red and yellow ranges in case they are not configured for an individual object. Note that the unit which is set in the data point is not taken into account here.</td>
 </tr>
 <tr>
 <td align="left">3</td>

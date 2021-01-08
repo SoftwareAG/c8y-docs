@@ -2,6 +2,8 @@
 weight: 10
 title: Overview
 layout: bundle
+aliases:
+  - /web/angular/
 ---
 
 This Web SDK enables you

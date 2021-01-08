@@ -1,5 +1,5 @@
 ---
 weight: 40
-title: Application options
+title: Application configuration
 layout: bundle
 ---

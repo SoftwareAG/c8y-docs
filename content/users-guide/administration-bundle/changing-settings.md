@@ -26,7 +26,7 @@ Click **Authentication** in the **Settings** menu if you want to view or change 
 
 #### Login settings
 
-There are three **Preferred login modes** available:
+The following **Preferred login modes** are available:
 
 * "OAuth Internal" which is the recommended option as it provides better security.
 * "Basic Auth" which should be chosen only for specific compatibility reasons.

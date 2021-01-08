@@ -22,11 +22,11 @@ Klicken Sie auf eine Anwendungskarte, um die Attribute der Anwendung anzuzeigen.
 Für jede Anwendung werden die folgenden Attribute angezeigt:
 
 <table>
-<col width= 15%
-<col width= 40%>
-<col width= 15%>
-<col width= 15%>
-<col width= 15%>
+<col width= 20%
+<col width= 20%>
+<col width= 20%>
+<col width= 20%>
+<col width= 20%>
 <thead>
 <tr>
 <th style="text-align:left">Feld</th>
@@ -261,7 +261,7 @@ Manager und Editor für Apama Event Processing Language (EPL) Apps zur sofortige
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/benutzerhandbuch/device-management-de/#connectivity" class="no-ajaxy">Connectivity</a></td>
+<td style="text-align:left"><a href="/users-guide/device-management/#connectivity" class="no-ajaxy">Connectivity</a></td>
 <td style="text-align:left">Schaffen Sie eine Schnittstelle zu Mobilgeräten über verschiedene SIM-Anbieter wie Jasper, Ericsson und Comarch.</td>
 <td style="text-align:left">connectivity-agent-server</td>
 <td style="text-align:left">Microservice</td>

@@ -19,10 +19,10 @@ Smart Rules werden parametrisiert. Es gibt zwei Quellen für Parameter:
 Smart Rules werden angezeigt
 
 * in der Registerkarte **Info** eines Geräts oder einer Gruppe. <br><br>
-![Smart rules info tab](/images/benutzerhandbuch/cockpit-de/cockpit-smart-rules-info-tab.png)
+![Smart rules info tab](/images/benutzerhandbuch/cockpit/cockpit-smart-rules-info-tab.png)
 
 * auf der Seite **Smart Rules** im Menü **Konfiguration**. <br><br>
-![Smart rules info tab](/images/benutzerhandbuch/cockpit-de/cockpit-smart-rules-list.png)
+![Smart rules info tab](/images/benutzerhandbuch/cockpit/cockpit-smart-rules-list.png)
 
 Es gibt zwei Arten von Smart Rules:
 
@@ -59,7 +59,7 @@ Smart Rules können für einzelne Objekte (Geräte oder Gruppen) eingeschaltet (
 
 Navigieren Sie zur Registerkarte **Info** der Gruppe oder des Geräts und aktivieren/deaktivieren Sie die betreffende Regel mit Hilfe des Umschalters.
 
-<img src="/images/benutzerhandbuch/cockpit-de/cockpit-smart-rules-enable.png" name="Smart rule in Info tab" />
+<img src="/images/benutzerhandbuch/cockpit/cockpit-smart-rules-enable.png" name="Smart rule in Info tab" />
 
 ### So bearbeiten Sie eine Smart Rule
 
@@ -91,7 +91,7 @@ Führen Sie folgende Schritte aus, um eine Schwellwertregel zu definieren:
 1. Navigieren Sie im Menü Gruppen zu dem Objekt (Gruppe oder Gerät), auf welches Sie den Schwellwert anwenden möchten.
 2. Wechseln Sie zur Registerkarte **Daten-Explorer**.
 3. Wenn der Datenpunkt, der den Schwellwert festlegen soll, standardmäßig nicht sichtbar ist, wählen Sie **Datenpunkt hinzufügen** und [fügen Sie einen Datenpunkt hinzu](#add-data-points).
-4. Öffnen Sie über das Menüsymbol das Kontextmenü für den entsprechenden Datenpunkt und klicken Sie **Smart Rule erstellen**. <br><br> <img src="/images/benutzerhandbuch/cockpit-de/cockpit-smart-rules-data-point.png" name="Data point example"/>
+4. Öffnen Sie über das Menüsymbol das Kontextmenü für den entsprechenden Datenpunkt und klicken Sie **Smart Rule erstellen**. <br><br> <img src="/images/benutzerhandbuch/cockpit/cockpit-smart-rules-data-point.png" name="Data point example"/>
 <br>
 5. Wählen Sie die Smart Rule "Bei Schwellwertüberschreitung Alarm erzeugen".
 6. Geben Sie den minimalen und den maximalen Wert für den roten Bereich ein. Wenn der Messwert den roten Bereich betritt oder verlässt, wird ein KRITISCHER Alarm erzeugt bzw. gelöscht. Weitere Informationen finden Sie in der Beschreibung der Regel "Bei Messbereichsüberschreitung Alarm erzeugen" in der [Smart Rules-Sammlung](/benutzerhandbuch/cockpit-de#smart-rules-collection).

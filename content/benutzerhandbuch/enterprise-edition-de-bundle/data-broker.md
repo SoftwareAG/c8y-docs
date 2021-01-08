@@ -100,13 +100,13 @@ Verwenden Sie den Umschalter, um das Weiterleiten von Daten an den Zielmandanten
 5. Klicken Sie **Speichern**, um die Konfiguration zu speichern.
 
 >**Warnung zur Verwendung von "Alle Objekte"**
-
+>
 >Die Option **Alle Objekte** ist weiterhin in der Benutzeroberfläche vorhanden, um Rückwärtskompatibilität mit älteren Versionen sicherzustellen. Wir planen, diese Option künftig nicht mehr zu unterstützen, und empfehlen dringend, sie nicht zu verwenden.
-
+>
 >Wird sie gewählt, synchronisiert Cumulocity IoT alle Arten von Objekten, sowohl System- als auch benutzerdefinierte Objekte, und könnte Objekte im Zielmandanten überschreiben oder ohne Kontext erstellen. Solche Objekte können Referenzen zu anderen Objekten sowie Konfigurationsinformationen enthalten. Es liegt in der Verantwortung des Benutzers, die Konsistenz solcher Informationen in den übertragenen Objekten in der Zielumgebung sicherzustellen.
-
+>
 >Dies betrifft Elemente wie SmartREST-Templates, Geräteprotokolle, Smart-Rule-Konfigurationen und Dashboards.
-
+>
 >Wenn Sie zum Beispiel auf dem Ursprungsmandanten eine Smart Rule erstellen und alle Objekte synchronisieren, erstellt Data Broker ein Smart-Rule-Objekt auf dem Zielmandanten. Die Regel selbst wird nicht kopiert, da eine synchronisierte Smart Rule dieselbe Aktion auf demselben Gerät für dieselbe Konfiguration ausführen würde. Dadurch würden bei einem Alarm doppelte E-Mails für die jeweiligen Empfänger erstellt werden.
 
 
@@ -151,7 +151,7 @@ Klicken Sie auf das Menüsymbol rechts neben einem Datenkonnektor-Eintrag und an
 
 #### So zeigen Sie Alarme für einen Datenkonnektor an
 
-Öffnen Sie einen Datenkonnektor und wechseln Sie zur Registerkarte **Alarme**, um aktuelle Alarme für den Datenkonnektor anzuzeigen. 
+Öffnen Sie einen Datenkonnektor und wechseln Sie zur Registerkarte **Alarme**, um aktuelle Alarme für den Datenkonnektor anzuzeigen.
 
 Weitere Informationen zu Data Broker-Alarmen finden Sie unter [Troubleshooting](#data-broker-troubleshooting) weiter unten.
 
@@ -196,5 +196,5 @@ Im Ursprungsmandanten reiht Data Broker die Daten, die nicht sofort an den Zielm
 ![Data broker alarms](/images/benutzerhandbuch/enterprise-tenant/et-data-broker-alarm.png)
 
 Ebenso wird bei einem Überlauf der Eingangswarteschlange ein Alarm ausgelöst.
- 
+
 Um die Anzahl der Alarme zu reduzieren, werden Alarme höchstens einmal pro Minute ausgelöst.

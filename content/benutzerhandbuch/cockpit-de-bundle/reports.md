@@ -12,7 +12,7 @@ Bei Dashboard-Berichten handelt es sich um globale Dashboard-Seiten, unabhängig
 
 Erweitern Sie das Menü **Berichte** im Navigator, um alle verfügbaren Berichte anzuzeigen.
 
-![Reports menu](/images/benutzerhandbuch/cockpit-de/cockpit-reports-navigator.png)
+![Reports menu](/images/benutzerhandbuch/cockpit/cockpit-reports-navigator.png)
 
 Klicken Sie im Navigator auf einen Bericht, um ihn zu öffnen.
 
@@ -51,13 +51,13 @@ Um alle Exporte anzuzeigen, klicken Sie **Exportieren** im Menü **Berichte**.
 
 Die Seite **Exportieren** listet alle Exporte mit Namen und Zeitintervall auf.
 
-![Exports](/images/benutzerhandbuch/cockpit-de/cockpit-exports.png)
+![Exports](/images/benutzerhandbuch/cockpit/cockpit-exports.png)
 
 
 #### <a name="add-export"></a>So fügen Sie einen Export hinzu
 
 1. Klicken Sie **Export hinzufügen** in der oberen Menüleiste.<br>
-	![Create export](/images/benutzerhandbuch/cockpit-de/cockpit-export-create.png)
+	![Create export](/images/benutzerhandbuch/cockpit/cockpit-export-create.png)
 
 2. Geben Sie einen Namen für den Bericht ein und wählen Sie das Dateiformat (CSV oder XLSX) für die Berichtausgabe.
 
@@ -97,7 +97,7 @@ Klicken Sie **Hinzufügen**, um ein leeres Feld hinzuzufügen. Klicken Sie **Spa
 
 Klicken Sie **Vordefiniertes Attribut hinzufügen**, um ein vordefiniertes Attribut hinzuzufügen. Markieren Sie die gewünschten Attribute in der angezeigten Liste und klicken Sie **Auswählen**. Verwenden Sie das Suchfeld, um die Liste nach bestimmten Eigenschaften zu filtern.
 
-![Select properties](/images/benutzerhandbuch/cockpit-de/cockpit-export-properties.png)
+![Select properties](/images/benutzerhandbuch/cockpit/cockpit-export-properties.png)
 
 Wenn Sie mindestens ein Feld haben, dass als eigenes Attribut definiert wurde und nicht aus der Liste der vordefinierten Attribute stammt, dann muss für ein Objekt mindestens dieses Attribut gesetzt sein, damit die entsprechenden Werte im Export erscheinen.
 
@@ -110,13 +110,13 @@ Wenn Sie Messwerte aktiviert haben, sehen Sie die zusätzliche Option **Datenpun
 
 #### <a name="schedule-export"></a>So planen Sie einen Export
 
-Um einen Export in eine CSV- oder XLSX-Datei für einen bestimmten Zeitpunkt zu planen, öffnen Sie den entsprechenden Export und klicken Sie auf **Zeitplan hinzufügen**. 
+Um einen Export in eine CSV- oder XLSX-Datei für einen bestimmten Zeitpunkt zu planen, öffnen Sie den entsprechenden Export und klicken Sie auf **Zeitplan hinzufügen**.
 
-![Export details](/images/benutzerhandbuch/cockpit-de/cockpit-export-add-schedule.png)
+![Export details](/images/benutzerhandbuch/cockpit/cockpit-export-add-schedule.png)
 
 Geben Sie im nächsten Dialog die folgenden Informationen ein, um den geplanten Export per E-Mail zu erhalten.
 
-![Schedule export](/images/benutzerhandbuch/cockpit-de/cockpit-export-new-schedule.png)
+![Schedule export](/images/benutzerhandbuch/cockpit/cockpit-export-new-schedule.png)
 
 **1 - Häufigkeit**
 
@@ -126,7 +126,7 @@ Wählen Sie die Frequenz für das Senden des Exports aus der Auswahliste, z. B. 
 
 **2 - E-Mail senden:**
 
-Vervollständigen Sie die E-Mail-Informationen. 
+Vervollständigen Sie die E-Mail-Informationen.
 
 Geben Sie im Feld **Senden an** die E-Mail-Adresse des Empfängers ein. Diese Eingabe ist obligatorisch. Optional können Sie E-Mail-Adressen für Kopieempfänger (CC) oder Blindkopieempfänger (BCC) angeben. Zur Eingabe mehrerer Empfänger verwenden Sie ein Komma als Trennzeichen.
 
@@ -142,17 +142,17 @@ Klicken Sie auf **Erstellen**, um den neuen Exportplan zu erstellen.
 
 Der Exportplan wird zu den Exportdetails hinzugefügt.
 
-![Scheduled exports list](/images/benutzerhandbuch/cockpit-de/cockpit-export-schedule-list.png)
+![Scheduled exports list](/images/benutzerhandbuch/cockpit/cockpit-export-schedule-list.png)
 
-##### Migration geplanter Exports 
+##### Migration geplanter Exports
 
-In der Version 10.6.2 wurde ein neuer Report Agent implementiert, um geplante Berichte in [Apama Streaming Analytics](/apama/overview-analytics/) zuzulassen. Die Exportplan-Funktionalität auf Grundlage von Smart Rules wurde eingestellt. 
+In der Version 10.6.2 wurde ein neuer Report Agent implementiert, um geplante Berichte in [Apama Streaming Analytics](/apama/overview-analytics/) zuzulassen. Die Exportplan-Funktionalität auf Grundlage von Smart Rules wurde eingestellt.
 
-Beim Öffnen eines Berichts werden alle auf Smart Rules basierenden geplanten Exports automatisch zu dem neuen Report Agent migriert und der Benutzer wird per Nachricht über den Vorgang informiert. 
+Beim Öffnen eines Berichts werden alle auf Smart Rules basierenden geplanten Exports automatisch zu dem neuen Report Agent migriert und der Benutzer wird per Nachricht über den Vorgang informiert.
 
-![Export schedule migration message2](/images/benutzerhandbuch/cockpit-de/cockpit-export-migrate2.png)
+![Export schedule migration message2](/images/benutzerhandbuch/cockpit/cockpit-export-migrate2.png)
 
->**Wichtig**: Sie müssen jeden einzelnen Bericht manuell öffnen, um die im Bericht enthaltenen Exportpläne zu migrieren. 
+>**Wichtig**: Sie müssen jeden einzelnen Bericht manuell öffnen, um die im Bericht enthaltenen Exportpläne zu migrieren.
 
 > **Info:** Damit die neue Exportplan-Funktion genutzt und die Migration durchgeführt werden kann, muss der Microservice "report-agent" abonniert sein. Neue Mandanten haben diesen automatisch abonniert. Bei vorhandenen Mandanten muss sichergestellt sein, dass sie den Microservice abonniert haben.
 

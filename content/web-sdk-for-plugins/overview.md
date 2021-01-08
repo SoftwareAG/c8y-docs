@@ -1,8 +1,26 @@
 ------
 weight: 10
 title: Overview
-layout: redirect
+layout: bundle
+aliases:
+  - /http
+  - /web/jsdoc
+  - /web/branding-plugin
+  - /web/tab-plugin
+  - /web/widget-plugin
 ------
+
+<div style="padding: 24px ; border: 2px solid #1776BF; border-radius: 4px; margin-bottom: 24px; background-color: #f6fafe ">
+  <h3 style="color: #1776BF"><strong>IMPORTANT</strong></h3>
+  <p class="lead" style="font-size:22px">
+
+  The [Web SDK for plugins](/web-sdk-for-plugins) is deprecated. To develop new web applications we recommend you to use our current [Web SDK](/web/) for Angular. If you have already developed a plugin, refer to [Web SDK > Migration](/web/upgrade/#migration) for information on how to import plugins into the Web SDK for Angular.
+
+  </p>
+
+</div>
+
+
 
 In the following section you will get an overview on the Web SDK for Plugins which allows you to:
 

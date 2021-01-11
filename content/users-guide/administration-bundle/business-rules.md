@@ -14,7 +14,7 @@ Click **Event processing** in the **Business rules** menu to view all rules.
 
 <img src="/images/users-guide/Administration/admin-event-processing.png" alt="Event processing">
 
-For each rule in the list, the status (deployed = indicated by a green checkmark / not deployed = indicated by an exclamation mark), the name and the date when is was last updated is provided.
+<br>For each rule in the list, the status (deployed = indicated by a green checkmark / not deployed = indicated by an exclamation mark), the name and the date when is was last updated is provided.
 
 If the status of a rule is set to **Deployed**, you will see the output produced by the statement below the checkmark icon. Clicking a line of output unfolds the detailed output of the statement. Clicking **Clear all** removes the output from the screen.
 

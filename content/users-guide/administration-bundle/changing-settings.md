@@ -28,7 +28,7 @@ Click **Authentication** in the **Settings** menu if you want to view or change 
 
 In the field **Preferred login modes*, you can select one of the following options:
 
-* OAuth Internal - Recommended, since it provides high security, using authorization tokens to prove your identity (to the server)
+* OAuth Internal - Recommended, since it provides high security, using authorization tokens to prove your identity (to the server).
 * Basic Auth - Should be chosen only for specific compatibility reasons, since it only provides basic security.
 * Single sign-on redirect - Can be selected only if SSO is configured. If selected, will remove Basic Auth and OAuth Internal login options.
 

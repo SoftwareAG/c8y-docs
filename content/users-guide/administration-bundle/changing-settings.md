@@ -26,11 +26,12 @@ Click **Authentication** in the **Settings** menu if you want to view or change 
 
 #### Login settings
 
-The following **Preferred login modes** are available:
+In the field **Preferred login modes*, you can select one of the following options:
 
-* "OAuth Internal" which is the recommended option as it provides better security.
-* "Basic Auth" which should be chosen only for specific compatibility reasons.
-* "Single sign-on redirect" which can be selected only if SSO is configured. If selected, it will remove both Basic Auth and OAuth Internal login options.
+* OAuth Internal - Recommended, since it provides high security, using authorization tokens to prove your identity (to the server)
+* Basic Auth - Should be chosen only for specific compatibility reasons, since it only provides basic security.
+* Single sign-on redirect - Can be selected only if SSO is configured. If selected, will remove Basic Auth and OAuth Internal login options.
+
 
 This login mode will be used by the platform's applications as the default method to authenticate users. Device authentication stays unchanged.
 

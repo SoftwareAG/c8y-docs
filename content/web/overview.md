@@ -6,11 +6,13 @@ aliases:
   - /web/angular/
 ---
 
-This Web SDK enables you
+This Web SDK guide provides information on the Web SDK enables you to
 
-* to develop web applications that can be deployed to the platform,
-* to communicate authenticated with our API,
-* to apply default or branded UI components to your custom application.
+* develop web applications that can be deployed to the platform,
+* communicate authenticated with our API,
+* apply default or branded UI components to your custom application.
+
+If you have previously been working with older versions you might be interested in some short information on the evolution of the UI stack in [Upgrading to Angular](/web/background) to better understand how and why it is now designed the way it is.
 
 The Web SDK consists of the following packages deployed to npm in the scope `@c8y` and available under [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt) license:
 

@@ -213,6 +213,11 @@ The following permission categories are available by default:
 </tr>
 
 <tr>
+<td align="left">Schedule reports</td>
+<td align="left">Manage the schedule of report exporting.</td>
+</tr>
+
+<tr>
 <td align="left">Simulator</td>
 <td align="left">Configure simulated devices.</td>
 </tr>
@@ -355,7 +360,7 @@ You can also copy inventory roles from another user. To copy roles, click **Copy
 
 If you try to perform actions without sufficient permissions, an error message will occur.
 
-To help troubleshooting permissions, click the **User** button at the right of the top bar. From the context menu, select **Access denied requests**. In the resulting window details on the denied accesses are provided. An administrator user or the [support](/about-doc/contacting-support) can help in fixing the permissions.
+To help troubleshooting permissions, click the **User** button at the right of the top bar. From the context menu, select **Access denied requests**. In the resulting window details on the denied accesses are provided. An administrator user or the [product support](/about-doc/contacting-support) can help in fixing the permissions.
 
 ### <a name="app-access"></a>Granting application access
 

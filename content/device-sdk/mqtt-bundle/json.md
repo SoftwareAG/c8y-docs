@@ -111,7 +111,7 @@ Publish a message on topic <kbd>/event/events/createBulk</kbd> with payload:
 
 #### Update event
 
-Publish a message on topic <kbd>/event/events/update/<event_id></kbd> with payload:
+Publish a message on topic <kbd>/event/events/update/&lt;event_id&gt;</kbd> with payload:
 
 ```json
 {
@@ -121,7 +121,7 @@ Publish a message on topic <kbd>/event/events/update/<event_id></kbd> with paylo
 
 #### Delete event
 
-Publish a message on topic <kbd>/event/events/delete/<event_id></kbd> with empty payload.
+Publish a message on topic <kbd>/event/events/delete/&lt;event_id&gt;</kbd> with empty payload.
 
 
 ### Error handling

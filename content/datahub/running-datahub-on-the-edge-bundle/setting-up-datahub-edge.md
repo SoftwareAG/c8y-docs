@@ -50,11 +50,11 @@ It takes a few minutes to complete the installation. After completion you can de
 
 The install script runs the following basic steps:
 
-* Deploy the DataHub Edge UI as a web application to Cumulocity IoT Core.
-* Start a Docker container with the DataHub Edge backend and the database system for managing the backend state.
-* Start a Docker container with the Dremio master and a ZooKeeper instance.
-* Start a Docker container with the Dremio executor.
-* Configure corresponding roles and permissions in Cumulocity IoT Core.
+* Deploy the DataHub Edge UI as a web application to Cumulocity IoT Core
+* Start a Docker container with the DataHub Edge backend and the database system for managing the backend state
+* Start a Docker container with the Dremio master and a ZooKeeper instance
+* Start a Docker container with the Dremio executor
+* Configure corresponding roles and permissions in Cumulocity IoT Core
 
 The Docker containers will be restarted automatically if the container itself fails or the applications within are no longer reachable.
 
@@ -73,11 +73,11 @@ The different DataHub Edge interfaces can be accessed in the same way as in a cl
 
 | Interface | Description |
 | -----   | -----   |
-| DataHub Edge UI | The UI can be accessed in the **application switcher** after you have logged into the Cumulocity IoT Edge UI. Alternatively you can access it directly under *http://<edge_domain_name>/apps/datahub-ui* or *https://<edge_domain_name>/apps/datahub-ui*, depending on whether TLS/SSL is used or not. A login is required as well. |
-| Dremio UI | On the DataHub Edge home page you will find a link to the Dremio UI. Alternatively you can access it directly under *http://datahub.<edge_domain_name>* or *https://datahub.<edge_domain_name>*, depending on whether TLS/SSL is used or not. You can log in as *admin* using password *'datahub4edge@customer!'*. |
+| DataHub Edge UI | The UI can be accessed in the **application switcher** after you have logged into the Cumulocity IoT Edge UI. Alternatively you can access it directly under *http://edge_domain_name/apps/datahub-ui* or *https://edge_domain_name/apps/datahub-ui*, depending on whether TLS/SSL is used or not. A login is required as well. |
+| Dremio UI | On the DataHub Edge home page you will find a link to the Dremio UI. Alternatively you can access it directly under *http://datahub.edge_domain_name* or *https://datahub.edge_domain_name*, depending on whether TLS/SSL is used or not. You can log in as *admin* using password *'datahub4edge@customer!'*. |
 | DataHub JDBC/ODBC | You find the connection settings for JDBC/ODBC in the DataHub Edge UI on the **Home** page. |
-| DataHub REST API | The path of the microservice which hosts the API is *https://<edge_domain_name>/service/datahub*. |
-| Dremio REST API | The Dremio URL to run REST API requests against is either *http://datahub.<edge_domain_name>* or *https://datahub.<edge_domain_name>*, depending on whether TLS/SSL is used or not. |
+| DataHub REST API | The path of the microservice which hosts the API is *https://edge_domain_name/service/datahub*. |
+| Dremio REST API | The Dremio URL to run REST API requests against is either *http://datahub.edge_domain_name* or *https://datahub.edge_domain_name*, depending on whether TLS/SSL is used or not. |
 
 > **Info:** For JDBC/ODBC you have to configure Cumulocity IoT Edge so that port 31010 can be accessed from the host system. For instructions on port forwarding see section "Setting up port forwarding" under [Setting up the environment](/edge/installation/#setting-up-the-environment).
 

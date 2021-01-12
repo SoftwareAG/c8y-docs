@@ -8,7 +8,7 @@ Using the Enterprise Tenant of Cumulocity IoT, you can make use of the tenants f
 
 > **Important:** There is a major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants.
 
->**Info:** If you would like to use this feature, please contact sales@cumulocity.com.
+>**Info:** If you would like to use this feature, please [contact us](/about-doc/contacting-support).
 
 To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [Creating and editing global roles](/users-guide/administration#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 
@@ -91,7 +91,7 @@ From the management tenant, you can enable other tenants to create subtenants. T
 
 Click on the desired subtenant or click the menu icon at the right of the subtenant entry and then click **Edit**.
 
-In the **Properties** tab, all fields are editable except of the ID and the administrator's username. For details on the fields, refer to [Creating sub-tenants](#creating-tenants).
+In the **Properties** tab, all fields are editable except of **ID**, **Domain/ URL** and **Administrator's username**. For details on the fields, refer to [Creating sub-tenants](#creating-tenants).
 
 To change the tenant password, click **Change password**, enter the new password in the upcoming fields and click **Save**.
 
@@ -243,6 +243,8 @@ For each tenant policy, the name, an optional description and the number of opti
 5. Click **Save**.
 
 The tenant policy will be added to the tenant policies list.
+
+>**Important:** When defining the retention rules and options you can select a checkbox to allow subtenants to modify definitions of these rules or options. By default, this checkbox is not activated. Be aware that if you do not select this checkbox after creating the subtenant you need to run an update from the management tenant in order to edit those rules and options.
 
 #### To edit a tenant policy
 

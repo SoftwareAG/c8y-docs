@@ -4,11 +4,11 @@ title: Network management
 layout: redirect
 ---
 
-#### c8y\_Network
+#### c8y_Networks
 
-The **Network*** tab in the Device Management application receives its data from the `c8y\_Network` fragment. Furthermore, the `c8y\_Network` fragment contains additional nested fragments such as `c8y\_LAN`, `c8y\_WAN` and `c8y\_DHCP` . There is no limit to the fragments that you may use. 
+The **Network** tab in the Device Management application receives its data from the `c8y_Network` fragment. Furthermore, the `c8y_Network` fragment contains additional nested fragments such as `c8y_LAN`, `c8y_WAN` and `c8y_DHCP` . There is no limit to the fragments that you may use.
 
-Below is an example code with the `c8y\_Network` fragment:
+Below is an example code with the `c8y_Network` fragment:
 
 ```http
 {
@@ -39,4 +39,3 @@ Below is an example code with the `c8y\_Network` fragment:
 }
 ```
 >**Info:** If the code example above does not meet your requirements, you can add custom fragments.
-

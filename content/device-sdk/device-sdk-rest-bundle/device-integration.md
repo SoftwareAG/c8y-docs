@@ -41,7 +41,7 @@ The process works as follows:
 
 * Cumulocity IoT assumes each device to have some form of unique ID. A good device identifier may be the MAC address of the network adapter, the IMEI of a mobile device or a hardware serial number.
 * When you take a new device into use, you enter this unique ID into the device registration dialog in the tenant UI and start the device.
-* Once started, the device will connect to Cumulocity IoT and send its unique ID repeatedly. For this purpose, Cumulocity IoT provides static bootstrap credentials that can be obtained by [contacting support](/about-doc/contacting-support).
+* Once started, the device will connect to Cumulocity IoT and send its unique ID repeatedly. For this purpose, Cumulocity IoT provides static bootstrap credentials that can be obtained by [contacting product support](/about-doc/contacting-support).
 * You can accept the connection from the device in the device registration dialog in the tenant UI, in which case Cumulocity IoT then sends generated credentials to the device.
 * The device will store and use these credentials for all further requests.
 
@@ -79,7 +79,7 @@ For example, a credentials request for a device added to *xyz.cumulocity.com* co
 
 Cumulocity IoT uses the tenant ID specified with the user ID for FULL authentication and routing of the request to the correct tenant.
 
-If the valid tenant URL is known (e.g. *xyz.cumulocity.com* in the example above), then the username does not have to be prefixed by "<tenant ID>" for authentication.
+If the valid tenant URL is known (e.g. *xyz.cumulocity.com* in the example above), then the username does not have to be prefixed by \<tenant ID> for authentication.
 
 
 #### Step 1: Check if the device is already registered

@@ -206,7 +206,7 @@ Außerdem kann ein Zeitintervall festgelegt und Ereignisse können in Echtzeit �
 
 Das Widget "Fieldbus-Gerät" ermöglicht es, den Status eines Modbus-Geräts anzuzeigen und dieses zu betreiben.
 
-Weitere Informationen zum Widget "Fieldbus-Gerät" finden Sie unter [Optionale Services > Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/users-guide/optional-services#fieldbus-device-widget).
+Weitere Informationen zum Widget "Fieldbus-Gerät" finden Sie unter [Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/protocol-integration/cloud-fieldbus/#fieldbus-device-widget) im *Protocol Integration Guide*.
 
 ### Gerätenachricht
 
@@ -368,7 +368,7 @@ Im Rotation-Widget kann das Objekt durch Ziehen und Bewegen gedreht werden. Auß
 
 Das Widget "SCADA" bietet eine graphische Darstellung eines Gerätestatus.
 
-Nähere Informationen zum Widget "SCADA" finden Sie unter [Optionale Services > Cloud Fieldbus > Monitoring status using the SCADA widget](/users-guide/optional-services/#scada).
+Nähere Informationen zum Widget "SCADA" finden Sie unter [Cloud Fieldbus > Monitoring status using the SCADA widget](/protocol-integration/cloud-fieldbus/#scada) im *Protocol Integration Guide*.
 
 > **Info:** Alle SVG-Dateien werden bereinigt, um schädlichen Code zu entfernen.
 

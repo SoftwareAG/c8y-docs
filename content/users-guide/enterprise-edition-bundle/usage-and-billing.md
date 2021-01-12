@@ -29,6 +29,10 @@ The following information is provided for each subtenant (not completely visible
 <td align="left">ID of the subtenant</td>
 </tr>
 <tr>
+<td align="left">Name</td>
+<td align="left">Name of the subtenant</td>
+</tr>
+<tr>
 <td align="left">API requests</td>
 <td align="left">Total number of API requests, including requests from  devices and applications</td>
 </tr>
@@ -131,7 +135,11 @@ Moreover custom properties are displayed, if configured.
 
 Custom properties may be defined in the [Properties Library](/users-guide/administration#properties) and then set their values in the [Custom properties](#tenants-custom-properties) tab of the tenant.
 
-You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Getting Started > UI functionalities and features > Filtering](/users-guide/getting-started/#filtering).
+You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. The **Usage statistics** page will show the numbers for all subtenants for this time period.
+
+>**Info:** If a tenant was created after the selected time period, it will show up but the numbers are "0".
+
+You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Getting Started > UI functionalities and features > Filtering](/users-guide/getting-started/#filtering).
 
 > **Important:** The date/time range used here might differ from your server time due to different time zones.
 
@@ -263,12 +271,12 @@ The request will be billed to the day 25.08.2020 as this is the server time of t
 |Time zone| UTC |UTC|
 |Send measurement time | 26.08.2020T01:30:00Z| 26.08.2020T01:30:00Z|
 
-**Result:** 
+**Result:**
 
 The request will be billed to the day 26.08.2020 as the server time is the same as the device time.
 <br><br>
 
-##### Microservice resource billing - Example 1 
+##### Microservice resource billing - Example 1
 
 ||User| Server|
 |:---|:----|:-----|
@@ -276,7 +284,7 @@ The request will be billed to the day 26.08.2020 as the server time is the same 
 |Subscribe time | 26.08.2020T12:00:00+02:00| 26.08.2020T10:00:00Z|
 |Unsubscribe time | 27.08.2020T12:00:00+02:00| 27.08.2020T10:00:00Z|
 
-**Result:** 
+**Result:**
 
 The resources will be assigned mainly to the day 26.08.2020 as according to the UTC time zone the microservice was active for 14 hours that day and for 10 hours the next day. This might be a bit different from what a user expects as from his perspective the microservice was active for 12 hours each day.
 <br><br>
@@ -289,12 +297,12 @@ The resources will be assigned mainly to the day 26.08.2020 as according to the 
 |Subscribe time | 26.08.2020T12:00:00+14:00| 25.08.2020T22:00:00Z|
 |Unsubscribe time | 26.08.2020T20:00:00+14:00| 26.08.2020T06:00:00Z|
 
-**Result:** 
+**Result:**
 
 From the user perspective the microservice was subscribed for 8 hours at 26.08.2020 but at server time it was 2 hours before EOD of 25.08.2020 and 6 hours after BOD at 26.08.2020.
 <br><br>
 
-##### Microservice resource billing - Example 3 
+##### Microservice resource billing - Example 3
 
 ||User| Server|
 |:---|:----|:-----|
@@ -302,7 +310,7 @@ From the user perspective the microservice was subscribed for 8 hours at 26.08.2
 |Subscribe time | 26.08.2020T12:30:00+2:00| 25.08.2020T23:30:00Z|
 |Unsubscribe time | 26.08.2020T13:00:00+2:00| 25.08.2020T24:00:00Z|
 
-**Result:** 
+**Result:**
 
 In this case we have a big time shift between the server and the user time. All resources will be billed to the day 25.08.2020 according to the server time.
 
@@ -329,13 +337,14 @@ A Cumulocity IoT platform tenant can have several states:
   * Suspended - Suspended tenants are not billed for request count and microservice resources, the only value that is still counted is storage size. The microservice resource usage is billed as "used", i.e. when the tenant is switched to suspended state all microservices are stopped so there are no resources to bill.
   * Deleted - This is the point of no return. The tenant is not billed for any resources but there is no way of restoring the data also.
 
-  
+
 **Microservice**
 
 Any extension deployed to the platform as a microservice is billed as "used" and the billing starts according to the begin of usage. After the application is subscribed to the tenant a process of application startup is triggered which will go through several high level phases:
-  
-  * Scheduled - The microservice has been scheduled to be started but the Docker container is not running yet. In this state the microservice is not yet billed.
-  * Not ready - The microservice container is not ready yet to handle incoming traffic but the application is already running so billing is started.
+
+  * Pending - The microservice has been scheduled to be started but the Docker container is not running yet. In this state the microservice is not yet billed.
+  * Scheduled - The microservice has been assigned to a node, the Docker container initialization has been started. The resources for the microservice have already been allocated so billing is started. 
+  * Not ready - The microservice container is not ready yet to handle incoming traffic but the application is already running.
   * Ready - The microservice container is ready to handle incoming traffic. "Ready" is resolved based on liveness and readiness probes defined in the [microservice manifest](/microservice-sdk/concept/#manifest). If probes are not defined then the microservice is immediately ready.
 
 A tenant that is billed for resources can view the point in time when the microservices billing has been changed in [the audit logs](users-guide/administration/#audit-logs). The audit log entries, for example "Scaling application '...' from X to Y instances" contain the information about the changes of instances and resources consumed by the microservice.
@@ -344,9 +353,10 @@ A tenant that is billed for resources can view the point in time when the micros
 
 Tenants should also be able to see the full application lifecyle in the application details. In the **Status** tab, you can see an **Events** section that is showing very low level stages of the application startup. Some of the most important are:
 
-  * `Pod "apama-ctrl-starter-scope-..." created.` - A new microservice instance has been scheduled to be started for the tenant (maps to the state "Scheduled").
-  * `Container created.` - The microservice container has been created but not started yet. This means that the resource allocation has been successful but the application is not running yet (state "Scheduled").
-  * `Container started.` - The microservice container is started but not ready yet to handle incoming traffic. At that point the billing starts, as the application is running and the resources are used (state "Not ready").
+  * `Pod "apama-ctrl-starter-scope-..." created.` - A new microservice instance has been scheduled to be started for the tenant. This means that the resource allocation has been successful but the application is not running yet (maps to the state "Scheduled").
+  * `Pulling image "apama-ctrl-starter-scope-..."` - The microservice initialization process has been started and the Docker image download is already in progress (state "Scheduled").
+  * `Container created.` - The microservice container has been created but not started yet (state "Scheduled").
+  * `Container started.` - The microservice container is started but not ready yet to handle incoming traffic (state "Not ready").
 
 >**Info:** There is no event in the **Events** section when the microservice has reached the state "Ready" as this happens according to the readiness probe.
 
@@ -356,7 +366,7 @@ Audit logs and events are stored at tenant space according to the isolation leve
 
 ### Billing pricing models
 
-The Cumulocity IoT platform collects a lot of different usage statistics data which is used for billing customers. 
+The Cumulocity IoT platform collects a lot of different usage statistics data which is used for billing customers.
 
 Based on the contract, there are two pricing models for billing:
 

@@ -16,7 +16,7 @@ For details on migration, refer to [Migrating from CEL (Esper) to Apama](/apama/
 
 #### Removal of OPC UA legacy integration
 
-With Cumulocity IoT 10.7, the OPC UA legacy integration will be removed from the product. With Cumulocity IoT 10.5.7 a new version of our OPC UA integration was introduced supporting many advanced features. If you are still using the legacy OPC UA integration, we ask you to upgrade to the latest version. For more information, refer to [Optional services > OPC UA](/users-guide/optional-services/#opc-ua) in the User guide. 
+With Cumulocity IoT 10.7, the OPC UA legacy integration will be removed from the product. With Cumulocity IoT 10.5.7 a new version of our OPC UA integration was introduced supporting many advanced features. If you are still using the legacy OPC UA integration, we ask you to upgrade to the latest version. For more information, refer to [OPC UA](/protocol-integration/opcua) in the *Protocol integration guide*. 
 
 
 ### Implemented measures

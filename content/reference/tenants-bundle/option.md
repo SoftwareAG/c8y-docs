@@ -205,3 +205,33 @@ Example Response :
         "self": "<<Option access.control.allow.origin URL>>",
         "value": "http://developer.cumulocity.com"
     }
+
+To define an option of tenant as "non-editable", from "management" tenant add the targetTenant parameter with tenant ID to the URL.
+
+Required role: ROLE\_OPTION\_MANAGEMENT\_ADMIN
+
+Required tenant: management
+
+Example Request: Update access.control.allow.origin option as "non-editable" for targetTenant.
+
+```http
+PUT /tenant/options/<<category>>/<<key>>/editable?targetTenant=<<tenantID>>
+Host: https://<<TENANT_DOMAIN>>
+Authorization: <<AUTHORIZATION>>
+Content-Type: application/vnd.com.nsn.cumulocity.option+json
+Accept: application/vnd.com.nsn.cumulocity.option+json
+
+{
+    "editable": "false"
+}
+```
+
+Example Response :
+
+```json
+{
+    "self": "https://<<TENANT_DOMAIN>>/tenant/options/access.control/allow.origin",
+    "category": "access.control",
+    "key": "allow.origin"
+}
+```

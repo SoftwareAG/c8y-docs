@@ -26,11 +26,11 @@ Click **Authentication** in the **Settings** menu if you want to view or change 
 
 #### Login settings
 
-There are two **Preferred login modes** available:
+There are three **Preferred login modes** available:
 
 * "OAuth Internal" which is the recommended option as it provides better security.
 * "Basic Auth" which should be chosen only for specific compatibility reasons.
-* "Redirect to SSO" which can be selected only if SSO is configured. If selected, it will remove both Basic Auth and OAuth Internal login options.
+* "Single sign-on redirect" which can be selected only if SSO is configured. If selected, it will remove both Basic Auth and OAuth Internal login options.
 
 This login mode will be used by the platform's applications as the default method to authenticate users. Device authentication stays unchanged.
 
@@ -422,10 +422,10 @@ In the **Connectivity** page, you can manage credentials for different providers
 
 The following provider settings may currently be specified:
 
-- [Impact](/users-guide/optional-services#nokia-impact)
-- [LoRa](/users-guide/optional-services#lora)
-- [Sigfox](/users-guide/optional-services#sigfox)
-- [SIM](/users-guide/optional-services#connectivity)
+- [Impact](/protocol-integration/impact)
+- [Actility LoRa](/protocol-integration/lora-actility)
+- [Sigfox](/protocol-integration/sigfox)
+- [SIM](/protocol-integration/connectivity)
 
 ![Provider settings](/images/users-guide/Administration/admin-settings-connectivity.png)
 
@@ -436,4 +436,4 @@ The following provider settings may currently be specified:
 3. Enter the credentials of your provider platform. Depending on the provider, these credentials will be either the credentials of your account in the provider platform or the credentials with which you can register in the Cumulocity IoT connectivity page, will be displayed in your account in the provider platform.
 4. Finally, click **Save** to save your settings.
 
-Depending on the provider you have selected, there may be additional fields, which will be explained in the respective agent documentation, see [Optional services](/users-guide/optional-services).
+Depending on the provider you have selected, there may be additional fields, which will be explained in the respective agent documentation, see [Protocol integration guide](/protocol-integration/overview/).

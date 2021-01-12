@@ -311,6 +311,8 @@ Note that updating adminPass and adminEmail updates these settings in the admin 
 >**Important**: Deleting a subtenant cannot be reverted. For security reasons, it is therefore only available in the management tenant. You cannot delete tenants from any tenant but the management tenant.
 >
 >Administrators in Enterprise Tenants are only allowed to suspend active subtenants, but not to delete them.
+>
+>The deletion of tenants is an asynchronous operation. After the request has been executed, the tenant will be marked as DELETE and will be SUSPENDED. The deletion will be executed in the background.
 
 Request body: N/A
 

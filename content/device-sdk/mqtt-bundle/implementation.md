@@ -8,7 +8,7 @@ This section will list the implementation details for the MQTT protocol. The Cum
 
 ### Connecting via MQTT
 
-Cumulocity IoT supports MQTT both via TCP and WebSockets. As URL you can use your tenant domain (e.g. _mytenant.cumulocity.com/mqtt_) or the domain of the instance in the format mqtt.&lt;instance_domain> (e.g. _mqtt.cumulocity.com_).
+Cumulocity IoT supports MQTT both via TCP and WebSockets. As URL you can use the domain of the instance in the format mqtt.&lt;instance_domain> (e.g. _mqtt.cumulocity.com_) or your tenant domain (e.g. _mytenant.cumulocity.com/mqtt_).
 
 Available ports:
 
@@ -170,7 +170,7 @@ To support developers during development, it is possible to subscribe to the top
 
 ### Reloading the server certificate
 
-You can change the server certificate, which is sent to the devices. To do so, please [contact support](/about-doc/contacting-support), who can add a new certificate to the server's keystore and reload it.
+You can change the server certificate, which is sent to the devices. To do so, please [contact product support](/about-doc/contacting-support), who can add a new certificate to the server's keystore and reload it.
 
 Certificates exchange between the server and the device occurs during device connection, so all already connected devices will not be disconnected during reloading. Only after they disconnect on their own and try to connect later, then it is required that they contain the new server certificate in their truststore.
 

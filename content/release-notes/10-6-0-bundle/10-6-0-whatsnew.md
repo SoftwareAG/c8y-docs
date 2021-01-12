@@ -37,7 +37,7 @@ For details, see [Cockpit > Data explorer](/users-guide/cockpit#data-explorer) i
 
 The following improvements have been implemented in the OPC UA gateway since 10.5.7.
 
-For details, see [Optional services > OPC UA](/users-guide/optional-services#opc-ua) in the User guide.  
+For details, see [OPC UA](/protocol-integration/opcua) in the *Device integration guide*.  
 
 #### Extended subscription parameters 
 

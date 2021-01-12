@@ -6,6 +6,9 @@ layout: redirect
 
 A real-time notifications client initiates connection negotiation by sending a message to the "/meta/handshake" channel. In response, the client receives a *clientId* which identifies a conversation and must be passed in every non-handshake request.
 
+> **Info:** The number of parallel connections that can be opened at the same time by a single user is limited. After exceeding this limit when a new connection is created, the oldest one will be closed and the newly created one will be added in its place.
+           This limit is configurable and managed per installation. Its default value is 10 connections per user, subscription channel and server node.
+ 
 When using websockets, a property 'ext' containing an authentication object must also be sent. In case of basic authentication the "token" is used with base64 encoded credentials.  In case of OAuth authentication the request must have the cookie with the authorization name, holding the access token. Further more the XSRF token must be forwarded as part of the handshake message.
 
     {

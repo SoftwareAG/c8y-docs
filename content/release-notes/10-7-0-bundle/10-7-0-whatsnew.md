@@ -49,7 +49,7 @@ A new wizard has been implemented to add bulk operations of the following types:
 
 ![Bulk operations](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-type.png)
 
-For details, see [Device Management > Monitoring and controlling devices > Working with operations](/users-guide/device-management#working-with-operations) in the User guide.
+For details, see [Device Management > Monitoring and controlling devices > Working with operations](/users-guide/device-management/#operation-monitoring) in the User guide.
 
 
 #### [MTM-30319] NEW FEATURE - Device profiles
@@ -110,7 +110,7 @@ The functionality of the OPC UA device gateway has been enhanced including the f
 * [MTM-32635] For OPC UA mappings, the alarm and event type can now have placeholders for selected attributes by using their index. 
 * [MTM-33266] The default configuration file packaged in the JAR is now fully commented.
 
-For details, see [OPC UA](/device-protocols/opcua) in the Device protocols guide.
+For details, see [OPC UA](/protocol-integration/opcua) in the *Protocol integration guide*.
 
 
 

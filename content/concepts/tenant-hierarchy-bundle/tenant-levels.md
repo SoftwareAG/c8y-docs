@@ -15,13 +15,11 @@ The Cumulocity IoT tenant concept builds a 3-level hierarchy, including the foll
 
 ### <a name="standard-tenant"></a> Standard tenant
 
-At the bottom of the hierarchy you can find single tenants which are represented by the concept of standard tenants in Cumulocity IoT. 
+At the bottom of the hierarchy you can find single tenants which are represented by the concept of Standard tenants in Cumulocity IoT. 
 
-A standard tenant offers most of the device management and monitoring functionality of the Cumulocity IoT platform, but shows certain limitations when it comes to administrative aspects. 
+A Standard tenant offers most of the device management and monitoring functionality of the Cumulocity IoT platform, but shows certain limitations when it comes to administrative aspects. 
 
-Users in a standard tenant share the same URL and the same data space. Multiple users are separated from each other by assigning access rights based on the [roles concept](/concepts/security/#access-control), i.e. using roles you can give certain users only restricted visibility of the tenant (for example, only the devices that belong to them). 
-
-A standard tenant can either be a direct subtenant of the [management tenant](#management-tenant) or a subtenant of an [enterprise tenant](enterprise-tenant).
+In a Standard tenant, multiple parties are reflected by separate users. Since all users in a tenant share the same URL and data space they can only be separated from each other by assigning access rights based on the [roles concept](/concepts/security/#access-control), i.e. using roles you can give certain users only restricted visibility of the tenant (for example, only the devices that belong to them). 
 
 >**Info:** Standard tenants, as direct subtenants of the management tenant, correspond to the Basic Package of the Cumulocity IoT offering. This package provides fully standardized functionality and is hosted on a public cloud managed by Cumulocity. 
 >
@@ -30,9 +28,9 @@ A standard tenant can either be a direct subtenant of the [management tenant](#m
 
 ### <a name="enterprise-tenant"></a> Enterprise tenant
 
-An enterprise tenant offers additional administrative functionality compared to a standard tenant, the major difference being **multi-tenancy**. 
+An Enterprise tenant offers additional administrative functionality compared to a Standard tenant, the major difference being **multi-tenancy**. 
 
-Using an enterprise tenant, you can
+Using an Enterprise tenant, you can
   
 * create and manage subtenants
 * manage the subscribed applications/features of the subtenants
@@ -48,7 +46,7 @@ Moreover, the following additional features are provided:
 * **User hierarchy** - To reflect entities with limited permissions to subsets of shared data 
 * **Data broker** - To securely share data between tenants
 
-Details on the usage of the additional features and functionalities of the enterprise tenant can be found in the [Enterprise tenant](/users-guide/enterprise-edition/) section in the *User guide*.  
+Details on the usage of the additional features and functionalities of the Enterprise tenant can be found in the [Enterprise tenant](/users-guide/enterprise-edition/) section in the *User guide*.  
 
 >**Info:** Enterprise tenants correspond to the Advanced Package of the Cumulocity IoT offering. This package offers standardized functionality with minimal customizations available via public cloud hosting. The Advanced Package is available on the same public cloud as other Basic (or Advanced) Package customers. 
 >
@@ -57,11 +55,11 @@ Details on the usage of the additional features and functionalities of the enter
 
 ### <a name="management-tenant"></a> Management tenant
 
-The management tenant builds the highest level of the Cumulocity IoT tenant hierarchy.
+The Management tenant builds the highest level of the Cumulocity IoT tenant hierarchy.
 
-Every Cumulocity IoT deployment is delivered with a management tenant. The management tenant is used to administrate all tenants within the same deployment.
+Every Cumulocity IoT deployment is delivered with a Management tenant. The Management tenant is used to administer all tenants within the same deployment.
 
-You will only have access to the management tenant, when you setup your own Cumulocity IoT instance either as a dedicated/hosted cloud deployment, an on-premise deployment, or the Cumulocity IoT Edge offering.
+You will only have access to the Management tenant, when you setup your own Cumulocity IoT instance either as a dedicated/hosted cloud deployment, an on-premise deployment, or the Cumulocity IoT Edge offering.
 
 >**Info:** Management tenants correspond to the Enterprise Package of the Cumulocity IoT offering. This package is best suited for highly critical or complex IoT applications, possibly involving several rebranded solutions for resell. This package gives buyers fully-dedicated resources, either in a dedicated cloud environment or installed on-premises, making the deployment options highly flexible and completely within the organization’s control.
 >

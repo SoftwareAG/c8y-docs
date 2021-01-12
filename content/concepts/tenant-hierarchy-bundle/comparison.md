@@ -10,7 +10,7 @@ When you think about offering your applications and services to your customers y
 
 The first is **role-based access control (RBAC)** that is part of every tenant in the Cumulocity IoT platform and lets you granularly define the rights of each user. This can be used to give certain users (like a customer) only partial visibility of the tenant (only the devices that belong to them).
 
-On top of that the Cumulocity IoT platform in general is a **multi-tenant platform** which also gives you the ability to create your own sub-tenants, which function like any other tenant in the platform.
+On top of that the Cumulocity IoT platform in general is a **multi-tenant platform** which also gives you the ability to create your own subtenants, which function like any other tenant in the platform.
 
 This will leave you with two options to structure your customers. You can either create a tenant for each of your customers or you can manage multiple customers within a single tenant and protect them from each other using RBAC.
 
@@ -63,7 +63,7 @@ The following sections discuss how these tasks are handled in both approaches.
 <tbody>
 <tr>
 <td style="text-align:left">Adding a new customer is achieved by expanding your asset hierarchy and creating the respective user accounts for the customer with access to the newly created parts of the hierarchy.</td>
-<td style="text-align:left">Adding a new customer is achieved by creating a new sub-tenant from your own tenant. During the tenant creation you can automatically create the first user for the customer which will get admin permissions.</td>
+<td style="text-align:left">Adding a new customer is achieved by creating a new subtenant from your own tenant. During the tenant creation you can automatically create the first user for the customer which will get admin permissions.</td>
 </tr>
 </tbody>
 </table>
@@ -192,7 +192,7 @@ Application management is only available on tenant level. If you want to give cu
 <tr>
 <td style="text-align:left">The platform automatically collects usage data like API requests, storage space, number of users and devices. However, this is always on tenant level. Resolving which customer has how much devices is still doable via the API but you will not be able to separate storage space and API requests.
 </td>
-<td style="text-align:left">If your customers are sub-tenants of your own tenant you will be able to see and export the usage data for each tenant from your own tenant without requiring any access to your customers data. You also have the ability to set limits for your customers, thus ensuring they stay under certain usage amounts.</td>
+<td style="text-align:left">If your customers are subtenants of your own tenant you will be able to see and export the usage data for each tenant from your own tenant without requiring any access to your customers data. You also have the ability to set limits for your customers, thus ensuring they stay under certain usage amounts.</td>
 </tr>
 </tbody>
 </table>

@@ -138,3 +138,23 @@ Paging statistics for collection resources are provided in the following format:
 </table>
 
 > **Info:** The `totalPages` property is not returned by default in the response. To include it, add the query parameter `withTotalPages=true`.
+
+A common case is to retrieve the total number of certain records in the tenant. To achieve this, you can set the properties `pageSize=1` and `withTotalPages=true`, then the `totalPages` property will contain the total number of records.
+
+**Example**: Find out how many events are in the tenant.
+
+```http
+GET  /event/events/?pageSize=1&totalPages=true
+Host: <TENANT_DOMAIN>
+Authorization: Basic <AUTHORIZATION>
+```
+
+The `statistics` object in the response will contain the total number of events.
+
+```json
+"statistics": {
+    "totalPages": 519,
+    "currentPage": 1,
+    "pageSize": 1
+}
+```

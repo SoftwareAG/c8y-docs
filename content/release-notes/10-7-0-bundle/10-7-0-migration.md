@@ -12,7 +12,7 @@ In response to the announcement by Microsoft of the end of life for Internet Exp
 
 #### Smart REST response codes 
 
-The error code "40" will be removed in Cumulocity IoT 1.8 January 2021 release.  
+The error code "40" will be removed in the Cumulocity IoT 10.9 GA Release in April 2021.  
 
 Why are we doing this?  Currently, when connecting to Cumulocity IoT via SmartREST 1.0 you may receive an error "40", often looking like this:
 
@@ -30,7 +30,7 @@ No change is required for devices integrated via our Device SDK and agents. Howe
 
 #### ngx-bootstrap upgrade to 5.6.1
 
-To fix various layout issues around tooltips and scrollbars, the ngx-bootstrap library will be upgraded to version 5.6.1. The change applies the first time to the 10.7.1 Incremental Release and to the 10.8 GA Release in January 2021. 
+To fix various layout issues around tooltips and scrollbars, the ngx-bootstrap library will be upgraded to version 5.6.1. The change applies the first time to the 10.7.1 Incremental Release and to the 10.9 GA Release in April 2021. 
 
 This change may affect developers building Cumulocity IoT UI extensions or custom web applications. It may also affect existing extensions and web applications.
 
@@ -43,6 +43,11 @@ instead of
 	import { BsModalRef } from 'ngx-bootstrap’;
 
 For details, see the [ngx-bootstrap release notes](https://github.com/valor-software/ngx-bootstrap/releases). 
+
+### UI upgrade to Angular 11
+
+With the 10.10 GA Release in July 2021, all Cumulocity IoT UIs will be upgraded to Angular 11. This change will only affect you, if you or your development team use the Web SDK to extend default Cumulocity IoT UI applications (Cockpit, Administration, Device Management) or to build your own web applications.
+
 
 
 ### Implemented measures

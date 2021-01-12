@@ -1,20 +1,20 @@
 ---
 title: Add a tab to a details views with context routes
 layout: redirect
-weight: 30
+weight: 40
 ---
 
  **Version:** 10.4.11.0 | **Packages:** @c8y/cli and @c8y/ngx-components
 
-It is a common use case that you want to show additional information to a user in a details view (e.g. for a device or a group). 
+It is a common use case that you want to show additional information to a user in a details view (e.g. for a device or a group).
 
 This how-to recipe explains how to accomplish a new tab in the device details view:
 
 ![Device info with custom tab](/images/web-sdk/device-detail-custom-tab.png)
 
-In Web SDK for Angular, this kind of views are called `ViewContext` as they provide a view for a certain context. There are a couple of context views e.g. `Device`, `Group`, `User`, `Application` and `Tenant`. The user can access them by navigating to a certain `Route` with the hash navigation. For example, if you go to the route `apps/cockpit/#/device/1234` the application tries to resolve the device with the ID `1234`. 
+In Web SDK for Angular, this kind of views are called `ViewContext` as they provide a view for a certain context. There are a couple of context views e.g. `Device`, `Group`, `User`, `Application` and `Tenant`. The user can access them by navigating to a certain `Route` with the hash navigation. For example, if you go to the route `apps/cockpit/#/device/1234` the application tries to resolve the device with the ID `1234`.
 
-The details view usually shows a couple of `Tabs`, like the **Info** tab in the screenshot above which is referenced by another route called `/info` but reuses the context of the device to show information about it. 
+The details view usually shows a couple of `Tabs`, like the **Info** tab in the screenshot above which is referenced by another route called `/info` but reuses the context of the device to show information about it.
 
 In the following, we will guide you through the process of creating a new tab to this view that is accessible through the route `apps/cockpit/#/device/:id/hello`.
 
@@ -29,7 +29,7 @@ c8ycli new my-cockpit cockpit  -a @c8y/apps@1004.11.0
 Next, you need to install all dependencies. Switch to the new folder and run `npm install`.
 
 > **Tip:** The `c8ycli new` command has a `-a` flag which defines which package to use for scaffolding. This way you can also define which version of the app you want to scaffold, e.g.:
-> 
+>
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@1004.11.0` will scaffold an app with the version `10.4.11.0`
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@latest` will scaffold an app with the latest official release. Same as if used without the `-a` flag
 > - `c8ycli new my-cockpit cockpit -a @c8y/apps@next` will scaffold an app with the latest beta release.
@@ -37,7 +37,7 @@ Next, you need to install all dependencies. Switch to the new folder and run `np
 
 ### 2. Add a new ROUTE&#95;HOOK_ONCE
 
-The hook concept allows you to hook into the existing code. In this example we want to add a so-called ChildRoute (by Angular) on the existing route `device/:id`. 
+The hook concept allows you to hook into the existing code. In this example we want to add a so-called ChildRoute (by Angular) on the existing route `device/:id`.
 
 To achieve this, add the following code to the `app.module.ts`:
 
@@ -66,7 +66,7 @@ import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
     ]
 
   // ---- 8< added part ----
-  providers: [{ 
+  providers: [{
     provide: HOOK_ONCE_ROUTE,          // 1.
     useValue: [{                       // 2.
       context: ViewContext.Device,     // 3.
@@ -75,7 +75,7 @@ import { AssetsNavigatorModule } from '@c8y/ngx-components/assets-navigator';
       label: 'hello',                  // 6.
       priority: 100,
       icon: 'rocket'
-    }], 
+    }],
     multi: true
   }]
   // ---- >8 ----
@@ -103,7 +103,7 @@ After this alignments the route is registered but the application will fail to c
 
 ### 3. Add a component to display context data
 
-The `HelloComponent` might want to display details about the device. Hence it needs the information in which context it has been opened. The context route resolves the device upfront, so there is no need to handle this. You can directly access it via the parent route. 
+The `HelloComponent` might want to display details about the device. Hence it needs the information in which context it has been opened. The context route resolves the device upfront, so there is no need to handle this. You can directly access it via the parent route.
 
 So let's create a new file called `hello.component.ts`:
 
@@ -162,7 +162,7 @@ import { HelloComponent } from './hello.component';
   entryComponents: [HelloComponent],
   // ---- >8 ----
 
-  providers: [{ 
+  providers: [{
     provide: HOOK_ONCE_ROUTE,
     useValue: [{
       context: ViewContext.Device,
@@ -171,7 +171,7 @@ import { HelloComponent } from './hello.component';
       label: 'hello',
       priority: 100,
       icon: 'rocket'
-    }], 
+    }],
     multi: true
   }]
 })
@@ -187,13 +187,13 @@ When you now start your application with `npm start` and navigate to a details v
 
 ![Device info with custom tab](/images/web-sdk/device-detail-custom-tab.png)
 
-Congratulations, you added a tab to a device. You can do the same for tenants, users or applications details views. 
+Congratulations, you added a tab to a device. You can do the same for tenants, users or applications details views.
 
 Next you will learn how to show this tab only if a certain criteria is met.
 
 ### (Bonus) 4. Show the tab only on certain criteria
 
-In some cases, additional information is available only if a certain criteria is met. For example, it only makes sense to show a location if the device has a location fragment associated. To add such a criteria, the context routes inherit the [guard concept of Angular](https://angular.io/guide/router#milestone-5-route-guards). 
+In some cases, additional information is available only if a certain criteria is met. For example, it only makes sense to show a location if the device has a location fragment associated. To add such a criteria, the context routes inherit the [guard concept of Angular](https://angular.io/guide/router#milestone-5-route-guards).
 
 To add a guard, you simply need to add the `canActivate` property to the route definition:
 
@@ -245,7 +245,7 @@ import { HelloGuard } from './hello.guard';
       canActivate: [HelloGuard]
       // ---- >8 ----
 
-    }], 
+    }],
     multi: true
   }]
 })
@@ -256,7 +256,7 @@ export class AppModule extends HybridAppModule {
 }
 ```
 
-Now you can write a guard which checks certain criteria. If it resolves to true, the tab will be shown, otherwise not. 
+Now you can write a guard which checks certain criteria. If it resolves to true, the tab will be shown, otherwise not.
 
 A guard to check for a certain fragment on a device can look like this `hello.guard.ts`:
 
@@ -285,10 +285,8 @@ If you now post a device with the fragment `"acme_HelloWorld": {}` to the API, t
 
 ### Conclusion
 
-Context routes help you to extend existing routes with further information. 
+Context routes help you to extend existing routes with further information.
 
-At the same time, the concept allows the application to be consistent since the context is just resolved once and context not found can be handled by the parent. 
+At the same time, the concept allows the application to be consistent since the context is just resolved once and context not found can be handled by the parent.
 
 However, there is currently no default way of abstracting the context route concept and implementing your own context route. But since the concept is heavily based on [Angular routing](https://angular.io/guide/router) you can implement the concept quite easily.
-
-

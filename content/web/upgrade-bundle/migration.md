@@ -9,9 +9,9 @@ This section targets to developers who have either already developed a plugin wi
 
 You should have read and understand the following concepts:
 
-* [Overview](/web/angular#overview), explaining when to use which SDK.
+* [Overview](/web/overview/), explaining when to use which SDK.
 * [Upgrading to Angular](/web/background), explaining since which version you can use the new SDK.
-* [Developer command line tool](/web/angular#developer-command-line-tool), enabling you to install the new tooling.
+* [Developer command line tool](/web/development-tools/#c8y-cli), enabling you to install the new tooling.
 
 
 ### Setting up a hybrid application

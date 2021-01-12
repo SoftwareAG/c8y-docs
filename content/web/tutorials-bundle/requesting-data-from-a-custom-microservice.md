@@ -1,7 +1,7 @@
 ---
 title: Request data from a custom microservice
 layout: redirect
-weight: 40
+weight: 50
 ---
 
  **Version:** 10.4.11.0 | **Packages:** @c8y/client and @c8y/ngx-components

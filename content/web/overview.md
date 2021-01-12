@@ -6,13 +6,18 @@ aliases:
   - /web/angular/
 ---
 
-This Web SDK guide provides information on the Web SDK enables you to
+
+This guide provides information on the Web SDK which enables you to
 
 * develop web applications that can be deployed to the platform,
 * communicate authenticated with our API,
 * apply default or branded UI components to your custom application.
 
 If you have previously been working with older versions you might be interested in some short information on the evolution of the UI stack in [Upgrading to Angular](/web/background) to better understand how and why it is now designed the way it is.
+
+> **Important:** Web SDK for Angular JS is deprecated. Therefore, its documentation is no longer provided here.  As all Cumulocity IoT REST APIs are backward compatible, Angular JS applications will still continue to work.
+>
+>[Web SDK for plugins](/web-sdk-for-plugins) is based on Angular JS and is also deprecated. For Angular-based development, we recommend you to implement native Angular modules. The documentation is still available for migration purposes, i.e. if you want to integrate an already developed plugin into the Web SDK for Angular. You can import plugins to Angular as described in [ngx-components > Extension points](/web/libraries#extension-points).
 
 The Web SDK consists of the following packages deployed to npm in the scope `@c8y` and available under [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt) license:
 
@@ -22,14 +27,14 @@ These packages depend on each other from top to bottom. While the `@c8y/client` 
 
 The goal of these splittings is to provide the right package for every use case, e.g. if you want to build a small application with React you could use the `@c8y/client` to do the API interaction. If you need a brandable feature rich application which is close to our Cockpit or Device Management application you could use `@c8y/ngx-components` together with `@c8y/style`.
 
-Following is a list which explains the use cases of each package.
+The following is a list which explains the use cases of each package.
 
- - [@c8y/client](/web/angular#client): Use this client to access our API. The client is isomorphic, that means it could be used in node.js and in the browser.
- - [@c8y/ngx-components](/web/angular#ngx-components): A components collection and data access layer for Angular applications. This package can be used to build Angular applications.
- - [@c8y/styles](/web/angular#branding): The styles for the look & feel of an application. Extend this package to apply a custom branding to your application.
- - [@c8y/apps](/web/angular#apps): Example and bootstrapping applications to easily let you start with the Web SDK.
+ - [@c8y/client](/web/libraries/#client): Use this client to access our API. The client is isomorphic, that means it could be used in node.js and in the browser.
+ - [@c8y/ngx-components](/web/libraries#ngx-components): A components collection and data access layer for Angular applications. This package can be used to build Angular applications.
+ - [@c8y/styles](/web/application-configuration#branding): The styles for the look & feel of an application. Extend this package to apply a custom branding to your application.
+ - [@c8y/apps](/web/libraries/#application): Example and bootstrapping applications to easily let you start with the Web SDK.
 
-You can find all our packages [on npm](https://www.npmjs.com/~c8y). To quickly get you bootstrapped with these packages we have built an CLI tool called `@c8y/cli`. Next, we will showcase how to get started with the `@c8y/cli` command line tool.
+You can find all our packages on [npm](https://www.npmjs.com/~c8y). To quickly get you bootstrapped with these packages we have built an CLI tool called `@c8y/cli`. Next, we will showcase how to get started with the `@c8y/cli` command line tool.
 
 
 ### First route & component
@@ -77,6 +82,6 @@ export class AppModule {}
 
 ```
 
-If you start this application and log in you will see an application similar to the following screenshot. To extend this application you can use the [Angular Router](https://angular.io/guide/router#router-imports) in combination with our [@c8y/ngx-components](#ngx-components).
+If you start this application and log in you will see an application similar to the following screenshot. To extend this application you can use the [Angular Router](https://angular.io/guide/router#router-imports) in combination with our [@c8y/ngx-components](/web/libraries#ngx-components).
 
 ![An Angular based application](/images/web-sdk/hello-world-example.png)

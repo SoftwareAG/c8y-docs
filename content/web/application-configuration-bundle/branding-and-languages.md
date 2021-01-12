@@ -52,14 +52,14 @@ Here is a list of the available variables.
 }
 ```
 
-Note that these can be customized at runtime using [application options](/web/angular#application-options) using the property `brandingCssVars`.
+Note that these can be customized at runtime using [application options](/web/application-configuration/#application-options) using the property `brandingCssVars`.
 The option is only available after version 9.22.0.
 
 ### Using LESS
 
 #### Prerequisites
 
-If you do not use the [@c8y/cli](/web/angular#cli) make sure that you install the base styles from npm with:
+If you do not use the [@c8y/cli](/web/development-tools/#c8y-cli) make sure that you install the base styles from npm with:
 
 ```
 npm install @c8y/style
@@ -111,7 +111,7 @@ What about changing the main logo that is located at the top of the login dialog
  @brand-logo-height: 48%;
  ```
 
-You can check the branding changes with the help of the [@c8y/cli](/web/angular#cli).
+You can check the branding changes with the help of the [@c8y/cli](/web/development-tools/#c8y-cli).
 
  ```
  c8ycli server --app.brandingEntry="<path-to-your-branding.less>"
@@ -136,7 +136,7 @@ The colors that may be edited are separated in multiple categories, like:
 * gray shades
 * component colors
 
-###### Brand colors
+**Brand colors**
 
 ```less
 @brand-color:                 #53cd61;
@@ -145,7 +145,7 @@ The colors that may be edited are separated in multiple categories, like:
 @brand-primary-light:         lighten(@brand-primary, 20%);
 ```
 
-##### Status colors
+**Status colors**
 
 ```less
 @brand-success:               #5cb85c;
@@ -158,7 +158,7 @@ The colors that may be edited are separated in multiple categories, like:
 @success:                     #5cb85c;
 ```
 
-###### Gray shades
+**Gray shades**
 
 ```less
 @gray-text:                   #444;
@@ -173,7 +173,7 @@ The colors that may be edited are separated in multiple categories, like:
 @text-muted:                  @gray;
 ```
 
-###### Component colors
+**Component colors**
 
 Two components are always visible to the user, the header and the navigator. Therefore you should determine the look & feel of these components with care.
 
@@ -321,9 +321,9 @@ Above we described the possible options for creating your custom branding in det
 
 ### Branding and language customization
 
-Using [application options](#application-options), each tenant can customize the look and feel of built-in applications and add or replace the languages available in the applications. As described in [Application options](#application-options), the underlying mechanism is static hosted web application.
+Using [application options](/web/application-configuration/#application-options), each tenant can customize the look and feel of built-in applications and add or replace the languages available in the applications. As described in [Application options](/web/application-configuration/#application-options), the underlying mechanism is static hosted web application.
 
-In this tutorial we are publishing 2 web applications:
+In this tutorial we are publishing two web applications:
 
 * `public-options`, where the JSON file containing the configuration will be stored
 * `ui-assets`, where any required assets will be hosted: images, favicon and translation files

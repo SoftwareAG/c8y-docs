@@ -4,7 +4,7 @@ layout: redirect
 weight: 20
 ---
 
-he @c8y/client is an isomorphic (node and browser) Javascript client library for the [Cumulocity IoT](http://www.cumulocity.com) platform API.
+The @c8y/client is an isomorphic (node and browser) Javascript client library for the [Cumulocity IoT](http://www.cumulocity.com) platform API.
 
 ### Installation
 
@@ -23,10 +23,34 @@ Use `client.<endpoint>.list()` to request listed data from the Cumulocity IoT RE
 
 ### Get detail and list data with promises (pull)
 
-| Method | Description | Parameters | Return |
-| --- | --- | --- | --- |
-|`detail(entityOrId)` | Request detail data of a specific entity. |  `entityOrId: string | number | IIdentified`: An object which contains an id or an id as number or string. | `Promise<IResult<TData>>`: The list as Promise wrapped in an IResult. IResultList contains data and response. |
-|`list(filter)` | Request a list of data with an optional filter. | `filter:object`: (optional) A filter for [paging](/reference/rest-implementation/#-a-name-paging-a-query-result-paging) or [filtering](/reference/inventory/#query-language) of the list. | `Promise<IResultList<TData>>`: The list as Promise wrapped in an IResultList. IResultList contains data, response and paging.
+<table>
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:30%">
+<col style="width:30%">
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+<th>Parameters</th>
+<th>Return</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>detail(entityOrId)</code></td>
+<td>Request detail data of a specific entity.</td>
+<td><code>entityOrId: string | number | IIdentified</code>: An object which contains an id or an id as number or string.</td>
+<td><code>Promise&lt;IResult&lt;TData&gt;&gt;</code>: The list as Promise wrapped in an IResult. IResultList contains data and response.</td>
+</tr>
+<tr>
+<td><code>list(filter)</code></td>
+<td>Request a list of data with an optional filter.</td>
+<td><code>filter:object</code>: (optional) A filter for <a href="../../reference/rest-implementation/#rest-usage">paging</a> or <a href="../../reference/inventory/#query-language">filtering</a> of the list.</td>
+<td><code>Promise&lt;IResultList&lt;TData&gt;&gt;</code>: The list as Promise wrapped in an IResultList. IResultList contains data, response and paging.</td>
+</tr>
+</tbody>
+</table>
 
 * Example for receiving details of one managedObject of the inventory via `detail`:
 
@@ -100,10 +124,34 @@ It internally creates a client instance and tries to contact the API to verify i
 
 The `detail$` and `list$` functions allow to subscribe to realtime channels that omit data on each change:
 
-| Method | Description | Parameters | Return |
-| --- | --- | --- | --- |
-| `detail$(entityOrId, options)` | Returns an observable for detail data of one entity | `entityOrId: string | number | IIdentified`: An object which contains an id or an id as number or string.<br>`options: IObservableOptions`: (optional) An configuration object to define the observable. | `Observable<TData>>`: The list as subscribable observable. |
-| `list$(filter, options)` | Returns an observable for a list of entities. | `filter: object`: (optional) A filter for [paging](/reference/rest-implementation/#-a-name-paging-a-query-result-paging) or [filtering](/reference/inventory/#query-language) of the list (optional).<br>`options: IObservableOptions`: (optional) An configuration object to define the observable. | `ObservableList<TData>>`: The list as subscribable observable.
+<table>
+<col style="width:20%">
+<col style="width:20%">
+<col style="width:30%">
+<col style="width:30%">
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+<th>Parameters</th>
+<th>Return</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>detail$(entityOrId, options)</code></td>
+<td>Returns an observable for detail data of one entity</td>
+<td><code>entityOrId: string | number | IIdentified</code>: An object which contains an id or an id as number or string.<br><code>options: IObservableOptions</code>: (optional) An configuration object to define the observable.</td>
+<td><code>Observable&lt;TData&gt;&gt;</code>: The list as subscribable observable.</td>
+</tr>
+<tr>
+<td><code>list$(filter, options)</code></td>
+<td>Returns an observable for a list of entities.</td>
+<td><code>filter: object</code>: (optional) A filter for <a href="../../reference/rest-implementation/#rest-usage">paging</a> or <a href="../../reference/inventory/#query-language">filtering</a> of the list (optional).<br><code>options: IObservableOptions</code>: (optional) An configuration object to define the observable.</td>
+<td><code>ObservableList&lt;TData&gt;&gt;</code>: The list as subscribable observable.</td>
+</tr>
+</tbody>
+</table>
 
 * Example for receiving details of one managedObject of the inventory via `detail$`:
 
@@ -138,7 +186,7 @@ The `detail$` and `list$` functions allow to subscribe to realtime channels that
 
 ### Examples
 
-Below some examples are provided which may help you to get started. To see a complex and full implementation of the client into Angular, have a look at [@c8y/cli](/web/angular#cli) and the `new` command to spin up a example application for Angular.
+Below some examples are provided which may help you to get started. To see a complex and full implementation of the client into Angular, have a look at [@c8y/cli](/web/development-tools/#c8y-cli) and the `new` command to spin up a example application for Angular.
 
 
 #### Requesting list data from the inventory:

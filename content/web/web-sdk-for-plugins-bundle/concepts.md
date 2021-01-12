@@ -27,7 +27,7 @@ As an example, let us take a look at some plugins being used by the Cockpit appl
 * Dashboard: Adds a new view/tab to groups and devices, functioning as a container for widgets.
 * Data point table: Adds a widget to dashboards providing a visualization of measurements in tabular form.
 
-> **Info:** You can [extend](#target) the default applications of Cumulocity IoT (Administration, Cockpit, Device Management) with new functionality. You must create a duplicate of the core application before you can extend it. To create a duplicate of an application, you can either [copy it via the UI](/users-guide/administration#clone-application) in the Administration application or [create a new application](/users-guide/administration#adding-applications) which uses the exact same plugins as the desired application.
+> **Info:** You can [extend](#target) the default applications of Cumulocity IoT (Administration, Cockpit, Device Management) with new functionality. You must create a duplicate of the core application before you can extend it. To create a duplicate of an application, you can either [copy it via the UI](/users-guide/administration#clone-application) in the Administration application or [create a new application](/web/tab-plugin#dependencies) which uses the exact same plugins as the desired application.
 
 ### Project structure
 
@@ -52,7 +52,7 @@ The folder *plugins* contains one folder per plugin contributed by the applicati
 
 The format of the application manifest and the plugin manifest is described in [Manifests](#manifests).
 
-If you only want to create a plugin and [add it to an already existing application](/users-guide/administration#clone-application), use the exact folder structure described above:
+If you only want to create a plugin and [add it to an already existing application](/users-guide/administration#add-remove-plugin), use the exact folder structure described above:
 
 ```console
 <<root folder>>

@@ -26,7 +26,7 @@ Use `client.<endpoint>.list()` to request listed data from the Cumulocity IoT RE
 | Method | Description | Parameters | Return |
 | --- | --- | --- | --- |
 |`detail(entityOrId)` | Request detail data of a specific entity. |  `entityOrId: string | number | IIdentified`: An object which contains an id or an id as number or string. | `Promise<IResult<TData>>`: The list as Promise wrapped in an IResult. IResultList contains data and response. |
-|`list(filter)` | Request a list of data with an optional filter. | `filter:object`: (optional) A filter for [paging](/reference/rest-implementation/#paging) or [filtering](/reference/inventory/#query-language) of the list. | `Promise<IResultList<TData>>`: The list as Promise wrapped in an IResultList. IResultList contains data, response and paging.
+|`list(filter)` | Request a list of data with an optional filter. | `filter:object`: (optional) A filter for [paging](/reference/rest-implementation/#-a-name-paging-a-query-result-paging) or [filtering](/reference/inventory/#query-language) of the list. | `Promise<IResultList<TData>>`: The list as Promise wrapped in an IResultList. IResultList contains data, response and paging.
 
 * Example for receiving details of one managedObject of the inventory via `detail`:
 
@@ -103,7 +103,7 @@ The `detail$` and `list$` functions allow to subscribe to realtime channels that
 | Method | Description | Parameters | Return |
 | --- | --- | --- | --- |
 | `detail$(entityOrId, options)` | Returns an observable for detail data of one entity | `entityOrId: string | number | IIdentified`: An object which contains an id or an id as number or string.<br>`options: IObservableOptions`: (optional) An configuration object to define the observable. | `Observable<TData>>`: The list as subscribable observable. |
-| `list$(filter, options)` | Returns an observable for a list of entities. | `filter: object`: (optional) A filter for [paging](/reference/rest-implementation/#paging) or [filtering](/reference/inventory/#query-language) of the list (optional).<br>`options: IObservableOptions`: (optional) An configuration object to define the observable. | `ObservableList<TData>>`: The list as subscribable observable.
+| `list$(filter, options)` | Returns an observable for a list of entities. | `filter: object`: (optional) A filter for [paging](/reference/rest-implementation/#-a-name-paging-a-query-result-paging) or [filtering](/reference/inventory/#query-language) of the list (optional).<br>`options: IObservableOptions`: (optional) An configuration object to define the observable. | `ObservableList<TData>>`: The list as subscribable observable.
 
 * Example for receiving details of one managedObject of the inventory via `detail$`:
 

@@ -11,7 +11,7 @@ You should have read and understand the following concepts:
 
 * [Overview](/web/angular#overview), explaining when to use which SDK.
 * [Upgrading to Angular](/web/background), explaining since which version you can use the new SDK.
-* [Developer command line tool](/web/angular/#cli), enabling you to install the new tooling.
+* [Developer command line tool](/web/angular#developer-command-line-tool), enabling you to install the new tooling.
 
 
 ### Setting up a hybrid application

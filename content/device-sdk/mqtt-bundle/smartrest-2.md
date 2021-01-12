@@ -117,17 +117,17 @@ A request template contains the following basic fields:
 
 <table>
 <colgroup>
-  <col width="15%">
-  <col width="20%">
-  <col width="15%">
-  <col width="10%">
-  <col width="45%">
+<col width="15%">
+<col width="20%">
+<col width="15%">
+<col width="10%">
+<col width="40%">
 </colgroup>
 <thead>
 <tr>
-<th style="text-align:left">Field &nbsp; &nbsp;</th>
-<th style="text-align:left">Data type &nbsp; &nbsp;</th>
-<th style="text-align:left">Possible values &nbsp; &nbsp;</th>
+<th style="text-align:left">Field</th>
+<th style="text-align:left">Data type</th>
+<th style="text-align:left">Possible values</th>
 <th style="text-align:left">Mandatory</th>
 <th style="text-align:left">Description</th>
 </tr>

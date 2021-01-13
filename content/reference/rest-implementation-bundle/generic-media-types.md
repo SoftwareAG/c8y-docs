@@ -141,7 +141,7 @@ Paging statistics for collection resources are provided in the following format:
 
 A common case is to retrieve the total number of certain records in the tenant. To achieve this, you can set the properties `pageSize=1` and `withTotalPages=true`, then the `totalPages` property will contain the total number of records.
 
-**Example**: Find out how many events are in the tenant.
+**Example:** Find out how many events are in the tenant.
 
 ```http
 GET  /event/events/?pageSize=1&totalPages=true

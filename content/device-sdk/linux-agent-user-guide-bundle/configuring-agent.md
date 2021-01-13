@@ -1,10 +1,25 @@
 ---
 title: "Configuring the agent"
 layout: redirect
-weight: 50
+weight: 40
 ---
 
 The Cumulocity IoT Linux agent repository includes the _cumulocity-agent.conf_ file. When you install the agent, the configuration file is deployed to _/usr/share/cumulocity-agent/cumulocity-agent.conf_ by default. The agent reads this configuration file at startup. You can manually edit this file to adjust different parameters to suit your needs.  
+
+### Device ID
+
+A unique device ID is required to register your device. You can specify it using an "id" key. If not specified, the agent will use the device's serial number recorded in the following paths to determine the device ID.
+
+- /sys/devices/virtual/dmi/id/product_serial
+- /proc/cpuinfo
+- /sys/devices/virtual/dmi/id/product_uuid
+- /sys/hypervisor/uuid
+- /var/lib/dbus/machine-id
+- /etc/machine-id
+
+|Parameter|Example value|
+|---|---|
+|id|id=myagent|
 
 ### Server URL
 
@@ -116,7 +131,8 @@ You can change various Modbus parameters in the configuration file. The **modbus
 |---|---|---|
 |modbus.transmitrate|The transmit rate for reporting measurements to Cumulocity IoT [in seconds]||
 |modbus.pollingrate|The polling rate for querying the Modbus slave for data [in seconds]|modbus.pollingrate=30|
-|modbus.readonly|Controls the ability to write data to slaves. 1 is read-only, 0 is writable|modbus.readonly=0|  
+|modbus.readonly|Controls the ability to write data to slaves. 1 is read-only, 0 is writable|modbus.readonly=0|
+|modbus.timeout.usec|The timeout interval used to wait for a response from a Modbus slave [in microseconds] (from version 4.2.9 and onwards)|modbus.timeout.usec=5000000|
 
 > **Info:** We recommend you to change the Modbus parameters via the Modbus Cloud Fieldbus UI.
 

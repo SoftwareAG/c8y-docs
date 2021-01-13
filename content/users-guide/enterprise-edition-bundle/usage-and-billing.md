@@ -342,8 +342,9 @@ A Cumulocity IoT platform tenant can have several states:
 
 Any extension deployed to the platform as a microservice is billed as "used" and the billing starts according to the begin of usage. After the application is subscribed to the tenant a process of application startup is triggered which will go through several high level phases:
 
-  * Scheduled - The microservice has been scheduled to be started but the Docker container is not running yet. In this state the microservice is not yet billed.
-  * Not ready - The microservice container is not ready yet to handle incoming traffic but the application is already running so billing is started.
+  * Pending - The microservice has been scheduled to be started but the Docker container is not running yet. In this state the microservice is not yet billed.
+  * Scheduled - The microservice has been assigned to a node, the Docker container initialization has been started. The resources for the microservice have already been allocated so billing is started. 
+  * Not ready - The microservice container is not ready yet to handle incoming traffic but the application is already running.
   * Ready - The microservice container is ready to handle incoming traffic. "Ready" is resolved based on liveness and readiness probes defined in the [microservice manifest](/microservice-sdk/concept/#manifest). If probes are not defined then the microservice is immediately ready.
 
 A tenant that is billed for resources can view the point in time when the microservices billing has been changed in [the audit logs](/users-guide/administration/#audit-logs). The audit log entries, for example "Scaling application '...' from X to Y instances" contain the information about the changes of instances and resources consumed by the microservice.
@@ -352,9 +353,10 @@ A tenant that is billed for resources can view the point in time when the micros
 
 Tenants should also be able to see the full application lifecyle in the application details. In the **Status** tab, you can see an **Events** section that is showing very low level stages of the application startup. Some of the most important are:
 
-  * `Pod "apama-ctrl-starter-scope-..." created.` - A new microservice instance has been scheduled to be started for the tenant (maps to the state "Scheduled").
-  * `Container created.` - The microservice container has been created but not started yet. This means that the resource allocation has been successful but the application is not running yet (state "Scheduled").
-  * `Container started.` - The microservice container is started but not ready yet to handle incoming traffic. At that point the billing starts, as the application is running and the resources are used (state "Not ready").
+  * `Pod "apama-ctrl-starter-scope-..." created.` - A new microservice instance has been scheduled to be started for the tenant. This means that the resource allocation has been successful but the application is not running yet (maps to the state "Scheduled").
+  * `Pulling image "apama-ctrl-starter-scope-..."` - The microservice initialization process has been started and the Docker image download is already in progress (state "Scheduled").
+  * `Container created.` - The microservice container has been created but not started yet (state "Scheduled").
+  * `Container started.` - The microservice container is started but not ready yet to handle incoming traffic (state "Not ready").
 
 >**Info:** There is no event in the **Events** section when the microservice has reached the state "Ready" as this happens according to the readiness probe.
 

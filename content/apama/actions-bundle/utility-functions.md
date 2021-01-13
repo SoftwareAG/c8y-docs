@@ -6,7 +6,7 @@ layout: redirect
 
 ### Access fragments
 
-You can access fragments via the `params` dictionary of most events. The `AnyExtractor` object can be constructed to help you extract data from any objects containing multiple sub-fragments and access:
+You can access fragments via the `params` dictionary of most events. The `AnyExtractor` object can be constructed to help you extract data from any objects containing multiple subfragments and access:
 
 * action getInteger(string path) returns integer
 
@@ -56,7 +56,7 @@ monitor Example {
 }
 ```
 
-For more information on `TimeFormat` and its functions, see [Using the TimeFormat Event Library](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fre-DevApaAppInEpl_using_the_time_format_plug_in.html) in the Apama documentation and the API Reference for EPL (ApamaDoc).
+For more information on `TimeFormat` and its functions, see [Using the TimeFormat Event Library](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2Fre-DevApaAppInEpl_using_the_time_format_plug_in.html) in the Apama documentation and the API Reference for EPL (ApamaDoc).
 
 ### inMaintenanceMode
 

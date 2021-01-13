@@ -8,7 +8,7 @@ Before we really get started, we need a Cumulocity IoT account. Go to <https://c
 
 ![Cumulocity IoT Registration Page](/images/cpp/img/registerd.png)
 
-Without any further ado, let's write the customary *Hello world* example. Create a *main.cc* file with the following code:
+Without any further ado, let's start with the customary *Hello world* example. Open the *cumulocity-sdk-c/examples/ex-01-hello/main.cc* file with the following code:
 
 ```cpp
 // ex-01-hello: examples/ex-01-hello/main.cc
@@ -407,6 +407,7 @@ function init()
    srDebug(myString)            -- myString from mylib
    timer = c8y:addTimer(10 * 1000, 'cpuMeasurement')
    c8y:addMsgHandler(502, 'restart')
+   timer:start()
    return 0                     -- signify successful initialization
 end
 ```

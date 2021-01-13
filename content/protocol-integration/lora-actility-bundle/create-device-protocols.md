@@ -11,6 +11,7 @@ During the [device registration](#register-device), you can associate this devic
 If a device protocol has been changed after being associated to a device, the reflection of the change can take up to 10 minutes because of the refresh mechanism of the Actility Server Side Agent.
 
 > **Info:** Device protocol mapping only supports decoding for fixed byte positions based on the message type.
+The length for the device payload parts, which is set in the **Number of bits** field, can be maximum 32 bits (4 bytes).
 
 In order to create a device protocol, navigate to the Device Management application and select **Device protocols** in the **Device types** menu in the navigator. You can either import an existing device protocol or create a new one.
 
@@ -71,7 +72,7 @@ In this example payload structure the message ID is "1".
 
 Under **General**, specify a name for the value and the category under which it will be displayed in the values list. The associated name for this value will be displayed under the **Display category** given.
 
-Under **Value selection**, define from where the value should be extracted. In order to do so, indicate where the value information starts in the **Start bit** field and how long this information is in the **Number of bits** field.
+Under **Value selection**, define from where the value should be extracted. In order to do so, indicate where the value information starts in the **Start bit** field and how long this information is in the **Number of bits** field. The maximum value for the number of bits is 32 bits (4 bytes).
 
 In this example the "Channel 1 Type" information starts in byte 2 (i.e. start bit = "16") and is 1 byte long (i.e. number of bits = "8").
 

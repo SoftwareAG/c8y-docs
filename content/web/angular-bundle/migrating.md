@@ -5,7 +5,7 @@ weight: 50
 ---
 
 
-This section targets to developers who have either already developed a plugin with the AngularJS SDK for plugins or want to extend the existing default applications. 
+This section targets to developers who have either already developed a plugin with the AngularJS SDK for plugins or want to extend the existing default applications.
 
 You should have read and understand the following concepts:
 
@@ -16,7 +16,7 @@ You should have read and understand the following concepts:
 
 ### Setting up a hybrid application
 
-With a hybrid application AngularJS and Angular can be used at the same time. It allows to use not-migrated plugins written in AngularJS in an Angular context. The CLI automatically sets up a hybrid application, if you use one of our default applications as a template (cockpit, devicemangement or administration). The command to be used is `c8ycli new <your-app-name> <template-name>`. 
+With a hybrid application AngularJS and Angular can be used at the same time. It allows to use not-migrated plugins written in AngularJS in an Angular context. The CLI automatically sets up a hybrid application, if you use one of our default applications as a template (cockpit, devicemangement or administration). The command to be used is `c8ycli new <your-app-name> <template-name>`.
 
 For example, to override the default cockpit you use:
 
@@ -35,7 +35,7 @@ When you run this command it provides you with a very simple file structure that
 
 ### Importing AngularJS plugins
 
-If you want to integrate your custom plugin into an application, you first need to set up the hybrid application for the application into which you want to import the plugin. Then you simply copy the plugin to the hybrid applicatiob and reference the `cumulocity.json` of the plugin in the `ng1.ts` file with an import:
+If you want to integrate your custom plugin into an application, you first need to set up the hybrid application for the application into which you want to import the plugin. Then you simply copy the plugin to the hybrid application and reference the `cumulocity.json` of the plugin in the `ng1.ts` file with an import:
 
 ```
 import 'my-custom-plugin/cumulocity.json';
@@ -45,7 +45,7 @@ Webpack now reads the manifest file and converts the content to CommonJS require
 
 ### Custom bootstrapping and upgrading
 
-In the `app.module.ts` file we bootstrap the hybrid application with the following code on the `HybridAppModule`. 
+In the `app.module.ts` file we bootstrap the hybrid application with the following code on the `HybridAppModule`.
 
 ```js
 import { UpgradeModule as NgUpgradeModule } from '@angular/upgrade/static';
@@ -62,7 +62,7 @@ export abstract class HybridAppModule {
 }
 ```
 
-This module not only bootstraps the upgrade module but also initializes the Angular application. 
+This module not only bootstraps the upgrade module but also initializes the Angular application.
 
 In the `app.module.ts` you can control the bootstrapping. For example, you can add another module to the bootstrapped ng1 modules:
 

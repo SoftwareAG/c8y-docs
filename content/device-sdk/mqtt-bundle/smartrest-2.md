@@ -36,7 +36,7 @@ To publish messages in CEP mode:
 c/uc/<X-ID>
 ```
 
-Refer to SmartREST > [Processing mode](/reference/smartrest#processing-mode) in the Reference guide for more information about transient, quiescent & CEP data processing.
+Refer to [SmartREST > Processing mode](/reference/smartrest#processing-mode) in the Reference guide for more information about transient, quiescent & CEP data processing.
 
 To subscribe for responses:
 
@@ -115,14 +115,68 @@ Empty publish to <kbd>s/ut/myNotExistingTemplateCollection</kbd>
 
 A request template contains the following basic fields:
 
-|Field &nbsp; &nbsp;|Data type &nbsp; &nbsp;|Possible values &nbsp; &nbsp;|Mandatory|Description|
-|:-------|:-------|:-------|:-------|:-------|
-|messageId|String| &nbsp;|Y|Unique ID to reference the template within the collection|
-|method|String|GET<br>PUT<br>POST|Y|Whether to get, update or create data|
-|api|String|INVENTORY<br>MEASUREMENT<br>ALARM<br>EVENT<br>OPERATION|Y|Cumulocity IoT API to be used|
-|response|Boolean|true<br>false|N|Whether the request should trigger response templates. For GET templates by default true otherwise by default false|
-|mandatoryValues|List&lt;String&gt;| &nbsp;|Y|Values for the mandatory fields on the API. The values depend on the API and method the template uses|
-|customValues|List&lt;CustomValue&gt;| &nbsp;|N|Custom values that should be added to the object|
+<table>
+<colgroup>
+<col width="15%">
+<col width="20%">
+<col width="15%">
+<col width="10%">
+<col width="40%">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align:left">Field</th>
+<th style="text-align:left">Data type</th>
+<th style="text-align:left">Possible values</th>
+<th style="text-align:left">Mandatory</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">messageId</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&nbsp;</td>
+<td style="text-align:left">Y</td>
+<td style="text-align:left">Unique ID to reference the template within the collection</td>
+</tr>
+<tr>
+<td style="text-align:left">method</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">GET<br>PUT<br>POST</td>
+<td style="text-align:left">Y</td>
+<td style="text-align:left">Whether to get, update or create data</td>
+</tr>
+<tr>
+<td style="text-align:left">api</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">INVENTORY<br>MEASUREMENT<br>ALARM<br>EVENT<br>OPERATION</td>
+<td style="text-align:left">Y</td>
+<td style="text-align:left">Cumulocity IoT API to be used</td>
+</tr>
+<tr>
+<td style="text-align:left">response</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">true<br>false</td>
+<td style="text-align:left">N</td>
+<td style="text-align:left">Whether the request should trigger response templates. For GET templates by default true otherwise by default false</td>
+</tr>
+<tr>
+<td style="text-align:left">mandatoryValues</td>
+<td style="text-align:left">List&lt;String&gt;</td>
+<td style="text-align:left">&nbsp;</td>
+<td style="text-align:left">Y</td>
+<td style="text-align:left">Values for the mandatory fields on the API. The values depend on the API and method the template uses</td>
+</tr>
+<tr>
+<td style="text-align:left">customValues</td>
+<td style="text-align:left">List&lt;CustomValue&gt;</td>
+<td style="text-align:left">&nbsp;</td>
+<td style="text-align:left">N</td>
+<td style="text-align:left">Custom values that should be added to the object</td>
+</tr>
+</tbody>
+</table>
 
 A request template lists all the fragments in the object structure (mandatory and custom) that should be added when creating or updating the data.
 It can set fixed values in the template that will then be replaced by the server. If it does not set the value in the template, the value needs to be included in the publish message (this includes mandatoryValues).
@@ -154,11 +208,40 @@ GET templates for the inventory do not need any mandatory or custom values. Inst
 
 With SmartREST 2.0 you have the option to either get an object from inventory by its ID or by an external ID directly. Therefore, instead of the fields **mandatoryValues** and **customValues**, the following two fields are used:
 
-|Field|Data type|Possible values|Mandatory|Description|
-|:-------|:-------|:-------|:-------|:-------|
-|byId|Boolean|true<br>false|Y|Whether the GET should be executed by Cumulocity IoT ID (=true) or externalId (=false)|
-|externalIdType|String| &nbsp;|N|Sets a fixed externalIdType if the template calls by externalId|
-
+<table>
+<colgroup>
+<col width="15%">
+<col width="10%">
+<col width="15%">
+<col width="10%">
+<col width="50%">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align:left">Field</th>
+<th style="text-align:left">Data type</th>
+<th style="text-align:left">Possible values</th>
+<th style="text-align:left">Mandatory</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">byId</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">true<br>false</td>
+<td style="text-align:left">Y</td>
+<td style="text-align:left">Whether the GET should be executed by Cumulocity IoT ID (=true) or externalId (=false)</td>
+</tr>
+<tr>
+<td style="text-align:left">externalIdType</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&nbsp;</td>
+<td style="text-align:left">N</td>
+<td style="text-align:left">Sets a fixed externalIdType if the template calls by externalId</td>
+</tr>
+</tbody>
+</table>
 This enables you to query inventory in three different ways:
 
 **By Cumulocity IoT ID**

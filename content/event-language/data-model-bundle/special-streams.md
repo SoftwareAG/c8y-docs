@@ -108,12 +108,48 @@ Example:
 
 This stream enables the possibility to generate export.
 
-|Parameter|Data type|Description|Mandatory|
-|:--|:----------|:-------------|:----------|
-|enabledSources|List|Export configuration ids|true|
-|subject|String|Subject of email|false|
-|text|String|Text of email. Available placeholders: {host}, {binaryId}. Default message is: "File with exported data can be downloaded from {host}/inventory/binaries/{binaryId}"|false|
-|receiver|String|Receiver of email|false|
+<table>
+<colgroup>
+<col width="20%">
+<col width="10%">
+<col width="60%">
+<col width="10%">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:left">Data type</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">enabledSources</td>
+<td style="text-align:left">List</td>
+<td style="text-align:left">Export configuration ids</td>
+<td style="text-align:left">true</td>
+</tr>
+<tr>
+<td style="text-align:left">subject</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">Subject of email</td>
+<td style="text-align:left">false</td>
+</tr>
+<tr>
+<td style="text-align:left">text</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">Text of email. Available placeholders: {host}, {binaryId}. Default message is: “File with exported data can be downloaded from {host}/inventory/binaries/{binaryId}”</td>
+<td style="text-align:left">false</td>
+</tr>
+<tr>
+<td style="text-align:left">receiver</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">Receiver of email</td>
+<td style="text-align:left">false</td>
+</tr>
+</tbody>
+</table>
 
 Example:
 

@@ -194,8 +194,30 @@ Data structure for *ServerConnectionConfig*
 <td>no</td>
 <td>Alarm severity mappings from the OPC UA event severity to the Cumulocity IoT alarm severity. This is applicable only for UAAlarmCreation. The key of this map is the lower bound value of the OPC UA event severity in the range. The value of this map is the expected severity of the alarm being created. For example, to map the OPC UA severity of the range 200-400 to a <em>MINOR</em>&nbsp;Cumulocity IoT alarm, put this entry to the map: <code>"200": "MINOR"</code>.<br>If this is given, it will override the alarm severity mappings that are specified in the configuration YAML file.<br>Note that, if the&nbsp;<em>severity</em>&nbsp;field for alarm mapping is provided, this <em>alarmSeverityMappings</em>&nbsp;will have no effect.<br><em><strong>Example</strong></em>:&nbsp;<code>"201": "WARNING",</br>"401": "MINOR",</br>"601": "MAJOR",</br>"801": "CRITICAL"</br></code>.</td>
 </tr>
+<tr>
+<td>alarmStatusMappings</td>
+<td>map&lt;string, string&gt;</td>
+<td>no</td>
+<td>The state of an alarm in  Cumulocity IoT is defined by multiple conditions on OPC UA servers. They might vary with different servers as well. This field enables the user to configure those conditions for each server.
+The key of the map are the clauses and the value represents their corresponding desired status of the alarm.
+It can be written down either by using the simple node names (e.g: <code>EnabledState.text == 'Enabled'</code>), or the qualified browse name with namespace index (e.g: <code>['0:EnabledState'].text == 'Enabled'</code>).
+It uses Spring Expression Language(SpEL) to parse these clauses, and only boolean expressions are allowed.
+<br><strong><em>Example:</em></strong></br>
+
+```json
+"alarmStatusMappings": {
+            "default": "CLEARED",
+            "EnabledState != null and EnabledState.text == 'Enabled' and ActiveState.text == 'Active' and AckedState.text != 'Acked'": "ACTIVE",
+            "['0:EnabledState'].text == 'Enabled' and ['0:ActiveState'].text == 'Active' and ['0:AckedState'].text == 'Acked'": "ACKNOWLEDGED"
+        }
+```
+
+>**Note:** The nodes which comprises the flags in the <em>alarmStatusMappings</em> should be added to the list of attributes in <a href="#event-mapping">uaEventMapping</a>
+</td>
+</tr>
 </tbody>
-</table>                                                                                                                                         |
+</table>
+
 
 #### Get all servers of a gateway device
 
@@ -664,6 +686,7 @@ Sample payloads:
   ```
 
 * UA events mappings into alarm and event
+<div id="event-mapping">
 
   ```json
   {
@@ -689,7 +712,7 @@ Sample payloads:
       ]
   }
   ```
-
+</div>
 Full payload data structure explained:
 
 <table>
@@ -863,7 +886,10 @@ Full payload data structure explained:
 <td>yes</td>
 <td>Selectable event attributes. The nodeId of the event source
 is added by default as the last selected attribute by
-the OPC UA device gateway.</td>
+the OPC UA device gateway.
+
+>**Info:** If there are multiple flags defined for the alarm status in the server configuration, then the nodes should be added to this list of attributes.
+</td>
 </tr>
 <tr>
 <td>eventCreation</td>

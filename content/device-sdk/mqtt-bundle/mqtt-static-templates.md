@@ -970,10 +970,44 @@ Update the software installed on the device.
 When using the template to set an operation to state SUCCESSFUL, it supports sending additional parameters to trigger additional calls on the server.
 The table below shows the operations supporting this feature and what will be done with the parameters.
 
-|Fragment|Parameters|Action triggered|
-|:-------|:-------|:-------|
-|c8y_Command|result|Result will be added to operation|
-|c8y_RelayArray|relay states|Device object will be updated with the states|
-|c8y_CommunicationMode|no parameter needed|Device object will be updated with the mode|
-|c8y_LogfileRequest|file url|File url will be added to operation|
-|c8y_DownloadConfigFile|(optional) timestamp|Device object will be updated with the ID of the configuration dump and the timestamp (or server time)|
+<table>
+<colgroup>
+  <col width="25%">
+  <col width="20%">
+  <col width="55%">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align:left">Fragment</th>
+<th style="text-align:left">Parameters</th>
+<th style="text-align:left">Action triggered</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">c8y_Command</td>
+<td style="text-align:left">result</td>
+<td style="text-align:left">Result will be added to operation</td>
+</tr>
+<tr>
+<td style="text-align:left">c8y_RelayArray</td>
+<td style="text-align:left">relay states</td>
+<td style="text-align:left">Device object will be updated with the states</td>
+</tr>
+<tr>
+<td style="text-align:left">c8y_CommunicationMode</td>
+<td style="text-align:left">no parameter needed</td>
+<td style="text-align:left">Device object will be updated with the mode</td>
+</tr>
+<tr>
+<td style="text-align:left">c8y_LogfileRequest</td>
+<td style="text-align:left">file url</td>
+<td style="text-align:left">File url will be added to operation</td>
+</tr>
+<tr>
+<td style="text-align:left">c8y_DownloadConfigFile</td>
+<td style="text-align:left">(optional) timestamp</td>
+<td style="text-align:left">Device object will be updated with the ID of the configuration dump and the timestamp (or server time)</td>
+</tr>
+</tbody>
+</table>

@@ -198,7 +198,7 @@ Data structure for *ServerConnectionConfig*
 <td>alarmStatusMappings</td>
 <td>map&lt;string, string&gt;</td>
 <td>no</td>
-<td>The state of an alarm in  Cumulocity IoT is defined by multiple conditions on OPC UA servers. They might vary with different servers as well. This field enables the user to configure those conditions for each server.
+<td>The state of an alarm in Cumulocity IoT is defined by multiple conditions on OPC UA servers. They might vary with different servers as well. This field enables the user to configure those conditions for each server.
 The key of the map are the clauses and the value represents their corresponding desired status of the alarm.
 It can be written down either by using the simple node names (e.g: <code>EnabledState.text == 'Enabled'</code>), or the qualified browse name with namespace index (e.g: <code>['0:EnabledState'].text == 'Enabled'</code>).
 It uses Spring Expression Language(SpEL) to parse these clauses, and only boolean expressions are allowed.
@@ -212,7 +212,7 @@ It uses Spring Expression Language(SpEL) to parse these clauses, and only boolea
         }
 ```
 
->**Note:** The nodes which comprises the flags in the <em>alarmStatusMappings</em> should be added to the list of attributes in <a href="#event-mapping">uaEventMapping</a>
+>**Info:** The nodes which comprise the flags in the '<em>alarmStatusMappings</em>' should be added to the list of attributes in <a href="#event-mapping">uaEventMapping</a>.
 </td>
 </tr>
 </tbody>

@@ -318,9 +318,9 @@ In each row, the following information for a bulk operation is provided:
 
 Clicking the arrow button at the right in a row expands the row and displays further details on the bulk operation.
 
-* **Details**: Providing information on the start date, delay, status and result of the bulk operation. The result lists the number of successful, failed and pending operations.
+* **Details**: Providing information on the start date, delay, status and result of the bulk operation. The result lists the number of successful, failed and pending operations. If the bulk operation is a [retry attempt for failed operations](#to-retry-failed-operations), there will be an additional row that shows the index of the bulk operation it was retried from. Click the index to scroll to that bulk operation. If a description was added when [the bulk operation has been created](#to-add-a-bulk-operation), there will be an additional row that shows this description.
 * **Operation**: Providing information on the operation in the form of a JSON object.
-* **Operations**: Only present for executing or completed bulk operations. Providing information on the status and the device of single operations entailed in the bulk operation. Can be filtered by status.
+* **Operations**: Only present for executing or completed bulk operations. Providing information on the status and the device of single operations entailed in the bulk operation. Can be filtered by status. You may also either retry all failed operations by clicking **Retry failed operations** at the top right of the **Operations** section or retry single operations by hovering over them and then clicking the **Retry operation** button that appears right next to it. Also see [To retry failed operations](#to-retry-failed-operations).
 * **History of Changes**: In a second tab, providing information on the past changes of the bulk operation.
 
 ![Bulk operation details](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details.png)
@@ -332,6 +332,9 @@ To clear the filter, select **All** in the dropdown list and click **Apply** aga
 
 To filter the list of bulk operations by status, click one of the status buttons in the top menu bar.
 Click **All** to clear the filter.
+
+To filter the list of bulk operations by date, select a date in both the **Date from** and **Date to** datepickers, then click **Apply** right next to it.
+To clear the filter, click **Clear** right next to it.
 
 To clear both filters, click **Reset filters** at the bottom of the list (only visible if filters are applied).
 
@@ -361,14 +364,16 @@ Follow these steps:
       * Select a firmware from the list. The list can be filtered by firmware name. Click **Next**.
       * Expand a version and select a patch. Click **Next**.
   * **Software update**
-      * Expand a software from the list and select a version, then also choose to install/update or remove the software from the dropdown list. The list of available software can be filtered by device type or by software name. Click **Next**.
+      * Expand a software from the list and select a version, then also choose to install/update or remove the software from the dropdown list. The list of available software can be filtered by device type or by software name. Click **Next**. If you selected software for multiple device types, a warning dialogue appears and informs you that some operations may fail due to unsupported software, and ask for confirmation.
       * Confirm the selection and click **Next**.
   * **Apply device profile**
       * Select a device profile from the list. The list can be filtered by device type or by profile name. Click **Next**.
       * Confirm the selection and click **Next**.
 4. Select target devices by applying filters to the paginated list of all devices. You can filter by status, name, type, model, group, registration date and alarms. You may apply multiple filters. To apply a filter, click the column header, make your filter option choices in the context menu and click **Apply**. The group filter also allows filtering by subgroups. To select a subgroup, if there are any, click the arrow button at the right of a group and select the desired subgroups from the dropdown. You can clear all filters by clicking **Clear filters** above the list. For the operation types "configuration update", "software update" and "apply device profile", the list is already filtered by the according device type. Click **Next**.
     ![Bulk operation wizard, step 3](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step3.png)
-5. Select a start date and a delay. The delay may either be in seconds or milliseconds and is the time spent between each single operation of the bulk operation. Click **Schedule bulk operation** to create the bulk operation.
+5. Enter a new title or use the preset title.
+6. Optionally enter a description.
+7. Select a start date and a delay. The delay may either be in seconds or milliseconds and is the time spent between each single operation of the bulk operation. Click **Schedule bulk operation** to create the bulk operation.
     ![Bulk operation wizard, step 4](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step4.png)
 
 ##### <a name="to-schedule-a-single-operation-as-bulk-operation"></a>To schedule a single operation as bulk operation
@@ -399,7 +404,7 @@ This way, you can cancel the creation of the remaining single operations.
 
 Click the menu icon to the right of the bulk operation that you want to cancel, then click **Cancel bulk operation**.
 
-#### To retry failed operations
+#### <a name="to-retry-failed-operations"></a>To retry failed operations
 
 You may retry the failed operations of a bulk operation that is either executing or completed with failures.
 

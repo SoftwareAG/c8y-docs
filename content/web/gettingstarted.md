@@ -44,3 +44,52 @@ After logging in you should see a barely empty starter application. If you want 
 > **Info**: If you want to extend an existing application like Cockpit you can spin up a hybrid application. This allows you to combine existing AngularJS plugins into the new Web SDK, see [Migration](/web/upgrade/#migration).
 
 > **Info**: You need to provide your tenant name or the tenant ID on login (as the application cannot derive it from the URL on localhost). If you don't know your tenant name or the tenant ID you can use the [REST API to request it](/reference/tenants/#get-the-current-tenant-details).
+
+### First route & component
+
+After creating the empty bootstrapping application you might want to start with your first content. To do so, add a new component to your project and save it as `hello.component.ts`:
+
+```js
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-hello',
+  template: `
+    <c8y-title>Hello World</c8y-title>
+    <p>My first content.</p>
+  `
+})
+export class HelloComponent {
+  constructor() {}
+}
+```
+
+To hook the new component into the application you need to declare the new component and add it to a route in the `app.module.ts`:
+
+```js
+import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule as ngRouterModule } from '@angular/router';
+import { CoreModule, BootstrapComponent, RouterModule } from '@c8y/ngx-components';
+import { HelloComponent } from './hello.component'  // don't forget to import the new component
+
+@NgModule({
+  imports: [
+    BrowserAnimationsModule,
+    RouterModule.forRoot(),
+    ngRouterModule.forRoot(
+      [{ path: '', component: HelloComponent }], // hook the route here
+      { enableTracing: false, useHash: true }
+    ),
+    CoreModule.forRoot()
+  ],
+  declarations: [HelloComponent], // add deceleration here
+  bootstrap: [BootstrapComponent]
+})
+export class AppModule {}
+
+```
+
+If you start this application and log in you will see an application similar to the following screenshot. To extend this application you can use the [Angular Router](https://angular.io/guide/router#router-imports) in combination with our [@c8y/ngx-components](/web/libraries#ngx-components).
+
+![An Angular based application](/images/web-sdk/hello-world-example.png)

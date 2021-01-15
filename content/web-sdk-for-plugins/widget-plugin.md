@@ -1,7 +1,7 @@
 ---
 weight: 70
 title: Widget plugin
-layout: redirect
+layout: bundle
 ---
 
 <p class="lead">In this document you will get an overview on how to develop a plugin that adds a new widget to dashboards.</p>

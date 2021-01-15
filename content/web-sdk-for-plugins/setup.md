@@ -1,7 +1,7 @@
 ---
 weight: 30
 title: Setup
-layout: redirect
+layout: bundle
 ---
 
 ### <a name="prerequisites"></a>Prerequisites

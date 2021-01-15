@@ -1,6 +1,6 @@
 ---
 weight: 80
-title: Brief background
+title: "Appendix: Change history"
 layout: bundle
 ---
 

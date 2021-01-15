@@ -1,5 +1,5 @@
 ---
-title: Brandings and Languages
+title: Branding and languages
 layout: redirect
 weight: 20
 ---

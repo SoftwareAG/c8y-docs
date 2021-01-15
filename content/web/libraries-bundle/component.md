@@ -1,5 +1,5 @@
 ---
-title: Component Library
+title: Component library
 layout: redirect
 weight: 10
 ---

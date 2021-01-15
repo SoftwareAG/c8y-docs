@@ -1,7 +1,7 @@
 ---
 weight: 40
 title: Sample plugins
-layout: redirect
+layout: bundle
 ---
 
 After setting up everything and getting an insight into the folder structure and manifests, you can finally start running your first "Hello world!" application and plugin.

@@ -1,7 +1,7 @@
 ---
 weight: 80
 title: Tab plugin
-layout: redirect
+layout: bundle
 ---
 
 In this document you will get an overview on how to develop a plugin that adds a new tab to devices.

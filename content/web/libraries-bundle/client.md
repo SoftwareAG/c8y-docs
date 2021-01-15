@@ -1,5 +1,5 @@
 ---
-title: Client Library
+title: Client library
 layout: redirect
 weight: 20
 ---

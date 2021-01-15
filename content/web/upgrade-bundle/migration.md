@@ -1,5 +1,5 @@
 ---
-title: Migration Guide
+title: Migration
 layout: redirect
 weight: 10
 ---

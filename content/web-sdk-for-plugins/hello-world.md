@@ -1,7 +1,7 @@
 ---
 weight: 50
 title: Hello world
-layout: redirect
+layout: bundle
 ---
 
 The purpose of this plugin is to add a new application to the app switcher menu. This application will consist of a single menu item which will display a simple "Hello world!" page when selected by the user. At the end, the application should look as follows:

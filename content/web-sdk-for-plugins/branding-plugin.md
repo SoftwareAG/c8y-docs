@@ -1,7 +1,7 @@
 ---
 weight: 60
 title: Branding plugin
-layout: redirect
+layout: bundle
 ---
 
 <a name="branding"></a>

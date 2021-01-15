@@ -1,5 +1,5 @@
 ---
-title: C8Y Command Line Tool
+title: C8Y Command Line Tool (CLI)
 layout: redirect
 weight: 10
 ---

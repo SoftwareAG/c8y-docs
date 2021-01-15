@@ -1,5 +1,5 @@
 ---
-title: Application Library
+title: Application library
 layout: redirect
 weight: 30
 ---

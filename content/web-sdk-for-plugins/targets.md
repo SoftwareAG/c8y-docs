@@ -1,7 +1,7 @@
 ---
 weight: 50
 title: Targets
-layout: redirect
+layout: bundle
 ---
 
 Target files are JSON files that can be used to define a set of applications to build, configure options and or remove plugins for each application.

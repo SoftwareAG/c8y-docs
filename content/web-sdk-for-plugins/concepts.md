@@ -1,7 +1,7 @@
 ---
 weight: 20
 title: Concepts
-layout: redirect
+layout: bundle
 ---
 
 Before building an application or plugin, it is important to understand what is exactly meant by applications and plugins in Cumulocity IoT.

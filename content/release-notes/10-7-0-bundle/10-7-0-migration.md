@@ -52,6 +52,11 @@ With the 10.9 GA Release in April 2021, the calculation for the binary file size
 
 With the 10.9 GA Release in April 2021, tenant domain names will no longer be allowed to use the underscore character in accordance to RFC specification https://tools.ietf.org/html/rfc2181. This change only affects the creation of new tenants. Existing tenant domains with underscore will be still working correctly. However, each customer having underscore in tenant domains should contact [our product support](/about-doc/contacting-support) in order to plan migration for those affected tenants.
 
+#### User and tenant creation will require a valid email address with impact to REST, MQTT and UI
+
+With the 10.9 GA Release in April 2021 there will be an enhancement to security when creating new users and tenants. There will be no changes in the API, but the email address is no longer optional but a required input. The email address is used in the password resetting process, and will have a validation step as well.
+
+
 #### UI upgrade to Angular 11
 
 With the 10.10 GA Release in July 2021, all Cumulocity IoT UIs will be upgraded to Angular 11. This change will only affect you, if you or your development team use the Web SDK to extend default Cumulocity IoT UI applications (Cockpit, Administration, Device Management) or to build your own web applications.

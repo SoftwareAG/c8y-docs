@@ -198,10 +198,12 @@ Data structure for *ServerConnectionConfig*
 <td>alarmStatusMappings</td>
 <td>map&lt;string, string&gt;</td>
 <td>no</td>
-<td>The state of an alarm in Cumulocity IoT is defined by multiple conditions on OPC UA servers. They might vary with different servers as well. This field enables the user to configure those conditions for each server.
-The key of the map are the clauses and the value represents their corresponding desired status of the alarm.
-It can be written down either by using the simple node names (e.g: <code>EnabledState.text == 'Enabled'</code>), or the qualified browse name with namespace index (e.g: <code>['0:EnabledState'].text == 'Enabled'</code>).
-It uses Spring Expression Language(SpEL) to parse these clauses, and only boolean expressions are allowed.
+<td>The state of an alarm in Cumulocity IoT is defined by multiple conditions on OPC UA servers. For example, if the value of <code>AcknowledgedState</code> node is "Acked" and <code>ConfirmedState</code> is "Confirmed",
+then the state of the alarm in Cumulocity is expected as "ACKNOWLEDGED". They might vary with different servers as well. This field enables the user to configure the desired conditions (based on the information retrieved
+from the event type nodes of the OPC UA server) while creating alarms via UA event mappings (this is not applicable for alarm creation by cyclic reads or normal subscription).
+The example below shows that the keys of the map are the user-defined clauses and the value represents their corresponding desired state of the alarm. It can be written down either by using the relevant node names
+(e.g: <code>EnabledState.text == 'Enabled'</code>), or the qualified browse name with namespace index (e.g: <code>['0:EnabledState'].text == 'Enabled'</code>).
+The Spring Expression Language(SpEL) has been used to parse these clauses, but only boolean expressions are allowed.
 <br><strong><em>Example:</em></strong></br>
 
 ```json
@@ -211,8 +213,6 @@ It uses Spring Expression Language(SpEL) to parse these clauses, and only boolea
             "['0:EnabledState'].text == 'Enabled' and ['0:ActiveState'].text == 'Active' and ['0:AckedState'].text == 'Acked'": "ACKNOWLEDGED"
         }
 ```
-
->**Info:** The nodes which comprise the flags in the '<em>alarmStatusMappings</em>' should be added to the list of attributes in <a href="#event-mapping">uaEventMapping</a>.
 </td>
 </tr>
 </tbody>
@@ -686,7 +686,6 @@ Sample payloads:
   ```
 
 * UA events mappings into alarm and event
-<div id="event-mapping">
 
   ```json
   {
@@ -712,7 +711,7 @@ Sample payloads:
       ]
   }
   ```
-</div>
+
 Full payload data structure explained:
 
 <table>
@@ -886,10 +885,7 @@ Full payload data structure explained:
 <td>yes</td>
 <td>Selectable event attributes. The nodeId of the event source
 is added by default as the last selected attribute by
-the OPC UA device gateway.
-
->**Info:** If there are multiple flags defined for the alarm status in the server configuration, then the nodes should be added to this list of attributes.
-</td>
+the OPC UA device gateway.</td>
 </tr>
 <tr>
 <td>eventCreation</td>

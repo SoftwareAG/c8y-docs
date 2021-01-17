@@ -266,7 +266,8 @@ Sample response:
 
 Endpoint: `DELETE /service/opcua-mgmt-service/servers/{serverId}`
 
-Description: Delete the OPC UA server managed object. Once the server deletion is detected by the gateway, the connection to the OPC UA server will be terminated. The gateway will also try to delete all address space nodes created in the Cumulocity platform that connected to the deleted server.
+Description: Delete the OPC UA server managed object. Once the DELETE request is received by the OPC UA management service, the specified server along with all its address space nodes created in the Cumulocity platform will be deleted.
+The service will retain all the child devices of the server, and their corresponding data, which were created by the device protocols.
 
 Parameters:
 
@@ -285,14 +286,14 @@ Parameters:
 </thead>
 <tbody>
 <tr>
-<td>gatewayId</td>
+<td>serverId</td>
 <td>Path variable</td>
-<td>Managed object ID of the gateway that should connect to the OPC UA server.</td>
+<td>Managed object ID of the OPC UA server.</td>
 </tr>
 </tbody>
 </table>
 
-Response: `204 No content`
+Response: `200 OK`
 
 ### Address space resources
 

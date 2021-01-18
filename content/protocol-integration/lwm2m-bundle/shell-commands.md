@@ -30,6 +30,10 @@ In the **Shell** tab of a device, LWM2M shell commands can be performed. Each co
 <td align="left">The ID of the desired resource. The resources describe the characteristics of each object. All instances of a given object have the same resources, but the value of the resources may be different.</td>
 </tr>
 <tr>
+<td align="left">value</td>
+<td align="left">The value to write to a specific resource. It should have the same type as the resource.</td>
+</tr>
+<tr>
 <td align="left">Firmware version</td>
 <td align="left">The current version of the firmware.</td>
 </tr>

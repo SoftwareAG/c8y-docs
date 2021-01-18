@@ -1,10 +1,10 @@
 ---
-title: Branding and languages
+title: Branding and language customization
 layout: redirect
 weight: 20
 ---
 
-## Branding
+### Branding
 For styling the application global CSS created with [LESS](http://lesscss.org/) is used. These styles are based on Bootstrap 3, and the original LESS source is distributed via the npm package [@c8y/style](https://www.npmjs.com/package/@c8y/style).
 By extending these styles it is possible to change any detail of the application but the vast majority of developer want to change: colors, logos and fonts and these can be very easily achieved by replacing a few variables.
 
@@ -86,7 +86,7 @@ my-application
 
 The first line of code within the ```branding.less``` has to be:
 
- ```less
+ ```
  @import '~@c8y/style/extend.less';
  ```
 
@@ -98,7 +98,7 @@ Let us change for example the most important color of your branding, the main co
 
 This is done by setting the respective LESS variable to a new color.
 
- ```less
+ ```
  @brand-color: red;
  ```
 
@@ -106,7 +106,7 @@ User interface elements like buttons, active navigation nodes or even active tab
 
 What about changing the main logo that is located at the top of the login dialog? Look at this:
 
- ```less
+ ```
  @{logo-login} { background-image: url('./img/logo-main.svg')}
  @brand-logo-height: 48%;
  ```
@@ -138,7 +138,7 @@ The colors that may be edited are separated in multiple categories, like:
 
 **Brand colors**
 
-```less
+```
 @brand-color:                 #53cd61;
 @brand-primary:               @brand-color;
 @brand-complementary:         #a8b3b5;
@@ -147,7 +147,7 @@ The colors that may be edited are separated in multiple categories, like:
 
 **Status colors**
 
-```less
+```
 @brand-success:               #5cb85c;
 @brand-info:                  @brand-color;
 @brand-warning:               #f0ad4e;
@@ -160,7 +160,7 @@ The colors that may be edited are separated in multiple categories, like:
 
 **Gray shades**
 
-```less
+```
 @gray-text:                   #444;
 @gray-darker:                 #2c3637;
 @gray-dark:                   #3b4748;
@@ -177,7 +177,7 @@ The colors that may be edited are separated in multiple categories, like:
 
 Two components are always visible to the user, the header and the navigator. Therefore you should determine the look & feel of these components with care.
 
-```less
+```
 /* HEADER */
 @headerColor:                 white;
 @header-text-color:           @gray-medium-dark;
@@ -205,19 +205,22 @@ There is no branding without logos.
 You can change the logo at the top of the login dialog, the tenant brand logo and of course the favicon.
 
 To change the favicon, enter:
-```less
+
+```
 // to be loaded by webpack
 .favicon-webpack-loader { background: url('./img/favicon.ico') }
 ```
 
 To change the main logo, enter:
-```less
+
+```
 @{logo-login} { background-image: url('./img/main-logo.svg') }
 @brand-logo-height: 48%;
 ```
 
 To change the tenant brand logo inside the navigator, enter:
-```less
+
+```
 @{logo-navigator} { background-image: url('./img/tenant-brand.svg') }
 @navigator-platform-logo-height: 100px;
 ```
@@ -226,7 +229,7 @@ To change the tenant brand logo inside the navigator, enter:
 
 The look and feel of an application is also driven by its typography. Of course you can change the font as well.
 
-```less
+```
 @font-family-sans-serif:      "Lato",Arial, Verdana, sans-serif;
 @font-family-base:            @font-family-sans-serif; @headings-font-family:        "Roboto",Arial, Verdana, sans-serif;
 ```
@@ -235,7 +238,7 @@ The look and feel of an application is also driven by its typography. Of course 
 
 Above we described the possible options for creating your custom branding in detail. If you do not want to start from scratch in every application use the following example branding as snippet. It defines the most important variables.
 
-```less
+```
 @import '~@c8y/style/extend.less';
 
 // Replace and uncomment each variable as you need them
@@ -401,7 +404,7 @@ languages?: {
 
 In the example provided in the repository to be downloaded you can find an example of a Russian translation which looks like this:
 
-```json
+```json
 "languages": {
   "ru": {
     "name": "Russian",

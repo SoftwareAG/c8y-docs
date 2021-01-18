@@ -1,6 +1,6 @@
 ---
 weight: 80
-title: "Appendix: Change history"
+title: "Appendix: Migration history"
 layout: bundle
 ---
 

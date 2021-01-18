@@ -1,5 +1,5 @@
 ---
-title: Applications options
+title: Application options
 layout: redirect
 weight: 10
 ---
@@ -54,7 +54,7 @@ These can just be appended to the URL of the application as query parameters.
 https://<instance domain>/apps/cockpit?dynamicOptionsUrl=/apps/my-options/options.json&rightDrawer:false
 ```
 
-### Options
+### Built-in Options
 
 Here is a list of the built-in options. As in the end this is just a plain old javascript object this list can be easily extended  with any property a developer might want to include in his applications or extensions.
 

@@ -92,7 +92,7 @@ If the platform is configured to support two-way SSL, your devices have a config
 * In order to support this situation, the platform needs to be configured accordingly. In case you experience issues please [contact support](/about-doc/contacting-support)
 * If all of the cases above are met and the device connection is still rejected due to certificates validation, then probably some other tenant uploaded a certificate with the same 'Common Name' as one of those sent by your device. In this case the device will always try to authorize itself with certificates.
 
-#### MQTT ClientId
+#### <a name="MQTT-ClientId">MQTT ClientId</a>
 
 The MQTT ClientId is a field to uniquely identify each connected client. The Cumulocity IoT implementation also uses the ClientId to link the client directly to a device. Therefore, the following format should be used for the ClientId:
 

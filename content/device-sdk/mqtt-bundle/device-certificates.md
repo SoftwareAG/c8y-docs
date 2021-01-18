@@ -242,6 +242,7 @@ Keep in mind that in the Cumulocity IoT cloud the maximum length of the chain of
 1. Go to the directory of your caCertificate or intermediateCertificate depending on which one is used to sign the device certificate.
 2. Generate the private key for the new certificate: `openssl genrsa -aes256 -out deviceCertificates/deviceKey.pem 4096`
 3. Generate the certificate signing request (change "caConfig.cnf" to "intermediateConfig.cnf" if you are in the intermediateCertificate directory): `openssl req -config caConfig.cnf -new -sha256 -key deviceCertificates/deviceKey.pem -out deviceCertificates/deviceCsr.pem`
+   Remember that the `commonName` of the device certificate, which you will be asked to provide in the console, has to match the [ClientId](/device-sdk/mqtt/#MQTT-ClientId) of the device during the connection.
 4. Generate the certificate signed by the CA or intermediate (change "caConfig.cnf" to "intermediateConfig.cnf" if you are in the intermediateCertificate directory): `openssl ca -config caConfig.cnf -extensions v3_signed -days 365 -notext -md sha256 -in deviceCertificates/deviceCsr.pem -out deviceCertificates/deviceCert.pem`
 5. Verify if the generated certificate is correctly signed by CA or intermediate (change "caCert.pem" to "intermediateCert.pem" if you are in the intermediateCertificate directory): `openssl verify -partial_chain -CAfile caCert.pem deviceCertificates/deviceCert.pem`    
 
@@ -257,29 +258,20 @@ Go into your caCertificate directory.
 
 1. Go into your deviceCertificates directory with the device's private key and the generated chain of certificates. If you are using an intermediate certificate between the CA certificate and the device certificate then it will be the `caCertificate/intermediateCertificate/deviceCertificates` path, otherwise it will be `caCertificate/deviceCertificates`. Create keystore using the generated chain of certificates and the private key of the device: `openssl pkcs12 -export -name devicekeyentry -inkey deviceKey.pem -in deviceCertChain.pem -out deviceKeystore.pkcs12`
 2. If you want to convert your keystore to JKS format then you would need the Java Keytool which is usually downloaded together with Java Development Kit: `keytool -importkeystore -srckeystore deviceKeystore.pkcs12 -srcstoretype PKCS12 -destkeystore deviceKeystore.jks -deststoretype JKS`
-3. Now you can create a truststore, which will contain the server certificate. It has to be created with Java Keytool (openssl does not support creating truststore, so if you don't want to use Java keytool then you will have to keep every trusted certificate in a separate pem file):
+3. If you do not have the server certificate, get it by the command: `openssl s_client -showcerts -connect <cumulocity url>:<mqtt mutual ssl port (currently 8883, but that can be changed in the future)> | openssl x509 -outform PEM > serverCertificate.pem`
+4. Now you can create a truststore, which will contain the server certificate. It has to be created with Java Keytool (openssl does not support creating truststore, so if you don't want to use Java keytool then you will have to keep every trusted certificate in a separate pem file).
+   Remember that `alias` is the unique identifier for every keystore or truststore entry. It means that if you want to add a second trusted certificate to the same truststore then you will have to change the alias from `servercertificate` in the command below to some other name:
     * In PKCS12 format: `keytool -importcert -noprompt -keystore deviceTruststore.pkcs12 -alias servercertificate -file serverCertificate.pem`
-    * In JKS format: `keytool -import -file caCert.pem -alias servercertificate -keystore deviceTruststore.jks`
-4. Optionally, instead of creating a new file for the truststore, you can add the trusted certificates to your created keystore and store everything in one file, which is not the recommended solution:
+    * In JKS format: `keytool -import -file serverCertificate.pem -alias servercertificate -keystore deviceTruststore.jks`
+5. Optionally, instead of creating a new file for the truststore, you can add the trusted certificates to your created keystore and store everything in one file, which is not the recommended solution:
     * If your keystore is in the PKCS12 format: `keytool -importcert -noprompt -keystore deviceKeystore.pkcs12 -alias servercertificate -file serverCertificate.pem`
-    * If your keystore is in the JKS format: `keytool -import -file trustedCertificate.pem -alias servercertificate -keystore deviceKeystore.jks`
-5. You can check the content of your keystore (or truststore) with the command: `keytool -list -v -keystore deviceKeystore.jks`
+    * If your keystore is in the JKS format: `keytool -import -file serverCertificate.pem -alias servercertificate -keystore deviceKeystore.jks`
+6. You can check the content of your keystore (or truststore) with the command: `keytool -list -v -keystore deviceKeystore.jks`
 
 ### How to test created certificates with MQTT.fx client
 
-1. Generate a keystore as described in [Generating and signing certificates](#generating-and-signing-certificates) if you didn't do it yet.
-2. Get the server certificate in pem format:
-    ```shell
-    openssl s_client -showcerts -connect <cumulocity url>:<mqtt mutual ssl port (currently 8883, but that can be changed in the future)> | openssl x509 -outform PEM > serverCertificate.pem
-    ```
-
-3. Create a new truststore with the server certificate:
-
-    ```shell
-    keytool -import -file serverCertificate.pem -alias servercertificate -keystore deviceTruststore.jks
-    ```
-
-4. Upload your CA (or intermediate) certificate to the platform. This operation will add your uploaded certificate to the server's truststore. It can be done in two ways:
+1. Generate a keystore and a truststore as described in [Generating and signing certificates](#generating-and-signing-certificates) if you didn't do it yet.
+2. Upload your CA (or intermediate) certificate to the platform. This operation will add your uploaded certificate to the server's truststore. It can be done in two ways:
 
     * Via UI:
 
@@ -293,7 +285,11 @@ Go into your caCertificate directory.
       <br/>
       After completing all the steps except adding the certificate, the form should look like this:
 
-      ![MQTT.fx configuration](/images/mqtt/mqttTrustedCertificateAddition.png)
+      ![Trusted certificate addition](/images/mqtt/mqttTrustedCertificateAddition.png)
+   
+      Then the added certificate should be visible:
+
+      ![Trusted certificate added](/images/mqtt/mqttTrustedCertificateAdded.png)
 
     * Via REST:
 
@@ -314,26 +310,26 @@ Go into your caCertificate directory.
             	"certInPemFormat" : "<CERT_PEM_VALUE>"
             }
         ```
-5. Download and install the newest MQTT.fx client from: http://www.jensd.de/apps/mqttfx/
-6. In MQTT.fx click **Extras** at the top and then **Edit Connection Profiles**
-7. Insert the Cumulocity URL in the "Broker address" line.
-8. Insert the SSL port in the "Broker port" line.
-9. In the "Client ID" field, insert the common name of your device certificate.
-10. Select SSL/TLS as the authentication type.
-11. Click **Enable SSL/TLS**.
-12. Select "SSLv3 protocol".
-13. Select "Self signed certificates in keystores"
-14. In "Keystore File" insert the path to your deviceTruststore.jks file.
-15. In "Trusted Keystore Alias" insert "servercertificate" or a different value if you provided a different alias in step 3 above.
-16. In "Trusted Keystore Password" insert the password, which you created during the deviceTruststore.jks creation.
-17. In "Client Keystore" insert the path to your deviceKeystore file with either JKS or PKCS12 format.
-18. In "Client Keystore Password" insert the password you created during the deviceKeystore creation.
-19. In "Client KeyPair Alias" insert "devicekeyentry" or a different value if you provided a different alias in the "-name" parameter during the step about keystore creation in [Generating and signing certificates](#generating-and-signing-certificates).
-20. In "Client KeyPair Password" insert the password, which you created during the deviceKey.pem creation.
-21. The "PEM formatted" field should be checked.
-22. Save and close the settings.
-23. Select the edited profile and click connect.
-24. You should be succesfully connected and the buttons "Disconnect", "Publish" and "Subscribe" should be active now. This means that your connection with the certificates work correctly.
+3. Download and install the newest MQTT.fx client from: http://www.jensd.de/apps/mqttfx/
+4. In MQTT.fx click **Extras** at the top and then **Edit Connection Profiles**
+5. Insert the Cumulocity URL in the "Broker address" line.
+6. Insert the SSL port in the "Broker port" line.
+7. In the "Client ID" field, insert the common name of your device certificate.
+8. Select SSL/TLS as the authentication type.
+9. Click **Enable SSL/TLS**.
+10. Select "SSLv3 protocol".
+11. Select "Self signed certificates in keystores"
+12. In "Keystore File" insert the path to your deviceTruststore file with either JKS or PKCS12 format.
+13. In "Trusted Keystore Alias" insert "servercertificate" or a different value if you provided a different alias in step 3 above.
+14. In "Trusted Keystore Password" insert the password, which you created during the deviceTruststore file creation.
+15. In "Client Keystore" insert the path to your deviceKeystore file with either JKS or PKCS12 format.
+16. In "Client Keystore Password" insert the password you created during the deviceKeystore creation.
+17. In "Client KeyPair Alias" insert "devicekeyentry" or a different value if you provided a different alias in the "-name" parameter during the step about keystore creation in [Generating and signing certificates](#generating-and-signing-certificates).
+18. In "Client KeyPair Password" insert the password, which you created during the deviceKey.pem creation.
+19. The "PEM formatted" field should be checked.
+20. Save and close the settings.
+21. Select the edited profile and click connect.
+22. You should be succesfully connected and the buttons "Disconnect", "Publish" and "Subscribe" should be active now. This means that your connection with the certificates work correctly.
 
 The connection settings should look like this:
 

@@ -14,9 +14,9 @@ On top of that the Cumulocity IoT platform in general is a **multi-tenant platfo
 
 This will leave you with two options to structure your customers. You can either create a tenant for each of your customers or you can manage multiple customers within a single tenant and protect them from each other using RBAC.
 
-In the following we will look at both approaches in more detail and run through some use cases explaining how to solve them in both ways. This should help you to decide which approach suits your business case better.Cumulocity IoT is designed to manage tenants using the tenant hierarchy. As a result, some aspects that need to be handled in a customer environment are more challenging when using Role Based Access Control. Using a combination of both approaches will provide you and your customers with the most flexible approach. 
+In the following we will look at both approaches in more detail and run through some use cases explaining how to solve them in both ways. This should help you to decide which approach suits your business case better.Cumulocity IoT is designed to manage tenants using the tenant hierarchy. As a result, some aspects that need to be handled in a customer environment are more challenging when using Role Based Access Control. Using a combination of both approaches will provide you and your customers with the most flexible approach.
 
->**Info:** Starting with one approach and then switching to the other one will require some migration. It is easier to go from RBAC to multi-tenancy than vice versa. 
+>**Info:** Starting with one approach and then switching to the other one will require some migration. It is easier to go from RBAC to multi-tenancy than vice versa.
 
 ### General setup
 
@@ -166,7 +166,7 @@ Having a separate tenant for each customer they will not be limited with respect
 <tbody>
 <tr>
 <td style="text-align:left">Application management can only be done by admins. Customers will still be able to grant their users access to available applications (of course only to those they can access themselves) but they won’t be able to create own applications.</td>
-<td style="text-align:left">Customers are free to add applications into their tenant as they see fit. The microservice hosting feature is optional and therefore needs to be granted to the tenant by the management tenant. This does not apply for UI applications.</td>
+<td style="text-align:left">Customers are free to add applications into their tenant as they see fit. The microservice hosting feature is optional and therefore needs to be granted to the tenant by the Management tenant. This does not apply for UI applications.</td>
 </tr>
 </tbody>
 </table>

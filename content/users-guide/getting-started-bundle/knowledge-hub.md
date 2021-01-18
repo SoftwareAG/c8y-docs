@@ -1,6 +1,6 @@
 ---
 weight: 60
-title: Knowledge Hub (free trials only)
+title: Knowledge Hub (trial tenants only)
 layout: redirect
 ---
 
@@ -45,11 +45,11 @@ Click **Resources** to switch to the **Resources** list.
 
 ![Knowledge Hub resources](/images/users-guide/getting-started/getting-started-knowledge-hub-resources.png)
 
-Here you can find links to various additional resources like release notes, trainings, documentation and developer content.
+Here you can find links to various additional resources like documentation, training, developer resources, and release notes.
 
 ### Communication
 
-At the bottom of the list in the **Knowledge Hub** dialog, you can find several options to get in contact with us as needed:
+At the bottom of the list in the **Knowledge Hub** dialog, you can find several options to get in contact with us as required:
 
 * **Have a question or idea** - Provide feedback via email or send us product ideas or feature requests
 * **IoT QuickStart consulting services** - Quickly define your business goals and increase your IoT knowledge

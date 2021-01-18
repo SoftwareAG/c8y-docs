@@ -14,13 +14,13 @@ At the bottom right of the Cumulocity IoT platform UI, click the **Knowledge Hub
 
 ![Knowledge Hub button](/images/users-guide/getting-started/getting-started-knowledge-hub-button.png)
 
-The Knowlegde Hub dialog opens.
+The Knowlegde Hub dialog opens, presenting a couple of options in a list.
 
 ![Knowledge Hub dialog](/images/users-guide/getting-started/getting-started-knowledge-hub-dialog.png)
 
 ### Sessions
 
-The first items guide you in a step-by-step manner through the major topics of Cumulocity IoT:
+The first items of the list guide you in a step-by-step manner through the major topics of Cumulocity IoT:
 
 |Topic|Description|
 |:---|:---|
@@ -33,9 +33,11 @@ The first items guide you in a step-by-step manner through the major topics of C
 |7 - View advanced analytics|Introduces you to analyzing your data using streaming and predictive analytics|
 |8 - Data integration and storage|Shows how to integrate IoT data with other apps across your organization|
 
+>**Info:** After following an item and returning to the Knowledge Hub list you will find a green checkmark in front of the item in the list to help you remember which sessions you already followed or watched.    
+
 ### Feedback
 
-Below, click **Share feedback** to leave your feedback. You can quickly rate your experience (1-5 stars) and provide written feedback too.
+Below the introductory sessions in the Knowledge Hub list, click **Share feedback** to leave your feedback. You can quickly rate your experience (1-5 stars) and provide written feedback too.
 
 ![Knowledge Hub feedback](/images/users-guide/getting-started/getting-started-knowledge-hub-feedback.png)
 

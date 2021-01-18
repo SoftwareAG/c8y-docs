@@ -96,7 +96,7 @@ Various changes have been implemented to improve the UI performance significantl
 * [MTM-32450] Cockpit & Device Management: On the root groups views, the query to inventory uses the flags onlyRoots=true and withChildren=false.
 * [MTM-32462] Device Management: In the group assignment widget under device details, the list of available groups is now only retrieved when the user expands the dropdown. 
 * [MTM-32458] Device Management: The default page size for the device list is now 40. 
-
+* [MTM-29924] UI: Performance has been improved by making breadcrumbs on devices and groups configurable. Per default, breadcrumbs on devices and groups are now turned off. They can be turned on by setting the <code>breadcrumbs</code> application option, see http://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html#breadcrumbs. All other breadcrumbs are still displayed. 
 
 ### OPC UA device gateway 
 
@@ -109,6 +109,7 @@ The functionality of the OPC UA device gateway has been enhanced including the f
 * [MTM-31146] It is now possible to map a UA alarm severity into a Cumulocity IoT alarm severity. 
 * [MTM-32635] For OPC UA mappings, the alarm and event type can now have placeholders for selected attributes by using their index. 
 * [MTM-33266] The default configuration file packaged in the JAR is now fully commented.
+* [MTM-35656] UA alarm severity mappings can be configured in the OPC UA server managed object.
 
 For details, see [OPC UA](/protocol-integration/opcua) in the *Protocol integration guide*.
 

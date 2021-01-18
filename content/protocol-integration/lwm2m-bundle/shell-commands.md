@@ -31,7 +31,7 @@ In the **Shell** tab of a device, LWM2M shell commands can be performed. Each co
 </tr>
 <tr>
 <td align="left">value</td>
-<td align="left">The value to write to a specific resource. It should have the same type as the resource.</td>
+<td align="left">The value to be written to the resource. Must be given using the type of the resource.</td>
 </tr>
 <tr>
 <td align="left">Firmware version</td>

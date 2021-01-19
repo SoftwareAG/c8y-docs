@@ -30,4 +30,4 @@ For details on the Microservice SDK for Java, see [Microservice SDK for Java](/m
 
 #### Disabled TLS 1.0 support on all public cloud instances
 
-As announced in the [Migration notes for release 10.5.7](https://cumulocity.com/guides/10.5.7/release-notes/10-5-7/#10-5-7-migration), Encryption based on Transport Layer Security v1.0 has been be disabled on all public Cumulocity IoT instances. As all modern browsers do already support by default more recent versions of TLS we do not expect limitations for users. Devices connecting to Cumulocity IoT might need to be updated.
+As announced in the [Migration notes for release 10.5.7](https://cumulocity.com/guides/10.5.7/release-notes/10-5-7/#10-5-7-migration), Encryption based on Transport Layer Security v1.0 has been disabled on all public Cumulocity IoT instances. As all modern browsers do already support by default more recent versions of TLS we do not expect limitations for users. Devices connecting to Cumulocity IoT might need to be updated.

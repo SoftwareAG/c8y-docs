@@ -81,8 +81,7 @@ Cumulocity IoT now uses Apama to provide streaming analytics. As a result, exist
 
 For details on migration, refer to [Migrating from CEL (Esper) to Apama](/apama/overview-analytics/#migrate-from-esper) in the Streaming Analytics guide.
 
-Note that we offer an open-source translation tool which assists you in the migration of Esper CEL to Apama EPL. It is available from GitHub at [https://github.com/SoftwareAG/apama-streaming-analytics-esper2apama](https://github.com/SoftwareAG/apama-streaming-analytics-esper2apama). See the readme in GitHub for details. This tool focuses on reducing (though not eliminating!) the amount of human involvement needed during migration by automating translation of some of the most commonly occurring Esper constructs.
-
+Note that we offer an open-source Esper-to-Apama EPL translation tool which assists you in the migration of Esper CEL to Apama EPL. It generates EPL that is compatible with the Apama microservice version 10.6.6 and above. The translation tool is available from GitHub at [https://github.com/SoftwareAG/apama-streaming-analytics-esper2apama](https://github.com/SoftwareAG/apama-streaming-analytics-esper2apama). This tool focuses on reducing (though not eliminating) the amount of human involvement needed during migration by automating translation of some of the most commonly occurring Esper constructs. See the README in GitHub for details. 
 
 #### Removal of DELETE method for audit logs
 

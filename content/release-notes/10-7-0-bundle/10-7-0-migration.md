@@ -81,6 +81,9 @@ Cumulocity IoT now uses Apama to provide streaming analytics. As a result, exist
 
 For details on migration, refer to [Migrating from CEL (Esper) to Apama](/apama/overview-analytics/#migrate-from-esper) in the Streaming Analytics guide.
 
+Note that we offer an open-source translation tool which assists you in the migration of Esper CEL to Apama EPL. It is available from GitHub at https://github.com/SoftwareAG/apama-streaming-analytics-esper2apama/releases. See the readme in GitHub for details. This tool focuses on reducing (though not eliminating!) the amount of human involvement needed during migration by automating translation of some of the most commonly occurring Esper constructs.
+
+
 #### Removal of DELETE method for audit logs
 
 As announced in the [Migration notes for release 10.5.0](https://cumulocity.com/guides/10.5.0/release-notes/10-5-0/#10-5-0-migration), deletion of audit log entries by administrators is no longer permitted. This method is deprecated and has been removed. All DELETE requests to the audit API will return the error "405 Method not allowed".
@@ -89,4 +92,4 @@ Note that retention rules still apply to audit logs and will delete audit log re
 
 #### Deprecation of breadcrumbs
 
-As announced in the [Migration notes for release 10.5.7](https://cumulocity.com/guides/10.5.7/release-notes/10-5-7/#10-5-7-migration), the breadcrumbs for groups and devices are now turned off by default to improve performance. If required, they can still be turned on by setting the `breadcrumbs` application option, see http://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html#breadcrumbs. 
+As announced in the [Migration notes for release 10.5.7](https://cumulocity.com/guides/10.5.7/release-notes/10-5-7/#10-5-7-migration), the breadcrumbs for groups and devices are now turned off by default to improve performance. If required, they can still be turned on by setting the `breadcrumbs` application option, see http://resources.cumulocity.com/documentation/websdk/ngx-components/classes/ApplicationOptions.html#breadcrumbs.

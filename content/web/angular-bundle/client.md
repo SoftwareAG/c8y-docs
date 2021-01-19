@@ -71,7 +71,7 @@ All fetch responses can be parsed to JSON if the content type is set correctly. 
 
 ### Authentication strategy
 
-In the Cumulocity IoT platform we currently allow two ways to authenticate: 
+In the Cumulocity IoT platform we currently allow two ways to authenticate:
 
  * Basic Auth: The authentication header is injected into each request.
  * Oauth: The client doesn't know about the authentication header. The header is set in a cookie.
@@ -205,7 +205,7 @@ observableSubscription.unsubscribe();
 The constructor `new Client([...])` initializes a new client which allows to request data from the API. Unlike to `Client.authenticate([...])` it needs a tenant given and does not verify if the login is correct. This is useful if you are developing a node.js microservice.
 
 ```js
-const auth = new BasicAuth({ 
+const auth = new BasicAuth({
    user: 'youruser',
    password: 'yourpassword',
    tenant: 'acme'

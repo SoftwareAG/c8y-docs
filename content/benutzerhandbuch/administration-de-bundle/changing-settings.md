@@ -414,7 +414,7 @@ Derzeit können folgende Anbietereinstellungen festgelegt werden:
 - [Impact](/protocol-integration/impact)
 - [Actility LoRa](/protocol-integration/lora-actility)
 - [Sigfox](/protocol-integration/sigfox)
-- [SIM](/protocol-integration/connectivity)
+- [SIM](/users-guide/device-management/#connectivity)
 
 ![Provider settings](/images/benutzerhandbuch/Administration/admin-settings-connectivity.png)
 

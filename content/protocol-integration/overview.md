@@ -4,16 +4,47 @@ title: Overview
 layout: bundle
 ---
 
-IoT devices come with a wide variety of protocols, parameters and network connectivity options. To process data from various device types, Cumulocity IoT supports various standard device protocols. 
+IoT devices come with a wide variety of protocols, parameters and network connectivity options. To process data from various device types, Cumulocity IoT supports various standard device protocols.
 
-|Protocol|Description|
-|:---|:---|
-|[Cloud Fieldbus](/protocol-integration/cloud-fieldbus)|Allows to collect data from fieldbus devices (Modbus, CAN, Profibus) and remotely manage them.
-|[IMPACT](/protocol-integration/impact)|Enables the integration with the Nokia IMPACT Data Collector which is designed to collect data from heterogeneous devices.
-|[Actility LoRa](/protocol-integration/lora-actility)|Allows to interface with LoRa devices through Actility’s ThingPark Wireless.
-|[LightweightM2M](/protocol-integration/lwm2m)|Allows to communicate with all devices supporting the LWM2M protocol.
-|[OPC UA](/protocol-integration/opcua)|Enables the communication between the Cumulocity IoT platform and an OPC UA server via a OPC UA gateway.
-|[Sigfox](/protocol-integration/sigfox)|Allows to interface with Sigfox devices through the Sigfox Cloud.
-|[SNMP](/protocol-integration/snmp)|Allows the communication with SNMP-enabled devices.
-
-
+<table>
+<colgroup>
+  <col width="20%">
+  <col width="80%">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align:left">Protocol</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="../../protocol-integration/cloud-fieldbus">Cloud Fieldbus</a></td>
+<td style="text-align:left">Allows to collect data from fieldbus devices (Modbus, CAN, Profibus) and remotely manage them.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="../../protocol-integration/impact">IMPACT</a></td>
+<td style="text-align:left">Enables the integration with the Nokia IMPACT Data Collector which is designed to collect data from heterogeneous devices.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="../../protocol-integration/lora-actility">Actility LoRa</a></td>
+<td style="text-align:left">Allows to interface with LoRa devices through Actility’s ThingPark Wireless.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="../../protocol-integration/lwm2m">LightweightM2M</a></td>
+<td style="text-align:left">Allows to communicate with all devices supporting the LWM2M protocol.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="../../protocol-integration/opcua">OPC UA</a></td>
+<td style="text-align:left">Enables the communication between the Cumulocity IoT platform and an OPC UA server via a OPC UA gateway.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="../../protocol-integration/sigfox">Sigfox</a></td>
+<td style="text-align:left">Allows to interface with Sigfox devices through the Sigfox Cloud.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="../../protocol-integration/snmp">SNMP</a></td>
+<td style="text-align:left">Allows the communication with SNMP-enabled devices.</td>
+</tr>
+</tbody>
+</table>

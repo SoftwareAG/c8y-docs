@@ -256,7 +256,7 @@ Click **Reload** to update the list once manually.
 
 Single operations can be created either from bulk operations or via the different types of operations that the device supports: [managing firmware](/users-guide/device-management/#managing-firmware-on-a-device), [software](/users-guide/device-management/#managing-software-on-a-device), [configurations](/users-guide/device-management/#to-retrieve-and-apply-a-configuration-snapshot-to-a-device-which-supports-multiple-configuration-types) etc.
 
-When you create a [bulk operation](#to-add-a-bulk-operation), the single operations entailed in the bulk operation are also added to the list of single operations.
+When you create a [bulk operation](#bulk-operations), the single operations entailed in the bulk operation are also added to the list of single operations.
 
 Operations for a specific device can also be created and executed in the **Shell** tab of the device, see [Device details > Shell](/users-guide/device-management#shell).
 
@@ -285,7 +285,7 @@ See the list of bulk operations in the **Bulk operations** tab.
 
 Bulk operations have an operation type and status.
 
-You can add bulk operations of the following operation types with the [bulk operation wizard](#to-add-a-bulk-operation-using-the-wizard):
+You can add bulk operations of the following operation types with the [bulk operation wizard](#bulk-operation-wizard):
 
 | Operation type          | Description |
 | :---------------------- | :---------- |
@@ -346,10 +346,10 @@ To clear both filters, click **Reset filters** at the bottom of the list (only v
 
 There are two ways of creating a bulk operation:
 
-* Use the [bulk operation wizard](#to-add-a-bulk-operation-using-the-wizard)
+* Use the [bulk operation wizard](#bulk-operation-wizard)
 * [Schedule a single operation as bulk operation](#to-schedule-a-single-operation-as-bulk-operation)
 
-##### <a name="to-add-a-bulk-operation-using-the-wizard"></a>To add a a bulk operation using the wizard
+##### <a name="bulk-operation-wizard"></a>To add a a bulk operation using the wizard
 
 Follow these steps:
 
@@ -380,7 +380,7 @@ You can schedule a single operation as a bulk operation either from the **Single
 Follow these steps:
 
 1. Click the menu icon at the right of the single operation that you want to schedule as a bulk operation and then click **Schedule as bulk operation**.
-2. The resulting wizard is similar to the new bulk operation wizard described in [To add a bulk operation using the wizard](#to-add-a-bulk-operation-using-the-wizard). However, there are just two steps because the operation type is inferred from the operation that is scheduled as a bulk operation. See the description of the [full wizard](#to-add-a-bulk-operation-using-the-wizard) and follow it.
+2. The resulting wizard is similar to the new bulk operation wizard described in [To add a bulk operation using the wizard](#bulk-operation-wizard). However, there are just two steps because the operation type is inferred from the operation that is scheduled as a bulk operation. See the description of the [full wizard](#bulk-operation-wizard) and follow it.
 
 #### <a name="bulk-operations"></a>To edit the schedule of bulk operations
 

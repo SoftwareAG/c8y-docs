@@ -15,7 +15,7 @@ The Device Management application provides various features that support you in 
 |[Managing configurations](#configuration-repository)|How to retrieve configuration data and store and manage it in a configuration repository as configuration snapshot.
 |[Device credentials](#credentials)|How to manage all credentials generated for your connected devices.
 |[Device profiles](#device-profiles)|How to manage device profiles - a set of firmware, software, and configuration - and apply them to devices.
-|[Trusted certificates](##managing-trusted-certificates)|How to manage trusted certificates.
+|[Trusted certificates](#trusted-certificates)|How to manage trusted certificates.
 
 All features are accessible through the **Management** menu in the navigator:
 
@@ -454,7 +454,7 @@ To delete a device profile, click the menu icon at the right of the respective d
 Device profiles can be assigned to
 
 * [individual devices](#to-apply-profiles-to-single-devices)
-* [multiple devices through bulk operations](#to-apply-profiles-to-multiple-devices) 
+* [multiple devices through bulk operations](#to-apply-profiles-to-multiple-devices)
 
 The **Device profile** tab of a particular device shows the details of the currently installed profile on a device.
 
@@ -469,12 +469,12 @@ Moreover, you can filter for devices in the devices list based on their applied 
 
 #### <a name="to-apply-profiles-to-single-devices"></a>To apply device profiles to a single device
 
-Device profiles can be applied to individual devices in the **Device Profile** tab of the particular device. 
+Device profiles can be applied to individual devices in the **Device Profile** tab of the particular device.
 
 1. In the **Device profile** tab, select a device profile from the dropdown list. Only profiles that match the device type (if specified) or have no device type specified are displayed.
 
 	![Assign device profile](/images/users-guide/DeviceManagement/devmgmt-device-profile-assign.png)
- 
+
 2. Click **Assign device profile** to start the update operation.
 
 #### <a name="to-apply-profiles-to-multiple-devices"></a>To apply device profiles to multiple devices
@@ -482,7 +482,7 @@ Device profiles can be applied to individual devices in the **Device Profile** t
 Device profiles can be applied to multiple devices by using bulk operations.
 
 1. Click **Device control** in the **Overview** menu to navigate to the **Device control** page. In the **Device control** page, a new bulk operation can be created to apply a device profile.
-2. In the **Bulk operations** tab, click **New bulk operation** at the right of the top menu bar and in the resulting dialog select **Apply device profile**. 
+2. In the **Bulk operations** tab, click **New bulk operation** at the right of the top menu bar and in the resulting dialog select **Apply device profile**.
 3. Follow the steps described in [Monitoring and controlling devices > Working with operations > To add a bulk operation](/users-guide/device-management/#bulk-operations) to schedule a bulk operation which applies a device profile.
 
 The devices will install the firmware, software and configurations items of the profile and report back the status of the operation. After applying the profile, the device objects in the platform are updated accordingly with the new profile information.

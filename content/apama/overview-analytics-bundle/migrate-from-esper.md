@@ -81,3 +81,9 @@ Scheduled exports must be migrated to the report-agent microservice. This can be
 
 
 >**Info:** To use the new export schedule feature and for the migration to work, the report-agent microservice needs to be subscribed. New tenants will be subscribed to it automatically. Existing tenants should make sure that they are subscribed to it.
+
+### Using the Esper-to-Apama EPL translation tool
+
+The open-source Esper-to-Apama EPL translation tool assists you in the migration of Esper CEL to Apama EPL. It generates EPL that is compatible with the Apama microservice version 10.6.6 and above. The translation tool is available from GitHub at [https://github.com/SoftwareAG/apama-streaming-analytics-esper2apama](https://github.com/SoftwareAG/apama-streaming-analytics-esper2apama). 
+
+This tool focuses on reducing (though not eliminating) the amount of human involvement needed during migration by automating translation of some of the most commonly occurring Esper constructs. See the README in GitHub for more details.

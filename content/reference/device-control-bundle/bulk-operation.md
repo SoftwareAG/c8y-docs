@@ -90,7 +90,7 @@ colgroup>
 <td align="left">status</td>
 <td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Status of the bulk operation, in context of the execution of all of its single operations. Possible values: ACTIVE, COMPLETED, DELETED</td>
+<td align="left">Status of the bulk operation, in context of the execution of all its single operations. Possible values: ACTIVE, IN_PROGRESS, COMPLETED, DELETED</td>
 <td>No</td>
 </tr>
 <tr>

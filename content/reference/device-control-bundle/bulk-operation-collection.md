@@ -98,6 +98,7 @@ Example Response:
             "pending":0, "failed":0, "executing":0, "successful":0, "all":1
            },
          "status":"ACTIVE",
+         "generalStatus":SCHEDULED",
         },
         {
          "id":3,
@@ -116,7 +117,7 @@ Example Response:
             "pending":0, "failed":0, "executing":0, "successful":0, "all":5
            },
          "status":"ACTIVE",
-         "generalStatus":"EXECUTING",
+         "generalStatus":SCHEDULED",
         }
       ],
       "statistics" : {
@@ -125,6 +126,6 @@ Example Response:
       }
     }
 
-By default query bulk operations endpoint does not return CANCELED operations. It is possible to include them in the response by adding additional query parameter: `withDeleted=true`.
+By default, querying the bulk operations endpoint does not return CANCELED operations. It is possible to include them in the response by adding additional query parameter: `withDeleted=true`.
 
 To filter by general status, use e.g. this query parameter: `generalStatus=FAILED`

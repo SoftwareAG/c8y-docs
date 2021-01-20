@@ -23,7 +23,7 @@ Cumulocity distinguishes between the following release types:
 <tr>
 <td style="text-align:left">GA Release</td>
 <td style="text-align:left">A GA Release is a release with general availability (GA). GA Releases are provided in a 3-month cycle. They are published on all Cumulocity IoT public cloud instances and they are provided to customers with an on-premises instance through the Software Download Center on the Software AG Empower Portal. GA Releases include new features, improvements and fixes.</td>
-<td style="text-align:left">10.5.0.x, 10.5.7.x</td>
+<td style="text-align:left">10.7.0, 10.8.0</td>
 </tr>
 <tr>
 <td style="text-align:left">Incremental Releases</td>

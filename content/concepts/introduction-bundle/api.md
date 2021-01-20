@@ -10,3 +10,5 @@ In contrast to many other M2M and IoT platforms, Cumulocity IoT uses the same AP
 Cumulocity IoT uses HTTP and REST, which is today the most widely used interfacing technology and which works on any internet-connected device ranging from small embedded microcontrollers up to desktop PCs. The secure variant, HTTPS, is used for the most security critical applications and will give you the best possible security.
 
 The plugin concept of Cumulocity IoT enables you to write new user interface functionality that will seamlessly extend the existing Cumulocity IoT platform.
+
+>**Important:** The public APIs for Cumulocity IoT are backward compatible where possible. There are some instances where we may have to change an API, for example in order to support a security enhancement; in this case the change will be announced before it is implemented in the product.

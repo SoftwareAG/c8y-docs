@@ -14,8 +14,8 @@ More information on shell commands can be found in [LightweightM2M > Handling LW
 
 ### Device operations handling
 
-The device operations can be created even when a device is offline. In such a scenario, the operations will remain in PENDING state. These pending operations will be
-delivered to the device as soon as it gets connected. A huge number of pending operations might cause unexpected issues on the LWM2M agent. Hence, to avoid such cases
-the maximum number of device operations is limited to a certain value internally.
+If the operations are created while the device is offline, all the operations will be executed when the device comes online as those operations will be delivered through the real-time channel.
+A configurable property can limit the number of operations to be executed as part of the post-registration process, for example, the operations which were already delivered to the device once
+via the real-time channel, but they are still in a pending state.
 
 >**Info:** The default maximum limit of the pending operations is 10, which is a configurable value for the agent. In case this limit is not sufficient for your use case please contact our [support](/about-doc/contacting-support).

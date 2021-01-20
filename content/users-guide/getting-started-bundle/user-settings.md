@@ -13,7 +13,10 @@ Clicking the **User** button at the top right will open a menu which provides ac
 The **User** menu contains the following items:
 
 <table>
-<col width = 150>
+<colgroup>
+<col width = "20%">
+<col width = "80%">
+</colgroup>
 <thead>
 <tr>
 <th style="text-align:left">Menu item</th>
@@ -64,7 +67,7 @@ The user interface language will be selected along the following criteria, in th
 
 #### <a name="languages"></a>Available languages
 
-The UI is available in the following languages: 
+The UI is available in the following languages:
 
 |Language|Language code|
 |:---|:---|

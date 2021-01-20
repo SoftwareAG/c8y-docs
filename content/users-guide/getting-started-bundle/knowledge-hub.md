@@ -14,9 +14,11 @@ At the bottom right of the Cumulocity IoT platform UI, click the **Knowledge Hub
 
 ![Knowledge Hub button](/images/users-guide/getting-started/getting-started-knowledge-hub-button.png)
 
-The Knowlegde Hub dialog opens, presenting a couple of options in a list.
+The **Knowlegde Hub** dialog opens, presenting a couple of options in a list.
 
 ![Knowledge Hub dialog](/images/users-guide/getting-started/getting-started-knowledge-hub-dialog.png)
+
+>**Info:** The options provided in the **Knowlegde Hub** dialog will frequently be updated so that the sessions, resources and communication options you see in the platform might not match exactly those shown in the image above and described below. 
 
 ### Sessions
 
@@ -33,7 +35,8 @@ The first items of the list guide you in a step-by-step manner through the major
 |7 - View advanced analytics|Introduces you to analyzing your data using streaming and predictive analytics|
 |8 - Data integration and storage|Shows how to integrate IoT data with other apps across your organization|
 
->**Info:** After following an item and returning to the Knowledge Hub list you will find a green checkmark in front of the item in the list to help you remember which sessions you already followed or watched.    
+>**Info:** After following an item and returning to the Knowledge Hub list you will find a green checkmark in front of the item in the list to help you remember which sessions you already followed or watched. Note that these sessions may vary from time to time.  
+ 
 
 ### Feedback
 
@@ -51,9 +54,10 @@ Here you can find links to various additional resources like documentation, trai
 
 ### Communication
 
-At the bottom of the list in the **Knowledge Hub** dialog, you can find several options to get in contact with us as required:
+At the bottom of the list in the **Knowledge Hub** dialog, you can find several options to get in contact with us as required, for instance:
 
 * **Have a question or idea** - Provide feedback via email or send us product ideas or feature requests
-* **IoT QuickStart consulting services** - Quickly define your business goals and increase your IoT knowledge
 * **Book a demo** - Book a product demo
 * **UPGRADE Cumulocity IoT** - View pricing and purchase Cumulocity IoT
+
+These options may vary from time to time.

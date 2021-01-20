@@ -4,7 +4,7 @@ title: Handling LWM2M post registration actions
 layout: redirect
 ---
 
-The LWM2M shell commands can be performed in the **Shell** tab of each device. It is also possible to execute some common commands when any new device is registered.
+The LWM2M shell commands can be performed in the **Shell** tab of each device. It is also possible to execute some common operations when a device sends a full registration request.
 This can be done in the **LWM2M post-operations** page accessible from the **Device types** menu in the navigator. A set of shell commands can be saved in the Commands section, which will be performed on each device on registration.
 
 ![Post operations example](/images/device-protocols/lwm2m/lwm2m-post-operations.png)

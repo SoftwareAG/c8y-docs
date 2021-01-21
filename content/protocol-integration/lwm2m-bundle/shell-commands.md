@@ -30,6 +30,10 @@ In the **Shell** tab of a device, LWM2M shell commands can be performed. Each co
 <td align="left">The ID of the desired resource. The resources describe the characteristics of each object. All instances of a given object have the same resources, but the value of the resources may be different.</td>
 </tr>
 <tr>
+<td align="left">value</td>
+<td align="left">The value to be written to the resource. Must be given using the type of the resource.</td>
+</tr>
+<tr>
 <td align="left">Firmware version</td>
 <td align="left">The current version of the firmware.</td>
 </tr>
@@ -48,6 +52,7 @@ In the next table you will see all available commands and a brief description of
 |read /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;|Reads a resource path|
 |observe /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;|Enables the observe functionality|
 |execute /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;|Executes a resource on the device|
+|write /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt; &lt;value&gt;|Writes value to a resource on the device|
 |cancelobservation /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;|Cancels the observation functionality from the desired resource|
 |delete /&lt;objectID&gt;/&lt;instanceID&gt;[/&lt;resourceID&gt;]|Deletes a given object/instance/resource|
 |discover /&lt;objectID&gt;/&lt;instanceID&gt;/&lt;resourceID&gt;|Shows all resources of the given object|

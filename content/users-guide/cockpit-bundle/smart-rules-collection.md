@@ -585,7 +585,7 @@ The rule uses the following parameter from the device object or Data Point Libra
 
 **Example:**
 
-When we set the yellow range to "<10;15)" and the red range to "<15;20>" and the measured value is "15", a CRITICAL alarm (red) will be created, because red includes the value "15".
+When we set the yellow range to "[10;15)" and the red range to "[15;20]" and the measured value is "15", a CRITICAL alarm (red) will be created, because red includes the value "15".
 
 Using this mechanism, you can configure global threshold ranges in the Data Point Library. These global values can then be overridden for specific objects on a case-by-case basis.
 

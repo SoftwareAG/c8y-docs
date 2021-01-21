@@ -213,7 +213,7 @@ There are two types of operations in **Device control**, each represented by a t
 * **Single operations** execute on a single device, see [To view single operations](#to-view-single-operations).
 * **Bulk operations** comprise of the same single operation executed on a set of devices, see [To view bulk operations](#to-view-bulk-operations).
 
-#### <a name="to-view-single-operations"></a>To view single operations
+#### To view single operations
 
 See the list of single operations in the **Single operations** tab.
 
@@ -277,7 +277,7 @@ Click the menu icon at the right of the single operation that you want to create
 
 See [Cockpit > Smart rules > To create a smart rule](/users-guide/cockpit/#create-rules) for further steps.
 
-#### <a name="to-view-bulk-operations"></a>To view bulk operations
+#### To view bulk operations
 
 See the list of bulk operations in the **Bulk operations** tab.
 
@@ -340,10 +340,10 @@ To clear both filters, click **Reset filters** at the bottom of the list (only v
 
 There are two ways of creating a bulk operation:
 
-* Use the [bulk operation wizard](#to-add-a-bulk-operation-using-the-wizard)
+* Use the [bulk operation wizard](#bulk-operation-wizard)
 * [Schedule a single operation as bulk operation](#to-schedule-a-single-operation-as-bulk-operation)
 
-##### <a name="to-add-a-bulk-operation-using-the-wizard"></a>To add a a bulk operation using the wizard
+##### <a name="bulk-operation-wizard"></a>To add a a bulk operation using the wizard
 
 Follow these steps:
 
@@ -368,7 +368,7 @@ Follow these steps:
 5. Select a start date and a delay. The delay may either be in seconds or milliseconds and is the time spent between each single operation of the bulk operation. Click **Schedule bulk operation** to create the bulk operation.
     ![Bulk operation wizard, step 4](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step4.png)
 
-##### <a name="to-schedule-a-single-operation-as-bulk-operation"></a>To schedule a single operation as bulk operation
+##### To schedule a single operation as bulk operation
 
 You can schedule a single operation as a bulk operation either from the **Single operations** tab or from a **Control** tab of a particular device.
 Follow these steps:

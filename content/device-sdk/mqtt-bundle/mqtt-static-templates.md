@@ -27,27 +27,27 @@ If a parameter is in square brackets, it is optional.
 <td>
 
 <strong><a href="#inventory-templates">Inventory templates</a></strong>
-<a href="#100">100,createdDeviceName,deviceType</a>
-<a href="#101">101,createdChildId,childName,childType</a>
-<a href="#105">105 (Get children, reply: 106,child1,child2,…)</a>
-<a href="#107">107,fragmenttoBeUninstalled1,fragment2,...</a>
-<a href="#110">110,serialNumber,hardwareModel,revision</a>
-<a href="#111">111,IMEI,ICCID,IMSI,MCC,MNC,LAC,cellId</a>
-<a href="#112">112,latitude,longitude,altitude,accuracy</a>
-<a href="#113">113,&quot;configProp1=val1\nprop2=val2\n…&quot;</a>
-<a href="#114">114,supportedOperation1,operation2,…</a>
-<a href="#115">115,currentFirmwareName,version,url</a>
-<a href="#116">116,currentSoftwareName1,version1,url1,name2,…</a>
-<a href="#117">117,requiredInterval</a>
-<a href="#118">118,supportedLog1,log2,...</a>
-<a href="#119">119,supportedConfiguration1,config2,...</a>
-<a href="#120">120,configType,url,filename[,time]</a>
++ <a href="#100">100,createdDeviceName,deviceType</a>
++ <a href="#101">101,createdChildId,childName,childType</a>
++ <a href="#105">105 (Get children, reply: 106,child1,child2,…)</a>
++ <a href="#107">107,fragmenttoBeUninstalled1,fragment2,...</a>
++ <a href="#110">110,serialNumber,hardwareModel,revision</a>
++ <a href="#111">111,IMEI,ICCID,IMSI,MCC,MNC,LAC,cellId</a>
++ <a href="#112">112,latitude,longitude,altitude,accuracy</a>
++ <a href="#113">113,&quot;configProp1=val1\nprop2=val2\n…&quot;</a>
++ <a href="#114">114,supportedOperation1,operation2,…</a>
++ <a href="#115">115,currentFirmwareName,version,url</a>
++ <a href="#116">116,currentSoftwareName1,version1,url1,name2,…</a>
++ <a href="#117">117,requiredInterval</a>
++ <a href="#118">118,supportedLog1,log2,...</a>
++ <a href="#119">119,supportedConfiguration1,config2,...</a>
++ <a href="#120">120,configType,url,filename[,time]</a>
 
 <strong><a href="#measurement-templates">Measurement templates</a></strong>
-<a href="#200">200,fragment,series,value[,unit,time]</a>
-<a href="#210">210,rssi,ber[,time]</a>
-<a href="#211">211,temperature[,time]</a>
-<a href="#212">212,battery[,time]</a>
++ <a href="#200">200,fragment,series,value[,unit,time]</a>
++ <a href="#210">210,rssi,ber[,time]</a>
++ <a href="#211">211,temperature[,time]</a>
++ <a href="#212">212,battery[,time]</a>
 
 </td>
 <td>

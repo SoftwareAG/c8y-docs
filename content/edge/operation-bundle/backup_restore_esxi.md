@@ -6,20 +6,12 @@ layout: redirect
 
 ### Creating a backup in VMware ESXi
 
-1. Power off the Edge VM. <br><br>
-<img src="/images/edge/edge-backup-vmware-pro-power-off.png" name="Power Off" style="width:75%;"/>
+1. Power off the Edge VM in the ESXi console.
 
-2. Select the Edge VM that you want to back up.
+2. Select the Edge VM and click **Actions** > **Export**.
 
-3. Click **File** > **Export to OVF**. <br><br>
-<img src="/images/edge/edge-backup-vmware-pro-export.png" name="Export OVF" style="width:75%;"/>
-
-4. Click **Save**.
+3. Click **OK** to download the files.
 
 ### Restoring an Edge VM in VMware ESXi
 
-1. Click **File** > **Open**.
-
-2. Select the Edge VM that you want to restore and click **Open**.
-
-3. Click **Import**.
+Restoring an Edge VM from an OVF file is similar to deploying a virtual machine in VMware ESXi. To restore an Edge VM, perform the steps as described in [Setting up an Edge VM on VMware ESXi](/edge/installation/#setting-up-esxi). 

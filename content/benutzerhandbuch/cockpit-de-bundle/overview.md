@@ -65,7 +65,7 @@ Mehr über allgemeine Aspekte der Cumulocity IoT-Plattform und ihrer Anwendungen
 
 Bei der Startseite der Cockpit-Anwendung handelt es sich um ein Dashboard, das Daten für den Mandanten anzeigt.
 
-![Home dashboard](/images/benutzerhandbuch/cockpit-de/cockpit-home-screen.png)
+![Home dashboard](/images/benutzerhandbuch/cockpit/cockpit-home-screen.png)
 
 Die Daten, die auf der Startseite angezeigt werden, werden von allen Benutzern des Mandanten gemeinsam genutzt. Standardmäßig zeigt die Startseite eine Begrüßung, die aktiven kritischen Alarme, neueste Alarme und eine Karte mit allen Geräten.
 

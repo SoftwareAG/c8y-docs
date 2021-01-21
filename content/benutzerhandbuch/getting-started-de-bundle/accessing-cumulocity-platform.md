@@ -6,7 +6,7 @@ aliases:
   - /users-guide/overview/#accessing-cumulocity-platform
 ---
 
-Auf die Cumulocity IoT-Plattform können Sie über einen Webbrowser zugreifen. 
+Auf die Cumulocity IoT-Plattform können Sie über einen Webbrowser zugreifen.
 
 ### Unterstützte Browser
 
@@ -21,7 +21,7 @@ In dieser Version werden folgende Browser unterstützt:
 
 [2] Der Google Chrome-Support basiert auf Google Chrome Version 84. Aufgrund zahlreicher Versions-Upgrades von Google Chrome kann die Kompatibilität von Cumulocity IoT mit zukünftigen Versionen von Google Chrome nicht vollständig garantiert werden. Mögliche Inkompatibilitäten werden während des regulären Wartungsprozesses von Cumulocity IoT behoben.
 
->**Wichtig:** [3] Cumulocity IoT ist in Internet Explorer 11 funktionsfähig, die angebotene Benutzeroberfläche entspricht jedoch nicht dem neuesten Stand der Technik. Daher wird Cumulocity IoT 10.7 die letzte Version sein, die diesen Browser unterstützt. In nachfolgenden Releases wird weiterhin die neueste Version des Microsoft Edge Browsers (als Nachfolger des Internet Explorer) unterstützt. 
+>**Wichtig:** [3] Cumulocity IoT ist in Internet Explorer 11 funktionsfähig, die angebotene Benutzeroberfläche entspricht jedoch nicht dem neuesten Stand der Technik. Daher wird Cumulocity IoT 10.7 die letzte Version sein, die diesen Browser unterstützt. In nachfolgenden Releases wird weiterhin die neueste Version des Microsoft Edge Browsers (als Nachfolger des Internet Explorer) unterstützt.
 
 Sie können Cumulocity IoT auch auf gängigen Smartphones und Tablets nutzen. Unsere Produkte wurden mit den folgenden mobilen Webbrowsern getestet:
 
@@ -52,17 +52,17 @@ Sie werden zur Anmeldeseite Ihrer Standardanwendung weitergeleitet. Weitere Info
 
 Geben Sie auf der Anmeldeseite Ihren Benutzernamen (Unterscheidung zwischen Groß- und Kleinbuchstaben) und Ihr Passwort ein und klicken Sie **Anmelden**, um die Anwendung zu öffnen.
 
-<img src="/images/benutzerhandbuch/getting-started-de/getting-started-login.png" alt="Login prompt">
+<img src="/images/benutzerhandbuch/getting-started/getting-started-login.png" alt="Login prompt">
 
 Aktivieren Sie die Checkbox **Passwort merken**, damit der Browser sich Ihre Zugangsdaten merkt, so dass Sie diese nicht wieder bereitstellen müssen, wenn Sie die Anwendung das nächste mal öffnen. Dies ist außerdem praktisch, wenn Sie häufig zwischen Anwendungen wechseln, da die Cumulocity IoT-Plattform Sie sonst bei jedem Wechsel auffordert, sich zu authentifizieren. Melden Sie sich explizit ab, damit der Browser Ihre Zugangsdaten "vergisst".
 
 Wenn Sie sich das erste Mal an der Cumulocity IoT-Plattform anmelden, werden Sie zur Standardanwendung (falls nicht anders konfiguriert, ist dies die [Cockpit](/benutzerhandbuch/cockpit-de)-Anwendung) weitergeleitet.
 
-![image alt text](/images/benutzerhandbuch/cockpit-de/cockpit-home-screen.png)
+![image alt text](/images/benutzerhandbuch/getting-started/cockpit-home-screen.png)
 
 Um sich explizit abzumelden, klicken Sie auf die Schaltfläche **Benutzer** rechts in der oberen Leiste und wählen Sie im Kontextmenü **Abmelden**.
 
-<img src="/images/benutzerhandbuch/getting-started-de/getting-started-logout.png" alt="Logout menu" style="max-width: 100%">
+<img src="/images/benutzerhandbuch/getting-started/getting-started-logout.png" alt="Logout menu" style="max-width: 100%">
 
 ### <a name="reset-password"></a>So setzen Sie Ihr Passwort zurück
 
@@ -91,4 +91,4 @@ Durch die Verwendung einer URL können Sie:
 *   E-Mails versenden (manuell oder automatisch über die Echtzeitverarbeitungs-Engine), die einen Link zu bestimmten Geräten oder Sensordaten enthalten.
 *   die Vorwärts- und Rückwärtsnavigation Ihres Browsers verwenden.
 *   eigene Webanwendungen schreiben, die direkt auf Informationen in Cumulocity IoT-Anwendungen verweisen.
-Chromium-basiert. 
+Chromium-basiert.

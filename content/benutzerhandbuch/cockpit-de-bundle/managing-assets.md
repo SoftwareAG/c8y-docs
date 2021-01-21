@@ -10,7 +10,7 @@ Assets repräsentieren ganz allgemein Geschäftsobjekte wie Gebäude, Maschinen,
 
 Assets sind in Hierarchien organisiert. Eine Anwendung zur Energieüberwachung kann beispielsweise die folgende Hierarchie aufweisen:
 
-![image alt text](/images/benutzerhandbuch/cockpit-de/cockpit-groups-image1.png)
+![image alt text](/images/benutzerhandbuch/cockpit/cockpit-groups-image1.png)
 
 Die Asset-Hierarchie besteht aus zwei Objekttypen:
 
@@ -41,13 +41,13 @@ Der folgende Abschnitt beschreibt, wie Sie in der Cockpit-Anwendung mit Smart-Ge
 
 Das erste Beispiel zeigt, wie Smart-Geräte mit der Asset-Hierarchie verknüpft werden:
 
-![image alt text](/images/benutzerhandbuch/cockpit-de/cockpit-groups-image2.png)
+![image alt text](/images/benutzerhandbuch/cockpit/cockpit-groups-image2.png)
 
 Smart-Geräte werden in der Device Management-Anwendung als Top-Level-Geräte dargestellt. In der Cockpit-Anwendung können Sie Smart-Geräte in Gruppen organisieren, wie die Pfeile in der Abbildung oben zeigen.
 
 Das zweite Beispiel zeigt, wie Gateway-Geräte in der Cockpit-Anwendung verwendet werden:
 
-![image alt text](/images/benutzerhandbuch/cockpit-de/cockpit-groups-image3.png)
+![image alt text](/images/benutzerhandbuch/cockpit/cockpit-groups-image3.png)
 
 Gateway-Geräte werden in der Device Management-Anwendung ebenfalls als Top-Level-Geräte dargestellt. Die angeschlossenen Geräte (wie etwa Modbus- oder KNX-Geräte) werden als untergeordnete Geräte angezeigt. In der Cockpit-Anwendung können diese "Kindgeräte" wie in der Abbildung oben dargestellt in einer Asset-Hierarchie organisiert werden.
 
@@ -68,11 +68,11 @@ In der Asset-Hierarchie unterscheidet Cumulocity IoT zwischen Top-Level-Gruppen 
 
 Im Navigator werden Top-Level-Gruppen im Menü **Gruppen** auf oberster Ebene angezeigt. Kind-Assets werden unterhalb ihrer Top-Level-Gruppe angezeigt. Zudem werden Kind-Assets in der Registerkarte **Kind-Assets** der jeweiligen Gruppe angezeigt.
 
-<img src="/images/benutzerhandbuch/cockpit-de/cockpit-sub-assets.png" name="Sub-assets"/>
+<img src="/images/benutzerhandbuch/cockpit/cockpit-sub-assets.png" name="Sub-assets"/>
 
 Wenn Sie ein Objekt im Navigator auswählen, werden auf der rechten Seite entsprechende Informationen zum ausgewählten Objekt angezeigt.
 
-<img src="/images/benutzerhandbuch/cockpit-de/cockpit-info-tab.png" name="Info tab"/>
+<img src="/images/benutzerhandbuch/cockpit/cockpit-info-tab.png" name="Info tab"/>
 
 Wenn Sie ein Gateway-Gerät hinzufügen, werden die Kindgeräte nicht angezeigt. Um Kindgeräte anzuzeigen, müssen diese zum jeweiligen Asset hinzugefügt werden. Details zur untergeordneten Hierarchie können in der Device Management-Anwendung eingesehen und editiert werden.
 
@@ -102,7 +102,7 @@ Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit
 4. Wählen Sie die Geräte aus, die Sie hinzufügen möchten.
 5. Klicken Sie **Gruppe mit X Gerät(en) erstellen**, um die neue Gruppe zu erstellen.
 
-<img src="/images/benutzerhandbuch/cockpit-de/cockpit-create-group.png" name="Create group"/><br>
+<img src="/images/benutzerhandbuch/cockpit/cockpit-create-group.png" name="Create group"/><br>
 
 >**Info:** Eine Gruppe kann auch mit "0" Geräten erstellt werden.
 
@@ -120,7 +120,7 @@ Führen Sie die folgenden Schritte aus, um ein Gerät einer Gruppe zuzuweisen:
 3. Wählen Sie die Geräte aus, die Sie hinzufügen möchten.
 4. Klicken Sie **Gruppe mit X Gerät(en) erstellen**, um die Geräte zur Gruppe hinzuzufügen.
 
-<img src="/images/benutzerhandbuch/cockpit-de/cockpit-devices-assign.png" name="Assign devices"/>
+<img src="/images/benutzerhandbuch/cockpit/cockpit-devices-assign.png" name="Assign devices"/>
 
 Die Geräte werden als Kind-Assets in der Registerkarte **Kind-Assets** angezeigt.
 

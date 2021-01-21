@@ -199,7 +199,7 @@ Jedes Access Token wird durch ein Signing-Zertifikat signiert. Aktuell gibt es d
 
 ##### Azure AD-Konfiguration
 
-Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code).
+Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/de-de/azure/active-directory/develop/v1-protocols-oauth-code).
 
 Während der Konfiguration der Azure AD entspricht die Redirect-URI Ihrer vollständigen Domain-Adresse. In diesem Dokument verwenden wir beispielhaft `http://documentation.cumulocity.com/tenant/oauth`. In Azure AD sind keine weiteren Schritte erforderlich.
 
@@ -425,7 +425,7 @@ Derzeit können folgende Anbietereinstellungen festgelegt werden:
 - [Impact](/protocol-integration/impact)
 - [LoRa](/protocol-integration/lora-actility)
 - [Sigfox](/protocol-integration/sigfox)
-- [SIM](/protocol-integration/connectivity)
+- [SIM](/users-guide/device-management/#connectivity)
 
 ![Provider settings](/images/benutzerhandbuch/Administration/admin-settings-connectivity.png)
 

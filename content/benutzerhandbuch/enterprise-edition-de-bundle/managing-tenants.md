@@ -37,8 +37,9 @@ Im Management-Mandanten finden Sie zudem Informationen über den übergeordneten
 <br>![Create subtenant](/images/benutzerhandbuch/enterprise-tenant/et-subtenant-create.png)<br>
 2. Geben Sie die folgenden Attribute an:
 
-	<table>
-<col width = 150>
+<table>
+<col style="width:20%">
+<col style="width:80%">
 <thead>
 <tr>
 <th style="text-align:left">Feld</th>
@@ -188,7 +189,7 @@ Weitere Details finden Sie in der Registerkarte **Status** der entsprechenden An
 
 ### <a name="tenants-custom-properties"></a>Benutzerdefinierte Attribute
 
-Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Bearbeiten von Werten von benutzerdefinierten Attributen, sowohl von vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/benutzerhandbuch/administration-de#properties) definiert sind. Solche Attribute werden auch als Spalten auf der Seite [Nutzungsstatistiken](/benutzerhandbuch/enterprise-edition-de#usage-stat) angezeigt.
+Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Bearbeiten von Werten von benutzerdefinierten Attributen, sowohl von vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/benutzerhandbuch/administration-de#properties) definiert sind. Solche Attribute werden auch als Spalten auf der Seite [Nutzungsstatistiken](/benutzerhandbuch/enterprise-edition-de/#usage-and-billing) angezeigt.
 
 ![Custom properties](/images/benutzerhandbuch/enterprise-tenant/et-subtenant-custom-properties.png)
 
@@ -196,7 +197,7 @@ Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeige
 
 Über das benutzerdefinierte Attribut "Geräteanzahl begrenzen" können Plattformadministratoren die Anzahl der gleichzeitig registrierten Hauptgeräte oder der registrierten Geräte insgesamt (einschließlich Kindgeräte) begrenzen.
 
-Auf der Seite **[Nutzungsstatistiken](/benutzerhandbuch/enterprise-edition-de#usage-stat)** können sie die Höchstanzahl registrierter Geräte bzw. Hauptgeräte sowie den Höchstwert des genutzten Datenspeichers einsehen.
+Auf der Seite **[Nutzungsstatistiken](/benutzerhandbuch/enterprise-edition-de/#usage-and-billing)** können sie die Höchstanzahl registrierter Geräte bzw. Hauptgeräte sowie den Höchstwert des genutzten Datenspeichers einsehen.
 
 #### Begrenzen der Anfragerate für Untermandanten
 

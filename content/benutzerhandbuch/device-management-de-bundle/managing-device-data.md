@@ -15,7 +15,7 @@ Die Device Management-Anwendung bietet verschiedene Funktionen, die Sie bei der 
 |[Verwalten von Konfigurationen](#configuration-repository)|Wie Sie Konfigurationsdaten von einem Gerät abrufen und sie als Konfigurationssnapshot in einem Konfigurations-Repository speichern und verwalten.
 |[Gerätezugangsdaten](#credentials)|Wie Sie die für Ihre verbundenen Geräte erstellten Zugangsdaten verwalten.
 |[Geräteprofile](#device-profiles)|Wie Sie Geräteprofile - eine Zusammenstellung von Firmware, Software und Konfiguration - verwalten und sie auf Geräte anwenden.
-|[Vertrauenswürdige Zertifikate](##managing-trusted-certificates)|Wie Sie vertrauenswürdige Zertifikate verwalten.
+|[Vertrauenswürdige Zertifikate](#trusted-certificates)|Wie Sie vertrauenswürdige Zertifikate verwalten.
 
 Sämtliche Funktionen können über das Menü **Verwaltung** im Navigator aufgerufen werden:
 
@@ -454,7 +454,7 @@ Zum Löschen eines Geräteprofils klicken Sie auf das Menüsymbol rechts neben d
 Geräteprofile können angewendet werden auf:
 
 * [einzelne Geräte](#to-apply-profiles-to-single-devices)
-* [mehrere Geräte mit Hilfe von Stapelkommandos](#to-apply-profiles-to-multiple-devices) 
+* [mehrere Geräte mit Hilfe von Stapelkommandos](#to-apply-profiles-to-multiple-devices)
 
 Die Registerkarte **Geräteprofil** eines bestimmten Geräts zeigt die Details des aktuell auf dem Gerät installierten Profils.
 
@@ -469,12 +469,12 @@ Zudem kann in der Geräteliste ausgehend von dem Namen des angewendeten Profils 
 
 #### <a name="to-apply-profiles-to-single-devices"></a>So wenden Sie Geräteprofile auf ein einzelnes Gerät an
 
-Auf der Registerkarte **Geräteprofil** eines Geräts können Sie Geräteprofile auf einzelne Geräte anwenden. 
+Auf der Registerkarte **Geräteprofil** eines Geräts können Sie Geräteprofile auf einzelne Geräte anwenden.
 
 1. Wählen Sie auf der Registerkarte **Geräteprofil** ein Geräteprofil aus der Auswahlliste. Es werden nur die Profile angezeigt, die zu dem Gerätetyp passen (falls angegeben), oder für die kein Gerätetyp angegeben wurde.
 
 	![Assign device profile](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-profile-assign.png)
- 
+
 2. Klicken Sie auf **Geräteprofil zuweisen**, um das Aktualisierungskommando zu starten.
 
 #### <a name="to-apply-profiles-to-multiple-devices"></a>So wenden Sie Geräteprofile auf mehrere Geräte an
@@ -482,7 +482,7 @@ Auf der Registerkarte **Geräteprofil** eines Geräts können Sie Geräteprofile
 Geräteprofile können mittels Stapelkommandos auf mehrere Geräte angewendet werden.
 
 1. Klicken Sie im Menü **Übersicht** auf **Gerätesteuerung**, um zur Seite **Gerätesteuerung** zu gelangen. Auf der Seite **Gerätesteuerung** können Sie ein neues Stapelkommando zum Anwenden eines Geräteprofils erstellen.
-2. Klicken Sie auf der Registerkarte **Stapelkommandos** rechts in der oberen Menüleiste auf **Neues Bulk-Kommando** und wählen Sie im darauffolgenden Dialog **Geräteprofil anwenden**. 
+2. Klicken Sie auf der Registerkarte **Stapelkommandos** rechts in der oberen Menüleiste auf **Neues Bulk-Kommando** und wählen Sie im darauffolgenden Dialog **Geräteprofil anwenden**.
 3. Um ein Stapelkommando zum Anwenden eines Geräteprofils zu planen, befolgen Sie die Schritte unter [Überwachen und Steuern von Geräten > Verwenden von Kommandos > So fügen Sie ein Bulk-Kommando hinzu](/benutzerhandbuch/device-management-de/#bulk-operations).
 
 Die Geräte installieren die Firmware, Software und Konfigurationselemente des Profils und senden einen Bericht über den Status des Kommandos. Nachdem das Profil angewendet wurde, werden die Geräteobjekte in der Plattform mit der neuen Profilinformation aktualisiert.

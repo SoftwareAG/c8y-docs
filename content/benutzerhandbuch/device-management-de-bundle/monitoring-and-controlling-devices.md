@@ -213,7 +213,7 @@ In der **Gerätesteuerung** gibt es zwei Arten von Kommandos, die jeweils auf ei
 * **Einzelne Kommandos** werden auf einzelnen Geräten ausgeführt, siehe [So zeigen Sie einzelne Kommandos an](#to-view-single-operations).
 * **Stapelkommandos** bestehen aus einem einzelnen Kommando, das auf einer Reihe von Geräten ausgeführt wird, siehe [So zeigen Sie Stapelkommandos an](#to-view-bulk-operations).
 
-#### So zeigen Sie einzelne Kommandos an
+#### <a name="to-view-single-operations">So zeigen Sie einzelne Kommandos an
 
 Zeigen Sie die Liste der einzelnen Kommandos auf der Registerkarte **Einzelne Kommandos** an.
 
@@ -254,9 +254,9 @@ Klicken Sie **Neu laden**, um die Liste einmal manuell zu aktualisieren.
 
 #### So können Sie ein einzelnes Kommando hinzufügen und ausführen.
 
-Einzelne Kommandos können entweder aus Stapelkommandos erstellt werden oder aus den verschiedenen Kommandotypen, die das Gerät unterstützt: [Verwalten von Firmware](/benutzerhandbuch/device-management-de/#managing-firmware-on-a-device), [Software](/benutzerhandbuch/device-management-de/#managing-software-on-a-device), [Konfigurationen](/benutzerhandbuch/device-management-de/#to-retrieve-and-apply-a-configuration-snapshot-to-a-device-which-supports-multiple-configuration-types) etc. 
+Einzelne Kommandos können entweder aus Stapelkommandos erstellt werden oder aus den verschiedenen Kommandotypen, die das Gerät unterstützt: [Verwalten von Firmware](/benutzerhandbuch/device-management-de/#firmware-repo), [Software](/benutzerhandbuch/device-management-de/#software-repo), [Konfigurationen](/benutzerhandbuch/device-management-de/#configuration-repository) etc.
 
-Wenn Sie ein [Stapelkommando](#to-add-a-bulk-operation) erstellen, werden die einzelnen Kommandos, die im Stapelkommando abgearbeitet werden, ebenfalls zur Liste der einzelnen Kommandos hinzugefügt.
+Wenn Sie ein [Stapelkommando](#bulk-operations) erstellen, werden die einzelnen Kommandos, die im Stapelkommando abgearbeitet werden, ebenfalls zur Liste der einzelnen Kommandos hinzugefügt.
 
 Kommandos für ein bestimmtes Gerät können auch in der Registerkarte **Shell** des Geräts erstellt und ausgeführt werden, siehe [Gerätedetails > Shell](/benutzerhandbuch/device-management-de#shell).
 
@@ -277,7 +277,7 @@ Klicken Sie auf das Menüsymbol rechts neben dem einzelnen Kommando, für das Si
 
 Weitere Schritte werden unter [Cockpit > Smart Rules > So erstellen Sie eine Smart Rule](/benutzerhandbuch/cockpit-de/#create-rules) beschrieben.
 
-#### So zeigen Sie Stapelkommandos an
+#### <a name="to-view-bulk-operations">So zeigen Sie Stapelkommandos an
 
 Zeigen Sie die Liste der Stapelkommandos in der Registerkarte **Stapelkommandos** an.
 
@@ -343,7 +343,7 @@ Es gibt zwei Möglichkeiten, ein Stapelkommando anzulegen:
 * Verwenden Sie den [Stapelkommando-Assistenten](#to-add-a-bulk-operation-using-the-wizard)
 * [Planen Sie ein einzelnes Kommando als Stapelkommando](#to-schedule-a-single-operation-as-bulk-operation)
 
-##### So fügen Sie ein Stapelkommando mit Hilfe des Assistenten hinzu
+##### <a name="to-add-a-bulk-operation-using-the-wizard">So fügen Sie ein Stapelkommando mit Hilfe des Assistenten hinzu
 
 Führen Sie folgende Schritte aus:
 
@@ -368,7 +368,7 @@ Führen Sie folgende Schritte aus:
 5. Wählen Sie eine Startzeit und eine Verzögerung. Die Verzögerung ist die Zeitspanne zwischen den einzelnen Kommandos des Stapelkommandos und kann in Sekunden oder Millisekunden angegeben werden. Klicken Sie auf **Bulk-Kommando planen**, um das Stapelkommando anzulegen.
     ![Bulk operation wizard, step 4](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step4.png)
 
-##### So planen Sie ein einzelnes Kommando als Stapelkommando
+##### <a name="to-schedule-a-single-operation-as-bulk-operation"> So planen Sie ein einzelnes Kommando als Stapelkommando
 
 Es gibt zwei Möglichkeiten, ein einzelnes Kommando als Stapelkommando zu planen: entweder auf der Registerkarte **Einzelne Kommandos** oder auf der Registerkarte **Steuerung** eines bestimmten Geräts.
 Führen Sie folgende Schritte aus:
@@ -378,7 +378,7 @@ Führen Sie folgende Schritte aus:
 
 #### <a name="bulk-operations"></a>So bearbeiten Sie den Zeitplan von Stapelkommandos
 
-Sie können nur den Zeitplan von Stapelkommandos mit dem Status GEPLANT bearbeiten. 
+Sie können nur den Zeitplan von Stapelkommandos mit dem Status GEPLANT bearbeiten.
 
 1. Klicken Sie auf das Menüsymbol rechts neben dem Stapelkommando, das Sie bearbeiten möchten, und anschließend auf **Zeitplan bearbeiten**.
 3. Im darauf folgenden Dialog können Sie die Werte für **Startzeit** und **Verzögerung** ändern.

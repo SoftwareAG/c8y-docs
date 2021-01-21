@@ -4,11 +4,11 @@ title: Managing business rules
 
 ---
 
-### Event processing
+### <a name="event-processing">Event processing
 
 Using event processing, you can specify real-time business logic that is automatically run by Cumulocity IoT as soon as new data arrives or existing data is modified. The logic is deployed in so-called "rules" which consist of a set of CEP statements.
 
->**Info:** A user-friendly way to specify real-time business logic is provided in the Cockpit application through the so-called "[Smart Rules](/users-guide/cockpit#smart-rules)". Smart rules are "under the hood" also implemented as CEP statements, and you can see them in the **Event Processing** page. However, you cannot edit smart rules from here.
+>**Info:** A user-friendly way to specify real-time business logic is provided in the Cockpit application through the so-called "[Smart Rules](/users-guide/cockpit#smart-rules)". Smart rules are "under the hood" also implemented as CEP statements, and you can see them in the **Event Processing** page. However, you cannot edit smart rules from here.  
 
 Click **Event processing** in the **Business rules** menu to view all rules.
 
@@ -64,7 +64,7 @@ For each alarm mapping, the alarm severity, the alarm type and a new description
 
 #### To edit an alarm mapping
 
-Expand an alarm mapping to edit it. You may modify the description and the alarm severity. The alarm type is not editable. 
+Expand an alarm mapping to edit it. You may modify the description and the alarm severity. The alarm type is not editable.
 
 <img src="/images/users-guide/Administration/admin-alarm-mapping-edit.png" alt="Edit alarm mapping">
 

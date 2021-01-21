@@ -38,7 +38,8 @@ In the management tenant, you will also find information on the parent tenant, i
 2. Provide the following properties:
 
 	<table>
-<col width = 150>
+<col style="width:20%">
+<col style="width:80%">
 <thead>
 <tr>
 <th style="text-align:left">Field</th>

@@ -4,7 +4,7 @@ title: Modifying microservice permissions and resource usage
 layout: redirect
 ---
 
-The resource usage and permissions that the Apama-ctrl microservice operates with are defined in the manifest file of the Apama-ctrl microservice. See [Microservice manifest](https://cumulocity.com/guides/microservice-sdk/concept/#manifest) in the *Microservice SDK guide* for more information. 
+The resource usage and permissions that the Apama-ctrl microservice operates with are defined in the manifest file of the Apama-ctrl microservice. See [Microservice manifest](/microservice-sdk/concept/#manifest) in the *Microservice SDK guide* for more information. 
 
 If you have access to the microservice image (typically available only to operations), then you are able to extract the microservice image, modify the manifest, rebuild the microservice, and reupload the microservive to Cumulocity IoT as an application in the Administration application.
 
@@ -32,6 +32,5 @@ The manifest also specifies the permissions with which the microservice runs. Th
 - ROLE_OPTION_MANAGEMENT_READ
 - ROLE_OPTION_MANAGEMENT_ADMIN
 - ROLE_SMS_ADMIN
-- ROLE_USER_MANAGEMENT_READ
 
 You can add other roles to this list (or remove them from it) to grant (or remove) permissions to EPL code. 

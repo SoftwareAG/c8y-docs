@@ -51,7 +51,7 @@ Die folgenden Registerkarten sind die am häufigsten vorhandenen und werden in d
 </tr>
 <tr>
 <td align="left"><a href="#control">Steuerung</a></td>
-<td align="left">Zeigt Kommandos an, die zum Gerät gesendet werden. Siehe auch <a href="#operation-monitoring">Verwenden von Kommandos</a>. Für jedes Gerät vorhanden.</td>
+<td align="left">Zeigt Operationen an, die zum Gerät gesendet werden. Siehe auch <a href="#operation-monitoring">Verwenden von Operationen</a>. Für jedes Gerät vorhanden.</td>
 </tr>
 <tr>
 <td align="left"><a href="#network">Netzwerk</a></td>
@@ -231,7 +231,7 @@ Weitere Informationen zum Verwalten von binärbasierten Konfigurationssnapshots 
 
 ### <a name="control"></a>Steuerung
 
-Die Registerkarte **Steuerung** enthält eine Liste der an das Gerät gesendeten Kommandos. Weitere Informationen zu Kommandos finden Sie unter [Verwenden von Kommandos](#operation-monitoring).
+Die Registerkarte **Steuerung** enthält eine Liste der an das Gerät gesendeten Operationen. Weitere Informationen zu Operationen finden Sie unter [Verwenden von Operationen](#operation-monitoring).
 
 ![Operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-control.png)
 
@@ -344,9 +344,9 @@ In der Kommandozeile kann beliebiger Kommandotext eingegeben werden. Klicken Sie
 
 ![Device shell](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-shell.png)
 
->**Wichtig:** Wenn Sie Cumulocity IoT zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Fernkommandos den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
+>**Wichtig:** Wenn Sie Cumulocity IoT zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Remotevorgänge den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
 
-Klicken Sie **Historie ansehen** rechts in der oberen Menüleiste, um zur Registerkarte **Steuerung** zu wechseln, in der eine Liste der zuvor ausgeführten Kommandos angezeigt wird. Weitere Informationen finden Sie unter [Überwachen und Steuern von Geräten > Verwenden von Kommandos](#operation-monitoring).
+Klicken Sie **Historie ansehen** rechts in der oberen Menüleiste, um zur Registerkarte **Steuerung** zu wechseln, in der eine Liste der zuvor ausgeführten Operationen angezeigt wird. Weitere Informationen finden Sie unter [Überwachen und Steuern von Geräten > Verwenden von Operationen](#operation-monitoring).
 
 Cumulocity IoT stellt für manche Gerätetypen einige häufig verwendete Kommandos bereit. Klicken Sie **<_Beispielkommando auswählen** rechts in der oberen Menüleiste, um eine Liste der verfügbaren vordefinierten Kommandos anzuzeigen. Wählen Sie das gewünschte Kommando aus und klicken Sie **Verwenden**, um das ausgewählte Kommando in der Kommandozeile einzufügen oder klicken Sie **Ausführen**, um das Kommando unmittelbar auszuführen. Sie können auch selbst neue Kommandos zur Wiederverwendung hinzufügen.
 

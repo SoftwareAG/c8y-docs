@@ -199,156 +199,156 @@ Außerdem ist es möglich, den Status aller Alarme auf einmal auf "aufgehoben" z
 * **Additional information**: Ein Alarm kann beliebige vom Gerät bereitgestellte zusätzliche Informationen enthalten.
 * **Audit-Log**: Zusammen mit dem Alarm wird eine Logdatei mit am Alarm vorgenommenen Änderungen gespeichert. So entsteht eine Alarmhistorie mit verschiedenen Daten. -->
 
-### <a name="operation-monitoring"></a>Verwenden von Kommandos (enthält Beta-Änderungen)
+### <a name="operation-monitoring"></a>Verwenden von Operationen (enthält Beta-Änderungen)
 
-Kommandos werden verwendet, um Geräte aus der Ferne zu steuern.
+Operationen werden verwendet, um Geräte aus der Ferne zu steuern.
 
-Sie können Kommandos für einzelne Geräte oder für alle Geräte anzeigen:
+Sie können Operationen für einzelne Geräte oder für alle Geräte anzeigen:
 
-* Um die Kommandos für alle Geräte anzuzeigen, klicken Sie **Gerätesteuerung** im Menü **Übersichten** im Navigator.
-* Um die Kommandos eines bestimmten Geräts anzuzeigen, wechseln Sie zur Registerkarte **Steuerung** in den Details dieses Geräts.
+* Um die Operationen für alle Geräte anzuzeigen, klicken Sie **Gerätesteuerung** im Menü **Übersichten** im Navigator.
+* Um die Operationen eines bestimmten Geräts anzuzeigen, wechseln Sie zur Registerkarte **Steuerung** in den Details dieses Geräts.
 
-In der **Gerätesteuerung** gibt es zwei Arten von Kommandos, die jeweils auf einer eigenen Registerkarte angezeigt werden:
+In der **Gerätesteuerung** gibt es zwei Arten von Operationen, die jeweils auf einer eigenen Registerkarte angezeigt werden:
 
-* **Einzelne Kommandos** werden auf einzelnen Geräten ausgeführt, siehe [So zeigen Sie einzelne Kommandos an](#to-view-single-operations).
-* **Stapelkommandos** bestehen aus einem einzelnen Kommando, das auf einer Reihe von Geräten ausgeführt wird, siehe [So zeigen Sie Stapelkommandos an](#to-view-bulk-operations).
+* **Einzel-Operationen** werden auf einzelnen Geräten ausgeführt, siehe [So zeigen Sie Einzel-Operationen an](#to-view-single-operations).
+* **Bulk-Operationen** bestehen aus einer Einzel-Operation, die auf einer Reihe von Geräten ausgeführt wird, siehe [So zeigen Sie Bulk-Operationen an](#to-view-bulk-operations).
 
-#### <a name="to-view-single-operations">So zeigen Sie einzelne Kommandos an
+#### <a name="to-view-single-operations">So zeigen Sie Einzel-Operationen an
 
-Zeigen Sie die Liste der einzelnen Kommandos auf der Registerkarte **Einzelne Kommandos** an.
+Sie finden die Liste der Einzel-Operationen auf der Registerkarte **Einzel-Operationen**.
 
 ![Single operations list](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-single-operations-list.png)
 
-Einzelne Kommandos können sich in einem der folgenden vier Status befinden:
+Einzel-Operationen können sich in einem der folgenden vier Status befinden:
 
 | Zustand      | Beschreibung |
 | :-----     | :---------- |
-| AUSSTEHEND    | Das Kommando wurde gerade erstellt und wartet darauf, vom Gerät empfangen zu werden. |
-| WIRD AUSGEFÜHRT  | Das Kommando wurde vom Gerät empfangen und wird ausgeführt. |
-| ERFOLGREICH | Das Kommando wurde erfolgreich vom Gerät ausgeführt. |
-| FEHLGESCHLAGEN     | Das Kommando konnte vom Gerät nicht ausgeführt werden. |
+| AUSSTEHEND    | Die Operation wurde gerade erstellt und wartet darauf, vom Gerät empfangen zu werden. |
+| WIRD AUSGEFÜHRT  | Die Operation wurde vom Gerät empfangen und wird ausgeführt. |
+| ERFOLGREICH | Die Operation wurde erfolgreich vom Gerät ausgeführt. |
+| FEHLGESCHLAGEN     | Die Operation konnte vom Gerät nicht ausgeführt werden. |
 
-In jeder Zeile werden die folgenden Informationen für ein Kommando angezeigt:
+In jeder Zeile werden die folgenden Informationen für eine Operation angezeigt:
 
 | Info   | Beschreibung |
 | :----- | :---------- |
 | Zustand  | AUSSTEHEND, WIRD AUSGEFÜHRT, ERFOLGREICH oder FEHLGESCHLAGEN (siehe oben). |
-| Name   | Name des Kommandos. |
+| Name   | Name der Operation. |
 | Gerät | Name des Geräts. Durch Klicken auf den Namen gelangen Sie zur Detailansicht des Geräts. |
 
-Durch Klicken einer Zeile wird diese aufgeklappt und weitere Details zum Kommando angezeigt.
+Durch Klicken einer Zeile wird diese aufgeklappt und weitere Details zur Operation angezeigt.
 
-* **Details**: Informationen zu Namen und Status des Kommandos. Lautet der Status = FEHLGESCHLAGEN, wird die Ursache für das Fehlschlagen angegeben. Ist das einzelne Kommando Teil eines [Stapelkommandos](#to-view-bulk-operations), können Sie die Details des Stapelkommandos anzeigen.
-* **Änderungshistorie**: Informationen zu den letzten Änderungen des Kommandos.
+* **Details**: Informationen zu Namen und Status der Operation. Lautet der Status = FEHLGESCHLAGEN, wird die Ursache für das Fehlschlagen angegeben. Ist die Einzel-Operation Teil einer [Bulk-Operation](#to-view-bulk-operations), können Sie die Details der Bulk-Operation anzeigen.
+* **Änderungshistorie**: Informationen zu den letzten Änderungen der Operation.
 
-![Single operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-single-operation-details.png)
+![Details zur Einzel-Operation](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-single-operation-details.png)
 
 
-Um die Liste der einzelnen Kommandos nach dem Status zu filtern, klicken Sie auf eine der Status-Schaltflächen in der oberen Menüleiste.
+Um die Liste der einzelnen Operationen nach dem Status zu filtern, klicken Sie auf eine der Status-Schaltflächen in der oberen Menüleiste.
 Klicken Sie **Alle**, um den Filter wieder zurückzusetzen.
 
-Klicken Sie **Echtzeit** rechts in der oberen Menüleiste, um die vom Gerät empfangenen Kommandos in Echtzeit anzuzeigen.
+Klicken Sie **Echtzeit** rechts in der oberen Menüleiste, um die vom Gerät empfangenen Operationen in Echtzeit anzuzeigen.
 Klicken Sie **Neu laden**, um die Liste einmal manuell zu aktualisieren.
 
->**Info:** Einzelne Kommandos werden in absteigender Zeitfolge aufgelistet. Kommandos werden streng nach dieser Reihenfolge ausgeführt.
+>**Info:** Einzel-Operationen werden in absteigender Zeitfolge aufgelistet. Operationen werden streng nach dieser Reihenfolge ausgeführt.
 
-#### So können Sie ein einzelnes Kommando hinzufügen und ausführen.
+#### So können Sie eine Einzel-Operation hinzufügen und ausführen
 
-Einzelne Kommandos können entweder aus Stapelkommandos erstellt werden oder aus den verschiedenen Kommandotypen, die das Gerät unterstützt: [Verwalten von Firmware](/benutzerhandbuch/device-management-de/#firmware-repo), [Software](/benutzerhandbuch/device-management-de/#software-repo), [Konfigurationen](/benutzerhandbuch/device-management-de/#configuration-repository) etc.
+Einzel-Operationen können entweder aus Bulk-Operationen erstellt werden oder aus den verschiedenen Operationstypen, die das Gerät unterstützt: [Verwalten von Firmware](/benutzerhandbuch/device-management-de/#firmware-repo), [Software](/benutzerhandbuch/device-management-de/#software-repo), [Konfigurationen](/benutzerhandbuch/device-management-de/#configuration-repository) etc.
 
-Wenn Sie ein [Stapelkommando](#bulk-operations) erstellen, werden die einzelnen Kommandos, die im Stapelkommando abgearbeitet werden, ebenfalls zur Liste der einzelnen Kommandos hinzugefügt.
+Wenn Sie eine [Bulk-Operation](#bulk-operations) erstellen, werden die einzelnen Operationen, die in der Bulk-Operation abgearbeitet werden, ebenfalls zur Liste der Einzel-Operationen hinzugefügt.
 
-Kommandos für ein bestimmtes Gerät können auch in der Registerkarte **Shell** des Geräts erstellt und ausgeführt werden, siehe [Gerätedetails > Shell](/benutzerhandbuch/device-management-de#shell).
+Operationen für ein bestimmtes Gerät können auch in der Registerkarte **Shell** des Geräts erstellt und ausgeführt werden, siehe [Gerätedetails > Shell](/benutzerhandbuch/device-management-de#shell).
 
->**Wichtig:** Wenn Sie Cumulocity IoT zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Fernkommandos den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
+>**Wichtig:** Wenn Sie Cumulocity IoT zum Fernsteuern von Maschinen verwenden, vergewissern Sie sich, dass alle Remotevorgänge den Sicherheitsstandards entsprechen und keine Gefahr darstellen.
 
-#### So brechen Sie ausstehende Kommandos ab
+#### So brechen Sie ausstehende Operationen ab
 
-Sie können bestimmte ausstehende Kommandos oder alle ausstehenden einzelnen Kommandos gleichzeitig abbrechen.
+Sie können bestimmte ausstehende Operationen oder alle ausstehenden Einzel-Operationen gleichzeitig abbrechen.
 
-Um ein bestimmtes ausstehendes Kommando abzubrechen, klicken Sie auf das Menüsymbol rechts neben dem Eintrag des betreffenden einzelnen Kommandos und wählen Sie **Vorgang abbrechen**.
+Um eine bestimmte ausstehende Operation abzubrechen, klicken Sie auf das Menüsymbol rechts neben dem Eintrag der betreffenden einzelnen Operation und wählen Sie **Operation abbrechen**.
 
-Um alle ausstehenden Kommandos gleichzeitig abzubrechen, klicken Sie auf **Mehr...** rechts in der oberen Menüleiste und wählen Sie **Alle ausstehenden Vorgänge abbrechen**.
-Alternativ können Sie die Liste der einzelnen Kommandos nach dem Status AUSSTEHEND filtern, und anschließend auf **Alle abbrechen** klicken.
+Um alle ausstehenden Operationen gleichzeitig abzubrechen, klicken Sie auf **Mehr...** rechts in der oberen Menüleiste und wählen Sie **Alle ausstehenden Operationen abbrechen**.
+Alternativ können Sie die Liste der Einzel-Operationen nach dem Status AUSSTEHEND filtern, und anschließend auf **Alle abbrechen** klicken.
 
-#### So erstellen Sie eine Regel für ein einzelnes Kommando
+#### So erstellen Sie eine Regel für eine Einzel-Operation
 
-Klicken Sie auf das Menüsymbol rechts neben dem einzelnen Kommando, für das Sie eine Smart Rule erstellen möchten, und wählen Sie **Smart Rule erstellen**.
+Klicken Sie auf das Menüsymbol rechts neben der Einzel-Operation, für die Sie eine Smart Rule erstellen möchten, und wählen Sie **Smart Rule erstellen**.
 
 Weitere Schritte werden unter [Cockpit > Smart Rules > So erstellen Sie eine Smart Rule](/benutzerhandbuch/cockpit-de/#create-rules) beschrieben.
 
-#### <a name="to-view-bulk-operations">So zeigen Sie Stapelkommandos an
+#### <a name="to-view-bulk-operations">So zeigen Sie Bulk-Operationen an
 
-Zeigen Sie die Liste der Stapelkommandos in der Registerkarte **Stapelkommandos** an.
+Sie finden die Liste der Bulk-Operationen in der Registerkarte **Bulk-Operationen**.
 
 ![Bulk operations list](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operations-list.png)
 
-Stapelkommandos besitzen einen Kommandotyp und einen Status.
+Bulk-Operationen besitzen einen Operationstyp und einen Status.
 
-Mit Hilfe des [Stapelkommando-Assistenten](#to-add-a-bulk-operation-using-the-wizard) können Sie Stapelkommandos der folgenden Kommandotypen hinzufügen:
+Mit Hilfe des [Bulk-Operations-Assistenten](#to-add-a-bulk-operation-using-the-wizard) können Sie Bulk-Operationen der folgenden Operationstypen hinzufügen:
 
-| Kommandotyp          | Beschreibung |
+| Operationstyp          | Beschreibung |
 | :---------------------- | :---------- |
-| Konfigurationsaktualisierung    | Das Stapelkommando aktualisiert die Konfiguration der ausgewählten Geräte. |
-| Firmware-Aktualisierung         | Das Stapelkommando aktualisiert die Firmware der ausgewählten Geräte. |
-| Software Update         | Das Stapelkommando aktualisiert die Software der ausgewählten Geräte. |
-| Geräteprofil anwenden    | Das Stapelkommando wendet auf den ausgewählten Geräten ein Geräteprofil an. |
+| Konfigurationsaktualisierung    | Die Bulk-Operation aktualisiert die Konfiguration der ausgewählten Geräte. |
+| Firmware-Aktualisierung         | Die Bulk-Operation aktualisiert die Firmware der ausgewählten Geräte. |
+| Software Update         | Die Bulk-Operation aktualisiert die Software der ausgewählten Geräte. |
+| Geräteprofil anwenden    | Die Bulk-Operation wendet auf den ausgewählten Geräten ein Geräteprofil an. |
 
-Stapelkommandos können auch andere Kommandotypen besitzen, beispielsweise wenn Sie [ein einzelnes Kommando als Stapelkommando planen](#to-schedule-a-single-operation-as-bulk-operation) und der Typ des einzelnen Kommandos sich von dem des Stapelkommandos unterscheidet.
+Bulk-Operationen können auch andere Operationstypen besitzen, beispielsweise wenn Sie [eine Einzel-Operation als Bulk-Operation planen](#to-schedule-a-single-operation-as-bulk-operation) und der Typ der einzelnen Operation sich von dem der Bulk-Operation unterscheidet.
 
-Stapelkommandos können sich in einem der folgenden Status befinden:
+Bulk-Operationen können sich in einem der folgenden Status befinden:
 
 | Zustand                   | Beschreibung |
 | :---------------------- | :---------- |
-| GEPLANT               | Das Stapelkommando wurde angelegt und wird bis zum geplanten Zeitpunkt zurückgestellt. |
-| WIRD AUSGEFÜHRT               | Das Stapelkommando wird ausgeführt. |
-| ABGEBROCHEN               | Das Stapelkommando wurde angelegt, aber vor dem geplanten Zeitpunkt abgebrochen. |
-| MIT FEHLERN ABGESCHLOSSEN | Das Stapelkommando wurde bei einigen Geräten mit Fehlern abgeschlossen. |
-| ERFOLGREICH ABGESCHLOSSEN  | Das Kommando wurde auf allen Geräten erfolgreich ausgeführt. |
+| GEPLANT               | Die Bulk-Operation wurde angelegt und wird bis zum geplanten Zeitpunkt zurückgestellt. |
+| WIRD AUSGEFÜHRT               | Die Bulk-Operation wird ausgeführt. |
+| ABGEBROCHEN               | Die Bulk-Operation wurde angelegt, aber vor dem geplanten Zeitpunkt abgebrochen. |
+| MIT FEHLERN ABGESCHLOSSEN | Die Bulk-Operation wurde bei einigen Geräten mit Fehlern abgeschlossen. |
+| ERFOLGREICH ABGESCHLOSSEN  | Die Operation wurde auf allen Geräten erfolgreich ausgeführt. |
 
-In jeder Zeile werden die folgenden Informationen für ein Stapelkommando angezeigt:
+In jeder Zeile werden die folgenden Informationen für eine Bulk-Operation angezeigt:
 
 | Info   | Beschreibung |
 | :----- | :---------- |
 | Zustand  | GEPLANT, WIRD AUSGEFÜHRT, ABGEBROCHEN, MIT FEHLERN ABGESCHLOSSEN, ERFOLGREICH ABGESCHLOSSEN (siehe oben). |
-| Name   | Name des Kommandos. |
-| Fortschrittsanzeige | Nur für Stapelkommandos, die ausgeführt werden oder abgeschlossen sind. Zeigt den Fortschritt des Kommandos in Prozent an. |
-| Start- und Enddatum | Nur für Stapelkommandos, die ausgeführt werden oder abgeschlossen sind. Bei Stapelkommandos, die ausgeführt werden, ist das Enddatum ein geschätzter Wert auf Basis der Stapelkommando-Einstellungen. |
-| Schaltfläche Aktualisieren | Nur für Stapelkommandos, die ausgeführt werden. Aktualisiert die Fortschrittsanzeige |
+| Name   | Name der Operation. |
+| Fortschrittsanzeige | Nur für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Zeigt den Fortschritt der Operation in Prozent an. |
+| Start- und Enddatum | Nur für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Bei Bulk-Operationen, die ausgeführt werden, ist das Enddatum ein geschätzter Wert auf Basis der Bulk-Operations-Einstellungen. |
+| Schaltfläche Aktualisieren | Nur für Bulk-Operationen, die ausgeführt werden. Aktualisiert die Fortschrittsanzeige |
 
-Durch Klicken auf die Pfeil-Schaltfläche auf der rechten Seite können Sie die Zeile aufklappen und weitere Details zum Stapelkommando anzeigen.
+Durch Klicken auf die Pfeil-Schaltfläche auf der rechten Seite können Sie die Zeile aufklappen und weitere Details zur Bulk-Operation anzeigen.
 
-* **Details**: Informationen zu Startdatum, Verzögerung, Status und Ergebnis des Stapelkommandos. Das Ergebnis listet die Anzahl der erfolgreich abgeschlossenen, fehlgeschlagenen und ausstehenden Kommandos auf.
-* **Kommando**: Informationen zum Kommando in Form eines JSON-Objekts.
-* **Kommandos**: Nur verfügbar für Stapelkommandos, die ausgeführt werden oder abgeschlossen sind. Informationen zu Status und Geräten von einzelnen Kommandos, die im Stapelkommando abgearbeitet werden. Kann nach Status gefiltert werden.
+* **Details**: Informationen zu Startdatum, Verzögerung, Status und Ergebnis der Bulk-Operation. Das Ergebnis listet die Anzahl der erfolgreich abgeschlossenen, fehlgeschlagenen und ausstehenden Operationen auf.
+* **Operation**: Informationen zur Operation in Form eines JSON-Objekts.
+* **Operationen**: Nur verfügbar für Bulk-Operationen, die ausgeführt werden oder abgeschlossen sind. Informationen zu Status und Geräten von einzelnen Operationen, die in der Bulk-Operation abgearbeitet werden. Kann nach Status gefiltert werden.
 
 ![Bulk operation details](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details.png)
 
-Um die Liste der Stapelkommandos nach Kommandotyp zu filtern, klicken Sie auf die Auswahlliste in der Menüleiste, wählen Sie eine Reihe von Kommandotypen und klicken Sie auf **Anwenden**.
+Um die Liste der Bulk-Operationen nach Operationstyp zu filtern, klicken Sie auf die Auswahlliste in der Menüleiste, wählen Sie eine Reihe von Operationstypen und klicken Sie auf **Anwenden**.
 Um den Filter wieder zurückzusetzen, wählen Sie **Alle** in der Auswahlliste und klicken Sie erneut auf **Anwenden**.
 
-Um die Liste der Stapelkommandos nach dem Status zu filtern, klicken Sie auf eine der Status-Schaltflächen in der oberen Menüleiste.
+Um die Liste der Bulk-Operationen nach dem Status zu filtern, klicken Sie auf eine der Status-Schaltflächen in der oberen Menüleiste.
 Klicken Sie **Alle**, um den Filter wieder zurückzusetzen.
 
 Um beide Filter zurücksetzen, klicken Sie **Filter zurücksetzen** am Ende der Liste (nur sichtbar, wenn Filter angewendet wurden).
 
->**Info:** Stapelkommandos, die vor der Version 10.7.0 erstellt wurden, sind von einer Gruppe abhängig und können immer noch angezeigt werden. Wählen Sie dazu die gewünschte Gruppe und klicken Sie auf die Registerkarte **Stapelkommandos**.
+>**Info:** Bulk-Operationen, die vor der Version 10.7.0 erstellt wurden, sind von einer Gruppe abhängig und können immer noch angezeigt werden. Wählen Sie dazu die gewünschte Gruppe und klicken Sie auf die Registerkarte **Bulk-Operationen**.
 
 >![Old bulk operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-bulkoperations.png)
 
-#### <a name="bulk-operations"></a>So fügen Sie ein Stapelkommando hinzu
+#### <a name="bulk-operations"></a>So fügen Sie eine Bulk-Operation hinzu
 
-Es gibt zwei Möglichkeiten, ein Stapelkommando anzulegen:
+Es gibt zwei Möglichkeiten, eine Bulk-Operation anzulegen:
 
-* Verwenden Sie den [Stapelkommando-Assistenten](#to-add-a-bulk-operation-using-the-wizard)
-* [Planen Sie ein einzelnes Kommando als Stapelkommando](#to-schedule-a-single-operation-as-bulk-operation)
+* Verwenden Sie den [Bulk-Operations-Assistenten](#to-add-a-bulk-operation-using-the-wizard)
+* [Planen Sie eine Einzel-Operation als Bulk-Operation](#to-schedule-a-single-operation-as-bulk-operation)
 
-##### <a name="to-add-a-bulk-operation-using-the-wizard">So fügen Sie ein Stapelkommando mit Hilfe des Assistenten hinzu
+##### <a name="to-add-a-bulk-operation-using-the-wizard">So fügen Sie eine Bulk-Operation mit Hilfe des Assistenten hinzu
 
 Führen Sie folgende Schritte aus:
 
-1. Klicken Sie in der Registerkarte **Stapelkommandos** rechts in der oberen Menüleiste auf **Neues Bulk-Kommando**.
-2. Wählen Sie im nächsten Dialog einen Kommandotyp.
+1. Klicken Sie in der Registerkarte **Bulk-Operationen** rechts in der oberen Menüleiste auf **Neue Bulk-Operation**.
+2. Wählen Sie im nächsten Dialog einen Operationstyp.
     ![Select a bulk operation type](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-type.png)
 3. Im darauf folgenden Assistenten gibt es vier Schritte. Ja nach Gerätetyp unterscheiden sich die ersten beiden Schritte:
   * **Konfigurationsaktualisierung**
@@ -363,48 +363,48 @@ Führen Sie folgende Schritte aus:
   * **Geräteprofil anwenden**
       * Wählen Sie ein Geräteprofil aus der Liste aus. Die Liste kann nach Gerätetyp oder Profilnamen gefiltert werden. Klicken Sie auf **Weiter**.
       * Bestätigen Sie die Auswahl und klicken Sie auf **Weiter**.
-4. Wählen Sie Zielgeräte, indem Sie Filter auf die in Seiten aufgeteilte Liste aller Geräte anwenden. Sie können nach Status, Namen, Typ, Modell, Gruppe, Registrierungsdatum und Alarmen filtern. Sie können mehrere Filter anwenden. Um einen Filter anzuwenden, klicken Sie auf die Spaltenüberschrift, wählen Sie Ihre Filteroptionen im Kontextmenü und klicken Sie auf **Anwenden**. Sie können alle Filter zurücksetzen, indem Sie oberhalb der Liste auf **Filter zurücksetzen** klicken. Für die Kommandotypen "Konfigurationsaktualisierung", "Software Update" und "Geräteprofil anwenden" ist die Liste bereits nach dem entsprechenden Gerätetyp gefiltert. Klicken Sie auf **Weiter**.
+4. Wählen Sie Zielgeräte, indem Sie Filter auf die in Seiten aufgeteilte Liste aller Geräte anwenden. Sie können nach Status, Namen, Typ, Modell, Gruppe, Registrierungsdatum und Alarmen filtern. Sie können mehrere Filter anwenden. Um einen Filter anzuwenden, klicken Sie auf die Spaltenüberschrift, wählen Sie Ihre Filteroptionen im Kontextmenü und klicken Sie auf **Anwenden**. Sie können alle Filter zurücksetzen, indem Sie oberhalb der Liste auf **Filter zurücksetzen** klicken. Für die Operationstypen "Konfigurationsaktualisierung", "Software Update" und "Geräteprofil anwenden" ist die Liste bereits nach dem entsprechenden Gerätetyp gefiltert. Klicken Sie auf **Weiter**.
     ![Bulk operation wizard, step 3](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step3.png)
-5. Wählen Sie eine Startzeit und eine Verzögerung. Die Verzögerung ist die Zeitspanne zwischen den einzelnen Kommandos des Stapelkommandos und kann in Sekunden oder Millisekunden angegeben werden. Klicken Sie auf **Bulk-Kommando planen**, um das Stapelkommando anzulegen.
+5. Wählen Sie eine Startzeit und eine Verzögerung. Die Verzögerung ist die Zeitspanne zwischen den einzelnen Operationen der Bulk-Operation und kann in Sekunden oder Millisekunden angegeben werden. Klicken Sie auf **Bulk-Operation planen**, um die Bulk-Operation anzulegen.
     ![Bulk operation wizard, step 4](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step4.png)
 
-##### <a name="to-schedule-a-single-operation-as-bulk-operation"> So planen Sie ein einzelnes Kommando als Stapelkommando
+##### <a name="to-schedule-a-single-operation-as-bulk-operation"> So planen Sie eine Einzel-Operation als Bulk-Operation
 
-Es gibt zwei Möglichkeiten, ein einzelnes Kommando als Stapelkommando zu planen: entweder auf der Registerkarte **Einzelne Kommandos** oder auf der Registerkarte **Steuerung** eines bestimmten Geräts.
+Es gibt zwei Möglichkeiten, eine Einzel-Operation als Bulk-Operation zu planen: entweder auf der Registerkarte **Einzel-Operation** oder auf der Registerkarte **Steuerung** eines bestimmten Geräts.
 Führen Sie folgende Schritte aus:
 
-1. Klicken Sie auf das Menüsymbol rechts neben dem einzelnen Kommando, das sie als Stapelkommando planen möchten, und klicken Sie anschließend auf **Als Bulk-Kommando planen**.
-2. Der darauf folgende Assistent ähnelt dem neuen Stapelkommando-Assistenten, der unter [So fügen Sie ein Stapelkommando mit Hilfe des Assistenten hinzu](#to-add-a-bulk-operation-using-the-wizard) beschrieben wird. Allerdings gibt es nur zwei Schritte, da der Kommandotyp von dem als Stapelkommando geplanten Kommando abgeleitet wird. Lesen Sie die Beschreibung des [vollständigen Assistenten](#to-add-a-bulk-operation-using-the-wizard) und folgen Sie den Anweisungen.
+1. Klicken Sie auf das Menüsymbol rechts neben der Einzel-Operation, die sie als Bulk-Operation planen möchten, und klicken Sie anschließend auf **Als Bulk-Operation planen**.
+2. Der darauf folgende Assistent ähnelt dem neuen Bulk-Operations-Assistenten, der unter [So fügen Sie eine Bulk-Operation mit Hilfe des Assistenten hinzu](#to-add-a-bulk-operation-using-the-wizard) beschrieben wird. Allerdings gibt es nur zwei Schritte, da der Operationstyp von der als Bulk-Operation geplanten Operation abgeleitet wird. Lesen Sie die Beschreibung des [vollständigen Assistenten](#to-add-a-bulk-operation-using-the-wizard) und folgen Sie den Anweisungen.
 
-#### <a name="bulk-operations"></a>So bearbeiten Sie den Zeitplan von Stapelkommandos
+#### <a name="bulk-operations"></a>So bearbeiten Sie den Zeitplan von Bulk-Operationen
 
-Sie können nur den Zeitplan von Stapelkommandos mit dem Status GEPLANT bearbeiten.
+Sie können nur den Zeitplan von Bulk-Operationen mit dem Status GEPLANT bearbeiten.
 
-1. Klicken Sie auf das Menüsymbol rechts neben dem Stapelkommando, das Sie bearbeiten möchten, und anschließend auf **Zeitplan bearbeiten**.
+1. Klicken Sie auf das Menüsymbol rechts neben der Bulk-Operation, die Sie bearbeiten möchten, und anschließend auf **Zeitplan bearbeiten**.
 3. Im darauf folgenden Dialog können Sie die Werte für **Startzeit** und **Verzögerung** ändern.
 5. Klicken Sie **Neu planen**, um Ihre Einstellungen zu speichern.
 
-Die Änderungen werden entsprechend auf das Stapelkommando angewendet.
+Die Änderungen werden entsprechend auf die Bulk-Operation angewendet.
 
 ![Reschedule bulk operations](/images/benutzerhandbuch/DeviceManagement/devmgmt-devicecontrol-bulk-operations-reschedule.png)
 
-#### <a name="bulk-operations"></a>So brechen Sie Stapelkommandos ab
+#### <a name="bulk-operations"></a>So brechen Sie Bulk-Operationen ab
 
-Sie können nur Stapelkommandos mit dem Status GEPLANT oder WIRD AUSGEFÜHRT abbrechen.
-Wenn ein Stapelkommando gerade ausgeführt wird, können Sie es nur solange abbrechen, bis alle einzelnen Kommandos angelegt wurden.
-Auf diese Weise können Sie die Erstellung der verbleibenden einzelnen Kommandos abbrechen.
+Sie können nur Bulk-Operationen mit dem Status GEPLANT oder WIRD AUSGEFÜHRT abbrechen.
+Wenn eine Bulk-Operation gerade ausgeführt wird, können Sie sie nur solange abbrechen, bis alle Einzel-Operationen angelegt wurden.
+Auf diese Weise können Sie die Erstellung der verbleibenden Einzel-Operationen abbrechen.
 
-Klicken Sie auf das Menüsymbol rechts neben dem Stapelkommando, das Sie abbrechen möchten, und anschließend auf **Bulk-Kommando abbrechen**.
+Klicken Sie auf das Menüsymbol rechts neben der Bulk-Operation, die Sie abbrechen möchten, und anschließend auf **Bulk-Operation abbrechen**.
 
-#### So führen Sie fehlgeschlagene Kommandos erneut aus
+#### So führen Sie fehlgeschlagene Operationen erneut aus
 
-Sie können die fehlgeschlagenen Kommandos eines Stapelkommandos, das ausgeführt wird oder mit Fehlern abgeschlossen wurde, erneut ausführen.
+Sie können die fehlgeschlagenen Operationen einer Bulk-Operation, die ausgeführt wird oder mit Fehlern abgeschlossen wurde, erneut ausführen.
 
-Erweitern Sie dazu das gewünschte Stapelkommando und klicken Sie unter **Kommandos** auf **Fehlgeschlagene Kommandos erneut ausführen**, um mit allen fehlgeschlagenen Kommandos ein neues Stapelkommmando zu erstellen.
-Um ein einzelnes Kommando erneut auszuführen, bewegen sie den Mauszeiger über das Kommando und klicken Sie auf **Kommando erneut ausführen**.
-Dadurch wird ein neues einzelnes Kommando angelegt.
+Erweitern Sie dazu die gewünschte Bulk-Operation und klicken Sie unter **Operationen** auf **Fehlgeschlagene Operationen erneut ausführen**, um mit allen fehlgeschlagenen Operationen eine neue Bulk-Operation zu erstellen.
+Um eine Einzel-Operation erneut auszuführen, bewegen sie den Mauszeiger über die Operation und klicken Sie auf **Operation erneut ausführen**.
+Dadurch wird eine neue Einzel-Operation angelegt.
 
-Bei einem Stapelkommando, das mit Fehlern abgeschlossen wurde, können Sie auch auf das Menüsymbol rechts neben dem Kommando und anschließend auf **Fehlgeschlagene Kommandos erneut ausführen** klicken.
+Bei einer Bulk-Operation, die mit Fehlern abgeschlossen wurde, können Sie auch auf das Menüsymbol rechts neben der Operation und anschließend auf **Fehlgeschlagene Operationen erneut ausführen** klicken.
 
 ### <a name="events-all"></a>Fehlerbehebung von Geräten
 

@@ -71,7 +71,7 @@ Darüber hinaus werden anfänglich die folgenden vorkonfigurierten Rollen bereit
 </tr>
 <tr>
 <td align="left">Device Management-Benutzer</td>
-<td align="left">Hat Zugriff auf die Anwendung Device Management. Der Benutzer kann damit den Simulator nutzen und Stapelkommandos ausführen. Zusätzlich sollten Sie eine Rolle hinzufügen, die Geräten Zugriff gewährt.</td>
+<td align="left">Hat Zugriff auf die Anwendung Device Management. Der Benutzer kann damit den Simulator nutzen und Bulk-Operationen ausführen. Zusätzlich sollten Sie eine Rolle hinzufügen, die Geräten Zugriff gewährt.</td>
 </tr>
 <tr>
 <td align="left">Globaler Manager</td>
@@ -158,8 +158,8 @@ Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
 </tr>
 
 <tr>
-<td align="left">Stapelkommandos</td>
-<td align="left">Anzeigen oder Erstellen von Stapelkommandos.</td>
+<td align="left">Bulk-Operationen</td>
+<td align="left">Anzeigen oder Erstellen von Bulk-Operationen.</td>
 </tr>
 
 <tr>
@@ -287,9 +287,9 @@ Die folgenden Stammdatenrollen sind in neuen Mandanten voreingestellt:
 
 |Rolle|Beschreibung|
 |:---|:---|
-|Manager| Kann alle Daten des Assets lesen und alle Stammdaten verwalten, aber keine Kommandos ausführen. Kann zusätzlich Stammdaten (einschließlich Dashboards) und Alarme verwalten.
-|Kommandos: Alle|Kann die Assets per Fernzugriff verwalten, indem er Kommandos an ein Gerät sendet (z. B. Software-Updates, Fernkonfigurationen).
-|Kommandos: Gerät neustarten|Kann Geräte neustarten.
+|Manager| Kann alle Daten des Assets lesen und alle Stammdaten verwalten, aber keine Operationen ausführen. Kann zusätzlich Stammdaten (einschließlich Dashboards) und Alarme verwalten.
+|Operationen: Alle|Kann die Assets per Fernzugriff verwalten, indem er Operationen an ein Gerät sendet (z. B. Software-Updates, Fernkonfigurationen).
+|Operationen: Gerät neustarten|Kann Geräte neustarten.
 |Leser|Kann alle Daten des Assets lesen.
 
 

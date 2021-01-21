@@ -112,7 +112,7 @@ Die Registerkarte **Firmware** zeigt die aktuell auf dem Gerät installierte Fir
 
 ![Firmware tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-tab.png)
 
-Darüber hinaus zeigt sie den Kommandostatus des letzten Kommandos an (ERFOLGREICH, AUSSTEHEND, WIRD AUSGEFÜHRT, oder FEHLGESCHLAGEN). Wenn Sie auf das Kommando klicken, gelangen Sie zur Registerkarte **Steuerung**, die weitere Details zum Kommando enthält, siehe auch [Gerätedetails > Steuerung](/benutzerhandbuch/device-management-de/#control).  
+Darüber hinaus zeigt sie den Operationsstatus des letzten Operationen an (ERFOLGREICH, AUSSTEHEND, WIRD AUSGEFÜHRT, oder FEHLGESCHLAGEN). Wenn Sie auf die Operation klicken, gelangen Sie zur Registerkarte **Steuerung**, die weitere Details zur Operation enthält, siehe auch [Gerätedetails > Steuerung](/benutzerhandbuch/device-management-de/#control).  
 
 
 ##### So installieren/ersetzen Sie Firmware auf einem Gerät
@@ -123,23 +123,23 @@ Darüber hinaus zeigt sie den Kommandostatus des letzten Kommandos an (ERFOLGREI
 
 ![Install firmware](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-install.png)
 
-Das von dem Gerät auszuführende Installationskommando wird erzeugt. Die Installation der Firmware ist abgeschlossen, sobald das Gerät das Kommando ausgeführt hat.
+Das von dem Gerät auszuführende Installationskommando wird erzeugt. Die Installation der Firmware ist abgeschlossen, sobald das Gerät die Operation ausgeführt hat.
 
-Die Kommandodetails werden auf der Registerkarte **Steuerung** des Geräts angezeigt. Der Status des letzten Kommandos wird ebenfalls auf der Registerkarte **Firmware** angezeigt.
+Die Operationsdetails werden auf der Registerkarte **Steuerung** des Geräts angezeigt. Der Status der letzten Operation wird ebenfalls auf der Registerkarte **Firmware** angezeigt.
 
 ##### So installieren/aktualisieren Sie Firmware auf mehreren Geräten
 
 Cumulocity IoT bietet die Möglichkeit, Firmware-Updates für mehrere Geräte gleichzeitig durchzuführen.
 
-1. Führen Sie das Firmware-Kommando (installieren oder ersetzen) zunächst für ein Gerät aus, um zu testen, ob die neue Version funktioniert.
-2. Navigieren Sie in der Registerkarte **Steuerung** zu dem Kommando und wählen Sie im Kontextmenü **Als Bulk-Kommando planen**.
-3. Geben Sie einen Zeitpunkt an, zu dem das Stapelkommando ausgeführt werden soll, und klicken Sie **Erstellen**. Weitere Informationen zu Stapelkommandos finden Sie unter [Überwachen und Steuern von Geräten](/benutzerhandbuch/device-management-de/#monitoring-and-controlling-devices).
+1. Führen Sie die Firmware-Operation (installieren oder ersetzen) zunächst für ein Gerät aus, um zu testen, ob die neue Version funktioniert.
+2. Navigieren Sie in der Registerkarte **Steuerung** zu der Operation und wählen Sie im Kontextmenü **Als Bulk-Operation planen**.
+3. Geben Sie einen Zeitpunkt an, zu dem die Bulk-Operation ausgeführt werden soll, und klicken Sie **Erstellen**. Weitere Informationen zu Bulk-Operationen finden Sie unter [Überwachen und Steuern von Geräten](/benutzerhandbuch/device-management-de/#monitoring-and-controlling-devices).
 
-Der Status des Stapelkommandos wird auf der Registerkarte **Stapelkommandos** unter **Gerätesteuerung** angezeigt.
+Der Status der Bulk-Operation wird auf der Registerkarte **Bulk-Operationen** unter **Gerätesteuerung** angezeigt.
 
-Außerdem werden die Kommandodetails auf der Registerkarte **Steuerung** der ausgewählten Geräte angezeigt.
+Außerdem werden die Operationsdetails auf der Registerkarte **Steuerung** der ausgewählten Geräte angezeigt.
 
->**Info:** Stapelkommandos, die mit einer Version vor 10.7.0 erzeugt wurden, können auf der Registerkarte **Stapelkommandos** der ausgewählten Gruppe angezeigt werden, siehe auch [Stapelkommandos](#bulk-operations).
+>**Info:** Bulk-Operationen, die mit einer Version vor 10.7.0 erzeugt wurden, können auf der Registerkarte **Bulk-Operationen** der ausgewählten Gruppe angezeigt werden, siehe auch [Bulk-Operationen](#bulk-operations).
 
 ### <a name="software-repo"></a> Verwalten von Geräte-Software
 
@@ -215,19 +215,19 @@ Die Registerkarte **Software** listet die gesamte auf dem Gerät installierte So
 
 ![Software tab](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-tab.png)
 
-Darüber hinaus zeigt sie den Kommandostatus des letzten Kommandos an (ERFOLGREICH, AUSSTEHEND, WIRD AUSGEFÜHRT, oder FEHLGESCHLAGEN). Wenn Sie auf das Kommando klicken, gelangen Sie zur Registerkarte **Steuerung**, die weitere Details zum Kommando enthält, siehe auch [Gerätedetails > Steuerung](/benutzerhandbuch/device-management-de/#control).  
+Darüber hinaus zeigt sie den Operationsstatus der letzten Operation an (ERFOLGREICH, AUSSTEHEND, WIRD AUSGEFÜHRT, oder FEHLGESCHLAGEN). Wenn Sie auf die Operation klicken, gelangen Sie zur Registerkarte **Steuerung**, die weitere Details zur Operation enthält, siehe auch [Gerätedetails > Steuerung](/benutzerhandbuch/device-management-de/#control).  
 
 ##### So installieren Sie Software auf einem Gerät
 
 1. Klicken Sie auf der Registerkarte **Software** auf **Software installieren**.<br><br>	 ![Install software](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-install.png)
 2. Wählen Sie einen oder mehrere Software-Einträge, indem Sie die entsprechende Version in der Liste auswählen. Diese enthält die gesamte Software, die für diesen Gerätetyp im Software-Repository bereitsteht.
 4. Klicken Sie auf **Installieren**.
-5. Überprüfen Sie Ihre geplanten Änderungen im Bereich **Software-Änderungen** auf der rechten Seite und bestätigen Sie das Software-Update-Kommando durch Klicken auf **Änderungen übernehmen**.<br><br>
+5. Überprüfen Sie Ihre geplanten Änderungen im Bereich **Software-Änderungen** auf der rechten Seite und bestätigen Sie die Software-Update-Operation durch Klicken auf **Änderungen übernehmen**.<br><br>
 	![Apply changes](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-changes.png)
 
-Das von dem Gerät auszuführende Installationskommando wird erzeugt. Die Installation der Software ist abgeschlossen, sobald das Gerät das Kommando ausgeführt hat.
+Das von dem Gerät auszuführende Installationskommando wird erzeugt. Die Installation der Software ist abgeschlossen, sobald das Gerät die Operation ausgeführt hat.
 
-Die Kommandodetails werden auf der Registerkarte **Steuerung** des Geräts angezeigt. Der Status des letzten Kommandos wird ebenfalls auf der Registerkarte **Software** angezeigt.
+Die Operationsdetails werden auf der Registerkarte **Steuerung** des Geräts angezeigt. Der Status der letzten Operation wird ebenfalls auf der Registerkarte **Software** angezeigt.
 
 ![Installed software](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-installed.png)
 

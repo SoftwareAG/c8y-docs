@@ -579,9 +579,13 @@ The rule uses the following parameter from the device object or Data Point Libra
 
 * Data Point Library red/yellow range: Red range when the system should create CRITICAL alarms and yellow range when the system should create MINOR alarms. Note that the data point should have at least one of red or yellow range configured.
 
-* Object red range: Range when the system should create CRITICAL alarms. These values can be edited in the data explorer for each data point.
+* Object red range: Range when the system should create CRITICAL alarms. These values can be edited in the data explorer for each data point. Note that these are close intervals ([redMin : redMax]) that contain the lowest accepted value and the highest accepted value, see also example below.
 
-* Object yellow range: Range when the system should create MINOR alarms. These values can be edited in the data explorer for each data point.
+* Object yellow range: Range when the system should create MINOR alarms. These values can be edited in the data explorer for each data point. Note that these are half-open intervals ([yellowMin : yellowMax)) that contain the lowest accepted value but not the highest accepted value, see also example below.
+
+**Example:**
+
+When we set the yellow range to "[10;15)" and the red range to "[15;20]" and the measured value is "15", a CRITICAL alarm (red) will be created, because red includes the value "15".
 
 Using this mechanism, you can configure global threshold ranges in the Data Point Library. These global values can then be overridden for specific objects on a case-by-case basis.
 

@@ -54,18 +54,18 @@ Zur besseren Orientierung folgt eine Übersicht über den Inhalt dieses Dokument
 </tr>
 <tr>
 <td align="left"><a href="#smart-rules-collection">Smart Rules-Sammlung</a></td>
-<td align="left">Verwenden Sie <a href="#smart-rules-collection">globale Smart Rules</a>, um Regeln zu konfigurieren, etwa für Geofencing, Alarmeskalation oder Benachrichtigungen (SMS/E-Mail). Beschreibt detailliert jede Smart Rule und ihre konfigurierbaren Parameter.</td>
+<td align="left">Verwenden Sie vordefinierte <a href="#smart-rules-collection">globale Smart Rules</a> um Regeln zu konfigurieren, etwa für Geofencing, Alarmeskalation oder Benachrichtigungen (SMS/E-Mail). Beschreibt detailliert jede Smart Rule und ihre konfigurierbaren Parameter.</td>
 </tr>
 </tbody>
 </table>
 
-Mehr über allgemeine Aspekte der Cumulocity IoT-Plattform und ihrer Anwendungen erfahren Sie unter [Erste Schritte](/benutzerhandbuch/getting-started-de).
+Mehr über allgemeine Aspekte der Cumulocity IoT-Plattform und ihrer Anwendungen erfahren Sie unter [Erste Schritte](/users-guide/overview).
 
 ### <a name="home"></a>Startseite
 
 Bei der Startseite der Cockpit-Anwendung handelt es sich um ein Dashboard, das Daten für den Mandanten anzeigt.
 
-![image alt text](/images/benutzerhandbuch/cockpit/cockpit-home-screen.png)
+![Home dashboard](/images/benutzerhandbuch/cockpit/cockpit-home-screen.png)
 
 Die Daten, die auf der Startseite angezeigt werden, werden von allen Benutzern des Mandanten gemeinsam genutzt. Standardmäßig zeigt die Startseite eine Begrüßung, die aktiven kritischen Alarme, neueste Alarme und eine Karte mit allen Geräten.
 

@@ -78,8 +78,8 @@ Data structure for *ServerConnectionConfig*
 
 <table>
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 10%;">
+<col style="width: 22%;">
+<col style="width: 13%;">
 <col style="width: 10%;">
 <col style="width: 55%;">
 </colgroup>
@@ -194,8 +194,31 @@ Data structure for *ServerConnectionConfig*
 <td>no</td>
 <td>Alarm severity mappings from the OPC UA event severity to the Cumulocity IoT alarm severity. This is applicable only for UAAlarmCreation. The key of this map is the lower bound value of the OPC UA event severity in the range. The value of this map is the expected severity of the alarm being created. For example, to map the OPC UA severity of the range 200-400 to a <em>MINOR</em>&nbsp;Cumulocity IoT alarm, put this entry to the map: <code>"200": "MINOR"</code>.<br>If this is given, it will override the alarm severity mappings that are specified in the configuration YAML file.<br>Note that, if the&nbsp;<em>severity</em>&nbsp;field for alarm mapping is provided, this <em>alarmSeverityMappings</em>&nbsp;will have no effect.<br><em><strong>Example</strong></em>:&nbsp;<code>"201": "WARNING",</br>"401": "MINOR",</br>"601": "MAJOR",</br>"801": "CRITICAL"</br></code>.</td>
 </tr>
+<tr>
+<td>alarmStatusMappings</td>
+<td>map&lt;string, string&gt;</td>
+<td>no</td>
+<td>The state of an alarm in Cumulocity IoT is defined by multiple conditions on OPC UA servers. For example, if the value of <code>AcknowledgedState</code> node is "Acked" and <code>ConfirmedState</code> is "Confirmed",
+then the state of the alarm in Cumulocity is expected as "ACKNOWLEDGED". They might vary with different servers as well. This field enables the user to configure the desired conditions (based on the information retrieved
+from the event type nodes of the OPC UA server) while creating alarms via UA event mappings (this is not applicable for OPC UA data value alarm creation).
+The example below shows that the keys of the map are the user-defined expressions and the value represents their corresponding desired state of the alarm. The variables that can be used in the expressions are the selected 
+attributes provided in the subscription definition of the device type. It can be written down either by using the relevant node names
+(e.g: <code>EnabledState.text == 'Enabled'</code>), or the qualified browse name with namespace index (e.g: <code>['0:EnabledState'].text == 'Enabled'</code>).
+The Spring Expression Language(SpEL) has been used to parse these conditions, but only boolean expressions are allowed.
+
+<br><strong><em>Example:</em></strong></br>
+"alarmStatusMappings": {
+            "default": "CLEARED",
+            "EnabledState != null and EnabledState.text == 'Enabled': "ACTIVE",
+            "['0:EnabledState'].text == 'Enabled' and ['0:ActiveState'].text == 'Active' : "ACKNOWLEDGED"
+        }
+>**Info:** There are three alarm states in Cumulocity, namely ACTIVE, ACKNOWLEDGED, and CLEARED. If the user-defined conditions overlap and as a result more than one alarm state is realized during the alarm creation, 
+> then the status is chosen based on priority. ACTIVE has the highest priority, followed by ACKNOWLEDGED and then CLEARED state with the least priority.
+</td>
+</tr>
 </tbody>
-</table>                                                                                                                                         |
+</table>
+
 
 #### Get all servers of a gateway device
 

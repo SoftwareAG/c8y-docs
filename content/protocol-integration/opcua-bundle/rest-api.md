@@ -201,18 +201,18 @@ Data structure for *ServerConnectionConfig*
 <td>The state of an alarm in Cumulocity IoT is defined by multiple conditions on OPC UA servers. For example, if the value of <code>AcknowledgedState</code> node is "Acked" and <code>ConfirmedState</code> is "Confirmed",
 then the state of the alarm in Cumulocity is expected as "ACKNOWLEDGED". They might vary with different servers as well. This field enables the user to configure the desired conditions (based on the information retrieved
 from the event type nodes of the OPC UA server) while creating alarms via UA event mappings (this is not applicable for alarm creation by cyclic reads or normal subscription).
-The example below shows that the keys of the map are the user-defined clauses and the value represents their corresponding desired state of the alarm. It can be written down either by using the relevant node names
+The example below shows that the keys of the map are the user-defined expressions and the value represents their corresponding desired state of the alarm. The variables that can be used in the expressions are the selected 
+attributes provided in the subscription definition of the device type. It can be written down either by using the relevant node names
 (e.g: <code>EnabledState.text == 'Enabled'</code>), or the qualified browse name with namespace index (e.g: <code>['0:EnabledState'].text == 'Enabled'</code>).
-The Spring Expression Language(SpEL) has been used to parse these clauses, but only boolean expressions are allowed.
-<br><strong><em>Example:</em></strong></br>
+The Spring Expression Language(SpEL) has been used to parse these conditions, but only boolean expressions are allowed.
 
-```json
+<br><strong><em>Example:</em></strong></br>
 "alarmStatusMappings": {
             "default": "CLEARED",
-            "EnabledState != null and EnabledState.text == 'Enabled' and ActiveState.text == 'Active' and AckedState.text != 'Acked'": "ACTIVE",
-            "['0:EnabledState'].text == 'Enabled' and ['0:ActiveState'].text == 'Active' and ['0:AckedState'].text == 'Acked'": "ACKNOWLEDGED"
+            "EnabledState != null and EnabledState.text == 'Enabled': "ACTIVE",
+            "['0:EnabledState'].text == 'Enabled' and ['0:ActiveState'].text == 'Active' : "ACKNOWLEDGED"
         }
-```
+
 </td>
 </tr>
 </tbody>

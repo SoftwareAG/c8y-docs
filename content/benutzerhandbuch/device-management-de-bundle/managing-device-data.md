@@ -104,7 +104,7 @@ Bewegen Sie den Mauszeiger in den Details einer bestimmten Firmware über den Ei
 
 Sie können die für ein Gerät installierte Firmware auf der Registerkarte **Firmware** dieses Geräts verwalten.
 
->**Info:** Die Registerkarte **Firmware** wird für Geräte angezeigt, die Kommandos vom Typ c8y_Firmware unterstützen.
+>**Info:** Die Registerkarte **Firmware** wird für Geräte angezeigt, die Operationen vom Typ c8y_Firmware unterstützen.
 
 Klicken Sie im Menü **Geräte** des Navigators auf **Alle Geräte**, wählen Sie das gewünschte Gerät aus der Geräteliste und öffnen Sie die dazugehörige Registerkarte **Firmware**.
 
@@ -123,7 +123,7 @@ Darüber hinaus zeigt sie den Operationsstatus des letzten Operationen an (ERFOL
 
 ![Install firmware](/images/benutzerhandbuch/DeviceManagement/devmgmt-firmware-install.png)
 
-Das von dem Gerät auszuführende Installationskommando wird erzeugt. Die Installation der Firmware ist abgeschlossen, sobald das Gerät die Operation ausgeführt hat.
+Die von dem Gerät auszuführende Installationsoperation wird erzeugt. Die Installation der Firmware ist abgeschlossen, sobald das Gerät die Operation ausgeführt hat.
 
 Die Operationsdetails werden auf der Registerkarte **Steuerung** des Geräts angezeigt. Der Status der letzten Operation wird ebenfalls auf der Registerkarte **Firmware** angezeigt.
 
@@ -207,7 +207,7 @@ Bewegen Sie den Mauszeiger in den Details einer bestimmten Software über den Ei
 
 Sie können die Software eines Geräts auf der Registerkarte **Software** dieses Geräts verwalten.
 
->**Info:** Die Registerkarte **Software** wird für Gerate angezeigt, die eines der folgenden Kommandos unterstützen: c8y&#95;SoftwareUpdate, c8y&#95;SoftwareList, c8y&#95;Software.
+>**Info:** Die Registerkarte **Software** wird für Gerate angezeigt, die eine der folgenden Operationen unterstützen: c8y&#95;SoftwareUpdate, c8y&#95;SoftwareList, c8y&#95;Software.
 
 Klicken Sie im Menü **Geräte** des Navigators auf **Alle Geräte**, wählen Sie das gewünschte Gerät aus der Geräteliste und öffnen Sie die dazugehörige Registerkarte **Software**.
 
@@ -225,7 +225,7 @@ Darüber hinaus zeigt sie den Operationsstatus der letzten Operation an (ERFOLGR
 5. Überprüfen Sie Ihre geplanten Änderungen im Bereich **Software-Änderungen** auf der rechten Seite und bestätigen Sie die Software-Update-Operation durch Klicken auf **Änderungen übernehmen**.<br><br>
 	![Apply changes](/images/benutzerhandbuch/DeviceManagement/devmgmt-software-changes.png)
 
-Das von dem Gerät auszuführende Installationskommando wird erzeugt. Die Installation der Software ist abgeschlossen, sobald das Gerät die Operation ausgeführt hat.
+Die von dem Gerät auszuführende Installationsoperation wird erzeugt. Die Installation der Software ist abgeschlossen, sobald das Gerät die Operation ausgeführt hat.
 
 Die Operationsdetails werden auf der Registerkarte **Steuerung** des Geräts angezeigt. Der Status der letzten Operation wird ebenfalls auf der Registerkarte **Software** angezeigt.
 
@@ -249,15 +249,15 @@ Bewegen Sie den Mauszeiger über den Eintrag der Software, die sie löschen möc
 
 Cumulocity IoT bietet die Möglichkeit, Software-Updates für mehrere Geräte gleichzeitig durchzuführen.
 
-1. Führen Sie das Software-Kommando (installieren oder ersetzen) zunächst für ein Gerät aus, um zu testen, ob die neue Version funktioniert.
-2. Navigieren Sie in der Registerkarte **Steuerung** zu dem Kommando und wählen Sie im Kontextmenü **Als Bulk-Kommando planen**.
-3. Geben Sie einen Zeitpunkt an, zu dem das Stapelkommando ausgeführt werden soll, und klicken Sie **Erstellen**. Weitere Informationen zu Stapelkommandos finden Sie unter [Überwachen und Steuern von Geräten](/benutzerhandbuch/device-management-de/#monitoring-and-controlling-devices).
+1. Führen Sie die Software-Operation (installieren oder ersetzen) zunächst für ein Gerät aus, um zu testen, ob die neue Version funktioniert.
+2. Navigieren Sie in der Registerkarte **Steuerung** zu dieser Operation und wählen Sie im Kontextmenü **Als Bulk-Operation planen**.
+3. Geben Sie einen Zeitpunkt an, zu dem die Bulk-Operation ausgeführt werden soll, und klicken Sie **Erstellen**. Weitere Informationen zu Bulk-Operationen finden Sie unter [Überwachen und Steuern von Geräten](/benutzerhandbuch/device-management-de/#monitoring-and-controlling-devices).
 
-Der Status und die Details des Stapelkommandos werden auf der Registerkarte **Stapelkommandos** unter **Gerätesteuerung** angezeigt.
+Der Status und die Details der Bulk-Operation werden auf der Registerkarte **Bulk-Operationen** unter **Gerätesteuerung** angezeigt.
 
-Außerdem werden die Kommandodetails auf der Registerkarte **Steuerung** der ausgewählten Geräte angezeigt.
+Außerdem werden die Operationsdetails auf der Registerkarte **Steuerung** der ausgewählten Geräte angezeigt.
 
->**Info:** Stapelkommandos, die mit einer Version vor 10.7.0 erzeugt wurden, können auf der Registerkarte **Stapelkommandos** der ausgewählten Gruppe angezeigt werden, siehe auch [Bulk operations](#bulk-operations).
+>**Info:** Bulk-Operationen, die mit einer Version vor 10.7.0 erzeugt wurden, können auf der Registerkarte **Bulk-Operationen** der ausgewählten Gruppe angezeigt werden, siehe auch [Bulk-Operationen](#bulk-operations).
 
 ### <a name="configuration-repository"></a>Verwalten von Konfigurationen
 
@@ -326,9 +326,9 @@ Sobald Sie den Snapshot geladen haben, können Sie ihn im Abschnitt **Vorschau**
 
 ![Retrieve Configuration Snapshot](/images/benutzerhandbuch/DeviceManagement/devmgmt-devices-config-getnewsnapshot.png)
 
-> **Info:** Wenn Sie auf **Snapshot vom Gerät abrufen** klicken, wird ein neues Kommando erstellt. Wenn sich das Kommando im Status AUSSTEHEND oder WIRD AUSGEFÜHRT befindet, ist es nicht möglich, eine weitere Konfigurationsanforderung für den Konfigurationstyp zu stellen. Navigieren Sie zur Registerkarte **Steuerung** eines Geräts, um das Kommando abzubrechen oder die Änderungshistorie des Kommandos anzuzeigen.
+> **Info:** Wenn Sie auf **Snapshot vom Gerät abrufen** klicken, wird eine neue Operation erstellt. Wenn sich die Operation im Status AUSSTEHEND oder WIRD AUSGEFÜHRT befindet, ist es nicht möglich, eine weitere Konfigurationsanforderung für den Konfigurationstyp zu stellen. Navigieren Sie zur Registerkarte **Steuerung** eines Geräts, um die Operation abzubrechen oder die Änderungshistorie der Operation anzuzeigen.
 
-So wenden Sie einen Konfigurationssnapshot auf ein Gerät an, das mehrere Konfigurationstypen unterstützt
+#### So wenden Sie einen Konfigurationssnapshot auf ein Gerät an, das mehrere Konfigurationstypen unterstützt
 
 1. Navigieren Sie zu dem entsprechenden Gerät und wechseln Sie zur Registerkarte **Konfiguration**.
 2. Wählen Sie den gewünschten Konfigurationstyp unter **Geräteunterstützte Konfigurationen**.
@@ -382,7 +382,7 @@ Das Löschen von Gerätezugangsdaten kann erforderlich sein, wenn Sie ein Gerät
 
 ### <a name="device-profiles"></a>Verwalten von Geräteprofilen
 
-Geräteprofile stellen eine Kombination aus einer Firmware-Version, einem oder mehreren Software-Paketen und einer oder mehreren Konfigurationsdateien, die auf einem Gerät bereitgestellt werden können, dar. Basierend auf den Geräteprofilen können Benutzer mit Hilfe von Stapelkommandos eine bestimmte Zielkonfiguration auf Geräten bereitstellen.
+Geräteprofile stellen eine Kombination aus einer Firmware-Version, einem oder mehreren Software-Paketen und einer oder mehreren Konfigurationsdateien, die auf einem Gerät bereitgestellt werden können, dar. Basierend auf den Geräteprofilen können Benutzer mit Hilfe von Bulk-Operation eine bestimmte Zielkonfiguration auf Geräten bereitstellen.
 
 #### So zeigen Sie Geräteprofile an
 
@@ -454,13 +454,13 @@ Zum Löschen eines Geräteprofils klicken Sie auf das Menüsymbol rechts neben d
 Geräteprofile können angewendet werden auf:
 
 * [einzelne Geräte](#to-apply-profiles-to-single-devices)
-* [mehrere Geräte mit Hilfe von Stapelkommandos](#to-apply-profiles-to-multiple-devices)
+* [mehrere Geräte mit Hilfe von Bulk-Operationen](#to-apply-profiles-to-multiple-devices)
 
 Die Registerkarte **Geräteprofil** eines bestimmten Geräts zeigt die Details des aktuell auf dem Gerät installierten Profils.
 
 ![Currently installed profile](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-profile-tab.png)
 
->**Info:** Die Registerkarte **Geräteprofil** wird für Geräte angezeigt, die Kommandos vom Typ c8y_DeviceProfile unterstützen.
+>**Info:** Die Registerkarte **Geräteprofil** wird für Geräte angezeigt, die Operationen vom Typ c8y_DeviceProfile unterstützen.
 
 Zudem kann in der Geräteliste ausgehend von dem Namen des angewendeten Profils und davon, ob das Profil in der Vergangenheit angewendet wurde, nach Geräten gefiltert werden.
 
@@ -475,19 +475,19 @@ Auf der Registerkarte **Geräteprofil** eines Geräts können Sie Geräteprofile
 
 	![Assign device profile](/images/benutzerhandbuch/DeviceManagement/devmgmt-device-profile-assign.png)
 
-2. Klicken Sie auf **Geräteprofil zuweisen**, um das Aktualisierungskommando zu starten.
+2. Klicken Sie auf **Geräteprofil zuweisen**, um die Aktualisierungsoperation zu starten.
 
 #### <a name="to-apply-profiles-to-multiple-devices"></a>So wenden Sie Geräteprofile auf mehrere Geräte an
 
-Geräteprofile können mittels Stapelkommandos auf mehrere Geräte angewendet werden.
+Geräteprofile können mittels Bulk-Operationen auf mehrere Geräte angewendet werden.
 
-1. Klicken Sie im Menü **Übersicht** auf **Gerätesteuerung**, um zur Seite **Gerätesteuerung** zu gelangen. Auf der Seite **Gerätesteuerung** können Sie ein neues Stapelkommando zum Anwenden eines Geräteprofils erstellen.
-2. Klicken Sie auf der Registerkarte **Stapelkommandos** rechts in der oberen Menüleiste auf **Neues Bulk-Kommando** und wählen Sie im darauffolgenden Dialog **Geräteprofil anwenden**.
-3. Um ein Stapelkommando zum Anwenden eines Geräteprofils zu planen, befolgen Sie die Schritte unter [Überwachen und Steuern von Geräten > Verwenden von Kommandos > So fügen Sie ein Bulk-Kommando hinzu](/benutzerhandbuch/device-management-de/#bulk-operations).
+1. Klicken Sie im Menü **Übersicht** auf **Gerätesteuerung**, um zur Seite **Gerätesteuerung** zu gelangen. Auf der Seite **Gerätesteuerung** können Sie eine neue Bulk-Operation zum Anwenden eines Geräteprofils erstellen.
+2. Klicken Sie auf der Registerkarte **Bulk-Operationen** rechts in der oberen Menüleiste auf **Neue Bulk-Operation** und wählen Sie im darauffolgenden Dialog **Geräteprofil anwenden**.
+3. Um eine Bulk-Operation zum Anwenden eines Geräteprofils zu planen, befolgen Sie die Schritte unter [Überwachen und Steuern von Geräten > Verwenden von Operationen > So fügen Sie eine Bulk-Operation hinzu](/benutzerhandbuch/device-management-de/#bulk-operations).
 
-Die Geräte installieren die Firmware, Software und Konfigurationselemente des Profils und senden einen Bericht über den Status des Kommandos. Nachdem das Profil angewendet wurde, werden die Geräteobjekte in der Plattform mit der neuen Profilinformation aktualisiert.
+Die Geräte installieren die Firmware, Software und Konfigurationselemente des Profils und senden einen Bericht über den Status der Operation. Nachdem das Profil angewendet wurde, werden die Geräteobjekte in der Plattform mit der neuen Profilinformation aktualisiert.
 
->**Info:** Beim Anlegen von Stapelkommandos können Filter verwendet werden, die es Ihnen ermöglichen, Stapelkommandos nur für die Geräte anzulegen, auf die noch kein Profil angewendet wurde.
+>**Info:** Beim Anlegen von Bulk-Operationen können Filter verwendet werden, die es Ihnen ermöglichen, Bulk-Operationen nur für die Geräte anzulegen, auf die noch kein Profil angewendet wurde.
 
 
 ### <a name="trusted-certificates"></a> Verwalten von vertrauenswürdigen Zertifikaten

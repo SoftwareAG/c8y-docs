@@ -510,11 +510,11 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 > **Info:** Die Regel prüft einmal pro Minute, ob das konfigurierte Zeitintervall überschritten wurde. Daher kann es, nachdem das Zeitintervall überschritten wurde, bis zu einer Minute dauern, bis der Alarm erzeugt wird. Um das Überschreiten des Intervalls zu überprüfen, muss mindestens ein Messwert eingegangen sein, nachdem die Regel erstellt/aktiviert wurde.
 
-### Bei Alarm Kommando ausführen
+### Bei Alarm Operation ausführen
 
 **Funktionalität**
 
-Tritt ein bestimmter Alarm auf, wird das spezifizierte Kommando zum Gerät gesendet.
+Tritt ein bestimmter Alarm auf, wird die spezifizierte Operation zum Gerät gesendet.
 
 
 **Parameter**
@@ -549,8 +549,8 @@ Die Regel verwendet die folgenden Parameter:
 </tr>
 <tr>
 <td style="text-align:left">3</td>
-<td style="text-align:left">Kommando ausführen</td>
-<td style="text-align:left">Das Kommando, das gesendet wird. Das Kommando wird als JSON-Beschreibung bereitgestellt. Unter dem "Kommando"-Feld können einige Standardkommandos ausgewählt werden. Um ein Standardkommando zu verwenden, wählen sie das entsprechende Kommando und klicken Sie die Pfeil-Schaltfläche auf der rechten Seite. Die JSON-Beschreibung des ausgewählten Kommandos wird eingefügt.</td>
+<td style="text-align:left">Operation ausführen</td>
+<td style="text-align:left">Die Operation, das gesendet wird. Die Operation wird als JSON-Beschreibung bereitgestellt. Unter dem "Operation"-Feld können einige Standardoperationen ausgewählt werden. Um eine Standardperation zu verwenden, wählen sie die entsprechende Operation und klicken Sie die Pfeil-Schaltfläche auf der rechten Seite. Die JSON-Beschreibung der ausgewählten Operation wird eingefügt.</td>
 </tr>
 <tr>
 <td align="left">4</td>

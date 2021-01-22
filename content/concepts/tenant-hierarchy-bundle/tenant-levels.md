@@ -40,10 +40,10 @@ Using an Enterprise tenant, you can
 
 See also [multi-tenancy approach](/concepts/tenant-hierarchy/#multi-tenancy).
 
-Moreover, the following additional features are provided:
+Moreover, an Enterprise tenant includes the following additional features:
 
 * **Branding** -  To configure an individual look & feel
-* **Domain name** - To provide an own domain name
+* **Domain name** - To provide an individual domain name
 * **Support user** - To support users of other tenants
 * **User hierarchy** - To reflect entities with limited permissions to subsets of shared data
 * **Data broker** - To securely share data between tenants

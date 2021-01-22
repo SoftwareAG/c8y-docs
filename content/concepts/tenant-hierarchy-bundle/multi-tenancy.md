@@ -11,7 +11,7 @@ The Enterprise tenant can create subtenants that will then again function like S
 This multi-tenancy approach has various advantages:
 
 * **User and permission management**
-<br>Each tenant has full admin access to their user and permission management and can create own roles.
+<br>Each tenant has full admin access to their user and permission management and can create its own roles.
 * **Application management**
 <br>Each tenant can manage their applications separately and extend the platform by adding applications.
 * **Usage statistics and billing**

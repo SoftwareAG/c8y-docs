@@ -9,7 +9,6 @@ layout: redirect
 Auf der Seite **Geräteregistrierung** werden alle Geräte, die sich aktuell im Registrierungsprozess befinden, entweder als Liste oder als Raster angezeigt.
 
 <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-device-registration.png" alt="Device registration page">
-<p> </p>
 
 Die folgenden Informationen werden für jedes Gerät angezeigt:
 
@@ -34,7 +33,7 @@ Um Geräte zu registrieren, können Sie eine der folgenden Optionen wählen:
 * **[Bulk-Geräteregistrierungg](#creds-upload)** - zum Registrieren größerer Gerätemengen in einem Schritt
 
 Sofern Sie die erforderlichen Anwendungen abonniert haben, wird Ihnen eine dritte Option angezeigt:
-**Benutzerdefinierte Geräteregistrierung** - zum Registrieren von Geräten spezifischer Typen, z. B. LoRa oder Sigfox, siehe die Dokumentation zu diesen Services im [*Protocol Integration Guide*](/protocol-integration/overview).
+**Benutzerdefinierte Geräteregistrierung** - zum Registrieren von Geräten spezifischer Typen, z. B. LoRa oder Sigfox, siehe die Dokumentation zu diesen Services im [Protocol Integration Guide](/protocol-integration/overview).
 
 <img src="/images/benutzerhandbuch/DeviceManagement/devmgmt-register-devices-custom.png" alt="Register devices">
 
@@ -126,6 +125,6 @@ Für beide Bulk-Registrierungstypen (einfach/vollständig) stellen wir praktisch
 5. Wählen Sie in Schritt 2 des **Textimport-Assistenten** die Option **Semikolon** und klicken Sie **Fertig stellen**.
 
 Weitere Informationen zum Dateiformat und akzeptierten CSV-Varianten finden Sie auch unter
-[Bulk device credentials](/reference/device-credentials/#bulk-device-credentials) im Reference Guide.
+[Bulk device credentials](/reference/device-credentials/#bulk-device-credentials) in the Reference guide.
 
 >**Info:** Wenn Sie mit dem Enterprise Tenant arbeiten, können Sie auch Geräte über mehrere Mandanten registrieren, indem Sie eine Spalte **Mandant** hinzufügen und die CSV-Datei vom Management-Mandanten aus importieren.

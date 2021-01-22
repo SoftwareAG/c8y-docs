@@ -6,7 +6,7 @@ title: Verwalten von Daten
 
 ### <a name="retention-rules"></a>Datenhaltungsregeln
 
-Mit Datenhaltungsregeln können Sie steuern, wie lange Daten in Ihrem Konto gespeichert bleiben. Standardmäßig werden alle historischen Daten nach 60 Tage gelöscht (konfigurierbar in den Systemeinstellungen).
+Mit Datenhaltungsregeln können Sie steuern, wie lange Daten in Ihrem Konto gespeichert bleiben. Standardmäßig werden alle historischen Daten nach 60 Tagen gelöscht (konfigurierbar in den Systemeinstellungen).
 
 Vielleicht möchten Sie jedoch Messwerte 90 Tage speichern, Alarme aber bereits nach 10 Tagen löschen.
 
@@ -49,6 +49,21 @@ Bewegen Sie die Maus über die Regel, die Sie löschen möchten, und klicken Sie
 
 <img src="/images/benutzerhandbuch/Administration/admin-retention-rules-delete.png" alt="Delete retention rule">
 
+>**Info:** Alle Datenhaltungsregeln werden sequenziell und unabhängig voneinander ausgeführt. Wenn es zwei Datenhaltungsregeln gibt, von denen eine spezifischere mit einem höheren maximalen Alter eine Untermenge von den Dokumenten definiert, die durch eine allgemeinere Regel mit einem niedrigeren maximalen Alter definiert werden, wird alles so abgearbeitet, als gäbe es nur eine einzige, allgemeinere Regel.
+>
+>Betrachtet man beispielsweise die beiden folgenden Regeln:
+>   
+><img src="/images/benutzerhandbuch/Administration/admin-retention-rules-commspec1.png" alt="Retention rules"/>
+> 
+>Alle Messwerte vom Typ `c8y_Temperature`, die älter als 30 Tage sind, werden entfernt, einschließlich der Messwerte, bei denen die Quelle `12345` entspricht.
+>             
+>Wenn jedoch die folgenden Datenhaltungsregeln definiert wurden:
+>
+><img src="/images/benutzerhandbuch/Administration/admin-retention-rules-commspec2.png" alt="Retention rules"/>
+> 
+>Der Datenhaltungsprozess entfernt alle Messwerte vom Typ `c8y_Temperature`, die älter als 30 Tage sind. Alle anderen Messwerte werden erst entfernt, wenn sie älter als 60 Tage sind.
+
+>**Info:** Der Quellparameter ist die ID des Geräts. Wenn dieser definiert ist, entfernt der Datenhaltungsprozess nur die Dokumente, die direkt mit dem durch die Quelle dargestellten Gerät verbunden sind, nicht jedoch die der Kinder oder zugehörigen Gruppen.
 
 ### <a name="files"></a>Verwalten von Daten in der Dateiablage
 

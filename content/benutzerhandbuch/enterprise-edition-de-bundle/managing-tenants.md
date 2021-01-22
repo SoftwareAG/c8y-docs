@@ -37,49 +37,50 @@ Im Management-Mandanten finden Sie zudem Informationen über den übergeordneten
 <br>![Create subtenant](/images/benutzerhandbuch/enterprise-tenant/et-subtenant-create.png)<br>
 2. Geben Sie die folgenden Attribute an:
 
-	<table>
-	<col width = 150>
-	<thead>
-	<tr>
-	<th style="text-align:left">Feld</th>
-	<th style="text-align:left">Beschreibung</th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-	<td style="text-align:left">Domain/ URL</td>
-	<td style="text-align:left">Geben Sie eine Subdomain ihrer Wahl ein, beispielsweise "acme". Die URL des Mandanten lautet dann "acme.cumulocity.com" auf cumulocity.com. Sie können nur eine Subdomain-Ebene verwenden. Sie können zum Beispiel nur "acme.cumulocity.com"auf cumulocity.com verwenden. Sie können aber nicht "mycustomer.acme.cumulocity.com" wählen. Dies wird vom TLS-Standard nicht unterstützt. <br> Die Mandanten-Domain kann Kleinbuchstaben, Ziffern oder Bindestriche enthalten. Sie muss mit einem Buchstaben beginnen; Bindestriche sind nur in der Mitte zulässig; die Mindestlänge beträgt 2 Zeichen. Beachten Sie, dass die Verwendung von Unterstrichen zwar veraltet, aber aus Gründen der Rückwärtskompatibilität noch möglich ist.  </td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Name</td>
-	<td style="text-align:left">Name des Mandanten, z. B. Name des Unternehmens.</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">E-Mail des Administrators</td>
-	<td style="text-align:left">Sie müssen eine gültige E-Mail-Adresse angeben, damit Benutzer ihr Passwort ändern können.</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Benutzername des Administrators</td>
-	<td style="text-align:left">Benutzername des Administrators dieses Mandanten.</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Kontaktname</td>
-	<td style="text-align:left">Optionaler Name des Ansprechpartners.</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Telefonnummer</td>
-	<td style="text-align:left">Optionale Telefonnummer des Ansprechpartner.</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Link zum Zurücksetzen des Passworts als E-Mail senden</td>
-	<td style="text-align:left">Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie ein Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter <a href="/benutzerhandbuch/getting-started-de/#login" class="no-ajaxy">Erste Schritte &gt; Aufrufen und Anmelden an der Cumulocity IoT-Plattform</a>.</td>
-	</tr>
-	<tr>
-	<td style="text-align:left">Mandantenregel</td>
-	<td style="text-align:left">Sie können eine Mandantenregel aus der Dropdown-Liste auswählen, die auf den Mandanten angewendet werden soll.</td>
-	</tr>
-	</tbody>
-	</table>
+<table>
+<col style="width:20%">
+<col style="width:80%">
+<thead>
+<tr>
+<th style="text-align:left">Feld</th>
+<th style="text-align:left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Domain/ URL</td>
+<td style="text-align:left">Geben Sie eine Subdomain ihrer Wahl ein, beispielsweise "acme". Die URL des Mandanten lautet dann "acme.cumulocity.com" auf cumulocity.com. Sie können nur eine Subdomain-Ebene verwenden. Sie können zum Beispiel nur "acme.cumulocity.com"auf cumulocity.com verwenden. Sie können aber nicht "mycustomer.acme.cumulocity.com" wählen. Dies wird vom TLS-Standard nicht unterstützt. <br> Die Mandanten-Domain kann Kleinbuchstaben, Ziffern oder Bindestriche enthalten. Sie muss mit einem Buchstaben beginnen; Bindestriche sind nur in der Mitte zulässig; die Mindestlänge beträgt 2 Zeichen. Beachten Sie, dass die Verwendung von Unterstrichen zwar veraltet, aber aus Gründen der Rückwärtskompatibilität noch möglich ist.  </td>
+</tr>
+<tr>
+<td style="text-align:left">Name</td>
+<td style="text-align:left">Name des Mandanten, z. B. Name des Unternehmens.</td>
+</tr>
+<tr>
+<td style="text-align:left">E-Mail des Administrators</td>
+<td style="text-align:left">Sie müssen eine gültige E-Mail-Adresse angeben, damit Benutzer ihr Passwort ändern können.</td>
+</tr>
+<tr>
+<td style="text-align:left">Benutzername des Administrators</td>
+<td style="text-align:left">Benutzername des Administrators dieses Mandanten.</td>
+</tr>
+<tr>
+<td style="text-align:left">Kontaktname</td>
+<td style="text-align:left">Optionaler Name des Ansprechpartners.</td>
+</tr>
+<tr>
+<td style="text-align:left">Telefonnummer</td>
+<td style="text-align:left">Optionale Telefonnummer des Ansprechpartner.</td>
+</tr>
+<tr>
+<td style="text-align:left">Link zum Zurücksetzen des Passworts als E-Mail senden</td>
+<td style="text-align:left">Standardmäßig ausgewählt. Wenn Sie diese Option deaktivieren, müssen Sie ein Passwort bereitstellen und dieses bestätigen (weitere Informationen zur Passwortstärke finden Sie unter <a href="/benutzerhandbuch/getting-started-de/#login" class="no-ajaxy">Erste Schritte &gt; Aufrufen und Anmelden an der Cumulocity IoT-Plattform</a>.</td>
+</tr>
+<tr>
+<td style="text-align:left">Mandantenregel</td>
+<td style="text-align:left">Sie können eine Mandantenregel aus der Dropdown-Liste auswählen, die auf den Mandanten angewendet werden soll.</td>
+</tr>
+</tbody>
+</table>
 
 3. Klicken Sie **Speichern**, um Ihre Eingaben zu speichern.
 
@@ -91,7 +92,7 @@ Vom Management-Mandanten aus können Sie anderen Mandanten erlauben, Untermandan
 
 Klicken Sie auf den gewünschten Untermandanten oder auf das Menüsymbol rechts im Untermandanten-Eintrag und anschließend auf **Bearbeiten**.
 
-In der Registerkarte **Attribute** können alle Felder außer der ID und des Benutzernamens des Administrators bearbeitet werden. Details zu den einzelnen Feldern finden Sie unter [Erstellen von Untermandanten](#creating-tenants).
+In der Registerkarte **Attribute** können alle Felder außer **ID**, **Domain/ URL** und **Benutzername des Administrators** bearbeitet werden. Details zu den einzelnen Feldern finden Sie unter [Erstellen von Untermandanten](#creating-tenants).
 
 Um das Mandantenpasswort zu ändern, klicken Sie **Passwort ändern**, geben Sie das neue Passwort in die dafür angezeigten Felder ein und klicken Sie **Speichern**.
 
@@ -153,11 +154,11 @@ In der Registerkarte **Anwendungen** können Sie alle für einen Mandanten abonn
 
 #### So abonnieren Sie eine Anwendung
 
-Bewegen Sie den Mauszeiger über die Anwendungen unter **Verfügbare Anwendungen** auf der rechten Seite und klicken Sie bei der gewünschten Anwendung **Abonnieren**.
+Bewegen Sie den Mauszeiger über die unter **Verfügbare Anwendungen** auf der rechten Seite angezeigten Anwendungen und klicken Sie bei der gewünschten Anwendung auf **Abonnieren**.
 
 #### So bestellen Sie eine Anwendung ab
 
-Bewegen Sie den Mauszeiger über die Anwendungen unter **Abonnierte Anwendungen** auf der linken Seite und klicken Sie bei der gewünschten Anwendung **Abbestellen**.
+Bewegen Sie den Mauszeiger über die unter **Abonnierte Anwendungen** auf der linken Seite angezeigten Anwendungen und klicken Sie bei der gewünschten Anwendung auf **Abbestellen**.
 
 #### Überwachen von Microservices
 
@@ -188,7 +189,7 @@ Weitere Details finden Sie in der Registerkarte **Status** der entsprechenden An
 
 ### <a name="tenants-custom-properties"></a>Benutzerdefinierte Attribute
 
-Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Bearbeiten von Werten von benutzerdefinierten Attributen, sowohl von vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/benutzerhandbuch/administration-de#properties) definiert sind. Solche Attribute werden auch als Spalten auf der Seite [Nutzungsstatistiken](#usage-stats) angezeigt.
+Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeigen und Bearbeiten von Werten von benutzerdefinierten Attributen, sowohl von vordefinierten (wie "Externe Referenz") als auch denen, die in der [Attributsbibliothek](/benutzerhandbuch/administration-de#properties) definiert sind. Solche Attribute werden auch als Spalten auf der Seite [Nutzungsstatistiken](/benutzerhandbuch/enterprise-edition-de/#usage-and-billing) angezeigt.
 
 ![Custom properties](/images/benutzerhandbuch/enterprise-tenant/et-subtenant-custom-properties.png)
 
@@ -196,7 +197,7 @@ Die Registerkarte **Benutzerdefinierte Attribute** ermöglicht Ihnen das Anzeige
 
 Über das benutzerdefinierte Attribut "Geräteanzahl begrenzen" können Plattformadministratoren die Anzahl der gleichzeitig registrierten Hauptgeräte oder der registrierten Geräte insgesamt (einschließlich Kindgeräte) begrenzen.
 
-Auf der Seite **[Nutzungsstatistiken](#usage-stats)** können sie die Höchstanzahl registrierter Geräte bzw. Hauptgeräte sowie den Höchstwert des genutzten Datenspeichers einsehen.
+Auf der Seite **[Nutzungsstatistiken](/benutzerhandbuch/enterprise-edition-de/#usage-and-billing)** können sie die Höchstanzahl registrierter Geräte bzw. Hauptgeräte sowie den Höchstwert des genutzten Datenspeichers einsehen.
 
 #### Begrenzen der Anfragerate für Untermandanten
 
@@ -215,236 +216,6 @@ Außerdem ist es möglich, die Größe des CEP-Puffers und des Data Broker-Puffe
 Wenn keine Begrenzung auf Mandanten- und Systemebene vorliegt, wird die Begrenzungsfunktion als deaktiviert betrachtet und der Mandant erhält unbegrenzten Zugriff. Um die Begrenzung der Anfragerate wieder abzuschalten, setzen Sie den Wert auf "-1".
 
 
-### <a name="usage-stats"></a> Nutzungsstatistiken
-
-Die Seite **Nutzungsstatistiken** zeigt statistische Informationen für jeden Untermandanten an.
-
-![Subtenant statistics](/images/benutzerhandbuch/enterprise-tenant/et-subtenants-usage-statistics.png)
-
-Die folgenden Informationen werden für jeden Untermandanten bereitgestellt (im Screenshot oben aus Platzgründen nicht vollständig zu sehen):
-
-<table>
-<thead>
-<colgroup>
-   <col style="width: 20%;">
-   <col style="width: 80%;">
-</colgroup>
-<tr>
-<th align="left">Feld</th>
-<th align="left">Beschreibung</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">ID</td>
-<td align="left">ID des Untermandanten</td>
-</tr>
-<tr>
-<td align="left">API-Anfragen</td>
-<td align="left">Gesamtanzahl der API-Anfragen, einschließlich Anfragen von Geräten und Anwendungen</td>
-</tr>
-<tr>
-<td align="left">API-Anfrage von Geräten</td>
-<td align="left">ID des Untermandanten</td>
-</tr>
-<tr>
-<td align="left">Speicherplatz (MB)</td>
-<td align="left">Gespeicherte Daten in Ihrem Konto</td>
-</tr>
-<tr>
-<td align="left">Höchstwert Speicher (MB)</td>
-<td align="left">Höchstwert der Speicherung</td>
-</tr>
-<tr>
-<td align="left">Hauptgeräte</td>
-<td align="left">Anzahl der Geräte ohne Kindgeräte</td>
-</tr>
-<tr>
-<td align="left">Höchstwert Hauptgeräte</td>
-<td align="left">Höchstanzahl Hauptgeräte, ohne Kindgeräte</td>
-</tr>
-<tr>
-<td align="left">Geräte</td>
-<td align="left">Die Gesamtanzahl der mit dem Untermandanten verbundenen Geräte</td>
-</tr>
-<tr>
-<td align="left">Höchstwert Geräte</td>
-<td align="left">Höchstanzahl Geräte, einschließlich Kindgeräte</td>
-</tr>
-<tr>
-<td align="left">Endpunktgeräte</td>
-<td align="left">ID des Untermandanten</td>
-</tr>
-<tr>
-<td align="left">ID</td>
-<td align="left">Blattgeräte (ohne Gateways und Kinder)</td>
-</tr>
-<tr>
-<td align="left">Abonnierte Anwendungen</td>
-<td align="left">Anzahl der vom Untermandanten abonnierten Anwendungen</td>
-</tr>
-<tr>
-<td align="left">Erstellungszeitpunkt</td>
-<td align="left">Datum und Zeit der Erstellung des Untermandanten</td>
-</tr>
-<tr>
-<td align="left">Erzeugte Alarme</td>
-<td align="left">Anzahl der erzeugten Alarme</td>
-</tr>
-<tr>
-<td align="left">Aktualisierte Alarme</td>
-<td align="left">Anzahl der aktualisierten Alarme</td>
-</tr>
-<tr>
-<td align="left">Erstellte Stammdaten</td>
-<td align="left">Anzahl der erstellten Managed Objects</td>
-</tr>
-<tr>
-<td align="left">Aktualisierte Stammdaten</td>
-<td align="left">Anzahl der aktualisierten Managed Objects</td>
-</tr>
-<tr>
-<td align="left">Erstellte Ereignisse</td>
-<td align="left">Anzahl der erstellten Ereignisse</td>
-</tr>
-<tr>
-<td align="left">Aktualisierte Ereignisse</td>
-<td align="left">Anzahl der aktualisierten Ereignisse</td>
-</tr>
-<tr>
-<td align="left">Erstellte Messwerte</td>
-<td align="left">Anzahl der erstellten Messwerte</td>
-</tr>
-<tr>
-<td align="left">Gesamt Inbound-Transfer</td>
-<td align="left">Summe aller Inbound-Transfers (erzeugte Alarme, aktualisierte Alarme, erstellte Ereignisse, aktualisierte Ereignisse, erstellte Stammdaten, aktualisierte Stammdaten, erstellte Messwerte).</td>
-</tr>
-<tr>
-<td align="left">CPU (m)</td>
-<td align="left">Microservice-CPU-Nutzung, angegeben in CPU-Millisekunden, weitere Informationen siehe <a href="#microservice-usage">Microservice-Nutzung</a></td>
-</tr>
-<tr>
-<td align="left">Speicher (MB)</td>
-<td align="left">Microservice-Speichernutzung, weitere Informationen siehe <a href="#microservice-usage">Microservice-Nutzung</a></td>
-</tr>
-<tr>
-<td align="left">Übergeordneter Mandant</td>
-<td align="left">Name des übergeordneten Mandanten (nur verfügbar für den Management-Mandanten)</td>
-</tr>
-<tr>
-<td align="left">Externe Referenz</td>
-<td align="left">Dieses Feld ist für den individuellen Gebrauch. Sie können hier beispielsweise einen Link zum CRM-System oder eine interne Kundennummer einfügen.</td>
-</tr>
-</tbody>
-</table>
-
-Außerdem werden benutzerdefinierte Attribute angezeigt, falls vorhanden.
-
-Benutzerdefinierte Attribute können in der [Attributsbibliothek](/benutzerhandbuch/administration-de#properties) definiert werden. Anschließend können entsprechende Werte in der Registerkarte [Benutzerdefinierte Attribute](#tenants-custom-properties) des Mandanten eingestellt werden.
-
-Sie können die Liste der Nutzungsstatistiken nach einem bestimmten Zeitraum filtern, indem Sie einen Start- und einen Endzeitpunkt in der oberen Menüleiste eingeben und **Filter** klicken. Sie können außerdem die Liste nach jeder Spalte filtern und sortieren, indem Sie auf das Filtersymbol neben dem Namen der entsprechenden Spalte klicken und die Filterkriterien eingeben. Siehe auch [Erste Schritte > Eigenschaften und Funktionen der Benutzeroberfläche > Filtern](/benutzerhandbuch/getting-started-de/#filtering).
-
-#### So exportieren Sie die Nutzungsstatistik-Tabelle
-
-1. Klicken Sie CSV-Export rechts oben in der Menüleiste, um die aktuelle Ansicht der Statistikentabelle als CSV-Datei zu exportieren.
-2. Im darauf folgenden Dialog können Sie die CSV-Ausgabe individuell anpassen, indem Sie ein Feldtrennzeichen, ein Dezimaltrennzeichen und einen Zeichensatz festlegen.
-<br> <img src="/images/benutzerhandbuch/enterprise-tenant/et-subtenant-statistics-export.png"></img> <br>
-3. Klicken Sie **Herunterladen**, um den Export zu starten.
-
-Die CSV-Datei wird in Ihr Dateisystem heruntergeladen.
-
-
-#### <a name="microservice-usage"></a>Microservice-Nutzung
-
-Die Funktion Microservice-Nutzung sammelt Informationen über die Ressourcennutzung je Untermandant für jeden Microservice. So können Enterprise Tenants und Service Provider die Gebühren für Mandanten nicht nur auf Basis von Abonnements, sondern auch auf Basis der Ressourcennutzung berechnen.
-
-
-##### Abrechnungsmodi
-
-Cumulocity IoT bietet zwei Abrechnungsmodi:
-
-* **Abonnementbasierte Abrechnung**: Berechnet einen Festpreis, wenn ein Mandant einen Microservice abonniert hat, während die Ressourcennutzung dem Eigentümer zugewiesen wird.
-
-* **Ressourcenbasierte Abrechnung**: Legt die Menge der von einem Microservice genutzten Ressourcen offen, um die Gebühr zu berechnen.
-
-Die Abrechnungsmodi werden pro Microservice im [Microservice-Manifest](/microservice-sdk/concept/#manifest) angegeben und im Feld "billingMode" festgelegt.
-
-RESOURCES: Legt den ressourcenbasierten Abrechnungsmodus fest. Dies ist der Standardmodus. Er wird auf alle Microservices angewendet, für die nicht explizit der abonnementbasierte Abrechnungsmodus festgelegt wurde.
-
-SUBSCRIPTION: Legt den abonnementbasierten Abrechnungsmodus fest.
-
-##### Isolationsstufe
-
-Bei Microservices wird zwischen zwei Isolationsstufen unterschieden: Isolation nach Mandant und Isolation mehrerer Mandanten.
-
-Bei abonnementbasierter Abrechnung wird die gesamte Ressourcennutzung unabhängig von der Isolationsstufe stets dem Microservice-Eigentümer zugewiesen, während dem abonnierenden Mandanten das Abonnement in Rechnung gestellt wird.
-
-Bei ressourcenbasierter Abrechnung hängt die Berechnung von der Isolationsstufe ab:
-
-* Per-tenant (Pro Mandant) - Dem abonnierenden Mandanten werden die genutzten Ressourcen in Rechnung gestellt.
-* Multi-tenant (Mehrere Mandanten) - Dem Eigentümer des Microservice werden die genutzten Ressourcen in Rechnung gestellt.
-
-Im Falle der Mehrmandanten-Isolationsstufe werden dem übergeordneten Mandanten als Eigentümer eines Microservice (z. B. Management-Mandant eines Enterprise Tenants oder Service Providers) sowohl abonnierte Anwendungen (abonnementbasierte Abrechnung) als auch genutzte Ressourcen (ressourcenbasierte Abrechnung) der Untermandanten in Rechnung gestellt.
-
-##### Ressourcennutzungszuweisung für Abrechnungsmodus und Isolationsstufe
-
-|Abrechnungsmodus|Microservice-Isolation|Ressourcennutzung zugewiesen zu
-|:--------|:-----|:-----
-|Abonnementbasiert|Per-tenant|Eigentümer
-|Abonnementbasiert|Multi-tenant|Eigentümer
-|Ressourcenbasiert|Per-tenant|Abonnent
-|Ressourcenbasiert|Multi-tenant|Eigentümer
-
-##### Erfasste Werte
-
-Die folgenden Werte werden täglich bei jedem Mandanten erfasst:
-
-* CPU-Nutzung, angegeben in CPU-Millisekunden (1000m = 1 CPU)
-* Speichernutzung, angegeben in MB
-
-Microservice-Ressourcen werden täglich anhand von Grenzwerten erfasst, die im Microservice-Manifest definiert sind. Am Ende jedes Tages werden die Informationen zur Ressourcennutzung in den Mandantenstatistiken erfasst. Es wird auch berücksichtigt, dass ein Microservice eventuell nicht für einen ganzen Tag abonniert wird.
-
-**Beispiel**: Wenn ein Mandant einen Microservice 12 Stunden lang abonniert hat und der Microservice 2 CPUs und 2 GB Speicher aufweist, ist dies als 1000 CPU-Millisekunden und 1024 MB Speicher zu zählen.
-
-Für Abrechnungszwecke wird zusätzlich zur CPU- und Speichernutzung die Ursache der Abrechnung erfasst (z. B. Eigentümer, Abonnement für Mandanten):
-
-```json
-{
-  "name": "cep",
-	"cpu": 6000,
-	"memory": "20000",
-	"cause": "Owner"
-},
-{
-  "name": "cep-small",
-  "cpu": 1000,
-  "memory": "2000",
-  "cause": "Subscription for tenant"
-}
-```
-
-Die Informationen über die Microservice-Nutzung werden auf der Seite **Nutzungsstatistiken** aufgeführt.
-
-![Tenant statistics](/images/benutzerhandbuch/enterprise-tenant/et-subtenants-usage-statistics-microservice.png)
-
-Weitere Informationen finden Sie unter [Tenants > Tenant usage statistics](/reference/tenants/#tenant-usage-statistics) im Reference Guide. Beachten Sie, dass Detailinformationen nur bezüglich der täglichen Nutzung verfügbar sind. Bei einer zusammenfassenden Anfrage wird nur die Summe aller ausgegebenen Anfragen zurückgegeben.
-
-##### Skalierung
-
-Die automatische Skalierung überwacht Ihre Microservices und passt automatisch die Kapazität an, um eine stetige, prognostizierbare Leistung zu geringstmöglichen Kosten aufrechtzuerhalten. Die Microservice-Skalierung lässt sich durch Festlegen des Attributs `scale` im [Microservice-Manifest](/microservice-sdk/concept/#manifest) leicht konfigurieren.
-
-Wenn Sie beispielsweise einen Microservice haben, dessen Skalierungsregel auf AUTO gesetzt ist und der über die notwendigen CPU-Nutzungspunkte zum Starten einer neuen Microservice-Instanz für drei Stunden verfügt, wird Folgendes abgerechnet: (24/24 + 3/24) * verbrauchte Ressourcen.
-
-24/24 - eine Instanz den ganzen Tag aktiv<br>
- 3/24 - zweite Instanz nur drei Stunden aktiv
-
-Beachten Sie, dass für jede Änderung der Anzahl der Instanzen ein Auditeintrag vorgenommen wird.
-
-![Audit logs](/images/benutzerhandbuch/enterprise-tenant/et-audit-logs-microscaling.png)
-
-Weitere Informationen finden Sie unter [Auditing](/reference/auditing/) im Reference Guide.
-
-
 ### <a name="tenant-policies"></a> Mandantenregeln
 
 Eine Mandantenregel ist eine Menge von Mandantenoptionen und Datenhaltungsregeln. Mandantenoptionen und Datenhaltungsregeln können während der Erstellung eines Mandanten konfiguriert werden.
@@ -461,18 +232,20 @@ Klicken Sie **Mandantenregeln** im Menü **Mandanten**, um alle verfügbaren Man
 
 <img src="/images/benutzerhandbuch/enterprise-tenant/et-tenant-policies.png" alt="Tenant policies">
 
-Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anzahl der Optionen und Datenerhaltungsregeln angezeigt, wahlweise in Listen- oder Gitteransicht.
+Für jede Mandantenregel wird der Name, eine optionale Beschreibung und die Anzahl der Optionen und Datenhaltungsregeln angezeigt, wahlweise in Listen- oder Gitteransicht.
 
 #### So erstellen Sie eine Mandantenregel
 
 1. Klicken Sie **Mandantenregel hinzufügen** in der oberen Menüleiste.
 <br>![Add new policy](/images/benutzerhandbuch/enterprise-tenant/et-tenant-policy-add.png)<br>
 2. Geben Sie im darauf folgenden Dialog einen Namen und eine optionale Beschreibung ein.
-3. Geben Sie mindestens eine Datenerhaltungsregel ein. Weitere Informationen zur Erstellung von Datenerhaltungsregeln finden Sie unter [Administration > Verwalten der Datenhaltung > Datenerhaltungsregeln](/benutzerhandbuch/administration-de#retention-rules).
+3. Geben Sie mindestens eine Datenhaltungsregel ein. Weitere Informationen zur Erstellung von Datenhaltungsregeln finden Sie unter [Administration > Verwalten der Datenhaltung > Datenerhaltungsregeln](/benutzerhandbuch/administration-de#retention-rules).
 4. Geben Sie optional eine Mandantenoption ein.
 5. Klicken Sie **Speichern**.
 
 Die Mandantenregel wird der Mandantenregel-Liste hinzugefügt.
+
+>**Wichtig:** Beim Definieren der Datenhaltungsregeln und der Optionen können Sie durch Aktivieren eines Kontrollkästchen erlauben, dass Untermandanten Definitionen dieser Regeln oder Optionen bearbeiten können. Standardmäßig ist das Kontrollkästchen nicht aktiviert. Hinweis: Wenn Sie dieses Kontrollkästchen nach Anlegen des Untermandanten nicht aktivieren, müssen Sie zum Bearbeiten dieser Regeln und Optionen vom Management-Mandanten aus eine Aktualisierung starten.
 
 #### So bearbeiten Sie eine Mandantenregel
 

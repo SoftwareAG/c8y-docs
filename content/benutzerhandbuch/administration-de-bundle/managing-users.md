@@ -106,7 +106,7 @@ Standardmäßig zeigt die Seite **Benutzer** nur die Hauptbenutzer. Klicken Sie 
 </table>
 
 3. Wählen Sie die Anmeldeoptionen für den Benutzer aus.
-	* 	**Zwei-Faktor-Authentifizierung (SMS)**: Wenn ausgewählt, erhält der Benutzer per SMS einen Bestätigungscode, der zum Abschließen der Authentifizierung erforderlich ist. Die SMS wird an die oben konfigurierte Telefonnummer gesendet. Weitere Informationen finden Sie unter [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration-de/#tfa).
+	* 	**Zwei-Faktor-Authentifizierung (SMS)**: Wenn ausgewählt, erhält der Benutzer per SMS einen Bestätigungscode, der zum Abschließen der Authentifizierung erforderlich ist. Die SMS wird an die oben konfigurierte Telefonnummer gesendet. Weitere Informationen finden Sie unter [Zwei-Faktor-Authentifizierung](/benutzerhandbuch/administration-de/#tfa). 
 	* **Benutzer muss sein Passwort beim nächsten Anmelden zurücksetzen**: Wenn ausgewählt, müssen Sie ein Passwort angeben, das der Benutzer beim nächsten Anmelden zurücksetzen muss. Geben Sie ein Passwort ein und bestätigen Sie es. Während der Passworteingabe wird die Stärke des Passworts geprüft. Weitere Informationen zur Passwortstärke finden Sie unter [So melden Sie sich an der Cumulocity IoT-Plattform an](/benutzerhandbuch/getting-started-de/#login).  
 	* **Link für das Zurücksetzen des Passworts per E-Mail senden**: Wenn ausgewählt, erhält der Benutzer eine E-Mail mit einem Link zum Setzen des Passworts. Die E-Mail wird zu der oben konfigurierten Adresse gesendet.
 

@@ -132,3 +132,119 @@ As an alternative, it is also allowed to pass the following reference object in 
       "managedObject" : { "id" :"<<ManagedObject id>>" }
     }
 ```
+
+### POST - Add multiple object references to the collection
+
+**Request body:** ManagedObjectReferenceCollection
+
+**Response body:** ManagedObjectReferenceCollection (when the Accept header is not provided, an empty response body is returned)
+
+**Required role:** ROLE\_INVENTORY\_ADMIN or parent and children owner
+
+
+#### Example request - Add a ManagedObjectReferenceCollection
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Host|{{hostname}}
+|Content-Type|application/vnd.com.nsn.cumulocity.managedObjectReferenceCollection+json;ver=... 
+|Accept|application/vnd.com.nsn.cumulocity.managedObjectReferenceCollection+json;ver=... 
+
+```http
+
+POST <<url>>/inventory/managedObjects/<<deviceId>>/<<references>>
+
+{
+   "references":[
+      {
+         "managedObject":{
+            "id":"<<ManagedObject id>>"
+         }
+      },
+      {
+         "managedObject":{
+            "id":"<<ManagedObject id>>"
+         }
+      }
+   ]
+}
+```
+
+#### Example response
+
+|HEADERS||
+|:---|:---|
+|Content-Type|application/vnd.com.nsn.cumulocity.managedObjectReferenceCollection+json;ver=...
+
+```http
+HTTP/1.1
+201 - Created
+
+{
+  "references": [
+    {
+      "self" : "<<This ManagedObjectReference URL>>,
+      "managedObject" : {
+        "id" : "2",
+        "self" : <<ManagedObject 2 URL>>,
+        "name" : "Meter2",
+        ...
+      }
+    },
+    {
+      "self" : "<<This ManagedObjectReference URL>>,
+      "managedObject" : {
+        "id" : "3",
+        "self" : <<ManagedObject 3 URL>>,
+        "name" : "Meter3",
+        ...
+      }
+    }
+  ]
+}
+```
+
+### DELETE - Managed object reference collection
+
+**Request body:** ManagedObjectReferenceCollection
+
+**Response message body:** N/A
+
+**Required role:** ROLE\_INVENTORY\_ADMIN or parent owner or child owner
+
+> **Info:** This operations just removes the reference, it does not delete the object itself.
+
+#### Example request - Delete a managed object reference collection
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Host|{{hostname}}
+|Content-Type|application/vnd.com.nsn.cumulocity.managedObjectReferenceCollection+json;ver=... 
+
+```http
+DELETE /inventory/managedObjects/<<deviceId>>/<<references>>
+
+{
+   "references":[
+      {
+         "managedObject":{
+            "id":"<<ManagedObject id>>"
+         }
+      },
+      {
+         "managedObject":{
+            "id":"<<ManagedObject id>>"
+         }
+      }
+   ]
+}
+```
+
+#### Example response
+
+```http
+HTTP/1.1
+204 - NO CONTENT
+```

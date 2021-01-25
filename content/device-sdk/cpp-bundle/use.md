@@ -192,7 +192,7 @@ After running this example, you will see a device named *HelloC8Y-Agent* in the 
 
 Now that we have successfully integrated a demo device to Cumulocity IoT, we can indeed do something more interesting. Let's try sending CPU measurements every 10 seconds.
 
-As shown in [Integrating to Cumulocity IoT](#integrating-to-cumulocity), first we need to add a new SmartREST template for CPU measurement and also increase the template version number. Then we subclass the pure virtual class `SrTimerHandler` and implement the `()` operator. `CPUMEasurement` is a callback functor which generates bogus CPU measurements using the `rand` function from the standard library. It will be called by the `SrAgent` at a defined interval of the registered `SrTimer`.
+As shown in [Integrating to Cumulocity IoT](#integrating-to-cumulocity-iot), first we need to add a new SmartREST template for CPU measurement and also increase the template version number. Then we subclass the pure virtual class `SrTimerHandler` and implement the `()` operator. `CPUMEasurement` is a callback functor which generates bogus CPU measurements using the `rand` function from the standard library. It will be called by the `SrAgent` at a defined interval of the registered `SrTimer`.
 
 In the `main` function, we instantiate a `CPUMEasurement` and register it to a `SrTimer` in the class constructor. `SrTimer` supports millisecond resolution, so 10 seconds are 10,000 milliseconds.
 

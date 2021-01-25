@@ -2,9 +2,6 @@
 title: Neural Network Designer
 layout: redirect
 weight: 40
-
-aliases:
-  - /predictive-analytics/web-app-mlw/#nn-designer
 ---
 
 

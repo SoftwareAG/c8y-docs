@@ -6,7 +6,7 @@ layout: bundle
 
 <p class="lead">In this document you will get an overview on how to develop a plugin that adds a new widget to dashboards.</p>
 
-Before you start working on the widget plugins, we recommend you to take a look at the [introduction](/web/web-sdk-for-plugins#overview) which deals with the basic concepts of applications and plugins as well as an "Hello world!" style demo plugin.
+Before you start working on the widget plugins, we recommend you to take a look at the [introduction](/web-sdk-for-plugins/overview) which deals with the basic concepts of applications and plugins as well as  the "[Hello world!](/web-sdk-for-plugins/hello-world/)" style demo plugin.
 
 You can find this and all the other plugins described in the documentation inside the repository [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
 
@@ -19,7 +19,7 @@ With the following plugin a new widget will be available for dashboards which di
 In order to achieve this goal you need to do the following steps:
 
 * Create a plugin.
-* Declare the plugin on the imports list of the [application manifest](/web/web-sdk-for-plugins#application-manifest).
+* Declare the plugin on the imports list of the [application manifest](/web-sdk-for-plugins/concepts/#application-manifest).
 * Add an item to the widget menu list.
 * Get the images for the devices.
 * Create a view for the widget.
@@ -33,7 +33,7 @@ Inside your application folder, run the command:
 ```console
 $ c8y create:plugin iconmap
 ```
-Then edit the [plugin manifest](/web/web-sdk-for-plugins#plugin-manifest) in /plugins/iconmap to add the following information:
+Then edit the [plugin manifest](/web-sdk-for-plugins/concepts/#plugin-manifest) in /plugins/iconmap to add the following information:
 
 ```json
 {
@@ -236,7 +236,7 @@ The "leaflet" tag adds an [interactive map](http://leafletjs.com/) to our widget
 
 #### Test your plugin
 
-After [deploying](/web/web-sdk-for-plugins#create-application) the plugin to your tenant, you should be able to create a widget "Icon Map". Note that in order to see an image for your device, you have to upload an image with the device type as file name to the [file repository](/users-guide/administration#files) of your tenant.
+After [creating and deploying](/web-sdk-for-plugins/hello-world/#create-application) the plugin to your tenant, you should be able to create a widget "Icon Map". Note that in order to see an image for your device, you have to upload an image with the device type as file name to the [file repository](/users-guide/administration#files) of your tenant.
 
 ### Weather Plugin
 
@@ -251,7 +251,7 @@ In order to achieve this goal you need to do the following steps:
 * Add an item to the navigator menu.
 * Create a view where the user can save the API key.
 * Create a plugin for the widget.
-* Declare the plugins on the imports list of the [application manifest](/web/web-sdk-for-plugins#application-manifest).
+* Declare the plugins on the imports list of the [application manifest](/web-sdk-for-plugins/concepts/#application-manifest).
 * Add an item to the widget menu list.
 * Get the weather for the device.
 * Create a view for the widget.
@@ -281,7 +281,7 @@ Inside your application folder, run the command:
 ```console
 $ c8y create:plugin weatherAdmin
 ```
-Then edit the [plugin manifest](/web/web-sdk-for-plugins#plugin-manifest) in /plugins/weatherAdmin to add the following information:
+Then edit the [plugin manifest](/web-sdk-for-plugins/concepts/#plugin-manifest) in /plugins/weatherAdmin to add the following information:
 
 ```json
 {
@@ -430,7 +430,7 @@ Inside your application folder, run the command:
 ```console
 $ c8y create:plugin weather
 ```
-Then edit the [plugin manifest](/web/web-sdk-for-plugins#plugin-manifest) in /plugins/weather to add the following information:
+Then edit the [plugin manifest](/web-sdk-for-plugins/concepts/#plugin-manifest) in /plugins/weather to add the following information:
 
 ```json
 {
@@ -653,4 +653,4 @@ In our config, we already specified the .html file which contains our view for t
 
 #### Test your plugin
 
-After [deploying](/web/web-sdk-for-plugins#create-application) the plugin to your tenant, you should be able to create a widget "Weather". Note that you have to enter the API key first to see the weather information.
+After [creating and deploying](/web-sdk-for-plugins/hello-world/#create-application) the plugin to your tenant, you should be able to create a widget "Weather". Note that you have to enter the API key first to see the weather information.

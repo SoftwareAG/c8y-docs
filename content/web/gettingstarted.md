@@ -39,9 +39,9 @@ If you point your browser to `http://localhost:9000/apps/myapp/` you will get a 
 }
 ```
 
-After logging in you should see a barely empty starter application. If you want to start with a more complex example read the documentation about [@c8y/apps](/web/libraries/#application). If you want to build and deploy your application read more about the necessary commands of the [developer command line tool](/web/development-tools/#c8y-cli).
+After logging in you should see a barely empty starter application. If you want to start with a more complex example read the documentation about [@c8y/apps](/web/libraries/#application). If you want to build and deploy your application read more about the necessary commands of the [c8y command line tool](/web/development-tools/#c8y-cli).
 
-> **Info**: If you want to extend an existing application like Cockpit you can spin up a hybrid application. This allows you to combine existing AngularJS plugins into the new Web SDK, see [Migration](/web/upgrade/#migration).
+> **Info**: If you want to extend an existing application like Cockpit, you can spin up a hybrid application. This allows you to combine existing AngularJS plugins into the new Web SDK, see [Migration](/web/upgrade/#migration).
 
 > **Info**: You need to provide your tenant name or the tenant ID on login (as the application cannot derive it from the URL on localhost). If you don't know your tenant name or the tenant ID you can use the [REST API to request it](/reference/tenants/#get-the-current-tenant-details).
 
@@ -90,6 +90,6 @@ export class AppModule {}
 
 ```
 
-If you start this application and log in you will see an application similar to the following screenshot. To extend this application you can use the [Angular Router](https://angular.io/guide/router#router-imports) in combination with our [@c8y/ngx-components](/web/libraries#ngx-components).
+If you start this application and log in you will see an application similar to the following screenshot. To extend this application you can use the [Angular Router](https://angular.io/guide/router#router-imports) in combination with our [@c8y/ngx-components](/web/libraries/#component).
 
 ![An Angular based application](/images/web-sdk/hello-world-example.png)

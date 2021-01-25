@@ -46,11 +46,12 @@ Use `client.<endpoint>.list()` to request listed data from the Cumulocity IoT RE
 <tr>
 <td><code>list(filter)</code></td>
 <td>Request a list of data with an optional filter.</td>
-<td><code>filter:object</code>: (optional) A filter for <a href="../../reference/rest-implementation/#rest-usage">paging</a> or <a href="../../reference/inventory/#query-language">filtering</a> of the list.</td>
+<td><code>filter:object</code>: (optional) A filter for <a href="../../reference/rest-implementation/#a-namepagingaquery-result-paging">paging</a> or <a href="../../reference/inventory/#query-language">querying</a> of the list.</td>
 <td><code>Promise&lt;IResultList&lt;TData&gt;&gt;</code>: The list as Promise wrapped in an IResultList. IResultList contains data, response and paging.</td>
 </tr>
 </tbody>
 </table>
+
 
 * Example for receiving details of one managedObject of the inventory via `detail`:
 
@@ -147,7 +148,7 @@ The `detail$` and `list$` functions allow to subscribe to realtime channels that
 <tr>
 <td><code>list$(filter, options)</code></td>
 <td>Returns an observable for a list of entities.</td>
-<td><code>filter: object</code>: (optional) A filter for <a href="../../reference/rest-implementation/#rest-usage">paging</a> or <a href="../../reference/inventory/#query-language">filtering</a> of the list (optional).<br><code>options: IObservableOptions</code>: (optional) An configuration object to define the observable.</td>
+<td><code>filter: object</code>: (optional) A filter for <a href="../../reference/rest-implementation/#a-namepagingaquery-result-paging">paging</a> or <a href="../../reference/inventory/#query-language">querying</a> of the list (optional).<br><code>options: IObservableOptions</code>: (optional) An configuration object to define the observable.</td>
 <td><code>ObservableList&lt;TData&gt;&gt;</code>: The list as subscribable observable.</td>
 </tr>
 </tbody>

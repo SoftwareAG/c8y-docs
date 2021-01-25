@@ -219,6 +219,6 @@ Although the modification to the application is read from the target file, the d
 
 #### Alternative to target files
 
-As an alternative to target files developers should now use [applications options](/web/application-configuration/#applications-options).
+As an alternative to target files developers should now use [application options](/web/application-configuration/#application-options).
 
 There is no alternative to mutating the list of imported plugins. The recommended approach is to explicitly import the required modules.

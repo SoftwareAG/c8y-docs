@@ -115,7 +115,7 @@ export class AcmeComponent implements OnInit {
 ```
 
 1. We inject the `FetchClient` which is the `fetch` abstraction used by the client.
-2. We request the data via `fetchClient.fetch`. The function is identical to the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) (as a second parameter it accepts for example the method or data) except that it adds the authentication to the platform.
+2. We request the data via `fetchClient.fetch`. The function is identical to the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) (as a second parameter it accepts for example the method or data) except that it adds the authentication to the platform.
 3. We parse the data and set it onto our controller to display it in the template.
 
 Next, we need to add a route to our application where we can show this component. The following code does this in the `app.module.ts`, without going into many details, as this is already explained in other recipes:

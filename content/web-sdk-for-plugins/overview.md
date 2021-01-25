@@ -35,14 +35,14 @@ The illustration above shows the structure which lies behind the application and
 
 As the default applications, your applications will be built on AngularJS and the "c8y.core" and "c8y.ui" [JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules). Both modules offer you services to interact with the Cumulocity IoT web application. While the module "c8y.core" provides services to access different kinds of data, such as users and managed objects as well as basic functionalities, the module "c8y.ui" provides services to modify the user interface of your application or plugin, such as adding menu items or widgets. The modules in turn use the [REST API](/rest/introduction) provided by Cumulocity IoT. You can find examples on how to use the services in the plugin examples.
 
-First, this section describes the [concept](#concepts) behind applications and plugins and specifies the required folder structure and different configuration options for applications and plugins. Next, the [setup](#setup) necessary for developing applications and plugins is described.
+The following section describes the [concepts](/web-sdk-for-plugins/concepts/) behind applications and plugins and specifies the required folder structure and different configuration options for applications and plugins. Next, the [setup](/web-sdk-for-plugins/setup/) necessary for developing applications and plugins is described.
 
-Several [sample plugins](#sample-plugins) are provided and we describe how to create a ["Hello World!"](#hello-world) sample plugin step-by-step.
+Several [sample plugins](/web-sdk-for-plugins/sample-plugins/) are provided and we describe how to create a ["Hello World!"](/web-sdk-for-plugins/hello-world/) sample plugin step-by-step.
 
 Additionally, more complex examples are provided:
 
-* [Branding plugin](/web/web-sdk-for-plugins#branding-plugin)
-* [Tab plugin](/web/web-sdk-for-plugins#tab-plugin)
-* [Widget plugin](/web/web-sdk-for-plugins#widget-plugin)
+* [Branding plugin](/web-sdk-for-plugins/branding-plugin/)
+* [Widget plugin](/web-sdk-for-plugins/widget-plugin/)
+* [Tab plugin](/web-sdk-for-plugins/tab-plugin/)
 
 Although an overview of the concepts of applications and plugins will be provided in the following, we recommend you to take a look at the basic concept of Cumulocity IoT applications described in [Developing applications](/concepts/applications).

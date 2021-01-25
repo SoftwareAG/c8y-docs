@@ -58,7 +58,7 @@ Second, we have to fill out the application manifest (the "cumulocity.json" file
 
 With the project structure so far, we can already test our application. By adding the "c8yBranding" plugin from the Cumulocity IoT UI package to our imports, our application will not be completely empty when we try to access it. As the name already indicates, the plugin adds the Cumulocity IoT's branding to our application. Before we can test an application locally, we have to create it on our tenant first.
 
-For more details on other properties of the manifest, see "[Manifests](#manifests)".
+For more details on other properties of the manifest, see ["Manifests"](/web-sdk-for-plugins/concepts/#manifests).
 
 ### <a name="create-application"></a>Create the application in your tenant
 
@@ -174,7 +174,7 @@ The plugin manifest provides information about our plugin, such as the name, a s
 }
 ```
 
-For more details on other properties of the manifest, see "[Manifests](#manifests)".
+For more details on other properties of the manifest, see ["Manifests"](/web-sdk-for-plugins/concepts/#manifests).
 
 Now that we have added a plugin to our application, we also have to add it to the imports of our application manifest. The name of the import consists of two parts separated by a slash. The first part has to be the context path of the application the plugin is located in and the second part has to be the name of the plugin folder. In our case, our plugin is located in our application with the context path "myapplication" as specified in the application manifest and our plugin folder is named "myplugin" which results in:
 
@@ -343,7 +343,7 @@ The build process for an app includes the following steps:
 
 ### <a name="target"></a>Deploy your plugin to the core applications
 
-You can also add or [replace](/web/branding-plugin#branding) plugins in the core applications by specifying a target .json file. This file is not restricted in its name or path.
+You can also add or [replace](/web-sdk-for-plugins/branding-plugin) plugins in the core applications by specifying a target .json file. This file is not restricted in its name or path.
 
 ```json
 {

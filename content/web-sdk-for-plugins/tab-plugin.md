@@ -8,7 +8,7 @@ In this document you will get an overview on how to develop a plugin that adds a
 
 ### Overview
 
-Before you start working on the tab plugins, we recommend you to take a look at the [introduction](/web/web-sdk-for-plugins#overview) which deals with the basic concepts of applications and plugins as well as an "Hello world!" style demo plugin.
+Before you start working on the tab plugins, we recommend you to take a look at the [introduction](/web-sdk-for-plugins/overview/) which deals with the basic concepts of applications and plugins as well as an "Hello world!" style demo plugin.
 
 You can find this and all the other plugins described in the documentation inside the repository [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples).
 
@@ -21,7 +21,7 @@ This section shows how to create a plugin that adds a new tab "Contact" to devic
 In order to achieve this goal you need to do the following steps:
 
 * Create a plugin.
-* Declare the plugin on the imports list of the [application manifest](/web/web-sdk-for-plugins#application-manifest).
+* Declare the plugin on the imports list of the [application manifest](/web-sdk-for-plugins/concepts/#application-manifest).
 * Add a tab to devices.
 * Display data in the tab.
 * Persist the data to Cumulocity IoT backend.
@@ -44,7 +44,7 @@ Add the printed list of plugins to the imports definition of your application ma
 
 However, if you prefer a more minimalistic approach you can also read the "cumulocity.json" file in [cumulocity-ui-plugin-examples](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples) and only import the essential plugins for the Device Contact plugin to work.
 
-> **TIP** 
+> **TIP**
 Run `c8y util:showimports cockpit` or `c8y util:showimports administration` to see other plugins available to you. The manifests for the built-in applications are stored in *_apps.json* inside "node_modules/cumulocity-ui-build".
 
 
@@ -56,7 +56,7 @@ Inside your application folder, run the command:
 $ c8y create:plugin deviceContact
 ```
 
-Then edit the [plugin manifest](/web/web-sdk-for-plugins#plugin-manifest) in "plugins/deviceControl" to add the following information:
+Then edit the [plugin manifest](/web-sdk-for-plugins/concepts/#plugin-manifest) in "plugins/deviceControl" to add the following information:
 
 ```json
 {
@@ -90,7 +90,7 @@ Update the application manifest to add this new plugin to the import list.
 ### Add a tab to devices
 
 Now, we create an empty "Contact" tab in the device details view, which we will fill with contents in the following step.
-Inside the plugin folder, create a file "deviceContact.config.js" with the content below. Just like in the ["Hello world!" example](/web/web-sdk-for-plugins#hello-world), we will use the "c8yViewsProvider" service provided by the [Cumulocity IoT JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules) to add a new view to our application.
+Inside the plugin folder, create a file "deviceContact.config.js" with the content below. Just like in the ["Hello world!" example](/web-sdk-for-plugins/hello-world), we will use the "c8yViewsProvider" service provided by the [Cumulocity IoT JavaScript API](http://resources.cumulocity.com/documentation/websdk/ng1-modules) to add a new view to our application.
 
 ```js
 (function() {
@@ -165,7 +165,7 @@ Now that we have added the module, config and controller to our plugin, we have 
 }
 ```
 
-At this point, you can [test your application](/web/web-sdk-for-plugins#create-application) by deploying it. When selecting a device, a new tab "Contact" should be displayed.
+At this point, you can [test your application](/web-sdk-for-plugins/hello-world/#create-application) by deploying it. When selecting a device, a new tab "Contact" should be displayed.
 
 ### Display data in the "Contact" tab
 

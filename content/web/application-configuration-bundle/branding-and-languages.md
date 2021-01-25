@@ -324,7 +324,7 @@ Above we described the possible options for creating your custom branding in det
 
 ### Branding and language customization
 
-Using [application options](/web/application-configuration/#application-options), each tenant can customize the look and feel of built-in applications and add or replace the languages available in the applications. As described in [Application options](/web/application-configuration/#application-options), the underlying mechanism is static hosted web application.
+Using [application options](/web/application-configuration/#application-options), each tenant can customize the look and feel of built-in applications and add or replace the languages available in the applications. As described in [application options](/web/application-configuration/#application-options), the underlying mechanism is static hosted web application.
 
 In this tutorial we are publishing two web applications:
 

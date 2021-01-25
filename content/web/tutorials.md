@@ -4,7 +4,7 @@ title: Tutorials
 layout: bundle
 ---
 
-This section lists common how-to recipes for the [Web SDK](/web/overview). It requires:
+This section lists common how-to recipes for the Web SDK. It requires:
 
  - a basic understanding of Angular components, services and modules.
  - an understanding on how to scaffold an application and how to run it with the [@c8y/cli](/web/development-tools/#c8y-cli).

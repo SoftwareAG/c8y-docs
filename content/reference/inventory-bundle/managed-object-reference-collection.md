@@ -182,6 +182,7 @@ HTTP/1.1
 201 - Created
 
 {
+  "self" : "<<This ManagedObjectReferenceCollection URL>>",
   "references": [
     {
       "self" : "<<This ManagedObjectReference URL>>,

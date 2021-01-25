@@ -17,7 +17,7 @@ Usability in the **Logs** tab of subscribed applications has been enhanced.
 
 ![Microservice logging](/images/users-guide/Administration/admin-applications-logs.png)
 
-For details, see [Administration > Managing applications](/users-guide/administration/managing-applications) in the User guide.
+For details, see [Administration > Managing applications](/users-guide/administration/#managing-applications) in the User guide.
 
 
 **Single sign-on**

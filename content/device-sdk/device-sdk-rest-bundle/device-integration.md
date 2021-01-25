@@ -473,7 +473,7 @@ Similar, use a POST request for events. The following example shows a location u
 Note that all data types in Cumulocity IoT can include arbitrary extensions in the form of additional fragments. In this case, the event includes a position, but also self-defined fragments can be added.
 
 
-### Step 11: Send alarms
+#### Step 11: Send alarms
 
 Alarms represent events that most likely require human intervention to be solved. For example, if the battery in a device runs out of energy, someone has to visit the device to replace the battery. Creating an alarm is technically very similar to creating an event.
 

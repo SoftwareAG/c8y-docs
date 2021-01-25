@@ -63,8 +63,12 @@ See below for detailed information about available settings.
 ### Settings
 
 <table>
-<col width=150>
-<col width=150>
+<colgroup>
+<col width="20%">
+<col width="20%">
+<col width="70%">
+<col width="10%">
+</colgroup>
 <thead>
 <tr>
 <th style="text-align:left">Name</th>

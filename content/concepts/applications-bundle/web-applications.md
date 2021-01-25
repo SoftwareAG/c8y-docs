@@ -19,9 +19,9 @@ The Cumulocity IoT UI itself is built around a framework based on AngularJS and 
 
 ### Deploying web applications
 
-For an application to be available it has to be deployed on the Cumulocity IoT platform. 
+For an application to be available it has to be deployed on the Cumulocity IoT platform.
 
-For details on how to deploy an application to Cumulocity IoT, refer to [Administration > Managing applications](/users-guide/administration#applications) in the User guide. 
+For details on how to deploy an application to Cumulocity IoT, refer to [Administration > Managing applications](/users-guide/administration/#managing-applications) in the User guide.
 
 > **Info:** In case of a web application, the application is active for you as owner without subscribing to it.
 
@@ -31,4 +31,4 @@ You can host your own HTML5 and JavaScript web applications through Cumulocity I
 
 ![List of own applications](/images/users-guide/Administration/admin-applications-own.png)
 
-For details refer to  [Administration > Managing applications](/users-guide/administration#applications) in the User guide. 
+For details refer to  [Administration > Managing applications](/users-guide/administration/#managing-applications) in the User guide. 

@@ -2,83 +2,69 @@
 title: Projects
 layout: redirect
 weight: 30
-
-aliases:
-  - /predictive-analytics/web-app-mlw/#projects
 ---
 
-MLW provides a project structure where all the Data, Model, Code are wrapped under one umbrella which simplifies the working environment for a Data Scientist along with the repository management.
+MLW provides a version controlled project-based structure to organize all the data science resources including data, code, models, neural network architectures, inference pipelines and training workflows.
 
 Projects functionality includes:
 
 * Creating a new project
 * Adding resources to the project - drag and drop, upload single or multiple files
-* Committing a project - Version Management
+* Committing a project - version management
 
 ***Add New Project***
 
-To create a new project, click on **+Add Project** button and fill the form with **Project Name**, **Project Description** and click on **Add Project** . This will create a new project with the given name.
+To create a new project, click on **+Add Project** button and fill the form with **Project Name**, **Project Description** and click on **Add Project** . This will create a new project with the given name. The new project will not contain any resources.
 
 ![projects manager](/images/zementis/mlw-app-add-project.png)
 
 ***Resources***
 
-In **Machine Learning Workbench**, the resources are categorized into 6 different categories.
-
-* Data
-  * csv
-  * json
-  * zip
-  * png
-  * jpg
-  * jpeg
-* Code
-  * py
-  * ipynb
-* Model
-  * pmml
-  * onnx
-* NN Designer
-  * architecture
-* Inference Pipeline
-  * pipeline
-* Training Workflow
-  * wf
-  
 ![Resources](/images/zementis/mlw-app-project-home.png)
 
-***Upload Resources - drag and drop***
+MLW categorizes project resources as follows:
 
-To upload files, the user can drag and drop files or he/she can click on the upload pane and select the files for uploading.
+| Resource | Content Description | File Type |
+|-----     |-----        |-----      |
+| Data | Training Data for MLW | <ul><li>csv</li><li>json</li><li>zip</li><li>png</li><li>jpg/jpeg</li></ul> |
+| Code | Python code for data preparation/exploration, data pre/post-processing steps, model training and evaluation | <ul><li>py</li><li>ipynb</li></ul> |
+| Model | Models trained by MLW | <ul><li>pmml</li><li>onnx</li></ul> |
+| NN Designer | Architectures depicting complex structures of deep neural networks | <ul><li>architecture (JSON)</li></ul> |
+| Inference Pipeline | Inference pipelines that define a sequence of pre-processing step, ONNX model and post-processing step | <ul><li>pipeline (JSON)</li></ul> |
+| Training Workflow | Training workflows that define a sequence of data preparation and model training/export activity that can be scheduled periodically | <ul><li>wf (JSON)</li></ul> |
+
+***Upload Resources***
+
+To upload files, the user can either click on the upload pane to select files for uploading or use the drag and drop files capability.
 
 ![Upload Resources](/images/zementis/mlw-app-upload-resources.png)
 
 ***Upload Complete***
 
-Once the files are uploaded, it can be seen under respective categories.
+Once the files are uploaded, they will be placed under respective categories.
 
 ![Upload Resources](/images/zementis/mlw-app-upload-complete.png)
 
-***Commit Version selection***
+***Commit Project Version***
 
 Users can commit a project with its resources for versioning.
 
 ![Upload Resources](/images/zementis/mlw-app-project-commit.png)
 
-***File Selection For Version***
+***Resource Selection For Version***
 
-User can select all/subset of the files that needs to be committed to a version.
+User can select all/subset of resource files that needs to be committed to a version.
 
 ![Upload Resources](/images/zementis/mlw-app-project-commit-select.png)
 
 ***Version Committed***
 
-Users can see the status of the commit process in the **Tasks** section under the respective task name.
+Users can see the status of the commit process in the **Tasks** section under the respective task name, which in this case will be the project name.
 
 ![Upload Resources](/images/zementis/mlw-app-project-commited.png)
 
 ***Version Information***
 
-Project tile will show the different versions available for that particular project.
+Project tile will show the different versions available for that project.
 
 ![Upload Resources](/images/zementis/mlw-app-project-version.png)

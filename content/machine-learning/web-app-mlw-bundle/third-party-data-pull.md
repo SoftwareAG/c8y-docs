@@ -1,97 +1,92 @@
 ---
-title: Third Party Data pull
+title: Data Pull
 layout: redirect
 weight: 35
-
-aliases:
-  - /predictive-analytics/web-app-mlw/#datapull
 ---
 
-MLW provides a connector to the various Data Sources such as Cumulocity, DataHub etc. from where the data could be downloaded and Machine Learning model building process could be started.
+MLW provides a connector to the various Data Sources such as Cumulocity, DataHub etc. from where the data could be downloaded to start Machine Learning model building process.
 
-***Cumulocity Data pull***
+**Cumulocity**
 
-***Add new resource***
+Following steps illustrate how to ingest and transform data produced by devices connected to Cumulocity IoT.
 
-Select **Add Resource** and select **Import from Cumulocity**
+1. ***Add new resource***
 
-![Add New Resource](/images/zementis/mlw-app-resource-c8y.png)
+    Select **Add Resource** and select **Import from Cumulocity**
 
-
-***Fetch Data from the device***
-
-Select on the device from where you want to pull the data by hitting on **Fetch Data** button
-
-![Cumulocity Data pull](/images/zementis/mlw-app-datapull-c8y.png)
+    ![Add New Resource](/images/zementis/mlw-app-resource-c8y.png)
 
 
-***Cumulocity Data pull parameters***
+1. ***Fetch data from the device***
 
-Provide the parameters such as **File Name**, **Date From**, **Date To**, **Aggregation**, **Data Points** and click on **Submit**
+    Select the device for which you want to pull the data and click the **Fetch Data** button
 
-![Cumulocity parameters](/images/zementis/mlw-app-datapull-param.png)
-
-
-***Cumulocity Data pull - added to tasks***
-
-You can view the data pull progress in the **Tasks** section of the MLW
-
-![Cumulocity Datapull Tasks](/images/zementis/mlw-app-datapull-tasks.png)
+    ![Cumulocity Data pull](/images/zementis/mlw-app-datapull-c8y.png)
 
 
-***Cumulocity Data pull Complete***
+1. ***Cumulocity data pull parameters***
 
-Once the task has reached **COMPLETED** status, the data would be stored in the **Data** section of the MLW
+    As part of data pull, provide the parameters such as **File Name**, **Date From**, **Date To**, **Aggregation** and **Data Points** which will determine the data file name, data interval, data aggregation and sensor name for data extraction. Once these parameters are provided, click the **Submit** button
 
-![Cumulocity Complete](/images/zementis/mlw-app-datapull-complete.png)
-
-
-***DataHub datapull***
+    ![Cumulocity parameters](/images/zementis/mlw-app-datapull-param.png)
 
 
-***Add new datahub resource***
+1. ***Cumulocity data pull progress***
 
-Select **Add Resource** and select **Import from DataHub**
+    You can view the data pull progress in the **Tasks** section of MLW
 
-![Add New Datahub Resource](/images/zementis/mlw-app-resource-dh.png)
-
-
-***DataHub query***
-
-Input the query and hit on **Submit** button
-
-![DataHub Query](/images/zementis/mlw-app-dh-query.png)
+    ![Cumulocity Datapull Tasks](/images/zementis/mlw-app-datapull-tasks.png)
 
 
-***Resource name***
+1. ***Cumulocity data pull complete***
 
-Provide the **Resource Name** with which you want to save the pulled data and hit on **Submit** button
+    Once the task has reached **COMPLETED** status, the data would be stored in the **Data** section of MLW
 
-![DataHub name](/images/zementis/mlw-app-dh-name.png)
-
-
-***Datahub result***
-
-You can view the data pull progress in the **Tasks** section of the MLW
-
-![Datahub result](/images/zementis/mlw-app-dh-result.png)
+    ![Cumulocity Complete](/images/zementis/mlw-app-datapull-complete.png)
 
 
-***DataHub saved data***
+**DataHub**
 
-Once the task has reached **COMPLETED** status, the data would be stored in the **Data** section of the MLW
+Following steps illustrate how to ingest and transform data offloaded by Cumulocity IoT DataHub.
 
-![Cumulocity Data pull](/images/zementis/mlw-app-dh-data.png)
+1. ***Add new datahub resource***
+
+    Select **Add Resource** and select **Import from DataHub**
+
+    ![Add New Datahub Resource](/images/zementis/mlw-app-resource-dh.png)
 
 
-***DataHub data info***
+1. ***DataHub query***
 
-You could view the metadata for the newly created CSV file (DataHub pulled data)
+    Input the query and click the **Submit** button
+
+    ![DataHub Query](/images/zementis/mlw-app-dh-query.png)
+
+
+1. ***Resource name***
+
+    Provide the **Resource Name** with which you want to save the pulled data and click the **Submit** button
+
+    ![DataHub name](/images/zementis/mlw-app-dh-name.png)
+
+
+1. ***Datahub data pull progress***
+
+    You can view the data pull progress in the **Tasks** section of MLW
+
+    ![Datahub result](/images/zementis/mlw-app-dh-result.png)
+
+
+1. ***DataHub data pull complete***
+
+    Once the task is **COMPLETED**, the data will be stored in the **Data** section of MLW
+
+    ![Cumulocity Data pull](/images/zementis/mlw-app-dh-data.png)
+
+Once the data is ingested from Cumulocity IoT or DataHub, the corresponding CSV file is available in **Data** section of MLW. You can view the metadata for newly created CSV file by clicking on the appropriate file name
 
 ![DataHub data info](/images/zementis/mlw-app-dh-datainfo.png)
 
-***DataHub data preview***
+Data from CSV file can be previewed by clicking on **Preview** button
  
-You could preview the dataset by hitting on the **Preview** button
-
 ![DataHub data info](/images/zementis/mlw-app-dh-datapreview.png)

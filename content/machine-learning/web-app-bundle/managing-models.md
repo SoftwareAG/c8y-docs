@@ -79,7 +79,7 @@ Besides the name, description and status of the model, the **Model Details** win
 displays the Five Point Summary of predicted values i.e., Minimum, FirstQuartile, Median, ThirdQuartile and Maximum values as a box plot. Initially, the Prediction Metrics of any model is empty and it will be displayed only if scoring is applied on the model. Prediction Metrics of a model will be reset when the model is deleted or deactivated. Also the Prediction Metrics information that shows up is always the cumulative result with the past scoring of the model.
 Currently, the Prediction Metrics feature is supported only for classification and regression models.
 
-An ONNX model has many important properties such as model inputs and outputs, along with model version, ONNX version, producer name and producer version.
+An ONNX model has many important properties such as model inputs and outputs, along with ONNX version, Opset version, model version, producer name and producer version.
 Click the info icon <img src="/images/zementis/zementis-info-icon.png" alt="Info" style="display:inline-block; margin:0"> to view the properties of an ONNX model. The ONNX model properties are represented in JSON format.
 
 ![Model details](/images/zementis/zementis-model-details-onnx.png)

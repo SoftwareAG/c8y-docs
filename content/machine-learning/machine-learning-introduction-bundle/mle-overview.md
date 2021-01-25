@@ -13,4 +13,4 @@ Machine Learning Engine is composed of following components:
 | [machine-learning](/machine-learning/web-app/) | WebApp | Graphical User Interface for Machine Learning Engine |
 | [zementis](/machine-learning/api-reference/) | Microservice | Microservice backend for PMML model management and serving |
 | [onnx](/machine-learning/api-reference/) | Microservice | Microservice backend for ONNX model management and serving |
-| [nyoka](/machine-learning/api-reference/) | Microservice | Microservice backend for TimeSeries and Clustering models |
+| [nyoka](/machine-learning/api-reference/) | Microservice | Microservice backend for Time Series and Clustering models |

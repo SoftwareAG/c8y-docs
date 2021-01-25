@@ -1,6 +1,6 @@
 ---
 weight: 40
-title: Bulk device credentials (contains beta changes)
+title: Bulk device credentials
 layout: redirect
 ---
 

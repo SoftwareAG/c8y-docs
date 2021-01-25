@@ -1,6 +1,6 @@
 ---
 weight: 60
-title: Managing device data (contains beta changes)
+title: Managing device data
 layout: redirect
 ---
 

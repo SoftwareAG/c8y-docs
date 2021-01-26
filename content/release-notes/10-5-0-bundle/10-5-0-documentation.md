@@ -12,11 +12,11 @@ The Installation and operation guides for the Cumulocity IoT platform are now av
 
 ### General: About section
 
-A new [About](/about-doc/intro-documentation/) section has been added to the documentation, showing information on documentation versions, content, conventions and copyrights.
+A new <em>About this documentation</em> section has been added to the documentation, showing information on documentation versions, content, conventions and copyrights.
 
 ### User guide: Managing applications
 
-The documentation of the microservice logging feature has been improved, see [Administration > Managing Applications](https://cumulocity.com/users-guide/administration/#managing-applications).
+The documentation of the microservice logging feature has been improved, see <em>Administration > Managing Applications</em> in the <em>User guide</em>.
 
 
 ### Device guides: New device catalogue
@@ -35,16 +35,16 @@ The documentation of the OPCUA Java gateway has been moved from the Device guide
 
 ### Device SDK guide: Device SDK for Java
 
-The *Device SDK for Java* documentation has been moved from the [Device SDK guide](/guides/device-sdk/introduction/) to the Java Device SDK sources in Bitbucket at [https://bitbucket.org/m2m/cumulocity-clients-java/src/develop/device-sdk-documentation/](https://bitbucket.org/m2m/cumulocity-clients-java/src/develop/device-sdk-documentation/).
+The *Device SDK for Java* documentation has been moved from the <em>Device SDK guide</em> to the Java Device SDK sources in Bitbucket at [https://bitbucket.org/m2m/cumulocity-clients-java/src/develop/device-sdk-documentation/](https://bitbucket.org/m2m/cumulocity-clients-java/src/develop/device-sdk-documentation/).
 
 ### Device SDK guide: Device SDK for C &#35;
 
-The *Device SDK for C#* documentation has been moved from the [Device SDK guide](/guides/device-sdk/introduction/) to the C# Device SDK sources in Bitbucket at h[ttps://bitbucket.org/m2m/cumulocity-clients-cs/src/develop/DeviceSDK/Documentation/](https://bitbucket.org/m2m/cumulocity-clients-cs/src/develop/DeviceSDK/Documentation/). 
+The *Device SDK for C#* documentation has been moved from the <em>Device SDK guide</em> to the C# Device SDK sources in Bitbucket at [https://bitbucket.org/m2m/cumulocity-clients-cs/src/develop/DeviceSDK/Documentation/](https://bitbucket.org/m2m/cumulocity-clients-cs/src/develop/DeviceSDK/Documentation/). 
 
 ### Analytics guide
 
-The Analytics guide has been renamed to Streaming analytics guide (as opposed to  Predictive analytics guide).
+The <em>Analytics guide</em> has been renamed to <em>Streaming analytics guide</em> (as opposed to <em>Predictive analytics guide</em>).
 
 ### DataHub guide
 
-A new [Datahub guide](/guides/datahub/datahub-overview) has been added to the documentation, describing how to perform sophisticated analytical querying over device data with Cumulocity IoT DataHub, which is now available in the Cumulocity IoT Cloud platform as an integrated web application.
+A new <em>Datahub guide</em> has been added to the documentation, describing how to perform sophisticated analytical querying over device data with Cumulocity IoT DataHub, which is now available in the Cumulocity IoT Cloud platform as an integrated web application.

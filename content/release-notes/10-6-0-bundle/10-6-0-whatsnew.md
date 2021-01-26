@@ -8,7 +8,7 @@ layout: redirect
 
 [MTM-29160] It is now possible to configure sms77 as SMS provider in **Settings** > **Customization** in the  Administration application.  
 
-For details, see [Administration > Changing settings](https://cumulocity.com/guides/users-guide/administration#changing-settings) in the User guide.
+For details, see [Administration > Changing settings](https://cumulocity.com/guides/10.6.0/users-guide/administration#changing-settings) in the *User guide*.
 
 ![SMS provider settings](/images/release-notes/sms-provider-sms77.png) 
 
@@ -19,7 +19,7 @@ For details, see [Administration > Changing settings](https://cumulocity.com/gui
 
 The cookie banner can be configured via the application options or via UI from the Branding page in the Administration application. 
 
-For details, see [Enterprise Tenant > Customization](https://cumulocity.com/guides/users-guide/enterprise-edition/#customization) in the User guide.
+For details, see [Enterprise Tenant > Customization](https://cumulocity.com/guides/10.6.0/users-guide/enterprise-edition/#customization) in the *User guide*.
 
 
 ### Cockpit
@@ -30,14 +30,14 @@ For details, see [Enterprise Tenant > Customization](https://cumulocity.com/guid
 * If hourly aggregation is selected, the minute and second indication will no longer be shown.
 * If minutely aggregation is selected, the second indication will no longer be shown.
 
-For details, see [Cockpit > Data explorer](https://cumulocity.com/guides/users-guide/cockpit#data-explorer) in the User guide.
+For details, see [Cockpit > Data explorer](https://cumulocity.com/guides/10.6.0/users-guide/cockpit#data-explorer) in the *User guide*.
  
 
 ### OPC UA
 
 The following improvements have been implemented in the OPC UA gateway since 10.5.7.
 
-For details, see [OPC UA](https://cumulocity.com/guides/protocol-integration/opcua) in the *Device integration guide*.  
+For details, see [OPC UA](https://cumulocity.com/guides/10.6.0/protocol-integration/opcua) in the *Device integration guide*.  
 
 #### Extended subscription parameters 
 

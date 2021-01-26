@@ -8,7 +8,7 @@ In addition to all enhancements or changes related to the improvements and fixes
 
 ### Device integration tutorials
 
-A new version of the NetComm router device integration documentation has been added to the [Device integration tutorials](/device-tutorials/tutorials-introduction). This new tutorial describes how to set up and configure the Casa Systems (NetComm) routers of the NTC-220 series using the Cumulocity IoT NetComm Agent package, see [Casa Systems (Netcomm) router](/device-tutorials/netcomm-router/).
+A new version of the NetComm router device integration documentation has been added to the [Device integration tutorials](https://cumulocity.com/guides/10.6.6/device-tutorials/tutorials-introduction). This new tutorial describes how to set up and configure the Casa Systems (NetComm) routers of the NTC-220 series using the Cumulocity IoT NetComm Agent package, see [Casa Systems (Netcomm) router](https://cumulocity.com/guides/10.6.6/device-tutorials/netcomm-router/).
 
 ### Installation and operations guides
 

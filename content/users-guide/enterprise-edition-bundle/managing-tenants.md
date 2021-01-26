@@ -38,7 +38,8 @@ In the management tenant, you will also find information on the parent tenant, i
 2. Provide the following properties:
 
 	<table>
-<col width = 150>
+<col style="width:20%">
+<col style="width:80%">
 <thead>
 <tr>
 <th style="text-align:left">Field</th>
@@ -188,7 +189,7 @@ Further details are provided on the **Status** tab of the respective application
 
 ### <a name="tenants-custom-properties"></a>Custom properties
 
-The **Custom properties** tab allows you to view and edit values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/users-guide/administration#properties). Such properties are also displayed as columns in the [Usage statistics](/users-guide/enterprise-edition#usage-stat) page.
+The **Custom properties** tab allows you to view and edit values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/users-guide/administration#properties). Such properties are also displayed as columns in the [Usage statistics](/users-guide/enterprise-edition/#usage-and-billing) page.
 
 ![Custom properties](/images/users-guide/enterprise-tenant/et-subtenant-custom-properties.png)
 
@@ -196,7 +197,7 @@ The **Custom properties** tab allows you to view and edit values of custom prope
 
 Platform administrators can limit the count of concurrently registered root devices or simply all devices (including children devices) via the custom property "Limit number of devices".
 
-They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the **[Usage statistics](/users-guide/enterprise-edition#usage-stat)** page.
+They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the **[Usage statistics](/users-guide/enterprise-edition/#usage-and-billing)** page.
 
 #### Limiting subtenant request rate
 

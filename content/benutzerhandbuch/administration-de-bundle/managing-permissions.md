@@ -71,7 +71,7 @@ Darüber hinaus werden anfänglich die folgenden vorkonfigurierten Rollen bereit
 </tr>
 <tr>
 <td align="left">Device Management-Benutzer</td>
-<td align="left">Hat Zugriff auf die Anwendung Device Management. Der Benutzer kann damit den Simulator nutzen und Stapelkommandos ausführen. Zusätzlich sollten Sie eine Rolle hinzufügen, die Geräten Zugriff gewährt.</td>
+<td align="left">Hat Zugriff auf die Anwendung Device Management. Der Benutzer kann damit den Simulator nutzen und Bulk-Operationen ausführen. Zusätzlich sollten Sie eine Rolle hinzufügen, die Geräten Zugriff gewährt.</td>
 </tr>
 <tr>
 <td align="left">Globaler Manager</td>
@@ -158,8 +158,8 @@ Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
 </tr>
 
 <tr>
-<td align="left">Stapelkommandos</td>
-<td align="left">Anzeigen oder Erstellen von Stapelkommandos.</td>
+<td align="left">Bulk-Operationen</td>
+<td align="left">Anzeigen oder Erstellen von Bulk-Operationen.</td>
 </tr>
 
 <tr>
@@ -213,6 +213,11 @@ Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
 </tr>
 
 <tr>
+<td align="left">Planen von Berichten</td>
+<td align="left">Verwalten von Berichts-Exportplänen</td>
+</tr>
+
+<tr>
 <td align="left">Simulator</td>
 <td align="left">Konfigurieren von simulierten Geräten.</td>
 </tr>
@@ -246,7 +251,7 @@ Die folgenden Berechtigungskategorien sind standardmäßig verfügbar:
 
 Möglicherweise werden weitere Berechtigungen angezeigt, abhängig von den Funktionalitäten in Ihrem Abonnementplan. Diese werden in Verbindung mit den jeweiligen Funktionalitäten beschrieben.
 
-> **Wichtig:** Werden neue Funktionalitäten mit neuen Berechtigungen zu Cumulocity IoT hinzugefügt, so werden diese nicht automatisch zu bestehenden Rollen hinzugefügt. Sollten Sie feststellen, dass Sie eine kürzlich angekündigte Funktionalität nicht verwenden können, überprüfen Sie zunächst Ihre Berechtigungen.
+> **Wichtig:** Werden neue Funktionen mit neuen Berechtigungen zu Cumulocity IoT hinzugefügt, so werden diese nicht automatisch zu bestehenden Rollen hinzugefügt. Sollten Sie feststellen, dass Sie eine kürzlich angekündigte Funktionalität nicht verwenden können, überprüfen Sie zunächst Ihre Berechtigungen.
 
 #### <a name="attach-global"></a>Zuweisen von globalen Rollen
 
@@ -282,9 +287,9 @@ Die folgenden Stammdatenrollen sind in neuen Mandanten voreingestellt:
 
 |Rolle|Beschreibung|
 |:---|:---|
-|Manager| Kann alle Daten des Assets lesen und alle Stammdaten verwalten, aber keine Kommandos ausführen. Kann zusätzlich Stammdaten (einschließlich Dashboards) und Alarme verwalten.
-|Kommandos: Alle|Kann die Assets per Fernzugriff verwalten, indem er Kommandos an ein Gerät sendet (z. B. Software-Updates, Fernkonfigurationen).
-|Kommandos: Gerät neustarten|Kann Geräte neustarten.
+|Manager| Kann alle Daten des Assets lesen und alle Stammdaten verwalten, aber keine Operationen ausführen. Kann zusätzlich Stammdaten (einschließlich Dashboards) und Alarme verwalten.
+|Operationen: Alle|Kann die Assets per Fernzugriff verwalten, indem er Operationen an ein Gerät sendet (z. B. Software-Updates, Fernkonfigurationen).
+|Operationen: Gerät neustarten|Kann Geräte neustarten.
 |Leser|Kann alle Daten des Assets lesen.
 
 
@@ -300,7 +305,7 @@ Die Berechtigungen sind in die folgenden Kategorien eingeteilt:
 
 |Kategorie|Beschreibung|
 |:---|:---|
-|Alarme|Berechtigungen für das Arbeiten mit Alarmen von Geräten.
+|Alarme|Berechtigungen für das Verwenden von Alarmen von Geräten.
 |Audits|Berechtigungen für Audit-Logs.
 |Ereignisse|Berechtigungen für das Arbeiten mit Ereignissen von Geräten.
 |Stammdaten|Berechtigungen für das Anzeigen und Bearbeiten von Geräten.
@@ -324,7 +329,7 @@ Wählen Sie im Feld **Berechtigung** eine Berechtigungsebene aus der Auswahllist
 
 * LESEN - zum Anzeigen von Objekten
 * ÄNDERN - zum Ändern von Objekten (schließt nicht die LESEN-Berechtigung ein)
-* ALLE - zum Lesen UND Ändern von Objekten
+* ALL - zum Lesen UND Ändern von Objekten
 
 >**Wichtig:** Wenn Sie eine Berechtigung hinzufügen, erscheint möglicherweise ein kleines Ausrufungszeichen. Das Ausrufungszeichen weist darauf hin, dass die soeben hinzugefügte Rollen keine Auswirkung hat, da eine andere, "höhere" Berechtigung, die für den Benutzer gesetzt wurde, diese Berechtigung bereits umfasst. Überprüfen Sie in diesem Fall, ob Sie vollständigen Zugriff gewährt haben oder ob es im gleichen Abschnitt eine andere Berechtigung mit "*" als Typen und "Alle" als Berechtigung gibt.
 
@@ -355,7 +360,7 @@ Sie können auch Stammdatenrollen eines anderen Benutzers kopieren. Klicken Sie 
 
 Wenn Sie Aktionen durchführen möchten für die Sie keine ausreichende Berechtigung haben, erhalten Sie eine Fehlermeldung.
 
-Klicken Sie für Hilfe bei der Fehlersuche auf die Schaltfläche **Benutzer** in der rechten oberen Leiste. Wählen Sie aus dem Kontextmenü **Verweigerte Anfragen**. Im darauf folgenden Fenster finden Sie Details zu den verweigerten Anfragen. Ein Administrator oder der Support kann Ihnen helfen, die Berechtigungsprobleme zu beheben.
+Klicken Sie für Hilfe bei der Fehlersuche auf die Schaltfläche **Benutzer** in der rechten oberen Leiste. Wählen Sie aus dem Kontextmenü **Verweigerte Anfragen**. Im darauf folgenden Fenster finden Sie Details zu den verweigerten Anfragen. Ein Administrator oder der [Support](/about-doc/contacting-support) kann Ihnen helfen, die Berechtigungsprobleme zu beheben.
 
 ### <a name="app-access"></a>Gewähren von Anwendungszugriff
 

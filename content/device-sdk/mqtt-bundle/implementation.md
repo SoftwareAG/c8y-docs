@@ -18,28 +18,9 @@ Available ports:
 | no SSL | 1883 | 80 |
 
 Port 8883 supports two types of SSL: two-way SSL using certificates for client authorization and one-way SSL using username and password for client authorization.
-To turn on two-way SSL support, add the following rule to Chef:
-
-```
-"MQTTClientCert" => {
-    "enabled" => true,
-}
-```
-
-*   `enabled` - Enables two-way SSL on the port 8883 and let devices authorize using a certificate with TCP (it is not available with WebSockets right now).
+The two-way SSL support is enabled by default since version 10.7.0. To disable it please [contact support](/about-doc/contacting-support)
 
 > **Info**: To use WebSockets you need to connect to the path <kbd>/mqtt</kbd> and follow the [MQTT standard](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718127) for WebSocket communication.
-
-#### Specific cases
-
-##### A device sends correct username and password, but incorrect certificate at the same time
-
-If the platform is configured to support two-way SSL, your devices have a configured keystore with invalid certificates and you want to use basic authorization, we recommend you to turn off sending certificates during connection. Certificates may be invalid because they expired or the root certificate is not uploaded to the platform. Turn off certificate sending in the device’s software. If that is not possible, make sure of the following to make the connection work:
-
-* The platform's trust store cannot be empty. At least one trusted certificate has to be uploaded to the platform.
-* The platform's property "auth.device-certificates.tls.return-accepted-issuers" has to be set to true.
-* The device's MQTT client has to be configured to not send certificates if it does not find its root certificate in the accepted issuers list returned by the server during handshake. In most cases this happens automatically. It is known that it’s not working with the MQTT client and Java 11. However, it works with Java 8.
-* If all of the cases above are met and the device connection is still rejected due to certificates validation, then probably some other tenant uploaded a certificate with the same 'Common Name' as one of those sent by your device. In this case the device will always try to authorize itself with certificates.  
 
 ### SmartREST payload
 
@@ -100,7 +81,18 @@ The communication with Cumulocity IoT employing MQTT supports authentication in 
 *   Username and password. The MQTT username needs to include the tenant ID and username in the format &lt;tenantID/username>.
 *   Device certificates. The devices have to contain the whole chain of certificates leading to the trusted root certificate. Also, they have to contain the server certificate in their truststore.
 
-#### MQTT ClientId
+#### Troubleshooting
+
+##### A device sends correct username and password, but incorrect certificate at the same time
+
+If the platform is configured to support two-way SSL, your devices have a configured keystore with invalid certificates and you want to use basic authorization, we recommend you to turn off sending certificates during connection. Certificates may be invalid because they expired or the root certificate is not uploaded to the platform. Turn off certificate sending in the device’s software. If that is not possible, make sure of the following to make the connection work:
+
+* The platform's trust store cannot be empty. At least one trusted certificate has to be uploaded to the platform.
+* The device's MQTT client has to be configured to not send certificates if it does not find its root certificate in the accepted issuers list returned by the server during handshake. In most cases this happens automatically. It is known that it’s not working with the MQTT client and Java 11. However, it works with Java 8.
+* In order to support this situation, the platform needs to be configured accordingly. In case you experience issues please [contact support](/about-doc/contacting-support)
+* If all of the cases above are met and the device connection is still rejected due to certificates validation, then probably some other tenant uploaded a certificate with the same 'Common Name' as one of those sent by your device. In this case the device will always try to authorize itself with certificates.
+
+#### <a name="MQTT-ClientId">MQTT ClientId</a>
 
 The MQTT ClientId is a field to uniquely identify each connected client. The Cumulocity IoT implementation also uses the ClientId to link the client directly to a device. Therefore, the following format should be used for the ClientId:
 

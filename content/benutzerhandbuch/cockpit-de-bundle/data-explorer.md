@@ -65,7 +65,7 @@ Wenn die Aggregation aktiviert ist, ändert sich der in Datenpunktgraphen oder D
 * Ist keine Aggregation ausgewählt, werden Datum, Stunde, Minute und Sekunde angezeigt:<br> 27 Jan 2020 17:26:55
 * Ist minütliche Aggregation ausgewählt, werden die Sekunden nicht angezeigt:<br> 27 Jan 2020 17:27-17:28
 * Ist stündliche Aggregation ausgewählt, werden Minuten und Sekunden nicht angezeigt:<br> 27 Jan 2020 05:00-06:00
-* Ist tägliche Aggregation ausgewählt, wird lediglich der Tag angezeigt:<br> 27 Jan 2020-28 Jan 2020
+* Ist tägliche Aggregation ausgewählt, wird lediglich der Tag angezeigt:<br> 27 Jan 2020-28 Jan 2020.
 
 
 **Echtzeitaktualisierung**

@@ -16,18 +16,18 @@ For details on migration, refer to [Migrating from CEL (Esper) to Apama](/apama/
 
 #### Removal of OPC UA legacy integration
 
-With Cumulocity IoT 10.7, the OPC UA legacy integration will be removed from the product. With Cumulocity IoT 10.5.7 a new version of our OPC UA integration was introduced supporting many advanced features. If you are still using the legacy OPC UA integration, we ask you to upgrade to the latest version. For more information, refer to [OPC UA](/protocol-integration/opcua) in the *Protocol integration guide*. 
+With Cumulocity IoT 10.7, the OPC UA legacy integration will be removed from the product. With Cumulocity IoT 10.5.7 a new version of our OPC UA integration was introduced supporting many advanced features. If you are still using the legacy OPC UA integration, we ask you to upgrade to the latest version. For more information, refer to [OPC UA](/protocol-integration/opcua) in the *Protocol integration guide*.
 
 
 ### Implemented measures
 
 #### End of Java 7 support for the Microservice SDK
 
-As announced in the [Migration notes for release 10.5.7](/release-notes/10-5-7/#10-5-7-migration), the Microservice SDK is now based on Spring Boot 2.x. In case you are still developing with Java 7 you will need to migrate your application to Java 8 if you want to take advantage of the latest Microservice SDK version. If you have to stay with Java 7 or cannot migrate to Spring Boot 2.x you can still use the Microservice SDK in version <= 10.5.7.
+As announced in the [Migration notes for release 10.5.7](https://cumulocity.com/guides/10.5.7/release-notes/10-5-7/#10-5-7-migration), the Microservice SDK is now based on Spring Boot 2.x. In case you are still developing with Java 7 you will need to migrate your application to Java 8 if you want to take advantage of the latest Microservice SDK version. If you have to stay with Java 7 or cannot migrate to Spring Boot 2.x you can still use the Microservice SDK in version <= 10.5.7.
 
 For details on the Microservice SDK for Java, see [Microservice SDK for Java](/microservice-sdk/java/) in the Microservice SDK guide.
 
 
 #### Disabled TLS 1.0 support on all public cloud instances
 
-As announced in the [Migration notes for release 10.5.7](/release-notes/10-5-7/#10-5-7-migration), Encryption based on Transport Layer Security v1.0 has been be disabled on all public Cumulocity IoT instances. As all modern browsers do already support by default more recent versions of TLS we do not expect limitations for users. Devices connecting to Cumulocity IoT might need to be updated.
+As announced in the [Migration notes for release 10.5.7](https://cumulocity.com/guides/10.5.7/release-notes/10-5-7/#10-5-7-migration), Encryption based on Transport Layer Security v1.0 has been disabled on all public Cumulocity IoT instances. As all modern browsers do already support by default more recent versions of TLS we do not expect limitations for users. Devices connecting to Cumulocity IoT might need to be updated.

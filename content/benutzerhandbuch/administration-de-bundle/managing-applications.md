@@ -22,11 +22,11 @@ Klicken Sie auf eine Anwendungskarte, um die Attribute der Anwendung anzuzeigen.
 Für jede Anwendung werden die folgenden Attribute angezeigt:
 
 <table>
-<col width= 15%
-<col width= 40%>
-<col width= 15%>
-<col width= 15%>
-<col width= 15%>
+<col width= 20%
+<col width= 20%>
+<col width= 20%>
+<col width= 20%>
+<col width= 20%>
 <thead>
 <tr>
 <th style="text-align:left">Feld</th>
@@ -148,6 +148,12 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 <td style="text-align:left"><a href="/benutzerhandbuch/device-management-de#simulator" class="no-ajaxy">Device simulator</a></td>
 <td style="text-align:left">Simulieren Sie alle Aspekte von IoT-Geräten.</td>
 <td style="text-align:left">device-simulator</td>
+<td style="text-align:left">Microservice</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="/benutzerhandbuch/cockpit-de#reports" class="no-ajaxy">Report agent</a></td>
+<td style="text-align:left">Ermöglicht das Planen von Datenexporten aus der Cockpit-Anwendung heraus.</td>
+<td style="text-align:left">report-agent</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
@@ -284,7 +290,7 @@ Manager und Editor für Apama Event Processing Language (EPL) Apps zur sofortige
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/enterprise-edition/#tenant-sla-monitoring" class="no-ajaxy">Tenant SLA Monitoring</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-edition-de/#tenant-sla-monitoring" class="no-ajaxy">Tenant SLA Monitoring</a></td>
 <td style="text-align:left">Gibt Service Providern die Möglichkeit, die Verfügbarkeit und Reaktionszeit von Mandanten und Untermandanten zu überwachen.</td>
 <td style="text-align:left">tenant-sla-monitoring</td>
 <td style="text-align:left">Microservice</td>

@@ -35,7 +35,6 @@ Das Widget "Alarmliste" zeigt eine Liste von Alarmen, gefiltert nach Objekten, A
 |Schweregrad|Alarmschweregrade, die angezeigt werden.
 |Reihenfolge|Alarme können nach dem aktiven Status (gefolgt von Schweregrad und Zeit, Standardeinstellung) oder dem Schweregrad (gefolgt von der Zeit) sortiert werden.
 
-
 ### Alle kritischen Alarme
 
 Das Widget "Alle kritischen Alarme" zeigt alle Objekte mit einem kritischen Alarm. Neben dem Titel können keine zusätzlichen Parameter konfiguriert werden.
@@ -334,11 +333,13 @@ Das Widget "Linearer Zeiger" visualisiert Datenpunkte in Form eines linearen Mes
 
 Sie müssen mindestens einen Datenpunkt aktivieren, um das Widget "Linearer Zeiger" zu erstellen.
 
+
 ### Quick Links
 
 Das Widget "Quick links" zeigt verschiedene Links für den schnellen Zugriff auf relevante Kommandos an. Es können keinen zusätzlichen Parameter konfiguriert werden.
 
 ![Quick links widget](/images/benutzerhandbuch/cockpit/cockpit-widget-quick-links.png)
+
 
 ### Relaisfeldsteuerung
 
@@ -368,7 +369,7 @@ Im Rotation-Widget kann das Objekt durch Ziehen und Bewegen gedreht werden. Auß
 
 Das Widget "SCADA" bietet eine graphische Darstellung eines Gerätestatus.
 
-Nähere Informationen zum Widget "SCADA" finden Sie unter [Cloud Fieldbus > Monitoring status using the SCADA widget](/protocol-integration/cloud-fieldbus/#scada) im *Protocol Integration Guide*.
+Weitere Informationen zum Widget "SCADA" finden Sie unter [Cloud Fieldbus > Monitoring status using the SCADA widget](/protocol-integration/cloud-fieldbus/#scada) im *Protocol Integration Guide*.
 
 > **Info:** Alle SVG-Dateien werden bereinigt, um schädlichen Code zu entfernen.
 

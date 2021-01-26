@@ -208,28 +208,30 @@ Example Response :
 
 To define an option of tenant as "non-editable", from "management" tenant add the targetTenant parameter with tenant ID to the URL.
 
-Required role: ROLE\_OPTION\_MANAGEMENT\_ADMIN 
+Required role: ROLE\_OPTION\_MANAGEMENT\_ADMIN
 
 Required tenant: management
 
- Example Request: Update access.control.allow.origin option as "non-editable" for targetTenant.
+Example Request: Update access.control.allow.origin option as "non-editable" for targetTenant.
 
-    PUT https://<<TENANT_DOMAIN>>/tenant/options/<<category>>/<<key>>/editable?targetTenant=<<tenantID>>
-    Host: ...
-    Authorization: Basic ...
-    Content-Type: application/vnd.com.nsn.cumulocity.option+json;ver=...
-    Accept: application/vnd.com.nsn.cumulocity.option+json;ver=...
-    {
-        "editable": "false"
-    }
-    
- Example Response :
+```http
+PUT /tenant/options/<<category>>/<<key>>/editable?targetTenant=<<tenantID>>
+Host: https://<<TENANT_DOMAIN>>
+Authorization: <<AUTHORIZATION>>
+Content-Type: application/vnd.com.nsn.cumulocity.option+json
+Accept: application/vnd.com.nsn.cumulocity.option+json
 
-    HTTP/1.1 200 OK
-    Content-Type: application/vnd.com.nsn.cumulocity.option+json;ver=...
-    Content-Length: ...
-    {
-        "self": "https://<<TENANT_DOMAIN>>/tenant/options/access.control/allow.origin",
-        "category": "access.control",
-        "key": "allow.origin"
-    }
+{
+    "editable": "false"
+}
+```
+
+Example Response :
+
+```json
+{
+    "self": "https://<<TENANT_DOMAIN>>/tenant/options/access.control/allow.origin",
+    "category": "access.control",
+    "key": "allow.origin"
+}
+```

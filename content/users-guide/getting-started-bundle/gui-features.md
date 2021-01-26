@@ -15,7 +15,8 @@ The general structure common to all Cumulocity IoT applications includes the fol
 ![Cumulocity IoT application](/images/users-guide/getting-started/getting-started-screen-elements.png)
 
 <table>
-<col width="150">
+<col width="15%">
+<col width="85%">
 <thead>
 <tr>
 <th style="text-align:left">Element</th>
@@ -24,27 +25,27 @@ The general structure common to all Cumulocity IoT applications includes the fol
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><strong>Navigator</strong></td>
+<td style="text-align:left"><b>Navigator</b></td>
 <td style="text-align:left">On the left you find the navigator. At the top of the navigator the name and logo of the application is displayed, indicating which application you are currently using. Below you find a list of entries leading to the various pages of the application. The entries are grouped into menus and menu items. You can collapse or expand menus in the navigator by clicking the menu name. Clicking the small arrow at the very left of the top bar will hide/or unhide the navigator. Per default, it is visible.</td>
 </tr>
 <tr>
-<td style="text-align:left"><strong>Page</strong></td>
+<td style="text-align:left"><b>Page</b></td>
 <td style="text-align:left">"Page" actually refer to the main area in the application. The content provided here depends on the menu item selected in the dashboard. The structuring of the content differs from page to page. Data may for example be displayed in a list with a row for each object or you may find it being presented in a grid in which objects are represented by cards. </td>
 </tr>
 <tr>
-<td style="text-align:left"><strong>Tabs</strong></td>
+<td style="text-align:left"><b>Tabs</b></td>
 <td style="text-align:left">Some pages, e.g. the page of any particular device, are divided into several tabs, either displayed vertically or horizontally.</td>
 </tr>
 <tr>
-<td style="text-align:left"><strong>Top bar</strong></td>
-<td style="text-align:left"><strong>Page title</strong><br> At the left of the top bar the title of the active page is displayed, if any. <br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <strong>Search button</strong><br> Clicking the <strong>Search</strong> button opens a search field to enter text for a full-text search. For details, see <a href="#searching" class="no-ajaxy">Searching</a> below. Not always available.<br><br> <img src="/images/icons/plus-icon.png" alt="Plus" style="max-width:100%"> <strong>Plus button</strong><br> Most application pages show an <strong>Plus</strong> button at the top bar. Clicking it opens a context menu providing further functionalities. The context menu is created dynamically, i.e. it depends on the active page which commands are provided. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <strong>Application Switcher button</strong><br> Clicking the <strong>Application Switcher</strong> button opens the <a href="#app-switcher" class="no-ajaxy">application switcher</a> which allows you to quickly switch between applications. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <strong>User button</strong><br> Right from the Application Switcher button you will find the <strong>User</strong> button with your user name. Clicking it will open up a context menu with commands related to your account settings. <br> <br>Other buttons/ information may be available in the top bar depending on the application and the page being displayed. </td>
+<td style="text-align:left"><b>Top bar</b></td>
+<td style="text-align:left"><b>Page title</b><br> At the left of the top bar the title of the active page is displayed, if any. <br> <br><img src="/images/icons/search-icon.png" alt="Search" style="max-width:100%"> <b>Search button</b><br> Clicking the <b>Search</b> button opens a search field to enter text for a full-text search. For details, see <a href="#searching" class="no-ajaxy">Searching</a> below. Not always available.<br><br> <img src="/images/icons/plus-icon.png" alt="Plus" style="max-width:100%"> <b>Plus button</b><br> Most application pages show an <b>Plus</b> button at the top bar. Clicking it opens a context menu providing further functionalities. The context menu is created dynamically, i.e. it depends on the active page which commands are provided. <br><br><img src="/images/icons/switcher-icon.png" alt="User" style="max-width:100%"> <b>Application Switcher button</b><br> Clicking the <b>Application Switcher</b> button opens the <a href="#app-switcher" class="no-ajaxy">application switcher</a> which allows you to quickly switch between applications. <br><br> <img src="/images/icons/user-icon.png" alt="User" style="max-width:100%"> <b>User button</b><br> Right from the Application Switcher button you will find the <b>User</b> button with your user name. Clicking it will open up a context menu with commands related to your account settings. <br> <br>Other buttons/ information may be available in the top bar depending on the application and the page being displayed. </td>
 </tr>
 <tr>
-<td style="text-align:left"><strong>Top menu bar</strong></td>
-<td style="text-align:left">Depending on the active application and the active page, a secondary bar is displayed below the top bar providing further functionalities like a <strong>Reload</strong> link for reloading the page or a <strong>Realtime</strong> link for the display of realtime data. </td>
+<td style="text-align:left"><b>Top menu bar</b></td>
+<td style="text-align:left">Depending on the active application and the active page, a secondary bar is displayed below the top bar providing further functionalities like a <b>Reload</b> link for reloading the page or a <b>Realtime</b> link for the display of realtime data. </td>
 </tr>
 <tr>
-<td style="text-align:left"><strong>Right drawer</strong></td>
+<td style="text-align:left"><b>Right drawer</b></td>
 <td style="text-align:left">Clicking the small arrow at the very right of the top bar will unhide/hide the right drawer, offering quick links to other applications and to relevant documentation. Per default, the right drawer is hidden.</td>
 </tr>
 </tbody>
@@ -137,13 +138,13 @@ cl*
 The list will immediately be reduced to the selected objects.
 
 >**Important:** On certain pages, the filter mechanism only searches through items shown on a page. This means that if an item is not listed on the respective page, it will not appear in the results. You need to load all results first to search through all items. This behavior applies to the following pages:
-
->* Device protocols 
-* Firmware repository
-* Software repository
-* Configuration repository
-* Tenants
-* File repository
+>
+>* Device protocols
+>* Firmware repository
+>* Software repository
+>* Configuration repository
+>* Tenants
+>* File repository
 
 For details on the filtering mechanism in the devices list refer to [Device Management > Viewing devices > To filter devices](/users-guide/device-management#filtering-devices).
 

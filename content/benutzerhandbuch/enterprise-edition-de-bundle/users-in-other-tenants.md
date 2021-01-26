@@ -70,7 +70,7 @@ Um sich vom Management-Mandanten aus als Supportbenutzer anzumelden, verwenden S
 
 Angenommen, Sie erhalten einen Supportanruf von einem Benutzer "John" im Mandanten *testtenant.cumulocity.com* (mit der ID *t07007007*). Der Benutzer kann eine bestimmte Funktion nicht verwenden und Sie vermuten, dass es sich um ein Berechtigungsproblem handelt. Ihr Benutzername im Management-Mandanten ist "Jill" und Sie haben die Berechtigung, Support für *testtenant.cumulocity.com* zu leisten. In diesem Fall können Sie sich mit dem folgenden Kommando anmelden, um zu reproduzieren, was John sieht:
 
-	<t07007007>/Jill$John
+	t07007007/Jill$John
 
 
 In manchen Umgebungen, insbesondere in Testumgebungen, können Sie einfach die Zielmandanten-URL (z. B. *testtenant.cumulocity.com*) aufrufen und sich mit Folgendem beim Mandanten anmelden:

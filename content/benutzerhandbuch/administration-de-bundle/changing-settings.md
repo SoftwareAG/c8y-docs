@@ -26,10 +26,11 @@ Klicken Sie **Authentifizierung** im Menü **Einstellungen**, wenn Sie die Anmel
 
 #### Anmeldeeinstellungen
 
-Unter **Bevorzugter Login-Modus** sind zwei Modi verfügbar:
+Unter **Bevorzugter Login-Modus** sind drei Modi verfügbar:
 
 * "OAuth Internal" - Dies ist die empfohlene Option, da sie mehr Sicherheit bietet.
 * "Basic Auth" - Diese Option sollte nur aus bestimmten Kompatibilitätsgründen gewählt werden.
+* "Single-Sign-On-Weiterleitung" - Diese Option steht nur zur Verfügung, wenn Single-Sign-On (SSO) konfiguriert ist. Bei Auswahl dieser Option werden die Login-Optionen "Basic Auth" und "OAuth Internal" entfernt.
 
 Dieser Anmeldemodus wird von den Anwendungen der Plattform als Standardmethode zum Authentifizieren von Benutzern verwendet. Die Geräteauthentifizierung bleibt unverändert.
 
@@ -74,15 +75,15 @@ Cumulocity IoT bietet Single-Sign-On-Funktionalität, die es dem Anwender ermög
 
 > **Info:** Die Single-Sign-On-Funktionalität verwendet Cookies-Technologien. Sie kann nur genutzt werden, wenn Cookies in den Einstellungen Ihres Browsers zugelassen sind.
 
-Die Single-Sign-On-Funktionalität wurde mit der Cumulocity IoT-Version 9.12 aktiviert. Microservices müssen mit dem Microservice SDK der Version 9.12 oder höher erstellt sein, um korrektes Funktionieren zu gewährleisten.
+Die Single-Sign-On-Funktionalität wurde mit der Cumulocity IoT-Version 10.4.6. aktiviert. Microservices müssen mit dem Microservice SDK der Version 10.4.6 oder höher erstellt sein, um korrektes Funktionieren zu gewährleisten.
 
 Bevor Sie zur Single-Sign-On-Option wechseln, stellen Sie sicher, dass:
 
 * der Autorisierungsserver, den Sie verwenden, die Vergabe von OAuth2-Autorisierungscodes unterstützt.
 * das Access Token als JWT ausgegeben wird und Sie wissen, was der Token Content enthalten muss.
 * das JWT aus einer einzigartigen Benutzeridentifikation (unique user identifier) sowie aus den Feldern "iss" (issuer), "aud" (audience) und "exp" (expiration time) besteht.
-* Cumulocity IoT-Plattform Version 9.12 oder vorzugsweise höher verwendet wird.
-* alle Microservices mit dem Microservice Java SDK 9.12.6, oder vorzugsweise höher, erstellt wurden. Informationen zu benutzerspezifischen Microservices finden Sie unter [General aspects > Security](/microservice-sdk/concept/#security) im Microservice SDK Guide.
+* Cumulocity IoT-Plattform Version 10.4.6 oder vorzugsweise höher verwendet wird.
+* alle Microservices mit dem Microservice Java SDK 10.4.6 oder vorzugsweise höher erstellt wurden. Informationen zu benutzerspezifischen Microservices finden Sie unter [General aspects > Security](/microservice-sdk/concept/#security) im Microservice SDK Guide.
 * Bei lokalen Installationen ist die Domain-basierte Mandantenabbildung bereits korrekt konfiguriert.
 
 >**Info:** Um die Single-Sign-On-Funktion für Enterprise Tenants nutzen zu können, muss die Enterprise-Domain in den Grundeinstellungen als Redirect-URI festgelegt sein. Sofern bei Single-Sign-On-Anbietern eine Liste der zulässigen Domains besteht, sollte die Enterprise-Domain dieser Liste hinzugefügt werden.
@@ -186,13 +187,21 @@ Jedes Access Token wird durch ein Signing-Zertifikat signiert. Aktuell gibt es d
 
  ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-5.png)
 
+4. Durch Spezifizieren der JWKS (JSON Web Key Set)-Adresse.
+
+ ![OAuth configuration](/images/benutzerhandbuch/Administration/admin-sso-9.png)
+
+
+ >**Info:** Cumulocity IoT unterstützt nur Zertifikate mit RSA-Schlüssel, entweder in Form eines ("n", "e")-Parameter-Paars oder in Form einer "x5c"-Zertifikatskette. Andere Schlüsseltypen (zum Beispiel Elliptic-Curves) werden nicht unterstützt.
+
+
 #### Integration mit Azure AD
 
 ##### Azure AD-Konfiguration
 
-Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/de-de/azure/active-directory/azuread-dev/v1-protocols-oauth-code](https://docs.microsoft.com/de-de/azure/active-directory/azuread-dev/v1-protocols-oauth-code).
+Die Integration wurde erfolgreich mit Azure AD getestet. Die Konfigurationsschritte finden Sie unter [https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-protocols-oauth-code](https://docs.microsoft.com/de-de/azure/active-directory/develop/v1-protocols-oauth-code).
 
-Während der Konfiguration der Azure AD entspricht die Redirect-URI Ihrer vollständigen Domain-Adresse. In diesem Dokument verwenden wir beispielhaft `http://documentation.cumulocity.com/tenant/oauth`. In Azure AD sind keine weitere Schritte erforderlich.
+Während der Konfiguration der Azure AD entspricht die Redirect-URI Ihrer vollständigen Domain-Adresse. In diesem Dokument verwenden wir beispielhaft `http://documentation.cumulocity.com/tenant/oauth`. In Azure AD sind keine weiteren Schritte erforderlich.
 
 ##### Cumulocity IoT-Konfiguration
 
@@ -315,7 +324,7 @@ Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattfo
 
 	![Select SMS provider](/images/benutzerhandbuch/Administration/admin-settings-sms-provider.png)
 
-2. Wählen Sie auf der Seite **SMS-Anbieter** entweder [OpenIt](https://sms.openit.de/main.php) oder [sms77](https://www.sms77.io/en/) als SMS-Anbieter.
+2. Wählen Sie auf der Seite **SMS-Anbieter** entweder OpenIT oder [sms77](https://www.sms77.io/en/) als SMS-Anbieter.
 
 3. Geben Sie je nach gewähltem Anbieter die entsprechenden Zugangsdaten ein:
 
@@ -323,6 +332,8 @@ Durch Bereitstellung Ihrer Zugangsdaten ermöglichen Sie die Nutzung von Plattfo
 	 * Für sms77: Ihren API-Schlüssel für den Zugriff auf sms77 (zu finden in Ihrem sms77-Login unter "Einstellungen" > "HTTP API").
 
 4. Klicken Sie **Speichern**, um Ihre Einstellungen zu speichern.
+
+>**Info:** OpenIT betreut keine neuen Kunden mehr und ist dabei, das Geschäft mit SMS-Anbietern einzustellen. Wir empfehlen Ihnen daher, sms77 als SMS-Anbieter zu wählen.
 
 
 ### <a name="config-platform"></a>Konfigurationseinstellungen
@@ -403,7 +414,7 @@ Oben können Sie auswählen, ob Sie die E-Mail zum Administrator des gesperrten 
 
 Klicken Sie **Konfiguration speichern**, um Ihre Eingaben zu speichern.
 
-Für Enterprise Tenants stehen zusätzliche Funktionen zur Verfügung, siehe [Enterprise Tenant > Anpassen der Plattform](/users-guide/enterprise-edition#customization).
+Für Enterprise Tenants stehen zusätzliche Funktionen zur Verfügung, siehe [Enterprise Tenant > Anpassen der Plattform](/benutzerhandbuch/enterprise-edition-de#customization).
 
 ### <a name="connectivity"></a>Verwalten der Konnektivitätseinstellungen
 
@@ -412,9 +423,9 @@ Auf der Seite **Connectivity** können Sie Zugangsdaten für verschiedene Anbiet
 Derzeit können folgende Anbietereinstellungen festgelegt werden:
 
 - [Impact](/protocol-integration/impact)
-- [Actility LoRa](/protocol-integration/lora-actility)
+- [LoRa](/protocol-integration/lora-actility)
 - [Sigfox](/protocol-integration/sigfox)
-- [SIM](/protocol-integration/connectivity)
+- [SIM](/users-guide/device-management/#connectivity)
 
 ![Provider settings](/images/benutzerhandbuch/Administration/admin-settings-connectivity.png)
 
@@ -425,4 +436,4 @@ Derzeit können folgende Anbietereinstellungen festgelegt werden:
 3. Geben Sie die Zugangsdaten Ihrer Anbieterplattform ein. Je nach Anbieter handelt es sich hierbei entweder um Zugangsdaten für Ihr Konto auf der Anbieterplattform oder um die Zugangsdaten, mit denen Sie sich auf der Cumulocity IoT-Konnektivitätsseite registrieren können. Diese werden in Ihrem Konto in der Anbieter-Plattform angezeigt.
 4. Klicken Sie abschließend auf **Speichern**, um Ihre Einstellungen zu speichern.
 
-Je nach gewähltem Anbieter können zusätzliche Felder vorhanden sein, die in der Dokumentation des entsprechenden Agents erläutert werden, siehe [Protocol integration guide](/protocol-integration/overview/).
+Je nach gewähltem Anbieter können zusätzliche Felder vorhanden sein, die in der Dokumentation des entsprechenden Agents erläutert werden, siehe [Protocol Integration Guide](/protocol-integration/overview/).

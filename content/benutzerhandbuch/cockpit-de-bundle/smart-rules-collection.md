@@ -86,7 +86,7 @@ Sie können eine einzelne Gruppe oder ein einzelnes Gerät auswählen (nicht meh
 
 Wenn ein Alarm erzeugt wird, wird eine E-Mail gesendet.
 
->**Info:** Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden. 
+>**Info:** Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden.
 
 **Parameter**
 
@@ -307,7 +307,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">3</td>
 <td align="left">Alarm erzeugen</td>
-<td align="left">Grund für das Auslösen eines Alarms: "Bei Betreten", "Bei Verlassen" (der Standardwert), "Bei Betreten und Verlassen".<br>Typ des auszulösenden Alarms. <br> Schweregrad des auszulösenden Alarms. <br>Alarmtext.</td>
+<td align="left"><b>Auslösen:</b> Grund für das Auslösen eines Alarms: "Bei Betreten", "Bei Verlassen" (der Standardwert), "Bei Betreten und Verlassen".<br><b>Typ:</b> Typ des auszulösenden Alarms. Es wird dringend empfohlen, unterschiedliche Alarmtypen für die einzelnen Smart Rules zu verwenden. Wenn ein Alarmtyp für mehrere Smart Rules verwendet wird, können sich die Smart Rules beim Versuch, denselben Alarmtyp zu aktualisieren, gegenseitig beeinträchtigen. Dies kann zu unerwartetem Verhalten führen.<br> <b>Schweregrad:</b> Schweregrad des auszulösenden Alarms. <br><b>Text:</b> Alarm-Text.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -336,7 +336,7 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 Wenn ein Geofence-Bereich überschritten wird, wird eine E-Mail gesendet.
 
->**Info:** Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden. 
+>**Info:** Beachten Sie, dass die entsprechenden E-Mails mit dem Content-Typ "text/html" gesendet werden.
 
 **Parameter**
 
@@ -495,7 +495,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">3</td>
 <td align="left">Alarm erzeugen</td>
-<td align="left">Typ des auszulösenden Alarms. <br> Schweregrad des auszulösenden Alarms. <br>Alarmtext.</td>
+<td align="left"><b>Typ:</b> Typ des auszulösenden Alarms. Es wird dringend empfohlen, unterschiedliche Alarmtypen für die einzelnen Smart Rules zu verwenden. Wenn ein Alarmtyp für mehrere Smart Rules verwendet wird, können die Smart Rules einander beeinträchtigen, wenn sie versuchen, denselben Alarmtyp zu aktualisieren. Dies kann zu unerwartetem Verhalten führen.<br> <b>Schweregrad: </b>Schweregrad des auszulösenden Alarms. <br><b>Text: </b>Alarm-Text.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -510,11 +510,11 @@ Weitere Informationen zum Aktivieren/Deaktivieren einer Smart Rule finden Sie un
 
 > **Info:** Die Regel prüft einmal pro Minute, ob das konfigurierte Zeitintervall überschritten wurde. Daher kann es, nachdem das Zeitintervall überschritten wurde, bis zu einer Minute dauern, bis der Alarm erzeugt wird. Um das Überschreiten des Intervalls zu überprüfen, muss mindestens ein Messwert eingegangen sein, nachdem die Regel erstellt/aktiviert wurde.
 
-### Bei Alarm Kommando ausführen
+### Bei Alarm Operation ausführen
 
 **Funktionalität**
 
-Tritt ein bestimmter Alarm auf, wird das spezifizierte Kommando zum Gerät gesendet.
+Tritt ein bestimmter Alarm auf, wird die spezifizierte Operation zum Gerät gesendet.
 
 
 **Parameter**
@@ -549,8 +549,8 @@ Die Regel verwendet die folgenden Parameter:
 </tr>
 <tr>
 <td style="text-align:left">3</td>
-<td style="text-align:left">Kommando ausführen</td>
-<td style="text-align:left">Das Kommando, das gesendet wird. Das Kommando wird als JSON-Beschreibung bereitgestellt. Unter dem "Kommando"-Feld können einige Standardkommandos ausgewählt werden. Um ein Standardkommando zu verwenden, wählen sie das entsprechende Kommando und klicken Sie die Pfeil-Schaltfläche auf der rechten Seite. Die JSON-Beschreibung des ausgewählten Kommandos wird eingefügt.</td>
+<td style="text-align:left">Operation ausführen</td>
+<td style="text-align:left">Die Operation, das gesendet wird. Die Operation wird als JSON-Beschreibung bereitgestellt. Unter dem "Operation"-Feld können einige Standardoperationen ausgewählt werden. Um eine Standardperation zu verwenden, wählen sie die entsprechende Operation und klicken Sie die Pfeil-Schaltfläche auf der rechten Seite. Die JSON-Beschreibung der ausgewählten Operation wird eingefügt.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -620,7 +620,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">3</td>
 <td align="left">Alarm erzeugen</td>
-<td align="left"><strong>Typ</strong>: Typ des auszulösenden Alarms. <br><strong>Text</strong>: Alarm-Text.</td>
+<td align="left"><b>Typ:</b> Typ des auszulösenden Alarms. Es wird dringend empfohlen, unterschiedliche Alarmtypen für die einzelnen Smart Rules zu verwenden. Wenn ein Alarmtyp für mehrere Smart Rules verwendet wird, können sich die Smart Rules beim Versuch, denselben Alarmtyp zu aktualisieren, gegenseitig beeinträchtigen. Dies kann zu unerwartetem Verhalten führen.<br> <b>Text: </b>Alarm-Text.</td>
 </tr>
 <tr>
 <td align="left">4</td>
@@ -716,7 +716,7 @@ Die Regel verwendet die folgenden Parameter:
 <tr>
 <td align="left">3</td>
 <td align="left">Alarm erzeugen</td>
-<td align="left"><strong>Typ</strong>: Typ des auszulösenden Alarms. <br><strong>Text</strong>: Alarm-Text.</td>
+<td align="left"><strong>Typ:</strong> Typ des auszulösenden Alarms. Es wird dringend empfohlen, unterschiedliche Alarmtypen für die einzelnen Smart Rules zu verwenden. Wenn ein Alarmtyp für mehrere Smart Rules verwendet wird, können sich die Smart Rules beim Versuch, denselben Alarmtyp zu aktualisieren, gegenseitig beeinträchtigen. Dies kann zu unerwartetem Verhalten führen. <br><strong>Text:</strong> Alarm-Text.</td>
 </tr>
 <tr>
 <td align="left">4</td>

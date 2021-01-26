@@ -20,7 +20,7 @@ The configuration management functionality has been enhanced:
  
 * If a device has the "c8y_SupportedConfigurations" fragment with a list of supported configuration types, it can now have multiple configurations.
 
-For details, see [Device Management > Managing device data > Managing configurations](/users-guide/device-management#configuration-repository) in the User guide.
+For details, see [Device Management > Managing device data > Managing configurations](/users-guide/device-management#configuration-repository) in the *User guide*.
 
 
 #### [MTM-30314] ENHANCED firmware and software update functionality
@@ -35,7 +35,7 @@ The firmware and software update functionality has been enhanced:
 
 	![Software management](/images/users-guide/DeviceManagement/devmgmt-software-tab.png)
 
-For details, see [Device Management > Managing device data > Managing device data](/users-guide/device-management#managing-device-data) in the User guide.
+For details, see [Device Management > Managing device data > Managing device data](/users-guide/device-management#managing-device-data) in the *User guide*.
 
 #### [MTM-30318] ENHANCED bulk operations functionality
 	
@@ -49,7 +49,7 @@ A new wizard has been implemented to add bulk operations of the following types:
 
 ![Bulk operations](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-type.png)
 
-For details, see [Device Management > Monitoring and controlling devices > Working with operations](/users-guide/device-management/#operation-monitoring) in the User guide.
+For details, see [Device Management > Monitoring and controlling devices > Working with operations](/users-guide/device-management/#operation-monitoring) in the *User guide*.
 
 
 #### [MTM-30319] NEW FEATURE - Device profiles
@@ -60,18 +60,18 @@ Based on device profiles, you can assign a specific target configuration to sing
 
 ![Device profile](/images/users-guide/DeviceManagement/devmgmt-device-profile-details.png)
 
-For details, see [Device Management > Managing device data > Managing device profiles](/users-guide/device-management#device-profiles) in the User guide.
+For details, see [Device Management > Managing device data > Managing device profiles](/users-guide/device-management#device-profiles) in the *User guide*.
 
 
 #### [MTM-27299] NEW FEATURE - Trusted certificates
 	
 Cumulocity IoT allows devices to connect via MQTT protocol using a X.509 certificate for authentication. To do so, a certificate must be trusted by Cumulocity IoT. 
 
-For details on how to manage trusted certificates in the UI refer to [Device Management > Managing device data > Managing trusted certificates](/users-guide/device-management#trusted-certificates) in the User guide.
+For details on how to manage trusted certificates in the UI refer to [Device Management > Managing device data > Managing trusted certificates](/users-guide/device-management#trusted-certificates) in the *User guide*.
 
 ![Trusted certificates](/images/users-guide/DeviceManagement/devmgmt-trusted-certificates-list.png)
 
-For information on connecting devices using certificates refer to [Device integration using MQTT > Device certificates](/device-sdk/mqtt/#device-certificates) in the Device SDK guide.
+For information on connecting devices using certificates refer to [Device integration using MQTT > Device certificates](/device-sdk/mqtt/#device-certificates) in the *Device SDK guide*.
 
 ### New Cumulocity IoT Sensor App
 

@@ -11,7 +11,7 @@ You should have read and understand the following concepts:
 
 * [Overview](/web/overview/), explaining when to use which SDK.
 * [Migration history](/web/background), explaining which versions you can use with the new SDK.
-* [Developer command line tool](/web/development-tools/#c8y-cli), enabling you to install the new tooling.
+* [c8y Command Line Tool (CLI)](/web/development-tools/#c8y-cli), enabling you to install the new tooling.
 
 
 ### Setting up a hybrid application

@@ -4,28 +4,22 @@ layout: redirect
 weight: 60
 ---
 
-Use the job scheduler to schedule your Python scripts (ex. To pull data from different data sources at a frequent interval of time). Schedule the retraining of your Machine Learning/Deep Learning models to any immediate/future dates.
+MLW provides a flexible Task Scheduler which can be used for orchestrating a wide variety of activities including periodic data pulls from data sources or retraining your machine learning models at regular intervals.
 
- ***Add new resource***
+To showcase the task scheduler, we will create a simple Python script which will be scheduled for periodic execution. This can easily be extended for more involved activities like data pull and model retraining. First, we create a new resource which will contain the Python source code.
 
- Click on **Add New Resource** to create a new Python file.
+***Add new resource***
+
+Click the **Add New Resource** button to create a new Python file.
 
 ![Add New Resource](/images/zementis/mlw-app-resource-add-new.png)
 
-
-***Add name to the new resource***
-
-Select **Resource Type** as **Python Script** and provide the **Resource Name** in the popup and click **Submit**.
-
-This will create a new Python file with extension **.py** under the **Code** section of the project.
+In the **Add New Resource** panel, select **Resource Type** as **Python Script** and provide the **Resource Name** which identifies the source file. Once done, click the **Submit** button. This will create a new Python file with extension **.py** under the **Code** section of the project.
 
 ![New PY Name](/images/zementis/mlw-app-resource-add-py.png)
 
-
 ***Schedule the Python script***
 
-Edit the Python file and write any python code. Click on the **Execute** Button and select **Recurrence** as **REPEAT** and fill other information. 
-
-This will Schedule the Script execution for every selected interval.
+From the **Code** section, edit the Python file and write any python code. Click the **Execute** button and select **Recurrence** as **REPEAT**. Provide the execution interval and click the **Save** button. This will execute the Python script periodically at specified intervals.
 
 ![PY Script Scheduler](/images/zementis/mlw-app-sch.png)

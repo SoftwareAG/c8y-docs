@@ -4,48 +4,40 @@ layout: redirect
 weight: 70
 ---
 
-Have complicated flows for your model? Use the Workflow that connects your data, script, and model and straight away begin your training or schedule them for future execution.
+Model training is a complex process which often requires data ingestion/transformation via arbitrary scripts. Training workflows define a sequence of data preparation and model training/export activity that can be scheduled periodically.
+
+>**Info:** To proceed, you will require a trained model created from [Automated ML](/machine-learning/web-app-mlw/#automl).
 
 ***Add new resource***
 
-Click on **Add New Resource** to create a new Notebook file.
+Click on **Add New Resource** to create a new Workflow file.
 
 ![Add New Resource](/images/zementis/mlw-app-resource-add-new.png)
 
-**Note**: To proceed, you will require a trained model like one created above through Automated ML.
-
-***Add Workflow***
-
-Select **Resource Type** as **Workflow** and provide the **Resource Name**, **Model**, **Pre Processing Script**, **Data** in the popup and click **Submit**.
-
-This will create a new Workflow file with extension **.wf** under **Training Workflow** section of the project.
+In the **Add New Resource** panel, select **Resource Type** as **Workflow** and provide the **Resource Name** which identifies the workflow. Select the appropriate **Model**, **Pre Processing Script**, and **Data** which defines the sequence of this workflow. Once done, click the **Submit** button. This will create a new workflow file with extension **.wf** under **Training Workflow** section of the project.
 
 ![Add Workflow](/images/zementis/mlw-app-resource-add-workflow.png)
 
+***Workflow information***
 
-***Workflow Information***
-
-This will show information about the workflow file. 
+Click on a workflow file under **Training Workflow** section to view its metadata.
 
 ![Workflow information](/images/zementis/mlw-app-resource-workflow.png)
 
+***Workflow execution***
 
-***Workflow Training***
-
-Click on the **Train** button to train a workflow.
+To schedule the execution of a worflow, click the **Train** button.
 
 ![Workflow training](/images/zementis/mlw-app-resource-workflow-train.png)
 
+***Workflow execution parameters***
 
-***Workflow Training Parameters***
-
-Fill the information in the form and hit **Submit**. This will create a new task in the **Tasks** section.
+Provide the parameters that will define the workflow execution including **Task Name** and **Recurrence**. Once done, click the **Submit** button which will create a new task in the **Tasks** section.
 
 ![Workflow training](/images/zementis/mlw-app-resource-workflow-training-params.png)
 
+***Workflow status***
 
-***Workflow Tasks***
-
-See the status of the workflow task in **Tasks** section under the respective task name.
+Status of the workflow execution can be viewed by clicking the corresponding task name in the **Tasks** section.
 
 ![Workflow tasks](/images/zementis/mlw-app-task-workflow.png)

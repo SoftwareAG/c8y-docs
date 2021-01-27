@@ -44,13 +44,13 @@ The Cumulocity IoT documentation on this website contains the following informat
 <tr>
 <td align="left">User documentation</td>
 <td align="left"><a href="/device-tutorials/tutorials-introduction/">Device integration tutorials</a></td>
-<td align="left">How to integrate various demo devices in your Cumulocity IoT environment.</td> 
+<td align="left">How to integrate various demo devices in your Cumulocity IoT environment.</td>
 </tr>
 
 <tr>
 <td align="left">User documentation</td>
 <td align="left"><a href="/cloud-remote-access/cra-general-aspects/">Cloud Remote Access</a></td>
-<td align="left">How to remotely access operating panels and other devices via a web browser using the Cloud Remote Access feature.</td> 
+<td align="left">How to remotely access operating panels and other devices via a web browser using the Cloud Remote Access feature.</td>
 </tr>
 
 <tr>
@@ -61,7 +61,7 @@ The Cumulocity IoT documentation on this website contains the following informat
 
 <tr>
 <td align="left">Developer documentation</td>
-<td align="left"><a href="/web/introduction/">Web SDK guide</a></td>
+<td align="left"><a href="/web/">Web SDK guide</a></td>
 <td align="left">How to use the Web SDK to extend applications with your own plugins, add your own applications or implement further functionalities tailored to your use case.</td>
 </tr>
 

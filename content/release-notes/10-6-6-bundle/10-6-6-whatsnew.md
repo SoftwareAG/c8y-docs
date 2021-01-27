@@ -72,6 +72,6 @@ There is no further migration of AngularJS widgets required. Backward compatibil
 
 For details on creating new widgets based on Angular, see [Add a custom widget to a dashboard](/web/tutorials/#add-a-custom-widget) in the Web SDK guide.
 
-The new components can be used to display dashboards on any page with or without the context and widget concept of the group and device dashboards. A demo has been added to the tutorial application. See [Web SDK guide > Tutorials](/web/tutorials/) in the Web SDK guide for information on the tutorial application.  
+The new components can be used to display dashboards on any page with or without the context and widget concept of the group and device dashboards. A demo has been added to the tutorial application. See [Tutorials](/web/tutorials/) in the *Web SDK guide* for information on the tutorial application.  
 
 In this context, the view of the dashboard the widget editors has been updated to improve the user experience, see above. Moreover, a new preview is provided which can also be added to an AngularJS widget by using the `previewImage` property in the widget definition.

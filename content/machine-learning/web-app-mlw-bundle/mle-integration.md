@@ -26,6 +26,6 @@ Click on a pipeline file under **Inference Pipeline** section to view its metada
 
 ***Pipeline deployment***
 
-Click the **Deploy** button to deploy the inference pipeline on Machine Learning Engine.
+Click the **Deploy** button to deploy the inference pipeline on MLE.
 
 ![Pipeline deployment](/images/zementis/mlw-app-resource-pipeline-deploy.png)

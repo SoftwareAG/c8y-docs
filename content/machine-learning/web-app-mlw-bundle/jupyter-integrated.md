@@ -18,7 +18,7 @@ In the **Add New Resource** panel, select **Resource Type** as **Notebook** and 
 
 ***Notebook editing***
 
-To edit a notebook, select the notebook file from **Code** section and clik the **Edit** button. This will open the notebook in an editor which the user can use to write and execute Python and Markdown code interactively.
+To edit a notebook, select the notebook file from **Code** section and click the **Edit** button. This will open the notebook in an editor which the user can use to write and execute Python and Markdown code interactively.
 
 ![Notebook editor](/images/zementis/mlw-app-nb-edit.png)
 

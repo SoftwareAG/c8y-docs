@@ -26,7 +26,7 @@ Click on a workflow file under **Training Workflow** section to view its metadat
 
 ***Workflow execution***
 
-To schedule the execution of a worflow, click the **Train** button.
+To schedule the execution of a workflow, click the **Train** button.
 
 ![Workflow training](/images/zementis/mlw-app-resource-workflow-train.png)
 

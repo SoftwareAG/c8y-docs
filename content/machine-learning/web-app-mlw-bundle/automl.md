@@ -4,7 +4,7 @@ layout: redirect
 weight: 40
 ---
 
-MLW provides Automated Machine Learning (AutoML) feature which enables you to build your machine learning models for Classification, Regression and Anomaly Detection with ease by performing an exhaustive grid search in hyperparameter space to generate the best model for your dataset.
+MLW provides Automated Machine Learning (AutoML) feature which enables you to build your machine learning models for Classification, Regression and Anomaly Detection with ease by performing an exhaustive grid search in hyper-parameter space to generate the best model for your dataset.
 
 ***Add new resource for AutoML***
 
@@ -30,25 +30,23 @@ Select the training parameters which includes model evaluation criteria (**Scori
 
 ![Pre Processing steps](/images/zementis/mlw-app-automl-trainparam.png)
 
-***AutoML: training started***
+***AutoML status***
 
 You can view the model training progress in the **Tasks** section of MLW.
 
 ![Pre Processing steps](/images/zementis/mlw-app-automl-start.png)
 
-***AutoML: training completed***
-
 Once the task is **COMPLETED**, all the trained models are listed along with the model evaluation score in descending order.
 
 ![Pre Processing steps](/images/zementis/mlw-app-automl-complete.png)
 
-***AutoML: hyper-parameters***
+***AutoML hyper-parameters***
 
 The hyper-parameters for each model can be viewed by clicking on the corresponding model name.
 
 ![Pre Processing steps](/images/zementis/mlw-app-automl-hyper.png)
 
-***AutoML: model created***
+***AutoML model***
 
 After training is complete, the best model selected by the evaluation criteria will be saved under the **Model** section of the respective **Project** in PMML format.
 

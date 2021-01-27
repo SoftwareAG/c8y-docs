@@ -14,7 +14,7 @@ Projects functionality includes:
 
 ***Add New Project***
 
-To create a new project, click on **+Add Project** button and fill the form with **Project Name**, **Project Description** and click on **Add Project** . This will create a new project with the given name. The new project will not contain any resources.
+To create a new project, click the **+Add Project** button, fill the form with **Project Name** and **Project Description**, and click the **Add Project** button. This will create a new project with the given name. The new project will not contain any resources.
 
 ![projects manager](/images/zementis/mlw-app-add-project.png)
 
@@ -35,7 +35,7 @@ MLW categorizes project resources as follows:
 
 ***Upload Resources***
 
-To upload files, the user can either click on the upload pane to select files for uploading or use the drag and drop files capability.
+To upload files, the user can either click the upload pane to select files for uploading or use the drag and drop files capability.
 
 ![Upload Resources](/images/zementis/mlw-app-upload-resources.png)
 

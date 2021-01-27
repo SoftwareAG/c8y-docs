@@ -22,11 +22,11 @@ Click on an application card to view the application properties.
 Each application will show the following properties, depending on the application type:
 
 <table>
-<col width= 15%
-<col width= 40%>
-<col width= 15%>
-<col width= 15%>
-<col width= 15%>
+<col width= 20%
+<col width= 20%>
+<col width= 20%>
+<col width= 20%>
+<col width= 20%>
 <thead>
 <tr>
 <th style="text-align:left">Field</th>

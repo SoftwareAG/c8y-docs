@@ -15,7 +15,7 @@ All subscribed web applications of a tenant appear in the application switcher o
 
 <img src="/images/users-guide/Administration/admin-app-switcher.png" alt="App switcher">
 
-The Cumulocity IoT UI itself is built around a framework based on AngularJS and Bootstrap, the modern HTML5 web application frameworks. It is designed in a modular fashion around a set of plugins so that developers can create their own configurations of the Cumulocity IoT user interfaces. For more information on developing plugins, refer to the [Web SDK for plugins](/web/overview) in the Web SDK guide.
+The Cumulocity IoT UI itself is built around a framework based on AngularJS and Bootstrap, the modern HTML5 web application frameworks. It is designed in a modular fashion around a set of plugins so that developers can create their own configurations of the Cumulocity IoT user interfaces. For more information on developing plugins, refer to [Web SDK for plugins](/web/overview).
 
 ### Deploying web applications
 

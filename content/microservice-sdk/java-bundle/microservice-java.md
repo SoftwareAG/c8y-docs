@@ -437,7 +437,7 @@ You can use the `max` parameter to specify a higher number.
 In the Device Management application, navigate to **Devices** > **All devices** and locate your microservice tracker.
 Under **Tracking** you will see a map with the tracked locations.
 You can also develop your own web application and customize a map widget.
-Refer to [Web SDK guide > Application library](/web/libraries/#application) for more details.
+Refer to [Application library](/web/libraries/#application) in the Web SDK guide.
 
 ![Microservice tracking](/images/microservices-sdk/ms-tracking-map.png)
 

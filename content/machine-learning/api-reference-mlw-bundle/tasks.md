@@ -8,7 +8,7 @@ aliases:
   - /machine-learning/api-reference-mlw/#tasks
 ---
 
-Operations on MLW Tasks.
+Operations on MLW tasks.
 
 >**Info:** An active subscription of the MLW microservice is required to perform operations.
 
@@ -18,7 +18,7 @@ Operations on MLW Tasks.
 {{url}}/service/mlw/tasks
 ```
 
-Get the list of tasks running or completed in the system.
+Gets the list of tasks running or completed in the system.
 
 |HEADERS||
 |:---|:---|
@@ -119,7 +119,7 @@ curl --location --request GET '{{url}}/service/mlw/tasks'
 {{url}}/service/mlw/tasks/{{parenttaskID}}
 ```
 
-Get the details of the parent task running or completed.
+Gets the details of the parent task running or completed.
 
 |HEADERS||
 |:---|:---|
@@ -239,7 +239,7 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks'
 {{url}}/service/mlw/tasks/{{parenttaskID}}/task/{{taskID}}
 ```
 
-This provides the complete detail of the individual task running under a parent task
+Provides the complete details of the individual task running under a parent task.
 
 |HEADERS||
 |:---|:---|
@@ -297,8 +297,8 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -308,7 +308,7 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1
 {{url}}/service/mlw/tasks/{{parenttaskID}}/task/{{taskID}}
 ```
 
-Deletes and stops the running individual task running under a parent task
+Deletes and stops the individual task running under a parent task.
 
 |HEADERS||
 |:---|:---|
@@ -401,8 +401,8 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 ### DELETE - Delete a parent task 
@@ -411,7 +411,7 @@ curl --location --request GET '{{url}}/service/mlw/tasks/1601287609_Tasks/task/1
 {{url}}/service/mlw/tasks/{{parenttaskID}}
 ```
 
-Delete and stop the running all the individual task running under a parent task and delete the parent task.
+Deletes and stops all the individual tasks running under a parent task and delete the parent task.
 
 |HEADERS||
 |:---|:---|
@@ -618,7 +618,7 @@ curl --location --request DELETE '{{url}}/service/mlw/tasks/1601287609_Tasks'
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```

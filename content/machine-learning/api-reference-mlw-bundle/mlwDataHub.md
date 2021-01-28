@@ -1,5 +1,5 @@
 ---
-title: DataHub Data Pull
+title: DataHub data pull
 layout: redirect
 weight: 40
 
@@ -7,11 +7,11 @@ aliases:
   - /machine-learning/api-reference-mlw-bundle/#mlwDataHub
 ---
 
-Operations on MLW Data Connectors - Data pull from Cumulocity IoT DataHub.
+Operations on MLW data connectors - Data pull from Cumulocity IoT DataHub.
 
 >**Info:** An active subscription of the MLW microservice (mlw-cdh) is required to perform operations.
 
-### POST - Pull Data from Cumulocity IoT DataHub
+### POST - Pull data from Cumulocity IoT DataHub
 
 ```
 {{url}}/service/mlw-cdh/projects/{{projectID}}/resources/importFromDatahub/data
@@ -85,8 +85,8 @@ curl --location --request POST '{{url}}/service/mlw-cdh/projects/1601355085_Proj
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 

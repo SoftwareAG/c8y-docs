@@ -1,5 +1,5 @@
 ---
-title: MLE Integration
+title: MLE integration
 layout: redirect
 weight: 70
 
@@ -8,7 +8,7 @@ aliases:
   - /machine-learning/api-reference-mlw-bundle/#mleIntegration
 ---
 
-Operations on Models.
+Operations on models.
 
 >**Info:** An active subscription of the MLW microservice is required to perform operations.
 
@@ -79,8 +79,8 @@ curl --request GET "{{url}}/service/mlw/resources/deploy?type=PMML"
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -151,8 +151,8 @@ curl --request GET "{{url}}/service/mlw/resources/deploy?type=ONNX"
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -224,8 +224,8 @@ curl --request GET "{{url}}/service/mlw/resources/deploy?type=PIPELINE"
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -364,8 +364,8 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -494,8 +494,8 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -643,8 +643,8 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601355085_Project/
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -781,8 +781,8 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Projec
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -889,8 +889,8 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Projec
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -1036,8 +1036,8 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601355085_Projec
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -1292,8 +1292,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -1528,8 +1528,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -1780,8 +1780,8 @@ curl --request GET "{{url}}/service/mlw/projects/1601355085_Project/resources/16
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 

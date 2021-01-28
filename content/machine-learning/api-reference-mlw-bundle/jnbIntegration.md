@@ -1,5 +1,5 @@
 ---
-title: Jupyter Integration
+title: Jupyter integration
 layout: redirect
 weight: 100
 
@@ -12,13 +12,12 @@ Operations on Jupyter Notebook.
 
 >**Info:** An active subscription of the MLW microservice is required to perform operations.
 
-### GET - Preview the Notebook Code along with the Session creation
+### GET - Preview the Notebook code along with the session creation
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/jnb-content
 ```
-
-To get the content of the Jupyter Notebook file and also create a Jupyter Session
+Gets the content of the Jupyter Notebook file and also creates a Jupyter session.
 
 |HEADERS||
 |:---|:---|
@@ -98,8 +97,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -109,7 +108,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601355085_Project/r
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/jnb-content
 ```
 
-To update the contents of the Jupyter Notebook file 
+Updates the contents of the Jupyter Notebook file.
 
 |HEADERS||
 |:---|:---|
@@ -176,8 +175,8 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601355085_Project/r
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -206,13 +205,13 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601355085_Project/r
 }
 ```
 
-### GET - List of created Jupyter Sessions
+### GET - List of created Jupyter sessions
 
 ```
 {{url}}/service/mlw/jnb-sessions
 ```
 
-To get the list of created Jupyter Sessions
+Gets the list of created Jupyter sessions.
 
 |HEADERS||
 |:---|:---|
@@ -295,7 +294,7 @@ curl --location --request GET '{{url}}/service/mlw/jnb-sessions'
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```

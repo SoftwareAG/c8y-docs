@@ -1,5 +1,5 @@
 ---
-title: Script Execution
+title: Script execution
 layout: redirect
 weight: 90
 
@@ -8,7 +8,7 @@ aliases:
   - /machine-learning/api-reference-mlw-bundle/#codeExecution
 ---
 
-Operations on MLW Projects.
+Operations on MLW projects.
 
 >**Info:** An active subscription of the MLW microservice is required to perform operations.
 
@@ -18,7 +18,7 @@ Operations on MLW Projects.
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/execute
 ```
 
-Execute a python script
+Execute a python script.
 
 |HEADERS||
 |:---|:---|

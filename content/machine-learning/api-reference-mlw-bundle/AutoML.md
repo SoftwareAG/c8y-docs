@@ -12,13 +12,13 @@ Operations on MLW Automated ML.
 
 >**Info:** An active subscription of the MLW microservice is required to perform operations.
 
-### GET - Start the AutoML process.
+### GET - Start the AutoML process
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/automl 
 ```
 
-Start the AutoML process by passing the data to the engine and get the initial information to start AutoML process.
+Start the AutoML process by passing the data to the engine and get the initial information to start the AutoML process.
 
 |HEADERS||
 |:---|:---|
@@ -186,7 +186,7 @@ Train an AutoML model by using pre-processing options for variables and using th
 |:---|:---|
 |projectID (string)|{{project ID}}
 |resourceID (string)|{{resource ID}}
-|data |Filled form values
+|data |filled form values
 |idforData |required description of the project
 |target_variable|column name which is target
 |problem_type|Classification/Regression
@@ -382,20 +382,20 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
 
 
-### GET - Start the Anomaly model training process.
+### GET - Start the Anomaly detection model training process
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/automl
 ```
 
-Start the Anomaly model training process by passing the data to the engine and get the initial information to start the training.
+Start the Anomaly detection model training process by passing the data to the engine and get the initial information to start the training.
 
 |HEADERS||
 |:---|:---|
@@ -548,13 +548,13 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 }
 ```
 
-### POST - Start the training process of the Anomaly Detection Model 
+### POST - Start the training process of the Anomaly detection model
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/anomaly
 ```
 
-Train an Anomaly model by using pre-processing options for variables and using the model options given by the user in the form.
+Train an Anomaly detection model by using pre-processing options for variables and using the model options given by the user in the form.
 
 |HEADERS||
 |:---|:---|
@@ -564,13 +564,13 @@ Train an Anomaly model by using pre-processing options for variables and using t
 |:---|:---|
 |projectID (string)|{{project ID}}
 |resourceID (string)|{{resource ID}}
-|data |Filled form values
+|data |filled form values
 |idforData |required description of the project
 
 
 |HYPER- PARAMS||
 |:---|:---|
-|algorithm| Selected Algorithms
+|algorithm| selected algorithms
 
 
 **Example Request**
@@ -695,7 +695,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```

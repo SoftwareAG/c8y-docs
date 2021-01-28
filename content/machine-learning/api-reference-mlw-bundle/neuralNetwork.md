@@ -1,5 +1,5 @@
 ---
-title: Neural Network
+title: Neural network
 layout: redirect
 weight: 80
 
@@ -8,11 +8,11 @@ aliases:
   - /machine-learning/api-reference-mlw-bundle/#neuralNetwork
 ---
 
-Neural Network Training.
+Neural network training.
 
 >**Info:** An active subscription of the MLW microservice is required to perform operations.
 
-### POST - Start the training process of the Neural Network 
+### POST - Start the training process of the neural network 
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/trainNN

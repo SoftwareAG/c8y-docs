@@ -1,5 +1,5 @@
 ---
-title: Cumulocity Data Pull
+title: Cumulocity IoT data pull
 layout: redirect
 weight: 30
 
@@ -8,17 +8,17 @@ aliases:
   - /machine-learning/api-reference-mlw/#autoML
 ---
 
-Operations on MLW Data Connectors - Data pull from Cumulocity
+Operations on MLW data connectors - Data pull from Cumulocity IoT
 
 >**Info:** An active subscription of the MLW microservice is required to perform operations.
 
-### GET - Get the list of devices in the C8Y inventory
+### GET - Get the list of devices from the C8Y inventory
 
 ```
 {{url}}/service/mlw/listDevices
 ```
 
-Get the list of devices in the C8Y inventory.
+Gets the list of devices from the C8Y inventory.
 
 |HEADERS||
 |:---|:---|
@@ -151,13 +151,13 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 }
 ```
 
-### GET - Get the list of measurement from the C8Y inventory
+### GET - Get the list of measurements from the C8Y inventory
 
 ```
 {{url}}/service/mlw/listDevices/{{deviceID}}
 ```
 
-Get the list of measurement from the C8Y inventory
+Gets the list of measurements from the C8Y inventory.
 
 |HEADERS||
 |:---|:---|
@@ -165,7 +165,7 @@ Get the list of measurement from the C8Y inventory
 
 |PARAMS||
 |:---|:---|
-|deviceID (string)| device id of the registered device
+|deviceID (string)| device ID of the registered device
 
 **Example Request**
 
@@ -219,7 +219,7 @@ curl --location --request GET '{{url}}/service/mlw/listDevices/446' \
 {{url}}/service/mlw/projects/{{projectID}}/resources/importFromCumulocity/data
 ```
 
-Downloads the data in the Data Section from Cumulocity inventory wih given aggregation, it is a long running process
+Downloads the data in the data section from Cumulocity IoT inventory wih given aggregation, it is a long running process.
 
 |HEADERS||
 |:---|:---|
@@ -227,14 +227,14 @@ Downloads the data in the Data Section from Cumulocity inventory wih given aggre
 
 |PARAMS||
 |:---|:---|
-|fileName |Name of the file
-|dateFrom |Date from
-|timeFromH|Time from (hour)
-|timeFromM|Time from (minute)
-|dateTo| Date to 
-|timeToH|Time to (hour)
-|timeToM|Time to (minute)
-|source| Device ID
+|fileName |name of the file
+|dateFrom |date from
+|timeFromH|time from (hour)
+|timeFromM|time from (minute)
+|dateTo|date to 
+|timeToH|time to (hour)
+|timeToM|time to (minute)
+|source| device ID
 |series| list of measurement names
 
 **Example Request**
@@ -332,7 +332,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```

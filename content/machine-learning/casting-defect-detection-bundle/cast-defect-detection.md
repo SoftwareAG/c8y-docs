@@ -7,24 +7,24 @@ aliases:
   - /predictive-analytics/casting-defect-detection/
 ---
 
-This section deals with the basic Data Science steps of creating a casting defect detection model using the Machine Learning Workbench with the open-source Kaggle Dataset. Follow the sections below for downloading data, building a Neural Network architecture, transfer learning with Mobilenet, training the model, deploying them to production and using the same to detect defects in the casts. 
+This section deals with the basic data science steps of creating a casting defect detection model using the Machine Learning Workbench with the open-source Kaggle dataset. Follow the sections below for downloading data, building a neural network architecture, transfer learning with Mobilenet, training the model, deploying the model to production and using the same to detect defects in the casts. 
 
 
 #### Data collection from Kaggle
 
-Download the Open-Source Kaggle Dataset from [here](https://www.kaggle.com/ravirajsinh45/real-life-industrial-dataset-of-casting-product).
+Download the open-source Kaggle dataset from https://www.kaggle.com/ravirajsinh45/real-life-industrial-dataset-of-casting-product.
 
 ![Kaggle](/images/zementis/castingDetection/mlw-casting-kaggle_data.png)
 
-**Note**: We get two folders when you unzip the downloaded dataset. Please use the '**casting_data**' folder and delete 'casting_512x512' folder.
+**Info:** You will get two folders when you unzip the downloaded dataset. Use the *casting_data* folder and delete the *casting_512x512* folder.
 
 All the images provided with this dataset are the top view of the submersible pump impeller.
 
-The dataset contains total of 7348 images. These all are the size of (300*300) pixels grey-scaled images. In all the images, the augmentation is already applied. 
+The dataset contains 7348 images in total. These are all grey-scaled images of the size 300x300 pixels. The augmentation is already applied in all the images.
 
 There are mainly two categories:
-1) Defective
-2) Ok
+1. Defective
+2. Ok
 
 For training a classification model, the data is split into training and testing folders. Both train and test folders contains **def_front** and **ok_front** subfolders.
 

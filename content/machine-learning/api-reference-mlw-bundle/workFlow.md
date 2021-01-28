@@ -11,13 +11,13 @@ Training WorkFlow in MLW.
 
 >**Info:** An active subscription of the MLW microservice is required to perform operations.
 
-### POST - Retrain Machine Learning models using the Training WorkFlow
+### POST - Retrain Machine Learning models using WorkFlow
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourcesID}}/workflow
 ```
 
-Trains the WorkFlow using the already created AutoML Model, pre-processing script and the dataset.
+Trains the WorkFlow using the already created AutoML model, pre-processing script and the dataset.
 
 |HEADERS||
 |:---|:---|
@@ -121,8 +121,8 @@ curl --request POST "{{url}}/service/mlw/projects/1601355085_Project/resources/1
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 

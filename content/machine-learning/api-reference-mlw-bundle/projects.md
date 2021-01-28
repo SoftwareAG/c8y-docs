@@ -73,8 +73,8 @@ curl --request GET "{{url}}/service/mlw/projects"
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -150,8 +150,8 @@ curl --location --request POST '{{url}}/service/mlw/projects' \
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -192,7 +192,7 @@ Commit the resources of project for version control.
 |PARAMS||
 |:---|:---|
 |projectID (string)|{{project ID}}
-|listOfResources (list)|List of resource IDs
+|listOfResources (list)|list of resource IDs
 
 
 **Example Request**
@@ -278,8 +278,8 @@ curl --location --request POST '{{url}}/service/mlw/projects/1600753202_Project/
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -392,8 +392,8 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601507741_Project/'
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -481,8 +481,8 @@ curl --location --request DELETE '{{url}}/service/mlw/projects/1601507741_Projec
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -1239,8 +1239,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/1600750565_Project/r
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -1380,8 +1380,8 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -1621,8 +1621,8 @@ curl --location --request POST "{{url}}/service/mlw/projects/1600750565_Project/
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 ### POST - Create new resource files into the Project (Workflow file)
@@ -1937,8 +1937,8 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 ### POST - Create new resource files into the Project (Notebook file)
@@ -1947,7 +1947,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 {{url}}/service/mlw/projects/{{projectID}}/resources/createnew
 ```
 
-To create new resource files to use in the project, files like neural network designer, workflow, jupyter notebook, pipeline, python script files
+To create new resource files (Notebook file) to use in the project.
 
 |HEADERS||
 |:---|:---|
@@ -2264,8 +2264,8 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -2608,8 +2608,8 @@ curl --location --request POST '{{url}}/service/mlw/projects/1601283001_Project/
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -3286,8 +3286,8 @@ curl --location --request POST '{{url}}/service/mlw/projects/1600159589_Project/
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 ### GET - Get the details of the resource file 
@@ -3296,7 +3296,7 @@ curl --location --request POST '{{url}}/service/mlw/projects/1600159589_Project/
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}
 ```
 
-To get the details of the a resource file
+Gets the details of a resource file.
 
 |HEADERS||
 |:---|:---|
@@ -3375,8 +3375,8 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources/16
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -3385,8 +3385,7 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources/16
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/preview
 ```
-
-To get the content of the a Code file
+Gets the content of the a Code file.
 
 |HEADERS||
 |:---|:---|
@@ -3432,8 +3431,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -3443,7 +3442,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/preview
 ```
 
-To get the content of the a Data file
+Gets the content of the a Data file.
 
 |HEADERS||
 |:---|:---|
@@ -3644,8 +3643,8 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 ### GET - Preview the Notebook file
@@ -3654,7 +3653,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/jnb-content
 ```
 
-To get the content of the a Data file
+Gets the content of the a Notebook file
 
 |HEADERS||
 |:---|:---|
@@ -3734,15 +3733,15 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 ### GET - Preview the Architecture file
 ```
 {{url}}/service/mlw/projects/1600784593_Project/resources/1603290789_0699_Resource/preview
 ```
-To get the content of the a Data file
+Gets the content of the a Architecture file
 
 |HEADERS||
 |:---|:---|
@@ -4016,13 +4015,13 @@ curl --location --request GET '{{url}}/service/mlw/projects/1600784593_Project/r
 
 ```
 
-### GET - Add content to the file and save
+### PUT - Add content to the file and save
 
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/save
 ```
 
-To get the content of the a Data file
+Updates the contents of a file.
 
 |HEADERS||
 |:---|:---|
@@ -4088,8 +4087,8 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601283001_Project/r
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -4099,7 +4098,7 @@ curl --location --request PUT '{{url}}/service/mlw/projects/1601283001_Project/r
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}
 ```
 
-To get the details of the a resource file
+Deletes a resource file.
 
 |HEADERS||
 |:---|:---|
@@ -4286,8 +4285,8 @@ curl --request DELETE "{{url}}/service/mlw/projects/1600750565_Project/resources
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```
 
@@ -4298,7 +4297,7 @@ curl --request DELETE "{{url}}/service/mlw/projects/1600750565_Project/resources
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/download
 ```
 
-To get the details of the a resource file
+Downloads a resource file.
 
 |HEADERS||
 |:---|:---|
@@ -4460,7 +4459,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 
 {
     "error": "general/internalError",
-    "message": "Not authorized!",
-    "info": "https://www.cumulocity.com/reference-guide/#error_reporting"
+    "message": "No auth information found",
+    "info": "https://cumulocity.com/guides/reference/rest-implementation/#error_reporting"
 }
 ```

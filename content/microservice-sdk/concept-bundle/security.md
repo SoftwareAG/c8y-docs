@@ -58,7 +58,10 @@ Required roles are added to the service users.
 * Roles: The custom roles provided to tenant platform users by the microservice developer.
 These roles can be assigned or revoked to the tenant platform users or groups using the Administration application.
 
-Custom roles need to adhere to this name format in order to be shown on the UI: ROLE_<NAME>_(READ|ADMIN|CREATE)<br>
+Custom roles need to adhere to this name format in order to be shown in the UI:
+
+ROLE_<NAME>_(READ|ADMIN|CREATE)
+
 You can add them to the [application manifest](#manifest) in the `roles` properties as follows:
 
 ```json

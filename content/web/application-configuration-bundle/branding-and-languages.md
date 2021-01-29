@@ -378,7 +378,7 @@ The platform UI strings used for internationalization are stored in [gettext](ht
 
 Each translated catalog is loaded at runtime in a JSON format. To convert .po (gettext) files into .json files we rely on `@c8y/cli` installed during the first step.
 
-##### How to add your own translations
+##### How to add your own translations at build time
 
 1. Download the string catalog from [@c8y/ngx-components@1004.0.6/locales/locales.pot](https://unpkg.com/@c8y/ngx-components@latest/locales/locales.pot) (starting from version 1004.0.6,`latest` can be replaced by your current used version).
 2. Load the downloaded locales.pot template file in your preferred .pot file editor and create a new translation from it. Choose the target language of the translation, e.g. Afrikaans, and translate each string. Repeat the process for as many languages as you like.
@@ -415,6 +415,28 @@ In the example provided in the repository to be downloaded you can find an examp
 ```
 
 The imported language can be changed in the UI after login. To do so, click the User icon at the top left, select User settings from the menu and in the upcoming window select the language of your choice.
+
+##### How to add your own translations at runtime
+You can translate certain strings at runtime, which means they don't need to be included in the build and can simply be added to the [application options](/web/application-configuration/#application-options). However, this concept doesn't allow to add new languages. You can only add new strings to existing languages or align certain translations on existing ones. To translate a certain key you need to add the following structure to the application options:
+
+```typescript
+  i18nExtra?: {
+    [langCode: string]: {
+      [key: string]: string;
+    };
+  };
+```
+
+For example, the following will translate a custom cookie banner:
+
+```json
+   "i18nExtra": {
+      "de": {
+        "About cookies on Cumulocity IoT": "Informationen zu Cookies in Cumulocity IoT",
+        "Click Agree and Proceed to accept cookies and go directly to the platform or click on Privacy Policy to see detailed descriptions of the used cookies.": "Klicken Sie auf Zustimmen und fortfahren, um Cookies zu akzeptieren und direkt zur Plattform zu gelangen, oder klicken Sie auf Datenschutzrichtlinie, um detaillierte Beschreibungen der verwendeten Cookies anzuzeigen."
+      }
+   }
+```
 
 #### Deploying
 

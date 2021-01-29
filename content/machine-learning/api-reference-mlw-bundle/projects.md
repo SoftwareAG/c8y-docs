@@ -8,7 +8,7 @@ aliases:
   - /machine-learning/api-reference-mlw/#projects
 ---
 
-Operations on MLW Projects.
+Operations on Machine Learning Workbench (MLW) Projects.
 
 >**Info:** An active subscription of the MLW microservice is required to perform operations.
 
@@ -3385,7 +3385,7 @@ curl --request GET "{{url}}/service/mlw/projects/1600750565_Project/resources/16
 ```
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/preview
 ```
-Gets the content of the a Code file.
+Gets the content of the Code file.
 
 |HEADERS||
 |:---|:---|
@@ -3442,7 +3442,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/preview
 ```
 
-Gets the content of the a Data file.
+Gets the content of the Data file.
 
 |HEADERS||
 |:---|:---|
@@ -3653,7 +3653,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 {{url}}/service/mlw/projects/{{projectID}}/resources/{{resourceID}}/jnb-content
 ```
 
-Gets the content of the a Notebook file
+Gets the content of the Notebook file.
 
 |HEADERS||
 |:---|:---|
@@ -3741,7 +3741,7 @@ curl --location --request GET '{{url}}/service/mlw/projects/1601283001_Project/r
 ```
 {{url}}/service/mlw/projects/1600784593_Project/resources/1603290789_0699_Resource/preview
 ```
-Gets the content of the a Architecture file
+Gets the content of the Architecture file.
 
 |HEADERS||
 |:---|:---|

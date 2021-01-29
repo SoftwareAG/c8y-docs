@@ -26,7 +26,7 @@ Machine Learning Workbench (MLW) categorizes project resources as follows:
 
 | Resource | Content description | File type |
 |-----     |-----        |-----      |
-| Data | Training data for Machine Learning Workbench (MLW). | <ul><li>csv</li><li>json</li><li>zip</li><li>png</li><li>jpg/jpeg</li></ul> |
+| Data | Training data for Machine Learning Workbench (MLW). | <ul><li>csv</li><li>json</li><li>zip</li><li>png</li><li>jpg</li><li>txt</li></ul> |
 | Code | Python code for data preparation/exploration, data pre/post-processing steps, model training and evaluation. | <ul><li>py</li><li>ipynb</li></ul> |
 | Model | Models trained by Machine Learning Workbench (MLW). | <ul><li>pmml</li><li>onnx</li></ul> |
 | NN Designer | Architectures depicting complex structures of Deep Neural Networks. | <ul><li>architecture (JSON)</li></ul> |

@@ -985,7 +985,7 @@ Establish tunneling by Remote Access device agent.
 
 ### Updating operations
 
-When using the template to set an operation to state SUCCESSFUL, it supports sending additional parameters to trigger additional calls on the server.
+When using the template to set an operation to status SUCCESSFUL, it supports sending additional parameters to trigger additional calls on the server.
 The table below shows the operations supporting this feature and what will be done with the parameters.
 
 <table>

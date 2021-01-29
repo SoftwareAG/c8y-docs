@@ -71,15 +71,15 @@ If you create any `c8y_SoftwareList` operation from the UI, the agent will recei
 
 After the aggregation finishes, the `perform` function is called. The function:
 
-- Updates the operation state to EXECUTING
+- Updates the operation status to EXECUTING
 - Validates package names
 - Creates a list for software packages to be installed
 - Creates a list for software packages to be removed
 - Downloads software packages from the server (inventory/binaries)
 - Removes software packages by the pre-defined command
 - Installs software packages by the pre-defined command
-- Updates the operation state to FAILED (with a reason) if any of the above tasks failed
-- Updates the operation state to SUCCESSFUL
+- Updates the operation status to FAILED (with a reason) if any of the above tasks failed
+- Updates the operation status to SUCCESSFUL
 - Sends the updated package list to the server
 
 Before you run the agent again, change `lua.plugins` in your _cumulocity-agent.conf_ file:

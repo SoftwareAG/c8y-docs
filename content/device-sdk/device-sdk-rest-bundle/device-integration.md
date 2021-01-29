@@ -282,7 +282,7 @@ This request will also delete all data associated with the device including its 
 
 #### Working with operations
 
-Each operation in Cumulocity IoT is cycled through an execution flow. When an operation is created through a Cumulocity IoT application, its state is PENDING, i.e. it has been queued for executing but it hasn't executed yet. When an agent picks up the operation and starts executing it, it marks the operations as EXECUTING in Cumulocity IoT. The agent will then carry out the operation on the device or its children (for example, it will restart the device, or set a relay). Then it will possibly update the inventory reflecting the new state of the device or its children (e.g. it updates the current state of the relay in the inventory). Then the agent will mark the operation in Cumulocity IoT as either SUCCESSFUL or FAILED, potentially indicating the error.
+Each operation in Cumulocity IoT is cycled through an execution flow. When an operation is created through a Cumulocity IoT application, its status is PENDING, i.e. it has been queued for executing but it hasn't executed yet. When an agent picks up the operation and starts executing it, it marks the operations as EXECUTING in Cumulocity IoT. The agent will then carry out the operation on the device or its children (for example, it will restart the device, or set a relay). Then it will possibly update the inventory reflecting the new state of the device or its children (e.g. it updates the current state of the relay in the inventory). Then the agent will mark the operation in Cumulocity IoT as either SUCCESSFUL or FAILED, potentially indicating the error.
 
 ![Operation status diagram](/images/rest/operations.png)
 
@@ -419,7 +419,7 @@ Assume now that an operation is queued for the agent. This will make the long po
         }
     ]
 
-When the agent picks up the operation, it sets it to EXECUTING state in Cumulocity IoT using a PUT request (see above example for FAILED). It carries out the operation on the device and runs possible updates of the Cumulocity IoT inventory. Finally, it sets the operation to SUCCESSFUL or FAILED depending on the outcome. Then, it will reconnect again to "/notification/operations" as described above and wait for the next operation.
+When the agent picks up the operation, it sets it to EXECUTING status in Cumulocity IoT using a PUT request (see above example for FAILED). It carries out the operation on the device and runs possible updates of the Cumulocity IoT inventory. Finally, it sets the operation to SUCCESSFUL or FAILED depending on the outcome. Then, it will reconnect again to "/notification/operations" as described above and wait for the next operation.
 
 The device should reconnect within ten seconds to the server to not lose queued operations. This is the time that Cumulocity IoT buffers real-time data. The interval can be specified upon handshake.
 

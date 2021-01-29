@@ -54,10 +54,10 @@ For each c8y_RemoteAccessConnect operation received the device agent connects to
 
 The following events are triggered when the device agent receives a c8y_RemoteAccessConnect operation.
 
-* The operation state is set to EXECUTING.
+* The operation status is set to EXECUTING.
 * The connectionKey is used to connect to the Cumulocity IoT Cloud Remote Access WebSocket. All data received from the WebSocket should be forwarded to the TCP connection (if already established): *wss://<hostname>/service/remoteaccess/device/<connectionKey>*
 * The hostname and port is used to connect TCP in a local area network. Hostname and port are configured on server side and are used to connect to the endpoint of the device. Depending on the protocol (VNC, Telnet, SSH) the device will initiate a protocol-specific handshake. All data should be forwarded directly to the WebSocket endpoint (if already established).
-* The operation state is set to SUCCESSFUL or FAILED based on the state of the previous steps.
+* The operation status is set to SUCCESSFUL or FAILED based on the status of the previous steps.
 
 ### Operating a connected endpoint
 
@@ -70,4 +70,3 @@ Whenever one of the connections is terminated (WebSocket or TCP) the device agen
 ### Recommendations
 
 It is highly recommended to implement a small buffer especially for bootstrapping when one connection is already functional while the other is not setup yet.
-

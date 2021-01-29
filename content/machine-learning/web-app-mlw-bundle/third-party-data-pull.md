@@ -10,7 +10,7 @@ Machine Learning Workbench (MLW) provides connectors to the various data sources
 
 The following steps illustrate how to ingest and transform data produced by devices connected to Cumulocity IoT.
 
-1. ***Add new resource***
+1. ***Add a new resource***
 
     Click **Add Resource** and click **Import from Cumulocity**.
 

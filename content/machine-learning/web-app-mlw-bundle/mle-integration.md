@@ -8,7 +8,7 @@ ONNX models typically require a pre-processing step that converts raw input data
 
 > **Info:** To proceed, you will require a trained model in ONNX format created from [Neural Network Designer](/machine-learning/web-app-mlw/#nn-designer) or [Jupyter Notebooks](/machine-learning/web-app-mlw/#jupyter-integrated) along with pre-processing and post-processing Python scripts.
 
-***Add new resource***
+***Add a new resource***
 
 Click **Add New Resource** to create a new pipeline file.
 

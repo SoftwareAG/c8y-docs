@@ -6,7 +6,7 @@ weight: 50
 
 Machine Learning Workbench (MLW) provides an integrated Jupyter notebook environment that enables you to write your code, perform exploratory data analysis, visualize your data, and build your models. The notebook environment is an intuitive in-browser editor that  can be used to combine Markdown text and executable Python source code.
 
-***Add new resource***
+***Add a new resource***
 
 To create a new notebook, click **Add New Resource** .
 

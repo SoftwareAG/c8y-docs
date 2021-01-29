@@ -8,7 +8,7 @@ Machine Learning Workbench (MLW) provides a flexible Task scheduler which can be
 
 To showcase the task scheduler, we will create a simple Python script which will be scheduled for periodic execution. This can easily be extended for more involved activities like data pull and model retraining. First, we create a new resource which will contain the Python source code.
 
-***Add new resource***
+***Add a new resource***
 
 Click **Add New Resource** to create a new Python file.
 

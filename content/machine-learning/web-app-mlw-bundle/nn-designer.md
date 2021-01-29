@@ -12,7 +12,7 @@ There are two approaches to training deep neural networks using neural network d
 
 To begin with Transfer Learning, you need to create a new neural network architecture file from an existing network.
 
-***Add new resource***
+***Add a new resource***
 
 Click **Add New Resource** to create a new architecture file.
 
@@ -64,7 +64,7 @@ Once the task is **COMPLETED**, the trained model will be saved in the **Model**
 
 To begin with a custom network, you need to create a new neural network architecture file from scratch.
 
-***Add new resource***
+***Add a new resource***
 
 Click **Add New Resource** to create a new architecture file.
 

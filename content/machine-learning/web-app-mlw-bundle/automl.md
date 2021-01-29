@@ -6,7 +6,7 @@ weight: 40
 
 Machine Learning Workbench (MLW) provides an Automated Machine Learning (AutoML) feature which enables you to build your machine learning models for classification, regression and anomaly detection with ease by performing an exhaustive grid search in hyper-parameter space to generate the best model for your dataset.
 
-***Add new resource for AutoML***
+***Add a new resource for AutoML***
 
 Upload a tabular dataset to train a machine learning model on that data.
 

@@ -12,6 +12,12 @@ The Cumulocity IoT tenant concept builds a 3-level hierarchy, including the foll
 
 ![3-level hierarchy](/images/concepts-guide/tenant-hierarchy.png)
 
+As described in more detail below, these three levels differ in scope of features and functionalities, particularly with regards to administration aspects.
+
+>**Info:** Refer to the [Cumulocity IoT Pricing page](https://www.softwareag.cloud/site/pricing/cumulocity-iot.html#/) for details on our related package offering. 
+>
+>Refer to your contract on details on your individual subscriptions.
+>
 
 ### <a name="standard-tenant"></a> Standard tenant
 

@@ -12,7 +12,7 @@ This functionality is available for Angular 7 from version 10.4.2.0 and for Angu
 Follow the [instructions](https://angular.io/cli) to install @c8y/cli globally.
 
 ```sh
-npm install -g @angular/cli
+npm install -g @angular/cli@v8-lts
 ```
 
 ### Create a new project

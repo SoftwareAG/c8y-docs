@@ -6,15 +6,15 @@ weight: 0
 
 **Version:** 10.6.0.24 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components
 
-> **Info:** This technic exposes the username and password. Ensure that this user doesn't have access to sensible data.
+> **Info:** This technique exposes the username and password. Ensure that this user doesn't have access to sensible data.
 
 The default application always leads you to the login page for authentication before it allows you to access a page. This recipe will explain how to remove the login authentication and use the app directly.
 
 ### Brief background
 
-The removal of all authentication is not possible, so in order to go around that, you need to pass default credentials, that the app will read upon request. Our goal here will be to trigger the login with the default credentials before the application requests the login page, because it is not authenticated.
+The removal of all authentication is not possible. In order to get around it you need to pass default credentials that the app will read upon request. Our goal here will be to trigger the login with the default credentials before the application requests the login page, because it is not authenticated.
 
-The login functionality is part of the `CoreModule` in `@c8y/ngx-components` package which is loaded when angulat bootstraps the application. The default credentials need to be passed to the API, before that happens. The result will be that, when angular loads the inital page, user will be already authenticated and login page will be skipped.
+The login functionality is part of the `CoreModule` in `@c8y/ngx-components` package which is loaded when Angular bootstraps the application. The default credentials need to be passed to the API before that happens. The result will be that, when Angular loads the inital page, the user will be already authenticated and the login page will be skipped.
 
 ### 1. Initialize a new app
 
@@ -29,7 +29,7 @@ Next, you need to install all dependencies. Switch to the new folder and run `np
 
 ### 2. Add logic for default authentication
 
-First we need to make sure to add the default authentication before angular bootstraps our custom app. For that reason in the `app.module.ts` in the newly created custom cockpit application, you need to add a new provider, which will be triggered before the login. That can happen with Angularâs Injection Token [`APP_INITIALIZER`](https://angular.io/api/core/APP_INITIALIZER). This token will ensure that the application will not be initialized until the new functionality is being executed.
+First you need to make sure to add the default authentication before Angular bootstraps our custom app. For that reason in the `app.module.ts` in the newly created custom cockpit application, you need to add a new provider, which will be triggered before the login. For that, use Angular’s injection token [`APP_INITIALIZER`](https://angular.io/api/core/APP_INITIALIZER). This token will ensure that the application will not be initialized until the new functionality is being executed.
 
 ```js
 providers: [
@@ -43,7 +43,7 @@ providers: [
 ```
 
 Here you will use a factory function `initApp`, in which we will define and send our default authentication.
-Other thing that we need to mention here is the dependency of the [`LoginService`](http://resources.cumulocity.com/documentation/websdk/ngx-components/injectables/LoginService.html), which is a part from `@c8y/ngx-components`. This will be needed to send our credentials to the API.
+To send your credentials to the API, add a dependency to the `LoginService`](http://resources.cumulocity.com/documentation/websdk/ngx-components/injectables/LoginService.html), which is a part from `@c8y/ngx-components`.
 
 ```js
 export function initApp(loginService: LoginService) {
@@ -60,7 +60,7 @@ export function initApp(loginService: LoginService) {
 }
 ```
 
-To do the login with our default credentials, you need to call the [login function](http://resources.cumulocity.com/documentation/websdk/ngx-components/injectables/LoginService.html#login) from the service and pass the authenticatin method and the default credentials.
+To login with your default credentials, you need to call the [login function](http://resources.cumulocity.com/documentation/websdk/ngx-components/injectables/LoginService.html#login) from the service and pass the authentication method and the default credentials.
 
 With that done the recipe is completed and authentication will be done behind the scenes.
 

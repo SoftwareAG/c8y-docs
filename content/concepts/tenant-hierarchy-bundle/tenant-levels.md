@@ -32,8 +32,6 @@ Standard tenants, as direct subtenants of the management tenant, provide fully s
 
 Details on the administration of Standard tenants are described in the [Administration](/users-guide/administration/) section in the *User guide*.
 
->**Info:** One use case example for a Standard tenant might be a single factory looking to build a solution to promote efficiency within their facility.
-
 ### <a name="enterprise-tenant"></a> Enterprise tenant
 
 An Enterprise tenant offers additional administrative functionality compared to a Standard tenant, the major difference being **multi-tenancy**.
@@ -57,8 +55,6 @@ Enterprise tenants offer standardized functionality combined with some individua
 
 Details on the usage of this additional features and on the additional administration options of the Enterprise tenant can be found in the [Enterprise tenant](/users-guide/enterprise-edition/) section in the *User guide*. 
 
->**Info:** Enterprise tenants are best suited for more innovative, large scale IoT applications used by a single organization or by a single-branded IoT reseller. One example of this might be a company who has built a Smart City Lighting Solution and wants to sell their IoT solution to several customers.
-
 ### <a name="management-tenant"></a> Management tenant
 
 The Management tenant builds the highest level of the Cumulocity IoT tenant hierarchy.
@@ -70,6 +66,3 @@ On the Cumulocity IoT cloud instances, The Management tenant of the Cumulocity I
 You will only have access to the Management tenant, when you setup your own Cumulocity IoT instance either as a dedicated/hosted cloud deployment, an on-premise deployment, or the Cumulocity IoT Edge offering.
 
 For detailed information on the configuration options of a Cumulocity IoT deployment on platform level, refer to the *Cumulocity IoT Core - Operations guide* available on the [Software AG Empower Portal](https://documentation.softwareag.com/).
-
->**Info:** An own Cumulocity IoT instance with access to the Management tenant is best suited for highly critical or complex IoT applications, possibly involving several rebranded solutions for resell. 
-

@@ -123,3 +123,7 @@ export function initApp(loginService: LoginService) {
   };
 }
 ```
+
+### Conclusion
+
+This was the way to remove authentication when developing a custom application. This kind of technique can be used if application does not have confidential information. As said in the info disclaimer on top if you need protection for your data you might want to avoid this technique.

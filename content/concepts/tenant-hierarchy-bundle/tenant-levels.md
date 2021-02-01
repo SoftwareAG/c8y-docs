@@ -59,7 +59,7 @@ Details on the usage of this additional features and on the additional administr
 
 The Management tenant builds the highest level of the Cumulocity IoT tenant hierarchy.
 
-Every Cumulocity IoT deployment is delivered with a Management tenant. The Management tenant is used to administer all tenants within the same deployment on platform level.
+Every Cumulocity IoT deployment is delivered with a Management tenant. The Management tenant is used to administer all tenants within the same deployment on platform level and thus provides full control of the platform.
 
 On the Cumulocity IoT cloud instances, The Management tenant of the Cumulocity IoT cloud instances can only be accessed by Cumulocity.
 

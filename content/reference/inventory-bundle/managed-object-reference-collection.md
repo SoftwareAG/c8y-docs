@@ -148,12 +148,12 @@ As an alternative, it is also allowed to pass the following reference object in 
 |:---|:---|
 |Authorization|{{auth}}
 |Host|{{hostname}}
-|Content-Type|application/vnd.com.nsn.cumulocity.managedObjectReferenceCollection+json;ver=... 
-|Accept|application/vnd.com.nsn.cumulocity.managedObjectReferenceCollection+json;ver=... 
+|Content-Type|application/vnd.com.nsn.cumulocity.managedobjectreferencecollection+json;ver=... 
+|Accept|application/vnd.com.nsn.cumulocity.managedobjectreferencecollection+json;ver=... 
 
 ```http
 
-POST /inventory/managedObjects/100/<<references>>
+POST /inventory/managedObjects/100/childDevices
 
 {
    "references":[
@@ -171,7 +171,7 @@ POST /inventory/managedObjects/100/<<references>>
 }
 ```
 
-> **Info:** <<references>> can be `childDevices`, `childAssets` or `childAdditions`.
+> **Info:** instead of `childDevices` in the URL you can use: `childAssets` or `childAdditions` to add different type of managedObject
 
 #### Example response
 
@@ -284,10 +284,10 @@ HTTP/1.1
 |:---|:---|
 |Authorization|{{auth}}
 |Host|{{hostname}}
-|Content-Type|application/vnd.com.nsn.cumulocity.managedObjectReferenceCollection+json;ver=... 
+|Content-Type|application/vnd.com.nsn.cumulocity.managedobjectreferencecollection+json;ver=... 
 
 ```http
-DELETE /inventory/managedObjects/100/<<references>>
+DELETE /inventory/managedObjects/100/childDevices
 
 {
    "references":[
@@ -304,7 +304,7 @@ DELETE /inventory/managedObjects/100/<<references>>
    ]
 }
 ```
-> **Info:** <<references>> can be `childDevices`, `childAssets` or `childAdditions`.
+> **Info:** instead of `childDevices` in the URL you can use: `childAssets` or `childAdditions` to add different type of managedObject
 
 #### Example response
 

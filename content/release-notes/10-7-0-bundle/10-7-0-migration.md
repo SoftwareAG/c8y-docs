@@ -12,7 +12,7 @@ In response to the announcement by Microsoft of the end of life for Internet Exp
 
 #### Smart REST response codes
 
-With the 10.9 GA Release in April 2021, the error code "40" will be removed.  
+With the 10.9 GA release in April 2021, the error code "40" will be removed.  
 
 Why are we doing this?  Currently, when connecting to Cumulocity IoT via SmartREST 1.0 you may receive an error "40", often looking like this:
 
@@ -30,7 +30,7 @@ No change is required for devices integrated via our Device SDK and agents. Howe
 
 #### ngx-bootstrap upgrade to 5.6.1
 
-To fix various layout issues around tooltips and scrollbars, the ngx-bootstrap library will be upgraded to version 5.6.1. The change applies the first time to the 10.7.1 Incremental Release and to the 10.9 GA Release in April 2021.
+To fix various layout issues around tooltips and scrollbars, the ngx-bootstrap library will be upgraded to version 5.6.1. The change applies the first time to the 10.7.1 Incremental release and to the 10.9 GA release in April 2021.
 
 This change may affect developers building Cumulocity IoT UI extensions or custom web applications. It may also affect existing extensions and web applications.
 
@@ -46,30 +46,44 @@ For details, see the [ngx-bootstrap release notes](https://github.com/valor-soft
 
 #### Binary size calculation improved
 
-With the 10.9 GA Release in April 2021, the calculation for the binary file size is updated to reflect the total size of the file, not the content length as was previously used.  
+With the 10.9 GA release in April 2021, the calculation for the binary file size is updated to reflect the total size of the file, not the content length as was previously used.  
 
 #### Underscore (_) not allowed in new tenant domains
 
-With the 10.9 GA Release in April 2021, tenant domain names will no longer be allowed to use the underscore character in accordance to RFC specification https://tools.ietf.org/html/rfc2181. This change only affects the creation of new tenants. Existing tenant domains with underscore will be still working correctly. However, each customer having underscore in tenant domains should contact [our product support](/about-doc/contacting-support) in order to plan migration for those affected tenants.
+With the 10.9 GA release in April 2021, tenant domain names will no longer be allowed to use the underscore character in accordance to RFC specification https://tools.ietf.org/html/rfc2181. This change only affects the creation of new tenants. Existing tenant domains with underscore will be still working correctly. However, each customer having underscore in tenant domains should contact [our product support](/about-doc/contacting-support) in order to plan migration for those affected tenants.
+
+#### Enforcing user passwords to meet password complexity 
+
+With the 10.9 GA release in April 2021, user passwords will be enforced to meet password complexity by default. The new password validation will not impact the existing users until they need to change or reset the password.
+The password complexity is enforced:
+  
+* During user creations 
+* During password change 
+* During password reset
+
+Foe details on password validation refer to [Administration > Getting started > User settings](/users-guide//getting-started/#user-settings) and [Administration > Changing settings > Login settings](/users-guide/administration/#login-settings).
+
 
 #### User and tenant creation will require a valid email address with impact to REST, MQTT and UI
 
-With the 10.9 GA Release in April 2021 there will be an enhancement to security when creating new users and tenants. There will be no changes in the API, but the email address is no longer optional but a required input. The email address is used in the password resetting process, and will have a validation step as well.
+With the 10.10 GA release in July 2021, there will be an enhancement to security when creating new users and tenants. There will be no changes in the API, but the email address is no longer optional but a required input. The email address is used in the password resetting process, and will have a validation step as well.
 
 
 #### UI upgrade to Angular 11
 
-With the 10.10 GA Release in July 2021, all Cumulocity IoT UIs will be upgraded to Angular 11. This change will only affect you, if you or your development team use the Web SDK to extend default Cumulocity IoT UI applications (Cockpit, Administration, Device Management) or to build your own web applications.
+With the 10.10 GA release in July 2021, all Cumulocity IoT UIs will be upgraded to Angular 11. This change will only affect you, if you or your development team use the Web SDK to extend default Cumulocity IoT UI applications (Cockpit, Administration, Device Management) or to build your own web applications.
 
 #### Security using OAuth to be made default
 
-With the 10.10 GA Release in July 2021, the optional "OAuth internal" mode will be the default login mode. Currently, any tenant that is provisioned uses "Basic Auth" (basic authentication) for authenticating a user against a UI application. This mode is considered unsafe in the browser, as the user information and password can be read by JavaScript. With the OAuth internal mode, the credentials aren’t readable by Javascript and thus more secure.  
+With the 10.10 GA release in July 2021, the "OAuth internal" login mode (OAuth authentication) will be the default login mode. Currently, any tenant that is provisioned uses "Basic Auth" (basic authentication) for authenticating a user against a UI application. This mode is considered unsafe in the browser, as the user information and password can be read by JavaScript. With the OAuth internal mode, the credentials aren’t readable by JavaScript and thus more secure.  
 
-To support existing microservices and devices, and older UI applications that don’t support "OAuth internal", "Basic Auth" will continue to work.
+If required (for instance due to old extensions that do not support the OAuth authentication), basic authentication can be manually enabled in the Administration application.
 
-It is strongly recommended that all customers move to "OAuth internal" to reduce the security exposure of using "Basic Auth".
+It is strongly recommended that all customers move to OAuth authentication to reduce the security exposure of using basic authentication.
 
+#### Underscore not allowed in new tenant domains
 
+With the 10.10 GA release in July 2021, it will no longer be allowed to use underscores in tenant domain names, in accordance with RFC specification https://tools.ietf.org/html/rfc2181. This change only affects the creation of new tenants. Existing tenants with underscores in the domain name will still be working correctly. However, each customer having underscores in tenant domain names should [contact support](/about-doc/contacting-support/) in order to plan the migration for those affected tenants.
 
 ### Implemented measures
 

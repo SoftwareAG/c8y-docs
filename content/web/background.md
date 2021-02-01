@@ -1,6 +1,6 @@
 ---
-weight: 20
-title: Brief background
+weight: 80
+title: "Appendix: Migration history"
 layout: bundle
 ---
 
@@ -10,7 +10,7 @@ This process involves migration effort, so we believe that providing some backgr
 
 ### Brief background: plugins vs. modules
 
-From day one the UI has always had a modular architecture. The units of functionality are grouped in “plugins” that can be composed to build applications. In practice plugins are simply modules.
+From day one the UI has always had a modular architecture. The units of functionality are grouped in "plugins" that can be composed to build applications. In practice plugins are simply modules.
 
 Modules are a very important key feature in the latest generation of the Web SDK. It allows to import any file or library with native JavaScript `import` statements and be bundled to one file at build time. To better understand this concept and the enhancements it provides to the developers, it is important to understand how the module architecture worked in the previous generations of the Cumulocity IoT Web SDK.
 
@@ -197,7 +197,7 @@ import './plugins/mywidget/cumulocity.json';
 
 As observed in [this diff](https://bitbucket.org/m2m/cumulocity-ui-plugin-examples/branch/next#chg-pack) the changes to include the new tooling to an existing project are quite concise.
 
-In [@c8y/cli](/web/angular#cli), the entry point of an application can be a cumulocity.json application manifest or a plain Javascript file.
+In [@c8y/cli](/web/development-tools/#c8y-cli), the entry point of an application can be a cumulocity.json application manifest or a plain Javascript file.
 
 ```bash
 npx c8ycli serve ./cumulocity.json
@@ -219,6 +219,6 @@ Although the modification to the application is read from the target file, the d
 
 #### Alternative to target files
 
-As an alternative to target files developers should now use [applications options](/web/angular#applications-options).
+As an alternative to target files developers should now use [application options](/web/application-configuration/#application-options).
 
 There is no alternative to mutating the list of imported plugins. The recommended approach is to explicitly import the required modules.

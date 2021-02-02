@@ -158,3 +158,4 @@ The `statistics` object in the response will contain the total number of events.
     "pageSize": 1
 }
 ```
+> **Info:** To improve performance, the `totalPages` statistic is cached for 10 seconds.

@@ -6,9 +6,9 @@ layout: bundle
 
 The Cumulocity IoT documentation on this website contains the following information.
 
->**Important:** Depending on your tenant (free-trial or paid subscription), your package and subscribed optional components only a subset of the features and functionalities described in this documentation might be available to you. 
+>**Important:** Depending on your tenant (free-trial or paid subscription), your package and your subscribed optional components, only a subset of the features and functionalities described in this documentation might be available to you. 
 >
->Refer to the [Cumulocity IoT Pricing page](https://www.softwareag.cloud/site/pricing/cumulocity-iot.html#/) for details on our packages and on additional optional features. Refer to your contract on details on your particular subscriptions.
+>Refer to the [Cumulocity IoT Pricing page](https://www.softwareag.cloud/site/pricing/cumulocity-iot.html#/) for details on our package offering. Refer to your contract on details on your particular subscriptions.
 
 
 <table>

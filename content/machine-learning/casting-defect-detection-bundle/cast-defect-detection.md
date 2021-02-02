@@ -31,7 +31,7 @@ For training a classification model, the data is split into training and testing
 * **train:** *def_front* has 3758 and *ok_front* has 2875 images
 * **test:** *def_front* has 453 and *ok_front* has 262 images
 
-> **Info:** Change the name of *test* folder to *validation* and create a ZIP of these two folders (i.e. ZIP contaning *train* and *validation* folders). 
+> **Info:** Change the name of *test* folder to *validation* and create a ZIP file of these two folders (i.e. a ZIP file contaning *train* and *validation* folders). 
 
 ![Format](/images/zementis/castingDetection/mlw-casting-zip-format.png)
 
@@ -51,7 +51,7 @@ After the data is uploaded sucessfully, navigate to the **Data** section of the 
 
 **Method 1: Creating a custom Deep Neural Network architecture**  
 
-* Create a new Neural Network designer file by clicking:
+* Create a new Neural Network Designer file by clicking:
 
 **Add Resource** > **Add New Resource** > **Resource Type (NN Designer)** > **Resource Name (for example castingModelDesigner)** > **Submit**
 
@@ -61,7 +61,7 @@ After the data is uploaded sucessfully, navigate to the **Data** section of the 
 
 ![Metadata](/images/zementis/castingDetection/mlw-casting-method1-arch-metadata.png)
 
-* Click **castingModelDesigner.architecture** and click **Edit** to open an interface/editor to build your own Deep Neural Network architecture by dragging and dropping various layers avialable in the left-hand menu.
+* Click **castingModelDesigner.architecture** and click **Edit** to open an interface/editor to build your own Deep Neural Network architecture by dragging and dropping various layers available in the menu at the left.
 
 * Build a Deep Neural Network architecture using the below example:
 
@@ -75,11 +75,11 @@ After the data is uploaded sucessfully, navigate to the **Data** section of the 
 
 ![TrainParams](/images/zementis/castingDetection/mlw-casting-method1-arch-training-params.png)
 
-* Monitor the model building progress using the **Tasks** section with the name **castingDefectModel**. The training time is generally 30-50 minutes for 10 epochs for this particular dataset. Initially, the task status would be **INITIALISING** and gets changed to **TRAINING STARTED** once the training starts.
+* Monitor the model building progress using the **Tasks** section with the name **castingDefectModel**. The training time is generally 30-50 minutes for 10 epochs for this particular dataset. Initially, the task status is INITIALISING and gets changed to TRAINING STARTED once the training starts.
 
 ![Progress](/images/zementis/castingDetection/mlw-casting-method1-model-progress.png)
 
-* After the training is complete, the task status would be set to **COMPLETED**.
+* After the training is complete, the task status will be set to COMPLETED.
 
 ![Complete](/images/zementis/castingDetection/mlw-casting-method1-training-complete.png)
 
@@ -87,13 +87,13 @@ After the data is uploaded sucessfully, navigate to the **Data** section of the 
 
 ![Metadata](/images/zementis/castingDetection/mlw-casting-method1-model-metadata.png)
 
-**Method 2: Training a model in Jupyter Notebook using Transfer Learning technique with mobilenet architecture**
+**Method 2: Training a model in Jupyter Notebook using the transfer learning technique with Mobilenet architecture**
 
 * The *CastingDefectDetectionDemo.zip* has a folder named *Method2* which contains a Jupyter Notebook file named *castingDefectDetectionDemo.ipynb*. Use the MLW's upload functionality to upload the Notebook file. 
 
 ![Upload](/images/zementis/castingDetection/mlw-casting-method2-upload.png)
 
-* Navigate to **Code** section of the MLW and click **castingDefectDetectionDemo.ipynb** to view the metadata of the file. 
+* Navigate to the **Code** section of the MLW and click **castingDefectDetectionDemo.ipynb** to view the metadata of the file. 
 
 ![Metadata](/images/zementis/castingDetection/mlw-casting-method2_metadata.png)
 
@@ -101,24 +101,24 @@ After the data is uploaded sucessfully, navigate to the **Data** section of the 
 
 ![Execute](/images/zementis/castingDetection/mlw-casting-method2-execute.png)
 
-* Once all the cells are executed successfully, a model named **castingDefectModelViaJNB.onnx** is saved to **Model** section.
+* Once all the cells are executed successfully, a model named **castingDefectModelViaJNB.onnx** is saved to the **Model** section.
 
 * Check the ONNX model with the name **castingDefectModelViaJNB.onnx** saved in the **Model** section.
 
 ![Metadata](/images/zementis/castingDetection/mlw-casting-method2-model-metadata.png)
 
 
-#### Model deployment using the Inference Pipeline
+#### Model deployment using the inference pipeline
 
-Now that the model is successfully trained (by any of the above two training methodologies) and available for serving in the form of an ONNX file, you can create an Inference Pipeline for deploying the model to production. 
+Now that the model is successfully trained (by any of the above two training methods) and available for serving in the form of an ONNX file, you can create an inference pipeline for deploying the model to production. 
 
-The *CastingDefectDetectionDemo.zip* contains two folders namely *Method1* and *Method2*. Depending on the training methodology used, upload the relevant Python scripts. i.e.
-* **If **Method 1** is used for training**: Use *castingPreProcessingForNN.py* and *castingPostProcessingForNN.py* Python scripts from *Method1* folder. Please use the MLW's upload functionality to upload these Python files.
-* **If **Method 2** is used for training**: Use *castingPreProcessingForJNB.py* and *castingPostProcessingForJNB.py* Python scripts from *Method2* folder. Please use the MLW's upload functionality to upload these Python files.
+The *CastingDefectDetectionDemo.zip* contains two folders namely *Method1* and *Method2*. Depending on the training method used, upload the relevant Python scripts. i.e.
+* **If **Method 1** is has been used for training**: Use *castingPreProcessingForNN.py* and *castingPostProcessingForNN.py* Python scripts from the *Method1* folder. Use the MLW's upload functionality to upload these Python files.
+* **If **Method 2** is has been used for training**: Use *castingPreProcessingForJNB.py* and *castingPostProcessingForJNB.py* Python scripts from the *Method2* folder. Use the MLW's upload functionality to upload these Python files.
 
 ![Upload](/images/zementis/castingDetection/mlw-casting-script-upload.png)
 
-The Inference Pipeline uses a pre-processing script, a model (.onnx file) and a post-processing script.
+The inference pipeline uses a pre-processing script, a model (.onnx file) and a post-processing script.
 
 * The pre-processing script is used to pre-process incoming test data (image) to convert it into 250*250 size. The pre-processing script *castingPreProcessingForNN.py* looks like below.
 
@@ -144,7 +144,7 @@ The Inference Pipeline uses a pre-processing script, a model (.onnx file) and a 
       return {"Dense":content[0].tolist(),"PredictedClass":cla}
 ```
 
-Create an Inference Pipeline by clicking:
+Create an inference pipeline by clicking:
 
 **Add Resource** > **Add New Resource** > **Resource Type (Pipeline)** > **Resource Name (castingPipeline)** > **Model ('castingDefectModel.onnx' or 'castingDefectModelViaJNB.onnx')** > **Pre-processing Script ('castingPreProcessingForNN.py')** > **Post-processing Script ('castingPostProcessingForNN.py')** > **Submit**
 
@@ -159,9 +159,9 @@ Deploy the pipeline to the production by clicking **Deploy**.
 ![Deploy](/images/zementis/castingDetection/mlw-casting-pipeline-deploy.png)
 
 
-#### Predictions using the Deployed Pipeline
+#### Predictions using the deployed pipeline
 
-Now that the Inference Pipeline is successfully deployed to production and available for serving, you can make predictions using the test data. 
+Now that the inference pipeline is successfully deployed to production and available for serving, you can make predictions using the test data. 
 
 The *CastingDefectDetectionDemo.zip* contains two folders namely *Method1* and *Method2*. Both the folders contain *testDefectImage.PNG* and *testOkImage.PNG* test images. Use the MLW's upload functionality to upload these test image files from any of the folders.
 
@@ -171,6 +171,6 @@ Navigate to the **Data** section and click **testDefectImage.PNG** > **Predict D
 
 ![Predict](/images/zementis/castingDetection/mlw-casting-prediction-pipeline.png)
 
-The predictions file would be stored in the **Data** section with the name **testDefectImage_timeStamp.json**. Click on the predictions JSON file and click **Edit** to view the predictions. 
+The predictions file will be stored in the **Data** section with the name **testDefectImage_timeStamp.json**. Click on the predictions JSON file and click **Edit** to view the predictions. 
 
 ![Result](/images/zementis/castingDetection/mlw-casting-prediction-result.png)

@@ -8,7 +8,7 @@ Model training is a complex process which often requires data ingestion/transfor
 
 > **Info:** To proceed, you will require a trained model created from [Automated ML](/machine-learning/web-app-mlw/#automl).
 
-***Add new resource***
+***Add a new resource***
 
 Click **Add New Resource** to create a new Workflow file.
 

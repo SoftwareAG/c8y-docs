@@ -1,16 +1,16 @@
 ---
-title: Neural Network designer
+title: Neural Network Designer
 layout: redirect
 weight: 40
 ---
 
 Machine Learning Workbench (MLW) provides an intuitive drag-and-drop designer that allows you to construct, edit, train and analyze deep neural networks. Built on the solid foundation of TensorFlow and Keras, the visual approach provides greater insight and clarity into the architecture of neural networks, enabling the creation of state-of-the-art deep learning models without writing a single line of code.
 
-There are two approaches to training deep neural networks using neural network designer. You can either start with a pre-trained model from a similar domain and use its architecture and weights as a starting point (Transfer Learning) or you can start from a blank slate and design a custom network from scratch. We will look at both these approaches in detail.
+There are two approaches to training deep neural networks using Neural Network Designer. You can either start with a pre-trained model from a similar domain and use its architecture and weights as a starting point (transfer learning) or you can start from a blank slate and design a custom network from scratch. We will look at both these approaches in detail.
 
-**Transfer Learning**
+**Transfer learning**
 
-To begin with Transfer Learning, you need to create a new neural network architecture file from an existing network.
+To begin with transfer learning, you need to create a new neural network architecture file from an existing network.
 
 ***Add a new resource***
 
@@ -86,4 +86,4 @@ This will open a blank architecture in the editor where you can add new layers t
 
 ![New NN Selector](/images/zementis/mlw-app-nn-customarch.png)
 
-The rest of the process to save the custom architecture and train the neural network model remains the same as in the case of Transfer Learning.
+The rest of the process to save the custom architecture and train the neural network model remains the same as in the case of transfer learning.

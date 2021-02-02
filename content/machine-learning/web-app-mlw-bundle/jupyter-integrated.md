@@ -1,14 +1,14 @@
 ---
-title: Jupyter notebooks
+title: Jupyter Notebook
 layout: redirect
 weight: 50
 ---
 
-Machine Learning Workbench (MLW) provides an integrated Jupyter notebook environment that enables you to write your code, perform exploratory data analysis, visualize your data, and build your models. The notebook environment is an intuitive in-browser editor that  can be used to combine Markdown text and executable Python source code.
+Machine Learning Workbench (MLW) provides an integrated Jupyter Notebook environment that enables you to write your code, perform exploratory data analysis, visualize your data, and build your models. The notebook environment is an intuitive in-browser editor that can be used to combine Markdown text and executable Python source code.
 
 ***Add a new resource***
 
-To create a new notebook, click **Add New Resource** .
+To create a new notebook, click **Add New Resource**.
 
 ![Add new resource](/images/zementis/mlw-app-resource-add-new.png)
 
@@ -28,4 +28,4 @@ Snippets of code/comments can be combined in individual cells. Output generated 
 
 ![Notebook execution](/images/zementis/mlw-app-nb-execution.png)
 
-> **Info:** Jupyter notebook environment currently supports Python 3 kernel.
+> **Info:** Jupyter Notebook environment currently supports Python 3 kernel.

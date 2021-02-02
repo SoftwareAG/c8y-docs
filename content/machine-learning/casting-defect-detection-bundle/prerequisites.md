@@ -9,10 +9,10 @@ aliases:
 
 Download the [CastingDefectDetectionDemo.zip](/files/zementis/CastingDefectDetectionDemo.zip) file which contains two folders as following:
 * *Method1*
-  * Pre-Processing and Post-Processing Python scripts (*castingPreProcessingForNN.py* and *castingPostProcessingForNN.py*)
+  * Pre-processing and post-processing Python scripts (*castingPreProcessingForNN.py* and *castingPostProcessingForNN.py*)
   * Test images (*testDefectImage.PNG* and *testOkImage.PNG*) 
 * *Method2*
-  * Pre-Processing and Post-Processing Python scripts (*castingPreProcessingForJNB.py* and *castingPostProcessingForJNB.py*)
+  * Pre-processing and post-processing Python scripts (*castingPreProcessingForJNB.py* and *castingPostProcessingForJNB.py*)
   * Test images (*testDefectImage.PNG* and *testOkImage.PNG*) 
   * Jupyter Notebook (*castingDefectDetectionDemo.ipynb*)
 

@@ -353,7 +353,13 @@ After providing the tenant URL, you have to register your Edge VM with the Cumul
 
 #### Enabling or Disabling microservice hosting feature
 
-**Info:** Ensure that you have fulfilled the minimum system requirements: 4 logical CPU cores and 8 GB RAM. 
+>**Info:** Ensure that you have fulfilled the minimum system requirements: 4 logical CPU cores and 8 GB RAM.
+
+If you want to use the microservice hosting feature, ensure that you do not use these IP ranges in your local network where the Edge virtual machines are configured. When you enable the microservice hosting feature, the Kubernetes system reserves these IP ranges on the Edge instances.
+- 10.96.0.0/12
+- 10.244.0.0/16
+
+To enable the microservice hosting feature:
 
 1. Run the post-installation script *post_installation.sh*.
 

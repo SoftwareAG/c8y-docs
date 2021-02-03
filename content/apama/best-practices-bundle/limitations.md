@@ -8,12 +8,12 @@ Using Apama within the Cumulocity IoT environment necessarily has some restricti
 
 There are a number of ways that assets may be deployed to Apama within Cumulocity IoT and the restrictions vary according to those mechanisms:
 
-* Apama EPL Apps - the simplest mechanism to deploy Apama assets into a fully managed Apama correlator, see [Basic functionality > Deploying apps](/apama/analytics-introduction/#deploying-apps).
+* EPL apps - the simplest mechanism to deploy Apama assets into a fully managed Apama correlator, see [Basic functionality > Deploying apps](/apama/analytics-introduction/#deploying-apps).
 * Custom microservice – where more complex Apama projects can be built using Cumulocity IoT's Microservice SDK, see [Developing applications > Cumulocity IoT microservices](/concepts/applications#microservices) in the *Concepts guide*.
 
 When designing an Apama solution to be deployed within any form of Cumulocity IoT environment, consider the following points.
 
-### General Apama limitations when using Apama EPL Apps or a custom microservice
+### General Apama limitations when using EPL apps or a custom microservice
 
 * For scalability, a correlator may move between hosts and therefore does not have access to a persistent file system. It is a standard Cumulocity IoT constraint that all microservices (either provided by the platform, or custom) must be stateless – see [Developing applications > Cumulocity IoT microservices](/concepts/applications#microservices) in the *Concepts guide*.
 
@@ -43,7 +43,7 @@ When designing an Apama solution to be deployed within any form of Cumulocity Io
 	* Debugging from Software AG Designer. Instead, debug your app running in a local correlator.
 	* Correlator REST interface.
 
-### Specific Apama limitations when using Apama EPL Apps
+### Specific Apama limitations when using EPL apps
 
 * For ease of use, the correlator startup is controlled by Cumulocity IoT. Thus, features that require you to change configuration files or command line options are not accessible.
 

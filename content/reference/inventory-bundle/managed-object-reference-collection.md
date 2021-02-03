@@ -284,7 +284,7 @@ HTTP/1.1
 |:---|:---|
 |Authorization|{{auth}}
 |Host|{{hostname}}
-|Content-Type|application/vnd.com.nsn.cumulocity.managedobjectreferencecollection+json;ver=... 
+|Content-Type|application/vnd.com.nsn.cumulocity.managedObjectReferenceCollection+json;ver=... 
 
 ```http
 DELETE /inventory/managedObjects/100/childDevices

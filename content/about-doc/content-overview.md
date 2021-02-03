@@ -4,7 +4,8 @@ title: Content overview
 layout: bundle
 ---
 
-The Cumulocity IoT documentation on this website contains the following information:
+The Cumulocity IoT documentation on this website contains the following information.
+
 
 <table>
 <col width = 150>

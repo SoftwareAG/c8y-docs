@@ -24,12 +24,12 @@ pipeline {
         }
     stage('Deploy') {
       steps {
-        sshagent(['hudson-ssh-resources']) {
+        sshagent(['jenkins-master']) {
         sh '''bash --login
           python /docsRepoScanner.py ./
           pwd
           ls
-          rsync -avh output.json ${YUM_USR}@${YUM_SRV}:${YUM_DEST_DIR}/releases.json --delete
+          rsync -e "ssh -o StrictHostKeyChecking=no" -avh output.json ${YUM_USR}@${YUM_SRV}:${YUM_DEST_DIR}/releases.json --delete
           '''
         }
       }

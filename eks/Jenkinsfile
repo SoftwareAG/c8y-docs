@@ -40,7 +40,7 @@ node(POD_LABEL) {
   }
   stage('Deploy') {
     container('hugo') {
-      sshagent(['hudson-ssh-resources']) {
+      sshagent(['jenkins-master']) {
         sh '''bash --login
         python /docsRepoScanner.py ./
         pwd
@@ -48,7 +48,7 @@ node(POD_LABEL) {
         cp output.json ./public/releases.json
         echo "Disabled 'rsync -avh ./public/* ${YUM_USR}@${YUM_SRV}:${YUM_DEST_DIR} --delete'"
         '''
-        // sh "rsync -avh ./public/* ${env.YUM_USR}@${env.YUM_SRV}:${YUM_DEST_DIR} --delete"
+        sh "rsync -e 'ssh -o StrictHostKeyChecking=no' -avh ./public/* ${env.YUM_USR}@${env.YUM_SRV}:${YUM_DEST_DIR} --delete"
       }
     }
   }

@@ -8,3 +8,5 @@ Product support for Cumulocity IoT is provided to licensed customers by the Soft
 For further information on the Software AG Empower product support website, see also [Additional resources](/about-doc/online-information).
 
 If you are using Cumulocity IoT on a trial basis, you can refer to our free TECHCommunity pages at http://techcommunity.softwareag.com/ for information sources such as user forums and FAQs.
+
+If you are interested in acquiring a commercial license please contact us at [https://www.softwareag.com/en_corporate/platform/iot/cumulocity-iot-quickstart.html](https://www.softwareag.com/en_corporate/platform/iot/cumulocity-iot-quickstart.html).

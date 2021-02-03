@@ -45,12 +45,12 @@ Since there will be no widgets on the dashboard yet, you will see an **Add Widge
 
 1. Click the **Add widget** button (in case of an empty dashboard) or click **Add widget** in the top menu bar.
 
-2. In the **Add widget** dialog, select a widget type. 
+2. In the **Add widget** dialog, select a widget type.
 
 	<img src="/images/users-guide/cockpit/cockpit-widget-add.png" name="Add widget">
 
 3. Next, configure the widget. According to the widget type selected, various parameters may be specified under **Configuration**. For details on each widget type refer to [Widgets collection](#widgets).
- 
+
 4. In the **Appearence** tab, you can customize the content and header style for the widget individually, in the same way as specifying the layout of the [dashboard](#creating-dashboards).
 
 	<img src="/images/users-guide/cockpit/cockpit-widget-appearance.png" name="Add widget">
@@ -105,13 +105,13 @@ The dashboard editor will open up. For details on the fields, refer to [To creat
 ### To copy a dashboard from one object to another
 
 1. Click **More...** in the top menu bar and from the context menu select **Copy dashboard**.
- 
+
 	<img src="/images/users-guide/cockpit/cockpit-dashboard-copy.png" name="Copy dashboard"/>
 
 2. Next, navigate to the object you want to copy the dashboard to and from the context menu select **Paste dashboard [NAME]** to insert the dashboard.
 
 An alternative way to copy a dashboard is to use the
-"dashboard per type" approach.  With the "dashboard per type" approach you share the dashboard from one object with **all** objects of the same type, see [Sharing dashboards](sharing-dashboards).
+"dashboard per type" approach.  With the "dashboard per type" approach you share the dashboard from one object with **all** objects of the same type, see [Sharing dashboards](#sharing-dashboards).
 
 
 ### To delete a dashboard

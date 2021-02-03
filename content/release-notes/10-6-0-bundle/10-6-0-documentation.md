@@ -10,7 +10,7 @@ In addition to all enhancements or changes related to the improvements and fixes
 
 In addition to the device guides offered in the [Cumulocity IoT Device Partner Portal](https://devicepartnerportal.softwareag.com/), we have re-written and added a collection of device integration tutorials which describe in a step-by-step approach how to integrate various demo devices to Cumulocity IoT, see [Device integration tutorials](/device-tutorials/tutorials-introduction).
 
-Moreover, documentation on how to set up and configure a Casa Systems (NetComm) router using the new [Cumulocity IoT NetComm Agent](/device-tutorials/netcomm-routerhugo server) package has been added here.
+Moreover, documentation on how to set up and configure a Casa Systems (NetComm) router using the new [Cumulocity IoT NetComm Agent](/device-tutorials/netcomm-router) package has been added here.
 
 ### Installation and operations guides
 

@@ -59,7 +59,7 @@ After receiving the credentials, the device can close the MQTT connection and cr
 
 As MQTT supports an automatic device creation if the client sends data and there is no device present, this step is only required if you want to create the device manually.
 
-The device creation can be achieved by employing the [static template 100](/device-sdk/mqtt#static-templates). This template can be blindly used on every boot of the device as it will only create the device if it is not already present.
+The device creation can be achieved by employing the [static template 100](/device-sdk/mqtt/#100). This template can be blindly used on every boot of the device as it will only create the device if it is not already present.
 
 The device will be linked automatically to the ID the client uses with its MQTT ClientId.
 
@@ -72,7 +72,7 @@ The device will be linked automatically to the ID the client uses with its MQTT 
 
 Like the root device, also children of it are covered by the automatic device creation.
 
-To handle this step manually you can send the [static template 101](/device-sdk/mqtt#static-templates) for creating a child device. The template will only create the child if it does not already exist.
+To handle this step manually you can send the [static template 101](/device-sdk/mqtt/#101) for creating a child device. The template will only create the child if it does not already exist.
 
 ```text
 101,Unique Child ID,Child Name,Child Type

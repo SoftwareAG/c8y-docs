@@ -26,10 +26,12 @@ Click **Authentication** in the **Settings** menu if you want to view or change 
 
 #### Login settings
 
-There are two **Preferred login modes** available:
+In the field **Preferred login modes*, you can select one of the following options:
 
-* "OAuth Internal" which is the recommended option as it provides better security.
-* "Basic Auth" which should be chosen only for specific compatibility reasons.
+* OAuth Internal - Recommended, since it provides high security, using authorization tokens to prove your identity (to the server).
+* Basic Auth - Should be chosen only for specific compatibility reasons, since it only provides basic security.
+* Single sign-on redirect - Can be selected only if SSO is configured. If selected, will remove Basic Auth and OAuth Internal login options.
+
 
 This login mode will be used by the platform's applications as the default method to authenticate users. Device authentication stays unchanged.
 
@@ -185,7 +187,7 @@ Each access token is signed by a signing certificate. Currently there are three 
 * By providing the public key of a certificate manually to Cumulocity IoT. A certificate definition requires an algorithm information, public key value and validity period.
 
 	![OAuth configuration](/images/users-guide/Administration/admin-sso-5.png)
-	
+
 
 #### Integration with Azure AD
 

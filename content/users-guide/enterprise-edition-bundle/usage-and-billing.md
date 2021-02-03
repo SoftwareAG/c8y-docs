@@ -29,6 +29,10 @@ The following information is provided for each subtenant (not completely visible
 <td align="left">ID of the subtenant</td>
 </tr>
 <tr>
+<td align="left">Name</td>
+<td align="left">Name of the subtenant</td>
+</tr>
+<tr>
 <td align="left">API requests</td>
 <td align="left">Total number of API requests, including requests from  devices and applications</td>
 </tr>
@@ -133,7 +137,7 @@ Custom properties may be defined in the [Properties Library](/users-guide/admini
 
 You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Filter**. The **Usage statistics** page will show the numbers for all subtenants for this time period.
 
->**Info:** If a tenant was created after the selected time period, it will show up but the numbers are "0". 
+>**Info:** If a tenant was created after the selected time period, it will show up but the numbers are "0".
 
 You can also filter and sort the list on any column by clicking the filter icon next to the column name and providing the filtering criteria. See also [Getting Started > UI functionalities and features > Filtering](/users-guide/getting-started/#filtering).
 
@@ -179,7 +183,7 @@ In case of resources-based billing, charging depends on the isolation level:
 * Per-tenant - the subscriber tenant is charged for used resources
 * Multi-tenant - the owner of the microservice is charged for used resources
 
-In case of multi-tenant isolation level, the owner of a microservice (e.g. the management tenant of an Enterprise Tenant or service provider) is charged for the used resources of the subtenants. The subtenants should be charged based on the subscription according to the agreement between the microservice owner and the subscribed tenant. The list of subscribed applications is available as part of the [tenant usage statistics record](/reference/tenants-bundle/tenant-usage-statistics.md) as `subscribedApplications`.
+In case of multi-tenant isolation level, the owner of a microservice (e.g. the management tenant of an Enterprise Tenant or service provider) is charged for the used resources of the subtenants. The subtenants should be charged based on the subscription according to the agreement between the microservice owner and the subscribed tenant. The list of subscribed applications is available as part of the [tenant usage statistics record](/reference/tenants/#tenant-usage-statistics) as `subscribedApplications`.
 
 #### Resources usage assignment for billing mode and isolation level
 
@@ -342,7 +346,7 @@ Any extension deployed to the platform as a microservice is billed as "used" and
   * Not ready - The microservice container is not ready yet to handle incoming traffic but the application is already running so billing is started.
   * Ready - The microservice container is ready to handle incoming traffic. "Ready" is resolved based on liveness and readiness probes defined in the [microservice manifest](/microservice-sdk/concept/#manifest). If probes are not defined then the microservice is immediately ready.
 
-A tenant that is billed for resources can view the point in time when the microservices billing has been changed in [the audit logs](users-guide/administration/#audit-logs). The audit log entries, for example "Scaling application '...' from X to Y instances" contain the information about the changes of instances and resources consumed by the microservice.
+A tenant that is billed for resources can view the point in time when the microservices billing has been changed in [the audit logs](/users-guide/administration/#audit-logs). The audit log entries, for example "Scaling application '...' from X to Y instances" contain the information about the changes of instances and resources consumed by the microservice.
 
   <img src="/images/users-guide/enterprise-tenant/ee-ms-billing-audit-logs.png" name="Microservice audit logs"/>
 

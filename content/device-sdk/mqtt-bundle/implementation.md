@@ -52,7 +52,7 @@ The CSV (comma-separated values) format is used for communication with the Smart
 
 * Every row must be terminated by the `\n` character sequence.
 * Values are always separated by a comma (`,`).
-* If a value contains double-quotes (`"`), commas (`,`), leading or trailing whitespaces, line-breaks (`\n`), carriage returns (`\r`) or tab stops, it must be surrounded by quotes (`"`). Contained double-quotes (`"`) must be escaped by prepending another double-quote (`""`).
+* If a value contains double-quotes (`"`), commas (`,`), leading or trailing whitespaces, line-breaks (`\n`), carriage returns (`\r`) or tab stops, it must be surrounded by quotes (`"`). Contained double-quotes (`"`) must be escaped by prepending a backslash (`\`).
 
 The same escaping rules apply to messages that will be sent from the server to the client.
 
@@ -65,7 +65,7 @@ Publish example:
 Subscribe example:
 
 ```text
-511,myDeviceSerial,"execute this\nand this\nand ""this"""
+511,myDeviceSerial,"execute this\nand this\nand \"this\""
 ```
 
 > **Info:** `\n` does not create a new line in the output (e.g. console, UI); to achieve this, a new line character (ASCII 0A) needs to be used.

@@ -705,7 +705,7 @@ This operation reads history values and applies the mappings except of alarm map
 
 #### Historic data binary upload
 
-his operation reads historic values and only saves those values to a file which can be retrieved using the binary API.
+This operation reads historic values and only saves those values to a file which can be retrieved using the binary API.
 
 ```
 {

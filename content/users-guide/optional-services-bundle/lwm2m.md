@@ -476,3 +476,21 @@ In order to enable more complex conditions,  multiple validation rules can be de
 The screenshot above provides an example for the use of validation rule groups: User input is valid if the given string does not match “test” (equals not). It is also valid if it ends with “asd” and it matches the contents of the LWM2M resource /3/0/15.
 
 Complex rulesets are based on Boolean Disjunctive Normal Form, which allows arbitrary complex rules to be defined.
+
+### <a name="post-registration-actions"></a> Handling LWM2M post registration actions
+
+The LWM2M shell commands can be performed in the **Shell** tab of each device. It is also possible to execute some common operations when a device sends a full registration request.
+This can be done in the **LWM2M post-operations** page accessible from the **Device types** menu in the navigator. A set of shell commands can be saved in the Commands section, which will be performed on each device on registration.
+
+![Post operations example](/images/users-guide/lwm2m/lwm2m-post-operations.png)
+
+The above image shows the **LWM2M post-operations** page with a set of sample shell commands.
+More information on shell commands can be found in [LightweightM2M > Handling LWM2M shell commands](#shell_commands).
+
+#### Device operations handling
+
+If the operations are created while the device is offline, they will be all executed when the device comes online as those operations will be delivered through the real-time channel.
+A configurable property can limit the number of operations to be executed as part of the post-registration process, for example, the operations which were already delivered to the device once 
+via the real-time channel, but they are still in a pending state.
+
+>**Info:** The default maximum limit of the pending operations is 10, which is a configurable value for the agent. In case this limit is not sufficient for your use case please contact our [support](/about-doc/contacting-support).

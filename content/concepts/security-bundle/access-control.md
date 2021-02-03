@@ -45,45 +45,20 @@ This concept helps to assign minimal permissions to devices.
 
 Cumulocity IoT allows you to set global permissions that are applicable to all managed objects, measurements, events and so forth. It also allows a limitation of permits
 
-* To specific managed objects or a set of managed objects. 
-* To a single user or a group of users.
-* To individual fragments.
+* to specific managed objects or a set of managed objects, 
+* to a single user or a group of users,
+* to individual fragments.
 
 ### Managing roles and assigning permissions
 
-Global roles and inventory roles are created and managed in the **Roles** page of the Administration application.
+Global roles and inventory roles are created and managed in the **Roles** page of the Administration application in the UI.
 
 ![Permission page](/images/users-guide/Administration/admin-global-roles.png)
 
-A detailed description on available default roles and on creating and assigning global and inventory roles can be found in [Managing permissions](/users-guide/administration#managing-permissions) in the Administration section of the User guide.
+A detailed description on available default roles and on creating and assigning global and inventory roles can be found in [Administration > Managing permissions](/users-guide/administration#managing-permissions) in the *User guide*.
+
+For details on permission management using the API refer to [Users](/reference/users/) in the *Reference guide*.
 
 ### Globally accessible objects
 
 It is possible to make any object accessible by any user without specific rights. To grant those rights just add a new fragment called "c8y_Global" to the object.
-
-### Extending permissions
-
-Permissions are extended along two dimensions:
-
-* Permissions for a group apply to all users in that group.
-* Permissions for a managed object apply to all child devices and child assets.
-
-### Examples
-
-Permit a user to read the temperature measurement of device "10200":
-
-```java
-10200, MEASUREMENT, c8y_TemperatureMeasurement, READ 
-```
-
-Permit a user to read any measurement of device "10200":
-
-```java
-10200, MEASUREMENT, *, READ
-```
-
-Permit a user to restart device "10200":
-
-```java
-10200, OPERATION, c8yRestart, ADMIN
-```

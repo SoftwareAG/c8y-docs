@@ -32,7 +32,7 @@ There can be more than one matching data point entry in the Data Point Library. 
 
 ![edit data points](/images/users-guide/cockpit/cockpit-dataexplorer-edit.png)
 
-For details on modifying the visualization in general, see [*Changing data point visualization*](#change-visualization). For details on customizing the properties of a particular data point, see [*Customizing data point properties*](#customize-data-points).
+For details on modifying the visualization in general, see [Changing data explorer visualization](#change-visualization). For details on customizing the properties of a particular data point, see [Customizing data point properties](#customize-data-points).
 
 >**Info:** Data points are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 

@@ -79,7 +79,7 @@ For example, a credentials request for a device added to *xyz.cumulocity.com* co
 
 Cumulocity IoT uses the tenant ID specified with the user ID for FULL authentication and routing of the request to the correct tenant.
 
-If the valid tenant URL is known (e.g. *xyz.cumulocity.com* in the example above), then the username does not have to be prefixed by "<tenant ID>" for authentication.
+If the valid tenant URL is known (e.g. *xyz.cumulocity.com* in the example above), then the username does not have to be prefixed by \<tenant ID> for authentication.
 
 
 #### Step 1: Check if the device is already registered
@@ -329,7 +329,7 @@ The restart seems to have executed well -- we are back after all. So let's set t
 
 Then, listen to new operations created in Cumulocity IoT. The mechanism for listening to real-time data in Cumulocity IoT is described in [Real-time notifications](/reference/real-time-notifications) in the Reference guide and is based on the standard Bayeux protocol. First, a handshake is required. The handshake tells Cumulocity IoT what protocols the agent supports for notifications and allocates a client ID to the agent.
 
-    POST /devicecontrol/notifications HTTP/1.1
+    POST /notification/operations HTTP/1.1
     Content-Type: application/json
     ...
     [ {
@@ -353,7 +353,7 @@ Then, listen to new operations created in Cumulocity IoT. The mechanism for list
 
 Afterwards, the device respectively the agent needs to subscribe to notifications for operations. This is done using a POST request with the ID of the device as subscription channel. In our example, the Raspberry Pi runs an agent and has ID 2480300:
 
-    POST /devicecontrol/notifications HTTP/1.1
+    POST /notification/operations HTTP/1.1
     Content-Type: application/json
     ...
     [ {
@@ -374,7 +374,7 @@ Afterwards, the device respectively the agent needs to subscribe to notification
 
 Finally, the device connects and waits for operations to be sent to it.
 
-    POST /devicecontrol/notifications HTTP/1.1
+    POST /notification/operations HTTP/1.1
     Content-Type: application/json
     ...
     [ {
@@ -419,7 +419,7 @@ Assume now that an operation is queued for the agent. This will make the long po
         }
     ]
 
-When the agent picks up the operation, it sets it to EXECUTING state in Cumulocity IoT using a PUT request (see above example for FAILED). It carries out the operation on the device and runs possible updates of the Cumulocity IoT inventory. Finally, it sets the operation to SUCCESSFUL or FAILED depending on the outcome. Then, it will reconnect again to "/devicecontrol/notifications" as described above and wait for the next operation.
+When the agent picks up the operation, it sets it to EXECUTING state in Cumulocity IoT using a PUT request (see above example for FAILED). It carries out the operation on the device and runs possible updates of the Cumulocity IoT inventory. Finally, it sets the operation to SUCCESSFUL or FAILED depending on the outcome. Then, it will reconnect again to "/notification/operations" as described above and wait for the next operation.
 
 The device should reconnect within ten seconds to the server to not lose queued operations. This is the time that Cumulocity IoT buffers real-time data. The interval can be specified upon handshake.
 
@@ -473,7 +473,7 @@ Similar, use a POST request for events. The following example shows a location u
 Note that all data types in Cumulocity IoT can include arbitrary extensions in the form of additional fragments. In this case, the event includes a position, but also self-defined fragments can be added.
 
 
-### Step 11: Send alarms
+#### Step 11: Send alarms
 
 Alarms represent events that most likely require human intervention to be solved. For example, if the battery in a device runs out of energy, someone has to visit the device to replace the battery. Creating an alarm is technically very similar to creating an event.
 

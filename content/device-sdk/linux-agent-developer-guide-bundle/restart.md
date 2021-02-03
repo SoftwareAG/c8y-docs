@@ -10,7 +10,7 @@ Here, two examples are presented. The first example only shows you how to handle
 
 ### <a name="restart"></a>Restart device example - simple
 
-First, this example sends the operation state EXECUTING when it receives the `c8y_Restart` operation. Then, it logs "Executing restart.." in the log file, and sends SUCCESSFUL as the operation state update to the server.
+First, this example sends the operation status EXECUTING when it receives the `c8y_Restart` operation. Then, it logs "Executing restart.." in the log file, and sends SUCCESSFUL as the operation status update to the server.
 
 In the beginning, the agent needs to send `c8y_Restart` as `c8y_SupportedOperations` to notify this agent can handle restart operation.
 
@@ -59,7 +59,7 @@ end
 
 When the agent receives the message ID, this message handler triggers to invoke `restart()`. `r` is the recursive variable. So, `r:value(2)` points the received operation ID.
 
-The operation state needs to transit PENDING->EXECUTING->SUCCESSFUL/FAILED. The agent needs to update the operation state to EXECUTING first. This is what
+The operation status needs to transit PENDING->EXECUTING->SUCCESSFUL/FAILED. The agent needs to update the operation status to EXECUTING first. This is what
 
 ```lua
 c8y:send('303,' .. r:value(2) .. ',EXECUTING', 1)
@@ -87,7 +87,7 @@ lua.plugins=hello,cpumeasurments,restart-simple
 
 Deploy _restart-simple.lua_ like [Hello world example](./#hello-world-example). Then run your agent.
 
-Now go to your Cumulocity IoT tenant, execute a restart operation as shown in the image below. Afterwards, you should see the message printed in the log file and the operation state set to SUCCESSFUL in your control tab.
+Now go to your Cumulocity IoT tenant, execute a restart operation as shown in the image below. Afterwards, you should see the message printed in the log file and the operation status set to SUCCESSFUL in your control tab.
 ![restarted-device](/images/device-sdk/restarted-device.png)
 
 

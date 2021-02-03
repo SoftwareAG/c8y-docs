@@ -48,17 +48,13 @@ For details, see the [ngx-bootstrap release notes](https://github.com/valor-soft
 
 With the 10.9 GA release in April 2021, the calculation for the binary file size is updated to reflect the total size of the file, not the content length as was previously used.  
 
-#### Underscore (_) not allowed in new tenant domains
-
-With the 10.9 GA release in April 2021, tenant domain names will no longer be allowed to use the underscore character in accordance to RFC specification https://tools.ietf.org/html/rfc2181. This change only affects the creation of new tenants. Existing tenant domains with underscore will be still working correctly. However, each customer having underscore in tenant domains should contact [our product support](/about-doc/contacting-support) in order to plan migration for those affected tenants.
-
-#### Enforcing user passwords to meet password complexity 
+#### Enforcing user passwords to meet password complexity
 
 With the 10.9 GA release in April 2021, user passwords will be enforced to meet password complexity by default. The new password validation will not impact the existing users until they need to change or reset the password.
 The password complexity is enforced:
-  
-* During user creations 
-* During password change 
+
+* During user creations
+* During password change
 * During password reset
 
 Foe details on password validation refer to [Administration > Getting started > User settings](/users-guide//getting-started/#user-settings) and [Administration > Changing settings > Login settings](/users-guide/administration/#login-settings).
@@ -85,6 +81,11 @@ It is strongly recommended that all customers move to OAuth authentication to re
 
 With the 10.10 GA release in July 2021, it will no longer be allowed to use underscores in tenant domain names, in accordance with RFC specification https://tools.ietf.org/html/rfc2181. This change only affects the creation of new tenants. Existing tenants with underscores in the domain name will still be working correctly. However, each customer having underscores in tenant domain names should [contact support](/about-doc/contacting-support/) in order to plan the migration for those affected tenants.
 
+#### Deprecation of `/cep/realtime` endpoint
+
+The `/cep/realtime` endpoint is deprecated. We recommend you to use the `/notification/realtime` endpoint instead. With the 10.11 GA release in October 2021, the `/cep/realtime` endpoint is supposed to be removed.
+
+
 ### Implemented measures
 
 #### End of support for CEL (Esper)
@@ -95,7 +96,7 @@ Cumulocity IoT now uses Apama to provide streaming analytics. As a result, exist
 
 For details on migration, refer to [Migrating from CEL (Esper) to Apama](/apama/overview-analytics/#migrate-from-esper) in the Streaming Analytics guide.
 
-Note that we offer an open-source Esper-to-Apama EPL translation tool which assists you in the migration of Esper CEL to Apama EPL. It generates EPL that is compatible with the Apama microservice version 10.6.6 and above. The translation tool is available from GitHub at [https://github.com/SoftwareAG/apama-streaming-analytics-esper2apama](https://github.com/SoftwareAG/apama-streaming-analytics-esper2apama). This tool focuses on reducing (though not eliminating) the amount of human involvement needed during migration by automating translation of some of the most commonly occurring Esper constructs. See the README in GitHub for details. 
+Note that we offer an open-source Esper-to-Apama EPL translation tool which assists you in the migration of Esper CEL to Apama EPL. It generates EPL that is compatible with the Apama microservice version 10.6.6 and above. The translation tool is available from GitHub at [https://github.com/SoftwareAG/apama-streaming-analytics-esper2apama](https://github.com/SoftwareAG/apama-streaming-analytics-esper2apama). This tool focuses on reducing (though not eliminating) the amount of human involvement needed during migration by automating translation of some of the most commonly occurring Esper constructs. See the README in GitHub for details.
 
 #### Removal of DELETE method for audit logs
 

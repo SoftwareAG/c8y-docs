@@ -16,10 +16,5 @@ To access the documentation index, click the arrow icon in the selection field b
 
 See [Content overview](/about-doc/content-overview/) for a quick overview on the content of each guide.
 
->**Important:** Depending on your commercial plan, only a subset of the features and functionalities described in this documentation might be available to you. 
->
->Refer to the [Cumulocity IoT Pricing page](https://www.softwareag.cloud/site/pricing/cumulocity-iot.html#/) for details on our commercial offering. Refer to your contract on details on your particular subscriptions.
-
-<br>
 >**Info:** The **Installation and Operations guides** for the Cumulocity IoT platform are not publicly available. They are provided on the [Software AG Empower Portal](https://documentation.softwareag.com/), see [Additional ressources](/about-doc/online-information/).
 

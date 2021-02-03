@@ -8,9 +8,9 @@ This documentation describes the **10.7.0 release (January 2021)** of the Cumulo
 
 This documentation includes all new features and functionality introduced with release 10.7.0 (see the [Release notes](/release-notes/overview/) for details).
 
->**Important:** Depending on your commercial plan, only a subset of the features and functionalities described in this documentation might be available to you. 
+>**Important:** Depending on the Cumulocity IoT plan your organization has purchased, only a subset of the features and functionalities described in this documentation might be available to you. 
 >
->Refer to the [Cumulocity IoT Pricing page](https://www.softwareag.cloud/site/pricing/cumulocity-iot.html#/) for details on our commercial offering. Refer to your contract on details on your particular subscriptions.
+>Please refer to the [Cumulocity IoT Pricing page](https://www.softwareag.cloud/site/pricing/cumulocity-iot.html#/) for details on the plans available, and refer to your contract for details on your particular subscriptions.
 
 To access the documentation index, click the arrow icon in the selection field below the logo on the top left:
 

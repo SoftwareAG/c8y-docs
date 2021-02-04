@@ -17,7 +17,7 @@ Basic diagnostics information is provided in a ZIP file named *diagnostic-overvi
 
 - Apama-internal diagnostics information (similar to the `engine_watch` and `engine_inspect` command-line tools available in Apama).
 
-- A copy of all EPL apps, smart rules and analytics models.
+- A copy of all EPL apps, smart rules and analytic models.
 
 - A copy of any alarms that the Apama-ctrl microservice has raised.
 

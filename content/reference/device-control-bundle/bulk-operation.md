@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 Bulk Operation API allows to schedule an operation on a group of devices to be executed at a specified time. It is required to specify the delay between every operation is created.
-When Bulk Operation is created, it has ACTIVE status. When all operations are created, Bulk Operation has state COMPLETED. It is also possible to cancel already created Bulk Operation by deleting it.
+When Bulk Operation is created, it has ACTIVE status. When all operations are created, Bulk Operation has a status of COMPLETED. It is also possible to cancel already created Bulk Operation by deleting it.
 
 When you create a Bulk Operation, you can run it in two modes:
 - when groupId is passed, it works standard way, i.e. takes devices from group and schedules operations on them

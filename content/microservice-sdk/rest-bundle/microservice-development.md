@@ -507,7 +507,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.operation+json; charset=UTF-8; 
 }
 ```
 
-The POST command returns immediately when the operation has been queued for the device. The actual operation executes asynchronously. Since we added the optional "Accept" header in the example request, we will get the full queued operation in the response including its URL in the `self` property. Using a GET on that URL, you can check the current state of execution of the operation:
+The POST command returns immediately when the operation has been queued for the device. The actual operation executes asynchronously. Since we added the optional "Accept" header in the example request, we will get the full queued operation in the response including its URL in the `self` property. Using a GET on that URL, you can check the current status of execution of the operation:
 
 ```http
 GET /devicecontrol/operations/2550200 HTTP/1.1
@@ -520,7 +520,7 @@ Content-Type: application/vnd.com.nsn.cumulocity.operation+json; charset=UTF-8; 
 }
 ```
 
-A state of PENDING means here that the device has not yet picked up the operation. EXECUTING means that the device is in the process of executing the operation. Finally, SUCCESSFUL or FAILED indicate that the operation is completed.
+A status of PENDING means here that the device has not yet picked up the operation. EXECUTING means that the device is in the process of executing the operation. Finally, SUCCESSFUL or FAILED indicate that the operation is completed.
 
 #### Listening for events
 

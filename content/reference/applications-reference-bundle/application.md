@@ -123,7 +123,7 @@ The response contains a representation of the newly created application.
 
 Required role: ROLE\_APPLICATION\_MANAGMENT\_ADMIN
 
->Info: It's not possible to clone applications with type MICROSERVICE.
+> **Info:** It is not possible to clone applications with type MICROSERVICE.
 
 Example request:
 

@@ -8,9 +8,9 @@ Machine Learning Workbench (MLW) provides a version-controlled project-based str
 
 Projects functionality includes:
 
-* Creating a new project.
-* Adding resources to the project - drag and drop, upload single or multiple files.
-* Committing a project - version management.
+* [Creating a new project.](#create-a-new-project)
+* [Adding resources to the project - drag and drop, upload single or multiple files.](#upload-resources)
+* [Committing a project - version management.](#commit-project-version)
 
 #### Create a new project
 
@@ -37,7 +37,7 @@ To upload files, you can either click on the upload pane and select the files fo
 
 ![Upload Resources](/images/zementis/mlw-app-upload-resources.png)
 
-Once the files are uploaded, it will be placed under the respective categories.
+Once the files are uploaded, they will be placed under the respective categories.
 
 ![Upload Resources](/images/zementis/mlw-app-upload-complete.png)
 

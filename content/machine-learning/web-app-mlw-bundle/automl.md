@@ -6,55 +6,59 @@ weight: 40
 
 Machine Learning Workbench (MLW) provides an Automated Machine Learning (AutoML) feature which enables you to build your machine learning models for classification, regression and anomaly detection with ease by performing an exhaustive grid search in hyper-parameter space to generate the best model for your dataset.
 
-***Add a new resource for AutoML***
+#### AutoML
 
-Upload a tabular dataset to train a machine learning model on that data.
+The following steps illustrate how to train a machine learning model using AutoML
 
-![pojects manager](/images/zementis/mlw-app-resource-adm.png)
+1. Add a new resource for AutoML
 
-***AutoML selection***
+    Upload a tabular dataset to train a machine learning model on that data.
 
-Select the data resource and click **New AutoML** to proceed with training the AutoML model on that data.
+    ![pojects manager](/images/zementis/mlw-app-resource-adm.png)
 
-![Resources](/images/zementis/mlw-app-automl-select.png)
+2. AutoML selection
 
-***Pre-processing step***
+    Select the data resource and click **New AutoML** to proceed with training the AutoML model on that data.
 
-Select the **Problem Type** (**Regression** or **Classification**) and select the **Target Variable**. Next, select the imputation method and data transformation methods for respective columns. Once done, click **Build** to proceed.
+    ![Resources](/images/zementis/mlw-app-automl-select.png)
 
-![Pre-processing steps](/images/zementis/mlw-app-automl-pre.png)
+3. Pre-processing step
 
-***Pre-processing step: add training parameters***
+    Select the **Problem Type** ("Regression" or "Classification") and select the **Target Variable**. Next, select the imputation method and data transformation methods for respective columns. Once done, click **Build** to proceed.
 
-Select the training parameters which include model evaluation criteria (**Scoring**), training iterations (**Generation**) and population size for each generation (**Population Size**). Once done, click **Submit**. This will create a new task in the **Tasks** section.
+    ![Pre-processing steps](/images/zementis/mlw-app-automl-pre.png)
 
-![Pre-processing steps](/images/zementis/mlw-app-automl-trainparam.png)
+4. Selecting training parameters
 
-***AutoML status***
+    Select the training parameters which include model evaluation criteria (**Scoring**), training iterations (**Generation**) and population size for each generation (**Population Size**). Once done, click **Submit**. This will create a new task in the **Tasks** section.
 
-You can view the model training progress in the **Tasks** section of Machine Learning Workbench (MLW).
+    ![Pre-processing steps](/images/zementis/mlw-app-automl-trainparam.png)
 
-![Pre-processing steps](/images/zementis/mlw-app-automl-start.png)
+5. AutoML model training status
 
-Once the task is COMPLETED, all the trained models are listed along with the model evaluation score in descending order.
+    You can view the model training progress in the **Tasks** section of Machine Learning Workbench (MLW).
 
-![Pre-processing steps](/images/zementis/mlw-app-automl-complete.png)
+    ![Pre-processing steps](/images/zementis/mlw-app-automl-start.png)
 
-***AutoML hyper-parameters***
+    Once the task is COMPLETED, all the trained models are listed along with the model evaluation score in descending order.
 
-The hyper-parameters for each model can be viewed by clicking on the corresponding model name.
+    ![Pre-processing steps](/images/zementis/mlw-app-automl-complete.png)
 
-![Pre-processing steps](/images/zementis/mlw-app-automl-hyper.png)
+6. AutoML hyper-parameters
 
-***AutoML model***
+    The hyper-parameters for each model can be viewed by clicking on the corresponding model name.
 
-After training is complete, the best model selected by the evaluation criteria will be saved in the **Model** section of the respective **Project** in PMML format.
+    ![Pre-processing steps](/images/zementis/mlw-app-automl-hyper.png)
 
-![Pre-processing steps](/images/zementis/mlw-app-automl-model.png)
+7. AutoML model
 
-***Model deployment and predictions***
+    After training is complete, the best model selected by the evaluation criteria will be saved in the **Model** section of the respective **Project** in PMML format.
 
-Once the model is available in the **Model** section, it can be deployed on the Machine Learning Engine (MLE) for predictions. Click **Deploy** to deploy the selected model on the Machine Learning Engine (MLE).
+    ![Pre-processing steps](/images/zementis/mlw-app-automl-model.png)
+
+#### Model deployment and predictions
+
+Once the model is available in the **Model** section, it can be deployed on Machine Learning Engine (MLE) for predictions. Click **Deploy** to deploy the selected model on Machine Learning Engine (MLE).
 
 ![Select Deploy To MLE](/images/zementis/mlw-app-automl-deploy-2-1.png)
 

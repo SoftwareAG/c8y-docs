@@ -123,6 +123,8 @@ The response contains a representation of the newly created application.
 
 Required role: ROLE\_APPLICATION\_MANAGMENT\_ADMIN
 
+> **Info:** It is not possible to clone applications with type MICROSERVICE.
+
 Example request:
 
     POST /application/applications/<<application_id>>/clone HTTP/1.1

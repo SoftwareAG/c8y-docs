@@ -349,7 +349,7 @@ Any extension deployed to the platform as a microservice is billed as "used" and
 
 A tenant that is billed for resources can view the point in time when the microservices billing has been changed in [the audit logs](/users-guide/administration/#audit-logs). The audit log entries, for example "Scaling application '...' from X to Y instances" contain the information about the changes of instances and resources consumed by the microservice.
 
-  <img src="/images/users-guide/enterprise-tenant/ee-ms-billing-audit-logs.png" name="Microservice audit logs"/>
+  <img src="/images/users-guide/enterprise-tenant/et-ms-billing-audit-logs.png" name="Microservice audit logs"/>
 
 Tenants should also be able to see the full application lifecyle in the application details. In the **Status** tab, you can see an **Events** section that is showing very low level stages of the application startup. Some of the most important are:
 
@@ -360,7 +360,7 @@ Tenants should also be able to see the full application lifecyle in the applicat
 
 >**Info:** There is no event in the **Events** section when the microservice has reached the state "Ready" as this happens according to the readiness probe.
 
-  <img src="/images/users-guide/enterprise-tenant/ee-ms-billing-events.png" name="Microservice details - Events"/>
+  <img src="/images/users-guide/enterprise-tenant/et-ms-billing-events.png" name="Microservice details - Events"/>
 
 Audit logs and events are stored at tenant space according to the isolation level. For multi-tenant isolated microservices this is the tenant that is the owner of the microservice and in case of per-tenant isolation level it is the subscribed tenant.
 

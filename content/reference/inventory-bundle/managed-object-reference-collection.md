@@ -132,3 +132,183 @@ As an alternative, it is also allowed to pass the following reference object in 
       "managedObject" : { "id" :"<<ManagedObject id>>" }
     }
 ```
+
+### POST - Add multiple object references to the collection
+
+**Request body:** ManagedObjectReferenceCollection
+
+**Response body:** ManagedObjectReferenceCollection (when the Accept header is not provided, an empty response body is returned)
+
+**Required role:** ROLE\_INVENTORY\_ADMIN or parent and children owner
+
+
+#### Example request - Add a ManagedObjectReferenceCollection
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Host|{{hostname}}
+|Content-Type|application/vnd.com.nsn.cumulocity.managedobjectreferencecollection+json;ver=... 
+|Accept|application/vnd.com.nsn.cumulocity.managedobjectreferencecollection+json;ver=... 
+
+```http
+
+POST /inventory/managedObjects/100/childDevices
+
+{
+   "references":[
+      {
+         "managedObject":{
+            "id":"128"
+         }
+      },
+      {
+         "managedObject":{
+            "id":"129"
+         }
+      }
+   ]
+}
+```
+
+> **Info:** instead of `childDevices` in the URL you can use: `childAssets` or `childAdditions` to add different type of managedObject
+
+#### Example response
+
+|HEADERS||
+|:---|:---|
+|Content-Type|application/vnd.com.nsn.cumulocity.managedObjectReferenceCollection+json;ver=...
+
+```http
+HTTP/1.1
+201 - Created
+
+{
+  "self" : "https://<TENANT_DOMAIN>/inventory/managedObjects/100/childDevices",
+  "references": [
+    {
+      "self" : "https://<TENANT_DOMAIN>/inventory/managedObjects/100/childDevices/128",
+      "managedObject" : {
+          "additionParents": {
+              "self": "https://<TENANT_DOMAIN>/inventory/managedObjects/128/additionParents",
+              "references": []
+          },
+          "owner": "admin",
+          "childDevices": {
+              "self": "https://<TENANT_DOMAIN>/inventory/managedObjects/128/childDevices",
+              "references": []
+          },
+          "childAssets": {
+              "self": "https://<TENANT_DOMAIN>/inventory/managedObjects/128/childAssets",
+              "references": []
+          },
+          "creationTime": "2020-12-31T09:38:34.448Z",
+          "lastUpdated": "2020-12-31T09:38:34.448Z",
+          "childAdditions": {
+              "self": "https://<TENANT_DOMAIN>/inventory/managedObjects/128/childAdditions",
+              "references": []
+          },
+          "name": "testMeasurementDevice",
+          "assetParents": {
+              "self": "https://<TENANT_DOMAIN>/inventory/managedObjects/128/assetParents",
+              "references": []
+          },
+          "deviceParents": {
+              "self": "https://<TENANT_DOMAIN>/inventory/managedObjects/128/deviceParents",
+              "references": []
+          },
+          "self": "https://<TENANT_DOMAIN>/inventory/managedObjects/128",
+          "id": "128",
+          "c8y_IsDevice": {},
+          "c8y_SupportedMeasurements": [
+              "c8y_TemperatureMeasurement"
+          ]
+      }
+    },
+    {
+      "self" : "https://<TENANT_DOMAIN>/inventory/managedObjects/100/childDevices/129",
+      "managedObject" : {
+          "additionParents": {
+              "self": "https://<TENANT_DOMAIN>/inventory/managedObjects/129/additionParents",
+              "references": []
+          },
+          "owner": "admin",
+          "childDevices": {
+              "self": "https://<TENANT_DOMAIN>/inventory/managedObjects/129/childDevices",
+              "references": []
+          },
+          "childAssets": {
+              "self": "https://<TENANT_DOMAIN>/inventory/managedObjects/129/childAssets",
+              "references": []
+          },
+          "creationTime": "2020-12-31T09:39:58.705Z",
+          "lastUpdated": "2020-12-31T09:39:58.705Z",
+          "childAdditions": {
+              "self": "https://<TENANT_DOMAIN>/inventory/managedObjects/129/childAdditions",
+              "references": []
+          },
+          "name": "MeasurementDeviceName",
+          "assetParents": {
+              "self": "https://<TENANT_DOMAIN>/inventory/managedObjects/129/assetParents",
+              "references": []
+          },
+          "deviceParents": {
+              "self": "https://<TENANT_DOMAIN>/inventory/managedObjects/129/deviceParents",
+              "references": []
+          },
+          "self": "https://<TENANT_DOMAIN>/inventory/managedObjects/129",
+          "id": "129",
+          "c8y_IsDevice": {},
+          "c8y_SupportedMeasurements": [
+              "c8y_TemperatureMeasurement"
+          ]
+      }
+    }
+  ]
+}
+```
+
+### DELETE - Managed object reference collection
+
+**Request body:** ManagedObjectReferenceCollection
+
+**Response message body:** N/A
+
+**Required role:** ROLE\_INVENTORY\_ADMIN or parent owner or child owner
+
+> **Info:** This operation just removes the reference, it does not delete the object itself.
+
+#### Example request - Delete a managed object reference collection
+
+|HEADERS||
+|:---|:---|
+|Authorization|{{auth}}
+|Host|{{hostname}}
+|Content-Type|application/vnd.com.nsn.cumulocity.managedObjectReferenceCollection+json;ver=... 
+
+```http
+DELETE /inventory/managedObjects/100/childDevices
+
+{
+   "references":[
+      {
+         "managedObject":{
+            "id":"128"
+         }
+      },
+      {
+         "managedObject":{
+            "id":"129"
+         }
+      }
+   ]
+}
+```
+> **Info:** instead of `childDevices` in the URL you can use: `childAssets` or `childAdditions` to add different type of managedObject
+
+#### Example response
+
+```http
+HTTP/1.1
+204 - NO CONTENT
+```

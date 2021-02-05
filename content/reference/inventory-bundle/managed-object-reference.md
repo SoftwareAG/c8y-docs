@@ -59,7 +59,7 @@ HTTP/1.1
 
 **Required role:** ROLE\_INVENTORY\_ADMIN or parent owner or child owner
 
-> **Info:** This operations just removes the reference, it does not delete the object itself.
+> **Info:** This operation just removes the reference, it does not delete the object itself.
 
 #### Example request - Delete a managed object reference
 

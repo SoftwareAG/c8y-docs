@@ -5,8 +5,8 @@ pipeline {
   }
   agent {
     kubernetes {
-      inheritFrom 'c8y-ubuntu-hugo-deploy:latest'
-      defaultContainer 'hugo'
+      inheritFrom 'c8y-hugo'
+      defaultContainer 'default'
     }
   }
   parameters {

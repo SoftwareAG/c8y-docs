@@ -14,7 +14,7 @@ The data explorer is available for all assets or just for a particular asset.
 
 * Navigate to a particular asset and switch to the **Data explorer** tab to visualize all data points of this particular asset and its sub-assets.
 
-In the data explorer, you see a list of available data points on the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [*Adding data points*](#add-data-points).
+In the data explorer, you see a list of available data points at the right. The first five data points of the selected device or group are shown by default. For details on how to add data points see [*Adding data points*](#add-data-points).
 
 On the left, in the main card, you see its visualization.
 
@@ -32,7 +32,7 @@ There can be more than one matching data point entry in the Data Point Library. 
 
 ![edit data points](/images/users-guide/cockpit/cockpit-dataexplorer-edit.png)
 
-For details on modifying the visualization in general, see [*Changing data point visualization*](#change-visualization). For details on customizing the properties of a particular data point, see [*Customizing data point properties*](#customize-data-points).
+For details on modifying the visualization in general, see [Changing data explorer visualization](#change-visualization). For details on customizing the properties of a particular data point, see [Customizing data point properties](#customize-data-points).
 
 >**Info:** Data points are visible to all authenticated users of the tenant, regardless of their inventory role permission.
 

@@ -92,7 +92,7 @@ Für jedes Objekt gibt es verschiedene Registerkarten, abhängig vom Objekttypen
 
 Wenn für ein Gerät Dashboards erstellt wurden, werden diese ebenfalls als Registerkarten angezeigt. Weitere Informationen finden Sie unter [Verwenden von Dashboards](#dashboards).
 
-Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit Plugins erweitert wurde. Siehe auch [Web SDK for plugins](/web/introduction).
+Es können zusätzliche Registerkarten angezeigt werden, falls die Anwendung mit Plugins erweitert wurde. Siehe auch [Web SDK for plugins](/web/overview).
 
 ### <a name="creating-groups"></a>So erstellen Sie eine Gruppe
 

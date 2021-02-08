@@ -11,7 +11,9 @@ The basic protocol for receiving notifications is described in the Section "[Rea
 
 Real-time notifications permit an agent to almost immediately receive new operations targeted to it. For control-related notifications, use the URL
 
-	/devicecontrol/notifications
+	/notification/operations
+
+> **Info:** The old endpoint `/devicecontrol/notifications` is deprecated. Switch your applications to `/notification/operations` if not already done.
 
 The subscription channel needs to contain the managed object ID of the agent that wants to receive its operations:
 
@@ -27,7 +29,9 @@ Required role: ROLE\_DEVICE\_CONTROL\_READ
 
 This endpoint will not only result in returning newly created operations but also all updates (including deletion) of the operations for a device. The URL is
 
-    /cep/realtime
+    /notification/realtime
+
+> **Info:** The old endpoint `/cep/realtime` is deprecated. Switch your applications to `/notification/realtime` if not already done.
 
 The subscription channel needs to contain the managed object ID of the device or a "*" as placeholder to receive notifications for all devices
 

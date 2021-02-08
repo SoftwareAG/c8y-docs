@@ -4,7 +4,8 @@ title: Content overview
 layout: bundle
 ---
 
-The Cumulocity IoT documentation on this website contains the following information:
+The Cumulocity IoT documentation on this website contains the following information.
+
 
 <table>
 <col width = 150>
@@ -26,19 +27,31 @@ The Cumulocity IoT documentation on this website contains the following informat
 <tr>
 <td align="left">User documentation</td>
 <td align="left"><a href="/users-guide/getting-started/">User guide</a></td>
-<td align="left">Core, in-depth explanation on using the Administration, Cockpit and Device Management applications and various optional Cumulocity IoT services through the GUI.</td>
+<td align="left">Core, in-depth explanation on using the Administration, Cockpit and Device Management applications and various additional Cumulocity IoT services through the UI.</td>
 </tr>
 
 <tr>
 <td align="left">User documentation</td>
-<td align="left"><a href="/device-tutorials/tutorials-introduction/">Device integration tutorials</a></td>
-<td align="left">How to integrate various demo devices in your Cumulocity IoT environment.</td> 
+<td align="left"><a href="/protocol-integration/overview">Protocol integration guide</a></td>
+<td align="left">Detailed description on how to integrate devices using supported device protocols.</td>
 </tr>
 
 <tr>
 <td align="left">User documentation</td>
 <td align="left"><a href="/edge/overview/">Cumulocity IoT Edge</a></td>
 <td align="left">How to install, run and operate Cumulocity IoT Edge, the local version of Cumulocity IoT.</td>
+</tr>
+
+<tr>
+<td align="left">User documentation</td>
+<td align="left"><a href="/device-tutorials/tutorials-introduction/">Device integration tutorials</a></td>
+<td align="left">How to integrate various demo devices in your Cumulocity IoT environment.</td>
+</tr>
+
+<tr>
+<td align="left">User documentation</td>
+<td align="left"><a href="/cloud-remote-access/cra-general-aspects/">Cloud Remote Access</a></td>
+<td align="left">How to remotely access operating panels and other devices via a web browser using the Cloud Remote Access feature.</td>
 </tr>
 
 <tr>
@@ -49,7 +62,7 @@ The Cumulocity IoT documentation on this website contains the following informat
 
 <tr>
 <td align="left">Developer documentation</td>
-<td align="left"><a href="/web/introduction/">Web SDK guide</a></td>
+<td align="left"><a href="/web/">Web SDK guide</a></td>
 <td align="left">How to use the Web SDK to extend applications with your own plugins, add your own applications or implement further functionalities tailored to your use case.</td>
 </tr>
 

@@ -15,7 +15,7 @@ Microservices typically provide a REST API and Cumulocity IoT provides a light A
 
 A request to a microservice can be authenticated using basic authentication or OAuth. In case of basic authentication the flow is fairly simple, as credentials can be read and utilized for further authentication to the platform.
 
-Authentication with OAuth is based on cookies technology, so the access token has to be read from the request cookie header. There are two important parts of OAuth authorization: an access token stored in the authorization cookie and an X-XSRF-TOKEN header for XSRF attack prevention. Both must be forwarded with the request to the platform. If you use Java for development, we recommend you to use the Microservice SDK Version 9.12.6 or later for supporting OAuth in Java microservices.
+Authentication with OAuth is based on cookies technology, so the access token has to be read from the request cookie header. There are two important parts of OAuth authorization: an access token stored in the authorization cookie and an X-XSRF-TOKEN header for XSRF attack prevention. Both must be forwarded with the request to the platform. If you use Java for development, we recommend you to use the Microservice SDK Version 10.4.6 or later for supporting OAuth in Java microservices.
 
 ![OAuth](/images/microservices-sdk/ms-oauth.png)
 
@@ -57,6 +57,19 @@ For instance, if a microservice creates measurements using the service user, mea
 Required roles are added to the service users.
 * Roles: The custom roles provided to tenant platform users by the microservice developer.
 These roles can be assigned or revoked to the tenant platform users or groups using the Administration application.
+
+Custom roles need to adhere to this name format in order to be shown in the UI:
+
+ROLE_<NAME>_(READ|ADMIN|CREATE)
+
+You can add them to the [application manifest](#manifest) in the `roles` properties as follows:
+
+```json
+"roles": [
+    "ROLE_MY_MICROSERVICE_READ",
+    "ROLE_MY_MICROSERVICE_ADMIN"
+]
+```
 
 <!-- TODO: add/describe a picture of "required roles" and "provided roles" showing a microservice as a block -->
 

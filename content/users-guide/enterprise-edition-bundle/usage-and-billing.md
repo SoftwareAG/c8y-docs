@@ -183,7 +183,7 @@ In case of resources-based billing, charging depends on the isolation level:
 * Per-tenant - the subscriber tenant is charged for used resources
 * Multi-tenant - the owner of the microservice is charged for used resources
 
-In case of multi-tenant isolation level, the owner of a microservice (e.g. the management tenant of an Enterprise Tenant or service provider) is charged for the used resources of the subtenants. The subtenants should be charged based on the subscription according to the agreement between the microservice owner and the subscribed tenant. The list of subscribed applications is available as part of the [tenant usage statistics record](/reference/tenants-bundle/tenant-usage-statistics.md) as `subscribedApplications`.
+In case of multi-tenant isolation level, the owner of a microservice (e.g. the management tenant of an Enterprise Tenant or service provider) is charged for the used resources of the subtenants. The subtenants should be charged based on the subscription according to the agreement between the microservice owner and the subscribed tenant. The list of subscribed applications is available as part of the [tenant usage statistics record](/reference/tenants/#tenant-usage-statistics) as `subscribedApplications`.
 
 #### Resources usage assignment for billing mode and isolation level
 
@@ -342,11 +342,12 @@ A Cumulocity IoT platform tenant can have several states:
 
 Any extension deployed to the platform as a microservice is billed as "used" and the billing starts according to the begin of usage. After the application is subscribed to the tenant a process of application startup is triggered which will go through several high level phases:
 
-  * Scheduled - The microservice has been scheduled to be started but the Docker container is not running yet. In this state the microservice is not yet billed.
-  * Not ready - The microservice container is not ready yet to handle incoming traffic but the application is already running so billing is started.
+  * Pending - The microservice has been scheduled to be started but the Docker container is not running yet. In this state the microservice is not yet billed.
+  * Scheduled - The microservice has been assigned to a node, the Docker container initialization has been started. The resources for the microservice have already been allocated so billing is started.
+  * Not ready - The microservice container is not ready yet to handle incoming traffic but the application is already running.
   * Ready - The microservice container is ready to handle incoming traffic. "Ready" is resolved based on liveness and readiness probes defined in the [microservice manifest](/microservice-sdk/concept/#manifest). If probes are not defined then the microservice is immediately ready.
 
-A tenant that is billed for resources can view the point in time when the microservices billing has been changed in [the audit logs](users-guide/administration/#audit-logs). The audit log entries, for example "Scaling application '...' from X to Y instances" contain the information about the changes of instances and resources consumed by the microservice.
+A tenant that is billed for resources can view the point in time when the microservices billing has been changed in [the audit logs](/users-guide/administration/#audit-logs). The audit log entries, for example "Scaling application '...' from X to Y instances" contain the information about the changes of instances and resources consumed by the microservice.
 
   <img src="/images/users-guide/enterprise-tenant/ee-ms-billing-audit-logs.png" name="Microservice audit logs"/>
 
@@ -361,3 +362,211 @@ Tenants should also be able to see the full application lifecyle in the applicat
   <img src="/images/users-guide/enterprise-tenant/ee-ms-billing-events.png" name="Microservice details - Events"/>
 
 Audit logs and events are stored at tenant space according to the isolation level. For multi-tenant isolated microservices this is the tenant that is the owner of the microservice and in case of per-tenant isolation level it is the subscribed tenant.
+
+### Billing pricing models
+
+The Cumulocity IoT platform collects a lot of different usage statistics data which is used for billing customers.
+
+Based on the contract, there are two pricing models for billing:
+
+* Tenant usage pricing model - based on tenant usage statistics
+* Device pricing model - based mostly on device statistics and microservice resource usage
+
+The table below presents which values are used in each model for billing purposes:
+
+<table>
+<col style="width:25%">
+<col style="width:25%">
+<col style="width:30%">
+<col style="width:20%">
+<thead>
+<tr>
+<th style="text-align:left">Source</th>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Tenant usage pricing model</th>
+<th style="text-align:left">Device pricing model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">ID</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left">x</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Name</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left">x</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">API requests</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Device API requests</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Storage</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left">x</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Peak storage</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Root device</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Peak root device</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Devices</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left">x</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Peak devices</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Endpoint devices</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Subscribed applications</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Creation time</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left">x</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Alarms created</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Alarms updated</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Inventories created</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Inventories updated</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Events created</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Events updated</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Measurements created</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Total inbound transfer</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Parent tenant</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left">x</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Tenant domain</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">x</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Can create sub-tenants</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">x</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">External reference</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left">x</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Total microservice CPU usage</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#usage-stats">TenantUsageStatistics</a></td>
+<td style="text-align:left">Total microservice memory usage</td>
+<td style="text-align:left">x</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#microservice-usage">MicroserviceUsageStatistics</a></td>
+<td style="text-align:left">Per microservice CPU usage</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">x</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="#microservice-usage">MicroserviceUsageStatistics</a></td>
+<td style="text-align:left">Per microservice memory usage</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">x</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="../../reference/tenants/#device-statistics">DeviceStatistics</a></td>
+<td style="text-align:left">Monthly measurements, events and alarms created and updated per device</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">x</td>
+</tr>
+</tbody>
+</table>

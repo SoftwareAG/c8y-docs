@@ -26,52 +26,53 @@ If a parameter is in square brackets, it is optional.
 <tr>
 <td>
 
-**[Inventory templates](#inventory-templates)**
-+ [100,createdDeviceName,deviceType](#100)
-+ [101,createdChildId,childName,childType](#101)
-+ [105 (Get children, reply: 106,child1,child2,…)](#105)
-+ [107,fragmenttoBeUninstalled1,fragment2,...](#107)
-+ [110,serialNumber,hardwareModel,revision](#110)
-+ [111,IMEI,ICCID,IMSI,MCC,MNC,LAC,cellId](#111)
-+ [112,latitude,longitude,altitude,accuracy](#112)
-+ [113,"configProp1=val1\nprop2=val2\n…"](#113)
-+ [114,supportedOperation1,operation2,…](#114)
-+ [115,currentFirmwareName,version,url](#115)
-+ [116,currentSoftwareName1,version1,url1,name2,…](#116)
-+ [117,requiredInterval](#117)
-+ [118,supportedLog1,log2,...](#118)
-+ [119,supportedConfiguration1,config2,...](#119)
-+ [120,configType,url,filename[,time]](#120)
+<strong><a href="#inventory-templates">Inventory templates</a></strong>
++ <a href="#100">100,createdDeviceName,deviceType</a>
++ <a href="#101">101,createdChildId,childName,childType</a>
++ <a href="#105">105 (Get children, reply: 106,child1,child2,…)</a>
++ <a href="#107">107,fragmenttoBeUninstalled1,fragment2,...</a>
++ <a href="#110">110,serialNumber,hardwareModel,revision</a>
++ <a href="#111">111,IMEI,ICCID,IMSI,MCC,MNC,LAC,cellId</a>
++ <a href="#112">112,latitude,longitude,altitude,accuracy</a>
++ <a href="#113">113,&quot;configProp1=val1\nprop2=val2\n…&quot;</a>
++ <a href="#114">114,supportedOperation1,operation2,…</a>
++ <a href="#115">115,currentFirmwareName,version,url</a>
++ <a href="#116">116,currentSoftwareName1,version1,url1,name2,…</a>
++ <a href="#117">117,requiredInterval</a>
++ <a href="#118">118,supportedLog1,log2,...</a>
++ <a href="#119">119,supportedConfiguration1,config2,...</a>
++ <a href="#120">120,configType,url,filename[,time]</a>
 
-**[Measurement templates](#measurement-templates)**
-+ [200,fragment,series,value[,unit,time]](#200)
-+ [210,rssi,ber[,time]](#210)
-+ [211,temperature[,time]](#211)
-+ [212,battery[,time]](#212)
+<strong><a href="#measurement-templates">Measurement templates</a></strong>
++ <a href="#200">200,fragment,series,value[,unit,time]</a>
++ <a href="#210">210,rssi,ber[,time]</a>
++ <a href="#211">211,temperature[,time]</a>
++ <a href="#212">212,battery[,time]</a>
 
 </td>
 <td>
 
-**[Alarm templates](#alarm-templates)**
-+ [301,criticalAlarmType[,text][,time]](#301)
-+ [302,majorAlarmType[,text][,time]](#302)
-+ [303,minorAlarmType[,text][,time]](#303)
-+ [304,warningAlarmType[,text][,time]](#304)
-+ [305,alarmType,newSeverity](#305)
-+ [306,alarmTypeToBeCleared](#306)
-+ [307,alarmType,fragmentToBeRemoved1,fragment2,...](#307)
+<strong><a href="#alarm-templates">Alarm templates</a></strong>
++ <a href="#301">301,criticalAlarmType[,text][,time]</a>
++ <a href="#302">302,majorAlarmType[,text][,time]</a>
++ <a href="#303">303,minorAlarmType[,text][,time]</a>
++ <a href="#304">304,warningAlarmType[,text][,time]</a>
++ <a href="#305">305,alarmType,newSeverity</a>
++ <a href="#306">306,alarmTypeToBeCleared</a>
++ <a href="#307">307,alarmType,fragmentToBeRemoved1,fragment2,...</a>
 
-**[Event templates](#event-templates)**
-+ [400,eventType,text[,time]](#400)
-+ [401,latitude,longitude,altitude,accuracy[,time]](#401)
-+ [402,latitude,longitude,altitude,accuracy[,time] (incl. inv. update)](#402)
-+ [407,eventType,fragmentToBeRemoved1,fragment2,...](#407)
+<strong><a href="#event-templates">Event templates</a></strong>
++ <a href="#400">400,eventType,text[,time]</a>
++ <a href="#401">401,latitude,longitude,altitude,accuracy[,time]</a>
++ <a href="#402">402,latitude,longitude,altitude,accuracy[,time] (incl. inv. update)</a>
++ <a href="#407">407,eventType,fragmentToBeRemoved1,fragment2,...</a>
 
-**[Operation templates](#operation-templates)**
-+ [500 (get pending)](#500)
-+ [501,typeToSetToExecuting](#501)
-+ [502,typeToSetToFailed,fialureReason](#502)
-+ [503,typeToSetToSuccessful,parameters](#503)
+<strong><a href="#operation-templates">Operation templates</a></strong>
++ <a href="#500">500 (get pending)</a>
++ <a href="#501">501,typeToSetToExecuting</a>
++ <a href="#502">502,typeToSetToFailed,fialureReason</a>
++ <a href="#503">503,typeToSetToSuccessful,parameters</a>
++ <a href="#530">530,serial,hostname,port,connectionKey</a>
 
 </td>
 </tr>
@@ -111,7 +112,7 @@ The following templates can be used to publish data on the topics <kbd>s/us</kbd
 
 Create a new device for the serial number in the inventory if not yet existing. An externalId for the device with type **c8y_Serial** and the device identifier of the MQTT clientId as value will be created.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|device name|NO|MQTT Device &lt;serialNumber&gt;|
 |2|device type|NO|c8y_MQTTDevice|
@@ -126,7 +127,7 @@ Create a new device for the serial number in the inventory if not yet existing. 
 
 Create a new child device for the current device. The newly created object will be added as child device. Additionally, an externaId for the child will be created with type **c8y_Serial** and the value a combination of the serial of the root device and the unique child ID.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|unique child ID|YES| &nbsp; |
 |2|device name|NO|MQTT Device &lt;serialNumber&gt;|
@@ -226,7 +227,7 @@ Update the configuration properties of the device.
 Example
 
 ```text
-113,"val1=1\nval2=2"
+113,"val1=1\nval2=2"
 ```
 
 ##### <a name="114">Set supported operations (114)</a>
@@ -318,11 +319,45 @@ Set the supported configurations of the device.
 119,modbus,system
 ```
 
+##### <a name="120">Set currently installed configuration (120)</a>
+
+Set currently installed configuration of the device.
+
+|Position|Parameter|Mandatory|Default value|
+|:-------|:-------|:-------|:-------|
+|1|Configuration type| YES| &nbsp;|
+|2|Configuration file download URL| YES| &nbsp;|
+|3|File name| NO|Configuration type|
+|4|Date and time when the configuration was applied| NO|Current date and time|
+
+**Example**
+
+```text
+120,myType,http://www.my.url,config.bin,2020-07-22T17:03:14.000+02:00
+```
+
+##### Set device profile that is being applied (121)
+
+Set device profile that is being applied to the device.
+
+|Position|Parameter|Mandatory|Default value|
+|:-------|:-------|:-------|:-------|
+|1|Profile executed| YES| &nbsp;|
+|2|Profile ID| NO|Profile ID from the oldest EXECUTING device profile operation|
+
+**Example**
+
+```text
+121,true,8473
+```
+
+#### <a name="measurement-templates">Measurement templates (2xx)</a>
+
 ##### <a name="200">Create custom measurement (200)</a>
 
 Create a measurement with a given fragment and series.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|fragment|YES| &nbsp;|
 |2|series|YES| &nbsp;|
@@ -340,7 +375,7 @@ Create a measurement with a given fragment and series.
 
 Create a measurement of type **c8y_SignalStrength**.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|rssi value|YES, if 2 not set| &nbsp;|
 |2|ber value|YES, if 1 not set| &nbsp;|
@@ -356,7 +391,7 @@ Create a measurement of type **c8y_SignalStrength**.
 
 Create a measurement of type **c8y_TemperatureMeasurement**.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|temperature value|YES| &nbsp;|
 |2|time|NO|Current server time|
@@ -371,7 +406,7 @@ Create a measurement of type **c8y_TemperatureMeasurement**.
 
 Create a measurement of type **c8y_Battery**.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|battery value|YES| &nbsp;|
 |2|time|NO|Current server time|
@@ -388,7 +423,7 @@ Create a measurement of type **c8y_Battery**.
 
 Create a CRITICAL alarm.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|type|YES| &nbsp;|
 |2|text|NO|Alarm of type **alarmType** raised|
@@ -404,7 +439,7 @@ Create a CRITICAL alarm.
 
 Create a MAJOR alarm.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|type|YES| &nbsp;|
 |2|text|NO|Alarm of type **alarmType** raised|
@@ -420,7 +455,7 @@ Create a MAJOR alarm.
 
 Create a MINOR alarm.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|type|YES| &nbsp;|
 |2|text|NO|Alarm of type **alarmType** raised|
@@ -436,7 +471,7 @@ Create a MINOR alarm.
 
 Create a WARNING alarm.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|type|YES| &nbsp;|
 |2|text|NO|Alarm of type **alarmType** raised|
@@ -498,7 +533,7 @@ Remove one or more fragments from an alarm of a specific type.
 
 Create an event of given type and text.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|type|YES|&nbsp;|
 |2|text|YES|&nbsp;|
@@ -507,14 +542,14 @@ Create an event of given type and text.
 **Example**
 
 ```text
-400,c8y_MyEvent,"Something was triggered"
+400,c8y_MyEvent,"Something was triggered"
 ```
 
 ##### <a name="401">Create location update event (401)</a>
 
 Create typical location update event containing **c8y_Position**.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|latitude|NO|&nbsp;|
 |2|longitude|NO|&nbsp;|
@@ -532,7 +567,7 @@ Create typical location update event containing **c8y_Position**.
 
 Create typical location update event containing **c8y_Position**. Additionally the device will be updated with the same **c8y_Position** fragment.
 
-|Position|Parameter|Mandatory|Default|
+|Position|Parameter|Mandatory|Default value|
 |:-------|:-------|:-------|:-------|
 |1|latitude|NO|&nbsp;|
 |2|longitude|NO|&nbsp;|
@@ -647,6 +682,7 @@ The client can receive the following templates when subscribing to <kbd>s/ds</kb
 + [526,serial,configType](#526)
 + [527,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,url,action,configurationMarker,url,type](#527)
 + [528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...](#528)
++ [530,serial,hostname,port,connectionKey](#530)
 
 #### Inventory templates (1xx)
 
@@ -703,7 +739,7 @@ Set the configuration being sent in the operation.
 **Example**
 
 ```text
-513,DeviceSerial,"val1=1\nval2=2"
+513,DeviceSerial,"val1=1\nval2=2"
 ```
 
 ##### <a name="515">Firmware (515)</a>
@@ -793,7 +829,7 @@ The current configuration is uploaded from Cumulocity IoT to the device.
 
 ##### <a name="521">Download configuration file (521)</a>
 
-Download a configuration file from the url.
+Download a configuration file from the URL.
 
 |Position|Parameter|
 |:-------|:-------|
@@ -931,16 +967,65 @@ Update the software installed on the device.
 528,DeviceSerial,softwareA,1.0,url1,action1,softwareB,2.0,url2,action2
 ```
 
+##### <a name="530">Cloud Remote Access Connect (530)</a>
+
+Establish tunneling by Remote Access device agent.
+
+|Position|Parameter|
+|:-------|:-------|
+|1|hostname|
+|2|port|
+|3|connection key|
+
+**Example**
+
+```text
+530,DeviceSerial,10.0.0.67,22,eb5e9d13-1caa-486b-bdda-130ca0d87df8
+```
 
 ### Updating operations
 
-When using the template to set an operation to state SUCCESSFUL, it supports sending additional parameters to trigger additional calls on the server.
+When using the template to set an operation to status SUCCESSFUL, it supports sending additional parameters to trigger additional calls on the server.
 The table below shows the operations supporting this feature and what will be done with the parameters.
 
-|Fragment|Parameters|Action triggered|
-|:-------|:-------|:-------|
-|c8y_Command|result|Result will be added to operation|
-|c8y_RelayArray|relay states|Device object will be updated with the states|
-|c8y_CommunicationMode|no parameter needed|Device object will be updated with the mode|
-|c8y_LogfileRequest|file url|File url will be added to operation|
-|c8y_DownloadConfigFile|(optional) timestamp|Device object will be updated with the ID of the configuration dump and the timestamp (or server time)|
+<table>
+<colgroup>
+  <col width="25%">
+  <col width="20%">
+  <col width="55%">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align:left">Fragment</th>
+<th style="text-align:left">Parameters</th>
+<th style="text-align:left">Action triggered</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">c8y_Command</td>
+<td style="text-align:left">result</td>
+<td style="text-align:left">Result will be added to operation</td>
+</tr>
+<tr>
+<td style="text-align:left">c8y_RelayArray</td>
+<td style="text-align:left">relay states</td>
+<td style="text-align:left">Device object will be updated with the states</td>
+</tr>
+<tr>
+<td style="text-align:left">c8y_CommunicationMode</td>
+<td style="text-align:left">no parameter needed</td>
+<td style="text-align:left">Device object will be updated with the mode</td>
+</tr>
+<tr>
+<td style="text-align:left">c8y_LogfileRequest</td>
+<td style="text-align:left">file url</td>
+<td style="text-align:left">File url will be added to operation</td>
+</tr>
+<tr>
+<td style="text-align:left">c8y_DownloadConfigFile</td>
+<td style="text-align:left">(optional) timestamp</td>
+<td style="text-align:left">Device object will be updated with the ID of the configuration dump and the timestamp (or server time)</td>
+</tr>
+</tbody>
+</table>

@@ -63,8 +63,12 @@ See below for detailed information about available settings.
 ### Settings
 
 <table>
-<col width=150>
-<col width=150>
+<colgroup>
+  <col width="20%">
+  <col width="20%">
+  <col width="70%">
+  <col width="10%">
+</colgroup>
 <thead>
 <tr>
 <th style="text-align:left">Name</th>
@@ -84,7 +88,7 @@ See below for detailed information about available settings.
 <td style="text-align:left">name</td>
 <td style="text-align:left">String</td>
 <td style="text-align:left">Application name</td>
-<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
 </tr>
 <tr>
 <td style="text-align:left">contextPath</td>
@@ -151,7 +155,7 @@ See below for detailed information about available settings.
 <td style="text-align:left">requiredRoles</td>
 <td style="text-align:left">String[ ]</td>
 <td style="text-align:left">List of permissions required by a microservice to work.</td>
-<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
 </tr>
 <tr>
 <td style="text-align:left">roles</td>

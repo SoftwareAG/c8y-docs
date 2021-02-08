@@ -60,7 +60,7 @@ Use *simulate_data.sh* for simulating the measurements for the demo device.
         tm=${date:11}
         dtt=${date:0:10}
         strdt="${dtt}T${tm}"
-        curl --user $c_user:$c_pass -X POST $c_url"/measurement/measurements" -H "accept: application/vnd.com.nsn.cumulocity.measurementCollection+json" -H "Content-Type: application/json" --data '{"measurements":[{"time": "'$strdt'","source": {"id": "'$c_device_source'"},"type": "c8y_Flow","c8y_Flow": {"F": {"unit": "psi","value": '$val'}}}]}'
+        curl --user $c_user:$c_pass -X POST $c_url"/measurement/measurements" -H "accept: application/vnd.com.nsn.cumulocity.measurementcollection+json" -H "Content-Type: application/json" --data '{"measurements":[{"time": "'$strdt'","source": {"id": "'$c_device_source'"},"type": "c8y_Flow","c8y_Flow": {"F": {"unit": "psi","value": '$val'}}}]}'
     done
 
 Using this simulator, *c8y_Flow* measurements are sent to Cumulocity IoT on behalf of the demo device. The measurements are simulated for the time period *2019-12-01* to *2019-12-08* and for every two hours (i.e. 12 observations per day). We use this data to generate a time series model and forecast the next day's *c8y_Flow* values. Keep in mind that forecast intervals will match the observation intervals. 

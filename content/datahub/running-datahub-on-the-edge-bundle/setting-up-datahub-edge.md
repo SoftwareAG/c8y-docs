@@ -50,11 +50,11 @@ It takes a few minutes to complete the installation. After completion you can de
 
 The install script runs the following basic steps:
 
-* Deploy the DataHub Edge UI as a web application to Cumulocity IoT Core.
-* Start a Docker container with the DataHub Edge backend and the database system for managing the backend state.
-* Start a Docker container with the Dremio master and a ZooKeeper instance.
-* Start a Docker container with the Dremio executor.
-* Configure corresponding roles and permissions in Cumulocity IoT Core.
+* Deploy the DataHub Edge UI as a web application to Cumulocity IoT Core
+* Start a Docker container with the DataHub Edge backend and the database system for managing the backend state
+* Start a Docker container with the Dremio master and a ZooKeeper instance
+* Start a Docker container with the Dremio executor
+* Configure corresponding roles and permissions in Cumulocity IoT Core
 
 The Docker containers will be restarted automatically if the container itself fails or the applications within are no longer reachable.
 

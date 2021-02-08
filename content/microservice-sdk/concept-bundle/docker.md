@@ -11,7 +11,7 @@ Docker is a platform to develop, deploy and run applications with containers. An
 
 Cumulocity IoT microservices are based on Docker. Hence, a microservice has to be packaged as a Docker image in order to run on the Cumulocity IoT platform. A microservice is executed in a Docker container during runtime. The Docker container ensures that a microservice does not harm other microservices running in Cumulocity IoT.
 
-Containers have an upper thread limit of 4096 for microservices.
+Containers have an upper thread limit of 10240 for microservices.
 
 ### Pods
 

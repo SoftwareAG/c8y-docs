@@ -6,18 +6,22 @@ aliases:
   - /users-guide/overview/#accessing-cumulocity-platform
 ---
 
-You access the Cumulocity IoT platform via a web browser. 
+You access the Cumulocity IoT platform via a web browser.
 
 ### Supported browsers
 
-Our products have been tested with the following desktop web browsers:
+Supported browsers in this version are:
 
-* Edge Browser
-* Internet Explorer (latest version)
-* Firefox (latest version)    
-* Chrome (latest version)
+* Microsoft Edge (latest Chromium-based version)
+* Mozilla Firefox (latest Extended Support Release [1])
+* Google Chrome [2]
+* Internet Explorer 11 [3]
 
->**Info:** Cumulocity IoT is fully functional on Internet Explorer 11. However, layouts may not be perfect in all cases.
+[1] Only the Extended Support Releases of Mozilla Firefox are explicitly supported. Due to frequent upgrades of the Mozilla Firefox consumer release, the compatibility of Cumulocity IoT with future versions of Mozilla Firefox cannot be fully guaranteed. Possible incompatibilities will be removed during the regular maintenance process of Cumulocity IoT.
+
+[2] The Google Chrome support is based on Google Chrome Version 84. Due to frequent version upgrades of Google Chrome, compatibility of Cumulocity IoT with future versions of Google Chrome cannot be fully guaranteed. Possible incompatibilities will be removed during the regular maintenance process of Cumulocity IoT.
+
+>**Important:** [3] Though Cumulocity IoT is functional on Internet Explorer 11, it does not allow us to provide you with a state-of-the-art user experience. As a result, Cumulocity IoT 10.7 will be the last release that supports this browser. With upcoming releases we will continue to support the latest version of the Microsoft Edge browser as the successor to the Internet Explorer.
 
 You may also use recent smartphone and tablet web browsers. We have tested our products with the following mobile web browsers:
 
@@ -28,7 +32,7 @@ You may also use recent smartphone and tablet web browsers. We have tested our p
 >
 * The usage may be constrained by the memory and the processing power available on the devices. For example, loading graphs with large amounts of data points may make the mobile device unresponsive.
 * Using the private mode on browsers may not work.
-* [Apama Analytics Builder](/apama/overview-analytics/#analytics-builder) (an optional component) does not support mobile/ touch devices.
+* [Apama EPL Apps](/apama/overview-analytics/#apama-epl-apps) and [Apama Analytics Builder](/apama/overview-analytics/#analytics-builder) do not support mobile/ touch devices.
 
 ### URL
 
@@ -71,7 +75,7 @@ To explicitly logout, click the **User** button at the right of the the top bar 
 
 >**Info:** The automated password reset will only work if your email address is stored with your Cumulocity IoT user. If you get a warning that the password cannot be reset, you are either using a different email address than the one stored with your Cumulocity IoT user, or your Cumulocity IoT user has no email address stored. In either case, contact a Cumulocity IoT administrator in your organization. Administrators can reset your password.
 >
-If you yourself are the primary administrator, your email address used on first registering is automatically stored with your user. If you have questions, please [contact support](/about-doc/contacting-support).
+If you yourself are the primary administrator, your email address used on first registering is automatically stored with your user. If you have questions, please [contact product support](/about-doc/contacting-support).
 
 ### <a name="URLs"></a>Accessing pages using URLs
 
@@ -87,3 +91,4 @@ Using such an URL, you can:
 *   Send emails (manually or automatically, using the real-time event engine) which include a link to devices or sensor data.
 *   Use the backward and forward navigation of your browser.
 *   Write own web applications which link directly to information contained in a Cumulocity IoT application.
+chromium-based

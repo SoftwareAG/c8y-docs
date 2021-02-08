@@ -8,7 +8,7 @@ Before we really get started, we need a Cumulocity IoT account. Go to <https://c
 
 ![Cumulocity IoT Registration Page](/images/cpp/img/registerd.png)
 
-Without any further ado, let's write the customary *Hello world* example. Create a *main.cc* file with the following code:
+Without any further ado, let's start with the customary *Hello world* example. Open the *cumulocity-sdk-c/examples/ex-01-hello/main.cc* file with the following code:
 
 ```cpp
 // ex-01-hello: examples/ex-01-hello/main.cc
@@ -71,7 +71,7 @@ The obtained device credential is stored in the folder */tmp/helloc8y* as define
 
 ### Integrating to Cumulocity IoT
 
-Device integration is a bit more complex as illustrated in the flow diagram below. Refer to [Device SDK for REST > Device integration](/device-sdk/rest#device-integration) for a detailed explanation. **Steps 1**, **2** and **3** are specific to the SmartREST protocol as SmartREST requires predefined templates, see [Using the REST interface > Using SmartREST](/microservice-sdk/rest#smartrest) in the Microservice SDK guide and the [SmartREST reference](http://cumulocity.com/reference/smartrest/) in the Reference guide for more information. **Step 4** checks if the device is already stored in Cumulocity IoT's database and only creates it when it's not found. **Steps 6** and **7** get the ID of the device from the Cumulocity IoT's database. **Step 8** sets the Cumulocity IoT ID as an alias for the device ID, so that the device can find its Cumulocity IoT ID next time by querying with its device ID.
+Device integration is a bit more complex as illustrated in the flow diagram below. Refer to [Device SDK for REST > Device integration](/device-sdk/rest#device-integration) for a detailed explanation. **Steps 1**, **2** and **3** are specific to the SmartREST protocol as SmartREST requires predefined templates, see [Using the REST interface > Using SmartREST](/microservice-sdk/rest#smartrest) in the Microservice SDK guide and the [SmartREST reference](/reference/smartrest/) in the Reference guide for more information. **Step 4** checks if the device is already stored in Cumulocity IoT's database and only creates it when it's not found. **Steps 6** and **7** get the ID of the device from the Cumulocity IoT's database. **Step 8** sets the Cumulocity IoT ID as an alias for the device ID, so that the device can find its Cumulocity IoT ID next time by querying with its device ID.
 
 ![Device integration flowchart](/images/cpp/img/integrate.png)
 
@@ -407,6 +407,7 @@ function init()
    srDebug(myString)            -- myString from mylib
    timer = c8y:addTimer(10 * 1000, 'cpuMeasurement')
    c8y:addMsgHandler(502, 'restart')
+   timer:start()
    return 0                     -- signify successful initialization
 end
 ```

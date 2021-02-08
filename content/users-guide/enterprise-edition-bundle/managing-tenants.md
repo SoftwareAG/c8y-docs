@@ -8,7 +8,7 @@ Using the Enterprise Tenant of Cumulocity IoT, you can make use of the tenants f
 
 > **Important:** There is a major difference between providing several tenants and providing several users with different permissions within a single tenant. Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space. So if your users, for example, are separate customers of yours and you need to strictly separate them because they may be competitors, we strongly recommend you to do so by working with tenants.
 
->**Info:** If you would like to use this feature, please contact sales@cumulocity.com.
+>**Info:** If you would like to use this feature, please [contact us](/about-doc/contacting-support).
 
 To be able to use the tenant functionality, your user needs to have the appropriate permissions. See [Creating and editing global roles](/users-guide/administration#create-edit-roles) for information on editing permissions. Since editing tenants is a sensitive operation, permissions for editing tenants are more granular:
 
@@ -38,7 +38,8 @@ In the management tenant, you will also find information on the parent tenant, i
 2. Provide the following properties:
 
 	<table>
-<col width = 150>
+<col style="width:20%">
+<col style="width:80%">
 <thead>
 <tr>
 <th style="text-align:left">Field</th>
@@ -153,11 +154,11 @@ In the **Applications** tab you can view all subscribed applications, subscribe 
 
 #### To subscribe an application
 
-Hover over the applications under **Available applications** on the right and click **Subscribe** on the desired application.
+Hover over the applications under **Available applications** at the right and click **Subscribe** on the desired application.
 
 #### To unsubscribe an application
 
-Hover over the applications under **Subscribed applications** on the left and click **Unsubscribe**.
+Hover over the applications under **Subscribed applications** at the left and click **Unsubscribe**.
 
 #### Monitoring microservices
 
@@ -188,7 +189,7 @@ Further details are provided on the **Status** tab of the respective application
 
 ### <a name="tenants-custom-properties"></a>Custom properties
 
-The **Custom properties** tab allows you to view and edit values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/users-guide/administration#properties). Such properties are also displayed as columns in the [Usage statistics](/users-guide/enterprise-edition#usage-stat) page.
+The **Custom properties** tab allows you to view and edit values of custom properties, either predefined ones (like "External reference") or those defined in the [Properties library](/users-guide/administration#properties). Such properties are also displayed as columns in the [Usage statistics](/users-guide/enterprise-edition/#usage-and-billing) page.
 
 ![Custom properties](/images/users-guide/enterprise-tenant/et-subtenant-custom-properties.png)
 
@@ -196,7 +197,7 @@ The **Custom properties** tab allows you to view and edit values of custom prope
 
 Platform administrators can limit the count of concurrently registered root devices or simply all devices (including children devices) via the custom property "Limit number of devices".
 
-They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the **[Usage statistics](/users-guide/enterprise-edition#usage-stat)** page.
+They can view the peak number of concurrently registered devices, root devices and the peak value of used storage in the **[Usage statistics](/users-guide/enterprise-edition/#usage-and-billing)** page.
 
 #### Limiting subtenant request rate
 
@@ -243,6 +244,8 @@ For each tenant policy, the name, an optional description and the number of opti
 5. Click **Save**.
 
 The tenant policy will be added to the tenant policies list.
+
+>**Important:** When defining the retention rules and options you can select a checkbox to allow subtenants to modify definitions of these rules or options. By default, this checkbox is not activated. Be aware that if you do not select this checkbox after creating the subtenant you need to run an update from the management tenant in order to edit those rules and options.
 
 #### To edit a tenant policy
 

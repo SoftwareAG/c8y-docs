@@ -92,8 +92,8 @@ where `<mode>` can be rs232, rs422 or rs485. You may need to reboot the router a
 
 Then:
 
-* Subscribe your account to the Cloud Fieldbus feature by [contacting support](/about-doc/contacting-support).
-* Configure the Modbus communication as described in [Optional services > Cloud Fieldbus](/users-guide/optional-services/#cloud-fieldbus) in the User guide.
+* Subscribe your account to the Cloud Fieldbus feature by [contacting product support](/about-doc/contacting-support).
+* Configure the Modbus communication as described in [Cloud Fieldbus](/protocol-integration/cloud-fieldbus/#configuring-fieldbus) in the *Protocol integration guide*.
 * Enable or disable write permission by setting the “Modbus read only” property in the Cumulocity IoT menu in the web UI of the router, see [Configuring the router](#configure). Set it to 0 to allow write permission and 1 to disallow Modbus write permission.
 
 ### <a name="remote-access"></a> Cloud Remote Access
@@ -104,4 +104,4 @@ As shown in the screenshot, you can add your VNC, Telnet or SSH servers as an en
 
 ![Remote Access](/images/device-demos/casa-system-router/router-remote-access.png)
 
-For details on the remote access functionality, refer to [Cloud Remote Access](/users-guide/optional-services#cloud-remote-access).
+For details on the remote access functionality, refer to [Cloud Remote Access](/cloud-remote-access/cra-general-aspects).

@@ -6,6 +6,8 @@ layout: redirect
 
 In Apama EPL, interactions with the rest of the Cumulocity IoT ecosystem are done via events. A number of event definitions is provided for accessing Cumulocity IoT data.
 
+> **Info:** Apama and Cumulocity IoT use different "event" concepts. Apama events are used for all interactions with Cumulocity IoT, such as listening for and creating device measurements, alarms and (Cumulocity IoT) events. For more information on Apama events, see [Defining event types](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/apama-webhelp/index.html#page/apama-webhelp%2FtutorialEventTypes.html) in the Apama documentation. For more information on Cumulocity IoT events, see [Events](/reference/events/) in the *Reference Guide*. 
+
 ### Predefined event types
 
 There are some predefined event types to interact with several Cumulocity IoT APIs. Events are sent to Apama applications automatically when a new measurement, alarm or event is created. For interacting with the Cumulocity IoT backend, you can create an event and send it to the relevant channel. Cumulocity IoT will automatically execute either the database query or create the API calls necessary for sending mails, SMS, or similar.
@@ -26,7 +28,7 @@ By default, a listener will fire once; to make it repeat for all events, use the
 
 ### Filters
 
-Adding filters can be done by specifying one or more fields between the parentheses for a listener. Only top-level fields can be filtered for. Use `if` statements for more complex filtering, or for filtering on sub-properties of events (for example, in dictionaries).
+Adding filters can be done by specifying one or more fields between the parentheses for a listener. Only top-level fields can be filtered for. Use `if` statements for more complex filtering, or for filtering on subproperties of events (for example, in dictionaries).
 
 ### Standard event types and channels
 
@@ -49,13 +51,17 @@ send msmnt to Measurement.SEND_CHANNEL;
 
 ### Measurement fragments
 
-The Apama mapping codec can turn measurements into measurement fragments, if required. You can configure how this is handled.
+`Measurement` and `MeasurementFragment` events are always published. 
 
-By setting the tenant option `apama.measurementFormat` to `BOTH`, or starting the Apama correlator with the property `CUMULOCITY_MEASUREMENT_FORMAT` set to `BOTH` , you can generate listeners in EPL that will match on the contents of `MeasurementFragment` events rather than `Measurement` events. For example:
+You can generate listeners in EPL that will match on the contents of `MeasurementFragment` events rather than `Measurement` events. For example:
 
 ```
 on all MeasurementFragment(type="c8y_SpeedMeasurement", valueFragment = "c8y_speed", valueSeries = "speedX", value > SPEED_LIMIT) as mf {
 }
 ```
 
-See [Measurement fragments](/apama/advanced/#measurement-fragments) for more information.
+See also [Measurement fragments](/apama/advanced/#measurement-fragments).
+
+### <a name="notifications"></a>Distinguishing between create and update notifications 
+
+You can use the `NOTIFICATION_CREATED` and `NOTIFICATION_UPDATED` values of the `PARAM_NOTIFICATION` constant to distinguish whether a managed object, operation, alarm or event has been created or updated. 

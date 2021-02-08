@@ -41,7 +41,7 @@ The process works as follows:
 
 * Cumulocity IoT assumes each device to have some form of unique ID. A good device identifier may be the MAC address of the network adapter, the IMEI of a mobile device or a hardware serial number.
 * When you take a new device into use, you enter this unique ID into the device registration dialog in the tenant UI and start the device.
-* Once started, the device will connect to Cumulocity IoT and send its unique ID repeatedly. For this purpose, Cumulocity IoT provides static bootstrap credentials that can be obtained by [contacting support](/about-doc/contacting-support).
+* Once started, the device will connect to Cumulocity IoT and send its unique ID repeatedly. For this purpose, Cumulocity IoT provides static bootstrap credentials that can be obtained by [contacting product support](/about-doc/contacting-support).
 * You can accept the connection from the device in the device registration dialog in the tenant UI, in which case Cumulocity IoT then sends generated credentials to the device.
 * The device will store and use these credentials for all further requests.
 
@@ -282,7 +282,7 @@ This request will also delete all data associated with the device including its 
 
 #### Working with operations
 
-Each operation in Cumulocity IoT is cycled through an execution flow. When an operation is created through a Cumulocity IoT application, its state is PENDING, i.e. it has been queued for executing but it hasn't executed yet. When an agent picks up the operation and starts executing it, it marks the operations as EXECUTING in Cumulocity IoT. The agent will then carry out the operation on the device or its children (for example, it will restart the device, or set a relay). Then it will possibly update the inventory reflecting the new state of the device or its children (e.g. it updates the current state of the relay in the inventory). Then the agent will mark the operation in Cumulocity IoT as either SUCCESSFUL or FAILED, potentially indicating the error.
+Each operation in Cumulocity IoT is cycled through an execution flow. When an operation is created through a Cumulocity IoT application, its status is PENDING, i.e. it has been queued for executing but it hasn't executed yet. When an agent picks up the operation and starts executing it, it marks the operations as EXECUTING in Cumulocity IoT. The agent will then carry out the operation on the device or its children (for example, it will restart the device, or set a relay). Then it will possibly update the inventory reflecting the new state of the device or its children (e.g. it updates the current state of the relay in the inventory). Then the agent will mark the operation in Cumulocity IoT as either SUCCESSFUL or FAILED, potentially indicating the error.
 
 ![Operation status diagram](/images/rest/operations.png)
 
@@ -329,7 +329,7 @@ The restart seems to have executed well -- we are back after all. So let's set t
 
 Then, listen to new operations created in Cumulocity IoT. The mechanism for listening to real-time data in Cumulocity IoT is described in [Real-time notifications](/reference/real-time-notifications) in the Reference guide and is based on the standard Bayeux protocol. First, a handshake is required. The handshake tells Cumulocity IoT what protocols the agent supports for notifications and allocates a client ID to the agent.
 
-    POST /devicecontrol/notifications HTTP/1.1
+    POST /notification/operations HTTP/1.1
     Content-Type: application/json
     ...
     [ {
@@ -353,7 +353,7 @@ Then, listen to new operations created in Cumulocity IoT. The mechanism for list
 
 Afterwards, the device respectively the agent needs to subscribe to notifications for operations. This is done using a POST request with the ID of the device as subscription channel. In our example, the Raspberry Pi runs an agent and has ID 2480300:
 
-    POST /devicecontrol/notifications HTTP/1.1
+    POST /notification/operations HTTP/1.1
     Content-Type: application/json
     ...
     [ {
@@ -374,7 +374,7 @@ Afterwards, the device respectively the agent needs to subscribe to notification
 
 Finally, the device connects and waits for operations to be sent to it.
 
-    POST /devicecontrol/notifications HTTP/1.1
+    POST /notification/operations HTTP/1.1
     Content-Type: application/json
     ...
     [ {
@@ -419,7 +419,7 @@ Assume now that an operation is queued for the agent. This will make the long po
         }
     ]
 
-When the agent picks up the operation, it sets it to EXECUTING state in Cumulocity IoT using a PUT request (see above example for FAILED). It carries out the operation on the device and runs possible updates of the Cumulocity IoT inventory. Finally, it sets the operation to SUCCESSFUL or FAILED depending on the outcome. Then, it will reconnect again to "/devicecontrol/notifications" as described above and wait for the next operation.
+When the agent picks up the operation, it sets it to EXECUTING status in Cumulocity IoT using a PUT request (see above example for FAILED). It carries out the operation on the device and runs possible updates of the Cumulocity IoT inventory. Finally, it sets the operation to SUCCESSFUL or FAILED depending on the outcome. Then, it will reconnect again to "/notification/operations" as described above and wait for the next operation.
 
 The device should reconnect within ten seconds to the server to not lose queued operations. This is the time that Cumulocity IoT buffers real-time data. The interval can be specified upon handshake.
 

@@ -13,7 +13,7 @@ This section deals with the basic data science steps of creating an activity rec
 
 Registering an iPhone in Cumulocity IoT involves installing the Cloud Sensor App on your phone and using it for completing the registration.
 
-Follow the steps described in [Optional services > Cumulocity IoT Sensor App](/users-guide/optional-services#android-cloud-sensor-app) in the User guide.
+Follow the steps described in [User guide > Cumulocity IoT Sensor App](/users-guide/cumulocity-sensor-app) in the User guide.
 
 After the download, do the following on your iPhone: Open Settings > Click General > Click Device Management or Profiles & Device Management > Select Software AG > Trust "Software AG“.
 

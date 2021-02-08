@@ -9,9 +9,9 @@ In this section, fragments related to configuration management are listed.
 The following fragments can be observed:
 
 - c8y_Configuration: Text configuration fragment that allows you to configure parameters and initial settings of your device. For further information, see [Device Management > Device details > Configuration](/users-guide/device-management#config) in the User guide.
-- c8y_ConfigurationDump: Potentially large size configuration archive. For further information, see [Device Management > Configuration repository](/users-guide/device-management#configuration-repository) in the User guide.
-- c8y_UploadConfigFile: Upload potentially large size configuration files. For further information, see “To apply a configuration snapshot to a device” in [Device Management > Configuration repository](/users-guide/device-management#configuration-repository) in the User guide.
-- c8y_DownloadConfigFile:  Download potentially large size configuration files. For further information, see “To retrieve a configuration snapshot from a device” in [Device Management > Configuration repository](/users-guide/device-management#configuration-repository) in the User guide.
+- c8y_ConfigurationDump: Potentially large size configuration archive. For further information, see [Device Management > Managing device data > Managing configurations](/users-guide/device-management#configuration-repository) in the User guide.
+- c8y_UploadConfigFile: Upload potentially large size configuration files. For further information, see “To apply a configuration snapshot to a device” in [Device Management > Managing device data > Managing configurations](/users-guide/device-management#configuration-repository) in the User guide.
+- c8y_DownloadConfigFile:  Download potentially large size configuration files. For further information, see “To retrieve a configuration snapshot from a device” in [Device Management > Managing device data > Managing configurations](/users-guide/device-management#configuration-repository) in the User guide.
 
 #### c8y\_Configuration
 
@@ -33,11 +33,14 @@ The following fragments can be observed:
 
 Here is an example of a managed object representing a configuration snapshot:
 
-    "id" : "650041722",
-    "name" : "Device Name",
-    "type" : "c8y_ConfigurationDump",
-    "description" : "Upload by 165711155000082 at 05/04/16 08:14:07",
-    "url" : "https://yourtenant.cumulocity.com/inventory/binaries/binaryId"
+```
+"id" : "650041722",
+"name" : "Device Name",
+"type" : "c8y_ConfigurationDump",
+"description" : "Upload by 165711155000082 at 05/04/16 08:14:07",
+"url" : "https://yourtenant.cumulocity.com/inventory/binaries/binaryId",
+"configurationType": "app1"
+```
 
 An operation example of applying a configuration from a snapshot:
 

@@ -121,10 +121,16 @@ SmartREST 1.0 specific counting details:
 MQTT specific counting details:
 
 * Invalid requests are counted, for example when sending a message with a wrong template ID.
-* Device creation request is not counted.
+* Device creation request and automatic device creation are counted.
 * Each row/line counts as a separate request.
 * Creating custom template counts as a single request, no matter how many rows are send in the request.
-* There is one special SmartREST 2.0 template (402 Create location update event with device update) which is treated differently. Because it is doing two things in one call (create new location event and update location in device) "requestCount" and "deviceRequestCount" are increased once but inbound data transfer counters are increased by two (one for event creation and one for inventory update).
+* There is one special SmartREST 2.0 template (402 Create location update event with device update) which is doing two things in one call, i.e. create a new location event and update the location of the device. It is counted as two separate requests.
+
+JSON via MQTT specific counting details:
+
+* Invalid requests are counted, for example when the message payload is invalid.
+* Bulk creation requests are counted as a single "requestCount"/"deviceRequestCount" and multiple inbound data transfer count.
+* Bulk creation requests with a wrong payload are not counted for inbound data transfer count.
 
 ### Total inbound data transfer
 
@@ -208,6 +214,103 @@ See the table below for more information on how the counters above are increased
 |Update of **multiple managed objects** in one request|Each managed object update in a single MQTT request will be counted.|Not supported by C8Y (REST does not support updating multiple managed objects in one call).|
 |Creation/update of **multiple alarms/measurements/events/inventories** mixed in a single call.|Each MQTT line is processed separately. If it is a creation/update of an event/alarm/measurement/inventory, the corresponding counter is increased by one.|Not supported by the REST API.|
 |Assign/unassign of **child devices and child assets** in one request|One managed object update is counted.|One managed object update is counted.|
+
+
+### MicroserviceUsageStatistics
+
+The microservice usage statistics gathers information on the resource usage for tenants for each subscribed application which are collected on a daily base.
+
+The microservice usage's information is stored in the `resources` object.
+
+|Name|Type|Occurs|Description|
+|:---|:---|:-----|:----------|
+|cpu|long|1| Total number of cpu usage for tenant microservices, specified in CPU milliseconds (1000m = 1 CPU)|
+|memory|long|1|Total number of memory usage for tenant microservices, specified in MB|
+|usedBy|array|1..n|Collection of resources usage for each microservice|
+|usedBy.name|string|1|Microservice name|
+|usedBy.cpu|long|1|Number of CPU usage for a single microservice|
+|usedBy.memory|long|1|Number of memory usage for a single microservice|
+|usedBy.cause|string|1|The reason for calculating statistics of the selected microservice|
+
+Response body: TenantUsageStatisticsCollection
+
+Required role: ROLE\_TENANT\_STATISTICS\_READ
+
+Example Request: Get statistics of the current tenant starting on July 1st.
+
+    GET /tenant/statistics?dateFrom=2020-07-01
+    Host: ...
+    Authorization: Basic ...
+
+Example Response :
+
+     HTTP/1.1 200 OK
+     Content-Type: application/vnd.com.nsn.cumulocity.tenantusagestatisticscollection+json; charset=UTF-8; ver=0.9
+     Content-Length: ...
+     {
+         "usageStatistics": [
+                {
+                    "requestCount": 297180,
+                    "deviceEndpointCount": 2,
+                    "deviceCount": 2,
+                    "resources": {
+                        "cpu": 12006,
+                        "usedBy": [
+                            {
+                                "name": "cep",
+                                "cpu": 6003,
+                                "cause": "Owner",
+                                "memory": 30079
+                            },
+                            {
+                                "name": "device-simulator",
+                                "cpu": 2001,
+                                "cause": "Owner",
+                                "memory": 1073
+                            },
+                            {
+                                "name": "smartrule",
+                                "cpu": 2001,
+                                "cause": "Owner",
+                                "memory": 1074
+                            },
+                            {
+                                "name": "sms-gateway",
+                                "cpu": 2001,
+                                "cause": "Owner",
+                                "memory": 1073
+                            }
+                        ],
+                        "memory": 33299
+                    },
+                    "deviceRequestCount": 70540,
+                    "deviceWithChildrenCount": 2,
+                    "eventsCreatedCount": 0,
+                    "subscribedApplications": [
+                        "devicemanagement",
+                        "administration",
+                        "feature-microservice-hosting",
+                        "device-simulator",
+                        "sms-gateway",
+                        "smartrule",
+                        "feature-cep-custom-rules",
+                        "cep",
+                        "cockpit"
+                    ],
+                    "alarmsCreatedCount": 0,
+                    "inventoriesUpdatedCount": 5,
+                    "alarmsUpdatedCount": 0,
+                    "eventsUpdatedCount": 0,
+                    "inventoriesCreatedCount": 0,
+                    "storageSize": 91601985,
+                    "measurementsCreatedCount": 0,
+                    "self": "...",
+                    "totalResourceCreateAndUpdateCount": 5,
+                    "day": "2020-07-01T00:00:00.000Z"
+                }
+                ...
+         ]
+     }            
 
 
 ### TenantUsageStatisticsCollection [application/vnd.com.nsn.cumulocity.tenantUsageStatisticsCollection+json]

@@ -22,11 +22,11 @@ Klicken Sie auf eine Anwendungskarte, um die Attribute der Anwendung anzuzeigen.
 Für jede Anwendung werden die folgenden Attribute angezeigt:
 
 <table>
-<col width= 15%
-<col width= 40%>
-<col width= 15%>
-<col width= 15%>
-<col width= 15%>
+<col width= 20%
+<col width= 20%>
+<col width= 20%>
+<col width= 20%>
+<col width= 20%>
 <thead>
 <tr>
 <th style="text-align:left">Feld</th>
@@ -151,6 +151,12 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
+<td style="text-align:left"><a href="/benutzerhandbuch/cockpit-de#reports" class="no-ajaxy">Report agent</a></td>
+<td style="text-align:left">Ermöglicht das Planen von Datenexporten aus der Cockpit-Anwendung heraus.</td>
+<td style="text-align:left">report-agent</td>
+<td style="text-align:left">Microservice</td>
+</tr>
+<tr>
 <td style="text-align:left"><a href="/benutzerhandbuch/cockpit-de#smart-rules" class="no-ajaxy">Smart Rules</a></td>
 <td style="text-align:left">Verwenden Sie die Smart Rule Engine und erstellen Sie <a href="/benutzerhandbuch/cockpit-de#smart-rules" class="no-ajaxy">Smart Rules</a>, um Aktionen anhand von Echtzeitdaten auszuführen. Erfordert eine der folgenden Anwendungen: "Cep", "Apama“</td>
 <td style="text-align:left">smartrule</td>
@@ -218,7 +224,7 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="/users-guide/optional-services#lora" class="no-ajaxy">Actility</a></td>
+<td style="text-align:left"><a href="/protocol-integration/lora-actility" class="no-ajaxy">Actility</a></td>
 <td style="text-align:left">Schaffen Sie eine Schnittstelle zu LoRa-Geräten über Actility ThingPark.</td>
 <td style="text-align:left">actility</td>
 <td style="text-align:left">Microservice</td>
@@ -243,19 +249,19 @@ Manager und Editor für Apama Event Processing Language (EPL) Apps zur sofortige
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/optional-services/#cloud-fieldbus" class="no-ajaxy">Cloud Fieldbus</a></td>
+<td style="text-align:left"><a href="/protocol-integration/cloud-fieldbus" class="no-ajaxy">Cloud Fieldbus</a></td>
 <td style="text-align:left">Erfassen Sie Daten von Fieldbus-Geräten und verwalten Sie sie per Fernzugriff in Cumulocity IoT.</td>
 <td style="text-align:left">feature-fieldbus4</td>
 <td style="text-align:left">Funktion</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/optional-services/#cloud-remote-access" class="no-ajaxy">Cloud Remote Access</a></td>
+<td style="text-align:left"><a href="/cloud-remote-access/cra-general-aspects" class="no-ajaxy">Cloud Remote Access</a></td>
 <td style="text-align:left">Implementiert Virtual Network Computing (VNC) für den Fernzugriff auf Bedienfelder und andere Geräte über einen Webbrowser.</td>
 <td style="text-align:left">cloud-remote-access</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/optional-services/#connectivity" class="no-ajaxy">Connectivity</a></td>
+<td style="text-align:left"><a href="/users-guide/device-management/#connectivity" class="no-ajaxy">Connectivity</a></td>
 <td style="text-align:left">Schaffen Sie eine Schnittstelle zu Mobilgeräten über verschiedene SIM-Anbieter wie Jasper, Ericsson und Comarch.</td>
 <td style="text-align:left">connectivity-agent-server</td>
 <td style="text-align:left">Microservice</td>
@@ -266,25 +272,25 @@ Manager und Editor für Apama Event Processing Language (EPL) Apps zur sofortige
 <td style="text-align:left">Funktion</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/optional-services#nokia-impact" class="no-ajaxy">Nokia IMPACT agent</a></td>
+<td style="text-align:left"><a href="/protocol-integration/impact" class="no-ajaxy">Nokia IMPACT agent</a></td>
 <td style="text-align:left">Schaffen Sie eine Schnittstelle zu heterogenen Geräten über den Nokia IMPACT Data Collector.</td>
 <td style="text-align:left">impact</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/optional-services#opc-ua" class="no-ajaxy">OPCUA</a></td>
+<td style="text-align:left"><a href="/protocol-integration/opcua" class="no-ajaxy">OPCUA</a></td>
 <td style="text-align:left">Kommunizieren Sie mit OPC UA-Servern über ein OPC UA-Geräte-Gateway. </td>
 <td style="text-align:left">opcua-mgmt-service</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/optional-services#sigfox" class="no-ajaxy">Sigfox</a></td>
+<td style="text-align:left"><a href="/protocol-integration/sigfox" class="no-ajaxy">Sigfox</a></td>
 <td style="text-align:left">Schaffen Sie eine Schnittstelle zu Sigfox-Geräten über die Sigfox-Cloud.</td>
 <td style="text-align:left">sigfox-agent</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/users-guide/optional-services/#tenant-sla-monitoring" class="no-ajaxy">Tenant SLA Monitoring</a></td>
+<td style="text-align:left"><a href="/benutzerhandbuch/enterprise-edition-de/#tenant-sla-monitoring" class="no-ajaxy">Tenant SLA Monitoring</a></td>
 <td style="text-align:left">Gibt Service Providern die Möglichkeit, die Verfügbarkeit und Reaktionszeit von Mandanten und Untermandanten zu überwachen.</td>
 <td style="text-align:left">tenant-sla-monitoring</td>
 <td style="text-align:left">Microservice</td>

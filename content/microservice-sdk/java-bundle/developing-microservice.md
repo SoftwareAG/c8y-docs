@@ -153,23 +153,36 @@ public AlarmRepresentation addHelloAlarm (){
 
 ### Configuration files
 
-The properties file used by the hosted deployment must be located in *src/main/resources/application.properties*.
+The *application.properties* file used by the hosted deployment must be located in *src/main/resources/*.
 
-The properties used by a microservice are:
+The following properties are used by a microservice:
 
-Property | Description
----------|------------
-application.name | The name of the microservice application
-C8Y.bootstrap.register | Indicates if a microservice should follow self-registration process. True by default
-C8Y.baseURL | Address of the platform. Provided by the deployment process
-C8Y.baseURL.mqtt | Address of the MQTT service. Provided by the platform
-C8Y.bootstrap.tenant | Microservice owner tenant
-C8Y.bootstrap.user | User used by a microservice or by the microservice registration process
-C8Y.bootstrap.password | Password used by a microservice or by the microservice registration process
-C8Y.bootstrap.delay | Subscription refresh delay
-C8Y.bootstrap.initialDelay | Initial subscription delay
-C8Y.microservice.isolation | Microservice isolation. Only PER_TENANT or MULTI_TENANT values are available. MULTI_TENANT by default
-C8Y.httpReadTimeout | Read timeout interval for HTTP client in milliseconds. Defaults to 3 minutes
+#### General properties
+
+| Property                   | Description                                                                                            |
+| -------------------------- | ------------------------------------------------------------------------------------------------------ |
+| application.name           | The name of the microservice application.                                                              |
+| C8Y.bootstrap.register     | Indicates if a microservice should follow the self-registration process. True by default.              |
+| C8Y.baseURL                | Address of the platform. Provided by the deployment process.                                           |
+| C8Y.baseURL.mqtt           | Address of the MQTT service. Provided by the platform.                                                 |
+| C8Y.bootstrap.tenant       | The tenant ID, owner of the microservice.                                                              |
+| C8Y.bootstrap.user         | Username used by a microservice or by the microservice registration process.                           |
+| C8Y.bootstrap.password     | Password used by a microservice or by the microservice registration process.                           |
+| C8Y.bootstrap.delay        | Subscription refresh delay (milliseconds).                                                             |
+| C8Y.bootstrap.initialDelay | Initial subscription delay (milliseconds).                                                             |
+| C8Y.microservice.isolation | Microservice isolation. Only PER_TENANT or MULTI_TENANT values are available. MULTI_TENANT by default. |
+
+#### HTTP client configuration properties
+
+| Property                         | Description                                                    | Default value |
+| -------------------------------- | -------------------------------------------------------------- | ------------- |
+| C8Y.httpClient.httpReadTimeout   | HTTP read timeout (milliseconds).                              | 180000        |
+| C8Y.httpClient.pool.enabled      | HTTP connection pooling enabled.                               | true          |
+| C8Y.httpClient.pool.perHost      | Max connections per host if the connection pooling is enabled. | 50            |
+| C8Y.httpClient.pool.max          | Max total connections if the connection pooling is enabled.    | 100           |
+| C8Y.httpClient.pool.awaitTimeout | Connection manager timeout (milliseconds).                     | 10000         |
+
+> **Info:** No changes should be made unless the request/connection timeouts or HTTP client related exceptions are being experienced for the requests to the microservice where the network environment is fully understood.
 
 ### Microservice settings
 

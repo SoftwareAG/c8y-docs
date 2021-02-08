@@ -438,7 +438,7 @@ _Startup.cs_ responsibilities:
 
 The _Dockerfile_ file created by *create.ps1* contains:
 
-```
+```docker
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
 WORKDIR /app
 COPY ./publish/Web ./
@@ -601,3 +601,7 @@ $ ./deploy.sh -f settings.ini
 ```shell
 $ ./deploy.sh -s <URL> -u <username> -p <password> -an hello-world -f settings.ini
 ```
+
+### Improving the microservice
+
+Now that you have done your first steps, check out the section [Developing microservices](#developing-microservices) to find out what else can be implemented. Review also the [extended example](https://bitbucket.org/m2m/cumulocity-clients-cs/src/develop/Examples/MicroserviceSDK/Hello-World-Extension-Microservice/) in the Bitbucket repository to learn more features of the microservice SDK and REST API.

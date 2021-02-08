@@ -77,7 +77,7 @@ Instructions can be viewed and edited on the **Instructions** tab of the simulat
 
 The simulator presets already contain sample instructions. For example, the "Temperature measurement" preset contains instructions for the steps "Create measurement" and "Sleep", see image above.
 
-The panel on the right changes according to the type of instruction selected on the left.
+The panel at the right changes according to the type of instruction selected at the left.
 
 ![Fragment](/images/users-guide/DeviceManagement/devmgmt-simulator-fragment.png)
 

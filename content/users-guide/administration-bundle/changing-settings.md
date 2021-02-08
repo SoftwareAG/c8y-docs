@@ -76,15 +76,15 @@ Cumulocity IoT provides single sign-on functionality, that allows a user to logi
 
 > **Info:** This feature is built on top of cookies technology. To be able to use it, you must have cookies enabled in the settings of your browser.
 
-This feature is enabled since Cumulocity IoT version 9.12. For correct behavior any microservice needs to use the microservice SDK with version 9.12 or later.
+This feature is enabled since Cumulocity IoT version 10.4.6. For correct behavior any microservice needs to use the microservice SDK with version 10.4.6 or later.
 
 Before switching to the single sign-on option it is mandatory that:
 
 * The authorization server you use supports OAuth2 authorization code grant.
 * The access token is issued as JWT and you know what goes into the token content.
 * The JWT must consist of a unique user identifier, "iss" (issuer), "aud" (audience) and "exp" (expiration time) fields.
-* The Cumulocity IoT platform is in version 9.12 but preferably higher.
-* All microservices are build with Microservice Java SDK 9.12.6 but preferably higher.For Microservices custom built, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the Microservice SDK guide.
+* The Cumulocity IoT platform is in version 10.4.6 but preferably higher.
+* All microservices are build with Microservice Java SDK 10.4.6 but preferably higher. For custom-built microservices, refer to [General aspects > Security](/microservice-sdk/concept/#security) in the Microservice SDK guide.
 * For on premises installation the domain-based tenant resolution is configured properly.
 
 >**Info:** In order to use the single sign-on feature for Enterprise Tenants, the enterprise domain must be set up as redirect URI in the basic configurations. If single sign-on providers have a list of allowed domains, the enterprise domain should be added to that list.
@@ -176,17 +176,24 @@ When a user logs in with an access token, the username can be derived from a JWT
 
 Each access token is signed by a signing certificate. Currently there are three options to configure the signing certificates.
 
-* By specifying the Azure AD certificate discovery address.
+1. By specifying the Azure AD certificate discovery address.
 
-	![OAuth configuration](/images/users-guide/Administration/admin-sso-4.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-4.png)
 
-* By specifying the ADFS manifest address (for ADFS 3.0).
+2. By specifying the ADFS manifest address (for ADFS 3.0).
 
-	![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
 
-* By providing the public key of a certificate manually to Cumulocity IoT. A certificate definition requires an algorithm information, public key value and validity period.
+3. By providing the public key of a certificate manually to Cumulocity IoT. A certificate definition requires an algorithm information, public key value and validity period.
 
-	![OAuth configuration](/images/users-guide/Administration/admin-sso-5.png)
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-5.png)
+
+4. By specifying the JWKS (JSON Web Key Set) address.
+
+ ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
+
+
+ >**Info:** Cumulocity IoT only supports certificates with RSA key, either as a ("n", "e") parameters pair or "x5c" certificate chain. Other key types (e.g. Elliptic-curves) are not supported.
 
 
 #### Integration with Azure AD
@@ -416,10 +423,10 @@ In the **Connectivity** page, you can manage credentials for different providers
 
 The following provider settings may currently be specified:
 
-- [Impact](/users-guide/optional-services#nokia-impact)
-- [LoRa](/users-guide/optional-services#lora)
-- [Sigfox](/users-guide/optional-services#sigfox)
-- [SIM](/users-guide/optional-services#connectivity)
+- [Impact](/protocol-integration/impact)
+- [Actility LoRa](/protocol-integration/lora-actility)
+- [Sigfox](/protocol-integration/sigfox)
+- [SIM](/users-guide/device-management/#connectivity)
 
 ![Provider settings](/images/users-guide/Administration/admin-settings-connectivity.png)
 
@@ -430,4 +437,4 @@ The following provider settings may currently be specified:
 3. Enter the credentials of your provider platform. Depending on the provider, these credentials will be either the credentials of your account in the provider platform or the credentials with which you can register in the Cumulocity IoT connectivity page, will be displayed in your account in the provider platform.
 4. Finally, click **Save** to save your settings.
 
-Depending on the provider you have selected, there may be additional fields, which will be explained in the respective agent documentation, see [Optional services](/users-guide/optional-services).
+Depending on the provider you have selected, there may be additional fields, which will be explained in the respective agent documentation, see [Protocol integration guide](/protocol-integration/overview/).

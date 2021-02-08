@@ -35,7 +35,6 @@ Das Widget "Alarmliste" zeigt eine Liste von Alarmen, gefiltert nach Objekten, A
 |Schweregrad|Alarmschweregrade, die angezeigt werden.
 |Reihenfolge|Alarme können nach dem aktiven Status (gefolgt von Schweregrad und Zeit, Standardeinstellung) oder dem Schweregrad (gefolgt von der Zeit) sortiert werden.
 
-
 ### Alle kritischen Alarme
 
 Das Widget "Alle kritischen Alarme" zeigt alle Objekte mit einem kritischen Alarm. Neben dem Titel können keine zusätzlichen Parameter konfiguriert werden.
@@ -206,7 +205,7 @@ Außerdem kann ein Zeitintervall festgelegt und Ereignisse können in Echtzeit �
 
 Das Widget "Fieldbus-Gerät" ermöglicht es, den Status eines Modbus-Geräts anzuzeigen und dieses zu betreiben.
 
-Weitere Informationen zum Widget "Fieldbus-Gerät" finden Sie unter [Optionale Services > Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/users-guide/optional-services#fieldbus-device-widget).
+Weitere Informationen zum Widget "Fieldbus-Gerät" finden Sie unter [Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/protocol-integration/cloud-fieldbus/#fieldbus-device-widget) im *Protocol Integration Guide*.
 
 ### Gerätenachricht
 
@@ -334,11 +333,13 @@ Das Widget "Linearer Zeiger" visualisiert Datenpunkte in Form eines linearen Mes
 
 Sie müssen mindestens einen Datenpunkt aktivieren, um das Widget "Linearer Zeiger" zu erstellen.
 
+
 ### Quick Links
 
 Das Widget "Quick links" zeigt verschiedene Links für den schnellen Zugriff auf relevante Kommandos an. Es können keinen zusätzlichen Parameter konfiguriert werden.
 
 ![Quick links widget](/images/benutzerhandbuch/cockpit/cockpit-widget-quick-links.png)
+
 
 ### Relaisfeldsteuerung
 
@@ -368,7 +369,7 @@ Im Rotation-Widget kann das Objekt durch Ziehen und Bewegen gedreht werden. Auß
 
 Das Widget "SCADA" bietet eine graphische Darstellung eines Gerätestatus.
 
-Nähere Informationen zum Widget "SCADA" finden Sie unter [Optionale Services > Cloud Fieldbus > Monitoring status using the SCADA widget](/users-guide/optional-services/#scada).
+Weitere Informationen zum Widget "SCADA" finden Sie unter [Cloud Fieldbus > Monitoring status using the SCADA widget](/protocol-integration/cloud-fieldbus/#scada) im *Protocol Integration Guide*.
 
 > **Info:** Alle SVG-Dateien werden bereinigt, um schädlichen Code zu entfernen.
 

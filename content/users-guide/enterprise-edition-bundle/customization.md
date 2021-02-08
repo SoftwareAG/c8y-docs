@@ -50,7 +50,7 @@ With the Branding feature, you can fully customize the look of your tenant to yo
 
 In the **Branding** tab, you can configure various parameters like logos, colors  and font types used throughout the platform.
 
-The [parameters](#configuration-parameters) are configured on the left side of the tab while on the right you can immediately see your selections applied to a preview extract.
+The [parameters](#configuration-parameters) are configured at the left side of the tab while at the right you can immediately see your selections applied to a preview extract.
 
 <img src="/images/users-guide/enterprise-tenant/et-branding.png" alt="Branding tab">
 
@@ -146,7 +146,7 @@ The following parameters can be specified:
 
 In the **Domain name** tab you can activate your own custom domain name.
 
->**Important:** To activate your domain, you need a valid license. Please contact our Sales team at sales@cumulocity.com to install a license for your domain.  
+>**Important:** To activate your domain, you need a valid license. Please [contact us](/about-doc/contacting-support) to install a license for your domain.  
 
 <img src="/images/users-guide/enterprise-tenant/et-domain-name.png" alt="Domain name">
 

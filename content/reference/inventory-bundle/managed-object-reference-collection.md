@@ -82,13 +82,17 @@ HTTP/1.1
 
 **Required role:** ROLE\_INVENTORY\_ADMIN or parent and child owner
 
+> **Info:** Use the header `X-Cumulocity-Processing-Mode` set to `QUIESCENT` to disable real-time notifications. 
+This is required when performance is important or dealing with a large group of objects.
+
+
 #### Example request - Add a ManagedObjectReference
 
 |HEADERS||
 |:---|:---|
 |Authorization|{{auth}}
 |Host|{{hostname}}
-|Content-Type|application/vnd.com.nsn.cumulocity.managedobject+json;ver=...
+|Content-Type|application/vnd.com.nsn.cumulocity.managedobject+json;ver=... 
 
 ```http
 

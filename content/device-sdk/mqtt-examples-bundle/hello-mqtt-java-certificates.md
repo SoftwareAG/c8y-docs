@@ -1,6 +1,6 @@
 ---
 weight: 45
-title: Hello MQTT Java with certificates (beta)
+title: Hello MQTT Java with certificates
 layout: redirect
 ---
 

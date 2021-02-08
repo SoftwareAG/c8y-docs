@@ -1,6 +1,6 @@
 ---
 weight: 80
-title: Device certificates (beta)
+title: Device certificates
 layout: redirect
 ---
 

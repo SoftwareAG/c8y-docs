@@ -199,7 +199,7 @@ It is also possible to change the status of all alarms to "clear" at once. Click
 * **Additional information**: An alarm can contain arbitrary additional information provided by the device.
 * **Audit log**: Along with the alarm, a log of changes to the alarm is stored. This creates an alarm history with various data. -->
 
-### <a name="operation-monitoring"></a>Working with operations (contains beta changes)
+### <a name="operation-monitoring"></a>Working with operations
 
 Operations are used to remotely control devices.
 

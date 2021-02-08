@@ -1,6 +1,6 @@
 ---
 weight: 100
-title: Trusted certificates (beta)
+title: Trusted certificates
 layout: redirect
 ---
 

@@ -4,7 +4,7 @@ layout: redirect
 weight: 20
 ---
 
-In the Cumulocity IoT platform UI, you can access the Machine Learning Workbench application through the app switcher. To switch to Machine Learning Workbench, click on the app switcher icon and select **Machine Learning Workbench**. This will open the **Machine Learning Workbench** application.
+In the Cumulocity IoT platform, you access the Machine Learning Workbench application through the app switcher. Clicking **Machine Learning Workbench** in the app switcher will open the Machine Learning Workbench application.
 
 ![App Switcher screen](/images/zementis/mlw-app-home-select.png)
 

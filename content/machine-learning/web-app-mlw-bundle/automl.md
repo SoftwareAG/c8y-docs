@@ -6,82 +6,70 @@ weight: 40
 
 Machine Learning Workbench (MLW) provides an Automated Machine Learning (AutoML) feature which enables you to build your machine learning models for classification, regression and anomaly detection with ease by performing an exhaustive grid search in hyper-parameter space to generate the best model for your dataset.
 
-#### AutoML
+### AutoML
 
-The following steps illustrate how to train a machine learning model using AutoML
+The following steps illustrate how to train a machine learning model using AutoML.
 
-1. Add a new resource for AutoML
-
-    Upload a tabular dataset to train a machine learning model on that data.
+1. Upload a tabular dataset to train a machine learning model on that data.
 
     ![pojects manager](/images/zementis/mlw-app-resource-adm.png)
 
-2. AutoML selection
-
-    Select the data resource and click **New AutoML** to proceed with training the AutoML model on that data.
+2. Select the data resource and click the add icon  at the right of the top menu bar to proceed with training the AutoML model on that data.
 
     ![Resources](/images/zementis/mlw-app-automl-select.png)
 
-3. Pre-processing step
-
-    Select the **Problem Type** ("Regression" or "Classification") and select the **Target Variable**. Next, select the imputation method and data transformation methods for respective columns. Once done, click **Build** to proceed.
+3. Select the **Problem Type** (**Regression** or **Classification**) and select the **Target Variable** at the right. Next, select the imputation methods and data transformation steps for the respective columns. Once done, click **Build** to proceed.
 
     ![Pre-processing steps](/images/zementis/mlw-app-automl-pre.png)
 
-4. Selecting training parameters
-
-    Select the training parameters which include model evaluation criteria (**Scoring**), training iterations (**Generation**) and population size for each generation (**Population Size**). Once done, click **Submit**. This will create a new task in the **Tasks** section.
+4. Select the training parameters which include model evaluation criteria (**Scoring**), training iterations (**Generation**) and population size for each generation (**Population Size**). Once done, click the submit icon. This will create a new task in the **Tasks** folder.
 
     ![Pre-processing steps](/images/zementis/mlw-app-automl-trainparam.png)
 
-5. AutoML model training status
+You can view the model training progress in the **Tasks** folder of Machine Learning Workbench (MLW).
 
-    You can view the model training progress in the **Tasks** section of Machine Learning Workbench (MLW).
+![Pre-processing steps](/images/zementis/mlw-app-automl-start.png)
 
-    ![Pre-processing steps](/images/zementis/mlw-app-automl-start.png)
+Once the task is COMPLETED, all the trained models are listed along with the model evaluation score in descending order.
 
-    Once the task is COMPLETED, all the trained models are listed along with the model evaluation score in descending order.
+![Pre-processing steps](/images/zementis/mlw-app-automl-complete.png)
 
-    ![Pre-processing steps](/images/zementis/mlw-app-automl-complete.png)
+The hyper-parameters for each model can be viewed by clicking on the corresponding model name.
 
-6. AutoML hyper-parameters
+![Pre-processing steps](/images/zementis/mlw-app-automl-hyper.png)
 
-    The hyper-parameters for each model can be viewed by clicking on the corresponding model name.
+After the training is complete, the best model selected by the evaluation criteria will be saved in the **Model** folder of the respective **Project** in PMML format.
 
-    ![Pre-processing steps](/images/zementis/mlw-app-automl-hyper.png)
+![Pre-processing steps](/images/zementis/mlw-app-automl-model.png)
 
-7. AutoML model
+### Model deployment and predictions
 
-    After training is complete, the best model selected by the evaluation criteria will be saved in the **Model** section of the respective **Project** in PMML format.
-
-    ![Pre-processing steps](/images/zementis/mlw-app-automl-model.png)
-
-#### Model deployment and predictions
-
-Once the model is available in the **Model** section, it can be deployed on Machine Learning Engine (MLE) for predictions. Click **Deploy** to deploy the selected model on Machine Learning Engine (MLE).
+Once the model is available in the **Model** folder, it can be deployed on Machine Learning Engine (MLE) for predictions. Click the cloud icon ("Deploy") at the right of the top menu bar to deploy the selected model on Machine Learning Engine (MLE).
 
 ![Select Deploy To MLE](/images/zementis/mlw-app-automl-deploy-2-1.png)
 
-Once the model is successfully deployed, the **Deploy** icon will change to **Deployed**.
+Once the model is successfully deployed, the cloud icon will change to "Deployed".
 
 ![Deployed To MLE](/images/zementis/mlw-app-automl-deploy-3-1.png)
 
-To predict data using a deployed model, select the data set from the **Data** section and click **Predict**.
+To predict data using a deployed model, select the data set from the **Data** folder and click the predict icon.
 
 ![Prediction MLE](/images/zementis/mlw-app-automl-deploy-4.png)
 
-Data can be sent to a PMML model, an ONNX model, or an ONNX pipeline. For this example, we will use a PMML model deployed on the Machine Learning Engine (MLE). Select the **PMML** option under **Predict**.
+Data can be sent to a PMML model, an ONNX model, or an ONNX pipeline. For this example, we will use a PMML model deployed on the Machine Learning Engine (MLE). Select the **PMML** option under the predict icon.
 
 ![Select Format MLE](/images/zementis/mlw-app-automl-deploy-5.png)
 
-This will list all the PMML models deployed on the Machine Learning Engine (MLE). Select the PMML model for prediction and click **Submit**.
+This will list all the PMML models deployed on the Machine Learning Engine (MLE). Select the PMML model for prediction and click the submit icon.
 
 ![Select Model for Prediction](/images/zementis/mlw-app-automl-deploy-6.png)
 
-The predicted results will be stored in the **Data** section. For PMML models, the format of the input data will determine the format of predictions, i.e. output data. In our example, the input data was in CSV format. The output data will also be in CSV format. The output data can be downloaded to the local machine by clicking **Download**.
+The predicted results will be stored in the **Data** folder. For PMML models, the format of the input data will determine the format of predictions, i.e. output data. In our example, the input data was in CSV format. The output data will also be in CSV format. 
+
+Click the download icon at the right of the top menu bar to download the output data to the local machine. 
 
 ![Preview or Download Prediction](/images/zementis/mlw-app-automl-deploy-7.png)
 
-The output data can also be previewed by clicking **Preview**.
+Click the preview icon to preview the output data.
 
 ![Preview Prediction](/images/zementis/mlw-app-automl-deploy-8.png)

@@ -8,17 +8,17 @@ Machine Learning Workbench (MLW) provides a version-controlled project-based str
 
 Projects functionality includes:
 
-* [Creating a new project.](#create-a-new-project)
-* [Adding resources to the project - drag and drop, upload single or multiple files.](#upload-resources)
-* [Committing a project - version management.](#commit-project-version)
+* [Creating a new project](#create-a-new-project)
+* [Adding resources to the project - drag and drop, upload single or multiple files](#upload-resources)
+* [Committing a project - version management](#commit-project-version)
 
-#### Create a new project
+### To create a new project
 
-To create a new project, click **+Add Project**, fill the form with **Project Name** and **Project Description**, and click **Add Project**. This will create a new project with the given name. The new project will not contain any resources.
+Click **+Add Project** at the right of the top menu bar, enter a project name and description, and click **Add Project**. This will create a new project with the given name. The new project will not contain any resources.
 
 ![projects manager](/images/zementis/mlw-app-add-project.png)
 
-#### Upload Resources
+### To upload resources
 
 <!-- ![Resources](/images/zementis/mlw-app-project-home.png) -->
 
@@ -27,34 +27,34 @@ Machine Learning Workbench (MLW) categorizes project resources as follows:
 | Resource | Content description | File type |
 |-----     |-----        |-----      |
 | Data | Training data for Machine Learning Workbench (MLW). | <ul><li>csv</li><li>json</li><li>zip</li><li>png</li><li>jpg</li><li>txt</li></ul> |
-| Code | Python code for data preparation/exploration, data pre/post-processing steps, model training and evaluation. | <ul><li>py</li><li>ipynb</li></ul> |
-| Model | Models trained by Machine Learning Workbench (MLW). | <ul><li>pmml</li><li>onnx</li></ul> |
-| NN Designer | Architectures depicting complex structures of deep neural networks. | <ul><li>architecture (JSON)</li></ul> |
-| Inference Pipeline | Inference pipelines that define a sequence of pre-processing step, ONNX model, and post-processing step. | <ul><li>pipeline (JSON)</li></ul> |
-| Training Workflow | Training workflows that define a sequence of data preparation and model training/export activity that can be scheduled periodically. | <ul><li>wf (JSON)</li></ul> |
+| Code | Python code for data preparation/exploration, data pre/post-processing steps, model training and evaluation | <ul><li>py</li><li>ipynb</li></ul> |
+| Model | Models trained by Machine Learning Workbench (MLW) | <ul><li>pmml</li><li>onnx</li></ul> |
+| NN Designer | Architectures depicting complex structures of deep neural networks | <ul><li>architecture (JSON)</li></ul> |
+| Inference Pipeline | Inference pipelines that define a sequence of pre-processing step, ONNX model, and post-processing step | <ul><li>pipeline (JSON)</li></ul> |
+| Training Workflow | Training workflows that define a sequence of data preparation and model training/export activity that can be scheduled periodically | <ul><li>wf (JSON)</li></ul> |
 
 To upload files, you can either click on the upload pane and select the files for uploading or use the drag and drop files capability.
 
-![Upload Resources](/images/zementis/mlw-app-upload-resources.png)
+![Upload resources](/images/zementis/mlw-app-upload-resources.png)
 
 Once the files are uploaded, they will be placed under the respective categories.
 
-![Upload Resources](/images/zementis/mlw-app-upload-complete.png)
+![Upload resources](/images/zementis/mlw-app-upload-complete.png)
 
-#### Commit project version
+### To commit a project version
 
-You can commit a project with its resources for versioning.
+To commit a project with its resources for versioning, click the plus icon at the top right and click **Commit Project**.
 
-![Upload Resources](/images/zementis/mlw-app-project-commit.png)
+![Commit version](/images/zementis/mlw-app-project-commit.png)
 
 You can select all or a subset of resource files that need to be committed to a version.
 
-![Upload Resources](/images/zementis/mlw-app-project-commit-select.png)
+![Commit version](/images/zementis/mlw-app-project-commit-select.png)
 
-You can see the status of the commit process under the respective task name in the **Tasks** section. Which in this case will be the project name.
+You can see the status of the commit process under the respective task name in the **Tasks** folder, which in this case will be the project name.
 
-![Upload Resources](/images/zementis/mlw-app-project-commited.png)
+![Commit version](/images/zementis/mlw-app-project-commited.png)
 
-The project tile will show the different versions available for that project.
+The project card will show the different versions available for that project.
 
 ![Upload Resources](/images/zementis/mlw-app-project-version.png)

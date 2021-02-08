@@ -1,6 +1,6 @@
 ---
 weight: 60
-title: Verwalten von Gerätedaten (enthält Beta-Änderungen)
+title: Verwalten von Gerätedaten
 layout: redirect
 ---
 

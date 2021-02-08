@@ -199,7 +199,7 @@ Außerdem ist es möglich, den Status aller Alarme auf einmal auf "aufgehoben" z
 * **Additional information**: Ein Alarm kann beliebige vom Gerät bereitgestellte zusätzliche Informationen enthalten.
 * **Audit-Log**: Zusammen mit dem Alarm wird eine Logdatei mit am Alarm vorgenommenen Änderungen gespeichert. So entsteht eine Alarmhistorie mit verschiedenen Daten. -->
 
-### <a name="operation-monitoring"></a>Verwenden von Operationen (enthält Beta-Änderungen)
+### <a name="operation-monitoring"></a>Verwenden von Operationen
 
 Operationen werden verwendet, um Geräte aus der Ferne zu steuern.
 

@@ -85,7 +85,7 @@ For many use cases, and especially when using APAMA, time synchronization must b
 	sudo systemctl start|stop|status|restart ntpd
 	sudo systemctl start|stop|status|restart chronyd
 
-By default, for VMWare-based installations, the *vmtools* service is responsible for time synchronization with the host operating system. For VirtualBox-based installations, the *VirtualBox guest additions* service is responsible.
+By default, for VMWare-based installations, the *vmtools* service is responsible for time synchronization with the host operating system.
 
 For HyperV, the `chronyd` service is enabled by default for accurate time synchronization.
 

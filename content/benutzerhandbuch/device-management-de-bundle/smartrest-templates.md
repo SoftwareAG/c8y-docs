@@ -42,7 +42,7 @@ SmartREST-Templates können auf zweierlei Weise hinzugefügt werden:
 
 #### So fügen Sie eine Nachricht hinzu
 
-Das Nachrichten-Template enthält alle erforderlichen Informationen, um eine  SmartREST-Anfrage in einen entsprechenden Rest API-Aufruf zu konvertieren, der dann zur Plattform gesendet wird.
+Das Nachrichten-Template enthält alle erforderlichen Informationen, um eine SmartREST-Anfrage in einen entsprechenden Rest API-Aufruf zu konvertieren, der dann zur Plattform gesendet wird.
 
 1. Um eine neue Nachricht zu einem Template hinzuzufügen, navigieren Sie zur Registerkarte **Nachrichten** im entsprechenden Template und klicken Sie **Nachricht hinzufügen**.
 

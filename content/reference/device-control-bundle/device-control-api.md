@@ -62,7 +62,7 @@ colgroup>
 <td align="left">operationsByDeviceIdAndStatus</td>
 <td align="left">OperationCollection URI template</td>
 <td align="left">1</td>
-<td align="left">Read-only collection of all operations in particular state, that should be executed on a particular device (placeholder {deviceId} and {status}).</td>
+<td align="left">Read-only collection of all operations with a particular status, that should be executed on a particular device (placeholder {deviceId} and {status}).</td>
 </tr>
 </tbody>
 </table>

@@ -26,11 +26,12 @@ Click **Authentication** in the **Settings** menu if you want to view or change 
 
 #### Login settings
 
-There are two **Preferred login modes** available:
+In the field **Preferred login modes*, you can select one of the following options:
 
-* "OAuth Internal" which is the recommended option as it provides better security.
-* "Basic Auth" which should be chosen only for specific compatibility reasons.
-* "Redirect to SSO" which can be selected only if SSO is configured. If selected, it will remove both Basic Auth and OAuth Internal login options.
+* OAuth Internal - Recommended, since it provides high security, using authorization tokens to prove your identity (to the server).
+* Basic Auth - Should be chosen only for specific compatibility reasons, since it only provides basic security.
+* Single sign-on redirect - Can be selected only if SSO is configured. If selected, will remove Basic Auth and OAuth Internal login options.
+
 
 This login mode will be used by the platform's applications as the default method to authenticate users. Device authentication stays unchanged.
 
@@ -186,12 +187,12 @@ Each access token is signed by a signing certificate. Currently there are three 
 3. By providing the public key of a certificate manually to Cumulocity IoT. A certificate definition requires an algorithm information, public key value and validity period.
 
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-5.png)
- 
+
 4. By specifying the JWKS (JSON Web Key Set) address.
- 
+
  ![OAuth configuration](/images/users-guide/Administration/admin-sso-9.png)
- 
- 
+
+
  >**Info:** Cumulocity IoT only supports certificates with RSA key, either as a ("n", "e") parameters pair or "x5c" certificate chain. Other key types (e.g. Elliptic-curves) are not supported.
 
 
@@ -324,7 +325,7 @@ By providing your credentials you enable platform features that utilize SMS serv
 
 	![Select SMS provider](/images/users-guide/Administration/admin-settings-sms-provider.png)
 
-2. In the **SMS provider** page, select either [OpenIt](https://sms.openit.de/main.php) or [sms77](https://www.sms77.io/en/) as SMS provider.
+2. In the **SMS provider** page, select either OpenIT or [sms77](https://www.sms77.io/en/) as SMS provider.
 
 3. Depending on the selected provider, enter the relevant credentials:
 
@@ -332,6 +333,8 @@ By providing your credentials you enable platform features that utilize SMS serv
 	 * For sms77, your API key to access sms77 (to be found in your sms77 login under Settings > HTTP API).
 
 4. Click **Save** to save your settings.
+
+>**Info:** OpenIT does not serve new customers anymore and is in the process of shutting down their SMS provider business. We therefore recommend you to select sms77 as SMS provider.
 
 
 ### <a name="config-platform"></a>Configuration settings
@@ -420,10 +423,10 @@ In the **Connectivity** page, you can manage credentials for different providers
 
 The following provider settings may currently be specified:
 
-- [Impact](/users-guide/optional-services#nokia-impact)
-- [LoRa](/users-guide/optional-services#lora)
-- [Sigfox](/users-guide/optional-services#sigfox)
-- [SIM](/users-guide/optional-services#connectivity)
+- [Impact](/protocol-integration/impact)
+- [Actility LoRa](/protocol-integration/lora-actility)
+- [Sigfox](/protocol-integration/sigfox)
+- [SIM](/users-guide/device-management/#connectivity)
 
 ![Provider settings](/images/users-guide/Administration/admin-settings-connectivity.png)
 
@@ -434,4 +437,4 @@ The following provider settings may currently be specified:
 3. Enter the credentials of your provider platform. Depending on the provider, these credentials will be either the credentials of your account in the provider platform or the credentials with which you can register in the Cumulocity IoT connectivity page, will be displayed in your account in the provider platform.
 4. Finally, click **Save** to save your settings.
 
-Depending on the provider you have selected, there may be additional fields, which will be explained in the respective agent documentation, see [Optional services](/users-guide/optional-services).
+Depending on the provider you have selected, there may be additional fields, which will be explained in the respective agent documentation, see [Protocol integration guide](/protocol-integration/overview/).

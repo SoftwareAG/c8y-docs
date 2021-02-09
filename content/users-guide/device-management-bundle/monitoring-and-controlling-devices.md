@@ -49,7 +49,7 @@ The bottom arrow represents the push connection (from Cumulocity IoT to the devi
 * Offline (connection not established) - indicated by a red arrow
 * Not monitored - indicated by a grey arrow
 
-Push connection means the connection from Cumulocity IoT to /devicecontrol/notifications API, **not** to real-time API.
+Push connection means the connection from Cumulocity IoT to /notification/operations API, **not** to real-time API.
 
 >**Info:** Connection monitoring is not real time. This means that the displayed connection status will not change immediately after switching off a device. Depending on the used protocol for push connection monitoring this can take a couple of minutes.
 
@@ -203,85 +203,222 @@ It is also possible to change the status of all alarms to "clear" at once. Click
 
 Operations are used to remotely control devices.
 
-#### To view operations
-
 You can view operations at the level of individual devices and across all devices:
 
 * To view the operations for all devices, click **Device control** in the **Overview** menu in the navigator.
 * To view the operations of a particular device, switch to the **Control** tab in the details of this device.
 
-![Device Control](/images/users-guide/DeviceManagement/devmgmt-devicecontrol.png)
+There are two types of operations in **Device control**, each represented by a tab:
 
-Operations can be in one of the following four states:
+* **Single operations** execute on a single device, see [To view single operations](#to-view-single-operations).
+* **Bulk operations** comprise of the same single operation executed on a set of devices, see [To view bulk operations](#to-view-bulk-operations).
 
-|State|Description|
-|:---|:--|
-|PENDING|The operation has just been created and is waiting for the device to pick it up.
-|EXECUTING|The operation has been picked up by the device and is being executed.
-|SUCCESSFUL|The operation has been successfully executed by the device.
-|FAILED|The operation could not be executed by the device.
+#### <a name="to-view-single-operations"></a>To view single operations
+
+See the list of single operations in the **Single operations** tab.
+
+![Single operations list](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-single-operations-list.png)
+
+Single operations can have one of the following four statuses:
+
+| Status      | Description |
+| :-----     | :---------- |
+| PENDING    | The operation has just been created and is waiting for the device to pick it up. |
+| EXECUTING  | The operation has been picked up by the device and is being executed. |
+| SUCCESSFUL | The operation has been successfully executed by the device. |
+| FAILED     | The operation could not be executed by the device. |
 
 In each row, the following information for an operation is provided:
 
-|Info|Description|
-|:---|:---|
-|Status|One of PENDING, EXECUTING, SUCCESSFUL, FAILED (see above).
-|Name|Name of the operation.
-|Device|The name of the device. Clicking the name leads you to the detailed view of the device.
+| Info   | Description |
+| :----- | :---------- |
+| Status  | One of PENDING, EXECUTING, SUCCESSFUL, FAILED (see above). |
+| Name   | Name of the operation. |
+| Device | The name of the device. Clicking the name leads you to the detailed view of the device. |
 
 Clicking a row expands it and displays further details on the operation.
 
-* **Details**: Providing information on the operation name and status. In case of status = FAILED the reason for the failure is provided.
+* **Details**: Providing information on the operation name and status. In case of status = FAILED the reason for the failure is provided. In case the single operation is part of a [bulk operation](#to-view-bulk-operations), you can see the bulk operation details.
 * **History of Changes**: Providing information on the past changes of the operation.
 
-![Operation Details](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-history.png)
+![Single operation details](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-single-operation-details.png)
 
 
-By clicking one of the state buttons at the top, the corresponding operations will be hidden. Click it again to show the operations again.
+To filter the list of single operations by status, click one of the status buttons in the top menu bar.
+Click **All** to clear the filter.
 
 Click **Realtime** at the right of the top menu bar to see operations coming in from the devices in realtime.
+Click **Reload** to update the list once manually.
 
->**Info:** Operations are listed in descending time order. Operations are executed strictly according to this order.
+>**Info:** Single operations are listed in descending time order. Operations are executed strictly according to this order.
 
-#### To create and execute operations
+#### To add and execute a single operation
 
-Operations for a specific device are created and executed in the **Shell** tab of the device, see [Device details > Shell](/users-guide/device-management#shell).
+Single operations can be created either from bulk operations or via the different types of operations that the device supports: [managing firmware](/users-guide/device-management/#managing-firmware-on-a-device), [software](/users-guide/device-management/#managing-software-on-a-device), [configurations](/users-guide/device-management/#to-retrieve-and-apply-a-configuration-snapshot-to-a-device-which-supports-multiple-configuration-types) etc.
+
+When you create a [bulk operation](#bulk-operations), the single operations entailed in the bulk operation are also added to the list of single operations.
+
+Operations for a specific device can also be created and executed in the **Shell** tab of the device, see [Device details > Shell](/users-guide/device-management#shell).
 
 >**Important:** When using Cumulocity IoT to remotely operate machinery, make sure that all remote operations follow the safety standards and do not cause any harm.
 
-##### <a name="bulk-operations"></a>To execute bulk operations
+#### To cancel pending single operations
 
-For easier handling of devices, Cumulocity IoT offers bulk operations. With bulk operations you can at once execute operations for each device within one group.
+You can cancel particular pending single operations or all pending single operations at once.
 
-To execute bulk operations for a group, follow these steps:
+To cancel a particular pending single operation, click the menu icon at the right of the respective single operation entry and select **Cancel operation**.
 
-1. Select a device and open the **Control** tab.
-2. Create an operation.
-3. Hover over the operation you want to execute.
-4. Click the menu icon and then click **Execute for whole group**.
+To cancel all pending operations at once, click **More...** at the right of the top menu bar and select **Cancel all pending operations**.
+Alternatively, filter the list of single operations to show only single operations with status PENDING, then click **Cancel all** at the right of the top menu bar.
 
-The operation will be executed for all devices in the group.
+#### To create a smart rule from a single operation
 
-![Execute bulk operations](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk.png)
+Click the menu icon at the right of the single operation that you want to create a smart rule for, and select **Create smart rule**.
 
-In order to view the status and progress of your operations, simply select the desired group and click the **Bulk operations** tab.
+See [Cockpit > Smart rules > To create a smart rule](/users-guide/cockpit/#create-rules) for further steps.
 
-![Bulk operations tab](/images/users-guide/DeviceManagement/devmgmt-bulkoperations.png)
+#### <a name="to-view-bulk-operations"></a>To view bulk operations
 
-##### <a name="bulk-operations"></a>To edit bulk operations
+See the list of bulk operations in the **Bulk operations** tab.
 
-1. Hover over the bulk operation you want to edit, click the menu icon and then click **Edit operation schedule**.
+![Bulk operations list](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operations-list.png)
+
+Bulk operations have an operation type and status.
+
+You can add bulk operations of the following operation types with the [bulk operation wizard](#bulk-operation-wizard):
+
+| Operation type          | Description |
+| :---------------------- | :---------- |
+| Configuration update    | The bulk operation updates the configuration of the selected devices. |
+| Firmware update         | The bulk operation updates the firmware on the selected devices. |
+| Software update         | The bulk operation updates the software on the selected devices. |
+| Apply device profile    | The bulk operation applies a device profile on the selected devices. |
+
+Bulk operations can have other operation types as well, for example when you [schedule a single operation as bulk operation](#to-schedule-a-single-operation-as-bulk-operation) and the single operation has a different operation type.
+
+Bulk operations can have one of the following statuses:
+
+| Status                   | Description |
+| :---------------------- | :---------- |
+| SCHEDULED               | The bulk operation has been created and is on hold until the scheduled time. |
+| EXECUTING               | The bulk operation is being executed. |
+| CANCELED               | The bulk operation was created but canceled before the scheduled time. |
+| COMPLETED WITH FAILURES | The bulk operation completed with failures for some devices. |
+| COMPLETED SUCCESSFULLY  | The bulk operation has been successfully executed on all devices. |
+
+In each row, the following information for a bulk operation is provided:
+
+| Info   | Description |
+| :----- | :---------- |
+| Status  | One of SCHEDULED, EXECUTING, CANCELED, COMPLETED WITH FAILURES, COMPLETED SUCCESSFULLY (see above). |
+| Name   | Name of the operation. |
+| Progress bar | Only for executing and completed bulk operations. Shows the operation's progress in percent. |
+| Start and finish dates | Only for executing and completed bulk operations. For executing bulk operations, the finish date is an approximation based on the bulk operation settings. |
+| Refresh button | Only for executing bulk operations. Updates the progress bar. |
+
+Clicking the arrow button at the right in a row expands the row and displays further details on the bulk operation.
+
+* **Details**: Providing information on the start date, delay, status and result of the bulk operation. The result lists the number of successful, failed and pending operations. If the bulk operation is a [retry attempt for failed operations](#to-retry-failed-operations), there will be an additional row that shows the index of the bulk operation it was retried from. Click the index to scroll to that bulk operation. If a description was added when [the bulk operation has been created](#to-add-a-bulk-operation), there will be an additional row that shows this description.
+* **Operation**: Providing information on the operation in the form of a JSON object.
+* **Operations**: Only present for executing or completed bulk operations. Providing information on the status and the device of single operations entailed in the bulk operation. Can be filtered by status. You may also either retry all failed operations by clicking **Retry failed operations** at the top right of the **Operations** section or retry single operations by hovering over them and then clicking the **Retry operation** button that appears right next to it. Also see [To retry failed operations](#to-retry-failed-operations).
+* **History of Changes**: In a second tab, providing information on the past changes of the bulk operation.
+
+![Bulk operation details](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details.png)
+
+![Bulk operation details, second tab](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-details2.png)
+
+To filter the list of bulk operations by operation type, click the dropdown list in the top menu bar and select a set of operation types, then click **Apply**.
+To clear the filter, select **All** in the dropdown list and click **Apply** again.
+
+To filter the list of bulk operations by status, click one of the status buttons in the top menu bar.
+Click **All** to clear the filter.
+
+To filter the list of bulk operations by date, select a date in both the **Date from** and **Date to** datepickers, then click **Apply** right next to it.
+To clear the filter, click **Clear** right next to it.
+
+To clear both filters, click **Reset filters** at the bottom of the list (only visible if filters are applied).
+
+>**Info:** Bulk operations created prior to release 10.7.0 are dependent on a group and may still be viewed. To do so, select the desired group and click the **Bulk operations** tab.
+
+>![Old bulk operations](/images/users-guide/DeviceManagement/devmgmt-bulkoperations.png)
+
+#### <a name="bulk-operations"></a><a name="to-add-a-bulk-operation"></a>To add a bulk operation
+
+There are two ways of creating a bulk operation:
+
+* Use the [bulk operation wizard](#bulk-operation-wizard)
+* [Schedule a single operation as bulk operation](#to-schedule-a-single-operation-as-bulk-operation)
+
+##### <a name="bulk-operation-wizard"></a>To add a a bulk operation using the wizard
+
+Follow these steps:
+
+1. In the **Bulk operations** tab, click **New bulk operation** at the right of the top menu bar.
+2. In the resulting dialog, select an operation type.
+    ![Select a bulk operation type](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-type.png)
+3. The resulting wizard has four steps. The first two steps differ depending on the operation type:
+  * **Configuration update**
+      * Select a configuration from the list. The list can be filtered by configuration type or by configuration name. Click **Next**.
+      * Check the preview of the selected configuration. Click **Next**.
+  * **Firmware update**
+      * Select a firmware from the list. The list can be filtered by firmware name. Click **Next**.
+      * Expand a version and select a patch. Click **Next**.
+  * **Software update**
+      * Expand a software from the list and select a version, then also choose to install/update or remove the software from the dropdown list. The list of available software can be filtered by device type or by software name. Click **Next**. If you selected software for multiple device types, a warning dialogue appears and informs you that some operations may fail due to unsupported software, and ask for confirmation.
+      * Confirm the selection and click **Next**.
+  * **Apply device profile**
+      * Select a device profile from the list. The list can be filtered by device type or by profile name. Click **Next**.
+      * Confirm the selection and click **Next**.
+4. Select target devices by applying filters to the paginated list of all devices. You can filter by status, name, type, model, group, registration date and alarms. You may apply multiple filters. To apply a filter, click the column header, make your filter option choices in the context menu and click **Apply**. The group filter also allows filtering by subgroups. To select a subgroup, if there are any, click the arrow button at the right of a group and select the desired subgroups from the dropdown. You can clear all filters by clicking **Clear filters** above the list. For the operation types "configuration update", "software update" and "apply device profile", the list is already filtered by the according device type. Click **Next**.
+    ![Bulk operation wizard, step 3](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step3.png)
+5. Enter a new title or use the preset title. Optionally enter a description. Select a start date and a delay. The delay may either be in seconds or milliseconds and is the time spent between each single operation of the bulk operation. Click **Schedule bulk operation** to create the bulk operation.
+    ![Bulk operation wizard, step 4](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operation-wizard-step4.png)
+
+##### <a name="to-schedule-a-single-operation-as-bulk-operation"></a>To schedule a single operation as bulk operation
+
+You can schedule a single operation as a bulk operation either from the **Single operations** tab or from a **Control** tab of a particular device.
+Follow these steps:
+
+1. Click the menu icon at the right of the single operation that you want to schedule as a bulk operation and then click **Schedule as bulk operation**.
+2. The resulting wizard is similar to the new bulk operation wizard described in [To add a bulk operation using the wizard](#bulk-operation-wizard). However, there are just two steps because the operation type is inferred from the operation that is scheduled as a bulk operation. See the description of the [full wizard](#bulk-operation-wizard) and follow it.
+
+#### <a name="bulk-operations"></a>To edit the schedule of bulk operations
+
+You may only edit the schedule of bulk operations with status = SCHEDULED.
+
+1. Click the menu icon to the right of the bulk operation that you want to edit, and then click **Edit schedule**.
 3. In the resulting dialog box you may change the **Start date** and **Delay** values.
-4. To change operation details, click **Show operation details**.
 5. Click **Reschedule** to apply your changes.
 
 The changes will be applied to the bulk operation accordingly.
 
-![Edit bulk operations](/images/users-guide/DeviceManagement/devmgmt-bulkoperations-reschedule.png)
+![Reschedule bulk operations](/images/users-guide/DeviceManagement/devmgmt-devicecontrol-bulk-operations-reschedule.png)
 
-##### <a name="bulk-operations"></a>To delete bulk operations
+#### <a name="bulk-operations"></a>To cancel bulk operations
 
-Hover over the bulk operation you want to delete, click the menu icon, and then click **Cancel operation**.
+You may only cancel bulk operations with status = SCHEDULED or EXECUTING.
+If it is executing, you may only cancel the operation until all of its single operations are created.
+This way, you can cancel the creation of the remaining single operations.
+
+Click the menu icon to the right of the bulk operation that you want to cancel, then click **Cancel bulk operation**.
+
+#### <a name="to-retry-failed-operations"></a>To retry failed operations
+
+You may retry the failed operations of a bulk operation that is either executing or completed with failures.
+
+To do so, expand the desired bulk operation, then click **Retry failed operations** under **Operations** to create a new bulk operation with all failed operations.
+To retry a single operation, hover over the operation and click **Retry operation**.
+This will create a new single operation.
+
+For a bulk operation that completed with failures, you may also click the menu icon to the right of the operation, then click **Retry failed operations**.
+
+#### To manually set failed bulk operations to successful
+
+You may manually set a failed bulk operation to successful.
+
+To do so, click the menu icon to the right of the bulk operation, then click **Set operation to successful**.
+
+This may be useful if the operation is generally a success, but contains operation failures on devices that are not too important. These failures would otherwise still leave the bulk operation in status FAILED.
 
 ### <a name="events-all"></a>Troubleshooting devices
 

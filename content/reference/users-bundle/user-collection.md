@@ -81,7 +81,7 @@ Users can be filtered by following parameters:
  If flag is absent (or false) the result will not contain "device\_" users.
 
 Additional flag "withSubusersCount" - if set to "true", then each of returned users will contain additional field "subusersCount" -
-number of direct subusers (users with corresponding "owner").
+number of direct sub-users (users with corresponding "owner").
 
 Example request: retrieve users, where username starts with "js", and every user belongs to one of the groups 2, 3 or 4, and the owner is "admin", and is not a device user.
 

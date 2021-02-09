@@ -58,6 +58,19 @@ Required roles are added to the service users.
 * Roles: The custom roles provided to tenant platform users by the microservice developer.
 These roles can be assigned or revoked to the tenant platform users or groups using the Administration application.
 
+Custom roles need to adhere to this name format in order to be shown in the UI:
+
+ROLE_<NAME>_(READ|ADMIN|CREATE)
+
+You can add them to the [application manifest](#manifest) in the `roles` properties as follows:
+
+```json
+"roles": [
+    "ROLE_MY_MICROSERVICE_READ",
+    "ROLE_MY_MICROSERVICE_ADMIN"
+]
+```
+
 <!-- TODO: add/describe a picture of "required roles" and "provided roles" showing a microservice as a block -->
 
 The roles are set in the [Microservice manifest](#manifest). For more details about users and roles, review [Users](/reference/users/) in the **Reference guide**.
@@ -107,6 +120,8 @@ Steps:
 
 ### Encryption
 
-There is a mechanism to encrypt the tenant options that afterwards are automatically decrypted when injecting them into microservices requests. Refer to [Tenants > Option collection](/reference/tenants#option-collection) in the Reference guide for more details.
+There is a mechanism to encrypt the tenant options that afterwards are automatically decrypted when injecting them into microservices requests.
 
-If a tenant option is created at any category that starts with `credentials.`, it is automatically encrypted and can be only fetched as unencrypted by "System users". For instance, when you create a tenant option in "category" that matches to the application context path, the value is passed to the microservice by the microservice proxy on the platform as a header (key => value). All encrypted options are decrypted and passed. Moreover, the options can be fetched via REST using the options endpoint at microservice runtime.
+If a tenant option is created with a key name that starts with "credentials.", it is automatically encrypted and can be fetched as unencrypted only by system users. For instance, when you create a tenant option in a category that matches to the application context path, the value is passed to the microservice by the microservice proxy on the platform as a header (key => value). All encrypted options are decrypted and passed. Moreover, the options can be fetched via REST using the options endpoint at microservice runtime.
+
+Refer to [Tenants > Option](/reference/tenants#option) in the Reference guide for more details.

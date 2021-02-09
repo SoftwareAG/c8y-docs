@@ -181,7 +181,7 @@ Additionally, a specific date range can be set and the events can be monitored i
 
 The "Fieldbus device" widget lets you see the status of a modbus device and operate it.
 
-For details on the "Fieldbus device" widget, refer to [Optional Services > Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/users-guide/optional-services#fieldbus-device-widget).
+For details on the "Fieldbus device" widget, refer to [Cloud Fieldbus > Monitoring device status using the Fieldbus device widget](/protocol-integration/cloud-fieldbus/#fieldbus-device-widget) in the *Protocol integration guide*.
 
 ### Help and service
 
@@ -199,7 +199,7 @@ The "Info gauge" widget visualizes one data point in form of a radial gauge and 
 
 ![Info gauge widget](/images/users-guide/cockpit/cockpit-widget-info-gauge.png)
 
-You can select one data point for the gauge, and multiple data points shown with labels on the left side.
+You can select one data point for the gauge, and multiple data points shown with labels at the left side.
 
 ![Info gauge widget data point gauge](/images/users-guide/cockpit/cockpit-widget-data-gauge.png)
 
@@ -265,7 +265,7 @@ The icons representing the devices are color-coded. The color used follows these
 * Blue = At least one WARNING
 * Green = No alarm
 
-Click a device icon, to open popup with the following information:
+Click a device icon, to open a popup with the following information:
 
 * The device name. When clicked, the application navigates to the device.
 * The date at which the device last reported its location, if available.
@@ -365,7 +365,7 @@ In the "Rotation" widget you can rotate the object by dragging and moving it aro
 
 The "SCADA" widget provides a graphic representation of the status of a device.
 
-For details on the "SCADA" widget, refer to [Optional Services > Cloud Fieldbus > Monitoring status using the SCADA widget](/users-guide/optional-services/#scada).
+For details on the "SCADA" widget, refer to [Cloud Fieldbus > Monitoring status using the SCADA widget](/protocol-integration/cloud-fieldbus/#scada) in the *Protocol integration guide*.
 
 > **Info:** All SVG files are sanitized in order to remove malicious code.
 

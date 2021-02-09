@@ -403,4 +403,4 @@ If the managed object is a device or a group and the optional query parameter `c
 
 If you want to delete the full hierarchy regardless of the managed object type, use the query parameter `forceCascade=true`. When both `cascade` and `forceCascade` are provided the second one takes precedence.
 
-> **Info**: Inventory DELETE requests are not synchronous. The response could be returned before the delete request has been completed.
+> **Info:** Managed object DELETE requests are not synchronous. The response could be returned before the delete request has been completed. This may happen especially when the deleted managed object has a lot of associated data like events, alarms, measurements. After sending the request, the platform starts deleting the associated data in an asynchronous way. Finally, the requested managed object is deleted after all associated data has been deleted.  

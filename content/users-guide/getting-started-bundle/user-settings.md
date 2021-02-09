@@ -13,7 +13,10 @@ Clicking the **User** button at the top right will open a menu which provides ac
 The **User** menu contains the following items:
 
 <table>
-<col width = 150>
+<colgroup>
+<col width = "20%">
+<col width = "80%">
+</colgroup>
 <thead>
 <tr>
 <th style="text-align:left">Menu item</th>
@@ -50,8 +53,8 @@ Several account settings can be changed by the user.
 
 1. Click the **User** button at the right of the top bar and then click **User Settings**.  
 2. In the **Edit user** dialog box, make the relevant changes.
-3. To change the language, select a language from the dropdown list in the  **Language** field.
-4. Click **Change password** to change your current password, see below.
+3. To change the language, select a [language](#languages) from the dropdown list in the  **Language** field.
+4. Click **Change password** to change your current password, see [To change your password](#change-password) for details.
 5. Click **Save** to apply your settings.
 
 <img src="/images/users-guide/getting-started/getting-started-user-settings.png" alt="User settings"  style="max-width: 100%">
@@ -62,10 +65,25 @@ The user interface language will be selected along the following criteria, in th
 *  The language selected in the browser preferences.
 * 	The operating system language.
 
-The default language is English.
+#### <a name="languages"></a>Available languages
+
+The UI is available in the following languages:
+
+|Language|Language code|
+|:---|:---|
+|English (default)|en|
+|Brazilian Portuguese|pt_BR|
+|Chinese|zh_CN|
+|French|fr|
+|German|de|
+|Japanese|ja_JP|
+|Korean|ko|
+|Polish|pl|
+|Russian|ru|
+|Spanish|es|
 
 
-### <a name="change-password"></a>To change your password
+#### <a name="change-password"></a>To change your password
 
 1. Click the **User** button at the right of the top bar and then click **User settings**.
 2. In the **Edit user** dialog box, click **Change Password**.

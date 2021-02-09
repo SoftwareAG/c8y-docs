@@ -137,7 +137,7 @@ $.c8y_Message.text
 
 In this syntax, `$` refers to the root of the data structure and the dot (`.`) selects an element from the data structure. For more details, refer to the [JSONPath](http://goessner.net/articles/JsonPath/) reference.
 
-A device usually queries for all operations that are associated with it and that are in pending state. The standard Cumulocity IoT response to such queries looks like:
+A device usually queries for all operations that are associated with it and that have a status of PENDING. The standard Cumulocity IoT response to such queries looks like:
 
 ```json
 {

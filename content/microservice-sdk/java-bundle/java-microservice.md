@@ -77,7 +77,7 @@ Alternatively, you can retrieve the backend version with a GET request to <kbd><
 
 The response looks like this:
 
-``` json
+```json
 {
     "category": "system",
     "value": "1004.6.12",
@@ -190,7 +190,7 @@ Your microservice application has to be packed as a Docker image in a ZIP file i
 </build>   
 ```
 
-#### Create a Java application
+#### <a name="java-example"></a>Create a Java application
 
 Edit the _App.java_ file located in the folder */src/main/java/c8y/example* with the following content:
 
@@ -275,7 +275,7 @@ To deploy your microservice on the Cumulocity IoT platform you need:
 * A valid tenant, a user and a password in order to access Cumulocity IoT.
 * The ZIP file built with Maven on the previous steps.
 
-> **Important**: The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. Contact us via [Software AG Empower Portal](https://empower.softwareag.com) so that we can assist you with the activation. Note that this is a paid feature.
+> **Important**: The **Microservice hosting** feature must be activated on your tenant, otherwise your request will return an error message like "security/Forbidden, access is denied". This feature is not assigned to tenants by default, so trial accounts won't have it. [Contact product support](/about-doc/contacting-support) so that we can assist you with the activation. Note that this is a paid feature.
 
 In the Administration application, navigate to **Applications** > **Own applications**, click **Add application** and select **Upload microservice** from the options list.
 
@@ -421,7 +421,7 @@ $ docker images
 
 It yields an output similar to this:
 
-```shell
+```plain
 REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
 hello-microservice-java   1.0.0-SNAPSHOT      3e5e7aeea7bc        52 minutes ago      143MB
 ```
@@ -441,7 +441,7 @@ $ docker run -p 8082:80 -e C8Y_BOOTSTRAP_TENANT=<BOOTSTRAP_USER_TENANT> \
 
 If your Docker image has run successfully, you shall see the output on the console similar to the one below.
 
-```shell
+```plain
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
 ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
@@ -468,4 +468,4 @@ You may also use the name parameter, e.g. <http://localhost:8082/hello?name=Neo>
 
 ### Improving the microservice
 
-Now that you have done your first steps, check out the section [Developing microservices](/microservice-sdk/java#developing-microservice) to find out what else can be implemented. Review also the [Java example](/microservice-sdk/http) in this guide to learn using more features of the microservice SDK and REST API by employing third-party services.
+Now that you have done your first steps, check out the section [Developing microservices](/microservice-sdk/java#developing-microservice) to find out what else can be implemented. Review also the [Java example](/microservice-sdk/java/#java-example) in this guide to learn using more features of the microservice SDK and REST API by employing third-party services.

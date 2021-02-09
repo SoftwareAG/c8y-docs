@@ -111,7 +111,7 @@ Publish a message on topic <kbd>/event/events/createBulk</kbd> with payload:
 
 #### Update event
 
-Publish a message on topic <kbd>/event/events/update/<event_id></kbd> with payload:
+Publish a message on topic <kbd>/event/events/update/&lt;event_id&gt;</kbd> with payload:
 
 ```json
 {
@@ -121,7 +121,7 @@ Publish a message on topic <kbd>/event/events/update/<event_id></kbd> with paylo
 
 #### Delete event
 
-Publish a message on topic <kbd>/event/events/delete/<event_id></kbd> with empty payload.
+Publish a message on topic <kbd>/event/events/delete/&lt;event_id&gt;</kbd> with empty payload.
 
 
 ### Error handling
@@ -140,7 +140,7 @@ Example payload:
 
 ### Receiving operations
 
-A notification client can subscribe to the <kbd>devicecontrol/notifications</kbd> topic to receive notifications of newly created operations. Initially upon subscription, all operations which are not yet forwarded will be published.
+A notification client can subscribe to the <kbd>notification/operations</kbd> topic to receive notifications of newly created operations. Initially upon subscription, all operations which are not yet forwarded will be published.
 
 Additionally, it contains an [External ID](/reference/identity#external-id), so the client can identify for which child the operation is executed.
 

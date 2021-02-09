@@ -49,7 +49,7 @@ The following protocols are supported to connect to the Edge VM through remote a
 	* Console for command line access
 	* Keyboard for interaction
 
-For more information about remote access, see [Cloud Remote Access](/users-guide/optional-services/#cloud-remote-access) in the User guide.
+For more information about remote access, see [Cloud Remote Access](/cloud-remote-access/cra-general-aspects).
 
 ### Accessing the Edge device remotely through VNC
 

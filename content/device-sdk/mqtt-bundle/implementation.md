@@ -8,27 +8,17 @@ This section will list the implementation details for the MQTT protocol. The Cum
 
 ### Connecting via MQTT
 
-Cumulocity IoT supports MQTT both via TCP and WebSockets. As URL you can use your tenant domain (e.g. _mytenant.cumulocity.com/mqtt_) or the domain of the instance in the format mqtt.&lt;instance_domain> (e.g. _mqtt.cumulocity.com_).
+Cumulocity IoT supports MQTT both via TCP and WebSockets. As URL you can use the domain of the instance in the format mqtt.&lt;instance_domain> (e.g. _mqtt.cumulocity.com_) or your tenant domain (e.g. _mytenant.cumulocity.com/mqtt_).
 
 Available ports:
 
 | &nbsp; | TCP | WebSockets |
 |:-----|:----|:----|
-| one-way SSL | 8883 | 443 |
+| SSL | 8883 | 443 |
 | no SSL | 1883 | 80 |
-| experimental two-way SSL | 1884 | - |
 
-For experimental two-way SSL the port 1884 has to be enabled. To do that, add the following rule to Chef:
-
-```
-"MQTTClientCert" => {
-    "enabled" => true,
-    "enableTransparentSSLPort" => false
-}
-```
-
-*   `enabled` - Open the port 1884 and let devices authorize using a certificate with TCP (it is not available with WebSockets right now).
-*   `enableTransparentSSLPort` - Redirect the whole communication (ports) from 1883 to 1884 (use `false` since handling client authorization via username and password is not implemented yet), so right now it will enforce using certificates by devices also on 1883 port (which is highly not recommended).
+Port 8883 supports two types of SSL: two-way SSL using certificates for client authorization and one-way SSL using username and password for client authorization.
+The two-way SSL support is enabled by default since version 10.7.0. To disable it please [contact support](/about-doc/contacting-support)
 
 > **Info**: To use WebSockets you need to connect to the path <kbd>/mqtt</kbd> and follow the [MQTT standard](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718127) for WebSocket communication.
 
@@ -52,7 +42,7 @@ The CSV (comma-separated values) format is used for communication with the Smart
 
 * Every row must be terminated by the `\n` character sequence.
 * Values are always separated by a comma (`,`).
-* If a value contains double-quotes (`"`), commas (`,`), leading or trailing whitespaces, line-breaks (`\n`), carriage returns (`\r`) or tab stops, it must be surrounded by quotes (`"`). Contained double-quotes (`"`) must be escaped by prepending another double-quote (`""`).
+* If a value contains double-quotes (`"`), commas (`,`), leading or trailing whitespaces, line-breaks (`\n`), carriage returns (`\r`) or tab stops, it must be surrounded by quotes (`"`). Contained double-quotes (`"`) must be escaped by prepending a backslash (`\`).
 
 The same escaping rules apply to messages that will be sent from the server to the client.
 
@@ -65,7 +55,7 @@ Publish example:
 Subscribe example:
 
 ```text
-511,myDeviceSerial,"execute this\nand this\nand ""this"""
+511,myDeviceSerial,"execute this\nand this\nand \"this\""
 ```
 
 > **Info:** `\n` does not create a new line in the output (e.g. console, UI); to achieve this, a new line character (ASCII 0A) needs to be used.
@@ -91,7 +81,18 @@ The communication with Cumulocity IoT employing MQTT supports authentication in 
 *   Username and password. The MQTT username needs to include the tenant ID and username in the format &lt;tenantID/username>.
 *   Device certificates. The devices have to contain the whole chain of certificates leading to the trusted root certificate. Also, they have to contain the server certificate in their truststore.
 
-#### MQTT ClientId
+#### Troubleshooting
+
+##### A device sends correct username and password, but incorrect certificate at the same time
+
+If the platform is configured to support two-way SSL, your devices have a configured keystore with invalid certificates and you want to use basic authorization, we recommend you to turn off sending certificates during connection. Certificates may be invalid because they expired or the root certificate is not uploaded to the platform. Turn off certificate sending in the device’s software. If that is not possible, make sure of the following to make the connection work:
+
+* The platform's trust store cannot be empty. At least one trusted certificate has to be uploaded to the platform.
+* The device's MQTT client has to be configured to not send certificates if it does not find its root certificate in the accepted issuers list returned by the server during handshake. In most cases this happens automatically. It is known that it’s not working with the MQTT client and Java 11. However, it works with Java 8.
+* In order to support this situation, the platform needs to be configured accordingly. In case you experience issues please [contact support](/about-doc/contacting-support)
+* If all of the cases above are met and the device connection is still rejected due to certificates validation, then probably some other tenant uploaded a certificate with the same 'Common Name' as one of those sent by your device. In this case the device will always try to authorize itself with certificates.
+
+#### <a name="MQTT-ClientId">MQTT ClientId</a>
 
 The MQTT ClientId is a field to uniquely identify each connected client. The Cumulocity IoT implementation also uses the ClientId to link the client directly to a device. Therefore, the following format should be used for the ClientId:
 
@@ -161,7 +162,7 @@ To support developers during development, it is possible to subscribe to the top
 
 ### Reloading the server certificate
 
-You can change the server certificate, which is sent to the devices. To do so, please [contact support](/about-doc/contacting-support), who can add a new certificate to the server's keystore and reload it.
+You can change the server certificate, which is sent to the devices. To do so, please [contact product support](/about-doc/contacting-support), who can add a new certificate to the server's keystore and reload it.
 
 Certificates exchange between the server and the device occurs during device connection, so all already connected devices will not be disconnected during reloading. Only after they disconnect on their own and try to connect later, then it is required that they contain the new server certificate in their truststore.
 

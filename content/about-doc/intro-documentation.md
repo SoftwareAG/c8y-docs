@@ -4,16 +4,19 @@ title: Introduction
 layout: bundle
 ---
 
-This documentation is a **preview of the documentation for the 10.7.0 release (October 2020)** of the Cumulocity IoT platform.
+This documentation describes the **10.7.0 release (January 2021)** of the Cumulocity IoT platform.
 
-It includes descriptions for new features which are supposed to be introduced with the Incremental Releases 10.6.7 to 10.6.12 or with the GA Release 10.7.0. The documentation **is still in beta state and not meant to be complete**. Moreover, it describes features which might not be publicly available yet and might also not be publicly available with the next GA Release (the respective description will then be removed accordingly).
+This documentation includes all new features and functionality introduced with release 10.7.0 (see the [Release notes](/release-notes/overview/) for details).
 
-See the [Release notes](/release-notes/overview/) for more details on new features.
+>**Important:** Depending on the Cumulocity IoT plan your organization has purchased, only a subset of the features and functionalities described in this documentation might be available to you. 
+>
+>Please refer to the [Cumulocity IoT Pricing page](https://www.softwareag.cloud/site/pricing/cumulocity-iot.html#/) for details on the plans available, and refer to your contract for details on your particular subscriptions.
 
-Any other relevant changes that have been made to the Cumulocity IoT documentation since the previous version will be mentioned in the release notes as well.  
+To access the documentation index, click the arrow icon in the selection field below the logo on the top left:
 
-> **Important:** The **Installation and Operations guides** for the Cumulocity IoT platform are not publicly available. They are provided on the [Software AG Empower Portal](https://documentation.softwareag.com/). Search for "Cumulocity IoT Platform" as product. To view the Installation and Operations guides you need to click the PDF icon for the version of your choice.
+![Select guide](/images/about/about-docs-selection.png)
 
-![Documentation on Empower](/images/about/about-empower.png)
+See [Content overview](/about-doc/content-overview/) for a quick overview on the content of each guide.
 
+>**Info:** The **Installation and Operations guides** for the Cumulocity IoT platform are not publicly available. They are provided on the [Software AG Empower Portal](https://documentation.softwareag.com/), see [Additional ressources](/about-doc/online-information/).
 

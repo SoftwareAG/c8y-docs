@@ -108,7 +108,7 @@ Your manifest file should look similar to this:
 ### Creating a managed object
 
 An alarm must be associated with a source and it requires an ID.
-Hence, you need to [create a managed object](https://cumulocity.com/reference/inventory/#managed-object-collection) to be your source and use its ID in your microservice application.
+Hence, you need to [create a managed object](/reference/inventory/#managed-object-collection) to be your source and use its ID in your microservice application.
 The same managed object will track the locations when the microservice gets accessed on a particular endpoint.
 
 First, get your current location (latitude, longitude) using a free service, e.g. [My Current Location](https://mycurrentlocation.net).
@@ -437,7 +437,7 @@ You can use the `max` parameter to specify a higher number.
 In the Device Management application, navigate to **Devices** > **All devices** and locate your microservice tracker.
 Under **Tracking** you will see a map with the tracked locations.
 You can also develop your own web application and customize a map widget.
-Refer to the [Web SDK for Angular](https://cumulocity.com/web/angular/#apps) for more details.
+Refer to [Application library](/web/libraries/#application) in the *Web SDK guide*.
 
 ![Microservice tracking](/images/microservices-sdk/ms-tracking-map.png)
 

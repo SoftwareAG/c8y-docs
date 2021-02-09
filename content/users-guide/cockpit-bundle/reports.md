@@ -66,7 +66,9 @@ In the **Export** page you will find a list displaying all exports with their na
 
 In the **Filter** section, you can select filters to request object- or time-specific data.
 
-To filter for a particular object, enter a name or property value into the search field and click the search icon. All matching devices or groups will be displayed below the **Value** field. Click a device to select it (highlighted in green).
+To filter for a particular object, enter a name or property value into the search field and click the search icon. All matching devices or groups will be displayed below the **Value** field. Click an object to select it (highlighted in green).
+
+>**Info:** If you select a group, the data of direct child devices will be included. However the export will not contain the data of devices in subgroups (indirect children).
 
 The **Time range** filter can filter data for a specific time range. Select a time range from the dropdown field. This may be one of "Last year", "Last month", "Last week" or select "Custom" and enter a custom from/to range in the additional fields.
 
@@ -83,7 +85,7 @@ Apart from object- and time-specific filtering you may filter data for specific 
 
 Use the toggle to enable/disable a field.
 
-![Filter fields](/images/benutzerhandbuch/cockpit/cockpit-export-fields.png)
+![Filter fields](/images/users-guide/cockpit/cockpit-export-fields.png)
 
 >**Info:** The time range filter only applies to alarms, events and measurements but not to managed objects. If selected, managed objects will appear in the export, regardless of any specified time range.
 
@@ -108,27 +110,23 @@ In case of measurements enabled, you can also choose **Add from data point**. Fo
 
 #### <a name="schedule-export"></a>To schedule an export
 
-To schedule the export to a CSV or XLSX file to any point in time, click the menu icon at the end of the row and then click **Schedule export**.
+To schedule an export to a CSV or XLSX file to any point in time, open the respective export and click **Add schedule**.
 
-![Export context menu](/images/users-guide/cockpit/cockpit-export-menu.png)
+![Export details](/images/users-guide/cockpit/cockpit-export-add-schedule.png)
 
-In the resulting dialog box you can customize the Smart Rule "On timer send export via email" according to your needs.
+In the resulting dialog box provide the following information to receive the scheduled export via email.
 
-![Schedule export](/images/users-guide/cockpit/cockpit-export-on-timer-rule.png)
+![Schedule export](/images/users-guide/cockpit/cockpit-export-new-schedule.png)
 
-**1 - Rule name**
+**1 - Frequency**
 
-The rule name is pre-filled, providing the name of the export, but may be modified.
-
-**2 - Data & frequency**
-
-Define the frequency for sending the export, i.e. every hour, day, week, month or year. Depending on the frequency selected, provide additional timing information. For example, if you have selected "every month", provide the day of month, hour and minute.
+Select the frequency for sending the export from the dropdown list, i.e. every hour, day, week, month or year. Depending on the frequency selected, provide additional timing information. For example, if you have selected "every month", provide the day of month, hour and minute.
 
 >**Info:** Schedule intervals need to be provided in Coordinated Universal Time (UTC).
 
-**3 - Send email:**
+**2 - Send email:**
 
-Complete the email information. 
+Complete the email information.
 
 In the **Send to** field, provide the email address of the recipient. This field is mandatory. Optionally, you can provide email addresses for recipients of copies (CC) or blind copies (BCC). Use comma as separator to enter multiple recipients.
 
@@ -140,12 +138,23 @@ Enter the actual email message. Available placeholders are {host}, {binaryId}. T
 
 >**Info:** Note that the corresponding emails are send with "text/html" as content type.
 
-Click **Create** to create the customized Smart Rule "On timer send export via email".
+Click **Create** to create the new export schedule.
 
-The Smart Rule will be added to the export details.
+The export schedule will be added to the export details.
 
-![Smart Rule](/images/users-guide/cockpit/cockpit-export-schedule.png)
+![Scheduled exports list](/images/users-guide/cockpit/cockpit-export-schedule-list.png)
 
+##### Migration of scheduled exports
+
+With version 10.6.2, a new report agent has been implemented to allow scheduled reports with [Apama Streaming Analytics](/apama/overview-analytics/). The export schedules functionality based on smart rules has been deprecated.
+
+On opening a report, all scheduled exports based on smart rules are automatically migrated to the new report agent, while displaying a message informing the user about the process.
+
+![Export schedule migration message2](/images/users-guide/cockpit/cockpit-export-migrate2.png)
+
+>**Important**: You need to open each report manually, to migrate the export schedules included in the report.
+
+> **Info:** To use the new export schedule feature and for the migration to work, the report-agent microservice needs to be subscribed. New tenants will be subscribed to it automatically. Existing tenants should make sure that they are subscribed to it.
 
 #### To export data
 

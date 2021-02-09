@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 Bulk Operation API allows to schedule an operation on a group of devices to be executed at a specified time. It is required to specify the delay between every operation is created.
-When Bulk Operation is created, it has ACTIVE status. When all operations are created, Bulk Operation has state COMPLETED. It is also possible to cancel already created Bulk Operation by deleting it.
+When Bulk Operation is created, it has ACTIVE status. When all operations are created, Bulk Operation has a status of COMPLETED. It is also possible to cancel already created Bulk Operation by deleting it.
 
 When you create a Bulk Operation, you can run it in two modes:
 - when groupId is passed, it works standard way, i.e. takes devices from group and schedules operations on them
@@ -90,7 +90,14 @@ colgroup>
 <td align="left">status</td>
 <td align="left">string</td>
 <td align="left">1</td>
-<td align="left">Status of Bulk Operation. Possible values: ACTIVE, COMPLETED, DELETED</td>
+<td align="left">Status of the bulk operation, in context of the execution of all its single operations. Possible values: ACTIVE, IN_PROGRESS, COMPLETED, DELETED</td>
+<td>No</td>
+</tr>
+<tr>
+<td align="left">generalStatus</td>
+<td align="left">string</td>
+<td align="left">1</td>
+<td align="left">The general status of the bulk operation. The general status is visible for end users and they can filter and evaluate bulk operations by this status. Possible values: SCHEDULED, EXECUTING, EXECUTING_WITH_ERRORS, SUCCESSFUL, FAILED, CANCELED</td>
 <td>No</td>
 </tr>
 <tr>
@@ -168,6 +175,7 @@ Example response:
       "self" : "<<This BulkOperation URL>>",
       "groupId" : "124301",
       "status" : "ACTIVE",
+      "generalStatus": "EXECUTING",
       "startDate" : "2011-09-06T12:03:27",
       "operationPrototype":{
         "description": "Restart device",

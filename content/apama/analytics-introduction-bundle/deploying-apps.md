@@ -14,7 +14,7 @@ You can deploy the following to Cumulocity IoT:
 
 ### <a name="single-mon-file"></a>Deploying EPL apps as single \*.mon files with Apama EPL Apps
 
->**Info**: To be able to deploy single \*.mon files with Apama EPL Apps, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Apama EPL Apps web application provided in Cumulocity IoT. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, Apama EPL Apps is not available in the application switcher. If you want to have this capability, contact Software AG support.
+>**Info**: To be able to deploy single \*.mon files with Apama EPL Apps, your tenant needs to be subscribed to both the Apama-ctrl microservice and the Apama EPL Apps web application provided in Cumulocity IoT. If you have the Apama Starter microservice or the Apama Smart Rules-only microservice, Apama EPL Apps is not available in the application switcher. If you want to have this capability, contact [Software AG support](/about-doc/contacting-support).
 
 When an Apama EPL app (that is, a \*.mon file) is activated in Cumulocity IoT, the \*.mon file is assigned a unique package name. This prevents conflicts when multiple modules are activated. For this reason, you should not specify a `package` statement in a \*.mon file. If you need to share events between different parts of your application, then write the event definitions and monitors that use it in a single \*.mon file.
 
@@ -60,6 +60,8 @@ The following permissions are required by the microservice in order to start up 
 - ROLE_OPTION_MANAGEMENT_READ
 - ROLE_BULK_OPERATION_READ
 - ROLE_SMS_ADMIN
+
+> **Info:** The above is the minimum list of permissions that a custom Apama microservice needs. If you are developing a custom microservice, you may add more permissions to the microservice manifest. 
 
 #### To deploy an Apama application as a microservice
 

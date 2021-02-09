@@ -101,7 +101,7 @@ Example Response :
         "source": "source",
         "type": "*",
         "editable":"true"
-}
+    }
 
 
 ### PUT - Update an existing retentionRule.

@@ -92,7 +92,7 @@ Several tabs are available for each object, dependent of the object type:
 
 If dashboards have been created for an object, they will also be added as a tab. See [Working with Dashboards](#dashboards) for details.
 
-Moreover, additional tabs may be displayed here in case the application has been extended with plugins. See [Web SDK for plugins](/web/introduction) for details.
+Moreover, additional tabs may be displayed here in case the application has been extended with plugins. See [Web SDK for plugins](/web-sdk-for-plugins/overview/) for details.
 
 ### <a name="creating-groups"></a>To create a group
 

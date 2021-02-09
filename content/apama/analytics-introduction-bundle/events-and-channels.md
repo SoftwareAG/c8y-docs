@@ -28,7 +28,7 @@ By default, a listener will fire once; to make it repeat for all events, use the
 
 ### Filters
 
-Adding filters can be done by specifying one or more fields between the parentheses for a listener. Only top-level fields can be filtered for. Use `if` statements for more complex filtering, or for filtering on sub-properties of events (for example, in dictionaries).
+Adding filters can be done by specifying one or more fields between the parentheses for a listener. Only top-level fields can be filtered for. Use `if` statements for more complex filtering, or for filtering on subproperties of events (for example, in dictionaries).
 
 ### Standard event types and channels
 
@@ -65,5 +65,3 @@ See also [Measurement fragments](/apama/advanced/#measurement-fragments).
 ### <a name="notifications"></a>Distinguishing between create and update notifications 
 
 You can use the `NOTIFICATION_CREATED` and `NOTIFICATION_UPDATED` values of the `PARAM_NOTIFICATION` constant to distinguish whether a managed object, operation, alarm or event has been created or updated. 
-
-See [Receiving update notifications](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-7/apama10-7/apama-webhelp/index.html#page/apama-webhelp%2Fco-ConApaAppToExtCom_cumulocity_receiving_update_notifications.html) in the Apama documentation for detailed information, including examples for the different types of objects.

@@ -14,37 +14,53 @@ To begin the model training with transfer learning, you need to create a new neu
 
 The following steps illustrate how to train a deep neural network model using transfer learning.
 
-1. Click **Add New Resource** to create a new architecture file.
+#### Creating a new architecture file
+
+1. To create a new architecture file, click the add icon and select **Add New Resource**.
 
     ![New NN Selector](/images/zementis/mlw-app-nn-tl-selectnew.png)
 
-    In the **Add New Resource** dialog, select "NN Designer" as **Resource Type** and "MobileNet" as **Architecture**. Provide a value for **Resource Name** and click **Submit**.
+2. In the **Add New Resource** dialog, select "NN Designer" as **Resource Type** and "MobileNet" as **Architecture**, and enter a **Resource Name**.
 
-    ![New NN Name](/images/zementis/mlw-app-nn-tl-name.png)
+	![New NN Name](/images/zementis/mlw-app-nn-tl-name.png)
+	
+3. Click **Submit**.
 
-    This will create a new architecture file with the extension **.architecture** in the **NN Designer** folder of the project.
+This will create a new architecture file with the extension **.architecture** in the **NN Designer** folder of the project.
 
-2. Select the architecture file and click **Edit** to edit the architecture.
+#### Editing the architecture file
 
-    <!-- ![New NN Selector](/images/zementis/mlw-app-nn-tl-edit.png) -->
+Select the architecture file in the **NN Designer** folder and click **Edit** to edit the architecture.
 
-    This will open the MobileNet architecture in the editor where you can add new layers or remove existing layers.
+<!-- ![New NN Selector](/images/zementis/mlw-app-nn-tl-edit.png) -->
 
-    ![New NN Selector](/images/zementis/mlw-app-nn-tl-originalarch.png)
+This will open the MobileNet architecture in the editor where you can add new layers or remove existing layers.
 
-    With the pre-trained MobileNet model represented by the architecture shown above, you can initiate transfer learning. To get started, you have to remove the last 2 layers: **Reshape** and **Activation**. The network will appear as follows:
+![New NN Selector](/images/zementis/mlw-app-nn-tl-originalarch.png)
 
-    ![NN Layers](/images/zementis/mlw-app-nn-tl-removed-layers.png)
+With the pre-trained MobileNet model represented by the architecture shown above, you can initiate transfer learning. To get started, you have to remove the last 2 layers: **Reshape** and **Activation**. The network will appear as follows:
 
-    Next, drag and drop **Flatten** and **Dense** layers, set the properties and connect them to the network as shown below. Click the save icon at the right of the top menu bar to save the architecture.
+![NN Layers](/images/zementis/mlw-app-nn-tl-removed-layers.png)
 
-    ![NN Layers](/images/zementis/mlw-app-nn-tl-added-layers.png)
+Next, drag and drop **Flatten** and **Dense** layers, set the properties and connect them to the network as shown below. 
 
-3. Click **Train** to train a model on updated architecture. Provide the appropriate data set by selecting a value under **Data**. Specify the **Problem Type** which can either be "classification" or "regression". If the data needs pre-processing, specify the **Pre Processing Script**. The **Recurrence** parameter defines whether the training task needs to be executed one time or periodically. For this example, the training task will be one time. Provide values for **Epoch**, **Learning Rate**, **Loss**, **Metrics**, **Optimizer**. Other parameters can be left as default. Once the training parameters are updated click the submit icon which will trigger the training process.
+Click the save icon at the right of the top menu bar to save the architecture.
+
+![NN Layers](/images/zementis/mlw-app-nn-tl-added-layers.png)
+
+#### Specifying the training process
+
+1. Click the cogwheel icon to train a model on the updated architecture.  
+2. In the **Training Parameters** section at the right, select the appropriate data under **Data**. 
+3. Specify the **Problem Type** which can either be "classification" or "regression". 
+4. If the data needs pre-processing, specify the **Pre Processing Script**. 
+5. The **Recurrence** parameter defines whether the training task needs to be executed one time or periodically. For this example, the training task will be one time. 
+6. Provide values for **Epoch**, **Learning Rate**, **Loss**, **Metrics**, **Optimizer**. Other parameters can be left as default. 
+7. Once the training parameters are updated click the submit icon which will trigger the training process.
 
 ![NN training parameter](/images/zementis/mlw-app-nn-tl-train.png)
 
-You can view the neural network training progress in the **Tasks** folder of Machine Learning Workbench (MLW).
+Click the corresponding task name in the **Tasks** folder, to display the status of the workflow execution in the **Task Info** section at the right.
 
 ![NN training](/images/zementis/mlw-app-nn-tl-complete.png)
 
@@ -52,30 +68,34 @@ Once the task is COMPLETED, the trained model will be saved in the **Model** fol
 
 ![NN output](/images/zementis/mlw-app-nn-tl-onnx.png)
 
-### Custom Architecture
+### Custom architecture
 
 To begin the model training with a custom architecture, you need to create a new neural network architecture file from scratch.
 
-The following steps illustrate how to train a deep neural network model using custom architecture
+The following steps illustrate how to train a deep neural network model using custom architecture.
 
-1. Add a new resource
+#### Creating a new architecture file
 
-    Click **Add New Resource** to create a new architecture file.
+1. To create a new architecture file, click the add icon and select **Add New Resource**.
 
     ![New NN Selector](/images/zementis/mlw-app-nn-tl-selectnew.png)
 
-    In the **Add New Resource** dialog, select "NN Designer" as **Resource Type** and "None" as **Architecture**. Provide a value for **Resource Name** and click **Submit**.
+2. In the **Add New Resource** dialog, select "NN Designer" as **Resource Type** and "None" as **Architecture**, and enter a **Resource Name**.
+
+3.  Click **Submit**.
 
     ![New NN Name](/images/zementis/mlw-app-nn-createnew.png)
 
-    This will create a new architecture file with the extension **.architecture** in the **NN Designer** folder of the project.
+This will create a new architecture file with the extension **.architecture** in the **NN Designer** folder of the project.
 
-2. Select the architecture file and click **Edit** to edit the architecture.
+#### Editing the architecture file
 
-    ![New NN Selector](/images/zementis/mlw-app-nn-blank.png)
+Select the architecture file and click **Edit** to edit the architecture.
 
-    This will open a blank architecture in the editor where you can add new layers to build a custom neural network architecture.
+![New NN Selector](/images/zementis/mlw-app-nn-blank.png)
 
-    ![New NN Selector](/images/zementis/mlw-app-nn-customarch.png)
+This will open a blank architecture in the editor where you can add new layers to build a custom neural network architecture.
+
+![New NN Selector](/images/zementis/mlw-app-nn-customarch.png)
 
 The rest of the steps to save the custom architecture and train the neural network model remains the same as in the case of transfer learning.

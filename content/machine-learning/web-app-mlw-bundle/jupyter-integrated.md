@@ -6,19 +6,25 @@ weight: 50
 
 Machine Learning Workbench (MLW) provides an integrated Jupyter Notebook environment that enables you to write your code, perform exploratory data analysis, visualize your data, and build your models. The notebook environment is an intuitive in-browser editor that can be used to combine Markdown text and executable Python source code.
 
-#### Create a new notebook
+### Creating a new notebook
 
-To create a new notebook, click **Add New Resource**.
+1. To create a new notebook, click the add icon and select **Add New Resource**.
 
-![Add new resource](/images/zementis/mlw-app-resource-add-new.png)
+	![Add new resource](/images/zementis/mlw-app-resource-add-new.png)
+ 
+2. In the **Add New Resource** dialog, select "Notebook" as **Resource Type** and provide the **Resource Name** which identifies the notebook. 
+ 
+ 	![Notebook Selector](/images/zementis/mlw-app-resource-add-notebook.png)
+ 
+3. Once done, click **Submit**. 
 
-In the **Add New Resource** panel, select "Notebook" as **Resource Type** and provide the **Resource Name** which identifies the notebook. Once done, click **Submit**. This will create a new notebook file with the extension **.ipynb** in the **Code** section of the project.
+This will create a new notebook file with the extension **.ipynb** in the **Code** folder of the project.
 
-![Notebook Selector](/images/zementis/mlw-app-resource-add-notebook.png)
+### Editing and executing a notebook
 
-#### Notebook editing and execution
+To edit a notebook, select the notebook file in the **Code** folder and click the edit icon at the top right. 
 
-To edit a notebook, select the notebook file from the **Code** section and click **Edit**. This will open the notebook in an editor which the user can use to write and execute Python and Markdown code interactively.
+This will open the notebook in an editor which you can use to write and execute Python and Markdown code interactively.
 
 ![Notebook editor](/images/zementis/mlw-app-nb-edit.png)
 

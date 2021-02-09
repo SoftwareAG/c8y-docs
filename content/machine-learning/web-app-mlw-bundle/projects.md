@@ -12,13 +12,13 @@ Projects functionality includes:
 * [Adding resources to the project - drag and drop, upload single or multiple files](#upload-resources)
 * [Committing a project - version management](#commit-project-version)
 
-### To create a new project
+### Creating a new project
 
 Click **+Add Project** at the right of the top menu bar, enter a project name and description, and click **Add Project**. This will create a new project with the given name. The new project will not contain any resources.
 
 ![projects manager](/images/zementis/mlw-app-add-project.png)
 
-### To upload resources
+### Uploading resources
 
 <!-- ![Resources](/images/zementis/mlw-app-project-home.png) -->
 
@@ -41,7 +41,7 @@ Once the files are uploaded, they will be placed under the respective categories
 
 ![Upload resources](/images/zementis/mlw-app-upload-complete.png)
 
-### To commit a project version
+### Commiting a project version
 
 To commit a project with its resources for versioning, click the plus icon at the top right and click **Commit Project**.
 
@@ -51,7 +51,7 @@ You can select all or a subset of resource files that need to be committed to a 
 
 ![Commit version](/images/zementis/mlw-app-project-commit-select.png)
 
-You can see the status of the commit process under the respective task name in the **Tasks** folder, which in this case will be the project name.
+Click the respective task name in the **Tasks** folder, which in this case will be the project name, to display the status of the commit process in the **Task Info** section at the right.
 
 ![Commit version](/images/zementis/mlw-app-project-commited.png)
 

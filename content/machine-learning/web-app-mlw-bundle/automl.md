@@ -10,23 +10,29 @@ Machine Learning Workbench (MLW) provides an Automated Machine Learning (AutoML)
 
 The following steps illustrate how to train a machine learning model using AutoML.
 
-1. Upload a tabular dataset to train a machine learning model on that data.
+1. Click the upload icon to upload a tabular dataset to train a machine learning model on that data.
 
     ![pojects manager](/images/zementis/mlw-app-resource-adm.png)
 
-2. Select the data resource and click the add icon  at the right of the top menu bar to proceed with training the AutoML model on that data.
+2. Select the data resource in the **Data** folder, and click the add icon at the right of the top menu bar to proceed with training the AutoML model on that data.
 
     ![Resources](/images/zementis/mlw-app-automl-select.png)
 
-3. Select the **Problem Type** (**Regression** or **Classification**) and select the **Target Variable** at the right. Next, select the imputation methods and data transformation steps for the respective columns. Once done, click **Build** to proceed.
+3. Select the **Problem Type** (**Regression** or **Classification**) and select the **Target Variable** at the right. Next, select the imputation methods and data transformation steps for the respective columns. 
+
+4. Once done, click **Build** to proceed.
 
     ![Pre-processing steps](/images/zementis/mlw-app-automl-pre.png)
 
-4. Select the training parameters which include model evaluation criteria (**Scoring**), training iterations (**Generation**) and population size for each generation (**Population Size**). Once done, click the submit icon. This will create a new task in the **Tasks** folder.
+5. In the **Training Parameter** section at the right, select the training parameters which include model evaluation criteria (**Scoring**), training iterations (**Generation**) and population size for each generation (**Population Size**).
 
-    ![Pre-processing steps](/images/zementis/mlw-app-automl-trainparam.png)
+	![Pre-processing steps](/images/zementis/mlw-app-automl-trainparam.png)
 
-You can view the model training progress in the **Tasks** folder of Machine Learning Workbench (MLW).
+6. Once done, click the submit icon. 
+
+This will create a new task in the **Tasks** folder.
+
+Click the corresponding task name in the **Tasks** folder, to display the status of the workflow execution in the **Task Info** section at the right.
 
 ![Pre-processing steps](/images/zementis/mlw-app-automl-start.png)
 
@@ -44,7 +50,9 @@ After the training is complete, the best model selected by the evaluation criter
 
 ### Model deployment and predictions
 
-Once the model is available in the **Model** folder, it can be deployed on Machine Learning Engine (MLE) for predictions. Click the cloud icon ("Deploy") at the right of the top menu bar to deploy the selected model on Machine Learning Engine (MLE).
+Once the model is available in the **Model** folder, it can be deployed on Machine Learning Engine (MLE) for predictions. 
+
+Click the cloud icon ("Deploy") at the right of the top menu bar to deploy the selected model on Machine Learning Engine (MLE).
 
 ![Select Deploy To MLE](/images/zementis/mlw-app-automl-deploy-2-1.png)
 

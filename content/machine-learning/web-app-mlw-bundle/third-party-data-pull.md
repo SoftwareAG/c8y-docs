@@ -10,25 +10,21 @@ Machine Learning Workbench (MLW) provides connectors to the various data sources
 
 The following steps illustrate how to ingest and transform data produced by devices connected to Cumulocity IoT.
 
-1. Click **Add Resource** and then click **Import from Cumulocity**.
+1. Click the add icon and select **Import from Cumulocity**.
 
     ![Add New Resource](/images/zementis/mlw-app-resource-c8y.png)
-
 
 2. Select the device for which you want to pull the data and click the download icon under **Fetch Data**.
 
     ![Cumulocity Data pull](/images/zementis/mlw-app-datapull-c8y.png)
 
-
 3. As part of data pull, provide the parameters such as data file name, data interval, data aggregation, and sensor name for data extraction. Once these parameters are provided, click the submit icon.
 
     ![Cumulocity parameters](/images/zementis/mlw-app-datapull-param.png)
 
-
-You can view the data pull progress in the **Tasks** folder of Machine Learning Workbench (MLW).
+Click the corresponding task name in the **Tasks** folder, to display the status of the workflow execution in the **Task Info** section at the right.
 
 ![Cumulocity Datapull Tasks](/images/zementis/mlw-app-datapull-tasks.png)
-
 
 Once the task has reached the status COMPLETED, the data is stored in the **Data** folder of Machine Learning Workbench (MLW).
 
@@ -39,25 +35,21 @@ Once the task has reached the status COMPLETED, the data is stored in the **Data
 
 The following steps illustrate how to ingest and transform data offloaded by Cumulocity IoT DataHub.
 
-1. Click **Add Resource**, and then click **Import from DataHub**.
+1. Click the add icon and select **Import from DataHub**.
 
     ![Add New Datahub Resource](/images/zementis/mlw-app-resource-dh.png)
-
 
 2. Input the query, and click the submit icon.
 
     ![DataHub Query](/images/zementis/mlw-app-dh-query.png)
 
-
 3. Provide the resource name with which you want to save the pulled data, and click **Submit**.
 
     ![DataHub name](/images/zementis/mlw-app-dh-name.png)
 
-
-You can view the data pull progress in the **Tasks** folder of Machine Learning Workbench (MLW).
+Click the corresponding task name in the **Tasks** folder, to display the status of the workflow execution in the **Task Info** section at the right.
 
 ![Datahub result](/images/zementis/mlw-app-dh-result.png)
-
 
 Once the task has reached the status COMPLETED, the data will be stored in the **Data** folder of Machine Learning Workbench (MLW).
 

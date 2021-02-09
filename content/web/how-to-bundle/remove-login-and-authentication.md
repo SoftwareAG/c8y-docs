@@ -1,7 +1,7 @@
 ---
 title: Remove login page and authentication
 layout: redirect
-weight: 0
+weight: 50
 ---
 
 **Version:** 10.6.0.24 | **Packages:** @c8y/cli, @c8y/apps and @c8y/ngx-components

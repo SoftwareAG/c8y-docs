@@ -45,12 +45,12 @@ Since there will be no widgets on the dashboard yet, you will see an **Add Widge
 
 1. Click the **Add widget** button (in case of an empty dashboard) or click **Add widget** in the top menu bar.
 
-2. In the **Add widget** dialog, select a widget type. 
+2. In the **Add widget** dialog, select a widget type.
 
 	<img src="/images/users-guide/cockpit/cockpit-widget-add.png" name="Add widget">
 
 3. Next, configure the widget. According to the widget type selected, various parameters may be specified under **Configuration**. For details on each widget type refer to [Widgets collection](#widgets).
- 
+
 4. In the **Appearence** tab, you can customize the content and header style for the widget individually, in the same way as specifying the layout of the [dashboard](#creating-dashboards).
 
 	<img src="/images/users-guide/cockpit/cockpit-widget-appearance.png" name="Add widget">
@@ -71,7 +71,7 @@ To edit the properties of a widget on a dashboard, click the cogwheel icon at th
 
 To delete a widget from a dashboard, click the cogwheel icon at the top right corner of the widget and from the context menu select **Remove**.
 
-Widgets can only be modified, if the dashboard is unlocked. To lock/unlock a dashboard, use the slider with the lock icon on the top menu bar.
+Widgets can only be modified, if the dashboard is unlocked. To lock/unlock a dashboard, use the toggle with the lock icon in the top menu bar.
 
 <img src="/images/users-guide/cockpit/cockpit-dashboard-lock.png" name="Lock dashboard"/>
 
@@ -105,7 +105,7 @@ The dashboard editor will open up. For details on the fields, refer to [To creat
 ### To copy a dashboard from one object to another
 
 1. Click **More...** in the top menu bar and from the context menu select **Copy dashboard**.
- 
+
 	<img src="/images/users-guide/cockpit/cockpit-dashboard-copy.png" name="Copy dashboard"/>
 
 2. Next, navigate to the object you want to copy the dashboard to and from the context menu select **Paste dashboard [NAME]** to insert the dashboard.

@@ -77,7 +77,7 @@ To turn realtime updating on or off, click **Realtime** in the top menu bar. A g
 
 **Data point visibility**
 
-For each datapoint, its visibility can be switched on or off by using the slider left from the data point name.
+For each datapoint, its visibility can be switched on or off by using the toggle left from the data point name.
 
 ### <a name="add-data-points"></a>Adding data points
 
@@ -181,7 +181,7 @@ Expand an event, to modify its properties.
 
 Click the menu icon and in the context menu select **Remove**, to remove the entry from the list.
 
-As with data points, you can turn the visibility of an alarm/ event in the data explorer on and off by moving the slider.
+As with data points, you can turn the visibility of an alarm/ event in the data explorer on and off by using the toggle.
 
 
 ### <a name="create-widget"></a>Creating widgets from the data explorer

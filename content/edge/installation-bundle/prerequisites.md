@@ -8,11 +8,10 @@ layout: redirect
 
 |Item|Details|
 |:---|:---|
-|**Hypervisor**|- VMWare ESXi 6.5 and 6.7 <br> - VMware Workstation Player 15.x <br>- Hyper-V on Microsoft Windows 10 Pro and Windows 10 Enterprise, version 1809 <br> - Virtualbox version 5.2.8, to be downloaded from [https://www.virtualbox.org](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2)<br>**Info:** Support for VirtualBox is deprecated and it is not recommended to be used in a production environment. The Virtualbox version 5.2.8 can be used only for testing.
-|**Edge VM image**|To be downloaded from the [Software AG Empower portal](https://empower.softwareag.com), based on the target hypervisor. <br> For VMware (ESXi and Workstation Player), download all the 4 files of VMware (ovf, mf and two disks vmdk files). <br> For Hyper-V, download the ZIP file. <br> For VirtualBox, download the OVA file.|
+|**Hypervisor**|- VMWare ESXi 6.5 and 6.7 <br> - VMware Workstation Player 15.x <br>- Hyper-V on Microsoft Windows 10 Enterprise, version 1809. The supported VM configuration version is 9.0.
+|**Edge VM image**|To be downloaded from the [Software AG Empower portal](https://empower.softwareag.com), based on the target hypervisor. <br> For VMware (ESXi and Workstation Player), download all the 4 files of VMware (ovf, mf and two disks vmdk files). <br> For Hyper-V, download the ZIP file.|
 |**Cumulocity IoT Edge license file**|To request the license file for Cumulocity IoT Edge, please contact the logistics team for your region:<br> - North and South America: LogisSrvus@softwareagusa.com <br>- All Other Regions: LogisticsServiceCenterGER@softwareag.com <br>In the email, you must include <br> - your company name, under which the license has been bought <br> - the domain name (for example, myedge.domain.com), where Cumulocity IoT Edge will be reachable<br>For more information, see [Domain name validation for Edge license key generation](#domain-name-validation-for-edge-license-key-generation).|
 |**SSL key and SSL certificate**|Use your internal or an external CA (Certification Authority) to create these.<br>**Info:** Ensure that the .crt and .key files are in PEM format and the .key file is not encrypted.|
-|**Apama license**|The Apama license key is provided as part of your purchase. To request the license keys for your Apama purchase, please contact the logistics team for your region:<br> - North and South America: LogisSrvus@softwareagusa.com <br> - All Other Regions: LogisticsServiceCenterGER@softwareag.com<br>**The Apama license is optional and NOT required for an Cumulocity IoT Edge installation.**<br>|
 |**DNS entry**|The DNS (Domain Name System) is used to resolve human readable host names like www.cumulocity.com to machine readable IP addresses like 192.198.1.10. <br> If you want to connect to Edge VM within your LAN, the DNS entry has to be added for the domain name (URL under which Cumulocity IoT Edge can be reached) with the IP address of the host.|
 |**Edge cloud remote access**|To connect and manage one (or multiple) Edge devices to your Cumulocity IoT cloud tenant, you need an active Cumulocity IoT standard tenant with the Data Broker and Cloud Remote Access extensions.<br>**Info:** The Edge cloud remote access is an optional feature in Cumulocity IoT Edge.|
 
@@ -92,10 +91,10 @@ The virtual machine has the following minimum hardware requirements:
 
 |Hardware|Configuration|
 |:---|:---|
-|Disk space|100 GB
+|Disk space|115 GB
 |CPU|Intel x86
-|Number of CPU cores|2 - without microservice <br>4 - with microservice
-|RAM|6 GB - without microservice <br>8 GB - with microservice
+|Number of CPU cores|2 - without microservice <br>4 - with microservice<br>4 - to update Docker CIDR
+|RAM|6 GB - without microservice <br>8 GB - with microservice<br>8 GB - to update Docker CIDR
 |Network Interface Controller (NIC)|1
 
 These are the minimum system requirements to enable the microservice hosting feature. If the microservice requires additional system resources, you must configure the system requirements accordingly in addition to minimum system requirements. For example, if the microservice requires 2 CPU cores and 4 GB of RAM, then the VM must have 6 CPU cores (4 cores for VM + 2 cores for microservice) and 12 GB of RAM (8 GB for VM + 4 GB for microservice).

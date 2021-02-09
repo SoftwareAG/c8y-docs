@@ -489,3 +489,21 @@ Following are the available keys used in the configuration file:
 |{component-name}.log.path|Absolute log path of the components under "component.for.log.backup" which do not use /var/log as the logging directory
 |containers.to.monitor|Containers for which log backup is required. The container names are separated by a comma. These log files are retrieved using `docker logs`.
 |services.to.monitor|Services for which log backup is required. The service names are separated by a comma. These log files are retrieved using `journalctl`.
+
+### Docker bridge network CIDR
+
+The Docker bridge network fails in the following scenarios:
+
+1. Docker bridge network unavailable on boot time.
+	
+	Description: The default Docker bridge network range is not available in the network. If the network range is already utilized, the Docker bridge network does not start properly and  the Kubernetes cluster startup fails.
+
+2. Invalid Docker bridge network provided during IP change.
+
+	Description: You tried to change the Docker bridge network of the properly running Edge VM, but the range is not available in the network.
+
+To troubleshoot these scenarios:
+
+1. Configure the Edge VM's network and gateway to a different network range using the post-installation script. Configure the Edge VM to a different network disconnects the Edge VM from the existing network.
+2. Configure Docker CIDR to a new non-conflicting value using the post-installation script.
+3. Configure the Edge VM's network and gateway back to the network range using the post-installation script.

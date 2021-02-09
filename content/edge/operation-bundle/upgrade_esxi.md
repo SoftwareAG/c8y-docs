@@ -8,7 +8,7 @@ layout: redirect
 
 To upgrade the Edge VM on VMware ESXi:
 
-1. Power off the Edge VM from ESXi console.
+1. Power off the Edge VM from the ESXi console.
 
 2. Select the Edge VM and click **Actions** > **Export**.
 <img src="/images/edge/edge-esxi-update-export.png" name="Remove VM" style="width:85%;"/>

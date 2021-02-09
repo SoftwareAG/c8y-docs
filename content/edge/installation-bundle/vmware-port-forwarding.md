@@ -1,0 +1,37 @@
+---
+weight: 75
+title: Port forwarding on a VMware platform
+layout: redirect
+---
+
+To perform port forwarding on a VMware platform, follow the steps below.
+
+>**Important:** The IP addresses used in the screenshots are sample IP addresses, for the purpose of example only. The IP addresses may vary in your set up.
+
+1. Run the *vmnetcfg.exe* utility as an administrator.
+<img src="/images/edge/edge-vmware-port-forwarding-01.png" name="Port forwarding on VMware"/>
+
+2. Select the **NAT** adapter and click **NAT Settings**.
+<img src="/images/edge/edge-vmware-port-forwarding-02.png" name="NAT Settings"/>
+	
+3. Click **Add** to add the port forwarding rules. Enter the port forwarding rules for HTTP, HTTPS, MQTT and MQTT over SSL protocols as described in the table below:
+
+
+	>**Info:** Ensure that the **Virtual machine IP address** is the same as the IP address that you have configured for the Edge VM.
+
+	|Host Port|Type|VM IP Address|VM Port|Description
+	|:---|:---|:---|:---|:---
+	|80|TCP|192.168.117.10|80|HTTP
+	|443|TCP|192.168.117.10|443|HTTPS
+	|1883|TCP|192.168.117.10|1883|MQTT
+	|8883|TCP|192.168.117.10|8883|MQTT over SSL
+
+	Click **OK** in the **Map Incoming Port** window after entering the port forwarding rules for each port.
+
+	<img src="/images/edge/edge-vmware-port-forwarding-03.png" name="NAT Settings"/>
+
+4. Click **OK** in the **NAT Settings** window.
+
+5. Click **Apply** > **OK**.
+
+You can now access Cumulocity IoT Edge using the IP address of the host machine.

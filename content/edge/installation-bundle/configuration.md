@@ -6,7 +6,7 @@ layout: redirect
 
 ### Preparation
 
-Copy the Edge license, SSL key, SSL certificate and Apama license (if obtained) into the Edge VM. Use WINSCP, SCP, FTP or any other file transfer tool to transfer the files from your host OS to Edge VM (Linux OS).
+Copy the Edge license, SSL key, and SSL certificate into the Edge VM. Use WINSCP, SCP, FTP or any other file transfer tool to transfer the files from your host OS to Edge VM (Linux OS).
 
 You can copy the files to the Edge VM folder */home/admin*. 
 
@@ -14,8 +14,7 @@ The files have the following extensions:
 
 * Cumulocity IoT Edge license file: ".licence"
 * SSL Key file: ".key"
-* SSL Certificate: ".crt" or ".cert" 
-* Apama license file: “.xml”
+* SSL Certificate: ".crt" or ".cert"
 
 >**Important:** Do not rename the license file received from Cumulocity IoT support. Renaming the license file causes failure of the post-installation process.
 
@@ -53,10 +52,6 @@ Make sure that the file path is valid and the file exists in the local machine.
 
 `c8y.license` : Provide the absolute path of the license file. The file extension must be “.licence”. For example, /home/admin/myown.iot.com.licence.
 Make sure that the file path is valid and the file exists in the local machine.
-
-`apama.license` : Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml". For example, */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional license file, in case you do not want to use it you should  leave this field empty.
-If the file path is specfied, make sure that the file path is valid and the file exists in the local machine.
-
 
 The following parameters are required only if you want to update the network parameters in the EDGE VM. You may skip these parameters if network is already configured or it is not applicable in your case.
 
@@ -107,7 +102,7 @@ The following sections explain the tasks that can be performed using the post-in
 2. [Run post-installation](/edge/installation/#running-the-post-installation-process)
 3. [Update license and SSL certificates](/edge/installation/#updating-the-license-and-ssl-certificates)
 4. [Run post-upgrade](/edge/installation/#running-post-upgrade)
-5. [Expand data disk size](/edge/installation/#expanding-the-data-disk-size)
+5. [Expand disk size](/edge/installation/#expanding-the-disk-size)
 6. [Update tenant password](/edge/installation/#updating-the-tenant-password)
 7. [Configure Edge Agent](/edge/installation/#configuring-edge-agent)
 8. [Enable microservice hosting feature](/edge/installation/#enabling-or-disabling-microservice-hosting-feature)
@@ -134,7 +129,7 @@ You have the choice to  enter the network parameters manually through the consol
 
 ##### Console input
 
-1. Provide the new IP address for the ethernet interface. For example, 192.168.56.120
+1. Provide the new IP address for the ethernet interface. For example, 192.168.66.10
 
 	`* Enter new IP address for ethernet interface:`
 	
@@ -142,19 +137,25 @@ You have the choice to  enter the network parameters manually through the consol
 	
 	`* Enter netmask:`
 
-3. Provide the gateway IP for your network. For example, 192.168.56.1
+3. Provide the gateway IP for your network. For example, 192.168.66.1
 	
 	`* Enter gateway IP:`
 
-4. Provide the DNS Server IP for your network. For example, 192.168.56.1
+4. Provide the DNS Server IP for your network. For example, 192.168.66.1
 	
 	`* Enter DNS Server IP:`
 	
 	>**Info:** If the DNS Server IP is unknown, you can enter the previously entered gateway IP here. If any of the network parameters are not available, contact your network administrator.
 
-5. Confirm to continue with the network configuration process.
+5. Provide the default Docker bridge network CIDR. For example, `172.18.0.1/16`
 
-6. Restart your Edge VM.
+	`* Enter Default Docker Bridge Network CIDR (Current value: 172.17.0.1/16. Leave blank to retain the same):`
+
+	>**Info:** Update the default Docker bridge network CIDR only if the IP address of the Edge VM is in the same network range as the Docker network. 
+
+6. Confirm to continue with the network configuration process.
+
+7. Restart your Edge VM.
 
 ##### File input
  
@@ -216,11 +217,7 @@ You have the choice to enter the post-installation parameters manually through t
 
 	`* Enter domain ({your-domain-name}) Cumulocity licence file path (*.licence):`
 	
-8. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml". For example, */home/admin/ApamaServerLicense101.xml*. <br> <br>This is an optional license file, you can press [Enter] to continue without providing license.
-
-	`* Enter Software AG Apama licence file path (optional):`
-
-9. Provide the URL for the Cumulocity IoT tenant (cloud or on-premise) to control your Edge VM remotely. For example, "https://&lt;*tenant-domain*&gt;.cumulocity.com".
+8. Provide the URL for the Cumulocity IoT tenant (cloud or on-premise) to control your Edge VM remotely. For example, "https://&lt;*tenant-domain*&gt;.cumulocity.com".
 
 	`* Enter cloud URL (leave blank to disable remote management):` 
 
@@ -266,10 +263,6 @@ You have the choice to enter the update parameters manually through the console 
 
 	`* Enter domain ({previously-entered-domain-name}) Cumulocity licence file path (*.licence):`
 	
-4. Provide the absolute path of the Software AG Apama license file. The file extension must be ".xml",  e.g. */home/admin/ApamaServerLicense101.xml*.<br> <br>This is an optional license file, you can press [Enter] to continue without providing license.
-
-	`* Enter Software AG Apama licence file path (optional):`
-
 Once the input parameters are entered correctly, the parameters will be saved under 
 */opt/c8y/utilities/post-installer/config.dat* for future reference.
 You can use this file for providing the input parameters to the post-installer.
@@ -302,21 +295,23 @@ The post-upgrade process consists of multiple steps which are executed sequentia
 
 If you have configured the network in the ‘source’ version, the new configuration will be performed in the upgrade version when this task is executed.
 
-#### Expanding the data disk size
+#### Expanding the disk size
+
+You can expand the disk size of installation disk and data disk at the same time.
 
 1. Shutdown the VM.
 
-2. Edit the data disk size in the hypervisor. See the hypervisor specific documentation for increasing the disk size.  
+2. Edit the disk size in the hypervisor. See the hypervisor specific documentation for increasing the disk size.  
 
 3. Start the VM.
 
 4. Run the *post_installation.sh* script.
 
-5. Select the option **5. Expand data disk size**.
+5. Select the option **5. Expand disk size**.
 
-6. Confirm to continue with expanding the data disk size.
+6. Confirm to continue with expanding the disk size.
 
-The disk size expanding process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process halts and a failure message appears on the console.
+The disk size expansion process consists of multiple steps which are executed sequentially. After a step has been executed, its status will be shown on the console. In case of any failure in any of the steps, the process halts and a failure message appears on the console.
 
 #### Updating the tenant password
 

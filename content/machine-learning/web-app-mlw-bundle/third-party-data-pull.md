@@ -10,36 +10,25 @@ Machine Learning Workbench (MLW) provides connectors to the various data sources
 
 The following steps illustrate how to ingest and transform data produced by devices connected to Cumulocity IoT.
 
-1. Click the add icon and select **Import from Cumulocity**.
+1. Click the add icon <img src="/images/zementis/mlw-add-new-resource-icon.png" alt="Add" style="display:inline-block; margin:0"> and select **Import from Cumulocity**.
 
-    ![Add New Resource](/images/zementis/mlw-app-resource-c8y.png)
+2. Select the device for which you want to pull the data and click the download icon <img src="/images/zementis/mlw-download-icon.png" alt="Download" style="display:inline-block; margin:0"> under **Fetch Data**.
 
-2. Select the device for which you want to pull the data and click the download icon under **Fetch Data**.
+3. As part of data pull, provide the parameters such as data file name, data interval, data aggregation, and sensor name for data extraction. Once these parameters are provided, click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
 
-    ![Cumulocity Data pull](/images/zementis/mlw-app-datapull-c8y.png)
+    ![Cumulocity parameters](/images/zementis/mlw-app-c8y-datapull-param.png)
 
-3. As part of data pull, provide the parameters such as data file name, data interval, data aggregation, and sensor name for data extraction. Once these parameters are provided, click the submit icon.
+Click **Tasks** in the navigator and click the corresponding task name, to display the status of the Cumulocity IoT data pull in the **Task History** section at the centre.
 
-    ![Cumulocity parameters](/images/zementis/mlw-app-datapull-param.png)
-
-Click the corresponding task name in the **Tasks** folder, to display the status of the workflow execution in the **Task Info** section at the right.
-
-![Cumulocity Datapull Tasks](/images/zementis/mlw-app-datapull-tasks.png)
-
-Once the task has reached the status COMPLETED, the data is stored in the **Data** folder of Machine Learning Workbench (MLW).
-
-![Cumulocity Complete](/images/zementis/mlw-app-datapull-complete.png)
-
+Once the task has reached the status COMPLETED, the data is stored in the **Data** folder of the respective project in Machine Learning Workbench (MLW).
 
 ### DataHub
 
 The following steps illustrate how to ingest and transform data offloaded by Cumulocity IoT DataHub.
 
-1. Click the add icon and select **Import from DataHub**.
+1. Click the add icon <img src="/images/zementis/mlw-add-new-resource-icon.png" alt="Add" style="display:inline-block; margin:0"> and select **Import from DataHub**.
 
-    ![Add New Datahub Resource](/images/zementis/mlw-app-resource-dh.png)
-
-2. Input the query, and click the submit icon.
+2. Input the query, and click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
 
     ![DataHub Query](/images/zementis/mlw-app-dh-query.png)
 
@@ -47,18 +36,10 @@ The following steps illustrate how to ingest and transform data offloaded by Cum
 
     ![DataHub name](/images/zementis/mlw-app-dh-name.png)
 
-Click the corresponding task name in the **Tasks** folder, to display the status of the workflow execution in the **Task Info** section at the right.
+Click **Tasks** in the navigator and click the corresponding task name, to display the status of the Cumulocity IoT Datahub data pull in the **Task History** section at the centre.
 
-![Datahub result](/images/zementis/mlw-app-dh-result.png)
+Once the task has reached the status COMPLETED, the data will be stored in the **Data** folder of the respective project in Machine Learning Workbench (MLW).
 
-Once the task has reached the status COMPLETED, the data will be stored in the **Data** folder of Machine Learning Workbench (MLW).
+Once the data is ingested from Cumulocity IoT or DataHub, the corresponding CSV file is available in the **Data** folder of the respective project in Machine Learning Workbench (MLW). You can view the metadata for the newly created CSV file by clicking on the respective file name.
 
-![Cumulocity Data pull](/images/zementis/mlw-app-dh-data.png)
-
-Once the data is ingested from Cumulocity IoT or DataHub, the corresponding CSV file is available in the **Data** folder of Machine Learning Workbench (MLW). You can view the metadata for the newly created CSV file by clicking on the respective file name.
-
-![DataHub data info](/images/zementis/mlw-app-dh-datainfo.png)
-
-Data from the CSV file can be previewed by clicking the preview icon at the right of the top menu bar.
- 
-![DataHub data info](/images/zementis/mlw-app-dh-datapreview.png)
+Data from the CSV file can be previewed by clicking the preview icon <img src="/images/zementis/mlw-preview-icon.png" alt="Preview" style="display:inline-block; margin:0"> at the right of the top menu bar.

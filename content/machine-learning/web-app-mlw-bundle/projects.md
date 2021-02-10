@@ -8,19 +8,15 @@ Machine Learning Workbench (MLW) provides a version-controlled project-based str
 
 Projects functionality includes:
 
-* [Creating a new project](#create-a-new-project)
-* [Adding resources to the project - drag and drop, upload single or multiple files](#upload-resources)
-* [Committing a project - version management](#commit-project-version)
+* [Creating a new project](#creating-a-new-project)
+* [Adding resources to the project - drag and drop, upload single or multiple files](#uploading-resources)
+* [Committing a project - version management](#commiting-a-project-version)
 
 ### Creating a new project
 
-Click **+Add Project** at the right of the top menu bar, enter a project name and description, and click **Add Project**. This will create a new project with the given name. The new project will not contain any resources.
-
-![projects manager](/images/zementis/mlw-app-add-project.png)
+Click **Projects** in the navigator, this will list all the available projects. click **+Add Project** at the right of the top menu bar, enter a project name and description, and click **Add Project**. This will create a new project with the given name. The new project will not contain any resources.
 
 ### Uploading resources
-
-<!-- ![Resources](/images/zementis/mlw-app-project-home.png) -->
 
 Machine Learning Workbench (MLW) categorizes project resources as follows:
 
@@ -33,27 +29,21 @@ Machine Learning Workbench (MLW) categorizes project resources as follows:
 | Inference Pipeline | Inference pipelines that define a sequence of pre-processing step, ONNX model, and post-processing step | <ul><li>pipeline (JSON)</li></ul> |
 | Training Workflow | Training workflows that define a sequence of data preparation and model training/export activity that can be scheduled periodically | <ul><li>wf (JSON)</li></ul> |
 
-To upload files, you can either click on the upload pane and select the files for uploading or use the drag and drop files capability.
+To upload files, click the cloud upload icon <img src="/images/zementis/mlw-upload-icon.png" alt="Upload" style="display:inline-block; margin:0"> and either click on the upload pane and select the files for uploading or use the drag and drop files capability.
 
 ![Upload resources](/images/zementis/mlw-app-upload-resources.png)
 
 Once the files are uploaded, they will be placed under the respective categories.
 
-![Upload resources](/images/zementis/mlw-app-upload-complete.png)
-
 ### Commiting a project version
 
-To commit a project with its resources for versioning, click the plus icon at the top right and click **Commit Project**.
+To commit a project with its resources for versioning, click the plus icon <img src="/images/zementis/mlw-commit-add-icon.png" alt="Commit" style="display:inline-block; margin:0"> at the top right and click **Commit Project**.
 
-![Commit version](/images/zementis/mlw-app-project-commit.png)
-
-You can select all or a subset of resource files that need to be committed to a version.
+You can select all or a subset of resource files that need to be committed to a version. and clcik the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
 
 ![Commit version](/images/zementis/mlw-app-project-commit-select.png)
 
-Click the respective task name in the **Tasks** folder, which in this case will be the project name, to display the status of the commit process in the **Task Info** section at the right.
-
-![Commit version](/images/zementis/mlw-app-project-commited.png)
+Click **Tasks** in the navigator and click the respective task name, which in this case will be the project name, to display the status of the commit process in the **Task History** section at the centre.
 
 The project card will show the different versions available for that project.
 

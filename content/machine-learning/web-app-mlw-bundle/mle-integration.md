@@ -10,25 +10,19 @@ ONNX models typically require a pre-processing step that converts raw input data
 
 #### Creating a new pipeline
 
-1. To create a new pipeline file, click the add icon and select **Add New Resource**.
-
-	![Add New Resource](/images/zementis/mlw-app-resource-add-new.png)
+1. To create a new pipeline file, click the add icon <img src="/images/zementis/mlw-new-automl-icon.png" alt="Add" style="display:inline-block; margin:0"> and select **Add New Resource**.
 
 2. In the **Add New Resource** dialog, select "Pipeline" as **Resource Type** and provide the **Resource Name** which identifies the pipeline.
-
-	![Add Pipeline](/images/zementis/mlw-app-resource-add-pipeline.png)
 	
-3.  Select the appropriate **Model**, **Pre-processing Script** and **Post-processing Script** which defines the sequence of this pipeline. 
-4. Once done, click **Submit**. 
+3.  Select the appropriate **Model**, **Pre-processing Script** and **Post-processing Script** which defines the sequence of this pipeline and click **Submit**.
+ 
+	![Add Pipeline](/images/zementis/mlw-app-resource-add-pipeline.png)
 
 This will create a new pipeline file with the extension **.pipeline** in the **Inference Pipeline** folder of the project.
 
 Click on a pipeline file in the **Inference Pipeline** folder to view its metadata.
 
-![Pipeline](/images/zementis/mlw-app-resource-pipeline.png)
-
 #### Deploying a pipeline
 
-Click **Deploy** to deploy the inference pipeline on Machine Learning Engine.
+Click on a pipeline file in the **Inference Pipeline** folder and click deploy icon <img src="/images/zementis/mlw-deploy-icon.png" alt="Deploy" style="display:inline-block; margin:0"> to deploy the inference pipeline on Machine Learning Engine.
 
-![Pipeline deployment](/images/zementis/mlw-app-resource-pipeline-deploy.png)

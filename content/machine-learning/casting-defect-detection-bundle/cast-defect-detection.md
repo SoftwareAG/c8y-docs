@@ -76,7 +76,7 @@ This creates a new architecture file named *castingModelDesigner.architecture* i
 
 ![TrainParams](/images/zementis/castingDetection/mlw-casting-method1-arch-training-params.png)
 
-6. Monitor the model building progress by clicking the *castingDefectModel* in the **Tasks** folder. The training time is generally 30-50 minutes for 10 epochs for this particular dataset. Initially, the task status is INITIALISING and gets changed to TRAINING STARTED once the training starts.
+6. Monitor the model building progress by clicking the *castingDefectModel* in the **Tasks** section. The training time is generally 30-50 minutes for 10 epochs for this particular dataset. Initially, the task status is INITIALISING and gets changed to TRAINING STARTED once the training starts.
 
 ![Progress](/images/zementis/castingDetection/mlw-casting-method1-model-progress.png)
 

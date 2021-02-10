@@ -10,7 +10,7 @@ For your convenience, we provide the hypervisor examples for setting up Cumuloci
 * [Example setup for VMWare Workstation Player](/edge/installation#setting-up-vmware)
 * [Example setup for Hyper-V](/edge/installation#setting-up-hyper-v)
 
-For all hypervisors, we recommend you to use UTC on your host machines.
+For all hypervisors, Software AG recommends you to use UTC on your host machines. Use the same Internet Time Server on the host machine and the guest VM for better time sycronization.
 
 ### VM login details
 

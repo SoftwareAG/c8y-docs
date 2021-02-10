@@ -344,7 +344,7 @@ Sämtliche Erweiterungen, die auf der Plattform als Microservice bereitgestellt 
 
 Ein Mandant, bei dem Ressourcen in Rechnung gestellt werden, kann den Zeitpunkt anzeigen, zu dem die Abrechnung in den [Audit-Logs](/benutzerhandbuch/administration-de/#audit-logs) geändert wurde. Die Audit-Log-Einträge, z.B. " Anwendung '...' wird von X auf Y Instanzen skaliert", enthalten Informationen über Änderungen von Instanzen und Ressourcen, die vom Microservice verbraucht werden.
 
-  <img src="/images/benutzerhandbuch/enterprise-tenant/ee-ms-billing-audit-logs.png" name="Microservice audit logs"/>
+  <img src="/images/benutzerhandbuch/enterprise-tenant/et-ms-billing-audit-logs.png" name="Microservice audit logs"/>
 
 Mandanten sollten auch in der Lage sein, den vollständigen Lebenszyklus einer Anwendung in den Anwendungsdetails anzuzeigen. Auf der Registerkarte **Status** werden im Abschnitt **Ereignisse** sehr niedrigstufige Phasen des Anwendungsstarts angezeigt. Einige der wichtigsten sind:
 
@@ -354,7 +354,7 @@ Mandanten sollten auch in der Lage sein, den vollständigen Lebenszyklus einer A
 
 >**Info:** Im Abschnitt **Ereignisse** wird kein Ereignis angezeigt, wenn der Microservice den Status "Bereit" erreicht hat, da dies entsprechend der Readiness-Probe geschieht.
 
-  <img src="/images/benutzerhandbuch/enterprise-tenant/ee-ms-billing-events.png" name="Microservice details - Events"/>
+  <img src="/images/benutzerhandbuch/enterprise-tenant/et-ms-billing-events.png" name="Microservice details - Events"/>
 
 Audit-Logs und Ereignisse werden entsprechend der Isolationsstufe im Mandantenbereich gespeichert. Bei Microservices mit Isolation mehrerer Mandanten handelt es sich dabei um den Mandanten, der der Eigentümer des Microservice ist, und bei Isolation nach Mandant um den abonnierten Mandanten.
 

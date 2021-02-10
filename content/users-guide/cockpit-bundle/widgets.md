@@ -120,11 +120,18 @@ To remove a property or an action, hover over the respective row and click **Del
 
 The "Data point graph" widget shows a data point (measurement) in a graph. The visualization is the same as in the [data explorer](/users-guide/cockpit/#data-explorer).
 
-<img src="/images/users-guide/cockpit/cockpit-datapointsgraph-widget.png" name="Data Point Graph widget" style="width:75%;"/>
+![Data Point Graph widget](/images/users-guide/cockpit/cockpit-datapointsgraph-widget.png)
 
-The easiest way to create a "Data point graph" widget is to navigate to the data explorer, click the **More...** button in the top menu bar and select **Send as widget to dashboard**.
+The easiest way to create a "Data point graph" widget is to navigate to the data explorer, click the <b>More...</b> button in the top menu bar and select <b>Send as widget to dashboard</b>. 
 
 Refer to [Visualizing data using the data explorer](/users-guide/cockpit/#data-explorer) for further details on the parameters to be configured.
+
+At the top right of the data point graph, an **Auto scroll** toggle determines the display behavior:
+
+* Auto-scroll on - When a new measurement arrives, the widget automatically scrolls to the top so that you can see the latest value.
+* Auto-scroll off - When a new measurement arrives, the display does not change and the table still shows the same snippet of data.
+
+![Auto-scroll toogle](/images/users-guide/cockpit/cockpit-data-point-table-widget-with-auto-scroll.png)
 
 ### Data point list
 
@@ -269,7 +276,7 @@ Click a device icon, to open popup with the following information:
 
 * The device name. When clicked, the application navigates to the device.
 * The date at which the device last reported its location, if available.
-* A slider to show/hide the device tracks for the previous and current days.
+* A toggle to show/hide the device tracks for the previous and current days.
 
 **Parameters to configure**
 

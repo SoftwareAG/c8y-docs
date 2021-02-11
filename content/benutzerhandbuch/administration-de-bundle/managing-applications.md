@@ -121,7 +121,7 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Apama Analytics Builder</a></td>
+<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Analytics Builder</a></td>
 <td style="text-align:left">Analytic Model-Manager und Editor – ermöglicht die grafische Erstellung von Modellen, um Daten von Geräten zu verarbeiten und darauf zu reagieren.</td>
 <td style="text-align:left">Apama Analytics Builder</td>
 <td style="text-align:left">Web-Anwendung</td>

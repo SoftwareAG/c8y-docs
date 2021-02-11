@@ -5,6 +5,7 @@
   z-index: 40;
   left: -$main-nav-width;
   transition: left .35s $ease;
+  -webkit-transition: left .35s $ease;
   background-color: $body-bg-color;
   .open &{
     left:0;
@@ -58,6 +59,7 @@
     .caret{
       margin-left: auto;
       transform: translateX(4px);
+      -webkit-transform: translateX(4px);
     }
     &.version{
       padding: 0;
@@ -122,13 +124,13 @@
     box-shadow: none;
     display: block;
     .fa{
-      transform: rotate(-90deg);
-      transition: transform .35s ease;
+      -webkit-transform: rotate(-90deg);
+      -webkit-transition: transform .35s ease;
     }
     &.collapsed{
       .fa{
-        transform: rotate(90deg);
-        transition: transform .35s ease;
+        -webkit-transform: rotate(90deg);
+        -webkit-transition: transform .35s ease;
       }
     }
   }
@@ -146,7 +148,6 @@
     padding: 6px 20px 6px 28px;
     box-shadow: none;
     font-size: 12px;
-    
   }
 
   .list-group.nav{
@@ -175,6 +176,7 @@
   z-index: 39;
   pointer-events: none;
   transition: background .30s $ease;
+  -webkit-transition: background .30s $ease;
   
   .open &{
     background-color: rgba(black, .8);

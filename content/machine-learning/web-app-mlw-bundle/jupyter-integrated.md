@@ -12,7 +12,7 @@ Machine Learning Workbench (MLW) provides an integrated Jupyter Notebook environ
 
 	<!-- ![Add new resource](/images/zementis/mlw-app-resource-add-new.png) -->
  
-2. In the **Add New Resource** dialog, select "Notebook" as **Resource Type** and provide the **Resource Name** which identifies the notebook and click **Submit**
+2. In the **Add New Resource** dialog, select "Notebook" as **Resource Type** and provide the **Resource Name** which identifies the notebook and click **Submit**.
  
  	![Notebook Selector](/images/zementis/mlw-app-resource-add-notebook.png)
 

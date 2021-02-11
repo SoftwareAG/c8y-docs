@@ -14,7 +14,9 @@ Projects functionality includes:
 
 ### Creating a new project
 
-Click **Projects** in the navigator, this will list all the available projects. click **+Add Project** at the right of the top menu bar, enter a project name and description, and click **Add Project**. This will create a new project with the given name. The new project will not contain any resources.
+Click **Projects** in the navigator. This will list all the available projects. 
+
+Click **+Add Project** at the right of the top menu bar, enter a project name and description, and click **Add Project**. This will create a new project with the given name. The new project will not contain any resources.
 
 ### Uploading resources
 
@@ -22,7 +24,7 @@ Machine Learning Workbench (MLW) categorizes project resources as follows:
 
 | Resource | Content description | File type |
 |-----     |-----        |-----      |
-| Data | Training data for Machine Learning Workbench (MLW). | <ul><li>csv</li><li>json</li><li>zip</li><li>png</li><li>jpg</li><li>txt</li></ul> |
+| Data | Training data for Machine Learning Workbench (MLW) | <ul><li>csv</li><li>json</li><li>zip</li><li>png</li><li>jpg</li><li>txt</li></ul> |
 | Code | Python code for data preparation/exploration, data pre/post-processing steps, model training and evaluation | <ul><li>py</li><li>ipynb</li></ul> |
 | Model | Models trained by Machine Learning Workbench (MLW) | <ul><li>pmml</li><li>onnx</li></ul> |
 | NN Designer | Architectures depicting complex structures of deep neural networks | <ul><li>architecture (JSON)</li></ul> |
@@ -39,7 +41,7 @@ Once the files are uploaded, they will be placed under the respective categories
 
 To commit a project with its resources for versioning, click the plus icon <img src="/images/zementis/mlw-commit-add-icon.png" alt="Commit" style="display:inline-block; margin:0"> at the top right and click **Commit Project**.
 
-You can select all or a subset of resource files that need to be committed to a version. and clcik the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
+You can select all or a subset of resource files that need to be committed to a version. and click the submit icon <img src="/images/zementis/mlw-submit-icon.png" alt="Submit" style="display:inline-block; margin:0">.
 
 ![Commit version](/images/zementis/mlw-app-project-commit-select.png)
 

@@ -115,13 +115,13 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 <td style="text-align:left">Web-Anwendung</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/apama" class="no-ajaxy">Apama-ctrl*</a></td>
+<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Apama-ctrl*</a></td>
 <td style="text-align:left">Laufzeit für EPL Apps, Smart Rules und Analytics Builder.</td>
 <td style="text-align:left">apama-ctrl-* (verschiedene Zeichenketten für verschiedene Größen-/Kapazitätsoptionen)</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/apama" class="no-ajaxy">Apama Analytics Builder</a></td>
+<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Apama Analytics Builder</a></td>
 <td style="text-align:left">Analytic Model-Manager und Editor – ermöglicht die grafische Erstellung von Modellen, um Daten von Geräten zu verarbeiten und darauf zu reagieren.</td>
 <td style="text-align:left">Apama Analytics Builder</td>
 <td style="text-align:left">Web-Anwendung</td>
@@ -230,13 +230,6 @@ Im Standard Tenant finden Sie die folgenden Standardanwendungen:
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/apama" class="no-ajaxy">Streaming Analytics</a></td>
-<td style="text-align:left"><b>Diese Anwendung ist ein optionaler Service in Cumulocity IoT Core, aber ein Standardservice in Cumulocity IoT Edge.</b><br>
-Manager und Editor für Apama Event Processing Language (EPL) Apps zur sofortigen Verarbeitung eingehender Daten.</td>
-<td style="text-align:left">Apama EPL Apps</td>
-<td style="text-align:left">Web-Anwendung</td>
-</tr>
-<tr>
 <td style="text-align:left"><a href="/event-language" class="no-ajaxy">CEP custom rules</a></td>
 <td style="text-align:left"><b>Diese Anwendung ist veraltet.</b><br>Laden Sie Ihre eigenen mit Esper erstellten CEP-Regeln in einer mandantenspezifischen Bereitstellung hoch. Sie müssen die Anwendung "Cep-small" abonnieren, um diese Funktion nutzen zu können.</td>
 <td style="text-align:left">feature-cep-custom-rules</td>
@@ -265,6 +258,13 @@ Manager und Editor für Apama Event Processing Language (EPL) Apps zur sofortige
 <td style="text-align:left">Schaffen Sie eine Schnittstelle zu Mobilgeräten über verschiedene SIM-Anbieter wie Jasper, Ericsson und Comarch.</td>
 <td style="text-align:left">connectivity-agent-server</td>
 <td style="text-align:left">Microservice</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">EPL App</a></td>
+<td style="text-align:left"><b>Diese Anwendung ist ein optionaler Service in Cumulocity IoT Core, aber ein Standardservice in Cumulocity IoT Edge.</b><br>
+Manager und Editor für Apama Event Processing Language (EPL) Apps zur sofortigen Verarbeitung eingehender Daten.</td>
+<td style="text-align:left">Apama EPL Apps</td>
+<td style="text-align:left">Web-Anwendung</td>
 </tr>
 <td style="text-align:left">Microservice hosting</td>
 <td style="text-align:left">Hosten Sie Ihre eigenen Microservices in Cumulocity IoT.</td>

@@ -115,13 +115,13 @@ In the Standard Tenant you will find the following default applications:
 <td style="text-align:left">Web app</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/apama" class="no-ajaxy">Apama-ctrl*</a></td>
+<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Apama-ctrl*</a></td>
 <td style="text-align:left">Runtime for EPL Apps, smart rules and Analytics Builder.</td>
 <td style="text-align:left">apama-ctrl-* (different strings for different size/capability options)</td>
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/apama" class="no-ajaxy">Apama Analytics Builder</a></td>
+<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">Apama Analytics Builder</a></td>
 <td style="text-align:left">Analytic model manager and editor – allows models to be built graphically to process and react to data from devices.</td>
 <td style="text-align:left">Apama Analytics Builder</td>
 <td style="text-align:left">Web app</td>
@@ -230,7 +230,7 @@ In the Standard Tenant you will find the following default applications:
 <td style="text-align:left">Microservice</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/apama" class="no-ajaxy">Streaming Analytics</a></td>
+<td style="text-align:left"><a href="/apama/overview-analytics/" class="no-ajaxy">EPL Apps</a></td>
 <td style="text-align:left"><b>This application is an optional service in Cumulocity IoT Core but standard in Cumulocity IoT Edge.</b><br>
 Manager and editor for Apama Event Processing Language (EPL) apps, for immediate processing of incoming data.</td>
 <td style="text-align:left">Apama EPL Apps</td>

@@ -26,7 +26,7 @@ This will create a new architecture file with the extension **.architecture** in
 
 #### Editing the architecture file
 
-Select the architecture file in the **NN Designer** folder and click **Edit** to edit the architecture.
+Select the architecture file in the **NN Designer** folder and click edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to edit the architecture.
 
 This will open the MobileNet architecture in the editor where you can add new layers or remove existing layers.
 

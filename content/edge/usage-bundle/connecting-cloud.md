@@ -121,4 +121,4 @@ Go to **Data Broker** > **Data subscriptions** in your tenant account to receive
 
 For details about sending and receiving data in Cumulocity IoT, see [Enterprise Tenant > Using the Data Broker](/users-guide/enterprise-edition#data-broker).
 
-Note that [Operations](/concepts/domain-model/#operations) using Data Broker are not supported in Cumulocity IoT Edge. 
+>**Important:** Data Broker in Cumulocity IoT Edge does not support synchronization of the [Operations](/concepts/domain-model/#operations).

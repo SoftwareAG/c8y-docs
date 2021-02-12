@@ -83,7 +83,7 @@ Apart from object- and time-specific filtering you may filter data for specific 
 
 Use the toggle to enable/disable a field.
 
-![Filter fields](/images/benutzerhandbuch/cockpit/cockpit-export-fields.png)
+![Filter fields](/images/users-guide/cockpit/cockpit-export-fields.png)
 
 >**Info:** The time range filter only applies to alarms, events and measurements but not to managed objects. If selected, managed objects will appear in the export, regardless of any specified time range.
 
@@ -128,7 +128,7 @@ Define the frequency for sending the export, i.e. every hour, day, week, month o
 
 **3 - Send email:**
 
-Complete the email information. 
+Complete the email information.
 
 In the **Send to** field, provide the email address of the recipient. This field is mandatory. Optionally, you can provide email addresses for recipients of copies (CC) or blind copies (BCC). Use comma as separator to enter multiple recipients.
 

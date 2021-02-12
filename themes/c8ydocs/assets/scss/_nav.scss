@@ -124,11 +124,15 @@
     box-shadow: none;
     display: block;
     .fa{
+      transform: rotate(-90deg);
+      transition: transform .35s ease;
       -webkit-transform: rotate(-90deg);
       -webkit-transition: transform .35s ease;
     }
     &.collapsed{
       .fa{
+        transform: rotate(90deg);
+        transition: transform .35s ease;
         -webkit-transform: rotate(90deg);
         -webkit-transition: transform .35s ease;
       }

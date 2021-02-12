@@ -1,7 +1,12 @@
 .main-footer{
+  transition: transform .30s $ease;
   -webkit-transition: transform .30s $ease;
   @media(max-width: $grid-breakpoint - 1 ){
     .open &{
+      
+      backface-visibility: hidden;
+      transform: translateX(240px);
+      transform: translateY(0);
       -webkit-backface-visibility: hidden;
       -webkit-transform: translateX(240px);
       -webkit-transform: translateY(0);
@@ -24,6 +29,7 @@
   border-radius: 16px;
   background-color: white;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.01), 0 8px 8px rgba(0, 0, 0, 0.01), 0 16px 16px rgba(0, 0, 0, 0.03), 0 32px 32px rgba(0, 0, 0, 0.05), 0 32px 64px rgba(0, 0, 0, .1), 0 -3px 32px rgba(0, 0, 0, 0.1);
+  transition: transform .30s $ease, filter .30s $ease;
   -webkit-transition: transform .30s $ease, filter .30s $ease;
   @media(max-width: $grid-breakpoint - 1 ){
     .open &{

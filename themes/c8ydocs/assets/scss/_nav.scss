@@ -4,8 +4,8 @@
   top: 0;
   z-index: 40;
   left: -$main-nav-width;
-  transition: left 0.35s $ease;
-  -webkit-transition: left 0.35s $ease;
+  transition: left .35s $ease;
+  -webkit-transition: left .35s $ease;
   background-color: $body-bg-color;
   .open & {
     left: 0;
@@ -36,7 +36,7 @@
   .dropdown-toggle {
     border: 2px solid $blue-primary;
     padding: 6px 16px;
-    font-size: 0.885rem;
+    font-size: .885rem;
     border-radius: 20px;
     font-weight: bold;
     color: $blue-primary;
@@ -60,7 +60,7 @@
       border: 0;
       width: auto;
       color: $gray-40;
-      font-size: 0.775rem;
+      font-size: .775rem;
     }
   }
   .show .dropdown-toggle {
@@ -99,7 +99,7 @@
     background: rgba(0, 0, 0, 0);
   }
   &::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, .2);
   }
   a {
     color: $gray-40;
@@ -117,21 +117,21 @@
     display: block;
     .fa {
       transform: rotate(-90deg);
-      transition: transform 0.35s ease;
+      transition: transform .35s ease;
       -webkit-transform: rotate(-90deg);
-      -webkit-transition: transform 0.35s ease;
+      -webkit-transition: transform .35s ease;
     }
     &.collapsed {
       .fa {
         transform: rotate(90deg);
-        transition: transform 0.35s ease;
+        transition: transform .35s ease;
         -webkit-transform: rotate(90deg);
-        -webkit-transition: transform 0.35s ease;
+        -webkit-transition: transform .35s ease;
       }
     }
   }
   > div {
-    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.03);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .03);
     a {
       padding: 6px 40px 6px 20px;
       font-size: 14px;
@@ -147,14 +147,14 @@
   }
 
   .list-group.nav {
-    padding-bottom: 0.3rem;
+    padding-bottom: .3rem;
     .active {
       color: $blue-65;
     }
   }
 
   .slot-active {
-    background-color: rgba(white, 0.35);
+    background-color: rgba(white, .35);
   }
   .active {
     color: $blue-primary;
@@ -170,11 +170,11 @@
   left: 0;
   z-index: 39;
   pointer-events: none;
-  transition: background 0.3s $ease;
-  -webkit-transition: background 0.3s $ease;
+  transition: background .3s $ease;
+  -webkit-transition: background .3s $ease;
 
   .open & {
-    background-color: rgba(black, 0.8);
+    background-color: rgba(black, .8);
     pointer-events: all;
   }
 }

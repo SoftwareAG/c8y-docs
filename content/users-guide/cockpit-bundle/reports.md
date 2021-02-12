@@ -85,7 +85,7 @@ Apart from object- and time-specific filtering you may filter data for specific 
 
 Use the toggle to enable/disable a field.
 
-![Filter fields](/images/benutzerhandbuch/cockpit/cockpit-export-fields.png)
+![Filter fields](/images/users-guide/cockpit/cockpit-export-fields.png)
 
 >**Info:** The time range filter only applies to alarms, events and measurements but not to managed objects. If selected, managed objects will appear in the export, regardless of any specified time range.
 
@@ -110,7 +110,7 @@ In case of measurements enabled, you can also choose **Add from data point**. Fo
 
 #### <a name="schedule-export"></a>To schedule an export
 
-To schedule an export to a CSV or XLSX file to any point in time, open the respective export and click **Add schedule**. 
+To schedule an export to a CSV or XLSX file to any point in time, open the respective export and click **Add schedule**.
 
 ![Export details](/images/users-guide/cockpit/cockpit-export-add-schedule.png)
 
@@ -126,7 +126,7 @@ Select the frequency for sending the export from the dropdown list, i.e. every h
 
 **2 - Send email:**
 
-Complete the email information. 
+Complete the email information.
 
 In the **Send to** field, provide the email address of the recipient. This field is mandatory. Optionally, you can provide email addresses for recipients of copies (CC) or blind copies (BCC). Use comma as separator to enter multiple recipients.
 
@@ -144,9 +144,9 @@ The export schedule will be added to the export details.
 
 ![Scheduled exports list](/images/users-guide/cockpit/cockpit-export-schedule-list.png)
 
-##### Migration of scheduled exports 
+##### Migration of scheduled exports
 
-With version 10.6.2, a new reporting agent has been implemented to allow scheduled reports with [Apama Streaming Analytics](/apama/overview-analytics/). The export schedules functionality based on smart rules has been deprecated. 
+With version 10.6.2, a new reporting agent has been implemented to allow scheduled reports with [Apama Streaming Analytics](/apama/overview-analytics/). The export schedules functionality based on smart rules has been deprecated.
 
 Previously existing configurations of schedulers may be migrated to the new agent by opening the respective report and confirm to migrate the included export schedules.
 

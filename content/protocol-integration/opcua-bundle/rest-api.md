@@ -409,7 +409,7 @@ Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/get?nodeId=
 
 #### Get children of a given node
 
-Endpoint: `GET /serice/opcua-mgmt-service/servers/{serverId}/address-spaces/children`
+Endpoint: `GET /service/opcua-mgmt-service/servers/{serverId}/address-spaces/children`
 
 Description: Get all child nodes of the given node specified by the node ID in the server address space. The node ID must be properly URL encoded.
 

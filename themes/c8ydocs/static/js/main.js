@@ -53,7 +53,7 @@ var main = (function ($) {
       $('body').toggleClass('open');
     });
 
-    $('.cover').click(function(){
+    $('.cover, .list-group-item').click(function(){
       $('body').removeClass('open');
     });
 

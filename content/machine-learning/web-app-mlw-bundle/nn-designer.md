@@ -14,7 +14,7 @@ To begin the model training with transfer learning, you need to create a new neu
 
 The following steps illustrate how to train a deep neural network model using transfer learning.
 
-#### Creating a new architecture file
+#### Creating a new transfer learning architecture file
 
 1. To create a new architecture file, click the add icon <img src="/images/zementis/mlw-new-automl-icon.png" alt="Add" style="display:inline-block; margin:0"> and select **Add New Resource**.
 
@@ -60,7 +60,7 @@ To begin the model training with a custom architecture, you need to create a new
 
 The following steps illustrate how to train a deep neural network model using custom architecture.
 
-#### Creating a new architecture file
+#### Creating a new custom architecture file
 
 1. To create a new architecture file, click the add icon <img src="/images/zementis/mlw-new-automl-icon.png" alt="Add" style="display:inline-block; margin:0"> and select **Add New Resource**.
 

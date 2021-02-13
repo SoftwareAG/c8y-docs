@@ -42,7 +42,7 @@ After the data is uploaded sucessfully, navigate to the **Data** folder of the M
 
 **Method 1: Creating a custom deep neural network architecture**  
 
-1. Follow the steps described in [Machine Learning Workbench > Neural Network (NN) Designer](/machine-learning/web-app-mlw/#nn-designer) and create a new architecture file named *castingModelDesigner.architecture* with 'None' as **Architecture**.
+1. Follow the steps described in [Machine Learning Workbench > Neural Network (NN) Designer](/machine-learning/web-app-mlw/#creating-a-new-custom-architecture-file) and create a new architecture file named *castingModelDesigner.architecture* with 'None' as **Architecture**.
 
 2. Select the *castingModelDesigner.architecture* file and click the edit icon <img src="/images/zementis/mlw-edit-icon.png" alt="Edit" style="display:inline-block; margin:0"> to open an interface/editor to build your own deep neural network architecture by dragging and dropping various layers available in the menu at the left.
 
@@ -104,7 +104,7 @@ The inference pipeline uses a pre-processing script, a model (.onnx file) and a 
       return {"Dense":content[0].tolist(),"PredictedClass":cla}
 ```
 
-1. Follow the steps described in [Machine Learning Workbench > Inference pipeline](/machine-learning/web-app-mlw/#mle-integration) and create an inference pipeline named *castingPipeline.pipeline* by selecting 'castingDefectModel.onnx' or 'castingDefectModelViaJNB.onnx' as **Model**, 'castingPreProcessingForNN.py' as **Pre-processing Script** and 'castingPostProcessingForNN.py' as **Post-processing Script** . 
+1. Follow the steps described in [Machine Learning Workbench > Inference pipeline](/machine-learning/web-app-mlw/#creating-a-new-pipeline) and create an inference pipeline named *castingPipeline.pipeline* by selecting 'castingDefectModel.onnx' or 'castingDefectModelViaJNB.onnx' as **Model**, 'castingPreProcessingForNN.py' as **Pre-processing Script** and 'castingPostProcessingForNN.py' as **Post-processing Script** . 
     
     This creates a new pipeline file named *castingPipeline.pipeline* in the **Inference Pipeline** folder. you will be able to see the metadata of the pipeline file by clicking on it.
 

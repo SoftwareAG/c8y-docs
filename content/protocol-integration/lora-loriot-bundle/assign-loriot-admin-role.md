@@ -1,12 +1,11 @@
 ---
-weight: 20
-title: Loriot admin role permission to the user
+weight: 25
+title: Assigning the Loriot admin role permission
 layout: redirect
 ---
 
+In the Cumulocity IoT platform, assign the Loriot admin role permission to the user configured in LORIOT Network Server. 
 
-### <a name="assign-loriot-admin-role-to-user">Loriot admin role permission to the user</a>
-
-Assign the Loriot admin role permission to the user configured in LORIOT Network Server from the `Roles` menu in the navigator.
+In the Administration application, click **Roles** in the navigator and select the **ADMIN** checkbox for "Loriot".
 
 ![Set loriot admin role](/images/device-protocols/lora-loriot/loriot-user-admin-role.png)

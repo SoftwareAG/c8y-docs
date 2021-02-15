@@ -1,8 +1,5 @@
 ---
-weight: 50
-title: LORIOT LoRa
+weight: 55
+title: Loriot LoRa
 layout: bundle
-aliases:
-  - /users-guide/optional-services/#loraloriot
-  - /users-guide/LoRaLORIOT
 ---

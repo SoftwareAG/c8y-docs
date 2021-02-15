@@ -1,25 +1,25 @@
 ---
 weight: 20
-title: Configure the loriot agent endpoint in LORIOT Network Server
+title: Configuring the Loriot agent endpoint credentials
 layout: redirect
 ---
 
+Before using LoRa devices with Cumulocity IoT, you need to configure the Cumulocity IoT Loriot agent endpoint details in LORIOT Network Server. 
 
-Before using LoRa devices with Cumulocity IoT, you need to configure your Cumulocity loriot server agent endpoint details in the output section of an application in LORIOT network server provider account. 
-In order to specify the loriot agent endpoint with user credentials, you can go to one of the applications and select **Output** in the **Application** menu in the navigator.
+### <a name="map-loriot-endpoint-with-credentials">Configuring the Loriot endpoint using Basic authentication</a>
 
-### <a name="map-loriot-endpoint-with-credentials">Configure loriot endpoint using Basic authentication</a>
+In LORIOT Network Server you can create multiple applications. Each application allows you to configure LoRa devices.
 
-LORIOT Network Server allows you to create multiple applications and each application allows you to configure LoRa devices.
-LORIOT Network Server forwards the LoRa device messages to the external applications using different connectors which are available in the **Output** of the **Application** menu in the navigator.
+To specify the Loriot agent endpoint with user credentials, navigate to one of the applications in your LORIOT Network Server account and select **Output** in the **Application** menu in the navigator.
 
+LORIOT Network Server forwards the LoRa device messages to the external applications using different connectors which are available in the **Output** section.
 
-![Output page with https forwarder](/images/device-protocols/lora-loriot/loriot_output_https_page.png)
+![Output page with https forwarder](/images/device-protocols/lora-loriot/loriot-output-https-page.png)
 
-Use HTTPS data forwarder for configuring Loriot enpoint using Basic authorzation.
+Use HTTPS data forwarder for configuring the Loriot endpoint using Basic authentication.
 
-![Setting endpoint credentials](/images/device-protocols/lora-loriot/loriot-end-point-assignment.png)
+![Setting endpoint credentials](/images/device-protocols/lora-loriot/loriot-endpoint-assignment.png)
 
-Always keep 'Gateway Information' enabled because loriot agent process only 'gw' messages.
+Always keep the **Gateway Information** option enabled because the Loriot agent only processes "gw" (gateway information) messages.
 
 ![Enable gateway information option](/images/device-protocols/lora-loriot/loriot-gateway-option-enabled.png)

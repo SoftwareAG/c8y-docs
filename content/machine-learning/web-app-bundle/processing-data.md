@@ -9,17 +9,17 @@ aliases:
 
 The **Predictions** menu allows you to do meaningful predictions by scoring the data from your devices against your predictive models.
 
-Clicking **Predictions** in the navigator allows you to choose from two different modes of processing: **Batch Processing** and **Scheduled Processing**.
+Clicking **Predictions** in the navigator allows you to choose from two different modes of processing: **Batch processing** and **Scheduled processing**.
 
 ![Predictions](/images/zementis/zementis-predictions.png)
 
-### Batch Processing
+### Batch processing
 
 Batch processing allows you to process data records against a model, model group or pipeline. Batch processing is applicable for both PMML and ONNX models. 
 
 To process data against PMML models/groups, choose the **PMML** tab. Similarly, to process data against ONNX models/pipelines, choose the **ONNX** tab.
 
-|Model/Group/Pipeline|Supported input data file types|Supported compression for input files
+|Model/group/pipeline|Supported input data file types|Supported compression for input files
 |:---|:---|:---|
 |PMML model|CSV, JSON, JPEG, PNG|ZIP (for CSV and JSON files)
 |PMML model group|CSV only|ZIP (for CSV files)
@@ -28,7 +28,7 @@ To process data against PMML models/groups, choose the **PMML** tab. Similarly, 
 
 #### Running the batch process
 
-For PMML models, batch processing can be used for verifying the accuracy of your predictive models by applying it against test data obtained from the model training environment. The goal is to ensure that model development environment and model deployment environment produce the same results. We call this *Score Matching*. To run the batch process on PMML model/group, perform the following steps:
+For PMML models, batch processing can be used for verifying the accuracy of your predictive models by applying it against test data obtained from the model training environment. The goal is to ensure that model development environment and model deployment environment produce the same results. We call this *score matching*. To run the batch process on PMML model/group, perform the following steps:
 
 1. Click **Start** in the **PMML** tab to initiate the processing. 
 
@@ -47,7 +47,7 @@ The steps involved in running the batch process on ONNX models/pipelines remain 
 
 #### Viewing and downloading the results
 
-In order to view the results, click **Show Results** on the **Batch Processing Completed** notification. 
+In order to view the results, click **Show results** on the **Batch processing completed** notification. 
 
 For PMML models/groups, the **Preview** page will only preview maximum 500 records in a paginated manner, displaying 10 records per page.
 
@@ -72,9 +72,9 @@ For ONNX models, the **Results** page will show the entire set of records proces
 ![Show Results ONNX](/images/zementis/zementis-batch-process-results-onnx.png)
 
 
-### Scheduled Processing
+### Scheduled processing
 
-Scheduled Processing allows you to schedule batch jobs for processing measurements from devices or device groups against an available model or model group.
+Scheduled processing allows you to schedule batch jobs for processing measurements from devices or device groups against an available model or model group.
 
 The job scheduler can be used to trigger one-time or periodic jobs on data captured from devices. The scheduler allows you to map device data to model inputs by providing a mapping tool. Periodic executions of batch jobs can be useful when aggregate information on model’s predictions is required for a desired time period.
 
@@ -84,8 +84,8 @@ The job scheduler can be used to trigger one-time or periodic jobs on data captu
 
 To schedule a new job, perform the following steps:
 
-1. Click **Create Job** in the **Scheduled Processing** page. 
-2. In the **Job Config** wizard, enter the name and description of the job you want to create. Select a target device or device group from the dropdown list. The list shows maximum 2000 devices or groups but you can search for the device you are interested in.
+1. Click **Create job** in the **Scheduled processing** page. 
+2. In the **Job config** wizard, enter the name and description of the job you want to create. Select a target device or device group from the dropdown list. The list shows maximum 2000 devices or groups but you can search for the device you are interested in.
 Once done, select a target model or model group which will be used for processing the data captured from your selected device or device group. The dropdown list shows all models and groups which you have already added. 
 Use the **Apply across all models** toggle if you want the processing to happen on all the models of a model group. When this option is disabled, processing will happen on primary model of the model group.<br>
 ![Scheduled process 1](/images/zementis/zementis-jobconfig-info.png)
@@ -114,23 +114,23 @@ For details on adding retention rules, see [To add a retention rule](/users-guid
 
 ![Scheduled Jobs](/images/zementis/zementis-scheduled-jobs.png)
 
-By design, the **Scheduled Processing** page shows a list of all the scheduled jobs in a paginated manner, displaying 10 jobs per page. 
+By design, the **Scheduled processing** page shows a list of all the scheduled jobs in a paginated manner, displaying 10 jobs per page. 
 
 Click any link in the **NAME** column to view the configuration of that specific job. Click the delete icon of any job to remove the job.
 
 #### Viewing the execution results of jobs
 
-To view the execution results of any job, click on the history icon associated to that job in the **My Jobs** section of the **Scheduled Processing** page.
+To view the execution results of any job, click on the history icon associated to that job in the **My Jobs** section of the **Scheduled processing** page.
 
 ![Job History](/images/zementis/zementis-job-execution-history.png)
 
-By design, the **Execution Results** page previews all executions of the job in a paginated manner, displaying 10 executions per page.
+By design, the **Execution results** page previews all executions of the job in a paginated manner, displaying 10 executions per page.
  
 For executions with status **Warning** or **Failure**, hover over the status to see the detailed reason behind the status. Click **Back** to see all scheduled jobs.
 
 #### Viewing the inferences of a job execution
 
-To view the inferences generated by any execution of a job, click on the details icon associated to that execution in the **Execution Results** page.
+To view the inferences generated by any execution of a job, click on the details icon associated to that execution in the **Execution results** page.
 
 ![Execution Inferences Continuous](/images/zementis/zementis-execution-inferences-continuous.png)
 ![Execution Inferences Categorical](/images/zementis/zementis-execution-inferences-categorical.png)

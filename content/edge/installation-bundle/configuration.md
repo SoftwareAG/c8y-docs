@@ -108,10 +108,7 @@ The following sections explain the tasks that can be performed using the post-in
 8. [Enable microservice hosting feature](/edge/installation/#enabling-or-disabling-microservice-hosting-feature)
 9. Exit
 
->**Important:**<br>
-- Option 1 is the first step that you must perform while configuring the Edge server. Also, if you change the network configuration of a Hypervisor, you must configure the network using option 1.<br> 
-- Option 3, 4 and 6 will only work after you have successfully completed the post-installation setup (Option 2). <br>
-- Option 1 and 4 cannot be invoked from a remote connection like SSH. You will have to run these directly from the terminal within the VM.
+>**Important:**<br>- Option 1 is the first step that you must perform while configuring the Edge server. Also, if you change the network configuration of a Hypervisor, you must configure the network using option 1.<br>- Option 3, 4 and 6 will only work after you have successfully completed the post-installation setup (Option 2). <br>- Option 1 and 4 must be run from the Edge VM console in the hypervisor. These options cannot be invoked from a remote connection like SSH.
 
 #### Configuring the Edge network
 

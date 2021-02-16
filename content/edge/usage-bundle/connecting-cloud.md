@@ -112,7 +112,7 @@ You can share the following data:
 * alarms
 * measurements
 
->**Important:** Data Broker in Cumulocity IoT Edge does not support synchronization of the Operations.
+>**Important:** Data Broker in Cumulocity IoT Edge does not support synchronization of the operations.
 
 Go to **Data Broker** > **Data connectors** if you would like to send data to the tenant account. 
 

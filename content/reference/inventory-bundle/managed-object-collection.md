@@ -149,6 +149,7 @@ The following sections explain how an application will handle a query in the par
 * `le` (less than or equal): `Price le 100`
 * `and` (logical and): `Price le 200 and Price gt 3.5`
 * `or` (logical or): `Price le 3.5 or Price gt 200`
+* `not` (logical not): `not has(c8y_IsDevice)`
 
 ##### Supported query functions:
 

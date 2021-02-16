@@ -28,10 +28,11 @@ layout: redirect
 > **Info:** "404 Not Found" error will appear if the object has no references.
 
 ```http
-GET <<url>>/inventory/managedObjects/<<deviceId>>/<<references>>
+GET /inventory/managedObjects/{deviceId}/childDevices
+Host: https://<TENANT_DOMAIN>
 ```
 
-> **Info:** References can be either `childDevices` or `childAssets`.
+> **Info:** Besides <kbd>childDevices</kbd> in the URL, you can also use <kbd>childAssets</kbd> or <kbd>childAdditions</kbd>.
 
 #### Example response
 
@@ -82,7 +83,7 @@ HTTP/1.1
 
 **Required role:** ROLE\_INVENTORY\_ADMIN or parent and child owner
 
-> **Info:** Use the header `X-Cumulocity-Processing-Mode` set to `QUIESCENT` to disable real-time notifications. 
+> **Info:** Use the header `X-Cumulocity-Processing-Mode` set to `QUIESCENT` to disable real-time notifications.
 This is required when performance is important or dealing with a large group of objects.
 
 
@@ -92,17 +93,18 @@ This is required when performance is important or dealing with a large group of 
 |:---|:---|
 |Authorization|{{auth}}
 |Host|{{hostname}}
-|Content-Type|application/vnd.com.nsn.cumulocity.managedobject+json;ver=... 
+|Content-Type|application/vnd.com.nsn.cumulocity.managedobject+json;ver=...
 
 ```http
-
-POST <<url>>/inventory/managedObjects/<<deviceId>>/<<references>>
+POST /inventory/managedObjects/{deviceId}/childDevices
+Host: https://<TENANT_DOMAIN>
 
 {
   "managedObject" : { "self" :"<<ManagedObject URL>>" }
 }
-
 ```
+
+> **Info:** Besides <kbd>childDevices</kbd> in the URL, you can also use <kbd>childAssets</kbd> or <kbd>childAdditions</kbd>.
 
 #### Example response
 
@@ -148,11 +150,10 @@ As an alternative, it is also allowed to pass the following reference object in 
 |:---|:---|
 |Authorization|{{auth}}
 |Host|{{hostname}}
-|Content-Type|application/vnd.com.nsn.cumulocity.managedobjectreferencecollection+json;ver=... 
-|Accept|application/vnd.com.nsn.cumulocity.managedobjectreferencecollection+json;ver=... 
+|Content-Type|application/vnd.com.nsn.cumulocity.managedobjectreferencecollection+json;ver=...
+|Accept|application/vnd.com.nsn.cumulocity.managedobjectreferencecollection+json;ver=...
 
 ```http
-
 POST /inventory/managedObjects/100/childDevices
 
 {
@@ -171,13 +172,13 @@ POST /inventory/managedObjects/100/childDevices
 }
 ```
 
-> **Info:** instead of `childDevices` in the URL you can use: `childAssets` or `childAdditions` to add different type of managedObject
+> **Info:** Besides <kbd>childDevices</kbd> in the URL, you can also use <kbd>childAssets</kbd> or <kbd>childAdditions</kbd>.
 
 #### Example response
 
 |HEADERS||
 |:---|:---|
-|Content-Type|application/vnd.com.nsn.cumulocity.managedObjectReferenceCollection+json;ver=...
+|Content-Type|application/vnd.com.nsn.cumulocity.managedobjectreferencecollection+json;ver=...
 
 ```http
 HTTP/1.1
@@ -284,7 +285,7 @@ HTTP/1.1
 |:---|:---|
 |Authorization|{{auth}}
 |Host|{{hostname}}
-|Content-Type|application/vnd.com.nsn.cumulocity.managedObjectReferenceCollection+json;ver=... 
+|Content-Type|application/vnd.com.nsn.cumulocity.managedobjectreferencecollection+json;ver=...
 
 ```http
 DELETE /inventory/managedObjects/100/childDevices
@@ -304,7 +305,8 @@ DELETE /inventory/managedObjects/100/childDevices
    ]
 }
 ```
-> **Info:** instead of `childDevices` in the URL you can use: `childAssets` or `childAdditions` to add different type of managedObject
+
+> **Info:** Besides <kbd>childDevices</kbd> in the URL, you can also use <kbd>childAssets</kbd> or <kbd>childAdditions</kbd>.
 
 #### Example response
 

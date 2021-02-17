@@ -61,7 +61,7 @@ The following parameters are required only if you want to update the network par
 
 `gateway.ip` : Provide the gateway IP for your network. For example, 192.168.56.1
 
-`dns.server.ip` : Provide the DNS Server IP for your network. For example, 192.168.56.1
+`dns.server.ip` : Provide the DNS Server IP for your network. For example, 192.168.56.1. For DNS, do not use the IP addresses 10.96.0.10 and 127.0.0.1.
 
 >**Info:** If the DNS Server IP is unknown, you can enter the previously entered gateway IP here. If any of the network parameters are not available, contact your network administrator.
 
@@ -108,10 +108,7 @@ The following sections explain the tasks that can be performed using the post-in
 8. [Enable microservice hosting feature](/edge/installation/#enabling-or-disabling-microservice-hosting-feature)
 9. Exit
 
->**Important:**<br>
-- Option 1 is the first step that you must perform while configuring the Edge server. Also, if you change the network configuration of a Hypervisor, you must configure the network using option 1.<br> 
-- Option 3, 4 and 6 will only work after you have successfully completed the post-installation setup (Option 2). <br>
-- Option 1 and 4 cannot be invoked from a remote connection like SSH. You will have to run these directly from the terminal within the VM.
+>**Important:**<br>- Option 1 is the first step that you must perform while configuring the Edge server. Also, if you change the network configuration of a Hypervisor, you must configure the network using option 1.<br>- Option 3, 4 and 6 will only work after you have successfully completed the post-installation setup (Option 2). <br>- Option 1 and 4 must be run from the Edge VM console in the hypervisor. These options cannot be invoked from a remote connection like SSH.
 
 #### Configuring the Edge network
 
@@ -144,6 +141,8 @@ You have the choice to  enter the network parameters manually through the consol
 4. Provide the DNS Server IP for your network. For example, 192.168.66.1
 	
 	`* Enter DNS Server IP:`
+	
+	For DNS, do not use the IP addresses 10.96.0.10 and 127.0.0.1.
 	
 	>**Info:** If the DNS Server IP is unknown, you can enter the previously entered gateway IP here. If any of the network parameters are not available, contact your network administrator.
 
@@ -353,7 +352,13 @@ After providing the tenant URL, you have to register your Edge VM with the Cumul
 
 #### Enabling or Disabling microservice hosting feature
 
-**Info:** Ensure that you have fulfilled the minimum system requirements: 4 logical CPU cores and 8 GB RAM. 
+>**Info:** Ensure that you have fulfilled the minimum system requirements: 4 logical CPU cores and 8 GB RAM.
+
+If you want to use the microservice hosting feature, ensure that you do not use these IP ranges in your local network where the Edge virtual machines are configured. When you enable the microservice hosting feature, the Kubernetes system reserves these IP ranges on the Edge instances.
+- 10.96.0.0/12
+- 10.244.0.0/16
+
+To enable the microservice hosting feature:
 
 1. Run the post-installation script *post_installation.sh*.
 

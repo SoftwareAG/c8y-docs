@@ -29,6 +29,16 @@ The X-ID header is part of the topic the client needs to publish on.
 ```http
 s/ul/<X-ID>
 ```
+An X-ID acts as a protocol identifier and identifies the template collection.
+An X-ID should be immutable: it always identifies exactly the same template collection.
+If the template collection changes, the X-ID must also change.
+An X-ID should also be globally unique: select an X-ID that is not used by anyone else.
+To make sure, we recommend you to use reverse domain names, e.g.:
+
+    com.acme.gw801-v1
+    com.acme.gw801-v2
+
+We also recommend you to add the protocol version as a postfix in the X-ID.
 
 #### Processing mode
 

@@ -11,9 +11,9 @@ Graphical REST clients such as Postman are a convenient way to explore REST inte
 
 If you are already using the Cumulocity IoT API collection in Postman and the environment to access the collection for your tenant is setup, then you can directly import the MLW microservice collection (see below).
 
-If you are doing a fresh setup of Postman for using the Machine Learning Workbench microservice collection, first follow the steps described under "Using Postman" in [Using the Rest interface](/microservice-sdk/rest) in the Microservice SDK guide. 
+If you are doing a fresh setup of Postman for using the Machine Learning Workbench (MLW) microservice collection, first follow the steps described under "Using Postman" in [Using the Rest interface](/microservice-sdk/rest) in the Microservice SDK guide. 
  
-### Import the MLW microservice collection in Postman
+### Import the Machine Learning Workbench (MLW) microservice collection in Postman
 
 Import the APIs as a [JSON file](/files/zementis/MLWMicroserviceAPI.postman_collection.json).
 

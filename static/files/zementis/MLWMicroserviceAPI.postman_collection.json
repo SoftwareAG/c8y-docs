@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "ebb9221f-dfaf-4739-817e-20c31b43491e",
-		"name": "C8Y Microservice MLW-api",
+		"_postman_id": "aff33cd5-2e7e-4d5c-b94d-8862f6c81e6e",
+		"name": "MLW Microservice API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -33,10 +33,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {}
-							}
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{url}}/service/mlw/projects",
@@ -174,8 +171,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Resources",
@@ -369,10 +365,7 @@
 									"type": "file",
 									"src": "/C:/Users/themachine/Desktop/MLW_Postman/mlw-core/ResourceFIles/TestFiles/anomalySampleData.csv"
 								}
-							],
-							"options": {
-								"formdata": {}
-							}
+							]
 						},
 						"url": {
 							"raw": "{{url}}/service/mlw/projects/1600159589_Project/resources",
@@ -949,10 +942,7 @@
 									"type": "file",
 									"src": "/C:/Users/swsh/Desktop/ZMOD0203/MLW/ZMOD/Data/irisDataset.csv"
 								}
-							],
-							"options": {
-								"formdata": {}
-							}
+							]
 						},
 						"url": {
 							"raw": "{{url}}/service/mlw/projects/1600159589_Project/resources/1603246088_0264_Resource",
@@ -1003,10 +993,7 @@
 									"src": "/C:/Users/swsh/Desktop/ZMOD0203/MLW/ZMOD/Data/irisDataset.csv",
 									"disabled": true
 								}
-							],
-							"options": {
-								"formdata": {}
-							}
+							]
 						},
 						"url": {
 							"raw": "{{url}}/service/mlw/projects/1600159589_Project/resources/1600766226_0198_Resource/download",
@@ -1116,8 +1103,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "AutoML",
@@ -1292,8 +1278,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Cumulocity Data Pull",
@@ -1480,8 +1465,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "DataHub Data Pull",
@@ -1534,8 +1518,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Tasks",
@@ -1718,8 +1701,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "MLE integration",
@@ -2210,8 +2192,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Training WorkFLow",
@@ -2263,8 +2244,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Code Execution",
@@ -2316,8 +2296,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "NeuralNetwork",
@@ -2352,8 +2331,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Jupyter Notebook integration",
@@ -2383,10 +2361,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {}
-							}
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{url}}/service/mlw/projects/1600784593_Project/resources/1603183086_0914_Resource/jnb-content",
@@ -2413,10 +2388,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"content\": {\"cells\": [{\"cell_type\": \"code\", \"execution_count\": 1, \"metadata\": {}, \"outputs\": [], \"source\": [\"asdasfas\"]}], \"metadata\": {\"kernelspec\": {\"display_name\": \"Python 3\", \"language\": \"python\", \"name\": \"python3\"}, \"language_info\": {\"codemirror_mode\": {\"name\": \"ipython\", \"version\": 3}, \"file_extension\": \".py\", \"mimetype\": \"text/x-python\", \"name\": \"python\", \"nbconvert_exporter\": \"python\", \"pygments_lexer\": \"ipython3\", \"version\": \"3.6.9\"}}, \"nbformat\": 4, \"nbformat_minor\": 4},\r\n\"format\": \"json\",\r\n\"type\": \"notebook\"}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\"content\": {\"cells\": [{\"cell_type\": \"code\", \"execution_count\": 1, \"metadata\": {}, \"outputs\": [], \"source\": [\"asdasfas\"]}], \"metadata\": {\"kernelspec\": {\"display_name\": \"Python 3\", \"language\": \"python\", \"name\": \"python3\"}, \"language_info\": {\"codemirror_mode\": {\"name\": \"ipython\", \"version\": 3}, \"file_extension\": \".py\", \"mimetype\": \"text/x-python\", \"name\": \"python\", \"nbconvert_exporter\": \"python\", \"pygments_lexer\": \"ipython3\", \"version\": \"3.6.9\"}}, \"nbformat\": 4, \"nbformat_minor\": 4},\r\n\"format\": \"json\",\r\n\"type\": \"notebook\"}"
 						},
 						"url": {
 							"raw": "{{url}}/service/mlw/projects/1600784593_Project/resources/1603183086_0914_Resource/jnb-content",
@@ -2470,9 +2442,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

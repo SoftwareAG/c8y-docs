@@ -4,7 +4,7 @@ title: Experimental example set up on VirtualBox
 layout: redirect
 ---
 
-Cumulocity IoT Edge does not officially support VirtualBox. If you want to convert a VMWare image (OVF file) to VirtualBox image (OVA file), and run Cumulocity IoT Edge on VirtualBox for experimental or trial purposes, you can follow the example below.
+Cumulocity IoT Edge does not officially support VirtualBox. If you want to convert a VMWare image (OVF file) to VirtualBox image (OVA file), and run Cumulocity IoT Edge on VirtualBox for experimental or trial purposes, follow the example below.
 
 ### Converting VMWare OVF file to VirtualBox OVA file
 
@@ -54,7 +54,7 @@ Cumulocity IoT Edge does not officially support VirtualBox. If you want to conve
 
 		`[root@server ~]# nmcli connection up enp0s8`
 
-		This command provides an error **Error: Connection activation failed: IP configuration could not be reserved (no available address, timeout, etc.)**. You can ignore this error.
+		This command provides an error **Error: Connection activation failed: IP configuration could not be reserved (no available address, timeout, etc.)**. Ignore this error.
 
 12. Restart the Edge VM.
 

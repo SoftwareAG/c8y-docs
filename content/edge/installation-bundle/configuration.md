@@ -61,7 +61,7 @@ The following parameters are required only if you want to update the network par
 
 `gateway.ip` : Provide the gateway IP for your network. For example, 192.168.56.1
 
-`dns.server.ip` : Provide the DNS Server IP for your network. For example, 192.168.56.1
+`dns.server.ip` : Provide the DNS Server IP for your network. For example, 192.168.56.1. For DNS, do not use the IP addresses 10.96.0.10 and 127.0.0.1.
 
 >**Info:** If the DNS Server IP is unknown, you can enter the previously entered gateway IP here. If any of the network parameters are not available, contact your network administrator.
 
@@ -108,10 +108,7 @@ The following sections explain the tasks that can be performed using the post-in
 8. [Enable microservice hosting feature](/edge/installation/#enabling-or-disabling-microservice-hosting-feature)
 9. Exit
 
->**Important:**<br>
-- Option 1 is the first step that you must perform while configuring the Edge server. Also, if you change the network configuration of a Hypervisor, you must configure the network using option 1.<br> 
-- Option 3, 4 and 6 will only work after you have successfully completed the post-installation setup (Option 2). <br>
-- Option 1 and 4 cannot be invoked from a remote connection like SSH. You will have to run these directly from the terminal within the VM.
+>**Important:**<br>- Option 1 is the first step that you must perform while configuring the Edge server. Also, if you change the network configuration of a Hypervisor, you must configure the network using option 1.<br>- Option 3, 4 and 6 will only work after you have successfully completed the post-installation setup (Option 2). <br>- Option 1 and 4 must be run from the Edge VM console in the hypervisor. These options cannot be invoked from a remote connection like SSH.
 
 #### Configuring the Edge network
 
@@ -144,6 +141,8 @@ You have the choice to  enter the network parameters manually through the consol
 4. Provide the DNS Server IP for your network. For example, 192.168.66.1
 	
 	`* Enter DNS Server IP:`
+	
+	For DNS, do not use the IP addresses 10.96.0.10 and 127.0.0.1.
 	
 	>**Info:** If the DNS Server IP is unknown, you can enter the previously entered gateway IP here. If any of the network parameters are not available, contact your network administrator.
 

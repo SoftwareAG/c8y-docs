@@ -6,7 +6,13 @@ layout: redirect
 
 Cumulocity IoT uses REST and MQTT as protocols for external communication. Both protocols may be used to interface devices with Cumulocity IoT . For more information, see [Device integration using REST](/device-sdk/rest) and [Device integration using MQTT](/device-sdk/mqtt) in the Device SDK guide.
 
-Additionally, Cumulocity IoT Edge offers Cloud Fieldbus functionality to collect data from fieldbus devices and remotely manage them. To do so, various protocols are provided, e.g. Modbus and OPC UA. For details on how to integrate devices using Modbus and OPC UA, refer to Optional Services > [Cloud Fieldbus](/users-guide/optional-services#cloud-fieldbus) in the User guide.
+Additionally, Cumulocity IoT Edge offers:
+
+* Cloud Fieldbus functionality to collect data from fieldbus devices and remotely manage them. For example, Modbus protocol.
+
+* OPC UA protocol. OPC UA protocols support through the OPC UA device gateway and OPC UA management service.
+
+For details on how to integrate devices using Modbus and OPC UA protocols, see [Cloud Fieldbus](/protocol-integration/cloud-fieldbus/) and [OPC UA](/protocol-integration/opcua/) in the Protocol integration guide.
 
 >**Info:** Currently, only the Modbus and OPC UA protocols are supported.
 
@@ -14,11 +20,7 @@ Additionally, Cumulocity IoT Edge offers Cloud Fieldbus functionality to collect
 
 Modbus is a serial communications protocol originally published by Modicon and used to establish primary-replica/client-server communication between devices.
 
-Before you connect a Modbus device
-
-* Check if the agent is running.
-* Register the Modbus agent. This only has to be done once as a preparation step and is not required for every Modbus device.
-* Next, you must register the device in the Device Management application with the device ID: “linux-agent".
+Before you connect a Modbus device, ensure that the agent is running.
 
 #### How to check/change the agent state
 
@@ -41,7 +43,7 @@ In the Device Management application, click **All devices** in the navigator and
 
 #### How to connect Modbus devices
 
-For further information on connecting and managing Modbus devices, refer to Optional services > [Cloud Fieldbus](/users-guide/optional-services#cloud-fieldbus) in the User guide.
+For more information on connecting and managing Modbus devices, see [Cloud Fieldbus](/protocol-integration/cloud-fieldbus/) in the Protocol integration guide.
 
 ### Example: Connecting an OPCUA device
 
@@ -85,8 +87,8 @@ Next, you need to register a device in the Device Management application with th
 
 <img src="/images/edge/edge-device-registration-example.png" name="Register device"/>
 
-Follow the description in Device Management > [Connecting devices](/users-guide/device-management#connecting-devices) in the User guide to register a device.
+Follow the description in [Device Management > Connecting devices](/users-guide/device-management#connecting-devices) in the User guide to register a device.
 
 In the Device Management application, click **All devices** in the navigator and find the OPCUA device in the device list.
 
-For further information about managing and configuring OPCUA devices, see [OPC UA](/users-guide/optional-services/#opc-ua) section in the User guide.
+For further information about managing and configuring OPCUA devices, see [OPC UA](/protocol-integration/opcua/) in the Protocol integration guide.

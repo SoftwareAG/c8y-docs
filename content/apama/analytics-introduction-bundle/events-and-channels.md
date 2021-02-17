@@ -64,4 +64,30 @@ See also [Measurement fragments](/apama/advanced/#measurement-fragments).
 
 ### <a name="notifications"></a>Distinguishing between create and update notifications 
 
-You can use the `NOTIFICATION_CREATED` and `NOTIFICATION_UPDATED` values of the `PARAM_NOTIFICATION` constant to distinguish whether a managed object, operation, alarm or event has been created or updated. 
+When listening for `Alarm`, `Event`, `ManagedObject` or `Operation` events from Cumulocity IoT, you may want to to distinguish between create and update operations. Each of these event types have actions named `isCreate()` and `isUpdate()` for this purpose.
+
+Example for listening for new alarms:
+
+```java
+on all Alarm() as alarm {
+    if alarm.isCreate() {
+        log "Alarm created: " + alarm.toString() at INFO;
+    }
+    // else it's an update
+}
+```
+
+And similarly, only for updated alarms:
+
+```java
+on all Alarm() as alarm {
+    if alarm.isUpdate() {
+        log "Alarm updated: " + alarm.toString() at INFO;
+    }
+    // else it's a create
+}
+```
+
+For events that have come from Cumulocity IoT, one of `isUpdate()` or `isCreate()` will always return true. Both actions are provided for choice and readability.
+
+See the [API Reference for EPL (ApamaDoc)](https://documentation.softwareag.com/onlinehelp/Rohan/Apama/v10-5/apama10-5/ApamaDoc/com/apama/cumulocity/package-summary.html) for more information about the `isCreate()` and `isUpdate()` actions.

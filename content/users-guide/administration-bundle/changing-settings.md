@@ -63,11 +63,10 @@ You may choose one of the following options:
 
 	> **Info:** An SMS gateway microservice must be configured for the tenant. Naturally only users with a valid phone number associated can use this functionality.
 
-* **Google Authenticator** (Time-based One-Time Password = TOTP), supporting the following settings:
+* **Google Authenticator** (Time-based One-Time Password = TOTP), supporting the following setting:
 	 - **Enforce TOTP two-factor authentication on all users**: When enabled it will force all users to set up their TFA on login. Otherwise each individual user can choose to activate it or not.
-   - **Limit token validity for**: lifetime of each session in minutes.  When the session expires the user has to re-authenticate.
-
-	> **Info:** This strategy is only available together with 'OAuth Internal'.
+   
+	> **Info:** The TOTP method is only available with the login mode "OAuth Internal".
 
 Click **Save TFA settings** to apply your settings.
 

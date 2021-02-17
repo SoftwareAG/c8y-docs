@@ -3,7 +3,12 @@ weight: 10
 title: Overview
 layout: bundle
 aliases:
+  - /web/introduction
   - /web/angular/
+  - /developers-guide/developing-web-clients
+  - /developers-guide/developing-web-clients.html
+  - /web/smart-toolkit
+  - /web/reference
 ---
 
 

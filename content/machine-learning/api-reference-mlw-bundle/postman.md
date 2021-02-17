@@ -17,5 +17,5 @@ If you are doing a fresh setup of Postman for using the Machine Learning Workben
 
 Import the APIs as a [JSON file](/files/zementis/MLWMicroserviceAPI.postman_collection.json).
 
-Alternatively click: [![Run in Postman](https://run.pstmn.io/button.svg)](https://www.getpostman.com/collections/016bf358a9628909dbc7)
+Alternatively click: [![Run in Postman](https://run.pstmn.io/button.svg)](https://www.getpostman.com/collections/8075602a135f63f7c91d)
  After importing, you will see a new collection "MLW Microservice API" in the **Collections** tab in Postman.
